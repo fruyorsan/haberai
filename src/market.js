@@ -25,7 +25,7 @@ const ONS_TO_GRAM = 31.1034768; // 1 ons = 31.1035 gram
 async function quote(spec) {
   const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(
     spec.symbol
-  )}?interval=1d&range=5d`;
+  )}?interval=1d&range=1mo`;
 
   const res = await fetch(url, {
     headers: { "User-Agent": UA },
@@ -34,7 +34,8 @@ async function quote(spec) {
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
   const json = await res.json();
-  const meta = json?.chart?.result?.[0]?.meta;
+  const result = json?.chart?.result?.[0];
+  const meta = result?.meta;
   const value = meta?.regularMarketPrice;
   if (typeof value !== "number") throw new Error("veri yok");
 
@@ -42,7 +43,26 @@ async function quote(spec) {
   const change = value - prev;
   const changePct = prev ? (change / prev) * 100 : 0;
 
-  return { label: spec.label, value, prev, change, changePct, decimals: spec.decimals };
+  // Grafikler için son ~30 kapanış (canlı fiyatla birlikte)
+  const rawCloses = result?.indicators?.quote?.[0]?.close || [];
+  const series = rawCloses
+    .filter((v) => typeof v === "number" && Number.isFinite(v))
+    .slice(-30);
+  if (series.length) {
+    const last = series[series.length - 1];
+    if (Math.abs(last - value) / Math.max(Math.abs(value), 1) > 0.00005) series.push(value);
+  }
+
+  return { label: spec.label, value, prev, change, changePct, decimals: spec.decimals, series };
+}
+
+/** İki seriyi sondan hizalar ve eleman bazında çarpar (gram altın için). */
+function mulSeries(a = [], b = []) {
+  const n = Math.min(a.length, b.length);
+  if (!n) return [];
+  const ax = a.slice(-n);
+  const bx = b.slice(-n);
+  return ax.map((v, i) => (v / ONS_TO_GRAM) * bx[i]);
 }
 
 /** Piyasa göstergelerini çeker ve data/market.json'a yazar. */
@@ -63,6 +83,7 @@ export async function updateMarket() {
       change: now - prev,
       changePct: prev ? ((now - prev) / prev) * 100 : 0,
       decimals: 2,
+      series: mulSeries(gold.series, usd.series),
     });
   }
 

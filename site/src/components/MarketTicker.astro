@@ -1,39 +1,62 @@
 ---
 import { getMarket } from "../lib/market.js";
+import { chartPaths, nf, pf } from "../lib/chart.js";
 
 const { items } = getMarket();
 
-const nf = (v, d = 2) =>
-  new Intl.NumberFormat("tr-TR", { minimumFractionDigits: d, maximumFractionDigits: d }).format(v);
-const pf = (v) => `${v >= 0 ? "+" : "-"}%${nf(Math.abs(v), 2)}`;
-
 // Kusursuz döngü için liste 3 kez tekrarlanır ve %33.33 kaydırılır.
 const COPIES = 3;
+
+const rows = items.map((it) => ({
+  ...it,
+  chart: chartPaths(it.series, 48, 16, 1),
+  up: it.changePct >= 0,
+}));
 ---
 
 {items.length > 0 && (
   <div class="mticker" role="region" aria-label="Piyasa verileri">
-    <div class="mticker__lead">
+    <a class="mticker__lead" href="/piyasa/" title="Tüm piyasa grafiklerini gör">
       <span class="mticker__dot" aria-hidden="true"></span>
       <span class="mticker__lead-text">PİYASA</span>
-    </div>
+    </a>
 
     <div class="mticker__viewport">
       <div class="mticker__track">
         {Array.from({ length: COPIES }).map((_, copy) =>
-          items.map((it, i) => (
-            <span
+          rows.map((it) => (
+            <a
               class="mticker__item"
+              href="/piyasa/"
               aria-hidden={copy > 0 ? "true" : undefined}
-              data-first={copy === 0 && i === 0 ? "true" : undefined}
+              tabindex={copy > 0 ? -1 : undefined}
             >
               <span class="mticker__label">{it.label}</span>
               <span class="mticker__value">{nf(it.value, it.decimals ?? 2)}</span>
-              <span class:list={["mticker__chg", it.changePct >= 0 ? "is-up" : "is-down"]}>
-                <span class="mticker__arrow">{it.changePct >= 0 ? "▲" : "▼"}</span>
+              <span class:list={["mticker__chg", it.up ? "is-up" : "is-down"]}>
+                <span class="mticker__arrow">{it.up ? "▲" : "▼"}</span>
                 {pf(it.changePct)}
               </span>
-            </span>
+              {it.chart && (
+                <svg
+                  class="mticker__spark"
+                  viewBox="0 0 48 16"
+                  width="48"
+                  height="16"
+                  aria-hidden="true"
+                >
+                  <path
+                    d={it.chart.line}
+                    fill="none"
+                    stroke={it.up ? "#4ade80" : "#fb7185"}
+                    stroke-width="1.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    vector-effect="non-scaling-stroke"
+                  />
+                </svg>
+              )}
+            </a>
           ))
         )}
       </div>
@@ -43,7 +66,7 @@ const COPIES = 3;
 
 <style>
   .mticker {
-    --h: 42px;
+    --h: 44px;
     position: relative;
     display: flex;
     align-items: stretch;
@@ -66,6 +89,10 @@ const COPIES = 3;
     flex-shrink: 0;
     background: rgba(255, 255, 255, 0.045);
     border-right: 1px solid rgba(255, 255, 255, 0.09);
+    transition: background 0.2s var(--ease);
+  }
+  .mticker__lead:hover {
+    background: rgba(216, 31, 38, 0.35);
   }
   .mticker__lead-text {
     font-size: 0.68rem;
@@ -118,7 +145,7 @@ const COPIES = 3;
     display: flex;
     width: max-content;
     height: 100%;
-    animation: mt-scroll 90s linear infinite;
+    animation: mt-scroll 110s linear infinite;
     will-change: transform;
   }
   .mticker:hover .mticker__track {
@@ -130,9 +157,13 @@ const COPIES = 3;
     align-items: center;
     gap: 8px;
     height: var(--h);
-    padding: 0 20px;
+    padding: 0 18px;
     border-right: 1px solid rgba(255, 255, 255, 0.07);
     white-space: nowrap;
+    transition: background 0.2s var(--ease);
+  }
+  .mticker__item:hover {
+    background: rgba(255, 255, 255, 0.06);
   }
 
   .mticker__label {
@@ -156,7 +187,6 @@ const COPIES = 3;
     font-variant-numeric: tabular-nums;
     padding: 3px 8px;
     border-radius: 999px;
-    transition: background 0.2s var(--ease);
   }
   .mticker__chg.is-up {
     color: #4ade80;
@@ -170,8 +200,8 @@ const COPIES = 3;
     font-size: 0.6rem;
     line-height: 1;
   }
-  .mticker__item:hover .mticker__chg {
-    background: rgba(255, 255, 255, 0.12);
+  .mticker__spark {
+    opacity: 0.85;
   }
 
   @keyframes mt-scroll {
@@ -185,13 +215,16 @@ const COPIES = 3;
 
   @media (max-width: 720px) {
     .mticker {
-      --h: 38px;
+      --h: 40px;
     }
     .mticker__lead {
       padding: 0 12px;
     }
     .mticker__item {
-      padding: 0 14px;
+      padding: 0 13px;
+    }
+    .mticker__spark {
+      display: none;
     }
   }
 
