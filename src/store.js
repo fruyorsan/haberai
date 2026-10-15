@@ -40,6 +40,10 @@ export async function loadArticles() {
   try {
     const articles = JSON.parse(await readFile(ARTICLES_FILE, "utf8"));
     fixFutureDates(articles);
+    // TELİF: kaynak sitelerin görselleri artık saklanmıyor; eski kayıtlardan da temizle.
+    for (const a of articles) {
+      if (a && "image" in a) delete a.image;
+    }
     return articles;
   } catch {
     return [];

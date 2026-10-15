@@ -22,15 +22,6 @@ const delay = Math.min(index * 45, 320);
         <span class="card__ph-mark">H</span>
         <span class="card__ph-cat">{article.category}</span>
       </div>
-      {article.image && (
-        <img
-          src={article.image}
-          alt={article.title}
-          loading="lazy"
-          decoding="async"
-          onerror="this.classList.add('is-broken')"
-        />
-      )}
       <span class="card__badge">{article.category}</span>
     </div>
     <div class="card__body">

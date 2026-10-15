@@ -1,6 +1,7 @@
 import { loadArticles, saveArticles } from "./store.js";
 import { fetchPageExtras } from "./fetcher.js";
 import { analyzeArticle } from "./ai.js";
+import { purgeCopiedText } from "./telif.js";
 import { config } from "./config.js";
 
 /**
@@ -65,13 +66,17 @@ async function main() {
         content = `${content}\n\n${extra.text}`.slice(0, 7000);
       }
 
-      const ai = await analyzeArticle({
+      const ham = await analyzeArticle({
         title: target.title,
         source: target.source,
         feedCategory: target.category,
         link: target.sourceUrl,
         content,
       });
+
+      // TELİF GÜVENCESİ: kaynakla birebir örtüşen cümleleri ayıkla.
+      const { cleaned: ai, removed } = purgeCopiedText(ham, content);
+      if (removed > 0) process.stdout.write(`(telif: ${removed}) `);
 
       const current = byId.get(target.id);
       if (!current) {
@@ -88,7 +93,6 @@ async function main() {
       current.comment = ai.comment || current.comment;
       if (ai.editorNote) current.editorNote = ai.editorNote;
       if (ai.tags?.length) current.tags = ai.tags;
-      if (!current.image) current.image = extra.image || null;
       current.refreshedAt = new Date().toISOString();
 
       console.log("✓");

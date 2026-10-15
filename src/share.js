@@ -156,7 +156,8 @@ async function shareWebhook(article) {
       summary: article.summary || "",
       url: articleUrl(article),
       category: article.category || "",
-      image: article.image || null,
+      // TELİF: kaynak sitelerin görselleri paylaşılmaz; kendi markalı görselimiz kullanılır.
+      image: `${siteUrl()}/og-default.png`,
     },
   });
 }

@@ -39,7 +39,13 @@ Her alanın işi farklıdır:
 - "comment": özetten ve gövdeden TAMAMEN FARKLI, yalnızca yorum/analiz (neden önemli, kimi etkiler, ne olabilir).
 - "editorNote": ana sayfadaki "öne çıkanlar" slaytı için kısa MANŞET NOTU; summary ve comment'ten FARKLI, 1-2 cümle
   (en fazla ~180 karakter), merak uyandıran ama abartısız ve clickbait olmayan bir not.
-Asla kaynağın cümlelerini kopyalama; kendi ifadelerinle yeniden yaz.
+
+TELİF KURALLARI (kesin ve bağlayıcı):
+- Kaynağın cümlelerini ASLA kopyalama; kendi ifadelerinle, sıfırdan yeniden yaz.
+- Kaynakla arka arkaya 10 kelimeden uzun aynı sözcük dizisini kullanma.
+- Kaynağın paragraf sırasını ve cümle yapısını taklit etme; kendi kurgunla yaz.
+- Doğrudan alıntı gerekiyorsa en fazla bir kısa alıntı yap, tırnak içinde ver ve kime ait olduğunu belirt.
+- Kaynak metinde olmayan alıntı söz üretme.
 Yanıtını SADECE geçerli bir JSON nesnesi olarak ver.`;
 
 function buildPrompt(article) {
@@ -61,6 +67,7 @@ Aşağıdaki JSON alanlarını TÜRKÇE üret:
   * Emin olmadığın ayrıntıyı eklemek yerine, kaynaktaki bilgiyi daha ayrıntılı ve akıcı biçimde anlat. Doğal çıkarımları "olabilir / bekleniyor" gibi temkinli ifadelerle ver.
   * Kaynak çok kısaysa gövdeyi kısa tut (3 paragraf); doldurmak için bilgi ekleme.
   * Yapay zekâ gibi değil, gazete haberi gibi yaz; "bu yazıda", "aşağıda" gibi ifadeler kullanma.
+  * TELİF: Kaynak metinden cümle kopyalama, arka arkaya 10 kelimeden uzun aynı diziyi kullanma, kaynağın paragraf sırasını izleme.
 - comment: EDİTÖR YORUMU. summary ve body'nin TEKRARI KESİNLİKLE OLMAYACAK: hiçbir bilgiyi yeniden anlatma. Doğrudan yorumla başla. Şu sorulara cevap ver: Bu neden önemli? Kimi nasıl etkiler? Bundan sonrası için ne beklenebilir, neye dikkat edilmeli? 3-5 cümle; samimi ama profesyonel, gerekirse eleştirel.
 - editorNote: MANŞET NOTU (ana sayfadaki "öne çıkanlar" slaytı için). summary ve comment ile AYNI cümleleri ya da cümle parçalarını KESİNLİKLE kullanma; onların kısaltması/özeti de olmasın. 1-2 cümle, en fazla ~180 karakter. Manşet tonunda; merak uyandıran ama clickbait olmayan, ölçülü, samimi-profesyonel bir not yaz. Habere yeni bir açı ya da çıkarım kat: "neden bakmalısın", "asıl önemli olan ne"? Abartma ve bilgi uydurma; "şok", "inanılmaz", "bomba" gibi ifadeler kullanma.
 - tags: 3-6 adet kısa anahtar kelime.

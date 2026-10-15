@@ -5,6 +5,7 @@ import { updateMarket } from "./market.js";
 import { loadArticles, saveArticles, existingIds, makeId } from "./store.js";
 import { shareNewArticles } from "./share.js";
 import { makeIndex, findSimilar } from "./dedupe.js";
+import { purgeCopiedText } from "./telif.js";
 
 const DRY = process.argv.includes("--dry");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -97,21 +98,23 @@ async function main() {
       `  (${i + 1}/${queue.length}) ${item.source}: ${item.title.slice(0, 55)}... `
     );
     try {
-      // Sayfadan hem görseli hem de gerçek gövde metnini al (uydurmayı azaltır)
-      if (!item.image || item.content.length < 1500) {
+      // Sayfadan yalnızca gerçek gövde metnini al (uydurmayı azaltır).
+      // TELİF: kaynak sitelerin görselleri ÇEKİLMEZ ve SAKLANMAZ.
+      if (item.content.length < 1500) {
         const extra = await fetchPageExtras(item.link);
-        if (!item.image) item.image = extra.image;
         if (extra.text && extra.text.length > 400) {
           item.content = `${item.content}\n\n${extra.text}`.slice(0, 7000);
         }
       }
       const ai = await analyzeArticle(item);
+      // TELİF GÜVENCESİ: üretilen metinde kaynaktan uzun birebir diziler kalmasın.
+      const { cleaned, removed } = purgeCopiedText(ai, item.content);
+      if (removed > 0) console.log(`(telif: ${removed} cümle kaynakla birebir örtüştüğü için çıkarıldı) `);
       const entry = {
         id: makeId(item.link),
-        ...ai,
+        ...cleaned,
         source: item.source,
         sourceUrl: item.link,
-        image: item.image || null,
         publishedAt: item.publishedAt,
         generatedAt: new Date().toISOString(),
       };

@@ -30,22 +30,13 @@ const shareUrl = Astro.url.href;
 
 // --- SEO yardımcıları ---
 const site = Astro.site ?? new URL("https://fruyorsan.github.io");
-function absoluteUrl(value) {
-  if (!value) return "";
-  const str = String(value).trim();
-  if (!str) return "";
-  if (/^https?:\/\//i.test(str)) return str;
-  try {
-    return new URL(str, site).href;
-  } catch {
-    return str;
-  }
-}
 
 const articleUrl = new URL(article.url, site).href;
 const publishedIso = article.publishedAt || article.generatedAt;
 const modifiedIso = article.refreshedAt || article.generatedAt;
-const ogImage = article.image ? absoluteUrl(article.image) : new URL("og-default.png", site).href;
+// TELİF: kaynak sitelerin görselleri kullanılmaz. Paylaşım görseli her zaman
+// HaberAI'nın kendi markalı görselidir.
+const ogImage = new URL("og-default.png", site).href;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -53,6 +44,9 @@ const jsonLd = {
   headline: article.title,
   description: article.summary,
   image: [ogImage],
+  creditText: article.source,
+  isBasedOn: article.sourceUrl,
+  isAccessibleForFree: true,
   datePublished: publishedIso,
   dateModified: modifiedIso,
   articleSection: article.category,
@@ -73,7 +67,6 @@ const jsonLd = {
   description={article.summary}
   canonical={articleUrl}
   ogType="article"
-  image={article.image}
   publishedTime={publishedIso}
   modifiedTime={modifiedIso}
   section={article.category}
@@ -106,21 +99,13 @@ const jsonLd = {
         </div>
       </div>
 
-      {article.image && (
-        <div class="post__media">
-          <div class="post__ph" aria-hidden="true">
-            <span>HaberAI</span>
-          </div>
-          <img
-            class="post__image"
-            src={article.image}
-            alt={article.title}
-            fetchpriority="high"
-            decoding="async"
-            onerror="this.classList.add('is-broken')"
-          />
+      <div class="post__media">
+        <div class="post__ph" aria-hidden="true">
+          <span class="post__ph-mark">H</span>
+          <span class="post__ph-cat">{article.category}</span>
+          <span class="post__ph-note">HaberAI özgün görseli</span>
         </div>
-      )}
+      </div>
 
       <div class="post__body">
         {body.length > 0 && (
@@ -188,7 +173,9 @@ const jsonLd = {
         Kaynak:
         <a href={article.sourceUrl} target="_blank" rel="noopener nofollow">{article.source}</a>
         <span class="post__ai-note">
-          Bu içerik yapay zekâ ile derlenmiştir; hata olabilir. Ayrıntılar için kaynağa bakın.
+          Bu haber, kaynaktaki bilgilerden yararlanılarak HaberAI tarafından özgün biçimde
+          yazılmıştır; kaynak metin ve kaynak görselleri kopyalanmaz. Hata olabilir, ayrıntılar
+          için kaynağa bakın. <a href="/telif/">İçerik ve telif politikası</a>
         </span>
       </div>
     </article>
@@ -370,25 +357,41 @@ const jsonLd = {
   .post__ph {
     position: absolute;
     inset: 0;
-    display: grid;
-    place-items: center;
-    background: var(--red-grad);
-    color: rgba(255, 255, 255, 0.45);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background:
+      radial-gradient(120% 120% at 12% 0%, rgba(255, 255, 255, 0.16), transparent 55%),
+      var(--red-grad);
+    color: rgba(255, 255, 255, 0.94);
+  }
+  .post__ph-mark {
+    font-size: clamp(3rem, 9vw, 5.4rem);
     font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+  }
+  .post__ph-cat {
+    font-size: 0.78rem;
+    font-weight: 800;
     letter-spacing: 0.16em;
-    font-size: 0.9rem;
     text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.25);
   }
-  .post__image {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 0.3s linear;
-  }
-  .post__image.is-broken {
-    opacity: 0;
+  .post__ph-note {
+    position: absolute;
+    right: 16px;
+    bottom: 12px;
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
   }
 
   .post__body {
