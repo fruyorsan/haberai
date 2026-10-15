@@ -449,100 +449,135 @@
     "id": "f83cb3de8c4faa90",
     "title": "NASA, -170°C'ye Dayanabilen Katı Hal Batarya Prototipi Geliştirdi",
     "slug": "nasa-170cye-dayanabilen-kati-hal-batarya-prototipi-gelistirdi",
-    "summary": "NASA, Langley Araştırma Merkezi'nde yürüttüğü SPEARS projesi kapsamında katı hal batarya prototiplerini test etti. Prototipler -80°C'ye kadar çalışabilirken -170°C'ye kadar soğukta fiziksel hasar göstermedi. En düşük sıcaklıkta enerji üretemediği için hücrelerin önce ısıtılması gerekiyor. Bu teknoloji, Ay'ın soğuk bölgelerindeki enerji yönetimini iyileştirme potansiyeli taşıyor.",
+    "summary": "Prototipler -80°C'ye kadar çalışabilirken daha düşük sıcaklıklarda fiziksel hasar göstermedi, ancak enerji üretebilmek için ısıtma gerekir. Bu özellik, Ay'ın aşırı soğuk bölgelerinde enerji yönetimini iyileştirme potansiyeli taşıyor.",
     "keyPoints": [
-      "Bataryalar -80°C'de çalışabilir, -170°C'de hasar görmez",
-      "En düşük sıcaklıkta enerji üretmez, ısıtma gerekir",
-      "Katı elektrolit, sıvı elektrolitteki yangın riskini azaltır"
+      "Bataryalar -80°C'ye kadar çalışabilir",
+      "-170°C'de fiziksel hasar yok",
+      "Enerji üretimi için hücrelerin ısıtılması gerekir"
     ],
     "body": [
-      "NASA, uzay görevlerinde karşılaşılan aşırı sıcaklık koşullarına dayanacak enerji depolama sistemleri geliştirmek amacıyla SPEARS (Solid Power for Extreme Environment Adaptability and Resilience in Space) projesini yürütüyor. Langley Araştırma Merkezi'nde yapılan termal vakum testlerinde, yeni katı hal batarya prototiplerinin -60°C ile -80°C arasındaki sıcaklıklarda sorunsuz çalıştığı, -80°C'ye kadar performansını sürdürebildiği gözlemlendi. Bu sıcaklıkların altına düştüklerinde ise enerji üretim kapasitesi düşse de, hücreler fiziksel olarak zarar görmedi.",
-      "Testler, prototip bataryaların -170°C'ye kadar soğukta maruz bırakıldığında yapısal bütünlüğünü koruduğunu gösterdi. Katı seramik veya polimer tabanlı elektrolitlerin kullanılması, geleneksel lityum iyon bataryalarda sıvı elektrolitin dondurulması ve yanma riskine karşı önemli bir avantaj sağlıyor. Ancak, en düşük test sıcaklığında bataryalar enerji üretemediği için, cihazların çalıştırılmadan önce belirli bir ısı seviyesine getirilmesi gerekiyor. Bu durum, doğrudan aşırı soğukta çalışan bir batarya çözümünün henüz tam olarak sağlanamadığını ortaya koyuyor.",
-      "Ay'ın güney kutup bölgesinde sıcaklıkların -200°C'ye kadar düşebildiği bilinmektedir. Bu koşullar, mevcut lityum iyon bataryaların performansını ciddi şekilde kısıtlıyor; sıvı elektrolitler donarken hem enerji kapasitesi azalıyor hem de yangın riski artıyor. Katı hal bataryaların bu düşük sıcaklıklara dayanabilmesi, Ay yüzeyinde çalışan keşif araçları, bilimsel ölçüm cihazları ve astronotların acil durum ekipmanları için ısıtma ihtiyacını azaltabilir. Böylece uzay araçlarının ısı yönetim sistemleri daha hafif ve enerji verimli hale gelebilir.",
-      "NASA araştırmacıları, farklı elektrot malzemeleri ve tasarımlarla bataryaların enerji yoğunluğunu, güç çıkışını ve ömürünü görev gereksinimlerine göre optimize etmeyi hedefliyor. Katı hal teknolojisinin başarılı test sonuçları, sadece Ay görevlerinde değil, uçaklar, insansız hava araçları, kara taşıtları ve taşınabilir elektronik cihazlar gibi çeşitli alanlarda da kullanılabileceği beklentisini güçlendiriyor. İleri testler ve uzun vadeli dayanıklılık değerlendirmeleri tamamlandıkça, bu yeni nesil bataryaların ticari ve askeri uygulamalara geçişi daha somut bir hâl alacak."
+      "Langley Araştırma Merkezi'nde gerçekleştirilen termal vakum testlerinde, katı hal batarya hücrelerinin -60°C ila -80°C arasındaki sıcaklıklarda performansları incelendi ve bu aralıkta istikrarlı enerji çıkışı sağladıkları gözlendi.",
+      "Testler, prototiplerin -80°C altındaki sıcaklıklarda çalışmayı sürdürdüğünü, fakat bu seviyenin altına düştüğünde enerji üretiminin durduğunu gösterdi. Ancak hücreler -170°C'ye kadar soğukta maruz bırakıldıklarında fiziksel bir bozulma yaşamadı; bu, katı seramik ya da polimer elektrolitlerin aşırı soğukta dayanıklılığının bir göstergesi olarak değerlendirildi.",
+      "Geleneksel lityum‑iyon bataryalar sıvı elektrolitleri nedeniyle çok düşük sıcaklıklarda donar ve performans kaybı yaşar. Katı hal bataryalar ise sıvı yerine katı elektrolit kullandıkları için hem yanıcı riskleri azaltıyor hem de sıcaklık dalgalanmalarına karşı daha dirençli oluyor. Bu özellik, Ay'ın Güney Kutbu gibi -200°C'ye kadar düşebilen bölgelerinde enerji sistemlerinin güvenilirliğini artırabilir.",
+      "Ay yüzeyinde görev yapan keşif araçları, bilimsel ölçüm cihazları ve astronot ekipmanları için bataryaların ısıtılması ek enerji tüketimine yol açıyor. Katı hal bataryaların soğuğa hasar görmeden dayanması, sürekli ısıtma ihtiyacını azaltarak enerji tasarrufu ve sistem ağırlığının düşürülmesine katkı sağlayabilir. NASA araştırmacıları, hücrelerin yeniden kullanılabilirliğini artırmak için ısıtma süreçlerini yalnızca gerektiğinde uygulamayı planlıyor.",
+      "Ancak geniş çaplı uygulamaya geçiş, bataryaların uzun vadeli performansının ve dayanıklılığının daha fazla test edilmesiyle mümkün olacak."
     ],
-    "comment": "Bu gelişme, uzay görevlerinde enerji verimliliğini artırarak ekipmanların daha uzun süre çalışmasını sağlayabilir ve taşıma maliyetlerini düşürebilir. Özellikle Ay'ın ekstrem soğuk bölgelerinde görev yapan robotlar ve astronotlar, ısıtma sistemlerine harcanan enerjiyi tasarruf ederek daha fazla bilimsel faaliyet gerçekleştirebilir. Katı hal bataryaların ticari alanda da yaygınlaşması, güvenlik ve performans açısından sıvı elektrolitli çözümlere kıyasla önemli bir adım olacak; ancak düşük sıcaklıklarda ısıtma ihtiyacı hâlâ çözülmesi gereken bir sorun olarak kalıyor.",
+    "comment": "Katı hal bataryaların aşırı soğuğa dayanması, uzay görevlerinde enerji verimliliğini artırarak ekipmanların güvenilirliğini yükseltebilir. Özellikle Ay'ın kutup bölgelerinde çalışan araç ve cihazlar bu gelişmeden doğrudan fayda sağlayacak. Teknoloji henüz ısıtma gerektirdiği için tam bağımsız bir çözüm olmasa da, ilerleyen testlerle enerji tüketimindeki tasarrufun ne kadar büyük olacağı izlenmeli. Uzay dışı uygulamaların ötesinde, benzer soğuk ortamlar için de yeni tasarım fırsatları doğabilir.",
     "tags": [
       "NASA",
       "katı hal batarya",
-      "Ay keşifleri",
+      "Ay görevleri",
       "enerji depolama",
-      "uzay teknolojisi"
+      "SPEARS"
     ],
     "category": "Donanım",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/nasa-170-dereceye-dayanabilen-kati-hal-batarya-gelistirdi--211686",
     "publishedAt": "2026-10-15T19:45:00.000Z",
-    "generatedAt": "2026-10-15T19:46:37.275Z"
+    "generatedAt": "2026-10-15T19:46:37.275Z",
+    "editorNote": "NASA'nın soğuk ortam dayanıklı katı hal bataryaları, Ay görevlerinde enerji yönetimini yeniden şekillendirebilir; gelecekteki uzay ve yer tabanlı sistemler için ne kadar kritik…",
+    "refreshedAt": "2026-10-15T23:51:36.562Z"
   },
   {
     "id": "2ee03cd9c9d668ee",
     "title": "ABD'nin 8 Eyaleti OpenAI'ı ChatGPT Güvenliği İçin Dava Ediyor",
     "slug": "abd-8-eyaleti-openai-chatgpt-guvenligi-dava",
-    "summary": "ABD'nin sekiz eyaleti, OpenAI'ın ChatGPT hizmetinin güvenlik riskleri konusunda kamuoyunu yanıltmakla suçlayarak şirket aleyhine dava açtı. Iowa ve Nebraska gibi eyaletlerin başsavcılıkları, yapay zeka sistemlerinin şeffaflık ve sorumluluk gereksinimlerine uymadığını iddia ediyor.",
-    "comment": "Bu davalar, yapay zeka ürünlerinin düzenleyici denetimle karşılaşabileceğini gösteriyor ve sektörün güvenlik standartlarını yeniden gözden geçirmesine yol açabilir. Kullanıcılar, geliştiriciler ve politika yapıcılar için önemli bir uyarı niteliğinde.",
+    "summary": "Iowa, Nebraska ve diğer eyaletler, yapay zekanın genç kullanıcılar üzerindeki etkileri ve veri toplama uygulamalarıyla ilgili şeffaflık ve sorumluluk eksikliği olduğunu belirtiyor. OpenAI, dava dilekçelerine yanıt vererek mevcut ebeveyn denetimleri ve güvenlik önlemlerini geliştireceklerini açıkladı. Davalar hâlâ mahkemelerde görülmekte ve sektörde daha sıkı düzenlemeler çağrısı yapıyor.",
+    "comment": "Bu davalar, yapay zekanın özellikle gençler üzerindeki etkisinin yasal denetimle buluştuğu kritik bir dönemi işaret ediyor. Eyaletlerin ortak hareketi, sektörde güvenlik standartlarının yükseltilmesi ve veri gizliliği konusundaki beklentilerin sıkılaşması anlamına geliyor. Eğer OpenAI ve diğer firmalar önerilen önlemleri zamanında hayata geçiremezse, daha geniş kapsamlı düzenleyici müdahalelerle karşı karşıya kalabilirler.",
     "tags": [
-      "openai",
-      "chatgpt",
+      "OpenAI",
+      "ChatGPT",
       "dava",
-      "eyaletler",
-      "yapayzeka"
+      "güvenlik",
+      "yapay zeka"
     ],
     "category": "Yapay Zeka",
     "source": "Tamindir",
     "sourceUrl": "https://www.tamindir.com/haber/abd-eyaletleri-openai-chatgpt-davasi_112319/",
     "publishedAt": "2026-10-15T19:37:00.000Z",
-    "generatedAt": "2026-10-15T16:21:37.851Z"
+    "generatedAt": "2026-10-15T16:21:37.851Z",
+    "keyPoints": [
+      "8 eyalet ortak dava açtı",
+      "ChatGPT'nin gençlere yönelik güvenlik önlemleri sorgulandı",
+      "OpenAI ebeveyn denetimlerini güçlendirecek dedi"
+    ],
+    "body": [
+      "Sekiz farklı ABD eyaleti, OpenAI'ın popüler yapay zeka sohbet botu ChatGPT'nin güvenlik ve şeffaflık konularında yetersiz kaldığını savunarak şirket aleyhine yasal süreç başlattı. Iowa ve Nebraska başsavcılıkları, özellikle reşit olmayan kullanıcıların kişisel verilerinin toplanması ve yaş kontrol mekanizmalarının zayıf olduğu yönünde bulgular sundu. Bu eyaletler, ChatGPT'nin gençler arasında hatalı tıbbi tavsiyeler vermesi ve zararlı davranışları teşvik etmesi riskini vurguladı.",
+      "Mahkemelerde açılan her dava ayrı bir dosya olarak ele alınsa da, iddiaların temelinde benzer şikayetler bulunuyor: OpenAI'nın ChatGPT'yi güvenli ve çocuk dostu bir araç olarak tanıttığı, fakat gerçek uygulamada bu iddiayı karşılayacak yeterli önlemleri almadığı. Başsavcılar, yapay zekanın eleştirel düşünme becerilerini zayıflattığını ve bazı kullanıcıların ölümcül sonuçlarla sonuçlanabilecek hatalı yönlendirmeler aldığını belirtti. Ayrıca, bazı eyaletler şirketin veri toplama süreçlerinde Hugging Face gibi dış platformlara sızma olayını da örnek gösterdi.",
+      "OpenAI, davalara resmi bir yanıt vererek mevcut sistemlerde yaşa özel güvenlik önlemleri bulunduğunu ve sürekli olarak ebeveyn denetimleri ile mola hatırlatıcıları gibi özellikleri geliştirdiklerini söyledi. Şirket sözcüsü Drew Pusateri, “Hiçbir sistem tamamen kusursuz değildir, ancak kullanıcı güvenliğini artırmak için çalışıyoruz” dedi. OpenAI ayrıca, eyalet otoriteleriyle iş birliği yaparak sektörel politikaları şekillendirmeye ve daha sıkı düzenlemelere uyum sağlamaya hazır olduğunu ifade etti.",
+      "Bu davalar, sadece OpenAI'yı değil, tüm yapay zeka geliştiricilerini genç kullanıcıların korunması konusunda daha katı sorumluluk almaya zorlayabilir. Arkansas eyaleti, yeterli güvenlik önlemleri sağlanana kadar gelişmiş yapay zeka modellerinin testlerini durdurma talebinde bulunurken, Kaliforniya’da iki çocuk adına ayrı bir toplu dava açıldı. Dilekçelerde, çocukların kişisel bilgilerinin izinsiz toplandığı ve bu verilerin model eğitimi için kullanıldığı iddia edildi.",
+      "Dava sürecinin uzun sürmesi ve iddiaların mahkemede nasıl değerlendirileceği belirsizliğini korusa da, bu gelişme yapay zeka sektöründe regülasyon tartışmalarını hızlandırdı. Uzmanlar, ebeveyn denetimlerinin etkinliğinin artırılması ve veri toplama süreçlerinin şeffaflaştırılması gerektiğini vurguluyor. Önümüzdeki aylarda, eyaletler arasında benzer davaların artması ve federal düzeyde yeni düzenlemelerin gündeme gelmesi olası görünüyor."
+    ],
+    "editorNote": "Sekiz eyaletin ortak dava girişimi, ChatGPT'nin genç kullanıcılar için ne kadar güvenli olduğunu yeniden sorguluyor; sektördeki düzenlemeler yakında sıkılaşabilir.",
+    "refreshedAt": "2026-10-15T23:51:45.428Z"
   },
   {
     "id": "ea09595636002289",
     "title": "AutoCAD, Blender ve SketchUp İçin 2026’nın En İyi Laptopları",
     "slug": "autocad-blender-ve-sketchup-icin-2026-nin-en-iyi-laptoplari",
-    "summary": "AutoCAD, Blender ve SketchUp gibi profesyonel tasarım programlarını aynı anda kullanacak kullanıcılar için önerilen laptop özellikleri belirlendi. En az 32 GB RAM, 8 GB VRAM kapasiteli NVIDIA RTX ekran kartı ve H/HX serisi işlemciler, sorunsuz performans sağlamak için tavsiye ediliyor.",
-    "comment": "Bu öneri, özellikle mimarlık, endüstriyel tasarım ve görsel efekt alanında çalışan profesyonellere yöneliktir. Yüksek bellek ve güçlü GPU gereksinimi, iş akışlarını hızlandırıp proje teslim sürelerini kısaltabilir. Ayrıca, donanım yatırımlarını planlayan firmalar için bütçeleme sürecine ışık tutar.",
+    "summary": "Profesyonel tasarım programları AutoCAD, Blender ve SketchUp'ı aynı anda çalıştırmak isteyen kullanıcılar için 2026 yılında önerilen laptop özellikleri belirlendi. Casper Excalibur G915 ve G870, Apple MacBook Pro 16 (M5 Max), Dell Pro Max 16 Plus, ASUS ProArt P16 ve MSI Vector 16 HX AI gibi modeller bu kriterleri karşılıyor. Fiyatlar 109.799 TL'den 134.799 TL'ye kadar değişiyor.",
+    "comment": "Bu laptop önerileri, yüksek bellek ve güçlü GPU gerektiren tasarım projelerinde çalışan mühendis, mimar ve görsel sanatçılar için kritik bir rehber niteliği taşıyor. Doğru donanım seçimi, render süresini kısaltarak iş verimliliğini artırırken, projelerin zamanında teslim edilmesine de katkı sağlıyor. Özellikle ISV sertifikalı Dell modeli, kurumsal ortamlarda güvenilirlik ve uyumluluk arayan şirketler için önemli bir tercih olabilir. Gelecekte, daha fazla yazılımın GPU hızlandırmalı işlevleri desteklemesiyle bu tür yüksek performanslı laptopların talebi artmaya devam edecektir.",
     "tags": [
-      "autocad",
-      "blender",
-      "sketchup",
-      "laptop",
-      "rtx",
-      "ram"
+      "AutoCAD",
+      "Blender",
+      "SketchUp",
+      "Laptop",
+      "Donanım"
     ],
     "category": "Donanım",
     "source": "Tamindir",
     "sourceUrl": "https://www.tamindir.com/blog/autocad-blender-sketchup-icin-en-iyi-laptoplar_112298/",
     "publishedAt": "2026-10-15T19:33:00.000Z",
-    "generatedAt": "2026-10-15T17:03:51.595Z"
+    "generatedAt": "2026-10-15T17:03:51.595Z",
+    "keyPoints": [
+      "Minimum 32 GB RAM ve 8 GB VRAM öneriliyor",
+      "Casper Excalibur G915 fiyatı 134.799 TL",
+      "Dell Pro Max 16 Plus profesyonel ISV sertifikalı"
+    ],
+    "body": [
+      "AutoCAD, Blender ve SketchUp gibi kaynak yoğun tasarım araçlarını bir arada kullanmak, donanım seçiminde yüksek standartlar gerektiriyor. Bu bağlamda, uzmanlar en az 32 GB sistem belleği ve 8 GB VRAM'e sahip NVIDIA RTX serisi ekran kartı bulunan laptopları tavsiye ediyor. İşlemci olarak ise Intel'in H ya da HX serisi ya da AMD'nin Ryzen AI 9 HX serileri tercih ediliyor, çünkü bu işlemciler çoklu iş parçacığı performansında öne çıkıyor.",
+      "Bu gereksinimleri karşılayan modeller arasında Casper Excalibur G915 öne çıkıyor. Intel Core Ultra 7 356H işlemci, RTX 5060 ya da RTX 5070 seçenekleri ve 8 GB GDDR7 VRAM ile orta ölçekli Blender sahnelerini sorunsuz render edebiliyor. MediaMarkt'ta 32 GB RAM, 1 TB SSD ve RTX 5060 içeren konfigürasyonun fiyatı 134.799 TL olarak listelenmiş. Daha kompakt bir ekran isteyenler için 15,6 inçlik Casper Excalibur G870, aynı RTX 5060 ve 8 GB VRAM ile 32 GB RAM ve 2 TB SSD paketinde 109.799 TL'ye satılıyor.",
+      "Apple'ın taşınabilir gücü MacBook Pro 16 (M5 Max) da listede yer alıyor. Bu modelde birleşik bellek 128 GB'a kadar çıkabiliyor ve ekran kartıyla paylaşıldığı için Blender'da 8‑16 GB VRAM aralığında sınırlamalar bulunabiliyor. Ancak Metal üzerinden GPU render desteği ve macOS uyumluluğu, özellikle SketchUp ve AutoCAD kullanıcıları için avantaj sağlıyor. Fiyat aralığı model konfigürasyonuna göre değişiyor ancak yüksek performanslı bir taşınabilir cihaz arayanlar için cazip bir seçenek.",
+      "Kurumsal ortamlara yönelik Dell Pro Max 16 Plus, NVIDIA RTX PRO Blackwell serisi profesyonel kartlarla geliyor; 8 GB'den 24 GB'ye kadar VRAM seçenekleri mevcut. Tek bir CAMM2 yuvası üzerinden 128 GB DDR5-6400 RAM'e kadar genişletilebiliyor ve 100'den fazla ISV sertifikası sayesinde mühendislik ve mimarlık yazılımlarıyla uyumluluk garantileniyor. Bu özellikler, özellikle büyük projeler ve yoğun render iş akışları için kritik öneme sahip.",
+      "ASUS ProArt P16 ve MSI Vector 16 HX AI ise renk doğruluğu ve yüksek GPU gücü arayan tasarımcılar için önerilen modeller. ProArt P16, 16 inç OLED paneli ve %100 DCI‑P3 renk alanıyla Pantone onaylı kalem desteği sunuyor; RTX 5070 ya da RTX 5090 seçenekleri bulunuyor. MSI Vector 16 HX AI, RTX 5070 Ti ya da RTX 5080 ve 12‑16 GB VRAM ile Blender Cycles renderlarını yüksek hızda gerçekleştirebiliyor. Her iki cihaz da 240 Hz yenileme ve geniş depolama seçenekleriyle profesyonel kullanım senaryolarını destekliyor."
+    ],
+    "editorNote": "Tasarım ve render iş akışlarınızı hızlandıracak laptopları ve fiyatlarını detaylarıyla keşfedin.",
+    "refreshedAt": "2026-10-15T23:52:04.745Z"
   },
   {
     "id": "7406e5f5b6c08ae2",
     "title": "Sakarya'da sağanak yağış yolları kapattı, mahsur kalanlar tahliye edildi",
     "slug": "sakarya-da-saganak-yagis-yollari-kapatti-mahsur-kalanlar-tahliye-edildi",
-    "summary": "Sakarya'da dün akşam başlayan şiddetli sağanak yağış, D-650 kara yolu, Akyazı-Karapürçek ve Altındere-Akyazı gibi önemli arterlerde ulaşımı engelledi. Jandarma, polis ve itfaiye ekipleri, mahsur kalan sürücüler ve ev sakinlerini alternatif güzergâhlara yönlendirerek tahliye etti. Sapanca'da dere yataklarında oluşan taşkınlar, kaçak bungalov yapıların su altında kalmasına yol açtı ve yetkililerden denetim talep edildi. Yetkililer, kontrolsüz yapılaşmanın afet riskini artırdığına dikkat çekti.",
+    "summary": "Jandarma, polis ve itfaiye ekipleri mahsur kalan sürücüleri ve ev sakinlerini tahliye etti. Sapanca’da ise taşkınlar kaçak bungalovları su altında bıraktı ve denetim çağrısı yapıldı.",
     "keyPoints": [
-      "D-650 karayolu Adapazarı yönünde iki mahalle arasında kapandı",
-      "Akyazı-Karapürçek yolundaki Kepekli Köprüsü ulaşılmaz hâle geldi",
-      "Sapanca'da 48 kişi kaçak bungalovda mahsur kaldı ve tahliye edildi"
+      "D-650 kara yolu 48 km’de kapandı",
+      "48 kişi tahliye edildi",
+      "Sapanca’da kaçak bungalovlar su altında kaldı"
     ],
     "body": [
-      "Sağanak yağışlar, Sakarya'nın birçok ilçesinde altyapıyı zorladı. Özellikle D-650 kara yolu, Adapazarı istikametinde Karasu ilçesindeki Tuzla ve Limandere mahalleleri arasında trafiğe kapandı. Jandarma ve polis ekipleri, araçların geçişini engelleyerek sürücüleri alternatif güzergâhlara yönlendirdi ve olası kazaları önledi.",
-      "Aziziye Mahallesi'nde sel sularına kapılan bir çift, itfaiye ekiplerinin müdahalesiyle güvenli bir şekilde kurtarıldı. Akyazı ilçesinde ise sağanak nedeniyle Akyazı‑Karapürçek yolundaki Kepekli Köprüsü ile Altındere‑Akyazı yolundaki Yağcılar Köprüsü trafiğe kapandı, bölge halkı uzun süredir ulaşım sorunu yaşıyor. Karapürçek’te Kanlıçay Mahallesi’nde mahsur kalan 48 kişi, jandarma ve İHH Arama Kurtarma ekiplerinin koordinasyonuyla tahliye edildi.",
-      "İl Jandarma Komutanlığı, Sapanca’da şiddetli yağışların dere yataklarında taşkınlara yol açtığını ve bazı bungalov yapıların sular altında kaldığını bildirdi. Yetkililer, son yıllarda artan kaçak bungalovların denetimsiz yapılaşma nedeniyle afet riskini yükselttiğine vurgu yaptı. Sakarya Valisi Rahmi Doğan, daha önce yapılan denetimlerde kaçak yapıların yasal süreç çerçevesinde kaldırılması gerektiğini hatırlattı.",
-      "Vali Doğan’ın talimatları doğrultusunda jandarma, kaçak bungalovları ve dere yataklarındaki yapılaşmayı denetlemeye devam ediyor. Söz konusu denetimlerde tespit edilen ihlaller ilgili kurumlara bildirildi ve yasal işlemler başlatıldı. Uzmanlar, benzer doğal afet risklerinin önlenmesi için yapılaşma kontrolünün sıkılaştırılması ve mevcut kaçakların hızlı bir şekilde kaldırılmasının önemine dikkat çekiyor."
+      "Jandarma ve polis ekipleri, yolun 48 km’lik kısmında geçişi engelleyerek sürücüleri alternatif güzergahlara yönlendirdi.",
+      "Akyazı ilçesinde Kepekli Köprüsü ve Altındere-Akyazı yolundaki Yağcılar Köprüsü mevcudu, su baskınları nedeniyle geçilemez hâle geldi. Mahsur kalan 48 kişi, jandarma ve İHH arama kurtarma ekipleri tarafından tahliye edildi.",
+      "Sapanca’da dere yataklarında meydana gelen taşkınlar, bölgeye yakın kaçak bungalovları su altında bıraktı. Yetkililer, kontrolsüz yapılaşmanın afet riskini artırdığını vurgulayarak denetim yapılmasını talep etti.",
+      "Vali Rahmi Doğan’ın açıklamasına göre, Sapanca’da son yıllarda artan kaçak bungalov yapılaşmalarının, doğal afet karşısında can ve mal güvenliği riskini yükselttiği bildirildi.",
+      "İl Jandarma Komutanlığı, çevre ve doğal hayat koruma birimiyle birlikte yapılan saha kontrollerinde kaçak yapıların tespiti ve yasal süreçlere uygun kaldırılması için çalışmalar yürütüyor.",
+      "Bu gelişmeler, bölgedeki afet risk yönetiminin ne kadar kritik olduğunu bir kez daha gözler önüne serdi. Yetkililerin denetim çağrısı, benzer yapıların gelecekteki riskini azaltmayı hedefliyor."
     ],
-    "comment": "Bu olay, ani sağanakların altyapı ve yerleşim planlaması üzerindeki etkisini bir kez daha gösteriyor. Mahsurluk ve yol kapanmaları, özellikle günlük ulaşım ve acil hizmetlerin aksamasına neden olurken, kaçak yapıların su altında kalması can kaybı riskini artırıyor. Yetkililerin denetim ve önleyici tedbirleri hızlandırması, benzer afetlerin etkisini azaltmak için kritik.",
+    "comment": "Bu olay, Şiddetli yağışların altyapı ve güvenlik üzerindeki doğrudan etkisini gözler önüne seriyor. Mahsur kalan sürücüler ve ev sakinlerinin tahliyesi, kurtarma ekiplerinin koordinasyonunun önemini vurguluyor. Aynı zamanda, Sapanca’da meydana gelen taşkınlar, kontrolsüz yapılaşmanın afet riskini nasıl artırdığını gösteriyor. Bölgedeki belediyeler ve ilgili kurumlar, bu tür olayları önlemek için denetim ve düzenlemeleri güçlendirmeli.",
     "tags": [
-      "Sağanak",
-      "Yol Kapama",
       "Sakarya",
-      "Jandarma",
-      "Kaçak Bina"
+      "Sağanak",
+      "Afet",
+      "Yol Kapanışı",
+      "Kısak",
+      "Bungalov"
     ],
     "category": "Gündem",
     "source": "CNN Türk",
     "sourceUrl": "https://www.cnnturk.com/yerel-haberler/sakarya/sakaryada-saganak-nedeniyle-bazi-yollar-ulasima-kapandi-3480009",
     "publishedAt": "2026-10-15T19:29:58.315Z",
-    "generatedAt": "2026-10-15T19:30:04.346Z"
+    "generatedAt": "2026-10-15T19:30:04.346Z",
+    "editorNote": "Şiddetli sağanak, Sakarya’da yolları kapattı ve 48 kişiyi tahliye etti. Kontrolsüz yapılaşma da su baskınlarıyla gündeme geldi.",
+    "refreshedAt": "2026-10-15T23:52:23.965Z"
   },
   {
     "id": "b68be519d5ec8bc0",
