@@ -42,9 +42,10 @@ Yanıt formatı (sadece JSON):
 {"title":"...","slug":"...","summary":"...","comment":"...","tags":["..."],"category":"..."}`;
 }
 
-// Bu çalıştırmada tükenen (kota/durum) adaylar
+// Bu çalıştırmada tükenen (günlük kota) adaylar
 const exhausted = new Set();
 const keyOf = (c) => `${c.provider}:${c.model}`;
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 function candidates() {
   const list = [];
@@ -61,40 +62,56 @@ function candidates() {
   return list;
 }
 
+function allExhaustedError(lastErr) {
+  const e = new Error(
+    `Tüm AI adayları bu çalıştırmada tükendi/başarısız: ${lastErr?.message || "bilinmeyen"}`
+  );
+  e.allExhausted = true;
+  return e;
+}
+
 export async function analyzeArticle(article) {
   const all = candidates();
   if (!all.length) throw new Error("Hiç API anahtarı yok (GEMINI_API_KEY / GROQ_API_KEY)");
 
   const available = all.filter((c) => !exhausted.has(keyOf(c)));
-  if (!available.length) {
-    const e = new Error("Tüm AI modelleri bu çalıştırmada tükendi.");
-    e.allExhausted = true;
-    throw e;
-  }
+  if (!available.length) throw allExhaustedError();
 
   let lastErr;
   for (const c of available) {
-    try {
-      const out = await callProvider(c, article);
-      return out;
-    } catch (err) {
-      lastErr = err;
-      if (err.kind === "quota" || err.kind === "missing") {
-        exhausted.add(keyOf(c));
-        console.warn(`    (${c.provider}/${c.model} atlandı: ${err.kind})`);
-        continue;
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try {
+        return await callProvider(c, article);
+      } catch (err) {
+        lastErr = err;
+
+        // Günlük kota / model yok -> bu adayı bırak, sıradakine geç
+        if (err.kind === "quota" || err.kind === "missing") {
+          exhausted.add(keyOf(c));
+          console.warn(`    (${c.provider}/${c.model}: ${err.kind} -> sıradaki)`);
+          break;
+        }
+
+        // Dakikalık limit -> bekle ve AYNI adayı tekrar dene
+        if (err.kind === "ratelimit") {
+          const wait = Math.min(Math.max(err.wait || 20, 5), 70);
+          console.warn(`    (${c.provider}/${c.model}: dakikasal limit, ${wait}s bekleniyor)`);
+          await sleep(wait * 1000);
+          continue;
+        }
+
+        // Geçici sunucu hatası -> kısa bekle, tekrar dene
+        if (err.kind === "transient") {
+          await sleep(3000);
+          continue;
+        }
+
+        throw err;
       }
-      if (err.kind === "transient") {
-        console.warn(`    (${c.provider}/${c.model} geçici hata, sıradakine geçiliyor)`);
-        continue;
-      }
-      throw err;
     }
   }
 
-  const e = new Error(`Tüm AI adayları başarısız: ${lastErr?.message || "bilinmeyen"}`);
-  e.allExhausted = true;
-  throw e;
+  throw allExhaustedError(lastErr);
 }
 
 async function callProvider(c, article) {
@@ -117,7 +134,7 @@ async function geminiCall(c, article) {
     }),
   });
 
-  if (!res.ok) throw classify(res.status, await res.text(), "Gemini");
+  if (!res.ok) throw classify(res.status, await res.text(), res.headers, "Gemini");
   const json = await res.json();
   const text = json?.candidates?.[0]?.content?.parts?.[0]?.text;
   if (!text) throw new Error("Gemini boş yanıt döndü");
@@ -143,7 +160,7 @@ async function groqCall(c, article) {
     }),
   });
 
-  if (!res.ok) throw classify(res.status, await res.text(), "Groq");
+  if (!res.ok) throw classify(res.status, await res.text(), res.headers, "Groq");
   const json = await res.json();
   const text = json?.choices?.[0]?.message?.content;
   if (!text) throw new Error("Groq boş yanıt döndü");
@@ -161,14 +178,26 @@ async function safeFetch(url, options) {
   }
 }
 
-/** HTTP hatasını sınıflar: quota | missing | transient | other */
-function classify(status, body, provider) {
-  const snippet = String(body).slice(0, 200);
-  const err = new Error(`${provider} HTTP ${status}: ${snippet}`);
-
+/** HTTP hatasını sınıflar: quota | ratelimit | missing | transient | other */
+function classify(status, body, headers, provider) {
+  const snippet = String(body).slice(0, 400);
   const lower = snippet.toLowerCase();
+  const err = new Error(`${provider} HTTP ${status}: ${snippet.slice(0, 180)}`);
+
+  let wait = 0;
+  const retryAfter = headers?.get?.("retry-after");
+  if (retryAfter && !isNaN(Number(retryAfter))) wait = Number(retryAfter);
+  if (!wait) {
+    const rd = /"retryDelay"\s*:\s*"(\d+(?:\.\d+)?)s"/.exec(snippet);
+    if (rd) wait = Number(rd[1]);
+  }
+  if (!wait) wait = parseHumanDelay(snippet);
+  err.wait = wait;
+
   if (status === 429 || lower.includes("quota") || lower.includes("resource_exhausted")) {
-    err.kind = "quota";
+    // Günlük kota mı yoksa dakikalık limit mi?
+    const daily = /per day/i.test(snippet) || wait > 120;
+    err.kind = daily ? "quota" : "ratelimit";
   } else if (status === 404 || (status === 400 && lower.includes("model"))) {
     err.kind = "missing";
   } else if (status >= 500 || status === 408) {
@@ -179,11 +208,17 @@ function classify(status, body, provider) {
   return err;
 }
 
+/** "retry in 7h44m24.9s" veya "Please retry in 20s" -> saniye */
+function parseHumanDelay(text) {
+  const m = /retry in\s*(?:(\d+)h)?\s*(?:(\d+)m)?\s*(?:([\d.]+)s)?/i.exec(text);
+  if (!m || (!m[1] && !m[2] && !m[3])) return 0;
+  return Number(m[1] || 0) * 3600 + Number(m[2] || 0) * 60 + Number(m[3] || 0);
+}
+
 function parseJson(text) {
   try {
     return JSON.parse(text);
   } catch {
-    // Model bazen JSON'u ```json ... ``` içine alabilir
     const match = /\{[\s\S]*\}/.exec(text);
     if (match) return JSON.parse(match[0]);
     throw new Error("AI yanıtı JSON olarak çözümlenemedi");

@@ -55,15 +55,17 @@ export const config = {
   // İŞLEME AYARLARI
   // ------------------------------------------------------------------
   maxPerRun: Number(process.env.MAX_PER_RUN || 8), // bir çalıştırmada AI'a giden maksimum haber
+  maxPerSource: Number(process.env.MAX_PER_SOURCE || 3), // tek kaynaktan en fazla kaç haber (çeşitlilik)
   maxAgeHours: Number(process.env.MAX_AGE_HOURS || 48), // bundan eski haberleri atla
   minContentLength: 40, // çok kısa/kirli içerikleri atla
+  aiDelayMs: Number(process.env.AI_DELAY_MS || 4000), // AI istekleri arası bekleme (dakikalık token limiti için)
 
   // ------------------------------------------------------------------
   // AI SAĞLAYICILAR (sırayla denenir). Anahtarı olan sağlayıcı kullanılır.
   // ------------------------------------------------------------------
   ai: {
     // Groq: ücretsiz katmanı cömert ve hızlı (GROQ_API_KEY gerekir)
-    groqModels: (process.env.GROQ_MODELS || "llama-3.3-70b-versatile,llama-3.1-8b-instant")
+    groqModels: (process.env.GROQ_MODELS || "openai/gpt-oss-120b,openai/gpt-oss-20b")
       .split(",")
       .map((s) => s.trim())
       .filter(Boolean),

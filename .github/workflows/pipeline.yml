@@ -2,8 +2,13 @@ name: Haber Hattı
 
 on:
   schedule:
-    - cron: "*/30 * * * *" # her 30 dakikada bir
+    - cron: "*/5 * * * *" # her 5 dakikada bir (GitHub bazen birkaç dk geciktirebilir)
   workflow_dispatch: {} # elle çalıştırma
+
+# Aynı anda iki çalıştırma olmasın (git çakışmasını önler)
+concurrency:
+  group: haber-hatti
+  cancel-in-progress: false
 
 jobs:
   collect:
@@ -35,5 +40,6 @@ jobs:
             echo "Yeni haber yok."
           else
             git commit -m "chore: yeni haberler ($(date -u +%Y-%m-%dT%H:%MZ))"
+            git pull --rebase
             git push
           fi

@@ -4,6 +4,7 @@ import { analyzeArticle } from "./ai.js";
 import { loadArticles, saveArticles, existingIds, makeId } from "./store.js";
 
 const DRY = process.argv.includes("--dry");
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function main() {
   const hasKey = process.env.GEMINI_API_KEY || process.env.GROQ_API_KEY;
@@ -28,7 +29,18 @@ async function main() {
   });
 
   fresh.sort((a, b) => (b.publishedAt || "").localeCompare(a.publishedAt || ""));
-  const queue = fresh.slice(0, config.maxPerRun);
+
+  // Kaynak çeşitliliği: tek bir kaynak listeyi doldurmasın
+  const perSource = new Map();
+  const queue = [];
+  for (const it of fresh) {
+    if (queue.length >= config.maxPerRun) break;
+    const used = perSource.get(it.source) || 0;
+    if (used >= config.maxPerSource) continue;
+    perSource.set(it.source, used + 1);
+    queue.push(it);
+  }
+
   console.log(`İşlenecek yeni haber: ${queue.length} (uygun aday: ${fresh.length})`);
 
   if (DRY) {
@@ -65,6 +77,9 @@ async function main() {
         break;
       }
     }
+
+    // Dakikalık token limitini aşmamak için istekler arası nazik bekleme
+    if (i < queue.length - 1) await sleep(config.aiDelayMs);
   }
 
   articles.sort((a, b) =>
