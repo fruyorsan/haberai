@@ -103,6 +103,13 @@ export const config = {
   dupeThreshold: Number(process.env.DUPE_THRESHOLD || 0.65),
   dupeWindowHours: Number(process.env.DUPE_WINDOW_HOURS || 48), // bu süre içindeki haberlere karşı kontrol edilir
 
+  // Her turda en az bir haber türü seçilsin: teknoloji/oyun siteleri dakikada
+  // onlarca haber yayınladığı için gündem/son dakika haberlerini eziyor.
+  newsCategories: (process.env.NEWS_CATEGORIES || "Gündem,Dünya,Ekonomi,Spor")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean),
+
   // ------------------------------------------------------------------
   // AI SAĞLAYICILAR (sırayla denenir). Anahtarı olan sağlayıcı kullanılır.
   // ------------------------------------------------------------------

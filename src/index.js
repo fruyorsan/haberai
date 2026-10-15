@@ -44,13 +44,13 @@ async function main() {
   const titleIndex = makeIndex(recentTitles);
   console.log(`Tekrar kontrolü: son ${config.dupeWindowHours} saatte ${titleIndex.length} başlık`);
 
+  // 1) Tekrar ve kaynak filtrelerinden geçen adaylar (tazelik sırası korunur)
+  const HAVUZ = Math.max(config.maxPerRun * 12, 24);
   const perSource = new Map();
-  const queue = [];
+  const eligible = [];
   let dupeCount = 0;
   for (const it of fresh) {
-    if (queue.length >= config.maxPerRun) break;
-    const used = perSource.get(it.source) || 0;
-    if (used >= config.maxPerSource) continue;
+    if (eligible.length >= HAVUZ) break;
 
     // Aynı haber başka bir kaynakta zaten var mı?
     const twin = findSimilar(it.title, titleIndex, config.dupeThreshold);
@@ -60,9 +60,24 @@ async function main() {
       continue;
     }
 
+    const used = perSource.get(it.source) || 0;
+    if (used >= config.maxPerSource) continue;
+
     perSource.set(it.source, used + 1);
-    queue.push(it);
+    eligible.push(it);
     titleIndex.push(...makeIndex([it.title])); // bu turda seçilenler de tekrar sayılsın
+  }
+
+  // 2) Denge: tur tamamen teknoloji/oyun haberlerinden oluşmasın,
+  //    en az bir gündem/ekonomi/spor/dünya haberi girsin (son dakika öne çıksın).
+  const queue = eligible.slice(0, config.maxPerRun);
+  const isNews = (it) => config.newsCategories.includes(it.feedCategory);
+  if (queue.length > 1 && !queue.some(isNews)) {
+    const alt = eligible.find((it) => isNews(it) && !queue.includes(it));
+    if (alt) {
+      queue[queue.length - 1] = alt;
+      console.log(`  ⚖ denge: son sıraya "${alt.feedCategory}" haberi alındı`);
+    }
   }
 
   console.log(`İşlenecek yeni haber: ${queue.length} (uygun aday: ${fresh.length}, tekrar atlanan: ${dupeCount})`);
