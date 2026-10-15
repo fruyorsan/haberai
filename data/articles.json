@@ -34,6 +34,72 @@
     "refreshedAt": "2026-10-15T18:22:19.796Z"
   },
   {
+    "id": "727919c6932742b1",
+    "title": "Yerel Yapay Zeka Çalıştırmak İçin En Uygun VRAM Kapasiteli Bilgisayarlar",
+    "slug": "yerel-yapay-zeka-calistirmak-icin-en-uygun-vram-kapasili-bilgisayarlar",
+    "summary": "Yapay zeka modellerini internetsiz şekilde çalıştırmak isteyen kullanıcılar için işlemciden ziyade ekran kartı belleği (VRAM) öncelikli. 16 GB VRAM, gpt‑oss‑20B ve Gemma 4 12B gibi modelleri rahatça çalıştırırken, 24 GB VRAM 27‑32 milyar parametreli modelleri destekliyor. 64 GB ve üzeri birleşik bellek ise 70 milyar parametre üstü modelleri çalıştırmak için gerekli. Kaynaklar, Casper Excalibur, Dell, MSI ve Mac Studio gibi sistemlerin Ekim 2026 Türkiye fiyatlarını da içeriyor.",
+    "keyPoints": [
+      "16 GB VRAM 20B‑30B modelleri için yeterli",
+      "24 GB VRAM 27‑32 B parametreli modelleri çalıştırabilir",
+      "64 GB+ birleşik bellek 70 B+ modelleri hedefliyor"
+    ],
+    "body": [
+      "Yapay zekâ uygulamalarının yerel ortamda çalıştırılması, özellikle internet erişiminin sınırlı olduğu senaryolarda giderek daha fazla önem kazanıyor. Bu bağlamda, model performansını belirleyen en kritik donanım unsuru işlemci değil, ekran kartının belleği (VRAM) olarak öne çıkıyor. Kullanıcıların ihtiyaç duyduğu bellek miktarı, çalıştırılacak modelin parametre sayısına ve kullanılan sıkıştırma (quantization) seviyesine bağlı olarak değişiyor.",
+      "16 GB VRAM, gpt‑oss‑20B ve Gemma 4 12B gibi 12‑20 milyar parametreli modelleri tam anlamıyla ekran kartında tutarak hızlı ve sorunsuz bir deneyim sunuyor. 24 GB VRAM ise 27‑32 milyar parametreli daha büyük modellerin çalıştırılmasına imkan tanıyor; bu seviyede KV cache gibi ek bellek ihtiyaçları da göz önünde bulundurulmalı. En üst seviyede, 64 GB ve üzeri birleşik bellek, 70 milyar parametreyi aşan modelleri yerelde çalıştırmak isteyen profesyoneller için gerekli altyapıyı sağlıyor.",
+      "Model boyutları arttıkça bellek ihtiyacı da katlanarak yükseliyor. Sıkıştırılmış Q4 formatı, parametre başına yaklaşık 0,60 bayt kullanırken, sıkıştırılmamış BF16 sürümü iki bayt civarında bir tüketim gösteriyor. Bu da aynı modelin Q4 sürümünün üç katından daha az VRAM kapladığı anlamına geliyor. Uzun bağlamlı metinlerde ise KV cache, token sayısına göre 4,3 GB‑17,2 GB arasında ek bellek tüketebiliyor; bu da toplam bellek ihtiyacının hesaplanmasında kritik bir faktör oluyor.",
+      "Piyasada öne çıkan sistemler arasında Casper Excalibur’un yüksek yapılandırılabilirliği dikkat çekiyor. En üst konfigürasyonda Core Ultra 9 285K işlemci, RTX 5070 Ti 16 GB VRAM, 64 GB DDR5 RAM ve 2 TB SSD bulunuyor; bu donanım 16 GB VRAM ile 20B‑12B modelleri sorunsuz çalıştırabiliyor. Dell ve MSI gibi markaların benzer yapılandırmaları ise Akakçe üzerinden Ekim 2026 fiyatlarıyla takip edilebiliyor. Mac Studio ise Apple’ın kendi GPU bellek kapasitesiyle farklı bir seçenek sunuyor.",
+      "VRAM’in sınırlı olduğu durumlarda modelin bazı katmanları sistem RAM’ine taşınabiliyor, ancak bu geçiş performansı belirgin şekilde düşürüyor. Bu nedenle, satın alım kararlarında en az 1 GB boş VRAM bırakacak bir konfigürasyon seçmek tavsiye ediliyor. Kullanıcılar, uzun PDF dosyaları gibi yüksek bağlam gerektiren işler yapacaklarsa, ek bellek ihtiyaçlarını da göz önünde bulundurarak sistemlerini planlamalı."
+    ],
+    "comment": "Yerel yapay zeka çalıştırma ihtiyacı, veri gizliliği ve düşük gecikme gerektiren uygulamalarda kritik bir rol oynuyor. Yüksek VRAM kapasiteli sistemler, araştırmacıların ve geliştiricilerin büyük modelleri internet bağlantısı olmadan test etmelerini sağlarken, aynı zamanda maliyet ve enerji verimliliği açısından da yeni denge noktaları oluşturuyor. Önümüzdeki dönemde, GPU üreticilerinin VRAM artırımı ve daha etkili sıkıştırma teknikleri geliştirmesi, yerel AI ekosisteminin genişlemesine öncülük edebilir.",
+    "editorNote": "Yüksek VRAM’e sahip bir bilgisayar, büyük yapay zeka modellerini internet olmadan da sorunsuz çalıştırmanızı sağlıyor; doğru konfigürasyon seçiminde bütçe ve performans dengesini…",
+    "tags": [
+      "VRAM",
+      "Yapay Zeka",
+      "Yerel Çalıştırma",
+      "Donanım",
+      "GPU"
+    ],
+    "category": "Donanım",
+    "source": "Tamindir",
+    "sourceUrl": "https://www.tamindir.com/blog/yapay-zeka-modellerini-internetsiz-calistiran-bilgisayarlar_112292/",
+    "image": "https://img.tamindir.com/2026/10/476765/yapay-zeka-modellerini-internetsiz-calistiran-bilgisayarlar.jpg",
+    "publishedAt": "2026-10-15T19:58:35.863Z",
+    "generatedAt": "2026-10-15T19:58:39.809Z"
+  },
+  {
+    "id": "22144489b47791d4",
+    "title": "ABD, İran'a Yönelik Yeni Finansal Yaptırımlarını Açıkladı",
+    "slug": "abd-iran-yeni-finansal-yaptirimlar",
+    "summary": "ABD Hazine Bakanlığı, İran'ın uluslararası finans sistemine erişimini sınırlamak amacıyla 16 kişi ve 10 kuruluşu yeni yaptırım listesine ekledi. Karar, Irak ve Küba merkezli bazı bankaları da kapsıyor. Washington, İran'ın petrol gelirlerini dolar üzerinden aktarmak için kullandığı finansal ağları hedef alıyor. Yeni yaptırımlar, İran'ın gölge bankacılık faaliyetlerine de baskı oluşturacak.",
+    "keyPoints": [
+      "16 kişi ve 10 kuruluş yaptırım listesine alındı",
+      "Irak merkezli IDB ve Küba merkezli BICSA da hedefte",
+      "FinCEN, İran'ın dini yardım ağlarına yönelik şüpheli işlemleri raporlamayı istedi"
+    ],
+    "body": [
+      "ABD Hazine Bakanlığı, İran'ın küresel finansal sistemle bağlantılarını kırmak için \"Ekonomik Dışlama Operasyonu\" kapsamında yeni bir yaptırım paketi duyurdu. Pakette, İran ile ilişkili olduğu tespit edilen 16 kişi ve 10 kuruluşun isimleri listelendi ve bu aktörlerin uluslararası para akışına erişimi sınırlandırılacak. Karar, ABD'nin İran’a yönelik ekonomik baskı stratejisinin son aşaması olarak değerlendiriliyor.",
+      "Yaptırımların kapsamı sadece İran içindeki aktörlerle sınırlı kalmadı. Irak merkezli International Development Bank for Investment and Finance (IDB) ve Küba merkezli Banco Internacional de Comercio S.A. (BICSA) da yeni yaptırım listesine alındı. Yetkililer, bu bankaların İran'a finansal aracılık hizmeti sunduğunu ve dolayısıyla ABD dolarına erişim sağladığını belirtti. Böylece, İran'ın petrol gelirlerini dolar üzerinden ülkeye aktarması zorlaştırılacak.",
+      "ABD yetkilileri, İran'ın mevcut yaptırımları aşmak için çeşitli gölge bankacılık ağlarından yararlandığını ve bu ağların farklı ülkelerde faaliyet gösterdiğini vurguladı. Yeni kararlarla, bu finansal köprülerin kesilmesi ve İran'ın uluslararası para transferlerini gerçekleştirme kapasitesinin azaltılması hedefleniyor. Hükümet, bu adımın İran’ın enerji gelirlerine doğrudan etkisi olacağını ifade etti.",
+      "Finansal Suçları Önleme Ağı (FinCEN), yeni yaptırım kararlarıyla paralel olarak, finans kuruluşlarından İran yönetiminin dini yardım ağlarını kötüye kullanma ihtimaline karşı şüpheli işlemleri raporlamalarını istedi. Bu uyarı, finans sektörü içinde İran ile ilişkilendirilebilecek riskli hareketlerin daha yakından izlenmesini amaçlıyor. FinCEN, raporlamaların zamanında ve eksiksiz yapılmasının önemine dikkat çekti.",
+      "Yeni yaptırımların etkileri önümüzdeki haftalarda ve aylarda daha net ortaya çıkacak. İran’ın finansal sistemdeki boşlukları doldurmak için kullandığı alternatif yolların ne ölçüde kısıtlanabileceği, bölgesel bankaların ve uluslararası finans piyasalarının tepkisine bağlı olacak. Uzmanlar, bu adımın İran’ın dış borçlanma maliyetlerini artırabileceğini ve bölgedeki ekonomik dengeleri yeniden şekillendirebileceğini belirtiyor."
+    ],
+    "comment": "Bu yaptırımlar, İran'ın uluslararası finansal ağlara erişimini ciddi ölçüde sınırlayarak ekonomik baskıyı artırmayı amaçlıyor. İran'daki finans kurumları ve petrol gelirlerine bağımlı sektörler doğrudan etkilenirken, ABD'nin müttefik ülkelerindeki bankalar da operasyonel risklerle karşılaşabilir. Önümüzdeki dönemde İran'ın alternatif ödeme sistemlerine yönelme çabaları ve bölgesel finansal istikrar üzerindeki yansımalar yakından izlenmeli.",
+    "editorNote": "ABD'nin yeni yaptırım paketi, İran'ın finansal bağlantılarını kesmeyi hedefliyor; bu, bölgesel ekonomik dengeleri nasıl sarsacak?",
+    "tags": [
+      "ABD",
+      "İran",
+      "yaptırımlar",
+      "finans",
+      "ekonomi"
+    ],
+    "category": "Gündem",
+    "source": "CNN Türk",
+    "sourceUrl": "https://www.cnnturk.com/dunya/abdden-irana-yeni-yaptirim-karari-16-kisi-ve-10-kurulus-listeye-alindi-3480022",
+    "image": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad12b28fe46d577dbb92867.jpg",
+    "publishedAt": "2026-10-15T19:58:30.805Z",
+    "generatedAt": "2026-10-15T19:58:48.681Z"
+  },
+  {
     "id": "0ab36acf6850d7c6",
     "title": "Üsküdar Belediye Başkanvekili Dündar Ziya Gültekin Trafik Kazasında Hayatını Kaybetti",
     "slug": "uskudar-belediye-baskanvekili-dundar-ziya-gultekin-trafik-kazasi",
