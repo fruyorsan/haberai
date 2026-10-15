@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-15T17:36:18.801Z",
+  "updatedAt": "2026-10-15T17:57:18.278Z",
   "items": [
     {
       "label": "BIST 30",
@@ -11,66 +11,66 @@
     },
     {
       "label": "S&P 500",
-      "value": 7735.42,
+      "value": 7740.11,
       "prev": 7765.36,
-      "change": -29.9399999999996,
-      "changePct": -0.385558428714182,
+      "change": -25.25,
+      "changePct": -0.3251620015041157,
       "decimals": 2
     },
     {
       "label": "Nasdaq",
-      "value": 26653.805,
+      "value": 26666.564,
       "prev": 27193.34,
-      "change": -539.5349999999999,
-      "changePct": -1.984070364287726,
+      "change": -526.7760000000017,
+      "changePct": -1.9371507876561014,
       "decimals": 2
     },
     {
       "label": "Dow Jones",
-      "value": 52130.46,
+      "value": 52162.09,
       "prev": 51231.64,
-      "change": 898.8199999999997,
-      "changePct": 1.7544236335202226,
+      "change": 930.4499999999971,
+      "changePct": 1.816162824379616,
       "decimals": 2
     },
     {
       "label": "Dolar/TL",
-      "value": 49.4132,
+      "value": 49.4134,
       "prev": 49.3184,
-      "change": 0.09480000000000643,
-      "changePct": 0.19222034778096297,
+      "change": 0.09500000000000597,
+      "changePct": 0.19262587594083744,
       "decimals": 4
     },
     {
       "label": "Euro/TL",
-      "value": 55.5448,
+      "value": 55.5554,
       "prev": 55.3236,
-      "change": 0.22120000000000317,
-      "changePct": 0.399829367575507,
+      "change": 0.23179999999999978,
+      "changePct": 0.41898936439421836,
       "decimals": 4
     },
     {
       "label": "Ons Altın",
-      "value": 4170.8,
+      "value": 4175.1,
       "prev": 4190.6,
-      "change": -19.800000000000182,
-      "changePct": -0.4724860401851806,
+      "change": -15.5,
+      "changePct": -0.3698754354984966,
       "decimals": 2
     },
     {
       "label": "Brent",
-      "value": 105.92,
+      "value": 105.84,
       "prev": 106.65,
-      "change": -0.730000000000004,
-      "changePct": -0.6844819503047388,
+      "change": -0.8100000000000023,
+      "changePct": -0.759493670886078,
       "decimals": 2
     },
     {
       "label": "Gram Altın",
-      "value": 6626.030134354628,
+      "value": 6632.888267333509,
       "prev": 6644.713334426973,
-      "change": -18.683200072345244,
-      "changePct": -0.28117390671386194,
+      "change": -11.825067093463986,
+      "changePct": -0.17796203535519048,
       "decimals": 2
     }
   ]
