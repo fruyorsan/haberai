@@ -1,0 +1,828 @@
+---
+import { getArticles, timeAgo, publishedISO } from "../lib/articles.js";
+
+// Ana sayfa vitrini: "Öne çıkan haberler" slaytı.
+// - Otomatik geçiş (6 sn) + ilerleme çubuğu; ok, nokta, sürükleme ve klavye ile tam kontrol.
+// - Her slaytta imza bloğu: "MANŞET NOTU" (editorNote; yoksa comment'in ilk cümlesi).
+// - Kenarlarda komşu slaytlar görünür (peek); gizli slaytlar aria-hidden + tabindex=-1.
+const POOL = 6;
+const AUTOPLAY_MS = 6000;
+
+const pool = getArticles().slice(0, POOL);
+
+// Not: kaynak sitelerin görselleri telif nedeniyle kullanılmaz; slaytlar
+// HaberAI'nın kendi kategori renkleriyle (markalı yer tutucu) gösterilir.
+const slides = pool;
+
+/** Metnin ilk cümlesi ("Manşet Notu" geri dönüşü). */
+function firstSentence(text) {
+  const s = String(text || "").replace(/\s+/g, " ").trim();
+  if (!s) return "";
+  const head = s.match(/^.*?[.!?…](?=\s|$)/);
+  return (head ? head[0] : s).trim();
+}
+
+/** editorNote → yoksa comment'in ilk cümlesi; çok uzunsa kısaltılır. */
+function headlineNote(a) {
+  let note = String(a.editorNote || "").trim() || firstSentence(a.comment);
+  if (note.length > 200) note = `${note.slice(0, 197).replace(/\s+\S*$/, "")}…`;
+  return note;
+}
+
+const items = slides.map((a) => {
+  const words = `${a.summary || ""} ${a.comment || ""}`.split(/\s+/).filter(Boolean).length;
+  return {
+    url: a.url,
+    title: a.title,
+    category: a.category,
+    summary: a.summary,
+    source: a.source,
+    when: timeAgo(publishedISO(a)),
+    readMin: Math.max(1, Math.round(words / 200)),
+    note: headlineNote(a),
+  };
+});
+---
+
+{
+  items.length > 0 && (
+    <section
+      class="fs"
+      data-slider
+      data-interval={AUTOPLAY_MS}
+      role="region"
+      aria-roledescription="karusel"
+      aria-label="Öne çıkan haberler"
+    >
+      <div class="fs__stage">
+        <div class="fs__viewport" data-viewport aria-live="polite">
+          <div class="fs__track" data-track>
+            {items.map((a, i) => (
+              <article
+                class="fs__slide"
+                data-slide
+                data-index={i}
+                aria-roledescription="slayt"
+                aria-label={`${i + 1} / ${items.length}: ${a.title}`}
+                aria-hidden={i === 0 ? "false" : "true"}
+              >
+                <div class="fs__card">
+                  <a class="fs__link" href={a.url} tabindex={i === 0 ? 0 : -1} draggable="false">
+                    <div class="fs__media">
+                      <div class="fs__ph" aria-hidden="true">
+                        <span class="fs__ph-mark">H</span>
+                        <span class="fs__ph-cat">{a.category}</span>
+                      </div>
+                      <span class="fs__badge">{a.category}</span>
+                    </div>
+
+                    <div class="fs__body">
+                      <h3 class="fs__title">{a.title}</h3>
+                      {a.summary && <p class="fs__summary">{a.summary}</p>}
+
+                      {a.note && (
+                        <blockquote class="fs__note">
+                          <span class="fs__note-label">MANŞET NOTU</span>
+                          <p class="fs__note-text">{a.note}</p>
+                        </blockquote>
+                      )}
+
+                      <div class="fs__meta">
+                        {a.source && <span class="fs__source">{a.source}</span>}
+                        {a.when && <span class="fs__sep" aria-hidden="true">•</span>}
+                        {a.when && <span>{a.when}</span>}
+                        <span class="fs__sep" aria-hidden="true">•</span>
+                        <span>{a.readMin} dk okuma</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <button class="fs__arrow fs__arrow--prev" type="button" data-prev aria-label="Önceki haber">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m15 18-6-6 6-6" />
+          </svg>
+        </button>
+        <button class="fs__arrow fs__arrow--next" type="button" data-next aria-label="Sonraki haber">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m9 6 6 6-6 6" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="fs__controls">
+        <div class="fs__dots" role="group" aria-label="Slayt seçimi">
+          {items.map((a, i) => (
+            <button
+              class:list={["fs__dot", i === 0 && "is-active"]}
+              type="button"
+              data-dot
+              data-index={i}
+              aria-label={`${i + 1}. slayt: ${a.title}`}
+              aria-current={i === 0 ? "true" : "false"}
+            />
+          ))}
+        </div>
+
+        <button class="fs__play" type="button" data-play aria-label="Otomatik geçişi duraklat" aria-pressed="true">
+          <svg class="fs__icon-pause" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
+            <rect x="6.6" y="4.5" width="3.7" height="15" rx="1.4" fill="currentColor" />
+            <rect x="13.7" y="4.5" width="3.7" height="15" rx="1.4" fill="currentColor" />
+          </svg>
+          <svg class="fs__icon-play" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
+            <path d="M7.5 5.2v13.6c0 .8.9 1.3 1.6.9l10.4-6.8c.6-.4.6-1.3 0-1.7L9.1 4.3c-.7-.4-1.6.1-1.6.9Z" fill="currentColor" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="fs__bar" aria-hidden="true">
+        <span class="fs__bar-fill" data-bar />
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .fs {
+    --fs-peek: 54px;
+    --fs-gap: 20px;
+    position: relative;
+    margin: 22px 0 8px;
+  }
+
+  .fs__stage {
+    position: relative;
+  }
+
+  .fs__viewport {
+    overflow: hidden;
+    border-radius: calc(var(--radius) + 4px);
+    touch-action: pan-y;
+    cursor: grab;
+  }
+  .fs.is-dragging .fs__viewport {
+    cursor: grabbing;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Peek düzeni: iz, ilk slaytı --fs-peek kadar içeriden başlatır;
+     JS transform'u piksel olarak günceller, JS yoksa da komşu görünür kalır. */
+  .fs__track {
+    display: flex;
+    align-items: stretch;
+    gap: var(--fs-gap);
+    transition: transform 0.6s var(--ease);
+    transform: translate3d(var(--fs-peek), 0, 0);
+  }
+  .fs.is-dragging .fs__track,
+  .fs__track.is-instant {
+    transition: none;
+  }
+
+  .fs__slide {
+    flex: 0 0 auto;
+    width: calc(100% - 2 * var(--fs-peek));
+  }
+
+  .fs__card {
+    height: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) + 4px);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: opacity 0.45s var(--ease), transform 0.45s var(--ease),
+      box-shadow 0.45s var(--ease);
+  }
+  .fs__slide[aria-hidden="false"] .fs__card {
+    box-shadow: var(--shadow);
+  }
+  .fs__slide[aria-hidden="true"] .fs__card {
+    opacity: 0.45;
+    transform: scale(0.965);
+    box-shadow: none;
+  }
+
+  .fs__link {
+    display: grid;
+    grid-template-columns: 1.18fr 1fr;
+    height: 100%;
+    outline: none;
+  }
+  .fs__link:focus-visible {
+    outline: 3px solid var(--brand);
+    outline-offset: -3px;
+    border-radius: inherit;
+  }
+
+  .fs__media {
+    position: relative;
+    overflow: hidden;
+    min-height: 320px;
+    background: var(--bg-soft);
+  }
+  .fs__media img {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.65s var(--ease), opacity 0.3s linear;
+  }
+  .fs__media img.is-broken {
+    opacity: 0;
+  }
+  .fs__slide[aria-hidden="false"] .fs__link:hover .fs__media img {
+    transform: scale(1.045);
+  }
+
+  .fs__ph {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--brand-grad);
+    color: #fff;
+  }
+  .fs__ph-mark {
+    font-size: 3.4rem;
+    font-weight: 900;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.3);
+  }
+  .fs__ph-cat {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  /* Kategori rozeti: tema jetonlu cam yüzey (koyu temada da okunur) */
+  .fs__badge {
+    position: absolute;
+    z-index: 2;
+    left: 14px;
+    top: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--heading);
+    background: color-mix(in srgb, var(--surface) 78%, transparent);
+    border: 1px solid color-mix(in srgb, var(--surface) 55%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .fs__badge::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--brand);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 28%, transparent);
+  }
+
+  .fs__body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+    padding: 22px 24px 20px;
+  }
+
+  .fs__title {
+    margin: 0;
+    font-size: clamp(1.22rem, 2.1vw, 1.66rem);
+    font-weight: 800;
+    line-height: 1.26;
+    letter-spacing: -0.02em;
+    color: var(--heading);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: color 0.2s var(--ease);
+  }
+  .fs__slide[aria-hidden="false"] .fs__link:hover .fs__title {
+    color: var(--brand);
+  }
+
+  .fs__summary {
+    margin: 0;
+    font-size: 0.94rem;
+    line-height: 1.6;
+    color: var(--muted);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* --- İmza bloğu: MANŞET NOTU (alıntı stili, kırmızı aksan, hafif cam yüzey) --- */
+  .fs__note {
+    position: relative;
+    margin: 2px 0;
+    padding: 12px 15px 12px 42px;
+    border-radius: 12px;
+    border: 1px solid color-mix(in srgb, var(--brand) 30%, var(--border));
+    border-left: 3px solid var(--brand);
+    background: color-mix(in srgb, var(--brand-soft) 62%, var(--surface));
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--surface) 55%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .fs__note::before {
+    content: "\201C";
+    position: absolute;
+    left: 12px;
+    top: 8px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.05rem;
+    line-height: 1;
+    font-weight: 700;
+    color: var(--brand);
+    opacity: 0.9;
+  }
+  .fs__note-label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 4px;
+    font-size: 0.63rem;
+    font-weight: 900;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+    color: var(--brand);
+  }
+  .fs__note-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: color-mix(in srgb, var(--brand) 34%, transparent);
+  }
+  .fs__note-text {
+    margin: 0;
+    font-size: 0.93rem;
+    font-style: italic;
+    line-height: 1.62;
+    color: var(--text-2);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .fs__meta {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 0.76rem;
+    color: var(--muted);
+  }
+  .fs__source {
+    font-weight: 700;
+    color: var(--text-2);
+  }
+  .fs__sep {
+    opacity: 0.6;
+  }
+
+  /* --- Oklar --- */
+  .fs__arrow {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--surface) 84%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--text);
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: background 0.2s var(--ease), border-color 0.2s var(--ease),
+      color 0.2s var(--ease), box-shadow 0.2s var(--ease), transform 0.2s var(--ease);
+  }
+  .fs__arrow--prev {
+    left: 6px;
+  }
+  .fs__arrow--next {
+    right: 6px;
+  }
+  .fs__arrow:hover {
+    background: var(--brand-fill);
+    border-color: var(--brand-fill);
+    color: #fff;
+    box-shadow: var(--shadow);
+  }
+  .fs__arrow:active {
+    transform: translateY(-50%) scale(0.93);
+  }
+  .fs__arrow:focus-visible,
+  .fs__dot:focus-visible,
+  .fs__play:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--brand) 45%, transparent);
+    outline-offset: 2px;
+  }
+
+  /* --- Noktalar + oynat/duraklat --- */
+  .fs__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 14px;
+  }
+  .fs__dots {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+  .fs__dot {
+    position: relative;
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: var(--border-strong);
+    cursor: pointer;
+    transition: width 0.3s var(--ease), background 0.3s var(--ease);
+  }
+  /* Küçük görsel ama rahat tıklama alanı */
+  .fs__dot::after {
+    content: "";
+    position: absolute;
+    inset: -7px -6px;
+    border-radius: 999px;
+  }
+  .fs__dot:hover {
+    background: var(--muted);
+  }
+  .fs__dot.is-active {
+    width: 26px;
+    background: var(--brand-grad);
+  }
+
+  .fs__play {
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    transition: background 0.2s var(--ease), border-color 0.2s var(--ease),
+      color 0.2s var(--ease);
+  }
+  .fs__play:hover {
+    background: var(--surface-2);
+    border-color: var(--border-strong);
+    color: var(--brand);
+  }
+  .fs__icon-play {
+    display: none;
+  }
+  .fs.is-paused .fs__icon-play {
+    display: block;
+  }
+  .fs.is-paused .fs__icon-pause {
+    display: none;
+  }
+
+  /* --- İnce ilerleme çubuğu --- */
+  .fs__bar {
+    height: 3px;
+    margin-top: 12px;
+    border-radius: 999px;
+    background: var(--surface-2);
+    overflow: hidden;
+  }
+  .fs__bar-fill {
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    background: var(--brand-grad);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+  }
+
+  /* Tek slayt: kontrol gerekmez */
+  .fs.is-single .fs__arrow,
+  .fs.is-single .fs__controls,
+  .fs.is-single .fs__bar {
+    display: none;
+  }
+
+  @media (max-width: 980px) {
+    .fs {
+      --fs-peek: 32px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .fs {
+      --fs-peek: 18px;
+      --fs-gap: 14px;
+    }
+    .fs__link {
+      grid-template-columns: 1fr;
+    }
+    .fs__media {
+      min-height: 0;
+      aspect-ratio: 16 / 10;
+    }
+    .fs__body {
+      padding: 16px 16px 14px;
+      gap: 8px;
+    }
+    .fs__title {
+      font-size: 1.16rem;
+    }
+    .fs__arrow {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  /* Hareket azaltma: geçiş animasyonu yok (otomatik geçişi JS hiç başlatmaz) */
+  @media (prefers-reduced-motion: reduce) {
+    .fs__track,
+    .fs__card,
+    .fs__media img {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const slider = document.querySelector("[data-slider]");
+  if (slider) {
+    const track = slider.querySelector("[data-track]");
+    const viewport = slider.querySelector("[data-viewport]");
+    const slides = Array.from(slider.querySelectorAll("[data-slide]"));
+    const dots = Array.from(slider.querySelectorAll("[data-dot]"));
+    const prevBtn = slider.querySelector("[data-prev]");
+    const nextBtn = slider.querySelector("[data-next]");
+    const playBtn = slider.querySelector("[data-play]");
+    const barFill = slider.querySelector("[data-bar]");
+
+    const count = slides.length;
+    const interval = Number(slider.dataset.interval) || 6000;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let index = 0;
+    let paused = count < 2 || reduceMotion; // tek slaytta veya hareket azaltmada otomatik geçiş kapalı
+    let hovered = false;
+    let dragging = false;
+    let dragInfo = null;
+    let suppressClick = false;
+    let elapsed = 0;
+    let lastTs = 0;
+    let rafId = 0;
+    let resizeTimer = 0;
+
+    if (count < 2) slider.classList.add("is-single");
+
+    const trackGap = () => {
+      const cs = getComputedStyle(track);
+      return parseFloat(cs.columnGap || cs.gap) || 0;
+    };
+    const slideW = () => slides[0].getBoundingClientRect().width;
+    const step = () => slideW() + trackGap();
+    const peek = () => Math.max(0, (viewport.clientWidth - slideW()) / 2);
+    const xFor = (i) => peek() - i * step();
+
+    function applyTransform(x, animate) {
+      if (!animate) track.classList.add("is-instant");
+      track.style.transform = `translate3d(${x}px, 0, 0)`;
+      if (!animate) {
+        void track.offsetWidth; // stil uygulanmadan sınıfı kaldırmayalım
+        track.classList.remove("is-instant");
+      }
+    }
+
+    function go(i, opts = {}) {
+      index = ((i % count) + count) % count;
+      slides.forEach((slide, k) => {
+        const on = k === index;
+        slide.setAttribute("aria-hidden", on ? "false" : "true");
+        const link = slide.querySelector("a");
+        if (link) link.tabIndex = on ? 0 : -1;
+      });
+      dots.forEach((dot, k) => {
+        const on = k === index;
+        dot.classList.toggle("is-active", on);
+        if (on) dot.setAttribute("aria-current", "true");
+        else dot.removeAttribute("aria-current");
+      });
+      applyTransform(xFor(index), opts.animate !== false);
+      elapsed = 0;
+      lastTs = 0;
+      if (barFill) barFill.style.transform = "scaleX(0)";
+      syncRunning();
+    }
+
+    const isStopped = () => paused || hovered || dragging || document.hidden;
+
+    function stopLoop() {
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = 0;
+      lastTs = 0;
+    }
+
+    function loop(ts) {
+      rafId = 0;
+      if (isStopped()) return;
+      if (!lastTs) {
+        lastTs = ts;
+        rafId = requestAnimationFrame(loop);
+        return;
+      }
+      const dt = Math.min(ts - lastTs, 250); // sekme geri gelince sıçrama olmasın
+      lastTs = ts;
+      elapsed += dt;
+      const p = Math.min(elapsed / interval, 1);
+      if (barFill) barFill.style.transform = `scaleX(${p})`;
+      if (p >= 1) {
+        go(index + 1); // go() ilerlemeyi sıfırlar ve döngüyü yeniden başlatır
+        return;
+      }
+      rafId = requestAnimationFrame(loop);
+    }
+
+    /*
+     * WAI karusel deseni: otomatik dönerken duyuru kanalı "off",
+     * kullanıcı etkileşimiyle durunca "polite" olur (statik hâlde polite kalır).
+     */
+    function syncLive() {
+      viewport.setAttribute("aria-live", isStopped() ? "polite" : "off");
+    }
+
+    function updatePlayState() {
+      if (!playBtn) return;
+      playBtn.setAttribute("aria-pressed", String(!paused));
+      playBtn.setAttribute("aria-label", paused ? "Otomatik geçişi başlat" : "Otomatik geçişi duraklat");
+      slider.classList.toggle("is-paused", paused);
+    }
+
+    function syncRunning() {
+      updatePlayState();
+      syncLive();
+      if (isStopped()) {
+        stopLoop();
+      } else if (!rafId) {
+        lastTs = 0;
+        rafId = requestAnimationFrame(loop);
+      }
+    }
+
+    // --- Ok, nokta, oynat/duraklat ---
+    prevBtn?.addEventListener("click", () => go(index - 1));
+    nextBtn?.addEventListener("click", () => go(index + 1));
+    dots.forEach((dot) => dot.addEventListener("click", () => go(Number(dot.dataset.index) || 0)));
+    playBtn?.addEventListener("click", () => {
+      if (count < 2) return;
+      paused = !paused;
+      syncRunning();
+    });
+
+    // --- Hover/odakta duraklat (dokunmada takılı kalmasın: yalnız fare) ---
+    slider.addEventListener("pointerenter", (e) => {
+      if (e.pointerType !== "mouse") return;
+      hovered = true;
+      syncRunning();
+    });
+    slider.addEventListener("pointerleave", (e) => {
+      if (e.pointerType !== "mouse") return;
+      hovered = false;
+      syncRunning();
+    });
+    slider.addEventListener("focusin", () => {
+      hovered = true;
+      syncRunning();
+    });
+    slider.addEventListener("focusout", (e) => {
+      if (!slider.contains(e.relatedTarget)) {
+        hovered = false;
+        syncRunning();
+      }
+    });
+    document.addEventListener("visibilitychange", syncRunning);
+
+    // --- Klavye: sol/sağ ok, Home/End (bölge içindeyken; tuzağı yok) ---
+    slider.addEventListener("keydown", (e) => {
+      if (e.altKey || e.ctrlKey || e.metaKey) return;
+      let target = null;
+      if (e.key === "ArrowLeft") target = index - 1;
+      else if (e.key === "ArrowRight") target = index + 1;
+      else if (e.key === "Home") target = 0;
+      else if (e.key === "End") target = count - 1;
+      if (target === null) return;
+      e.preventDefault();
+      go(target);
+    });
+
+    // --- Sürükleme / kaydırma (pointer events: fare + dokunmatik) ---
+    function onPointerDown(e) {
+      if (count < 2 || dragging) return;
+      if (e.pointerType === "mouse" && e.button !== 0) return;
+      suppressClick = false;
+      dragInfo = { id: e.pointerId, x: e.clientX, t: performance.now(), dx: 0, moved: false };
+      dragging = true;
+      slider.classList.add("is-dragging");
+      track.style.transform = `translate3d(${xFor(index)}px, 0, 0)`; // animasyonsuz başla
+      window.addEventListener("pointermove", onPointerMove, { passive: true });
+      window.addEventListener("pointerup", onPointerUp);
+      window.addEventListener("pointercancel", onPointerUp);
+      window.addEventListener("blur", onPointerUp);
+      syncRunning();
+    }
+
+    function onPointerMove(e) {
+      if (!dragInfo || e.pointerId !== dragInfo.id) return;
+      dragInfo.dx = e.clientX - dragInfo.x;
+      if (Math.abs(dragInfo.dx) > 6) dragInfo.moved = true;
+      let x = xFor(index) + dragInfo.dx;
+      const maxX = xFor(0);
+      const minX = xFor(count - 1);
+      if (x > maxX) x = maxX + (x - maxX) * 0.35; // uçlarda lastik bant
+      if (x < minX) x = minX + (x - minX) * 0.35;
+      track.style.transform = `translate3d(${x}px, 0, 0)`;
+    }
+
+    function onPointerUp(e) {
+      if (!dragInfo) return;
+      if (e && e.pointerId !== undefined && e.pointerId !== dragInfo.id) return;
+      const { dx, t, moved } = dragInfo;
+      dragInfo = null;
+      dragging = false;
+      slider.classList.remove("is-dragging");
+      window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("pointerup", onPointerUp);
+      window.removeEventListener("pointercancel", onPointerUp);
+      window.removeEventListener("blur", onPointerUp);
+
+      const dt = Math.max(performance.now() - t, 1);
+      const flick = Math.abs(dx) > 14 && Math.abs(dx) / dt > 0.55;
+      const passed = Math.abs(dx) > Math.min(step() * 0.18, 90);
+      const target = flick || passed ? index + (dx < 0 ? 1 : -1) : index;
+      suppressClick = moved; // sürükleme sonrası tıklama gezinmesin
+      go(target);
+    }
+
+    viewport.addEventListener("pointerdown", onPointerDown);
+
+    // Yarım görünen komşu slayta tıklayınca oraya geç; aktif slayt normal link gibi çalışır
+    slider.addEventListener("click", (e) => {
+      if (suppressClick) {
+        suppressClick = false;
+        e.preventDefault();
+        e.stopPropagation();
+        return;
+      }
+      const slide = e.target.closest("[data-slide]");
+      if (!slide) return;
+      const i = Number(slide.dataset.index);
+      if (!Number.isFinite(i) || i === index) return;
+      e.preventDefault();
+      go(i);
+    });
+
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(() => applyTransform(xFor(index), false), 120);
+    });
+
+    go(0, { animate: false });
+  }
+</script>
