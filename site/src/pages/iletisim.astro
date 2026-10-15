@@ -1,0 +1,26 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="İletişim — HaberAI" description="HaberAI ile iletişime geçin.">
+  <div class="container prose">
+    <h1>İletişim</h1>
+    <p>Görüş, öneri ve haber ihbarlarınız için bize ulaşabilirsiniz.</p>
+    <p><strong>E-posta:</strong> <a href="mailto:info@ornek.pages.dev">info@ornek.pages.dev</a></p>
+    <p class="muted">Bu sayfadaki bilgileri kendi iletişim bilgilerinle güncellemeyi unutma.</p>
+  </div>
+</Base>
+
+<style>
+  .prose {
+    max-width: 760px;
+    margin: 40px auto;
+  }
+  .prose h1 {
+    font-size: 2rem;
+  }
+  .prose a {
+    color: var(--red);
+    font-weight: 600;
+  }
+</style>

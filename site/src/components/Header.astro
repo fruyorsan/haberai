@@ -1,0 +1,176 @@
+---
+import { getArticles, timeAgo, siteName } from "../lib/articles.js";
+
+const nav = [
+  { label: "Ana Sayfa", href: "/" },
+  { label: "Teknoloji", href: "/kategori/teknoloji/" },
+  { label: "Yapay Zeka", href: "/kategori/yapay-zeka/" },
+  { label: "Mobil", href: "/kategori/mobil/" },
+  { label: "Oyun", href: "/kategori/oyun/" },
+  { label: "Donanım", href: "/kategori/donanim/" },
+  { label: "İnternet", href: "/kategori/internet/" },
+];
+
+const path = Astro.url.pathname;
+const latest = getArticles()[0];
+const today = new Date().toLocaleDateString("tr-TR", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+  weekday: "long",
+});
+const isActive = (href) =>
+  href === "/" ? path === "/" : path.startsWith(href.replace(/\/$/, ""));
+---
+
+<div class="topbar">
+  <div class="container topbar__inner">
+    <span class="topbar__date">{today}</span>
+    {latest && (
+      <a class="topbar__ticker" href={latest.url}>
+        <span class="topbar__tag">SON DAKİKA</span>
+        <span class="topbar__headline">{latest.title}</span>
+        <span class="topbar__time">{timeAgo(latest.publishedAt || latest.generatedAt)}</span>
+      </a>
+    )}
+  </div>
+</div>
+
+<header class="header">
+  <div class="container header__inner">
+    <a href="/" class="logo">
+      <span class="logo__mark">H</span>
+      <span class="logo__text">Haber<span class="logo__ai">AI</span></span>
+    </a>
+    <nav class="nav">
+      {nav.map((item) => (
+        <a href={item.href} class:list={["nav__link", { "nav__link--active": isActive(item.href) }]}>
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<style>
+  .topbar {
+    background: var(--red);
+    color: #fff;
+    font-size: 0.82rem;
+  }
+  .topbar__inner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 38px;
+  }
+  .topbar__date {
+    opacity: 0.9;
+    white-space: nowrap;
+  }
+  .topbar__ticker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    overflow: hidden;
+    margin-left: auto;
+  }
+  .topbar__tag {
+    background: rgba(0, 0, 0, 0.25);
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+  .topbar__headline {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 600;
+  }
+  .topbar__time {
+    opacity: 0.85;
+    white-space: nowrap;
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+  }
+  .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    height: 68px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 900;
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+  }
+  .logo__mark {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--red);
+    color: #fff;
+    font-size: 1.2rem;
+  }
+  .logo__ai {
+    color: var(--red);
+  }
+  .nav {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+  .nav__link {
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.93rem;
+    color: #303238;
+    transition: background 0.15s, color 0.15s;
+  }
+  .nav__link:hover {
+    background: var(--red-soft);
+    color: var(--red-dark);
+  }
+  .nav__link--active {
+    color: var(--red);
+  }
+
+  @media (max-width: 720px) {
+    .topbar__date,
+    .topbar__time {
+      display: none;
+    }
+    .header__inner {
+      height: auto;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      gap: 10px;
+    }
+    .nav {
+      gap: 0;
+      overflow-x: auto;
+      width: 100%;
+    }
+    .nav__link {
+      white-space: nowrap;
+    }
+  }
+</style>

@@ -1,0 +1,16 @@
+# Bağımlılıklar
+node_modules/
+
+# Astro çıktıları
+dist/
+.astro/
+
+# Ortam / sırlar
+.env
+.env.local
+.env.*.local
+
+# Günlükler ve diğer
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,102 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <div class="footer__logo"><span class="footer__mark">H</span> Haber<span class="footer__ai">AI</span></div>
+      <p class="footer__desc">
+        Yapay zekâ destekli haber özetleri ve editör yorumları.
+        İçerikler kaynak gösterilerek, özgün biçimde derlenir.
+      </p>
+    </div>
+    <div class="footer__col">
+      <h4>Kategoriler</h4>
+      <a href="/kategori/teknoloji/">Teknoloji</a>
+      <a href="/kategori/yapay-zeka/">Yapay Zeka</a>
+      <a href="/kategori/mobil/">Mobil</a>
+      <a href="/kategori/oyun/">Oyun</a>
+      <a href="/kategori/donanim/">Donanım</a>
+    </div>
+    <div class="footer__col">
+      <h4>Kurumsal</h4>
+      <a href="/hakkimizda/">Hakkımızda</a>
+      <a href="/iletisim/">İletişim</a>
+      <a href="/gizlilik/">Gizlilik</a>
+      <a href="/rss.xml">RSS</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container">© {year} HaberAI — Tüm hakları saklıdır.</div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    margin-top: 64px;
+    background: #14161a;
+    color: #c9ccd2;
+  }
+  .footer__inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    padding: 48px 20px 32px;
+  }
+  .footer__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  .footer__mark {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    background: var(--red);
+    color: #fff;
+  }
+  .footer__ai {
+    color: var(--red);
+  }
+  .footer__desc {
+    margin: 0;
+    max-width: 420px;
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+  .footer__col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer__col h4 {
+    color: #fff;
+    margin: 0 0 6px;
+    font-size: 0.95rem;
+  }
+  .footer__col a {
+    font-size: 0.9rem;
+    transition: color 0.15s;
+  }
+  .footer__col a:hover {
+    color: #fff;
+  }
+  .footer__bottom {
+    border-top: 1px solid #262a30;
+    padding: 16px 0;
+    font-size: 0.82rem;
+  }
+  @media (max-width: 720px) {
+    .footer__inner {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+  }
+</style>

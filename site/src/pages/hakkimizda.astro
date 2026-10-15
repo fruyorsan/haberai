@@ -1,0 +1,48 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="Hakkımızda — HaberAI" description="HaberAI nasıl çalışır?">
+  <div class="container prose">
+    <h1>Hakkımızda</h1>
+    <p>
+      <strong>HaberAI</strong>, Türkiye'nin önde gelen teknoloji ve haber kaynaklarını takip eden,
+      içeriklerini yapay zekâ ile özetleyip editör yorumuyla zenginleştiren bir haber platformudur.
+    </p>
+    <p>
+      Amacımız, günün haberlerini daha hızlı ve daha anlaşılır biçimde sunmak. Her haber,
+      kaynağına bağlantı verilerek ve özgün biçimde yeniden yazılarak yayınlanır.
+    </p>
+    <h2>Nasıl çalışır?</h2>
+    <ul>
+      <li>Kaynak sitelerin RSS akışları otomatik olarak taranır.</li>
+      <li>Yapay zekâ, haberi kendi sözcükleriyle özetler.</li>
+      <li>Platform, haberin neden önemli olduğuna dair bir analiz (AI Yorumu) ekler.</li>
+      <li>İçerik, kaynak bağlantısıyla birlikte yayınlanır.</li>
+    </ul>
+    <p class="muted">
+      HaberAI içerikleri otomatik üretilir ve bilgilendirme amaçlıdır. Orijinal içerikler ilgili
+      kaynak sitelere aittir.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .prose {
+    max-width: 760px;
+    margin: 40px auto;
+  }
+  .prose h1 {
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+  }
+  .prose h2 {
+    margin-top: 32px;
+    font-size: 1.3rem;
+  }
+  .prose p,
+  .prose li {
+    line-height: 1.75;
+    color: #2a2d34;
+  }
+</style>

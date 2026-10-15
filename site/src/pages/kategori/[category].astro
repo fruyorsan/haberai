@@ -1,0 +1,46 @@
+---
+import Base from "../../layouts/Base.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+import { getArticles, getCategories } from "../../lib/articles.js";
+
+export function getStaticPaths() {
+  return getCategories().map((category) => ({
+    params: { category: category.slug },
+    props: { category },
+  }));
+}
+
+const { category } = Astro.props;
+const articles = getArticles().filter((a) => a.categorySlug === category.slug);
+---
+
+<Base
+  title={`${category.name} Haberleri — HaberAI`}
+  description={`${category.name} kategorisindeki en güncel haberler, özetler ve yapay zekâ yorumları.`}
+>
+  <div class="container">
+    <header class="cat-head">
+      <span class="badge">{category.name}</span>
+      <h1>{category.name} Haberleri</h1>
+      <p class="muted">{articles.length} haber</p>
+    </header>
+
+    <div class="grid">
+      {articles.map((a) => <ArticleCard article={a} />)}
+    </div>
+  </div>
+</Base>
+
+<style>
+  .cat-head {
+    padding: 30px 0 6px;
+  }
+  .cat-head h1 {
+    font-size: 1.9rem;
+    margin: 12px 0 4px;
+    letter-spacing: -0.02em;
+  }
+  .cat-head .muted {
+    font-size: 0.9rem;
+  }
+</style>
