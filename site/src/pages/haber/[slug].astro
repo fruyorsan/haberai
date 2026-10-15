@@ -92,6 +92,35 @@ const jsonLd = {
       </div>
     </article>
 
+    <section
+      class="aiask"
+      id="aiask"
+      data-title={article.title}
+      data-summary={article.summary}
+      data-comment={article.comment}
+    >
+      <div class="aiask__head">
+        <span class="aiask__badge">AI'YA SOR</span>
+        <span class="aiask__sub">Bu haber hakkında merak ettiklerini sorabilirsin</span>
+      </div>
+      <div class="aiask__chips">
+        <button type="button" class="aiask__chip">Bu haber kısaca ne anlatıyor?</button>
+        <button type="button" class="aiask__chip">Bu gelişme kimleri etkiler?</button>
+        <button type="button" class="aiask__chip">Bunun olası sonuçları neler?</button>
+      </div>
+      <form class="aiask__form" id="aiask-form">
+        <input
+          id="aiask-input"
+          type="text"
+          placeholder="Sorunu buraya yaz..."
+          maxlength="400"
+          autocomplete="off"
+        />
+        <button type="submit">Sor</button>
+      </form>
+      <div class="aiask__answer" id="aiask-answer" hidden></div>
+    </section>
+
     {related.length > 0 && (
       <section>
         <h2 class="section-title">İlgili Haberler</h2>
@@ -101,6 +130,53 @@ const jsonLd = {
       </section>
     )}
   </div>
+
+  <script>
+    const box = document.getElementById("aiask");
+    if (box) {
+      const form = document.getElementById("aiask-form");
+      const input = document.getElementById("aiask-input");
+      const out = document.getElementById("aiask-answer");
+      const ctx = {
+        title: box.dataset.title || "",
+        summary: box.dataset.summary || "",
+        comment: box.dataset.comment || "",
+      };
+
+      async function ask(q) {
+        if (!q || q.trim().length < 3) return;
+        out.hidden = false;
+        out.classList.add("is-loading");
+        out.textContent = "AI düşünüyor...";
+        try {
+          const res = await fetch("/api/sor", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ ...ctx, question: q }),
+          });
+          const data = await res.json().catch(() => ({}));
+          out.textContent = data.answer || data.error || "Yanıt alınamadı.";
+        } catch {
+          out.textContent = "Bağlantı hatası. Lütfen tekrar dene.";
+        } finally {
+          out.classList.remove("is-loading");
+        }
+      }
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        ask(input.value);
+      });
+
+      document.querySelectorAll(".aiask__chip").forEach((chip) => {
+        chip.addEventListener("click", () => {
+          const q = chip.textContent || "";
+          input.value = q;
+          ask(q);
+        });
+      });
+    }
+  </script>
 </Base>
 
 <style>
@@ -210,5 +286,107 @@ const jsonLd = {
     .post__title {
       font-size: 1.6rem;
     }
+  }
+
+  /* --- AI'ya Sor --- */
+  .aiask {
+    max-width: 760px;
+    margin: 30px auto 0;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px;
+    background: #fff;
+  }
+  .aiask__head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  .aiask__badge {
+    background: #14161a;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    padding: 5px 10px;
+    border-radius: 6px;
+  }
+  .aiask__sub {
+    font-size: 0.88rem;
+    color: var(--muted);
+  }
+  .aiask__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .aiask__chip {
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 7px 13px;
+    font-size: 0.83rem;
+    font-weight: 600;
+    color: #303238;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+  }
+  .aiask__chip:hover {
+    background: var(--red-soft);
+    border-color: var(--red);
+    color: var(--red-dark);
+  }
+  .aiask__form {
+    display: flex;
+    gap: 8px;
+  }
+  .aiask__form input {
+    flex: 1;
+    height: 48px;
+    padding: 0 16px;
+    border: 2px solid var(--line);
+    border-radius: 12px;
+    font-size: 0.98rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .aiask__form input:focus {
+    border-color: var(--red);
+    box-shadow: 0 0 0 4px var(--red-soft);
+  }
+  .aiask__form button {
+    height: 48px;
+    padding: 0 24px;
+    border: none;
+    border-radius: 12px;
+    background: var(--red);
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.95rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .aiask__form button:hover {
+    background: var(--red-dark);
+  }
+  .aiask__answer {
+    margin-top: 16px;
+    padding: 16px 18px;
+    border-radius: 12px;
+    background: var(--bg-soft);
+    border-left: 4px solid var(--red);
+    line-height: 1.7;
+    color: #2a2d34;
+    white-space: pre-wrap;
+  }
+  .aiask__answer.is-loading {
+    color: var(--muted);
+    font-style: italic;
   }
 </style>

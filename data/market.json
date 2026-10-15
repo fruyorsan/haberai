@@ -1,0 +1,77 @@
+{
+  "updatedAt": "2026-10-15T17:22:56.977Z",
+  "items": [
+    {
+      "label": "BIST 30",
+      "value": 14986.78,
+      "prev": 15145.3,
+      "change": -158.51999999999862,
+      "changePct": -1.0466613404818566,
+      "decimals": 2
+    },
+    {
+      "label": "S&P 500",
+      "value": 7731.22,
+      "prev": 7765.36,
+      "change": -34.13999999999942,
+      "changePct": -0.4396447814396167,
+      "decimals": 2
+    },
+    {
+      "label": "Nasdaq",
+      "value": 26626.283,
+      "prev": 27193.34,
+      "change": -567.0570000000007,
+      "changePct": -2.085278969041687,
+      "decimals": 2
+    },
+    {
+      "label": "Dow Jones",
+      "value": 52104.27,
+      "prev": 51231.64,
+      "change": 872.6299999999974,
+      "changePct": 1.703302880797877,
+      "decimals": 2
+    },
+    {
+      "label": "Dolar/TL",
+      "value": 49.4124,
+      "prev": 49.3184,
+      "change": 0.0940000000000012,
+      "changePct": 0.19059823514145066,
+      "decimals": 4
+    },
+    {
+      "label": "Euro/TL",
+      "value": 55.5116,
+      "prev": 55.3236,
+      "change": 0.1880000000000024,
+      "changePct": 0.33981881150178656,
+      "decimals": 4
+    },
+    {
+      "label": "Ons Altın",
+      "value": 4169,
+      "prev": 4190.6,
+      "change": -21.600000000000364,
+      "changePct": -0.5154393165656556,
+      "decimals": 2
+    },
+    {
+      "label": "Brent",
+      "value": 105.88,
+      "prev": 106.65,
+      "change": -0.7700000000000102,
+      "changePct": -0.7219878105954151,
+      "decimals": 2
+    },
+    {
+      "label": "Gram Altın",
+      "value": 6623.06329689805,
+      "prev": 6644.713334426973,
+      "change": -21.65003752892335,
+      "changePct": -0.3258234996647964,
+      "decimals": 2
+    }
+  ]
+}

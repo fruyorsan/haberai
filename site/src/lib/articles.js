@@ -93,3 +93,25 @@ export function timeAgo(iso) {
 export function siteName() {
   return "HaberAI";
 }
+
+// --- Sayfalama yardımcıları ---
+export const PER_PAGE = 24;
+
+/** Bir listeyi sayfalara böler. */
+export function paginate(list, page, perPage = PER_PAGE) {
+  const totalPages = Math.max(1, Math.ceil(list.length / perPage));
+  const current = Math.min(Math.max(1, page), totalPages);
+  const start = (current - 1) * perPage;
+  return {
+    items: list.slice(start, start + perPage),
+    current,
+    totalPages,
+    total: list.length,
+    perPage,
+  };
+}
+
+/** Toplam sayfa sayısı. */
+export function totalPages(list, perPage = PER_PAGE) {
+  return Math.max(1, Math.ceil(list.length / perPage));
+}

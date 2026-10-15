@@ -1,0 +1,87 @@
+---
+import { getMarket } from "../lib/market.js";
+
+const { items } = getMarket();
+
+const nf = (v, d = 2) =>
+  new Intl.NumberFormat("tr-TR", { minimumFractionDigits: d, maximumFractionDigits: d }).format(v);
+const pf = (v) => `${v >= 0 ? "+" : "-"}%${nf(Math.abs(v), 2)}`;
+---
+
+{items.length > 0 && (
+  <div class="ticker" role="region" aria-label="Piyasa verileri">
+    <div class="ticker__track">
+      {[0, 1].map(() =>
+        items.map((it) => (
+          <span class="ticker__item">
+            <span class="ticker__label">{it.label}</span>
+            <span class="ticker__value">{nf(it.value, it.decimals ?? 2)}</span>
+            <span class:list={["ticker__chg", it.changePct >= 0 ? "is-up" : "is-down"]}>
+              {it.changePct >= 0 ? "▲" : "▼"} {pf(it.changePct)}
+            </span>
+          </span>
+        ))
+      )}
+    </div>
+  </div>
+)}
+
+<style>
+  .ticker {
+    background: #14161a;
+    color: #e8eaee;
+    overflow: hidden;
+    border-bottom: 1px solid #262a30;
+    user-select: none;
+  }
+  .ticker__track {
+    display: flex;
+    width: max-content;
+    animation: ticker-scroll 55s linear infinite;
+  }
+  .ticker:hover .ticker__track {
+    animation-play-state: paused;
+  }
+  .ticker__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 30px 9px 0;
+    white-space: nowrap;
+    font-size: 0.82rem;
+  }
+  .ticker__label {
+    color: #9aa1ac;
+    font-weight: 600;
+  }
+  .ticker__value {
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.01em;
+  }
+  .ticker__chg {
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .ticker__chg.is-up {
+    color: #22c55e;
+  }
+  .ticker__chg.is-down {
+    color: #ef4444;
+  }
+
+  @keyframes ticker-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ticker__track {
+      animation: none;
+    }
+  }
+</style>

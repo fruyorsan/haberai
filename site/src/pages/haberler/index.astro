@@ -1,0 +1,41 @@
+---
+import Base from "../../layouts/Base.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+import Pagination from "../../components/Pagination.astro";
+import { getArticles, paginate, PER_PAGE } from "../../lib/articles.js";
+
+const all = getArticles();
+const { items, current, totalPages: pages, total } = paginate(all, 1, PER_PAGE);
+---
+
+<Base
+  title="Tüm Haberler — HaberAI"
+  description="HaberAI arşivindeki tüm haberler: teknoloji, yapay zeka, ekonomi, oyun, mobil ve daha fazlası."
+>
+  <div class="container">
+    <header class="page-head">
+      <h1>Tüm Haberler</h1>
+      <p class="muted">{total} haber · Sayfa {current}/{pages}</p>
+    </header>
+
+    <div class="grid">
+      {items.map((a) => <ArticleCard article={a} />)}
+    </div>
+
+    <Pagination current={current} totalPages={pages} base="/haberler/" />
+  </div>
+</Base>
+
+<style>
+  .page-head {
+    padding: 30px 0 20px;
+  }
+  .page-head h1 {
+    font-size: 1.9rem;
+    margin: 0 0 6px;
+    letter-spacing: -0.02em;
+  }
+  .page-head .muted {
+    font-size: 0.9rem;
+  }
+</style>

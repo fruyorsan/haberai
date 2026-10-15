@@ -1,6 +1,7 @@
 import { config } from "./config.js";
 import { fetchAllFeeds, fetchOgImage } from "./fetcher.js";
 import { analyzeArticle } from "./ai.js";
+import { updateMarket } from "./market.js";
 import { loadArticles, saveArticles, existingIds, makeId } from "./store.js";
 
 const DRY = process.argv.includes("--dry");
@@ -87,6 +88,13 @@ async function main() {
   );
   await saveArticles(articles);
   console.log(`\nBitti. ${added} yeni haber eklendi. Arşiv toplam: ${articles.length}`);
+
+  try {
+    const market = await updateMarket();
+    console.log(`Piyasa verisi güncellendi (${market.items.length} gösterge).`);
+  } catch (err) {
+    console.warn(`Piyasa verisi alınamadı: ${err.message}`);
+  }
 }
 
 main()

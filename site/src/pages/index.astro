@@ -6,7 +6,7 @@ import { getArticles } from "../lib/articles.js";
 const articles = getArticles();
 const lead = articles[0];
 const secondary = articles.slice(1, 3);
-const grid = articles.slice(3);
+const grid = articles.slice(3, 24);
 ---
 
 <Base>
@@ -32,6 +32,11 @@ const grid = articles.slice(3);
             <div class="grid">
               {grid.map((a) => <ArticleCard article={a} />)}
             </div>
+            {articles.length > 24 && (
+              <div class="more">
+                <a class="more__btn" href="/haberler/">Tüm Haberler ({articles.length}) →</a>
+              </div>
+            )}
           </section>
         )}
       </>

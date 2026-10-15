@@ -1,5 +1,6 @@
 ---
-import { getArticles, timeAgo, siteName } from "../lib/articles.js";
+import { getArticles, timeAgo } from "../lib/articles.js";
+import MarketTicker from "./MarketTicker.astro";
 
 const nav = [
   { label: "Ana Sayfa", href: "/" },
@@ -7,12 +8,12 @@ const nav = [
   { label: "Yapay Zeka", href: "/kategori/yapay-zeka/" },
   { label: "Mobil", href: "/kategori/mobil/" },
   { label: "Oyun", href: "/kategori/oyun/" },
-  { label: "Donanım", href: "/kategori/donanim/" },
-  { label: "İnternet", href: "/kategori/internet/" },
+  { label: "Ekonomi", href: "/kategori/ekonomi/" },
+  { label: "Tüm Haberler", href: "/haberler/" },
 ];
 
 const path = Astro.url.pathname;
-const latest = getArticles()[0];
+const latest = getArticles().slice(0, 8);
 const today = new Date().toLocaleDateString("tr-TR", {
   day: "numeric",
   month: "long",
@@ -23,15 +24,23 @@ const isActive = (href) =>
   href === "/" ? path === "/" : path.startsWith(href.replace(/\/$/, ""));
 ---
 
+<MarketTicker />
+
 <div class="topbar">
   <div class="container topbar__inner">
     <span class="topbar__date">{today}</span>
-    {latest && (
-      <a class="topbar__ticker" href={latest.url}>
+    {latest.length > 0 && (
+      <div class="topbar__ticker">
         <span class="topbar__tag">SON DAKİKA</span>
-        <span class="topbar__headline">{latest.title}</span>
-        <span class="topbar__time">{timeAgo(latest.publishedAt || latest.generatedAt)}</span>
-      </a>
+        <div class="topbar__rot" id="son-dakika">
+          {latest.map((a) => (
+            <a class="topbar__slide" href={a.url}>
+              <span class="topbar__headline">{a.title}</span>
+              <span class="topbar__time">{timeAgo(a.publishedAt || a.generatedAt)}</span>
+            </a>
+          ))}
+        </div>
+      </div>
     )}
   </div>
 </div>
@@ -49,8 +58,35 @@ const isActive = (href) =>
         </a>
       ))}
     </nav>
+    <form class="searchbox" action="/ara/" method="get" role="search">
+      <input
+        class="searchbox__input"
+        type="search"
+        name="q"
+        placeholder="Haber ara..."
+        aria-label="Haber ara"
+      />
+    </form>
   </div>
 </header>
+
+<script>
+  const rot = document.getElementById("son-dakika");
+  if (rot) {
+    const slides = Array.from(rot.querySelectorAll(".topbar__slide"));
+    if (slides.length > 0) {
+      let i = 0;
+      slides[0].classList.add("is-active");
+      if (slides.length > 1) {
+        setInterval(() => {
+          slides[i].classList.remove("is-active");
+          i = (i + 1) % slides.length;
+          slides[i].classList.add("is-active");
+        }, 6000);
+      }
+    }
+  }
+</script>
 
 <style>
   .topbar {
@@ -72,9 +108,10 @@ const isActive = (href) =>
     display: flex;
     align-items: center;
     gap: 10px;
+    flex: 1;
     min-width: 0;
-    overflow: hidden;
     margin-left: auto;
+    overflow: hidden;
   }
   .topbar__tag {
     background: rgba(0, 0, 0, 0.25);
@@ -83,6 +120,26 @@ const isActive = (href) =>
     font-weight: 800;
     letter-spacing: 0.04em;
     white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .topbar__rot {
+    position: relative;
+    flex: 1;
+    height: 20px;
+    min-width: 0;
+  }
+  .topbar__slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.45s;
+    overflow: hidden;
+  }
+  .topbar__slide.is-active {
+    opacity: 1;
   }
   .topbar__headline {
     white-space: nowrap;
@@ -93,6 +150,7 @@ const isActive = (href) =>
   .topbar__time {
     opacity: 0.85;
     white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .header {
@@ -106,7 +164,7 @@ const isActive = (href) =>
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
+    gap: 18px;
     height: 68px;
   }
   .logo {
@@ -116,6 +174,7 @@ const isActive = (href) =>
     font-weight: 900;
     font-size: 1.4rem;
     letter-spacing: -0.02em;
+    flex-shrink: 0;
   }
   .logo__mark {
     display: grid;
@@ -134,9 +193,10 @@ const isActive = (href) =>
     display: flex;
     gap: 4px;
     flex-wrap: wrap;
+    flex: 1;
   }
   .nav__link {
-    padding: 8px 12px;
+    padding: 8px 11px;
     border-radius: 8px;
     font-weight: 600;
     font-size: 0.93rem;
@@ -150,7 +210,32 @@ const isActive = (href) =>
   .nav__link--active {
     color: var(--red);
   }
+  .searchbox {
+    flex-shrink: 0;
+  }
+  .searchbox__input {
+    width: 170px;
+    height: 40px;
+    padding: 0 14px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--bg-soft);
+    font-size: 0.9rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.15s, background 0.15s, width 0.2s;
+  }
+  .searchbox__input:focus {
+    border-color: var(--red);
+    background: #fff;
+    width: 210px;
+  }
 
+  @media (max-width: 1000px) {
+    .searchbox {
+      display: none;
+    }
+  }
   @media (max-width: 720px) {
     .topbar__date,
     .topbar__time {
@@ -168,6 +253,7 @@ const isActive = (href) =>
       gap: 0;
       overflow-x: auto;
       width: 100%;
+      flex-wrap: nowrap;
     }
     .nav__link {
       white-space: nowrap;

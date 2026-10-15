@@ -1,0 +1,211 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base
+  title="Haber Ara — HaberAI"
+  description="HaberAI arşivinde anahtar kelimeyle hızlıca haber ara: teknoloji, ekonomi, oyun, mobil ve daha fazlası."
+>
+  <div class="container">
+    <header class="page-head">
+      <h1>Haber Ara</h1>
+      <input
+        id="q"
+        class="search-input"
+        type="search"
+        placeholder="Örn: iPhone, yapay zeka, PlayStation, dolar..."
+        autocomplete="off"
+        autofocus
+      />
+      <p class="muted status" id="status"></p>
+    </header>
+
+    <div class="grid" id="results"></div>
+  </div>
+</Base>
+
+<style>
+  .page-head {
+    padding: 30px 0 18px;
+    max-width: 720px;
+  }
+  .page-head h1 {
+    font-size: 1.9rem;
+    margin: 0 0 14px;
+    letter-spacing: -0.02em;
+  }
+  .search-input {
+    width: 100%;
+    height: 52px;
+    padding: 0 18px;
+    font-size: 1.05rem;
+    border: 2px solid var(--line);
+    border-radius: 12px;
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .search-input:focus {
+    border-color: var(--red);
+    box-shadow: 0 0 0 4px var(--red-soft);
+  }
+  .status {
+    margin: 12px 0 0;
+    font-size: 0.9rem;
+  }
+</style>
+
+<style is:global>
+  /* Arama sonuçları (JS ile üretildiği için global stil) */
+  #results .card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.18s, box-shadow 0.18s;
+    height: 100%;
+  }
+  #results .card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+  }
+  #results .card__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  #results .card__media {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: var(--bg-soft);
+    overflow: hidden;
+  }
+  #results .card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #results .ph {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+    color: rgba(255, 255, 255, 0.35);
+    font-weight: 900;
+    font-size: 3rem;
+  }
+  #results .card__badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--red);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 4px 9px;
+    border-radius: 6px;
+  }
+  #results .card__body {
+    padding: 16px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+  #results .card__title {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.35;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  #results .card__summary {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.55;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  #results .card__meta {
+    margin-top: auto;
+    padding-top: 10px;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  #results .card__source {
+    color: var(--red);
+    font-weight: 700;
+  }
+</style>
+
+<script>
+  const input = document.getElementById("q");
+  const results = document.getElementById("results");
+  const status = document.getElementById("status");
+
+  const esc = (s) =>
+    String(s ?? "").replace(/[&<>"']/g, (c) => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;",
+    }[c]));
+  const norm = (s) => String(s ?? "").toLocaleLowerCase("tr");
+
+  let DATA = [];
+
+  function card(a) {
+    const media = a.img
+      ? `<img src="${esc(a.img)}" alt="${esc(a.t)}" loading="lazy" />`
+      : `<div class="ph"><span>H</span></div>`;
+    return `<article class="card"><a class="card__link" href="${esc(a.u)}">
+      <div class="card__media">${media}<span class="card__badge">${esc(a.c)}</span></div>
+      <div class="card__body">
+        <h3 class="card__title">${esc(a.t)}</h3>
+        <p class="card__summary">${esc(a.s)}</p>
+        <div class="card__meta"><span class="card__source">${esc(a.src)}</span></div>
+      </div></a></article>`;
+  }
+
+  function render(q) {
+    const words = norm(q).trim().split(/\s+/).filter(Boolean);
+    if (!words.length) {
+      results.innerHTML = "";
+      status.textContent = `${DATA.length} haber arasında arama yapabilirsiniz.`;
+      return;
+    }
+    const hits = DATA.filter((a) => {
+      const hay = norm(`${a.t} ${a.s} ${a.c} ${a.src} ${(a.tags || []).join(" ")}`);
+      return words.every((w) => hay.includes(w));
+    }).slice(0, 60);
+    status.textContent = `${hits.length} sonuç bulundu.`;
+    results.innerHTML = hits.length
+      ? hits.map(card).join("")
+      : `<p class="muted">Sonuç bulunamadı. Farklı bir kelime dene.</p>`;
+  }
+
+  fetch("/search-index.json")
+    .then((r) => r.json())
+    .then((data) => {
+      DATA = data;
+      const initial = new URLSearchParams(location.search).get("q") || "";
+      input.value = initial;
+      render(initial);
+    })
+    .catch(() => {
+      status.textContent = "Arama verisi yüklenemedi.";
+    });
+
+  let timer;
+  input.addEventListener("input", () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => render(input.value), 120);
+  });
+</script>

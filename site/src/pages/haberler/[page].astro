@@ -1,0 +1,49 @@
+---
+import Base from "../../layouts/Base.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+import Pagination from "../../components/Pagination.astro";
+import { getArticles, paginate, PER_PAGE, totalPages } from "../../lib/articles.js";
+
+export function getStaticPaths() {
+  const pages = totalPages(getArticles());
+  const paths = [];
+  for (let p = 2; p <= pages; p++) paths.push({ params: { page: String(p) } });
+  return paths;
+}
+
+const all = getArticles();
+const page = Number(Astro.params.page);
+const { items, current, totalPages: pages, total } = paginate(all, page, PER_PAGE);
+---
+
+<Base
+  title={`Tüm Haberler — Sayfa ${current} — HaberAI`}
+  description={`HaberAI arşivi ${current}. sayfa: güncel haberler, özetler ve yapay zekâ yorumları.`}
+>
+  <div class="container">
+    <header class="page-head">
+      <h1>Tüm Haberler</h1>
+      <p class="muted">{total} haber · Sayfa {current}/{pages}</p>
+    </header>
+
+    <div class="grid">
+      {items.map((a) => <ArticleCard article={a} />)}
+    </div>
+
+    <Pagination current={current} totalPages={pages} base="/haberler/" />
+  </div>
+</Base>
+
+<style>
+  .page-head {
+    padding: 30px 0 20px;
+  }
+  .page-head h1 {
+    font-size: 1.9rem;
+    margin: 0 0 6px;
+    letter-spacing: -0.02em;
+  }
+  .page-head .muted {
+    font-size: 0.9rem;
+  }
+</style>

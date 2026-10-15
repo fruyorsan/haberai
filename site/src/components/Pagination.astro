@@ -1,0 +1,89 @@
+---
+const { current, totalPages, base } = Astro.props;
+const url = (p) => (p === 1 ? base : `${base}${p}/`);
+
+// Gösterilecek sayfa numaraları (aralara "…" ekleyerek)
+const shown = [];
+const range = 2;
+for (let p = 1; p <= totalPages; p++) {
+  if (p === 1 || p === totalPages || Math.abs(p - current) <= range) {
+    shown.push(p);
+  } else if (shown[shown.length - 1] !== "...") {
+    shown.push("...");
+  }
+}
+---
+
+{totalPages > 1 && (
+  <nav class="pager" aria-label="Sayfalama">
+    {current > 1 && (
+      <a class="pager__nav" href={url(current - 1)} rel="prev">← Önceki</a>
+    )}
+    <div class="pager__nums">
+      {shown.map((p) =>
+        p === "..." ? (
+          <span class="pager__dots">…</span>
+        ) : (
+          <a
+            class:list={["pager__num", { "pager__num--active": p === current }]}
+            href={url(p)}
+            aria-current={p === current ? "page" : undefined}
+          >
+            {p}
+          </a>
+        )
+      )}
+    </div>
+    {current < totalPages && (
+      <a class="pager__nav" href={url(current + 1)} rel="next">Sonraki →</a>
+    )}
+  </nav>
+)}
+
+<style>
+  .pager {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 42px 0 12px;
+  }
+  .pager__nums {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .pager__num,
+  .pager__nav {
+    display: inline-grid;
+    place-items: center;
+    min-width: 42px;
+    height: 42px;
+    padding: 0 13px;
+    border: 1px solid var(--line);
+    border-radius: 11px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: #303238;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+  }
+  .pager__num:hover,
+  .pager__nav:hover {
+    border-color: var(--red);
+    color: var(--red);
+  }
+  .pager__num--active,
+  .pager__num--active:hover {
+    background: var(--red);
+    border-color: var(--red);
+    color: #fff;
+  }
+  .pager__dots {
+    display: inline-grid;
+    place-items: center;
+    min-width: 42px;
+    height: 42px;
+    color: var(--muted);
+  }
+</style>
