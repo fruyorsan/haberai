@@ -27,6 +27,7 @@ async function fetchOne(feed) {
           item.contentSnippet || item.contentEncoded || item.content || item.summary || "";
         return {
           source: feed.name,
+          feedCategory: feed.category || null,
           title: clean(item.title),
           link: (item.link || "").trim(),
           content: clean(raw).slice(0, 1500),
@@ -76,6 +77,32 @@ function extractImage(item) {
   const html = item.contentEncoded || item.content || "";
   const match = /<img[^>]+src=["']([^"']+)["']/i.exec(html);
   return match && /^https?:/i.test(match[1]) ? match[1] : null;
+}
+
+/** RSS'te görsel yoksa, haber sayfasından og:image çekmeyi dener. */
+export async function fetchOgImage(url) {
+  if (!url) return null;
+  try {
+    const res = await fetch(url, {
+      headers: { "User-Agent": "Mozilla/5.0 (compatible; HaberAI/0.1; +https://haberai.netlify.app)" },
+      signal: AbortSignal.timeout(12000),
+    });
+    if (!res.ok) return null;
+    const html = (await res.text()).slice(0, 250000);
+    const patterns = [
+      /<meta[^>]+property=["']og:image:secure_url["'][^>]+content=["']([^"']+)["']/i,
+      /<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i,
+      /<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i,
+      /<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i,
+    ];
+    for (const re of patterns) {
+      const m = re.exec(html);
+      if (m && m[1] && /^https?:/i.test(m[1])) return m[1];
+    }
+    return null;
+  } catch {
+    return null;
+  }
 }
 
 function toISO(value) {

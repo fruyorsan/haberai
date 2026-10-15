@@ -1,7 +1,8 @@
 import { config } from "./config.js";
 
-const ENDPOINT = (model) =>
+const GEMINI_ENDPOINT = (model) =>
   `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
+const GROQ_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions";
 
 const SCHEMA = {
   type: "object",
@@ -19,50 +20,90 @@ const SCHEMA = {
 const SYSTEM = `Sen deneyimli bir Türk teknoloji ve genel haber editörüsün.
 Sana bir kaynak haberin başlığı ve metni verilecek. Onu sıfırdan, kendi sözlerinle ele alıp
 Türkçe bir haber kartı üreteceksin. Tarafsız, doğru ve akıcı yaz.
-Asla kaynağın cümlelerini kopyalama; kendi ifadelerinle yeniden yaz. Bilgi uydurma.`;
+Asla kaynağın cümlelerini kopyalama; kendi ifadelerinle yeniden yaz. Bilgi uydurma.
+Yanıtını SADECE geçerli bir JSON nesnesi olarak ver.`;
 
 function buildPrompt(article) {
-  return `KAYNAK: ${article.source}
+  const cats = config.categories.join(", ");
+  const hint = article.feedCategory ? `\nKAYNAK KATEGORİSİ (sadece ipucu): ${article.feedCategory}` : "";
+  return `KAYNAK: ${article.source}${hint}
 BAŞLIK: ${article.title}
 METİN: ${article.content}
 
 Aşağıdaki JSON alanlarını TÜRKÇE üret:
-- title: Kaynak başlığı KOPYALAMA. Aynı haberi anlatan, ilgi çekici ve özgün bir başlık (en fazla 70 karakter).
+- title: Kaynak başlığı KOPYALAMA. Haberi anlatan, özgün ve net bir başlık yaz. İdeal uzunluk 45-70 karakter. Clickbait, abartı ve gereksiz "!" kullanma.
 - slug: title için URL dostu kimlik; küçük harf, tire ile, Türkçe karakter ve noktalama YOK.
-- summary: Haberi 2-3 cümlede tarafsız biçimde özetle.
+- summary: Haberi 2-3 cümlede tarafsız biçimde özetle; ilk cümle ana fikri versin.
 - comment: Senin editör yorumun; bu haber neden önemli, kime nasıl etkisi olur, ne anlama geliyor? 2-4 cümle, samimi ama profesyonel.
 - tags: 3-6 adet kısa anahtar kelime.
-- category: Şunlardan BİRİNİ seç: Teknoloji, Yapay Zeka, Mobil, Oyun, Donanım, Yazılım, İnternet, Bilim, Ekonomi, Diğer.`;
+- category: AŞAĞIDAKİ listeden TAM OLARAK birini seç (başka bir kelime yazma): ${cats}
+
+Yanıt formatı (sadece JSON):
+{"title":"...","slug":"...","summary":"...","comment":"...","tags":["..."],"category":"..."}`;
 }
 
-let workingModel = null;
+// Bu çalıştırmada tükenen (kota/durum) adaylar
+const exhausted = new Set();
+const keyOf = (c) => `${c.provider}:${c.model}`;
 
-export async function analyzeArticle(article, apiKey) {
-  const candidates = [config.model, ...config.modelFallbacks];
-  const order = workingModel
-    ? [workingModel, ...candidates.filter((m) => m !== workingModel)]
-    : [...new Set(candidates)];
+function candidates() {
+  const list = [];
+  if (process.env.GROQ_API_KEY) {
+    for (const model of config.ai.groqModels) {
+      list.push({ provider: "groq", model, apiKey: process.env.GROQ_API_KEY });
+    }
+  }
+  if (process.env.GEMINI_API_KEY) {
+    for (const model of config.ai.geminiModels) {
+      list.push({ provider: "gemini", model, apiKey: process.env.GEMINI_API_KEY });
+    }
+  }
+  return list;
+}
+
+export async function analyzeArticle(article) {
+  const all = candidates();
+  if (!all.length) throw new Error("Hiç API anahtarı yok (GEMINI_API_KEY / GROQ_API_KEY)");
+
+  const available = all.filter((c) => !exhausted.has(keyOf(c)));
+  if (!available.length) {
+    const e = new Error("Tüm AI modelleri bu çalıştırmada tükendi.");
+    e.allExhausted = true;
+    throw e;
+  }
 
   let lastErr;
-  for (const model of order) {
+  for (const c of available) {
     try {
-      const out = await callGemini(model, article, apiKey);
-      if (workingModel !== model) {
-        workingModel = model;
-        console.log(`\n    (model: ${model})`);
-      }
+      const out = await callProvider(c, article);
       return out;
     } catch (err) {
       lastErr = err;
-      if (err.modelMissing) continue; // yanlış/erişilemez model → sıradakini dene
+      if (err.kind === "quota" || err.kind === "missing") {
+        exhausted.add(keyOf(c));
+        console.warn(`    (${c.provider}/${c.model} atlandı: ${err.kind})`);
+        continue;
+      }
+      if (err.kind === "transient") {
+        console.warn(`    (${c.provider}/${c.model} geçici hata, sıradakine geçiliyor)`);
+        continue;
+      }
       throw err;
     }
   }
-  throw lastErr;
+
+  const e = new Error(`Tüm AI adayları başarısız: ${lastErr?.message || "bilinmeyen"}`);
+  e.allExhausted = true;
+  throw e;
 }
 
-async function callGemini(model, article, apiKey, attempt = 1) {
-  const res = await fetch(`${ENDPOINT(model)}?key=${apiKey}`, {
+async function callProvider(c, article) {
+  return c.provider === "groq" ? groqCall(c, article) : geminiCall(c, article);
+}
+
+// --------------------------- Gemini ---------------------------
+async function geminiCall(c, article) {
+  const res = await safeFetch(`${GEMINI_ENDPOINT(c.model)}?key=${c.apiKey}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -76,29 +117,77 @@ async function callGemini(model, article, apiKey, attempt = 1) {
     }),
   });
 
-  if (!res.ok) {
-    const body = (await res.text()).slice(0, 300);
-    const err = new Error(`Gemini(${model}) HTTP ${res.status}: ${body}`);
-
-    // Rate limit / geçici sunucu hatası → kısa bekleme ile tekrar dene
-    if ((res.status === 429 || res.status >= 500) && attempt <= 3) {
-      const wait = attempt * 8000;
-      console.warn(`    ! ${res.status}, ${wait / 1000}s bekleyip tekrar deniyorum...`);
-      await sleep(wait);
-      return callGemini(model, article, apiKey, attempt + 1);
-    }
-
-    // Model yok / erişilemiyor → yedek modele geç
-    if (res.status === 404 || (res.status === 400 && /model/i.test(body))) {
-      err.modelMissing = true;
-    }
-    throw err;
-  }
-
+  if (!res.ok) throw classify(res.status, await res.text(), "Gemini");
   const json = await res.json();
   const text = json?.candidates?.[0]?.content?.parts?.[0]?.text;
   if (!text) throw new Error("Gemini boş yanıt döndü");
-  return normalize(JSON.parse(text), article);
+  return normalize(parseJson(text), article);
+}
+
+// --------------------------- Groq ---------------------------
+async function groqCall(c, article) {
+  const res = await safeFetch(GROQ_ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${c.apiKey}`,
+    },
+    body: JSON.stringify({
+      model: c.model,
+      temperature: 0.9,
+      response_format: { type: "json_object" },
+      messages: [
+        { role: "system", content: SYSTEM },
+        { role: "user", content: buildPrompt(article) },
+      ],
+    }),
+  });
+
+  if (!res.ok) throw classify(res.status, await res.text(), "Groq");
+  const json = await res.json();
+  const text = json?.choices?.[0]?.message?.content;
+  if (!text) throw new Error("Groq boş yanıt döndü");
+  return normalize(parseJson(text), article);
+}
+
+// --------------------------- Yardımcılar ---------------------------
+async function safeFetch(url, options) {
+  try {
+    return await fetch(url, { ...options, signal: AbortSignal.timeout(60000) });
+  } catch (err) {
+    const e = new Error(`Ağ hatası: ${err.message}`);
+    e.kind = "transient";
+    throw e;
+  }
+}
+
+/** HTTP hatasını sınıflar: quota | missing | transient | other */
+function classify(status, body, provider) {
+  const snippet = String(body).slice(0, 200);
+  const err = new Error(`${provider} HTTP ${status}: ${snippet}`);
+
+  const lower = snippet.toLowerCase();
+  if (status === 429 || lower.includes("quota") || lower.includes("resource_exhausted")) {
+    err.kind = "quota";
+  } else if (status === 404 || (status === 400 && lower.includes("model"))) {
+    err.kind = "missing";
+  } else if (status >= 500 || status === 408) {
+    err.kind = "transient";
+  } else {
+    err.kind = "other";
+  }
+  return err;
+}
+
+function parseJson(text) {
+  try {
+    return JSON.parse(text);
+  } catch {
+    // Model bazen JSON'u ```json ... ``` içine alabilir
+    const match = /\{[\s\S]*\}/.exec(text);
+    if (match) return JSON.parse(match[0]);
+    throw new Error("AI yanıtı JSON olarak çözümlenemedi");
+  }
 }
 
 function normalize(data, article) {
@@ -110,8 +199,24 @@ function normalize(data, article) {
     tags: Array.isArray(data.tags)
       ? data.tags.map((t) => String(t).trim()).filter(Boolean).slice(0, 6)
       : [],
-    category: String(data.category || "Diğer").trim(),
+    category: canonicalCategory(data.category, article.feedCategory),
   };
+}
+
+function canonicalCategory(value, hint) {
+  const norm = (s) => String(s || "").toLocaleLowerCase("tr").trim();
+  const target = norm(value);
+  if (!target) return config.categories.includes(hint) ? hint : "Diğer";
+
+  const exact = config.categories.find((c) => norm(c) === target);
+  if (exact) return exact;
+
+  const partial = config.categories.find(
+    (c) => target.length > 2 && (target.includes(norm(c)) || norm(c).includes(target))
+  );
+  if (partial) return partial;
+
+  return config.categories.includes(hint) ? hint : "Diğer";
 }
 
 export function slugify(str) {
@@ -128,5 +233,3 @@ export function slugify(str) {
     .replace(/^-+|-+$/g, "")
     .slice(0, 80);
 }
-
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

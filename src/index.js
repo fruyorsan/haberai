@@ -1,15 +1,15 @@
 import { config } from "./config.js";
-import { fetchAllFeeds } from "./fetcher.js";
+import { fetchAllFeeds, fetchOgImage } from "./fetcher.js";
 import { analyzeArticle } from "./ai.js";
 import { loadArticles, saveArticles, existingIds, makeId } from "./store.js";
 
 const DRY = process.argv.includes("--dry");
 
 async function main() {
-  const apiKey = process.env.GEMINI_API_KEY;
+  const hasKey = process.env.GEMINI_API_KEY || process.env.GROQ_API_KEY;
 
-  if (!DRY && !apiKey) {
-    console.error("HATA: GEMINI_API_KEY tanımlı değil. .env dosyasına ekle.");
+  if (!DRY && !hasKey) {
+    console.error("HATA: GEMINI_API_KEY veya GROQ_API_KEY tanımlı değil. .env dosyasına ekle.");
     process.exit(1);
   }
 
@@ -43,7 +43,10 @@ async function main() {
       `  (${i + 1}/${queue.length}) ${item.source}: ${item.title.slice(0, 55)}... `
     );
     try {
-      const ai = await analyzeArticle(item, apiKey);
+      if (!item.image) {
+        item.image = await fetchOgImage(item.link);
+      }
+      const ai = await analyzeArticle(item);
       articles.push({
         id: makeId(item.link),
         ...ai,
@@ -57,6 +60,10 @@ async function main() {
       added++;
     } catch (err) {
       console.log(`✗ ${err.message}`);
+      if (err.allExhausted) {
+        console.log("\nAI kotası/durumu nedeniyle bu çalıştırma durduruluyor.");
+        break;
+      }
     }
   }
 
@@ -67,7 +74,9 @@ async function main() {
   console.log(`\nBitti. ${added} yeni haber eklendi. Arşiv toplam: ${articles.length}`);
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+main()
+  .then(() => process.exit(0))
+  .catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });

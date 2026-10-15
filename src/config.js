@@ -3,19 +3,52 @@
 export const config = {
   // Sitenin adı ve adresi (özet/kaynak gösteriminde kullanılır)
   siteName: "HaberAI",
-  siteUrl: "https://ornek.pages.dev",
+  siteUrl: "https://haberai.netlify.app",
 
   // ------------------------------------------------------------------
-  // KAYNAKLAR (RSS). Yeni kaynak eklemek için bir satır kopyala-değiştir.
+  // KATEGORİLER — AI yalnızca bu listeden birini seçebilir.
+  // ------------------------------------------------------------------
+  categories: [
+    "Teknoloji",
+    "Yapay Zeka",
+    "Mobil",
+    "Oyun",
+    "Donanım",
+    "Yazılım",
+    "İnternet",
+    "Bilim",
+    "Ekonomi",
+    "Spor",
+    "Gündem",
+    "Dünya",
+    "Diğer",
+  ],
+
+  // ------------------------------------------------------------------
+  // KAYNAKLAR (RSS). "category" alanı AI'a ipucu verir (zorunlu değil).
   // ------------------------------------------------------------------
   feeds: [
-    { name: "Webtekno", url: "https://www.webtekno.com/rss.xml" },
-    { name: "DonanımHaber", url: "https://www.donanimhaber.com/rss/tum/" },
-    { name: "ShiftDelete", url: "https://shiftdelete.net/feed" },
-    { name: "NTV Teknoloji", url: "https://www.ntv.com.tr/teknoloji.rss" },
-    { name: "Hürriyet Teknoloji", url: "https://www.hurriyet.com.tr/rss/teknoloji" },
-    { name: "BBC Türkçe", url: "https://feeds.bbci.co.uk/turkce/rss.xml" },
-    { name: "CHIP Online", url: "https://www.chip.com.tr/rss" },
+    // Teknoloji / Yazılım
+    { name: "Webtekno", url: "https://www.webtekno.com/rss.xml", category: "Teknoloji" },
+    { name: "ShiftDelete", url: "https://shiftdelete.net/feed", category: "Teknoloji" },
+    { name: "DonanımHaber", url: "https://www.donanimhaber.com/rss/tum/", category: "Donanım" },
+    { name: "NTV Teknoloji", url: "https://www.ntv.com.tr/teknoloji.rss", category: "Teknoloji" },
+    { name: "CHIP Online", url: "https://www.chip.com.tr/rss", category: "Teknoloji" },
+    { name: "Hürriyet Teknoloji", url: "https://www.hurriyet.com.tr/rss/teknoloji", category: "Teknoloji" },
+    { name: "Webrazzi", url: "https://webrazzi.com/feed/", category: "İnternet" },
+    { name: "Tamindir", url: "https://www.tamindir.com/feed/", category: "Yazılım" },
+
+    // Ekonomi
+    { name: "Hürriyet Ekonomi", url: "https://www.hurriyet.com.tr/rss/ekonomi", category: "Ekonomi" },
+    { name: "NTV Ekonomi", url: "https://www.ntv.com.tr/ekonomi.rss", category: "Ekonomi" },
+    { name: "Bloomberg HT", url: "https://www.bloomberght.com/rss", category: "Ekonomi" },
+
+    // Spor
+    { name: "Hürriyet Spor", url: "https://www.hurriyet.com.tr/rss/spor", category: "Spor" },
+
+    // Dünya / Genel
+    { name: "BBC Türkçe", url: "https://feeds.bbci.co.uk/turkce/rss.xml", category: "Dünya" },
+    { name: "NTV Dünya", url: "https://www.ntv.com.tr/dunya.rss", category: "Dünya" },
   ],
 
   // ------------------------------------------------------------------
@@ -26,14 +59,21 @@ export const config = {
   minContentLength: 40, // çok kısa/kirli içerikleri atla
 
   // ------------------------------------------------------------------
-  // AI (Gemini)
+  // AI SAĞLAYICILAR (sırayla denenir). Anahtarı olan sağlayıcı kullanılır.
   // ------------------------------------------------------------------
-  model: process.env.GEMINI_MODEL || "gemini-2.5-flash",
-  // Yapılandırılan model çalışmazsa sırayla denenecek modeller:
-  modelFallbacks: [
-    "gemini-2.5-flash",
-    "gemini-2.5-flash-lite",
-    "gemini-flash-latest",
-    "gemini-3-flash-preview",
-  ],
+  ai: {
+    // Groq: ücretsiz katmanı cömert ve hızlı (GROQ_API_KEY gerekir)
+    groqModels: (process.env.GROQ_MODELS || "llama-3.3-70b-versatile,llama-3.1-8b-instant")
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean),
+    // Gemini: günde model başına ~20 ücretsiz istek (GEMINI_API_KEY gerekir)
+    geminiModels: (
+      process.env.GEMINI_MODELS ||
+      "gemini-flash-latest,gemini-flash-lite-latest,gemini-2.5-flash,gemini-3.5-flash,gemini-3.5-flash-lite"
+    )
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean),
+  },
 };
