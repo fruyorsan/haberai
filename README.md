@@ -24,6 +24,11 @@ npm run collect:dry
 
 # Gerçek çalıştırma: çeker, AI ile işler, data/articles.json'a ekler
 npm run collect
+
+# Arşiv yenileme: gövdesi veya editorNote'u eksik eski haberleri yeniden üretir
+npm run backfill
+npm run backfill:dry          # AI çağrısı yapmadan sadece listeler
+BACKFILL_LIMIT=20 npm run backfill   # tur başına işlenecek haber sayısı
 ```
 
 ## Ayarlar
@@ -39,6 +44,13 @@ Tüm ayarlar `src/config.js` içinde:
 
 `.github/workflows/pipeline.yml` her 5 dakikada bir çalışır. GitHub'da repo ayarlarından
 `GEMINI_API_KEY` adında bir **secret** eklemen yeterli.
+
+### Arşiv yenileme
+
+`.github/workflows/backfill.yml` her 10 dakikada bir, gövdesi veya `editorNote` alanı eksik
+olan eski haberleri otomatik yeniler (tur başına `BACKFILL_LIMIT=4` haber). Eski haberler
+için beklemeden başlatmak istersen: GitHub → **Actions** → **Arsiv Yenileme** →
+**Run workflow**. Workflow `data/` değişikliklerini commit edip siteyi yeniden yayınlar.
 
 ## Sosyal Dağıtım
 
@@ -67,7 +79,7 @@ Yeni yayınlanan haberleri sosyal kanallara **otomatik** paylaşan opsiyonel bir
 | Bluesky | `BLUESKY_HANDLE`, `BLUESKY_APP_PASSWORD` | Settings → App Passwords |
 | X / Twitter | `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, `X_ACCESS_SECRET` | developer.x.com (Read+Write izni) |
 
-İsteğe bağlı: `SITE_URL` (link adresi, varsayılan `https://haberai.netlify.app`),
+İsteğe bağlı: `SITE_URL` (link adresi, varsayılan `https://fruyorsan.github.io`),
 `SHARE_MAX_PER_RUN` (çalıştırma başına paylaşım sayısı).
 
 Generic webhook'a gönderilen gövde:
@@ -94,6 +106,20 @@ npm run share
 
 > Not: X/Twitter OAuth 1.0a imzası `node:crypto` ile manuel üretilir; anahtarlar
 > girilene ve canlı denenene kadar "doğrulanmadı" kabul edilmelidir.
+
+## Veri Şeması (`data/articles.json`)
+
+Her haber nesnesi şu alanları taşır: `id`, `title`, `slug`, `summary`, `keyPoints`, `body`,
+`comment`, `editorNote`, `tags`, `category`, `source`, `sourceUrl`, `image`, `publishedAt`,
+`generatedAt` (yeniden üretilenlerde ayrıca `refreshedAt`).
+
+- `summary`: nötr özet — sadece "ne oldu".
+- `comment`: editör yorumu — "neden önemli, kimi etkiler, ne olabilir".
+- `editorNote`: ana sayfadaki **"öne çıkanlar" slaytı** için kısa manşet notu. Türkçe,
+  1-2 cümle (en fazla ~180 karakter); `summary`/`comment` ile aynı cümleleri kullanmaz,
+  farklı bir açıdan "neden bakmalısın" sorusuna cevap verir. Yeni haberlerde AI üretir;
+  eski haberlerde eksikse arşiv yenileme (`npm run backfill`) tamamlar — alan zaten
+  doluysa haber yeniden üretilmez (idempotent).
 
 ## Dosya Düzeni
 
