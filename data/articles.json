@@ -1,101 +1,5 @@
 [
   {
-    "id": "646b03fd8ae53a8c",
-    "title": "YouTube Music, Yapay Zeka ile Üretilen Şarkıları Etiketleyecek",
-    "slug": "youtube-music-yapay-zeka-ile-uretilen-sarkilari-etiketleyecek",
-    "summary": "YouTube Music, dinlediğiniz şarkının yapay zeka ile üretilip üretilmediğini oynatıcı ekranında gösteren bir etiket sistemi başlattı. Etiket, şarkı adının altında ve sanatçının yanında \"AI\" rozetini içeriyor ve tıklandığında üretim sürecine dair kısa bir açıklama sunuyor. Bu uygulama şu anda sadece YouTube Music'te aktif ve ileride ana YouTube uygulamasına da taşınması planlanıyor. Şirket, etiketi şeffaflık sağlamak ve dinleyicilere doğru bilgi vermek amacıyla geliştirdiğini belirtiyor.",
-    "comment": "Bu adım, müzik tüketicilerine içerik kaynağı hakkında net bilgi sunarak seçim özgürlüğünü artırıyor ve yapay zekâ destekli üretimin algısını şekillendiriyor. Sanatçılar, eserlerini nasıl tanıtacakları konusunda yeni bir sorumlulukla karşı karşıya; platformlar ise tespit mekanizmalarının doğruluğunu sürekli iyileştirmeli. Gelecekte, diğer müzik hizmetlerinin de benzer etiketleme sistemleri getirmesi, sektörde bir şeffaflık rekabeti başlatabilir. Kullanıcıların AI etiketiyle ilgili bilinçli tercih yapabilmesi, telif ve etik tartışmalarının da gündeme gelmesine yol açabilir.",
-    "tags": [
-      "YouTube Music",
-      "AI etiketi",
-      "yapay zeka",
-      "müzik platformu",
-      "şeffaflık"
-    ],
-    "category": "Yazılım",
-    "source": "Tamindir",
-    "sourceUrl": "https://www.tamindir.com/haber/youtube-music-yapay-zeka-sarki-etiketi_112325/",
-    "image": "https://img.tamindir.com/2026/10/476815/youtube-music-yapay-zeka-sarki-etiketi.jpg",
-    "publishedAt": "2026-10-15T21:44:00.000Z",
-    "generatedAt": "2026-10-15T16:21:11.867Z",
-    "keyPoints": [
-      "AI etiketi YouTube Music oynatıcı ekranında görünüyor",
-      "Sanatçılar şarkıyı tamamen, kısmen veya hiç AI ile işaretleyebiliyor",
-      "YouTube, eksik işaretlemelerde kendi tespit sistemini devreye sokuyor"
-    ],
-    "body": [
-      "YouTube Music, müzik dinleme deneyimini daha şeffaf hâle getirmek amacıyla yapay zeka ile üretilen eserleri belirten bir \"AI\" rozetini oynatıcı arayüzüne ekledi. Kullanıcılar bir şarkıyı çalarken şarkı adının hemen altında ve sanatçının yanında yer alan bu etikete dokunduklarında, parçanın tamamen yapay zekâyla mı yoksa sadece bir kısmının mı üretildiğine dair kısa bir bilgi alıyorlar. Bu özellik, platformun mevcut sürümünde aktif ve güncel uygulamayı kullanan herkes tarafından görülebiliyor.",
-      "Etiketleme süreci iki aşamalı bir sistemle yürütülüyor. İlk olarak, müzik ortakları (sanatçılar ve kayıt şirketleri) yükledikleri parçaları \"tamamen yapay zekâ\", \"kısmen yapay zekâ\" ya da \"yapay zekâ yok\" şeklinde işaretliyor. Bu sayede, yapay zekâdan sadece bir aşamada faydalanan eserler ile tamamen AI tarafından üretilen şarkılar ayrıştırılmış oluyor. İşaretleme yapılmadığında ise YouTube, geliştirdiği tespit algoritmalarıyla parçayı analiz edip uygun etiketi otomatik olarak ekleyebiliyor.",
-      "Yeni rozet, içeriğin yasaklanması anlamına gelmiyor; yalnızca dinleyicilere şarkının üretim süreci hakkında bilgi sunarak tercihlerini bilinçli yapmalarını sağlıyor. Platform, yapay zekâ destekli şarkıların müzik kütüphanesinde kalmaya devam edeceğini ve kullanıcıların bu şarkıları çalma listelerine ekleyip eklemeyeceklerine kendileri karar vereceklerini vurguluyor. YouTube, daha önce video içeriklerinde benzer bir AI etiketi sistemi tanıtmıştı ve bu uygulamanın müzik platformuna genişletilmesi, sektörde şeffaflık standartlarının yükselmesine katkı sağlayabilir."
-    ],
-    "refreshedAt": "2026-10-15T18:21:44.389Z"
-  },
-  {
-    "id": "0a3b87428ecea4f4",
-    "title": "Epic Games, Yapay Zekâyla Geliştirilen Yeni Launcher'ı Tanıttı",
-    "slug": "epic-games-yapay-zekayla-gelistirilen-yeni-launcher-tanittti",
-    "summary": "Epic Games, yapay zekâ temelli bir metod olan \"vibe coding\" ile geliştirilen yeni launcher'ını ön izleme sürümü olarak yayınladı. Şirket, yeni istemcinin başlatma süresinin 5,47 saniye olduğunu ve Steam'in 10,07 saniye sürenin yaklaşık yarısı kadar hızlı olduğunu iddia ediyor. İlk kullanıcılar ise bazı hatalar ve güvenlik endişeleri bildirdi. Aynı gün Epic Games, Fortnite'ın Linux sürümünün yakında geleceğini duyurdu.",
-    "comment": "Yeni launcher, performans iddiasıyla sektörde rekabeti kızıştırabilir ve Epic'in kullanıcı deneyimini iyileştirme çabasını gösteriyor. Ancak erken aşamadaki hatalar ve ödeme güvenliği konusundaki çekinceler, kullanıcı güvenini sarsabilir. Bu durum, diğer oyun platformlarının da istemci optimizasyonlarına yönelmesine yol açabilir; Epic'in tam sürümü çıkmadan önce stabilite ve güvenlik testlerine ağırlık vermesi kritik olacak.",
-    "tags": [
-      "Epic Games",
-      "launcher",
-      "yapay zekâ",
-      "performans",
-      "Steam"
-    ],
-    "category": "Oyun",
-    "source": "Tamindir",
-    "sourceUrl": "https://www.tamindir.com/haber/epic-games-launcher-yapay-zeka-onizleme_112324/",
-    "image": "https://img.tamindir.com/2026/10/476815/epic-games-launcher-yapay-zeka-onizleme.jpg",
-    "publishedAt": "2026-10-15T20:55:00.000Z",
-    "generatedAt": "2026-10-15T16:21:18.678Z",
-    "keyPoints": [
-      "Yeni launcher 'vibe coding' yöntemiyle geliştirildi",
-      "Başlatma süresi 5,47 saniye, Steam'in 10,07 saniyesinin %46'sı",
-      "Kullanıcı raporları hatalar ve ödeme bilgisi güvenliği endişesi"
-    ],
-    "body": [
-      "Epic Games, yapay zekâ destekli yeni bir launcher sürümünü ön izleme aşamasına çıkardı. Şirket, geliştiricilerin kodu doğrudan yazmak yerine, isteklerini yapay zekâya anlatıp \"vibe coding\" adı verilen bir süreçle uygulamayı oluşturduklarını belirtti. Bu yöntemle oluşturulan sürüm, mevcut Epic Games Store istemcisinden daha hafif ve tasarım olarak yenilenmiş bir yapı sunuyor.",
-      "Yeni istemcinin performansını göstermek amacıyla yapılan ölçümlerde, bilgisayar açıldığında launcher'ın 5,47 saniyede tamamen yüklendiği rapor edildi. Aynı test ortamında Valve'ın Steam istemcisi 10,07 saniye sürmüş ve Epic Games, bu farkın yüzde 46'lık bir hız avantajı olduğunu vurguladı. Şirket, kullanıcıları bu ölçümleri kendileri deneyerek doğrulamalarını istedi.",
-      "Launcher'ın ön izleme sürümüne erişen bazı oyuncular ise hatalarla karşılaştı. Bir kullanıcı, Fortnite'ta grafik ayarlarını değiştirirken oyun yerine geliştirici aracı UEFN'nin açıldığını bildirirken, bir diğer grup ödeme bilgilerinin yapay zekâ tarafından yazıldığı mağazaya güvenmemekte. Epic Games, ön izleme notunda bu sorunların oyunları etkilemeyeceğini belirtti.",
-      "Epic Games Store genel müdürü Martin Keely, IGN'e yeni istemcinin indirme yöneticisi, kütüphane ve mağaza sayfaları dahil tüm bileşenlerinin sıfırdan yeniden yazıldığını açıkladı. Mevcut Epic Games kullanıcıları, bu ön izleme sürümünü isteğe bağlı olarak deneyebiliyor. Ayrıca şirket, aynı gün Fortnite'ın Linux platformuna geleceğini duyurarak uzun süredir beklenen bir gelişmeye işaret etti."
-    ],
-    "refreshedAt": "2026-10-15T18:21:52.814Z"
-  },
-  {
-    "id": "33eaca3c40560364",
-    "title": "Gran Turismo temalı DualSense PS5 kontrolcüsü ve GT7'ye 6 yeni araç",
-    "slug": "gran-turismo-temali-dualsense-ps5-kontrolcusu-gt7-6-yeni-arac",
-    "summary": "Sony, Gran Turismo serisinin 30. yılı şerefine sınırlı sayıda Gran Turismo temalı DualSense kontrolcü tanıttı ve aynı güncelleme ile Gran Turismo 7’ye Sportsland Sugo pistini ve altı yeni aracı ekledi. Güncelleme 15 Ekim 2026’dan itibaren ücretsiz olarak indirilebilecek. Kontrolcünün ön paneli karbon fiber görünümlü, fiyatı 84,99 USD (yaklaşık 4.200 TL). Türkiye’de satış tarihi ve fiyatı henüz açıklanmadı.",
-    "comment": "Bu adım, Sony’nin uzun ömürlü bir seriyi kutlarken topluluğa yeni içerik sunma stratejisinin bir parçası. Gran Turismo hayranları, ücretsiz pist ve araçlarla oyunun tazelenmiş hissini yaşayacak, koleksiyoncular ise sınırlı üretim kontrolcüyü kaçırmamak için acele edecek. Türkiye pazarındaki fiyat belirsizliği ise alıcı kararlarını etkileyebilir; ön sipariş sürecinde fiyat duyurularını yakından takip etmek faydalı olacak.",
-    "tags": [
-      "Gran Turismo",
-      "DualSense",
-      "GT7 güncellemesi",
-      "Sugo pisti",
-      "yeni araçlar"
-    ],
-    "category": "Oyun",
-    "source": "Tamindir",
-    "sourceUrl": "https://www.tamindir.com/haber/gran-turismo-30-yil-ozel-dualsense_112323/",
-    "image": "https://img.tamindir.com/2026/10/476815/gran-turismo-30-yil-ozel-dualsense.jpg",
-    "publishedAt": "2026-10-15T20:43:00.000Z",
-    "generatedAt": "2026-10-15T16:21:24.959Z",
-    "keyPoints": [
-      "Gran Turismo temalı DualSense kontrolcü sınırlı sayıda üretilecek",
-      "GT7’ye Sportsland Sugo pisti ve altı yeni araç ücretsiz eklendi",
-      "Kontrolcü önerilen fiyatı 84,99 USD, yaklaşık 4.200 TL"
-    ],
-    "body": [
-      "Sony, Gran Turismo serisinin üç on yılını kutlamak amacıyla sınırlı üretim bir DualSense kontrolcü duyurdu. Kontrolcünün ön yüzü karbon fiber görünümlü bir dokunuşla tasarlandı; iki siyah yarış şeridi ve motor sporlarından ilham alan grafikler yer alıyor. Omuz ve tetik tuşları ise tamamen siyah renkte. Kontrolcü, koleksiyon meraklıları için özel bir ürün olmasının yanı sıra, standart DualSense deneyimini görsel açıdan farklılaştırıyor.",
-      "Aynı duyuruyla birlikte Gran Turismo 7’ye büyük bir ücretsiz güncelleme geldi. 15 Ekim 2026 sabahından itibaren oyuncular, Spec IV güncellemesini indirerek Japonya’nın ünlü Sportsland Sugo pistine erişebilecek. Pist, inişli çıkışlı virajları ve teknik yapısıyla oyuna yeni bir yarış deneyimi katıyor. Güncelleme ayrıca altı yeni otomobil, yeni Dünya Pisti etkinlikleri, Deneyim modu ve Scapes konumları da sunuyor.",
-      "Eklenen araçlar arasında Xiaomi’nin Vision Gran Turismo hiper otomobili, 0,29 sürtünme katsayısıyla öne çıkıyor. Ferrari F355 ve 1987 model Civic Si gibi klasikler ise nostalji tutkunlarını hedef alıyor. Tüm araçlar oyun içi kredilerle satın alınabiliyor, bu da oyunculara ücretsiz içerik üzerinden yeni seçenekler sunuyor. Güncelleme, GT7’nin içerik çeşitliliğini artırarak uzun vadeli oyuncu ilgisini korumayı amaçlıyor.",
-      "Gran Turismo serisinin kurucusu Kazunori Yamauchi, bu özel kontrolcü ve güncellemenin serinin 30 yıllık yolculuğunu kutlamak için bir fırsat olduğunu vurguladı. Yamauchi, oyunun otomobillerin güzelliğini paylaşma fikriyle doğduğunu hatırlatarak, topluluğa duyulan minnettarlığı dile getirdi. Bu tür kutlamalar, markanın sadık hayran kitlesiyle bağını güçlendirmeye hizmet ediyor.",
-      "Kontrolcünün önerilen satış fiyatı 84,99 USD ve Avrupa’da aynı fiyatla 84,99 EUR olarak belirlendi. Türkiye’de ön siparişlerin 22 Ekim 2026’da saat 10.00’da başlayacağı, satışın ise 10 Aralık 2026’dan itibaren dünya genelinde gerçekleşeceği duyuruldu. Ancak yerel fiyat ve kesin satış tarihi henüz netleşmedi, bu da Türkiye’deki oyuncuların merakını artırıyor."
-    ],
-    "refreshedAt": "2026-10-15T18:22:09.807Z"
-  },
-  {
     "id": "87ce349abb7680a8",
     "title": "Microsoft, Xbox’a Özel Büyük Seriler İçin Anket Gönderdi",
     "slug": "microsoft-xboxa-ozel-buyuk-seriler-icin-anket-gonderdi",
@@ -128,6 +32,68 @@
       "Anket, Xbox'un 2027 mali yılı içinde kâra geçme hedefi doğrultusunda stratejik bir araç olarak görülüyor. Şirket, oyuncu geri bildirimlerini değerlendirerek hangi oyunların platforma özel olmasının daha fazla kullanıcı çekebileceğini ve gelirini artırabileceğini analiz etmeyi planlıyor. Bu tür anketlerin gerçek kararları yansıtması düşük olsa da, sektördeki rekabeti ve platformlar arası dengeyi etkileyebilecek bir adım olarak dikkat çekiyor."
     ],
     "refreshedAt": "2026-10-15T18:22:19.796Z"
+  },
+  {
+    "id": "0ab36acf6850d7c6",
+    "title": "Üsküdar Belediye Başkanvekili Dündar Ziya Gültekin Trafik Kazasında Hayatını Kaybetti",
+    "slug": "uskudar-belediye-baskanvekili-dundar-ziya-gultekin-trafik-kazasi",
+    "summary": "Üsküdar Belediye Başkanvekili Dündar Ziya Gültekin, 2024 yılının Kasım ayında Düzce'de gerçekleşen bir trafik kazasında yaşamını yitirdi. Gültekin, Ankara yönüne seyreden otoyolda 34 VR 2034 plakalı arabasıyla 16 ARZ 453 plakalı bir araç arasında çarpışma sonucu ağır yaralandı ve hastaneye kaldırıldıktan sonra vefat etti. Ölümü, AK Parti Düzce İl Başkanı Hasan Şengüloğlu ve parti yetkilileri tarafından resmi açıklamayla duyuruldu. Gültekin, 1983 doğumlu, veterinerlik ve kamu yönetimi eğitimi almış, 2002’den itibaren AK Parti içinde çeşitli görevlerde bulunmuş bir siyasetçiydi.",
+    "keyPoints": [
+      "Dündar Ziya Gültekin, Düzce'de otoyolda trafik kazası geçirdi",
+      "Kaza, 34 VR 2034 ve 16 ARZ 453 plakalı araçların çarpışmasıyla oluştu",
+      "Gültekin, 1983 doğumlu, AK Parti Üsküdar Başkanvekiliydi"
+    ],
+    "body": [
+      "Üsküdar Belediyesi'nin uzun süredir görev yapan Başkanvekili Dündar Ziya Gültekin, 2024 yılının Kasım ayında Düzce'nin Kaynaşlı ilçesinde meydana gelen bir trafik kazasında hayatını kaybetti. Olay, Ankara yönüne seyreden otoyolda Gültekin'in kullandığı 34 VR 2034 plakalı otomobilin aynı yönde ilerleyen 16 ARZ 453 plakalı bir araçla çarpışması sonucu gerçekleşti. Kazanın ardından olay yerine sağlık ve polis ekipleri sevk edildi, ancak Gültekin hastaneye kaldırıldıktan kısa bir süre içinde vefat etti.",
+      "Gültekin, 1983 yılında İstanbul Üsküdar’da doğmuş, İstanbul Üniversitesi Veteriner Fakültesi'nden mezun olduktan sonra Anadolu Üniversitesi Kamu Yönetimi Bölümü'nde eğitimini tamamlamıştı. Siyasi kariyerine 2002 yılında AK Parti Üsküdar Gençlik Kolları'nda başlayan Gültekin, 2008‑2012 yılları arasında Üsküdar İlçe Gençlik Kolları Başkanlığı görevini yürüttü. 2019 yılında Üsküdar Belediye Meclis Üyesi seçildikten sonra AK Parti Grup Başkanvekilliği ve aynı yıl Başkanvekilliği görevlerine atanarak belediye yönetiminde önemli sorumluluklar üstlendi.",
+      "AK Parti Düzce İl Başkanı Hasan Şengüloğlu, kazayı ve Gültekin'in vefatını resmi açıklamayla duyurdu. Şengüloğlu, Gültekin'in ani kaybının tüm parti mensupları ve Üsküdar halkı üzerinde büyük bir şok yarattığını belirtti. Parti yetkilileri, Gültekin'in yakınlarına ve Üsküdar sakinlerine başsağlığı dileyerek, onun hizmetlerini takdirle anacaklarını ifade etti.",
+      "Gültekin'in siyasi geçmişi, 2002‑2008 yılları arasında Gençlik Kolları'nda çeşitli görevler, 2008‑2012 dönemi İlçe Gençlik Kolları Başkanlığı ve 2012‑2019 yılları arasında Üsküdar İlçe Başkan Yardımcılığı gibi önemli kademeleri içeriyor. Ayrıca 2018 ve 2023 genel seçimlerinde Seçim Koordinasyon Merkezi (SKM) Başkanlığı görevlerini üstlenmiş, 2016‑2024 yılları arasında 15 Temmuz Derneği Genel Sekreterliği yapmıştı. Ölümü, Üsküdar belediyesinin ve AK Parti'nin yerel yönetim kadrolarında bir boşluk bırakırken, parti içi ve yerel siyasette yeni atamaların gündeme gelmesi bekleniyor."
+    ],
+    "comment": "Dündar Ziya Gültekin'in ani ölümü, Üsküdar belediyesinin yönetim kadrosunda deneyimli bir isim kaybına yol açtı ve parti içinde yeni atamaların hızlıca yapılmasını zorunlu kılıyor. Yerel seçimlerdeki projeler ve hizmet planları, Gültekin'in sorumluluğunda olduğu için bir süre aksayabilir. Parti, bu boşluğu doldururken kamuoyunun beklentilerini karşılayacak bir isim seçmeli ve hizmet sürekliliğini sağlamalı.",
+    "tags": [
+      "Dündar Ziya Gültekin",
+      "trafik kazası",
+      "Üsküdar",
+      "AK Parti",
+      "Düzce"
+    ],
+    "category": "Gündem",
+    "source": "CNN Türk",
+    "sourceUrl": "https://www.cnnturk.com/turkiye/dundar-ziya-gultekin-kimdir-uskudar-belediye-baskan-vekili-dundar-ziya-gultekin-hangi-partiden-nereli-ak-parti-il-baskani-duyurdu-3479751",
+    "image": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad0d02c5b565308d7130d05.jpg",
+    "publishedAt": "2026-10-15T19:46:17.774Z",
+    "generatedAt": "2026-10-15T19:46:27.318Z"
+  },
+  {
+    "id": "f83cb3de8c4faa90",
+    "title": "NASA, -170°C'ye Dayanabilen Katı Hal Batarya Prototipi Geliştirdi",
+    "slug": "nasa-170cye-dayanabilen-kati-hal-batarya-prototipi-gelistirdi",
+    "summary": "NASA, Langley Araştırma Merkezi'nde yürüttüğü SPEARS projesi kapsamında katı hal batarya prototiplerini test etti. Prototipler -80°C'ye kadar çalışabilirken -170°C'ye kadar soğukta fiziksel hasar göstermedi. En düşük sıcaklıkta enerji üretemediği için hücrelerin önce ısıtılması gerekiyor. Bu teknoloji, Ay'ın soğuk bölgelerindeki enerji yönetimini iyileştirme potansiyeli taşıyor.",
+    "keyPoints": [
+      "Bataryalar -80°C'de çalışabilir, -170°C'de hasar görmez",
+      "En düşük sıcaklıkta enerji üretmez, ısıtma gerekir",
+      "Katı elektrolit, sıvı elektrolitteki yangın riskini azaltır"
+    ],
+    "body": [
+      "NASA, uzay görevlerinde karşılaşılan aşırı sıcaklık koşullarına dayanacak enerji depolama sistemleri geliştirmek amacıyla SPEARS (Solid Power for Extreme Environment Adaptability and Resilience in Space) projesini yürütüyor. Langley Araştırma Merkezi'nde yapılan termal vakum testlerinde, yeni katı hal batarya prototiplerinin -60°C ile -80°C arasındaki sıcaklıklarda sorunsuz çalıştığı, -80°C'ye kadar performansını sürdürebildiği gözlemlendi. Bu sıcaklıkların altına düştüklerinde ise enerji üretim kapasitesi düşse de, hücreler fiziksel olarak zarar görmedi.",
+      "Testler, prototip bataryaların -170°C'ye kadar soğukta maruz bırakıldığında yapısal bütünlüğünü koruduğunu gösterdi. Katı seramik veya polimer tabanlı elektrolitlerin kullanılması, geleneksel lityum iyon bataryalarda sıvı elektrolitin dondurulması ve yanma riskine karşı önemli bir avantaj sağlıyor. Ancak, en düşük test sıcaklığında bataryalar enerji üretemediği için, cihazların çalıştırılmadan önce belirli bir ısı seviyesine getirilmesi gerekiyor. Bu durum, doğrudan aşırı soğukta çalışan bir batarya çözümünün henüz tam olarak sağlanamadığını ortaya koyuyor.",
+      "Ay'ın güney kutup bölgesinde sıcaklıkların -200°C'ye kadar düşebildiği bilinmektedir. Bu koşullar, mevcut lityum iyon bataryaların performansını ciddi şekilde kısıtlıyor; sıvı elektrolitler donarken hem enerji kapasitesi azalıyor hem de yangın riski artıyor. Katı hal bataryaların bu düşük sıcaklıklara dayanabilmesi, Ay yüzeyinde çalışan keşif araçları, bilimsel ölçüm cihazları ve astronotların acil durum ekipmanları için ısıtma ihtiyacını azaltabilir. Böylece uzay araçlarının ısı yönetim sistemleri daha hafif ve enerji verimli hale gelebilir.",
+      "NASA araştırmacıları, farklı elektrot malzemeleri ve tasarımlarla bataryaların enerji yoğunluğunu, güç çıkışını ve ömürünü görev gereksinimlerine göre optimize etmeyi hedefliyor. Katı hal teknolojisinin başarılı test sonuçları, sadece Ay görevlerinde değil, uçaklar, insansız hava araçları, kara taşıtları ve taşınabilir elektronik cihazlar gibi çeşitli alanlarda da kullanılabileceği beklentisini güçlendiriyor. İleri testler ve uzun vadeli dayanıklılık değerlendirmeleri tamamlandıkça, bu yeni nesil bataryaların ticari ve askeri uygulamalara geçişi daha somut bir hâl alacak."
+    ],
+    "comment": "Bu gelişme, uzay görevlerinde enerji verimliliğini artırarak ekipmanların daha uzun süre çalışmasını sağlayabilir ve taşıma maliyetlerini düşürebilir. Özellikle Ay'ın ekstrem soğuk bölgelerinde görev yapan robotlar ve astronotlar, ısıtma sistemlerine harcanan enerjiyi tasarruf ederek daha fazla bilimsel faaliyet gerçekleştirebilir. Katı hal bataryaların ticari alanda da yaygınlaşması, güvenlik ve performans açısından sıvı elektrolitli çözümlere kıyasla önemli bir adım olacak; ancak düşük sıcaklıklarda ısıtma ihtiyacı hâlâ çözülmesi gereken bir sorun olarak kalıyor.",
+    "tags": [
+      "NASA",
+      "katı hal batarya",
+      "Ay keşifleri",
+      "enerji depolama",
+      "uzay teknolojisi"
+    ],
+    "category": "Donanım",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/nasa-170-dereceye-dayanabilen-kati-hal-batarya-gelistirdi--211686",
+    "image": "https://www.donanimhaber.com/images/images/haber/211686/1200x675nasa-170-dereceye-dayanabilen-kati-hal-batarya-gelistirdi.jpg",
+    "publishedAt": "2026-10-15T19:45:00.000Z",
+    "generatedAt": "2026-10-15T19:46:37.275Z"
   },
   {
     "id": "2ee03cd9c9d668ee",
@@ -1031,6 +997,102 @@
     "image": "https://www.donanimhaber.com/images/images/haber/211674/1200x675bmw-i3-tek-sarjla-1-213-kilometre-yol-katetti.jpg",
     "publishedAt": "2026-10-15T16:26:00.000Z",
     "generatedAt": "2026-10-15T17:04:29.889Z"
+  },
+  {
+    "id": "33eaca3c40560364",
+    "title": "Gran Turismo temalı DualSense PS5 kontrolcüsü ve GT7'ye 6 yeni araç",
+    "slug": "gran-turismo-temali-dualsense-ps5-kontrolcusu-gt7-6-yeni-arac",
+    "summary": "Sony, Gran Turismo serisinin 30. yılı şerefine sınırlı sayıda Gran Turismo temalı DualSense kontrolcü tanıttı ve aynı güncelleme ile Gran Turismo 7’ye Sportsland Sugo pistini ve altı yeni aracı ekledi. Güncelleme 15 Ekim 2026’dan itibaren ücretsiz olarak indirilebilecek. Kontrolcünün ön paneli karbon fiber görünümlü, fiyatı 84,99 USD (yaklaşık 4.200 TL). Türkiye’de satış tarihi ve fiyatı henüz açıklanmadı.",
+    "comment": "Bu adım, Sony’nin uzun ömürlü bir seriyi kutlarken topluluğa yeni içerik sunma stratejisinin bir parçası. Gran Turismo hayranları, ücretsiz pist ve araçlarla oyunun tazelenmiş hissini yaşayacak, koleksiyoncular ise sınırlı üretim kontrolcüyü kaçırmamak için acele edecek. Türkiye pazarındaki fiyat belirsizliği ise alıcı kararlarını etkileyebilir; ön sipariş sürecinde fiyat duyurularını yakından takip etmek faydalı olacak.",
+    "tags": [
+      "Gran Turismo",
+      "DualSense",
+      "GT7 güncellemesi",
+      "Sugo pisti",
+      "yeni araçlar"
+    ],
+    "category": "Oyun",
+    "source": "Tamindir",
+    "sourceUrl": "https://www.tamindir.com/haber/gran-turismo-30-yil-ozel-dualsense_112323/",
+    "image": "https://img.tamindir.com/2026/10/476815/gran-turismo-30-yil-ozel-dualsense.jpg",
+    "publishedAt": "2026-10-15T16:21:24.959Z",
+    "generatedAt": "2026-10-15T16:21:24.959Z",
+    "keyPoints": [
+      "Gran Turismo temalı DualSense kontrolcü sınırlı sayıda üretilecek",
+      "GT7’ye Sportsland Sugo pisti ve altı yeni araç ücretsiz eklendi",
+      "Kontrolcü önerilen fiyatı 84,99 USD, yaklaşık 4.200 TL"
+    ],
+    "body": [
+      "Sony, Gran Turismo serisinin üç on yılını kutlamak amacıyla sınırlı üretim bir DualSense kontrolcü duyurdu. Kontrolcünün ön yüzü karbon fiber görünümlü bir dokunuşla tasarlandı; iki siyah yarış şeridi ve motor sporlarından ilham alan grafikler yer alıyor. Omuz ve tetik tuşları ise tamamen siyah renkte. Kontrolcü, koleksiyon meraklıları için özel bir ürün olmasının yanı sıra, standart DualSense deneyimini görsel açıdan farklılaştırıyor.",
+      "Aynı duyuruyla birlikte Gran Turismo 7’ye büyük bir ücretsiz güncelleme geldi. 15 Ekim 2026 sabahından itibaren oyuncular, Spec IV güncellemesini indirerek Japonya’nın ünlü Sportsland Sugo pistine erişebilecek. Pist, inişli çıkışlı virajları ve teknik yapısıyla oyuna yeni bir yarış deneyimi katıyor. Güncelleme ayrıca altı yeni otomobil, yeni Dünya Pisti etkinlikleri, Deneyim modu ve Scapes konumları da sunuyor.",
+      "Eklenen araçlar arasında Xiaomi’nin Vision Gran Turismo hiper otomobili, 0,29 sürtünme katsayısıyla öne çıkıyor. Ferrari F355 ve 1987 model Civic Si gibi klasikler ise nostalji tutkunlarını hedef alıyor. Tüm araçlar oyun içi kredilerle satın alınabiliyor, bu da oyunculara ücretsiz içerik üzerinden yeni seçenekler sunuyor. Güncelleme, GT7’nin içerik çeşitliliğini artırarak uzun vadeli oyuncu ilgisini korumayı amaçlıyor.",
+      "Gran Turismo serisinin kurucusu Kazunori Yamauchi, bu özel kontrolcü ve güncellemenin serinin 30 yıllık yolculuğunu kutlamak için bir fırsat olduğunu vurguladı. Yamauchi, oyunun otomobillerin güzelliğini paylaşma fikriyle doğduğunu hatırlatarak, topluluğa duyulan minnettarlığı dile getirdi. Bu tür kutlamalar, markanın sadık hayran kitlesiyle bağını güçlendirmeye hizmet ediyor.",
+      "Kontrolcünün önerilen satış fiyatı 84,99 USD ve Avrupa’da aynı fiyatla 84,99 EUR olarak belirlendi. Türkiye’de ön siparişlerin 22 Ekim 2026’da saat 10.00’da başlayacağı, satışın ise 10 Aralık 2026’dan itibaren dünya genelinde gerçekleşeceği duyuruldu. Ancak yerel fiyat ve kesin satış tarihi henüz netleşmedi, bu da Türkiye’deki oyuncuların merakını artırıyor."
+    ],
+    "refreshedAt": "2026-10-15T18:22:09.807Z"
+  },
+  {
+    "id": "0a3b87428ecea4f4",
+    "title": "Epic Games, Yapay Zekâyla Geliştirilen Yeni Launcher'ı Tanıttı",
+    "slug": "epic-games-yapay-zekayla-gelistirilen-yeni-launcher-tanittti",
+    "summary": "Epic Games, yapay zekâ temelli bir metod olan \"vibe coding\" ile geliştirilen yeni launcher'ını ön izleme sürümü olarak yayınladı. Şirket, yeni istemcinin başlatma süresinin 5,47 saniye olduğunu ve Steam'in 10,07 saniye sürenin yaklaşık yarısı kadar hızlı olduğunu iddia ediyor. İlk kullanıcılar ise bazı hatalar ve güvenlik endişeleri bildirdi. Aynı gün Epic Games, Fortnite'ın Linux sürümünün yakında geleceğini duyurdu.",
+    "comment": "Yeni launcher, performans iddiasıyla sektörde rekabeti kızıştırabilir ve Epic'in kullanıcı deneyimini iyileştirme çabasını gösteriyor. Ancak erken aşamadaki hatalar ve ödeme güvenliği konusundaki çekinceler, kullanıcı güvenini sarsabilir. Bu durum, diğer oyun platformlarının da istemci optimizasyonlarına yönelmesine yol açabilir; Epic'in tam sürümü çıkmadan önce stabilite ve güvenlik testlerine ağırlık vermesi kritik olacak.",
+    "tags": [
+      "Epic Games",
+      "launcher",
+      "yapay zekâ",
+      "performans",
+      "Steam"
+    ],
+    "category": "Oyun",
+    "source": "Tamindir",
+    "sourceUrl": "https://www.tamindir.com/haber/epic-games-launcher-yapay-zeka-onizleme_112324/",
+    "image": "https://img.tamindir.com/2026/10/476815/epic-games-launcher-yapay-zeka-onizleme.jpg",
+    "publishedAt": "2026-10-15T16:21:18.678Z",
+    "generatedAt": "2026-10-15T16:21:18.678Z",
+    "keyPoints": [
+      "Yeni launcher 'vibe coding' yöntemiyle geliştirildi",
+      "Başlatma süresi 5,47 saniye, Steam'in 10,07 saniyesinin %46'sı",
+      "Kullanıcı raporları hatalar ve ödeme bilgisi güvenliği endişesi"
+    ],
+    "body": [
+      "Epic Games, yapay zekâ destekli yeni bir launcher sürümünü ön izleme aşamasına çıkardı. Şirket, geliştiricilerin kodu doğrudan yazmak yerine, isteklerini yapay zekâya anlatıp \"vibe coding\" adı verilen bir süreçle uygulamayı oluşturduklarını belirtti. Bu yöntemle oluşturulan sürüm, mevcut Epic Games Store istemcisinden daha hafif ve tasarım olarak yenilenmiş bir yapı sunuyor.",
+      "Yeni istemcinin performansını göstermek amacıyla yapılan ölçümlerde, bilgisayar açıldığında launcher'ın 5,47 saniyede tamamen yüklendiği rapor edildi. Aynı test ortamında Valve'ın Steam istemcisi 10,07 saniye sürmüş ve Epic Games, bu farkın yüzde 46'lık bir hız avantajı olduğunu vurguladı. Şirket, kullanıcıları bu ölçümleri kendileri deneyerek doğrulamalarını istedi.",
+      "Launcher'ın ön izleme sürümüne erişen bazı oyuncular ise hatalarla karşılaştı. Bir kullanıcı, Fortnite'ta grafik ayarlarını değiştirirken oyun yerine geliştirici aracı UEFN'nin açıldığını bildirirken, bir diğer grup ödeme bilgilerinin yapay zekâ tarafından yazıldığı mağazaya güvenmemekte. Epic Games, ön izleme notunda bu sorunların oyunları etkilemeyeceğini belirtti.",
+      "Epic Games Store genel müdürü Martin Keely, IGN'e yeni istemcinin indirme yöneticisi, kütüphane ve mağaza sayfaları dahil tüm bileşenlerinin sıfırdan yeniden yazıldığını açıkladı. Mevcut Epic Games kullanıcıları, bu ön izleme sürümünü isteğe bağlı olarak deneyebiliyor. Ayrıca şirket, aynı gün Fortnite'ın Linux platformuna geleceğini duyurarak uzun süredir beklenen bir gelişmeye işaret etti."
+    ],
+    "refreshedAt": "2026-10-15T18:21:52.814Z"
+  },
+  {
+    "id": "646b03fd8ae53a8c",
+    "title": "YouTube Music, Yapay Zeka ile Üretilen Şarkıları Etiketleyecek",
+    "slug": "youtube-music-yapay-zeka-ile-uretilen-sarkilari-etiketleyecek",
+    "summary": "YouTube Music, dinlediğiniz şarkının yapay zeka ile üretilip üretilmediğini oynatıcı ekranında gösteren bir etiket sistemi başlattı. Etiket, şarkı adının altında ve sanatçının yanında \"AI\" rozetini içeriyor ve tıklandığında üretim sürecine dair kısa bir açıklama sunuyor. Bu uygulama şu anda sadece YouTube Music'te aktif ve ileride ana YouTube uygulamasına da taşınması planlanıyor. Şirket, etiketi şeffaflık sağlamak ve dinleyicilere doğru bilgi vermek amacıyla geliştirdiğini belirtiyor.",
+    "comment": "Bu adım, müzik tüketicilerine içerik kaynağı hakkında net bilgi sunarak seçim özgürlüğünü artırıyor ve yapay zekâ destekli üretimin algısını şekillendiriyor. Sanatçılar, eserlerini nasıl tanıtacakları konusunda yeni bir sorumlulukla karşı karşıya; platformlar ise tespit mekanizmalarının doğruluğunu sürekli iyileştirmeli. Gelecekte, diğer müzik hizmetlerinin de benzer etiketleme sistemleri getirmesi, sektörde bir şeffaflık rekabeti başlatabilir. Kullanıcıların AI etiketiyle ilgili bilinçli tercih yapabilmesi, telif ve etik tartışmalarının da gündeme gelmesine yol açabilir.",
+    "tags": [
+      "YouTube Music",
+      "AI etiketi",
+      "yapay zeka",
+      "müzik platformu",
+      "şeffaflık"
+    ],
+    "category": "Yazılım",
+    "source": "Tamindir",
+    "sourceUrl": "https://www.tamindir.com/haber/youtube-music-yapay-zeka-sarki-etiketi_112325/",
+    "image": "https://img.tamindir.com/2026/10/476815/youtube-music-yapay-zeka-sarki-etiketi.jpg",
+    "publishedAt": "2026-10-15T16:21:11.867Z",
+    "generatedAt": "2026-10-15T16:21:11.867Z",
+    "keyPoints": [
+      "AI etiketi YouTube Music oynatıcı ekranında görünüyor",
+      "Sanatçılar şarkıyı tamamen, kısmen veya hiç AI ile işaretleyebiliyor",
+      "YouTube, eksik işaretlemelerde kendi tespit sistemini devreye sokuyor"
+    ],
+    "body": [
+      "YouTube Music, müzik dinleme deneyimini daha şeffaf hâle getirmek amacıyla yapay zeka ile üretilen eserleri belirten bir \"AI\" rozetini oynatıcı arayüzüne ekledi. Kullanıcılar bir şarkıyı çalarken şarkı adının hemen altında ve sanatçının yanında yer alan bu etikete dokunduklarında, parçanın tamamen yapay zekâyla mı yoksa sadece bir kısmının mı üretildiğine dair kısa bir bilgi alıyorlar. Bu özellik, platformun mevcut sürümünde aktif ve güncel uygulamayı kullanan herkes tarafından görülebiliyor.",
+      "Etiketleme süreci iki aşamalı bir sistemle yürütülüyor. İlk olarak, müzik ortakları (sanatçılar ve kayıt şirketleri) yükledikleri parçaları \"tamamen yapay zekâ\", \"kısmen yapay zekâ\" ya da \"yapay zekâ yok\" şeklinde işaretliyor. Bu sayede, yapay zekâdan sadece bir aşamada faydalanan eserler ile tamamen AI tarafından üretilen şarkılar ayrıştırılmış oluyor. İşaretleme yapılmadığında ise YouTube, geliştirdiği tespit algoritmalarıyla parçayı analiz edip uygun etiketi otomatik olarak ekleyebiliyor.",
+      "Yeni rozet, içeriğin yasaklanması anlamına gelmiyor; yalnızca dinleyicilere şarkının üretim süreci hakkında bilgi sunarak tercihlerini bilinçli yapmalarını sağlıyor. Platform, yapay zekâ destekli şarkıların müzik kütüphanesinde kalmaya devam edeceğini ve kullanıcıların bu şarkıları çalma listelerine ekleyip eklemeyeceklerine kendileri karar vereceklerini vurguluyor. YouTube, daha önce video içeriklerinde benzer bir AI etiketi sistemi tanıtmıştı ve bu uygulamanın müzik platformuna genişletilmesi, sektörde şeffaflık standartlarının yükselmesine katkı sağlayabilir."
+    ],
+    "refreshedAt": "2026-10-15T18:21:44.389Z"
   },
   {
     "id": "c3494cf28878ec3c",
