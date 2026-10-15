@@ -25,6 +25,7 @@ export default async (req) => {
 
   const title = String(body?.title || "").slice(0, 220);
   const summary = String(body?.summary || "").slice(0, 900);
+  const keyPoints = String(body?.keyPoints || "").slice(0, 600);
   const comment = String(body?.comment || "").slice(0, 900);
 
   try {
@@ -46,7 +47,7 @@ export default async (req) => {
           },
           {
             role: "user",
-            content: `HABER BAŞLIĞI: ${title}\nHABER ÖZETİ: ${summary}\nEDİTÖR YORUMU: ${comment}\n\nKULLANICI SORUSU: ${question}`,
+            content: `HABER BAŞLIĞI: ${title}\nHABER ÖZETİ: ${summary}\nÖNE ÇIKANLAR: ${keyPoints || "-"}\nEDİTÖR YORUMU: ${comment}\n\nKULLANICI SORUSU: ${question}`,
           },
         ],
       }),

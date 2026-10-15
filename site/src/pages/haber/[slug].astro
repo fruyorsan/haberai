@@ -1,6 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
+import ShareButtons from "../../components/ShareButtons.astro";
 import { getArticles, formatDate } from "../../lib/articles.js";
 
 export function getStaticPaths() {
@@ -17,8 +18,14 @@ const date = formatDate(article.publishedAt || article.generatedAt);
 const sameCat = all.filter((a) => a.categorySlug === article.categorySlug && a.slug !== article.slug);
 const related = (sameCat.length ? sameCat : all.filter((a) => a.slug !== article.slug)).slice(0, 3);
 
-const words = `${article.summary} ${article.comment}`.split(/\s+/).filter(Boolean).length;
+const keyPoints = Array.isArray(article.keyPoints) ? article.keyPoints.filter(Boolean) : [];
+
+const words = `${article.summary || ""} ${keyPoints.join(" ")} ${article.comment || ""}`
+  .split(/\s+/)
+  .filter(Boolean).length;
 const readMin = Math.max(1, Math.round(words / 200));
+
+const shareUrl = Astro.url.href;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -43,6 +50,8 @@ const jsonLd = {
 <Base title={`${article.title} — HaberAI`} description={article.summary}>
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
   <div class="container">
     <article class="post">
       <nav class="crumbs">
@@ -60,28 +69,64 @@ const jsonLd = {
         <time>{date}</time>
         <span class="post__dot">•</span>
         <span>{readMin} dk okuma</span>
+        <div class="post__share">
+          <ShareButtons url={shareUrl} title={article.title} />
+        </div>
       </div>
 
       {article.image && (
-        <img class="post__image" src={article.image} alt={article.title} />
-      )}
-
-      <p class="post__lead">{article.summary}</p>
-
-      {article.comment && (
-        <div class="post__comment">
-          <div class="post__comment-head">
-            <span class="post__comment-badge">AI YORUMU</span>
-            <span class="post__comment-sub">HaberAI editör analizi</span>
+        <div class="post__media">
+          <div class="post__ph" aria-hidden="true">
+            <span>HaberAI</span>
           </div>
-          <p>{article.comment}</p>
+          <img
+            class="post__image"
+            src={article.image}
+            alt={article.title}
+            fetchpriority="high"
+            decoding="async"
+            onerror="this.classList.add('is-broken')"
+          />
         </div>
       )}
+
+      <div class="post__body">
+        {article.summary && (
+          <section class="summary">
+            <h2 class="summary__title">Özet</h2>
+            <p class="summary__text">{article.summary}</p>
+          </section>
+        )}
+
+        {keyPoints.length > 0 && (
+          <section class="keys">
+            <h2 class="keys__title">Öne Çıkanlar</h2>
+            <ul class="keys__list">
+              {keyPoints.map((k) => (
+                <li class="keys__item">
+                  <span class="keys__bullet" aria-hidden="true"></span>
+                  <span>{k}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {article.comment && (
+          <section class="analysis">
+            <div class="analysis__head">
+              <span class="analysis__badge">AI YORUMU</span>
+              <span class="analysis__sub">HaberAI editör analizi</span>
+            </div>
+            <p class="analysis__text">{article.comment}</p>
+          </section>
+        )}
+      </div>
 
       {article.tags?.length > 0 && (
         <div class="post__tags">
           {article.tags.map((t) => (
-            <span class="post__tag">#{t}</span>
+            <a class="post__tag" href={`/ara/?q=${encodeURIComponent(t)}`}>#{t}</a>
           ))}
         </div>
       )}
@@ -89,6 +134,9 @@ const jsonLd = {
       <div class="post__ref">
         Kaynak:
         <a href={article.sourceUrl} target="_blank" rel="noopener nofollow">{article.source}</a>
+        <span class="post__ai-note">
+          Bu içerik yapay zekâ ile derlenmiştir; hata olabilir. Ayrıntılar için kaynağa bakın.
+        </span>
       </div>
     </article>
 
@@ -98,6 +146,7 @@ const jsonLd = {
       data-title={article.title}
       data-summary={article.summary}
       data-comment={article.comment}
+      data-keypoints={keyPoints.join(" | ")}
     >
       <div class="aiask__head">
         <span class="aiask__badge">AI'YA SOR</span>
@@ -123,15 +172,30 @@ const jsonLd = {
 
     {related.length > 0 && (
       <section>
-        <h2 class="section-title">İlgili Haberler</h2>
+        <h2 class="section-title section-title--line">İlgili Haberler</h2>
         <div class="grid">
-          {related.map((a) => <ArticleCard article={a} />)}
+          {related.map((a, i) => <ArticleCard article={a} index={i} />)}
         </div>
       </section>
     )}
   </div>
 
   <script>
+    // --- Okuma ilerleme çubuğu ---
+    const bar = document.getElementById("progress");
+    if (bar) {
+      const update = () => {
+        const el = document.documentElement;
+        const max = el.scrollHeight - el.clientHeight;
+        const p = max > 0 ? el.scrollTop / max : 0;
+        bar.style.transform = `scaleX(${Math.min(Math.max(p, 0), 1)})`;
+      };
+      update();
+      window.addEventListener("scroll", update, { passive: true });
+      window.addEventListener("resize", update);
+    }
+
+    // --- AI'ya Sor ---
     const box = document.getElementById("aiask");
     if (box) {
       const form = document.getElementById("aiask-form");
@@ -141,6 +205,7 @@ const jsonLd = {
         title: box.dataset.title || "",
         summary: box.dataset.summary || "",
         comment: box.dataset.comment || "",
+        keyPoints: box.dataset.keypoints || "",
       };
 
       async function ask(q) {
@@ -180,8 +245,22 @@ const jsonLd = {
 </Base>
 
 <style>
+  /* --- Okuma ilerlemesi --- */
+  .progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    z-index: 30;
+    background: var(--red-grad);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.1s linear;
+  }
+
   .post {
-    max-width: 760px;
+    max-width: 780px;
     margin: 30px auto 0;
   }
   .crumbs {
@@ -190,15 +269,17 @@ const jsonLd = {
     font-size: 0.85rem;
     color: var(--muted);
     margin-bottom: 16px;
+    flex-wrap: wrap;
   }
   .crumbs a:hover {
     color: var(--red);
   }
   .post__title {
-    font-size: 2.1rem;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    font-size: 2.15rem;
+    line-height: 1.19;
+    letter-spacing: -0.025em;
     margin: 14px 0 14px;
+    font-weight: 900;
   }
   .post__meta {
     display: flex;
@@ -215,62 +296,188 @@ const jsonLd = {
     color: var(--red);
     font-weight: 700;
   }
-  .post__image {
-    width: 100%;
+  .post__dot {
+    opacity: 0.5;
+  }
+  .post__share {
+    margin-left: auto;
+  }
+
+  .post__media {
+    position: relative;
     border-radius: var(--radius);
-    margin-bottom: 22px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    background: var(--bg-soft);
+    aspect-ratio: 16 / 9;
+    box-shadow: var(--shadow);
   }
-  .post__lead {
-    font-size: 1.18rem;
-    line-height: 1.7;
+  .post__ph {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: var(--red-grad);
+    color: rgba(255, 255, 255, 0.45);
+    font-weight: 900;
+    letter-spacing: 0.16em;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+  }
+  .post__image {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s linear;
+  }
+  .post__image.is-broken {
+    opacity: 0;
+  }
+
+  .post__body {
+    font-size: 1.06rem;
+    line-height: 1.75;
+    color: var(--ink-2);
+  }
+
+  /* --- Özet --- */
+  .summary__title,
+  .keys__title {
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 10px;
+  }
+  .summary__text {
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.72;
     font-weight: 500;
-    color: #2a2d34;
+    color: #23262c;
+    padding-left: 18px;
+    border-left: 4px solid var(--line);
   }
-  .post__comment {
-    background: var(--red-soft);
-    border-left: 4px solid var(--red);
-    border-radius: 10px;
-    padding: 18px 20px;
-    margin: 26px 0;
+
+  /* --- Öne çıkanlar --- */
+  .keys {
+    margin: 30px 0;
+    padding: 22px 24px;
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
   }
-  .post__comment-head {
+  .keys__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .keys__item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #23262c;
+  }
+  .keys__bullet {
+    flex-shrink: 0;
+    margin-top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--red-grad);
+    box-shadow: 0 0 0 4px rgba(216, 31, 38, 0.1);
+  }
+
+  /* --- AI analizi (özetten görsel olarak tamamen farklı) --- */
+  .analysis {
+    position: relative;
+    margin: 32px 0;
+    padding: 26px 28px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #14161a 0%, #1e222b 100%);
+    color: #dfe3ea;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .analysis::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: var(--red-grad);
+  }
+  .analysis::after {
+    content: "";
+    position: absolute;
+    right: -70px;
+    top: -70px;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(216, 31, 38, 0.32), transparent 70%);
+    pointer-events: none;
+  }
+  .analysis__head {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+    position: relative;
   }
-  .post__comment-badge {
-    background: var(--red);
+  .analysis__badge {
+    background: var(--red-grad);
     color: #fff;
     font-size: 0.7rem;
     font-weight: 800;
-    letter-spacing: 0.05em;
-    padding: 4px 9px;
-    border-radius: 6px;
+    letter-spacing: 0.06em;
+    padding: 5px 10px;
+    border-radius: 7px;
   }
-  .post__comment-sub {
+  .analysis__sub {
     font-size: 0.8rem;
-    color: var(--red-dark);
+    color: #9aa3b2;
     font-weight: 600;
   }
-  .post__comment p {
+  .analysis__text {
     margin: 0;
-    line-height: 1.7;
-    color: #3a1f20;
+    position: relative;
+    font-size: 1.06rem;
+    line-height: 1.78;
+    color: #e6eaf1;
   }
+
   .post__tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin: 22px 0;
+    margin: 24px 0;
   }
   .post__tag {
     background: var(--bg-soft);
     border: 1px solid var(--line);
-    padding: 4px 11px;
+    padding: 5px 12px;
     border-radius: 20px;
     font-size: 0.82rem;
     color: var(--muted);
+    transition: background 0.2s var(--ease), color 0.2s var(--ease),
+      border-color 0.2s var(--ease), transform 0.2s var(--ease);
+  }
+  .post__tag:hover {
+    background: var(--red-soft);
+    border-color: var(--red);
+    color: var(--red-dark);
+    transform: translateY(-2px);
   }
   .post__ref {
     font-size: 0.88rem;
@@ -282,20 +489,38 @@ const jsonLd = {
     color: var(--red);
     font-weight: 600;
   }
+  .post__ai-note {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: #9aa1ac;
+  }
+
   @media (max-width: 640px) {
     .post__title {
-      font-size: 1.6rem;
+      font-size: 1.62rem;
+    }
+    .post__share {
+      margin-left: 0;
+      width: 100%;
+    }
+    .analysis {
+      padding: 22px 20px;
+    }
+    .summary__text {
+      font-size: 1.08rem;
     }
   }
 
   /* --- AI'ya Sor --- */
   .aiask {
-    max-width: 760px;
-    margin: 30px auto 0;
+    max-width: 780px;
+    margin: 34px auto 0;
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    padding: 20px;
+    padding: 22px;
     background: #fff;
+    box-shadow: var(--shadow-sm);
   }
   .aiask__head {
     display: flex;
@@ -309,9 +534,9 @@ const jsonLd = {
     color: #fff;
     font-size: 0.7rem;
     font-weight: 800;
-    letter-spacing: 0.05em;
-    padding: 5px 10px;
-    border-radius: 6px;
+    letter-spacing: 0.06em;
+    padding: 5px 11px;
+    border-radius: 7px;
   }
   .aiask__sub {
     font-size: 0.88rem;
@@ -333,12 +558,14 @@ const jsonLd = {
     color: #303238;
     cursor: pointer;
     font-family: inherit;
-    transition: background 0.15s, border-color 0.15s, color 0.15s;
+    transition: background 0.2s var(--ease), border-color 0.2s var(--ease),
+      color 0.2s var(--ease), transform 0.2s var(--ease);
   }
   .aiask__chip:hover {
     background: var(--red-soft);
     border-color: var(--red);
     color: var(--red-dark);
+    transform: translateY(-2px);
   }
   .aiask__form {
     display: flex;
@@ -346,6 +573,7 @@ const jsonLd = {
   }
   .aiask__form input {
     flex: 1;
+    min-width: 0;
     height: 48px;
     padding: 0 16px;
     border: 2px solid var(--line);
@@ -353,7 +581,7 @@ const jsonLd = {
     font-size: 0.98rem;
     font-family: inherit;
     outline: none;
-    transition: border-color 0.15s, box-shadow 0.15s;
+    transition: border-color 0.2s, box-shadow 0.2s;
   }
   .aiask__form input:focus {
     border-color: var(--red);
@@ -364,16 +592,17 @@ const jsonLd = {
     padding: 0 24px;
     border: none;
     border-radius: 12px;
-    background: var(--red);
+    background: var(--red-grad);
     color: #fff;
     font-weight: 800;
     font-size: 0.95rem;
     font-family: inherit;
     cursor: pointer;
-    transition: background 0.15s;
+    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
   }
   .aiask__form button:hover {
-    background: var(--red-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px -16px rgba(216, 31, 38, 1);
   }
   .aiask__answer {
     margin-top: 16px;
@@ -384,6 +613,13 @@ const jsonLd = {
     line-height: 1.7;
     color: #2a2d34;
     white-space: pre-wrap;
+    animation: answer-in 0.35s var(--ease);
+  }
+  @keyframes answer-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
   }
   .aiask__answer.is-loading {
     color: var(--muted);

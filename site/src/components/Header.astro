@@ -31,7 +31,10 @@ const isActive = (href) =>
     <span class="topbar__date">{today}</span>
     {latest.length > 0 && (
       <div class="topbar__ticker">
-        <span class="topbar__tag">SON DAKİKA</span>
+        <span class="topbar__tag">
+          <span class="topbar__live" aria-hidden="true"></span>
+          SON DAKİKA
+        </span>
         <div class="topbar__rot" id="son-dakika">
           {latest.map((a) => (
             <a class="topbar__slide" href={a.url}>
@@ -45,20 +48,27 @@ const isActive = (href) =>
   </div>
 </div>
 
-<header class="header">
+<header class="header" id="site-header">
   <div class="container header__inner">
-    <a href="/" class="logo">
+    <a href="/" class="logo" aria-label="HaberAI ana sayfa">
       <span class="logo__mark">H</span>
       <span class="logo__text">Haber<span class="logo__ai">AI</span></span>
     </a>
-    <nav class="nav">
+    <nav class="nav" aria-label="Bölümler">
       {nav.map((item) => (
-        <a href={item.href} class:list={["nav__link", { "nav__link--active": isActive(item.href) }]}>
+        <a
+          href={item.href}
+          class:list={["nav__link", { "nav__link--active": isActive(item.href) }]}
+        >
           {item.label}
         </a>
       ))}
     </nav>
     <form class="searchbox" action="/ara/" method="get" role="search">
+      <svg class="searchbox__icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" />
+        <path d="m20 20-3.2-3.2" />
+      </svg>
       <input
         class="searchbox__input"
         type="search"
@@ -71,6 +81,7 @@ const isActive = (href) =>
 </header>
 
 <script>
+  // Son dakika başlıklarını döndür
   const rot = document.getElementById("son-dakika");
   if (rot) {
     const slides = Array.from(rot.querySelectorAll(".topbar__slide"));
@@ -85,6 +96,14 @@ const isActive = (href) =>
         }, 6000);
       }
     }
+  }
+
+  // Kaydırınca header'a gölge ver
+  const header = document.getElementById("site-header");
+  if (header) {
+    const onScroll = () => header.classList.toggle("is-stuck", window.scrollY > 6);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
   }
 </script>
 
@@ -114,18 +133,37 @@ const isActive = (href) =>
     overflow: hidden;
   }
   .topbar__tag {
-    background: rgba(0, 0, 0, 0.25);
-    padding: 2px 8px;
-    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0, 0, 0, 0.26);
+    padding: 3px 9px;
+    border-radius: 6px;
     font-weight: 800;
     letter-spacing: 0.04em;
     white-space: nowrap;
     flex-shrink: 0;
   }
+  .topbar__live {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+    animation: topbar-blink 1.6s ease-in-out infinite;
+  }
+  @keyframes topbar-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.25;
+    }
+  }
   .topbar__rot {
     position: relative;
     flex: 1;
-    height: 20px;
+    height: 22px;
     min-width: 0;
   }
   .topbar__slide {
@@ -135,17 +173,26 @@ const isActive = (href) =>
     align-items: center;
     gap: 10px;
     opacity: 0;
-    transition: opacity 0.45s;
+    transform: translateY(7px);
+    transition: opacity 0.45s var(--ease), transform 0.45s var(--ease);
+    pointer-events: none;
     overflow: hidden;
   }
   .topbar__slide.is-active {
     opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    overflow: visible;
   }
   .topbar__headline {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     font-weight: 600;
+  }
+  .topbar__slide:hover .topbar__headline {
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
   .topbar__time {
     opacity: 0.85;
@@ -157,8 +204,14 @@ const isActive = (href) =>
     position: sticky;
     top: 0;
     z-index: 20;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
     border-bottom: 1px solid var(--line);
+    transition: box-shadow 0.25s var(--ease);
+  }
+  .header.is-stuck {
+    box-shadow: 0 10px 30px -18px rgba(16, 24, 40, 0.5);
   }
   .header__inner {
     display: flex;
@@ -173,7 +226,7 @@ const isActive = (href) =>
     gap: 10px;
     font-weight: 900;
     font-size: 1.4rem;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
     flex-shrink: 0;
   }
   .logo__mark {
@@ -181,10 +234,15 @@ const isActive = (href) =>
     place-items: center;
     width: 36px;
     height: 36px;
-    border-radius: 10px;
-    background: var(--red);
+    border-radius: 11px;
+    background: var(--red-grad);
     color: #fff;
     font-size: 1.2rem;
+    box-shadow: 0 10px 22px -12px rgba(216, 31, 38, 0.95);
+    transition: transform 0.3s var(--ease);
+  }
+  .logo:hover .logo__mark {
+    transform: rotate(-6deg) scale(1.05);
   }
   .logo__ai {
     color: var(--red);
@@ -196,39 +254,71 @@ const isActive = (href) =>
     flex: 1;
   }
   .nav__link {
+    position: relative;
     padding: 8px 11px;
     border-radius: 8px;
     font-weight: 600;
     font-size: 0.93rem;
     color: #303238;
-    transition: background 0.15s, color 0.15s;
+    transition: background 0.18s var(--ease), color 0.18s var(--ease);
+  }
+  .nav__link::after {
+    content: "";
+    position: absolute;
+    left: 11px;
+    right: 11px;
+    bottom: 3px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--red);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s var(--ease);
   }
   .nav__link:hover {
     background: var(--red-soft);
     color: var(--red-dark);
   }
+  .nav__link:hover::after {
+    transform: scaleX(1);
+  }
   .nav__link--active {
     color: var(--red);
   }
+  .nav__link--active::after {
+    transform: scaleX(1);
+  }
+
   .searchbox {
+    position: relative;
     flex-shrink: 0;
   }
+  .searchbox__icon {
+    position: absolute;
+    left: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    pointer-events: none;
+  }
   .searchbox__input {
-    width: 170px;
+    width: 190px;
     height: 40px;
-    padding: 0 14px;
+    padding: 0 14px 0 36px;
     border: 1px solid var(--line);
-    border-radius: 10px;
+    border-radius: 11px;
     background: var(--bg-soft);
     font-size: 0.9rem;
     font-family: inherit;
     outline: none;
-    transition: border-color 0.15s, background 0.15s, width 0.2s;
+    transition: border-color 0.2s, background 0.2s, width 0.25s var(--ease),
+      box-shadow 0.2s;
   }
   .searchbox__input:focus {
     border-color: var(--red);
     background: #fff;
-    width: 210px;
+    width: 224px;
+    box-shadow: 0 0 0 4px var(--red-soft);
   }
 
   @media (max-width: 1000px) {
@@ -254,6 +344,10 @@ const isActive = (href) =>
       overflow-x: auto;
       width: 100%;
       flex-wrap: nowrap;
+      scrollbar-width: none;
+    }
+    .nav::-webkit-scrollbar {
+      display: none;
     }
     .nav__link {
       white-space: nowrap;

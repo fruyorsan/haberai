@@ -6,81 +6,200 @@ const { items } = getMarket();
 const nf = (v, d = 2) =>
   new Intl.NumberFormat("tr-TR", { minimumFractionDigits: d, maximumFractionDigits: d }).format(v);
 const pf = (v) => `${v >= 0 ? "+" : "-"}%${nf(Math.abs(v), 2)}`;
+
+// Kusursuz döngü için liste 3 kez tekrarlanır ve %33.33 kaydırılır.
+const COPIES = 3;
 ---
 
 {items.length > 0 && (
-  <div class="ticker" role="region" aria-label="Piyasa verileri">
-    <div class="ticker__track">
-      {[0, 1].map(() =>
-        items.map((it) => (
-          <span class="ticker__item">
-            <span class="ticker__label">{it.label}</span>
-            <span class="ticker__value">{nf(it.value, it.decimals ?? 2)}</span>
-            <span class:list={["ticker__chg", it.changePct >= 0 ? "is-up" : "is-down"]}>
-              {it.changePct >= 0 ? "▲" : "▼"} {pf(it.changePct)}
+  <div class="mticker" role="region" aria-label="Piyasa verileri">
+    <div class="mticker__lead">
+      <span class="mticker__dot" aria-hidden="true"></span>
+      <span class="mticker__lead-text">PİYASA</span>
+    </div>
+
+    <div class="mticker__viewport">
+      <div class="mticker__track">
+        {Array.from({ length: COPIES }).map((_, copy) =>
+          items.map((it, i) => (
+            <span
+              class="mticker__item"
+              aria-hidden={copy > 0 ? "true" : undefined}
+              data-first={copy === 0 && i === 0 ? "true" : undefined}
+            >
+              <span class="mticker__label">{it.label}</span>
+              <span class="mticker__value">{nf(it.value, it.decimals ?? 2)}</span>
+              <span class:list={["mticker__chg", it.changePct >= 0 ? "is-up" : "is-down"]}>
+                <span class="mticker__arrow">{it.changePct >= 0 ? "▲" : "▼"}</span>
+                {pf(it.changePct)}
+              </span>
             </span>
-          </span>
-        ))
-      )}
+          ))
+        )}
+      </div>
     </div>
   </div>
 )}
 
 <style>
-  .ticker {
-    background: #14161a;
-    color: #e8eaee;
+  .mticker {
+    --h: 42px;
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    height: var(--h);
+    background: linear-gradient(90deg, #0b0d11 0%, #191d25 50%, #0b0d11 100%);
+    color: #e9ecf1;
     overflow: hidden;
-    border-bottom: 1px solid #262a30;
     user-select: none;
+    box-shadow: inset 0 -2px 0 rgba(216, 31, 38, 0.55);
   }
-  .ticker__track {
+
+  /* Sabit "PİYASA" etiketi */
+  .mticker__lead {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 16px;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.045);
+    border-right: 1px solid rgba(255, 255, 255, 0.09);
+  }
+  .mticker__lead-text {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: #fff;
+  }
+  .mticker__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #ef4444;
+    animation: mt-pulse 2.2s var(--ease) infinite;
+  }
+  @keyframes mt-pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.65);
+    }
+    70% {
+      box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    }
+  }
+
+  /* Kayan alan — kenarlarda yumuşak geçiş */
+  .mticker__viewport {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent 0,
+      #000 26px,
+      #000 calc(100% - 46px),
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      90deg,
+      transparent 0,
+      #000 26px,
+      #000 calc(100% - 46px),
+      transparent 100%
+    );
+  }
+
+  .mticker__track {
     display: flex;
     width: max-content;
-    animation: ticker-scroll 55s linear infinite;
+    height: 100%;
+    animation: mt-scroll 90s linear infinite;
+    will-change: transform;
   }
-  .ticker:hover .ticker__track {
+  .mticker:hover .mticker__track {
     animation-play-state: paused;
   }
-  .ticker__item {
+
+  .mticker__item {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 9px 30px 9px 0;
+    height: var(--h);
+    padding: 0 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.07);
     white-space: nowrap;
-    font-size: 0.82rem;
   }
-  .ticker__label {
-    color: #9aa1ac;
+
+  .mticker__label {
+    font-size: 0.73rem;
     font-weight: 600;
+    color: #8f97a5;
+    letter-spacing: 0.01em;
   }
-  .ticker__value {
-    font-weight: 800;
+  .mticker__value {
+    font-size: 0.85rem;
+    font-weight: 700;
     font-variant-numeric: tabular-nums;
     letter-spacing: 0.01em;
   }
-  .ticker__chg {
+  .mticker__chg {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 0.73rem;
     font-weight: 700;
     font-variant-numeric: tabular-nums;
+    padding: 3px 8px;
+    border-radius: 999px;
+    transition: background 0.2s var(--ease);
   }
-  .ticker__chg.is-up {
-    color: #22c55e;
+  .mticker__chg.is-up {
+    color: #4ade80;
+    background: rgba(34, 197, 94, 0.13);
   }
-  .ticker__chg.is-down {
-    color: #ef4444;
+  .mticker__chg.is-down {
+    color: #fb7185;
+    background: rgba(239, 68, 68, 0.14);
+  }
+  .mticker__arrow {
+    font-size: 0.6rem;
+    line-height: 1;
+  }
+  .mticker__item:hover .mticker__chg {
+    background: rgba(255, 255, 255, 0.12);
   }
 
-  @keyframes ticker-scroll {
+  @keyframes mt-scroll {
     from {
       transform: translateX(0);
     }
     to {
-      transform: translateX(-50%);
+      transform: translateX(calc(-100% / 3));
+    }
+  }
+
+  @media (max-width: 720px) {
+    .mticker {
+      --h: 38px;
+    }
+    .mticker__lead {
+      padding: 0 12px;
+    }
+    .mticker__item {
+      padding: 0 14px;
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .ticker__track {
+    .mticker__track {
+      animation: none;
+    }
+    .mticker__dot {
       animation: none;
     }
   }

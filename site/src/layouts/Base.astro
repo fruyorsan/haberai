@@ -21,7 +21,25 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="HaberAI" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#d81f26" />
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+    <link rel="alternate" type="application/rss+xml" title="HaberAI RSS" href="/rss.xml" />
+
+    <!-- Yazı tipi: önce bağlantı kur, sonra yükle -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap"
+    />
+
+    <!-- JS açık işareti (animasyonlar için; JS kapalıysa içerik görünür kalır) -->
+    <script is:inline>
+      document.documentElement.classList.add("js");
+    </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C9BGECSKCM" is:inline></script>
@@ -40,5 +58,48 @@ const {
       <slot />
     </main>
     <Footer />
+
+    <button class="to-top" id="to-top" type="button" aria-label="Sayfanın başına dön" title="Yukarı çık">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 19V5" />
+        <path d="M5 12l7-7 7 7" />
+      </svg>
+    </button>
+
+    <script>
+      // --- Kaydırdıkça ortaya çıkma ---
+      const revealEls = Array.from(document.querySelectorAll("[data-reveal]"));
+      if (revealEls.length) {
+        if ("IntersectionObserver" in window) {
+          const io = new IntersectionObserver(
+            (entries) => {
+              for (const entry of entries) {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("is-in");
+                  io.unobserve(entry.target);
+                }
+              }
+            },
+            { rootMargin: "0px 0px -6% 0px", threshold: 0.04 }
+          );
+          revealEls.forEach((el) => io.observe(el));
+        } else {
+          revealEls.forEach((el) => el.classList.add("is-in"));
+        }
+      }
+
+      // --- Yukarı çık butonu ---
+      const toTop = document.getElementById("to-top");
+      if (toTop) {
+        const syncTopButton = () => {
+          toTop.classList.toggle("is-visible", window.scrollY > 700);
+        };
+        syncTopButton();
+        window.addEventListener("scroll", syncTopButton, { passive: true });
+        toTop.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+    </script>
   </body>
 </html>

@@ -10,16 +10,19 @@ const SCHEMA = {
     title: { type: "string" },
     slug: { type: "string" },
     summary: { type: "string" },
+    keyPoints: { type: "array", items: { type: "string" } },
     comment: { type: "string" },
     tags: { type: "array", items: { type: "string" } },
     category: { type: "string" },
   },
-  required: ["title", "slug", "summary", "comment", "tags", "category"],
+  required: ["title", "slug", "summary", "keyPoints", "comment", "tags", "category"],
 };
 
 const SYSTEM = `Sen deneyimli bir Türk teknoloji ve genel haber editörüsün.
 Sana bir kaynak haberin başlığı ve metni verilecek. Onu sıfırdan, kendi sözlerinle ele alıp
-Türkçe bir haber kartı üreteceksin. Tarafsız, doğru ve akıcı yaz.
+Türkçe bir haber içeriği üreteceksin. Tarafsız, doğru ve akıcı yaz.
+ÇOK ÖNEMLİ: "summary" alanı haberi tarafsız biçimde özetler. "comment" alanı ise özetten
+TAMAMEN FARKLI, özgün bir editör analizidir; ikisi asla aynı bilgiyi tekrar etmez.
 Asla kaynağın cümlelerini kopyalama; kendi ifadelerinle yeniden yaz. Bilgi uydurma.
 Yanıtını SADECE geçerli bir JSON nesnesi olarak ver.`;
 
@@ -33,13 +36,14 @@ METİN: ${article.content}
 Aşağıdaki JSON alanlarını TÜRKÇE üret:
 - title: Kaynak başlığı KOPYALAMA. Haberi anlatan, özgün ve net bir başlık yaz. İdeal uzunluk 45-70 karakter. Clickbait, abartı ve gereksiz "!" kullanma.
 - slug: title için URL dostu kimlik; küçük harf, tire ile, Türkçe karakter ve noktalama YOK.
-- summary: Haberi 2-3 cümlede tarafsız biçimde özetle; ilk cümle ana fikri versin.
-- comment: Senin editör yorumun; bu haber neden önemli, kime nasıl etkisi olur, ne anlama geliyor? 2-4 cümle, samimi ama profesyonel.
+- summary: Haberin ÖZETİ. 2-3 cümle; KISA ve NET. Nötr kal: sadece "ne oldu" bilgisini ver, yorum katma. İlk cümle ana fikri versin (kim, ne).
+- keyPoints: Haberin en önemli 3 ayrıntısı, kısa madde olarak. Her madde en fazla 12 kelime olsun ve SOMUT bilgi içersin (sayı, fiyat, tarih, isim, teknik özellik varsa mutlaka yaz).
+- comment: EDİTÖR YORUMU. Bu alan summary'nin TEKRARI OLMAYACAK: özeti yeniden anlatma. Bunun yerine şu sorulara cevap ver: Bu haber neden önemli? Kimi nasıl etkiler? Bundan sonrası için ne beklenebilir, neye dikkat edilmeli? 2-4 cümle; samimi ama profesyonel, gerekirse eleştirel.
 - tags: 3-6 adet kısa anahtar kelime.
 - category: AŞAĞIDAKİ listeden TAM OLARAK birini seç (başka bir kelime yazma): ${cats}
 
 Yanıt formatı (sadece JSON):
-{"title":"...","slug":"...","summary":"...","comment":"...","tags":["..."],"category":"..."}`;
+{"title":"...","slug":"...","summary":"...","keyPoints":["...","...","..."],"comment":"...","tags":["..."],"category":"..."}`;
 }
 
 // Bu çalıştırmada tükenen (günlük kota) adaylar
@@ -230,6 +234,9 @@ function normalize(data, article) {
     title: String(data.title || article.title).trim().slice(0, 120),
     slug: slugify(data.slug || data.title || article.title),
     summary: String(data.summary || "").trim(),
+    keyPoints: Array.isArray(data.keyPoints)
+      ? data.keyPoints.map((t) => String(t).trim()).filter(Boolean).slice(0, 3)
+      : [],
     comment: String(data.comment || "").trim(),
     tags: Array.isArray(data.tags)
       ? data.tags.map((t) => String(t).trim()).filter(Boolean).slice(0, 6)

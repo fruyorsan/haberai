@@ -1,49 +1,83 @@
 ---
+import { getCategories, getArticles } from "../lib/articles.js";
+
 const year = new Date().getFullYear();
+const cats = getCategories().slice(0, 7);
+const son = getArticles().slice(0, 5);
 ---
 
 <footer class="footer">
   <div class="container footer__inner">
     <div class="footer__brand">
-      <div class="footer__logo"><span class="footer__mark">H</span> Haber<span class="footer__ai">AI</span></div>
+      <div class="footer__logo">
+        <span class="footer__mark">H</span>
+        <span>Haber<span class="footer__ai">AI</span></span>
+      </div>
       <p class="footer__desc">
-        Yapay zekâ destekli haber özetleri ve editör yorumları.
+        Yapay zekâ destekli haber özetleri, öne çıkanlar ve editör analizleri.
         İçerikler kaynak gösterilerek, özgün biçimde derlenir.
       </p>
+      <div class="footer__stats">
+        <span><strong>{getArticles().length}</strong> haber</span>
+        <span class="footer__sep">•</span>
+        <span><strong>{cats.length}</strong> kategori</span>
+        <span class="footer__sep">•</span>
+        <span>5 dakikada bir güncellenir</span>
+      </div>
     </div>
+
     <div class="footer__col">
       <h4>Kategoriler</h4>
-      <a href="/kategori/teknoloji/">Teknoloji</a>
-      <a href="/kategori/yapay-zeka/">Yapay Zeka</a>
-      <a href="/kategori/mobil/">Mobil</a>
-      <a href="/kategori/oyun/">Oyun</a>
-      <a href="/kategori/donanim/">Donanım</a>
+      {cats.map((c) => (
+        <a href={`/kategori/${c.slug}/`}>
+          {c.name} <span class="footer__count">{c.count}</span>
+        </a>
+      ))}
     </div>
+
+    <div class="footer__col">
+      <h4>Son Haberler</h4>
+      {son.map((a) => <a href={a.url}>{a.title}</a>)}
+    </div>
+
     <div class="footer__col">
       <h4>Kurumsal</h4>
+      <a href="/haberler/">Tüm Haberler</a>
       <a href="/hakkimizda/">Hakkımızda</a>
       <a href="/iletisim/">İletişim</a>
       <a href="/gizlilik/">Gizlilik</a>
       <a href="/kullanim-sartlari/">Kullanım Şartları</a>
-      <a href="/rss.xml">RSS</a>
+      <a href="/rss.xml">RSS Akışı</a>
     </div>
   </div>
+
   <div class="footer__bottom">
-    <div class="container">© {year} HaberAI — Tüm hakları saklıdır.</div>
+    <div class="container footer__bottom-inner">
+      <span>© {year} HaberAI — Tüm hakları saklıdır.</span>
+      <span class="footer__note">İçerikler yapay zekâ ile derlenir; hata olabilir.</span>
+    </div>
   </div>
 </footer>
 
 <style>
   .footer {
     margin-top: 64px;
-    background: #14161a;
+    background: linear-gradient(180deg, #14161a 0%, #0d0f13 100%);
     color: #c9ccd2;
+    position: relative;
+  }
+  .footer::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3px;
+    background: var(--red-grad);
   }
   .footer__inner {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 40px;
-    padding: 48px 20px 32px;
+    grid-template-columns: 1.6fr 1fr 1.4fr 1fr;
+    gap: 36px;
+    padding: 52px 20px 36px;
   }
   .footer__logo {
     display: flex;
@@ -53,6 +87,7 @@ const year = new Date().getFullYear();
     font-weight: 900;
     color: #fff;
     margin-bottom: 12px;
+    letter-spacing: -0.02em;
   }
   .footer__mark {
     display: grid;
@@ -60,44 +95,83 @@ const year = new Date().getFullYear();
     width: 32px;
     height: 32px;
     border-radius: 9px;
-    background: var(--red);
+    background: var(--red-grad);
     color: #fff;
   }
   .footer__ai {
     color: var(--red);
   }
   .footer__desc {
-    margin: 0;
+    margin: 0 0 16px;
     max-width: 420px;
     font-size: 0.9rem;
     line-height: 1.65;
+  }
+  .footer__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: #8b93a1;
+  }
+  .footer__stats strong {
+    color: #fff;
+  }
+  .footer__sep {
+    opacity: 0.5;
   }
   .footer__col {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    min-width: 0;
   }
   .footer__col h4 {
     color: #fff;
     margin: 0 0 6px;
     font-size: 0.95rem;
+    letter-spacing: -0.01em;
   }
   .footer__col a {
-    font-size: 0.9rem;
-    transition: color 0.15s;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    transition: color 0.18s var(--ease), transform 0.18s var(--ease);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   .footer__col a:hover {
     color: #fff;
+    transform: translateX(2px);
+  }
+  .footer__count {
+    color: #6f7686;
+    font-size: 0.78rem;
   }
   .footer__bottom {
     border-top: 1px solid #262a30;
     padding: 16px 0;
     font-size: 0.82rem;
+    color: #8b93a1;
   }
-  @media (max-width: 720px) {
+  .footer__bottom-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 900px) {
+    .footer__inner {
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+  }
+  @media (max-width: 600px) {
     .footer__inner {
       grid-template-columns: 1fr;
-      gap: 28px;
+      gap: 26px;
+      padding-top: 40px;
     }
   }
 </style>
