@@ -1,6 +1,6 @@
 import { getArticles, siteName } from "../lib/articles.js";
 
-const SITE = "https://haberai.netlify.app";
+const SITE = "https://fruyorsan.github.io";
 
 function esc(s = "") {
   return String(s)

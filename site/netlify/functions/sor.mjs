@@ -6,6 +6,10 @@ const MODEL = "openai/gpt-oss-20b";
 const MAX_QUESTION = 400;
 
 export default async (req) => {
+  // Site artık GitHub Pages'te: tarayıcıdan gelen istekler için CORS şart.
+  if (req.method === "OPTIONS") {
+    return new Response(null, { status: 204, headers: cors() });
+  }
   if (req.method !== "POST") {
     return json({ error: "Yöntem desteklenmiyor." }, 405);
   }
@@ -68,9 +72,18 @@ export default async (req) => {
   }
 };
 
+function cors() {
+  return {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Max-Age": "86400",
+  };
+}
+
 function json(obj, status = 200) {
   return new Response(JSON.stringify(obj), {
     status,
-    headers: { "Content-Type": "application/json; charset=utf-8" },
+    headers: { "Content-Type": "application/json; charset=utf-8", ...cors() },
   });
 }

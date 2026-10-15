@@ -4,8 +4,10 @@ import { analyzeArticle } from "./ai.js";
 import { config } from "./config.js";
 
 /**
- * Eski haberleri (gövdesi olmayanları) yeni biçimle yeniden üretir.
+ * Eski haberleri yeni biçimle yeniden üretir:
+ * - Gövdesi olmayanlar VEYA editorNote (manşet notu) alanı eksik olanlar.
  * - Slug, kimlik, kaynak ve tarihler KORUNUR (Google'da kayıtlı URL değişmesin).
+ * - editorNote'u zaten olan ve gövdesi olan haberlere DOKUNULMAZ (idempotent).
  * - Her haber başarıyla işlendiğinde dosya kaydedilir; kota biterse ilerleme korunur.
  *
  * Kullanım:
@@ -19,10 +21,12 @@ const DRY = process.argv.includes("--dry");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const needsBody = (a) => !Array.isArray(a.body) || a.body.filter(Boolean).length === 0;
+const needsEditorNote = (a) => !String(a?.editorNote || "").trim();
+const needsWork = (a) => needsBody(a) || needsEditorNote(a);
 
 async function main() {
   const articles = await loadArticles();
-  const pending = articles.filter(needsBody);
+  const pending = articles.filter(needsWork);
   const targets = [...pending]
     .sort((a, b) =>
       (b.publishedAt || b.generatedAt || "").localeCompare(a.publishedAt || a.generatedAt || "")
@@ -30,7 +34,8 @@ async function main() {
     .slice(0, LIMIT);
 
   console.log(
-    `Arşiv: ${articles.length} haber | gövdesiz: ${pending.length} | bu turda işlenecek: ${targets.length}`
+    `Arşiv: ${articles.length} haber | gövdesiz: ${articles.filter(needsBody).length} | ` +
+      `editorNote eksik: ${articles.filter(needsEditorNote).length} | bu turda işlenecek: ${targets.length}`
   );
 
   if (!targets.length) {
@@ -74,11 +79,14 @@ async function main() {
         continue;
       }
 
-      // Yerinde güncelle (slug/tarih kimlik korunur)
+      // Yerinde güncelle (slug/tarih kimlik korunur). AI boş döndüyse mevcut
+      // içerik korunur; özellikle gövdesi olup yalnızca editorNote'u eksik olan
+      // haberlerde veri kaybı yaşanmasın.
       current.summary = ai.summary || current.summary;
-      current.keyPoints = ai.keyPoints;
-      current.body = ai.body;
+      if (ai.keyPoints?.length) current.keyPoints = ai.keyPoints;
+      if (ai.body?.length) current.body = ai.body;
       current.comment = ai.comment || current.comment;
+      if (ai.editorNote) current.editorNote = ai.editorNote;
       if (ai.tags?.length) current.tags = ai.tags;
       if (!current.image) current.image = extra.image || null;
       current.refreshedAt = new Date().toISOString();
@@ -98,7 +106,10 @@ async function main() {
   }
 
   await saveArticles(articles);
-  console.log(`\nBitti. ${done} haber yenilendi. Kalan gövdesiz: ${articles.filter(needsBody).length}`);
+  console.log(
+    `\nBitti. ${done} haber yenilendi. Kalan gövdesiz: ${articles.filter(needsBody).length}, ` +
+      `kalan editorNote eksik: ${articles.filter(needsEditorNote).length}`
+  );
 }
 
 main()

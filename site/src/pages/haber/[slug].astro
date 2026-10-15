@@ -267,7 +267,9 @@ const jsonLd = {
         out.classList.add("is-loading");
         out.textContent = "AI düşünüyor...";
         try {
-          const res = await fetch("/api/sor", {
+          // Site GitHub Pages'te, "AI'ya Sor" servisi Netlify fonksiyonu olarak
+          // yayinda; bu yuzden tam adres kullaniliyor (CORS fonksiyonda acik).
+          const res = await fetch("https://haberai.netlify.app/api/sor", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ ...ctx, question: q }),

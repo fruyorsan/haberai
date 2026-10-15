@@ -3,7 +3,7 @@
 export const config = {
   // Sitenin adı ve adresi (özet/kaynak gösteriminde kullanılır)
   siteName: "HaberAI",
-  siteUrl: "https://haberai.netlify.app",
+  siteUrl: "https://fruyorsan.github.io",
 
   // ------------------------------------------------------------------
   // KATEGORİLER — AI yalnızca bu listeden birini seçebilir.

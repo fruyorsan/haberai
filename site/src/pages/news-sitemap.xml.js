@@ -11,7 +11,7 @@ const escapeXml = (s) =>
 
 /** Google News sitemap: son 48 saatteki haberler (en fazla 1000). */
 export function GET({ site }) {
-  const origin = String(site || "https://haberai.netlify.app").replace(/\/$/, "");
+  const origin = String(site || "https://fruyorsan.github.io").replace(/\/$/, "");
   const cutoff = Date.now() - 48 * 3600 * 1000;
 
   const recent = getArticles()

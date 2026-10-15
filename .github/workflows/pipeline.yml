@@ -84,9 +84,19 @@ jobs:
         if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || github.event_name == 'push'
         run: cd site && npm run build
 
-      - name: Netlify'a yayinla
+      # GitHub Pages'e yayinla.
+      # Netlify'in ucretsiz plani artik "credit" harcadigi icin (prod deploy
+      # basina 15 credit, ayda 300 credit) 5 dakikalik kadansi karsilamiyor;
+      # Pages + Actions ile yayinda saatlik build siniri yok, ucretsiz.
+      - name: GitHub Pages'e yayinla
         if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || github.event_name == 'push'
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: npx --yes netlify-cli@latest deploy --prod --dir=site/dist
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.PAGES_DEPLOY_KEY }}
+          external_repository: fruyorsan/fruyorsan.github.io
+          publish_branch: main
+          publish_dir: ./site/dist
+          force_orphan: true
+          user_name: haber-bot
+          user_email: bot@users.noreply.github.com
+          commit_message: "yayin: ${{ github.run_number }}"

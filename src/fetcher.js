@@ -96,7 +96,7 @@ export async function fetchPageExtras(url) {
   if (!url) return { image: null, text: "" };
   try {
     const res = await fetch(url, {
-      headers: { "User-Agent": "Mozilla/5.0 (compatible; HaberAI/0.1; +https://haberai.netlify.app)" },
+      headers: { "User-Agent": "Mozilla/5.0 (compatible; HaberAI/0.1; +https://fruyorsan.github.io)" },
       signal: AbortSignal.timeout(12000),
     });
     if (!res.ok) return { image: null, text: "" };

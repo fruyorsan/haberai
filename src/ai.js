@@ -13,10 +13,21 @@ const SCHEMA = {
     keyPoints: { type: "array", items: { type: "string" } },
     body: { type: "array", items: { type: "string" } },
     comment: { type: "string" },
+    editorNote: { type: "string" },
     tags: { type: "array", items: { type: "string" } },
     category: { type: "string" },
   },
-  required: ["title", "slug", "summary", "keyPoints", "body", "comment", "tags", "category"],
+  required: [
+    "title",
+    "slug",
+    "summary",
+    "keyPoints",
+    "body",
+    "comment",
+    "editorNote",
+    "tags",
+    "category",
+  ],
 };
 
 const SYSTEM = `Sen deneyimli bir Türk teknoloji ve genel haber editörüsün.
@@ -26,6 +37,8 @@ Her alanın işi farklıdır:
 - "summary": kısa ve net özet (sadece "ne oldu").
 - "body": haberin TAM METNİ; kaynaktaki bilgileri genişleterek anlatan, birkaç paragraflık dolu bir haber.
 - "comment": özetten ve gövdeden TAMAMEN FARKLI, yalnızca yorum/analiz (neden önemli, kimi etkiler, ne olabilir).
+- "editorNote": ana sayfadaki "öne çıkanlar" slaytı için kısa MANŞET NOTU; summary ve comment'ten FARKLI, 1-2 cümle
+  (en fazla ~180 karakter), merak uyandıran ama abartısız ve clickbait olmayan bir not.
 Asla kaynağın cümlelerini kopyalama; kendi ifadelerinle yeniden yaz.
 Yanıtını SADECE geçerli bir JSON nesnesi olarak ver.`;
 
@@ -49,11 +62,12 @@ Aşağıdaki JSON alanlarını TÜRKÇE üret:
   * Kaynak çok kısaysa gövdeyi kısa tut (3 paragraf); doldurmak için bilgi ekleme.
   * Yapay zekâ gibi değil, gazete haberi gibi yaz; "bu yazıda", "aşağıda" gibi ifadeler kullanma.
 - comment: EDİTÖR YORUMU. summary ve body'nin TEKRARI KESİNLİKLE OLMAYACAK: hiçbir bilgiyi yeniden anlatma. Doğrudan yorumla başla. Şu sorulara cevap ver: Bu neden önemli? Kimi nasıl etkiler? Bundan sonrası için ne beklenebilir, neye dikkat edilmeli? 3-5 cümle; samimi ama profesyonel, gerekirse eleştirel.
+- editorNote: MANŞET NOTU (ana sayfadaki "öne çıkanlar" slaytı için). summary ve comment ile AYNI cümleleri ya da cümle parçalarını KESİNLİKLE kullanma; onların kısaltması/özeti de olmasın. 1-2 cümle, en fazla ~180 karakter. Manşet tonunda; merak uyandıran ama clickbait olmayan, ölçülü, samimi-profesyonel bir not yaz. Habere yeni bir açı ya da çıkarım kat: "neden bakmalısın", "asıl önemli olan ne"? Abartma ve bilgi uydurma; "şok", "inanılmaz", "bomba" gibi ifadeler kullanma.
 - tags: 3-6 adet kısa anahtar kelime.
 - category: AŞAĞIDAKİ listeden TAM OLARAK birini seç (başka bir kelime yazma): ${cats}
 
 Yanıt formatı (sadece JSON):
-{"title":"...","slug":"...","summary":"...","keyPoints":["...","...","..."],"body":["paragraf 1","paragraf 2","paragraf 3"],"comment":"...","tags":["..."],"category":"..."}`;
+{"title":"...","slug":"...","summary":"...","keyPoints":["...","...","..."],"body":["paragraf 1","paragraf 2","paragraf 3"],"comment":"...","editorNote":"...","tags":["..."],"category":"..."}`;
 }
 
 // Bu çalıştırmada tükenen (günlük kota) adaylar
@@ -244,6 +258,26 @@ function parseJson(text) {
   }
 }
 
+// Manşet notu sözleşmesi: 1-2 cümle, en fazla ~180 karakter. Şemaya uymayan
+// çıktı (eksik, kopya, aşırı uzun) kırpılır ya da boş bırakılır; boş kalanlar
+// arşiv yenileme (backfill) turunda yeniden üretilir.
+const EDITOR_NOTE_MAX = 180;
+
+function cleanEditorNote(value, ...others) {
+  const clean = (s) => String(s || "").replace(/\s+/g, " ").trim();
+  const text = clean(value);
+  if (text.length < 10 || !/[a-zA-ZçğıöşüÇĞİÖŞÜ]/.test(text)) return "";
+
+  // summary/comment ile birebir aynı çıktı işe yaramaz; at.
+  const norm = (s) => clean(s).toLocaleLowerCase("tr");
+  const mine = norm(text);
+  if (others.some((o) => norm(o) && norm(o) === mine)) return "";
+
+  if (text.length <= EDITOR_NOTE_MAX) return text;
+  const head = text.slice(0, EDITOR_NOTE_MAX).replace(/\s+\S*$/, "").trimEnd();
+  return `${(head || text.slice(0, EDITOR_NOTE_MAX)).slice(0, EDITOR_NOTE_MAX - 1)}…`;
+}
+
 function normalize(data, article) {
   return {
     title: String(data.title || article.title).trim().slice(0, 120),
@@ -257,6 +291,7 @@ function normalize(data, article) {
       .filter((t) => t.length > 40)
       .slice(0, 8),
     comment: String(data.comment || "").trim(),
+    editorNote: cleanEditorNote(data.editorNote, data.summary, data.comment),
     tags: Array.isArray(data.tags)
       ? data.tags.map((t) => String(t).trim()).filter(Boolean).slice(0, 6)
       : [],
