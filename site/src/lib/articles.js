@@ -32,6 +32,26 @@ function readJson(path) {
 
 let cache = null;
 
+// Kaynak RSS'lerinde saat kayması olabiliyor: yayın tarihi gelecekte kalırsa
+// eski haber "en yeni" sanılıp üst şeride çıkıyor. 15 dakikadan ileri tarihler
+// haberin gerçek üretim zamanına düşürülür.
+const GELECEK_TOLERANS_MS = 15 * 60 * 1000;
+
+/** Haberin sıralama için kullanılan gerçek yayın zamanı (ms). */
+export function publishedTime(a) {
+  const p = new Date(a?.publishedAt || "").getTime();
+  const g = new Date(a?.generatedAt || "").getTime();
+  if (Number.isFinite(p) && p <= Date.now() + GELECEK_TOLERANS_MS) return p;
+  if (Number.isFinite(g)) return g;
+  return Number.isFinite(p) ? p : 0;
+}
+
+/** Gösterim için düzeltilmiş yayın tarihi (ISO metni). */
+export function publishedISO(a) {
+  const t = publishedTime(a);
+  return t ? new Date(t).toISOString() : a?.publishedAt || a?.generatedAt || "";
+}
+
 /** Gerçek haberler varsa onları, yoksa örnek veriyi döndürür. */
 export function getArticles() {
   if (cache) return cache;
@@ -52,9 +72,7 @@ export function getArticles() {
     };
   });
 
-  list.sort((a, b) =>
-    (b.publishedAt || b.generatedAt || "").localeCompare(a.publishedAt || a.generatedAt || "")
-  );
+  list.sort((a, b) => publishedTime(b) - publishedTime(a));
   cache = list;
   return list;
 }
@@ -79,7 +97,10 @@ export function formatDate(iso) {
 
 export function timeAgo(iso) {
   if (!iso) return "";
-  const diff = Date.now() - new Date(iso).getTime();
+  let t = new Date(iso).getTime();
+  if (!Number.isFinite(t)) return "";
+  if (t > Date.now() + GELECEK_TOLERANS_MS) t = Date.now(); // gelecek tarihli kaynak hatası
+  const diff = Date.now() - t;
   const m = Math.round(diff / 60000);
   if (m < 1) return "az önce";
   if (m < 60) return `${m} dakika önce`;

@@ -1,8 +1,8 @@
 ---
-import { timeAgo } from "../lib/articles.js";
+import { timeAgo, publishedISO } from "../lib/articles.js";
 
 const { article, size = "normal", index = 0, reveal = true } = Astro.props;
-const when = timeAgo(article.publishedAt || article.generatedAt);
+const when = timeAgo(publishedISO(article));
 
 const words = `${article.summary || ""} ${article.comment || ""}`.split(/\s+/).filter(Boolean).length;
 const readMin = Math.max(1, Math.round(words / 200));

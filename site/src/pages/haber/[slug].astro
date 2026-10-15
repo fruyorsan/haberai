@@ -2,7 +2,7 @@
 import Base from "../../layouts/Base.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
 import ShareButtons from "../../components/ShareButtons.astro";
-import { getArticles, formatDate } from "../../lib/articles.js";
+import { getArticles, formatDate, publishedISO } from "../../lib/articles.js";
 
 export function getStaticPaths() {
   return getArticles().map((article) => ({
@@ -13,7 +13,7 @@ export function getStaticPaths() {
 
 const { article } = Astro.props;
 const all = getArticles();
-const date = formatDate(article.publishedAt || article.generatedAt);
+const date = formatDate(publishedISO(article));
 
 const sameCat = all.filter((a) => a.categorySlug === article.categorySlug && a.slug !== article.slug);
 const related = (sameCat.length ? sameCat : all.filter((a) => a.slug !== article.slug)).slice(0, 3);

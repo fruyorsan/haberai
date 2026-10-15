@@ -13,10 +13,34 @@ export function makeId(link) {
   return createHash("sha1").update(String(link)).digest("hex").slice(0, 16);
 }
 
+const GELECEK_TOLERANS_MS = 15 * 60 * 1000;
+
+/**
+ * Bazı RSS kaynakları saati ileri olduğu için haberin yayın tarihi gelecekte
+ * kalıyor; bu da eski haberin "en yeni" sanılıp üst şeridi ele geçirmesine yol
+ * açıyor. Gelecek tarihleri haberin gerçek üretim zamanına çeker.
+ */
+export function fixFutureDates(articles, log = false) {
+  const limit = Date.now() + GELECEK_TOLERANS_MS;
+  let fixed = 0;
+  for (const a of articles || []) {
+    const t = new Date(a?.publishedAt || 0).getTime();
+    if (!Number.isFinite(t) || t <= limit) continue;
+    const g = new Date(a?.generatedAt || 0).getTime();
+    a.publishedAt =
+      Number.isFinite(g) && g <= limit ? new Date(g).toISOString() : new Date().toISOString();
+    fixed++;
+  }
+  if (fixed) console.log(`Tarih düzeltmesi: ${fixed} haberin gelecek tarihi gerçeğe çekildi`);
+  return fixed;
+}
+
 export async function loadArticles() {
   if (!existsSync(ARTICLES_FILE)) return [];
   try {
-    return JSON.parse(await readFile(ARTICLES_FILE, "utf8"));
+    const articles = JSON.parse(await readFile(ARTICLES_FILE, "utf8"));
+    fixFutureDates(articles);
+    return articles;
   } catch {
     return [];
   }

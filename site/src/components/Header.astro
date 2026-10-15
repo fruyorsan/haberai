@@ -1,5 +1,5 @@
 ---
-import { getArticles, timeAgo } from "../lib/articles.js";
+import { getArticles, timeAgo, publishedISO } from "../lib/articles.js";
 import MarketTicker from "./MarketTicker.astro";
 
 const nav = [
@@ -40,7 +40,7 @@ const isActive = (href) =>
           {latest.map((a) => (
             <a class="topbar__slide" href={a.url}>
               <span class="topbar__headline">{a.title}</span>
-              <span class="topbar__time">{timeAgo(a.publishedAt || a.generatedAt)}</span>
+              <span class="topbar__time">{timeAgo(publishedISO(a))}</span>
             </a>
           ))}
         </div>

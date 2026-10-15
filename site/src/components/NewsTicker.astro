@@ -1,5 +1,5 @@
 ---
-import { getArticles, timeAgo } from "../lib/articles.js";
+import { getArticles, timeAgo, publishedISO } from "../lib/articles.js";
 
 // Ana sayfa vitrini: sonsuz kayan haber şeridi.
 // MarketTicker'dan (tam genişlik, koyu) ve Header "SON DAKİKA"
@@ -19,7 +19,7 @@ const items = articles.map((a) => ({
   url: a.url,
   title: a.title,
   category: a.category,
-  when: timeAgo(a.publishedAt || a.generatedAt),
+  when: timeAgo(publishedISO(a)),
   color: `hsl(${hue(a.category)} 78% 55%)`,
 }));
 ---

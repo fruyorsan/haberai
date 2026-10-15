@@ -66,15 +66,24 @@ async function quote(spec) {
   const value = meta?.regularMarketPrice;
   if (typeof value !== "number") throw new Error("veri yok");
 
-  const prev = meta.chartPreviousClose ?? meta.previousClose ?? value;
+  // Grafikler için son ~30 kapanış (canlı fiyatla birlikte)
+  const rawCloses = (result?.indicators?.quote?.[0]?.close || []).filter(
+    (v) => typeof v === "number" && Number.isFinite(v)
+  );
+
+  // Günlük değişim: Yahoo'nun meta.chartPreviousClose alanı "aralığın başından
+  // önceki" kapanıştır; 1 aylık aralıkta 1 AYLIK değişimi verir (BIST 30'da
+  // -%9,96 gibi yanlış sonuç). Doğrusu günlük serinin son iki kapanışıdır.
+  const metaPrev = meta?.regularMarketPreviousClose ?? meta?.previousClose;
+  const seriesPrev = rawCloses.length >= 2 ? rawCloses[rawCloses.length - 2] : null;
+  const prev =
+    typeof metaPrev === "number" && metaPrev > 0
+      ? metaPrev
+      : seriesPrev ?? meta?.chartPreviousClose ?? value;
   const change = value - prev;
   const changePct = prev ? (change / prev) * 100 : 0;
 
-  // Grafikler için son ~30 kapanış (canlı fiyatla birlikte)
-  const rawCloses = result?.indicators?.quote?.[0]?.close || [];
-  const series = rawCloses
-    .filter((v) => typeof v === "number" && Number.isFinite(v))
-    .slice(-30);
+  const series = rawCloses.slice(-30);
   if (series.length) {
     const last = series[series.length - 1];
     if (Math.abs(last - value) / Math.max(Math.abs(value), 1) > 0.00005) series.push(value);
