@@ -42,14 +42,17 @@ jobs:
           git config user.email "bot@users.noreply.github.com"
           git add data/
           if git diff --staged --quiet; then
-            echo "Yeni haber yok."
+            echo "Yeni veri yok."
             echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            git commit -m "chore: yeni haberler ($(date -u +%Y-%m-%dT%H:%MZ))"
-            git pull --rebase
-            git push
-            echo "changed=true" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
+          git commit -m "chore: veri guncellemesi ($(date -u +%Y-%m-%dT%H:%MZ))"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+          # Uzak ilerlemisse cakismasiz birlestir; taze verimiz kazanir
+          git fetch origin main
+          git merge --no-edit -X ours origin/main
+          git push
 
       - name: Site bagimliliklarini kur
         if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
