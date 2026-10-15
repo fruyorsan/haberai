@@ -1,107 +1,135 @@
-[
-  {
-    "id": "s1",
-    "title": "Google, Gemini 3 Modelini Duyurdu: Akıl Yürütmede Yeni Zirve",
-    "slug": "google-gemini-3-modelini-duyurdu",
-    "summary": "Google, yeni nesil yapay zekâ modeli Gemini 3'ü tanıttı. Şirkete göre model, karmaşık akıl yürütme ve kodlama görevlerinde önceki sürümlere göre belirgin biçimde daha başarılı. Model ilk etapta geliştiricilere ve bazı abonelere sunuluyor.",
-    "comment": "Google'ın asıl hedefi yalnızca daha iyi bir model değil; arama, Android ve Workspace gibi ürünlerine yapay zekâyı işlemek. Bu yüzden Gemini 3'ün gerçek etkisi benchmark tablolarından çok, günlük kullandığımız araçlara ne kadar sessizce sızacağıyla ölçülecek. Türkiye'de erişim ve Türkçe performansı ise ayrı bir merak konusu.",
-    "editorNote": "Yeni modelin kodlama ve akıl yürütme testleri iddialı; şimdi herkesin sorduğu soru fiyat ve erişim tarafında: abonelik planlarında neler değişecek?",
-    "tags": ["Gemini", "Google", "Yapay Zeka", "LLM"],
-    "category": "Yapay Zeka",
-    "source": "Webtekno",
-    "sourceUrl": "https://www.webtekno.com/",
-    "image": "https://picsum.photos/seed/gemini3/1200/675",
-    "publishedAt": "2026-10-15T09:10:00.000Z",
-    "generatedAt": "2026-10-15T09:20:00.000Z"
-  },
-  {
-    "id": "s2",
-    "title": "Samsung, Dünyanın En Küçük 256 TB SSD'sini Tanıttı",
-    "slug": "samsung-256-tb-ssd-tanitti",
-    "summary": "Samsung, veri merkezlerine yönelik 256 TB kapasiteli yeni bir SSD duyurdu. Şirket, yeni teknolojiyle aynı alanda çok daha yüksek depolama yoğunluğu sağlandığını belirtiyor. Ürünün önce kurumsal müşterilere sunulması bekleniyor.",
-    "comment": "Bu tür duyurular tüketici için şimdilik uzak görünse de, asıl etkisi bulut hizmetlerinin maliyetine ve dolayısıyla hepimizin ödediği aboneliklere yansıyacak. Depolama ucuzladıkça yapay zekâ modellerini eğitmek ve çalıştırmak da ucuzluyor; yani bu bir 'sunucu' haberi gibi görünse de aslında zincirin en kritik halkası.",
-    "editorNote": "Aynı fiziksel alana çok daha fazla veri sığdırmak, yapay zekâ veri merkezlerinin en büyük darboğazını açıyor; zincirin altındaki bu hamle göründüğünden önemli.",
-    "tags": ["Samsung", "SSD", "Donanım", "Veri Merkezi"],
-    "category": "Donanım",
-    "source": "Webtekno",
-    "sourceUrl": "https://www.webtekno.com/",
-    "image": "https://picsum.photos/seed/samsungssd/1200/675",
-    "publishedAt": "2026-10-15T07:45:00.000Z",
-    "generatedAt": "2026-10-15T08:00:00.000Z"
-  },
-  {
-    "id": "s3",
-    "title": "ABD'de 8 Eyalet OpenAI'a Dava Açtı",
-    "slug": "abd-8-eyalet-openai-dava-acti",
-    "summary": "ABD'de sekiz eyalet, OpenAI'a karşı ortak bir dava açtı. Davada şirketin kullanıcı verilerini ve telifli içerikleri kullanma biçimi hedef alınıyor. OpenAI, iddiaların hukuki dayanağı olmadığını savunuyor.",
-    "comment": "Yapay zekâ dünyasının en büyük belirsizliği artık teknoloji değil, hukuk. Bu tür davalar model eğitiminin kurallarını yeniden yazabilir ve maliyetleri artırarak küçük oyuncuların önünü kesebilir. Sonucu ne olursa olsun, 'verini nereden alıyorsun?' sorusu artık her yapay zekâ şirketinin kapısını çalacak.",
-    "editorNote": "Sekiz eyaletin ortak cephesi, davayı sektör geneli bir emsal tartışmasına dönüştürüyor. Asıl merak: model eğitiminde veri lisanslaması nasıl kurulacak?",
-    "tags": ["OpenAI", "Hukuk", "Telif", "Yapay Zeka"],
-    "category": "Yapay Zeka",
-    "source": "Webtekno",
-    "sourceUrl": "https://www.webtekno.com/",
-    "image": "https://picsum.photos/seed/openailaw/1200/675",
-    "publishedAt": "2026-10-15T06:30:00.000Z",
-    "generatedAt": "2026-10-15T06:45:00.000Z"
-  },
-  {
-    "id": "s4",
-    "title": "GTA 6 Çıkış Fragmanı Yayında: Vice City'ye Dönüş",
-    "slug": "gta-6-cikis-fragmani-yayinda",
-    "summary": "Rockstar Games, merakla beklenen GTA 6 için yeni bir tanıtım fragmanı yayınladı. Fragmanda oyunun geçeceği Vice City ve yeni karakterler kısa kısa gösterildi. Şirket, çıkış tarihiyle ilgili ek bilgi paylaşmadı.",
-    "comment": "Her GTA fragmanı bir oyun tanıtımından çok, bir kültürel olay. Asıl soru şu: Rockstar, iki nesildir beklenen bu oyunla beklentileri karşılayabilecek mi? Fragmanın görsel kalitesi etkileyici, ama oyuncuların aklında hâlâ tek bir şey var — söylenen tarihte gerçekten çıkacak mı?",
-    "editorNote": "Fragmanın kapanışında tarih verilmemesi tesadüf olmasa gerek; Rockstar ile oyuncular arasındaki 'acaba bu sefer?' gerilimi bir tur daha uzadı.",
-    "tags": ["GTA 6", "Rockstar", "Oyun", "Vice City"],
-    "category": "Oyun",
-    "source": "DonanımHaber",
-    "sourceUrl": "https://www.donanimhaber.com/",
-    "image": "https://picsum.photos/seed/gta6/1200/675",
-    "publishedAt": "2026-10-14T18:20:00.000Z",
-    "generatedAt": "2026-10-14T18:40:00.000Z"
-  },
-  {
-    "id": "s5",
-    "title": "Amazon, İki Yeni Yapay Zekâ Cihazını Tanıttı",
-    "slug": "amazon-iki-yeni-yapay-zeka-cihazini-tanitti",
-    "summary": "Amazon, yapay zekâ destekli iki yeni cihazını duyurdu. Cihazlar, sesli asistan yerine daha sohbet odaklı bir deneyim sunmayı hedefliyor. Fiyat ve çıkış tarihi henüz netleşmedi.",
-    "comment": "Amazon'un kumarı, akıllı hoparlörün 'komut al' mantığından 'sohbet et' mantığına geçmesi. Ama kullanıcıların bu kadar çok dinleyen cihazlara güvenip güvenmeyeceği hâlâ tartışmalı. Türkiye'de satışa çıkıp çıkmayacağı ve Türkçe desteği ise ayrı bir soru işareti.",
-    "editorNote": "İki cihazın ortak noktası ekran yerine konuşmayı merkeze alması; Amazon'un Alexa stratejisindeki asıl hamlesi ise henüz perde arkasında.",
-    "tags": ["Amazon", "Yapay Zeka", "Donanım", "Akıllı Cihaz"],
-    "category": "Yapay Zeka",
-    "source": "Webtekno",
-    "sourceUrl": "https://www.webtekno.com/",
-    "image": "https://picsum.photos/seed/amazonaidevice/1200/675",
-    "publishedAt": "2026-10-14T15:00:00.000Z",
-    "generatedAt": "2026-10-14T15:20:00.000Z"
-  },
-  {
-    "id": "s6",
-    "title": "Samsung Galaxy Now Nudge Özelliğine Türkçe Desteği Geldi",
-    "slug": "samsung-galaxy-now-nudge-turkce-destegi",
-    "summary": "Samsung, Galaxy cihazlarındaki Now Nudge özelliğine Türkçe dil desteği ekledi. Özellik, mesajlaşma sırasında yapay zekâ ile akıllı öneriler sunuyor. Güncellemenin kademeli olarak dağıtılacağı belirtildi.",
-    "comment": "Türkçe desteği haberleri görünce bir kez daha anlıyoruz: teknoloji şirketleri için Türkiye pazarı artık 'sonra bakarız' listesinde değil. Yine de özelliğin ne kadar verimli çalıştığını görmek lazım; çoğu zaman Türkçe, İngilizce'deki kadar pürüzsüz olmuyor. Bu sefer iş değişebilir mi? Bekleyip göreceğiz.",
-    "editorNote": "Kademeli dağıtım, gerçek performansı yalnızca yükleyenlerin göstereceği anlamına geliyor: Türkçe öneriler 'çeviri kokuyor mu' testi merakla bekleniyor.",
-    "tags": ["Samsung", "Galaxy", "Mobil", "Yapay Zeka"],
-    "category": "Mobil",
-    "source": "Webtekno",
-    "sourceUrl": "https://www.webtekno.com/",
-    "image": "https://picsum.photos/seed/galaxynow/1200/675",
-    "publishedAt": "2026-10-14T11:15:00.000Z",
-    "generatedAt": "2026-10-14T11:35:00.000Z"
-  },
-  {
-    "id": "s7",
-    "title": "Stellantis Kararını Verdi: Maserati'nin Geleceği Netleşti",
-    "slug": "stellantis-maserati-gelecegi-netlesti",
-    "summary": "Stellantis, lüks markası Maserati'nin geleceğine dair planlarını açıkladı. Şirket, markanın elektrikli dönüşümünde yeni modellere odaklanacağını belirtti. Kısa vadede bazı modellerde değişiklik olabileceği ifade edildi.",
-    "comment": "Otomotiv dünyasında lüks markalar elektrikliye geçişte en zor sınavı veriyor; çünkü elektrikli motor, lüks segmentin en çok satan özelliği olan 'sessiz ama güçlü' deneyimi zaten sunuyor. Maserati'nin markasını yeniden ayrıştırması gerekecek. Türkiye'de bu segmentin alıcısı ise önce vergiyi, sonra şarj altyapısını düşünüyor.",
-    "editorNote": "Yeniden konumlandırma iddialı görünüyor; Maserati'nin asıl sınavı, elektrikliye geçişte mevcut müşterisini kaybetmemek olacak.",
-    "tags": ["Stellantis", "Maserati", "Otomotiv", "Elektrikli Araç"],
-    "category": "Teknoloji",
-    "source": "Webtekno",
-    "sourceUrl": "https://www.webtekno.com/",
-    "image": "https://picsum.photos/seed/maserati/1200/675",
-    "publishedAt": "2026-10-14T08:05:00.000Z",
-    "generatedAt": "2026-10-14T08:25:00.000Z"
-  }
+﻿[
+    {
+        "id":  "s1",
+        "title":  "Google, Gemini 3 Modelini Duyurdu: AkÄ±l YÃ¼rÃ¼tmede Yeni Zirve",
+        "slug":  "google-gemini-3-modelini-duyurdu",
+        "summary":  "Google, yeni nesil yapay zekÃ¢ modeli Gemini 3\u0027Ã¼ tanÄ±ttÄ±. Åirkete gÃ¶re model, karmaÅŸÄ±k akÄ±l yÃ¼rÃ¼tme ve kodlama gÃ¶revlerinde Ã¶nceki sÃ¼rÃ¼mlere gÃ¶re belirgin biÃ§imde daha baÅŸarÄ±lÄ±. Model ilk etapta geliÅŸtiricilere ve bazÄ± abonelere sunuluyor.",
+        "comment":  "Google\u0027Ä±n asÄ±l hedefi yalnÄ±zca daha iyi bir model deÄŸil; arama, Android ve Workspace gibi Ã¼rÃ¼nlerine yapay zekÃ¢yÄ± iÅŸlemek. Bu yÃ¼zden Gemini 3\u0027Ã¼n gerÃ§ek etkisi benchmark tablolarÄ±ndan Ã§ok, gÃ¼nlÃ¼k kullandÄ±ÄŸÄ±mÄ±z araÃ§lara ne kadar sessizce sÄ±zacaÄŸÄ±yla Ã¶lÃ§Ã¼lecek. TÃ¼rkiye\u0027de eriÅŸim ve TÃ¼rkÃ§e performansÄ± ise ayrÄ± bir merak konusu.",
+        "editorNote":  "Yeni modelin kodlama ve akÄ±l yÃ¼rÃ¼tme testleri iddialÄ±; ÅŸimdi herkesin sorduÄŸu soru fiyat ve eriÅŸim tarafÄ±nda: abonelik planlarÄ±nda neler deÄŸiÅŸecek?",
+        "tags":  [
+                     "Gemini",
+                     "Google",
+                     "Yapay Zeka",
+                     "LLM"
+                 ],
+        "category":  "Yapay Zeka",
+        "source":  "Webtekno",
+        "sourceUrl":  "https://www.webtekno.com/",
+        "publishedAt":  "2026-10-15T09:10:00.000Z",
+        "generatedAt":  "2026-10-15T09:20:00.000Z"
+    },
+    {
+        "id":  "s2",
+        "title":  "Samsung, DÃ¼nyanÄ±n En KÃ¼Ã§Ã¼k 256 TB SSD\u0027sini TanÄ±ttÄ±",
+        "slug":  "samsung-256-tb-ssd-tanitti",
+        "summary":  "Samsung, veri merkezlerine yÃ¶nelik 256 TB kapasiteli yeni bir SSD duyurdu. Åirket, yeni teknolojiyle aynÄ± alanda Ã§ok daha yÃ¼ksek depolama yoÄŸunluÄŸu saÄŸlandÄ±ÄŸÄ±nÄ± belirtiyor. ÃœrÃ¼nÃ¼n Ã¶nce kurumsal mÃ¼ÅŸterilere sunulmasÄ± bekleniyor.",
+        "comment":  "Bu tÃ¼r duyurular tÃ¼ketici iÃ§in ÅŸimdilik uzak gÃ¶rÃ¼nse de, asÄ±l etkisi bulut hizmetlerinin maliyetine ve dolayÄ±sÄ±yla hepimizin Ã¶dediÄŸi aboneliklere yansÄ±yacak. Depolama ucuzladÄ±kÃ§a yapay zekÃ¢ modellerini eÄŸitmek ve Ã§alÄ±ÅŸtÄ±rmak da ucuzluyor; yani bu bir \u0027sunucu\u0027 haberi gibi gÃ¶rÃ¼nse de aslÄ±nda zincirin en kritik halkasÄ±.",
+        "editorNote":  "AynÄ± fiziksel alana Ã§ok daha fazla veri sÄ±ÄŸdÄ±rmak, yapay zekÃ¢ veri merkezlerinin en bÃ¼yÃ¼k darboÄŸazÄ±nÄ± aÃ§Ä±yor; zincirin altÄ±ndaki bu hamle gÃ¶rÃ¼ndÃ¼ÄŸÃ¼nden Ã¶nemli.",
+        "tags":  [
+                     "Samsung",
+                     "SSD",
+                     "DonanÄ±m",
+                     "Veri Merkezi"
+                 ],
+        "category":  "DonanÄ±m",
+        "source":  "Webtekno",
+        "sourceUrl":  "https://www.webtekno.com/",
+        "publishedAt":  "2026-10-15T07:45:00.000Z",
+        "generatedAt":  "2026-10-15T08:00:00.000Z"
+    },
+    {
+        "id":  "s3",
+        "title":  "ABD\u0027de 8 Eyalet OpenAI\u0027a Dava AÃ§tÄ±",
+        "slug":  "abd-8-eyalet-openai-dava-acti",
+        "summary":  "ABD\u0027de sekiz eyalet, OpenAI\u0027a karÅŸÄ± ortak bir dava aÃ§tÄ±. Davada ÅŸirketin kullanÄ±cÄ± verilerini ve telifli iÃ§erikleri kullanma biÃ§imi hedef alÄ±nÄ±yor. OpenAI, iddialarÄ±n hukuki dayanaÄŸÄ± olmadÄ±ÄŸÄ±nÄ± savunuyor.",
+        "comment":  "Yapay zekÃ¢ dÃ¼nyasÄ±nÄ±n en bÃ¼yÃ¼k belirsizliÄŸi artÄ±k teknoloji deÄŸil, hukuk. Bu tÃ¼r davalar model eÄŸitiminin kurallarÄ±nÄ± yeniden yazabilir ve maliyetleri artÄ±rarak kÃ¼Ã§Ã¼k oyuncularÄ±n Ã¶nÃ¼nÃ¼ kesebilir. Sonucu ne olursa olsun, \u0027verini nereden alÄ±yorsun?\u0027 sorusu artÄ±k her yapay zekÃ¢ ÅŸirketinin kapÄ±sÄ±nÄ± Ã§alacak.",
+        "editorNote":  "Sekiz eyaletin ortak cephesi, davayÄ± sektÃ¶r geneli bir emsal tartÄ±ÅŸmasÄ±na dÃ¶nÃ¼ÅŸtÃ¼rÃ¼yor. AsÄ±l merak: model eÄŸitiminde veri lisanslamasÄ± nasÄ±l kurulacak?",
+        "tags":  [
+                     "OpenAI",
+                     "Hukuk",
+                     "Telif",
+                     "Yapay Zeka"
+                 ],
+        "category":  "Yapay Zeka",
+        "source":  "Webtekno",
+        "sourceUrl":  "https://www.webtekno.com/",
+        "publishedAt":  "2026-10-15T06:30:00.000Z",
+        "generatedAt":  "2026-10-15T06:45:00.000Z"
+    },
+    {
+        "id":  "s4",
+        "title":  "GTA 6 Ã‡Ä±kÄ±ÅŸ FragmanÄ± YayÄ±nda: Vice City\u0027ye DÃ¶nÃ¼ÅŸ",
+        "slug":  "gta-6-cikis-fragmani-yayinda",
+        "summary":  "Rockstar Games, merakla beklenen GTA 6 iÃ§in yeni bir tanÄ±tÄ±m fragmanÄ± yayÄ±nladÄ±. Fragmanda oyunun geÃ§eceÄŸi Vice City ve yeni karakterler kÄ±sa kÄ±sa gÃ¶sterildi. Åirket, Ã§Ä±kÄ±ÅŸ tarihiyle ilgili ek bilgi paylaÅŸmadÄ±.",
+        "comment":  "Her GTA fragmanÄ± bir oyun tanÄ±tÄ±mÄ±ndan Ã§ok, bir kÃ¼ltÃ¼rel olay. AsÄ±l soru ÅŸu: Rockstar, iki nesildir beklenen bu oyunla beklentileri karÅŸÄ±layabilecek mi? FragmanÄ±n gÃ¶rsel kalitesi etkileyici, ama oyuncularÄ±n aklÄ±nda hÃ¢lÃ¢ tek bir ÅŸey var â€” sÃ¶ylenen tarihte gerÃ§ekten Ã§Ä±kacak mÄ±?",
+        "editorNote":  "FragmanÄ±n kapanÄ±ÅŸÄ±nda tarih verilmemesi tesadÃ¼f olmasa gerek; Rockstar ile oyuncular arasÄ±ndaki \u0027acaba bu sefer?\u0027 gerilimi bir tur daha uzadÄ±.",
+        "tags":  [
+                     "GTA 6",
+                     "Rockstar",
+                     "Oyun",
+                     "Vice City"
+                 ],
+        "category":  "Oyun",
+        "source":  "DonanÄ±mHaber",
+        "sourceUrl":  "https://www.donanimhaber.com/",
+        "publishedAt":  "2026-10-14T18:20:00.000Z",
+        "generatedAt":  "2026-10-14T18:40:00.000Z"
+    },
+    {
+        "id":  "s5",
+        "title":  "Amazon, Ä°ki Yeni Yapay ZekÃ¢ CihazÄ±nÄ± TanÄ±ttÄ±",
+        "slug":  "amazon-iki-yeni-yapay-zeka-cihazini-tanitti",
+        "summary":  "Amazon, yapay zekÃ¢ destekli iki yeni cihazÄ±nÄ± duyurdu. Cihazlar, sesli asistan yerine daha sohbet odaklÄ± bir deneyim sunmayÄ± hedefliyor. Fiyat ve Ã§Ä±kÄ±ÅŸ tarihi henÃ¼z netleÅŸmedi.",
+        "comment":  "Amazon\u0027un kumarÄ±, akÄ±llÄ± hoparlÃ¶rÃ¼n \u0027komut al\u0027 mantÄ±ÄŸÄ±ndan \u0027sohbet et\u0027 mantÄ±ÄŸÄ±na geÃ§mesi. Ama kullanÄ±cÄ±larÄ±n bu kadar Ã§ok dinleyen cihazlara gÃ¼venip gÃ¼venmeyeceÄŸi hÃ¢lÃ¢ tartÄ±ÅŸmalÄ±. TÃ¼rkiye\u0027de satÄ±ÅŸa Ã§Ä±kÄ±p Ã§Ä±kmayacaÄŸÄ± ve TÃ¼rkÃ§e desteÄŸi ise ayrÄ± bir soru iÅŸareti.",
+        "editorNote":  "Ä°ki cihazÄ±n ortak noktasÄ± ekran yerine konuÅŸmayÄ± merkeze almasÄ±; Amazon\u0027un Alexa stratejisindeki asÄ±l hamlesi ise henÃ¼z perde arkasÄ±nda.",
+        "tags":  [
+                     "Amazon",
+                     "Yapay Zeka",
+                     "DonanÄ±m",
+                     "AkÄ±llÄ± Cihaz"
+                 ],
+        "category":  "Yapay Zeka",
+        "source":  "Webtekno",
+        "sourceUrl":  "https://www.webtekno.com/",
+        "publishedAt":  "2026-10-14T15:00:00.000Z",
+        "generatedAt":  "2026-10-14T15:20:00.000Z"
+    },
+    {
+        "id":  "s6",
+        "title":  "Samsung Galaxy Now Nudge Ã–zelliÄŸine TÃ¼rkÃ§e DesteÄŸi Geldi",
+        "slug":  "samsung-galaxy-now-nudge-turkce-destegi",
+        "summary":  "Samsung, Galaxy cihazlarÄ±ndaki Now Nudge Ã¶zelliÄŸine TÃ¼rkÃ§e dil desteÄŸi ekledi. Ã–zellik, mesajlaÅŸma sÄ±rasÄ±nda yapay zekÃ¢ ile akÄ±llÄ± Ã¶neriler sunuyor. GÃ¼ncellemenin kademeli olarak daÄŸÄ±tÄ±lacaÄŸÄ± belirtildi.",
+        "comment":  "TÃ¼rkÃ§e desteÄŸi haberleri gÃ¶rÃ¼nce bir kez daha anlÄ±yoruz: teknoloji ÅŸirketleri iÃ§in TÃ¼rkiye pazarÄ± artÄ±k \u0027sonra bakarÄ±z\u0027 listesinde deÄŸil. Yine de Ã¶zelliÄŸin ne kadar verimli Ã§alÄ±ÅŸtÄ±ÄŸÄ±nÄ± gÃ¶rmek lazÄ±m; Ã§oÄŸu zaman TÃ¼rkÃ§e, Ä°ngilizce\u0027deki kadar pÃ¼rÃ¼zsÃ¼z olmuyor. Bu sefer iÅŸ deÄŸiÅŸebilir mi? Bekleyip gÃ¶receÄŸiz.",
+        "editorNote":  "Kademeli daÄŸÄ±tÄ±m, gerÃ§ek performansÄ± yalnÄ±zca yÃ¼kleyenlerin gÃ¶stereceÄŸi anlamÄ±na geliyor: TÃ¼rkÃ§e Ã¶neriler \u0027Ã§eviri kokuyor mu\u0027 testi merakla bekleniyor.",
+        "tags":  [
+                     "Samsung",
+                     "Galaxy",
+                     "Mobil",
+                     "Yapay Zeka"
+                 ],
+        "category":  "Mobil",
+        "source":  "Webtekno",
+        "sourceUrl":  "https://www.webtekno.com/",
+        "publishedAt":  "2026-10-14T11:15:00.000Z",
+        "generatedAt":  "2026-10-14T11:35:00.000Z"
+    },
+    {
+        "id":  "s7",
+        "title":  "Stellantis KararÄ±nÄ± Verdi: Maserati\u0027nin GeleceÄŸi NetleÅŸti",
+        "slug":  "stellantis-maserati-gelecegi-netlesti",
+        "summary":  "Stellantis, lÃ¼ks markasÄ± Maserati\u0027nin geleceÄŸine dair planlarÄ±nÄ± aÃ§Ä±kladÄ±. Åirket, markanÄ±n elektrikli dÃ¶nÃ¼ÅŸÃ¼mÃ¼nde yeni modellere odaklanacaÄŸÄ±nÄ± belirtti. KÄ±sa vadede bazÄ± modellerde deÄŸiÅŸiklik olabileceÄŸi ifade edildi.",
+        "comment":  "Otomotiv dÃ¼nyasÄ±nda lÃ¼ks markalar elektrikliye geÃ§iÅŸte en zor sÄ±navÄ± veriyor; Ã§Ã¼nkÃ¼ elektrikli motor, lÃ¼ks segmentin en Ã§ok satan Ã¶zelliÄŸi olan \u0027sessiz ama gÃ¼Ã§lÃ¼\u0027 deneyimi zaten sunuyor. Maserati\u0027nin markasÄ±nÄ± yeniden ayrÄ±ÅŸtÄ±rmasÄ± gerekecek. TÃ¼rkiye\u0027de bu segmentin alÄ±cÄ±sÄ± ise Ã¶nce vergiyi, sonra ÅŸarj altyapÄ±sÄ±nÄ± dÃ¼ÅŸÃ¼nÃ¼yor.",
+        "editorNote":  "Yeniden konumlandÄ±rma iddialÄ± gÃ¶rÃ¼nÃ¼yor; Maserati\u0027nin asÄ±l sÄ±navÄ±, elektrikliye geÃ§iÅŸte mevcut mÃ¼ÅŸterisini kaybetmemek olacak.",
+        "tags":  [
+                     "Stellantis",
+                     "Maserati",
+                     "Otomotiv",
+                     "Elektrikli AraÃ§"
+                 ],
+        "category":  "Teknoloji",
+        "source":  "Webtekno",
+        "sourceUrl":  "https://www.webtekno.com/",
+        "publishedAt":  "2026-10-14T08:05:00.000Z",
+        "generatedAt":  "2026-10-14T08:25:00.000Z"
+    }
 ]
