@@ -11,6 +11,9 @@
   --brand-soft: #fdecec;
   --brand-grad: linear-gradient(135deg, #ea343b 0%, #b3151b 100%);
   --brand-glow: rgba(216, 31, 38, 0.32);
+  /* Zemin olarak marka rengi (üzerine beyaz metin): beyazla AA geçer */
+  --brand-fill: var(--brand);
+  --brand-fill-hover: #b3151b;
 
   /* --- Yüzeyler --- */
   --bg: #ffffff;
@@ -86,6 +89,9 @@
   --brand-strong: #ff838a;
   --brand-soft: rgba(255, 90, 99, 0.15);
   --brand-glow: rgba(255, 90, 99, 0.42);
+  /* Zemin: beyaz metinle yüksek kontrastlı doygun koyu kırmızı (~6.9:1) */
+  --brand-fill: #b3161d;
+  --brand-fill-hover: #c0181f;
 
   --pos: #4ade80;
   --neg: #fb7185;
@@ -122,6 +128,9 @@
     --brand-strong: #ff838a;
     --brand-soft: rgba(255, 90, 99, 0.15);
     --brand-glow: rgba(255, 90, 99, 0.42);
+    /* Zemin: beyaz metinle yüksek kontrastlı doygun koyu kırmızı (~6.9:1) */
+    --brand-fill: #b3161d;
+    --brand-fill-hover: #c0181f;
 
     --pos: #4ade80;
     --neg: #fb7185;
@@ -482,7 +491,7 @@ html.js [data-reveal].is-in {
 }
 
 .to-top:hover {
-  background: var(--brand);
+  background: var(--brand-fill-hover);
   color: #fff;
 }
 

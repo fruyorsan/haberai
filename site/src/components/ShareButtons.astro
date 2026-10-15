@@ -58,7 +58,7 @@ const links = [
 </div>
 
 <script>
-  document.querySelectorAll(".share__copy").forEach((btn) => {
+  document.querySelectorAll(".share__btn--copy").forEach((btn) => {
     btn.addEventListener("click", async () => {
       const box = btn.closest(".share");
       const url = box?.getAttribute("data-url") || location.href;
@@ -131,7 +131,7 @@ const links = [
     background: #1877f2;
   }
   .share__btn--copy:hover {
-    background: var(--brand);
+    background: var(--brand-fill-hover);
   }
   .share__btn.is-done {
     background: #16a34a;
