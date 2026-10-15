@@ -7,6 +7,8 @@
   "scripts": {
     "collect": "node --env-file-if-exists=.env src/index.js",
     "collect:dry": "node --env-file-if-exists=.env src/index.js --dry",
+    "share": "node --env-file-if-exists=.env src/share-cli.js",
+    "share:dry": "node --env-file-if-exists=.env src/share-cli.js --dry",
     "backfill": "node --env-file-if-exists=.env src/backfill.js",
     "backfill:dry": "node --env-file-if-exists=.env src/backfill.js --dry"
   },

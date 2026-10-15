@@ -3,6 +3,7 @@ import { fetchAllFeeds, fetchPageExtras } from "./fetcher.js";
 import { analyzeArticle } from "./ai.js";
 import { updateMarket } from "./market.js";
 import { loadArticles, saveArticles, existingIds, makeId } from "./store.js";
+import { shareNewArticles } from "./share.js";
 
 const DRY = process.argv.includes("--dry");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -47,10 +48,13 @@ async function main() {
   if (DRY) {
     queue.forEach((it, i) => console.log(`  ${i + 1}. [${it.source}] ${it.title}`));
     console.log("\n--dry modu: AI çağrısı yapılmadı, hiçbir şey kaydedilmedi.");
+    // --dry: sosyal paylaşım da atlanır (istek gönderilmez, social.json yazılmaz).
+    await shareNewArticles([], { dry: true });
     return;
   }
 
   let added = 0;
+  const newArticles = [];
   for (const [i, item] of queue.entries()) {
     process.stdout.write(
       `  (${i + 1}/${queue.length}) ${item.source}: ${item.title.slice(0, 55)}... `
@@ -65,7 +69,7 @@ async function main() {
         }
       }
       const ai = await analyzeArticle(item);
-      articles.push({
+      const entry = {
         id: makeId(item.link),
         ...ai,
         source: item.source,
@@ -73,7 +77,9 @@ async function main() {
         image: item.image || null,
         publishedAt: item.publishedAt,
         generatedAt: new Date().toISOString(),
-      });
+      };
+      articles.push(entry);
+      newArticles.push(entry);
       console.log("✓");
       added++;
     } catch (err) {
@@ -99,6 +105,14 @@ async function main() {
     console.log(`Piyasa verisi güncellendi (${market.items.length} gösterge).`);
   } catch (err) {
     console.warn(`Piyasa verisi alınamadı: ${err.message}`);
+  }
+
+  // Veri kaydedildikten sonra: yalnızca bu çalıştırmada eklenen YENİ haberleri paylaş.
+  // Anahtar yoksa shareNewArticles sessizce atlar; hata olsa bile akış bozulmaz.
+  try {
+    await shareNewArticles(newArticles);
+  } catch (err) {
+    console.warn(`Sosyal paylaşım atlandı: ${err.message}`);
   }
 }
 
