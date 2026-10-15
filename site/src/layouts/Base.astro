@@ -6,7 +6,42 @@ import "../styles/global.css";
 const {
   title = "HaberAI — Yapay Zekâ Destekli Haberler",
   description = "Yapay zekâ destekli teknoloji haberleri: özetler, analizler ve editör yorumları.",
+  canonical,
+  ogType = "website",
+  image,
+  publishedTime,
+  modifiedTime,
+  section,
+  tags = [],
+  imageAlt,
 } = Astro.props;
+
+// Mutlak URL tabanı (astro.config.mjs -> site)
+const site = Astro.site ?? new URL("https://haberai.netlify.app");
+
+// Görsel/URL çözümleme: mutlak http(s) ise aynen, göreli ise site köküne göre mutlaklaştır.
+function absoluteUrl(value) {
+  if (!value) return "";
+  const str = String(value).trim();
+  if (!str) return "";
+  if (/^https?:\/\//i.test(str)) return str;
+  try {
+    return new URL(str, site).href;
+  } catch {
+    return str;
+  }
+}
+
+// canonical: verilen değer ya da mevcut sayfanın yolu
+const canonicalUrl = absoluteUrl(canonical || Astro.url.pathname);
+
+// og:image: haberin kendi görseli -> yoksa markalı yedek
+const DEFAULT_OG_IMAGE = new URL("og-default.png", site).href;
+const ogImage = image ? absoluteUrl(image) : DEFAULT_OG_IMAGE;
+const ogImageAlt = imageAlt || title;
+
+const tagList = Array.isArray(tags) ? tags.filter(Boolean) : [];
+const isArticle = ogType === "article";
 ---
 
 <!doctype html>
@@ -18,11 +53,34 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="HaberAI" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="HaberAI" />
+    <meta property="og:image" content={ogImage} />
+    {!image && <meta property="og:image:width" content="1200" />}
+    {!image && <meta property="og:image:height" content="630" />}
+    <meta property="og:image:alt" content={ogImageAlt} />
+    {isArticle && publishedTime && (
+      <meta property="article:published_time" content={publishedTime} />
+    )}
+    {isArticle && modifiedTime && (
+      <meta property="article:modified_time" content={modifiedTime} />
+    )}
+    {isArticle && section && <meta property="article:section" content={section} />}
+    {isArticle && tagList.map((t) => <meta property="article:tag" content={t} />)}
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
     <meta name="theme-color" id="theme-color" content="#d81f26" />
     <meta name="color-scheme" content="light dark" />
     <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />

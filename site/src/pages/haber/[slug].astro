@@ -28,14 +28,33 @@ const readMin = Math.max(1, Math.round(words / 200));
 
 const shareUrl = Astro.url.href;
 
+// --- SEO yardımcıları ---
+const site = Astro.site ?? new URL("https://haberai.netlify.app");
+function absoluteUrl(value) {
+  if (!value) return "";
+  const str = String(value).trim();
+  if (!str) return "";
+  if (/^https?:\/\//i.test(str)) return str;
+  try {
+    return new URL(str, site).href;
+  } catch {
+    return str;
+  }
+}
+
+const articleUrl = new URL(article.url, site).href;
+const publishedIso = article.publishedAt || article.generatedAt;
+const modifiedIso = article.refreshedAt || article.generatedAt;
+const ogImage = article.image ? absoluteUrl(article.image) : new URL("og-default.png", site).href;
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "NewsArticle",
   headline: article.title,
   description: article.summary,
-  image: article.image ? [article.image] : undefined,
-  datePublished: article.publishedAt || article.generatedAt,
-  dateModified: article.generatedAt,
+  image: [ogImage],
+  datePublished: publishedIso,
+  dateModified: modifiedIso,
   articleSection: article.category,
   keywords: (article.tags || []).join(", "),
   articleBody: body.length ? body.join("\n\n") : article.summary,
@@ -43,13 +62,24 @@ const jsonLd = {
   publisher: {
     "@type": "Organization",
     name: "HaberAI",
-    logo: { "@type": "ImageObject", url: "/favicon.svg" },
+    logo: { "@type": "ImageObject", url: new URL("favicon.svg", site).href },
   },
-  mainEntityOfPage: { "@type": "WebPage", "@id": Astro.url.pathname },
+  mainEntityOfPage: { "@type": "WebPage", "@id": articleUrl },
 };
 ---
 
-<Base title={`${article.title} — HaberAI`} description={article.summary}>
+<Base
+  title={`${article.title} — HaberAI`}
+  description={article.summary}
+  canonical={articleUrl}
+  ogType="article"
+  image={article.image}
+  publishedTime={publishedIso}
+  modifiedTime={modifiedIso}
+  section={article.category}
+  tags={article.tags}
+  imageAlt={article.title}
+>
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
   <div class="progress" id="progress" aria-hidden="true"></div>
