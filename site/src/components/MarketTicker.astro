@@ -4,17 +4,21 @@ import { chartPaths, nf, pf } from "../lib/chart.js";
 
 const { items } = getMarket();
 
+// Üst şeritte yalnızca "ticker" işaretli göstergeler görünür
+// (S&P 500 / Nasdaq / Dow Jones yalnızca /piyasa sayfasında kalır)
+const tickerItems = items.filter((it) => it.ticker !== false);
+
 // Kusursuz döngü için liste 3 kez tekrarlanır ve %33.33 kaydırılır.
 const COPIES = 3;
 
-const rows = items.map((it) => ({
+const rows = tickerItems.map((it) => ({
   ...it,
   chart: chartPaths(it.series, 48, 16, 1),
   up: it.changePct >= 0,
 }));
 ---
 
-{items.length > 0 && (
+{rows.length > 0 && (
   <div class="mticker" role="region" aria-label="Piyasa verileri">
     <a class="mticker__lead" href="/piyasa/" title="Tüm piyasa grafiklerini gör">
       <span class="mticker__dot" aria-hidden="true"></span>
