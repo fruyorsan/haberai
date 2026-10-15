@@ -6,7 +6,9 @@
   "description": "RSS toplayıp Gemini ile özetleyen ve yorum katan haber hattı",
   "scripts": {
     "collect": "node --env-file-if-exists=.env src/index.js",
-    "collect:dry": "node --env-file-if-exists=.env src/index.js --dry"
+    "collect:dry": "node --env-file-if-exists=.env src/index.js --dry",
+    "backfill": "node --env-file-if-exists=.env src/backfill.js",
+    "backfill:dry": "node --env-file-if-exists=.env src/backfill.js --dry"
   },
   "engines": {
     "node": ">=20"

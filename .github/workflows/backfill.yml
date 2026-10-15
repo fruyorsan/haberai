@@ -1,0 +1,70 @@
+name: Arsiv Yenileme
+
+on:
+  schedule:
+    - cron: "*/10 * * * *" # her 10 dakikada bir, gövdesiz haberleri yeniler
+  workflow_dispatch: {} # elle calistirma
+
+# Ana hat ile AYNI kilit grubu: ayni anda asla calismazlar (git + AI kotasi cakismasi onlenir)
+concurrency:
+  group: haber-hatti
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: "npm"
+          cache-dependency-path: |
+            package-lock.json
+            site/package-lock.json
+
+      - name: Hattin bagimliliklarini kur
+        run: npm ci
+
+      - name: Eski haberleri yeni bicimle yenile
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          BACKFILL_LIMIT: "4"
+        run: npm run backfill
+
+      - name: Degisiklikleri kaydet
+        id: commit
+        run: |
+          git config user.name "haber-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "Yenilenecek haber yok."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -m "chore: arsiv yenileme ($(date -u +%Y-%m-%dT%H:%MZ))"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+          git fetch origin main
+          git merge --no-edit -X ours origin/main
+          git push
+
+      - name: Site bagimliliklarini kur
+        if: steps.commit.outputs.changed == 'true'
+        run: cd site && npm ci
+
+      - name: Siteyi derle
+        if: steps.commit.outputs.changed == 'true'
+        run: cd site && npm run build
+
+      - name: Netlify'a yayinla
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: npx --yes netlify-cli@latest deploy --prod --dir=site/dist
