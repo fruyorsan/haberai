@@ -11,19 +11,22 @@ const SCHEMA = {
     slug: { type: "string" },
     summary: { type: "string" },
     keyPoints: { type: "array", items: { type: "string" } },
+    body: { type: "array", items: { type: "string" } },
     comment: { type: "string" },
     tags: { type: "array", items: { type: "string" } },
     category: { type: "string" },
   },
-  required: ["title", "slug", "summary", "keyPoints", "comment", "tags", "category"],
+  required: ["title", "slug", "summary", "keyPoints", "body", "comment", "tags", "category"],
 };
 
 const SYSTEM = `Sen deneyimli bir Türk teknoloji ve genel haber editörüsün.
-Sana bir kaynak haberin başlığı ve metni verilecek. Onu sıfırdan, kendi sözlerinle ele alıp
-Türkçe bir haber içeriği üreteceksin. Tarafsız, doğru ve akıcı yaz.
-ÇOK ÖNEMLİ: "summary" alanı haberi tarafsız biçimde özetler. "comment" alanı ise özetten
-TAMAMEN FARKLI, özgün bir editör analizidir; ikisi asla aynı bilgiyi tekrar etmez.
-Asla kaynağın cümlelerini kopyalama; kendi ifadelerinle yeniden yaz. Bilgi uydurma.
+Sana bir kaynak haberin başlığı ve metni verilecek. Okuyucuya kendi sözlerinle, akıcı ve
+doyurucu bir Türkçe haber metni yazacaksın. Tarafsız ol, abartma, bilgi uydurma.
+Her alanın işi farklıdır:
+- "summary": kısa ve net özet (sadece "ne oldu").
+- "body": haberin TAM METNİ; kaynaktaki bilgileri genişleterek anlatan, birkaç paragraflık dolu bir haber.
+- "comment": özetten ve gövdeden TAMAMEN FARKLI, yalnızca yorum/analiz (neden önemli, kimi etkiler, ne olabilir).
+Asla kaynağın cümlelerini kopyalama; kendi ifadelerinle yeniden yaz.
 Yanıtını SADECE geçerli bir JSON nesnesi olarak ver.`;
 
 function buildPrompt(article) {
@@ -36,14 +39,21 @@ METİN: ${article.content}
 Aşağıdaki JSON alanlarını TÜRKÇE üret:
 - title: Kaynak başlığı KOPYALAMA. Haberi anlatan, özgün ve net bir başlık yaz. İdeal uzunluk 45-70 karakter. Clickbait, abartı ve gereksiz "!" kullanma.
 - slug: title için URL dostu kimlik; küçük harf, tire ile, Türkçe karakter ve noktalama YOK.
-- summary: Haberin ÖZETİ. 2-3 cümle; KISA ve NET. Nötr kal: sadece "ne oldu" bilgisini ver, yorum katma. İlk cümle ana fikri versin (kim, ne).
-- keyPoints: Haberin en önemli 3 ayrıntısı, kısa madde olarak. Her madde en fazla 12 kelime olsun ve SOMUT bilgi içersin (sayı, fiyat, tarih, isim, teknik özellik varsa mutlaka yaz).
-- comment: EDİTÖR YORUMU. Bu alan summary'nin TEKRARI OLMAYACAK: özeti yeniden anlatma. Bunun yerine şu sorulara cevap ver: Bu haber neden önemli? Kimi nasıl etkiler? Bundan sonrası için ne beklenebilir, neye dikkat edilmeli? 2-4 cümle; samimi ama profesyonel, gerekirse eleştirel.
+- summary: Haberin ÖZETİ. 3-4 cümle (yaklaşık 50-70 kelime); KISA ve NET ama doyurucu. Nötr kal: sadece "ne oldu, kim, nerede, neden önemli" bilgisini ver, yorum katma.
+- keyPoints: Haberin en önemli 3 ayrıntısı, kısa madde olarak. Her madde en fazla 14 kelime olsun ve SOMUT bilgi içersin (sayı, fiyat, tarih, isim, teknik özellik varsa mutlaka yaz).
+- body: HABERİN TAM METNİ. 4-6 paragraf, toplam 350-550 kelime. Kaynaktaki bilgileri kullanarak haberi genişlet: ayrıntılar, sayılar, teknik özellikler, ilgili gelişmeler, açıklamalar. Kurallar:
+  * Her paragraf 2-4 cümle olsun ve ayrı bir dizi öğesi olsun.
+  * İlk paragraf summary'yi KOPYALAMASIN; habere farklı bir girişle başla.
+  * UYDURMA YASAK: Kaynakta geçmeyen isim, tarih, sayı, unvan, kurum, söz veya olay yazma. Geçmişe dönük iddialar (şu yıl atandı, şu projeyi yürüttü, şu rakamı açıkladı) kesinlikle uydurma.
+  * Emin olmadığın ayrıntıyı eklemek yerine, kaynaktaki bilgiyi daha ayrıntılı ve akıcı biçimde anlat. Doğal çıkarımları "olabilir / bekleniyor" gibi temkinli ifadelerle ver.
+  * Kaynak çok kısaysa gövdeyi kısa tut (3 paragraf); doldurmak için bilgi ekleme.
+  * Yapay zekâ gibi değil, gazete haberi gibi yaz; "bu yazıda", "aşağıda" gibi ifadeler kullanma.
+- comment: EDİTÖR YORUMU. summary ve body'nin TEKRARI KESİNLİKLE OLMAYACAK: hiçbir bilgiyi yeniden anlatma. Doğrudan yorumla başla. Şu sorulara cevap ver: Bu neden önemli? Kimi nasıl etkiler? Bundan sonrası için ne beklenebilir, neye dikkat edilmeli? 3-5 cümle; samimi ama profesyonel, gerekirse eleştirel.
 - tags: 3-6 adet kısa anahtar kelime.
 - category: AŞAĞIDAKİ listeden TAM OLARAK birini seç (başka bir kelime yazma): ${cats}
 
 Yanıt formatı (sadece JSON):
-{"title":"...","slug":"...","summary":"...","keyPoints":["...","...","..."],"comment":"...","tags":["..."],"category":"..."}`;
+{"title":"...","slug":"...","summary":"...","keyPoints":["...","...","..."],"body":["paragraf 1","paragraf 2","paragraf 3"],"comment":"...","tags":["..."],"category":"..."}`;
 }
 
 // Bu çalıştırmada tükenen (günlük kota) adaylar
@@ -131,7 +141,8 @@ async function geminiCall(c, article) {
       systemInstruction: { parts: [{ text: SYSTEM }] },
       contents: [{ parts: [{ text: buildPrompt(article) }] }],
       generationConfig: {
-        temperature: 0.9,
+        temperature: 0.85,
+        maxOutputTokens: 3000,
         responseMimeType: "application/json",
         responseSchema: SCHEMA,
       },
@@ -155,7 +166,11 @@ async function groqCall(c, article) {
     },
     body: JSON.stringify({
       model: c.model,
-      temperature: 0.9,
+      temperature: 0.85,
+      max_tokens: 5000,
+      // gpt-oss bir akıl yürütme modeli: kısa tutmazsak token bütçesini "düşünmeye"
+      // harcayıp JSON'u tamamlayamıyor (json_validate_failed hatası).
+      reasoning_effort: "low",
       response_format: { type: "json_object" },
       messages: [
         { role: "system", content: SYSTEM },
@@ -184,9 +199,9 @@ async function safeFetch(url, options) {
 
 /** HTTP hatasını sınıflar: quota | ratelimit | missing | transient | other */
 function classify(status, body, headers, provider) {
-  const snippet = String(body).slice(0, 400);
+  const snippet = String(body).slice(0, 2500);
   const lower = snippet.toLowerCase();
-  const err = new Error(`${provider} HTTP ${status}: ${snippet.slice(0, 180)}`);
+  const err = new Error(`${provider} HTTP ${status}: ${snippet.slice(0, 1200)}`);
 
   let wait = 0;
   const retryAfter = headers?.get?.("retry-after");
@@ -237,6 +252,10 @@ function normalize(data, article) {
     keyPoints: Array.isArray(data.keyPoints)
       ? data.keyPoints.map((t) => String(t).trim()).filter(Boolean).slice(0, 3)
       : [],
+    body: (Array.isArray(data.body) ? data.body : String(data.body || "").split(/\n{2,}/))
+      .map((t) => String(t).trim())
+      .filter((t) => t.length > 40)
+      .slice(0, 8),
     comment: String(data.comment || "").trim(),
     tags: Array.isArray(data.tags)
       ? data.tags.map((t) => String(t).trim()).filter(Boolean).slice(0, 6)

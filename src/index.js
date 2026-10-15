@@ -1,5 +1,5 @@
 import { config } from "./config.js";
-import { fetchAllFeeds, fetchOgImage } from "./fetcher.js";
+import { fetchAllFeeds, fetchPageExtras } from "./fetcher.js";
 import { analyzeArticle } from "./ai.js";
 import { updateMarket } from "./market.js";
 import { loadArticles, saveArticles, existingIds, makeId } from "./store.js";
@@ -56,8 +56,13 @@ async function main() {
       `  (${i + 1}/${queue.length}) ${item.source}: ${item.title.slice(0, 55)}... `
     );
     try {
-      if (!item.image) {
-        item.image = await fetchOgImage(item.link);
+      // Sayfadan hem görseli hem de gerçek gövde metnini al (uydurmayı azaltır)
+      if (!item.image || item.content.length < 1500) {
+        const extra = await fetchPageExtras(item.link);
+        if (!item.image) item.image = extra.image;
+        if (extra.text && extra.text.length > 400) {
+          item.content = `${item.content}\n\n${extra.text}`.slice(0, 7000);
+        }
       }
       const ai = await analyzeArticle(item);
       articles.push({

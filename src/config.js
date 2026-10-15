@@ -54,11 +54,11 @@ export const config = {
   // ------------------------------------------------------------------
   // İŞLEME AYARLARI
   // ------------------------------------------------------------------
-  maxPerRun: Number(process.env.MAX_PER_RUN || 8), // bir çalıştırmada AI'a giden maksimum haber
+  maxPerRun: Number(process.env.MAX_PER_RUN || 2), // bir çalıştırmada AI'a giden maksimum haber (her haber artık uzun metin üretiyor)
   maxPerSource: Number(process.env.MAX_PER_SOURCE || 3), // tek kaynaktan en fazla kaç haber (çeşitlilik)
   maxAgeHours: Number(process.env.MAX_AGE_HOURS || 48), // bundan eski haberleri atla
   minContentLength: 40, // çok kısa/kirli içerikleri atla
-  aiDelayMs: Number(process.env.AI_DELAY_MS || 4000), // AI istekleri arası bekleme (dakikalık token limiti için)
+  aiDelayMs: Number(process.env.AI_DELAY_MS || 6000), // AI istekleri arası bekleme (dakikalık token limiti için)
 
   // ------------------------------------------------------------------
   // AI SAĞLAYICILAR (sırayla denenir). Anahtarı olan sağlayıcı kullanılır.

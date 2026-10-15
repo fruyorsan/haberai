@@ -30,7 +30,7 @@ async function fetchOne(feed) {
           feedCategory: feed.category || null,
           title: clean(item.title),
           link: (item.link || "").trim(),
-          content: clean(raw).slice(0, 1500),
+          content: clean(raw).slice(0, 3500),
           image: extractImage(item),
           publishedAt: toISO(item.isoDate || item.pubDate),
         };
@@ -79,30 +79,64 @@ function extractImage(item) {
   return match && /^https?:/i.test(match[1]) ? match[1] : null;
 }
 
-/** RSS'te görsel yoksa, haber sayfasından og:image çekmeyi dener. */
-export async function fetchOgImage(url) {
-  if (!url) return null;
+/** Haber sayfasını BİR kez indirip hem og:image hem de okunabilir gövde metnini çıkarır. */
+export async function fetchPageExtras(url) {
+  if (!url) return { image: null, text: "" };
   try {
     const res = await fetch(url, {
       headers: { "User-Agent": "Mozilla/5.0 (compatible; HaberAI/0.1; +https://haberai.netlify.app)" },
       signal: AbortSignal.timeout(12000),
     });
-    if (!res.ok) return null;
-    const html = (await res.text()).slice(0, 250000);
-    const patterns = [
-      /<meta[^>]+property=["']og:image:secure_url["'][^>]+content=["']([^"']+)["']/i,
-      /<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i,
-      /<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i,
-      /<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i,
-    ];
-    for (const re of patterns) {
-      const m = re.exec(html);
-      if (m && m[1] && /^https?:/i.test(m[1])) return m[1];
-    }
-    return null;
+    if (!res.ok) return { image: null, text: "" };
+    const html = (await res.text()).slice(0, 400000);
+    return { image: extractOgImage(html), text: extractReadableText(html) };
   } catch {
-    return null;
+    return { image: null, text: "" };
   }
+}
+
+/** Geriye dönük uyumluluk: sadece görseli döner. */
+export async function fetchOgImage(url) {
+  return (await fetchPageExtras(url)).image;
+}
+
+function extractOgImage(html) {
+  const patterns = [
+    /<meta[^>]+property=["']og:image:secure_url["'][^>]+content=["']([^"']+)["']/i,
+    /<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i,
+    /<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i,
+    /<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i,
+  ];
+  for (const re of patterns) {
+    const m = re.exec(html);
+    if (m && m[1] && /^https?:/i.test(m[1])) return m[1];
+  }
+  return null;
+}
+
+/**
+ * Haber sayfasındaki <p> metinlerinden okunabilir gövdeyi çıkarır.
+ * Amaç: AI'a kaynaktaki GERÇEK ayrıntıları vermek (uydurmayı azaltır).
+ */
+function extractReadableText(html) {
+  const body = html
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<noscript[\s\S]*?<\/noscript>/gi, " ")
+    .replace(/<(nav|header|footer|aside|form|figure|iframe)[\s\S]*?<\/\1>/gi, " ");
+
+  const paragraphs = [];
+  const re = /<p\b[^>]*>([\s\S]*?)<\/p>/gi;
+  let m;
+  let total = 0;
+  while ((m = re.exec(body)) && total < 4500) {
+    const text = clean(m[1]);
+    if (text.length < 70) continue;
+    if (/çerez|çerezler|cookie|abonelik|bülten|reklam|takip et|yorum yap|©/i.test(text)) continue;
+    paragraphs.push(text);
+    total += text.length;
+  }
+  return paragraphs.join("\n\n");
 }
 
 function toISO(value) {
