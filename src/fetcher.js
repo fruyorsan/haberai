@@ -32,7 +32,7 @@ async function fetchOne(feed) {
           link: (item.link || "").trim(),
           content: clean(raw).slice(0, 3500),
           image: extractImage(item),
-          publishedAt: toISO(item.isoDate || item.pubDate),
+          publishedAt: clampFuture(toISO(item.isoDate || item.pubDate)),
         };
       })
       .filter((it) => it.title && it.link && it.content.length >= config.minContentLength);
@@ -48,6 +48,18 @@ export async function fetchAllFeeds() {
   console.log("RSS kaynakları çekiliyor...");
   const results = await Promise.all(config.feeds.map(fetchOne));
   return results.flat();
+}
+
+/**
+ * Saati ileri olan kaynaklarda yayın tarihi gelecekte görünebiliyor; bu da
+ * haberin listeyi sürekli ele geçirmesine yol açıyor. 15 dakikadan fazla
+ * ileri tarihleri "şimdi"ye çekiyoruz.
+ */
+function clampFuture(iso) {
+  if (!iso) return iso;
+  const t = new Date(iso).getTime();
+  if (!Number.isFinite(t)) return iso;
+  return t > Date.now() + 15 * 60 * 1000 ? new Date().toISOString() : iso;
 }
 
 function clean(str = "") {

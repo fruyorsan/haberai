@@ -4,6 +4,7 @@ import { analyzeArticle } from "./ai.js";
 import { updateMarket } from "./market.js";
 import { loadArticles, saveArticles, existingIds, makeId } from "./store.js";
 import { shareNewArticles } from "./share.js";
+import { makeIndex, findSimilar } from "./dedupe.js";
 
 const DRY = process.argv.includes("--dry");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -32,18 +33,39 @@ async function main() {
 
   fresh.sort((a, b) => (b.publishedAt || "").localeCompare(a.publishedAt || ""));
 
-  // Kaynak çeşitliliği: tek bir kaynak listeyi doldurmasın
+  // Kaynak çeşitliliği + aynı olayın tekrarını engelleme
+  const dupeCutoff = Date.now() - config.dupeWindowHours * 3600 * 1000;
+  const recentTitles = articles
+    .filter((a) => {
+      const t = new Date(a.publishedAt || a.generatedAt || 0).getTime();
+      return Number.isFinite(t) && t >= dupeCutoff;
+    })
+    .map((a) => a.title);
+  const titleIndex = makeIndex(recentTitles);
+  console.log(`Tekrar kontrolü: son ${config.dupeWindowHours} saatte ${titleIndex.length} başlık`);
+
   const perSource = new Map();
   const queue = [];
+  let dupeCount = 0;
   for (const it of fresh) {
     if (queue.length >= config.maxPerRun) break;
     const used = perSource.get(it.source) || 0;
     if (used >= config.maxPerSource) continue;
+
+    // Aynı haber başka bir kaynakta zaten var mı?
+    const twin = findSimilar(it.title, titleIndex, config.dupeThreshold);
+    if (twin) {
+      dupeCount++;
+      console.log(`  ⏭ tekrar: "${it.title.slice(0, 46)}" ≈ "${twin.slice(0, 46)}"`);
+      continue;
+    }
+
     perSource.set(it.source, used + 1);
     queue.push(it);
+    titleIndex.push(...makeIndex([it.title])); // bu turda seçilenler de tekrar sayılsın
   }
 
-  console.log(`İşlenecek yeni haber: ${queue.length} (uygun aday: ${fresh.length})`);
+  console.log(`İşlenecek yeni haber: ${queue.length} (uygun aday: ${fresh.length}, tekrar atlanan: ${dupeCount})`);
 
   if (DRY) {
     queue.forEach((it, i) => console.log(`  ${i + 1}. [${it.source}] ${it.title}`));
