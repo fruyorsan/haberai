@@ -1,6 +1,6 @@
 import { getArticles, siteName } from "../lib/articles.js";
 
-const SITE = "https://ornek.pages.dev";
+const SITE = "https://haberai.pages.dev";
 
 function esc(s = "") {
   return String(s)
