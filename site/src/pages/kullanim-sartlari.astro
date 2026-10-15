@@ -1,0 +1,101 @@
+---
+import Base from "../layouts/Base.astro";
+
+const updated = "15 Ekim 2026";
+---
+
+<Base
+  title="Kullanım Şartları — HaberAI"
+  description="HaberAI kullanım şartları ve yasal bilgilendirme."
+>
+  <div class="container prose">
+    <h1>Kullanım Şartları</h1>
+    <p class="muted">Son güncelleme: {updated}</p>
+
+    <p>
+      <strong>HaberAI</strong> ("Site") bir haber derleme ve yapay zekâ destekli özetleme
+      platformudur. Siteyi ziyaret ederek veya içeriklerini kullanarak bu şartları kabul etmiş
+      olursunuz.
+    </p>
+
+    <h2>1. İçeriğin Niteliği</h2>
+    <p>
+      Sitedeki içerikler; önde gelen haber kaynaklarının RSS akışlarından derlenip yapay zekâ ile
+      <strong>özetlenerek ve editör yorumu eklenerek</strong> üretilir. İçerikler bilgilendirme
+      amaçlıdır ve <strong>yatırım, hukuki veya tıbbi tavsiye niteliği taşımaz</strong>.
+    </p>
+
+    <h2>2. Kaynaklar ve Telif</h2>
+    <p>
+      Orijinal haber içerikleri ilgili yayın kuruluşlarına aittir. Her haber, kaynağına bağlantı
+      verilerek ve özgün biçimde yeniden yazılarak sunulur. Telif hakkı sahiplerinin talebi
+      hâlinde ilgili içerik kaldırılır veya güncellenir.
+    </p>
+
+    <h2>3. Yapay Zekâ İçeriği</h2>
+    <p>
+      "AI Yorumu" başlıklı bölümler otomatik üretilen analizlerdir; kişisel görüş yerine
+      makine tarafından oluşturulmuş değerlendirmeler içerir. Bu bölümlerde hata veya eksiklik
+      bulunabilir.
+    </p>
+
+    <h2>4. Sorumluluğun Sınırlandırılması</h2>
+    <p>
+      Site, içeriklerin doğruluğu, güncelliği veya eksiksizliği konusunda garanti vermez.
+      İçeriklerin kullanımından doğabilecek doğrudan veya dolaylı zararlardan Site sorumlu
+      tutulamaz.
+    </p>
+
+    <h2>5. Fikri Mülkiyet</h2>
+    <p>
+      Sitenin tasarımı, yazılımı ve özgün derlemeleri HaberAI'ye aittir. İzinsiz kopyalanması,
+      çoğaltılması veya ticari amaçla kullanılması yasaktır. Kaynak gösterilerek yapılan makul
+      alıntılar bu kapsam dışıdır.
+    </p>
+
+    <h2>6. Üçüncü Taraf Bağlantılar ve Reklamlar</h2>
+    <p>
+      Sitede üçüncü taraf bağlantılar ve reklamlar bulunabilir. Bu içeriklerden ilgili üçüncü
+      taraflar sorumludur.
+    </p>
+
+    <h2>7. Değişiklikler</h2>
+    <p>
+      HaberAI, bu şartları önceden bildirmeksizin güncelleme hakkını saklı tutar. Güncel sürüm
+      bu sayfada yayımlanır.
+    </p>
+
+    <h2>8. İletişim</h2>
+    <p>
+      Sorularınız için: <a href="mailto:info@haberai.netlify.app">info@haberai.netlify.app</a>
+    </p>
+  </div>
+</Base>
+
+<style>
+  .prose {
+    max-width: 780px;
+    margin: 40px auto;
+  }
+  .prose h1 {
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+  }
+  .prose h2 {
+    margin-top: 32px;
+    font-size: 1.22rem;
+  }
+  .prose p,
+  .prose li {
+    line-height: 1.78;
+    color: #2a2d34;
+  }
+  .prose a {
+    color: var(--red);
+    font-weight: 600;
+  }
+  .muted {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+</style>
