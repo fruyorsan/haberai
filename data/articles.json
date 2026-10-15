@@ -34,6 +34,70 @@
     "refreshedAt": "2026-10-15T18:22:19.796Z"
   },
   {
+    "id": "727919c6932742b1",
+    "title": "Yapay Zeka Modelleri İçin En Uygun VRAM Kapasiteli Bilgisayarlar",
+    "slug": "yapay-zeka-modelleri-icin-en-uygun-vram-kapasiteli-bilgisayarlar",
+    "summary": "Yerel olarak güçlü yapay zeka modellerini çalıştırmak isteyen kullanıcılar, işlemci yerine ekran kartı belleği (VRAM) önceliği belirlemeli. 16 GB VRAM, gpt-oss-20b ve Gemma 4 12B gibi modelleri sorunsuz çalıştırırken, 24 GB VRAM 27‑32 milyar parametreli modelleri destekliyor. 64 GB üzeri birleşik bellek, 70 milyar parametre ve üzeri modeller için gerekli. Kaynaklarda listelenen Casper Excalibur, Dell, MSI ve Mac Studio gibi sistemlerin Ekim 2026 fiyatları ve teknik özellikleri detaylandırıldı.",
+    "keyPoints": [
+      "16 GB VRAM ile gpt‑oss‑20b ve Gemma 4 12B çalışır",
+      "24 GB VRAM 27‑32 B parametreli modelleri mümkün kılar",
+      "64 GB+ birleşik bellek 70 B parametreli modelleri çalıştırır"
+    ],
+    "body": [
+      "Yapay zeka uygulamalarının yerel ortamda çalıştırılması, internet bağlantısına bağımlılığı azaltarak veri gizliliği ve gecikme sürelerini iyileştiriyor. Bu bağlamda, model performansını belirleyen en kritik unsur, işlemciden çok ekran kartının video bellek kapasitesi (VRAM) olarak ortaya çıktı. Özellikle 16 GB VRAM, gpt‑oss‑20b ve Gemma 4 12B gibi 12‑20 milyar parametreli modelleri tam anlamıyla destekliyor.",
+      "VRAM miktarı arttıkça daha büyük parametreli modellerin çalıştırılması mümkün hâle geliyor. 24 GB VRAM, 27‑32 milyar parametreli modellerin kapısını aralarken, 64 GB ve üzeri birleşik bellekli sistemler 70 milyar parametre ve üzeri modelleri çalıştırmak için gereklidir. Modellerin sıkıştırılmış (Q4) versiyonları, parametre başına yaklaşık 0,60 bayt kullanarak bellek ihtiyacını üç katından fazla azaltıyor; bu da aynı VRAM’de daha büyük modelleri çalıştırma olanağı sağlıyor.",
+      "Kaynakta, Casper Excalibur, Dell, MSI ve Apple Mac Studio gibi çeşitli sistemlerin teknik özellikleri ve Ekim 2026 fiyatları sunuldu. Örneğin, Excalibur E650, Intel Core Ultra 9 285K, RTX 5070 Ti 16 GB VRAM, 64 GB DDR5 RAM ve 2 TB SSD gibi üst düzey bileşenlerle öneriliyor. Bu konfigürasyon, 16 GB VRAM gerektiren modelleri tam VRAM’de tutarak performansı maksimize ediyor; aynı zamanda 64 GB RAM, VRAM’e sığmayan büyük modelleri yavaş da olsa çalıştırmaya imkan tanıyor.",
+      "Stok durumu ve fiyatlar da detaylı şekilde verildi; RTX 5070 Ti’li yapılandırma henüz stokta değil ve fiyat bilgisi verilmedi, ancak RTX 5070 12 GB VRAM’li sürüm 14 Ekim 2026 itibarıyla 234 866 TL olarak listelendi. Kullanıcıların seçim yaparken VRAM kapasitesine öncelik vermeleri, modellerin çalıştırma verimliliği ve maliyet etkinliği açısından kritik bir faktör olarak öne çıkıyor."
+    ],
+    "comment": "VRAM odaklı yaklaşım, yapay zeka uygulamalarının yerel kullanımını gerçekçi bir seçenek haline getiriyor. Bu, özellikle veri gizliliği ve düşük gecikme isteyen küçük ve orta ölçekli işletmeler için büyük bir fırsat. Ancak yüksek VRAM maliyetleri, geniş kitlelere ulaşmayı zorlaştırabilir; fiyat‑performans dengesi yakından izlenmeli. Gelecekte, model sıkıştırma tekniklerinin gelişmesiyle daha düşük VRAM’de daha büyük modellerin çalıştırılması mümkün olabilir, bu da donanım gereksinimlerini yeniden şekillendirebilir.",
+    "editorNote": "VRAM kapasitesi, yapay zeka modellerinin yerel çalıştırılmasında kilit faktör. Doğru donanım seçimi, performans ve maliyet dengesini belirliyor.",
+    "tags": [
+      "yapay zeka",
+      "VRAM",
+      "bilgisayar donanımı",
+      "model parametresi",
+      "yerel çalışma"
+    ],
+    "category": "Donanım",
+    "source": "Tamindir",
+    "sourceUrl": "https://www.tamindir.com/blog/yapay-zeka-modellerini-internetsiz-calistiran-bilgisayarlar_112292/",
+    "image": "https://img.tamindir.com/2026/10/476765/yapay-zeka-modellerini-internetsiz-calistiran-bilgisayarlar.jpg",
+    "publishedAt": "2026-10-15T19:59:19.971Z",
+    "generatedAt": "2026-10-15T19:59:29.261Z"
+  },
+  {
+    "id": "0de10e2daad8c3b4",
+    "title": "AK Parti Genel Başkan Yardımcısı Ayan, Rize’de Gençlik Yatırımlarını Vurguladı",
+    "slug": "ak-parti-genel-baskan-yardimcisi-ayan-rizede-genclik-yatirimlarini-vurguladi",
+    "summary": "AK Parti Genel Başkan Yardımcısı Nilhan Ayan, Rize'de düzenlenen \"Türkiye Yüzyılı Buluşmaları\" programında, terör harcamalarının ardından elde edilen kaynakların gençlik projelerine yönlendirileceğini açıkladı. Ayan, Türkiye'nin uluslararası arenada artan etkisini ve yaklaşan COP31 zirvesindeki rolünü de değerlendirdi. Parti içinde birlik ve kardeşliğin, ekonomik ve sosyal hedeflere ulaşmada anahtar olduğu vurgulandı.",
+    "keyPoints": [
+      "Nilhan Ayan, Rize’de \"Türkiye Yüzyılı Buluşmaları\"na katıldı",
+      "Terör harcamalarının ardından kaynaklar gençlik yatırımlarına yönlendirilecek",
+      "COP31 zirvesinde Türkiye’nin uluslararası etkisi artırılacak"
+    ],
+    "body": [
+      "Rize’de bir düğün salonunda gerçekleştirilen \"Türkiye Yüzyılı Buluşmaları\" programına AK Parti Genel Başkan Yardımcısı Nilhan Ayan katıldı. Ayan, partiye mensup katılımcılara ve yerel yöneticilere, ülkenin güvenlik harcamaları nedeniyle kaybedilen trilyonluk bütçenin gelecekte gençlik odaklı projelere aktarılacağını belirtti. Bu çerçevede, eğitim, istihdam ve inovasyon alanlarında yeni yatırımların planlandığını sözlerine ekledi.",
+      "Ayan, konuşmasında Türkiye’nin uluslararası diplomasi sahnesindeki yükselişine de değindi. Birleşmiş Milletler 81. Genel Kurulu’nda Cumhurbaşkanı Erdoğan’la birlikte ülkenin güçlü bir ses olarak temsil edildiğini hatırlatan Ayan, NATO ve BM platformlarında Türkiye’nin “daha adil bir dünya” mottosuyla hareket ettiğini vurguladı. Bu bağlamda, yaklaşan COP31 iklim zirvesinde Türkiye’nin liderlik rolüyle küresel sorunlara çözüm arayışının sürdürülmesi gerektiğini ifade etti.",
+      "Parti içinde birlik ve kardeşliğin önemi üzerine konuşan Ayan, ahlak ve yolsuzlukla mücadele temasını da gündeme taşıdı. Geçmişteki zorlukların üstesinden gelindiğini, fakat zaman zaman moral bozan olayların olabileceğini itiraf etti. Ancak bu tür durumların parti bütünlüğü ve halk desteğiyle aşılacağına inandığını dile getirdi. Ayrıca, Emine Erdoğan’ın himayesinde hayata geçirilen Sıfır Atık Projesi’nin kültürel değerlerden beslenen bir vizyon olduğunu ve uluslararası düzeye taşınma hedefi taşıdığını belirtti.",
+      "Son olarak Ayan, \"Terörsüz Türkiye\" dönemine girildiğini söyleyerek, harcanan trilyonluk kaynakların artık genç nesillerin geleceği için kullanılacağını yineledi. Yeni Türkiye Yüzyılı hedefi kapsamında Kızılelma projesi gibi stratejik girişimlere de destek verileceğini sözlerine ekledi. AK Parti İl Başkanı Yılmaz Katmer de Rize’den ülke hedeflerine katkı sağlayacak projelerin devam edeceğini açıkladı."
+    ],
+    "comment": "Ayan’ın açıklamaları, güvenlik harcamalarının ekonomi üzerindeki baskısını gençlik politikalarına kaydırma stratejisini ortaya koyuyor. Bu yaklaşım, özellikle eğitim ve istihdam alanında fırsat arayan gençler için önemli bir sinyal niteliğinde. Uluslararası platformdaki yükselen Türkiye imajı ise dış politika ve çevre konularında daha aktif bir rol beklentisini tetikliyor. İzleyen dönemde kaynakların nasıl somut projelere dönüştüğü ve partinin iç birliğinin bu planları ne ölçüde destekleyeceği yakından izlenmeli.",
+    "editorNote": "Terör harcamalarından arta kalan bütçenin gençliğe yönlendirilmesi, AK Parti’nin yeni ekonomik önceliğini gösteriyor; bu adımın somut etkileri merak konusu.",
+    "tags": [
+      "Nilhan Ayan",
+      "Rize",
+      "Türkiye Yüzyılı",
+      "COP31",
+      "Gençlik yatırımları"
+    ],
+    "category": "Gündem",
+    "source": "CNN Türk",
+    "sourceUrl": "https://www.cnnturk.com/yerel-haberler/rize/ak-parti-genel-baskan-yardimcisi-ayan-rizede-konustu-3480010",
+    "image": "https://image.cnnturk.com/i/cnnturk/75/1200x675/57834bf8f0dc1e53e4fccb9d.jpg",
+    "publishedAt": "2026-10-15T19:59:17.054Z",
+    "generatedAt": "2026-10-15T19:59:39.131Z"
+  },
+  {
     "id": "0ab36acf6850d7c6",
     "title": "Üsküdar Belediye Başkanvekili Dündar Ziya Gültekin Trafik Kazasında Hayatını Kaybetti",
     "slug": "uskudar-belediye-baskanvekili-dundar-ziya-gultekin-trafik-kazasi",
