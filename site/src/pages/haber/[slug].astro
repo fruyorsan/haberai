@@ -103,24 +103,34 @@ const jsonLd = {
         {(article.summary || keyPoints.length > 0) && (
           <section class="recap">
             {article.summary && (
-              <div class="recap__box">
+              <>
                 <h2 class="recap__title">Özet</h2>
                 <p class="recap__text">{article.summary}</p>
-              </div>
+              </>
             )}
 
             {keyPoints.length > 0 && (
-              <div class="recap__box">
-                <h2 class="recap__title">Öne Çıkanlar</h2>
+              <>
+                <h3 class="sr-only">Öne çıkanlar</h3>
                 <ul class="recap__list">
                   {keyPoints.map((k) => (
                     <li class="recap__item">
-                      <span class="recap__bullet" aria-hidden="true"></span>
+                      <svg class="recap__check" viewBox="0 0 20 20" aria-hidden="true">
+                        <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.13" />
+                        <path
+                          d="M6 10.4l2.6 2.6L14 7.7"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
                       <span>{k}</span>
                     </li>
                   ))}
                 </ul>
-              </div>
+              </>
             )}
           </section>
         )}
@@ -366,15 +376,10 @@ const jsonLd = {
     margin: 0 0 10px;
   }
 
-  /* --- Özet + Öne Çıkanlar (haber detayının ALTINDA) --- */
+  /* --- Özet bloğu (haber detayının altında, tam genişlik) --- */
   .recap {
     margin: 34px 0 8px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 16px;
-  }
-  .recap__box {
-    padding: 20px 22px;
+    padding: 22px 24px 20px;
     background: var(--surface-2);
     border: 1px solid var(--border);
     border-top: 3px solid var(--red);
@@ -382,35 +387,34 @@ const jsonLd = {
   }
   .recap__text {
     margin: 0;
-    font-size: 1.06rem;
-    line-height: 1.74;
+    font-size: 1.1rem;
+    line-height: 1.76;
     font-weight: 500;
     color: var(--text);
   }
   .recap__list {
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin: 16px 0 0;
+    padding: 16px 0 0;
+    border-top: 1px dashed var(--border-strong);
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 9px;
   }
   .recap__item {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     align-items: flex-start;
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 0.99rem;
+    line-height: 1.55;
     color: var(--text-2);
   }
-  .recap__bullet {
+  .recap__check {
     flex-shrink: 0;
-    margin-top: 8px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--red-grad);
-    box-shadow: 0 0 0 4px rgba(216, 31, 38, 0.1);
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    color: var(--red);
   }
 
   /* --- Haberin detayı (gövde) --- */
@@ -542,7 +546,7 @@ const jsonLd = {
       padding: 22px 20px;
     }
     .recap {
-      grid-template-columns: 1fr;
+      padding: 18px 18px 16px;
     }
     .recap__text {
       font-size: 1.04rem;
@@ -613,12 +617,17 @@ const jsonLd = {
     min-width: 0;
     height: 48px;
     padding: 0 16px;
-    border: 2px solid var(--line);
+    border: 1px solid var(--border);
     border-radius: 12px;
+    background: var(--surface);
+    color: var(--text);
     font-size: 0.98rem;
     font-family: inherit;
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .aiask__form input::placeholder {
+    color: var(--muted);
   }
   .aiask__form input:focus {
     border-color: var(--red);

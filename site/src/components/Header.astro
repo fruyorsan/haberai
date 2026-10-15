@@ -100,7 +100,7 @@ const isActive = (href) =>
 </header>
 
 <script>
-  // Son dakika başlıklarını döndür
+  // Son dakika başlıklarını döndür (kayan/roll geçiş — üst üste binme yok)
   const rot = document.getElementById("son-dakika");
   if (rot) {
     const slides = Array.from(rot.querySelectorAll(".topbar__slide"));
@@ -109,9 +109,13 @@ const isActive = (href) =>
       slides[0].classList.add("is-active");
       if (slides.length > 1) {
         setInterval(() => {
-          slides[i].classList.remove("is-active");
+          const cur = slides[i];
           i = (i + 1) % slides.length;
-          slides[i].classList.add("is-active");
+          const next = slides[i];
+          cur.classList.remove("is-active");
+          cur.classList.add("is-prev"); // yukarı kayarak çıkar
+          next.classList.remove("is-prev");
+          next.classList.add("is-active"); // aşağıdan yukarı gelir
         }, 6000);
       }
     }
@@ -167,7 +171,7 @@ const isActive = (href) =>
 
 <style>
   .topbar {
-    background: var(--red);
+    background: var(--brand-fill);
     color: #fff;
     font-size: 0.82rem;
   }
@@ -223,6 +227,7 @@ const isActive = (href) =>
     flex: 1;
     height: 22px;
     min-width: 0;
+    overflow: hidden; /* kayan başlıklar bu kutunun dışına taşamaz */
   }
   .topbar__slide {
     position: absolute;
@@ -231,21 +236,30 @@ const isActive = (href) =>
     align-items: center;
     gap: 10px;
     opacity: 0;
-    transform: translateY(7px);
-    transition: opacity 0.45s var(--ease), transform 0.45s var(--ease);
+    transform: translateY(100%);
+    transition: opacity 0.4s var(--ease), transform 0.42s var(--ease);
     pointer-events: none;
-    overflow: hidden;
+  }
+  /* JS çalışmadan önce de ilk başlık görünür olsun (JS'siz/kapalı durumlar) */
+  .topbar__slide:first-child {
+    opacity: 1;
+    transform: none;
+  }
+  /* Yukarı kayıp çıkan başlık: böylece iki başlık asla üst üste binmez */
+  .topbar__slide.is-prev {
+    opacity: 0;
+    transform: translateY(-100%);
   }
   .topbar__slide.is-active {
     opacity: 1;
-    transform: none;
+    transform: translateY(0);
     pointer-events: auto;
-    overflow: visible;
   }
   .topbar__headline {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    min-width: 0; /* flex içinde küçülebilsin → taşma/üst üste binme olmaz */
     font-weight: 600;
   }
   .topbar__slide:hover .topbar__headline {
