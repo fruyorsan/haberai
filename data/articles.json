@@ -3,33 +3,44 @@
     "id": "646b03fd8ae53a8c",
     "title": "YouTube Music, Yapay Zeka ile Üretilen Şarkıları Etiketleyecek",
     "slug": "youtube-music-yapay-zeka-ile-uretilen-sarkilari-etiketleyecek",
-    "summary": "YouTube Music, dinlediğiniz bir şarkının yapay zeka tarafından üretilip üretilmediğini oynatıcı ekranında gösteriyor. Bu özellik, kullanıcıların içerik kaynağını daha iyi anlamasını sağlayacak.",
-    "comment": "Yapay zeka destekli müzik üretiminin artmasıyla, dinleyicilerin şeffaf bilgiye ihtiyacı yükseliyor. Platformun bu adımı, telif hakkı tartışmalarını ve etik soruları gündeme getirebilir, özellikle müzik endüstrisi profesyonelleri ve bağımsız sanatçılar için önemli bir referans oluşturacak.",
+    "summary": "YouTube Music, dinlediğiniz şarkının yapay zeka ile üretilip üretilmediğini oynatıcı ekranında gösteren bir etiket sistemi başlattı. Etiket, şarkı adının altında ve sanatçının yanında \"AI\" rozetini içeriyor ve tıklandığında üretim sürecine dair kısa bir açıklama sunuyor. Bu uygulama şu anda sadece YouTube Music'te aktif ve ileride ana YouTube uygulamasına da taşınması planlanıyor. Şirket, etiketi şeffaflık sağlamak ve dinleyicilere doğru bilgi vermek amacıyla geliştirdiğini belirtiyor.",
+    "comment": "Bu adım, müzik tüketicilerine içerik kaynağı hakkında net bilgi sunarak seçim özgürlüğünü artırıyor ve yapay zekâ destekli üretimin algısını şekillendiriyor. Sanatçılar, eserlerini nasıl tanıtacakları konusunda yeni bir sorumlulukla karşı karşıya; platformlar ise tespit mekanizmalarının doğruluğunu sürekli iyileştirmeli. Gelecekte, diğer müzik hizmetlerinin de benzer etiketleme sistemleri getirmesi, sektörde bir şeffaflık rekabeti başlatabilir. Kullanıcıların AI etiketiyle ilgili bilinçli tercih yapabilmesi, telif ve etik tartışmalarının da gündeme gelmesine yol açabilir.",
     "tags": [
       "YouTube Music",
+      "AI etiketi",
       "yapay zeka",
-      "etiketleme",
-      "müzik",
-      "akıllı platform"
+      "müzik platformu",
+      "şeffaflık"
     ],
     "category": "Yazılım",
     "source": "Tamindir",
     "sourceUrl": "https://www.tamindir.com/haber/youtube-music-yapay-zeka-sarki-etiketi_112325/",
     "image": "https://img.tamindir.com/2026/10/476815/youtube-music-yapay-zeka-sarki-etiketi.jpg",
     "publishedAt": "2026-10-15T21:44:00.000Z",
-    "generatedAt": "2026-10-15T16:21:11.867Z"
+    "generatedAt": "2026-10-15T16:21:11.867Z",
+    "keyPoints": [
+      "AI etiketi YouTube Music oynatıcı ekranında görünüyor",
+      "Sanatçılar şarkıyı tamamen, kısmen veya hiç AI ile işaretleyebiliyor",
+      "YouTube, eksik işaretlemelerde kendi tespit sistemini devreye sokuyor"
+    ],
+    "body": [
+      "YouTube Music, müzik dinleme deneyimini daha şeffaf hâle getirmek amacıyla yapay zeka ile üretilen eserleri belirten bir \"AI\" rozetini oynatıcı arayüzüne ekledi. Kullanıcılar bir şarkıyı çalarken şarkı adının hemen altında ve sanatçının yanında yer alan bu etikete dokunduklarında, parçanın tamamen yapay zekâyla mı yoksa sadece bir kısmının mı üretildiğine dair kısa bir bilgi alıyorlar. Bu özellik, platformun mevcut sürümünde aktif ve güncel uygulamayı kullanan herkes tarafından görülebiliyor.",
+      "Etiketleme süreci iki aşamalı bir sistemle yürütülüyor. İlk olarak, müzik ortakları (sanatçılar ve kayıt şirketleri) yükledikleri parçaları \"tamamen yapay zekâ\", \"kısmen yapay zekâ\" ya da \"yapay zekâ yok\" şeklinde işaretliyor. Bu sayede, yapay zekâdan sadece bir aşamada faydalanan eserler ile tamamen AI tarafından üretilen şarkılar ayrıştırılmış oluyor. İşaretleme yapılmadığında ise YouTube, geliştirdiği tespit algoritmalarıyla parçayı analiz edip uygun etiketi otomatik olarak ekleyebiliyor.",
+      "Yeni rozet, içeriğin yasaklanması anlamına gelmiyor; yalnızca dinleyicilere şarkının üretim süreci hakkında bilgi sunarak tercihlerini bilinçli yapmalarını sağlıyor. Platform, yapay zekâ destekli şarkıların müzik kütüphanesinde kalmaya devam edeceğini ve kullanıcıların bu şarkıları çalma listelerine ekleyip eklemeyeceklerine kendileri karar vereceklerini vurguluyor. YouTube, daha önce video içeriklerinde benzer bir AI etiketi sistemi tanıtmıştı ve bu uygulamanın müzik platformuna genişletilmesi, sektörde şeffaflık standartlarının yükselmesine katkı sağlayabilir."
+    ],
+    "refreshedAt": "2026-10-15T18:21:44.389Z"
   },
   {
     "id": "0a3b87428ecea4f4",
     "title": "Epic Games, Yapay Zekâyla Geliştirilen Yeni Launcher'ı Tanıttı",
     "slug": "epic-games-yapay-zekayla-gelistirilen-yeni-launcher-tanittti",
-    "summary": "Epic Games, yeni launcher'ını yapay zekâ destekli olarak geliştirdiğini belirterek bir önizleme yayınladı. Şirket, yeni sürümün Steam'e kıyasla daha hızlı performans sunduğunu iddia ediyor.",
-    "comment": "Yapay zekâyla kodlanan bir oyun mağazası platformu, geliştirme süreçlerini hızlandırma ve performans optimizasyonu açısından sektöre yeni bir bakış açısı getiriyor. Bu adım, özellikle indie geliştiriciler ve oyuncular için daha akıcı bir deneyim vaat ederken, Steam gibi köklü rakiplerle rekabeti kızıştırabilir.",
+    "summary": "Epic Games, yapay zekâ temelli bir metod olan \"vibe coding\" ile geliştirilen yeni launcher'ını ön izleme sürümü olarak yayınladı. Şirket, yeni istemcinin başlatma süresinin 5,47 saniye olduğunu ve Steam'in 10,07 saniye sürenin yaklaşık yarısı kadar hızlı olduğunu iddia ediyor. İlk kullanıcılar ise bazı hatalar ve güvenlik endişeleri bildirdi. Aynı gün Epic Games, Fortnite'ın Linux sürümünün yakında geleceğini duyurdu.",
+    "comment": "Yeni launcher, performans iddiasıyla sektörde rekabeti kızıştırabilir ve Epic'in kullanıcı deneyimini iyileştirme çabasını gösteriyor. Ancak erken aşamadaki hatalar ve ödeme güvenliği konusundaki çekinceler, kullanıcı güvenini sarsabilir. Bu durum, diğer oyun platformlarının da istemci optimizasyonlarına yönelmesine yol açabilir; Epic'in tam sürümü çıkmadan önce stabilite ve güvenlik testlerine ağırlık vermesi kritik olacak.",
     "tags": [
       "Epic Games",
-      "yapay zeka",
       "launcher",
-      "oyun dağıtımı",
+      "yapay zekâ",
+      "performans",
       "Steam"
     ],
     "category": "Oyun",
@@ -37,48 +48,86 @@
     "sourceUrl": "https://www.tamindir.com/haber/epic-games-launcher-yapay-zeka-onizleme_112324/",
     "image": "https://img.tamindir.com/2026/10/476815/epic-games-launcher-yapay-zeka-onizleme.jpg",
     "publishedAt": "2026-10-15T20:55:00.000Z",
-    "generatedAt": "2026-10-15T16:21:18.678Z"
+    "generatedAt": "2026-10-15T16:21:18.678Z",
+    "keyPoints": [
+      "Yeni launcher 'vibe coding' yöntemiyle geliştirildi",
+      "Başlatma süresi 5,47 saniye, Steam'in 10,07 saniyesinin %46'sı",
+      "Kullanıcı raporları hatalar ve ödeme bilgisi güvenliği endişesi"
+    ],
+    "body": [
+      "Epic Games, yapay zekâ destekli yeni bir launcher sürümünü ön izleme aşamasına çıkardı. Şirket, geliştiricilerin kodu doğrudan yazmak yerine, isteklerini yapay zekâya anlatıp \"vibe coding\" adı verilen bir süreçle uygulamayı oluşturduklarını belirtti. Bu yöntemle oluşturulan sürüm, mevcut Epic Games Store istemcisinden daha hafif ve tasarım olarak yenilenmiş bir yapı sunuyor.",
+      "Yeni istemcinin performansını göstermek amacıyla yapılan ölçümlerde, bilgisayar açıldığında launcher'ın 5,47 saniyede tamamen yüklendiği rapor edildi. Aynı test ortamında Valve'ın Steam istemcisi 10,07 saniye sürmüş ve Epic Games, bu farkın yüzde 46'lık bir hız avantajı olduğunu vurguladı. Şirket, kullanıcıları bu ölçümleri kendileri deneyerek doğrulamalarını istedi.",
+      "Launcher'ın ön izleme sürümüne erişen bazı oyuncular ise hatalarla karşılaştı. Bir kullanıcı, Fortnite'ta grafik ayarlarını değiştirirken oyun yerine geliştirici aracı UEFN'nin açıldığını bildirirken, bir diğer grup ödeme bilgilerinin yapay zekâ tarafından yazıldığı mağazaya güvenmemekte. Epic Games, ön izleme notunda bu sorunların oyunları etkilemeyeceğini belirtti.",
+      "Epic Games Store genel müdürü Martin Keely, IGN'e yeni istemcinin indirme yöneticisi, kütüphane ve mağaza sayfaları dahil tüm bileşenlerinin sıfırdan yeniden yazıldığını açıkladı. Mevcut Epic Games kullanıcıları, bu ön izleme sürümünü isteğe bağlı olarak deneyebiliyor. Ayrıca şirket, aynı gün Fortnite'ın Linux platformuna geleceğini duyurarak uzun süredir beklenen bir gelişmeye işaret etti."
+    ],
+    "refreshedAt": "2026-10-15T18:21:52.814Z"
   },
   {
     "id": "33eaca3c40560364",
     "title": "Gran Turismo temalı DualSense PS5 kontrolcüsü ve GT7'ye 6 yeni araç",
     "slug": "gran-turismo-temali-dualsense-ps5-kontrolcusu-gt7-6-yeni-arac",
-    "summary": "Sony, Gran Turismo serisinin 30. yılı şerefine sınırlı sayıda üretilen bir DualSense kontrolcü tanıttı. Aynı güncellemeyle PlayStation 5 oyununda GT7'ye altı yeni araba eklendi. Ücretsiz bir güncelleme olarak sunuluyor.",
-    "comment": "Bu haber, PS5 kullanıcıları ve Gran Turismo hayranları için önemli bir güncelleme olduğunu gösteriyor. Yeni kontrolcü koleksiyonseverleri hedef alırken, eklenen arabalar oyunun çeşitliliğini artıracak. Özellikle sınırlı üretim olması, koleksiyon değeri yaratabilir.",
+    "summary": "Sony, Gran Turismo serisinin 30. yılı şerefine sınırlı sayıda Gran Turismo temalı DualSense kontrolcü tanıttı ve aynı güncelleme ile Gran Turismo 7’ye Sportsland Sugo pistini ve altı yeni aracı ekledi. Güncelleme 15 Ekim 2026’dan itibaren ücretsiz olarak indirilebilecek. Kontrolcünün ön paneli karbon fiber görünümlü, fiyatı 84,99 USD (yaklaşık 4.200 TL). Türkiye’de satış tarihi ve fiyatı henüz açıklanmadı.",
+    "comment": "Bu adım, Sony’nin uzun ömürlü bir seriyi kutlarken topluluğa yeni içerik sunma stratejisinin bir parçası. Gran Turismo hayranları, ücretsiz pist ve araçlarla oyunun tazelenmiş hissini yaşayacak, koleksiyoncular ise sınırlı üretim kontrolcüyü kaçırmamak için acele edecek. Türkiye pazarındaki fiyat belirsizliği ise alıcı kararlarını etkileyebilir; ön sipariş sürecinde fiyat duyurularını yakından takip etmek faydalı olacak.",
     "tags": [
-      "ps5",
-      "gran-turismo",
-      "dualsense",
-      "gt7",
-      "yeni-araba",
-      "güncelleme"
+      "Gran Turismo",
+      "DualSense",
+      "GT7 güncellemesi",
+      "Sugo pisti",
+      "yeni araçlar"
     ],
     "category": "Oyun",
     "source": "Tamindir",
     "sourceUrl": "https://www.tamindir.com/haber/gran-turismo-30-yil-ozel-dualsense_112323/",
     "image": "https://img.tamindir.com/2026/10/476815/gran-turismo-30-yil-ozel-dualsense.jpg",
     "publishedAt": "2026-10-15T20:43:00.000Z",
-    "generatedAt": "2026-10-15T16:21:24.959Z"
+    "generatedAt": "2026-10-15T16:21:24.959Z",
+    "keyPoints": [
+      "Gran Turismo temalı DualSense kontrolcü sınırlı sayıda üretilecek",
+      "GT7’ye Sportsland Sugo pisti ve altı yeni araç ücretsiz eklendi",
+      "Kontrolcü önerilen fiyatı 84,99 USD, yaklaşık 4.200 TL"
+    ],
+    "body": [
+      "Sony, Gran Turismo serisinin üç on yılını kutlamak amacıyla sınırlı üretim bir DualSense kontrolcü duyurdu. Kontrolcünün ön yüzü karbon fiber görünümlü bir dokunuşla tasarlandı; iki siyah yarış şeridi ve motor sporlarından ilham alan grafikler yer alıyor. Omuz ve tetik tuşları ise tamamen siyah renkte. Kontrolcü, koleksiyon meraklıları için özel bir ürün olmasının yanı sıra, standart DualSense deneyimini görsel açıdan farklılaştırıyor.",
+      "Aynı duyuruyla birlikte Gran Turismo 7’ye büyük bir ücretsiz güncelleme geldi. 15 Ekim 2026 sabahından itibaren oyuncular, Spec IV güncellemesini indirerek Japonya’nın ünlü Sportsland Sugo pistine erişebilecek. Pist, inişli çıkışlı virajları ve teknik yapısıyla oyuna yeni bir yarış deneyimi katıyor. Güncelleme ayrıca altı yeni otomobil, yeni Dünya Pisti etkinlikleri, Deneyim modu ve Scapes konumları da sunuyor.",
+      "Eklenen araçlar arasında Xiaomi’nin Vision Gran Turismo hiper otomobili, 0,29 sürtünme katsayısıyla öne çıkıyor. Ferrari F355 ve 1987 model Civic Si gibi klasikler ise nostalji tutkunlarını hedef alıyor. Tüm araçlar oyun içi kredilerle satın alınabiliyor, bu da oyunculara ücretsiz içerik üzerinden yeni seçenekler sunuyor. Güncelleme, GT7’nin içerik çeşitliliğini artırarak uzun vadeli oyuncu ilgisini korumayı amaçlıyor.",
+      "Gran Turismo serisinin kurucusu Kazunori Yamauchi, bu özel kontrolcü ve güncellemenin serinin 30 yıllık yolculuğunu kutlamak için bir fırsat olduğunu vurguladı. Yamauchi, oyunun otomobillerin güzelliğini paylaşma fikriyle doğduğunu hatırlatarak, topluluğa duyulan minnettarlığı dile getirdi. Bu tür kutlamalar, markanın sadık hayran kitlesiyle bağını güçlendirmeye hizmet ediyor.",
+      "Kontrolcünün önerilen satış fiyatı 84,99 USD ve Avrupa’da aynı fiyatla 84,99 EUR olarak belirlendi. Türkiye’de ön siparişlerin 22 Ekim 2026’da saat 10.00’da başlayacağı, satışın ise 10 Aralık 2026’dan itibaren dünya genelinde gerçekleşeceği duyuruldu. Ancak yerel fiyat ve kesin satış tarihi henüz netleşmedi, bu da Türkiye’deki oyuncuların merakını artırıyor."
+    ],
+    "refreshedAt": "2026-10-15T18:22:09.807Z"
   },
   {
     "id": "87ce349abb7680a8",
     "title": "Microsoft, Xbox’a Özel Büyük Seriler İçin Anket Gönderdi",
     "slug": "microsoft-xboxa-ozel-buyuk-seriler-icin-anket-gonderdi",
-    "summary": "Microsoft, Xbox oyuncularına Fallout, The Elder Scrolls ve Minecraft gibi büyük oyun serilerinin Xbox’a özel olma ihtimalini soran bir anket dağıttı. Anket, oyuncuların bu tür kararların platform tercihlerine etkisini ölçmeyi amaçlıyor.",
-    "comment": "Bu anket, büyük oyun franchise'larının platform bağımlılığı konusundaki tartışmaları alevlendirebilir. Xbox topluluğu, potansiyel bir içerik daralmasının oyun deneyimini nasıl şekillendireceğini merak ediyor. Şirketin bu geri bildirimleri nasıl değerlendireceği, gelecekteki platform stratejileri açısından kritik olacak.",
+    "summary": "Microsoft, Xbox kullanıcılarına Fallout, The Elder Scrolls, Minecraft gibi popüler serilerin yalnızca Xbox platformunda olma ihtimalini soran bir anket gönderdi. Anket, oyuncuların bu tür kararların satın alma ve platform tercihine etkisini ölçmeyi amaçlıyor. Senaryolarda Minecraft'ın PlayStation'dan kaldırılması ve diğer büyük serilerin Xbox'a özel hâle gelmesi yer alıyor. Şirket, bu verileri gelecekteki stratejik kararlarında kullanacak.",
+    "comment": "Bu anket, Microsoft'un platform stratejisini yeniden şekillendirme çabasının bir göstergesi. Xbox’a özel büyük seriler, PlayStation ve Nintendo kullanıcılarını çekebilir, ancak mevcut oyuncuların platform değiştirme isteği risk taşıyor. Şirketin bu verileri nasıl kullanacağı, gelecekteki oyun lansmanları ve fiyatlandırma politikalarını doğrudan etkileyebilir. İzleyicilerin, özellikle çok platformlu oyuncuların tepkilerini ve rekabetin nasıl evrileceğini yakından takip etmeleri faydalı olacak.",
     "tags": [
-      "microsoft",
-      "xbox",
-      "anket",
-      "minecraft",
-      "oyuncular"
+      "Xbox",
+      "Microsoft",
+      "Oyun Anketi",
+      "Fallout",
+      "Minecraft",
+      "The Elder Scrolls"
     ],
     "category": "Oyun",
     "source": "Tamindir",
     "sourceUrl": "https://www.tamindir.com/haber/xbox-ozel-oyun-anketi-minecraft-fallout_112320/",
     "image": "https://img.tamindir.com/2026/10/476815/xbox-ozel-oyun-anketi-minecraft-fallout.jpg",
     "publishedAt": "2026-10-15T20:01:00.000Z",
-    "generatedAt": "2026-10-15T16:21:31.940Z"
+    "generatedAt": "2026-10-15T16:21:31.940Z",
+    "keyPoints": [
+      "Xbox oyuncularına 3 büyük oyun serisi için özel senaryo anketi",
+      "Minecraft'ın PlayStation'dan kaldırılması senaryosu dahil",
+      "Anket, satın alma kararları ve platform geçişi üzerine veri topluyor"
+    ],
+    "body": [
+      "Microsoft, Xbox topluluğuna yönelik bir araştırma çalışması başlattı. Xbox Research ekibi, Fallout, The Elder Scrolls ve Minecraft gibi tanınmış serilerin yalnızca Xbox'ta bulunması durumunda oyuncuların davranışlarını ölçmek için bir anket dağıttı. Anket, oyuncuların bu tür platform sınırlamalarının satın alma kararlarını ve olası platform geçişlerini nasıl etkilediğini anlamayı hedefliyor.",
+      "Ankette, Call of Duty dışındaki tüm oyunların Xbox'a özel olması senaryosu da yer alıyor. Özellikle Minecraft’ın PlayStation ve Nintendo konsollarından kaldırılması, mevcut sürümlerini hâlâ elinde bulunduran kullanıcıların oyunu oynamaya devam edebileceği, ancak yeni içerik ve güncellemelerden mahrum kalacağı belirtiliyor. Katılımcılara bu durumda yeni bir Xbox alıp almayacakları veya PC'ye yönelip yönelmeyecekleri soruluyor.",
+      "Anketin bir diğer önemli kısmı, Diablo, DOOM, The Elder Scrolls ve Fallout gibi serilerin yalnızca Xbox'ta çıkması durumunda oyuncuların hangi platforma yönelmek isteyecekleri. Sorular, Xbox satın alma niyeti, PC'ye geçiş olasılığı ve mevcut konsol değişikliği isteği gibi konulara odaklanıyor. Bu sayede Microsoft, özel oyun stratejisinin potansiyel getirilerini sayısal verilerle değerlendirebilecek.",
+      "Microsoft'un yeni CEO'su Asha Sharma yönetimindeki dönemde, özel oyunlara ağırlık vermeye başladığı biliniyor. Gears of War: E-Day ve Clockwork Revolution gibi oyunlar zaten Xbox'a özel olarak duyurulmuşken, Elder Scrolls VI’nın da benzer bir yol izleyebileceği spekülasyonları bulunuyor. Ancak Forza Horizon 6 ve Fable gibi popüler serilerin PlayStation 5 sürümlerinin hâlâ planlandığı da belirtiliyor.",
+      "Anket, Xbox'un 2027 mali yılı içinde kâra geçme hedefi doğrultusunda stratejik bir araç olarak görülüyor. Şirket, oyuncu geri bildirimlerini değerlendirerek hangi oyunların platforma özel olmasının daha fazla kullanıcı çekebileceğini ve gelirini artırabileceğini analiz etmeyi planlıyor. Bu tür anketlerin gerçek kararları yansıtması düşük olsa da, sektördeki rekabeti ve platformlar arası dengeyi etkileyebilecek bir adım olarak dikkat çekiyor."
+    ],
+    "refreshedAt": "2026-10-15T18:22:19.796Z"
   },
   {
     "id": "2ee03cd9c9d668ee",
