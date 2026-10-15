@@ -59,14 +59,19 @@ import Base from "../layouts/Base.astro";
     padding: 0 18px 0 44px;
     font-size: 1.05rem;
     font-family: inherit;
-    border: 2px solid var(--line);
+    color: var(--text);
+    background: var(--surface);
+    border: 2px solid var(--border);
     border-radius: 14px;
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
   }
+  .search-input::placeholder {
+    color: var(--muted);
+  }
   .search-input:focus {
-    border-color: var(--red);
-    box-shadow: 0 0 0 4px var(--red-soft);
+    border-color: var(--brand);
+    box-shadow: 0 0 0 4px var(--brand-soft);
   }
   .status {
     margin: 12px 0 0;

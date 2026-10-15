@@ -1,0 +1,235 @@
+---
+import { getArticles, timeAgo } from "../lib/articles.js";
+
+// Ana sayfa vitrini: sonsuz kayan haber şeridi.
+// MarketTicker'dan (tam genişlik, koyu) ve Header "SON DAKİKA"
+// rotasyonundan (tek slayt) bilinçli olarak farklıdır.
+const MAX = 12;
+const articles = getArticles().slice(0, MAX);
+
+// Kategori adından sabit bir renk tonu üret (aynı kategori => aynı renk)
+function hue(str) {
+  let h = 0;
+  const s = String(str || "haber");
+  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 360;
+  return h;
+}
+
+const items = articles.map((a) => ({
+  url: a.url,
+  title: a.title,
+  category: a.category,
+  when: timeAgo(a.publishedAt || a.generatedAt),
+  color: `hsl(${hue(a.category)} 78% 55%)`,
+}));
+---
+
+{
+  items.length > 0 && (
+    <section class="nt" aria-label="Gündem akışı">
+      <span class="nt__label">
+        <span class="nt__dot" aria-hidden="true" />
+        GÜNDEM
+      </span>
+
+      <div class="nt__viewport">
+        <div class="nt__track">
+          {[0, 1].map((copy) =>
+            items.map((it) => (
+              <a
+                class="nt__item"
+                href={it.url}
+                aria-hidden={copy === 1 ? "true" : undefined}
+                tabindex={copy === 1 ? -1 : undefined}
+              >
+                <span class="nt__cat">
+                  <span class="nt__cat-dot" style={`--c:${it.color}`} aria-hidden="true" />
+                  {it.category}
+                </span>
+                <span class="nt__head">{it.title}</span>
+                {it.when && <span class="nt__time">{it.when}</span>}
+              </a>
+            ))
+          )}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .nt {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    margin: 20px 0 4px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Sabit "GÜNDEM" etiketi */
+  .nt__label {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    padding: 0 16px;
+    background: var(--brand-grad);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    box-shadow: 6px 0 16px -8px rgba(0, 0, 0, 0.55);
+  }
+  .nt__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #fff;
+    animation: nt-blink 1.8s ease-in-out infinite;
+  }
+  @keyframes nt-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.28;
+    }
+  }
+
+  /* Kenarlarda yumuşak geçiş maskesi */
+  .nt__viewport {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent 0,
+      #000 40px,
+      #000 calc(100% - 40px),
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      90deg,
+      transparent 0,
+      #000 40px,
+      #000 calc(100% - 40px),
+      transparent 100%
+    );
+  }
+
+  .nt__track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: nt-scroll 52s linear infinite;
+    will-change: transform;
+  }
+  /* Hover veya klavye odağında durur */
+  .nt:hover .nt__track,
+  .nt:focus-within .nt__track {
+    animation-play-state: paused;
+  }
+
+  .nt__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    color: var(--text);
+    border-right: 1px solid var(--border-soft);
+    transition: background 0.2s var(--ease), color 0.2s var(--ease);
+  }
+  .nt__item:hover {
+    background: var(--surface-2);
+  }
+  .nt__item:hover .nt__head {
+    color: var(--brand);
+  }
+
+  .nt__cat {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .nt__cat-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: var(--c, var(--brand));
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--c, var(--brand)) 24%, transparent);
+  }
+
+  .nt__head {
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    transition: color 0.2s var(--ease);
+  }
+  .nt__time {
+    flex-shrink: 0;
+    font-size: 0.76rem;
+    color: var(--muted);
+  }
+
+  @keyframes nt-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .nt__label {
+      padding: 0 12px;
+      letter-spacing: 0.1em;
+    }
+    .nt__item {
+      padding: 11px 13px;
+      font-size: 0.86rem;
+    }
+  }
+  @media (max-width: 520px) {
+    .nt__time {
+      display: none;
+    }
+  }
+
+  /* Hareket azaltma: animasyon yok, statik erişilebilir liste */
+  @media (prefers-reduced-motion: reduce) {
+    .nt__track {
+      animation: none;
+      transform: none;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+    .nt__viewport {
+      overflow: visible;
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+    .nt__item[aria-hidden="true"] {
+      display: none;
+    }
+    .nt__dot {
+      animation: none;
+    }
+  }
+</style>

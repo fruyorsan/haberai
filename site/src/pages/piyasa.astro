@@ -76,15 +76,15 @@ const cards = items.map((it, i) => ({
                   >
                     <defs>
                       <linearGradient id={it.gradId} x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stop-color={up ? "#16a34a" : "#dc2626"} stop-opacity="0.28" />
-                        <stop offset="100%" stop-color={up ? "#16a34a" : "#dc2626"} stop-opacity="0" />
+                        <stop offset="0%" stop-color={up ? "#22c55e" : "#ef4444"} stop-opacity="0.28" />
+                        <stop offset="100%" stop-color={up ? "#22c55e" : "#ef4444"} stop-opacity="0" />
                       </linearGradient>
                     </defs>
                     <path d={it.chart.area} fill={`url(#${it.gradId})`} />
                     <path
                       d={it.chart.line}
                       fill="none"
-                      stroke={up ? "#16a34a" : "#dc2626"}
+                      stroke={up ? "#22c55e" : "#ef4444"}
                       stroke-width="2.2"
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -94,7 +94,7 @@ const cards = items.map((it, i) => ({
                       cx={it.chart.lastX}
                       cy={it.chart.lastY}
                       r="3.2"
-                      fill={up ? "#16a34a" : "#dc2626"}
+                      fill={up ? "#22c55e" : "#ef4444"}
                     />
                   </svg>
                 </div>
@@ -145,16 +145,16 @@ const cards = items.map((it, i) => ({
     border-radius: 999px;
   }
   .stat--up {
-    color: #15803d;
-    background: rgba(22, 163, 74, 0.1);
+    color: var(--pos);
+    background: var(--pos-soft);
   }
   .stat--down {
-    color: #b91c1c;
-    background: rgba(220, 38, 38, 0.1);
+    color: var(--neg);
+    background: var(--neg-soft);
   }
   .stat--note {
     color: var(--muted);
-    background: var(--bg-soft);
+    background: var(--surface-2);
     font-weight: 500;
   }
 
@@ -167,8 +167,8 @@ const cards = items.map((it, i) => ({
 
   .pcard {
     position: relative;
-    background: #fff;
-    border: 1px solid var(--line);
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 18px 18px 14px;
     overflow: hidden;
@@ -204,7 +204,7 @@ const cards = items.map((it, i) => ({
     font-size: 0.95rem;
     font-weight: 800;
     letter-spacing: -0.01em;
-    color: #303238;
+    color: var(--text);
   }
   .pcard__chg {
     display: inline-flex;
@@ -217,12 +217,12 @@ const cards = items.map((it, i) => ({
     font-variant-numeric: tabular-nums;
   }
   .pcard__chg.is-up {
-    color: #15803d;
-    background: rgba(22, 163, 74, 0.12);
+    color: var(--pos);
+    background: var(--pos-soft);
   }
   .pcard__chg.is-down {
-    color: #b91c1c;
-    background: rgba(220, 38, 38, 0.12);
+    color: var(--neg);
+    background: var(--neg-soft);
   }
   .pcard__arrow {
     font-size: 0.62rem;
