@@ -3,7 +3,7 @@ import sitemap from "@astrojs/sitemap";
 
 // Yayına aldığında "site" adresini kendi alan adınla değiştir.
 export default defineConfig({
-  site: "https://haberai.pages.dev",
+  site: "https://haberai.netlify.app",
   output: "static",
   trailingSlash: "ignore",
   integrations: [sitemap()],
