@@ -129,7 +129,7 @@ export function timeAgo(iso) {
 }
 
 export function siteName() {
-  return "HaberAI";
+  return "HaberinAi";
 }
 
 // --- Sayfalama yardımcıları ---

@@ -47,7 +47,7 @@ export default async (req) => {
           {
             role: "system",
             content:
-              "Sen HaberAI'nin haber asistanısın. Yalnızca sana verilen haber bağlamına dayanarak Türkçe, kısa (en fazla 4 cümle) ve net yanıt ver. Bağlamda olmayan bilgiyi uydurma; emin değilsen bunu açıkça söyle.",
+              "Sen HaberinAi'nin haber asistanısın. Yalnızca sana verilen haber bağlamına dayanarak Türkçe, kısa (en fazla 4 cümle) ve net yanıt ver. Bağlamda olmayan bilgiyi uydurma; emin değilsen bunu açıkça söyle.",
           },
           {
             role: "user",

@@ -11,7 +11,7 @@ const escapeXml = (s) =>
 
 /** Google News sitemap: son 48 saatteki haberler (en fazla 1000). */
 export function GET({ site }) {
-  const origin = String(site || "https://fruyorsan.github.io").replace(/\/$/, "");
+  const origin = String(site || "https://haberinai.com.tr").replace(/\/$/, "");
   const cutoff = Date.now() - 48 * 3600 * 1000;
 
   const recent = getArticles()
@@ -26,7 +26,7 @@ export function GET({ site }) {
     <loc>${escapeXml(loc)}</loc>
     <news:news>
       <news:publication>
-        <news:name>HaberAI</news:name>
+        <news:name>HaberinAi</news:name>
         <news:language>tr</news:language>
       </news:publication>
       <news:publication_date>${date}</news:publication_date>

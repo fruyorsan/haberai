@@ -10,12 +10,12 @@
  * ayrıca SITE_URL ortam değişkeniyle geçersiz kılınabilir.
  */
 export function siteOrigin(astroSite) {
-  const raw = process.env.SITE_URL || astroSite || "https://fruyorsan.github.io";
+  const raw = process.env.SITE_URL || astroSite || "https://haberinai.com.tr";
   return String(raw).replace(/\/+$/, "");
 }
 
 /** İletişim adresi. */
-export const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "haberaiiletisim@yahoo.com";
+export const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "iletisim@haberinai.com.tr";
 
 /**
  * AdSense yayıncı kimliği (ör. "ca-pub-1234567890123456").

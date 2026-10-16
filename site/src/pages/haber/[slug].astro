@@ -29,13 +29,13 @@ const readMin = Math.max(1, Math.round(words / 200));
 const shareUrl = Astro.url.href;
 
 // --- SEO yardımcıları ---
-const site = Astro.site ?? new URL("https://fruyorsan.github.io");
+const site = Astro.site ?? new URL("https://haberinai.com.tr");
 
 const articleUrl = new URL(article.url, site).href;
 const publishedIso = article.publishedAt || article.generatedAt;
 const modifiedIso = article.refreshedAt || article.generatedAt;
 // Görsel: gerçek haber fotoğrafı varsa paylaşım görseli o olur; yoksa
-// HaberAI'nın kendi markalı görseli kullanılır.
+// HaberinAi'nın kendi markalı görseli kullanılır.
 const ogImage = article.image
   ? new URL(article.image, site).href
   : new URL("og-default.png", site).href;
@@ -54,10 +54,10 @@ const jsonLd = {
   articleSection: article.category,
   keywords: (article.tags || []).join(", "),
   articleBody: body.length ? body.join("\n\n") : article.summary,
-  author: { "@type": "Organization", name: "HaberAI" },
+  author: { "@type": "Organization", name: "HaberinAi" },
   publisher: {
     "@type": "Organization",
-    name: "HaberAI",
+    name: "HaberinAi",
     logo: { "@type": "ImageObject", url: new URL("favicon.svg", site).href },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": articleUrl },
@@ -75,7 +75,7 @@ const breadcrumbLd = {
 ---
 
 <Base
-  title={`${article.title} — HaberAI`}
+  title={`${article.title} — HaberinAi`}
   description={article.summary}
   canonical={articleUrl}
   ogType="article"
@@ -181,7 +181,7 @@ const breadcrumbLd = {
           <section class="analysis">
             <div class="analysis__head">
               <span class="analysis__badge">AI YORUMU</span>
-              <span class="analysis__sub">HaberAI editör analizi</span>
+              <span class="analysis__sub">HaberinAi editör analizi</span>
             </div>
             <p class="analysis__text">{article.comment}</p>
           </section>
@@ -200,7 +200,7 @@ const breadcrumbLd = {
         Kaynak:
         <a href={article.sourceUrl} target="_blank" rel="noopener nofollow">{article.source}</a>
         <span class="post__ai-note">
-          Bu haber, kaynaktaki bilgilerden yararlanılarak HaberAI tarafından özgün biçimde
+          Bu haber, kaynaktaki bilgilerden yararlanılarak HaberinAi tarafından özgün biçimde
           yazılmıştır; kaynak metin birebir kopyalanmaz, fotoğraf kaynağa bağlantıyla gösterilir.
           Hata olabilir, ayrıntılar için kaynağa bakın. <a href="/telif/">İçerik ve telif politikası</a>
         </span>

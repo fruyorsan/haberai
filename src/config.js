@@ -2,8 +2,8 @@
 
 export const config = {
   // Sitenin adı ve adresi (özet/kaynak gösteriminde kullanılır)
-  siteName: "HaberAI",
-  siteUrl: "https://fruyorsan.github.io",
+  siteName: "HaberinAi",
+  siteUrl: "https://haberinai.com.tr",
 
   // ------------------------------------------------------------------
   // KATEGORİLER — AI yalnızca bu listeden birini seçebilir.

@@ -1,9 +1,9 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
-// Alan adı alındığında tek değişiklik: buradaki "site" değeri + public/CNAME.
+// Alan adı: haberinai.com.tr
 // (SITE_URL ortam değişkeni verilirse o kullanılır.)
-const site = process.env.SITE_URL || "https://fruyorsan.github.io";
+const site = process.env.SITE_URL || "https://haberinai.com.tr";
 
 export default defineConfig({
   site,

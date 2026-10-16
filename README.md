@@ -1,4 +1,4 @@
-# HaberAI — Haber Toplama + AI Hattı
+# HaberinAi — Haber Toplama + AI Hattı
 
 RSS kaynaklarından haber toplar, Google Gemini ile **özetler + kendi yorumunu katar** ve
 `data/articles.json` dosyasına kaydeder. Site katmanı (Astro) sonra bunu okuyacak.

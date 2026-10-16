@@ -7,7 +7,7 @@ const parser = new Parser({
   timeout: 20000,
   headers: {
     "User-Agent":
-      "Mozilla/5.0 (compatible; HaberAI/0.1; RSS okuyucu)",
+      "Mozilla/5.0 (compatible; HaberinAi/0.1; RSS okuyucu)",
     Accept: "application/rss+xml, application/atom+xml, application/xml, text/xml;q=0.9, */*;q=0.8",
   },
   customFields: {

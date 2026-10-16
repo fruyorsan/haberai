@@ -10,7 +10,7 @@ import {
 import "../styles/global.css";
 
 const {
-  title = "HaberAI — Yapay Zekâ Destekli Haberler",
+  title = "HaberinAi — Yapay Zekâ Destekli Haberler",
   description = "Yapay zekâ destekli teknoloji haberleri: özetler, analizler ve editör yorumları.",
   canonical,
   ogType = "website",
@@ -25,7 +25,7 @@ const {
 } = Astro.props;
 
 // Mutlak URL tabanı (astro.config.mjs -> site)
-const site = Astro.site ?? new URL("https://fruyorsan.github.io");
+const site = Astro.site ?? new URL("https://haberinai.com.tr");
 
 // Görsel/URL çözümleme: mutlak http(s) ise aynen, göreli ise site köküne göre mutlaklaştır.
 function absoluteUrl(value) {
@@ -70,7 +70,7 @@ const isArticle = ogType === "article";
 
     <!-- Open Graph -->
     <meta property="og:type" content={ogType} />
-    <meta property="og:site_name" content="HaberAI" />
+    <meta property="og:site_name" content="HaberinAi" />
     <meta property="og:locale" content="tr_TR" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
@@ -98,7 +98,7 @@ const isArticle = ogType === "article";
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0d11" />
     <meta name="color-scheme" content="light dark" />
     <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
-    <link rel="alternate" type="application/rss+xml" title="HaberAI RSS" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="HaberinAi RSS" href="/rss.xml" />
 
     <!-- Tema (FOUC önleyici): Kullanıcının sistem temasına (Dark / Light) göre anında başlat -->
     <script is:inline>

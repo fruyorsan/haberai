@@ -26,7 +26,7 @@ const siteSchema = {
       "@type": "WebSite",
       "@id": origin + "/#website",
       url: origin + "/",
-      name: "HaberAI",
+      name: "HaberinAi",
       description: "Yapay zekâ destekli Türkçe haber özeti ve editör yorumları.",
       inLanguage: "tr-TR",
       potentialAction: {
@@ -38,7 +38,7 @@ const siteSchema = {
     {
       "@type": "Organization",
       "@id": origin + "/#organization",
-      name: "HaberAI",
+      name: "HaberinAi",
       url: origin + "/",
       logo: origin + "/og-default.png",
     },
@@ -47,13 +47,13 @@ const siteSchema = {
 ---
 
 <Base
-  title="HaberAI — Yapay Zekâ Destekli Haberler"
-  description="HaberAI: yapay zekâ destekli teknoloji ve gündem haberlerinde özet, analiz ve editör yorumu."
+  title="HaberinAi — Yapay Zekâ Destekli Haberler"
+  description="HaberinAi: yapay zekâ destekli teknoloji ve gündem haberlerinde özet, analiz ve editör yorumu."
   schema={siteSchema}
   preloadImage={heroImage}
 >
   <div class="container">
-    <h1 class="sr-only">HaberAI — Yapay Zekâ Destekli Türkçe Haberler ve Gündem Özetleri</h1>
+    <h1 class="sr-only">HaberinAi — Yapay Zekâ Destekli Türkçe Haberler ve Gündem Özetleri</h1>
     {articles.length === 0 ? (
       <p class="empty">
         Henüz haber yok. Hattı çalıştır: <code>npm run collect</code>
