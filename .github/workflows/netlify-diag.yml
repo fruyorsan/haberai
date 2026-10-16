@@ -12,6 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      - name: Node ile API deploy (gercek dosyalar)
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: node .github/scripts/netlify-deploy.mjs site/dist "haber hatti: dogrulama"
+
       - name: Token ve siteyi sorgula
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
