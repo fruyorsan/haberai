@@ -1,5 +1,38 @@
 [
   {
+    "id": "e92f10cd3443b534",
+    "title": "Almanya'dan yenilenebilir enerji tesisleri için kritik siber güvenlik uyarısı",
+    "slug": "almanyadan-yenilenebilir-enerji-tesisleri-icin-kritik-siber-guvenlik-uyarisi",
+    "summary": "Almanya Federal Bilgi Güvenliği Ofisi, siber saldırı risklerini azaltmak amacıyla yenilenebilir enerji tesislerinin kontrol sistemlerinin internete kapatılmasını ve ek güvenlik önlemlerinin hayata geçirilmesini istedi. Özellikle güneş ve rüzgar enerjisi santrallerindeki altyapı bileşenlerinin dış ağlardan soyutlanması gerektiği vurgulandı.",
+    "keyPoints": [
+      "BSI, güneş ve rüzgar santrallerinin kontrol sistemlerinin internete kapatılmasını önerdi.",
+      "Doğrudan bağlantı yerine VPN ve çok faktörlü kimlik doğrulama kullanılması istendi.",
+      "Kurumsal bilgisayar ağları ile enerji üretim ağlarının birbirinden ayrılması gerektiği belirtildi."
+    ],
+    "body": [
+      "Avrupa genelinde yenilenebilir enerji altyapılarının dijital güvenliği son dönemin en sıcak başlıklarından biri haline gelirken, Almanya'dan dikkat çekici bir hamle geldi. Federal Bilgi Güvenliği Ofisi (BSI), kritik enerji tesislerini hedef alabilecek olası siber saldırılara karşı kapsamlı tavsiye kararları yayımladı. Alınan bu kararlar, küçük ölçekli işletmelerden devasa üretim tesislerine kadar geniş bir yelpazedeki güneş ve rüzgar santrallerini kapsıyor.",
+      "Yayımlanan kılavuzdaki en çarpıcı madde, tesislerin operasyonel kontrol bileşenlerinin doğrudan internet erişiminden tamamen arındırılması oldu. Inverterler, izleme ağ geçitleri, iletişim ekipmanları ve SCADA gibi kritik sistemlerin genel ağlara açık bırakılması, kötü niyetli kişilerin bu sistemleri manipüle etmesine zemin hazırlayabiliyor. Kurum, bu tür güvenlik açıkları yüzünden sadece veri kaybı yaşanmadığını, doğrudan enerji üretim faaliyetlerinin de durdurulabileceğini ifade ediyor.",
+      "Yetkililer, uzaktan erişim gerektiren durumlarda ise ham internet bağlantısı yerine sanal özel ağ (VPN) teknolojilerinin tercih edilmesini şart koşuyor. Bununla birlikte sisteme girişlerde çok faktörlü kimlik doğrulama mekanizmalarının devreye sokulması, zayıf şifrelerin veya çalınan kimliklerin yarattığı riskleri minimuma indiriyor. Yazılım güncellemelerinin aksatılmadan yapılması ve güvenlik yamalarının düzenli olarak uygulanması da uyarılar arasında yer alıyor.",
+      "Alınan tedbirler arasında kurumsal ağlar ile operasyonel enerji ağlarının fiziksel veya mantıksal olarak birbirinden izole edilmesi de bulunuyor. Bu sayede bir noktada yaşanabilecek olası bir siber ihlal, tüm üretim şebekesine yayılmadan durdurulabiliyor. Son dönemde bazı büyük üreticilerin platformlarında tespit edilen şifresiz uzaktan erişim açıkları ve binlerce santralin risk altında olduğuna yönelik raporlar, bu tür sıkı önlemlerin ne denli acil olduğunu açıkça gözler önüne seriyor."
+    ],
+    "comment": "Yenilenebilir enerji tesislerinin dijitalleşmesi verimliliği artırırken ne yazık ki siber saldırı yüzeyini de tehlikeli biçimde genişletiyor. Almanya'nın getirdiği bu kısıtlamalar, geleceğin enerji altyapılarının sadece yeşil değil aynı zamanda izole ve güvenli tasarlanması gerektiğini net bir şekilde gösteriyor. Önümüzdeki dönemde enerji şirketlerinin siber güvenlik bütçelerini artırmaması durumunda, bölgesel elektrik kesintileri ve sabotajlar kaçınılmaz bir ulusal güvenlik tehdidine dönüşebilir.",
+    "editorNote": "Yeşil enerji devriminin omurgasını oluşturan santraller, siber korsanların yeni hedefi haline gelebilir.",
+    "tags": [
+      "siber güvenlik",
+      "güneş enerjisi",
+      "Almanya",
+      "enerji",
+      "BSI"
+    ],
+    "category": "Donanım",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/almanya-dan-gunes-enerjisi-icin-siber-guvenlik-uyarisi--211733",
+    "publishedAt": "2026-10-16T16:36:00.000Z",
+    "generatedAt": "2026-10-16T16:38:10.056Z",
+    "image": "https://www.donanimhaber.com/images/images/haber/211733/1200x675almanya-dan-gunes-enerjisi-icin-siber-guvenlik-uyarisi.jpg",
+    "breaking": true
+  },
+  {
     "id": "a6bb4fea731dc8c4",
     "title": "MAN, IAA Transportation 2026'da 60 tonluk dev kamyonunu tanıttı",
     "slug": "man-iaa-transportation-2026da-60-tonluk-dev-kamyonunu-tanitti",
@@ -29,6 +62,37 @@
     "publishedAt": "2026-10-16T16:33:06.000Z",
     "generatedAt": "2026-10-16T16:20:19.023Z",
     "image": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad22787fe46d577dbb92a54.jpg"
+  },
+  {
+    "id": "a85f3c8f5466b880",
+    "title": "Cafer Mahiroğlu Soruşturmasında Yedi Şüpheli İçin Tutuklama Talebi",
+    "slug": "cafer-mahiroglu-sorusturmasinda-yedi-supheli-icin-tutuklama-talebi",
+    "summary": "Yürütülen Cafer Mahiroğlu soruşturması kapsamında adliyeye sevk edilen yedi şüpheli hakkında tutuklama talep edildi. Savcılık tarafından gerçekleştirilen sevk işlemleri sonrasında şüphelilerin durumuna ilişkin hukuki süreç netleşmeye başladı.",
+    "keyPoints": [
+      "Cafer Mahiroğlu soruşturmasında toplam yedi şüpheli hakkında tutuklama talep edildi.",
+      "Şüpheliler sevk edildikleri adli merciler önünde hakim karşısına çıkmayı bekliyor.",
+      "Savcılık makamının yürüttüğü tahkikat çok yönlü olarak devam ediyor."
+    ],
+    "body": [
+      "Türkiye gündeminde geniş yankı uyandıran ve kamuoyunun yakından takip ettiği Cafer Mahiroğlu soruşturmasında yeni bir hukuki aşamaya geçildi. Yürütülen tahkikat çerçevesinde gözaltına alınan ya da ifadeye çağrılan yedi şüphelinin işlemleri tamamlanarak savcılığa sevk edildi.",
+      "Savcılık makamı tarafından yürütülen sorgu işlemlerinin ardından dosyada şüpheli sıfatıyla yer alan yedi kişi, tutuklanmaları istemiyle nöbetçi sulh ceza hakimliğine yönlendirildi. Dosyadaki delil durumu ve isnat edilen suçlamaların niteliği doğrultusunda bu kararın alındığı öğrenildi.",
+      "Adli birimlerdeki hareketlilik sürerken, soruşturmanın ilerleyen aşamalarında yeni bilgilerin ve ayrıntıların ortaya çıkması bekleniyor. Şüphelilerin hakimlikteki ifadelerinin ardından tutuklama talebi konusunda verilecek karar merakla takip ediliyor."
+    ],
+    "comment": "Bu tür soruşturmalar, kamuoyunun adalet mekanizmasına olan güvenini ve hukukun üstünlüğü ilkesinin işleyişini yakından gözlemlemesi açısından kritik bir rol oynamaktadır. Sürecin şeffaf bir şekilde yürütülmesi, spekülasyonların önüne geçilmesi ve tarafların haklarının korunması adına büyük önem taşımaktadır. Önümüzdeki günlerde atılacak adımlar, dosyanın seyrini doğrudan belirleyecektir.",
+    "editorNote": "Hukuki sürecin en kritik eşiğinde alınan bu kararlar, dosyanın seyrini tamamen değiştirebilir.",
+    "tags": [
+      "Cafer Mahiroğlu",
+      "soruşturma",
+      "gündem",
+      "adliye",
+      "tutuklama"
+    ],
+    "category": "Gündem",
+    "source": "Milliyet",
+    "sourceUrl": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOS3BaNWhKOEttQjFZVWlQSV9MUmZJdUMydnNRUWItTEgxcVV3U1E4Nkd5bWlPQlRZeFluLU9NOWNVVEN6S05GMXBZZDdQN3dwUW9HZm03RE80T2R0QnFGZ3FKMnJuYUY2TjZBdV9rZFpmdXpaSmYzUlVTVDhPR3ZBVFJ5dm1MME5ZZlV1Z20zX01yei1DUGxhQXlYRU5oa0t3UEZUdDdn?oc=5",
+    "publishedAt": "2026-10-16T16:33:00.000Z",
+    "generatedAt": "2026-10-16T16:38:25.101Z",
+    "breaking": true
   },
   {
     "id": "e8a8a14c1d9af311",
