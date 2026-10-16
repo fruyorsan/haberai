@@ -144,12 +144,16 @@ jobs:
           user_email: bot@users.noreply.github.com
           commit_message: "yayin: ${{ github.run_number }}"
 
-      # Netlify'e yayinla (haberai.netlify.app).
-      # netlify-cli bazi planlarda prod deploy icin "Forbidden" dondurdugu icin
-      # klasik REST dosya-deploy akisi kullaniliyor (netlify-deploy.mjs).
-      # Fonksiyonlar (AI soru-cevap) ayni sitenin ayri dallarinda yasiyor;
-      # bu deploy statik dosyalara dokunur.
+      # Netlify'e yayinla (haberai.netlify.app) — ARTIK YEDEK.
+      # ASIL YAYIN: GitHub Pages (yukaridaki adim) → https://fruyorsan.github.io
+      #
+      # DURUM (16.10.2026): Netlify hesabinin dagitim kredisi bitti; hesap
+      # "uretim dagitimlari duraklatildi" durumunda. Bu yuzden bu adim simdilik
+      # 403 (Forbidden) doner. Kritik degil: continue-on-error ile turu
+      # dusurmez ve kredi yenilendiginde/hizmet yukseltildiginde kendiliginden
+      # yeniden yayina alir.
       - name: Netlify'e yayinla (haberai.netlify.app)
+        continue-on-error: true
         if: steps.sitedegisti.outputs.changed == 'true' && (steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main'))
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
