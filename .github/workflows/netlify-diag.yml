@@ -38,3 +38,24 @@ jobs:
               for s in d: print(s.get('site_id'), s.get('name'), s.get('ssl_url'))
           except Exception as e: print('okunamadi:', e)
           "
+
+          echo "--- account/bakiye bilgisi ---"
+          curl -sS -w "\nHTTP %{http_code}\n" \
+            -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+            "https://api.netlify.com/api/v1/accounts" | head -c 900; echo
+
+          echo "--- son 3 deploy ---"
+          curl -sS -w "\nHTTP %{http_code}\n" \
+            -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+            "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID/deploys?per_page=3" | head -c 900; echo
+
+          echo "--- netlify-cli deploy --debug (omanli) ---"
+          cd site || exit 1
+          npx --yes netlify-cli@latest deploy \
+            --prod \
+            --dir dist \
+            --auth "$NETLIFY_AUTH_TOKEN" \
+            --site "$NETLIFY_SITE_ID" \
+            --message "tani denemesi" \
+            --debug 2>&1 | tail -n 60
+
