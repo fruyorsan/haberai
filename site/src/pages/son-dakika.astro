@@ -1,0 +1,101 @@
+---
+import Base from "../layouts/Base.astro";
+import ArticleCard from "../components/ArticleCard.astro";
+import { getArticles, publishedISO } from "../lib/articles.js";
+
+// Son 24 saatte yayina aldiklarimiz. Arsivden farkli bir gorunum oldugu icin
+// kopya icerik olusturmaz; sakin saatlerde en yeni haberlerle doldurulur.
+const all = getArticles();
+const DAY = 24 * 60 * 60 * 1000;
+const son = all.filter((a) => Date.now() - new Date(publishedISO(a)).getTime() < DAY);
+const list = (son.length >= 3 ? son : all.slice(0, 12)).slice(0, 30);
+const taze = son.length >= 3;
+---
+
+<Base
+  title="Son Dakika Haberleri — HaberAI"
+  description="Son 24 saatte yayına aldığımız son dakika haberleri: teknoloji, ekonomik gelişmeler, oyun ve mobil dünyasından en yeni başlıklar."
+  section="Son Dakika"
+>
+  <div class="container">
+    <header class="page-head">
+      <h1 class="page-title">
+        <span class="pulse" aria-hidden="true"></span>
+        Son Dakika
+      </h1>
+      <p class="muted">
+        {taze
+          ? `Son 24 saatte ${son.length} haber yayına alındı. Hat her 5 dakikada bir taranır.`
+          : "Son 24 saatte yeni haber gelmedi; en yeni başlıkları listeliyoruz."}
+      </p>
+    </header>
+
+    <div class="grid">
+      {list.map((a, i) => <ArticleCard article={a} index={i} />)}
+    </div>
+
+    <div class="more">
+      <a class="more__btn" href="/haberler/">Tüm Haberler ({all.length}) →</a>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .page-head {
+    padding: 30px 0 20px;
+  }
+  .page-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.9rem;
+    margin: 0 0 6px;
+    letter-spacing: -0.02em;
+  }
+  .pulse {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--brand);
+    box-shadow: 0 0 0 0 var(--brand-glow);
+    animation: pulse 1.9s ease-out infinite;
+    flex-shrink: 0;
+  }
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 var(--brand-glow);
+    }
+    100% {
+      box-shadow: 0 0 0 14px transparent;
+    }
+  }
+  .muted {
+    margin: 0;
+  }
+  .more {
+    display: flex;
+    justify-content: center;
+    margin: 34px 0 8px;
+  }
+  .more__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    border: 2px solid var(--brand);
+    color: var(--brand);
+    background: var(--surface);
+    font-weight: 800;
+    font-size: 0.95rem;
+    padding: 13px 30px;
+    border-radius: 13px;
+    transition: background 0.22s var(--ease), color 0.22s var(--ease),
+      transform 0.22s var(--ease), box-shadow 0.22s var(--ease);
+  }
+  .more__btn:hover {
+    background: var(--brand-fill-hover);
+    border-color: var(--brand-fill-hover);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 18px 34px -20px var(--brand-glow);
+  }
+</style>

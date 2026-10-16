@@ -3,11 +3,10 @@ import Base from "../layouts/Base.astro";
 import ArticleCard from "../components/ArticleCard.astro";
 import NewsTicker from "../components/NewsTicker.astro";
 import FeaturedSlider from "../components/FeaturedSlider.astro";
-import { getArticles, getCategories } from "../lib/articles.js";
+import { getArticles } from "../lib/articles.js";
 
 const articles = getArticles();
 const grid = articles.slice(6, 27); // ilk 6 haber "öne çıkanlar" slaytında
-const cats = getCategories().slice(0, 9);
 ---
 
 <Base>
@@ -18,17 +17,6 @@ const cats = getCategories().slice(0, 9);
       </p>
     ) : (
       <>
-        {cats.length > 1 && (
-          <nav class="chips" aria-label="Kategoriler">
-            {cats.map((c, i) => (
-              <a class="chip" href={`/kategori/${c.slug}/`} style={`transition-delay:${i * 30}ms`}>
-                {c.name}
-                <span class="chip__n">{c.count}</span>
-              </a>
-            ))}
-          </nav>
-        )}
-
         <NewsTicker />
 
         <FeaturedSlider />
@@ -61,48 +49,6 @@ const cats = getCategories().slice(0, 9);
 </Base>
 
 <style>
-  .chips {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin: 22px 0 2px;
-  }
-  .chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    padding: 7px 13px;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    background: var(--surface);
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--text);
-    transition: background 0.2s var(--ease), color 0.2s var(--ease),
-      border-color 0.2s var(--ease), transform 0.2s var(--ease),
-      box-shadow 0.2s var(--ease);
-  }
-  .chip:hover {
-    background: var(--brand-fill-hover);
-    border-color: var(--brand-fill-hover);
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 12px 24px -14px var(--brand-glow);
-  }
-  .chip__n {
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: var(--muted);
-    background: var(--surface-2);
-    border-radius: 999px;
-    padding: 1px 7px;
-    transition: background 0.2s, color 0.2s;
-  }
-  .chip:hover .chip__n {
-    background: rgba(255, 255, 255, 0.22);
-    color: #fff;
-  }
-
   .latest__head {
     display: flex;
     align-items: center;

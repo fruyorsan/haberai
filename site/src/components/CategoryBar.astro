@@ -1,0 +1,136 @@
+---
+// Kategori şeridi: tüm sayfalarda başlığın hemen altında, tek satır.
+// Kategoriler sayılarıyla birlikte gösterilir; taşarsa yatay kaydırılır,
+// asla alt satıra kırılmaz (başlıkta oluşan dağınık görünümü önler).
+import { getCategories } from "../lib/articles.js";
+
+const cats = getCategories();
+const path = Astro.url.pathname;
+const isActive = (slug) => path.startsWith(`/kategori/${slug}`);
+---
+
+{cats.length > 0 && (
+  <nav class="catbar" aria-label="Kategoriler">
+    <div class="container catbar__inner">
+      <span class="catbar__label" aria-hidden="true">Kategoriler</span>
+
+      <div class="catbar__scroll">
+        {cats.map((c) => (
+          <a
+            class:list={["catbar__item", { "is-active": isActive(c.slug) }]}
+            href={`/kategori/${c.slug}/`}
+            aria-current={isActive(c.slug) ? "page" : undefined}
+          >
+            {c.name}
+            <span class="catbar__n">{c.count}</span>
+          </a>
+        ))}
+      </div>
+
+      <a class="catbar__all" href="/kategoriler/">
+        Tümü
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14" />
+          <path d="m13 6 6 6-6 6" />
+        </svg>
+      </a>
+    </div>
+  </nav>
+)}
+
+<style>
+  .catbar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .catbar__inner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 48px;
+  }
+  .catbar__label {
+    flex-shrink: 0;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .catbar__scroll {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .catbar__scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .catbar__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 11px;
+    border-radius: 999px;
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--text);
+    white-space: nowrap;
+    border: 1px solid transparent;
+    transition: background 0.18s var(--ease), color 0.18s var(--ease),
+      border-color 0.18s var(--ease);
+  }
+  .catbar__item:hover {
+    background: var(--red-soft);
+    color: var(--red-dark);
+  }
+  .catbar__item.is-active {
+    background: var(--brand-fill);
+    color: #fff;
+  }
+  .catbar__n {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--muted);
+    background: var(--surface-2);
+    border-radius: 999px;
+    padding: 1px 7px;
+    transition: background 0.18s var(--ease), color 0.18s var(--ease);
+  }
+  .catbar__item.is-active .catbar__n {
+    background: rgba(255, 255, 255, 0.24);
+    color: #fff;
+  }
+  .catbar__all {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: var(--brand);
+    white-space: nowrap;
+    transition: transform 0.2s var(--ease);
+  }
+  .catbar__all:hover {
+    transform: translateX(2px);
+  }
+
+  @media (max-width: 720px) {
+    .catbar__inner {
+      height: 44px;
+      gap: 8px;
+    }
+    .catbar__label {
+      display: none;
+    }
+    .catbar__item {
+      padding: 5px 10px;
+      font-size: 0.84rem;
+    }
+  }
+</style>
