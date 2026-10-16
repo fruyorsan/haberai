@@ -400,11 +400,6 @@ button {
   flex-wrap: wrap;
 }
 
-.card__source {
-  color: var(--red);
-  font-weight: 700;
-}
-
 .card__dot {
   opacity: 0.5;
 }

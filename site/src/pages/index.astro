@@ -1,7 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
 import ArticleCard from "../components/ArticleCard.astro";
-import NewsTicker from "../components/NewsTicker.astro";
 import FeaturedSlider from "../components/FeaturedSlider.astro";
 import { getArticles } from "../lib/articles.js";
 
@@ -17,8 +16,6 @@ const grid = articles.slice(6, 27); // ilk 6 haber "öne çıkanlar" slaytında
       </p>
     ) : (
       <>
-        <NewsTicker />
-
         <FeaturedSlider />
 
         {grid.length > 0 && (

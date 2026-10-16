@@ -10,8 +10,8 @@ const AUTOPLAY_MS = 6000;
 
 const pool = getArticles().slice(0, POOL);
 
-// Not: kaynak sitelerin görselleri telif nedeniyle kullanılmaz; slaytlar
-// HaberAI'nın kendi kategori renkleriyle (markalı yer tutucu) gösterilir.
+// Not: slaytlarda önce haberin gerçek fotoğrafı, yüklenemezse markalı
+// yer tutucu (HaberAI kategori renkleri) gösterilir.
 const slides = pool;
 
 /** Metnin ilk cümlesi ("Manşet Notu" geri dönüşü). */
@@ -77,13 +77,16 @@ const items = slides.map((a) => {
                       </div>
                       <img
                         class="fs__img"
-                        src={`/kapak/${a.slug}.svg`}
-                        alt=""
+                        src={a.image || `/kapak/${a.slug}.svg`}
+                        alt={a.title}
                         width="1200"
                         height="675"
                         loading={i === 0 ? "eager" : "lazy"}
                         decoding="async"
-                        onerror="this.classList.add('is-broken')"
+                        referrerpolicy="no-referrer"
+                        onerror={a.image
+                          ? `if(this.dataset.f!=='1'){this.dataset.f='1';this.src='/kapak/${a.slug}.svg';}else{this.classList.add('is-broken');}`
+                          : "this.classList.add('is-broken')"}
                       />
                       <span class="fs__badge">{a.category}</span>
                       {a.breaking && <span class="fs__badge fs__badge--breaking">SON DAKİKA</span>}
@@ -101,8 +104,6 @@ const items = slides.map((a) => {
                       )}
 
                       <div class="fs__meta">
-                        {a.source && <span class="fs__source">{a.source}</span>}
-                        {a.when && <span class="fs__sep" aria-hidden="true">•</span>}
                         {a.when && <span>{a.when}</span>}
                         <span class="fs__sep" aria-hidden="true">•</span>
                         <span>{a.readMin} dk okuma</span>
@@ -424,10 +425,6 @@ const items = slides.map((a) => {
     gap: 8px;
     font-size: 0.76rem;
     color: var(--muted);
-  }
-  .fs__source {
-    font-weight: 700;
-    color: var(--text-2);
   }
   .fs__sep {
     opacity: 0.6;

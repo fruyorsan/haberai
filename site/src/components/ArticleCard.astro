@@ -7,6 +7,14 @@ const when = timeAgo(publishedISO(article));
 const words = `${article.summary || ""} ${article.comment || ""}`.split(/\s+/).filter(Boolean).length;
 const readMin = Math.max(1, Math.round(words / 200));
 
+// Önce gerçek haber fotoğrafı, yüklenemezse markalı kapak görseli, o da
+// olmazsa placeholder işaretlenir.
+const svgCover = `/kapak/${article.slug}.svg`;
+const imgSrc = article.image || svgCover;
+const imgErr = article.image
+  ? `if(this.dataset.f!=='1'){this.dataset.f='1';this.src='${svgCover}';}else{this.classList.add('is-broken');}`
+  : "this.classList.add('is-broken')";
+
 // Gecikmeli giriş animasyonu (en fazla 320ms)
 const delay = Math.min(index * 45, 320);
 ---
@@ -24,13 +32,14 @@ const delay = Math.min(index * 45, 320);
       </div>
       <img
         class="card__img"
-        src={`/kapak/${article.slug}.svg`}
+        src={imgSrc}
         alt=""
         width="1200"
         height="675"
         loading="lazy"
         decoding="async"
-        onerror="this.classList.add('is-broken')"
+        referrerpolicy="no-referrer"
+        onerror={imgErr}
       />
       <span class="card__badge">{article.category}</span>
       {article.breaking && (
@@ -41,8 +50,6 @@ const delay = Math.min(index * 45, 320);
       <h3 class="card__title">{article.title}</h3>
       <p class="card__summary">{article.summary}</p>
       <div class="card__meta">
-        <span class="card__source">{article.source}</span>
-        <span class="card__dot">•</span>
         <span>{when}</span>
         <span class="card__dot">•</span>
         <span>{readMin} dk</span>

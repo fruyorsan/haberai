@@ -9,6 +9,7 @@ export function GET() {
     c: a.category,
     src: a.source,
     d: a.publishedAt || a.generatedAt,
+    img: a.image || null,
     tags: a.tags || [],
   }));
 

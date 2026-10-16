@@ -34,9 +34,11 @@ const site = Astro.site ?? new URL("https://fruyorsan.github.io");
 const articleUrl = new URL(article.url, site).href;
 const publishedIso = article.publishedAt || article.generatedAt;
 const modifiedIso = article.refreshedAt || article.generatedAt;
-// TELİF: kaynak sitelerin görselleri kullanılmaz. Paylaşım görseli her zaman
-// HaberAI'nın kendi markalı görselidir.
-const ogImage = new URL("og-default.png", site).href;
+// Görsel: gerçek haber fotoğrafı varsa paylaşım görseli o olur; yoksa
+// HaberAI'nın kendi markalı görseli kullanılır.
+const ogImage = article.image
+  ? new URL(article.image, site).href
+  : new URL("og-default.png", site).href;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -71,6 +73,7 @@ const jsonLd = {
   modifiedTime={modifiedIso}
   section={article.category}
   tags={article.tags}
+  image={article.image}
   imageAlt={article.title}
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
@@ -89,8 +92,6 @@ const jsonLd = {
       <h1 class="post__title">{article.title}</h1>
 
       <div class="post__meta">
-        <span class="post__source">{article.source}</span>
-        <span class="post__dot">•</span>
         <time>{date}</time>
         <span class="post__dot">•</span>
         <span>{readMin} dk okuma</span>
@@ -106,14 +107,19 @@ const jsonLd = {
         </div>
         <img
           class="post__img"
-          src={`/kapak/${article.slug}.svg`}
+          src={article.image || `/kapak/${article.slug}.svg`}
           alt={article.title}
           width="1200"
           height="675"
           decoding="async"
-          onerror="this.classList.add('is-broken')"
+          referrerpolicy="no-referrer"
+          onerror={article.image
+            ? `if(this.dataset.f!=='1'){this.dataset.f='1';this.src='/kapak/${article.slug}.svg';}else{this.classList.add('is-broken');}`
+            : "this.classList.add('is-broken')"}
         />
-        <span class="post__ph-note">HaberAI özgün kapak görseli</span>
+        <span class="post__ph-note">
+          {article.image ? `Fotoğraf: ${article.source}` : "HaberAI özgün kapak görseli"}
+        </span>
       </div>
 
       <div class="post__body">
@@ -183,8 +189,8 @@ const jsonLd = {
         <a href={article.sourceUrl} target="_blank" rel="noopener nofollow">{article.source}</a>
         <span class="post__ai-note">
           Bu haber, kaynaktaki bilgilerden yararlanılarak HaberAI tarafından özgün biçimde
-          yazılmıştır; kaynak metin ve kaynak görselleri kopyalanmaz. Hata olabilir, ayrıntılar
-          için kaynağa bakın. <a href="/telif/">İçerik ve telif politikası</a>
+          yazılmıştır; kaynak metin birebir kopyalanmaz, fotoğraf kaynağa bağlantıyla gösterilir.
+          Hata olabilir, ayrıntılar için kaynağa bakın. <a href="/telif/">İçerik ve telif politikası</a>
         </span>
       </div>
     </article>
@@ -342,10 +348,6 @@ const jsonLd = {
     padding-bottom: 18px;
     border-bottom: 1px solid var(--line);
     margin-bottom: 22px;
-  }
-  .post__source {
-    color: var(--red);
-    font-weight: 700;
   }
   .post__dot {
     opacity: 0.5;
