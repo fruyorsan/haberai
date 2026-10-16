@@ -15,7 +15,7 @@ export function siteOrigin(astroSite) {
 }
 
 /** İletişim adresi. */
-export const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "iletisim@haberinai.com.tr";
+export const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "haberai@yahoo.com";
 
 /**
  * AdSense yayıncı kimliği (ör. "ca-pub-1234567890123456").
