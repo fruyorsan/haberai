@@ -2,12 +2,12 @@ name: Arsiv Yenileme
 
 on:
   schedule:
-    - cron: "*/10 * * * *" # her 10 dakikada bir; govdesi veya editorNote eksik haberleri yeniler
+    - cron: "0 * * * *" # saatte bir; govdesi veya editorNote eksik haberleri yeniler
   workflow_dispatch: {} # elle calistirma
 
 # Ana hat ile AYNI kilit grubu: ayni anda asla calismazlar (git + AI kotasi cakismasi onlenir)
 concurrency:
-  group: haber-hatti
+  group: arsiv-yenileme
   cancel-in-progress: false
 
 jobs:
