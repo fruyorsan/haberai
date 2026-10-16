@@ -5,7 +5,7 @@ import Footer from "../components/Footer.astro";
 import {
   ADSENSE_CLIENT,
   GA_MEASUREMENT_ID,
-  GOOGLE_SITE_VERIFICATION,
+  GOOGLE_SITE_VERIFICATIONS,
 } from "../lib/site-meta.js";
 import "../styles/global.css";
 
@@ -57,7 +57,9 @@ const isArticle = ogType === "article";
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="google-site-verification" content={GOOGLE_SITE_VERIFICATION} />
+    {GOOGLE_SITE_VERIFICATIONS.map((code) => (
+      <meta name="google-site-verification" content={code} />
+    ))}
     <!-- Arama görünürlüğü: büyük görsel önizlemesine izin (Google Discover/News) -->
     <meta
       name="robots"

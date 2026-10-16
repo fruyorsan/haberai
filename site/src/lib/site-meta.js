@@ -29,9 +29,12 @@ export const ADSENSE_CLIENT = process.env.ADSENSE_CLIENT || "";
 /** AdSense ads.txt için Google'ın sertifika kimliği (değiştirilmez). */
 export const ADSENSE_CERT = "f08c47fec0942fa0";
 
-/** Google Search Console doğrulama kodu (meta etiketi). */
-export const GOOGLE_SITE_VERIFICATION =
-  process.env.GOOGLE_SITE_VERIFICATION || "0txYR2AQdV9F9DdPhBtDSxs4PWnFvNyBUBXXix7m2Ck";
+/** Google Search Console doğrulama kodları (meta etiketi). */
+export const GOOGLE_SITE_VERIFICATIONS = [
+  "ggR0XXQqS9LfHsa8LHxOs2uZsTjEL__uia6pYrA7X6I",
+  process.env.GOOGLE_SITE_VERIFICATION || "0txYR2AQdV9F9DdPhBtDSxs4PWnFvNyBUBXXix7m2Ck",
+].filter(Boolean);
+export const GOOGLE_SITE_VERIFICATION = GOOGLE_SITE_VERIFICATIONS[0];
 
 /** Google Analytics (GA4) ölçüm kimliği. */
 export const GA_MEASUREMENT_ID = process.env.GA_MEASUREMENT_ID || "G-C9BGECSKCM";
