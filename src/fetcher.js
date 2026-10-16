@@ -144,23 +144,124 @@ function extractImage(item) {
   return clean[0];
 }
 
-/** Haber sayfasını BİR kez indirip hem görsel adaylarını hem de okunabilir gövde metnini çıkarır. */
-export async function fetchPageExtras(url) {
-  if (!url) return { image: null, images: [], text: "" };
+/**
+ * Tarayıcı benzeri UA: bazı kaynaklar RSS okuyucu UA'sını 403 ile engelliyor,
+ * bu yüzden og:image ve gövde metni hiç alınamıyordu.
+ */
+const UA_BROWSER =
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
+
+// Aynı çalıştırmada aynı linki tekrar çözmeyelim (hem hız hem nazik istek).
+const gnCache = new Map();
+
+/**
+ * Google News RSS linkini gerçek haber adresine çevirir.
+ *
+ * Google News artık yönlendirme yapmıyor: sayfa, gerçek adresi yalnızca
+ * JavaScript ile açan imzalı bir uygulama döndürüyor. Bu yüzden sayfadaki
+ * `data-n-a-sg` (imza) ve `data-n-a-ts` (zaman) değerlerini alıp Google'ın
+ * kendi `batchexecute` uç noktasına soruyoruz.
+ *
+ * Bulunamazsa null döner (haber markalı kapakla gösterilir).
+ */
+export async function resolveGoogleNewsUrl(url) {
+  if (!url || !/news\.google\.com/i.test(url)) return url || null;
+  if (gnCache.has(url)) return gnCache.get(url);
   try {
-    const res = await fetch(url, {
-      headers: { "User-Agent": "Mozilla/5.0 (compatible; HaberAI/0.1; +https://fruyorsan.github.io)" },
+    const id = (String(url).match(/\/articles\/([^?]+)/) || [])[1];
+    if (!id) throw new Error("makale kimliği yok");
+
+    const pageRes = await fetch(
+      `https://news.google.com/rss/articles/${id}?hl=tr&gl=TR&ceid=TR:tr`,
+      {
+        headers: { "User-Agent": UA_BROWSER, Accept: "text/html,application/xhtml+xml" },
+        signal: AbortSignal.timeout(15000),
+      }
+    );
+    const html = await pageRes.text();
+    const sg = (html.match(/data-n-a-sg="([^"]+)"/) || [])[1];
+    const ts = (html.match(/data-n-a-ts="([^"]+)"/) || [])[1];
+    if (!sg || !ts) throw new Error("imza bulunamadı");
+
+    const inner = JSON.stringify([
+      "garturlreq",
+      [
+        ["X", "X", ["X", "X"], null, null, 1, 1, "TR:tr", null, 1, null, null, null, null, null, 0, 1],
+        "X",
+        "X",
+        1,
+        [1, 1, 1],
+        1,
+        1,
+        null,
+        0,
+        0,
+        null,
+        0,
+      ],
+      id,
+      Number(ts),
+      sg,
+    ]);
+    const body = "f.req=" + encodeURIComponent(JSON.stringify([[["Fbv4je", inner, null, "generic"]]]));
+
+    const res = await fetch("https://news.google.com/_/DotsSplashUi/data/batchexecute?rpcids=Fbv4je", {
+      method: "POST",
+      headers: {
+        "User-Agent": UA_BROWSER,
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+        Referer: "https://news.google.com/",
+      },
+      body,
+      signal: AbortSignal.timeout(15000),
+    });
+    const text = await res.text();
+    const m =
+      /\[\\"garturlres\\",\\"([^"\\]+)/.exec(text) || /"garturlres","([^"]+)"/.exec(text);
+    const real = m ? m[1] : null;
+    if (!real || /news\.google\.com/i.test(real)) throw new Error("gerçek adres yok");
+
+    gnCache.set(url, real);
+    return real;
+  } catch (err) {
+    console.warn(`    (Google News çözülemedi: ${String(err.message).slice(0, 60)})`);
+    gnCache.set(url, null);
+    return null;
+  }
+}
+
+/**
+ * Haber sayfasını BİR kez indirip hem görsel adaylarını hem de okunabilir gövde
+ * metnini çıkarır. Google News linki verilirse önce gerçek adrese çözülür
+ * (`resolvedUrl` alanı, kaynak bağlantısının da gerçek siteye işaret etmesi için).
+ */
+export async function fetchPageExtras(url) {
+  if (!url) return { image: null, images: [], text: "", resolvedUrl: null };
+  let target = url;
+  if (/news\.google\.com/i.test(url)) {
+    const real = await resolveGoogleNewsUrl(url);
+    if (real) target = real;
+  }
+  try {
+    const res = await fetch(target, {
+      headers: {
+        "User-Agent": UA_BROWSER,
+        Accept: "text/html,application/xhtml+xml,*/*;q=0.8",
+        "Accept-Language": "tr-TR,tr;q=0.9",
+      },
+      redirect: "follow",
       signal: AbortSignal.timeout(12000),
     });
-    if (!res.ok) return { image: null, images: [], text: "" };
+    if (!res.ok) return { image: null, images: [], text: "", resolvedUrl: target };
     const html = (await res.text()).slice(0, 400000);
     return {
       image: extractOgImage(html),
-      images: collectImageCandidates(html, url),
+      images: collectImageCandidates(html, res.url || target),
       text: extractReadableText(html),
+      resolvedUrl: res.url || target,
     };
   } catch {
-    return { image: null, images: [], text: "" };
+    return { image: null, images: [], text: "", resolvedUrl: target };
   }
 }
 

@@ -213,11 +213,48 @@ export function collectImageCandidates(html, baseUrl) {
 }
 
 /**
+ * Aynı fotoğrafın daha büyük sürümünü tahmin eder (ShiftDelete/WordPress
+ * tarzı `foo-780x470.jpg` → `foo-1280x720.jpg`, `?w=600` → `?w=1280`).
+ * Tahmin yanlışsa indirme başarısız olur ve aday sessizce elenir.
+ */
+export function biggerVariants(url) {
+  const u = String(url || "");
+  if (!/^https?:\/\//i.test(u)) return [];
+  const out = [];
+
+  // foo-780x470.jpg → foo-1280x720.jpg (+ sürümsüz orijinal)
+  const m = /^(.*?)-(\d{2,4})x(\d{2,4})(\.(?:jpe?g|png|webp|avif))(\?[^#]*)?$/i.exec(u);
+  if (m) {
+    const [, base, w, h, ext, q = ""] = m;
+    const oran = Number(h) / Number(w);
+    for (const hedef of [1280, 1920]) {
+      if (hedef > Number(w)) out.push(`${base}-${hedef}x${Math.round(hedef * oran)}${ext}${q}`);
+    }
+    out.push(`${base}${ext}${q}`);
+  }
+
+  // ?w=600&h=400 → ?w=1280&h=720
+  if (/[?&]w=\d{2,4}/.test(u)) {
+    out.push(u.replace(/([?&]w=)\d{2,4}/, "$11280").replace(/([?&]h=)\d{2,4}/, "$1720"));
+  }
+  if (/[?&](?:width|maxwidth|max-width)=\d{2,4}/i.test(u)) {
+    out.push(u.replace(/([?&](?:width|maxwidth|max-width)=)\d{2,4}/i, "$11280"));
+  }
+  // ?resize=600,400 tarzı
+  if (/[?&]resize=\d{2,4}(%2C|,)\d{2,4}/i.test(u)) {
+    out.push(u.replace(/([?&]resize=)\d{2,4}(%2C|,)\d{2,4}/i, "$11280$2" + "720"));
+  }
+
+  return [...new Set(out)].filter((v) => v !== u);
+}
+
+/**
  * Aday listesinden en iyi görseli seçer: URL ipuçlarına göre sıralar,
- * en fazla `max` adayı ölçer, kalite eşiklerini geçen en büyük/best olanı döner.
+ * en fazla `maxProbes` adayı ölçer, kalite eşiklerini geçen en büyük/best olanı
+ * döner. Adayın daha büyük sürümleri de denenir (daha keskin fotoğraf).
  * Hiçbiri geçmezse null (site markalı kapağa düşer).
  */
-export async function chooseImage(candidates, { max = 5, minWidth = MIN_W } = {}) {
+export async function chooseImage(candidates, { max = 5, maxProbes = 9, minWidth = MIN_W } = {}) {
   const list = (candidates || [])
     .filter(Boolean)
     .map((c) => (typeof c === "string" ? c : c.url))
@@ -226,14 +263,24 @@ export async function chooseImage(candidates, { max = 5, minWidth = MIN_W } = {}
   const uniq = [...new Set(list)];
   uniq.sort((a, b) => urlHintScore(b) - urlHintScore(a));
 
+  // En iyi adaylar + onların daha büyük sürümleri (yüksek çözünürlük şansı).
+  const havuz = [];
+  for (const u of uniq.slice(0, max)) {
+    havuz.push(u);
+    for (const v of biggerVariants(u)) havuz.push(v);
+  }
+
   let best = null;
-  for (const url of uniq.slice(0, max)) {
+  let deneme = 0;
+  for (const url of havuz) {
+    if (deneme >= maxProbes) break;
+    if (best && best.width >= 1280) break; // bu kadarı fazlasıyla yeterli
+    deneme++;
     const info = await probeImage(url);
     if (!passesQuality(info)) continue;
     if (info.width < minWidth) continue;
     const score = info.width + urlHintScore(url) * 30;
     if (!best || score > best.score) best = { url: info.finalUrl || url, score, width: info.width };
-    if (info.width >= 1200) break; // bu kadarı yeterli
   }
   return best ? best.url : null;
 }

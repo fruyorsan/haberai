@@ -145,6 +145,7 @@ gtag("config", ${JSON.stringify(GA_MEASUREMENT_ID)});`}
 
     <!-- Sayfaya ozel JSON-LD (WebSite/Organization vb.) -->
     {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+    {ADSENSE_CLIENT && (
       <>
         <meta name="google-adsense-account" content={ADSENSE_CLIENT} />
         <script

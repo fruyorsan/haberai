@@ -9,12 +9,12 @@ const articles = getArticles();
 // İlk 6 haber "öne çıkanlar" slaytında gösterilir; ızgarada tekrar etmesinler.
 const featured = getFeatured(6);
 const featuredSlugs = new Set(featured.map((a) => a.slug));
-const grid = articles.filter((a) => !featuredSlugs.has(a.slug)).slice(0, 21);
+const nonFeatured = articles.filter((a) => !featuredSlugs.has(a.slug));
+// ShiftDelete tarzı: Gerçek fotoğraflı haberler öncelikli gösterilir
+const withPhoto = nonFeatured.filter((a) => a.image);
+const withoutPhoto = nonFeatured.filter((a) => !a.image);
+const grid = [...withPhoto, ...withoutPhoto].slice(0, 21);
 
-// Izgaranın ilk satırı en çok göze çarpan yer: kaynak fotoğrafı olmayan haber
-// burada kalırsa markalı kapak görseli görünür. İlk satırdaki fotoğrafsız
-// haberler, sıradaki fotoğraflı haberlerle yer değiştirir (tarih sırası
-// korunur, listenin bütünlüğü bozulmaz).
 // WebSite + Organization yapısal veri: Sitelinks arama kutusu (Google) + marka bilgisi.
 // SearchAction, site içi arama sayfasına (/ara/) point eder.
 const origin = siteOrigin(Astro.site);
@@ -46,8 +46,6 @@ const siteSchema = {
 ---
 
 <Base title="HaberAI — Yapay Zekâ Destekli Haberler" description="HaberAI: yapay zekâ destekli teknoloji ve gündem haberlerinde özet, analiz ve editör yorumu." schema={siteSchema}>
-
-<Base>
   <div class="container">
     <h1 class="sr-only">HaberAI — Yapay Zekâ Destekli Türkçe Haberler ve Gündem Özetleri</h1>
     {articles.length === 0 ? (

@@ -163,8 +163,10 @@ async function main() {
       // Sayfadan yalnızca gerçek gövde metnini al (uydurmayı azaltır) ve
       // görsel adaylarını topla (ShiftDelete tarzı büyük, yatay gerçek fotoğraf).
       let pageImages = [];
+      let realUrl = null;
       if (item.content.length < 1500 || !item.image) {
         const extra = await fetchPageExtras(item.link);
+        realUrl = extra.resolvedUrl;
         if (extra.text && extra.text.length > 400 && item.content.length < 1500) {
           item.content = `${item.content}\n\n${extra.text}`.slice(0, 7000);
         }
@@ -177,11 +179,15 @@ async function main() {
       // TELİF GÜVENCESİ: üretilen metinde kaynaktan uzun birebir diziler kalmasın.
       const { cleaned, removed } = purgeCopiedText(ai, item.content);
       if (removed > 0) console.log(`(telif: ${removed} cümle kaynakla birebir örtüştüğü için çıkarıldı) `);
+      // Google News linki gerçek adrese çözüldüyse kaynak bağlantısı da gerçek
+      // siteye işaret etsin (kaynak gösterme ve telif doğruluğu).
+      const sourceUrl =
+        realUrl && !/news\.google\.com/i.test(realUrl) ? realUrl : item.link;
       const entry = {
         id: makeId(item.link),
         ...cleaned,
         source: item.source,
-        sourceUrl: item.link,
+        sourceUrl,
         publishedAt: item.publishedAt,
         generatedAt: new Date().toISOString(),
       };
