@@ -3,7 +3,7 @@
    ================================================================ */
 
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
 
   /* --- Marka aksanı --- */
   --brand: #d81f26;

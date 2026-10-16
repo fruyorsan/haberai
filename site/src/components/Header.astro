@@ -268,31 +268,46 @@ const isActive = (href) =>
   const themeToggle = document.getElementById("theme-toggle");
   if (themeToggle) {
     const root = document.documentElement;
-    const themeMeta = document.querySelector('meta[name="theme-color"]');
+
+    const isCurrentDark = () => {
+      if (root.dataset.theme === "dark") return true;
+      if (root.dataset.theme === "light") return false;
+      return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    };
 
     const syncToggle = () => {
-      const dark = root.dataset.theme === "dark";
+      const dark = isCurrentDark();
       themeToggle.setAttribute("aria-pressed", String(dark));
       themeToggle.setAttribute(
         "aria-label",
         dark ? "Açık temaya geç" : "Koyu temaya geç"
       );
-      if (themeMeta) {
-        themeMeta.setAttribute("content", dark ? "#0b0d11" : "#d81f26");
-      }
     };
 
     syncToggle();
 
+    if (window.matchMedia) {
+      const mq = window.matchMedia("(prefers-color-scheme: dark)");
+      const onMQ = () => {
+        let session = null;
+        try { session = sessionStorage.getItem("theme"); } catch (e) {}
+        if (!session) syncToggle();
+      };
+      if (mq.addEventListener) mq.addEventListener("change", onMQ);
+      else if (mq.addListener) mq.addListener(onMQ);
+    }
+
     themeToggle.addEventListener("click", (event) => {
-      const next = root.dataset.theme === "dark" ? "light" : "dark";
+      const currentDark = isCurrentDark();
+      const next = currentDark ? "light" : "dark";
       const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       const applyTheme = () => {
         root.dataset.theme = next;
         root.style.colorScheme = next;
         try {
-          localStorage.setItem("theme", next);
+          sessionStorage.setItem("theme", next);
+          localStorage.removeItem("theme");
         } catch (e) {}
         syncToggle();
       };
