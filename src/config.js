@@ -31,27 +31,42 @@ export const config = {
   // ------------------------------------------------------------------
   feeds: [
     // --- SON DAKİKA / GÜNDEM (Türkiye) ---
-    { name: "NTV Son Dakika", url: "https://www.ntv.com.tr/son-dakika.rss", category: "Gündem" },
+    // Not: "fast: true" kaynaklar hızlı akıştır; taze haberleri (<=120 dk) doğrudan
+    // "son dakika" adayı sayılır ve öncelikli işlenir (bkz. src/breaking.js).
+    { name: "NTV Son Dakika", url: "https://www.ntv.com.tr/son-dakika.rss", category: "Gündem", fast: true },
     { name: "NTV Gündem", url: "https://www.ntv.com.tr/gundem.rss", category: "Gündem" },
     { name: "NTV Türkiye", url: "https://www.ntv.com.tr/turkiye.rss", category: "Gündem" },
     { name: "NTV Yaşam", url: "https://www.ntv.com.tr/yasam.rss", category: "Gündem" },
-    { name: "TRT Haber Son Dakika", url: "https://www.trthaber.com/sondakika_articles.rss", category: "Gündem" },
+    { name: "TRT Haber Son Dakika", url: "https://www.trthaber.com/sondakika_articles.rss", category: "Gündem", fast: true },
     { name: "TRT Haber Gündem", url: "https://www.trthaber.com/gundem_articles.rss", category: "Gündem" },
-    { name: "AA Güncel", url: "https://www.aa.com.tr/tr/rss/default?cat=guncel", category: "Gündem" },
+    { name: "AA Güncel", url: "https://www.aa.com.tr/tr/rss/default?cat=guncel", category: "Gündem", fast: true },
     { name: "Hürriyet Gündem", url: "https://www.hurriyet.com.tr/rss/gundem", category: "Gündem" },
     { name: "Sözcü Gündem", url: "https://www.sozcu.com.tr/feeds-rss-category-gundem", category: "Gündem" },
     { name: "Sözcü Yaşam", url: "https://www.sozcu.com.tr/feeds-rss-category-yasam", category: "Gündem" },
     { name: "Sabah Gündem", url: "https://www.sabah.com.tr/rss/gundem.xml", category: "Gündem" },
     { name: "CNN Türk", url: "https://www.cnnturk.com/feed/rss/all/news", category: "Gündem" },
-    { name: "Haber Global", url: "https://haberglobal.com.tr/rss", category: "Gündem" },
+    { name: "Haber Global", url: "https://haberglobal.com.tr/rss", category: "Gündem", fast: true },
     { name: "Cumhuriyet", url: "https://www.cumhuriyet.com.tr/rss", category: "Gündem" },
     { name: "Posta", url: "https://www.posta.com.tr/rss/gundem.xml", category: "Gündem" },
     { name: "Yeni Şafak", url: "https://www.yenisafak.com/rss", category: "Gündem" },
 
+    // --- GOOGLE NEWS HIZLI SORGU (son dakika şeridi) ---
+    // Google News RSS, olayı kaynak siteden dakikalar içinde indeksler. Başlıklar
+    // "Başlık - Kaynak Adı" biçiminde gelir; fetcher kaynağı başlıktan ayırır.
+    // Hepsi bot UA ile test edildi ve içerik döndürüyor.
+    { name: "GN: Son Dakika", url: "https://news.google.com/rss/search?q=son%20dakika%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Gündem", fast: true },
+    { name: "GN: Teknoloji", url: "https://news.google.com/rss/search?q=teknoloji%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Teknoloji", fast: true },
+    { name: "GN: Tesla", url: "https://news.google.com/rss/search?q=tesla%20when%3A1h&hl=tr&gl=TR&ceid=TR:tr", category: "Teknoloji", fast: true },
+    { name: "GN: Elon Musk", url: "https://news.google.com/rss/search?q=elon%20musk%20when%3A1h&hl=tr&gl=TR&ceid=TR:tr", category: "Teknoloji", fast: true },
+    { name: "GN: Yapay Zeka", url: "https://news.google.com/rss/search?q=yapay%20zeka%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Yapay Zeka", fast: true },
+    { name: "GN: Deprem", url: "https://news.google.com/rss/search?q=deprem%20when%3A1h&hl=tr&gl=TR&ceid=TR:tr", category: "Gündem", fast: true },
+    { name: "GN: Apple", url: "https://news.google.com/rss/search?q=apple%20when%3A1h&hl=tr&gl=TR&ceid=TR:tr", category: "Mobil", fast: true },
+    { name: "GN: Samsung", url: "https://news.google.com/rss/search?q=samsung%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Mobil", fast: true },
+
     // Teknoloji / Yazılım
-    { name: "Webtekno", url: "https://www.webtekno.com/rss.xml", category: "Teknoloji" },
-    { name: "ShiftDelete", url: "https://shiftdelete.net/feed", category: "Teknoloji" },
-    { name: "DonanımHaber", url: "https://www.donanimhaber.com/rss/tum/", category: "Donanım" },
+    { name: "Webtekno", url: "https://www.webtekno.com/rss.xml", category: "Teknoloji", fast: true },
+    { name: "ShiftDelete", url: "https://shiftdelete.net/feed", category: "Teknoloji", fast: true },
+    { name: "DonanımHaber", url: "https://www.donanimhaber.com/rss/tum/", category: "Donanım", fast: true },
     { name: "Technopat", url: "https://www.technopat.net/feed", category: "Donanım" },
     { name: "Donanım Arşivi", url: "https://www.donanimarsivi.com/rss/", category: "Donanım" },
     { name: "NTV Teknoloji", url: "https://www.ntv.com.tr/teknoloji.rss", category: "Teknoloji" },
@@ -90,10 +105,21 @@ export const config = {
   // ------------------------------------------------------------------
   // İŞLEME AYARLARI
   // ------------------------------------------------------------------
-  maxPerRun: Number(process.env.MAX_PER_RUN || 2), // bir çalıştırmada AI'a giden maksimum haber (her haber artık uzun metin üretiyor)
+  maxPerRun: Number(process.env.MAX_PER_RUN || 2), // bir çalıştırmada AI'a giden maksimum NORMAL haber (her haber artık uzun metin üretiyor)
   // Kaynak çeşitliliği: tek bir kaynaktan tur başına en fazla kaç haber
   maxPerSource: Number(process.env.MAX_PER_SOURCE || 1),
   maxAgeHours: Number(process.env.MAX_AGE_HOURS || 48), // bundan eski haberleri atla
+
+  // ------------------------------------------------------------------
+  // SON DAKİKA (hızlı hat)
+  // Son dakika adayları normal kotaya ek olarak işlenir: bir turda
+  // maxBreakingPerRun + maxPerRun habere kadar çıkabilir (son dakika yoksa
+  // davranış değişmez, yine maxPerRun). Aday sayısı: publishedAt <=
+  // breakingWindowMin dakika VE (kaynak fast VEYA başlıkta son dakika
+  // anahtar kelimesi). Ayrıntılar: src/breaking.js
+  // ------------------------------------------------------------------
+  maxBreakingPerRun: Number(process.env.MAX_BREAKING_PER_RUN || 2), // tur başına ekstra son dakika kotası
+  breakingWindowMin: Number(process.env.BREAKING_WINDOW_MIN || 120), // "son dakika" sayılma penceresi (dakika)
   minContentLength: 40, // çok kısa/kirli içerikleri atla
   aiDelayMs: Number(process.env.AI_DELAY_MS || 6000), // AI istekleri arası bekleme (dakikalık token limiti için)
 

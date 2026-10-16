@@ -1,5 +1,6 @@
 import Parser from "rss-parser";
 import { config } from "./config.js";
+import { looksLikeSpamTitle } from "./kalite.js";
 
 const parser = new Parser({
   timeout: 20000,
@@ -19,29 +20,69 @@ const parser = new Parser({
 
 /** Tek bir RSS kaynağını çeker ve normalize eder. Hata olursa boş dizi döner. */
 async function fetchOne(feed) {
+  const isGoogleNews = /news\.google\.com/i.test(feed.url || "");
   try {
     const parsed = await parser.parseURL(feed.url);
     const items = (parsed.items || [])
       .map((item) => {
         const raw =
           item.contentSnippet || item.contentEncoded || item.content || item.summary || "";
+
+        // Google News başlıkları "Başlık - Kaynak Adı" biçiminde gelir.
+        // Kaynağı ayırıp başlığı bu ekten temizliyoruz; böylece hem gösterim
+        // düzgün oluyor hem de aynı haber farklı Google News sorgularında
+        // aynı kaynak adıyla tekrar kontrolüne girebiliyor.
+        let title = clean(item.title);
+        let sourceName = feed.name;
+        if (isGoogleNews) {
+          const parsedTitle = splitGoogleNewsTitle(title, item.creator);
+          title = parsedTitle.title;
+          sourceName = parsedTitle.source || feed.name;
+        }
+
         return {
-          source: feed.name,
+          source: sourceName,
+          feedName: feed.name,
           feedCategory: feed.category || null,
-          title: clean(item.title),
+          fast: !!feed.fast,
+          title,
           link: (item.link || "").trim(),
           content: clean(raw).slice(0, 3500),
           image: extractImage(item),
           publishedAt: clampFuture(toISO(item.isoDate || item.pubDate)),
         };
       })
-      .filter((it) => it.title && it.link && it.content.length >= config.minContentLength);
+      .filter(
+        (it) =>
+          it.title &&
+          it.link &&
+          it.content.length >= config.minContentLength &&
+          !looksLikeSpamTitle(it.title) // SEO çöpü başlıkları hatta sokma
+      );
     console.log(`  ✓ ${feed.name}: ${items.length} haber`);
     return items;
   } catch (err) {
     console.warn(`  ✗ ${feed.name}: ${err.message}`);
     return [];
   }
+}
+
+/**
+ * Google News başlığını "Başlık" + "Kaynak Adı" olarak ayırır.
+ * Önce rss-parser item.creator'a bakar; yoksa başlıktaki son " - " ekini kullanır.
+ */
+function splitGoogleNewsTitle(title, creator) {
+  const c = clean(creator);
+  if (c) return { title, source: c };
+
+  const text = String(title || "");
+  const idx = text.lastIndexOf(" - ");
+  if (idx > 0) {
+    const head = text.slice(0, idx).trim();
+    const tail = text.slice(idx + 3).trim();
+    if (head && tail && tail.length <= 60) return { title: head, source: tail };
+  }
+  return { title: text, source: "" };
 }
 
 export async function fetchAllFeeds() {

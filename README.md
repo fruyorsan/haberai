@@ -35,10 +35,68 @@ BACKFILL_LIMIT=20 npm run backfill   # tur başına işlenecek haber sayısı
 
 Tüm ayarlar `src/config.js` içinde:
 
-- `feeds` → kaynak RSS adresleri (ekle/çıkar)
-- `maxPerRun` → bir çalıştırmada işlenecek haber sayısı
+- `feeds` → kaynak RSS adresleri (ekle/çıkar). `fast: true` işaretli olanlar
+  "son dakika şeridi" (hızlı) kaynaklarıdır.
+- `maxPerRun` → bir çalıştırmada işlenecek **normal** haber sayısı
 - `maxAgeHours` → bundan eski haberleri atla
 - `model` → Gemini modeli
+
+## Son dakika (hızlı şerit)
+
+Amaç: yeni çıkan önemli/bomba haberleri normal akıştan **önce** yakalayıp işlemek.
+Bu, `src/breaking.js` + `src/index.js` + `src/config.js` birlikte çalışır.
+
+### Bir haber ne zaman "son dakika" sayılır?
+
+`isBreaking()` (bkz. `src/breaking.js`) şu iki koşulu birlikte arar:
+
+1. **Tazelik:** yayın zamanı `BREAKING_WINDOW_MIN` (varsayılan **120 dakika**) içinde, ve
+2. **Sinyal:** kaynak `fast: true` (hızlı şerit) **veya** başlıkta son dakika sinyali
+   (`son dakika`, `az önce`, `duyurdu`, `tanıttı`, `ilk kez`, `şimdi`, `canlı`,
+   `rekor`, `kaza`, `deprem`, `istifa`, `vefat`, `hayatını kaybetti`, `açıkladı` …).
+
+Her aday için `breakingScore()` ile bir öncelik puanı hesaplanır (tazelik + fast
+kaynak + anahtar kelime) ve son dakika adayları bu puana göre öne alınır.
+
+### Nasıl seçilir ve kota
+
+- Seçim sırası: **önce son dakika adayları** (puan/yenilik sırası), **sonra normal adaylar**
+  (tazelik sırası).
+- Kota: bir turda en fazla `maxBreakingPerRun` (varsayılan **2**) son dakika **+**
+  `maxPerRun` (varsayılan **2**) normal haber işlenir → son dakika varsa tur başına en
+  fazla **4** haber. Son dakika yoksa davranış eskisi gibi kalır (**2**).
+- Son dakika haberlerinde `maxPerSource` sınırı uygulanmaz: aynı kaynaktan iki son
+  dakika haber geçebilir. Normal haberlerde kaynak çeşitliliği korunur.
+- Kaydedilen son dakika haberlerine `data/articles.json` içinde **`"breaking": true`**
+  alanı eklenir; diğer haberlerde bu alan hiç bulunmaz.
+
+### Hızlı kaynaklar
+
+- **`fast: true` işaretli editöryel kaynaklar:** NTV Son Dakika, TRT Haber Son Dakika,
+  AA Güncel, Haber Global, Webtekno, ShiftDelete, DonanımHaber.
+- **Google News RSS hızlı sorguları** (olayı dakikalar içinde indeksler):
+  `son dakika`, `teknoloji`, `tesla`, `elon musk`, `yapay zeka`, `deprem`, `apple`,
+  `samsung` (hepsi `when:1h`/`when:2h` pencereli). Google News başlıkları
+  `Başlık - Kaynak Adı` biçiminde gelir; `src/fetcher.js` kaynağı başlıktan ayırıp
+  `source` alanına yazar.
+
+### Kalite süzgeci
+
+Google News sorguları arada "SEO çöpü" sitelerden toplama başlıklar getiriyor
+(ör. *"… haberi. Son Dakika Güncel haber başlıkları ve gelişmeler"*). Bu tür
+başlıklar `src/kalite.js` içindeki `looksLikeSpamTitle()` ile **daha hatta
+girmeden** elenir: kalıp eşleşmeleri, 140+ karakter, ayraç/soru işareti yığını,
+tamamı büyük harf ve kelime tekrarı. Aynı süzgeç `isBreaking()` içinde de
+uygulanır; yani son dakika şeridine çöp başlık düşemez.
+
+### Ayarlar
+
+| Ortam değişkeni | Varsayılan | Açıklama |
+| --- | --- | --- |
+| `MAX_BREAKING_PER_RUN` | `2` | Tur başına ekstra son dakika kotası |
+| `BREAKING_WINDOW_MIN` | `120` | "Son dakika" sayılma penceresi (dakika) |
+| `MAX_PER_RUN` | `2` | Tur başına normal haber kotası |
+
 
 ## Otomasyon
 
@@ -111,7 +169,8 @@ npm run share
 
 Her haber nesnesi şu alanları taşır: `id`, `title`, `slug`, `summary`, `keyPoints`, `body`,
 `comment`, `editorNote`, `tags`, `category`, `source`, `sourceUrl`, `image`, `publishedAt`,
-`generatedAt` (yeniden üretilenlerde ayrıca `refreshedAt`).
+`generatedAt` (yeniden üretilenlerde ayrıca `refreshedAt`). **Son dakika** tespit edilen
+haberlerde ek olarak `breaking: true` bulunur (diğerlerinde alan yoktur).
 
 - `summary`: nötr özet — sadece "ne oldu".
 - `comment`: editör yorumu — "neden önemli, kimi etkiler, ne olabilir".
@@ -126,6 +185,7 @@ Her haber nesnesi şu alanları taşır: `id`, `title`, `slug`, `summary`, `keyP
 ```
 src/config.js   → kaynaklar ve ayarlar
 src/fetcher.js  → RSS çekme + temizleme
+src/breaking.js → son dakika tespiti + öncelik puanı
 src/ai.js       → Gemini özet + yorum + başlık/slug/etiket
 src/store.js    → kaydet/yükle + tekrar önleme
 src/index.js    → akışı yönetir
