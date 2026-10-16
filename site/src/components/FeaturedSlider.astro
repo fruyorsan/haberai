@@ -81,7 +81,7 @@ const items = slides.map((a) => {
                       </div>
                       <img
                         class="fs__img"
-                        src={a.image || `/kapak/${a.slug}.svg`}
+                        src={a.image || "/og-default.png"}
                         alt={a.title}
                         width="1200"
                         height="675"
@@ -89,9 +89,7 @@ const items = slides.map((a) => {
                         fetchpriority={i === 0 ? "high" : "auto"}
                         decoding="async"
                         referrerpolicy="no-referrer"
-                        onerror={a.image
-                          ? `if(this.dataset.f!=='1'){this.dataset.f='1';this.src='/kapak/${a.slug}.svg';}else{this.classList.add('is-broken');}`
-                          : "this.classList.add('is-broken')"}
+                        onerror="this.classList.add('is-broken')"
                       />
                       {a.breaking === true &&
                       (a.publishedAt || a.generatedAt) &&

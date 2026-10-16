@@ -59,6 +59,10 @@ export function getArticles() {
   let list = readJson(REAL);
   if (!list.length) list = readJson(SAMPLE);
 
+  // ShiftDelete kuralı: Sitede YALNIZCA gerçek fotoğrafı olan haberler yer alır.
+  // Yeşil SVG kapak veya fotoğrafsız haberlerin sitede görünmesine izin verilmez.
+  list = list.filter((a) => typeof a.image === "string" && /^https?:\/\//i.test(a.image));
+
   const usedSlugs = new Set();
   list = list.map((a) => {
     let slug = a.slug || slugify(a.title);
