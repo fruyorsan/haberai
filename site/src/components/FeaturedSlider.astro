@@ -91,14 +91,24 @@ const items = slides.map((a) => {
                         referrerpolicy="no-referrer"
                         onerror="this.classList.add('is-broken')"
                       />
+                      <div class="fs__overlay" aria-hidden="true"></div>
                       {a.breaking === true &&
                       (a.publishedAt || a.generatedAt) &&
                       (Date.now() - new Date(a.publishedAt || a.generatedAt).getTime()) <= 120 * 60 * 1000 ? (
-                        <span class="fs__badge fs__badge--breaking">SON DAKİKA</span>
+                        <span class="fs__badge fs__badge--breaking">
+                          <span class="fs__breaking-dot" aria-hidden="true"></span>
+                          SON DAKİKA
+                        </span>
                       ) : (
                         <span class="fs__badge">{a.category}</span>
                       )}
 
+                      <span class="fs__ai-badge" title="Yapay Zekâ Editör Analizli">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                        </svg>
+                        AI Editör
+                      </span>
                     </div>
 
                     <div class="fs__body">
@@ -320,6 +330,48 @@ const items = slides.map((a) => {
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 28%, transparent);
   }
 
+  .fs__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(
+      to top,
+      rgba(15, 23, 42, 0.5) 0%,
+      rgba(15, 23, 42, 0.08) 40%,
+      transparent 75%
+    );
+    pointer-events: none;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+  }
+  .fs__link:hover .fs__overlay {
+    opacity: 1;
+  }
+
+  .fs__ai-badge {
+    position: absolute;
+    bottom: 12px;
+    right: 14px;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(15, 23, 42, 0.82);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #e2e8f0;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 4px 10px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  .fs__ai-badge svg {
+    color: #38bdf8;
+  }
+
   /* Son dakika rozeti: kategori rozetinin karşısında, dolgun kırmızı */
   .fs__badge--breaking {
     left: auto;
@@ -332,6 +384,15 @@ const items = slides.map((a) => {
   .fs__badge--breaking::before {
     background: #fff;
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.28);
+  }
+
+  .fs__breaking-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 8px #fff;
+    animation: pulse-dot 1.2s infinite;
   }
 
   .fs__body {
