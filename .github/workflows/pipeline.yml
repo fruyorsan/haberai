@@ -138,6 +138,10 @@ jobs:
           git config user.name "haber-bot"
           git config user.email "bot@users.noreply.github.com"
           date -u +%Y-%m-%dT%H:%M:%SZ > tetik.txt
+          # Is akisi dosyasi da bu dalda bulunmali: GitHub tetikleyiciyi push
+          # edilen dalda arar, yoksa push yeni bir calisma baslatmaz.
+          mkdir -p .github/workflows
+          cp "$GITHUB_WORKSPACE/.github/workflows/pipeline.yml" .github/workflows/pipeline.yml
           git add -A
           git commit -qm "zincir: $(date -u +%Y-%m-%dT%H:%MZ)"
           git branch -M tetik
