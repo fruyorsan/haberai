@@ -1,5 +1,102 @@
 [
   {
+    "id": "664a9dd66f09bf56",
+    "title": "Sel Felaketi Sonrası Sigorta Sürecinde Yapılmaması Gerekenler",
+    "slug": "sel-felaketi-sonrasi-sigorta-surecinde-yapilmamasi-gerekenler",
+    "summary": "Türkiye Sigorta Birliği, sel felaketinden etkilenen vatandaşların mağduriyet yaşamaması için hasar tespiti ve sigorta bildirim süreçlerinde dikkat edilmesi gereken hususları paylaştı. Kurum, eşyaların erken elden çıkarılmasının ve güvenlik önlemleri alınmadan hasarlı alanlara girilmesinin risk oluşturduğunu vurguladı.",
+    "keyPoints": [
+      "Hasar gören eşyalar ve alanlar mutlaka fotoğraf ile video çekilerek belgelenmelidir.",
+      "Su altında kalan araçlar kesinlikle çalıştırılmamalı ve hasar büyümeden bildirilmelidir.",
+      "Bina ve eşya teminatları farklı olduğu için poliçelerin kapsamı dikkatle incelenmelidir."
+    ],
+    "body": [
+      "Aşırı yağışların yol açtığı su baskınları, konutlardan ticari işletmelere kadar geniş bir alanda maddi zararları beraberinde getiriyor. Yaşanan afetlerin ardından hem can güvenliğini tehlikeye atmamak hem de tazminat süreçlerini hızlandırmak adına sigortalıların bazı adımları eksiksiz atması gerekmektedir.",
+      "Kurum tarafından yapılan uyarılarda, özellikle suyun bastığı bodrum katları ve kapalı otoparklar gibi riskli noktalara gerekli güvenlik kontrolleri sağlanmadan girilmemesi gerektiği ifade ediliyor. Elektrik ve doğal gaz hatlarının suyla temas ettiği durumlarda bireysel müdahalelerden kaçınılmalı, acil durumlarda resmi birimlerden destek istenmelidir.",
+      "Maddi kayıpların telafi edilmesi aşamasında en sık yapılan hatalardan biri, hasarlı eşyaların tazminat tespiti beklenmeden atılmasıdır. Güvenli koşullar oluşturulduktan sonra mobilya, beyaz eşya ve elektronik cihazların durumunu gösteren görsel kayıtların alınması, fatura ve servis belgelerinin saklanması sürecin sorunsuz ilerlemesini sağlar.",
+      "Sigorta poliçelerinde bina ile eşya teminatlarının genellikle ayrı ayrı düzenlendiğini hatırlatan yetkililer, hasar ihbarının zamanında yapılmasının önemine işaret ediyor. İhbar sürecinde poliçe numarası ve zarar gören alanların niteliği eksiksiz bildirilmelidir; ayrıca yapılan acil müdahalelere ait harcama faturaları da ilerleyen aşamalar için muhafaza edilmelidir."
+    ],
+    "comment": "Afet sonrası dönemde sigorta şirketleriyle yürütülen yazışmalar ve belge toplama süreçleri, tazminatın alınmasında belirleyici rol oynamaktadır. Vatandaşların panik halinde yapacağı erken müdahaleler veya delil niteliğindeki eşyaların imhası, hak kayıplarının önünü açabilir. Bu nedenle sigorta poliçelerinin kapsamını önceden bilmek ve afet anında soğukkanlılıkla belge toplamak hayati önem taşır.",
+    "editorNote": "Afet sonrasında atılacak yanlış adımlar binlerce liralık zararın cebinizde kalmasına neden olabilir, süreci doğru yönetin.",
+    "tags": [
+      "sel",
+      "sigorta",
+      "türkiye sigorta birliği",
+      "hasar tespiti",
+      "gündem"
+    ],
+    "category": "Gündem",
+    "source": "CNN Türk",
+    "sourceUrl": "https://www.cnnturk.com/turkiye/selde-zarar-gorenler-dikkat-tsb-uyardi-bu-hatayi-yapmayin-3480465",
+    "publishedAt": "2026-10-16T15:52:36.892Z",
+    "generatedAt": "2026-10-16T15:53:59.552Z",
+    "image": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad2448ffe46d577dbb92a96.jpg"
+  },
+  {
+    "id": "4faefd779dc701fb",
+    "title": "Güneş Paneli Temizleyen Robotlar İçin Geliştirilmiş Yapay Zekâ Veri Seti",
+    "slug": "gunes-paneli-temizleyen-robotlar-icin-gelistirilmis-yapay-zeka-veri-seti",
+    "summary": "Araştırmacılar, güneş paneli temizleme robotlarının zorlu kirlenme koşullarında yönlerini daha hassas belirleyebilmesi amacıyla 6.200 görüntüden oluşan açık erişimli yeni bir veri seti oluşturdu. Bu çalışma sayesinde robotların üzerindeki düşük işlem gücüyle çalışan yapay zekâ modellerinin referans çizgilerini daha doğru tespit etmesi hedefleniyor.",
+    "keyPoints": [
+      "Açık erişimli yeni veri seti toplam 6.200 görüntüden oluşuyor.",
+      "Görüntüler robotun önündeki kamera ile 320x240 piksel çözünürlükte kaydedildi.",
+      "Test aşamasında laboratuvar ortamında kirletilmiş panellerden elde edilen 200 görüntü kullanıldı."
+    ],
+    "body": [
+      "Yenilenebilir enerji kaynakları arasında büyük önem taşıyan güneş panellerinin verimli çalışması, düzenli temizlik gerektiriyor. Bu süreci otomatikleştiren temizlik robotları ise özellikle yoğun kir ve ışık yansımalarının bulunduğu yüzeylerde yön bulma konusunda zorluklarla karşılaşabiliyor. Temiz panellerde başarılı olan yapay zekâ algoritmaları, kir birikintileri ve yansımalar arttığında aynı istikrarlı performansı gösteremeyebiliyor.",
+      "Bilim insanları bu sorunun üstesinden gelmek adına robotların yön bulma kabiliyetlerini artıracak özel bir görsel veri tabanı hazırladı. Temizlik robotunun önüne monte edilen geniş açılı bir kamera sistemiyle toplanan veriler, donanım kısıtlamaları göz önünde bulundurularak düşük işlem gücüyle analiz edilebilecek çözünürlüklere indirgendi.",
+      "Oluşturulan veri setinin temelini, elle etiketlenen 800 temiz panel görüntüsü oluşturuyor. Bu karelerde yer alan güneş hücreleri arasındaki boşluklar ile çerçeve sınırları yapay zekâ için referans çizgileri olarak belirlendi. Ardından bu görüntüler üzerine su lekeleri, kuş pislikleri, toz ve yansımalar gibi çeşitli kirlenme faktörleri simüle edilerek yapay zekânın farklı senaryolardaki başarısı test edildi.",
+      "Toplamda 6.200 görsel barındıran bu büyük koleksiyonun 4.800 parçası eğitim ve doğrulama süreçleri için ayrılırken, geri kalan bölümü simülasyon dışı laboratuvar testlerinde kullanıldı. Araştırmacılar ilerleyen süreçte bu veri setini daha da zenginleştirerek otonom robotların konum belirleme yeteneklerini ataletsel ölçüm birimleriyle desteklemeyi planlıyor."
+    ],
+    "comment": "Yenilenebilir enerji tesislerinin bakım maliyetlerini düşüren otonom sistemler için yazılım tarafındaki bu tür iyileştirmeler büyük önem taşıyor. Özellikle zorlu saha koşullarında robotların hatasız çalışması, panellerin ömrünü ve enerji verimliliğini doğrudan etkiliyor. Donanım ve yazılım entegrasyonunun bu denli detaylı simülasyonlarla desteklenmesi, endüstriyel robotik alanındaki pratik çözümlerin hızla gelişeceğini gösteriyor.",
+    "editorNote": "Enerji santrallerinde kullanılan otonom temizlik robotlarının sahadaki en büyük engeli olan kir ve yansımalar artık daha akıllı algoritmalarla aşılıyor.",
+    "tags": [
+      "yapay zeka",
+      "gunes paneli",
+      "robotik",
+      "veri seti",
+      "temizlik robotu"
+    ],
+    "category": "Teknoloji",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/yapay-zeka-gunes-paneli-temizleyen-robotlara-yon-gosteriyor--211734",
+    "publishedAt": "2026-10-16T15:52:00.000Z",
+    "generatedAt": "2026-10-16T15:53:13.517Z",
+    "image": "https://www.donanimhaber.com/images/images/haber/211734/1200x675yapay-zeka-gunes-paneli-temizleyen-robotlara-yon-gosteriyor.jpg",
+    "breaking": true
+  },
+  {
+    "id": "991a6a69ecd708f6",
+    "title": "Kubilay Kaan Kundakçı Cinayeti Davasında Karar Çıktı",
+    "slug": "kubilay-kaan-kundakci-cinayeti-davasinda-karar-cikti",
+    "summary": "Genç futbolcu Kubilay Kaan Kundakçı'nın Ümraniye'de silahlı saldırı sonucu hayatını kaybetmesine ilişkin davada mahkeme kararını açıkladı. Yargılama sonucunda sanık Alaattin Kadayıfçıoğlu müebbet hapis cezasına mahkum edilirken, Aleyna Kalaycıoğlu beraat etti. Duruşmada diğer sanıklar hakkında çeşitli hapis ve beraat kararları verildi.",
+    "keyPoints": [
+      "Alaattin Kadayıfçıoğlu kasten öldürme suçundan müebbet hapis cezası aldı.",
+      "Aleyna Kalaycıoğlu ve İzzet Yıldızhan suçlamalardan beraat etti.",
+      "Olay, 19 Mart tarihinde İstanbul Ümraniye'de meydana gelmişti."
+    ],
+    "body": [
+      "İstanbul Anadolu 27'nci Ağır Ceza Mahkemesi'nde görülen karar duruşmasında, aylar süren yargılama süreci nihayete erdi. Bahse konu silahlı saldırı, 19 Mart tarihinde Ümraniye'de gerçekleşmiş ve genç futbolcu Kubilay Kaan Kundakçı'nın yaşamını yitirmesiyle sonuçlanmıştı. Tarafların ve avukatlarının katıldığı son oturumda, maktulün anne ve babası da salonda hazır bulundu.",
+      "Mahkeme heyeti, toplanan deliller ve savunmalar ışığında hükmünü açıkladı. Buna göre, cinayetin faili olarak yargılanan Alaattin Kadayıfçıoğlu \"Kasten öldürme\" suçundan müebbet, \"Ateşli silahlar kanununa muhalefet\" suçundan ise 2 yıl 6 ay hapis cezasına çarptırıldı. Öte yandan, davada adı geçen Aleyna Kalaycıoğlu hakkında yöneltilen suçlamalardan beraat kararı verildi.",
+      "Yargılama kapsamında tutuklu bulunan bazı sanıklar için de cezalar netleşti. Engin Taşkıran, Metin Kadayıfçıoğlu, Mustafa Rece ve Hüseyin Can Avcı suçluyu kayırma veya delilleri gizleme gibi suçlamalardan değişen oranlarda hapis cezaları alırken adli kontrol şartıyla tahliye edildi. Ayrıca Zuhal Kalaycıoğlu, Bilal Kadayıfçıoğlu, Ahmet Özkoç ve SEGBİS ile bağlanan İzzet Yıldızhan da beraat eden isimler arasında yer aldı.",
+      "Duruşma salonunda sanıkların yaptığı son savunmalar dikkat çekti. Aleyna Kalaycıoğlu suçlamaları reddederek olayla ilgisinin olmadığını ve kendisini mağdur olarak gördüğünü belirtti. Alaattin Kadayıfçıoğlu ise konuşmak amacıyla olay yerine gittiğini, kazara silahın ateş aldığını öne sürdü. Maktulün annesi Ülker Kundakçı ise adaletin yerini bulmasını istediğini belirterek acısının hâlâ taze olduğunu dile getirdi."
+    ],
+    "comment": "Bu dava, ünlü isimlerin ve spor dünyasının kesişim kümesinde yer alması nedeniyle kamuoyunun uzun süre gündemini meşgul etti. Kararın ardından verilen cezalar ve beraatler, adli süreçlerin delil ve ispat hukuku çerçevesinde ne kadar titiz yürütülmesi gerektiğini bir kez daha gösterdi. Toplumsal vicdanın tatmin olup olmadığı tartışılsa de, mahkemenin verdiği kararlar hukuki sürecin bu aşamada tamamlandığını işaret ediyor.",
+    "editorNote": "Ünlü isimlerin adının karıştığı silahlı saldırı davasında adalet yerini buldu mu? Mahkemenin hükmü tüm ayrıntılarıyla netleşti.",
+    "tags": [
+      "Kubilay Kaan Kundakçı",
+      "Mahkeme Kararı",
+      "Ümraniye",
+      "Aleyna Kalaycıoğlu",
+      "Alaattin Kadayıfçıoğlu"
+    ],
+    "category": "Gündem",
+    "source": "NTV Gündem",
+    "sourceUrl": "https://www.ntv.com.tr/turkiye/futbolcu-kubilay-kaan-kundakci-cinayeti-davasinda-karar-1746624",
+    "publishedAt": "2026-10-16T15:50:48.000Z",
+    "generatedAt": "2026-10-16T15:54:17.552Z",
+    "image": "https://images.ntv.com.tr/images/kubilaykaankundak_C3_A7_C4_B1cinayeti2-396452-784650.png?width=930&format=webp"
+  },
+  {
     "id": "7d06662f8b4785d9",
     "title": "İntetra Teknoloji'den Finansal Duran Varlık Edinimi Hamlesi",
     "slug": "intetra-teknolojiden-finansal-duran-varlik-edinimi-hamlesi",
@@ -29,6 +126,37 @@
     "sourceUrl": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOX0M1VmdZMndLSWdhcnlCNU9UVS1DR3NrdU9ac1d2MXZVbnFndjJNSXdjcS1lSVdlM0d4bVMtTlZQNWhVSHhSQ0pVTm53ZGlQMmxnR19ZdTdhVkNKQ1UzWThyZGl1QzNfY0Z0VndDd1JRMldHVnlpbHc2UmRRZW11dl8zQTBrd1RJVW9na0tHYWNGX2RlUi1mUlBYMTVLajl2YmtCdjZQQlV3WHZXLWdqVnNDYW02aVM5SDlvU2oxbFlXbGszVE5YMDBrNXp1NXh3UnBjTw?oc=5",
     "publishedAt": "2026-10-16T15:47:55.000Z",
     "generatedAt": "2026-10-16T15:51:05.087Z",
+    "breaking": true
+  },
+  {
+    "id": "245f66814d35b06d",
+    "title": "ASELSAN Avrupa'nın Ülke Liderleri Sıralamasında Yerini Aldı",
+    "slug": "aselsan-avrupanin-ulke-liderleri-sralamasinda-yerini-aldi",
+    "summary": "Milli savunma sanayiimizin öncü kuruluşu ASELSAN, Avrupa genelindeki ülke liderleri listesine adını yazdırmayı başardı. Gerçekleştirilen bu başarı, kurumun kıta genelindeki ağırlığını ve sektörel konumunu bir kez daha tescilledi. Bu gelişme, Türkiye'nin teknoloji ve savunma alanındaki uluslararası görünürlüğüne önemli bir katkı sunuyor.",
+    "keyPoints": [
+      "ASELSAN Avrupa'nın ülke liderleri listesine girmeyi başardı.",
+      "Savunma sanayiinde kıta genelindeki konumunu güçlendirdi.",
+      "Türkiye'nin teknoloji alanındaki uluslararası görünürlüğünü artırdı."
+    ],
+    "body": [
+      "Türkiye'nin savunma ve teknoloji alanındaki küresel vizyonunu temsil eden köklü kuruluşlardan biri olan ASELSAN, uluslararası arenadaki konumunu pekiştirecek yeni bir başarıya imza attı. Avrupa genelinde yapılan değerlendirmeler sonucunda hazırlanan prestijli ülke liderleri listesine girmeyi başaran şirket, sektördeki güçlü duruşunu bir kez daha gözler önüne serdi.",
+      "Yüksek teknoloji çözümleri, AR-GE çalışmaları ve geliştirdiği yenilikçi sistemlerle adından söz ettiren kurum, elde ettiği bu dereceyle sadece ulusal sınırda değil, Avrupa pazarında da kritik bir aktör olduğunu kanıtladı. Uzun soluklu mühendislik faaliyetleri ve stratejik hamleler, şirketin bu seviyeye ulaşmasında belirleyici etkenler arasında yer aldı.",
+      "Söz konusu başarı, ülkemizin savunma teknolojileri ihracatı ve küresel ortaklıklar kurma potansiyeli açısından da büyük bir anlam taşıyor. Listeye dahil olmak, gelecekteki uluslararası projeler için yeni kapıların aralanmasına ve yabancı yatırımların dikkatini çekmesine zemin hazırlayabilir."
+    ],
+    "comment": "Bu gelişme, Türkiye'nin yüksek teknoloji ve savunma alanındaki kabiliyetlerinin sınırları aştığının somut bir göstergesidir. Küresel ölçekte rekabet gücünü artıran bu tür başarılar, diğer Türk teknoloji firmalarına da ilham verebilir. Önümüzdeki dönemde benzer kurumların uluslararası listelerde daha fazla yer alması, ülkemizin teknoloji diplomasisini doğrudan güçlendirecektir.",
+    "editorNote": "Milli teknoloji hamlesinin uluslararası alandaki yansımaları güçleniyor.",
+    "tags": [
+      "ASELSAN",
+      "savunma sanayi",
+      "teknoloji",
+      "Avrupa",
+      "mühendislik"
+    ],
+    "category": "Teknoloji",
+    "source": "Teknoblog",
+    "sourceUrl": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPSkprZTZSTFBlY2JKWE12VldJNF9DRWRaRW1YN0tUQW9IdVNHcmxaOUdSUHdRb0FMczh2QTA3UnY0RzlGek9NVlkxS2Q1eno3SHBxNWNqd1RtcVR6MWFvd2dFTW9vamoxRDNFMmxOT0E3ODNCeU40R1c5dFoxcnBRR0tR?oc=5",
+    "publishedAt": "2026-10-16T15:47:07.000Z",
+    "generatedAt": "2026-10-16T15:53:37.783Z",
     "breaking": true
   },
   {
