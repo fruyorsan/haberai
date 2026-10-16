@@ -611,6 +611,39 @@ const jsonLd = {
     .recap__text {
       font-size: 1.04rem;
     }
+    /* AI'ya Sor kutusu telefonda tam genişlik ve rahat dokunulur. */
+    .aiask {
+      padding: 18px 16px;
+      border-radius: 16px;
+    }
+    .aiask__form input {
+      height: 46px;
+      font-size: 16px; /* iOS odaklanınca sayfayı yakınlaştırmasın */
+    }
+    .aiask__form button {
+      height: 46px;
+      padding: 0 18px;
+    }
+    /* Kırıntı (breadcrumb) ve kaynak bağlantıları parmakla seçilebilsin. */
+    .crumbs {
+      gap: 4px 10px;
+    }
+    .crumbs a,
+    .post__ref a,
+    .post__tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+    }
+    .post__ph-note {
+      font-size: 0.75rem;
+    }
+    /* Öneri soruları (çipler) parmakla rahat basılabilsin. */
+    .aiask__chip {
+      min-height: 40px;
+      padding: 0 14px;
+      font-size: 0.86rem;
+    }
   }
 
   /* --- AI'ya Sor --- */

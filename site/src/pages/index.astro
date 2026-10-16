@@ -123,4 +123,19 @@ for (let i = 0; i < Math.min(HERO_ROW, grid.length); i++) {
   .more__btn:hover svg {
     transform: translateX(3px);
   }
+
+  @media (max-width: 640px) {
+    /* "Tümü" bağlantısı ve "daha fazla" düğmesi parmakla rahat basılsın. */
+    .latest__all {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 0 2px;
+    }
+    .more__btn {
+      width: 100%;
+      justify-content: center;
+      padding: 14px 20px;
+    }
+  }
 </style>

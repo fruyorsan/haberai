@@ -256,7 +256,7 @@ button {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
   gap: 24px;
 }
 
@@ -427,6 +427,36 @@ button {
 }
 
 @media (max-width: 640px) {
+  /* Telefon: kenar boşluğu 20px -> 16px, dikey ritim sıkılaşır. */
+  .container {
+    padding: 0 16px;
+  }
+  .section-title {
+    font-size: 1.2rem;
+    margin: 32px 0 14px;
+    gap: 10px;
+  }
+  .section-title::before {
+    width: 4px;
+    height: 20px;
+  }
+  .grid {
+    gap: 18px;
+  }
+  /* Rozet/etiket yazıları telefonda 10-11px'te kalıyordu; okunur ölçüye çekildi. */
+  .badge {
+    font-size: 0.75rem;
+  }
+  .card__ph-cat {
+    font-size: 0.75rem;
+  }
+  .card__badge {
+    font-size: 0.75rem;
+    padding: 5px 9px;
+  }
+  .card--large .card__title {
+    font-size: 1.32rem;
+  }
   .card--wide {
     grid-column: auto;
   }
@@ -436,6 +466,12 @@ button {
   .card--wide .card__media {
     width: 100%;
     aspect-ratio: 16 / 9;
+  }
+  .to-top {
+    right: 14px;
+    bottom: 14px;
+    width: 44px;
+    height: 44px;
   }
 }
 

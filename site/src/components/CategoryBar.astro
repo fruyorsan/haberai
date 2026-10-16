@@ -122,15 +122,38 @@ const isActive = (slug) => path.startsWith(`/kategori/${slug}`);
 
   @media (max-width: 720px) {
     .catbar__inner {
-      height: 44px;
+      height: 52px;
       gap: 8px;
     }
     .catbar__label {
       display: none;
     }
+    /* Parmakla dokunma alanı ~42px (önce 33px'ti). */
     .catbar__item {
-      padding: 5px 10px;
-      font-size: 0.84rem;
+      min-height: 42px;
+      padding: 0 13px;
+      font-size: 0.86rem;
+      scroll-snap-align: start;
+    }
+    .catbar__n {
+      font-size: 0.72rem;
+    }
+    .catbar__all {
+      min-height: 42px;
+    }
+    .catbar__scroll {
+      scroll-snap-type: x proximity;
+    }
+  }
+  /* Dokunmatik ekran (tablet dâhil): piller en az 42px yüksekliğinde olsun. */
+  @media (hover: none) and (pointer: coarse) {
+    .catbar__item {
+      min-height: 42px;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    .catbar__all {
+      min-height: 42px;
     }
   }
 </style>

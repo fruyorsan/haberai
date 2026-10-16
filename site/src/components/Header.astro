@@ -635,21 +635,34 @@ const isActive = (href) =>
       background: var(--surface);
       box-shadow: 0 0 0 4px var(--brand-soft);
     }
+    /* Öneri kutusu kutunun değil ekranın kenarına hizalanır: arama alanının
+       yanındaki tema düğmesi yüzünden sağa hizalanınca dar ekranda taşıyordu.
+       (Header'da backdrop-filter olduğu için fixed konum header'a göre çözülür.) */
+    .searchbox__drop {
+      position: fixed;
+      left: auto;
+      right: 16px;
+      top: 60px;
+      width: min(calc(100vw - 32px), 520px);
+      max-height: min(60vh, 420px);
+    }
   }
+  /* Telefon: logo satırı + altında yatay kayan menü.
+     Sticky olduğu için yüksekliği mümkün olduğunca kısa tutulur. */
   @media (max-width: 720px) {
     .header__inner {
       position: relative;
       height: auto;
       flex-direction: column;
       align-items: flex-start;
-      padding-top: 12px;
-      padding-bottom: 12px;
-      gap: 10px;
+      padding-top: 8px;
+      padding-bottom: 0;
+      gap: 4px;
     }
     .header__actions {
       position: absolute;
-      top: 12px;
-      right: 20px;
+      top: 8px;
+      right: 16px;
     }
     .nav {
       gap: 0;
@@ -658,17 +671,68 @@ const isActive = (href) =>
       flex-wrap: nowrap;
       justify-content: flex-start;
       scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
     }
     .nav::-webkit-scrollbar {
       display: none;
     }
+    /* Parmakla rahat dokunma: en az 44px yükseklik. */
     .nav__link {
       white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 12px;
+    }
+    .nav__link::after {
+      bottom: 6px;
+    }
+    /* Büyüteç ve tema düğmeleri 44x44 dokunma alanı. */
+    .searchbox__toggle,
+    .theme-toggle {
+      width: 44px;
+      height: 44px;
     }
     /* Çok dar ekranda açılan arama kutusu logoya taşmasın */
     .searchbox.is-open .searchbox__field,
     .searchbox.is-open .searchbox__field:focus-within {
       width: min(50vw, 190px);
+    }
+    /* Öneri kutusu: tam genişlik, arama alanının hemen altında. */
+    .searchbox__drop {
+      left: 16px;
+      right: 16px;
+      top: 58px;
+      width: auto;
+    }
+    /* Öneri satırları parmakla seçilebilecek kadar büyük, etiket okunaklı. */
+    .searchbox__opt {
+      padding: 12px 12px;
+      min-height: 46px;
+    }
+    .searchbox__opt-cat {
+      font-size: 0.68rem;
+    }
+    /* iOS odaklanınca sayfayı yakınlaştırmasın: alan yazısı >= 16px. */
+    .searchbox__input {
+      font-size: 16px;
+    }
+  }
+  /* Kapalıyken görünmez alan tıklamayı çalmasın (büyüteç butonu çalışsın). */
+  @media (max-width: 1000px) {
+    .searchbox:not(.is-open) .searchbox__field {
+      pointer-events: none;
+    }
+  }
+  /* Dokunmatik ekran (tablet dâhil): menü bağlantıları 44px dokunma alanı. */
+  @media (hover: none) and (pointer: coarse) {
+    .nav__link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+    }
+    .logo {
+      min-height: 44px;
     }
   }
 </style>

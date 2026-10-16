@@ -176,10 +176,48 @@ const son = getArticles().slice(0, 5);
     }
   }
   @media (max-width: 600px) {
+    /* Telefonda tek sütun: bağlantılar parmakla seçilebilsin diye satır
+       yüksekliği ~40px'e çıkarılır (öncesi 20px'ti). */
     .footer__inner {
       grid-template-columns: 1fr;
-      gap: 26px;
-      padding-top: 40px;
+      gap: 20px;
+      padding-top: 36px;
+      padding-bottom: 26px;
+    }
+    .footer__col {
+      gap: 0;
+    }
+    .footer__col a {
+      padding: 10px 0;
+      font-size: 0.9rem;
+      -webkit-line-clamp: 3;
+    }
+    .footer__col h4 {
+      margin-bottom: 4px;
+    }
+    .footer__count {
+      font-size: 0.8rem;
+    }
+    .footer__desc {
+      font-size: 0.92rem;
+    }
+    .footer__bottom {
+      font-size: 0.86rem;
+      padding: 14px 0;
+    }
+    .footer__bottom a {
+      display: inline-block;
+      padding: 6px 0;
+    }
+  }
+  /* Dokunmatik ekran (tablet dâhil): bağlantı satırları parmakla seçilebilir. */
+  @media (hover: none) and (pointer: coarse) {
+    .footer__col a {
+      padding: 10px 0;
+    }
+    .footer__bottom a {
+      display: inline-block;
+      padding: 6px 0;
     }
   }
 </style>

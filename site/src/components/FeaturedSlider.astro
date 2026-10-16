@@ -596,9 +596,29 @@ const items = slides.map((a) => {
     .fs__title {
       font-size: 1.16rem;
     }
+    /* Rozet yazıları telefonda da okunur kalsın. */
+    .fs__badge {
+      font-size: 0.72rem;
+      padding: 6px 11px;
+    }
+    .fs__ph-cat {
+      font-size: 0.74rem;
+    }
+    .fs__note-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+    }
+    /* Oklar biraz büyür, noktaların parmakla basma alanı genişler. */
     .fs__arrow {
-      width: 36px;
-      height: 36px;
+      width: 42px;
+      height: 42px;
+    }
+    .fs__play {
+      width: 40px;
+      height: 40px;
+    }
+    .fs__dot::after {
+      inset: -16px -14px;
     }
   }
 
