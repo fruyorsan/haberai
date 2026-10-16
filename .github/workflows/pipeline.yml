@@ -124,9 +124,13 @@ jobs:
           if [ "${GITHUB_EVENT_NAME}" = "push" ] && [ "${GITHUB_REF}" = "refs/heads/tetik" ]; then
             sleep 240   # tur arasi ~5 dakika olsun
           fi
+          # Sunucudaki SSH ajanini kapat: yalnizca zincir anahtari kullanilsin
+          # (aksi halde Pages adiminin ajan anahtari devreye girip izin hatasi veriyor).
+          unset SSH_AUTH_SOCK
           mkdir -p ~/.ssh
           printf '%s\n' "$CHAIN_KEY" > ~/.ssh/id_zincir
           chmod 600 ~/.ssh/id_zincir
+          ssh-keygen -lf ~/.ssh/id_zincir
           ssh-keyscan -H github.com >> ~/.ssh/known_hosts 2>/dev/null || true
           export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/id_zincir -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
           rm -rf /tmp/zincir && mkdir -p /tmp/zincir && cd /tmp/zincir
