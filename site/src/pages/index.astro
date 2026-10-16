@@ -2,10 +2,13 @@
 import Base from "../layouts/Base.astro";
 import ArticleCard from "../components/ArticleCard.astro";
 import FeaturedSlider from "../components/FeaturedSlider.astro";
-import { getArticles } from "../lib/articles.js";
+import { getArticles, getFeatured } from "../lib/articles.js";
 
 const articles = getArticles();
-const grid = articles.slice(6, 27); // ilk 6 haber "öne çıkanlar" slaytında
+// İlk 6 haber "öne çıkanlar" slaytında gösterilir; ızgarada tekrar etmesinler.
+const featured = getFeatured(6);
+const featuredSlugs = new Set(featured.map((a) => a.slug));
+const grid = articles.filter((a) => !featuredSlugs.has(a.slug)).slice(0, 21);
 ---
 
 <Base>

@@ -1,5 +1,5 @@
 ---
-import { getArticles, timeAgo, publishedISO } from "../lib/articles.js";
+import { getFeatured, timeAgo, publishedISO } from "../lib/articles.js";
 
 // Ana sayfa vitrini: "Öne çıkan haberler" slaytı.
 // - Otomatik geçiş (6 sn) + ilerleme çubuğu; ok, nokta, sürükleme ve klavye ile tam kontrol.
@@ -8,10 +8,13 @@ import { getArticles, timeAgo, publishedISO } from "../lib/articles.js";
 const POOL = 6;
 const AUTOPLAY_MS = 6000;
 
-const pool = getArticles().slice(0, POOL);
+// Vitrin (manşet) için önce kaynak fotoğrafı OLAN haberler seçilir; böylece
+// en görünür alan hep gerçek fotoğrafla açılır. Fotoğraflı haber yetmezse
+// kalanlar (markalı kapak görseliyle) sırayı bozmadan eklenir.
+const pool = getFeatured(POOL);
 
-// Not: slaytlarda önce haberin gerçek fotoğrafı, yüklenemezse markalı
-// yer tutucu (HaberAI kategori renkleri) gösterilir.
+// Slaytlarda önce haberin gerçek fotoğrafı, yüklenemezse markalı yer tutucu
+// (HaberAI kategori renkleri) gösterilir.
 const slides = pool;
 
 /** Metnin ilk cümlesi ("Manşet Notu" geri dönüşü). */
@@ -35,6 +38,7 @@ const items = slides.map((a) => {
     slug: a.slug,
     url: a.url,
     title: a.title,
+    image: a.image || "",
     category: a.category,
     summary: a.summary,
     source: a.source,

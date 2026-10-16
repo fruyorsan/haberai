@@ -77,6 +77,18 @@ export function getArticles() {
   return list;
 }
 
+/**
+ * Manşet/vitrin için haber seçimi: önce kaynak fotoğrafı olan haberler
+ * (tarih sırası korunur); fotoğraflı haber sayısı yetmezse kalanlar markalı
+ * kapak görseliyle eklenir. Böylece en görünür alan hep gerçek fotoğrafla açılır.
+ */
+export function getFeatured(count = 6) {
+  const list = getArticles();
+  const withPhoto = list.filter((a) => a.image);
+  if (withPhoto.length >= count) return withPhoto.slice(0, count);
+  return [...withPhoto, ...list.filter((a) => !a.image)].slice(0, count);
+}
+
 export function getCategories() {
   const map = new Map();
   for (const a of getArticles()) {
