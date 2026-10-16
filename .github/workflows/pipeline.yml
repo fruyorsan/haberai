@@ -13,9 +13,11 @@ on:
     # tetik: 5 dakikalik zincir halkasi -> sadece topla
     branches: [main, tetik]
 
-# Ayni anda iki calistirma olmasin (git cakismasini onler)
+# Ayni ref uzerinde ayni anda iki calistirma olmasin (git cakismasini onler).
+# Grup ref'e gore ayrilir: zincir halkalari (tetik) birbirini beklerken,
+# main'e yapilan kod/site push'lari kuyrukta iptal edilip kaybolmasin.
 concurrency:
-  group: haber-hatti
+  group: haber-hatti-${{ github.ref_name }}
   cancel-in-progress: false
 
 jobs:
