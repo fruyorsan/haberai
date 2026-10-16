@@ -6,5 +6,6 @@ export default defineConfig({
   site: "https://fruyorsan.github.io",
   output: "static",
   trailingSlash: "ignore",
-  integrations: [sitemap()],
+  // Kapak görselleri (/kapak/*.svg) sayfa değildir; site haritasına girmez.
+  integrations: [sitemap({ filter: (page) => !page.includes("/kapak/") })],
 });

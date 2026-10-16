@@ -103,8 +103,17 @@ const jsonLd = {
         <div class="post__ph" aria-hidden="true">
           <span class="post__ph-mark">H</span>
           <span class="post__ph-cat">{article.category}</span>
-          <span class="post__ph-note">HaberAI özgün görseli</span>
         </div>
+        <img
+          class="post__img"
+          src={`/kapak/${article.slug}.svg`}
+          alt={article.title}
+          width="1200"
+          height="675"
+          decoding="async"
+          onerror="this.classList.add('is-broken')"
+        />
+        <span class="post__ph-note">HaberAI özgün kapak görseli</span>
       </div>
 
       <div class="post__body">
@@ -386,12 +395,26 @@ const jsonLd = {
   }
   .post__ph-note {
     position: absolute;
+    z-index: 2;
     right: 16px;
     bottom: 12px;
     font-size: 0.66rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.62);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+  }
+  .post__img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s linear;
+  }
+  .post__img.is-broken {
+    opacity: 0;
   }
 
   .post__body {

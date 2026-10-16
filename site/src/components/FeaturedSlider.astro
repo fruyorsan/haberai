@@ -32,6 +32,7 @@ function headlineNote(a) {
 const items = slides.map((a) => {
   const words = `${a.summary || ""} ${a.comment || ""}`.split(/\s+/).filter(Boolean).length;
   return {
+    slug: a.slug,
     url: a.url,
     title: a.title,
     category: a.category,
@@ -40,6 +41,7 @@ const items = slides.map((a) => {
     when: timeAgo(publishedISO(a)),
     readMin: Math.max(1, Math.round(words / 200)),
     note: headlineNote(a),
+    breaking: a.breaking === true,
   };
 });
 ---
@@ -73,7 +75,18 @@ const items = slides.map((a) => {
                         <span class="fs__ph-mark">H</span>
                         <span class="fs__ph-cat">{a.category}</span>
                       </div>
+                      <img
+                        class="fs__img"
+                        src={`/kapak/${a.slug}.svg`}
+                        alt=""
+                        width="1200"
+                        height="675"
+                        loading={i === 0 ? "eager" : "lazy"}
+                        decoding="async"
+                        onerror="this.classList.add('is-broken')"
+                      />
                       <span class="fs__badge">{a.category}</span>
+                      {a.breaking && <span class="fs__badge fs__badge--breaking">SON DAKİKA</span>}
                     </div>
 
                     <div class="fs__body">
@@ -295,6 +308,20 @@ const items = slides.map((a) => {
     border-radius: 50%;
     background: var(--brand);
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 28%, transparent);
+  }
+
+  /* Son dakika rozeti: kategori rozetinin karşısında, dolgun kırmızı */
+  .fs__badge--breaking {
+    left: auto;
+    right: 14px;
+    color: #fff;
+    background: var(--red-grad);
+    border-color: color-mix(in srgb, #000 22%, transparent);
+    box-shadow: 0 8px 22px -12px rgba(216, 31, 38, 0.9);
+  }
+  .fs__badge--breaking::before {
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.28);
   }
 
   .fs__body {
