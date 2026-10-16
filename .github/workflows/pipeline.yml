@@ -154,7 +154,8 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: node .github/scripts/netlify-deploy.mjs site/dist "haber hatti: ${{ github.run_number }}"
+        run: |
+          node .github/scripts/netlify-deploy.mjs site/dist "haber hatti: ${{ github.run_number }}"
 
       # --- 5 DAKIKALIK KADANS: ZINCIR HALKKASI ---
       # GitHub'in kendi cron'u bu depoda 2-4 saatte bir calisiyor (olculdu).
