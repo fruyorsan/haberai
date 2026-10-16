@@ -1,12 +1,17 @@
 name: Haber Hatti
 
 on:
+  # NOT: GitHub'in kendi cron'u bu depoda 2-4 saatte bir calisiyor (olculdu),
+  # bu yuzden 5 dakikalik kadans "zincir" ile saglaniyor: her calismanin sonunda
+  # "tetik" dalina deploy key ile bir push yapilir ve bu, BIR SONRAKI calismayi
+  # baslatir. Cron yalnizca zincir herhangi bir sebeple koparsa yedek olarak kalir.
   schedule:
-    - cron: "*/5 * * * *" # her 5 dakikada bir (GitHub bazen birkac dk geciktirebilir)
+    - cron: "*/5 * * * *"
   workflow_dispatch: {} # elle calistirma
-  # main'e yapilan her push (site/kod degisikligi) aninda derlenip yayina alinsin
   push:
-    branches: [main]
+    # main: kod/site degisikligi -> aninda derle + yayinla
+    # tetik: 5 dakikalik zincir halkasi -> sadece topla
+    branches: [main, tetik]
 
 # Ayni anda iki calistirma olmasin (git cakismasini onler)
 concurrency:
@@ -19,7 +24,10 @@ jobs:
     permissions:
       contents: write
     steps:
+      # Zincir halkasi "tetik" dalinda tetiklenir; icerik her zaman main'den alinir.
       - uses: actions/checkout@v7
+        with:
+          ref: main
 
       - uses: actions/setup-node@v7
         with:
@@ -77,11 +85,11 @@ jobs:
           git push
 
       - name: Site bagimliliklarini kur
-        if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || github.event_name == 'push'
+        if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
         run: cd site && npm ci
 
       - name: Siteyi derle
-        if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || github.event_name == 'push'
+        if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
         run: cd site && npm run build
 
       # GitHub Pages'e yayinla.
@@ -89,7 +97,7 @@ jobs:
       # basina 15 credit, ayda 300 credit) 5 dakikalik kadansi karsilamiyor;
       # Pages + Actions ile yayinda saatlik build siniri yok, ucretsiz.
       - name: GitHub Pages'e yayinla
-        if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || github.event_name == 'push'
+        if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
         uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.PAGES_DEPLOY_KEY }}
@@ -100,3 +108,35 @@ jobs:
           user_name: haber-bot
           user_email: bot@users.noreply.github.com
           commit_message: "yayin: ${{ github.run_number }}"
+
+      # --- 5 DAKIKALIK KADANS: ZINCIR HALKKASI ---
+      # GitHub'in kendi cron'u bu depoda 2-4 saatte bir calisiyor (olculdu).
+      # Bu adim her calismanin sonunda "tetik" dalina bir push yapar. Push bir
+      # deploy key ile yapildigi icin yeni bir calisma tetikler (GITHUB_TOKEN ile
+      # yapilan push'lar yeni calisma baslatmaz). Zincir halkasi ise tur arasini
+      # ~5 dakikaya tamamlamak icin once bekler. Cron yalnizca yedek.
+      - name: Zinciri surdur (5 dk kadans)
+        if: always() && !cancelled()
+        env:
+          CHAIN_KEY: ${{ secrets.CHAIN_DEPLOY_KEY }}
+        run: |
+          set -u
+          if [ "${GITHUB_EVENT_NAME}" = "push" ] && [ "${GITHUB_REF}" = "refs/heads/tetik" ]; then
+            sleep 240   # tur arasi ~5 dakika olsun
+          fi
+          mkdir -p ~/.ssh
+          printf '%s\n' "$CHAIN_KEY" > ~/.ssh/id_zincir
+          chmod 600 ~/.ssh/id_zincir
+          ssh-keyscan -H github.com >> ~/.ssh/known_hosts 2>/dev/null || true
+          export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/id_zincir -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
+          rm -rf /tmp/zincir && mkdir -p /tmp/zincir && cd /tmp/zincir
+          git init -q
+          git config user.name "haber-bot"
+          git config user.email "bot@users.noreply.github.com"
+          date -u +%Y-%m-%dT%H:%M:%SZ > tetik.txt
+          git add -A
+          git commit -qm "zincir: $(date -u +%Y-%m-%dT%H:%MZ)"
+          git branch -M tetik
+          git remote add origin git@github.com:fruyorsan/haberai.git
+          git push -q --force origin tetik
+          echo "zincir gonderildi -> $(date -u +%Y-%m-%dT%H:%MZ)"
