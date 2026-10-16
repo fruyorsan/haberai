@@ -159,13 +159,15 @@ async function main() {
       `  (${i + 1}/${queue.length}) ${item.source}: ${item.title.slice(0, 55)}... `
     );
     try {
-      // Sayfadan yalnızca gerçek gövde metnini al (uydurmayı azaltır).
-      // TELİF: kaynak sitelerin görselleri ÇEKİLMEZ ve SAKLANMAZ.
-      if (item.content.length < 1500) {
+      // Sayfadan yalnızca gerçek gövde metnini al (uydurmayı azaltır) ve
+      // görsel yoksa og:image'ı da yakala (ShiftDelete tarzı gerçek fotoğraf).
+      let image = item.image || null;
+      if (item.content.length < 1500 || !image) {
         const extra = await fetchPageExtras(item.link);
-        if (extra.text && extra.text.length > 400) {
+        if (extra.text && extra.text.length > 400 && item.content.length < 1500) {
           item.content = `${item.content}\n\n${extra.text}`.slice(0, 7000);
         }
+        if (!image && extra.image) image = extra.image;
       }
       const ai = await analyzeArticle(item);
       // TELİF GÜVENCESİ: üretilen metinde kaynaktan uzun birebir diziler kalmasın.
@@ -179,6 +181,9 @@ async function main() {
         publishedAt: item.publishedAt,
         generatedAt: new Date().toISOString(),
       };
+      // Görsel: kaynak RSS / haber sayfası og:image. Site, görsel yüklenemezse
+      // kendi markalı kapak görseline düşer.
+      if (image && /^https?:\/\//i.test(image)) entry.image = image;
       // Yalnızca son dakika tespit edilenlerde alan eklenir; diğerlerinde hiç olmaz.
       if (item.breaking) entry.breaking = true;
       articles.push(entry);
