@@ -145,22 +145,16 @@ jobs:
           commit_message: "yayin: ${{ github.run_number }}"
 
       # Netlify'e yayinla (haberai.netlify.app).
-      # Build'i burada yapilmis statik dist yuklenir, Netlify yeniden build etmez.
-      # Yalnizca site kodu degistiginde (veya elle) harcanir; bot veri commitleri
-      # atlanir. AI soru-cevap fonksiyonu ayri sitede oldugundan bu deploy
-      # fonksiyonlara dokunmaz.
+      # netlify-cli bazi planlarda prod deploy icin "Forbidden" dondurdugu icin
+      # klasik REST dosya-deploy akisi kullaniliyor (netlify-deploy.mjs).
+      # Fonksiyonlar (AI soru-cevap) ayni sitenin ayri dallarinda yasiyor;
+      # bu deploy statik dosyalara dokunur.
       - name: Netlify'e yayinla (haberai.netlify.app)
         if: steps.sitedegisti.outputs.changed == 'true' && (steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main'))
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: |
-          npx --yes netlify-cli@latest deploy \
-            --prod \
-            --dir site/dist \
-            --auth "$NETLIFY_AUTH_TOKEN" \
-            --site "$NETLIFY_SITE_ID" \
-            --message "haber hatti: ${{ github.run_number }}"
+        run: node .github/scripts/netlify-deploy.mjs site/dist "haber hatti: ${{ github.run_number }}"
 
       # --- 5 DAKIKALIK KADANS: ZINCIR HALKKASI ---
       # GitHub'in kendi cron'u bu depoda 2-4 saatte bir calisiyor (olculdu).
