@@ -7,6 +7,7 @@ import { shareNewArticles } from "./share.js";
 import { makeIndex, findSimilar } from "./dedupe.js";
 import { isBreaking, breakingScore } from "./breaking.js";
 import { purgeCopiedText } from "./telif.js";
+import { chooseImage } from "./gorsel.js";
 
 const DRY = process.argv.includes("--dry");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -160,15 +161,18 @@ async function main() {
     );
     try {
       // Sayfadan yalnızca gerçek gövde metnini al (uydurmayı azaltır) ve
-      // görsel yoksa og:image'ı da yakala (ShiftDelete tarzı gerçek fotoğraf).
-      let image = item.image || null;
-      if (item.content.length < 1500 || !image) {
+      // görsel adaylarını topla (ShiftDelete tarzı büyük, yatay gerçek fotoğraf).
+      let pageImages = [];
+      if (item.content.length < 1500 || !item.image) {
         const extra = await fetchPageExtras(item.link);
         if (extra.text && extra.text.length > 400 && item.content.length < 1500) {
           item.content = `${item.content}\n\n${extra.text}`.slice(0, 7000);
         }
-        if (!image && extra.image) image = extra.image;
+        pageImages = extra.images?.length ? extra.images : [extra.image];
       }
+      // Kalite denetimi: logolar/küçük thumbnail'ler elenir, ölçülen en iyi
+      // büyük+yatay fotoğraf seçilir; hiçbiri geçmezse markalı kapağa düşülür.
+      const image = await chooseImage([item.image, ...pageImages]);
       const ai = await analyzeArticle(item);
       // TELİF GÜVENCESİ: üretilen metinde kaynaktan uzun birebir diziler kalmasın.
       const { cleaned, removed } = purgeCopiedText(ai, item.content);

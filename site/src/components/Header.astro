@@ -33,27 +33,36 @@ const isActive = (href) =>
     </nav>
     <div class="header__actions">
       <form class="searchbox" action="/ara/" method="get" role="search">
-        <svg class="searchbox__icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-          <circle cx="11" cy="11" r="7" />
-          <path d="m20 20-3.2-3.2" />
-        </svg>
-        <input
-          class="searchbox__input"
-          type="search"
-          name="q"
-          placeholder="Haber ara..."
+        <button
+          class="searchbox__toggle"
+          type="button"
           aria-label="Haber ara"
-          autocomplete="off"
-          spellcheck="false"
-        />
+          aria-expanded="false"
+          aria-controls="search-input"
+        >
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m20 20-3.2-3.2" />
+          </svg>
+        </button>
+        <div class="searchbox__field">
+          <svg class="searchbox__icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m20 20-3.2-3.2" />
+          </svg>
+          <input
+            id="search-input"
+            class="searchbox__input"
+            type="search"
+            name="q"
+            placeholder="Haber ara..."
+            aria-label="Haber ara"
+            autocomplete="off"
+            spellcheck="false"
+          />
+        </div>
         <div class="searchbox__drop" id="search-drop" role="listbox" aria-label="Arama önerileri" hidden></div>
       </form>
-      <a class="search-btn" href="/ara/" aria-label="Haber ara" title="Haber ara">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-          <circle cx="11" cy="11" r="7" />
-          <path d="m20 20-3.2-3.2" />
-        </svg>
-      </a>
       <button
         class="theme-toggle"
         id="theme-toggle"
@@ -80,6 +89,7 @@ const isActive = (href) =>
   if (searchForm) {
     const input = searchForm.querySelector(".searchbox__input");
     const drop = document.getElementById("search-drop");
+    const toggle = searchForm.querySelector(".searchbox__toggle");
     const MAX_ITEMS = 6;
     const norm = (s) => String(s ?? "").toLocaleLowerCase("tr");
     const esc = (s) =>
@@ -115,6 +125,24 @@ const isActive = (href) =>
       active = -1;
       input.setAttribute("aria-expanded", "false");
     };
+
+    // Dar ekranda kutu SOLA doğru açılır/kapanır (geniş ekranda etkisiz).
+    const setOpen = (open) => {
+      searchForm.classList.toggle("is-open", open);
+      if (toggle) toggle.setAttribute("aria-expanded", String(open));
+    };
+    // Öneri listesini ve (boşsa) açık kutuyu kapat.
+    const collapse = () => {
+      close();
+      if (!input.value.trim()) setOpen(false);
+    };
+
+    if (toggle) {
+      toggle.addEventListener("click", () => {
+        setOpen(true);
+        input.focus();
+      });
+    }
 
     const mark = (title, q) => {
       const safe = esc(title);
@@ -179,9 +207,21 @@ const isActive = (href) =>
       clearTimeout(timer);
       timer = setTimeout(onType, 120);
     });
-    input.addEventListener("focus", () => { if (norm(input.value).trim().length >= 2) onType(); });
+    input.addEventListener("focus", () => {
+      setOpen(true);
+      if (norm(input.value).trim().length >= 2) onType();
+    });
 
     input.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        if (!drop.hidden) {
+          close();
+        } else {
+          collapse();
+          input.blur();
+        }
+        return;
+      }
       if (drop.hidden) {
         if (e.key === "ArrowDown") { e.preventDefault(); if (norm(input.value).trim().length >= 2) onType(); }
         return;
@@ -193,8 +233,6 @@ const isActive = (href) =>
       } else if (e.key === "ArrowUp") {
         e.preventDefault();
         if (active > 0) setActive(active - 1);
-      } else if (e.key === "Escape") {
-        close();
       } else if (e.key === "Enter" && active >= 0 && opts[active]) {
         e.preventDefault();
         opts[active].click();
@@ -209,10 +247,10 @@ const isActive = (href) =>
       if (e.target.closest("a")) close();
     });
     document.addEventListener("click", (e) => {
-      if (!searchForm.contains(e.target)) close();
+      if (!searchForm.contains(e.target)) collapse();
     });
     input.addEventListener("blur", () => {
-      if (!searchForm.contains(document.activeElement)) close();
+      if (!searchForm.contains(document.activeElement)) collapse();
     });
   }
 
@@ -374,34 +412,68 @@ const isActive = (href) =>
 
   .searchbox {
     position: relative;
+    display: flex;
+    align-items: center;
     flex-shrink: 0;
+  }
+  /* Dar ekranda görünen yuvarlak büyüteç butonu (geniş ekranda gizli). */
+  .searchbox__toggle {
+    display: none;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: var(--surface-2);
+    color: var(--text-2);
+    cursor: pointer;
+    transition: background 0.2s var(--ease), color 0.2s var(--ease),
+      border-color 0.2s var(--ease), transform 0.2s var(--ease);
+  }
+  .searchbox__toggle:hover {
+    color: var(--brand);
+    border-color: var(--brand);
+    background: var(--brand-soft);
+  }
+  .searchbox__toggle:active {
+    transform: scale(0.96);
+  }
+
+  /* Kutunun kendisi: kapalıyken genişlik 0 → tıklayınca SOLA doğru açılır. */
+  .searchbox__field {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 190px;
+    height: 40px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: var(--surface-2);
+    overflow: hidden;
+    transition: width 0.28s var(--ease), border-color 0.2s, background 0.2s,
+      box-shadow 0.2s, opacity 0.2s;
   }
   .searchbox__icon {
     position: absolute;
     left: 13px;
-    top: 50%;
-    transform: translateY(-50%);
     color: var(--muted);
     pointer-events: none;
   }
   .searchbox__input {
-    width: 190px;
-    height: 40px;
+    width: 100%;
+    height: 100%;
     padding: 0 14px 0 36px;
-    border: 1px solid var(--border);
-    border-radius: 11px;
-    background: var(--surface-2);
+    border: 0;
+    background: transparent;
     color: var(--text);
     font-size: 0.9rem;
     font-family: inherit;
     outline: none;
-    transition: border-color 0.2s, background 0.2s, width 0.25s var(--ease),
-      box-shadow 0.2s;
   }
   .searchbox__input::placeholder {
     color: var(--muted);
   }
-  .searchbox__input:focus {
+  .searchbox__field:focus-within {
     border-color: var(--brand);
     background: var(--surface);
     width: 224px;
@@ -486,7 +558,6 @@ const isActive = (href) =>
     background: var(--red-soft);
   }
 
-  .search-btn,
   .theme-toggle {
     position: relative;
     display: grid;
@@ -502,18 +573,12 @@ const isActive = (href) =>
       border-color 0.2s var(--ease), transform 0.2s var(--ease),
       box-shadow 0.2s var(--ease);
   }
-  /* Arama ikonu yalnizca arama kutusunun gizlendigi genislikte gorunur */
-  .search-btn {
-    display: none;
-  }
-  .search-btn:hover,
   .theme-toggle:hover {
     color: var(--brand);
     border-color: var(--brand);
     background: var(--brand-soft);
     transform: translateY(-1px);
   }
-  .search-btn:active,
   .theme-toggle:active {
     transform: translateY(0) scale(0.96);
   }
@@ -545,11 +610,30 @@ const isActive = (href) =>
   }
 
   @media (max-width: 1000px) {
-    .searchbox {
+    /* Dar ekran: yalnız büyüteç görünür; tıklayınca kutu sola doğru açılır. */
+    .searchbox__toggle {
+      display: grid;
+    }
+    .searchbox__field {
+      width: 0;
+      opacity: 0;
+      border-color: transparent;
+      background: transparent;
+    }
+    .searchbox.is-open .searchbox__toggle {
       display: none;
     }
-    .search-btn {
-      display: grid;
+    .searchbox.is-open .searchbox__field {
+      width: min(62vw, 260px);
+      opacity: 1;
+      border-color: var(--border);
+      background: var(--surface-2);
+    }
+    .searchbox.is-open .searchbox__field:focus-within {
+      width: min(66vw, 280px);
+      border-color: var(--brand);
+      background: var(--surface);
+      box-shadow: 0 0 0 4px var(--brand-soft);
     }
   }
   @media (max-width: 720px) {
@@ -580,6 +664,11 @@ const isActive = (href) =>
     }
     .nav__link {
       white-space: nowrap;
+    }
+    /* Çok dar ekranda açılan arama kutusu logoya taşmasın */
+    .searchbox.is-open .searchbox__field,
+    .searchbox.is-open .searchbox__field:focus-within {
+      width: min(50vw, 190px);
     }
   }
 </style>

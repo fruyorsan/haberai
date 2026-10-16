@@ -1,6 +1,7 @@
 import Parser from "rss-parser";
 import { config } from "./config.js";
 import { looksLikeSpamTitle } from "./kalite.js";
+import { collectImageCandidates, looksLikeIcon, urlHintScore } from "./gorsel.js";
 
 const parser = new Parser({
   timeout: 20000,
@@ -117,34 +118,49 @@ function clean(str = "") {
 
 /** Haber görselini mümkün olan kaynaklardan çıkarır. Bulamazsa null. */
 function extractImage(item) {
-  if (item.enclosure?.url && /^https?:/i.test(item.enclosure.url)) {
-    return item.enclosure.url;
-  }
+  const urls = [];
+  if (item.enclosure?.url) urls.push(item.enclosure.url);
   const media = item.mediaContent || item.mediaThumbnail;
   if (Array.isArray(media)) {
     for (const m of media) {
       const url = m?.$?.url || m?.url;
-      if (url && /^https?:/i.test(url)) return url;
+      // Boyut bilgisi varsa büyük olanı öne al.
+      const w = Number(m?.$?.width || m?.width || 0);
+      if (url && w >= 600) urls.unshift(url);
+      else if (url) urls.push(url);
     }
   }
   const html = item.contentEncoded || item.content || "";
-  const match = /<img[^>]+src=["']([^"']+)["']/i.exec(html);
-  return match && /^https?:/i.test(match[1]) ? match[1] : null;
+  const re = /<img[^>]+src=["']([^"']+)["']/gi;
+  let m;
+  while ((m = re.exec(html)) && urls.length < 12) urls.push(m[1]);
+
+  // Logo/ikon/placeholder olanları ele, en büyük görünümlü adayı seç.
+  const clean = urls
+    .map((u) => String(u || "").trim().replace(/&amp;/g, "&"))
+    .filter((u) => /^https?:\/\//i.test(u) && !looksLikeIcon(u));
+  if (!clean.length) return null;
+  clean.sort((a, b) => urlHintScore(b) - urlHintScore(a));
+  return clean[0];
 }
 
-/** Haber sayfasını BİR kez indirip hem og:image hem de okunabilir gövde metnini çıkarır. */
+/** Haber sayfasını BİR kez indirip hem görsel adaylarını hem de okunabilir gövde metnini çıkarır. */
 export async function fetchPageExtras(url) {
-  if (!url) return { image: null, text: "" };
+  if (!url) return { image: null, images: [], text: "" };
   try {
     const res = await fetch(url, {
       headers: { "User-Agent": "Mozilla/5.0 (compatible; HaberAI/0.1; +https://fruyorsan.github.io)" },
       signal: AbortSignal.timeout(12000),
     });
-    if (!res.ok) return { image: null, text: "" };
+    if (!res.ok) return { image: null, images: [], text: "" };
     const html = (await res.text()).slice(0, 400000);
-    return { image: extractOgImage(html), text: extractReadableText(html) };
+    return {
+      image: extractOgImage(html),
+      images: collectImageCandidates(html, url),
+      text: extractReadableText(html),
+    };
   } catch {
-    return { image: null, text: "" };
+    return { image: null, images: [], text: "" };
   }
 }
 
