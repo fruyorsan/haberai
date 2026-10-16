@@ -109,10 +109,13 @@ const items = slides.map((a) => {
                       {a.summary && <p class="fs__summary">{a.summary}</p>}
 
                       {a.note && (
-                        <blockquote class="fs__note">
-                          <span class="fs__note-label">MANŞET NOTU</span>
+                        <div class="fs__note">
+                          <div class="fs__note-head">
+                            <span class="fs__note-spark" aria-hidden="true">✦</span>
+                            <span class="fs__note-label">EDİTÖR NOTU</span>
+                          </div>
                           <p class="fs__note-text">{a.note}</p>
-                        </blockquote>
+                        </div>
                       )}
 
                       <div class="fs__meta">
@@ -424,56 +427,51 @@ const items = slides.map((a) => {
     overflow: hidden;
   }
 
-  /* --- İmza bloğu: MANŞET NOTU (alıntı stili, kırmızı aksan, hafif cam yüzey) --- */
+  /* --- İmza bloğu: EDİTÖR NOTU (modern, minimalist, zarif aksan) --- */
   .fs__note {
     position: relative;
-    margin: 2px 0;
-    padding: 12px 15px 12px 42px;
-    border-radius: 12px;
-    border: 1px solid color-mix(in srgb, var(--brand) 30%, var(--border));
+    margin: 4px 0 2px;
+    padding: 10px 14px 11px 15px;
+    border-radius: 9px;
+    border: 1px solid var(--border-soft);
     border-left: 3px solid var(--brand);
-    background: color-mix(in srgb, var(--brand-soft) 62%, var(--surface));
-    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--surface) 55%, transparent);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: color-mix(in srgb, var(--surface-2) 75%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
   }
-  .fs__note::before {
-    content: "\201C";
-    position: absolute;
-    left: 12px;
-    top: 8px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 2.05rem;
-    line-height: 1;
-    font-weight: 700;
-    color: var(--brand);
-    opacity: 0.9;
+  .fs__link:hover .fs__note {
+    background: var(--surface-2);
+    border-color: var(--border);
+    border-left-color: var(--brand);
   }
-  .fs__note-label {
+  .fs__note-head {
     display: flex;
     align-items: center;
-    gap: 9px;
-    margin-bottom: 4px;
-    font-size: 0.63rem;
-    font-weight: 900;
-    letter-spacing: 0.17em;
+    gap: 6px;
+    margin-bottom: 5px;
+  }
+  .fs__note-spark {
+    font-size: 0.72rem;
+    color: var(--brand);
+    line-height: 1;
+  }
+  .fs__note-label {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--brand);
-  }
-  .fs__note-label::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: color-mix(in srgb, var(--brand) 34%, transparent);
+    line-height: 1;
   }
   .fs__note-text {
     margin: 0;
-    font-size: 0.93rem;
-    font-style: italic;
-    line-height: 1.62;
+    font-size: 0.91rem;
+    font-style: normal;
+    line-height: 1.55;
     color: var(--text-2);
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
