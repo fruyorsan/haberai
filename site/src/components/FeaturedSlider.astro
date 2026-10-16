@@ -93,8 +93,14 @@ const items = slides.map((a) => {
                           ? `if(this.dataset.f!=='1'){this.dataset.f='1';this.src='/kapak/${a.slug}.svg';}else{this.classList.add('is-broken');}`
                           : "this.classList.add('is-broken')"}
                       />
-                      <span class="fs__badge">{a.category}</span>
-                      {a.breaking && <span class="fs__badge fs__badge--breaking">SON DAKİKA</span>}
+                      {a.breaking === true &&
+                      (a.publishedAt || a.generatedAt) &&
+                      (Date.now() - new Date(a.publishedAt || a.generatedAt).getTime()) <= 120 * 60 * 1000 ? (
+                        <span class="fs__badge fs__badge--breaking">SON DAKİKA</span>
+                      ) : (
+                        <span class="fs__badge">{a.category}</span>
+                      )}
+
                     </div>
 
                     <div class="fs__body">

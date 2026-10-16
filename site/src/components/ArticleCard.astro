@@ -41,9 +41,13 @@ const delay = Math.min(index * 45, 320);
         referrerpolicy="no-referrer"
         onerror={imgErr}
       />
-      <span class="card__badge">{article.category}</span>
-      {article.breaking && (
+      <!-- Kategori rozeti VE "Son dakika" ikili görünmesin: yalnızca biri görünür. -->
+      {article.breaking === true &&
+      (article.publishedAt || article.generatedAt) &&
+      (Date.now() - new Date(article.publishedAt || article.generatedAt).getTime()) <= 120 * 60 * 1000 ? (
         <span class="card__breaking" style="position:absolute;top:12px;right:12px;z-index:2;background:var(--red-grad);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.06em;padding:4px 9px;border-radius:7px;box-shadow:var(--shadow-sm)">SON DAKİKA</span>
+      ) : (
+        <span class="card__badge">{article.category}</span>
       )}
     </div>
     <div class="card__body">
