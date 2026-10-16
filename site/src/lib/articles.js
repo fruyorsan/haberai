@@ -78,15 +78,16 @@ export function getArticles() {
 }
 
 /**
- * Manşet/vitrin için haber seçimi: önce kaynak fotoğrafı olan haberler
- * (tarih sırası korunur); fotoğraflı haber sayısı yetmezse kalanlar markalı
- * kapak görseliyle eklenir. Böylece en görünür alan hep gerçek fotoğrafla açılır.
+ * Manşet/vitrin için haber seçimi: en yeni haberler arasından önce kaynak
+ * fotoğrafı olanlar alınır (tarih sırası korunur). Fotoğraflı haber yetmezse
+ * kalanlar markalı kapak görseliyle eklenir. Böylece en görünür alan hep
+ * gerçek fotoğrafla açılır, vitrin de eski haberlere düşmez.
  */
-export function getFeatured(count = 6) {
-  const list = getArticles();
-  const withPhoto = list.filter((a) => a.image);
+export function getFeatured(count = 6, horizon = 20) {
+  const recent = getArticles().slice(0, Math.max(count, horizon));
+  const withPhoto = recent.filter((a) => a.image);
   if (withPhoto.length >= count) return withPhoto.slice(0, count);
-  return [...withPhoto, ...list.filter((a) => !a.image)].slice(0, count);
+  return [...withPhoto, ...recent.filter((a) => !a.image)].slice(0, count);
 }
 
 export function getCategories() {
