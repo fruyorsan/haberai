@@ -1,0 +1,40 @@
+name: Netlify Tani
+on:
+  workflow_dispatch: {}
+
+concurrency:
+  group: netlify-tani
+  cancel-in-progress: false
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Token ve siteyi sorgula
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          echo "--- /api/v1/user (token gecerli mi?) ---"
+          curl -sS -o /tmp/user.json -w "HTTP %{http_code}\n" \
+            -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+            https://api.netlify.com/api/v1/user
+          head -c 300 /tmp/user.json; echo
+
+          echo "--- /api/v1/sites/{id} (site erisilebilir mi?) ---"
+          curl -sS -o /tmp/site.json -w "HTTP %{http_code}\n" \
+            -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+            "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID"
+          head -c 600 /tmp/site.json; echo
+
+          echo "--- hesaptaki siteler ---"
+          curl -sS -o /tmp/sites.json -w "HTTP %{http_code}\n" \
+            -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+            "https://api.netlify.com/api/v1/sites?per_page=20"
+          python3 -c "
+          import json
+          try:
+              d=json.load(open('/tmp/sites.json'))
+              for s in d: print(s.get('site_id'), s.get('name'), s.get('ssl_url'))
+          except Exception as e: print('okunamadi:', e)
+          "
