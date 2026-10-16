@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import { CONTACT_EMAIL } from "../lib/site-meta.js";
 ---
 
 <Base
@@ -63,7 +64,8 @@ import Base from "../layouts/Base.astro";
     </p>
     <ul>
       <li>
-        Bildirim: <a href="/iletisim/">İletişim sayfası</a> —
+        Bildirim: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> —
+        <a href="/iletisim/">İletişim sayfası</a> —
         <a href="https://github.com/fruyorsan/haberai/issues" target="_blank" rel="noopener"
           >bildirim kaydı aç</a
         >

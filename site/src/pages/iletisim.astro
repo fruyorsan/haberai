@@ -3,25 +3,62 @@ import Base from "../layouts/Base.astro";
 import { CONTACT_EMAIL } from "../lib/site-meta.js";
 ---
 
-<Base title="İletişim — HaberAI" description="HaberAI ile iletişime geçin.">
+<Base
+  title="İletişim — HaberAI"
+  description="HaberAI ile iletişim: telif ve kaldırma talepleri, düzeltme, haber ihbarı ve öneriler için e-posta adresimiz."
+>
   <div class="container prose">
     <h1>İletişim</h1>
-    <p>Görüş, öneri ve haber ihbarlarınız için bize ulaşabilirsiniz.</p>
+    <p>
+      Görüş, öneri, hata bildirimi, haber ihbarı ve telif talepleri için bize
+      <strong>{CONTACT_EMAIL}</strong> adresinden ulaşabilirsiniz.
+    </p>
     <p><strong>E-posta:</strong> <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
-    <p class="muted">Bu sayfadaki bilgileri kendi iletişim bilgilerinle güncellemeyi unutma.</p>
+
+    <h2>Ne için yazabilirsiniz?</h2>
+    <ul>
+      <li><strong>Telif / kaldırma talebi:</strong> Hakkınız olan bir içerik için ilgili haberin bağlantısını (URL) ve talebinizi iletin. Talepler <strong>en geç 48 saat içinde</strong> sonuçlandırılır.</li>
+      <li><strong>Düzeltme ve hata bildirimi:</strong> Bir haberde yanlış veya eksik bilgi varsa haberin bağlantısını yazın; düzeltme öncelikli işlenir.</li>
+      <li><strong>Haber ihbarı:</strong> Kaynağı doğrulanabilir bir haber/duyuru paylaşabilirsiniz.</li>
+      <li><strong>Öneri ve şikâyet:</strong> Site, kategori veya yapay zekâ destekli özetlerle ilgili geri bildirimleriniz.</li>
+    </ul>
+
+    <p class="muted">
+      HaberAI yapay zekâ destekli bir haber özeti sitesidir. Haber metinleri özetlenerek ve özgün
+      editör yorumu eklenerek yayımlanır; her haberde kaynak bağlantısı ve
+      <a href="/telif/">telif politikası</a> sayfası yer alır. Yanıt süresi genellikle 1-2 iş günüdür.
+    </p>
   </div>
 </Base>
 
 <style>
   .prose {
-    max-width: 760px;
+    max-width: 780px;
     margin: 40px auto;
   }
   .prose h1 {
     font-size: 2rem;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  .prose h2 {
+    margin-top: 32px;
+    font-size: 1.22rem;
+  }
+  .prose p,
+  .prose li {
+    line-height: 1.78;
+    color: var(--text-2);
+  }
+  .prose ul {
+    padding-left: 22px;
   }
   .prose a {
     color: var(--red);
     font-weight: 600;
+  }
+  .muted {
+    color: var(--muted);
+    font-size: 0.9rem;
   }
 </style>

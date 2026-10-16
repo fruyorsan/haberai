@@ -14,5 +14,5 @@ export function siteOrigin(astroSite) {
   return String(raw).replace(/\/+$/, "");
 }
 
-/** İletişim adresi: AdSense başvurusundan önce gerçek bir adres yazılmalı. */
-export const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "info@haberai.netlify.app";
+/** İletişim adresi. */
+export const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "haberaiiletisim@yahoo.com";
