@@ -173,8 +173,13 @@ async function main() {
         pageImages = extra.images?.length ? extra.images : [extra.image];
       }
       // Kalite denetimi: logolar/küçük thumbnail'ler elenir, ölçülen en iyi
-      // büyük+yatay fotoğraf seçilir; hiçbiri geçmezse markalı kapağa düşülür.
+      // büyük+yatay fotoğraf seçilir. Fotoğraf yoksa haber eklenmez.
       const image = await chooseImage([item.image, ...pageImages]);
+      if (!image || !/^https?:\/\//i.test(image)) {
+        console.log("⏭ görsel bulunamadı (fotoğrafsız haber kabul edilmez)");
+        continue;
+      }
+
       const ai = await analyzeArticle(item);
       // TELİF GÜVENCESİ: üretilen metinde kaynaktan uzun birebir diziler kalmasın.
       const { cleaned, removed } = purgeCopiedText(ai, item.content);
@@ -188,12 +193,10 @@ async function main() {
         ...cleaned,
         source: item.source,
         sourceUrl,
+        image,
         publishedAt: item.publishedAt,
         generatedAt: new Date().toISOString(),
       };
-      // Görsel: kaynak RSS / haber sayfası og:image. Site, görsel yüklenemezse
-      // kendi markalı kapak görseline düşer.
-      if (image && /^https?:\/\//i.test(image)) entry.image = image;
       // Yalnızca son dakika tespit edilenlerde alan eklenir; diğerlerinde hiç olmaz.
       if (item.breaking) entry.breaking = true;
       articles.push(entry);
