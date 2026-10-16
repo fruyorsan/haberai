@@ -1,0 +1,414 @@
+---
+import { getBreakingItems } from "../lib/breaking.js";
+
+// Kırmızı "SON DAKİKA" şeridi.
+// - Sunucu tarafında (build anında) son dakika öğeleri render edilir → JS kapalıyken de görünür.
+// - İstemci tarafı 60 sn'de bir /breaking.json'u yoklar ve şeridi canlı günceller.
+// - Hiç öğe yoksa hiçbir şey render edilmez (boş kırmızı bant olmaz).
+const BAR_MAX = 8;
+const items = getBreakingItems({ limit: BAR_MAX });
+---
+
+{
+  items.length > 0 && (
+    <section class="bb" data-breaking aria-label="Son dakika haberleri">
+      <a class="bb__label" href="/son-dakika/" aria-label="Tüm son dakika haberleri">
+        <span class="bb__dot" aria-hidden="true" />
+        SON DAKİKA
+      </a>
+
+      <div class="bb__viewport" data-bb-viewport aria-live="off">
+        <div class="bb__track" data-bb-track>
+          {[0, 1].map((copy) =>
+            items.map((it) => (
+              <a
+                class="bb__item"
+                href={it.url}
+                title={it.title}
+                aria-hidden={copy === 1 ? "true" : undefined}
+                tabindex={copy === 1 ? -1 : undefined}
+              >
+                {it.category && <span class="bb__cat">{it.category}</span>}
+                <span class="bb__head">{it.title}</span>
+                {it.ago && <span class="bb__time">{it.ago}</span>}
+              </a>
+            ))
+          )}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+<script>
+  // Bu script her zaman yüklenir (koşullu render'ın dışında), böylece şerit
+  // build anında boş olsa bile ileride yeni son dakika haberi gelince
+  // istemci tarafında oluşturulup gösterilebilir.
+  (() => {
+    const ENDPOINT = "/breaking.json";
+    const POLL_MS = 60000;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const currentBar = () => document.querySelector("[data-breaking]");
+
+    // Sunucudan gelen içeriğin "imzası": değişiklik olup olmadığını anlamak için.
+    function domSignature() {
+      const bar = currentBar();
+      if (!bar) return "";
+      return Array.from(bar.querySelectorAll('.bb__item:not([aria-hidden="true"])'))
+        .map((a) => `${a.getAttribute("href") || ""}\u0001${a.querySelector(".bb__head")?.textContent || ""}`)
+        .join("|");
+    }
+
+    function payloadSignature(items) {
+      return items
+        .map((it) => `${it.url || ""}\u0001${it.title || ""}`)
+        .join("|");
+    }
+
+    function buildItem(it, isClone) {
+      const a = document.createElement("a");
+      a.className = "bb__item";
+      a.href = it.url || "#";
+      if (it.title) a.title = it.title;
+      if (isClone) {
+        a.setAttribute("aria-hidden", "true");
+        a.tabIndex = -1;
+      }
+      if (it.category) {
+        const c = document.createElement("span");
+        c.className = "bb__cat";
+        c.textContent = it.category;
+        a.appendChild(c);
+      }
+      const head = document.createElement("span");
+      head.className = "bb__head";
+      head.textContent = it.title || "";
+      a.appendChild(head);
+      if (it.ago) {
+        const t = document.createElement("span");
+        t.className = "bb__time";
+        t.textContent = it.ago;
+        a.appendChild(t);
+      }
+      return a;
+    }
+
+    let hovered = false;
+    function syncLive(bar) {
+      const vp = bar.querySelector("[data-bb-viewport]");
+      if (!vp) return;
+      const paused = reduceMotion || hovered || bar.contains(document.activeElement);
+      vp.setAttribute("aria-live", paused ? "polite" : "off");
+    }
+
+    function wire(bar) {
+      bar.addEventListener("pointerenter", () => {
+        hovered = true;
+        syncLive(bar);
+      });
+      bar.addEventListener("pointerleave", () => {
+        hovered = false;
+        syncLive(bar);
+      });
+      bar.addEventListener("focusin", () => {
+        hovered = true;
+        syncLive(bar);
+      });
+      bar.addEventListener("focusout", (e) => {
+        if (!bar.contains(e.relatedTarget)) {
+          hovered = false;
+          syncLive(bar);
+        }
+      });
+      syncLive(bar);
+    }
+
+    // Sunucu hiçbir şey render etmediyse şeridi istemci tarafında kur.
+    function ensureBar() {
+      let bar = currentBar();
+      if (bar) return bar;
+
+      bar = document.createElement("section");
+      bar.className = "bb";
+      bar.setAttribute("data-breaking", "");
+      bar.setAttribute("aria-label", "Son dakika haberleri");
+
+      const label = document.createElement("a");
+      label.className = "bb__label";
+      label.href = "/son-dakika/";
+      label.setAttribute("aria-label", "Tüm son dakika haberleri");
+      const dot = document.createElement("span");
+      dot.className = "bb__dot";
+      dot.setAttribute("aria-hidden", "true");
+      label.append(dot, document.createTextNode("SON DAKİKA"));
+
+      const vp = document.createElement("div");
+      vp.className = "bb__viewport";
+      vp.setAttribute("data-bb-viewport", "");
+      vp.setAttribute("aria-live", "off");
+      const track = document.createElement("div");
+      track.className = "bb__track";
+      track.setAttribute("data-bb-track", "");
+      vp.appendChild(track);
+
+      bar.append(label, vp);
+
+      const main = document.querySelector("main");
+      if (main && main.parentNode) main.parentNode.insertBefore(bar, main);
+      else document.body.insertBefore(bar, document.body.firstChild);
+
+      wire(bar);
+      return bar;
+    }
+
+    function setItems(bar, items) {
+      const track = bar.querySelector("[data-bb-track]");
+      if (!track) return;
+      const frag = document.createDocumentFragment();
+      for (let copy = 0; copy < 2; copy++) {
+        for (const it of items) frag.appendChild(buildItem(it, copy === 1));
+      }
+      track.replaceChildren(frag);
+    }
+
+    let lastSig = domSignature();
+
+    function apply(payload) {
+      const items = Array.isArray(payload && payload.items) ? payload.items : [];
+      const sig = payloadSignature(items);
+      if (sig === lastSig) return; // değişiklik yok → dokunma (flicker yok)
+      lastSig = sig;
+
+      if (items.length === 0) {
+        const bar = currentBar();
+        if (bar) bar.hidden = true; // boş bant gösterme
+        return;
+      }
+
+      const bar = ensureBar();
+      bar.hidden = false;
+      setItems(bar, items);
+      syncLive(bar);
+    }
+
+    let busy = false;
+    async function poll() {
+      if (busy || document.hidden) return;
+      busy = true;
+      try {
+        const res = await fetch(`${ENDPOINT}?t=${Date.now()}`, {
+          cache: "no-store",
+          headers: { Accept: "application/json" },
+        });
+        if (res.ok) apply(await res.json());
+      } catch (_) {
+        // Fetch hatasında mevcut sunucu içeriği olduğu gibi kalır (sessizce yut).
+      } finally {
+        busy = false;
+      }
+    }
+
+    // Var olan şeridin etkileşim (aria-live) mantığını bağla.
+    const initial = currentBar();
+    if (initial) wire(initial);
+
+    poll(); // açılışta bir kez (build'den bu yana değişen olabilir)
+    setInterval(poll, POLL_MS);
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) poll();
+    });
+  })();
+</script>
+
+<style>
+  .bb {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    background: var(--red-grad);
+    color: #fff;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border-bottom: 1px solid color-mix(in srgb, #000 22%, transparent);
+  }
+  /* hidden özniteliği flex display'i ezemez: elle gizle. */
+  .bb[hidden] {
+    display: none;
+  }
+
+  /* Sabit "SON DAKİKA" etiketi */
+  .bb__label {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    padding: 0 16px;
+    height: 40px;
+    background: color-mix(in srgb, #000 30%, transparent);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.13em;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 8px 0 20px -10px rgba(0, 0, 0, 0.65);
+    transition: background 0.2s var(--ease);
+  }
+  .bb__label:hover {
+    background: color-mix(in srgb, #000 45%, transparent);
+  }
+  .bb__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.22);
+    animation: bb-blink 1.5s ease-in-out infinite;
+  }
+  @keyframes bb-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.25;
+    }
+  }
+
+  /* Kenarlarda yumuşak geçiş maskesi */
+  .bb__viewport {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent 0,
+      #000 36px,
+      #000 calc(100% - 36px),
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      90deg,
+      transparent 0,
+      #000 36px,
+      #000 calc(100% - 36px),
+      transparent 100%
+    );
+  }
+
+  .bb__track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: bb-scroll 44s linear infinite;
+    will-change: transform;
+  }
+  /* Hover veya klavye odağında kaydırma durur */
+  .bb:hover .bb__track,
+  .bb:focus-within .bb__track {
+    animation-play-state: paused;
+  }
+
+  .bb__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    height: 40px;
+    padding: 0 16px;
+    white-space: nowrap;
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.22);
+    transition: background 0.2s var(--ease);
+  }
+  .bb__item:hover {
+    background: rgba(255, 255, 255, 0.14);
+  }
+  .bb__item:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: -3px;
+    border-radius: 6px;
+  }
+
+  .bb__cat {
+    flex-shrink: 0;
+    font-size: 0.66rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.82);
+  }
+  .bb__head {
+    min-width: 0;
+    max-width: min(72vw, 560px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+  }
+  .bb__item:hover .bb__head {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .bb__time {
+    flex-shrink: 0;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  @keyframes bb-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .bb__label {
+      padding: 0 12px;
+      letter-spacing: 0.09em;
+    }
+    .bb__item {
+      padding: 0 13px;
+      font-size: 0.82rem;
+    }
+  }
+  @media (max-width: 560px) {
+    .bb__cat {
+      display: none;
+    }
+    .bb__head {
+      max-width: min(80vw, 420px);
+    }
+  }
+
+  /* Hareket azaltma: kaydırma yok, statik ve kırpılmadan okunabilir liste */
+  @media (prefers-reduced-motion: reduce) {
+    .bb__track {
+      animation: none;
+      transform: none;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+    .bb__viewport {
+      overflow: visible;
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+    .bb__item[aria-hidden="true"] {
+      display: none;
+    }
+    .bb__dot {
+      animation: none;
+    }
+  }
+</style>

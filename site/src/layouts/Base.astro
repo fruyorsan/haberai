@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import BreakingBar from "../components/BreakingBar.astro";
 import CategoryBar from "../components/CategoryBar.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
@@ -135,6 +136,7 @@ const isArticle = ogType === "article";
   </head>
   <body>
     <Header />
+    <BreakingBar />
     <CategoryBar />
     <main>
       <slot />
