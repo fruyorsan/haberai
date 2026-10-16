@@ -206,6 +206,7 @@ button {
   font-weight: 800;
   letter-spacing: -0.02em;
   margin: 44px 0 18px;
+  text-wrap: balance;
 }
 
 .section-title::before {
@@ -270,6 +271,8 @@ button {
   border-radius: var(--radius);
   overflow: hidden;
   height: 100%;
+  content-visibility: auto;
+  contain-intrinsic-size: 380px;
   transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease),
     border-color 0.3s var(--ease);
 }
@@ -371,6 +374,7 @@ button {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  text-wrap: balance;
   transition: color 0.2s var(--ease);
 }
 
@@ -387,6 +391,7 @@ button {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  text-wrap: pretty;
 }
 
 .card__meta {
@@ -481,8 +486,7 @@ button {
 html.js [data-reveal] {
   opacity: 0;
   transform: translateY(18px);
-  transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
-  will-change: opacity, transform;
+  transition: opacity 0.45s var(--ease), transform 0.45s var(--ease);
 }
 
 html.js [data-reveal].is-in {
@@ -548,15 +552,39 @@ html.js [data-reveal].is-in {
 }
 
 /* ---------------------------------------------------------------
-   Tema değişimi — yumuşak geçiş (yalnızca JS ile işaretlenir)
+   Tema değişimi — View Transitions (Modern dairesel dalga geçişi)
    --------------------------------------------------------------- */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 9999;
+}
+
+/* View Transitions desteklemeyen veya animasyonsuz fallback geçiş */
 @media (prefers-reduced-motion: no-preference) {
   html.theme-transition,
-  html.theme-transition *,
-  html.theme-transition *::before,
-  html.theme-transition *::after {
-    transition: background-color 0.35s var(--ease), color 0.35s var(--ease),
-      border-color 0.35s var(--ease), box-shadow 0.35s var(--ease) !important;
+  html.theme-transition body,
+  html.theme-transition header,
+  html.theme-transition footer,
+  html.theme-transition nav,
+  html.theme-transition main,
+  html.theme-transition article,
+  html.theme-transition section,
+  html.theme-transition aside,
+  html.theme-transition .card,
+  html.theme-transition .container,
+  html.theme-transition button,
+  html.theme-transition input {
+    transition: background-color 0.3s var(--ease), color 0.3s var(--ease),
+      border-color 0.3s var(--ease), box-shadow 0.3s var(--ease) !important;
   }
 }
 

@@ -9,6 +9,7 @@ export default defineConfig({
   site,
   output: "static",
   trailingSlash: "ignore",
+  compressHTML: true,
   // Kapak görselleri (/kapak/*.svg) sayfa değildir; site haritasına girmez.
   integrations: [sitemap({ filter: (page) => !page.includes("/kapak/") })],
 });

@@ -21,6 +21,7 @@ const {
   tags = [],
   imageAlt,
   schema,
+  preloadImage,
 } = Astro.props;
 
 // Mutlak URL tabanı (astro.config.mjs -> site)
@@ -119,14 +120,41 @@ const isArticle = ogType === "article";
       })();
     </script>
 
-    <!-- Yazı tipi: önce bağlantı kur, sonra yükle -->
+    <!-- Yazı tipi ve harici kaynaklar: preconnect & dns-prefetch -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    {GA_MEASUREMENT_ID && <link rel="dns-prefetch" href="https://www.googletagmanager.com" />}
+
+    <!-- LCP Önceliği: Ana görseli (hero) derhal ön yükle -->
+    {preloadImage && (
+      <link
+        rel="preload"
+        as="image"
+        href={absoluteUrl(preloadImage)}
+        fetchpriority="high"
+      />
+    )}
+
+    <!-- Yazı tipi: render-blocking olmayan asenkron yükleme (display=swap ile sistem fontu anında açılır) -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap"
+    />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap"
+      />
+    </noscript>
 
     <!-- JS açık işareti (animasyonlar için; JS kapalıysa içerik görünür kalır) -->
     <script is:inline>
@@ -134,14 +162,18 @@ const isArticle = ogType === "article";
     </script>
 
     <!-- Google tag (gtag.js) -->
-    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} is:inline></script>
-    <script
-      is:inline
-      set:html={`window.dataLayer = window.dataLayer || [];
+    {GA_MEASUREMENT_ID && (
+      <>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} is:inline></script>
+        <script
+          is:inline
+          set:html={`window.dataLayer = window.dataLayer || [];
 function gtag() { dataLayer.push(arguments); }
 gtag("js", new Date());
 gtag("config", ${JSON.stringify(GA_MEASUREMENT_ID)});`}
-    />
+        />
+      </>
+    )}
 
     <!-- Sayfaya ozel JSON-LD (WebSite/Organization vb.) -->
     {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
@@ -185,7 +217,7 @@ gtag("config", ${JSON.stringify(GA_MEASUREMENT_ID)});`}
                 }
               }
             },
-            { rootMargin: "0px 0px -6% 0px", threshold: 0.04 }
+            { rootMargin: "0px 0px 50px 0px", threshold: 0.01 }
           );
           revealEls.forEach((el) => io.observe(el));
         } else {
@@ -193,14 +225,22 @@ gtag("config", ${JSON.stringify(GA_MEASUREMENT_ID)});`}
         }
       }
 
-      // --- Yukarı çık butonu ---
+      // --- Yukarı çık butonu (rAF ile akıcı kaydırma) ---
       const toTop = document.getElementById("to-top");
       if (toTop) {
+        let ticking = false;
         const syncTopButton = () => {
           toTop.classList.toggle("is-visible", window.scrollY > 700);
+          ticking = false;
+        };
+        const onScroll = () => {
+          if (!ticking) {
+            requestAnimationFrame(syncTopButton);
+            ticking = true;
+          }
         };
         syncTopButton();
-        window.addEventListener("scroll", syncTopButton, { passive: true });
+        window.addEventListener("scroll", onScroll, { passive: true });
         toTop.addEventListener("click", () => {
           window.scrollTo({ top: 0, behavior: "smooth" });
         });

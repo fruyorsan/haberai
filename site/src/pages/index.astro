@@ -18,6 +18,7 @@ const grid = [...withPhoto, ...withoutPhoto].slice(0, 21);
 // WebSite + Organization yapısal veri: Sitelinks arama kutusu (Google) + marka bilgisi.
 // SearchAction, site içi arama sayfasına (/ara/) point eder.
 const origin = siteOrigin(Astro.site);
+const heroImage = featured[0]?.image || (featured[0] ? `/kapak/${featured[0].slug}.svg` : undefined);
 const siteSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -45,7 +46,12 @@ const siteSchema = {
 };
 ---
 
-<Base title="HaberAI — Yapay Zekâ Destekli Haberler" description="HaberAI: yapay zekâ destekli teknoloji ve gündem haberlerinde özet, analiz ve editör yorumu." schema={siteSchema}>
+<Base
+  title="HaberAI — Yapay Zekâ Destekli Haberler"
+  description="HaberAI: yapay zekâ destekli teknoloji ve gündem haberlerinde özet, analiz ve editör yorumu."
+  schema={siteSchema}
+  preloadImage={heroImage}
+>
   <div class="container">
     <h1 class="sr-only">HaberAI — Yapay Zekâ Destekli Türkçe Haberler ve Gündem Özetleri</h1>
     {articles.length === 0 ? (

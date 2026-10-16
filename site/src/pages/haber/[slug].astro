@@ -85,6 +85,7 @@ const breadcrumbLd = {
   tags={article.tags}
   image={article.image}
   imageAlt={article.title}
+  preloadImage={article.image || "/og-default.png"}
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
@@ -122,6 +123,7 @@ const breadcrumbLd = {
           alt={article.title}
           width="1200"
           height="675"
+          loading="eager"
           decoding="async"
           fetchpriority="high"
           referrerpolicy="no-referrer"
@@ -246,18 +248,26 @@ const breadcrumbLd = {
   </div>
 
   <script>
-    // --- Okuma ilerleme çubuğu ---
+    // --- Okuma ilerleme çubuğu (rAF ile akıcı) ---
     const bar = document.getElementById("progress");
     if (bar) {
+      let ticking = false;
       const update = () => {
         const el = document.documentElement;
         const max = el.scrollHeight - el.clientHeight;
         const p = max > 0 ? el.scrollTop / max : 0;
         bar.style.transform = `scaleX(${Math.min(Math.max(p, 0), 1)})`;
+        ticking = false;
+      };
+      const onScroll = () => {
+        if (!ticking) {
+          requestAnimationFrame(update);
+          ticking = true;
+        }
       };
       update();
-      window.addEventListener("scroll", update, { passive: true });
-      window.addEventListener("resize", update);
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", onScroll, { passive: true });
     }
 
     // --- AI'ya Sor ---
@@ -347,6 +357,7 @@ const breadcrumbLd = {
     letter-spacing: -0.025em;
     margin: 14px 0 14px;
     font-weight: 900;
+    text-wrap: balance;
   }
   .post__meta {
     display: flex;
@@ -461,6 +472,8 @@ const breadcrumbLd = {
     line-height: 1.76;
     font-weight: 500;
     color: var(--text);
+    text-wrap: pretty;
+    max-width: 75ch;
   }
   .recap__list {
     list-style: none;
@@ -478,6 +491,7 @@ const breadcrumbLd = {
     font-size: 0.99rem;
     line-height: 1.55;
     color: var(--text-2);
+    text-wrap: pretty;
   }
   .recap__check {
     flex-shrink: 0;
@@ -496,6 +510,8 @@ const breadcrumbLd = {
     font-size: 1.08rem;
     line-height: 1.82;
     color: var(--text-2);
+    text-wrap: pretty;
+    max-width: 75ch;
   }
   .content__p:first-of-type::first-letter {
     font-weight: 800;
