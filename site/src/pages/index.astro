@@ -3,6 +3,7 @@ import Base from "../layouts/Base.astro";
 import ArticleCard from "../components/ArticleCard.astro";
 import FeaturedSlider from "../components/FeaturedSlider.astro";
 import { getArticles, getFeatured } from "../lib/articles.js";
+import { siteOrigin } from "../lib/site-meta.js";
 
 const articles = getArticles();
 // İlk 6 haber "öne çıkanlar" slaytında gösterilir; ızgarada tekrar etmesinler.
@@ -14,13 +15,37 @@ const grid = articles.filter((a) => !featuredSlugs.has(a.slug)).slice(0, 21);
 // burada kalırsa markalı kapak görseli görünür. İlk satırdaki fotoğrafsız
 // haberler, sıradaki fotoğraflı haberlerle yer değiştirir (tarih sırası
 // korunur, listenin bütünlüğü bozulmaz).
-const HERO_ROW = 3;
-for (let i = 0; i < Math.min(HERO_ROW, grid.length); i++) {
-  if (grid[i].image) continue;
-  const j = grid.findIndex((a, k) => k > i && a.image);
-  if (j > i) [grid[i], grid[j]] = [grid[j], grid[i]];
-}
+// WebSite + Organization yapısal veri: Sitelinks arama kutusu (Google) + marka bilgisi.
+// SearchAction, site içi arama sayfasına (/ara/) point eder.
+const origin = siteOrigin(Astro.site);
+const siteSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": origin + "/#website",
+      url: origin + "/",
+      name: "HaberAI",
+      description: "Yapay zekâ destekli Türkçe haber özeti ve editör yorumları.",
+      inLanguage: "tr-TR",
+      potentialAction: {
+        "@type": "SearchAction",
+        target: origin + "/ara/?q={search_term_string}",
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
+      "@type": "Organization",
+      "@id": origin + "/#organization",
+      name: "HaberAI",
+      url: origin + "/",
+      logo: origin + "/og-default.png",
+    },
+  ],
+};
 ---
+
+<Base title="HaberAI — Yapay Zekâ Destekli Haberler" description="HaberAI: yapay zekâ destekli teknoloji ve gündem haberlerinde özet, analiz ve editör yorumu." schema={siteSchema}>
 
 <Base>
   <div class="container">

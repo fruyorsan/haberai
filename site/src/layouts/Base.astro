@@ -20,6 +20,7 @@ const {
   section,
   tags = [],
   imageAlt,
+  schema,
 } = Astro.props;
 
 // Mutlak URL tabanı (astro.config.mjs -> site)
@@ -142,8 +143,8 @@ gtag("js", new Date());
 gtag("config", ${JSON.stringify(GA_MEASUREMENT_ID)});`}
     />
 
-    <!-- Google AdSense: yalnızca yayıncı kimliği tanımlandığında yüklenir -->
-    {ADSENSE_CLIENT && (
+    <!-- Sayfaya ozel JSON-LD (WebSite/Organization vb.) -->
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
       <>
         <meta name="google-adsense-account" content={ADSENSE_CLIENT} />
         <script
