@@ -112,6 +112,7 @@ const jsonLd = {
           width="1200"
           height="675"
           decoding="async"
+          fetchpriority="high"
           referrerpolicy="no-referrer"
           onerror={article.image
             ? `if(this.dataset.f!=='1'){this.dataset.f='1';this.src='/kapak/${article.slug}.svg';}else{this.classList.add('is-broken');}`

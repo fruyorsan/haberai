@@ -16,3 +16,22 @@ export function siteOrigin(astroSite) {
 
 /** İletişim adresi. */
 export const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "haberaiiletisim@yahoo.com";
+
+/**
+ * AdSense yayıncı kimliği (ör. "ca-pub-1234567890123456").
+ *
+ * AdSense hesabı onaylandığında: AdSense panelinden "pub-..." numarasını al ve
+ * buradaki değeri onunla değiştir. Boşken reklam kodu HİÇ eklenmez
+ * (onaysız siteye reklam kodu koymak gereksiz hata üretir).
+ */
+export const ADSENSE_CLIENT = process.env.ADSENSE_CLIENT || "";
+
+/** AdSense ads.txt için Google'ın sertifika kimliği (değiştirilmez). */
+export const ADSENSE_CERT = "f08c47fec0942fa0";
+
+/** Google Search Console doğrulama kodu (meta etiketi). */
+export const GOOGLE_SITE_VERIFICATION =
+  process.env.GOOGLE_SITE_VERIFICATION || "0txYR2AQdV9F9DdPhBtDSxs4PWnFvNyBUBXXix7m2Ck";
+
+/** Google Analytics (GA4) ölçüm kimliği. */
+export const GA_MEASUREMENT_ID = process.env.GA_MEASUREMENT_ID || "G-C9BGECSKCM";

@@ -86,6 +86,7 @@ const items = slides.map((a) => {
                         width="1200"
                         height="675"
                         loading={i === 0 ? "eager" : "lazy"}
+                        fetchpriority={i === 0 ? "high" : "auto"}
                         decoding="async"
                         referrerpolicy="no-referrer"
                         onerror={a.image

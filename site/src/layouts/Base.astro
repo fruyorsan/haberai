@@ -2,6 +2,11 @@
 import Header from "../components/Header.astro";
 import CategoryBar from "../components/CategoryBar.astro";
 import Footer from "../components/Footer.astro";
+import {
+  ADSENSE_CLIENT,
+  GA_MEASUREMENT_ID,
+  GOOGLE_SITE_VERIFICATION,
+} from "../lib/site-meta.js";
 import "../styles/global.css";
 
 const {
@@ -50,7 +55,12 @@ const isArticle = ogType === "article";
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="google-site-verification" content="0txYR2AQdV9F9DdPhBtDSxs4PWnFvNyBUBXXix7m2Ck" />
+    <meta name="google-site-verification" content={GOOGLE_SITE_VERIFICATION} />
+    <!-- Arama görünürlüğü: büyük görsel önizlemesine izin (Google Discover/News) -->
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -123,15 +133,27 @@ const isArticle = ogType === "article";
     </script>
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C9BGECSKCM" is:inline></script>
-    <script is:inline>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} is:inline></script>
+    <script is:inline define:vars={{ GA_MEASUREMENT_ID }}>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-      gtag("config", "G-C9BGECSKCM");
+      gtag("config", GA_MEASUREMENT_ID);
     </script>
+
+    <!-- Google AdSense: yalnızca yayıncı kimliği tanımlandığında yüklenir -->
+    {ADSENSE_CLIENT && (
+      <>
+        <meta name="google-adsense-account" content={ADSENSE_CLIENT} />
+        <script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+          crossorigin="anonymous"
+          is:inline></script>
+      </>
+    )}
   </head>
   <body>
     <Header />
