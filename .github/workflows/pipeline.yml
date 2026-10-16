@@ -30,6 +30,9 @@ jobs:
       - uses: actions/checkout@v7
         with:
           ref: main
+          # Netlify adimi basta veya sonraki committe site/ degisip degismedigini
+          # anlamak icin mevcut commit ile oncekini karsilastiracak kadar gecmis indirir.
+          fetch-depth: 2
 
       - uses: actions/setup-node@v7
         with:
@@ -94,10 +97,26 @@ jobs:
         if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
         run: cd site && npm run build
 
-      # GitHub Pages'e yayinla.
-      # Netlify'in ucretsiz plani artik "credit" harcadigi icin (prod deploy
-      # basina 15 credit, ayda 300 credit) 5 dakikalik kadansi karsilamiyor;
-      # Pages + Actions ile yayinda saatlik build siniri yok, ucretsiz.
+      # Site kodu degisip degismedigini anla (Netlify buna gore yayin yapar).
+      # Hattin 5 dk'lik bot guncellemeleri (yalnizca data/) Netlify'i tetiklemesin:
+      # ucretsiz planda prod deploy basina 15 credit var (ayda 300), bot commitleri
+      # icin credit yakmak anlamasiz. Kod/tasarim/site akisi degisince yayinlanir.
+      - name: Site kodu degisti mi?
+        id: sitedegisti
+        run: |
+          set -eu
+          # workflow_dispatch (elle calistirma) → daima yayinla
+          if [ "${GITHUB_EVENT_NAME}" = "workflow_dispatch" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # Push: son commit sadece data/ altinda dosya degistirdiyse kod degismedi say.
+          if git diff --name-only HEAD~1 HEAD | grep -Ev '^data/' | grep -q .; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: GitHub Pages'e yayinla
         if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
         uses: peaceiris/actions-gh-pages@v4
@@ -110,6 +129,24 @@ jobs:
           user_name: haber-bot
           user_email: bot@users.noreply.github.com
           commit_message: "yayin: ${{ github.run_number }}"
+
+      # Netlify'e yayinla (haberai.netlify.app).
+      # Build'i burada yapilmis statik dist yuklenir, Netlify yeniden build etmez.
+      # Yalnizca site kodu degistiginde (veya elle) harcanir; bot veri commitleri
+      # atlanir. AI soru-cevap fonksiyonu ayri sitede oldugundan bu deploy
+      # fonksiyonlara dokunmaz.
+      - name: Netlify'e yayinla (haberai.netlify.app)
+        if: steps.sitedegisti.outputs.changed == 'true' && (steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main'))
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          npx --yes netlify-cli@latest deploy \
+            --prod \
+            --dir site/dist \
+            --auth "$NETLIFY_AUTH_TOKEN" \
+            --site "$NETLIFY_SITE_ID" \
+            --message "haber hatti: ${{ github.run_number }}"
 
       # --- 5 DAKIKALIK KADANS: ZINCIR HALKKASI ---
       # GitHub'in kendi cron'u bu depoda 2-4 saatte bir calisiyor (olculdu).
