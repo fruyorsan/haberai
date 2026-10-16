@@ -134,14 +134,13 @@ const isArticle = ogType === "article";
 
     <!-- Google tag (gtag.js) -->
     <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} is:inline></script>
-    <script is:inline define:vars={{ GA_MEASUREMENT_ID }}>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", GA_MEASUREMENT_ID);
-    </script>
+    <script
+      is:inline
+      set:html={`window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag("js", new Date());
+gtag("config", ${JSON.stringify(GA_MEASUREMENT_ID)});`}
+    />
 
     <!-- Google AdSense: yalnızca yayıncı kimliği tanımlandığında yüklenir -->
     {ADSENSE_CLIENT && (
