@@ -51,6 +51,13 @@ jobs:
             -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
             "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID/deploys?per_page=3" | head -c 900; echo
 
+          echo "--- API ile draft deploy olusturma denemesi (asil hata govdesi) ---"
+          curl -sS -w "\nHTTP %{http_code}\n" -X POST \
+            -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{"draft": true}' \
+            "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID/deploys" | head -c 1200; echo
+
           echo "--- netlify-cli deploy --debug (omanli) ---"
           cd site || exit 1
           npx --yes netlify-cli@latest deploy \
