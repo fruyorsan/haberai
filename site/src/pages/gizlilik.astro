@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import { CONTACT_EMAIL } from "../lib/site-meta.js";
 
 const updated = "15 Ekim 2026";
 ---
@@ -102,7 +103,7 @@ const updated = "15 Ekim 2026";
 
     <h2>9. İletişim</h2>
     <p>
-      Sorularınız için: <a href="mailto:info@haberai.netlify.app">info@haberai.netlify.app</a>
+      Sorularınız için: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
     </p>
   </div>
 </Base>

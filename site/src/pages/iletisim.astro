@@ -1,12 +1,13 @@
 ---
 import Base from "../layouts/Base.astro";
+import { CONTACT_EMAIL } from "../lib/site-meta.js";
 ---
 
 <Base title="İletişim — HaberAI" description="HaberAI ile iletişime geçin.">
   <div class="container prose">
     <h1>İletişim</h1>
     <p>Görüş, öneri ve haber ihbarlarınız için bize ulaşabilirsiniz.</p>
-    <p><strong>E-posta:</strong> <a href="mailto:info@haberai.netlify.app">info@haberai.netlify.app</a></p>
+    <p><strong>E-posta:</strong> <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
     <p class="muted">Bu sayfadaki bilgileri kendi iletişim bilgilerinle güncellemeyi unutma.</p>
   </div>
 </Base>

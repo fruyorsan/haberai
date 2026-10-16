@@ -1,6 +1,5 @@
 import { getArticles, siteName } from "../lib/articles.js";
-
-const SITE = "https://fruyorsan.github.io";
+import { siteOrigin } from "../lib/site-meta.js";
 
 function esc(s = "") {
   return String(s)
@@ -10,7 +9,8 @@ function esc(s = "") {
     .replace(/"/g, "&quot;");
 }
 
-export function GET() {
+export function GET({ site }) {
+  const SITE = siteOrigin(site);
   const items = getArticles()
     .slice(0, 50)
     .map(
