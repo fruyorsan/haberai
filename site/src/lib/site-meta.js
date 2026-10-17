@@ -60,6 +60,7 @@ export const ADSENSE_CERT = "f08c47fec0942fa0";
 /** Google Search Console doğrulama kodları (meta etiketi). */
 export const GOOGLE_SITE_VERIFICATIONS = [
   "ggR0XXQqS9LfHsa8LHxOs2uZsTjEL__uia6pYrA7X6I",
+  "VH0iGNX29HpGO68Xp4s9CPmbvpF98xZtKRmpJ5wO6d0",
   process.env.GOOGLE_SITE_VERIFICATION || "0txYR2AQdV9F9DdPhBtDSxs4PWnFvNyBUBXXix7m2Ck",
 ].filter(Boolean);
 export const GOOGLE_SITE_VERIFICATION = GOOGLE_SITE_VERIFICATIONS[0];
