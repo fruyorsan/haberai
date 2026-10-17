@@ -1,0 +1,246 @@
+name: Haber Hatti
+
+on:
+  # NOT: GitHub'in kendi cron'u bu depoda 2-4 saatte bir calisiyor (olculdu),
+  # bu yuzden 5 dakikalik kadans "zincir" ile saglaniyor: her calismanin sonunda
+  # "tetik" dalina deploy key ile bir push yapilir ve bu, BIR SONRAKI calismayi
+  # baslatir. Cron yalnizca zincir herhangi bir sebeple koparsa yedek olarak kalir.
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch: {} # elle calistirma
+  push:
+    # main: kod/site degisikligi -> aninda derle + yayinla
+    # tetik: 5 dakikalik zincir halkasi -> sadece topla
+    branches: [main, tetik]
+
+# Ayni ref uzerinde ayni anda iki calistirma olmasin (git cakismasini onler).
+# Grup ref'e gore ayrilir: zincir halkalari (tetik) birbirini beklerken,
+# main'e yapilan kod/site push'lari kuyrukta iptal edilip kaybolmasin.
+concurrency:
+  group: haber-hatti-${{ github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      # Zincir halkasi "tetik" dalinda tetiklenir; icerik her zaman main'den alinir.
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          # Netlify adimi son birkac commit'e bakarak site kodu degisip degismedigini
+          # anliyor; birkac commit gecmis gerekiyor.
+          fetch-depth: 4
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: "npm"
+          cache-dependency-path: |
+            package-lock.json
+            site/package-lock.json
+
+      - name: Hattin bagimliliklarini kur
+        run: npm ci
+
+      - name: Haberleri topla ve AI ile isle
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: npm run collect
+
+      # Yeni haberleri sosyal kanallara paylasir. Anahtar yoksa hata vermez,
+      # sessizce atlar. data/social.json sonraki adimda commit'e girer.
+      - name: Sosyal paylasim
+        continue-on-error: true
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SHARE_WEBHOOK_URL: ${{ secrets.SHARE_WEBHOOK_URL }}
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+        run: npm run share
+
+      # Yeni haberleri Bing/Yandex'e aninda bildirir (IndexNow). Google bu
+      # protokolu desteklemez; orada sitemap + Search Console kullanilir.
+      # Gonderilenler data/indexnow.json'da tutulur, sonraki adimda commit'e girer.
+      - name: IndexNow bildirimi (Bing/Yandex)
+        continue-on-error: true
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: npm run indexnow
+
+      # Web push bildirimi (OneSignal): son dakika haberleri tum abonelere,
+      # takip edilen konular yalnizca o konuyu izleyenlere gider. Anahtarlar
+      # tanimli degilse sessizce atlar. Gonderilenler data/bildirim.json'da
+      # tutulur (sonraki adimda commit'e girer) → ayni haber iki kez gitmez.
+      - name: Push bildirimi (OneSignal)
+        continue-on-error: true
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          ONESIGNAL_APP_ID: ${{ vars.ONESIGNAL_APP_ID }}
+          ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
+        run: npm run bildirim
+
+      - name: Degisiklikleri kaydet
+        id: commit
+        run: |
+          git config user.name "haber-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "Yeni veri yok."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -m "chore: veri guncellemesi ($(date -u +%Y-%m-%dT%H:%MZ))"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+          # Uzak ilerlemisse cakismasiz birlestir; taze verimiz kazanir
+          git fetch origin main
+          git merge --no-edit -X ours origin/main
+          git push
+
+      - name: Site bagimliliklarini kur
+        if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+        run: cd site && npm ci
+
+      # Ozel alan adi YALNIZCA repoda CUSTOM_DOMAIN degiskeni tanimliysa yazilir.
+      # Boylece alan adi DNS'te yayina girmeden CNAME dosyasi eklenip siteyi
+      # erisilemez hale getirmez (github.io → cozulemeyen alan adi yonlendirmesi).
+      # Yayina alma: gh variable set CUSTOM_DOMAIN --body "haberinai.site"
+      - name: Ozel alan adi (hazirsa CNAME yaz)
+        if: (steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')) && vars.CUSTOM_DOMAIN != ''
+        env:
+          CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
+        run: printf '%s\n' "$CUSTOM_DOMAIN" > site/public/CNAME
+
+      - name: Siteyi derle
+        if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+        env:
+          # Bos ise varsayilan, sitenin yayinda oldugu adrestir (fruyorsan.github.io).
+          # Ozel alan adi icin: gh variable set SITE_URL --body "https://haberinai.site"
+          SITE_URL: ${{ vars.SITE_URL }}
+          # AdSense: yayinci kimligi + reklam birimi kimlikleri. Bos ise reklam
+          # kodu ve reklam alanlari hic basilmaz.
+          ADSENSE_CLIENT: ${{ vars.ADSENSE_CLIENT }}
+          ADSENSE_SLOT_MAKALE: ${{ vars.ADSENSE_SLOT_MAKALE }}
+          ADSENSE_SLOT_MAKALE2: ${{ vars.ADSENSE_SLOT_MAKALE2 }}
+          ADSENSE_SLOT_LISTE: ${{ vars.ADSENSE_SLOT_LISTE }}
+          # Web push (bildirim) zili: App ID anonim bir değerdir (gizli değil).
+          # Boşsa zil düğmesi ve "kategoriyi takip et" düğmeleri hiç basılmaz.
+          ONESIGNAL_APP_ID: ${{ vars.ONESIGNAL_APP_ID }}
+        run: cd site && npm run build
+
+      # Site kodu degisip degismedigini anla (Netlify buna gore yayin yapar).
+      # Hattin 5 dk'lik bot guncellemeleri (yalnizca data/) Netlify'i tetiklemesin:
+      # ucretsiz planda prod deploy basina 15 credit var (ayda 300), bot commitleri
+      # icin credit yakmak anlamasiz. Kod/tasarim/site akisi degisince yayinlanir.
+      - name: Site kodu degisti mi?
+        id: sitedegisti
+        run: |
+          set -eu
+          # workflow_dispatch (elle calistirma) → daima yayinla
+          if [ "${GITHUB_EVENT_NAME}" = "workflow_dispatch" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # Push: bot her turda ust uste tek tek data/ commiti atar (gather
+          # adiminda ekstra commit olusmus olabilir). Son iki commit de
+          # yalnizca data/ ise site kodu degismemis sayilir; kod/tasarim
+          # degisikligi gecmis herhangi bir yerde varsa yayinlanacak.
+          # Gecemis cok kisa (komut bulunamazsa) → emniyetli taraf: yayinla.
+          if ! git rev-parse --verify HEAD~2 >/dev/null 2>&1; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          data_only() {
+            if git diff --name-only "$1" "$2" | grep -Ev '^data/' >/dev/null; then
+              return 1   # data disinda dosya var → kod degisti
+            fi
+            return 0    # yalnizca data/
+          }
+          if data_only HEAD~2 HEAD~1 && data_only HEAD~1 HEAD; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: GitHub Pages'e yayinla
+        if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.PAGES_DEPLOY_KEY }}
+          external_repository: fruyorsan/fruyorsan.github.io
+          publish_branch: main
+          publish_dir: ./site/dist
+          force_orphan: true
+          user_name: haber-bot
+          user_email: bot@users.noreply.github.com
+          commit_message: "yayin: ${{ github.run_number }}"
+
+      # Netlify'e yayinla (haberai.netlify.app) — ARTIK YEDEK.
+      # ASIL YAYIN: GitHub Pages (yukaridaki adim) → https://fruyorsan.github.io
+      #
+      # DURUM (16.10.2026): Netlify hesabinin dagitim kredisi bitti; hesap
+      # "uretim dagitimlari duraklatildi" durumunda. Bu yuzden bu adim simdilik
+      # 403 (Forbidden) doner. Kritik degil: continue-on-error ile turu
+      # dusurmez ve kredi yenilendiginde/hizmet yukseltildiginde kendiliginden
+      # yeniden yayina alir.
+      - name: Netlify'e yayinla (haberai.netlify.app)
+        continue-on-error: true
+        if: steps.sitedegisti.outputs.changed == 'true' && (steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main'))
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          node .github/scripts/netlify-deploy.mjs site/dist "haber hatti: ${{ github.run_number }}"
+
+      # --- 5 DAKIKALIK KADANS: ZINCIR HALKKASI ---
+      # GitHub'in kendi cron'u bu depoda 2-4 saatte bir calisiyor (olculdu).
+      # Bu adim her calismanin sonunda "tetik" dalina bir push yapar. Push bir
+      # deploy key ile yapildigi icin yeni bir calisma tetikler (GITHUB_TOKEN ile
+      # yapilan push'lar yeni calisma baslatmaz). Zincir halkasi ise tur arasini
+      # ~5 dakikaya tamamlamak icin once bekler. Cron yalnizca yedek.
+      - name: Zinciri surdur (5 dk kadans)
+        if: always() && !cancelled()
+        env:
+          CHAIN_KEY: ${{ secrets.CHAIN_DEPLOY_KEY }}
+        run: |
+          set -u
+          if [ "${GITHUB_EVENT_NAME}" = "push" ] && [ "${GITHUB_REF}" = "refs/heads/tetik" ]; then
+            sleep 240   # tur arasi ~5 dakika olsun
+          fi
+          # Sunucudaki SSH ajanini kapat: yalnizca zincir anahtari kullanilsin
+          # (aksi halde Pages adiminin ajan anahtari devreye girip izin hatasi veriyor).
+          unset SSH_AUTH_SOCK
+          mkdir -p ~/.ssh
+          printf '%s\n' "$CHAIN_KEY" > ~/.ssh/id_zincir
+          chmod 600 ~/.ssh/id_zincir
+          ssh-keygen -lf ~/.ssh/id_zincir
+          ssh-keyscan -H github.com >> ~/.ssh/known_hosts 2>/dev/null || true
+          export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/id_zincir -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
+          rm -rf /tmp/zincir && mkdir -p /tmp/zincir && cd /tmp/zincir
+          git init -q
+          git config user.name "haber-bot"
+          git config user.email "bot@users.noreply.github.com"
+          date -u +%Y-%m-%dT%H:%M:%SZ > tetik.txt
+          # Is akisi dosyasi da bu dalda bulunmali: GitHub tetikleyiciyi push
+          # edilen dalda arar, yoksa push yeni bir calisma baslatmaz.
+          mkdir -p .github/workflows
+          cp "$GITHUB_WORKSPACE/.github/workflows/pipeline.yml" .github/workflows/pipeline.yml
+          git add -A
+          git commit -qm "zincir: $(date -u +%Y-%m-%dT%H:%MZ)"
+          git branch -M tetik
+          git remote add origin git@github.com:fruyorsan/haberai.git
+          git push -q --force origin tetik
+          echo "zincir gonderildi -> $(date -u +%Y-%m-%dT%H:%MZ)"
