@@ -1,0 +1,266 @@
+---
+// ShiftDelete tarzı "okumaya devam": bir haberin ardından benzer haberlerin
+// TAM içeriği (başlık, görsel, özet, maddeler, gövde, AI yorumu, kaynak) akar.
+// Böylece okur hiç "haber bitti" duvarına çarpmaz; zincir birkaç haberde durur.
+import { imageUrl, formatDate, publishedISO } from "../lib/articles.js";
+
+const { article, index = 0 } = Astro.props;
+const body = Array.isArray(article.body) ? article.body.filter(Boolean) : [];
+const keyPoints = Array.isArray(article.keyPoints) ? article.keyPoints.filter(Boolean) : [];
+const date = formatDate(publishedISO(article));
+const sayfa = `/haber/${article.slug}/`;
+// Kapakla aynı olmayan bir haber içi fotoğraf (varsa) da gösterilir.
+const ekGorsel = (Array.isArray(article.images) ? article.images : []).find(
+  (u) => typeof u === "string" && /^https?:\/\//i.test(u) && u !== article.image
+);
+const errYok = "this.closest('figure').remove()";
+const gorselHata = `if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.src=this.dataset.orig}else{${errYok}}`;
+---
+
+<article class="devam" id={`devam-${index + 1}`}>
+  <div class="devam__bar">
+    <span class="devam__spark" aria-hidden="true">✦</span>
+    <span class="devam__label">Okumaya Devam Et</span>
+    <span class="devam__n" aria-hidden="true">{index + 1}</span>
+  </div>
+
+  <a class="devam__cat" href={`/kategori/${article.categorySlug}/`}>{article.category}</a>
+  <h2 class="devam__title"><a href={sayfa}>{article.title}</a></h2>
+  <div class="devam__meta">
+    <time datetime={publishedISO(article)}>{date}</time>
+    <span class="devam__dot">•</span>
+    <span>{article.source}</span>
+  </div>
+
+  {article.image && (
+    <figure class="devam__media">
+      <img
+        src={imageUrl(article.image, 1000)}
+        data-orig={article.image}
+        alt={article.title}
+        width="1000"
+        height="563"
+        loading="lazy"
+        decoding="async"
+        referrerpolicy="no-referrer"
+        onerror={gorselHata}
+      />
+      <figcaption>Fotoğraf: {article.source}</figcaption>
+    </figure>
+  )}
+
+  {article.summary && <p class="devam__lead">{article.summary}</p>}
+
+  {keyPoints.length > 0 && (
+    <ul class="devam__points">
+      {keyPoints.map((k) => <li class="devam__point">{k}</li>)}
+    </ul>
+  )}
+
+  {body.map((p) => <p class="devam__p">{p}</p>)}
+
+  {ekGorsel && (
+    <figure class="devam__media devam__media--ek">
+      <img
+        src={imageUrl(ekGorsel, 1000)}
+        data-orig={ekGorsel}
+        alt={`${article.title} — haber fotoğrafı`}
+        width="1000"
+        height="563"
+        loading="lazy"
+        decoding="async"
+        referrerpolicy="no-referrer"
+        onerror={gorselHata}
+      />
+      <figcaption>Fotoğraf: {article.source}</figcaption>
+    </figure>
+  )}
+
+  {article.comment && (
+    <div class="devam__ai">
+      <span class="devam__ai-badge">AI YORUMU</span>
+      <p>{article.comment}</p>
+    </div>
+  )}
+
+  <p class="devam__src">
+    Kaynak: <a href={article.sourceUrl} target="_blank" rel="noopener nofollow">{article.source}</a>
+    <a class="devam__more" href={sayfa}>Haberin tam sayfası →</a>
+  </p>
+</article>
+
+<style>
+  .devam {
+    margin: 30px 0 0;
+  }
+  .devam__bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .devam__spark {
+    color: var(--brand);
+  }
+  .devam__label {
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brand);
+  }
+  .devam__n {
+    margin-left: auto;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .devam__cat {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--red-grad);
+    padding: 4px 10px;
+    border-radius: 7px;
+    margin-bottom: 12px;
+  }
+  .devam__title {
+    font-size: clamp(1.25rem, 3.4vw, 1.6rem);
+    line-height: 1.25;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 10px;
+    text-wrap: balance;
+  }
+  .devam__title a {
+    color: var(--heading);
+  }
+  .devam__title a:hover {
+    color: var(--brand);
+  }
+  .devam__meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    color: var(--muted);
+    font-size: 0.84rem;
+    margin-bottom: 18px;
+  }
+  .devam__dot {
+    opacity: 0.5;
+  }
+  .devam__media {
+    margin: 0 0 20px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--bg-soft);
+  }
+  .devam__media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+  .devam__media figcaption {
+    font-size: 0.74rem;
+    color: var(--muted);
+    padding: 8px 2px 0;
+  }
+  .devam__lead {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    font-weight: 500;
+    color: var(--text);
+    margin: 0 0 16px;
+    text-wrap: pretty;
+  }
+  .devam__points {
+    list-style: none;
+    margin: 0 0 18px;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--red);
+    border-radius: 12px;
+    background: var(--surface-2);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .devam__point {
+    position: relative;
+    padding-left: 16px;
+    font-size: 0.98rem;
+    line-height: 1.5;
+    color: var(--text-2);
+    text-wrap: pretty;
+  }
+  .devam__point::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--brand);
+  }
+  .devam__p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-2);
+    margin: 0 0 14px;
+  }
+  .devam__ai {
+    margin: 20px 0;
+    padding: 18px 20px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #14161a 0%, #1e222b 100%);
+    color: #e6eaf1;
+  }
+  .devam__ai-badge {
+    display: inline-block;
+    background: var(--red-grad);
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    padding: 4px 9px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+  .devam__ai p {
+    margin: 0;
+    font-size: 1.02rem;
+    line-height: 1.72;
+  }
+  .devam__src {
+    font-size: 0.84rem;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    align-items: center;
+  }
+  .devam__src a {
+    color: var(--brand);
+    font-weight: 600;
+  }
+  .devam__more {
+    margin-left: auto;
+  }
+  @media (max-width: 640px) {
+    .devam__more {
+      margin-left: 0;
+    }
+  }
+</style>
