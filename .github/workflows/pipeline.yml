@@ -113,6 +113,7 @@ jobs:
           # kodu ve reklam alanlari hic basilmaz.
           ADSENSE_CLIENT: ${{ vars.ADSENSE_CLIENT }}
           ADSENSE_SLOT_MAKALE: ${{ vars.ADSENSE_SLOT_MAKALE }}
+          ADSENSE_SLOT_MAKALE2: ${{ vars.ADSENSE_SLOT_MAKALE2 }}
           ADSENSE_SLOT_LISTE: ${{ vars.ADSENSE_SLOT_LISTE }}
         run: cd site && npm run build
 

@@ -145,17 +145,22 @@ yoksa sitede ne reklam kodu ne de boş reklam kutusu görünür. Onay geldiğind
 değişikliği gerekmez, sadece depo değişkenlerini tanımla:
 
 ```bash
-gh variable set ADSENSE_CLIENT     --body "ca-pub-XXXXXXXXXXXXXXXX"
-gh variable set ADSENSE_SLOT_MAKALE --body "<haber içi birim no>"
-gh variable set ADSENSE_SLOT_LISTE  --body "<liste altı birim no>"
+gh variable set ADSENSE_CLIENT      --body "ca-pub-XXXXXXXXXXXXXXXX"
+gh variable set ADSENSE_SLOT_MAKALE  --body "<haber içi birim no>"
+gh variable set ADSENSE_SLOT_MAKALE2 --body "<gövde ortası birim no>"
+gh variable set ADSENSE_SLOT_LISTE   --body "<liste altı birim no>"
 gh workflow run pipeline.yml
 ```
 
 | Yerleşim | Sayfa | Değişken |
 | --- | --- | --- |
-| Haber içi (AI yorumundan sonra) | `/haber/<slug>/` | `ADSENSE_SLOT_MAKALE` |
+| Haber içi 1 (AI yorumundan sonra) | `/haber/<slug>/` | `ADSENSE_SLOT_MAKALE` |
+| Gövde ortası ("in-article", 2. paragraftan sonra) | `/haber/<slug>/` | `ADSENSE_SLOT_MAKALE2` |
+| Liste altı | ana sayfa + `/haberler/`, `/kategori/…`, `/etiket/…` sayfaları | `ADSENSE_SLOT_LISTE` |
 | Haber altı (ilgili haberlerden sonra) | `/haber/<slug>/` | `ADSENSE_SLOT_LISTE` |
-| Liste altı | ana sayfa | `ADSENSE_SLOT_LISTE` |
+
+`ADSENSE_SLOT_MAKALE2` için panelde **İçerik içi (In-article)** tipinde birim oluştur;
+`ADSENSE_SLOT_LISTE` için **Görüntülü (Display)** birim yeterlidir.
 
 `/ads.txt` dosyası da aynı kimlikten üretilir: kimlik tanımlıysa Google kaydı yazılır,
 tanımsızsa açıklama satırı kalır. AdSense panelindeki **Otomatik reklamlar** açıksa

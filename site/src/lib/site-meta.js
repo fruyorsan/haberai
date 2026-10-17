@@ -47,6 +47,8 @@ export const ADSENSE_CLIENT = process.env.ADSENSE_CLIENT || "";
 /** Reklam birimi (slot) kimlikleri; AdSense panelinden alınır. */
 export const ADSENSE_SLOTS = {
   makale: process.env.ADSENSE_SLOT_MAKALE || "",
+  /** Gövde ortası ("in-article" birimi; ShiftDelete tarzı içerik içi yerleşim) */
+  makale2: process.env.ADSENSE_SLOT_MAKALE2 || "",
   liste: process.env.ADSENSE_SLOT_LISTE || "",
 };
 

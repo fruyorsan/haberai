@@ -2,6 +2,8 @@
 import Base from "../../layouts/Base.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
 import Pagination from "../../components/Pagination.astro";
+import AdSlot from "../../components/AdSlot.astro";
+import { ADSENSE_SLOTS } from "../../lib/site-meta.js";
 import { getTags, paginate, PER_PAGE } from "../../lib/articles.js";
 
 export function getStaticPaths() {
@@ -29,6 +31,7 @@ const { items, current, totalPages: pages, total } = paginate(tag.articles, 1, P
       {items.map((a, i) => <ArticleCard article={a} index={i} />)}
     </div>
 
+    {ADSENSE_SLOTS.liste && <AdSlot slot={ADSENSE_SLOTS.liste} label="Sponsorlu" />}
     <Pagination current={current} totalPages={pages} base={`/etiket/${tag.slug}/`} />
 
     <p class="tag-foot">

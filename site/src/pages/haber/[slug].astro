@@ -141,7 +141,15 @@ const breadcrumbLd = {
         {body.length > 0 && (
           <section class="content">
             <h2 class="content__title">Haberin Detayı</h2>
-            {body.map((p) => <p class="content__p">{p}</p>)}
+            {body.map((p, i) => (
+              <Fragment>
+                <p class="content__p">{p}</p>
+                {/* Gövde ortası reklamı: 2. paragraftan sonra, yeterince uzun haberlerde (ShiftDelete tarzı in-article) */}
+                {i === 1 && body.length >= 4 && (
+                  <AdSlot slot={ADSENSE_SLOTS.makale2} format="fluid" layout="in-article" label="Sponsorlu" />
+                )}
+              </Fragment>
+            ))}
           </section>
         )}
 

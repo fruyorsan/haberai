@@ -2,6 +2,8 @@
 import Base from "../../../layouts/Base.astro";
 import ArticleCard from "../../../components/ArticleCard.astro";
 import Pagination from "../../../components/Pagination.astro";
+import AdSlot from "../../../components/AdSlot.astro";
+import { ADSENSE_SLOTS } from "../../../lib/site-meta.js";
 import { getArticles, getCategories, paginate, PER_PAGE, totalPages } from "../../../lib/articles.js";
 
 // Kategori sayfaları (2. sayfa ve sonrası). 1. sayfa /kategori/<slug>/ adresindedir.
@@ -41,6 +43,7 @@ const { items, current, totalPages: pages, total } = paginate(all, page, PER_PAG
       {items.map((a, i) => <ArticleCard article={a} index={i} />)}
     </div>
 
+    {ADSENSE_SLOTS.liste && <AdSlot slot={ADSENSE_SLOTS.liste} label="Sponsorlu" />}
     <Pagination current={current} totalPages={pages} base={`/kategori/${category.slug}/`} />
   </div>
 </Base>

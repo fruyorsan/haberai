@@ -11,7 +11,7 @@ import { ADSENSE_CLIENT } from "../lib/site-meta.js";
 //   gh variable set ADSENSE_CLIENT --body "ca-pub-XXXXXXXXXXXXXXXX"
 //   gh variable set ADSENSE_SLOT_MAKALE --body "1234567890"   (haber içi)
 //   gh variable set ADSENSE_SLOT_LISTE  --body "0987654321"   (liste altı)
-const { slot, label = "Reklam", format = "auto" } = Astro.props;
+const { slot, label = "Reklam", format = "auto", layout } = Astro.props;
 const birim = String(slot || "").trim();
 const aktif = Boolean(ADSENSE_CLIENT && birim);
 ---
@@ -26,6 +26,7 @@ const aktif = Boolean(ADSENSE_CLIENT && birim);
       data-ad-slot={birim}
       data-ad-format={format}
       data-full-width-responsive="true"
+      data-ad-layout={layout || undefined}
     ></ins>
     <script is:inline>{`(adsbygoogle = window.adsbygoogle || []).push({});`}</script>
   </aside>
@@ -34,7 +35,12 @@ const aktif = Boolean(ADSENSE_CLIENT && birim);
 <style>
   .ad {
     margin: 26px 0;
-    min-height: 0;
+    /* Reklam slotu tanımlandıysa yükleme öncesi runini ayır (CLS'yi azaltır);
+       slot tanımsızsa bu bileşen hiç basılmadığı için boş kutu oluşmaz. */
+    min-height: 120px;
+  }
+  .ad ins {
+    margin-inline: auto;
   }
   .ad__etiket {
     display: block;
