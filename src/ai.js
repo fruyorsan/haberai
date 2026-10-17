@@ -78,6 +78,7 @@ Aşağıdaki JSON alanlarını TÜRKÇE üret:
   VURUCULUK: en çarpıcı somut ayrıntıyı öne al (marka, kişi, karar, sayı, özellik adı); edilgen ve jenerik
   kalıplar yerine aktif, net bir fiil kullan ("duyurdu", "kaldırıldı", "zam geldi", "ücretsiz oldu").
   Başlığı okuyan ne olduğunu anlasın; merak uyandır ama içeriği abartıp yanıltma.
+  Başlığın ve her cümlenin İLK HARFİ BÜYÜK olsun; özel adların yazımını koru, tümü büyük harfle bağırma.
 - slug: title için URL dostu kimlik; küçük harf, tire ile, Türkçe karakter ve noktalama YOK.
 - summary: Haberin ÖZETİ. 2-3 cümle (yaklaşık 35-55 kelime). İlk cümle TEK BAŞINA haberi anlatsın: okur yalnızca
   özeti okuyup haberi anlamalı. Sonraki cümleler en kritik ayrıntıyı ve sonucu versin. Nötr kal: sadece "ne oldu,
