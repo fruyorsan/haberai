@@ -110,6 +110,33 @@ olan eski haberleri otomatik yeniler (tur başına `BACKFILL_LIMIT=4` haber). Es
 için beklemeden başlatmak istersen: GitHub → **Actions** → **Arsiv Yenileme** →
 **Run workflow**. Workflow `data/` değişikliklerini commit edip siteyi yeniden yayınlar.
 
+### Alan adı (haberinai.com.tr)
+
+Site `https://haberinai.com.tr` adresine göre yayınlanır. Kanonik adresler, RSS, site
+haritaları ve `robots.txt` buradan üretilir. CNAME dosyası ise **yalnızca** repoda
+`CUSTOM_DOMAIN` Actions değişkeni tanımlıysa yazılır — alan adı DNS'te yayına girmeden
+CNAME eklenirse GitHub Pages, `fruyorsan.github.io` adresini çözülemeyen alan adına
+yönlendirir ve site erişilemez olur.
+
+Kayıt sağlayıcıya girilecek DNS kayıtları:
+
+| Tür | Ad | Değer |
+| --- | --- | --- |
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| CNAME | `www` | `fruyorsan.github.io` |
+
+Durum kontrolü ve yayına alma:
+
+```bash
+npm run domain              # DNS kayıtlarını ve mevcut durumu yazar
+npm run domain -- --acikla   # alan adı çözülüyorsa yayına alır (CNAME + SITE_URL)
+```
+
+Geri alma: `gh variable delete CUSTOM_DOMAIN` ve GitHub Pages ayarlarından alan adını kaldır.
+
 ## Sosyal Dağıtım
 
 Yeni yayınlanan haberleri sosyal kanallara **otomatik** paylaşan opsiyonel bir adımdır.
@@ -137,7 +164,7 @@ Yeni yayınlanan haberleri sosyal kanallara **otomatik** paylaşan opsiyonel bir
 | Bluesky | `BLUESKY_HANDLE`, `BLUESKY_APP_PASSWORD` | Settings → App Passwords |
 | X / Twitter | `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, `X_ACCESS_SECRET` | developer.x.com (Read+Write izni) |
 
-İsteğe bağlı: `SITE_URL` (link adresi, varsayılan `https://fruyorsan.github.io`),
+İsteğe bağlı: `SITE_URL` (link adresi, varsayılan `https://haberinai.com.tr`),
 `SHARE_MAX_PER_RUN` (çalıştırma başına paylaşım sayısı).
 
 Generic webhook'a gönderilen gövde:
