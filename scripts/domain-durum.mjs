@@ -25,7 +25,40 @@
 // ==========================================================================
 
 import { execFileSync } from "node:child_process";
-import { resolve4, resolve6, resolveCname } from "node:dns/promises";
+
+// --------------------------------------------------------------------------
+// DNS sorgusu: DNS-over-HTTPS
+// Yerel modem/ISS DNS'i eski kaydi saatlerce onbelleginde tutabiliyor, bazi
+// ISS'ler UDP:53 sorgularini yonlendiriyor. "Dunya ne goruyor" sorusunun
+// cevabi icin HTTPS uzerinden genel cozumleyicilere sorulur.
+// Degistirmek icin:  DOH_SUNUCU=https://dns.google/resolve npm run domain
+// --------------------------------------------------------------------------
+const DOH_SUNUCULARI = [
+  process.env.DOH_SUNUCU || "https://cloudflare-dns.com/dns-query",
+  "https://dns.google/resolve",
+];
+const TIP_KODU = { A: 1, NS: 2, CNAME: 5, AAAA: 28 };
+
+async function dohSorgu(ad, tip) {
+  let sonHata = null;
+  for (const sunucu of DOH_SUNUCULARI) {
+    try {
+      const r = await fetch(`${sunucu}?name=${encodeURIComponent(ad)}&type=${tip}`, {
+        headers: { Accept: "application/dns-json" },
+        signal: AbortSignal.timeout(8000),
+      });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const j = await r.json();
+      const kod = TIP_KODU[tip];
+      return (j.Answer || [])
+        .filter((a) => a.type === kod)
+        .map((a) => String(a.data).replace(/\.$/, ""));
+    } catch (e) {
+      sonHata = e;
+    }
+  }
+  throw sonHata ?? new Error("doh-basarisiz");
+}
 
 // Alan adi: DOMAIN=... ortam degiskeni ya da --domain=... ile degistirilebilir.
 const DOMAIN = (
@@ -48,14 +81,9 @@ const gh = (...args) => {
   return out.trim();
 };
 
-const tryResolve = async (fn, host) => {
+const tryResolve = async (fn) => {
   try {
-    // NOT: Bazi modem/ISS DNS'leri var olmayan kayitlarda NXDOMAIN yerine
-    // sessizce bekliyor; bu yuzden her sorguya kisa bir zaman asimi koyuyoruz.
-    return await Promise.race([
-      fn(host),
-      new Promise((_, rej) => setTimeout(() => rej(new Error("dns-timeout")), 8000)),
-    ]);
+    return await fn();
   } catch {
     return null;
   }
@@ -66,8 +94,8 @@ async function main() {
 
   console.log(`\n=== ALAN ADI DURUMU: ${DOMAIN} ===\n`);
 
-  const hedefA = (await tryResolve(resolve4, PAGES_HOST)) ?? [];
-  const hedefAAAA = (await tryResolve(resolve6, PAGES_HOST)) ?? [];
+  const hedefA = (await tryResolve(() => dohSorgu(PAGES_HOST, "A"))) ?? [];
+  const hedefAAAA = (await tryResolve(() => dohSorgu(PAGES_HOST, "AAAA"))) ?? [];
 
   console.log("GitHub Pages'in istedigi DNS kayitlari (kayit sağlayıcına girilecek):");
   console.log(`  A     @    ${hedefA.join("\n  A     @    ")}`);
@@ -79,10 +107,10 @@ async function main() {
   console.log("  • Natro'da DNS kaydı düzenlemek Premium DNS hizmetine bağlı;");
   console.log("    ücretsiz yol: nameserver'ları Cloudflare'e çevirip kayıtları orada girmek.\n");
 
-  const domeA = (await tryResolve(resolve4, DOMAIN)) ?? [];
-  const domeAAAA = (await tryResolve(resolve6, DOMAIN)) ?? [];
-  const wwwCname = (await tryResolve(resolveCname, `www.${DOMAIN}`)) ?? [];
-  const wwwA = (await tryResolve(resolve4, `www.${DOMAIN}`)) ?? [];
+  const domeA = (await tryResolve(() => dohSorgu(DOMAIN, "A"))) ?? [];
+  const domeAAAA = (await tryResolve(() => dohSorgu(DOMAIN, "AAAA"))) ?? [];
+  const wwwCname = (await tryResolve(() => dohSorgu(`www.${DOMAIN}`, "CNAME"))) ?? [];
+  const wwwA = (await tryResolve(() => dohSorgu(`www.${DOMAIN}`, "A"))) ?? [];
 
   const aKaydiDogru =
     domeA.length > 0 && hedefA.length > 0 && domeA.every((ip) => hedefA.includes(ip));
