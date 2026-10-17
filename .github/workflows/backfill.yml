@@ -58,8 +58,18 @@ jobs:
         if: steps.commit.outputs.changed == 'true'
         run: cd site && npm ci
 
+      # Ozel alan adi yalnizca CUSTOM_DOMAIN degiskeni tanimliysa yazilir
+      # (bkz. pipeline.yml aciklamasi).
+      - name: Ozel alan adi (hazirsa CNAME yaz)
+        if: steps.commit.outputs.changed == 'true' && vars.CUSTOM_DOMAIN != ''
+        env:
+          CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
+        run: printf '%s\n' "$CUSTOM_DOMAIN" > site/public/CNAME
+
       - name: Siteyi derle
         if: steps.commit.outputs.changed == 'true'
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
         run: cd site && npm run build
 
       - name: GitHub Pages'e yayinla

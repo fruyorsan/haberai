@@ -1,9 +1,20 @@
 // Site geneli kimlik bilgileri tek yerden yönetilir.
 //
-// ALAN ADI ALINDIĞINDA YAPILACAKLAR (başka hiçbir dosyaya dokunmak gerekmez):
-//   1) astro.config.mjs → "site" değerini yeni adres yap
-//   2) site/public/CNAME dosyasına adresi yaz (GitHub Pages özel alan adı)
-// Kanonik adresler, RSS, site haritaları ve robots.txt bu değerden türetilir.
+// ALAN ADI (haberinai.com.tr) DURUMU:
+//   Kod varsayılanı alan adıdır; kanonik adresler, RSS, site haritaları ve
+//   robots.txt buradan (astro.config.mjs → site) türetilir.
+//
+//   CNAME dosyası ise yalnızca repoda CUSTOM_DOMAIN GitHub Actions değişkeni
+//   tanımlıysa yazılır. Bu bilerek böyledir: alan adı DNS'te yayına girmeden
+//   CNAME eklenirse GitHub Pages, fruyorsan.github.io adresini çözülemeyen
+//   alan adına yönlendirir ve site erişilemez olur.
+//
+// YAYINA ALMA (DNS kayıtları eklendikten ve alan adı çözülmeye başladıktan
+// sonra, tek adım):
+//   node scripts/domain-durum.mjs --acikla
+// Ya da elle: gh variable set CUSTOM_DOMAIN --body "haberinai.com.tr"
+//             gh workflow run pipeline.yml
+// Geri alma: gh variable delete CUSTOM_DOMAIN  (+ Pages ayarından alan adını kaldır)
 
 /**
  * Astro'nun `site` değerinden sonda eğik çizgi olmayan kök adresi üretir.

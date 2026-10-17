@@ -93,8 +93,21 @@ jobs:
         if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
         run: cd site && npm ci
 
+      # Ozel alan adi YALNIZCA repoda CUSTOM_DOMAIN degiskeni tanimliysa yazilir.
+      # Boylece alan adi DNS'te yayina girmeden CNAME dosyasi eklenip siteyi
+      # erisilemez hale getirmez (github.io → cozulemeyen alan adi yonlendirmesi).
+      # Yayina alma: gh variable set CUSTOM_DOMAIN --body "haberinai.com.tr"
+      - name: Ozel alan adi (hazirsa CNAME yaz)
+        if: (steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')) && vars.CUSTOM_DOMAIN != ''
+        env:
+          CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
+        run: printf '%s\n' "$CUSTOM_DOMAIN" > site/public/CNAME
+
       - name: Siteyi derle
         if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+        env:
+          # Bos ise astro.config.mjs icindeki varsayilan (haberinai.com.tr) kullanilir.
+          SITE_URL: ${{ vars.SITE_URL }}
         run: cd site && npm run build
 
       # Site kodu degisip degismedigini anla (Netlify buna gore yayin yapar).

@@ -10,7 +10,8 @@
     "share": "node --env-file-if-exists=.env src/share-cli.js",
     "share:dry": "node --env-file-if-exists=.env src/share-cli.js --dry",
     "backfill": "node --env-file-if-exists=.env src/backfill.js",
-    "backfill:dry": "node --env-file-if-exists=.env src/backfill.js --dry"
+    "backfill:dry": "node --env-file-if-exists=.env src/backfill.js --dry",
+    "domain": "node scripts/domain-durum.mjs"
   },
   "engines": {
     "node": ">=20"
