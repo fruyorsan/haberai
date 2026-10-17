@@ -341,18 +341,8 @@ const breadcrumbLd = {
       </div>
     </article>
 
-    {/* ShiftDelete tarzı okumaya devam: haberin hemen ardından benzer haberlerin
-        TAM içeriği akar (4 haber), sonra zincir durur. */}
-    {devam.map((a, i) => <DevamHaber article={a} index={i} />)}
-
-    {devam.length > 0 && (
-      <div class="devam-end">
-        <span class="devam-end__line" aria-hidden="true"></span>
-        <span class="devam-end__text">Okuma zinciri burada sona erdi</span>
-        <a class="devam-end__btn" href="/haberler/">Tüm haberlere göz at →</a>
-      </div>
-    )}
-
+    {/* AI'ya Sor kutusu yazının hemen ardında ve okuma zincirinden ÖNCE olmalı:
+        aksi hâlde bu bölüme kaydıran düğme, okuru 4 başka haberin sonuna götürüyordu. */}
     <section
       class="aiask"
       id="aiask"
@@ -382,6 +372,18 @@ const breadcrumbLd = {
       </form>
       <div class="aiask__answer" id="aiask-answer" hidden></div>
     </section>
+
+    {/* ShiftDelete tarzı okumaya devam: haberin hemen ardından benzer haberlerin
+        TAM içeriği akar (4 haber), sonra zincir durur. */}
+    {devam.map((a, i) => <DevamHaber article={a} index={i} />)}
+
+    {devam.length > 0 && (
+      <div class="devam-end">
+        <span class="devam-end__line" aria-hidden="true"></span>
+        <span class="devam-end__text">Okuma zinciri burada sona erdi</span>
+        <a class="devam-end__btn" href="/haberler/">Tüm haberlere göz at →</a>
+      </div>
+    )}
 
     {related.length > 0 && (
       <section>
