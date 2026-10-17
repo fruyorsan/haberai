@@ -34,7 +34,10 @@ import { looksLikeIcon, passesQuality, probeImage } from "./gorsel.js";
 
 const FILE = "data/articles.json";
 const LIMIT = Number(process.env.EK_GORSEL_LIMIT || 6);
+// Yalnızca belirli bir kaynağı taramak için (hata ayıklama): EK_GORSEL_KAYNAK=Tamindir
+const KAYNAK = String(process.env.EK_GORSEL_KAYNAK || "").trim().toLowerCase();
 const DRY = process.argv.includes("--dry");
+const DEBUG = process.argv.includes("--debug");
 
 const EN_AZ_GENISLIK = 900; // haber içinde gösterilecek fotoğraf için en küçük genişlik
 const MAX_ADAY = 8; // haber başına ölçülecek en fazla aday (ağ maliyeti)
@@ -77,7 +80,7 @@ const GENEL_KELIMELER = new Set([
   "kategori", "detay", "sayfa", "index", "pictures", "pictures",
 ]);
 
-/** URL yolundaki ayırt edici sözcükler (alan adı parçaları hariç). */
+/** URL yolundaki ayırt edici sözcükler (alan adı parçaları ve boyut ipuçları hariç). */
 function ayirtEdiciKelimeler(url, yoksay) {
   let yol = "";
   try {
@@ -86,7 +89,10 @@ function ayirtEdiciKelimeler(url, yoksay) {
     yol = String(url);
   }
   const kume = new Set();
-  for (const p of yol.toLowerCase().split(/[^a-z0-9çğıöşüâîû]+/)) {
+  for (let p of yol.toLowerCase().split(/[^a-z0-9çğıöşüâîû]+/)) {
+    // "1200x675yeni" gibi boyut önekli parçaları temizle: boyut, haber kanıtı değildir.
+    p = p.replace(/^\d{2,4}x\d{0,4}/i, "");
+    if (/^\d{2,4}x\d{0,4}(?:auto)?$/i.test(p)) continue;
     if (p.length < 8 || /^\d+$/.test(p)) continue;
     if (GENEL_KELIMELER.has(p) || yoksay.has(p)) continue;
     kume.add(p);
@@ -113,15 +119,30 @@ function hostAl(url) {
   }
 }
 
+// com.tr / com.br gibi iki parçalı uzantılar tek uzantı sayılır.
+const IKINCI_DUZEY_UZANTILAR = new Set([
+  "com", "net", "org", "gov", "edu", "co", "bel", "gen", "web", "info", "biz", "tv", "io", "me", "us", "tr",
+]);
+
+/** Kök alan adı: "img.tamindir.com" → "tamindir.com". */
+function kokAlan(host) {
+  const p = String(host || "").toLowerCase().replace(/^www\./, "").split(".").filter(Boolean);
+  if (p.length <= 2) return p.join(".");
+  if (IKINCI_DUZEY_UZANTILAR.has(p[p.length - 2]) && p.length >= 3) return p.slice(-3).join(".");
+  return p.slice(-2).join(".");
+}
+
 /** Aday fotoğraf gerçekten BU habere mi ait? */
-function ayniHaberMi(adayUrl, host, kelimeler, idler) {
+function ayniHaberMi(adayUrl, hostlar, kelimeler, idler) {
   let u;
   try {
     u = new URL(adayUrl);
   } catch {
     return false;
   }
-  if (u.hostname.replace(/^www\./, "").toLowerCase() !== host) return false;
+  // Görseller çoğu sitede CDN alt alan adında durur (img.tamindir.com),
+  // bu yüzden kök alan adı karşılaştırılır.
+  if (!hostlar.has(kokAlan(u.hostname))) return false;
 
   for (const k of ayirtEdiciKelimeler(adayUrl, new Set())) if (kelimeler.has(k)) return true;
   for (const id of u.pathname.match(/\d{5,}/g) || []) if (idler.has(id)) return true;
@@ -136,9 +157,15 @@ async function ekFotoSec(article) {
   const { images, text } = await fetchPageExtras(article.sourceUrl);
   if (!text) return { sonuc: null, neden: "sayfa açılamadı" }; // işaret koyma, tekrar dene
 
+  // Aynı site sayılacak kök alan adları: kaynak sayfa ve kapak görselinin alanı.
+  const hostlar = new Set([kokAlan(host), kokAlan(hostAl(kapak))].filter(Boolean));
+
   // "Aynı haber" kanıtı: kapak görselinin ve kaynak sayfanın ayırt edici sözcükleri.
   // Alan adı parçaları (ör. "donanimhaber", "yenisafak") kanıt sayılmaz.
-  const yoksay = new Set(host.split(/[.-]/).filter((p) => p.length >= 5));
+  const yoksay = new Set([
+    ...host.split(/[.-]/),
+    ...hostAl(kapak).split(/[.-]/),
+  ].filter((p) => p.length >= 5));
   const kelimeler = new Set([
     ...ayirtEdiciKelimeler(kapak, yoksay),
     ...ayirtEdiciKelimeler(article.sourceUrl, yoksay),
@@ -150,6 +177,12 @@ async function ekFotoSec(article) {
   const secilen = [];
   let elenen = { ilgisiz: 0, kapakTekrari: 0, kalitesiz: 0 };
 
+  if (DEBUG) {
+    console.log(`    kapak           : ${kapak}`);
+    console.log(`    kanıt kelimeler : ${[...kelimeler].join(", ") || "(yok)"}`);
+    console.log(`    kanıt kimlikler : ${[...idler].join(", ") || "(yok)"}`);
+  }
+
   for (const aday of (images || []).slice(0, MAX_ADAY)) {
     if (secilen.length >= HEDEF) break;
     if (!/^https?:\/\//i.test(String(aday)) || looksLikeIcon(aday)) continue;
@@ -159,12 +192,14 @@ async function ekFotoSec(article) {
     const ad = fotoAd(aday);
     if (gorulenKimlik.has(kimlik) || (ad && gorulenAd.has(ad))) {
       elenen.kapakTekrari++;
+      if (DEBUG) console.log(`    - kapak tekrarı : ${String(aday).slice(0, 100)}`);
       continue;
     }
 
     // 2) Gerçekten bu haberin fotoğrafı mı? (yan sütun/reklam/logo elenir)
-    if (!ayniHaberMi(aday, host, kelimeler, idler)) {
+    if (!ayniHaberMi(aday, hostlar, kelimeler, idler)) {
       elenen.ilgisiz++;
+      if (DEBUG) console.log(`    - ilgisiz       : ${String(aday).slice(0, 100)}`);
       continue;
     }
 
@@ -172,11 +207,13 @@ async function ekFotoSec(article) {
     const bilgi = await probeImage(aday);
     if (!passesQuality(bilgi) || (bilgi?.width || 0) < EN_AZ_GENISLIK) {
       elenen.kalitesiz++;
+      if (DEBUG) console.log(`    - kalitesiz     : ${bilgi?.width || "?"}px ${String(aday).slice(0, 90)}`);
       continue;
     }
 
     gorulenKimlik.add(kimlik);
     if (ad) gorulenAd.add(ad);
+    if (DEBUG) console.log(`    + SEÇİLDİ       : ${bilgi.width}px ${String(aday).slice(0, 90)}`);
     secilen.push(bilgi.finalUrl || aday);
   }
 
@@ -192,6 +229,7 @@ async function main() {
   // En yeni haberler önce: taze içerikte ek fotoğraf hemen görünsün.
   const hedefler = list
     .filter((a) => a.sourceUrl && !a.imagesAt && (a.body || []).filter(Boolean).length >= 3)
+    .filter((a) => !KAYNAK || String(a.source || "").toLowerCase().includes(KAYNAK))
     .sort((a, b) => String(b.publishedAt || "").localeCompare(String(a.publishedAt || "")))
     .slice(0, LIMIT);
 
