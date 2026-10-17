@@ -39,7 +39,11 @@ const skorlu = all
 
 // Kategorisinde tek kalan haberlerde liste eksik kalmasın: en yeni haberlerle tamamla.
 const yedek = all.filter((a) => a.slug !== article.slug && !skorlu.includes(a));
-const related = [...skorlu, ...yedek].slice(0, 3);
+const benzerler = [...skorlu, ...yedek];
+// "Okumaya devam et" zinciri: haberin hemen ardından gösterilen en ilgili 5 haber.
+const devam = benzerler.slice(0, 5);
+// "İlgili Haberler": zincirde kullanılanların ardından gelen 3 haber (tekrar yok).
+const related = benzerler.slice(5, 8);
 
 const keyPoints = Array.isArray(article.keyPoints) ? article.keyPoints.filter(Boolean) : [];
 const body = Array.isArray(article.body) ? article.body.filter(Boolean) : [];
@@ -145,6 +149,14 @@ const breadcrumbLd = {
         <span>{readMin} dk okuma</span>
         <div class="post__share">
           <ShareButtons url={shareUrl} title={article.title} />
+          <div class="post__ai" role="group" aria-label="Yapay zekâ araçları">
+            <button type="button" class="post__ai-btn" data-jump="#ozet">
+              <span aria-hidden="true">✨</span> AI Özet
+            </button>
+            <button type="button" class="post__ai-btn post__ai-btn--ask" data-jump="#aiask">
+              <span aria-hidden="true">✨</span> AI'ya Sor
+            </button>
+          </div>
         </div>
       </div>
 
@@ -175,7 +187,7 @@ const breadcrumbLd = {
         {/* ÖZET EN ÜSTTE: sitemizin asıl vaadi kısalık ve netlik. Okur, gövdeyi okumadan
             haberi anlayabilmeli; ayrıntı isteyen aşağıdaki "Haberin Detayı"na iner. */}
         {(article.summary || keyPoints.length > 0) && (
-          <section class="recap">
+          <section class="recap" id="ozet">
             {article.summary && (
               <>
                 <h2 class="recap__title">Özet</h2>
@@ -321,6 +333,54 @@ const breadcrumbLd = {
       )}
     </article>
 
+    {/* Okumaya devam et: okuyucu haberi bitirince akış burada sürer. */}
+    {devam.length > 0 && (
+      <section class="readnext" aria-label="Okumaya devam et">
+        <h2 class="readnext__title">
+          <span class="readnext__spark" aria-hidden="true">✦</span>
+          Okumaya Devam Et
+        </h2>
+        <ol class="readnext__list">
+          {devam.map((a, i) => (
+            <li class="readnext__item">
+              <a class="readnext__link" href={`/haber/${a.slug}/`}>
+                <span class="readnext__n" aria-hidden="true">{i + 1}</span>
+                <img
+                  class="readnext__thumb"
+                  src={imageUrl(a.image, 240)}
+                  alt=""
+                  width="120"
+                  height="80"
+                  loading="lazy"
+                  decoding="async"
+                  referrerpolicy="no-referrer"
+                />
+                <span class="readnext__body">
+                  <span class="readnext__cat">{a.category}</span>
+                  <span class="readnext__t">{a.title}</span>
+                </span>
+                <svg
+                  class="readnext__arrow"
+                  viewBox="0 0 24 24"
+                  width="18"
+                  height="18"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m13 6 6 6-6 6" />
+                </svg>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </section>
+    )}
+
     <section
       class="aiask"
       id="aiask"
@@ -449,6 +509,17 @@ const breadcrumbLd = {
         });
       });
     }
+
+    // --- "AI Özet" / "AI'ya Sor" düğmeleri: ilgili bölüme kaydır ve vurgula ---
+    document.querySelectorAll(".post__ai-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const hedef = document.querySelector(btn.getAttribute("data-jump") || "");
+        if (!hedef) return;
+        hedef.scrollIntoView({ behavior: "smooth", block: "start" });
+        hedef.classList.add("is-flash");
+        setTimeout(() => hedef.classList.remove("is-flash"), 1400);
+      });
+    });
   </script>
 </Base>
 
@@ -506,6 +577,10 @@ const breadcrumbLd = {
   }
   .post__share {
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
   }
 
   .post__media {
@@ -769,6 +844,164 @@ const breadcrumbLd = {
     margin-top: 8px;
     font-size: 0.8rem;
     color: #9aa1ac;
+  }
+
+  /* --- "AI Özet" / "AI'ya Sor" düğmeleri (paylaşımın hemen yanında) --- */
+  .post__ai {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .post__ai-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 13px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 0.84rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s var(--ease), color 0.2s var(--ease),
+      border-color 0.2s var(--ease), transform 0.2s var(--ease);
+  }
+  .post__ai-btn:hover {
+    border-color: var(--brand);
+    color: var(--brand);
+    transform: translateY(-2px);
+  }
+  .post__ai-btn--ask {
+    background: var(--brand-grad);
+    border-color: transparent;
+    color: #fff;
+  }
+  .post__ai-btn--ask:hover {
+    color: #fff;
+    filter: brightness(1.06);
+  }
+
+  /* --- Okumaya devam et zinciri --- */
+  .readnext {
+    margin: 26px 0 30px;
+  }
+  .readnext__title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--heading);
+    margin: 0 0 14px;
+  }
+  .readnext__spark {
+    color: var(--brand);
+  }
+  .readnext__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .readnext__item {
+    margin: 0;
+  }
+  .readnext__link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 14px 10px 10px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface);
+    transition: border-color 0.2s var(--ease), transform 0.2s var(--ease),
+      box-shadow 0.2s var(--ease);
+  }
+  .readnext__link:hover {
+    border-color: var(--brand);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
+  .readnext__n {
+    flex-shrink: 0;
+    width: 26px;
+    text-align: center;
+    font-size: 1.05rem;
+    font-weight: 900;
+    color: var(--brand);
+    font-variant-numeric: tabular-nums;
+  }
+  .readnext__thumb {
+    flex-shrink: 0;
+    width: 96px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 10px;
+    background: var(--bg-soft);
+  }
+  .readnext__body {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+  }
+  .readnext__cat {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--brand);
+  }
+  .readnext__t {
+    font-size: 0.98rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--text);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .readnext__arrow {
+    flex-shrink: 0;
+    margin-left: auto;
+    color: var(--muted);
+    transition: transform 0.2s var(--ease), color 0.2s var(--ease);
+  }
+  .readnext__link:hover .readnext__arrow {
+    color: var(--brand);
+    transform: translateX(3px);
+  }
+
+  /* Kaydırılan bölüm kısa süre vurgulanır */
+  .is-flash {
+    animation: aiFlash 1.3s var(--ease);
+  }
+  @keyframes aiFlash {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgba(216, 31, 38, 0);
+    }
+    35% {
+      box-shadow: 0 0 0 6px var(--brand-soft);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .readnext__thumb {
+      width: 72px;
+      height: 52px;
+    }
+    .readnext__n {
+      width: 20px;
+      font-size: 0.98rem;
+    }
+    .post__ai {
+      width: 100%;
+    }
   }
 
   @media (max-width: 640px) {

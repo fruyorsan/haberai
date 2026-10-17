@@ -4,6 +4,7 @@ import MarketTicker from "./MarketTicker.astro";
 const nav = [
   { label: "Ana Sayfa", href: "/" },
   { label: "Son Dakika", href: "/son-dakika/" },
+  { label: "Yapay Zeka", href: "/kategori/yapay-zeka/", ai: true },
   { label: "Piyasa", href: "/piyasa/" },
   { label: "Tüm Haberler", href: "/haberler/" },
 ];
@@ -25,8 +26,17 @@ const isActive = (href) =>
       {nav.map((item) => (
         <a
           href={item.href}
-          class:list={["nav__link", { "nav__link--active": isActive(item.href) }]}
+          class:list={[
+            "nav__link",
+            { "nav__link--active": isActive(item.href), "nav__link--ai": item.ai },
+          ]}
         >
+          {item.ai && (
+            <svg class="nav__ai-icon" viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.2l1.9 5.2 5.2 1.9-5.2 1.9L12 16.4l-1.9-5.2L4.9 9.3l5.2-1.9z" />
+              <path d="M18.6 14.2l.85 2.3 2.3.85-2.3.85-.85 2.3-.85-2.3-2.3-.85 2.3-.85z" />
+            </svg>
+          )}
           {item.label}
         </a>
       ))}
@@ -455,6 +465,30 @@ const isActive = (href) =>
   }
   .nav__link--active::after {
     transform: scaleX(1);
+  }
+  /* Yapay zekâ bölümü: menüde özel olarak öne çıkar (dolgun rozet). */
+  .nav__link--ai {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #fff;
+    background: var(--brand-grad);
+    font-weight: 800;
+    box-shadow: 0 8px 18px -12px var(--brand-glow);
+  }
+  .nav__link--ai::after {
+    display: none;
+  }
+  .nav__link--ai:hover {
+    background: var(--brand-grad);
+    color: #fff;
+    filter: brightness(1.07);
+  }
+  .nav__link--ai.nav__link--active {
+    color: #fff;
+  }
+  .nav__ai-icon {
+    flex-shrink: 0;
   }
 
   .header__actions {

@@ -14,9 +14,15 @@ const konular = getTags().slice(0, 14);
 const featured = getFeatured(6);
 const featuredSlugs = new Set(featured.map((a) => a.slug));
 const nonFeatured = articles.filter((a) => !featuredSlugs.has(a.slug));
+// Teknoloji/yapay zekâ gelişmeleri ayrı ve belirgin bir bölümde öne çıkarılır.
+const teknoKategoriler = new Set(["teknoloji", "yapay-zeka"]);
+const tekno = articles
+  .filter((a) => teknoKategoriler.has(a.categorySlug) && !featuredSlugs.has(a.slug))
+  .slice(0, 4);
+const teknoSlugs = new Set(tekno.map((a) => a.slug));
 // ShiftDelete tarzı: Gerçek fotoğraflı haberler öncelikli gösterilir
-const withPhoto = nonFeatured.filter((a) => a.image);
-const withoutPhoto = nonFeatured.filter((a) => !a.image);
+const withPhoto = nonFeatured.filter((a) => a.image && !teknoSlugs.has(a.slug));
+const withoutPhoto = nonFeatured.filter((a) => !a.image && !teknoSlugs.has(a.slug));
 const grid = [...withPhoto, ...withoutPhoto].slice(0, 21);
 
 // WebSite + Organization yapısal veri: Sitelinks arama kutusu (Google) + marka bilgisi.
@@ -65,6 +71,25 @@ const siteSchema = {
     ) : (
       <>
         <FeaturedSlider />
+
+        {tekno.length >= 3 && (
+          <section class="tekno">
+            <div class="latest__head">
+              <h2 class="section-title section-title--line tekno__h">
+                <svg class="tekno__icon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="4" y="4" width="16" height="16" rx="3" />
+                  <path d="M9 9h6v6H9z" />
+                  <path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2" />
+                </svg>
+                Teknoloji
+              </h2>
+              <a class="latest__all" href="/kategori/teknoloji/">Tümü →</a>
+            </div>
+            <div class="grid">
+              {tekno.map((a, i) => <ArticleCard article={a} index={i} />)}
+            </div>
+          </section>
+        )}
 
         {grid.length > 0 && (
           <section class="latest">
@@ -128,6 +153,23 @@ const siteSchema = {
   }
   .latest__all:hover {
     transform: translateX(3px);
+  }
+
+  /* Teknoloji vitrini: hemen göze çarpsın diye hafif marka tonlu zemin. */
+  .tekno {
+    margin: 8px 0 26px;
+    padding: 4px 20px 22px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background:
+      radial-gradient(120% 140% at 0% 0%, var(--brand-soft), transparent 58%),
+      var(--surface);
+  }
+  .tekno__h {
+    margin: 20px 0 16px;
+  }
+  .tekno__icon {
+    color: var(--brand);
   }
 
   .topics {
