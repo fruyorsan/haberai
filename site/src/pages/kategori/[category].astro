@@ -1,7 +1,8 @@
 ---
 import Base from "../../layouts/Base.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
-import { getArticles, getCategories } from "../../lib/articles.js";
+import Pagination from "../../components/Pagination.astro";
+import { getArticles, getCategories, paginate, PER_PAGE } from "../../lib/articles.js";
 
 export function getStaticPaths() {
   return getCategories().map((category) => ({
@@ -11,7 +12,8 @@ export function getStaticPaths() {
 }
 
 const { category } = Astro.props;
-const articles = getArticles().filter((a) => a.categorySlug === category.slug);
+const all = getArticles().filter((a) => a.categorySlug === category.slug);
+const { items, current, totalPages: pages, total } = paginate(all, 1, PER_PAGE);
 ---
 
 <Base
@@ -22,12 +24,16 @@ const articles = getArticles().filter((a) => a.categorySlug === category.slug);
     <header class="cat-head">
       <span class="badge">{category.name}</span>
       <h1>{category.name} Haberleri</h1>
-      <p class="muted">{articles.length} haber</p>
+      <p class="muted">
+        {total} haber{pages > 1 ? ` · Sayfa ${current}/${pages}` : ""}
+      </p>
     </header>
 
     <div class="grid">
-      {articles.map((a) => <ArticleCard article={a} />)}
+      {items.map((a, i) => <ArticleCard article={a} index={i} />)}
     </div>
+
+    <Pagination current={current} totalPages={pages} base={`/kategori/${category.slug}/`} />
   </div>
 </Base>
 

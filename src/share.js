@@ -15,7 +15,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = join(__dirname, "..", "data");
 const SOCIAL_FILE = join(DATA_DIR, "social.json");
 
-const DEFAULT_SITE_URL = "https://haberinai.com.tr";
+const DEFAULT_SITE_URL = "https://fruyorsan.github.io";
 const X_LIMIT = 280; // X karakter sınırı
 const X_URL_WEIGHT = 23; // X tüm linkleri 23 karakter sayar
 const BSKY_LIMIT = 300; // Bluesky sınırı

@@ -1,5 +1,5 @@
 ---
-import { getFeatured, timeAgo, publishedISO } from "../lib/articles.js";
+import { getFeatured, timeAgo, publishedISO, imageUrl } from "../lib/articles.js";
 
 // Ana sayfa vitrini: "Öne çıkan haberler" slaytı.
 // - Otomatik geçiş (6 sn) + ilerleme çubuğu; ok, nokta, sürükleme ve klavye ile tam kontrol.
@@ -38,7 +38,8 @@ const items = slides.map((a) => {
     slug: a.slug,
     url: a.url,
     title: a.title,
-    image: a.image || "",
+    image: a.image ? imageUrl(a.image, 1100) : "",
+    imageOrig: a.image || "",
     category: a.category,
     summary: a.summary,
     source: a.source,
@@ -82,6 +83,7 @@ const items = slides.map((a) => {
                       <img
                         class="fs__img"
                         src={a.image || "/og-default.png"}
+                        data-orig={a.imageOrig || undefined}
                         alt={a.title}
                         width="1200"
                         height="675"
@@ -89,7 +91,7 @@ const items = slides.map((a) => {
                         fetchpriority={i === 0 ? "high" : "auto"}
                         decoding="async"
                         referrerpolicy="no-referrer"
-                        onerror="this.classList.add('is-broken')"
+                        onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.src=this.dataset.orig}else{this.classList.add('is-broken')}"
                       />
                       <div class="fs__overlay" aria-hidden="true"></div>
                       {a.breaking === true &&

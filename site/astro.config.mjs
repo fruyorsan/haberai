@@ -1,9 +1,11 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
-// Alan adı: haberinai.com.tr
-// (SITE_URL ortam değişkeni verilirse o kullanılır.)
-const site = process.env.SITE_URL || "https://haberinai.com.tr";
+// Alan adı: yayında olduğumuz adres VARSAYILAN olarak yazılır ki kanonik
+// adresler, site haritaları ve RSS kendi kendine tutarlı olsun. Özel alan adı
+// (haberinai.com.tr) yayına girdiğinde depoda SITE_URL değişkeni tanımlanır:
+//   gh variable set SITE_URL --body "https://haberinai.com.tr"
+const site = process.env.SITE_URL || "https://fruyorsan.github.io";
 
 export default defineConfig({
   site,

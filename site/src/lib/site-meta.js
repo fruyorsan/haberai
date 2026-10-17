@@ -21,7 +21,7 @@
  * ayrıca SITE_URL ortam değişkeniyle geçersiz kılınabilir.
  */
 export function siteOrigin(astroSite) {
-  const raw = process.env.SITE_URL || astroSite || "https://haberinai.com.tr";
+  const raw = process.env.SITE_URL || astroSite || "https://fruyorsan.github.io";
   return String(raw).replace(/\/+$/, "");
 }
 

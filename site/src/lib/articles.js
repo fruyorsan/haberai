@@ -94,6 +94,24 @@ export function getFeatured(count = 6, horizon = 20) {
   return [...withPhoto, ...recent.filter((a) => !a.image)].slice(0, count);
 }
 
+/**
+ * Haber fotoğrafı adresini görüntüleme için hazırlar.
+ *
+ * Kaynak sitelerin fotoğrafları olduğu gibi (hotlink) gösterilir; ama çoğu
+ * 100 KB - 1,5 MB arasında geliyor ve kartta yalnızca ~380 px genişlikte
+ * görünüyor. Bu yüzden fotoğraf ücretsiz bir görsel CDN'inden (wsrv.nl)
+ * geçirilir: boyutlandırılır ve WebP'ye çevrilir (tipik kazanç %90+).
+ * CDN'e ulaşılamazsa bileşenler `data-orig` ile kaynak adrese düşer,
+ * yani görsel kaybolmaz. Tamamen kapatmak için: NO_IMAGE_PROXY=1
+ */
+export function imageUrl(src, width = 640) {
+  if (!src || !/^https?:\/\//i.test(src)) return src || "";
+  if (process.env.NO_IMAGE_PROXY) return src;
+  const w = Math.round(width);
+  const h = Math.round((width * 9) / 16);
+  return `https://wsrv.nl/?url=${encodeURIComponent(src)}&w=${w}&h=${h}&fit=cover&output=webp&q=72`;
+}
+
 export function getCategories() {
   const map = new Map();
   for (const a of getArticles()) {

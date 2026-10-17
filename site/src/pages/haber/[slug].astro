@@ -2,7 +2,7 @@
 import Base from "../../layouts/Base.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
 import ShareButtons from "../../components/ShareButtons.astro";
-import { getArticles, formatDate, publishedISO } from "../../lib/articles.js";
+import { getArticles, formatDate, publishedISO, imageUrl } from "../../lib/articles.js";
 
 export function getStaticPaths() {
   return getArticles().map((article) => ({
@@ -29,7 +29,7 @@ const readMin = Math.max(1, Math.round(words / 200));
 const shareUrl = Astro.url.href;
 
 // --- SEO yardımcıları ---
-const site = Astro.site ?? new URL("https://haberinai.com.tr");
+const site = Astro.site ?? new URL("https://fruyorsan.github.io");
 
 const articleUrl = new URL(article.url, site).href;
 const publishedIso = article.publishedAt || article.generatedAt;
@@ -85,7 +85,7 @@ const breadcrumbLd = {
   tags={article.tags}
   image={article.image}
   imageAlt={article.title}
-  preloadImage={article.image || "/og-default.png"}
+  preloadImage={article.image ? imageUrl(article.image, 1200) : "/og-default.png"}
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
@@ -119,7 +119,8 @@ const breadcrumbLd = {
         </div>
         <img
           class="post__img"
-          src={article.image || "/og-default.png"}
+          src={article.image ? imageUrl(article.image, 1200) : "/og-default.png"}
+          data-orig={article.image || undefined}
           alt={article.title}
           width="1200"
           height="675"
@@ -127,7 +128,7 @@ const breadcrumbLd = {
           decoding="async"
           fetchpriority="high"
           referrerpolicy="no-referrer"
-          onerror="this.classList.add('is-broken')"
+          onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.src=this.dataset.orig}else{this.classList.add('is-broken')}"
         />
         <span class="post__ph-note">
           {`Fotoğraf: ${article.source}`}
