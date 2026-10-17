@@ -2,10 +2,13 @@
 import Base from "../layouts/Base.astro";
 import ArticleCard from "../components/ArticleCard.astro";
 import FeaturedSlider from "../components/FeaturedSlider.astro";
-import { getArticles, getFeatured } from "../lib/articles.js";
+import { getArticles, getFeatured, getTags } from "../lib/articles.js";
 import { siteOrigin } from "../lib/site-meta.js";
 
 const articles = getArticles();
+// Konu sayfalarına ana sayfadan da bağlantı verilir (hem gezinme hem arama
+// motorlarının konu sayfalarını keşfi için).
+const konular = getTags().slice(0, 14);
 // İlk 6 haber "öne çıkanlar" slaytında gösterilir; ızgarada tekrar etmesinler.
 const featured = getFeatured(6);
 const featuredSlugs = new Set(featured.map((a) => a.slug));
@@ -84,6 +87,23 @@ const siteSchema = {
             )}
           </section>
         )}
+
+        {konular.length > 0 && (
+          <section class="topics">
+            <div class="latest__head">
+              <h2 class="section-title section-title--line">Popüler Konular</h2>
+              <a class="latest__all" href="/etiketler/">Tümü →</a>
+            </div>
+            <div class="topics__list">
+              {konular.map((t) => (
+                <a class="topics__item" href={`/etiket/${t.slug}/`}>
+                  {t.name}
+                  <span class="topics__n">{t.count}</span>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
       </>
     )}
   </div>
@@ -105,6 +125,44 @@ const siteSchema = {
   }
   .latest__all:hover {
     transform: translateX(3px);
+  }
+
+  .topics {
+    margin-top: 8px;
+  }
+  .topics__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 6px;
+  }
+  .topics__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 14px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text);
+    text-transform: capitalize;
+    transition: border-color 0.2s var(--ease), color 0.2s var(--ease),
+      transform 0.2s var(--ease);
+  }
+  .topics__item:hover {
+    border-color: var(--brand);
+    color: var(--brand);
+    transform: translateY(-2px);
+  }
+  .topics__n {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--muted);
+    background: var(--surface-2);
+    border-radius: 999px;
+    padding: 1px 8px;
   }
 
   .empty {
