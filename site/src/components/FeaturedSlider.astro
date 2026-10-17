@@ -107,7 +107,7 @@ const items = slides.map((a) => {
                     </div>
 
                     <div class="fs__body">
-                      <h3 class="fs__title">{a.title}</h3>
+                      <h2 class="fs__title">{a.title}</h2>
                       {a.summary && <p class="fs__summary">{a.summary}</p>}
 
                       {a.note && (
@@ -548,31 +548,33 @@ const items = slides.map((a) => {
   .fs__dots {
     display: flex;
     align-items: center;
-    gap: 9px;
+    gap: 6px;
   }
+  /* Dokunma alanı 24x24 (erişilebilirlik ölçütü), görünen nokta 9x9. */
   .fs__dot {
     position: relative;
-    width: 9px;
-    height: 9px;
+    display: grid;
+    place-items: center;
+    width: 24px;
+    height: 24px;
     padding: 0;
     border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+  .fs__dot::before {
+    content: "";
+    width: 9px;
+    height: 9px;
     border-radius: 999px;
     background: var(--border-strong);
-    cursor: pointer;
     transition: width 0.3s var(--ease), background 0.3s var(--ease);
   }
-  /* Küçük görsel ama rahat tıklama alanı */
-  .fs__dot::after {
-    content: "";
-    position: absolute;
-    inset: -7px -6px;
-    border-radius: 999px;
-  }
-  .fs__dot:hover {
+  .fs__dot:hover::before {
     background: var(--muted);
   }
-  .fs__dot.is-active {
-    width: 26px;
+  .fs__dot.is-active::before {
+    width: 24px;
     background: var(--brand-grad);
   }
 
@@ -676,8 +678,9 @@ const items = slides.map((a) => {
       width: 40px;
       height: 40px;
     }
-    .fs__dot::after {
-      inset: -16px -14px;
+    .fs__dot {
+      width: 30px;
+      height: 30px;
     }
   }
 
