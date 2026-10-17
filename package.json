@@ -11,6 +11,8 @@
     "share:dry": "node --env-file-if-exists=.env src/share-cli.js --dry",
     "backfill": "node --env-file-if-exists=.env src/backfill.js",
     "backfill:dry": "node --env-file-if-exists=.env src/backfill.js --dry",
+    "ek-gorsel": "node --env-file-if-exists=.env src/ek-gorsel.mjs",
+    "ek-gorsel:dry": "node --env-file-if-exists=.env src/ek-gorsel.mjs --dry",
     "domain": "node scripts/domain-durum.mjs"
   },
   "engines": {

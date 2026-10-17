@@ -75,8 +75,12 @@ Aşağıdaki JSON alanlarını TÜRKÇE üret:
   yeniden kullanma. Haberi bir cümleyle özetleyen olumlu bir başlık yaz; SORU cümlesi ve "Belli Oldu Mu?",
   "Ne Kadar Oldu?" gibi tıklanma tuzağı YAZMA. Başlıktaki tarih/saat damgasını ("17 Ekim 2026 ...") ancak haber
   o güne özgüyse taşı. İdeal uzunluk 45-70 karakter. Clickbait, abartı ve gereksiz "!" kullanma.
+  VURUCULUK: en çarpıcı somut ayrıntıyı öne al (marka, kişi, karar, sayı, özellik adı); edilgen ve jenerik
+  kalıplar yerine aktif, net bir fiil kullan ("duyurdu", "kaldırıldı", "zam geldi", "ücretsiz oldu").
+  Başlığı okuyan ne olduğunu anlasın; merak uyandır ama içeriği abartıp yanıltma.
 - slug: title için URL dostu kimlik; küçük harf, tire ile, Türkçe karakter ve noktalama YOK.
-- summary: Haberin ÖZETİ. 3-4 cümle (yaklaşık 50-70 kelime); KISA ve NET ama doyurucu. Nötr kal: sadece "ne oldu,
+- summary: Haberin ÖZETİ. 2-3 cümle (yaklaşık 35-55 kelime). İlk cümle TEK BAŞINA haberi anlatsın: okur yalnızca
+  özeti okuyup haberi anlamalı. Sonraki cümleler en kritik ayrıntıyı ve sonucu versin. Nötr kal: sadece "ne oldu,
   kim, nerede, neden önemli" bilgisini ver, yorum katma. title'ın kopyası veya tekrarı OLMASIN.
 - keyPoints: Haberin en önemli 3 ayrıntısı, kısa madde olarak. Her madde en fazla 14 kelime olsun ve SOMUT bilgi içersin (sayı, fiyat, tarih, isim, teknik özellik varsa mutlaka yaz).
 - body: HABERİN TAM METNİ. 4-6 paragraf, toplam 350-550 kelime. Kaynaktaki bilgileri kullanarak haberi genişlet: ayrıntılar, sayılar, teknik özellikler, ilgili gelişmeler, açıklamalar. Kurallar:
@@ -86,8 +90,13 @@ Aşağıdaki JSON alanlarını TÜRKÇE üret:
   * UYDURMA YASAK: Kaynakta geçmeyen isim, tarih, sayı, unvan, kurum, söz veya olay yazma. Geçmişe dönük iddialar (şu yıl atandı, şu projeyi yürüttü, şu rakamı açıkladı) kesinlikle uydurma.
   * Emin olmadığın ayrıntıyı eklemek yerine, kaynaktaki bilgiyi daha ayrıntılı ve akıcı biçimde anlat. Doğal çıkarımları "olabilir / bekleniyor" gibi temkinli ifadelerle ver.
   * Kaynak kısaysa da gövdeyi 2-3 cümlelik bir özet metnine indirme; kaynakta geçen her olguyu en az bir cümleyle
-    işle, paragraf sayısını gerektiğinde 3'e düşür ama toplamda 180 kelimenin altına inme. Hiçbir ayrıntı yoksa
-    bile "dikkat çekiyor" gibi boş cümlelerle şişirme; o zaman gövdeyi kısa tut.
+    işle, cümleleri birbirine bağlayarak akıcı paragraflar kur. Toplamda 180 kelimenin ALTINA İNME (hedef
+    250-400 kelime); paragraf sayısı gerektiğinde 3'e düşebilir.
+  * Uzatmayı boş cümleyle değil, kaynaktaki ayrıntıyı daha açık anlatarak yap: "dikkat çekiyor", "büyük önem
+    taşıyor" gibi dolgu yasak. Kaynakta hiç ayrıntı yoksa haberi doğal çıkarımlarla ve temkinli ifadelerle anlat;
+    bilgi uydurma yasağı her koşulda geçerlidir.
+  * TEK HABER ODAĞI: yalnızca verilen kaynak haberi yaz. Kaynağın içinde geçen başka haberleri/gelişmeleri ayrı
+    birer haber gibi anlatma, konuyu dağıtma; onlar bu haberin bağlamı olarak tek bir çizgide kalsın.
   * Yapay zekâ gibi değil, gazete haberi gibi yaz; "bu yazıda", "aşağıda" gibi ifadeler kullanma.
   * TELİF: Kaynak metinden cümle kopyalama, arka arkaya 10 kelimeden uzun aynı diziyi kullanma, kaynağın paragraf sırasını izleme.
 - comment: EDİTÖR YORUMU. summary ve body'nin TEKRARI KESİNLİKLE OLMAYACAK: hiçbir bilgiyi yeniden anlatma. Doğrudan yorumla başla. Şu sorulara cevap ver: Bu neden önemli? Kimi nasıl etkiler? Bundan sonrası için ne beklenebilir, neye dikkat edilmeli? 3-5 cümle; samimi ama profesyonel, gerekirse eleştirel.
@@ -98,7 +107,7 @@ Aşağıdaki JSON alanlarını TÜRKÇE üret:
 - tags: 3-6 adet kısa, habere özgü anahtar kelime; kategori adını ("Gündem") etiket olarak tekrarlama.
 - category: AŞAĞIDAKİ listeden TAM OLARAK birini seç (başka bir kelime yazma): ${cats}
 
-YAZMADAN ÖNCE KONTROL ET: (1) summary title'ın kopyası mı? (2) Yorumda ve manşet notunda yasaklı kalıplardan biri mi var? (3) Gövde kaynaktaki somut ayrıntılara dayanıyor mu, yoksa boş mu şişirildi? (4) Hiçbir dizi alanı boş kaldı mı? (5) Türkçe yazım hatası var mı?
+YAZMADAN ÖNCE KONTROL ET: (1) summary title'ın kopyası mı? (2) Yorumda ve manşet notunda yasaklı kalıplardan biri mi var? (3) Gövde kaynaktaki somut ayrıntılara dayanıyor mu, yoksa boş mu şişirildi? (4) Hiçbir dizi alanı boş kaldı mı? (5) Türkçe yazım hatası var mı? (6) Özetin ilk cümlesi tek başına haberi anlatıyor mu, başlık listede tıklanacak kadar vurucu mu?
 
 Yanıt formatı (sadece JSON):
 {"title":"...","slug":"...","summary":"...","keyPoints":["...","...","..."],"body":["paragraf 1","paragraf 2","paragraf 3"],"comment":"...","editorNote":"...","tags":["..."],"category":"..."}${ekNot ? `\n\n${ekNot}` : ""}`;

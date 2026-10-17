@@ -36,6 +36,14 @@ jobs:
           BACKFILL_LIMIT: "4"
         run: npm run backfill
 
+      # Haber icine 1-2 ek gercek fotograf (ShiftDelete tarzi). Kaynak sayfada
+      # "ayni haber" oldugu kanitlanamayan gorseller eklenmez; bu yuzden AI kotasi
+      # kullanmaz, yalnizca kaynak sayfayi indirir.
+      - name: Haber icine ek fotograflar
+        env:
+          EK_GORSEL_LIMIT: "6"
+        run: npm run ek-gorsel
+
       - name: Degisiklikleri kaydet
         id: commit
         run: |
