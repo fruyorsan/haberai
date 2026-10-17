@@ -1,8 +1,10 @@
 ---
 import Base from "../../layouts/Base.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
+import AdSlot from "../../components/AdSlot.astro";
 import ShareButtons from "../../components/ShareButtons.astro";
 import { getArticles, formatDate, publishedISO, imageUrl, tagUrl } from "../../lib/articles.js";
+import { ADSENSE_SLOTS } from "../../lib/site-meta.js";
 
 export function getStaticPaths() {
   return getArticles().map((article) => ({
@@ -187,6 +189,8 @@ const breadcrumbLd = {
             <p class="analysis__text">{article.comment}</p>
           </section>
         )}
+
+        <AdSlot slot={ADSENSE_SLOTS.makale} label="Sponsorlu" />
       </div>
 
       {article.tags?.length > 0 && (
@@ -248,6 +252,8 @@ const breadcrumbLd = {
         </div>
       </section>
     )}
+
+    <AdSlot slot={ADSENSE_SLOTS.liste} label="Sponsorlu" />
   </div>
 
   <script>

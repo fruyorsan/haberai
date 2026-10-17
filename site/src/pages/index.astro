@@ -1,9 +1,10 @@
 ---
 import Base from "../layouts/Base.astro";
 import ArticleCard from "../components/ArticleCard.astro";
+import AdSlot from "../components/AdSlot.astro";
 import FeaturedSlider from "../components/FeaturedSlider.astro";
 import { getArticles, getFeatured, getTags } from "../lib/articles.js";
-import { siteOrigin } from "../lib/site-meta.js";
+import { siteOrigin, ADSENSE_SLOTS } from "../lib/site-meta.js";
 
 const articles = getArticles();
 // Konu sayfalarına ana sayfadan da bağlantı verilir (hem gezinme hem arama
@@ -87,6 +88,8 @@ const siteSchema = {
             )}
           </section>
         )}
+
+        <AdSlot slot={ADSENSE_SLOTS.liste} label="Sponsorlu" />
 
         {konular.length > 0 && (
           <section class="topics">

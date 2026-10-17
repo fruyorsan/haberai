@@ -1,0 +1,47 @@
+---
+import { ADSENSE_CLIENT } from "../lib/site-meta.js";
+
+// AdSense reklam alanı.
+//
+// Yalnızca hem yayıncı kimliği (ADSENSE_CLIENT) hem de birim kimliği (slot)
+// tanımlıysa basılır. İkisinden biri yoksa hiçbir şey üretilmez; böylece
+// onay gelmeden sitede boş reklam kutusu görünmez.
+//
+// Yayına alma:
+//   gh variable set ADSENSE_CLIENT --body "ca-pub-XXXXXXXXXXXXXXXX"
+//   gh variable set ADSENSE_SLOT_MAKALE --body "1234567890"   (haber içi)
+//   gh variable set ADSENSE_SLOT_LISTE  --body "0987654321"   (liste altı)
+const { slot, label = "Reklam", format = "auto" } = Astro.props;
+const birim = String(slot || "").trim();
+const aktif = Boolean(ADSENSE_CLIENT && birim);
+---
+
+{aktif && (
+  <aside class="ad" aria-label={label}>
+    <span class="ad__etiket">{label}</span>
+    <ins
+      class="adsbygoogle"
+      style="display:block"
+      data-ad-client={ADSENSE_CLIENT}
+      data-ad-slot={birim}
+      data-ad-format={format}
+      data-full-width-responsive="true"
+    ></ins>
+    <script is:inline>{`(adsbygoogle = window.adsbygoogle || []).push({});`}</script>
+  </aside>
+)}
+
+<style>
+  .ad {
+    margin: 26px 0;
+    min-height: 0;
+  }
+  .ad__etiket {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+</style>

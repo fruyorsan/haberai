@@ -1,8 +1,11 @@
 // Site geneli kimlik bilgileri tek yerden yönetilir.
 //
-// ALAN ADI (haberinai.com.tr) DURUMU:
-//   Kod varsayılanı alan adıdır; kanonik adresler, RSS, site haritaları ve
-//   robots.txt buradan (astro.config.mjs → site) türetilir.
+// ALAN ADI DURUMU:
+//   Kod varsayılanı, sitenin YAYINDA OLDUĞU adrestir (fruyorsan.github.io):
+//   kanonik adresler, RSS, site haritaları ve robots.txt buradan (astro.config.mjs
+//   → site) türetilir. Özel alan adı yayına girdiğinde SITE_URL değişkeni
+//   tanımlanır ve tüm adresler tek adımda ona döner:
+//     gh variable set SITE_URL --body "https://haberinai.com.tr"
 //
 //   CNAME dosyası ise yalnızca repoda CUSTOM_DOMAIN GitHub Actions değişkeni
 //   tanımlıysa yazılır. Bu bilerek böyledir: alan adı DNS'te yayına girmeden
@@ -31,11 +34,21 @@ export const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "haberai@yahoo.com";
 /**
  * AdSense yayıncı kimliği (ör. "ca-pub-1234567890123456").
  *
- * AdSense hesabı onaylandığında: AdSense panelinden "pub-..." numarasını al ve
- * buradaki değeri onunla değiştir. Boşken reklam kodu HİÇ eklenmez
- * (onaysız siteye reklam kodu koymak gereksiz hata üretir).
+ * Boşken reklam kodu ve reklam alanları HİÇ eklenmez; onaysız siteye reklam
+ * koymanın anlamı yoktur ve boş kutu görüntüsü oluşur.
+ *
+ * Yayına alma (kod değişikliği gerekmez, depo değişkenleri yeter):
+ *   gh variable set ADSENSE_CLIENT --body "ca-pub-XXXXXXXXXXXXXXXX"
+ *   gh variable set ADSENSE_SLOT_MAKALE --body "<haber içi birim no>"
+ *   gh variable set ADSENSE_SLOT_LISTE  --body "<liste altı birim no>"
  */
 export const ADSENSE_CLIENT = process.env.ADSENSE_CLIENT || "";
+
+/** Reklam birimi (slot) kimlikleri; AdSense panelinden alınır. */
+export const ADSENSE_SLOTS = {
+  makale: process.env.ADSENSE_SLOT_MAKALE || "",
+  liste: process.env.ADSENSE_SLOT_LISTE || "",
+};
 
 /** AdSense ads.txt için Google'ın sertifika kimliği (değiştirilmez). */
 export const ADSENSE_CERT = "f08c47fec0942fa0";

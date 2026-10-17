@@ -112,11 +112,12 @@ için beklemeden başlatmak istersen: GitHub → **Actions** → **Arsiv Yenilem
 
 ### Alan adı (haberinai.com.tr)
 
-Site `https://haberinai.com.tr` adresine göre yayınlanır. Kanonik adresler, RSS, site
-haritaları ve `robots.txt` buradan üretilir. CNAME dosyası ise **yalnızca** repoda
-`CUSTOM_DOMAIN` Actions değişkeni tanımlıysa yazılır — alan adı DNS'te yayına girmeden
-CNAME eklenirse GitHub Pages, `fruyorsan.github.io` adresini çözülemeyen alan adına
-yönlendirir ve site erişilemez olur.
+Kod varsayılanı, sitenin **yayında olduğu** adrestir (`https://fruyorsan.github.io`):
+kanonik adresler, RSS, site haritaları ve `robots.txt` buradan üretilir. Özel alan adı
+yayına girdiğinde repoda `SITE_URL` değişkeni tanımlanır ve tüm adresler tek adımda ona
+döner. CNAME dosyası ise **yalnızca** `CUSTOM_DOMAIN` Actions değişkeni tanımlıysa yazılır —
+alan adı DNS'te yayına girmeden CNAME eklenirse GitHub Pages, `fruyorsan.github.io`
+adresini çözülemeyen alan adına yönlendirir ve site erişilemez olur.
 
 Kayıt sağlayıcıya girilecek DNS kayıtları:
 
@@ -136,6 +137,29 @@ npm run domain -- --acikla   # alan adı çözülüyorsa yayına alır (CNAME + 
 ```
 
 Geri alma: `gh variable delete CUSTOM_DOMAIN` ve GitHub Pages ayarlarından alan adını kaldır.
+
+### AdSense (reklam)
+
+Reklam kodu ve reklam alanları **yalnızca** yayıncı kimliği tanımlıysa basılır; kimlik
+yoksa sitede ne reklam kodu ne de boş reklam kutusu görünür. Onay geldiğinde kod
+değişikliği gerekmez, sadece depo değişkenlerini tanımla:
+
+```bash
+gh variable set ADSENSE_CLIENT     --body "ca-pub-XXXXXXXXXXXXXXXX"
+gh variable set ADSENSE_SLOT_MAKALE --body "<haber içi birim no>"
+gh variable set ADSENSE_SLOT_LISTE  --body "<liste altı birim no>"
+gh workflow run pipeline.yml
+```
+
+| Yerleşim | Sayfa | Değişken |
+| --- | --- | --- |
+| Haber içi (AI yorumundan sonra) | `/haber/<slug>/` | `ADSENSE_SLOT_MAKALE` |
+| Haber altı (ilgili haberlerden sonra) | `/haber/<slug>/` | `ADSENSE_SLOT_LISTE` |
+| Liste altı | ana sayfa | `ADSENSE_SLOT_LISTE` |
+
+`/ads.txt` dosyası da aynı kimlikten üretilir: kimlik tanımlıysa Google kaydı yazılır,
+tanımsızsa açıklama satırı kalır. AdSense panelindeki **Otomatik reklamlar** açıksa
+kimlik yeterlidir; birim kimlikleri elle yerleşim için gereklidir.
 
 ## Sosyal Dağıtım
 
