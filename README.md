@@ -279,6 +279,59 @@ node src/indexnow.mjs --tumu    # bir kerelik: tüm arşivi gönderir (pencere +
 > Not: IndexNow yalnızca Bing/Yandex içindir. Google için tek yol Search Console'da
 > property doğrulaması + `sitemap-index.xml` gönderimidir.
 
+## Bildirimler (web push — son dakika + takip edilen konular)
+
+Arama düğmesinin yanındaki **zil düğmesi**. Okuyucu isterse son dakika haberleri ve
+takip ettiği konular için bildirim alır; site kapalıyken de bildirim gelir
+(service worker + OneSignal).
+
+**Ne zaman bildirim gider?**
+
+| Tür | Kim alır | Sıklık |
+| --- | --- | --- |
+| Son dakika (`breaking: true`) | Tüm aboneler | Asgari 25 dk arayla, günde en fazla 6 |
+| Takip edilen konu (kategori) | Yalnızca o kategoriyi takip edenler | Kategori başına en fazla 3 saatte 1, günde en fazla 3 |
+
+- Gece **23:00–07:00** arasında yalnızca konu bildirimleri durur; son dakika haberleri
+  gece de gider (acil gelişme kaçmasın). Toplam günlük tavan 9 bildirimdir.
+- "Benzer haberler" bilerek bildirilmez: sayfa içi öneridir, telefonu titretmeye değmez
+  ve okuyucu iznini kaybettirir.
+- Aynı haber iki kez gönderilmez: gönderilen id'ler `data/bildirim.json`'da tutulur
+  (workflow `data/` ile birlikte commit eder).
+
+**Haber sayfasında "Bu kategoriyi takip et"** düğmesi kategori rozetinin yanındadır:
+tıklanınca o kategori takip edilir ve ilk kez bildirim izni istenir.
+
+**Kurulum (tek sefer):**
+
+1. `onesignal.com` → ücretsiz hesap → **New App/Website** → platform **Web**.
+2. Site URL: `https://haberinai.site` (OneSignal alan adını birebir doğrular).
+3. **Keys & IDs** sayfasından *App ID* ve *REST API Key* alınır.
+4. Depoya eklenir (kod değişikliği gerekmez, sonraki turda canlıya çıkar):
+   ```powershell
+   gh variable set ONESIGNAL_APP_ID --body "<App ID>"
+   gh secret  set ONESIGNAL_REST_API_KEY --body "<REST API anahtarı>"
+   ```
+   İkisi biri eksikse zil düğmesi ve takip düğmeleri **hiç basılmaz** (yarım arayüz olmaz).
+5. Safari (macOS) için ayrıca OneSignal panelinde **Safari web push sertifikası**
+   yüklenmelidir; Chrome/Edge/Firefox/Android için gerekmez.
+6. iPhone'da bildirim için site **Ana Ekrana eklenmeli** (iOS 16.4+); panel bunu okuyucuya
+   yazar.
+
+**Dosyalar:** `site/src/components/Bildirim.astro` (zil + panel + abonelik),
+`site/public/OneSignalSDKWorker.js` (service worker), `site/public/ikon-192.png`
+(bildirim ikonu — `npm run ikon` ile üretilir), `src/bildirim.js` (gönderim + kurallar).
+
+**Gizlilik:** OneSignal betiği sayfa açılışında yüklenmez; yalnızca okuyucu zile ya da
+takip düğmesine bastığında yüklenir. Tercihler (son dakika / konular) localStorage'da
+tutulur, sunucuya yalnızca OneSignal **etiketi** olarak yazılır
+(`son_dakika=1`, `kategori_<slug>=1`) — bildirim bu etiketlere göre gönderilir.
+
+```powershell
+npm run bildirim:dry     # ne gönderileceğini yazar, istek atmaz
+npm run bildirim         # gerçekten gönderir
+```
+
 ## Fotoğraflar (kapak güvenliği + haber içi ek fotoğraflar)
 
 Kaynak sitelerin RSS/haber sayfalarındaki görseller her zaman doğru olmuyor; yanlış

@@ -1,0 +1,577 @@
+---
+// ============================================================================
+// BİLDİRİM (web push) — zil düğmesi + panel
+// ----------------------------------------------------------------------------
+// Amaç: okuyucu isterse SON DAKİKA haberleri ve takip ettiği konular için
+// bildirim alsın. Site kapalıyken de bildirim gider (service worker + OneSignal).
+//
+// KURULUM (tek sefer, panel açmadan görünmez):
+//   gh variable set ONESIGNAL_APP_ID --body "<OneSignal App ID>"
+//   gh secret  set ONESIGNAL_REST_API_KEY --body "<REST API anahtarı>"
+// Değişken yoksa zil düğmesi ve "kategoriyi takip et" düğmeleri HİÇ basılmaz;
+// kurulum yapılmadan yarım/bozuk bir arayüz görünmez.
+//
+// GİZLİLİK: OneSignal betiği sayfa açılışında yüklenmez. Yalnızca okuyucu zile
+// ya da "kategoriyi takip et" düğmesine bastığında yüklenir (izinsiz üçüncü
+// taraf izleyici çalışmasın). Tercihler localStorage'da tutulur.
+import { getCategories } from "../lib/articles.js";
+
+const appId = String(process.env.ONESIGNAL_APP_ID || "").trim();
+// Çok az haberi olan kategoriyi takip ettirmenin anlamı yok (boş akış).
+const KATEGORI_MIN = 8;
+const kategoriler = appId ? getCategories().filter((c) => c.count >= KATEGORI_MIN) : [];
+const aktif = Boolean(appId) && kategoriler.length > 0;
+---
+
+{
+  aktif && (
+    <div class="bel" id="bildirim" data-app-id={appId}>
+      <button
+        class="bel__btn"
+        id="bel-btn"
+        type="button"
+        aria-expanded="false"
+        aria-controls="bel-panel"
+        aria-label="Bildirimler"
+        title="Bildirimler"
+      >
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 8.5a6 6 0 1 0-12 0c0 4.6-1.9 5.7-1.9 7.1h15.8c0-1.4-1.9-2.5-1.9-7.1z" />
+          <path d="M10.2 20.2a2.1 2.1 0 0 0 3.6 0" />
+        </svg>
+        <span class="bel__dot" id="bel-dot" hidden />
+      </button>
+
+      <div class="bel__panel" id="bel-panel" hidden>
+        <div class="bel__row">
+          <span class="bel__ad">Son dakika</span>
+          <label class="bel__switch">
+            <input type="checkbox" id="bel-son-dakika" checked />
+            <span class="bel__track" aria-hidden="true"><span class="bel__thumb" /></span>
+            <span class="bel__sr">Son dakika haberleri</span>
+          </label>
+        </div>
+        <p class="bel__hint">
+          Son dakika haberi çıktığı an telefonuna veya masaüstüne bildirim gelir.
+        </p>
+
+        <p class="bel__alt">İlgilendiğim konular</p>
+        <div class="bel__chips" id="bel-chips">
+          {kategoriler.map((c) => (
+            <button type="button" class="bel__chip" data-kategori={c.slug} aria-pressed="false">
+              {c.name}
+            </button>
+          ))}
+        </div>
+
+        <p class="bel__durum" id="bel-durum" role="status" aria-live="polite" />
+      </div>
+    </div>
+  )
+}
+
+<style>
+  .bel {
+    position: relative;
+    flex-shrink: 0;
+  }
+  /* Zil: arama düğmesiyle aynı ölçü ve görünüm (yan yana duruyorlar). */
+  .bel__btn {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: var(--surface-2);
+    color: var(--text-2);
+    cursor: pointer;
+    transition: background 0.2s var(--ease), color 0.2s var(--ease),
+      border-color 0.2s var(--ease), transform 0.2s var(--ease);
+  }
+  .bel__btn:hover {
+    color: var(--brand);
+    border-color: var(--brand);
+    background: var(--brand-soft);
+  }
+  .bel__btn:active {
+    transform: scale(0.96);
+  }
+  /* Abonelik açıkken zil kırmızı ve küçük bir nokta taşır. */
+  .bel__btn.is-on {
+    color: #fff;
+    border-color: transparent;
+    background: var(--brand-grad);
+    box-shadow: 0 8px 18px -12px var(--brand-glow);
+  }
+  .bel__btn.is-on:hover {
+    color: #fff;
+    filter: brightness(1.06);
+  }
+  .bel__dot {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #fff;
+    box-shadow: 0 0 0 2px var(--brand);
+  }
+
+  /* --- Panel --- */
+  .bel__panel {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: min(330px, 92vw);
+    padding: 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    z-index: 60;
+  }
+  .bel__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .bel__ad {
+    font-size: 0.92rem;
+    font-weight: 800;
+    color: var(--heading);
+  }
+  .bel__hint {
+    margin: 6px 0 14px;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  .bel__alt {
+    margin: 0 0 8px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .bel__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .bel__chip {
+    padding: 6px 11px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface-2);
+    color: var(--text-2);
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.18s var(--ease), color 0.18s var(--ease),
+      border-color 0.18s var(--ease), transform 0.18s var(--ease);
+  }
+  .bel__chip:hover {
+    border-color: var(--brand);
+    color: var(--brand);
+  }
+  .bel__chip.is-on {
+    border-color: transparent;
+    background: var(--brand-grad);
+    color: #fff;
+  }
+  .bel__chip:active {
+    transform: scale(0.97);
+  }
+  .bel__durum {
+    margin: 12px 0 0;
+    font-size: 0.76rem;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  .bel__durum:empty {
+    display: none;
+  }
+
+  /* --- Aç/kapa anahtarı --- */
+  .bel__switch {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .bel__switch input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+  }
+  .bel__track {
+    width: 44px;
+    height: 25px;
+    border-radius: 999px;
+    background: var(--border);
+    transition: background 0.2s var(--ease);
+  }
+  .bel__thumb {
+    display: block;
+    width: 19px;
+    height: 19px;
+    margin: 3px;
+    border-radius: 999px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s var(--ease);
+  }
+  .bel__switch input:checked + .bel__track {
+    background: var(--brand);
+  }
+  .bel__switch input:checked + .bel__track .bel__thumb {
+    transform: translateX(19px);
+  }
+  .bel__switch input:focus-visible + .bel__track {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
+  }
+  .bel__sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 720px) {
+    .bel__btn {
+      width: 44px;
+      height: 44px;
+    }
+    /* Telefonda panel ekrana yayılır (arama önerileriyle aynı davranış). */
+    .bel__panel {
+      position: fixed;
+      top: 58px;
+      left: 16px;
+      right: 16px;
+      width: auto;
+    }
+  }
+</style>
+
+<script>
+  // ==========================================================================
+  // Zil + kategori takibi (tarayıcı tarafı)
+  // --------------------------------------------------------------------------
+  // Tercihler localStorage'da tutulur; OneSignal'e yalnızca "etiket" (tag)
+  // olarak yazılır: son_dakika=1 ve kategori_<slug>=1. Sunucu, bildirimi bu
+  // etiketlere göre yalnızca ilgili okuyucuya gönderir.
+  // ==========================================================================
+  (() => {
+    const kok = document.getElementById("bildirim");
+    if (!kok) return;
+    const appId = kok.dataset.appId || "";
+    if (!appId) return;
+
+    const btn = document.getElementById("bel-btn");
+    const panel = document.getElementById("bel-panel");
+    const durum = document.getElementById("bel-durum");
+    const nokta = document.getElementById("bel-dot");
+    const anahtar = document.getElementById("bel-son-dakika");
+    const cipler = [...kok.querySelectorAll(".bel__chip")];
+
+    const K_ABONE = "bildirim-abone";
+    const K_KAT = "bildirim-kategoriler";
+    const K_SON = "bildirim-son-dakika";
+
+    const oku = (k, yedek) => {
+      try {
+        const v = localStorage.getItem(k);
+        return v === null ? yedek : JSON.parse(v);
+      } catch {
+        return yedek;
+      }
+    };
+    const yaz = (k, v) => {
+      try {
+        localStorage.setItem(k, JSON.stringify(v));
+      } catch {
+        /* özel mod: tercih saklanamaz, oturum boyunca geçerli */
+      }
+    };
+
+    let kategoriler = new Set(oku(K_KAT, []));
+    let sonDakika = oku(K_SON, true) !== false;
+    let abone = oku(K_ABONE, false) === true;
+
+    // --- OneSignal SDK'sını yalnızca gerektiğinde yükle ---
+    let soz = null;
+    function sdkYukle() {
+      if (soz) return soz;
+      soz = new Promise((resolve) => {
+        window.OneSignalDeferred = window.OneSignalDeferred || [];
+        const s = document.createElement("script");
+        s.src = "https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js";
+        s.defer = true;
+        s.onload = () => {
+          window.OneSignalDeferred.push(async (OneSignal) => {
+            try {
+              await OneSignal.init({
+                appId,
+                serviceWorkerPath: "/OneSignalSDKWorker.js",
+                serviceWorkerParam: { scope: "/" },
+                allowLocalhostAsSecureOrigin: false,
+                notifyButton: { enable: false },
+                promptOptions: { slidedown: { enabled: false } },
+              });
+            } catch {
+              /* init hatası: durum metninde bildirilir */
+            }
+            etiketYaz(OneSignal);
+            resolve(OneSignal);
+          });
+        };
+        s.onerror = () => resolve(null);
+        document.head.appendChild(s);
+        setTimeout(() => resolve(window.OneSignal || null), 8000);
+      });
+      return soz;
+    }
+
+    /** Tercihleri OneSignal etiketlerine yazar (yalnızca abone ise). */
+    function etiketYaz(OneSignal) {
+      if (!OneSignal || !abone) return;
+      const t = { son_dakika: sonDakika ? "1" : "" };
+      for (const c of cipler) {
+        const slug = c.dataset.kategori;
+        t["kategori_" + slug] = kategoriler.has(slug) ? "1" : "";
+      }
+      try {
+        OneSignal.User.addTags(t);
+      } catch {
+        /* etiket yazılamadıysa bildirim yine de genel olarak gider */
+      }
+    }
+
+    /** İzin ister ve push aboneliğini açar. @returns {Promise<boolean>} */
+    async function aboneBaslat() {
+      const OneSignal = await sdkYukle();
+      if (!OneSignal) return false;
+      // Ağ/CDN yavaşsa arayüz sonsuza kadar beklemesin (6 sn).
+      try {
+        await Promise.race([
+          OneSignal.User.PushSubscription.optIn(),
+          new Promise((r) => setTimeout(r, 6000)),
+        ]);
+      } catch {
+        /* kullanıcı izni vermediyse abone kalınmaz */
+      }
+      abone = Boolean(OneSignal.User?.PushSubscription?.optedIn) || izinVerildi();
+      yaz(K_ABONE, abone);
+      etiketYaz(OneSignal);
+      return abone;
+    }
+
+    async function abonelikKapat() {
+      const OneSignal = await sdkYukle();
+      try {
+        await Promise.race([
+          OneSignal?.User?.PushSubscription?.optOut(),
+          new Promise((r) => setTimeout(r, 6000)),
+        ]);
+      } catch {
+        /* yok say */
+      }
+      abone = false;
+      yaz(K_ABONE, false);
+    }
+
+    const izinEngelli = () =>
+      typeof Notification !== "undefined" && Notification.permission === "denied";
+    const izinVerildi = () =>
+      typeof Notification !== "undefined" && Notification.permission === "granted";
+    const iosKuruluDegil = () => {
+      const ua = navigator.userAgent || "";
+      const ios = /iPad|iPhone|iPod/.test(ua) || (/Macintosh/.test(ua) && "ontouchend" in document);
+      const kurulu = window.navigator.standalone === true;
+      return ios && !kurulu;
+    };
+
+    function durumYaz(mesaj) {
+      if (typeof mesaj === "string") {
+        durum.textContent = mesaj;
+        return;
+      }
+      if (izinEngelli()) {
+        durum.textContent =
+          "Tarayıcı bildirim iznini engellemiş. Adres çubuğundaki kilit simgesinden izin verebilirsin.";
+      } else if (abone) {
+        const n = kategoriler.size;
+        durum.textContent = sonDakika
+          ? n
+            ? `Açık: son dakika + ${n} konu`
+            : "Açık: son dakika haberleri"
+          : n
+            ? `Açık: ${n} takip edilen konu`
+            : "";
+      } else if (iosKuruluDegil()) {
+        durum.textContent =
+          "iPhone'da bildirim için: Paylaş → Ana Ekrana Ekle, sonra buradan aç.";
+      } else {
+        durum.textContent = "Açmak için bir konu seç ya da son dakikayı aç.";
+      }
+    }
+
+    /** Düğme/çip görünümlerini günceller. */
+    function ciz() {
+      nokta.hidden = !abone;
+      anahtar.checked = sonDakika;
+      btn.classList.toggle("is-on", abone);
+      btn.setAttribute("aria-label", abone ? "Bildirimler açık" : "Bildirimler");
+      for (const c of cipler) {
+        const acik = kategoriler.has(c.dataset.kategori);
+        c.classList.toggle("is-on", acik);
+        c.setAttribute("aria-pressed", acik ? "true" : "false");
+      }
+      cizTakip();
+    }
+
+    /** Haber sayfasındaki "kategoriyi takip et" düğmeleri. */
+    const takipDugmeleri = [...document.querySelectorAll(".post__follow")];
+    function cizTakip() {
+      for (const d of takipDugmeleri) {
+        const slug = d.dataset.kategori;
+        const acik = kategoriler.has(slug);
+        d.classList.toggle("is-on", acik);
+        d.setAttribute("aria-pressed", acik ? "true" : "false");
+        const yazi = d.querySelector(".post__follow-text");
+        if (yazi) {
+          yazi.textContent = acik
+            ? `${d.dataset.ad || "Kategori"} takipte`
+            : "Bu kategoriyi takip et";
+        }
+      }
+    }
+    function takipNotu(d, mesaj) {
+      const kutu = d.closest(".post__follow-wrap")?.querySelector(".post__follow-note");
+      if (kutu) kutu.textContent = mesaj || "";
+    }
+
+    // --- Panel aç/kapa ---
+    function panelAc(ac) {
+      panel.hidden = !ac;
+      btn.setAttribute("aria-expanded", ac ? "true" : "false");
+      if (ac) durumYaz();
+    }
+    btn.addEventListener("click", () => panelAc(panel.hidden));
+    document.addEventListener("click", (e) => {
+      if (!panel.hidden && !kok.contains(e.target)) panelAc(false);
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !panel.hidden) panelAc(false);
+    });
+
+    // --- Son dakika anahtarı ---
+    anahtar.addEventListener("change", async () => {
+      sonDakika = anahtar.checked;
+      yaz(K_SON, sonDakika);
+      ciz();
+      if (sonDakika && !abone) {
+        await aboneBaslat();
+        ciz();
+        durumYaz();
+        return;
+      }
+      if (abone) {
+        etiketYaz(await sdkYukle());
+      }
+      if (!sonDakika && kategoriler.size === 0) await abonelikKapat();
+      ciz();
+      durumYaz();
+    });
+
+    // --- Konu çipleri ---
+    for (const c of cipler) {
+      c.addEventListener("click", async () => {
+        const slug = c.dataset.kategori;
+        const acilacak = !kategoriler.has(slug);
+        if (acilacak) kategoriler.add(slug);
+        else kategoriler.delete(slug);
+        yaz(K_KAT, [...kategoriler]);
+        ciz();
+
+        if (acilacak && !abone) {
+          await aboneBaslat();
+        } else if (abone) {
+          etiketYaz(await sdkYukle());
+        }
+        if (!sonDakika && kategoriler.size === 0) await abonelikKapat();
+        ciz();
+        durumYaz();
+      });
+    }
+
+    // --- Haber sayfası: "bu kategoriyi takip et" ---
+    for (const d of takipDugmeleri) {
+      d.addEventListener("click", async () => {
+        const slug = d.dataset.kategori;
+        const acilacak = !kategoriler.has(slug);
+        if (acilacak) kategoriler.add(slug);
+        else kategoriler.delete(slug);
+        yaz(K_KAT, [...kategoriler]);
+        ciz();
+        takipNotu(d, "");
+
+        if (acilacak && !abone) {
+          const oldu = await aboneBaslat();
+          takipNotu(
+            d,
+            oldu
+              ? "Bildirimler açıldı: bu konudan yeni haber çıkınca haber vereceğiz."
+              : izinEngelli()
+                ? "Bildirim izni kapalı görünüyor; tarayıcı ayarlarından açabilirsin."
+                : "Takip kaydedildi. Bildirim izni verilmedi."
+          );
+        } else if (abone) {
+          etiketYaz(await sdkYukle());
+          takipNotu(d, acilacak ? "" : "Bu konuyu takibi bıraktın.");
+        } else {
+          takipNotu(d, "Takip kaydedildi.");
+        }
+        if (!sonDakika && kategoriler.size === 0) await abonelikKapat();
+        ciz();
+      });
+    }
+
+    // --- Açılışta ---
+    ciz();
+    // Abonesi olan (ya da tarayıcı iznini daha önce vermiş) okuyucu için SDK
+    // arka planda yüklenir: etiketler ve abonelik durumu eşitlenir. Örneğin
+    // okuyucu izni tarayıcı ayarlarından kapatmışsa zil söner.
+    if (abone || izinVerildi()) {
+      const esitle = () =>
+        sdkYukle().then((os) => {
+          const durum = os?.User?.PushSubscription?.optedIn;
+          if (durum === true) {
+            abone = true;
+            yaz(K_ABONE, true);
+            etiketYaz(os);
+          } else if (durum === false && abone) {
+            abone = false;
+            yaz(K_ABONE, false);
+          }
+          ciz();
+          durumYaz();
+        });
+      if ("requestIdleCallback" in window) requestIdleCallback(esitle, { timeout: 4000 });
+      else setTimeout(esitle, 2500);
+    }
+  })();
+</script>

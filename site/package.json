@@ -7,7 +7,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "og:default": "node scripts/gen-og-default.mjs"
+    "og:default": "node scripts/gen-og-default.mjs",
+    "ikon": "node scripts/gen-ikon.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.6.0",

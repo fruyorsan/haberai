@@ -79,6 +79,18 @@ jobs:
           SITE_URL: ${{ vars.SITE_URL }}
         run: npm run indexnow
 
+      # Web push bildirimi (OneSignal): son dakika haberleri tum abonelere,
+      # takip edilen konular yalnizca o konuyu izleyenlere gider. Anahtarlar
+      # tanimli degilse sessizce atlar. Gonderilenler data/bildirim.json'da
+      # tutulur (sonraki adimda commit'e girer) → ayni haber iki kez gitmez.
+      - name: Push bildirimi (OneSignal)
+        continue-on-error: true
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          ONESIGNAL_APP_ID: ${{ vars.ONESIGNAL_APP_ID }}
+          ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
+        run: npm run bildirim
+
       - name: Degisiklikleri kaydet
         id: commit
         run: |
@@ -124,6 +136,9 @@ jobs:
           ADSENSE_SLOT_MAKALE: ${{ vars.ADSENSE_SLOT_MAKALE }}
           ADSENSE_SLOT_MAKALE2: ${{ vars.ADSENSE_SLOT_MAKALE2 }}
           ADSENSE_SLOT_LISTE: ${{ vars.ADSENSE_SLOT_LISTE }}
+          # Web push (bildirim) zili: App ID anonim bir değerdir (gizli değil).
+          # Boşsa zil düğmesi ve "kategoriyi takip et" düğmeleri hiç basılmaz.
+          ONESIGNAL_APP_ID: ${{ vars.ONESIGNAL_APP_ID }}
         run: cd site && npm run build
 
       # Site kodu degisip degismedigini anla (Netlify buna gore yayin yapar).

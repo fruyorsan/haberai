@@ -57,6 +57,11 @@ const body = Array.isArray(article.body) ? article.body.filter(Boolean) : [];
 // markalı kapak kullanılır. `kapak` boşsa çağıranlar /og-default.png'e düşer.
 const kapak = kapakKaynagi(article);
 
+// --- Bildirim (web push) ---
+// OneSignal App ID tanımlıysa haber sayfasında "bu kategoriyi takip et" düğmesi
+// çıkar (bkz. components/Bildirim.astro). Kurulu değilse düğme hiç basılmaz.
+const bildirimAktif = Boolean(String(process.env.ONESIGNAL_APP_ID || "").trim());
+
 // --- Haber içi ek fotoğraflar ---
 // Kaynak sayfadan toplanan ek görseller; kapak olarak kullanılan fotoğraf tekrar
 // edilmesin. Veri alanı boşsa ilgili bölüm hiç çizilmez.
@@ -148,7 +153,28 @@ const breadcrumbLd = {
         <a href={`/kategori/${article.categorySlug}/`}>{article.category}</a>
       </nav>
 
-      <span class="badge">{article.category}</span>
+      <div class="post__top">
+        <span class="badge">{article.category}</span>
+        {bildirimAktif && (
+          <div class="post__follow-wrap">
+            <button
+              type="button"
+              class="post__follow"
+              data-kategori={article.categorySlug}
+              data-ad={article.category}
+              aria-pressed="false"
+              title={`${article.category} kategorisinde yeni haber çıkınca bildirim al`}
+            >
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 8.5a6 6 0 1 0-12 0c0 4.6-1.9 5.7-1.9 7.1h15.8c0-1.4-1.9-2.5-1.9-7.1z" />
+                <path d="M10.2 20.2a2.1 2.1 0 0 0 3.6 0" />
+              </svg>
+              <span class="post__follow-text">Bu kategoriyi takip et</span>
+            </button>
+            <span class="post__follow-note" role="status" aria-live="polite" />
+          </div>
+        )}
+      </div>
       <h1 class="post__title">{article.title}</h1>
 
       <div class="post__meta">
@@ -514,6 +540,68 @@ const breadcrumbLd = {
   .crumbs a:hover {
     color: var(--red);
   }
+
+  /* --- "Bu kategoriyi takip et" (bildirim) --- */
+  .post__top {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .post__follow-wrap {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .post__follow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 12px;
+    border: 1px solid color-mix(in srgb, var(--text) 14%, transparent);
+    border-radius: 999px;
+    background: linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--text) 7%, transparent),
+        transparent 62%
+      ),
+      var(--surface);
+    color: var(--text-2);
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: border-color 0.2s var(--ease), color 0.2s var(--ease),
+      background 0.2s var(--ease), transform 0.2s var(--ease);
+  }
+  .post__follow:hover {
+    border-color: var(--brand);
+    color: var(--brand);
+  }
+  .post__follow:active {
+    transform: scale(0.97);
+  }
+  .post__follow.is-on {
+    border-color: transparent;
+    background: var(--brand-grad);
+    color: #fff;
+    box-shadow: 0 10px 20px -14px var(--brand-glow);
+  }
+  .post__follow.is-on:hover {
+    color: #fff;
+    filter: brightness(1.06);
+  }
+  .post__follow-note {
+    flex: 1 1 100%;
+    font-size: 0.76rem;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  .post__follow-note:empty {
+    display: none;
+  }
+
   .post__title {
     font-size: 2.15rem;
     line-height: 1.19;

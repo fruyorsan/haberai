@@ -1,5 +1,6 @@
 ---
 import MarketTicker from "./MarketTicker.astro";
+import Bildirim from "./Bildirim.astro";
 
 const nav = [
   { label: "Ana Sayfa", href: "/" },
@@ -73,6 +74,7 @@ const isActive = (href) =>
         </div>
         <div class="searchbox__drop" id="search-drop" role="listbox" aria-label="Arama önerileri" hidden></div>
       </form>
+      <Bildirim />
       <button
         class="theme-toggle"
         id="theme-toggle"
