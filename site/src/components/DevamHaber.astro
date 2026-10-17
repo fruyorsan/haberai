@@ -267,4 +267,22 @@ const gorselHata = `if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';th
       margin-left: 0;
     }
   }
+
+  /* --- Okuma kolonu ---
+     Zincirdeki haberler ana haberle AYNI ölçüde aksın: 1180 px'lik konteynerde
+     satırlar aşırı uzuyor, metin dağınık ve "bozuk" görünüyordu. Üstteki
+     "Okumaya Devam Et" şeridi bölüm ayracı olarak tam genişlikte kalır. */
+  .devam__cat,
+  .devam__title,
+  .devam__meta,
+  .devam__media,
+  .devam__lead,
+  .devam__points,
+  .devam__p,
+  .devam__ai,
+  .devam__src {
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 </style>
