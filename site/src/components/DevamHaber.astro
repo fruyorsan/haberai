@@ -22,14 +22,18 @@ const gorselHata = `if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';th
 ---
 
 <article class="devam" id={`devam-${index + 1}`}>
-  <div class="devam__bar">
-    <span class="devam__spark" aria-hidden="true">✦</span>
-    <span class="devam__label">Okumaya Devam Et</span>
-    <span class="devam__n" aria-hidden="true">{index + 1}</span>
-  </div>
-
   <a class="devam__cat" href={`/kategori/${article.categorySlug}/`}>{article.category}</a>
-  <h2 class="devam__title"><a href={sayfa}>{article.title}</a></h2>
+
+  {/* "Okumaya Devam Et" etiketi ayrı bir şerit değil; haber başlığının SAĞINDA
+      küçük bir rozet olarak durur (sıra numarası zincirdeki kaçıncı haber). */}
+  <div class="devam__head">
+    <h2 class="devam__title"><a href={sayfa}>{article.title}</a></h2>
+    <span class="devam__tag">
+      <span class="devam__spark" aria-hidden="true">✦</span>
+      Okumaya Devam Et
+      <span class="devam__n" aria-hidden="true">{index + 1}</span>
+    </span>
+  </div>
   <div class="devam__meta">
     <time datetime={publishedISO(article)}>{date}</time>
     <span class="devam__dot">•</span>
@@ -94,32 +98,41 @@ const gorselHata = `if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';th
 </article>
 
 <style>
+  /* Bölüm ayracı: zincirdeki her haber tam genişlikte ince bir çizgiyle ayrılır. */
   .devam {
-    margin: 30px 0 0;
+    margin: 34px 0 0;
+    padding-top: 26px;
+    border-top: 1px solid var(--line);
   }
-  .devam__bar {
+  /* Başlık satırı: haber başlığı solda, "Okumaya Devam Et" rozeti sağda. */
+  .devam__head {
     display: flex;
+    align-items: baseline;
+    gap: 8px 14px;
+    flex-wrap: wrap;
+    margin: 0 0 12px;
+  }
+  .devam__tag {
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--line);
+    gap: 7px;
+    padding: 5px 11px;
+    border-radius: 999px;
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    white-space: nowrap;
   }
   .devam__spark {
-    color: var(--brand);
-  }
-  .devam__label {
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--brand);
+    font-size: 0.8rem;
+    line-height: 1;
   }
   .devam__n {
-    margin-left: auto;
-    font-size: 0.78rem;
-    font-weight: 800;
-    color: var(--muted);
+    padding-left: 7px;
+    border-left: 1px solid color-mix(in srgb, var(--brand) 35%, transparent);
     font-variant-numeric: tabular-nums;
   }
   .devam__cat {
@@ -139,7 +152,8 @@ const gorselHata = `if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';th
     line-height: 1.25;
     font-weight: 800;
     letter-spacing: -0.01em;
-    margin: 0 0 10px;
+    flex: 1 1 320px;
+    margin: 0;
     text-wrap: balance;
   }
   .devam__title a {
@@ -270,10 +284,10 @@ const gorselHata = `if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';th
 
   /* --- Okuma kolonu ---
      Zincirdeki haberler ana haberle AYNI ölçüde aksın: 1180 px'lik konteynerde
-     satırlar aşırı uzuyor, metin dağınık ve "bozuk" görünüyordu. Üstteki
-     "Okumaya Devam Et" şeridi bölüm ayracı olarak tam genişlikte kalır. */
+     satırlar aşırı uzuyor, metin dağınık ve "bozuk" görünüyordu. Bölüm ayracı
+     (.devam üstündeki ince çizgi) tam genişlikte kalır. */
   .devam__cat,
-  .devam__title,
+  .devam__head,
   .devam__meta,
   .devam__media,
   .devam__lead,
