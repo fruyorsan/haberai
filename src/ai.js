@@ -40,6 +40,20 @@ Her alanın işi farklıdır:
 - "editorNote": ana sayfadaki "öne çıkanlar" slaytı için kısa MANŞET NOTU; summary ve comment'ten FARKLI, 1-2 cümle
   (en fazla ~180 karakter), merak uyandıran ama abartısız ve clickbait olmayan bir not.
 
+TÜRKÇE YAZIM VE DİLGİN:
+- Her kelimen gerçek bir Türkçe sözcük olsun. Uydurma ya da bozuk sözcük yazma ("küirli" gibi), cümleyi yarım
+  bırakma, ek dizilimini ve boşlukları bozma ("içinnet" gibi). Cümleyi vermeden önce bir kez sessizce oku.
+- Sayı, tarih, ölçü ve para birimini kaynaktaki değerle aktar; gerekiyorsa ayır (21 °C, 1.213 km, 3,5).
+- Bir alan için elinde bilgi yoksa alanı boş bırakma; kaynaktaki en alakalı bilgiyle doldur. Hiçbir dizi alanı
+  (keyPoints, body, tags) boş kalmasın.
+
+KALIP YASAĞI (comment, editorNote ve body'de TEKRAR BOZUKLUK YARATAN boş kalıplar):
+- Şu ifadeleri kullanma: "önem taşıyor", "gözler önüne seriyor/serdi", "gündeme getirdi/taşıdı", "bir kez daha",
+  "bu gelişme", "bu tablo", "dikkat çekiyor", "kilit bir eşik", "kayda değer", "ufku açıyor", "önemli bir adım",
+  "kritik bir dönüm noktası", "yakından takip edilecek".
+- Yorum ve manşet notunu "Bu tür ... olaylar/uluslararası ...", "Her dönem tartışma konusu olmuştur" gibi
+  kalıplarla açma; açılış cümlen bu haberin kendi kişisine göre yazılsın.
+
 TELİF KURALLARI (kesin ve bağlayıcı):
 - Kaynağın cümlelerini ASLA kopyalama; kendi ifadelerinle, sıfırdan yeniden yaz.
 - Kaynakla arka arkaya 10 kelimeden uzun aynı sözcük dizisini kullanma.
@@ -56,22 +70,34 @@ BAŞLIK: ${article.title}
 METİN: ${article.content}
 
 Aşağıdaki JSON alanlarını TÜRKÇE üret:
-- title: Kaynak başlığı KOPYALAMA. Haberi anlatan, özgün ve net bir başlık yaz. İdeal uzunluk 45-70 karakter. Clickbait, abartı ve gereksiz "!" kullanma.
+- title: Kaynak başlığını KOPYALAMA; ne kelime kelime ne de "X hakkında bilmeniz gerekenler" gibi kalıp olarak
+  yeniden kullanma. Haberi bir cümleyle özetleyen olumlu bir başlık yaz; SORU cümlesi ve "Belli Oldu Mu?",
+  "Ne Kadar Oldu?" gibi tıklanma tuzağı YAZMA. Başlıktaki tarih/saat damgasını ("17 Ekim 2026 ...") ancak haber
+  o güne özgüyse taşı. İdeal uzunluk 45-70 karakter. Clickbait, abartı ve gereksiz "!" kullanma.
 - slug: title için URL dostu kimlik; küçük harf, tire ile, Türkçe karakter ve noktalama YOK.
-- summary: Haberin ÖZETİ. 3-4 cümle (yaklaşık 50-70 kelime); KISA ve NET ama doyurucu. Nötr kal: sadece "ne oldu, kim, nerede, neden önemli" bilgisini ver, yorum katma.
+- summary: Haberin ÖZETİ. 3-4 cümle (yaklaşık 50-70 kelime); KISA ve NET ama doyurucu. Nötr kal: sadece "ne oldu,
+  kim, nerede, neden önemli" bilgisini ver, yorum katma. title'ın kopyası veya tekrarı OLMASIN.
 - keyPoints: Haberin en önemli 3 ayrıntısı, kısa madde olarak. Her madde en fazla 14 kelime olsun ve SOMUT bilgi içersin (sayı, fiyat, tarih, isim, teknik özellik varsa mutlaka yaz).
 - body: HABERİN TAM METNİ. 4-6 paragraf, toplam 350-550 kelime. Kaynaktaki bilgileri kullanarak haberi genişlet: ayrıntılar, sayılar, teknik özellikler, ilgili gelişmeler, açıklamalar. Kurallar:
   * Her paragraf 2-4 cümle olsun ve ayrı bir dizi öğesi olsun.
+  * Önceki paragrafta geçmeyen yeni bir somut ayrıntı ekle; aynı bilgiyi uzatıp tekrarlama.
   * İlk paragraf summary'yi KOPYALAMASIN; habere farklı bir girişle başla.
   * UYDURMA YASAK: Kaynakta geçmeyen isim, tarih, sayı, unvan, kurum, söz veya olay yazma. Geçmişe dönük iddialar (şu yıl atandı, şu projeyi yürüttü, şu rakamı açıkladı) kesinlikle uydurma.
   * Emin olmadığın ayrıntıyı eklemek yerine, kaynaktaki bilgiyi daha ayrıntılı ve akıcı biçimde anlat. Doğal çıkarımları "olabilir / bekleniyor" gibi temkinli ifadelerle ver.
-  * Kaynak çok kısaysa gövdeyi kısa tut (3 paragraf); doldurmak için bilgi ekleme.
+  * Kaynak kısaysa da gövdeyi 2-3 cümlelik bir özet metnine indirme; kaynakta geçen her olguyu en az bir cümleyle
+    işle, paragraf sayısını gerektiğinde 3'e düşür ama toplamda 180 kelimenin altına inme. Hiçbir ayrıntı yoksa
+    bile "dikkat çekiyor" gibi boş cümlelerle şişirme; o zaman gövdeyi kısa tut.
   * Yapay zekâ gibi değil, gazete haberi gibi yaz; "bu yazıda", "aşağıda" gibi ifadeler kullanma.
   * TELİF: Kaynak metinden cümle kopyalama, arka arkaya 10 kelimeden uzun aynı diziyi kullanma, kaynağın paragraf sırasını izleme.
 - comment: EDİTÖR YORUMU. summary ve body'nin TEKRARI KESİNLİKLE OLMAYACAK: hiçbir bilgiyi yeniden anlatma. Doğrudan yorumla başla. Şu sorulara cevap ver: Bu neden önemli? Kimi nasıl etkiler? Bundan sonrası için ne beklenebilir, neye dikkat edilmeli? 3-5 cümle; samimi ama profesyonel, gerekirse eleştirel.
-- editorNote: MANŞET NOTU (ana sayfadaki "öne çıkanlar" slaytı için). summary ve comment ile AYNI cümleleri ya da cümle parçalarını KESİNLİKLE kullanma; onların kısaltması/özeti de olmasın. 1-2 cümle, en fazla ~180 karakter. Manşet tonunda; merak uyandıran ama clickbait olmayan, ölçülü, samimi-profesyonel bir not yaz. Habere yeni bir açı ya da çıkarım kat: "neden bakmalısın", "asıl önemli olan ne"? Abartma ve bilgi uydurma; "şok", "inanılmaz", "bomba" gibi ifadeler kullanma.
-- tags: 3-6 adet kısa anahtar kelime.
+  SOMUTLUK ZORUNLU: Yorumun en az bir cümlesi bu habere özgü bir kırıntıya dayanmalı — kaynaktan gelen sayı, tutar,
+  tarih, isim, kurum ya da teknik ayrıntı gibi SOMUT bir öğe. Yorumda genel bir ahlak dersi, "önemlidir" türü
+  süsleme, başlığın tekrarı ya da habere hiç dokunmayan boş genellemeler yazma; o somut öğeden yola çık.
+- editorNote: MANŞET NOTU (ana sayfadaki "öne çıkanlar" slaytı için). summary ve comment ile AYNI cümleleri ya da cümle parçalarını KESİNLİKLE kullanma; onların kısaltması/özeti de olmasın. 1-2 cümle, en fazla ~180 karakter. Manşet tonunda; merak uyandıran ama clickbait olmayan, ölçülü, samimi-profesyonel bir not yaz. Habere yeni bir açı ya da çıkarım kat: "neden bakmalısın", "asıl önemli olan ne"? YASAK: notu "Neden bakmalısın/bakmalısınız?" gibi hazır bir soruyla bitirmek; haberin özelliklerini sıralayıp bırakmak; boş slogan. Not yeni bir bilgi, karşılaştırma ya da çıkarım katmalı. Abartma ve bilgi uydurma; "şok", "inanılmaz", "bomba" gibi ifadeler kullanma.
+- tags: 3-6 adet kısa, habere özgü anahtar kelime; kategori adını ("Gündem") etiket olarak tekrarlama.
 - category: AŞAĞIDAKİ listeden TAM OLARAK birini seç (başka bir kelime yazma): ${cats}
+
+YAZMADAN ÖNCE KONTROL ET: (1) summary title'ın kopyası mı? (2) Yorumda ve manşet notunda yasaklı kalıplardan biri mi var? (3) Gövde kaynaktaki somut ayrıntılara dayanıyor mu, yoksa boş mu şişirildi? (4) Hiçbir dizi alanı boş kaldı mı? (5) Türkçe yazım hatası var mı?
 
 Yanıt formatı (sadece JSON):
 {"title":"...","slug":"...","summary":"...","keyPoints":["...","...","..."],"body":["paragraf 1","paragraf 2","paragraf 3"],"comment":"...","editorNote":"...","tags":["..."],"category":"..."}`;
