@@ -45,10 +45,10 @@ const needsWork = (a) =>
   clickbaitNote(a) ||
   summaryIsTitle(a);
 
-// 0 = en acil (okurun gördüğü boşluk), 3 = kozmetik.
+// 0 = okurun gördüğü boşluk (gövde veya AI yorumu hiç yok), 3 = kozmetik.
 const oncelik = (a) => {
-  if (needsBody(a)) return 0;
-  if (needsEditorNote(a) || needsComment(a)) return 1;
+  if (needsBody(a) || needsComment(a)) return 0;
+  if (needsEditorNote(a)) return 1;
   if (thinBody(a)) return 2;
   return 3;
 };
