@@ -4,7 +4,7 @@ import { analyzeArticle } from "./ai.js";
 import { updateMarket } from "./market.js";
 import { loadArticles, saveArticles, existingIds, makeId } from "./store.js";
 import { shareNewArticles } from "./share.js";
-import { makeIndex, findSimilar } from "./dedupe.js";
+import { makeIndex, findSimilar, dedupeArticles } from "./dedupe.js";
 import { isBreaking, breakingScore } from "./breaking.js";
 import { purgeCopiedText } from "./telif.js";
 import { chooseImage } from "./gorsel.js";
@@ -23,6 +23,22 @@ async function main() {
   const articles = await loadArticles();
   const seen = existingIds(articles);
   console.log(`Mevcut arşiv: ${articles.length} haber`);
+
+  // Arşivdeki "aynı haber" tekrarlarını temizle. Giriş süzgeci farklı
+  // çalıştırmalarda takılanları kaçırabiliyor; bu adım her turda çalışarak
+  // arşivi kendi kendine temiz tutar.
+  {
+    const { kept, removed } = dedupeArticles(articles, config.arsivDedupeThreshold);
+    if (removed.length) {
+      console.log(`Arşiv temizliği: ${removed.length} tekrar haber çıkarıldı`);
+      for (const r of removed) {
+        console.log(`  ⏭ tekrar (arşiv): "${r.title.slice(0, 46)}" ≈ "${r.twin.slice(0, 46)}"`);
+      }
+      articles.splice(0, articles.length, ...kept);
+      seen.clear();
+      for (const a of articles) seen.add(a.id);
+    }
+  }
 
   const fetched = await fetchAllFeeds();
   console.log(`Toplam çekilen: ${fetched.length}`);

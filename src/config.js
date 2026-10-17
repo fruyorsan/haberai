@@ -129,6 +129,11 @@ export const config = {
   dupeThreshold: Number(process.env.DUPE_THRESHOLD || 0.65),
   dupeWindowHours: Number(process.env.DUPE_WINDOW_HOURS || 48), // bu süre içindeki haberlere karşı kontrol edilir
 
+  // Arşiv temizliği (src/dedupe.js → dedupeArticles) eşiği. Silme telafi
+  // edilemez olduğu için giriş eşiğinden (dupeThreshold) daha temkinli tutulur:
+  // burada yalnızca apaçık tekrarlar temizlenir.
+  arsivDedupeThreshold: Number(process.env.ARSIV_DEDUPE_THRESHOLD || 0.75),
+
   // Her turda en az bir haber türü seçilsin: teknoloji/oyun siteleri dakikada
   // onlarca haber yayınladığı için gündem/son dakika haberlerini eziyor.
   newsCategories: (process.env.NEWS_CATEGORIES || "Gündem,Dünya,Ekonomi,Spor")
