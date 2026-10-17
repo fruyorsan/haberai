@@ -208,6 +208,11 @@ Yeni yayınlanan haberleri sosyal kanallara **otomatik** paylaşan opsiyonel bir
 - Kanal başına bağımsız çalışır: biri hata verirse diğerleri etkilenmez.
 - İlk kez anahtar eklediğinde eski arşiv tek seferde paylaşılmasın diye bir çalıştırmada
   en fazla `SHARE_MAX_PER_RUN` (varsayılan 5) haber paylaşılır.
+- **Paylaşım aralığı:** kanalın spam görünmemesi için iki paylaşım arasında asgari
+  `SHARE_MIN_ARALIK_DK` (varsayılan **25**) dakika beklenir; bu süre açıkken tur başına
+  en fazla 1 haber paylaşılır (5 dakikalık hatta karşılığı saatte ~2 paylaşım). Süre
+  `data/social.json` içindeki son paylaşım anından (`updatedAt`) hesaplanır.
+  Sınırsız paylaşım için `SHARE_MIN_ARALIK_DK=0` ver.
 
 ### Desteklenen kanallar ve gereken secret'lar
 
@@ -221,7 +226,8 @@ Yeni yayınlanan haberleri sosyal kanallara **otomatik** paylaşan opsiyonel bir
 | X / Twitter | `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, `X_ACCESS_SECRET` | developer.x.com (Read+Write izni) |
 
 İsteğe bağlı: `SITE_URL` (link adresi, varsayılan `https://haberinai.site`),
-`SHARE_MAX_PER_RUN` (çalıştırma başına paylaşım sayısı).
+`SHARE_MAX_PER_RUN` (çalıştırma başına paylaşım sayısı),
+`SHARE_MIN_ARALIK_DK` (iki paylaşım arası asgari dakika, varsayılan 25).
 
 Generic webhook'a gönderilen gövde:
 ```json

@@ -24,6 +24,11 @@ const BSKY_LIMIT = 300; // Bluesky sınırı
 // tek seferde taşmasını önler). 0 veya negatif → sınırsız.
 const MAX_PER_RUN = Number(process.env.SHARE_MAX_PER_RUN ?? 5);
 
+// Kanalın "spam" görünmemesi için iki paylaşım arasında bırakılacak asgari süre
+// (dakika). Hat 5 dakikada bir çalıştığı için 25 → saatte ~2 paylaşım.
+// Bu süre açıkken bir turda en fazla 1 haber paylaşılır. 0 → sınır yok.
+const MIN_ARALIK_DK = Number(process.env.SHARE_MIN_ARALIK_DK ?? 25);
+
 // --------------------------------------------------------------------------
 // Yardımcılar
 // --------------------------------------------------------------------------
@@ -295,6 +300,10 @@ function channels() {
 
 // --------------------------------------------------------------------------
 // Tekrar önleme deposu (data/social.json)
+//
+// updatedAt = son başarılı paylaşım anı. Paylaşımlar arasındaki asgari süre
+// (MIN_ARALIK_DK) bu alandan hesaplanır; dosya yalnızca paylaşım yapıldığında
+// yazıldığı için alan "son paylaşım zamanı" olarak güvenilirdir.
 // --------------------------------------------------------------------------
 
 async function loadShared() {
@@ -339,11 +348,27 @@ export async function shareNewArticles(articles, { dry = false } = {}) {
   }
 
   let sharedSet;
+  let sonPaylasim = null;
   try {
-    sharedSet = new Set((await loadShared()).shared);
+    const veri = await loadShared();
+    sharedSet = new Set(veri.shared);
+    sonPaylasim = veri.updatedAt;
   } catch (err) {
     console.warn(`Sosyal paylaşım: data/social.json okunamadı (${err.message}); sıfırdan başlanıyor.`);
     sharedSet = new Set();
+  }
+
+  // Aralık kuralı: son paylaşımdan yeterince zaman geçmediyse bu turda paylaşım yok.
+  // (dry modda atlanır: önizleme her zaman ne paylaşılacağını gösterir.)
+  if (!dry && MIN_ARALIK_DK > 0 && sonPaylasim) {
+    const gecenDk = (Date.now() - Date.parse(sonPaylasim)) / 60000;
+    if (Number.isFinite(gecenDk) && gecenDk < MIN_ARALIK_DK) {
+      console.log(
+        `Sosyal paylaşım: son paylaşımdan ${Math.round(gecenDk)} dk geçti ` +
+          `(asgari ${MIN_ARALIK_DK} dk); bu turda paylaşım yok.`
+      );
+      return { configured: active.map((c) => c.name), total: 0, shared: 0, dry };
+    }
   }
 
   const list = (Array.isArray(articles) ? articles : []).filter(
@@ -357,7 +382,8 @@ export async function shareNewArticles(articles, { dry = false } = {}) {
     )
   );
 
-  const queue = MAX_PER_RUN > 0 ? list.slice(0, MAX_PER_RUN) : list;
+  const perRun = MIN_ARALIK_DK > 0 ? 1 : MAX_PER_RUN;
+  const queue = perRun > 0 ? list.slice(0, perRun) : list;
   const channelNames = active.map((c) => c.name);
 
   console.log(
