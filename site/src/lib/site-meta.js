@@ -1,11 +1,13 @@
 // Site geneli kimlik bilgileri tek yerden yönetilir.
 //
 // ALAN ADI DURUMU:
-//   Kod varsayılanı, sitenin YAYINDA OLDUĞU adrestir (fruyorsan.github.io):
-//   kanonik adresler, RSS, site haritaları ve robots.txt buradan (astro.config.mjs
-//   → site) türetilir. Özel alan adı yayına girdiğinde SITE_URL değişkeni
-//   tanımlanır ve tüm adresler tek adımda ona döner:
-//     gh variable set SITE_URL --body "https://haberinai.site"
+//   Şu an yayında: haberinai.site — SITE_URL ve CUSTOM_DOMAIN GitHub Actions değişkeni
+//   olarak tanımlı (DNS: Cloudflare, HTTPS zorunlu, www → apex 301).
+//
+//   Kod varsayılanı, değişken yoksa kullanılan adrestir (fruyorsan.github.io): kanonik
+//   adresler, RSS, site haritaları ve robots.txt astro.config.mjs → site değerinden
+//   türetilir. Alan adı değişince tek adım:
+//     gh variable set SITE_URL --body "https://yeni-adres"
 //
 //   CNAME dosyası ise yalnızca repoda CUSTOM_DOMAIN GitHub Actions değişkeni
 //   tanımlıysa yazılır. Bu bilerek böyledir: alan adı DNS'te yayına girmeden

@@ -112,6 +112,11 @@ için beklemeden başlatmak istersen: GitHub → **Actions** → **Arsiv Yenilem
 
 ### Alan adı (haberinai.site)
 
+> **Durum: yayında.** `https://haberinai.site` GitHub Pages'te yayında; HTTPS zorunlu, `www` →
+> apex 301. DNS Cloudflare'de (`carla.ns.cloudflare.com`, `dion.ns.cloudflare.com`) ve GitHub
+> Actions'ta `SITE_URL=https://haberinai.site` ile `CUSTOM_DOMAIN=haberinai.site` tanımlı.
+> Kayıtlar "DNS only" (gri bulut) olmalı — turuncu bulut GitHub'ın sertifikasını engeller.
+
 Kod varsayılanı, sitenin **yayında olduğu** adrestir (`https://fruyorsan.github.io`):
 kanonik adresler, RSS, site haritaları ve `robots.txt` buradan üretilir. Özel alan adı
 yayına girdiğinde repoda `SITE_URL` değişkeni tanımlanır ve tüm adresler tek adımda ona
