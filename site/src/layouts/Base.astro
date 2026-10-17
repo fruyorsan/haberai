@@ -22,6 +22,7 @@ const {
   imageAlt,
   schema,
   preloadImage,
+  noindex = false,
 } = Astro.props;
 
 // Mutlak URL tabanı (astro.config.mjs -> site)
@@ -60,11 +61,15 @@ const isArticle = ogType === "article";
     {GOOGLE_SITE_VERIFICATIONS.map((code) => (
       <meta name="google-site-verification" content={code} />
     ))}
-    <!-- Arama görünürlüğü: büyük görsel önizlemesine izin (Google Discover/News) -->
-    <meta
-      name="robots"
-      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-    />
+    {/* İnce/arama sayfaları noindex; geri kalanı Discover/News için tam izinli */}
+    {noindex ? (
+      <meta name="robots" content="noindex, follow" />
+    ) : (
+      <meta
+        name="robots"
+        content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      />
+    )}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -169,32 +174,46 @@ const isArticle = ogType === "article";
       document.documentElement.classList.add("js");
     </script>
 
-    <!-- Google tag (gtag.js) -->
-    {GA_MEASUREMENT_ID && (
-      <>
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} is:inline></script>
-        <script
-          is:inline
-          set:html={`window.dataLayer = window.dataLayer || [];
-function gtag() { dataLayer.push(arguments); }
-gtag("js", new Date());
-gtag("config", ${JSON.stringify(GA_MEASUREMENT_ID)});`}
-        />
-      </>
+    <!-- Ölçüm (GA4) ve reklam (AdSense) yalnızca kullanıcı onay verirse yüklenir (KVKK/GDPR) -->
+    {ADSENSE_CLIENT && <meta name="google-adsense-account" content={ADSENSE_CLIENT} />}
+    {(GA_MEASUREMENT_ID || ADSENSE_CLIENT) && (
+      <script
+        is:inline
+        set:html={`window.__olcumYukle = function () {
+  if (window.__olcumYuklendi) return;
+  window.__olcumYuklendi = true;
+  var ga = ${JSON.stringify(GA_MEASUREMENT_ID || "")};
+  var ads = ${JSON.stringify(ADSENSE_CLIENT || "")};
+  if (ga) {
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(ga);
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", ga, { anonymize_ip: true });
+  }
+  if (ads) {
+    var a = document.createElement("script");
+    a.async = true;
+    a.crossOrigin = "anonymous";
+    a.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + encodeURIComponent(ads);
+    document.head.appendChild(a);
+  }
+};
+(function () {
+  var onay = null;
+  try { onay = localStorage.getItem("cerez-onay"); } catch (e) {}
+  if (onay !== "kabul") return;
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", window.__olcumYukle);
+  else window.__olcumYukle();
+})();`}
+      />
     )}
 
     <!-- Sayfaya ozel JSON-LD (WebSite/Organization vb.) -->
     {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
-    {ADSENSE_CLIENT && (
-      <>
-        <meta name="google-adsense-account" content={ADSENSE_CLIENT} />
-        <script
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
-          crossorigin="anonymous"
-          is:inline></script>
-      </>
-    )}
   </head>
   <body>
     <Header />
@@ -275,5 +294,100 @@ gtag("config", ${JSON.stringify(GA_MEASUREMENT_ID)});`}
         else if (mq.addListener) mq.addListener(onSystemTheme);
       }
     </script>
+    <!-- Çerez izni (KVKK/GDPR): onay verilene kadar GA/AdSense yüklenmez -->
+    <div class="cerez" id="cerez" hidden>
+      <div class="cerez__ic">
+        <p>
+          Sitede ölçüm ve (yayına girdiğinde) reklam için çerez kullanılıyor. Ayrıntılar:
+          <a href="/gizlilik/">Gizlilik ve Çerez Politikası</a>
+        </p>
+        <div class="cerez__btn">
+          <button type="button" data-cerez="red">Sadece zorunlu</button>
+          <button type="button" class="cerez__kabul" data-cerez="kabul">Kabul et</button>
+        </div>
+      </div>
+    </div>
+
+    <script is:inline>
+      (function () {
+        var kutu = document.getElementById("cerez");
+        if (!kutu) return;
+        var oku = function () {
+          try { return localStorage.getItem("cerez-onay"); } catch (e) { return null; }
+        };
+        if (!oku()) {
+          kutu.hidden = false;
+          document.documentElement.classList.add("cerez-acik");
+        }
+        kutu.addEventListener("click", function (e) {
+          var b = e.target && e.target.closest ? e.target.closest("[data-cerez]") : null;
+          if (!b) return;
+          var secim = b.getAttribute("data-cerez");
+          try { localStorage.setItem("cerez-onay", secim); } catch (err) {}
+          kutu.hidden = true;
+          document.documentElement.classList.remove("cerez-acik");
+          if (secim === "kabul" && window.__olcumYukle) window.__olcumYukle();
+        });
+      })();
+    </script>
+
+    <style>
+      .cerez {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 60;
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        box-shadow: var(--shadow-lg);
+        padding: 12px 16px;
+      }
+      .cerez[hidden] {
+        display: none;
+      }
+      .cerez__ic {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px 18px;
+        flex-wrap: wrap;
+      }
+      .cerez p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--text);
+      }
+      .cerez a {
+        color: var(--brand);
+        font-weight: 600;
+      }
+      .cerez__btn {
+        display: flex;
+        gap: 8px;
+        margin-left: auto;
+      }
+      .cerez button {
+        border: 1px solid var(--border-strong);
+        background: var(--surface);
+        color: var(--text);
+        border-radius: 999px;
+        padding: 8px 16px;
+        font: inherit;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .cerez__kabul {
+        background: var(--brand);
+        border-color: var(--brand);
+        color: #fff;
+      }
+      .cerez__kabul:hover {
+        background: var(--brand-strong);
+        border-color: var(--brand-strong);
+      }
+    </style>
   </body>
 </html>
