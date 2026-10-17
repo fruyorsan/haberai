@@ -27,7 +27,7 @@ const son = getArticles().slice(0, 5);
     </div>
 
     <div class="footer__col">
-      <h4>Kategoriler</h4>
+      <h2>Kategoriler</h2>
       {cats.map((c) => (
         <a href={`/kategori/${c.slug}/`}>
           {c.name} <span class="footer__count">{c.count}</span>
@@ -36,12 +36,12 @@ const son = getArticles().slice(0, 5);
     </div>
 
     <div class="footer__col">
-      <h4>Son Haberler</h4>
+      <h2>Son Haberler</h2>
       {son.map((a) => <a href={a.url}>{a.title}</a>)}
     </div>
 
     <div class="footer__col">
-      <h4>Kurumsal</h4>
+      <h2>Kurumsal</h2>
       <a href="/son-dakika/">Son Dakika</a>
       <a href="/kategoriler/">Kategoriler</a>
       <a href="/etiketler/">Konular</a>
@@ -135,7 +135,7 @@ const son = getArticles().slice(0, 5);
     gap: 10px;
     min-width: 0;
   }
-  .footer__col h4 {
+  .footer__col h2 {
     color: #fff;
     margin: 0 0 6px;
     font-size: 0.95rem;
@@ -193,7 +193,7 @@ const son = getArticles().slice(0, 5);
       font-size: 0.9rem;
       -webkit-line-clamp: 3;
     }
-    .footer__col h4 {
+    .footer__col h2 {
       margin-bottom: 4px;
     }
     .footer__count {
