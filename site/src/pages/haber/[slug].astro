@@ -3,7 +3,7 @@ import Base from "../../layouts/Base.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
 import AdSlot from "../../components/AdSlot.astro";
 import ShareButtons from "../../components/ShareButtons.astro";
-import { getArticles, formatDate, publishedISO, imageUrl, tagUrl } from "../../lib/articles.js";
+import { getArticles, formatDate, publishedISO, imageUrl, tagUrl, slugify } from "../../lib/articles.js";
 import { ADSENSE_SLOTS } from "../../lib/site-meta.js";
 
 export function getStaticPaths() {
@@ -17,8 +17,29 @@ const { article } = Astro.props;
 const all = getArticles();
 const date = formatDate(publishedISO(article));
 
-const sameCat = all.filter((a) => a.categorySlug === article.categorySlug && a.slug !== article.slug);
-const related = (sameCat.length ? sameCat : all.filter((a) => a.slug !== article.slug)).slice(0, 3);
+// İlgili haberler: yalnızca kategoriye bakmak geniş kategorilerde (Gündem gibi)
+// konuyla ilgisiz "en son" haberleri getiriyordu. Sıralama artık önce ortak
+// konu (etiket) sayısına, sonra aynı kategoriye, en sonda tazeliğe göre yapılır.
+const benimEtiketler = new Set(
+  (Array.isArray(article.tags) ? article.tags : []).map((t) => slugify(t)).filter(Boolean)
+);
+
+const puanla = (a) => {
+  if (a.slug === article.slug) return -1;
+  const ortak = (Array.isArray(a.tags) ? a.tags : []).filter((t) => benimEtiketler.has(slugify(t))).length;
+  return ortak * 4 + (a.categorySlug === article.categorySlug ? 1 : 0);
+};
+
+// getArticles() en yeniden eskiye sıralıdır; eşit puanda tazelik korunur.
+const skorlu = all
+  .map((a, i) => ({ a, i, p: puanla(a) }))
+  .filter((x) => x.p > 0)
+  .sort((x, y) => y.p - x.p || x.i - y.i)
+  .map((x) => x.a);
+
+// Kategorisinde tek kalan haberlerde liste eksik kalmasın: en yeni haberlerle tamamla.
+const yedek = all.filter((a) => a.slug !== article.slug && !skorlu.includes(a));
+const related = [...skorlu, ...yedek].slice(0, 3);
 
 const keyPoints = Array.isArray(article.keyPoints) ? article.keyPoints.filter(Boolean) : [];
 const body = Array.isArray(article.body) ? article.body.filter(Boolean) : [];
