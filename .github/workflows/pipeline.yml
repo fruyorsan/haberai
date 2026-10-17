@@ -70,6 +70,15 @@ jobs:
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
         run: npm run share
 
+      # Yeni haberleri Bing/Yandex'e aninda bildirir (IndexNow). Google bu
+      # protokolu desteklemez; orada sitemap + Search Console kullanilir.
+      # Gonderilenler data/indexnow.json'da tutulur, sonraki adimda commit'e girer.
+      - name: IndexNow bildirimi (Bing/Yandex)
+        continue-on-error: true
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: npm run indexnow
+
       - name: Degisiklikleri kaydet
         id: commit
         run: |

@@ -248,6 +248,31 @@ npm run share
 > Not: X/Twitter OAuth 1.0a imzası `node:crypto` ile manuel üretilir; anahtarlar
 > girilene ve canlı denenene kadar "doğrulanmadı" kabul edilmelidir.
 
+## IndexNow (Bing/Yandex anında bildirim)
+
+Google'ın aksine Bing ve Yandex, **IndexNow** protokolünü destekler: yeni bir URL
+yayınlandığında site bunu tek bir HTTP isteğiyle arama motorlarına haber verir; sitemap
+taramasını beklemez. Workflow içindeki **"IndexNow bildirimi"** adımı her turda çalışır
+(`continue-on-error: true` — hata hattı durdurmaz).
+
+- Anahtar dosyası: `site/public/<INDEXNOW_KEY>.txt` (içinde anahtarın kendisi yazar).
+  Yayındaki adresi `https://haberinai.site/<INDEXNOW_KEY>.txt` olur ve istek
+  `keyLocation` alanında bu adresi bildirir.
+- Yalnızca **son 3 günde** yayınlanmış, daha önce bildirilmemiş en fazla **40** URL
+  gönderilir; eski arşiv site haritasından taranır.
+- Tekrarı önlemek için gönderilen haber id'leri `data/indexnow.json`'da tutulur
+  (workflow bunu `data/` ile birlikte commit eder).
+- İstek başarısız olursa (ağ hatası / 5xx) işaret konmaz, sonraki turda yeniden denenir.
+
+```powershell
+npm run indexnow:dry            # ne gönderileceğini yazar, istek atmaz
+npm run indexnow                # gerçekten gönderir
+node src/indexnow.mjs --tumu    # bir kerelik: tüm arşivi gönderir (pencere + sınır yok)
+```
+
+> Not: IndexNow yalnızca Bing/Yandex içindir. Google için tek yol Search Console'da
+> property doğrulaması + `sitemap-index.xml` gönderimidir.
+
 ## Veri Şeması (`data/articles.json`)
 
 Her haber nesnesi şu alanları taşır: `id`, `title`, `slug`, `summary`, `keyPoints`, `body`,
@@ -274,6 +299,8 @@ src/store.js    → kaydet/yükle + tekrar önleme
 src/index.js    → akışı yönetir
 src/share.js    → sosyal kanallara paylaşım + tekrar önleme
 src/share-cli.js → npm run share (arşivi tarayıp yeni haberleri paylaşır)
+src/indexnow.mjs → Bing/Yandex'e IndexNow bildirimi (yeni URL'ler)
 data/articles.json → üretilen haberler
 data/social.json   → paylaşılan haber id'leri (tekrarı önler)
+data/indexnow.json → IndexNow'a bildirilen haber id'leri (tekrarı önler)
 ```

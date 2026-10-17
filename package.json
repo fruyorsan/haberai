@@ -9,6 +9,8 @@
     "collect:dry": "node --env-file-if-exists=.env src/index.js --dry",
     "share": "node --env-file-if-exists=.env src/share-cli.js",
     "share:dry": "node --env-file-if-exists=.env src/share-cli.js --dry",
+    "indexnow": "node --env-file-if-exists=.env src/indexnow.mjs",
+    "indexnow:dry": "node --env-file-if-exists=.env src/indexnow.mjs --dry",
     "backfill": "node --env-file-if-exists=.env src/backfill.js",
     "backfill:dry": "node --env-file-if-exists=.env src/backfill.js --dry",
     "ek-gorsel": "node --env-file-if-exists=.env src/ek-gorsel.mjs",
