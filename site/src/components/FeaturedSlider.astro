@@ -9,10 +9,12 @@ import { kapakKaynagi } from "../lib/kapak.js";
 const POOL = 6;
 const AUTOPLAY_MS = 6000;
 
-// Vitrin (manşet) için önce kaynak fotoğrafı OLAN haberler seçilir; böylece
-// en görünür alan hep gerçek fotoğrafla açılır. Fotoğraflı haber yetmezse
-// kalanlar (markalı kapak görseliyle) sırayı bozmadan eklenir.
-const pool = getFeatured(POOL);
+// Vitrin (manşet) için önce KAPAK FOTOĞRAFI DOĞRULANMIŞ haberler seçilir
+// (lib/kapak.js): yanlış/genel görselleri elenmiş haberler vitrine girmez, çünkü
+// en görünür alanda markalı yer tutucu "kırık görsel" gibi duruyor.
+// Fotoğraflı haber yetmezse kalanlar sırayı bozmadan eklenir (o slaytta marka
+// zeminli `.fs__ph` görünür ve logo görseli asla gösterilmez).
+const pool = getFeatured(POOL, 20, kapakKaynagi);
 
 // Slaytlarda önce haberin gerçek fotoğrafı, yüklenemezse markalı yer tutucu
 // (HaberinAi kategori renkleri) gösterilir.
@@ -83,19 +85,21 @@ const items = slides.map((a) => {
                         <span class="fs__ph-mark">H</span>
                         <span class="fs__ph-cat">{a.category}</span>
                       </div>
-                      <img
-                        class="fs__img"
-                        src={a.image || "/og-default.png"}
-                        data-orig={a.imageOrig || undefined}
-                        alt={a.title}
-                        width="1200"
-                        height="675"
-                        loading={i === 0 ? "eager" : "lazy"}
-                        fetchpriority={i === 0 ? "high" : "auto"}
-                        decoding="async"
-                        referrerpolicy="no-referrer"
-                        onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.src=this.dataset.orig}else{this.classList.add('is-broken')}"
-                      />
+                      {a.image ? (
+                        <img
+                          class="fs__img"
+                          src={a.image}
+                          data-orig={a.imageOrig || undefined}
+                          alt={a.title}
+                          width="1200"
+                          height="675"
+                          loading={i === 0 ? "eager" : "lazy"}
+                          fetchpriority={i === 0 ? "high" : "auto"}
+                          decoding="async"
+                          referrerpolicy="no-referrer"
+                          onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.src=this.dataset.orig}else{this.classList.add('is-broken')}"
+                        />
+                      ) : null}
                       <div class="fs__overlay" aria-hidden="true"></div>
                       {a.breaking === true &&
                       (a.publishedAt || a.generatedAt) &&

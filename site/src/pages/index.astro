@@ -12,7 +12,7 @@ const articles = getArticles();
 // motorlarının konu sayfalarını keşfi için).
 const konular = getTags().slice(0, 14);
 // İlk 6 haber "öne çıkanlar" slaytında gösterilir; ızgarada tekrar etmesinler.
-const featured = getFeatured(6);
+const featured = getFeatured(6, 20, kapakKaynagi);
 const featuredSlugs = new Set(featured.map((a) => a.slug));
 const nonFeatured = articles.filter((a) => !featuredSlugs.has(a.slug));
 // Teknoloji/yapay zekâ gelişmeleri ayrı ve belirgin bir bölümde öne çıkarılır.
@@ -35,7 +35,7 @@ const origin = siteOrigin(Astro.site);
 // Vitrin kapak görseli: preload edilecek adres de süzgeçten geçer. Vitrindeki
 // ilk *geçerli* kapak seçilir; hiçbiri geçerli değilse markalı görsele düşülür.
 const heroKapak = featured.map((a) => kapakKaynagi(a)).find(Boolean) || "";
-const heroImage = heroKapak ? imageUrl(heroKapak, 1200) : "/og-default.png";
+const heroImage = heroKapak ? imageUrl(heroKapak, 1200) : "";
 const siteSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -67,7 +67,7 @@ const siteSchema = {
   title="HaberinAi — Yapay Zekâ Destekli Haberler"
   description="HaberinAi: yapay zekâ destekli teknoloji ve gündem haberlerinde özet, analiz ve editör yorumu."
   schema={siteSchema}
-  preloadImage={heroImage}
+  preloadImage={heroImage || undefined}
 >
   <div class="container">
     <h1 class="sr-only">HaberinAi — Yapay Zekâ Destekli Türkçe Haberler ve Gündem Özetleri</h1>

@@ -173,19 +173,21 @@ const breadcrumbLd = {
           <span class="post__ph-mark">H</span>
           <span class="post__ph-cat">{article.category}</span>
         </div>
-        <img
-          class="post__img"
-          src={kapak ? imageUrl(kapak, 1200) : "/og-default.png"}
-          data-orig={kapak || undefined}
-          alt={article.title}
-          width="1200"
-          height="675"
-          loading="eager"
-          decoding="async"
-          fetchpriority="high"
-          referrerpolicy="no-referrer"
-          onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.src=this.dataset.orig}else{this.classList.add('is-broken')}"
-        />
+        {kapak ? (
+          <img
+            class="post__img"
+            src={imageUrl(kapak, 1200)}
+            data-orig={kapak}
+            alt={article.title}
+            width="1200"
+            height="675"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+            referrerpolicy="no-referrer"
+            onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.src=this.dataset.orig}else{this.classList.add('is-broken')}"
+          />
+        ) : null}
         <span class="post__veil" aria-hidden="true"></span>
         <span class="post__ph-note">
           {kapak ? `Fotoğraf: ${article.source}` : "Görsel: HaberinAi"}
