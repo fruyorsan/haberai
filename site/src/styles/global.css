@@ -615,6 +615,11 @@ html.js [data-reveal].is-in {
   color: #fff;
 }
 
+/* Çerez bildirimi açıkken yukarı çık butonu onun üstünde kalsın */
+html.cerez-acik .to-top {
+  bottom: 108px;
+}
+
 /* ---------------------------------------------------------------
    İnce kaydırma çubuğu (masaüstü)
    --------------------------------------------------------------- */
