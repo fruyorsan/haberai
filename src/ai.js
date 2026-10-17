@@ -1,4 +1,5 @@
 import { config } from "./config.js";
+import { purgeCopiedText } from "./telif.js";
 
 const GEMINI_ENDPOINT = (model) =>
   `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
@@ -62,7 +63,7 @@ TELİF KURALLARI (kesin ve bağlayıcı):
 - Kaynak metinde olmayan alıntı söz üretme.
 Yanıtını SADECE geçerli bir JSON nesnesi olarak ver.`;
 
-function buildPrompt(article) {
+function buildPrompt(article, ekNot = "") {
   const cats = config.categories.join(", ");
   const hint = article.feedCategory ? `\nKAYNAK KATEGORİSİ (sadece ipucu): ${article.feedCategory}` : "";
   return `KAYNAK: ${article.source}${hint}
@@ -100,7 +101,7 @@ Aşağıdaki JSON alanlarını TÜRKÇE üret:
 YAZMADAN ÖNCE KONTROL ET: (1) summary title'ın kopyası mı? (2) Yorumda ve manşet notunda yasaklı kalıplardan biri mi var? (3) Gövde kaynaktaki somut ayrıntılara dayanıyor mu, yoksa boş mu şişirildi? (4) Hiçbir dizi alanı boş kaldı mı? (5) Türkçe yazım hatası var mı?
 
 Yanıt formatı (sadece JSON):
-{"title":"...","slug":"...","summary":"...","keyPoints":["...","...","..."],"body":["paragraf 1","paragraf 2","paragraf 3"],"comment":"...","editorNote":"...","tags":["..."],"category":"..."}`;
+{"title":"...","slug":"...","summary":"...","keyPoints":["...","...","..."],"body":["paragraf 1","paragraf 2","paragraf 3"],"comment":"...","editorNote":"...","tags":["..."],"category":"..."}${ekNot ? `\n\n${ekNot}` : ""}`;
 }
 
 // Bu çalıştırmada tükenen (günlük kota) adaylar
@@ -131,6 +132,23 @@ function allExhaustedError(lastErr) {
   return e;
 }
 
+// Üretilen içerikte eksik kalan alanlar. Telif filtresi bir cümleyi sildiğinde
+// alan tamamen boş kalabilir; o durumda yeniden üretim istenir.
+function eksikAlanlar(ai) {
+  const eksik = [];
+  if (String(ai.summary || "").trim().length < 40) eksik.push("summary");
+  if (String(ai.comment || "").trim().length < 40) eksik.push("comment");
+  if (String(ai.editorNote || "").trim().length < 10) eksik.push("editorNote");
+  if (!(ai.body || []).filter(Boolean).length) eksik.push("body");
+  if (!(ai.keyPoints || []).filter(Boolean).length) eksik.push("keyPoints");
+  return eksik;
+}
+
+const EK_ISTEM = `EK İSTEK (önceki denemede bazı alanlar boş kaldı): Tüm alanları eksiksiz doldur.
+Özellikle comment ve editorNote alanlarında kaynağın cümle kuruluşunu değil kendi cümlelerini kullan;
+kaynakla arka arkaya 10 kelimeden uzun aynı sözcük dizisini ASLA kullanma, kaynaktan cümle kopyalama.
+Her alanı kısa ve tam cümlelerle yaz; hiçbir alanı boş bırakma.`;
+
 export async function analyzeArticle(article) {
   const all = candidates();
   if (!all.length) throw new Error("Hiç API anahtarı yok (GEMINI_API_KEY / GROQ_API_KEY)");
@@ -138,11 +156,31 @@ export async function analyzeArticle(article) {
   const available = all.filter((c) => !exhausted.has(keyOf(c)));
   if (!available.length) throw allExhaustedError();
 
+  // TELİF GÜVENCESİ BURADA UYGULANIR: kaynakla birebir örtüşen cümleler
+  // ayıklanınca bir alan (özellikle comment/editorNote) tamamen boşalabiliyor.
+  // Bu yüzden temizlik sonrası alanlar denetlenir ve gerekirse bir kez daha
+  // üretim istenir (aşağıdaki EK_ISTEM ile).
+  const kaynak = String(article?.content || "");
+  const temizle = (ai) => (kaynak.length >= 200 ? purgeCopiedText(ai, kaynak).cleaned : ai);
+
   let lastErr;
+  let enIyi = null;
+  let enIyiEksik = Number.POSITIVE_INFINITY;
+  let calisanAday = null;
+
   for (const c of available) {
     for (let attempt = 0; attempt < 3; attempt++) {
       try {
-        return await callProvider(c, article);
+        const ai = temizle(await callProvider(c, article));
+        calisanAday = c;
+        const eksik = eksikAlanlar(ai);
+        if (eksik.length < enIyiEksik) {
+          enIyi = ai;
+          enIyiEksik = eksik.length;
+        }
+        if (!eksik.length) return ai;
+        console.warn(`    (eksik alan: ${eksik.join(", ")})`);
+        break; // üretim başarılı ama alan eksik; sıradaki adaya geç
       } catch (err) {
         lastErr = err;
 
@@ -172,21 +210,40 @@ export async function analyzeArticle(article) {
     }
   }
 
+  // Alanlar hâlâ eksikse tek bir ek deneme: daha özgün anlatım isteğiyle.
+  const tekrarAday =
+    calisanAday && !exhausted.has(keyOf(calisanAday))
+      ? calisanAday
+      : available.find((c) => !exhausted.has(keyOf(c)));
+  if (enIyiEksik > 0 && tekrarAday) {
+    try {
+      const ai = temizle(await callProvider(tekrarAday, article, EK_ISTEM));
+      const eksik = eksikAlanlar(ai);
+      if (eksik.length < enIyiEksik) {
+        enIyi = ai;
+        enIyiEksik = eksik.length;
+      }
+    } catch (err) {
+      lastErr = err;
+    }
+  }
+
+  if (enIyi) return enIyi;
   throw allExhaustedError(lastErr);
 }
 
-async function callProvider(c, article) {
-  return c.provider === "groq" ? groqCall(c, article) : geminiCall(c, article);
+async function callProvider(c, article, ekNot = "") {
+  return c.provider === "groq" ? groqCall(c, article, ekNot) : geminiCall(c, article, ekNot);
 }
 
 // --------------------------- Gemini ---------------------------
-async function geminiCall(c, article) {
+async function geminiCall(c, article, ekNot = "") {
   const res = await safeFetch(`${GEMINI_ENDPOINT(c.model)}?key=${c.apiKey}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       systemInstruction: { parts: [{ text: SYSTEM }] },
-      contents: [{ parts: [{ text: buildPrompt(article) }] }],
+      contents: [{ parts: [{ text: buildPrompt(article, ekNot) }] }],
       generationConfig: {
         temperature: 0.85,
         maxOutputTokens: 3000,
@@ -204,7 +261,7 @@ async function geminiCall(c, article) {
 }
 
 // --------------------------- Groq ---------------------------
-async function groqCall(c, article) {
+async function groqCall(c, article, ekNot = "") {
   const res = await safeFetch(GROQ_ENDPOINT, {
     method: "POST",
     headers: {
@@ -221,7 +278,7 @@ async function groqCall(c, article) {
       response_format: { type: "json_object" },
       messages: [
         { role: "system", content: SYSTEM },
-        { role: "user", content: buildPrompt(article) },
+        { role: "user", content: buildPrompt(article, ekNot) },
       ],
     }),
   });

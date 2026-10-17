@@ -31,18 +31,24 @@ const govdeKelime = (a) =>
 
 const needsBody = (a) => !Array.isArray(a.body) || a.body.filter(Boolean).length === 0;
 const needsEditorNote = (a) => !String(a?.editorNote || "").trim();
+const needsComment = (a) => String(a?.comment || "").trim().length < 40;
 const thinBody = (a) => !needsBody(a) && govdeKelime(a) < 120;
 const clickbaitNote = (a) => /neden (bakmalısın|bu kadar kritik)|merak ediyor musun/i.test(String(a?.editorNote || ""));
 const summaryIsTitle = (a) =>
   Boolean(String(a?.summary || "").trim()) && String(a.summary).trim() === String(a.title || "").trim();
 
 const needsWork = (a) =>
-  needsBody(a) || needsEditorNote(a) || thinBody(a) || clickbaitNote(a) || summaryIsTitle(a);
+  needsBody(a) ||
+  needsEditorNote(a) ||
+  needsComment(a) ||
+  thinBody(a) ||
+  clickbaitNote(a) ||
+  summaryIsTitle(a);
 
 // 0 = en acil (okurun gördüğü boşluk), 3 = kozmetik.
 const oncelik = (a) => {
   if (needsBody(a)) return 0;
-  if (needsEditorNote(a)) return 1;
+  if (needsEditorNote(a) || needsComment(a)) return 1;
   if (thinBody(a)) return 2;
   return 3;
 };
