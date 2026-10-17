@@ -359,6 +359,16 @@ button {
   color: rgba(255, 255, 255, 0.72);
 }
 
+/* Fotoğrafı doğrulanamayan kart: kırmızı zemin + büyük "H". Ortadaki kategori
+   yazısı, kartın köşesindeki kategori rozetiyle çakıştığı için gizlenir. */
+.card--nofoto .card__ph-cat {
+  display: none;
+}
+.card--nofoto .card__ph-mark {
+  font-size: 3.4rem;
+  color: rgba(255, 255, 255, 0.42);
+}
+
 .card__badge {
   position: absolute;
   top: 12px;

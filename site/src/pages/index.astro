@@ -22,8 +22,9 @@ const tekno = articles
   .slice(0, 4);
 const teknoSlugs = new Set(tekno.map((a) => a.slug));
 // ShiftDelete tarzı: Gerçek fotoğraflı haberler öncelikli gösterilir.
-// "Fotoğraflı" ölçütü artık güvenlik süzgecinden geçen kapaktır (lib/kapak.js):
-// kaynağın yanlış/genel görseli elenmişse haber markalı kapakla listelenir.
+// "Fotoğraflı" ölçütü güvenlik süzgecinden geçen kapaktır (lib/kapak.js):
+// yanlış/genel görseli elenen haber, fotoğrafsız (kırmızı zeminli) kart olarak
+// listenin sonuna alınır.
 const withPhoto = nonFeatured.filter((a) => kapakKaynagi(a) && !teknoSlugs.has(a.slug));
 const withoutPhoto = nonFeatured.filter((a) => !kapakKaynagi(a) && !teknoSlugs.has(a.slug));
 const grid = [...withPhoto, ...withoutPhoto].slice(0, 21);
@@ -31,8 +32,9 @@ const grid = [...withPhoto, ...withoutPhoto].slice(0, 21);
 // WebSite + Organization yapısal veri: Sitelinks arama kutusu (Google) + marka bilgisi.
 // SearchAction, site içi arama sayfasına (/ara/) point eder.
 const origin = siteOrigin(Astro.site);
-// Vitrin kapak görseli: preload edilecek adres de güvenlik süzgecinden geçer.
-const heroKapak = featured[0] ? kapakKaynagi(featured[0]) : "";
+// Vitrin kapak görseli: preload edilecek adres de süzgeçten geçer. Vitrindeki
+// ilk *geçerli* kapak seçilir; hiçbiri geçerli değilse markalı görsele düşülür.
+const heroKapak = featured.map((a) => kapakKaynagi(a)).find(Boolean) || "";
 const heroImage = heroKapak ? imageUrl(heroKapak, 1200) : "/og-default.png";
 const siteSchema = {
   "@context": "https://schema.org",

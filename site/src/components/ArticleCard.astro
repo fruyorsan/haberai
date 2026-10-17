@@ -13,17 +13,19 @@ const readMin = Math.max(1, Math.round(words / 200));
 // CDN erişilemezse `data-orig` ile kaynak adrese düşer.
 // Kapak seçimi lib/kapak.js'ten geçer: kaynağın yanlış/genel görseli gösterilmez.
 const kapak = kapakKaynagi(article);
-const imgSrc = kapak ? imageUrl(kapak, 640) : "/og-default.png";
-const imgErr = kapak
-  ? "if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.src=this.dataset.orig}else{this.classList.add('is-broken')}"
-  : "this.classList.add('is-broken')";
+// Kapak fotoğrafı doğrulanamıyorsa hiç fotoğraf konmaz: kartın kendi kırmızı
+// zemini + "H" işareti görünür. Böylece onlarca kartta aynı yedek görseli
+// tekrarlamak yerine kategoriye göre değişen temiz bir zemin kalır.
+const imgSrc = kapak ? imageUrl(kapak, 640) : "";
+const imgErr =
+  "if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.src=this.dataset.orig}else{this.classList.add('is-broken')}";
 
 // Gecikmeli giriş animasyonu (en fazla 320ms)
 const delay = Math.min(index * 45, 320);
 ---
 
 <article
-  class:list={["card", `card--${size}`]}
+  class:list={["card", `card--${size}`, !kapak && "card--nofoto"]}
   data-reveal={reveal ? "" : undefined}
   style={reveal ? `transition-delay:${delay}ms` : undefined}
 >
@@ -33,18 +35,20 @@ const delay = Math.min(index * 45, 320);
         <span class="card__ph-mark">H</span>
         <span class="card__ph-cat">{article.category}</span>
       </div>
-      <img
-        class="card__img"
-        src={imgSrc}
-        data-orig={kapak || undefined}
-        alt={article.title}
-        width="1200"
-        height="675"
-        loading="lazy"
-        decoding="async"
-        referrerpolicy="no-referrer"
-        onerror={imgErr}
-      />
+      {kapak && (
+        <img
+          class="card__img"
+          src={imgSrc}
+          data-orig={kapak}
+          alt={article.title}
+          width="1200"
+          height="675"
+          loading="lazy"
+          decoding="async"
+          referrerpolicy="no-referrer"
+          onerror={imgErr}
+        />
+      )}
       <div class="card__overlay" aria-hidden="true"></div>
 
       {article.breaking === true &&
