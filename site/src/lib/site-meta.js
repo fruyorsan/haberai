@@ -5,7 +5,7 @@
 //   kanonik adresler, RSS, site haritaları ve robots.txt buradan (astro.config.mjs
 //   → site) türetilir. Özel alan adı yayına girdiğinde SITE_URL değişkeni
 //   tanımlanır ve tüm adresler tek adımda ona döner:
-//     gh variable set SITE_URL --body "https://haberinai.com.tr"
+//     gh variable set SITE_URL --body "https://haberinai.site"
 //
 //   CNAME dosyası ise yalnızca repoda CUSTOM_DOMAIN GitHub Actions değişkeni
 //   tanımlıysa yazılır. Bu bilerek böyledir: alan adı DNS'te yayına girmeden
@@ -15,7 +15,7 @@
 // YAYINA ALMA (DNS kayıtları eklendikten ve alan adı çözülmeye başladıktan
 // sonra, tek adım):
 //   node scripts/domain-durum.mjs --acikla
-// Ya da elle: gh variable set CUSTOM_DOMAIN --body "haberinai.com.tr"
+// Ya da elle: gh variable set CUSTOM_DOMAIN --body "haberinai.site"
 //             gh workflow run pipeline.yml
 // Geri alma: gh variable delete CUSTOM_DOMAIN  (+ Pages ayarından alan adını kaldır)
 

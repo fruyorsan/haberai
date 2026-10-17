@@ -110,7 +110,7 @@ olan eski haberleri otomatik yeniler (tur başına `BACKFILL_LIMIT=4` haber). Es
 için beklemeden başlatmak istersen: GitHub → **Actions** → **Arsiv Yenileme** →
 **Run workflow**. Workflow `data/` değişikliklerini commit edip siteyi yeniden yayınlar.
 
-### Alan adı (haberinai.com.tr)
+### Alan adı (haberinai.site)
 
 Kod varsayılanı, sitenin **yayında olduğu** adrestir (`https://fruyorsan.github.io`):
 kanonik adresler, RSS, site haritaları ve `robots.txt` buradan üretilir. Özel alan adı
@@ -128,6 +128,20 @@ Kayıt sağlayıcıya girilecek DNS kayıtları:
 | A | `@` | `185.199.110.153` |
 | A | `@` | `185.199.111.153` |
 | CNAME | `www` | `fruyorsan.github.io` |
+
+**Natro'da bu kayıtlar nereye girilir?** Natro, hosting yoksa A/CNAME kaydı düzenlemeye izin
+vermez; bu "Premium/Profesyonel DNS" hizmetine bağlıdır (aylık ~0,10 $, kalan kayıt süresi kadar).
+İki yol var:
+
+1. **Tümüyle ücretsiz yol (Cloudflare):** Natro panelinde `DNS Değiştir` ile nameserver'ları
+   Cloudflare'in verdiği iki adrese çevir; kayıtları Cloudflare'in DNS ekranından gir. Cloudflare
+   kayıtları **"DNS only" (gri bulut)** olmalı — turuncu bulut (proxy), GitHub Pages'in sertifika
+   almasını engeller.
+2. **Tek panelde kalmak (ücretli):** Natro → Alan Adı Yönetimi → ilgili alan adı →
+   **Profesyonel DNS** → Yönet; aynı kayıtları buradan gir.
+
+Her iki yolda da önce park kayıtları silinmeli: `@` için `85.159.66.93` A kaydı ve
+`www` için `redirect.natrocdn.com` CNAME'i kalmamalı.
 
 Durum kontrolü ve yayına alma:
 
@@ -193,7 +207,7 @@ Yeni yayınlanan haberleri sosyal kanallara **otomatik** paylaşan opsiyonel bir
 | Bluesky | `BLUESKY_HANDLE`, `BLUESKY_APP_PASSWORD` | Settings → App Passwords |
 | X / Twitter | `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, `X_ACCESS_SECRET` | developer.x.com (Read+Write izni) |
 
-İsteğe bağlı: `SITE_URL` (link adresi, varsayılan `https://haberinai.com.tr`),
+İsteğe bağlı: `SITE_URL` (link adresi, varsayılan `https://haberinai.site`),
 `SHARE_MAX_PER_RUN` (çalıştırma başına paylaşım sayısı).
 
 Generic webhook'a gönderilen gövde:

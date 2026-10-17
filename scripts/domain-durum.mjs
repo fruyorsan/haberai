@@ -7,20 +7,34 @@
 //   node scripts/domain-durum.mjs --acikla   → alan adi cozuluyorsa yayina alir
 //
 // "--acikla" su isleri yapar (geri alinabilir):
-//   1) GitHub Actions degiskeni CUSTOM_DOMAIN = haberinai.com.tr
+//   1) GitHub Actions degiskeni CUSTOM_DOMAIN = <alan adi>
 //      (bir sonraki derleme site/public/CNAME dosyasini yazar)
-//   2) GitHub Actions degiskeni SITE_URL = https://haberinai.com.tr
+//   2) GitHub Actions degiskeni SITE_URL = https://<alan adi>
 //   3) pipeline.yml'i elle calistirir (aninda yayin)
+//
+// Alan adi degistirmek icin:  DOMAIN=ornek.com npm run domain
 //
 // Geri alma:
 //   gh variable delete CUSTOM_DOMAIN
 //   gh api -X PUT repos/fruyorsan/fruyorsan.github.io/pages -f "cname="
+//
+// NOT (Natro): Natro'da sadece alan adi alindiysa A/CNAME kaydi duzenlemek
+// "Premium/Profesyonel DNS" hizmetine bagli (aylik ~0,10 $). Ucretsiz yol:
+// nameserver'lari ucretsiz bir DNS saglayicisina (or. Cloudflare) cevirip
+// kayitlari orada yonetmek.
 // ==========================================================================
 
 import { execFileSync } from "node:child_process";
 import { resolve4, resolve6, resolveCname } from "node:dns/promises";
 
-const DOMAIN = "haberinai.com.tr";
+// Alan adi: DOMAIN=... ortam degiskeni ya da --domain=... ile degistirilebilir.
+const DOMAIN = (
+  process.env.DOMAIN ||
+  (process.argv.find((a) => a.startsWith("--domain=")) || "").slice("--domain=".length) ||
+  "haberinai.site"
+)
+  .trim()
+  .toLowerCase();
 const PAGES_HOST = "fruyorsan.github.io"; // A/AAAA kayitlari buradan okunur
 const PAGES_REPO = "fruyorsan/fruyorsan.github.io"; // yayinin yapildigi depo
 const WORKFLOW_REPO = "fruyorsan/haberai"; // kod deposu (Actions burada)
@@ -59,8 +73,11 @@ async function main() {
   console.log(`  A     @    ${hedefA.join("\n  A     @    ")}`);
   console.log(`  AAAA  @    ${hedefAAAA.join("\n  AAAA  @    ")}`);
   console.log(`  CNAME www  ${PAGES_HOST}`);
-  console.log("\nNot: .com.tr için bazen kayıt sağlayıcı '@' yerine boş/alt çizgi ister.");
-  console.log("     'www' CNAME'i ile birlikte 4 A kaydı GitHub Pages için yeterlidir.\n");
+  console.log("\nNotlar:");
+  console.log("  • Kayıt sağlayıcı '@' yerine boş alan isteyebilir (alt alan adı boş).");
+  console.log("  • 4 A kaydı + 'www' CNAME'i GitHub Pages için yeterlidir.");
+  console.log("  • Natro'da DNS kaydı düzenlemek Premium DNS hizmetine bağlı;");
+  console.log("    ücretsiz yol: nameserver'ları Cloudflare'e çevirip kayıtları orada girmek.\n");
 
   const domeA = (await tryResolve(resolve4, DOMAIN)) ?? [];
   const domeAAAA = (await tryResolve(resolve6, DOMAIN)) ?? [];
@@ -113,7 +130,7 @@ async function main() {
   gh("workflow", "run", "pipeline.yml", "--repo", WORKFLOW_REPO);
   console.log("  ✓ pipeline.yml elle çalıştırıldı (1-3 dk içinde yayında)");
   console.log("\nYayın sonrası kontrol:");
-  console.log("  curl -sI https://haberinai.com.tr/ | findstr /I \"HTTP location\"");
+  console.log(`  curl -sI https://${DOMAIN}/ | findstr /I "HTTP location"`);
   console.log("  gh api -X PUT repos/" + PAGES_REPO + "/pages -F https_enforced=true   # sertifikadan sonra\n");
 }
 

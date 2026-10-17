@@ -96,7 +96,7 @@ jobs:
       # Ozel alan adi YALNIZCA repoda CUSTOM_DOMAIN degiskeni tanimliysa yazilir.
       # Boylece alan adi DNS'te yayina girmeden CNAME dosyasi eklenip siteyi
       # erisilemez hale getirmez (github.io → cozulemeyen alan adi yonlendirmesi).
-      # Yayina alma: gh variable set CUSTOM_DOMAIN --body "haberinai.com.tr"
+      # Yayina alma: gh variable set CUSTOM_DOMAIN --body "haberinai.site"
       - name: Ozel alan adi (hazirsa CNAME yaz)
         if: (steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')) && vars.CUSTOM_DOMAIN != ''
         env:
@@ -107,7 +107,7 @@ jobs:
         if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
         env:
           # Bos ise varsayilan, sitenin yayinda oldugu adrestir (fruyorsan.github.io).
-          # Ozel alan adi icin: gh variable set SITE_URL --body "https://haberinai.com.tr"
+          # Ozel alan adi icin: gh variable set SITE_URL --body "https://haberinai.site"
           SITE_URL: ${{ vars.SITE_URL }}
           # AdSense: yayinci kimligi + reklam birimi kimlikleri. Bos ise reklam
           # kodu ve reklam alanlari hic basilmaz.
