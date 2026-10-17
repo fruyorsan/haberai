@@ -2,7 +2,10 @@
 import { getCategories, getArticles } from "../lib/articles.js";
 
 const year = new Date().getFullYear();
-const cats = getCategories().slice(0, 7);
+// Sayaç TÜM kategorileri sayar (kod öncesinde slice edilmiş listeyi sayıyordu ve
+// 7'de kilitli kalıyordu); footer'daki link listesi ise düzeni korumak için 7'de kalır.
+const allCats = getCategories();
+const cats = allCats.slice(0, 7);
 const son = getArticles().slice(0, 5);
 ---
 
@@ -20,7 +23,7 @@ const son = getArticles().slice(0, 5);
       <div class="footer__stats">
         <span><strong>{getArticles().length}</strong> haber</span>
         <span class="footer__sep">•</span>
-        <span><strong>{cats.length}</strong> kategori</span>
+        <span><strong>{allCats.length}</strong> kategori</span>
         <span class="footer__sep">•</span>
         <span>5 dakikada bir güncellenir</span>
       </div>
