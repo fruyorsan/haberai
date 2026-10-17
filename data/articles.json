@@ -160,6 +160,102 @@
     "generatedAt": "2026-10-17T10:58:05.591Z"
   },
   {
+    "id": "55d898e71ed6de83",
+    "title": "İşlemci pazarında zam dalgası yayılıyor",
+    "slug": "islemci-pazarinda-zam-dalgasi-yayiliyor",
+    "summary": "Teknoloji pazarındaki dev üreticiler çip fiyatlarını yukarı çekmeye hazırlanıyor. Intel'in ardından Qualcomm ve AMD'nin de maliyet artışları nedeniyle zam yapacağı bildirildi.",
+    "keyPoints": [
+      "Intel, Panther Lake ailesinde yüzde 15 ile 20 arasında fiyat artışına gitti.",
+      "Qualcomm, Snapdragon X serisi için 1 Ekim itibarıyla yüzde 10 zam uyguladı.",
+      "Çip üretiminde kullanılan silikon plakaların maliyetleri artışın temel sebebi olarak gösteriliyor."
+    ],
+    "body": [
+      "Bilgisayar bileşenleri pazarında yaşanan hareketlilik son dönemin en çok konuşulan başlıkları arasında yer alıyor. Donanım üreticilerinin arka arkaya duyurduğu fiyat güncellemeleri, son kullanıcıya sunulan cihazların maliyetlerinde belirgin bir artış yaşanacağının sinyallerini veriyor. Sektördeki bu maliyet baskısı, çiplerin hammaddesi olan silikon plakaların üretim giderlerinin yükselmesinden kaynaklanıyor.",
+      "Intel tarafındaki hamleler planlanan takvimin de ötesine geçerek eylül ayı içerisinde uygulamaya alındı. Özellikle Panther Lake mimarisine sahip güçlü grafik işlemcili modellerde yüzde 15 ile 20 oranında bir artış gözlemlendi. Bu gruptaki 10 ve 12 çekirdekli grafik seçenekleri fiyat listelerinde üst sıralara tırmanırken, artışın serideki tüm yongaları kapsayıp kapsamadığı belirsizliğini koruyor.",
+      "Yalnızca yeni nesil yongalar değil, piyasada halihazırda yer alan Meteor Lake, Arrow Lake, Alder Lake ve düşük güç tüketimli Twin Lake serileri de zam dalgasından nasibini aldı. Çeşitli serilerde yüzde 5 ila 20 arasında değişen oranlar görülürken, bu artışların mağaza raflarına ve etiket fiyatlarına birebir yansıyıp yansımayacağı üreticilerin elindeki mevcut stoklara bağlı olacak.",
+      "Pazardaki tek oyuncu Intel olmadı; Qualcomm da Snapdragon X ve X2 Elite ailesi için ekim ayı başında yüzde 10 civarında bir fiyat artışını devreye soktu. Sırada ise AMD var ve şirketin bazı Ryzen ile EPYC işlemcileri için benzer bir fiyat düzenlemesi yapması bekleniyor. Üreticilerin ardı arkasına attığı bu adımların, önümüzdeki dönemde yeni dizüstü bilgisayar alacak tüketicilerin bütçesini doğrudan zorlaması öngörülüyor."
+    ],
+    "comment": "Silikon plaka maliyetlerindeki artışın dev üreticileri fiyat yansıtmak zorunda bırakması, doğrudan son kullanıcıya yansıyacak yeni bir pahalılık dalgasının habercisidir. Özellikle Intel'in Panther Lake serisinde yüzde 20'yi bulan zamları ve Qualcomm'un yüzde 10'luk artışları, kişisel bilgisayar pazarında bütçe dengelerini tamamen değiştirecektir. Tedarik zincirindeki bu maliyet baskısı hafiflemediği sürece, yakın gelecekte donanım sahibi olmak lüks olmaya devam edebilir.",
+    "editorNote": "Silikon maliyetleri donanım dünyasını sararken, dev üreticilerin zam yarışına girmesi son kullanıcıyı kara düşündürüyor.",
+    "tags": [
+      "İşlemci",
+      "Intel",
+      "AMD",
+      "Qualcomm",
+      "Teknoloji"
+    ],
+    "category": "Donanım",
+    "source": "CNN Türk",
+    "sourceUrl": "https://www.cnnturk.com/teknoloji/amd-zam-yapmaya-hazirlaniyor-3480677",
+    "image": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad32b66fe46d577dbb92c49.jpg",
+    "publishedAt": "2026-10-17T11:01:52.000Z",
+    "generatedAt": "2026-10-17T11:02:10.621Z"
+  },
+  {
+    "id": "fed7ab06f4ccf35e",
+    "title": "Honor, 50'den Fazla Model İçin MagicOS 11 Takvimini Açıkladı",
+    "slug": "honor-50den-fazla-model-icin-magicos-11-takvimini-acikladi",
+    "summary": "Honor, Android 17 tabanlı MagicOS 11 güncellemesini alacak elliden fazla akıllı telefon ve tablet modelini duyurdu. İngiltere biriminin paylaştığı küresel dağıtım takvimine göre yeni yazılım Ekim 2026 ile Mart 2027 arasında kullanıcılarla buluşacak.",
+    "keyPoints": [
+      "Güncelleme alacak cihaz sayısı elliden fazla olarak açıklandı.",
+      "Küresel dağıtım takvimi Ekim 2026 ile Mart 2027 tarihlerini kapsıyor.",
+      "Açık beta testleri Eylül ayında başlayıp kasım ayına kadar sürecek."
+    ],
+    "body": [
+      "Akıllı telefon pazarındaki rekabeti sürdüren Honor, kullanıcı deneyimini daha ileri bir seviyeye taşıyacak yeni arayüz sürümünü duyurdu. Şirket, Android 17 tabanlı MagicOS 11 güncellemesinden yararlanacak elliden fazla mobil cihazın ve tabletin listesini kamuoyuyla paylaştı. Hazırlanan küresel takvime göre yazılım dağıtım süreci önümüzdeki yılın sonbahar aylarında başlayacak.",
+      "Dağıtım planlamasında cihazlar kendi iç kategorilerine göre ayrılırken, özellikle katlanabilir Magic V serisi ile amiral gemisi niteliğindeki Magic 7 serisi öncelikli grupta yer alıyor. Bunun yanı sıra geniş kitlelere hitap eden 600, 400 ve 200 serisi ile fiyat performans odaklı X serisi modelleri de listede bulunuyor. Şirketin en yeni tablet serisi Magic Pad de güncel yazılım desteğinden faydalanacak.",
+      "Resmi çıkış öncesinde kararlılığı artırmak amacıyla eylül ayında başlatılan açık beta testleri kasım ayına kadar sürecek. Magic 7, Magic V5 ve çeşitli X serisi cihazların dahil olduğu bu test süreci, olası hataların önceden giderilmesini hedefliyor. Bölgesel olarak kademeli şekilde gönderilmesi planlanan yazılımın, akışkanlık konusunda önemli yenilikler sunacağı belirtiliyor."
+    ],
+    "comment": "Ekim 2026 ile Mart 2027 arasındaki geniş dağıtım aralığı, markanın donanım çeşitliliğini tek bir yazılım çatısı altında toplama çabasını gösteriyor. Elli aşırı cihaz modeline Android 17 tabanlı bir arayüz sunmak, uzun vadeli yazılım desteğinin rekabetteki belirleyici rolünü bir kez daha teyit ediyor. Kullanıcıların cihaz ömrünü uzatacak bu tür hamleler, mobil pazardaki sadakati doğrudan etkileyecektir.",
+    "editorNote": "Elliye yakın cihazı kapsayan bu takvim, markanın uzun vadeli yazılım stratejisini ve genişleyen ekosistem hedefinin boyutlarını açıkça gösteriyor.",
+    "tags": [
+      "Honor",
+      "MagicOS 11",
+      "Android 17",
+      "Güncelleme",
+      "Mobil"
+    ],
+    "category": "Teknoloji",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/honor-magicos-11-guncellemesini-duyurdu",
+    "image": "https://ares.shiftdelete.net/2026/09/iphone-18-serisinde-buyuk-degisiklik-standart-model-ertelendi-3.webp",
+    "publishedAt": "2026-10-17T11:00:52.000Z",
+    "generatedAt": "2026-10-17T11:01:50.194Z",
+    "breaking": true
+  },
+  {
+    "id": "fd9cdc7425e6f708",
+    "title": "İstanbul İçin Şiddetli Yağış Uyarısı: Akşam Saatlerinde Basacak",
+    "slug": "istanbul-icin-siddetli-yagis-uyarisi-aksam-saatlerinde-basacak",
+    "summary": "Balkanlar üzerinden gelen soğuk ve yağışlı hava dalgası nedeniyle İstanbul için turuncu kod uyarısı yapıldı. Gün boyunca aralıklarla sürecek fırtınalı yağışların akşam saatlerinde şiddetini artırması ve pazar sabahına kadar etkili olması bekleniyor.",
+    "keyPoints": [
+      "Meteoroloji Genel Müdürlüğü ve AKOM İstanbul için turuncu kod uyarısı verdi.",
+      "Anadolu Yakası'nda metrekareye 50 ila 100 kilogram yağış düşmesi bekleniyor.",
+      "Yağışların akşam saat 18.00'den itibaren etkisini artıracağı bildirildi."
+    ],
+    "body": [
+      "Geçtiğimiz günlerde yaşanan sel felaketinin yaraları sarılmaya çalışılırken, megakent yeni bir meteorolojik dalganın etkisi altına girmeye hazırlanıyor. Balkanlar üzerinden yurdun batısına giriş yapan soğuk ve yağışlı hava, özellikle Marmara bölgesinde koşulların sertleşmesine yol açıyor. Yetkili merciler, il genelinde olası olumsuzluklara karşı vatandaşların tedbirli olması gerektiğini vurguluyor.",
+      "Yapılan son değerlendirmelere göre fırtınanın da eşlik edeceği sağanak yağışlar, akşam saat 18.00 itibarıyla tırmanışa geçecek. Özellikle Avrupa Yakası'nın boğaz çevresi ile kuzey kesimlerinde ve Anadolu Yakası'nın genelinde risk faktörü artıyor. Şile, Sancaktepe ve Maltepe gibi ilçelerde yağışların daha yoğun hissedileceği tahmin ediliyor.",
+      "Uzmanlar, Anadolu Yakası'nda metrekare başına 50 ile 100 kilogram arasında su düşebileceğini öngörüyor. Kentin diğer bölgelerinde ise bu miktarın 20 ila 50 kilogram arasında kalması bekleniyor. Gece yarısından sonra etkisini yavaşça kaybetmesi beklenen sistemin, pazar günü sabah saatlerinde bölgeyi terk edeceği tahmin ediliyor.",
+      "Hava hareketliliğinin pazar günü son bulması öngörülse de, toprak yapısının suya doygun hale gelmesi yeni bir tehlikeyi beraberinde getiriyor. Uzmanlar, özellikle heyelan riski taşıyan bölgelerde yaşayan vatandaşların dikkatli davranması gerektiğinin altını çiziyor. Kocaeli ve Sakarya çevrelerinde de gece saatlerinde en şiddetli seviyeye ulaşacak yağışlar sonrasında havanın sakinleşmesi bekleniyor."
+    ],
+    "comment": "Geçtiğimiz günlerde yaşanan ve metrekareye 200 kilogramı aşan aşırı yağışların yarattığı tahribat henüz tazeğken, yeni bir 50 kilogram üstü uyarı gelmesi altyapı hazırlıklarının ne denli hayati olduğunu gösteriyor. Pazar sabahı yağış kesilse bile toprağın suya doymuş olması heyelan gibi ikincil afet risklerini tetikleyebilir. Yerel yönetimlerin ve bireylerin sadece anlık baskına değil, toprak kayması gibi artçı risklere karşı da hazırlıklı hareket etmesi gerekiyor.",
+    "editorNote": "Şiddetli yağış dalgası pazar sabahına kadar sürecek; ancak asıl tehlike yağış bittikten sonra toprağın suya doymasıyla artacak.",
+    "tags": [
+      "İstanbul",
+      "hava durumu",
+      "Meteoroloji",
+      "AKOM",
+      "sağanak"
+    ],
+    "category": "Gündem",
+    "source": "NTV Gündem",
+    "sourceUrl": "https://www.ntv.com.tr/turkiye/galeri-istanbullulari-sevindirecek-haber-saat-verildi-yagis-son-bir-kez-bastiracak-sonra-gidecek-1746721",
+    "image": "https://images.ntv.com.tr/images/AA-20261015-42758302-42758301-ISTANBULDA_KUVVETLI_SAGANAK_HAYATI_OLUMSUZ_ETKILEDI-747711.jpg?width=1280&format=webp",
+    "publishedAt": "2026-10-17T10:59:10.000Z",
+    "generatedAt": "2026-10-17T11:02:20.566Z"
+  },
+  {
     "id": "0d954556dbbe1087",
     "title": "Ayşe Hilal Sayan Koytak Helsinki Büyükelçiliği Görevine Başladı",
     "slug": "ayse-hilal-sayan-koytak-helsinki-buyukelciligi-gorevine-basladi",
@@ -253,6 +349,39 @@
     "image": "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2026/10/17/1792232510240_base64-1792228290457960224931.jpeg",
     "publishedAt": "2026-10-17T10:54:14.000Z",
     "generatedAt": "2026-10-17T10:57:53.942Z",
+    "breaking": true
+  },
+  {
+    "id": "bb0b160defa1ea8e",
+    "title": "Ülke Genelinde Aranan 912 Firari Yakalandı",
+    "slug": "ulke-genelinde-aranan-912-firari-yakalandi",
+    "summary": "Güvenlik birimlerinin koordineli yürüttüğü ülke genelindeki operasyonlarda, haklarında kesinleşmiş hapis cezası bulunan 912 firari şahıs yakalandı. Eş zamanlı gerçekleştirilen denetimlerde binlerce personel görev alırken, farklı hapis cezası süreleriyle aranan şüpheliler adli makamlara sevk edildi.",
+    "keyPoints": [
+      "Toplam 912 hükümlü güvenlik güçlerince yakalandı.",
+      "Operasyonlarda 25 bin 395 personel görev aldı.",
+      "20 yıl ve üzeri cezası olan 13 firari ele geçirildi."
+    ],
+    "body": [
+      "Türkiye genelinde adli makamlarca haklarında yakalama kararı veya kesinleşmiş hapis cezası bulunan kişilerin yakalanması amacıyla kapsamlı bir operasyon gerçekleştirildi. İçişleri Bakanlığı koordinesinde yürütülen çalışmalarda binlerce güvenlik görevlisi sahada aktif rol oynadı.",
+      "Ülke genelindeki denetimlerde toplam 25 bin 395 personel görev alarak belirlenen adreslerde ve uygulama noktalarında kimlik sorgulamaları gerçekleştirdi.",
+      "Yapılan detaylı saha taramaları sonucunda ceza sürelerine göre kademeli bir bilanço ortaya çıktı. Sıfır ile beş yıl arasında hapis cezası bulunan 751 kişi, beş ile on yıl arası cezası olan 100 firari, on ile yirmi yıl arası cezası bulunan 48 şahıs ve yirmi yılın üzerinde kesinleşmiş cezası bulunan 13 hükümlü güvenlik güçlerince kıskıvrak yakalandı.",
+      "Bakanlık makamından yapılan resmi açıklamada, adaletten kaçmaya çalışan kişilerin sokaklarda serbestçe dolaşmasına izin verilmeyeceği vurgulandı. Toplumun huzurunu bozan unsurlara karşı yürütülen bu tür denetimlerin kararlılıkla devam edeceği, operasyonda emeği geçen tüm birimlerin tebrik edildiği bildirildi."
+    ],
+    "comment": "Binlerce personelin katılımıyla gerçekleştirilen bu geniş çaplı operasyon, adli mercilerce aranan şahısların yakalanmasında eş güdümlü çalışmanın ne kadar sonuç alıcı olduğunu gösteriyor. Özellikle 20 yıl üzeri cezası bulunan 13 firarinin de aralarında bulunduğu 912 kişinin adalete teslim edilmesi, kamu güvenliğinin sağlanması açısından caydırıcı bir etki yaratacaktır. Bu tür nokta atışı uygulamaların düzenli olarak tekrarlanması, firari şahısların sokaklarda rahatça hareket etme alanlarını ciddi ölçüde daraltmaktadır.",
+    "editorNote": "Binlerce personelin katılımıyla 81 ilde eş zamanlı düzenlenen operasyonda, farklı sürelerde hapis cezası bulunan 912 firari yakalandı.",
+    "tags": [
+      "Emniyet",
+      "Jandarma",
+      "Operasyon",
+      "İçişleri Bakanlığı",
+      "Asayiş"
+    ],
+    "category": "Gündem",
+    "source": "HABER 24",
+    "sourceUrl": "https://www.haber24.com.tr/son-dakika-81-ilde-aranan-sahislar-operasyonu-kac-kisi-yakalandi",
+    "image": "https://haber24comtr.teimg.com/crop/1280x720/haber24-com-tr/uploads/2026/10/81-i-l-d-e-a-r-a-n-a-n-912-s-u-c-l-u-y-a-k-a-l-a-n-d-i-1559552-464099.jpg",
+    "publishedAt": "2026-10-17T10:54:00.000Z",
+    "generatedAt": "2026-10-17T11:01:59.996Z",
     "breaking": true
   },
   {
