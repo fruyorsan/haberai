@@ -50,13 +50,6 @@ const related = benzerler.slice(4, 7);
 const keyPoints = Array.isArray(article.keyPoints) ? article.keyPoints.filter(Boolean) : [];
 const body = Array.isArray(article.body) ? article.body.filter(Boolean) : [];
 
-// --- Haberler arası geçiş: aynı kategoride tarih sırasına göre komşu haberler ---
-// getArticles() en yeniden eskiye sıralıdır: bir önceki dizin DAHA YENİ, sonraki dizin DAHA ESKİ haberdir.
-const kategoriHaberleri = all.filter((a) => a.categorySlug === article.categorySlug);
-const sira = kategoriHaberleri.findIndex((a) => a.slug === article.slug);
-const dahaYeni = sira > 0 ? kategoriHaberleri[sira - 1] : null;
-const dahaEski = sira >= 0 && sira < kategoriHaberleri.length - 1 ? kategoriHaberleri[sira + 1] : null;
-
 // --- Haber içi ek fotoğraflar ---
 // Kaynak sayfadan toplanan ek görseller (veri alanı boşsa bölüm hiç çizilmez; kapakla aynı olan atlanır).
 const ekGorseller = (Array.isArray(article.images) ? article.images : [])
@@ -309,30 +302,6 @@ const breadcrumbLd = {
           Hata olabilir, ayrıntılar için kaynağa bakın. <a href="/telif/">İçerik ve telif politikası</a>
         </span>
       </div>
-
-      {/* Haberler arası geçiş: okuyucu bir haberi bitirince aynı kategoride
-          akışı sürdürebilsin (klavye: ← / →). */}
-      {(dahaEski || dahaYeni) && (
-        <nav class="postnav" aria-label="Haberler arası gezinme">
-          {dahaEski ? (
-            <a class="postnav__btn postnav__btn--prev" href={`/haber/${dahaEski.slug}/`} rel="prev">
-              <span class="postnav__dir">← Önceki Haber</span>
-              <span class="postnav__title">{dahaEski.title}</span>
-            </a>
-          ) : (
-            <span class="postnav__bos" aria-hidden="true" />
-          )}
-
-          {dahaYeni ? (
-            <a class="postnav__btn postnav__btn--next" href={`/haber/${dahaYeni.slug}/`} rel="next">
-              <span class="postnav__dir">Sonraki Haber →</span>
-              <span class="postnav__title">{dahaYeni.title}</span>
-            </a>
-          ) : (
-            <span class="postnav__bos" aria-hidden="true" />
-          )}
-        </nav>
-      )}
     </article>
 
     {/* ShiftDelete tarzı okumaya devam: haberin hemen ardından benzer haberlerin
@@ -410,21 +379,6 @@ const breadcrumbLd = {
       update();
       window.addEventListener("scroll", onScroll, { passive: true });
       window.addEventListener("resize", onScroll, { passive: true });
-    }
-
-    // --- Klavye ile haberler arası geçiş (← önceki, → sonraki) ---
-    const postnav = document.querySelector(".postnav");
-    if (postnav) {
-      window.addEventListener("keydown", (e) => {
-        const t = document.activeElement;
-        if (e.metaKey || e.ctrlKey || e.altKey || e.shiftKey) return;
-        if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable)) return;
-        const secici =
-          e.key === "ArrowLeft" ? ".postnav__btn--prev" : e.key === "ArrowRight" ? ".postnav__btn--next" : null;
-        if (!secici) return;
-        const hedef = postnav.querySelector(secici);
-        if (hedef) window.location.href = hedef.getAttribute("href");
-      });
     }
 
     // --- AI'ya Sor ---
@@ -1078,63 +1032,5 @@ const breadcrumbLd = {
   .aiask__answer.is-loading {
     color: var(--muted);
     font-style: italic;
-  }
-  /* --- Önceki / sonraki haber --- */
-  .postnav {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin: 34px 0 6px;
-    padding-top: 22px;
-    border-top: 1px solid var(--border);
-  }
-  .postnav__btn {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    padding: 16px 18px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--surface);
-    transition:
-      border-color 0.25s var(--ease),
-      transform 0.25s var(--ease),
-      background 0.25s var(--ease);
-  }
-  .postnav__btn:hover {
-    border-color: var(--red);
-    background: var(--surface-2);
-    transform: translateY(-2px);
-  }
-  .postnav__btn--next {
-    text-align: right;
-  }
-  .postnav__dir {
-    font-size: 0.74rem;
-    font-weight: 800;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--red);
-  }
-  .postnav__title {
-    font-size: 0.95rem;
-    font-weight: 600;
-    line-height: 1.45;
-    color: var(--text);
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .postnav__bos {
-    display: none;
-  }
-  @media (max-width: 640px) {
-    .postnav {
-      grid-template-columns: 1fr;
-    }
-    .postnav__btn--next {
-      text-align: left;
-    }
   }
 </style>
