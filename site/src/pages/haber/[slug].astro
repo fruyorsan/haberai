@@ -2,7 +2,7 @@
 import Base from "../../layouts/Base.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
 import ShareButtons from "../../components/ShareButtons.astro";
-import { getArticles, formatDate, publishedISO, imageUrl } from "../../lib/articles.js";
+import { getArticles, formatDate, publishedISO, imageUrl, tagUrl } from "../../lib/articles.js";
 
 export function getStaticPaths() {
   return getArticles().map((article) => ({
@@ -192,7 +192,9 @@ const breadcrumbLd = {
       {article.tags?.length > 0 && (
         <div class="post__tags">
           {article.tags.map((t) => (
-            <a class="post__tag" href={`/ara/?q=${encodeURIComponent(t)}`}>#{t}</a>
+            <a class="post__tag" href={tagUrl(t) || `/ara/?q=${encodeURIComponent(t)}`}>
+              #{t}
+            </a>
           ))}
         </div>
       )}

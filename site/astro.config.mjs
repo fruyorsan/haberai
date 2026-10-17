@@ -1,6 +1,6 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
-import { getArticles, publishedISO } from "./src/lib/articles.js";
+import { getArticles, getTags, publishedISO } from "./src/lib/articles.js";
 
 // Alan adı: yayında olduğumuz adres VARSAYILAN olarak yazılır ki kanonik
 // adresler, site haritaları ve RSS kendi kendine tutarlı olsun. Özel alan adı
@@ -23,13 +23,23 @@ for (const a of articles) {
   if (!kategoriEnYeni.has(a.categorySlug)) kategoriEnYeni.set(a.categorySlug, publishedISO(a));
 }
 
+const konuEnYeni = new Map(getTags().map((t) => [t.slug, publishedISO(t.articles[0])]));
+
 function lastmod(pathname) {
   if (haberTarihi.has(pathname)) return haberTarihi.get(pathname);
 
   const kategori = pathname.match(/^\/kategori\/([^/]+)\//);
   if (kategori) return kategoriEnYeni.get(kategori[1]) || enYeniTarih;
 
-  if (pathname === "/" || pathname === "/son-dakika/" || pathname.startsWith("/haberler/")) {
+  const konu = pathname.match(/^\/etiket\/([^/]+)\//);
+  if (konu) return konuEnYeni.get(konu[1]) || enYeniTarih;
+
+  if (
+    pathname === "/" ||
+    pathname === "/son-dakika/" ||
+    pathname === "/etiketler/" ||
+    pathname.startsWith("/haberler/")
+  ) {
     return enYeniTarih;
   }
   return "";

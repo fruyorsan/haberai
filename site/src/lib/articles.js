@@ -123,6 +123,55 @@ export function getCategories() {
   return [...map.values()].sort((a, b) => b.count - a.count);
 }
 
+// --- Konu (etiket) sayfaları ---
+// Etiketler yapay zekâ tarafından üretiliyor ve çoğu yalnızca tek bir haberde
+// geçiyor. Her etikete sayfa açmak yüzlerce "ince" sayfa üretir; bu hem Google
+// kalitesi hem de tarama bütçesi açısından risklidir. Bu yüzden yalnızca en az
+// TAG_MIN haberde geçen etiketler sayfalaşır, kalanlar aramaya bağlanır.
+export const TAG_MIN = 8;
+
+let tagCache = null;
+
+/** Yayına değer konular: en çok haberi olandan başlar. */
+export function getTags(minCount = TAG_MIN) {
+  if (!tagCache) {
+    const kategoriSluglari = new Set(getCategories().map((c) => c.slug));
+    const map = new Map();
+    for (const a of getArticles()) {
+      const gorulen = new Set();
+      for (const ham of Array.isArray(a.tags) ? a.tags : []) {
+        const ad = String(ham).trim();
+        const slug = slugify(ad);
+        // "İstanbul" ile "istanbul" aynı sayfada toplanır. Kategoriyle aynı olan
+        // etiketler (gündem, teknoloji...) atlanır: kategori sayfasıyla
+        // birbirinin kopyası iki liste oluşmasın.
+        if (!slug || gorulen.has(slug) || kategoriSluglari.has(slug)) continue;
+        gorulen.add(slug);
+        if (!map.has(slug)) map.set(slug, { slug, adlar: new Map(), articles: [] });
+        const e = map.get(slug);
+        e.articles.push(a); // getArticles() en yeniden eskiye sıralı
+        e.adlar.set(ad, (e.adlar.get(ad) || 0) + 1);
+      }
+    }
+    tagCache = [...map.values()]
+      .map((e) => ({
+        slug: e.slug,
+        name: [...e.adlar.entries()].sort((x, y) => y[1] - x[1])[0][0],
+        count: e.articles.length,
+        articles: e.articles,
+      }))
+      .sort((a, b) => b.count - a.count);
+  }
+  return tagCache.filter((t) => t.count >= minCount);
+}
+
+/** Etiketin sayfası varsa adresi, yoksa null (çağıran arama bağlantısı kurar). */
+export function tagUrl(name) {
+  const slug = slugify(String(name || ""));
+  if (!slug) return null;
+  return getTags().some((t) => t.slug === slug) ? `/etiket/${slug}/` : null;
+}
+
 export function formatDate(iso) {
   if (!iso) return "";
   const d = new Date(iso);

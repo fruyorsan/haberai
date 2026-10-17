@@ -1,0 +1,64 @@
+---
+import Base from "../../../layouts/Base.astro";
+import ArticleCard from "../../../components/ArticleCard.astro";
+import Pagination from "../../../components/Pagination.astro";
+import { getTags, paginate, PER_PAGE, totalPages } from "../../../lib/articles.js";
+
+// Konu sayfalarının 2. ve sonraki sayfaları. 1. sayfa /etiket/<slug>/ adresindedir.
+export function getStaticPaths() {
+  const paths = [];
+  for (const tag of getTags()) {
+    const pages = totalPages(tag.articles, PER_PAGE);
+    for (let p = 2; p <= pages; p++) {
+      paths.push({ params: { tag: tag.slug, page: String(p) }, props: { tag } });
+    }
+  }
+  return paths;
+}
+
+const { tag } = Astro.props;
+const page = Number(Astro.params.page);
+const { items, current, totalPages: pages, total } = paginate(tag.articles, page, PER_PAGE);
+---
+
+<Base
+  title={`${tag.name} haberleri — Sayfa ${current} — HaberinAi`}
+  description={`${tag.name} ile ilgili güncel haberler, özetler ve yapay zekâ yorumları (${current}. sayfa).`}
+>
+  <div class="container">
+    <header class="tag-head">
+      <span class="badge">Konu</span>
+      <h1>{tag.name}</h1>
+      <p class="muted">{total} haber · Sayfa {current}/{pages}</p>
+    </header>
+
+    <div class="grid">
+      {items.map((a, i) => <ArticleCard article={a} index={i} />)}
+    </div>
+
+    <Pagination current={current} totalPages={pages} base={`/etiket/${tag.slug}/`} />
+
+    <p class="tag-foot">
+      <a href="/etiketler/">Tüm konular</a> · <a href="/haberler/">Son haberler</a>
+    </p>
+  </div>
+</Base>
+
+<style>
+  .tag-head {
+    padding: 30px 0 6px;
+  }
+  .tag-head h1 {
+    font-size: 1.9rem;
+    margin: 12px 0 4px;
+    letter-spacing: -0.02em;
+    text-transform: capitalize;
+  }
+  .tag-head .muted {
+    font-size: 0.9rem;
+  }
+  .tag-foot {
+    margin: 26px 0 0;
+    font-size: 0.9rem;
+  }
+</style>
