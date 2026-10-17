@@ -279,6 +279,45 @@ node src/indexnow.mjs --tumu    # bir kerelik: tüm arşivi gönderir (pencere +
 > Not: IndexNow yalnızca Bing/Yandex içindir. Google için tek yol Search Console'da
 > property doğrulaması + `sitemap-index.xml` gönderimidir.
 
+## Fotoğraflar (kapak güvenliği + haber içi ek fotoğraflar)
+
+Kaynak sitelerin RSS/haber sayfalarındaki görseller her zaman doğru olmuyor; yanlış
+fotoğraf göstermek okuyucu güvenini sarsıyor. Bu yüzden iki katmanlı bir süzgeç var:
+
+**1) Kapak görseli (`site/src/lib/kapak.js`).** Bir görsel şu durumlarda gösterilmez:
+
+- Dosya adı yer tutucu desenindeyse (`habergorseli…`, `default`, `placeholder`, `no-image`…).
+  Örnek: Sözcü'nün aynı `habergorseli….png` dosyasını 30+ habere kapak yapması.
+- Aynı görsel arşivde **5'ten çok** habere kapak olmuşsa (sitelerin "genel haber görseli").
+- Dosya adı haberin kendi başlığı/adresiyle hiç örtüşmüyorsa: RSS bazen komşu bir haberin
+  fotoğrafını veriyor (ör. "İbrahim Sadri'nin gösterisi" haberinde Kerem Görsev konserinin
+  fotoğrafı). Karşılaştırma Türkçe ekleri tolere eder ("beykozdaki" ≈ "beykozda").
+
+Eleme kararı verilen yerde sırayla şunlar denenir: habere toplanmış **doğrulanmış ek
+fotoğraf** → markalı kapak (`/og-default.png`). Böylece sitede hiçbir yerde yanlış/genel
+fotoğraf görünmez. Aynı süzgeç kartlarda, vitrinde, "Okumaya Devam Et" zincirinde, arama
+sonuçlarında ve `og:image` etiketinde de uygulanır.
+
+**2) Haber içi ek fotoğraflar (`src/ek-gorsel.mjs`).** Haber sayfasında okurken metnin
+arasında 1-2 gerçek fotoğraf görünür (kaynak atıflı). Fotoğraf yalnızca "aynı haber"
+olduğu kanıtlanabilen adaylardan seçilir: aynı kök alan adı **ve** kapak/kaynak adresle
+ayırt edici sözcük ya da haber kimliği paylaşımı. Ayrıca arşivde başka bir haberin kapağı
+veya ek fotoğrafı olan görseller hiç eklenmez (yan sütundaki "diğer haberler" küçük
+resimleri tam da bu yüzden yanlış olur). Kanıt yoksa ek fotoğraf eklenmez.
+
+```powershell
+npm run ek-gorsel:dry      # hangi haberlere bakılacağını listeler
+npm run ek-gorsel          # gerçekten tarar (EK_GORSEL_LIMIT kadar haber)
+$env:EK_GORSEL_LIMIT="40"; $env:EK_GORSEL_KAYNAK="tamindir"; node src/ek-gorsel.mjs --debug
+```
+
+- Veri alanları: `images` (ek fotoğraf adresleri) ve `imagesAt` (bu haber tarandı).
+- Tarama **Arsiv Yenileme** workflow'unda saatte bir çalışır (`EK_GORSEL_LIMIT=40`);
+  bakılan haber `imagesAt` ile işaretlenir, bir daha indirilmez. Sayfa hiç açılamazsa
+  işaret konmaz ve sonraki turda yeniden denenir.
+- Site tarafı bu fotoğrafları 1. paragraftan sonra ve gövdenin ortasına doğru gösterir;
+  fotoğraf yüklenemezse figür tamamen kaldırılır (sayfa bozulmaz).
+
 ## Veri Şeması (`data/articles.json`)
 
 Her haber nesnesi şu alanları taşır: `id`, `title`, `slug`, `summary`, `keyPoints`, `body`,

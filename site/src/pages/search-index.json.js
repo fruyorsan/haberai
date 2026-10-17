@@ -1,4 +1,5 @@
 import { getArticles } from "../lib/articles.js";
+import { kapakKaynagi } from "../lib/kapak.js";
 
 /** Arama sayfası için hafif bir indeks üretir. */
 export function GET() {
@@ -9,7 +10,8 @@ export function GET() {
     c: a.category,
     src: a.source,
     d: a.publishedAt || a.generatedAt,
-    img: a.image || null,
+    // Yanlış/genel kapak görselleri aramada da gösterilmez (lib/kapak.js).
+    img: kapakKaynagi(a) || null,
     tags: Array.isArray(a.tags) ? a.tags.slice(0, 5) : [],
   }));
 

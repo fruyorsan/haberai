@@ -5,6 +5,7 @@ import AdSlot from "../../components/AdSlot.astro";
 import ShareButtons from "../../components/ShareButtons.astro";
 import DevamHaber from "../../components/DevamHaber.astro";
 import { getArticles, formatDate, publishedISO, imageUrl, tagUrl, slugify } from "../../lib/articles.js";
+import { kapakKaynagi, kapakUygunMu } from "../../lib/kapak.js";
 import { ADSENSE_SLOTS } from "../../lib/site-meta.js";
 
 export function getStaticPaths() {
@@ -50,11 +51,23 @@ const related = benzerler.slice(4, 7);
 const keyPoints = Array.isArray(article.keyPoints) ? article.keyPoints.filter(Boolean) : [];
 const body = Array.isArray(article.body) ? article.body.filter(Boolean) : [];
 
+// --- Kapak fotoğrafı (güvenlik süzgecinden geçmiş) ---
+// Kaynağın verdiği görsel yanlış ya da tekrar eden genel bir "haber görseli" ise
+// gösterilmez (bkz. lib/kapak.js); yerine doğrulanmış ek fotoğraf, o da yoksa
+// markalı kapak kullanılır. `kapak` boşsa çağıranlar /og-default.png'e düşer.
+const kapak = kapakKaynagi(article);
+
 // --- Haber içi ek fotoğraflar ---
-// Kaynak sayfadan toplanan ek görseller (veri alanı boşsa bölüm hiç çizilmez; kapakla aynı olan atlanır).
+// Kaynak sayfadan toplanan ek görseller; kapak olarak kullanılan fotoğraf tekrar
+// edilmesin. Veri alanı boşsa ilgili bölüm hiç çizilmez.
 const ekGorseller = (Array.isArray(article.images) ? article.images : [])
-  .filter((u) => typeof u === "string" && /^https?:\/\//i.test(u) && u !== article.image)
+  .filter((u) => typeof u === "string" && /^https?:\/\//i.test(u) && u !== kapak)
+  .filter((u) => kapakUygunMu(article, u))
   .slice(0, 2);
+
+// Ek fotoğrafın gövdede nereye gireceği: uzun haberlerde ortaya doğru kaydırılır
+// ki okuma akışı bölünmesin (ör. 6 paragraflı haberde 4. paragraftan sonra).
+const fig2Indeks = Math.max(2, Math.round(body.length * 0.6) - 1);
 
 const words = `${article.summary || ""} ${keyPoints.join(" ")} ${body.join(" ")} ${article.comment || ""}`
   .split(/\s+/)
@@ -71,8 +84,8 @@ const publishedIso = article.publishedAt || article.generatedAt;
 const modifiedIso = article.refreshedAt || article.generatedAt;
 // Görsel: gerçek haber fotoğrafı varsa paylaşım görseli o olur; yoksa
 // HaberinAi'nın kendi markalı görseli kullanılır.
-const ogImage = article.image
-  ? new URL(article.image, site).href
+const ogImage = kapak
+  ? new URL(kapak, site).href
   : new URL("og-default.png", site).href;
 
 const jsonLd = {
@@ -118,9 +131,9 @@ const breadcrumbLd = {
   modifiedTime={modifiedIso}
   section={article.category}
   tags={article.tags}
-  image={article.image}
+  image={kapak || undefined}
   imageAlt={article.title}
-  preloadImage={article.image ? imageUrl(article.image, 1200) : "/og-default.png"}
+  preloadImage={kapak ? imageUrl(kapak, 1200) : "/og-default.png"}
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
@@ -162,8 +175,8 @@ const breadcrumbLd = {
         </div>
         <img
           class="post__img"
-          src={article.image ? imageUrl(article.image, 1200) : "/og-default.png"}
-          data-orig={article.image || undefined}
+          src={kapak ? imageUrl(kapak, 1200) : "/og-default.png"}
+          data-orig={kapak || undefined}
           alt={article.title}
           width="1200"
           height="675"
@@ -173,8 +186,9 @@ const breadcrumbLd = {
           referrerpolicy="no-referrer"
           onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.src=this.dataset.orig}else{this.classList.add('is-broken')}"
         />
+        <span class="post__veil" aria-hidden="true"></span>
         <span class="post__ph-note">
-          {`Fotoğraf: ${article.source}`}
+          {kapak ? `Fotoğraf: ${article.source}` : "Görsel: HaberinAi"}
         </span>
       </div>
 
@@ -223,41 +237,64 @@ const breadcrumbLd = {
               <Fragment>
                 <p class="content__p">{p}</p>
 
-                {/* Haber içi ek fotoğraflar (ShiftDelete tarzı): 1. ve 4. paragraftan sonra.
-                    Görsel yüklenemezse figür tamamen kaldırılır, sayfa bozulmaz. */}
+                {/* Haber içi ek fotoğraflar: 1. paragraftan sonra ve gövdenin
+                    ortasına doğru. Fotoğraf yüklenemezse figür tamamen kaldırılır,
+                    sayfa bozulmaz. Tıklanınca kaynak fotoğraf yeni sekmede açılır. */}
                 {ekGorseller[0] && i === 0 && body.length >= 3 && (
                   <figure class="content__fig">
-                    <img
-                      class="content__fig-img"
-                      src={imageUrl(ekGorseller[0], 1000)}
-                      data-orig={ekGorseller[0]}
-                      alt={`${article.title} — haber fotoğrafı`}
-                      width="1000"
-                      height="563"
-                      loading="lazy"
-                      decoding="async"
-                      referrerpolicy="no-referrer"
-                      onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.src=this.dataset.orig}else{this.closest('figure').remove()}"
-                    />
-                    <figcaption>Fotoğraf: {article.source}</figcaption>
+                    <a
+                      class="content__fig-link"
+                      href={ekGorseller[0]}
+                      target="_blank"
+                      rel="noopener nofollow"
+                      title="Fotoğrafı büyüt"
+                    >
+                      <img
+                        class="content__fig-img"
+                        src={imageUrl(ekGorseller[0], 1000)}
+                        data-orig={ekGorseller[0]}
+                        alt={`${article.title} — haber fotoğrafı`}
+                        width="1000"
+                        height="563"
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                        onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.src=this.dataset.orig}else{this.closest('figure').remove()}"
+                      />
+                    </a>
+                    <figcaption>
+                      <span class="content__fig-src">Fotoğraf: {article.source}</span>
+                      <span class="content__fig-hint">büyütmek için tıkla</span>
+                    </figcaption>
                   </figure>
                 )}
 
-                {ekGorseller[1] && i === 3 && body.length >= 5 && (
+                {ekGorseller[1] && i === fig2Indeks && body.length >= 5 && (
                   <figure class="content__fig">
-                    <img
-                      class="content__fig-img"
-                      src={imageUrl(ekGorseller[1], 1000)}
-                      data-orig={ekGorseller[1]}
-                      alt={`${article.title} — haber fotoğrafı`}
-                      width="1000"
-                      height="563"
-                      loading="lazy"
-                      decoding="async"
-                      referrerpolicy="no-referrer"
-                      onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.src=this.dataset.orig}else{this.closest('figure').remove()}"
-                    />
-                    <figcaption>Fotoğraf: {article.source}</figcaption>
+                    <a
+                      class="content__fig-link"
+                      href={ekGorseller[1]}
+                      target="_blank"
+                      rel="noopener nofollow"
+                      title="Fotoğrafı büyüt"
+                    >
+                      <img
+                        class="content__fig-img"
+                        src={imageUrl(ekGorseller[1], 1000)}
+                        data-orig={ekGorseller[1]}
+                        alt={`${article.title} — haber fotoğrafı`}
+                        width="1000"
+                        height="563"
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                        onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.src=this.dataset.orig}else{this.closest('figure').remove()}"
+                      />
+                    </a>
+                    <figcaption>
+                      <span class="content__fig-src">Fotoğraf: {article.source}</span>
+                      <span class="content__fig-hint">büyütmek için tıkla</span>
+                    </figcaption>
                   </figure>
                 )}
 
@@ -544,14 +581,29 @@ const breadcrumbLd = {
   }
   .post__ph-note {
     position: absolute;
-    z-index: 2;
-    right: 16px;
-    bottom: 12px;
-    font-size: 0.66rem;
-    letter-spacing: 0.1em;
+    z-index: 3;
+    right: 14px;
+    bottom: 14px;
+    padding: 6px 11px;
+    border-radius: 999px;
+    background: rgba(12, 15, 20, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(6px);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.62);
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  }
+  /* Kapak fotoğrafının altına hafif karartma: kaynak etiketi her fotoğrafta okunur */
+  .post__veil {
+    position: absolute;
+    z-index: 2;
+    inset: auto 0 0 0;
+    height: 45%;
+    pointer-events: none;
+    background: linear-gradient(to top, rgba(8, 10, 14, 0.5), transparent);
   }
   .post__img {
     position: relative;
@@ -648,8 +700,15 @@ const breadcrumbLd = {
 
   /* --- Haber içi ek fotoğraf --- */
   .content__fig {
-    margin: 26px 0;
+    margin: 30px 0;
     max-width: 75ch;
+  }
+  .content__fig-link {
+    display: block;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 26px -12px rgba(15, 23, 42, 0.35);
+    background: var(--surface-2);
   }
   .content__fig-img {
     display: block;
@@ -657,13 +716,31 @@ const breadcrumbLd = {
     height: auto;
     aspect-ratio: 16 / 9;
     object-fit: cover;
-    border-radius: 14px;
-    background: var(--surface-2);
+    transition: transform 0.5s var(--ease, ease);
+  }
+  .content__fig-link:hover .content__fig-img {
+    transform: scale(1.03);
   }
   .content__fig figcaption {
-    margin-top: 8px;
-    font-size: 0.82rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 10px;
+    margin-top: 9px;
+    padding-left: 10px;
+    border-left: 3px solid var(--red);
+    font-size: 0.8rem;
+    line-height: 1.35;
     color: var(--muted);
+  }
+  .content__fig-src {
+    font-weight: 600;
+    color: var(--text-2);
+  }
+  .content__fig-hint {
+    font-size: 0.74rem;
+    letter-spacing: 0.02em;
+    opacity: 0.72;
   }
 
   /* --- AI analizi (özetten görsel olarak tamamen farklı) --- */

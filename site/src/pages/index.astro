@@ -3,7 +3,8 @@ import Base from "../layouts/Base.astro";
 import ArticleCard from "../components/ArticleCard.astro";
 import AdSlot from "../components/AdSlot.astro";
 import FeaturedSlider from "../components/FeaturedSlider.astro";
-import { getArticles, getFeatured, getTags } from "../lib/articles.js";
+import { getArticles, getFeatured, getTags, imageUrl } from "../lib/articles.js";
+import { kapakKaynagi } from "../lib/kapak.js";
 import { siteOrigin, ADSENSE_SLOTS } from "../lib/site-meta.js";
 
 const articles = getArticles();
@@ -20,15 +21,19 @@ const tekno = articles
   .filter((a) => teknoKategoriler.has(a.categorySlug) && !featuredSlugs.has(a.slug))
   .slice(0, 4);
 const teknoSlugs = new Set(tekno.map((a) => a.slug));
-// ShiftDelete tarzı: Gerçek fotoğraflı haberler öncelikli gösterilir
-const withPhoto = nonFeatured.filter((a) => a.image && !teknoSlugs.has(a.slug));
-const withoutPhoto = nonFeatured.filter((a) => !a.image && !teknoSlugs.has(a.slug));
+// ShiftDelete tarzı: Gerçek fotoğraflı haberler öncelikli gösterilir.
+// "Fotoğraflı" ölçütü artık güvenlik süzgecinden geçen kapaktır (lib/kapak.js):
+// kaynağın yanlış/genel görseli elenmişse haber markalı kapakla listelenir.
+const withPhoto = nonFeatured.filter((a) => kapakKaynagi(a) && !teknoSlugs.has(a.slug));
+const withoutPhoto = nonFeatured.filter((a) => !kapakKaynagi(a) && !teknoSlugs.has(a.slug));
 const grid = [...withPhoto, ...withoutPhoto].slice(0, 21);
 
 // WebSite + Organization yapısal veri: Sitelinks arama kutusu (Google) + marka bilgisi.
 // SearchAction, site içi arama sayfasına (/ara/) point eder.
 const origin = siteOrigin(Astro.site);
-const heroImage = featured[0]?.image || (featured[0] ? `/kapak/${featured[0].slug}.svg` : undefined);
+// Vitrin kapak görseli: preload edilecek adres de güvenlik süzgecinden geçer.
+const heroKapak = featured[0] ? kapakKaynagi(featured[0]) : "";
+const heroImage = heroKapak ? imageUrl(heroKapak, 1200) : "/og-default.png";
 const siteSchema = {
   "@context": "https://schema.org",
   "@graph": [

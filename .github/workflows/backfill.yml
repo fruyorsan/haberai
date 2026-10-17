@@ -38,11 +38,11 @@ jobs:
 
       # Haber icine 1-2 ek gercek fotograf (ShiftDelete tarzi). Kaynak sayfada
       # "ayni haber" oldugu kanitlanamayan gorseller eklenmez; bu yuzden AI kotasi
-      # kullanmaz, yalnizca kaynak sayfayi indirir. Arsiv ~40 saatte bir taranir,
+      # kullanmaz, yalnizca kaynak sayfayi indirir. Arsiv ~24 saatte bir taranir,
       # bir daha bakilan haber tekrar indirilmez.
       - name: Haber icine ek fotograflar
         env:
-          EK_GORSEL_LIMIT: "20"
+          EK_GORSEL_LIMIT: "40"
         run: npm run ek-gorsel
 
       - name: Degisiklikleri kaydet

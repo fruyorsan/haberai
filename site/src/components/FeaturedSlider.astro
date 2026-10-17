@@ -1,5 +1,6 @@
 ---
 import { getFeatured, timeAgo, publishedISO, imageUrl } from "../lib/articles.js";
+import { kapakKaynagi } from "../lib/kapak.js";
 
 // Ana sayfa vitrini: "Öne çıkan haberler" slaytı.
 // - Otomatik geçiş (6 sn) + ilerleme çubuğu; ok, nokta, sürükleme ve klavye ile tam kontrol.
@@ -34,12 +35,14 @@ function headlineNote(a) {
 
 const items = slides.map((a) => {
   const words = `${a.summary || ""} ${a.comment || ""}`.split(/\s+/).filter(Boolean).length;
+  // Kapak güvenliği: kaynağın yanlış/genel görseli gösterilmez (lib/kapak.js).
+  const kapak = kapakKaynagi(a);
   return {
     slug: a.slug,
     url: a.url,
     title: a.title,
-    image: a.image ? imageUrl(a.image, 1100) : "",
-    imageOrig: a.image || "",
+    image: kapak ? imageUrl(kapak, 1100) : "",
+    imageOrig: kapak || "",
     category: a.category,
     summary: a.summary,
     source: a.source,

@@ -3,16 +3,20 @@
 // TAM içeriği (başlık, görsel, özet, maddeler, gövde, AI yorumu, kaynak) akar.
 // Böylece okur hiç "haber bitti" duvarına çarpmaz; zincir birkaç haberde durur.
 import { imageUrl, formatDate, publishedISO } from "../lib/articles.js";
+import { kapakKaynagi, kapakUygunMu } from "../lib/kapak.js";
 
 const { article, index = 0 } = Astro.props;
 const body = Array.isArray(article.body) ? article.body.filter(Boolean) : [];
 const keyPoints = Array.isArray(article.keyPoints) ? article.keyPoints.filter(Boolean) : [];
 const date = formatDate(publishedISO(article));
 const sayfa = `/haber/${article.slug}/`;
-// Kapakla aynı olmayan bir haber içi fotoğraf (varsa) da gösterilir.
-const ekGorsel = (Array.isArray(article.images) ? article.images : []).find(
-  (u) => typeof u === "string" && /^https?:\/\//i.test(u) && u !== article.image
-);
+// Kapak görseli güvenlik süzgecinden geçer (lib/kapak.js): kaynağın yanlış/genel
+// görseli gösterilmez. Yerine doğrulanmış haber içi fotoğraf, o da yoksa markalı
+// kapak gelir; böylece zincirde de "saçma" fotoğraf görünmez.
+const kapak = kapakKaynagi(article);
+const ekGorsel = (Array.isArray(article.images) ? article.images : [])
+  .filter((u) => typeof u === "string" && /^https?:\/\//i.test(u) && u !== kapak)
+  .find((u) => kapakUygunMu(article, u));
 const errYok = "this.closest('figure').remove()";
 const gorselHata = `if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.src=this.dataset.orig}else{${errYok}}`;
 ---
@@ -32,11 +36,11 @@ const gorselHata = `if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';th
     <span>{article.source}</span>
   </div>
 
-  {article.image && (
+  {kapak && (
     <figure class="devam__media">
       <img
-        src={imageUrl(article.image, 1000)}
-        data-orig={article.image}
+        src={imageUrl(kapak, 1000)}
+        data-orig={kapak}
         alt={article.title}
         width="1000"
         height="563"

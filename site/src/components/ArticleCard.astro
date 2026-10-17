@@ -1,5 +1,6 @@
 ---
 import { timeAgo, publishedISO, imageUrl } from "../lib/articles.js";
+import { kapakKaynagi } from "../lib/kapak.js";
 
 const { article, size = "normal", index = 0, reveal = true } = Astro.props;
 const when = timeAgo(publishedISO(article));
@@ -10,8 +11,10 @@ const readMin = Math.max(1, Math.round(words / 200));
 // Kartta fotoğraf ~380 px genişlikte görünür; kaynak fotoğraf çoğu zaman
 // 300 KB - 1,5 MB geliyor. Görsel CDN'inden geçirilip küçültülür + WebP olur;
 // CDN erişilemezse `data-orig` ile kaynak adrese düşer.
-const imgSrc = article.image ? imageUrl(article.image, 640) : "/og-default.png";
-const imgErr = article.image
+// Kapak seçimi lib/kapak.js'ten geçer: kaynağın yanlış/genel görseli gösterilmez.
+const kapak = kapakKaynagi(article);
+const imgSrc = kapak ? imageUrl(kapak, 640) : "/og-default.png";
+const imgErr = kapak
   ? "if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.src=this.dataset.orig}else{this.classList.add('is-broken')}"
   : "this.classList.add('is-broken')";
 
@@ -33,7 +36,7 @@ const delay = Math.min(index * 45, 320);
       <img
         class="card__img"
         src={imgSrc}
-        data-orig={article.image || undefined}
+        data-orig={kapak || undefined}
         alt={article.title}
         width="1200"
         height="675"

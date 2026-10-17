@@ -16,6 +16,11 @@
 //     aynı.
 // Kanıt yoksa ek fotoğraf eklenmez; kapak fotoğrafı yeterlidir.
 //
+// Ek güvenlik ağı (2026-10): arşivdeki BAŞKA bir haberin kapağı ya da ek
+// fotoğrafı olan görseller hiç eklenmez. Yan sütundaki "diğer haberler" küçük
+// resimleri tam olarak bu yüzden yanlış olur; kimliği arşivde başka bir habere
+// bağlıysa aday elenir.
+//
 // Diğer kurallar:
 // - Kapakla aynı fotoğrafın farklı boyut sürümü tekrar eklenmez (dosya adı/kimlik karşılaştırması).
 // - Yalnızca kalite eşiğini geçen (yeterince büyük, logo/ikon olmayan, aşırı ince olmayan)
@@ -40,7 +45,7 @@ const DRY = process.argv.includes("--dry");
 const DEBUG = process.argv.includes("--debug");
 
 const EN_AZ_GENISLIK = 900; // haber içinde gösterilecek fotoğraf için en küçük genişlik
-const MAX_ADAY = 8; // haber başına ölçülecek en fazla aday (ağ maliyeti)
+const MAX_ADAY = 12; // haber başına ölçülecek en fazla aday (ağ maliyeti)
 const HEDEF = 2; // haber başına en fazla ek fotoğraf
 const BEKLEME_MS = 400; // kaynak siteleri yormamak için turlar arasında bekleme
 
@@ -149,8 +154,25 @@ function ayniHaberMi(adayUrl, hostlar, kelimeler, idler) {
   return false;
 }
 
+/**
+ * Arşivdeki BAŞKA haberlere ait görsellerin kimliği → sahibi olan haberin id'si.
+ * Yan sütundaki "diğer haberler" küçük resimlerinin büyük sürümü aynı sayfada
+ * bulunabiliyor; arşivde kimliği başka bir habere bağlıysa aday elenir.
+ */
+function baskaHaberGorselleri(list) {
+  const harita = new Map();
+  for (const h of list) {
+    if (h.image) harita.set(fotoKimlik(h.image), h.id);
+    for (const u of Array.isArray(h.images) ? h.images : []) {
+      const k = fotoKimlik(u);
+      if (k && !harita.has(k)) harita.set(k, h.id);
+    }
+  }
+  return harita;
+}
+
 /** Bir haber için kaynak sayfadan en fazla `HEDEF` ek fotoğraf seçer. */
-async function ekFotoSec(article) {
+async function ekFotoSec(article, baskalarinaAit = new Map()) {
   const host = hostAl(article.sourceUrl);
   const kapak = String(article.image || "");
 
@@ -175,7 +197,7 @@ async function ekFotoSec(article) {
   const gorulenKimlik = new Set([fotoKimlik(kapak)]);
   const gorulenAd = new Set([fotoAd(kapak)]);
   const secilen = [];
-  let elenen = { ilgisiz: 0, kapakTekrari: 0, kalitesiz: 0 };
+  let elenen = { ilgisiz: 0, kapakTekrari: 0, baskasinin: 0, kalitesiz: 0 };
 
   if (DEBUG) {
     console.log(`    kapak           : ${kapak}`);
@@ -196,14 +218,22 @@ async function ekFotoSec(article) {
       continue;
     }
 
-    // 2) Gerçekten bu haberin fotoğrafı mı? (yan sütun/reklam/logo elenir)
+    // 2) Arşivde BAŞKA bir haberin kapağı/ek fotoğrafı mı? (yan sütun küçük resmi)
+    const sahibi = baskalarinaAit.get(kimlik);
+    if (sahibi && sahibi !== article.id) {
+      elenen.baskasinin++;
+      if (DEBUG) console.log(`    - başka haber  : ${String(aday).slice(0, 100)}`);
+      continue;
+    }
+
+    // 3) Gerçekten bu haberin fotoğrafı mı? (yan sütun/reklam/logo elenir)
     if (!ayniHaberMi(aday, hostlar, kelimeler, idler)) {
       elenen.ilgisiz++;
       if (DEBUG) console.log(`    - ilgisiz       : ${String(aday).slice(0, 100)}`);
       continue;
     }
 
-    // 3) Kalite eşiği
+    // 4) Kalite eşiği
     const bilgi = await probeImage(aday);
     if (!passesQuality(bilgi) || (bilgi?.width || 0) < EN_AZ_GENISLIK) {
       elenen.kalitesiz++;
@@ -217,14 +247,17 @@ async function ekFotoSec(article) {
     secilen.push(bilgi.finalUrl || aday);
   }
 
-  const neden = secilen.length
-    ? `uygun (kapak tekrarı: ${elenen.kapakTekrari}, ilgisiz: ${elenen.ilgisiz}, kalitesiz: ${elenen.kalitesiz})`
-    : `uygun fotoğraf yok (kapak tekrarı: ${elenen.kapakTekrari}, ilgisiz: ${elenen.ilgisiz}, kalitesiz: ${elenen.kalitesiz})`;
+  const ayrinti = `kapak tekrarı: ${elenen.kapakTekrari}, başka haber: ${elenen.baskasinin}, ilgisiz: ${elenen.ilgisiz}, kalitesiz: ${elenen.kalitesiz}`;
+  const neden = secilen.length ? `uygun (${ayrinti})` : `uygun fotoğraf yok (${ayrinti})`;
   return { sonuc: secilen, neden };
 }
 
 async function main() {
   const list = JSON.parse(await readFile(FILE, "utf8"));
+
+  // Arşivdeki tüm haberlere ait görseller: aday seçilirken bunlara bağlı
+  // (yani başka bir haberin) görseller elenir.
+  const baskalarinaAit = baskaHaberGorselleri(list);
 
   // En yeni haberler önce: taze içerikte ek fotoğraf hemen görünsün.
   const hedefler = list
@@ -251,7 +284,7 @@ async function main() {
   for (const [i, a] of hedefler.entries()) {
     const sira = `(${i + 1}/${hedefler.length})`;
     try {
-      const { sonuc, neden } = await ekFotoSec(a);
+      const { sonuc, neden } = await ekFotoSec(a, baskalarinaAit);
       if (sonuc === null) {
         acilamayan++;
         console.log(`  ${sira} ${a.source}: ${neden}, sonraki tura bırakıldı`);
