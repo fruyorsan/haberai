@@ -7,8 +7,13 @@ import { config } from "./config.js";
 /**
  * Eski haberleri yeni biçimle yeniden üretir:
  * - Gövdesi olmayanlar VEYA editorNote (manşet notu) alanı eksik olanlar.
+ * - Gövdesi çok kısa olanlar (yeni istemler en az ~180 kelime istiyor).
+ * - Manşet notu clickbait kalıbıyla bitenler ("Neden bakmalısın?").
+ * - Özeti başlığın aynısı olanlar.
  * - Slug, kimlik, kaynak ve tarihler KORUNUR (Google'da kayıtlı URL değişmesin).
- * - editorNote'u zaten olan ve gövdesi olan haberlere DOKUNULMAZ (idempotent).
+ * - İçeriği zaten yerinde olan haberlere DOKUNULMAZ (idempotent).
+ * - Sıra "en çok eksik olan önce"dir: önce gövdesizler, sonra manşetsizler...
+ *   Böylece okurun göreceği boşluklar ilk turlarda kapanır.
  * - Her haber başarıyla işlendiğinde dosya kaydedilir; kota biterse ilerleme korunur.
  *
  * Kullanım:
@@ -21,22 +26,42 @@ const LIMIT = Number(process.env.BACKFILL_LIMIT || 5);
 const DRY = process.argv.includes("--dry");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+const govdeKelime = (a) =>
+  (Array.isArray(a.body) ? a.body.join(" ") : "").split(/\s+/).filter(Boolean).length;
+
 const needsBody = (a) => !Array.isArray(a.body) || a.body.filter(Boolean).length === 0;
 const needsEditorNote = (a) => !String(a?.editorNote || "").trim();
-const needsWork = (a) => needsBody(a) || needsEditorNote(a);
+const thinBody = (a) => !needsBody(a) && govdeKelime(a) < 120;
+const clickbaitNote = (a) => /neden (bakmalısın|bu kadar kritik)|merak ediyor musun/i.test(String(a?.editorNote || ""));
+const summaryIsTitle = (a) =>
+  Boolean(String(a?.summary || "").trim()) && String(a.summary).trim() === String(a.title || "").trim();
+
+const needsWork = (a) =>
+  needsBody(a) || needsEditorNote(a) || thinBody(a) || clickbaitNote(a) || summaryIsTitle(a);
+
+// 0 = en acil (okurun gördüğü boşluk), 3 = kozmetik.
+const oncelik = (a) => {
+  if (needsBody(a)) return 0;
+  if (needsEditorNote(a)) return 1;
+  if (thinBody(a)) return 2;
+  return 3;
+};
 
 async function main() {
   const articles = await loadArticles();
   const pending = articles.filter(needsWork);
   const targets = [...pending]
-    .sort((a, b) =>
-      (b.publishedAt || b.generatedAt || "").localeCompare(a.publishedAt || a.generatedAt || "")
+    .sort(
+      (a, b) =>
+        oncelik(a) - oncelik(b) ||
+        (b.publishedAt || b.generatedAt || "").localeCompare(a.publishedAt || a.generatedAt || "")
     )
     .slice(0, LIMIT);
 
   console.log(
     `Arşiv: ${articles.length} haber | gövdesiz: ${articles.filter(needsBody).length} | ` +
-      `editorNote eksik: ${articles.filter(needsEditorNote).length} | bu turda işlenecek: ${targets.length}`
+      `editorNote eksik: ${articles.filter(needsEditorNote).length} | ` +
+      `kısa gövde: ${articles.filter(thinBody).length} | bu turda işlenecek: ${targets.length}`
   );
 
   if (!targets.length) {
@@ -112,7 +137,8 @@ async function main() {
   await saveArticles(articles);
   console.log(
     `\nBitti. ${done} haber yenilendi. Kalan gövdesiz: ${articles.filter(needsBody).length}, ` +
-      `kalan editorNote eksik: ${articles.filter(needsEditorNote).length}`
+      `editorNote eksik: ${articles.filter(needsEditorNote).length}, ` +
+      `kısa gövde: ${articles.filter(thinBody).length}`
   );
 }
 
