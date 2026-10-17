@@ -174,42 +174,56 @@ const isArticle = ogType === "article";
       document.documentElement.classList.add("js");
     </script>
 
-    <!-- Ölçüm (GA4) ve reklam (AdSense) yalnızca kullanıcı onay verirse yüklenir (KVKK/GDPR) -->
-    {ADSENSE_CLIENT && <meta name="google-adsense-account" content={ADSENSE_CLIENT} />}
-    {(GA_MEASUREMENT_ID || ADSENSE_CLIENT) && (
-      <script
-        is:inline
-        set:html={`window.__olcumYukle = function () {
-  if (window.__olcumYuklendi) return;
-  window.__olcumYuklendi = true;
-  var ga = ${JSON.stringify(GA_MEASUREMENT_ID || "")};
-  var ads = ${JSON.stringify(ADSENSE_CLIENT || "")};
-  if (ga) {
-    var s = document.createElement("script");
-    s.async = true;
-    s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(ga);
-    document.head.appendChild(s);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
-    window.gtag("js", new Date());
-    window.gtag("config", ga, { anonymize_ip: true });
-  }
-  if (ads) {
-    var a = document.createElement("script");
-    a.async = true;
-    a.crossOrigin = "anonymous";
-    a.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + encodeURIComponent(ads);
-    document.head.appendChild(a);
-  }
-};
+    <!-- Çerez izni: Google Consent Mode v2.
+         Etiketler kaynakta her zaman bulunur (AdSense/Search Console doğrulaması görmeli),
+         ancak kullanıcı "Kabul et" diyene kadar depolama "denied" kalır. -->
+    <script
+      is:inline
+      set:html={`window.dataLayer = window.dataLayer || [];
+function gtag() { window.dataLayer.push(arguments); }
+window.gtag = window.gtag || gtag;
 (function () {
   var onay = null;
   try { onay = localStorage.getItem("cerez-onay"); } catch (e) {}
-  if (onay !== "kabul") return;
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", window.__olcumYukle);
-  else window.__olcumYukle();
-})();`}
-      />
+  var verildi = onay === "kabul" ? "granted" : "denied";
+  gtag("consent", "default", {
+    ad_storage: verildi,
+    ad_user_data: verildi,
+    ad_personalization: verildi,
+    analytics_storage: verildi,
+    wait_for_update: 500
+  });
+})();
+window.__olcumOnayla = function () {
+  gtag("consent", "update", {
+    ad_storage: "granted",
+    ad_user_data: "granted",
+    ad_personalization: "granted",
+    analytics_storage: "granted"
+  });
+};`}
+    />
+
+    <!-- Google tag (gtag.js) -->
+    {GA_MEASUREMENT_ID && (
+      <>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} is:inline></script>
+        <script
+          is:inline
+          set:html={`gtag("js", new Date());
+gtag("config", ${JSON.stringify(GA_MEASUREMENT_ID)}, { anonymize_ip: true });`}
+        />
+      </>
+    )}
+
+    <!-- AdSense: kimlik tanımlıysa (onay öncesi reklamlar kişiselleştirilmez) -->
+    {ADSENSE_CLIENT && <meta name="google-adsense-account" content={ADSENSE_CLIENT} />}
+    {ADSENSE_CLIENT && (
+      <script
+        async
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+        crossorigin="anonymous"
+        is:inline></script>
     )}
 
     <!-- Sayfaya ozel JSON-LD (WebSite/Organization vb.) -->
@@ -326,7 +340,7 @@ const isArticle = ogType === "article";
           try { localStorage.setItem("cerez-onay", secim); } catch (err) {}
           kutu.hidden = true;
           document.documentElement.classList.remove("cerez-acik");
-          if (secim === "kabul" && window.__olcumYukle) window.__olcumYukle();
+          if (secim === "kabul" && window.__olcumOnayla) window.__olcumOnayla();
         });
       })();
     </script>

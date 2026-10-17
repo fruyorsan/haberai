@@ -185,12 +185,13 @@ gh workflow run pipeline.yml
 tanımsızsa açıklama satırı kalır. AdSense panelindeki **Otomatik reklamlar** açıksa
 kimlik yeterlidir; birim kimlikleri elle yerleşim için gereklidir.
 
-**Çerez izni:** GA4 ve AdSense, `Base.astro` içindeki çerez bildirimi üzerinden yüklenir —
-kullanıcı "Kabul et" demeden hiçbir ölçüm/reklam betiği çalışmaz (tercih `localStorage`
-içinde `cerez-onay` anahtarında tutulur; "Sadece zorunlu" seçilirse GA/AdSense hiç yüklenmez).
-Bu yüzden sayfa kaynağında `googletagmanager.com` / `adsbygoogle.js` etiketi görünmez;
-betikler yalnızca onaydan sonra `document.head` içine eklenir. Onayı zorunlu kılan
-bölgeler için (AB) AdSense panelindeki gizlilik ve ileti mesajlarını da açmak gerekir.
+**Çerez izni:** `Base.astro` içinde çerez bildirimi + Google **Consent Mode v2** vardır.
+GA4 ve AdSense etiketleri kaynakta her zaman bulunur (AdSense/Search Console doğrulaması
+bunları görmek zorundadır), ancak kullanıcı "Kabul et" diyene kadar
+`analytics_storage`, `ad_storage`, `ad_user_data` ve `ad_personalization` **denied** kalır:
+ölçüm çerezsiz çalışır, reklamlar kişiselleştirilmez. Tercih `localStorage` içindeki
+`cerez-onay` anahtarında saklanır ve sayfa yenilendiğinde varsayılan ondan okunur.
+Avrupa Birliği trafiği için AdSense panelindeki gizlilik ve ileti mesajlarını da aç.
 
 ## Sosyal Dağıtım
 
