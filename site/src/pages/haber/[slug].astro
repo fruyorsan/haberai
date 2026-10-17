@@ -159,10 +159,10 @@ const breadcrumbLd = {
           <ShareButtons url={shareUrl} title={article.title} />
           <div class="post__ai" role="group" aria-label="Yapay zekâ araçları">
             <button type="button" class="post__ai-btn" data-jump="#ozet">
-              <span aria-hidden="true">✨</span> AI Özet
+              <span class="post__ai-ico" aria-hidden="true">✨</span> AI Özet
             </button>
             <button type="button" class="post__ai-btn post__ai-btn--ask" data-jump="#aiask">
-              <span aria-hidden="true">✨</span> AI'ya Sor
+              <span class="post__ai-ico" aria-hidden="true">✨</span> AI'ya Sor
             </button>
           </div>
         </div>
@@ -847,40 +847,107 @@ const breadcrumbLd = {
     color: #9aa1ac;
   }
 
-  /* --- "AI Özet" / "AI'ya Sor" düğmeleri (paylaşımın hemen yanında) --- */
+  /* --- "AI Özet" / "AI'ya Sor" düğmeleri (paylaşımın hemen yanında) ---
+     Modern cam görünüm: yumuşak üst ışık, ince kenar, derinlik gölgesi ve
+     üzerine gelince soldan sağa geçen ışık parlaması. Simge ayrı bir "çip"
+     içinde durur; birincil düğme (AI'ya Sor) kırmızı gradyan + parıltı ile
+     ayrışır. Tüm renkler tema jetonlarından türetilir (açık/koyu tema uyumlu). */
   .post__ai {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
   }
   .post__ai-btn {
+    position: relative;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 8px 13px;
+    gap: 8px;
+    padding: 7px 15px 7px 8px;
     border-radius: 999px;
-    border: 1px solid var(--border);
-    background: var(--surface);
+    border: 1px solid color-mix(in srgb, var(--text) 14%, transparent);
+    background: linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--text) 7%, transparent),
+        transparent 62%
+      ),
+      var(--surface);
     color: var(--text);
-    font-size: 0.84rem;
+    font-size: 0.85rem;
     font-weight: 700;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
     cursor: pointer;
-    transition: background 0.2s var(--ease), color 0.2s var(--ease),
-      border-color 0.2s var(--ease), transform 0.2s var(--ease);
+    overflow: hidden;
+    isolation: isolate;
+    box-shadow: 0 8px 18px -14px color-mix(in srgb, #000 70%, transparent);
+    transition: border-color 0.22s var(--ease), box-shadow 0.28s var(--ease),
+      transform 0.22s var(--ease), color 0.22s var(--ease);
+  }
+  .post__ai-ico {
+    display: grid;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    line-height: 1;
+    background: var(--brand-soft);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--brand) 22%, transparent) inset;
+  }
+  .post__ai-btn::after {
+    content: "";
+    position: absolute;
+    top: -40%;
+    bottom: -40%;
+    left: -35%;
+    width: 32%;
+    background: linear-gradient(
+      100deg,
+      transparent,
+      rgba(255, 255, 255, 0.28),
+      transparent
+    );
+    transform: translateX(-140%) skewX(-18deg);
+    transition: transform 0.62s var(--ease);
+    pointer-events: none;
   }
   .post__ai-btn:hover {
-    border-color: var(--brand);
+    border-color: color-mix(in srgb, var(--brand) 55%, transparent);
     color: var(--brand);
     transform: translateY(-2px);
+    box-shadow: 0 14px 24px -16px color-mix(in srgb, var(--brand) 80%, transparent);
+  }
+  .post__ai-btn:hover::after {
+    transform: translateX(430%) skewX(-18deg);
   }
   .post__ai-btn--ask {
-    background: var(--brand-grad);
     border-color: transparent;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.24),
+        rgba(255, 255, 255, 0) 58%
+      ),
+      var(--brand-grad);
     color: #fff;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset,
+      0 12px 24px -14px color-mix(in srgb, var(--brand) 90%, transparent);
+  }
+  .post__ai-btn--ask .post__ai-ico {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: none;
   }
   .post__ai-btn--ask:hover {
     color: #fff;
-    filter: brightness(1.06);
+    transform: translateY(-2px);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.28) inset,
+      0 18px 30px -14px color-mix(in srgb, var(--brand) 95%, transparent);
+  }
+  .post__ai-btn:active {
+    transform: translateY(0) scale(0.98);
+  }
+  .post__ai-btn:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
   }
 
   /* --- Okumaya devam zincirinin sonu --- */
@@ -941,6 +1008,11 @@ const breadcrumbLd = {
   @media (max-width: 640px) {
     .post__ai {
       width: 100%;
+    }
+    /* Telefonda iki düğme satırı eşit paylaşır. */
+    .post__ai-btn {
+      flex: 1 1 auto;
+      justify-content: center;
     }
   }
 
