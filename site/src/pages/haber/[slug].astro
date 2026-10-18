@@ -6,7 +6,7 @@ import ShareButtons from "../../components/ShareButtons.astro";
 import DevamHaber from "../../components/DevamHaber.astro";
 import { getArticles, formatDate, publishedISO, imageUrl, tagUrl, slugify } from "../../lib/articles.js";
 import { kapakKaynagi, kapakUygunMu } from "../../lib/kapak.js";
-import { ADSENSE_SLOTS } from "../../lib/site-meta.js";
+import { ADSENSE_SLOTS, ONESIGNAL_APP_ID } from "../../lib/site-meta.js";
 
 export function getStaticPaths() {
   return getArticles().map((article) => ({
@@ -60,7 +60,7 @@ const kapak = kapakKaynagi(article);
 // --- Bildirim (web push) ---
 // OneSignal App ID tanımlıysa haber sayfasında "bu kategoriyi takip et" düğmesi
 // çıkar (bkz. components/Bildirim.astro). Kurulu değilse düğme hiç basılmaz.
-const bildirimAktif = Boolean(String(process.env.ONESIGNAL_APP_ID || "").trim());
+const bildirimAktif = Boolean(String(ONESIGNAL_APP_ID || "").trim());
 
 // --- Haber içi ek fotoğraflar ---
 // Kaynak sayfadan toplanan ek görseller; kapak olarak kullanılan fotoğraf tekrar

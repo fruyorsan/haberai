@@ -27,9 +27,10 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // --- Renkler (RGB) ---
+const UST = [234, 54, 62]; // üst: canlı kırmızı #ea363e
 const MARKA = [216, 31, 38]; // #d81f26
-const MARKA_ACIK = [247, 84, 92]; // #f7545c
 const MARKA_KOYU = [140, 8, 16]; // #8c0810
+const DIP = [46, 3, 9]; // alt: neredeyse siyah koyu kırmızı #2e0309
 const GOLGE = [96, 6, 12];
 const BEYAZ = [255, 255, 255];
 const BEYAZ_ALT = [233, 235, 243];
@@ -102,27 +103,25 @@ function ornek(u, v) {
   const d = sdKare(u, v, 0.5, 0.5, KOSE_R);
   if (d > 0) return [0, 0, 0, 0];
 
-  // Zemin: çapraz marka gradyanı
-  let c = mix(MARKA_ACIK, MARKA_KOYU, clamp(u * 0.35 + v * 0.75, 0, 1));
-  c = mix(c, MARKA, 0.45);
+  // Zemin: üstten alta koyulaşan marka gradyanı (alta doğru siyaha yakın).
+  const t = clamp(v * 0.88 + u * 0.2, 0, 1);
+  let c = mix(UST, MARKA, smooth(0.03, 0.46, t));
+  c = mix(c, MARKA_KOYU, smooth(0.4, 0.72, t));
+  c = mix(c, DIP, smooth(0.68, 1, t));
 
-  // Üst-sol ışığı (kaynak hissi) — ölçülü: fazlası ucuz parlama gibi duruyor.
-  c = mix(c, BEYAZ, clamp(0.26 - Math.hypot(u - 0.26, v - 0.14) * 1.15, 0, 0.26) * 0.34);
-  // Alt-sağ derinliği
-  c = mix(c, MARKA_KOYU, clamp(0.34 - Math.hypot(u - 0.95, v - 0.98) * 0.95, 0, 0.34) * 0.55);
-  // Alt kenarda oturma
-  c = mix(c, GOLGE, smooth(0.62, 1, v) * 0.14);
+  // Üst-sol ışığı (ölçülü: fazlası plastik parlama gibi duruyor)
+  c = mix(c, BEYAZ, clamp(0.24 - Math.hypot(u - 0.26, v - 0.12) * 1.2, 0, 0.24) * 0.32);
 
-  // Diyagonal cam parlaması
-  const g = u * 0.6 + v * 0.8;
-  c = mix(c, BEYAZ, smooth(0.1, 0.34, g) * (1 - smooth(0.34, 0.62, g)) * 0.07);
+  // Diyagonal cam parlaması (çok hafif)
+  const g = u * 0.55 + v * 0.85;
+  c = mix(c, BEYAZ, smooth(0.08, 0.32, g) * (1 - smooth(0.32, 0.54, g)) * 0.05);
 
-  // İç kenar ışığı (üstte çok hafif)
-  const kenar = smooth(-0.026, -0.017, d) * (1 - smooth(-0.017, -0.006, d));
-  c = mix(c, BEYAZ, kenar * (1 - smooth(0.25, 0.85, v)) * 0.3);
+  // Üst kenarda ince ışık şeridi
+  const kenar = smooth(-0.024, -0.016, d) * (1 - smooth(-0.016, -0.006, d));
+  c = mix(c, BEYAZ, kenar * (1 - smooth(0.2, 0.72, v)) * 0.3);
 
-  // H'nin altına düşen yumuşak gölge (derinlik)
-  c = mix(c, GOLGE, (1 - smooth(-0.006, 0.026, sdH(u, v - 0.016))) * 0.42);
+  // H'nin altına düşen yumuşak gölge (üst yarıda hafif derinlik)
+  c = mix(c, GOLGE, (1 - smooth(-0.006, 0.026, sdH(u, v - 0.014))) * 0.2);
 
   // H: beyazdan hafif griye inen dikey gradyan
   if (sdH(u, v) < 0) {

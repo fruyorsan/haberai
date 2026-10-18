@@ -67,3 +67,20 @@ export const GOOGLE_SITE_VERIFICATION = GOOGLE_SITE_VERIFICATIONS[0];
 
 /** Google Analytics (GA4) ölçüm kimliği. */
 export const GA_MEASUREMENT_ID = process.env.GA_MEASUREMENT_ID || "G-C9BGECSKCM";
+
+/**
+ * OneSignal App ID (web push / bildirimler).
+ *
+ * App ID gizli bir anahtar DEĞİLDİR; sitenin OneSignal kimliğidir ve tarayıcıya
+ * açıkça yazılır (REST API anahtarı ise gizlidir, yalnızca workflow'da durur).
+ *
+ * Alt yapı:
+ *   - SDK: site/src/layouts/Base.astro (<head>, appId ile init)
+ *   - Service worker: site/public/OneSignalSDKWorker.js (kök kapsam)
+ *   - Zil + "kategoriyi takip et": site/src/components/Bildirim.astro
+ *   - Gönderim: src/bildirim.js (workflow içinde çalışır)
+ *
+ * Değiştirmek için: gh variable set ONESIGNAL_APP_ID --body "yeni-app-id"
+ */
+export const ONESIGNAL_APP_ID =
+  process.env.ONESIGNAL_APP_ID || "fd1804a3-90d0-4c95-9bf0-c147f9a1d0c7";

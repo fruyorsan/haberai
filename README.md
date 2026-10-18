@@ -302,21 +302,27 @@ takip ettiği konular için bildirim alır; site kapalıyken de bildirim gelir
 **Haber sayfasında "Bu kategoriyi takip et"** düğmesi kategori rozetinin yanındadır:
 tıklanınca o kategori takip edilir ve ilk kez bildirim izni istenir.
 
-**Kurulum (tek sefer):**
+**OneSignal kurulumu (site tarafı tamam):**
 
-1. `onesignal.com` → ücretsiz hesap → **New App/Website** → platform **Web**.
-2. Site URL: `https://haberinai.site` (OneSignal alan adını birebir doğrular).
-3. **Keys & IDs** sayfasından *App ID* ve *REST API Key* alınır.
-4. Depoya eklenir (kod değişikliği gerekmez, sonraki turda canlıya çıkar):
-   ```powershell
-   gh variable set ONESIGNAL_APP_ID --body "<App ID>"
-   gh secret  set ONESIGNAL_REST_API_KEY --body "<REST API anahtarı>"
-   ```
-   İkisi biri eksikse zil düğmesi ve takip düğmeleri **hiç basılmaz** (yarım arayüz olmaz).
-5. Safari (macOS) için ayrıca OneSignal panelinde **Safari web push sertifikası**
-   yüklenmelidir; Chrome/Edge/Firefox/Android için gerekmez.
-6. iPhone'da bildirim için site **Ana Ekrana eklenmeli** (iOS 16.4+); panel bunu okuyucuya
-   yazar.
+| Parça | Nerede | Durum |
+| --- | --- | --- |
+| App ID | `site/src/lib/site-meta.js` (varsayılan) ya da `gh variable set ONESIGNAL_APP_ID` | ✅ tanımlı |
+| REST API Key | `gh secret set ONESIGNAL_REST_API_KEY` (gizli) | ⏳ bekleniyor — gelmeden hiçbir push **gönderilmez** |
+| SDK + init | `site/src/layouts/Base.astro` (`<head>`) | ✅ |
+| Service worker | `site/public/OneSignalSDKWorker.js` → `/OneSignalSDKWorker.js` | ✅ |
+| Zil + panel + takip | `site/src/components/Bildirim.astro` | ✅ |
+
+- Kurulum dokümanı: <https://documentation.onesignal.com/docs/en/web-sdk-setup>
+  (SDK `<head>`'de yüklenir, `appId` ile init edilir; service worker sitede kök).
+- OneSignal panelinde **Site URL** tam olarak `https://haberinai.site` olmalıdır.
+- **REST API Key** girilene kadar zil/takip çalışır (okuyucu abone olur) ama otomatik
+  haber bildirimi gitmez; anahtar girildiği an gönderim başlar.
+- **Gizlilik:** `setConsentRequired(true)` ile okuyucu bildirimlere izin verene kadar
+  OneSignal veri toplamaz; izin verildiğinde `setConsentGiven(true)` çağrılır.
+- Tarayıcı izin penceresi kendiliğinden açılmaz (slidedown kapalı) — yalnızca zil ya da
+  "kategoriyi takip et" düğmesine basılınca istenir.
+- Safari (macOS 13+) ve iOS 16.4+ VAPID ile çalışır, ek sertifika gerekmez; iPhone'da
+  bildirim için site **Ana Ekrana eklenmelidir** (panel bunu okuyucuya yazar).
 
 **Dosyalar:** `site/src/components/Bildirim.astro` (zil + panel + abonelik),
 `site/public/OneSignalSDKWorker.js` (service worker), `site/public/ikon-192.png`

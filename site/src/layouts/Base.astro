@@ -6,6 +6,7 @@ import {
   ADSENSE_CLIENT,
   GA_MEASUREMENT_ID,
   GOOGLE_SITE_VERIFICATIONS,
+  ONESIGNAL_APP_ID,
 } from "../lib/site-meta.js";
 import "../styles/global.css";
 
@@ -224,6 +225,54 @@ gtag("config", ${JSON.stringify(GA_MEASUREMENT_ID)}, { anonymize_ip: true });`}
         src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
         crossorigin="anonymous"
         is:inline></script>
+    )}
+
+    <!-- Web push (OneSignal) — dokümandaki standart SDK kurulumu
+         (https://documentation.onesignal.com/docs/en/web-sdk-setup):
+           - SDK <head>'de yüklenir ve App ID ile init edilir.
+           - Service worker: /OneSignalSDKWorker.js (site/public kökünde).
+           - Tarayıcı izin penceresi kendiliğinden AÇILMAZ (slidedown kapalı);
+             yalnızca zil ya da "kategoriyi takip et" düğmesine basılınca istenir.
+           - Gizlilik: setConsentRequired(true) → okuyucu izin verene kadar veri
+             toplanmaz; izin verildiğinde Bildirim.astro setConsentGiven(true) der. -->
+    {ONESIGNAL_APP_ID && (
+      <>
+        <link rel="preconnect" href="https://cdn.onesignal.com" />
+        <script
+          src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
+          defer
+          is:inline></script>
+        <script
+          is:inline
+          set:html={`window.OneSignalDeferred = window.OneSignalDeferred || [];
+window.HaberinaiOS = window.HaberinaiOS || {};
+window.HaberinaiOS.hazir = new Promise(function (coz) { window.HaberinaiOS._coz = coz; });
+OneSignalDeferred.push(async function (OneSignal) {
+  try {
+    await OneSignal.init({
+      appId: ${JSON.stringify(ONESIGNAL_APP_ID)},
+      serviceWorkerPath: "/OneSignalSDKWorker.js",
+      serviceWorkerParam: { scope: "/" },
+      allowLocalhostAsSecureOrigin: /^(localhost|127\\.0\\.0\\.1)$/.test(location.hostname),
+      notifyButton: { enable: false },
+      promptOptions: { slidedown: { enabled: false } }
+    });
+  } catch (e) {
+    window.HaberinaiOS._coz(null);
+    return;
+  }
+  try {
+    OneSignal.setConsentRequired(true);
+    var izinli =
+      (typeof Notification !== "undefined" && Notification.permission === "granted") ||
+      localStorage.getItem("bildirim-abone") === "true";
+    if (izinli) OneSignal.setConsentGiven(true);
+  } catch (e) {}
+  window.HaberinaiOS._coz(OneSignal);
+});
+`}
+        />
+      </>
     )}
 
     <!-- Sayfaya ozel JSON-LD (WebSite/Organization vb.) -->

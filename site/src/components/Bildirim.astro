@@ -15,8 +15,9 @@
 // ya da "kategoriyi takip et" düğmesine bastığında yüklenir (izinsiz üçüncü
 // taraf izleyici çalışmasın). Tercihler localStorage'da tutulur.
 import { getCategories } from "../lib/articles.js";
+import { ONESIGNAL_APP_ID } from "../lib/site-meta.js";
 
-const appId = String(process.env.ONESIGNAL_APP_ID || "").trim();
+const appId = String(ONESIGNAL_APP_ID || "").trim();
 // Çok az haberi olan kategoriyi takip ettirmenin anlamı yok (boş akış).
 const KATEGORI_MIN = 8;
 const kategoriler = appId ? getCategories().filter((c) => c.count >= KATEGORI_MIN) : [];
@@ -310,39 +311,34 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
     let kategoriler = new Set(oku(K_KAT, []));
     let sonDakika = oku(K_SON, true) !== false;
     let abone = oku(K_ABONE, false) === true;
+    // OneSignal SDK'sına hiç ulaşılamadıysa (reklam engelleyici, kapalı ağ…)
+    // okuyucuya yanlış mesaj vermemek için işaretlenir.
+    let servisYok = false;
 
-    // --- OneSignal SDK'sını yalnızca gerektiğinde yükle ---
+    // --- SDK, <head>'de yüklenir ve Base.astro içinde appId ile init edilir.
+    // Burada yalnızca hazır olduğunda OneSignal nesnesi alınır; SDK ikinci kez
+    // init edilmez. (Gizlilik kapısı: veri toplama, okuyucu izin verene kadar
+    // kapalıdır — bkz. setConsentRequired/setConsentGiven.)
     let soz = null;
     function sdkYukle() {
       if (soz) return soz;
-      soz = new Promise((resolve) => {
-        window.OneSignalDeferred = window.OneSignalDeferred || [];
-        const s = document.createElement("script");
-        s.src = "https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js";
-        s.defer = true;
-        s.onload = () => {
-          window.OneSignalDeferred.push(async (OneSignal) => {
-            try {
-              await OneSignal.init({
-                appId,
-                serviceWorkerPath: "/OneSignalSDKWorker.js",
-                serviceWorkerParam: { scope: "/" },
-                allowLocalhostAsSecureOrigin: false,
-                notifyButton: { enable: false },
-                promptOptions: { slidedown: { enabled: false } },
-              });
-            } catch {
-              /* init hatası: durum metninde bildirilir */
-            }
-            etiketYaz(OneSignal);
-            resolve(OneSignal);
-          });
-        };
-        s.onerror = () => resolve(null);
-        document.head.appendChild(s);
-        setTimeout(() => resolve(window.OneSignal || null), 8000);
-      });
+      const hazir =
+        (window.HaberinaiOS && window.HaberinaiOS.hazir) || Promise.resolve(null);
+      // Ağ/CDN yavaşsa arayüz sonsuza kadar beklemesin.
+      soz = Promise.race([
+        hazir,
+        new Promise((resolve) => setTimeout(() => resolve(null), 8000)),
+      ]).then((os) => os || null);
       return soz;
+    }
+
+    /** Okuyucu bildirimlere izin verdi → veri toplama iznini de açar. */
+    function izinVer(OneSignal) {
+      try {
+        OneSignal.setConsentGiven(true);
+      } catch {
+        /* API yoksa sorun değil: engelleme yapılmıyor */
+      }
     }
 
     /** Tercihleri OneSignal etiketlerine yazar (yalnızca abone ise). */
@@ -363,7 +359,12 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
     /** İzin ister ve push aboneliğini açar. @returns {Promise<boolean>} */
     async function aboneBaslat() {
       const OneSignal = await sdkYukle();
-      if (!OneSignal) return false;
+      if (!OneSignal) {
+        servisYok = true;
+        return false;
+      }
+      // Okuyucu bildirim istedi → veri toplama izni de verilir (gizlilik kapısı).
+      izinVer(OneSignal);
       // Ağ/CDN yavaşsa arayüz sonsuza kadar beklemesin (6 sn).
       try {
         await Promise.race([
@@ -409,7 +410,10 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
         durum.textContent = mesaj;
         return;
       }
-      if (izinEngelli()) {
+      if (servisYok) {
+        durum.textContent =
+          "Bildirim servisine ulaşılamıyor (reklam engelleyici ya da ağ olabilir).";
+      } else if (izinEngelli()) {
         durum.textContent =
           "Tarayıcı bildirim iznini engellemiş. Adres çubuğundaki kilit simgesinden izin verebilirsin.";
       } else if (abone) {
@@ -535,9 +539,11 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
             d,
             oldu
               ? "Bildirimler açıldı: bu konudan yeni haber çıkınca haber vereceğiz."
-              : izinEngelli()
-                ? "Bildirim izni kapalı görünüyor; tarayıcı ayarlarından açabilirsin."
-                : "Takip kaydedildi. Bildirim izni verilmedi."
+              : servisYok
+                ? "Bildirim servisine ulaşılamadı; takip kaydedildi."
+                : izinEngelli()
+                  ? "Bildirim izni kapalı görünüyor; tarayıcı ayarlarından açabilirsin."
+                  : "Takip kaydedildi. Bildirim izni verilmedi."
           );
         } else if (abone) {
           etiketYaz(await sdkYukle());
@@ -553,11 +559,13 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
     // --- Açılışta ---
     ciz();
     // Abonesi olan (ya da tarayıcı iznini daha önce vermiş) okuyucu için SDK
-    // arka planda yüklenir: etiketler ve abonelik durumu eşitlenir. Örneğin
+    // arka planda eşitlenir: etiketler ve abonelik durumu güncellenir. Örneğin
     // okuyucu izni tarayıcı ayarlarından kapatmışsa zil söner.
     if (abone || izinVerildi()) {
       const esitle = () =>
         sdkYukle().then((os) => {
+          if (!os) return;
+          izinVer(os);
           const durum = os?.User?.PushSubscription?.optedIn;
           if (durum === true) {
             abone = true;
