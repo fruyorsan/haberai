@@ -1,5 +1,70 @@
 [
   {
+    "id": "5aecec8bf03a4e3c",
+    "title": "DeepSeek, V4.1 Flash güncellemesiyle bazı testlerde Claude'u geçti",
+    "slug": "deepseek-v41-flash-guncellemesiyle-bazi-testlerde-claudeu-gecti",
+    "summary": "Çinli yapay zeka şirketi DeepSeek, eylül ayında duyurduğu modelini güncelleyerek kodlama ve ajan testlerinde bazı dev rakiplerini geride bıraktı. Yeni sürüm, web sitesi ve mobil uygulamalarda ek bir ücret veya sınır olmaksızın kullanıma sunuldu.",
+    "keyPoints": [
+      "V4.1-Flash-1017 sürümü DeepSWE testinde 77 puan alarak Claude ve GPT modellerini geride bıraktı.",
+      "Görev başına maliyet eski sürümde yaklaşık 0,50 dolarken yeni sürümde 0,20 dolara geriledi.",
+      "Ağırlıkları MIT lisansıyla Hugging Face'te açıklanan model, geliştiriciler için API üzerinden erişilebilir durumda."
+    ],
+    "body": [
+      "Çin merkezli yapay zeka girişimi DeepSeek, son dönemde yapay zeka pazarındaki rekabeti kızıştıracak yeni bir hamle yaparak V4.1-Flash modelini güncelledi. V4.1-Flash-1017 adı verilen bu güncel sürüm, 17 Ekim 2026 tarihinden itibaren şirketin web sitesi, mobil uygulaması ve API altyapısı üzerinden erişime açıldı. Mimari yapısında büyük bir değişiklik yapılmayan bu küçük güncelleme, görevleri tamamlama süresini kısaltırken daha özlü yanıtlar üretmeyi hedefliyor.",
+      "Yazılım geliştirme ve kodlama becerilerini ölçen DeepSWE testinde yeni sürüm 77 puan toplayarak Claude Opus 5 ve GPT-5.6 Sol gibi iddialı rakiplerini geride bırakmayı başardı. Otomasyon görevlerinin ele alındığı Automation-Bench ölçümünde ise 60,5 puan elde eden model, rakiplerine karşı belirgin bir üstünlük kurdu. Öte yandan zorlu akademik soruları içeren Humanity's Last Exam testinde Opus 5 önde kalırken, genel tablo 11 testin çoğunda DeepSeek'in rekabetçi gücünü kanıtlıyor.",
+      "Yapay zeka modellerinin işletme maliyetlerine odaklanan grafiklerde ise en dikkat çekici detay maliyet düşüşü olarak öne çıkıyor. DeepSWE testindeki bir görevin maliyeti eski sürümde yaklaşık 0,50 dolar seviyesindeyken, yeni güncellemeyle birlikte 0,20 dolara kadar indi. Geliştiriciler için API fiyatlandırmasında bir değişiklik yapılmazken, 1 milyon token çıktı yoğun olmayan saatlerde 0,60 dolar olarak ücretlendiriliyor. Ayrıca şirket, Search & Fetch adını verdiği kendi arama motorunu da aynı gün geliştiricilerin kullanımına açtı.",
+      "Modelin web ve mobil arayüzleri herhangi bir ek ücretli katman duyurulmadan son sürümle değiştirildi. Türkiye'deki kullanıcılar App Store ve Google Play üzerinden Türkçe arayüzle erişebildikleri uygulamayı sunucu tarafındaki bu güncellemeyle birlikte ekstra bir işlem yapmadan kullanmaya devam edebiliyor. Modelin kaynak kodları ve ağırlıkları MIT lisansıyla Hugging Face platformunda açık tutulurken, dileyen yazılımcılar sistemi kendi sunucularına kurarak çalıştırabiliyor."
+    ],
+    "comment": "Yapay zeka ekosisteminde son dönemde yaşanan rekabet, ham performans skorlarından ziyade birim işlem maliyetlerine odaklanmaya başladı. Görev başına maliyetin 0,50 dolardan 0,20 dolara düşmesi, özellikle API üzerinden yoğun kod üreten küçük ölçekli ekipler için belirleyici bir avantaj yaratıyor. Puan üstünlüğünden ziyade cüzdan dostu bu optimizasyon, pazar payı savaşlarında dengeleri değiştirebilecek somut bir eşik oluşturuyor. Bağımsız doğrulamalar henüz yapılmamış olsa da, açık kaynak lisansıyla sunulan bu alternatiflerin geliştirici tercihlerini hızla dönüştürmesi işten bile değil.",
+    "editorNote": "Yeni sürüm kod testlerinde devleri geride bırakırken görev maliyetini yarı yarıya indiriyor.",
+    "tags": [
+      "DeepSeek",
+      "Yapay Zeka",
+      "Claude",
+      "GPT",
+      "Yazılım"
+    ],
+    "category": "Yapay Zeka",
+    "source": "Tamindir",
+    "sourceUrl": "https://www.tamindir.com/haber/deepseek-v4-1-flash-1017-guncellemesi_112382/",
+    "image": "https://img.tamindir.com/resize/1200x675/2026/10/476815/deepseek-v4-1-flash-1017-guncellemesi.jpg",
+    "publishedAt": "2026-10-18T13:41:40.089Z",
+    "generatedAt": "2026-10-18T13:41:58.708Z"
+  },
+  {
+    "id": "4a769dc0fb497820",
+    "title": "Kasımpaşa, Samsunspor karşısında dört golle farklı galibiyete uzandı",
+    "slug": "kasimpasa-samsunspor-karsisinda-dort-golle-farqli-galibiyete-uzandi",
+    "summary": "Süper Lig mücadelesinde Kasımpaşa, Recep Tayyip Erdoğan Stadyumu'nda ağırladığı rakibini dört golle mağlup etti. İstanbul ekibi bu sonuçla puanını yükseltirken konuk takım istediğini alamadı.",
+    "keyPoints": [
+      "Kasımpaşa, Samsunspor'u sahasında 4-1 mağlup ederek hanesine üç puan yazdırdı.",
+      "Ev sahibi ekibin gollerini Claudio Winck, Adem Arous (2) ve Adrian Benedyczak kaydetti.",
+      "Samsunspor'un tek sayısı Tanguy Coulibaly'den gelirken, oyuncunun bir golü de VAR incelemesiyle iptal edildi."
+    ],
+    "body": [
+      "Süper Lig'in sekizinci haftasında futbolseverler bol golü bir karşılaşmaya tanıklık etti. Recep Tayyip Erdoğan Stadyumu'nun ev sahipliği yaptığı mücadelede Kasımpaşa ile Samsunspor kozlarını paylaştı. Karşılaşma boyunca üstün bir oyun sergileyen ev sahibi ekip, sahadan net bir skorla ayrılmayı başardı.",
+      "Mücadelenin ilk devresinde İstanbul temsilcisi oyunun kontrolünü hemen eline aldı. Dakikalar yirmi yedi gösterirken Claudio Winck takımını öne geçiren vuruşu yaptı. Bu golden hemen dört dakika sonra Adem Arous sahneye çıktı ve aradaki farkı açan ikinci golü kaydetti. Devre biterken Samsunspor forması giyen Tanguy Coulibaly skoru değiştirerek soyunma odasına umutlu gitti.",
+      "İkinci kırk beş dakikalık bölümde konuk ekip beraberlik için yüklenirken VAR engeline takıldı. Sekizinci dakikada Coulibaly'nin ağlara gönderdiği top, hakem incelemesi sonrasında ofsayt gerekçesiyle geçerlilik kazanmadı. Bu pozisyonun ardından oyunun ritmini yeniden eline alan ev sahibi ekip farkı artırmakta gecikmedi.",
+      "Müsabakanın altmış dördüncü dakikasında Adem Arous bir kez daha topu filelerle buluşturarak kendi adına ikinci takım adına üçüncü golü attı. Karşılaşmanın skorunu tayin eden son vuruş ise yetmiş sekizinci dakikada Adrian Benedyczak'tan geldi. Uzatma dakikalarıyla birlikte doksan dakika dört bir üstünlükle tamamlandı.",
+      "Alınan bu net galibiyetin ardından ev sahibi Kasımpaşa puanını on üçe yükseltirken, sahadan boynu bükük ayrılan Samsunspor dört puanda kaldı. İki takım da ligin ilerleyen haftalarındaki hedefleri doğrultusunda çalışmalarını sürdürecek."
+    ],
+    "comment": "Ev sahibi ekip, hücum hattındaki etkili ve skorer oyun planıyla sahada hak ettiği bir üstünlük kurdu. On üç puana ulaşan kazanan taraf, altı maçlık periyotta skor üretme sorununu büyük ölçüde aştığını gösterirken, dört puanda kalan konuk ekip savunma hattındaki zaaflar nedeniyle sahadan puansız ayrıldı. Bu tür deplasman karşılaşmalarında yaşanan bireysel hatalar, takımların alt sıralardan kurtulma mücadelesini doğrudan zora sokuyor. İlerleyen haftalarda Samsunspor'un savunma kurgusunda sert tedbirler almaması durumunda puan tablosundaki tırmanışı oldukça güçleşecektir.",
+    "editorNote": "Kasımpaşa'nın hücumda etkili olduğu maçta VAR kararı skora doğrudan etki ederken, konuk ekip savunmadaki açıkların kurbanı oldu.",
+    "tags": [
+      "Kasımpaşa",
+      "Samsunspor",
+      "Süper Lig",
+      "futbol",
+      "maç sonucu"
+    ],
+    "category": "Spor",
+    "source": "CNN Türk",
+    "sourceUrl": "https://www.cnnturk.com/spor/futbol/kasimpasa-evinde-samsunsporu-farkli-gecti-3481064",
+    "image": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad4c88d8c5742587ec66606.jpg",
+    "publishedAt": "2026-10-18T13:41:37.486Z",
+    "generatedAt": "2026-10-18T13:42:09.951Z"
+  },
+  {
     "id": "dc1bb92e547669f0",
     "title": "Windows 11 Güncellemesi, Akıllı Uygulama Denetimi'ni kilitliyor",
     "slug": "windows-11-guncellemesi-akilli-uygulama-denetimini-kilitliyor",
@@ -128,6 +193,39 @@
     "image": "https://sonmuhurcom.teimg.com/crop/1280x720/sonmuhur-com/uploads/2026/10/post.jpg",
     "publishedAt": "2026-10-18T13:33:00.000Z",
     "generatedAt": "2026-10-18T13:39:57.474Z",
+    "breaking": true
+  },
+  {
+    "id": "5215b49b60aca1dc",
+    "title": "Bitlis merkezli operasyonda yasa dışı bahis parası aklayan 5 kişi tutuklandı",
+    "slug": "bitlis-merkezli-operasyonda-yasa-disi-bahis-parasi-aklayan-5-kisi-tutuklandi",
+    "summary": "Bitlis merkezli dört ilde gerçekleştirilen eş zamanlı siber operasyonda yasa dışı bahis gelirlerini aklayan şüpheliler yakalandı. Emniyetteki sorgularının ardından adliyeye sevk edilen beş şüpheli tutuklanarak cezaevine gönderildi.",
+    "keyPoints": [
+      "Bitlis merkezli 4 ilde eş zamanlı siber operasyon düzenlendi.",
+      "Yasa dışı bahis gelirlerini aklayan 5 şüpheli tutuklandı.",
+      "18 yaşını dolduran kişilerin banka hesaplarının kiralandığı tespit edildi."
+    ],
+    "body": [
+      "Bitlis Emniyet Müdürlüğü Siber Suçlarla Mücadele Şube Müdürlüğü ile İstihbarat Şube Müdürlüğü ekipleri, yasa dışı bahis faaliyetlerinden elde edilen haksız kazançların transferini engellemek için kapsamlı bir çalışma başlattı. Yürütülen teknik ve fiziki takipler sonucunda, şüphelilerin yasa dışı bahis paralarını aklamak adına farklı yöntemler kullandığı belirlendi.",
+      "Elde edilen bulgular doğrultusunda, 18 yaşını doldurmuş bireylerin banka hesaplarının üçüncü kişiler tarafından kiralandığı ve bu hesaplar üzerinden kara paranın aklandığı tespit edildi. Soruşturmayı yürüten birimler, suç ağının genişliğini ve para transferlerinin izini sürerek operasyon için düğmeye bastı.",
+      "Bitlis Cumhuriyet Başsavcılığının talimatlarıyla harekete geçen güvenlik güçleri, belirlenen adreslere eş zamanlı baskınlar düzenledi. Operasyon kapsamında toplam 5 şüpheli yakalanarak gözaltına alındı ve emniyetteki sorgu süreçleri tamamlandı.",
+      "Emniyetteki işlemleri biten şüpheliler, sağlık kontrolünün ardından mahkemeye sevk edildi. Hakim karşısına çıkan 5 zanlı, yasa dışı bahis gelirlerini aklamak suçundan tutuklanarak cezaevine gönderildi."
+    ],
+    "comment": "Banka hesaplarının kiralanması yöntemiyle yürütülen finansal suçlar, siber birimlerin son dönemdeki en yoğun hedefi haline geldi. Beş şüphelinin tutuklanmasıyla sonuçlanan bu soruşturma, hesap kiralama adı altında suç örgütlerine destek veren kişilerin yasal sorumluluktan kaçamayacağını net bir şekilde gösteriyor. Özellikle gençlerin banka hesaplarını cüzi miktarlar karşılığında başkalarına kullandırması, onları doğrudan organize suç ağlarının bir parçası haline getiriyor. Gelecekte benzer mağduriyetlerin yaşanmaması adına hesap sahiplerinin yasal sorumluluklar konusunda daha bilinçli hareket etmesi gerekiyor.",
+    "editorNote": "Hesap kiralama kisvesi altında yürütülen para aklama ağlarına yönelik operasyonda 5 kişi cezaevine gönderildi.",
+    "tags": [
+      "Bitlis",
+      "yasa dışı bahis",
+      "siber suçlar",
+      "operasyon",
+      "tutuklama"
+    ],
+    "category": "Gündem",
+    "source": "Son Dakika",
+    "sourceUrl": "https://www.sondakika.com/guncel/haber-bitlis-merkezli-4-ilde-yasa-disi-bahis-geliri-akla-20342335/",
+    "image": "https://foto.sondakika.com/haber/2026/10/18/bitlis-merkezli-4-ilde-yasa-disi-bahis-2-20342310_amp.jpg",
+    "publishedAt": "2026-10-18T13:31:46.000Z",
+    "generatedAt": "2026-10-18T13:41:47.327Z",
     "breaking": true
   },
   {
