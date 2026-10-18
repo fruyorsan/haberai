@@ -25,6 +25,9 @@ const {
   schema,
   preloadImage,
   noindex = false,
+  // Akış sayfaları kendi kategori şeridini taşır; üstteki global şerit
+  // kapatılır ki iki benzer satır üst üste görünmesin.
+  kategoriSeridi = true,
 } = Astro.props;
 
 // Mutlak URL tabanı (astro.config.mjs -> site)
@@ -106,7 +109,7 @@ const isArticle = ogType === "article";
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#d81f26" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0d11" />
     <meta name="color-scheme" content="light dark" />
-    <!-- Telefonda "uygulama gibi": ana ekrana eklenince AI Akış ile açılır. -->
+    <!-- Telefonda "uygulama gibi": ana ekrana eklenince Shorts Haber ile açılır. -->
     <link rel="manifest" href="/manifest.json" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -288,13 +291,13 @@ OneSignalDeferred.push(async function (OneSignal) {
   </head>
   <body>
     <Header />
-    <CategoryBar />
+    {kategoriSeridi && <CategoryBar />}
     <main>
       <slot />
     </main>
     <Footer />
 
-    <!-- Telefon: sabit alt gezinme (AI Akış merkezde). Masaüstünde gizli. -->
+    <!-- Telefon: sabit alt gezinme (Shorts Haber merkezde). Masaüstünde gizli. -->
     <AltMenu />
 
     <button class="to-top" id="to-top" type="button" aria-label="Sayfanın başına dön" title="Yukarı çık">

@@ -338,9 +338,9 @@ npm run bildirim:dry     # ne gönderileceğini yazar, istek atmaz
 npm run bildirim         # gerçekten gönderir
 ```
 
-## AI Akış (`/akis/`) — kısa kısa haber akışı
+## Shorts Haber (`/akis/`) — kısa kısa haber akışı
 
-Ana sayfa "gazete", **AI Akış** "telefon uygulaması" gibi çalışır: dikey kaydırmalı,
+Ana sayfa "gazete", **Shorts Haber** "telefon uygulaması" gibi çalışır: dikey kaydırmalı,
 tam ekran kartlar (büyük gerçek fotoğraf → vurucu başlık → kısa AI özeti), tek dokunuşla
 **beğen / kaydet / paylaş**, çift dokunuşta kalp animasyonu, masaüstünde karta karta
 ilerleme (↑/↓, `j`/`k`, `l` beğen, `s` kaydet). Beğeni ve kayıtlar **cihazda** (localStorage)
@@ -371,7 +371,7 @@ site/src/lib/akis-kart.js             → kart şablonu (sunucu ve toplar aynı 
 site/src/pages/akis/index.astro       → /akis/ (CollectionPage + ItemList şeması)
 site/src/pages/akis/kategori/[slug].astro → /akis/kategori/<slug>/ (noindex)
 site/src/pages/akis/sayfa/[no].json.js    → /akis/sayfa/<ofset>.json topları
-site/src/components/AltMenu.astro     → telefondaki sabit alt gezinme (Akış merkezde)
+site/src/components/AltMenu.astro     → telefondaki sabit alt gezinme (Shorts merkezde)
 site/public/manifest.json             → ana ekrana eklenince doğrudan /akis/ açılır
 ```
 
@@ -379,6 +379,22 @@ Ayarlar: `AKIS_ILK` (sayfada basılan kart sayısı, varsayılan 24) ve `AKIS_TU
 başına kart, varsayılan 24) `site/src/lib/akis-kart.js` içindedir. Stil `global.css`
 sonundadır — **global olması bilinçlidir**: sonsuz kaydırmayla gelen kartlar Astro'nun
 bileşen kapsamlı (scoped) stillerini alamaz.
+
+### Üst menü düzeni (kalabalığı önleme)
+
+Üst üste benzer satırlar menüyü karıştırdığı için şu kurallar uygulanır:
+
+- Üst menü (`.nav`) **5 sade sekmedir**: Ana Sayfa · **Shorts** · Son Dakika · Piyasa ·
+  Tüm Haberler. Özel dolgu/rozet yok; yalnızca Shorts'un oynatma ikonu ve marka rengi
+  vardır (vurgu için alttaki sabit menü ve ana sayfa bandı kullanılır). "Yapay Zeka"
+  sekmesi kaldırıldı: aynı bağlantı kategori şeridinde zaten var.
+- **Telefonda (≤720px) üst menü gizlenir**: aynı işi sabit alt menü (Anasayfa · Shorts ·
+  Son Dakika · Piyasa · Ara) ve kategori şeridi yapıyor. Böylece üstte üst üste iki
+  kaydırma satırı kalmaz.
+- **Shorts sayfaları global kategori şeridini kapatır** (`<Base kategoriSeridi={false}>`);
+  akış kendi tek satırını taşır: solda kategori çipleri (kayar), sağda süzgeçler.
+- Süzgeçler telefonda ikona iner; **seçili süzgece tekrar basmak süzgeci kaldırır**
+  (ayrı "Tümü" düğmesi yok).
 
 ## Fotoğraflar (kapak güvenliği + haber içi ek fotoğraflar)
 

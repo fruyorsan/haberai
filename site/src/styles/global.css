@@ -709,7 +709,7 @@ html.cerez-acik .to-top {
 }
 
 /* ================================================================
-   AI AKIŞ (/akis/) — "kısa kısa haber" akışı
+   SHORTS HABER (/akis/) — "kısa kısa haber" akışı
    ----------------------------------------------------------------
    Neden global.css: akış kartları sonsuz kaydırmada JavaScript ile
    eklenir; Astro'nun bileşen kapsamlı stilleri (data-astro-cid)
@@ -756,21 +756,29 @@ html.cerez-acik .to-top {
   color: var(--text);
 }
 
-/* --- Süzgeçler ve kategori şeritleri --- */
+/* --- Süzgeçler ve kategori şeritleri: TEK satır --- */
 .akis__suz {
   display: flex;
-  flex-direction: column;
-  gap: 9px;
+  align-items: center;
+  gap: 10px;
   margin-top: 15px;
 }
-.akis__cipler,
 .akis__katlar {
+  flex: 1 1 auto;
+  min-width: 0;
   display: flex;
   gap: 8px;
   overflow-x: auto;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 2px;
+}
+.akis__cipler {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 8px;
+  padding-left: 10px;
+  border-left: 1px solid var(--border);
 }
 .akis__cipler::-webkit-scrollbar,
 .akis__katlar::-webkit-scrollbar {
@@ -836,6 +844,27 @@ html.cerez-acik .to-top {
 .akis__kat.is-active {
   background: var(--brand-soft);
   color: var(--brand);
+}
+
+/* Telefonda süzgeçler ikona iner ve "Tümü" gizlenir: kategori şeridi tek
+   başına kaydırılabilir kalsın, üstte iki benzer çip satırı görünmesin.
+   (Süzgeci kaldırmak için seçili ikona tekrar basılır.) */
+@media (max-width: 720px) {
+  .akis__suz {
+    gap: 8px;
+  }
+  .akis__cipler {
+    padding-left: 8px;
+    gap: 6px;
+  }
+  .akis__cip {
+    min-height: 38px;
+    padding: 0 11px;
+    gap: 5px;
+  }
+  .akis__cip-yazi {
+    display: none;
+  }
 }
 
 /* --- Kart listesi: telefonda tek kolon, masaüstünde ortalanmış kolon --- */
@@ -1204,9 +1233,15 @@ html.cerez-acik .to-top {
     bottom: calc(86px + env(safe-area-inset-bottom, 0px));
   }
 
-  /* Akış: kartlar ekranı doldurur, kaydırma karta "oturur" (yumuşak snap). */
+  /* Akış: kartlar ekranı doldurur, kaydırma karta "oturur" (yumuşak snap).
+     Sayfanın en üstü de bir snap noktasıdır; yoksa tarayıcı ilk karta
+     oturmaya çalışıp sayfayı kendiliğinden kaydırıyor ve "Shorts Haber"
+     başlığı ekrandan taşıyordu. */
   html:has(.akis) {
     scroll-snap-type: y proximity;
+  }
+  .akis__ust {
+    scroll-snap-align: start;
   }
   .akis__liste {
     gap: 14px;

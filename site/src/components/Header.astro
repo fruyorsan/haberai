@@ -4,9 +4,8 @@ import Bildirim from "./Bildirim.astro";
 
 const nav = [
   { label: "Ana Sayfa", href: "/" },
-  { label: "Akış", href: "/akis/", akis: true },
+  { label: "Shorts", href: "/akis/", shorts: true },
   { label: "Son Dakika", href: "/son-dakika/" },
-  { label: "Yapay Zeka", href: "/kategori/yapay-zeka/", ai: true },
   { label: "Piyasa", href: "/piyasa/" },
   { label: "Tüm Haberler", href: "/haberler/" },
 ];
@@ -32,16 +31,13 @@ const isActive = (href) =>
             "nav__link",
             {
               "nav__link--active": isActive(item.href),
-              "nav__link--ai": item.ai,
-              "nav__link--akis": item.akis,
+              "nav__link--shorts": item.shorts,
             },
           ]}
         >
-          {item.akis && <span class="nav__akis-nokta" aria-hidden="true"></span>}
-          {item.ai && (
-            <svg class="nav__ai-icon" viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true">
-              <path d="M12 2.2l1.9 5.2 5.2 1.9-5.2 1.9L12 16.4l-1.9-5.2L4.9 9.3l5.2-1.9z" />
-              <path d="M18.6 14.2l.85 2.3 2.3.85-2.3.85-.85 2.3-.85-2.3-2.3-.85 2.3-.85z" />
+          {item.shorts && (
+            <svg class="nav__shorts-icon" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true">
+              <path d="M8 4.8v14.4L19.2 12z" />
             </svg>
           )}
           {item.label}
@@ -474,74 +470,25 @@ const isActive = (href) =>
   .nav__link--active::after {
     transform: scaleX(1);
   }
-  /* Yapay zekâ bölümü: menüde özel olarak öne çıkar (dolgun rozet). */
-  .nav__link--ai {
+  /* Shorts: menüde fark edilir ama satırı bozmaz (dolgun rozet yok).
+     İkon + marka rengi yeterince öne çıkarır; asıl vurgu alttaki sabit
+     menünün ortasındaki yükseltilmiş düğme ve ana sayfadaki banttır. */
+  .nav__link--shorts {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: #fff;
-    background: var(--brand-grad);
-    font-weight: 800;
-    box-shadow: 0 8px 18px -12px var(--brand-glow);
-  }
-  .nav__link--ai::after {
-    display: none;
-  }
-  .nav__link--ai:hover {
-    background: var(--brand-grad);
-    color: #fff;
-    filter: brightness(1.07);
-  }
-  .nav__link--ai.nav__link--active {
-    color: #fff;
-  }
-  .nav__ai-icon {
-    flex-shrink: 0;
-  }
-
-  /* --- AI Akış: menüde "canlı" hissi veren nabız atan rozet --- */
-  .nav__link--akis {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    background: var(--brand-soft);
     color: var(--brand);
     font-weight: 800;
   }
-  .nav__link--akis::after {
-    display: none;
-  }
-  .nav__link--akis:hover {
-    background: color-mix(in srgb, var(--brand) 20%, transparent);
-    color: var(--brand-strong);
-  }
-  .nav__link--akis.nav__link--active {
-    background: var(--brand-grad);
-    color: #fff;
-  }
-  .nav__akis-nokta {
-    width: 7px;
-    height: 7px;
-    border-radius: 999px;
-    background: currentColor;
+  .nav__shorts-icon {
     flex-shrink: 0;
-    animation: akisNabiz 2.2s var(--ease) infinite;
   }
-  @keyframes akisNabiz {
-    0% {
-      box-shadow: 0 0 0 0 var(--brand-glow);
-    }
-    70% {
-      box-shadow: 0 0 0 7px rgba(216, 31, 38, 0);
-    }
-    100% {
-      box-shadow: 0 0 0 0 rgba(216, 31, 38, 0);
-    }
+  .nav__link--shorts:hover {
+    color: var(--brand-strong);
+    background: var(--brand-soft);
   }
-  @media (prefers-reduced-motion: reduce) {
-    .nav__akis-nokta {
-      animation: none;
-    }
+  .nav__link--shorts.nav__link--active {
+    color: var(--brand);
   }
 
   .header__actions {
@@ -796,37 +743,21 @@ const isActive = (href) =>
       height: auto;
       flex-direction: column;
       align-items: flex-start;
-      padding-top: 8px;
-      padding-bottom: 0;
+      padding-top: 10px;
+      padding-bottom: 10px;
       gap: 4px;
     }
     .header__actions {
       position: absolute;
-      top: 8px;
+      top: 10px;
       right: 16px;
     }
+    /* Telefonda "Bölümler" menüsü gizlenir.
+       Aynı işi iki yer zaten yapıyor: alttaki sabit menü (Anasayfa · Shorts ·
+       Son Dakika · Piyasa · Ara) ve kategori şeridi. Üstte üst üste iki benzer
+       kaydırma satırı kalınca menü karışık görünüyordu. */
     .nav {
-      gap: 0;
-      overflow-x: auto;
-      width: 100%;
-      flex-wrap: nowrap;
-      justify-content: flex-start;
-      scrollbar-width: none;
-      -webkit-overflow-scrolling: touch;
-    }
-    .nav::-webkit-scrollbar {
       display: none;
-    }
-    /* Parmakla rahat dokunma: en az 44px yükseklik. */
-    .nav__link {
-      white-space: nowrap;
-      display: inline-flex;
-      align-items: center;
-      min-height: 44px;
-      padding: 0 12px;
-    }
-    .nav__link::after {
-      bottom: 6px;
     }
     /* Büyüteç ve tema düğmeleri 44x44 dokunma alanı. */
     .searchbox__toggle,

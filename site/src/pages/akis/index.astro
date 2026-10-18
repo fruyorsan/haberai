@@ -1,6 +1,6 @@
 ---
 // ==========================================================================
-// AI AKIŞ (/akis/) — Twitter/Shorts hissi veren dikey haber akışı
+// SHORTS HABER (/akis/) — Twitter/Shorts hissi veren dikey haber akışı
 // --------------------------------------------------------------------------
 // Ana sayfa "gazete", burası "telefon uygulaması" gibi çalışır: tam ekran
 // kartlar, tek dokunuşla beğen/kaydet/paylaş. Besleme gövdesi
@@ -22,9 +22,9 @@ const ilkKapak = ilk[0] ? kapakKaynagi(ilk[0]) : "";
 const ilkGorsel = ilkKapak ? imageUrl(ilkKapak, 720) : undefined;
 
 const origin = siteOrigin(Astro.site);
-const baslik = "AI Akış — Kısa kısa haberler | HaberinAi";
+const baslik = "Shorts Haber — kısa kısa haberler | HaberinAi";
 const aciklama =
-  "HaberinAi AI Akış: en yeni haberler kısa kısa karşında. Büyük fotoğraf, vurucu başlık, yapay zekâ özeti. Kaydır, oku, beğen, paylaş.";
+  "HaberinAi Shorts Haber: en yeni haberler kısa kısa karşında. Büyük fotoğraf, vurucu başlık, yapay zekâ özeti. Kaydır, oku, beğen, paylaş.";
 
 const akisSchema = {
   "@context": "https://schema.org",
@@ -33,7 +33,7 @@ const akisSchema = {
       "@type": "CollectionPage",
       "@id": `${origin}/akis/#akis`,
       url: `${origin}/akis/`,
-      name: "AI Akış",
+      name: "Shorts Haber",
       description: aciklama,
       inLanguage: "tr-TR",
       isPartOf: { "@id": `${origin}/#website` },
@@ -52,7 +52,7 @@ const akisSchema = {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Ana Sayfa", item: `${origin}/` },
-        { "@type": "ListItem", position: 2, name: "AI Akış", item: `${origin}/akis/` },
+        { "@type": "ListItem", position: 2, name: "Shorts Haber", item: `${origin}/akis/` },
       ],
     },
   ],
@@ -66,6 +66,7 @@ const akisSchema = {
   schema={akisSchema}
   preloadImage={ilkGorsel}
   image={ilkGorsel}
+  kategoriSeridi={false}
 >
   <Akis />
 </Base>

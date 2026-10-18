@@ -39,29 +39,19 @@ const ilk = liste.slice(0, ilkSayi);
   >
     <section class="akis__ust">
       <div class="container akis__tanitim">
-        <span class="akis__rozet"><i aria-hidden="true">✦</i> AI Akış</span>
-        <h1>{gecerliKat ? `${kategoriAdi} akışı` : "Kısa kısa haberler"}</h1>
+        <span class="akis__rozet"><i aria-hidden="true">✦</i> Yapay zekâ özetli</span>
+        <h1>{gecerliKat ? `${kategoriAdi} Shorts` : "Shorts Haber"}</h1>
         <p>
           Kaydır, oku, beğen. Yapay zekâ özetleriyle
           <strong>{liste.length}</strong> haber seni bekliyor.
         </p>
       </div>
 
+      {/* Tek satır: solda kategori şeridi (kayar), sağda süzgeçler.
+          Eskiden iki ayrı çip satırı üst üste duruyordu ve hangisinin ne
+          olduğu karışıyordu. */}
       <div class="container akis__suz">
-        <div class="akis__cipler" role="group" aria-label="Akışı süz">
-          <button class="akis__cip is-active" type="button" data-suz="tumu" aria-pressed="true">
-            Tümü
-          </button>
-          <button class="akis__cip" type="button" data-suz="begeni" aria-pressed="false">
-            <span aria-hidden="true">♥</span> Beğendiklerim
-            <b data-sayi="begeni">0</b>
-          </button>
-          <button class="akis__cip" type="button" data-suz="kayit" aria-pressed="false">
-            <span aria-hidden="true">🔖</span> Kaydedilenler
-            <b data-sayi="kayit">0</b>
-          </button>
-        </div>
-        <div class="akis__katlar">
+        <nav class="akis__katlar" aria-label="Kategoriler">
           <a class:list={["akis__kat", !gecerliKat && "is-active"]} href="/akis/">Tümü</a>
           {kategoriler.map((k) => (
             <a
@@ -71,6 +61,33 @@ const ilk = liste.slice(0, ilkSayi);
               {k.name}
             </a>
           ))}
+        </nav>
+
+        <div class="akis__cipler" role="group" aria-label="Akışı süz">
+          <button
+            class="akis__cip"
+            type="button"
+            data-suz="begeni"
+            aria-pressed="false"
+            aria-label="Beğendiklerim"
+            title="Beğendiklerim"
+          >
+            <span class="akis__cip-ikon" aria-hidden="true">♥</span>
+            <span class="akis__cip-yazi">Beğendiklerim</span>
+            <b data-sayi="begeni">0</b>
+          </button>
+          <button
+            class="akis__cip"
+            type="button"
+            data-suz="kayit"
+            aria-pressed="false"
+            aria-label="Kaydedilenler"
+            title="Kaydedilenler"
+          >
+            <span class="akis__cip-ikon" aria-hidden="true">🔖</span>
+            <span class="akis__cip-yazi">Kaydedilenler</span>
+            <b data-sayi="kayit">0</b>
+          </button>
         </div>
       </div>
     </section>
@@ -181,7 +198,7 @@ const ilk = liste.slice(0, ilkSayi);
         sayilari();
         if (bos) {
           const gorunen = [...liste.querySelectorAll(".ak")].some((k) => !k.hidden);
-          bos.hidden = !(suzgec !== "tumu" && !gorunen && tukendi);
+          bos.hidden = !(suzgec !== "tumu" && !gorunen);
         }
       };
 
@@ -277,9 +294,12 @@ const ilk = liste.slice(0, ilkSayi);
       // --- Süzgeçler ---------------------------------------------------------
       kok.querySelectorAll(".akis__cip").forEach((cip) => {
         cip.addEventListener("click", () => {
-          suzgec = cip.dataset.suz || "tumu";
+          const secilen = cip.dataset.suz || "tumu";
+          // Seçili süzgece tekrar basmak süzgeci kaldırır. Telefonda "Tümü"
+          // düğmesi gizlendiği için geri dönüş yolu bu.
+          suzgec = cip.classList.contains("is-active") && secilen !== "tumu" ? "tumu" : secilen;
           kok.querySelectorAll(".akis__cip").forEach((c) => {
-            const secili = c === cip;
+            const secili = (c.dataset.suz || "tumu") === suzgec;
             c.classList.toggle("is-active", secili);
             c.setAttribute("aria-pressed", String(secili));
           });
@@ -287,6 +307,19 @@ const ilk = liste.slice(0, ilkSayi);
           window.scrollTo({ top: kok.querySelector(".akis__liste").offsetTop - 120, behavior: "smooth" });
           if (suzgec === "begeni") bildir("Beğendiğin haberler");
           else if (suzgec === "kayit") bildir("Kaydettiğin haberler");
+          else bildir("Tüm haberler");
+          // Boş liste mesajı: hangi süzgeçte olduğunu anlatan metin.
+          if (bos) {
+            const p = bos.querySelector("p");
+            if (p) {
+              p.textContent =
+                suzgec === "begeni"
+                  ? "Henüz beğendiğin haber yok. Kartlardaki ♥ simgesine dokun; beğendiklerin burada toplanır."
+                  : suzgec === "kayit"
+                    ? "Henüz kaydettiğin haber yok. Kartlardaki 🔖 simgesine dokun; kaydettiklerin burada toplanır."
+                    : "";
+            }
+          }
         });
       });
 
@@ -346,7 +379,7 @@ const ilk = liste.slice(0, ilkSayi);
           dugmeDurumu();
           if (bos) {
             const gorunen = [...liste.querySelectorAll(".ak")].some((k) => !k.hidden);
-            bos.hidden = !(suzgec !== "tumu" && !gorunen && tukendi);
+            bos.hidden = !(suzgec !== "tumu" && !gorunen);
           }
           // Sentinelin görüş alanında olması hâlinde sıradaki topu da getir
           // (süzgeç/kategori yüzünden boş gelen toplar akışı tıkamasın).

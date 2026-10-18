@@ -1,6 +1,6 @@
 ---
 // ==========================================================================
-// /akis/kategori/<slug>/ — kategoriye süzülmüş AI Akış
+// /akis/kategori/<slug>/ — kategoriye süzülmüş Shorts Haber akışı
 // --------------------------------------------------------------------------
 // Neden ayrı adres: site statik; "?kategori=" sorgu dizesi üretim anında
 // okunamaz. Kategori akışları bu yüzden gerçek sayfa olarak üretilir.
@@ -33,7 +33,7 @@ const ilkKapak = ilk[0] ? kapakKaynagi(ilk[0]) : "";
 const ilkGorsel = ilkKapak ? imageUrl(ilkKapak, 720) : undefined;
 
 const origin = siteOrigin(Astro.site);
-const baslik = `${ad} akışı — kısa kısa haberler | HaberinAi`;
+const baslik = `${ad} Shorts — kısa kısa haberler | HaberinAi`;
 const aciklama = `${ad} kategorisinde ${adet} haber kısa kısa: büyük fotoğraf, vurucu başlık ve yapay zekâ özeti. Kaydır, oku, beğen.`;
 
 const kategoriSchema = {
@@ -41,8 +41,8 @@ const kategoriSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Ana Sayfa", item: `${origin}/` },
-    { "@type": "ListItem", position: 2, name: "AI Akış", item: `${origin}/akis/` },
-    { "@type": "ListItem", position: 3, name: `${ad} akışı`, item: `${origin}/akis/kategori/${slug}/` },
+    { "@type": "ListItem", position: 2, name: "Shorts Haber", item: `${origin}/akis/` },
+    { "@type": "ListItem", position: 3, name: `${ad} Shorts`, item: `${origin}/akis/kategori/${slug}/` },
   ],
 };
 ---
@@ -55,6 +55,7 @@ const kategoriSchema = {
   preloadImage={ilkGorsel}
   image={ilkGorsel}
   noindex={true}
+  kategoriSeridi={false}
 >
   <Akis kategori={slug} kategoriAdi={ad} ilkSayi={60} />
 </Base>

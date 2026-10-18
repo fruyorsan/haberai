@@ -1,5 +1,5 @@
 // ==========================================================================
-// AI AKIŞ (/akis/) — kart üreticisi
+// SHORTS HABER (/akis/) — kart üreticisi
 // --------------------------------------------------------------------------
 // Akış, Twitter/Shorts hissi veren dikey bir haber akışıdır: her kartta büyük
 // gerçek fotoğraf, vurucu başlık, kısa AI özeti ve beğen/kaydet/paylaş
