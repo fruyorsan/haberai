@@ -1,5 +1,71 @@
 [
   {
+    "id": "e1c6672c61fe22ca",
+    "title": "Replit, OpenAI modelini varsayılan yaparken Claude desteğini tutuyor",
+    "slug": "replit-openai-modelini-varsayilan-yaparken-claude-destegini-tutuyor",
+    "summary": "Replit, yapay zekâ entegrasyonlarında OpenAI modellerini öncelikli konuma getirirken Claude alternatifini platformda tutmaya devam ediyor. 29 Eylül tarihli teknik belgede, rutin görevlerin ucuz modellere devredildiği ve kullanıcıların abonelik düzeyine göre seçim yapabildiği açıklandı.",
+    "keyPoints": [
+      "Replit, OpenAI modelini varsayılan yaparken Claude seçeneğini koruyor.",
+      "29 Eylül tarihli belgede rutin işlerin yardımcı modellere devredileceği belirtildi.",
+      "Core ve Pro kullanıcıları Power veya Max modunda birincil modeli değiştirebiliyor."
+    ],
+    "body": [
+      "Yazılım geliştirme platformu Replit, yapay zekâ altyapısındaki tercihlerini güncelleyerek OpenAI modellerini varsayılan konuma taşıdı. Şirket, çok modelli ajan yaklaşımı sayesinde kullanıcıların farklı yapay zekâ sağlayıcılarına erişebilmesini sağlayan esnek yapıyı korumaya devam ediyor. Varsayılan tercihin değiştirilmesi, platformdaki tüm alternatiflerin kaldırıldığı anlamına gelmiyor ve kullanıcılar istedikleri takdirde farklı sağlayıcıları tercih edebiliyor.",
+      "Yayınlanan son teknik detaylar, ana ajanın göreve en uygun yardımcı modeli ve düşünme düzeyini otomatik olarak seçtiğini gösteriyor. Rutin ve daha az karmaşık işlemler düşük maliyetli yardımcı modellere yönlendirilirken, güçlü modellerin kaynakları zorlu kararlar için saklanıyor. Bu çalışma düzeni, üretim ortamında farklı Claude ve OpenAI modellerinin birlikte ve verimli şekilde görev yapmasına olanak tanıyor.",
+      "Ağustos ayında duyurulan Free Mode özelliği, OpenAI iş birliğinin günlük sohbet ve fikir geliştirme gibi temel alanlardaki yansımasını oluşturuyor. Bu mod otomatik yönlendirme mekanizmasını kullanırken elle model seçimine izin vermiyor. Buna karşılık, Core ve Pro abonelik seviyesindeki kullanıcılar Power veya Max modları üzerinden istedikleri birincil modeli manuel olarak değiştirebiliyor.",
+      "Dağıtım aşaması, hesap yetkileri ve kuruluş ayarları arayüzde görünen listelerin değişiklik göstermesine yol açabiliyor. Böylece genel şirket tercihi ile bireysel hesapların erişebildiği modeller birbirinden ayrı tutuluyor."
+    ],
+    "comment": "Şirketlerin tek bir yapay zekâ sağlayıcısına bağımlı kalmak yerine çoklu model mimarisine yönelmesi, maliyet ve performans dengesini optimize etmek adına doğru bir hamle olarak öne çıkıyor. Replit sisteminin 29 Eylül belgesinde duyurulan rutin işleri alt modellere devretme stratejisi, özellikle yoğun işlem yapan geliştiricilerin bütçe yükünü hafifletiyor. Bu durum, farklı beceri gerektiren arayüz tasarımı veya hata ayıklama süreçlerinde en doğru modelin seçilmesini sağlayarak kodlama verimliliğini doğrudan artırıyor. Gelişmiş modlarda sunulan GPT-6 serisi ve Claude alternatifleri karşılaştırıldığında, kullanıcıların projelerine göre özelleştirme yapabilmesi platformu rakiplerine kıyasla daha avantajlı bir konuma getiriyor.",
+    "editorNote": "Replit platformunun varsayılan yapay zekâ tercihini değiştirmesi, farklı abonelik katmanlarında sunulan model çeşitliliğini doğrudan etkiliyor.",
+    "tags": [
+      "Replit",
+      "OpenAI",
+      "Claude",
+      "Yapay Zeka",
+      "Yazılım"
+    ],
+    "category": "Teknoloji",
+    "source": "Teknoblog",
+    "sourceUrl": "https://www.teknoblog.com/replit-openai-varsayilan-claude/",
+    "image": "https://img.poweredcache.net/www.teknoblog.com/wp-content/uploads/2026/10/iphone-18-pro-inceleme-1.jpeg?w=1280&ssl=1&format=webp",
+    "publishedAt": "2026-10-18T20:47:19.000Z",
+    "generatedAt": "2026-10-18T20:51:58.350Z",
+    "breaking": true
+  },
+  {
+    "id": "d0a7179b149be544",
+    "title": "Google, Willow işlemcisiyle kuantum hata oranını 40 kat azalttı",
+    "slug": "google-willow-islemcisiyle-kuantum-hata-oranini-40-kat-azaltti",
+    "summary": "Google, Willow kuantum işlemcisi üzerinde test ettiği yeni yöntemle özel durumlardaki hataları 40 kat azalttı. Deneylerde mantıksal T durumlarının doğruluğu yüzde 99,99 seviyesine ulaştı.",
+    "keyPoints": [
+      "Willow işlemcisi hata oranını 40 kat düşürdü",
+      "Mantıksal T durumlarının doğruluğu yüzde 99,99 oldu",
+      "Grafting tekniğiyle renk kodundan yüzey koduna geçildi"
+    ],
+    "body": [
+      "Kuantum bilgisayarların yaygınlaşmasının önündeki en büyük teknik engellerden biri olan hata oranları konusunda Google tarafından dikkat çekici bir ilerleme kaydedildi. Şirket, Willow kuantum işlemcisi üzerinde denediği yeni bir yöntemle belirli kuantum durumlarının hazırlanması sırasındaki hataları büyük ölçüde geriletti.",
+      "Yapılan deneyler sırasında, karmaşık hesaplamalarda kullanılan mantıksal T durumlarının doğruluğunun yüzde 99,99 seviyesine ulaştığı rapor edildi. Kübitlerin çevresel etkilere karşı hassasiyeti, hesaplama sürecinde ortaya çıkan hataların düzeltilmesini zorunlu kılıyor ve geleneksel yöntemler bu noktada ciddi maliyetler doğurabiliyor.",
+      "Google ekibi, geleneksel dağıtma yaklaşımları yerine hatalı durumları küçük bir alanda hazırlayıp hassas ölçümlerle kontrol eden bir yöntem benimsedi. Gerçek donanım testlerinde laboratuvar gürültüsü ve sıcaklık değişimleri gibi teknik zorluklarla karşılaşılsa da, kontrol sistemlerindeki iyileştirmeler bu engellerin aşılmasına katkı sağladı.",
+      "Araştırmacılar ayrıca gürültü etkisini azaltmak amacıyla kickback tomography adında yeni bir ölçüm tekniği geliştirdi ve hazırlanan durumların farklı hata düzeltme yöntemleri arasında aktarılabileceğini kanıtladı. Grafting tekniğiyle renk kodundan yüzey koduna geçiş yapılması, gelecekte farklı yaklaşımların bir arada çalışabileceğini gösteriyor."
+    ],
+    "comment": "Donanım güvenilirliğini artırmaya yönelik bu deneysel yaklaşım, kuantum mimarilerinin laboratuvardan çıkıp gerçek dünyada ölçeklenebilmesi için gereken adımlardan birini oluşturuyor. Yüzde 99,99 doğruluk oranı ve 40 kat hata düşüşü, sistemlerin kararlılığı açısından somut bir eşik sunuyor. Yazılımcılar ve donanım geliştiriciler için gelecekteki hibrit hata düzeltme sistemlerinin önünü açan bu gelişme, maliyetli kaynak tüketimini dengelemeyi hedefliyor. Kübit hassasiyeti ve gürültü kontrolü tamamen çözülmeden tam ölçekli ticari sistemlerin yaygınlaşması zor görünse de, atılan bu pratik adım mühendislik yönünden önemli bir doğrultu belirliyor.",
+    "editorNote": "Willow işlemcisiyle elde edilen yüzde 99,99 doğruluk, kuantum donanımlarında gürültü sorununu çözme yolunda atılan somut adımlardan biri.",
+    "tags": [
+      "Google",
+      "Kuantum Bilgisayar",
+      "Willow",
+      "Teknoloji",
+      "Donanım"
+    ],
+    "category": "Teknoloji",
+    "source": "12punto",
+    "sourceUrl": "https://12punto.com.tr/bilim-teknoloji/google-kuantum-bilgisayarlarda-kritik-hata-engelini-asmaya-bir-adim-daha-yaklasti-156163",
+    "image": "https://i.12punto.com.tr/Archive/2026/10/18/156163/kapak_google-kuantum-bilgisayarlarda-kritik-hata-engelini-asmaya-bir-adim-daha-yaklasti-147477.jpg",
+    "publishedAt": "2026-10-18T20:44:10.000Z",
+    "generatedAt": "2026-10-18T20:52:08.830Z",
+    "breaking": true
+  },
+  {
     "id": "bae0153e0420385f",
     "title": "Model Paulina Porizkova, 61 yaşında Jeff Greenstein ile evlendi",
     "slug": "model-paulina-porizkova-61-yasinda-jeff-greenstein-ile-evlendi",
