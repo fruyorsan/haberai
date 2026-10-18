@@ -301,6 +301,9 @@ OneSignalDeferred.push(async function (OneSignal) {
       serviceWorkerPath: "/OneSignalSDKWorker.js",
       serviceWorkerParam: { scope: "/" },
       allowLocalhostAsSecureOrigin: /^(localhost|127\\.0\\.0\\.1)$/.test(location.hostname),
+      /* Tarayıcı verisi temizlenirse/cihaz değişirse abonelik kendini onarsın
+         (OneSignal önerisi). Yalnızca daha önce abone olmuş okuyucuyu etkiler. */
+      autoResubscribe: true,
       notifyButton: { enable: false },
       promptOptions: { slidedown: { enabled: false } }
     });

@@ -384,7 +384,21 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
       }
       // Okuyucu bildirim istedi → veri toplama izni de verilir (gizlilik kapısı).
       izinVer(OneSignal);
-      // Ağ/CDN yavaşsa arayüz sonsuza kadar beklemesin (6 sn).
+      // 1) TARAYICININ KENDİ İZİN PENCERESİ. Yalnızca bir dokunuş içinde ve
+      //    requestPermission() ile açılır; optIn() tek başına pencereyi
+      //    açmayabilir → okuyucu "onaylamadım" diyor ve abonelik hiç kurulmuyordu.
+      try {
+        const n = OneSignal.Notifications;
+        if (!izinVerildi() && n && typeof n.requestPermission === "function") {
+          await Promise.race([
+            n.requestPermission(),
+            new Promise((r) => setTimeout(() => r(false), 15000)),
+          ]);
+        }
+      } catch {
+        /* izin verilmediyse aşağıdaki kontrol abone saymaz */
+      }
+      // 2) İzin verildiyse aboneliği kur (ağ/CDN yavaşsa arayüz beklemesin).
       try {
         await Promise.race([
           OneSignal.User.PushSubscription.optIn(),
@@ -393,8 +407,8 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
       } catch {
         /* kullanıcı izni vermediyse abone kalınmaz */
       }
-      // Abonelik kurulmadıysa abone SAYILMAZ (eskiden tarayıcı izni yeterli
-      // sayılıyordu: okuyucu "açıldı" görüyor ama hiç bildirim gelmiyordu).
+      // 3) Abonelik kurulmadıysa abone SAYILMAZ (eskiden tarayıcı izni yeterli
+      //    sayılıyordu: okuyucu "açıldı" görüyor ama hiç bildirim gelmiyordu).
       abone = await abonelikDurumu(OneSignal);
       yaz(K_ABONE, abone);
       etiketYaz(OneSignal);
@@ -442,7 +456,7 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
           "Bildirim servisine ulaşılamıyor (reklam engelleyici ya da ağ olabilir).";
       } else if (izinEngelli()) {
         durum.textContent =
-          "Tarayıcı bildirim iznini engellemiş. Adres çubuğundaki kilit simgesinden izin verebilirsin.";
+          "Bildirim izni kapalı. Tarayıcıda adres çubuğunun yanındaki simge (ya da menü → İzinler) → Bildirimler → İzin ver.";
       } else if (abone) {
         const n = kategoriler.size;
         durum.textContent = sonDakika
