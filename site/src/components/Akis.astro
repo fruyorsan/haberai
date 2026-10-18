@@ -745,7 +745,9 @@ const ilk = liste.slice(0, ilkSayi);
           (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
         const anaEkranda =
           navigator.standalone === true ||
-          (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches);
+          (window.matchMedia &&
+            (window.matchMedia("(display-mode: standalone)").matches ||
+              window.matchMedia("(display-mode: fullscreen)").matches));
         const iosSorun = iosCihaz && !anaEkranda;
         const izinVar = () => {
           try {

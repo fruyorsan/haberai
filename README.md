@@ -384,6 +384,16 @@ tıklanınca o kategori takip edilir ve ilk kez bildirim izni istenir.
 - **iPhone tuzağı:** iOS'ta web push yalnızca "Ana Ekrana Ekle" ile açılan uygulamada
   çalışır. Akıştaki bildirim istemi iPhone'u tanırsa düğme yerine yolu gösterir
   ("Paylaş → Ana Ekrana Ekle"); Safari sekmesinde basmak sessizce hiçbir şey yapmaz.
+- **iPhone için Apple Developer hesabı GEREKMEZ** (OneSignal belgesi: iOS web push
+  standart Web Push + VAPID; `.p8` yalnızca yerel iOS uygulaması için). Şartlar:
+  iOS 16.4+, HTTPS, service worker, **`display: standalone`** manifest, okuyucunun
+  siteyi Ana Ekrana ekleyip **ikonundan** açması ve izni **o uygulamada bir dokunuşla**
+  istemesi. Tarayıcı sekmesinde `window.Notification` yoktur → izin istemek imkânsız.
+  Manifest `id` alanı bilerek YOK: sonradan eklenirse ikon kimliği değişir ve mevcut
+  abonelik düşer (OneSignal: "leave `id` unchanged / leave it out").
+  iPhone'da test: ikonu sil → yeniden ekle → ikondan aç → "Bildirimleri aç" → İzin Ver.
+  İzin bir kez reddedilirse iOS aynı web uygulaması için tekrar sormaz: ikonu silip
+  yeniden eklemek gerekir.
 - **Hoş geldin bildirimi:** Okuyucu izni verdiğinde günlük tavan dolmuş olsa bile
   **ilk anda bir kez** "🔔 Bildirimler açıldı" bildirimi gider. Sebep: tavan doluyken
   yeni abone saatlerce sessizlikle karşılaşıp "çalışmıyor" sanıyordu. Günlük tavandan

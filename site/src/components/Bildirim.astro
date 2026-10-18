@@ -422,7 +422,13 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
     const iosKuruluDegil = () => {
       const ua = navigator.userAgent || "";
       const ios = /iPad|iPhone|iPod/.test(ua) || (/Macintosh/.test(ua) && "ontouchend" in document);
-      const kurulu = window.navigator.standalone === true;
+      // iOS 16.4-18'de bildirim yalnızca "Ana Ekrana Ekle" ile açılan web
+      // uygulamasında istenir: tarayıcı sekmesinde window.Notification yoktur.
+      const kurulu =
+        window.navigator.standalone === true ||
+        (window.matchMedia &&
+          (window.matchMedia("(display-mode: standalone)").matches ||
+            window.matchMedia("(display-mode: fullscreen)").matches));
       return ios && !kurulu;
     };
 
