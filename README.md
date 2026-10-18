@@ -389,9 +389,11 @@ tıklanınca o kategori takip edilir ve ilk kez bildirim izni istenir.
   yeni abone saatlerce sessizlikle karşılaşıp "çalışmıyor" sanıyordu. Günlük tavandan
   ve asgari aralıktan bağımsızdır; `data/bildirim.json` → `hosGeldin` ile yalnızca bir
   kez gönderilir (0 cihaza düşerse işaret konmaz, ilk abonede tekrar denenir).
-- **Elle test:** GitHub → Actions → **Haber Hatti** → *Run workflow* →
-  "Test bildirimi gönder" işaretle. `BILDIRIM_TEST=1` ile tüm abonelere, günlük tavanı
-  yok sayarak tek bir test bildirimi gider. Yerelde: `$env:BILDIRIM_TEST="1"; npm run bildirim`
+- **Elle test:** GitHub → Actions → **Bildirim Testi** → *Run workflow*. Tüm abonelere,
+  günlük tavanı ve asgari aralığı yok sayarak tek bir test bildirimi gider
+  (`BILDIRIM_TEST=1`). Ana hattın kuyruğunda bekleyip iptal olmasın diye ayrı bir
+  workflow'dur (`bildirim-test.yml`) ve depoya hiçbir şey yazmaz.
+  Yerelde: `$env:BILDIRIM_TEST="1"; npm run bildirim`
 - **Günlük teşhis (CI günlüğü):** her turda `abone sayısı: N` ve uygulama satırı yazılır:
   `kayıt: N | apns (iOS): kurulu/KURULU DEĞİL | safari_web_id | chrome_web`. iPhone'dan
   abone olunup bildirim gelmiyorsa ilk bakılacak yer `apns (iOS)` alanıdır.

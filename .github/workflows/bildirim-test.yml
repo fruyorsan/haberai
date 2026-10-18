@@ -1,0 +1,40 @@
+name: Bildirim Testi
+
+# Elle tek tıkla test bildirimi: TÜM abonelere, günlük tavandan ve asgari
+# aralıktan bağımsız tek bir bildirim.
+#
+# Neden ayrı bir dosya: ana hat (pipeline.yml) her 5 dakikada bir çalışıyor ve
+# kendi concurrency grubunda bekleyen çalışmalar yeni bir tur gelince iptal
+# oluyor. Test bildirimi o kuyrukta kayboluyordu; burası kendi grubunda ve
+# ~1 dakikada bitiyor. Depoya hiçbir şey yazmaz (data/ commit edilmez).
+on:
+  workflow_dispatch: {}
+
+concurrency:
+  group: bildirim-test
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: "npm"
+          cache-dependency-path: package-lock.json
+
+      - name: Bağımlılıkları kur
+        run: npm ci
+
+      - name: Test bildirimi gönder
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          ONESIGNAL_APP_ID: ${{ vars.ONESIGNAL_APP_ID }}
+          ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
+          BILDIRIM_TEST: "1"
+        run: npm run bildirim
