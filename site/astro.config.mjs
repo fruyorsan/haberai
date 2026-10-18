@@ -36,6 +36,7 @@ function lastmod(pathname) {
 
   if (
     pathname === "/" ||
+    pathname === "/akis/" ||
     pathname === "/son-dakika/" ||
     pathname === "/etiketler/" ||
     pathname.startsWith("/haberler/")
@@ -53,7 +54,9 @@ export default defineConfig({
   integrations: [
     sitemap({
       // Kapak görselleri (/kapak/*.svg) sayfa değildir; site haritasına girmez.
-      filter: (page) => !page.includes("/kapak/"),
+      // Kategori akışları (/akis/kategori/*) "noindex" gezinme yardımcılarıdır.
+      filter: (page) =>
+        !page.includes("/kapak/") && !page.includes("/akis/kategori/"),
       serialize(item) {
         const iso = lastmod(new URL(item.url).pathname);
         return iso ? { ...item, lastmod: iso } : item;

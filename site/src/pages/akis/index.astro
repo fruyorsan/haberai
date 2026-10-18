@@ -1,0 +1,71 @@
+---
+// ==========================================================================
+// AI AKIŞ (/akis/) — Twitter/Shorts hissi veren dikey haber akışı
+// --------------------------------------------------------------------------
+// Ana sayfa "gazete", burası "telefon uygulaması" gibi çalışır: tam ekran
+// kartlar, tek dokunuşla beğen/kaydet/paylaş. Besleme gövdesi
+// components/Akis.astro içinde (kategori akışlarıyla ortak).
+//
+// SEO: ilk 24 haber bağlantısı HTML'de gerçek <a> olarak durur; kalanı sonsuz
+// kaydırmada gelir. Böylece sayfa hem taranabilir hem hafif kalır.
+// ==========================================================================
+import Base from "../../layouts/Base.astro";
+import Akis from "../../components/Akis.astro";
+import { getArticles, imageUrl } from "../../lib/articles.js";
+import { kapakKaynagi } from "../../lib/kapak.js";
+import { AKIS_ILK } from "../../lib/akis-kart.js";
+import { siteOrigin } from "../../lib/site-meta.js";
+
+const liste = getArticles();
+const ilk = liste.slice(0, AKIS_ILK);
+const ilkKapak = ilk[0] ? kapakKaynagi(ilk[0]) : "";
+const ilkGorsel = ilkKapak ? imageUrl(ilkKapak, 720) : undefined;
+
+const origin = siteOrigin(Astro.site);
+const baslik = "AI Akış — Kısa kısa haberler | HaberinAi";
+const aciklama =
+  "HaberinAi AI Akış: en yeni haberler kısa kısa karşında. Büyük fotoğraf, vurucu başlık, yapay zekâ özeti. Kaydır, oku, beğen, paylaş.";
+
+const akisSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": `${origin}/akis/#akis`,
+      url: `${origin}/akis/`,
+      name: "AI Akış",
+      description: aciklama,
+      inLanguage: "tr-TR",
+      isPartOf: { "@id": `${origin}/#website` },
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: liste.length,
+        itemListElement: ilk.slice(0, 12).map((a, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: `${origin}/haber/${a.slug}/`,
+          name: a.title,
+        })),
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Ana Sayfa", item: `${origin}/` },
+        { "@type": "ListItem", position: 2, name: "AI Akış", item: `${origin}/akis/` },
+      ],
+    },
+  ],
+};
+---
+
+<Base
+  title={baslik}
+  description={aciklama}
+  canonical="/akis/"
+  schema={akisSchema}
+  preloadImage={ilkGorsel}
+  image={ilkGorsel}
+>
+  <Akis />
+</Base>

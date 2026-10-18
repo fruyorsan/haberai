@@ -1,0 +1,439 @@
+---
+// ==========================================================================
+// AI AKIŞ beslemesi — /akis/ ve /akis/kategori/<slug>/ sayfalarının ortak gövdesi
+// --------------------------------------------------------------------------
+// Neden bileşen: akış hem genel hem kategori bazlı yayınlanır. Site statik
+// olduğu için "?kategori=" çalışmaz (sorgu dizesi üretim anında yoktur);
+// kategori akışları GERÇEK adres olarak üretilir. İki sayfa da bu bileşeni
+// kullanır, tasarım tek yerde kalır.
+//
+// Sonsuz kaydırma: toplar /akis/sayfa/<ofset>.json dosyalarından gelir
+// (statik sitede sorgu dizesi işe yaramaz). Kategori akışında ilk kartlar
+// süzülmüş listeden gelir, toplar baştan okunur ve istemci kategori dışı ile
+// tekrar eden kartları ayıklar.
+// ==========================================================================
+import AdSlot from "./AdSlot.astro";
+import { getArticles, getCategories, imageUrl } from "../lib/articles.js";
+import { kapakKaynagi } from "../lib/kapak.js";
+import { akisKartlar, AKIS_ILK } from "../lib/akis-kart.js";
+import { ADSENSE_SLOTS } from "../lib/site-meta.js";
+
+const { kategori = "", kategoriAdi = "", ilkSayi = AKIS_ILK } = Astro.props;
+const gecerliKat = Boolean(kategori);
+const tumu = getArticles();
+const kategoriler = getCategories().slice(0, 14);
+const liste = gecerliKat ? tumu.filter((a) => a.categorySlug === kategori) : tumu;
+// Kategori akışlarında ilk tur daha geniş basılır: toplar GLOBAL listeden
+// geldiği için küçük/orta kategorilerde "daha fazla" boş dönebilirdi. Kategori
+// sayfaları zaten "noindex"tir; biraz daha uzun HTML sorun değil.
+const ilk = liste.slice(0, ilkSayi);
+---
+
+<div
+    class="akis"
+    id="akis"
+    data-kategori={gecerliKat ? kategori : ""}
+    data-toplam={liste.length}
+    data-ilk={ilk.length}
+    data-baslangic={gecerliKat ? 0 : AKIS_ILK}
+  >
+    <section class="akis__ust">
+      <div class="container akis__tanitim">
+        <span class="akis__rozet"><i aria-hidden="true">✦</i> AI Akış</span>
+        <h1>{gecerliKat ? `${kategoriAdi} akışı` : "Kısa kısa haberler"}</h1>
+        <p>
+          Kaydır, oku, beğen. Yapay zekâ özetleriyle
+          <strong>{liste.length}</strong> haber seni bekliyor.
+        </p>
+      </div>
+
+      <div class="container akis__suz">
+        <div class="akis__cipler" role="group" aria-label="Akışı süz">
+          <button class="akis__cip is-active" type="button" data-suz="tumu" aria-pressed="true">
+            Tümü
+          </button>
+          <button class="akis__cip" type="button" data-suz="begeni" aria-pressed="false">
+            <span aria-hidden="true">♥</span> Beğendiklerim
+            <b data-sayi="begeni">0</b>
+          </button>
+          <button class="akis__cip" type="button" data-suz="kayit" aria-pressed="false">
+            <span aria-hidden="true">🔖</span> Kaydedilenler
+            <b data-sayi="kayit">0</b>
+          </button>
+        </div>
+        <div class="akis__katlar">
+          <a class:list={["akis__kat", !gecerliKat && "is-active"]} href="/akis/">Tümü</a>
+          {kategoriler.map((k) => (
+            <a
+              class:list={["akis__kat", gecerliKat && kategori === k.slug && "is-active"]}
+              href={`/akis/kategori/${k.slug}/`}
+            >
+              {k.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <div class="akis__liste" id="akis-liste">
+      <Fragment set:html={akisKartlar(ilk.slice(0, 12), 0)} />
+      <AdSlot slot={ADSENSE_SLOTS.liste} label="Sponsorlu" />
+      <Fragment set:html={akisKartlar(ilk.slice(12), 12)} />
+    </div>
+
+    <div class="akis__bos" id="akis-bos" hidden>
+      <p>Bu süzgeçte gösterilecek kayıt yok. Akışı kaydırdıkça dolar.</p>
+    </div>
+
+    <div class="akis__bekle" id="akis-bekle" aria-live="polite">
+      <span class="akis__bekle-ic" id="akis-bekle-ic" hidden>
+        <span class="akis__donu" aria-hidden="true"></span> Yükleniyor…
+      </span>
+      <button class="akis__daha" id="akis-daha" type="button">
+        Daha fazla haber
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 5v14" />
+          <path d="m5.5 12 6.5 6.5 6.5-6.5" />
+        </svg>
+      </button>
+    </div>
+
+    <p class="akis__bitti" id="akis-bitti" hidden>
+      🎉 Akışın sonuna geldin. Tüm arşiv: <a href="/haberler/">tüm haberler</a>
+    </p>
+  </div>
+
+  <div class="akis__toast" id="akis-toast" role="status" aria-live="polite" hidden></div>
+
+  <script>
+    (function () {
+      const kok = document.getElementById("akis");
+      const liste = document.getElementById("akis-liste");
+      const bekle = document.getElementById("akis-bekle");
+      const bekleIc = document.getElementById("akis-bekle-ic");
+      const daha = document.getElementById("akis-daha");
+      const bitti = document.getElementById("akis-bitti");
+      const bos = document.getElementById("akis-bos");
+      const toast = document.getElementById("akis-toast");
+      if (!kok || !liste) return;
+
+      const kategori = kok.dataset.kategori || "";
+      const toplam = Number(kok.dataset.toplam || 0);
+      // Statik site: toplar hazır dosyalardan gelir (/akis/sayfa/<ofset>.json).
+      // Kategori akışında ilk kartlar süzülmüş listeden geldiği için toplar
+      // baştan okunur, tekrar eden slug'lar ayıklanır.
+      let globalOffset = Number(kok.dataset.baslangic || 0);
+      const gorulenler = new Set(
+        [...liste.querySelectorAll(".ak")].map((k) => k.dataset.slug)
+      );
+      let tukendi = false;
+      let yukleniyor = false;
+      let suzgec = "tumu";
+
+      // --- Yerel durum (beğeni/kayıt) — sunucu gerekmez, cihazda kalır --------
+      const oku = (ad) => {
+        try {
+          const v = JSON.parse(localStorage.getItem(ad) || "[]");
+          return new Set(Array.isArray(v) ? v.map(String) : []);
+        } catch (e) {
+          return new Set();
+        }
+      };
+      const yaz = (ad, set) => {
+        try {
+          localStorage.setItem(ad, JSON.stringify([...set].slice(-400)));
+        } catch (e) {}
+      };
+
+      const begeniler = oku("akis-begeni");
+      const kayitlar = oku("akis-kayit");
+
+      const sayilari = () => {
+        const b = kok.querySelector('[data-sayi="begeni"]');
+        const k = kok.querySelector('[data-sayi="kayit"]');
+        if (b) b.textContent = String(begeniler.size);
+        if (k) k.textContent = String(kayitlar.size);
+        kok.querySelectorAll(".akis__cip").forEach((c) => {
+          const n = c.querySelector("b");
+          if (n && Number(n.textContent) === 0) n.hidden = true;
+          else if (n) n.hidden = false;
+        });
+      };
+
+      // --- Kart boyama: beğeni/kayıt durumu ve süzgeç görünürlüğü -------------
+      function boya(kart) {
+        const slug = kart.dataset.slug;
+        const begen = begeniler.has(slug);
+        const kayit = kayitlar.has(slug);
+        kart.classList.toggle("is-begen", begen);
+        kart.classList.toggle("is-kayit", kayit);
+        const b = kart.querySelector(".ak__begen");
+        const k = kart.querySelector(".ak__kaydet");
+        if (b) b.setAttribute("aria-pressed", String(begen));
+        if (k) k.setAttribute("aria-pressed", String(kayit));
+        if (suzgec === "begeni") kart.hidden = !begen;
+        else if (suzgec === "kayit") kart.hidden = !kayit;
+        else kart.hidden = false;
+      }
+
+      const boyaHepsi = () => {
+        liste.querySelectorAll(".ak").forEach(boya);
+        sayilari();
+        if (bos) {
+          const gorunen = [...liste.querySelectorAll(".ak")].some((k) => !k.hidden);
+          bos.hidden = !(suzgec !== "tumu" && !gorunen && tukendi);
+        }
+      };
+
+      // --- Bildirim/toast ----------------------------------------------------
+      let toastZaman = 0;
+      function bildir(metin) {
+        if (!toast) return;
+        toast.textContent = metin;
+        toast.hidden = false;
+        toast.classList.add("is-gorunur");
+        clearTimeout(toastZaman);
+        toastZaman = setTimeout(() => {
+          toast.classList.remove("is-gorunur");
+          setTimeout(() => (toast.hidden = true), 260);
+        }, 2200);
+      }
+
+      // --- Kart eylemleri ----------------------------------------------------
+      function begen(kart) {
+        const slug = kart.dataset.slug;
+        const yeni = !begeniler.has(slug);
+        if (yeni) begeniler.add(slug);
+        else begeniler.delete(slug);
+        yaz("akis-begeni", begeniler);
+        boya(kart);
+        sayilari();
+        if (yeni) {
+          kart.classList.remove("is-patladi");
+          void kart.offsetWidth; // animasyonu yeniden başlat
+          kart.classList.add("is-patladi");
+          if (navigator.vibrate) navigator.vibrate(12);
+          bildir("Beğendin ♥");
+        }
+      }
+
+      function kaydet(kart) {
+        const slug = kart.dataset.slug;
+        const yeni = !kayitlar.has(slug);
+        if (yeni) kayitlar.add(slug);
+        else kayitlar.delete(slug);
+        yaz("akis-kayit", kayitlar);
+        boya(kart);
+        sayilari();
+        bildir(yeni ? "Kaydedildi 🔖" : "Kayıttan çıkarıldı");
+      }
+
+      async function paylas(kart) {
+        const bag = kart.querySelector(".ak__baslik a");
+        const url = bag ? new URL(bag.getAttribute("href"), location.origin).href : location.href;
+        const baslik = bag ? bag.textContent.trim() : "HaberinAi";
+        try {
+          if (navigator.share) {
+            await navigator.share({ title: baslik, text: baslik, url });
+            return;
+          }
+          await navigator.clipboard.writeText(url);
+          bildir("Bağlantı kopyalandı");
+        } catch (e) {
+          if (e && e.name === "AbortError") return;
+          bildir("Bağlantı adres çubuğunda");
+        }
+      }
+
+      liste.addEventListener("click", (e) => {
+        const dugme = e.target.closest("[data-islem]");
+        if (!dugme) return;
+        const kart = dugme.closest(".ak");
+        if (!kart) return;
+        const islem = dugme.dataset.islem;
+        if (islem === "begen") begen(kart);
+        else if (islem === "kaydet") kaydet(kart);
+        else if (islem === "paylas") paylas(kart);
+      });
+
+      // Fotoğrafa çift dokunma = beğen (Instagram alışkanlığı)
+      let sonDokunma = 0;
+      let sonKart = null;
+      liste.addEventListener("pointerup", (e) => {
+        const gorsel = e.target.closest(".ak__gorsel");
+        if (!gorsel) return;
+        const kart = gorsel.closest(".ak");
+        const simdi = Date.now();
+        if (kart && kart === sonKart && simdi - sonDokunma < 340) {
+          if (!begeniler.has(kart.dataset.slug)) begen(kart);
+          sonDokunma = 0;
+          sonKart = null;
+        } else {
+          sonDokunma = simdi;
+          sonKart = kart;
+        }
+      });
+
+      // --- Süzgeçler ---------------------------------------------------------
+      kok.querySelectorAll(".akis__cip").forEach((cip) => {
+        cip.addEventListener("click", () => {
+          suzgec = cip.dataset.suz || "tumu";
+          kok.querySelectorAll(".akis__cip").forEach((c) => {
+            const secili = c === cip;
+            c.classList.toggle("is-active", secili);
+            c.setAttribute("aria-pressed", String(secili));
+          });
+          boyaHepsi();
+          window.scrollTo({ top: kok.querySelector(".akis__liste").offsetTop - 120, behavior: "smooth" });
+          if (suzgec === "begeni") bildir("Beğendiğin haberler");
+          else if (suzgec === "kayit") bildir("Kaydettiğin haberler");
+        });
+      });
+
+      // --- Sonsuz kaydırma ---------------------------------------------------
+      async function yukle() {
+        if (yukleniyor || tukendi) return;
+        yukleniyor = true;
+        if (bekleIc) bekleIc.hidden = false;
+        try {
+          let eklenen = 0;
+          // Kategori akışlarında toplar global listeden gelir; bir top az
+          // sayıda eşleşme içerebilir. Kullanıcı "daha fazla"ya basıp yalnızca
+          // 2-3 kart görmesin diye en az 12 karta ulaşana kadar (en fazla 6
+          // top) devam edilir; liste biterse döngü kırılır.
+          for (let tur = 0; tur < 6; tur++) {
+            const y = await fetch(`/akis/sayfa/${globalOffset}.json`, {
+              headers: { Accept: "application/json" },
+            });
+            const d = await y.json();
+            if (!d.verilen) {
+              tukendi = true;
+              break;
+            }
+            globalOffset = Number.isFinite(d.sonraki) ? d.sonraki : globalOffset + 24;
+            if (d.html) {
+              const gecici = document.createElement("div");
+              gecici.innerHTML = d.html;
+              const parca = document.createDocumentFragment();
+              const eklenecek = [];
+              for (const k of [...gecici.children]) {
+                const slug = k.dataset.slug;
+                // Tekrar eden kart olmasın (kategori akışında ilk kartlar
+                // süzülmüş listeden gelir) ve kategori dışı kart eklenmesin.
+                if (gorulenler.has(slug)) continue;
+                if (kategori && k.dataset.kat !== kategori) continue;
+                gorulenler.add(slug);
+                eklenecek.push(k);
+                parca.appendChild(k);
+              }
+              liste.appendChild(parca);
+              eklenecek.forEach(boya);
+              eklenen += eklenecek.length;
+            }
+            if (d.son) {
+              tukendi = true;
+              break;
+            }
+            if (eklenen >= 12) break;
+          }
+          sayilari();
+          if (tukendi && bitti) bitti.hidden = false;
+        } catch (e) {
+          /* ağ hatası: sessizce dur, kullanıcı kaydırınca/düğmeye basınca tekrar dener */
+        } finally {
+          yukleniyor = false;
+          if (bekleIc) bekleIc.hidden = true;
+          dugmeDurumu();
+          if (bos) {
+            const gorunen = [...liste.querySelectorAll(".ak")].some((k) => !k.hidden);
+            bos.hidden = !(suzgec !== "tumu" && !gorunen && tukendi);
+          }
+          // Sentinelin görüş alanında olması hâlinde sıradaki topu da getir
+          // (süzgeç/kategori yüzünden boş gelen toplar akışı tıkamasın).
+          if (!tukendi) {
+            const r = bekle ? bekle.getBoundingClientRect() : null;
+            if (r && r.top < window.innerHeight + 300) setTimeout(yukle, 260);
+          }
+        }
+      }
+
+      /** "Daha fazla haber" düğmesinin durumu. */
+      function dugmeDurumu() {
+        if (!daha) return;
+        daha.hidden = tukendi;
+        daha.disabled = yukleniyor;
+      }
+
+      if (daha) daha.addEventListener("click", () => yukle());
+
+      // Otomatik yükleme: IntersectionObserver + kaydırma yedeği.
+      // (IO bazı tarayıcılarda/kare üretilmeyen sekmelerde tetiklenmez; kaydırma
+      //  dinleyicisi her koşulda sentinel'i kontrol eder, elle düğme de durur.)
+      if (bekle && "IntersectionObserver" in window) {
+        const io = new IntersectionObserver(
+          (girisler) => {
+            if (girisler.some((g) => g.isIntersecting)) yukle();
+          },
+          { rootMargin: "600px 0px" }
+        );
+        io.observe(bekle);
+      }
+      window.addEventListener(
+        "scroll",
+        () => {
+          if (bekle && bekle.getBoundingClientRect().top < window.innerHeight + 800) yukle();
+        },
+        { passive: true }
+      );
+
+      // --- Klavye: masaüstünde karta karta ilerle ----------------------------
+      document.addEventListener("keydown", (e) => {
+        if (e.target.matches("input, textarea, select")) return;
+        const kartlar = [...liste.querySelectorAll(".ak")].filter((k) => !k.hidden);
+        if (!kartlar.length) return;
+        if (e.key === "ArrowDown" || e.key === "j") {
+          const sonraki = kartlar.find((k) => k.getBoundingClientRect().top > window.innerHeight * 0.45);
+          if (sonraki) {
+            e.preventDefault();
+            sonraki.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        } else if (e.key === "ArrowUp" || e.key === "k") {
+          const oncekiler = kartlar.filter((k) => k.getBoundingClientRect().top < window.innerHeight * 0.35);
+          if (oncekiler.length) {
+            e.preventDefault();
+            oncekiler[oncekiler.length - 1].scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        } else if (e.key === "l" || e.key === "s") {
+          const orta = kartlar.find((k) => {
+            const r = k.getBoundingClientRect();
+            return r.top >= -r.height * 0.4 && r.top <= window.innerHeight * 0.5;
+          });
+          if (orta) {
+            e.preventDefault();
+            if (e.key === "l") begen(orta);
+            else kaydet(orta);
+          }
+        }
+      });
+
+      // --- Açılış -------------------------------------------------------------
+      boyaHepsi();
+      // Sayfada basılan kart sayısı listeyi bitiriyorsa (kısa kategori) bekleme.
+      if (Number(kok.dataset.ilk || 0) >= toplam) {
+        tukendi = true;
+        if (bitti) bitti.hidden = false;
+      }
+      dugmeDurumu();
+
+      // İlk ziyarette kaydırma ipucu (bir kez gösterilir).
+      try {
+        if (!localStorage.getItem("akis-ipucu") && window.scrollY < 40) {
+          localStorage.setItem("akis-ipucu", "1");
+          setTimeout(() => bildir("Kaydır, kısa kısa haberler ↓"), 1200);
+        }
+      } catch (e) {}
+
+      // Akış sayfasından ayrılırken durumu tazele (geri dönüşte doğru görünsün).
+      window.addEventListener("pageshow", boyaHepsi);
+    })();
+  </script>

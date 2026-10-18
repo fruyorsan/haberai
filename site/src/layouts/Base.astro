@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import CategoryBar from "../components/CategoryBar.astro";
 import Footer from "../components/Footer.astro";
+import AltMenu from "../components/AltMenu.astro";
 import {
   ADSENSE_CLIENT,
   GA_MEASUREMENT_ID,
@@ -105,6 +106,13 @@ const isArticle = ogType === "article";
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#d81f26" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0d11" />
     <meta name="color-scheme" content="light dark" />
+    <!-- Telefonda "uygulama gibi": ana ekrana eklenince AI Akış ile açılır. -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="HaberinAi" />
+    <link rel="apple-touch-icon" href="/ikon-192.png" />
     <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
     <link rel="alternate" type="application/rss+xml" title="HaberinAi RSS" href="/rss.xml" />
 
@@ -286,6 +294,9 @@ OneSignalDeferred.push(async function (OneSignal) {
     </main>
     <Footer />
 
+    <!-- Telefon: sabit alt gezinme (AI Akış merkezde). Masaüstünde gizli. -->
+    <AltMenu />
+
     <button class="to-top" id="to-top" type="button" aria-label="Sayfanın başına dön" title="Yukarı çık">
       <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M12 19V5" />
@@ -450,6 +461,28 @@ OneSignalDeferred.push(async function (OneSignal) {
       .cerez__kabul:hover {
         background: var(--brand-strong);
         border-color: var(--brand-strong);
+      }
+      /* Telefon: çerez çubuğu alttaki gezinme çubuğunun ÜSTÜNDE durur
+         (ikisi üst üste binmesin), düğmeler parmakla rahat basılacak boyutta. */
+      @media (max-width: 720px) {
+        .cerez {
+          bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+          padding: 10px 14px;
+        }
+        .cerez__ic {
+          gap: 10px;
+        }
+        .cerez p {
+          font-size: 0.84rem;
+        }
+        .cerez__btn {
+          margin-left: 0;
+          width: 100%;
+        }
+        .cerez button {
+          flex: 1;
+          min-height: 44px;
+        }
       }
     </style>
   </body>

@@ -4,6 +4,7 @@ import Bildirim from "./Bildirim.astro";
 
 const nav = [
   { label: "Ana Sayfa", href: "/" },
+  { label: "Akış", href: "/akis/", akis: true },
   { label: "Son Dakika", href: "/son-dakika/" },
   { label: "Yapay Zeka", href: "/kategori/yapay-zeka/", ai: true },
   { label: "Piyasa", href: "/piyasa/" },
@@ -29,9 +30,14 @@ const isActive = (href) =>
           href={item.href}
           class:list={[
             "nav__link",
-            { "nav__link--active": isActive(item.href), "nav__link--ai": item.ai },
+            {
+              "nav__link--active": isActive(item.href),
+              "nav__link--ai": item.ai,
+              "nav__link--akis": item.akis,
+            },
           ]}
         >
+          {item.akis && <span class="nav__akis-nokta" aria-hidden="true"></span>}
           {item.ai && (
             <svg class="nav__ai-icon" viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true">
               <path d="M12 2.2l1.9 5.2 5.2 1.9-5.2 1.9L12 16.4l-1.9-5.2L4.9 9.3l5.2-1.9z" />
@@ -491,6 +497,51 @@ const isActive = (href) =>
   }
   .nav__ai-icon {
     flex-shrink: 0;
+  }
+
+  /* --- AI Akış: menüde "canlı" hissi veren nabız atan rozet --- */
+  .nav__link--akis {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-weight: 800;
+  }
+  .nav__link--akis::after {
+    display: none;
+  }
+  .nav__link--akis:hover {
+    background: color-mix(in srgb, var(--brand) 20%, transparent);
+    color: var(--brand-strong);
+  }
+  .nav__link--akis.nav__link--active {
+    background: var(--brand-grad);
+    color: #fff;
+  }
+  .nav__akis-nokta {
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: currentColor;
+    flex-shrink: 0;
+    animation: akisNabiz 2.2s var(--ease) infinite;
+  }
+  @keyframes akisNabiz {
+    0% {
+      box-shadow: 0 0 0 0 var(--brand-glow);
+    }
+    70% {
+      box-shadow: 0 0 0 7px rgba(216, 31, 38, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(216, 31, 38, 0);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .nav__akis-nokta {
+      animation: none;
+    }
   }
 
   .header__actions {

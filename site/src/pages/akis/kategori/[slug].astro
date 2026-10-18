@@ -1,0 +1,60 @@
+---
+// ==========================================================================
+// /akis/kategori/<slug>/ — kategoriye süzülmüş AI Akış
+// --------------------------------------------------------------------------
+// Neden ayrı adres: site statik; "?kategori=" sorgu dizesi üretim anında
+// okunamaz. Kategori akışları bu yüzden gerçek sayfa olarak üretilir.
+//
+// SEO: bu sayfalar gezinme yardımcısıdır, /kategori/<slug>/ arşivinin
+// kopyası gibi durmasınlar diye "noindex, follow" verilir; site haritasına da
+// girmez (astro.config.mjs → sitemap filtresi). Bağlantılar takip edilir.
+// ==========================================================================
+import Base from "../../../layouts/Base.astro";
+import Akis from "../../../components/Akis.astro";
+import { getArticles, getCategories, imageUrl } from "../../../lib/articles.js";
+import { kapakKaynagi } from "../../../lib/kapak.js";
+import { AKIS_ILK } from "../../../lib/akis-kart.js";
+import { siteOrigin } from "../../../lib/site-meta.js";
+
+export function getStaticPaths() {
+  return getCategories().map((k) => ({
+    params: { slug: k.slug },
+    props: { ad: k.name, adet: k.count },
+  }));
+}
+
+const { slug } = Astro.params;
+const { ad, adet } = Astro.props;
+
+const ilk = getArticles()
+  .filter((a) => a.categorySlug === slug)
+  .slice(0, AKIS_ILK);
+const ilkKapak = ilk[0] ? kapakKaynagi(ilk[0]) : "";
+const ilkGorsel = ilkKapak ? imageUrl(ilkKapak, 720) : undefined;
+
+const origin = siteOrigin(Astro.site);
+const baslik = `${ad} akışı — kısa kısa haberler | HaberinAi`;
+const aciklama = `${ad} kategorisinde ${adet} haber kısa kısa: büyük fotoğraf, vurucu başlık ve yapay zekâ özeti. Kaydır, oku, beğen.`;
+
+const kategoriSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Ana Sayfa", item: `${origin}/` },
+    { "@type": "ListItem", position: 2, name: "AI Akış", item: `${origin}/akis/` },
+    { "@type": "ListItem", position: 3, name: `${ad} akışı`, item: `${origin}/akis/kategori/${slug}/` },
+  ],
+};
+---
+
+<Base
+  title={baslik}
+  description={aciklama}
+  canonical={`/akis/kategori/${slug}/`}
+  schema={kategoriSchema}
+  preloadImage={ilkGorsel}
+  image={ilkGorsel}
+  noindex={true}
+>
+  <Akis kategori={slug} kategoriAdi={ad} ilkSayi={60} />
+</Base>

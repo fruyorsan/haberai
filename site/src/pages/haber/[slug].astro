@@ -602,6 +602,21 @@ const breadcrumbLd = {
     display: none;
   }
 
+  /* Telefon: takip düğmesi parmakla rahat basılacak boyutta ve tam genişlik
+     (birincil eylem; 30px'lik kapsül çok küçüktü). */
+  @media (max-width: 640px) {
+    .post__follow-wrap {
+      width: 100%;
+    }
+    .post__follow {
+      width: 100%;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 16px;
+      font-size: 0.86rem;
+    }
+  }
+
   .post__title {
     font-size: 2.15rem;
     line-height: 1.19;
