@@ -845,6 +845,125 @@ html.cerez-acik .to-top {
   }
 }
 
+/* --- Yorum paneli (akışta alttan açılır) ---------------------------------
+   Akışta yorum da beğen/kaydet gibi tek dokunuş olmalı; ayrı sayfaya atmak
+   yerine alttan panel açılır. giscus iframe'i panel ilk açıldığında kurulur. */
+html.ysheet-kilit {
+  overflow: hidden;
+}
+.ysheet {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.ysheet[hidden] {
+  display: none;
+}
+.ysheet__arka {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  background: rgba(6, 7, 10, 0.62);
+  backdrop-filter: blur(3px);
+  cursor: pointer;
+}
+.ysheet__kutu {
+  position: relative;
+  width: min(680px, 100%);
+  max-height: min(88vh, 800px);
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-bottom: 0;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -24px 60px -22px rgba(0, 0, 0, 0.65);
+  animation: ysheetGir 0.26s var(--ease);
+}
+@keyframes ysheetGir {
+  from {
+    transform: translateY(26px);
+    opacity: 0.55;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ysheet__kutu {
+    animation: none;
+  }
+}
+.ysheet__tutamak {
+  width: 44px;
+  height: 4px;
+  margin: 9px auto 0;
+  border-radius: 999px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+.ysheet__ust {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 16px 6px;
+  flex-shrink: 0;
+}
+.ysheet__baslik {
+  font-size: 1rem;
+  font-weight: 800;
+}
+.ysheet__kapat {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-2);
+  font-size: 0.9rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.ysheet__ad {
+  margin: 0 16px 8px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-2);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.ysheet__govde {
+  flex: 1 1 auto;
+  min-height: 240px;
+  padding: 0 16px 10px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.ysheet__oku {
+  display: block;
+  padding: 14px 16px calc(14px + env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-weight: 800;
+  color: var(--brand);
+  flex-shrink: 0;
+}
+@media (max-width: 560px) {
+  .ysheet__kutu {
+    max-height: 92vh;
+  }
+}
+
 /* --- Süzgeçler ve kategori şeritleri: TEK satır --- */
 .akis__suz {
   display: flex;

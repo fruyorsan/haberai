@@ -255,6 +255,18 @@ Yeni yayınlanan haberleri sosyal kanallara **otomatik** paylaşan opsiyonel bir
 `SHARE_MAX_PER_RUN` (çalıştırma başına paylaşım sayısı),
 `SHARE_MIN_ARALIK_DK` (iki paylaşım arası asgari dakika, varsayılan 25).
 
+> **Durum (18.10.2026):** `TELEGRAM_BOT_TOKEN` tanımlı (bot: **@Haberinaibot**).
+> Eksik olan tek şey `TELEGRAM_CHAT_ID`: botun paylaşım yapacağı **kanal**.
+> Kurulum: Telegram'da herkese açık bir kanal aç (ör. `@haberinai`) → kanal
+> ayarları → **Yöneticiler → Yönetici ekle → @Haberinaibot** (mesaj gönderme
+> izniyle) → sonra:
+> ```powershell
+> gh secret set TELEGRAM_CHAT_ID --body "@haberinai" --repo fruyorsan/haberai
+> ```
+> Kanal herkese açıksa `@kullaniciadi` yeterlidir (sayısal ID gerekmez).
+> Böylece her yeni haber otomatik olarak kanala düşer ve oradan siteye trafik akar
+> (her gönderiye kanonik haber bağlantısı gider).
+
 Generic webhook'a gönderilen gövde:
 ```json
 { "title": "...", "summary": "...", "url": "...", "category": "...", "image": "..." }
@@ -279,6 +291,26 @@ npm run share
 
 > Not: X/Twitter OAuth 1.0a imzası `node:crypto` ile manuel üretilir; anahtarlar
 > girilene ve canlı denenene kadar "doğrulanmadı" kabul edilmelidir.
+
+## Yorumlar (giscus — sunucusuz, reklamsız)
+
+Site tamamen statik (GitHub Pages) ve Netlify kapandığı için yorumları saklayacak
+bir arka uç yok. Bu yüzden yorumlar **giscus** ile yapılır: yorumlar deponun
+**Discussions** bölümünde tutulur, sayfaya yalnızca bir iframe gömülür. Sunucu,
+veritabanı, üyelik ve reklam yoktur.
+
+- Bileşen: `site/src/components/Yorumlar.astro` (ayarlar: `site/src/lib/site-meta.js` → `GISCUS`)
+- Haber sayfası: yazının altında tam yorum bölümü (görünür alana yaklaşınca yüklenir).
+- Akış (`/akis/`): karttaki 💬 düğmesi **alttan açılan panel**de yorumları gösterir
+  (`Akis.astro` → `.ysheet`, tek iframe; 24 kart için 24 iframe kurulmaz).
+- Yorum anahtarı: haberin `slug`'ı (`data-mapping="specific"`) — adres değişse de
+  tartışma aynı kalır.
+
+**Tek seferlik kurulum (1 tık):** Discussions açıldı (bu repoda açık; kategori
+`Announcements`). Kalan adım:
+<https://github.com/apps/giscus> → **Install** → `fruyorsan/haberai` seç.
+Kurulmadan da site bozulmaz: giscus yüklenemezse kutu gizlenir ve yerine Telegram
+paneli gösterilir (`TELEGRAM_URL`).
 
 ## IndexNow (Bing/Yandex anında bildirim)
 

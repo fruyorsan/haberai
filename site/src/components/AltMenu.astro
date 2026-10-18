@@ -122,8 +122,10 @@ const menu = [
       text-overflow: ellipsis;
       white-space: nowrap;
     }
-    /* Akış: çekim noktası — yükseltilmiş marka daireli düğme. */
+    /* Akış: çekim noktası — yükseltilmiş marka daireli düğme.
+       Nabız atan halka + köşedeki canlı noktası: "şu an yayında" hissi. */
     .altmenu__a--vitrin .altmenu__simge {
+      position: relative;
       width: 46px;
       height: 46px;
       margin-top: -18px;
@@ -133,8 +135,51 @@ const menu = [
       box-shadow: 0 12px 26px -10px var(--brand-glow);
       border: 3px solid var(--surface);
     }
+    .altmenu__a--vitrin .altmenu__simge::after {
+      content: "";
+      position: absolute;
+      inset: -3px;
+      border-radius: 999px;
+      border: 2px solid var(--brand);
+      animation: altmenuNabiz 2.4s var(--ease) infinite;
+      pointer-events: none;
+    }
+    .altmenu__a--vitrin .altmenu__simge::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+      background: #ff4040;
+      border: 2px solid var(--surface);
+      z-index: 1;
+      pointer-events: none;
+    }
+    @keyframes altmenuNabiz {
+      0% {
+        transform: scale(1);
+        opacity: 0.9;
+      }
+      70% {
+        transform: scale(1.34);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1.34);
+        opacity: 0;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .altmenu__a--vitrin .altmenu__simge::after {
+        animation: none;
+        opacity: 0.5;
+      }
+    }
     .altmenu__a--vitrin {
-      color: var(--text-2);
+      color: var(--brand);
+      font-weight: 800;
     }
     .altmenu__a--vitrin.is-active {
       color: var(--brand);

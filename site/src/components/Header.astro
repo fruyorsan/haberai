@@ -470,25 +470,67 @@ const isActive = (href) =>
   .nav__link--active::after {
     transform: scaleX(1);
   }
-  /* Shorts: menüde fark edilir ama satırı bozmaz (dolgun rozet yok).
-     İkon + marka rengi yeterince öne çıkarır; asıl vurgu alttaki sabit
-     menünün ortasındaki yükseltilmiş düğme ve ana sayfadaki banttır. */
+  /* Shorts: menüde CANLI görünür — dolgun marka hapı + nabız atan nokta.
+     Sade metin rengi yetmiyordu: menüde "canlı bir yayın" hissi verilir ve
+     ziyaretçinin gözü ilk buraya gider (asıl trafik hedefi /akis/). */
   .nav__link--shorts {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    color: var(--brand);
+    gap: 7px;
+    padding: 7px 14px 7px 12px;
+    border-radius: 999px;
+    color: #fff;
     font-weight: 800;
+    background: linear-gradient(100deg, var(--brand) 0%, var(--brand-strong) 100%);
+    box-shadow: 0 10px 22px -12px var(--brand-glow);
+    transition: filter 0.18s var(--ease), transform 0.18s var(--ease);
+  }
+  .nav__link--shorts::after {
+    display: none;
+  }
+  .nav__link--shorts::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 9px;
+    height: 9px;
+    border-radius: 999px;
+    background: #fff;
+    box-shadow: 0 0 0 2px var(--brand);
+    animation: navCanli 1.9s var(--ease) infinite;
+  }
+  @keyframes navCanli {
+    0%,
+    100% {
+      box-shadow: 0 0 0 2px var(--brand), 0 0 0 0 rgba(255, 255, 255, 0.75);
+    }
+    55% {
+      box-shadow: 0 0 0 2px var(--brand), 0 0 0 8px rgba(255, 255, 255, 0);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .nav__link--shorts::before {
+      animation: none;
+    }
   }
   .nav__shorts-icon {
     flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 17px;
+    height: 17px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.24);
+    padding-left: 1px;
   }
   .nav__link--shorts:hover {
-    color: var(--brand-strong);
-    background: var(--brand-soft);
+    color: #fff;
+    filter: brightness(1.08);
+    transform: translateY(-1px);
   }
   .nav__link--shorts.nav__link--active {
-    color: var(--brand);
+    color: #fff;
   }
 
   .header__actions {

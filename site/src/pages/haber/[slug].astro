@@ -4,9 +4,10 @@ import ArticleCard from "../../components/ArticleCard.astro";
 import AdSlot from "../../components/AdSlot.astro";
 import ShareButtons from "../../components/ShareButtons.astro";
 import DevamHaber from "../../components/DevamHaber.astro";
+import Yorumlar from "../../components/Yorumlar.astro";
 import { getArticles, formatDate, publishedISO, imageUrl, imageSrcset, tagUrl, slugify } from "../../lib/articles.js";
 import { kapakKaynagi, kapakUygunMu } from "../../lib/kapak.js";
-import { ADSENSE_SLOTS, ONESIGNAL_APP_ID } from "../../lib/site-meta.js";
+import { ADSENSE_SLOTS, ONESIGNAL_APP_ID, siteOrigin } from "../../lib/site-meta.js";
 
 export function getStaticPaths() {
   return getArticles().map((article) => ({
@@ -440,6 +441,12 @@ const breadcrumbLd = {
     )}
 
     <AdSlot slot={ADSENSE_SLOTS.liste} label="Sponsorlu" />
+
+    <Yorumlar
+      slug={article.slug}
+      baslik={article.title}
+      url={`${siteOrigin(Astro.site)}/haber/${article.slug}/`}
+    />
   </div>
 
   <script>

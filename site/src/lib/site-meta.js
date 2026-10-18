@@ -69,6 +69,32 @@ export const GOOGLE_SITE_VERIFICATION = GOOGLE_SITE_VERIFICATIONS[0];
 export const GA_MEASUREMENT_ID = process.env.GA_MEASUREMENT_ID || "G-C9BGECSKCM";
 
 /**
+ * Yorumlar: giscus (GitHub Discussions tabanlı).
+ *
+ * Reklamsız, takipsiz ve sunucusuzdur: yorumlar deponun Discussions
+ * bölümünde tutulur, sayfaya yalnızca bir iframe gömülür. Bu yüzden
+ * Netlify/Vercel gibi bir arka uca ihtiyaç yoktur; tamamen ücretsizdir.
+ *
+ * KURULUM (tek seferlik, 1 tık):
+ *   1) Discussions açıldı (scripts ile yapıldı, bu repoda açık).
+ *   2) https://github.com/apps/giscus → "Install" → fruyorsan/haberai seç.
+ *      (Bu adım olmadan giscus yorum kutusu açılmaz; site o zaman
+ *      Telegram panelini gösterir, kırık kutu görünmez.)
+ *
+ * Kimlikler gizli değildir (sayfaya açıkça yazılır). Değiştirmek için:
+ *   gh variable set GISCUS_REPO_ID --body "R_..."  (ve diğerleri)
+ */
+export const GISCUS = {
+  repo: process.env.GISCUS_REPO || "fruyorsan/haberai",
+  repoId: process.env.GISCUS_REPO_ID || "R_kgDOVLD1_w",
+  kategori: process.env.GISCUS_KATEGORI || "Announcements",
+  kategoriId: process.env.GISCUS_KATEGORI_ID || "DIC_kwDOVLD1_84DI4aP",
+};
+
+/** Yorum panelinde gösterilen Telegram bağlantısı (kanal açılınca değiştir). */
+export const TELEGRAM_URL = process.env.TELEGRAM_URL || "https://t.me/Haberinaibot";
+
+/**
  * OneSignal App ID (web push / bildirimler).
  *
  * App ID gizli bir anahtar DEĞİLDİR; sitenin OneSignal kimliğidir ve tarayıcıya

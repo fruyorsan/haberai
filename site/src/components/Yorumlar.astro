@@ -1,0 +1,274 @@
+---
+// Yorumlar — giscus (GitHub Discussions) tabanlı, reklamsız ve sunucusuz.
+//
+// NEDEN BU YOL: site tamamen statik (GitHub Pages) ve Netlify kapandı; yani
+// yorumları saklayacak bir arka uç yok. giscus yorumları deponun Discussions
+// bölümünde tutar, sayfaya yalnızca bir iframe gömer. Sunucu, veritabanı ve
+// abonelik gerekmez; reklam ve takip kodu içermez.
+//
+// HIZ: iframe, kutu görünür alana yaklaşmadan (400px önce) yüklenmez.
+//
+// GÜVENLİK/BOZUK GÖRÜNÜM: giscus uygulaması depoya kurulu değilse giscus
+// "kurulu değil" hatası yollar. O durumda (ya da 8 sn içinde yanıt gelmezse)
+// kutu gizlenir ve Telegram paneli gösterilir — okuyucu asla boş/kırık bir
+// yorum kutusu görmez.
+import { GISCUS, TELEGRAM_URL } from "../lib/site-meta.js";
+
+interface Props {
+  /** Yorum dizisi bu habere özel olsun diye kullanılan sabit anahtar. */
+  slug: string;
+  /** Tartışma başlığı (arama/discussions listesinde görünen ad). */
+  baslik: string;
+  /** Kanonik haber adresi. */
+  url: string;
+  /**
+   * Akış (Shorts) içindeki alttan açılan panelde gösterim. Otomatik yükleme
+   * kapatılır; panel açılınca window.HaberinaiYorum.kur() çağrılır.
+   */
+  sade?: boolean;
+}
+
+const { slug, baslik, url, sade = false } = Astro.props;
+
+// Kimlikler tanımlıysa giscus denenir; değilse doğrudan Telegram paneli çizilir.
+const giscusVar = Boolean(GISCUS.repo && GISCUS.repoId && GISCUS.kategoriId);
+const otomatik = !sade && Boolean(slug) && giscusVar;
+---
+
+<section
+  class:list={["yorum", sade && "yorum--sade"]}
+  data-yorum
+  data-slug={slug}
+  data-baslik={baslik}
+  data-url={url}
+  data-giscus={giscusVar ? "1" : "0"}
+  data-otomatik={otomatik ? "1" : "0"}
+  data-repo={GISCUS.repo}
+  data-repo-id={GISCUS.repoId}
+  data-kategori={GISCUS.kategori}
+  data-kategori-id={GISCUS.kategoriId}
+>
+  <header class="yorum__ust">
+    <h2 class="yorum__baslik" id={sade ? undefined : "yorumlar-baslik"}>
+      <span aria-hidden="true">💬</span> Yorumlar
+    </h2>
+    {giscusVar && (
+      <span class="yorum__not">GitHub hesabıyla yazılır — reklamsız, takipsiz.</span>
+    )}
+  </header>
+
+  {
+    giscusVar && (
+      <div class="yorum__kutu" data-yorum-kutu>
+        <div class="giscus" data-yorum-giscus />
+        <p class="yorum__bekle" data-yorum-bekle>
+          Yorumlar yükleniyor…
+        </p>
+      </div>
+    )
+  }
+
+  <div class="yorum__yedek" data-yorum-yedek hidden={giscusVar}>
+    <p class="yorum__yedek-baslik">Bu haberin tartışması Telegram'da dönüyor</p>
+    <p class="yorum__yedek-alt">
+      Kanalımıza katıl; haberleri ilk sen gör, sorunu sor, görüşünü yaz. Yeni gelişmelerde
+      bildirim de düşer.
+    </p>
+    <a class="yorum__btn" href={TELEGRAM_URL} target="_blank" rel="noopener nofollow">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true">
+        <path d="M21.9 4.3 19 19.1c-.2 1-.8 1.2-1.6.8l-4.4-3.3-2.1 2c-.2.2-.4.4-.9.4l.3-4.4 8-7.2c.3-.3-.1-.5-.5-.2l-9.9 6.2-4.3-1.3c-.9-.3-.9-.9.2-1.3l16.6-6.4c.8-.3 1.5.2 1.2 1.2z" />
+      </svg>
+      Telegram'da tartış
+    </a>
+    <p class="yorum__yedek-not">
+      Yorumlar için daha iyisi geliyor; o zamana kadar kanal en hızlı yol.
+    </p>
+  </div>
+</section>
+
+<style>
+  .yorum {
+    margin: 34px 0 10px;
+    padding: 20px 20px 22px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--surface);
+  }
+  .yorum--sade {
+    margin: 0;
+    padding: 4px 2px 0;
+    border: 0;
+    background: transparent;
+  }
+  .yorum__ust {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  .yorum__baslik {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+  .yorum__not {
+    font-size: 0.78rem;
+    color: var(--text-2);
+  }
+  .yorum__kutu {
+    min-height: 120px;
+  }
+  .yorum__bekle {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--text-2);
+  }
+  .yorum__yedek {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 16px 17px;
+    border-radius: 15px;
+    border: 1px solid rgba(216, 31, 38, 0.28);
+    background: linear-gradient(125deg, rgba(216, 31, 38, 0.12), rgba(216, 31, 38, 0.03));
+  }
+  .yorum__yedek[hidden] {
+    display: none;
+  }
+  .yorum__yedek-baslik {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 800;
+  }
+  .yorum__yedek-alt {
+    margin: 0;
+    font-size: 0.87rem;
+    color: var(--text-2);
+    line-height: 1.5;
+  }
+  .yorum__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+    padding: 11px 20px;
+    border-radius: 999px;
+    background: var(--brand);
+    color: #fff;
+    font-weight: 800;
+    box-shadow: 0 14px 30px -18px var(--brand-glow);
+  }
+  .yorum__btn:hover {
+    filter: brightness(1.08);
+  }
+  .yorum__yedek-not {
+    margin: 2px 0 0;
+    font-size: 0.74rem;
+    color: var(--text-3, var(--text-2));
+  }
+</style>
+
+<script>
+  // giscus gömme yardımcısı. Bir kez tanımlanır; hem haber sayfası hem de
+  // akıştaki yorum paneli aynı işlevi kullanır.
+  type Kok = HTMLElement & { dataset: DOMStringMap };
+
+  const mesajlar = new WeakMap<HTMLElement, { gordum: boolean }>();
+
+  function yedekGoster(kok: Kok, kutu: HTMLElement | null, yedek: HTMLElement | null) {
+    if (kutu) kutu.hidden = true;
+    if (yedek) yedek.hidden = false;
+    kok.dataset.giscus = "0";
+  }
+
+  function kur(kok: Kok, { yenile = false } = {}) {
+    const kutu = kok.querySelector<HTMLElement>("[data-yorum-kutu]");
+    if (!kutu) return;
+    const yedek = kok.querySelector<HTMLElement>("[data-yorum-yedek]");
+    const bekle = kok.querySelector<HTMLElement>("[data-yorum-bekle]");
+    const hedef = kok.querySelector<HTMLElement>("[data-yorum-giscus]");
+    if (!hedef || kok.dataset.giscus === "0") return;
+
+    const slug = kok.dataset.slug || "";
+    if (!slug) return;
+
+    // Aynı haber için ikinci kez yükleme yapılmaz (panel kapanıp açılırsa atlanır).
+    if (!yenile && hedef.dataset.kuruldu === "1") return;
+
+    // Yenilemede eski iframe/script temizlenir; giscus yeniden çizilir.
+    hedef.innerHTML = "";
+    hedef.dataset.kuruldu = "1";
+    kok.querySelectorAll("script[data-yorum-script]").forEach((s) => s.remove());
+
+    const s = document.createElement("script");
+    s.src = "https://giscus.app/client.js";
+    s.async = true;
+    s.dataset.yorumScript = "1";
+    s.crossOrigin = "anonymous";
+    s.setAttribute("data-repo", kok.getAttribute("data-repo") || "");
+    s.setAttribute("data-repo-id", kok.getAttribute("data-repo-id") || "");
+    s.setAttribute("data-category", kok.getAttribute("data-kategori") || "");
+    s.setAttribute("data-category-id", kok.getAttribute("data-kategori-id") || "");
+    s.setAttribute("data-mapping", "specific");
+    s.setAttribute("data-term", slug);
+    s.setAttribute("data-reactions-enabled", "1");
+    s.setAttribute("data-emit-metadata", "0");
+    s.setAttribute("data-input-position", "bottom");
+    s.setAttribute("data-theme", "preferred_color_scheme");
+    s.setAttribute("data-lang", "tr");
+    s.setAttribute("data-loading", "lazy");
+    hedef.appendChild(s);
+
+    // 8 sn içinde giscus'tan olumlu mesaj gelmezse yedek panel gösterilir.
+    const durum = { gordum: false };
+    mesajlar.set(kok, durum);
+    window.setTimeout(() => {
+      if (!durum.gordum && kok.dataset.giscus === "1") yedekGoster(kok, kutu, yedek);
+    }, 8000);
+
+    window.addEventListener("message", (e) => {
+      if (e.origin !== "https://giscus.app") return;
+      let d: { giscus?: { error?: string } } | string = e.data;
+      if (typeof d === "string") {
+        try {
+          d = JSON.parse(d);
+        } catch {
+          return;
+        }
+      }
+      const g = typeof d === "object" && d ? d.giscus : null;
+      if (!g) return;
+      // giscus iframe'i bu kutuda mı? (sayfada tek kutu olur; yine de kontrol)
+      const cerceve = hedef.querySelector("iframe");
+      if (cerceve && (e.source as Window | null) !== cerceve.contentWindow) return;
+      if (g.error) {
+        yedekGoster(kok, kutu, yedek);
+        return;
+      }
+      durum.gordum = true;
+      if (bekle) bekle.hidden = true;
+      kok.dataset.giscusAktif = "1";
+    });
+  }
+
+  (window as unknown as { HaberinaiYorum: unknown }).HaberinaiYorum = { kur };
+
+  // Otomatik mod: kutu görünür alana yaklaşınca yüklenir (hız için).
+  for (const kok of document.querySelectorAll<HTMLElement>("[data-yorum]")) {
+    if (kok.dataset.otomatik !== "1") continue;
+    const io = new IntersectionObserver(
+      (girisler) => {
+        if (girisler.some((g) => g.isIntersecting)) {
+          io.disconnect();
+          kur(kok as Kok);
+        }
+      },
+      { rootMargin: "400px 0px" },
+    );
+    io.observe(kok);
+  }
+</script>

@@ -53,6 +53,8 @@ const KAYIT_SVG =
   '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3.5h12a1 1 0 0 1 1 1v16l-7-4-7 4v-16a1 1 0 0 1 1-1z"/></svg>';
 const PAYLAS_SVG =
   '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>';
+const YORUM_SVG =
+  '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 12c0 4.1-3.8 7.4-8.5 7.4-1 0-2-.2-2.9-.5L4.2 20.5l1.3-3.6C4.4 15.7 3.5 13.9 3.5 12 3.5 7.9 7.3 4.6 12 4.6s8.5 3.3 8.5 7.4z"/></svg>';
 
 /**
  * Tek bir akış kartının HTML'i.
@@ -88,7 +90,7 @@ export function akisKart(a, sira = 0) {
       } decoding="async" data-orig="${kac(kaynak)}" onerror="${GORSEL_HATA}" />`
     : "";
 
-  return `<article class="ak" data-slug="${slug}" data-kat="${kac(a.categorySlug)}" data-ilgi="${puan}"${
+  return `<article class="ak" data-slug="${slug}" data-ad="${kac(a.title)}" data-kat="${kac(a.categorySlug)}" data-ilgi="${puan}"${
     a.breaking === true ? ' data-son="1"' : ""
   }>
   <div class="ak__gorsel${gorsel ? "" : " ak__gorsel--yok"}">
@@ -111,6 +113,7 @@ export function akisKart(a, sira = 0) {
     <div class="ak__eylem">
       <a class="ak__oku" href="/haber/${slug}/">Haberi oku</a>
       <button class="ak__ikon ak__begen" type="button" data-islem="begen" aria-pressed="false" aria-label="Bu haberi beğen" title="Beğen">${KALP_SVG}</button>
+      <button class="ak__ikon ak__yorum" type="button" data-islem="yorum" aria-label="Yorumlar" title="Yorumlar">${YORUM_SVG}</button>
       <button class="ak__ikon ak__kaydet" type="button" data-islem="kaydet" aria-pressed="false" aria-label="Bu haberi kaydet" title="Kaydet">${KAYIT_SVG}</button>
       <button class="ak__ikon ak__paylas" type="button" data-islem="paylas" aria-label="Bu haberi paylaş" title="Paylaş">${PAYLAS_SVG}</button>
     </div>
