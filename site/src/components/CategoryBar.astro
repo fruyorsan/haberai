@@ -14,17 +14,19 @@ const isActive = (slug) => path.startsWith(`/kategori/${slug}`);
     <div class="container catbar__inner">
       <span class="catbar__label" aria-hidden="true">Kategoriler</span>
 
-      <div class="catbar__scroll">
-        {cats.map((c) => (
-          <a
-            class:list={["catbar__item", { "is-active": isActive(c.slug) }]}
-            href={`/kategori/${c.slug}/`}
-            aria-current={isActive(c.slug) ? "page" : undefined}
-          >
-            {c.name}
-            <span class="catbar__n">{c.count}</span>
-          </a>
-        ))}
+      <div class="catbar__kutu">
+        <div class="catbar__scroll">
+          {cats.map((c) => (
+            <a
+              class:list={["catbar__item", { "is-active": isActive(c.slug) }]}
+              href={`/kategori/${c.slug}/`}
+              aria-current={isActive(c.slug) ? "page" : undefined}
+            >
+              {c.name}
+              <span class="catbar__n">{c.count}</span>
+            </a>
+          ))}
+        </div>
       </div>
 
       <a class="catbar__all" href="/kategoriler/">
@@ -56,6 +58,37 @@ const isActive = (slug) => path.startsWith(`/kategori/${slug}`);
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--muted);
+  }
+  .catbar__kutu {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+  }
+  /* Şeridin iki yanında "devamı var" solması. Sınıfları JS koyar; tüm
+     kategoriler sığıyorsa (kaydırma yoksa) solma hiç görünmez. */
+  .catbar__kutu::before,
+  .catbar__kutu::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 26px;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.18s var(--ease);
+  }
+  .catbar__kutu::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--surface) 20%, transparent);
+  }
+  .catbar__kutu::after {
+    right: 0;
+    background: linear-gradient(270deg, var(--surface) 20%, transparent);
+  }
+  .catbar__kutu.arti-sol::before,
+  .catbar__kutu.arti-sag::after {
+    opacity: 1;
   }
   .catbar__scroll {
     display: flex;
@@ -122,7 +155,7 @@ const isActive = (slug) => path.startsWith(`/kategori/${slug}`);
 
   @media (max-width: 720px) {
     .catbar__inner {
-      height: 52px;
+      height: 48px;
       gap: 8px;
     }
     .catbar__label {
@@ -135,8 +168,10 @@ const isActive = (slug) => path.startsWith(`/kategori/${slug}`);
       font-size: 0.86rem;
       scroll-snap-align: start;
     }
+    /* Telefonda sayılar gürültü yapıyor (687, 198…) ve çipi büyütüyor:
+       kategori adı tek başına yeter. Masaüstünde sayılar kalır. */
     .catbar__n {
-      font-size: 0.72rem;
+      display: none;
     }
     .catbar__all {
       min-height: 42px;
@@ -157,3 +192,35 @@ const isActive = (slug) => path.startsWith(`/kategori/${slug}`);
     }
   }
 </style>
+
+<script>
+  // Kategori şeridi: telefonda "yarım kalmış" görünmesin diye
+  //  1) kaydırılabildiğini kenar solmasıyla belli et,
+  //  2) aktif kategoriyi şeridin ortasına getir (hangi kategoride olduğun görünsün).
+  // Şerit ekranı dolduruyorsa (kaydırma yoksa) solma hiç çizilmez.
+  for (const kutu of document.querySelectorAll(".catbar__kutu")) {
+    const serit = kutu.querySelector(".catbar__scroll");
+    if (!serit) continue;
+
+    const guncelle = () => {
+      const kaydirilabilir = serit.scrollWidth - serit.clientWidth > 4;
+      kutu.classList.toggle("arti-sol", kaydirilabilir && serit.scrollLeft > 4);
+      kutu.classList.toggle(
+        "arti-sag",
+        kaydirilabilir && serit.scrollLeft + serit.clientWidth < serit.scrollWidth - 4,
+      );
+    };
+
+    const ortala = () => {
+      const aktif = serit.querySelector(".catbar__item.is-active");
+      if (!aktif || serit.scrollWidth - serit.clientWidth <= 4) return;
+      serit.scrollLeft = Math.max(0, aktif.offsetLeft - (serit.clientWidth - aktif.offsetWidth) / 2);
+    };
+
+    guncelle();
+    ortala();
+    guncelle();
+    serit.addEventListener("scroll", guncelle, { passive: true });
+    window.addEventListener("resize", guncelle);
+  }
+</script>
