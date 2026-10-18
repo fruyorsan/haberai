@@ -107,11 +107,20 @@ const jsonLd = {
   articleSection: article.category,
   keywords: (article.tags || []).join(", "),
   articleBody: body.length ? body.join("\n\n") : article.summary,
-  author: { "@type": "Organization", name: "HaberinAi" },
+  author: { "@type": "Organization", name: "HaberinAi", url: new URL("/", site).href },
   publisher: {
     "@type": "Organization",
     name: "HaberinAi",
-    logo: { "@type": "ImageObject", url: new URL("favicon.svg", site).href },
+    url: new URL("/", site).href,
+    // Google yayıncı logosunu KARE ve en az 112 px ister; kare PNG ikon
+    // (512x512) bu yüzden SVG yerine kullanılır — marka panelinde/News
+    // sonuçlarında logo görünür.
+    logo: {
+      "@type": "ImageObject",
+      url: new URL("ikon-512.png", site).href,
+      width: 512,
+      height: 512,
+    },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": articleUrl },
 };

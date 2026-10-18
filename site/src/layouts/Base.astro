@@ -79,7 +79,13 @@ const isArticle = ogType === "article";
         content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
       />
     )}
+    {/* Google, arama sonuçlarında site logosunu (favicon) yalnızca 48px'in
+        katı olan PNG/ICO adreslerden alır. SVG'yi de destekler ama en güvenilir
+        yol PNG bildirmektir: marka ikonu arama sonuçlarında görünsün. */}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/ikon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/ikon-512.png" />
+    <link rel="shortcut icon" href="/ikon-192.png" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />

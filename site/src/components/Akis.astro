@@ -111,6 +111,20 @@ const ilk = liste.slice(0, ilkSayi);
       </div>
     </section>
 
+    {/* Bildirim istemi: TEKRAR GELEN TRAFİĞİN en güçlü aracı. Yalnızca izin
+        verilmemişse ve okuyucu kapatmadıysa görünür. Buton, zildeki akışın
+        aynısını kullanır (OneSignal izni + optIn). */}
+    <div class="container">
+      <button class="akis__bel" id="akis-bel" type="button" hidden>
+        <span class="akis__bel-ikon" aria-hidden="true">🔔</span>
+        <span class="akis__bel-metin">
+          <strong>Yeni haberler cebine gelsin</strong>
+          <span>Son dakika ve takip ettiğin konular — ücretsiz, istediğin an kapat.</span>
+        </span>
+        <span class="akis__bel-btn" id="akis-bel-btn">Bildirimleri aç</span>
+      </button>
+    </div>
+
     <div class="akis__liste" id="akis-liste">
       <Fragment set:html={akisKartlar(ilk.slice(0, 12), 0)} />
       <AdSlot slot={ADSENSE_SLOTS.liste} label="Sponsorlu" />
@@ -564,5 +578,72 @@ const ilk = liste.slice(0, ilkSayi);
 
       // Akış sayfasından ayrılırken durumu tazele (geri dönüşte doğru görünsün).
       window.addEventListener("pageshow", boyaHepsi);
+
+      // --- Bildirim istemi (tekrar gelen trafik) ---------------------------
+      // Yalnızca tarayıcı izni henüz verilmemişse ve okuyucu istemi kapatmadıysa
+      // gösterilir. Buton, zildekiyle aynı akışı çalıştırır: OneSignal izni +
+      // push aboneliği (optIn). İzin verilirse istem kaybolur.
+      (function () {
+        const kutu = document.getElementById("akis-bel");
+        const btn = document.getElementById("akis-bel-btn");
+        if (!kutu || !btn) return;
+        const K_KAPALI = "akis-bildirim-kapali";
+        const izinVar = () => {
+          try {
+            return typeof Notification !== "undefined" && Notification.permission === "granted";
+          } catch {
+            return false;
+          }
+        };
+        const goster = () => {
+          try {
+            if (localStorage.getItem(K_KAPALI) === "1") return;
+          } catch {}
+          if (!izinVar()) kutu.hidden = false;
+        };
+        // İstem, sayfa içeriğini geciktirmesin: biraz sonra görünür.
+        setTimeout(goster, 1500);
+
+        btn.addEventListener("click", async (e) => {
+          e.stopPropagation();
+          btn.textContent = "Açılıyor…";
+          let oldu = false;
+          try {
+            const hazir = window.HaberinaiOS && window.HaberinaiOS.hazir;
+            const os = hazir
+              ? await Promise.race([
+                  hazir,
+                  new Promise((r) => setTimeout(() => r(null), 8000)),
+                ])
+              : null;
+            if (os) {
+              try {
+                os.setConsentGiven(true);
+              } catch {}
+              await Promise.race([
+                os.User.PushSubscription.optIn(),
+                new Promise((r) => setTimeout(r, 8000)),
+              ]);
+              oldu = Boolean(os.User?.PushSubscription?.optedIn) || izinVar();
+            }
+          } catch {}
+          if (oldu) {
+            btn.textContent = "Açıldı ✓";
+            bildir("Bildirimler açıldı — son dakika haberleri cebine gelecek.");
+            setTimeout(() => {
+              kutu.hidden = true;
+            }, 2200);
+          } else {
+            btn.textContent = "Bildirimleri aç";
+            try {
+              localStorage.setItem(K_KAPALI, "1");
+            } catch {}
+            bildir("Bildirim izni verilmedi. Tarayıcı ayarlarından açabilirsin.");
+            setTimeout(() => {
+              kutu.hidden = true;
+            }, 2200);
+          }
+        });
+      })();
     })();
   </script>

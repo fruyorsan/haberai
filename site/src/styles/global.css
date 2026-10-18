@@ -778,6 +778,73 @@ html.cerez-acik .to-top {
   color: var(--text);
 }
 
+/* --- Bildirim istemi: akışın tepesinde, izin verilmemişse görünür.
+       Tekrar gelen trafiğin motoru (push aboneliği) buradan büyür. --- */
+.akis__bel {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  margin: 16px 0 0;
+  padding: 13px 15px;
+  border-radius: 15px;
+  border: 1px solid rgba(216, 31, 38, 0.32);
+  background: linear-gradient(120deg, rgba(216, 31, 38, 0.14), rgba(216, 31, 38, 0.04));
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.akis__bel:hover {
+  border-color: var(--brand);
+  transform: translateY(-1px);
+}
+.akis__bel[hidden] {
+  display: none;
+}
+.akis__bel-ikon {
+  font-size: 1.35rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.akis__bel-metin {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+.akis__bel-metin strong {
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+.akis__bel-metin span {
+  font-size: 0.78rem;
+  color: var(--text-2);
+}
+.akis__bel-btn {
+  flex-shrink: 0;
+  padding: 9px 15px;
+  border-radius: 999px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 0.83rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+@media (max-width: 560px) {
+  .akis__bel {
+    flex-wrap: wrap;
+  }
+  .akis__bel-btn {
+    width: 100%;
+    text-align: center;
+    min-height: 42px;
+    display: grid;
+    place-items: center;
+  }
+}
+
 /* --- Süzgeçler ve kategori şeritleri: TEK satır --- */
 .akis__suz {
   display: flex;

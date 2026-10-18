@@ -3,11 +3,24 @@ import Base from "../layouts/Base.astro";
 import ArticleCard from "../components/ArticleCard.astro";
 import AdSlot from "../components/AdSlot.astro";
 import FeaturedSlider from "../components/FeaturedSlider.astro";
-import { getArticles, getFeatured, getTags, imageUrl, imageSrcset } from "../lib/articles.js";
+import { getArticles, getFeatured, getTags, imageUrl, imageSrcset, timeAgo, publishedISO } from "../lib/articles.js";
 import { kapakKaynagi } from "../lib/kapak.js";
+import { ilgiSirala } from "../lib/ilgi.js";
 import { siteOrigin, ADSENSE_SLOTS } from "../lib/site-meta.js";
 
 const articles = getArticles();
+// Shorts vitrini: ilgi sırasının en tepesindeki 4 haber (hepsi gerçek fotoğraflı).
+// Akışın ana sayfadaki yüzü burasıdır — ziyaretçiyi /akis/'a çeken görsel şerit.
+const shorts = ilgiSirala(articles)
+  .slice(0, 4)
+  .map((a) => ({
+    slug: a.slug,
+    url: `/haber/${a.slug}/`,
+    baslik: a.title,
+    kategori: a.category,
+    kapak: kapakKaynagi(a),
+    zaman: timeAgo(publishedISO(a)),
+  }));
 // Konu sayfalarına ana sayfadan da bağlantı verilir (hem gezinme hem arama
 // motorlarının konu sayfalarını keşfi için).
 const konular = getTags().slice(0, 14);
@@ -60,15 +73,21 @@ const siteSchema = {
       "@id": origin + "/#organization",
       name: "HaberinAi",
       url: origin + "/",
-      logo: origin + "/og-default.png",
+      // Kare logo (Google "yayıncı logosu" için kare ve >=112 px ister).
+      logo: {
+        "@type": "ImageObject",
+        url: origin + "/ikon-512.png",
+        width: 512,
+        height: 512,
+      },
     },
   ],
 };
 ---
 
 <Base
-  title="HaberinAi — Yapay Zekâ Destekli Haberler"
-  description="HaberinAi: yapay zekâ destekli teknoloji ve gündem haberlerinde özet, analiz ve editör yorumu."
+  title="HaberinAi — Son Dakika Haberleri, Teknoloji ve Yapay Zekâ"
+  description="Son dakika haberleri 5 dakikada bir güncellenir: teknoloji, yapay zekâ, oyun ve gündem. Özet, analiz ve AI yorumu; Shorts Haber ile kaydırarak oku."
   schema={siteSchema}
   preloadImage={heroImage || undefined}
   preloadSrcset={heroImageSet}
@@ -84,22 +103,60 @@ const siteSchema = {
       <>
         <FeaturedSlider />
 
-        <a class="akis-bant" href="/akis/">
-          <span class="akis-bant__sol">
-            <span class="akis-bant__rozet">
-              <span class="akis-bant__nokta" aria-hidden="true"></span> Yeni
-            </span>
-            <strong>Shorts Haber — kısa kısa haberler</strong>
-            <span class="akis-bant__alt">Kaydır, oku, beğen. Telefon için tasarlandı.</span>
-          </span>
-          <span class="akis-bant__btn">
-            Shorts'a gir
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <section class="shorts" aria-labelledby="shorts-baslik">
+          <div class="shorts__ust">
+            <h2 class="shorts__baslik" id="shorts-baslik">
+              <span class="shorts__play" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true">
+                  <path d="M8 5.5v13l11-6.5z" />
+                </svg>
+              </span>
+              Shorts Haber
+              <span class="shorts__nokta" aria-hidden="true"></span>
+            </h2>
+            <a class="shorts__tum" href="/akis/">
+              Akışa gir
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h13" />
+                <path d="m12.5 5.5 6.5 6.5-6.5 6.5" />
+              </svg>
+            </a>
+          </div>
+          <p class="shorts__alt">Kaydır, oku, beğen. Telefon için tasarlandı — her 5 dakikada tazelenir.</p>
+
+          <div class="shorts__serit">
+            {shorts.map((s) => (
+              <a class="shorts__kart" href={s.url}>
+                <span class="shorts__gorsel">
+                  {s.kapak && (
+                    <img
+                      src={imageUrl(s.kapak, 400)}
+                      srcset={imageSrcset(s.kapak, [400, 720])}
+                      sizes="(max-width: 720px) 62vw, 250px"
+                      alt={s.baslik}
+                      width="400"
+                      height="225"
+                      loading="lazy"
+                      decoding="async"
+                      referrerpolicy="no-referrer"
+                    />
+                  )}
+                  <span class="shorts__kat">{s.kategori}</span>
+                </span>
+                <span class="shorts__metin">{s.baslik}</span>
+                <span class="shorts__meta">{s.zaman}</span>
+              </a>
+            ))}
+          </div>
+
+          <a class="shorts__btn" href="/akis/">
+            Shorts'a gir — kaydırarak oku
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M5 12h13" />
               <path d="m12.5 5.5 6.5 6.5-6.5 6.5" />
             </svg>
-          </span>
-        </a>
+          </a>
+        </section>
 
         {tekno.length >= 3 && (
           <section class="tekno">
@@ -167,105 +224,190 @@ const siteSchema = {
 </Base>
 
 <style>
-  /* --- AI Akış bandı: ana sayfada akışın vitrini (mobilde en göze çarpan yer) --- */
-  .akis-bant {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 14px;
-    flex-wrap: wrap;
-    margin: 22px 0 6px;
-    padding: 16px 18px;
-    border-radius: 18px;
-    background: var(--brand-grad);
-    color: #fff;
-    box-shadow: 0 18px 40px -22px var(--brand-glow);
+  /* --- Shorts vitrini: ana sayfanın en göze çarpan yeri.
+         Akışın kendisi (/akis/) gibi koyu zemin + kırmızı vurgu kullanır;
+         gerçek fotoğraflı 4 kart gösterilir, tıklama /akis/'a yönlendirilir. --- */
+  .shorts {
+    margin: 22px 0 8px;
+    padding: 18px 18px 16px;
+    border-radius: 20px;
+    background: linear-gradient(160deg, #17181d 0%, #0b0d11 60%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 22px 46px -26px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(216, 31, 38, 0.14) inset;
     position: relative;
     overflow: hidden;
   }
-  .akis-bant::after {
+  .shorts::after {
     content: "";
     position: absolute;
-    inset: auto -30% -70% auto;
-    width: 320px;
-    height: 220px;
-    background: radial-gradient(closest-side, rgba(255, 255, 255, 0.28), transparent);
+    inset: -60% -20% auto auto;
+    width: 340px;
+    height: 260px;
+    background: radial-gradient(closest-side, rgba(216, 31, 38, 0.34), transparent);
     pointer-events: none;
   }
-  .akis-bant:hover {
-    filter: brightness(1.06);
-  }
-  .akis-bant__sol {
+  .shorts__ust {
     display: flex;
-    flex-direction: column;
-    gap: 3px;
-    min-width: 0;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    position: relative;
   }
-  .akis-bant__sol strong {
-    font-size: clamp(1.05rem, 3.6vw, 1.3rem);
-    font-weight: 900;
-    letter-spacing: -0.02em;
-  }
-  .akis-bant__alt {
-    font-size: 0.88rem;
-    opacity: 0.94;
-  }
-  .akis-bant__rozet {
+  .shorts__baslik {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    align-self: flex-start;
-    padding: 3px 10px;
-    border-radius: 999px;
-    background: rgba(0, 0, 0, 0.22);
-    font-size: 0.66rem;
-    font-weight: 800;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
+    gap: 9px;
+    margin: 0;
+    font-size: clamp(1.15rem, 4vw, 1.5rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: #fff;
   }
-  .akis-bant__nokta {
-    width: 6px;
-    height: 6px;
+  .shorts__play {
+    display: grid;
+    place-items: center;
+    width: 26px;
+    height: 26px;
     border-radius: 999px;
-    background: #fff;
-    animation: akisBantNabiz 2s var(--ease) infinite;
+    background: var(--brand);
+    color: #fff;
+    padding-left: 2px;
+    box-shadow: 0 8px 18px -8px var(--brand-glow);
   }
-  @keyframes akisBantNabiz {
+  .shorts__nokta {
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: #ff4d4d;
+    animation: shortsNabiz 2s var(--ease) infinite;
+  }
+  @keyframes shortsNabiz {
     0% {
-      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+      box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.75);
     }
     70% {
-      box-shadow: 0 0 0 7px rgba(255, 255, 255, 0);
+      box-shadow: 0 0 0 8px rgba(255, 77, 77, 0);
     }
     100% {
-      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+      box-shadow: 0 0 0 0 rgba(255, 77, 77, 0);
     }
   }
   @media (prefers-reduced-motion: reduce) {
-    .akis-bant__nokta {
+    .shorts__nokta {
       animation: none;
     }
   }
-  .akis-bant__btn {
+  .shorts__tum {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    padding: 11px 16px;
-    border-radius: 999px;
-    background: #fff;
-    color: var(--brand-strong);
+    gap: 6px;
+    font-size: 0.86rem;
     font-weight: 800;
+    color: rgba(255, 255, 255, 0.86);
     white-space: nowrap;
-    box-shadow: 0 10px 24px -14px rgba(0, 0, 0, 0.5);
+  }
+  .shorts__tum:hover {
+    color: #fff;
+  }
+  .shorts__alt {
+    margin: 6px 0 14px;
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.66);
+    position: relative;
+  }
+  .shorts__serit {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(190px, 250px);
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+  .shorts__kart {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    scroll-snap-align: start;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.2s var(--ease);
+  }
+  .shorts__kart:hover {
+    transform: translateY(-3px);
+  }
+  .shorts__gorsel {
+    position: relative;
+    display: block;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #23252c;
+  }
+  .shorts__gorsel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .shorts__kat {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    font-size: 0.66rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+  }
+  .shorts__metin {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.32;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .shorts__meta {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.74rem;
+  }
+  .shorts__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 14px;
+    padding: 13px 22px;
+    border-radius: 999px;
+    background: var(--brand);
+    color: #fff;
+    font-weight: 800;
+    box-shadow: 0 16px 32px -18px var(--brand-glow);
+    position: relative;
+    transition: transform 0.2s var(--ease), filter 0.2s var(--ease);
+  }
+  .shorts__btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
   }
   @media (max-width: 640px) {
-    .akis-bant {
-      padding: 15px 16px;
+    .shorts {
+      padding: 16px 14px 14px;
     }
-    .akis-bant__btn {
+    .shorts__serit {
+      grid-auto-columns: minmax(170px, 62vw);
+    }
+    .shorts__btn {
       width: 100%;
-      justify-content: center;
-      min-height: 46px;
+      min-height: 48px;
     }
   }
 

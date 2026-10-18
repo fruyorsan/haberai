@@ -163,6 +163,26 @@ npm run domain -- --acikla   # alan adı çözülüyorsa yayına alır (CNAME + 
 
 Geri alma: `gh variable delete CUSTOM_DOMAIN` ve GitHub Pages ayarlarından alan adını kaldır.
 
+#### Tek yayın adresi kuralı (Netlify kapatıldı)
+
+Sitenin **tek** adresi `https://haberinai.site`. `fruyorsan.github.io` adresi GitHub Pages
+tarafından otomatik olarak özel alan adına yönlendirilir (301).
+
+Netlify yayını **kaldırıldı** (18.10.2026): `haberai.netlify.app` üzerinde çok eski bir
+derleme duruyordu (başlık "HaberAI", `canonical: https://fruyorsan.github.io`) ve Google'da
+ikinci bir kopya olarak görünüyordu. Artık:
+
+- `pipeline.yml` içinde Netlify adımı yok (`.github/scripts/netlify-deploy.mjs` silindi),
+- `netlify.toml` bir sigortadır: Netlify'a yeniden dağıtım yapılırsa tüm istekler
+  `haberinai.site`'e 301 yönlendirilir ve `X-Robots-Tag: noindex` gönderilir,
+- `/api/sor` fonksiyonu hiçbir sayfadan çağrılmıyor; kodu `site/netlify/functions/sor.mjs`
+  altında duruyor (ileride ücretsiz başka bir sağlayıcıya taşınabilir).
+
+**Panelde yapılacak (tek seferlik, ücretsiz):** Netlify → Sites → ilgili site →
+*Site configuration → General → Delete site*. Eski kopya tamamen silinir. Aynı şekilde
+Google Search Console'da Netlify mülkü silinir; veriler `https://haberinai.site` mülkünden
+izlenir.
+
 ### AdSense (reklam)
 
 Reklam kodu ve reklam alanları **yalnızca** yayıncı kimliği tanımlıysa basılır; kimlik
