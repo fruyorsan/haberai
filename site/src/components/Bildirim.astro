@@ -456,7 +456,7 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
           "Bildirim servisine ulaşılamıyor (reklam engelleyici ya da ağ olabilir).";
       } else if (izinEngelli()) {
         durum.textContent =
-          "Bildirim izni kapalı. Tarayıcıda adres çubuğunun yanındaki simge (ya da menü → İzinler) → Bildirimler → İzin ver.";
+          "İzin kapalı görünüyor (bir kez \"İzin verme\" denmiş). Adres çubuğunun yanındaki simge → İzinler → Bildirimler → İzin ver, sonra sayfayı yenile.";
       } else if (abone) {
         const n = kategoriler.size;
         durum.textContent = sonDakika
