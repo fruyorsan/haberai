@@ -9,10 +9,12 @@
 // HIZ: iframe, kutu görünür alana yaklaşmadan (400px önce) yüklenmez.
 //
 // GÜVENLİK/BOZUK GÖRÜNÜM: giscus uygulaması depoya kurulu değilse giscus
-// "kurulu değil" hatası yollar. O durumda (ya da 8 sn içinde yanıt gelmezse)
-// kutu gizlenir ve Telegram paneli gösterilir — okuyucu asla boş/kırık bir
-// yorum kutusu görmez.
-import { GISCUS, TELEGRAM_URL } from "../lib/site-meta.js";
+// "kurulu değil" hatası yollar. O durumda (ya da 12 sn içinde yanıt gelmezse)
+// kutu gizlenir, yerine tek satırlık sessiz bir not kalır. DIŞARI YÖNLENDİRME
+// YOK (eskiden Telegram paneline atıyordu): yorum yeri her zaman site içinde.
+// giscus geç de olsa yüklenirse kutu geri açılır — yavaş bağlantıda yanlış
+// "kapalı" görünmesin.
+import { GISCUS } from "../lib/site-meta.js";
 
 interface Props {
   /** Yorum dizisi bu habere özel olsun diye kullanılan sabit anahtar. */
@@ -30,7 +32,7 @@ interface Props {
 
 const { slug, baslik, url, sade = false } = Astro.props;
 
-// Kimlikler tanımlıysa giscus denenir; değilse doğrudan Telegram paneli çizilir.
+// Kimlikler tanımlıysa giscus denenir; değilse doğrudan sessiz not çizilir.
 const giscusVar = Boolean(GISCUS.repo && GISCUS.repoId && GISCUS.kategoriId);
 const otomatik = !sade && Boolean(slug) && giscusVar;
 ---
@@ -68,22 +70,9 @@ const otomatik = !sade && Boolean(slug) && giscusVar;
     )
   }
 
-  <div class="yorum__yedek" data-yorum-yedek hidden={giscusVar}>
-    <p class="yorum__yedek-baslik">Bu haberin tartışması Telegram'da dönüyor</p>
-    <p class="yorum__yedek-alt">
-      Kanalımıza katıl; haberleri ilk sen gör, sorunu sor, görüşünü yaz. Yeni gelişmelerde
-      bildirim de düşer.
-    </p>
-    <a class="yorum__btn" href={TELEGRAM_URL} target="_blank" rel="noopener nofollow">
-      <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true">
-        <path d="M21.9 4.3 19 19.1c-.2 1-.8 1.2-1.6.8l-4.4-3.3-2.1 2c-.2.2-.4.4-.9.4l.3-4.4 8-7.2c.3-.3-.1-.5-.5-.2l-9.9 6.2-4.3-1.3c-.9-.3-.9-.9.2-1.3l16.6-6.4c.8-.3 1.5.2 1.2 1.2z" />
-      </svg>
-      Telegram'da tartış
-    </a>
-    <p class="yorum__yedek-not">
-      Yorumlar için daha iyisi geliyor; o zamana kadar kanal en hızlı yol.
-    </p>
-  </div>
+  <p class="yorum__kapali" data-yorum-kapali hidden={giscusVar}>
+    💬 Yorumlar şu an kapalı.
+  </p>
 </section>
 
 <style>
@@ -126,49 +115,16 @@ const otomatik = !sade && Boolean(slug) && giscusVar;
     font-size: 0.88rem;
     color: var(--text-2);
   }
-  .yorum__yedek {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    padding: 16px 17px;
-    border-radius: 15px;
-    border: 1px solid rgba(216, 31, 38, 0.28);
-    background: linear-gradient(125deg, rgba(216, 31, 38, 0.12), rgba(216, 31, 38, 0.03));
-  }
-  .yorum__yedek[hidden] {
-    display: none;
-  }
-  .yorum__yedek-baslik {
+  .yorum__kapali {
     margin: 0;
-    font-size: 1rem;
-    font-weight: 800;
-  }
-  .yorum__yedek-alt {
-    margin: 0;
-    font-size: 0.87rem;
+    padding: 12px 14px;
+    border: 1px dashed var(--border);
+    border-radius: 13px;
     color: var(--text-2);
-    line-height: 1.5;
+    font-size: 0.88rem;
   }
-  .yorum__btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 4px;
-    padding: 11px 20px;
-    border-radius: 999px;
-    background: var(--brand);
-    color: #fff;
-    font-weight: 800;
-    box-shadow: 0 14px 30px -18px var(--brand-glow);
-  }
-  .yorum__btn:hover {
-    filter: brightness(1.08);
-  }
-  .yorum__yedek-not {
-    margin: 2px 0 0;
-    font-size: 0.74rem;
-    color: var(--text-3, var(--text-2));
+  .yorum__kapali[hidden] {
+    display: none;
   }
 </style>
 
@@ -179,16 +135,23 @@ const otomatik = !sade && Boolean(slug) && giscusVar;
 
   const mesajlar = new WeakMap<HTMLElement, { gordum: boolean }>();
 
-  function yedekGoster(kok: Kok, kutu: HTMLElement | null, yedek: HTMLElement | null) {
+  function kutuKapat(kok: Kok, kutu: HTMLElement | null, kapali: HTMLElement | null) {
     if (kutu) kutu.hidden = true;
-    if (yedek) yedek.hidden = false;
+    if (kapali) kapali.hidden = false;
     kok.dataset.giscus = "0";
+  }
+
+  /** giscus geç de olsa geldi → kutu geri açılır (yanlış "kapalı" görünmesin). */
+  function kutuAc(kok: Kok, kutu: HTMLElement | null, kapali: HTMLElement | null) {
+    if (kutu) kutu.hidden = false;
+    if (kapali) kapali.hidden = true;
+    kok.dataset.giscus = "1";
   }
 
   function kur(kok: Kok, { yenile = false } = {}) {
     const kutu = kok.querySelector<HTMLElement>("[data-yorum-kutu]");
     if (!kutu) return;
-    const yedek = kok.querySelector<HTMLElement>("[data-yorum-yedek]");
+    const kapali = kok.querySelector<HTMLElement>("[data-yorum-kapali]");
     const bekle = kok.querySelector<HTMLElement>("[data-yorum-bekle]");
     const hedef = kok.querySelector<HTMLElement>("[data-yorum-giscus]");
     if (!hedef || kok.dataset.giscus === "0") return;
@@ -223,12 +186,14 @@ const otomatik = !sade && Boolean(slug) && giscusVar;
     s.setAttribute("data-loading", "lazy");
     hedef.appendChild(s);
 
-    // 8 sn içinde giscus'tan olumlu mesaj gelmezse yedek panel gösterilir.
+    // 12 sn içinde giscus'tan olumlu mesaj gelmezse kutu kapanır (yerinde yalnız
+    // sessiz not kalır). Süre geniş tutuldu: telefonda yavaş ağda giscus geç de
+    // olsa yüklenir ve aşağıdaki mesaj geldiğinde kutu geri açılır.
     const durum = { gordum: false };
     mesajlar.set(kok, durum);
     window.setTimeout(() => {
-      if (!durum.gordum && kok.dataset.giscus === "1") yedekGoster(kok, kutu, yedek);
-    }, 8000);
+      if (!durum.gordum && kok.dataset.giscus === "1") kutuKapat(kok, kutu, kapali);
+    }, 12000);
 
     window.addEventListener("message", (e) => {
       if (e.origin !== "https://giscus.app") return;
@@ -246,11 +211,13 @@ const otomatik = !sade && Boolean(slug) && giscusVar;
       const cerceve = hedef.querySelector("iframe");
       if (cerceve && (e.source as Window | null) !== cerceve.contentWindow) return;
       if (g.error) {
-        yedekGoster(kok, kutu, yedek);
+        kutuKapat(kok, kutu, kapali);
         return;
       }
       durum.gordum = true;
       if (bekle) bekle.hidden = true;
+      // Zaman aşımından sonra geldiyse kutuyu geri aç.
+      if (kok.dataset.giscus !== "1") kutuAc(kok, kutu, kapali);
       kok.dataset.giscusAktif = "1";
     });
   }

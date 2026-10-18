@@ -363,6 +363,12 @@ const ilk = liste.slice(0, ilkSayi);
 
       function yorumAc(kart) {
         if (!ySheet || !yYorum) return;
+        // giscus bu cihazda çalışmıyorsa (uygulama kurulu değil ya da hata)
+        // boş panel açmak yerine kısa bir bilgi verilir; dışarı yönlendirme yok.
+        if (yYorum.dataset.giscus === "0") {
+          bildir("Yorumlar şu an kapalı.");
+          return;
+        }
         // Panel zaten bu haber için açıksa sadece gösterilir (iframe yeniden kurulmaz).
         const ayni = ySlug && ySlug === kart.dataset.slug;
         ySlug = kart.dataset.slug || "";

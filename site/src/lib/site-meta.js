@@ -78,8 +78,9 @@ export const GA_MEASUREMENT_ID = process.env.GA_MEASUREMENT_ID || "G-C9BGECSKCM"
  * KURULUM (tek seferlik, 1 tık):
  *   1) Discussions açıldı (scripts ile yapıldı, bu repoda açık).
  *   2) https://github.com/apps/giscus → "Install" → fruyorsan/haberai seç.
- *      (Bu adım olmadan giscus yorum kutusu açılmaz; site o zaman
- *      Telegram panelini gösterir, kırık kutu görünmez.)
+ *      (Bu adım olmadan giscus yorum kutusu AÇILAMAZ: giscus "kurulu değil"
+ *      hatası verir ve yorum yerinde yalnız sessiz bir not kalır. Dışarı
+ *      yönlendirme yapılmaz; yorum yeri her zaman site içindedir.)
  *
  * Kimlikler gizli değildir (sayfaya açıkça yazılır). Değiştirmek için:
  *   gh variable set GISCUS_REPO_ID --body "R_..."  (ve diğerleri)
@@ -90,9 +91,6 @@ export const GISCUS = {
   kategori: process.env.GISCUS_KATEGORI || "Announcements",
   kategoriId: process.env.GISCUS_KATEGORI_ID || "DIC_kwDOVLD1_84DI4aP",
 };
-
-/** Yorum panelinde gösterilen Telegram bağlantısı (kanal açılınca değiştir). */
-export const TELEGRAM_URL = process.env.TELEGRAM_URL || "https://t.me/Haberinaibot";
 
 /**
  * OneSignal App ID (web push / bildirimler).

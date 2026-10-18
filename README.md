@@ -309,8 +309,12 @@ veritabanı, üyelik ve reklam yoktur.
 **Tek seferlik kurulum (1 tık):** Discussions açıldı (bu repoda açık; kategori
 `Announcements`). Kalan adım:
 <https://github.com/apps/giscus> → **Install** → `fruyorsan/haberai` seç.
-Kurulmadan da site bozulmaz: giscus yüklenemezse kutu gizlenir ve yerine Telegram
-paneli gösterilir (`TELEGRAM_URL`).
+
+Kurulmadan da site bozulmaz: giscus "kurulu değil" hatası verirse yorum kutusu
+gizlenir ve yerinde tek satırlık **sessiz** bir not kalır. **Dışarı yönlendirme
+yapılmaz** (eskiden Telegram paneline atıyordu; 18.10.2026'da kaldırıldı — yorum
+yeri her zaman site içinde kalır). giscus yavaş ağda geç yüklenirse kutu geri
+açılır (yanlış "kapalı" görünmez).
 
 ## IndexNow (Bing/Yandex anında bildirim)
 
