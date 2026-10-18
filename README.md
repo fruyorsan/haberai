@@ -338,6 +338,48 @@ npm run bildirim:dry     # ne gönderileceğini yazar, istek atmaz
 npm run bildirim         # gerçekten gönderir
 ```
 
+## AI Akış (`/akis/`) — kısa kısa haber akışı
+
+Ana sayfa "gazete", **AI Akış** "telefon uygulaması" gibi çalışır: dikey kaydırmalı,
+tam ekran kartlar (büyük gerçek fotoğraf → vurucu başlık → kısa AI özeti), tek dokunuşla
+**beğen / kaydet / paylaş**, çift dokunuşta kalp animasyonu, masaüstünde karta karta
+ilerleme (↑/↓, `j`/`k`, `l` beğen, `s` kaydet). Beğeni ve kayıtlar **cihazda** (localStorage)
+tutulur; sunucu ve hesap gerekmez.
+
+**Neden bu mimari:** site tamamen statik (GitHub Pages). Statik bir uç nokta sorgu
+dizesini (`?offset=`, `?kategori=`) göremez — her istek aynı dosyayı döndürür ve akışta
+tekrarlar oluşur. Bu yüzden:
+
+- İlk tur **HTML içinde** 24 haber bağı gerçek `<a>` olarak basılır (taranabilir, hafif).
+- Sonsuz kaydırma topları **üretim anında hazırlanan dosyalardan** gelir:
+  `/akis/sayfa/0.json`, `/akis/sayfa/24.json`, … (her dosyada 24 kartın hazır HTML'i).
+- Kategori akışları ayrı **gerçek adreslerdir**: `/akis/kategori/<slug>/`
+  (`noindex, follow`; site haritasına girmez — `/kategori/<slug>/` arşivinin kopyası
+  gibi görünmesinler diye). Kategori sayfalarında ilk tur 60 karttır; toplar global
+  listeden geldiği için istemci kategori dışı ve tekrar eden kartları ayıklar ve
+  görünür kart birikene kadar sıradaki topları okur.
+- Kaydırma tetikleyicisi `IntersectionObserver` + `scroll` yedeği; ayrıca her koşulda
+  çalışan **"Daha fazla haber"** düğmesi vardır (IO tetiklenmezse akış tıkanmaz).
+- Yükleme sırasında "Yükleniyor…" satırı açılıp kapanır; **gözcü (sentinel) öğenin
+  kendisi asla `hidden` olmaz** (gizli öğe IntersectionObserver tarafından görülemez).
+
+İlgili dosyalar:
+
+```
+site/src/components/Akis.astro        → akış gövdesi (genel + kategori ortak)
+site/src/lib/akis-kart.js             → kart şablonu (sunucu ve toplar aynı şablonu kullanır)
+site/src/pages/akis/index.astro       → /akis/ (CollectionPage + ItemList şeması)
+site/src/pages/akis/kategori/[slug].astro → /akis/kategori/<slug>/ (noindex)
+site/src/pages/akis/sayfa/[no].json.js    → /akis/sayfa/<ofset>.json topları
+site/src/components/AltMenu.astro     → telefondaki sabit alt gezinme (Akış merkezde)
+site/public/manifest.json             → ana ekrana eklenince doğrudan /akis/ açılır
+```
+
+Ayarlar: `AKIS_ILK` (sayfada basılan kart sayısı, varsayılan 24) ve `AKIS_TUR` (top
+başına kart, varsayılan 24) `site/src/lib/akis-kart.js` içindedir. Stil `global.css`
+sonundadır — **global olması bilinçlidir**: sonsuz kaydırmayla gelen kartlar Astro'nun
+bileşen kapsamlı (scoped) stillerini alamaz.
+
 ## Fotoğraflar (kapak güvenliği + haber içi ek fotoğraflar)
 
 Kaynak sitelerin RSS/haber sayfalarındaki görseller her zaman doğru olmuyor; yanlış
