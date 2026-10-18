@@ -38,3 +38,22 @@ jobs:
           ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
           BILDIRIM_TEST: "1"
         run: npm run bildirim
+
+      # "Bildirim açtım ama gelmiyor" şikâyetinin ilk bakılacak yeri: kayıtlı
+      # cihazların abonelik durumu. notification_types: 1 = abone, 0 = izin yok,
+      # -1/-2 = kapatılmış. Yalnızca teşhis amaçlı, salt okunur; cihaz kimliği
+      # (push token) bilerek yazılmaz.
+      - name: Abone durumu (salt okunur teşhis)
+        continue-on-error: true
+        env:
+          ONESIGNAL_APP_ID: ${{ vars.ONESIGNAL_APP_ID }}
+          ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
+        run: |
+          echo "--- aboneler (v1 /players) ---"
+          curl -s -H "Authorization: Key $ONESIGNAL_REST_API_KEY" \
+            "https://api.onesignal.com/players?app_id=$ONESIGNAL_APP_ID&limit=10" \
+            | jq -c '.players[] | {device_type, notification_types, platform, test_type, invalid_identifier, language, session_count, last_active}'
+          echo "--- abone toplamı ---"
+          curl -s -H "Authorization: Key $ONESIGNAL_REST_API_KEY" \
+            "https://api.onesignal.com/players?app_id=$ONESIGNAL_APP_ID&limit=1&fields=id" \
+            | jq -c '{total_count, offset, limit}'

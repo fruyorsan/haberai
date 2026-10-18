@@ -395,8 +395,17 @@ tıklanınca o kategori takip edilir ve ilk kez bildirim izni istenir.
   workflow'dur (`bildirim-test.yml`) ve depoya hiçbir şey yazmaz.
   Yerelde: `$env:BILDIRIM_TEST="1"; npm run bildirim`
 - **Günlük teşhis (CI günlüğü):** her turda `abone sayısı: N` ve uygulama satırı yazılır:
-  `kayıt: N | apns (iOS): kurulu/KURULU DEĞİL | safari_web_id | chrome_web`. iPhone'dan
-  abone olunup bildirim gelmiyorsa ilk bakılacak yer `apns (iOS)` alanıdır.
+  `apns (iOS): kurulu/KURULU DEĞİL | safari_web_id | chrome_web`. iPhone'dan abone
+  olunup bildirim gelmiyorsa ilk bakılacak yer `apns (iOS)` alanıdır.
+- **"Abone oldum ama bildirim gelmiyor" — en sık sebep:** tarayıcı izni verilmiş ama
+  OneSignal aboneliği kurulmamış olabilir. Gönderim yanıtı o zaman
+  `{"errors":["All included players are not subscribed"]}` döner (kayıt vardır,
+  abonelik yoktur). Site tarafı artık bunu ayırt eder: `Bildirim.astro` yalnızca
+  abonelik kimliği (`PushSubscription.id`) oluştuysa "açık" der; tarayıcı izni tek
+  başına yeterli sayılmaz (eskiden sayılıyordu → okuyucu "açıldı" görüp hiç bildirim
+  almıyordu). Sayfa açılışında izin varsa abonelik bir kez daha kurulmayı dener.
+  Ayrıntılı cihaz durumu için: Actions → **Bildirim Testi** → günlükte
+  `notification_types` (1 = abone, 0 = izin yok, -1/-2 = kapatılmış).
 - **Günlük tavan neden doluyor:** son dakika 6 + konu 3 = 9. Yoğun günlerde öğlene kadar
   dolabilir; bu kasıtlıdır (okuyucuyu boğmamak için). İlk izlenim "hoş geldin"
   bildirimiyle kurtarılır.

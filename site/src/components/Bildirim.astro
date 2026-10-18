@@ -356,6 +356,25 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
       }
     }
 
+    /**
+     * OneSignal aboneliği GERÇEKTEN kuruldu mu?
+     *
+     * `optedIn` tek başına yetmez: iOS Safari sekmesinde ya da service worker
+     * hazır olmadığında tarayıcı izni "granted" görünür ama OneSignal tarafında
+     * abonelik kimliği (id) hiç oluşmaz → sunucu tarafında kayıt vardır, bildirim
+     * yoktur ("All included players are not subscribed"). Bu yüzden abonelik
+     * kimliği de beklenir.
+     */
+    async function abonelikDurumu(OneSignal) {
+      let ps = OneSignal?.User?.PushSubscription;
+      for (let i = 0; i < 8 && ps?.optedIn === true && !ps?.id; i++) {
+        await new Promise((r) => setTimeout(r, 400));
+        ps = OneSignal?.User?.PushSubscription;
+      }
+      const idVar = ps && "id" in ps ? ps.id : undefined;
+      return Boolean(ps?.optedIn) && (idVar === undefined ? true : Boolean(idVar));
+    }
+
     /** İzin ister ve push aboneliğini açar. @returns {Promise<boolean>} */
     async function aboneBaslat() {
       const OneSignal = await sdkYukle();
@@ -374,7 +393,9 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
       } catch {
         /* kullanıcı izni vermediyse abone kalınmaz */
       }
-      abone = Boolean(OneSignal.User?.PushSubscription?.optedIn) || izinVerildi();
+      // Abonelik kurulmadıysa abone SAYILMAZ (eskiden tarayıcı izni yeterli
+      // sayılıyordu: okuyucu "açıldı" görüyor ama hiç bildirim gelmiyordu).
+      abone = await abonelikDurumu(OneSignal);
       yaz(K_ABONE, abone);
       etiketYaz(OneSignal);
       return abone;
@@ -427,7 +448,10 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
             : "";
       } else if (iosKuruluDegil()) {
         durum.textContent =
-          "iPhone'da bildirim için: Paylaş → Ana Ekrana Ekle, sonra buradan aç.";
+          "iPhone'da bildirim için: Paylaş → Ana Ekrana Ekle, sonra o ikondan aç.";
+      } else if (izinVerildi()) {
+        durum.textContent =
+          "İzin var ama abonelik kurulamadı. Sayfayı yenileyip tekrar dene; olmazsa tarayıcı ayarlarından site verilerini temizle.";
       } else {
         durum.textContent = "Açmak için bir konu seç ya da son dakikayı aç.";
       }
@@ -563,15 +587,28 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
     // okuyucu izni tarayıcı ayarlarından kapatmışsa zil söner.
     if (abone || izinVerildi()) {
       const esitle = () =>
-        sdkYukle().then((os) => {
+        sdkYukle().then(async (os) => {
           if (!os) return;
           izinVer(os);
-          const durum = os?.User?.PushSubscription?.optedIn;
-          if (durum === true) {
+          const ps = os?.User?.PushSubscription;
+          // İzin verilmiş ama abonelik kurulmamışsa bir kez daha denenir: okuyucu
+          // "açtım" sanıp hiç bildirim almıyordu (iOS sekmesi / SW gecikmesi).
+          if (izinVerildi() && ps && ps.optedIn !== true) {
+            try {
+              await Promise.race([
+                ps.optIn(),
+                new Promise((r) => setTimeout(r, 6000)),
+              ]);
+            } catch {
+              /* yok say */
+            }
+          }
+          const durum = await abonelikDurumu(os);
+          if (durum) {
             abone = true;
             yaz(K_ABONE, true);
             etiketYaz(os);
-          } else if (durum === false && abone) {
+          } else {
             abone = false;
             yaz(K_ABONE, false);
           }
@@ -581,5 +618,18 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
       if ("requestIdleCallback" in window) requestIdleCallback(esitle, { timeout: 4000 });
       else setTimeout(esitle, 2500);
     }
+
+    // Akış sayfasındaki bildirim istemi AYNI yolu kullansın diye küçük bir API
+    // açılır (tek doğru kaynağı olsun; iki ayrı akış ayrı sonuç vermesin).
+    window.HaberinaiPush = {
+      aboneBaslat: async () => {
+        const oldu = await aboneBaslat();
+        ciz();
+        return oldu;
+      },
+      izinVerildi,
+      izinEngelli,
+      iosKuruluDegil,
+    };
   })();
 </script>

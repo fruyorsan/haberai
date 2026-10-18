@@ -784,22 +784,33 @@ const ilk = liste.slice(0, ilkSayi);
           btn.textContent = "Açılıyor…";
           let oldu = false;
           try {
-            const hazir = window.HaberinaiOS && window.HaberinaiOS.hazir;
-            const os = hazir
-              ? await Promise.race([
-                  hazir,
-                  new Promise((r) => setTimeout(() => r(null), 8000)),
-                ])
-              : null;
-            if (os) {
-              try {
-                os.setConsentGiven(true);
-              } catch {}
-              await Promise.race([
-                os.User.PushSubscription.optIn(),
-                new Promise((r) => setTimeout(r, 8000)),
-              ]);
-              oldu = Boolean(os.User?.PushSubscription?.optedIn) || izinVar();
+            // Tek doğru kaynak: zilin (Bildirim.astro) kullandığı akış. Böylece
+            // "izin var ama abonelik kurulmadı" durumu burada da doğru görünür.
+            const api = window.HaberinaiPush;
+            if (api) {
+              oldu = await api.aboneBaslat();
+            } else {
+              const hazir = window.HaberinaiOS && window.HaberinaiOS.hazir;
+              const os = hazir
+                ? await Promise.race([
+                    hazir,
+                    new Promise((r) => setTimeout(() => r(null), 8000)),
+                  ])
+                : null;
+              if (os) {
+                try {
+                  os.setConsentGiven(true);
+                } catch {}
+                await Promise.race([
+                  os.User.PushSubscription.optIn(),
+                  new Promise((r) => setTimeout(r, 8000)),
+                ]);
+                // Yalnızca tarayıcı izni yeterli DEĞİL: abonelik kimliği de
+                // oluşmalı (yoksa bildirim hiç gelmez).
+                const ps = os?.User?.PushSubscription;
+                const idVar = ps && "id" in ps ? ps.id : undefined;
+                oldu = Boolean(ps?.optedIn) && (idVar === undefined ? true : Boolean(idVar));
+              }
             }
           } catch {}
           if (oldu) {
@@ -810,10 +821,23 @@ const ilk = liste.slice(0, ilkSayi);
             }, 2200);
           } else {
             btn.textContent = "Bildirimleri aç";
-            try {
-              localStorage.setItem(K_KAPALI, "1");
-            } catch {}
-            bildir("Bildirim izni verilmedi. Tarayıcı ayarlarından açabilirsin.");
+            const api = window.HaberinaiPush;
+            const izinVarMi = api?.izinVerildi?.() ?? izinVar();
+            const engelli = api?.izinEngelli?.() === true;
+            // İzin verilmiş ama abonelik kurulmadıysa istemi KAPATMA: okuyucu
+            // (örneğin "Ana Ekrana Ekle"den sonra) yeniden deneyebilsin.
+            if (!izinVarMi) {
+              try {
+                localStorage.setItem(K_KAPALI, "1");
+              } catch {}
+            }
+            bildir(
+              engelli
+                ? "Bildirim izni engellenmiş. Adres çubuğundaki kilit simgesinden açabilirsin."
+                : izinVarMi
+                  ? "İzin var ama abonelik kurulamadı. Sayfayı yenileyip tekrar dene."
+                  : "Bildirim izni verilmedi. Tarayıcı ayarlarından açabilirsin."
+            );
             setTimeout(() => {
               kutu.hidden = true;
             }, 2200);
