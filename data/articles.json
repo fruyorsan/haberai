@@ -1,35 +1,101 @@
 [
   {
-    "id": "d67e079b1ce7d0f4",
-    "title": "Türkiye'nin yüksek kesimlerinde ekim ayında kar yağışı etkili oldu",
-    "slug": "turkiyenin-yuksek-kesimlerinde-ekim-ayinda-kar-yagisi-etkili-oldu",
-    "summary": "Hava sıcaklıklarının aniden düşmesiyle Türkiye'nin farklı illerindeki yaylalar ve yüksek kesimler beyaz örtüyle kaplandı. Manisa, Afyonkarahisar, Sakarya, Düzce, Uşak ve Karabük'te mevsimin ilk kar manzaraları kaydedildi.",
+    "id": "1af65f559e3cf4d7",
+    "title": "OpenCode Console, güvenlik ihlalinin yüzdesini ve kapsamını duyurdu",
+    "slug": "opencode-console-guvenlik-ihlalinin-kapsamini-duyurdu",
+    "summary": "OpenCode, 17 Ekim tarihli açıklamasıyla Console platformunda harici anahtar kullanan kullanıcıların etkilendiğini bildirdi. Şirket, kullanıcıların toplam yüzde 1,4'lük kesiminin model damıtma saldırısı bağlamında risk altında kaldığını kaydetti.",
     "keyPoints": [
-      "Manisa Alaşehir ve Demirci'nin 1650 rakımlı yaylasında kar kalınlığı 5 santimetreyi buldu.",
-      "Afyonkarahisar'daki 2250 rakımlı Kumalar Yaylası'na akşam saatlerinde kar yağdı.",
-      "Sakarya, Düzce, Uşak ve Karabük'ün yüksek kesimlerinde kar manzaraları dronla görüntülendi."
+      "Güvenlik ihlali Console kullanıcılarının yüzde 1,4 oranındaki kesimini etkiledi.",
+      "Olay, harici yapay zeka anahtarlarını kendi hesaplarıyla bağlayanları kapsıyor.",
+      "OpenCode, Anthropic, OpenAI ve Google ile birlikte çalıştığını açıkladı."
     ],
     "body": [
-      "Türkiye genelinde mevsim normallerinin altına inen hava sıcaklıkları, yüksek kesimlerde kış manzaralarının erken görülmesine yol açtı. Meteorolojik koşulların değişmesiyle birlikte pek çok şehirde sağanak yağmur yerini kar yağışına bırakırken, vatandaşlar şaşkınlık yaşadı. Özellikle rakımı yüksek yayla ve köylerde termometreler eksi değerleri görmeye başladı.",
-      "Manisa'nın Alaşehir ile Demirci ilçelerinin dağlık bölgelerinde başlayan yağış kısa sürede etkisini artırdı. Demirci merkezinde yağmur yağarken, 1650 rakımlı Büyük Yayla mevkisinde kar kalınlığı 5 santimetreyi geçti ve bölgedeki sıcaklık sıfırın altında 3 dereceye kadar geriledi. Benzer şekilde Afyonkarahisar sınırları içindeki 2250 metre rakımlı Kumalar Yaylası da akşam saatlerinde beyaza büründü ve doğaseverlerin akınına uğradı.",
-      "Sakarya ve Düzce illerinde de yüksek kesimler kar yağışından nasibini aldı. Uşak'ın yüksek köylerinde ve ormanlık alanlarında ise gece saatlerinde başlayan mevsimin ilk karı etkisini hissettirdi.",
-      "Karabük'ün Safranbolu ilçesindeki Ömür Ahmet Kıran mevkisi de soğuk havanın etkisiyle beyaza bürünen noktalar arasında yer aldı. Bölgede ortaya çıkan manzaralar dron yardımıyla havadan kayıt altına alınırken, sonbahar aylarında yaşanan bu erken kış provası bölge halkı için sürpriz oldu."
+      "Yazılım geliştirme süreçlerinde farklı modelleri destekleyen OpenCode, Console platformunda yaşanan veri ihlalinin detaylarını paylaştı. Yayımlanan 17 Ekim tarihli resmi duyuruya göre, olaydan yalnızca harici yapay zeka sağlayıcılarını kendi API anahtarlarıyla sisteme bağlayan hesaplar zarar gördü. Şirket, bu grubun toplam kullanıcı kitlesinin yüzde 1,4'üne denk geldiğini ifade ederken, durumun büyük ölçekli bir model damıtma saldırısıyla bağlantılı olduğunu aktardı.",
+      "Etkilenen hesap sahiplerinin tamamına elektronik posta yoluyla bilgilendirme yapıldığı, herhangi bir uyarı almayan kişilerin ise bu durumdan etkilenmediği vurgulandı. Uygulamayı sıradan bir şekilde kullanmanın risk altında olmak anlamına gelmediği, asıl belirleyici unsurun harici sağlayıcı anahtarı kullanımı olduğu belirtildi. Yetkililer, ilgili kullanıcıların eski anahtarlarını acilen iptal edip yenilemeleri gerektiğini hatırlattı.",
+      "Çözüm süreci boyunca Anthropic, OpenAI ve Google gibi dev teknoloji şirketleriyle ortak bir çalışma yürütüldüğü açıklandı. Console üzerinden harici sağlayıcı bağlantısı kuran geliştiricilerin, OpenCode istemcisine doğrudan eklenen yerel dosya tabanlı anahtarlarla bu durumu karıştırmaması gerektiği ifade edildi. İki farklı bağlantı yönteminin ayrı altyapılarda çalışması, sızıntının sınırlarını daraltan bir etken olarak öne çıktı.",
+      "Farklı model sağlayıcılarıyla kodlama yapan profesyonellerin, yalnızca uygulama ekranındaki geçmiş kayıtlarına bakmasının yeterli olmayabileceği uyarısı yapıldı. Kullanılan harici sağlayıcının kendi yönetim panelindeki son hareketlerin de incelenmesi gerektiği bildirildi. Yeni anahtar oluşturma adımının tek başına yetersiz kalacağı, eski erişim izinlerinin de mutlaka sonlandırılması gerektiği kaydedildi.",
+      "Şirket tarafından paylaşılan belgelerde çalışma alanı üzerinden model erişiminin ayrı bir hizmet olarak sunulduğu bilgisi yer alsa da, bu genel dokümanların teknik inceleme raporu niteliği taşımadığı ifade edildi. Toplam maddi kayıp veya sızan anahtar adedi gibi detayların paylaşılmadığı süreçte, kesin kapsamın doğrudan gönderilen bildirimlerle netleşeceği belirtildi."
     ],
-    "comment": "Ekim ayında yurdun çeşitli bölgelerinde görülen bu erken kar yağışları, önümüzdeki kış mevsiminin sert geçebileceğine dair ilk sinyalleri veriyor. Özellikle 2250 metre rakımlı Kumalar Yaylası ve 1650 rakımlı Büyük Yayla gibi yüksek noktalarda ölçülen sıfırın altındaki sıcaklıklar, ulaşımda yaşanabilecek aksamalara karşı şimdiden hazırlık yapılması gerektiğini gösteriyor. Şehir merkezlerinde hâlâ sonbahar yaşanırken dağlık kesimlerin aniden beyaza bürünmesi, üreticileri ve bölge halkını tedbir almaya zorlayacaktır.",
-    "editorNote": "Sonbahar devam ederken yurdun yüksek yaylaları sürpriz bir şekilde beyaz örtüye büründü.",
+    "comment": "Geliştiricilerin harici API anahtarlarını kendi hesaplarıyla entegre ederken güvenlik duvarlarını daha sıkı tutması gerektiği netleşti. Şirketin duyurduğu yüzde 1,4'lük oran küçük görünse de, model damıtma saldırılarının hedefindeki geliştiriciler için potansiyel maliyetler doğurabilir. Özellikle kurumsal projelerde anahtar yönetiminin denetlenmemesi, projelerin kaynak tüketim maliyetlerini doğrudan yukarı çekecektir. Geliştiriciler yalnızca yeni anahtar üretmekle yetinmeyip, sağlayıcı panellerindeki eski yetkilendirmeleri tamamen kaldırmalıdır.",
+    "editorNote": "Yalnızca harici API anahtarı kullanan hesapların etkilendiği olayda, şirket kullanıcıların anahtarlarını yenilemesini istiyor.",
+    "tags": [
+      "OpenCode",
+      "Console",
+      "API",
+      "Yapay Zeka",
+      "Güvenlik İhlali"
+    ],
+    "category": "Teknoloji",
+    "source": "Teknoblog",
+    "sourceUrl": "https://www.teknoblog.com/opencode-console-api-anahtari-ihlali/",
+    "image": "https://img.poweredcache.net/www.teknoblog.com/wp-content/uploads/2026/10/iphone-18-pro-inceleme-1.jpeg?w=1280&ssl=1&format=webp",
+    "publishedAt": "2026-10-18T16:58:04.000Z",
+    "generatedAt": "2026-10-18T16:59:31.088Z",
+    "breaking": true
+  },
+  {
+    "id": "3d1323deff14fc4c",
+    "title": "Sergey Lavrov: Zelenskiy Moskova ile müzakere masasına oturmaktan kaçınıyor",
+    "slug": "sergey-lavrov-zelenskiy-moskova-ile-muzakere-masasina-oturmaktan-kaciniyor",
+    "summary": "Rusya Dışişleri Bakanı Sergey Lavrov, Ukrayna'nın mutabakat sağlanan dönemlerde sivil hedeflere saldırdığını belirterek Kiev yönetiminin uzlaşı aramadığını söyledi. Bahreyn'deki temasları sırasında konuşan Lavrov, Batılı ülkelerin enerji piyasalarına zarar verdiğini savundu.",
+    "keyPoints": [
+      "Lavrov, Ukrayna yönetiminin uzlaşı sağlandığı anlarda sivil altyapıyı hedef aldığını ifade etti.",
+      "Moskova'daki Gaz İhraç Eden Ülkeler Forumu zirvesi 28-29 Ekim tarihlerinde gerçekleştirilecek.",
+      "Rusya dışişleri bakanı, Zelenskiy'in Paris ve İstanbul müzakerelerini sonlandırdığını hatırlattı."
+    ],
+    "body": [
+      "Toplantı kapsamında ABD ile yürütülen dizel yakıt temasına değinen Lavrov, bu meselenin iki ülkenin kendi dinamikleri arasında ele alındığını kaydetti. Açıklamalarında enerji güvenliğinin ortak payda olduğuna vurgu yapan bakan, OPEC+ ve Gaz İhraç Eden Ülkeler Forumu bünyesinde işbirliklerinin kararlılıkla sürdürüldüğünü belirtti.",
+      "Küresel enerji piyasalarındaki istikrarın önemine dikkat çeken Lavrov, 28-29 Ekim tarihlerinde Moskova'da düzenlenecek Gaz İhraç Eden Ülkeler Forumu zirvesine Devlet Başkanı Vladimir Putin'in ev sahipliği yapacağını duyurdu. Batılı devletlerin Ukrayna'ya verdikleri milyarlarca dolarlık fonlarla ülkeyi desteklerken enerji piyasalarına zarar verdiğini öne süren Lavrov, bu ülkelerin Rusya içindeki petrol rafinerilerine ve sivil tesislere yönelik saldırıları teşvik ettiğini iddia etti.",
+      "Donald Trump'ın girişimleri doğrultusunda geçmişte taraflar arasında bazı anlayış birliklerine varıldığını hatırlatan Lavrov, bu mutabakatların hemen ardından Ukrayna'nın sivil hedeflere yönelik saldırılarını artırdığını dile getirdi. Zelenskiy'in uluslararası toplumun odağını sürekli üzerinde tutmaya çalıştığını belirten Rus bakan, 2019 yılındaki Paris anlaşmalarının engellendiğini ve 2025 yazında İstanbul'da yürütülen müzakerelerin de sonlandırıldığını savundu.",
+      "Abu Dabi'deki üçlü temasların ardından yalnızca Moskova'nın inisiyatifiyle ilerleme kaydedilebildiğini aktaran Lavrov, Ukrayna liderinin uzlaşma sürecine yanaşmadığını ifade etti. Bu tutumun arkasında, Rusya ve Amerika Birleşik Devletleri ile varılacak herhangi bir anlaşmanın kendi yönetiminin sonu olacağını bilmesinin yattığını öne sürdü."
+    ],
+    "comment": "Lavrov'un açıklamaları, sahadaki askeri hareketlilik ile diplomatik masadaki tıkanıklığın doğrudan birbirini tetiklediğini açıkça ortaya koyuyor. Çatışmanın tarafları arasında Ekim ayındaki zirveler ve geçmişteki İstanbul ile Paris mutabakatları ekseninde yaşanan bu sert diplomatik retorik, krizin yakın vadede barışçıl bir zemine oturmasını zorlaştırıyor. Ukrayna'nın sivil altyapıya yönelik saldırıları sürdüğü sürece, Moskova yönetimi müzakere kapılarını tamamen kapatma eğilimini sürdürecek gibi görünüyor. Mevcut diplomatik çıkmaz, enerji piyasaları ve küresel tedarik zincirleri üzerindeki baskının artmasına yol açabilir.",
+    "editorNote": "Lavrov'a göre Ukrayna'nın sivil hedeflere saldırıları müzakere ihtimalini bitiriyor; Ekim zirvesi öncesi Moskova'dan sert mesajlar var.",
+    "tags": [
+      "Sergey Lavrov",
+      "Volodimir Zelenskiy",
+      "Rusya",
+      "Ukrayna",
+      "Bahreyn"
+    ],
+    "category": "Dünya",
+    "source": "Cumhuriyet",
+    "sourceUrl": "https://www.cumhuriyet.com.tr/turkiye/rusya-dan-ukrayna-aciklamasi-zelenskiy-moskova-ile-muzakere-istemiyor-2547973",
+    "image": "https://media.cumhuriyet.com.tr/Archive/3126dba6-1779-4074-a5dc-fa3108326cbd.jpg",
+    "publishedAt": "2026-10-18T16:56:00.000Z",
+    "generatedAt": "2026-10-18T16:59:51.954Z"
+  },
+  {
+    "id": "d67e079b1ce7d0f4",
+    "title": "Ekim ayında kış geldi: Türkiye'nin altı ilinde yaylalar beyaza büründü",
+    "slug": "ekim-ayinda-kis-geldi-turkiyenin-alti-ilinde-yaylalar-beyaza-burundu",
+    "summary": "Mevsim normallerinin altına inen hava sıcaklıkları nedeniyle Türkiye'nin farklı bölgelerindeki yüksek kesimlerde kar yağışı görüldü. Manisa, Afyonkarahisar, Sakarya, Düzce, Uşak ve Karabük'ün yüksek yaylaları sezonun ilk karıyla kaplandı.",
+    "keyPoints": [
+      "Manisa Demirci'deki 1650 rakımlı yaylada kar kalınlığı 5 santimetreyi geçti.",
+      "Afyonkarahisar'ın 2250 rakımlı Kumalar Yaylası akşam saatlerinde beyaza büründü.",
+      "Sakarya ve Düzce'nin yüksek kesimlerindeki yaylalarda kar manzaraları oluştu."
+    ],
+    "body": [
+      "Ülke genelinde hava sıcaklıklarının hissedilir derecede azalması, yüksek rakımlı noktalarda mevsim geçişini hızlandırdı. Manisa'nın Alaşehir ile Demirci ilçelerinin dağlık kesimlerinde yağmur yerini kısa sürede kar yağışına bıraktı. Demirci merkezinde soğuk ve yağışlı hava hakim olurken, bin 650 rakımlı Büyük Yayla mevkisinde termometreler sıfırın altında 3 dereceyi gördü.",
+      "Bölgede kısa süre içinde etkisini artıran yağış sonucunda kar kalınlığı 5 santimetrenin üstüne çıktı. Yaylanın beyaza büründüğünü gören doğaseverler ve bölge sakinleri yüksek kesimlere çıkarak manzarayı takip etti. Benzer şekilde Afyonkarahisar sınırlarında yer alan 2 bin 250 rakımlı Kumalar Yaylası da akşam saatlerinde başlayan sağanağın ardından kar yağışıyla kaplandı.",
+      "Sakarya ve Düzce çevrelerinde de günlerdir süren soğuk hava dalgası yüksekleri etkiledi. Sakarya Hendek'te bin 722 rakımlı Dikmen Yaylası ile bin 500 rakımlı Çiğdem Yaylası beyaz örtüyle buluştu. Düzce tarafında ise Gölyaka'daki Kardüz Yaylası ile Kaynaşlı'daki Sinekli Yaylası kar yağışından nasibini alan noktalar arasında yer aldı.",
+      "Uşak genelinde dün akşam saatlerinde başlayan mevsimin ilk kar yağışı gece boyunca etkisini sürdürdü. Yüksek kesimlerdeki köy yerleşimleri ve ormanlık sahalar beyaz örtüyle kaplanırken günlük yaşam soğuk havadan etkilendi. Karabük'ün Safranbolu ilçesindeki Ömür Ahmet Kıran mevkisi de kar yağışının ardından kartpostallık görüntülere sahne oldu ve bu anlar havadan kaydedildi."
+    ],
+    "comment": "Erken gelen kar yağışları, önümüzdeki haftalarda yaşanabilecek sert kış şartlarının habercisi niteliğindedir. Altyapı hazırlıklarını erken tamamlamayan yerel yönetimler ve sürücüler için bu erken yağışlar ciddi bir uyarı niteliği taşıyor. Özellikle bin metrenin üzerindeki yayla yollarını kullanan vatandaşların tedbirsiz yola çıkmaması gerekiyor. Bu durum, sonbahar geçişinin beklenenden daha sert geçeceğini net bir şekilde gösteriyor.",
+    "editorNote": "Mevsim normallerinin altındaki sıcaklıklar altı ilde yaylaları beyaza bürüdü; yüksek kesimlerde kar kalınlığı 5 santimetreyi aştı.",
     "tags": [
       "kar yağışı",
       "hava durumu",
-      "yayla",
+      "yaylalar",
       "meteoroloji",
-      "ekim"
+      "sonbahar"
     ],
     "category": "Gündem",
     "source": "Sözcü Gündem",
     "sourceUrl": "https://www.sozcu.com.tr/ekim-ayinda-kar-manzaralari-turkiye-nin-bircok-ili-beyaza-burundu-p370400",
     "image": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/karjpg-qCeyOgi6Hk2rNlvbSIovMg.jpg?w=1280&h=720&mode=crop&scale=both",
     "publishedAt": "2026-10-18T16:50:16.000Z",
-    "generatedAt": "2026-10-18T16:53:42.854Z"
+    "generatedAt": "2026-10-18T17:00:02.801Z"
   },
   {
     "id": "89083f986017edb6",
@@ -127,6 +193,39 @@
     "image": "https://img.piri.net/piri/upload/3/2026/10/18/863b1570-devlet-tiyatrolari-gazzedeki-soykirimi-sahneye-tasidi.webp",
     "publishedAt": "2026-10-18T16:45:51.000Z",
     "generatedAt": "2026-10-18T16:47:42.478Z"
+  },
+  {
+    "id": "647e45b0c90c72ae",
+    "title": "Bedrettin Kalın, Artvin il başkanlığı ön seçiminde 2 bin 23 oy aldı",
+    "slug": "artvin-on-secimini-bedrettin-kalin-kazandi",
+    "summary": "Yeni Parti Artvin teşkilatının il başkanlığı için düzenlediği ön seçimin galibi Bedrettin Kalın oldu. Toplam 3 bin 756 oyun kullanıldığı süreçte Kalın 2 bin 23 oy alırken, rakibi Okan Ersöz bin 695 oyda kaldı.",
+    "keyPoints": [
+      "Bedrettin Kalın 2 bin 23 oy alarak il başkanlığı ön seçimini kazandı.",
+      "Okan Ersöz ise yarışta bin 695 oya ulaştı ve toplam katılım 3 bin 756 oldu.",
+      "Artvin genelinde merkez dahil farklı ilçelerde toplam 16 sandık kuruldu."
+    ],
+    "body": [
+      "Yeni Parti teşkilatı bünyesinde düzenlenen il başkanlığı yarışında sandıklar kapandı ve sonuçlar netleşti. Artvin genelinde toplam 3 bin 756 seçmen oy kullanırken, bu oyların 41 tanesi geçersiz sayıldı. Sürecin sonunda Bedrettin Kalın rakibini geride bırakarak ipi göğüsleyen isim oldu.",
+      "Gerçekleştirilen organizasyonda Artvin merkezde üç, Arhavi, Hopa ve Şavşat bölgelerinde ikişer, Ardanuç, Borçka, Kemalpaşa, Murgul ile Yusufeli ilçelerinde ise birer sandık kuruldu.",
+      "Merkezdeki üç sandıkta toplam 984 oy kullanılırken, bu sandıklardan Okan Ersöz 592 oy çıkardı. Bedrettin Kalın ise merkezde 376 oy alırken, ilçe sonuçlarının da eklenmesiyle toplam oy sayısını 2 bin 23'e yükseltti. Okan Ersöz'ün toplam oy sayısı ise bin 695 olarak kayıtlara geçti.",
+      "Oylamanın ardından iki aday da ortak bir demokrasi vurgusu yaparak birlik mesajları verdi. Bedrettin Kalın kazanan ya da kaybeden ayrımı yapmadıklarını, yola beraber devam edeceklerini ifade etti. Okan Ersöz ise parti için çalışmalarını sürdüreceğini ve verilecek her göreve hazır olduğunu belirtti."
+    ],
+    "comment": "Demokratik olgunlukla tamamlanan bu tür süreçler, parti içi dengelerin tabana nasıl yansıdığını net şekilde gösterir. Merkezdeki oy dağılımı ile ilçelerdeki sandık sonuçlarının farklı eğilimler barındırması, tabandaki rekabetin homojen olmadığını ortaya koyuyor. Kalın'ın 2 bin 23 oy barajını aşarak ipi göğüslemesi, bundan sonraki süreçte partinin yerel dinamiklerini tek bir elde toplama zorunluluğunu doğuruyor. Ersöz'ün bin 695 oy alarak süreci bırakmayacağını açıklaması ise parti içi uyumun korunması adına stratejik bir hamle olarak değerlendirilebilir.",
+    "editorNote": "Ön seçim maratonunda 2 bin 23 oy toplayan Kalın galibiyeti göğüslerken, adayların sandık sonundaki uzlaşı mesajları dikkat çekti.",
+    "tags": [
+      "Artvin",
+      "Yeni Parti",
+      "Bedrettin Kalın",
+      "Okan Ersöz",
+      "Ön Seçim"
+    ],
+    "category": "Gündem",
+    "source": "Gündem Artvin",
+    "sourceUrl": "https://www.gundemartvin.com/artvinde-on-secimi-bedrettin-kalin-kazandi",
+    "image": "https://gundemartvincom.teimg.com/crop/1280x720/gundemartvin-com/uploads/2026/10/medya/ekim-2026/688631c1-ee1b-4065-b2cb-53d7ce522ea8.jpeg",
+    "publishedAt": "2026-10-18T16:43:00.000Z",
+    "generatedAt": "2026-10-18T16:59:41.181Z",
+    "breaking": true
   },
   {
     "id": "64bd8af6d6ab6d0a",
@@ -803,38 +902,6 @@
     "breaking": true
   },
   {
-    "id": "84df27ead67d2239",
-    "title": "Ümraniyespor, 2-0 Galip Çıkarak Vanspor'u Aşırdı",
-    "slug": "umraniyespor-2-0-galip-cikarak-vansporu-asirdi",
-    "summary": "Ümraniyespor, TFF 1. Lig’in 11. haftasında deplasmanda Vanspor’u 2-0 mağlup etti. 60. dakikada A. Blanco’nun golüyle öne geçip, 82. dakikada S. Hostikka’nın golüyle farkı ikiye çıkardı. Oyun, 90+2’de Oğuz Yıldırım’ın kırmızı kartla sona erdi.",
-    "keyPoints": [
-      "A. Blanco 60. dakikada gol atarak 1-0’ı sağladı",
-      "S. Hostikka 82. dakikada ikinci golüyle 2-0’ı tamamladı",
-      "Berat Yılmaz iki asistle maçta kritik rol oynadı"
-    ],
-    "body": [
-      "Ümraniyespor, TFF 1. Lig’in 11. haftasında Manisa’nın Akhisar İlçesi’ndeki Spor Toto Akhisar Stadyumu’nda ev sahibi Vanspor FK’yi 2-0 yenerek deplasmanda galibiyetini kaydetti.",
-      "İlk yarıda golsüz eşitlikten sonra, 60. dakikada A. Blanco’nun geyiğiyle 1-0 öne geçildi. Bu gol, takımın hücum hattındaki koordinasyonun bir sonucu olarak görüldü.",
-      "İkinci yarının 82. dakikasında S. Hostikka’nın atardışı golü farkı ikiye çıkardı ve maçın akışını net bir şekilde belirledi.",
-      "Berat Yılmaz, 57. dakikada oyuna dahil olarak, 60. ve 82. dakikadaki gollere asistler yaparak takımın zaferinde iki asistle büyük rol oynadı.",
-      "Oyun, 90+2 dakikasında Oğuz Yıldırım’ın kırmızı kartla sona ermesiyle tamamlarken, Berat Yılmaz 71. dakikada sarı kart, Kerem Şen 90. dakikada ve A. de Oliveira 90+2’de sarı kart gördü.",
-      "Maçın sonunda, Ümraniyespor 2-0’lık skorla evine dönerken, Vanspor ise deplasmanda mağlubiyetle mücadeleye devam edecekti. Bu sonuç, 11. haftadaki lig puan tablosunu etkileyerek takımların sezon içindeki konumlarını şekillendirdi."
-    ],
-    "comment": "Bu galibiyet, Ümraniyespor’un sezon içindeki yükselişini pekiştiriyor. A. Blanco’nun 60. dakikadaki golü, takımın hücum organizasyonunun ne kadar etkili olduğunu gösteriyor. Bu performans, takımdaki savunma eksikliklerinin giderilmesiyle birlikte, oyuncuların moralini artırıyor. Önceki haftalarda yaşanan düşük performanslara kıyasla, bu skor 1. Lig’in 11. haftasında rakipleriyle rekabetçi bir konuma geçmelerine işaret ediyor.",
-    "editorNote": "Ümraniyespor’un 2-0 galibiyeti, ikinci yarıda atılan gollerin etkisiyle şekillendi. Oyun sonunda kırmızı kartla sona eren maç, takımların taktiksel dengesini gözler önüne seriyor.",
-    "tags": [
-      "Ümraniyespor",
-      "Vanspor",
-      "TFF 1. Lig"
-    ],
-    "category": "Gündem",
-    "source": "Cumhuriyet",
-    "sourceUrl": "https://www.cumhuriyet.com.tr/spor/umraniyespor-galibiyeti-ikinci-yarida-kapti-2547969",
-    "image": "https://media.cumhuriyet.com.tr/Archive/e1cd9e7f-6728-4437-b8b0-773ce3f4a56c.jpg",
-    "publishedAt": "2026-10-18T16:05:00.000Z",
-    "generatedAt": "2026-10-18T16:06:52.104Z"
-  },
-  {
     "id": "73a618c73f64cf05",
     "title": "Ümraniyespor, Vanspor deplasmanında ikinci yarıda bulduğu gollerle kazandı",
     "slug": "umraniyespor-vanspor-deplasmaninda-ikinci-yarida-buldugu-gollerle-kazandi",
@@ -866,6 +933,38 @@
     "publishedAt": "2026-10-18T16:05:00.000Z",
     "generatedAt": "2026-10-18T16:12:43.237Z",
     "breaking": true
+  },
+  {
+    "id": "84df27ead67d2239",
+    "title": "Ümraniyespor, 2-0 Galip Çıkarak Vanspor'u Aşırdı",
+    "slug": "umraniyespor-2-0-galip-cikarak-vansporu-asirdi",
+    "summary": "Ümraniyespor, TFF 1. Lig’in 11. haftasında deplasmanda Vanspor’u 2-0 mağlup etti. 60. dakikada A. Blanco’nun golüyle öne geçip, 82. dakikada S. Hostikka’nın golüyle farkı ikiye çıkardı. Oyun, 90+2’de Oğuz Yıldırım’ın kırmızı kartla sona erdi.",
+    "keyPoints": [
+      "A. Blanco 60. dakikada gol atarak 1-0’ı sağladı",
+      "S. Hostikka 82. dakikada ikinci golüyle 2-0’ı tamamladı",
+      "Berat Yılmaz iki asistle maçta kritik rol oynadı"
+    ],
+    "body": [
+      "Ümraniyespor, TFF 1. Lig’in 11. haftasında Manisa’nın Akhisar İlçesi’ndeki Spor Toto Akhisar Stadyumu’nda ev sahibi Vanspor FK’yi 2-0 yenerek deplasmanda galibiyetini kaydetti.",
+      "İlk yarıda golsüz eşitlikten sonra, 60. dakikada A. Blanco’nun geyiğiyle 1-0 öne geçildi. Bu gol, takımın hücum hattındaki koordinasyonun bir sonucu olarak görüldü.",
+      "İkinci yarının 82. dakikasında S. Hostikka’nın atardışı golü farkı ikiye çıkardı ve maçın akışını net bir şekilde belirledi.",
+      "Berat Yılmaz, 57. dakikada oyuna dahil olarak, 60. ve 82. dakikadaki gollere asistler yaparak takımın zaferinde iki asistle büyük rol oynadı.",
+      "Oyun, 90+2 dakikasında Oğuz Yıldırım’ın kırmızı kartla sona ermesiyle tamamlarken, Berat Yılmaz 71. dakikada sarı kart, Kerem Şen 90. dakikada ve A. de Oliveira 90+2’de sarı kart gördü.",
+      "Maçın sonunda, Ümraniyespor 2-0’lık skorla evine dönerken, Vanspor ise deplasmanda mağlubiyetle mücadeleye devam edecekti. Bu sonuç, 11. haftadaki lig puan tablosunu etkileyerek takımların sezon içindeki konumlarını şekillendirdi."
+    ],
+    "comment": "Bu galibiyet, Ümraniyespor’un sezon içindeki yükselişini pekiştiriyor. A. Blanco’nun 60. dakikadaki golü, takımın hücum organizasyonunun ne kadar etkili olduğunu gösteriyor. Bu performans, takımdaki savunma eksikliklerinin giderilmesiyle birlikte, oyuncuların moralini artırıyor. Önceki haftalarda yaşanan düşük performanslara kıyasla, bu skor 1. Lig’in 11. haftasında rakipleriyle rekabetçi bir konuma geçmelerine işaret ediyor.",
+    "editorNote": "Ümraniyespor’un 2-0 galibiyeti, ikinci yarıda atılan gollerin etkisiyle şekillendi. Oyun sonunda kırmızı kartla sona eren maç, takımların taktiksel dengesini gözler önüne seriyor.",
+    "tags": [
+      "Ümraniyespor",
+      "Vanspor",
+      "TFF 1. Lig"
+    ],
+    "category": "Gündem",
+    "source": "Cumhuriyet",
+    "sourceUrl": "https://www.cumhuriyet.com.tr/spor/umraniyespor-galibiyeti-ikinci-yarida-kapti-2547969",
+    "image": "https://media.cumhuriyet.com.tr/Archive/e1cd9e7f-6728-4437-b8b0-773ce3f4a56c.jpg",
+    "publishedAt": "2026-10-18T16:05:00.000Z",
+    "generatedAt": "2026-10-18T16:06:52.104Z"
   },
   {
     "id": "6fabdd6b50d4f72b",
