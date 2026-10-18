@@ -130,21 +130,46 @@ async function durumYaz(durum) {
 }
 
 /**
- * OneSignal'deki abone sayısı. Okunamazsa null döner (çağıran karar verir).
- * Neden gerekli: günlük tavan dolduğunda gönderim yapılmadığı için
- * yanıttaki "recipients" alanı da gelmez; abone sayısını ayrıca sormak
- * gerekiyor (hem günlük bilgi hem "hoş geldin" kararı için).
+ * OneSignal uygulama bilgisi: abone sayısı (`players`) + iOS/Safari kurulumu.
+ * Neden gerekli: (1) günlük tavan dolduğunda gönderim yapılmadığı için yanıttaki
+ * "recipients" alanı da gelmez, abone sayısı ayrıca okunmalı; (2) iPhone'dan
+ * abone olup bildirim gelmiyorsa sebep neredeyse her zaman `apns` alanıdır
+ * (Apple platformu + APNs anahtarı tanımlı değilse iOS'a teslim edilemez).
+ * Hata durumunda null döner; çağıran karar verir.
  */
-async function aboneSayisi() {
+async function uygulamaBilgi() {
   try {
-    const res = await fetch(`https://api.onesignal.com/apps/${APP_ID}/users?limit=1`, {
+    const res = await fetch(`https://api.onesignal.com/apps/${APP_ID}`, {
       headers: { Authorization: `Key ${REST_KEY}` },
       signal: AbortSignal.timeout(15000),
     });
     if (!res.ok) return null;
-    const j = await res.json();
-    const n = Number(j?.total_count);
-    return Number.isFinite(n) ? n : null;
+    return await res.json();
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Gönderilen bildirimin teslim raporu (successful/failed/errored). Bunu günlüğe
+ * yazmak "bildirim gitti mi?" sorusunu tahmine bırakmaz: abone varsa ve
+ * `failed > 0` ise teslim tarafında (genelde iOS/APNs) sorun var demektir.
+ */
+async function teslimRaporu(id) {
+  if (!id) return null;
+  try {
+    const res = await fetch(
+      `https://api.onesignal.com/notifications/${id}?app_id=${APP_ID}`,
+      { headers: { Authorization: `Key ${REST_KEY}` }, signal: AbortSignal.timeout(15000) }
+    );
+    if (!res.ok) return null;
+    const n = await res.json();
+    return {
+      basarili: n.successful,
+      basarisiz: n.failed,
+      hata: n.errored,
+      durum: n.state || n.status || "",
+    };
   } catch {
     return null;
   }
@@ -255,32 +280,26 @@ export async function bildirimleriGonder({ dry = false } = {}) {
   // gönderilir. Günlük tavandan ve asgari aralıktan BAĞIMSIZDIR; yalnızca bir kez
   // çalışır (durum.hosGeldin). Elle test: BILDIRIM_TEST=1 (tavan yok sayılır).
   const test = process.env.BILDIRIM_TEST === "1";
-  const abone = await aboneSayisi();
-  console.log(`Bildirim: abone sayısı: ${abone === null ? "okunamadı" : abone}${dry ? " [dry]" : ""}`);
+  const uygulama = await uygulamaBilgi();
+  const abone =
+    uygulama && Number.isFinite(Number(uygulama.players)) ? Number(uygulama.players) : null;
+  console.log(
+    `Bildirim: abone sayısı: ${abone === null ? "okunamadı" : abone}${dry ? " [dry]" : ""}`
+  );
 
   // Teşhis: iPhone/Safari web push kurulu mu? iPhone'da bildirim gelmiyorsa
   // sebep neredeyse her zaman budur (Apple platformu + APNs anahtarı tanımlı
-  // değilse iOS aboneleri sessizce abone olamaz). Ayrıntı README'de.
-  if (!dry) {
-    try {
-      const r = await fetch(`https://api.onesignal.com/apps/${APP_ID}`, {
-        headers: { Authorization: `Key ${REST_KEY}` },
-        signal: AbortSignal.timeout(15000),
-      });
-      if (r.ok) {
-        const a = await r.json();
-        console.log(
-          `Bildirim: uygulama "${a.name}" | kayıt: ${a.players ?? "-"} | ` +
-            `apns (iOS): ${a.apns_env ? "kurulu" : "KURULU DEĞİL"} | ` +
-            `safari_web_id: ${a.safari_web_id ? "var" : "yok"} | ` +
-            `chrome_web: ${a.chrome_web_origin ? "var" : "yok"}`
-        );
-      } else {
-        console.log(`Bildirim: uygulama bilgisi okunamadı (HTTP ${r.status}).`);
-      }
-    } catch {
-      /* teşhis amaçlı; gönderimi engellemez */
-    }
+  // değilse iOS aboneleri sessizce bildirim alamaz). Ayrıntı README'de.
+  if (uygulama) {
+    console.log(
+      `Bildirim: uygulama "${uygulama.name}" | apns (iOS): ${
+        uygulama.apns_env ? "kurulu" : "KURULU DEĞİL"
+      } | safari_web_id: ${uygulama.safari_web_id ? "var" : "yok"} | chrome_web: ${
+        uygulama.chrome_web_origin ? "var" : "yok"
+      }`
+    );
+  } else if (!dry) {
+    console.log("Bildirim: uygulama bilgisi okunamadı (teşhis atlandı).");
   }
 
   if (!dry && (test || durum.hosGeldin !== true) && (test || abone === null || abone > 0)) {
@@ -294,7 +313,14 @@ export async function bildirimleriGonder({ dry = false } = {}) {
         ttl: 86400,
         anahtar: `hos-geldin-${tr.gun}-${test ? Date.now() : "1"}`,
       });
-      console.log(`  ✓ [${test ? "test" : "hoş geldin"}]${yanit?.id ? ` (${yanit.id})` : ""}${aliciNotu(yanit)}`);
+      console.log(`  ✓ [${test ? "test" : "hoş geldin"}] yanıt: ${JSON.stringify(yanit).slice(0, 200)}`);
+      const rapor = await teslimRaporu(yanit?.id);
+      if (rapor) {
+        console.log(
+          `    teslim: başarılı ${rapor.basarili ?? "?"} | başarısız ${rapor.basarisiz ?? "?"} | ` +
+            `hata ${rapor.hata ?? "?"}${rapor.durum ? ` | durum ${rapor.durum}` : ""}`
+        );
+      }
       // "Hoş geldin" yalnızca gerçekten bir cihaza ulaştıysa bir kez gönderilmiş
       // sayılır. Abone yoksa (0 cihaz) işaret konmaz; ilk abone geldiğinde
       // gönderilir. Böylece "izin verdim, hiç bildirim gelmedi" durumu oluşmaz.
