@@ -322,10 +322,20 @@ export async function bildirimleriGonder({ dry = false } = {}) {
         );
       }
       // "Hoş geldin" yalnızca gerçekten bir cihaza ulaştıysa bir kez gönderilmiş
-      // sayılır. Abone yoksa (0 cihaz) işaret konmaz; ilk abone geldiğinde
-      // gönderilir. Böylece "izin verdim, hiç bildirim gelmedi" durumu oluşmaz.
+      // sayılır. Abone yoksa / gönderim reddedildiyse işaret konmaz; cihaz
+      // gerçekten abone olduğunda gönderilir. Böylece "izin verdim, hiç bildirim
+      // gelmedi" durumu oluşmaz. (Örnek hata: {"id":"","errors":["All included
+      // players are not subscribed"]} — kayıt var, abonelik yok.)
+      const hataVar =
+        Boolean(yanit && yanit.errors) || !yanit?.id;
       const ulasan = Number(yanit?.recipients);
-      const ulasti = Number.isFinite(ulasan) ? ulasan > 0 : abone === null ? true : abone > 0;
+      const ulasti = Number.isFinite(ulasan)
+        ? ulasan > 0
+        : hataVar
+          ? false
+          : abone === null
+            ? true
+            : abone > 0;
       if (ulasti) durum.hosGeldin = true;
       sayilan++;
     } catch (err) {
