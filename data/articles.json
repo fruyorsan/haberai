@@ -1,5 +1,106 @@
 [
   {
+    "id": "12db18f8d9ef248c",
+    "title": "Bilecik'te su birikintisinde mahsur kalan işçiler kurtarıldı",
+    "slug": "bilecikte-su-birikintisinde-mahsur-kalan-isciler-kurtarildi",
+    "summary": "Bilecik 1. Organize Sanayi Bölgesi'nde sağanak nedeniyle oluşan su birikintisinde mahsur kalan işçi servisindeki yolcular, ekiplerin zamanında müdahalesiyle kurtarıldı. Bölgeye sevk edilen AFAD ve itfaiye görevlileri midibüstekileri güvenli alana taşıdı.",
+    "keyPoints": [
+      "Bilecik 1. Organize Sanayi Bölgesi'nde olay meydana geldi.",
+      "Sağanak yağış nedeniyle yol üzerinde su birikintisi oluştu.",
+      "AFAD ve itfaiye ekipleri mahsur kalanları güvenle tahliye etti."
+    ],
+    "body": [
+      "Bilecik bölgesinde etkisini gösteren ani sağanak yağışlar, günlük yaşamı ve ulaşımı olumsuz yönde etkilemeye devam ediyor. Şehrin üretim merkezlerinden biri olan 1. Organize Sanayi Bölgesi'nde mesaiye yetişmeye çalışan işçileri taşıyan bir servis midibüzü, yolda oluşan derin su birikintisinin içinde kaldı.",
+      "Sürücünün su birikintisinden geçmeye çalıştığı sırada aracın motor kısmının su alması neticesinde midibüs arıza yaparak hareket kabiliyetini tamamen yitirdi. Su seviyesinin kısa süre içinde yükselmesiyle birlikte araç içerisindeki işçiler mahsur kalma tehlikesiyle karşı karşıya geldi.",
+      "Durumun 112 Acil Çağrı Merkezi'ne bildirilmesi üzerine bölgeye çok sayıda arama kurtarma ekibi yönlendirildi. İl Afet ve Acil Durum Müdürlüğü ile belediye itfaiye birimleri kısa sürede olay yerine ulaşarak mahsur kalan vatandaşların tahliyesi için çalışma başlattı.",
+      "Ekiplerin koordineli çalışması sonucunda midibüs içerisindeki işçiler herhangi bir yaralanma yaşanmadan güvenli noktalara nakledildi. Su birikintisi nedeniyle yolda kalan servis aracı ise incelemelerin ardından çekici yardımıyla bulunduğu yerden kaldırıldı."
+    ],
+    "comment": "Sanayi bölgelerinde altyapı yetersizliklerinin yağışlı havalarda oluşturduğu riskler, Bilecik'teki olayla bir kez daha görüldü. AFAD ve itfaiyenin hızlı reaksiyonu olası bir facianın önüne geçse de, fabrika güzergahlarındaki yolların drenaj sistemlerinin acilen gözden geçirilmesi şart. İşçi taşımacılığı yapan araçların bu tür su basmalarına karşı daha donanımlı rotalar izlemesi gerekiyor.",
+    "editorNote": "Şiddetli yağışların sanayi ulaşımında yarattığı tehlike Bilecik'teki kurtarma operasyonuyla gözler önüne serildi.",
+    "tags": [
+      "Bilecik",
+      "AFAD",
+      "işçi servisi",
+      "su baskını",
+      "itfaiye"
+    ],
+    "category": "Gündem",
+    "source": "CNN Türk",
+    "sourceUrl": "https://www.cnnturk.com/yerel-haberler/bilecik/bilecikte-su-birikintisinde-mahsur-kalan-isci-servisindeki-kisiler-kurtarildi-3480977",
+    "image": "https://image.cnnturk.com/i/cnnturk/75/1200x675/57834bf8f0dc1e53e4fccb9d.jpg",
+    "publishedAt": "2026-10-18T09:43:05.514Z",
+    "generatedAt": "2026-10-18T09:43:35.149Z"
+  },
+  {
+    "id": "0f377683b024318c",
+    "title": "OpenCode API anahtarları açığa çıktı: 1,4% kullanıcı etkilenmiş",
+    "slug": "opencode-api-anahtarlari-acig-cti-14-per-kullanicilar-etkilenmis",
+    "summary": "OpenCode, açık kaynaklı kod yazma ajansı, büyük ölçekli bir distillation saldırısı sonucu API anahtarlarının açığa çıktığını duyurdu. 1,4% kullanıcı etkilenmiş ve bu kullanıcıların hesaplarına OpenAI, Anthropic gibi sağlayıcıların anahtarları sızmış durumda. Şirket, etkilenenlere e-posta göndererek anahtarları iptal etmelerini ve yenilerini oluşturmasını istedi.",
+    "keyPoints": [
+      "1,4% OpenCode Console kullanıcıları etkilendi",
+      "API anahtarları OpenAI, Anthropic ve Google’den açığa çıktı",
+      "Şirket e-posta ile kullanıcıları bilgilendirdi ve yenileme önerdi"
+    ],
+    "body": [
+      "OpenCode, geliştiricilere kod yazma süreçlerinde yardımcı olan açık kaynaklı bir ajandır. Şirket, bu hafta büyük bir güvenlik ihlali yaşadığını açıkladı. Açık kaynaklı araçların popülerliğiyle, kullanıcı tabanının geniş olması nedeniyle olayın etkisi büyüktür.",
+      "Bu saldırı sonucunda OpenCode Console kullanıcılarının yaklaşık yüzde 1,4'ü etkilendi. Etkilenen hesaplarda OpenAI, Anthropic ve Google gibi üçüncü parti sağlayıcıların API anahtarları açığa çıktı.",
+      "OpenCode, etkilenen tüm kullanıcıları e-posta yoluyla bilgilendirdi ve anahtarlarının geçersiz olduğunu bildirdi. Şirket, kullanıcıların mevcut API anahtarlarını iptal etmelerini ve yenilerini oluşturup hesaplarını kontrol etmelerini önerdi. E-posta almayan kullanıcıların ise sistem tarafından etkilenmediği bildirildi.",
+      "Distillation saldırıları, model eğitiminde veri sızıntısına yol açabilir ve üçüncü taraf sağlayıcıların güvenliği için risk oluşturur. OpenCode, bu olayda Anthropic, OpenAI ve Google ile iş birliği içinde çalıştığını belirtti. Şirket, gelecekte benzer saldırıların önlenmesi için güvenlik önlemlerini güçlendirecek.",
+      "Kullanıcıların API anahtarlarının açığa çıkması, potansiyel olarak yüksek maliyetli kullanımın da önünü açabilir. Reddit kullanıcıları, izinsiz harcamalarla karşılaştıklarını bildiriyor; bazı hesaplarda yüzlerce dolarlık faturalandırmalar fark edildi. OpenCode, bu harcamaların kontrolü için kullanıcıların son kullanım geçmişini incelemelerini önerdi.",
+      "Şirket, distillation saldırısının ayrıntılarını hâlâ araştırıyor ve yetkililere bilgi veriyor. Kullanıcıların güvenliği için geçici olarak OpenCode Console'daki bazı özellikler devre dışı bırakıldı. OpenCode, saldırının kökenini belirledikten sonra sistemlerini yeniden yapılandıracak ve kullanıcıların verilerini koruyacak.",
+      "Distillation saldırısı, yapay zeka araştırma topluluğunda son zamanlarda artan bir tehdit olarak kabul ediliyor. OpenCode, bu olayda Anthropic, OpenAI ve Google ile birlikte çalıştığını açıkladı; bu şirketler, saldırının teknik yönlerini analiz etmeye devam ediyor. Kullanıcıların API anahtarlarının güvenliği için OpenCode, şifreleme ve erişim kontrollerini güçlendirecek yeni protokoller geliştirdiğini duyurdu."
+    ],
+    "comment": "OpenCode'un 1,4% kullanıcıyı etkileyen distillation saldırısı, API anahtarlarının sızmasıyla ortaya çıktı. Bu, geliştiricilerin projelerinde kullandıkları üçüncü parti hizmetlerin güvenliğini doğrudan tehdit ediyor. Kullanıcıların hızlıca anahtarlarını iptal etmeleri ve yenilerini oluşturmaları gerekmekte. Şirketin bu konuda hızlı tepki vermesi, olası mali kayıpların önlenmesine yardımcı olabilir. Ancak, benzer saldırıların tekrar yaşanma ihtimali, yazılım güvenliği alanında daha sıkı önlemlerin alınmasını zorunlu kılıyor.",
+    "editorNote": "OpenCode’un API anahtarları açığa çıkması, geliştiricilerin günlük iş akışını doğrudan etkileyebilir. Hızlı müdahale ve yeni güvenlik protokolleri, gelecekteki riskleri azaltma…",
+    "tags": [
+      "OpenCode",
+      "API",
+      "distillation saldırısı",
+      "güvenlik",
+      "yapay zeka"
+    ],
+    "category": "Yapay Zeka",
+    "source": "LOG",
+    "sourceUrl": "https://www.log.com.tr/opencode-bazi-api-anahtarlarini-aciga-cikaran-bir-guvenlik-ihlali-yasadi/",
+    "image": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-18_12-23-20_knpEc.jpg",
+    "publishedAt": "2026-10-18T09:39:39.000Z",
+    "generatedAt": "2026-10-18T09:43:14.104Z",
+    "breaking": true
+  },
+  {
+    "id": "644e8cdbe3ff21f7",
+    "title": "Vietnam Demiryolu Rotaları Dünyanın En İyi 20 Seyahat Listesinde",
+    "slug": "vietnam-demiryolu-rotalari-dunyanin-en-iyi-20-seyahat-listesinde",
+    "summary": "Condé Nast Traveler dergisi tarafından açıklanan listede Vietnam'dan iki özel tren güzergahı yer aldı. Hue-Da Nang hattı ile lüks Vietage treni, uluslararası gezginlere ülkenin kültürel ve doğal zenginliklerini sunuyor.",
+    "keyPoints": [
+      "Hue-Da Nang tarihi tren rotası listede 10. sırada yer alıyor.",
+      "The Vietage by Anantara lüks treni listenin 14. sırasında bulunuyor.",
+      "Seçimler 39. yıllık Condé Nast Traveler Okuyucu Seçimi Ödülleri kapsamında yapıldı."
+    ],
+    "body": [
+      "Uluslararası alanda tanınan seyahat yayınlarından biri olan Condé Nast Traveler, yayımladığı son listede Asya ülkesinin demiryolu hatlarına yer verdi. Geleneksel seyahat alışkanlıklarının ötesine geçerek yavaş ve keşif odaklı yolculukları önceleyen okuyucuların oylarıyla belirlenen sıralama, ülkenin turizm potansiyelini global çapta gözler önüne seriyor.",
+      "Sıralamada onuncu sırada konumlanan Hue ile Da Nang arasındaki tarihi demiryolu hattı, yaklaşık üç saatlik bir seyahat imkanı tanıyor. Hai Van Geçidi üzerinden ilerleyen vagonlar, dağlar ile denizin kesiştiği manzaraların yanı sıra yolculara yerel kültürü yansıtan sanatsal performanslar da sunuyor.",
+      "Listenin on dördüncü basamağındaki The Vietage by Anantara ise orta kesimdeki kıyı şeridinde konforlu bir deneyim vadediyor. Da Nang ile Quy Nhon ve Nha Trang şehirlerini birbirine bağlayan bu özel hat, yöresel lezzetler ve Fransız mutfağını harmanlayan gastronomi alternatifleriyle dikkat çekiyor.",
+      "Uzmanlar, bu tür prestijli listelerin ülkenin kıyı şeridinin ve iç kesimlerinin uluslararası pazardaki tanınırlığını doğrudan artırdığını ifade ediyor. Demiryolu turizmine yapılan yatırımların çeşitlenmesi, ziyaretçilere geleneksel plaj tatillerinin ötesinde alternatif rotalar oluşturuyor."
+    ],
+    "comment": "Demiryolu seyahatlerinin lüks ve deneyim odaklı bir trend haline geldiği bu dönemde, Vietnam hatlarının ödüle layık görülmesi ülke turizmi için stratejik bir kazanım. 39 yıllık geçmişe sahip olan bu seçkinin okuyucu oylarıyla şekillenmesi, gezginlerin artık doğayı yavaş bir tempoda deneyimleme arzusunu açıkça gösteriyor. Yerel kültürün gastronomi ve sanatla harmanlanması, gelecekte benzer yatırımların artmasını tetikleyebilir.",
+    "editorNote": "Hızlı uçuşların ötesine geçerek manzarayı sindirmek isteyen gezginler için Asya'nın demiryolu rotaları yeni bir trend yaratıyor.",
+    "tags": [
+      "tren seyahati",
+      "Vietnam",
+      "turizm",
+      "demiryolu",
+      "tatil rotaları"
+    ],
+    "category": "Dünya",
+    "source": "Vietnam.vn",
+    "sourceUrl": "https://www.vietnam.vn/tr/hai-hanh-trinh-tau-hoa-viet-nam-vao-top-20-chuyen-tau-dep-nhat-the-gioi-nam-2026",
+    "image": "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2026/10/18/1792311684151_thiet-ke-chua-co-ten-307020261018145144.webp",
+    "publishedAt": "2026-10-18T09:39:25.000Z",
+    "generatedAt": "2026-10-18T09:43:25.150Z",
+    "breaking": true
+  },
+  {
     "id": "110bbf2f1f43c781",
     "title": "Pirelli Scorpion Winter 3 Kış Lastikleri SUV Modelleri İçin Çıktı",
     "slug": "pirelli-scorpion-winter-3-kis-lastikleri-suv-modelleri-icin-cikti",
@@ -189,6 +290,38 @@
     "publishedAt": "2026-10-18T09:30:00.000Z",
     "generatedAt": "2026-10-18T09:37:34.925Z",
     "breaking": true
+  },
+  {
+    "id": "43bdbd00f0064ce9",
+    "title": "Beşiktaş'ta Vincenzo Italiano'dan Trabzonspor Maçı İçin Stoper Kararı",
+    "slug": "besiktasta-vincenzo-italianodan-trabzonspor-maci-icin-stoper-karari",
+    "summary": "Teknik Direktör Vincenzo Italiano, Trendyol Süper Lig'in 8. haftasındaki Trabzonspor deplasmanı öncesinde savunma hattında yeni tercihlere hazırlanıyor. Deneyimli çalıştırıcı, son Hoffenheim maçında yedek bıraktığı Djalo'yu yeniden ilk 11'e döndürmeyi planlıyor.",
+    "keyPoints": [
+      "Beşiktaş, Trendyol Süper Lig 8. haftasında Trabzonspor'a konuk olacak.",
+      "Teknik Direktör Vincenzo Italiano savunma kurgusunda değişikliğe hazırlanıyor.",
+      "Djalo'nun Trabzonspor deplasmanında ilk 11'e dönmesi bekleniyor."
+    ],
+    "body": [
+      "Trendyol Süper Lig'in sekizinci haftasında Trabzonspor ile deplasmanda kozlarını paylaşacak olan siyah-beyazlı ekipte hazırlıklar tüm hızıyla sürerken, teknik heyet kadro şekillendirmesine odaklandı. Teknik Direktör Vincenzo Italiano, zorlu Karadeniz seyahati öncesinde sahaya süreceği ideal ilk 11'i belirlemek için son antrenmanlardaki performansı titizlikle inceliyor. Milli ara dönüşünde savunma hattındaki istikrarsız gidişatı sonlandırmak isteyen İtalyan çalıştırıcı, farklı oyuncu kombinasyonlarını denemeye devam ediyor.",
+      "Sezonun önceki bölümünde Kocaelispor karşılaşmasında Djalo ve Emirhan ikilisini savunmanın göbeğinde görevlendiren deneyimli teknik adam, UEFA Avrupa Ligi'ndeki Hoffenheim mücadelesinde ise farklı bir hamle yapmıştı. Almanya'daki zorlu sınavda Djalo'nun yerine Agbadou'ya şans tanıyan Italiano, savunma merkezindeki arayışlarını sürdürdüğünü göstermişti. Trabzonspor deplasmanı ise bu rotasyonun devam edeceğinin ve kadroda yeni adımların atılacağının sinyallerini veriyor.",
+      "Bordo-mavililere karşı oynanacak müsabakada, Hoffenheim karşılaşmasında yedek kulübesinde oturan Djalo'nun yeniden formayı devralması yüksek ihtimal olarak değerlendiriliyor. Diğer yandan, Alman ekibi karşısında siyah-beyazlı formayla ilk resmi sürelerini alan ve kısa da olsa sahada kalan Ümit Akdağ da teknik heyetin radarındaki isimler arasında yer alıyor. Genç oyuncunun formayı zorlamasına rağmen, teknik direktörün savunma hattında aynı anda iki birden değişiklik yapması beklenmiyor.",
+      "Zorlu deplasman atmosferinde hata yapmak istemeyen Beşiktaş teknik heyeti, savunma güvenliğini en üst düzeye çıkaracak formülü arıyor. Oyuncuların fiziksel durumları ve antrenman performansları, Italiano'nun son kararında belirleyici ana etkenler olmayı sürdürüyor. Trabzonspor maçı başlama düdüğüyle birlikte siyah-beyazlıların arka alandaki yeni düzeni resmiyet kazanacak."
+    ],
+    "comment": "Savunma kurgusunda sık sık yapılan bu değişimler, takımın arka alandaki uyumunu ne kadar sürede bulacağı sorusunu akıllara getiriyor. Özellikle Djalo'nun kadroya dönüşü ve Ümit Akdağ gibi genç isimlerin rotasyona dahil olma çabası, sezonun ilerleyen haftaları adına rekabeti artıracaktır. Teknik direktörün Trabzonspor gibi deplasmanlarda yapacağı bu tercihlerin maçın kaderini doğrudan etkilemesi muhtemeldir.",
+    "editorNote": "Savunmadaki sürekli değişimler Beşiktaş'ın Trabzonspor sınavındaki en büyük bilinmezi oluşturuyor.",
+    "tags": [
+      "Beşiktaş",
+      "Trabzonspor",
+      "Vincenzo Italiano",
+      "Süper Lig",
+      "Djalo"
+    ],
+    "category": "Spor",
+    "source": "Fotomaç",
+    "sourceUrl": "https://www.fotomac.com.tr/besiktas/2026/10/18/besiktasta-italianodan-stoper-karari-trabzonspor-macinda",
+    "image": "https://iaftm.tmgrup.com.tr/28c489/1200/675/0/0/2048/1151?u=https://iftm.tmgrup.com.tr/2026/10/18/besiktasta-italianodan-stoper-karari-trabzonspor-macinda-1792315719595.jpg",
+    "publishedAt": "2026-10-18T09:29:10.000Z",
+    "generatedAt": "2026-10-18T09:43:46.212Z"
   },
   {
     "id": "f753e995b76e7c38",
