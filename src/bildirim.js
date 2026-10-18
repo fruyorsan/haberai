@@ -25,6 +25,7 @@
 // ==========================================================================
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { existsSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { getArticles, imageUrl } from "../site/src/lib/articles.js";
@@ -124,6 +125,23 @@ function bildirimIcerigi(a, { baslik }) {
 }
 
 /**
+ * OneSignal `idempotency_key` alanı YALNIZCA UUID kabul eder (düz metin
+ * reddedilir: "is not a valid UUID"). Haber id'sinden değişmez bir UUID
+ * üretilir: aynı haber → aynı anahtar → bir aksilikte ikinci gönderim
+ * denemesi OneSignal tarafından yinelenen sayılıp düşürülür.
+ * @param {string} metin
+ * @returns {string} 8-4-4-4-12 biçiminde UUID (sürüm 5 görünümlü)
+ */
+function uuidAnahtar(metin) {
+  const h = createHash("sha256").update(String(metin)).digest("hex");
+  const varyant = ((parseInt(h.slice(16, 17), 16) & 0x3) | 0x8).toString(16);
+  return `${h.slice(0, 8)}-${h.slice(8, 12)}-5${h.slice(13, 16)}-${varyant}${h.slice(
+    17,
+    20
+  )}-${h.slice(20, 32)}`;
+}
+
+/**
  * OneSignal'e bir bildirim gönderir.
  * @param {{baslik:string,icerik:string,url:string,gorsel?:string,etiket?:string,ttl:number,anahtar:string}} p
  */
@@ -137,7 +155,7 @@ async function gonder(p) {
     chrome_web_icon: `${SITE_URL}/ikon-192.png`,
     chrome_web_badge: `${SITE_URL}/ikon-192.png`,
     ttl: p.ttl,
-    idempotency_key: p.anahtar,
+    idempotency_key: uuidAnahtar(p.anahtar),
   };
   if (p.gorsel) govde.chrome_web_image = p.gorsel;
   if (p.etiket) {
