@@ -1,5 +1,70 @@
 [
   {
+    "id": "dc1bb92e547669f0",
+    "title": "Windows 11 Güncellemesi, Akıllı Uygulama Denetimi'ni kilitliyor",
+    "slug": "windows-11-guncellemesi-akilli-uygulama-denetimini-kilitliyor",
+    "summary": "Microsoft tarafından yayınlanan KB5127648 numaralı Windows 11 güncellemesi, kullanıcıların kapattığı güvenlik korumalarını yeniden açmasını engelliyor. Şirket, bazı kurumsal ağ bağlantılarında ve ses aygıtlarında da çeşitli aksaklıklar yaşandığını kabul etti.",
+    "keyPoints": [
+      "13 Ekim 2026 tarihli KB5127648 güncellemesi, kapatılan Akıllı Uygulama Denetimi'nin yeniden açılmasını engelliyor.",
+      "Hata Windows 11'in 24H2, 25H2 ve 26H2 sürümlerini kapsarken Microsoft geçici komut çözümü paylaştı.",
+      "Güncelleme ayrıca Emoji 17 desteği, Copilot tuşu işlev özelleştirme ve PDF önizleme yenilikleri getiriyor."
+    ],
+    "body": [
+      "Microsoft'un Windows 11 kullanıcıları için kullanıma sunduğu son toplu paket, güvenlik ayarlarında beklenmedik kısıtlamalara yol açtı. Özellikle daha önceden devre dışı bırakılmış olan Akıllı Uygulama Denetimi aracı, güncellemenin ardından Windows Güvenliği panelinde grileşerek tekrar aktif edilemez hale geldi. Bu durum, korumayı geçici olarak kapatmak zorunda kalan kullanıcıların güvenlik katmanını yeniden açamamasına neden oluyor.",
+      "Yaşanan aksaklık yalnızca denetim aracıyla sınırlı kalmayıp kurumsal ağları ve ses donanımlarını da etkiledi. Belirli kurumsal ağ altyapılarında Wi-Fi ve Uzak Masaüstü bağlantılarında sorunlar baş gösterirken, eylül ayından kalan USB Ses Sınıfı 1.0 uyumsuzlukları da tamamen giderilemedi. Öte yandan bazı kullanıcılar kurulum sırasında 0x800f0845 hatasıyla karşılaşıyor.",
+      "Firma, kayıt defterinde değişiklik yapmayı gerektiren ve Komut İstemi üzerinden çalışan geçici bir çözüm yolu yayımladı. Kalıcı düzeltmenin ileri tarihteki bir yamayla sunulması beklenirken, ev kullanıcılarının çoğunun bu durumdan etkilenmeyeceği belirtiliyor. Güncellemeyi kaldırmak isteyenler ise ilgili paketi sistem geçmişinden silme seçeneğini kullanabiliyor.",
+      "Yaşanan tüm bu teknik aksaklıklara rağmen paket, işletim sistemine kademeli olarak yeni özellikler de ekliyor. Emoji 17 desteği, internet kaynaklı PDF dosyalarının dosya yöneticisinde önizlenebilmesi ve Copilot klavye tuşuna farklı görevler atanabilmesi bu yenilikler arasında yer alıyor. Ayrıca oyunlardaki fare takılma sorununun da çözüldüğü açıklandı."
+    ],
+    "comment": "Güvenlik açıklarını kapatmayı hedefleyen yorucu yamaların yeni işlevsel sorunlar doğurması, büyük işletim sistemlerindeki kalite kontrol süreçlerinin ne denli kırılgan olduğunu net bir şekilde gösteriyor. Özellikle kullanıcıların kendi iradeleriyle kapattığı bir koruma mekanizmasının yazılım eliyle kilitlenmesi, esneklik beklentisini tamamen boşa çıkarıyor. Güncellemeyi kaldırmak mevcut açıkları yeniden tetikleyebileceği için önerilen komut satırı çözümü zorunlu bir çıkış yolu sunuyor.",
+    "editorNote": "Microsoft'un yeni yaması koruma aracını kilitlerken, kullanıcıları komut satırından çözüm aramaya yönlendiriyor.",
+    "tags": [
+      "Windows 11",
+      "Microsoft",
+      "Yazılım Güncellemesi",
+      "Güvenlik",
+      "KB5127648"
+    ],
+    "category": "Yazılım",
+    "source": "Tamindir",
+    "sourceUrl": "https://www.tamindir.com/haber/windows-11-ekim-guncellemesi-sorunlari_112381/",
+    "image": "https://img.tamindir.com/resize/1200x675/2026/10/476815/windows-11-ekim-guncellemesi-sorunlari.jpg",
+    "publishedAt": "2026-10-18T13:39:50.251Z",
+    "generatedAt": "2026-10-18T13:40:08.513Z"
+  },
+  {
+    "id": "e9c42c5d0a5d991b",
+    "title": "Gaziantep'te muhtarlar için inşa edilen 450 konutun kurası çekildi",
+    "slug": "gaziantepte-muhtarlar-icin-insa-edilen-450-konutun-kurasi-cekildi",
+    "summary": "Gaziantep Büyükşehir Belediyesi, muhtarlar için hayata geçirilen 450 dairenin hak sahiplerini belirledi. Kuzeyşehir ve Güneyşehir projelerini kapsayan konutların kurası düzenlenen törenle tamamlandı.",
+    "keyPoints": [
+      "Kuzeyşehir ve Güneyşehir'de muhtarlar için toplam 450 konut yapıldı.",
+      "Hak sahiplerini belirleyen kura çekimi Öğretmenlerevi'nde yapıldı.",
+      "Törene Vali Kemal Çeber ve Belediye Başkanı Fatma Şahin katıldı."
+    ],
+    "body": [
+      "Gaziantep Büyükşehir Belediyesi tarafından Gazikonut bünyesinde inşa edilen 450 konut için kura heyecanı yaşandı. Kentteki yerel yönetimlerin işbirliğiyle hayata geçirilen proje, muhtarların konut ihtiyacını karşılamak amacıyla hazırlandı.",
+      "19 Ekim Muhtarlar Günü dolayısıyla Öğretmenlerevi'nde resmi bir tören organize edildi. Bu program kapsamında Kuzeyşehir ve Güneyşehir bölgelerinde yükselen 450 dairenin sahiplerini bulması için resmi kura süreci başlatıldı.",
+      "Düzenlenen etkinlikte konuşma yapan protokol üyeleri yerel yönetimin önemine değindi. Gaziantep Valisi Kemal Çeber, muhtarlık müessesesinin devlet ile vatandaş arasındaki köprü vazifesini vurgulayarak kurumlar arası uyuma dikkat çekti.",
+      "Gaziantep Büyükşehir Belediye Başkanı Fatma Şahin ise son dönemdeki muhtarlık seçimlerinde yüzde 60 oranında bir değişim yaşandığını hatırlattı. Şahin, yerel yönetim projelerinde muhtarların desteğinin her zaman arkalarında olduğunu dile getirdi.",
+      "Gerçekleştirilen kura programına ilin önde gelen isimleri de katılım sağladı."
+    ],
+    "comment": "Yerel yönetimlerin meslek gruplarına yönelik konut projeleri üretmesi, kentsel planlamada sosyal dengenin korunması açısından belirleyici bir adım oluşturuyor. 450 dairelik bu girişim, yerel düzeyde görev yapan temsilcilerin yaşam koşullarını doğrudan iyileştirmeyi hedefliyor. Kura sonuçlarının ardından muhtarların konut sahibi olması, şehir genelindeki idari katılımın sürekliliğini destekleyecektir. Seçimlerde yaşanan yüzde 60 değişim oranı dikkate alındığında, bu tür somut projelerin yeni seçilen temsilciler için güçlü bir motivasyon unsuru olması bekleniyor.",
+    "editorNote": "Gaziantep'te yerel yönetim desteğiyle inşa edilen 450 konutun hak sahipleri kura töreniyle belirlendi.",
+    "tags": [
+      "Gaziantep",
+      "Muhtar",
+      "Konut",
+      "Kura",
+      "Belediye"
+    ],
+    "category": "Gündem",
+    "source": "CNN Türk",
+    "sourceUrl": "https://www.cnnturk.com/yerel-haberler/gaziantep/gaziantepte-muhtarlar-icin-yapilan-450-konutun-kurasi-cekildi-3481057",
+    "image": "https://image.cnnturk.com/i/cnnturk/75/1200x675/57834bf8f0dc1e53e4fccb9d.jpg",
+    "publishedAt": "2026-10-18T13:39:47.380Z",
+    "generatedAt": "2026-10-18T13:40:19.308Z"
+  },
+  {
     "id": "0887e58432a61e29",
     "title": "MercedesAMG ilk elektrikli SUV modelini 1.169 beygir güçle tanıttı",
     "slug": "mercedes-amg-ilk-elektrikli-suv-modelini-1169-beygir-gucla-tanitti",
@@ -32,36 +97,38 @@
     "generatedAt": "2026-10-18T13:36:26.986Z"
   },
   {
-    "id": "4a769dc0fb497820",
-    "title": "Kasımpaşa sahasında Samsunspor'u dört golle farklı mağlup etti",
-    "slug": "kasimpasa-sahasinda-samsunspor-u-dort-golle-farkli-maglup-etti",
-    "summary": "Süper Lig'in sekizinci haftasında Kasımpaşa, konuk ettiği Samsunspor'u dört golle geçerek üç puanın sahibi oldu. Recep Tayyip Erdoğan Stadyumu'ndaki mücadele ev sahibinin üstünlüğüyle tamamlandı.",
+    "id": "48002da9b56ca90e",
+    "title": "ABD Büyükelçisinden İsrail'e sert tepki: Alçakça terör eylemi",
+    "slug": "abd-buyukelcisinden-israile-sert-tepki-alcakca-teror-eylemi",
+    "summary": "İsrail'in Batı Şeria'da gerçekleştirdiği saldırıda Washington Post foto muhabiri Heidi Levine ağır yaralandı. ABD'nin İsrail Büyükelçisi Mike Huckabee, olayı korkakça bir terör eylemi olarak nitelendirerek büyük tepki gösterdi.",
     "keyPoints": [
-      "Kasımpaşa rakibini 4-1 mağlup ederek puanını 13'e yükseltti.",
-      "Maçta iki gol kaydeden Adem Arous galibiyette başrolü oynadı.",
-      "Samsunspor'un Coulibaly ile bulduğu bir gol VAR incelemesiyle iptal edildi."
+      "Washington Post foto muhabiri Heidi Levine, Batı Şeria'daki Ebu Falah köyünde saldırıya uğradı.",
+      "ABD'nin İsrail Büyükelçisi Mike Huckabee, saldırıyı alçakça bir terör eylemi olarak tanımladı.",
+      "İsrail Cumhurbaşkanı Isaac Herzog, yaralanan gazeteciyi arayarak olaydan dolayı özür diledi."
     ],
     "body": [
-      "Süper Lig mücadelesinde Kasımpaşa, Recep Tayyip Erdoğan Stadyumu'nda Samsunspor'u ağırladı. Karşılaşma boyunca üstün bir performans sergileyen ev sahibi ekip, sahadan 4-1 galibiyetle ayrılmayı başardı. İstanbul temsilcisi bu sonuçla puan tablosunda önemli bir adım attı.",
-      "Mücadelenin ilk devresinde ev sahibi ekip skoru hızlı bir şekilde lehine çevirdi. Yirmi yedinci dakikada Claudio Winck'in kaydettiği golle öne geçen Kasımpaşa, hemen dört dakika sonrasında Adem Arous'un vuruşuyla farkı ikiye çıkardı. İlk yarının son anlarında konuk ekip Tanguy Coulibaly ile skoru 2-1'e taşıdı.",
-      "İkinci devrede Samsunspor beraberlik için yüklenirken, elli sekizinci dakikada yine Coulibaly ile fileleri havalandırdı ancak bu gol VAR incelemesi sonrasında ofsayt gerekçesiyle geçerlilik kazanmadı. Bu pozisyonun ardından oyun kontrolünü yeniden ele alan Kasımpaşa, altmış dördüncü dakikada Adem Arous'un maçtaki ikinci golüyle skoru 3-1 yaptı.",
-      "Karşılaşmanın son bölümlerinde farkı artıran ev sahibi ekip, yetmiş sekizinci dakikada Adrian Benedyczak'ın ayağından bulduğu golle skoru 4-1'e getirdi. Maç bu skorla sona ererken Kasımpaşa puanını 13'e çıkardı, Samsunspor ise dört puanda kaldı."
+      "İsrail'in Filistin topraklarındaki saldırıları, müttefiki olan ABD'nin de diplomatik tepkisini çekmeye devam ediyor. Son olarak işgal altındaki Batı Şeria bölgesinde görev yapan basın mensupları hedef alındı. Ebu Falah köyünde zeytin hasadını takip eden uluslararası medya çalışanları, bölgedeki olayların ortasında kaldı.",
+      "Olay sırasında yüzleri maskeli yaklaşık 80 kişilik bir grup tarafından hedef alınan The Washington Post gazetesi foto muhabiri Heidi Levine ağır yaralandı. Görevi başındayken saldırıya uğrayan ABD vatandaşı Levine'in durumu geniş yankı uyandırdı. Bölgede yaşanan bu şiddet olayı, basın özgürlüğü ve gazetecilerin güvenliği konusundaki endişeleri artırdı.",
+      "Yaşanan skandal gelişmenin ardından ABD'nin İsrail Büyükelçisi Mike Huckabee sosyal medya üzerinden çok sert bir açıklama paylaştı. Diplomat, kadın bir fotoğrafçının hedef alınmasının korkakça ve şerefsizce bir gösterge olduğunu belirtti. Saldırıyı gerçekleştiren kişilerin uzun yıllar hapiste kalması gerektiğini vurgulayan Huckabee, tepkisini açık bir dille dile getirdi.",
+      "Olayın ardından diplomatik seviyede adımlar atıldığı ve İsrail Cumhurbaşkanı Isaac Herzog'un yaralı gazeteci Levine'i telefonla aradığı öğrenildi. Herzog'un yaşanan şiddet olayından dolayı üzüntü duyduğunu belirterek özür dilemesi dikkat çekti. Ancak bu özür, bölgede görev yapan basın mensuplarının karşı karşıya olduğu tehlikelerin boyutunu değiştirmeye yetmedi."
     ],
-    "comment": "Ev sahibi ekibin hücum hattındaki bu etkili performansı, savunmada yaşanan zafiyetleri dengeleyerek skoru erken koparmasını sağladı. Samsunspor ise bulduğu gollerin VAR kontrolüne takılması ve bireysel hatalar nedeniyle sahadan eli boş ayrıldı. Benzer deplasman maçlarında bu tarz savunma açıklarının kapatılmaması, takımların alt sıralardan kurtulmasını zorlaştırıyor.",
-    "editorNote": "Kasımpaşa'nın evindeki farklı galibiyeti dikkat çekerken, Samsunspor'un iptal edilen golü maçın kırılma anı oldu.",
+    "comment": "Müttefikler arasındaki bu diplomatik gerilim, sahadaki güvenlik krizinin artık göz ardı edilemeyecek bir noktaya ulaştığını gösteriyor. Açıklamalarda geçen ağır ifadeler somut bir yaptırıma dönüşmediği sürece, bölgede çalışan gazeteciler için tehlike senaryoları gerçekleşmeye devam edecektir. Basın özgürlüğünü hedef alan bu tür eylemler, yalnızca medya mensuplarını değil, sahadaki tüm sivil aktörlerin güvenliğini doğrudan riske atıyor.",
+    "editorNote": "Washington Post muhabirinin yaralanması sonrası ABD'den gelen sert tepkiler müttefikler arası ilişkileri sarstı.",
     "tags": [
-      "Kasımpaşa",
-      "Samsunspor",
-      "Süper Lig",
-      "futbol",
-      "maç sonucu"
+      "ABD",
+      "İsrail",
+      "Batı Şeria",
+      "Heidi Levine",
+      "Mike Huckabee",
+      "Basın Özgürlüğü"
     ],
-    "category": "Spor",
-    "source": "CNN Türk",
-    "sourceUrl": "https://www.cnnturk.com/spor/futbol/kasimpasa-evinde-samsunsporu-farkli-gecti-3481064",
-    "image": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad4c88d8c5742587ec66606.jpg",
-    "publishedAt": "2026-10-18T13:35:57.608Z",
-    "generatedAt": "2026-10-18T13:36:38.291Z"
+    "category": "Dünya",
+    "source": "Son Mühür",
+    "sourceUrl": "https://www.sonmuhur.com/washington-post-foto-muhabirine-saldiri-abdyi-ofkelendirdi-abdnin-israil-buyukelcisi-tepkili",
+    "image": "https://sonmuhurcom.teimg.com/crop/1280x720/sonmuhur-com/uploads/2026/10/post.jpg",
+    "publishedAt": "2026-10-18T13:33:00.000Z",
+    "generatedAt": "2026-10-18T13:39:57.474Z",
+    "breaking": true
   },
   {
     "id": "61fd6c20f68bf126",
