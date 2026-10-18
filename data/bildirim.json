@@ -1,15 +1,17 @@
 {
-  "updatedAt": "2026-10-18T09:18:18.956Z",
+  "updatedAt": "2026-10-18T09:20:34.648Z",
   "gun": "2026-10-18",
   "gunSayi": {
     "son": 1,
-    "kategori": 1
+    "kategori": 2
   },
   "sonKategori": {
-    "spor": "2026-10-18T09:18:18.956Z"
+    "spor": "2026-10-18T09:18:18.956Z",
+    "gundem": "2026-10-18T09:20:34.648Z"
   },
   "sent": [
     "eea44f4fa34f30ba",
-    "fcd187df991c653e"
+    "fcd187df991c653e",
+    "87e0a881ef799765"
   ]
 }
