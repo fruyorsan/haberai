@@ -1,5 +1,6 @@
 ---
-import { timeAgo, publishedISO, imageUrl } from "../lib/articles.js";
+import { timeAgo, publishedISO, imageUrl, imageSrcset } from "../lib/articles.js";
+import { ilgiSkoru, ilgiRozetEsik, kategoriAgirlik } from "../lib/ilgi.js";
 import { kapakKaynagi } from "../lib/kapak.js";
 
 const { article, size = "normal", index = 0, reveal = true } = Astro.props;
@@ -17,8 +18,20 @@ const kapak = kapakKaynagi(article);
 // zemini + "H" işareti görünür. Böylece onlarca kartta aynı yedek görseli
 // tekrarlamak yerine kategoriye göre değişen temiz bir zemin kalır.
 const imgSrc = kapak ? imageUrl(kapak, 640) : "";
+const imgSet = kapak ? imageSrcset(kapak, [400, 640]) : "";
+// "Son dakika" rozeti yalnızca taze kırılma haberlerinde görünür.
+const yakinSonDakika =
+  article.breaking === true &&
+  Boolean(article.publishedAt || article.generatedAt) &&
+  Date.now() - new Date(article.publishedAt || article.generatedAt).getTime() <= 120 * 60 * 1000;
+// 🔥 İlgi rozeti (lib/ilgi.js): yalnızca "beklenmedik" haberlerde gösterilir.
+// Kategori zaten ilgi çekiciyse (teknoloji/oyun/yapay zekâ) rozet anlam
+// taşımaz — o sayfadaki her kartı işaretler. Rozet, rutin kategorilerden
+// (gündem, spor, ekonomi, dünya) sıyrılan haberleri görünür kılar.
+const ilgiRozetli =
+  ilgiSkoru(article) >= ilgiRozetEsik() && kategoriAgirlik(article.categorySlug) < 20;
 const imgErr =
-  "if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.src=this.dataset.orig}else{this.classList.add('is-broken')}";
+  "if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.removeAttribute('srcset');this.removeAttribute('sizes');this.src=this.dataset.orig}else{this.classList.add('is-broken')}";
 
 // Gecikmeli giriş animasyonu (en fazla 320ms)
 const delay = Math.min(index * 45, 320);
@@ -39,6 +52,8 @@ const delay = Math.min(index * 45, 320);
         <img
           class="card__img"
           src={imgSrc}
+          srcset={imgSet || undefined}
+          sizes="(max-width: 600px) 96vw, (max-width: 1000px) 48vw, 380px"
           data-orig={kapak}
           alt={article.title}
           width="1200"
@@ -51,15 +66,20 @@ const delay = Math.min(index * 45, 320);
       )}
       <div class="card__overlay" aria-hidden="true"></div>
 
-      {article.breaking === true &&
-      (article.publishedAt || article.generatedAt) &&
-      (Date.now() - new Date(article.publishedAt || article.generatedAt).getTime()) <= 120 * 60 * 1000 ? (
+      {yakinSonDakika ? (
         <span class="card__breaking">
           <span class="card__breaking-dot" aria-hidden="true"></span>
           SON DAKİKA
         </span>
       ) : (
         <span class="card__badge">{article.category}</span>
+      )}
+
+      {/* İlgi rozeti: yalnızca "son dakika" rozeti yokken (aynı köşeyi paylaşır). */}
+      {ilgiRozetli && !yakinSonDakika && (
+        <span class="card__fire" role="img" aria-label="İlgi çekici haber" title="İlgi çekici">
+          🔥
+        </span>
       )}
 
     </div>

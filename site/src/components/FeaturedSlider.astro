@@ -1,5 +1,5 @@
 ---
-import { getFeatured, timeAgo, publishedISO, imageUrl } from "../lib/articles.js";
+import { getFeatured, timeAgo, publishedISO, imageUrl, imageSrcset } from "../lib/articles.js";
 import { kapakKaynagi } from "../lib/kapak.js";
 
 // Ana sayfa vitrini: "Öne çıkan haberler" slaytı.
@@ -44,6 +44,7 @@ const items = slides.map((a) => {
     url: a.url,
     title: a.title,
     image: kapak ? imageUrl(kapak, 1100) : "",
+    imageSet: kapak ? imageSrcset(kapak, [640, 820, 1100]) : "",
     imageOrig: kapak || "",
     category: a.category,
     summary: a.summary,
@@ -89,6 +90,8 @@ const items = slides.map((a) => {
                         <img
                           class="fs__img"
                           src={a.image}
+                          srcset={a.imageSet || undefined}
+                          sizes="(max-width: 900px) 100vw, 1100px"
                           data-orig={a.imageOrig || undefined}
                           alt={a.title}
                           width="1200"
@@ -97,7 +100,7 @@ const items = slides.map((a) => {
                           fetchpriority={i === 0 ? "high" : "auto"}
                           decoding="async"
                           referrerpolicy="no-referrer"
-                          onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.src=this.dataset.orig}else{this.classList.add('is-broken')}"
+                          onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.removeAttribute('srcset');this.removeAttribute('sizes');this.src=this.dataset.orig}else{this.classList.add('is-broken')}"
                         />
                       ) : null}
                       <div class="fs__overlay" aria-hidden="true"></div>

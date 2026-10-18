@@ -105,12 +105,27 @@ export function getFeatured(count = 6, horizon = 20, uygun = (a) => Boolean(a.im
  * CDN'e ulaşılamazsa bileşenler `data-orig` ile kaynak adrese düşer,
  * yani görsel kaybolmaz. Tamamen kapatmak için: NO_IMAGE_PROXY=1
  */
-export function imageUrl(src, width = 640) {
+export function imageUrl(src, width = 640, quality = 72) {
   if (!src || !/^https?:\/\//i.test(src)) return src || "";
   if (process.env.NO_IMAGE_PROXY) return src;
   const w = Math.round(width);
   const h = Math.round((width * 9) / 16);
-  return `https://wsrv.nl/?url=${encodeURIComponent(src)}&w=${w}&h=${h}&fit=cover&output=webp&q=72`;
+  // Küçük boyutlarda düşük kalite yeterlidir: 400 px'lik kart fotoğrafı q66'da
+  // gözle ayırt edilemez ama ~%10 daha küçüktür.
+  const q = w <= 480 ? 66 : quality;
+  return `https://wsrv.nl/?url=${encodeURIComponent(src)}&w=${w}&h=${h}&fit=cover&output=webp&q=${q}`;
+}
+
+/**
+ * Responsive görsel kümesi (srcset). Tarayıcı ekranına/yoğunluğuna göre en
+ * küçük yeterli fotoğrafı indirir: telefonda 1x ekranlar 400 px alır (720 px
+ * yerine), 2x/3x ekranlar yine 720 px'e düşer — yani hiçbir durumda daha
+ * büyük dosya indirilmez.
+ */
+export function imageSrcset(src, widths = [400, 720]) {
+  if (!src || !/^https?:\/\//i.test(src)) return "";
+  if (process.env.NO_IMAGE_PROXY) return "";
+  return widths.map((w) => `${imageUrl(src, w)} ${w}w`).join(", ");
 }
 
 export function getCategories() {

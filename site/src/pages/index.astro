@@ -3,7 +3,7 @@ import Base from "../layouts/Base.astro";
 import ArticleCard from "../components/ArticleCard.astro";
 import AdSlot from "../components/AdSlot.astro";
 import FeaturedSlider from "../components/FeaturedSlider.astro";
-import { getArticles, getFeatured, getTags, imageUrl } from "../lib/articles.js";
+import { getArticles, getFeatured, getTags, imageUrl, imageSrcset } from "../lib/articles.js";
 import { kapakKaynagi } from "../lib/kapak.js";
 import { siteOrigin, ADSENSE_SLOTS } from "../lib/site-meta.js";
 
@@ -35,7 +35,10 @@ const origin = siteOrigin(Astro.site);
 // Vitrin kapak görseli: preload edilecek adres de süzgeçten geçer. Vitrindeki
 // ilk *geçerli* kapak seçilir; hiçbiri geçerli değilse markalı görsele düşülür.
 const heroKapak = featured.map((a) => kapakKaynagi(a)).find(Boolean) || "";
-const heroImage = heroKapak ? imageUrl(heroKapak, 1200) : "";
+// Vitrin görseli (FeaturedSlider) ile AYNI küme verilir: ön yükleme ve gerçek
+// <img> aynı kaynağı seçer, iki ayrı fotoğraf indirilmez.
+const heroImage = heroKapak ? imageUrl(heroKapak, 1100) : "";
+const heroImageSet = heroKapak ? imageSrcset(heroKapak, [640, 820, 1100]) : undefined;
 const siteSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -68,6 +71,8 @@ const siteSchema = {
   description="HaberinAi: yapay zekâ destekli teknoloji ve gündem haberlerinde özet, analiz ve editör yorumu."
   schema={siteSchema}
   preloadImage={heroImage || undefined}
+  preloadSrcset={heroImageSet}
+  preloadSizes="(max-width: 900px) 100vw, 1100px"
 >
   <div class="container">
     <h1 class="sr-only">HaberinAi — Yapay Zekâ Destekli Türkçe Haberler ve Gündem Özetleri</h1>

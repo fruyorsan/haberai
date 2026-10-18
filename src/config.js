@@ -62,6 +62,7 @@ export const config = {
     { name: "GN: Deprem", url: "https://news.google.com/rss/search?q=deprem%20when%3A1h&hl=tr&gl=TR&ceid=TR:tr", category: "Gündem", fast: true },
     { name: "GN: Apple", url: "https://news.google.com/rss/search?q=apple%20when%3A1h&hl=tr&gl=TR&ceid=TR:tr", category: "Mobil", fast: true },
     { name: "GN: Samsung", url: "https://news.google.com/rss/search?q=samsung%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Mobil", fast: true },
+    { name: "GN: Oyun", url: "https://news.google.com/rss/search?q=oyun%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Oyun", fast: true },
 
     // Teknoloji / Yazılım
     { name: "Webtekno", url: "https://www.webtekno.com/rss.xml", category: "Teknoloji", fast: true },
@@ -79,6 +80,12 @@ export const config = {
     { name: "Merlin'in Kazanı", url: "https://merlininkazani.com/feed/", category: "Oyun" },
     { name: "AA Bilim-Teknoloji", url: "https://www.aa.com.tr/tr/rss/default?cat=bilim-teknoloji", category: "Bilim" },
     { name: "Evrim Ağacı", url: "https://evrimagaci.org/rss.xml", category: "Bilim" },
+    { name: "Oyun Günlüğü", url: "https://www.oyungunlugu.com/feed/", category: "Oyun" },
+    { name: "IGN Türkiye", url: "https://tr.ign.com/feed.xml", category: "Oyun" },
+    { name: "Gamereactor Türkiye", url: "https://www.gamereactor.com.tr/feed/", category: "Oyun" },
+    { name: "Gamereactor Türkiye (RSS)", url: "https://www.gamereactor.com.tr/rss/rss.php", category: "Oyun" },
+    { name: "Sözcü Bilim-Teknoloji", url: "https://www.sozcu.com.tr/feeds-rss-category-bilim-teknoloji", category: "Bilim" },
+    { name: "Cumhuriyet Bilim-Teknoloji", url: "https://www.cumhuriyet.com.tr/rss/bilim-teknoloji.xml", category: "Bilim" },
 
     // Ekonomi
     { name: "Hürriyet Ekonomi", url: "https://www.hurriyet.com.tr/rss/ekonomi", category: "Ekonomi" },

@@ -16,13 +16,17 @@ import AdSlot from "./AdSlot.astro";
 import { getArticles, getCategories, imageUrl } from "../lib/articles.js";
 import { kapakKaynagi } from "../lib/kapak.js";
 import { akisKartlar, AKIS_ILK } from "../lib/akis-kart.js";
+import { ilgiSirala } from "../lib/ilgi.js";
 import { ADSENSE_SLOTS } from "../lib/site-meta.js";
 
 const { kategori = "", kategoriAdi = "", ilkSayi = AKIS_ILK } = Astro.props;
 const gecerliKat = Boolean(kategori);
 const tumu = getArticles();
 const kategoriler = getCategories().slice(0, 14);
-const liste = gecerliKat ? tumu.filter((a) => a.categorySlug === kategori) : tumu;
+// GLOBAL akış ilgi puanına göre sıralanır (teknoloji, oyun, yapay zekâ ve
+// merak uyandıran konular öne). Kategori akışları kendi içinde kronolojik
+// kalır. Sonsuz kaydırma topları da aynı sırayı kullanır (lib/ilgi.js).
+const liste = gecerliKat ? tumu.filter((a) => a.categorySlug === kategori) : ilgiSirala(tumu);
 // Kategori akışlarında ilk tur daha geniş basılır: toplar GLOBAL listeden
 // geldiği için küçük/orta kategorilerde "daha fazla" boş dönebilirdi. Kategori
 // sayfaları zaten "noindex"tir; biraz daha uzun HTML sorun değil.
@@ -64,6 +68,17 @@ const ilk = liste.slice(0, ilkSayi);
         </nav>
 
         <div class="akis__cipler" role="group" aria-label="Akışı süz">
+          <button
+            class="akis__cip"
+            type="button"
+            data-sirala="bana"
+            aria-pressed="false"
+            aria-label="Sana özel sırala"
+            title="Beğendiğin kategoriler öne gelsin"
+          >
+            <span class="akis__cip-ikon" aria-hidden="true">✨</span>
+            <span class="akis__cip-yazi">Sana özel</span>
+          </button>
           <button
             class="akis__cip"
             type="button"
@@ -146,6 +161,10 @@ const ilk = liste.slice(0, ilkSayi);
       let tukendi = false;
       let yukleniyor = false;
       let suzgec = "tumu";
+      // Kategori akışlarında toplar global listeden gelir ve bir turda hiç
+      // eşleşen kart çıkmayabilir. Üst üste iki boş turdan sonra "daha fazla"
+      // düğmesi sonsuz boş istek üretmesin diye akış bitmiş sayılır.
+      let bosTur = 0;
 
       // --- Yerel durum (beğeni/kayıt) — sunucu gerekmez, cihazda kalır --------
       const oku = (ad) => {
@@ -292,18 +311,22 @@ const ilk = liste.slice(0, ilkSayi);
       });
 
       // --- Süzgeçler ---------------------------------------------------------
-      kok.querySelectorAll(".akis__cip").forEach((cip) => {
+      kok.querySelectorAll(".akis__cip[data-suz]").forEach((cip) => {
         cip.addEventListener("click", () => {
           const secilen = cip.dataset.suz || "tumu";
           // Seçili süzgece tekrar basmak süzgeci kaldırır. Telefonda "Tümü"
           // düğmesi gizlendiği için geri dönüş yolu bu.
           suzgec = cip.classList.contains("is-active") && secilen !== "tumu" ? "tumu" : secilen;
-          kok.querySelectorAll(".akis__cip").forEach((c) => {
+          kok.querySelectorAll(".akis__cip[data-suz]").forEach((c) => {
             const secili = (c.dataset.suz || "tumu") === suzgec;
             c.classList.toggle("is-active", secili);
             c.setAttribute("aria-pressed", String(secili));
           });
           boyaHepsi();
+          // Süzgeçten sonra görünür kart sayısı değişti: ara reklamı yeniden
+          // 8. GÖRÜNÜR kartın altına yerleştir (aksi halde gizli kartların
+          // ardında kalıp akışın ortasında yüzer).
+          reklamiYerlestir();
           window.scrollTo({ top: kok.querySelector(".akis__liste").offsetTop - 120, behavior: "smooth" });
           if (suzgec === "begeni") bildir("Beğendiğin haberler");
           else if (suzgec === "kayit") bildir("Kaydettiğin haberler");
@@ -322,6 +345,65 @@ const ilk = liste.slice(0, ilkSayi);
           }
         });
       });
+
+      // --- Sana özel sıralama ------------------------------------------------
+      // Varsayılan sıra sunucudan "ilgi puanı" ile gelir (teknoloji, oyun,
+      // yapay zekâ ve merak uyandıran konular önde). "Sana özel" açılınca
+      // yüklü kartlar, beğendiğin kategoriler öne çıkacak biçimde yeniden
+      // dizilir: ilgi puanı + kategori beğeni bonusu. Veri cihazda kalır.
+      // (Yeni yüklenen kartlar akışın altına eklenir; sıralama düğmeye
+      //  basıldığında uygulanır, kaydırma sırasında zıplama olmaz.)
+      const siralaDugme = kok.querySelector('[data-sirala="bana"]');
+      let sanaOzel = false;
+
+      function reklamiYerlestir() {
+        const reklam = liste.querySelector(":scope > .ad");
+        if (!reklam) return;
+        const kartlar = [...liste.querySelectorAll(".ak")].filter((k) => !k.hidden);
+        const hedef = kartlar[7];
+        if (hedef) hedef.after(reklam);
+        else liste.appendChild(reklam);
+      }
+
+      function sanaOzelUygula() {
+        const kartlar = [...liste.querySelectorAll(".ak")];
+        if (!kartlar.length) return;
+        if (sanaOzel) {
+          const katPuan = new Map();
+          for (const k of kartlar) {
+            if (!begeniler.has(k.dataset.slug)) continue;
+            const kat = k.dataset.kat || "";
+            katPuan.set(kat, (katPuan.get(kat) || 0) + 1);
+          }
+          const puan = (k) =>
+            Number(k.dataset.ilgi || 0) + (katPuan.get(k.dataset.kat || "") || 0) * 9;
+          kartlar
+            .map((k, i) => ({ k, i, p: puan(k) }))
+            .sort((x, y) => y.p - x.p || x.i - y.i)
+            .forEach((x) => liste.appendChild(x.k));
+        } else {
+          kartlar
+            .map((k, i) => ({ k, i, s: Number(k.dataset.siraKaydi ?? i) }))
+            .sort((x, y) => x.s - y.s)
+            .forEach((x) => liste.appendChild(x.k));
+        }
+        reklamiYerlestir();
+      }
+
+      if (siralaDugme) {
+        siralaDugme.addEventListener("click", () => {
+          sanaOzel = !sanaOzel;
+          siralaDugme.classList.toggle("is-active", sanaOzel);
+          siralaDugme.setAttribute("aria-pressed", String(sanaOzel));
+          sanaOzelUygula();
+          window.scrollTo({ top: liste.offsetTop - 120, behavior: "smooth" });
+          bildir(
+            sanaOzel
+              ? "Sana özel: beğendiğin konular öne alındı ✨"
+              : "İlgi sırasına dönüldü 🔥"
+          );
+        });
+      }
 
       // --- Sonsuz kaydırma ---------------------------------------------------
       async function yukle() {
@@ -361,6 +443,10 @@ const ilk = liste.slice(0, ilkSayi);
               }
               liste.appendChild(parca);
               eklenecek.forEach(boya);
+              // Yeni kartlar akışın sonuna eklenir; "Sana özel" kapatıldığında
+              // doğru sıraya dönebilmek için sunucu sırası numarası yazılır.
+              let siraNo = liste.querySelectorAll(".ak").length - eklenecek.length;
+              for (const k of eklenecek) k.dataset.siraKaydi = String(siraNo++);
               eklenen += eklenecek.length;
             }
             if (d.son) {
@@ -370,6 +456,9 @@ const ilk = liste.slice(0, ilkSayi);
             if (eklenen >= 12) break;
           }
           sayilari();
+          // Üst üste iki turda yeni kart gelmediyse liste tükenmiş sayılır.
+          if (eklenen > 0) bosTur = 0;
+          else if (++bosTur >= 2) tukendi = true;
           if (tukendi && bitti) bitti.hidden = false;
         } catch (e) {
           /* ağ hatası: sessizce dur, kullanıcı kaydırınca/düğmeye basınca tekrar dener */
@@ -450,6 +539,9 @@ const ilk = liste.slice(0, ilkSayi);
       });
 
       // --- Açılış -------------------------------------------------------------
+      // Sunucudan basılan kartların sırası: "Sana özel" kapatılınca bu sıraya
+      // dönülür.
+      liste.querySelectorAll(".ak").forEach((k, i) => (k.dataset.siraKaydi = String(i)));
       boyaHepsi();
       // Sayfada basılan kart sayısı listeyi bitiriyorsa (kısa kategori) bekleme.
       if (Number(kok.dataset.ilk || 0) >= toplam) {

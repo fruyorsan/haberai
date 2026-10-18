@@ -14,8 +14,9 @@
 // o haberler markalı kırmızı zemin + kategori ile basılır. Yanlış fotoğraf
 // göstermektense markalı zemin yeğlenir.
 // ==========================================================================
-import { imageUrl, timeAgo, publishedISO } from "./articles.js";
+import { imageUrl, imageSrcset, timeAgo, publishedISO } from "./articles.js";
 import { kapakKaynagi } from "./kapak.js";
+import { ilgiSkoru } from "./ilgi.js";
 
 /** HTML kaçışı: başlık/özet kaynak siteden geldiği için zorunludur. */
 export function kac(s) {
@@ -36,8 +37,12 @@ export function kisalt(metin, sinir = 190) {
 
 // CDN (wsrv.nl) görseli getiremezse kaynak adrese düşülür; o da olmazsa kart
 // markalı zeminde kalır — bozuk görsel simgesi görünmez.
+//
+// ÖNEMLİ: srcset niteliği dururken `src` değiştirmek görüntüyü değiştirmez
+// (tarayıcı srcset adayını kullanmaya devam eder). Bu yüzden yedeğe geçmeden
+// önce srcset/sizes KALDIRILIR; aksi halde "kurtarma" sessizce başarısız olur.
 const GORSEL_HATA =
-  "if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.src=this.dataset.orig}" +
+  "if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.removeAttribute('srcset');this.removeAttribute('sizes');this.src=this.dataset.orig}" +
   "else{this.remove()}";
 
 const KALP_SVG =
@@ -49,6 +54,12 @@ const PAYLAS_SVG =
 
 /**
  * Tek bir akış kartının HTML'i.
+ *
+ * İlgi puanı (lib/ilgi.js) kartta `data-ilgi` olarak durur; sıralama sunucuda
+ * bu puana göre yapıldığı için kartta ayrıca "🔥" rozeti GÖSTERİLMEZ (akışın
+ * tepesi zaten en ilgi çekici haberlerdir; 24 kartın 24'ünü işaretlemek anlamsız
+ * olurdu). Rozet, kronolojik listelerde kullanılır (ArticleCard.astro).
+ *
  * @param {any} a haber kaydı (getArticles çıktısı)
  * @param {number} sira akıştaki sıra (ilk kartlar öncelikli yüklenir)
  * @returns {string}
@@ -56,6 +67,8 @@ const PAYLAS_SVG =
 export function akisKart(a, sira = 0) {
   const kaynak = kapakKaynagi(a);
   const gorsel = kaynak ? imageUrl(kaynak, 720) : "";
+  const gorselSet = kaynak ? imageSrcset(kaynak, [400, 720]) : "";
+  const puan = ilgiSkoru(a);
   const baslik = kac(a.title);
   const ozet = kisalt(a.summary, 190);
   const kat = kac(a.category || "Haber");
@@ -66,12 +79,14 @@ export function akisKart(a, sira = 0) {
   const oncelik = sira === 0;
 
   const gorselBlok = gorsel
-    ? `<img src="${kac(gorsel)}" alt="${baslik}"${
+    ? `<img src="${kac(gorsel)}"${
+        gorselSet ? ` srcset="${kac(gorselSet)}" sizes="(max-width:720px) 100vw, 380px"` : ""
+      } alt="${baslik}"${
         oncelik ? ' fetchpriority="high"' : ' loading="lazy"'
       } decoding="async" data-orig="${kac(kaynak)}" onerror="${GORSEL_HATA}" />`
     : '<span class="ak__harf" aria-hidden="true">H</span>';
 
-  return `<article class="ak" data-slug="${slug}" data-kat="${kac(a.categorySlug)}"${
+  return `<article class="ak" data-slug="${slug}" data-kat="${kac(a.categorySlug)}" data-ilgi="${puan}"${
     a.breaking === true ? ' data-son="1"' : ""
   }>
   <div class="ak__gorsel${gorsel ? "" : " ak__gorsel--yok"}">

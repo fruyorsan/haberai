@@ -24,6 +24,10 @@ const {
   imageAlt,
   schema,
   preloadImage,
+  // LCP görseli responsive ise ön yüklemede de aynı küme verilir; aksi halde
+  // tarayıcı iki ayrı fotoğraf indirir (biri kullanılmaz).
+  preloadSrcset,
+  preloadSizes,
   noindex = false,
   // Akış sayfaları kendi kategori şeridini taşır; üstteki global şerit
   // kapatılır ki iki benzer satır üst üste görünmesin.
@@ -158,6 +162,8 @@ const isArticle = ogType === "article";
         rel="preload"
         as="image"
         href={absoluteUrl(preloadImage)}
+        imagesrcset={preloadSrcset || undefined}
+        imagesizes={preloadSizes || undefined}
         fetchpriority="high"
       />
     )}
@@ -216,16 +222,40 @@ window.__olcumOnayla = function () {
 };`}
     />
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) — ERTELENMİŞ YÜKLEME
+         gtag.js tek başına ~500 KB'lık bir indirmedir ve mobilde ilk boyama
+         için yarışır. Bu yüzden yalnızca sayfa tamamen yüklendikten sonra
+         (ya da okuyucu sayfayla etkileşince) indirilir. Consent Mode ve olay
+         komutları kuyrukta bekler (dataLayer); betik geldiğinde işlenir.
+         Not: Okuyucu 1,2 saniyeden kısa sürede çıkarsa o oturum ölçülmez —
+         mobil hız/SEO kazanımı için bilinçli tercih. -->
     {GA_MEASUREMENT_ID && (
-      <>
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} is:inline></script>
-        <script
-          is:inline
-          set:html={`gtag("js", new Date());
-gtag("config", ${JSON.stringify(GA_MEASUREMENT_ID)}, { anonymize_ip: true });`}
-        />
-      </>
+      <script
+        is:inline
+        set:html={`gtag("js", new Date());
+gtag("config", ${JSON.stringify(GA_MEASUREMENT_ID)}, { anonymize_ip: true });
+(function () {
+  var geldi = false;
+  function yukle() {
+    if (geldi) return;
+    geldi = true;
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + ${JSON.stringify(GA_MEASUREMENT_ID)};
+    document.head.appendChild(s);
+    window.removeEventListener("pointerdown", yukle);
+    window.removeEventListener("keydown", yukle);
+    window.removeEventListener("touchstart", yukle);
+    window.removeEventListener("scroll", yukle);
+  }
+  window.addEventListener("pointerdown", yukle, { passive: true });
+  window.addEventListener("keydown", yukle);
+  window.addEventListener("touchstart", yukle, { passive: true });
+  window.addEventListener("scroll", yukle, { passive: true });
+  if (document.readyState === "complete") setTimeout(yukle, 1200);
+  else window.addEventListener("load", function () { setTimeout(yukle, 1200); });
+})();`}
+      />
     )}
 
     <!-- AdSense: kimlik tanımlıysa (onay öncesi reklamlar kişiselleştirilmez) -->

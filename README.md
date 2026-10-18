@@ -76,9 +76,15 @@ kaynak + anahtar kelime) ve son dakika adayları bu puana göre öne alınır.
   AA Güncel, Haber Global, Webtekno, ShiftDelete, DonanımHaber.
 - **Google News RSS hızlı sorguları** (olayı dakikalar içinde indeksler):
   `son dakika`, `teknoloji`, `tesla`, `elon musk`, `yapay zeka`, `deprem`, `apple`,
-  `samsung` (hepsi `when:1h`/`when:2h` pencereli). Google News başlıkları
+  `samsung`, `oyun` (hepsi `when:1h`/`when:2h` pencereli). Google News başlıkları
   `Başlık - Kaynak Adı` biçiminde gelir; `src/fetcher.js` kaynağı başlıktan ayırıp
   `source` alanına yazar.
+- **İçerik çeşitliliği (teknoloji/oyun/bilim):** oyun kategorisi tek kaynaktan
+  (Merlin'in Kazanı) beş kaynağa çıkarıldı (Oyun Günlüğü, IGN Türkiye, Gamereactor
+  Türkiye ×2, GN: Oyun); bilim tarafına Sözcü ve Cumhuriyet bilim-teknoloji
+  beslemeleri eklendi. Böylece akışın ilgi çeken konularda malzemesi artar.
+  Çalışmayan/ölü beslemeler (Oyungezer, Turuncu Levye, Playerbros, OyunAgacı)
+  doğrulanıp **bilinçli olarak eklenmedi**.
 
 ### Kalite süzgeci
 
@@ -380,6 +386,55 @@ başına kart, varsayılan 24) `site/src/lib/akis-kart.js` içindedir. Stil `glo
 sonundadır — **global olması bilinçlidir**: sonsuz kaydırmayla gelen kartlar Astro'nun
 bileşen kapsamlı (scoped) stillerini alamaz.
 
+### Akış sırası: ilgi puanı (ne öne çıkar)
+
+Akış **kronolojik değildir**. `site/src/lib/ilgi.js` her habere 0-130 arası bir
+**ilgi puanı** verir ve global akış bu puana göre sıralanır:
+
+```
+ilgi = kategori ağırlığı + merak/ölçü işaretleri + tazelik + son dakika
+       − rutin/kurumsal kalıp cezası
+```
+
+- **Kategori ağırlığı:** yapay zekâ/oyun/teknoloji/uzay/donanım önde; gündem/spor
+  arkada ama sıfır değil.
+- **Merak/ölçü işaretleri:** `rekor`, `ilk kez`, `deprem`, `sel`, `saldırı`, `transfer`,
+  `yapay zeka`, `iphone`… (üst sınırlı: tek başına kategori ağırlığını ezmesin).
+  Başlıkta sayı/`%` varsa ek puan.
+- **Tazelik:** yarı ömrü ~21 saat. Eski ama "ilginç" bir haber, yeni bir yerel haberi
+  geçemez; akışın tepesi taze kalır.
+- **Ceza:** `belediye`, `tören`, `ziyaret`, `sergi`, `kampanya`, `protokol` gibi rutin
+  kalıplar puanı düşürür (akışı dolduran ama merak uyandırmayan başlıklar).
+- **Son dakika** rozetli haberler ek puan alır.
+
+Sıralama **deterministiktir** (rastgelelik yok): `/akis/` gövdesi ile
+`/akis/sayfa/<ofset>.json` topları aynı fonksiyonu kullandığı için sonsuz kaydırmada
+kart tekrarı ya da sıra kayması olmaz. Kategori akışları (`/akis/kategori/<slug>/`)
+kendi içinde kronolojik kalır.
+
+> Neden: akış eskiden "en yeni" sırasındaydı ve belediye/tören/sergi gibi rutin yerel
+> haberler teknoloji, oyun ve merak uyandıran konuları gölgeliyordu.
+
+### "Sana özel" düğmesi
+
+Akış satırının sağındaki **✨ Sana özel** düğmesi, yüklü kartları **beğendiğin
+kategorilere göre** yeniden dizer (ilgi puanı + beğenilen kategorinin beğeni sayısı × 9).
+Böylece akış, okurun kendi tercihlerinden öğrenir; kapattığında sunucu sırasına
+dönülür (`data-siraKaydi` ile saklanır). Veri cihazda kalır, sunucuya hiçbir şey
+gönderilmez. (Sıralama yalnızca düğmeye basıldığında uygulanır; kaydırma sırasında
+kartlar zıplamaz.)
+
+### 🔥 İlgi rozeti (kronolojik listelerde)
+
+`lib/ilgi.js` rozeti **yalnızca akış dışındaki kronolojik listelerde** (ana sayfa,
+kategori, tüm haberler, arama) ve **yalnızca "beklenmedik" haberlerde** gösterir:
+puan tüm arşivin en üst %8'inde **ve** kategori zaten ilgi çekici değilse (`kategori
+ağırlığı < 20`). Böylece teknoloji/oyun sayfalarında her kart işaretlenmez; gündem
+akışından sıyrılan gerçekten ilginç haberler görünür olur. /akis/ akışında rozet
+kullanılmaz — orada liste zaten ilgi sırasındadır, 24 kartın 24'ünü işaretlemek
+anlamsız olurdu. Üretim: `site/src/components/ArticleCard.astro` (`.card__fire`),
+"son dakika" rozetiyle aynı köşeyi paylaşır ama ikisi aynı anda görünmez.
+
 ### Üst menü düzeni (kalabalığı önleme)
 
 Üst üste benzer satırlar menüyü karıştırdığı için şu kurallar uygulanır:
@@ -435,6 +490,40 @@ $env:EK_GORSEL_LIMIT="40"; $env:EK_GORSEL_KAYNAK="tamindir"; node src/ek-gorsel.
 - Site tarafı bu fotoğrafları 1. paragraftan sonra ve gövdenin ortasına doğru gösterir;
   fotoğraf yüklenemezse figür tamamen kaldırılır (sayfa bozulmaz).
 
+## Hız (performans) notları
+
+Site 0 $ bütçeyle GitHub Pages'te durduğu için ölçüm ve kazanç elle yapılır. Ölçüm:
+uç noktaların gerçek boyutu + sayfadaki istek listesi (bkz. `hiz` ölçüm betikleri).
+
+- **gtag.js (Google Analytics) ertelenir.** Etiketin kendisi ~500 KB'lık bir indirmedir
+  ve mobilde ilk boyama için yarışır. Bu yüzden yalnızca sayfa tamamen yüklendikten
+  **1,2 saniye sonra** ya da okur sayfayla ilk kez etkileşince (dokunma/tuş/kaydırma)
+  indirilir. Consent Mode ve olay komutları kuyrukta bekler (`dataLayer`); betik
+  geldiğinde işlenir. Bedeli: 1,2 saniyeden kısa süren oturumlar ölçülmez — bilinçli
+  tercih. Kod: `site/src/layouts/Base.astro`.
+- **Responsive görseller (`srcset`).** Görseller ücretsiz görsel CDN'inden (wsrv.nl)
+  geçer. `imageSrcset(src, [400, 720])` ile telefon 1x ekranlar 400 px alır (720 px
+  yerine, ~%60 küçük dosya), 2x/3x ekranlar yine 720 px'e düşer — yani hiçbir durumda
+  daha büyük dosya indirilmez. Küçük genişliklerde kalite otomatik düşer (q66).
+  - Akış kartı: `sizes="(max-width:720px) 100vw, 380px"`
+  - Liste kartı: `(max-width:600px) 96vw, (max-width:1000px) 48vw, 380px`
+  - Haber/vitrin görseli: `(max-width:900px) 100vw, 1100px`
+- **LCP ön yüklemesi srcset ile eşleşir.** `Base.astro` preload bağlantısına
+  `imagesrcset`/`imagesizes` geçer; aksi halde tarayıcı hem ön yüklediği hem de
+  `<img>` için seçtiği fotoğrafı indirir (biri boşa gider).
+- **Arama sonuçları ham fotoğraf göstermez.** `/search-index.json` yalnızca ham adresi
+  taşır (dosya küçük kalsın); `/ara/` sayfası görseli istemcide 480 px'e küçültür
+  (`gorselUrl()`). Önceden 1 MB'a kadar fotoğraf inebiliyordu.
+- **Tembel yükleme:** akışın ilk kartı `fetchpriority="high"` (LCP), kalanı
+  `loading="lazy"`; liste kartları lazy + `decoding="async"`.
+- **Görsel kurtarma `srcset` ile uyumlu:** görsel CDN'i getiremezse kaynak adrese
+  düşülür. Ancak `srcset` niteliği dururken `src` değiştirmek görüntüyü değiştirmez;
+  bu yüzden `onerror` önce `srcset`/`sizes` niteliklerini kaldırır. Aksi halde
+  "kurtarma" sessizce başarısız olur ve kart markalı zeminde kalırdı.
+- **Kart içi reklam görünür kartla hizalanır:** akışta süzgeç uygulanınca görünür
+  kart sayısı değişir; `reklamiYerlestir()` reklamı yeniden 8. **görünür** kartın
+  altına taşır (gizli kartların ardında kalıp akışın ortasında yüzmez).
+
 ## Veri Şeması (`data/articles.json`)
 
 Her haber nesnesi şu alanları taşır: `id`, `title`, `slug`, `summary`, `keyPoints`, `body`,
@@ -443,7 +532,13 @@ Her haber nesnesi şu alanları taşır: `id`, `title`, `slug`, `summary`, `keyP
 haberlerde ek olarak `breaking: true` bulunur (diğerlerinde alan yoktur).
 
 - `summary`: nötr özet — sadece "ne oldu".
-- `comment`: editör yorumu — "neden önemli, kimi etkiler, ne olabilir".
+- `comment`: editör yorumu — "neden önemli, kimi etkiler, ne olabilir". İstem
+  (`src/ai.js`) beş adımlı bir yazım planı izler: kesin yargı → kaynaktan somut öğe →
+  kime etki → en az bir karşılaştırma/ölçü/senaryo → (varsa) risk-fırsat. Ayrıca
+  kategoriye özel **analiz ekseni** verilir (`ANALIZ_ACISI`): oyun → fiyat, platform,
+  çıkış tarihi, donanım gereksinimi; mobil → fiyat/performans, batarya, yazılım destek
+  süresi. Kaynakta sayı/tarih varsa yorum bunlardan en az birini kullanmak zorundadır;
+  kaynakta olmayan sayı/isim/tarih yazılmaz.
 - `editorNote`: ana sayfadaki **"öne çıkanlar" slaytı** için kısa manşet notu. Türkçe,
   1-2 cümle (en fazla ~180 karakter); `summary`/`comment` ile aynı cümleleri kullanmaz,
   farklı bir açıdan "neden bakmalısın" sorusuna cevap verir. Yeni haberlerde AI üretir;

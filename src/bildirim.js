@@ -84,6 +84,19 @@ function kisalt(str, max) {
   return s.length <= max ? s : `${s.slice(0, max - 1).replace(/\s+\S*$/, "")}…`;
 }
 
+/**
+ * OneSignal yanıtındaki alıcı (cihaz) sayısını günlüğe ekler.
+ * Neden: gönderim "başarılı" görünse de abone yoksa kimseye ulaşmaz. Alıcı
+ * sayısını CI günlüğünde görünür kılmak, "bildirim gerçekten gitti mi?"
+ * sorusunu tek bakışta yanıtlar (0 ise cihazda zile basılmamış demektir).
+ */
+function aliciNotu(yanit) {
+  const n = Number(yanit?.recipients);
+  if (!Number.isFinite(n)) return "";
+  if (n === 0) return " → alıcı: 0 (abone yok: cihazda bildirim izni verilmemiş)";
+  return ` → alıcı: ${n}`;
+}
+
 async function durumOku() {
   if (!existsSync(DURUM_DOSYA)) return { updatedAt: null, sent: [], sonKategori: {}, gun: "", gunSayi: {} };
   try {
@@ -235,7 +248,9 @@ export async function bildirimleriGonder({ dry = false } = {}) {
               ttl: 86400,
               anahtar: `son-${aday.id}`,
             });
-            console.log(`  ✓ [son dakika] ${kisalt(aday.title, 60)}${yanit?.id ? ` (${yanit.id})` : ""}`);
+            console.log(
+              `  ✓ [son dakika] ${kisalt(aday.title, 60)}${yanit?.id ? ` (${yanit.id})` : ""}${aliciNotu(yanit)}`
+            );
             durum.sent.push(String(aday.id));
             durum.updatedAt = new Date(now).toISOString();
             durum.gunSayi.son = (durum.gunSayi.son || 0) + 1;
@@ -296,7 +311,7 @@ export async function bildirimleriGonder({ dry = false } = {}) {
             anahtar: `kat-${aday.id}`,
           });
           console.log(
-            `  ✓ [konu:${slug}] ${kisalt(aday.title, 60)}${yanit?.id ? ` (${yanit.id})` : ""}`
+            `  ✓ [konu:${slug}] ${kisalt(aday.title, 60)}${yanit?.id ? ` (${yanit.id})` : ""}${aliciNotu(yanit)}`
           );
           durum.sent.push(String(aday.id));
           durum.updatedAt = new Date(now).toISOString();

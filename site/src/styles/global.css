@@ -416,6 +416,28 @@ button {
   animation: pulse-dot 1.2s infinite;
 }
 
+/* İlgi rozeti: kronolojik listelerde merak uyandıran haberi işaretler
+   (üretim: components/ArticleCard.astro + lib/ilgi.js). "Son dakika" rozetiyle
+   aynı köşeyi paylaşır ama ikisi aynı anda görünmez. */
+.card__fire {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: rgba(10, 12, 16, 0.62);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
 @keyframes pulse-dot {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.4; transform: scale(0.8); }

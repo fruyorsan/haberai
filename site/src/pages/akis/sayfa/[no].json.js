@@ -15,6 +15,7 @@
 // ==========================================================================
 import { getArticles } from "../../../lib/articles.js";
 import { akisKartlar, AKIS_TUR } from "../../../lib/akis-kart.js";
+import { ilgiSirala } from "../../../lib/ilgi.js";
 
 /** Akışın tamamı için top dosyalarını üretir (0, 24, 48, …). */
 export function getStaticPaths() {
@@ -28,7 +29,10 @@ export function getStaticPaths() {
 
 export function GET({ params }) {
   const offset = Math.max(0, Number.parseInt(String(params.no), 10) || 0);
-  const liste = getArticles();
+  // Sıra, /akis/ gövdesiyle AYNI olmalı (lib/ilgi.js): aksi halde sonsuz
+  // kaydırmada tekrar eden kartlar ve sıra atlamaları olur.
+  const tumu = getArticles();
+  const liste = ilgiSirala(tumu);
   const dilim = liste.slice(offset, offset + AKIS_TUR);
   const sonraki = offset + dilim.length;
 

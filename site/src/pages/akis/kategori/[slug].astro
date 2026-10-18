@@ -11,7 +11,7 @@
 // ==========================================================================
 import Base from "../../../layouts/Base.astro";
 import Akis from "../../../components/Akis.astro";
-import { getArticles, getCategories, imageUrl } from "../../../lib/articles.js";
+import { getArticles, getCategories, imageUrl, imageSrcset } from "../../../lib/articles.js";
 import { kapakKaynagi } from "../../../lib/kapak.js";
 import { AKIS_ILK } from "../../../lib/akis-kart.js";
 import { siteOrigin } from "../../../lib/site-meta.js";
@@ -31,6 +31,7 @@ const ilk = getArticles()
   .slice(0, AKIS_ILK);
 const ilkKapak = ilk[0] ? kapakKaynagi(ilk[0]) : "";
 const ilkGorsel = ilkKapak ? imageUrl(ilkKapak, 720) : undefined;
+const ilkGorselSet = ilkKapak ? imageSrcset(ilkKapak, [400, 720]) : undefined;
 
 const origin = siteOrigin(Astro.site);
 const baslik = `${ad} Shorts — kısa kısa haberler | HaberinAi`;
@@ -53,6 +54,8 @@ const kategoriSchema = {
   canonical={`/akis/kategori/${slug}/`}
   schema={kategoriSchema}
   preloadImage={ilkGorsel}
+  preloadSrcset={ilkGorselSet}
+  preloadSizes="(max-width: 720px) 100vw, 380px"
   image={ilkGorsel}
   noindex={true}
   kategoriSeridi={false}

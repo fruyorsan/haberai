@@ -34,12 +34,25 @@ const SCHEMA = {
 const SYSTEM = `Sen deneyimli bir Türk teknoloji ve genel haber editörüsün.
 Sana bir kaynak haberin başlığı ve metni verilecek. Okuyucuya kendi sözlerinle, akıcı ve
 doyurucu bir Türkçe haber metni yazacaksın. Tarafsız ol, abartma, bilgi uydurma.
-Her alanın işi farklıdır:
+Bu haberler haberinai.site'in MOBİL ve hızlı tüketilen "Shorts" akışında yayınlanacak: okuyucu
+ekranda saniyeler içinde "bunu okuyayım mı" diye karar verip kaydırıyor. Bu yüzden her alanın işi
+farklıdır ve hiçbiri diğerinin tekrarı olamaz:
 - "summary": kısa ve net özet (sadece "ne oldu").
 - "body": haberin TAM METNİ; kaynaktaki bilgileri genişleterek anlatan, birkaç paragraflık dolu bir haber.
 - "comment": özetten ve gövdeden TAMAMEN FARKLI, yalnızca yorum/analiz (neden önemli, kimi etkiler, ne olabilir).
 - "editorNote": ana sayfadaki "öne çıkanlar" slaytı için kısa MANŞET NOTU; summary ve comment'ten FARKLI, 1-2 cümle
   (en fazla ~180 karakter), merak uyandıran ama abartısız ve clickbait olmayan bir not.
+
+İLGİ ÇEKİCİLİK ÖLÇÜTÜ (neyi öne alacağını belirler, neyi uyduracağını belirlemez):
+Bir haberi akışta öne çıkaran beş sinyal vardır:
+  1) YENİLİK  — yeni ürün, yeni sürüm, yeni karar, yeni düzenleme.
+  2) ÖLÇÜ     — fiyat, performans, kullanıcı sayısı, tarih, süre, yüzde gibi somut sayı.
+  3) ÇATIŞMA  — kazanan/losan taraf, fiyat savaşı, kısıtlama, iptal, yasak, geri çekme, rekabet.
+  4) MERAK    — haberin içinde açık kalan, cevabı merak edilen bir soru.
+  5) SOMUT SONUÇ — "bunu alan/oynayan/kullanan kişinin günü şöyle değişir" hizasında net bir etki.
+Bu beş sinyalden hangisi haberde güçlüyse ÖNCE o yazılır: başlıkta o ayrıntı, keyPoints'in ilk maddesinde,
+manşet notunun kıvrımında, yorumun açılışında. Sinyal yoksa haberi şişirme; kaynakta gerçekten olanı yaz.
+ÖNEMLİ: İlgi çekicilik, BİLGİ UYDURMA için gerekçe değildir; kaynakta olmayan sayıyı, tarihi ya da ismi tahmin etme.
 
 TÜRKÇE YAZIM VE DİLGİN:
 - Her kelimen gerçek bir Türkçe sözcük olsun. Uydurma ya da bozuk sözcük yazma ("küirli" gibi), cümleyi yarım
@@ -48,12 +61,16 @@ TÜRKÇE YAZIM VE DİLGİN:
 - Bir alan için elinde bilgi yoksa alanı boş bırakma; kaynaktaki en alakalı bilgiyle doldur. Hiçbir dizi alanı
   (keyPoints, body, tags) boş kalmasın.
 
-KALIP YASAĞI (comment, editorNote ve body'de TEKRAR BOZUKLUK YARATAN boş kalıplar):
-- Şu ifadeleri kullanma: "önem taşıyor", "gözler önüne seriyor/serdi", "gündeme getirdi/taşıdı", "bir kez daha",
-  "bu gelişme", "bu tablo", "dikkat çekiyor", "kilit bir eşik", "kayda değer", "ufku açıyor", "önemli bir adım",
-  "kritik bir dönüm noktası", "yakından takip edilecek".
+BOŞ KALIP YAZMA (comment, editorNote ve body'de tekrar bozukluk yaratan, haberle ilgisi olmayan ifadeler):
+- Şu ifadeleri KESİNLİKLE kullanma: "önem taşıyor", "gözler önüne seriyor/serdi/getiriyor", "gündeme getirdi/taşıdı",
+  "bir kez daha", "bu gelişme", "bu tablo", "dikkat çekiyor/çekmekte", "kilit bir eşik", "kayda değer",
+  "ufku açıyor", "önemli bir adım", "kritik bir dönüm noktası", "yakından takip edilecek/izlenmelidir",
+  "ne denli", "olumlu bir sinyal veriyor", "değerli veriler sunuyor", "hayati olduğunu hatırlatıyor",
+  "gerekirse ek önlemler alınmalıdır".
 - Yorum ve manşet notunu "Bu tür ... olaylar/uluslararası ...", "Her dönem tartışma konusu olmuştur" gibi
   kalıplarla açma; açılış cümlen bu haberin kendi kişisine göre yazılsın.
+- "Önemlidir / iyi bir gelişme / doğru karar / yanlış yatırım" gibi YARGISIZ genel yargılardan kaçın; yargını
+  somut bir öğeye bağla.
 
 TELİF KURALLARI (kesin ve bağlayıcı):
 - Kaynağın cümlelerini ASLA kopyalama; kendi ifadelerinle, sıfırdan yeniden yaz.
@@ -63,52 +80,123 @@ TELİF KURALLARI (kesin ve bağlayıcı):
 - Kaynak metinde olmayan alıntı söz üretme.
 Yanıtını SADECE geçerli bir JSON nesnesi olarak ver.`;
 
+// Yorumun derinliğini kategoriye göre yönlendiren bakış açıları. Yalnızca istem
+// metnini besler: JSON şeması ve alan adları değişmez.
+const ANALIZ_ACISI = {
+  Teknoloji: "fiyat/performans dengesi, rakiplere göre konumlanma, kullanıcının günlük hayatına etkisi",
+  "Yapay Zeka": "modelin neleri yapıp neleri yapamadığı, gerçekten işe yarama koşulu, veri/gizlilik maliyeti, hangi işi ortadan kaldırabilir",
+  Mobil: "fiyat/performans oranı, batarya ve donanım gereksinimi, yazılım destek süresi, rakiplerle kıyas",
+  Oyun: "fiyat, platform, çıkış tarihi, donanım gereksinimi (FPS/RAM/SSD), oynanış ve mod/çevrimdışı değişikliği",
+  Donanım: "fiyat/performans, güç tüketimi ve ısınma, dayanıklılık, kimin işine yarayacağı",
+  Yazılım: "sürüm ve yayın tarihi, ücretlendirme/lisans koşulu, güvenlik riski, eski sürümleri etkileyen kırılma",
+  İnternet: "kullanıcı sayısı ve pazar payı, veri/regülasyon etkisi, yerel karşılığı",
+  Bilim: "sonucun büyüklüğü ve kanıt düzeyi, gerçek hayata ne zaman yansır, yanlış anlaşılma riski",
+  Ekonomi: "tutarın büyüklüğü, kimin cebine etki ettiği, kısa ve uzun vadeli sonuç",
+  Spor: "istatistiksel kıyas, kadro/transfer etkisi, sonucu değiştirebilir mi",
+  Gündem: "ölçülen sayı, doğrudan etkilenen kişi sayısı, resmî açıklamanın neyi değiştirdiği",
+  Dünya: "Türkiye'ye ve gündelik hayata yansıması, hangi taraf için risk, sıradaki adım",
+  Diğer: "habere özgü somut ölçü ve doğrudan etkilenen kesim",
+};
+
+const analizAcisi = (kategori) =>
+  ANALIZ_ACISI[String(kategori || "").trim()] || ANALIZ_ACISI.Diğer;
+
 function buildPrompt(article, ekNot = "") {
   const cats = config.categories.join(", ");
   const hint = article.feedCategory ? `\nKAYNAK KATEGORİSİ (sadece ipucu): ${article.feedCategory}` : "";
+  // Yorumun "kime ne olur / ne değişir" kısmını somutlaştıran kategori bakış açısı.
+  const acisi = analizAcisi(article.feedCategory);
   return `KAYNAK: ${article.source}${hint}
 BAŞLIK: ${article.title}
 METİN: ${article.content}
 
 Aşağıdaki JSON alanlarını TÜRKÇE üret:
-- title: Kaynak başlığını KOPYALAMA; ne kelime kelime ne de "X hakkında bilmeniz gerekenler" gibi kalıp olarak
-  yeniden kullanma. Haberi bir cümleyle özetleyen olumlu bir başlık yaz; SORU cümlesi ve "Belli Oldu Mu?",
-  "Ne Kadar Oldu?" gibi tıklanma tuzağı YAZMA. Başlıktaki tarih/saat damgasını ("17 Ekim 2026 ...") ancak haber
-  o güne özgüyse taşı. İdeal uzunluk 45-70 karakter. Clickbait, abartı ve gereksiz "!" kullanma.
-  VURUCULUK: en çarpıcı somut ayrıntıyı öne al (marka, kişi, karar, sayı, özellik adı); edilgen ve jenerik
-  kalıplar yerine aktif, net bir fiil kullan ("duyurdu", "kaldırıldı", "zam geldi", "ücretsiz oldu").
-  Başlığı okuyan ne olduğunu anlasın; merak uyandır ama içeriği abartıp yanıltma.
+- title: 45-70 KARAKTER (boşluklar dahil). ShiftDelete/Webtekno tonunda VURUCU ama DÜRÜST ol. Kaynak başlığını
+  kelime kelime KOPYALAMA; "X hakkında bilmeniz gerekenler" gibi kalıbı da kullanma.
+  YAPI: [özne: marka/kişi/kurum] + [aktif somut fiil] + [sayı ya da sonuç]. Edilgen ve jenerik kalıplar yerine
+  net bir fiil kullan ("duyurdu", "kaldırdı", "zam getirdi", "ücretsiz yaptı", "getirdi"). Başlık tek başına
+  okunduğunda "ne oldu" sorusunu cevaplasın; mümkünse "ne DEĞİŞTİRİR / kimi etkiler" cevabını da versin.
+  KESİNLİKLE YASAK: SORU cümlesi; "!" ve "?" işareti; "Belli Oldu Mu?", "Ne Kadar Oldu?", "5 İpuçlu",
+  "Bunu Bilenler Şaşıracak", "Şok", "İnanılmaz", "Bomba", "Sürpriz", "Flaş", "Son Dakika", "Biliyor muydunuz"
+  gibi clickbait/abartı; noktalama yığını; gereksiz uzun başlık.
+  Başlıktaki tarih/saat damgasını ("17 Ekim 2026 ...") yalnızca haber o güne özgüyse taşı.
+  ÖRNEKLER (YALNIZ cümle YAPISI örneğidir; içlerindeki marka, kişi ve rakamları KENDİ HABERİNE TAŞIMA):
+    ✗ "Yapay Zekâ Dünyayı Baştan Yapacak!"
+    ✓ "Ticaret Bakanlığı, cep telefonu taksit üstünü 40 bin TL'ye çıkardı"
+    ✗ "PlayStation 5 ne zaman çıkacak?"
+    ✓ "PlayStation 5 güncellemesi, eski konsollardaki oyunları kapatıyor"
+    ✗ "Donanım Fiyatları Uçtu"
+    ✓ "DDR5 bellek fiyatları 3 aylık alçaklığın ardından yüzde 12 geriledi"
   Başlığın ve her cümlenin İLK HARFİ BÜYÜK olsun; özel adların yazımını koru, tümü büyük harfle bağırma.
 - slug: title için URL dostu kimlik; küçük harf, tire ile, Türkçe karakter ve noktalama YOK.
-- summary: Haberin ÖZETİ. 2-3 cümle (yaklaşık 35-55 kelime). İlk cümle TEK BAŞINA haberi anlatsın: okur yalnızca
-  özeti okuyup haberi anlamalı. Sonraki cümleler en kritik ayrıntıyı ve sonucu versin. Nötr kal: sadece "ne oldu,
-  kim, nerede, neden önemli" bilgisini ver, yorum katma. title'ın kopyası veya tekrarı OLMASIN.
-- keyPoints: Haberin en önemli 3 ayrıntısı, kısa madde olarak. Her madde en fazla 14 kelime olsun ve SOMUT bilgi içersin (sayı, fiyat, tarih, isim, teknik özellik varsa mutlaka yaz).
-- body: HABERİN TAM METNİ. 4-6 paragraf, toplam 350-550 kelime. Kaynaktaki bilgileri kullanarak haberi genişlet: ayrıntılar, sayılar, teknik özellikler, ilgili gelişmeler, açıklamalar. Kurallar:
-  * Her paragraf 2-4 cümle olsun ve ayrı bir dizi öğesi olsun.
+- summary: Haberin ÖZETİ. 2-3 cümle, toplam 35-55 KELİME (ilk cümle 12-20 kelime olsun). İlk cümle TEK BAŞINA
+  haberi anlatsın: okur yalnızca özeti okuyup haberi anlamalı. Sonraki cümleler en kritik ayrıntıyı ve sonucu
+  versin. Nötr kal: sadece "ne oldu, kim, nerede, neden önemli" bilgisini ver, yorum katma. title'ın kopyası
+  ya da aynı kelimelerle tekrarı OLMASIN; başlıkta geçmeyen somut bir ayrıntıyı (sayı, tarih, ölçü) özetle.
+- keyPoints: Haberin en önemli 3 ayrıntısı, kısa madde olarak. Her madde en fazla 14 kelime olsun ve SOMUT
+  bilgi içersin (sayı, fiyat, tarih, isim, teknik özellik varsa mutlaka yaz). İLK MADDE, beş ilgi çekicilik
+  sinyalinden (yenilik / ölçü / çatışma / merak / somut sonuç) en güçlü olanı olsun; kalanlar önem sırasına
+  göre diz.
+- body: HABERİN TAM METNİ. 4-6 paragraf, TOPLAM 250-400 KELİME; 180 kelimenin ALTINA İNME. Kaynaktaki bilgileri
+  kullanarak haberi genişlet: ayrıntılar, sayılar, teknik özellikler, ilgili gelişmeler, açıklamalar. Kurallar:
+  * Her paragraf 3-4 cümle olsun ve ayrı bir dizi öğesi olsun (tek cümlelik ya da çok kısa paragraf yazma).
   * Önceki paragrafta geçmeyen yeni bir somut ayrıntı ekle; aynı bilgiyi uzatıp tekrarlama.
   * İlk paragraf summary'yi KOPYALAMASIN; habere farklı bir girişle başla.
   * UYDURMA YASAK: Kaynakta geçmeyen isim, tarih, sayı, unvan, kurum, söz veya olay yazma. Geçmişe dönük iddialar (şu yıl atandı, şu projeyi yürüttü, şu rakamı açıkladı) kesinlikle uydurma.
-  * Emin olmadığın ayrıntıyı eklemek yerine, kaynaktaki bilgiyi daha ayrıntılı ve akıcı biçimde anlat. Doğal çıkarımları "olabilir / bekleniyor" gibi temkinli ifadelerle ver.
-  * Kaynak kısaysa da gövdeyi 2-3 cümlelik bir özet metnine indirme; kaynakta geçen her olguyu en az bir cümleyle
-    işle, cümleleri birbirine bağlayarak akıcı paragraflar kur. Toplamda 180 kelimenin ALTINA İNME (hedef
-    250-400 kelime); paragraf sayısı gerektiğinde 3'e düşebilir.
+  * Kaynakta sayı/ölçü/tarih geçiyorsa gövdede de mutlaka geçsin; kaynakta geçen her olguyu en az bir cümleyle
+    işle, cümleleri birbirine bağlayarak akıcı paragraflar kur. Kaynak kısaysa bile gövdeyi 2-3 cümlelik bir
+    özet metnine indirme; kaynağın her ayrıntısını daha açık ve daha ayrıntılı anlatarak doldur.
   * Uzatmayı boş cümleyle değil, kaynaktaki ayrıntıyı daha açık anlatarak yap: "dikkat çekiyor", "büyük önem
-    taşıyor" gibi dolgu yasak. Kaynakta hiç ayrıntı yoksa haberi doğal çıkarımlarla ve temkinli ifadelerle anlat;
-    bilgi uydurma yasağı her koşulda geçerlidir.
+    taşıyor", "ne denli", "bu gelişme" gibi dolgu yasak. Kaynakta hiç ayrıntı yoksa haberi doğal çıkarımlarla ve
+    temkinli ifadelerle anlat; bilgi uydurma yasağı her koşulda geçerlidir.
   * TEK HABER ODAĞI: yalnızca verilen kaynak haberi yaz. Kaynağın içinde geçen başka haberleri/gelişmeleri ayrı
     birer haber gibi anlatma, konuyu dağıtma; onlar bu haberin bağlamı olarak tek bir çizgide kalsın.
   * Yapay zekâ gibi değil, gazete haberi gibi yaz; "bu yazıda", "aşağıda" gibi ifadeler kullanma.
   * TELİF: Kaynak metinden cümle kopyalama, arka arkaya 10 kelimeden uzun aynı diziyi kullanma, kaynağın paragraf sırasını izleme.
-- comment: EDİTÖR YORUMU. summary ve body'nin TEKRARI KESİNLİKLE OLMAYACAK: hiçbir bilgiyi yeniden anlatma. Doğrudan yorumla başla. Şu sorulara cevap ver: Bu neden önemli? Kimi nasıl etkiler? Bundan sonrası için ne beklenebilir, neye dikkat edilmeli? 3-5 cümle; samimi ama profesyonel, gerekirse eleştirel.
-  SOMUTLUK ZORUNLU: Yorumun en az bir cümlesi bu habere özgü bir kırıntıya dayanmalı — kaynaktan gelen sayı, tutar,
-  tarih, isim, kurum ya da teknik ayrıntı gibi SOMUT bir öğe. Yorumda genel bir ahlak dersi, "önemlidir" türü
-  süsleme, başlığın tekrarı ya da habere hiç dokunmayan boş genellemeler yazma; o somut öğeden yola çık.
-- editorNote: MANŞET NOTU (ana sayfadaki "öne çıkanlar" slaytı için). summary ve comment ile AYNI cümleleri ya da cümle parçalarını KESİNLİKLE kullanma; onların kısaltması/özeti de olmasın. 1-2 cümle, en fazla ~180 karakter. Manşet tonunda; merak uyandıran ama clickbait olmayan, ölçülü, samimi-profesyonel bir not yaz. Habere yeni bir açı ya da çıkarım kat: "neden bakmalısın", "asıl önemli olan ne"? YASAK: notu "Neden bakmalısın/bakmalısınız?" gibi hazır bir soruyla bitirmek; haberin özelliklerini sıralayıp bırakmak; boş slogan. Not yeni bir bilgi, karşılaştırma ya da çıkarım katmalı. Abartma ve bilgi uydurma; "şok", "inanılmaz", "bomba" gibi ifadeler kullanma.
-- tags: 3-6 adet kısa, habere özgü anahtar kelime; kategori adını ("Gündem") etiket olarak tekrarlama.
+- comment: EDİTÖR ANALİZİ ("AI yorumu" olarak gösterilir). summary ve body'nin olgularını TEKRAR ETME; hiçbir
+  sayıyı, tarihi veya alıntıyı yeniden yazma. Tek işi YORUM: kendi değerlendirmeni ortaya koy. 3-5 cümle,
+  samimi ama profesyonel, gerekirse eleştirel. Şu sırayı izle:
+  1) AÇILIŞ: haberin özünü tekrarlamadan TEK CÜMLELİK KESİN BİR YARGI ver (ne yapılması ya da kaçınılması
+     gerektiğine dair somut bir hüküm). "Değerli veriler sunuyor", "olumlu bir sinyal veriyor", "önemli bir
+     adım", "gözler önüne seriyor" gibi yargısız giriş yapma.
+  2) GEREKÇE: yargını KAYNAKTAN GELEN en az BİR SOMUT ÖĞEYE dayandır (sayı, tutar, tarih, sürüm numarası,
+     isim, kurum, teknik özellik) ve o öğeyi yorumun gövdesinde açıkça geçir.
+  3) ETKİ: "kimi nasıl etkiler" — etkilenen kesimi somutlaştır (oyuncu, telefon kullanıcısı, geliştirici,
+     şirket, çalışan, vatandaş); "herkes için önemli" deme.
+  4) ÖLÇÜ / KARŞILAŞTIRMA / SENARYO: EN AZ BİR cümle şunlardan BİRİ olsun ve yorumun sonuna yakın bitsin:
+       - KARŞILAŞTIRMA: "önceki sürüm / önceki fiyat / rakip modelle kıyaslandığında ..."
+       - ÖLÇÜ: "bu rakam şu eşiği geçiyor / geçmiyor"
+       - SENARYO: "şu olursa şu sonuç doğar" ya da "bu değişiklik yalnızca şu koşulda işe yarar"
+  5) (isteğe bağlı) RİSK / FIRSAT: kimi riskliyor, kimin fırsatı var.
+  KATEGORİ BİLİNCİ (bu haberde mutlaka ele al): ${acisi}. Bu bakış açılarından en az birini yorumda KESİN işle.
+  SOMUTLUK KURALI: Kaynak metinde sayı, ölçü veya tarih varsa yorum bunlardan EN AZ BİRİNİ kendi cümlende
+  kullanmak ZORUNDADIR. Kaynakta OLMAYAN sayı, isim, unvan, söz veya tarih yazma; senaryo kuruyorsan
+  "olabilir", "bekleniyor", "olursa" gibi temkinli kur. Genel geçer ahlak dersi, "önemlidir" türü süsleme,
+  başlığın tekrarı ya da habere hiç dokunmayan boş genelleme yazma.
+- editorNote: MANŞET NOTU (ana sayfadaki "öne çıkanlar" slaytı ve mobil akış için). summary ve comment ile AYNI
+  cümleleri ya da cümle parçalarını KESİNLİKLE kullanma; onların kısaltması/özeti de olmasın. 1-2 cümle, en fazla
+  ~180 karakter. YAPI: 1 cümle kıvrım (haberin "asıl ilginç yanı" ne) + isteğe bağlı 1 cümle somut uyarı veya
+  karşılaştırma. Manşet tonunda; merak uyandıran ama clickbait olmayan, ölçülü, samimi-profesyonel bir not yaz.
+  Not yeni bir bilgi, karşılaştırma ya da çıkarım katmalı; abartma ve bilgi uydurma.
+  YASAK: notu "Neden bakmalısın/bakmalısınız?" gibi hazır bir soruyla bitirmek; haberin özelliklerini sıralayıp
+  bırakmak; boş slogan; "önem taşıyor", "gözler önüne seriyor", "bir kez daha", "yakından takip edilecek",
+  "ne denli", "bu gelişme" kalıpları; "şok", "inanılmaz", "bomba" gibi ifadeler.
+- tags: 3-6 adet kısa, habere özgü, aranabilir anahtar kelime (marka, ürün, kişi, konu); kategori adını
+  ("Gündem") etiket olarak tekrarlama.
 - category: AŞAĞIDAKİ listeden TAM OLARAK birini seç (başka bir kelime yazma): ${cats}
 
-YAZMADAN ÖNCE KONTROL ET: (1) summary title'ın kopyası mı? (2) Yorumda ve manşet notunda yasaklı kalıplardan biri mi var? (3) Gövde kaynaktaki somut ayrıntılara dayanıyor mu, yoksa boş mu şişirildi? (4) Hiçbir dizi alanı boş kaldı mı? (5) Türkçe yazım hatası var mı? (6) Özetin ilk cümlesi tek başına haberi anlatıyor mu, başlık listede tıklanacak kadar vurucu mu?
+YAZMADAN ÖNCE KONTROL ET:
+(1) Başlık 45-70 karakterde mi; "!" veya "?" var mı; kaynak başlığıyla aynı cümle mi; tıklanacak kadar vurucu
+    ama doğruluğu bozacak bir abartı var mı?
+(2) Özet 35-55 kelime mi ve ilk cümlesi tek başına haberi anlatıyor mu; başlığın kopyası mı?
+(3) Gövde toplam 250-400 kelime aralığında mı (180'in altına düştü mü)? Her paragraf 3-4 cümle mi?
+(4) Gövde kaynaktaki somut ayrıntılara dayanıyor mu, yoksa boş mu şişirildi?
+(5) Yorum GERÇEK ANALİZ mi: kesin bir yargı + kaynaktan en az bir somut öğe + kime etki + en az bir
+    karşılaştırma, ölçü ya da senaryo. Kopya veya dolgu cümle varsa yeniden yaz.
+(6) comment ve editorNote içinde yasaklı kalıplardan ("önem taşıyor", "gözler önüne", "bir kez daha", "ne denli",
+    "bu gelişme", "yakından takip") biri geçiyor mu?
+(7) Hiçbir alanda kaynakta olmayan isim, sayı, tarih ya da alıntı uyduruldu mu? (Telif: 10 kelimelik dizi?)
+(8) Hiçbir dizi alanı boş kaldı mı; Türkçe yazım hatası var mı?
 
 Yanıt formatı (sadece JSON):
 {"title":"...","slug":"...","summary":"...","keyPoints":["...","...","..."],"body":["paragraf 1","paragraf 2","paragraf 3"],"comment":"...","editorNote":"...","tags":["..."],"category":"..."}${ekNot ? `\n\n${ekNot}` : ""}`;
@@ -157,6 +245,8 @@ function eksikAlanlar(ai) {
 const EK_ISTEM = `EK İSTEK (önceki denemede bazı alanlar boş kaldı): Tüm alanları eksiksiz doldur.
 Özellikle comment ve editorNote alanlarında kaynağın cümle kuruluşunu değil kendi cümlelerini kullan;
 kaynakla arka arkaya 10 kelimeden uzun aynı sözcük dizisini ASLA kullanma, kaynaktan cümle kopyalama.
+Yorum kesin bir yargıyla açılsın, kaynaktaki en az bir somut öğeyi (sayı, tarih, isim) kullansın ve en az bir
+karşılaştırma, ölçü ya da senaryo içersin; "önem taşıyor", "bir kez daha", "ne denli" gibi kalıpları kullanma.
 Her alanı kısa ve tam cümlelerle yaz; hiçbir alanı boş bırakma.`;
 
 export async function analyzeArticle(article) {
@@ -256,7 +346,9 @@ async function geminiCall(c, article, ekNot = "") {
       contents: [{ parts: [{ text: buildPrompt(article, ekNot) }] }],
       generationConfig: {
         temperature: 0.85,
-        maxOutputTokens: 3000,
+        // İstem gövdeyi 250-400 kelimeye çıkardığı için 3000 jeton dar kalıyordu:
+        // Türkçe ~2-3 jeton/kelime olduğundan yanıt kesilip JSON geçersizleşebiliyordu.
+        maxOutputTokens: 4096,
         responseMimeType: "application/json",
         responseSchema: SCHEMA,
       },

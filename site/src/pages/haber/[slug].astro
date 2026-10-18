@@ -4,7 +4,7 @@ import ArticleCard from "../../components/ArticleCard.astro";
 import AdSlot from "../../components/AdSlot.astro";
 import ShareButtons from "../../components/ShareButtons.astro";
 import DevamHaber from "../../components/DevamHaber.astro";
-import { getArticles, formatDate, publishedISO, imageUrl, tagUrl, slugify } from "../../lib/articles.js";
+import { getArticles, formatDate, publishedISO, imageUrl, imageSrcset, tagUrl, slugify } from "../../lib/articles.js";
 import { kapakKaynagi, kapakUygunMu } from "../../lib/kapak.js";
 import { ADSENSE_SLOTS, ONESIGNAL_APP_ID } from "../../lib/site-meta.js";
 
@@ -139,6 +139,8 @@ const breadcrumbLd = {
   image={kapak || undefined}
   imageAlt={article.title}
   preloadImage={kapak ? imageUrl(kapak, 1200) : "/og-default.png"}
+  preloadSrcset={kapak ? imageSrcset(kapak, [820, 1200]) : undefined}
+  preloadSizes="(max-width: 900px) 100vw, 860px"
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
@@ -203,6 +205,8 @@ const breadcrumbLd = {
           <img
             class="post__img"
             src={imageUrl(kapak, 1200)}
+            srcset={imageSrcset(kapak, [820, 1200]) || undefined}
+            sizes="(max-width: 900px) 100vw, 860px"
             data-orig={kapak}
             alt={article.title}
             width="1200"
@@ -211,7 +215,7 @@ const breadcrumbLd = {
             decoding="async"
             fetchpriority="high"
             referrerpolicy="no-referrer"
-            onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.src=this.dataset.orig}else{this.classList.add('is-broken')}"
+            onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.removeAttribute('srcset');this.removeAttribute('sizes');this.src=this.dataset.orig}else{this.classList.add('is-broken')}"
           />
         ) : null}
         <span class="post__veil" aria-hidden="true"></span>
@@ -280,6 +284,8 @@ const breadcrumbLd = {
                       <img
                         class="content__fig-img"
                         src={imageUrl(ekGorseller[0], 1000)}
+                        srcset={imageSrcset(ekGorseller[0], [640, 1000]) || undefined}
+                        sizes="(max-width: 900px) 100vw, 800px"
                         data-orig={ekGorseller[0]}
                         alt={`${article.title} — haber fotoğrafı`}
                         width="1000"
@@ -287,7 +293,7 @@ const breadcrumbLd = {
                         loading="lazy"
                         decoding="async"
                         referrerpolicy="no-referrer"
-                        onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.src=this.dataset.orig}else{this.closest('figure').remove()}"
+                        onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.removeAttribute('srcset');this.removeAttribute('sizes');this.src=this.dataset.orig}else{this.closest('figure').remove()}"
                       />
                     </a>
                     <figcaption>
@@ -309,6 +315,8 @@ const breadcrumbLd = {
                       <img
                         class="content__fig-img"
                         src={imageUrl(ekGorseller[1], 1000)}
+                        srcset={imageSrcset(ekGorseller[1], [640, 1000]) || undefined}
+                        sizes="(max-width: 900px) 100vw, 800px"
                         data-orig={ekGorseller[1]}
                         alt={`${article.title} — haber fotoğrafı`}
                         width="1000"
@@ -316,7 +324,7 @@ const breadcrumbLd = {
                         loading="lazy"
                         decoding="async"
                         referrerpolicy="no-referrer"
-                        onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.src=this.dataset.orig}else{this.closest('figure').remove()}"
+                        onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.removeAttribute('srcset');this.removeAttribute('sizes');this.src=this.dataset.orig}else{this.closest('figure').remove()}"
                       />
                     </a>
                     <figcaption>

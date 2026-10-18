@@ -2,7 +2,7 @@
 // ShiftDelete tarzı "okumaya devam": bir haberin ardından benzer haberlerin
 // TAM içeriği (başlık, görsel, özet, maddeler, gövde, AI yorumu, kaynak) akar.
 // Böylece okur hiç "haber bitti" duvarına çarpmaz; zincir birkaç haberde durur.
-import { imageUrl, formatDate, publishedISO } from "../lib/articles.js";
+import { imageUrl, imageSrcset, formatDate, publishedISO } from "../lib/articles.js";
 import { kapakKaynagi, kapakUygunMu } from "../lib/kapak.js";
 
 const { article, index = 0 } = Astro.props;
@@ -18,7 +18,7 @@ const ekGorsel = (Array.isArray(article.images) ? article.images : [])
   .filter((u) => typeof u === "string" && /^https?:\/\//i.test(u) && u !== kapak)
   .find((u) => kapakUygunMu(article, u));
 const errYok = "this.closest('figure').remove()";
-const gorselHata = `if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.src=this.dataset.orig}else{${errYok}}`;
+const gorselHata = `if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.removeAttribute('srcset');this.removeAttribute('sizes');this.src=this.dataset.orig}else{${errYok}}`;
 ---
 
 <article class="devam" id={`devam-${index + 1}`}>
@@ -44,6 +44,8 @@ const gorselHata = `if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';th
     <figure class="devam__media">
       <img
         src={imageUrl(kapak, 1000)}
+        srcset={imageSrcset(kapak, [640, 1000]) || undefined}
+        sizes="(max-width: 900px) 100vw, 800px"
         data-orig={kapak}
         alt={article.title}
         width="1000"
@@ -71,6 +73,8 @@ const gorselHata = `if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';th
     <figure class="devam__media devam__media--ek">
       <img
         src={imageUrl(ekGorsel, 1000)}
+        srcset={imageSrcset(ekGorsel, [640, 1000]) || undefined}
+        sizes="(max-width: 900px) 100vw, 800px"
         data-orig={ekGorsel}
         alt={`${article.title} — haber fotoğrafı`}
         width="1000"

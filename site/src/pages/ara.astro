@@ -95,6 +95,15 @@ import Base from "../layouts/Base.astro";
     }[c]));
   const norm = (s) => String(s ?? "").toLocaleLowerCase("tr");
 
+  // Arama sonuçlarının fotoğrafı ham kaynak adresten gelirse tek karede
+  // yüzlerce KB inebiliyor; arama indeksinde adres ham durur, görsel burada
+  // küçültme servisinden istenir (kart ~340 px genişlikte görünür).
+  function gorselUrl(src, w = 480) {
+    if (!src || !/^https?:\/\//i.test(src)) return src || "";
+    const h = Math.round((w * 9) / 16);
+    return `https://wsrv.nl/?url=${encodeURIComponent(src)}&w=${w}&h=${h}&fit=cover&output=webp&q=66`;
+  }
+
   // Optimizasyon: veri, kullanıcı arama yapana kadar indirilmez (tek seferlik).
   let DATA = null;
   let pending = null;
@@ -120,7 +129,7 @@ import Base from "../layouts/Base.astro";
             <span class="card__ph-mark">H</span>
             <span class="card__ph-cat">${esc(a.c || "")}</span>
           </div>
-          ${a.img ? `<img src="${esc(a.img)}" alt="${esc(a.t)}" loading="lazy" decoding="async" onerror="this.classList.add('is-broken')" />` : ""}
+          ${a.img ? `<img src="${esc(gorselUrl(a.img))}" alt="${esc(a.t)}" loading="lazy" decoding="async" onerror="this.classList.add('is-broken')" />` : ""}
           <span class="card__badge">${esc(a.c || "")}</span>
         </div>
         <div class="card__body">
