@@ -98,7 +98,8 @@ function aliciNotu(yanit) {
 }
 
 async function durumOku() {
-  if (!existsSync(DURUM_DOSYA)) return { updatedAt: null, sent: [], sonKategori: {}, gun: "", gunSayi: {} };
+  if (!existsSync(DURUM_DOSYA))
+    return { updatedAt: null, sent: [], sonKategori: {}, gun: "", gunSayi: {}, hosGeldin: false };
   try {
     const d = JSON.parse(await readFile(DURUM_DOSYA, "utf8"));
     return {
@@ -107,9 +108,10 @@ async function durumOku() {
       sonKategori: d.sonKategori && typeof d.sonKategori === "object" ? d.sonKategori : {},
       gun: d.gun || "",
       gunSayi: d.gunSayi && typeof d.gunSayi === "object" ? d.gunSayi : {},
+      hosGeldin: d.hosGeldin === true,
     };
   } catch {
-    return { updatedAt: null, sent: [], sonKategori: {}, gun: "", gunSayi: {} };
+    return { updatedAt: null, sent: [], sonKategori: {}, gun: "", gunSayi: {}, hosGeldin: false };
   }
 }
 
@@ -122,8 +124,30 @@ async function durumYaz(durum) {
     gunSayi: durum.gunSayi,
     sonKategori: durum.sonKategori,
     sent,
+    hosGeldin: durum.hosGeldin === true,
   };
   await writeFile(DURUM_DOSYA, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
+}
+
+/**
+ * OneSignal'deki abone sayısı. Okunamazsa null döner (çağıran karar verir).
+ * Neden gerekli: günlük tavan dolduğunda gönderim yapılmadığı için
+ * yanıttaki "recipients" alanı da gelmez; abone sayısını ayrıca sormak
+ * gerekiyor (hem günlük bilgi hem "hoş geldin" kararı için).
+ */
+async function aboneSayisi() {
+  try {
+    const res = await fetch(`https://api.onesignal.com/apps/${APP_ID}/users?limit=1`, {
+      headers: { Authorization: `Key ${REST_KEY}` },
+      signal: AbortSignal.timeout(15000),
+    });
+    if (!res.ok) return null;
+    const j = await res.json();
+    const n = Number(j?.total_count);
+    return Number.isFinite(n) ? n : null;
+  } catch {
+    return null;
+  }
 }
 
 /** Bildirimin tıklanınca gideceği adres + görsel + metin. */
@@ -223,6 +247,67 @@ export async function bildirimleriGonder({ dry = false } = {}) {
   );
 
   let sayilan = 0;
+
+  // ---- 0) HOŞ GELDİN / TEST BİLDİRİMİ ----
+  // Neden var: okuyucu bildirim iznini verdiğinde HİÇBİR ŞEY görmezse "çalışmıyor"
+  // sanır. Günlük tavan dolduğunda (son dakika 6 + konu 3) yeni aboneye saatlerce
+  // bildirim gitmez; bu yüzden izni veren okuyucuya ilk anda bir kez "hoş geldin"
+  // gönderilir. Günlük tavandan ve asgari aralıktan BAĞIMSIZDIR; yalnızca bir kez
+  // çalışır (durum.hosGeldin). Elle test: BILDIRIM_TEST=1 (tavan yok sayılır).
+  const test = process.env.BILDIRIM_TEST === "1";
+  const abone = await aboneSayisi();
+  console.log(`Bildirim: abone sayısı: ${abone === null ? "okunamadı" : abone}${dry ? " [dry]" : ""}`);
+
+  // Teşhis: iPhone/Safari web push kurulu mu? iPhone'da bildirim gelmiyorsa
+  // sebep neredeyse her zaman budur (Apple platformu + APNs anahtarı tanımlı
+  // değilse iOS aboneleri sessizce abone olamaz). Ayrıntı README'de.
+  if (!dry) {
+    try {
+      const r = await fetch(`https://api.onesignal.com/apps/${APP_ID}`, {
+        headers: { Authorization: `Key ${REST_KEY}` },
+        signal: AbortSignal.timeout(15000),
+      });
+      if (r.ok) {
+        const a = await r.json();
+        console.log(
+          `Bildirim: uygulama "${a.name}" | kayıt: ${a.players ?? "-"} | ` +
+            `apns (iOS): ${a.apns_env ? "kurulu" : "KURULU DEĞİL"} | ` +
+            `safari_web_id: ${a.safari_web_id ? "var" : "yok"} | ` +
+            `chrome_web: ${a.chrome_web_origin ? "var" : "yok"}`
+        );
+      } else {
+        console.log(`Bildirim: uygulama bilgisi okunamadı (HTTP ${r.status}).`);
+      }
+    } catch {
+      /* teşhis amaçlı; gönderimi engellemez */
+    }
+  }
+
+  if (!dry && (test || durum.hosGeldin !== true) && (test || abone === null || abone > 0)) {
+    try {
+      const yanit = await gonder({
+        baslik: test ? "🔔 Test bildirimi" : "🔔 Bildirimler açıldı",
+        icerik: test
+          ? "Bildirimler çalışıyor. HaberinAi'de son dakika haberleri artık cebinde."
+          : "Son dakika haberleri artık buradan gelecek. İlk önemli gelişmede haber vereceğiz.",
+        url: `${SITE_URL}/${test ? "" : "son-dakika/"}`,
+        ttl: 86400,
+        anahtar: `hos-geldin-${tr.gun}-${test ? Date.now() : "1"}`,
+      });
+      console.log(`  ✓ [${test ? "test" : "hoş geldin"}]${yanit?.id ? ` (${yanit.id})` : ""}${aliciNotu(yanit)}`);
+      // "Hoş geldin" yalnızca gerçekten bir cihaza ulaştıysa bir kez gönderilmiş
+      // sayılır. Abone yoksa (0 cihaz) işaret konmaz; ilk abone geldiğinde
+      // gönderilir. Böylece "izin verdim, hiç bildirim gelmedi" durumu oluşmaz.
+      const ulasan = Number(yanit?.recipients);
+      const ulasti = Number.isFinite(ulasan) ? ulasan > 0 : abone === null ? true : abone > 0;
+      if (ulasti) durum.hosGeldin = true;
+      sayilan++;
+    } catch (err) {
+      console.warn(`  ✗ [hoş geldin] ${err.message}`);
+    }
+  } else if (!test && !dry && durum.hosGeldin !== true && abone === 0) {
+    console.log("Bildirim: henüz abone yok — hoş geldin bildirimi bekletiliyor.");
+  }
 
   // ---- 1) SON DAKİKA ----
   if (gunToplam < TOPLAM_MAX_GUN && (durum.gunSayi.son || 0) < SON_MAX_GUN) {

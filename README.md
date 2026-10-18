@@ -365,7 +365,7 @@ tıklanınca o kategori takip edilir ve ilk kez bildirim izni istenir.
 | Parça | Nerede | Durum |
 | --- | --- | --- |
 | App ID | `site/src/lib/site-meta.js` (varsayılan) ya da `gh variable set ONESIGNAL_APP_ID` | ✅ tanımlı |
-| REST API Key | `gh secret set ONESIGNAL_REST_API_KEY` (gizli) | ⏳ bekleniyor — gelmeden hiçbir push **gönderilmez** |
+| REST API Key | `gh secret set ONESIGNAL_REST_API_KEY` (gizli) | ✅ tanımlı — gelmeden hiçbir push **gönderilmez** |
 | SDK + init | `site/src/layouts/Base.astro` (`<head>`) | ✅ |
 | Service worker | `site/public/OneSignalSDKWorker.js` → `/OneSignalSDKWorker.js` | ✅ |
 | Zil + panel + takip | `site/src/components/Bildirim.astro` | ✅ |
@@ -381,6 +381,23 @@ tıklanınca o kategori takip edilir ve ilk kez bildirim izni istenir.
   "kategoriyi takip et" düğmesine basılınca istenir.
 - Safari (macOS 13+) ve iOS 16.4+ VAPID ile çalışır, ek sertifika gerekmez; iPhone'da
   bildirim için site **Ana Ekrana eklenmelidir** (panel bunu okuyucuya yazar).
+- **iPhone tuzağı:** iOS'ta web push yalnızca "Ana Ekrana Ekle" ile açılan uygulamada
+  çalışır. Akıştaki bildirim istemi iPhone'u tanırsa düğme yerine yolu gösterir
+  ("Paylaş → Ana Ekrana Ekle"); Safari sekmesinde basmak sessizce hiçbir şey yapmaz.
+- **Hoş geldin bildirimi:** Okuyucu izni verdiğinde günlük tavan dolmuş olsa bile
+  **ilk anda bir kez** "🔔 Bildirimler açıldı" bildirimi gider. Sebep: tavan doluyken
+  yeni abone saatlerce sessizlikle karşılaşıp "çalışmıyor" sanıyordu. Günlük tavandan
+  ve asgari aralıktan bağımsızdır; `data/bildirim.json` → `hosGeldin` ile yalnızca bir
+  kez gönderilir (0 cihaza düşerse işaret konmaz, ilk abonede tekrar denenir).
+- **Elle test:** GitHub → Actions → **Haber Hatti** → *Run workflow* →
+  "Test bildirimi gönder" işaretle. `BILDIRIM_TEST=1` ile tüm abonelere, günlük tavanı
+  yok sayarak tek bir test bildirimi gider. Yerelde: `$env:BILDIRIM_TEST="1"; npm run bildirim`
+- **Günlük teşhis (CI günlüğü):** her turda `abone sayısı: N` ve uygulama satırı yazılır:
+  `kayıt: N | apns (iOS): kurulu/KURULU DEĞİL | safari_web_id | chrome_web`. iPhone'dan
+  abone olunup bildirim gelmiyorsa ilk bakılacak yer `apns (iOS)` alanıdır.
+- **Günlük tavan neden doluyor:** son dakika 6 + konu 3 = 9. Yoğun günlerde öğlene kadar
+  dolabilir; bu kasıtlıdır (okuyucuyu boğmamak için). İlk izlenim "hoş geldin"
+  bildirimiyle kurtarılır.
 
 **Dosyalar:** `site/src/components/Bildirim.astro` (zil + panel + abonelik),
 `site/public/OneSignalSDKWorker.js` (service worker), `site/public/ikon-192.png`
@@ -483,6 +500,19 @@ Böylece akış, okurun kendi tercihlerinden öğrenir; kapattığında sunucu s
 dönülür (`data-siraKaydi` ile saklanır). Veri cihazda kalır, sunucuya hiçbir şey
 gönderilmez. (Sıralama yalnızca düğmeye basıldığında uygulanır; kaydırma sırasında
 kartlar zıplamaz.)
+
+### "Gördün" hafızası (taze haber önce)
+
+Bir kez gördüğün (ya da beğendiğin/kaydettiğin) haber **bir sonraki ziyarette akışın
+tepesinde durmaz**: açılışta görülmemişler öne, görülenler alta alınır (grup içinde
+sunucu sırası korunur). Kart görselinin sol üstünde küçük **✓ gördün** rozeti çıkar ve
+görsel hafifçe soluklaşır — böylece sıralamanın neden değiştiği anlaşılır.
+
+- Kayıt: `localStorage` → `akis-gorulen` (son 400 slug, cihazda kalır, sunucuya gitmez).
+- Bir kart ekranın %60'ından fazlası görününce "görüldü" sayılır (IntersectionObserver);
+  beğen/kaydet düğmeleri de anında işaretler.
+- Sıralama **yalnızca açılışta** uygulanır (kaydırma sırasında içerik parmağın altından
+  kaymasın). ✨ *Sana özel* açıksa dokunulmaz; o okuyucunun kendi seçimidir.
 
 ### 🔥 İlgi rozeti (kronolojik listelerde)
 

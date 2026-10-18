@@ -193,7 +193,7 @@ const ilk = liste.slice(0, ilkSayi);
       // Kategori akışında ilk kartlar süzülmüş listeden geldiği için toplar
       // baştan okunur, tekrar eden slug'lar ayıklanır.
       let globalOffset = Number(kok.dataset.baslangic || 0);
-      const gorulenler = new Set(
+      const listedekiler = new Set(
         [...liste.querySelectorAll(".ak")].map((k) => k.dataset.slug)
       );
       let tukendi = false;
@@ -221,6 +221,11 @@ const ilk = liste.slice(0, ilkSayi);
 
       const begeniler = oku("akis-begeni");
       const kayitlar = oku("akis-kayit");
+      // GÖRÜLENLER: bir kez gördüğün (ya da beğendiğin) haber, bir sonraki
+      // ziyarette akışın tepesinde durmaz. Şikâyet: "beğendiğim şey bir dahaki
+      // girişimde yine en üstteydi". Sıra: görülmemişler önce, gördükler sonra
+      // (grup içinde sunucu sırası korunur). Veri cihazda kalır.
+      const gorulenler = oku("akis-gorulen");
 
       const sayilari = () => {
         const b = kok.querySelector('[data-sayi="begeni"]');
@@ -245,10 +250,54 @@ const ilk = liste.slice(0, ilkSayi);
         const k = kart.querySelector(".ak__kaydet");
         if (b) b.setAttribute("aria-pressed", String(begen));
         if (k) k.setAttribute("aria-pressed", String(kayit));
+        // "Gördün" rozeti: kartı daha önce gördüysen görselde küçük bir not
+        // durur. Sıralamanın neden değiştiğini okuyucuya açıklar.
+        const gorulen = gorulenler.has(slug);
+        kart.classList.toggle("is-gorulen", gorulen);
+        const gorsel = kart.querySelector(".ak__gorsel");
+        if (gorsel) {
+          const rozet = gorsel.querySelector(".ak__gorulen");
+          if (gorulen && !rozet) {
+            gorsel.insertAdjacentHTML(
+              "beforeend",
+              '<span class="ak__gorulen" aria-hidden="true">gördün</span>'
+            );
+          } else if (!gorulen && rozet) {
+            rozet.remove();
+          }
+        }
         if (suzgec === "begeni") kart.hidden = !begen;
         else if (suzgec === "kayit") kart.hidden = !kayit;
         else kart.hidden = false;
       }
+
+      /** Görüleni kalıcı olarak işaretler (sıra DEĞİŞMEZ; zıplama olmasın). */
+      function gorulenIsaretle(kart) {
+        const slug = kart.dataset.slug;
+        if (!slug || gorulenler.has(slug)) return;
+        gorulenler.add(slug);
+        yaz("akis-gorulen", gorulenler);
+        boya(kart);
+      }
+
+      // Kart ekranın yarısından fazlası görününce "gördün" sayılır.
+      const gorulenGozcu =
+        "IntersectionObserver" in window
+          ? new IntersectionObserver(
+              (girisler) => {
+                for (const g of girisler) {
+                  if (!g.isIntersecting) continue;
+                  gorulenIsaretle(g.target);
+                  gorulenGozcu.unobserve(g.target);
+                }
+              },
+              { threshold: 0.6 }
+            )
+          : null;
+      const gozle = (kap) => {
+        if (!gorulenGozcu) return;
+        kap.querySelectorAll(".ak").forEach((k) => gorulenGozcu.observe(k));
+      };
 
       const boyaHepsi = () => {
         liste.querySelectorAll(".ak").forEach(boya);
@@ -374,9 +423,15 @@ const ilk = liste.slice(0, ilkSayi);
         const kart = dugme.closest(".ak");
         if (!kart) return;
         const islem = dugme.dataset.islem;
-        if (islem === "begen") begen(kart);
-        else if (islem === "kaydet") kaydet(kart);
-        else if (islem === "paylas") paylas(kart);
+        if (islem === "begen") {
+          begen(kart);
+          // Beğendiğin haber de "gördün" sayılır: bir sonraki ziyarette tepede
+          // tekrar durmaz (şikâyetin tam karşılığı).
+          gorulenIsaretle(kart);
+        } else if (islem === "kaydet") {
+          kaydet(kart);
+          gorulenIsaretle(kart);
+        } else if (islem === "paylas") paylas(kart);
         else if (islem === "yorum") yorumAc(kart);
       });
 
@@ -453,6 +508,23 @@ const ilk = liste.slice(0, ilkSayi);
         else liste.appendChild(reklam);
       }
 
+      /**
+       * Görülmemiş haberleri öne alır (görülenler akışın altına düşer).
+       * YALNIZCA AÇILIŞTA çalışır: kaydırma sırasında sıra değişirse içerik
+       * parmağın altından kayar. "Sana özel" açıksa dokunulmaz (okuyucunun
+       * kendi seçimidir). Gruplar içinde sunucu sırası korunur.
+       */
+      function gorulenSirala() {
+        if (sanaOzel || !gorulenler.size) return;
+        const kartlar = [...liste.querySelectorAll(".ak")];
+        if (!kartlar.length) return;
+        kartlar
+          .map((k, i) => ({ k, i, g: gorulenler.has(k.dataset.slug) ? 1 : 0 }))
+          .sort((x, y) => x.g - y.g || x.i - y.i)
+          .forEach((x) => liste.appendChild(x.k));
+        reklamiYerlestir();
+      }
+
       function sanaOzelUygula() {
         const kartlar = [...liste.querySelectorAll(".ak")];
         if (!kartlar.length) return;
@@ -523,14 +595,15 @@ const ilk = liste.slice(0, ilkSayi);
                 const slug = k.dataset.slug;
                 // Tekrar eden kart olmasın (kategori akışında ilk kartlar
                 // süzülmüş listeden gelir) ve kategori dışı kart eklenmesin.
-                if (gorulenler.has(slug)) continue;
+                if (listedekiler.has(slug)) continue;
                 if (kategori && k.dataset.kat !== kategori) continue;
-                gorulenler.add(slug);
+                listedekiler.add(slug);
                 eklenecek.push(k);
                 parca.appendChild(k);
               }
               liste.appendChild(parca);
               eklenecek.forEach(boya);
+              gozle(parca);
               // Yeni kartlar akışın sonuna eklenir; "Sana özel" kapatıldığında
               // doğru sıraya dönebilmek için sunucu sırası numarası yazılır.
               let siraNo = liste.querySelectorAll(".ak").length - eklenecek.length;
@@ -631,6 +704,10 @@ const ilk = liste.slice(0, ilkSayi);
       // dönülür.
       liste.querySelectorAll(".ak").forEach((k, i) => (k.dataset.siraKaydi = String(i)));
       boyaHepsi();
+      // Gördüğün haberler bu ziyarette aşağı düşer (görülmemişler önce).
+      gorulenSirala();
+      liste.querySelectorAll(".ak").forEach((k, i) => (k.dataset.siraKaydi = String(i)));
+      gozle(liste);
       // Sayfada basılan kart sayısı listeyi bitiriyorsa (kısa kategori) bekleme.
       if (Number(kok.dataset.ilk || 0) >= toplam) {
         tukendi = true;
@@ -658,6 +735,18 @@ const ilk = liste.slice(0, ilkSayi);
         const btn = document.getElementById("akis-bel-btn");
         if (!kutu || !btn) return;
         const K_KAPALI = "akis-bildirim-kapali";
+        // iPhone/Safari: iOS'ta web push YALNIZCA "Ana Ekrana Ekle" ile açılan
+        // uygulamada çalışır. Safari sekmesinde butona basmak sessizce hiçbir şey
+        // yapmaz — okuyucuya "açtım ama gelmiyor" dedirtmemek için istem, bu
+        // durumda buton yerine yolu gösterir (kullanıcı şikâyeti: telden açtım,
+        // bildirim gelmedi).
+        const iosCihaz =
+          /iP(hone|ad|od)/.test(navigator.userAgent) ||
+          (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+        const anaEkranda =
+          navigator.standalone === true ||
+          (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches);
+        const iosSorun = iosCihaz && !anaEkranda;
         const izinVar = () => {
           try {
             return typeof Notification !== "undefined" && Notification.permission === "granted";
@@ -669,13 +758,29 @@ const ilk = liste.slice(0, ilkSayi);
           try {
             if (localStorage.getItem(K_KAPALI) === "1") return;
           } catch {}
-          if (!izinVar()) kutu.hidden = false;
+          if (izinVar()) return;
+          if (iosSorun) {
+            const metin = kutu.querySelector(".akis__bel-metin");
+            const ikon = kutu.querySelector(".akis__bel-ikon");
+            if (ikon) ikon.textContent = "📲";
+            if (metin) {
+              metin.innerHTML =
+                "<strong>iPhone'da bildirim için: Paylaş → “Ana Ekrana Ekle”</strong>" +
+                "<span>Sonra o ikondan aç ve buradaki düğmeye bas. Safari sekmesinde iOS bildirim göndermez.</span>";
+            }
+            btn.textContent = "Anladım";
+          }
+          kutu.hidden = false;
         };
         // İstem, sayfa içeriğini geciktirmesin: biraz sonra görünür.
         setTimeout(goster, 1500);
 
         btn.addEventListener("click", async (e) => {
           e.stopPropagation();
+          if (iosSorun) {
+            kutu.hidden = true;
+            return;
+          }
           btn.textContent = "Açılıyor…";
           let oldu = false;
           try {

@@ -7,7 +7,14 @@ on:
   # baslatir. Cron yalnizca zincir herhangi bir sebeple koparsa yedek olarak kalir.
   schedule:
     - cron: "*/5 * * * *"
-  workflow_dispatch: {} # elle calistirma
+  workflow_dispatch:
+    # Elle calistirma. "bildirim_test" isaretlenirse tum abonelere günlük
+    # tavandan bağımsız tek bir test bildirimi gider (izin çalışıyor mu?).
+    inputs:
+      bildirim_test:
+        description: "Test bildirimi gönder (tüm abonelere, günlük tavanı yok sayar)"
+        type: boolean
+        default: false
   push:
     # main: kod/site degisikligi -> aninda derle + yayinla
     # tetik: 5 dakikalik zincir halkasi -> sadece topla
@@ -89,6 +96,9 @@ jobs:
           SITE_URL: ${{ vars.SITE_URL }}
           ONESIGNAL_APP_ID: ${{ vars.ONESIGNAL_APP_ID }}
           ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
+          # Elle calistirmada "Test bildirimi gonder" isaretlenirse 1 olur:
+          # abonelere günlük tavandan bagimsiz tek bir test bildirimi gider.
+          BILDIRIM_TEST: ${{ inputs.bildirim_test && '1' || '0' }}
         run: npm run bildirim
 
       - name: Degisiklikleri kaydet
