@@ -1,5 +1,5 @@
 // ==========================================================================
-// /akis/sayfa/<ofset>.json — AI Akış'ın sonsuz kaydırma topları
+// /akis/sayfa/<ofset>.json — Shorts Haber'in sonsuz kaydırma topları
 // --------------------------------------------------------------------------
 // NEDEN SORGU DİZESİ DEĞİL: site tamamen statik (GitHub Pages). Statik bir
 // /akis.json dosyası sorgu dizesini (offset, kategori) göremez; her istek aynı

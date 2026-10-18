@@ -1,6 +1,6 @@
 {
-  "name": "HaberinAi — Kısa Kısa Haberler",
-  "short_name": "HaberinAi",
+  "name": "HaberinAi Shorts",
+  "short_name": "Shorts",
   "description": "Yapay zekâ destekli Türkçe haber akışı: kısa kısa haberler, özetler ve yorumlar.",
   "lang": "tr",
   "dir": "ltr",
@@ -33,8 +33,8 @@
   ],
   "shortcuts": [
     {
-      "name": "AI Akış",
-      "short_name": "Akış",
+      "name": "Shorts Haber",
+      "short_name": "Shorts",
       "url": "/akis/"
     },
     {
