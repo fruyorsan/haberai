@@ -12,7 +12,9 @@
 //
 // Görsel kuralı: kapak süzgecinden (lib/kapak.js) geçmeyen fotoğraf gösterilmez;
 // o haberler markalı kırmızı zemin + kategori ile basılır. Yanlış fotoğraf
-// göstermektense markalı zemin yeğlenir.
+// göstermektense markalı zemin yeğlenir. Kart üzerinde marka/harf YER TUTUCUSU
+// gösterilmez (eskiden "H" harfi basılıyordu): akışta fotoğrafsız haberler
+// zaten listenin sonuna düşer (lib/ilgi.js), yani ilk ekranlar hep fotoğraflı.
 // ==========================================================================
 import { imageUrl, imageSrcset, timeAgo, publishedISO } from "./articles.js";
 import { kapakKaynagi } from "./kapak.js";
@@ -84,7 +86,7 @@ export function akisKart(a, sira = 0) {
       } alt="${baslik}"${
         oncelik ? ' fetchpriority="high"' : ' loading="lazy"'
       } decoding="async" data-orig="${kac(kaynak)}" onerror="${GORSEL_HATA}" />`
-    : '<span class="ak__harf" aria-hidden="true">H</span>';
+    : "";
 
   return `<article class="ak" data-slug="${slug}" data-kat="${kac(a.categorySlug)}" data-ilgi="${puan}"${
     a.breaking === true ? ' data-son="1"' : ""

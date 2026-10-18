@@ -927,12 +927,6 @@ html.cerez-acik .to-top {
   height: 100%;
   object-fit: cover;
 }
-.ak__harf {
-  font-size: 4.6rem;
-  font-weight: 900;
-  letter-spacing: -0.05em;
-  color: rgba(255, 255, 255, 0.88);
-}
 /* Alt kenarda yumuşak karartma: rozetler her fotoğrafta okunaklı kalsın. */
 .ak__gorsel::after {
   content: "";

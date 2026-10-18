@@ -406,11 +406,19 @@ ilgi = kategori ağırlığı + merak/ölçü işaretleri + tazelik + son dakika
 - **Ceza:** `belediye`, `tören`, `ziyaret`, `sergi`, `kampanya`, `protokol` gibi rutin
   kalıplar puanı düşürür (akışı dolduran ama merak uyandırmayan başlıklar).
 - **Son dakika** rozetli haberler ek puan alır.
+- **Gerçek fotoğraf şartı (birincil ölçüt):** kapak güvenlik süzgecinden
+  (`lib/kapak.js`) geçen fotoğrafı olmayan haberler, puanı ne olursa olsun listenin
+  SONUNA düşer. Aksi halde akışın tepesine "H" harfli yer tutucu kart çıkıyordu
+  (fotoğrafı elenen bir haber ilgi puanı yüksek olduğu için ilk sıralara oturuyordu).
+  Bu haberler silinmez; arşivde, kendi kategori sayfasında ve haberin kendi
+  sayfasında kalır. `kapakliOneSirala()` aynı kuralı kronolojik kategori
+  akışlarına uygular (grup içinde sıra korunur). Kart üzerinde marka/harf yer
+  tutucusu GÖSTERİLMEZ.
 
 Sıralama **deterministiktir** (rastgelelik yok): `/akis/` gövdesi ile
 `/akis/sayfa/<ofset>.json` topları aynı fonksiyonu kullandığı için sonsuz kaydırmada
 kart tekrarı ya da sıra kayması olmaz. Kategori akışları (`/akis/kategori/<slug>/`)
-kendi içinde kronolojik kalır.
+kendi içinde kronolojik kalır (yalnızca fotoğraflı/fotoğrafsız gruplaması uygulanır).
 
 > Neden: akış eskiden "en yeni" sırasındaydı ve belediye/tören/sergi gibi rutin yerel
 > haberler teknoloji, oyun ve merak uyandıran konuları gölgeliyordu.

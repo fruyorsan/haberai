@@ -21,6 +21,7 @@
 // Kısa/karışabilen kalıplar (TAM_KELIME) tam kelime ister: "sel" → "selam" ✗.
 // ==========================================================================
 import { publishedTime, getArticles } from "./articles.js";
+import { kapakKaynagi } from "./kapak.js";
 
 /** Türkçe küçük harfe indirger ve aksanları sadeleştirir (eşleşme kolay olsun). */
 function sade(metin) {
@@ -245,15 +246,39 @@ export function ilgiSkoru(a, simdi = Date.now()) {
 }
 
 /**
- * Tüm akışı ilgi puanına göre sıralar.
- * Eşitlikte daha yeni haber, sonra özgün sıra korunur (kararlı sıralama).
+ * Tüm akışı sıralar.
+ *
+ * BİRİNCİL ÖLÇÜT GERÇEK FOTOĞRAF: kapak güvenlik süzgecinden (lib/kapak.js)
+ * geçen bir fotoğrafı olmayan haberlerin arkasına düşer. Aksi halde akışın
+ * tepesine "H" harfli yer tutucu kart çıkıyordu (yanlış/genel fotoğrafı elenen
+ * haberler ilgi puanı yüksek olduğu için ilk sıralara oturuyordu). Kullanıcı
+ * kuralı: akışta her kart GERÇEK fotoğrafla görünür. Fotoğrafsız haberler
+ * silinmez; arşivde, kategori sayfalarında ve haberin kendi sayfasında kalır.
+ *
+ * İkincil ölçüt ilgi puanı, eşitlikte daha yeni haber, sonra özgün sıra
+ * (kararlı sıralama — rastgelelik yok, sayfa ile sonsuz kaydırma topları aynı).
  */
 export function ilgiSirala(liste) {
   const simdi = Date.now();
   return liste
-    .map((a, i) => ({ a, i, p: ilgiSkoru(a, simdi) }))
-    .sort((x, y) => y.p - x.p || publishedTime(y.a) - publishedTime(x.a) || x.i - y.i)
+    .map((a, i) => ({ a, i, p: ilgiSkoru(a, simdi), k: kapakKaynagi(a) ? 1 : 0 }))
+    .sort(
+      (x, y) =>
+        y.k - x.k || y.p - x.p || publishedTime(y.a) - publishedTime(x.a) || x.i - y.i
+    )
     .map((x) => x.a);
+}
+
+/**
+ * Kronolojik bir listeyi "önce gerçek fotoğraflı" olacak şekilde gruplar.
+ * Grup içinde sıra KORUNUR (eskiden yeniye). Kategori akışları kronolojik
+ * kalsın ama tepelerine fotoğrafsız kart çıkmasın diye kullanılır.
+ */
+export function kapakliOneSirala(liste) {
+  const kapakli = [];
+  const kapaksiz = [];
+  for (const a of liste) (kapakKaynagi(a) ? kapakli : kapaksiz).push(a);
+  return [...kapakli, ...kapaksiz];
 }
 
 /**

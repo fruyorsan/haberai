@@ -16,7 +16,7 @@ import AdSlot from "./AdSlot.astro";
 import { getArticles, getCategories, imageUrl } from "../lib/articles.js";
 import { kapakKaynagi } from "../lib/kapak.js";
 import { akisKartlar, AKIS_ILK } from "../lib/akis-kart.js";
-import { ilgiSirala } from "../lib/ilgi.js";
+import { ilgiSirala, kapakliOneSirala } from "../lib/ilgi.js";
 import { ADSENSE_SLOTS } from "../lib/site-meta.js";
 
 const { kategori = "", kategoriAdi = "", ilkSayi = AKIS_ILK } = Astro.props;
@@ -24,9 +24,13 @@ const gecerliKat = Boolean(kategori);
 const tumu = getArticles();
 const kategoriler = getCategories().slice(0, 14);
 // GLOBAL akış ilgi puanına göre sıralanır (teknoloji, oyun, yapay zekâ ve
-// merak uyandıran konular öne). Kategori akışları kendi içinde kronolojik
-// kalır. Sonsuz kaydırma topları da aynı sırayı kullanır (lib/ilgi.js).
-const liste = gecerliKat ? tumu.filter((a) => a.categorySlug === kategori) : ilgiSirala(tumu);
+// merak uyandıran konular öne). Her iki akışta da GERÇEK fotoğraflı haberler
+// önce gelir: kategori akışları kronolojik kalır ama fotoğrafsız haberler
+// grubun sonuna düşer (kart tamamen fotoğrafsız kalmasın). Sonsuz kaydırma
+// topları da aynı sırayı kullanır (lib/ilgi.js).
+const liste = gecerliKat
+  ? kapakliOneSirala(tumu.filter((a) => a.categorySlug === kategori))
+  : ilgiSirala(tumu);
 // Kategori akışlarında ilk tur daha geniş basılır: toplar GLOBAL listeden
 // geldiği için küçük/orta kategorilerde "daha fazla" boş dönebilirdi. Kategori
 // sayfaları zaten "noindex"tir; biraz daha uzun HTML sorun değil.
