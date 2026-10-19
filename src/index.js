@@ -7,7 +7,7 @@ import { shareNewArticles } from "./share.js";
 import { makeIndex, findSimilar, dedupeArticles } from "./dedupe.js";
 import { isBreaking, breakingScore } from "./breaking.js";
 import { purgeCopiedText } from "./telif.js";
-import { chooseImage } from "./gorsel.js";
+import { stokGorseller, KATEGORI_SORGU, yedekGorsel, atif } from "./stok-gorsel.js";
 
 const DRY = process.argv.includes("--dry");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -171,35 +171,52 @@ async function main() {
 
   let added = 0;
   const newArticles = [];
+
+  // TELİF GÜVENLİ GÖRSELLER: kaynağın fotoğrafı KULLANILMAZ. Arşivde bir kez
+  // görünen fotoğraf yeni bir habere kapak olmaz (aynı kare tekrar etmesin).
+  const kullanilanGorsel = new Set();
+  for (const a of articles) {
+    if (a.image) kullanilanGorsel.add(String(a.image));
+    for (const u of Array.isArray(a.images) ? a.images : []) kullanilanGorsel.add(String(u));
+    for (const g of Array.isArray(a.gorselEk) ? a.gorselEk : []) {
+      if (g?.url) kullanilanGorsel.add(String(g.url));
+    }
+  }
+
   for (const [i, item] of queue.entries()) {
     process.stdout.write(
       `  (${i + 1}/${queue.length}) ${item.source}: ${item.title.slice(0, 55)}... `
     );
     try {
-      // Sayfadan yalnızca gerçek gövde metnini al (uydurmayı azaltır) ve
-      // görsel adaylarını topla (ShiftDelete tarzı büyük, yatay gerçek fotoğraf).
-      let pageImages = [];
+      // Sayfadan yalnızca gerçek gövde metnini al (uydurmayı azaltır).
+      // Sayfanın fotoğraflarına DOKUNULMAZ: telif riski (bkz. src/stok-gorsel.js).
       let realUrl = null;
-      if (item.content.length < 1500 || !item.image) {
+      if (item.content.length < 1500) {
         const extra = await fetchPageExtras(item.link);
         realUrl = extra.resolvedUrl;
         if (extra.text && extra.text.length > 400 && item.content.length < 1500) {
           item.content = `${item.content}\n\n${extra.text}`.slice(0, 7000);
         }
-        pageImages = extra.images?.length ? extra.images : [extra.image];
-      }
-      // Kalite denetimi: logolar/küçük thumbnail'ler elenir, ölçülen en iyi
-      // büyük+yatay fotoğraf seçilir. Fotoğraf yoksa haber eklenmez.
-      const image = await chooseImage([item.image, ...pageImages]);
-      if (!image || !/^https?:\/\//i.test(image)) {
-        console.log("⏭ görsel bulunamadı (fotoğrafsız haber kabul edilmez)");
-        continue;
       }
 
       const ai = await analyzeArticle(item);
       // TELİF GÜVENCESİ: üretilen metinde kaynaktan uzun birebir diziler kalmasın.
       const { cleaned, removed } = purgeCopiedText(ai, item.content);
       if (removed > 0) console.log(`(telif: ${removed} cümle kaynakla birebir örtüştüğü için çıkarıldı) `);
+
+      // GÖRSELLER: AI'nın ürettiği İngilizce sorgu ile Wikimedia Commons'ta
+      // serbest lisanslı (CC0 / kamu malı / CC BY / CC BY-SA) fotoğraf aranır.
+      // 1 kapak + 2 gövde içi fotoğraf. Hiçbiri bulunamazsa kategorinin
+      // doğrulanmış yedek görseli kullanılır: haber asla fotoğrafsız kalmaz.
+      const sorgular = [
+        ai.gorselSorgu,
+        ...(Array.isArray(cleaned.tags) ? cleaned.tags.slice(0, 2) : []),
+        KATEGORI_SORGU[cleaned.category],
+      ];
+      let stok = await stokGorseller(sorgular, { adet: 3, kullanilan: kullanilanGorsel });
+      if (!stok.length) stok = [yedekGorsel(cleaned.category)];
+      const [kapakGorsel, ...ekler] = stok;
+
       // Google News linki gerçek adrese çözüldüyse kaynak bağlantısı da gerçek
       // siteye işaret etsin (kaynak gösterme ve telif doğruluğu).
       const sourceUrl =
@@ -209,10 +226,17 @@ async function main() {
         ...cleaned,
         source: item.source,
         sourceUrl,
-        image,
+        image: kapakGorsel.url,
+        // Fotoğrafçı + lisans + dosya sayfası: sitede atıf olarak gösterilir.
+        gorselKaynak: atif(kapakGorsel),
         publishedAt: item.publishedAt,
         generatedAt: new Date().toISOString(),
       };
+      if (ekler.length) {
+        entry.gorselEk = ekler
+          .filter((g) => g?.url)
+          .map((g) => ({ url: g.url, ...atif(g) }));
+      }
       // Yalnızca son dakika tespit edilenlerde alan eklenir; diğerlerinde hiç olmaz.
       if (item.breaking) entry.breaking = true;
       articles.push(entry);

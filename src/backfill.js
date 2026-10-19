@@ -1,8 +1,9 @@
 import { loadArticles, saveArticles } from "./store.js";
 import { fetchPageExtras } from "./fetcher.js";
-import { analyzeArticle } from "./ai.js";
+import { analyzeArticle, gorselSorgusu } from "./ai.js";
 import { purgeCopiedText } from "./telif.js";
 import { config } from "./config.js";
+import { stokGorseller, KATEGORI_SORGU, atif } from "./stok-gorsel.js";
 
 /**
  * Eski haberleri yeni biçimle yeniden üretir:
@@ -45,6 +46,42 @@ const needsWork = (a) =>
   clickbaitNote(a) ||
   summaryIsTitle(a);
 
+// ---------------------------------------------------------------- görseller
+// Arşivde bir kez kullanılmış fotoğraf yeni bir habere kapak olmasın.
+function kullanilanGorseller(articles) {
+  const set = new Set();
+  for (const a of articles) {
+    if (a.image) set.add(String(a.image));
+    for (const u of Array.isArray(a.images) ? a.images : []) set.add(String(u));
+    for (const g of Array.isArray(a.gorselEk) ? a.gorselEk : []) {
+      if (g?.url) set.add(String(g.url));
+    }
+  }
+  return set;
+}
+
+/**
+ * Habere telif güvenli stok fotoğraflar yazar (1 kapak + 2 gövde içi).
+ * AI'nın İngilizce sorgusu + kategori yedeği kullanılır. Fotoğraf bulunamazsa
+ * hiçbir şey değiştirilmez (eski fotoğraf yerinde kalır): yanlış fotoğraf
+ * göstermektense mevcut fotoğrafı korumak daha iyidir.
+ */
+async function gorselYaz(a, sorgu, kullanilan) {
+  const stok = await stokGorseller([sorgu, KATEGORI_SORGU[a.category]], {
+    adet: 3,
+    kullanilan,
+  });
+  if (!stok.length) return false;
+  const [kapak, ...ekler] = stok;
+  a.image = kapak.url;
+  a.gorselKaynak = atif(kapak);
+  if (ekler.length) a.gorselEk = ekler.map((g) => ({ url: g.url, ...atif(g) }));
+  else delete a.gorselEk;
+  // Kaynaktan alınmış eski gövde fotoğrafları: telif riski taşıdığı için silinir.
+  delete a.images;
+  return true;
+}
+
 // 0 = okurun gördüğü boşluk (gövde veya AI yorumu hiç yok), 3 = kozmetik.
 const oncelik = (a) => {
   if (needsBody(a) || needsComment(a)) return 0;
@@ -72,7 +109,6 @@ async function main() {
 
   if (!targets.length) {
     console.log("Yenilenecek haber kalmadı. ✓");
-    return;
   }
 
   if (DRY) {
@@ -126,6 +162,11 @@ async function main() {
       if (ai.tags?.length) current.tags = ai.tags;
       current.refreshedAt = new Date().toISOString();
 
+      // GÖRSEL: eski kaynak fotoğrafı telif güvenli stokla değiştir.
+      if (!current.gorselKaynak && ai.gorselSorgu) {
+        await gorselYaz(current, ai.gorselSorgu, kullanilanGorseller(articles));
+      }
+
       console.log("✓");
       done++;
       await saveArticles(articles); // ilerlemeyi hemen kaydet
@@ -138,6 +179,52 @@ async function main() {
     }
 
     if (i < targets.length - 1) await sleep(config.aiDelayMs);
+  }
+
+  // ---------------- GÖRSEL TAMAMLAMA (eski arşiv) ----------------
+  // Eski haberlerin fotoğrafları kaynak siteden alınmıştı (ajans lisanslı
+  // olabilir). AI'dan yalnızca KISA bir İngilizce sorgu istenir (tam makale
+  // üretilmez, kota az harcanır), sonra Commons'tan serbest lisanslı fotoğraf
+  // alınır. Yanlış fotoğraf göstermemek için: fotoğraf bulunamazsa ESKİ
+  // FOTOĞRAFA DOKUNULMAZ ve haber 30 gün sonra yeniden denenir.
+  const GORSEL_LIMIT = Number(process.env.GORSEL_BACKFILL_LIMIT || 0);
+  if (GORSEL_LIMIT > 0) {
+    const kalanlar = articles.filter((a) => a.image && !a.gorselKaynak);
+    const eski = kalanlar
+      .filter(
+        (a) =>
+          !a.gorselDeneme ||
+          Date.now() - new Date(a.gorselDeneme).getTime() > 30 * 24 * 60 * 60 * 1000
+      )
+      .sort((a, b) =>
+        String(b.publishedAt || b.generatedAt || "").localeCompare(
+          String(a.publishedAt || a.generatedAt || "")
+        )
+      )
+      .slice(0, GORSEL_LIMIT);
+
+    console.log(
+      `\nGörsel tamamlama: ${eski.length} haber denenecek (kalan kaynak fotoğraflı: ${kalanlar.length}).`
+    );
+    const kullanilan = kullanilanGorseller(articles);
+    let gorselSayi = 0;
+
+    for (const [i, a] of eski.entries()) {
+      try {
+        const sorgu = await gorselSorgusu(a);
+        a.gorselDeneme = new Date().toISOString();
+        if (sorgu && (await gorselYaz(a, sorgu, kullanilan))) gorselSayi++;
+      } catch (err) {
+        if (err.allExhausted) {
+          console.log("AI kotası/durumu: görsel tamamlama bu turda durduruldu.");
+          break;
+        }
+        console.warn(`  ! ${a.slug}: ${String(err.message).slice(0, 120)}`);
+      }
+      if (i < eski.length - 1) await sleep(config.aiDelayMs);
+    }
+    if (gorselSayi) await saveArticles(articles);
+    console.log(`Görsel tamamlama: ${gorselSayi} haber telif güvenli fotoğrafa geçti.`);
   }
 
   await saveArticles(articles);

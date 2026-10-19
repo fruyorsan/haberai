@@ -1092,7 +1092,6 @@ html.ysheet-kilit {
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   scroll-margin-top: 128px;
-  scroll-snap-align: start;
 }
 /* Süzgeçte gizlenen kartlar kesin gizlenir (aksi halde grid'de boşluk kalır). */
 .ak[hidden] {
@@ -1131,9 +1130,7 @@ html.ysheet-kilit {
   z-index: 2;
   padding: 6px 12px;
   border-radius: 999px;
-  background: rgba(10, 12, 16, 0.6);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: rgba(10, 12, 16, 0.72);
   color: #fff;
   font-size: 0.7rem;
   font-weight: 900;
@@ -1438,16 +1435,10 @@ html.ysheet-kilit {
     bottom: calc(86px + env(safe-area-inset-bottom, 0px));
   }
 
-  /* Akış: kartlar ekranı doldurur, kaydırma karta "oturur" (yumuşak snap).
-     Sayfanın en üstü de bir snap noktasıdır; yoksa tarayıcı ilk karta
-     oturmaya çalışıp sayfayı kendiliğinden kaydırıyor ve "Shorts Haber"
-     başlığı ekrandan taşıyordu. */
-  html:has(.akis) {
-    scroll-snap-type: y proximity;
-  }
-  .akis__ust {
-    scroll-snap-align: start;
-  }
+  /* Akış: kartlar serbest kayar. "Karta otur" (scroll-snap) KALDIRILDI:
+     telefonda her kaydırıştan sonra tarayıcı en yakın karta oturmaya çalışıyor,
+     kart yüksekliği değiştiğinde sayfa kendiliğinden kayıyordu ("shorts
+     kayması"). Kullanıcı parmağıyla nerede bırakırsa orada kalır. */
   .akis__liste {
     gap: 14px;
     padding: 0 12px;

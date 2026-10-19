@@ -1,0 +1,65 @@
+---
+// Haber gövdesi içindeki fotoğraf figürü.
+//
+// Görsel telif güvenli stok hattından geliyorsa (`kaynak` dolu) lisansın
+// istediği atıf verilir: fotoğrafçı + lisans bağlantısı + dosya sayfası.
+// Eski kayıtlarda lisans bilgisi yoktur; yalnızca kaynak adı yazılır.
+import { imageUrl, imageSrcset } from "../lib/articles.js";
+
+const { url, baslik, kaynak, eskiKaynak } = Astro.props;
+
+const lisansAdresi = (g) => {
+  if (!g) return "";
+  if (g.lisansUrl) return g.lisansUrl;
+  const m = /^CC BY(-SA)? (\d\.\d)$/i.exec(String(g.lisans || ""));
+  return m ? `https://creativecommons.org/licenses/${m[1] ? "by-sa" : "by"}/${m[2]}/` : "";
+};
+const lisansLink = kaynak ? lisansAdresi(kaynak) : "";
+---
+
+<figure class="content__fig">
+  <a
+    class="content__fig-link"
+    href={url}
+    target="_blank"
+    rel="noopener nofollow"
+    title="Fotoğrafı büyüt"
+  >
+    <img
+      class="content__fig-img"
+      src={imageUrl(url, 1000)}
+      srcset={imageSrcset(url, [640, 1000]) || undefined}
+      sizes="(max-width: 900px) 100vw, 800px"
+      data-orig={url}
+      alt={`${baslik} — haber fotoğrafı`}
+      width="1000"
+      height="563"
+      loading="lazy"
+      decoding="async"
+      referrerpolicy="no-referrer"
+      onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.removeAttribute('srcset');this.removeAttribute('sizes');this.src=this.dataset.orig}else{this.closest('figure').remove()}"
+    />
+  </a>
+  <figcaption>
+    {kaynak ? (
+      <span class="content__fig-src">
+        Fotoğraf: {kaynak.yazar || "Wikimedia Commons"}
+        {kaynak.lisans && lisansLink && (
+          <>
+            {" · "}
+            <a href={lisansLink} target="_blank" rel="noopener nofollow">{kaynak.lisans}</a>
+          </>
+        )}
+        {kaynak.sayfa && (
+          <>
+            {" · "}
+            <a href={kaynak.sayfa} target="_blank" rel="noopener nofollow">Wikimedia Commons</a>
+          </>
+        )}
+      </span>
+    ) : (
+      <span class="content__fig-src">Fotoğraf: {eskiKaynak || "HaberinAi"}</span>
+    )}
+    <span class="content__fig-hint">büyütmek için tıkla</span>
+  </figcaption>
+</figure>

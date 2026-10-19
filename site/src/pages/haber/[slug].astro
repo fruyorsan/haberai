@@ -4,6 +4,7 @@ import ArticleCard from "../../components/ArticleCard.astro";
 import AdSlot from "../../components/AdSlot.astro";
 import ShareButtons from "../../components/ShareButtons.astro";
 import DevamHaber from "../../components/DevamHaber.astro";
+import HaberFigur from "../../components/HaberFigur.astro";
 import Yorumlar from "../../components/Yorumlar.astro";
 import { getArticles, formatDate, publishedISO, imageUrl, imageSrcset, tagUrl, slugify } from "../../lib/articles.js";
 import { kapakKaynagi, kapakUygunMu } from "../../lib/kapak.js";
@@ -64,12 +65,27 @@ const kapak = kapakKaynagi(article);
 const bildirimAktif = Boolean(String(ONESIGNAL_APP_ID || "").trim());
 
 // --- Haber içi ek fotoğraflar ---
-// Kaynak sayfadan toplanan ek görseller; kapak olarak kullanılan fotoğraf tekrar
-// edilmesin. Veri alanı boşsa ilgili bölüm hiç çizilmez.
-const ekGorseller = (Array.isArray(article.images) ? article.images : [])
+// Telif güvenli stok hattı görselleri `gorselEk` içinde (URL + fotoğrafçı +
+// lisans) gelir; eski kayıtlarda yalnızca `images` (URL listesi) vardır.
+// Kapak olarak kullanılan fotoğraf tekrar edilmez; boşsa bölüm hiç çizilmez.
+const ekKaynaklar = Array.isArray(article.gorselEk) ? article.gorselEk.filter(Boolean) : [];
+const ekGorseller = (ekKaynaklar.length
+  ? ekKaynaklar.map((g) => g.url)
+  : Array.isArray(article.images)
+    ? article.images
+    : []
+)
   .filter((u) => typeof u === "string" && /^https?:\/\//i.test(u) && u !== kapak)
   .filter((u) => kapakUygunMu(article, u))
   .slice(0, 2);
+
+/** Ek fotoğrafın telif/lisans bilgisi (varsa). */
+const ekKaynak = (url) =>
+  ekKaynaklar.find((g) => String(g.url) === String(url)) || null;
+
+/** Stok fotoğrafın atıf metni: "Fotoğrafçı · Lisans · Wikimedia Commons" */
+const atifMetni = (g) =>
+  [g?.yazar, g?.lisans, "Wikimedia Commons"].filter(Boolean).join(" · ");
 
 // Ek fotoğrafın gövdede nereye gireceği: uzun haberlerde ortaya doğru kaydırılır
 // ki okuma akışı bölünmesin (ör. 6 paragraflı haberde 4. paragraftan sonra).
@@ -229,9 +245,21 @@ const breadcrumbLd = {
           />
         ) : null}
         <span class="post__veil" aria-hidden="true"></span>
-        <span class="post__ph-note">
-          {kapak ? `Fotoğraf: ${article.source}` : "Görsel: HaberinAi"}
-        </span>
+        {kapak && article.gorselKaynak?.sayfa ? (
+          <a
+            class="post__ph-note post__ph-note--atif"
+            href={article.gorselKaynak.sayfa}
+            target="_blank"
+            rel="noopener nofollow"
+            title={`Fotoğrafın lisansı: ${article.gorselKaynak.lisans || "serbest lisans"}`}
+          >
+            Fotoğraf: {atifMetni(article.gorselKaynak)}
+          </a>
+        ) : (
+          <span class="post__ph-note">
+            {kapak ? `Fotoğraf: ${article.source}` : "Görsel: HaberinAi"}
+          </span>
+        )}
       </div>
 
       <div class="post__body">
@@ -283,65 +311,21 @@ const breadcrumbLd = {
                     ortasına doğru. Fotoğraf yüklenemezse figür tamamen kaldırılır,
                     sayfa bozulmaz. Tıklanınca kaynak fotoğraf yeni sekmede açılır. */}
                 {ekGorseller[0] && i === 0 && body.length >= 3 && (
-                  <figure class="content__fig">
-                    <a
-                      class="content__fig-link"
-                      href={ekGorseller[0]}
-                      target="_blank"
-                      rel="noopener nofollow"
-                      title="Fotoğrafı büyüt"
-                    >
-                      <img
-                        class="content__fig-img"
-                        src={imageUrl(ekGorseller[0], 1000)}
-                        srcset={imageSrcset(ekGorseller[0], [640, 1000]) || undefined}
-                        sizes="(max-width: 900px) 100vw, 800px"
-                        data-orig={ekGorseller[0]}
-                        alt={`${article.title} — haber fotoğrafı`}
-                        width="1000"
-                        height="563"
-                        loading="lazy"
-                        decoding="async"
-                        referrerpolicy="no-referrer"
-                        onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.removeAttribute('srcset');this.removeAttribute('sizes');this.src=this.dataset.orig}else{this.closest('figure').remove()}"
-                      />
-                    </a>
-                    <figcaption>
-                      <span class="content__fig-src">Fotoğraf: {article.source}</span>
-                      <span class="content__fig-hint">büyütmek için tıkla</span>
-                    </figcaption>
-                  </figure>
+                  <HaberFigur
+                    url={ekGorseller[0]}
+                    baslik={article.title}
+                    kaynak={ekKaynak(ekGorseller[0])}
+                    eskiKaynak={article.source}
+                  />
                 )}
 
                 {ekGorseller[1] && i === fig2Indeks && body.length >= 5 && (
-                  <figure class="content__fig">
-                    <a
-                      class="content__fig-link"
-                      href={ekGorseller[1]}
-                      target="_blank"
-                      rel="noopener nofollow"
-                      title="Fotoğrafı büyüt"
-                    >
-                      <img
-                        class="content__fig-img"
-                        src={imageUrl(ekGorseller[1], 1000)}
-                        srcset={imageSrcset(ekGorseller[1], [640, 1000]) || undefined}
-                        sizes="(max-width: 900px) 100vw, 800px"
-                        data-orig={ekGorseller[1]}
-                        alt={`${article.title} — haber fotoğrafı`}
-                        width="1000"
-                        height="563"
-                        loading="lazy"
-                        decoding="async"
-                        referrerpolicy="no-referrer"
-                        onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.removeAttribute('srcset');this.removeAttribute('sizes');this.src=this.dataset.orig}else{this.closest('figure').remove()}"
-                      />
-                    </a>
-                    <figcaption>
-                      <span class="content__fig-src">Fotoğraf: {article.source}</span>
-                      <span class="content__fig-hint">büyütmek için tıkla</span>
-                    </figcaption>
-                  </figure>
+                  <HaberFigur
+                    url={ekGorseller[1]}
+                    baslik={article.title}
+                    kaynak={ekKaynak(ekGorseller[1])}
+                    eskiKaynak={article.source}
+                  />
                 )}
 
                 {/* Gövde ortası reklamı: 2. paragraftan sonra, yeterince uzun haberlerde (ShiftDelete tarzı in-article) */}
@@ -726,6 +710,18 @@ const breadcrumbLd = {
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.9);
     text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  }
+  /* Lisanslı stok fotoğrafın atfı tıklanabilir (Commons dosya sayfası). */
+  .post__ph-note--atif {
+    text-decoration: none;
+    max-width: calc(100% - 28px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .post__ph-note--atif:hover {
+    color: #fff;
+    text-decoration: underline;
   }
   /* Kapak fotoğrafının altına hafif karartma: kaynak etiketi her fotoğrafta okunur */
   .post__veil {
