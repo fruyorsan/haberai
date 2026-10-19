@@ -44,7 +44,7 @@
     document.head.appendChild(s);
   }
 
-  /** Avatarın arka plan rengini bulur (hazır emoji ise). */
+  /** Avatarın arka plan rengini bulur (hazır avatar ya da eski emoji ise). */
   function avatarRenk(deger) {
     var liste = ayarlar().avatarlar;
     for (var i = 0; i < liste.length; i++) {
@@ -54,8 +54,8 @@
   }
 
   /**
-   * Bir elemanı avatar ile doldurur: görsel (data/https), hazır emoji ya da
-   * adın baş harfi. Kap canlı bir HTML elemanıdır.
+   * Bir elemanı avatar ile doldurur: site çizimi (/avatar/...), yüklenen görsel
+   * (data/https) ya da adın baş harfi. Kap canlı bir HTML elemanıdır.
    */
   function avatarDoldur(kap, avatar, ad) {
     if (!kap) return;
@@ -83,7 +83,7 @@
       return;
     }
     if (deger) {
-      kap.textContent = deger; // hazır emoji avatar
+      kap.textContent = deger; // eski emoji avatarlar (geriye dönük)
       var renk = avatarRenk(deger);
       if (renk) kap.style.background = renk;
       kap.style.color = "#fff";
@@ -307,7 +307,7 @@
 
   /**
    * Profil fotoğrafını ayarlar. Boş gönderim fotoğrafı kaldırır.
-   * Değer: hazır emoji ("🕵️"), data URL ya da https:// görsel adresi.
+   * Değer: site çizimi ("/avatar/kedi.svg"), data URL ya da https:// görsel adresi.
    */
   async function avatarAyarla(deger) {
     var u = oturumOku();
@@ -342,6 +342,21 @@
     var u = oturumOku();
     if (!u) return { hata: "Giriş yapmalısın." };
     return rpc("uye_begen_sil", { p_id: u.id, p_token: u.token, p_slug: slug });
+  }
+
+  /**
+   * Hesabı kalıcı olarak siler. Yorumlar silinmez; yalnızca hesap bağı kopar ve
+   * yorum takma adıyla kalır. Avatar, okuma listesi ve beğeniler silinir.
+   */
+  async function hesapSil() {
+    var u = oturumOku();
+    if (!u) return { hata: "Giriş yapmalısın." };
+    var r = await rpc("uye_sil", { p_id: u.id, p_token: u.token });
+    if (r && !r.hata) {
+      cikisYap();
+      duyur();
+    }
+    return r;
   }
 
   /**
@@ -411,6 +426,7 @@
     begeniler: begeniler,
     begen: begen,
     begenSil: begenSil,
+    hesapSil: hesapSil,
     pushEsle: pushEsle,
     dugmeleriGuncelle: dugmeleriGuncelle,
   };

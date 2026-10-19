@@ -73,30 +73,30 @@
 :root[data-theme="bordo"] {
   color-scheme: dark;
 
-  --bg: #2a0710;
-  --bg-elev: #330a14;
-  --surface: #380c17;
-  --surface-2: #45111f;
-  --border: #5a1b2b;
-  --border-soft: #4a1524;
-  --border-strong: #6b2334;
+  --bg: #23060d;
+  --bg-elev: #2a0711;
+  --surface: #2f0913;
+  --surface-2: #3b0e1a;
+  --border: #4c1724;
+  --border-soft: #3e121f;
+  --border-strong: #5b1d2b;
 
-  --text: #f7e9ed;
-  --text-2: #e6ccd4;
-  --heading: #fff7f9;
-  --muted: #c99fab;
+  --text: #f6e6ea;
+  --text-2: #e3c6cf;
+  --heading: #fff5f7;
+  --muted: #c294a0;
 
-  --control-bg: #45111f;
-  --control-fg: #f7e9ed;
+  --control-bg: #3b0e1a;
+  --control-fg: #f6e6ea;
 
   --brand: #ff6b76;
   --brand-strong: #ff9aa2;
   --brand-soft: rgba(255, 107, 118, 0.16);
-  --brand-grad: linear-gradient(135deg, #ef3f53 0%, #a3122b 100%);
-  --brand-glow: rgba(239, 63, 83, 0.45);
+  --brand-grad: linear-gradient(135deg, #ea3a4e 0%, #9c1128 100%);
+  --brand-glow: rgba(234, 58, 78, 0.45);
   /* Zemin: beyaz metinle yüksek kontrastlı doygun bordo (~7:1) */
-  --brand-fill: #a5122a;
-  --brand-fill-hover: #bb1832;
+  --brand-fill: #9e1129;
+  --brand-fill-hover: #b31630;
 
   --pos: #4ade80;
   --neg: #fb7185;
@@ -108,25 +108,25 @@
   --shadow-lg: 0 36px 80px -28px rgba(0, 0, 0, 0.88);
 }
 
-/* --- SİYAN: koyu petrol zemin, turkuaz aksan --- */
+/* --- SİYAN: koyu petrol/turkuaz zemin, camgöbeği aksan --- */
 :root[data-theme="siyan"] {
   color-scheme: dark;
 
-  --bg: #04171c;
-  --bg-elev: #061d23;
-  --surface: #082128;
-  --surface-2: #0c2b33;
-  --border: #17414a;
-  --border-soft: #103038;
-  --border-strong: #20525e;
+  --bg: #07242b;
+  --bg-elev: #0a2b33;
+  --surface: #0c3139;
+  --surface-2: #113c46;
+  --border: #1e5665;
+  --border-soft: #174651;
+  --border-strong: #28707f;
 
-  --text: #e3f7fb;
-  --text-2: #c3e6ee;
+  --text: #e6f8fc;
+  --text-2: #c7eaf3;
   --heading: #ffffff;
-  --muted: #8db6c0;
+  --muted: #94c0cb;
 
-  --control-bg: #0c2b33;
-  --control-fg: #e3f7fb;
+  --control-bg: #113c46;
+  --control-fg: #e6f8fc;
 
   --brand: #2ad4ea;
   --brand-strong: #7ce9f7;

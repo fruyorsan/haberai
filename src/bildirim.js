@@ -10,7 +10,7 @@
 //   2) KONU TAKİBİ (okuyucunun işaretlediği kategori):
 //      OneSignal etiketiyle yalnızca o konuyu takip edenlere gider
 //      (kategori_<slug> = 1). Kategori başına en fazla KAT_MIN_ARALIK_DK
-//      dakikada bir; ayrıca günlük tavan ve sessiz saat (23:00-07:00 TR)
+//      dakikada bir; ayrıca günlük tavan ve sessiz saat (01:00-07:00 TR)
 //      uygulanır. Böylece "spor takip ediyorum" diyen okuyucu günde en fazla
 //      birkaç bildirim alır, cihaz susmaz.
 //
@@ -40,15 +40,19 @@ const REST_KEY = String(process.env.ONESIGNAL_REST_API_KEY || "").trim();
 const SITE_URL = (process.env.SITE_URL || "https://fruyorsan.github.io").replace(/\/+$/, "");
 
 // --- Ayarlar (env ile değiştirilebilir) ---
+// Ölçü: site 7/24 ve dakikalar içinde haber giriyor. Günlük tavanlar okuyucuyu
+// boğmayacak ama "bildirim hiç gelmiyor" demeyeceği kadar geniş tutulur:
+// son dakika ~yarım saatte bir, konu bildirimi iki saatte bir.
 const SON_MIN_ARALIK_DK = Number(process.env.BILDIRIM_SON_ARALIK_DK ?? 25);
-const SON_MAX_GUN = Number(process.env.BILDIRIM_SON_MAX_GUN ?? 6);
+const SON_MAX_GUN = Number(process.env.BILDIRIM_SON_MAX_GUN ?? 12);
 const SON_TTL_SAAT = Number(process.env.BILDIRIM_SON_TTL_SAAT ?? 6);
-const KAT_MIN_ARALIK_DK = Number(process.env.BILDIRIM_KAT_ARALIK_DK ?? 180);
-const KAT_MAX_GUN = Number(process.env.BILDIRIM_KAT_MAX_GUN ?? 3);
+const KAT_MIN_ARALIK_DK = Number(process.env.BILDIRIM_KAT_ARALIK_DK ?? 120);
+const KAT_MAX_GUN = Number(process.env.BILDIRIM_KAT_MAX_GUN ?? 6);
 const KAT_TTL_SAAT = Number(process.env.BILDIRIM_KAT_TTL_SAAT ?? 3);
-const TOPLAM_MAX_GUN = Number(process.env.BILDIRIM_TOPLAM_MAX_GUN ?? 9);
+const TOPLAM_MAX_GUN = Number(process.env.BILDIRIM_TOPLAM_MAX_GUN ?? 16);
 // Sessiz saat: yalnızca KONU bildirimleri için (Türkiye saati, UTC+3).
-const SESSIZ_BAS = Number(process.env.BILDIRIM_SESSIZ_BAS ?? 23);
+// Son dakika haberleri gece de gider; konu bildirimleri 01:00-07:00 arası susar.
+const SESSIZ_BAS = Number(process.env.BILDIRIM_SESSIZ_BAS ?? 1);
 const SESSIZ_BIT = Number(process.env.BILDIRIM_SESSIZ_BIT ?? 7);
 
 const TR_OFFSET_DK = 180; // Türkiye UTC+3 (yaz saati uygulaması yok)

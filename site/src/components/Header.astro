@@ -288,8 +288,8 @@ const isActive = (href) =>
   if (themeToggle) {
     const root = document.documentElement;
     const PALETLER = {
-      bordo: { ad: "Bordo", sonraki: "siyan", renk: "#2a0710", koyu: true },
-      siyan: { ad: "Siyan", sonraki: "beyaz", renk: "#04171c", koyu: true },
+      bordo: { ad: "Bordo", sonraki: "siyan", renk: "#23060d", koyu: true },
+      siyan: { ad: "Siyan", sonraki: "beyaz", renk: "#07242b", koyu: true },
       beyaz: { ad: "Beyaz", sonraki: "bordo", renk: "#ffffff", koyu: false },
     };
 
@@ -443,7 +443,9 @@ const isActive = (href) =>
   .nav {
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* "safe center": sığarken ortalanır, taşarken sol uçtan hizalanır
+       (taşan menünün solundaki bağlantılar erişilemez kalmasın). */
+    justify-content: safe center;
     gap: 4px;
     flex: 1;
     min-width: 0;
@@ -458,6 +460,9 @@ const isActive = (href) =>
   }
   .nav__link {
     position: relative;
+    flex: 0 0 auto;
+    /* Tek satır: dar ekranda menü içindeki kelimeler alt satıra kırılmasın. */
+    white-space: nowrap;
     padding: 8px 11px;
     border-radius: 8px;
     font-weight: 600;
@@ -787,6 +792,11 @@ const isActive = (href) =>
   }
 
   @media (max-width: 1000px) {
+    /* Dar masaüstü: menü sığsın diye aralıklar biraz kısalır. */
+    .nav__link {
+      padding: 8px 8px;
+      font-size: 0.88rem;
+    }
     /* Dar ekran: yalnız büyüteç görünür; tıklayınca kutu sola doğru açılır. */
     .searchbox__toggle {
       display: grid;

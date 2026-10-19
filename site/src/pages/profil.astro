@@ -78,7 +78,16 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
               aria-pressed="false"
               style={`--av-renk:${a.renk}`}
             >
-              <span class="profil__avatar-emoji">{a.kod}</span>
+              <img
+                class="profil__avatar-resim"
+                src={a.kod}
+                alt=""
+                width="64"
+                height="64"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="profil__avatar-ad">{a.ad}</span>
             </button>
           ))}
         </div>
@@ -152,6 +161,21 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         <button type="button" class="profil__btn" id="profil-kaydet">Tercihleri kaydet</button>
         <span class="profil__mini" id="profil-durum" role="status" aria-live="polite"></span>
       </div>
+
+      <section class="profil__blok profil__blok--tehlike">
+        <h2 class="profil__h2">Hesabımı sil</h2>
+        <p class="profil__aciklama">
+          Hesabını kalıcı olarak kapatır. Profil fotoğrafın, okuma listen ve
+          beğenilerin silinir; yorumların takma adla kalmaya devam eder.
+          <a href="/gizlilik/" target="_blank" rel="noopener">Gizlilik Politikası</a>
+        </p>
+        <div class="profil__islem">
+          <button type="button" class="profil__btn profil__btn--kucuk profil__btn--sil" id="profil-hesap-sil">
+            Hesabımı sil
+          </button>
+          <span class="profil__mini" id="profil-sil-durum" role="status" aria-live="polite"></span>
+        </div>
+      </section>
     </div>
   </div>
 </Base>
@@ -347,6 +371,20 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     border: 1px solid var(--border);
     box-shadow: none;
   }
+  /* Hesap silme: uyarı niteliğinde, kenarlıklı düğme (kırmızı dolgu yok). */
+  .profil__btn--sil {
+    background: transparent;
+    color: var(--brand-strong);
+    border: 1px solid color-mix(in srgb, var(--brand) 45%, var(--border));
+    box-shadow: none;
+  }
+  .profil__btn--sil:hover {
+    background: color-mix(in srgb, var(--brand) 12%, transparent);
+    filter: none;
+  }
+  .profil__blok--tehlike {
+    border-style: dashed;
+  }
   .profil__cikis {
     padding: 9px 15px;
     border: 1px solid var(--border);
@@ -449,14 +487,15 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
   }
   .profil__avatarlar {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
     gap: 9px;
   }
   .profil__avatar-sec {
-    display: grid;
-    place-items: center;
-    aspect-ratio: 1;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 9px 6px 7px;
     border: 1px solid var(--border);
     border-radius: 14px;
     background: var(--surface-2);
@@ -473,9 +512,23 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--av-renk, var(--brand)) 22%, transparent);
     background: color-mix(in srgb, var(--av-renk, var(--brand)) 14%, var(--surface-2));
   }
-  .profil__avatar-emoji {
-    font-size: 1.5rem;
-    line-height: 1;
+  .profil__avatar-resim {
+    display: block;
+    width: 100%;
+    max-width: 62px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--av-renk, var(--surface));
+  }
+  .profil__avatar-ad {
+    font-size: 0.68rem;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--muted);
+    text-align: center;
+  }
+  .profil__avatar-sec.is-on .profil__avatar-ad {
+    color: var(--heading);
   }
 
   /* ============================== TELEFON ============================== */
@@ -515,13 +568,21 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
       flex: 1 1 100%;
     }
     .profil__avatarlar {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 8px;
+    }
+    .profil__avatar-sec {
+      padding: 8px 4px 6px;
     }
     .profil__yorum {
       padding: 10px 11px;
     }
     .profil__kaydet-satir .profil__btn {
+      flex: 1 1 100%;
+    }
+    /* Hesap silme düğmesi telefonda tam genişlik (yanlışlıkla basılmasın diye
+       yine de iki adımlı onay sorulur). */
+    .profil__blok--tehlike .profil__islem .profil__btn {
       flex: 1 1 100%;
     }
   }
@@ -829,6 +890,41 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         } finally {
           avSil.disabled = false;
           avatarCiz();
+        }
+      });
+
+    // --- Hesabı sil ---
+    var hsSil = document.getElementById("profil-hesap-sil");
+    var hsDurum = document.getElementById("profil-sil-durum");
+    function silYaz(mesaj) {
+      if (hsDurum) hsDurum.textContent = mesaj || "";
+    }
+    hsSil &&
+      hsSil.addEventListener("click", async function () {
+        // Geri dönüşü olmayan işlem: iki adımlı onay.
+        if (!window.confirm("Hesabın kalıcı olarak silinecek. Devam edilsin mi?")) return;
+        var onay = (window.prompt("Silmeyi onaylamak için kullanıcı adını yaz:") || "").trim().toLowerCase();
+        var beklenen = [String(g.kadi || ""), String(g.ad || "")].map(function (s) {
+          return s.trim().toLowerCase();
+        });
+        if (!onay || beklenen.indexOf(onay) === -1) {
+          silYaz("Kullanıcı adı eşleşmedi, silme iptal edildi.");
+          return;
+        }
+        hsSil.disabled = true;
+        silYaz("Hesap siliniyor…");
+        try {
+          var r = await H.hesapSil();
+          if (r && r.hata) {
+            silYaz(r.hata);
+            return;
+          }
+          silYaz("Hesabın silindi. Yönlendiriliyorsun…");
+          location.href = "/";
+        } catch (e) {
+          silYaz("Bir şeyler ters gitti. Tekrar dene.");
+        } finally {
+          hsSil.disabled = false;
         }
       });
 

@@ -85,13 +85,28 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
           />
         </label>
 
+        <div class="hesap__onay hesap__alan" data-alan="onay" hidden>
+          <label class="hesap__onay-satir" id="hesap-onay-satir">
+            <input type="checkbox" name="onay" id="hesap-onay" />
+            <span>
+              <a href="/kullanim-sartlari/" target="_blank" rel="noopener">Kullanım Şartları</a>’nı
+              ve
+              <a href="/gizlilik/" target="_blank" rel="noopener">Gizlilik Politikası</a>’nı
+              okudum; kabul ediyorum.
+            </span>
+          </label>
+        </div>
+
         <button type="submit" class="hesap__gonder" id="hesap-gonder">Giriş yap</button>
         <p class="hesap__durum" id="hesap-durum" role="status" aria-live="polite"></p>
       </form>
 
       <p class="hesap__not">
         E-posta istemiyoruz, doğrulama yok. Şifren yalnızca şifrelenmiş (bcrypt)
-        olarak Supabase'de saklanır.
+        olarak Supabase'de saklanır. Hesabını dilediğin an profilinden
+        silebilirsin; verilerin
+        <a href="/gizlilik/" target="_blank" rel="noopener">Gizlilik Politikası</a>’nda
+        anlatıldığı gibi işlenir.
       </p>
     </div>
   </div>
@@ -243,7 +258,52 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     color: var(--text-2);
   }
   .hesap__durum--hata {
-    color: var(--brand-ink, #b3121a);
+    padding: 9px 11px;
+    border: 1px solid color-mix(in srgb, var(--brand) 34%, transparent);
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--brand) 12%, transparent);
+    color: var(--brand-strong);
+    font-weight: 700;
+  }
+  /* Kayıt onayı: gizlilik + kullanım şartları */
+  .hesap__onay[hidden] {
+    display: none;
+  }
+  .hesap__onay-satir {
+    display: flex;
+    gap: 9px;
+    align-items: flex-start;
+    padding: 11px 12px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: var(--bg);
+    font-size: 0.8rem;
+    color: var(--text-2);
+    line-height: 1.45;
+    cursor: pointer;
+    transition: border-color 0.18s var(--ease), box-shadow 0.18s var(--ease);
+  }
+  .hesap__onay-satir input {
+    width: 17px;
+    height: 17px;
+    margin: 1px 0 0;
+    flex-shrink: 0;
+    accent-color: var(--brand);
+    cursor: pointer;
+  }
+  .hesap__onay-satir a {
+    color: var(--brand);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .hesap__onay.is-eksik .hesap__onay-satir {
+    border-color: var(--brand);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 16%, transparent);
+  }
+  .hesap__not a {
+    color: var(--brand);
+    font-weight: 700;
   }
   .hesap__not {
     margin: 16px 0 0;
@@ -270,6 +330,8 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     var mod = "giris";
     var sekler = [].slice.call(document.querySelectorAll(".hesap__sek"));
     var adAlan = form.querySelector('[data-alan="ad"]');
+    var onayAlan = form.querySelector('[data-alan="onay"]');
+    var onayKutu = document.getElementById("hesap-onay");
 
     function modAyarla(yeni) {
       mod = yeni;
@@ -279,6 +341,9 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         sekler[i].setAttribute("aria-selected", String(aktif));
       }
       if (adAlan) adAlan.hidden = yeni !== "kayit";
+      if (onayAlan) onayAlan.hidden = yeni !== "kayit";
+      if (onayAlan) onayAlan.classList.remove("is-eksik");
+      if (onayKutu && yeni !== "kayit") onayKutu.checked = false;
       var sifre = form.querySelector('[name="sifre"]');
       if (sifre) sifre.setAttribute("autocomplete", yeni === "kayit" ? "new-password" : "current-password");
       if (gonder) gonder.textContent = yeni === "kayit" ? "Hesap oluştur" : "Giriş yap";
@@ -307,6 +372,14 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
       var ad = (form.querySelector('[name="ad"]').value || "").trim();
       if (kadi.length < 3) { yaz("Kullanıcı adı en az 3 karakter olmalı.", true); return; }
       if (sifre.length < 6) { yaz("Şifre en az 6 karakter olmalı.", true); return; }
+      // Kayıtta gizlilik politikası + kullanım şartları onayı zorunludur.
+      if (mod === "kayit" && onayKutu && !onayKutu.checked) {
+        if (onayAlan) onayAlan.classList.add("is-eksik");
+        if (onayKutu) onayKutu.focus();
+        yaz("Devam etmek için Kullanım Şartları ve Gizlilik Politikası’nı onaylamalısın.", true);
+        return;
+      }
+      if (onayAlan) onayAlan.classList.remove("is-eksik");
 
       gonder.disabled = true;
       yaz(mod === "kayit" ? "Hesap oluşturuluyor…" : "Giriş yapılıyor…");

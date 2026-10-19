@@ -1,0 +1,69 @@
+name: Bildirim Kanali Kontrolu
+
+# "Bildirim gelmiyor" şikâyetinde hangi HEDEFLEMENİN gerçekten cihaza
+# ulaştığını ölçer. Tek tıkla çalışır; her deneme `recipients` sayısını yazar.
+#
+# Neden gerekli: OneSignal'de üç ayrı hedefleme yolu var ve biri çalışıp
+# diğeri sessizce 0 alıcıya gidebiliyor:
+#   * segment  → included_segments:["Subscribed Users"]
+#   * etiket   → filters:[{field:"tag", key:"son_dakika"}]
+#   * hesap    → include_aliases:{external_id:[...]}
+# Test/hoş geldin bildirimi "hesap" yoluyla gittiği için çalışıyor gibi
+# görünürken haber bildirimleri ulaşmayabiliyor.
+on:
+  workflow_dispatch:
+    inputs:
+      gonder:
+        description: "Deneme bildirimi GÖNDER (kapalıysa yalnızca abone durumu yazılır)"
+        type: boolean
+        default: true
+
+concurrency:
+  group: bildirim-kontrol
+  cancel-in-progress: false
+
+jobs:
+  kontrol:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Abonelik durumu (v2 /subscriptions)
+        continue-on-error: true
+        env:
+          ONESIGNAL_APP_ID: ${{ vars.ONESIGNAL_APP_ID }}
+          ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
+        run: |
+          set -u
+          echo "--- abonelikler ---"
+          curl -s -H "Authorization: Key $ONESIGNAL_REST_API_KEY" \
+            "https://api.onesignal.com/apps/$ONESIGNAL_APP_ID/subscriptions?limit=20" \
+            | jq -c '.subscriptions[]? | {type, enabled, notification_types, token_type, external_id, tags}' 2>/dev/null || true
+
+      - name: Hedefleme denemeleri
+        if: ${{ inputs.gonder }}
+        env:
+          ONESIGNAL_APP_ID: ${{ vars.ONESIGNAL_APP_ID }}
+          ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: |
+          set -eu
+          URL="${SITE_URL:-https://haberinai.site}"
+          gonder() {
+            ad="$1"; hedef="$2"
+            yanit=$(curl -s -X POST "https://api.onesignal.com/notifications" \
+              -H "Content-Type: application/json" \
+              -H "Authorization: Key $ONESIGNAL_REST_API_KEY" \
+              -d "$(jq -nc --arg app "$ONESIGNAL_APP_ID" --arg url "$URL/son-dakika/" \
+                    --arg t "$ad" --argjson h "$hedef" \
+                    '{app_id:$app, target_channel:"push",
+                      headings:{tr:("🔎 " + $t), en:("🔎 " + $t)},
+                      contents:{tr:("Kanal denemesi: " + $t), en:("Channel probe: " + $t)},
+                      url:$url, ttl:600} + $h')")
+            echo "$ad → $(echo "$yanit" | jq -c '{id, recipients, errors}')"
+          }
+          # 1) Segment yolu (haber bildirimlerinin şu an kullandığı yol)
+          gonder "Segment(Subscribed Users)" '{"included_segments":["Subscribed Users"]}'
+          # 2) Etiket yolu (son dakika + konu bildirimleri için kullanılan yol)
+          gonder "Etiket(son_dakika)" '{"filters":[{"field":"tag","key":"son_dakika","relation":"=","value":"1"}]}'
+          # 3) Aynı etiket ama "abone" filtresiyle birlikte
+          gonder "Etiket+abone(son_dakika)" '{"filters":[{"field":"tag","key":"son_dakika","relation":"=","value":"1"},{"operator":"AND","field":"tag","key":"uye","relation":"exists"}]}'
+          echo "Bitti: hangi satırda recipients > 0 ise haber bildirimleri o yolu kullanmalı."

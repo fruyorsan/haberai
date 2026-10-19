@@ -354,9 +354,10 @@ grant execute on function public.uye_kayitlar(uuid, text)          to anon, auth
 -- PROFİL FOTOĞRAFI — hazır (emoji) ya da okuyucunun kendi yüklediği görsel
 -- ----------------------------------------------------------------------------
 -- İki tür değer kabul edilir:
---   * hazır avatar: kısa bir emoji ("🕵️")
+--   * hazır avatar: sitenin kendi çizimi ("/avatar/kedi.svg")
 --   * kendi fotoğrafı: tarayıcıda 128 px'e küçültülmüş data URL
 --     ("data:image/jpeg;base64,...") ya da https:// ile başlayan görsel adresi
+-- Geriye dönük uyumluluk için eski emoji avatarlar da geçerlidir.
 --
 -- Yorumlarda gösterebilmek için avatarlar ayrı ve HERKESE AÇIK bir tabloda
 -- tutulur (avatarlar). Orada yalnızca üye numarası + görsel vardır; ad,
@@ -411,8 +412,11 @@ begin
     if char_length(v_avatar) > 500 then
       return jsonb_build_object('hata', 'Görsel bağlantısı çok uzun.');
     end if;
+  elsif v_avatar ~ '^/avatar/[a-z0-9-]{1,32}\.svg$' then
+    -- sitenin kendi çizimi hazır avatar (ör. /avatar/kedi.svg)
+    null;
   elsif v_avatar ~ '^[^<>"&[:cntrl:]]{1,8}$' then
-    -- hazır emoji avatar
+    -- eski emoji avatarlar (geriye dönük uyumluluk)
     null;
   else
     return jsonb_build_object('hata', 'Geçersiz profil fotoğrafı.');
@@ -495,11 +499,34 @@ begin
 end;
 $$;
 
+-- ============================================================================
+-- HESABI SİL — okuyucunun kendi hesabını kapatma hakkı
+-- ----------------------------------------------------------------------------
+-- Silinen hesabın avatarı, okuma listesi ve beğenileri de silinir (cascade).
+-- Yorumlar SİLİNMEZ; yalnızca hesap bağı kopar (uye_id null) ve yorum takma
+-- adıyla görünmeye devam eder. Böylece hem hesap kapanır hem sohbet bozulmaz.
+-- ============================================================================
+create or replace function public.uye_sil(p_id uuid, p_token text)
+returns jsonb
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v public.uyeler;
+begin
+  v := public.uye_dogrula(p_id, p_token);
+  if v.id is null then return jsonb_build_object('hata', 'Oturum geçersiz.'); end if;
+  delete from public.uyeler where id = v.id;
+  return jsonb_build_object('ok', true);
+end;
+$$;
+
 grant select on public.avatarlar to anon, authenticated;
 grant execute on function public.uye_avatar(uuid, text, text)     to anon, authenticated;
 grant execute on function public.uye_begen(uuid, text, text)     to anon, authenticated;
 grant execute on function public.uye_begen_sil(uuid, text, text) to anon, authenticated;
 grant execute on function public.uye_begeniler(uuid, text)       to anon, authenticated;
+grant execute on function public.uye_sil(uuid, text)             to anon, authenticated;
 
 -- PostgREST şema önbelleğini tazele: yeni fonksiyonlar hemen görünsün.
 notify pgrst, 'reload schema';

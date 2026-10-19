@@ -127,23 +127,24 @@ export const HESAP = {
  * site/src/lib/articles.js → slugify ile birebir aynı olmalıdır.
  */
 /**
- * Hazır profil fotoğrafları. Emoji tabanlıdır: telifsizdir, indirme gerektirmez
- * ve her cihazda anında görünür. Okuyucu isterse kendi fotoğrafını yükleyebilir
- * (tarayıcıda 128 px'e küçültülür ve hesabına kaydedilir).
+ * Hazır profil fotoğrafları. Çizim (SVG) tabanlıdır: telif sorunu yoktur, her
+ * cihazda aynı görünür ve emoji klavyelerine bağımlı değildir.
+ * Kaynak dosyalar: scripts/avatar-uret.mjs → site/public/avatar/<slug>.svg
+ * `kod` doğrudan görsel yolu ya da okuyucunun yüklediği bir görsel adresidir.
  */
 export const AVATARLAR = [
-  { kod: "🕵️", ad: "Dedektif", renk: "#2563eb" },
-  { kod: "🔬", ad: "Bilgin", renk: "#0d9488" },
-  { kod: "🎧", ad: "Müzik", renk: "#7c3aed" },
-  { kod: "👩‍🚀", ad: "Astronot", renk: "#4338ca" },
-  { kod: "👩‍💻", ad: "Yazılımcı", renk: "#0891b2" },
-  { kod: "🧔", ad: "Yazar", renk: "#b45309" },
-  { kod: "🤖", ad: "Robot", renk: "#475569" },
-  { kod: "🦊", ad: "Tilki", renk: "#ea580c" },
-  { kod: "🐱", ad: "Kedi", renk: "#db2777" },
-  { kod: "🦉", ad: "Baykuş", renk: "#65a30d" },
-  { kod: "🐼", ad: "Panda", renk: "#334155" },
-  { kod: "🐸", ad: "Kurbağa", renk: "#16a34a" },
+  { kod: "/avatar/kedi.svg", ad: "Kedi", renk: "#ffe3ee" },
+  { kod: "/avatar/kopek.svg", ad: "Köpek", renk: "#e8f0ff" },
+  { kod: "/avatar/tilki.svg", ad: "Tilki", renk: "#ffe7d6" },
+  { kod: "/avatar/baykus.svg", ad: "Baykuş", renk: "#e9e2ff" },
+  { kod: "/avatar/panda.svg", ad: "Panda", renk: "#eef0f5" },
+  { kod: "/avatar/kurbaga.svg", ad: "Kurbağa", renk: "#e6f7d9" },
+  { kod: "/avatar/penguen.svg", ad: "Penguen", renk: "#e6f2f9" },
+  { kod: "/avatar/koala.svg", ad: "Koala", renk: "#eef1f6" },
+  { kod: "/avatar/ayi.svg", ad: "Ayı", renk: "#ffeedd" },
+  { kod: "/avatar/tavsan.svg", ad: "Tavşan", renk: "#fdeaf3" },
+  { kod: "/avatar/aslan.svg", ad: "Aslan", renk: "#fff3d6" },
+  { kod: "/avatar/fil.svg", ad: "Fil", renk: "#e9eef7" },
 ];
 
 export const KATEGORILER = [

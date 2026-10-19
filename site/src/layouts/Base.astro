@@ -159,7 +159,7 @@ const isArticle = ogType === "article";
           root.dataset.theme = palet;
           root.style.colorScheme = palet === "beyaz" ? "light" : "dark";
           // Tarayıcı çubuğu rengi de palete uysun (mobilde adres çubuğu).
-          var RENKLER = { beyaz: "#ffffff", bordo: "#2a0710", siyan: "#04171c" };
+          var RENKLER = { beyaz: "#ffffff", bordo: "#23060d", siyan: "#07242b" };
           var meta = document.querySelector('meta[name="theme-color"]');
           if (meta) meta.setAttribute("content", RENKLER[palet] || "#ffffff");
         } catch (e) {}
