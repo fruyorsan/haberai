@@ -1,5 +1,163 @@
 [
   {
+    "id": "37604f30e7500a03",
+    "title": "Driveclub PC portu yayınlandı: 8K çözünürlük ve kilitsiz kare hızı",
+    "slug": "driveclub-pc-portu-yayinlandi-8k-cozunurluk-ve-kilitsiz-kare-hizi",
+    "summary": "PlayStation 4'e özel yarış oyunu Driveclub, hayran yapımı yeni bir port sayesinde bilgisayarlarda emülatör gerektirmeden çalışmaya başladı. 16 Ekim 2026 tarihinde yayımlanan DriveClub Recomp sürümü, oyunun 8K çözünürlüğe kadar ve kilitsiz kare hızında deneyimlenmesine imkan tanıyor.",
+    "keyPoints": [
+      "DriveClub Recomp, emülatör kullanmadan 8K çözünürlük ve kilitsiz kare hızı sunuyor.",
+      "Proje için oyuncuların kendi yasal PlayStation 4 oyun dosyalarına sahip olması gerekiyor.",
+      "Sürüm 0.2.0 ile RTX kartlar için NVIDIA DLAA ve AMD FSR 3.1 desteği eklendi."
+    ],
+    "body": [
+      "Konsol dünyasının bilinen yarış yapımlarından olan Driveclub, hayran geliştiricilerin katkısıyla Windows platformuna uyarlandı. Gerçek kimliği gizli tutulan OverkillLabs3 adlı geliştirici tarafından hazırlanan DriveClub Recomp, 16 Ekim 2026 tarihinde oyuncuların erişimine açıldı. Bu projede geleneksel emülatörler yerine konsol ve bilgisayar arasındaki ortak mimariden yararlanılıyor.",
+      "PlayStation 4 ile kişisel bilgisayarların aynı x86-64 işlemci mimarisini kullanması, oyun kodunun doğrudan işlemci üzerinde çalışmasını sağlıyor. Geliştirici, konsol sistem kütüphanelerini yeniden yazarak oyunun ihtiyaç duyduğu işlevleri karşılıyor ve grafik komutlarını Vulkan altyapısına çeviriyor. Bu mimari yaklaşım sayesinde oyun, donanım taklidine gerek kalmadan yerel bir bilgisayar yazılımı gibi çalışıyor.",
+      "Yayımlanan 0.2.0 sürümüyle birlikte Intel işlemci desteği, NVIDIA DLAA ve AMD FSR 3.1 kenar yumuşatma teknolojileri sisteme eklendi. Oyuncular çözünürlüğü 720p ile 8K arasında ayarlayabiliyor, ayrıca 21:9 ile 32:9 oranındaki ultra geniş ekranlarda görüş alanını genişletebiliyor. Kare hızı 30, 60 veya kilitsiz olarak seçilebiliyor ve kilitsiz modda oynanış hızı zarar görmüyor.",
+      "Projenin çalışabilmesi için her oyuncunun kendi yasal yollardan edindiği PlayStation 4 kopyasının şifresi çözülmüş dosyalarına ihtiyacı bulunuyor. Sürüm, temel olarak oyunun 1.28 numaralı son büyük güncellemesini içeren Amerika sürümünü şart koşuyor. Bilgisayar tarafında ise Windows 10 veya 11 işletim sistemi, uygun bir işlemci, Vulkan 1.3 destekli ekran kartı ve yaklaşık 40 gigabayt depolama alanı gereksinimi aranıyor."
+    ],
+    "comment": "Topluluk geliştiricilerinin konsol özel oyunlarını kişisel bilgisayarlara taşıma hamleleri, resmi olmayan bu portların resmi sürümlerin yerini alabileceğini gösteriyor. 1.28 sürüm gereksinimi ve yasal oyun dosyası zorunluluğu, telif sınırları içinde kalınmaya çalışıldığını ortaya koyuyor. Özellikle emülatör yükü olmadan x86-64 mimarisinden doğrudan yararlanılması, eski donanım kısıtlamalarını ortadan kaldırarak performansı artırıyor. Resmi desteği kesilen yapımların bu yöntemle yaşatılması, gelecekte benzer projelerin sayısını artıracaktır.",
+    "editorNote": "Sony'nin resmi güncelleme sunmadığı yarış oyunu, hayran yapımı portla 8K çözünürlük sınırını aşıyor.",
+    "tags": [
+      "Driveclub",
+      "PC Port",
+      "PlayStation 4",
+      "Yazılım",
+      "Oyun"
+    ],
+    "category": "Yazılım",
+    "gorselSorgu": "racing video game gameplay screen",
+    "source": "Tamindir",
+    "sourceUrl": "https://www.tamindir.com/haber/driveclub-pc-portu_112397/",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Programming_code.jpg/1920px-Programming_code.jpg",
+    "gorselKaynak": {
+      "yazar": "Martin Vorel",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Programming_code.jpg"
+    },
+    "publishedAt": "2026-10-19T14:28:12.935Z",
+    "generatedAt": "2026-10-19T14:29:11.580Z",
+    "gorselEk": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Screen-python-code-matplotlib-physics-simulation.jpg",
+        "yazar": "MikeRun",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Screen-python-code-matplotlib-physics-simulation.jpg"
+      }
+    ]
+  },
+  {
+    "id": "272768b56bbb53e7",
+    "title": "Ayazağa mahallesinde selde kalan sürücüyü esnaf kurtardı",
+    "slug": "ayazagada-selde-kalan-surucuyu-esnaf-kurtardi",
+    "summary": "İstanbul'un Sarıyer ilçesindeki Ayazağa Mahallesi'ni etkisi altına alan sel suları nedeniyle bir sürücü otomobilinin içinde mahsur kaldı. Kapısı açılmayan araçta sıkışan kişi, bölgedeki esnafın hızlı müdahalesi sayesinde camdan çıkarılarak güvenli bir yere alındı.",
+    "keyPoints": [
+      "Sarıyer Ayazağa Mahallesi'ndeki selde araç içinde kalan bir sürücü mahsur kaldı.",
+      "Su seviyesinin yükselmesiyle kapısı açılmayan otomobilin camı kullanıldı.",
+      "Çevredeki esnafın yardımıyla sürücü bulunduğu yerden çıkarıldı."
+    ],
+    "body": [
+      "Şiddetli yağışlar İstanbul genelinde hayatı olumsuz etkilerken, su baskınlarının en yoğun hissedildiği noktalardan biri Sarıyer'e bağlı Ayazağa Mahallesi oldu. Altyapının yetersiz kaldığı bölgelerde sokaklar kısa süre içinde göle dönerken, trafikte ilerlemeye çalışan araçlar suyun arasında kaldı. Ani bastıran sular nedeniyle sürücüler zor anlar yaşarken, mahsur kalan vatandaşlar için kurtarma operasyonları gerekti.",
+      "Bölgede seyir halindeyken su seviyesinin hızla yükselmesiyle aracının içinde kilitli kalan bir sürücü, zorlu anlar yaşadı. Yoğun su akıntısı nedeniyle otomobilin kapılarını açmayı başaramayan kişi, çareyi camdan dışarı çıkmaya çalışmakta buldu. Çevredeki vatandaşlar ve esnaf, tehlikenin büyümesini engellemek adına hemen yardıma koşarak sürücüye müdahale etti.",
+      "Esnafın ortaklaşa yürüttüğü çalışma sonucunda araç camından dışarı çekilen sürücü, su taşkınının etkili olduğu alandan uzaklaştırıldı. Yaşanan anlar güvenlik kameraları tarafından saniye saniye kaydedilirken, olayda herhangi bir yaralanmanın yaşanmadığı öğrenildi. Ekipler bölgedeki olumsuzluklara karşı çalışmalarını sürdürürken, vatandaşlar ani su baskınlarına karşı uyarıldı."
+    ],
+    "comment": "Ani su baskınları sırasında araç içinde mahsur kalma tehlikesi, saniyelerin bile hayati önem taşıdığı kriz anlarını beraberinde getiriyor. Ayazağa'daki olayda esnafın zamanında müdahale etmesi, daha büyük bir felaketin yaşanmasının önüne geçti. Benzer hava koşullarında sürücülerin su birikintilerine girmekten kaçınması ve mahsur kalma durumunda hemen camları kullanarak dışarı çıkmaya çalışması hayat kurtarıyor.",
+    "editorNote": "Şiddetli yağışların vurduğu Ayazağa'da kapısı açılmayan otomobilde sıkışan sürücünün saniyelerle yarışarak kurtulması güvenlik kamerasındaydı.",
+    "tags": [
+      "Ayazağa",
+      "Sarıyer",
+      "sel",
+      "İstanbul",
+      "kurtarma"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "Istanbul flood street car",
+    "source": "CNN Türk",
+    "sourceUrl": "https://www.cnnturk.com/yerel-haberler/istanbul/ayazagadaki-selde-aracinda-mahsur-kalan-surucunun-kurtarilma-ani-kamerada-3481582",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Istanbul_city_Photos-_Urban_01.jpg/1920px-Istanbul_city_Photos-_Urban_01.jpg",
+    "gorselKaynak": {
+      "yazar": "Mostafameraji",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_01.jpg"
+    },
+    "publishedAt": "2026-10-19T14:28:09.837Z",
+    "generatedAt": "2026-10-19T14:29:22.882Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Istanbul_city_Photos-_Urban_07.jpg/1920px-Istanbul_city_Photos-_Urban_07.jpg",
+        "yazar": "Mostafameraji",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_07.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Istanbul_city_Photos-_Urban_18.jpg/1920px-Istanbul_city_Photos-_Urban_18.jpg",
+        "yazar": "Mostafameraji",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_18.jpg"
+      }
+    ]
+  },
+  {
+    "id": "6d2f58f529593218",
+    "title": "CoreWeave hisseleri Pazartesi günü yüzde 2 değer kazandı",
+    "slug": "coreweave-hisseleri-pazartesi-gunu-yuzde-2-deger-kazandi",
+    "summary": "CoreWeave hisseleri Pazartesi seansında yüzde 2 oranında yükseliş kaydetti. Bulut bilişim ve yapay zeka altyapı sağlayıcısının piyasadaki bu hareketi yatırımcıların dikkatini çekti.",
+    "keyPoints": [
+      "CoreWeave hisseleri Pazartesi günü yüzde 2 oranında değer kazandı",
+      "Piyasa analistleri şirketin son seanstaki performansını yakından izledi",
+      "Yapay zeka altyapı sağlayıcısının hisse hareketleri teknoloji sektöründe takip ediliyor"
+    ],
+    "body": [
+      "Teknoloji sektörünün önde gelen altyapı sağlayıcılarından biri olan CoreWeave, borsadaki son işlemlerinde yatırımcılarına hareketli anlar yaşattı. Pazartesi günü gerçekleştirilen seanslarda şirket hisselerinin yukarı yönlü ivme yakaladığı görüldü. Gün sonunda kaydedilen yüzde 2 oranındaki artış, piyasa oyuncularının da dikkatinden kaçmadı.",
+      "Şirketin hisse değerindeki bu hareketlilik, özellikle yapay zeka odaklı veri merkezi yatırımlarının sektördeki ağırlığını bir kez daha hatırlattı. Son dönemde artan hesaplama gücü ihtiyacı, bu alanda faaliyet gösteren firmaların borsa performanslarını doğrudan etkiliyor. CoreWeave tarafından sunulan bulut çözümleri de bu ekosistemin merkezinde yer alıyor.",
+      "Piyasa uzmanları, teknoloji hisselerindeki dalgalanmaların genel borsa trendleriyle birlikte değerlendirilmesi gerektiğine işaret ediyor. Pazartesi günü yaşanan yüzde 2'lik yükseliş, kısa vadeli yatırımcılarca olumlu bir sinyal olarak değerlendirildi. Şirketin önümüzdeki dönemde atacağı adımlar ve açıklayacağı yeni finansal veriler merakla bekleniyor.",
+      "Borsa verilerine göre işlem hacimlerindeki değişimler, teknoloji odaklı fonların tercihlerini de şekillendiriyor. CoreWeave hisselerinde görülen bu oran, şirketin piyasa değerlemesindeki dalgalı seyrin bir parçası olarak kayıtlara geçti. Uzmanlar, yatırımcıların risk iştahının bu tür hisse hareketlerinde belirleyici rol oynamaya devam edeceğini vurguluyor."
+    ],
+    "comment": "Teknoloji odaklı bulut altyapı şirketlerinin borsa performansları, genel piyasa dalgalanmalarından bağımsız düşünülemez. Yüzde 2 oranındaki bu artış, kısa vadeli yatırımcılar için bir hareket alanı yaratırken uzun vadeli stratejileri doğrudan değiştirecek bir eşik sunmuyor. Yapay zeka pazarındaki rekabet kızıştıkça, bu tür hisselerin oynaklığı artmaya devam edecektir.",
+    "editorNote": "Yapay zeka altyapı pazarındaki rekabet sürerken CoreWeave hisselerindeki bu kıpırtı yatırımcının nabzını tutuyor.",
+    "tags": [
+      "CoreWeave",
+      "Hisse",
+      "Borsa",
+      "Teknoloji",
+      "Yapay Zeka"
+    ],
+    "category": "Ekonomi",
+    "gorselSorgu": "stock market trading floor",
+    "source": "Invezz",
+    "sourceUrl": "https://invezz.com/tr/haber/2026/10/19/coreweave-hisseleri-pazartesi-neden-percent2-yukseldi/",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/78/Market_centre_in_Tokyo_stock_exchange.jpg",
+    "gorselKaynak": {
+      "yazar": "ehnmark",
+      "lisans": "CC BY 2.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Market_centre_in_Tokyo_stock_exchange.jpg"
+    },
+    "publishedAt": "2026-10-19T14:27:25.000Z",
+    "generatedAt": "2026-10-19T14:28:40.670Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/UK_Stock_Market_-_Investing_in_the_United_Kingdom.jpg/1920px-UK_Stock_Market_-_Investing_in_the_United_Kingdom.jpg",
+        "yazar": "forextime.com",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:UK_Stock_Market_-_Investing_in_the_United_Kingdom.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/European_Stock_Market_concept_image.jpg/1920px-European_Stock_Market_concept_image.jpg",
+        "yazar": "forextime.com",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:European_Stock_Market_concept_image.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "ac9e002251a62895",
     "title": "Çizim ve oyun odaklı en iyi tabletler açıklandı",
     "slug": "cizim-ve-oyun-odakli-en-iyi-tabletler-aciklandi",
@@ -102,6 +260,60 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_18.jpg"
       }
     ]
+  },
+  {
+    "id": "622f5bd7f0e8cc36",
+    "title": "Sermaye Piyasası Kurulu Başkanı Mahmut Sütçü görevinden ayrıldı",
+    "slug": "sermaye-piyasasi-kurulu-baskani-mahmut-sutcu-gorevinden-ayrildi",
+    "summary": "Sermaye Piyasası Kurulu Başkanı Mahmut Sütçü görevini bıraktığını duyurdu. Beklenmeyen bu ayrılığın ardından kurumun yönetim kademesinde nasıl bir yol izleneceği merakla bekleniyor.",
+    "keyPoints": [
+      "SPK Başkanı Mahmut Sütçü istifa etti",
+      "Kurumun yeni yönetiminin nasıl şekilleneceği araştırılıyor",
+      "Piyasa çevreleri gelişmeyi yakından takip ediyor"
+    ],
+    "body": [
+      "Sermaye Piyasası Kurulu'nun en üst düzey isminden gelen istifa haberi finans çevrelerinde yankı uyandırdı. Kurum başkanı koltuğunda oturan Mahmut Sütçü görevini bıraktığını açıkladı.",
+      "Dünya Gazetesi tarafından duyurulan son dakika gelişmesi piyasalarda hareketliliğe neden oldu. İstifanın arkasındaki sebepler ve resmi makamlardan yapılacak olası açıklamalar yatırımcılar tarafından izleniyor.",
+      "Kurulun bundan sonraki süreçte nasıl bir yönetim yapısıyla yoluna devam edeceği sorusu yanıt arıyor. Başkanlık makamı için atılacak adımlar önümüzdeki günlerde netleşecek."
+    ],
+    "comment": "Kurum başkanlarının ani ayrılıkları piyasalardaki dengeyi ve denetim mekanizmalarını doğrudan etkileyen unsurlar arasında yer alır. Görevden ayrılma kararının ardından yatırımcı güveninin korunması için yönetim boşluğunun hızla giderilmesi gerekir. Bu tür üst düzey değişimler, piyasa oyuncularının kısa vadeli stratejilerini gözden geçirmesine yol açar.",
+    "editorNote": "Kurul başkanlığındaki ani ayrılık kararı finans dünyasında hareketliliğe yol açarken yeni dönemin nasıl şekilleneceği merak konusu.",
+    "tags": [
+      "SPK",
+      "Mahmut Sütçü",
+      "ekonomi",
+      "sermaye piyasası"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "finance office building Istanbul",
+    "source": "Dünya Gazetesi",
+    "sourceUrl": "https://www.dunya.com/ekonomi/son-dakika-spk-baskani-mahmut-sutcu-istifasini-verdi-haberi-844455",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Registered_%26_Corporate_office_of_ESAF_Small_Finance_Bank.jpg/1920px-Registered_%26_Corporate_office_of_ESAF_Small_Finance_Bank.jpg",
+    "gorselKaynak": {
+      "yazar": "ജെയ്മോൻ1987",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Registered_%26_Corporate_office_of_ESAF_Small_Finance_Bank.jpg"
+    },
+    "publishedAt": "2026-10-19T14:23:00.000Z",
+    "generatedAt": "2026-10-19T14:28:24.052Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Finance_office_in_Brussels_North.jpg/1920px-Finance_office_in_Brussels_North.jpg",
+        "yazar": "Geertivp",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Finance_office_in_Brussels_North.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Former_Tax_and_Finance_office._-_Kelemen_street%2C_Kom%C3%A1rom%2C_Hungary.jpg/1920px-Former_Tax_and_Finance_office._-_Kelemen_street%2C_Kom%C3%A1rom%2C_Hungary.jpg",
+        "yazar": "Globetrotter19",
+        "lisans": "CC BY-SA 3.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Former_Tax_and_Finance_office._-_Kelemen_street,_Kom%C3%A1rom,_Hungary.jpg"
+      }
+    ],
+    "breaking": true
   },
   {
     "id": "892168f5303f8fe6",
