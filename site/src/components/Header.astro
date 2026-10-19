@@ -349,9 +349,17 @@ const isActive = (href) =>
           Math.max(y, window.innerHeight - y)
         );
 
+        let guvenli = null;
         const transition = document.startViewTransition(() => {
+          if (guvenli) window.clearTimeout(guvenli);
           uygula(next);
         });
+
+        // Güvenlik ağı: View Transition herhangi bir nedenle takılırsa palet
+        // yine de uygulanır (tercih asla kaybolmaz).
+        guvenli = window.setTimeout(() => {
+          if (root.dataset.theme !== next) uygula(next);
+        }, 180);
 
         transition.ready
           .then(() => {
