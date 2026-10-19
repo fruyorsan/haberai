@@ -69,23 +69,6 @@ export const GOOGLE_SITE_VERIFICATION = GOOGLE_SITE_VERIFICATIONS[0];
 export const GA_MEASUREMENT_ID = process.env.GA_MEASUREMENT_ID || "G-C9BGECSKCM";
 
 /**
- * Yorumlar: giscus (GitHub Discussions tabanlı).
- *
- * Reklamsız, takipsiz ve sunucusuzdur: yorumlar deponun Discussions
- * bölümünde tutulur, sayfaya yalnızca bir iframe gömülür. Bu yüzden
- * Netlify/Vercel gibi bir arka uca ihtiyaç yoktur; tamamen ücretsizdir.
- *
- * KURULUM (tek seferlik, 1 tık):
- *   1) Discussions açıldı (scripts ile yapıldı, bu repoda açık).
- *   2) https://github.com/apps/giscus → "Install" → fruyorsan/haberai seç.
- *      (Bu adım olmadan giscus yorum kutusu AÇILAMAZ: giscus "kurulu değil"
- *      hatası verir ve yorum yerinde yalnız sessiz bir not kalır. Dışarı
- *      yönlendirme yapılmaz; yorum yeri her zaman site içindedir.)
- *
- * Kimlikler gizli değildir (sayfaya açıkça yazılır). Değiştirmek için:
- *   gh variable set GISCUS_REPO_ID --body "R_..."  (ve diğerleri)
- */
-/**
  * Yorumlar — Supabase (Postgres + REST) üzerinde, site içinde.
  *
  * NEDEN: giscus/utterances okuyucudan GitHub hesabı istiyordu. Burada hesap

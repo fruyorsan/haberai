@@ -158,7 +158,7 @@ const ilk = liste.slice(0, ilkSayi);
 
   {/* Yorumlar — alttan açılan panel. Akışta yorum da beğen/kaydet gibi tek
       dokunuş olsun istendi; bu yüzden ayrı sayfaya atmak yerine panel açılır.
-      giscus iframe'i panel ilk açıldığında kurulur (Yorumlar bileşeni). */}
+      Yorumlar panel ilk açıldığında yüklenir (Yorumlar bileşeni, Supabase). */}
   <div class="ysheet" id="yorum-sheet" hidden>
     <button class="ysheet__arka" type="button" data-yorum-kapat aria-label="Yorumları kapat"></button>
     <div class="ysheet__kutu" role="dialog" aria-modal="true" aria-labelledby="ysheet-baslik">
@@ -338,9 +338,9 @@ const ilk = liste.slice(0, ilkSayi);
       }
 
       // --- Yorumlar: alttan açılan panel (bottom sheet) --------------------
-      // Akışta yorum, tıpkı beğen/kaydet gibi tek dokunuşta açılır. giscus
-      // iframe'i YALNIZCA panel ilk kez açıldığında yüklenir; her haber için
-      // ayrı iframe kurulmaz (24 kart = 24 iframe olurdu, sayfa çöker).
+      // Akışta yorum, tıpkı beğen/kaydet gibi tek dokunuşta açılır. Yorum
+      // kutusu YALNIZCA panel ilk kez açıldığında kurulur; her haber için
+      // ayrı yorum yükü çekilmez (24 kart = 24 istek olurdu, sayfa yavaşlardı).
       const ySheet = document.getElementById("yorum-sheet");
       const yAd = document.getElementById("ysheet-ad");
       const yOku = document.getElementById("ysheet-oku");
@@ -363,8 +363,8 @@ const ilk = liste.slice(0, ilkSayi);
         const sheet = ySheet;
         sheet.hidden = false;
         document.documentElement.classList.add("ysheet-kilit");
-        // Giscus yalnızca görünür olduktan sonra kurulur; aynı haber için
-        // panel tekrar açılırsa mevcut tartışma korunur.
+        // Yorumlar panel görünür olduktan sonra kurulur; aynı haber için
+        // panel tekrar açılırsa mevcut liste korunur (yenileme yapılmaz).
         const api = (
           window as unknown as {
             HaberinaiYorum?: { kur: (k: Element, o?: { yenile?: boolean }) => void };
