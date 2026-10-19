@@ -119,8 +119,7 @@ const isArticle = ogType === "article";
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={ogImageAlt} />
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#d81f26" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0d11" />
+    <meta name="theme-color" content="#ffffff" />
     <meta name="color-scheme" content="light dark" />
     <!-- Telefonda "uygulama gibi": ana ekrana eklenince Shorts Haber ile açılır. -->
     <link rel="manifest" href="/manifest.json" />
@@ -132,28 +131,33 @@ const isArticle = ogType === "article";
     <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
     <link rel="alternate" type="application/rss+xml" title="HaberinAi RSS" href="/rss.xml" />
 
-    <!-- Tema (FOUC önleyici): Kullanıcının sistem temasına (Dark / Light) göre anında başlat -->
+    <!-- Palet (FOUC önleyici): seçilen paleti ilk boyamadan önce uygula.
+         Sıra: Bordo → Siyan → Beyaz. Varsayılan: Beyaz. -->
     <script is:inline>
       (function () {
         try {
           var root = document.documentElement;
-          // Eski kalıcı localStorage kaydını temizle (sistem tercihini ezmesini önler)
-          try { localStorage.removeItem("theme"); } catch (e) {}
-          var sessionTheme = null;
+          var PALETLER = { bordo: 1, siyan: 1, beyaz: 1 };
+          var palet = null;
           try {
-            sessionTheme = sessionStorage.getItem("theme");
+            palet = localStorage.getItem("hb-palet");
           } catch (e) {}
-          var systemDark =
-            window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-          // Kullanıcı mevcut sekmede elle butonla değiştirmediyse DOĞRUDAN sistemine göre başlat
-          var theme =
-            sessionTheme === "dark" || sessionTheme === "light"
-              ? sessionTheme
-              : systemDark
-                ? "dark"
-                : "light";
-          root.dataset.theme = theme;
-          root.style.colorScheme = theme;
+          // Eski tema kayıtlarını bir kez devral, sonra temizle.
+          if (!PALETLER[palet]) {
+            try {
+              var eski =
+                sessionStorage.getItem("theme") || localStorage.getItem("theme");
+              if (eski === "dark") palet = "bordo";
+              else if (eski === "light") palet = "beyaz";
+            } catch (e) {}
+          }
+          try {
+            sessionStorage.removeItem("theme");
+            localStorage.removeItem("theme");
+          } catch (e) {}
+          if (!PALETLER[palet]) palet = "beyaz";
+          root.dataset.theme = palet;
+          root.style.colorScheme = palet === "beyaz" ? "light" : "dark";
         } catch (e) {}
       })();
     </script>
@@ -407,26 +411,8 @@ OneSignalDeferred.push(async function (OneSignal) {
         });
       }
 
-      // --- Tema: sistem tercihi değişirse (kullanıcı seçim yapmadıysa) uygula ---
-      if (window.matchMedia) {
-        const mq = window.matchMedia("(prefers-color-scheme: dark)");
-        const applyTheme = (theme) => {
-          const root = document.documentElement;
-          root.dataset.theme = theme;
-          root.style.colorScheme = theme;
-        };
-        const onSystemTheme = (e) => {
-          let sessionTheme = null;
-          try {
-            sessionTheme = sessionStorage.getItem("theme");
-          } catch (_) {}
-          // Kullanıcı bu sekmede açıkça elle butonla değiştirmediyse sistem değişimine uy
-          if (sessionTheme === "dark" || sessionTheme === "light") return;
-          applyTheme(e.matches ? "dark" : "light");
-        };
-        if (mq.addEventListener) mq.addEventListener("change", onSystemTheme);
-        else if (mq.addListener) mq.addListener(onSystemTheme);
-      }
+      // Palet artık kullanıcının seçimine bağlıdır (Bordo · Siyan · Beyaz).
+      // Sistem koyu modu tercihi bilerek yok sayılır: varsayılan Beyaz'dır.
     </script>
     <!-- Çerez izni (KVKK/GDPR): onay verilene kadar GA/AdSense yüklenmez -->
     <div class="cerez" id="cerez" hidden>

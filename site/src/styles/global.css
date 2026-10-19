@@ -3,7 +3,7 @@
    ================================================================ */
 
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
 
   /* --- Marka aksanı --- */
   --brand: #d81f26;
@@ -63,35 +63,79 @@
 }
 
 /* ================================================================
-   Koyu tema — katmanlı, hafif soğuk nötr near-black
-   (Kullanıcı seçimi her zaman kazanır; aksi halde sistem tercihi.)
+   PALETLER — Beyaz (varsayılan) · Bordo · Siyan
+   ----------------------------------------------------------------
+   Üç palet de aynı jetonları (token) ezer; bileşenler renk bilmez.
+   Sıra: Bordo → Siyan → Beyaz. Varsayılan: Beyaz.
    ================================================================ */
-:root[data-theme="dark"] {
+
+/* --- BORDO: koyu bordo zemin, gül kırmızısı aksan --- */
+:root[data-theme="bordo"] {
   color-scheme: dark;
 
-  --bg: #0b0d11;
-  --bg-elev: #12151b;
-  --surface: #14171d;
-  --surface-2: #1a1f27;
-  --border: #262c36;
-  --border-soft: #1e232c;
-  --border-strong: #333a46;
+  --bg: #2a0710;
+  --bg-elev: #330a14;
+  --surface: #380c17;
+  --surface-2: #45111f;
+  --border: #5a1b2b;
+  --border-soft: #4a1524;
+  --border-strong: #6b2334;
 
-  --text: #e8ecf2;
-  --text-2: #c7cfdb;
+  --text: #f7e9ed;
+  --text-2: #e6ccd4;
+  --heading: #fff7f9;
+  --muted: #c99fab;
+
+  --control-bg: #45111f;
+  --control-fg: #f7e9ed;
+
+  --brand: #ff6b76;
+  --brand-strong: #ff9aa2;
+  --brand-soft: rgba(255, 107, 118, 0.16);
+  --brand-grad: linear-gradient(135deg, #ef3f53 0%, #a3122b 100%);
+  --brand-glow: rgba(239, 63, 83, 0.45);
+  /* Zemin: beyaz metinle yüksek kontrastlı doygun bordo (~7:1) */
+  --brand-fill: #a5122a;
+  --brand-fill-hover: #bb1832;
+
+  --pos: #4ade80;
+  --neg: #fb7185;
+  --pos-soft: rgba(34, 197, 94, 0.16);
+  --neg-soft: rgba(239, 68, 68, 0.16);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.45), 0 22px 48px -20px rgba(0, 0, 0, 0.75);
+  --shadow-lg: 0 36px 80px -28px rgba(0, 0, 0, 0.88);
+}
+
+/* --- SİYAN: koyu petrol zemin, turkuaz aksan --- */
+:root[data-theme="siyan"] {
+  color-scheme: dark;
+
+  --bg: #04171c;
+  --bg-elev: #061d23;
+  --surface: #082128;
+  --surface-2: #0c2b33;
+  --border: #17414a;
+  --border-soft: #103038;
+  --border-strong: #20525e;
+
+  --text: #e3f7fb;
+  --text-2: #c3e6ee;
   --heading: #ffffff;
-  --muted: #98a2b3;
+  --muted: #8db6c0;
 
-  --control-bg: #1e232c;
-  --control-fg: #e8ecf2;
+  --control-bg: #0c2b33;
+  --control-fg: #e3f7fb;
 
-  --brand: #ff5a63;
-  --brand-strong: #ff838a;
-  --brand-soft: rgba(255, 90, 99, 0.15);
-  --brand-glow: rgba(255, 90, 99, 0.42);
-  /* Zemin: beyaz metinle yüksek kontrastlı doygun koyu kırmızı (~6.9:1) */
-  --brand-fill: #b3161d;
-  --brand-fill-hover: #c0181f;
+  --brand: #2ad4ea;
+  --brand-strong: #7ce9f7;
+  --brand-soft: rgba(42, 212, 234, 0.15);
+  --brand-grad: linear-gradient(135deg, #0b8a9e 0%, #05535f 100%);
+  --brand-glow: rgba(51, 224, 242, 0.42);
+  /* Zemin: beyaz metinle yeterli kontrastlı koyu turkuaz (~4.8:1) */
+  --brand-fill: #067d90;
+  --brand-fill-hover: #078ea3;
 
   --pos: #4ade80;
   --neg: #fb7185;
@@ -101,46 +145,6 @@
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
   --shadow: 0 2px 10px rgba(0, 0, 0, 0.45), 0 22px 48px -20px rgba(0, 0, 0, 0.72);
   --shadow-lg: 0 36px 80px -28px rgba(0, 0, 0, 0.85);
-}
-
-/* Sistem koyu modu — kullanıcı açık temayı açıkça seçmediyse */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-
-    --bg: #0b0d11;
-    --bg-elev: #12151b;
-    --surface: #14171d;
-    --surface-2: #1a1f27;
-    --border: #262c36;
-    --border-soft: #1e232c;
-    --border-strong: #333a46;
-
-    --text: #e8ecf2;
-    --text-2: #c7cfdb;
-    --heading: #ffffff;
-    --muted: #98a2b3;
-
-    --control-bg: #1e232c;
-    --control-fg: #e8ecf2;
-
-    --brand: #ff5a63;
-    --brand-strong: #ff838a;
-    --brand-soft: rgba(255, 90, 99, 0.15);
-    --brand-glow: rgba(255, 90, 99, 0.42);
-    /* Zemin: beyaz metinle yüksek kontrastlı doygun koyu kırmızı (~6.9:1) */
-    --brand-fill: #b3161d;
-    --brand-fill-hover: #c0181f;
-
-    --pos: #4ade80;
-    --neg: #fb7185;
-    --pos-soft: rgba(34, 197, 94, 0.16);
-    --neg-soft: rgba(239, 68, 68, 0.16);
-
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
-    --shadow: 0 2px 10px rgba(0, 0, 0, 0.45), 0 22px 48px -20px rgba(0, 0, 0, 0.72);
-    --shadow-lg: 0 36px 80px -28px rgba(0, 0, 0, 0.85);
-  }
 }
 
 * {

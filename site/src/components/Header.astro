@@ -85,16 +85,17 @@ const isActive = (href) =>
         class="theme-toggle"
         id="theme-toggle"
         type="button"
-        aria-label="Koyu temaya geç"
+        aria-label="Palet: Beyaz"
         aria-pressed="false"
-        title="Görünüm temasını değiştir"
+        title="Palet: Beyaz — sıradaki: Bordo"
+        data-palet="beyaz"
       >
-        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-        </svg>
-        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="4.2" />
-          <path d="M12 2v2.4M12 19.6V22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2 12h2.4M19.6 12H22M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7" />
+        <svg class="theme-toggle__icon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.65-.75 1.65-1.69 0-.44-.18-.84-.44-1.13-.29-.29-.44-.65-.44-1.12a1.64 1.64 0 0 1 1.67-1.67h2c3.05 0 5.55-2.5 5.55-5.55C21.99 6.01 17.46 2 12 2Z" />
+          <circle cx="7.2" cy="12.4" r="1.15" fill="currentColor" stroke="none" />
+          <circle cx="8.6" cy="7.6" r="1.15" fill="currentColor" stroke="none" />
+          <circle cx="13.4" cy="6.2" r="1.15" fill="currentColor" stroke="none" />
+          <circle cx="17.4" cy="10" r="1.15" fill="currentColor" stroke="none" />
         </svg>
       </button>
     </div>
@@ -282,53 +283,56 @@ const isActive = (href) =>
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
-  // --- Tema değiştirici ---
+  // --- Palet değiştirici: Bordo → Siyan → Beyaz (varsayılan: Beyaz) ---
   const themeToggle = document.getElementById("theme-toggle");
   if (themeToggle) {
     const root = document.documentElement;
+    const PALETLER = {
+      bordo: { ad: "Bordo", sonraki: "siyan", renk: "#2a0710", koyu: true },
+      siyan: { ad: "Siyan", sonraki: "beyaz", renk: "#04171c", koyu: true },
+      beyaz: { ad: "Beyaz", sonraki: "bordo", renk: "#ffffff", koyu: false },
+    };
 
-    const isCurrentDark = () => {
-      if (root.dataset.theme === "dark") return true;
-      if (root.dataset.theme === "light") return false;
-      return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const suAnki = () => {
+      const t = root.dataset.theme;
+      return PALETLER[t] ? t : "beyaz";
+    };
+
+    const metaRenk = (renk) => {
+      const m = document.querySelector('meta[name="theme-color"]');
+      if (m) m.setAttribute("content", renk);
     };
 
     const syncToggle = () => {
-      const dark = isCurrentDark();
-      themeToggle.setAttribute("aria-pressed", String(dark));
+      const ad = suAnki();
+      const p = PALETLER[ad];
+      themeToggle.dataset.palet = ad;
+      themeToggle.setAttribute("aria-pressed", String(p.koyu));
+      themeToggle.setAttribute("aria-label", "Palet: " + p.ad + ". Değiştir");
       themeToggle.setAttribute(
-        "aria-label",
-        dark ? "Açık temaya geç" : "Koyu temaya geç"
+        "title",
+        "Palet: " + p.ad + " — sıradaki: " + PALETLER[p.sonraki].ad
       );
+    };
+
+    const uygula = (ad) => {
+      const p = PALETLER[ad] || PALETLER.beyaz;
+      root.dataset.theme = ad;
+      root.style.colorScheme = p.koyu ? "dark" : "light";
+      try {
+        localStorage.setItem("hb-palet", ad);
+      } catch (e) {}
+      metaRenk(p.renk);
+      syncToggle();
     };
 
     syncToggle();
 
-    if (window.matchMedia) {
-      const mq = window.matchMedia("(prefers-color-scheme: dark)");
-      const onMQ = () => {
-        let session = null;
-        try { session = sessionStorage.getItem("theme"); } catch (e) {}
-        if (!session) syncToggle();
-      };
-      if (mq.addEventListener) mq.addEventListener("change", onMQ);
-      else if (mq.addListener) mq.addListener(onMQ);
-    }
-
     themeToggle.addEventListener("click", (event) => {
-      const currentDark = isCurrentDark();
-      const next = currentDark ? "light" : "dark";
-      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-      const applyTheme = () => {
-        root.dataset.theme = next;
-        root.style.colorScheme = next;
-        try {
-          sessionStorage.setItem("theme", next);
-          localStorage.removeItem("theme");
-        } catch (e) {}
-        syncToggle();
-      };
+      const next = PALETLER[suAnki()].sonraki;
+      const reduce =
+        window.matchMedia &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       // Modern View Transitions API: Tıklanan buton odaklı dairesel yayılma animasyonu (60/120 FPS)
       if (document.startViewTransition && !reduce) {
@@ -341,7 +345,7 @@ const isActive = (href) =>
         );
 
         const transition = document.startViewTransition(() => {
-          applyTheme();
+          uygula(next);
         });
 
         transition.ready
@@ -369,7 +373,7 @@ const isActive = (href) =>
         root.classList.add("theme-transition");
         window.setTimeout(() => root.classList.remove("theme-transition"), 320);
       }
-      applyTheme();
+      uygula(next);
     });
   }
 </script>
@@ -762,29 +766,11 @@ const isActive = (href) =>
   }
   .theme-toggle__icon {
     grid-area: 1 / 1;
-    transition: opacity 0.3s var(--ease), transform 0.35s var(--ease);
+    color: var(--brand);
+    transition: color 0.25s var(--ease), transform 0.35s var(--ease);
   }
-  .theme-toggle__icon--sun {
-    opacity: 0;
-    transform: rotate(-90deg) scale(0.55);
-  }
-  :root[data-theme="dark"] .theme-toggle__icon--sun {
-    opacity: 1;
-    transform: none;
-  }
-  :root[data-theme="dark"] .theme-toggle__icon--moon {
-    opacity: 0;
-    transform: rotate(90deg) scale(0.55);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .theme-toggle__icon--sun {
-      opacity: 1;
-      transform: none;
-    }
-    :root:not([data-theme="light"]) .theme-toggle__icon--moon {
-      opacity: 0;
-      transform: rotate(90deg) scale(0.55);
-    }
+  .theme-toggle:hover .theme-toggle__icon {
+    transform: rotate(-12deg) scale(1.06);
   }
 
   @media (max-width: 1000px) {
