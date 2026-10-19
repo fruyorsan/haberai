@@ -66,9 +66,9 @@ Akış (`src/stok-gorsel.js`):
    kullanılır: haber **asla fotoğrafsız/brandalı yer tutucuyla kalmaz**.
 
 Eski (kaynak fotoğraflı) haberler `npm run backfill` sırasında tur tur temizlenir:
-`GORSEL_BACKFILL_LIMIT` (varsayılan 10/saat) kadar habere AI'dan yalnızca kısa
+`GORSEL_BACKFILL_LIMIT` (varsayılan 20/saat) kadar habere AI'dan yalnızca kısa
 bir sorgu sorulur (tam makale üretilmez, kota az harcanır). Güvenilir fotoğraf
-bulunamazsa **eski fotoğrafa dokunulmaz** ve 30 gün sonra yeniden denenir —
+bulunamazsa **eski fotoğrafa dokunulmaz** ve 7 gün sonra yeniden denenir —
 yanlış/ilgisiz fotoğraf göstermektense mevcut fotoğrafı korumak yeğdir.
 
 Site tarafı (`site/src/lib/kapak.js`): stok fotoğraflar `gorselKaynak` alanından
@@ -148,7 +148,7 @@ uygulanır; yani son dakika şeridine çöp başlık düşemez.
 
 `.github/workflows/backfill.yml` her 10 dakikada bir, gövdesi veya `editorNote` alanı eksik
 olan eski haberleri otomatik yeniler (tur başına `BACKFILL_LIMIT=4` haber). Aynı turda
-kaynak fotoğraflı eski haberlerden `GORSEL_BACKFILL_LIMIT` (varsayılan **10**) kadarı
+kaynak fotoğraflı eski haberlerden `GORSEL_BACKFILL_LIMIT` (varsayılan **20**) kadarı
 telif güvenli stok fotoğraflara geçirilir (bkz. "Görseller" bölümü). Eski haberler
 için beklemeden başlatmak istersen: GitHub → **Actions** → **Arsiv Yenileme** →
 **Run workflow**. Workflow `data/` değişikliklerini commit edip siteyi yeniden yayınlar.

@@ -186,7 +186,7 @@ async function main() {
   // olabilir). AI'dan yalnızca KISA bir İngilizce sorgu istenir (tam makale
   // üretilmez, kota az harcanır), sonra Commons'tan serbest lisanslı fotoğraf
   // alınır. Yanlış fotoğraf göstermemek için: fotoğraf bulunamazsa ESKİ
-  // FOTOĞRAFA DOKUNULMAZ ve haber 30 gün sonra yeniden denenir.
+  // FOTOĞRAFA DOKUNULMAZ ve haber 7 gün sonra yeniden denenir.
   const GORSEL_LIMIT = Number(process.env.GORSEL_BACKFILL_LIMIT || 0);
   if (GORSEL_LIMIT > 0) {
     const kalanlar = articles.filter((a) => a.image && !a.gorselKaynak);
@@ -194,7 +194,7 @@ async function main() {
       .filter(
         (a) =>
           !a.gorselDeneme ||
-          Date.now() - new Date(a.gorselDeneme).getTime() > 30 * 24 * 60 * 60 * 1000
+          Date.now() - new Date(a.gorselDeneme).getTime() > 7 * 24 * 60 * 60 * 1000
       )
       .sort((a, b) =>
         String(b.publishedAt || b.generatedAt || "").localeCompare(

@@ -38,7 +38,7 @@ jobs:
           # kısa bir İngilizce arama sorgusu alınır, fotoğraf Wikimedia
           # Commons'tan (CC0/kamu malı/CC BY/CC BY-SA) gelir. Fotoğraf
           # bulunamazsa eski fotoğrafa DOKUNULMAZ.
-          GORSEL_BACKFILL_LIMIT: "10"
+          GORSEL_BACKFILL_LIMIT: "20"
         run: npm run backfill
 
       # Arşivdeki eski fotoğraflar yukarıdaki adımda telif güvenli hâle
