@@ -3,7 +3,7 @@ import { fetchPageExtras } from "./fetcher.js";
 import { analyzeArticle, gorselSorgusu } from "./ai.js";
 import { purgeCopiedText } from "./telif.js";
 import { config } from "./config.js";
-import { stokGorseller, KATEGORI_SORGU, atif } from "./stok-gorsel.js";
+import { stokGorseller, KATEGORI_SORGU, atif, kisaSorgu } from "./stok-gorsel.js";
 
 /**
  * Eski haberleri yeni biçimle yeniden üretir:
@@ -67,10 +67,10 @@ function kullanilanGorseller(articles) {
  * göstermektense mevcut fotoğrafı korumak daha iyidir.
  */
 async function gorselYaz(a, sorgu, kullanilan) {
-  const stok = await stokGorseller([sorgu, KATEGORI_SORGU[a.category]], {
-    adet: 3,
-    kullanilan,
-  });
+  const stok = await stokGorseller(
+    [sorgu, kisaSorgu(sorgu), KATEGORI_SORGU[a.category]],
+    { adet: 3, kullanilan }
+  );
   if (!stok.length) return false;
   const [kapak, ...ekler] = stok;
   a.image = kapak.url;

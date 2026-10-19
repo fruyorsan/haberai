@@ -7,7 +7,7 @@ import { shareNewArticles } from "./share.js";
 import { makeIndex, findSimilar, dedupeArticles } from "./dedupe.js";
 import { isBreaking, breakingScore } from "./breaking.js";
 import { purgeCopiedText } from "./telif.js";
-import { stokGorseller, KATEGORI_SORGU, yedekGorsel, atif } from "./stok-gorsel.js";
+import { stokGorseller, KATEGORI_SORGU, yedekGorsel, atif, kisaSorgu } from "./stok-gorsel.js";
 
 const DRY = process.argv.includes("--dry");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -207,7 +207,14 @@ async function main() {
       // GÖRSELLER: AI'nın ürettiği İngilizce sorgu + kategori sorgusu.
       // (Etiketler sorgu olarak KULLANILMAZ: "Rekabet Kurulu" gibi Türkçe
       // etiketler Commons'ta tamamen alakasız dosyalar getiriyor.)
-      const sorgular = [ai.gorselSorgu, KATEGORI_SORGU[cleaned.category]];
+      // Sıra: AI'nın tam sorgusu → aynı sorgunun geniş hâli ("flooded street")
+      // → kategori sorgusu. Tam sorgu Commons'ta dosya adıyla eşleşmezse
+      // geniş hâli konuya yakın bir fotoğraf bulur (borsa fotoğrafına düşmez).
+      const sorgular = [
+        ai.gorselSorgu,
+        kisaSorgu(ai.gorselSorgu),
+        KATEGORI_SORGU[cleaned.category],
+      ];
       let stok = await stokGorseller(sorgular, { adet: 3, kullanilan: kullanilanGorsel });
       if (!stok.length) stok = [yedekGorsel(cleaned.category)];
       const [kapakGorsel, ...ekler] = stok;
