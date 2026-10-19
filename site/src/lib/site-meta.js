@@ -126,6 +126,26 @@ export const HESAP = {
  * listelenir (o an haberi olmayan bir kategori de seçilebilsin). Slug'lar
  * site/src/lib/articles.js → slugify ile birebir aynı olmalıdır.
  */
+/**
+ * Hazır profil fotoğrafları. Emoji tabanlıdır: telifsizdir, indirme gerektirmez
+ * ve her cihazda anında görünür. Okuyucu isterse kendi fotoğrafını yükleyebilir
+ * (tarayıcıda 128 px'e küçültülür ve hesabına kaydedilir).
+ */
+export const AVATARLAR = [
+  { kod: "🕵️", ad: "Dedektif", renk: "#2563eb" },
+  { kod: "🔬", ad: "Bilgin", renk: "#0d9488" },
+  { kod: "🎧", ad: "Müzik", renk: "#7c3aed" },
+  { kod: "👩‍🚀", ad: "Astronot", renk: "#4338ca" },
+  { kod: "👩‍💻", ad: "Yazılımcı", renk: "#0891b2" },
+  { kod: "🧔", ad: "Yazar", renk: "#b45309" },
+  { kod: "🤖", ad: "Robot", renk: "#475569" },
+  { kod: "🦊", ad: "Tilki", renk: "#ea580c" },
+  { kod: "🐱", ad: "Kedi", renk: "#db2777" },
+  { kod: "🦉", ad: "Baykuş", renk: "#65a30d" },
+  { kod: "🐼", ad: "Panda", renk: "#334155" },
+  { kod: "🐸", ad: "Kurbağa", renk: "#16a34a" },
+];
+
 export const KATEGORILER = [
   { ad: "Gündem", slug: "gundem" },
   { ad: "Dünya", slug: "dunya" },

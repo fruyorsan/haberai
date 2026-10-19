@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import { HESAP, KATEGORILER } from "../lib/site-meta.js";
+import { HESAP, KATEGORILER, AVATARLAR } from "../lib/site-meta.js";
 
 const hazir = Boolean(HESAP.url && HESAP.anahtar);
 ---
@@ -43,6 +43,46 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
           <input class="profil__girdi" id="profil-ad-girdi" type="text" maxlength="40" placeholder="Adın" />
           <button type="button" class="profil__btn profil__btn--kucuk" id="profil-ad-kaydet">Kaydet</button>
         </div>
+      </section>
+
+      <section class="profil__blok">
+        <h2 class="profil__h2">Profil fotoğrafı</h2>
+        <p class="profil__aciklama">
+          Hazır bir karakter seç ya da kendi fotoğrafını yükle. Yorumlarında ve
+          üstteki hesap düğmesinde görünür.
+        </p>
+        <div class="profil__avatar-satir">
+          <span class="profil__onizleme" id="profil-onizleme" aria-hidden="true"></span>
+          <div class="profil__avatar-islem">
+            <label class="profil__btn profil__btn--kucuk profil__dosya">
+              Fotoğraf yükle
+              <input type="file" id="profil-dosya" accept="image/*" hidden />
+            </label>
+            <button
+              type="button"
+              class="profil__btn profil__btn--kucuk profil__btn--ghost"
+              id="profil-avatar-sil"
+            >
+              Kaldır
+            </button>
+          </div>
+        </div>
+        <div class="profil__avatarlar" id="profil-avatarlar">
+          {AVATARLAR.map((a) => (
+            <button
+              type="button"
+              class="profil__avatar-sec"
+              data-avatar={a.kod}
+              title={a.ad}
+              aria-label={a.ad}
+              aria-pressed="false"
+              style={`--av-renk:${a.renk}`}
+            >
+              <span class="profil__avatar-emoji">{a.kod}</span>
+            </button>
+          ))}
+        </div>
+        <span class="profil__mini" id="profil-avatar-durum" role="status" aria-live="polite"></span>
       </section>
 
       <section class="profil__blok">
@@ -372,6 +412,119 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     font-size: 0.82rem;
     color: var(--text-2);
   }
+
+  /* --- Profil fotoğrafı seçici --- */
+  .profil__avatar-satir {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  .profil__onizleme {
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    border-radius: 999px;
+    background: var(--brand-grad);
+    color: #fff;
+    font-weight: 900;
+    font-size: 1.5rem;
+    overflow: hidden;
+  }
+  .profil__onizleme img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .profil__avatar-islem {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .profil__dosya {
+    cursor: pointer;
+  }
+  .profil__avatarlar {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 9px;
+  }
+  .profil__avatar-sec {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface-2);
+    cursor: pointer;
+    transition: transform 0.15s var(--ease), border-color 0.15s var(--ease),
+      box-shadow 0.15s var(--ease);
+  }
+  .profil__avatar-sec:hover {
+    border-color: var(--av-renk, var(--brand));
+    transform: translateY(-2px);
+  }
+  .profil__avatar-sec.is-on {
+    border-color: var(--av-renk, var(--brand));
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--av-renk, var(--brand)) 22%, transparent);
+    background: color-mix(in srgb, var(--av-renk, var(--brand)) 14%, var(--surface-2));
+  }
+  .profil__avatar-emoji {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  /* ============================== TELEFON ============================== */
+  @media (max-width: 640px) {
+    .profil {
+      margin: 16px auto 24px;
+    }
+    .profil__ust {
+      padding: 14px 15px;
+      gap: 10px;
+    }
+    .profil__avatar {
+      width: 44px;
+      height: 44px;
+      font-size: 1.05rem;
+    }
+    .profil__kim h1 {
+      font-size: 1.05rem;
+    }
+    .profil__cikis {
+      padding: 8px 12px;
+      font-size: 0.78rem;
+    }
+    .profil__blok {
+      padding: 15px 15px;
+      border-radius: 14px;
+      margin-bottom: 13px;
+    }
+    .profil__girdi {
+      min-width: 0;
+    }
+    .profil__satir {
+      gap: 8px;
+    }
+    /* Telefonda "Kaydet" tam genişlik: parmakla kolay basılır. */
+    .profil__satir .profil__btn {
+      flex: 1 1 100%;
+    }
+    .profil__avatarlar {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+    .profil__yorum {
+      padding: 10px 11px;
+    }
+    .profil__kaydet-satir .profil__btn {
+      flex: 1 1 100%;
+    }
+  }
 </style>
 
 <script is:inline>
@@ -397,11 +550,26 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     var kadiEl = document.getElementById("profil-kadi");
     var adGirdi = document.getElementById("profil-ad-girdi");
     var durumEl = document.getElementById("profil-durum");
+    var onizleme = document.getElementById("profil-onizleme");
+    var avDurum = document.getElementById("profil-avatar-durum");
+    var avSecimler = [].slice.call(document.querySelectorAll("[data-avatar]"));
 
-    if (avatar) avatar.textContent = (u.ad || "?").trim().charAt(0).toLocaleUpperCase("tr");
+    // Avatarı hem üstte hem önizlemede gösterir, seçili hazır avatari işaretler.
+    function avatarCiz() {
+      var g = H.oturumOku() || u;
+      if (avatar) H.avatarDoldur && H.avatarDoldur(avatar, g.avatar, g.ad);
+      if (onizleme) H.avatarDoldur && H.avatarDoldur(onizleme, g.avatar, g.ad);
+      for (var i = 0; i < avSecimler.length; i++) {
+        var on = g.avatar === avSecimler[i].getAttribute("data-avatar");
+        avSecimler[i].classList.toggle("is-on", on);
+        avSecimler[i].setAttribute("aria-pressed", String(on));
+      }
+    }
+
     if (adEl) adEl.textContent = u.ad;
     if (kadiEl) kadiEl.textContent = "@" + u.kadi;
     if (adGirdi) adGirdi.value = u.ad;
+    avatarCiz();
 
     function cizCip(kap, kunye, secim) {
       var cipler = document.querySelectorAll("[" + kunye + "]");
@@ -454,7 +622,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
           }
           u = H.oturumOku();
           if (adEl) adEl.textContent = u.ad;
-          if (avatar) avatar.textContent = (u.ad || "?").trim().charAt(0).toLocaleUpperCase("tr");
+          if (avatar) avatarCiz();
           await H.pushEsle(u);
           durum("Kaydedildi ✓ İlgi alanların akışına ve bildirimlerine uygulandı.");
         } catch (e) {
@@ -475,7 +643,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
           if (r && r.hata) { durum(r.hata); return; }
           u = H.oturumOku();
           if (adEl) adEl.textContent = u.ad;
-          if (avatar) avatar.textContent = (u.ad || "?").trim().charAt(0).toLocaleUpperCase("tr");
+          avatarCiz();
           durum("Adın güncellendi ✓");
         } catch (e) {
           durum("Güncellenemedi.");
@@ -554,6 +722,116 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         if (mini) mini.textContent = gitti ? "Deneme bildirimi gönderildi ✓" : "Gösterilemedi.";
       });
 
+    // --- Profil fotoğrafı ---
+    function avYaz(mesaj, hata) {
+      if (avDurum) avDurum.textContent = mesaj || "";
+      if (avDurum) avDurum.style.color = hata ? "var(--brand-ink, #b3121a)" : "";
+    }
+    avSecimler.forEach(function (btn) {
+      btn.addEventListener("click", async function () {
+        btn.disabled = true;
+        avYaz("Kaydediliyor…");
+        try {
+          var r = await H.avatarAyarla(btn.getAttribute("data-avatar"));
+          if (r && r.hata) {
+            avYaz(r.hata, true);
+            return;
+          }
+          avYaz("Profil fotoğrafı güncellendi ✓");
+        } catch (e) {
+          avYaz("Kaydedilemedi, tekrar dene.", true);
+        } finally {
+          btn.disabled = false;
+          avatarCiz();
+        }
+      });
+    });
+
+    // Kendi fotoğrafı: tarayıcıda 128 px kareye küçültülür (küçük ve hızlı).
+    function kucult(dosya, cb) {
+      var okuyucu = new FileReader();
+      okuyucu.onload = function () {
+        var img = new Image();
+        img.onload = function () {
+          try {
+            var kenar = 128;
+            var cv = document.createElement("canvas");
+            cv.width = kenar;
+            cv.height = kenar;
+            var ctx = cv.getContext("2d");
+            var kisa = Math.min(img.width, img.height);
+            ctx.drawImage(
+              img,
+              (img.width - kisa) / 2,
+              (img.height - kisa) / 2,
+              kisa,
+              kisa,
+              0,
+              0,
+              kenar,
+              kenar,
+            );
+            cb(cv.toDataURL("image/jpeg", 0.82));
+          } catch (e) {
+            cb(null);
+          }
+        };
+        img.onerror = function () {
+          cb(null);
+        };
+        img.src = okuyucu.result;
+      };
+      okuyucu.onerror = function () {
+        cb(null);
+      };
+      okuyucu.readAsDataURL(dosya);
+    }
+
+    var dosyaGirdi = document.getElementById("profil-dosya");
+    dosyaGirdi &&
+      dosyaGirdi.addEventListener("change", function () {
+        var dosya = dosyaGirdi.files && dosyaGirdi.files[0];
+        if (!dosya) return;
+        if (dosya.size > 6 * 1024 * 1024) {
+          avYaz("Dosya çok büyük (en fazla 6 MB).", true);
+          dosyaGirdi.value = "";
+          return;
+        }
+        avYaz("Fotoğraf hazırlanıyor…");
+        kucult(dosya, async function (veri) {
+          dosyaGirdi.value = "";
+          if (!veri) {
+            avYaz("Bu dosya okunamadı. PNG/JPG dene.", true);
+            return;
+          }
+          var r = await H.avatarAyarla(veri);
+          if (r && r.hata) {
+            avYaz(r.hata, true);
+            return;
+          }
+          avYaz("Fotoğrafın yüklendi ✓");
+          avatarCiz();
+        });
+      });
+
+    var avSil = document.getElementById("profil-avatar-sil");
+    avSil &&
+      avSil.addEventListener("click", async function () {
+        avSil.disabled = true;
+        avYaz("Kaldırılıyor…");
+        try {
+          var r = await H.avatarAyarla("");
+          if (r && r.hata) {
+            avYaz(r.hata, true);
+            return;
+          }
+          avYaz("Profil fotoğrafı kaldırıldı (baş harfin görünür).");
+        } finally {
+          avSil.disabled = false;
+          avatarCiz();
+        }
+      });
+
     // --- Okuma listesi ---
     var kListe = document.getElementById("profil-kayitlar");
     var kBos = document.getElementById("profil-kayit-bos");
@@ -586,7 +864,8 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     }
 
     // --- Yorumlarım ---
-    var liste = document.getElementById("profil-yorumlar");    var bos = document.getElementById("profil-yorum-bos");
+    var liste = document.getElementById("profil-yorumlar");
+    var bos = document.getElementById("profil-yorum-bos");
     H.yorumlarim().then(function (liste2) {
       if (!liste) return;
       var veri = Array.isArray(liste2) ? liste2 : [];

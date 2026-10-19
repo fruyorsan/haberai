@@ -568,19 +568,21 @@ const isActive = (href) =>
     transform: translateY(-1px);
   }
   .hesap-btn__ikon {
-    display: none;
+    display: grid;
     place-items: center;
     width: 24px;
     height: 24px;
+    margin-left: -4px;
     border-radius: 999px;
     background: var(--brand-grad);
     color: #fff;
     font-size: 0.78rem;
     font-weight: 900;
+    overflow: hidden;
+    flex-shrink: 0;
   }
-  .hesap-btn.is-uye .hesap-btn__ikon {
-    display: grid;
-    margin-left: -4px;
+  .hesap-btn__ikon svg {
+    display: block;
   }
   .hesap-btn.is-uye {
     color: var(--text);
@@ -901,6 +903,35 @@ const isActive = (href) =>
     }
     .logo {
       min-height: 44px;
+    }
+  }
+
+  /* Telefonda hesap düğmesi avatari/baş harfi daha okunaklı gösterir. */
+  @media (max-width: 720px) {
+    .hesap-btn__ikon {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  /* Çok dar telefonlar (360px ve altı): üst satır taşmasın.
+     Logo + arama + hesap + bildirim + tema yan yana sığmalı. */
+  @media (max-width: 400px) {
+    .header__actions {
+      gap: 4px;
+      right: 10px;
+    }
+    .searchbox__toggle,
+    .theme-toggle {
+      width: 40px;
+      height: 40px;
+    }
+    .hesap-btn {
+      height: 40px;
+      padding: 0 7px;
+    }
+    .logo__text {
+      font-size: 1.05rem;
     }
   }
 </style>

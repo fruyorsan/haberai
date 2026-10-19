@@ -168,9 +168,14 @@ const ilk = liste.slice(0, ilkSayi);
         <button class="ysheet__kapat" type="button" data-yorum-kapat aria-label="Kapat">✕</button>
       </header>
       <p class="ysheet__ad" id="ysheet-ad"></p>
+      <p class="ysheet__hesap" id="ysheet-hesap" hidden>
+        Yorumun <b>hesabına</b> bağlanabilir: <a href="/hesap/">giriş yap</a> —
+        istersen takma adla da yazabilirsin.
+      </p>
       <div class="ysheet__govde">
         <Yorumlar sade slug="" baslik="" url="" />
-      </div>      <a class="ysheet__oku" id="ysheet-oku" href="/akis/">Haberi oku →</a>
+      </div>
+      <a class="ysheet__oku" id="ysheet-oku" href="/akis/">Haberi oku →</a>
     </div>
   </div>
 
@@ -225,6 +230,35 @@ const ilk = liste.slice(0, ilkSayi);
       // girişimde yine en üstteydi". Sıra: görülmemişler önce, gördükler sonra
       // (grup içinde sunucu sırası korunur). Veri cihazda kalır.
       const gorulenler = oku("akis-gorulen");
+
+      // --- Hesap (giriş yapılmışsa beğeniler hesaba da yazılır) --------------
+      const H = window.HaberinAi;
+      const hesap = () => (H && H.oturumOku ? H.oturumOku() : null);
+      let hesapIpucu = false;
+
+      function hesapBegenileriniAl() {
+        if (!H || !H.begeniler || !hesap()) return;
+        H.begeniler().then((gelen) => {
+          if (!Array.isArray(gelen) || !gelen.length) return;
+          let degisti = false;
+          gelen.forEach((s) => {
+            const slug = String(s);
+            if (!begeniler.has(slug)) {
+              begeniler.add(slug);
+              degisti = true;
+            }
+          });
+          if (!degisti) return;
+          yaz("akis-begeni", begeniler);
+          [...liste.querySelectorAll(".ak")].forEach(boya);
+          sayilari();
+        });
+      }
+
+      const ySheetHesap = document.getElementById("ysheet-hesap");
+      function hesapSeridiCiz() {
+        if (ySheetHesap) ySheetHesap.hidden = Boolean(hesap());
+      }
 
       const sayilari = () => {
         const b = kok.querySelector('[data-sayi="begeni"]');
@@ -317,12 +351,26 @@ const ilk = liste.slice(0, ilkSayi);
         yaz("akis-begeni", begeniler);
         boya(kart);
         sayilari();
+
+        // Girişliyse beğeni hesaba da işlenir: başka cihazda da durur.
+        const u = hesap();
+        if (H && H.begen && u) {
+          (yeni ? H.begen(slug) : H.begenSil(slug)).then((r) => {
+            if (r && r.hata) bildir("Beğeni hesabına kaydedilemedi");
+          });
+        }
+
         if (yeni) {
           kart.classList.remove("is-patladi");
           void kart.offsetWidth; // animasyonu yeniden başlat
           kart.classList.add("is-patladi");
           if (navigator.vibrate) navigator.vibrate(12);
-          bildir("Beğendin ♥");
+          if (!u && !hesapIpucu) {
+            hesapIpucu = true;
+            bildir("Beğendin ♥ · Hesabına bağlamak için giriş yap");
+          } else {
+            bildir("Beğendin ♥");
+          }
         }
       }
 
@@ -734,6 +782,14 @@ const ilk = liste.slice(0, ilkSayi);
         if (bitti) bitti.hidden = false;
       }
       dugmeDurumu();
+
+      // Hesap: beğenileri birleştir ve yorum panelindeki giriş şeridini ayarla.
+      hesapBegenileriniAl();
+      hesapSeridiCiz();
+      window.addEventListener("hb-oturum-degisti", () => {
+        hesapSeridiCiz();
+        hesapBegenileriniAl();
+      });
 
       // İlk ziyarette kaydırma ipucu (bir kez gösterilir).
       try {

@@ -16,18 +16,82 @@
 
   function ayarlar() {
     var el = document.getElementById("hb-ayar");
-    if (!el) return { url: "", anahtar: "", kategoriler: [] };
+    if (!el) return { url: "", anahtar: "", kategoriler: [], avatarlar: [] };
     try {
       var d = JSON.parse(el.textContent || "{}");
       return {
         url: String(d.hesapUrl || "").replace(/\/+$/, ""),
         anahtar: String(d.hesapAnahtar || ""),
         kategoriler: Array.isArray(d.kategoriler) ? d.kategoriler : [],
+        avatarlar: Array.isArray(d.avatarlar) ? d.avatarlar : [],
       };
     } catch (e) {
-      return { url: "", anahtar: "", kategoriler: [] };
+      return { url: "", anahtar: "", kategoriler: [], avatarlar: [] };
     }
   }
+
+  // ------------------------------------------------------------------------
+  // Avatar (profil fotoğrafı) yardımcıları
+  // ------------------------------------------------------------------------
+  var stilEklendi = false;
+  function stilKur() {
+    if (stilEklendi || !document.head) return;
+    stilEklendi = true;
+    var s = document.createElement("style");
+    s.textContent =
+      ".hb-av-img{width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block}" +
+      ".hb-av{overflow:hidden}";
+    document.head.appendChild(s);
+  }
+
+  /** Avatarın arka plan rengini bulur (hazır emoji ise). */
+  function avatarRenk(deger) {
+    var liste = ayarlar().avatarlar;
+    for (var i = 0; i < liste.length; i++) {
+      if (liste[i] && liste[i].kod === deger) return liste[i].renk || "";
+    }
+    return "";
+  }
+
+  /**
+   * Bir elemanı avatar ile doldurur: görsel (data/https), hazır emoji ya da
+   * adın baş harfi. Kap canlı bir HTML elemanıdır.
+   */
+  function avatarDoldur(kap, avatar, ad) {
+    if (!kap) return;
+    stilKur();
+    kap.textContent = "";
+    kap.classList.add("hb-av");
+    kap.style.backgroundImage = "";
+    kap.style.color = "";
+
+    var deger = avatar ? String(avatar) : "";
+    var resimli =
+      deger.indexOf("data:") === 0 ||
+      deger.indexOf("https://") === 0 ||
+      deger.charAt(0) === "/";
+
+    if (resimli) {
+      var img = document.createElement("img");
+      img.className = "hb-av-img";
+      img.src = deger;
+      img.alt = "";
+      img.loading = "lazy";
+      img.referrerPolicy = "no-referrer";
+      kap.appendChild(img);
+      return;
+    }
+    if (deger) {
+      kap.textContent = deger; // hazır emoji avatar
+      var renk = avatarRenk(deger);
+      if (renk) kap.style.background = renk;
+      kap.style.color = "#fff";
+      kap.style.fontSize = "1.35em";
+      return;
+    }
+    kap.textContent = ((ad || "?").trim().charAt(0) || "?").toLocaleUpperCase("tr");
+  }
+
 
   function basliklar() {
     var a = ayarlar();
@@ -98,7 +162,24 @@
       var ad = el.querySelector("[data-hesap-ad]");
       var ikon = el.querySelector("[data-hesap-ikon]");
       if (ad) ad.textContent = u ? u.ad : "Giriş";
-      if (ikon) ikon.textContent = u ? (u.ad.trim().charAt(0) || "?").toLocaleUpperCase("tr") : "";
+      if (ikon) {
+        if (u) {
+          avatarDoldur(ikon, u.avatar, u.ad);
+        } else {
+          // Giriş yapılmamış: mobilde yazı gizlendiği için boş düğme
+          // görünmemeli — sade bir "kişi" simgesi basılır.
+          ikon.classList.remove("hb-av");
+          ikon.textContent = "";
+          ikon.innerHTML =
+            '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" ' +
+            'stroke="currentColor" stroke-width="2" stroke-linecap="round" ' +
+            'aria-hidden="true"><circle cx="12" cy="8" r="3.4"/>' +
+            '<path d="M5.5 20c.6-3.7 3.2-5.6 6.5-5.6s5.9 1.9 6.5 5.6"/></svg>';
+          ikon.style.background = "";
+          ikon.style.color = "";
+          ikon.style.fontSize = "";
+        }
+      }
       el.classList.toggle("is-uye", Boolean(u));
       el.setAttribute("title", u ? u.ad + " · profilim" : "Giriş yap / kayıt ol");
       if (el.tagName === "A") el.setAttribute("href", u ? "/profil/" : "/hesap/");
@@ -117,7 +198,7 @@
   async function kayitOl(kadi, sifre, ad) {
     var r = await rpc("uye_kayit", { p_kadi: kadi, p_sifre: sifre, p_ad: ad });
     if (r.hata) return r;
-    oturumYaz({ id: r.id, kadi: r.kadi, ad: r.ad, token: r.token, ilgi: [], bildirim_ilgi: [] });
+    oturumYaz({ id: r.id, kadi: r.kadi, ad: r.ad, token: r.token, ilgi: [], bildirim_ilgi: [], avatar: null });
     duyur();
     return r;
   }
@@ -132,6 +213,7 @@
       token: r.token,
       ilgi: r.ilgi || [],
       bildirim_ilgi: r.bildirim_ilgi || [],
+      avatar: r.avatar || null,
     });
     duyur();
     return r;
@@ -155,7 +237,13 @@
       }
       return null;
     }
-    var yeni = { ...u, ad: r.ad, ilgi: r.ilgi || [], bildirim_ilgi: r.bildirim_ilgi || [] };
+    var yeni = {
+      ...u,
+      ad: r.ad,
+      ilgi: r.ilgi || [],
+      bildirim_ilgi: r.bildirim_ilgi || [],
+      avatar: r.avatar || null,
+    };
     oturumYaz(yeni);
     duyur();
     return yeni;
@@ -214,6 +302,45 @@
     if (!u) return [];
     var r = await rpc("uye_kayitlar", { p_id: u.id, p_token: u.token });
     return Array.isArray(r) ? r : [];
+  }
+
+  /**
+   * Profil fotoğrafını ayarlar. Boş gönderim fotoğrafı kaldırır.
+   * Değer: hazır emoji ("🕵️"), data URL ya da https:// görsel adresi.
+   */
+  async function avatarAyarla(deger) {
+    var u = oturumOku();
+    if (!u) return { hata: "Giriş yapmalısın." };
+    var r = await rpc("uye_avatar", {
+      p_id: u.id,
+      p_token: u.token,
+      p_avatar: deger || null,
+    });
+    if (r && !r.hata) {
+      oturumYaz({ ...u, avatar: r.avatar || null });
+      duyur();
+    }
+    return r;
+  }
+
+  /** Beğendiğin haberlerin slug listesi (hesaba bağlı). */
+  async function begeniler() {
+    var u = oturumOku();
+    if (!u) return [];
+    var r = await rpc("uye_begeniler", { p_id: u.id, p_token: u.token });
+    return Array.isArray(r) ? r : [];
+  }
+
+  async function begen(slug) {
+    var u = oturumOku();
+    if (!u) return { hata: "Giriş yapmalısın." };
+    return rpc("uye_begen", { p_id: u.id, p_token: u.token, p_slug: slug });
+  }
+
+  async function begenSil(slug) {
+    var u = oturumOku();
+    if (!u) return { hata: "Giriş yapmalısın." };
+    return rpc("uye_begen_sil", { p_id: u.id, p_token: u.token, p_slug: slug });
   }
 
   /**
@@ -278,6 +405,11 @@
     kaydet: kaydet,
     kaydetSil: kaydetSil,
     kayitlar: kayitlar,
+    avatarAyarla: avatarAyarla,
+    avatarDoldur: avatarDoldur,
+    begeniler: begeniler,
+    begen: begen,
+    begenSil: begenSil,
     pushEsle: pushEsle,
     dugmeleriGuncelle: dugmeleriGuncelle,
   };

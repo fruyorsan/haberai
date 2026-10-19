@@ -340,6 +340,15 @@ const otomatik = !sade && Boolean(slug) && aktif;
     font-size: 0.82rem;
     font-weight: 900;
     text-transform: uppercase;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .yorum__oge-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    display: block;
   }
   /* Yeni gönderilen yorum kısa bir "parlama" ile belirginleşir. */
   .yorum__oge--yeni {
@@ -392,6 +401,40 @@ const otomatik = !sade && Boolean(slug) && aktif;
     border-radius: 13px;
     color: var(--text-2);
     font-size: 0.88rem;
+  }
+
+  /* =============================== TELEFON =============================== */
+  @media (max-width: 640px) {
+    .yorum__ust {
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .yorum__kim {
+      font-size: 0.74rem;
+    }
+    .yorum__metin {
+      min-height: 88px;
+      font-size: 0.95rem;
+    }
+    .yorum__alt {
+      gap: 8px;
+    }
+    /* Telefonda "Gönder" tam genişlik: parmakla ıskalanmasın. */
+    .yorum__gonder {
+      flex: 1 1 100%;
+      padding: 12px 18px;
+      font-size: 0.92rem;
+    }
+    .yorum__oge {
+      padding: 11px 12px;
+      gap: 9px;
+    }
+    .yorum__oge-metin {
+      font-size: 0.92rem;
+    }
+    .yorum__ortak {
+      font-size: 0.78rem;
+    }
   }
 </style>
 
@@ -489,13 +532,40 @@ const otomatik = !sade && Boolean(slug) && aktif;
     el.classList.toggle("yorum__durum--hata", hata);
   }
 
+  /** Üye numarası → avatar (emoji ya da görsel). Yorum listesinde kullanılır. */
+  const avatarHaritasi: Record<string, string> = {};
+
+  /** Yorumlarda görünen üyelerin avatarlarını tek istekte çeker. */
+  async function avatarlariGetir(api: string, anahtar: string, idler: string[]) {
+    const eksik = Array.from(new Set(idler.filter((i) => i && !(i in avatarHaritasi))));
+    if (!eksik.length || !api || !anahtar) return;
+    try {
+      const adres =
+        `${api}/rest/v1/avatarlar?select=uye_id,avatar` +
+        `&uye_id=in.(${eksik.join(",")})`;
+      const r = await fetch(adres, { headers: susBasliklari(anahtar) });
+      for (const i of eksik) avatarHaritasi[i] = "";
+      if (!r.ok) return;
+      const veri = (await r.json()) as { uye_id?: string; avatar?: string }[];
+      for (const s of veri) if (s.uye_id) avatarHaritasi[s.uye_id] = s.avatar || "";
+    } catch {
+      /* avatar çekilemezse baş harf görünür */
+    }
+  }
+
   function oge(y: { ad?: string; metin?: string; created_at?: string; uye_id?: string | null }): HTMLLIElement {
     const li = document.createElement("li");
     li.className = "yorum__oge";
     const avatar = document.createElement("span");
     avatar.className = "yorum__oge-avatar";
     avatar.setAttribute("aria-hidden", "true");
-    avatar.textContent = (y.ad || "Okur").trim().charAt(0) || "O";
+    const H = (window as any).HaberinAi;
+    const avatarDeger = y.uye_id ? avatarHaritasi[y.uye_id] || "" : "";
+    if (H && typeof H.avatarDoldur === "function") {
+      H.avatarDoldur(avatar, avatarDeger, y.ad || "Okur");
+    } else {
+      avatar.textContent = (y.ad || "Okur").trim().charAt(0) || "O";
+    }
     const ust = document.createElement("div");
     ust.className = "yorum__oge-ust";
     const ad = document.createElement("span");
@@ -540,6 +610,8 @@ const otomatik = !sade && Boolean(slug) && aktif;
       const r = await fetch(adres, { headers: susBasliklari(anahtar) });
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
       const veri = (await r.json()) as { ad?: string; metin?: string; created_at?: string; uye_id?: string | null }[];
+      const uyeIdler = veri.map((v) => v.uye_id).filter((v): v is string => Boolean(v));
+      if (uyeIdler.length) await avatarlariGetir(api, anahtar, uyeIdler);
       liste.replaceChildren(...veri.map(oge));
       if (sayi) {
         sayi.textContent = veri.length ? String(veri.length) : "";

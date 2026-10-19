@@ -9,6 +9,7 @@ import {
   GOOGLE_SITE_VERIFICATIONS,
   HESAP,
   KATEGORILER,
+  AVATARLAR,
   ONESIGNAL_APP_ID,
 } from "../lib/site-meta.js";
 import "../styles/global.css";
@@ -206,7 +207,7 @@ const isArticle = ogType === "article";
       <script
         type="application/json"
         id="hb-ayar"
-        set:html={JSON.stringify({ hesapUrl: HESAP.url, hesapAnahtar: HESAP.anahtar, kategoriler: KATEGORILER.map((k) => k.slug) })}
+        set:html={JSON.stringify({ hesapUrl: HESAP.url, hesapAnahtar: HESAP.anahtar, kategoriler: KATEGORILER.map((k) => k.slug), avatarlar: AVATARLAR })}
       />
     )}
     <!-- Hesap betiği senkron yüklenir: sayfa içindeki satır içi betikler

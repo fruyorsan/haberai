@@ -942,6 +942,29 @@ html.ysheet-kilit {
   overflow: hidden;
   flex-shrink: 0;
 }
+/* Yorum panelinde: giriş yapılmamışsa hesap hatırlatması. */
+.ysheet__hesap {
+  margin: 0 16px 10px;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--surface-2);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--text-2);
+  flex-shrink: 0;
+}
+.ysheet__hesap[hidden] {
+  display: none;
+}
+.ysheet__hesap b {
+  color: var(--heading);
+}
+.ysheet__hesap a {
+  color: var(--brand);
+  font-weight: 800;
+  text-decoration: none;
+}
 .ysheet__govde {
   flex: 1 1 auto;
   min-height: 240px;

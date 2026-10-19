@@ -139,7 +139,7 @@ begin
 
   return jsonb_build_object(
     'id', v_uye.id, 'kadi', v_uye.kadi, 'ad', v_uye.ad, 'token', v_token,
-    'ilgi', v_uye.ilgi, 'bildirim_ilgi', v_uye.bildirim_ilgi
+    'ilgi', v_uye.ilgi, 'bildirim_ilgi', v_uye.bildirim_ilgi, 'avatar', v_uye.avatar
   );
 end;
 $$;
@@ -172,7 +172,7 @@ begin
   return jsonb_build_object(
     'id', v_uye.id, 'kadi', v_uye.kadi, 'ad', v_uye.ad,
     'ilgi', v_uye.ilgi, 'bildirim_ilgi', v_uye.bildirim_ilgi,
-    'olusturma', v_uye.olusturma
+    'avatar', v_uye.avatar, 'olusturma', v_uye.olusturma
   );
 end;
 $$;
@@ -349,6 +349,157 @@ $$;
 grant execute on function public.uye_kaydet(uuid, text, text, text) to anon, authenticated;
 grant execute on function public.uye_kayit_sil(uuid, text, text)    to anon, authenticated;
 grant execute on function public.uye_kayitlar(uuid, text)          to anon, authenticated;
+
+-- ============================================================================
+-- PROFİL FOTOĞRAFI — hazır (emoji) ya da okuyucunun kendi yüklediği görsel
+-- ----------------------------------------------------------------------------
+-- İki tür değer kabul edilir:
+--   * hazır avatar: kısa bir emoji ("🕵️")
+--   * kendi fotoğrafı: tarayıcıda 128 px'e küçültülmüş data URL
+--     ("data:image/jpeg;base64,...") ya da https:// ile başlayan görsel adresi
+--
+-- Yorumlarda gösterebilmek için avatarlar ayrı ve HERKESE AÇIK bir tabloda
+-- tutulur (avatarlar). Orada yalnızca üye numarası + görsel vardır; ad,
+-- kullanıcı adı, şifre gibi bilgiler yine kapalıdır.
+-- ============================================================================
+alter table public.uyeler add column if not exists avatar text;
+
+create table if not exists public.avatarlar (
+  uye_id     uuid primary key references public.uyeler(id) on delete cascade,
+  avatar     text not null,
+  guncelleme timestamptz not null default now()
+);
+
+alter table public.avatarlar enable row level security;
+
+-- Yalnızca okuma açıktır (yorum listesinde avatar göstermek için).
+drop policy if exists "avatar oku" on public.avatarlar;
+create policy "avatar oku"
+  on public.avatarlar
+  for select
+  to anon, authenticated
+  using (true);
+
+create or replace function public.uye_avatar(p_id uuid, p_token text, p_avatar text)
+returns jsonb
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v public.uyeler; v_avatar text;
+begin
+  v := public.uye_dogrula(p_id, p_token);
+  if v.id is null then return jsonb_build_object('hata', 'Oturum geçersiz.'); end if;
+
+  v_avatar := nullif(btrim(coalesce(p_avatar, '')), '');
+
+  -- Boş gönderim: fotoğrafı kaldır (baş harfe döner).
+  if v_avatar is null then
+    update public.uyeler set avatar = null where id = v.id;
+    delete from public.avatarlar where uye_id = v.id;
+    return jsonb_build_object('ok', true, 'avatar', null);
+  end if;
+
+  if v_avatar like 'data:image/%' then
+    if char_length(v_avatar) > 60000 then
+      return jsonb_build_object('hata', 'Fotoğraf çok büyük. Daha küçük bir görsel dene.');
+    end if;
+    if v_avatar !~ '^data:image/(png|jpeg|jpg|webp|gif);base64,[A-Za-z0-9+/=]+$' then
+      return jsonb_build_object('hata', 'Fotoğraf biçimi desteklenmiyor.');
+    end if;
+  elsif v_avatar like 'https://%' then
+    if char_length(v_avatar) > 500 then
+      return jsonb_build_object('hata', 'Görsel bağlantısı çok uzun.');
+    end if;
+  elsif v_avatar ~ '^[^<>"&[:cntrl:]]{1,8}$' then
+    -- hazır emoji avatar
+    null;
+  else
+    return jsonb_build_object('hata', 'Geçersiz profil fotoğrafı.');
+  end if;
+
+  update public.uyeler set avatar = v_avatar where id = v.id;
+
+  insert into public.avatarlar (uye_id, avatar, guncelleme)
+  values (v.id, v_avatar, now())
+  on conflict (uye_id) do update set avatar = excluded.avatar, guncelleme = now();
+
+  return jsonb_build_object('ok', true, 'avatar', v_avatar);
+end;
+$$;
+
+-- ============================================================================
+-- BEĞENİLER — hesaba bağlı (Shorts'ta kalp)
+-- ----------------------------------------------------------------------------
+-- Cihazda kalıcı olmasının yanında hesaba da yazılır; başka cihazda giriş
+-- yapınca beğendiklerin yerinde durur.
+-- ============================================================================
+create table if not exists public.begeniler (
+  uye_id     uuid not null references public.uyeler(id) on delete cascade,
+  slug       text not null,
+  created_at timestamptz not null default now(),
+  primary key (uye_id, slug)
+);
+
+alter table public.begeniler enable row level security;
+
+create or replace function public.uye_begen(p_id uuid, p_token text, p_slug text)
+returns jsonb
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v public.uyeler;
+begin
+  v := public.uye_dogrula(p_id, p_token);
+  if v.id is null then return jsonb_build_object('hata', 'Oturum geçersiz.'); end if;
+  if char_length(coalesce(p_slug, '')) < 1 or char_length(p_slug) > 300 then
+    return jsonb_build_object('hata', 'Geçersiz haber.');
+  end if;
+  insert into public.begeniler (uye_id, slug) values (v.id, p_slug)
+  on conflict (uye_id, slug) do nothing;
+  return jsonb_build_object('ok', true);
+end;
+$$;
+
+create or replace function public.uye_begen_sil(p_id uuid, p_token text, p_slug text)
+returns jsonb
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v public.uyeler;
+begin
+  v := public.uye_dogrula(p_id, p_token);
+  if v.id is null then return jsonb_build_object('hata', 'Oturum geçersiz.'); end if;
+  delete from public.begeniler where uye_id = v.id and slug = p_slug;
+  return jsonb_build_object('ok', true);
+end;
+$$;
+
+create or replace function public.uye_begeniler(p_id uuid, p_token text)
+returns jsonb
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v public.uyeler;
+begin
+  v := public.uye_dogrula(p_id, p_token);
+  if v.id is null then return jsonb_build_object('hata', 'Oturum geçersiz.'); end if;
+  return coalesce((
+    select jsonb_agg(b.slug order by b.created_at desc)
+    from public.begeniler b
+    where b.uye_id = v.id
+  ), '[]'::jsonb);
+end;
+$$;
+
+grant select on public.avatarlar to anon, authenticated;
+grant execute on function public.uye_avatar(uuid, text, text)     to anon, authenticated;
+grant execute on function public.uye_begen(uuid, text, text)     to anon, authenticated;
+grant execute on function public.uye_begen_sil(uuid, text, text) to anon, authenticated;
+grant execute on function public.uye_begeniler(uuid, text)       to anon, authenticated;
 
 -- PostgREST şema önbelleğini tazele: yeni fonksiyonlar hemen görünsün.
 notify pgrst, 'reload schema';

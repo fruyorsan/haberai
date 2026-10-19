@@ -154,6 +154,7 @@ const links = [
   .share__row {
     display: flex;
     gap: 8px;
+    flex-wrap: wrap;
   }
   .share__btn {
     display: grid;
@@ -207,5 +208,22 @@ const links = [
     background: #16a34a;
     color: #fff;
     border-color: transparent;
+  }
+
+  /* Telefon: düğmeler küçülür, satır taşmaz. */
+  @media (max-width: 640px) {
+    .share {
+      gap: 8px;
+    }
+    .share__row {
+      gap: 6px;
+    }
+    .share__btn {
+      width: 40px;
+      height: 40px;
+    }
+    .share__btn:hover {
+      transform: none;
+    }
   }
 </style>
