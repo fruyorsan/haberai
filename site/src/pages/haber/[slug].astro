@@ -850,59 +850,10 @@ const breadcrumbLd = {
     margin-bottom: 0;
   }
 
-  /* --- Haber içi ek fotoğraf --- */
-  .content__fig {
-    margin: 30px 0;
-    max-width: 75ch;
-  }
-  .content__fig-kap {
-    position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-    background: var(--surface-2);
-    box-shadow: 0 10px 26px -12px rgba(15, 23, 42, 0.35);
-  }
-  .content__fig-link {
-    display: block;
-  }
-  .content__fig-img {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    transition: transform 0.5s var(--ease, ease);
-  }
-  .content__fig-link:hover .content__fig-img {
-    transform: scale(1.03);
-  }
-  /* Atıf rozeti (fotoğrafçı + lisans tooltip'te, tıklayınca Commons). */
-  .content__fig-credit {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    display: grid;
-    place-items: center;
-    width: 24px;
-    height: 24px;
-    border-radius: 999px;
-    background: rgba(12, 15, 20, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    color: rgba(255, 255, 255, 0.92);
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 0.82rem;
-    font-style: italic;
-    font-weight: 700;
-    line-height: 1;
-    text-decoration: none;
-    opacity: 0.75;
-    transition: opacity 0.18s var(--ease, ease), background 0.18s var(--ease, ease);
-  }
-  .content__fig-credit:hover,
-  .content__fig-credit:focus-visible {
-    opacity: 1;
-    background: rgba(12, 15, 20, 0.78);
-  }
+  /* --- Haber içi ek fotoğraf ---
+     Stiller HaberFigur.astro bileşeninin içinde: bu dosyanın kapsamlı (scoped)
+     CSS'i bileşen içindeki öğelere uygulanmaz (orada tanımlı olduğunda görsel
+     hiç stillenmiyor, HTML'deki height özniteliği yüzünden ezilmiş görünüyordu). */
 
   /* --- AI analizi (özetten görsel olarak tamamen farklı) --- */
   .analysis {
