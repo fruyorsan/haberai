@@ -348,10 +348,12 @@ export const YEDEK_GORSEL = {
     sayfa: "https://commons.wikimedia.org/wiki/File:Market_centre_in_Tokyo_stock_exchange.jpg",
   },
   Spor: {
-    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Kadriorg_Stadium_floodlights_and_Maakri_high-rises.jpg/1920px-Kadriorg_Stadium_floodlights_and_Maakri_high-rises.jpg",
-    yazar: "Sancos",
-    lisans: "CC BY 4.0",
-    sayfa: "https://commons.wikimedia.org/wiki/File:Kadriorg_Stadium_floodlights_and_Maakri_high-rises.jpg",
+    // Türk stadyumu/seyircisi: Estonya stadyumu yerine (Türkiye spor haberi).
+    url: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Besiktas_JK_-_Trabzonspor_match.jpg",
+    yazar: "ayhang",
+    lisans: "CC BY 2.0",
+    lisansUrl: "https://creativecommons.org/licenses/by/2.0",
+    sayfa: "https://commons.wikimedia.org/wiki/File:Besiktas_JK_-_Trabzonspor_match.jpg",
   },
   Gündem: {
     url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Istanbul_city_Photos-_Urban_01.jpg/1920px-Istanbul_city_Photos-_Urban_01.jpg",
@@ -360,10 +362,12 @@ export const YEDEK_GORSEL = {
     sayfa: "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_01.jpg",
   },
   Dünya: {
-    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Earth_From_the_Perspective_of_Artemis_II.jpg/1920px-Earth_From_the_Perspective_of_Artemis_II.jpg",
-    yazar: "Reid Wiseman / NASA",
-    lisans: "Kamu malı",
-    sayfa: "https://commons.wikimedia.org/wiki/File:Earth_From_the_Perspective_of_Artemis_II.jpg",
+    // Uzay fotoğrafı (Artemis II) dünya haberlerine hiç uymuyordu.
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Airport%2C_Sofia_%28_1070616%29.jpg/1920px-Airport%2C_Sofia_%28_1070616%29.jpg",
+    yazar: "Matti Blume",
+    lisans: "CC BY-SA 4.0",
+    lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
+    sayfa: "https://commons.wikimedia.org/wiki/File:Airport,_Sofia_(_1070616).jpg",
   },
   Diğer: {
     url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Man_reading_a_newspaper.jpg/1920px-Man_reading_a_newspaper.jpg",
