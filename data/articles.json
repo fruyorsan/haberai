@@ -55,6 +55,141 @@
     ]
   },
   {
+    "id": "a3d50398be3595b4",
+    "title": "Intel, 160 GB bellekli yeni yapay zeka hızlandırıcısını duyurdu",
+    "slug": "intel-160-gb-bellekli-yeni-yapay-zeka-hizlandiricisini-duyurdu",
+    "summary": "Intel, yapay zeka modellerini çalıştırmak için tasarladığı Crescent Island kod adlı GPU D-series kartını resmen tanıttı. Yeni donanım, 160 GB LPDDR5X bellek ve 350 watt güç tüketimiyle doğrudan sunucu raflarını hedefliyor. Test süreçleri başlayan kartın bağımsız performans sonuçları ve nihai fiyatı henüz açıklanmadı.",
+    "keyPoints": [
+      "Intel D-series, 160 GB LPDDR5X bellek ve 1,3 petaflops FP8 performansı sunuyor.",
+      "Kart 350 watt güç tüketimiyle hava soğutmalı sunucularda kolayca çalışabiliyor.",
+      "Numune dağıtımı başlasa da kartın resmi satış fiyatı ve çıkış tarihi belirsiz."
+    ],
+    "body": [
+      "Yarı iletken devi Intel, yapay zeka çıkarım süreçlerine odaklanan yeni PCIe hızlandırıcısı GPU D-series ailesini OCP Global Summit etkinliğinde tanıttı. Crescent Island kod adıyla bilinen ve amiral gemisi modeli D270 olarak adlandırılan kart, bünyesinde tam 160 GB LPDDR5X bellek barındırıyor. Şirket, test süreçleri kapsamında donanım üreticilerine ve kurumsal müşterilere numune gönderimlerinin başladığını duyurdu.",
+      "Teknik özellik tarafında kart, 1,3 petaflops FP8 işlem gücü ve saniyede 1,5 TB bellek bant genişliği sağlıyor. Kartın 350 watt seviyesindeki güç tüketimi, mevcut veri merkezlerinin sıvı soğutma yatırımı yapmadan standart hava soğutmalı sistemleri kullanmasına imkan veriyor. Nvidia ve AMD tarafındaki 600 watt sınırına dayanan alternatiflere kıyasla Intel, altyapı maliyetini düşük tutmayı amaçlayan bir yol haritası çiziyor.",
+      "Bellek mimarisinde ise pahalı ve tedariki zor olan HBM yerine mobil cihazlarda yaygınlaşan LPDDR5X tercih edilmiş durumda. Bu tercih kapasiteyi yukarı çekerken, bant genişliğinin AMD Instinct MI350P gibi üst düzey hızlandırıcıların sunduğu 4 TB/s seviyesinin oldukça gerisinde kalmasına yol açıyor. Uzmanlar, tekil kullanıcılarda hızın, çoklu kullanıcıya eşzamanlı hizmet veren sistemlerde ise geniş bellek kapasitesinin belirleyici olduğunu vurguluyor.",
+      "Intel etkinlikte yeni hızlandırıcının yanı sıra raf başına 46.000 çekirdeği aşabilen Xeon 6 tabanlı sunucu çözümlerini de sergiledi. Şirket, Meta'nın Muse Glimmer gibi modellerine doğrudan destek vereceğini belirtirken, Linux sürücülerinin açık kaynak ortamında geliştirilmeye devam ettiğini bildirdi. Ürünün piyasada gerçek bir başarı yakalayıp yakalamayacağını ise kart başına belirlenecek etiket fiyatı ve bağımsız performans testleri belirleyecek."
+    ],
+    "comment": "Intel'in HBM bellek çılgınlığından kaçıp LPDDR5X mimarisine yönelmesi, dev veri merkezlerinden ziyade bütçesini düşünen orta ölçekli şirketleri kurtaracak mantıklı bir kumar. Sıvı soğutma masrafına girmek istemeyen sunucu yöneticileri için 350 watt tüketim makul görünse de bant genişliğinin 1,5 TB/s sınırında kalması büyük dil modellerinde darboğaz yaratabilir. Şayet Intel kart başına biçtiği fiyatı agresif tutmazsa, bağımsız testler gelmeden bu donanımın pazarda kalıcı bir üstünlük kurması imkansız.",
+    "editorNote": "Intel, sıvı soğutma masrafından kaçan sunucular için 160 GB bellekli D-series'i tanıttı. Kart hazır ama asıl belirleyici olacak fiyat henüz açıklanmadı.",
+    "tags": [
+      "Intel",
+      "GPU",
+      "Yapay Zeka",
+      "Donanım",
+      "PCIe",
+      "Veri Merkezi"
+    ],
+    "category": "Donanım",
+    "gorselSorgu": "Intel server GPU accelerator",
+    "source": "Pasquale Pillitteri",
+    "sourceUrl": "https://pasqualepillitteri.it/tr/news/25680/intel-gpu-d-series-tr-160-gb-cikarim",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/BETT_2009_Viglen_Intel_Blade_server.jpg/1920px-BETT_2009_Viglen_Intel_Blade_server.jpg",
+    "gorselKaynak": {
+      "yazar": "devopstom",
+      "lisans": "CC BY-SA 2.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:BETT_2009_Viglen_Intel_Blade_server.jpg"
+    },
+    "publishedAt": "2026-10-19T17:01:02.000Z",
+    "generatedAt": "2026-10-19T17:04:14.191Z",
+    "breaking": true
+  },
+  {
+    "id": "0ec0d86e121adf56",
+    "title": "Cleaner Company, 28 Ocak 2027 tarihinde oyuncularla buluşuyor",
+    "slug": "cleaner-company-28-ocak-2027de-oyuncularla-bulusuyor",
+    "summary": "Korku ve temizlik simülasyonunu harmanlayan Cleaner Company, Steam ve Epic Games Store platformları üzerinden çıkış yapacak. Yapımın sunduğu oynanış detayları ve çıkış takvimi resmen açıklandı.",
+    "keyPoints": [
+      "Cleaner Company, 28 Ocak 2027 tarihinde PC için Steam ve Epic Games Store'da yayınlanacak.",
+      "Yapım, dört kişiye kadar çevrim içi iş birliği desteğiyle birlikte geliyor.",
+      "Oyunun ücretsiz oynanabilir demosu şu anda oyuncuların indirmesine sunulmuş durumda."
+    ],
+    "body": [
+      "Yayıncı Mythwright ile geliştirici stüdyo Wildflame Studio, bilim kurgu temalı yeni projeleri Cleaner Company için net bir takvim paylaştı. Oyuncuları galaksinin farklı bölgelerinde felaket alanlarını arındırmaya çağıran yapım, önümüzdeki yıllarda oyun severlerin karşısına çıkacak. Bilim kurgu atmosferini sıradışı bir temizlik mekaniğiyle birleştiren oyun, türün meraklılarına farklı bir deneyim vadetmeyi hedefliyor.",
+      "Üretim aşamasındaki projede kullanıcılar, galaksi genelindeki tehlikeli noktalara sevk edilen seçkin Yıldız Temizleyiciler ekibinin birer üyesi olacak. İstasyon kalıntıları, harap olmuş restoranlar ve ıssız gezegenler gibi zorlu coğrafyalarda görev yapılırken, bölgenin hâkimi olan tehlikeli varlıklarla da mücadele etmek gerekecek. Sıradan kirleri temizlemenin ötesine geçen bu operasyonlar, oyuncuları sürekli olarak tetikte tutacak.",
+      "Projenin dikkat çeken yönlerinden biri de dört kişiye kadar çevrim içi eşli oynanış imkânı sağlaması. Arkadaş gruplarıyla ortaklaşa yürütülen görevlerde çevre temizlenirken aynı zamanda çeşitli kaynaklar toplanacak. Elde edilen bu malzemeler sayesinde ekipmanlar geliştirilerek sonraki zorlu aşamalara hazırlık yapılabilecek.",
+      "Operasyonlar esnasında ortalığı tamamen steril hâle getirmek ve karşılaşılan tehditleri bertaraf etmek temel amaç olacak. Türkçe dil desteğiyle piyasaya çıkacak olan yapımı şimdiden deneyimlemek isteyenler için bir demo sürümü de erişime açıldı."
+    ],
+    "comment": "Temizlik simülasyonu türünü korku unsurlarıyla harmanlayan yapımlar, klasik formüllerin dışına çıkarak oyunculara farklı bir soluk kazandırıyor. Dört kişilik çevrim içi iş birliği imkânı, özellikle arkadaş gruplarıyla oynandığında oyunun tekrar oynanabilirliğini doğrudan artıracaktır. Bilim kurgu evreninde geçen bu tarz zorlu operasyonlar, donanım kaynaklarını aşırı yormadan akıcı bir deneyim arayan oyuncuların favori alternatiflerinden biri olmaya aday görünüyor.",
+    "editorNote": "Galaksinin en karanlık köşelerini temizlerken korku dolu anlar yaşatan yapım, arkadaşlarınızla kooperatif oynamak için ideal bir alternatif sunuyor.",
+    "tags": [
+      "Cleaner Company",
+      "Mythwright",
+      "Wildflame Studio",
+      "Steam",
+      "Epic Games Store",
+      "Simülasyon"
+    ],
+    "category": "Oyun",
+    "gorselSorgu": "sci fi space station interior",
+    "source": "Donanım Arşivi",
+    "sourceUrl": "https://www.donanimarsivi.com/uzayda-gecen-temizlik-oyunu-cleaner-companynin-cikis-tarihi-aciklandi/",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/79/Museum_of_Classic_Sci-Fi%2C_The_Peth%2C_Allendale_Town_-_geograph.org.uk_-_7286165.jpg",
+    "gorselKaynak": {
+      "yazar": "Andrew Curtis",
+      "lisans": "CC BY-SA 2.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Museum_of_Classic_Sci-Fi,_The_Peth,_Allendale_Town_-_geograph.org.uk_-_7286165.jpg"
+    },
+    "publishedAt": "2026-10-19T17:00:48.000Z",
+    "generatedAt": "2026-10-19T17:04:39.348Z"
+  },
+  {
+    "id": "e61205a02181eaeb",
+    "title": "Gençlik ve Spor Bakanlığı sahte KYK borcu dolandırıcılığına karşı uyardı",
+    "slug": "genclik-ve-spor-bakanligi-sahte-kyk-borcu-dolandiriciligina-karsi-uyardi",
+    "summary": "Gençlik ve Spor Bakanlığı, Kredi ve Yurtlar Genel Müdürlüğü adı kullanılarak yapılan dolandırıcılık girişimlerine karşı vatandaşları uyardı. Öğrenim kredisi borcu veya icra dosyası bahanesiyle ödeme talep eden kişilere itibar edilmemesi istendi.",
+    "keyPoints": [
+      "KYK borcu bahanesiyle para talep eden dolandırıcılar hedef alındı.",
+      "Borç bilgileri yalnızca e-Devlet üzerinden kontrol edilmeli.",
+      "Ödemeler sadece Ziraat Bankası ve Gelir İdaresi kanallarıyla yapılmalı."
+    ],
+    "body": [
+      "Gençlik ve Spor Bakanlığı, son dönemde artış gösteren dijital dolandırıcılık yöntemlerine karşı vatandaşların dikkatli olması için resmi bir duyuru yayımladı. Açıklamada, Kredi ve Yurtlar Genel Müdürlüğünün adı ve kurum kimliği taklit edilerek kişilerin dolandırılmaya çalışıldığı belirtildi. Borç veya icra dosyası yalanıyla yönlendirilen internet sitelerine ve kişilere karşı tedbirli olunması gerektiği vurgulandı.",
+      "Kurum tarafından paylaşılan bilgilendirmede, gençlerin ve ailelerinin mağduriyet yaşamaması için resmi kanalların dışındaki hiçbir ödeme yöntemine güvenilmemesi gerektiği ifade edildi. Borç sorgulama işlemlerinin yalnızca e-Devlet kapısı üzerinden yapılması gerektiği hatırlatıldı. İnternet üzerinde arama motorlarında çıkan sahte bağlantılara karşı da dikkatli olunması uyarısı yinelendi.",
+      "Yapılacak ödemelerin güvenliği için belirli resmi kurumlar ve bankalar işaret edildi. Vatandaşların borç ödemelerini yalnızca Ziraat Bankası ile Gelir İdaresi Başkanlığının resmi ödeme sistemleri aracılığıyla gerçekleştirebileceği aktarıldı. Bu kurumların haricindeki hiçbir hesap numarasına veya aracı kişiye para gönderilmemesi gerektiği açıkça belirtildi."
+    ],
+    "comment": "Resmi kurum isimlerini kullanarak gerçekleştirilen bu tür dolandırıcılık girişimlerine karşı bireysel dijital okuryazarlık seviyesinin artırılması büyük bir zorunluluktur. e-Devlet gibi doğrulanmış tekil platformlar dışındaki kaynaklardan gelen borç bildirimlerinin her zaman şüpheyle karşılanması gerekir. Aksi takdirde vatandaşlar maddi kayıplarla karşı karşıya kalabilir.",
+    "editorNote": "KYK borcu ve icra yalanıyla para sızdırmaya çalışanlara karşı resmi ödeme kanalları dışına çıkmayın.",
+    "tags": [
+      "KYK",
+      "Gençlik ve Spor Bakanlığı",
+      "dolandırıcılık",
+      "e-Devlet",
+      "Ziraat Bankası"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "cyber security warning computer screen",
+    "source": "Sabah Gündem",
+    "sourceUrl": "https://www.sabah.com.tr/gundem/2026/10/19/genclik-ve-spor-bakanligindan-dolandiricilik-uyarisi",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/fc/National_Cyber_Security_Awareness_Month.jpg",
+    "gorselKaynak": {
+      "yazar": "National Science Foundation",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:National_Cyber_Security_Awareness_Month.jpg"
+    },
+    "publishedAt": "2026-10-19T16:57:17.000Z",
+    "generatedAt": "2026-10-19T17:04:49.793Z",
+    "gorselEk": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Gen_Williams_talks_Cyber_Security_%287360378%29.jpg",
+        "yazar": "U.S. Army photo by Michele Wiencek",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Gen_Williams_talks_Cyber_Security_(7360378).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/IFGICT_Cyber_Security_Policy_Professional_Certification_CSPP.jpg",
+        "yazar": "TimeBusinessNews",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:IFGICT_Cyber_Security_Policy_Professional_Certification_CSPP.jpg"
+      }
+    ]
+  },
+  {
     "id": "61340c748851b76c",
     "title": "PlayStation 6 maliyet iddiaları satış fiyatını yukarı taşıyabilir",
     "slug": "playstation-6-maliyet-iddialari-satis-fiyatini-yukari-tasiyabilir",
@@ -108,6 +243,62 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:PlayStation_2_Slim.jpg"
       }
     ]
+  },
+  {
+    "id": "3f6eea25d42e3a3f",
+    "title": "Bakan Kurum, depremde çocuklarını kaybeden Bayram Kahraman'ı ağırladı",
+    "slug": "bakan-kurum-depremde-cocuklarini-kaybeden-bayram-kahramani-agirladi",
+    "summary": "Çevre, Şehircilik ve İklim Değişikliği Bakanı Murat Kurum, depremde beş çocuğunu yitiren Adıyamanlı Bayram Kahraman'ı bakanlıkta konuk etti. Ziyarete ait kareleri sosyal medya hesabından paylaşan Kurum, asrın inşasının gönüllerin de inşası olduğunu belirtti.",
+    "keyPoints": [
+      "Adıyamanlı Bayram Kahraman, yıkımda beş çocuğunu kaybetmişti.",
+      "Bakan Murat Kurum, ziyaretin görüntülerini sanal medya hesabından paylaştı.",
+      "Kahraman, eşi ve iki torunuyla birlikte enkazdan sağ olarak çıkarılmıştı."
+    ],
+    "body": [
+      "Asrın felaketi olarak kayıtlara geçen 6 Şubat depremlerinde büyük kayıplar yaşayan vatandaşlarla devlet arasındaki bağ güçlenmeye devam ediyor. Çevre, Şehircilik ve İklim Değişikliği Bakanı Murat Kurum, felakette beş evladını toprağa veren Adıyamanlı Bayram Kahraman ile makamında bir araya geldi.",
+      "Gerçekleşen buluşmanın detaylarını sosyal medya hesabı üzerinden kamuoyuyla paylaşan Bakan Kurum, acı dolu günlerin geride kaldığını ve artık mutluluğun paylaşıldığını ifade etti. Paylaşımında fiziksel yapılanmanın ötesinde kalplerin de imar edildiğini vurguladı.",
+      "Ziyaret esnasında yaşadığı felaketi anlatan Bayram Kahraman, enkaz altından eşi ve iki torunuyla birlikte beşinci günde sağ olarak kurtulabildiklerini dile getirdi. Tek oğlunu ve diğer evlatlarını kaybettiğini belirten Kahraman, bu acının tarif edilemez olduğunu vurguladı.",
+      "Yürütülen imar ve inşa faaliyetleri dolayısıyla duyduğu memnuniyeti dile getiren Kahraman, devlet yetkililerine teşekkür ederek minnettarlığını aktardı. Cumhurbaşkanı ve Bakan Kurum'un kendilerini yalnız bırakmadığını belirten depremzede vatandaş, devletin desteğini her zaman hissettiklerini söyledi."
+    ],
+    "comment": "Devlet ile afetzedeler arasındaki birebir temaslar, yalnızca fiziksel konut projelerinin ötesinde psikolojik onarım sürecinin de ne kadar kritik olduğunu gösteriyor. Beş evladını kaybeden bir babanın makam ziyaretinde dile getirdiği memnuniyet, yürütülen çalışmaların insani boyutunu somutlaştırıyor. Bölgedeki kalıcı konutların teslim edilmesi kadar bu tür insani dokunuşlar da toplumsal iyileşme sürecinde belirleyici bir rol oynuyor.",
+    "editorNote": "Enkazdan eşi ve torunlarıyla sağ çıkan bir babanın başkentteki teşekkür ziyareti, felaketin insani boyutunu gözler önüne seriyor.",
+    "tags": [
+      "Murat Kurum",
+      "Deprem",
+      "Adıyaman",
+      "Gündem",
+      "Çevre Bakanlığı"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "Murat Kurum meeting earthquake survivor",
+    "source": "Son Dakika",
+    "sourceUrl": "https://www.sondakika.com/guncel/haber-depremde-5-cocugunu-kaybeden-kahraman-in-ziyaret-g-20346305/",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/COP30_-_Murat_Kurum_01.jpg/1920px-COP30_-_Murat_Kurum_01.jpg",
+    "gorselKaynak": {
+      "yazar": "Xuthoria",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:COP30_-_Murat_Kurum_01.jpg"
+    },
+    "publishedAt": "2026-10-19T16:55:20.000Z",
+    "generatedAt": "2026-10-19T17:04:26.305Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Visit_of_Murat_Kurum%2C_Turkish_Minister_for_Environment_and_Urban_Planning%2C_to_the_EC_%28P-051815-00-05%29.jpg/1920px-Visit_of_Murat_Kurum%2C_Turkish_Minister_for_Environment_and_Urban_Planning%2C_to_the_EC_%28P-051815-00-05%29.jpg",
+        "yazar": "Europäische Kommission - Audiovisueller Dienst, Lukasz Kobus, Yügen, CE - Service audiovis",
+        "lisans": "CC BY 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Visit_of_Murat_Kurum,_Turkish_Minister_for_Environment_and_Urban_Planning,_to_the_EC_(P-051815-00-05).jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Visit_of_Murat_Kurum%2C_Turkish_Minister_for_Environment_and_Urban_Planning%2C_to_the_EC_%28P-051815-00-01%29.jpg/1920px-Visit_of_Murat_Kurum%2C_Turkish_Minister_for_Environment_and_Urban_Planning%2C_to_the_EC_%28P-051815-00-01%29.jpg",
+        "yazar": "Europäische Kommission - Audiovisueller Dienst, Lukasz Kobus, Yügen, CE - Service audiovis",
+        "lisans": "CC BY 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Visit_of_Murat_Kurum,_Turkish_Minister_for_Environment_and_Urban_Planning,_to_the_EC_(P-051815-00-01).jpg"
+      }
+    ],
+    "breaking": true
   },
   {
     "id": "65bc5104ccd57e81",
