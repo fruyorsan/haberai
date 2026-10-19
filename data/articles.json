@@ -1,5 +1,136 @@
 [
   {
+    "id": "d8ee64b9c53349a1",
+    "title": "Trakya Üniversitesi'nden yapay zekayla yüzde 91,4 doğruluk oranı",
+    "slug": "trakya-universitesinden-yapay-zekayla-yuzde-914-dogruluk-orani",
+    "summary": "Trakya Üniversitesi öğrencileri yataklı servislerdeki düşme riskini önceden tahmin eden yapay zeka projeleriyle birincilik ödülü kazandı. Geliştirilen sistem, geleneksel değerlendirme ölçeklerini geride bırakarak klinik karar süreçlerine güçlü bir alternatif sundu.",
+    "keyPoints": [
+      "XGBoost ve Random Forest algoritmalarıyla geliştirilen model yüzde 91,4 doğruluk oranına ulaştı.",
+      "Proje 3. Ulusal Yapay Zeka Buluşması Üniversite Öğrencileri Arası Poster Yarışması'nda birinci seçildi.",
+      "Sistem hastaların demografik verilerini ve hareketlerini analiz ederek düşme riskini hesaplıyor."
+    ],
+    "body": [
+      "Trakya Üniversitesi Keşan Yusuf Çapraz Uygulamalı Bilimler Yüksekokulu öğrencileri, sağlık alanındaki teknoloji yarışmasında önemli bir başarıya imza attı. Kapadokya Üniversitesi ev sahipliğinde gerçekleştirilen 3. Ulusal Yapay Zeka Buluşması kapsamında Üniversite Öğrencileri Arası Poster Yarışması düzenlendi.",
+      "Bilgisayar ve İnovasyon Topluluğu bünyesinde faaliyet gösteren genç araştırmacılar, hastanelerin yataklı servislerinde karşılaşılan hasta düşmelerini engellemek amacıyla yola çıktı. Yapay Zeka Destekli Hasta Düşme Riski Tahmini adını taşıyan proje, modern makine öğrenmesi yöntemlerini sağlık verileriyle buluşturdu. Sistem çalışırken hastaların demografik bilgilerini, hareket kabiliyetlerini, laboratuvar sonuçlarını ve kullandıkları ilaçları detaylı bir biçimde analiz ediyor.",
+      "Geliştirme sürecinde XGBoost ve Random Forest algoritmalarından yararlanan ekip, yapay zeka modellerinin kararlarını şeffaf kılmak için SHAP analiz yöntemini kullandı. Yapılan testler sonucunda XGBoost tabanlı model yüzde 91,4 doğruluk oranı ve 0,93 ROC-AUC skoru elde etti. Bu sonuç, geleneksel yöntemlerin sunduğu başarı oranını belirgin şekilde yukarı taşıdı.",
+      "Hastanelerde sıklıkla kullanılan geleneksel Morse düşme riski değerlendirme ölçeği yüzde 76,2 oranında kalırken, yeni geliştirilen yapay zeka modeli bu çıtayı yukarı çekti. Elde edilen bu veriler, otomasyon sistemlerinin klinik karar mekanizmalarını desteklemede ve hasta güvenliğini artırmada güçlü bir potansiyele sahip olduğunu kanıtladı."
+    ],
+    "comment": "Klasik değerlendirme ölçeklerinin yerini gelişmiş veri analitiği tabanlı modellerin alması klinik pratikleri kökten değiştirme potansiyeli barındırıyor. Geleneksel Morse ölçeğinin yüzde 76,2'lik doğruluk sınırını yüzde 91,4 seviyesine taşıyan XGBoost algoritması, hastane içi güvenlik önlemlerinin artık daha isabetli tasarlanabileceğini kanıtlıyor. Sağlık çalışanlarının iş yükünü hafifletirken hasta güvenliğini en üst düzeye çıkaran bu tür otomasyonlar, özellikle yoğun servislerde çalışan hemşire ve doktorlar için güçlü birer karar destek mekanizmasına dönüşecektir. Bu başarı, üniversite düzeyindeki projelerin doğru teknolojik entegrasyonla doğrudan sağlık sektörünün kronik problemlerine somut çözümler üretebileceğini açıkça gösteriyor.",
+    "editorNote": "Geleneksel ölçeklerin yüzde 76,2'lik başarı sınırını yüzde 91,4'e çıkaran bu model, hastane güvenliğinde yeni bir dönemin kapısını aralıyor.",
+    "tags": [
+      "Trakya Üniversitesi",
+      "Yapay Zeka",
+      "Sağlık Teknolojileri",
+      "Makine Öğrenmesi",
+      "XGBoost"
+    ],
+    "category": "Yapay Zeka",
+    "source": "CNN Türk",
+    "sourceUrl": "https://www.cnnturk.com/yerel-haberler/edirne/trakya-universitesi-ogrencileri-yapay-zeka-destekli-saglik-projesiyle-birinci-oldu-3481305",
+    "image": "https://image.cnnturk.com/i/cnnturk/75/1200x675/57834bf8f0dc1e53e4fccb9d.jpg",
+    "publishedAt": "2026-10-19T07:44:45.219Z",
+    "generatedAt": "2026-10-19T07:45:43.822Z"
+  },
+  {
+    "id": "7862c1388db88fe5",
+    "title": "Arakçi: Netanyahu hapse girmemek için ABD'yi savaşa sürüklüyor",
+    "slug": "arakci-netanyahu-hapse-girmemek-icin-abd-yi-savasa-surukluyor",
+    "summary": "Arakçi, sanal medya üzerinden yaptığı açıklamada Tel Aviv yönetiminin hamlelerine karşı Tahran'ın hazırlıklı olduğunu vurguladı.",
+    "keyPoints": [
+      "İranlı bakan, geçmişteki çatışmalarda ülkesinin daha da güçlenerek çıktığını hatırlattı.",
+      "Açıklamada Tahran'ın bitmemiş hesapları olduğu ve dikkatli olunması gerektiği ifade edildi."
+    ],
+    "body": [
+      "Orta Doğu'da tansiyonu artıran açıklamalar diplomatik kanallardan gelmeye devam ediyor. Dijital medya hesabından paylaşımda bulunan Arakçi, Tel Aviv yönetiminin bölgesel istikrarı tehlikeye atan adımlarını ele aldı.",
+      "Arakçi'nin değerlendirmelerine göre, İsrail lideri kendi kişisel ve hukuki sorunlarından kaçmak istiyor. Açıklamada, Netanyahu'nun olası cezaevi sürecinden kurtulmak adına Washington'u geniş çaplı bir çatışmanın içine çekmeye çalıştığı öne sürüldü. Bu durumun müttefik ülkeler üzerindeki baskıyı artırdığına dikkat çekildi.",
+      "İranlı bakan, geçmişte yaşanan askeri gerilimleri de hatırlatarak Tahran'ın direncine vurgu yaptı. Daha önceki benzer girişimlerde ülkenin daha güçlü bir şekilde yoluna devam ettiğini belirten yetkili, benzer bir senaryonun tekrarlanması halinde gerekli karşılığın verileceğini kaydetti.",
+      "Açıklamanın sonunda ise açık bir uyarı tonu dikkat çekti. Geçmiş deneyimlerin unutulmaması gerektiğini belirten Tahran yönetimi, atılacak yanlış adımlara karşı ellerinde henüz tamamlanmamış süreçler bulunduğunu ve tarafların temkinli hareket etmesi icap ettiğini duyurdu."
+    ],
+    "comment": "Diplomatik arenada sesleri yükselten bu tür açıklamalar, liderlerin iç siyasi sıkışmışlıklarını dış politikadaki sert söylemlerle aşma stratejisinin tipik bir yansımasıdır. Tahran yönetimi, Washington ve Tel Aviv arasındaki ittifakın çatlaklarına odaklanarak kendi caydırıcılığını artırmayı hedefliyor. Bölgesel aktörler açısından bu tür karşılıklı restleşmeler, yanlış hesap yapılması durumunda kontrol edilemeyen krizlerin doğmasına yol açabilir.",
+    "editorNote": "İran cephesinden gelen sert uyarılar, Tel Aviv ve Washington arasındaki askeri ortaklığın iç dinamiklerini hedef alıyor.",
+    "tags": [
+      "İran",
+      "İsrail",
+      "ABD",
+      "Abbas Arakçi",
+      "Binyamin Netanyahu",
+      "Orta Doğu"
+    ],
+    "category": "Dünya",
+    "source": "Yeni Şafak",
+    "sourceUrl": "https://www.yenisafak.com/dunya/iran-disisleri-bakani-arakci-netanyahu-hapse-girmemek-icin-abdyi-savasa-surukluyor-4865495",
+    "image": "https://img.piri.net/piri/upload/3/2026/10/19/9dfd88c4-iran-disisleri-bakani-arakci-netanyahu-hapse-girmemek-icin.webp",
+    "publishedAt": "2026-10-19T07:44:02.000Z",
+    "generatedAt": "2026-10-19T07:45:53.625Z"
+  },
+  {
+    "id": "8fdc69a31fa17e35",
+    "title": "Apple iPhone Duo ön siparişlerinde 19 milyon VND'ye varan zam",
+    "slug": "apple-iphone-duo-on-siparislerinde-19-milyon-vndye-varan-zam",
+    "summary": "Apple iPhone Duo modelleri, sınırlı stoklar ve yoğun talep sebebiyle piyasada fahiş fiyat artışlarıyla yeniden satışa çıkarıldı. İnternet üzerinden verilen ön siparişlerin ardından cihazların fiyatlarına sürüme göre 18 ila 19 milyon VND ekleniyor.",
+    "keyPoints": [
+      "Ön siparişlerin ardından iPhone Duo fiyatları 19 milyon VND'ye varan artış gördü.",
+      "ABD'deki çevrimiçi mağazada teslimat tarihleri hemen Ocak 2027 sonuna ertelendi.",
+      "Vietnam pazarındaki distribütörlere sadece birkaç bin adet cihaz tahsis edildi."
+    ],
+    "body": [
+      "Apple'ın yeni akıllı telefon serisi iPhone Duo, dünya genelinde olduğu gibi Vietnam pazarında da büyük bir tedarik sıkıntısıyla karşı karşıya kaldı. Cihazların ön siparişe açılmasından yalnızca otuz dakika sonra ABD'deki resmi çevrimiçi mağaza, beklenen teslimat tarihlerini Ocak 2027 sonuna ertelediğini duyurdu. Benzer şekilde Apple Store'un yerel mağazası da her müşteriye en fazla iki cihaz sınırlaması getirirken tüm sürümlerin teslimatını aynı döneme işaretledi.",
+      "Vietnam genelindeki yetkili satıcılar ellerindeki stokların hızla tükendiğini bildirirken, bu dönemde alışveriş yapan şanslı bazı müşterilerin ürünlerini 23 Ekim tarihinden itibaren teslim alabileceği açıklandı. Üretici düzenlemeleri sebebiyle perakendeciler toplam ön sipariş miktarını kamuoyuyla paylaşamadı. Sektörden sızan bilgiler, ülkeye gelen toplam birim sayısının sadece birkaç bin adetle sınırlı kaldığını ve her distribütöre yalnızca birkaç yüz adet düştüğünü ortaya koydu.",
+      "Bir sonraki sevkiyatın Kasım 2026 sonundan önce yapılmayacak olması, yerel pazarın uzun süre cihazsız kalacağına işaret ediyor. Bu durum spekülatif satışların önünü açtı ve bazı özel gruplarda ön siparişler fahiş fiyatlarla el değiştirmeye başladı. Alıcıların Apple web sitesindeki orijinal rakamlara kıyasla çok daha yüksek bedeller ödemek zorunda kaldığı görüldü.",
+      "On sekiz Ekim itibarıyla yapılan güncel incelemeler, Gece Gökyüzü rengindeki 256GB kapasiteli modelin 18 milyon VND artışla 83 milyon VND fiyat etiketine ulaştığını gösteriyor. Yıldız Beyazı seçeneği ise 19 milyon VND zamlanarak 84 milyon VND seviyesinden alıcı buluyor. İkinci el ilanlarında cihazların 23 Ekim sabahı önceden etkinleştirilmiş şekilde teslim edileceği belirtiliyor.",
+      "Piyasa analistleri, katlanabilir yapısıyla dikkat çeken bu cihazdaki fiyat şişkinliğinin yeni bir durum olmadığını, geçmişteki diğer popüler modellerde de benzer tabloların yaşandığını ifade ediyor. Pek çok tüketici, resmi mağazalarda tamamen tükenme riskine karşı daha yüksek meblağları gözden çıkarmaya razı oluyor ve bu durum karaborsa fiyatlarını tetikliyor."
+    ],
+    "comment": "Tedarik zincirindeki bu denli daralmalar, popüler teknoloji ürünlerinin karaborsa piyasasında resmi fiyatların çok üzerine çıkmasına yol açıyor. Dağıtılan toplam birim sayısının birkaç bin adetle sınırlı kalması, stok krizinin kısa vadede çözülemeyeceğini gösteriyor. Yüksek fiyatlara rağmen alıcıların sıraya girmesi, markaya olan sadakatin maliyet algısını tamamen devre dışı bıraktığını kanıtlıyor.",
+    "editorNote": "Resmi satış rakamlarının üzerine eklenen 19 milyon VND'lik fark, sınırlı stokların ikincil piyasada yarattığı uçurumu gözler önüne seriyor.",
+    "tags": [
+      "Apple",
+      "iPhone Duo",
+      "Vietnam",
+      "Teknoloji",
+      "Akıllı Telefon"
+    ],
+    "category": "Teknoloji",
+    "source": "Vietnam.vn",
+    "sourceUrl": "https://www.vietnam.vn/tr/iphone-duo-duoc-ban-lai-tu-suat-dat-truoc-chenh-lech-den-19-trieu-dong",
+    "image": "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2026/10/19/1792393481225_iphone-duo-duoc-ban-lai-tu-suat-dat-truoc-chenh-lech-den-19-trieu-dong-1234.png",
+    "publishedAt": "2026-10-19T07:43:29.000Z",
+    "generatedAt": "2026-10-19T07:45:32.629Z",
+    "breaking": true
+  },
+  {
+    "id": "ae1c8dbc3737ec19",
+    "title": "İstanbul'daki sel felaketinde can kaybı 6'ya yükseldi",
+    "slug": "istanbuldaki-sel-felaketinde-can-kaybi-6ya-yukseldi",
+    "summary": "Marmara Bölgesi'ni vuran şiddetli yağışların ardından İstanbul'da yürütülen arama çalışmalarında bir kişinin daha cansız bedenine ulaşıldı. Valilik kentteki resmî can kaybının altıya çıktığını teyit ederken kayıp bir kişiyi bulma faaliyetleri aralıksız sürüyor. Kocaeli'de ise dere taşkını sonucu bir yurttaş yaşamını yitirdi.",
+    "keyPoints": [
+      "İstanbul'da yürütülen arama çalışmalarında resmî can kaybı sayısı 6'ya ulaştı.",
+      "Ayvansaray sahilinde bulunan cansız bedenin kayıp Haşim Ciritlioğlu'na ait olduğu netleşti.",
+      "Kocaeli Gebze'deki taşkında araçtan kapılan bir yurttaş için arama çalışmaları sürüyor."
+    ],
+    "body": [
+      "Marmara Bölgesi genelinde etkili olan kuvvetli fırtına ve sağanak yağışlar, özellikle su yatakları çevresinde ciddi taşkınlara yol açtı. İstanbul'da 14 Ekim'de başlayan afetin ardından ekipler karadan, havadan ve denizden aralıksız tarama faaliyeti yürüttü. Deniz polisi ile helikopterlerin koordineli taramalarında Ayvansaray Vapur İskelesi açıklarında tespit edilen cansız bedenin, felaketten bu yana aranan Haşim Ciritlioğlu olduğu belirlendi.",
+      "Kentin farklı noktalarında yürütülen operasyonlarda daha önce Haliç açıklarında Türkmenistan uyruklu Murat Babajanov'un cenazesine ulaşılmıştı. Son incelemelerin tamamlanmasıyla birlikte İstanbul Valiliği kent sınırları içindeki resmî can kaybı bilançosunu altı olarak güncelledi. Yetkililer kentte akıntıya kapıldığı bilinen son bir kişiyi tespit edebilmek adına çalışmaların sürdürüldüğünü kaydetti.",
+      "Afet sadece megakenti değil, komşu Kocaeli'nin Gebze ilçesini de doğrudan etkiledi. Kadıllı Mahallesi civarında taşan derenin ortasında kalan binek araç akıntıya kapılırken sürücü kendi imkânlarıyla ağaca tutunarak hayatta kaldı. Araçta bulunan yolculardan Fatih Demirtaş'ın cansız bedeni ekiplerce Pendik Göçbeyli mevkisinde bulunurken, diğer yolcu Doğan Arslan için arama operasyonlarına devam ediliyor.",
+      "İstanbul ile Kocaeli sınırında yer alan Büyük Dere boyunca 102 personelin katılımıyla 16 ayrı noktada güvenlik çemberi oluşturuldu. İstanbul Valisi Davut Gül, 17 kilometrelik dere yatağının jandarma, itfaiye ve AFAD ekiplerince tarandığını açıkladı. En ağır hasarı alan Sarıyer Ayazağa Mahallesi'nde ise risk altındaki binaların yıkımı ve zarar tespit çalışmaları eş zamanlı ilerliyor."
+    ],
+    "comment": "Dere yatakları çevresindeki denetimsiz yapılaşma durdurulmadıkça meteorolojik uyarılar can kayıplarını engellemeye yetmez. Ayazağa bölgesinde başlatılan riskli yapı yıkımları gecikmiş bir zorunluluğu temsil ediyor; bu adım havza genelindeki tüm kaçak yapılara genişletilmelidir. Şiddetli yağış anında su basan yollara araç sokan sürücüler sadece kendilerini değil kurtarma ekiplerini de tehlikeye atıyor. Kocaeli ile İstanbul sınırındaki 17 kilometrelik hat boyunca riskli alanların yapılaşmaya kesin olarak kapatılması şarttır; aksi takdirde benzer felaket senaryoları kaçınılmaz hale gelecektir.",
+    "editorNote": "İstanbul'da kayıplar aranırken bilanço 6'ya çıktı. Taşan dere yataklarındaki ihmaller ise sel suları çekildikten sonra bile konuşulmaya devam edecek.",
+    "tags": [
+      "İstanbul",
+      "Sel Felaketi",
+      "AFAD",
+      "Kocaeli",
+      "Arama Kurtarma"
+    ],
+    "category": "Gündem",
+    "source": "Yeni Alanya",
+    "sourceUrl": "https://www.yenialanya.com/son-dakika-istanbuldaki-felakette-olu-sayisi-8e-yukseldi",
+    "image": "https://yenialanyacom.teimg.com/crop/1280x720/yenialanya-com/uploads/2026/10/ya-1792395537906.jpg",
+    "publishedAt": "2026-10-19T07:38:00.000Z",
+    "generatedAt": "2026-10-19T07:45:17.863Z",
+    "breaking": true
+  },
+  {
     "id": "a04a5b36b28c7f1c",
     "title": "Pelin Yantur öğrencisinden şikayetçi oldu soruşturma açıldı",
     "slug": "pelin-yantur-ogrencisinden-sikayetci-oldu-sorusturma-acildi",
