@@ -7,7 +7,7 @@ import { shareNewArticles } from "./share.js";
 import { makeIndex, findSimilar, dedupeArticles } from "./dedupe.js";
 import { isBreaking, breakingScore } from "./breaking.js";
 import { purgeCopiedText } from "./telif.js";
-import { stokGorseller, KATEGORI_SORGU, yedekGorsel, atif } from "./stok-gorsel.js";
+import { stokGorseller, KATEGORI_SORGU, yedekGorsel, atif, latinEtiketler } from "./stok-gorsel.js";
 
 const DRY = process.argv.includes("--dry");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -210,7 +210,9 @@ async function main() {
       // doğrulanmış yedek görseli kullanılır: haber asla fotoğrafsız kalmaz.
       const sorgular = [
         ai.gorselSorgu,
-        ...(Array.isArray(cleaned.tags) ? cleaned.tags.slice(0, 2) : []),
+        // Türkçe etiketler Commons'ta alakasız sonuç getiriyor; yalnızca Latin
+        // harfli marka/ürün etiketleri sorgu olarak kullanılır.
+        ...latinEtiketler(cleaned.tags),
         KATEGORI_SORGU[cleaned.category],
       ];
       let stok = await stokGorseller(sorgular, { adet: 3, kullanilan: kullanilanGorsel });

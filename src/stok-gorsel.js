@@ -152,8 +152,11 @@ function uygunGorsel(sayfa, sorgu) {
     duzMetin(meta.Artist?.value) || duzMetin(meta.Credit?.value) || "Wikimedia Commons";
 
   // Alaka + çözünürlük + eski/sahne görsel cezası.
+  // Alaka (konu uyumu) baskın; çözünürlük yalnızca eşitlik bozucu olsun.
+  // (Büyük ama konu dışı bir fotoğraf, konuya uyan küçük fotoğraftan iyidir
+  // sanılıyordu: "Vietnam askerleri" yerine "askeri radyo istasyonu" geliyordu.)
   let skor = alaka(baslik, sorgu);
-  if (w >= 1600) skor += 0.15;
+  if (w >= 1600) skor += 0.02;
   if (ESKI_GORSEL.test(baslik)) skor -= 0.5;
   if (SAHNE_GORSEL.test(baslik)) skor -= 0.2;
 
@@ -168,6 +171,19 @@ function uygunGorsel(sayfa, sorgu) {
     dosya: baslik,
     skor,
   };
+}
+
+/**
+ * Commons aramasında işe yarayan etiketler: Latin harfli marka/ürün/kişi/yer
+ * ("iPhone", "Togg", "Epic Games"). Türkçe etiketler ("yılan", "askeRlik")
+ * alakasız dosyalar getiriyor; onlar sorgu olarak kullanılmaz.
+ */
+export function latinEtiketler(tags, adet = 2) {
+  const LATIN = /^[a-z0-9][a-z0-9.+-]*(?:\s+[a-z0-9][a-z0-9.+-]*){0,2}$/i;
+  return (Array.isArray(tags) ? tags : [])
+    .map((t) => String(t || "").trim())
+    .filter((t) => LATIN.test(t))
+    .slice(0, adet);
 }
 
 /**
