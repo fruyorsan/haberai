@@ -5,7 +5,8 @@ on:
     - cron: "0 * * * *" # saatte bir; govdesi veya editorNote eksik haberleri yeniler
   workflow_dispatch: {} # elle calistirma
 
-# Ana hat ile AYNI kilit grubu: ayni anda asla calismazlar (git + AI kotasi cakismasi onlenir)
+# Ayrı kilit grubu: pipeline (her 5 dk) ile çakışmasın; ikisi aynı anda
+# git'e yazmaya çalışırsa arşiv işi bir sonraki saatte yeniden dener.
 concurrency:
   group: arsiv-yenileme
   cancel-in-progress: false

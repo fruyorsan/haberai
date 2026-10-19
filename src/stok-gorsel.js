@@ -140,9 +140,15 @@ function uygunGorsel(sayfa, sorgu) {
   const oran = w / h;
   if (oran < MIN_ORAN || oran > MAX_ORAN) return null;
 
+  // 1900 öncesi yıl geçen dosya adları neredeyse her zaman gravür/eski
+  // illüstrasyon oluyor ("Istanbul_comet_and_earthquake_1556.jpg" gibi).
+  if (/\b1[0-8]\d{2}\b/.test(baslik)) return null;
+
   const meta = ii.extmetadata || {};
   const hamLisans = meta.LicenseShortName?.value;
   if (!hamLisans || !IZINLI_LISANS.test(duzMetin(hamLisans, 60))) return null;
+  // PD-Art: iki boyutlu sanat eserinin birebir kopyası (gravür, tablo, minyatür).
+  if (/^pd[\s-]?art/i.test(duzMetin(hamLisans, 60))) return null;
 
   const url = String(ii.thumburl || ii.url || "").split("?")[0];
   // Commons küçük görselleri iki CDN alan adından veriyor.
