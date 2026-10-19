@@ -24,20 +24,6 @@ interface Props {
 
 const { slug, baslik, url, sade = false } = Astro.props;
 const aktif = Boolean(YORUM.url && YORUM.anahtar);
-
-/**
- * Supabase başlıkları.
- *
- * Eski "anon" anahtarı bir JWT'dir (eyJ... ile başlar) ve hem `apikey` hem
- * `Authorization: Bearer` olarak gönderilir. Yeni paneldeki "publishable"
- * anahtarı (sb_publishable_...) JWT DEĞİLDİR: Authorization'a yazılırsa
- * istek reddedilir. Bu yüzden yalnızca JWT ise Authorization eklenir.
- */
-function susBasliklari(anahtar: string): Record<string, string> {
-  const h: Record<string, string> = { apikey: anahtar };
-  if (anahtar.startsWith("eyJ")) h.Authorization = `Bearer ${anahtar}`;
-  return h;
-}
 const otomatik = !sade && Boolean(slug) && aktif;
 ---
 
@@ -298,6 +284,21 @@ const otomatik = !sade && Boolean(slug) && aktif;
 <script>
   type Kok = HTMLElement;
   const baglananlar = new WeakSet<HTMLElement>();
+
+  /**
+   * Supabase başlıkları.
+   *
+   * Eski "anon" anahtarı bir JWT'dir (eyJ... ile başlar) ve hem `apikey` hem
+   * `Authorization: Bearer` olarak gönderilir. Yeni paneldeki "publishable"
+   * anahtarı (sb_publishable_...) JWT DEĞİLDİR; yalnızca `apikey` başlığıyla
+   * gönderilir. (DİKKAT: bu yardımcı MUTLAKA <script> içinde olmalı — üst
+   * frontmatter'a yazılırsa tarayıcıda tanımsız kalır ve yorum gönderilemez.)
+   */
+  function susBasliklari(anahtar: string): Record<string, string> {
+    const h: Record<string, string> = { apikey: anahtar };
+    if (anahtar.startsWith("eyJ")) h.Authorization = `Bearer ${anahtar}`;
+    return h;
+  }
 
   const SURE = [
     [60, "sn"],
