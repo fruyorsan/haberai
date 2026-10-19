@@ -46,6 +46,8 @@ const otomatik = !sade && Boolean(slug) && aktif;
     <span class="yorum__not">Hesap gerekmez · reklamsız</span>
   </header>
 
+  <p class="yorum__kim" data-yorum-kim hidden></p>
+
   {/* Akış panelinde: yorumlar haber sayfasıyla AYNI havuzu kullanır. */}
   {sade && (
     <p class="yorum__ortak">
@@ -196,6 +198,32 @@ const otomatik = !sade && Boolean(slug) && aktif;
   .yorum__not {
     font-size: 0.78rem;
     color: var(--text-2);
+  }
+  /* Giriş yapan okuyucu: adı kilitli, kim yazdığı görünür. */
+  .yorum__kim {
+    margin: 0 0 8px;
+    font-size: 0.76rem;
+    color: var(--text-2);
+  }
+  .yorum__kim b {
+    color: var(--heading);
+  }
+  .yorum__kim[hidden] {
+    display: none;
+  }
+  /* Hesabıyla yorum yazan üyenin rozeti. */
+  .yorum__uye {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 1px 7px;
+    border-radius: 999px;
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-size: 0.62rem;
+    font-weight: 900;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
   }
   .yorum__form {
     display: flex;
@@ -386,6 +414,48 @@ const otomatik = !sade && Boolean(slug) && aktif;
     return h;
   }
 
+  /** Sayfadaki hesap oturumu (yoksa null). */
+  function hesap(): any {
+    const H = (window as any).HaberinAi;
+    return H && typeof H.oturumOku === "function" ? H.oturumOku() : null;
+  }
+
+  /**
+   * Giriş durumuna göre takma ad alanını ayarlar.
+   * Üye ise ad profilden gelir ve değiştirilemez (kimlik tutarlılığı).
+   */
+  function hesapUygula(kok: Kok) {
+    const u = hesap();
+    const adEl = kok.querySelector<HTMLInputElement>("[data-yorum-ad]");
+    const kim = kok.querySelector<HTMLElement>("[data-yorum-kim]");
+    if (u) {
+      if (adEl) {
+        adEl.value = u.ad || "";
+        adEl.readOnly = true;
+        adEl.hidden = true;
+      }
+      if (kim) {
+        kim.hidden = false;
+        kim.textContent = "";
+        const b = document.createElement("b");
+        b.textContent = u.ad;
+        kim.append(b, document.createTextNode(" olarak yazıyorsun · profilden"));
+      }
+    } else {
+      if (adEl) {
+        adEl.readOnly = false;
+        adEl.hidden = false;
+        try {
+          adEl.value = localStorage.getItem("yorum-ad") || adEl.value;
+        } catch {
+          /* özel mod */
+        }
+      }
+      if (kim) kim.hidden = true;
+    }
+    return u;
+  }
+
   const SURE = [
     [60, "sn"],
     [60, "dk"],
@@ -419,7 +489,7 @@ const otomatik = !sade && Boolean(slug) && aktif;
     el.classList.toggle("yorum__durum--hata", hata);
   }
 
-  function oge(y: { ad?: string; metin?: string; created_at?: string }): HTMLLIElement {
+  function oge(y: { ad?: string; metin?: string; created_at?: string; uye_id?: string | null }): HTMLLIElement {
     const li = document.createElement("li");
     li.className = "yorum__oge";
     const avatar = document.createElement("span");
@@ -431,6 +501,13 @@ const otomatik = !sade && Boolean(slug) && aktif;
     const ad = document.createElement("span");
     ad.className = "yorum__oge-ad";
     ad.textContent = y.ad || "Okur";
+    if (y.uye_id) {
+      const rozet = document.createElement("span");
+      rozet.className = "yorum__uye";
+      rozet.textContent = "✓ üye";
+      rozet.title = "Hesabıyla yazdı";
+      ad.after(rozet);
+    }
     const zm = document.createElement("time");
     zm.className = "yorum__oge-zaman";
     zm.textContent = zaman(y.created_at || "");
@@ -458,11 +535,11 @@ const otomatik = !sade && Boolean(slug) && aktif;
     liste.replaceChildren();
     try {
       const adres =
-        `${api}/rest/v1/${tablo}?select=ad,metin,created_at` +
+        `${api}/rest/v1/${tablo}?select=ad,metin,created_at,uye_id` +
         `&slug=eq.${encodeURIComponent(slug)}&order=created_at.desc&limit=100`;
       const r = await fetch(adres, { headers: susBasliklari(anahtar) });
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      const veri = (await r.json()) as { ad?: string; metin?: string; created_at?: string }[];
+      const veri = (await r.json()) as { ad?: string; metin?: string; created_at?: string; uye_id?: string | null }[];
       liste.replaceChildren(...veri.map(oge));
       if (sayi) {
         sayi.textContent = veri.length ? String(veri.length) : "";
@@ -526,12 +603,8 @@ const otomatik = !sade && Boolean(slug) && aktif;
     const api = kok.dataset.api || "";
     const form = kok.querySelector<HTMLFormElement>("[data-yorum-form]");
 
-    try {
-      const kayitli = localStorage.getItem("yorum-ad") || "";
-      if (adEl && kayitli) adEl.value = kayitli;
-    } catch {
-      /* özel mod: sorun değil */
-    }
+    hesapUygula(kok);
+    window.addEventListener("hb-oturum-degisti", () => hesapUygula(kok));
 
     let sonGonderim = 0;
 
@@ -560,17 +633,32 @@ const otomatik = !sade && Boolean(slug) && aktif;
       gonder.disabled = true;
       yaz(kok, "Gönderiliyor…");
       try {
-        const r = await fetch(`${api}/rest/v1/${tablo}`, {
-          method: "POST",
-          headers: {
-            ...susBasliklari(anahtar),
-            "Content-Type": "application/json",
-            Prefer: "return=representation",
-          },
-          body: JSON.stringify({ slug, ad, metin }),
-        });
-        if (!r.ok) throw new Error(`HTTP ${r.status}`);
-        const [kayit] = (await r.json()) as { ad?: string; metin?: string; created_at?: string }[];
+        const H = (window as any).HaberinAi;
+        const u = hesap();
+        let kayit: { ad?: string; metin?: string; created_at?: string; uye_id?: string | null } | undefined;
+        if (u && H && typeof H.yorumEkle === "function") {
+          // Üye: yazma sunucudaki RPC'den geçer; ad profilden, oturum doğrulanır.
+          const r = await H.yorumEkle(slug, metin);
+          if (r && r.hata) throw new Error(r.hata);
+          kayit = {
+            ad: r.ad || u.ad,
+            metin: r.metin || metin,
+            created_at: new Date().toISOString(),
+            uye_id: "1",
+          };
+        } else {
+          const r = await fetch(`${api}/rest/v1/${tablo}`, {
+            method: "POST",
+            headers: {
+              ...susBasliklari(anahtar),
+              "Content-Type": "application/json",
+              Prefer: "return=representation",
+            },
+            body: JSON.stringify({ slug, ad, metin }),
+          });
+          if (!r.ok) throw new Error(`HTTP ${r.status}`);
+          [kayit] = (await r.json()) as { ad?: string; metin?: string; created_at?: string }[];
+        }
         const liste = kok.querySelector<HTMLElement>("[data-yorum-liste]");
         if (liste && kayit) {
           const yeni = oge(kayit);

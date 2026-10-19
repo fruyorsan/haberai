@@ -87,7 +87,7 @@ const siteSchema = {
 
 <Base
   title="HaberinAi — Son Dakika Haberleri, Teknoloji ve Yapay Zekâ"
-  description="Son dakika haberleri 5 dakikada bir güncellenir: teknoloji, yapay zekâ, oyun ve gündem. Özet, analiz ve AI yorumu; Shorts Haber ile kaydırarak oku."
+  description="Son dakika haberleri dakikalar içinde güncellenir: teknoloji, yapay zekâ, oyun ve gündem. Özet, analiz ve AI yorumu; Shorts Haber ile kaydırarak oku."
   schema={siteSchema}
   preloadImage={heroImage || undefined}
   preloadSrcset={heroImageSet}
@@ -122,7 +122,7 @@ const siteSchema = {
               </svg>
             </a>
           </div>
-          <p class="shorts__alt">Kaydır, oku, beğen. Telefon için tasarlandı — her 5 dakikada tazelenir.</p>
+          <p class="shorts__alt">Kaydır, oku, beğen. Telefon için tasarlandı — dakikalar içinde tazelenir.</p>
 
           <div class="shorts__serit">
             {shorts.map((s) => (
@@ -178,9 +178,9 @@ const siteSchema = {
         )}
 
         {grid.length > 0 && (
-          <section class="latest">
+          <section class="latest" id="son-haberler">
             <div class="latest__head">
-              <h2 class="section-title section-title--line">Son Haberler</h2>
+              <h2 class="section-title section-title--line" id="son-haberler-baslik">Son Haberler</h2>
               <a class="latest__all" href="/haberler/">Tümü →</a>
             </div>
             <div class="grid">
@@ -221,6 +221,41 @@ const siteSchema = {
       </>
     )}
   </div>
+
+  <script is:inline>
+    // Ana sayfa kişiselleştirme: hesabında ilgi alanı seçtiyse "Son Haberler"
+    // şeridi o konuları öne alır ve başlığı "Sana Özel" olur. Sıralama yalnızca
+    // sunucudan basılan kartlar arasında yapılır (sayfa ağırlaşmaz).
+    (function () {
+      var H = window.HaberinAi;
+      var u = H && typeof H.oturumOku === "function" ? H.oturumOku() : null;
+      if (!u || !u.ilgi || !u.ilgi.length) return;
+      var bolum = document.getElementById("son-haberler");
+      if (!bolum) return;
+      var grid = bolum.querySelector(".grid");
+      if (!grid) return;
+      var kartlar = [].slice.call(grid.querySelectorAll(".card"));
+      if (kartlar.length < 2) return;
+      var ilgi = new Set(u.ilgi);
+      kartlar
+        .map(function (k, i) {
+          return { k: k, i: i, p: ilgi.has(k.dataset.kat) ? 1 : 0 };
+        })
+        .sort(function (a, b) {
+          return b.p - a.p || a.i - b.i;
+        })
+        .forEach(function (x) {
+          grid.appendChild(x.k);
+        });
+      var bas = document.getElementById("son-haberler-baslik");
+      if (bas) bas.textContent = "Sana Özel";
+      var all = bolum.querySelector(".latest__all");
+      if (all) {
+        all.textContent = "Tercihleri düzenle →";
+        all.href = "/profil/";
+      }
+    })();
+  </script>
 </Base>
 
 <style>

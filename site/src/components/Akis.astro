@@ -487,6 +487,17 @@ const ilk = liste.slice(0, ilkSayi);
       const siralaDugme = kok.querySelector('[data-sirala="bana"]');
       let sanaOzel = false;
 
+      /** Hesabın ilgi alanları (giriş yapılmamışsa boş). */
+      function hesapIlgi() {
+        try {
+          const H = window.HaberinAi;
+          const u = H && typeof H.oturumOku === "function" ? H.oturumOku() : null;
+          return u && Array.isArray(u.ilgi) ? u.ilgi : [];
+        } catch {
+          return [];
+        }
+      }
+
       function reklamiYerlestir() {
         const reklam = liste.querySelector(":scope > .ad");
         if (!reklam) return;
@@ -523,8 +534,13 @@ const ilk = liste.slice(0, ilkSayi);
             const kat = k.dataset.kat || "";
             katPuan.set(kat, (katPuan.get(kat) || 0) + 1);
           }
+          // Hesap ilgi alanları cihazdaki beğenilerden güçlü sayılır: okuyucu
+          // profil sayfasında açıkça seçtiği konuları görsün.
+          const hesap = new Set(hesapIlgi());
           const puan = (k) =>
-            Number(k.dataset.ilgi || 0) + (katPuan.get(k.dataset.kat || "") || 0) * 9;
+            Number(k.dataset.ilgi || 0) +
+            (katPuan.get(k.dataset.kat || "") || 0) * 9 +
+            (hesap.has(k.dataset.kat || "") ? 18 : 0);
           kartlar
             .map((k, i) => ({ k, i, p: puan(k) }))
             .sort((x, y) => y.p - x.p || x.i - y.i)
@@ -547,10 +563,19 @@ const ilk = liste.slice(0, ilkSayi);
           window.scrollTo({ top: liste.offsetTop - 120, behavior: "smooth" });
           bildir(
             sanaOzel
-              ? "Sana özel: beğendiğin konular öne alındı ✨"
+              ? "Sana özel: ilgi alanların öne alındı ✨"
               : "İlgi sırasına dönüldü 🔥"
           );
         });
+
+        // Hesabında ilgi alanı seçtiyse akış ONUNLA açılır: okuyucu her
+        // ziyarette düğmeye basmak zorunda kalmaz.
+        if (hesapIlgi().length) {
+          sanaOzel = true;
+          siralaDugme.classList.add("is-active");
+          siralaDugme.setAttribute("aria-pressed", "true");
+          sanaOzelUygula();
+        }
       }
 
       // --- Sonsuz kaydırma ---------------------------------------------------

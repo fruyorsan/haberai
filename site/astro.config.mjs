@@ -56,7 +56,11 @@ export default defineConfig({
       // Kapak görselleri (/kapak/*.svg) sayfa değildir; site haritasına girmez.
       // Kategori akışları (/akis/kategori/*) "noindex" gezinme yardımcılarıdır.
       filter: (page) =>
-        !page.includes("/kapak/") && !page.includes("/akis/kategori/"),
+        !page.includes("/kapak/") &&
+        !page.includes("/akis/kategori/") &&
+        // Hesap ve profil sayfaları noindex'tir; site haritasına girmez.
+        !page.includes("/hesap/") &&
+        !page.includes("/profil/"),
       serialize(item) {
         const iso = lastmod(new URL(item.url).pathname);
         return iso ? { ...item, lastmod: iso } : item;

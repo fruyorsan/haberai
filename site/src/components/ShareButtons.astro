@@ -1,5 +1,5 @@
 ---
-const { url, title } = Astro.props;
+const { url, title, slug = "" } = Astro.props;
 
 const u = encodeURIComponent(url);
 const t = encodeURIComponent(title);
@@ -54,6 +54,22 @@ const links = [
         <path d="M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 0 0 7.07 7.07L13 19.07" />
       </svg>
     </button>
+    {slug && (
+      <button
+        type="button"
+        class="share__btn share__btn--kaydet"
+        data-kaydet
+        data-slug={slug}
+        data-baslik={title}
+        aria-pressed="false"
+        aria-label="Okuma listesine kaydet"
+        title="Okuma listesine kaydet"
+      >
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 3.5h12a1 1 0 0 1 1 1V21l-7-4.2L5 21V4.5a1 1 0 0 1 1-1z" />
+        </svg>
+      </button>
+    )}
   </div>
 </div>
 
@@ -81,6 +97,44 @@ const links = [
       }, 1600);
     });
   });
+
+  // --- Okuma listesine kaydet (hesaba bağlı) ---
+  const kaydetBtn = document.querySelector<HTMLButtonElement>(".share__btn--kaydet");
+  if (kaydetBtn) {
+    const H = (window as any).HaberinAi;
+    const slug = kaydetBtn.getAttribute("data-slug") || "";
+    const baslik = kaydetBtn.getAttribute("data-baslik") || "";
+    const isaretle = (acik: boolean) => {
+      kaydetBtn.classList.toggle("is-saved", acik);
+      kaydetBtn.setAttribute("aria-pressed", String(acik));
+      const metin = acik ? "Okuma listesinde · kaldır" : "Okuma listesine kaydet";
+      kaydetBtn.title = metin;
+      kaydetBtn.setAttribute("aria-label", metin);
+    };
+
+    if (H && typeof H.oturumOku === "function" && H.oturumOku() && slug) {
+      H.kayitlar()
+        .then((liste: { slug?: string }[]) => {
+          isaretle(Array.isArray(liste) && liste.some((x) => x.slug === slug));
+        })
+        .catch(() => {});
+    }
+
+    kaydetBtn.addEventListener("click", async () => {
+      if (!H || typeof H.oturumOku !== "function" || !H.oturumOku()) {
+        location.href = "/hesap/";
+        return;
+      }
+      const acik = kaydetBtn.classList.contains("is-saved");
+      kaydetBtn.disabled = true;
+      try {
+        const r = acik ? await H.kaydetSil(slug) : await H.kaydet(slug, baslik);
+        if (!r || !r.hata) isaretle(!acik);
+      } finally {
+        kaydetBtn.disabled = false;
+      }
+    });
+  }
 </script>
 
 <style>
@@ -132,6 +186,22 @@ const links = [
   }
   .share__btn--copy:hover {
     background: var(--brand-fill-hover);
+  }
+  .share__btn--kaydet:hover {
+    background: var(--brand-fill-hover);
+  }
+  .share__btn.is-saved {
+    background: var(--brand);
+    color: #fff;
+    border-color: transparent;
+  }
+  .share__btn.is-saved svg {
+    fill: currentColor;
+  }
+  .share__btn:disabled {
+    opacity: 0.6;
+    cursor: default;
+    transform: none;
   }
   .share__btn.is-done {
     background: #16a34a;

@@ -14,6 +14,10 @@ on:
         description: "Yalnızca abone durumunu yazdır (bildirim GÖNDERME)"
         type: boolean
         default: false
+      kullanici:
+        description: "Belirli bir HESABA (üye id) test bildirimi gönder (boş = tüm aboneler)"
+        type: string
+        default: ""
 
 concurrency:
   group: bildirim-test
@@ -58,8 +62,32 @@ jobs:
           echo "--- aboneler (v1 /players) ---"
           curl -s -H "Authorization: Key $ONESIGNAL_REST_API_KEY" \
             "https://api.onesignal.com/players?app_id=$ONESIGNAL_APP_ID&limit=10" \
-            | jq -c '.players[] | {device_type, notification_types, platform, test_type, invalid_identifier, language, session_count, last_active}'
+            | jq -c '.players[] | {device_type, notification_types, platform, test_type, invalid_identifier, language, external_user_id, tags, session_count, last_active}'
           echo "--- abone toplamı ---"
           curl -s -H "Authorization: Key $ONESIGNAL_REST_API_KEY" \
             "https://api.onesignal.com/players?app_id=$ONESIGNAL_APP_ID&limit=1&fields=id" \
             | jq -c '{total_count, offset, limit}'
+
+      # Belirli bir HESABA (üye id) test bildirimi. Hesap girişi yapılmış bir
+      # cihazda OneSignal.login(externalId) çağrıldığı için external_user_id
+      # doludur; bu adım "hesabıma bildirim geliyor mu?" sorusunu doğrular.
+      - name: Hesaba özel test bildirimi
+        if: ${{ !inputs.teshis && inputs.kullanici != '' }}
+        env:
+          ONESIGNAL_APP_ID: ${{ vars.ONESIGNAL_APP_ID }}
+          ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
+          KULLANICI: ${{ inputs.kullanici }}
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: |
+          set -eu
+          URL="${SITE_URL:-https://haberinai.site}"
+          curl -s -X POST "https://api.onesignal.com/notifications" \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Key $ONESIGNAL_REST_API_KEY" \
+            -d "$(jq -nc --arg u "$KULLANICI" --arg url "$URL/son-dakika/" \
+              '{app_id: env.ONESIGNAL_APP_ID, target_channel: "push",
+                include_aliases: {external_id: [$u]},
+                headings: {tr: "🔔 Hesabına bildirim", en: "🔔 Account notification"},
+                contents: {tr: "Hesabına bağlı bu cihaz bildirim alabiliyor ✓", en: "Your account can receive notifications"},
+                url: $url, ttl: 3600}')" \
+            | jq -c '{id, recipients, errors}'

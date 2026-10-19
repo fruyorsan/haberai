@@ -14,7 +14,7 @@ const taze = son.length >= 3;
 
 <Base
   title="Son Dakika Haberleri — Anlık Gelişmeler | HaberinAi"
-  description="Son dakika haberleri: Türkiye ve dünyadan anlık gelişmeler, teknoloji, ekonomi, oyun ve gündem. Haber akışı her 5 dakikada bir güncellenir."
+  description="Son dakika haberleri: Türkiye ve dünyadan anlık gelişmeler, teknoloji, ekonomi, oyun ve gündem. Haber akışı dakikalar içinde güncellenir."
   section="Son Dakika"
 >
   <div class="container">
@@ -25,7 +25,7 @@ const taze = son.length >= 3;
       </h1>
       <p class="muted">
         {taze
-          ? `Son 24 saatte ${son.length} haber yayına alındı. Hat her 5 dakikada bir taranır.`
+          ? `Son 24 saatte ${son.length} haber yayına alındı. Hat dakikalar içinde taranır.`
           : "Son 24 saatte yeni haber gelmedi; en yeni başlıkları listeliyoruz."}
       </p>
     </header>

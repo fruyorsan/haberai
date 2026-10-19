@@ -2,9 +2,10 @@ name: Haber Hatti
 
 on:
   # NOT: GitHub'in kendi cron'u bu depoda 2-4 saatte bir calisiyor (olculdu),
-  # bu yuzden 5 dakikalik kadans "zincir" ile saglaniyor: her calismanin sonunda
+  # bu yuzden kisa kadans "zincir" ile saglaniyor: her calismanin sonunda
   # "tetik" dalina deploy key ile bir push yapilir ve bu, BIR SONRAKI calismayi
   # baslatir. Cron yalnizca zincir herhangi bir sebeple koparsa yedek olarak kalir.
+  # (Cron ifadesi GitHub'in izin verdigi en kisa aralikta: 5 dakika.)
   schedule:
     - cron: "*/5 * * * *"
   workflow_dispatch: {} # elle calistirma
@@ -206,20 +207,28 @@ jobs:
       # site/netlify/functions/ altinda duruyor (ileride baska bir ucretsiz
       # saglayiciya tasinabilir).
 
-      # --- 5 DAKIKALIK KADANS: ZINCIR HALKKASI ---
+      # --- 2-3 DAKIKALIK KADANS: ZINCIR HALKKASI ---
       # GitHub'in kendi cron'u bu depoda 2-4 saatte bir calisiyor (olculdu).
       # Bu adim her calismanin sonunda "tetik" dalina bir push yapar. Push bir
       # deploy key ile yapildigi icin yeni bir calisma tetikler (GITHUB_TOKEN ile
       # yapilan push'lar yeni calisma baslatmaz). Zincir halkasi ise tur arasini
-      # ~5 dakikaya tamamlamak icin once bekler. Cron yalnizca yedek.
-      - name: Zinciri surdur (5 dk kadans)
+      # kisaltmak icin once bekler.
+      # DIKKAT: Gercek aralik = TUR SURESI + bu bekleme. Tur (npm ci + topla +
+      # AI + derle + yayinla) birkac dakika surdugu icin buradaki bekleme kisa
+      # tutulur; boylece toplam aralik ~2-4 dakikaya iner. Cron yalnizca yedek.
+      - name: Zinciri surdur (kisa kadans)
         if: always() && !cancelled()
         env:
           CHAIN_KEY: ${{ secrets.CHAIN_DEPLOY_KEY }}
+          CHAIN_BEKLEME_SN: ${{ vars.CHAIN_BEKLEME_SN }}
         run: |
           set -u
+          # Zincir zaten seri (her tur bir sonrakini turun SONUNDA tetikler);
+          # bekleme yalnizca GitHub API'sini ardi ardina bogmamak icin kucuk
+          # tutulur. Gercek aralik = tur suresi + bu bekleme.
+          BEKLEME="${CHAIN_BEKLEME_SN:-20}"
           if [ "${GITHUB_EVENT_NAME}" = "push" ] && [ "${GITHUB_REF}" = "refs/heads/tetik" ]; then
-            sleep 240   # tur arasi ~5 dakika olsun
+            sleep "$BEKLEME"
           fi
           # Sunucudaki SSH ajanini kapat: yalnizca zincir anahtari kullanilsin
           # (aksi halde Pages adiminin ajan anahtari devreye girip izin hatasi veriyor).

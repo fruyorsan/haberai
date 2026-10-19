@@ -108,3 +108,40 @@ export const YORUM = {
  */
 export const ONESIGNAL_APP_ID =
   process.env.ONESIGNAL_APP_ID || "fd1804a3-90d0-4c95-9bf0-c147f9a1d0c7";
+
+/**
+ * OKUYUCU HESABI — Supabase üzerinde kullanıcı adı + şifre (supabase/hesap.sql).
+ *
+ * Yorumlarla AYNI Supabase projesini kullanır; bu yüzden ayrı bir değişkene
+ * gerek yoktur (YORUM_URL / YORUM_ANON). Kod tarafında yalnızca kullanım amacı
+ * ayrışsın diye HESAP adı altında yeniden verilir.
+ */
+export const HESAP = {
+  url: String(process.env.YORUM_URL || "").replace(/\/+$/, ""),
+  anahtar: String(process.env.YORUM_ANON || ""),
+};
+
+/**
+ * İlgi alanı seçicide gösterilen kategoriler: TÜM kategoriler her zaman
+ * listelenir (o an haberi olmayan bir kategori de seçilebilsin). Slug'lar
+ * site/src/lib/articles.js → slugify ile birebir aynı olmalıdır.
+ */
+export const KATEGORILER = [
+  { ad: "Gündem", slug: "gundem" },
+  { ad: "Dünya", slug: "dunya" },
+  { ad: "Ekonomi", slug: "ekonomi" },
+  { ad: "Spor", slug: "spor" },
+  { ad: "Teknoloji", slug: "teknoloji" },
+  { ad: "Yapay Zekâ", slug: "yapay-zeka" },
+  { ad: "Bilim", slug: "bilim" },
+  { ad: "Uzay", slug: "uzay" },
+  { ad: "Sağlık", slug: "saglik" },
+  { ad: "Kültür", slug: "kultur" },
+  { ad: "Yaşam", slug: "yasam" },
+  { ad: "Otomobil", slug: "otomobil" },
+  { ad: "Mobil", slug: "mobil" },
+  { ad: "Donanım", slug: "donanim" },
+  { ad: "Yazılım", slug: "yazilim" },
+  { ad: "İnternet", slug: "internet" },
+  { ad: "Oyun", slug: "oyun" },
+];

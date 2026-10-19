@@ -923,7 +923,20 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
       btn.setAttribute("aria-expanded", ac ? "true" : "false");
       if (ac) durumYaz();
     }
-    btn.addEventListener("click", () => panelAc(panel.hidden));
+    btn.addEventListener("click", () => {
+      const acilacak = panel.hidden;
+      // İlk dokunuşta izin penceresi AÇILIR: okuyucu zile basıp yalnızca panel
+      // görmekle kalmasın. İzin isteği dokunuşun içinde çağrılmalı (await'ten
+      // önce); abonelik kurulumu hemen ardından arka planda tamamlanır.
+      if (acilacak && !abone && !izinVerildi() && !izinEngelli()) {
+        izinSor();
+        void aboneBaslat().then((oldu) => {
+          ciz();
+          if (oldu) void hosgeldinBildirimi();
+        });
+      }
+      panelAc(acilacak);
+    });
 
     // Panelin tepesindeki "Aç" şeridi: tek dokunuşla izin + abonelik.
     acSerit?.addEventListener("click", async () => {
@@ -1169,6 +1182,13 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
       /** Dokunuşun İÇİNDE çağrılmalı (await'ten önce). */
       izinSor,
       hosgeldinBildirimi,
+      /** Elde bir deneme bildirimi göster (profil sayfası kullanır). */
+      testBildirim: () =>
+        yerelBildirim(
+          "HaberinAi",
+          "Bildirimler çalışıyor ✓ Son dakika haberlerini kaçırmayacaksın.",
+          "deneme"
+        ),
       izinVerildi,
       izinEngelli,
       iosKuruluDegil,

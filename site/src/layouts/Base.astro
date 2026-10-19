@@ -7,6 +7,8 @@ import {
   ADSENSE_CLIENT,
   GA_MEASUREMENT_ID,
   GOOGLE_SITE_VERIFICATIONS,
+  HESAP,
+  KATEGORILER,
   ONESIGNAL_APP_ID,
 } from "../lib/site-meta.js";
 import "../styles/global.css";
@@ -197,6 +199,21 @@ const isArticle = ogType === "article";
     <script is:inline>
       document.documentElement.classList.add("js");
     </script>
+
+    <!-- Okuyucu hesabı (Supabase). Anahtar gizli değildir; güvenlik sunucu
+         tarafındaki fonksiyon + RLS ile sağlanır (supabase/hesap.sql). -->
+    {HESAP.url && HESAP.anahtar && (
+      <script
+        type="application/json"
+        id="hb-ayar"
+        set:html={JSON.stringify({ hesapUrl: HESAP.url, hesapAnahtar: HESAP.anahtar, kategoriler: KATEGORILER.map((k) => k.slug) })}
+      />
+    )}
+    <!-- Hesap betiği senkron yüklenir: sayfa içindeki satır içi betikler
+         (profil, hesap, ana sayfa kişiselleştirme) window.HaberinAi'yi
+         doğrudan kullanabilsin. Dosya public/ altındadır; Astro paketleyicisi
+         onu olduğu gibi /hesap.js olarak yayınlar. -->
+    <script is:inline src="/hesap.js"></script>
 
     <!-- Çerez izni: Google Consent Mode v2.
          Etiketler kaynakta her zaman bulunur (AdSense/Search Console doğrulaması görmeli),

@@ -17,6 +17,11 @@ export const config = {
     "Yazılım",
     "İnternet",
     "Bilim",
+    "Uzay",
+    "Sağlık",
+    "Kültür",
+    "Yaşam",
+    "Otomobil",
     "Ekonomi",
     "Spor",
     "Gündem",
@@ -100,13 +105,47 @@ export const config = {
     { name: "AA Spor", url: "https://www.aa.com.tr/tr/rss/default?cat=spor", category: "Spor" },
     { name: "Sabah Spor", url: "https://www.sabah.com.tr/rss/spor.xml", category: "Spor" },
     { name: "Fotomaç", url: "https://www.fotomac.com.tr/rss/anasayfa.xml", category: "Spor" },
+    { name: "Hürriyet Spor", url: "https://www.hurriyet.com.tr/rss/spor", category: "Spor" },
+    { name: "GN: Süper Lig", url: "https://news.google.com/rss/search?q=s%C3%BCper%20lig%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Spor", fast: true },
+    { name: "GN: Transfer", url: "https://news.google.com/rss/search?q=transfer%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Spor", fast: true },
 
-    // Dünya
+    // Dünya (ulusal + uluslararası ajanslar)
     { name: "BBC Türkçe", url: "https://feeds.bbci.co.uk/turkce/rss.xml", category: "Dünya" },
     { name: "NTV Dünya", url: "https://www.ntv.com.tr/dunya.rss", category: "Dünya" },
     { name: "AA Dünya", url: "https://www.aa.com.tr/tr/rss/default?cat=dunya", category: "Dünya" },
     { name: "DW Türkçe", url: "https://rss.dw.com/rdf/rss-tur-all", category: "Dünya" },
     { name: "Euronews Türkçe", url: "https://tr.euronews.com/rss", category: "Dünya" },
+    { name: "Hürriyet Dünya", url: "https://www.hurriyet.com.tr/rss/dunya", category: "Dünya" },
+    { name: "Sabah Dünya", url: "https://www.sabah.com.tr/rss/dunya.xml", category: "Dünya" },
+    { name: "BBC World", url: "https://feeds.bbci.co.uk/news/world/rss.xml", category: "Dünya", fast: true },
+    { name: "Al Jazeera", url: "https://www.aljazeera.com/xml/rss/all.xml", category: "Dünya" },
+    { name: "DW English", url: "https://rss.dw.com/rdf/rss-en-all", category: "Dünya" },
+    { name: "France 24", url: "https://www.france24.com/en/rss", category: "Dünya" },
+    { name: "The Guardian World", url: "https://www.theguardian.com/world/rss", category: "Dünya" },
+    { name: "Sky News World", url: "https://feeds.skynews.com/feeds/rss/world.xml", category: "Dünya" },
+    { name: "NPR World", url: "https://feeds.npr.org/1004/rss.xml", category: "Dünya" },
+    { name: "GN: Dünya Gündemi", url: "https://news.google.com/rss/search?q=d%C3%BCnya%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Dünya", fast: true },
+    { name: "GN: Savaş/Çatışma", url: "https://news.google.com/rss/search?q=sava%C5%9F%20OR%20ate%C5%9Fkes%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Dünya", fast: true },
+    { name: "GN: Avrupa", url: "https://news.google.com/rss/search?q=avrupa%20when%3A3h&hl=tr&gl=TR&ceid=TR:tr", category: "Dünya" },
+    { name: "GN: ABD", url: "https://news.google.com/rss/search?q=abd%20OR%20trump%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Dünya", fast: true },
+    { name: "GN: Çin/Asya", url: "https://news.google.com/rss/search?q=%C3%A7in%20OR%20asya%20when%3A3h&hl=tr&gl=TR&ceid=TR:tr", category: "Dünya" },
+    { name: "GN: Ortadoğu", url: "https://news.google.com/rss/search?q=ortado%C4%9Fu%20OR%20gazze%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Dünya", fast: true },
+
+    // Sağlık / Yaşam / Kültür (yeni kategoriler)
+    { name: "Sabah Sağlık", url: "https://www.sabah.com.tr/rss/saglik.xml", category: "Sağlık" },
+    { name: "GN: Sağlık", url: "https://news.google.com/rss/search?q=sa%C4%9Fl%C4%B1k%20when%3A3h&hl=tr&gl=TR&ceid=TR:tr", category: "Sağlık" },
+    { name: "GN: Bilim", url: "https://news.google.com/rss/search?q=bilim%20ke%C5%9Fif%20when%3A4h&hl=tr&gl=TR&ceid=TR:tr", category: "Bilim" },
+    { name: "GN: Uzay", url: "https://news.google.com/rss/search?q=uzay%20OR%20nasa%20OR%20spacex%20when%3A4h&hl=tr&gl=TR&ceid=TR:tr", category: "Uzay" },
+    { name: "NASA", url: "https://www.nasa.gov/news-release/feed/", category: "Uzay" },
+    { name: "ScienceDaily", url: "https://www.sciencedaily.com/rss/top/science.xml", category: "Bilim" },
+    { name: "GN: Kültür-Sanat", url: "https://news.google.com/rss/search?q=k%C3%BClt%C3%BCr%20sanat%20when%3A6h&hl=tr&gl=TR&ceid=TR:tr", category: "Kültür" },
+    { name: "GN: Yaşam", url: "https://news.google.com/rss/search?q=ya%C5%9Fam%20trend%20when%3A6h&hl=tr&gl=TR&ceid=TR:tr", category: "Yaşam" },
+    { name: "BBC Business", url: "https://feeds.bbci.co.uk/news/business/rss.xml", category: "Ekonomi" },
+
+    // Otomobil / elektrikli araç
+    { name: "GN: Otomobil", url: "https://news.google.com/rss/search?q=otomobil%20OR%20elektrikli%20ara%C3%A7%20when%3A3h&hl=tr&gl=TR&ceid=TR:tr", category: "Otomobil" },
+    { name: "GN: Ekonomi", url: "https://news.google.com/rss/search?q=ekonomi%20OR%20enflasyon%20OR%20faiz%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Ekonomi", fast: true },
+    { name: "GN: Borsa/Döviz", url: "https://news.google.com/rss/search?q=borsa%20OR%20dolar%20OR%20alt%C4%B1n%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Ekonomi", fast: true },
   ],
 
   // ------------------------------------------------------------------
@@ -143,7 +182,7 @@ export const config = {
 
   // Her turda en az bir haber türü seçilsin: teknoloji/oyun siteleri dakikada
   // onlarca haber yayınladığı için gündem/son dakika haberlerini eziyor.
-  newsCategories: (process.env.NEWS_CATEGORIES || "Gündem,Dünya,Ekonomi,Spor")
+  newsCategories: (process.env.NEWS_CATEGORIES || "Gündem,Dünya,Ekonomi,Spor,Sağlık,Kültür,Yaşam")
     .split(",")
     .map((s) => s.trim())
     .filter(Boolean),

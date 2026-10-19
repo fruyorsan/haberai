@@ -1,0 +1,328 @@
+---
+import Base from "../layouts/Base.astro";
+import { HESAP } from "../lib/site-meta.js";
+
+const hazir = Boolean(HESAP.url && HESAP.anahtar);
+---
+
+<Base
+  title="Giriş / Kayıt — HaberinAi"
+  description="HaberinAi hesabı oluştur: yorumlarını hesabına bağla, ilgi alanlarını seç, kişisel akış ve bildirimlerden yararlan."
+  noindex
+>
+  <div class="container hesap">
+    <div class="hesap__kart">
+      <header class="hesap__ust">
+        <span class="hesap__marka" aria-hidden="true">H</span>
+        <div>
+          <h1 class="hesap__baslik">Hesabına gir</h1>
+          <p class="hesap__alt">
+            Yorumlarını hesabına bağla, ilgi alanlarını seç; akış ve bildirimler
+            sana göre şekillenir.
+          </p>
+        </div>
+      </header>
+
+      {!hazir && (
+        <p class="hesap__kapali">
+          Hesap servisi henüz ayarlı değil. Yönetici <code>supabase/hesap.sql</code>
+          dosyasını çalıştırıp <code>YORUM_URL</code> / <code>YORUM_ANON</code>
+          değişkenlerini tanımlamalı. O zamana dek yorumları hesapsız (takma adla)
+          yazabilirsin.
+        </p>
+      )}
+
+      <div class="hesap__sekme" role="tablist" aria-label="Giriş veya kayıt">
+        <button type="button" class="hesap__sek is-active" data-sek="giris" role="tab" aria-selected="true">
+          Giriş yap
+        </button>
+        <button type="button" class="hesap__sek" data-sek="kayit" role="tab" aria-selected="false">
+          Hesap oluştur
+        </button>
+      </div>
+
+      <form class="hesap__form" id="hesap-form" novalidate>
+        <label class="hesap__alan" data-alan="kadi">
+          <span class="hesap__etiket">Kullanıcı adı</span>
+          <input
+            class="hesap__girdi"
+            name="kadi"
+            type="text"
+            autocomplete="username"
+            autocapitalize="none"
+            spellcheck="false"
+            maxlength="24"
+            placeholder="ör. ahmet_y"
+            required
+          />
+          <span class="hesap__ipucu">3-24 karakter; harf, rakam, nokta veya alt çizgi.</span>
+        </label>
+
+        <label class="hesap__alan" data-alan="ad" hidden>
+          <span class="hesap__etiket">Görünen ad</span>
+          <input
+            class="hesap__girdi"
+            name="ad"
+            type="text"
+            autocomplete="nickname"
+            maxlength="40"
+            placeholder="Yorumlarda görünecek ad"
+          />
+          <span class="hesap__ipucu">Boş bırakırsan kullanıcı adın görünür.</span>
+        </label>
+
+        <label class="hesap__alan">
+          <span class="hesap__etiket">Şifre</span>
+          <input
+            class="hesap__girdi"
+            name="sifre"
+            type="password"
+            autocomplete="current-password"
+            minlength="6"
+            maxlength="72"
+            placeholder="En az 6 karakter"
+            required
+          />
+        </label>
+
+        <button type="submit" class="hesap__gonder" id="hesap-gonder">Giriş yap</button>
+        <p class="hesap__durum" id="hesap-durum" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="hesap__not">
+        E-posta istemiyoruz, doğrulama yok. Şifren yalnızca şifrelenmiş (bcrypt)
+        olarak Supabase'de saklanır.
+      </p>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .hesap {
+    max-width: 480px;
+    margin: 40px auto 60px;
+  }
+  .hesap__kart {
+    padding: 26px 24px 22px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+  }
+  .hesap__ust {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .hesap__marka {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 13px;
+    background: var(--red-grad, var(--brand-grad));
+    color: #fff;
+    font-weight: 900;
+    font-size: 1.3rem;
+  }
+  .hesap__baslik {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+  .hesap__alt {
+    margin: 3px 0 0;
+    font-size: 0.86rem;
+    color: var(--text-2);
+    line-height: 1.45;
+  }
+  .hesap__kapali {
+    margin: 0 0 16px;
+    padding: 12px 14px;
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    font-size: 0.84rem;
+    color: var(--text-2);
+    line-height: 1.5;
+  }
+  .hesap__kapali code {
+    font-size: 0.8rem;
+  }
+  .hesap__sekme {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    padding: 5px;
+    margin-bottom: 18px;
+    border-radius: 13px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+  }
+  .hesap__sek {
+    padding: 9px 10px;
+    border: 0;
+    border-radius: 9px;
+    background: transparent;
+    color: var(--text-2);
+    font: inherit;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.18s var(--ease), color 0.18s var(--ease);
+  }
+  .hesap__sek.is-active {
+    background: var(--surface);
+    color: var(--brand);
+    box-shadow: 0 6px 16px -12px rgba(0, 0, 0, 0.6);
+  }
+  .hesap__form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .hesap__alan {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .hesap__alan[hidden] {
+    display: none;
+  }
+  .hesap__etiket {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--text-2);
+    letter-spacing: 0.01em;
+  }
+  .hesap__girdi {
+    width: 100%;
+    padding: 11px 13px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: var(--bg);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.95rem;
+  }
+  .hesap__girdi:focus {
+    outline: none;
+    border-color: var(--brand);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 16%, transparent);
+  }
+  .hesap__ipucu {
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+  .hesap__gonder {
+    margin-top: 4px;
+    padding: 12px 18px;
+    border: 0;
+    border-radius: 12px;
+    background: var(--brand-grad);
+    color: #fff;
+    font: inherit;
+    font-weight: 800;
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: 0 14px 26px -16px var(--brand-glow);
+  }
+  .hesap__gonder:hover {
+    filter: brightness(1.05);
+  }
+  .hesap__gonder:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+  .hesap__durum {
+    margin: 0;
+    min-height: 1.1em;
+    font-size: 0.84rem;
+    color: var(--text-2);
+  }
+  .hesap__durum--hata {
+    color: var(--brand-ink, #b3121a);
+  }
+  .hesap__not {
+    margin: 16px 0 0;
+    font-size: 0.76rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var H = window.HaberinAi;
+    var form = document.getElementById("hesap-form");
+    var durum = document.getElementById("hesap-durum");
+    var gonder = document.getElementById("hesap-gonder");
+    if (!form) return;
+
+    // Zaten girişliyse doğrudan profile.
+    if (H && H.oturumOku && H.oturumOku()) {
+      location.replace("/profil/");
+      return;
+    }
+
+    var mod = "giris";
+    var sekler = [].slice.call(document.querySelectorAll(".hesap__sek"));
+    var adAlan = form.querySelector('[data-alan="ad"]');
+
+    function modAyarla(yeni) {
+      mod = yeni;
+      for (var i = 0; i < sekler.length; i++) {
+        var aktif = sekler[i].dataset.sek === yeni;
+        sekler[i].classList.toggle("is-active", aktif);
+        sekler[i].setAttribute("aria-selected", String(aktif));
+      }
+      if (adAlan) adAlan.hidden = yeni !== "kayit";
+      var sifre = form.querySelector('[name="sifre"]');
+      if (sifre) sifre.setAttribute("autocomplete", yeni === "kayit" ? "new-password" : "current-password");
+      if (gonder) gonder.textContent = yeni === "kayit" ? "Hesap oluştur" : "Giriş yap";
+      durum.textContent = "";
+      durum.classList.remove("hesap__durum--hata");
+    }
+    for (var i = 0; i < sekler.length; i++) {
+      sekler[i].addEventListener("click", function () {
+        modAyarla(this.dataset.sek);
+      });
+    }
+
+    function yaz(mesaj, hata) {
+      durum.textContent = mesaj || "";
+      durum.classList.toggle("hesap__durum--hata", Boolean(hata));
+    }
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      if (!H || !H.aktif || !H.aktif()) {
+        yaz("Hesap servisi ayarlı değil.", true);
+        return;
+      }
+      var kadi = (form.querySelector('[name="kadi"]').value || "").trim();
+      var sifre = form.querySelector('[name="sifre"]').value || "";
+      var ad = (form.querySelector('[name="ad"]').value || "").trim();
+      if (kadi.length < 3) { yaz("Kullanıcı adı en az 3 karakter olmalı.", true); return; }
+      if (sifre.length < 6) { yaz("Şifre en az 6 karakter olmalı.", true); return; }
+
+      gonder.disabled = true;
+      yaz(mod === "kayit" ? "Hesap oluşturuluyor…" : "Giriş yapılıyor…");
+      try {
+        var r = mod === "kayit" ? await H.kayitOl(kadi, sifre, ad) : await H.girisYap(kadi, sifre);
+        if (r && r.hata) {
+          yaz(r.hata, true);
+          return;
+        }
+        yaz("Tamam ✓ Yönlendiriliyorsun…");
+        location.href = "/profil/";
+      } catch (err) {
+        yaz("Bir şeyler ters gitti. Tekrar dene.", true);
+      } finally {
+        gonder.disabled = false;
+      }
+    });
+  })();
+</script>

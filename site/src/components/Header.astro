@@ -76,6 +76,10 @@ const isActive = (href) =>
         </div>
         <div class="searchbox__drop" id="search-drop" role="listbox" aria-label="Arama önerileri" hidden></div>
       </form>
+      <a class="hesap-btn" href="/hesap/" data-hesap aria-label="Hesabım">
+        <span class="hesap-btn__ikon" data-hesap-ikon aria-hidden="true"></span>
+        <span class="hesap-btn__yazi" data-hesap-ad>Giriş</span>
+      </a>
       <Bildirim />
       <button
         class="theme-toggle"
@@ -540,6 +544,48 @@ const isActive = (href) =>
     flex-shrink: 0;
   }
 
+  /* --- Hesap düğmesi (giriş / profil) --- */
+  .hesap-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    height: 40px;
+    padding: 0 13px 0 10px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: var(--surface-2);
+    color: var(--text-2);
+    font-size: 0.86rem;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: background 0.2s var(--ease), color 0.2s var(--ease),
+      border-color 0.2s var(--ease), transform 0.2s var(--ease);
+  }
+  .hesap-btn:hover {
+    color: var(--brand);
+    border-color: var(--brand);
+    background: var(--brand-soft);
+    transform: translateY(-1px);
+  }
+  .hesap-btn__ikon {
+    display: none;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 999px;
+    background: var(--brand-grad);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 900;
+  }
+  .hesap-btn.is-uye .hesap-btn__ikon {
+    display: grid;
+    margin-left: -4px;
+  }
+  .hesap-btn.is-uye {
+    color: var(--text);
+  }
+
   .searchbox {
     position: relative;
     display: flex;
@@ -806,6 +852,14 @@ const isActive = (href) =>
     .theme-toggle {
       width: 44px;
       height: 44px;
+    }
+    /* Hesap düğmesi dar ekranda yalnızca ikon/baş harf gösterir. */
+    .hesap-btn {
+      height: 44px;
+      padding: 0 10px;
+    }
+    .hesap-btn__yazi {
+      display: none;
     }
     /* Çok dar ekranda açılan arama kutusu logoya taşmasın */
     .searchbox.is-open .searchbox__field,

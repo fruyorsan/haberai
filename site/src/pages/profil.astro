@@ -1,0 +1,618 @@
+---
+import Base from "../layouts/Base.astro";
+import { HESAP, KATEGORILER } from "../lib/site-meta.js";
+
+const hazir = Boolean(HESAP.url && HESAP.anahtar);
+---
+
+<Base
+  title="Profilim — HaberinAi"
+  description="Hesabın: ilgi alanlarını seç, bildirim konularını yönet, yorumlarını gör."
+  noindex
+>
+  <div class="container profil">
+    {!hazir && (
+      <p class="profil__kapali">
+        Hesap servisi henüz ayarlı değil. Yönetici <code>supabase/hesap.sql</code>
+        dosyasını çalıştırmalı.
+      </p>
+    )}
+
+    {/* Giriş yapılmamışsa */}
+    <div class="profil__giris" id="profil-giris" hidden>
+      <h1>Profil için giriş gerekli</h1>
+      <p>İlgi alanlarını seçmek, bildirimlerini yönetmek ve yorumlarını görmek için hesabına gir.</p>
+      <a class="profil__btn" href="/hesap/">Giriş yap / Hesap oluştur</a>
+    </div>
+
+    {/* Giriş yapılmışsa */}
+    <div id="profil-icerik" hidden>
+      <header class="profil__ust">
+        <span class="profil__avatar" id="profil-avatar" aria-hidden="true"></span>
+        <div class="profil__kim">
+          <h1 id="profil-ad">Profilim</h1>
+          <p class="profil__kadi" id="profil-kadi"></p>
+        </div>
+        <button type="button" class="profil__cikis" id="profil-cikis">Çıkış yap</button>
+      </header>
+
+      <section class="profil__blok">
+        <h2 class="profil__h2">Görünen ad</h2>
+        <p class="profil__aciklama">Yorumlarında bu ad görünür.</p>
+        <div class="profil__satir">
+          <input class="profil__girdi" id="profil-ad-girdi" type="text" maxlength="40" placeholder="Adın" />
+          <button type="button" class="profil__btn profil__btn--kucuk" id="profil-ad-kaydet">Kaydet</button>
+        </div>
+      </section>
+
+      <section class="profil__blok">
+        <h2 class="profil__h2">İlgi alanların</h2>
+        <p class="profil__aciklama">
+          Seçtiğin konular Shorts akışında “Sana özel” sıralamada öne çıkar ve
+          ana sayfada önerilir. İstediğin kadar seçebilirsin.
+        </p>
+        <div class="profil__cipler" id="profil-ilgi">
+          {KATEGORILER.map((k) => (
+            <button type="button" class="profil__cip" data-ilgi={k.slug} aria-pressed="false">
+              {k.ad}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <section class="profil__blok">
+        <h2 class="profil__h2">Bildirim konuların</h2>
+        <p class="profil__aciklama">
+          Yalnızca seçtiğin konulardan bildirim alırsın; seçmezsen yalnızca son
+          dakika haberleri gelir.
+        </p>
+        <div class="profil__cipler" id="profil-bildirim">
+          {KATEGORILER.map((k) => (
+            <button type="button" class="profil__cip" data-bildirim={k.slug} aria-pressed="false">
+              {k.ad}
+            </button>
+          ))}
+        </div>
+
+        <div class="profil__bildirim-durum" id="profil-bildirim-durum">
+          <span class="profil__nokta" id="profil-nokta" aria-hidden="true"></span>
+          <span id="profil-bildirim-yazi">Bildirim durumu kontrol ediliyor…</span>
+        </div>
+
+        <div class="profil__islem">
+          <button type="button" class="profil__btn profil__btn--kucuk" id="profil-bildirim-ac">
+            Bildirimleri aç
+          </button>
+          <button type="button" class="profil__btn profil__btn--kucuk profil__btn--ghost" id="profil-bildirim-test">
+            Deneme bildirimi
+          </button>
+          <span class="profil__mini" id="profil-mini" role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="profil__blok">
+        <h2 class="profil__h2">Okuma listesi</h2>
+        <p class="profil__aciklama">
+          Kaydettiğin haberler hesabında saklanır; başka bir cihazdan girdiğinde
+          de listende durur.
+        </p>
+        <ul class="profil__yorumlar" id="profil-kayitlar"></ul>
+        <p class="profil__bos" id="profil-kayit-bos" hidden>
+          Henüz kaydettiğin haber yok. Haber sayfasındaki yer imi düğmesiyle ekleyebilirsin.
+        </p>
+      </section>
+
+      <section class="profil__blok">
+        <h2 class="profil__h2">Yorumların</h2>
+        <ul class="profil__yorumlar" id="profil-yorumlar"></ul>
+        <p class="profil__bos" id="profil-yorum-bos" hidden>Henüz yorumun yok.</p>
+      </section>
+
+      <div class="profil__kaydet-satir">
+        <button type="button" class="profil__btn" id="profil-kaydet">Tercihleri kaydet</button>
+        <span class="profil__mini" id="profil-durum" role="status" aria-live="polite"></span>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .profil {
+    max-width: 720px;
+    margin: 36px auto 70px;
+  }
+  .profil__kapali {
+    padding: 12px 14px;
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    font-size: 0.85rem;
+    color: var(--text-2);
+  }
+  .profil__giris {
+    padding: 32px 24px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--surface);
+    text-align: center;
+  }
+  .profil__giris h1 {
+    font-size: 1.35rem;
+    margin-bottom: 6px;
+  }
+  .profil__giris p {
+    color: var(--text-2);
+    font-size: 0.92rem;
+    margin-bottom: 18px;
+  }
+  .profil__ust {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 20px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--surface);
+    margin-bottom: 18px;
+  }
+  .profil__avatar {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: 999px;
+    background: var(--brand-grad);
+    color: #fff;
+    font-weight: 900;
+    font-size: 1.3rem;
+  }
+  .profil__kim {
+    min-width: 0;
+    flex: 1;
+  }
+  .profil__kim h1 {
+    margin: 0;
+    font-size: 1.2rem;
+    letter-spacing: -0.02em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .profil__kadi {
+    margin: 2px 0 0;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .profil__blok {
+    padding: 18px 20px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+    margin-bottom: 16px;
+  }
+  .profil__h2 {
+    margin: 0 0 4px;
+    font-size: 1rem;
+    font-weight: 900;
+  }
+  .profil__aciklama {
+    margin: 0 0 12px;
+    font-size: 0.83rem;
+    color: var(--text-2);
+    line-height: 1.5;
+  }
+  .profil__satir {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .profil__girdi {
+    flex: 1;
+    min-width: 180px;
+    padding: 10px 13px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: var(--bg);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.92rem;
+  }
+  .profil__girdi:focus {
+    outline: none;
+    border-color: var(--brand);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 16%, transparent);
+  }
+  .profil__cipler {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .profil__cip {
+    padding: 8px 14px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface-2);
+    color: var(--text-2);
+    font: inherit;
+    font-size: 0.84rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.16s var(--ease), color 0.16s var(--ease), border-color 0.16s var(--ease);
+  }
+  .profil__cip:hover {
+    border-color: var(--brand);
+  }
+  .profil__cip.is-on {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: #fff;
+  }
+  .profil__bildirim-durum {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 14px 0 10px;
+    font-size: 0.86rem;
+    color: var(--text-2);
+  }
+  .profil__nokta {
+    width: 9px;
+    height: 9px;
+    border-radius: 999px;
+    background: var(--muted);
+    flex-shrink: 0;
+  }
+  .profil__nokta.is-on {
+    background: #16a34a;
+    box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.18);
+  }
+  .profil__nokta.is-engel {
+    background: #dc2626;
+    box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.18);
+  }
+  .profil__islem {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+  .profil__btn {
+    display: inline-block;
+    padding: 11px 18px;
+    border: 0;
+    border-radius: 12px;
+    background: var(--brand-grad);
+    color: #fff;
+    font: inherit;
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 14px 26px -16px var(--brand-glow);
+  }
+  .profil__btn:hover {
+    filter: brightness(1.05);
+  }
+  .profil__btn:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+  .profil__btn--kucuk {
+    padding: 9px 15px;
+    font-size: 0.85rem;
+  }
+  .profil__btn--ghost {
+    background: var(--surface-2);
+    color: var(--text);
+    border: 1px solid var(--border);
+    box-shadow: none;
+  }
+  .profil__cikis {
+    padding: 9px 15px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: var(--surface-2);
+    color: var(--text-2);
+    font: inherit;
+    font-size: 0.84rem;
+    font-weight: 700;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .profil__cikis:hover {
+    border-color: var(--brand);
+    color: var(--brand);
+  }
+  .profil__yorumlar {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .profil__yorum {
+    padding: 11px 13px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg);
+  }
+  .profil__yorum a {
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: var(--brand);
+    text-decoration: none;
+  }
+  .profil__yorum p {
+    margin: 5px 0 0;
+    font-size: 0.88rem;
+    color: var(--text-2);
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  .profil__yorum time {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+  .profil__bos {
+    margin: 0;
+    font-size: 0.86rem;
+    color: var(--text-2);
+  }
+  .profil__kaydet-satir {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+  }
+  .profil__mini {
+    font-size: 0.82rem;
+    color: var(--text-2);
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var H = window.HaberinAi;
+    var giris = document.getElementById("profil-giris");
+    var icerik = document.getElementById("profil-icerik");
+    if (!H || !icerik) return;
+
+    var u = H.oturumOku ? H.oturumOku() : null;
+    if (!u) {
+      if (giris) giris.hidden = false;
+      icerik.hidden = true;
+      return;
+    }
+    icerik.hidden = false;
+
+    var ilgiSecim = new Set(u.ilgi || []);
+    var bildirimSecim = new Set(u.bildirim_ilgi || []);
+
+    var avatar = document.getElementById("profil-avatar");
+    var adEl = document.getElementById("profil-ad");
+    var kadiEl = document.getElementById("profil-kadi");
+    var adGirdi = document.getElementById("profil-ad-girdi");
+    var durumEl = document.getElementById("profil-durum");
+
+    if (avatar) avatar.textContent = (u.ad || "?").trim().charAt(0).toLocaleUpperCase("tr");
+    if (adEl) adEl.textContent = u.ad;
+    if (kadiEl) kadiEl.textContent = "@" + u.kadi;
+    if (adGirdi) adGirdi.value = u.ad;
+
+    function cizCip(kap, kunye, secim) {
+      var cipler = document.querySelectorAll("[" + kunye + "]");
+      for (var i = 0; i < cipler.length; i++) {
+        var acik = secim.has(cipler[i].getAttribute(kunye));
+        cipler[i].classList.toggle("is-on", acik);
+        cipler[i].setAttribute("aria-pressed", acik ? "true" : "false");
+      }
+    }
+    function ciz() {
+      cizCip(null, "data-ilgi", ilgiSecim);
+      cizCip(null, "data-bildirim", bildirimSecim);
+    }
+
+    function cipTikla(kunye, secim) {
+      return function () {
+        var s = this.getAttribute(kunye);
+        if (secim.has(s)) secim.delete(s);
+        else secim.add(s);
+        ciz();
+      };
+    }
+    [].forEach.call(document.querySelectorAll("[data-ilgi]"), function (c) {
+      c.addEventListener("click", cipTikla("data-ilgi", ilgiSecim));
+    });
+    [].forEach.call(document.querySelectorAll("[data-bildirim]"), function (c) {
+      c.addEventListener("click", cipTikla("data-bildirim", bildirimSecim));
+    });
+    ciz();
+
+    function durum(mesaj) {
+      if (durumEl) durumEl.textContent = mesaj || "";
+    }
+
+    // --- Kaydet ---
+    var kaydet = document.getElementById("profil-kaydet");
+    kaydet &&
+      kaydet.addEventListener("click", async function () {
+        kaydet.disabled = true;
+        durum("Kaydediliyor…");
+        try {
+          var r = await H.profilGuncelle({
+            ad: (adGirdi && adGirdi.value.trim()) || u.ad,
+            ilgi: Array.from(ilgiSecim),
+            bildirim_ilgi: Array.from(bildirimSecim),
+          });
+          if (r && r.hata) {
+            durum(r.hata);
+            return;
+          }
+          u = H.oturumOku();
+          if (adEl) adEl.textContent = u.ad;
+          if (avatar) avatar.textContent = (u.ad || "?").trim().charAt(0).toLocaleUpperCase("tr");
+          await H.pushEsle(u);
+          durum("Kaydedildi ✓ İlgi alanların akışına ve bildirimlerine uygulandı.");
+        } catch (e) {
+          durum("Kaydedilemedi, tekrar dene.");
+        } finally {
+          kaydet.disabled = false;
+        }
+      });
+
+    // Görünen adı tek başına kaydet
+    var adKaydet = document.getElementById("profil-ad-kaydet");
+    adKaydet &&
+      adKaydet.addEventListener("click", async function () {
+        adKaydet.disabled = true;
+        durum("Kaydediliyor…");
+        try {
+          var r = await H.profilGuncelle({ ad: (adGirdi && adGirdi.value.trim()) || u.ad });
+          if (r && r.hata) { durum(r.hata); return; }
+          u = H.oturumOku();
+          if (adEl) adEl.textContent = u.ad;
+          if (avatar) avatar.textContent = (u.ad || "?").trim().charAt(0).toLocaleUpperCase("tr");
+          durum("Adın güncellendi ✓");
+        } catch (e) {
+          durum("Güncellenemedi.");
+        } finally {
+          adKaydet.disabled = false;
+        }
+      });
+
+    // --- Çıkış ---
+    var cikis = document.getElementById("profil-cikis");
+    cikis &&
+      cikis.addEventListener("click", async function () {
+        cikis.disabled = true;
+        try { await H.cikisYap(); } catch (e) {}
+        location.href = "/";
+      });
+
+    // --- Bildirim durumu ---
+    var nokta = document.getElementById("profil-nokta");
+    var belYazi = document.getElementById("profil-bildirim-yazi");
+    var mini = document.getElementById("profil-mini");
+    var belAc = document.getElementById("profil-bildirim-ac");
+    var belTest = document.getElementById("profil-bildirim-test");
+    var P = window.HaberinaiPush;
+
+    function belCiz() {
+      var izin = typeof Notification !== "undefined" ? Notification.permission : "yok";
+      if (nokta) nokta.classList.remove("is-on", "is-engel");
+      if (izin === "granted") {
+        if (nokta) nokta.classList.add("is-on");
+        if (belYazi) belYazi.textContent = "Bildirimler açık — bu cihaz yeni haberleri alıyor.";
+        if (belAc) belAc.textContent = "Bildirimleri yenile";
+        if (belTest) belTest.hidden = false;
+      } else if (izin === "denied") {
+        if (nokta) nokta.classList.add("is-engel");
+        if (belYazi) {
+          belYazi.textContent =
+            "İzin engellenmiş. Adres çubuğunun yanındaki simge → İzinler → Bildirimler → İzin ver, sonra sayfayı yenile.";
+        }
+        if (belAc) belAc.textContent = "Nasıl açılır?";
+        if (belTest) belTest.hidden = true;
+      } else if (P && P.iosKuruluDegil && P.iosKuruluDegil()) {
+        if (belYazi) belYazi.textContent = "iPhone: Paylaş → Ana Ekrana Ekle, sonra o ikondan aç.";
+        if (belAc) belAc.textContent = "Nasıl?";
+        if (belTest) belTest.hidden = true;
+      } else {
+        if (belYazi) belYazi.textContent = "Bildirimler kapalı — “Bildirimleri aç”a dokun.";
+        if (belAc) belAc.textContent = "Bildirimleri aç";
+        if (belTest) belTest.hidden = true;
+      }
+    }
+    belCiz();
+
+    belAc &&
+      belAc.addEventListener("click", async function () {
+        if (P && P.izinSor) P.izinSor(); // dokunuşun İÇİNDE
+        if (typeof Notification !== "undefined" && Notification.permission === "denied") {
+          if (mini) mini.textContent = "İzin tarayıcıda engelli; yukarıdaki adımları izle.";
+          belCiz();
+          return;
+        }
+        if (P && P.aboneBaslat) {
+          if (mini) mini.textContent = "Açılıyor…";
+          var oldu = await P.aboneBaslat();
+          await H.pushEsle(H.oturumOku());
+          if (mini) mini.textContent = oldu ? "Bildirimler açıldı ✓" : "Açılamadı; izni kontrol et.";
+          if (oldu && P.hosgeldinBildirimi) await P.hosgeldinBildirimi();
+        }
+        belCiz();
+      });
+
+    belTest &&
+      belTest.addEventListener("click", async function () {
+        if (!P || !P.testBildirim) return;
+        var gitti = await P.testBildirim();
+        if (mini) mini.textContent = gitti ? "Deneme bildirimi gönderildi ✓" : "Gösterilemedi.";
+      });
+
+    // --- Okuma listesi ---
+    var kListe = document.getElementById("profil-kayitlar");
+    var kBos = document.getElementById("profil-kayit-bos");
+    if (H.kayitlar) {
+      H.kayitlar().then(function (gelen) {
+        var veri = Array.isArray(gelen) ? gelen : [];
+        if (!kListe) return;
+        kListe.textContent = "";
+        if (!veri.length) {
+          if (kBos) kBos.hidden = false;
+          return;
+        }
+        if (kBos) kBos.hidden = true;
+        veri.forEach(function (k) {
+          var li = document.createElement("li");
+          li.className = "profil__yorum";
+          var a = document.createElement("a");
+          a.href = "/haber/" + k.slug + "/";
+          a.textContent = k.baslik || "Habere git →";
+          var t = document.createElement("time");
+          try {
+            t.textContent = new Date(k.created_at).toLocaleString("tr-TR");
+          } catch (e) {
+            t.textContent = "";
+          }
+          li.append(a, t);
+          kListe.appendChild(li);
+        });
+      });
+    }
+
+    // --- Yorumlarım ---
+    var liste = document.getElementById("profil-yorumlar");    var bos = document.getElementById("profil-yorum-bos");
+    H.yorumlarim().then(function (liste2) {
+      if (!liste) return;
+      var veri = Array.isArray(liste2) ? liste2 : [];
+      liste.textContent = "";
+      if (!veri.length) {
+        if (bos) bos.hidden = false;
+        return;
+      }
+      if (bos) bos.hidden = true;
+      veri.forEach(function (y) {
+        var li = document.createElement("li");
+        li.className = "profil__yorum";
+        var a = document.createElement("a");
+        a.href = "/haber/" + y.slug + "/";
+        a.textContent = "Habere git →";
+        var p = document.createElement("p");
+        p.textContent = y.metin;
+        var t = document.createElement("time");
+        try {
+          t.textContent = new Date(y.created_at).toLocaleString("tr-TR");
+        } catch (e) {
+          t.textContent = "";
+        }
+        li.append(a, p, t);
+        liste.appendChild(li);
+      });
+    });
+  })();
+</script>

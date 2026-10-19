@@ -39,6 +39,7 @@ const delay = Math.min(index * 45, 320);
 
 <article
   class:list={["card", `card--${size}`, !kapak && "card--nofoto"]}
+  data-kat={article.categorySlug}
   data-reveal={reveal ? "" : undefined}
   style={reveal ? `transition-delay:${delay}ms` : undefined}
 >
