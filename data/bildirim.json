@@ -1,14 +1,15 @@
 {
-  "updatedAt": "2026-10-18T23:30:16.815Z",
+  "updatedAt": "2026-10-19T04:02:20.011Z",
   "gun": "2026-10-19",
   "gunSayi": {
     "son": 6,
-    "kategori": 0
+    "kategori": 1
   },
   "sonKategori": {
     "spor": "2026-10-18T09:18:18.956Z",
     "gundem": "2026-10-18T09:20:34.648Z",
-    "dunya": "2026-10-18T09:21:19.109Z"
+    "dunya": "2026-10-18T09:21:19.109Z",
+    "ekonomi": "2026-10-19T04:02:20.011Z"
   },
   "sent": [
     "eea44f4fa34f30ba",
@@ -25,7 +26,8 @@
     "2f5bcefdffa282c8",
     "19b8eab7253d43d5",
     "f84a6d8f96ecbaed",
-    "2420a53f92257fe7"
+    "2420a53f92257fe7",
+    "55e235337c14fc3d"
   ],
   "hosGeldin": false
 }
