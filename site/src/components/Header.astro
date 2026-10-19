@@ -335,7 +335,12 @@ const isActive = (href) =>
         window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       // Modern View Transitions API: Tıklanan buton odaklı dairesel yayılma animasyonu (60/120 FPS)
-      if (document.startViewTransition && !reduce) {
+      // Sekme görünmüyorsa (prerender/arka plan) animasyon kurulmaz, palet yine de uygulanır.
+      if (
+        document.startViewTransition &&
+        !reduce &&
+        document.visibilityState === "visible"
+      ) {
         const rect = themeToggle.getBoundingClientRect();
         const x = event.clientX && event.clientX > 0 ? event.clientX : rect.left + rect.width / 2;
         const y = event.clientY && event.clientY > 0 ? event.clientY : rect.top + rect.height / 2;
