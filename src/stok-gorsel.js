@@ -151,16 +151,16 @@ function uygunGorsel(sayfa, sorgu) {
   const yazar =
     duzMetin(meta.Artist?.value) || duzMetin(meta.Credit?.value) || "Wikimedia Commons";
 
-  // Alaka: dosya adı + açıklama. Açıklama, dosyanın ne olduğunu yazar
-  // ("8 Nisan 2017 Trabzonspor - Beşiktaş karşılaşması..."), bu yüzden dosya
-  // adı eşleşmese de doğru fotoğrafı yakalar.
+  // Alaka: ÖNCE dosya adı. Dosya adı sorgudaki tek bir sözcüğü bile
+  // içermiyorsa fotoğraf kapak olamaz: Commons araması konu bulamadığında
+  // açıklaması "municipality office" geçen Macar bir binayı, "stadium" geçen
+  // Polonya stadını getirebiliyor (Türkiye haberi için yanlış bağlam).
   const aciklama = duzMetin(meta.ImageDescription?.value, 600);
-  const puan = alaka(`${baslik} ${aciklama}`, sorgu);
-
-  // KONU DIŞI FOTOĞRAF GÖSTERME: Commons araması, konu bulunamadığında
-  // tamamen alakasız dosyalar döndürebiliyor (borsa haberi yerine konser
-  // fotoğrafı). Sorgu sözcüklerinin en az üçte biri geçmiyorsa aday elenir.
-  if (puan < 0.3) return null;
+  const dosyaPuan = alaka(baslik, sorgu);
+  if (dosyaPuan <= 0) return null;
+  // Açıklama uyumu sıralamayı iyileştirir ("Medical Park Stadyumu" açıklaması
+  // "Trabzonspor - Beşiktaş" der → öne çıkar) ama tek başına yeterli değildir.
+  const puan = dosyaPuan + 0.5 * alaka(aciklama, sorgu);
 
   // Sıralama: konu uyumu. Eşitlikte Commons'ın KENDİ arama sırası korunur
   // (sort kararlıdır) — motor dosya kategorilerini de gördüğü için isabetli.
@@ -179,6 +179,16 @@ function uygunGorsel(sayfa, sorgu) {
     dosya: baslik,
     skor,
   };
+}
+
+/**
+ * AI'nın uzun sorgusunun "geniş" hâli: ilk iki sözcük.
+ * ("flooded street cars Istanbul" → "flooded street"). Commons'ta tam sorgu
+ * dosya adıyla eşleşmezse bu geniş hâl çoğu zaman konuya uygun fotoğraf bulur.
+ */
+export function kisaSorgu(sorgu) {
+  const w = String(sorgu || "").trim().split(/\s+/).filter(Boolean);
+  return w.length > 2 ? w.slice(0, 2).join(" ") : "";
 }
 
 /**
@@ -246,7 +256,9 @@ export const KATEGORI_SORGU = {
   Ekonomi: "stock market trading floor",
   Spor: "football stadium floodlights",
   Gündem: "Istanbul street city",
-  Dünya: "earth from space",
+  // "earth from space" dünya haberlerine uzay fotoğrafı koyuyordu (Paris
+  // protestosu → Artemis II). Nötr, haber görünümlü bir sahne daha uygun.
+  Dünya: "international airport terminal passengers",
   Diğer: "newspaper reading",
 };
 
