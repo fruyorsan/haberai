@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-hidden="true">
+<defs>
+<linearGradient id="g-serit" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#16262a"/>
+<stop offset="1" stop-color="#4c7278"/>
+</linearGradient>
+<clipPath id="k-serit"><circle cx="48" cy="48" r="48"/></clipPath>
+</defs>
+<g clip-path="url(#k-serit)">
+<rect width="96" height="96" fill="url(#g-serit)"/>
+
+<path d="M-8 30C24 30 28 66 64 66s32-20 42-20" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="7" stroke-linecap="round"/>
+<path d="M-8 46C24 46 28 82 64 82s32-20 42-20" fill="none" stroke="#fff" stroke-opacity=".24" stroke-width="7" stroke-linecap="round"/>
+<path d="M-8 14C24 14 28 50 64 50s32-20 42-20" fill="none" stroke="#fff" stroke-opacity=".13" stroke-width="7" stroke-linecap="round"/>
+</g>
+</svg>

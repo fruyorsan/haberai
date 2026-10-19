@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-hidden="true">
+<defs>
+<linearGradient id="g-dalga" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#12324a"/>
+<stop offset="1" stop-color="#3f87ad"/>
+</linearGradient>
+<clipPath id="k-dalga"><circle cx="48" cy="48" r="48"/></clipPath>
+</defs>
+<g clip-path="url(#k-dalga)">
+<rect width="96" height="96" fill="url(#g-dalga)"/>
+
+<path d="M-10 58C12 40 32 74 54 56S92 36 106 52" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="3" stroke-linecap="round"/>
+<path d="M-10 72C12 54 32 88 54 70S92 50 106 66" fill="none" stroke="#fff" stroke-opacity=".26" stroke-width="3" stroke-linecap="round"/>
+<path d="M-10 44C12 26 32 60 54 42S92 22 106 38" fill="none" stroke="#fff" stroke-opacity=".14" stroke-width="3" stroke-linecap="round"/>
+</g>
+</svg>

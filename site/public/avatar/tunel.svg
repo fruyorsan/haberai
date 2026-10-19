@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-hidden="true">
+<defs>
+<linearGradient id="g-tunel" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#122524"/>
+<stop offset="1" stop-color="#45706e"/>
+</linearGradient>
+<clipPath id="k-tunel"><circle cx="48" cy="48" r="48"/></clipPath>
+</defs>
+<g clip-path="url(#k-tunel)">
+<rect width="96" height="96" fill="url(#g-tunel)"/>
+
+<g fill="none" stroke="#fff" transform="rotate(45 48 48)">
+<rect x="14" y="14" width="68" height="68" rx="10" stroke-opacity=".14" stroke-width="2"/>
+<rect x="25" y="25" width="46" height="46" rx="7" stroke-opacity=".3" stroke-width="2"/>
+<rect x="35" y="35" width="26" height="26" rx="5" stroke-opacity=".5" stroke-width="2"/>
+<rect x="43" y="43" width="10" height="10" rx="2" stroke-opacity=".85" stroke-width="2"/>
+</g>
+</g>
+</svg>
