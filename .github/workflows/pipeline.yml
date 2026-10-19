@@ -18,11 +18,11 @@ on:
 # main'e yapilan kod/site push'lari kuyrukta iptal edilip kaybolmasin.
 concurrency:
   group: haber-hatti-${{ github.ref_name }}
-  # Her tur zaten 5 dakikada bir kendini yeniden tetikliyor ve tur idempotent.
-  # Eskiden "false" idi: GitHub yavaşladığında (19.10.2026'da olduğu gibi) bekleyen
-  # turlar birikiyor, elle tetiklenen Bildirim Testi saatlerce kuyrukta kalıyordu.
-  # Yeni tur eskisini iptal eder; yarım kalan tur bir sonraki turda tamamlanır.
-  cancel-in-progress: true
+  # DIKKAT: "true" DENENMEDI/ALINMADI (19.10.2026). Tur ~5-8 dk sürüyor ve
+  # yayinlama adımı en sonda. Yeni tur eskisini iptal ederse yayın adımı hiç
+  # çalışmaz, site güncellenmez. GitHub yavaşladığında biriken turlar elle
+  # iptal edilir; yeni tur eskisini öldürmez.
+  cancel-in-progress: false
 
 jobs:
   collect:
