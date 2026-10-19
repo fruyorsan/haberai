@@ -1,5 +1,110 @@
 [
   {
+    "id": "732ea2834faa6716",
+    "title": "Apple, iOS 27.2 Release Candidate sürümünü geliştiricilere sundu",
+    "slug": "apple-ios-27-2-release-candidate-surumunu-gelistiricilere-sundu",
+    "summary": "Apple, iOS 27.2 güncellemesinin Release Candidate sürümünü geliştiricilerle paylaştı. Yeni yazılım, Siri dil seçeneklerini genişletirken önümüzdeki hafta kararlı sürümün çıkacağına işaret ediyor.",
+    "keyPoints": [
+      "iOS 27.2 Release Candidate sürümü, dördüncü betadan bir hafta sonra yayınlandı.",
+      "Siri için Fransızca, Japonca, Korece, Portekizce ve İspanyolca dilleri eklendi.",
+      "Apple TV kullanıcı profilleri yenilenirken Apple Music simgesi güncellendi."
+    ],
+    "body": [
+      "Apple, uzun süredir test edilen iOS 27.2 güncellemesinin Release Candidate sürümünü bugün itibarıyla geliştiricilerin erişimine açtı. Dördüncü beta sürümünün yayınlanmasından yalnızca bir hafta sonra gelen bu adım, yazılımın nihai sürüme oldukça yaklaştığını net bir şekilde gösteriyor. Şirket, bu hamleyle eş zamanlı olarak iPadOS 27.2 Release Candidate sürümünü de kullanıcıların incelemesine sundu.",
+      "Kayıtlı geliştiriciler, cihazlarındaki Ayarlar menüsü üzerinden ilgili adımları takip ederek güncelleme paketini sisteme yükleyebiliyorlar. Bu aşama, işletim sistemindeki hataların büyük ölçüde giderildiğini ve genel kullanıma yönelik hazırlıkların tamamlandığını kanıtlıyor. Öncesinde beta sürecinde test edilen yeni Sağlık uygulaması özellikleri ise bu sürümden çıkarılarak ileri tarihteki güncellemelere ertelendi.",
+      "Güncelleme paketiyle birlikte Apple, Siri yapay zekasının dil desteğini kapsamlı biçimde artırıyor. Fransızca, Japonca, Korece, Portekizce ve İspanyolca dillerindeki yetenekler genişletilerek kullanıcılara daha akıcı bir etkileşim deneyimi vadediliyor. Ayrıca Apple TV uygulamasına yeni kullanıcı profilleri eklenirken, Apple Music uygulaması da yenilenen simge tasarımıyla dikkat çekiyor.",
+      "Yıl dönümü bildirimlerini desteklemeye başlayan Çağrı Bağlamı özelliği, günlük iletişimi daha kişisel bir boyuta taşıyor. Ekim ayında hazır olacağı belirtilen yeni dil özelliklerinin ardından kararlı sürümün önümüzdeki günlerde genel kullanıma sunulması bekleniyor."
+    ],
+    "comment": "Yazılım geliştirme sürecinin son aşamasına gelen bu sürüm, Apple'ın yapay zeka entegrasyonundaki bölgesel açılımını hızlandırıyor. Beş farklı dilde gelen Siri yetenekleri, önceki beta adımlarında eksik kalan lokalizasyon açıklarını kapatmayı hedefliyor. Özellikle küresel pazardaki kullanıcı etkileşimini artırmak isteyen şirket, bu güncellemeyle birlikte ekosistem kararlılığını test ediyor. Önümüzdeki hafta genel kullanıma sunulması beklenen nihai sürüm, cihaz sahiplerine daha akıcı bir deneyim sunacak.",
+    "editorNote": "Dördüncü betadan sadece bir hafta sonra gelen Release Candidate sürümü, kararlı dağıtımın çok yakın olduğunu gösteriyor.",
+    "tags": [
+      "Apple",
+      "iOS 27.2",
+      "Siri",
+      "iPadOS",
+      "Yazılım"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "Apple iPhone software update",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/ios-27-2-rc-yayinladi",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/IPhone_13_Pro_and_Apple_Watch.jpg/1920px-IPhone_13_Pro_and_Apple_Watch.jpg",
+    "gorselKaynak": {
+      "yazar": "SimonWaldherr",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:IPhone_13_Pro_and_Apple_Watch.jpg"
+    },
+    "publishedAt": "2026-10-19T17:39:27.000Z",
+    "generatedAt": "2026-10-19T17:40:51.784Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Apple_iPhone.jpg/1920px-Apple_iPhone.jpg",
+        "yazar": "Pangkakit at Japanese Wikipedia",
+        "lisans": "CC BY 2.5",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.5",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Apple_iPhone.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
+    "id": "79d82d6789711037",
+    "title": "Microsoft, Essex veri merkezi projesinden elektrik engeliyle çekildi",
+    "slug": "microsoft-essex-veri-merkezi-projesinden-elektrik-engeliyle-cekildi",
+    "summary": "Microsoft, şebeke bağlantısındaki takvim gecikmeleri sebebiyle Nscale'in Essex'teki yapay zeka veri merkezi projesinden ayrıldı. Kararın ardından tesisin ulusal elektrik altyapısına 2030'lu yıllarda erişebileceği öngörülüyor.",
+    "keyPoints": [
+      "Elektrik şebekesi bağlantısındaki gecikmeler Microsoft'un Essex projesinden çekilmesine yol açtı.",
+      "Proje ilk aşamada 50 megavatlık kapasite ve 23.040 Nvidia grafik işlemcisi hedefliyordu.",
+      "Nscale alternatif enerji kaynaklarını araştırarak Loughton tesisindeki çalışmalarını sürdürmeyi amaçlıyor."
+    ],
+    "body": [
+      "Microsoft, İngiltere'nin Essex bölgesindeki Loughton yerleşkesinde sürdürülen yapay zeka altyapı girişiminden ayrılma kararı aldı. Data Centre Dynamics platformunun aktardığı bilgilere göre bu adımın temel sebebi, tesisin ihtiyaç duyduğu elektrik şebekesi bağlantısındaki takvim gecikmelerinden kaynaklanıyor. Söz konusu hamle şimdilik yalnızca tek bir tesisi ve ilgili anlaşmayı kapsıyor.",
+      "Projenin en büyük müşterisi konumundaki teknoloji devinin ayrılması, tesisin geleceğiyle ilgili soru işaretlerini beraberinde getirdi. Ulusal şebekeden yeterli elektriğin ancak 2030'lu yıllarda alınabilecek olması, başlangıçta planlanan devreye alma hedeflerinden ciddi şekilde sapıldığını gösteriyor. Buna karşın Nscale yetkilileri, Microsoft ile olan genel iş birliğinin devam ettiğini ve Londra genelindeki diğer süreçlerin bu durumdan etkilenmediğini vurguluyor.",
+      "Geçen yıl eylül ayında yapılan resmî duyuruda Loughton yerleşkesi için oldukça iddialı rakamlar paylaşılmıştı. İlk aşamada 23.040 adet Nvidia GB300 grafik işlemcisi barındırması planlanan tesisin 2027'nin ilk çeyreğinde faaliyete geçmesi hedefleniyordu. Tasarım planlarında 50 megavatlık başlangıç kapasitesi ve ilerleyen süreçte 90 megavata kadar büyüme imkânı da yer alıyordu.",
+      "Şirketin güncel altyapı dokümanlarında Loughton tesisi hâlâ yer alırken, sıvı soğutma ve atık ısı gibi çevre dostu teknolojiler öne çıkarılıyor. Ancak donanım yatırımlarından öte, tesisi çalışır duruma getirecek kesin açılış takviminin henüz netleşmemiş olması en büyük engeli oluşturuyor. Nscale, İngiltere'deki alternatif genişleme alanlarını ve farklı enerji çözümlerini değerlendirmeye devam ediyor."
+    ],
+    "comment": "Yapay zeka altyapı yatırımlarında donanım tedariki kadar enerji arzının da ne kadar belirleyici bir faktör olduğu bu kararla netleşti. 2030'lu yıllara sarkan şebeke bağlantı süreleri, milyar dolarlık yapay zeka projelerinin en büyük darboğazının çip değil enerji altyapısı olduğunu gösteriyor. Tesislerin planlanan 50 megavatlık başlangıç kapasitesine ulaşamaması, şirketleri alternatif enerji modellerine yönelmeye mecbur bırakıyor.",
+    "editorNote": "Çipler hazır olsa bile enerji şebekesindeki sarkmalar milyar dolarlık projeleri yıllarca geciktirebiliyor.",
+    "tags": [
+      "Microsoft",
+      "Nscale",
+      "Veri Merkezi",
+      "Yapay Zeka",
+      "İngiltere"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "data center server room",
+    "source": "Teknoblog",
+    "sourceUrl": "https://www.teknoblog.com/microsoft-essex-projesinden-cekildi/",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Una_batteria_di_grossi_generatori_alimentati_a_gasolio_in_un_Data_Center_in_via_di_ultimazione.jpg",
+    "gorselKaynak": {
+      "yazar": "Lapalmauz",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Una_batteria_di_grossi_generatori_alimentati_a_gasolio_in_un_Data_Center_in_via_di_ultimazione.jpg"
+    },
+    "publishedAt": "2026-10-19T17:38:31.000Z",
+    "generatedAt": "2026-10-19T17:41:11.385Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Data_Center_%28UNC%29.jpg/1920px-Data_Center_%28UNC%29.jpg",
+        "yazar": "Ana Las Heras",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Data_Center_(UNC).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/123Net_Data_Center_%28DC2%29.jpg",
+        "yazar": "123net",
+        "lisans": "CC BY-SA 3.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:123Net_Data_Center_(DC2).jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "3ba830436df69e20",
     "title": "Aydın'da bir evde yemek pişerken çıkan yangın itfaiye ile söndürüldü",
     "slug": "aydinda-bir-evde-yemek-piserken-cikan-yangin-itfaiye-ile-sonduruldu",
