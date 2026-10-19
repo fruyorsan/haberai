@@ -52,7 +52,7 @@ const UZAY_SORGU = /\b(space|satellite|nasa|esa|rocket|orbit|uzay|uydu|astronaut
 // sorgu "Mediterranean Sea coastline landscape" olmuş; afet bağlamı kaybolunca
 // sahilde bir manzara fotoğrafı kapak oluyordu.
 const AFET_SORGU =
-  /\b(flood|flooding|earthquake|quake|wildfire|storm|hurricane|typhoon|cyclone|drought|blizzard|avalanche|eruption|tsunami|fire|sel|su baskını|deprem|yangın|fırtına|hortum|kuraklık|heyelan|çığ)\b/i;
+  /\b(flood|flooding|earthquake|quake|wildfire|storm|hurricane|typhoon|cyclone|drought|blizzard|avalanche|eruption|tsunami|fire)\b|(sel|su baskını|deprem|yangın|fırtına|hortum|kuraklık|heyelan|çığ)/i;
 
 // Afet/hava sorgusunda fotoğrafın adında da afet izi olmalı. Yoksa "sahil
 // manzarası" gibi sakin bir kare, "deprem" haberine kapak oluyordu.
