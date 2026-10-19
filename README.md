@@ -41,6 +41,41 @@ Tüm ayarlar `src/config.js` içinde:
 - `maxAgeHours` → bundan eski haberleri atla
 - `model` → Gemini modeli
 
+## Görseller: telif güvenli stok (kaynak fotoğrafı KULLANILMAZ)
+
+Kaynak sitelerin haber fotoğrafları çoğu zaman ajans lisanslıdır (AA, Getty,
+Reuters, DHA...). Atıf yazmak bunu yasal hâle getirmez. Bu yüzden hat, kaynağın
+fotoğrafını **hiç kullanmaz**; her habere Wikimedia Commons'tan **serbest
+lisanslı** (CC0 / kamu malı / CC BY / CC BY-SA) ve habere özel bir fotoğraf
+seçer. Ücretli stok hesabı veya API anahtarı gerekmez.
+
+Akış (`src/stok-gorsel.js`):
+
+1. AI, haber için **İngilizce bir görsel sorgusu** üretir (`gorselSorgu`):
+   "iPhone 17", "Togg T10X", "Galatasaray stadium", "stock market trading floor".
+2. Commons'ta 22 aday aranır; şunlar elenir: serbest olmayan lisans (GFDL,
+   fair use), dikey/kare veya çok küçük görseller (min 1000×560), logo/harita/
+   ekran görüntüsü/eski arşiv taramaları, JPEG dışı dosyalar.
+3. Kalanlar başlık-alaka + çözünürlük puanına göre sıralanır; **1 kapak + 2
+   gövde içi** fotoğraf seçilir. Aynı kare arşivde başka habere kapak olmaz.
+4. Fotoğrafın **fotoğrafçısı, lisansı ve Commons dosya sayfası** habere yazılır
+   (`gorselKaynak` / `gorselEk`). Sitede atıf olarak gösterilir:
+   kapakta "Fotoğraf: X · CC BY-SA 4.0 · Wikimedia Commons", gövde
+   fotoğraflarında lisans ve dosya sayfası **tıklanabilir**.
+5. Hiç uygun fotoğraf bulunamazsa kategorinin doğrulanmış yedek görseli
+   kullanılır: haber **asla fotoğrafsız/brandalı yer tutucuyla kalmaz**.
+
+Eski (kaynak fotoğraflı) haberler `npm run backfill` sırasında tur tur temizlenir:
+`GORSEL_BACKFILL_LIMIT` (varsayılan 10/saat) kadar habere AI'dan yalnızca kısa
+bir sorgu sorulur (tam makale üretilmez, kota az harcanır). Güvenilir fotoğraf
+bulunamazsa **eski fotoğrafa dokunulmaz** ve 30 gün sonra yeniden denenir —
+yanlış/ilgisiz fotoğraf göstermektense mevcut fotoğrafı korumak yeğdir.
+
+Site tarafı (`site/src/lib/kapak.js`): stok fotoğraflar `gorselKaynak` alanından
+tanınır; "dosya adı Türkçe başlıkla eşleşmiyor" süzgeci onlara uygulanmaz
+(Commons dosya adları Türkçe başlıkla eşleşmez). Politika metni:
+`/telif/` sayfasındaki **Görseller** bölümü.
+
 ## Son dakika (hızlı şerit)
 
 Amaç: yeni çıkan önemli/bomba haberleri normal akıştan **önce** yakalayıp işlemek.
@@ -112,7 +147,9 @@ uygulanır; yani son dakika şeridine çöp başlık düşemez.
 ### Arşiv yenileme
 
 `.github/workflows/backfill.yml` her 10 dakikada bir, gövdesi veya `editorNote` alanı eksik
-olan eski haberleri otomatik yeniler (tur başına `BACKFILL_LIMIT=4` haber). Eski haberler
+olan eski haberleri otomatik yeniler (tur başına `BACKFILL_LIMIT=4` haber). Aynı turda
+kaynak fotoğraflı eski haberlerden `GORSEL_BACKFILL_LIMIT` (varsayılan **10**) kadarı
+telif güvenli stok fotoğraflara geçirilir (bkz. "Görseller" bölümü). Eski haberler
 için beklemeden başlatmak istersen: GitHub → **Actions** → **Arsiv Yenileme** →
 **Run workflow**. Workflow `data/` değişikliklerini commit edip siteyi yeniden yayınlar.
 
@@ -460,6 +497,11 @@ tekrarlar oluşur. Bu yüzden:
   görünür kart birikene kadar sıradaki topları okur.
 - Kaydırma tetikleyicisi `IntersectionObserver` + `scroll` yedeği; ayrıca her koşulda
   çalışan **"Daha fazla haber"** düğmesi vardır (IO tetiklenmezse akış tıkanmaz).
+  `scroll` dinleyicisi kare başına bir kez (`requestAnimationFrame`) ölçüm yapar.
+- **Karta "oturma" (scroll-snap) YOK:** telefonda her kaydırıştan sonra tarayıcı en
+  yakın karta oturmaya çalışıyor, kart yüksekliği değişince sayfa kendiliğinden
+  kayıyordu ("shorts kayması" şikâyeti). Akış artık serbest kayar; parmak nerede
+  bırakırsa orada kalır.
 - Yükleme sırasında "Yükleniyor…" satırı açılıp kapanır; **gözcü (sentinel) öğenin
   kendisi asla `hidden` olmaz** (gizli öğe IntersectionObserver tarafından görülemez).
 

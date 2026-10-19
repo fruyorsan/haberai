@@ -17,6 +17,7 @@ const SCHEMA = {
     editorNote: { type: "string" },
     tags: { type: "array", items: { type: "string" } },
     category: { type: "string" },
+    gorselSorgu: { type: "string" },
   },
   required: [
     "title",
@@ -28,6 +29,7 @@ const SCHEMA = {
     "editorNote",
     "tags",
     "category",
+    "gorselSorgu",
   ],
 };
 
@@ -184,6 +186,14 @@ Aşağıdaki JSON alanlarını TÜRKÇE üret:
 - tags: 3-6 adet kısa, habere özgü, aranabilir anahtar kelime (marka, ürün, kişi, konu); kategori adını
   ("Gündem") etiket olarak tekrarlama.
 - category: AŞAĞIDAKİ listeden TAM OLARAK birini seç (başka bir kelime yazma): ${cats}
+- gorselSorgu: Haberle doğrudan ilgili, haber fotoğrafı gibi ÇIKACAK İNGİLİZCE arama sorgusu (2-5 kelime).
+  KURAL: somut ve görsel bir şey yaz. Haberde geçen kişi/marka/ürün/yer adı varsa onu kullan
+  ("Elon Musk", "iPhone 17", "Togg T10X") ve yanına sahneyi ekle ki fotoğraf dikkat çekici olsun
+  ("Elon Musk Tesla factory", "Galatasaray stadium", "iPhone 17 unboxing", "Istanbul metro").
+  Kişi/marka yoksa sahneyi yaz ("electric car charging station", "stock market trading floor",
+  "football stadium floodlights", "data center server room", "science laboratory"). SOYUT kavram
+  YASAK ("innovation", "future", "economy", "success", "crisis"); Türkçe yazma; tırnak, noktalama
+  ve açıklama ekleme.
 
 YAZMADAN ÖNCE KONTROL ET:
 (1) Başlık 45-70 karakterde mi; "!" veya "?" var mı; kaynak başlığıyla aynı cümle mi; tıklanacak kadar vurucu
@@ -197,9 +207,10 @@ YAZMADAN ÖNCE KONTROL ET:
     "bu gelişme", "yakından takip") biri geçiyor mu?
 (7) Hiçbir alanda kaynakta olmayan isim, sayı, tarih ya da alıntı uyduruldu mu? (Telif: 10 kelimelik dizi?)
 (8) Hiçbir dizi alanı boş kaldı mı; Türkçe yazım hatası var mı?
+(9) gorselSorgu İngilizce, 2-5 kelime ve somut mu; soyut bir kavram mı yazdın?
 
 Yanıt formatı (sadece JSON):
-{"title":"...","slug":"...","summary":"...","keyPoints":["...","...","..."],"body":["paragraf 1","paragraf 2","paragraf 3"],"comment":"...","editorNote":"...","tags":["..."],"category":"..."}${ekNot ? `\n\n${ekNot}` : ""}`;
+{"title":"...","slug":"...","summary":"...","keyPoints":["...","...","..."],"body":["paragraf 1","paragraf 2","paragraf 3"],"comment":"...","editorNote":"...","tags":["..."],"category":"...","gorselSorgu":"..."}${ekNot ? `\n\n${ekNot}` : ""}`;
 }
 
 // Bu çalıştırmada tükenen (günlük kota) adaylar
@@ -330,6 +341,90 @@ export async function analyzeArticle(article) {
 
   if (enIyi) return enIyi;
   throw allExhaustedError(lastErr);
+}
+
+/**
+ * Arşivdeki ESKİ haberler için yalnızca görsel arama sorgusu üretir.
+ * Tam haber üretiminden çok daha küçük bir istek: kotayı az tüketir.
+ * Dönüş: İngilizce sorgu (2-5 kelime) veya "" (üretilemedi).
+ */
+export async function gorselSorgusu(article) {
+  const istem = `Aşağıdaki Türkçe haber için Wikimedia Commons'ta fotoğraf aranacak İNGİLİZCE bir sorgu üret.
+
+BAŞLIK: ${article.title}
+ÖZET: ${String(article.summary || "").slice(0, 400)}
+ETİKETLER: ${(article.tags || []).join(", ")}
+KATEGORİ: ${article.category || ""}
+
+KURALLAR:
+- 2-5 kelime; somut ve fotoğrafta GÖRÜNEBİLECEK bir şey yaz.
+- Marka/ürün/kişi/yer adı varsa onu kullan ("iPhone 17", "Togg T10X", "Elon Musk", "Galatasaray stadium").
+- Soyut kavram YASAK ("innovation", "future", "economy"). Türkçe yazma. Noktalama kullanma.
+Yanıt SADECE şu JSON olsun: {"gorselSorgu":"..."}`;
+
+  const all = candidates().filter((c) => !exhausted.has(keyOf(c)));
+  if (!all.length) throw allExhaustedError();
+
+  let lastErr;
+  for (const c of all) {
+    try {
+      const metin =
+        c.provider === "groq" ? await kisaMetinGroq(c, istem) : await kisaMetinGemini(c, istem);
+      return temizSorgu(parseJson(metin)?.gorselSorgu);
+    } catch (err) {
+      lastErr = err;
+      if (err.kind === "quota" || err.kind === "missing") {
+        exhausted.add(keyOf(c));
+        continue;
+      }
+      if (err.kind === "ratelimit") {
+        await sleep(Math.min(Math.max(err.wait || 20, 5), 70) * 1000);
+        continue;
+      }
+      if (err.kind === "transient") {
+        await sleep(3000);
+        continue;
+      }
+      throw err;
+    }
+  }
+  throw allExhaustedError(lastErr);
+}
+
+async function kisaMetinGemini(c, istem) {
+  const res = await safeFetch(`${GEMINI_ENDPOINT(c.model)}?key=${c.apiKey}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      contents: [{ parts: [{ text: istem }] }],
+      generationConfig: {
+        temperature: 0.4,
+        maxOutputTokens: 120,
+        responseMimeType: "application/json",
+      },
+    }),
+  });
+  if (!res.ok) throw classify(res.status, await res.text(), res.headers, "Gemini");
+  const json = await res.json();
+  return json?.candidates?.[0]?.content?.parts?.[0]?.text || "";
+}
+
+async function kisaMetinGroq(c, istem) {
+  const res = await safeFetch(GROQ_ENDPOINT, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Authorization: `Bearer ${c.apiKey}` },
+    body: JSON.stringify({
+      model: c.model,
+      temperature: 0.4,
+      max_tokens: 200,
+      reasoning_effort: "low",
+      response_format: { type: "json_object" },
+      messages: [{ role: "user", content: istem }],
+    }),
+  });
+  if (!res.ok) throw classify(res.status, await res.text(), res.headers, "Groq");
+  const json = await res.json();
+  return json?.choices?.[0]?.message?.content || "";
 }
 
 async function callProvider(c, article, ekNot = "") {
@@ -470,6 +565,18 @@ function cleanEditorNote(value, ...others) {
   return `${(head || text.slice(0, EDITOR_NOTE_MAX)).slice(0, EDITOR_NOTE_MAX - 1)}…`;
 }
 
+/** Görsel arama sorgusu: tırnak/noktalama atılır, boşsa etiketten türetilir. */
+function temizSorgu(value, yedek) {
+  const s = String(value || "")
+    .replace(/[^\p{L}\p{N}\s-]+/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 60);
+  if (s.length >= 2) return s;
+  const t = String(yedek || "").replace(/[^\p{L}\p{N}\s-]+/gu, " ").replace(/\s+/g, " ").trim();
+  return t.slice(0, 60);
+}
+
 function normalize(data, article) {
   return {
     title: String(data.title || article.title).trim().slice(0, 120),
@@ -488,6 +595,8 @@ function normalize(data, article) {
       ? data.tags.map((t) => String(t).trim()).filter(Boolean).slice(0, 6)
       : [],
     category: canonicalCategory(data.category, article.feedCategory),
+    // Telif güvenli stok görsel araması için (bkz. src/stok-gorsel.js).
+    gorselSorgu: temizSorgu(data.gorselSorgu, Array.isArray(data.tags) ? data.tags[0] : ""),
   };
 }
 

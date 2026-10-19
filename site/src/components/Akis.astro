@@ -654,10 +654,17 @@ const ilk = liste.slice(0, ilkSayi);
         );
         io.observe(bekle);
       }
+      // Kaydırma dinleyicisi her olayda yerleşim ölçmesin: kare başına bir kez.
+      let kaydirmaBekliyor = false;
       window.addEventListener(
         "scroll",
         () => {
-          if (bekle && bekle.getBoundingClientRect().top < window.innerHeight + 800) yukle();
+          if (kaydirmaBekliyor) return;
+          kaydirmaBekliyor = true;
+          requestAnimationFrame(() => {
+            kaydirmaBekliyor = false;
+            if (bekle && bekle.getBoundingClientRect().top < window.innerHeight + 800) yukle();
+          });
         },
         { passive: true }
       );

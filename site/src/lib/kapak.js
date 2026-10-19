@@ -92,6 +92,17 @@ function tekrarSayaci() {
   return harita;
 }
 
+/** Bu görsel, telif güvenli stok hattından mı geliyor? (bkz. src/stok-gorsel.js) */
+function stokGorselMi(article, url) {
+  const ham = String(url || "");
+  if (!article?.gorselKaynak) {
+    // Eski kayıtlarda gorselKaynak yok; gorselEk varsa yine stoktur.
+    return Array.isArray(article?.gorselEk) && article.gorselEk.some((g) => String(g?.url) === ham);
+  }
+  if (String(article.image || "") === ham) return true;
+  return Array.isArray(article.gorselEk) && article.gorselEk.some((g) => String(g?.url) === ham);
+}
+
 /** Verilen görsel bu haber için gösterilebilir mi? */
 export function kapakUygunMu(article, url) {
   if (!url || !/^https?:\/\//i.test(String(url))) return false;
@@ -100,12 +111,20 @@ export function kapakUygunMu(article, url) {
   // 1) Dosya adı yer tutucu/logo deseninde mi?
   if (YER_TUTUCU.test(ham)) return false;
 
-  // 2) Aynı görsel arşivde çok kez kullanılmış mı? (genel görsel)
+  // 2) LİSANSLI STOK FOTOĞRAF: Commons dosya adları Türkçe haber başlığıyla
+  //    eşleşmez; "başka haberin fotoğrafı" kuralı burada anlamsızdır. Fotoğraf
+  //    zaten habere özel arama sonucu seçildi ve lisansı/atfı kayıtlı.
+  //    Yalnızca aynı karenin onlarca haberde tekrarlanması engellenir.
+  if (stokGorselMi(article, ham)) {
+    return (tekrarSayaci().get(kimlik(ham)) || 0) < 80;
+  }
+
+  // 3) Aynı görsel arşivde çok kez kullanılmış mı? (genel görsel)
   //    Bu haberin kendi kapağı da sayıya dahil olduğu için eşik "kaç haberde
   //    geçiyor" sorusuna cevap verir.
   if ((tekrarSayaci().get(kimlik(ham)) || 0) >= TEKRAR_ESIGI) return false;
 
-  // 3) Dosya adı başka bir haberin başlığı gibi mi?
+  // 4) Dosya adı başka bir haberin başlığı gibi mi?
   const parcalar = dosyaParcalari(ham);
   if (parcalar.length >= 3) {
     const kendi = [

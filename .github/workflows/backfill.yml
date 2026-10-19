@@ -34,16 +34,15 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           BACKFILL_LIMIT: "4"
+          # Görselleri kaynak siteden alınmış eski haberler: AI'dan yalnızca
+          # kısa bir İngilizce arama sorgusu alınır, fotoğraf Wikimedia
+          # Commons'tan (CC0/kamu malı/CC BY/CC BY-SA) gelir. Fotoğraf
+          # bulunamazsa eski fotoğrafa DOKUNULMAZ.
+          GORSEL_BACKFILL_LIMIT: "10"
         run: npm run backfill
 
-      # Haber icine 1-2 ek gercek fotograf (ShiftDelete tarzi). Kaynak sayfada
-      # "ayni haber" oldugu kanitlanamayan gorseller eklenmez; bu yuzden AI kotasi
-      # kullanmaz, yalnizca kaynak sayfayi indirir. Arsiv ~24 saatte bir taranir,
-      # bir daha bakilan haber tekrar indirilmez.
-      - name: Haber icine ek fotograflar
-        env:
-          EK_GORSEL_LIMIT: "40"
-        run: npm run ek-gorsel
+      # Arşivdeki eski fotoğraflar yukarıdaki adımda telif güvenli hâle
+      # getiriliyor (GORSEL_BACKFILL_LIMIT). Ayrı bir görsel adımı yok.
 
       - name: Degisiklikleri kaydet
         id: commit
