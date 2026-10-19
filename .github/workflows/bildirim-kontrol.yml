@@ -67,3 +67,17 @@ jobs:
           # 3) Aynı etiket ama "abone" filtresiyle birlikte
           gonder "Etiket+abone(son_dakika)" '{"filters":[{"field":"tag","key":"son_dakika","relation":"=","value":"1"},{"operator":"AND","field":"tag","key":"uye","relation":"exists"}]}'
           echo "Bitti: hangi satırda recipients > 0 ise haber bildirimleri o yolu kullanmalı."
+
+      # Son gönderimlerin TESLİM sayıları. OneSignal istatistikleri birkaç saniye
+      # gecikmeli oluşur; `successful > 0` ise bildirim gerçekten cihazlara gitti.
+      - name: Son gönderimlerin teslim raporu
+        continue-on-error: true
+        env:
+          ONESIGNAL_APP_ID: ${{ vars.ONESIGNAL_APP_ID }}
+          ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
+        run: |
+          set -u
+          sleep 25
+          curl -s -H "Authorization: Key $ONESIGNAL_REST_API_KEY" \
+            "https://api.onesignal.com/notifications?app_id=$ONESIGNAL_APP_ID&limit=5" \
+            | jq -c '.notifications[]? | {id, successful, failed, errored, remaining, queued_at, baslik: .headings.tr}'
