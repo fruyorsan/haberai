@@ -28,7 +28,7 @@ const aktif = Boolean(ADSENSE_CLIENT && birim);
       data-full-width-responsive="true"
       data-ad-layout={layout || undefined}
     ></ins>
-    <script is:inline>{`(adsbygoogle = window.adsbygoogle || []).push({});`}</script>
+    <script is:inline>{`try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}`}</script>
   </aside>
 )}
 
@@ -41,6 +41,13 @@ const aktif = Boolean(ADSENSE_CLIENT && birim);
   }
   .ad ins {
     margin-inline: auto;
+  }
+  /* Reklam engelleyici / dolmayan birim: kutuyu ve ayırdığı boşluğu kaldır.
+     Sınıf Base.astro'daki denetleyici tarafından eklenir. */
+  .ad.ad--bos {
+    display: none !important;
+    min-height: 0;
+    margin: 0;
   }
   .ad__etiket {
     display: block;

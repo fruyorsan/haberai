@@ -1,0 +1,367 @@
+---
+import Base from "../layouts/Base.astro";
+import { CONTACT_EMAIL } from "../lib/site-meta.js";
+import { getArticles, getCategories } from "../lib/articles.js";
+
+const haberSayisi = getArticles().length;
+const kategoriSayisi = getCategories().length;
+const origin = Astro.site ? String(Astro.site).replace(/\/+$/, "") : "https://haberinai.site";
+
+const teklifKonusu = "Reklam ve sponsorluk teklifi — HaberinAi";
+const teklifLink = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(teklifKonusu)}`;
+
+// Sayfa yapısal verisi: reklam/sponsorluk hizmeti sunan bir yayıncı.
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "HaberinAi — Reklam ve Sponsorluk",
+  serviceType: "Haber sitesi reklam ve sponsorluk",
+  areaServed: { "@type": "Country", name: "Türkiye" },
+  provider: {
+    "@type": "NewsMediaOrganization",
+    name: "HaberinAi",
+    url: origin + "/",
+    email: CONTACT_EMAIL,
+    logo: origin + "/ikon-512.png",
+  },
+  url: origin + "/reklam/",
+};
+
+const bicimler = [
+  {
+    ad: "Görüntülü reklam",
+    aciklama:
+      "Haber içinde ve liste sayfalarında, sayfa düzenini bozmayan standart birimler. Google AdSense altyapısıyla ölçümlenir.",
+    etiket: "Her zaman açık",
+  },
+  {
+    ad: "Sponsorlu içerik",
+    aciklama:
+      "Markanızı ilgilendiren bir konuyu haber formatında, editör denetiminde ve “Sponsorlu” etiketiyle yayınlıyoruz. Kaynak ve şeffaflık korunur.",
+    etiket: "En çok tercih edilen",
+  },
+  {
+    ad: "Kategori sponsorluğu",
+    aciklama:
+      "Bir bölümün (ör. Otomobil, Yapay Zekâ, Spor) üst şeridinde kalıcı marka alanı; bölüm akışında görünürlük.",
+    etiket: "Aylık",
+  },
+  {
+    ad: "Bildirim sponsorluğu",
+    aciklama:
+      "Son dakika bildirimlerine eşlik eden kısa sponsor notu. Yalnızca bildirim izni vermiş okuyucuya, günlük sınır içinde gider.",
+    etiket: "Sınırlı stok",
+  },
+];
+
+const nedenler = [
+  "Mobil öncelikli, hızlı açılan sayfalar (görsel optimizasyonu ve önbellek ile).",
+  "7/24 çalışan yayın hattı: haberler dakikalar içinde güncellenir.",
+  "Yapay zekâ destekli özet + özgün editör yorumu; kaynak bağlantısı her haberde.",
+  "Google News, Discover, RSS ve yapay zekâ asistanları için hazır yapısal veri.",
+  "Okuyucu hesabı, ilgi alanı kişiselleştirmesi ve web push bildirimleri.",
+  "Temiz, reklamla karışmayan haber düzeni; düşük reklam yoğunluğu.",
+];
+---
+
+<Base
+  title="Reklam ve Sponsorluk — HaberinAi"
+  description="HaberinAi'de reklam ve sponsorluk: görüntülü reklam, sponsorlu içerik, kategori sponsorluğu ve bildirim sponsorluğu. Teklif için iletişime geçin."
+  canonical={`${origin}/reklam/`}
+  schema={schema}
+>
+  <div class="container reklam">
+    <header class="reklam__ust">
+      <span class="reklam__etiket">Reklam &amp; İş Birliği</span>
+      <h1 class="reklam__baslik">Markanızı doğru okuyucuyla buluşturun</h1>
+      <p class="reklam__giris">
+        HaberinAi; Türkiye ve dünyadan son dakika haberlerini yapay zekâ
+        desteğiyle özetleyen, kaynağını gösteren ve editör yorumu ekleyen
+        bağımsız bir haber sitesidir. Reklam ve sponsorluk için ölçülebilir,
+        şeffaf ve içeriğe saygılı bir yüzey sunuyoruz.
+      </p>
+      <div class="reklam__cta">
+        <a class="reklam__btn" href={teklifLink}>Teklif alın</a>
+        <a class="reklam__btn reklam__btn--ghost" href="/iletisim/">İletişim sayfası</a>
+      </div>
+    </header>
+
+    <section class="reklam__sayilar" aria-label="Site büyüklüğü">
+      <div class="reklam__sayi">
+        <strong>{haberSayisi.toLocaleString("tr-TR")}</strong>
+        <span>yayınlanmış haber</span>
+      </div>
+      <div class="reklam__sayi">
+        <strong>{kategoriSayisi}</strong>
+        <span>aktif kategori</span>
+      </div>
+      <div class="reklam__sayi">
+        <strong>7/24</strong>
+        <span>otomatik yayın hattı</span>
+      </div>
+      <div class="reklam__sayi">
+        <strong>Web + Push</strong>
+        <span>mobil öncelikli erişim</span>
+      </div>
+    </section>
+
+    <section class="reklam__blok">
+      <h2>Reklam biçimleri</h2>
+      <p class="reklam__alt">
+        İhtiyacınıza göre tek tek veya paket olarak. Tüm biçimlerde içerik ile
+        reklam görsel olarak ayrılır; sponsorlu içerik açıkça etiketlenir.
+      </p>
+      <div class="reklam__kartlar">
+        {bicimler.map((b) => (
+          <article class="reklam__kart">
+            <span class="reklam__kart-etiket">{b.etiket}</span>
+            <h3>{b.ad}</h3>
+            <p>{b.aciklama}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="reklam__blok">
+      <h2>Neden HaberinAi?</h2>
+      <ul class="reklam__liste">
+        {nedenler.map((n) => <li>{n}</li>)}
+      </ul>
+    </section>
+
+    <section class="reklam__blok">
+      <h2>Şeffaflık ve ilkeler</h2>
+      <div class="reklam__ilkeler">
+        <div>
+          <h3>Ölçüm</h3>
+          <p>
+            Trafik ve gösterim özetini Google Analytics 4 ve AdSense raporlarından
+            takip ediyoruz. Güncel erişim özetini teklif görüşmesinde paylaşıyoruz;
+            abartılı vaat vermiyoruz.
+          </p>
+        </div>
+        <div>
+          <h3>Editör bağımsızlığı</h3>
+          <p>
+            Sponsorluk, haber seçimini ve editör yorumunu etkilemez. Sponsorlu
+            içerikler “Sponsorlu” etiketiyle yayınlanır ve kaynak gösterilir.
+          </p>
+        </div>
+        <div>
+          <h3>Okuyucu deneyimi</h3>
+          <p>
+            Reklam yoğunluğunu düşük tutuyoruz. Reklam engelleyici kullanan
+            okuyucularda reklam alanları gizlenir; içerik kesintisiz açılır ve
+            “engelleyiciyi kapatın” uyarısı gösterilmez.
+          </p>
+        </div>
+        <div>
+          <h3>Gizlilik</h3>
+          <p>
+            Reklamlar Google AdSense üzerinden yayınlanır ve çerez izni Google
+            Consent Mode ile yönetilir. Ayrıntı: <a href="/gizlilik/">Gizlilik Politikası</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="reklam__blok reklam__son">
+      <h2>Konuşalım</h2>
+      <p class="reklam__alt">
+        Marka, bütçe ve tarih aralığını yazın; size uygun biçimi ve fiyatı
+        önerelim. Aynı gün içinde dönüş yapıyoruz.
+      </p>
+      <div class="reklam__cta">
+        <a class="reklam__btn" href={teklifLink}>{CONTACT_EMAIL}</a>
+        <a class="reklam__btn reklam__btn--ghost" href="/hakkimizda/">Hakkımızda</a>
+      </div>
+      <p class="reklam__not">
+        Telif, düzeltme ve kaldırma talepleri için <a href="/iletisim/">İletişim</a>
+        sayfasını kullanın.
+      </p>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .reklam {
+    max-width: 960px;
+    margin: 36px auto 24px;
+  }
+  .reklam__ust {
+    padding: 30px 28px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+  }
+  .reklam__etiket {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: var(--brand-soft);
+    color: var(--brand-strong);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .reklam__baslik {
+    margin: 14px 0 10px;
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+    line-height: 1.14;
+    letter-spacing: -0.03em;
+  }
+  .reklam__giris {
+    margin: 0;
+    max-width: 720px;
+    color: var(--text-2);
+    line-height: 1.75;
+  }
+  .reklam__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .reklam__btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 12px;
+    background: var(--brand-grad);
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.92rem;
+    text-decoration: none;
+    box-shadow: 0 14px 26px -16px var(--brand-glow);
+  }
+  .reklam__btn--ghost {
+    background: var(--surface-2);
+    color: var(--text);
+    border: 1px solid var(--border);
+    box-shadow: none;
+  }
+  .reklam__sayilar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 22px 0 6px;
+  }
+  .reklam__sayi {
+    padding: 16px 14px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface);
+    text-align: center;
+  }
+  .reklam__sayi strong {
+    display: block;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+  .reklam__sayi span {
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .reklam__blok {
+    margin-top: 30px;
+    padding: 26px 28px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--surface);
+  }
+  .reklam__blok h2 {
+    margin: 0 0 6px;
+    font-size: 1.35rem;
+    letter-spacing: -0.02em;
+  }
+  .reklam__alt {
+    margin: 0 0 18px;
+    color: var(--text-2);
+    line-height: 1.7;
+  }
+  .reklam__kartlar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .reklam__kart {
+    padding: 18px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--bg);
+  }
+  .reklam__kart-etiket {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--brand-strong);
+  }
+  .reklam__kart h3 {
+    margin: 8px 0 6px;
+    font-size: 1.02rem;
+  }
+  .reklam__kart p {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--text-2);
+  }
+  .reklam__liste {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--text-2);
+    line-height: 1.85;
+  }
+  .reklam__ilkeler {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 26px;
+  }
+  .reklam__ilkeler h3 {
+    margin: 0 0 5px;
+    font-size: 0.98rem;
+  }
+  .reklam__ilkeler p {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--text-2);
+  }
+  .reklam a {
+    color: var(--brand-strong);
+    font-weight: 700;
+  }
+  .reklam__son {
+    text-align: center;
+  }
+  .reklam__son .reklam__cta {
+    justify-content: center;
+  }
+  .reklam__not {
+    margin: 16px 0 0;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  @media (max-width: 760px) {
+    .reklam {
+      margin-top: 20px;
+    }
+    .reklam__ust,
+    .reklam__blok {
+      padding: 20px 16px;
+      border-radius: 16px;
+    }
+    .reklam__sayilar {
+      grid-template-columns: 1fr 1fr;
+    }
+    .reklam__kartlar,
+    .reklam__ilkeler {
+      grid-template-columns: 1fr;
+    }
+    .reklam__cta .reklam__btn {
+      flex: 1 1 100%;
+      text-align: center;
+    }
+  }
+</style>

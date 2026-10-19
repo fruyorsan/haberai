@@ -63,6 +63,37 @@ const ogImageAlt = imageAlt || title;
 
 const tagList = Array.isArray(tags) ? tags.filter(Boolean) : [];
 const isArticle = ogType === "article";
+
+// Güvenlik: İçerik Güvenliği Politikası (CSP).
+//
+// GitHub Pages özel HTTP başlığı göndermediği için politika <meta> ile
+// uygulanır. Yalnızca gerçekten kullandığımız kaynaklara izin veriyoruz:
+//   * kendi dosyalarımız,
+//   * Google (gtag/Analytics, AdSense ve reklam iframe'leri),
+//   * OneSignal (web push SDK + API),
+//   * Supabase (yorum/hesap),
+//   * Google Fonts.
+// Satır içi betik ve stiller site genelinde yoğun kullanıldığı için
+// 'unsafe-inline' gerekli; buna karşın bilinmeyen üçüncü taraf alan adlarından
+// betik/çerçeve yüklenmesi engellenir (enjekte edilen yabancı kod çalışmaz).
+// Not: frame-ancestors <meta> ile desteklenmez; tıklama hırsızlığına karşı
+// asıl koruma barındırma sağlayıcısındaki başlıklardır.
+const CSP = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "object-src 'none'",
+  "script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.doubleclick.net https://*.google.com https://www.googletagmanager.com https://*.google-analytics.com https://cdn.onesignal.com https://*.onesignal.com https://*.adtrafficquality.google",
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "font-src 'self' data: https://fonts.gstatic.com",
+  "img-src 'self' data: blob: https:",
+  "media-src 'self' https:",
+  "connect-src 'self' https://*.supabase.co https://api.onesignal.com https://*.onesignal.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.googlesyndication.com https://*.doubleclick.net https://*.google.com https://*.adtrafficquality.google",
+  "frame-src https://*.googlesyndication.com https://*.doubleclick.net https://*.google.com https://*.adtrafficquality.google",
+  "worker-src 'self' blob:",
+  "manifest-src 'self'",
+  "form-action 'self' mailto:",
+  "upgrade-insecure-requests",
+].join("; ");
 ---
 
 <!doctype html>
@@ -70,6 +101,10 @@ const isArticle = ogType === "article";
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Güvenlik: CSP ve referrer politikası. GitHub Pages özel HTTP başlığı
+         göndermediği için <meta> ile uygulanır (ayrıntı: üstteki CSP sabiti). -->
+    <meta http-equiv="Content-Security-Policy" content={CSP} />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     {GOOGLE_SITE_VERIFICATIONS.map((code) => (
       <meta name="google-site-verification" content={code} />
     ))}
@@ -130,6 +165,9 @@ const isArticle = ogType === "article";
     <link rel="apple-touch-icon" href="/ikon-192.png" />
     <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
     <link rel="alternate" type="application/rss+xml" title="HaberinAi RSS" href="/rss.xml" />
+    <link rel="alternate" type="application/feed+json" title="HaberinAi JSON Feed" href="/feed.json" />
+    <!-- Yapay zekâ asistanları için makine okunabilir site özeti (llms.txt). -->
+    <link rel="alternate" type="text/markdown" title="HaberinAi — LLM özeti" href="/llms.txt" />
 
     <!-- Palet (FOUC önleyici): seçilen paleti ilk boyamadan önce uygula.
          Sıra: Bordo → Siyan → Beyaz. Varsayılan: Beyaz. -->
@@ -298,6 +336,48 @@ gtag("config", ${JSON.stringify(GA_MEASUREMENT_ID)}, { anonymize_ip: true });
         src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
         crossorigin="anonymous"
         is:inline></script>
+    )}
+
+    <!-- Reklam engelleyici dayanıklılığı.
+         AdSense betiği engellenirse (window.adsbygoogle.loaded hiç true olmaz)
+         ya da birim dolmazsa (data-ad-status="unfilled") reklam kutusu
+         tamamen gizlenir: boş kutu, kaydırma boşluğu ve düzen kayması olmaz.
+         "Reklam engelleyicinizi kapatın" uyarısı BİLİNÇLİ olarak gösterilmez:
+         AdSense politikasına aykırıdır ve okuyucu deneyimini bozar.
+         Okuyucu için içerik her durumda kesintisiz açılır. -->
+    {ADSENSE_CLIENT && (
+      <script is:inline>
+        (function () {
+          var BASLANGIC = Date.now();
+          function bak() {
+            var alanlar = document.querySelectorAll(".ad");
+            var gecti = Date.now() - BASLANGIC;
+            for (var i = 0; i < alanlar.length; i++) {
+              var alan = alanlar[i];
+              var ins = alan.querySelector("ins.adsbygoogle");
+              var durum = ins ? ins.getAttribute("data-ad-status") : null;
+              var yuklendi =
+                !!(window.adsbygoogle && window.adsbygoogle.loaded === true);
+              if (durum === "filled") {
+                alan.classList.remove("ad--bos");
+              } else if (durum === "unfilled" || (!yuklendi && gecti > 6000)) {
+                alan.classList.add("ad--bos");
+              }
+            }
+          }
+          function basla() {
+            bak();
+            [1500, 4000, 7000, 11000, 16000].forEach(function (ms) {
+              window.setTimeout(bak, ms);
+            });
+          }
+          if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", basla);
+          } else {
+            basla();
+          }
+        })();
+      </script>
     )}
 
     <!-- Web push (OneSignal) — dokümandaki standart SDK kurulumu

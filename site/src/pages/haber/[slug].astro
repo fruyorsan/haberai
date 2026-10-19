@@ -140,6 +140,14 @@ const jsonLd = {
     },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": articleUrl },
+  url: articleUrl,
+  inLanguage: "tr-TR",
+  // Sesli asistanlar ve yapay zekâ özetleyicileri için: başlık ve özet
+  // doğrudan okunabilir bölümlerdir.
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: [".post__title", ".recap__text"],
+  },
 };
 
 const breadcrumbLd = {
