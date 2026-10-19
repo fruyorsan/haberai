@@ -1,5 +1,220 @@
 [
   {
+    "id": "5eb879091713ef6f",
+    "title": "İstanbul'daki şiddetli yağışların ardından kış sezonu mercek altında",
+    "slug": "istanbuldaki-siddetli-yagislarin-ardindan-kis-sezonu-mercek-altinda",
+    "summary": "Günlerce süren sağanak yağışlar ve sel felaketlerinin ardından İstanbullular kış mevsiminin nasıl geçeceğini merak ediyor. Meteorolojik değerlendirmeler, bu sezon hava kütlelerinin etkisinde değişimler yaşanacağını gösteriyor.",
+    "keyPoints": [
+      "İstanbul'da son dönemde rekor seviyede sağanak yağışlar ve su baskınları görüldü.",
+      "İç Anadolu ve Akdeniz bölgelerinde bu kış mevsiminde kar yağışının az olması bekleniyor.",
+      "İzlanda civarındaki hava kütlelerinin Balkanlar üzerinden Türkiye'yi etkileyeceği belirtiliyor."
+    ],
+    "body": [
+      "İstanbul'da art arda yaşanan şiddetli yağışlar, kent genelinde su baskınlarına ve sel felaketlerine yol açtı. Günlerce süren bu olumsuz hava koşullarının ardından şehir sakinlerinin dikkati yaklaşan kış mevsimine çevrildi. Yaşanan rekor düzeydeki yağışların ardından vatandaşlar, kış aylarında nasıl bir hava tablosuyla karşılaşacaklarını araştırmaya başladı.",
+      "Sonbahar döneminde etkisini gösteren yoğun yağmurların kış aylarındaki kar yağışına dair bir ipucu verip vermediği merak konusu oldu. Yapılan değerlendirmelere göre, sonbaharda yaşanan bol yağışlı günlerin doğrudan kışın da yüksek miktarda kar yağacağı anlamına gelmediği ifade ediliyor. Mevsim geçişlerindeki bu yağış düzeni, kış ayları için tek başına kesin bir gösterge sunmuyor.",
+      "Türkiye genelindeki coğrafi bölgelerin kış potansiyeli farklılık gösteriyor. İç Anadolu ve Akdeniz bölgelerinde bu kış döneminde kar yağışının normal seviyelerin altında kalacağı öngörülüyor. Basınç merkezlerinin konumu ve hava kütlelerinin hareket yönü, özellikle bu bölgelerdeki kar miktarını doğrudan etkileyen unsurlar arasında bulunuyor.",
+      "Ülke genelindeki hava sirkülasyonunu şekillendiren temel faktörlerden biri de İzlanda civarındaki hava kütleleri olarak dikkat çekiyor. Bu kütlelerin Balkanlar üzerinden güneye doğru inerek tüm Anadolu'yu etkisi altına aldığı biliniyor. Ancak bu sezon söz konusu alçak basınç merkezinin kuvvetinde bir azalma görüldüğü için kış koşullarının beklentilere göre farklı seyredeceği tahmin ediliyor."
+    ],
+    "comment": "Mevsim geçişlerindeki aşırı yağışlar yerel yönetimlerin altyapı kapasitesini doğrudan test ederken vatandaşların günlük yaşamını da sekteye uğratıyor. Alçak basınç merkezlerinin zayıflaması, tarım sektöründen su kaynaklarının doluluk oranına kadar geniş bir yelpazeyi tehdit ediyor. Eğer beklenen kar yağışları gerçekleşmezse, önümüzdeki yaz aylarında kuraklık riski ve içme suyu sıkıntısı baş gösterebilir.",
+    "editorNote": "Rekor yağışların ardından gözler kar yağışına çevrilirken basınç merkezlerindeki zayıflama kış tablosunu değiştiriyor.",
+    "tags": [
+      "İstanbul",
+      "Hava Durumu",
+      "Kar Yağışı",
+      "Meteoroloji",
+      "Sel"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "Istanbul rainy street traffic",
+    "source": "CNN Türk",
+    "sourceUrl": "https://www.cnnturk.com/video/hava-durumu/bu-sene-istanbula-kar-yagmayacak-mi-3481617",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Rainy_night_Galata_Bridge_area_Istanbul_2026.jpg/1920px-Rainy_night_Galata_Bridge_area_Istanbul_2026.jpg",
+    "gorselKaynak": {
+      "yazar": "Furkan Akkurt",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Rainy_night_Galata_Bridge_area_Istanbul_2026.jpg"
+    },
+    "publishedAt": "2026-10-19T16:30:08.659Z",
+    "generatedAt": "2026-10-19T16:31:16.179Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Rainy_mosque_courtyard_at_night_Istanbul_2026.jpg/1920px-Rainy_mosque_courtyard_at_night_Istanbul_2026.jpg",
+        "yazar": "Furkan Akkurt",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Rainy_mosque_courtyard_at_night_Istanbul_2026.jpg"
+      }
+    ]
+  },
+  {
+    "id": "ab5322a3cad8e5c6",
+    "title": "Google, DarkSword güvenlik raporunda ele geçirilen siteleri gizledi",
+    "slug": "google-darksword-guvenlik-raporunda-ele-geirilen-siteleri-gizledi",
+    "summary": "Google Threat Intelligence Group tarafından yayımlanan DarkSword raporu, saldırganların ağ altyapısını ve alan adlarını açık biçimde listeliyor. Ancak iOS cihazları hedef alan kampanyada kullanılan meşru ve ele geçirilmiş web sitelerinin isimleri raporda yer almıyor.",
+    "keyPoints": [
+      "Google raporu saldırganların alan adlarını açıklarken mağdur siteleri gizledi.",
+      "DarkSword exploit kiti, iOS 18.4 ile 18.7 arasındaki sürümlerde altı açığı hedefliyor.",
+      "Saldırılarda UNC6748, PARS Defense ve UNC6353 olmak üzere üç farklı grup öne çıkıyor."
+    ],
+    "body": [
+      "Google Threat Intelligence Group (GTIG) tarafından paylaşılan DarkSword güvenlik raporu, akıllı telefonları hedef alan gelişmiş saldırı zincirlerinin arka planını aydınlatıyor. Araştırmacılar rapor kapsamında siber saldırganların kullandığı IP adreslerini ve ağ altyapılarını detaylı bir şekilde listeliyor. Ancak iOS işletim sistemini hedef alan bu kampanyalarda bulaştırma aracı olarak kullanılan meşru web sitelerinin kimliği raporda paylaşılmıyor.",
+      "DarkSword, baştan sona JavaScript diliyle yazılmış karmaşık bir exploit kiti olarak dikkat çekiyor ve 18 Mart 2026 tarihinde yayımlanan belgede altı farklı zafiyetin ardışık kullanımı anlatılıyor. Tarayıcıda açılan ilk kapının ardından sistem çekirdeğine kadar ilerleyen bu zincirdeki açıkların üçü zero-day kategorisinde yer alıyordu. Google, bahsi geçen tüm güvenlik açıklarının iOS 26.3 sürümüyle birlikte kapatıldığını ve güncel olmayan cihazların risk altında bulunduğunu belirtiyor.",
+      "Raporda üç ayrı kampanya ve bu kampanyaları yürüten aktörler birbirinden ayrılıyor. Kasım 2025'ten bu yana faaliyet gösteren UNC6748 kümesi Suudi Arabistan'ı hedef alırken, Türkiye merkezli ticari gözetim tedarikçisi PARS Defense ise GHOSTSABER zararlısını Türkiye ve Malezya'da kullandı. Rusya kaynaklı olduğu değerlendirilen UNC6353 grubu ise Aralık 2025 ile Mart 2026 arasında Ukrayna'da GHOSTBLADE zararlısını devreye soktu.",
+      "Saldırı mekanizmaları incelendiğinde kullanıcıların zararlı yazılımlarla karşılaşması için belirli tuzak sayfalarını ziyaret etmesi gerekiyor. UNC6748 grubunun kampanyası yalnızca dokunmatik ekranlı cihazlarda çalışıyor ve Chrome tarayıcı kullanan kişileri Safari yönlendirmesiyle hedef alıyor. Dosya indirme veya şifre girme gerektirmeyen bu süreçte, yalnızca tehlikeli sayfayı ziyaret etmek güvenlik duvarını aşmak için yeterli oluyor.",
+      "Google, dağıtım alan adlarını Safe Browsing hizmetine eklerken zararlı yazılımların dosyalarını tanımaya yarayan YARA kuralları da yayımladı. Raporda ele geçirilen meşru sitelerin isimlerinin paylaşılmaması, site sahiplerinin henüz temizlenmemiş açıklar yüzünden itibar kaybetmesini önleme hamlesi olarak değerlendiriliyor. Web yöneticilerinin kendi sistemlerinde static.cdncounter[.]net gibi referansları kontrol ederek şüpheli widgets.js kodlarını temizlemesi tavsiye ediliyor."
+    ],
+    "comment": "Siber güvenlik raporlarında mağdur sitelerin gizlenmesi, saldırganların izini sürmek ile masum platformları korumak arasındaki hassas dengenin sonucudur. Araştırmacıların tam URL adreslerini paylaşmaması ağ yöneticilerinin kendi açıklarını bulmasını zorlaştırsa da, yedi ağ kaydı ve tek bir SHA-256 hash parmak izi inceleme için teknik temel sunuyor. Güncelleme yapmayan kullanıcılar açısından 18.4 ve 18.7 sürümleri arasındaki iOS açıkları cihaz güvenliğini doğrudan riske atıyor.",
+    "editorNote": "Google, iOS açıklarını kullanan DarkSword raporunda saldırganların ağ altyapısını paylaştı ancak mağdur siteleri gizli tuttu.",
+    "tags": [
+      "Google",
+      "DarkSword",
+      "iOS",
+      "Siber Güvenlik",
+      "Zararlı Yazılım"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "cyber security data center server room",
+    "source": "Pasquale Pillitteri",
+    "sourceUrl": "https://pasqualepillitteri.it/tr/news/25644/darksword-google-saldirgan-alan-adlari-ele-gecirilen-siteler",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/60/EU_cyber_security_conference_2017_%2837211785982%29.jpg",
+    "gorselKaynak": {
+      "yazar": "EU2017EE Estonian Presidency",
+      "lisans": "CC BY 2.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:EU_cyber_security_conference_2017_(37211785982).jpg"
+    },
+    "publishedAt": "2026-10-19T16:28:50.000Z",
+    "generatedAt": "2026-10-19T16:30:30.620Z",
+    "gorselEk": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/EU_cyber_security_conference_2017_%2837211780392%29.jpg",
+        "yazar": "EU2017EE Estonian Presidency",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:EU_cyber_security_conference_2017_(37211780392).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/EU_cyber_security_conference_2017_%2837241085191%29.jpg",
+        "yazar": "EU2017EE Estonian Presidency",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:EU_cyber_security_conference_2017_(37241085191).jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
+    "id": "894c03412d6751d4",
+    "title": "Kaliforniya'daki 4.858 yıllık bristlecone çamı gizli konumda yaşıyor",
+    "slug": "kaliforniyadaki-4858-yillik-bristlecone-cami-gizli-konumda-yasiyor",
+    "summary": "Kaliforniya'daki White Dağları'nda yaşayan 4 bin 858 yaşındaki Methuselah, dünyanın en yaşlı bilinen tek gövdeli ağacı konumundadır. Antik Mısır piramitlerinden daha eski olan bu dev çamın tam konumu, zarar görmemesi için gizli tutuluyor.",
+    "keyPoints": [
+      "Methuselah adlı bristlecone çamı yaklaşık 4 bin 858 yaşında ve MÖ 2832'de filizlendi.",
+      "Ağacın tam konumu, vandalizmden ve ziyaretçi zararlarından korunmak için gizli tutuluyor.",
+      "Bölgedeki sert iklim koşulları ve yavaş büyüme, ağacın binlerce yıl hayatta kalmasını sağlıyor."
+    ],
+    "body": [
+      "Amerika Birleşik Devletleri'nin Kaliforniya eyaletindeki Inyo County sınırlarında yer alan Methuselah isimli ağaç, dünyanın bilinen en yaşlı canlıları arasında ön plana çıkıyor. Büyük Havza bristlecone çamı türüne ait olan bu dev bitki, White Dağları'ndaki Kadim Bristlecone Çam Ormanı'nda yaşamını sürdürüyor. Bilim insanları tarafından yaklaşık 4 bin 858 yaşında olduğu hesaplanan ağacın, Antik Mısır'daki Büyük Giza Piramidi'nin inşasından üç yüzyıl önce filizlendiği biliniyor.",
+      "Ağacın yaşı, 1957 yılında araştırmacı Edmund Schulman tarafından gövde halkaları incelenerek tespit edildi. Bu halkalar yalnızca yaş hesaplamasında kullanılmıyor, aynı zamanda geçmiş yüzyılların iklim koşullarını da günümüze taşıyor. Ormanın kendisi ziyaretçilere açık olsa da Methuselah'ın kesin koordinatları kamuoyuyla paylaşılmıyor. ABD Orman Hizmetleri, binlerce yıllık bu canlıyı olası zararlardan ve vandalizmden korumak amacıyla yerini sır gibi saklıyor.",
+      "Deniz seviyesinden yaklaşık 3 bin metre yükseklikte bulunan ormanda kışlar çok sert, yazlar ise kısa ve kurak geçiyor. Şiddetli rüzgarlar ve besin yönünden zayıf toprak yapısı bitkilerin büyümesini yavaşlatsa da bu zorlu şartlar çamların ömrünü uzatıyor. Diğer ağaçlara göre oldukça yavaş büyüyen bu tür, reçineli dokusu sayesinde böcek ve mantar saldırılarına karşı direnç gösteriyor.",
+      "Kutsal metinlerdeki 969 yıl yaşayan Metuşelah adından esinlenilen bu çam, klonal olmayan ağaçlar arasında en yaşlı örnek olma özelliğini taşıyor. Yaşayan ve ölmüş ağaçların halkalarını karşılaştıran araştırmacılar, binlerce yıllık iklim arşivini bu sayede inceleyebiliyor."
+    ],
+    "comment": "Binlerce yıllık bir ekosistem parçasının yerinin gizlenmesi, doğal mirası koruma refleksi açısından yerinde bir güvenlik önlemidir. 4 bin 858 yıllık geçmişe sahip bu ağacın korunması, insan faaliyetlerinin doğal varlıklar üzerindeki yıkıcı etkisini engellemek için somut bir mecburiyettir. Benzer antik canlılar popülerleştiğinde aşırı turizm baskısıyla karşı karşıya kalırken, bu örnekte uygulanan gizlilik politikası ekosistemin zarar görmesini engelliyor. Önlem alınmazsa binlerce yıllık biyolojik kalıntılar kısa sürede yok olma tehlikesiyle yüzleşebilir.",
+    "editorNote": "Piramitlerden üç asır daha eski olan bu gizli çam, sert doğa koşulları sayesinde bin yıldır ayakta kalıyor.",
+    "tags": [
+      "Methuselah",
+      "Bristlecone Çamı",
+      "Kaliforniya",
+      "Ormancılık",
+      "Doğa"
+    ],
+    "category": "Bilim",
+    "gorselSorgu": "ancient bristlecone pine tree California",
+    "source": "NTV Yaşam",
+    "sourceUrl": "https://www.ntv.com.tr/yasam/galeri-piramitlerden-bile-yasli-bir-agac-tam-yeri-sir-gibi-saklaniyor-1747049",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/Ancient_Bristlecone_Pine_Forest%2C_California_1989_45.jpg",
+    "gorselKaynak": {
+      "yazar": "LBM1948",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Ancient_Bristlecone_Pine_Forest,_California_1989_45.jpg"
+    },
+    "publishedAt": "2026-10-19T16:27:23.000Z",
+    "generatedAt": "2026-10-19T16:31:31.927Z",
+    "gorselEk": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Ancient_Bristlecone_Pine_Forest%2C_California_1989_40.jpg",
+        "yazar": "LBM1948",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Ancient_Bristlecone_Pine_Forest,_California_1989_40.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Ancient_Bristlecone_Pine_Forest%2C_California_1989_48.jpg",
+        "yazar": "LBM1948",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Ancient_Bristlecone_Pine_Forest,_California_1989_48.jpg"
+      }
+    ]
+  },
+  {
+    "id": "8e3e7fa1580d8cc3",
+    "title": "SpaceX hisseleri finansal sonuçlar açıklanmadan önce değer kaybediyor",
+    "slug": "spacex-hisseleri-finansal-sonuclar-aciklanmadan-once-deger-kaybediyor",
+    "summary": "Uzay taşımacılığı şirketi SpaceX'in hisseleri, yaklaşan finansal rapor dönemi öncesinde piyasa dalgalanmalarıyla karşı karşıya. Yatırımcılar şirketin bilanço verilerini beklerken hisse senedi değerindeki hareketlilik yakından izleniyor.",
+    "keyPoints": [
+      "SpaceX hisseleri yaklaşan kazanç raporu öncesinde belirsizlik yaşıyor.",
+      "Piyasalar şirketin açıklayacağı mali tablolara odaklanmış durumda.",
+      "Hisse değerindeki dalgalanmalar yatırımcı stratejilerini doğrudan etkiliyor."
+    ],
+    "body": [
+      "Küresel uzay endüstrisinin en büyük oyuncuları arasında yer alan SpaceX, finansal raporlarının açıklanacağı döneme girerken hisse senedi piyasalarında hareketli saatler yaşıyor. Şirketin ticari operasyonları ve uydu interneti projeleri yatırımcıların radarında kalmaya devam ederken, bilanço öncesi fiyatlamalar dikkat çekiyor. Son dönemdeki piyasa koşulları, uzay ve havacılık sektöründeki varlıkların değerlemesinde belirleyici bir rol üstleniyor.",
+      "Analistler, açıklanacak rakamların şirketin gelecekteki büyüme potansiyeli hakkında net ipuçları vereceğini belirtiyor. Özellikle roket fırlatma maliyetleri, Starlink projesinin gelir akışı ve Ar-Ge harcamaları mali tablolarda en çok merak edilen kalemler arasında bulunuyor. Bu unsurlar, hisse senedinin kısa vadeli yönünü tayin edecek temel etkenler olarak öne çıkıyor.",
+      "Piyasa katılımcıları, açıklanacak bilançoların ardından hisselerde bir toparlanma hareketi mi yoksa satış baskısının süreceğini mi merak ediyor. Sektör genelindeki ekonomik göstergeler ve rakip şirketlerin hamleleri de SpaceX'in piyasadaki konumunu şekillendiriyor. Yatırımcılar, gelecek projeksiyonlarına dair verilecek ipuçlarını değerlendirmek için rapor tarihini bekliyor."
+    ],
+    "comment": "Şirket hisselerindeki bu dalgalanma, sermaye piyasalarının büyüme odaklı teknoloji girişimlerine yaklaşımındaki temkinli duruşu net bir şekilde gösteriyor. Bilanço dönemlerinde yaşanan bu tür hareketlilikler, özellikle yüksek maliyetli projeler yürüten kurumların nakit akışı yönetimine ne kadar odaklanılması gerektiğini ortaya koyuyor. Önümüzdeki süreçte açıklanacak somut rakamlar, uzun vadeli yatırımcılar için ana rehber olacak.",
+    "editorNote": "Mali tabloların açıklanmasına az bir süre kala piyasalarda yaşanan bu hareketlilik yatırımcıların stratejilerini yeniden gözden geçirmesine neden oluyor.",
+    "tags": [
+      "SpaceX",
+      "hisse senedi",
+      "finansal sonuçlar",
+      "yatırım",
+      "borsa"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "SpaceX rocket launch pad",
+    "source": "Invezz",
+    "sourceUrl": "https://invezz.com/tr/haber/2026/10/19/spacex-hisseleri-kazanclar-yaklasirken-toparlanma-mi-yoksa-daha-fazla-dusus-mu/",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/NASA%E2%80%99s_SpaceX_Crew-5_Falcon_9-Dragon_Rollout_to_Launch_Pad_39A_%28NHQ202210010004%29.jpg/1920px-NASA%E2%80%99s_SpaceX_Crew-5_Falcon_9-Dragon_Rollout_to_Launch_Pad_39A_%28NHQ202210010004%29.jpg",
+    "gorselKaynak": {
+      "yazar": "Joel Kowsky",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:NASA%E2%80%99s_SpaceX_Crew-5_Falcon_9-Dragon_Rollout_to_Launch_Pad_39A_(NHQ202210010004).jpg"
+    },
+    "publishedAt": "2026-10-19T16:24:07.000Z",
+    "generatedAt": "2026-10-19T16:30:52.411Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/NASA%E2%80%99s_SpaceX_Crew-5_Falcon_9-Dragon_Rollout_to_Launch_Pad_39A_%28NHQ202210010003%29.jpg/1920px-NASA%E2%80%99s_SpaceX_Crew-5_Falcon_9-Dragon_Rollout_to_Launch_Pad_39A_%28NHQ202210010003%29.jpg",
+        "yazar": "Joel Kowsky",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:NASA%E2%80%99s_SpaceX_Crew-5_Falcon_9-Dragon_Rollout_to_Launch_Pad_39A_(NHQ202210010003).jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/NASA%E2%80%99s_SpaceX_Crew-5_Falcon_9-Dragon_Rollout_to_Launch_Pad_39A_%28NHQ202210010007%29.jpg/1920px-NASA%E2%80%99s_SpaceX_Crew-5_Falcon_9-Dragon_Rollout_to_Launch_Pad_39A_%28NHQ202210010007%29.jpg",
+        "yazar": "Joel Kowsky",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:NASA%E2%80%99s_SpaceX_Crew-5_Falcon_9-Dragon_Rollout_to_Launch_Pad_39A_(NHQ202210010007).jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "005f29437184c8b9",
     "title": "Şırnak'ta aranan 49 kişiden 12'si jandarma operasyonuyla yakalandı",
     "slug": "sirnakta-aranan-49-kisiden-12si-jandarma-operasyonuyla-yakalandi",
