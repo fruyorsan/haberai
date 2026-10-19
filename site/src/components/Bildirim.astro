@@ -67,6 +67,36 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
 
         <p class="bel__durum" id="bel-durum" role="status" aria-live="polite" />
       </div>
+
+      {/* Otomatik izin istemi: okuyucu biraz gezinince bir kez, kendi
+          tasarımımızla sorulur. "İzin Ver" gerçek bir dokunuş olduğu için
+          tarayıcının izin penceresi açılabilir (zil yoluyla aynı). */}
+      <div class="bel-iste" id="bel-iste" hidden>
+        <div
+          class="bel-iste__kart"
+          role="dialog"
+          aria-labelledby="bel-iste-ad"
+          aria-describedby="bel-iste-metin"
+        >
+          <span class="bel-iste__ikon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8.5a6 6 0 1 0-12 0c0 4.6-1.9 5.7-1.9 7.1h15.8c0-1.4-1.9-2.5-1.9-7.1z" />
+              <path d="M10.2 20.2a2.1 2.1 0 0 0 3.6 0" />
+            </svg>
+          </span>
+          <div class="bel-iste__govde">
+            <p class="bel-iste__ad" id="bel-iste-ad">Gündemden ilk senin haberin olsun!</p>
+            <p class="bel-iste__metin" id="bel-iste-metin">
+              Son dakika haberleri için bildirimlere izin ver. İstediğin an kapatabilirsin.
+            </p>
+          </div>
+          <div class="bel-iste__btnler">
+            <button type="button" class="bel-iste__sonra" data-bel-sonra>Daha Sonra</button>
+            <button type="button" class="bel-iste__izin" data-bel-izin>İzin Ver</button>
+          </div>
+          <button type="button" class="bel-iste__kapat" data-bel-sonra aria-label="Kapat">×</button>
+        </div>
+      </div>
     </div>
   )
 }
@@ -251,6 +281,128 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
     white-space: nowrap;
   }
 
+  /* --- Otomatik izin istemi (CNN Türk tarzı, kendi tasarımımız) --- */
+  .bel-iste {
+    position: fixed;
+    z-index: 80;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    width: min(430px, calc(100vw - 24px));
+    padding: 0;
+  }
+  .bel-iste[hidden] {
+    display: none;
+  }
+  .bel-iste__kart {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 16px 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: 0 22px 50px -18px rgba(9, 12, 18, 0.55);
+    animation: bel-iste-gir 0.28s var(--ease, ease);
+  }
+  @keyframes bel-iste-gir {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  .bel-iste__ikon {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: var(--brand-grad);
+    color: #fff;
+    box-shadow: 0 10px 20px -12px var(--brand-glow);
+  }
+  .bel-iste__govde {
+    flex: 1 1 200px;
+    min-width: 0;
+  }
+  .bel-iste__ad {
+    margin: 0 0 3px;
+    font-size: 0.95rem;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    color: var(--heading);
+  }
+  .bel-iste__metin {
+    margin: 0;
+    font-size: 0.8rem;
+    line-height: 1.45;
+    color: var(--muted);
+  }
+  .bel-iste__btnler {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    width: 100%;
+    margin-top: 2px;
+  }
+  .bel-iste__sonra,
+  .bel-iste__izin,
+  .bel-iste__kapat {
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .bel-iste__sonra {
+    padding: 9px 14px;
+    border: 0;
+    border-radius: 11px;
+    background: transparent;
+    color: var(--text-2);
+    font-size: 0.84rem;
+    font-weight: 700;
+  }
+  .bel-iste__sonra:hover {
+    color: var(--heading);
+    background: var(--surface-2);
+  }
+  .bel-iste__izin {
+    padding: 9px 18px;
+    border: 0;
+    border-radius: 11px;
+    background: var(--brand-grad);
+    color: #fff;
+    font-size: 0.84rem;
+    font-weight: 800;
+    box-shadow: 0 12px 22px -14px var(--brand-glow);
+  }
+  .bel-iste__izin:hover {
+    filter: brightness(1.05);
+  }
+  .bel-iste__kapat {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 26px;
+    height: 26px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--muted);
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+  .bel-iste__kapat:hover {
+    background: var(--surface-2);
+    color: var(--heading);
+  }
+
   @media (max-width: 720px) {
     .bel__btn {
       width: 44px;
@@ -263,6 +415,13 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
       left: 16px;
       right: 16px;
       width: auto;
+    }
+    /* Alt menünün üstünde dursun. */
+    .bel-iste {
+      bottom: 78px;
+    }
+    .bel-iste__kart {
+      padding: 14px 14px 12px;
     }
   }
 </style>
@@ -638,6 +797,76 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
       if ("requestIdleCallback" in window) requestIdleCallback(esitle, { timeout: 4000 });
       else setTimeout(esitle, 2500);
     }
+
+    // ==========================================================================
+    // OTOMATİK İZİN İSTEMİ
+    // --------------------------------------------------------------------------
+    // Türkiye'de okuyucular bildirim iznini kendiliğinden vermiyor; zili fark
+    // etmiyorlar. Bu yüzden biraz gezinince bir kez, kendi tasarımımızla
+    // sorulur. "İzin Ver" gerçek bir dokunuş → tarayıcının izin penceresi
+    // açılabilir. "Daha Sonra" 7 gün boyunca tekrar sormaz; izin verilmiş ya
+    // da kalıcı olarak reddedilmişse hiç gösterilmez.
+    // ==========================================================================
+    const iste = document.getElementById("bel-iste");
+    // Header'da backdrop-filter var: onun içindeki position:fixed, header'a göre
+    // konumlanır (sayfayla kayar). Bu yüzden istem gövdeye taşınır.
+    if (iste && iste.parentElement !== document.body) document.body.appendChild(iste);
+    const K_ISTE = "bildirim-istem";
+    const K_GOR = "bildirim-goruntuleme";
+
+    function isteGoster() {
+      if (!iste || !iste.hidden) return;
+      if (typeof Notification === "undefined") return; // iOS sekmesi (API yok)
+      if (Notification.permission !== "default") return; // verilmiş / reddedilmiş
+      if (iosKuruluDegil()) return; // iPhone: önce Ana Ekrana Ekle
+      if (abone) return;
+      if (!panel.hidden) return; // okuyucu şu an panelde
+      // Akış sayfasında kendi bildirim şeridi var; iki istem üst üste gelmesin.
+      if (location.pathname.startsWith("/akis")) return;
+      const ertelendi = Number(oku(K_ISTE, 0)) || 0;
+      if (ertelendi && Date.now() - ertelendi < 7 * 24 * 60 * 60 * 1000) return;
+      iste.hidden = false;
+    }
+
+    function isteKapat(ertelendi) {
+      if (!iste) return;
+      iste.hidden = true;
+      if (ertelendi) yaz(K_ISTE, Date.now());
+    }
+
+    iste?.querySelectorAll("[data-bel-sonra]").forEach((b) => {
+      b.addEventListener("click", () => isteKapat(true));
+    });
+
+    iste?.querySelector("[data-bel-izin]")?.addEventListener("click", async () => {
+      isteKapat(false);
+      // İzin penceresi await'ten ÖNCE açılmalı: Safari (iOS) yalnızca doğrudan
+      // dokunuş içinde açıyor. OneSignal SDK'sı sonra devreye girer.
+      try {
+        if (typeof Notification !== "undefined" && Notification.permission === "default") {
+          Notification.requestPermission();
+        }
+      } catch {
+        /* tarayıcı desteklemiyorsa aboneBaslat kendi yolunu dener */
+      }
+      const oldu = await aboneBaslat();
+      ciz();
+      durumYaz();
+      if (!oldu && izinEngelli()) {
+        panelAc(true);
+      }
+    });
+
+    // Ne zaman sorulsun: 2. sayfa görüntülemesinde 4 sn sonra; ilk gelişte
+    // 18 sn sonra (okuyucu biraz okusun, hemen üstüne atlamasın).
+    let goruntuleme = 0;
+    try {
+      goruntuleme = Number(sessionStorage.getItem(K_GOR) || 0) + 1;
+      sessionStorage.setItem(K_GOR, String(goruntuleme));
+    } catch {
+      goruntuleme = 1;
+    }
+    window.setTimeout(isteGoster, goruntuleme >= 2 ? 4000 : 18000);
 
     // Akış sayfasındaki bildirim istemi AYNI yolu kullansın diye küçük bir API
     // açılır (tek doğru kaynağı olsun; iki ayrı akış ayrı sonuç vermesin).

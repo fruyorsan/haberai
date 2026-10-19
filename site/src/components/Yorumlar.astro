@@ -14,7 +14,7 @@
 // YOK (eskiden Telegram paneline atıyordu): yorum yeri her zaman site içinde.
 // giscus geç de olsa yüklenirse kutu geri açılır — yavaş bağlantıda yanlış
 // "kapalı" görünmesin.
-import { GISCUS } from "../lib/site-meta.js";
+import { GISCUS, CONTACT_EMAIL } from "../lib/site-meta.js";
 
 interface Props {
   /** Yorum dizisi bu habere özel olsun diye kullanılan sabit anahtar. */
@@ -71,7 +71,8 @@ const otomatik = !sade && Boolean(slug) && giscusVar;
   }
 
   <p class="yorum__kapali" data-yorum-kapali hidden={giscusVar}>
-    💬 Yorumlar şu an kapalı.
+    💬 Yorumlar kısa süre içinde açılacak. Bu arada görüşünü{" "}
+    <a href={`mailto:${CONTACT_EMAIL}`}>e-posta ile</a> iletebilirsin.
   </p>
 </section>
 
@@ -88,6 +89,10 @@ const otomatik = !sade && Boolean(slug) && giscusVar;
     padding: 4px 2px 0;
     border: 0;
     background: transparent;
+  }
+  /* Akış panelinde başlık zaten panelin başlığında var: tekrar etmesin. */
+  .yorum--sade .yorum__baslik {
+    display: none;
   }
   .yorum__ust {
     display: flex;
@@ -186,14 +191,16 @@ const otomatik = !sade && Boolean(slug) && giscusVar;
     s.setAttribute("data-loading", "lazy");
     hedef.appendChild(s);
 
-    // 12 sn içinde giscus'tan olumlu mesaj gelmezse kutu kapanır (yerinde yalnız
-    // sessiz not kalır). Süre geniş tutuldu: telefonda yavaş ağda giscus geç de
-    // olsa yüklenir ve aşağıdaki mesaj geldiğinde kutu geri açılır.
+    // 4,5 sn içinde giscus'tan olumlu mesaj gelmezse kutu kapanır (yerinde
+    // yalnız sessiz not kalır). Kısa tutuldu: uygulama depoya kurulu değilse
+    // giscus iframe'i ham hata metnini gösteriyordu ("giscus is not installed
+    // on this repository"). Uygulama kurulduktan sonra normal yüklemede de
+    // mesaj 1-2 sn içinde gelir; geç gelirse kutu geri açılır.
     const durum = { gordum: false };
     mesajlar.set(kok, durum);
     window.setTimeout(() => {
       if (!durum.gordum && kok.dataset.giscus === "1") kutuKapat(kok, kutu, kapali);
-    }, 12000);
+    }, 4500);
 
     window.addEventListener("message", (e) => {
       if (e.origin !== "https://giscus.app") return;

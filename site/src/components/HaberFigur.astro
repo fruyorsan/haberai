@@ -2,8 +2,10 @@
 // Haber gövdesi içindeki fotoğraf figürü.
 //
 // Görsel telif güvenli stok hattından geliyorsa (`kaynak` dolu) lisansın
-// istediği atıf verilir: fotoğrafçı + lisans bağlantısı + dosya sayfası.
-// Eski kayıtlarda lisans bilgisi yoktur; yalnızca kaynak adı yazılır.
+// istediği atıf verilir. Atıf artık fotoğrafın ALTINDA uzun bir satır değil,
+// sağ alt köşedeki küçük "i" rozetinde: dokununca/hover'da fotoğrafçı + lisans
+// görünür, tıklayınca Commons dosya sayfası açılır. Ekran okuyucular ve metin
+// tarayıcılar için tam atıf DOM'da (sr-only) durmaya devam eder.
 import { imageUrl, imageSrcset } from "../lib/articles.js";
 
 const { url, baslik, kaynak, eskiKaynak } = Astro.props;
@@ -15,51 +17,57 @@ const lisansAdresi = (g) => {
   return m ? `https://creativecommons.org/licenses/${m[1] ? "by-sa" : "by"}/${m[2]}/` : "";
 };
 const lisansLink = kaynak ? lisansAdresi(kaynak) : "";
+
+const atif = kaynak
+  ? `Fotoğraf: ${kaynak.yazar || "Wikimedia Commons"}${kaynak.lisans ? ` · ${kaynak.lisans}` : ""} · Wikimedia Commons`
+  : `Fotoğraf: ${eskiKaynak || "HaberinAi"}`;
+const atifAdres = kaynak?.sayfa || url;
 ---
 
 <figure class="content__fig">
-  <a
-    class="content__fig-link"
-    href={url}
-    target="_blank"
-    rel="noopener nofollow"
-    title="Fotoğrafı büyüt"
-  >
-    <img
-      class="content__fig-img"
-      src={imageUrl(url, 1000)}
-      srcset={imageSrcset(url, [640, 1000]) || undefined}
-      sizes="(max-width: 900px) 100vw, 800px"
-      data-orig={url}
-      alt={`${baslik} — haber fotoğrafı`}
-      width="1000"
-      height="563"
-      loading="lazy"
-      decoding="async"
-      referrerpolicy="no-referrer"
-      onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.removeAttribute('srcset');this.removeAttribute('sizes');this.src=this.dataset.orig}else{this.closest('figure').remove()}"
-    />
-  </a>
-  <figcaption>
-    {kaynak ? (
-      <span class="content__fig-src">
-        Fotoğraf: {kaynak.yazar || "Wikimedia Commons"}
-        {kaynak.lisans && lisansLink && (
-          <>
-            {" · "}
-            <a href={lisansLink} target="_blank" rel="noopener nofollow">{kaynak.lisans}</a>
-          </>
-        )}
-        {kaynak.sayfa && (
-          <>
-            {" · "}
-            <a href={kaynak.sayfa} target="_blank" rel="noopener nofollow">Wikimedia Commons</a>
-          </>
-        )}
-      </span>
-    ) : (
-      <span class="content__fig-src">Fotoğraf: {eskiKaynak || "HaberinAi"}</span>
+  <div class="content__fig-kap">
+    <a
+      class="content__fig-link"
+      href={url}
+      target="_blank"
+      rel="noopener nofollow"
+      title="Fotoğrafı büyüt"
+    >
+      <img
+        class="content__fig-img"
+        src={imageUrl(url, 1000)}
+        srcset={imageSrcset(url, [640, 1000]) || undefined}
+        sizes="(max-width: 900px) 100vw, 800px"
+        data-orig={url}
+        alt={`${baslik} — haber fotoğrafı`}
+        width="1000"
+        height="563"
+        loading="lazy"
+        decoding="async"
+        referrerpolicy="no-referrer"
+        onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.removeAttribute('srcset');this.removeAttribute('sizes');this.src=this.dataset.orig}else{this.closest('figure').remove()}"
+      />
+    </a>
+    <a
+      class="content__fig-credit"
+      href={atifAdres}
+      target="_blank"
+      rel="noopener nofollow"
+      title={atif}
+      aria-label={`${atif}. Wikimedia Commons dosya sayfasını aç`}
+    >
+      <span aria-hidden="true">i</span>
+    </a>
+  </div>
+
+  <figcaption class="sr-only">
+    {atif}
+    {kaynak?.lisans && lisansLink && <a href={lisansLink} target="_blank" rel="noopener nofollow">{kaynak.lisans}</a>}
+    {kaynak?.sayfa && (
+      <>
+        {" · "}
+        <a href={kaynak.sayfa} target="_blank" rel="noopener nofollow">Wikimedia Commons</a>
+      </>
     )}
-    <span class="content__fig-hint">büyütmek için tıkla</span>
   </figcaption>
 </figure>
