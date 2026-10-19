@@ -1,5 +1,56 @@
 [
   {
+    "id": "14e1dd5aeff933d1",
+    "title": "Çin merkezli girişim, 4 metre boyundaki yeni insansı robotunu tanıttı",
+    "slug": "cin-merkezli-girisim-4-metre-boyundaki-yeni-insansi-robotunu-tanitti",
+    "summary": "Pekin merkezli NeodraDynamics Robotics, iki koluyla 500 kilogramlık yükleri kaldırabilen Neo1 adlı dev insansı robotunu tanıttı. Çin Uluslararası Sanayi Fuarı'nda görücüye çıkan robotun tasarımı, minyatür hidrolik aktüatör teknolojisine dayanıyor.",
+    "keyPoints": [
+      "Neo1 adı verilen insansı robot, iki koluyla toplam 500 kilogram yük taşıyabiliyor.",
+      "Yaklaşık 4 metre boyundaki makinenin gövdesinde toplam 41 aktif serbestlik derecesi bulunuyor.",
+      "Şirket, eklemleri hareket ettirmek için elektrik motorları yerine basınçlı yağ kullanan minyatür hidrolik silindirler tercih etti."
+    ],
+    "body": [
+      "Robotik sektöründe dikkat çeken gelişmeler yaşanmaya devam ederken, Pekin merkezli kurulan NeodraDynamics Robotics şirketi dikkat çekici bir modeli kamuoyuna duyurdu. Yaklaşık 4 metre yüksekliğe sahip olan Neo1 isimli dev insansı robot, şirketin aktardığı bilgilere göre çift koluyla tam 500 kilogram ağırlığındaki nesneleri kaldırabiliyor. Ancak üreticinin paylaştığı bu iddialı rakamlar henüz bağımsız kuruluşlar tarafından doğrulanmış değil.",
+      "Şirketin kurucusu Yang Tao yönetimindeki ekip, Tsinghua Üniversitesi kökenli mühendislerden oluşuyor. Markanın temel uzmanlık alanı, geleneksel elektrik motorları yerine basınçlı yağ kullanarak robot eklemlerine hareket veren minyatür hidrolik silindirler üzerine kurulu. Bu teknolojinin ilk somut göstergesi olan Neo1, Ekim ayında düzenlenen Çin Uluslararası Sanayi Fuarı'nda ortaklarından JD Industrial iş birliğiyle sergileniyor.",
+      "Söz konusu makinenin kalbini oluşturan sistem, 1,1 kilogram ağırlığındaki dijital mikro hidrolik silindirden güç alıyor. Üreticinin verilerine göre bu parça, 1.000 kilogramlık yükü 1 mikrometre hassasiyetle hareket ettirebiliyor. Gövde genelinde yer alan 41 aktif serbestlik derecesinden 39'u bu minyatür doğrusal hidrolik aktüatörlerle, ikisi ise bileklerdeki elektrikli motorlarla çalıştırılıyor.",
+      "Tasarımda elektrik motorları yerine hidrolik sistemlerin seçilmesinin temel sebebi, aynı ağırlık altındaki basınçlı yağın çok daha fazla kuvvet üretebilmesi. Vinç kollarında ve büyük iş makinelerinde de benzer bir mantık işletiliyor. Bununla birlikte contalar, olası sızıntılar, ısı yönetimi ve kontrol karmaşıklığı gibi teknik sorunlar sektör uzmanları tarafından hâlâ aşılması gereken engeller arasında sayılıyor.",
+      "Girişim, yeni robotun kullanım alanları arasında endüstriyel limanlarda ağır yük taşımacılığını, nükleer tesis bakımını, su altı müdahalelerini ve afet bölgelerindeki enkaz kaldırma çalışmalarını sıralıyor. Şimdilik bu senaryoların gerçek sahada çalıştığına dair doğrulanmış bir video veya kayıt bulunmuyor. Benzer projeler kağıt üstünde kalma riski taşırken, gözler makinenin yeteneklerini kanıtlayacak somut verilere çevrilmiş durumda."
+    ],
+    "comment": "Donanım dünyasında devasa gövdeler her zaman ilgi toplasa da asıl rekabet arka planda çalışan bileşenlerin verimliliğinde kilitleniyor. Şirketin savunduğu 1,1 kilogramlık mikro hidrolik silindir teknolojisi kağıt üzerinde başarılı görünse de, bağımsız testlerin eksikliği ve sahadaki çalışma kanıtının bulunmaması projenin gerçekçi sınırlarını belirsiz kılıyor. Endüstriyel alanda faaliyet gösteren üreticiler ve liman işletmeleri açısından bu tür hidrolik sistemler, elektrikli alternatiflerine kıyasla bakım maliyetlerini artırma riski taşıyor. Benzer Çinli projelerle kıyaslandığında, Neo1'in endüstriye kalıcı bir yenilik getirmesi ancak bileşen maliyetlerinin düşmesine ve sızıntı gibi kronik sorunların çözülmesine bağlı.",
+    "editorNote": "Devasa boyutuyla dikkat çeken Neo1'in asıl yeniliği, ekskavatör mantığını minyatürleştiren hidrolik silindirlerinde saklı.",
+    "tags": [
+      "Neo1",
+      "NeodraDynamics",
+      "insansı robot",
+      "Çin",
+      "hidrolik aktüatör",
+      "teknoloji"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "humanoid robot industrial factory",
+    "source": "Pasquale Pillitteri",
+    "sourceUrl": "https://pasqualepillitteri.it/tr/news/25722/neo1-cin-insansi-robot-4-metre-500-kg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0e/UBTECH_Alpha_1PRO_Humanoid_Robot_-_hack4no_2016.jpg",
+    "gorselKaynak": {
+      "yazar": "Kartverket",
+      "lisans": "CC BY 2.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:UBTECH_Alpha_1PRO_Humanoid_Robot_-_hack4no_2016.jpg"
+    },
+    "publishedAt": "2026-10-19T18:25:14.000Z",
+    "generatedAt": "2026-10-19T18:30:15.112Z",
+    "gorselEk": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Humanoid_Robot_at_International_Exhibitions.jpg",
+        "yazar": "Om Umekar",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Humanoid_Robot_at_International_Exhibitions.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "49fe6a1f827555cb",
     "title": "Slavia Prag Teknik Direktörü Trpisovsky'den Fenerbahçe maçı değerlendirmesi",
     "slug": "slavia-prag-teknik-direktoru-trpisovskiden-fenerbahce-maci-degerlendirmesi",
