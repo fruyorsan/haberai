@@ -33,6 +33,12 @@ const ESKI_GORSEL = /(black and white|monochrome|archival|historical|engraving|l
 // kapak olarak "dikkat çekici" değil. Elenmez, yalnızca geriye düşürülür.
 const SAHNE_GORSEL = /(conference|meeting|summit|town hall|panel|seminar|workshop|award|ceremony|press briefing)/i;
 
+// Sert/rahatsız edici sahneler (yangın, ceset, kan). Sorgu da afet/yangın
+// içermiyorsa bu fotoğraf kapak olmaz: "muhtarlar kahvaltısı" haberine
+// "Turkish village burned down" fotoğrafı geliyordu.
+const SERT_GORSEL = /\b(burned|burning|destroyed|destruction|rubble|corpse|dead body|blood|bloody|wounded|massacre|execution)\b/i;
+const FELAKET_SORGU = /\b(fire|burn|flood|earthquake|disaster|damage|destroy|collapse|quake|eruption|storm|rescue)\b/i;
+
 const MIN_W = 1000;
 const MIN_H = 560;
 const MIN_ORAN = 1.15; // dikey/kare görseller kartlarda kötü kırpılıyor
@@ -149,6 +155,7 @@ function uygunGorsel(sayfa, sorgu) {
   // 1900 öncesi yıl geçen dosya adları neredeyse her zaman gravür/eski
   // illüstrasyon oluyor ("Istanbul_comet_and_earthquake_1556.jpg" gibi).
   if (/\b1[0-8]\d{2}\b/.test(baslik)) return null;
+  if (SERT_GORSEL.test(baslik) && !FELAKET_SORGU.test(sorgu)) return null;
 
   const meta = ii.extmetadata || {};
   const hamLisans = meta.LicenseShortName?.value;
