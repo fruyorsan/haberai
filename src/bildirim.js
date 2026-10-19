@@ -504,7 +504,13 @@ export async function bildirimleriGonder({ dry = false } = {}) {
   }
 
   // ---- 2) TAKİP EDİLEN KONULAR ----
-  const sessiz = tr.saat >= SESSIZ_BAS || tr.saat < SESSIZ_BIT;
+  // Sessiz saat iki türlü olabilir: gece yarısını aşan (23:00-07:00) ya da aynı
+  // gün içindeki (01:00-07:00) aralık. İkisini de doğru hesapla; tek koşulla
+  // yazınca 01:00-07:00 aralığı TÜM günü sessiz sayıyordu.
+  const sessiz =
+    SESSIZ_BAS <= SESSIZ_BIT
+      ? tr.saat >= SESSIZ_BAS && tr.saat < SESSIZ_BIT
+      : tr.saat >= SESSIZ_BAS || tr.saat < SESSIZ_BIT;
   const gunToplam2 = (durum.gunSayi.son || 0) + (durum.gunSayi.kategori || 0);
   if (sessiz) {
     console.log(`Bildirim: sessiz saat (TR ${tr.saat}:00) → konu bildirimi gönderilmiyor.`);
