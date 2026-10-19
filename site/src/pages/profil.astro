@@ -112,8 +112,9 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
       <section class="profil__blok">
         <h2 class="profil__h2">Bildirim konuların</h2>
         <p class="profil__aciklama">
-          Yalnızca seçtiğin konulardan bildirim alırsın; seçmezsen yalnızca son
-          dakika haberleri gelir.
+          Yalnızca seçtiğin konulardan bildirim alırsın. Boş bırakırsan ilgi
+          alanların bildirime de uygulanır; hiçbiri yoksa yalnızca son dakika
+          haberleri gelir.
         </p>
         <div class="profil__cipler" id="profil-bildirim">
           {KATEGORILER.map((k) => (
@@ -672,6 +673,14 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         kaydet.disabled = true;
         durum("Kaydediliyor…");
         try {
+          // Bildirim konusu hiç seçilmediyse ilgi alanları bildirime de yazılır:
+          // "ilgimi seçtim ama bildirim gelmiyor" durumu oluşmasın.
+          if (!bildirimSecim.size && ilgiSecim.size) {
+            ilgiSecim.forEach(function (s) {
+              bildirimSecim.add(s);
+            });
+            ciz();
+          }
           var r = await H.profilGuncelle({
             ad: (adGirdi && adGirdi.value.trim()) || u.ad,
             ilgi: Array.from(ilgiSecim),

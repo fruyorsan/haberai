@@ -391,7 +391,9 @@
 
     try {
       var tum = ayarlar().kategoriler;
-      var t = { uye: "1" };
+      // son_dakika: hesaba giren cihazın son dakika haberlerini alması için
+      // (sunucu "tüm aboneler" hedeflemesini bu etiketle yapar).
+      var t = { uye: "1", son_dakika: "1" };
       for (var i = 0; i < tum.length; i++) {
         t["kategori_" + tum[i]] = slugs.indexOf(tum[i]) >= 0 ? "1" : "";
       }

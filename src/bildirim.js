@@ -4,8 +4,10 @@
 // Sitenin sözü: okuyucu neye abone olduysa YALNIZCA onu alır. Bu yüzden:
 //
 //   1) SON DAKİKA (haber kaydında breaking === true):
-//      tüm abonelere gider. Asgari aralık SON_MIN_ARALIK_DK, günlük tavan
-//      SON_MAX_GUN. Gece de gönderilir (acil gelişme beklenir).
+//      tüm abonelere gider. Hedefleme `son_dakika=1` etiketiyle yapılır
+//      ("Subscribed Users" segmenti yeni OneSignal modelinde boş dönüyor).
+//      Asgari aralık SON_MIN_ARALIK_DK, günlük tavan SON_MAX_GUN. Gece de
+//      gönderilir (acil gelişme beklenir).
 //
 //   2) KONU TAKİBİ (okuyucunun işaretlediği kategori):
 //      OneSignal etiketiyle yalnızca o konuyu takip edenlere gider
@@ -280,7 +282,12 @@ async function gonder(p) {
   } else if (p.etiket) {
     govde.filters = [{ field: "tag", key: p.etiket, relation: "=", value: "1" }];
   } else {
-    govde.included_segments = ["Subscribed Users"];
+    // TÜM aboneler: `included_segments: ["Subscribed Users"]` KULLANILMAZ.
+    // OneSignal'in yeni kullanıcı modelinde o segment boş dönüyor ve istek
+    // "All included players are not subscribed" ile reddediliyor; sayaç yine
+    // artıyor, okuyucuya ise hiçbir şey gitmiyor. Cihaz, bildirimi açtığı anda
+    // son_dakika=1 etiketini aldığı için hedefleme etiketle yapılır.
+    govde.filters = [{ field: "tag", key: "son_dakika", relation: "=", value: "1" }];
   }
 
   const res = await fetch("https://api.onesignal.com/notifications", {
@@ -291,7 +298,14 @@ async function gonder(p) {
   });
   const metin = await res.text();
   if (!res.ok) throw new Error(`HTTP ${res.status}: ${metin.slice(0, 300)}`);
-  return metin ? JSON.parse(metin) : null;
+  const yanit = metin ? JSON.parse(metin) : null;
+  // HTTP 200 olsa da OneSignal hedefi reddedebilir (id boş + errors dolu).
+  // Böyle bir yanıtı başarı saymak günlük tavandan yiyip hiç bildirim
+  // göndermemeye yol açıyordu.
+  if (yanit && (yanit.errors || !yanit.id)) {
+    throw new Error(`OneSignal reddetti: ${JSON.stringify(yanit.errors || yanit).slice(0, 200)}`);
+  }
+  return yanit;
 }
 
 // --------------------------------------------------------------------------
