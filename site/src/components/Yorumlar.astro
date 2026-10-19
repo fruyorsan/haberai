@@ -46,6 +46,13 @@ const otomatik = !sade && Boolean(slug) && aktif;
     <span class="yorum__not">Hesap gerekmez · reklamsız</span>
   </header>
 
+  {/* Akış panelinde: yorumlar haber sayfasıyla AYNI havuzu kullanır. */}
+  {sade && (
+    <p class="yorum__ortak">
+      ✍️ Yorumun bu habere özel — haber sayfasındaki yorumlarla aynı yerde görünür.
+    </p>
+  )}
+
   <form class="yorum__form" data-yorum-form hidden novalidate action="#">
     <input
       class="yorum__ad"
@@ -106,12 +113,60 @@ const otomatik = !sade && Boolean(slug) && aktif;
   }
   .yorum--sade {
     margin: 0;
-    padding: 4px 2px 0;
+    padding: 2px 0 0;
     border: 0;
     background: transparent;
   }
-  .yorum--sade .yorum__baslik {
+  /* Panelde başlık panelin kendi başlığında; tekrar etmesin. */
+  .yorum--sade .yorum__ust {
     display: none;
+  }
+  /* Akıştaki yorum kutusu: yorumlar haber sayfasıyla aynı havuzda. */
+  .yorum__ortak {
+    margin: 0 0 12px;
+    padding: 8px 11px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface-2);
+    font-size: 0.76rem;
+    line-height: 1.45;
+    color: var(--text-2);
+  }
+  /* Akış panelinde daha "sohbet" görünümlü form. */
+  .yorum--sade .yorum__form {
+    gap: 9px;
+    margin-bottom: 14px;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--bg);
+  }
+  .yorum--sade .yorum__metin {
+    min-height: 84px;
+    border-radius: 12px;
+    background: var(--surface);
+    font-size: 0.95rem;
+  }
+  .yorum--sade .yorum__ad {
+    max-width: none;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: var(--surface);
+  }
+  .yorum--sade .yorum__gonder {
+    padding: 10px 20px;
+    border-radius: 999px;
+  }
+  .yorum--sade .yorum__liste {
+    gap: 10px;
+  }
+  .yorum--sade .yorum__oge {
+    padding: 10px 12px;
+    border-radius: 14px 14px 14px 5px;
+    background: var(--surface-2);
+  }
+  .yorum--sade .yorum__oge-metin {
+    font-size: 0.93rem;
   }
   .yorum__ust {
     display: flex;
@@ -236,10 +291,41 @@ const otomatik = !sade && Boolean(slug) && aktif;
     gap: 12px;
   }
   .yorum__oge {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    column-gap: 10px;
     padding: 12px 14px;
     border: 1px solid var(--border);
     border-radius: 13px;
     background: var(--bg);
+  }
+  .yorum__oge-avatar {
+    display: grid;
+    place-items: center;
+    grid-row: 1 / span 2;
+    align-self: start;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-size: 0.82rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  /* Yeni gönderilen yorum kısa bir "parlama" ile belirginleşir. */
+  .yorum__oge--yeni {
+    animation: yorum-yeni 1.6s var(--ease, ease);
+  }
+  @keyframes yorum-yeni {
+    0% {
+      border-color: var(--brand);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 18%, transparent);
+    }
+    100% {
+      border-color: var(--border);
+      box-shadow: none;
+    }
   }
   .yorum__oge-ust {
     display: flex;
@@ -336,6 +422,10 @@ const otomatik = !sade && Boolean(slug) && aktif;
   function oge(y: { ad?: string; metin?: string; created_at?: string }): HTMLLIElement {
     const li = document.createElement("li");
     li.className = "yorum__oge";
+    const avatar = document.createElement("span");
+    avatar.className = "yorum__oge-avatar";
+    avatar.setAttribute("aria-hidden", "true");
+    avatar.textContent = (y.ad || "Okur").trim().charAt(0) || "O";
     const ust = document.createElement("div");
     ust.className = "yorum__oge-ust";
     const ad = document.createElement("span");
@@ -348,7 +438,7 @@ const otomatik = !sade && Boolean(slug) && aktif;
     metin.className = "yorum__oge-metin";
     metin.textContent = y.metin || "";
     ust.append(ad, zm);
-    li.append(ust, metin);
+    li.append(avatar, ust, metin);
     return li;
   }
 
@@ -389,6 +479,9 @@ const otomatik = !sade && Boolean(slug) && aktif;
     }
   }
 
+  /** Panelde aynı kutu her haber için kullanılıyor; son yazılan haber. */
+  let sonSlug = "";
+
   function kur(kok: Kok, { yenile = false } = {}) {
     if (!kok) return;
 
@@ -401,6 +494,17 @@ const otomatik = !sade && Boolean(slug) && aktif;
     const form = kok.querySelector<HTMLFormElement>("[data-yorum-form]");
     if (form) form.hidden = false;
 
+    // Haber değiştiyse önceki haberin yazısı/durumu ekranda kalmasın.
+    const slug = kok.dataset.slug || "";
+    const degisti = slug !== sonSlug;
+    if (degisti) {
+      sonSlug = slug;
+      const metinEl = kok.querySelector<HTMLTextAreaElement>("[data-yorum-metin]");
+      if (metinEl) metinEl.value = "";
+      yaz(kok, "");
+      kok.dataset.yuklendi = "";
+    }
+
     // Olaylar kutu başına BİR kez bağlanır; panel her açıldığında (yenile)
     // yalnızca liste tazelenir (aksi halde çift gönderim olurdu).
     if (!baglananlar.has(kok)) {
@@ -409,7 +513,7 @@ const otomatik = !sade && Boolean(slug) && aktif;
     }
 
     // Aynı haber için panel tekrar açılırsa ve liste zaten yüklüyse atla.
-    if (yenile || kok.dataset.yuklendi !== "1") void yukle(kok);
+    if (yenile || degisti || kok.dataset.yuklendi !== "1") void yukle(kok);
   }
 
   function bagla(kok: Kok) {
@@ -468,7 +572,11 @@ const otomatik = !sade && Boolean(slug) && aktif;
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         const [kayit] = (await r.json()) as { ad?: string; metin?: string; created_at?: string }[];
         const liste = kok.querySelector<HTMLElement>("[data-yorum-liste]");
-        if (liste && kayit) liste.prepend(oge(kayit));
+        if (liste && kayit) {
+          const yeni = oge(kayit);
+          yeni.classList.add("yorum__oge--yeni");
+          liste.prepend(yeni);
+        }
         const bos = kok.querySelector<HTMLElement>("[data-yorum-bos]");
         if (bos) bos.hidden = true;
         const sayi = kok.querySelector<HTMLElement>("[data-yorum-sayi]");
@@ -484,7 +592,12 @@ const otomatik = !sade && Boolean(slug) && aktif;
         } catch {
           /* yok say */
         }
-        yaz(kok, "Yorumun yayınlandı ✓");
+        yaz(
+          kok,
+          kok.classList.contains("yorum--sade")
+            ? "Yorumun yayınlandı ✓ Haber sayfasında da görünüyor."
+            : "Yorumun yayınlandı ✓",
+        );
       } catch {
         yaz(kok, "Yorum gönderilemedi. Biraz sonra tekrar dene.", true);
       } finally {

@@ -39,6 +39,27 @@ const SAHNE_GORSEL = /(conference|meeting|summit|town hall|panel|seminar|worksho
 const SERT_GORSEL = /\b(burned|burning|destroyed|destruction|rubble|corpse|dead body|blood|bloody|wounded|massacre|execution)\b/i;
 const FELAKET_SORGU = /\b(fire|burn|flood|earthquake|disaster|damage|destroy|collapse|quake|eruption|storm|rescue)\b/i;
 
+// UYDU / HAVA GÖRÜNTÜSÜ: MODIS, Copernicus, Sentinel gibi görüntüler haber
+// sayfasında fotoğraf gibi değil harita gibi duruyor. (19.10.2026: İspanya
+// selinde "Extreme Weather on the Iberian Peninsula (MODIS)" aday listesine
+// girdi.) Konu uzay/uydu değilse elenir.
+const UYDU_GORSEL =
+  /\b(modis|copernicus|sentinel|landsat|nesdis|goes[-\s]?\d|cira|orthophoto|orthomosaic|satellite|from space|aerial (view|photo|image)|aerial photograph)\b/i;
+const UZAY_SORGU = /\b(space|satellite|nasa|esa|rocket|orbit|uzay|uydu|astronaut)\b/i;
+
+// Afet/hava haberi mi? (İngilizce AI sorgusu + Türkçe başlık birlikte bakılır.)
+// Yalnızca AI'nın sorgusuna bakmak yetmiyordu: "Akdeniz'de deprem" haberinde
+// sorgu "Mediterranean Sea coastline landscape" olmuş; afet bağlamı kaybolunca
+// sahilde bir manzara fotoğrafı kapak oluyordu.
+const AFET_SORGU =
+  /\b(flood|flooding|earthquake|quake|wildfire|storm|hurricane|typhoon|cyclone|drought|blizzard|avalanche|eruption|tsunami|fire|sel|su baskını|deprem|yangın|fırtına|hortum|kuraklık|heyelan|çığ)\b/i;
+
+// Afet/hava sorgusunda fotoğrafın adında da afet izi olmalı. Yoksa "sahil
+// manzarası" gibi sakin bir kare, "deprem" haberine kapak oluyordu.
+// Kök eşleşmesi (sondaki \b yok): "collapsed", "damaged", "burning" de yakalanır.
+const FELAKET_GORSEL =
+  /\b(flood|inundat|earthquake|quake|fire|burn|blaze|storm|hurricane|typhoon|cyclone|damag|destro|rubble|collaps|rescue|drought|blizzard|snowstorm|avalanche|eruption|lava|wreck)/i;
+
 const MIN_W = 1000;
 const MIN_H = 560;
 const MIN_ORAN = 1.15; // dikey/kare görseller kartlarda kötü kırpılıyor
@@ -95,7 +116,7 @@ function eslesenSayisi(metin, sorgu) {
 const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
 
 /** Commons'ta serbest lisanslı, büyük ve yatay fotoğraf arar. */
-async function commonsAra(sorgu, adet = ADAY, offset = 0) {
+async function commonsAra(sorgu, adet = ADAY, offset = 0, afet = false) {
   const params = new URLSearchParams({
     action: "query",
     format: "json",
@@ -123,21 +144,21 @@ async function commonsAra(sorgu, adet = ADAY, offset = 0) {
       signal: AbortSignal.timeout(15000),
     });
     if (!tekrar.ok) throw new Error(`Commons HTTP ${tekrar.status}`);
-    return sayfalariCoz(await tekrar.json(), sorgu);
+    return sayfalariCoz(await tekrar.json(), sorgu, afet);
   }
   if (!res.ok) throw new Error(`Commons HTTP ${res.status}`);
-  return sayfalariCoz(await res.json(), sorgu);
+  return sayfalariCoz(await res.json(), sorgu, afet);
 }
 
-function sayfalariCoz(json, sorgu) {
+function sayfalariCoz(json, sorgu, afet = false) {
   const sayfalar = json?.query?.pages || [];
   return (Array.isArray(sayfalar) ? sayfalar : Object.values(sayfalar))
-    .map((s) => uygunGorsel(s, sorgu))
+    .map((s) => uygunGorsel(s, sorgu, afet))
     .filter(Boolean)
     .sort((a, b) => b.skor - a.skor || b.genislik - a.genislik);
 }
 
-function uygunGorsel(sayfa, sorgu) {
+function uygunGorsel(sayfa, sorgu, afet = false) {
   const ii = sayfa?.imageinfo?.[0];
   if (!ii) return null;
 
@@ -156,6 +177,9 @@ function uygunGorsel(sayfa, sorgu) {
   // illüstrasyon oluyor ("Istanbul_comet_and_earthquake_1556.jpg" gibi).
   if (/\b1[0-8]\d{2}\b/.test(baslik)) return null;
   if (SERT_GORSEL.test(baslik) && !FELAKET_SORGU.test(sorgu)) return null;
+  if (UYDU_GORSEL.test(baslik) && !UZAY_SORGU.test(sorgu)) return null;
+  if (FELAKET_SORGU.test(sorgu) && !FELAKET_GORSEL.test(baslik)) return null;
+  if (afet && !FELAKET_GORSEL.test(baslik)) return null;
 
   const meta = ii.extmetadata || {};
   const hamLisans = meta.LicenseShortName?.value;
@@ -217,11 +241,56 @@ export function kisaSorgu(sorgu) {
 }
 
 /**
+ * Konu (afet/hava) sorgusu.
+ *
+ * AI'nın sorgusu Commons'ta genelde uydu görüntüsüne ya da PNG'ye düşüyor
+ * ("Spain flood disaster rescue" → yalnızca Copernicus/MODIS). Bu durumda
+ * kategori yedeği devreye giriyordu ve "Dünya" kategorisinde havalimanı
+ * fotoğrafı geliyordu — sel haberine havalimanı saçma duruyordu.
+ * Arada bu basamak var: konu afet/hava ise yerden çekilmiş, gerçek bir sahne
+ * aranır ("flooded street cars" gibi).
+ */
+export const KONU_SORGU = [
+  {
+    test: /(flood|flooding|flooded|rain|rainfall|storm|downpour|hurricane|typhoon|monsoon|\bsel\b|su baskını|sağanak|yağış|fırtına|hortum)/i,
+    sorgu: "flooded street cars",
+  },
+  {
+    test: /(earthquake|quake|seismic|tremor|deprem|sarsıntı)/i,
+    sorgu: "earthquake damaged building",
+  },
+  {
+    test: /(wildfire|forest fire|fire|blaze|burning|yangın)/i,
+    sorgu: "wildfire forest fire",
+  },
+  {
+    test: /(snow|blizzard|snowstorm|frost|ice|kar yağışı|çığ)/i,
+    sorgu: "snow covered street cars",
+  },
+  {
+    test: /(drought|heatwave|heat wave|kuraklık|sıcak dalgası)/i,
+    sorgu: "dry cracked earth drought",
+  },
+];
+
+/** Verilen metinlerden biri afet/hava haberi mi? */
+export function afetMi(...metinler) {
+  return metinler.some((m) => AFET_SORGU.test(String(m || "")));
+}
+
+/** Verilen sorguya uyan konu sorgusunu döndürür (yoksa ""). */
+export function konuSorgu(...metinler) {
+  const s = metinler.map((m) => String(m || "")).join(" ");
+  for (const k of KONU_SORGU) if (k.test.test(s)) return k.sorgu;
+  return "";
+}
+
+/**
  * Verilen sorguları sırayla dener, birbirinden farklı ve daha önce kullanılmamış
  * en fazla `adet` görsel döndürür. Ağ hatası sessizce atlanır (haber yayından
  * düşmez; kategori yedeği devreye girer).
  */
-export async function stokGorseller(sorgular, { adet = 3, kullanilan = new Set(), offset = 0 } = {}) {
+export async function stokGorseller(sorgular, { adet = 3, kullanilan = new Set(), offset = 0, afet = false } = {}) {
   // Aynı dosyanın kırpılmış sürümü ("... (cropped)") ayrı fotoğraf sayılmasın.
   const kimlik = (baslik) =>
     String(baslik || "")
@@ -241,7 +310,7 @@ export async function stokGorseller(sorgular, { adet = 3, kullanilan = new Set()
       if (sonuc.length >= adet) break;
       let adaylar = [];
       try {
-        adaylar = await commonsAra(sorgu, ADAY, offset);
+        adaylar = await commonsAra(sorgu, ADAY, offset, afet);
       } catch {
         continue; // ağ hatası: sonraki sorgu
       }
@@ -282,8 +351,10 @@ export const KATEGORI_SORGU = {
   Spor: "football stadium floodlights",
   Gündem: "Istanbul street city",
   // "earth from space" dünya haberlerine uzay fotoğrafı koyuyordu (Paris
-  // protestosu → Artemis II). Nötr, haber görünümlü bir sahne daha uygun.
-  Dünya: "international airport terminal passengers",
+  // protestosu → Artemis II). Havalimanı terminali de sel/afet haberine
+  // saçma düşüyordu (19.10.2026). Nötr ve her konuya uyan sahne: elde tutulan
+  // dünya küresi.
+  Dünya: "person holding world globe",
   Diğer: "newspaper reading",
 };
 
@@ -362,12 +433,13 @@ export const YEDEK_GORSEL = {
     sayfa: "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_01.jpg",
   },
   Dünya: {
-    // Uzay fotoğrafı (Artemis II) dünya haberlerine hiç uymuyordu.
-    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Airport%2C_Sofia_%28_1070616%29.jpg/1920px-Airport%2C_Sofia_%28_1070616%29.jpg",
-    yazar: "Matti Blume",
-    lisans: "CC BY-SA 4.0",
-    lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-    sayfa: "https://commons.wikimedia.org/wiki/File:Airport,_Sofia_(_1070616).jpg",
+    // Havalimanı terminali (Sofia) sel/afet haberine saçma düşüyordu.
+    // Nötr dünya küresi her uluslararası habere uyar.
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Person_holding_world_globe.jpg/1920px-Person_holding_world_globe.jpg",
+    yazar: "Porapak Apichodilok",
+    lisans: "CC0",
+    lisansUrl: "https://creativecommons.org/publicdomain/zero/1.0",
+    sayfa: "https://commons.wikimedia.org/wiki/File:Person_holding_world_globe.jpg",
   },
   Diğer: {
     url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Man_reading_a_newspaper.jpg/1920px-Man_reading_a_newspaper.jpg",

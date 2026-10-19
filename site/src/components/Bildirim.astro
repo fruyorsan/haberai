@@ -56,6 +56,21 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
           <span class="bel__ac-dugme">Aç</span>
         </button>
 
+        {/* Tarayıcı bir kez "Engelle" dediyse izin penceresi bir daha
+            GÖSTERİLMEZ; okuyucu "açtım ama sorulmadı" diyor. Adım adım yol. */}
+        <div class="bel__engel" id="bel-engel" hidden>
+          <b>Tarayıcı bildirimleri engellemiş</b>
+          <p>Bir kez “Engelle” denmiş; tarayıcı artık izin penceresini göstermiyor. Açmak için:</p>
+          <ol>
+            <li>Adres çubuğunun solundaki kilit / ayar simgesine dokun.</li>
+            <li>İzinler → Bildirimler → <b>İzin ver</b>.</li>
+            <li>Sayfayı yenile.</li>
+          </ol>
+          <p class="bel__engel-alt">
+            Telefonda: Chrome ⋮ → Ayarlar → Site ayarları → Bildirimler → haberinai.site → İzin ver.
+          </p>
+        </div>
+
         <div class="bel__row">
           <span class="bel__ad">Son dakika</span>
           <label class="bel__switch">
@@ -78,6 +93,12 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
         </div>
 
         <p class="bel__durum" id="bel-durum" role="status" aria-live="polite" />
+
+        {/* Aboneye "gerçekten çalışıyor" kanıtı: cihazda anında görünen
+            deneme bildirimi (sunucu gerekmez). */}
+        <button type="button" class="bel__test" id="bel-test" hidden>
+          🔔 Deneme bildirimi gönder
+        </button>
       </div>
 
       {/* Otomatik izin istemi: okuyucu biraz gezinince bir kez, kendi
@@ -240,6 +261,27 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
   .bel__durum:empty {
     display: none;
   }
+  .bel__test {
+    display: block;
+    width: 100%;
+    margin: 10px 0 0;
+    padding: 8px 12px;
+    border: 1px dashed color-mix(in srgb, var(--brand) 40%, var(--border));
+    border-radius: 10px;
+    background: transparent;
+    color: var(--brand);
+    font: inherit;
+    font-size: 0.76rem;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .bel__test[hidden] {
+    display: none;
+  }
+  .bel__test:hover {
+    background: var(--brand-soft);
+    border-style: solid;
+  }
 
   /* Abone değilken panelin tepesindeki tek dokunuşluk "Aç" şeridi. */
   .bel__ac {
@@ -291,6 +333,42 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
     font-size: 0.78rem;
     font-weight: 800;
     box-shadow: 0 10px 18px -12px var(--brand-glow);
+  }
+
+  /* İzin kalıcı olarak engellendiğinde gösterilen yol haritası. */
+  .bel__engel {
+    margin: 0 0 12px;
+    padding: 11px 12px;
+    border: 1px dashed color-mix(in srgb, var(--brand) 45%, var(--border));
+    border-radius: 13px;
+    background: var(--brand-soft);
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: var(--text-2);
+  }
+  .bel__engel[hidden] {
+    display: none;
+  }
+  .bel__engel b {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 0.84rem;
+    color: var(--heading);
+  }
+  .bel__engel p {
+    margin: 0 0 6px;
+  }
+  .bel__engel ol {
+    margin: 0 0 6px;
+    padding-left: 18px;
+  }
+  .bel__engel li {
+    margin-bottom: 2px;
+  }
+  .bel__engel-alt {
+    margin: 0;
+    font-size: 0.72rem;
+    color: var(--muted);
   }
 
   /* --- Aç/kapa anahtarı --- */
@@ -510,6 +588,8 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
     const nokta = document.getElementById("bel-dot");
     const anahtar = document.getElementById("bel-son-dakika");
     const acSerit = kok.querySelector<HTMLButtonElement>("[data-bel-ac]");
+    const engelKutu = document.getElementById("bel-engel");
+    const testBtn = document.getElementById("bel-test");
     const cipler = [...kok.querySelectorAll(".bel__chip")];
 
     const K_ABONE = "bildirim-abone";
@@ -660,6 +740,80 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
       typeof Notification !== "undefined" && Notification.permission === "denied";
     const izinVerildi = () =>
       typeof Notification !== "undefined" && Notification.permission === "granted";
+
+    // ESKİ KAYIT TUZAĞI (19.10.2026): localStorage "abone" diyorsa panel
+    // kendini "açık" gösterip "Aç" şeridini gizliyordu; oysa tarayıcı izni
+    // hiç verilmemişti → okuyucu izin penceresini HİÇ görmüyordu. Gerçek
+    // tarayıcı izni yoksa abonelik yok sayılır, "Aç" şeridi geri gelir.
+    if (abone && !izinVerildi()) {
+      abone = false;
+      yaz(K_ABONE, false);
+    }
+
+    /**
+     * Tarayıcının izin penceresini açar.
+     *
+     * ÖNEMLİ: `await`ten ÖNCE, doğrudan dokunuşun içinde çağrılmalı. Eskiden
+     * "Aç" şeridi önce `aboneBaslat()`ı bekliyordu; SDK/Init gecikince Chrome
+     * "kullanıcı etkileşimi yok" sayıp pencereyi hiç göstermiyordu — okuyucu
+     * "bildirim açtım, izin sorulmadı" diyordu (19.10.2026).
+     */
+    function izinSor() {
+      try {
+        if (typeof Notification === "undefined") return;
+        if (Notification.permission === "default") Notification.requestPermission();
+      } catch {
+        /* tarayıcı desteklemiyorsa aboneBaslat kendi yolunu dener */
+      }
+    }
+
+    /** Cihazda anında görünen yerel bildirim (sunucu/abonelik gerektirmez). */
+    async function yerelBildirim(baslik, govde, etiket) {
+      if (!izinVerildi()) return false;
+      const secenek: NotificationOptions = {
+        body: govde,
+        icon: "/ikon-192.png",
+        badge: "/ikon-192.png",
+        tag: etiket,
+        lang: "tr",
+        data: { url: "/" },
+      };
+      try {
+        const kayit = await navigator.serviceWorker.getRegistration("/");
+        if (kayit && typeof kayit.showNotification === "function") {
+          await kayit.showNotification(baslik, secenek);
+          return true;
+        }
+      } catch {
+        /* SW yoksa masaüstü yolu denenir */
+      }
+      try {
+        new Notification(baslik, secenek);
+        return true;
+      } catch {
+        return false;
+      }
+    }
+
+    /**
+     * Yeni aboneye "artık alacaksın" bildirimi.
+     * OneSignal sunucusundan gönderilemez (REST anahtarı tarayıcıda olamaz);
+     * bu yüzden cihazda gösterilir: okuyucu bildirimin gerçekten geldiğini
+     * GÖRÜR — "açtım ama hiçbir şey olmadı" şüphesi kalmaz.
+     */
+    let hosgeldinGosterildi = false;
+    async function hosgeldinBildirimi() {
+      if (hosgeldinGosterildi) return;
+      hosgeldinGosterildi = true;
+      const gitti = await yerelBildirim(
+        "Bildirimler açıldı 🎉",
+        "Artık son dakika haberlerini buradan alacaksın. İstediğin an kapatabilirsin.",
+        "hosgeldin"
+      );
+      durum.textContent = gitti
+        ? "Bildirimler açıldı ✓ Bu cihaza bir deneme bildirimi gönderdik; görünmediyse sistem bildirimlerini kontrol et."
+        : "Bildirimler açıldı ✓ Yeni son dakika haberlerinde buradan haber vereceğiz.";
+    }
     const iosKuruluDegil = () => {
       const ua = navigator.userAgent || "";
       const ios = /iPad|iPhone|iPod/.test(ua) || (/Macintosh/.test(ua) && "ontouchend" in document);
@@ -710,7 +864,27 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
     function ciz() {
       nokta.hidden = !abone;
       // Abone değilse panelde "Bildirimler kapalı → Aç" şeridi görünür.
-      if (acSerit) acSerit.hidden = abone;
+      if (acSerit) {
+        acSerit.hidden = abone;
+        const b = acSerit.querySelector(".bel__ac-yazi b");
+        const s = acSerit.querySelector(".bel__ac-yazi span");
+        const d = acSerit.querySelector(".bel__ac-dugme");
+        if (izinEngelli()) {
+          if (b) b.textContent = "Bildirim izni engelli";
+          if (s) s.textContent = "Tarayıcı izin penceresini göstermiyor — nasıl açılır?";
+          if (d) d.textContent = "Nasıl?";
+        } else if (iosKuruluDegil()) {
+          if (b) b.textContent = "iPhone'da bildirim";
+          if (s) s.textContent = "Paylaş → Ana Ekrana Ekle, sonra o ikondan aç";
+          if (d) d.textContent = "Nasıl?";
+        } else {
+          if (b) b.textContent = "Bildirimler kapalı";
+          if (s) s.textContent = "Son dakika haberlerini kaçırma";
+          if (d) d.textContent = "Aç";
+        }
+      }
+      if (engelKutu) engelKutu.hidden = !izinEngelli() || abone;
+      if (testBtn) testBtn.hidden = !abone;
       anahtar.checked = sonDakika;
       btn.classList.toggle("is-on", abone);
       btn.setAttribute("aria-label", abone ? "Bildirimler açık" : "Bildirimler");
@@ -756,10 +930,40 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
       sonDakika = true;
       yaz(K_SON, true);
       anahtar.checked = true;
+      // AWAIT'TEN ÖNCE: izin penceresi dokunuşun içinde açılmalı.
+      izinSor();
+      // Tarayıcı izni kalıcı olarak engellenmişse pencere HİÇ açılmaz;
+      // okuyucuya adım adım yolu göster (sessiz başarısızlık olmasın).
+      if (izinEngelli()) {
+        panelAc(true);
+        if (engelKutu) engelKutu.hidden = false;
+        durumYaz("Bildirim izni tarayıcıda engelli. Yukarıdaki adımlarla açabilirsin.");
+        return;
+      }
+      // iPhone/Safari sekmesinde izin penceresi hiç açılmaz: önce Ana Ekrana Ekle.
+      if (iosKuruluDegil()) {
+        panelAc(true);
+        durumYaz();
+        return;
+      }
+      const yeni = !abone;
       const oldu = await aboneBaslat();
       ciz();
       durumYaz();
-      if (!oldu) panelAc(true);
+      if (oldu && yeni) await hosgeldinBildirimi();
+      else if (!oldu) panelAc(true);
+    });
+
+    // Deneme bildirimi: okuyucu tek dokunuşta "geliyor mu?" diye görür.
+    testBtn?.addEventListener("click", async () => {
+      const gitti = await yerelBildirim(
+        "HaberinAi",
+        "Bildirimler çalışıyor ✓ Son dakika haberlerini kaçırmayacaksın.",
+        "deneme"
+      );
+      durum.textContent = gitti
+        ? "Deneme bildirimi gönderildi ✓ Görünmediyse telefonun bildirim ayarlarında bu siteye izin ver."
+        : "Deneme bildirimi gösterilemedi. Tarayıcı izinlerini kontrol et.";
     });
     document.addEventListener("click", (e) => {
       if (!panel.hidden && !kok.contains(e.target)) panelAc(false);
@@ -774,9 +978,11 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
       yaz(K_SON, sonDakika);
       ciz();
       if (sonDakika && !abone) {
-        await aboneBaslat();
+        izinSor(); // dokunuşun içinde
+        const oldu = await aboneBaslat();
         ciz();
         durumYaz();
+        if (oldu) await hosgeldinBildirimi();
         return;
       }
       if (abone) {
@@ -797,7 +1003,10 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
         yaz(K_KAT, [...kategoriler]);
         ciz();
 
+        let yeni = false;
         if (acilacak && !abone) {
+          izinSor(); // dokunuşun içinde
+          yeni = true;
           await aboneBaslat();
         } else if (abone) {
           etiketYaz(await sdkYukle());
@@ -805,6 +1014,7 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
         if (!sonDakika && kategoriler.size === 0) await abonelikKapat();
         ciz();
         durumYaz();
+        if (yeni && abone) await hosgeldinBildirimi();
       });
     }
 
@@ -820,6 +1030,7 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
         takipNotu(d, "");
 
         if (acilacak && !abone) {
+          izinSor(); // dokunuşun içinde
           const oldu = await aboneBaslat();
           takipNotu(
             d,
@@ -831,6 +1042,7 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
                   ? "Bildirim izni kapalı görünüyor; tarayıcı ayarlarından açabilirsin."
                   : "Takip kaydedildi. Bildirim izni verilmedi."
           );
+          if (oldu) await hosgeldinBildirimi();
         } else if (abone) {
           etiketYaz(await sdkYukle());
           takipNotu(d, acilacak ? "" : "Bu konuyu takibi bıraktın.");
@@ -927,19 +1139,12 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
       isteKapat(false);
       // İzin penceresi await'ten ÖNCE açılmalı: Safari (iOS) yalnızca doğrudan
       // dokunuş içinde açıyor. OneSignal SDK'sı sonra devreye girer.
-      try {
-        if (typeof Notification !== "undefined" && Notification.permission === "default") {
-          Notification.requestPermission();
-        }
-      } catch {
-        /* tarayıcı desteklemiyorsa aboneBaslat kendi yolunu dener */
-      }
+      izinSor();
       const oldu = await aboneBaslat();
       ciz();
       durumYaz();
-      if (!oldu && izinEngelli()) {
-        panelAc(true);
-      }
+      if (oldu) await hosgeldinBildirimi();
+      else if (izinEngelli()) panelAc(true);
     });
 
     // Ne zaman sorulsun: 2. sayfa görüntülemesinde 4 sn sonra; ilk gelişte
@@ -961,6 +1166,9 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
         ciz();
         return oldu;
       },
+      /** Dokunuşun İÇİNDE çağrılmalı (await'ten önce). */
+      izinSor,
+      hosgeldinBildirimi,
       izinVerildi,
       izinEngelli,
       iosKuruluDegil,

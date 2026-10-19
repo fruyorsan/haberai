@@ -7,7 +7,7 @@ import { shareNewArticles } from "./share.js";
 import { makeIndex, findSimilar, dedupeArticles } from "./dedupe.js";
 import { isBreaking, breakingScore } from "./breaking.js";
 import { purgeCopiedText } from "./telif.js";
-import { stokGorseller, KATEGORI_SORGU, yedekGorsel, atif, kisaSorgu } from "./stok-gorsel.js";
+import { stokGorseller, KATEGORI_SORGU, yedekGorsel, atif, kisaSorgu, konuSorgu, afetMi } from "./stok-gorsel.js";
 
 const DRY = process.argv.includes("--dry");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -210,12 +210,20 @@ async function main() {
       // Sıra: AI'nın tam sorgusu → aynı sorgunun geniş hâli ("flooded street")
       // → kategori sorgusu. Tam sorgu Commons'ta dosya adıyla eşleşmezse
       // geniş hâli konuya yakın bir fotoğraf bulur (borsa fotoğrafına düşmez).
+      // Sıra: AI'nın tam sorgusu → konu (afet/hava) sahnesi → geniş hâl
+      // → kategori sorgusu. Afet haberlerinde geniş hâl ("mediterranean
+      // sea") manzara fotoğrafı getiriyordu; konu sahnesi daha doğru.
       const sorgular = [
         ai.gorselSorgu,
+        konuSorgu(ai.gorselSorgu, cleaned.title),
         kisaSorgu(ai.gorselSorgu),
         KATEGORI_SORGU[cleaned.category],
       ];
-      let stok = await stokGorseller(sorgular, { adet: 3, kullanilan: kullanilanGorsel });
+      let stok = await stokGorseller(sorgular, {
+        adet: 3,
+        kullanilan: kullanilanGorsel,
+        afet: afetMi(ai.gorselSorgu, cleaned.title),
+      });
       if (!stok.length) stok = [yedekGorsel(cleaned.category)];
       const [kapakGorsel, ...ekler] = stok;
 

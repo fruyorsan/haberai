@@ -779,6 +779,9 @@ const ilk = liste.slice(0, ilkSayi);
             return;
           }
           btn.textContent = "Açılıyor…";
+          // İzin penceresi AWAIT'TEN ÖNCE açılmalı: Chrome/Safari yalnızca
+          // doğrudan dokunuş içinde gösteriyor (yoksa hiç sorulmuyordu).
+          window.HaberinaiPush?.izinSor?.();
           let oldu = false;
           try {
             // Tek doğru kaynak: zilin (Bildirim.astro) kullandığı akış. Böylece
@@ -830,6 +833,8 @@ const ilk = liste.slice(0, ilkSayi);
           if (oldu) {
             btn.textContent = "Açıldı ✓";
             bildir("Bildirimler açıldı — son dakika haberleri cebine gelecek.");
+            // "Artık alacaksın" bildirimi: cihazda anında görünür.
+            void window.HaberinaiPush?.hosgeldinBildirimi?.();
             setTimeout(() => {
               kutu.hidden = true;
             }, 2200);
@@ -840,7 +845,9 @@ const ilk = liste.slice(0, ilkSayi);
             const engelli = api?.izinEngelli?.() === true;
             // İzin verilmiş ama abonelik kurulmadıysa istemi KAPATMA: okuyucu
             // (örneğin "Ana Ekrana Ekle"den sonra) yeniden deneyebilsin.
-            if (!izinVarMi) {
+            // İzin tarayıcıda ENGELLİYSE de kalıcı kapatma: ayarlardan açınca
+            // yeniden deneyebilsin.
+            if (!izinVarMi && !engelli) {
               try {
                 localStorage.setItem(K_KAPALI, "1");
               } catch {}

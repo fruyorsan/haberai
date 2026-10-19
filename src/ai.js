@@ -194,6 +194,11 @@ Aşağıdaki JSON alanlarını TÜRKÇE üret:
   "football stadium floodlights", "data center server room", "science laboratory"). SOYUT kavram
   YASAK ("innovation", "future", "economy", "success", "crisis"); Türkçe yazma; tırnak, noktalama
   ve açıklama ekleme.
+  AFET/HAVA (sel, deprem, fırtına, yangın, kar, kuraklık): olayın ADINI değil, YERDEN ÇEKİLMİŞ
+  SAHNEYİ yaz. ("flooded street cars", "storm clouds over city", "earthquake damaged building",
+  "wildfire forest fire", "snow covered street cars"). YASAK: uydu/harita görüntüsü çağrıştıran
+  sorgular ("satellite view", "aerial map", "MODIS", "from space") ve manzara sorguları
+  ("coastline landscape", "sea view") — bunlar afet haberine sakin bir doğa fotoğrafı getirir.
 
 YAZMADAN ÖNCE KONTROL ET:
 (1) Başlık 45-70 karakterde mi; "!" veya "?" var mı; kaynak başlığıyla aynı cümle mi; tıklanacak kadar vurucu
@@ -207,7 +212,8 @@ YAZMADAN ÖNCE KONTROL ET:
     "bu gelişme", "yakından takip") biri geçiyor mu?
 (7) Hiçbir alanda kaynakta olmayan isim, sayı, tarih ya da alıntı uyduruldu mu? (Telif: 10 kelimelik dizi?)
 (8) Hiçbir dizi alanı boş kaldı mı; Türkçe yazım hatası var mı?
-(9) gorselSorgu İngilizce, 2-5 kelime ve somut mu; soyut bir kavram mı yazdın?
+(9) gorselSorgu İngilizce, 2-5 kelime ve somut mu; soyut bir kavram mı yazdın; afet/hava haberiysen
+    olayın adı yerine yerden çekilmiş sahneyi yazdın mı (uydu/map/manzara sorgusu yasak)?
 
 Yanıt formatı (sadece JSON):
 {"title":"...","slug":"...","summary":"...","keyPoints":["...","...","..."],"body":["paragraf 1","paragraf 2","paragraf 3"],"comment":"...","editorNote":"...","tags":["..."],"category":"...","gorselSorgu":"..."}${ekNot ? `\n\n${ekNot}` : ""}`;

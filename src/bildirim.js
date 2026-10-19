@@ -99,7 +99,16 @@ function aliciNotu(yanit) {
 
 async function durumOku() {
   if (!existsSync(DURUM_DOSYA))
-    return { updatedAt: null, sent: [], sonKategori: {}, gun: "", gunSayi: {}, hosGeldin: false };
+    return {
+      updatedAt: null,
+      sent: [],
+      sonKategori: {},
+      gun: "",
+      gunSayi: {},
+      hosGeldin: false,
+      cihazlar: [],
+      cihazTaban: false,
+    };
   try {
     const d = JSON.parse(await readFile(DURUM_DOSYA, "utf8"));
     return {
@@ -109,9 +118,20 @@ async function durumOku() {
       gun: d.gun || "",
       gunSayi: d.gunSayi && typeof d.gunSayi === "object" ? d.gunSayi : {},
       hosGeldin: d.hosGeldin === true,
+      cihazlar: Array.isArray(d.cihazlar) ? d.cihazlar.map(String) : [],
+      cihazTaban: d.cihazTaban === true,
     };
   } catch {
-    return { updatedAt: null, sent: [], sonKategori: {}, gun: "", gunSayi: {}, hosGeldin: false };
+    return {
+      updatedAt: null,
+      sent: [],
+      sonKategori: {},
+      gun: "",
+      gunSayi: {},
+      hosGeldin: false,
+      cihazlar: [],
+      cihazTaban: false,
+    };
   }
 }
 
@@ -125,8 +145,38 @@ async function durumYaz(durum) {
     sonKategori: durum.sonKategori,
     sent,
     hosGeldin: durum.hosGeldin === true,
+    cihazlar: [...new Set((durum.cihazlar || []).map(String))].slice(-600),
+    cihazTaban: durum.cihazTaban === true,
   };
   await writeFile(DURUM_DOSYA, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
+}
+
+/**
+ * OneSignal abonelik (cihaz) listesi — yeni aboneye "hoş geldin" göndermek için.
+ * Yalnızca GERÇEKTEN abone olanlar döner: notification_types === 1 (izin + push
+ * aboneliği) ve invalid_identifier !== true. İzin vermemiş kayıtlar elenir.
+ */
+async function abonelikler() {
+  try {
+    const res = await fetch(`https://api.onesignal.com/players?app_id=${APP_ID}&limit=300`, {
+      headers: { Authorization: `Key ${REST_KEY}` },
+      signal: AbortSignal.timeout(15000),
+    });
+    if (!res.ok) return null;
+    const d = await res.json();
+    const list = Array.isArray(d?.players) ? d.players : [];
+    return list
+      .filter(
+        (p) =>
+          p &&
+          p.id &&
+          Number(p.notification_types) === 1 &&
+          p.invalid_identifier !== true
+      )
+      .map((p) => String(p.id));
+  } catch {
+    return null;
+  }
 }
 
 /**
@@ -220,7 +270,10 @@ async function gonder(p) {
     idempotency_key: uuidAnahtar(p.anahtar),
   };
   if (p.gorsel) govde.chrome_web_image = p.gorsel;
-  if (p.etiket) {
+  if (p.abonelikId) {
+    // Tek bir cihaza gönderim (yeni aboneye "hoş geldin").
+    govde.include_subscription_ids = [String(p.abonelikId)];
+  } else if (p.etiket) {
     govde.filters = [{ field: "tag", key: p.etiket, relation: "=", value: "1" }];
   } else {
     govde.included_segments = ["Subscribed Users"];
@@ -343,6 +396,54 @@ export async function bildirimleriGonder({ dry = false } = {}) {
     }
   } else if (!test && !dry && durum.hosGeldin !== true && abone === 0) {
     console.log("Bildirim: henüz abone yok — hoş geldin bildirimi bekletiliyor.");
+  }
+
+  // ---- 0b) YENİ ABONEYE CİHAZ BAZINDA "HOŞ GELDİN" ----
+  // Global "hoş geldin" yalnızca BİR kez gider; sonradan abone olan cihaz
+  // hiçbir şey görmez ve "bildirim çalışmıyor" sanır. Her YENİ cihaz bir kez
+  // hedefli olarak karşılanır (OneSignal: include_subscription_ids).
+  if (!dry) {
+    const liste = await abonelikler();
+    if (liste) {
+      if (!durum.cihazTaban) {
+        // İlk çalıştırma: mevcut aboneler geçmiş sayılır (toplu "hoş geldin"
+        // yağmasın); bundan sonra abone olan her cihaz karşılanır.
+        durum.cihazlar = liste;
+        durum.cihazTaban = true;
+        await durumYaz(durum);
+        console.log(`Bildirim: cihaz tabanı kaydedildi (${liste.length} abone).`);
+      } else {
+        // Abonelikten çıkan cihazlar listeden düşer (yeniden abone olursa
+        // tekrar karşılanır); liste sınırsız büyümez.
+        const mevcut = new Set(liste);
+        durum.cihazlar = (durum.cihazlar || []).filter((id) => mevcut.has(id));
+        const bilinen = new Set(durum.cihazlar);
+        const yeniler = liste.filter((id) => !bilinen.has(id)).slice(0, 5);
+        for (const id of yeniler) {
+          try {
+            const yanit = await gonder({
+              baslik: "🔔 Bildirimlerin açıldı",
+              icerik:
+                "Artık son dakika haberlerini alacaksın. Yeni bir gelişme olduğunda haber vereceğiz; istediğin an kapatabilirsin.",
+              url: `${SITE_URL}/son-dakika/`,
+              ttl: 86400,
+              anahtar: `cihaz-hos-${id}`,
+              abonelikId: id,
+            });
+            console.log(
+              `  ✓ [yeni abone] ${id.slice(-6)} yanıt: ${JSON.stringify(yanit).slice(0, 120)}`
+            );
+          } catch (err) {
+            console.warn(`  ✗ [yeni abone] ${err.message}`);
+          }
+        }
+        if (yeniler.length) {
+          durum.cihazlar = [...new Set([...durum.cihazlar, ...yeniler])];
+          await durumYaz(durum);
+          sayilan += yeniler.length;
+        }
+      }
+    }
   }
 
   // ---- 1) SON DAKİKA ----
