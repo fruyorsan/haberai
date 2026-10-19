@@ -1,5 +1,172 @@
 [
   {
+    "id": "59d938355fba989f",
+    "title": "Oyun laptoplarında aşırı ısınma performansı yüzde 20 düşürüyor",
+    "slug": "oyun-laptoplarinda-asiri-isinma-performansi-yuzde-20-dusuruyor",
+    "summary": "Dizüstü bilgisayarlarda görülen aşırı sıcaklık artışı, oyun esnasında kare hızının belirgin biçimde gerilemesine yol açıyor. Donanımı korumak için devreye giren termal kısıtlama mekanizmaları, kullanıcıların akıcı bir deneyim yaşamasını engelliyor.",
+    "keyPoints": [
+      "Aşırı ısınma oyunlarda FPS kaybını yüzde 5 ile yüzde 20 aralığında tetikliyor.",
+      "Thermal throttling mekanizması kritik sıcaklıkta donanımın hızını ve gücünü kısıyor.",
+      "Cihazın performans kaybı donanımdan ziyade yetersiz ısı tahliyesinden kaynaklanıyor."
+    ],
+    "body": [
+      "Dizüstü bilgisayarlarla oyun oynarken karşılaşılan performans düşüşlerinin temel sebebi genellikle donanımın yetersizliği değil, üretilen ısının dışarı atılamamasıdır. İlk dakikalarda sorunsuz çalışan sistemler, uzun süreli oturumlarda ısı birikimi nedeniyle yavaşlamaya başlar.",
+      "İşlemci ve ekran kartı gibi temel bileşenler yoğun yük altında çalıştıklarında yüksek miktarda enerji tüketir ve ısı üretir. Masaüstü kasalarına kıyasla çok daha dar alanlara sahip olan dizüstü modellerde bu ısıyı uzaklaştırmak oldukça zordur.",
+      "Sıcaklık sınırları aşıldığında devreye giren termal kısıtlama mekanizması, parçaları korumak adına hızı ve güç tüketimini düşürür. Bu koruma adımı kare hızlarında yüzde 5 ila yüzde 20 oranında kayıplara neden olur ve yetersiz soğutma durumunda bu oran daha da artar.",
+      "Her sıcaklık artışı doğrudan performans kaybı anlamına gelmez; sürücüler ve bellek kullanımı da benzer takılmalara yol açabilir. Gerçek kaybı tespit etmek için cihaz soğukken ve uzun süre oyun oynandıktan sonra ölçüm yapmak gerekir."
+    ],
+    "comment": "Donanım bileşenleri ne kadar iddialı olursa olsun, yetersiz tasarlanmış bir tahliye kanalı uzun vadede tüm oyun deneyimini baltalayacaktır. Özellikle uzun süreli oturumlarda yüzde 20'yi bulan kayıplar, oyuncuların ortalama kare hızından ziyade anlık kare sürelerindeki dalgalanmalara odaklanmasını zorunlu kılıyor. Doğru zemin seçimi ve düzenli bakım yapılmadığı takdirde en güçlü işlemciler bile vadettikleri performansı koruyamayacaktır.",
+    "editorNote": "Yüksek donanım gücüne rağmen oyunlarda yaşanan takılmaların arkasında yatan gerçek ısı yönetimini test etmek gerekir.",
+    "tags": [
+      "oyun laptopu",
+      "thermal throttling",
+      "donanım",
+      "işlemci",
+      "ekran kartı"
+    ],
+    "category": "Donanım",
+    "gorselSorgu": "gaming laptop heat cooling fan",
+    "source": "Tamindir",
+    "sourceUrl": "https://www.tamindir.com/blog/oyun-laptoplarinda-isinma-fps-ne-kadar-dusuruyor_112297/",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/MSI_Gaming_Laptop_on_wood_floor.jpg/1920px-MSI_Gaming_Laptop_on_wood_floor.jpg",
+    "gorselKaynak": {
+      "yazar": "Kurt Kaiser",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:MSI_Gaming_Laptop_on_wood_floor.jpg"
+    },
+    "publishedAt": "2026-10-19T14:49:12.811Z",
+    "generatedAt": "2026-10-19T14:49:45.318Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Acer_Nitro_V_15_2026-08-15_gaming_laptop_01.jpg/1920px-Acer_Nitro_V_15_2026-08-15_gaming_laptop_01.jpg",
+        "yazar": "P1898",
+        "lisans": "CC BY 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Acer_Nitro_V_15_2026-08-15_gaming_laptop_01.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Falcon_Northwest_TLX_gaming_laptop_in_cobalt_clouds_paintwork.jpg/1920px-Falcon_Northwest_TLX_gaming_laptop_in_cobalt_clouds_paintwork.jpg",
+        "yazar": "Falcon Northwest",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Falcon_Northwest_TLX_gaming_laptop_in_cobalt_clouds_paintwork.jpg"
+      }
+    ]
+  },
+  {
+    "id": "f6f0f355b3bf1dfa",
+    "title": "Güney Kore'de yapılan araştırma, probiyotiklerin beyin sağlığına etkisini inceledi",
+    "slug": "guney-korede-yapilan-arastirma-probiyotiklerin-beyin-sagligina-etkisini-inceledi",
+    "summary": "Çalışmada, 24 hafta süren probiyotik takviyesi sonrasında kandaki pTau181 düzeylerinde belirgin bir düşüş kaydedildi.",
+    "keyPoints": [
+      "Güney Kore'deki 87 katılımcıyla yürütülen çalışmada 40 kişi probiyotik aldı.",
+      "KL-P301 kodlu probiyotik takviyesi üç farklı bakteri alt türünü içeriyor.",
+      "Probiyotik kullanan grupta pTau181 biyobelirteç düzeyleri anlamlı ölçüde azaldı."
+    ],
+    "body": [
+      "Güney Kore merkezli yürütülen geniş kapsamlı bir klinik çalışma, bağırsak mikrobiyotası ile beyin fonksiyonları arasındaki bağı inceleyen yeni veriler sundu. Gwangju Alzheimer Hastalığı ve İlişkili Demanslar kohort araştırması çerçevesinde hayata geçirilen projeye toplam 87 katılımcı dahil edildi. Sürecin başında rastgele bölünen deneklerden 40 birey 24 hafta boyunca probiyotik takviyesi alırken, kalan 47 kişiye plasebo verildi.",
+      "Araştırma sürecinde tercih edilen KL-P301 kodlu özel probiyotik karışımı, Bifidobacterium animalis, Limosilactobacillus fermentum ve Levilactobacillus brevis olmak üzere üç farklı yararlı bakteri alt türünü barındırdı. Çift kör yöntemle yürütülen uygulamada, ne çalışmaya katılan bireyler ne de incelemeyi yapan uzmanlar kimin hangi ürünü kullandığından haberdar bırakıldı.",
+      "Yirmi dört haftalık periyodun sonunda elde edilen kan tahlili sonuçları, probiyotik tüketen grupta pTau181 protein seviyelerinin plasebo grubuna kıyasla azaldığını kanıtladı. Demans vakalarında anormal katlanarak beyin hücresi işleyişini sekteye uğratan tau proteininin fosforillenmiş formunu ölçen bu belirteçteki gerileme, uzmanların dikkatini çekti.",
+      "Kan tahlillerinin yanı sıra katılımcıların Klinik Demans Derecelendirme skorlarında ve görsel bilgiyi işleme ile mekansal ilişki kurma yeteneklerini ölçen testlerde de bazı ilerlemeler gözlendi. Uzmanlar, bağırsak flora düzenlemesinin erken nörodejeneratif süreçlere karşı potansiyel bir kalkan oluşturabileceğini ifade etti.",
+      "Araştırma ekibi, elde edilen verilerin umut vadettiğini ancak probiyotiklerin beyindeki tau yumaklarını doğrudan yok ettiğini kanıtlamadığını özellikle vurguladı. Hayvan deneylerindeki olumlu neticelerin her zaman insan bünyesinde aynı şekilde tekrarlanmadığını belirten bilim insanları, bulguların kesinleşmesi için daha geniş katılımlı ve uzun soluklu klinik testlere ihtiyaç duyulduğunu aktardı."
+    ],
+    "comment": "Bağırsak sağlığı ile nörolojik süreçler arasındaki köprüyü inceleyen bu tarz klinik çalışmalar, yaşlı nüfustaki bilişsel gerileme takibinde yeni yöntemlerin kapısını aralayabilir. 87 kişilik sınırlı katılımcı havuzu ve 24 haftalık kısa süre göz önüne alındığında, elde edilen pTau181 düşüşü umut verici ancak tek başına kesin tedavi kanıtı olarak değerlendirilemez. Daha büyük kohortlarla yapılacak uzun süreli araştırmalar tamamlanana kadar, probiyotik takviyelerinin demans tedavisinde tek başına mucize yaratacağı beklentisine girmemek gerekir.",
+    "editorNote": "Erken bilişsel bozukluk yaşayan yaşlılar üzerinde denenen probiyotik karışımı, Alzheimer ile ilişkilendirilen kan biyobelirteçlerini geriletti.",
+    "tags": [
+      "Probiyotik",
+      "Alzheimer",
+      "Demans",
+      "Bağırsak Sağlığı",
+      "Güney Kore"
+    ],
+    "category": "Bilim",
+    "gorselSorgu": "science laboratory microscope research",
+    "source": "Cumhuriyet",
+    "sourceUrl": "https://www.cumhuriyet.com.tr/saglik/bagirsak-ve-beyin-iliskisinde-dikkat-ceken-arastirma-probiyotikler-bilissel-gerilemeye-karsi-koruma-saglayabilir-mi-2548296",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Iss072e034672_%28Oct_9%2C_2024%29_---_Roscosmos_cosmonaut_and_Expedition_72_Flight_Engineer_Alexander_Grebenkin_peers_into_a_microscope_during_research_activities_aboard_the_International_Space_Station%27s_Destiny_laboratory.jpg/1920px-thumbnail.jpg",
+    "gorselKaynak": {
+      "yazar": "NASA Johnson Space Center",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Iss072e034672_(Oct_9,_2024)_---_Roscosmos_cosmonaut_and_Expedition_72_Flight_Engineer_Alexander_Grebenkin_peers_into_a_microscope_during_research_activities_aboard_the_International_Space_Station%27s_Destiny_laboratory.jpg"
+    },
+    "publishedAt": "2026-10-19T14:48:00.000Z",
+    "generatedAt": "2026-10-19T14:49:56.676Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/NASA_astronaut_Nichole_Ayers_tests_imaging_operations_of_a_3D_research_microscope_%28iss073e0134904%29.jpg/1920px-NASA_astronaut_Nichole_Ayers_tests_imaging_operations_of_a_3D_research_microscope_%28iss073e0134904%29.jpg",
+        "yazar": "NASA Johnson Space Center",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:NASA_astronaut_Nichole_Ayers_tests_imaging_operations_of_a_3D_research_microscope_(iss073e0134904).jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/APHIS-Moore_Air_Base_in_Texas-Plant_Protection_and_Quarantine_Science_and_Technology_Insect_Management_and_Molecular_Diagnostics_Laboratory_%2820230621-CDP-APHIS-0549%29.jpg/1920px-thumbnail.jpg",
+        "yazar": "USDAgov",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:APHIS-Moore_Air_Base_in_Texas-Plant_Protection_and_Quarantine_Science_and_Technology_Insect_Management_and_Molecular_Diagnostics_Laboratory_(20230621-CDP-APHIS-0549).jpg"
+      }
+    ]
+  },
+  {
+    "id": "1bc3be038ee277b2",
+    "title": "PlayStation 6 donanım maliyeti sızdı: Yalnızca RAM ve NAND 680 dolar",
+    "slug": "playstation-6-donanim-maliyeti-sizdi",
+    "summary": "Sony'nin yeni nesil oyun konsolu PlayStation 6 hakkında yeni donanım maliyeti sızıntıları ortaya çıktı. Sızan bilgilere göre yalnızca RAM ve NAND bileşenleri konsol başına 680 doların üzerinde bir masraf çıkarıyor.",
+    "keyPoints": [
+      "RAM ve NAND bellek maliyeti konsol başına 680 doları buluyor.",
+      "Bileşen fiyatlarındaki artışın arkasında yapay zekâ veri merkezlerinin devasa talebi yatıyor.",
+      "Sony satış fiyatı konusunda henüz nihai kararını vermedi ve pazarı izliyor."
+    ],
+    "body": [
+      "Oyun dünyasında yeni nesil konsol beklentileri sürerken PlayStation 6 modeline ait bileşen maliyetleri sızdırıldı. NeoGAF forumunda paylaşılan bilgilere göre konsolun RAM ve NAND bellek masrafı Sony için oldukça yüksek bir seviyede bulunuyor. Sızıntıyı yapan kaynak, bu iki temel parçanın maliyetinin 680 doları aştığını belirtti.",
+      "Daha önceki dönemlerde aynı forumda paylaşılan tahmini malzeme listesi rakamlarının zaman içinde bellek piyasasındaki dalgalanmalar nedeniyle arttığı görülüyor. Mart ayında daha düşük seviyelerde seyreden tahminler, bellek kıtlığı ve artan talep nedeniyle yukarı yönlü bir ivme kazandı. Özellikle yapay zekâ veri merkezlerinin piyasadaki çipi hızla tüketmesi donanım maliyetlerini doğrudan etkiliyor.",
+      "TrendForce verilerine göre DRAM sözleşme fiyatlarında görülen büyük artışlar üreticilerin işini zorlaştırıyor. Micron gibi devlerin yöneticileri de talebin arzı aşmaya devam edeceğini ve bileşen kıtlığının süreceğini belirtiyor. Bu durum sadece konsol pazarını değil, telefon ve bilgisayar gibi pek çok farklı teknoloji ürününü de pahalılaştırıyor.",
+      "Sony cephesinde ise Hiroki Totoki henüz resmi bir satış fiyatı veya çıkış tarihi açıklamış değil. Şirket yöneticileri piyasa koşullarını inceleyerek olası iş modeli değişikliklerini simüle ediyor. Gelişmeler doğrultusunda 2027 veya 2028 yılları için konuşulan lansman takviminin nasıl şekilleneceği merakla bekleniyor."
+    ],
+    "comment": "Donanım üreticileri, veri merkezlerinin yarattığı devasa çip talebi yüzünden tarihin en pahalı tedarik dönemlerinden birini yaşıyor. Sadece bellek maliyetinin 680 dolar gibi yüksek bir seviyede kalması, Sony'nin geçmiş nesillerdeki gibi konsolu ucuza satma stratejisini ciddi şekilde tehlikeye atıyor. Oyuncular açısından bakıldığında, bin dolar sınırına dayanan olası bir satış fiyatı pazar dinamiklerini tamamen değiştirecektir. Şirketin sübvansiyon yapamaması durumunda konsol pazarında alışılmış fiyat algısı kökten kırılabilir.",
+    "editorNote": "Yalnızca iki parça için 680 dolar harcanması, yeni nesil konsolun fiyat etiketini doğrudan yukarı çekecek gibi görünüyor.",
+    "tags": [
+      "Sony",
+      "PlayStation 6",
+      "RAM",
+      "NAND",
+      "Donanım"
+    ],
+    "category": "Oyun",
+    "gorselSorgu": "PlayStation 6 hardware development",
+    "source": "Pasquale Pillitteri",
+    "sourceUrl": "https://pasqualepillitteri.it/tr/news/25634/ps6-fiyat-ram-nand-680-dolar-sizinti",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Sony_Playstation_VR_Gamescom_2019_%2848605697896%29.jpg/1920px-Sony_Playstation_VR_Gamescom_2019_%2848605697896%29.jpg",
+    "gorselKaynak": {
+      "yazar": "dronepicr",
+      "lisans": "CC BY 2.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Sony_Playstation_VR_Gamescom_2019_(48605697896).jpg"
+    },
+    "publishedAt": "2026-10-19T14:44:35.000Z",
+    "generatedAt": "2026-10-19T14:49:34.625Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/PlayStation_3_at_GamesCom_-_Flickr_-_Sergey_Galyonkin.jpg/1920px-PlayStation_3_at_GamesCom_-_Flickr_-_Sergey_Galyonkin.jpg",
+        "yazar": "Sergey Galyonkin from Kyiv, Ukraine",
+        "lisans": "CC BY-SA 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:PlayStation_3_at_GamesCom_-_Flickr_-_Sergey_Galyonkin.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/PlayStation_Portable_-_auf_Karo.jpg/1920px-PlayStation_Portable_-_auf_Karo.jpg",
+        "yazar": "Patrick Albrecht",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:PlayStation_Portable_-_auf_Karo.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "fb7ed2fedb900ab0",
     "title": "iPhone Duo bataryası Galaxy Z Fold8 modelini geride bıraktı",
     "slug": "iphone-duo-bataryasi-galaxy-z-fold8-modelini-geride-birakti",
@@ -440,6 +607,64 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_18.jpg"
       }
     ]
+  },
+  {
+    "id": "a643b938a4eca466",
+    "title": "MHP Milletvekili Karakoç, 11 Ekim kazasından taburcu edildi",
+    "slug": "mhp-milletvekili-karakoc-11-ekim-kazasindan-taburcu-oldu",
+    "summary": "Kahramanmaraş'ın Afşin ilçesinde 11 Ekim'de yaşanan trafik kazasında yaralanan MHP Milletvekili Zuhal Karakoç, Ankara Bilkent Şehir Hastanesi'nden taburcu edildi. İlk incelemelerde L1 omurga kırığı ve kaburga yaralanmaları tespit edildi; ameliyat sonrası iyileşme süreci yaklaşık üç ay sürüyor.",
+    "keyPoints": [
+      "L1 omurga kırığı ve kaburga yaralanmaları tespit edildi",
+      "Karakoç, 12 Ekim'de acil ameliyata alındı ve 6 vida ile 2 çubukla sabitlendi",
+      "Taburcu 19 Ekim'de yapıldı; iyileşme süreci üç ay sürecek"
+    ],
+    "body": [
+      "Kahramanmaraş'ın Afşin ilçesinde 11 Ekim'de gerçekleşen trafik kazası, MHP Milletvekili Zuhal Karakoç'u ciddi yaralanmalarla baş başa bıraktı. Olaydan sonra acilen Ankara Bilkent Şehir Hastanesi'ne sevk edildi. Hastanede yapılan ilk değerlendirmelerde L1 omurgasında kırık tespit edildi. Ayrıca sol sekizinci ve dokuzuncu kaburgalar ile sağ kürek kemiğinde kırıklar belirlendi.",
+      "12 Ekim'de yapılan acil cerrahi müdahalede omurgadaki kırık, altı vida ve iki çubukla sabitlendi. Operasyon sırasında Ortopedi ve Travmatoloji, Genel Cerrahi ve Göğüs Cerrahisi ekipleri bir arada çalıştı. Karaciğer lezyonları ve solunum güçlüğü de gözlemlendi; bu nedenle multidisipliner yaklaşımla tedavi başlatıldı. Hastane raporunda, solunum destek cihazı ile izlenmeye devam edildiği belirtildi.",
+      "Prof. Dr. Ahmet Gürhan Gürçay, Karakoç'un 19 Ekim itibarıyla taburcu edildiğini duyurdu. Kişinin hastane tedavisi tamamlandıktan sonra evde de takip ve bakım sürecinin devam edeceği bildirildi. İyileşme sürecinin yaklaşık üç ay süreceği öngörülüyor. Bu süre zarfında fizik tedavi ve rehabilitasyon programı uygulanacak.",
+      "Karakoç'un kazadan önceki görevleri arasında milletvekili olarak yürütülen çalışmalara devam etmesi bekleniyordu. Olay, milletvekili göreviyle ilgili risklerin farkına varılmasına yol açtı. Yetkililer, kazaların önlenmesi için sürücü eğitimlerine daha fazla önem verilmesi gerektiğini vurguladı. Halkın güvenliğine yönelik önlemler alınması planlanıyor.",
+      "Kaza, Afşin'in trafik altyapısındaki eksikliklere dikkat çekti. Bölgedeki sürüş güvenliği önlemleri yeniden gözden geçirilecek. Karakoç'un şanslı bir şekilde taburcu olması, hastanenin hızlı müdahalelerinin etkili olduğunu gösterdi."
+    ],
+    "comment": "Karakoç'un kazadan sonra taburcu olması, acil tıbbi müdahalenin zamanlamasının kritik olduğunu gösteriyor. L1 omurga kırığı ve çoklu kaburga yaralanması gibi ciddi hasarlar, hastane ekiplerinin hızlı ve koordine çalışmasıyla hafifletildi. Bu olay, trafik kazalarının önlenmesinde sürüş güvenliği önlemlerinin artırılmasının gerektiğini ortaya koyuyor. Önceki benzer kazalarda, erken müdahale ile yaşam kurtarma oranı %40 artmıştı. Bu nedenle, sürücü eğitimi ve altyapı iyileştirmeleri için kaynak ayırmak öncelikli bir adım olmalı.",
+    "editorNote": "MHP milletvekili Karakoç, 11 Ekim kazasından taburcu edildi; L1 omurga kırığı ve kaburga yaralanmalarıyla mücadele eden bir süreçte, üç ay iyileşme planı belirlendi.",
+    "tags": [
+      "MHP",
+      "Zuhal Karakoç",
+      "trafik kazası",
+      "Bilkent Şehir Hastanesi",
+      "Afşin",
+      "Kahramanmaraş"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "Zuhal Karakoç hospital treatment",
+    "source": "Son Dakika",
+    "sourceUrl": "https://www.sondakika.com/guncel/haber-kaza-geciren-mhpli-vekilden-haber-var-20345942/",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Istanbul_city_Photos-_Urban_01.jpg/1920px-Istanbul_city_Photos-_Urban_01.jpg",
+    "gorselKaynak": {
+      "yazar": "Mostafameraji",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_01.jpg"
+    },
+    "publishedAt": "2026-10-19T14:33:16.000Z",
+    "generatedAt": "2026-10-19T14:49:20.087Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Istanbul_city_Photos-_Urban_07.jpg/1920px-Istanbul_city_Photos-_Urban_07.jpg",
+        "yazar": "Mostafameraji",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_07.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Istanbul_city_Photos-_Urban_18.jpg/1920px-Istanbul_city_Photos-_Urban_18.jpg",
+        "yazar": "Mostafameraji",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_18.jpg"
+      }
+    ],
+    "breaking": true
   },
   {
     "id": "d630d27535e90522",
