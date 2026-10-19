@@ -44,6 +44,18 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
       </button>
 
       <div class="bel__panel" id="bel-panel" hidden>
+        {/* Abone değilken en üstte tek dokunuşluk "Aç" düğmesi. Eskiden anahtar
+            varsayılan olarak AÇIK görünüyordu; okuyucu "zaten açık" sanıp hiç
+            izin vermiyordu — bildirimler bu yüzden gelmiyordu. */}
+        <button type="button" class="bel__ac" data-bel-ac hidden>
+          <span class="bel__ac-ikon" aria-hidden="true">🔔</span>
+          <span class="bel__ac-yazi">
+            <b>Bildirimler kapalı</b>
+            <span>Son dakika haberlerini kaçırma</span>
+          </span>
+          <span class="bel__ac-dugme">Aç</span>
+        </button>
+
         <div class="bel__row">
           <span class="bel__ad">Son dakika</span>
           <label class="bel__switch">
@@ -227,6 +239,58 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
   }
   .bel__durum:empty {
     display: none;
+  }
+
+  /* Abone değilken panelin tepesindeki tek dokunuşluk "Aç" şeridi. */
+  .bel__ac {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin: 0 0 12px;
+    padding: 10px 12px;
+    border: 1px solid color-mix(in srgb, var(--brand) 35%, var(--border));
+    border-radius: 13px;
+    background: var(--brand-soft);
+    color: var(--heading);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+  .bel__ac[hidden] {
+    display: none;
+  }
+  .bel__ac:hover {
+    border-color: var(--brand);
+  }
+  .bel__ac-ikon {
+    font-size: 1.05rem;
+    line-height: 1;
+  }
+  .bel__ac-yazi {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .bel__ac-yazi b {
+    font-size: 0.85rem;
+    font-weight: 900;
+  }
+  .bel__ac-yazi span {
+    font-size: 0.72rem;
+    color: var(--text-2);
+  }
+  .bel__ac-dugme {
+    flex-shrink: 0;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--brand-grad);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 800;
+    box-shadow: 0 10px 18px -12px var(--brand-glow);
   }
 
   /* --- Aç/kapa anahtarı --- */
@@ -445,6 +509,7 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
     const durum = document.getElementById("bel-durum");
     const nokta = document.getElementById("bel-dot");
     const anahtar = document.getElementById("bel-son-dakika");
+    const acSerit = kok.querySelector<HTMLButtonElement>("[data-bel-ac]");
     const cipler = [...kok.querySelectorAll(".bel__chip")];
 
     const K_ABONE = "bildirim-abone";
@@ -470,6 +535,8 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
     let kategoriler = new Set(oku(K_KAT, []));
     let sonDakika = oku(K_SON, true) !== false;
     let abone = oku(K_ABONE, false) === true;
+    /** OneSignal abonelik kimliği (teşhis satırında son 6 hane gösterilir). */
+    let abonelikId = "";
     // OneSignal SDK'sına hiç ulaşılamadıysa (reklam engelleyici, kapalı ağ…)
     // okuyucuya yanlış mesaj vermemek için işaretlenir.
     let servisYok = false;
@@ -531,6 +598,7 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
         ps = OneSignal?.User?.PushSubscription;
       }
       const idVar = ps && "id" in ps ? ps.id : undefined;
+      abonelikId = idVar ? String(idVar) : "";
       return Boolean(ps?.optedIn) && (idVar === undefined ? true : Boolean(idVar));
     }
 
@@ -618,12 +686,13 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
           "İzin kapalı görünüyor (bir kez \"İzin verme\" denmiş). Adres çubuğunun yanındaki simge → İzinler → Bildirimler → İzin ver, sonra sayfayı yenile.";
       } else if (abone) {
         const n = kategoriler.size;
+        const kim = abonelikId ? ` · cihaz ${abonelikId.slice(-6)}` : "";
         durum.textContent = sonDakika
           ? n
-            ? `Açık: son dakika + ${n} konu`
-            : "Açık: son dakika haberleri"
+            ? `Açık: son dakika + ${n} konu${kim}`
+            : `Açık: son dakika haberleri${kim}`
           : n
-            ? `Açık: ${n} takip edilen konu`
+            ? `Açık: ${n} takip edilen konu${kim}`
             : "";
       } else if (iosKuruluDegil()) {
         durum.textContent =
@@ -632,13 +701,16 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
         durum.textContent =
           "İzin var ama abonelik kurulamadı. Sayfayı yenileyip tekrar dene; olmazsa tarayıcı ayarlarından site verilerini temizle.";
       } else {
-        durum.textContent = "Açmak için bir konu seç ya da son dakikayı aç.";
+        durum.textContent =
+          "Bildirimler kapalı. Yukarıdaki “Aç” düğmesine dokun; tarayıcı izin soracak.";
       }
     }
 
     /** Düğme/çip görünümlerini günceller. */
     function ciz() {
       nokta.hidden = !abone;
+      // Abone değilse panelde "Bildirimler kapalı → Aç" şeridi görünür.
+      if (acSerit) acSerit.hidden = abone;
       anahtar.checked = sonDakika;
       btn.classList.toggle("is-on", abone);
       btn.setAttribute("aria-label", abone ? "Bildirimler açık" : "Bildirimler");
@@ -678,6 +750,17 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
       if (ac) durumYaz();
     }
     btn.addEventListener("click", () => panelAc(panel.hidden));
+
+    // Panelin tepesindeki "Aç" şeridi: tek dokunuşla izin + abonelik.
+    acSerit?.addEventListener("click", async () => {
+      sonDakika = true;
+      yaz(K_SON, true);
+      anahtar.checked = true;
+      const oldu = await aboneBaslat();
+      ciz();
+      durumYaz();
+      if (!oldu) panelAc(true);
+    });
     document.addEventListener("click", (e) => {
       if (!panel.hidden && !kok.contains(e.target)) panelAc(false);
     });
@@ -819,7 +902,9 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
       if (typeof Notification === "undefined") return; // iOS sekmesi (API yok)
       if (Notification.permission !== "default") return; // verilmiş / reddedilmiş
       if (iosKuruluDegil()) return; // iPhone: önce Ana Ekrana Ekle
-      if (abone) return;
+      // Yerel "abone" işareti eski kalmış olabilir (tarayıcı verisi temizlendi,
+      // izin geri alındı). İzin gerçekten verilmişse tekrar sormayız.
+      if (abone && izinVerildi()) return;
       if (!panel.hidden) return; // okuyucu şu an panelde
       // Akış sayfasında kendi bildirim şeridi var; iki istem üst üste gelmesin.
       if (location.pathname.startsWith("/akis")) return;

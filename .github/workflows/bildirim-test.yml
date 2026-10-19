@@ -8,7 +8,12 @@ name: Bildirim Testi
 # oluyor. Test bildirimi o kuyrukta kayboluyordu; burası kendi grubunda ve
 # ~1 dakikada bitiyor. Depoya hiçbir şey yazmaz (data/ commit edilmez).
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      teshis:
+        description: "Yalnızca abone durumunu yazdır (bildirim GÖNDERME)"
+        type: boolean
+        default: false
 
 concurrency:
   group: bildirim-test
@@ -32,6 +37,7 @@ jobs:
         run: npm ci
 
       - name: Test bildirimi gönder
+        if: ${{ !inputs.teshis }}
         env:
           SITE_URL: ${{ vars.SITE_URL }}
           ONESIGNAL_APP_ID: ${{ vars.ONESIGNAL_APP_ID }}

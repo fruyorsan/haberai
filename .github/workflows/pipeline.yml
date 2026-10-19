@@ -139,6 +139,11 @@ jobs:
           # Web push (bildirim) zili: App ID anonim bir değerdir (gizli değil).
           # Boşsa zil düğmesi ve "kategoriyi takip et" düğmeleri hiç basılmaz.
           ONESIGNAL_APP_ID: ${{ vars.ONESIGNAL_APP_ID }}
+          # Yorumlar (Supabase). anon anahtarı tarayıcıya yazılmak için üretilir;
+          # gizli değildir. Boşsa yorum kutusu yerine sessiz not görünür.
+          # Kurulum: supabase/yorumlar.sql + README.
+          YORUM_URL: ${{ vars.YORUM_URL }}
+          YORUM_ANON: ${{ vars.YORUM_ANON }}
         run: cd site && npm run build
 
       # Site kodu degisip degismedigini anla (Netlify buna gore yayin yapar).

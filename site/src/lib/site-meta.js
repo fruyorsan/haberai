@@ -85,11 +85,28 @@ export const GA_MEASUREMENT_ID = process.env.GA_MEASUREMENT_ID || "G-C9BGECSKCM"
  * Kimlikler gizli değildir (sayfaya açıkça yazılır). Değiştirmek için:
  *   gh variable set GISCUS_REPO_ID --body "R_..."  (ve diğerleri)
  */
-export const GISCUS = {
-  repo: process.env.GISCUS_REPO || "fruyorsan/haberai",
-  repoId: process.env.GISCUS_REPO_ID || "R_kgDOVLD1_w",
-  kategori: process.env.GISCUS_KATEGORI || "Announcements",
-  kategoriId: process.env.GISCUS_KATEGORI_ID || "DIC_kwDOVLD1_84DI4aP",
+/**
+ * Yorumlar — Supabase (Postgres + REST) üzerinde, site içinde.
+ *
+ * NEDEN: giscus/utterances okuyucudan GitHub hesabı istiyordu. Burada hesap
+ * YOK: okuyucu yalnızca bir takma ad yazıp yorum bırakır. Site statik kalır;
+ * yorumlar Supabase'in ücretsiz katmanındaki `yorumlar` tablosunda durur ve
+ * tarayıcıdan doğrudan REST ile okunur/yazılır (RLS ile korunur).
+ *
+ * ANAHTAR GİZLİ DEĞİLDİR: Supabase "anon" anahtarı tarayıcıya yazılmak için
+ * üretilir; güvenlik Row Level Security politikalarıyla sağlanır (bkz.
+ * supabase/yorumlar.sql). Boşsa yorum kutusu yerine sessiz not görünür.
+ *
+ * Kurulum (tek sefer):
+ *   1) supabase.com → yeni ücretsiz proje
+ *   2) SQL Editor → supabase/yorumlar.sql içeriğini çalıştır
+ *   3) gh variable set YORUM_URL   --body "https://<proje>.supabase.co"
+ *      gh variable set YORUM_ANON  --body "<anon public key>"
+ */
+export const YORUM = {
+  url: String(process.env.YORUM_URL || "").replace(/\/+$/, ""),
+  anahtar: String(process.env.YORUM_ANON || ""),
+  tablo: "yorumlar",
 };
 
 /**

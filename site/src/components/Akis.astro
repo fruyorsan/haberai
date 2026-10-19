@@ -170,8 +170,7 @@ const ilk = liste.slice(0, ilkSayi);
       <p class="ysheet__ad" id="ysheet-ad"></p>
       <div class="ysheet__govde">
         <Yorumlar sade slug="" baslik="" url="" />
-      </div>
-      <a class="ysheet__oku" id="ysheet-oku" href="/akis/">Haberi oku →</a>
+      </div>      <a class="ysheet__oku" id="ysheet-oku" href="/akis/">Haberi oku →</a>
     </div>
   </div>
 
@@ -350,13 +349,9 @@ const ilk = liste.slice(0, ilkSayi);
 
       function yorumAc(kart) {
         if (!ySheet || !yYorum) return;
-        // giscus bu cihazda çalışmıyorsa (uygulama kurulu değil ya da hata)
-        // boş panel açmak yerine kısa bir bilgi verilir; dışarı yönlendirme yok.
-        if (yYorum.dataset.giscus === "0") {
-          bildir("Yorumlar şu an kapalı.");
-          return;
-        }
-        // Panel zaten bu haber için açıksa sadece gösterilir (iframe yeniden kurulmaz).
+        // Panel her zaman açılır. Yorum altyapısı henüz tanımlı değilse bile
+        // kutu içinde sessiz bir not görünür (boş panel / dışarı yönlendirme yok).
+        // Panel zaten bu haber için açıksa sadece gösterilir (liste yenilenmez).
         const ayni = ySlug && ySlug === kart.dataset.slug;
         ySlug = kart.dataset.slug || "";
         const ad = kart.dataset.ad || "Haber";

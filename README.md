@@ -329,29 +329,38 @@ npm run share
 > Not: X/Twitter OAuth 1.0a imzası `node:crypto` ile manuel üretilir; anahtarlar
 > girilene ve canlı denenene kadar "doğrulanmadı" kabul edilmelidir.
 
-## Yorumlar (giscus — sunucusuz, reklamsız)
+## Yorumlar (site içinde, hesap gerekmez)
 
-Site tamamen statik (GitHub Pages) ve Netlify kapandığı için yorumları saklayacak
-bir arka uç yok. Bu yüzden yorumlar **giscus** ile yapılır: yorumlar deponun
-**Discussions** bölümünde tutulur, sayfaya yalnızca bir iframe gömülür. Sunucu,
-veritabanı, üyelik ve reklam yoktur.
+Yorumlar **kendi sitemizde** çalışır. Okuyucudan GitHub/Google hesabı, e-posta veya
+şifre **istenmez**; yalnızca bir takma ad yazıp yorumu gönderir. Site statik kalır
+(GitHub Pages); yorumlar Supabase'in ücretsiz katmanındaki `yorumlar` tablosunda
+tutulur ve tarayıcıdan REST ile okunur/yazılır.
 
-- Bileşen: `site/src/components/Yorumlar.astro` (ayarlar: `site/src/lib/site-meta.js` → `GISCUS`)
-- Haber sayfası: yazının altında tam yorum bölümü (görünür alana yaklaşınca yüklenir).
-- Akış (`/akis/`): karttaki 💬 düğmesi **alttan açılan panel**de yorumları gösterir
-  (`Akis.astro` → `.ysheet`, tek iframe; 24 kart için 24 iframe kurulmaz).
-- Yorum anahtarı: haberin `slug`'ı (`data-mapping="specific"`) — adres değişse de
-  tartışma aynı kalır.
+- Bileşen: `site/src/components/Yorumlar.astro`
+- Şema + güvenlik: `supabase/yorumlar.sql` (RLS + hız sınırı + çift gönderim engeli)
+- Ayar: `site/src/lib/site-meta.js` → `YORUM` (GitHub Actions değişkenlerinden okunur)
+- Haber sayfası: yazının altında tam yorum bölümü (görünür alana yaklaşınca yüklenir)
+- Akış (`/akis/`): karttaki 💬 düğmesi **alttan açılan panelde** aynı bileşeni gösterir
+- Anahtar: haberin `slug`'ı — adres değişse de yorumlar aynı yerde kalır
 
-**Tek seferlik kurulum (1 tık):** Discussions açıldı (bu repoda açık; kategori
-`Announcements`). Kalan adım:
-<https://github.com/apps/giscus> → **Install** → `fruyorsan/haberai` seç.
+**Tek seferlik kurulum (~4 dk):**
 
-Kurulmadan da site bozulmaz: giscus "kurulu değil" hatası verirse yorum kutusu
-gizlenir ve yerinde tek satırlık **sessiz** bir not kalır. **Dışarı yönlendirme
-yapılmaz** (eskiden Telegram paneline atıyordu; 18.10.2026'da kaldırıldı — yorum
-yeri her zaman site içinde kalır). giscus yavaş ağda geç yüklenirse kutu geri
-açılır (yanlış "kapalı" görünmez).
+1. <https://supabase.com> → ücretsiz proje (GitHub ile giriş yeterli).
+2. Sol menü → **SQL Editor** → `supabase/yorumlar.sql` içeriğini yapıştır → **Run**.
+3. **Project Settings → API**: `Project URL` ve `anon public` anahtarını kopyala.
+4. Depoya iki değişken yaz (anahtar gizli değildir, tarayıcıya yazılmak için üretilir):
+
+   ```bash
+   gh variable set YORUM_URL  --body "https://<proje>.supabase.co"
+   gh variable set YORUM_ANON --body "<anon public key>"
+   gh workflow run pipeline.yml
+   ```
+
+Değişkenler yoksa site bozulmaz: yorum kutusu yerine **sessiz** bir not görünür,
+dışarı yönlendirme yapılmaz. Moderasyon: Supabase panelinden satır silmek ya da
+`gizli = true` yapmak yeterlidir (okuma politikası gizli satırları göstermez).
+
+
 
 ## IndexNow (Bing/Yandex anında bildirim)
 
