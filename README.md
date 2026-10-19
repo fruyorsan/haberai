@@ -530,8 +530,9 @@ kartlar zıplamaz.)
 
 Bir kez gördüğün (ya da beğendiğin/kaydettiğin) haber **bir sonraki ziyarette akışın
 tepesinde durmaz**: açılışta görülmemişler öne, görülenler alta alınır (grup içinde
-sunucu sırası korunur). Kart görselinin sol üstünde küçük **✓ gördün** rozeti çıkar ve
-görsel hafifçe soluklaşır — böylece sıralamanın neden değiştiği anlaşılır.
+sunucu sırası korunur). Bu hafıza **sessizdir**: kart üstünde rozet ya da soluklaşma
+YOKTUR (istek üzerine 18.10.2026'da kaldırıldı) — okuyucu yalnızca sıralamanın
+tazelendiğini görür.
 
 - Kayıt: `localStorage` → `akis-gorulen` (son 400 slug, cihazda kalır, sunucuya gitmez).
 - Bir kart ekranın %60'ından fazlası görününce "görüldü" sayılır (IntersectionObserver);

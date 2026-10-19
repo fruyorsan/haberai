@@ -250,22 +250,9 @@ const ilk = liste.slice(0, ilkSayi);
         const k = kart.querySelector(".ak__kaydet");
         if (b) b.setAttribute("aria-pressed", String(begen));
         if (k) k.setAttribute("aria-pressed", String(kayit));
-        // "Gördün" rozeti: kartı daha önce gördüysen görselde küçük bir not
-        // durur. Sıralamanın neden değiştiğini okuyucuya açıklar.
-        const gorulen = gorulenler.has(slug);
-        kart.classList.toggle("is-gorulen", gorulen);
-        const gorsel = kart.querySelector(".ak__gorsel");
-        if (gorsel) {
-          const rozet = gorsel.querySelector(".ak__gorulen");
-          if (gorulen && !rozet) {
-            gorsel.insertAdjacentHTML(
-              "beforeend",
-              '<span class="ak__gorulen" aria-hidden="true">gördün</span>'
-            );
-          } else if (!gorulen && rozet) {
-            rozet.remove();
-          }
-        }
+        // "Gördün" hafızası SESSİZ çalışır: görülenler bir sonraki açılışta
+        // listenin altına iner ama kart üstünde rozet/soluklaşma GÖRÜNMEZ
+        // (kullanıcı isteği, 18.10.2026).
         if (suzgec === "begeni") kart.hidden = !begen;
         else if (suzgec === "kayit") kart.hidden = !kayit;
         else kart.hidden = false;
