@@ -24,7 +24,7 @@ const IZINLI_LISANS =
 
 // Fotoğraf olmayan / haber görseli olarak kötü duran dosyalar.
 const KOTU_BASLIK =
-  /\b(logo|logos|map|maps|diagram|chart|graph|poster|cover|screenshot|screen shot|scan|scanned|icon|flag|coat of arms|seal|banknote|stamp|coin|signature|drawing|illustration|cartoon|clipart|svg|pdf|document|table|infographic|wikimedia|commons|wikidata|menu|display)\b/i;
+  /\b(logo|logos|map|maps|diagram|chart|graph|poster|cover|screenshot|screen shot|scan|scanned|icon|flag|coat of arms|seal|banknote|stamp|coin|signature|drawing|illustration|cartoon|clipart|svg|pdf|document|table|infographic|wikimedia|commons|wikidata|menu|display|thumbnail|unnamed|untitled|placeholder|no image|no photo)\b/i;
 
 // Eski/tarama görselleri: haber sayfasında "dikkat çekici" durmaz.
 const ESKI_GORSEL = /(black and white|monochrome|archival|historical|engraving|lithograph|fortepan|wellcome|bundesarchiv|nationaal archief|\b18\d\d\b|\b19[0-7]\d\b)/i;
@@ -78,6 +78,12 @@ function alaka(baslik, sorgu) {
   const s = kelimeler(sorgu);
   if (!s.length) return 0;
   return s.filter((w) => b.has(w)).length / s.length;
+}
+
+/** Sorgu sözcüklerinden kaçı metinde geçiyor (mutlak sayı). */
+function eslesenSayisi(metin, sorgu) {
+  const b = new Set(kelimeler(metin));
+  return kelimeler(sorgu).filter((w) => b.has(w)).length;
 }
 
 const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -163,7 +169,13 @@ function uygunGorsel(sayfa, sorgu) {
   // Polonya stadını getirebiliyor (Türkiye haberi için yanlış bağlam).
   const aciklama = duzMetin(meta.ImageDescription?.value, 600);
   const dosyaPuan = alaka(baslik, sorgu);
-  if (dosyaPuan <= 0) return null;
+  const sSorgu = kelimeler(sorgu);
+  const eslesen = eslesenSayisi(baslik, sorgu);
+  // 2 sözcüklü sorguda İKİSİ de, 3+ sözcükte en az 2'si dosya adında olmalı.
+  // ("Opera browser" sorgusuna "Gounod - Mireille - Open air opera" dosyası
+  // yalnızca "opera" ile uyuyordu; ikinci sözcük olmadan kabul edilmez.)
+  const gerekli = sSorgu.length >= 2 ? Math.min(2, sSorgu.length) : 1;
+  if (eslesen < gerekli) return null;
   // Açıklama uyumu sıralamayı iyileştirir ("Medical Park Stadyumu" açıklaması
   // "Trabzonspor - Beşiktaş" der → öne çıkar) ama tek başına yeterli değildir.
   const puan = dosyaPuan + 0.5 * alaka(aciklama, sorgu);

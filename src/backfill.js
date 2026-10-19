@@ -213,6 +213,8 @@ async function main() {
       try {
         const sorgu = await gorselSorgusu(a);
         a.gorselDeneme = new Date().toISOString();
+        // Denetlenebilirlik: hangi sorgunun hangi fotoğrafı getirdiği veride kalsın.
+        if (sorgu) a.gorselSorgu = sorgu;
         if (sorgu && (await gorselYaz(a, sorgu, kullanilan))) gorselSayi++;
       } catch (err) {
         if (err.allExhausted) {
