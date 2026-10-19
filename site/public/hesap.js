@@ -62,6 +62,7 @@
     stilKur();
     kap.textContent = "";
     kap.classList.add("hb-av");
+    kap.style.background = "";
     kap.style.backgroundImage = "";
     kap.style.color = "";
 
