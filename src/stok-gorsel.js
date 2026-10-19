@@ -96,7 +96,7 @@ async function commonsAra(sorgu, adet = ADAY, offset = 0) {
     gsrsearch: `${sorgu} filetype:bitmap`,
     prop: "imageinfo",
     iiprop: "url|size|extmetadata",
-    iiextmetadatafilter: "LicenseShortName|Artist|LicenseUrl|Credit",
+    iiextmetadatafilter: "LicenseShortName|Artist|LicenseUrl|Credit|ImageDescription",
     iiurlwidth: "1400",
   });
   const res = await fetch(`${COMMONS}?${params}`, {
@@ -151,13 +151,20 @@ function uygunGorsel(sayfa, sorgu) {
   const yazar =
     duzMetin(meta.Artist?.value) || duzMetin(meta.Credit?.value) || "Wikimedia Commons";
 
-  // Alaka + çözünürlük + eski/sahne görsel cezası.
-  // Sıralama: dosya adı–konu uyumu. Eşitlikte Commons'ın KENDİ arama sırası
-  // korunur (sort kararlıdır): motor dosya açıklamasını ve kategorilerini de
-  // gördüğü için çoğu zaman bizden daha isabetli sıralar.
-  // (Önceden genişlik bonusu vardı: "Vietnam askerleri" yerine büyük ama konu
-  // dışı "askeri radyo istasyonu" kapak oluyordu.)
-  let skor = alaka(baslik, sorgu);
+  // Alaka: dosya adı + açıklama. Açıklama, dosyanın ne olduğunu yazar
+  // ("8 Nisan 2017 Trabzonspor - Beşiktaş karşılaşması..."), bu yüzden dosya
+  // adı eşleşmese de doğru fotoğrafı yakalar.
+  const aciklama = duzMetin(meta.ImageDescription?.value, 600);
+  const puan = alaka(`${baslik} ${aciklama}`, sorgu);
+
+  // KONU DIŞI FOTOĞRAF GÖSTERME: Commons araması, konu bulunamadığında
+  // tamamen alakasız dosyalar döndürebiliyor (borsa haberi yerine konser
+  // fotoğrafı). Sorgu sözcüklerinin en az üçte biri geçmiyorsa aday elenir.
+  if (puan < 0.3) return null;
+
+  // Sıralama: konu uyumu. Eşitlikte Commons'ın KENDİ arama sırası korunur
+  // (sort kararlıdır) — motor dosya kategorilerini de gördüğü için isabetli.
+  let skor = puan;
   if (ESKI_GORSEL.test(baslik)) skor -= 0.5;
   if (SAHNE_GORSEL.test(baslik)) skor -= 0.2;
 
