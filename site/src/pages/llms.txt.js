@@ -19,6 +19,12 @@ export function GET({ site }) {
   const son = haberler.slice(0, 40);
 
   const cizgi = (s) => String(s || "").replace(/\s+/g, " ").trim();
+  // Özetleri kelime ortasında kesmemek için son boşluktan kırp.
+  const kirp = (s, n) => {
+    const t = cizgi(s);
+    if (t.length <= n) return t;
+    return t.slice(0, n).replace(/\s+\S*$/, "") + "…";
+  };
 
   const satirlar = [
     "# HaberinAi",
@@ -61,7 +67,7 @@ export function GET({ site }) {
     ...son.map(
       (a) =>
         `- [${cizgi(a.title)}](${origin}${a.url}) — ${publishedISO(a)} — ${a.category}` +
-        (a.summary ? `\n  ${cizgi(a.summary).slice(0, 220)}` : "")
+        (a.summary ? `\n  ${kirp(a.summary, 220)}` : "")
     ),
     "",
     "## Yayın ilkeleri",
