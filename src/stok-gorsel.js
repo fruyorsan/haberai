@@ -152,11 +152,12 @@ function uygunGorsel(sayfa, sorgu) {
     duzMetin(meta.Artist?.value) || duzMetin(meta.Credit?.value) || "Wikimedia Commons";
 
   // Alaka + çözünürlük + eski/sahne görsel cezası.
-  // Alaka (konu uyumu) baskın; çözünürlük yalnızca eşitlik bozucu olsun.
-  // (Büyük ama konu dışı bir fotoğraf, konuya uyan küçük fotoğraftan iyidir
-  // sanılıyordu: "Vietnam askerleri" yerine "askeri radyo istasyonu" geliyordu.)
+  // Sıralama: dosya adı–konu uyumu. Eşitlikte Commons'ın KENDİ arama sırası
+  // korunur (sort kararlıdır): motor dosya açıklamasını ve kategorilerini de
+  // gördüğü için çoğu zaman bizden daha isabetli sıralar.
+  // (Önceden genişlik bonusu vardı: "Vietnam askerleri" yerine büyük ama konu
+  // dışı "askeri radyo istasyonu" kapak oluyordu.)
   let skor = alaka(baslik, sorgu);
-  if (w >= 1600) skor += 0.02;
   if (ESKI_GORSEL.test(baslik)) skor -= 0.5;
   if (SAHNE_GORSEL.test(baslik)) skor -= 0.2;
 
@@ -174,26 +175,11 @@ function uygunGorsel(sayfa, sorgu) {
 }
 
 /**
- * Commons aramasında işe yarayan etiketler: Latin harfli marka/ürün/kişi/yer
- * ("iPhone", "Togg", "Epic Games"). Türkçe etiketler ("yılan", "askeRlik")
- * alakasız dosyalar getiriyor; onlar sorgu olarak kullanılmaz.
- */
-export function latinEtiketler(tags, adet = 2) {
-  const LATIN = /^[a-z0-9][a-z0-9.+-]*(?:\s+[a-z0-9][a-z0-9.+-]*){0,2}$/i;
-  return (Array.isArray(tags) ? tags : [])
-    .map((t) => String(t || "").trim())
-    .filter((t) => LATIN.test(t))
-    .slice(0, adet);
-}
-
-/**
  * Verilen sorguları sırayla dener, birbirinden farklı ve daha önce kullanılmamış
  * en fazla `adet` görsel döndürür. Ağ hatası sessizce atlanır (haber yayından
  * düşmez; kategori yedeği devreye girer).
  */
 export async function stokGorseller(sorgular, { adet = 3, kullanilan = new Set(), offset = 0 } = {}) {
-  const gorulen = new Set(kullanilan);
-  const sonuc = [];
   // Aynı dosyanın kırpılmış sürümü ("... (cropped)") ayrı fotoğraf sayılmasın.
   const kimlik = (baslik) =>
     String(baslik || "")
@@ -207,25 +193,36 @@ export async function stokGorseller(sorgular, { adet = 3, kullanilan = new Set()
     ),
   ].slice(0, 4);
 
-  for (const sorgu of temizSorgular) {
-    if (sonuc.length >= adet) break;
-    let adaylar = [];
-    try {
-      adaylar = await commonsAra(sorgu, ADAY, offset);
-    } catch {
-      continue; // ağ hatası: sonraki sorgu
-    }
-    for (const g of adaylar) {
+  const ara = async (gorulen) => {
+    const sonuc = [];
+    for (const sorgu of temizSorgular) {
       if (sonuc.length >= adet) break;
-      const k = kimlik(g.dosya);
-      if (gorulen.has(g.url) || gorulen.has(g.dosya) || gorulen.has(`#${k}`)) continue;
-      gorulen.add(g.url);
-      gorulen.add(g.dosya);
-      gorulen.add(`#${k}`);
-      sonuc.push(g);
+      let adaylar = [];
+      try {
+        adaylar = await commonsAra(sorgu, ADAY, offset);
+      } catch {
+        continue; // ağ hatası: sonraki sorgu
+      }
+      for (const g of adaylar) {
+        if (sonuc.length >= adet) break;
+        const k = kimlik(g.dosya);
+        if (gorulen.has(g.url) || gorulen.has(g.dosya) || gorulen.has(`#${k}`)) continue;
+        gorulen.add(g.url);
+        gorulen.add(g.dosya);
+        gorulen.add(`#${k}`);
+        sonuc.push(g);
+      }
     }
-  }
-  return sonuc;
+    return sonuc;
+  };
+
+  const sonuc = await ara(new Set(kullanilan));
+  if (sonuc.length) return sonuc;
+
+  // Havuz tükendiyse (aynı kategori sorgusu arşivde onlarca kez kullanıldı)
+  // tekrarı göze al: konuya uygun bir fotoğraf, hiç fotoğraf olmamasından
+  // (tek bir yedek görselin her haberde görünmesinden) iyidir.
+  return ara(new Set());
 }
 
 // Kategorilere göre genel arama sorguları: AI'nın özel sorgusu sonuç vermezse

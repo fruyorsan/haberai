@@ -7,7 +7,7 @@ import { shareNewArticles } from "./share.js";
 import { makeIndex, findSimilar, dedupeArticles } from "./dedupe.js";
 import { isBreaking, breakingScore } from "./breaking.js";
 import { purgeCopiedText } from "./telif.js";
-import { stokGorseller, KATEGORI_SORGU, yedekGorsel, atif, latinEtiketler } from "./stok-gorsel.js";
+import { stokGorseller, KATEGORI_SORGU, yedekGorsel, atif } from "./stok-gorsel.js";
 
 const DRY = process.argv.includes("--dry");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -204,17 +204,10 @@ async function main() {
       const { cleaned, removed } = purgeCopiedText(ai, item.content);
       if (removed > 0) console.log(`(telif: ${removed} cümle kaynakla birebir örtüştüğü için çıkarıldı) `);
 
-      // GÖRSELLER: AI'nın ürettiği İngilizce sorgu ile Wikimedia Commons'ta
-      // serbest lisanslı (CC0 / kamu malı / CC BY / CC BY-SA) fotoğraf aranır.
-      // 1 kapak + 2 gövde içi fotoğraf. Hiçbiri bulunamazsa kategorinin
-      // doğrulanmış yedek görseli kullanılır: haber asla fotoğrafsız kalmaz.
-      const sorgular = [
-        ai.gorselSorgu,
-        // Türkçe etiketler Commons'ta alakasız sonuç getiriyor; yalnızca Latin
-        // harfli marka/ürün etiketleri sorgu olarak kullanılır.
-        ...latinEtiketler(cleaned.tags),
-        KATEGORI_SORGU[cleaned.category],
-      ];
+      // GÖRSELLER: AI'nın ürettiği İngilizce sorgu + kategori sorgusu.
+      // (Etiketler sorgu olarak KULLANILMAZ: "Rekabet Kurulu" gibi Türkçe
+      // etiketler Commons'ta tamamen alakasız dosyalar getiriyor.)
+      const sorgular = [ai.gorselSorgu, KATEGORI_SORGU[cleaned.category]];
       let stok = await stokGorseller(sorgular, { adet: 3, kullanilan: kullanilanGorsel });
       if (!stok.length) stok = [yedekGorsel(cleaned.category)];
       const [kapakGorsel, ...ekler] = stok;
