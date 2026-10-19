@@ -29,8 +29,12 @@ if (!/^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(url) || !anahtar) {
 }
 
 console.log("1/3  Tablo deneniyor…");
+// Yeni "publishable" anahtarı (sb_publishable_…) JWT değildir; Authorization'a
+// yazılmaz, yalnızca apikey başlığıyla gönderilir.
+const basliklar = { apikey: anahtar };
+if (anahtar.startsWith("eyJ")) basliklar.Authorization = `Bearer ${anahtar}`;
 const yanit = await fetch(`${url}/rest/v1/yorumlar?select=id&limit=1`, {
-  headers: { apikey: anahtar, Authorization: `Bearer ${anahtar}` },
+  headers: basliklar,
 });
 
 if (yanit.status === 404) {

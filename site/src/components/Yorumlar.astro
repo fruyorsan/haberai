@@ -24,6 +24,20 @@ interface Props {
 
 const { slug, baslik, url, sade = false } = Astro.props;
 const aktif = Boolean(YORUM.url && YORUM.anahtar);
+
+/**
+ * Supabase başlıkları.
+ *
+ * Eski "anon" anahtarı bir JWT'dir (eyJ... ile başlar) ve hem `apikey` hem
+ * `Authorization: Bearer` olarak gönderilir. Yeni paneldeki "publishable"
+ * anahtarı (sb_publishable_...) JWT DEĞİLDİR: Authorization'a yazılırsa
+ * istek reddedilir. Bu yüzden yalnızca JWT ise Authorization eklenir.
+ */
+function susBasliklari(anahtar: string): Record<string, string> {
+  const h: Record<string, string> = { apikey: anahtar };
+  if (anahtar.startsWith("eyJ")) h.Authorization = `Bearer ${anahtar}`;
+  return h;
+}
 const otomatik = !sade && Boolean(slug) && aktif;
 ---
 
@@ -355,9 +369,7 @@ const otomatik = !sade && Boolean(slug) && aktif;
       const adres =
         `${api}/rest/v1/${tablo}?select=ad,metin,created_at` +
         `&slug=eq.${encodeURIComponent(slug)}&order=created_at.desc&limit=100`;
-      const r = await fetch(adres, {
-        headers: { apikey: anahtar, Authorization: `Bearer ${anahtar}` },
-      });
+      const r = await fetch(adres, { headers: susBasliklari(anahtar) });
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
       const veri = (await r.json()) as { ad?: string; metin?: string; created_at?: string }[];
       liste.replaceChildren(...veri.map(oge));
@@ -446,8 +458,7 @@ const otomatik = !sade && Boolean(slug) && aktif;
         const r = await fetch(`${api}/rest/v1/${tablo}`, {
           method: "POST",
           headers: {
-            apikey: anahtar,
-            Authorization: `Bearer ${anahtar}`,
+            ...susBasliklari(anahtar),
             "Content-Type": "application/json",
             Prefer: "return=representation",
           },
