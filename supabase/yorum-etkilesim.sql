@@ -3,6 +3,8 @@
 -- ----------------------------------------------------------------------------
 -- Supabase Dashboard > SQL Editor'de bu dosyanın TAMAMINI bir kez çalıştır.
 -- Mevcut yorumlar silinmez; yalnızca yeni tablolar/fonksiyonlar eklenir.
+-- Kurulum sırası: yorumlar.sql → yorum-etkilesim.sql → yorum-bildirim.sql
+-- (yanıtlar ve beğeni/yanıt bildirimleri için bkz. supabase/yorum-bildirim.sql)
 --
 -- Neden ayrı tablolar?
 --   * yorum_sahiplik: hesapsız yorumun hangi cihazdan yazıldığını tutar.
@@ -81,6 +83,7 @@ begin
         'created_at', y.created_at,
         'uye_id', y.uye_id,
         'etiket', coalesce(y.etiket, ''),
+        'ust_id', y.ust_id,
         'begeni', (
           select count(*)::int
           from public.yorum_begeniler b

@@ -365,6 +365,47 @@ Değişkenler yoksa site bozulmaz: yorum kutusu yerine **sessiz** bir not görü
 dışarı yönlendirme yapılmaz. Moderasyon: Supabase panelinden satır silmek ya da
 `gizli = true` yapmak yeterlidir (okuma politikası gizli satırları göstermez).
 
+### Yanıtlar, beğeniler ve bildirimler
+
+Okur bir yorumu **beğenebilir**, **yanıtlayabilir** ve (kendi yorumunu) silebilir.
+Yanıt, yanıtlanan yorumun altında girintili gösterilir; yanıtın yanıtı da aynı
+başlık altında toplanır.
+
+**Bildirim:** beğeni ya da yanıt geldiğinde **karşı tarafa** (yorumu yazan kişiye)
+anında push gider. Gönderim, sunucudan (Supabase → `pg_net`) OneSignal REST API'sine
+yapılır; hedefleme etiketle **tek kişiye** yapılır:
+
+| Etiket | Kim taşır | Neyi bildirir |
+| --- | --- | --- |
+| `yorum_kimlik_u` | Giriş yapan üye (`site/public/hesap.js`) | Üyenin yazdığı yorumların beğeni/yanıtı |
+| `yorum_kimlik_c` | Yorum yazmış cihaz (`hb-yorum-cihaz`) | Hesapsız yazılan yorumların beğeni/yanıtı |
+
+Kurallar: kendi yorumunu beğenen/yazan kişiye bildirim **gitmez**; aynı beğeni
+6 saatte, aynı yanıt 1 saatte bir bildirilir; okuyucu bildirim izni vermemişse
+(zil kapalı) ona ulaşacak bir kanal yoktur, bildirim sessizce atlanır.
+
+**Kurulum (tek seferlik):**
+
+```bash
+# 1) Sırayla üç dosyayı Supabase → SQL Editor'de çalıştır:
+#    supabase/yorumlar.sql → supabase/yorum-etkilesim.sql → supabase/yorum-bildirim.sql
+# 2) OneSignal REST anahtarını veritabanına yaz (depoda/ tarayıcıda DURMAZ):
+#    update public.bildirim_ayar set onesignal_anahtar = '<REST API Key>' where id;
+# 3) Database → Extensions → pg_net AÇIK olmalı (HTTP isteğini o atar).
+```
+
+Teşhis:
+
+```sql
+select id, status_code, left(content, 200), error_msg
+  from net._http_response order by id desc limit 5;          -- gönderim sonuçları
+select yorum_id, tur, alici, begenen, olusma
+  from public.bildirim_kayit order by olusma desc limit 20;  -- ne, kime gitti
+```
+
+`pg_net` kapalıysa ya da REST anahtarı yazılmamışsa bildirim sessizce atlanır;
+**yorumlar, beğeniler ve yanıtlar çalışmaya devam eder**.
+
 
 
 ## IndexNow (Bing/Yandex anında bildirim)

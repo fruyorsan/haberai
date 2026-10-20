@@ -509,6 +509,61 @@ const otomatik = !sade && Boolean(slug) && aktif;
     font-size: 0.88rem;
   }
 
+  /* =============================== YANITLAR ============================== */
+  /* Yanıtlar, yanıtlanan yorumun ALTINDA gösterilir (tek kademe girinti). */
+  .yorum__yanitlar {
+    grid-column: 1 / -1;
+    display: grid;
+    gap: 8px;
+    margin: 8px 0 0;
+    padding-left: 10px;
+    list-style: none;
+    border-left: 2px solid var(--border);
+  }
+  .yorum__yanitlar .yorum__oge {
+    padding: 8px 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+  /* Yanıt kutusu: yorumun altında açılan küçük form. */
+  .yorum__yanit-form {
+    grid-column: 1 / -1;
+    display: grid;
+    gap: 6px;
+    margin-top: 10px;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: var(--surface-2);
+  }
+  .yorum__yanit-form .yorum__metin {
+    min-height: 48px;
+    font-size: 0.94rem;
+  }
+  .yorum__yanit-form .yorum__alt {
+    justify-content: flex-end;
+  }
+  .yorum__vazgec {
+    padding: 9px 14px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-2);
+    font: inherit;
+    font-size: 0.84rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .yorum__vazgec:hover {
+    border-color: var(--brand);
+    color: var(--brand);
+  }
+  .yorum__yanit:hover {
+    border-color: var(--brand);
+    color: var(--brand);
+  }
+
   /* =============================== TELEFON =============================== */
   @media (max-width: 640px) {
     .yorum__ust {
@@ -735,6 +790,8 @@ const otomatik = !sade && Boolean(slug) && aktif;
     '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 21.4l8.8-8.7a5 5 0 0 0 0-7.1z"/></svg>';
   const SIL_SVG =
     '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16"/><path d="M10 11v6M14 11v6"/><path d="M6 7l1 14h10l1-14"/><path d="M9 7V4h6v3"/></svg>';
+  const YANIT_SVG =
+    '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.4 9.4 0 0 1-2.8-.4L4 21l1.5-4.4A8.3 8.3 0 0 1 3 11.5 8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg>';
 
   /** Yorumlarda görünen üyelerin avatarlarını tek istekte çeker. */
   async function avatarlariGetir(api: string, anahtar: string, idler: string[]) {
@@ -764,10 +821,12 @@ const otomatik = !sade && Boolean(slug) && aktif;
     benim?: boolean;
     begendim?: boolean;
     begeni?: number;
-  }, etkilesim = false): HTMLLIElement {
+    ust_id?: number | string | null;
+  }, etkilesim = false, yanitli = false): HTMLLIElement {
     const li = document.createElement("li");
     li.className = "yorum__oge";
     if (y.id != null) li.dataset.yorumId = String(y.id);
+    if (y.ust_id != null) li.classList.add("yorum__oge--yanit");
     const avatar = document.createElement("span");
     avatar.className = "yorum__oge-avatar";
     avatar.setAttribute("aria-hidden", "true");
@@ -827,6 +886,17 @@ const otomatik = !sade && Boolean(slug) && aktif;
       begen.append(say);
       eylem.append(begen);
 
+      const yanit = document.createElement("button");
+      yanit.type = "button";
+      yanit.className = "yorum__etkilesim yorum__yanit";
+      yanit.dataset.yorumYanit = String(y.id);
+      yanit.setAttribute("aria-label", `Yanıtla: ${y.ad || "Okur"} yorumuna yanıt yaz`);
+      yanit.title = "Yanıtla";
+      yanit.innerHTML = YANIT_SVG;
+      yanit.append(document.createTextNode("Yanıtla"));
+      // Yanıt desteği (sunucudaki yanıt RPC'leri) kurulu değilse düğme çizilmez.
+      if (yanitli) eylem.append(yanit);
+
       if (y.benim) {
         const sil = document.createElement("button");
         sil.type = "button";
@@ -843,6 +913,154 @@ const otomatik = !sade && Boolean(slug) && aktif;
     }
 
     return li;
+  }
+
+  /** Cihazın OneSignal kimlik etiketini yazar (beğeni/yanıt bildirimi için). */
+  function kimlikEtiketi(cihaz: string) {
+    const H = (window as any).HaberinAi;
+    if (H && typeof H.yorumKimlik === "function") {
+      try {
+        void H.yorumKimlik(cihaz);
+      } catch {
+        /* etiket yazılamazsa yorum yine de kaydedilir */
+      }
+    }
+  }
+
+  /** Sunucudan gelen hata metnini okura gösterilebilir hâle getirir. */
+  function hataMetni(e: unknown, yedek: string): string {
+    const m = e instanceof Error ? e.message : "";
+    if (!m || /^HTTP \d/.test(m)) return yedek;
+    return m;
+  }
+
+  /**
+   * Yorumu gönderir: üye ise oturumlu RPC'den, değilse anonim RPC'den.
+   * `ust` verilirse bu bir YANITTIR; yanıtlanan yorumun sahibine bildirim gider.
+   * Hata durumunda `Error` fırlatır, başarıda kaydı döner.
+   */
+  async function yorumGonder(kok: Kok, metin: string, ust: number | null): Promise<any> {
+    const api = kok.dataset.api || "";
+    const anahtar = kok.dataset.anahtar || "";
+    const tablo = kok.dataset.tablo || "yorumlar";
+    const slug = kok.dataset.slug || "";
+    const H = (window as any).HaberinAi;
+    const u = hesap();
+    const adEl = kok.querySelector<HTMLInputElement>("[data-yorum-ad]");
+    const ad = (adEl?.value || "").trim().slice(0, 40) || "Okur";
+
+    // Üye: ad ve rozet profilden gelir, oturum sunucuda doğrulanır.
+    if (u && H && typeof H.yorumEkle === "function") {
+      const r = await H.yorumEkle(slug, metin, ust || undefined);
+      if (r && r.hata) throw new Error(r.hata);
+      return {
+        id: r.id,
+        ad: r.ad || u.ad,
+        metin: r.metin || metin,
+        created_at: r.created_at || new Date().toISOString(),
+        uye_id: u.id,
+        etiket: r.etiket || u.etiket || "",
+        benim: true,
+        begendim: false,
+        begeni: 0,
+        ust_id: r.ust_id != null ? r.ust_id : ust,
+      };
+    }
+
+    const cihaz = cihazKimlik();
+
+    if (ust) {
+      // Hesapsız yanıt: haber adresi üst yorumdan bulunur, sahiplik cihaza yazılır.
+      const r = await rpcYorum(api, anahtar, "yorum_yanit_ekle_anon", {
+        p_yorum: ust,
+        p_ad: ad,
+        p_metin: metin,
+        p_cihaz: cihaz,
+      });
+      if (!r || r.hata || r.id == null) {
+        throw new Error((r && r.hata) || "Yanıt gönderilemedi. Biraz sonra tekrar dene.");
+      }
+      kimlikEtiketi(cihaz);
+      return r;
+    }
+
+    // Hesapsız yorum: cihaz anahtarı sunucuda sahiplik tablosuna yazılır.
+    const rpcKayit = await rpcYorum(api, anahtar, "yorum_ekle_anon", {
+      p_slug: slug,
+      p_ad: ad,
+      p_metin: metin,
+      p_cihaz: cihaz,
+    });
+    if (rpcKayit && !Array.isArray(rpcKayit) && !rpcKayit.hata && rpcKayit.id != null) {
+      kimlikEtiketi(cihaz);
+      return rpcKayit;
+    }
+    if (rpcKayit && rpcKayit.hata) throw new Error(rpcKayit.hata);
+
+    // SQL yaması kurulmamışsa eski doğrudan REST yolu (yanıt desteklenmez).
+    const r = await fetch(`${api}/rest/v1/${tablo}`, {
+      method: "POST",
+      headers: {
+        ...susBasliklari(anahtar),
+        "Content-Type": "application/json",
+        Prefer: "return=representation",
+      },
+      body: JSON.stringify({ slug, ad, metin }),
+    });
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    const [kayit] = (await r.json()) as { ad?: string; metin?: string; created_at?: string }[];
+    return { ...kayit, benim: false, begendim: false, begeni: 0 };
+  }
+
+  /**
+   * Düz listeyi (sunucu yeniden eskiye döner) kök + yanıt ağacına çevirir.
+   * Yanıtlar yanıtladıkları yorumun ALTINDA gösterilir; yanıtın yanıtı da aynı
+   * başlık altında toplanır. Üstü bulunamayan (silinmiş/gizlenmiş) yanıt kök
+   * kabul edilir, böylece hiçbir yorum kaybolmaz.
+   */
+  function yorumAgaci(ham: any[], etkilesim: boolean, yanitli = false): HTMLLIElement[] {
+    const idler = new Map<string, any>();
+    for (const y of ham) if (y && y.id != null) idler.set(String(y.id), y);
+
+    const kokBul = (y: any) => {
+      let cur = y;
+      for (let i = 0; i < 20; i++) {
+        const ust = cur.ust_id != null ? idler.get(String(cur.ust_id)) : null;
+        if (!ust || ust === cur) break;
+        cur = ust;
+      }
+      return cur;
+    };
+
+    const kokler: any[] = [];
+    const yanitlar = new Map<string, any[]>();
+    for (const y of ham) {
+      const kok = y && y.ust_id != null ? kokBul(y) : y;
+      if (!kok || kok === y) {
+        kokler.push(y);
+        continue;
+      }
+      const anahtar = String(kok.id);
+      const liste = yanitlar.get(anahtar);
+      if (liste) liste.push(y);
+      else yanitlar.set(anahtar, [y]);
+    }
+
+    const cikti: HTMLLIElement[] = [];
+    for (const kok of kokler) {
+      const li = oge(kok, etkilesim, yanitli);
+      const alt = yanitlar.get(String(kok.id));
+      if (alt && alt.length) {
+        // Yanıtlar eskiden yeniye: konuşma sırası.
+        alt.sort((a, b) => Date.parse(a.created_at || "") - Date.parse(b.created_at || ""));
+        const ul = document.createElement("ul");
+        ul.className = "yorum__yanitlar";
+        ul.append(...alt.map((y) => oge(y, etkilesim, yanitli)));
+        li.append(ul);
+      }
+      cikti.push(li);
+    }
+    return cikti;
   }
 
   async function yukle(kok: Kok) {
@@ -876,13 +1094,19 @@ const otomatik = !sade && Boolean(slug) && aktif;
           .map((v: any) => v.uye_id)
           .filter((v: any): v is string => Boolean(v));
         if (uyeIdler.length) await avatarlariGetir(api, anahtar, uyeIdler);
-        liste.replaceChildren(...rpcVeri.map((v: any) => oge(v, true)));
+        // Yanıt desteği kurulu mu? Sunucudaki `yorum_listele` yaması `ust_id`
+        // döndürüyorsa evet (supabase/yorum-bildirim.sql). Kurulu değilse
+        // "Yanıtla" düğmesi hiç çizilmez; okuyucu bozuk düğmeyle karşılaşmaz.
+        const yanitli = rpcVeri.some((v: any) => v && "ust_id" in v);
+        kok.dataset.yanit = yanitli ? "1" : "0";
+        liste.replaceChildren(...yorumAgaci(rpcVeri, true, yanitli));
         sayiGuncelle(kok);
         kok.dataset.etkilesim = "1";
         kok.dataset.yuklendi = "1";
         return;
       }
       kok.dataset.etkilesim = "";
+      kok.dataset.yanit = "0";
 
       const kuyruk =
         `&slug=eq.${encodeURIComponent(slug)}&order=created_at.desc&limit=100`;
@@ -967,7 +1191,6 @@ const otomatik = !sade && Boolean(slug) && aktif;
     const tuzak = kok.querySelector<HTMLInputElement>("[data-yorum-tuzak]");
     const gonder = kok.querySelector<HTMLButtonElement>("[data-yorum-gonder]");
     const anahtar = kok.dataset.anahtar || "";
-    const tablo = kok.dataset.tablo || "yorumlar";
     const api = kok.dataset.api || "";
     const form = kok.querySelector<HTMLFormElement>("[data-yorum-form]");
 
@@ -989,14 +1212,135 @@ const otomatik = !sade && Boolean(slug) && aktif;
       }
     });
 
-    // Beğeni ve silme: liste her yenilendiğinde ayrı dinleyici eklememek için
-    // tek bir olay delegasyonu kullanılır.
+    // Beğeni, silme ve yanıt: liste her yenilendiğinde ayrı dinleyici
+    // eklememek için tek bir olay delegasyonu kullanılır.
     const liste = kok.querySelector<HTMLElement>("[data-yorum-liste]");
+
+    /** Aynı anda yalnızca bir yanıt kutusu açık kalır. */
+    let acikYanit: HTMLElement | null = null;
+
+    function yanitKapat() {
+      if (acikYanit) {
+        acikYanit.remove();
+        acikYanit = null;
+      }
+    }
+
+    function yanitDurum(el: HTMLElement, metin: string, hata = false) {
+      el.textContent = metin;
+      el.classList.toggle("yorum__durum--hata", hata);
+    }
+
+    /** Yanıtı, yanıtlanan yorumun altındaki yanıt listesine ekler. */
+    function yanitEkle(ustLi: HTMLElement, kayit: any) {
+      let ul: HTMLElement | null = null;
+      for (const c of Array.from(ustLi.children)) {
+        if (c.classList.contains("yorum__yanitlar")) {
+          ul = c as HTMLElement;
+          break;
+        }
+      }
+      if (!ul) {
+        ul = document.createElement("ul");
+        ul.className = "yorum__yanitlar";
+        ustLi.append(ul);
+      }
+      const yeni = oge(kayit, kok.dataset.etkilesim === "1", kok.dataset.yanit === "1");
+      yeni.classList.add("yorum__oge--yeni");
+      ul.append(yeni);
+    }
+
+    /**
+     * Yorumun altında küçük bir yanıt kutusu açar. Aynı düğmeye ikinci kez
+     * dokunulursa kapanır; başka bir yoruma dokunulursa kutu oraya taşınır.
+     */
+    function yanitFormuAc(dugme: HTMLElement, id: number) {
+      const li = dugme.closest(".yorum__oge") as HTMLElement | null;
+      if (!li) return;
+      const ayniYer = acikYanit ? acikYanit.closest(".yorum__oge") === li : false;
+      yanitKapat();
+      if (ayniYer) return;
+
+      const hedefAd = (li.querySelector(".yorum__oge-ad")?.textContent || "okur").trim();
+      const kutu = document.createElement("form");
+      kutu.className = "yorum__yanit-form";
+      kutu.noValidate = true;
+
+      const ta = document.createElement("textarea");
+      ta.className = "yorum__metin";
+      ta.rows = 2;
+      ta.maxLength = 1200;
+      ta.placeholder = `${hedefAd} adlı okura yanıtın…`;
+      ta.setAttribute("aria-label", "Yanıtın");
+
+      const alt = document.createElement("div");
+      alt.className = "yorum__alt";
+      const vazgec = document.createElement("button");
+      vazgec.type = "button";
+      vazgec.className = "yorum__vazgec";
+      vazgec.textContent = "Vazgeç";
+      const yolla = document.createElement("button");
+      yolla.type = "submit";
+      yolla.className = "yorum__gonder";
+      yolla.textContent = "Yanıtla";
+      alt.append(vazgec, yolla);
+
+      const durum = document.createElement("p");
+      durum.className = "yorum__durum";
+      durum.setAttribute("role", "status");
+      durum.setAttribute("aria-live", "polite");
+
+      kutu.append(ta, alt, durum);
+      li.append(kutu);
+      acikYanit = kutu;
+      ta.focus();
+
+      vazgec.addEventListener("click", () => yanitKapat());
+
+      kutu.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const metin = ta.value.trim();
+        if (metin.length < 2) {
+          yanitDurum(durum, "Yanıt çok kısa.", true);
+          ta.focus();
+          return;
+        }
+        if (Date.now() - sonGonderim < 15000) {
+          yanitDurum(durum, "Arka arkaya çok hızlı yazdın, birkaç saniye bekle.", true);
+          return;
+        }
+        yolla.disabled = true;
+        yanitDurum(durum, "Gönderiliyor…");
+        try {
+          const kayit = await yorumGonder(kok, metin, id);
+          sonGonderim = Date.now();
+          yanitEkle(li, kayit);
+          sayiGuncelle(kok);
+          yanitKapat();
+          yaz(kok, "Yanıtın yayınlandı ✓");
+        } catch (err) {
+          yanitDurum(
+            durum,
+            hataMetni(err, "Yanıt gönderilemedi. Biraz sonra tekrar dene."),
+            true,
+          );
+          yolla.disabled = false;
+        }
+      });
+    }
+
     liste?.addEventListener("click", async (e) => {
       const hedef = e.target as Element;
       const begenBtn = hedef.closest("[data-yorum-begen]") as HTMLButtonElement | null;
       const silBtn = hedef.closest("[data-yorum-sil]") as HTMLButtonElement | null;
+      const yanitBtn = hedef.closest("[data-yorum-yanit]") as HTMLButtonElement | null;
       const u = hesap();
+
+      if (yanitBtn) {
+        const id = Number(yanitBtn.dataset.yorumYanit || 0);
+        if (id) yanitFormuAc(yanitBtn, id);
+        return;
+      }
 
       if (begenBtn) {
         const id = Number(begenBtn.dataset.yorumBegen || 0);
@@ -1051,7 +1395,6 @@ const otomatik = !sade && Boolean(slug) && aktif;
       e.preventDefault();
       if (!metinEl || !gonder) return;
       const metin = metinEl.value.trim();
-      const slug = kok.dataset.slug || "";
       if (metin.length < 2) {
         yaz(kok, "Yorum çok kısa.", true);
         metinEl.focus();
@@ -1063,8 +1406,7 @@ const otomatik = !sade && Boolean(slug) && aktif;
         yaz(kok, "Yorumun alındı.");
         return;
       }
-      const simdi = Date.now();
-      if (simdi - sonGonderim < 15000) {
+      if (Date.now() - sonGonderim < 15000) {
         yaz(kok, "Arka arkaya çok hızlı yazdın, birkaç saniye bekle.", true);
         return;
       }
@@ -1072,54 +1414,11 @@ const otomatik = !sade && Boolean(slug) && aktif;
       gonder.disabled = true;
       yaz(kok, "Gönderiliyor…");
       try {
-        const H = (window as any).HaberinAi;
-        const u = hesap();
-        let kayit: any;
-        if (u && H && typeof H.yorumEkle === "function") {
-          // Üye: yazma sunucudaki RPC'den geçer; ad profilden, oturum doğrulanır.
-          const r = await H.yorumEkle(slug, metin);
-          if (r && r.hata) throw new Error(r.hata);
-          kayit = {
-            id: r.id,
-            ad: r.ad || u.ad,
-            metin: r.metin || metin,
-            created_at: new Date().toISOString(),
-            uye_id: u.id,
-            etiket: r.etiket || u.etiket || "",
-            benim: true,
-            begendim: false,
-            begeni: 0,
-          };
-        } else {
-          // Hesapsız yorum: cihaz anahtarı sunucuda sahiplik tablosuna yazılır.
-          // SQL yaması yoksa eski doğrudan REST ekleme yoluna düşülür.
-          const rpcKayit = await rpcYorum(api, anahtar, "yorum_ekle_anon", {
-            p_slug: slug,
-            p_ad: ad,
-            p_metin: metin,
-            p_cihaz: cihazKimlik(),
-          });
-          if (rpcKayit && !Array.isArray(rpcKayit) && !rpcKayit.hata && rpcKayit.id != null) {
-            kayit = rpcKayit;
-          } else {
-            if (rpcKayit && rpcKayit.hata) throw new Error(rpcKayit.hata);
-            const r = await fetch(`${api}/rest/v1/${tablo}`, {
-              method: "POST",
-              headers: {
-                ...susBasliklari(anahtar),
-                "Content-Type": "application/json",
-                Prefer: "return=representation",
-              },
-              body: JSON.stringify({ slug, ad, metin }),
-            });
-            if (!r.ok) throw new Error(`HTTP ${r.status}`);
-            [kayit] = (await r.json()) as { ad?: string; metin?: string; created_at?: string }[];
-            kayit = { ...kayit, benim: false, begendim: false, begeni: 0 };
-          }
-        }
+        // Üye ise oturumlu RPC, değilse anonim RPC (bkz. yorumGonder).
+        const kayit = await yorumGonder(kok, metin, null);
         const liste = kok.querySelector<HTMLElement>("[data-yorum-liste]");
         if (liste && kayit) {
-          const yeni = oge(kayit, kok.dataset.etkilesim === "1");
+          const yeni = oge(kayit, kok.dataset.etkilesim === "1", kok.dataset.yanit === "1");
           yeni.classList.add("yorum__oge--yeni");
           liste.prepend(yeni);
         }
@@ -1137,8 +1436,8 @@ const otomatik = !sade && Boolean(slug) && aktif;
             ? "Yorumun yayınlandı ✓ Haber sayfasında da görünüyor."
             : "Yorumun yayınlandı ✓",
         );
-      } catch {
-        yaz(kok, "Yorum gönderilemedi. Biraz sonra tekrar dene.", true);
+      } catch (err) {
+        yaz(kok, hataMetni(err, "Yorum gönderilemedi. Biraz sonra tekrar dene."), true);
       } finally {
         gonder.disabled = false;
       }

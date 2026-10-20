@@ -27,6 +27,14 @@ create table if not exists public.yorumlar (
   etiket     text        not null default ''   -- yorum yazıldığı andaki rozet
 );
 
+-- Yanıtlar: bir yoruma bağlı yanıtlar. `ust_id` boşsa yorum köktür.
+-- (Yanıtlar, beğeni/yanıt bildirimleri ve yanıt RPC'leri için
+--  `supabase/yorum-bildirim.sql` dosyasını da çalıştır.)
+alter table public.yorumlar add column if not exists ust_id bigint;
+
+create index if not exists yorumlar_ust_idx
+  on public.yorumlar (ust_id);
+
 create index if not exists yorumlar_slug_zaman_idx
   on public.yorumlar (slug, created_at desc);
 
