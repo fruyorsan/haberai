@@ -70,7 +70,9 @@ const KAT_TUR_ADET = Number(process.env.BILDIRIM_KAT_TUR_ADET ?? 6);
 // Tur başına gönderilecek en fazla HABER (taşma koruması; sonraki turda devam).
 const KAT_TUR_HABER = Number(process.env.BILDIRIM_KAT_TUR_HABER ?? 20);
 // Kimsenin takip etmediği (alıcısı 0 çıkan) kategori bu süre boyunca atlanır.
-const KAT_BOS_GERI_CEK_SAAT = Number(process.env.BILDIRIM_KAT_BOS_SAAT ?? 6);
+// Kısa tutulur: bir okuyucu o konuyu YENİ takip ettiyse ilk bildirimi saatlerce
+// beklememeli. Boşta kalan kategori yalnızca saatte bir kez denenir.
+const KAT_BOS_GERI_CEK_SAAT = Number(process.env.BILDIRIM_KAT_BOS_SAAT ?? 1);
 const TOPLAM_MAX_GUN = Number(process.env.BILDIRIM_TOPLAM_MAX_GUN ?? 280);
 // Özet bildirimi: "ozet" seçen okuyucuya günde 3 kez (TR 09/15/21).
 const OZET_SAATLER = [9, 15, 21];

@@ -417,6 +417,15 @@ const breadcrumbLd = {
       <div class="aiask__answer" id="aiask-answer" hidden></div>
     </section>
 
+    {/* Yorumlar, dört haberlik okuma zincirinden ÖNCE gelir: Shorts'ta yazılan
+        yorum "Haberi oku" ile açılan sayfada hemen görünsün; okur yorumlara
+        ulaşmak için dört ayrı haberi sonuna kadar kaydırmak zorunda kalmasın. */}
+    <Yorumlar
+      slug={article.slug}
+      baslik={article.title}
+      url={`${siteOrigin(Astro.site)}/haber/${article.slug}/`}
+    />
+
     {/* ShiftDelete tarzı okumaya devam: haberin hemen ardından benzer haberlerin
         TAM içeriği akar (4 haber), sonra zincir durur. */}
     {devam.map((a, i) => <DevamHaber article={a} index={i} />)}
@@ -439,12 +448,6 @@ const breadcrumbLd = {
     )}
 
     <AdSlot slot={ADSENSE_SLOTS.liste} label="Sponsorlu" />
-
-    <Yorumlar
-      slug={article.slug}
-      baslik={article.title}
-      url={`${siteOrigin(Astro.site)}/haber/${article.slug}/`}
-    />
   </div>
 
   <script>
