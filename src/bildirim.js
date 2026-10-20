@@ -270,7 +270,7 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
 // Sayfa hazır değilse gonder() hata verir; çağıran taraf haberi "gönderildi"
 // olarak işaretlemez ve bir sonraki turda yeniden dener.
 const canliOnbellek = new Map();
-async function sayfaHazirMi(url, deneme = 3, aralikMs = 8000) {
+async function sayfaHazirMi(url, deneme = 5, aralikMs = 12000) {
   const anahtar = String(url || "");
   if (!anahtar) return false;
   if (canliOnbellek.has(anahtar)) return canliOnbellek.get(anahtar);
@@ -292,7 +292,10 @@ async function sayfaHazirMi(url, deneme = 3, aralikMs = 8000) {
     } catch {
       // ağ/CDN hatası: kısa bekleyip yeniden dene
     }
-    if (i < deneme - 1) await bekle(aralikMs);
+    if (i < deneme - 1) {
+      console.log(`  … haber sayfası henüz yayında değil, ${Math.round(aralikMs / 1000)} sn sonra tekrar deneniyor`);
+      await bekle(aralikMs);
+    }
   }
   canliOnbellek.set(anahtar, false);
   return false;
