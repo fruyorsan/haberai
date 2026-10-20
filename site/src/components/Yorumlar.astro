@@ -225,6 +225,20 @@ const otomatik = !sade && Boolean(slug) && aktif;
     letter-spacing: 0.03em;
     text-transform: uppercase;
   }
+  /* Özel rozet (yönetici/editoryal): "✓ üye"den ayrı, kırmızı-beyaz. */
+  .yorum__rozet {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 1px 7px;
+    border-radius: 999px;
+    background: var(--brand-grad);
+    color: #fff;
+    font-size: 0.62rem;
+    font-weight: 900;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
   .yorum__form {
     display: flex;
     flex-direction: column;
@@ -553,7 +567,13 @@ const otomatik = !sade && Boolean(slug) && aktif;
     }
   }
 
-  function oge(y: { ad?: string; metin?: string; created_at?: string; uye_id?: string | null }): HTMLLIElement {
+  function oge(y: {
+    ad?: string;
+    metin?: string;
+    created_at?: string;
+    uye_id?: string | null;
+    etiket?: string | null;
+  }): HTMLLIElement {
     const li = document.createElement("li");
     li.className = "yorum__oge";
     const avatar = document.createElement("span");
@@ -577,6 +597,14 @@ const otomatik = !sade && Boolean(slug) && aktif;
       rozet.textContent = "✓ üye";
       rozet.title = "Hesabıyla yazdı";
       ad.after(rozet);
+    }
+    // Yönetici/özel rozet: yorum yazıldığı andaki etiket (ör. "Yönetici").
+    if (y.etiket && String(y.etiket).trim()) {
+      const ozel = document.createElement("span");
+      ozel.className = "yorum__rozet";
+      ozel.textContent = String(y.etiket).trim().slice(0, 24);
+      ozel.title = "Özel rozet";
+      ad.after(ozel);
     }
     const zm = document.createElement("time");
     zm.className = "yorum__oge-zaman";
@@ -604,12 +632,27 @@ const otomatik = !sade && Boolean(slug) && aktif;
     if (bos) bos.hidden = true;
     liste.replaceChildren();
     try {
-      const adres =
-        `${api}/rest/v1/${tablo}?select=ad,metin,created_at,uye_id` +
+      const kuyruk =
         `&slug=eq.${encodeURIComponent(slug)}&order=created_at.desc&limit=100`;
-      const r = await fetch(adres, { headers: susBasliklari(anahtar) });
+      const temel = `${api}/rest/v1/${tablo}?select=`;
+      // `etiket` kolonu hesap.sql henüz çalıştırılmadıysa sorgu 400 döner;
+      // bu durumda eski kolonlarla devam et (yorumlar görünmeye devam etsin).
+      let r = await fetch(temel + "ad,metin,created_at,uye_id,etiket" + kuyruk, {
+        headers: susBasliklari(anahtar),
+      });
+      if (!r.ok) {
+        r = await fetch(temel + "ad,metin,created_at,uye_id" + kuyruk, {
+          headers: susBasliklari(anahtar),
+        });
+      }
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      const veri = (await r.json()) as { ad?: string; metin?: string; created_at?: string; uye_id?: string | null }[];
+      const veri = (await r.json()) as {
+        ad?: string;
+        metin?: string;
+        created_at?: string;
+        uye_id?: string | null;
+        etiket?: string | null;
+      }[];
       const uyeIdler = veri.map((v) => v.uye_id).filter((v): v is string => Boolean(v));
       if (uyeIdler.length) await avatarlariGetir(api, anahtar, uyeIdler);
       liste.replaceChildren(...veri.map(oge));
@@ -707,7 +750,9 @@ const otomatik = !sade && Boolean(slug) && aktif;
       try {
         const H = (window as any).HaberinAi;
         const u = hesap();
-        let kayit: { ad?: string; metin?: string; created_at?: string; uye_id?: string | null } | undefined;
+        let kayit:
+          | { ad?: string; metin?: string; created_at?: string; uye_id?: string | null; etiket?: string | null }
+          | undefined;
         if (u && H && typeof H.yorumEkle === "function") {
           // Üye: yazma sunucudaki RPC'den geçer; ad profilden, oturum doğrulanır.
           const r = await H.yorumEkle(slug, metin);
@@ -717,6 +762,7 @@ const otomatik = !sade && Boolean(slug) && aktif;
             metin: r.metin || metin,
             created_at: new Date().toISOString(),
             uye_id: "1",
+            etiket: r.etiket || u.etiket || "",
           };
         } else {
           const r = await fetch(`${api}/rest/v1/${tablo}`, {

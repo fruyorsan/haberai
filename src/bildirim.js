@@ -11,10 +11,15 @@
 //
 //   2) KONU TAKİBİ (okuyucunun işaretlediği kategori):
 //      OneSignal etiketiyle yalnızca o konuyu takip edenlere gider
-//      (kategori_<slug> = 1). Kategori başına en fazla KAT_MIN_ARALIK_DK
-//      dakikada bir; ayrıca günlük tavan ve sessiz saat (01:00-07:00 TR)
-//      uygulanır. Böylece "spor takip ediyorum" diyen okuyucu günde en fazla
-//      birkaç bildirim alır, cihaz susmaz.
+//      (kategori_<slug> = 1 + bildirim_sikligi = aninda). Tur başına en fazla
+//      KAT_TUR_ADET kategoriye AYRI AYRI gönderilir; böylece "teknoloji"
+//      seçen okuyucu günlerce sıra beklemez. Kategori başına en fazla
+//      KAT_MIN_ARALIK_DK dakikada bir; ayrıca günlük tavan ve sessiz saat
+//      (01:00-07:00 TR) uygulanır.
+//
+//   3) ÖZET (bildirim_sikligi = ozet):
+//      Günde 3 kez (TR 09/15/21) en taze 3 haberden kısa bir özet gider.
+//      "son" seçenler yalnızca son dakika alır, konu bildirimi almaz.
 //
 // Tekrar önleme: gönderilen haber id'leri data/bildirim.json'da tutulur
 // (src/share.js → data/social.json ile aynı mantık). Aynı haber iki kez gitmez.
@@ -49,9 +54,13 @@ const SON_MIN_ARALIK_DK = Number(process.env.BILDIRIM_SON_ARALIK_DK ?? 25);
 const SON_MAX_GUN = Number(process.env.BILDIRIM_SON_MAX_GUN ?? 12);
 const SON_TTL_SAAT = Number(process.env.BILDIRIM_SON_TTL_SAAT ?? 6);
 const KAT_MIN_ARALIK_DK = Number(process.env.BILDIRIM_KAT_ARALIK_DK ?? 120);
-const KAT_MAX_GUN = Number(process.env.BILDIRIM_KAT_MAX_GUN ?? 6);
+const KAT_MAX_GUN = Number(process.env.BILDIRIM_KAT_MAX_GUN ?? 18);
 const KAT_TTL_SAAT = Number(process.env.BILDIRIM_KAT_TTL_SAAT ?? 3);
-const TOPLAM_MAX_GUN = Number(process.env.BILDIRIM_TOPLAM_MAX_GUN ?? 16);
+const KAT_TUR_ADET = Number(process.env.BILDIRIM_KAT_TUR_ADET ?? 3);
+const TOPLAM_MAX_GUN = Number(process.env.BILDIRIM_TOPLAM_MAX_GUN ?? 24);
+// Özet bildirimi: "ozet" seçen okuyucuya günde 3 kez (TR 09/15/21).
+const OZET_SAATLER = [9, 15, 21];
+const OZET_ARALIK_SAAT = Number(process.env.BILDIRIM_OZET_ARALIK_SAAT ?? 4);
 // Sessiz saat: yalnızca KONU bildirimleri için (Türkiye saati, UTC+3).
 // Son dakika haberleri gece de gider; konu bildirimleri 01:00-07:00 arası susar.
 const SESSIZ_BAS = Number(process.env.BILDIRIM_SESSIZ_BAS ?? 1);
@@ -71,6 +80,7 @@ function trZaman(ms) {
   return {
     gun: t.toISOString().slice(0, 10),
     saat: t.getUTCHours(),
+    dakika: t.getUTCMinutes(),
   };
 }
 
@@ -107,8 +117,10 @@ async function durumOku() {
   if (!existsSync(DURUM_DOSYA))
     return {
       updatedAt: null,
+      sonDakika: null,
       sent: [],
       sonKategori: {},
+      sonOzet: null,
       gun: "",
       gunSayi: {},
       hosGeldin: false,
@@ -121,6 +133,8 @@ async function durumOku() {
       updatedAt: d.updatedAt || null,
       sent: Array.isArray(d.sent) ? d.sent.map(String) : [],
       sonKategori: d.sonKategori && typeof d.sonKategori === "object" ? d.sonKategori : {},
+      sonDakika: d.sonDakika || null,
+      sonOzet: d.sonOzet || null,
       gun: d.gun || "",
       gunSayi: d.gunSayi && typeof d.gunSayi === "object" ? d.gunSayi : {},
       hosGeldin: d.hosGeldin === true,
@@ -130,8 +144,10 @@ async function durumOku() {
   } catch {
     return {
       updatedAt: null,
+      sonDakika: null,
       sent: [],
       sonKategori: {},
+      sonOzet: null,
       gun: "",
       gunSayi: {},
       hosGeldin: false,
@@ -146,9 +162,11 @@ async function durumYaz(durum) {
   const sent = [...new Set(durum.sent.map(String))].slice(-SENT_LIMIT);
   const payload = {
     updatedAt: durum.updatedAt,
+    sonDakika: durum.sonDakika || null,
     gun: durum.gun,
     gunSayi: durum.gunSayi,
     sonKategori: durum.sonKategori,
+    sonOzet: durum.sonOzet || null,
     sent,
     hosGeldin: durum.hosGeldin === true,
     cihazlar: [...new Set((durum.cihazlar || []).map(String))].slice(-600),
@@ -324,6 +342,14 @@ async function gonder(p) {
   if (p.abonelikId) {
     // Tek bir cihaza gönderim (yeni aboneye "hoş geldin").
     govde.include_subscription_ids = [String(p.abonelikId)];
+  } else if (Array.isArray(p.etiketler) && p.etiketler.length) {
+    // Birden çok etiket: hepsi AND ile aranır (ör. kategori + bildirim sıklığı).
+    // Metin → {etiket: "1"}; nesne → {key, relation, value}.
+    govde.filters = p.etiketler.map((e) =>
+      typeof e === "string"
+        ? { field: "tag", key: e, relation: "=", value: "1" }
+        : { field: "tag", key: e.key, relation: e.relation || "=", value: e.value }
+    );
   } else if (p.etiket) {
     govde.filters = [{ field: "tag", key: p.etiket, relation: "=", value: "1" }];
   } else {
@@ -374,7 +400,7 @@ export async function bildirimleriGonder({ dry = false } = {}) {
   // Gün değiştiyse sayaçlar sıfırlanır.
   if (durum.gun !== tr.gun) {
     durum.gun = tr.gun;
-    durum.gunSayi = { son: 0, kategori: 0 };
+    durum.gunSayi = { son: 0, kategori: 0, ozet: 0 };
   }
 
   const gonderilmis = new Set(durum.sent.map(String));
@@ -511,7 +537,10 @@ export async function bildirimleriGonder({ dry = false } = {}) {
 
   // ---- 1) SON DAKİKA ----
   if (gunToplam < TOPLAM_MAX_GUN && (durum.gunSayi.son || 0) < SON_MAX_GUN) {
-    const gecenDk = durum.updatedAt ? (now - Date.parse(durum.updatedAt)) / 60000 : Infinity;
+    // Konu bildirimleri `updatedAt`i de günceller; son dakika aralığı kendi
+    // zaman damgasından ölçülür, yoksa yoğun konu akışı son dakikayı susturur.
+    const sonDakikaAt = durum.sonDakika || durum.updatedAt;
+    const gecenDk = sonDakikaAt ? (now - Date.parse(sonDakikaAt)) / 60000 : Infinity;
     if (gecenDk < SON_MIN_ARALIK_DK) {
       console.log(
         `Bildirim: son gönderimden ${Math.round(gecenDk)} dk geçti ` +
@@ -538,6 +567,7 @@ export async function bildirimleriGonder({ dry = false } = {}) {
             );
             durum.sent.push(String(aday.id));
             durum.updatedAt = new Date(now).toISOString();
+            durum.sonDakika = new Date(now).toISOString();
             durum.gunSayi.son = (durum.gunSayi.son || 0) + 1;
             sayilan++;
           } catch (err) {
@@ -589,16 +619,27 @@ export async function bildirimleriGonder({ dry = false } = {}) {
           `(${grup.size} kategoride taze haber var, hepsi bekleme süresinde).`
       );
     } else {
-      const [slug, aday] = uygun[0];
-      const icerik = bildirimIcerigi(aday, { baslik: `${aday.category} • yeni haber` });
-      if (dry) {
-        console.log(`  [dry] konu (${slug}) → ${icerik.icerik}`);
-      } else {
+      // Tur başına birkaç kategoriye AYRI AYRI gönderilir. Eskiden yalnızca tek
+      // kategori seçiliyordu; 14 kategori × 6/gün tavanı yüzünden "Teknoloji"
+      // seçen okuyucu günlerce sıra bekleyebiliyordu. Artık her kategori kendi
+      // takipçisine gider, sıklık filtresi "aninda" olanlara ulaşır.
+      const secilen = uygun.slice(0, KAT_TUR_ADET);
+      for (const [slug, aday] of secilen) {
+        const gunToplam3 = (durum.gunSayi.son || 0) + (durum.gunSayi.kategori || 0);
+        if (gunToplam3 >= TOPLAM_MAX_GUN || (durum.gunSayi.kategori || 0) >= KAT_MAX_GUN) break;
+        const icerik = bildirimIcerigi(aday, { baslik: `${aday.category} • yeni haber` });
+        if (dry) {
+          console.log(`  [dry] konu (${slug}) → ${icerik.icerik}`);
+          continue;
+        }
         try {
           const yanit = await gonder({
             ...icerik,
             ttl: 21600,
-            etiket: `kategori_${slug}`,
+            etiketler: [
+              `kategori_${slug}`,
+              { key: "bildirim_sikligi", relation: "=", value: "aninda" },
+            ],
             anahtar: `kat-${aday.id}`,
           });
           console.log(
@@ -613,6 +654,52 @@ export async function bildirimleriGonder({ dry = false } = {}) {
           console.warn(`  ✗ [konu:${slug}] ${err.message}`);
         }
       }
+    }
+  }
+
+  // ---- 3) GÜNDE 3 ÖZET (yalnızca bildirim_sikligi=ozet) ----
+  // "Anında" seçen her konuyu alır; "özet" seçen günde 3 kez toplu özet alır.
+  // Aynı saat diliminde yinelenen gönderimi önlemek için son özetten en az
+  // OZET_ARALIK_SAAT saat geçmiş olmalı.
+  const ozetSaati = OZET_SAATLER.indexOf(tr.saat) >= 0 && tr.dakika < 12;
+  const sonOzet = durum.sonOzet ? Date.parse(durum.sonOzet) : 0;
+  const ozetGecti = !sonOzet || now - sonOzet >= OZET_ARALIK_SAAT * 3600000;
+  if (ozetSaati && ozetGecti) {
+    const ozetAday = getArticles()
+      .filter((a) => a.title && taze(a, 18, now))
+      .sort((a, b) => yayinZamani(b) - yayinZamani(a))
+      .slice(0, 3);
+    if (ozetAday.length) {
+      const ilk = ozetAday[0];
+      const kapak = kapakKaynagi(ilk);
+      const ozetMetni = ozetAday
+        .map((a, i) => `${i + 1}. ${kisalt(a.title, 55)}`)
+        .join("  •  ");
+      if (dry) {
+        console.log(`  [dry] özet (${tr.saat}:00) → ${ozetMetni}`);
+      } else {
+        try {
+          const yanit = await gonder({
+            baslik: "📬 Günün özeti",
+            icerik: kisalt(ozetMetni, 160),
+            url: `${SITE_URL}/haber/${ilk.slug || ilk.id}/`,
+            gorsel: kapak ? imageUrl(kapak, 720) : `${SITE_URL}/og-default.png`,
+            ttl: 21600,
+            etiketler: [{ key: "bildirim_sikligi", relation: "=", value: "ozet" }],
+            anahtar: `ozet-${tr.gun}-${tr.saat}`,
+          });
+          console.log(
+            `  ✓ [özet ${tr.saat}:00] ${ozetAday.length} haber${yanit?.id ? ` (${yanit.id})` : ""}${aliciNotu(yanit)}`
+          );
+          durum.sonOzet = new Date(now).toISOString();
+          durum.gunSayi.ozet = (durum.gunSayi.ozet || 0) + 1;
+          sayilan++;
+        } catch (err) {
+          console.warn(`  ✗ [özet] ${err.message}`);
+        }
+      }
+    } else {
+      console.log("Bildirim: özet saatinde taze haber bulunamadı.");
     }
   }
 

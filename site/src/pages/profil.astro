@@ -31,7 +31,10 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         <span class="profil__avatar" id="profil-avatar" aria-hidden="true"></span>
         <div class="profil__kim">
           <h1 id="profil-ad">Profilim</h1>
-          <p class="profil__kadi" id="profil-kadi"></p>
+          <p class="profil__kadi">
+            <span id="profil-kadi-metin"></span>
+            <span class="profil__rozet" id="profil-rozet" hidden></span>
+          </p>
         </div>
         <button type="button" class="profil__cikis" id="profil-cikis">Çıkış yap</button>
       </header>
@@ -92,9 +95,9 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
           ))}
         </div>
         <p class="profil__avatar-kaynak">
-          İnsan portreleri:
-          <a href="https://www.dicebear.com/styles/lorelei/" target="_blank" rel="noopener">DiceBear “Lorelei”</a>
-          (CC0) · Karakterler özgün çizim.
+          Yapay zekâ ile üretilmiş özgün avatarlar
+          (<a href="https://aihorde.net" target="_blank" rel="noopener">AI Horde</a>
+          · ücretsiz, açık kaynak topluluk).
         </p>
         <span class="profil__mini" id="profil-avatar-durum" role="status" aria-live="polite"></span>
       </section>
@@ -119,7 +122,8 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         <p class="profil__aciklama">
           Yalnızca seçtiğin konulardan bildirim alırsın. Boş bırakırsan ilgi
           alanların bildirime de uygulanır; hiçbiri yoksa yalnızca son dakika
-          haberleri gelir.
+          haberleri gelir. Aşağıdaki sıklık ayarı, bu konuların sana ne sıklıkla
+          ulaşacağını belirler.
         </p>
         <div class="profil__cipler" id="profil-bildirim">
           {KATEGORILER.map((k) => (
@@ -127,6 +131,16 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
               {k.ad}
             </button>
           ))}
+        </div>
+
+        <div class="profil__siklik">
+          <label class="profil__siklik-etiket" for="profil-siklik">Bildirim sıklığı</label>
+          <select class="profil__girdi" id="profil-siklik">
+            <option value="aninda">Anında — seçtiğim her konuda</option>
+            <option value="ozet">Günde 3 özet — 09:00 · 15:00 · 21:00</option>
+            <option value="son">Sadece son dakika</option>
+          </select>
+          <span class="profil__mini" id="profil-siklik-durum" role="status" aria-live="polite"></span>
         </div>
 
         <div class="profil__bildirim-durum" id="profil-bildirim-durum">
@@ -167,6 +181,24 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         <button type="button" class="profil__btn" id="profil-kaydet">Tercihleri kaydet</button>
         <span class="profil__mini" id="profil-durum" role="status" aria-live="polite"></span>
       </div>
+
+      <section class="profil__blok" id="profil-yonetim" hidden>
+        <h2 class="profil__h2">Yönetim · kayıtlı okurlar</h2>
+        <p class="profil__aciklama">
+          Sitede hesabı olan herkesi görürsün. Bir okura rozet yazabilirsin
+          (ör. “Yönetici”, “Editör”, “İlk okur”). Bu bölüm yalnızca sana görünür;
+          rozet yazma yetkisi yalnızca yöneticide.
+        </p>
+        <input
+          class="profil__girdi profil__uye-ara"
+          id="profil-uye-ara"
+          type="search"
+          placeholder="Ada ya da kullanıcı adı ara"
+          autocomplete="off"
+        />
+        <div class="profil__uyeler" id="profil-uyeler"></div>
+        <span class="profil__mini" id="profil-yonetim-durum" role="status" aria-live="polite"></span>
+      </section>
 
       <section class="profil__blok profil__blok--tehlike">
         <h2 class="profil__h2">Hesabımı sil</h2>
@@ -249,9 +281,123 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     white-space: nowrap;
   }
   .profil__kadi {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
     margin: 2px 0 0;
     font-size: 0.82rem;
     color: var(--muted);
+  }
+  /* Yönetici rozeti: kırmızı-beyaz, küçük ve dikkat çekmeden görünür. */
+  .profil__rozet {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--brand-grad, #d9364b);
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+  .profil__rozet::before {
+    content: "★";
+    font-size: 0.62rem;
+    opacity: 0.9;
+  }
+  .profil__siklik {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+  }
+  .profil__siklik-etiket {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-2);
+  }
+  .profil__siklik .profil__girdi {
+    flex: 1 1 220px;
+    padding: 8px 10px;
+    font-size: 0.84rem;
+  }
+  .profil__uye-ara {
+    width: 100%;
+    margin: 10px 0 6px;
+    padding: 9px 11px;
+    font-size: 0.86rem;
+  }
+  .profil__uyeler {
+    display: grid;
+    gap: 8px;
+  }
+  .profil__uye {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr) minmax(120px, 170px) auto;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 10px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: var(--bg);
+  }
+  .profil__uye-av {
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    background: var(--brand-grad);
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.85rem;
+  }
+  .profil__uye-kim {
+    min-width: 0;
+    line-height: 1.25;
+  }
+  .profil__uye-kim b {
+    display: block;
+    font-size: 0.86rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .profil__uye-kim span {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .profil__uye-etiket {
+    width: 100%;
+    padding: 7px 9px;
+    font-size: 0.8rem;
+  }
+  .profil__uye-kaydet {
+    padding: 7px 11px;
+    border: 0;
+    border-radius: 9px;
+    background: var(--brand-grad);
+    color: #fff;
+    font: inherit;
+    font-size: 0.76rem;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .profil__uye-kaydet:disabled {
+    opacity: 0.55;
+    cursor: wait;
   }
   .profil__blok {
     padding: 18px 20px;
@@ -597,6 +743,18 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     .profil__kaydet-satir .profil__btn {
       flex: 1 1 100%;
     }
+    /* Telefonda yönetim satırı: avatar + ad üstte, rozet ve düğme altta. */
+    .profil__uye {
+      grid-template-columns: 34px minmax(0, 1fr);
+    }
+    .profil__uye-etiket,
+    .profil__uye-kaydet {
+      grid-column: 1 / -1;
+    }
+    .profil__uye-kaydet {
+      width: 100%;
+      padding: 9px 11px;
+    }
     /* Hesap silme düğmesi telefonda tam genişlik (yanlışlıkla basılmasın diye
        yine de iki adımlı onay sorulur). */
     .profil__blok--tehlike .profil__islem .profil__btn {
@@ -625,7 +783,8 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
 
     var avatar = document.getElementById("profil-avatar");
     var adEl = document.getElementById("profil-ad");
-    var kadiEl = document.getElementById("profil-kadi");
+    var kadiEl = document.getElementById("profil-kadi-metin");
+    var rozetEl = document.getElementById("profil-rozet");
     var adGirdi = document.getElementById("profil-ad-girdi");
     var durumEl = document.getElementById("profil-durum");
     var onizleme = document.getElementById("profil-onizleme");
@@ -644,9 +803,19 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
       }
     }
 
+    /** Yönetici rozetini (varsa) ada bitişik gösterir. */
+    function rozetCiz() {
+      if (!rozetEl) return;
+      var g = H.oturumOku() || u;
+      var etiket = (g && g.etiket) || "";
+      rozetEl.textContent = etiket;
+      rozetEl.hidden = !etiket;
+    }
+
     if (adEl) adEl.textContent = u.ad;
     if (kadiEl) kadiEl.textContent = "@" + u.kadi;
     if (adGirdi) adGirdi.value = u.ad;
+    rozetCiz();
     avatarCiz();
 
     function cizCip(kap, kunye, secim) {
@@ -929,7 +1098,8 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         // Geri dönüşü olmayan işlem: iki adımlı onay.
         if (!window.confirm("Hesabın kalıcı olarak silinecek. Devam edilsin mi?")) return;
         var onay = (window.prompt("Silmeyi onaylamak için kullanıcı adını yaz:") || "").trim().toLowerCase();
-        var beklenen = [String(g.kadi || ""), String(g.ad || "")].map(function (s) {
+        var suanki = H.oturumOku() || u || {};
+        var beklenen = [String(suanki.kadi || ""), String(suanki.ad || "")].map(function (s) {
           return s.trim().toLowerCase();
         });
         if (!onay || beklenen.indexOf(onay) === -1) {
@@ -952,6 +1122,197 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
           hsSil.disabled = false;
         }
       });
+
+    // --- Bildirim sıklığı (anında / günde 3 özet / sadece son dakika) ---
+    var siklikEl = document.getElementById("profil-siklik");
+    var siklikDurum = document.getElementById("profil-siklik-durum");
+    function siklikCiz() {
+      if (!siklikEl) return;
+      var g = H.oturumOku() || u;
+      var deger = (g && g.bildirim_siklik) || "aninda";
+      // Hesapta değer yoksa (eski oturum) cihazdaki son seçim kullanılır.
+      if (!g || !g.bildirim_siklik) {
+        try {
+          deger = localStorage.getItem("bildirim-siklik") || deger;
+        } catch (e) {}
+      }
+      if (["aninda", "ozet", "son"].indexOf(deger) < 0) deger = "aninda";
+      siklikEl.value = deger;
+    }
+    siklikCiz();
+    siklikEl &&
+      siklikEl.addEventListener("change", async function () {
+        var deger = siklikEl.value;
+        siklikEl.disabled = true;
+        if (siklikDurum) siklikDurum.textContent = "Kaydediliyor…";
+        try {
+          var r = await H.bildirimSiklik(deger);
+          if (r && r.hata) {
+            if (siklikDurum) siklikDurum.textContent = r.hata;
+            return;
+          }
+          u = H.oturumOku() || u;
+          if (siklikDurum) {
+            siklikDurum.textContent =
+              deger === "ozet"
+                ? "Günde 3 özet seçildi ✓"
+                : deger === "son"
+                  ? "Yalnızca son dakika seçildi ✓"
+                  : "Anında bildirim seçildi ✓";
+          }
+        } catch (e) {
+          if (siklikDurum) siklikDurum.textContent = "Kaydedilemedi, tekrar dene.";
+        } finally {
+          siklikEl.disabled = false;
+        }
+      });
+
+    // --- Yönetim: kayıtlı okurlar + rozet (yalnızca yönetici) ---
+    var yonetim = document.getElementById("profil-yonetim");
+    var uyelerEl = document.getElementById("profil-uyeler");
+    var uyeAra = document.getElementById("profil-uye-ara");
+    var yonDurum = document.getElementById("profil-yonetim-durum");
+    var uyeListe = [];
+    var yonetimYuklendi = false;
+
+    function tarihYaz(iso) {
+      try {
+        return new Date(iso).toLocaleDateString("tr-TR", {
+          day: "2-digit",
+          month: "short",
+          year: "numeric",
+        });
+      } catch (e) {
+        return "";
+      }
+    }
+
+    function uyelerCiz() {
+      if (!uyelerEl) return;
+      var ara = ((uyeAra && uyeAra.value) || "").trim().toLocaleLowerCase("tr");
+      uyelerEl.textContent = "";
+      var goster = uyeListe.filter(function (x) {
+        if (!ara) return true;
+        var metin = String(x.ad || "") + " " + String(x.kadi || "");
+        return metin.toLocaleLowerCase("tr").indexOf(ara) >= 0;
+      });
+      if (!goster.length) {
+        var bos = document.createElement("p");
+        bos.className = "profil__bos";
+        bos.textContent = uyeListe.length
+          ? "Aramaya uyan okur yok."
+          : "Henüz kayıtlı okur yok.";
+        uyelerEl.appendChild(bos);
+        return;
+      }
+      goster.forEach(function (x) {
+        var satir = document.createElement("div");
+        satir.className = "profil__uye";
+
+        var av = document.createElement("span");
+        av.className = "profil__uye-av";
+        av.setAttribute("aria-hidden", "true");
+        if (H.avatarDoldur) H.avatarDoldur(av, x.avatar, x.ad);
+
+        var kim = document.createElement("div");
+        kim.className = "profil__uye-kim";
+        var b = document.createElement("b");
+        b.textContent = x.ad || x.kadi || "Okur";
+        var alt = document.createElement("span");
+        var parcalar = ["@" + (x.kadi || "?")];
+        if (x.olusturma) parcalar.push(tarihYaz(x.olusturma));
+        if (x.yorum) parcalar.push(x.yorum + " yorum");
+        alt.textContent = parcalar.join(" · ");
+        kim.append(b, alt);
+
+        var girdi = document.createElement("input");
+        girdi.className = "profil__girdi profil__uye-etiket";
+        girdi.type = "text";
+        girdi.maxLength = 24;
+        girdi.value = x.etiket || "";
+        girdi.placeholder = "Rozet (ör. Yönetici)";
+        girdi.setAttribute("aria-label", (x.ad || x.kadi) + " için rozet");
+
+        var kaydetBtn = document.createElement("button");
+        kaydetBtn.type = "button";
+        kaydetBtn.className = "profil__uye-kaydet";
+        kaydetBtn.textContent = "Kaydet";
+        kaydetBtn.addEventListener("click", async function () {
+          kaydetBtn.disabled = true;
+          if (yonDurum) yonDurum.textContent = "Kaydediliyor…";
+          try {
+            var r = await H.adminEtiket(x.id, girdi.value.trim(), null);
+            if (r && r.hata) {
+              if (yonDurum) yonDurum.textContent = r.hata;
+              return;
+            }
+            x.etiket = r && r.etiket != null ? r.etiket : girdi.value.trim();
+            var ben = H.oturumOku();
+            if (ben && ben.id === x.id) {
+              ben.etiket = x.etiket;
+              try {
+                localStorage.setItem("hb-oturum", JSON.stringify(ben));
+              } catch (e) {}
+              u = ben;
+              rozetCiz();
+            }
+            if (yonDurum) yonDurum.textContent = "Rozet kaydedildi ✓";
+          } catch (e) {
+            if (yonDurum) yonDurum.textContent = "Kaydedilemedi, tekrar dene.";
+          } finally {
+            kaydetBtn.disabled = false;
+          }
+        });
+
+        satir.append(av, kim, girdi, kaydetBtn);
+        uyelerEl.appendChild(satir);
+      });
+    }
+
+    async function yonetimKur() {
+      var g = H.oturumOku() || u;
+      if (!g || g.rol !== "yonetici") {
+        if (yonetim) yonetim.hidden = true;
+        return;
+      }
+      if (yonetim) yonetim.hidden = false;
+      if (yonetimYuklendi) return;
+      yonetimYuklendi = true;
+      if (yonDurum) yonDurum.textContent = "Yükleniyor…";
+      try {
+        var r = await H.adminUyeler();
+        if (r && r.hata) {
+          if (yonDurum) yonDurum.textContent = r.hata;
+          yonetimYuklendi = false;
+          return;
+        }
+        uyeListe = Array.isArray(r) ? r : r && Array.isArray(r.uyeler) ? r.uyeler : [];
+        uyelerCiz();
+        if (yonDurum) {
+          yonDurum.textContent = uyeListe.length + " kayıtlı okur";
+        }
+      } catch (e) {
+        if (yonDurum) yonDurum.textContent = "Liste yüklenemedi, tekrar dene.";
+        yonetimYuklendi = false;
+      }
+    }
+
+    uyeAra && uyeAra.addEventListener("input", uyelerCiz);
+
+    // Eski oturumlarda rol/etiket/bildirim_siklik alanları yok: sunucudan tazele.
+    if (H.profilTazele) {
+      H.profilTazele().then(function (yeni) {
+        if (!yeni) return;
+        u = yeni;
+        if (adEl) adEl.textContent = u.ad;
+        if (kadiEl) kadiEl.textContent = "@" + u.kadi;
+        if (adGirdi) adGirdi.value = u.ad;
+        rozetCiz();
+        siklikCiz();
+        yonetimKur();
+      });
+    }
+    yonetimKur();
 
     // --- Okuma listesi ---
     var kListe = document.getElementById("profil-kayitlar");
