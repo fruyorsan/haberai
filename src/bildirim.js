@@ -432,6 +432,10 @@ export async function bildirimleriGonder({ dry = false } = {}) {
   );
 
   let sayilan = 0;
+  // Gönderim olmasa da durum değişebilir (ör. "bu kategoride takipçi yok"
+  // işareti). Eskiden durum dosyası yalnızca gönderim varsa yazılıyordu; bu
+  // yüzden boş kategori işareti kayboluyor ve her turda yeniden deneniyordu.
+  let durumDegisti = false;
 
   // ---- 0) HOŞ GELDİN / TEST BİLDİRİMİ ----
   // Neden var: okuyucu bildirim iznini verdiğinde HİÇBİR ŞEY görmezse "çalışmıyor"
@@ -666,6 +670,7 @@ export async function bildirimleriGonder({ dry = false } = {}) {
         bosKategori[slug] = new Date(now).toISOString();
         durum.bosKategori = bosKategori;
         durum.sonKategori[slug] = new Date(now).toISOString(); // kuyruğun sonuna
+        durumDegisti = true;
       };
       let turHaber = 0;
       let turKategori = 0;
@@ -775,7 +780,7 @@ export async function bildirimleriGonder({ dry = false } = {}) {
     }
   }
 
-  if (!dry && sayilan) {
+  if (!dry && (sayilan || durumDegisti)) {
     try {
       await durumYaz(durum);
     } catch (err) {
