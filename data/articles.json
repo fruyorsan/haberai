@@ -1,5 +1,155 @@
 [
   {
+    "id": "82e18a85cd60dce5",
+    "title": "Broadcom tabanlı modemlerde 16 yıldır süren güvenlik açığı bulundu",
+    "slug": "broadcom-tabanli-modemlerde-16-yildir-suren-guvenlik-acigi-bulundu",
+    "summary": "Güvenlik araştırmacısı Quentin Kaiser, 2010 yılından bu yana Broadcom işlemcili milyonlarca modemde parola istemeyen kritik bir açık keşfetti. WPSplinter adı verilen bu zafiyet, menzildeki kişilerin kablosuz ağ şifresini bilmeden cihazlara erişmesine zemin hazırlıyor.",
+    "keyPoints": [
+      "Broadcom yongalı milyonlarca modemde 2010'dan beri parola istemeyen açık tespit edildi.",
+      "WPSplinter adlı zafiyet, Wi-Fi menzilindeki kişilerin cihaza yetkisiz erişmesini sağlıyor.",
+      "Türk Telekom ve Türksat Kablonet altyapısında kullanılan bazı modeller de listede yer alıyor."
+    ],
+    "body": [
+      "Kablosuz ağ donanımlarında uzun süredir fark edilmeyen büyük bir güvenlik riski kamuoyuyla paylaşıldı. Güvenlik uzmanı Quentin Kaiser, Broadcom işlemcileri kullanan pek çok kablosuz erişim noktası ve modemde on yılı aşkın süredir var olan bir zafiyet ortaya çıkardı. Araştırma sonucunda hazırlanan liste, dünya genelinde milyonlarca kullanıcıyı etkileyen donanım sorunlarına ışık tuttu.",
+      "WPSplinter ismi verilen açık, üreticilere sağlanan yazılım paketindeki eski WPS bileşeninin bellek yönetim hatasından kaynaklanıyor. Bu hata sayesinde kötü niyetli kişiler, herhangi bir şifre girmeden veya eşleştirme yapmadan doğrudan kablosuz menzil üzerinden cihazlara sızabiliyor. Uzmanlar, saldırının sokağın karşısından bile gerçekleştirilebileceğini ve hedef kullanıcının herhangi bir işlem yapmasına gerek kalmadığını belirtiyor.",
+      "Türkiye pazarında ise Zyxel'in belirli VMG serisi cihazları Türk Telekom etiketiyle, CastleNET üretimi bazı NetMASTER modelleri ise Türksat Kablonet notuyla listede yer alıyor.",
+      "Araştırmacının 18 Temmuz tarihinde üreticiye bildirdiği sorunun ardından Broadcom, eski yazılım desteğinin 2018 yılında sonlandırıldığını belirtti ve resmi bir CVE kaydı açmayı reddetti. 16 Ekim 2026 itibarıyla test edilen cihazların hiçbirine resmi bir yama veya güncelleme sunulmadı. Donanım üreticileri ve servis sağlayıcıları henüz konuya ilişkin resmi bir açıklama yapmadı."
+    ],
+    "comment": "Siber güvenlik dünyasında uzun süredir saklı kalan donanım açıklarının milyonlarca son kullanıcıyı nasıl doğrudan risk altında bıraktığı bir kez daha netleşti. Üretici firmaların 2018 yılında eski yazılım bileşenlerini terk etmesine rağmen, binlerce eski modelin hala güncellenmeden evlerde çalışmaya devam etmesi büyük bir zaaf yaratıyor. Operatörler tarafından dağıtılan bu cihazların sahipleri, yama desteği bulunmadığı için doğrudan saldırı senaryolarına karşı savunmasız kalıyor. Cihaz üreticilerinin eski donanım döngülerini tamamen terk ederek güncelleme yelpazesini genişletmesi zorunlu hale geliyor.",
+    "editorNote": "Milyonlarca modemi etkileyen 16 yıllık açık, şifresiz ağ erişimine kapı aralıyor.",
+    "tags": [
+      "Broadcom",
+      "Modem",
+      "Wi-Fi",
+      "Siber Güvenlik",
+      "Türk Telekom"
+    ],
+    "category": "Yazılım",
+    "gorselSorgu": "wifi router server room hardware",
+    "source": "Tamindir",
+    "sourceUrl": "https://www.tamindir.com/haber/broadcom-wi-fi-acigi_112407/",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Programming_code.jpg/1920px-Programming_code.jpg",
+    "gorselKaynak": {
+      "yazar": "Martin Vorel",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Programming_code.jpg"
+    },
+    "publishedAt": "2026-10-20T13:01:12.666Z",
+    "generatedAt": "2026-10-20T13:03:02.043Z"
+  },
+  {
+    "id": "4385fb38974c7261",
+    "title": "Siirt'te iki günde 3 açık kalp ameliyatı gerçekleştirildi",
+    "slug": "siirtte-iki-gunde-3-acik-kalp-ameliyati-gerceklestirildi",
+    "summary": "Siirt Eğitim ve Araştırma Hastanesinde göğüs ağrısıyla başvuran üç hasta, uzman doktorlar tarafından başarıyla ameliyat edildi. Kentte bugüne kadar toplam 12 kişiye açık kalp cerrahisi uygulandı.",
+    "keyPoints": [
+      "Siirt'te iki günlük sürede 3 koroner arter baypas ameliyatı yapıldı.",
+      "Hastanede bugüne kadar toplam 12 hastaya açık kalp cerrahisi uygulandı.",
+      "Hastalar artık başka şehirlere gitmeden kendi memleketlerinde tedavi oluyor."
+    ],
+    "body": [
+      "Siirt Eğitim ve Araştırma Hastanesine göğüs ağrısı şikayetiyle başvuran Muhlise Oktay, Zübeyde Gök ve hastane personeli Cevdet Karadeniz'in tetkiklerinde hayati tehlike tespit edildi. Yapılan detaylı değerlendirmelerin ardından hastalar, kalp ve damar cerrahisi uzmanları Op. Dr. Mücahit Polat ile Op. Dr. Mehmet Ali Dala tarafından koroner arter baypas operasyonuna alındı. Gerçekleştirilen kritik operasyonlar hastane ekibinin yoğun çabasıyla başarıyla sonuçlandı.",
+      "Operasyonların ardından sağlığına kavuşan hastalar taburcu süreci için gözetim altında tutulurken, Başhekim Prof. Dr. Servet Yolbaş süreçle ilgili açıklamalarda bulundu. Yolbaş, kentte kalp ve damar cerrahisi branşında önemli adımlar atıldığını belirterek, açık kalp ameliyatlarının burada yapılabilmesinin hastalar açısından taşıdığı değere vurgu yaptı. Geçmişte bu tarz operasyonlar için hastaların şehir dışına gitmek zorunda kaldığını, bunun da hem zaman hem de maddesel kayıplara yol açtığını ifade etti.",
+      "Sağlık Bakanlığının destekleriyle bu imkanların kalıcı hale getirileceğini aktaran Başhekim Yolbaş, vatandaşların başka illere sevk edilmesini gerektirecek diğer eksik branşları da kente kazandırmayı hedeflediklerini belirtti. Uzman Doktor Mücahit Polat ise hastanede bugüne kadar 12 açık kalp cerrahisi gerçekleştirdiklerini ve bu operasyonların aralıksız süreceğini dile getirdi. Hastaların kendi memleketlerinde tedavi olabilmesinin imkansızlıklar yaşayan vatandaşlar için büyük bir kolaylık sağladığını kaydetti.",
+      "Ameliyat edilen Zübeyde Gök'ün oğlu Zübeyir Gök, annesinin kendi şehrinde operasyon geçirmesinden duyduğu memnuniyeti paylaştı ve doktorlara teşekkür etti. Muhlise Oktay'ın oğlu Abdulaziz Oktay da başka şehirlere gitme zorunluluğunun ortadan kalkmasının kendilerini oldukça sevindirdiğini ifade ederek benzer sağlık hizmetlerinin devam etmesini diledi."
+    ],
+    "comment": "Sağlık hizmetlerinin taşra illerinde yericileşmesi, sevk zincirindeki mali yükü doğrudan ortadan kaldırıyor. Üç hastanın iki gün gibi kısa bir sürede aynı merkezde tedavi edilmesi, ameliyat kapasitesinin artırıldığını gösteriyor. Daha önce büyük şehirlere gitmek zorunda kalan dar gelirli aileler için bu durum önemli bir ekonomik rahatlama yaratıyor. Benzer branşların da taşrada yaygınlaşması, büyükşehir hastanelerindeki yoğunluğu azaltacak bir model oluşturabilir.",
+    "editorNote": "Siirt'te art arda yapılan açık kalp ameliyatları, hastaların başka şehirlere gitme zorunluluğunu ortadan kaldırdı.",
+    "tags": [
+      "Siirt",
+      "kalp ameliyatı",
+      "sağlık",
+      "baypas",
+      "hastane"
+    ],
+    "category": "Sağlık",
+    "gorselSorgu": "hospital operating room doctors",
+    "source": "CNN Türk",
+    "sourceUrl": "https://www.cnnturk.com/yerel-haberler/siirt/siirtte-iki-gunde-3-acik-kalp-ameliyati-yapildi-3482068",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/First_operating_room_%2814805977848%29.jpg/1920px-First_operating_room_%2814805977848%29.jpg",
+    "gorselKaynak": {
+      "yazar": "Congregation of Sisters of St. Joseph in Canada",
+      "lisans": "No restrictions",
+      "lisansUrl": "https://www.flickr.com/commons/usage/",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:First_operating_room_(14805977848).jpg"
+    },
+    "publishedAt": "2026-10-20T13:01:08.901Z",
+    "generatedAt": "2026-10-20T13:03:16.265Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Operating_room_activities_150702-F-LP903-970.jpg/1920px-Operating_room_activities_150702-F-LP903-970.jpg",
+        "yazar": "Capt. David Murphy",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Operating_room_activities_150702-F-LP903-970.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/King_George_Military_Hospital%2C_4th_floor_theatre_group%2C_Dr._Murrison_operating_%2816272352465%29.jpg/1920px-King_George_Military_Hospital%2C_4th_floor_theatre_group%2C_Dr._Murrison_operating_%2816272352465%29.jpg",
+        "yazar": "National Library of Medicine - History of Medicine",
+        "lisans": "No restrictions",
+        "lisansUrl": "https://www.flickr.com/commons/usage/",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:King_George_Military_Hospital,_4th_floor_theatre_group,_Dr._Murrison_operating_(16272352465).jpg"
+      }
+    ]
+  },
+  {
+    "id": "5c72a0d0df0c0db5",
+    "title": "Xiaomi, 21 gün pil ömrü sunan Redmi Band 4 modelini tanıttı",
+    "slug": "xiaomi-21-gun-pil-omru-sunan-redmi-band-4-modelini-tanitti",
+    "summary": "Xiaomi, akıllı saat görünümüne sahip yeni bütçe dostu modeli Redmi Band 4'ü Çin'de satışa çıkardı. Cihaz, yirmi bir güne varan pil ömrü ve zengin sağlık takibi yetenekleriyle dikkat çekiyor.",
+    "keyPoints": [
+      "Redmi Band 4 modeli Çin pazarında yaklaşık 25 dolar fiyatla raflardaki yerini aldı.",
+      "Geliştirilen donanım sayesinde cihazın pil ömrü 21 güne kadar çıkarıldı.",
+      "Bileklik, 50 farklı spor modunu otomatik algılama ve SpO2 ölçüm özellikleriyle geliyor."
+    ],
+    "body": [
+      "Giyilebilir teknoloji pazarının önde gelen üreticilerinden Xiaomi, bütçe dostu ürün gamını genişletmeye devam ediyor. Marka, popüler alt markası Redmi çatısı altında geliştirdiği yeni nesil akıllı bilekliği Redmi Band 4'ü Çin iç pazarında teknoloji severlerin beğenisine sundu. Geleneksel ince formların dışına çıkan bu yeni model, kullanıcılara tam anlamıyla bir akıllı saat görünümü vadediyor.",
+      "Sağlık ve yaşam takibi alanında oldukça kapsamlı sensörlerle donatılan cihaz, gün boyu stres izleme, anlık kalp ritmi takibi ve kanda oksijen doygunluğu ölçümü yapabiliyor. Ayrıca detaylı uyku analizleri ile kadın sağlığı takibi de temel özellikler arasında yer alıyor. Egzersiz severler için sunulan 50 farklı spor modu otomatik olarak algılanarak antrenman verileri hafızaya kaydediliyor.",
+      "Su sporları ve günlük kullanımda kolaylık sağlayan 5 ATM suya dayanıklılık derecesi, kullanıcıların duşta veya yüzme esnasında cihazı çıkarmasına gerek bırakmıyor. Önceki nesil ürünlerde yer alan pil performansı bu modelde daha da ileriye taşınarak 21 güne kadar kesintisiz kullanım imkanı sunuluyor. Maliyeti düşük tutma stratejisi doğrultusunda cihazın donanımında NFC desteğine yer verilmediği ifade ediliyor.",
+      "Çin pazarında yaklaşık 25 dolar gibi agresif bir fiyat etiketiyle raflara çıkan bu aksesuar, uygun maliyetli akıllı saat arayanlar için cazip bir alternatif oluşturuyor. Fiyat ve performans dengesini koruyan yeni bilekliğin, ilerleyen dönemde şirketin küresel stratejileri kapsamında Türkiye pazarında da resmi olarak satışa çıkması bekleniyor."
+    ],
+    "comment": "Donanım pazarında uygun fiyatlı alternatiflerin akıllı saat çizgisine yaklaşması, temel kullanıcı kitlesinin beklentilerini kökten değiştiriyor. Yirmi beş dolarlık etiket taşıyan bu model, saf bileklik formundan sıyrılarak saat tasarımı sunmasıyla bütçe odaklı alıcıları doğrudan cezbediyor. NFC desteğinin maliyet nedeniyle dışarıda bırakılması, temassız ödeme aramayan ancak pil süresini önceliklendiren kitle için kabul edilebilir bir ödün olarak öne çıkıyor.",
+    "editorNote": "Yaklaşık 25 dolarlık fiyatla gelen yeni saat tasarımlı bileklik, pil süresini 21 güne çıkarıyor.",
+    "tags": [
+      "Xiaomi",
+      "Redmi Band 4",
+      "Akıllı Bileklik",
+      "Teknoloji",
+      "Giyilebilir Teknoloji"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "Xiaomi smartwatch smartband product",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/xiaomiden-saat-tasarimli-yeni-akilli-bileklik-redmi-band-4-tanitildi",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg/1920px-Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
+    "gorselKaynak": {
+      "yazar": "Shixart1985",
+      "lisans": "CC BY 2.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg"
+    },
+    "publishedAt": "2026-10-20T13:00:05.000Z",
+    "generatedAt": "2026-10-20T13:02:27.424Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/CyberDrive_Technology_CD526D_-_board_2-9901.jpg/1920px-CyberDrive_Technology_CD526D_-_board_2-9901.jpg",
+        "yazar": "Raimond Spekking",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:CyberDrive_Technology_CD526D_-_board_2-9901.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/CyberDrive_Technology_CD526D_-_board-9601.jpg/1920px-CyberDrive_Technology_CD526D_-_board-9601.jpg",
+        "yazar": "Raimond Spekking",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:CyberDrive_Technology_CD526D_-_board-9601.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "bbe01fac5a262035",
     "title": "Mekke Ortak Savunma İttifakı Anlaşması TBMM onayına sunuldu",
     "slug": "mekke-ortak-savunma-ittifaki-anlasmasi-tbmm-onayina-sunuldu",
@@ -55,6 +205,62 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Turkey._Ankara._An_old_parliament_building._Bus_in_front_LOC_matpc.16726_(Colourised).jpg"
       }
     ]
+  },
+  {
+    "id": "7fc751fa91c89fe2",
+    "title": "NBA'in en çok kazanan isimleri açıklandı ve rakamlar dudak uçuklatıyor",
+    "slug": "nbain-en-cok-kazanan-isimleri-aciklandi",
+    "summary": "Basketbol ligi NBA bünyesinde forma giyen en yüksek gelirli oyuncuların yıllık kazançları netleşti. Bu alanda zirvede yer alan yıldız isimlerin milyonlarca dolarlık sözleşmeleri dikkat çekiyor.",
+    "keyPoints": [
+      "NBA'de yıllık kazançlarıyla zirvede yer alan isimlerin listesi kamuoyuyla paylaşıldı.",
+      "Oyuncuların sözleşme bedelleri kulüp bütçelerini doğrudan etkiliyor.",
+      "Milyonlarca dolarlık kontratlar ligdeki ekonomik dengeleri gözler önüne seriyor."
+    ],
+    "body": [
+      "Dünyanın en çok takip edilen basketbol organizasyonlarından biri olan NBA'de, sporcuların elde ettiği gelirler her dönem büyük bir merak konusu olmaya devam ediyor. Son paylaşılan veriler doğrultusunda, ligin en çok kazanan oyuncularının yıllık kazançları resmen netleşti. Bu liste, sadece saha içindeki performansların değil, aynı zamanda imzalanan devasa sözleşmelerin de ekonomik büyüklüğünü gözler önüne seriyor.",
+      "Takımların kadrolarında tutmak için adeta yarıştığı süper yıldızlar, on milyonlarca dolarlık maaşlarıyla dikkat çekiyor. Kulüplerin yıllık bütçelerinin büyük bir kısmını oluşturan bu ödemeler, basketbol endüstrisindeki paranın boyutunu da açıkça ortaya koyuyor. Özellikle maksimum kontrat imzalayan tecrübeli isimler, ligin finansal zirvesinde yer almayı sürdürüyor.",
+      "Yüksek maaşların yanı sıra bu oyuncuların elde ettiği ek gelirler de toplam kazançlarını katlıyor. Saha dışındaki sponsorluk anlaşmaları ve ticari ortaklıklar, yıldız sporcuların servetine servet katmasında kilit rol oynuyor. Böylece en çok kazananlar listesindeki isimler, sadece sporcu kimlikleriyle değil, küresel birer marka olarak da öne çıkıyor.",
+      "Uzmanlar, bu devasa bütçelerin takımlar arasındaki rekabet dengesini doğrudan etkilediğini belirtiyor. Finansal gücü yüksek olan organizasyonların yıldız isimleri kadroda tutma avantajı bulunurken, diğer kulüpler bütçe planlamasında zorlanabiliyor. Bu durum, ligin gelecekteki transfer stratejilerini de kökten değiştirebilecek potansiyele sahip."
+    ],
+    "comment": "Basketbol dünyasındaki devasa maaşlar, kulüplerin finansal sürdürülebilirliği açısından ciddi bir maliyet kalemi oluşturuyor. Bu düzeydeki yüksek harcamalar, gelir adaletsizliğini ve takımlar arasındaki rekabet dengesini doğrudan etkileyen bir unsurdur. Orta ölçekli kulüpler bu bütçelerle baş etmekte zorlanırken, zengin franchise sahipleri avantaj elde etmeye devam ediyor. Benzer spor ligleriyle kıyaslandığında NBA'deki bu uçurum, kulüp yönetimlerinin risk yönetimi stratejilerini yeniden gözden geçirmesini zorunlu kılıyor.",
+    "editorNote": "Milyonluk kontratların döndüğü NBA'de zirvedeki isimlerin kazançları, spor ekonomisinin ulaştığı boyutu gözler önüne seriyor.",
+    "tags": [
+      "NBA",
+      "basketbol",
+      "ekonomi",
+      "spor",
+      "maç"
+    ],
+    "category": "Ekonomi",
+    "gorselSorgu": "basketball player in action",
+    "source": "beinsports.com.tr",
+    "sourceUrl": "https://beinsports.com.tr/fotogaleri/bir-sezonda-servet-kazaniyorlar-iste-nbain-en-cok-kazanan-isimleri",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Lee_Johnson%2C_basketball_player_in_Maccabi_Tel_Aviv_%28FL63537566%29.jpg/1920px-Lee_Johnson%2C_basketball_player_in_Maccabi_Tel_Aviv_%28FL63537566%29.jpg",
+    "gorselKaynak": {
+      "yazar": "IPPA photographer",
+      "lisans": "CC BY 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Lee_Johnson,_basketball_player_in_Maccabi_Tel_Aviv_(FL63537566).jpg"
+    },
+    "publishedAt": "2026-10-20T12:57:49.000Z",
+    "generatedAt": "2026-10-20T13:02:46.173Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Lee_Johnson%2C_basketball_player_in_Maccabi_Tel_Aviv_%28FL63537611%29.jpg/1920px-Lee_Johnson%2C_basketball_player_in_Maccabi_Tel_Aviv_%28FL63537611%29.jpg",
+        "yazar": "IPPA photographer",
+        "lisans": "CC BY 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Lee_Johnson,_basketball_player_in_Maccabi_Tel_Aviv_(FL63537611).jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Lee_Johnson%2C_basketball_player_in_Maccabi_Tel_Aviv_%28FL63537639%29.jpg/1920px-Lee_Johnson%2C_basketball_player_in_Maccabi_Tel_Aviv_%28FL63537639%29.jpg",
+        "yazar": "IPPA photographer",
+        "lisans": "CC BY 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Lee_Johnson,_basketball_player_in_Maccabi_Tel_Aviv_(FL63537639).jpg"
+      }
+    ],
+    "breaking": true
   },
   {
     "id": "11d890a746ac9fce",
@@ -2485,60 +2691,6 @@
         "lisans": "CC0",
         "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Erciyes_Mountain_(Unsplash).jpg"
-      }
-    ]
-  },
-  {
-    "id": "219d01110249558b",
-    "title": "Mekke Ortak Savunma Anlaşması kanun teklifi TBMM onayına sunuldu",
-    "slug": "mekke-ortak-savunma-anlasmasi-kanun-teklifi-tbmm-onayina-sunuldu",
-    "summary": "Türkiye, Suudi Arabistan ve Pakistan arasında geçtiğimiz Ağustos ayında imzalanan Mekke Ortak Savunma Anlaşması, meclis gündemine taşındı. İlgili kanun teklifi, ilk aşamada değerlendirilmek üzere Dışişleri Komisyonu'na iletildi.",
-    "keyPoints": [
-      "Mekke Ortak Savunma Anlaşması kanun teklifi TBMM'ye sunuldu.",
-      "Türkiye, Suudi Arabistan ve Pakistan anlaşmayı Ağustos ayında imzalamıştı.",
-      "Kanun teklifi ilk olarak Dışişleri Komisyonu tarafından ele alınacak."
-    ],
-    "body": [
-      "Türkiye, Suudi Arabistan ve Pakistan arasında uluslararası düzeyde müzakere edilen Mekke Ortak Savunma Anlaşması'na yönelik yasama süreci resmen başladı. İki ülke ve Türkiye'nin imza attığı savunma işbirliği metni, Türkiye Büyük Millet Meclisi'ne resmi olarak sevk edildi. Söz konusu belgenin meclis genel kuruluna gelmeden önceki ilk durağı ilgili komisyon olacak.",
-      "Ağustos ayında imzalanan ve üç ülkenin askeri alandaki işbirliğini derinleştirmeyi hedefleyen bu stratejik mutabakat, taraflar arasındaki ilişkilerin geldiği boyutu gösteriyor. Meclis başkanlığına sunulan kanun teklifinin içeriği, milletvekillerinin incelemesinin ardından komisyon gündemine taşınacak. Sürecin bu aşamasında metnin maddeleri tek tek masaya yatırılacak.",
-      "Dışişleri Komisyonu'na havale edilen tasarı, komisyon üyelerinin onayından sonra genel kurul oylamasına sunulacak. Anlaşmanın yürürlüğe girebilmesi için meclisteki bu yasama adımlarının tamamlanması gerekiyor. Üçlü mekanizmanın resmi bir zemine oturmasını sağlayacak bu düzenleme, diplomatik çevrelerin yakından takip ettiği dosyalar arasında yer alıyor."
-    ],
-    "comment": "Uluslararası savunma mutabakatlarının iç hukuk süreçlerine uyarlanması, bölgesel taahhütlerin somutlaşması açısından belirleyicidir. Ağustos ayında atılan imzaların ardından meclise gelen kanun teklifi, tasarının resmiyet kazanması yolundaki en somut adımdır. Karar vericiler ve dış politika izleyicileri için bu süreç, üç ülke arasındaki askeri işbirliğinin ne derece kurumsal bir nitelik kazanacağını gösterecek. Mevcut diplomatik dengeler göz önüne alındığında, komisyon aşamasından çıkacak rapor metnin geleceğini belirleyecek.",
-    "editorNote": "Ağustos ayında imzalanan üçlü savunma mutabakatı meclis yolunda; komisyon süreci merakla bekleniyor.",
-    "tags": [
-      "TBMM",
-      "Mekke Ortak Savunma Anlaşması",
-      "Suudi Arabistan",
-      "Pakistan",
-      "Dışişleri Komisyonu"
-    ],
-    "category": "Dünya",
-    "gorselSorgu": "Turkish parliament building Ankara",
-    "source": "Euronews Türkçe",
-    "sourceUrl": "https://tr.euronews.com/2026/10/20/mekke-ortak-savunma-anlasmasina-iliskin-kanun-teklifi-tbmmye-sunuldu",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Turkey._Ankara._An_old_parliament_building._Bus_in_front_LOC_matpc.16726.jpg/1920px-Turkey._Ankara._An_old_parliament_building._Bus_in_front_LOC_matpc.16726.jpg",
-    "gorselKaynak": {
-      "yazar": "Matson Collection",
-      "lisans": "Kamu malı",
-      "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Turkey._Ankara._An_old_parliament_building._Bus_in_front_LOC_matpc.16726.jpg"
-    },
-    "publishedAt": "2026-10-20T12:13:08.000Z",
-    "generatedAt": "2026-10-20T12:15:09.016Z",
-    "gorselEk": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Turkish_parliament_after_failed_coup_attempt_%283%29.jpg",
-        "yazar": "Yıldız Yazıcıoğlu (VOA)",
-        "lisans": "Kamu malı",
-        "lisansUrl": "",
-        "sayfa": "https://commons.wikimedia.org/wiki/File:Turkish_parliament_after_failed_coup_attempt_(3).jpg"
-      },
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Turkey._Ankara._An_old_parliament_building._Bus_in_front_LOC_matpc.16726_%28Colourised%29.jpg/1920px-Turkey._Ankara._An_old_parliament_building._Bus_in_front_LOC_matpc.16726_%28Colourised%29.jpg",
-        "yazar": "Gargarapalvin",
-        "lisans": "CC BY 4.0",
-        "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
-        "sayfa": "https://commons.wikimedia.org/wiki/File:Turkey._Ankara._An_old_parliament_building._Bus_in_front_LOC_matpc.16726_(Colourised).jpg"
       }
     ]
   },
