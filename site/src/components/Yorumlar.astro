@@ -1092,16 +1092,26 @@ const otomatik = !sade && Boolean(slug) && aktif;
     );
     io.observe(kok);
 
-    // Emniyet kemeri: IntersectionObserver bazı mobil tarayıcılarda kaydırma
-    // sırasında gecikebiliyor. Kutu görünür alana 600px yaklaşınca da kur.
+    // Emniyet kemeri: IntersectionObserver bazı mobil tarayıcılarda (ve sekme
+    // arka plandayken) hiç tetiklenmiyor; o durumda kutu "Yorumlar yükleniyor…"
+    // yazısında takılı kalıyordu. Bu yüzden görünürlük kaydırma/boyut olaylarında
+    // ve kısa aralıklarla konum ölçülerek de denetlenir.
     function yakin() {
+      if (kuruldu) {
+        window.clearInterval(sayac);
+        return;
+      }
       const b = kok.getBoundingClientRect();
       if (b.top < window.innerHeight + 600 && b.bottom > -600) {
         io.disconnect();
         birKez();
+        window.clearInterval(sayac);
       }
     }
+    const sayac = window.setInterval(yakin, 1200);
     window.addEventListener("scroll", yakin, { passive: true });
+    window.addEventListener("resize", yakin, { passive: true });
+    window.addEventListener("orientationchange", yakin, { passive: true });
     window.setTimeout(yakin, 1200);
   }
 </script>
