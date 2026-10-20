@@ -78,7 +78,7 @@ begin
 end;
 $$;
 
-drop trigger if exists yorum_hiz_siniri_t before insert on public.yorumlar;
+drop trigger if exists yorum_hiz_siniri_t on public.yorumlar;
 create trigger yorum_hiz_siniri_t
   before insert on public.yorumlar
   for each row execute function public.yorum_hiz_siniri();
@@ -103,7 +103,7 @@ begin
 end;
 $$;
 
-drop trigger if exists yorum_tekrar_engel_t before insert on public.yorumlar;
+drop trigger if exists yorum_tekrar_engel_t on public.yorumlar;
 create trigger yorum_tekrar_engel_t
   before insert on public.yorumlar
   for each row execute function public.yorum_tekrar_engel();
