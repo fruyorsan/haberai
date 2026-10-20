@@ -7,7 +7,7 @@ import { shareNewArticles } from "./share.js";
 import { makeIndex, findSimilar, dedupeArticles } from "./dedupe.js";
 import { isBreaking, breakingScore } from "./breaking.js";
 import { purgeCopiedText } from "./telif.js";
-import { stokGorseller, KATEGORI_SORGU, yedekGorsel, atif, kisaSorgu, konuSorgu, afetMi } from "./stok-gorsel.js";
+import { stokGorseller, KATEGORI_SORGU, yedekGorsel, atif, kisaSorgu, konuSorgu, afetMi, gorselOnar } from "./stok-gorsel.js";
 
 const DRY = process.argv.includes("--dry");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -38,6 +38,14 @@ async function main() {
       seen.clear();
       for (const a of articles) seen.add(a.id);
     }
+  }
+
+  // Kapak fotoğrafı haberi anlatmıyorsa (ör. "ice" tesadüfü yüzünden spor
+  // haberine karlı araba fotoğrafı düşmüşse) kategorinin seçilmiş görseliyle
+  // değiştirilir. Her turda çalışır; veri birleşmelerinde onarım kaybolmaz.
+  {
+    const onarilan = gorselOnar(articles);
+    if (onarilan) console.log(`Görsel onarımı: ${onarilan} kapak fotoğrafı düzeltildi`);
   }
 
   const fetched = await fetchAllFeeds();

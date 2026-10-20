@@ -478,3 +478,36 @@ export function atif(g) {
     sayfa: g.sayfa || "",
   };
 }
+
+// Fotoğrafın konusu (dosya adından) afet/hava sahnesi ama haberin başlığı ve
+// arama sorgusu bu konuda değilse görsel yanlış demektir. Örnek: "ice" sözcüğü
+// "office" içinde eşleştiği için spor haberine "karlı araba" fotoğrafı düşmüştü.
+const KONU_GORSEL = /\b(snow|covered|flood|fire|burn|earthquake|rubble|storm)\b/i;
+const KONU_METIN =
+  /\b(snow|kar|flood|sel|fire|yangın|earthquake|deprem|storm|fırtına|rescue|kurtar)\b/i;
+
+/**
+ * Konusuyla uyuşmayan kapak fotoğraflarını onarır.
+ *
+ * Her toplama turunda arşiv üzerinde çalışır; böylece veri birleşmelerinde
+ * (git merge -X ours) daha önce yapılmış görsel onarımları kaybolsa bile
+ * bir sonraki turda yeniden düzeltilir. Ağ isteği yapmaz: şüpheli görselin
+ * yerine kategorinin SEÇİLMİŞ yedek fotoğrafı konur (telifi ve konusu belli).
+ *
+ * @param {Array<{title?:string, image?:string, gorselSorgu?:string, category?:string, gorselKaynak?:object}>} articles
+ * @returns {number} değiştirilen haber sayısı
+ */
+export function gorselOnar(articles) {
+  let sayi = 0;
+  for (const a of Array.isArray(articles) ? articles : []) {
+    const gorsel = String(a?.image || "");
+    if (!gorsel || !KONU_GORSEL.test(gorsel)) continue;
+    if (KONU_METIN.test(`${a.title || ""} ${a.gorselSorgu || ""}`)) continue;
+    const yedek = yedekGorsel(a.category);
+    if (!yedek?.url) continue;
+    a.image = yedek.url;
+    a.gorselKaynak = atif(yedek);
+    sayi++;
+  }
+  return sayi;
+}
