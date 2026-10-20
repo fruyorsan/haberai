@@ -273,3 +273,6 @@ grant execute on function public.yorum_listele(text, text, uuid, text)  to anon,
 grant execute on function public.yorum_ekle_anon(text, text, text, text) to anon, authenticated;
 grant execute on function public.yorum_begen(bigint, text, uuid, text)  to anon, authenticated;
 grant execute on function public.yorum_sil(bigint, text, uuid, text)    to anon, authenticated;
+
+-- PostgREST şema önbelleğini hemen tazele (yeni RPC'ler anında görünsün).
+notify pgrst, 'reload schema';
