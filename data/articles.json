@@ -1,5 +1,117 @@
 [
   {
+    "id": "e59e7913325d6907",
+    "title": "Amazon, PyTorch kodlarını Nvidia bağımlılığından kurtarıyor",
+    "slug": "amazon-pytorch-kodlarini-nvidia-bagimliligindan-kurtariyor",
+    "summary": "Amazon, PyTorch tabanlı yazılımların Nvidia donanımına ihtiyaç duymadan çalışmasını sağlayacak yeni bir araç geliştiriyor. Annapurna Labs imzalı TorchNeuron yazılımı, geliştiricilerin kodlarını yeniden yazmadan doğrudan şirket çiplerine geçmesine olanak tanıyor.",
+    "keyPoints": [
+      "TorchNeuron yazılımı, PyTorch kodlarının Amazon Trainium çiplerinde doğrudan çalışmasını hedefliyor.",
+      "Annapurna Labs tarafından geliştirilen araç, ücretsiz ve açık kaynaklı olarak sunulacak.",
+      "Robotik ve sesli yapay zekâ alanlarında çalışan 30'dan fazla müşteri yazılımı kullanmaya başladı."
+    ],
+    "body": [
+      "Amazon, yapay zekâ donanım pazarında Nvidia ekosisteminin hakimiyetini kırmak adına yeni bir yazılım hamlesi başlatıyor. Şirket bünyesindeki Annapurna Labs tarafından hazırlanan TorchNeuron, geliştiricilerin mevcut iş akışlarını koruyarak alternatif çip mimarilerine yönelmesini amaçlıyor. Bu açık kaynaklı çözüm sayesinde PyTorch ile yazılan uygulamalar, büyük kod değişikliklerine gerek kalmadan doğrudan Amazon Trainium hızlandırıcılarına uyarlanabiliyor.",
+      "Meta tarafından desteklenen ve makine öğrenimi dünyasında yaygın olarak kullanılan PyTorch, uzun süredir Nvidia'nın CUDA yazılım altyapısıyla entegre biçimde çalışıyordu. Nvidia, yıllar içinde geliştirdiği bu kapsamlı altyapı sayesinde geliştiricilerin grafik işlemcilerinden maksimum verim almasını sağlayan geniş bir ekosistem kurdu. Amazon'un yeni girişimi, bu yazılım bağımlılığını azaltarak kullanıcıların farklı donanım seçeneklerini test etmesini kolaylaştırmayı hedefliyor.",
+      "Yeni yazılımın sunduğu en büyük kolaylık, geliştiricilerin uygulamalarını taşırken karşılaştığı teknik engelleri en aza indirmesi olarak öne çıkıyor. Annapurna Labs yazılım biriminden sorumlu başkan yardımcısı Colin Brace, tek bir yapılandırma değişikliğiyle sistemin çalışabildiğini ve erken dönemde robotik ile sesli yapay zekâ alanında faaliyet gösteren 30'dan fazla müşterinin aracı test etmeye başladığını aktardı.",
+      "Trainium çiplerine geçişin bazı iş yüklerinde maliyet avantajı sağlayabileceği belirtilse de, şirket yetkilileri farklı donanımlarla yapılan karşılaştırmalara dair net oranlar paylaşmadı. Açık kaynaklı olarak yayımlanacak olan TorchNeuron'un gerçek üretim ortamlarında göstereceği kararlılık ve performans, Amazon'un pazardaki rekabet gücünü doğrudan belirleyecek temel unsurlar arasında bulunuyor."
+    ],
+    "comment": "Yazılım uyumluluğunu donanım bağımlılığından ayırmayan hiçbir alternatif çip girişimi Nvidia karşısında kalıcı bir üstünlük kuramayacaktır. Amazon'un 30'dan fazla erken dönem müşterisiyle başlattığı bu süreç, kod tabanını baştan yazma maliyetini sıfırlamadığı sürece yalnızca niş projelerde kalma riski taşır. Geliştiriciler için donanım maliyeti kadar mevcut araç setlerinin korunması da kritik bir eşiktir; CUDA ekosisteminin on yıllık avantajı ancak eksiksiz kütüphane desteğiyle dengelenebilir.",
+    "editorNote": "Amazon, Nvidia CUDA tekelini kırmak için kodları baştan yazma zorunluluğunu ortadan kaldıran açık kaynaklı bir adım atıyor.",
+    "tags": [
+      "Amazon",
+      "PyTorch",
+      "Nvidia",
+      "TorchNeuron",
+      "Trainium"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "data center server room",
+    "source": "CozumPark",
+    "sourceUrl": "https://www.cozumpark.com/amazon-pytorch-kodlarini-nvidia-donanimina-bagimli-olmadan-calistirmayi-hedefliyor/",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1920px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
+    "gorselKaynak": {
+      "yazar": "Joël van der Loo",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Duga-1_radar_data_center_interior_server_room_2018.jpg"
+    },
+    "publishedAt": "2026-10-20T11:02:14.000Z",
+    "generatedAt": "2026-10-20T11:02:54.709Z",
+    "gorselEk": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Le_torrette_con_i_bocchettoni_per_il_raffreddamento_ad_aria_dei_server_in_un_data_center_attivo_dal_2015.jpg",
+        "yazar": "Lapalmauz",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Le_torrette_con_i_bocchettoni_per_il_raffreddamento_ad_aria_dei_server_in_un_data_center_attivo_dal_2015.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Utah_Data_Center_Panorama_%28cropped%29.jpg/1920px-Utah_Data_Center_Panorama_%28cropped%29.jpg",
+        "yazar": "Swilsonmc",
+        "lisans": "CC BY-SA 3.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Utah_Data_Center_Panorama_(cropped).jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
+    "id": "9e93fc6ef41eabb9",
+    "title": "TBMM Başkanı Kurtulmuş'tan Türk dünyasına ortak yapay zekâ çağrısı",
+    "slug": "tbmm-baskani-kurtulmustan-turk-dunyasina-ortak-yapay-zeka-cagrisi",
+    "summary": "TBMM Başkanı Numan Kurtulmuş, Kırgızistan'daki TÜRKPA toplantısında Türk dünyasının yapay zekâ dönüşümünde öncü olması gerektiğini belirtti. Kurtulmuş, ortak yasal yaklaşımlar ve büyük dil modelleri üzerinde birlikte çalışılması çağrısında bulundu.",
+    "keyPoints": [
+      "TÜRKPA 15. Genel Kurulu Kırgızistan'ın başkenti Bişkek'te gerçekleştirildi.",
+      "TDT üye ve gözlemci devletleri 180 milyon nüfusa ve 2,4 trilyon dolar büyüklüğe sahip.",
+      "Türkiye 2026-2030 Yapay Zekâ Eylem Planı ile çalışmalarını sürdürüyor."
+    ],
+    "body": [
+      "TBMM Başkanı Numan Kurtulmuş, Kırgızistan'ın başkenti Bişkek'te gerçekleştirilen Türk Devletleri Parlamenter Asamblesi 15. Genel Kurulu'nda yaptığı konuşmada, bölge ülkelerinin teknolojik dönüşümde izleyici konumunda kalmaması gerektiğini vurguladı. Bilimsel kapasitenin artırılması ve nitelikli insan kaynağının yetiştirilmesinin kritik olduğunu belirten Kurtulmuş, ortak politikaların hayata geçirilmesini istedi.",
+      "Yeni nesil teknolojilerin ekonomi, eğitim, sağlık ve kamu yönetimini kökten değiştirdiğini dile getiren Kurtulmuş, TÜRKPA bünyesinde bir Yapay Zekâ Model Kanunu hazırlanmasının değerlendirilmesini desteklediklerini kaydetti. Ayrıca ortak dil ve alfabe çalışmalarının dijital alandaki gücü artıracağını söyleyerek, kültürel birikimi temel alan büyük dil modelleri üzerinde birlikte çalışma çağrısında bulundu.",
+      "Türkiye'nin 2026-2030 Yapay Zekâ Eylem Planı çerçevesinde faaliyetlerini sürdürdüğünü aktaran Kurtulmuş; genç araştırmacıların desteklenmesi, teknoloji festivallerinin yaygınlaştırılması ve ortak yetenek havuzu kurulmasının önemine işaret etti. Konuşmasında Gazze'deki duruma da değinerek kalıcı ateşkesin sağlanması ve insani yardımların ulaştırılması gerektiğini ifade etti.",
+      "Türk Devletleri Teşkilatı üye ve gözlemci ülkelerinin 180 milyonu aşan nüfusu ile 2,4 trilyon doları bulan ekonomik büyüklüğüyle büyük bir potansiyel barındırdığını dile getiren Kurtulmuş; ticaret, enerji güvenliği ve dijital bağlantısallık alanlarındaki işbirliğinin derinleştirilmesi gerektiğini belirtti. Özbekistan ve Türkmenistan'ın teşkilata katılımının parlamenter birliği güçlendireceğini ekledi."
+    ],
+    "comment": "Yapay zekâ yönetişiminde ortak bir ses çıkarılması hedefi, bölge ülkelerinin teknoloji bağımlılığını azaltması açısından doğrudan etkili olacaktır. 180 milyonluk nüfus gücüne sahip Türk dünyasının ortak büyük dil modelleri geliştirmesi, yerel dillerin dijital dünyada varlık göstermesi için kritik bir eşiktir. Teknoloji eylem planlarının kâğıt üzerinde kalmayıp somut yetenek havuzlarına dönüşmesi, sürecin başarısını belirleyecektir.",
+    "editorNote": "Türk dünyası yapay zekâda dışa bağımlılığı bitirmek için ortak dil modelleri ve yasal altyapı kurmaya hazırlanıyor.",
+    "tags": [
+      "Numan Kurtulmuş",
+      "Yapay Zekâ",
+      "TÜRKPA",
+      "Türk Devletleri Teşkilatı",
+      "Bişkek"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "Numan Kurtulmuş conference speech",
+    "source": "www.baskenthaber06.com",
+    "sourceUrl": "https://www.baskenthaber06.com/haber/kurtulmus-turk-dunyasi-yapay-zekda-yon-vermeli-1792494038/",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Numan_Kurtulmu%C5%9F_Speaker_of_the_Grand_National_Assembly_1.jpg/1920px-Numan_Kurtulmu%C5%9F_Speaker_of_the_Grand_National_Assembly_1.jpg",
+    "gorselKaynak": {
+      "yazar": "Houses of the Oireachtas",
+      "lisans": "CC BY 2.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Numan_Kurtulmu%C5%9F_Speaker_of_the_Grand_National_Assembly_1.jpg"
+    },
+    "publishedAt": "2026-10-20T11:02:12.000Z",
+    "generatedAt": "2026-10-20T11:03:16.990Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Numan_Kurtulmu%C5%9F_Speaker_of_the_Grand_National_Assembly_2.jpg/1920px-Numan_Kurtulmu%C5%9F_Speaker_of_the_Grand_National_Assembly_2.jpg",
+        "yazar": "Houses of the Oireachtas",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Numan_Kurtulmu%C5%9F_Speaker_of_the_Grand_National_Assembly_2.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Numan_Kurtulmu%C5%9F_Speaker_of_the_Grand_National_Assembly_3.jpg/1920px-Numan_Kurtulmu%C5%9F_Speaker_of_the_Grand_National_Assembly_3.jpg",
+        "yazar": "Houses of the Oireachtas",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Numan_Kurtulmu%C5%9F_Speaker_of_the_Grand_National_Assembly_3.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "f5b51bc52b87609e",
     "title": "Trump'ın özel temsilcisi Witkoff, barış için Oslo'da masaya oturuyor",
     "slug": "trumpin-ozel-temsilcisi-witkoff-baris-icin-osloda-masaya-oturuyor",
@@ -51,6 +163,117 @@
         "lisans": "CC0",
         "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
         "sayfa": "https://commons.wikimedia.org/wiki/File:World_globe_(Unsplash_gEKMstKfZ6w).jpg"
+      }
+    ]
+  },
+  {
+    "id": "1b8191d2b50d5f37",
+    "title": "Avustralya'da Milletvekili Helen Haines'e Araçlı Saldırı Düzenlendi",
+    "slug": "avustralyada-milletvekili-helen-haines-e-aracli-saldiri-duzenlendi",
+    "summary": "Avustralya'da bağımsız milletvekili Helen Haines, ofisinin yakınında bir aracın kasıtlı çarpması sonucu ağır yaralandı. Hastaneye kaldırılan siyasetçinin bir bacağını kaybettiği ve sağlık durumunun kritik olduğu bildirildi.",
+    "keyPoints": [
+      "Bağımsız milletvekili Helen Haines, Toyota Land Cruiser marka aracın hedefi oldu.",
+      "Melbourne kentindeki Alfred Hastanesi'nde ameliyat edilen siyasinin bir bacağı kesildi.",
+      "Olay yerinde yakalanan 43 yaşındaki sürücü Brendan Nugent mahkemeye sevk ediliyor."
+    ],
+    "body": [
+      "Avustralya'nın Victoria eyaletinde görev yapan bağımsız milletvekili Helen Haines, yerel saatle 15.35 civarında ofisinin yakınlarında şiddetli bir saldırıya uğradı. Wangaratta kasabasında gerçekleşen olayda, 43 yaşındaki Brendan Nugent idaresindeki Toyota Land Cruiser tipi araç politikacıya çarptı. Çarpmanın şiddetiyle ağır yaralanan Haines, olay yerinden hızla hastaneye ulaştırıldı.",
+      "Görgü tanıklarının ifadelerine göre saldırgan, kadının arkasından yaklaştıktan sonra aracıyla U dönüşü yaparak tekrar saldırdı. Çevredeki dükkânlardan koşan bir berber, saldırganı etkisiz hâle getirerek elindeki bıçağı aldı ve daha büyük bir faciayı önledi. Olay yerinde gözaltına alınan şüphelinin aracında kesici alet ele geçirildi.",
+      "Melbourne'deki Alfred Hastanesi'nde tedavi altına alınan Haines, geçirdiği operasyonlar sonucunda bir bacağını kaybetti. Doktorlar diğer bacağını kurtarmak için çalışırken, Başbakan Anthony Albanese olayın kasıtlı bir eylem olduğunu vurguladı. Emniyet güçleri şüpheliyi ciddi yaralama ve kamu görevlisine zarar verme suçlamalarıyla adliyeye sevk ediyor.",
+      "Yaşanan bu üzücü olay Avustralya siyaset sahnesinde şok etkisi yaratırken, farklı partilerden çok sayıda isim şiddete karşı ortak tepki gösterdi. Hemşirelik geçmişiyle tanınan ve 2019 yılından bu yana parlamentoda yer alan bağımsız vekilin durumu ülkenin en üst kademelerinde yakından takip ediliyor."
+    ],
+    "comment": "Siyasilere yönelik bu tür doğrudan saldırılar, demokratik sistemlerin koruma mekanizmalarını acilen gözden geçirmesini zorunlu kılıyor. Sadece 43 yaşındaki saldırganın bireysel öfkesiyle açıklanamayacak kadar büyük bir güvenlik açığı barındıran bu olay, seçilmiş temsilcilerin günlük sahadaki korunma standartlarını sorgulatıyor. Benzer güvenlik krizleri önlenmezse, yerel düzeyde siyaset yapan isimler için sokakta var olmak neredeyse imkânsız hale gelecektir.",
+    "editorNote": "Milletvekili Haines'e düzenlenen kasıtlı araçlı saldırı Avustralya'da siyasi güvenliği tartışmaya açarken, sokaktaki bir berberin müdahalesi olası bir katliamı önledi.",
+    "tags": [
+      "Helen Haines",
+      "Avustralya",
+      "saldırı",
+      "siyaset",
+      "Melbourne"
+    ],
+    "category": "Dünya",
+    "gorselSorgu": "Australian parliament building Canberra street",
+    "source": "NTV Dünya",
+    "sourceUrl": "https://www.ntv.com.tr/dunya/galeri-avustralyada-milletvekiline-aracli-saldiri-bir-bacagini-kaybetti-durumu-kritik-1747170",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Old_and_new_Parliament_Houses%3B_Canberra_Australia.jpg/1920px-Old_and_new_Parliament_Houses%3B_Canberra_Australia.jpg",
+    "gorselKaynak": {
+      "yazar": "Thennicke",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Old_and_new_Parliament_Houses;_Canberra_Australia.jpg"
+    },
+    "publishedAt": "2026-10-20T10:59:12.000Z",
+    "generatedAt": "2026-10-20T11:03:27.900Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Australian_House_of_Representatives_-_Parliament_of_Australia.jpg/1920px-Australian_House_of_Representatives_-_Parliament_of_Australia.jpg",
+        "yazar": "JJ Harrison ( https://www.jjharrison.com.au/ )",
+        "lisans": "CC BY-SA 3.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Australian_House_of_Representatives_-_Parliament_of_Australia.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Parliament_House_at_dusk%2C_Canberra_ACT.jpg/1920px-Parliament_House_at_dusk%2C_Canberra_ACT.jpg",
+        "yazar": "Thennicke",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Parliament_House_at_dusk,_Canberra_ACT.jpg"
+      }
+    ]
+  },
+  {
+    "id": "ff975d3d47721956",
+    "title": "Google Cloud'daki arıza Londra veri merkezini vurdu",
+    "slug": "google-cloud-arizasi-londra-veri-merkezini-vurdu",
+    "summary": "Google Cloud'un Londra veri merkezinde ortaya çıkan teknik arıza, Avrupa'da çok sayıda dijital hizmeti sekteye uğrattı. İngiltere merkezli dijital banka Revolut başta olmak üzere çeşitli platformlarda ödeme ve erişim problemleri yaşandı.",
+    "keyPoints": [
+      "Google Cloud'un europe-west2 bölgesindeki arıza saat 09.08'de başladı.",
+      "Revolut kullanıcıları kartlı ödemelerde ve para çekmede aksama yaşadı.",
+      "Downdetector verilerine göre Lloyds Bank ve HSBC gibi kurumlar etkilendi."
+    ],
+    "body": [
+      "Küresel teknoloji şirketi Google'ın bulut altyapısında meydana gelen geniş çaplı aksaklık, Avrupa genelindeki pek çok dijital platformun işleyişini durma noktasına getirdi. Şirketin Londra merkezli sunucularını etkileyen teknik sorun, özellikle finans sektöründeki uygulamalarda ciddi yavaşlamalara ve bağlantı hatalarına zemin hazırladı.",
+      "Reuters tarafından paylaşılan bilgilere göre, europe-west2 olarak adlandırılan bölgede 20 Ekim Salı günü Türkiye saatiyle 09.08 itibarıyla yüksek hata oranları kaydedildi. Mühendislik birimleri sorunun temel kaynağını bulmak için inceleme başlatırken resmi durum sayfasında ağ bağlantısındaki istikrarsızlık doğrulandı.",
+      "Yaşanan kesintiden en çok etkilenen finans kuruluşlarının başında İngiltere merkezli dijital bankacılık devi Revolut geldi. Müşteriler kartlı alışverişlerde, ATM'lerden nakit çekim işlemlerinde, para transferlerinde ve mobil uygulamaya giriş denemelerinde başarısızlık bildirdi.",
+      "Revolut yönetimi sosyal medya hesabından yaptığı açıklamada tüm müşteri varlıkları ile kişisel verilerin koruma altında olduğunu duyurdu. Arızanın giderilmesi için teknik ekiplerin çalışmalarını sürdürdüğü, yaşanan mağduriyetten ötürü özverili bir yaklaşım beklendiği ifade edildi.",
+      "Kesintileri izleyen Downdetector platformuna yansıyan verilere göre Lloyds Bank, HSBC, Halifax, Rightmove ve Royal Mail kullanıcıları da benzer erişim engelleriyle karşılaştı. Almanya merkezli ING ise dijital bankacılık kanalında teknik aksaklıklar yaşandığını duyururken sorunun bulut altyapısıyla bağı henüz resmi olarak netleşmedi."
+    ],
+    "comment": "Altyapı sağlayıcılarında meydana gelen tek bir merkezli kesinti, milyonlarca kullanıcının finansal işlemlerini anında kilitliyor. Revolut gibi dijital öncelikli bankaların fiziksel şube ağı bulunmadığı göz önüne alındığında, bulut tabanlı bu aksaklıklar sıradan bir gecikmeden çok daha büyük operasyonel krizlere dönüşüyor. Şirketlerin tek bir bulut sağlayıcısına bağımlı kalması, sistem çökmesi senaryolarında tüm sektörü domino etkisiyle durdurma riski taşıyor.",
+    "editorNote": "Tek bir bulut merkezindeki aksama, Avrupa genelinde finansal işlemleri durma noktasına getirdi.",
+    "tags": [
+      "Google Cloud",
+      "Revolut",
+      "Londra",
+      "Dijital Bankacılık",
+      "Siber Güvenlik"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "data center server room",
+    "source": "Cumhuriyet",
+    "sourceUrl": "https://www.cumhuriyet.com.tr/dunya/google-cloud-daki-ariza-bircok-hizmeti-vurdu-bankacilik-ve-odeme-sistemlerinde-erisim-sorunu-2548535",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1920px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
+    "gorselKaynak": {
+      "yazar": "Joël van der Loo",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Duga-1_radar_data_center_interior_server_room_2018.jpg"
+    },
+    "publishedAt": "2026-10-20T10:59:00.000Z",
+    "generatedAt": "2026-10-20T11:03:38.348Z",
+    "gorselEk": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Le_torrette_con_i_bocchettoni_per_il_raffreddamento_ad_aria_dei_server_in_un_data_center_attivo_dal_2015.jpg",
+        "yazar": "Lapalmauz",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Le_torrette_con_i_bocchettoni_per_il_raffreddamento_ad_aria_dei_server_in_un_data_center_attivo_dal_2015.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Utah_Data_Center_Panorama_%28cropped%29.jpg/1920px-Utah_Data_Center_Panorama_%28cropped%29.jpg",
+        "yazar": "Swilsonmc",
+        "lisans": "CC BY-SA 3.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Utah_Data_Center_Panorama_(cropped).jpg"
       }
     ]
   },
