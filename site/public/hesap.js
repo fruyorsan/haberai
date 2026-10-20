@@ -194,6 +194,7 @@
     } catch (e) {}
     dugmeleriGuncelle();
     if (u) pushEsle(u);
+    else void yorumKimlik();
   }
 
   async function kayitOl(kadi, sifre, ad) {
@@ -376,6 +377,71 @@
     return r;
   }
 
+  /** Yorum cihaz anahtarının localStorage adı (Yorumlar.astro ile aynı). */
+  var CIHAZ_ANAHTARI = "hb-yorum-cihaz";
+  /** En son OneSignal'e yazılan üye etiketi (gereksiz silme isteği atılmasın). */
+  var OS_UYE_ANAHTARI = "hb-os-yorum-uye";
+
+  function cihazOku() {
+    try {
+      var v = localStorage.getItem(CIHAZ_ANAHTARI);
+      return v && v.length >= 8 ? v : "";
+    } catch (e) {
+      return "";
+    }
+  }
+
+  /**
+   * Yorum bildirimleri için bu cihazı OneSignal'de işaretler:
+   *
+   *   * `yorum_kimlik_c` → cihaz anahtarı: hesapsız yazılan yorumların sahibi,
+   *   * `yorum_kimlik_u` → üye numarası: hesapla yazılan yorumların sahibi.
+   *
+   * Sunucu (supabase/yorum-bildirim.sql), bir yorum beğenildiğinde ya da yoruma
+   * yanıt geldiğinde bildirimi YALNIZCA bu etiketlerle tek kişiye yollar.
+   * Etiket yazılamazsa (SDK yok, reklam engelleyici…) sessizce geçilir.
+   *
+   * `cihaz` verilmezse localStorage'daki anahtar kullanılır; o da yoksa yalnızca
+   * üye etiketi yazılır. Hesap kapandıysa üye etiketi SİLİNİR: çıkış yapan
+   * okuyucunun cihazı, o hesabın yorum bildirimlerini almaya devam etmesin.
+   */
+  async function yorumKimlik(cihaz) {
+    var hazir = window.HaberinaiOS && window.HaberinaiOS.hazir;
+    if (!hazir) return;
+    var os = await Promise.race([
+      hazir,
+      new Promise(function (r) {
+        setTimeout(function () {
+          r(null);
+        }, 8000);
+      }),
+    ]);
+    if (!os || !os.User) return;
+
+    var u = oturumOku();
+    var simdiki = u && u.id ? String(u.id) : "";
+    var onceki = "";
+    try {
+      onceki = localStorage.getItem(OS_UYE_ANAHTARI) || "";
+    } catch (e) {}
+
+    try {
+      var t = {};
+      var c = cihaz || cihazOku();
+      if (c) t.yorum_kimlik_c = String(c);
+      if (simdiki) t.yorum_kimlik_u = simdiki;
+      if (Object.keys(t).length && typeof os.User.addTags === "function") os.User.addTags(t);
+      // Hesap kapanmışsa eski üye etiketi kalmasın (hesap değişiminde etiketin
+      // üzerine yeni numara yazılır, ayrıca silmeye gerek yok).
+      if (!simdiki && onceki && typeof os.User.removeTag === "function") {
+        os.User.removeTag("yorum_kimlik_u");
+      }
+      try {
+        localStorage.setItem(OS_UYE_ANAHTARI, simdiki);
+      } catch (e) {}
+    } catch (e) {}
+  }
+
   /**
    * Hesabı bu cihazın bildirim aboneliğine bağlar (OneSignal external id) ve
    * ilgi alanlarını bildirim etiketlerine yazar. Bildirim panelinin yerel
@@ -422,6 +488,8 @@
     try {
       os.login(String(u.id));
     } catch (e) {}
+    // Yorum bildirimleri (beğeni/yanıt) için kimlik etiketleri de yazılır.
+    void yorumKimlik();
 
     try {
       var tum = ayarlar().kategoriler;
@@ -491,9 +559,21 @@
     });
   }
 
-  async function yorumEkle(slug, metin) {
+  /**
+   * Üye olarak yorum yazar. `ust` verilirse bu bir YANITTIR: haber adresi
+   * sunucuda üst yorumdan bulunur ve yanıtlanan yorumun sahibine bildirim gider.
+   */
+  async function yorumEkle(slug, metin, ust) {
     var u = oturumOku();
     if (!u) return { hata: "Giriş yapmalısın." };
+    if (ust) {
+      return rpc("uye_yanit_ekle", {
+        p_id: u.id,
+        p_token: u.token,
+        p_yorum: ust,
+        p_metin: metin,
+      });
+    }
     return rpc("uye_yorum_ekle", { p_id: u.id, p_token: u.token, p_slug: slug, p_metin: metin });
   }
 
@@ -520,6 +600,7 @@
     begenSil: begenSil,
     hesapSil: hesapSil,
     pushEsle: pushEsle,
+    yorumKimlik: yorumKimlik,
     bildirimSiklik: bildirimSiklik,
     adminUyeler: adminUyeler,
     adminEtiket: adminEtiket,
@@ -530,6 +611,9 @@
     dugmeleriGuncelle();
     var u = oturumOku();
     if (u) pushEsle(u);
+    // Hesapsız okuyucu da (daha önce yorum yazdıysa) cihaz etiketini taşısın:
+    // beğeni/yanıt bildirimi ancak bu etiketle okuyucuya ulaşabilir.
+    else void yorumKimlik();
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", baslat);
