@@ -14,6 +14,9 @@
 -- panelden (service_role) yapılır.
 -- ============================================================================
 
+-- Beğeni, yorum silme ve hesapsız yorum sahipliği için ayrıca
+-- `supabase/yorum-etkilesim.sql` dosyasını da çalıştır.
+
 create table if not exists public.yorumlar (
   id         bigint generated always as identity primary key,
   slug       text        not null,

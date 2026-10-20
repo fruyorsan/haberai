@@ -241,7 +241,7 @@ set search_path = public, extensions
 as $$
 declare
   v_uye public.uyeler;
-  v_sayi int;
+  v_sayi bigint;
 begin
   v_uye := public.uye_dogrula(p_id, p_token);
 

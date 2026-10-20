@@ -21,6 +21,9 @@
 --   fonksiyonlardan geçer ve oturum anahtarı her çağrıda doğrulanır.
 -- ============================================================================
 
+-- Beğeni, yorum silme ve hesapsız yorum sahipliği için ayrıca
+-- `supabase/yorum-etkilesim.sql` dosyasını da çalıştır.
+
 create extension if not exists pgcrypto with schema extensions;
 
 -- ---------------------------------------------------------------- tablolar --

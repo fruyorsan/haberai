@@ -403,6 +403,51 @@ const otomatik = !sade && Boolean(slug) && aktif;
     overflow-wrap: anywhere;
     white-space: pre-wrap;
   }
+  /* Yorum eylemleri: beğeni sayısı ve (sahibine) silme. */
+  .yorum__eylem {
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 8px;
+  }
+  .yorum__etkilesim {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-2);
+    font: inherit;
+    font-size: 0.74rem;
+    font-weight: 700;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: border-color 0.15s var(--ease), color 0.15s var(--ease),
+      background 0.15s var(--ease);
+  }
+  .yorum__etkilesim:hover {
+    border-color: var(--brand);
+    color: var(--brand);
+  }
+  .yorum__etkilesim:disabled {
+    opacity: 0.55;
+    cursor: default;
+  }
+  .yorum__begen.is-on {
+    border-color: var(--brand);
+    background: var(--brand-soft);
+    color: var(--brand);
+  }
+  .yorum__begen.is-on svg {
+    fill: currentColor;
+  }
+  .yorum__sil:hover {
+    border-color: var(--brand-ink, #b3121a);
+    color: var(--brand-ink, #b3121a);
+  }
   .yorum__bekle,
   .yorum__bos {
     margin: 0;
@@ -859,7 +904,66 @@ const otomatik = !sade && Boolean(slug) && aktif;
     const form = kok.querySelector<HTMLFormElement>("[data-yorum-form]");
 
     hesapUygula(kok);
-    window.addEventListener("hb-oturum-degisti", () => hesapUygula(kok));
+    window.addEventListener("hb-oturum-degisti", () => {
+      hesapUygula(kok);
+      if (kok.dataset.yuklendi === "1") void yukle(kok);
+    });
+
+    // Beğeni ve silme: liste her yenilendiğinde ayrı dinleyici eklememek için
+    // tek bir olay delegasyonu kullanılır.
+    const liste = kok.querySelector<HTMLElement>("[data-yorum-liste]");
+    liste?.addEventListener("click", async (e) => {
+      const hedef = e.target as Element;
+      const begenBtn = hedef.closest("[data-yorum-begen]") as HTMLButtonElement | null;
+      const silBtn = hedef.closest("[data-yorum-sil]") as HTMLButtonElement | null;
+      const u = hesap();
+
+      if (begenBtn) {
+        const id = Number(begenBtn.dataset.yorumBegen || 0);
+        if (!id) return;
+        begenBtn.disabled = true;
+        const r = await rpcYorum(api, anahtar, "yorum_begen", {
+          p_yorum: id,
+          p_cihaz: cihazKimlik(),
+          p_id: u?.id || null,
+          p_token: u?.token || null,
+        });
+        if (r && r.ok) {
+          const on = Boolean(r.begendim);
+          begenBtn.classList.toggle("is-on", on);
+          begenBtn.setAttribute("aria-pressed", on ? "true" : "false");
+          begenBtn.setAttribute("aria-label", on ? "Beğeniyi geri al" : "Yorumu beğen");
+          const say = begenBtn.querySelector<HTMLElement>("[data-begen-sayi]");
+          if (say) say.textContent = String(Math.max(0, Number(r.begeni) || 0));
+        } else {
+          yaz(kok, (r && r.hata) || "Beğeni kaydedilemedi. Biraz sonra tekrar dene.", true);
+        }
+        begenBtn.disabled = false;
+        return;
+      }
+
+      if (silBtn) {
+        const id = Number(silBtn.dataset.yorumSil || 0);
+        if (!id) return;
+        if (!window.confirm("Yorumun kalıcı olarak silinsin mi?")) return;
+        silBtn.disabled = true;
+        const r = await rpcYorum(api, anahtar, "yorum_sil", {
+          p_yorum: id,
+          p_cihaz: cihazKimlik(),
+          p_id: u?.id || null,
+          p_token: u?.token || null,
+        });
+        if (r && r.ok) {
+          const li = silBtn.closest(".yorum__oge");
+          if (li) li.remove();
+          sayiGuncelle(kok);
+          yaz(kok, "Yorumun silindi.");
+        } else {
+          yaz(kok, (r && r.hata) || "Yorum silinemedi. Biraz sonra tekrar dene.", true);
+          silBtn.disabled = false;
+        }
+      }
+    });
 
     let sonGonderim = 0;
 
@@ -890,47 +994,56 @@ const otomatik = !sade && Boolean(slug) && aktif;
       try {
         const H = (window as any).HaberinAi;
         const u = hesap();
-        let kayit:
-          | { ad?: string; metin?: string; created_at?: string; uye_id?: string | null; etiket?: string | null }
-          | undefined;
+        let kayit: any;
         if (u && H && typeof H.yorumEkle === "function") {
           // Üye: yazma sunucudaki RPC'den geçer; ad profilden, oturum doğrulanır.
           const r = await H.yorumEkle(slug, metin);
           if (r && r.hata) throw new Error(r.hata);
           kayit = {
+            id: r.id,
             ad: r.ad || u.ad,
             metin: r.metin || metin,
             created_at: new Date().toISOString(),
-            uye_id: "1",
+            uye_id: u.id,
             etiket: r.etiket || u.etiket || "",
+            benim: true,
+            begendim: false,
+            begeni: 0,
           };
         } else {
-          const r = await fetch(`${api}/rest/v1/${tablo}`, {
-            method: "POST",
-            headers: {
-              ...susBasliklari(anahtar),
-              "Content-Type": "application/json",
-              Prefer: "return=representation",
-            },
-            body: JSON.stringify({ slug, ad, metin }),
+          // Hesapsız yorum: cihaz anahtarı sunucuda sahiplik tablosuna yazılır.
+          // SQL yaması yoksa eski doğrudan REST ekleme yoluna düşülür.
+          const rpcKayit = await rpcYorum(api, anahtar, "yorum_ekle_anon", {
+            p_slug: slug,
+            p_ad: ad,
+            p_metin: metin,
+            p_cihaz: cihazKimlik(),
           });
-          if (!r.ok) throw new Error(`HTTP ${r.status}`);
-          [kayit] = (await r.json()) as { ad?: string; metin?: string; created_at?: string }[];
+          if (rpcKayit && !Array.isArray(rpcKayit) && !rpcKayit.hata && rpcKayit.id != null) {
+            kayit = rpcKayit;
+          } else {
+            if (rpcKayit && rpcKayit.hata) throw new Error(rpcKayit.hata);
+            const r = await fetch(`${api}/rest/v1/${tablo}`, {
+              method: "POST",
+              headers: {
+                ...susBasliklari(anahtar),
+                "Content-Type": "application/json",
+                Prefer: "return=representation",
+              },
+              body: JSON.stringify({ slug, ad, metin }),
+            });
+            if (!r.ok) throw new Error(`HTTP ${r.status}`);
+            [kayit] = (await r.json()) as { ad?: string; metin?: string; created_at?: string }[];
+            kayit = { ...kayit, benim: false, begendim: false, begeni: 0 };
+          }
         }
         const liste = kok.querySelector<HTMLElement>("[data-yorum-liste]");
         if (liste && kayit) {
-          const yeni = oge(kayit);
+          const yeni = oge(kayit, kok.dataset.etkilesim === "1");
           yeni.classList.add("yorum__oge--yeni");
           liste.prepend(yeni);
         }
-        const bos = kok.querySelector<HTMLElement>("[data-yorum-bos]");
-        if (bos) bos.hidden = true;
-        const sayi = kok.querySelector<HTMLElement>("[data-yorum-sayi]");
-        if (sayi) {
-          const n = kok.querySelectorAll(".yorum__oge").length || 0;
-          sayi.textContent = String(n);
-          sayi.hidden = false;
-        }
+        sayiGuncelle(kok);
         sonGonderim = Date.now();
         metinEl.value = "";
         try {
