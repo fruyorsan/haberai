@@ -185,8 +185,8 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         <h2 class="profil__h2">Yönetim · kayıtlı okurlar</h2>
         <p class="profil__aciklama">
           Sitede hesabı olan herkesi görürsün. Bir okura rozet yazabilirsin
-          (ör. “Yönetici”, “Editör”, “İlk okur”). Bu bölüm yalnızca sana görünür;
-          rozet yazma yetkisi yalnızca yöneticide.
+          (ör. “Yönetici”, “Editör”, “İlk okur”). Rozet sadece görünür; yetki
+          vermez. Bu bölüm yalnızca sana görünür.
         </p>
         <input
           class="profil__girdi profil__uye-ara"
@@ -1235,7 +1235,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         girdi.type = "text";
         girdi.maxLength = 24;
         girdi.value = x.etiket || "";
-        girdi.placeholder = "Rozet (ör. Yönetici)";
+        girdi.placeholder = "Rozet (ör. Yönetici) — sadece görünür";
         girdi.setAttribute("aria-label", (x.ad || x.kadi) + " için rozet");
 
         var kaydetBtn = document.createElement("button");
@@ -1246,7 +1246,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
           kaydetBtn.disabled = true;
           if (yonDurum) yonDurum.textContent = "Kaydediliyor…";
           try {
-            var r = await H.adminEtiket(x.id, girdi.value.trim(), null);
+            var r = await H.adminEtiket(x.id, girdi.value.trim());
             if (r && r.hata) {
               if (yonDurum) yonDurum.textContent = r.hata;
               return;
@@ -1261,7 +1261,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
               u = ben;
               rozetCiz();
             }
-            if (yonDurum) yonDurum.textContent = "Rozet kaydedildi ✓";
+            if (yonDurum) yonDurum.textContent = "Rozet kaydedildi (yetki vermez) ✓";
           } catch (e) {
             if (yonDurum) yonDurum.textContent = "Kaydedilemedi, tekrar dene.";
           } finally {

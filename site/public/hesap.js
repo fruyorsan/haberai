@@ -468,8 +468,8 @@
     return rpc("admin_uyeler", { p_id: u.id, p_token: u.token });
   }
 
-  /** Yönetici: bir okuyucuya rozet yazar; istenirse yönetici yetkisi verir. */
-  async function adminEtiket(hedef, etiket, rol) {
+  /** Yönetici: bir okuyucuya rozet yazar. Rozet sadece görünür; yetki vermez. */
+  async function adminEtiket(hedef, etiket) {
     var u = oturumOku();
     if (!u) return { hata: "Giriş yapmalısın." };
     return rpc("admin_etiket", {
@@ -477,7 +477,7 @@
       p_token: u.token,
       p_hedef: hedef,
       p_etiket: etiket || "",
-      p_rol: rol || null,
+      p_rol: null,
     });
   }
 

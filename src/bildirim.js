@@ -633,14 +633,14 @@ export async function bildirimleriGonder({ dry = false } = {}) {
     }
 
     // Kategori seçimi: en uzun süredir bildirilmeyenler önce. Takipçisi olmayan
-    // (alıcısı 0 dönen) kategori kısa süre geri çekilir; yoksa günlük tavan
+    // (OneSignal hedefi reddeden) kategori kısa süre geri çekilir; yoksa slotlar
     // kimsenin görmediği gönderimlerle dolar ve gerçek takipçiler sıra bekler.
     const bosKategori = durum.bosKategori || {};
     const bosMu = (slug) => {
       const t = bosKategori[slug];
       return t ? (now - Date.parse(t)) / 3600000 < KAT_BOS_GERI_CEK_SAAT : false;
     };
-    const uygun = [...grup.keys()]
+    const sirali = [...grup.keys()]
       .filter((slug) => {
         if (bosMu(slug)) return false;
         const son = durum.sonKategori?.[slug];
@@ -648,29 +648,39 @@ export async function bildirimleriGonder({ dry = false } = {}) {
         return (now - Date.parse(son)) / 60000 >= KAT_MIN_ARALIK_DK;
       })
       .sort(
-        ([a], [b]) =>
-          Date.parse(durum.sonKategori?.[a] || 0) - Date.parse(durum.sonKategori?.[b] || 0)
-      )
-      .slice(0, KAT_TUR_ADET);
+        (a, b) => Date.parse(durum.sonKategori?.[a] || 0) - Date.parse(durum.sonKategori?.[b] || 0)
+      );
 
-    if (!uygun.length) {
+    if (!sirali.length) {
       console.log(
         `Bildirim: konu bildirimi için uygun kategori yok ` +
           `(${grup.size} kategoride taze haber var, hepsi bekleme süresinde).`
       );
     } else {
       // Her kategori kendi takipçisine gider; sıklık filtresi "aninda" olanlara
-      // ulaşır. Tur başına KAT_TUR_HABER sınırı vardır, kalanı sonraki turda.
+      // ulaşır. Sıra listesi KIRPILMAZ: takipçisi çıkmayan kategori slot
+      // harcamaz, böylece "teknoloji" gibi gerçek takipçisi olan konu boş
+      // kategorilerin arkasında kalmaz (KAT_TUR_ADET yalnızca BAŞARILI
+      // gönderimle dolar).
+      const bosIsaretle = (slug) => {
+        bosKategori[slug] = new Date(now).toISOString();
+        durum.bosKategori = bosKategori;
+        durum.sonKategori[slug] = new Date(now).toISOString(); // kuyruğun sonuna
+      };
       let turHaber = 0;
-      for (const slug of uygun) {
+      let turKategori = 0;
+      for (const slug of sirali) {
+        if (turKategori >= KAT_TUR_ADET || turHaber >= KAT_TUR_HABER) break;
+        const gunToplam3 = (durum.gunSayi.son || 0) + (durum.gunSayi.kategori || 0);
+        if (gunToplam3 >= TOPLAM_MAX_GUN || (durum.gunSayi.kategori || 0) >= KAT_MAX_GUN) break;
+        let ulasti = false;
         for (const aday of grup.get(slug) || []) {
           if (turHaber >= KAT_TUR_HABER) break;
-          const gunToplam3 = (durum.gunSayi.son || 0) + (durum.gunSayi.kategori || 0);
-          if (gunToplam3 >= TOPLAM_MAX_GUN || (durum.gunSayi.kategori || 0) >= KAT_MAX_GUN) break;
           const icerik = bildirimIcerigi(aday, { baslik: `${aday.category} • yeni haber` });
           if (dry) {
             console.log(`  [dry] konu (${slug}) → ${icerik.icerik}`);
             turHaber++;
+            ulasti = true;
             continue;
           }
           try {
@@ -686,10 +696,9 @@ export async function bildirimleriGonder({ dry = false } = {}) {
             const alici = Number(yanit?.recipients);
             if (Number.isFinite(alici) && alici <= 0) {
               // Bu konuyu takip eden cihaz yok: tavanı harcama, kısa süre atla.
-              bosKategori[slug] = new Date(now).toISOString();
-              durum.bosKategori = bosKategori;
               console.log(`  · [konu:${slug}] takipçi yok (0 cihaz) — sayılmadı.`);
-              continue;
+              bosIsaretle(slug);
+              break;
             }
             console.log(
               `  ✓ [konu:${slug}] ${kisalt(aday.title, 60)}${yanit?.id ? ` (${yanit.id})` : ""}${aliciNotu(yanit)}`
@@ -700,19 +709,22 @@ export async function bildirimleriGonder({ dry = false } = {}) {
             durum.gunSayi.kategori = (durum.gunSayi.kategori || 0) + 1;
             sayilan++;
             turHaber++;
+            ulasti = true;
           } catch (err) {
             // Kimsenin takip etmediği kategori: OneSignal hedefi reddeder.
             // Kategoriyi kısa süre geri çek (aynı hata için 6 saat istek atmayalım)
             // ve bu kategorinin kalan haberlerini bu turda denemeyi bırak.
             if (/not subscribed/i.test(err.message)) {
-              bosKategori[slug] = new Date(now).toISOString();
-              durum.bosKategori = bosKategori;
-              console.log(`  · [konu:${slug}] takipçi yok — ${KAT_BOS_GERI_CEK_SAAT} saat atlandı.`);
+              console.log(
+                `  · [konu:${slug}] takipçi yok — ${KAT_BOS_GERI_CEK_SAAT} saat atlandı.`
+              );
+              bosIsaretle(slug);
               break;
             }
             console.warn(`  ✗ [konu:${slug}] ${err.message}`);
           }
         }
+        if (ulasti) turKategori++;
       }
     }
   }
