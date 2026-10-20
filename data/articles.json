@@ -1,5 +1,196 @@
 [
   {
+    "id": "288168abb1b73e3b",
+    "title": "Apple, iOS 27.2 RC sürümünü yayınladı ve CarPlay için video desteği getirdi",
+    "slug": "apple-ios-27-2-rc-surumunu-yayinladi",
+    "summary": "Apple, iPhone kullanıcıları için hazırladığı iOS 27.2 RC sürümünü geliştiricilere dağıttı. Yeni yazılım güncellemesiyle birlikte CarPlay sistemine video oynatma özellikleri ve yapay zekâ destekli Siri yetenekleri eklendi.",
+    "keyPoints": [
+      "iOS 27.2 RC sürümü 19 Ekim 2026 tarihinde geliştiricilerin kullanımına sunuldu.",
+      "CarPlay üzerinden video oynatma özelliği yalnızca araç park hâlindeyken çalışıyor.",
+      "Siri'nin yapay zekâ yetenekleri Fransızca, Japonca, Korece, Portekizce ve İspanyolca dillerine genişletildi."
+    ],
+    "body": [
+      "Apple, iPhone cihazları için hazırladığı yeni yazılım paketini 19 Ekim 2026 tarihinde geliştiricilerin test ortamına aktardı. Kararlı dağıtımdan önceki son aşama olan Release Candidate adımı, genel kullanıma sunulacak nihai paketin çok yakında geleceğini gösteriyor. Yazılımın son versiyonu şirketin ekosistemini genişletme çabalarını sürdürdüğünü ortaya koyuyor.",
+      "Güncellemenin en dikkat çekici yenilikleri arasında Apple CarPlay arayüzüne eklenen video oynatma yeteneği yer alıyor. Geliştiriciler bu sayede araç ekranlarında video içeriklerini gösteren uygulamalar tasarlayabiliyor. Ayrıca iPhone üzerindeki uyumlu video içerikleri AirPlay aracılığıyla otomobil ekranına yansıtılabiliyor.",
+      "Sürüş güvenliğini tehlikeye atmamak adına video oynatma işlevi yalnızca otomobil tamamen park edildiğinde çalışıyor. Araç hareket etmeye başladığı anda güvenlik önlemi devreye giriyor ve görüntü akışı kesilerek yalnızca ses oynatımına geçiliyor. Aynı zamanda bu özelliğin çalışması için otomobil üreticilerinin ilgili altyapıyı araçlarında aktif hâle getirmesi gerekiyor.",
+      "Yazılım paketiyle birlikte yapay zekâ destekli Siri asistanının dil desteği de beş yeni dille zenginleştirildi. Sistem artık Fransızca, Japonca, Korece, Portekizce ve İspanyolca dillerinde daha doğal bir iletişim kurabiliyor. Gelişmiş bağlam koruma yetenekleri sayesinde kullanıcılar sorularını daha akıcı biçimde yöneltebiliyor ancak bu özellikler donanım ve bölge şartlarına göre değişiyor.",
+      "Multimedya tarafında ise müzik ve ses içeriklerini yönetmeyi kolaylaştıran yeni kontroller sisteme dahil edildi. Yenilenen mini oynatıcı ve Audio Scrubbing olarak adlandırılan ilerleme çubuğu desteği, uzun podcast veya sesli kitap dinleyen sürücülere pratiklik kazandırıyor."
+    ],
+    "comment": "Yazılım güncellemelerinin sunduğu yeni donanım entegrasyonları, kullanıcıların araç içindeki dijital deneyimini kökten değiştiriyor. Park hâlindeyken video izleme imkânı sunulması, özellikle elektrikli otomobil sahiplerinin şarj istasyonlarında geçirdiği zamanı değerlendirmesi açısından somut bir kolaylık yaratıyor. Ancak üreticilerin bu desteği kendi sistemlerine entegre etme hızı, özelliğin ne kadar yaygın kullanılacağını belirleyecek tek etken olacak.",
+    "editorNote": "CarPlay ekranına gelen video desteği sadece park halindeyken çalışıyor; hareket halinde ise görüntü devre dışı kalıyor.",
+    "tags": [
+      "iOS 27",
+      "CarPlay",
+      "Siri",
+      "Apple",
+      "Yapay Zeka"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "Apple CarPlay dashboard display",
+    "source": "TeknoTalk",
+    "sourceUrl": "https://www.teknotalk.com/ios-27-2-rc-carplay-siri-yenilikleri-211877/",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Toyota_Aygo_Mid_2018_Apple_Carplay_Integration.jpg/1920px-Toyota_Aygo_Mid_2018_Apple_Carplay_Integration.jpg",
+    "gorselKaynak": {
+      "yazar": "Butterhimmel",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Toyota_Aygo_Mid_2018_Apple_Carplay_Integration.jpg"
+    },
+    "publishedAt": "2026-10-20T09:06:25.000Z",
+    "generatedAt": "2026-10-20T09:08:11.005Z",
+    "breaking": true
+  },
+  {
+    "id": "b191cf8896b4873f",
+    "title": "Yerli fintech Leasingim, Insha GSYF'den yatırım alarak büyüyor",
+    "slug": "yerli-fintech-leasingim-insha-gsyften-yatirim-alarak-buyuyor",
+    "summary": "İstanbul merkezli girişim Leasingim, teknoloji altyapısını geliştirmek ve yapay zeka destekli süreçlerini güçlendirmek amacıyla yatırım aldı. Alınan finansmanla birlikte makine yatırımı süreçlerinin dijital ortamda yönetilmesi hedefleniyor.",
+    "keyPoints": [
+      "Yerli fintech girişimi Leasingim, Insha GSYF'den finansal yatırıma hak kazandı.",
+      "Şirket, Albaraka Garaj Hızlandırma Programı'ndan 2023 yılında mezun oldu.",
+      "Platform, KOBİ'lerin makine ve ekipman finansmanına erişimini kolaylaştırıyor."
+    ],
+    "body": [
+      "Türkiye'de makine sektörüne odaklanan dijital leasing danışmanlığı platformu Leasingim, Insha GSYF bünyesinden yeni bir finansman desteği elde etti. Gerçekleşen yatırımın finansal büyüklüğüne dair resmi rakamlar kamuoyuyla paylaşılmadı. Derviş Ali Doğanşahin tarafından 2023 yılında kurulan İstanbul merkezli girişim, kısa sürede dikkat çeken adımlar attı.",
+      "Albaraka Garaj Hızlandırma Programı mezunları arasında yer alan şirket, işletmelerin makine ve ekipman yatırımları için finansman bulma süreçlerini tek bir çatı altında topluyor. KOBİ'lerin farklı finansal kiralama kuruluşlarıyla ayrı ayrı görüşmek yerine tek bir başvuru üzerinden teklifleri karşılaştırmasına olanak tanıyor. Bu yapı, tedarikçilerin de müşterilerine hızlıca finansman alternatifleri sunmasını sağlıyor.",
+      "Girişim, yeni elde ettiği kaynağı teknoloji altyapısını ve ekibini genişletmek için kullanacağını duyurdu. Aynı zamanda finansal kuruluşlarla olan entegrasyonlarını artırmayı ve yapay zeka destekli finansman eşleştirme altyapısını geliştirmeyi planlıyor. Bu sayede başvurudan sürecin sonuna kadar geçen tüm aşamalar tamamen dijital ortamda yönetilecek.",
+      "Pazardaki geleneksel başvuru yöntemlerini dijitalleştiren platform, leasing pazarındaki tüm paydaşları ortak bir ekosistemde buluşturuyor. KOBİ'ler ile makine üreticilerini ve kiralama şirketlerini bir araya getiren bu model, zamandan tasarruf sağlarken teklif çeşitliliğini artırıyor. Yapılan bu hamle, girişim alanındaki dijitalleşme eğiliminin hız kazandığını gösteriyor."
+    ],
+    "comment": "Erken aşama girişimlerin yapay zeka ve altyapı yatırımlarına odaklanması, geleneksel finans sektöründeki bürokratik süreçleri hızlandırmak adına doğru bir hamledir. Insha GSYF desteğini arkasına alan 2023 kuruluşlu Leasingim, KOBİ'lerin teklif karşılaştırma süreçlerindeki zaman kaybını ortadan kaldırarak rekabet avantajı yakalayacaktır. Benzer pazar yerleriyle kıyaslandığında, şirketin sadece makine sektörüne niş bir odaklanma seçmesi iş modelini daha sürdürülebilir kılıyor.",
+    "editorNote": "2023 yılında kurulan yerli girişim, yapay zeka tabanlı altyapı hamlesiyle finansman süreçlerini tamamen dijitalleştiriyor.",
+    "tags": [
+      "Leasingim",
+      "Insha GSYF",
+      "fintech",
+      "KOBİ",
+      "yatırım"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "financial technology startup office",
+    "source": "Webrazzi",
+    "sourceUrl": "https://webrazzi.com/2026/10/20/yerli-fintech-girisimi-leasingim-insha-gsyf-den-yatirim-aldi/",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg/1920px-Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
+    "gorselKaynak": {
+      "yazar": "Shixart1985",
+      "lisans": "CC BY 2.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg"
+    },
+    "publishedAt": "2026-10-20T09:06:19.000Z",
+    "generatedAt": "2026-10-20T09:08:25.099Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/CyberDrive_Technology_CD526D_-_board_2-9901.jpg/1920px-CyberDrive_Technology_CD526D_-_board_2-9901.jpg",
+        "yazar": "Raimond Spekking",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:CyberDrive_Technology_CD526D_-_board_2-9901.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/CyberDrive_Technology_CD526D_-_board-9601.jpg/1920px-CyberDrive_Technology_CD526D_-_board-9601.jpg",
+        "yazar": "Raimond Spekking",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:CyberDrive_Technology_CD526D_-_board-9601.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
+    "id": "4e5d41e9584d2662",
+    "title": "Karbonhidratları alkole çeviren oto-bira fabrikası sendromu haritalandı",
+    "slug": "karbonhidratlari-alkole-ceviren-oto-bira-fabrikasi-sendromu-haritalandi",
+    "summary": "Sindirim sisteminde karbonhidratları fermente ederek kana doğrudan alkol karıştıran nadir bir rahatsızlık tıp dünyasınca incelendi. Ekmek veya makarna gibi gıdaların tüketilmesinin ardından bireylerde alkol almadan ağır sarhoşluk belirtileri görülebiliyor.",
+    "keyPoints": [
+      "Makarna ve ekmek gibi karbonhidratlar bağırsakta fermente olarak doğrudan kana etanol salgılıyor.",
+      "Rahatsızlığa maya mantarlarının yanı sıra Escherichia coli ve Klebsiella pneumoniae bakterileri neden oluyor.",
+      "Hastalarda peltek konuşma, denge kaybı ve ağır akşamdan kalmalık tablosu ortaya çıkıyor."
+    ],
+    "body": [
+      "Tıp dünyasında oto-bira fabrikası sendromu olarak adlandırılan sindirim sistemi rahatsızlığı, karbonhidrat tüketiminin ardından vücutta kendiliğinden alkol üretilmesiyle ortaya çıkıyor. Uzman isimlerin yürüttüğü incelemeler, günlük beslenmede yer alan makarna ve ekmek gibi gıdaların bağırsaktaki mikroorganizmalar yoluyla fermente olduğunu belgeliyor. Bu süreç sonucunda açığa çıkan etanol doğrudan kan dolaşımına karışarak bireylerde hiç alkol alınmamasına rağmen sarhoşluk hali yaratıyor.",
+      "Nature Microbiology dergisinde yer alan araştırmalar, durumun kökeninde yalnızca maya mantarlarının bulunmadığını ortaya koyuyor. Bağırsak florasında aşırı çoğalan Escherichia coli ve Klebsiella pneumoniae türü bakterilerin de bu biyokimyasal mekanizmayı tetiklediği saptandı. Aşırı antibiyotik kullanımı, Crohn hastalığı, kısa bağırsak sendromu ve kontrolsüz diyabet gibi rahatsızlıkların söz konusu bakteriyel artışı hızlandırdığı kaydediliyor.",
+      "Vücudun sürekli olarak içsel etanole maruz kalması, ilerleyen dönemlerde siroz benzeri ağır karaciğer yağlanmaları ile doku harabiyetlerine zemin hazırlıyor. Sadece bir dilim ekmek tüketiminin ardından kanındaki alkol seviyesi yükselen hastalarda şiddetli beyin sisi, motor koordinasyon kaybı, bulantı ve peltek konuşma gibi sorunlar baş gösteriyor. Trafik kontrollerinde yüksek alkollü çıkmak veya iş yerinde yanlış suçlamalarla karşılaşmak ise hastalar açısından hukuki krizleri tetikliyor.",
+      "Tanı aşamasında hekim gözetiminde uygulanan glikoz yükleme testleri ile kandaki etanol artışı ölçümleniyor. Tedavi protokollerinde ise hedefe yönelik antimikrobiyal ilaçlar, sıfır karbonhidrat içeren diyet programları ve bağırsak florasını düzenleyen mikrobiyota nakli gibi yöntemler öne çıkıyor. Toplumda yeterince bilinmeyen bu sendromun doğru teşhis edilmesinin, hastaların asılsız alkolizm suçlamalarından korunmasında hayati rol oynadığı belirtiliyor."
+    ],
+    "comment": "Bireylerin tükettiği karbonhidratların bağırsakta etanol üretmesi, tıbbi teşhislerin ne denli karmaşık olabileceğini net biçimde gösteriyor. Özellikle trafik denetimlerinde veya iş yaşamında haksız yere alkol suçlamasıyla karşılaşan hastalar için bu sendromun bilimsel olarak kanıtlanması hukuki süreçlerde kurtarıcı bir rol üstleniyor. Eğer bağırsak florasındaki dengesizlikler antimikrobiyal tedavilerle kontrol altına alınmazsa, karaciğer dokusunda kalıcı hasarlar kaçınılmaz hale gelecektir. Toplum genelinde bu rahatsızlığa dair farkındalığın artması, yanlış tanıların ve sosyal mağduriyetlerin önüne geçilmesini sağlayabilir.",
+    "editorNote": "Bir tabak makarna yedikten sonra alkol almış gibi sarhoş eden oto-bira fabrikası sendromu hukuki krizlere yol açıyor.",
+    "tags": [
+      "oto-bira fabrikası sendromu",
+      "sağlık",
+      "bağırsak mikrobiyomu",
+      "karbonhidrat",
+      "tıbbi araştırma"
+    ],
+    "category": "Sağlık",
+    "gorselSorgu": "science laboratory medical research",
+    "source": "Cumhuriyet",
+    "sourceUrl": "https://www.cumhuriyet.com.tr/yasam/karbonhidrati-alkole-donusturen-hastalik-bir-tabak-makarna-bile-alkolsuz-sarhos-edebiliyor-2548489",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Laboratory_at_the_Hospital_of_the_Rockefeller_Institute_for_Medical_Research_-_DPLA_-_f6ab547c760a5cbe95d9d508bdecb521.jpg/1920px-Laboratory_at_the_Hospital_of_the_Rockefeller_Institute_for_Medical_Research_-_DPLA_-_f6ab547c760a5cbe95d9d508bdecb521.jpg",
+    "gorselKaynak": {
+      "yazar": "This file was contributed to Wikimedia Commons by Science History Institute as part of a c",
+      "lisans": "No restrictions",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Laboratory_at_the_Hospital_of_the_Rockefeller_Institute_for_Medical_Research_-_DPLA_-_f6ab547c760a5cbe95d9d508bdecb521.jpg"
+    },
+    "publishedAt": "2026-10-20T09:06:00.000Z",
+    "generatedAt": "2026-10-20T09:08:36.989Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Laboratory_at_the_Hospital_of_the_Rockefeller_Institute_for_Medical_Research_-_DPLA_-_325794f2ac76f7da6512d25c279652e5.jpg/1920px-Laboratory_at_the_Hospital_of_the_Rockefeller_Institute_for_Medical_Research_-_DPLA_-_325794f2ac76f7da6512d25c279652e5.jpg",
+        "yazar": "This file was contributed to Wikimedia Commons by Science History Institute as part of a c",
+        "lisans": "No restrictions",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Laboratory_at_the_Hospital_of_the_Rockefeller_Institute_for_Medical_Research_-_DPLA_-_325794f2ac76f7da6512d25c279652e5.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Laboratory_at_the_Hospital_of_the_Rockefeller_Institute_for_Medical_Research_-_DPLA_-_f7a64a46adce15a0b3dc97c5cfd41689.jpg/1920px-Laboratory_at_the_Hospital_of_the_Rockefeller_Institute_for_Medical_Research_-_DPLA_-_f7a64a46adce15a0b3dc97c5cfd41689.jpg",
+        "yazar": "This file was contributed to Wikimedia Commons by Science History Institute as part of a c",
+        "lisans": "No restrictions",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Laboratory_at_the_Hospital_of_the_Rockefeller_Institute_for_Medical_Research_-_DPLA_-_f7a64a46adce15a0b3dc97c5cfd41689.jpg"
+      }
+    ]
+  },
+  {
+    "id": "1282527f79ac93d9",
+    "title": "Almanya üretici fiyatları Orta Doğu petrol şokuyla hızla yükseldi",
+    "slug": "almanya-uretici-fiyatlari-orta-dogu-petrol-sokuyla-hizla-yukseldi",
+    "summary": "Almanya'da Eylül ayında üretici fiyat endeksi yıllık bazda yüzde 6,7 oranına çıkarak Mart 2023 tarihinden bu yana en yüksek seviyesini gördü. Bölgesel çatışmaların tetiklediği enerji maliyetleri artışın ana sebebi olurken, uzmanlar genel enflasyonun tırmanabileceği uyarısında bulunuyor.",
+    "keyPoints": [
+      "Almanya'da ÜFE eylülde yüzde 6,7 artarak Mart 2023'ten beri en yüksek seviyeye ulaştı.",
+      "Enerji ürünleri fiyatları yıllık bazda yüzde 14,9, aylık bazda yüzde 5,8 oranında yükseldi.",
+      "Hafif kalorifer yakıtı fiyatı yüzde 91,8, motorlu taşıt yakıtları fiyatı yüzde 48,6 arttı."
+    ],
+    "body": [
+      "Orta Doğu bölgesinde yaşanan çatışmaların piyasalarda yarattığı petrol şoku, Almanya ekonomisinde üretim maliyetlerini doğrudan yukarı çekti. Federal İstatistik Ofisi verilerine göre sanayi ürünleri ile gıdayı kapsayan Üretici Fiyat Endeksi eylül ayında piyasa beklentilerini geride bırakarak yıllık bazda yüzde 6,7 oranına ulaştı. Endeks, Mart 2023 döneminden beri kaydedilen en hızlı tırmanışını yaşarken ülkede enflasyon baskısının derinleşebileceği endişelerini de beraberinde getirdi.",
+      "Temmuz ayında yüzde 3 ve ağustos ayında yüzde 4,6 olan yıllık artış hızı, eylülde aylık bazda yüzde 1,9 olarak gerçekleşti. Enerji kalemi hariç tutularak yapılan hesaplamalarda yıllık artış yüzde 3,2 seviyesinde kalırken, maliyetlerdeki tırmanışın temel kaynağı doğrudan enerji ürünleri oldu. Bölgesel gerilimlerin etkisiyle petrol türevi ürünler geçen yılın aynı dönemine kıyasla yüzde 51,3 oranında zamlandı.",
+      "Şebeke gazı dağıtımında yıllık yüzde 15, elektrik fiyatlarında ise yüzde 8,2 yükseliş görüldü. Enerji ve sanayi kollarının aksine gıda fiyatları genelinde yıllık bazda yüzde 4,1 gerileme yaşanırken, tereyağı ve sığır etindeki ucuzlama dikkat çekti.",
+      "Ara malı fiyatları eylülde yıllık yüzde 6,4 artarken, bu gruptaki en belirgin artış yüzde 14 oranındaki metal fiyatlarından kaynaklandı. Bakır yarı mamullerinde yüzde 31,4, değerli metallerde yüzde 26,5 ve demir-çelik ürünlerinde yüzde 8,4 fiyat artışı hesaplandı. Ekonomistler, üretim aşamasındaki bu maliyet yükünün er ya da geç tüketici fiyatlarına yansıyacağını ve enflasyonu yukarı çekeceğini belirtiyor."
+    ],
+    "comment": "Almanya'daki üretici fiyatlarındaki bu sert tırmanış, enerji maliyetlerinin dış şoklara ne denli açık olduğunu somut bir şekilde gösteriyor. Yıllık yüzde 6,7 seviyesindeki artış ve özellikle yakıt fiyatlarındaki yüzde 50'yi aşan sıçramalar, sanayi üretiminin yanı sıra hanehalkı bütçelerini de doğrudan tehdit ediyor. Önümüzdeki aylarda bu maliyet dalgasının tüketici enflasyonunu tetiklemesi ve Merkez Bankası'nın yüzde 2 hedefine dönüş sürecini uzatması kaçınılmaz görünüyor.",
+    "editorNote": "Almanya'da üretici fiyatları çatışmaların etkisiyle son üç buçuk yılın en yüksek seviyesine fırladı.",
+    "tags": [
+      "Almanya",
+      "Enflasyon",
+      "Ekonomi",
+      "Enerji",
+      "ÜFE"
+    ],
+    "category": "Ekonomi",
+    "gorselSorgu": "industrial factory smoke stack germany",
+    "source": "Yeni Şafak",
+    "sourceUrl": "https://www.yenisafak.com/dunya/almanyada-uretici-fiyatlari-son-35-yilin-zirvesinde-4865790",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/78/Market_centre_in_Tokyo_stock_exchange.jpg",
+    "gorselKaynak": {
+      "yazar": "ehnmark",
+      "lisans": "CC BY 2.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Market_centre_in_Tokyo_stock_exchange.jpg"
+    },
+    "publishedAt": "2026-10-20T09:04:35.000Z",
+    "generatedAt": "2026-10-20T09:08:54.044Z"
+  },
+  {
     "id": "64c64d0fd982a546",
     "title": "Aydın jandarmasından aranan şahıslara operasyon: 31 kişi yakalandı",
     "slug": "aydin-jandarmasindan-aranan-sahislara-operasyon-31-kisi-yakalandi",
