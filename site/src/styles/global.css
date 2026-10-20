@@ -108,25 +108,25 @@
   --shadow-lg: 0 36px 80px -28px rgba(0, 0, 0, 0.88);
 }
 
-/* --- SİYAN: koyu petrol/turkuaz zemin, camgöbeği aksan --- */
+/* --- SİYAN: nötr koyu (gece) zemin, camgöbeği aksan --- */
 :root[data-theme="siyan"] {
   color-scheme: dark;
 
-  --bg: #07242b;
-  --bg-elev: #0a2b33;
-  --surface: #0c3139;
-  --surface-2: #113c46;
-  --border: #1e5665;
-  --border-soft: #174651;
-  --border-strong: #28707f;
+  --bg: #0b0d10;
+  --bg-elev: #121519;
+  --surface: #161a1f;
+  --surface-2: #1c2128;
+  --border: #2b323b;
+  --border-soft: #232932;
+  --border-strong: #3b4450;
 
-  --text: #e6f8fc;
-  --text-2: #c7eaf3;
+  --text: #e8edf3;
+  --text-2: #c6ced8;
   --heading: #ffffff;
-  --muted: #94c0cb;
+  --muted: #93a0ae;
 
-  --control-bg: #113c46;
-  --control-fg: #e6f8fc;
+  --control-bg: #1c2128;
+  --control-fg: #e8edf3;
 
   --brand: #2ad4ea;
   --brand-strong: #7ce9f7;
