@@ -701,6 +701,15 @@ export async function bildirimleriGonder({ dry = false } = {}) {
             sayilan++;
             turHaber++;
           } catch (err) {
+            // Kimsenin takip etmediği kategori: OneSignal hedefi reddeder.
+            // Kategoriyi kısa süre geri çek (aynı hata için 6 saat istek atmayalım)
+            // ve bu kategorinin kalan haberlerini bu turda denemeyi bırak.
+            if (/not subscribed/i.test(err.message)) {
+              bosKategori[slug] = new Date(now).toISOString();
+              durum.bosKategori = bosKategori;
+              console.log(`  · [konu:${slug}] takipçi yok — ${KAT_BOS_GERI_CEK_SAAT} saat atlandı.`);
+              break;
+            }
             console.warn(`  ✗ [konu:${slug}] ${err.message}`);
           }
         }
