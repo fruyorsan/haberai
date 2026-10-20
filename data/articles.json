@@ -1,5 +1,114 @@
 [
   {
+    "id": "7d4f2efc05f35b93",
+    "title": "2026 KPSS ön lisans sınav sonuçları için ÖSYM takvimi netleşti",
+    "slug": "2026-kpss-on-lisans-sinav-sonuclari-icin-osym-takvimi-netlesti",
+    "summary": "Kamu Personel Seçme Sınavı ön lisans oturumu katılımı sağlayan binlerce adayın bekleyişi sona eriyor. ÖSYM tarafından paylaşılan takvime göre sınav değerlendirmeleri ay sonunda erişime açılacak.",
+    "keyPoints": [
+      "KPSS ön lisans sınavı 4 Ekim 2026 tarihinde gerçekleştirildi.",
+      "Sınav sonuçları 30 Ekim 2026 tarihinde ilan edilecek.",
+      "Adaylar sonuçları ÖSYM'nin sonuc osym gov tr adresinden sorgulayabilecek."
+    ],
+    "body": [
+      "Kamu kurumlarında memur olarak kariyer planlayan binlerce ön lisans mezununun katıldığı Kamu Personel Seçme Sınavı geride kaldı. Ölçme, Seçme ve Yerleştirme Merkezi takvimine göre ekim ayının ilk haftasında organize edilen sınavın ardından adayların heyecanlı bekleyişi hız kazandı.",
+      "Sınav salonlarından çıkan binlerce mezun, puanlarını öğrenmek ve ardından yapılacak kadro yerleştirmeleri için hazırlıklara başlamak adına gün sayıyor. Kamu sektöründe istihdam edilmek isteyen adayların gözü kulağı kurumun yapacağı resmi duyurularda yer alıyor.",
+      "ÖSYM tarafından yayımlanan güncel takvime göre, 4 Ekim'de düzenlenen sınavın değerlendirme süreci 30 Ekim tarihinde tamamlanacak. Sınavdan elde edilen puanlar belirtilen tarihte adayların erişimine sunulacak.",
+      "Sonuçların ilan edilmesinin ardından kurumlar için personel alım süreçleri başlayacak ve tercih kılavuzu yayımlanacak. Adaylar T.C. Kimlik numaraları ile şifrelerini kullanarak sonuç ekranından puanlarını öğrenebilecek ve tercihlerini gerçekleştirebilecek."
+    ],
+    "comment": "Sınav takviminin netleşmesi, adayların kariyer planlamasını zamana yayabilmesi açısından belirleyici bir eşiktir. 30 Ekim tarihinde açıklanacak puanlar, kamu kurumlarındaki açık kadro sayısına göre binlerce kişinin istihdam rotasını çizecektir. Sonuçların açıklanmasının hemen ardından yayımlanacak tercih kılavuzu, mezunların hangi kurumlara başvuru yapabileceğini netleştirecektir.",
+    "editorNote": "Ekim ayında yapılan sınavın sonuçları ay sonunda erişime açılıyor. Adaylar tercih maratonuna hazırlanıyor.",
+    "tags": [
+      "KPSS",
+      "ÖSYM",
+      "memur alımı",
+      "kamu personeli"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "OSYM exam center building",
+    "source": "CNN Türk",
+    "sourceUrl": "https://www.cnnturk.com/turkiye/kpss-on-lisans-sonucu-2026-kpss-on-lisans-sonuclari-ne-zaman-aciklanacak-gozler-osymde-3481282",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Istanbul_city_Photos-_Urban_01.jpg/1920px-Istanbul_city_Photos-_Urban_01.jpg",
+    "gorselKaynak": {
+      "yazar": "Mostafameraji",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_01.jpg"
+    },
+    "publishedAt": "2026-10-20T12:02:39.252Z",
+    "generatedAt": "2026-10-20T12:03:16.011Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Istanbul_city_Photos-_Urban_07.jpg/1920px-Istanbul_city_Photos-_Urban_07.jpg",
+        "yazar": "Mostafameraji",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_07.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Istanbul_city_Photos-_Urban_18.jpg/1920px-Istanbul_city_Photos-_Urban_18.jpg",
+        "yazar": "Mostafameraji",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_18.jpg"
+      }
+    ]
+  },
+  {
+    "id": "cc395b0603c73ccd",
+    "title": "Google Cloud altyapısındaki elektrik arızası Avrupa'yı sarstı",
+    "slug": "google-cloud-altyapisindaki-elektrik-arizasi-avrupayi-sarst",
+    "summary": "Batı Avrupa'daki Google Cloud tesislerinde yaşanan elektrik kesintisi, bankacılık ve finans teknolojisi devlerini erişilemez hale getirdi. Şirket yetkilileri Londra merkezli europe-west2 bölgesindeki aksaklıkları doğrularken onarım çalışmalarının sürdüğünü bildirdi.",
+    "keyPoints": [
+      "London merkezli europe-west2 bölgesinde TSİ 09.08 itibarıyla kesinti başladı.",
+      "Revolut ve Halifax gibi büyük finans kuruluşları hizmet veremez duruma geldi.",
+      "BigQuery ve Kubernetes dahil on beşten fazla bulut hizmeti etkilendi."
+    ],
+    "body": [
+      "Teknoloji devi Google'ın bulut altyapısında meydana gelen beklenmedik bir elektrik kesintisi, Avrupa kıtasında dijital bankacılık işlemlerini sekteye uğrattı. Batı Avrupa operasyonlarını yürüten merkezlerde yaşanan teknik aksaklıklar, başta finans sektörü olmak üzere çok sayıda iş kolunu doğrudan etkiledi. Şirketin resmî durum sayfasına yansıyan bilgilere göre, Londra tabanlı europe-west2 bölgesinde konumlanan sunucularda ciddi erişim sorunları baş gösterdi.",
+      "Yaşanan bu ağ kesintisinden yalnızca tek bir servis değil, aralarında BigQuery Veri Aktarım Hizmeti, Bulut Dosya Depolama ve Google Sanal Sunucu Hizmeti gibi kritik altyapıların da bulunduğu geniş bir yelpaze etkilendi. Aynı zamanda Bulut Üzerinde Uygulama Çalıştırma Hizmeti, Google Kubernetes Konteyner Yönetim Hizmeti ve Kalıcı Disk Depolama birimleri de geçici olarak devre dışı kaldı. Kesinti dalgası, özellikle büyük veri işleme ve kurumsal barındırma çözümlerine bağımlı olan şirketleri zor durumda bıraktı.",
+      "Teknolojik altyapıdaki bu aksama, günlük kullanıcıların finansal uygulamalara erişimini de engelledi. İngiltere merkezli dijital bankacılık platformu Revolut ve Lloyds bankacılık grubu çatısı altındaki Halifax müşterileri, hesaplarına ve dijital cüzdanlarına ulaşamadı. İnternet kesintilerini derleyen Downdetector platformunun verilerine göre, HSBC başta olmak üzere farklı dijital servisler ve posta hizmetleri de bu teknolojik arızadan payını aldı.",
+      "Hizmet kesintisinin ardından etkilenen kurumlar müşterilerini bilgilendirmek üzere ardı ardına açıklama yaptı. Revolut, kullanıcı fonlarının ve verilerinin tamamen güvence altında olduğunu vurgularken, Halifax yetkilileri de mobil ve çevrim içi kanallardaki erişim sorunlarını resmi sosyal medya kanalları üzerinden doğruladı. Google mühendislerinin arızayı gidermek için başlattığı çalışmalar devam ediyor."
+    ],
+    "comment": "Altyapı sağlayıcılarındaki merkezî kesintiler, dijital bankacılığın ne denli kırılgan bir omurga üzerine kurulduğunu açıkça gösteriyor. Birinci derece sunucu merkezlerindeki elektrik kaynaklı aksaklıklar, milyonlarca bireysel kullanıcının tek bir tıkla varlıklarına ulaşmasını anlık olarak engelleyebiliyor. Revolut veya Halifax örneklerinde görüldüğü üzere, bulut bağımlılığı yüksek olan finans kurumlarının yedeklilik senaryolarını acilen gözden geçirmesi gerekiyor. Aksi takdirde, önümüzdeki dönemde yaşanabilecek benzer siber ya da fiziksel kesintiler, finansal sistemin bütününe yönelik güven krizlerini tetikleyebilir.",
+    "editorNote": "Londra merkezli elektrik kesintisi milyonlarca kullanıcıyı vurdu. Bulut bağımlılığı finans sektörünü nasıl kilitliyor?",
+    "tags": [
+      "Google Cloud",
+      "Revolut",
+      "Halifax",
+      "bankacılık",
+      "kesinti"
+    ],
+    "category": "Dünya",
+    "gorselSorgu": "data center server room",
+    "source": "NTV Dünya",
+    "sourceUrl": "https://www.ntv.com.tr/dunya/google-clouddaki-sorun-avrupada-bankalari-da-vurdu-1747177",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1920px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
+    "gorselKaynak": {
+      "yazar": "Joël van der Loo",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Duga-1_radar_data_center_interior_server_room_2018.jpg"
+    },
+    "publishedAt": "2026-10-20T12:02:15.000Z",
+    "generatedAt": "2026-10-20T12:03:29.410Z",
+    "gorselEk": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Le_torrette_con_i_bocchettoni_per_il_raffreddamento_ad_aria_dei_server_in_un_data_center_attivo_dal_2015.jpg",
+        "yazar": "Lapalmauz",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Le_torrette_con_i_bocchettoni_per_il_raffreddamento_ad_aria_dei_server_in_un_data_center_attivo_dal_2015.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Utah_Data_Center_Panorama_%28cropped%29.jpg/1920px-Utah_Data_Center_Panorama_%28cropped%29.jpg",
+        "yazar": "Swilsonmc",
+        "lisans": "CC BY-SA 3.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Utah_Data_Center_Panorama_(cropped).jpg"
+      }
+    ]
+  },
+  {
     "id": "7c4539cbadbe9601",
     "title": "Mersin merkezli üç ilde kaçak tütün operasyonu düzenlendi",
     "slug": "mersin-merkezli-uc-ilde-kacak-tutun-operasyonu-duzenlendi",
@@ -46,6 +155,62 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Police_Station,_Mahabaleshwar.jpg"
       }
     ]
+  },
+  {
+    "id": "39abf84fccb85ed5",
+    "title": "Antalya'da gün içinde iki ayrı deprem meydana geldi",
+    "slug": "antalyada-gun-icinde-iki-ayri-deprem-meydana-geldi",
+    "summary": "Afet ve Acil Durum Yönetimi Başkanlığı verilerine göre Antalya'nın iki farklı ilçesinde gün içerisinde hafif şiddetli sarsıntılar kaydedildi. Yaşanan depremlerde herhangi bir olumsuz durumla karşılaşılmadığı açıklandı.",
+    "keyPoints": [
+      "Döşemealtı ilçesinde sabah saatlerinde 1,4 büyüklüğünde deprem ölçüldü.",
+      "Korkuteli ilçesinde öğle saatlerinde 1,3 büyüklüğünde sarsıntı yaşandı.",
+      "Her iki deprem de yerin 7 kilometre derinliğinde kaydedildi."
+    ],
+    "body": [
+      "Antalya genelinde gün içerisinde yaşanan sarsıntılar vatandaşlar tarafından merakla takip edilirken, resmi kurumlar anlık verileri paylaşmaya devam ediyor. Kentte meydana gelen ilk hareketlilik sabah saatlerinde başkent hattına yakın bir bölgede ortaya çıktı. Yetkili kurumların paylaştığı verilere göre bölgedeki ilk sarsıntı sabah saat 09.38 sularında kaydedildi.",
+      "Merkez üssü Döşemealtı ilçesi olan sabah saatlerindeki sarsıntının büyüklüğü 1,4 ML olarak hesaplandı. Yerin 7 kilometre derinliğinde gerçekleşen bu ilk hareketin koordinatları 37.1113 enlem ve 30.5252 boylam şeklinde duyuruldu. Günün ilk saatlerindeki bu gelişme kısa süreli bir endişe yaratsa da herhangi bir zarar meydana getirmedi.",
+      "Kentte günün ikinci depremi ise öğle saatlerinde Korkuteli ilçesinde kayıtlara geçti. Saat 13.25'te gerçekleşen bu ikinci sarsıntının büyüklüğü ise 1,3 ML olarak ölçüldü. Korkuteli'ndeki depremin de yine yerin 7 kilometre derinliğinde meydana geldiği ve koordinatlarının 36.867 enlem ile 30.3425 boylam olduğu açıklandı.",
+      "Yaşanan iki sarsıntının ardından bölgede herhangi bir olumsuz durumun yaşanmadığı ve ekiplerin saha taramalarında olumsuzluk tespit edilmediği öğrenildi. Antalya genelinde gün içinde kaydedilen tüm bu sarsıntılara ilişkin anlık gelişmeler, ilgili kurumların internet siteleri üzerinden vatandaşlar tarafından takip edilebiliyor."
+    ],
+    "comment": "Antalya gibi turizm bölgelerinde yaşanan küçük ölçekli sarsıntılar, yapı stokunun kalitesini ve erken uyarı sistemlerinin işlevselliğini her zaman test eder. Depremlerin her ikisinin de 7 kilometre derinlikte gerçekleşmiş olması, yer kabuğundaki hareketliliğin sığ odaklı olduğunu gösteriyor. Uzmanların sıkça vurguladığı üzere, bu tür düşük büyüklükteki hareketler yıkıcı bir sonuç doğurmasa da bölge halkının her an hazırlıklı olmasını zorunlu kılıyor. Şehirdeki mevcut yapılaşmanın bu tür sığ sarsıntılara karşı direnci, olası daha büyük senaryolar için hayati bir güvence oluşturuyor.",
+    "editorNote": "Antalya'da gün içinde peş peşe yaşanan sığ depremler herhangi bir olumsuzluğa yol açmadı.",
+    "tags": [
+      "Antalya",
+      "Deprem",
+      "AFAD",
+      "Döşemealtı",
+      "Korkuteli"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "earthquake damaged building",
+    "source": "Antalya Ekspres",
+    "sourceUrl": "https://www.antalyaekspres.com.tr/antalyada-iki-ilcede-deprem",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Interior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg/1920px-Interior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg",
+    "gorselKaynak": {
+      "yazar": "Adem",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Interior_of_a_damaged_building_after_7,8_magnitude_earthquake_in_Turkiye.jpg"
+    },
+    "publishedAt": "2026-10-20T11:57:00.000Z",
+    "generatedAt": "2026-10-20T12:02:50.433Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg/1920px-Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg",
+        "yazar": "Adem",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Exterior_of_a_damaged_building_after_7,8_magnitude_earthquake_in_Turkiye.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye_2.jpg/1920px-Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye_2.jpg",
+        "yazar": "Adem",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Exterior_of_a_damaged_building_after_7,8_magnitude_earthquake_in_Turkiye_2.jpg"
+      }
+    ],
+    "breaking": true
   },
   {
     "id": "161970037c971855",
@@ -101,6 +266,45 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Mountain_Ash_Berries_(6137078855).jpg"
       }
     ]
+  },
+  {
+    "id": "9d03d75781a8128b",
+    "title": "Kahramanmaraş Altınova konutlarında hak sahipleri anahtarlarını alıyor",
+    "slug": "kahramanmaras-altinova-konutlarinda-hak-sahipleri-anahtarlarini-aliyor",
+    "summary": "Kahramanmaraş merkezli yürütülen deprem konutları çalışmalarında Altınova bölgesindeki etap tamamlandı. Hak sahipleri düzenlenen törenle yeni yuvalarının anahtarlarına kavuşurken bölgedeki teslimatlar hız kazandı.",
+    "keyPoints": [
+      "Altınova deprem konutlarında hak sahipleri için anahtar teslim töreni başladı.",
+      "Kahramanmaraş'ta afetzedelerin kalıcı konutlarına yerleşme süreci devam ediyor.",
+      "Tamamlanan konutlar törenle vatandaşlara teslim edildi."
+    ],
+    "body": [
+      "Kahramanmaraş genelinde süren yeniden imar ve inşa faaliyetleri kapsamında yeni bir aşamaya geçildi. Deprem konutlarının yapımının tamamlandığı bölgelerden biri olan Altınova'da hak sahipleri için anahtar dağıtım töreni gerçekleştirildi. Vatandaşlar uzun süredir bekledikleri kalıcı ve güvenli konutlarına kavuşmanın mutluluğunu yaşadı.",
+      "Yetkililerin katılımıyla düzenlenen teslim töreninde dairelerin anahtarları sahiplerine tek tek teslim edildi. Bölgede inşa edilen konutların altyapısı ve çevre düzenlemeleri de tamamlanarak yaşama hazır hale getirildi. Aileler yeni yuvalarını inceleyerek taşınma hazırlıklarına başladı.",
+      "Kent genelindeki afet konutlarının teslim süreçleri planlanan takvim doğrultusunda ilerliyor. Altınova etabındaki bu dağıtımla birlikte binlerce vatandaş daha güvenli yaşam alanlarına adım atmış oldu. Yapım çalışmaları süren diğer bölgelerde de benzer teslimatların kısa süre içinde yapılması planlanıyor."
+    ],
+    "comment": "Afet bölgesindeki konut teslimatlarının hızlanması, barınma krizinin kalıcı çözümlere evrildiğini gösteriyor. Altınova'daki anahtar dağıtımı, hak sahiplerinin normal hayata dönüşlerinde somut bir kilometre taşı oluşturuyor. Sürecin planlanan takvime uygun şekilde ilerlemesi, bekleyen diğer vatandaşlar açısından da güven tazeleyici bir unsur olarak öne çıkıyor.",
+    "editorNote": "Altınova deprem konutlarında başlayan anahtar teslimleri, hak sahiplerinin uzun soluklu bekleyişine son nokta koydu.",
+    "tags": [
+      "Kahramanmaraş",
+      "Deprem Konutları",
+      "Altınova",
+      "Anahtar Teslimi",
+      "Gündem"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "earthquake damaged building new housing",
+    "source": "Kanal 46",
+    "sourceUrl": "https://www.kanal46.com/kahramanmarasta-beklenen-gun-geldi-altinova-deprem-konutlarinda-anahtar-teslimi-basladi",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/1931_Hawkes_Bay_Earthquake_-_Unidentified_Damaged_Street_%2824029554553%29.jpg/1920px-1931_Hawkes_Bay_Earthquake_-_Unidentified_Damaged_Street_%2824029554553%29.jpg",
+    "gorselKaynak": {
+      "yazar": "Archives New Zealand from New Zealand",
+      "lisans": "CC BY-SA 2.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:1931_Hawkes_Bay_Earthquake_-_Unidentified_Damaged_Street_(24029554553).jpg"
+    },
+    "publishedAt": "2026-10-20T11:56:00.000Z",
+    "generatedAt": "2026-10-20T12:03:00.461Z",
+    "breaking": true
   },
   {
     "id": "adaa1168366bc906",
