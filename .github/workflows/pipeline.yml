@@ -84,18 +84,6 @@ jobs:
           SITE_URL: ${{ vars.SITE_URL }}
         run: npm run indexnow
 
-      # Web push bildirimi (OneSignal): son dakika haberleri tum abonelere,
-      # takip edilen konular yalnizca o konuyu izleyenlere gider. Anahtarlar
-      # tanimli degilse sessizce atlar. Gonderilenler data/bildirim.json'da
-      # tutulur (sonraki adimda commit'e girer) → ayni haber iki kez gitmez.
-      - name: Push bildirimi (OneSignal)
-        continue-on-error: true
-        env:
-          SITE_URL: ${{ vars.SITE_URL }}
-          ONESIGNAL_APP_ID: ${{ vars.ONESIGNAL_APP_ID }}
-          ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
-        run: npm run bildirim
-
       - name: Degisiklikleri kaydet
         id: commit
         run: |
@@ -197,6 +185,37 @@ jobs:
           user_name: haber-bot
           user_email: bot@users.noreply.github.com
           commit_message: "yayin: ${{ github.run_number }}"
+
+      # Web push bildirimi (OneSignal) — ARTIK YAYINDAN SONRA.
+      # Eski sıralamada bu adım site derlenmeden önce çalışıyordu; okuyucu
+      # bildirime hemen tıkladığında haber sayfası GitHub Pages'e henüz
+      # çıkmamış oluyor ve 404 alıyordu. Sıra: derle → yayınla → bildir.
+      # Ayrıca src/bildirim.js hedef URL'yi canlı doğrular (CDN gecikmesi).
+      - name: Push bildirimi (OneSignal)
+        continue-on-error: true
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          ONESIGNAL_APP_ID: ${{ vars.ONESIGNAL_APP_ID }}
+          ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
+        run: npm run bildirim
+
+      # Bildirim kaydı (data/bildirim.json) yayın adımından sonra değiştiği
+      # için ayrıca commit edilir; aksi halde aynı haber her turda yeniden
+      # gönderilirdi. Push, GITHUB_TOKEN ile yapıldığı için yeni tur tetiklemez.
+      - name: Bildirim kaydini kaydet
+        continue-on-error: true
+        run: |
+          git config user.name "haber-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/bildirim.json
+          if git diff --staged --quiet; then
+            echo "Bildirim kaydi degismedi."
+            exit 0
+          fi
+          git commit -m "chore: bildirim kaydi"
+          git fetch origin main
+          git merge --no-edit -X ours origin/main
+          git push
 
       # NOT (18.10.2026): Netlify yayini KALDIRILDI.
       # Gerekce: tek yayin adresi https://haberinai.site (GitHub Pages) olsun.

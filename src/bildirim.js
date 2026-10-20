@@ -259,11 +259,53 @@ function uuidAnahtar(metin) {
   )}-${h.slice(20, 32)}`;
 }
 
+const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// Bildirim, haber sayfası GERÇEKTEN yayındayken gönderilir.
+//
+// Neden: eskiden push adımı site derlemesinden/yayınından ÖNCE çalışıyordu.
+// Okuyucu bildirime hemen tıkladığında haber sayfası henüz GitHub Pages'e
+// çıkmamış oluyor ve 404 alıyordu. Artık iş akışında bildirim yayından sonra
+// çalışır; buradaki kontrol de CDN gecikmesine karşı son güvencedir.
+// Sayfa hazır değilse gonder() hata verir; çağıran taraf haberi "gönderildi"
+// olarak işaretlemez ve bir sonraki turda yeniden dener.
+const canliOnbellek = new Map();
+async function sayfaHazirMi(url, deneme = 3, aralikMs = 8000) {
+  const anahtar = String(url || "");
+  if (!anahtar) return false;
+  if (canliOnbellek.has(anahtar)) return canliOnbellek.get(anahtar);
+  for (let i = 0; i < deneme; i++) {
+    try {
+      const res = await fetch(anahtar, {
+        method: "GET",
+        headers: {
+          "User-Agent": "HaberinaiBot/1.0 (+https://haberinai.site)",
+          Range: "bytes=0-2047",
+        },
+        redirect: "follow",
+        signal: AbortSignal.timeout(8000),
+      });
+      if (res.ok || res.status === 206) {
+        canliOnbellek.set(anahtar, true);
+        return true;
+      }
+    } catch {
+      // ağ/CDN hatası: kısa bekleyip yeniden dene
+    }
+    if (i < deneme - 1) await bekle(aralikMs);
+  }
+  canliOnbellek.set(anahtar, false);
+  return false;
+}
+
 /**
  * OneSignal'e bir bildirim gönderir.
  * @param {{baslik:string,icerik:string,url:string,gorsel?:string,etiket?:string,ttl:number,anahtar:string}} p
  */
 async function gonder(p) {
+  if (!(await sayfaHazirMi(p.url))) {
+    throw new Error(`hedef sayfa yayında değil (404/hazır değil): ${p.url}`);
+  }
   const govde = {
     app_id: APP_ID,
     target_channel: "push",
