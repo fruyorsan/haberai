@@ -1,5 +1,114 @@
 [
   {
+    "id": "56d5c348e999c8a4",
+    "title": "Yandex Veri Merkezi Vuruldu, Taksi ve Ödeme Hizmetleri Çöktü",
+    "slug": "yandex-veri-merkezi-vuruldu-taksi-odeme-hizmetleri-coktu",
+    "summary": "Rusya’nın teknoloji devi Yandex, Vladimir bölgesindeki veri merkezinin Ukrayna İHA saldırısıyla vurulması sonucu taksi ve ödeme hizmetlerini tamamen kaybetti. Ayrıca bulut hizmetleri çöktü, 5 bin kişi elektriksiz kaldı ve süper bilgisayarlar tamamen devre dışı bırakıldı.",
+    "keyPoints": [
+      "Vladimir veri merkezi vuruldu, taksi ve ödeme uygulamaları durdu",
+      "Ryazan ve Kaluga tesisleri daha önce saldırıya uğradı",
+      "5 bin kişi elektrik kesintisi yaşadı, bulut hizmetleri çöktü"
+    ],
+    "body": [
+      "Yandex, Rusya’nın en büyük internet ve teknoloji platformlarından biri olarak, ülke çapında taksi, ödeme ve bulut hizmetlerini tek bir ekosistemde sunuyor. Son dört gün içinde üç kez gerçekleştirilen Ukrayna insansız hava aracı (İHA) saldırısı, şirketin Vladimir şehrindeki kritik veri merkezini hedef alarak altyapısında ciddi bir kesinti yarattı. Bu saldırı sonucunda veri merkezi tamamen kapanmak zorunda kaldı ve hizmetlerin çoğu aniden durdu.",
+      "Vladimir veri merkezinin kapanması, Yandex’in taksi uygulaması Yandex.Taxi ve ödeme platformu Yandex.Checkout gibi günlük kullanılan hizmetlerin çalışamaz hâle gelmesine yol açtı. Kullanıcılar, uygulamalara erişemediği için alternatif taksi ve ödeme çözümlerine yönelmek zorunda kaldı. Aynı zamanda Yandex’in bulut altyapısında barındırılan yüzbinlerce veri ve iş süreci de kesintiye uğradı, bu da birçok işletmenin operasyonel süreçlerini etkiledi.",
+      "Saldırının etkileri sadece dijital hizmetlerle sınırlı kalmadı. Veri merkezinin bulunduğu bölgedeki elektrik altyapısı da zarar gördü ve yaklaşık 5 bin kişi uzun süreli elektriksizlik yaşadı. Bu durum, yerel halkın günlük yaşamını zorlaştırırken, acil durum hizmetlerinin de aksamasına neden oldu. Yandex’in süper bilgisayarları, yapay zeka ve makine öğrenimi projelerini destekleyen kritik bir altyapıydı; bu cihazların devre dışı kalması, şirketin AI araştırma ve geliştirme çalışmalarını da durdurdu.",
+      "Önceden Ryazan ve Kaluga’da da benzer saldırıların gerçekleştiği bilinmekteydi. Bu bölgelerdeki veri merkezlerinin de zarar görmesi, Yandex’in ülke genelindeki altyapısal dayanıklılığının sorgulanmasına yol açtı. Şirket, saldırıların artan frekansı ve hedef odaklılığı karşısında güvenlik önlemlerini yeniden gözden geçirmeye başladı ve yeni savunma protokolleri geliştirmeyi planladığını duyurdu.",
+      "Yandex’in bu saldırılarla karşılaştığı büyük kesintiler, Rusya’nın dijital ekosisteminde tek bir sağlayıcıya bağımlılığın risklerini ortaya koydu. Uzmanlar, şirketin veri merkezlerini coğrafi olarak dağıtarak ve yedekleme sistemlerini güçlendirerek benzer durumların etkisini azaltması gerektiğini vurguluyor. Aksi takdirde, gelecekteki saldırılar hem şirketin itibarını hem de milyonlarca kullanıcının günlük yaşamını olumsuz etkileyebilir."
+    ],
+    "comment": "Yandex’in altyapı saldırılarına maruz kalması, hizmet sürekliliğini ciddi şekilde riske atıyor. Özellikle Vladimir veri merkezinin çökmesi ve 5 bin kişinin elektriksiz kalması, taksi sürücüleri ve ödeme uygulaması kullanıcıları için anlık ve geniş çaplı kesintilere yol açtı. Bu durum, tek bir veri merkezine yoğunlaşmanın güvenlik açıklarını ortaya koyuyor; rakipleri daha dağıtık ve yedekli sistemlerle avantaj elde edebilir. Eğer Yandex coğrafi çeşitlendirme ve yedekleme stratejilerini hızla uygularsa, benzer saldırıların etkisini büyük ölçüde sınırlayabilir.",
+    "editorNote": "Yandex’in veri merkezi vurulması, milyonlarca kullanıcının günlük işlemlerini aksattı; altyapı güvenliğini artırmak için acil adımlar gerekiyor.",
+    "tags": [
+      "Yandex",
+      "İHA",
+      "veri merkezi",
+      "taksi uygulamaları",
+      "bulut hizmetleri"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "Yandex data center damaged",
+    "source": "ssbulten.com.tr",
+    "sourceUrl": "https://ssbulten.com.tr/video-haber/detay/rusyanin-teknoloji-devi-yandexe-buyuk-darbe-ukraynanin-iha-saldirilari-neleri-durdurdu--26110",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg/1920px-Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
+    "gorselKaynak": {
+      "yazar": "Shixart1985",
+      "lisans": "CC BY 2.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg"
+    },
+    "publishedAt": "2026-10-20T17:55:53.000Z",
+    "generatedAt": "2026-10-20T17:58:25.958Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/CyberDrive_Technology_CD526D_-_board_2-9901.jpg/1920px-CyberDrive_Technology_CD526D_-_board_2-9901.jpg",
+        "yazar": "Raimond Spekking",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:CyberDrive_Technology_CD526D_-_board_2-9901.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/CyberDrive_Technology_CD526D_-_board-9601.jpg/1920px-CyberDrive_Technology_CD526D_-_board-9601.jpg",
+        "yazar": "Raimond Spekking",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:CyberDrive_Technology_CD526D_-_board-9601.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
+    "id": "6d6e04143ed68081",
+    "title": "CIA, İsrail’de İç Savaş ve Çöküş Riski Uyardı",
+    "slug": "cia-israilde-ici-savas-ve-cokuk-riski-uyaradi",
+    "summary": "CIA, İsrail’de derin ideolojik çatışmanın iç savaşa dönüşebileceğini raporladı. Rapor, toplumun seküler ve milliyetçi kesimleri arasındaki kutuplaşmanın devlet kurumlarının meşruiyetini sarsabileceğini vurguluyor. 2026 seçimleri öncesinde bu durumun ülke içindeki politik dengeyi yeniden şekillendirebileceği belirtiliyor.",
+    "keyPoints": [
+      "İç savaş riskinin yükseldiği rapor",
+      "Seküler ve milliyetçi kesimler arasındaki kutuplaşma",
+      "2026 seçimleri öncesi politik denge değişebilir"
+    ],
+    "body": [
+      "CIA’nın en son raporu, İsrail’in kuruluşundan bu yana süregelen ideolojik çatışmanın iç savaş boyutuna ulaşabileceğini ortaya koyuyor. Rapor, toplumun seküler ve liberal kesimleri ile aşırı dindar ve milliyetçi gruplar arasındaki farkın, sadece siyasi bir çekişme değil, devlet kurumlarının meşruiyetini sarsan bir kriz haline geldiğini gösteriyor. Raporun detaylarını değerlendiren Yeditepe Üniversitesi Doç. Dr. Furkan Kaya, Netanyahu’nun yargı reformu girişiminin bu kutuplaşmayı daha da şiddetlendirdiğini belirtiyor. Gazze’deki katliamlar da bu durumun toplumsal patlama noktasını erken çektiğine işaret ediyor. Ordu mensuplarının askerlikten kaçma oranının artması ve yaşanan ağır travmalar, İsrail’in iddia ettiği yenilmezlik mitini zayıflatıyor. Bu durum, güvenlik saplantısının iç dinamikleri içinde boğulma tehlikesi yarattığını ortaya koyuyor. Siyonist rejimin sınır genişletme hedefleri, sokak çatışmaları ve radikal grupların siyasallaşmasıyla birleşerek ülkenin iç dinamiklerine zarar veriyor. ABD ile olan müttefiklik ilişkisi de güven bunalımı yaşamaya başladı; İsrail istihbaratı, Amerikalı üst düzey bürokratların telefonlarını dinleyerek gizli toplantılara sızma girişiminde bulunuyor. Amerikan kamuoyunda İsrail’e yönelik olumsuz bakış açısı yükseldi ve özellikle genç seçmenler, soykırımlara sağlanan yardımlara karşı isyan gösteriyor. Washington koridorlarında yeni bir hizalanma zorunlu hale gelmiş durumda. Bu gelişmeler, 2026’de Binyamin Netanyahu’nun devrilmesi ya da yeniden koalisyon kurarak güç kazanmasıyla ülkenin kurumsal çöküşünü nasıl değiştireceğini belirleyecek.",
+      "deki ideolojik bölünmenin iç savaş riskine dönüştüğü gerçeğini ortaya koyuyor. Seküler ve milliyetçi kesimler arasındaki kutuplaşma",
+      "ülkenin siyasi istikrarını tehdit ediyor. 2026 seçimleri yaklaşırken",
+      "bu durumun hükümet politikalarını ve ulusal güvenliği doğrudan etkileyebileceği göz önünde bulundurulmalı. ABD ile ittifakın güven krizi",
+      "iki ülkenin stratejik ilişkilerini yeniden şekillendirebilir. Türkiye",
+      "deki ideolojik çatışmanın iç savaşa dönüşme ihtimalini gündeme getiriyor.\""
+    ],
+    "comment": "",
+    "editorNote": "",
+    "tags": [],
+    "category": "Dünya",
+    "gorselSorgu": "",
+    "source": "ssbulten.com.tr",
+    "sourceUrl": "https://ssbulten.com.tr/video-haber/detay/cia-uyardi-israilde-ic-savas-ve-cokus-riski-var--26111",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Person_holding_world_globe.jpg/1920px-Person_holding_world_globe.jpg",
+    "gorselKaynak": {
+      "yazar": "Porapak Apichodilok",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Person_holding_world_globe.jpg"
+    },
+    "publishedAt": "2026-10-20T17:55:45.000Z",
+    "generatedAt": "2026-10-20T17:58:35.783Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/0020Reinvent_Your_World_With_Globe-Blackpink_The_Show_10.jpg/1920px-0020Reinvent_Your_World_With_Globe-Blackpink_The_Show_10.jpg",
+        "yazar": "Judgefloro",
+        "lisans": "CC0",
+        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:0020Reinvent_Your_World_With_Globe-Blackpink_The_Show_10.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/World_globe_%28Unsplash_gEKMstKfZ6w%29.jpg/1920px-World_globe_%28Unsplash_gEKMstKfZ6w%29.jpg",
+        "yazar": "Ben White benwhitephotography",
+        "lisans": "CC0",
+        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:World_globe_(Unsplash_gEKMstKfZ6w).jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "e93fdc473943d7c0",
     "title": "Futbolcu Kazanç Listesi Açıklandı, Türkiye’den Bir İsim Öne Çıktı",
     "slug": "futbolcu-kazanc-listesi-aciklandi-turkiyeden-bir-isim-ocene-cikti",
