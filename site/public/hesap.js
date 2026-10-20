@@ -384,6 +384,19 @@
   async function pushEsle(u) {
     u = u || oturumOku();
     if (!u) return;
+    // Yerel kopya OneSignal'den BAĞIMSIZ yazılır: bildirim paneli ve haber
+    // sayfasındaki "takip et" düğmeleri, SDK hazır olmasa da seçimleri dolu
+    // göstersin. (Eskiden erken return yüzünden seçimler kaybolmuş görünüyordu.)
+    var slugs = u.bildirim_ilgi && u.bildirim_ilgi.length ? u.bildirim_ilgi : u.ilgi || [];
+    try {
+      localStorage.setItem("bildirim-kategoriler", JSON.stringify(slugs));
+      localStorage.setItem("bildirim-son-dakika", "true");
+      if (u.bildirim_siklik) localStorage.setItem("bildirim-siklik", u.bildirim_siklik);
+      window.dispatchEvent(
+        new CustomEvent("hb-bildirim-degisti", { detail: { kategoriler: slugs } })
+      );
+    } catch (e) {}
+
     var hazir = window.HaberinaiOS && window.HaberinaiOS.hazir;
     if (!hazir) return;
     var os = await Promise.race([
@@ -395,12 +408,6 @@
       }),
     ]);
     if (!os) return;
-
-    var slugs = u.bildirim_ilgi || [];
-    try {
-      localStorage.setItem("bildirim-kategoriler", JSON.stringify(slugs));
-      localStorage.setItem("bildirim-son-dakika", "true");
-    } catch (e) {}
 
     try {
       os.login(String(u.id));

@@ -53,11 +53,17 @@ const SITE_URL = (process.env.SITE_URL || "https://fruyorsan.github.io").replace
 const SON_MIN_ARALIK_DK = Number(process.env.BILDIRIM_SON_ARALIK_DK ?? 25);
 const SON_MAX_GUN = Number(process.env.BILDIRIM_SON_MAX_GUN ?? 12);
 const SON_TTL_SAAT = Number(process.env.BILDIRIM_SON_TTL_SAAT ?? 6);
-const KAT_MIN_ARALIK_DK = Number(process.env.BILDIRIM_KAT_ARALIK_DK ?? 120);
-const KAT_MAX_GUN = Number(process.env.BILDIRIM_KAT_MAX_GUN ?? 18);
+// Konu bildirimleri: "anında" seçen okuyucu, takip ettiği kategoride çıkan HER
+// yeni haberi alır. Bu yüzden kategori başına bekleme süresi varsayılan olarak
+// kapalı (0). İstenirse BILDIRIM_KAT_ARALIK_DK ile geri açılabilir.
+const KAT_MIN_ARALIK_DK = Number(process.env.BILDIRIM_KAT_ARALIK_DK ?? 0);
+const KAT_MAX_GUN = Number(process.env.BILDIRIM_KAT_MAX_GUN ?? 120);
 const KAT_TTL_SAAT = Number(process.env.BILDIRIM_KAT_TTL_SAAT ?? 3);
-const KAT_TUR_ADET = Number(process.env.BILDIRIM_KAT_TUR_ADET ?? 3);
-const TOPLAM_MAX_GUN = Number(process.env.BILDIRIM_TOPLAM_MAX_GUN ?? 24);
+// Tur başına en fazla kaç KATEGORİ işlenir (adil sıra).
+const KAT_TUR_ADET = Number(process.env.BILDIRIM_KAT_TUR_ADET ?? 6);
+// Tur başına gönderilecek en fazla HABER (taşma koruması; sonraki turda devam).
+const KAT_TUR_HABER = Number(process.env.BILDIRIM_KAT_TUR_HABER ?? 20);
+const TOPLAM_MAX_GUN = Number(process.env.BILDIRIM_TOPLAM_MAX_GUN ?? 150);
 // Özet bildirimi: "ozet" seçen okuyucuya günde 3 kez (TR 09/15/21).
 const OZET_SAATLER = [9, 15, 21];
 const OZET_ARALIK_SAAT = Number(process.env.BILDIRIM_OZET_ARALIK_SAAT ?? 4);
@@ -594,24 +600,31 @@ export async function bildirimleriGonder({ dry = false } = {}) {
   } else {
     // Her kategori için en taze haber; bekleme süresi dolmuş kategorilerden
     // EN UZUN SÜREDİR bildirilmeyen seçilir (adil sıra, tek kategori akışı ezmesin).
+    // Her kategorideki TÜM taze haberler gönderilir (yalnızca en yenisi değil):
+    // "Teknoloji" takip eden okuyucu, sıklık "anında" ise o kategoride çıkan her
+    // haberi alır. Aynı haber `kat-<id>` anahtarıyla bir kez gider.
     const grup = new Map();
     for (const a of yeni) {
       if (a.breaking === true || !taze(a, KAT_TTL_SAAT, now)) continue;
       const k = a.categorySlug || "diger";
-      const varOlan = grup.get(k);
-      if (!varOlan || yayinZamani(a) > yayinZamani(varOlan)) grup.set(k, a);
+      if (!grup.has(k)) grup.set(k, []);
+      grup.get(k).push(a);
+    }
+    for (const liste of grup.values()) {
+      liste.sort((a, b) => yayinZamani(b) - yayinZamani(a));
     }
 
-    const uygun = [...grup.entries()]
-      .filter(([slug]) => {
+    const uygun = [...grup.keys()]
+      .filter((slug) => {
         const son = durum.sonKategori?.[slug];
-        if (!son) return true;
+        if (!son || KAT_MIN_ARALIK_DK <= 0) return true;
         return (now - Date.parse(son)) / 60000 >= KAT_MIN_ARALIK_DK;
       })
       .sort(
         ([a], [b]) =>
           Date.parse(durum.sonKategori?.[a] || 0) - Date.parse(durum.sonKategori?.[b] || 0)
-      );
+      )
+      .slice(0, KAT_TUR_ADET);
 
     if (!uygun.length) {
       console.log(
@@ -619,39 +632,42 @@ export async function bildirimleriGonder({ dry = false } = {}) {
           `(${grup.size} kategoride taze haber var, hepsi bekleme süresinde).`
       );
     } else {
-      // Tur başına birkaç kategoriye AYRI AYRI gönderilir. Eskiden yalnızca tek
-      // kategori seçiliyordu; 14 kategori × 6/gün tavanı yüzünden "Teknoloji"
-      // seçen okuyucu günlerce sıra bekleyebiliyordu. Artık her kategori kendi
-      // takipçisine gider, sıklık filtresi "aninda" olanlara ulaşır.
-      const secilen = uygun.slice(0, KAT_TUR_ADET);
-      for (const [slug, aday] of secilen) {
-        const gunToplam3 = (durum.gunSayi.son || 0) + (durum.gunSayi.kategori || 0);
-        if (gunToplam3 >= TOPLAM_MAX_GUN || (durum.gunSayi.kategori || 0) >= KAT_MAX_GUN) break;
-        const icerik = bildirimIcerigi(aday, { baslik: `${aday.category} • yeni haber` });
-        if (dry) {
-          console.log(`  [dry] konu (${slug}) → ${icerik.icerik}`);
-          continue;
-        }
-        try {
-          const yanit = await gonder({
-            ...icerik,
-            ttl: 21600,
-            etiketler: [
-              `kategori_${slug}`,
-              { key: "bildirim_sikligi", relation: "=", value: "aninda" },
-            ],
-            anahtar: `kat-${aday.id}`,
-          });
-          console.log(
-            `  ✓ [konu:${slug}] ${kisalt(aday.title, 60)}${yanit?.id ? ` (${yanit.id})` : ""}${aliciNotu(yanit)}`
-          );
-          durum.sent.push(String(aday.id));
-          durum.updatedAt = new Date(now).toISOString();
-          durum.sonKategori[slug] = new Date(now).toISOString();
-          durum.gunSayi.kategori = (durum.gunSayi.kategori || 0) + 1;
-          sayilan++;
-        } catch (err) {
-          console.warn(`  ✗ [konu:${slug}] ${err.message}`);
+      // Her kategori kendi takipçisine gider; sıklık filtresi "aninda" olanlara
+      // ulaşır. Tur başına KAT_TUR_HABER sınırı vardır, kalanı sonraki turda.
+      let turHaber = 0;
+      for (const slug of uygun) {
+        for (const aday of grup.get(slug) || []) {
+          if (turHaber >= KAT_TUR_HABER) break;
+          const gunToplam3 = (durum.gunSayi.son || 0) + (durum.gunSayi.kategori || 0);
+          if (gunToplam3 >= TOPLAM_MAX_GUN || (durum.gunSayi.kategori || 0) >= KAT_MAX_GUN) break;
+          const icerik = bildirimIcerigi(aday, { baslik: `${aday.category} • yeni haber` });
+          if (dry) {
+            console.log(`  [dry] konu (${slug}) → ${icerik.icerik}`);
+            turHaber++;
+            continue;
+          }
+          try {
+            const yanit = await gonder({
+              ...icerik,
+              ttl: 21600,
+              etiketler: [
+                `kategori_${slug}`,
+                { key: "bildirim_sikligi", relation: "=", value: "aninda" },
+              ],
+              anahtar: `kat-${aday.id}`,
+            });
+            console.log(
+              `  ✓ [konu:${slug}] ${kisalt(aday.title, 60)}${yanit?.id ? ` (${yanit.id})` : ""}${aliciNotu(yanit)}`
+            );
+            durum.sent.push(String(aday.id));
+            durum.updatedAt = new Date(now).toISOString();
+            durum.sonKategori[slug] = new Date(now).toISOString();
+            durum.gunSayi.kategori = (durum.gunSayi.kategori || 0) + 1;
+            sayilan++;
+            turHaber++;
+          } catch (err) {
+            console.warn(`  ✗ [konu:${slug}] ${err.message}`);
+          }
         }
       }
     }

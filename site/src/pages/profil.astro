@@ -178,7 +178,6 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
       </section>
 
       <div class="profil__kaydet-satir">
-        <button type="button" class="profil__btn" id="profil-kaydet">Tercihleri kaydet</button>
         <span class="profil__mini" id="profil-durum" role="status" aria-live="polite"></span>
       </div>
 
@@ -837,6 +836,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         if (secim.has(s)) secim.delete(s);
         else secim.add(s);
         ciz();
+        otomatikKaydet();
       };
     }
     [].forEach.call(document.querySelectorAll("[data-ilgi]"), function (c) {
@@ -851,37 +851,42 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
       if (durumEl) durumEl.textContent = mesaj || "";
     }
 
-    // --- Kaydet ---
+    // --- Otomatik kaydet (düğme yok): her seçim anında hesaba yazılır ---
+    var kaydetZaman = null;
+    async function tercihleriKaydet() {
+      durum("Kaydediliyor…");
+      try {
+        var r = await H.profilGuncelle({
+          ad: (adGirdi && adGirdi.value.trim()) || u.ad,
+          ilgi: Array.from(ilgiSecim),
+          bildirim_ilgi: Array.from(bildirimSecim),
+        });
+        if (r && r.hata) {
+          durum(r.hata);
+          return;
+        }
+        u = H.oturumOku();
+        await H.pushEsle(u);
+        durum("Kaydedildi ✓");
+      } catch (e) {
+        durum("Kaydedilemedi, tekrar dene.");
+      }
+    }
+    function otomatikKaydet() {
+      if (kaydetZaman) clearTimeout(kaydetZaman);
+      kaydetZaman = setTimeout(function () {
+        kaydetZaman = null;
+        tercihleriKaydet();
+      }, 350);
+    }
+
+    // --- Kaydet (eski düğme kaldırıldı; varsa da çalışsın) ---
     var kaydet = document.getElementById("profil-kaydet");
     kaydet &&
       kaydet.addEventListener("click", async function () {
         kaydet.disabled = true;
-        durum("Kaydediliyor…");
         try {
-          // Bildirim konusu hiç seçilmediyse ilgi alanları bildirime de yazılır:
-          // "ilgimi seçtim ama bildirim gelmiyor" durumu oluşmasın.
-          if (!bildirimSecim.size && ilgiSecim.size) {
-            ilgiSecim.forEach(function (s) {
-              bildirimSecim.add(s);
-            });
-            ciz();
-          }
-          var r = await H.profilGuncelle({
-            ad: (adGirdi && adGirdi.value.trim()) || u.ad,
-            ilgi: Array.from(ilgiSecim),
-            bildirim_ilgi: Array.from(bildirimSecim),
-          });
-          if (r && r.hata) {
-            durum(r.hata);
-            return;
-          }
-          u = H.oturumOku();
-          if (adEl) adEl.textContent = u.ad;
-          if (avatar) avatarCiz();
-          await H.pushEsle(u);
-          durum("Kaydedildi ✓ İlgi alanların akışına ve bildirimlerine uygulandı.");
-        } catch (e) {
-          durum("Kaydedilemedi, tekrar dene.");
+          await tercihleriKaydet();
         } finally {
           kaydet.disabled = false;
         }
@@ -1271,7 +1276,14 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
 
     async function yonetimKur() {
       var g = H.oturumOku() || u;
-      if (!g || g.rol !== "yonetici") {
+      // Yönetim paneli normal profilde GÖRÜNMEZ. Yalnızca yönetici hesabı,
+      // adres çubuğuna ?yonetim=1 ekleyince açılır; başka hesaplar göremez.
+      // Yetki yine sunucuda: admin_* fonksiyonları rol='yonetici' olmayanı reddeder.
+      var yonetimAcik = false;
+      try {
+        yonetimAcik = new URLSearchParams(location.search).get("yonetim") === "1";
+      } catch (e) {}
+      if (!g || g.rol !== "yonetici" || !yonetimAcik) {
         if (yonetim) yonetim.hidden = true;
         return;
       }
@@ -1310,6 +1322,24 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         rozetCiz();
         siklikCiz();
         yonetimKur();
+        // Sunucudaki seçimler ekranda görünsün: eskiden tazeleme yalnızca
+        // oturumu güncelliyor, çipler boş kalıyordu ("seçmiştim, gelmiyor").
+        var yIlgi = new Set(u.ilgi || []);
+        var yBildirim = new Set(u.bildirim_ilgi || []);
+        if (!yBildirim.size && yIlgi.size) {
+          yIlgi.forEach(function (s) {
+            yBildirim.add(s);
+          });
+        }
+        ilgiSecim.clear();
+        yIlgi.forEach(function (s) {
+          ilgiSecim.add(s);
+        });
+        bildirimSecim.clear();
+        yBildirim.forEach(function (s) {
+          bildirimSecim.add(s);
+        });
+        ciz();
       });
     }
     yonetimKur();

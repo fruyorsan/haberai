@@ -903,6 +903,16 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
       cizTakip();
     }
 
+    // Profil sayfasından veya hesap girişinden gelen seçimleri panelde
+    // yeniden çiz: eskiden panel açılışta okuyor, sonraki değişikliği
+    // görmüyordu ("seçtim ama burada boş görünüyor").
+    function yereldenYenile() {
+      kategoriler = new Set(oku(K_KAT, []));
+      ciz();
+    }
+    window.addEventListener("hb-bildirim-degisti", yereldenYenile);
+    window.addEventListener("hb-oturum-degisti", yereldenYenile);
+
     /** Haber sayfasındaki "kategoriyi takip et" düğmeleri. */
     const takipDugmeleri = [...document.querySelectorAll(".post__follow")];
     function cizTakip() {
