@@ -783,6 +783,7 @@ const otomatik = !sade && Boolean(slug) && aktif;
     const ad = document.createElement("span");
     ad.className = "yorum__oge-ad";
     ad.textContent = y.ad || "Okur";
+    ust.append(ad);
     if (y.uye_id) {
       const rozet = document.createElement("span");
       rozet.className = "yorum__uye";
@@ -804,7 +805,7 @@ const otomatik = !sade && Boolean(slug) && aktif;
     const metin = document.createElement("p");
     metin.className = "yorum__oge-metin";
     metin.textContent = y.metin || "";
-    ust.append(ad, zm);
+    ust.append(zm);
     li.append(avatar, ust, metin);
 
     if (etkilesim && y.id != null) {
