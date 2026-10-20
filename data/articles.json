@@ -1,5 +1,58 @@
 [
   {
+    "id": "039f9000cebcfa93",
+    "title": "Bayburt’da 2.0’lık Deprem Kaydı",
+    "slug": "bayburtda-2-0luk-deprem-kaydi",
+    "summary": "Bayburt'un Demirözü ilçesinde 2.0 büyüklüğünde bir deprem meydana geldi. 20 Ekim 2026’da 16:32’de 13,4 km derinlikte kaydedildi. Henüz hasar raporu bulunmadı.",
+    "keyPoints": [
+      "Deprem 20 Ekim 2026 16:32’de gerçekleşti",
+      "Büyüklük 2.0, derinlik 13,4 km",
+      "Demirözü, Bayburt; henüz hasar raporu yok"
+    ],
+    "body": [
+      "Bayburt’un Demirözü ilçesinde 20 Ekim 2026 saat 16:32’de 2.0 büyüklüğünde bir sismik olay tespit edildi. 13,4 kilometre derinlikte gerçekleşen depremin merkez üssü Akyaka-Demirözü olarak belirlendi. Kandilli Rasathanesi’nin veri tabanında yer alan kayıtta, depremin ölçümleri net olarak 2.0 olarak gösterildi. Bu değer, hafif seismik aktivitenin bir göstergesi olarak değerlendiriliyor. Deprem anında çevredeki yapıların hasar görmesi bekleniyor, ancak resmi yetkililer henüz detaylı bir hasar raporu yayınlamadı. Bu nedenle, olayın gerçek etkisi için yerel yönetimlerin ve deprem uzmanlarının açıklamaları bekleniyor. Demirözü bölgesinde yaşayan vatandaşlar, depremin ardından güvenlik kontrollerini yaptırmak için ilgili kurumlarla iletişime geçebilir. Bölge halkının, sismik olaylardan sonra güvenliğe öncelik vermesi öneriliyor. Yerel haber kaynaklarına göre, depremin ardından bölgede şok hissedildi ancak büyük bir yıkım yaşanmadı. Resmi açıklama beklenirken, vatandaşlar sakin kalmaya ve yetkililerin talimatlarını takip etmeye yönlendiriliyor."
+    ],
+    "comment": "Deprem büyüklüğünün 2.0 olması, halkın endişe duymasına yol açsa da, derinlik 13,4 km olmasından dolayı yapısal hasarın sınırlı kalması beklenir. Bu durum, bölgede yaşayanların güvenlik önlemleri almasına yönlendirebilir ve yerel yönetimlerin erken müdahale planlarını gözden geçirmesine sebep olabilir.",
+    "editorNote": "Küçük depremler bile bölge halkında endişe yaratıyor; derinlik bilgisi, olası hasarın boyutunu anlamada kritik.",
+    "tags": [
+      "Deprem",
+      "Bayburt",
+      "Demirözü",
+      "Kandilli Rasathanesi",
+      "Sismik Aktivite"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "earthquake damaged building",
+    "source": "Afyon Ana Haber",
+    "sourceUrl": "https://www.afyonanahaber.com.tr/gundem/bayburtta-deprem-mi-oldu-demirozunde-deprem/402399",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Interior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg/1920px-Interior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg",
+    "gorselKaynak": {
+      "yazar": "Adem",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Interior_of_a_damaged_building_after_7,8_magnitude_earthquake_in_Turkiye.jpg"
+    },
+    "publishedAt": "2026-10-20T21:10:32.000Z",
+    "generatedAt": "2026-10-20T21:16:22.492Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg/1920px-Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg",
+        "yazar": "Adem",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Exterior_of_a_damaged_building_after_7,8_magnitude_earthquake_in_Turkiye.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye_2.jpg/1920px-Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye_2.jpg",
+        "yazar": "Adem",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Exterior_of_a_damaged_building_after_7,8_magnitude_earthquake_in_Turkiye_2.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "02d2df5ed9a64bbb",
     "title": "Supermicro Hisseleri AI Gelir Tahmini Artışıyla %12 Yükseldi",
     "slug": "supermicro-hisseleri-ai-gelir-tahmini-artisiyla-12-yukselidi",
