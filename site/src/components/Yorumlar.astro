@@ -29,6 +29,7 @@ const otomatik = !sade && Boolean(slug) && aktif;
 
 <section
   class:list={["yorum", sade && "yorum--sade"]}
+  id={sade ? undefined : "yorumlar"}
   data-yorum
   data-slug={slug}
   data-baslik={baslik}
@@ -471,6 +472,75 @@ const otomatik = !sade && Boolean(slug) && aktif;
     return h;
   }
 
+  /**
+   * Cihaz anahtarı. Hesabı olmayan okurun yorumunu daha sonra silebilmesi ve
+   * anonim beğenilerin aynı cihazda hatırlanması için kullanılır. Tahmin
+   * edilemeyen bir UUID'dir; sunucuya yalnızca RPC içinde gider.
+   */
+  function cihazKimlik(): string {
+    const ANAHTAR = "hb-yorum-cihaz";
+    try {
+      const v = localStorage.getItem(ANAHTAR);
+      if (v && v.length >= 8) return v;
+    } catch {
+      /* özel mod */
+    }
+    let v = "";
+    try {
+      v = crypto.randomUUID();
+    } catch {
+      /* eski tarayıcı */
+    }
+    if (!v) v = "c" + Math.random().toString(36).slice(2) + Date.now().toString(36);
+    try {
+      localStorage.setItem(ANAHTAR, v);
+    } catch {
+      /* özel mod: bu sayfa oturumunda çalışır */
+    }
+    return v;
+  }
+
+  /** Yorum RPC'si; SQL henüz kurulmadıysa null döner (REST yedeğine geçilir). */
+  async function rpcYorum(
+    api: string,
+    anahtar: string,
+    fn: string,
+    govde: Record<string, unknown>,
+  ): Promise<any> {
+    try {
+      const r = await fetch(`${api}/rest/v1/rpc/${fn}`, {
+        method: "POST",
+        headers: { ...susBasliklari(anahtar), "Content-Type": "application/json" },
+        body: JSON.stringify(govde),
+      });
+      if (r.status === 404) return null;
+      const metin = await r.text();
+      if (!r.ok) {
+        try {
+          const j = JSON.parse(metin);
+          return { hata: j.message || j.hata || `HTTP ${r.status}` };
+        } catch {
+          return { hata: `HTTP ${r.status}` };
+        }
+      }
+      return metin ? JSON.parse(metin) : {};
+    } catch {
+      return null;
+    }
+  }
+
+  /** Liste yüklendikten, yorum eklendikten ya da silindikten sonra sayaç. */
+  function sayiGuncelle(kok: Kok) {
+    const n = kok.querySelectorAll(".yorum__oge").length;
+    const sayi = kok.querySelector<HTMLElement>("[data-yorum-sayi]");
+    const bos = kok.querySelector<HTMLElement>("[data-yorum-bos]");
+    if (sayi) {
+      sayi.textContent = n ? String(n) : "";
+      sayi.hidden = n === 0;
+    }
+    if (bos) bos.hidden = n > 0;
+  }
+
   /** Sayfadaki hesap oturumu (yoksa null). */
   function hesap(): any {
     const H = (window as any).HaberinAi;
@@ -549,6 +619,11 @@ const otomatik = !sade && Boolean(slug) && aktif;
   /** Üye numarası → avatar (emoji ya da görsel). Yorum listesinde kullanılır. */
   const avatarHaritasi: Record<string, string> = {};
 
+  const BEGEN_SVG =
+    '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 21.4l8.8-8.7a5 5 0 0 0 0-7.1z"/></svg>';
+  const SIL_SVG =
+    '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16"/><path d="M10 11v6M14 11v6"/><path d="M6 7l1 14h10l1-14"/><path d="M9 7V4h6v3"/></svg>';
+
   /** Yorumlarda görünen üyelerin avatarlarını tek istekte çeker. */
   async function avatarlariGetir(api: string, anahtar: string, idler: string[]) {
     const eksik = Array.from(new Set(idler.filter((i) => i && !(i in avatarHaritasi))));
@@ -573,9 +648,14 @@ const otomatik = !sade && Boolean(slug) && aktif;
     created_at?: string;
     uye_id?: string | null;
     etiket?: string | null;
-  }): HTMLLIElement {
+    id?: number | string | null;
+    benim?: boolean;
+    begendim?: boolean;
+    begeni?: number;
+  }, etkilesim = false): HTMLLIElement {
     const li = document.createElement("li");
     li.className = "yorum__oge";
+    if (y.id != null) li.dataset.yorumId = String(y.id);
     const avatar = document.createElement("span");
     avatar.className = "yorum__oge-avatar";
     avatar.setAttribute("aria-hidden", "true");
@@ -614,6 +694,41 @@ const otomatik = !sade && Boolean(slug) && aktif;
     metin.textContent = y.metin || "";
     ust.append(ad, zm);
     li.append(avatar, ust, metin);
+
+    if (etkilesim && y.id != null) {
+      const eylem = document.createElement("div");
+      eylem.className = "yorum__eylem";
+
+      const begen = document.createElement("button");
+      begen.type = "button";
+      begen.className = "yorum__etkilesim yorum__begen";
+      begen.dataset.yorumBegen = String(y.id);
+      begen.classList.toggle("is-on", Boolean(y.begendim));
+      begen.setAttribute("aria-pressed", y.begendim ? "true" : "false");
+      begen.setAttribute("aria-label", y.begendim ? "Beğeniyi geri al" : "Yorumu beğen");
+      begen.title = y.begendim ? "Beğeniyi geri al" : "Beğen";
+      begen.innerHTML = BEGEN_SVG;
+      const say = document.createElement("span");
+      say.dataset.begenSayi = "";
+      say.textContent = String(Math.max(0, Number(y.begeni) || 0));
+      begen.append(say);
+      eylem.append(begen);
+
+      if (y.benim) {
+        const sil = document.createElement("button");
+        sil.type = "button";
+        sil.className = "yorum__etkilesim yorum__sil";
+        sil.dataset.yorumSil = String(y.id);
+        sil.setAttribute("aria-label", "Yorumumu sil");
+        sil.title = "Yorumumu sil";
+        sil.innerHTML = SIL_SVG;
+        sil.append(document.createTextNode("Sil"));
+        eylem.append(sil);
+      }
+
+      li.append(eylem);
+    }
+
     return li;
   }
 
@@ -632,21 +747,46 @@ const otomatik = !sade && Boolean(slug) && aktif;
     if (bos) bos.hidden = true;
     liste.replaceChildren();
     try {
+      // Önce tek RPC: beğeni sayısı, "ben beğendim" ve "benim yorumum"
+      // bilgileri aynı cevapta gelir. SQL yaması henüz uygulanmadıysa
+      // aşağıdaki REST yedeği çalışır; yorumlar yine görünür.
+      const cihaz = cihazKimlik();
+      const u = hesap();
+      const rpcVeri: any = await rpcYorum(api, anahtar, "yorum_listele", {
+        p_slug: slug,
+        p_cihaz: cihaz,
+        p_id: u?.id || null,
+        p_token: u?.token || null,
+      });
+      if (Array.isArray(rpcVeri)) {
+        const uyeIdler = rpcVeri
+          .map((v: any) => v.uye_id)
+          .filter((v: any): v is string => Boolean(v));
+        if (uyeIdler.length) await avatarlariGetir(api, anahtar, uyeIdler);
+        liste.replaceChildren(...rpcVeri.map((v: any) => oge(v, true)));
+        sayiGuncelle(kok);
+        kok.dataset.etkilesim = "1";
+        kok.dataset.yuklendi = "1";
+        return;
+      }
+      kok.dataset.etkilesim = "";
+
       const kuyruk =
         `&slug=eq.${encodeURIComponent(slug)}&order=created_at.desc&limit=100`;
       const temel = `${api}/rest/v1/${tablo}?select=`;
       // `etiket` kolonu hesap.sql henüz çalıştırılmadıysa sorgu 400 döner;
       // bu durumda eski kolonlarla devam et (yorumlar görünmeye devam etsin).
-      let r = await fetch(temel + "ad,metin,created_at,uye_id,etiket" + kuyruk, {
+      let r = await fetch(temel + "id,ad,metin,created_at,uye_id,etiket" + kuyruk, {
         headers: susBasliklari(anahtar),
       });
       if (!r.ok) {
-        r = await fetch(temel + "ad,metin,created_at,uye_id" + kuyruk, {
+        r = await fetch(temel + "id,ad,metin,created_at,uye_id" + kuyruk, {
           headers: susBasliklari(anahtar),
         });
       }
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
       const veri = (await r.json()) as {
+        id?: number | string;
         ad?: string;
         metin?: string;
         created_at?: string;
@@ -655,7 +795,7 @@ const otomatik = !sade && Boolean(slug) && aktif;
       }[];
       const uyeIdler = veri.map((v) => v.uye_id).filter((v): v is string => Boolean(v));
       if (uyeIdler.length) await avatarlariGetir(api, anahtar, uyeIdler);
-      liste.replaceChildren(...veri.map(oge));
+      liste.replaceChildren(...veri.map((v) => oge(v, false)));
       if (sayi) {
         sayi.textContent = veri.length ? String(veri.length) : "";
         sayi.hidden = veri.length === 0;
