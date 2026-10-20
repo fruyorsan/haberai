@@ -127,29 +127,39 @@ export const HESAP = {
  * site/src/lib/articles.js → slugify ile birebir aynı olmalıdır.
  */
 /**
- * Hazır profil fotoğrafları: renkli daire içinde düz (flat) vektör portreler;
- * insan yüzleri + birkaç karakter. Çizgi film/oyuncak görünümü yok.
- * SVG tabanlıdır: telif sorunu yoktur, her cihazda aynı görünür.
- * Kaynak dosyalar: scripts/avatar-uret.mjs → site/public/avatar/<slug>.svg
+ * Hazır profil fotoğrafları: yapay zekâ ile üretilmiş, yumuşak anime / lo-fi
+ * estetiğinde yuvarlak portreler. İnsanlar, hayvanlar ve manzara/objeler.
+ * WebP tabanlıdır: 512×512, sayfada yuvarlak kırpılır.
+ * Kaynak: scripts/avatar-ai.mjs (AI Horde) + scripts/avatar-pollinations.mjs
  * `kod` doğrudan görsel yolu ya da okuyucunun yüklediği bir görsel adresidir.
  * `renk` seçili çerçevenin vurgu tonudur.
  */
 export const AVATARLAR = [
-  { kod: "/avatar/ada.svg", ad: "Ada", renk: "#e4573d" },
-  { kod: "/avatar/mert.svg", ad: "Mert", renk: "#6a4fc1" },
-  { kod: "/avatar/zeynep.svg", ad: "Zeynep", renk: "#1c8c82" },
-  { kod: "/avatar/kerem.svg", ad: "Kerem", renk: "#e8a62b" },
-  { kod: "/avatar/elif.svg", ad: "Elif", renk: "#d9364b" },
-  { kod: "/avatar/deniz.svg", ad: "Deniz", renk: "#8a6fd1" },
-  { kod: "/avatar/ece.svg", ad: "Ece", renk: "#4b83a8" },
-  { kod: "/avatar/bora.svg", ad: "Bora", renk: "#1f6f54" },
-  { kod: "/avatar/selin.svg", ad: "Selin", renk: "#e2743a" },
-  { kod: "/avatar/tavsan.svg", ad: "Tavşan", renk: "#e4573d" },
-  { kod: "/avatar/panda.svg", ad: "Panda", renk: "#e8a62b" },
-  { kod: "/avatar/astronot.svg", ad: "Astronot", renk: "#3d5a9e" },
-  { kod: "/avatar/robot.svg", ad: "Robot", renk: "#3f8c76" },
-  { kod: "/avatar/korsan.svg", ad: "Korsan", renk: "#d9364b" },
-  { kod: "/avatar/buyucu.svg", ad: "Büyücü", renk: "#7a5bb5" },
+  // İnsan portreleri
+  { kod: "/avatar/ada.webp", ad: "Ada", renk: "#e4573d" },
+  { kod: "/avatar/mert.webp", ad: "Mert", renk: "#6a4fc1" },
+  { kod: "/avatar/zeynep.webp", ad: "Zeynep", renk: "#1c8c82" },
+  { kod: "/avatar/kerem.webp", ad: "Kerem", renk: "#e8a62b" },
+  { kod: "/avatar/elif.webp", ad: "Elif", renk: "#d9364b" },
+  { kod: "/avatar/deniz.webp", ad: "Deniz", renk: "#8a6fd1" },
+  { kod: "/avatar/ece.webp", ad: "Ece", renk: "#4b83a8" },
+  { kod: "/avatar/bora.webp", ad: "Bora", renk: "#1f6f54" },
+  { kod: "/avatar/selin.webp", ad: "Selin", renk: "#e2743a" },
+  // Hayvanlar
+  { kod: "/avatar/kedi.webp", ad: "Kedi", renk: "#d98a9a" },
+  { kod: "/avatar/golden.webp", ad: "Golden", renk: "#e8a62b" },
+  { kod: "/avatar/panda.webp", ad: "Panda", renk: "#3f8c76" },
+  { kod: "/avatar/penguen.webp", ad: "Penguen", renk: "#4b83a8" },
+  { kod: "/avatar/kara-kedi.webp", ad: "Kara Kedi", renk: "#3d5a9e" },
+  // Manzara ve objeler
+  { kod: "/avatar/dag.webp", ad: "Dağ", renk: "#6a4fc1" },
+  { kod: "/avatar/deniz-manzara.webp", ad: "Deniz Manzarası", renk: "#4b83a8" },
+  { kod: "/avatar/ay.webp", ad: "Ay", renk: "#8a6fd1" },
+  { kod: "/avatar/istanbul.webp", ad: "İstanbul", renk: "#e2743a" },
+  { kod: "/avatar/kulaklik.webp", ad: "Kulaklık", renk: "#8a6fd1" },
+  { kod: "/avatar/gamepad.webp", ad: "Gamepad", renk: "#4b83a8" },
+  { kod: "/avatar/cicek.webp", ad: "Çiçek", renk: "#d9364b" },
+  { kod: "/avatar/yaprak.webp", ad: "Yaprak", renk: "#1f6f54" },
 ];
 
 export const KATEGORILER = [

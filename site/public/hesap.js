@@ -199,7 +199,18 @@
   async function kayitOl(kadi, sifre, ad) {
     var r = await rpc("uye_kayit", { p_kadi: kadi, p_sifre: sifre, p_ad: ad });
     if (r.hata) return r;
-    oturumYaz({ id: r.id, kadi: r.kadi, ad: r.ad, token: r.token, ilgi: [], bildirim_ilgi: [], avatar: null });
+    oturumYaz({
+      id: r.id,
+      kadi: r.kadi,
+      ad: r.ad,
+      token: r.token,
+      ilgi: [],
+      bildirim_ilgi: [],
+      avatar: null,
+      rol: "uye",
+      etiket: "",
+      bildirim_siklik: "aninda",
+    });
     duyur();
     return r;
   }
@@ -215,6 +226,9 @@
       ilgi: r.ilgi || [],
       bildirim_ilgi: r.bildirim_ilgi || [],
       avatar: r.avatar || null,
+      rol: r.rol || "uye",
+      etiket: r.etiket || "",
+      bildirim_siklik: r.bildirim_siklik || "aninda",
     });
     duyur();
     return r;
@@ -244,6 +258,9 @@
       ilgi: r.ilgi || [],
       bildirim_ilgi: r.bildirim_ilgi || [],
       avatar: r.avatar || null,
+      rol: r.rol || "uye",
+      etiket: r.etiket || "",
+      bildirim_siklik: r.bildirim_siklik || "aninda",
     };
     oturumYaz(yeni);
     duyur();
@@ -394,11 +411,67 @@
       // son_dakika: hesaba giren cihazın son dakika haberlerini alması için
       // (sunucu "tüm aboneler" hedeflemesini bu etiketle yapar).
       var t = { uye: "1", son_dakika: "1" };
+      // Bildirim sıklığı: sunucu "aninda" olanlara konu bildirimi yollar,
+      // "ozet" olanlara günde 3 özet, "son" olanlara yalnızca son dakika.
+      var siklik = u.bildirim_siklik || "";
+      if (!siklik) {
+        try {
+          siklik = localStorage.getItem("bildirim-siklik") || "aninda";
+        } catch (e) {
+          siklik = "aninda";
+        }
+      }
+      t.bildirim_sikligi = siklik;
+      try {
+        localStorage.setItem("bildirim-siklik", siklik);
+      } catch (e) {}
       for (var i = 0; i < tum.length; i++) {
         t["kategori_" + tum[i]] = slugs.indexOf(tum[i]) >= 0 ? "1" : "";
       }
       os.User.addTags(t);
     } catch (e) {}
+  }
+
+  /**
+   * Bildirim sıklığını kaydeder (aninda | ozet | son) ve cihaz etiketini
+   * hemen günceller. Profil sayfasındaki seçici bunu çağırır.
+   */
+  async function bildirimSiklik(siklik) {
+    var u = oturumOku();
+    if (!u) return { hata: "Giriş yapmalısın." };
+    var r = await rpc("uye_bildirim_siklik", {
+      p_id: u.id,
+      p_token: u.token,
+      p_siklik: siklik,
+    });
+    if (!r || r.hata) return r || { hata: "Kaydedilemedi." };
+    u.bildirim_siklik = siklik;
+    oturumYaz(u);
+    try {
+      localStorage.setItem("bildirim-siklik", siklik);
+    } catch (e) {}
+    await pushEsle(u);
+    return r;
+  }
+
+  /** Yönetici: kayıtlı okuyucuların listesi. */
+  async function adminUyeler() {
+    var u = oturumOku();
+    if (!u) return { hata: "Giriş yapmalısın." };
+    return rpc("admin_uyeler", { p_id: u.id, p_token: u.token });
+  }
+
+  /** Yönetici: bir okuyucuya rozet yazar; istenirse yönetici yetkisi verir. */
+  async function adminEtiket(hedef, etiket, rol) {
+    var u = oturumOku();
+    if (!u) return { hata: "Giriş yapmalısın." };
+    return rpc("admin_etiket", {
+      p_id: u.id,
+      p_token: u.token,
+      p_hedef: hedef,
+      p_etiket: etiket || "",
+      p_rol: rol || null,
+    });
   }
 
   async function yorumEkle(slug, metin) {
@@ -430,6 +503,9 @@
     begenSil: begenSil,
     hesapSil: hesapSil,
     pushEsle: pushEsle,
+    bildirimSiklik: bildirimSiklik,
+    adminUyeler: adminUyeler,
+    adminEtiket: adminEtiket,
     dugmeleriGuncelle: dugmeleriGuncelle,
   };
 

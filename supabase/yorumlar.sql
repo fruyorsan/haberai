@@ -20,7 +20,8 @@ create table if not exists public.yorumlar (
   ad         text        not null default 'Okur',
   metin      text        not null,
   created_at timestamptz not null default now(),
-  gizli      boolean     not null default false
+  gizli      boolean     not null default false,
+  etiket     text        not null default ''   -- yorum yazıldığı andaki rozet
 );
 
 create index if not exists yorumlar_slug_zaman_idx

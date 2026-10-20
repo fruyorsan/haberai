@@ -651,6 +651,13 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
     function etiketYaz(OneSignal) {
       if (!OneSignal || !abone) return;
       const t = { son_dakika: sonDakika ? "1" : "" };
+      // Sıklık etiketi: sunucu konu bildirimlerini yalnızca "aninda" olanlara
+      // yollar; "ozet" günde 3 özet, "son" yalnızca son dakika alır.
+      try {
+        t.bildirim_sikligi = localStorage.getItem("bildirim-siklik") || "aninda";
+      } catch {
+        t.bildirim_sikligi = "aninda";
+      }
       for (const c of cipler) {
         const slug = c.dataset.kategori;
         t["kategori_" + slug] = kategoriler.has(slug) ? "1" : "";
@@ -1192,6 +1199,20 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
       izinVerildi,
       izinEngelli,
       iosKuruluDegil,
+      /**
+       * Rastgele OneSignal etiketleri yazar (profil sayfası kullanır).
+       * Abonelik olmasa da SDK hazırsa etiketler cihaza işlenir.
+       */
+      etiketler: async (t) => {
+        const os = await sdkYukle();
+        if (!os || !t) return false;
+        try {
+          os.User.addTags(t);
+          return true;
+        } catch {
+          return false;
+        }
+      },
     };
   })();
 </script>

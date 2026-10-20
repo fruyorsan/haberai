@@ -37,11 +37,28 @@ create table if not exists public.uyeler (
   constraint uyeler_kadi_bicim check (kadi ~ '^[a-z0-9_.]{3,24}$')
 );
 
+-- Yönetici rozeti ve bildirim sıklığı (sonradan eklendi; mevcut hesaplar bozulmaz).
+alter table public.uyeler add column if not exists rol text not null default 'uye';
+alter table public.uyeler add column if not exists etiket text not null default '';
+alter table public.uyeler add column if not exists bildirim_siklik text not null default 'aninda';
+
+alter table public.uyeler drop constraint if exists uyeler_rol_bicim;
+alter table public.uyeler
+  add constraint uyeler_rol_bicim check (rol in ('uye', 'yonetici'));
+
+alter table public.uyeler drop constraint if exists uyeler_siklik_bicim;
+alter table public.uyeler
+  add constraint uyeler_siklik_bicim check (bildirim_siklik in ('aninda', 'ozet', 'son'));
+
 -- Yorumları hesaba bağla: dolu ise yorumu bir üye yazmıştır (görünen adı
 -- profilden gelir). NULL ise hesapsız (eski) yorumdur. Tablo yeniden
 -- oluşturulmaz; kolon eklenir.
 alter table public.yorumlar
   add column if not exists uye_id uuid references public.uyeler(id) on delete set null;
+
+-- Yorum yazıldığı andaki rozet (ör. "Yönetici"). Yorum listesinde gösterilir;
+-- rozet sonradan değişse eski yorumlar yazıldığı andaki rozeti korur.
+alter table public.yorumlar add column if not exists etiket text not null default '';
 
 create index if not exists yorumlar_uye_idx on public.yorumlar (uye_id);
 
@@ -139,7 +156,8 @@ begin
 
   return jsonb_build_object(
     'id', v_uye.id, 'kadi', v_uye.kadi, 'ad', v_uye.ad, 'token', v_token,
-    'ilgi', v_uye.ilgi, 'bildirim_ilgi', v_uye.bildirim_ilgi, 'avatar', v_uye.avatar
+    'ilgi', v_uye.ilgi, 'bildirim_ilgi', v_uye.bildirim_ilgi, 'avatar', v_uye.avatar,
+    'rol', v_uye.rol, 'etiket', v_uye.etiket, 'bildirim_siklik', v_uye.bildirim_siklik
   );
 end;
 $$;
@@ -172,7 +190,8 @@ begin
   return jsonb_build_object(
     'id', v_uye.id, 'kadi', v_uye.kadi, 'ad', v_uye.ad,
     'ilgi', v_uye.ilgi, 'bildirim_ilgi', v_uye.bildirim_ilgi,
-    'avatar', v_uye.avatar, 'olusturma', v_uye.olusturma
+    'avatar', v_uye.avatar, 'olusturma', v_uye.olusturma,
+    'rol', v_uye.rol, 'etiket', v_uye.etiket, 'bildirim_siklik', v_uye.bildirim_siklik
   );
 end;
 $$;
@@ -213,6 +232,113 @@ begin
 end;
 $$;
 
+-- --------------------------------------------------- bildirim sıklığı ------
+-- Okuyucu profilden seçer: aninda (her konu), ozet (günde 3 özet), son (yalnızca son dakika).
+create or replace function public.uye_bildirim_siklik(
+  p_id uuid, p_token text, p_siklik text
+)
+returns jsonb
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare
+  v_uye public.uyeler;
+  v_siklik text := lower(btrim(coalesce(p_siklik, '')));
+begin
+  v_uye := public.uye_dogrula(p_id, p_token);
+  if v_uye.id is null then return jsonb_build_object('hata', 'Oturum geçersiz.'); end if;
+  if v_siklik not in ('aninda', 'ozet', 'son') then
+    return jsonb_build_object('hata', 'Geçersiz bildirim sıklığı.');
+  end if;
+  update public.uyeler
+     set bildirim_siklik = v_siklik, guncelleme = now()
+   where id = v_uye.id;
+  return jsonb_build_object('ok', true, 'bildirim_siklik', v_siklik);
+end;
+$$;
+
+-- ------------------------------------------------------------- yönetici ----
+-- Oturumun yönetici olup olmadığını döndürür (token doğrulanır).
+create or replace function public.admin_mi(p_id uuid, p_token text)
+returns boolean
+language sql
+security definer
+set search_path = public, extensions
+as $$
+  select coalesce((
+    select u.rol = 'yonetici'
+    from public.uyeler u
+    where u.id = p_id
+      and u.oturum_hash = encode(digest(coalesce(p_token, ''), 'sha256'), 'hex')
+  ), false);
+$$;
+
+-- Kayıtlı okuyucuların listesi (yalnızca yönetici).
+create or replace function public.admin_uyeler(p_id uuid, p_token text)
+returns jsonb
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+begin
+  if not public.admin_mi(p_id, p_token) then
+    return jsonb_build_object('hata', 'Bu bölüm yalnızca yöneticiye açık.');
+  end if;
+  return coalesce((
+    select jsonb_agg(jsonb_build_object(
+      'id', u.id, 'kadi', u.kadi, 'ad', u.ad,
+      -- Yüklenen fotoğraflar base64 olabilir; listeyi şişirmemek için yalnızca
+      -- hazır avatar yolları döner, diğerlerinde baş harf gösterilir.
+      'avatar', case when u.avatar like '/avatar/%' then u.avatar else null end,
+      'rol', u.rol, 'etiket', u.etiket, 'olusturma', u.olusturma,
+      'yorum', (select count(*) from public.yorumlar y where y.uye_id = u.id)
+    ) order by u.olusturma asc)
+    from public.uyeler u
+  ), '[]'::jsonb);
+end;
+$$;
+
+-- Bir okuyucuya rozet yaz / yönetici yetkisi ver (yalnızca yönetici).
+create or replace function public.admin_etiket(
+  p_id uuid, p_token text, p_hedef uuid, p_etiket text, p_rol text default null
+)
+returns jsonb
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare
+  v_etiket text := nullif(btrim(coalesce(p_etiket, '')), '');
+  v_rol text := nullif(lower(btrim(coalesce(p_rol, ''))), '');
+  v_hedef public.uyeler;
+begin
+  if not public.admin_mi(p_id, p_token) then
+    return jsonb_build_object('hata', 'Bu işlem yalnızca yöneticiye açık.');
+  end if;
+  if v_etiket is not null and char_length(v_etiket) > 24 then
+    return jsonb_build_object('hata', 'Rozet en fazla 24 karakter olmalı.');
+  end if;
+  if v_rol is not null and v_rol not in ('uye', 'yonetici') then
+    return jsonb_build_object('hata', 'Geçersiz yetki.');
+  end if;
+  select * into v_hedef from public.uyeler where id = p_hedef;
+  if v_hedef.id is null then
+    return jsonb_build_object('hata', 'Okuyucu bulunamadı.');
+  end if;
+  update public.uyeler
+     set etiket = coalesce(v_etiket, ''),
+         rol = coalesce(v_rol, rol),
+         guncelleme = now()
+   where id = v_hedef.id;
+  return jsonb_build_object(
+    'ok', true, 'id', v_hedef.id,
+    'etiket', coalesce(v_etiket, ''),
+    'rol', coalesce(v_rol, v_hedef.rol)
+  );
+end;
+$$;
+
 -- ---------------------------------------------- üye olarak yorum ekle ------
 create or replace function public.uye_yorum_ekle(
   p_id uuid, p_token text, p_slug text, p_metin text
@@ -232,11 +358,14 @@ begin
     return jsonb_build_object('hata', 'Geçersiz haber.');
   end if;
 
-  insert into public.yorumlar (slug, ad, metin, uye_id)
-  values (p_slug, left(v_uye.ad, 40), v_metin, v_uye.id)
+  insert into public.yorumlar (slug, ad, metin, uye_id, etiket)
+  values (p_slug, left(v_uye.ad, 40), v_metin, v_uye.id, left(coalesce(v_uye.etiket, ''), 24))
   returning id into v_id;
 
-  return jsonb_build_object('ok', true, 'id', v_id, 'ad', left(v_uye.ad, 40), 'metin', v_metin);
+  return jsonb_build_object(
+    'ok', true, 'id', v_id, 'ad', left(v_uye.ad, 40), 'metin', v_metin,
+    'etiket', left(coalesce(v_uye.etiket, ''), 24)
+  );
 end;
 $$;
 
@@ -267,6 +396,10 @@ grant execute on function public.uye_giris(text, text)                  to anon,
 grant execute on function public.uye_cikis(uuid, text)                  to anon, authenticated;
 grant execute on function public.uye_bilgi(uuid, text)                  to anon, authenticated;
 grant execute on function public.uye_guncelle(uuid, text, text, text[], text[]) to anon, authenticated;
+grant execute on function public.uye_bildirim_siklik(uuid, text, text)   to anon, authenticated;
+grant execute on function public.admin_mi(uuid, text)                   to anon, authenticated;
+grant execute on function public.admin_uyeler(uuid, text)               to anon, authenticated;
+grant execute on function public.admin_etiket(uuid, text, uuid, text, text) to anon, authenticated;
 grant execute on function public.uye_yorum_ekle(uuid, text, text, text) to anon, authenticated;
 grant execute on function public.uye_yorumlar(uuid, text)               to anon, authenticated;
 
@@ -412,8 +545,8 @@ begin
     if char_length(v_avatar) > 500 then
       return jsonb_build_object('hata', 'Görsel bağlantısı çok uzun.');
     end if;
-  elsif v_avatar ~ '^/avatar/[a-z0-9-]{1,32}\.svg$' then
-    -- sitenin kendi çizimi hazır avatar (ör. /avatar/kedi.svg)
+  elsif v_avatar ~ '^/avatar/[a-z0-9-]{1,32}\.(svg|webp)$' then
+    -- sitenin kendi çizimi / AI ile üretilmiş hazır avatar (ör. /avatar/kedi.webp)
     null;
   elsif v_avatar ~ '^[^<>"&[:cntrl:]]{1,8}$' then
     -- eski emoji avatarlar (geriye dönük uyumluluk)
@@ -527,6 +660,21 @@ grant execute on function public.uye_begen(uuid, text, text)     to anon, authen
 grant execute on function public.uye_begen_sil(uuid, text, text) to anon, authenticated;
 grant execute on function public.uye_begeniler(uuid, text)       to anon, authenticated;
 grant execute on function public.uye_sil(uuid, text)             to anon, authenticated;
+
+-- ---------------------------------------------------------------------------
+-- İLK YÖNETİCİ: Hiç yönetici yoksa en eski hesap otomatik yönetici olur.
+-- (Site sahibinin hesabı genellikle ilk açılan hesaptır. Farklı biri
+--  yönetici olduysa aşağıdaki update'i kendi kullanıcı adınla çalıştırabilirsin.)
+-- ---------------------------------------------------------------------------
+update public.uyeler
+   set rol = 'yonetici',
+       etiket = case when etiket = '' then 'Yönetici' else etiket end
+ where id = (select id from public.uyeler order by olusturma asc limit 1)
+   and not exists (select 1 from public.uyeler where rol = 'yonetici');
+
+-- Yönetici yanlış hesaba atandıysa: aşağıdaki satırın başındaki --'leri silip
+-- kendi kullanıcı adını yaz, sonra yalnızca bu satırı çalıştır.
+-- update public.uyeler set rol = 'yonetici', etiket = 'Yönetici' where kadi = 'kullanici_adin';
 
 -- PostgREST şema önbelleğini tazele: yeni fonksiyonlar hemen görünsün.
 notify pgrst, 'reload schema';
