@@ -128,14 +128,14 @@
   --control-bg: #1c2128;
   --control-fg: #e8edf3;
 
-  --brand: #2ad4ea;
-  --brand-strong: #7ce9f7;
-  --brand-soft: rgba(42, 212, 234, 0.15);
-  --brand-grad: linear-gradient(135deg, #0b8a9e 0%, #05535f 100%);
-  --brand-glow: rgba(51, 224, 242, 0.42);
-  /* Zemin: beyaz metinle yeterli kontrastlı koyu turkuaz (~4.8:1) */
-  --brand-fill: #067d90;
-  --brand-fill-hover: #078ea3;
+  --brand: #ff6b76;
+  --brand-strong: #ff9aa2;
+  --brand-soft: rgba(255, 107, 118, 0.16);
+  --brand-grad: linear-gradient(135deg, #ea3a4e 0%, #9c1128 100%);
+  --brand-glow: rgba(234, 58, 78, 0.45);
+  /* Zemin: beyaz metinle yüksek kontrastlı doygun kırmızı (~7:1) */
+  --brand-fill: #9e1129;
+  --brand-fill-hover: #b31630;
 
   --pos: #4ade80;
   --neg: #fb7185;
