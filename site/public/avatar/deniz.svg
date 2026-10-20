@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-hidden="true">
+<defs><clipPath id="k-deniz"><circle cx="48" cy="48" r="48"/></clipPath></defs>
+<g clip-path="url(#k-deniz)">
+<rect width="96" height="96" fill="#d9d3ee"/>
+
+<path d="M13 98c2-17 15.5-27 35-27s33 10 35 27z" fill="#3f7d63"/>
+<path d="M27 46c0-15 9-24 21-24s21 9 21 24v26c0 6-6 7-9 2V47H36v27c-3 5-9 4-9-2z" fill="#7a5bb5"/>
+<path d="M40 62h16v10c0 5-16 5-16 0z" fill="#e0ab84"/>
+<ellipse cx="48" cy="45" rx="17" ry="19" fill="#f2c6a0"/>
+<circle cx="41.5" cy="45" r="1.7" fill="#24262f"/>
+<circle cx="54.5" cy="45" r="1.7" fill="#24262f"/>
+<path d="M44.6 53.2q3.4 2.6 6.8 0" fill="none" stroke="#24262f" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="36.5" cy="49" r="2.4" fill="#c99ad6" fill-opacity=".6"/>
+<circle cx="59.5" cy="49" r="2.4" fill="#c99ad6" fill-opacity=".6"/>
+<path d="M31 40c2.6-9 9-14 17-14s14.4 5 17 14c-5-5.2-10.4-7-17-7s-12 1.8-17 7z" fill="#7a5bb5"/>
+
+</g>
+<circle cx="48" cy="48" r="46.6" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="1.2"/>
+</svg>

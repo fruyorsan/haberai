@@ -127,25 +127,29 @@ export const HESAP = {
  * site/src/lib/articles.js → slugify ile birebir aynı olmalıdır.
  */
 /**
- * Hazır profil fotoğrafları: sade, soyut desenler (çizgi film/karakter değil).
+ * Hazır profil fotoğrafları: renkli daire içinde düz (flat) vektör portreler;
+ * insan yüzleri + birkaç karakter. Çizgi film/oyuncak görünümü yok.
  * SVG tabanlıdır: telif sorunu yoktur, her cihazda aynı görünür.
  * Kaynak dosyalar: scripts/avatar-uret.mjs → site/public/avatar/<slug>.svg
  * `kod` doğrudan görsel yolu ya da okuyucunun yüklediği bir görsel adresidir.
  * `renk` seçili çerçevenin vurgu tonudur.
  */
 export const AVATARLAR = [
-  { kod: "/avatar/dalga.svg", ad: "Dalga", renk: "#3f87ad" },
-  { kod: "/avatar/yay.svg", ad: "Yay", renk: "#83578f" },
-  { kod: "/avatar/halka.svg", ad: "Halka", renk: "#3f8c76" },
-  { kod: "/avatar/blok.svg", ad: "Blok", renk: "#5c5c72" },
-  { kod: "/avatar/yaprak.svg", ad: "Yaprak", renk: "#9a7444" },
-  { kod: "/avatar/konik.svg", ad: "Konik", renk: "#6a5aa0" },
-  { kod: "/avatar/izgara.svg", ad: "Izgara", renk: "#476a80" },
-  { kod: "/avatar/hilal.svg", ad: "Hilal", renk: "#96414b" },
-  { kod: "/avatar/serit.svg", ad: "Şerit", renk: "#4c7278" },
-  { kod: "/avatar/nokta.svg", ad: "Nokta", renk: "#877d47" },
-  { kod: "/avatar/zikzak.svg", ad: "Zikzak", renk: "#9c533c" },
-  { kod: "/avatar/tunel.svg", ad: "Tünel", renk: "#45706e" },
+  { kod: "/avatar/ada.svg", ad: "Ada", renk: "#e4573d" },
+  { kod: "/avatar/mert.svg", ad: "Mert", renk: "#6a4fc1" },
+  { kod: "/avatar/zeynep.svg", ad: "Zeynep", renk: "#1c8c82" },
+  { kod: "/avatar/kerem.svg", ad: "Kerem", renk: "#e8a62b" },
+  { kod: "/avatar/elif.svg", ad: "Elif", renk: "#d9364b" },
+  { kod: "/avatar/deniz.svg", ad: "Deniz", renk: "#8a6fd1" },
+  { kod: "/avatar/ece.svg", ad: "Ece", renk: "#4b83a8" },
+  { kod: "/avatar/bora.svg", ad: "Bora", renk: "#1f6f54" },
+  { kod: "/avatar/selin.svg", ad: "Selin", renk: "#e2743a" },
+  { kod: "/avatar/tavsan.svg", ad: "Tavşan", renk: "#e4573d" },
+  { kod: "/avatar/panda.svg", ad: "Panda", renk: "#e8a62b" },
+  { kod: "/avatar/astronot.svg", ad: "Astronot", renk: "#3d5a9e" },
+  { kod: "/avatar/robot.svg", ad: "Robot", renk: "#3f8c76" },
+  { kod: "/avatar/korsan.svg", ad: "Korsan", renk: "#d9364b" },
+  { kod: "/avatar/buyucu.svg", ad: "Büyücü", renk: "#7a5bb5" },
 ];
 
 export const KATEGORILER = [
