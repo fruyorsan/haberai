@@ -3,6 +3,11 @@
 RSS kaynaklarından haber toplar, Google Gemini ile **özetler + kendi yorumunu katar** ve
 `data/articles.json` dosyasına kaydeder. Site katmanı (Astro) sonra bunu okuyacak.
 
+> **Telif:** Tüm hakları saklıdır. Bu depo herkese açık tutulur çünkü GitHub
+> Actions public depolarda ücretsiz çalışır; açık olması kullanım izni vermez.
+> Kopyalama, yeniden yayınlama ve türev site kurma yasaktır. Ayrıntı: [LICENSE](LICENSE).
+
+
 ## Kurulum
 
 ```powershell
