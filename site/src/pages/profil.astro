@@ -90,7 +90,6 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
                 loading="lazy"
                 decoding="async"
               />
-              <span class="profil__avatar-ad">{a.ad}</span>
             </button>
           ))}
         </div>
@@ -645,8 +644,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
-    padding: 9px 6px 7px;
+    padding: 8px;
     border: 1px solid var(--border);
     border-radius: 14px;
     background: var(--surface-2);
@@ -670,16 +668,6 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     aspect-ratio: 1;
     border-radius: 50%;
     background: var(--av-renk, var(--surface));
-  }
-  .profil__avatar-ad {
-    font-size: 0.68rem;
-    font-weight: 600;
-    line-height: 1.1;
-    color: var(--muted);
-    text-align: center;
-  }
-  .profil__avatar-sec.is-on .profil__avatar-ad {
-    color: var(--heading);
   }
   .profil__avatar-kaynak {
     margin: 10px 0 0;
@@ -734,7 +722,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
       gap: 8px;
     }
     .profil__avatar-sec {
-      padding: 8px 4px 6px;
+      padding: 8px;
     }
     .profil__yorum {
       padding: 10px 11px;
