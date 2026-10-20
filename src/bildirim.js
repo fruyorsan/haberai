@@ -11,11 +11,14 @@
 //
 //   2) KONU TAKİBİ (okuyucunun işaretlediği kategori):
 //      OneSignal etiketiyle yalnızca o konuyu takip edenlere gider
-//      (kategori_<slug> = 1 + bildirim_sikligi = aninda). Tur başına en fazla
-//      KAT_TUR_ADET kategoriye AYRI AYRI gönderilir; böylece "teknoloji"
-//      seçen okuyucu günlerce sıra beklemez. Kategori başına en fazla
-//      KAT_MIN_ARALIK_DK dakikada bir; ayrıca günlük tavan ve sessiz saat
-//      (01:00-07:00 TR) uygulanır.
+//      (kategori_<slug> = 1 + bildirim_sikligi = aninda). Takip edilen
+//      kategoride çıkan HER taze haber gönderilir — "son dakika" işaretli
+//      olanlar dahil (eskiden dışlanıyordu ve taze haberlerin tamamı breaking
+//      olduğu için konu bildirimi pratikte hiç gitmiyordu). Kategori başına
+//      bekleme süresi yok (KAT_MIN_ARALIK_DK=0); tur başına en fazla
+//      KAT_TUR_ADET kategori ve KAT_TUR_HABER haber gönderilir, günlük tavan
+//      ve sessiz saat (01:00-07:00 TR) uygulanır. Takipçisi olmayan kategori
+//      tespit edilirse (alıcı 0) kısa süre atlanır, tavan harcanmaz.
 //
 //   3) ÖZET (bildirim_sikligi = ozet):
 //      Günde 3 kez (TR 09/15/21) en taze 3 haberden kısa bir özet gider.
@@ -57,13 +60,18 @@ const SON_TTL_SAAT = Number(process.env.BILDIRIM_SON_TTL_SAAT ?? 6);
 // yeni haberi alır. Bu yüzden kategori başına bekleme süresi varsayılan olarak
 // kapalı (0). İstenirse BILDIRIM_KAT_ARALIK_DK ile geri açılabilir.
 const KAT_MIN_ARALIK_DK = Number(process.env.BILDIRIM_KAT_ARALIK_DK ?? 0);
-const KAT_MAX_GUN = Number(process.env.BILDIRIM_KAT_MAX_GUN ?? 120);
-const KAT_TTL_SAAT = Number(process.env.BILDIRIM_KAT_TTL_SAAT ?? 3);
+const KAT_MAX_GUN = Number(process.env.BILDIRIM_KAT_MAX_GUN ?? 250);
+// Taze sayılan pencere. Gönderim kaydı (sent + idempotency) tekrarı zaten
+// engellediği için bu süre geniş tutulur: kısa tutulunca "breaking" işaretli
+// taze haberler pencereyi kaçırıp konu bildirimi hiç gitmiyordu.
+const KAT_TTL_SAAT = Number(process.env.BILDIRIM_KAT_TTL_SAAT ?? 4);
 // Tur başına en fazla kaç KATEGORİ işlenir (adil sıra).
 const KAT_TUR_ADET = Number(process.env.BILDIRIM_KAT_TUR_ADET ?? 6);
 // Tur başına gönderilecek en fazla HABER (taşma koruması; sonraki turda devam).
 const KAT_TUR_HABER = Number(process.env.BILDIRIM_KAT_TUR_HABER ?? 20);
-const TOPLAM_MAX_GUN = Number(process.env.BILDIRIM_TOPLAM_MAX_GUN ?? 150);
+// Kimsenin takip etmediği (alıcısı 0 çıkan) kategori bu süre boyunca atlanır.
+const KAT_BOS_GERI_CEK_SAAT = Number(process.env.BILDIRIM_KAT_BOS_SAAT ?? 6);
+const TOPLAM_MAX_GUN = Number(process.env.BILDIRIM_TOPLAM_MAX_GUN ?? 280);
 // Özet bildirimi: "ozet" seçen okuyucuya günde 3 kez (TR 09/15/21).
 const OZET_SAATLER = [9, 15, 21];
 const OZET_ARALIK_SAAT = Number(process.env.BILDIRIM_OZET_ARALIK_SAAT ?? 4);
@@ -74,7 +82,7 @@ const SESSIZ_BIT = Number(process.env.BILDIRIM_SESSIZ_BIT ?? 7);
 
 const TR_OFFSET_DK = 180; // Türkiye UTC+3 (yaz saati uygulaması yok)
 // Gönderilen id listesi sınırsız büyümesin.
-const SENT_LIMIT = 400;
+const SENT_LIMIT = 800;
 
 // --------------------------------------------------------------------------
 // Yardımcılar
@@ -139,6 +147,7 @@ async function durumOku() {
       updatedAt: d.updatedAt || null,
       sent: Array.isArray(d.sent) ? d.sent.map(String) : [],
       sonKategori: d.sonKategori && typeof d.sonKategori === "object" ? d.sonKategori : {},
+      bosKategori: d.bosKategori && typeof d.bosKategori === "object" ? d.bosKategori : {},
       sonDakika: d.sonDakika || null,
       sonOzet: d.sonOzet || null,
       gun: d.gun || "",
@@ -153,6 +162,7 @@ async function durumOku() {
       sonDakika: null,
       sent: [],
       sonKategori: {},
+      bosKategori: {},
       sonOzet: null,
       gun: "",
       gunSayi: {},
@@ -172,6 +182,8 @@ async function durumYaz(durum) {
     gun: durum.gun,
     gunSayi: durum.gunSayi,
     sonKategori: durum.sonKategori,
+    // Takipçisi olmayan kategoriler: günlük tavanı boşa harcamamak için not edilir.
+    bosKategori: durum.bosKategori || {},
     sonOzet: durum.sonOzet || null,
     sent,
     hosGeldin: durum.hosGeldin === true,
@@ -600,12 +612,18 @@ export async function bildirimleriGonder({ dry = false } = {}) {
   } else {
     // Her kategori için en taze haber; bekleme süresi dolmuş kategorilerden
     // EN UZUN SÜREDİR bildirilmeyen seçilir (adil sıra, tek kategori akışı ezmesin).
-    // Her kategorideki TÜM taze haberler gönderilir (yalnızca en yenisi değil):
-    // "Teknoloji" takip eden okuyucu, sıklık "anında" ise o kategoride çıkan her
-    // haberi alır. Aynı haber `kat-<id>` anahtarıyla bir kez gider.
+    // KONU AKIŞI: takip edilen kategoride ÇIKAN HER yeni haber gönderilir.
+    // ÖNEMLİ DÜZELTME: `breaking` işaretli haberler artık dışlanmıyor. Taze
+    // haberlerin neredeyse tamamı "son dakika" işaretlendiği için konu
+    // bildirimi hiç gönderilemiyordu (kullanıcı "seçtim ama gelmiyor" diyordu).
+    // Son dakika adımında gönderilmiş haber zaten gönderilenler listesinde
+    // olduğu için aynı haber iki kez gitmez; sunucu tarafında da `kat-<id>`
+    // idempotency anahtarı vardır.
+    const gonderilenler = new Set(durum.sent.map(String));
     const grup = new Map();
     for (const a of yeni) {
-      if (a.breaking === true || !taze(a, KAT_TTL_SAAT, now)) continue;
+      if (gonderilenler.has(String(a.id))) continue;
+      if (!taze(a, KAT_TTL_SAAT, now)) continue;
       const k = a.categorySlug || "diger";
       if (!grup.has(k)) grup.set(k, []);
       grup.get(k).push(a);
@@ -614,8 +632,17 @@ export async function bildirimleriGonder({ dry = false } = {}) {
       liste.sort((a, b) => yayinZamani(b) - yayinZamani(a));
     }
 
+    // Kategori seçimi: en uzun süredir bildirilmeyenler önce. Takipçisi olmayan
+    // (alıcısı 0 dönen) kategori kısa süre geri çekilir; yoksa günlük tavan
+    // kimsenin görmediği gönderimlerle dolar ve gerçek takipçiler sıra bekler.
+    const bosKategori = durum.bosKategori || {};
+    const bosMu = (slug) => {
+      const t = bosKategori[slug];
+      return t ? (now - Date.parse(t)) / 3600000 < KAT_BOS_GERI_CEK_SAAT : false;
+    };
     const uygun = [...grup.keys()]
       .filter((slug) => {
+        if (bosMu(slug)) return false;
         const son = durum.sonKategori?.[slug];
         if (!son || KAT_MIN_ARALIK_DK <= 0) return true;
         return (now - Date.parse(son)) / 60000 >= KAT_MIN_ARALIK_DK;
@@ -656,6 +683,14 @@ export async function bildirimleriGonder({ dry = false } = {}) {
               ],
               anahtar: `kat-${aday.id}`,
             });
+            const alici = Number(yanit?.recipients);
+            if (Number.isFinite(alici) && alici <= 0) {
+              // Bu konuyu takip eden cihaz yok: tavanı harcama, kısa süre atla.
+              bosKategori[slug] = new Date(now).toISOString();
+              durum.bosKategori = bosKategori;
+              console.log(`  · [konu:${slug}] takipçi yok (0 cihaz) — sayılmadı.`);
+              continue;
+            }
             console.log(
               `  ✓ [konu:${slug}] ${kisalt(aday.title, 60)}${yanit?.id ? ` (${yanit.id})` : ""}${aliciNotu(yanit)}`
             );
@@ -732,7 +767,7 @@ export async function bildirimleriGonder({ dry = false } = {}) {
     gun: tr.gun,
     sessiz,
     sonDakikaAdayi: yeni.filter((a) => a.breaking === true && taze(a, SON_TTL_SAAT, now)).length,
-    konuAdayi: yeni.filter((a) => a.breaking !== true && taze(a, KAT_TTL_SAAT, now)).length,
+    konuAdayi: yeni.filter((a) => taze(a, KAT_TTL_SAAT, now)).length,
     dry,
   };
 }
