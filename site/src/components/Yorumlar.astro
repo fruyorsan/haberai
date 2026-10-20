@@ -47,8 +47,6 @@ const otomatik = !sade && Boolean(slug) && aktif;
     <span class="yorum__not">Hesap gerekmez · reklamsız</span>
   </header>
 
-  <p class="yorum__kim" data-yorum-kim hidden></p>
-
   {/* Akış panelinde: yorumlar haber sayfasıyla AYNI havuzu kullanır. */}
   {sade && (
     <p class="yorum__ortak">
@@ -57,41 +55,45 @@ const otomatik = !sade && Boolean(slug) && aktif;
   )}
 
   <form class="yorum__form" data-yorum-form hidden novalidate action="#">
-    <input
-      class="yorum__ad"
-      data-yorum-ad
-      type="text"
-      name="ad"
-      maxlength="40"
-      autocomplete="nickname"
-      placeholder="Adın (boş bırakırsan “Okur”)"
-      aria-label="Takma ad"
-    />
-    <textarea
-      class="yorum__metin"
-      data-yorum-metin
-      name="metin"
-      rows="3"
-      maxlength="1200"
-      required
-      placeholder="Ne düşünüyorsun?"
-      aria-label="Yorumun"
-    ></textarea>
-    <!-- Bal küpü: botlar doldurur, insanlar görmez. -->
-    <input
-      class="yorum__tuzak"
-      data-yorum-tuzak
-      type="text"
-      name="web"
-      tabindex="-1"
-      autocomplete="off"
-      aria-hidden="true"
-    />
-    <div class="yorum__alt">
-      <span class="yorum__kural">Küfür, hakaret ve reklam silinir.</span>
-      <button type="submit" class="yorum__gonder" data-yorum-gonder>Yorum yaz</button>
+    <div class="yorum__ben" data-yorum-ben aria-hidden="true">O</div>
+    <div class="yorum__yaz">
+      <p class="yorum__kim" data-yorum-kim hidden></p>
+      <input
+        class="yorum__ad"
+        data-yorum-ad
+        type="text"
+        name="ad"
+        maxlength="40"
+        autocomplete="nickname"
+        placeholder="Adın (boş bırakırsan “Okur”)"
+        aria-label="Takma ad"
+      />
+      <textarea
+        class="yorum__metin"
+        data-yorum-metin
+        name="metin"
+        rows="2"
+        maxlength="1200"
+        required
+        placeholder="Ne düşünüyorsun?"
+        aria-label="Yorumun"
+      ></textarea>
+      <!-- Bal küpü: botlar doldurur, insanlar görmez. -->
+      <input
+        class="yorum__tuzak"
+        data-yorum-tuzak
+        type="text"
+        name="web"
+        tabindex="-1"
+        autocomplete="off"
+        aria-hidden="true"
+      />
+      <div class="yorum__alt">
+        <span class="yorum__kural">Küfür, hakaret ve reklam silinir.</span>
+        <button type="submit" class="yorum__gonder" data-yorum-gonder>Yorum yaz</button>
+      </div>
+      <p class="yorum__durum" data-yorum-durum role="status" aria-live="polite"></p>
     </div>
-    <p class="yorum__durum" data-yorum-durum role="status" aria-live="polite"></p>
   </form>
 
   <p class="yorum__bekle" data-yorum-bekle hidden={!otomatik}>Yorumlar yükleniyor…</p>
@@ -145,16 +147,20 @@ const otomatik = !sade && Boolean(slug) && aktif;
     background: var(--bg);
   }
   .yorum--sade .yorum__metin {
-    min-height: 84px;
-    border-radius: 12px;
-    background: var(--surface);
+    min-height: 62px;
+    padding: 8px 0;
+    border: 0;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    background: transparent;
     font-size: 0.95rem;
   }
   .yorum--sade .yorum__ad {
-    max-width: none;
-    padding: 8px 14px;
+    max-width: 220px;
+    padding: 6px 11px;
     border-radius: 999px;
     background: var(--surface);
+    font-size: 0.82rem;
   }
   .yorum--sade .yorum__gonder {
     padding: 10px 20px;
@@ -202,7 +208,7 @@ const otomatik = !sade && Boolean(slug) && aktif;
   }
   /* Giriş yapan okuyucu: adı kilitli, kim yazdığı görünür. */
   .yorum__kim {
-    margin: 0 0 8px;
+    margin: 0;
     font-size: 0.76rem;
     color: var(--text-2);
   }
@@ -241,9 +247,10 @@ const otomatik = !sade && Boolean(slug) && aktif;
     text-transform: uppercase;
   }
   .yorum__form {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr);
+    align-items: start;
+    gap: 10px;
     margin-bottom: 16px;
   }
   .yorum__form[hidden],
@@ -253,30 +260,69 @@ const otomatik = !sade && Boolean(slug) && aktif;
   .yorum__kapali[hidden] {
     display: none;
   }
+  /* Kompakt "tweet" düzeni: solda küçük profil, sağda yazı alanı. */
+  .yorum__ben {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-size: 0.88rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    overflow: hidden;
+    align-self: start;
+  }
+  .yorum__ben img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    display: block;
+  }
+  .yorum__yaz {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+  }
   .yorum__ad,
   .yorum__metin {
     width: 100%;
-    padding: 10px 12px;
-    border: 1px solid var(--border);
-    border-radius: 11px;
-    background: var(--bg);
     color: var(--text);
     font: inherit;
     font-size: 0.92rem;
   }
   .yorum__ad {
-    max-width: 260px;
+    max-width: 220px;
+    padding: 6px 11px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface-2);
+    font-size: 0.82rem;
   }
   .yorum__metin {
-    resize: vertical;
-    min-height: 76px;
+    min-height: 62px;
+    padding: 8px 0;
+    border: 0;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    background: transparent;
+    font-size: 1rem;
     line-height: 1.5;
+    resize: vertical;
   }
-  .yorum__ad:focus,
-  .yorum__metin:focus {
+  .yorum__ad:focus {
     outline: none;
     border-color: var(--brand);
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 16%, transparent);
+  }
+  .yorum__metin:focus {
+    outline: none;
+    border-color: var(--brand);
+    box-shadow: 0 1px 0 var(--brand);
   }
   .yorum__tuzak {
     position: absolute;
@@ -472,8 +518,17 @@ const otomatik = !sade && Boolean(slug) && aktif;
     .yorum__kim {
       font-size: 0.74rem;
     }
+    .yorum__form {
+      grid-template-columns: 34px minmax(0, 1fr);
+      gap: 8px;
+    }
+    .yorum__ben {
+      width: 34px;
+      height: 34px;
+      font-size: 0.8rem;
+    }
     .yorum__metin {
-      min-height: 88px;
+      min-height: 70px;
       font-size: 0.95rem;
     }
     .yorum__alt {
@@ -598,8 +653,18 @@ const otomatik = !sade && Boolean(slug) && aktif;
    */
   function hesapUygula(kok: Kok) {
     const u = hesap();
+    const H = (window as any).HaberinAi;
     const adEl = kok.querySelector<HTMLInputElement>("[data-yorum-ad]");
     const kim = kok.querySelector<HTMLElement>("[data-yorum-kim]");
+    const ben = kok.querySelector<HTMLElement>("[data-yorum-ben]");
+    const avatarYaz = (deger: string, ad: string) => {
+      if (!ben) return;
+      if (H && typeof H.avatarDoldur === "function") {
+        H.avatarDoldur(ben, deger, ad);
+      } else {
+        ben.textContent = ((ad || "?").trim().charAt(0) || "?").toLocaleUpperCase("tr");
+      }
+    };
     if (u) {
       if (adEl) {
         adEl.value = u.ad || "";
@@ -613,6 +678,7 @@ const otomatik = !sade && Boolean(slug) && aktif;
         b.textContent = u.ad;
         kim.append(b, document.createTextNode(" olarak yazıyorsun · profilden"));
       }
+      avatarYaz(u.avatar || "", u.ad || "Üye");
     } else {
       if (adEl) {
         adEl.readOnly = false;
@@ -624,6 +690,7 @@ const otomatik = !sade && Boolean(slug) && aktif;
         }
       }
       if (kim) kim.hidden = true;
+      avatarYaz("", adEl?.value || "Okur");
     }
     return u;
   }
@@ -907,6 +974,18 @@ const otomatik = !sade && Boolean(slug) && aktif;
     window.addEventListener("hb-oturum-degisti", () => {
       hesapUygula(kok);
       if (kok.dataset.yuklendi === "1") void yukle(kok);
+    });
+    // Hesapsız yazarken takma adın ilk harfi küçük avatara yansısın.
+    adEl?.addEventListener("input", () => {
+      if (hesap()) return;
+      const H = (window as any).HaberinAi;
+      const ben = kok.querySelector<HTMLElement>("[data-yorum-ben]");
+      if (!ben) return;
+      if (H && typeof H.avatarDoldur === "function") {
+        H.avatarDoldur(ben, "", adEl.value || "Okur");
+      } else {
+        ben.textContent = (adEl.value.trim().charAt(0) || "O").toLocaleUpperCase("tr");
+      }
     });
 
     // Beğeni ve silme: liste her yenilendiğinde ayrı dinleyici eklememek için

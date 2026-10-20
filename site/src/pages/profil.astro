@@ -71,13 +71,12 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
           </div>
         </div>
         <div class="profil__avatarlar" id="profil-avatarlar">
-          {AVATARLAR.map((a) => (
+          {AVATARLAR.map((a, i) => (
             <button
               type="button"
               class="profil__avatar-sec"
               data-avatar={a.kod}
-              title={a.ad}
-              aria-label={a.ad}
+              aria-label={`Avatar ${i + 1}`}
               aria-pressed="false"
               style={`--av-renk:${a.renk}`}
             >
