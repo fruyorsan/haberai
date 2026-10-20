@@ -21,3 +21,6 @@ Thumbs.db
 # Avatar üretim kuyruğu (AI Horde iş kimlikleri; geçici)
 scripts/avatar-ai-isler.json
 
+
+# CI tarafindan uretilir (pipeline.yml: Ozel alan adi adimi)
+site/public/CNAME
