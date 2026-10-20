@@ -1,23 +1,50 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-hidden="true">
-<defs><clipPath id="k-astronot"><circle cx="48" cy="48" r="48"/></clipPath></defs>
+<defs>
+<clipPath id="k-astronot"><circle cx="48" cy="48" r="48"/></clipPath>
+<linearGradient id="z-astronot" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#424858"/>
+<stop offset="1" stop-color="#1d2333"/>
+</linearGradient>
+</defs>
 <g clip-path="url(#k-astronot)">
-<rect width="96" height="96" fill="#232a3d"/>
+<rect width="96" height="96" fill="url(#z-astronot)"/>
+<circle cx="28" cy="16" r="38" fill="#ffffff" fill-opacity=".06"/>
+<path d="M0 80c13 9 29 13 48 13s35-4 48-13v16H0z" fill="#000000" fill-opacity=".07"/>
 
 <g fill="#ffffff">
 <path d="M18 24l1.1 3.2L22 28.4l-2.9 1.2L18 33l-1.1-3.4L14 28.4l2.9-1.2z" opacity=".9"/>
 <path d="M78 20l.8 2.3 2.2.8-2.2.9-.8 2.3-.8-2.3-2.2-.9 2.2-.8z" opacity=".65"/>
-<path d="M74 62l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z" opacity=".45"/>
 <circle cx="24" cy="60" r="1.2" opacity=".6"/>
 <circle cx="69" cy="43" r="1" opacity=".5"/>
+<circle cx="74" cy="18" r=".9" opacity=".45"/>
+<circle cx="20" cy="40" r=".8" opacity=".4"/>
+<circle cx="70" cy="82" r=".8" opacity=".35"/>
 </g>
-<path d="M20 98c2-13 13-20 28-20s26 7 28 20z" fill="#e9edf5"/>
-<path d="M40 78h16v8H40z" fill="#c9d2e0"/>
-<path d="M44 80h8v6h-8z" fill="#e88a3d"/>
-<circle cx="48" cy="46" r="22" fill="#f2f5fa"/>
-<circle cx="48" cy="46" r="22" fill="none" stroke="#c3ccda" stroke-width="1.6"/>
-<ellipse cx="48" cy="48" rx="16.5" ry="13.5" fill="#2f4a74"/>
-<path d="M38 43c4-3 10-4 15-2" stroke="#7fa3d6" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".8"/>
-<path d="M35 62c8 4 18 4 26 0" stroke="#c3ccda" stroke-width="2" fill="none"/>
+<circle cx="73" cy="74" r="7" fill="#3d5a9e" opacity=".85"/>
+<ellipse cx="73" cy="74" rx="11.4" ry="2.8" fill="none" stroke="#7fa3d6" stroke-width="1.4" transform="rotate(-16 73 74)" opacity=".8"/>
+<path d="M16 97c2.6-14.4 14.2-22 32-22s29.4 7.6 32 22z" fill="#e9edf5"/>
+<path d="M20 90c6.4-6.2 15.8-9.4 28-9.4s21.6 3.2 28 9.4" fill="none" stroke="#c9d2e0" stroke-width="1.6"/>
+<rect x="39.6" y="79.4" width="16.8" height="12.6" rx="2.8" fill="#c9d2e0"/>
+<circle cx="44.2" cy="83.4" r="1.5" fill="#e88a3d"/>
+<circle cx="48" cy="83.4" r="1.5" fill="#5fd6c4"/>
+<rect x="42.8" y="87" width="10.4" height="1.6" rx=".8" fill="#8fa3bd"/>
+<circle cx="48" cy="45" r="23.4" fill="#f2f5fa"/>
+<circle cx="48" cy="45" r="23.4" fill="none" stroke="#c3ccda" stroke-width="2"/>
+<ellipse cx="48" cy="47" rx="15.4" ry="14.6" fill="#e8b98f"/>
+<path d="M33.6 40.6c1.6-6.2 7.2-10.2 14.4-10.2s12.8 4 14.4 10.2c-4-3.4-8.6-5.2-14.4-5.2s-10.4 1.8-14.4 5.2z" fill="#4a3323"/>
+<circle cx="42.4" cy="46.6" r="2" fill="#2b2d38"/>
+<circle cx="53.6" cy="46.6" r="2" fill="#2b2d38"/>
+<circle cx="43.1" cy="45.8" r=".7" fill="#ffffff"/>
+<circle cx="54.3" cy="45.8" r=".7" fill="#ffffff"/>
+<path d="M45.2 52.8q2.8 2.6 5.6 0" fill="none" stroke="#9c4f4b" stroke-width="1.6" stroke-linecap="round"/>
+<ellipse cx="39.4" cy="50.8" rx="2.6" ry="1.5" fill="#e88a76" fill-opacity=".3"/>
+<ellipse cx="56.6" cy="50.8" rx="2.6" ry="1.5" fill="#e88a76" fill-opacity=".3"/>
+<circle cx="48" cy="45" r="19.6" fill="#7fa3d6" fill-opacity=".1"/>
+<path d="M35 34c5.4-4.2 13-5.4 19.6-3.2" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" opacity=".75"/>
+<path d="M34.4 39c3.2-2.8 7.2-4.4 11-4.6" fill="none" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round" opacity=".45"/>
+<circle cx="60.8" cy="54.4" r="1.8" fill="#ffffff" fill-opacity=".3"/>
+<path d="M34.6 61.8c7.6 3.4 19.2 3.4 26.8 0" fill="none" stroke="#c3ccda" stroke-width="2"/>
+<path d="M39.6 68.4h16.8v3.4H39.6z" fill="#c9d2e0"/>
 </g>
-<circle cx="48" cy="48" r="46.6" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="1.2"/>
+<circle cx="48" cy="48" r="46.6" fill="none" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.2"/>
 </svg>

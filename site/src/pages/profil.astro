@@ -91,6 +91,11 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
             </button>
           ))}
         </div>
+        <p class="profil__avatar-kaynak">
+          İnsan portreleri:
+          <a href="https://www.dicebear.com/styles/lorelei/" target="_blank" rel="noopener">DiceBear “Lorelei”</a>
+          (CC0) · Karakterler özgün çizim.
+        </p>
         <span class="profil__mini" id="profil-avatar-durum" role="status" aria-live="polite"></span>
       </section>
 
@@ -530,6 +535,17 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
   }
   .profil__avatar-sec.is-on .profil__avatar-ad {
     color: var(--heading);
+  }
+  .profil__avatar-kaynak {
+    margin: 10px 0 0;
+    font-size: 0.68rem;
+    line-height: 1.45;
+    color: var(--muted);
+  }
+  .profil__avatar-kaynak a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
 
   /* ============================== TELEFON ============================== */
