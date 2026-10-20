@@ -52,7 +52,7 @@ const UZAY_SORGU = /\b(space|satellite|nasa|esa|rocket|orbit|uzay|uydu|astronaut
 // sorgu "Mediterranean Sea coastline landscape" olmuş; afet bağlamı kaybolunca
 // sahilde bir manzara fotoğrafı kapak oluyordu.
 const AFET_SORGU =
-  /\b(flood|flooding|earthquake|quake|wildfire|storm|hurricane|typhoon|cyclone|drought|blizzard|avalanche|eruption|tsunami|fire)\b|(sel|su baskını|deprem|yangın|fırtına|hortum|kuraklık|heyelan|çığ)/i;
+  /\b(flood|flooding|earthquake|quake|wildfire|storm|hurricane|typhoon|cyclone|drought|blizzard|avalanche|eruption|tsunami|fire)\b|(\bsel\b|su baskını|deprem|yangın|fırtına|hortum|kuraklık|heyelan|çığ(?!lık))/i;
 
 // Afet/hava sorgusunda fotoğrafın adında da afet izi olmalı. Yoksa "sahil
 // manzarası" gibi sakin bir kare, "deprem" haberine kapak oluyordu.
@@ -252,7 +252,19 @@ export function kisaSorgu(sorgu) {
  */
 export const KONU_SORGU = [
   {
-    test: /(flood|flooding|flooded|rain|rainfall|storm|downpour|hurricane|typhoon|monsoon|\bsel\b|su baskını|sağanak|yağış|fırtına|hortum)/i,
+    // KAR, SELDEN ÖNCE bakılır: "snowstorm" içinde "storm" geçtiği için
+    // sel kuralı önce çalışınca kar haberi "flooded street cars" sorgusuna
+    // düşüyordu (kar haberi + sel fotoğrafı).
+    // "ice" tam sözcük aranır: "office", "service", "police", "device"
+    // sözcüklerinin içine denk gelip spor/ekonomi haberine karlı araba
+    // fotoğrafı koyuyordu ("Sergen Yalcin TFF office meeting").
+    test: /(\bsnow\b|blizzard|snowstorm|\bfrost\b|\bice\b|\bicy\b|kar yağışı|çığ(?!lık))/i,
+    sorgu: "snow covered street cars",
+  },
+  {
+    // "rain" tek başına "train", "brain" içine denk geliyordu; "storm" da
+    // "brainstorm" içine. Tam sözcük olarak aranır.
+    test: /(flood|flooding|flooded|\brain\b|\brainfall\b|\bstorm\b|downpour|hurricane|typhoon|monsoon|\bsel\b|su baskını|sağanak|yağış|fırtına|hortum)/i,
     sorgu: "flooded street cars",
   },
   {
@@ -260,12 +272,9 @@ export const KONU_SORGU = [
     sorgu: "earthquake damaged building",
   },
   {
-    test: /(wildfire|forest fire|fire|blaze|burning|yangın)/i,
+    // "fire" tam sözcük: "firewall", "Fire TV" gibi başlıklar afet sayılmasın.
+    test: /(wildfire|forest fire|\bfire\b|blaze|burning|yangın)/i,
     sorgu: "wildfire forest fire",
-  },
-  {
-    test: /(snow|blizzard|snowstorm|frost|ice|kar yağışı|çığ)/i,
-    sorgu: "snow covered street cars",
   },
   {
     test: /(drought|heatwave|heat wave|kuraklık|sıcak dalgası)/i,
