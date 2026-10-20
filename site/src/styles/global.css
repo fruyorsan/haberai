@@ -63,10 +63,10 @@
 }
 
 /* ================================================================
-   PALETLER — Beyaz (varsayılan) · Bordo · Siyan
+   PALETLER — Beyaz (varsayılan) · Bordo · Siyah
    ----------------------------------------------------------------
    Üç palet de aynı jetonları (token) ezer; bileşenler renk bilmez.
-   Sıra: Bordo → Siyan → Beyaz. Varsayılan: Beyaz.
+   Sıra: Bordo → Siyah → Beyaz. Varsayılan: Beyaz.
    ================================================================ */
 
 /* --- BORDO: koyu bordo zemin, gül kırmızısı aksan --- */
@@ -108,8 +108,8 @@
   --shadow-lg: 0 36px 80px -28px rgba(0, 0, 0, 0.88);
 }
 
-/* --- SİYAN: nötr koyu (gece) zemin, camgöbeği aksan --- */
-:root[data-theme="siyan"] {
+/* --- SİYAH: nötr koyu (gece) zemin, kırmızı aksan --- */
+:root[data-theme="siyah"] {
   color-scheme: dark;
 
   --bg: #0b0d10;

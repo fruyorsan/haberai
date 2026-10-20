@@ -283,13 +283,13 @@ const isActive = (href) =>
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
-  // --- Palet değiştirici: Bordo → Siyan → Beyaz (varsayılan: Beyaz) ---
+  // --- Palet değiştirici: Bordo → Siyah → Beyaz (varsayılan: Beyaz) ---
   const themeToggle = document.getElementById("theme-toggle");
   if (themeToggle) {
     const root = document.documentElement;
     const PALETLER = {
-      bordo: { ad: "Bordo", sonraki: "siyan", renk: "#23060d", koyu: true },
-      siyan: { ad: "Siyan", sonraki: "beyaz", renk: "#0b0d10", koyu: true },
+      bordo: { ad: "Bordo", sonraki: "siyah", renk: "#23060d", koyu: true },
+      siyah: { ad: "Siyah", sonraki: "beyaz", renk: "#0b0d10", koyu: true },
       beyaz: { ad: "Beyaz", sonraki: "bordo", renk: "#ffffff", koyu: false },
     };
 

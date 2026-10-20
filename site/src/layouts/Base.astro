@@ -170,15 +170,17 @@ const CSP = [
     <link rel="alternate" type="text/markdown" title="HaberinAi — LLM özeti" href="/llms.txt" />
 
     <!-- Palet (FOUC önleyici): seçilen paleti ilk boyamadan önce uygula.
-         Sıra: Bordo → Siyan → Beyaz. Varsayılan: Beyaz. -->
+         Sıra: Bordo → Siyah → Beyaz. Varsayılan: Beyaz. -->
     <script is:inline>
       (function () {
         try {
           var root = document.documentElement;
-          var PALETLER = { bordo: 1, siyan: 1, beyaz: 1 };
+          var PALETLER = { bordo: 1, siyah: 1, beyaz: 1 };
           var palet = null;
           try {
             palet = localStorage.getItem("hb-palet");
+            // Eski "siyan" (camgöbeği) kaydı artık "siyah" paletidir.
+            if (palet === "siyan") palet = "siyah";
           } catch (e) {}
           // Eski tema kayıtlarını bir kez devral, sonra temizle.
           if (!PALETLER[palet]) {
@@ -197,7 +199,7 @@ const CSP = [
           root.dataset.theme = palet;
           root.style.colorScheme = palet === "beyaz" ? "light" : "dark";
           // Tarayıcı çubuğu rengi de palete uysun (mobilde adres çubuğu).
-          var RENKLER = { beyaz: "#ffffff", bordo: "#23060d", siyan: "#0b0d10" };
+          var RENKLER = { beyaz: "#ffffff", bordo: "#23060d", siyah: "#0b0d10" };
           var meta = document.querySelector('meta[name="theme-color"]');
           if (meta) meta.setAttribute("content", RENKLER[palet] || "#ffffff");
         } catch (e) {}
@@ -495,7 +497,7 @@ OneSignalDeferred.push(async function (OneSignal) {
         });
       }
 
-      // Palet artık kullanıcının seçimine bağlıdır (Bordo · Siyan · Beyaz).
+      // Palet artık kullanıcının seçimine bağlıdır (Bordo · Siyah · Beyaz).
       // Sistem koyu modu tercihi bilerek yok sayılır: varsayılan Beyaz'dır.
     </script>
     <!-- Çerez izni (KVKK/GDPR): onay verilene kadar GA/AdSense yüklenmez -->
