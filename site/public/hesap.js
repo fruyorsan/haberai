@@ -387,7 +387,17 @@
     // Yerel kopya OneSignal'den BAĞIMSIZ yazılır: bildirim paneli ve haber
     // sayfasındaki "takip et" düğmeleri, SDK hazır olmasa da seçimleri dolu
     // göstersin. (Eskiden erken return yüzünden seçimler kaybolmuş görünüyordu.)
-    var slugs = u.bildirim_ilgi && u.bildirim_ilgi.length ? u.bildirim_ilgi : u.ilgi || [];
+    // Hesapta hiç konu yoksa (ne bildirim konusu ne ilgi alanı) cihazın kendi
+    // panelinden yaptığı seçim KORUNUR; eskiden her sayfa açılışında boş listeyle
+    // üzerine yazılıyor ve okuyucunun seçtiği konular siliniyordu.
+    var hesapListesi =
+      u.bildirim_ilgi && u.bildirim_ilgi.length ? u.bildirim_ilgi : u.ilgi || [];
+    var yerelListe = [];
+    try {
+      var ham = JSON.parse(localStorage.getItem("bildirim-kategoriler") || "[]");
+      if (Array.isArray(ham)) yerelListe = ham.filter(Boolean).map(String);
+    } catch (e) {}
+    var slugs = hesapListesi.length ? hesapListesi : yerelListe;
     try {
       localStorage.setItem("bildirim-kategoriler", JSON.stringify(slugs));
       localStorage.setItem("bildirim-son-dakika", "true");
