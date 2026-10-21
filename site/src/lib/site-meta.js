@@ -151,7 +151,7 @@ export const AVATARLAR = [
   { kod: "/avatar/deniz-manzara.webp", ad: "Deniz Manzarası", renk: "#4b83a8" },
   { kod: "/avatar/ay.webp", ad: "Ay", renk: "#8a6fd1" },
   { kod: "/avatar/istanbul.webp", ad: "İstanbul", renk: "#e2743a" },
-  { kod: "/avatar/kulaklik.webp", ad: "Kulaklık", renk: "#8a6fd1" },
+  { kod: "/avatar/cicekli-tavsan.webp", ad: "Çiçekli Tavşan", renk: "#d98a9a" },
   { kod: "/avatar/gamepad.webp", ad: "Gamepad", renk: "#4b83a8" },
   { kod: "/avatar/cicek.webp", ad: "Çiçek", renk: "#d9364b" },
   { kod: "/avatar/yaprak.webp", ad: "Yaprak", renk: "#1f6f54" },
