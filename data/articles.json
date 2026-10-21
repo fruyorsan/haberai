@@ -1,5 +1,213 @@
 [
   {
+    "id": "a084de0f808c7d2f",
+    "title": "Intel ve AMD, x86 işlemciler için PyTorch yapay zeka standardını kurdu",
+    "slug": "intel-ve-amd-x86-islemciler-icin-pytorch-yapay-zeka-standardini-kurdu",
+    "summary": "Yarı iletken endüstrisinin iki büyük rakibi, x86 tabanlı yapay zeka geliştirmelerini kolaylaştırmak adına ortak bir adım attı. Şirketler, PyTorch iş yüklerini hızlandırmak için oneDNN kütüphanesini ortak standart haline getirdi.",
+    "keyPoints": [
+      "Intel ve AMD, x86 işlemciler için oneDNN kütüphanesini standartlaştırdı.",
+      "Geliştiricilerin her iki mimari için ayrı yazılım yolları yazma zorunluluğu kalktı.",
+      "Red Hat ekosistem ortaklığıyla PyTorch iş yükleri çok daha tutarlı çalışacak."
+    ],
+    "body": [
+      "Yarı iletken pazarının iki dev ismi, x86 ekosistemindeki yapay zeka geliştirme süreçlerini sadeleştirmek amacıyla güçlerini birleştirdi. x86 Ekosistem Danışma Grubu çatısı altında toplanan markalar, PyTorch tabanlı yapay zeka projelerinin işlemciler üzerinde daha yüksek verimle çalışmasını hedefliyor. Bu doğrultuda oneDNN kütüphanesi, tüm x86 CPU'lar için temel standart olarak kabul edildi.",
+      "Yıllardır süren donanım ve yazılım rekabetini geride bırakan bu ortaklık, yazılım mühendisleri için önemli bir esneklik sağlıyor. Geliştiriciler artık her iki işlemci mimarisi için ayrı kod yolları tasarlamak zorunda kalmayacak. Bu durum, sektördeki dağınık yapının ortadan kalkmasına ve projelerin daha hızlı ölçeklenmesine zemin hazırlıyor.",
+      "Intel Veri Merkezi Stratejik Programları Başkan Yardımcısı Jeff McVeigh, donanım bazlı farklı yazılım yolları izleme zorunluluğunun sona erdiğini belirtti. AMD kanadından Robert Hormuth ise açık yazılım ekosistemi vizyonunu yineleyerek kendi ZenDNN optimizasyonlarını bu kütüphaneye dahil etti. Oluşturulan bu yapı, PyTorch kullanıcıları için tek durak noktası niteliği taşıyor.",
+      "Red Hat CTO Ofisi adına konuşan Stephen Watt, standardizasyonun geliştirici deneyimini kusursuzlaştıracağını ifade etti. Yapay zeka iş yüklerinin farklı x86 platformlarında tutarlı bir şekilde çalıştırılması, zaman alıcı donanım yapılandırmalarını tarihe gömüyor. Şirketler artık satıcı bağımlılığı gibi geleneksel engellerden kurtulmuş oluyor."
+    ],
+    "comment": "Donanım üreticilerinin rekabeti yazılım katmanında ortak bir paydaya taşıması, x86 ekosisteminin yapay zeka yarışındaki en büyük handikaplarından birini ortadan kaldırıyor. Şirketlerin tek bir standart etrafında birleşmesi, geliştiricilerin donanım uyumluluğu yerine doğrudan model mimarisine odaklanmasını sağlıyor. Bu entegrasyon gerçekleşmeseydi, mühendisler her iki üretici için ayrı optimizasyon döngüleri kurmak zorunda kalacak ve kaynak tüketimi katlanacaktı. Uzun vadede bu hamle, x86 platformlarının ARM tabanlı alternatifler karşısında yazılım esnekliğini artırması açısından belirleyici olacak.",
+    "editorNote": "İki dev rakip yazılım katmanındaki dağınıklığı bitirdi; geliştiriciler artık tek bir kütüphaneyle çalışacak.",
+    "tags": [
+      "Intel",
+      "AMD",
+      "PyTorch",
+      "oneDNN",
+      "Yapay Zeka"
+    ],
+    "category": "Yazılım",
+    "gorselSorgu": "intel amd cpu processors server",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/intel-ve-amd-x86-islemcilerde-yapay-zeka-gelistirmeyi-birlestiriyor",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/1983_Intel_%26_AMD_EPROMs.jpg/1920px-1983_Intel_%26_AMD_EPROMs.jpg",
+    "gorselKaynak": {
+      "yazar": "Martijn Boer",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:1983_Intel_%26_AMD_EPROMs.jpg"
+    },
+    "publishedAt": "2026-10-21T09:00:03.000Z",
+    "generatedAt": "2026-10-21T09:00:36.338Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/1983_Intel_%26_AMD_EPROMs_-_50786558536.jpg/1920px-1983_Intel_%26_AMD_EPROMs_-_50786558536.jpg",
+        "yazar": "Martijn Boer",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:1983_Intel_%26_AMD_EPROMs_-_50786558536.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/1983_Intel_%26_AMD_EPROMs_-_50786660562.jpg/1920px-1983_Intel_%26_AMD_EPROMs_-_50786660562.jpg",
+        "yazar": "Martijn Boer",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:1983_Intel_%26_AMD_EPROMs_-_50786660562.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
+    "id": "0ff0eaaddafb1acd",
+    "title": "Coca-Cola'nın 5,1 milyar dolarlık Costa Coffee yatırımı hayal kırıklığı yarattı",
+    "slug": "coca-colanin-51-milyar-dolarlik-costa-coffee-yatirimi-hayal-kirikligi-yaratti",
+    "summary": "İçecek devi Coca-Cola'nın milyarlarca dolara bünyesine kattığı Costa Coffee, küresel pazarda beklenen büyüme hedeflerine ulaşamadı. Operasyonel zorluklar ve yüksek maliyetler nedeniyle şirket zorlu bir süreçten geçiyor.",
+    "keyPoints": [
+      "2018 yılında 5,1 milyar dolara satın alınan Costa Coffee beklentilerin gerisinde kaldı.",
+      "Şirket, 2021 ile 2025 yılları arasında kurumsal personel sayısını yüzde 18 oranında azalttı.",
+      "Costa Ltd., 2025 yılında gelirini yüzde 5 artırarak 1,29 milyar sterline çıkardı."
+    ],
+    "body": [
+      "Coca-Cola'nın eski üst yöneticisi James Quincey döneminde atılan kahve adımı, aradan geçen yıllara rağmen planlandığı gibi ilerlemedi. Küresel çay ve kahve pazarında güçlü bir konuma gelmek amacıyla yapılan devasa yatırım, operasyonel karmaşıklıklar ve stratejik hesap hataları yüzünden sekteye uğradı. Soğuk içecek pazarındaki gücünü otomatlar aracılığıyla yaymayı hedefleyen şirket, rakiplerinin gerisinde kaldı.",
+      "İngiltere'de geniş bir zincir ağına sahip olan marka, ABD pazarında istenen bilinirliğe erişemedi. Ayrıca kutu içinde barista olarak planlanan otomat ağının bakımı geleneksel cihazlara göre çok daha masraflı çıktı.",
+      "Otomat sayısı 8 bin 237 seviyesinden 15 binin üzerine çıkarılmasına rağmen taze süt kullanımı ve günlük bakım gereksinimleri teknik engeller yarattı. Salgın döneminin getirdiği kapanmalar temel gelir kaynaklarını keserken, dükkan yenileme süreçleri de rakiplerin gerisinde kaldı. Maliyetleri düşürmek için başlatılan franchise odaklı Project Decaf hamlesi yüksek fiyat beklentileri yüzünden yavaş ilerledi.",
+      "Geçtiğimiz yılın sonlarında markanın elden çıkarılması için TDR Capital dahil potansiyel alıcılarla 1 milyar sterlin seviyesinde görüşmeler yapıldığı, ancak anlaşma sağlanamadığı öne sürüldü. Tüm bu zorluklara rağmen Coca-Cola kahve kategorisinin stratejik parçası olmaya devam ettiğini belirtiyor. Şirket verilerine göre Costa, 2025 yılında gelirini artırarak 20,4 milyon sterlin faaliyet karı elde etmeyi başardı."
+    ],
+    "comment": "Restoran ve kafe işletmeciliği, dev içecek üreticilerinin alışkın olduğu yüksek marjlı ve standartlaştırılmış ambalajlı ürün modelinden tamamen farklı dinamikler barındırıyor. Şirketin milyarlarca dolarlık devasa bütçesine rağmen perakende sektöründeki yerel operasyonel maliyetleri yönetmekte zorlanması, bu tür çapraz yatırımların ne denli yüksek risk içerdiğini açıkça gösteriyor. Tüketici alışkanlıklarının hızla değiştiği pazarlarda porsiyon bazlı otomat veya mağazacılık modelleri, dijitalleşme ve tedarik zinciri esnekliği sağlanamadığı takdirde kârlılıktan çok uzun vadeli bir mali yük haline dönüşebilir. Şirket maliyet disiplini sağlasa da pazar payı savaşında geride kalma tehlikesiyle karşı karşıya kalmaya devam ediyor.",
+    "editorNote": "Milyarlık dev satın almanın ardından yaşanan operasyonel çıkmazlar ve küçülme adımları markanın geleceğini sorgulatıyor.",
+    "tags": [
+      "Coca-Cola",
+      "Costa Coffee",
+      "ekonomi",
+      "kahve",
+      "yatırım"
+    ],
+    "category": "Ekonomi",
+    "gorselSorgu": "Coca-Cola Costa Coffee store cup",
+    "source": "Sözcü Ekonomi",
+    "sourceUrl": "https://www.sozcu.com.tr/coca-cola-nin-kahve-sevdasi-pahaliya-patladi-5-1-milyar-dolarlik-husran-p371302",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Coca_Cola%2C_San_Jos%C3%A9_Province%2C_San_Jos%C3%A9%2C_Costa_Rica_-_panoramio.jpg/1920px-Coca_Cola%2C_San_Jos%C3%A9_Province%2C_San_Jos%C3%A9%2C_Costa_Rica_-_panoramio.jpg",
+    "gorselKaynak": {
+      "yazar": "Gustavo Paz",
+      "lisans": "CC BY-SA 3.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Coca_Cola,_San_Jos%C3%A9_Province,_San_Jos%C3%A9,_Costa_Rica_-_panoramio.jpg"
+    },
+    "publishedAt": "2026-10-21T08:59:28.000Z",
+    "generatedAt": "2026-10-21T09:00:59.354Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Terminal_Coca-Cola.jpg/1920px-Terminal_Coca-Cola.jpg",
+        "yazar": "Haakon K",
+        "lisans": "CC BY-SA 3.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Terminal_Coca-Cola.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Anfiteatro_Coca_Cola_-_parque_viva.jpg/1920px-Anfiteatro_Coca_Cola_-_parque_viva.jpg",
+        "yazar": "Bernal Saborio",
+        "lisans": "CC BY-SA 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Anfiteatro_Coca_Cola_-_parque_viva.jpg"
+      }
+    ]
+  },
+  {
+    "id": "ca4188cb31f9af1c",
+    "title": "ABD ve İsrail, İran'a yönelik olası askerî harekâtı masaya yatırdı",
+    "slug": "abd-ve-israil-irana-yonelik-olasi-askeri-harekati-masaya-yatirdi",
+    "summary": "ABD ve İsrail, İran'a karşı geniş çaplı bir savaşı yeniden başlatma seçeneğini değerlendirmek üzere gizli bir zirve gerçekleştirdi. Ovda Hava Üssü'ndeki buluşmada bölgesel tehditler ve ikili işbirliği detayları ele alındı.",
+    "keyPoints": [
+      "ABD Savaş Bakanı Hegseth ile İsrail Başbakanı Netanyahu Nakab'daki üste bir araya geldi.",
+      "Görüşmede saldırı ve savunma alanındaki ortak stratejiler masaya yatırıldı.",
+      "İsrail medyası, nükleer tesislerdeki hareketlilik nedeniyle istihbarat raporlarını değerlendiriyor."
+    ],
+    "body": [
+      "Amerika Birleşik Devletleri ve İsrail cephesi, Tahran yönetimine karşı kapsamlı bir askeri çatışmayı yeniden tetikleme ihtimalini görüşmeye başladı. ABD Savaş Bakanı Pete Hegseth ile İsrail Başbakanı Benyamin Netanyahu, Nakab bölgesinde bulunan Ovda Hava Üssü'nde basına kapalı kritik bir toplantı gerçekleştirdi. Yaklaşık iki saat süren bu temas, iki ülke arasındaki askeri seçeneklerin masada tutulduğunu açıkça gösterdi.",
+      "Gerçekleşen buluşmaya İsrail Güvenlik Bakanı Israel Katz ve Netanyahu'nun ofisinden üst düzey isimler katıldı. Bazı CNN kaynakları, görüşmelerin yapıldığı üste Birleşik Arap Emirlikleri temsilcilerinin de bulunduğunu öne sürdü. İsrail basını ise Mossad ve genelkurmay başkanının bu özel masada yer almadığı bilgisini paylaştı.",
+      "Netanyahu, Donald Trump ile yaptığı telefon görüşmesinin kaydını kamuoyuyla paylaşarak ortak hedeflerine ulaşacaklarını vurguladı. İsrail lideri, İran'ın nükleer tehdidini kalıcı olarak bitireceklerini savunurken önleyici bir saldırı ihtimaline de hazırlandıklarını belirtti. Tahran'ı bölgesel seçimlere müdahale etmekle suçlayan Netanyahu, Washington ile teması sıkılaştırdı.",
+      "İsrail basınında Washington'ın yaklaşımına dair farklı değerlendirmeler dikkat çekiyor. Yedioth Ahronoth gazetesi, Netanyahu'nun hamle yapmak istediğini ancak ABD'nin şu an için doğrudan bir savaşa sıcak bakmadığını yazdı. Israel Hayom ise istihbarat birimlerinin nükleer tesislerdeki faaliyet artışına dikkat çekerek hızlı bir operasyon ihtimalini gündemde tuttuğunu bildirdi."
+    ],
+    "comment": "İki müttefik ülkenin askeri seçenekleri yeniden değerlendirmesi, Orta Doğu'daki mevcut kırılgan dengeleri tamamen tersine çevirebilecek yeni bir çatışma dalgasının habercisidir. Nakab'daki üste gerçekleşen bu temas, diplomatik kanallardan ziyade fiili müdahale senaryolarının Washington ve Tel Aviv tarafından ciddi şekilde planlandığını kanıtlıyor. Özellikle nükleer tesislerdeki hareketliliğin artması, taraflar için operasyonel takvimi öne çekebilir. Bu süreç, bölgedeki enerji hatlarını ve sermaye piyasalarını doğrudan tehdit ederken, olası bir askeri tırmanış küresel ticaret akışını sekteye uğratma riski taşıyor.",
+    "editorNote": "Ovda Hava Üssü'nde gerçekleşen gizli zirve, iki ülkenin Tahran'a karşı ortak stratejisini gözler önüne seriyor.",
+    "tags": [
+      "ABD",
+      "İsrail",
+      "İran",
+      "Orta Doğu",
+      "Pete Hegseth",
+      "Netanyahu"
+    ],
+    "category": "Dünya",
+    "gorselSorgu": "military air base jet fighters",
+    "source": "Yakın Doğu Haber",
+    "sourceUrl": "https://ydh.com.tr/d/46206/abd-ve-israil-iran-a-karsi-savasi-yeniden",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/US_Female_F-16_Fighter_Pilot_Capt_Brittany_Trimble_steps_from_her_jet_prior_to_VIGILANT_ACE_18_at_Osan_Air_Base%2C_Republic_of_Korea-4004018.jpg/1920px-US_Female_F-16_Fighter_Pilot_Capt_Brittany_Trimble_steps_from_her_jet_prior_to_VIGILANT_ACE_18_at_Osan_Air_Base%2C_Republic_of_Korea-4004018.jpg",
+    "gorselKaynak": {
+      "yazar": "U.S. Air Force/Staff Sgt. Deana Heitzman",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:US_Female_F-16_Fighter_Pilot_Capt_Brittany_Trimble_steps_from_her_jet_prior_to_VIGILANT_ACE_18_at_Osan_Air_Base,_Republic_of_Korea-4004018.jpg"
+    },
+    "publishedAt": "2026-10-21T08:59:13.000Z",
+    "generatedAt": "2026-10-21T09:00:47.607Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Visits_the_Boeing_Aerospace_factory_in_Berkley%2C_Missouri_on_June_5%2C_2024%2C_for_an_informal_ceremony_of_the_first_delivery_of_the_F-15EX_fighter_jet_aircraft_to_be_flown_to_the_Portland_Air_National_Guard_Base_in_Portland%2C_Oregon_-_9.jpg/1920px-thumbnail.jpg",
+        "yazar": "Oregon National Guard",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Visits_the_Boeing_Aerospace_factory_in_Berkley,_Missouri_on_June_5,_2024,_for_an_informal_ceremony_of_the_first_delivery_of_the_F-15EX_fighter_jet_aircraft_to_be_flown_to_the_Portland_Air_National_Guard_Base_in_Portland,_Oregon_-_9.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Visits_the_Boeing_Aerospace_factory_in_Berkley%2C_Missouri_on_June_5%2C_2024%2C_for_an_informal_ceremony_of_the_first_delivery_of_the_F-15EX_fighter_jet_aircraft_to_be_flown_to_the_Portland_Air_National_Guard_Base_in_Portland%2C_Oregon_-_8.jpg/1920px-thumbnail.jpg",
+        "yazar": "Oregon National Guard",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Visits_the_Boeing_Aerospace_factory_in_Berkley,_Missouri_on_June_5,_2024,_for_an_informal_ceremony_of_the_first_delivery_of_the_F-15EX_fighter_jet_aircraft_to_be_flown_to_the_Portland_Air_National_Guard_Base_in_Portland,_Oregon_-_8.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
+    "id": "abba8f5b9e57b806",
+    "title": "Haydar Baş: Meçhuller savaşı Türkiye ekonomisini tamamen bitirir",
+    "slug": "haydar-bas-mechuller-savasi-turkiye-ekonomisini-tamamen-bitirir",
+    "summary": "Prof. Dr. Haydar Baş, Türkiye'nin uluslararası meçhuller savaşına dahil olmasının ülkeyi ekonomik olarak çökerteceğini belirtti. Siyasi ve istihbarat analizlerine dikkat çeken Baş, Ankara'nın barıştan yana tavır alması gerektiğini vurguladı.",
+    "keyPoints": [
+      "Prof. Dr. Haydar Baş, Türkiye'nin meçhuller savaşına katılması halinde ekonominin çökeceğini söyledi.",
+      "11 Eylül saldırılarının İsrail ve Çin istihbaratının ortak planı olduğu iddia edildi.",
+      "Demokrat Parti başkan adayı Lyndon La Rouche, 24 Temmuz'daki konuşmasında savaş tehlikesine dikkat çekti."
+    ],
+    "body": [
+      "Prof. Dr. Haydar Baş, uluslararası alanda meçhuller savaşı olarak tanımlanan süreçte Türkiye'nin izlemesi gereken stratejiye dair kritik uyarılarda bulundu. Hatırlanacağı üzere daha önce 11 Eylül olaylarının arka planına yönelik bazı tespitlerde bulunan Baş, Moskova'daki siyaset danışmanlarının görüşlerini paylaşmıştı. Bu uzmanların aktardığına göre söz konusu saldırılar, İsrail ve Çin istihbaratının Ortadoğu ile Orta Asya coğrafyasında tasarruf sahibi olmak amacıyla ortaklaşa planladığı bir hareketti.",
+      "Aynı döneme ait bir diğer dikkat çekici değerlendirme ise ABD'deki Demokrat Parti başkan adayı Lyndon La Rouche tarafından 24 Temmuz tarihinde, yani olaydan 48 gün önce yapılmıştı. La Rouche, ABD ve İngiltere içerisindeki bazı güç odaklarının Asya'daki yeni ekonomik ve ulaşım oluşumlarını engellemek amacıyla dünya savaşı çıkarmak istediğini belirtmişti. Ağustos ayının bunun için en uygun zaman seçildiğini savunan La Rouche, çatışmanın Batı ile İslam'ın savaşı şeklinde lanse edileceğini öne sürmüştü.",
+      "La Rouche, 11 Eylül sonrasında yaptığı analizlerde ise bu durumun uluslararası mali çöküş döneminde gerçekleştirilen bir operasyon olduğunu ifade etmişti. ABD dışındaki güçlerin bu çapta bir eylemi gerçekleştiremeyeceğini belirten La Rouche, hedefin yönetim darbesi yapmak veya ülkeyi savaşa sürüklemek olduğunu dile getirmişti. Afganistan müdahalesinin ve İsrail politikalarının tehlike oluşturduğunu vurgulayarak krizlerin durdurulması çağrısında bulunmuştu.",
+      "Prof. Dr. Haydar Baş, tüm bu veriler ışığında Türkiye'nin tavrını sorgulayarak kayıtsız şartsız ABD yanında yer almanın ülkenin menfaatine olmadığını savundu. Zaten tükenmek üzere olan ekonominin meçhuller savaşı nedeniyle tamamen biteceğini belirten Baş, gerekçeleri dahi belirsiz olan bu süreçte taraf olmanın yanlışlığına dikkat çekti. Türkiye'nin etrafındaki sorunlar ve terörle mücadelesi devam ederken başkaları uğruna harbe girilmesinin izah edilemeyeceğini kaydetti.",
+      "Ankara'nın olayları barıştan yana yönlendirmesi veya tarafsız kalması gerekirken fiilen ve hukuken çatışmanın içinde yer aldığını ifade eden Baş, ülkenin resmen harp ortamına girdiğini belirtti. Failleri dahi net olarak bilinmeyen ve tahminler üzerine yürütülen bu süreçte Türkiye'nin maliyesinin heder edilmemesi gerektiği vurgulandı."
+    ],
+    "comment": "Türkiye'nin dış politika tercihlerini ulusal çıkarlar ve ekonomik gerçeklikler ekseninde değerlendirmek büyük bir zorunluluktur. Mevcut kaynakta yer alan veriler ve uzman görüşleri, belirsiz maliyetler içeren çatışma ortamlarının kırılgan ekonomileri doğrudan tehdit ettiğini gösteriyor. Karar alıcıların küresel krizlerde taraf seçerken ülke içindeki mali ve sosyal dengeleri gözetmesi şarttır. Aksi takdirde, dış kaynaklı operasyonların maliyeti doğrudan vatandaşın sırtına yüklenen bir ekonomik çıkmaza dönüşebilir.",
+    "editorNote": "Türkiye'nin meçhuller savaşına dahil olmasının ekonomiyi bitireceğini belirten Prof. Dr. Haydar Baş, tarafsızlık çağrısı yaptı.",
+    "tags": [
+      "Haydar Baş",
+      "Türkiye",
+      "Ekonomi",
+      "11 Eylül",
+      "Dış Politika"
+    ],
+    "category": "Dünya",
+    "gorselSorgu": "Turkish flag government building Ankara",
+    "source": "Kadırga TV",
+    "sourceUrl": "https://www.kadirga.com.tr/mechuller-savasinda-turkiyenin-yeri-H1910731.htm",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Turkish_Language_Association_building.jpg/1920px-Turkish_Language_Association_building.jpg",
+    "gorselKaynak": {
+      "yazar": "Reality006",
+      "lisans": "CC BY-SA 3.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Turkish_Language_Association_building.jpg"
+    },
+    "publishedAt": "2026-10-21T08:57:42.000Z",
+    "generatedAt": "2026-10-21T09:01:12.811Z"
+  },
+  {
     "id": "5184c34cfedb6584",
     "title": "Gıda güvenliği oturumunda bilimsel kanıt ve standartlar ele alındı",
     "slug": "gida-guvenligi-oturumunda-bilimsel-kanit-ve-standartlar-ele-aldi",
