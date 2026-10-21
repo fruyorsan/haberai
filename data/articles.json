@@ -244,6 +244,40 @@
     "breaking": true
   },
   {
+    "id": "e6cabe3528099845",
+    "title": "Hollanda Devlet Siteleri PHP Açığı Nedeniyle Kapatıldı",
+    "slug": "hollanda-devlet-siteleri-php-acigi-nekati",
+    "summary": "Hollanda’da DigiD ve MijnOverheid gibi kritik vatandaşlık hizmetlerini sunan web siteleri, PHP’de tespit edilen iki kritik güvenlik açığı nedeniyle geçici olarak kapatıldı. Ulusal Siber Güvenlik Merkezinin (NCSC) uyarıları üzerine, siteler yama yüklenince yeniden açılacak.",
+    "keyPoints": [
+      "PHP’deki kritik açılar, Dijital Kimlik Sistemi DigiD ve Kamu Portalı MijnOverheid’i etkiledi.",
+      "Ulusal Siber Güvenlik Merkezinin (NCSC) uyarısı ardından siteler geçici olarak çevrim dışı hale getirildi.",
+      "Yama yayınlandıktan sonra hizmetlerin yeniden erişime açılacağı bildirildi."
+    ],
+    "body": [
+      "Hollanda’da vatandaşların devlet hizmetlerine erişim sağladığı DigiD ve MijnOverheid, PHP programlama dilinde tespit edilen iki kritik güvenlik açığı nedeniyle geçici olarak kapatıldı. Bu durum, vergi, sağlık sigortası ve sosyal güvenlik gibi alanlarda hizmet sunan platformların anlık olarak erişilemez olmasına yol açtı.",
+      "Ulusal Siber Güvenlik Merkezi (NCSC) tarafından yayımlanan uyarıda, PHP kurulumlarının internet üzerinden gelen talepleri işlerken kritik bir zafiyete sahip olduğu belirtildi. Açığın, kullanıcı adı veya şifre gerektirmeden istismar edilebileceği ve kötü niyetli kişilerin sunucuya uzaktan komut çalıştırabileceği uyarılandı.",
+      "Hollanda Adalet ve Güvenlik Bakanı David van Weel, sosyal medya üzerinden yaptığı açıklamada, NCSC’nin önerisini takiben ilgili tarafların siteleri çevrim dışı bırakmasını gerektirdiğini ve yamanın artık mevcut olduğunu belirtti. Bakan ayrıca, açıkların geniş çaplı etkileri nedeniyle önleyici önlemlerin alınmasının önemine dikkat çekti.",
+      "İlgili taraflar, yama uygulandıktan sonra hizmetlerin yeniden açılacağını duyurdu. Bu önlem, vatandaşların DigiD ile giriş yaparak vergi, sağlık ve sosyal güvenlik işlemlerine devam edebilmesini sağlayacak. Aynı zamanda, hükümet sitelerinin dünya genelinde benzer güvenlik açıkları nedeniyle hizmet kesintileri yaşadığı da hatırlatıldı."
+    ],
+    "comment": "NCSC’nin hızlı müdahalesi, Hollanda’daki kamu hizmetlerinin güvenliğini sürdürmek için kritik bir adım. Ancak, PHP’nin yaygınlığı göz önüne alındığında, benzer açıkların önceden tespit edilip yamalanması için uluslararası iş birliği daha da önem kazanıyor. Vatandaşların kısa süreli erişim kaybı, dijitalleşme çabalarına dair güveni zedeleyebilir fakat hızlı çözüm süreci bu riskleri azaltıyor.",
+    "editorNote": "Güvenlik açıklarının hızla kapatılması, dijital devlet hizmetlerinin sürekliliğini sağladı.",
+    "tags": [
+      "Güvenlik Açığı",
+      "PHP",
+      "Dijital Hizmetler",
+      "Hollanda"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "government website security",
+    "source": "AA Güncel",
+    "sourceUrl": "https://www.aa.com.tr/tr/bilim-teknoloji/hollandada-guvenlik-acigi-nedeniyle-vatandaslik-hizmeti-sunulan-siteler-erisime-kapatildi/4096418",
+    "image": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/21/thumbs_b_c_4f781703f20d62db6e815e4ddbeeacd7.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T19:12:57.000Z",
+    "generatedAt": "2026-10-21T19:24:25.450Z",
+    "breaking": true
+  },
+  {
     "id": "b12f081e1b33e7a4",
     "title": "Meta'ya 25 Milyar Dolar Cezanın Sürpriz Boyutu",
     "slug": "meta-25-milyar-dolar-ceza",
@@ -275,6 +309,40 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-21T19:11:53.000Z",
     "generatedAt": "2026-10-21T19:13:35.200Z",
+    "breaking": true
+  },
+  {
+    "id": "950154a47fc5d06e",
+    "title": "Trump Sembolik Hapis: İran’da Çarpıcı Bir Protesto Ortaya Çıktı",
+    "slug": "trump-sembolik-hapis-iran-protesto",
+    "summary": "ABD’nin eski başkanı Donald Trump, İran’da sembolik bir hapishanede gösteri yaparak, ülkedeki siyasi gerilimi yansıtıyor. Oyuncu benzeri görünümlü bir figür, vatandaşların dikkatini çekti ve yoğun trafik oluşmasına yol açtı. Aynı zamanda, İranlıların geçmişte yaşadığı şiddet olaylarına da gönderme yapıldı.",
+    "keyPoints": [
+      "Trump’ın sahte hapis tutuşu, İran’da büyük ilgi gördü.",
+      "Görselleri çekmek isteyen vatandaşlar arasında yoğun trafik yaşandı.",
+      "Sembol, İran’da yaşanan dini ve toplumsal şiddet olaylarını anımsatan ifadeler içerdi."
+    ],
+    "body": [
+      "İran’da, eski ABD Başkanı Donald Trump’ın sembolik bir hapishanede tutuşu, sosyal medyada geniş yankı buldu. Figür, Trump’ın tanınan portre özelliklerini yansıtan bir kostüm içinde, halkın merakını cezbetti.",
+      "Yerinde, figürün etrafında toplanan kalabalık, fotoğraf ve video çekmek için büyük bir trafik akışı yarattı. Bu durum, hem yerel polis hem de vatandaşlar tarafından kontrol altına alınmak zorunda kaldı.",
+      "Hapishane ortamında, figürün üzerinde bulanan yazıtlar, İran’da yaşanan “Şecere-i Tayyibe Okulu” ve “Sirik’te düğün evi” saldırılarına göndermeler içeriyordu. Bu, ülkedeki şiddet olaylarının bir parçası olarak algılandı.",
+      "Sembolün arkasındaki mesaj, hem Trump’ın politikaları üzerindeki eleştiriyi hem de İran’da artan toplumsal gerilimi birleştirerek, uluslararası arenada önemli bir tartışma başlatmaya çalıştı. Bu gösteri, özellikle sosyal medyada geniş bir izleyici kitlesi tarafından takip edildi."
+    ],
+    "comment": "Bu olay, siyasi figürlerin sembolik kullanımıyla uluslararası ilişkilerde yeni bir dinamik ortaya koydu. Trump’ın bir oyuncu gibi performans sergilemesi, hem yerel halkı hem de küresel izleyiciyi etkiledi. Sembolizm, çatışma ve protesto kültüründe güçlü bir araç olarak öne çıkıyor.",
+    "editorNote": "Sembolik hapis tutuşu, Trump’ın evrensel bir figür olarak algılanmasına dair ilginç bir bakış açısı sunuyor.",
+    "tags": [
+      "Trump",
+      "İran",
+      "Sembolizm",
+      "Politika"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "symbolic prison protest",
+    "source": "TV5 Haber",
+    "sourceUrl": "https://www.tv5.com.tr/abd-baskani-trump-iranda-sembolik-olarak-hapishaneye-atildi",
+    "image": "https://tv5comtr.teimg.com/crop/1280x720/tv5-com-tr/uploads/2026/10/trump-hapiste-2.png",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T19:11:00.000Z",
+    "generatedAt": "2026-10-21T19:25:02.025Z",
     "breaking": true
   },
   {
