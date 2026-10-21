@@ -803,6 +803,29 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     .profil {
       margin: 16px auto 24px;
     }
+    .profil__yonetim-ust {
+      flex-direction: column;
+      gap: 12px;
+    }
+    .profil__yonetim-aksiyon {
+      width: 100%;
+      justify-content: space-between;
+    }
+    .profil__metrik-izgara {
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+      margin: 12px 0 16px;
+    }
+    .profil__metrik-kart {
+      padding: 12px 12px;
+    }
+    .profil__metrik-sayi {
+      font-size: 1.55rem;
+    }
+    .profil__aktifler-liste {
+      grid-template-columns: 1fr;
+    }
+
     .profil__ust {
       padding: 14px 15px;
       gap: 10px;
@@ -914,7 +937,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
   }
   .profil__metrik-izgara {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 12px;
     margin: 14px 0 18px;
   }
@@ -990,7 +1013,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 240px;
+    max-width: min(240px, 58vw);
   }
   .profil__sayfa-sayi {
     padding: 2px 6px;
@@ -1002,7 +1025,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
   }
   .profil__aktifler-liste {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 8px;
   }
   .profil__aktif-kart {
