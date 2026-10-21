@@ -25,6 +25,7 @@ const SPAM_PATTERNS = [
   /\bgünlük burç yorum/i,
   /\b(cuma|kandil|bayram) mesajları\b/i,
   /\brüya tabir/i,
+  /\b(aldın aldın|aktüel ürünler|kataloğu|indirim kataloğu)\b/i,
   // Yerel bülten / belediye / oda / okul PR haberleri
   /\bbelediyesi,?\s+personeline\b/i,
   /\bpersoneline\s+.*\beğitimi\b/i,

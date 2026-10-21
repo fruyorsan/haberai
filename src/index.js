@@ -86,7 +86,9 @@ async function main() {
 
   // 1) Tekrar ve kaynak filtrelerinden geçen adaylar (tazelik sırası korunur).
   //    Her aday "son dakika" mı diye işaretlenir; seçim ve kota buna göre yapılır.
-  const HAVUZ = Math.max(config.maxPerRun * 12, 24);
+  const VITRIN_KAYNAKLAR = new Set(["ShiftDelete", "Webtekno", "DonanımHaber", "Technopat", "Donanım Arşivi", "CHIP Online", "Webrazzi", "Tamindir", "Merlin'in Kazanı", "IGN Türkiye", "Oyun Günlüğü", "Evrim Ağacı", "NTV Teknoloji"]);
+  fresh.sort((a, b) => (VITRIN_KAYNAKLAR.has(b.source) ? 1 : 0) - (VITRIN_KAYNAKLAR.has(a.source) ? 1 : 0) || (b.publishedAt || "").localeCompare(a.publishedAt || ""));
+  const HAVUZ = Math.max(config.maxPerRun * 70, 160);
   const perSource = new Map();
   const eligible = [];
   let dupeCount = 0;
@@ -120,7 +122,8 @@ async function main() {
     const used = perSource.get(it.source) || 0;
     // Son dakika haberleri maxPerSource sınırına TAKILMAZ (aynı kaynaktan iki
     // son dakika haber geçebilir). Normal haberlerde kaynak çeşitliliği korunur.
-    if (!brk && used >= config.maxPerSource) continue;
+    const maxSrc = config.maxPerSource;
+    if (used >= maxSrc) continue;
 
     perSource.set(it.source, used + 1);
     eligible.push(it);
@@ -135,8 +138,10 @@ async function main() {
     .sort((a, b) => b.breakingScore - a.breakingScore);
   const normalPool = eligible.filter((it) => !it.breaking);
 
-  const queue = breakingPool.slice(0, config.maxBreakingPerRun);
-  let normalTaken = 0;
+  const vitrinPool = eligible.filter((it) => VITRIN_KAYNAKLAR.has(it.source));
+  const queue = vitrinPool.slice(0, Math.max(2, config.maxBreakingPerRun + 1));
+  for (const it of [...breakingPool, ...normalPool]) { if (queue.length >= config.maxBreakingPerRun + config.maxPerRun) break; if (!queue.includes(it)) queue.push(it); }
+  let normalTaken = queue.length;
   for (const it of normalPool) {
     if (normalTaken >= config.maxPerRun) break;
     queue.push(it);

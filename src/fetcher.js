@@ -21,6 +21,31 @@ const parser = new Parser({
 
 /** Tek bir RSS kaynağını çeker ve normalize eder. Hata olursa boş dizi döner. */
 async function fetchOne(feed) {
+  if (/\/wp-json\/wp\/v2\/posts/i.test(feed.url || "")) {
+    try {
+      const res = await fetch(feed.url, { headers: { "User-Agent": UA_BROWSER, Accept: "application/json" }, signal: AbortSignal.timeout(15000) });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const posts = await res.json();
+      const items = (Array.isArray(posts) ? posts : [])
+        .map((p) => ({
+          source: feed.name,
+          feedName: feed.name,
+          feedCategory: feed.category || null,
+          fast: !!feed.fast,
+          title: clean(p?.title?.rendered || ""),
+          link: String(p?.link || "").trim(),
+          content: clean(p?.content?.rendered || p?.excerpt?.rendered || "").slice(0, 6000),
+          image: p?._embedded?.["wp:featuredmedia"]?.[0]?.source_url || null,
+          publishedAt: clampFuture(toISO(p?.date_gmt ? `${p.date_gmt}Z` : p?.date)),
+        }))
+        .filter((it) => it.title && it.link && it.content.length >= config.minContentLength && !looksLikeSpamTitle(it.title, it.source, it.link));
+      console.log(`  ✓ ${feed.name} (WP-JSON): ${items.length} haber`);
+      return items;
+    } catch (err) {
+      console.warn(`  ✗ ${feed.name}: ${err.message}`);
+      return [];
+    }
+  }
   const isGoogleNews = /news\.google\.com/i.test(feed.url || "");
   try {
     const parsed = await parser.parseURL(feed.url);

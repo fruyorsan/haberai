@@ -71,10 +71,10 @@ export const config = {
 
     // Teknoloji / Yazılım
     { name: "Webtekno", url: "https://www.webtekno.com/rss.xml", category: "Teknoloji", fast: true },
-    { name: "ShiftDelete", url: "https://shiftdelete.net/feed", category: "Teknoloji", fast: true },
+    { name: "ShiftDelete", url: "https://shiftdelete.net/wp-json/wp/v2/posts?per_page=20&_embed", category: "Teknoloji", fast: true },
     { name: "DonanımHaber", url: "https://www.donanimhaber.com/rss/tum/", category: "Donanım", fast: true },
     { name: "Technopat", url: "https://www.technopat.net/feed", category: "Donanım", fast: true },
-    { name: "Donanım Arşivi", url: "https://www.donanimarsivi.com/rss/", category: "Donanım", fast: true },
+    { name: "Donanım Arşivi", url: "https://www.donanimarsivi.com/wp-json/wp/v2/posts?per_page=15&_embed", category: "Donanım", fast: true },
     { name: "NTV Teknoloji", url: "https://www.ntv.com.tr/teknoloji.rss", category: "Teknoloji" },
     { name: "CHIP Online", url: "https://www.chip.com.tr/rss", category: "Teknoloji", fast: true },
     { name: "Hürriyet Teknoloji", url: "https://www.hurriyet.com.tr/rss/teknoloji", category: "Teknoloji" },
