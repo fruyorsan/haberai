@@ -50,8 +50,8 @@ const origin = siteOrigin(Astro.site);
 const heroKapak = featured.map((a) => kapakKaynagi(a)).find(Boolean) || "";
 // Vitrin görseli (FeaturedSlider) ile AYNI küme verilir: ön yükleme ve gerçek
 // <img> aynı kaynağı seçer, iki ayrı fotoğraf indirilmez.
-const heroImage = heroKapak ? imageUrl(heroKapak, 1100) : "";
-const heroImageSet = heroKapak ? imageSrcset(heroKapak, [640, 820, 1100]) : undefined;
+const heroImage = heroKapak ? imageUrl(heroKapak, 1280) : "";
+const heroImageSet = heroKapak ? imageSrcset(heroKapak, [640, 960, 1280]) : undefined;
 const siteSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -130,12 +130,12 @@ const siteSchema = {
                 <span class="shorts__gorsel">
                   {s.kapak && (
                     <img
-                      src={imageUrl(s.kapak, 400)}
-                      srcset={imageSrcset(s.kapak, [400, 720])}
-                      sizes="(max-width: 720px) 62vw, 250px"
+                      src={imageUrl(s.kapak, 640)}
+                      srcset={imageSrcset(s.kapak, [480, 720])}
+                      sizes="(max-width: 720px) 62vw, 260px"
                       alt={s.baslik}
-                      width="400"
-                      height="225"
+                      width="640"
+                      height="360"
                       loading="lazy"
                       decoding="async"
                       referrerpolicy="no-referrer"

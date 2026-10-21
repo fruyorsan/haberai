@@ -239,7 +239,7 @@ async function main() {
       let kaynakGorsel = null;
       if (extra) {
         const metin = `${cleaned.title} ${item.title} ${item.link}`;
-        const secilen = await chooseArticleImage(extra, metin, { minWidth: 700 });
+        const secilen = await chooseArticleImage(extra, metin, { minWidth: 800 });
         if (secilen && !gorselSayaci.has(gorselKimlik(secilen))) kaynakGorsel = secilen;
       }
 

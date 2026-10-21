@@ -163,7 +163,7 @@ export function kapakKaynagi(article) {
 }
 
 /** Gösterime hazır kapak adresi (CDN'den geçirilmiş); yoksa markalı kapak. */
-export function kapakGorseli(article, genislik = 640) {
+export function kapakGorseli(article, genislik = 800) {
   const kaynak = kapakKaynagi(article);
   return kaynak ? imageUrl(kaynak, genislik) : "/og-default.png";
 }

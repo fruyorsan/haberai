@@ -15,12 +15,12 @@
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36";
 
-// Kalite eşikleri (16:9'lu haber fotoğrafları için makul değerler)
-const MIN_W = 600;
-const MIN_H = 300;
-const MIN_RATIO = 1.1; // 1.1'den basık olanlar genelde banner/kupür
-const MAX_RATIO = 2.9; // 2.9'dan uzun olanlar genelde ince şerit/logo
-const MIN_BYTES = 12 * 1024; // çok küçük dosyalar ikon olur
+// Kalite eşikleri (ShiftDelete tarzı 16:9 yüksek çözünürlüklü haber fotoğrafları)
+const MIN_W = 800;
+const MIN_H = 420;
+const MIN_RATIO = 1.25; // 1.25'ten dar olanlar kartlarda kötü kırpılır
+const MAX_RATIO = 2.6; // 2.6'dan uzun olanlar genelde ince şerit/banner
+const MIN_BYTES = 18 * 1024; // çok küçük/bulanık dosyalar elenir
 
 /** URL'ye bakarak "bu görsel olamaz" denen adayları eler. */
 export function looksLikeIcon(url) {
@@ -333,11 +333,12 @@ export async function chooseImage(
   // korunur (sayfadaki alakasız <img>'ler öne geçmesin).
   if (!keepOrder) uniq.sort((a, b) => urlHintScore(b) - urlHintScore(a));
 
-  // En iyi adaylar + onların daha büyük sürümleri (yüksek çözünürlük şansı).
+  // Önce adayın yüksek çözünürlüklü (kırpılmamış / 1280x720) sürümleri denenir,
+  // sonra kendisi: böylece küçük/filigranlı thumbnail yerine keskin asıl görsel seçilir.
   const havuz = [];
   for (const u of uniq.slice(0, max)) {
-    havuz.push(u);
     for (const v of biggerVariants(u)) havuz.push(v);
+    havuz.push(u);
   }
 
   let best = null;

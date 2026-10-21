@@ -71,19 +71,10 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
           </p>
         </div>
 
-        <div class="bel__row">
-          <span class="bel__ad">Son dakika</span>
-          <label class="bel__switch">
-            <input type="checkbox" id="bel-son-dakika" checked />
-            <span class="bel__track" aria-hidden="true"><span class="bel__thumb" /></span>
-            <span class="bel__sr">Son dakika haberleri</span>
-          </label>
-        </div>
+        <p class="bel__alt">Bildirim başlıkların</p>
         <p class="bel__hint">
-          Son dakika haberi çıktığı an telefonuna veya masaüstüne bildirim gelir.
+          Yalnızca seçtiğin başlıklardan bildirim gelir (varsayılan: günde ~10 bildirim).
         </p>
-
-        <p class="bel__alt">İlgilendiğim konular</p>
         <div class="bel__chips" id="bel-chips">
           {kategoriler.map((c) => (
             <button type="button" class="bel__chip" data-kategori={c.slug} aria-pressed="false">
@@ -91,6 +82,28 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
             </button>
           ))}
         </div>
+
+        <div class="bel__siklik">
+          <label class="bel__alt" for="bel-siklik-sec">Günlük sıklık</label>
+          <select class="bel__select" id="bel-siklik-sec">
+            <option value="gun10">Günde ~10 bildirim (Önerilen)</option>
+            <option value="hepsi">Seçtiğim başlıklardaki tüm haberler</option>
+            <option value="ozet">Günde 3 özet (09:00 · 15:00 · 21:00)</option>
+            <option value="kapali">Bildirimleri duraklat</option>
+          </select>
+        </div>
+
+        <div class="bel__row bel__row--alt">
+          <span class="bel__ad">Genel son dakika</span>
+          <label class="bel__switch">
+            <input type="checkbox" id="bel-son-dakika" />
+            <span class="bel__track" aria-hidden="true"><span class="bel__thumb" /></span>
+            <span class="bel__sr">Seçtiğim başlıklar dışındaki son dakika haberleri</span>
+          </label>
+        </div>
+        <p class="bel__hint bel__hint--alt">
+          Kapalıyken yalnızca seçtiğin başlıklar gelir. Tüm ayarlar için <a href="/profil/">Profil</a> sayfasına git.
+        </p>
 
         <p class="bel__durum" id="bel-durum" role="status" aria-live="polite" />
 
@@ -209,10 +222,40 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
     color: var(--heading);
   }
   .bel__hint {
-    margin: 6px 0 14px;
-    font-size: 0.78rem;
-    line-height: 1.5;
+    margin: 4px 0 10px;
+    font-size: 0.76rem;
+    line-height: 1.45;
     color: var(--muted);
+  }
+  .bel__hint--alt {
+    margin: 6px 0 0;
+  }
+  .bel__hint--alt a {
+    color: var(--brand);
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  .bel__row--alt {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+  }
+  .bel__siklik {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .bel__select {
+    width: 100%;
+    padding: 7px 10px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface-2);
+    color: var(--heading);
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
   }
   .bel__alt {
     margin: 0 0 8px;
@@ -613,8 +656,10 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
     };
 
     let kategoriler = new Set(oku(K_KAT, []));
-    let sonDakika = oku(K_SON, true) !== false;
+    // Varsayılan olarak genel son dakika KAPALIDIR; yalnızca seçilen başlıklar gider.
+    let sonDakika = oku(K_SON, false) === true;
     let abone = oku(K_ABONE, false) === true;
+    const siklikSec = document.getElementById("bel-siklik-sec") as HTMLSelectElement | null;
     /** OneSignal abonelik kimliği (teşhis satırında son 6 hane gösterilir). */
     let abonelikId = "";
     // OneSignal SDK'sına hiç ulaşılamadıysa (reklam engelleyici, kapalı ağ…)
@@ -650,25 +695,33 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
     /** Tercihleri OneSignal etiketlerine yazar (yalnızca abone ise). */
     function etiketYaz(OneSignal) {
       if (!OneSignal || !abone) return;
-      const t = { son_dakika: sonDakika ? "1" : "" };
-      // Sıklık etiketi: sunucu konu bildirimlerini yalnızca "aninda" olanlara
-      // yollar; "ozet" günde 3 özet, "son" yalnızca son dakika alır.
+      let mod = "gun10";
+      let siklik = "aninda";
       try {
-        t.bildirim_sikligi = localStorage.getItem("bildirim-siklik") || "aninda";
+        mod = localStorage.getItem("bildirim-mod") || "";
+        siklik = localStorage.getItem("bildirim-siklik") || "aninda";
       } catch {
-        t.bildirim_sikligi = "aninda";
+        mod = "gun10";
       }
+      if (!mod) {
+        mod = siklik === "ozet" ? "ozet" : siklik === "son" ? "son" : "gun10";
+      }
+      const t = {
+        son_dakika: "",
+        son_dakika_genel: sonDakika || mod === "son" ? "1" : "",
+        bildirim_sikligi: mod === "kapali" ? "kapali" : siklik,
+        bildirim_mod: mod,
+      };
+      const konuAcik = mod === "gun10" || mod === "hepsi" || (siklik === "aninda" && mod !== "kapali");
       for (const c of cipler) {
         const slug = c.dataset.kategori;
-        // "Günde 3 özet" / "Yalnızca son dakika" seçen okuyucuya konu
-        // bildirimi gitmesin: kategori etiketini boşalt.
-        const acik = t.bildirim_sikligi === "aninda" && kategoriler.has(slug);
+        const acik = konuAcik && kategoriler.has(slug);
         t["kategori_" + slug] = acik ? "1" : "";
       }
       try {
         OneSignal.User.addTags(t);
       } catch {
-        /* etiket yazılamadıysa bildirim yine de genel olarak gider */
+        /* etiket yazılamadıysa yok say */
       }
     }
 
@@ -896,6 +949,12 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
       if (engelKutu) engelKutu.hidden = !izinEngelli() || abone;
       if (testBtn) testBtn.hidden = !abone;
       anahtar.checked = sonDakika;
+      if (siklikSec) {
+        try {
+          const m = localStorage.getItem("bildirim-mod") || "gun10";
+          if (["gun10", "hepsi", "ozet", "kapali"].includes(m)) siklikSec.value = m;
+        } catch {}
+      }
       btn.classList.toggle("is-on", abone);
       btn.setAttribute("aria-label", abone ? "Bildirimler açık" : "Bildirimler");
       for (const c of cipler) {
@@ -911,6 +970,7 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
     // görmüyordu ("seçtim ama burada boş görünüyor").
     function yereldenYenile() {
       kategoriler = new Set(oku(K_KAT, []));
+      sonDakika = oku(K_SON, false) === true;
       ciz();
     }
     window.addEventListener("hb-bildirim-degisti", yereldenYenile);
@@ -949,6 +1009,7 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
       // görmekle kalmasın. İzin isteği dokunuşun içinde çağrılmalı (await'ten
       // önce); abonelik kurulumu hemen ardından arka planda tamamlanır.
       if (acilacak && !abone && !izinVerildi() && !izinEngelli()) {
+        varsayilanKonulariHazirla();
         izinSor();
         void aboneBaslat().then((oldu) => {
           ciz();
@@ -958,11 +1019,55 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
       panelAc(acilacak);
     });
 
+    function varsayilanKonulariHazirla() {
+      if (kategoriler.size > 0) return;
+      const H = (window as any).HaberinAi;
+      const u = H?.oturumOku?.();
+      const adaylar =
+        u?.bildirim_ilgi?.length
+          ? u.bildirim_ilgi
+          : u?.ilgi?.length
+            ? u.ilgi
+            : ["teknoloji", "gundem", "ekonomi"];
+      const mevcut = new Set(cipler.map((c) => c.dataset.kategori));
+      for (const s of adaylar) {
+        if (mevcut.has(s)) kategoriler.add(s);
+      }
+      if (kategoriler.size === 0 && cipler[0]?.dataset.kategori) {
+        kategoriler.add(cipler[0].dataset.kategori);
+      }
+      yaz(K_KAT, [...kategoriler]);
+    }
+
+    siklikSec?.addEventListener("change", async () => {
+      const deger = siklikSec.value || "gun10";
+      const dbSiklik = deger === "ozet" ? "ozet" : "aninda";
+      try {
+        localStorage.setItem("bildirim-mod", deger);
+        localStorage.setItem("bildirim-siklik", dbSiklik);
+      } catch {}
+      const H = (window as any).HaberinAi;
+      if (H?.oturumOku?.() && H?.bildirimSiklik) {
+        void H.bildirimSiklik(deger);
+      }
+      if (abone) {
+        etiketYaz(await sdkYukle());
+      }
+      ciz();
+      durumYaz(
+        deger === "kapali"
+          ? "Bildirimler duraklatıldı ✓"
+          : deger === "hepsi"
+            ? "Seçtiğin başlıklardaki tüm haberler gelecek ✓"
+            : deger === "ozet"
+              ? "Günde 3 özet bildirim seçildi ✓"
+              : "Günde ~10 bildirim (Önerilen) seçildi ✓"
+      );
+    });
+
     // Panelin tepesindeki "Aç" şeridi: tek dokunuşla izin + abonelik.
     acSerit?.addEventListener("click", async () => {
-      sonDakika = true;
-      yaz(K_SON, true);
-      anahtar.checked = true;
+      varsayilanKonulariHazirla();
       // AWAIT'TEN ÖNCE: izin penceresi dokunuşun içinde açılmalı.
       izinSor();
       // Tarayıcı izni kalıcı olarak engellenmişse pencere HİÇ açılmaz;
@@ -1170,6 +1275,7 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
 
     iste?.querySelector("[data-bel-izin]")?.addEventListener("click", async () => {
       isteKapat(false);
+      varsayilanKonulariHazirla();
       // İzin penceresi await'ten ÖNCE açılmalı: Safari (iOS) yalnızca doğrudan
       // dokunuş içinde açıyor. OneSignal SDK'sı sonra devreye girer.
       izinSor();

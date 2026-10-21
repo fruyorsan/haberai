@@ -1127,8 +1127,9 @@ html.ysheet-kilit {
 
 .ak__gorsel {
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   background: var(--brand-grad);
+  overflow: hidden;
 }
 .ak__gorsel--yok {
   display: grid;
@@ -1474,7 +1475,7 @@ html.ysheet-kilit {
     border-radius: 18px;
   }
   .ak__gorsel {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 16 / 9;
   }
   .ak__baslik {
     -webkit-line-clamp: 4;

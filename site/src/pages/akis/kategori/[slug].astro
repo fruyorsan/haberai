@@ -30,8 +30,8 @@ const ilk = getArticles()
   .filter((a) => a.categorySlug === slug)
   .slice(0, AKIS_ILK);
 const ilkKapak = ilk[0] ? kapakKaynagi(ilk[0]) : "";
-const ilkGorsel = ilkKapak ? imageUrl(ilkKapak, 720) : undefined;
-const ilkGorselSet = ilkKapak ? imageSrcset(ilkKapak, [400, 720]) : undefined;
+const ilkGorsel = ilkKapak ? imageUrl(ilkKapak, 960) : undefined;
+const ilkGorselSet = ilkKapak ? imageSrcset(ilkKapak, [640, 960, 1280]) : undefined;
 
 const origin = siteOrigin(Astro.site);
 const baslik = `${ad} Shorts — kısa kısa haberler | HaberinAi`;
@@ -55,7 +55,7 @@ const kategoriSchema = {
   schema={kategoriSchema}
   preloadImage={ilkGorsel}
   preloadSrcset={ilkGorselSet}
-  preloadSizes="(max-width: 720px) 100vw, 380px"
+  preloadSizes="(max-width: 720px) 100vw, 640px"
   image={ilkGorsel}
   noindex={true}
   kategoriSeridi={false}

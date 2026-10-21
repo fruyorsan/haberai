@@ -53,27 +53,26 @@ const SITE_URL = (process.env.SITE_URL || "https://fruyorsan.github.io").replace
 // Ölçü: site 7/24 ve dakikalar içinde haber giriyor. Günlük tavanlar okuyucuyu
 // boğmayacak ama "bildirim hiç gelmiyor" demeyeceği kadar geniş tutulur:
 // son dakika ~yarım saatte bir, konu bildirimi iki saatte bir.
-const SON_MIN_ARALIK_DK = Number(process.env.BILDIRIM_SON_ARALIK_DK ?? 25);
-const SON_MAX_GUN = Number(process.env.BILDIRIM_SON_MAX_GUN ?? 24);
-const SON_TTL_SAAT = Number(process.env.BILDIRIM_SON_TTL_SAAT ?? 6);
-// Konu bildirimleri: "anında" seçen okuyucu, takip ettiği kategoride çıkan HER
-// yeni haberi alır. Bu yüzden kategori başına bekleme süresi varsayılan olarak
-// kapalı (0). İstenirse BILDIRIM_KAT_ARALIK_DK ile geri açılabilir.
-const KAT_MIN_ARALIK_DK = Number(process.env.BILDIRIM_KAT_ARALIK_DK ?? 0);
-const KAT_MAX_GUN = Number(process.env.BILDIRIM_KAT_MAX_GUN ?? 250);
+const SON_MIN_ARALIK_DK = Number(process.env.BILDIRIM_SON_ARALIK_DK ?? 180);
+const SON_MAX_GUN = Number(process.env.BILDIRIM_SON_MAX_GUN ?? 3);
+const SON_TTL_SAAT = Number(process.env.BILDIRIM_SON_TTL_SAAT ?? 4);
+// Konu bildirimleri: seçilen başlıklardan günde ~10 bildirim (dengeli dağılım).
+const KAT_MIN_ARALIK_DK = Number(process.env.BILDIRIM_KAT_ARALIK_DK ?? 75);
+const KAT_GENEL_ARALIK_DK = Number(process.env.BILDIRIM_KAT_GENEL_ARALIK_DK ?? 45);
+const KAT_MAX_GUN = Number(process.env.BILDIRIM_KAT_MAX_GUN ?? 10);
 // Taze sayılan pencere. Gönderim kaydı (sent + idempotency) tekrarı zaten
 // engellediği için bu süre geniş tutulur: kısa tutulunca "breaking" işaretli
 // taze haberler pencereyi kaçırıp konu bildirimi hiç gitmiyordu.
 const KAT_TTL_SAAT = Number(process.env.BILDIRIM_KAT_TTL_SAAT ?? 4);
 // Tur başına en fazla kaç KATEGORİ işlenir (adil sıra).
-const KAT_TUR_ADET = Number(process.env.BILDIRIM_KAT_TUR_ADET ?? 6);
+const KAT_TUR_ADET = Number(process.env.BILDIRIM_KAT_TUR_ADET ?? 1);
 // Tur başına gönderilecek en fazla HABER (taşma koruması; sonraki turda devam).
-const KAT_TUR_HABER = Number(process.env.BILDIRIM_KAT_TUR_HABER ?? 20);
+const KAT_TUR_HABER = Number(process.env.BILDIRIM_KAT_TUR_HABER ?? 1);
 // Kimsenin takip etmediği (alıcısı 0 çıkan) kategori bu süre boyunca atlanır.
 // Kısa tutulur: bir okuyucu o konuyu YENİ takip ettiyse ilk bildirimi saatlerce
 // beklememeli. Boşta kalan kategori yalnızca saatte bir kez denenir.
-const KAT_BOS_GERI_CEK_SAAT = Number(process.env.BILDIRIM_KAT_BOS_SAAT ?? 1);
-const TOPLAM_MAX_GUN = Number(process.env.BILDIRIM_TOPLAM_MAX_GUN ?? 280);
+const KAT_BOS_GERI_CEK_SAAT = Number(process.env.BILDIRIM_KAT_BOS_SAAT ?? 2);
+const TOPLAM_MAX_GUN = Number(process.env.BILDIRIM_TOPLAM_MAX_GUN ?? 12);
 // Özet bildirimi: "ozet" seçen okuyucuya günde 3 kez (TR 09/15/21).
 const OZET_SAATLER = [9, 15, 21];
 const OZET_ARALIK_SAAT = Number(process.env.BILDIRIM_OZET_ARALIK_SAAT ?? 4);
@@ -380,7 +379,8 @@ async function gonder(p) {
     // "All included players are not subscribed" ile reddediliyor; sayaç yine
     // artıyor, okuyucuya ise hiçbir şey gitmiyor. Cihaz, bildirimi açtığı anda
     // son_dakika=1 etiketini aldığı için hedefleme etiketle yapılır.
-    govde.filters = [{ field: "tag", key: "son_dakika", relation: "=", value: "1" }];
+    // Yalnızca profil/zil ayarlarından "Genel Son Dakika"yı AÇIKÇA seçenlere gider.
+    govde.filters = [{ field: "tag", key: "son_dakika_genel", relation: "=", value: "1" }];
   }
 
   const res = await fetch("https://api.onesignal.com/notifications", {
@@ -561,16 +561,17 @@ export async function bildirimleriGonder({ dry = false } = {}) {
     }
   }
 
-  // ---- 1) SON DAKİKA ----
-  if (gunToplam < TOPLAM_MAX_GUN && (durum.gunSayi.son || 0) < SON_MAX_GUN) {
-    // Konu bildirimleri `updatedAt`i de günceller; son dakika aralığı kendi
-    // zaman damgasından ölçülür, yoksa yoğun konu akışı son dakikayı susturur.
-    const sonDakikaAt = durum.sonDakika || durum.updatedAt;
+  // ---- 1) GENEL SON DAKİKA (Yalnızca son_dakika_genel=1 seçen kullanıcılara) ----
+  // Varsayılan olarak kullanıcılara seçmedikleri konulardan son dakika GİTMEZ.
+  // Yalnızca profil/ayarlar üzerinden "Genel Son Dakika" anahtarını bilerek açanlara
+  // günde en fazla SON_MAX_GUN (3) adet gider.
+  if (SON_MAX_GUN > 0 && gunToplam < TOPLAM_MAX_GUN && (durum.gunSayi.son || 0) < SON_MAX_GUN) {
+    const sonDakikaAt = durum.sonDakika || null;
     const gecenDk = sonDakikaAt ? (now - Date.parse(sonDakikaAt)) / 60000 : Infinity;
     if (gecenDk < SON_MIN_ARALIK_DK) {
       console.log(
         `Bildirim: son gönderimden ${Math.round(gecenDk)} dk geçti ` +
-          `(asgari ${SON_MIN_ARALIK_DK} dk); son dakika bekletiliyor.`
+          `(asgari ${SON_MIN_ARALIK_DK} dk); genel son dakika bekletiliyor.`
       );
     } else {
       const aday = yeni
@@ -580,53 +581,59 @@ export async function bildirimleriGonder({ dry = false } = {}) {
       if (aday) {
         const icerik = bildirimIcerigi(aday, { baslik: "🔴 SON DAKİKA" });
         if (dry) {
-          console.log(`  [dry] son dakika → ${icerik.icerik}`);
+          console.log(`  [dry] genel son dakika (yalnızca son_dakika_genel=1) → ${icerik.icerik}`);
         } else {
           try {
             const yanit = await gonder({
               ...icerik,
-              ttl: 86400,
+              ttl: 21600,
+              etiket: "son_dakika_genel",
               anahtar: `son-${aday.id}`,
             });
-            console.log(
-              `  ✓ [son dakika] ${kisalt(aday.title, 60)}${yanit?.id ? ` (${yanit.id})` : ""}${aliciNotu(yanit)}`
-            );
-            durum.sent.push(String(aday.id));
-            durum.updatedAt = new Date(now).toISOString();
-            durum.sonDakika = new Date(now).toISOString();
-            durum.gunSayi.son = (durum.gunSayi.son || 0) + 1;
-            sayilan++;
+            const alici = Number(yanit?.recipients);
+            if (!Number.isFinite(alici) || alici > 0) {
+              console.log(
+                `  ✓ [genel son dakika] ${kisalt(aday.title, 60)}${yanit?.id ? ` (${yanit.id})` : ""}${aliciNotu(yanit)}`
+              );
+              durum.sonDakika = new Date(now).toISOString();
+              durum.gunSayi.son = (durum.gunSayi.son || 0) + 1;
+              durumDegisti = true;
+              sayilan++;
+            } else {
+              console.log("  · [genel son dakika] açık olan cihaz yok — atlandı.");
+              durum.sonDakika = new Date(now).toISOString();
+              durumDegisti = true;
+            }
           } catch (err) {
-            console.warn(`  ✗ [son dakika] ${err.message}`);
+            if (/not subscribed/i.test(err.message)) {
+              durum.sonDakika = new Date(now).toISOString();
+              durumDegisti = true;
+            } else {
+              console.warn(`  ✗ [son dakika] ${err.message}`);
+            }
           }
         }
       }
     }
   }
 
-  // ---- 2) TAKİP EDİLEN KONULAR ----
-  // Sessiz saat iki türlü olabilir: gece yarısını aşan (23:00-07:00) ya da aynı
-  // gün içindeki (01:00-07:00) aralık. İkisini de doğru hesapla; tek koşulla
-  // yazınca 01:00-07:00 aralığı TÜM günü sessiz sayıyordu.
+  // ---- 2) TAKİP EDİLEN KONULAR (Sadece kullanıcının seçtiği başlıklar, günde ~10 adet) ----
   const sessiz =
     SESSIZ_BAS <= SESSIZ_BIT
       ? tr.saat >= SESSIZ_BAS && tr.saat < SESSIZ_BIT
       : tr.saat >= SESSIZ_BAS || tr.saat < SESSIZ_BIT;
-  const gunToplam2 = (durum.gunSayi.son || 0) + (durum.gunSayi.kategori || 0);
+  const sonKonuAt = durum.updatedAt ? Date.parse(durum.updatedAt) : 0;
+  const konuGecenDk = sonKonuAt ? (now - sonKonuAt) / 60000 : Infinity;
   if (sessiz) {
     console.log(`Bildirim: sessiz saat (TR ${tr.saat}:00) → konu bildirimi gönderilmiyor.`);
-  } else if (gunToplam2 >= TOPLAM_MAX_GUN || (durum.gunSayi.kategori || 0) >= KAT_MAX_GUN) {
-    console.log("Bildirim: konu bildirimi için günlük tavan doldu.");
+  } else if ((durum.gunSayi.kategori || 0) >= KAT_MAX_GUN) {
+    console.log(`Bildirim: konu bildirimi için günlük tavan (${KAT_MAX_GUN}) doldu.`);
+  } else if (konuGecenDk < KAT_GENEL_ARALIK_DK) {
+    console.log(
+      `Bildirim: son konu bildiriminden ${Math.round(konuGecenDk)} dk geçti ` +
+        `(asgari ${KAT_GENEL_ARALIK_DK} dk); dengeli dağılım için bekletiliyor.`
+    );
   } else {
-    // Her kategori için en taze haber; bekleme süresi dolmuş kategorilerden
-    // EN UZUN SÜREDİR bildirilmeyen seçilir (adil sıra, tek kategori akışı ezmesin).
-    // KONU AKIŞI: takip edilen kategoride ÇIKAN HER yeni haber gönderilir.
-    // ÖNEMLİ DÜZELTME: `breaking` işaretli haberler artık dışlanmıyor. Taze
-    // haberlerin neredeyse tamamı "son dakika" işaretlendiği için konu
-    // bildirimi hiç gönderilemiyordu (kullanıcı "seçtim ama gelmiyor" diyordu).
-    // Son dakika adımında gönderilmiş haber zaten gönderilenler listesinde
-    // olduğu için aynı haber iki kez gitmez; sunucu tarafında da `kat-<id>`
-    // idempotency anahtarı vardır.
     const gonderilenler = new Set(durum.sent.map(String));
     const grup = new Map();
     for (const a of yeni) {
@@ -640,9 +647,6 @@ export async function bildirimleriGonder({ dry = false } = {}) {
       liste.sort((a, b) => yayinZamani(b) - yayinZamani(a));
     }
 
-    // Kategori seçimi: en uzun süredir bildirilmeyenler önce. Takipçisi olmayan
-    // (OneSignal hedefi reddeden) kategori kısa süre geri çekilir; yoksa slotlar
-    // kimsenin görmediği gönderimlerle dolar ve gerçek takipçiler sıra bekler.
     const bosKategori = durum.bosKategori || {};
     const bosMu = (slug) => {
       const t = bosKategori[slug];
@@ -665,27 +669,21 @@ export async function bildirimleriGonder({ dry = false } = {}) {
           `(${grup.size} kategoride taze haber var, hepsi bekleme süresinde).`
       );
     } else {
-      // Her kategori kendi takipçisine gider; sıklık filtresi "aninda" olanlara
-      // ulaşır. Sıra listesi KIRPILMAZ: takipçisi çıkmayan kategori slot
-      // harcamaz, böylece "teknoloji" gibi gerçek takipçisi olan konu boş
-      // kategorilerin arkasında kalmaz (KAT_TUR_ADET yalnızca BAŞARILI
-      // gönderimle dolar).
       const bosIsaretle = (slug) => {
         bosKategori[slug] = new Date(now).toISOString();
         durum.bosKategori = bosKategori;
-        durum.sonKategori[slug] = new Date(now).toISOString(); // kuyruğun sonuna
+        durum.sonKategori[slug] = new Date(now).toISOString();
         durumDegisti = true;
       };
       let turHaber = 0;
       let turKategori = 0;
       for (const slug of sirali) {
         if (turKategori >= KAT_TUR_ADET || turHaber >= KAT_TUR_HABER) break;
-        const gunToplam3 = (durum.gunSayi.son || 0) + (durum.gunSayi.kategori || 0);
-        if (gunToplam3 >= TOPLAM_MAX_GUN || (durum.gunSayi.kategori || 0) >= KAT_MAX_GUN) break;
+        if ((durum.gunSayi.kategori || 0) >= KAT_MAX_GUN) break;
         let ulasti = false;
         for (const aday of grup.get(slug) || []) {
           if (turHaber >= KAT_TUR_HABER) break;
-          const icerik = bildirimIcerigi(aday, { baslik: `${aday.category} • yeni haber` });
+          const icerik = bildirimIcerigi(aday, { baslik: `${aday.category}` });
           if (dry) {
             console.log(`  [dry] konu (${slug}) → ${icerik.icerik}`);
             turHaber++;
@@ -693,24 +691,24 @@ export async function bildirimleriGonder({ dry = false } = {}) {
             continue;
           }
           try {
+            // DİKKAT: OneSignal'de OR operatörü kullanılmaz (AND önceliği yüzünden
+            // seçilmeyen kategorilere bildirim sızmasına yol açıyordu).
+            // Burada tüm koşullar AND ile bağlanır:
+            //   1) Kullanıcının `kategori_<slug> = "1"` etiketi KESİNLİKLE olmalı.
+            //   2) Sıklığı "ozet", "son" veya "kapali" OLMAMALI.
             const yanit = await gonder({
               ...icerik,
               ttl: 21600,
               etiketler: [
                 `kategori_${slug}`,
-                // Sıklık: "anında" seçenler + etiketi HİÇ yazılmamış eski cihazlar.
-                // Eski cihazlarda `bildirim_sikligi` etiketi yoktu; onları dışarıda
-                // bırakmak "hiç bildirim gelmiyor" demekti. "ozet"/"son" seçen
-                // cihazlar etiketi taşıdığı için bu iki koşula uymaz.
-                { key: "bildirim_sikligi", relation: "not_exists" },
-                { operator: "OR" },
-                { key: "bildirim_sikligi", relation: "=", value: "aninda" },
+                { key: "bildirim_sikligi", relation: "!=", value: "ozet" },
+                { key: "bildirim_sikligi", relation: "!=", value: "son" },
+                { key: "bildirim_sikligi", relation: "!=", value: "kapali" },
               ],
               anahtar: `kat-${aday.id}`,
             });
             const alici = Number(yanit?.recipients);
             if (Number.isFinite(alici) && alici <= 0) {
-              // Bu konuyu takip eden cihaz yok: tavanı harcama, kısa süre atla.
               console.log(`  · [konu:${slug}] takipçi yok (0 cihaz) — sayılmadı.`);
               bosIsaretle(slug);
               break;
@@ -726,9 +724,6 @@ export async function bildirimleriGonder({ dry = false } = {}) {
             turHaber++;
             ulasti = true;
           } catch (err) {
-            // Kimsenin takip etmediği kategori: OneSignal hedefi reddeder.
-            // Kategoriyi kısa süre geri çek (aynı hata için 6 saat istek atmayalım)
-            // ve bu kategorinin kalan haberlerini bu turda denemeyi bırak.
             if (/not subscribed/i.test(err.message)) {
               console.log(
                 `  · [konu:${slug}] takipçi yok — ${KAT_BOS_GERI_CEK_SAAT} saat atlandı.`
@@ -740,6 +735,46 @@ export async function bildirimleriGonder({ dry = false } = {}) {
           }
         }
         if (ulasti) turKategori++;
+      }
+    }
+  }
+
+  // ---- 2b) TÜM HABERLER MODU (Profilde "Seçtiğim başlıklardaki tüm haberler" diyenler) ----
+  // Normal kullanıcılar günde ~10 bildirim alırken, ayarlardan `bildirim_mod = "hepsi"`
+  // seçen kullanıcılara seçtikleri başlıklardaki diğer yeni haberler de anında iletilir.
+  if (!sessiz) {
+    const gonderilenlerHepsi = new Set(durum.sent.map(String));
+    const adaylarHepsi = yeni
+      .filter((a) => !gonderilenlerHepsi.has(String(a.id)) && taze(a, 2, now))
+      .slice(0, 2);
+    for (const aday of adaylarHepsi) {
+      const slug = aday.categorySlug || "diger";
+      const icerik = bildirimIcerigi(aday, { baslik: `${aday.category}` });
+      if (dry) {
+        console.log(`  [dry] konu-hepsi (${slug}) → ${icerik.icerik}`);
+        continue;
+      }
+      try {
+        const yanit = await gonder({
+          ...icerik,
+          ttl: 14400,
+          etiketler: [
+            `kategori_${slug}`,
+            { key: "bildirim_mod", relation: "=", value: "hepsi" },
+          ],
+          anahtar: `kat-hepsi-${aday.id}`,
+        });
+        const alici = Number(yanit?.recipients);
+        if (Number.isFinite(alici) && alici > 0) {
+          console.log(
+            `  ✓ [konu-hepsi:${slug}] ${kisalt(aday.title, 60)}${aliciNotu(yanit)}`
+          );
+          durum.sent.push(String(aday.id));
+          durumDegisti = true;
+          sayilan++;
+        }
+      } catch {
+        // `bildirim_mod=hepsi` seçen abone yoksa sessizce geç.
       }
     }
   }

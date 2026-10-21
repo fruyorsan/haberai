@@ -215,7 +215,7 @@ async function commonsAra(sorgu, adet = ADAY, offset = 0, afet = false, marka = 
     cllimit: "max",
     iiprop: "url|size|extmetadata",
     iiextmetadatafilter: "LicenseShortName|Artist|LicenseUrl|Credit|ImageDescription",
-    iiurlwidth: "1400",
+    iiurlwidth: "1600",
   });
   const res = await fetch(`${COMMONS}?${params}`, {
     headers: { "User-Agent": UA, Accept: "application/json" },
