@@ -60,18 +60,18 @@ const body = Array.isArray(article.body) ? article.body.filter(Boolean) : [];
 const kapak = kapakKaynagi(article);
 // Fotoğraf yoksa: kategoriye özel renkli/ikonlu kapak (düz kırmızı "H" yerine).
 const PH_TEMALAR = {
-  "Dünya": { hue: 210, ikon: "🌍" },
-  "Gündem": { hue: 350, ikon: "📰" },
-  "Ekonomi": { hue: 145, ikon: "📈" },
-  "Spor": { hue: 25, ikon: "⚽" },
-  "Teknoloji": { hue: 265, ikon: "💻" },
-  "Yapay Zeka": { hue: 285, ikon: "🤖" },
-  "Oyun": { hue: 310, ikon: "🎮" },
-  "Mobil": { hue: 195, ikon: "📱" },
-  "Donanım": { hue: 235, ikon: "🖥️" },
-  "Yazılım": { hue: 170, ikon: "⌨️" },
-  "Bilim": { hue: 180, ikon: "🔬" },
-  "Kültür": { hue: 330, ikon: "🎭" },
+  "Dünya": { hue: 210, ikon: "H" },
+  "Gündem": { hue: 350, ikon: "H" },
+  "Ekonomi": { hue: 145, ikon: "H" },
+  "Spor": { hue: 25, ikon: "H" },
+  "Teknoloji": { hue: 265, ikon: "H" },
+  "Yapay Zeka": { hue: 285, ikon: "H" },
+  "Oyun": { hue: 310, ikon: "H" },
+  "Mobil": { hue: 195, ikon: "H" },
+  "Donanım": { hue: 235, ikon: "H" },
+  "Yazılım": { hue: 170, ikon: "H" },
+  "Bilim": { hue: 180, ikon: "H" },
+  "Kültür": { hue: 330, ikon: "H" },
 };
 const phTema = PH_TEMALAR[article.category] || { hue: 350, ikon: "H" };
 
