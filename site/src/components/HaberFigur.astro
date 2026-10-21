@@ -48,16 +48,6 @@ const atifAdres = kaynak?.sayfa || url;
         onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.removeAttribute('srcset');this.removeAttribute('sizes');this.src=this.dataset.orig}else{this.closest('figure').remove()}"
       />
     </a>
-    <a
-      class="content__fig-credit"
-      href={atifAdres}
-      target="_blank"
-      rel="noopener nofollow"
-      title={atif}
-      aria-label={`${atif}. Wikimedia Commons dosya sayfasını aç`}
-    >
-      <span aria-hidden="true">i</span>
-    </a>
   </div>
 
   <figcaption class="sr-only">
@@ -101,32 +91,5 @@ const atifAdres = kaynak?.sayfa || url;
   }
   .content__fig-link:hover .content__fig-img {
     transform: scale(1.03);
-  }
-  /* Atıf rozeti: fotoğrafçı + lisans title'da, tıklayınca Commons sayfası. */
-  .content__fig-credit {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    display: grid;
-    place-items: center;
-    width: 24px;
-    height: 24px;
-    border-radius: 999px;
-    background: rgba(12, 15, 20, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    color: rgba(255, 255, 255, 0.92);
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 0.82rem;
-    font-style: italic;
-    font-weight: 700;
-    line-height: 1;
-    text-decoration: none;
-    opacity: 0.75;
-    transition: opacity 0.18s var(--ease, ease), background 0.18s var(--ease, ease);
-  }
-  .content__fig-credit:hover,
-  .content__fig-credit:focus-visible {
-    opacity: 1;
-    background: rgba(12, 15, 20, 0.78);
   }
 </style>

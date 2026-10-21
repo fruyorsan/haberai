@@ -253,26 +253,6 @@ const breadcrumbLd = {
           />
         ) : null}
         <span class="post__veil" aria-hidden="true"></span>
-        {kapak && article.gorselKaynak?.sayfa ? (
-          <a
-            class="post__ph-credit"
-            href={article.gorselKaynak.sayfa}
-            target="_blank"
-            rel="noopener nofollow"
-            title={`Fotoğraf: ${atifMetni(article.gorselKaynak)}`}
-            aria-label={`Fotoğraf: ${atifMetni(article.gorselKaynak)}. Wikimedia Commons dosya sayfasını aç`}
-          >
-            <span aria-hidden="true">i</span>
-          </a>
-        ) : kapak ? (
-          <span
-            class="post__ph-credit"
-            title={`Fotoğraf: ${article.source}`}
-            aria-label={`Fotoğraf: ${article.source}`}
-          >
-            <span aria-hidden="true">i</span>
-          </span>
-        ) : null}
         {kapak && <span class="sr-only">Fotoğraf: {article.gorselKaynak ? atifMetni(article.gorselKaynak) : article.source}</span>}
       </div>
 
@@ -727,37 +707,6 @@ const breadcrumbLd = {
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.9);
     text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
-  }
-  /* Fotoğraf atfı: fotoğrafın altında uzun bir yazı yerine sağ altta küçük
-     bir "i" rozeti. Dokununca fotoğrafçı + lisans, tıklayınca Commons sayfası.
-     (CC BY / CC BY-SA lisansları atfı zorunlu kılar; atıf DOM'da da durur.) */
-  .post__ph-credit {
-    position: absolute;
-    z-index: 4;
-    right: 12px;
-    bottom: 12px;
-    display: grid;
-    place-items: center;
-    width: 24px;
-    height: 24px;
-    border-radius: 999px;
-    background: rgba(12, 15, 20, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    color: rgba(255, 255, 255, 0.92);
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 0.82rem;
-    font-style: italic;
-    font-weight: 700;
-    line-height: 1;
-    text-decoration: none;
-    opacity: 0.75;
-    transition: opacity 0.18s var(--ease), background 0.18s var(--ease);
-  }
-  .post__ph-credit:hover,
-  .post__ph-credit:focus-visible {
-    opacity: 1;
-    background: rgba(12, 15, 20, 0.78);
-    text-decoration: none;
   }
   /* Kapak fotoğrafının altına hafif karartma: kaynak etiketi her fotoğrafta okunur */
   .post__veil {
