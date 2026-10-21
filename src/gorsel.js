@@ -45,6 +45,21 @@ export function urlHintScore(url) {
 }
 
 /**
+ * Kapak uygunluk puanı: sunucu/video küçük resmi, yazı bindirmeli şablon veya
+ * "inceleme" kapağı gibi görünen adaylar geriye, temiz basın/ürün fotoğrafı
+ * gibi görünenler öne geçer. Yalnızca URL/dosya adı kalıplarına bakar.
+ */
+export function kapakPuani(url) {
+  const u = String(url || "").toLowerCase();
+  let s = 0;
+  if (/(video|thumbnail|thumb-|kutu-acilis|hizlandirma|hakki-alkan|youtube|maxresdefault|\binceleme(si)?\b|-inceleme)/.test(u)) s -= 20;
+  if (/donanimhaber\.com\/images\/images\/haber\/\d+\/1200x675/.test(u)) s -= 20;
+  if (/donanimhaber\.com\/images\/images\/haber\/\d+\/src\//.test(u)) s += 6;
+  if (/(press|basin|official|newsroom|media-?kit|product)/.test(u)) s += 5;
+  return s;
+}
+
+/**
  * Aday görselin dosya adı habere ait mi? Sayfa içindeki <img>'ler arasında
  * yan menü/ilgili haber görselleri de var; yalnızca dosya adı başlık, slug
  * veya kaynak adresiyle ortak sözcük taşıyanlar kabul edilir.
@@ -99,9 +114,18 @@ export async function chooseArticleImage(extras, metin, { minWidth = 600, rssIma
   const image = extras?.image || null;
   const images = Array.isArray(extras?.images) ? extras.images : [];
 
+  // Birincil adaylar (og:image/RSS) + dosya adı habere uyan sayfa içi görseller
+  // birlikte puanlanır; sunucu yüzlü/şablonlu kapaklar yerine temiz fotoğraf seçilir.
   const birincil = [image, rssImage].filter(Boolean);
-  if (birincil.length) {
-    const secilen = await chooseImage(birincil, { max: 2, maxProbes: 6, minWidth, keepOrder: true });
+  const eslesenler = images.filter((u) => dosyaAdiEslesiyor(u, metin));
+  const havuzAdaylari = [...new Set([...birincil, ...eslesenler])];
+  if (havuzAdaylari.length) {
+    const secilen = await chooseImage(havuzAdaylari, {
+      max: 5,
+      maxProbes: 10,
+      minWidth,
+      keepOrder: true,
+    });
     if (secilen) return secilen;
   }
 
@@ -358,12 +382,12 @@ export async function chooseImage(
   let deneme = 0;
   for (const url of havuz) {
     if (deneme >= maxProbes) break;
-    if (best && best.width >= 1200) break;
+    if (best && best.width >= 1200 && kapakPuani(best.url) >= 0) break;
     deneme++;
     const info = await probeImage(url);
     if (!passesQuality(info, minWidth)) continue;
     if (info.width < minWidth) continue;
-    const score = info.width + urlHintScore(url) * 30;
+    const score = info.width + urlHintScore(url) * 30 + kapakPuani(url) * 30;
     if (!best || score > best.score) best = { url: info.finalUrl || url, score, width: info.width };
   }
   return best ? best.url : null;
