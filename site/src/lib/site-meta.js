@@ -142,7 +142,7 @@ export const AVATARLAR = [
   { kod: "/avatar/ordek.webp", ad: "Ördek", renk: "#e8a62b" },
   { kod: "/avatar/kara-kedi.webp", ad: "Kara Kedi", renk: "#d9364b" },
   // Hayvanlar
-  { kod: "/avatar/kedi.webp", ad: "Kedi", renk: "#d98a9a" },
+  { kod: "/avatar/yildizli-kedi.webp", ad: "Yıldızlı Kedi", renk: "#e8a62b" },
   { kod: "/avatar/golden.webp", ad: "Golden", renk: "#e8a62b" },
   { kod: "/avatar/panda.webp", ad: "Panda", renk: "#3f8c76" },
   { kod: "/avatar/pingu.webp", ad: "Pingu", renk: "#e4573d" },

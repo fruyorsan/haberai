@@ -599,6 +599,73 @@
     return rpc("uye_yorum_ekle", { p_id: u.id, p_token: u.token, p_slug: slug, p_metin: metin });
   }
 
+  /** Ziyaretçi anonim kimliği (tarayıcı bazlı kalıcı id). */
+  function ziyaretciId() {
+    try {
+      var id = localStorage.getItem("hb_zid");
+      if (!id || id.length < 10) {
+        id = "z_" + Math.random().toString(36).slice(2, 10) + Date.now().toString(36);
+        localStorage.setItem("hb_zid", id);
+      }
+      return id;
+    } catch (e) {
+      return "z_anon";
+    }
+  }
+
+  /**
+   * Canlı aktif kullanıcı nabzı (kalp atışı).
+   * Ziyaretçinin o an sitede olduğunu ve hangi sayfada gezindiğini iletir.
+   */
+  var sonKalpZamani = 0;
+  async function kalpAtisi(sayfa) {
+    var a = ayarlar();
+    if (!a.url || !a.anahtar) return;
+    var simdi = Date.now();
+    if (simdi - sonKalpZamani < 20000) return; // 20 saniyeden sık gönderme
+    sonKalpZamani = simdi;
+
+    var zid = ziyaretciId();
+    var u = oturumOku();
+    var s = sayfa || (typeof location !== "undefined" ? location.pathname : "/");
+
+    return rpc("kalp_atisi", {
+      p_ziyaretci: zid,
+      p_sayfa: s,
+      p_id: u ? u.id : null,
+      p_token: u ? u.token : null,
+    });
+  }
+
+  function kalpAtisiBaslat() {
+    // Sayfa yüklendiğinde hafif bir gecikmeyle ilk nabzı at
+    setTimeout(function () {
+      kalpAtisi();
+    }, 1200);
+
+    // Sekme açık ve görünür olduğu sürece her 45 saniyede bir nabız tazele
+    setInterval(function () {
+      if (typeof document !== "undefined" && document.visibilityState === "hidden") return;
+      kalpAtisi();
+    }, 45000);
+
+    // Sekmeye tekrar dönüldüğünde hemen tazele
+    if (typeof document !== "undefined") {
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible") {
+          kalpAtisi();
+        }
+      });
+    }
+  }
+
+  /** Yönetici: canlı aktif ziyaretçi istatistikleri ve son aktif üyeler. */
+  async function adminCanliIstatistik() {
+    var u = oturumOku();
+    if (!u) return { hata: "Giriş yapmalısın." };
+    return rpc("admin_canli_istatistik", { p_id: u.id, p_token: u.token });
+  }
+
   window.HaberinAi = {
     aktif: function () {
       var a = ayarlar();
@@ -626,11 +693,14 @@
     bildirimSiklik: bildirimSiklik,
     adminUyeler: adminUyeler,
     adminEtiket: adminEtiket,
+    adminCanliIstatistik: adminCanliIstatistik,
+    kalpAtisi: kalpAtisi,
     dugmeleriGuncelle: dugmeleriGuncelle,
   };
 
   function baslat() {
     dugmeleriGuncelle();
+    kalpAtisiBaslat();
     var u = oturumOku();
     if (u) pushEsle(u);
     // Hesapsız okuyucu da (daha önce yorum yazdıysa) cihaz etiketini taşısın:
