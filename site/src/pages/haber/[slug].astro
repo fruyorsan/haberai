@@ -246,31 +246,33 @@ const breadcrumbLd = {
         </div>
       </div>
 
-      <div class="post__media">
-        <div class="post__ph" aria-hidden="true" style={`--ph-hue:${phTema.hue}`}>
-          <span class="post__ph-mark">{phTema.ikon}</span>
-          <span class="post__ph-cat">{article.category}</span>
+      {kapak && (
+        <div class="post__media">
+          <div class="post__ph" aria-hidden="true" style={`--ph-hue:${phTema.hue}`}>
+            <span class="post__ph-mark">{phTema.ikon}</span>
+            <span class="post__ph-cat">{article.category}</span>
+          </div>
+          {kapak ? (
+            <img
+              class="post__img"
+              src={imageUrl(kapak, 1200)}
+              srcset={imageSrcset(kapak, [820, 1200]) || undefined}
+              sizes="(max-width: 900px) 100vw, 860px"
+              data-orig={kapak}
+              alt={article.title}
+              width="1200"
+              height="675"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+              referrerpolicy="no-referrer"
+              onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.removeAttribute('srcset');this.removeAttribute('sizes');this.src=this.dataset.orig}else{this.classList.add('is-broken')}"
+            />
+          ) : null}
+          <span class="post__veil" aria-hidden="true"></span>
+          {kapak && <span class="sr-only">Fotoğraf: {article.gorselKaynak ? atifMetni(article.gorselKaynak) : article.source}</span>}
         </div>
-        {kapak ? (
-          <img
-            class="post__img"
-            src={imageUrl(kapak, 1200)}
-            srcset={imageSrcset(kapak, [820, 1200]) || undefined}
-            sizes="(max-width: 900px) 100vw, 860px"
-            data-orig={kapak}
-            alt={article.title}
-            width="1200"
-            height="675"
-            loading="eager"
-            decoding="async"
-            fetchpriority="high"
-            referrerpolicy="no-referrer"
-            onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.removeAttribute('srcset');this.removeAttribute('sizes');this.src=this.dataset.orig}else{this.classList.add('is-broken')}"
-          />
-        ) : null}
-        <span class="post__veil" aria-hidden="true"></span>
-        {kapak && <span class="sr-only">Fotoğraf: {article.gorselKaynak ? atifMetni(article.gorselKaynak) : article.source}</span>}
-      </div>
+      )}
 
       <div class="post__body">
         {/* ÖZET EN ÜSTTE: sitemizin asıl vaadi kısalık ve netlik. Okur, gövdeyi okumadan
