@@ -511,7 +511,10 @@
         localStorage.setItem("bildirim-siklik", siklik);
       } catch (e) {}
       for (var i = 0; i < tum.length; i++) {
-        t["kategori_" + tum[i]] = slugs.indexOf(tum[i]) >= 0 ? "1" : "";
+        // Yalnızca "anında" seçen okuyucuya konu bildirimi gider; özet/son
+        // seçenlerde kategori etiketi boşaltılır.
+        t["kategori_" + tum[i]] =
+          siklik === "aninda" && slugs.indexOf(tum[i]) >= 0 ? "1" : "";
       }
       os.User.addTags(t);
     } catch (e) {}
