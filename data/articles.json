@@ -57,25 +57,11 @@
     "gorselSorgu": "",
     "source": "Rudaw",
     "sourceUrl": "https://www.rudaw.net/turkish/categories/ortadou/1286123",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Person_holding_world_globe.jpg/1280px-Person_holding_world_globe.jpg",
-    "gorselKaynak": {
-      "yazar": "Porapak Apichodilok",
-      "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Person_holding_world_globe.jpg"
-    },
+    "image": "https://rudaw.net/_next/image?url=https%3A%2F%2Fimages.rudaw.net%2Fimages%2Fasset%2Fnews%2F20261021233042_0c0a1eb2-1e33-4b6c-bd30-296f65273cb5_16x9_1200x676.webp&w=1200&q=75",
     "publishedAt": "2026-10-21T20:36:09.000Z",
     "generatedAt": "2026-10-21T20:37:09.075Z",
-    "gorselEk": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/World_globe_%28Unsplash_gEKMstKfZ6w%29.jpg/1280px-World_globe_%28Unsplash_gEKMstKfZ6w%29.jpg",
-        "yazar": "Ben White benwhitephotography",
-        "lisans": "CC0",
-        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-        "sayfa": "https://commons.wikimedia.org/wiki/File:World_globe_(Unsplash_gEKMstKfZ6w).jpg"
-      }
-    ],
-    "breaking": true
+    "breaking": true,
+    "gorselKaynakSite": true
   },
   {
     "id": "57a45ce609881161",
@@ -349,32 +335,11 @@
     "gorselSorgu": "earthquake waves",
     "source": "Sivas Memleket Gazetesi",
     "sourceUrl": "https://www.sivasmemleket.com.tr/foto-galeri/gundem/antalya-dosemealtinda-deprem-marmara-denizi-ve-gokova-korfezi-de-sallandi/226318",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/FEMA_-_44649_-_Earthquake_damaged_buildings_in_California.jpg/1280px-FEMA_-_44649_-_Earthquake_damaged_buildings_in_California.jpg",
-    "gorselKaynak": {
-      "yazar": "Adam Dubrowa",
-      "lisans": "Kamu malı",
-      "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:FEMA_-_44649_-_Earthquake_damaged_buildings_in_California.jpg"
-    },
+    "image": "https://www.sivasmemleket.com.tr/cropImages/1280x720/uploads/haberler/2026/10/iwX3-antalya-dosemealtinda-deprem-marmara-denizi-ve-gokova-korfezi-de-sallandi.jpg",
     "publishedAt": "2026-10-21T20:22:30.000Z",
     "generatedAt": "2026-10-21T20:36:41.517Z",
-    "gorselEk": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Fukui_Earthquake_1948_-_damaged_building.jpg/1280px-Fukui_Earthquake_1948_-_damaged_building.jpg",
-        "yazar": "Bert Cohen",
-        "lisans": "Kamu malı",
-        "lisansUrl": "",
-        "sayfa": "https://commons.wikimedia.org/wiki/File:Fukui_Earthquake_1948_-_damaged_building.jpg"
-      },
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Rescue_workers_near_the_semi-collapsed_ten-story_Uranus_Building_on_Xuanyuan_Road_after_the_2024_Hualien_earthquake.jpg/1280px-Rescue_workers_near_the_semi-collapsed_ten-story_Uranus_Building_on_Xuanyuan_Road_after_the_2024_Hualien_earthquake.jpg",
-        "yazar": "總統府 / Official Photo by Shufu Liu / Office of the President Perspective correction made by",
-        "lisans": "CC BY 2.0",
-        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
-        "sayfa": "https://commons.wikimedia.org/wiki/File:Rescue_workers_near_the_semi-collapsed_ten-story_Uranus_Building_on_Xuanyuan_Road_after_the_2024_Hualien_earthquake.jpg"
-      }
-    ],
-    "breaking": true
+    "breaking": true,
+    "gorselKaynakSite": true
   },
   {
     "id": "f99fc5e391fc3de9",
