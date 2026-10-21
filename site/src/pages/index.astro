@@ -11,7 +11,11 @@ import { siteOrigin, ADSENSE_SLOTS } from "../lib/site-meta.js";
 const articles = getArticles();
 // Shorts vitrini: ilgi sırasının en tepesindeki 4 haber (hepsi gerçek fotoğraflı).
 // Akışın ana sayfadaki yüzü burasıdır — ziyaretçiyi /akis/'a çeken görsel şerit.
-const shorts = ilgiSirala(articles)
+// vitrin ve akış sırası
+// featuredSlugs ve shortsSlugs tekrarı önler
+const featured = getFeatured(6, 36, kapakKaynagi);
+const featuredSlugs = new Set(featured.map((a) => a.slug));
+const shorts = ilgiSirala(articles).filter((a) => !featuredSlugs.has(a.slug))
   .slice(0, 4)
   .map((a) => ({
     slug: a.slug,
@@ -24,22 +28,23 @@ const shorts = ilgiSirala(articles)
 // Konu sayfalarına ana sayfadan da bağlantı verilir (hem gezinme hem arama
 // motorlarının konu sayfalarını keşfi için).
 const konular = getTags().slice(0, 14);
+const shortsSlugs = new Set(shorts.map((s) => s.slug));
 // İlk 6 haber "öne çıkanlar" slaytında gösterilir; ızgarada tekrar etmesinler.
-const featured = getFeatured(6, 20, kapakKaynagi);
-const featuredSlugs = new Set(featured.map((a) => a.slug));
+// vitrin ve akış sırası
+// featuredSlugs ve shortsSlugs tekrarı önler
 const nonFeatured = articles.filter((a) => !featuredSlugs.has(a.slug));
 // Teknoloji/yapay zekâ gelişmeleri ayrı ve belirgin bir bölümde öne çıkarılır.
-const teknoKategoriler = new Set(["teknoloji", "yapay-zeka"]);
+const teknoKategoriler = new Set(["teknoloji", "yapay-zeka", "mobil", "donanim", "yazilim", "oyun", "internet"]);
 const tekno = articles
-  .filter((a) => teknoKategoriler.has(a.categorySlug) && !featuredSlugs.has(a.slug))
+  .filter((a) => teknoKategoriler.has(a.categorySlug) && !featuredSlugs.has(a.slug) && !shortsSlugs.has(a.slug) && kapakKaynagi(a) && !/wikimedia|wikipedia/i.test(a.image || ""))
   .slice(0, 4);
 const teknoSlugs = new Set(tekno.map((a) => a.slug));
 // ShiftDelete tarzı: Gerçek fotoğraflı haberler öncelikli gösterilir.
 // "Fotoğraflı" ölçütü güvenlik süzgecinden geçen kapaktır (lib/kapak.js):
 // yanlış/genel görseli elenen haber, fotoğrafsız (kırmızı zeminli) kart olarak
 // listenin sonuna alınır.
-const withPhoto = nonFeatured.filter((a) => kapakKaynagi(a) && !teknoSlugs.has(a.slug));
-const withoutPhoto = nonFeatured.filter((a) => !kapakKaynagi(a) && !teknoSlugs.has(a.slug));
+const withPhoto = nonFeatured.filter((a) => kapakKaynagi(a) && !teknoSlugs.has(a.slug) && !shortsSlugs.has(a.slug));
+const withoutPhoto = nonFeatured.filter((a) => !kapakKaynagi(a) && !teknoSlugs.has(a.slug) && !shortsSlugs.has(a.slug));
 const grid = [...withPhoto, ...withoutPhoto].slice(0, 21);
 
 // WebSite + Organization yapısal veri: Sitelinks arama kutusu (Google) + marka bilgisi.

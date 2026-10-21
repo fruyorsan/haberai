@@ -229,7 +229,7 @@ const ilk = liste.slice(0, ilkSayi);
       // ziyarette akışın tepesinde durmaz. Şikâyet: "beğendiğim şey bir dahaki
       // girişimde yine en üstteydi". Sıra: görülmemişler önce, gördükler sonra
       // (grup içinde sunucu sırası korunur). Veri cihazda kalır.
-      const gorulenler = oku("akis-gorulen");
+      const gorulenler = oku("akis-gorulen-v3");
 
       // --- Hesap (giriş yapılmışsa beğeniler hesaba da yazılır) --------------
       const H = window.HaberinAi;
@@ -296,7 +296,7 @@ const ilk = liste.slice(0, ilkSayi);
         const slug = kart.dataset.slug;
         if (!slug || gorulenler.has(slug)) return;
         gorulenler.add(slug);
-        yaz("akis-gorulen", gorulenler);
+        yaz("akis-gorulen-v3", gorulenler);
         boya(kart);
       }
 
@@ -306,7 +306,8 @@ const ilk = liste.slice(0, ilkSayi);
           ? new IntersectionObserver(
               (girisler) => {
                 for (const g of girisler) {
-                  if (!g.isIntersecting) continue;
+                  if (g.isIntersecting) { g.target.dataset.gorundu = "1"; continue; }
+                  if (!g.target.dataset.gorundu || g.boundingClientRect.top > 0) continue;
                   gorulenIsaretle(g.target);
                   gorulenGozcu.unobserve(g.target);
                 }
