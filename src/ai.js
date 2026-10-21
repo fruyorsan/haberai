@@ -438,11 +438,13 @@ async function callProvider(c, article, ekNot = "") {
   return c.provider === "pollinations" ? pollinationsCall(c, article, ekNot) : c.provider === "groq" ? groqCall(c, article, ekNot) : geminiCall(c, article, ekNot);
 }
 async function pollinationsCall(c, article, ekNot = "") {
-  const res = await safeFetch("https://text.pollinations.ai/openai", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ model: c.model || "openai", temperature: 0.75, messages: [{ role: "system", content: SYSTEM }, { role: "user", content: buildPrompt(article, ekNot) }] }) });
+  const cats = config.categories.join(", ");
+  const prompt = `Bu haberi kendi cümlelerinle Türkçe JSON olarak yeniden yaz. Alanlar: title (45-70 karakter vurucu başlık), slug, summary (2-3 cümle özet), keyPoints (3 somut madde dizisi), body (4 dolu paragraf dizisi, toplam ~250 kelime), comment (3-4 cümle özgün editör analizi ve etkisi), editorNote (1-2 cümle manşet notu, <=175 karakter), tags (4 Türkçe etiket dizisi), category (${cats} içinden biri), gorselSorgu (2-4 kelimelik İngilizce görsel sorgusu).\nKAYNAK: ${article.source} (${article.feedCategory || ""})\nBAŞLIK: ${article.title}\nMETİN: ${String(article.content || "").slice(0, 2600)}`;
+  const res = await safeFetch("https://text.pollinations.ai/openai", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ model: c.model || "openai", reasoning_effort: "low", temperature: 0.75, messages: [{ role: "system", content: "Deneyimli bir Türk teknoloji ve haber editörüsün. Kaynak cümlelerini kopyalamadan özgün Türkçe haber üret. Yanıtını SADECE geçerli JSON nesnesi olarak ver." }, { role: "user", content: prompt }] }) });
   if (!res.ok) throw classify(res.status, await res.text(), res.headers, "Pollinations");
   const json = await res.json();
   const text = json?.choices?.[0]?.message?.content;
-  if (!text) throw new Error("Pollinations boş yanıt döndü");
+  if (!text) { const e = new Error("Pollinations boş yanıt döndü"); e.kind = "transient"; throw e; }
   return normalize(parseJson(text), article);
 }
 
