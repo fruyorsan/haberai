@@ -10,6 +10,7 @@ import { purgeCopiedText } from "./telif.js";
 import { stokGorseller, KATEGORI_SORGU, yedekGorsel, atif, kisaSorgu, konuSorgu, afetMi, gorselOnar, markaAdi } from "./stok-gorsel.js";
 import { chooseArticleImage } from "./gorsel.js";
 import { isJunkArticle } from "./kalite.js";
+import { vitrinDoldur } from "../scripts/vitrin-doldur.mjs";
 
 const DRY = process.argv.includes("--dry");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -56,6 +57,7 @@ async function main() {
   // değiştirilir. Her turda çalışır; veri birleşmelerinde onarım kaybolmaz.
   {
     const onarilan = gorselOnar(articles);
+    vitrinDoldur(articles);
     const temizArsiv = articles.filter((a) => !isJunkArticle(a));
     if (temizArsiv.length !== articles.length) articles.splice(0, articles.length, ...temizArsiv);
     if (onarilan) console.log(`Görsel onarımı: ${onarilan} kapak fotoğrafı düzeltildi`);

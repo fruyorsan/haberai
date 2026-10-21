@@ -1,28 +1,10 @@
 import { readFileSync, writeFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 import { makeId } from "../src/store.js";
 import { slugify } from "../src/ai.js";
-import { purgeCopiedText } from "../src/telif.js";
-
-const UA =
-  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36";
-
-function stripHtml(html) {
-  return String(html || "")
-    .replace(/<script[\s\S]*?<\/script>/gi, " ")
-    .replace(/<style[\s\S]*?<\/style>/gi, " ")
-    .replace(/<figure[\s\S]*?<\/figure>/gi, " ")
-    .replace(/<[^>]+>/g, " ")
-    .replace(/&#8217;|&#8216;|&rsquo;|&lsquo;/g, "'")
-    .replace(/&#8220;|&#8221;|&ldquo;|&rdquo;|&quot;/g, '"')
-    .replace(/&#8211;|&#8212;|&ndash;|&mdash;/g, "–")
-    .replace(/&#038;|&amp;/g, "&")
-    .replace(/&nbsp;/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
 
 // ShiftDelete, DonanımHaber, Webtekno, Technopat'tan canlı çekilen güncel vitrin haberleri
-const CURATED = [
+export const CURATED = [
   {
     source: "ShiftDelete",
     sourceUrl: "https://shiftdelete.net/iphone-duo-cikmadan-applea-kotu-haber-satis-tahminleri-asagi-cekildi",
@@ -142,8 +124,7 @@ const CURATED = [
       "Olumsuz geri bildirimler öneri algoritmasını eğitmek için arka planda çalışmaya devam edecek.",
     ],
     body: [
-      "Video platformu YouTube, daha önce herkese açık sayacını kaldırdığı beğenmeme (dislike) butonu için yeni bir arayüz değişikliğini devreye alıyor. Yapılan testlerde olumsuz oy düğmesinin video altındaki görünür şeritten tamamen çıkarıldığı ve 'Daha fazla' menüsü altına " +
-        "gizlendiği görüldü.",
+      "Video platformu YouTube, daha önce herkese açık sayacını kaldırdığı beğenmeme (dislike) butonu için yeni bir arayüz değişikliğini devreye alıyor. Yapılan testlerde olumsuz oy düğmesinin video altındaki görünür şeritten tamamen çıkarıldığı ve 'Daha fazla' menüsü altına gizlendiği görüldü.",
       "Şirket bu adımla özellikle mobil ekranda ve Shorts akışında buton kalabalığını azaltmayı, aynı zamanda içerik üreticilerine yönelik organize olumsuz oy kampanyalarını tamamen kırmayı hedefliyor. Kullanıcılar bir içeriği beğenmediklerini belirtmek istediklerinde artık iki dokunuş yapmak zorunda kalacak.",
       "Öte yandan beğenmeme sinyali öneri algoritması için çalışmayı sürdürecek. Kullanıcı menü içinden 'Beğenmedim' veya 'İlgilenmiyorum' seçeneğine dokunduğunda, benzer içeriklerin ana sayfada çıkma olasılığı yine düşürülecek.",
       "Kullanıcı deneyimi tarafında ise tarayıcı eklentileriyle tahmini beğenmeme sayılarını takip eden izleyiciler, butonun ikinci plana atılmasıyla geri bildirim oranlarının ciddi biçimde düşeceğini savunuyor.",
@@ -338,36 +319,6 @@ const CURATED = [
   },
 ];
 
-const file = "data/articles.json";
-const articles = JSON.parse(readFileSync(file, "utf8"));
-const existingUrls = new Set(articles.map((a) => a.sourceUrl));
-
-let added = 0;
-for (const item of CURATED) {
-  if (existingUrls.has(item.sourceUrl)) continue;
-  articles.unshift({
-    id: makeId(item.sourceUrl),
-    title: item.title,
-    slug: slugify(item.title),
-    summary: item.summary,
-    keyPoints: item.keyPoints,
-    body: item.body,
-    comment: item.comment,
-    editorNote: item.editorNote,
-    tags: item.tags,
-    category: item.category,
-    image: item.image,
-    source: item.source,
-    sourceUrl: item.sourceUrl,
-    publishedAt: item.publishedAt,
-    generatedAt: new Date().toISOString(),
-    breaking: false,
-  });
-  added++;
-}
-
-// Ayrıca kullanıcının ekran görüntüsünde şikayet ettiği sıkıcı basın toplantısı / eski fotoğrafları
-// ShiftDelete kalitesinde 16:9 ürün/konsept kapaklarıyla güncelle:
 const REPLACEMENTS = [
   {
     match: /Getir araştırması: Tüketiciler market alışverişine/i,
@@ -391,22 +342,56 @@ const REPLACEMENTS = [
   },
 ];
 
-let replaced = 0;
-for (const a of articles) {
-  for (const r of REPLACEMENTS) {
-    if (r.match.test(a.title || "")) {
-      a.image = r.image;
-      delete a.imageCredit;
-      replaced++;
+export function vitrinDoldur(articles) {
+  const existingUrls = new Set(articles.map((a) => a.sourceUrl));
+  let added = 0;
+  for (const item of CURATED) {
+    if (existingUrls.has(item.sourceUrl)) continue;
+    articles.unshift({
+      id: makeId(item.sourceUrl),
+      title: item.title,
+      slug: slugify(item.title),
+      summary: item.summary,
+      keyPoints: item.keyPoints,
+      body: item.body,
+      comment: item.comment,
+      editorNote: item.editorNote,
+      tags: item.tags,
+      category: item.category,
+      image: item.image,
+      source: item.source,
+      sourceUrl: item.sourceUrl,
+      publishedAt: item.publishedAt,
+      generatedAt: new Date().toISOString(),
+      breaking: false,
+    });
+    added++;
+  }
+
+  let replaced = 0;
+  for (const a of articles) {
+    for (const r of REPLACEMENTS) {
+      if (r.match.test(a.title || "")) {
+        a.image = r.image;
+        delete a.imageCredit;
+        replaced++;
+      }
+    }
+    if (typeof a.image === "string") {
+      a.image = a.image
+        .replace(/\/\/www\.technopat\.net\/www\.technopat\.net\//i, "//www.technopat.net/")
+        .replace(/(imgrosetta\.webtekno\.com\/file\/\d+\/\d+-)640xauto/i, "$11280xauto");
     }
   }
-  if (typeof a.image === "string") {
-    a.image = a.image
-      .replace(/\/\/www\.technopat\.net\/www\.technopat\.net\//i, "//www.technopat.net/")
-      .replace(/(imgrosetta\.webtekno\.com\/file\/\d+\/\d+-)640xauto/i, "$11280xauto");
-  }
+
+  articles.sort((a, b) => new Date(b.publishedAt || 0).getTime() - new Date(a.publishedAt || 0).getTime());
+  return { added, replaced };
 }
 
-articles.sort((a, b) => new Date(b.publishedAt || 0).getTime() - new Date(a.publishedAt || 0).getTime());
-writeFileSync(file, JSON.stringify(articles, null, 2) + "\n", "utf8");
-console.log(`Eklendi: ${added} yeni ShiftDelete/vitrin haberi, Güncellendi: ${replaced} kapak fotoğrafı.`);
+if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
+  const file = "data/articles.json";
+  const articles = JSON.parse(readFileSync(file, "utf8"));
+  const { added, replaced } = vitrinDoldur(articles);
+  writeFileSync(file, JSON.stringify(articles, null, 2) + "\n", "utf8");
+  console.log(`Eklendi: ${added} yeni ShiftDelete/vitrin haberi, Güncellendi: ${replaced} kapak fotoğrafı.`);
+}
