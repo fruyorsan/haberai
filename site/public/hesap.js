@@ -210,7 +210,7 @@
       avatar: null,
       rol: "uye",
       etiket: "",
-      bildirim_siklik: "aninda",
+      bildirim_siklik: "gunluk7",
     });
     duyur();
     return r;
@@ -229,7 +229,7 @@
       avatar: r.avatar || null,
       rol: r.rol || "uye",
       etiket: r.etiket || "",
-      bildirim_siklik: r.bildirim_siklik || "aninda",
+      bildirim_siklik: r.bildirim_siklik || "gunluk7",
     });
     duyur();
     return r;
@@ -261,7 +261,7 @@
       avatar: r.avatar || null,
       rol: r.rol || "uye",
       etiket: r.etiket || "",
-      bildirim_siklik: r.bildirim_siklik || "aninda",
+      bildirim_siklik: r.bildirim_siklik || "gunluk7",
     };
     oturumYaz(yeni);
     duyur();
@@ -496,14 +496,15 @@
       // son_dakika: hesaba giren cihazın son dakika haberlerini alması için
       // (sunucu "tüm aboneler" hedeflemesini bu etiketle yapar).
       var t = { uye: "1", son_dakika: "1" };
-      // Bildirim sıklığı: sunucu "aninda" olanlara konu bildirimi yollar,
-      // "ozet" olanlara günde 3 özet, "son" olanlara yalnızca son dakika.
+      // Bildirim sıklığı: sunucu "aninda" olanlara her konuyu anında yollar,
+      // "gunluk7"/"gunluk10" olanlara günde en fazla 7/10 bildirim, "ozet"
+      // olanlara günde 3 özet, "son" olanlara yalnızca son dakika.
       var siklik = u.bildirim_siklik || "";
       if (!siklik) {
         try {
-          siklik = localStorage.getItem("bildirim-siklik") || "aninda";
+          siklik = localStorage.getItem("bildirim-siklik") || "gunluk7";
         } catch (e) {
-          siklik = "aninda";
+          siklik = "gunluk7";
         }
       }
       t.bildirim_sikligi = siklik;
@@ -511,18 +512,21 @@
         localStorage.setItem("bildirim-siklik", siklik);
       } catch (e) {}
       for (var i = 0; i < tum.length; i++) {
-        // Yalnızca "anında" seçen okuyucuya konu bildirimi gider; özet/son
+        // Anında ve günlük sınırlı modlar konu bildirimi alır; özet/son
         // seçenlerde kategori etiketi boşaltılır.
         t["kategori_" + tum[i]] =
-          siklik === "aninda" && slugs.indexOf(tum[i]) >= 0 ? "1" : "";
+          (siklik === "aninda" || siklik === "gunluk7" || siklik === "gunluk10") &&
+          slugs.indexOf(tum[i]) >= 0
+            ? "1"
+            : "";
       }
       os.User.addTags(t);
     } catch (e) {}
   }
 
   /**
-   * Bildirim sıklığını kaydeder (aninda | ozet | son) ve cihaz etiketini
-   * hemen günceller. Profil sayfasındaki seçici bunu çağırır.
+   * Bildirim sıklığını kaydeder (gunluk7 | gunluk10 | aninda | ozet | son) ve
+   * cihaz etiketini hemen günceller. Profil sayfasındaki seçici bunu çağırır.
    */
   async function bildirimSiklik(siklik) {
     var u = oturumOku();

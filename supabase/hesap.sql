@@ -43,7 +43,7 @@ create table if not exists public.uyeler (
 -- Yönetici rozeti ve bildirim sıklığı (sonradan eklendi; mevcut hesaplar bozulmaz).
 alter table public.uyeler add column if not exists rol text not null default 'uye';
 alter table public.uyeler add column if not exists etiket text not null default '';
-alter table public.uyeler add column if not exists bildirim_siklik text not null default 'aninda';
+alter table public.uyeler add column if not exists bildirim_siklik text not null default 'gunluk7';
 
 alter table public.uyeler drop constraint if exists uyeler_rol_bicim;
 alter table public.uyeler
@@ -51,7 +51,8 @@ alter table public.uyeler
 
 alter table public.uyeler drop constraint if exists uyeler_siklik_bicim;
 alter table public.uyeler
-  add constraint uyeler_siklik_bicim check (bildirim_siklik in ('aninda', 'ozet', 'son'));
+  add constraint uyeler_siklik_bicim
+  check (bildirim_siklik in ('gunluk7', 'gunluk10', 'aninda', 'ozet', 'son'));
 
 -- Yorumları hesaba bağla: dolu ise yorumu bir üye yazmıştır (görünen adı
 -- profilden gelir). NULL ise hesapsız (eski) yorumdur. Tablo yeniden
@@ -236,7 +237,8 @@ end;
 $$;
 
 -- --------------------------------------------------- bildirim sıklığı ------
--- Okuyucu profilden seçer: aninda (her konu), ozet (günde 3 özet), son (yalnızca son dakika).
+-- Okuyucu profilden seçer: gunluk7 (günde 7), gunluk10 (günde 10), aninda
+-- (her konu, sınırsız), ozet (günde 3 özet), son (yalnızca son dakika).
 create or replace function public.uye_bildirim_siklik(
   p_id uuid, p_token text, p_siklik text
 )
@@ -251,7 +253,7 @@ declare
 begin
   v_uye := public.uye_dogrula(p_id, p_token);
   if v_uye.id is null then return jsonb_build_object('hata', 'Oturum geçersiz.'); end if;
-  if v_siklik not in ('aninda', 'ozet', 'son') then
+  if v_siklik not in ('gunluk7', 'gunluk10', 'aninda', 'ozet', 'son') then
     return jsonb_build_object('hata', 'Geçersiz bildirim sıklığı.');
   end if;
   update public.uyeler

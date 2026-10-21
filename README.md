@@ -443,15 +443,24 @@ takip ettiği konular için bildirim alır; site kapalıyken de bildirim gelir
 
 | Tür | Kim alır | Sıklık |
 | --- | --- | --- |
-| Son dakika (`breaking: true`) | Tüm aboneler | Asgari 25 dk arayla, günde en fazla 6 |
-| Takip edilen konu (kategori) | Yalnızca o kategoriyi takip edenler | Kategori başına en fazla 3 saatte 1, günde en fazla 3 |
+| Günlük sınırlı (varsayılan) | `gunluk7` / `gunluk10` | Son dakika + konu toplamı günde en fazla **7 / 10**; gönderimler arası en az 90 dk |
+| Anında | `aninda` | Son dakika 25 dk arayla; takip edilen her konu gerçek zamanlı (yüksek tavan) |
+| Günde 3 özet | `ozet` | 09:00 · 15:00 · 21:00 toplu özet |
+| Sadece son dakika | `son` | Yalnızca `breaking: true` haberler |
 
-- Gece **23:00–07:00** arasında yalnızca konu bildirimleri durur; son dakika haberleri
-  gece de gider (acil gelişme kaçmasın). Toplam günlük tavan 9 bildirimdir.
+- **Yeni okuyucunun varsayılanı `gunluk7`** (günde 7 bildirim). Profildeki
+  "Bildirim sıklığı" seçicisinden `gunluk10`, `aninda`, `ozet` veya `son`
+  seçilebilir; "anında" seçen okuyucu eski (sınırsıza yakın) davranışı alır.
+- Günlük modda tavan **toplam** bildirim sayısıdır: son dakika + konu birlikte
+  sayılır. Böylece okuyucu günde 7/10'dan fazla haber bildirimi almaz.
+  Gönderimler arasında en az **90 dakika** vardır; 7 bildirim gün içine yayılır.
+- Gece **01:00–07:00** arasında konu bildirimleri durur; son dakika haberleri
+  gece de gidebilir. Günlük modun tavanı gece gönderimlerini de kapsar.
 - "Benzer haberler" bilerek bildirilmez: sayfa içi öneridir, telefonu titretmeye değmez
   ve okuyucu iznini kaybettirir.
 - Aynı haber iki kez gönderilmez: gönderilen id'ler `data/bildirim.json`'da tutulur
   (workflow `data/` ile birlikte commit eder).
+- Yorum beğenisi/yanıtı bildirimleri bu haber tavanından bağımsızdır; ayrı akıştır.
 
 **Haber sayfasında "Bu kategoriyi takip et"** düğmesi kategori rozetinin yanındadır:
 tıklanınca o kategori takip edilir ve ilk kez bildirim izni istenir.
@@ -512,23 +521,33 @@ tıklanınca o kategori takip edilir ve ilk kez bildirim izni istenir.
   almıyordu). Sayfa açılışında izin varsa abonelik bir kez daha kurulmayı dener.
   Ayrıntılı cihaz durumu için: Actions → **Bildirim Testi** → günlükte
   `notification_types` (1 = abone, 0 = izin yok, -1/-2 = kapatılmış).
-- **Günlük tavan neden doluyor:** son dakika 6 + konu 3 = 9. Yoğun günlerde öğlene kadar
-  dolabilir; bu kasıtlıdır (okuyucuyu boğmamak için). İlk izlenim "hoş geldin"
-  bildirimiyle kurtarılır.
+- **Günlük tavan neden doluyor:** Günlük modda son dakika + konu toplamı 7/10'u
+  bulduğunda o gün için susulur; bu kasıtlıdır (okuyucuyu boğmamak için). İlk izlenim
+  "hoş geldin" bildirimiyle kurtarılır. Daha fazlasını isteyen okuyucu profilden
+  "Anında"yı seçebilir.
 
 **Dosyalar:** `site/src/components/Bildirim.astro` (zil + panel + abonelik),
 `site/public/OneSignalSDKWorker.js` (service worker), `site/public/ikon-192.png`
 (bildirim ikonu — `npm run ikon` ile üretilir), `src/bildirim.js` (gönderim + kurallar).
 
 **Gizlilik:** OneSignal betiği sayfa açılışında yüklenmez; yalnızca okuyucu zile ya da
-takip düğmesine bastığında yüklenir. Tercihler (son dakika / konular) localStorage'da
+takip düğmesine bastığında yüklenir. Tercihler (son dakika / konular / sıklık) localStorage'da
 tutulur, sunucuya yalnızca OneSignal **etiketi** olarak yazılır
-(`son_dakika=1`, `kategori_<slug>=1`) — bildirim bu etiketlere göre gönderilir.
+(`son_dakika=1`, `kategori_<slug>=1`, `bildirim_sikligi=gunluk7|gunluk10|aninda|ozet|son`)
+— bildirim bu etiketlere göre gönderilir.
 
 ```powershell
 npm run bildirim:dry     # ne gönderileceğini yazar, istek atmaz
 npm run bildirim         # gerçekten gönderir
 ```
+
+Günlük mod ayarları (isteğe bağlı env): `BILDIRIM_GUNLUK7_MAX` (varsayılan 7),
+`BILDIRIM_GUNLUK10_MAX` (10), `BILDIRIM_GUNLUK_ARALIK_DK` (90 dakika).
+
+**Veritabanı geçişi:** Mevcut Supabase kurulumunda bir kez
+`supabase/bildirim-gunluk.sql` çalıştırılmalıdır. Bu dosya yeni varsayılanı
+(`gunluk7`) ve izin verilen değerleri (`gunluk7`, `gunluk10`, `aninda`, `ozet`,
+`son`) tanımlar; mevcut hesapların seçimini değiştirmez.
 
 ## Shorts Haber (`/akis/`) — kısa kısa haber akışı
 
