@@ -47,6 +47,71 @@ export function urlHintScore(url) {
   return s;
 }
 
+/**
+ * Aday görselin dosya adı habere ait mi? Sayfa içindeki <img>'ler arasında
+ * yan menü/ilgili haber görselleri de var; yalnızca dosya adı başlık, slug
+ * veya kaynak adresiyle ortak sözcük taşıyanlar kabul edilir.
+ */
+export function dosyaAdiEslesiyor(url, metin) {
+  let ad = "";
+  try {
+    ad = decodeURIComponent(String(url || "").split("/").pop() || "");
+  } catch {
+    ad = String(url || "").split("/").pop() || "";
+  }
+  const parcalar = ad
+    .replace(/\?.*$/, "")
+    .replace(/\.[a-z0-9]+$/i, "")
+    .split(/[-_+.]+/)
+    .filter((p) => p.length >= 4 && !/^\d+$/.test(p));
+
+  const sadeles = (s) =>
+    String(s || "")
+      .toLocaleLowerCase("tr")
+      .replace(/[çğıöşü]/g, (c) => ({ ç: "c", ğ: "g", ı: "i", ö: "o", ş: "s", ü: "u" }[c]))
+      .replace(/[^a-z0-9]+/g, "");
+
+  const esles = (a, b) => {
+    if (!a || !b) return false;
+    const n = Math.min(a.length, b.length);
+    let i = 0;
+    while (i < n && a[i] === b[i]) i++;
+    // Türkçe ekler yüzünden tam eşitlik aranmaz ("iphone" ~ "iphone'un").
+    return i >= 5 || (i >= 4 && (i === a.length || i === b.length));
+  };
+
+  const kelimeler = String(metin || "")
+    .toLocaleLowerCase("tr")
+    .replace(/[^a-z0-9çğıöşü]+/g, " ")
+    .split(/\s+/)
+    .filter((k) => k.length >= 4 && !/^\d+$/.test(k))
+    .map(sadeles);
+
+  return parcalar.some((p) => {
+    const sp = sadeles(p);
+    return kelimeler.some((k) => esles(sp, k));
+  });
+}
+
+/**
+ * Kaynak sayfanın görsellerinden haberin kapağını seçer.
+ *
+ * Sıra: og:image → (og uygun değilse) dosya adı başlıkla eşleşen sayfa içi
+ * adaylar. Adaylar gerçekten indirilip ölçülür; hiçbiri geçmezse null döner ve
+ * çağıran taraf Commons marka/stok akışına düşer.
+ */
+export async function chooseArticleImage(extras, metin, { minWidth = 700 } = {}) {
+  const image = extras?.image || null;
+  const images = Array.isArray(extras?.images) ? extras.images : [];
+
+  const secilen = image ? await chooseImage([image], { max: 1, maxProbes: 5, minWidth }) : null;
+  if (secilen) return secilen;
+
+  const eslesen = images.filter((u) => dosyaAdiEslesiyor(u, metin));
+  if (!eslesen.length) return null;
+  return chooseImage(eslesen, { max: 4, maxProbes: 6, keepOrder: true, minWidth });
+}
+
 /** Görsel dosya başlığından (ilk ~256KB) genişlik/yükseklik okur. */
 export function imageSize(buf) {
   if (!buf || buf.length < 16) return null;
@@ -254,14 +319,19 @@ export function biggerVariants(url) {
  * döner. Adayın daha büyük sürümleri de denenir (daha keskin fotoğraf).
  * Hiçbiri geçmezse null (site markalı kapağa düşer).
  */
-export async function chooseImage(candidates, { max = 5, maxProbes = 9, minWidth = MIN_W } = {}) {
+export async function chooseImage(
+  candidates,
+  { max = 5, maxProbes = 9, minWidth = MIN_W, keepOrder = false } = {}
+) {
   const list = (candidates || [])
     .filter(Boolean)
     .map((c) => (typeof c === "string" ? c : c.url))
     .filter((u) => /^https?:\/\//i.test(u) && !looksLikeIcon(u));
 
   const uniq = [...new Set(list)];
-  uniq.sort((a, b) => urlHintScore(b) - urlHintScore(a));
+  // Kaynak sayfanın og:image'ı listenin başında gelir; `keepOrder` ile bu sıra
+  // korunur (sayfadaki alakasız <img>'ler öne geçmesin).
+  if (!keepOrder) uniq.sort((a, b) => urlHintScore(b) - urlHintScore(a));
 
   // En iyi adaylar + onların daha büyük sürümleri (yüksek çözünürlük şansı).
   const havuz = [];

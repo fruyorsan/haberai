@@ -628,6 +628,9 @@ const KONU_METIN =
 export function gorselOnar(articles) {
   let sayi = 0;
   for (const a of Array.isArray(articles) ? articles : []) {
+    // Kaynağın kendi og:image'ı ölçülerek doğrulandı; dosya adındaki sözcük
+    // ("snow", "fire") haber başlığıyla eşleşmese de doğru kare olabilir.
+    if (a?.gorselKaynakSite) continue;
     const gorsel = String(a?.image || "");
     if (!gorsel || !KONU_GORSEL.test(gorsel)) continue;
     if (KONU_METIN.test(`${a.title || ""} ${a.gorselSorgu || ""}`)) continue;

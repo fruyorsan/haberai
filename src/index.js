@@ -8,9 +8,19 @@ import { makeIndex, findSimilar, dedupeArticles } from "./dedupe.js";
 import { isBreaking, breakingScore } from "./breaking.js";
 import { purgeCopiedText } from "./telif.js";
 import { stokGorseller, KATEGORI_SORGU, yedekGorsel, atif, kisaSorgu, konuSorgu, afetMi, gorselOnar, markaAdi } from "./stok-gorsel.js";
+import { chooseArticleImage } from "./gorsel.js";
 
 const DRY = process.argv.includes("--dry");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/** Aynı fotoğrafın farklı boyut sürümlerini eşleştirmek için kimlik. */
+const gorselKimlik = (url) =>
+  String(url || "")
+    .toLowerCase()
+    .split("?")[0]
+    .split("#")[0]
+    .replace(/-\d{2,4}x\d{2,4}(?=\.[a-z0-9]+$)/, "")
+    .replace(/\.(jpe?g|png|webp|avif|gif)$/, "");
 
 async function main() {
   const hasKey = process.env.GEMINI_API_KEY || process.env.GROQ_API_KEY;
@@ -180,14 +190,21 @@ async function main() {
   let added = 0;
   const newArticles = [];
 
-  // TELİF GÜVENLİ GÖRSELLER: kaynağın fotoğrafı KULLANILMAZ. Arşivde bir kez
-  // görünen fotoğraf yeni bir habere kapak olmaz (aynı kare tekrar etmesin).
+  // TELİF/GÖRSEL TAKİBİ: arşivde görünen fotoğraf yeni bir habere kapak olmaz
+  // (aynı kare tekrar etmesin). Kimlik, farklı boyut sürümlerini de eşleştirir.
   const kullanilanGorsel = new Set();
+  const gorselSayaci = new Map();
   for (const a of articles) {
-    if (a.image) kullanilanGorsel.add(String(a.image));
-    for (const u of Array.isArray(a.images) ? a.images : []) kullanilanGorsel.add(String(u));
-    for (const g of Array.isArray(a.gorselEk) ? a.gorselEk : []) {
-      if (g?.url) kullanilanGorsel.add(String(g.url));
+    const adaylar = [
+      a.image,
+      ...(Array.isArray(a.images) ? a.images : []),
+      ...(Array.isArray(a.gorselEk) ? a.gorselEk.map((g) => g?.url) : []),
+    ];
+    for (const u of adaylar) {
+      if (!u) continue;
+      kullanilanGorsel.add(String(u));
+      const k = gorselKimlik(u);
+      if (k) gorselSayaci.set(k, (gorselSayaci.get(k) || 0) + 1);
     }
   }
 
@@ -196,15 +213,18 @@ async function main() {
       `  (${i + 1}/${queue.length}) ${item.source}: ${item.title.slice(0, 55)}... `
     );
     try {
-      // Sayfadan yalnızca gerçek gövde metnini al (uydurmayı azaltır).
-      // Sayfanın fotoğraflarına DOKUNULMAZ: telif riski (bkz. src/stok-gorsel.js).
-      let realUrl = null;
-      if (item.content.length < 1500) {
-        const extra = await fetchPageExtras(item.link);
-        realUrl = extra.resolvedUrl;
-        if (extra.text && extra.text.length > 400 && item.content.length < 1500) {
-          item.content = `${item.content}\n\n${extra.text}`.slice(0, 7000);
-        }
+      // Kaynak sayfayı her zaman aç: gövde metni (uydurmayı azaltır) ve sayfanın
+      // KENDİ görsel adayları (og:image) buradan geliyor. ShiftDelete tarzı
+      // ürün render'ı/marka grafiği ancak kaynağın kendi kapağıyla yakalanır.
+      let extra = null;
+      try {
+        extra = await fetchPageExtras(item.link);
+      } catch {
+        extra = null;
+      }
+      const realUrl = extra?.resolvedUrl || null;
+      if (extra?.text && extra.text.length > 400 && item.content.length < 1500) {
+        item.content = `${item.content}\n\n${extra.text}`.slice(0, 7000);
       }
 
       const ai = await analyzeArticle(item);
@@ -212,33 +232,45 @@ async function main() {
       const { cleaned, removed } = purgeCopiedText(ai, item.content);
       if (removed > 0) console.log(`(telif: ${removed} cümle kaynakla birebir örtüştüğü için çıkarıldı) `);
 
-      // GÖRSELLER: AI'nın ürettiği İngilizce sorgu + kategori sorgusu.
-      // (Etiketler sorgu olarak KULLANILMAZ: "Rekabet Kurulu" gibi Türkçe
-      // etiketler Commons'ta tamamen alakasız dosyalar getiriyor.)
-      // Sıra: AI'nın tam sorgusu → aynı sorgunun geniş hâli ("flooded street")
-      // → kategori sorgusu. Tam sorgu Commons'ta dosya adıyla eşleşmezse
-      // geniş hâli konuya yakın bir fotoğraf bulur (borsa fotoğrafına düşmez).
-      // Sıra: AI'nın tam sorgusu → konu (afet/hava) sahnesi → geniş hâl
-      // → kategori sorgusu. Afet haberlerinde geniş hâl ("mediterranean
-      // sea") manzara fotoğrafı getiriyordu; konu sahnesi daha doğru.
-      const marka = markaAdi(cleaned.title);
-      const sorgular = [
-        // Marka adı (Getir, Togg, iPhone...) en güçlü sinyaldir: Commons'ta o
+      // GÖRSEL SIRASI: kaynağın kendi og:image'ı → Commons marka/stok → markalı kapak.
+      // Kaynak adayı gerçekten indirilip boyutu/oranı ölçülür (src/gorsel.js):
+      // küçük thumbnail, logo ve site banner'ı elenir; arşivde başka haberde
+      // kullanılmış kare tekrar kapak yapılmaz.
+      let kaynakGorsel = null;
+      if (extra) {
+        const metin = `${cleaned.title} ${item.title} ${item.link}`;
+        const secilen = await chooseArticleImage(extra, metin, { minWidth: 700 });
+        if (secilen && !gorselSayaci.has(gorselKimlik(secilen))) kaynakGorsel = secilen;
+      }
+
+      let kapakGorsel;
+      let ekler = [];
+      if (kaynakGorsel) {
+        kapakGorsel = { url: kaynakGorsel, kaynakSite: true };
+      } else {
+        // GÖRSELLER: AI'nın ürettiği İngilizce sorgu + kategori sorgusu.
+        // (Etiketler sorgu olarak KULLANILMAZ: "Rekabet Kurulu" gibi Türkçe
+        // etiketler Commons'ta tamamen alakasız dosyalar getiriyor.)
+        // Sıra: marka adı → AI'nın tam sorgusu → konu sahnesi → geniş hâl
+        // → kategori sorgusu. Marka adı en güçlü sinyaldir: Commons'ta o
         // markanın gerçek fotoğrafı varsa alakasız stok fotoğraftan üstündür.
-        marka,
-        ai.gorselSorgu,
-        konuSorgu(ai.gorselSorgu, cleaned.title),
-        kisaSorgu(ai.gorselSorgu),
-        KATEGORI_SORGU[cleaned.category],
-      ];
-      let stok = await stokGorseller(sorgular, {
-        adet: 3,
-        kullanilan: kullanilanGorsel,
-        afet: afetMi(ai.gorselSorgu, cleaned.title),
-        marka,
-      });
-      if (!stok.length) stok = [yedekGorsel(cleaned.category)];
-      const [kapakGorsel, ...ekler] = stok;
+        const marka = markaAdi(cleaned.title);
+        const sorgular = [
+          marka,
+          ai.gorselSorgu,
+          konuSorgu(ai.gorselSorgu, cleaned.title),
+          kisaSorgu(ai.gorselSorgu),
+          KATEGORI_SORGU[cleaned.category],
+        ];
+        let stok = await stokGorseller(sorgular, {
+          adet: 3,
+          kullanilan: kullanilanGorsel,
+          afet: afetMi(ai.gorselSorgu, cleaned.title),
+          marka,
+        });
+        if (!stok.length) stok = [yedekGorsel(cleaned.category)];
+        [kapakGorsel, ...ekler] = stok;
+      }
 
       // Google News linki gerçek adrese çözüldüyse kaynak bağlantısı da gerçek
       // siteye işaret etsin (kaynak gösterme ve telif doğruluğu).
@@ -250,8 +282,12 @@ async function main() {
         source: item.source,
         sourceUrl,
         image: kapakGorsel.url,
-        // Fotoğrafçı + lisans + dosya sayfası: sitede atıf olarak gösterilir.
-        gorselKaynak: atif(kapakGorsel),
+        // Kaynağın kendi görseli: dosya adı Türkçe başlıkla eşleşmek zorunda
+        // değil (boyut/oran doğrulandı). Commons'ta ise fotoğrafçı + lisans +
+        // dosya sayfası atıf olarak gösterilir.
+        ...(kapakGorsel.kaynakSite
+          ? { gorselKaynakSite: true }
+          : { gorselKaynak: atif(kapakGorsel) }),
         publishedAt: item.publishedAt,
         generatedAt: new Date().toISOString(),
       };
@@ -260,11 +296,13 @@ async function main() {
           .filter((g) => g?.url)
           .map((g) => ({ url: g.url, ...atif(g) }));
       }
+      kullanilanGorsel.add(kapakGorsel.url);
+      gorselSayaci.set(gorselKimlik(kapakGorsel.url), (gorselSayaci.get(gorselKimlik(kapakGorsel.url)) || 0) + 1);
       // Yalnızca son dakika tespit edilenlerde alan eklenir; diğerlerinde hiç olmaz.
       if (item.breaking) entry.breaking = true;
       articles.push(entry);
       newArticles.push(entry);
-      console.log("✓");
+      console.log(kapakGorsel.kaynakSite ? "✓ (kaynak görsel)" : "✓");
       added++;
     } catch (err) {
       console.log(`✗ ${err.message}`);

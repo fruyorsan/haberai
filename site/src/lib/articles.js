@@ -3,7 +3,21 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT = join(__dirname, "..", "..", ".."); // haber-sitesi/
+
+// Astro 7, build sırasında bu modülü site/dist/.prerender/chunks altına
+// paketlediği için import.meta.url kaynak dosyayı göstermiyor. Veri klasörünü
+// hem site/ hem depo kökünden çalışacak şekilde bul.
+const ROOT_CANDIDATES = [
+  join(process.cwd(), ".."), // site/ -> depo kökü
+  process.cwd(), // depo kökü
+  join(__dirname, "..", "..", ".."), // kaynak dosya (Astro 5 / doğrudan çalıştırma)
+];
+const ROOT =
+  ROOT_CANDIDATES.find(
+    (root) =>
+      existsSync(join(root, "data", "articles.json")) ||
+      existsSync(join(root, "data", "sample-articles.json")),
+  ) ?? join(process.cwd(), "..");
 const REAL = join(ROOT, "data", "articles.json");
 const SAMPLE = join(ROOT, "data", "sample-articles.json");
 
