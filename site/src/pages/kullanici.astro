@@ -151,6 +151,13 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     background: var(--surface);
     color: var(--text-2);
   }
+  .kullanici__durum[hidden],
+  .kullanici__bos[hidden],
+  .kullanici__icerik[hidden],
+  .kullanici__panel[hidden],
+  .kullanici__bos-panel[hidden] {
+    display: none !important;
+  }
   .kullanici__spinner {
     width: 36px;
     height: 36px;
@@ -675,6 +682,35 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     const icerikEl = document.getElementById("profil-icerik");
     const btnGeri = document.getElementById("btn-geri");
 
+    const bekleKapat = () => {
+      if (bekleEl) {
+        bekleEl.hidden = true;
+        bekleEl.style.display = "none";
+      }
+    };
+    const bosGoster = () => {
+      bekleKapat();
+      if (bosEl) {
+        bosEl.hidden = false;
+        bosEl.style.display = "flex";
+      }
+      if (icerikEl) {
+        icerikEl.hidden = true;
+        icerikEl.style.display = "none";
+      }
+    };
+    const icerikGoster = () => {
+      bekleKapat();
+      if (bosEl) {
+        bosEl.hidden = true;
+        bosEl.style.display = "none";
+      }
+      if (icerikEl) {
+        icerikEl.hidden = false;
+        icerikEl.style.display = "flex";
+      }
+    };
+
     btnGeri?.addEventListener("click", () => {
       if (window.history.length > 1) {
         window.history.back();
@@ -683,16 +719,21 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
       }
     });
 
+    const H = (window as any).HaberinAi;
     if (!kadiParam && !idParam) {
-      if (bekleEl) bekleEl.hidden = true;
-      if (bosEl) bosEl.hidden = false;
+      // Eğer kullanıcı oturum açmışsa kendi profiline yönlendir
+      const ben = H?.oturumOku ? H.oturumOku() : null;
+      if (ben && (ben.kadi || ben.id)) {
+        window.location.replace("/profil/");
+        return;
+      }
+      bosGoster();
       return;
     }
 
     // Haber arama indeksini paralel yükle
     void indeksYukle();
 
-    const H = (window as any).HaberinAi;
     if (!H || typeof H.kullaniciProfili !== "function") {
       // SDK henüz tam yüklenmediyse kısa süre bekle ve tekrar dene
       setTimeout(baslat, 200);
@@ -702,18 +743,24 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     let profil: any = null;
     let yorumlar: any[] = [];
 
+    // En fazla 4.5 saniye bekle, takılı kalmasın
+    const zamanAsimi = new Promise((resolve) => setTimeout(resolve, 4500));
+
     try {
-      [profil, yorumlar] = await Promise.all([
+      const gorevler = Promise.all([
         H.kullaniciProfili(kadiParam, idParam),
         H.kullaniciYorumlari(kadiParam, idParam, 60),
       ]);
+      const sonuc = await Promise.race([gorevler, zamanAsimi]);
+      if (Array.isArray(sonuc)) {
+        [profil, yorumlar] = sonuc;
+      }
     } catch (e) {
       /* hata durumunda boş profil */
     }
 
     if (!profil && (!yorumlar || !yorumlar.length)) {
-      if (bekleEl) bekleEl.hidden = true;
-      if (bosEl) bosEl.hidden = false;
+      bosGoster();
       return;
     }
 
@@ -897,8 +944,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
       });
     });
 
-    if (bekleEl) bekleEl.hidden = true;
-    if (icerikEl) icerikEl.hidden = false;
+    icerikGoster();
   }
 
   if (document.readyState === "loading") {
