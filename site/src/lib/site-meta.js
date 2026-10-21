@@ -144,7 +144,7 @@ export const AVATARLAR = [
   // Hayvanlar
   { kod: "/avatar/yildizli-kedi.webp", ad: "Yıldızlı Kedi", renk: "#e8a62b" },
   { kod: "/avatar/golden.webp", ad: "Golden", renk: "#e8a62b" },
-  { kod: "/avatar/panda.webp", ad: "Panda", renk: "#3f8c76" },
+  { kod: "/avatar/spiderman-cicek.webp", ad: "Çiçekli Spidey", renk: "#d9364b" },
   { kod: "/avatar/pingu.webp", ad: "Pingu", renk: "#e4573d" },
   // Manzara ve objeler
   { kod: "/avatar/dag.webp", ad: "Dağ", renk: "#6a4fc1" },
@@ -153,7 +153,7 @@ export const AVATARLAR = [
   { kod: "/avatar/istanbul.webp", ad: "İstanbul", renk: "#e2743a" },
   { kod: "/avatar/cicekli-tavsan.webp", ad: "Çiçekli Tavşan", renk: "#d98a9a" },
   { kod: "/avatar/gamepad.webp", ad: "Gamepad", renk: "#4b83a8" },
-  { kod: "/avatar/cicek.webp", ad: "Çiçek", renk: "#d9364b" },
+  { kod: "/avatar/spiderman-koltuk.webp", ad: "Düşünen Spidey", renk: "#e4573d" },
   { kod: "/avatar/pikachu.webp", ad: "Pikachu", renk: "#e8a62b" },
 ];
 

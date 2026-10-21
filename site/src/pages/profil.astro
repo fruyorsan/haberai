@@ -190,22 +190,79 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         <span class="profil__mini" id="profil-durum" role="status" aria-live="polite"></span>
       </div>
 
-      <section class="profil__blok" id="profil-yonetim" hidden>
-        <h2 class="profil__h2">Yönetim · kayıtlı okurlar</h2>
-        <p class="profil__aciklama">
-          Sitede hesabı olan herkesi görürsün. Bir okura rozet yazabilirsin
-          (ör. “Yönetici”, “Editör”, “İlk okur”). Rozet sadece görünür; yetki
-          vermez. Bu bölüm yalnızca sana görünür.
-        </p>
-        <input
-          class="profil__girdi profil__uye-ara"
-          id="profil-uye-ara"
-          type="search"
-          placeholder="Ada ya da kullanıcı adı ara"
-          autocomplete="off"
-        />
-        <div class="profil__uyeler" id="profil-uyeler"></div>
-        <span class="profil__mini" id="profil-yonetim-durum" role="status" aria-live="polite"></span>
+      <section class="profil__blok profil__yonetim-alani" id="profil-yonetim" hidden>
+        <div class="profil__yonetim-ust">
+          <div>
+            <h2 class="profil__h2">👑 Yönetim Paneli · Canlı Trafik & Okur Merkezi</h2>
+            <p class="profil__aciklama">
+              Sitenin anlık canlı ziyaretçileri, son aktif üyeleri ve kayıtlı kullanıcıları. Yalnızca <strong>Yönetici</strong> rolündeki hesabına görünür.
+            </p>
+          </div>
+          <div class="profil__yonetim-aksiyon">
+            <span class="profil__canli-etiket" id="yon-canli-durum-rozet">
+              <span class="profil__canli-nokta"></span>
+              Canlı Takip
+            </span>
+            <button type="button" class="profil__btn profil__btn--kucuk profil__btn--ghost" id="profil-yonetim-yenile">
+              Yenile
+            </button>
+          </div>
+        </div>
+
+        {/* Canlı Sayaç & Metrik Kartları */}
+        <div class="profil__metrik-izgara">
+          <div class="profil__metrik-kart profil__metrik--canli">
+            <div class="profil__metrik-baslik">
+              <span class="profil__canli-nokta"></span>
+              Şu An Sitede Canlı
+            </div>
+            <div class="profil__metrik-sayi" id="yon-canli-toplam">0</div>
+            <div class="profil__metrik-alt" id="yon-canli-detay">0 üye · 0 misafir</div>
+          </div>
+
+          <div class="profil__metrik-kart">
+            <div class="profil__metrik-baslik">👥 Toplam Kayıtlı Okur</div>
+            <div class="profil__metrik-sayi" id="yon-kayitli-toplam">0</div>
+            <div class="profil__metrik-alt" id="yon-kayitli-detay">Sitede hesabı olanlar</div>
+          </div>
+
+          <div class="profil__metrik-kart">
+            <div class="profil__metrik-baslik">⚡ Son 24 Saat Aktif</div>
+            <div class="profil__metrik-sayi" id="yon-aktif-uye-sayisi">0</div>
+            <div class="profil__metrik-alt">Sitede hareket eden üye</div>
+          </div>
+        </div>
+
+        {/* Canlı Gezilen Sayfalar */}
+        <div class="profil__alt-blok" id="yon-sayfalar-blok" hidden>
+          <h3 class="profil__alt-baslik">📄 Şu An Gezilen Sayfalar</h3>
+          <div class="profil__sayfalar-liste" id="yon-sayfalar"></div>
+        </div>
+
+        {/* Son Aktif Üyeler */}
+        <div class="profil__alt-blok" id="yon-aktifler-blok" hidden>
+          <h3 class="profil__alt-baslik">⚡ Çevrimiçi & Son Aktif Üyeler</h3>
+          <div class="profil__aktifler-liste" id="yon-son-aktifler"></div>
+        </div>
+
+        {/* Tüm Kayıtlı Üyeler ve Rozet Yönetimi */}
+        <div class="profil__alt-blok">
+          <div class="profil__baslik-satir">
+            <h3 class="profil__alt-baslik">👥 Tüm Kayıtlı Üyeler & Rozet Yönetimi</h3>
+            <span class="profil__mini" id="profil-yonetim-durum" role="status" aria-live="polite"></span>
+          </div>
+          <p class="profil__aciklama">
+            Okurlara özel unvan ve rozet yazabilirsin (ör. “Yönetici”, “Editör”, “İlk Okur”, “Teknoloji Meraklısı”).
+          </p>
+          <input
+            class="profil__girdi profil__uye-ara"
+            id="profil-uye-ara"
+            type="search"
+            placeholder="Ada ya da kullanıcı adına göre ara..."
+            autocomplete="off"
+          />
+          <div class="profil__uyeler" id="profil-uyeler"></div>
+        </div>
       </section>
 
       <section class="profil__blok profil__blok--tehlike">
@@ -808,6 +865,203 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
       flex: 1 1 100%;
     }
   }
+
+  /* ========================================================================
+     YÖNETİM PANELİ & CANLI TRAFİK MERKEZİ STİLLERİ
+     ======================================================================== */
+  .profil__yonetim-alani {
+    border-color: rgba(217, 54, 75, 0.35);
+    background: linear-gradient(180deg, var(--surface) 0%, rgba(217, 54, 75, 0.02) 100%);
+    box-shadow: 0 4px 20px -8px rgba(0, 0, 0, 0.2);
+  }
+  .profil__yonetim-ust {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  .profil__yonetim-aksiyon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .profil__canli-etiket {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(34, 197, 94, 0.12);
+    border: 1px solid rgba(34, 197, 94, 0.28);
+    color: #22c55e;
+    font-size: 0.74rem;
+    font-weight: 800;
+  }
+  .profil__canli-nokta {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #22c55e;
+    box-shadow: 0 0 10px #22c55e;
+    display: inline-block;
+    animation: canli-pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes canli-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+  }
+  .profil__metrik-izgara {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 14px 0 18px;
+  }
+  .profil__metrik-kart {
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .profil__metrik--canli {
+    border-color: rgba(34, 197, 94, 0.35);
+    background: linear-gradient(180deg, var(--bg) 0%, rgba(34, 197, 94, 0.05) 100%);
+  }
+  .profil__metrik-baslik {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--text-2);
+  }
+  .profil__metrik-sayi {
+    font-size: 1.85rem;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+  .profil__metrik--canli .profil__metrik-sayi {
+    color: #22c55e;
+  }
+  .profil__metrik-alt {
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+  .profil__alt-blok {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+  .profil__alt-baslik {
+    margin: 0 0 8px;
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: var(--text);
+  }
+  .profil__sayfalar-liste {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .profil__sayfa-cip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 10px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    font-size: 0.78rem;
+    color: var(--text);
+    text-decoration: none;
+    max-width: 100%;
+    transition: border-color 0.2s var(--ease);
+  }
+  .profil__sayfa-cip:hover {
+    border-color: var(--brand, #d9364b);
+  }
+  .profil__sayfa-ad {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 240px;
+  }
+  .profil__sayfa-sayi {
+    padding: 2px 6px;
+    border-radius: 999px;
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+    font-weight: 800;
+    font-size: 0.7rem;
+  }
+  .profil__aktifler-liste {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px;
+  }
+  .profil__aktif-kart {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 12px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+  }
+  .profil__aktif-av {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: 999px;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    background: var(--brand-grad);
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.85rem;
+  }
+  .profil__aktif-nokta {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 9px;
+    height: 9px;
+    border-radius: 999px;
+    border: 1.5px solid var(--bg);
+    background: #22c55e;
+  }
+  .profil__aktif-nokta--cevrimdisi {
+    background: var(--muted);
+  }
+  .profil__aktif-bilgi {
+    min-width: 0;
+    flex: 1;
+    font-size: 0.78rem;
+    line-height: 1.25;
+  }
+  .profil__aktif-bilgi b {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .profil__aktif-bilgi span {
+    font-size: 0.7rem;
+    color: var(--muted);
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
 </style>
 
 <script is:inline>
@@ -1378,39 +1632,181 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
       });
     }
 
+    // Canlı Yönetim Paneli Elemanları
+    var yonCanliToplam = document.getElementById("yon-canli-toplam");
+    var yonCanliDetay = document.getElementById("yon-canli-detay");
+    var yonKayitliToplam = document.getElementById("yon-kayitli-toplam");
+    var yonAktifUyeSayisi = document.getElementById("yon-aktif-uye-sayisi");
+    var yonSayfalarBlok = document.getElementById("yon-sayfalar-blok");
+    var yonSayfalar = document.getElementById("yon-sayfalar");
+    var yonAktiflerBlok = document.getElementById("yon-aktifler-blok");
+    var yonSonAktifler = document.getElementById("yon-son-aktifler");
+    var yonYenileBtn = document.getElementById("profil-yonetim-yenile");
+
+    function zamanGoreceli(iso) {
+      if (!iso) return "Bilinmiyor";
+      try {
+        var fark = Date.now() - new Date(iso).getTime();
+        var dk = Math.floor(fark / 60000);
+        if (dk < 1) return "Az önce";
+        if (dk < 60) return dk + " dk önce";
+        var saat = Math.floor(dk / 60);
+        if (saat < 24) return saat + " saat önce";
+        var gun = Math.floor(saat / 24);
+        return gun + " gün önce";
+      } catch (e) {
+        return "";
+      }
+    }
+
+    function sayfalarCiz(sayfalar) {
+      if (!yonSayfalar || !yonSayfalarBlok) return;
+      if (!Array.isArray(sayfalar) || !sayfalar.length) {
+        yonSayfalarBlok.hidden = true;
+        return;
+      }
+      yonSayfalarBlok.hidden = false;
+      yonSayfalar.textContent = "";
+      sayfalar.forEach(function (s) {
+        var a = document.createElement("a");
+        a.className = "profil__sayfa-cip";
+        a.href = s.sayfa || "/";
+        a.target = "_blank";
+        a.rel = "noopener";
+
+        var ad = document.createElement("span");
+        ad.className = "profil__sayfa-ad";
+        ad.textContent = s.sayfa === "/" ? "Ana Sayfa (/)" : s.sayfa;
+
+        var sayi = document.createElement("span");
+        sayi.className = "profil__sayfa-sayi";
+        sayi.textContent = s.ziyaretci + " kişi";
+
+        a.append(ad, sayi);
+        yonSayfalar.appendChild(a);
+      });
+    }
+
+    function sonAktiflerCiz(aktifler) {
+      if (!yonSonAktifler || !yonAktiflerBlok) return;
+      if (!Array.isArray(aktifler) || !aktifler.length) {
+        yonAktiflerBlok.hidden = true;
+        return;
+      }
+      yonAktiflerBlok.hidden = false;
+      yonSonAktifler.textContent = "";
+      aktifler.forEach(function (m) {
+        var kart = document.createElement("div");
+        kart.className = "profil__aktif-kart";
+
+        var av = document.createElement("div");
+        av.className = "profil__aktif-av";
+        H.avatarDoldur(av, m.avatar, m.ad || m.kadi);
+
+        var nokta = document.createElement("span");
+        nokta.className = "profil__aktif-nokta" + (m.canli_mi ? "" : " profil__aktif-nokta--cevrimdisi");
+        av.appendChild(nokta);
+
+        var bilgi = document.createElement("div");
+        bilgi.className = "profil__aktif-bilgi";
+
+        var b = document.createElement("b");
+        b.textContent = (m.ad || m.kadi) + (m.etiket ? " · " + m.etiket : "");
+
+        var span = document.createElement("span");
+        span.textContent = m.canli_mi
+          ? "🟢 Çevrimiçi (" + (m.sayfa || "/") + ")"
+          : "Son aktif: " + zamanGoreceli(m.son_aktif);
+
+        bilgi.append(b, span);
+        kart.append(av, bilgi);
+        yonSonAktifler.appendChild(kart);
+      });
+    }
+
+    var yonetimInterval = null;
+    async function yonetimGuncelle(sessiz) {
+      var g = H.oturumOku() || u;
+      if (!g || g.rol !== "yonetici") {
+        if (yonetim) yonetim.hidden = true;
+        if (yonetimInterval) clearInterval(yonetimInterval);
+        return;
+      }
+      if (yonetim) yonetim.hidden = false;
+      if (!sessiz && yonDurum) yonDurum.textContent = "Veriler güncelleniyor…";
+
+      try {
+        // Öncelik: Tam canlı istatistik RPC'si
+        if (H.adminCanliIstatistik) {
+          var r = await H.adminCanliIstatistik();
+          if (r && !r.hata) {
+            if (yonCanliToplam) yonCanliToplam.textContent = r.canli_toplam || 0;
+            if (yonCanliDetay) {
+              yonCanliDetay.textContent = (r.canli_uye || 0) + " üye · " + (r.canli_anonim || 0) + " misafir";
+            }
+            if (yonKayitliToplam) {
+              yonKayitliToplam.textContent = (r.kayitli_uyeler || []).length;
+            }
+            if (yonAktifUyeSayisi) {
+              yonAktifUyeSayisi.textContent = (r.son_aktif_uyeler || []).length;
+            }
+
+            sayfalarCiz(r.sayfalar);
+            sonAktiflerCiz(r.son_aktif_uyeler);
+
+            uyeListe = Array.isArray(r.kayitli_uyeler) ? r.kayitli_uyeler : [];
+            uyelerCiz();
+            if (yonDurum) {
+              yonDurum.textContent = uyeListe.length + " kayıtlı okur · Canlı";
+            }
+            return;
+          }
+        }
+
+        // Yedek: Eski admin_uyeler RPC'si
+        var r2 = await H.adminUyeler();
+        if (r2 && !r2.hata) {
+          uyeListe = Array.isArray(r2) ? r2 : r2 && Array.isArray(r2.uyeler) ? r2.uyeler : [];
+          if (yonKayitliToplam) yonKayitliToplam.textContent = uyeListe.length;
+          uyelerCiz();
+          if (yonDurum) {
+            yonDurum.textContent = uyeListe.length + " kayıtlı okur";
+          }
+        } else if (r2 && r2.hata && yonDurum) {
+          yonDurum.textContent = r2.hata;
+        }
+      } catch (e) {
+        if (!sessiz && yonDurum) yonDurum.textContent = "Güncellenemedi, tekrar dene.";
+      }
+    }
+
     async function yonetimKur() {
       var g = H.oturumOku() || u;
-      // Yönetim paneli normal profilde GÖRÜNMEZ. Yalnızca yönetici hesabı,
-      // adres çubuğuna ?yonetim=1 ekleyince açılır; başka hesaplar göremez.
-      // Yetki yine sunucuda: admin_* fonksiyonları rol='yonetici' olmayanı reddeder.
-      var yonetimAcik = false;
-      try {
-        yonetimAcik = new URLSearchParams(location.search).get("yonetim") === "1";
-      } catch (e) {}
-      if (!g || g.rol !== "yonetici" || !yonetimAcik) {
+      // Yönetici kontrolü: 'yonetici' rolü olmayan kesinlikle göremez.
+      if (!g || g.rol !== "yonetici") {
         if (yonetim) yonetim.hidden = true;
         return;
       }
       if (yonetim) yonetim.hidden = false;
       if (yonetimYuklendi) return;
       yonetimYuklendi = true;
-      if (yonDurum) yonDurum.textContent = "Yükleniyor…";
-      try {
-        var r = await H.adminUyeler();
-        if (r && r.hata) {
-          if (yonDurum) yonDurum.textContent = r.hata;
-          yonetimYuklendi = false;
-          return;
-        }
-        uyeListe = Array.isArray(r) ? r : r && Array.isArray(r.uyeler) ? r.uyeler : [];
-        uyelerCiz();
-        if (yonDurum) {
-          yonDurum.textContent = uyeListe.length + " kayıtlı okur";
-        }
-      } catch (e) {
-        if (yonDurum) yonDurum.textContent = "Liste yüklenemedi, tekrar dene.";
-        yonetimYuklendi = false;
+
+      await yonetimGuncelle(false);
+
+      // Panel açıkken her 12 saniyede bir canlı verileri arka planda tazele
+      if (!yonetimInterval) {
+        yonetimInterval = setInterval(function () {
+          if (document.visibilityState === "visible") {
+            yonetimGuncelle(true);
+          }
+        }, 12000);
       }
+    }
+
+    if (yonYenileBtn) {
+      yonYenileBtn.addEventListener("click", function () {
+        yonetimGuncelle(false);
+      });
     }
 
     uyeAra && uyeAra.addEventListener("input", uyelerCiz);
