@@ -17,8 +17,8 @@ const kapak = kapakKaynagi(article);
 // Kapak fotoğrafı doğrulanamıyorsa hiç fotoğraf konmaz: kartın kendi kırmızı
 // zemini + "H" işareti görünür. Böylece onlarca kartta aynı yedek görseli
 // tekrarlamak yerine kategoriye göre değişen temiz bir zemin kalır.
-const imgSrc = kapak ? imageUrl(kapak, 640) : "";
-const imgSet = kapak ? imageSrcset(kapak, [400, 640]) : "";
+const imgSrc = kapak ? imageUrl(kapak, 800) : "";
+const imgSet = kapak ? imageSrcset(kapak, [480, 800, 1080]) : "";
 // "Son dakika" rozeti yalnızca taze kırılma haberlerinde görünür.
 const yakinSonDakika =
   article.breaking === true &&
@@ -54,7 +54,7 @@ const delay = Math.min(index * 45, 320);
           class="card__img"
           src={imgSrc}
           srcset={imgSet || undefined}
-          sizes="(max-width: 600px) 96vw, (max-width: 1000px) 48vw, 380px"
+          sizes="(max-width: 600px) 96vw, (max-width: 1024px) 48vw, 420px"
           data-orig={kapak}
           alt={article.title}
           width="1200"

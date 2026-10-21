@@ -466,8 +466,9 @@
     var slugs = hesapListesi.length ? hesapListesi : yerelListe;
     try {
       localStorage.setItem("bildirim-kategoriler", JSON.stringify(slugs));
-      localStorage.setItem("bildirim-son-dakika", "true");
-      if (u.bildirim_siklik) localStorage.setItem("bildirim-siklik", u.bildirim_siklik);
+      if (u.bildirim_siklik && !localStorage.getItem("bildirim-siklik")) {
+        localStorage.setItem("bildirim-siklik", u.bildirim_siklik);
+      }
       window.dispatchEvent(
         new CustomEvent("hb-bildirim-degisti", { detail: { kategoriler: slugs } })
       );
@@ -493,11 +494,12 @@
 
     try {
       var tum = ayarlar().kategoriler;
-      // son_dakika: hesaba giren cihazın son dakika haberlerini alması için
-      // (sunucu "tüm aboneler" hedeflemesini bu etiketle yapar).
-      var t = { uye: "1", son_dakika: "1" };
-      // Bildirim sıklığı: sunucu "aninda" olanlara konu bildirimi yollar,
-      // "ozet" olanlara günde 3 özet, "son" olanlara yalnızca son dakika.
+      var sonGenel = false;
+      var mod = "gun10";
+      try {
+        sonGenel = JSON.parse(localStorage.getItem("bildirim-son-dakika") || "false") === true;
+        mod = localStorage.getItem("bildirim-mod") || u.bildirim_mod || "";
+      } catch (e) {}
       var siklik = u.bildirim_siklik || "";
       if (!siklik) {
         try {
@@ -506,40 +508,57 @@
           siklik = "aninda";
         }
       }
-      t.bildirim_sikligi = siklik;
+      if (!mod) {
+        mod = siklik === "ozet" ? "ozet" : siklik === "son" ? "son" : "gun10";
+      }
+      // Varsayılan olarak genel son dakika KAPALIDIR; yalnızca kullanıcı
+      // açıkça seçtiyse veya "Sadece son dakika" modundaysa açılır.
+      var t = {
+        uye: "1",
+        son_dakika: "",
+        son_dakika_genel: sonGenel || mod === "son" ? "1" : "",
+        bildirim_sikligi: mod === "kapali" ? "kapali" : siklik,
+        bildirim_mod: mod,
+      };
       try {
         localStorage.setItem("bildirim-siklik", siklik);
+        localStorage.setItem("bildirim-mod", mod);
       } catch (e) {}
+      var konuAcik = mod === "gun10" || mod === "hepsi" || (siklik === "aninda" && mod !== "kapali");
       for (var i = 0; i < tum.length; i++) {
-        // Yalnızca "anında" seçen okuyucuya konu bildirimi gider; özet/son
-        // seçenlerde kategori etiketi boşaltılır.
         t["kategori_" + tum[i]] =
-          siklik === "aninda" && slugs.indexOf(tum[i]) >= 0 ? "1" : "";
+          konuAcik && slugs.indexOf(tum[i]) >= 0 ? "1" : "";
       }
       os.User.addTags(t);
     } catch (e) {}
   }
 
   /**
-   * Bildirim sıklığını kaydeder (aninda | ozet | son) ve cihaz etiketini
-   * hemen günceller. Profil sayfasındaki seçici bunu çağırır.
+   * Bildirim sıklığını/modunu kaydeder (gun10 | hepsi | ozet | son | kapali)
+   * ve cihaz etiketini hemen günceller. Profil sayfasındaki seçici bunu çağırır.
    */
-  async function bildirimSiklik(siklik) {
+  async function bildirimSiklik(modDegeri) {
     var u = oturumOku();
     if (!u) return { hata: "Giriş yapmalısın." };
+    var mod = modDegeri || "gun10";
+    // Supabase kısıtlamasıyla tam uyum: veritabanı ('aninda', 'ozet', 'son') bekler.
+    var dbSiklik = mod === "ozet" ? "ozet" : mod === "son" ? "son" : "aninda";
     var r = await rpc("uye_bildirim_siklik", {
       p_id: u.id,
       p_token: u.token,
-      p_siklik: siklik,
+      p_siklik: dbSiklik,
     });
     if (!r || r.hata) return r || { hata: "Kaydedilemedi." };
-    u.bildirim_siklik = siklik;
+    u.bildirim_siklik = dbSiklik;
+    u.bildirim_mod = mod;
     oturumYaz(u);
     try {
-      localStorage.setItem("bildirim-siklik", siklik);
+      localStorage.setItem("bildirim-siklik", dbSiklik);
+      localStorage.setItem("bildirim-mod", mod);
+      if (mod === "son") localStorage.setItem("bildirim-son-dakika", "true");
     } catch (e) {}
     await pushEsle(u);
-    return r;
+    return { ok: true, bildirim_siklik: dbSiklik, bildirim_mod: mod };
   }
 
   /** Yönetici: kayıtlı okuyucuların listesi. */

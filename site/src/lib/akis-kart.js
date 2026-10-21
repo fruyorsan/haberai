@@ -70,8 +70,8 @@ const YORUM_SVG =
  */
 export function akisKart(a, sira = 0) {
   const kaynak = kapakKaynagi(a);
-  const gorsel = kaynak ? imageUrl(kaynak, 720) : "";
-  const gorselSet = kaynak ? imageSrcset(kaynak, [400, 720]) : "";
+  const gorsel = kaynak ? imageUrl(kaynak, 960) : "";
+  const gorselSet = kaynak ? imageSrcset(kaynak, [640, 960, 1280]) : "";
   const puan = ilgiSkoru(a);
   const baslik = kac(a.title);
   const ozet = kisalt(a.summary, 190);
@@ -84,8 +84,8 @@ export function akisKart(a, sira = 0) {
 
   const gorselBlok = gorsel
     ? `<img src="${kac(gorsel)}"${
-        gorselSet ? ` srcset="${kac(gorselSet)}" sizes="(max-width:720px) 100vw, 380px"` : ""
-      } alt="${baslik}"${
+        gorselSet ? ` srcset="${kac(gorselSet)}" sizes="(max-width: 720px) 100vw, 640px"` : ""
+      } width="960" height="540" alt="${baslik}"${
         oncelik ? ' fetchpriority="high"' : ' loading="lazy"'
       } decoding="async" data-orig="${kac(kaynak)}" onerror="${GORSEL_HATA}" />`
     : "";

@@ -116,12 +116,18 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
       </section>
 
       <section class="profil__blok">
-        <h2 class="profil__h2">Bildirim konuların</h2>
+        <div class="profil__baslik-satir">
+          <h2 class="profil__h2">Bildirim ayarların ve başlıkların</h2>
+          <div class="profil__hizli-sec">
+            <button type="button" class="profil__mini-btn" id="profil-bildirim-hepsi">Tümünü seç</button>
+            <button type="button" class="profil__mini-btn" id="profil-bildirim-temizle">Temizle</button>
+          </div>
+        </div>
         <p class="profil__aciklama">
-          Yalnızca seçtiğin konulardan bildirim alırsın. Boş bırakırsan ilgi
-          alanların bildirime de uygulanır; hiçbiri yoksa yalnızca son dakika
-          haberleri gelir. Aşağıdaki sıklık ayarı, bu konuların sana ne sıklıkla
-          ulaşacağını belirler.
+          Sana <b>yalnızca aşağıdan seçtiğin başlıklardan</b> bildirim gelir; seçmediğin
+          kategorilerden veya genel son dakikalardan rahatsız edilmezsin. Varsayılan olarak
+          günde en fazla ~10 önemli gelişme dengeli aralıklarla gönderilir. İstersen aşağıdan
+          tüm haberleri açabilir veya özet moduna geçebilirsin.
         </p>
         <div class="profil__cipler" id="profil-bildirim">
           {KATEGORILER.map((k) => (
@@ -132,14 +138,21 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         </div>
 
         <div class="profil__siklik">
-          <label class="profil__siklik-etiket" for="profil-siklik">Bildirim sıklığı</label>
+          <label class="profil__siklik-etiket" for="profil-siklik">Günlük bildirim sıklığı</label>
           <select class="profil__girdi" id="profil-siklik">
-            <option value="aninda">Anında — seçtiğim her konuda</option>
+            <option value="gun10">Dengeli — Seçtiğim başlıklardan günde ~10 bildirim (Önerilen)</option>
+            <option value="hepsi">Tüm haberler — Seçtiğim başlıklardaki her yeni haber gelsin</option>
             <option value="ozet">Günde 3 özet — 09:00 · 15:00 · 21:00</option>
-            <option value="son">Sadece son dakika</option>
+            <option value="son">Sadece son dakika haberleri</option>
+            <option value="kapali">Bildirimleri duraklat (Sessiz mod)</option>
           </select>
           <span class="profil__mini" id="profil-siklik-durum" role="status" aria-live="polite"></span>
         </div>
+
+        <label class="profil__sondk-satir" for="profil-sondk-onay">
+          <input type="checkbox" id="profil-sondk-onay" />
+          <span>Seçtiğim başlıklar dışındaki genel <b>Son Dakika</b> haberleri de gelsin (varsayılan: kapalı)</span>
+        </label>
 
         <div class="profil__bildirim-durum" id="profil-bildirim-durum">
           <span class="profil__nokta" id="profil-nokta" aria-hidden="true"></span>
@@ -407,6 +420,56 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     margin: 0 0 4px;
     font-size: 1rem;
     font-weight: 900;
+  }
+  .profil__baslik-satir {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+  .profil__baslik-satir .profil__h2 {
+    margin: 0;
+  }
+  .profil__hizli-sec {
+    display: flex;
+    gap: 6px;
+  }
+  .profil__mini-btn {
+    padding: 5px 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface-2);
+    color: var(--text-2);
+    font: inherit;
+    font-size: 0.74rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: border-color 0.15s var(--ease), color 0.15s var(--ease);
+  }
+  .profil__mini-btn:hover {
+    border-color: var(--brand);
+    color: var(--brand);
+  }
+  .profil__sondk-satir {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface-2);
+    font-size: 0.82rem;
+    color: var(--text-2);
+    cursor: pointer;
+  }
+  .profil__sondk-satir input {
+    width: 17px;
+    height: 17px;
+    accent-color: var(--brand);
+    flex-shrink: 0;
   }
   .profil__aciklama {
     margin: 0 0 12px;
@@ -1115,21 +1178,72 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         }
       });
 
-    // --- Bildirim sıklığı (anında / günde 3 özet / sadece son dakika) ---
+    // --- Bildirim sıklığı + Genel Son Dakika + Hızlı Seçim ---
     var siklikEl = document.getElementById("profil-siklik");
     var siklikDurum = document.getElementById("profil-siklik-durum");
+    var sondkEl = document.getElementById("profil-sondk-onay");
+    var hepsiBtn = document.getElementById("profil-bildirim-hepsi");
+    var temizleBtn = document.getElementById("profil-bildirim-temizle");
+
+    hepsiBtn &&
+      hepsiBtn.addEventListener("click", function () {
+        [].forEach.call(document.querySelectorAll("[data-bildirim]"), function (c) {
+          bildirimSecim.add(c.getAttribute("data-bildirim"));
+        });
+        ciz();
+        otomatikKaydet();
+      });
+
+    temizleBtn &&
+      temizleBtn.addEventListener("click", function () {
+        bildirimSecim.clear();
+        ciz();
+        otomatikKaydet();
+      });
+
+    if (sondkEl) {
+      try {
+        sondkEl.checked = JSON.parse(localStorage.getItem("bildirim-son-dakika") || "false") === true;
+      } catch (e) {
+        sondkEl.checked = false;
+      }
+      sondkEl.addEventListener("change", async function () {
+        var acik = Boolean(sondkEl.checked);
+        try {
+          localStorage.setItem("bildirim-son-dakika", JSON.stringify(acik));
+          window.dispatchEvent(new CustomEvent("hb-bildirim-degisti"));
+        } catch (e) {}
+        await H.pushEsle(H.oturumOku() || u);
+        if (siklikDurum) {
+          siklikDurum.textContent = acik
+            ? "Genel son dakika bildirimleri açıldı ✓"
+            : "Yalnızca seçtiğin başlıklar gelecek ✓";
+        }
+      });
+    }
+
     function siklikCiz() {
       if (!siklikEl) return;
       var g = H.oturumOku() || u;
-      var deger = (g && g.bildirim_siklik) || "aninda";
-      // Hesapta değer yoksa (eski oturum) cihazdaki son seçim kullanılır.
-      if (!g || !g.bildirim_siklik) {
+      var mod = (g && g.bildirim_mod) || "";
+      if (!mod) {
         try {
-          deger = localStorage.getItem("bildirim-siklik") || deger;
+          mod = localStorage.getItem("bildirim-mod") || "";
         } catch (e) {}
       }
-      if (["aninda", "ozet", "son"].indexOf(deger) < 0) deger = "aninda";
-      siklikEl.value = deger;
+      if (!mod) {
+        var eski = (g && g.bildirim_siklik) || "";
+        if (!eski) {
+          try {
+            eski = localStorage.getItem("bildirim-siklik") || "aninda";
+          } catch (e) {
+            eski = "aninda";
+          }
+        }
+        mod = eski === "ozet" ? "ozet" : eski === "son" ? "son" : "gun10";
+      }
+      if (["gun10", "hepsi", "ozet", "son", "kapali"].indexOf(mod) < 0) mod = "gun10";
+      siklikEl.value = mod;
     }
     siklikCiz();
     siklikEl &&
@@ -1144,13 +1258,18 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
             return;
           }
           u = H.oturumOku() || u;
+          window.dispatchEvent(new CustomEvent("hb-bildirim-degisti"));
           if (siklikDurum) {
             siklikDurum.textContent =
               deger === "ozet"
                 ? "Günde 3 özet seçildi ✓"
                 : deger === "son"
                   ? "Yalnızca son dakika seçildi ✓"
-                  : "Anında bildirim seçildi ✓";
+                  : deger === "hepsi"
+                    ? "Seçtiğin başlıklardaki tüm haberler açık ✓"
+                    : deger === "kapali"
+                      ? "Bildirimler duraklatıldı ✓"
+                      : "Günde ~10 bildirim (Dengeli) seçildi ✓";
           }
         } catch (e) {
           if (siklikDurum) siklikDurum.textContent = "Kaydedilemedi, tekrar dene.";
