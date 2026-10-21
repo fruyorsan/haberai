@@ -6,11 +6,92 @@ import { slugify } from "../src/ai.js";
 // ShiftDelete, DonanımHaber, Webtekno, Technopat'tan canlı çekilen güncel vitrin haberleri
 export const CURATED = [
   {
+    source: "NTV Teknoloji",
+    sourceUrl: "https://www.ntv.com.tr/teknoloji/internetin-altyapisinda-kritik-acik-dunya-alarma-gecti-avrupada-devlet-siteleri-kapatildi,kritik-bgp-acigi-2026",
+    image: "https://images.ntv.com.tr/images/NYSXGJEXYNJM7JYNFHKMJCJPCY-237293.jpg?width=930&format=webp",
+    category: "İnternet",
+    publishedAt: "2026-10-21T17:12:00.000Z",
+    breaking: true,
+    title: "İnternet altyapısında kritik güvenlik açığı: Avrupa'da kamu siteleri erişime kapatıldı",
+    summary:
+      "Küresel internet yönlendirme protokollerinde tespit edilen kritik bir güvenlik açığı nedeniyle Avrupa'daki bazı kamu kurumlarının web siteleri önlem amaçlı olarak geçici süreyle erişime kapatıldı.",
+    keyPoints: [
+      "Küresel ağ yönlendirme yazılımında uzaktan istismar edilebilen sıfırıncı gün açığı bulundu.",
+      "Avrupa'da bazı bakanlık ve kamu portalları acil yama uygulanana kadar çevrimdışı bırakıldı.",
+      "Siber güvenlik merkezleri tüm veri merkezi yöneticilerine acil güncelleme çağrısı yaptı.",
+    ],
+    body: [
+      "Küresel internet trafiğinin omurgasını oluşturan yönlendirme ve sunucu altyapısında tespit edilen kritik bir sıfırıncı gün açığı, siber güvenlik kurumlarını alarma geçirdi. Saldırganların şifreli ağ paketleri üzerinden sunucu belleğine müdahale etmesine kapı aralayan zafiyetin ardından acil güvenlik bülteni yayımlandı.",
+      "Avrupa Birliği bünyesindeki bazı kamu kurumları ve belediye portalları, olası bir veri sızıntısı veya hizmet kesintisi saldırısına hedef olmamak için sistemlerini geçici olarak dış erişime kapattı. Teknik ekipler çekirdek ağ yazılımlarına güvenlik yamalarını uygulamaya başladı.",
+      "Ulusal siber güvenlik merkezleri, söz konusu açığın özellikle eski sürüm yönlendirici yazılımı kullanan kurumsal ağları ve bulut sunucularını etkilediğini bildirdi. Bireysel internet kullanıcılarının doğrudan bir veri kaybı riski bulunmasa da bazı çevrimiçi kamu hizmetlerinde kısa süreli erişim yavaşlamaları yaşanabiliyor.",
+      "Altyapı sağlayıcılarının yayınladığı acil durum güncellemesinin küresel veri merkezlerinde birkaç saat içinde tamamlanmasıyla kapatılan kamu sitelerinin kademeli olarak yeniden açılması bekleniyor.",
+    ],
+    comment:
+      "İnternet omurgasında kullanılan açık kaynaklı protokollerde çıkan tek bir kritik hata, dakikalar içinde ülkelerin kamu hizmetlerini durma noktasına getirebiliyor. Avrupa'daki kurumların saldırı gerçekleşmeden siteleri önleyici olarak kapatması doğru bir kriz yönetimi olsa da, kritik altyapıların tek tip yazılım kütüphanelerine olan bağımlılığı küresel ölçekte en büyük siber kırılganlık olmaya devam ediyor.",
+    editorNote:
+      "Küresel internet yönlendirme yazılımlarında tespit edilen sıfırıncı gün açığı sonrası Avrupa'da bazı kamu siteleri yama yapılana kadar kapatıldı.",
+    tags: ["Siber Güvenlik", "İnternet", "Avrupa", "Teknoloji", "Sunucu"],
+  },
+  {
+    source: "Haber Global",
+    sourceUrl: "https://haberglobal.com.tr/spor/yunus-akgunden-lille-filelerine-tarihi-gol-2026-10-21",
+    image: "https://i.haberglobal.com/storage/files/images/2026/10/21/yunus-akgunden-lille-filelerine-tarihi-gol-j6iy.jpg",
+    category: "Spor",
+    publishedAt: "2026-10-21T17:10:00.000Z",
+    breaking: true,
+    title: "Yunus Akgün'den Avrupa sahnesinde Lille ağlarına erken ve tarihi gol",
+    summary:
+      "Galatasaray'ın genç yıldızı Yunus Akgün, Lille karşısında maçın henüz başında kaydettiği şık golle sarı-kırmızılı kulübün Avrupa kupaları tarihindeki en erken gollerinden birine imza attı.",
+    keyPoints: [
+      "Yunus Akgün, Lille karşısında ceza sahası dışından yaptığı vuruşla takımını öne geçirdi.",
+      "Genç oyuncu bu sezon Avrupa kupalarındaki gol serisini sürdürerek kariyer rekorunu geliştirdi.",
+      "Sarı-kırmızılıların Avrupa'daki en erken golleri arasına giren vuruş tribünleri ayağa kaldırdı.",
+    ],
+    body: [
+      "Avrupa kupalarındaki kritik Lille mücadelesine hızlı başlayan Galatasaray'da sahneye çıkan isim bir kez daha Yunus Akgün oldu. Karşılaşmanın henüz ilk dakikalarında gelişen hücumda topu önünde bulan milli futbolcu, kalecinin uzanamayacağı köşeye yaptığı sert vuruşla fileleri havalandırdı.",
+      "Bu erken gol, sarı-kırmızılı temsilcimizin Avrupa kupaları tarihinde kaydettiği en hızlı gollerden biri olarak kayıtlara geçti. Maçın başında gelen skor avantajı, Fransız temsilcisinin savunma kurgusunu bozarken Galatasaray'ın oyun kontrolünü eline almasını sağladı.",
+      "Bu sezon hem Süper Lig'de hem de Avrupa maçlarında skora doğrudan katkı veren Yunus Akgün, üst üste çıktığı Avrupa karşılaşmalarında gol atma başarısı gösteren nadir Türk oyuncular arasındaki yerini sağlamlaştırdı.",
+      "Teknik heyetin hücum presi ve hızlı geçiş oyunu planında kilit rol üstlenen genç kanat oyuncusu, maç boyunca sergilediği enerjiyle taraftarlardan tam not aldı.",
+    ],
+    comment:
+      "Avrupa deplasmanlarında ve üst düzey Fransız takımlarına karşı maçın başında skor üstünlüğünü yakalamak, karşılaşmanın bütün taktik dengesini değiştirir. Yunus Akgün'ün bu sezon yakaladığı özgüven ve ceza sahası çevresindeki bitiriciliği, Galatasaray'ın Avrupa hedeflerinde yabancı yıldızlar kadar yerli rotasyonun da belirleyici olduğunu kanıtlıyor.",
+    editorNote:
+      "Yunus Akgün, Lille karşısında kaydettiği şık golle Avrupa'daki gol serisini sürdürürken kulüp tarihinin en erken gollerinden birine imza attı.",
+    tags: ["Galatasaray", "Yunus Akgün", "Lille", "Avrupa Kupası", "Spor"],
+  },
+  {
+    source: "Hürriyet Gündem",
+    sourceUrl: "https://www.hurriyet.com.tr/ekonomi/cumhurbaskani-yardimcisi-yilmaz-2027-yili-butcesini-meclise-sundu-2026-10-21",
+    image: "https://image.hurimg.com/i/hurriyet/90/620x350/6ad8ee901412951abe662735.jpg",
+    category: "Ekonomi",
+    publishedAt: "2026-10-21T17:08:00.000Z",
+    breaking: true,
+    title: "2027 yılı merkezi yönetim bütçe teklifi TBMM Plan ve Bütçe Komisyonu'na sunuldu",
+    summary:
+      "Cumhurbaşkanı Yardımcısı Cevdet Yılmaz, 2027 yılı Merkezi Yönetim Bütçe Kanunu Teklifi'ni TBMM Plan ve Bütçe Komisyonu'na sunarak enflasyonla mücadele, eğitim ve savunma ödeneklerinin ayrıntılarını paylaştı.",
+    keyPoints: [
+      "2027 bütçesinde en büyük pay eğitim, sağlık ve savunma yatırımlarına ayrıldı.",
+      "Mali disiplinin korunarak bütçe açığının milli gelire oranının düşürülmesi hedefleniyor.",
+      "Bütçe maratonu komisyon görüşmelerinin ardından Aralık ayında Genel Kurul'a gelecek.",
+    ],
+    body: [
+      "Türkiye Büyük Millet Meclisi'nde 2027 yılı bütçe maratonu resmen başladı. Cumhurbaşkanı Yardımcısı Cevdet Yılmaz, TBMM Plan ve Bütçe Komisyonu'nda yaptığı sunumla yeni yılın gelir ve gider hedeflerini, makroekonomik beklentileri ve bakanlık ödeneklerini milletvekilleriyle paylaştı.",
+      "Yeni bütçe teklifinde en yüksek ödeneğin yine eğitim ve sağlık hizmetlerine ayrıldığı, savunma sanayii ve afetlere dirençli şehircilik yatırımlarının ise öncelikli kalemler arasında tutulduğu vurgulandı. Sosyal yardım ve dar gelirli vatandaşları koruma programları için ayrılan kaynak da güncellendi.",
+      "Sunumda dezenflasyon sürecinin maliye politikasıyla destekleneceği ve bütçe açığının gayrisafi yurt içi hasılaya oranının kademeli olarak aşağı çekileceği belirtildi. Vergi gelirlerinde tabana yayılan adil bir tahsilat yapısının hedeflendiği ifade edildi.",
+      "Plan ve Bütçe Komisyonu'nda yaklaşık bir ay sürecek bakanlık bütçesi görüşmelerinin ardından teklif Aralık ayında TBMM Genel Kurulu'nda oylanarak yasalaşacak.",
+    ],
+    comment:
+      "Enflasyonla mücadelede para politikası kadar bütçe disiplini ve kamu harcamalarının kalitesi de belirleyici rol oynuyor. 2027 bütçesinde eğitim ve üretime dönük yatırımların korunurken cari harcamalarda tasarruf hedeflerinin ne ölçüde tutturulacağı, önümüzdeki yıl vergi yükünü ve piyasa faizlerini doğrudan etkileyecektir.",
+    editorNote:
+      "Meclis'te 2027 bütçe maratonu başladı; eğitim ve savunma aslan payını alırken mali disiplin ve enflasyonla mücadele ana hedef olarak öne çıktı.",
+    tags: ["Bütçe", "TBMM", "Ekonomi", "Enflasyon", "Meclis"],
+  },
+  {
     source: "ShiftDelete",
     sourceUrl: "https://shiftdelete.net/iphone-duo-cikmadan-applea-kotu-haber-satis-tahminleri-asagi-cekildi",
     image: "https://ares.shiftdelete.net/2026/10/aapl-logo-banner.webp",
     category: "Mobil",
-    publishedAt: "2026-10-21T16:42:00.000Z",
+    publishedAt: "2026-10-21T17:06:00.000Z",
     title: "Katlanabilir iPhone Duo çıkmadan Apple'ın satış tahminleri düşürüldü",
     summary:
       "Apple'ın uzun süredir beklenen katlanabilir telefonu iPhone Duo henüz tanıtılmadan analistler ilk yıl sevkiyat beklentilerini aşağı yönlü revize etti. Yüksek başlangıç fiyatı ve menteşe tedarik zincirindeki kapasite sınırları tahminleri doğrudan baskılıyor.",

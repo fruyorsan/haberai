@@ -43,8 +43,8 @@ const teknoSlugs = new Set(tekno.map((a) => a.slug));
 // "Fotoğraflı" ölçütü güvenlik süzgecinden geçen kapaktır (lib/kapak.js):
 // yanlış/genel görseli elenen haber, fotoğrafsız (kırmızı zeminli) kart olarak
 // listenin sonuna alınır.
-const withPhoto = nonFeatured.filter((a) => kapakKaynagi(a) && !teknoSlugs.has(a.slug) && !shortsSlugs.has(a.slug));
-const withoutPhoto = nonFeatured.filter((a) => !kapakKaynagi(a) && !teknoSlugs.has(a.slug) && !shortsSlugs.has(a.slug));
+const withPhoto = nonFeatured.filter((a) => kapakKaynagi(a) && !teknoSlugs.has(a.slug));
+const withoutPhoto = nonFeatured.filter((a) => !kapakKaynagi(a) && !teknoSlugs.has(a.slug));
 const grid = [...withPhoto, ...withoutPhoto].slice(0, 21);
 
 // WebSite + Organization yapısal veri: Sitelinks arama kutusu (Google) + marka bilgisi.

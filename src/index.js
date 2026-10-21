@@ -89,8 +89,8 @@ async function main() {
   // 1) Tekrar ve kaynak filtrelerinden geçen adaylar (tazelik sırası korunur).
   //    Her aday "son dakika" mı diye işaretlenir; seçim ve kota buna göre yapılır.
   const VITRIN_KAYNAKLAR = new Set(["ShiftDelete", "Webtekno", "DonanımHaber", "Technopat", "Donanım Arşivi", "CHIP Online", "Webrazzi", "Tamindir", "Merlin'in Kazanı", "IGN Türkiye", "Oyun Günlüğü", "Evrim Ağacı", "NTV Teknoloji"]);
-  const isDirectVitrin = (it) => VITRIN_KAYNAKLAR.has(it.source) && Boolean(it.image) && !/news\.google\.com/i.test(it.link || "");
-  fresh.sort((a, b) => (isDirectVitrin(b) ? 1 : 0) - (isDirectVitrin(a) ? 1 : 0) || (Boolean(b.image) ? 1 : 0) - (Boolean(a.image) ? 1 : 0) || (b.publishedAt || "").localeCompare(a.publishedAt || ""));
+  const isDirectVitrin = (it) => VITRIN_KAYNAKLAR.has(it.source) && Boolean(it.image) && !/news\.google\.com/i.test(it.link || "") && (Date.now() - new Date(it.publishedAt || 0).getTime() <= 45 * 60 * 1000);
+  fresh.sort((a, b) => (isDirectVitrin(b) ? 1 : 0) - (isDirectVitrin(a) ? 1 : 0) || (b.publishedAt || "").localeCompare(a.publishedAt || "") || (Boolean(b.image) ? 1 : 0) - (Boolean(a.image) ? 1 : 0));
   const HAVUZ = Math.max(config.maxPerRun * 70, 160);
   const perSource = new Map();
   const eligible = [];
@@ -142,7 +142,7 @@ async function main() {
   const normalPool = eligible.filter((it) => !it.breaking);
 
   const vitrinPool = eligible.filter(isDirectVitrin);
-  const queue = vitrinPool.slice(0, Math.max(2, config.maxBreakingPerRun + 1));
+  const queue = vitrinPool.slice(0, 1);
   for (const it of [...breakingPool, ...normalPool]) { if (queue.length >= config.maxBreakingPerRun + config.maxPerRun) break; if (!queue.includes(it)) queue.push(it); }
   let normalTaken = queue.length;
   for (const it of normalPool) {

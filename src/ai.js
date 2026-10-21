@@ -236,6 +236,7 @@ function candidates() {
       list.push({ provider: "gemini", model, apiKey: process.env.GEMINI_API_KEY });
     }
   }
+  list.push({ provider: "pollinations", model: "openai", apiKey: "free" });
   return list;
 }
 
@@ -423,7 +424,7 @@ async function kisaMetinGroq(c, istem) {
       model: c.model,
       temperature: 0.4,
       max_tokens: 200,
-      ...(/gpt-oss|qwen3/i.test(c.model) ? { reasoning_effort: "low" } : {}),
+      ...(/gpt-oss/i.test(c.model) ? { reasoning_effort: "low" } : {}),
       response_format: { type: "json_object" },
       messages: [{ role: "user", content: istem }],
     }),
@@ -434,7 +435,15 @@ async function kisaMetinGroq(c, istem) {
 }
 
 async function callProvider(c, article, ekNot = "") {
-  return c.provider === "groq" ? groqCall(c, article, ekNot) : geminiCall(c, article, ekNot);
+  return c.provider === "pollinations" ? pollinationsCall(c, article, ekNot) : c.provider === "groq" ? groqCall(c, article, ekNot) : geminiCall(c, article, ekNot);
+}
+async function pollinationsCall(c, article, ekNot = "") {
+  const res = await safeFetch("https://text.pollinations.ai/openai", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ model: c.model || "openai", temperature: 0.75, messages: [{ role: "system", content: SYSTEM }, { role: "user", content: buildPrompt(article, ekNot) }] }) });
+  if (!res.ok) throw classify(res.status, await res.text(), res.headers, "Pollinations");
+  const json = await res.json();
+  const text = json?.choices?.[0]?.message?.content;
+  if (!text) throw new Error("Pollinations boş yanıt döndü");
+  return normalize(parseJson(text), article);
 }
 
 // --------------------------- Gemini ---------------------------
@@ -474,10 +483,10 @@ async function groqCall(c, article, ekNot = "") {
     body: JSON.stringify({
       model: c.model,
       temperature: 0.85,
-      max_tokens: 5000,
+      max_tokens: 4000,
       // gpt-oss bir akıl yürütme modeli: kısa tutmazsak token bütçesini "düşünmeye"
       // harcayıp JSON'u tamamlayamıyor (json_validate_failed hatası).
-      ...(/gpt-oss|qwen3/i.test(c.model) ? { reasoning_effort: "low" } : {}),
+      ...(/gpt-oss/i.test(c.model) ? { reasoning_effort: "low" } : {}),
       response_format: { type: "json_object" },
       messages: [
         { role: "system", content: SYSTEM },
@@ -520,7 +529,10 @@ function classify(status, body, headers, provider) {
   if (!wait) wait = parseHumanDelay(snippet);
   err.wait = wait;
 
-  if (status === 429 || lower.includes("quota") || lower.includes("resource_exhausted")) {
+  if (status === 402 && lower.includes("free_limit")) {
+    err.kind = "ratelimit";
+    err.wait = Math.max(wait || 31, 16);
+  } else if (status === 429 || lower.includes("quota") || lower.includes("resource_exhausted")) {
     // Günlük kota mı yoksa dakikalık limit mi?
     const daily = /per day/i.test(snippet) || wait > 120;
     err.kind = daily ? "quota" : "ratelimit";
@@ -536,7 +548,7 @@ function classify(status, body, headers, provider) {
 
 /** "retry in 7h44m24.9s" veya "Please retry in 20s" -> saniye */
 function parseHumanDelay(text) {
-  const m = /retry in\s*(?:(\d+)h)?\s*(?:(\d+)m)?\s*(?:([\d.]+)s)?/i.exec(text);
+  const m = /retry (?:in|after)\s*(?:(\d+)h)?\s*(?:(\d+)m)?\s*(?:([\d.]+)s)?/i.exec(text);
   if (!m || (!m[1] && !m[2] && !m[3])) return 0;
   return Number(m[1] || 0) * 3600 + Number(m[2] || 0) * 60 + Number(m[3] || 0);
 }
