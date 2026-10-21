@@ -121,7 +121,8 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
           Yalnızca seçtiğin konulardan bildirim alırsın. Boş bırakırsan ilgi
           alanların bildirime de uygulanır; hiçbiri yoksa yalnızca son dakika
           haberleri gelir. Aşağıdaki sıklık ayarı, bu konuların sana ne sıklıkla
-          ulaşacağını belirler.
+          ulaşacağını belirler. Varsayılan günde 7 bildirimdir; daha fazlasını
+          istersen 10'a çıkarabilir ya da anında modunu seçebilirsin.
         </p>
         <div class="profil__cipler" id="profil-bildirim">
           {KATEGORILER.map((k) => (
@@ -134,7 +135,9 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         <div class="profil__siklik">
           <label class="profil__siklik-etiket" for="profil-siklik">Bildirim sıklığı</label>
           <select class="profil__girdi" id="profil-siklik">
-            <option value="aninda">Anında — seçtiğim her konuda</option>
+            <option value="gunluk7">Günde 7 bildirim — dengeli (varsayılan)</option>
+            <option value="gunluk10">Günde 10 bildirim — daha fazla</option>
+            <option value="aninda">Anında — seçtiğim her konuda (sınırsız)</option>
             <option value="ozet">Günde 3 özet — 09:00 · 15:00 · 21:00</option>
             <option value="son">Sadece son dakika</option>
           </select>
@@ -1115,20 +1118,22 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         }
       });
 
-    // --- Bildirim sıklığı (anında / günde 3 özet / sadece son dakika) ---
+    // --- Bildirim sıklığı (günde 7 / günde 10 / anında / günde 3 özet / son dakika) ---
     var siklikEl = document.getElementById("profil-siklik");
     var siklikDurum = document.getElementById("profil-siklik-durum");
     function siklikCiz() {
       if (!siklikEl) return;
       var g = H.oturumOku() || u;
-      var deger = (g && g.bildirim_siklik) || "aninda";
+      var deger = (g && g.bildirim_siklik) || "gunluk7";
       // Hesapta değer yoksa (eski oturum) cihazdaki son seçim kullanılır.
       if (!g || !g.bildirim_siklik) {
         try {
           deger = localStorage.getItem("bildirim-siklik") || deger;
         } catch (e) {}
       }
-      if (["aninda", "ozet", "son"].indexOf(deger) < 0) deger = "aninda";
+      if (["gunluk7", "gunluk10", "aninda", "ozet", "son"].indexOf(deger) < 0) {
+        deger = "gunluk7";
+      }
       siklikEl.value = deger;
     }
     siklikCiz();
@@ -1146,11 +1151,15 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
           u = H.oturumOku() || u;
           if (siklikDurum) {
             siklikDurum.textContent =
-              deger === "ozet"
-                ? "Günde 3 özet seçildi ✓"
-                : deger === "son"
-                  ? "Yalnızca son dakika seçildi ✓"
-                  : "Anında bildirim seçildi ✓";
+              deger === "gunluk7"
+                ? "Günde 7 bildirim seçildi ✓"
+                : deger === "gunluk10"
+                  ? "Günde 10 bildirim seçildi ✓"
+                  : deger === "ozet"
+                    ? "Günde 3 özet seçildi ✓"
+                    : deger === "son"
+                      ? "Yalnızca son dakika seçildi ✓"
+                      : "Anında bildirim seçildi ✓";
           }
         } catch (e) {
           if (siklikDurum) siklikDurum.textContent = "Kaydedilemedi, tekrar dene.";

@@ -651,18 +651,23 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
     function etiketYaz(OneSignal) {
       if (!OneSignal || !abone) return;
       const t = { son_dakika: sonDakika ? "1" : "" };
-      // Sıklık etiketi: sunucu konu bildirimlerini yalnızca "aninda" olanlara
-      // yollar; "ozet" günde 3 özet, "son" yalnızca son dakika alır.
+      // Sıklık etiketi: sunucu "aninda" olanlara her şeyi anında yollar;
+      // "gunluk7"/"gunluk10" günde en fazla 7/10, "ozet" günde 3 özet,
+      // "son" yalnızca son dakika alır.
       try {
-        t.bildirim_sikligi = localStorage.getItem("bildirim-siklik") || "aninda";
+        t.bildirim_sikligi = localStorage.getItem("bildirim-siklik") || "gunluk7";
       } catch {
-        t.bildirim_sikligi = "aninda";
+        t.bildirim_sikligi = "gunluk7";
       }
       for (const c of cipler) {
         const slug = c.dataset.kategori;
         // "Günde 3 özet" / "Yalnızca son dakika" seçen okuyucuya konu
         // bildirimi gitmesin: kategori etiketini boşalt.
-        const acik = t.bildirim_sikligi === "aninda" && kategoriler.has(slug);
+        const acik =
+          (t.bildirim_sikligi === "aninda" ||
+            t.bildirim_sikligi === "gunluk7" ||
+            t.bildirim_sikligi === "gunluk10") &&
+          kategoriler.has(slug);
         t["kategori_" + slug] = acik ? "1" : "";
       }
       try {
