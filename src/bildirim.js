@@ -356,6 +356,8 @@ async function gonder(p) {
     chrome_web_badge: `${SITE_URL}/ikon-192.png`,
     ttl: p.ttl,
     idempotency_key: uuidAnahtar(p.anahtar),
+    web_push_topic: 'hb_' + uuidAnahtar(p.anahtar || p.url || Date.now()),
+    android_group: 'haberinai_haberler',
   };
   if (p.gorsel) govde.chrome_web_image = p.gorsel;
   if (p.abonelikId) {
