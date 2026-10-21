@@ -1,5 +1,108 @@
 [
   {
+    "id": "ebc923fe1796035a",
+    "title": "ABD, Suudi Arabistan’daki Misyon Çalışanları İçin Sadece Tahliye Emri Verdi",
+    "slug": "abd-suudi-arabistan-misyon-tahliye-emri",
+    "summary": "ABD Dışişleri Bakanlığı sözcüsü, sadece Suudi Arabistan’daki diplomatik personel ve aileleri için tahliye emri yayımladığını duyurdu. Diğer Körfez ülkelerindeki çalışanlar için böyle bir karar henüz alınmadı.",
+    "keyPoints": [
+      "ABD yalnızca Suudi Arabistan’daki misyon çalışanları için tahliye emri verdi.",
+      "Diğer Körfez ülkelerindeki personel ve aileleri için emri henüz yayımlanmadı.",
+      "Süvey haberlerde dolaşan geniş kapsamlı tahliye kararları yanlıştır."
+    ],
+    "body": [
+      "ABD Dışişleri Bakanlığı Sözcüsü Yardımcısı Tommy Pigott, sosyal medya üzerinden yapılan yanlış haberleri çürüttü. Pigott, ABD’nin Körfez ülkelerinde görev yapan personel ve aileleri için geniş çaplı tahliye emri vermeye hazırlandığı iddiasını doğrulamıyor.",
+      "Pigott’un açıklamasına göre, bu karar sadece Suudi Arabistan’daki ABD hükümet personelinin ve ailelerinin güvenliğini sağlamak amacıyla alınmıştı. Diğer Körfez ülkelerindeki çalışanlar için henüz resmi bir çıkış emri yayınlanmadı.",
+      "Ayrıca, Yemeni aşırı hareketi Hüsitin Suudi Arabistan’a yönelik saldırılarını öne çıkararak, bu tür eylemlerin sivil havalimanlarını ve kritik altyapıları tehdit ettiğini belirtti. Bu durum, ABD’nin misyon çalışanlarının güvenliğini ön planda tutma stratejisini pekiştirdi.",
+      "Pigott, “Bakanlık personelinin ve ailelerinin güvenliği en büyük önceliğimizdir. Onları korumak ve desteklemek için gerekli tüm adımları atacağız” şeklinde ifade etti. Bu açıklama, ABD’nin dış politika kararlarının şeffaflığını ve insan güvenliğine verdiği önemi vurguluyor."
+    ],
+    "comment": "Bu haber, ABD’nin Orta Doğu'daki diplomatik faaliyetlerine dair kamuoyunu yönlendiren yanlış bilgileri netleştirerek, sürecin şeffaflığını artırıyor. Gerçekten de sadece Suudi Arabistan’da kalıcı bir tehdit var ve ABD, ilgili personeli koruma altına aldı.",
+    "editorNote": "ABD'nin Küresel Güvenlik Politikası'na dair son açıklamalar, bölgesel istikrarın önemini bir kez daha öne çıkarıyor.",
+    "tags": [
+      "ABD",
+      "Suudi Arabistan",
+      "Körfez Ülkeleri",
+      "Diplomasi",
+      "Güvenlik"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "abd embassy staff evacuation",
+    "source": "Canlı Gaste",
+    "sourceUrl": "https://www.canligaste.com/abd-tahliye-emri-sadece-suudi-arabistan-daki-misyon-calisanlari-icin-gecerli/932560/",
+    "image": "https://www.canligaste.com/haber-gorsel/2026/10/son-dakika-gelismesi-cumhurbaskani-erdogan-gorusmede-bulgaristan-in-munhasir-eko-932444.webp",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T20:44:08.000Z",
+    "generatedAt": "2026-10-21T20:47:14.482Z",
+    "breaking": true
+  },
+  {
+    "id": "72c615ee6bc090f7",
+    "title": "PHP Güvenlik Açıkları Dünya Çapında Web Sitelerini Kapatmaya Zorladı",
+    "slug": "php-guncel-guzellik-aciklari-dunya-cepheye-ekip",
+    "summary": "Yapay zeka destekli araştırma ile tespit edilen iki kritik PHP açığı, Finlandiya hükümeti, Hollanda ve BBC gibi büyük kurumların web sitelerini geçici olarak kapatmasına yol açtı. Dünyanın dört bir yanındaki hizmetler kısa süreli erişim sorunları yaşadı.",
+    "keyPoints": [
+      "OpenAI destekli 'Patch the Planet' projesi, PHP’de iki ciddi güvenlik açığı tespit etti.",
+      "Finlandiya, Hollanda ve İngiltere’deki kamu kurumları, BBC ve Wikipedia gibi büyük siteler geçici erişime kapatıldı.",
+      "Güncellemeler yayımlandı ancak zamanında uygulanamayan kuruluşlar sistemlerini devre dışı bıraktı."
+    ],
+    "body": [
+      "Yapay zeka ile yürütülen bir araştırma, PHP programlama dilinde iki kritik güvenlik açığı buldu. Açıklar, web sunucularının yetkisiz erişim ve veri sızıntısı riskini artırırken, hızlı bir çözüm sunmak için dünya çapında alarm oluşturdu.",
+      "Finlandiya hükümeti, Hollanda’nın ulusal siber güvenlik kurumu ve BBC'nin bazı sayfaları, savunmasız kalmamak adına internet sitelerini geçici olarak erişime kapattı. Edinburgh Belediyesi’nin web sitesi de aynı gün kapanarak vatandaşların hizmetlere ulaşmasını engelledi.",
+      "Güvenlik araştırmacıları tarafından geliştirilen bir düzeltme çarşamba günü yayımlandı. Ancak, güncellemeyi zamanında uygulayamayan kuruluşlar, sistemlerini güvenli hale getirene kadar erişimi kesti. Wikipedia’nın bazı bölümleri ve DeviantArt gibi dijital platformlar da bu önlemler kapsamında kapatıldı.",
+      "Açıkları tespit eden araştırmacılar, OpenAI’ın 'Patch the Planet' programına katılarak yapay zeka araçlarını kullanarak PHP kodlarını analiz etti. OpenAI, bu buluşu dönemin en önemli güvenlik sorunlarından biri olarak nitelendirdi ve benzer bir keşfin kendi araştırmacıları tarafından da aynı dönemde yapıldığını belirtti."
+    ],
+    "comment": "Bu olay, yazılım dünyasında yapay zekanın hem savunma hem de saldırı araçları olarak kullanılabileceğini gözler önüne seriyor. Bir tarafta hızlı açığa müdahale, diğer tarafta yetersiz güncellemeler nedeniyle geniş çapta hizmet aksaklığı yaşanıyor. Kurumların siber güvenlik stratejilerini yeniden gözden geçirmeleri kaçınılmaz görünüyor.",
+    "editorNote": "PHP güvenlik açıklarının küresel çapta çarpıcı etki yarattığı gözlemlendi. Yapay zeka destekli keşiflerin hızla güncel çözümler üretmesi bekleniyor.",
+    "tags": [
+      "PHP",
+      "Yapay Zeka",
+      "Siber Güvenlik",
+      "İnternet Aksesuarları"
+    ],
+    "category": "Donanım",
+    "gorselSorgu": "php security breach web servers",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/php-krizi-interneti-vurdu-dunya-capinda-web-siteleri-kapatiliyor--211935",
+    "image": "https://www.donanimhaber.com/images/images/haber/211935/src/php-krizi-interneti-vurdu-dunya-capinda-web-siteleri-kapatiliyor211935_0.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T20:42:08.000Z",
+    "generatedAt": "2026-10-21T20:46:41.203Z",
+    "breaking": true
+  },
+  {
+    "id": "efaad6ef21f039de",
+    "title": "Netanyahu Bloğu 51 Sandalyeye Gerilerken Eisenkot 55’e Ulaştı – İsrail’de Seçim Hattı Yeniden Çizildi",
+    "slug": "netanyahu-eisenkot-sandalyeler-yeni-anket",
+    "summary": "İsrail’de yapılan anket, Netanyahu bloğunun 51 sandalyeye geriletiğini, Eisenkot’un ise 55 sandalyeye ulaştığını gösteriyor. Kremlin’in yeni kamuoyu görüntüsü, 120 sandalyeli mecliste hâlen çoğunluk için yetersiz kalıyor.",
+    "keyPoints": [
+      "Netanyahu bloğu 53’ten 51’e geriledi, Eisenkot bloğu 55 sandalyeye yükseldi",
+      "Eisenkot 44 % destekle öne çıktı, Netanyahu 33 % destekle kaldı",
+      "İki blok da 61 sandalyelik çoğunluğa ulaşamadı, muhalefet bloğu 69 sandalyeye ulaştı"
+    ],
+    "body": [
+      "İsrail’de yayınlanan Kanal 12 anketi, Başbakan Binyamin Netanyahu’nun Likud Partisi’ni yöneten bloğun 51 sandalyeye geriletiğini ortaya koydu. Anket, 120 sandalyeli Knesset’te hükümet kurmak için gerekli olan 61 sandalyelik çoğunluğun henüz elde edilmediğini vurguladı.",
+      "Yashar Partisi lideri Gadi Eisenkot’un bloğu ise 55 sandalyeye ulaşarak Netanyahu’nun bloğunu geride bıraktı. Eisenkot, başbakanlık adayları arasında yüzde 44 destekle öne çıkarken, Netanyahu 33 % destekle ikinci sırada kaldı. Anket, Eisenkot’un 23 sandalyeyle ilk sırada yer aldığını da gösteriyor.",
+      "Likud Partisi, önceki ankete göre 2 sandalye kaybederek 19 sandalyeye geriledi. Naftali Bennett’in Birlikte Partisi 1 sandalye artışla 15 sandalyeye ulaştı, Ofer Winter’in Amcha Yisrael Partisi ise 4 sandalye kazanarak seçim barajını geçti.",
+      "Seçimler 27 Ekim’de yapılacakken, anket sonuçları İsrail’in siyasi arenasında yeni bir dengede oynanışa işaret ediyor. Hem Netanyahu hem de Eisenkot’un blokları, hükümet kurmak için hâlâ tek başına yeterli sandalye sayısına ulaşamadı, bu da muhalefet bloğunun 69 sandalyeyle baskın bir konuma sahip olduğu anlamına geliyor. Bu durum, ülkenin gelecekteki yönetim biçimi üzerinde derin bir etki yaratabilir."
+    ],
+    "comment": "Bu anket, İsrail’deki siyasi rekabetin dinamiklerini bir kez daha gözler önüne seriyor. Netanyahu’nun azalan destek sayıları, partinin içindeki farklılıkları ve halkın beklentilerini yansıtıyor. Eisenkot’un artan popülaritesi ise yeni bir liderlik arayışının sinyallerini taşıyor. Seçim sonrası muhalefet ve hükümet bloklarının 61 sandalyelik çoğunluğu hedeflemek için ittifak yapma ihtimali, İsrail’in siyasi geleceğinde belirsizlik yaratıyor.",
+    "editorNote": "Anket, Netanyahu’nun Blokunun düşüşünü ve Eisenkot’un yükselişini net bir şekilde gösteriyor.",
+    "tags": [
+      "İsrail",
+      "Seçimler",
+      "Netanyahu",
+      "Eisenkot"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "Israeli parliament election",
+    "source": "AA Güncel",
+    "sourceUrl": "https://www.aa.com.tr/tr/dunya/israildeki-ankete-gore-netanyahu-blogu-51-sandalyeye-gerilerken-eisenkotun-blogu-55e-ulasti/4096505",
+    "image": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/21/thumbs_b_c_da43181f7d5c0cfa5970a3f11c5069e4.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T20:41:51.000Z",
+    "generatedAt": "2026-10-21T20:48:00.423Z",
+    "breaking": true
+  },
+  {
     "id": "ff84ced3153d9cd8",
     "title": "ABD, Suudi Arabistan’a ‘Ayrılın’ Emri Verdi: Körfez’te Savaş Alarmı",
     "slug": "abd-suudi-arabistan-ayrilin-emri",
