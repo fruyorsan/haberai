@@ -192,14 +192,14 @@ export const config = {
   // ------------------------------------------------------------------
   ai: {
     // Groq: ücretsiz katmanı cömert ve hızlı (GROQ_API_KEY gerekir)
-    groqModels: (process.env.GROQ_MODELS || "openai/gpt-oss-120b,openai/gpt-oss-20b")
+    groqModels: (process.env.GROQ_MODELS || "llama-3.3-70b-versatile,meta-llama/llama-4-scout-17b-16e-instruct,meta-llama/llama-4-maverick-17b-128e-instruct,qwen/qwen3-32b,llama-3.1-8b-instant,openai/gpt-oss-120b,openai/gpt-oss-20b")
       .split(",")
       .map((s) => s.trim())
       .filter(Boolean),
     // Gemini: günde model başına ~20 ücretsiz istek (GEMINI_API_KEY gerekir)
     geminiModels: (
       process.env.GEMINI_MODELS ||
-      "gemini-flash-latest,gemini-flash-lite-latest,gemini-2.5-flash,gemini-3.5-flash,gemini-3.5-flash-lite"
+      "gemma-3-27b-it,gemma-3-12b-it,gemini-flash-latest,gemini-flash-lite-latest,gemini-2.5-flash,gemini-3.5-flash,gemini-3.5-flash-lite"
     )
       .split(",")
       .map((s) => s.trim())

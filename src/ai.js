@@ -406,7 +406,7 @@ async function kisaMetinGemini(c, istem) {
       generationConfig: {
         temperature: 0.4,
         maxOutputTokens: 120,
-        responseMimeType: "application/json",
+        ...(/gemma/i.test(c.model) ? {} : { responseMimeType: "application/json" }),
       },
     }),
   });
@@ -423,7 +423,7 @@ async function kisaMetinGroq(c, istem) {
       model: c.model,
       temperature: 0.4,
       max_tokens: 200,
-      reasoning_effort: "low",
+      ...(/gpt-oss|qwen3/i.test(c.model) ? { reasoning_effort: "low" } : {}),
       response_format: { type: "json_object" },
       messages: [{ role: "user", content: istem }],
     }),
@@ -443,15 +443,15 @@ async function geminiCall(c, article, ekNot = "") {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      systemInstruction: { parts: [{ text: SYSTEM }] },
-      contents: [{ parts: [{ text: buildPrompt(article, ekNot) }] }],
+      ...(/gemma/i.test(c.model) ? {} : { systemInstruction: { parts: [{ text: SYSTEM }] } }),
+      contents: [{ parts: [{ text: /gemma/i.test(c.model) ? `${SYSTEM}\n\n${buildPrompt(article, ekNot)}` : buildPrompt(article, ekNot) }] }],
       generationConfig: {
         temperature: 0.85,
         // İstem gövdeyi 250-400 kelimeye çıkardığı için 3000 jeton dar kalıyordu:
         // Türkçe ~2-3 jeton/kelime olduğundan yanıt kesilip JSON geçersizleşebiliyordu.
         maxOutputTokens: 4096,
-        responseMimeType: "application/json",
-        responseSchema: SCHEMA,
+        ...(/gemma/i.test(c.model) ? {} : { responseMimeType: "application/json" }),
+        ...(/gemma/i.test(c.model) ? {} : { responseSchema: SCHEMA }),
       },
     }),
   });
@@ -477,7 +477,7 @@ async function groqCall(c, article, ekNot = "") {
       max_tokens: 5000,
       // gpt-oss bir akıl yürütme modeli: kısa tutmazsak token bütçesini "düşünmeye"
       // harcayıp JSON'u tamamlayamıyor (json_validate_failed hatası).
-      reasoning_effort: "low",
+      ...(/gpt-oss|qwen3/i.test(c.model) ? { reasoning_effort: "low" } : {}),
       response_format: { type: "json_object" },
       messages: [
         { role: "system", content: SYSTEM },

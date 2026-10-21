@@ -166,7 +166,7 @@ export function imageSize(buf) {
 /** Görseli (ilk 256KB) indirip boyut + tip + toplam boyut bilgisini döner. */
 export async function probeImage(url) {
   if (!url || !/^https?:\/\//i.test(url)) return null;
-  const cleanUrl = String(url).replace(/&amp;/g, "&").trim();
+  const cleanUrl = String(url).replace(/&amp;/g, "&").replace(/\/\/www\.technopat\.net\/www\.technopat\.net\//i, "//www.technopat.net/").trim();
   try {
     const res = await fetch(cleanUrl, {
       headers: {

@@ -34,7 +34,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          BACKFILL_LIMIT: "4"
+          BACKFILL_LIMIT: "0"
           # Görselleri kaynak siteden alınmış eski haberler: AI'dan yalnızca
           # kısa bir İngilizce arama sorgusu alınır, fotoğraf Wikimedia
           # Commons'tan (CC0/kamu malı/CC BY/CC BY-SA) gelir. Fotoğraf

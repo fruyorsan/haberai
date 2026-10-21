@@ -74,7 +74,7 @@ async function fetchOne(feed) {
           title,
           link: (item.link || "").trim(),
           content: clean(raw).slice(0, 3500),
-          image: extractImage(item),
+          image: (extractImage(item) || "").replace(/\/\/www\.technopat\.net\/www\.technopat\.net\//i, "//www.technopat.net/").replace(/(imgrosetta\.webtekno\.com\/file\/\d+\/\d+-)640xauto/i, "$11280xauto") || null,
           publishedAt: clampFuture(toISO(item.isoDate || item.pubDate)),
         };
       })

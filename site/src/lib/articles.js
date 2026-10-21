@@ -104,8 +104,9 @@ export function getArticles() {
  * Uygun görselli haber yetmezse kalanlar sırayı bozmadan eklenir.
  */
 export function getFeatured(count = 6, horizon = 20, uygun = (a) => Boolean(a.image)) {
-  const recent = getArticles().slice(0, Math.max(count, horizon));
-  const withRealPhoto = recent.filter((a) => uygun(a) && !/wikimedia|wikipedia/i.test(a.image || ""));
+  const VITRIN_SRC = new Set(["ShiftDelete", "Webtekno", "DonanımHaber", "Technopat", "Donanım Arşivi", "CHIP Online", "PC Hocası", "Webrazzi", "Tamindir", "Merlin'in Kazanı", "IGN Türkiye", "Oyun Günlüğü", "Evrim Ağacı", "NTV Teknoloji"]);
+  const recent = getArticles().slice(0, Math.max(count, horizon, 36));
+  const withRealPhoto = [...recent.filter((a) => uygun(a) && VITRIN_SRC.has(a.source) && !/wikimedia|wikipedia/i.test(a.image || "")), ...recent.filter((a) => uygun(a) && !VITRIN_SRC.has(a.source) && !/wikimedia|wikipedia/i.test(a.image || ""))];
   const withStockPhoto = recent.filter((a) => uygun(a) && /wikimedia|wikipedia/i.test(a.image || ""));
   const withPhoto = [...withRealPhoto, ...withStockPhoto];
   if (withPhoto.length >= count) return withPhoto.slice(0, count);
@@ -124,7 +125,7 @@ export function getFeatured(count = 6, horizon = 20, uygun = (a) => Boolean(a.im
  */
 const DIRECT_IMAGE_HOSTS = /(\.teimg\.com|cryptopotato\.com|nuvemmag\.com|kentgazetesi\.com|hunattv\.com)$/i;
 function normalizeSrc(src) {
-  let s = String(src || "").replace(/&amp;/g, "&").trim();
+  let s = String(src || "").replace(/&amp;/g, "&").replace(/\/\/www\.technopat\.net\/www\.technopat\.net\//i, "//www.technopat.net/").replace(/(imgrosetta\.webtekno\.com\/file\/\d+\/\d+-)640xauto/i, "$11280xauto").trim();
   if (/wikimedia\.org\/wikipedia\/commons\/thumb\//i.test(s)) s = s.replace(/\/(1400|1600|1920)px-/i, "/1280px-");
   return s;
 }

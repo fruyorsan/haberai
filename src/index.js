@@ -87,7 +87,8 @@ async function main() {
   // 1) Tekrar ve kaynak filtrelerinden geçen adaylar (tazelik sırası korunur).
   //    Her aday "son dakika" mı diye işaretlenir; seçim ve kota buna göre yapılır.
   const VITRIN_KAYNAKLAR = new Set(["ShiftDelete", "Webtekno", "DonanımHaber", "Technopat", "Donanım Arşivi", "CHIP Online", "Webrazzi", "Tamindir", "Merlin'in Kazanı", "IGN Türkiye", "Oyun Günlüğü", "Evrim Ağacı", "NTV Teknoloji"]);
-  fresh.sort((a, b) => (VITRIN_KAYNAKLAR.has(b.source) ? 1 : 0) - (VITRIN_KAYNAKLAR.has(a.source) ? 1 : 0) || (b.publishedAt || "").localeCompare(a.publishedAt || ""));
+  const isDirectVitrin = (it) => VITRIN_KAYNAKLAR.has(it.source) && Boolean(it.image) && !/news\.google\.com/i.test(it.link || "");
+  fresh.sort((a, b) => (isDirectVitrin(b) ? 1 : 0) - (isDirectVitrin(a) ? 1 : 0) || (Boolean(b.image) ? 1 : 0) - (Boolean(a.image) ? 1 : 0) || (b.publishedAt || "").localeCompare(a.publishedAt || ""));
   const HAVUZ = Math.max(config.maxPerRun * 70, 160);
   const perSource = new Map();
   const eligible = [];
@@ -122,7 +123,7 @@ async function main() {
     const used = perSource.get(it.source) || 0;
     // Son dakika haberleri maxPerSource sınırına TAKILMAZ (aynı kaynaktan iki
     // son dakika haber geçebilir). Normal haberlerde kaynak çeşitliliği korunur.
-    const maxSrc = config.maxPerSource;
+    const maxSrc = isDirectVitrin(it) ? Math.max(config.maxPerSource, 2) : config.maxPerSource;
     if (used >= maxSrc) continue;
 
     perSource.set(it.source, used + 1);
@@ -138,7 +139,7 @@ async function main() {
     .sort((a, b) => b.breakingScore - a.breakingScore);
   const normalPool = eligible.filter((it) => !it.breaking);
 
-  const vitrinPool = eligible.filter((it) => VITRIN_KAYNAKLAR.has(it.source));
+  const vitrinPool = eligible.filter(isDirectVitrin);
   const queue = vitrinPool.slice(0, Math.max(2, config.maxBreakingPerRun + 1));
   for (const it of [...breakingPool, ...normalPool]) { if (queue.length >= config.maxBreakingPerRun + config.maxPerRun) break; if (!queue.includes(it)) queue.push(it); }
   let normalTaken = queue.length;

@@ -275,7 +275,7 @@ export function ilgiSkoru(a, simdi = Date.now()) {
 
   // Teknoloji/oyun/bilim odaklı vitrin yayıncılarına ek bonus
   if (VITRIN_KAYNAKLAR.test(sade(a?.source || ""))) {
-    puan += 10;
+    puan += /shiftdelete/i.test(a?.source || "") ? 22 : 14;
   }
 
   // Son dakika bonusu: yalnızca ilgi çekici kategorilerde tam puan alır,
@@ -287,7 +287,7 @@ export function ilgiSkoru(a, simdi = Date.now()) {
   // Tazelik: yarı ömrü ~24 saat.
   const t = publishedTime(a);
   const yasSaat = t ? Math.max(0, (simdi - t) / 3_600_000) : 200;
-  puan += 44 * Math.exp(-yasSaat / 32);
+  puan += 52 * Math.exp(-yasSaat / 14) + (yasSaat <= 2.5 ? 14 : 0);
 
   // Rutin/bürokratik kalıp cezası
   let ceza = 0;
