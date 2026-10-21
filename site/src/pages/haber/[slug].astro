@@ -270,7 +270,7 @@ const breadcrumbLd = {
             />
           ) : null}
           <span class="post__veil" aria-hidden="true"></span>
-          {kapak && <span class="sr-only">Fotoğraf: {article.gorselKaynak ? atifMetni(article.gorselKaynak) : article.source}</span>}
+          {kapak && <span class="post__credit">Fotoğraf: {article.gorselKaynak ? atifMetni(article.gorselKaynak) : article.source}</span>}
         </div>
       )}
 
@@ -710,6 +710,18 @@ const breadcrumbLd = {
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.16);
     border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+  .post__credit {
+    position: absolute;
+    z-index: 3;
+    left: 14px;
+    bottom: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.85);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+    pointer-events: none;
   }
   .post__ph-note {
     position: absolute;
