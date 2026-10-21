@@ -10,6 +10,10 @@ name: Bildirim Testi
 on:
   workflow_dispatch:
     inputs:
+      duyuru:
+        description: "Özel duyuru/özür bildirimi gönder (tüm abonelere)"
+        type: boolean
+        default: false
       teshis:
         description: "Yalnızca abone durumunu yazdır (bildirim GÖNDERME)"
         type: boolean
@@ -40,8 +44,16 @@ jobs:
       - name: Bağımlılıkları kur
         run: npm ci
 
+      - name: Özür ve bilgilendirme duyurusu gönder
+        if: ${{ inputs.duyuru }}
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          ONESIGNAL_APP_ID: ${{ vars.ONESIGNAL_APP_ID }}
+          ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
+        run: node scripts/duyuru-gonder.mjs
+
       - name: Test bildirimi gönder
-        if: ${{ !inputs.teshis }}
+        if: ${{ !inputs.teshis && !inputs.duyuru }}
         env:
           SITE_URL: ${{ vars.SITE_URL }}
           ONESIGNAL_APP_ID: ${{ vars.ONESIGNAL_APP_ID }}
