@@ -221,10 +221,11 @@ async function main() {
       // Sıra: AI'nın tam sorgusu → konu (afet/hava) sahnesi → geniş hâl
       // → kategori sorgusu. Afet haberlerinde geniş hâl ("mediterranean
       // sea") manzara fotoğrafı getiriyordu; konu sahnesi daha doğru.
+      const marka = markaAdi(cleaned.title);
       const sorgular = [
         // Marka adı (Getir, Togg, iPhone...) en güçlü sinyaldir: Commons'ta o
         // markanın gerçek fotoğrafı varsa alakasız stok fotoğraftan üstündür.
-        markaAdi(cleaned.title),
+        marka,
         ai.gorselSorgu,
         konuSorgu(ai.gorselSorgu, cleaned.title),
         kisaSorgu(ai.gorselSorgu),
@@ -234,6 +235,7 @@ async function main() {
         adet: 3,
         kullanilan: kullanilanGorsel,
         afet: afetMi(ai.gorselSorgu, cleaned.title),
+        marka,
       });
       if (!stok.length) stok = [yedekGorsel(cleaned.category)];
       const [kapakGorsel, ...ekler] = stok;
