@@ -119,6 +119,14 @@ export function kapakUygunMu(article, url) {
     return (tekrarSayaci().get(kimlik(ham)) || 0) < 80;
   }
 
+  // 2b) KAYNAĞIN KENDİ GÖRSELİ: haber sayfasının og:image'ı indirilip boyutu
+  //     ve oranı doğrulandı (bkz. src/gorsel.js). Bu görsel haberin kendi
+  //     kapağıdır; dosya adı Türkçe başlıkla eşleşmek zorunda değil.
+  //     Yalnızca yer tutucu deseni ve aşırı tekrar elenir.
+  if (article?.gorselKaynakSite) {
+    return (tekrarSayaci().get(kimlik(ham)) || 0) < TEKRAR_ESIGI;
+  }
+
   // 3) Aynı görsel arşivde çok kez kullanılmış mı? (genel görsel)
   //    Bu haberin kendi kapağı da sayıya dahil olduğu için eşik "kaç haberde
   //    geçiyor" sorusuna cevap verir.
