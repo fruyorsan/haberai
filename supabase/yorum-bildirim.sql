@@ -225,12 +225,12 @@ begin
 
     if v_zamanli then
       execute format(
-        '%I.http_post(url := %L, headers := %L::jsonb, body := %L::jsonb, timeout_milliseconds := 8000)',
+        'select %I.http_post(url := %L, headers := %L::jsonb, body := %L::jsonb, timeout_milliseconds := 8000)',
         v_sema, 'https://api.onesignal.com/notifications', v_basliklar::text, v_govde::text
       );
     else
       execute format(
-        '%I.http_post(url := %L, headers := %L::jsonb, body := %L::jsonb)',
+        'select %I.http_post(url := %L, headers := %L::jsonb, body := %L::jsonb)',
         v_sema, 'https://api.onesignal.com/notifications', v_basliklar::text, v_govde::text
       );
     end if;
