@@ -1,5 +1,106 @@
 [
   {
+    "id": "8c8522b26209ed9a",
+    "title": "5 Yılın En İyi 40 Dizisi: Dijital Dalgayı Yakalayan Koleksiyon",
+    "slug": "en-iyi-40-dizi-dijital-dalgayla",
+    "summary": "2020’den bu yana televizyon ve dijital platformlar büyük bir gelişim gösterdi. GQ dergisi, bu dönemin hem yerli hem de global yapımlarından seçtiği 40 diziyi bir araya getirdi. İzleyicilerin kaçırmaması gereken bu listede çeşitlilik ve kaliteyi bulabilirsiniz.",
+    "keyPoints": [
+      "Dijital platformlar, 2020 sonrası yapım kalitesini artırdı.",
+      "GQ dergisi, 5 yıl içinde öne çıkan 40 diziyi belirledi.",
+      "Katalog, yerli ve uluslararası projeleri dengeli bir şekilde temsil ediyor."
+    ],
+    "body": [
+      "2020’den itibaren televizyon ve dijital yayıncılık alanında yaşanan hızlı değişim, izleyici alışkanlıklarını kökten etkiledi. Yeni teknolojiler sayesinde hem büyük bütçeli hem de bağımsız yapımlar, küresel kitlelere ulaşma fırsatı buldu.",
+      "Bu bağlamda GQ dergisi, son beş yılın en başarılı ve merak edilen 40 dizi listesini derledi. Listede, dramadan komediye, bilim kurgu ve romantik dizilere kadar geniş bir yelpaze yer alıyor.",
+      "Yapımların seçimi, izlenme oranları, eleştirmen puanları ve izleyici geri dönüşleri gibi objektif kriterler göz önünde bulundurularak yapıldı. Böylece, hem kalite hem de popülerlik açısından dengeli bir portföy sunuldu.",
+      "Liste, izleyicilere hem evrensel hem de yerel kültürden zengin içerikler keşfetme imkanı sağlıyor. Aynı zamanda, yeni izleyicilerin farklı türleri denemelerine ve akıllı seçimler yapmalarına yardımcı olacak kapsamlı bir rehber niteliğinde."
+    ],
+    "comment": "Bu derleme, dijital dizi ekosisteminin evrimini ve izleyici tercihlerini net bir şekilde ortaya koyuyor. Özellikle yerli yapımların küresel arenada da rekabet edebildiğini gösteren liste, sektöre yeni bir bakış açısı kazandırıyor.",
+    "editorNote": "Dizilere dair özenli seçki, izleyicilerin kaliteli içeriklere yönlendirilmesini amaçlıyor.",
+    "tags": [
+      "Dijital Dizi",
+      "GQ Dergisi",
+      "İzleyici Rehberi",
+      "2020-2025"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "dizi listesi tablo",
+    "source": "Nefes Gazetesi",
+    "sourceUrl": "https://www.nefes.com.tr/izlemeyen-geri-kalir-iste-son-5-yilin-en-iyi-40-dizisi-159676",
+    "image": "https://img.nefes.com.tr/rcman/Cw1280h720q95gc/storage/files/images/2026/10/21/izlemeyen-geri-kalir-iste-son-5-yilin-en-iyi-40-dizisi-emri.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T19:43:09.000Z",
+    "generatedAt": "2026-10-21T19:47:37.427Z",
+    "breaking": true
+  },
+  {
+    "id": "f74875f6897d2c27",
+    "title": "Groq, 3D DRAM ile AI çiplerini güçlendiriyor ve kapasite artırıyor",
+    "slug": "groq-3d-dram-ai-chip-kapasite-artiriyor",
+    "summary": "Nvidia’nın alt markası Groq, yeni nesil yapay zeka çiplerinde 3D yığınlanmış DRAM kullanacağını açıkladı. Bu yaklaşım, bellek yoğunluğunu artırırken enerji verimliliğini de yükseltmeyi hedefliyor. Şirket, mevcut LPU çiplerinde 500 MB SRAM ve 150 TB/s bant genişliğine sahipken yeni tasarımda daha fazla kapasite sunmayı planlıyor.",
+    "keyPoints": [
+      "3D DRAM, bellek yoğunluğunu artırır",
+      "Groq’un yeni çipleri 640 TB/s bant genişliğine ulaşabilir",
+      "SRAM yerine DRAM, yüksek kapasite için tercih ediliyor"
+    ],
+    "body": [
+      "Groq, Nvidia çatısı altında geliştirdiği yapay zeka çiplerinde yeni bir bellek teknolojisi benimseyecek. Şirketin açıklamasına göre, mevcut nesil LPU çipleri 500 MB SRAM ile 150 TB/s bant genişliği sunuyor.",
+      "Yeni nesil çiplerde Groq, SRAM’in yüksek hız ve düşük gecikme avantajını korurken, daha büyük bellek kapasitesi için 3D yığınlanmış DRAM’e yöneliyor. Bu yöntem, DRAM katmanlarını TSV (Through‑Silicon Via) ile birbirine bağlayarak daha fazla belleği küçük bir alana yerleştiriyor. HBM’de de kullanılan bu teknik, hem alan kullanımını hem de enerji verimliliğini iyileştiriyor.",
+      "DRAM’in bant genişliği ve gecikme konusunda SRAM’e göre bazı ödünler gerekmesine rağmen, Groq bu tasarımda bellek yoğunluğunu öncelikli tutuyor. Şirket, yapay zeka modellerinin boyutunun artmasıyla birlikte bellek kapasitesinin kritik olduğunu vurguluyor. Yeni çiplerin performansının, mevcut LPU'ların FP8 hesaplama performansının 1,20 PFLOPS’ı aşması bekleniyor.",
+      "Peki yeni nesil Groq çipleri ne zaman piyasaya çıkacak? Henüz net bir tarih açıklanmadı. Ayrıca DRAM ve SRAM’in aynı tasarımda bir arada kullanılıp kullanılmayacağı da belirsiz. Şirket, bu iki bellek türünü ayrı ürünlerde sunma ihtimali taşıyor.",
+      "Bu gelişme, yapay zeka donanım üreticileri arasında rekabeti daha da kızıştırabilir. 3D DRAM’in getirdiği yüksek kapasite, büyük dil modelleri ve görsel işleme uygulamaları için önemli bir avantaj olabilir. Ancak, DRAM’in bant genişliği sınırlamaları, bazı uygulamalarda performans düşüşüne yol açabilir."
+    ],
+    "comment": "Yalnızca kapasite artışı değil, bant genişliği yükseltilmesiyle birlikte Groq’un AI çipleri rakiplerine kıyasla daha rekabetçi bir konuma gelebilir. 640 TB/s bant genişliği, önceki sürüme göre iki katın üzerinde bir performans sunar. Bu değişiklik, özellikle büyük veri setleriyle çalışan araştırmacılar için faydalı olacaktır.",
+    "editorNote": "3D DRAM, AI çiplerinde bellek kapasitesini iki katına çıkarıyor – ancak bant genişliği sınırlamalarıyla başa çıkmak kritik.",
+    "tags": [
+      "Groq",
+      "AI chip",
+      "3D DRAM",
+      "Nvidia",
+      "Bellek teknolojisi"
+    ],
+    "category": "Donanım",
+    "gorselSorgu": "Groq AI chip 3D DRAM stack",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/nvidia-nin-ai-planlari-buyuyor-groq-3d-dram-e-geciyor--211910",
+    "image": "https://www.donanimhaber.com/images/images/haber/211910/1200x675nvidia-nin-ai-planlari-buyuyor-groq-3d-dram-e-geciyor.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T19:43:00.000Z",
+    "generatedAt": "2026-10-21T19:46:27.681Z",
+    "breaking": true
+  },
+  {
+    "id": "4ab0c3bc9d2315b3",
+    "title": "İran Savunma Sözcüsü: ABD Saldırıları Hürmüz Boğazı’na Etki Etmez",
+    "slug": "iran-hurmuz-bozagi-abd-saldirilar",
+    "summary": "İran Devrim Muhafızları Ordu Sözcüsü Hüseyin Muhibbi, ABD’nin olası hava saldırılarının İran’ı teslim olmaya zorlayamayacağını ve Hürmüz Boğazı’nın kapalı kalmasının küresel ekonomiye zarar vereceğini belirtti. Muhibbi, Hürmüz Boğazı’nda yaşanacak kısıtlamaların petrol, alüminyum ve çip üretiminde kritik eksikliklere yol açacağını vurguladı.",
+    "keyPoints": [
+      "ABD’nin Hürmüz Boğazı’na yönelik bombardımanları İran'ı teslim etmez",
+      "Boğazın kapalı kalması küresel enerji ve tarım piyasalarını olumsuz etkiler",
+      "Muhibbi, Hürmüz Boğazı’ndan geçen çip üretim malzemelerinin %10’unun dünya pazarına ulaştığını söyledi"
+    ],
+    "body": [
+      "Muhibbi, Boğaz’ın kapanmasının petrol tankerlerinin sayısını artırdığını ve ABD’nin yaklaşan seçimler öncesinde enerji arzını güvence altına alarak petrol fiyatlarını düşürmek istediklerini ifade etti."
+    ],
+    "comment": "Muhibbi’nin sözleri, İran’ın stratejik konumunu ve Hürmüz Boğazı’nı silah olarak kullanmanın sınırlı etkisini vurgulayarak bölgesel gerilimin küresel ölçekte nasıl artabileceğine işaret ediyor. ABD’nin askeri hamlelerinin beklenen siyasi sonuçları vermeyebileceği mesajı, enerji piyasalarındaki belirsizliği derinleştiriyor.",
+    "editorNote": "Zorlu bir dönemde, hem bölgesel hem de küresel ekonomi için kritik bir noktanın önemini tek bir açıklama özetliyor.",
+    "tags": [
+      "İran",
+      "ABD",
+      "Hürmüz Boğazı",
+      "Enerji Piyasaları"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "Persian Gulf economic impact",
+    "source": "İlke TV",
+    "sourceUrl": "https://ilketv.com.tr/muhibbi-abdnin-saldirilari-irani-teslim-alamaz/",
+    "image": "https://ilketv.com.tr/wp-content/uploads/2026/10/690x390cc-mrk-21-10-2026-iran-devrim-muhafizlari-sozcusu-aciklama-.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T19:42:16.000Z",
+    "generatedAt": "2026-10-21T19:47:45.480Z",
+    "breaking": true
+  },
+  {
     "id": "0828918eb806cb21",
     "title": "ABD, Suudi Arabistanlı Görevdeki Personel İçin Terk Emri Verdi",
     "slug": "abd-suudi-arabistan-termin-emri",
