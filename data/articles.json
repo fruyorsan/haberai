@@ -1,5 +1,73 @@
 [
   {
+    "id": "ae33797edb7ad81e",
+    "title": "PHP Güvenlik Krizi Büyüyor: FBI ve Dünya Liderleri Uyarıyor",
+    "slug": "php-guvenlik-krizi-fbi-dunya-liderleri-uyariyor",
+    "summary": "FBI, dünya çapındaki kamu kurumlarını PHP çekirdeğindeki kritik açığı acilen güncellemeye çağırdı. Almanya ve Japonya da hizmetleri geçici olarak kapatarak güvenliği sağlama adımı attı.",
+    "keyPoints": [
+      "PHP çekirdeğinde uzaktan kod çalıştırılmasına izin veren acil güncelleme gerekliliği",
+      "Kamu kurumlarının sistemlerini çevrimdışı hâle getirme ve öncelikli güncellemeler",
+      "Web sunucularında komut kabuğu başlatma ve dosya indirme izleme mekanizmaları"
+    ],
+    "body": [
+      "FBI, devlet kurumlarının PHP tabanlı hizmetlerinin ciddi bir güvenlik açığıyla karşı karşıya olduğunu belirterek, bu açığın tüm interneti etkileyebileceğini uyardı. Açığın PHP çekirdeğinde uzaktan kod çalıştırılmasına izin verdiği öne sürülerek, güncellenmesi için acil bir çağrı yapıldı.",
+      "Bunun yanı sıra FBI, kurumların http://php.net üzerindeki yönergeleri izleyerek sistemlerini güncellemelerini ve PHP içeren uygulamaları öncelikli olarak kontrol etmelerini istedi. Güncellemeyi yapamayan sistemler ise geçici olarak çevrimdışı hâle getirilmeli.",
+      "Almanya Münih belediyesi ve Japonya Başbakanı gibi ulusal yetkililer, PHP kullanan hizmetleri geçici olarak devre dışı bırakarak riskin yayılmasını engellemeyi hedefledi. Bu adımlar, diğer ülkelerdeki kurumların da benzer önlemleri alması için bir örnek oluşturdu.",
+      "FBI, şüpheli faaliyetleri tespit etmek amacıyla web sunucularını ve süreç izleme mekanizmalarını incelemeye başladı. Şüpheli hareketlilik tespit edildiğinde, sistemler izole edilip, loglar FBI saha ofisine gönderilecek. Raporda elde edilen veriler, diğer kuruluşların da zarar görmeden uyarılmasına yardımcı olacak."
+    ],
+    "comment": "PHP’nin uzun süredir var olan bu açığı, hükümetlerin dijital altyapılarını gözden geçirmesine yol açtı. Uluslararası işbirliği ve hızlı güncelleme stratejileri, kritik sistemlerin güvenliğini sağlamada kilit rol oynuyor. Bu gelişme, siber güvenlik alanında devletlerin daha proaktif önlemler alması gerektiğini bir kez daha gösteriyor.",
+    "editorNote": "PHP güvenlik açığı, dünya çapında kamu kurumlarını etkiliyor. Acil güncellemeler ve sistem kapanışları gündeme sokuluyor.",
+    "tags": [
+      "PHP",
+      "Güvenlik",
+      "FBI",
+      "Kamu Kurumları"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "php security warning",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/internet-dunyasi-diken-ustunde--211936",
+    "image": "https://www.donanimhaber.com/images/images/haber/211936/1200x675internet-dunyasi-diken-ustunde.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T20:50:04.000Z",
+    "generatedAt": "2026-10-21T20:52:16.977Z",
+    "breaking": true
+  },
+  {
+    "id": "c3cbaaf486ff6718",
+    "title": "Clayface'in Sıcak Yüzeyi: DC'nin Yeni Body Horror Filmi",
+    "slug": "clayface-yeni-dc-filmi",
+    "summary": "DC'nin yeni filmi Clayface, body horror unsurlarıyla izleyiciyi bekliyor. 18+ sınırı ve şiddet dolu sahneleriyle Joker’e benzetilen yapım, genç oyuncu Tom Rhys Harries’in başrolünde. Eleştirmen beklentileri yüksek, Rotten Tomatoes ve MetaCritic puanları henüz netleşmedi.",
+    "keyPoints": [
+      "Clayface, karakterine özgü deformasyon yeteneğiyle body horror filmlerine benzer bir atmosfere sahip.",
+      "Film 18+ sınırlamasıyla Joker’e benzetiliyor, şiddet ve kan sahneleri ön planda.",
+      "Yönetmen James Watkins ve başrol oyuncusu Tom Rhys Harries’in çalışmalarıyla, DC’nin önceki yapımlarından daha yüksek puan alması bekleniyor."
+    ],
+    "body": [
+      "Clayface, DC’nin popüler anti‑kahramanlarından biri olarak uzun süredir çizgi romanlarda yer alıyor. Yaratıcılığıyla bedenini istediği gibi değiştirip sahneleri karanlık bir tonda canlandıran karakter, şimdi sinema ekranlarına taşınacak. Film, 18+ yaş sınırı ile Joker’in yoluna benzer bir izleyici kitlesine hitap ediyor.",
+      "Gururla sunulan basın gösterimlerinde Clayface, 80’lerin body horror klasikleri The Fly ve Videodrome’a benzetildi. Bu alandaki korkunç, kanlı ve şiddet içeren sahnelerle rahatça başa çıkıyor. Yazarlar, karakterin içinde bulunduğu deforme edilme sürecini samimi bir şekilde anlatırken, izleyicilere dehşetin sınırlarını zorlayacak bir deneyim vaadediyor.",
+      "Filmdeki odak, kariyerini kurtarmak için katıldığı tuhaf bir deney sonucu beklenmedik bir dönüşüm geçiren genç bir oyuncuya kaydedildi. Bu genç, Clayface’in yüceliğini ve içsel çarpışmalarını gözler önüne seriyor. Yönetmen James Watkins’in yönettiği yapım, The Fly gibi klasik body horror filmlerinin izlenimlerini modern bir görsel dille harmanlıyor.",
+      "Eleştirmenlerin ilk tepkileri olumlu yönde. Rotten Tomatoes ve MetaCritic puanları henüz netleşmemiş olsa da, DC’nin son yapımı Supergirl’in puanlarını geride bırakacağı öngörülüyor."
+    ],
+    "comment": "Yeni Clayface filmi, DC evrenine body horror’la farklı bir renk katıyor. 18+ sınırlaması, izleyici kitlesini daraltsa da, sahnelerin yoğunluğu ve karakterin dönüşümü izleyicileri etkileyebilecek güçlü unsurlar sunuyor. Yönetmen James Watkins’in deneyimi ve Tom Rhys Harries’in oyunculuğu, filmin başarısının anahtarı gibi görünüyor. Özetle, bu film DC’nin sinema dünyasında beklenen yenilikleri taşıyor.",
+    "editorNote": "Clayface’in karanlık ve şiddet dolu dünyası, DC’nin sinema evrenine yeni bir soluk getiriyor.",
+    "tags": [
+      "DC Comics",
+      "Body Horror",
+      "Clayface",
+      "Yönetmen James Watkins"
+    ],
+    "category": "Kültür",
+    "gorselSorgu": "clayface horror film",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/yeni-dc-filmi-clayface-e-dair-ilk-yorumlar-paylasildi--211925",
+    "image": "https://www.donanimhaber.com/images/images/haber/211925/src/yeni-dc-filmi-clayface-e-dair-ilk-yorumlar-paylasildi211925_0.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T20:48:00.000Z",
+    "generatedAt": "2026-10-21T20:53:20.956Z",
+    "breaking": true
+  },
+  {
     "id": "ebc923fe1796035a",
     "title": "ABD, Suudi Arabistan’daki Misyon Çalışanları İçin Sadece Tahliye Emri Verdi",
     "slug": "abd-suudi-arabistan-misyon-tahliye-emri",
@@ -100,6 +168,39 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-21T20:41:51.000Z",
     "generatedAt": "2026-10-21T20:48:00.423Z",
+    "breaking": true
+  },
+  {
+    "id": "b6a0b4a1480bb97a",
+    "title": "Küçükçekmece’de Otomobil-Motosiklet Çarpışması: 1 Ölü, 1 Yaralı",
+    "slug": "kucukcekmece-otomobil-motosiklet-kazasi-1-oldu-1-yarali",
+    "summary": "Küçükçekmece Atakent Mahallesi'nde, aynı yönde seyreden bir otomobil ile motosiklet çarpıştı. Motosikletin sürücüsü Emre Seyhat hayatını kaybetti, yolcu Fatih Seyhat ise ağır yaralandı.",
+    "keyPoints": [
+      "Ölümle sonuçlanan çarpışma 34 L 5643 plakalı otomobil ile 34 MCN 917 plakalı motosiklet arasında gerçekleşti.",
+      "Motosiklet sürücüsü Emre Seyhat 21 yaşında, yolcu Fatih Seyhat da aynı yaşta.",
+      "Yaralı, sağlık ekipleri müdahalesi sonrası ambulansla hastaneye kaldırıldı."
+    ],
+    "body": [
+      "Kaza, Küçükçekmece Atakent Mahallesi 1. İkitelli Caddesi'nde, 34 L 5643 plakalı otomobil ile aynı yönde ilerleyen 34 MCN 917 plakalı motosiklet arasında meydana geldi.",
+      "Motosikletin sürücüsü Emre Seyhat (21) olay yerinde hayatını kaybetti; yolcu olarak bulunan Fatih Seyhat (21) ise ağır yaralandı.",
+      "Olay yerinde sağlık ekipleri hemen müdahale etti, yaralı ambulansla hastaneye kaldırıldı."
+    ],
+    "comment": "Bu kaza, şehir içi trafik güvenliğinin ne kadar kritik olduğunu bir kez daha gözler önüne seriyor. Özellikle kaçınılmaz çarpışma noktalarında sürücülerin dikkatli olmaları, kazaların önlenmesinde şarttır.",
+    "editorNote": "Sürücülerin hız kontrolü ve güvenlik önlemlerine dikkat etmeleri gerekir.",
+    "tags": [
+      "Kaza",
+      "Küçükçekmece",
+      "Otomobil",
+      "Motosiklet"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "car motorcycle collision",
+    "source": "https://www.ensondakika.com.tr/",
+    "sourceUrl": "https://www.ensondakika.com.tr/kucukcekmece-de-otomobille-motosikletin-carpistigi-kazada-1-kisi-oldu-1-kisi-yaralandi/724214/",
+    "image": "https://www.ensondakika.com.tr/aa-media/2026/10/osmaniye-de-tartistigi-esini-tabancayla-olduren-kisi-ayni-silahla-intihar-etti-723655.webp",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T20:40:30.000Z",
+    "generatedAt": "2026-10-21T20:52:25.194Z",
     "breaking": true
   },
   {
