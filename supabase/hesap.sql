@@ -661,6 +661,132 @@ grant execute on function public.uye_begen_sil(uuid, text, text) to anon, authen
 grant execute on function public.uye_begeniler(uuid, text)       to anon, authenticated;
 grant execute on function public.uye_sil(uuid, text)             to anon, authenticated;
 
+-- ============================================================================
+-- HERKESE AÇIK KULLANICI PROFİLİ VE YORUMLARI
+-- ----------------------------------------------------------------------------
+-- Yorumlarda okuyucunun adına/avatarına tıklandığında herkese açık profilini,
+-- paylaştığı yorumları ve beğendiği haber/videoları (Shorts) görüntüler.
+-- Şifre, oturum hash ve kişisel bildirim ayarları dışarıya ASLA sızmaz.
+-- ============================================================================
+create or replace function public.kullanici_profil(
+  p_kadi text default null,
+  p_id uuid default null
+)
+returns jsonb
+language plpgsql
+security definer
+set search_path = public, extensions
+as $
+declare
+  v_uye public.uyeler;
+  v_kadi text := lower(btrim(coalesce(p_kadi, '')));
+  v_yorum_sayisi int := 0;
+  v_begeniler jsonb := '[]'::jsonb;
+begin
+  if p_id is not null then
+    select * into v_uye from public.uyeler where id = p_id;
+  elsif v_kadi <> '' then
+    select * into v_uye from public.uyeler where kadi = v_kadi or lower(ad) = v_kadi limit 1;
+  end if;
+
+  if v_uye.id is not null then
+    select count(*)::int into v_yorum_sayisi
+    from public.yorumlar y
+    where y.uye_id = v_uye.id and y.gizli = false;
+
+    select coalesce(jsonb_agg(b.slug order by b.created_at desc), '[]'::jsonb)
+    into v_begeniler
+    from public.begeniler b
+    where b.uye_id = v_uye.id;
+
+    return jsonb_build_object(
+      'id', v_uye.id,
+      'kadi', v_uye.kadi,
+      'ad', v_uye.ad,
+      'avatar', v_uye.avatar,
+      'rol', v_uye.rol,
+      'etiket', coalesce(v_uye.etiket, ''),
+      'olusturma', v_uye.olusturma,
+      'yorum_sayisi', v_yorum_sayisi,
+      'begeni_sayisi', coalesce(jsonb_array_length(v_begeniler), 0),
+      'begeniler', v_begeniler
+    );
+  end if;
+
+  -- Hesapsız okur: takma adla yazılmış açık yorumlar
+  select count(*)::int into v_yorum_sayisi
+  from public.yorumlar y
+  where y.ad = coalesce(p_kadi, 'Okur') and y.gizli = false;
+
+  return jsonb_build_object(
+    'id', null,
+    'kadi', null,
+    'ad', coalesce(p_kadi, 'Okur'),
+    'avatar', null,
+    'rol', 'okur',
+    'etiket', '',
+    'olusturma', null,
+    'yorum_sayisi', v_yorum_sayisi,
+    'begeni_sayisi', 0,
+    'begeniler', '[]'::jsonb
+  );
+end;
+$;
+
+create or replace function public.kullanici_yorumlar(
+  p_kadi text default null,
+  p_id uuid default null,
+  p_limit int default 50
+)
+returns jsonb
+language plpgsql
+security definer
+set search_path = public, extensions
+as $
+declare
+  v_uye_id uuid := p_id;
+  v_kadi text := btrim(coalesce(p_kadi, ''));
+  v_limit int := least(greatest(coalesce(p_limit, 50), 1), 100);
+begin
+  if v_uye_id is null and v_kadi <> '' then
+    select id into v_uye_id from public.uyeler where kadi = lower(v_kadi) or lower(ad) = lower(v_kadi) limit 1;
+  end if;
+
+  return coalesce((
+    select jsonb_agg(
+      jsonb_build_object(
+        'id', y.id,
+        'slug', y.slug,
+        'metin', y.metin,
+        'created_at', y.created_at,
+        'etiket', coalesce(y.etiket, ''),
+        'ad', y.ad,
+        'begeni', (
+          select count(*)::int
+          from public.yorum_begeniler b
+          where b.yorum_id = y.id
+        )
+      )
+      order by y.created_at desc
+    )
+    from (
+      select y.*
+      from public.yorumlar y
+      where y.gizli = false
+        and (
+          (v_uye_id is not null and y.uye_id = v_uye_id)
+          or (v_uye_id is null and v_kadi <> '' and y.ad = v_kadi)
+        )
+      order by y.created_at desc
+      limit v_limit
+    ) y
+  ), '[]'::jsonb);
+end;
+$;
+
+grant execute on function public.kullanici_profil(text, uuid) to anon, authenticated;
+grant execute on function public.kullanici_yorumlar(text, uuid, int) to anon, authenticated;
+
 -- ---------------------------------------------------------------------------
 -- İLK YÖNETİCİ: Hiç yönetici yoksa en eski hesap otomatik yönetici olur.
 -- (Site sahibinin hesabı genellikle ilk açılan hesaptır. Farklı biri
