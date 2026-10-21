@@ -135,22 +135,17 @@ export const HESAP = {
  * `renk` seçili çerçevenin vurgu tonudur.
  */
 export const AVATARLAR = [
-  // İnsan portreleri
-  { kod: "/avatar/ada.webp", ad: "Ada", renk: "#e4573d" },
-  { kod: "/avatar/mert.webp", ad: "Mert", renk: "#6a4fc1" },
-  { kod: "/avatar/zeynep.webp", ad: "Zeynep", renk: "#1c8c82" },
-  { kod: "/avatar/kerem.webp", ad: "Kerem", renk: "#e8a62b" },
-  { kod: "/avatar/elif.webp", ad: "Elif", renk: "#d9364b" },
-  { kod: "/avatar/deniz.webp", ad: "Deniz", renk: "#8a6fd1" },
-  { kod: "/avatar/ece.webp", ad: "Ece", renk: "#4b83a8" },
-  { kod: "/avatar/bora.webp", ad: "Bora", renk: "#1f6f54" },
-  { kod: "/avatar/selin.webp", ad: "Selin", renk: "#e2743a" },
+  // Popüler & İkonik Avatarlar
+  { kod: "/avatar/po.webp", ad: "Po", renk: "#e8a62b" },
+  { kod: "/avatar/tavsan.webp", ad: "Tavşan", renk: "#e4573d" },
+  { kod: "/avatar/yavru-kedi.webp", ad: "Yavru Kedi", renk: "#4b83a8" },
+  { kod: "/avatar/ordek.webp", ad: "Ördek", renk: "#e8a62b" },
+  { kod: "/avatar/kara-kedi.webp", ad: "Kara Kedi", renk: "#d9364b" },
   // Hayvanlar
   { kod: "/avatar/kedi.webp", ad: "Kedi", renk: "#d98a9a" },
   { kod: "/avatar/golden.webp", ad: "Golden", renk: "#e8a62b" },
   { kod: "/avatar/panda.webp", ad: "Panda", renk: "#3f8c76" },
   { kod: "/avatar/penguen.webp", ad: "Penguen", renk: "#4b83a8" },
-  { kod: "/avatar/kara-kedi.webp", ad: "Kara Kedi", renk: "#3d5a9e" },
   // Manzara ve objeler
   { kod: "/avatar/dag.webp", ad: "Dağ", renk: "#6a4fc1" },
   { kod: "/avatar/deniz-manzara.webp", ad: "Deniz Manzarası", renk: "#4b83a8" },
