@@ -101,7 +101,7 @@ jobs:
           # Uzak ilerlemisse cakismasiz birlestir; taze verimiz kazanir
           git fetch origin main
           git merge --no-edit -X ours origin/main
-          git push
+          for i in 1 2 3 4; do git fetch origin main && git merge --no-edit -X ours origin/main && git push && break; sleep 3; done
 
       - name: Site bagimliliklarini kur
         if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
@@ -215,7 +215,7 @@ jobs:
           git commit -m "chore: bildirim kaydi"
           git fetch origin main
           git merge --no-edit -X ours origin/main
-          git push
+          for i in 1 2 3 4; do git fetch origin main && git merge --no-edit -X ours origin/main && git push && break; sleep 3; done
 
       # NOT (18.10.2026): Netlify yayini KALDIRILDI.
       # Gerekce: tek yayin adresi https://haberinai.site (GitHub Pages) olsun.
@@ -271,5 +271,5 @@ jobs:
           git commit -qm "zincir: $(date -u +%Y-%m-%dT%H:%MZ)"
           git branch -M tetik
           git remote add origin git@github.com:fruyorsan/haberai.git
-          git push -q --force origin tetik
+          for i in 1 2 3 4; do git fetch origin main && git merge --no-edit -X ours origin/main && git push && break; sleep 3; done -q --force origin tetik
           echo "zincir gonderildi -> $(date -u +%Y-%m-%dT%H:%MZ)"

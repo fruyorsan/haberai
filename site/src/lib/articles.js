@@ -55,6 +55,7 @@ const GELECEK_TOLERANS_MS = 15 * 60 * 1000;
 export function publishedTime(a) {
   const p = new Date(a?.publishedAt || "").getTime();
   const g = new Date(a?.generatedAt || "").getTime();
+  if (Number.isFinite(g) && Number.isFinite(p) && g > p && g - p <= 6 * 3600 * 1000 && g <= Date.now() + GELECEK_TOLERANS_MS) return g;
   if (Number.isFinite(p) && p <= Date.now() + GELECEK_TOLERANS_MS) return p;
   if (Number.isFinite(g)) return g;
   return Number.isFinite(p) ? p : 0;
