@@ -1,5 +1,163 @@
 [
   {
+    "id": "4d8edb36b04bb924",
+    "title": "Ttec Tempus Akıllı Saat 44 mm Gövde ve Bilekten Arama Özelliği Sunuyor, 1,83 inç Ekran ve 88 Spor Modu",
+    "slug": "ttec-tempus-akilli-saat-44-mm-govde-bilekten-arama-ozelligi",
+    "summary": "Ttec Tempus, 44 mm hafif gövde, 1,83 inç ekran, 88 spor modu ve bilekten telefon görüşmesi yapabilme özelliğiyle piyasaya çıktı. Bu temel özellikler, ulaşılabilir fiyat segmentindeki akıllı saat alıcılarını hedefliyor ve günlük kullanım beklentilerini karşılamayı amaçlıyor.",
+    "keyPoints": [
+      "Yeni model 44 mm hafif gövde ve 1,83 inç AMOLED ekran",
+      "88 spor modu ve bilekten doğrudan telefon görüşmesi özelliği",
+      "Günlük kullanım için temel beklentileri hedefleyen fiyat-performans dengesi"
+    ],
+    "body": [
+      "Ttec, akıllı saat pazarına yeni bir girişimle geldi ve Tempus modeliyle hafiflik ile işlevselliği birleştirmeyi amaçladı. 44 mm çapındaki gövde, hem şık hem de rahat bir takma deneyimi sunuyor. Cihaz, 1,83 inçlik renkli ekranıyla bildirimleri ve uygulamaları net bir şekilde gösteriyor.",
+      "Saati öne çıkaran özelliklerden biri, 88 farklı spor modunu desteklemesi. Kullanıcılar koşu, bisiklet, yüzme gibi aktiviteleri izleyebiliyor ve anlık verileri ekranda görebiliyor. Bu modlar, hem yeni başlayan hem de deneyimli sporcular için geniş bir yelpaze sunuyor.",
+      "Tempus’un bir diğer dikkat çeken fonksiyonu, bilekten doğrudan telefon görüşmesi yapabilme yeteneği. Mikrofon ve hoparlör entegrasyonu sayesinde, kullanıcılar saati çıkarmadan arama alıp yanıtlayabiliyor. Bu özellik, özellikle koşu veya yoğun iş ortamlarında pratik bir çözüm sağlıyor.",
+      "Cihazın tasarımı, günlük kullanımda rahatlık ve dayanıklılığı bir arada sunmak üzere optimize edildi. Hafif gövde ve geniş ekran, hem spor sırasında hem de ofis ortamında konforlu bir deneyim vaat ediyor. Fiyat‑performans dengesini koruyarak, daha geniş bir kullanıcı kitlesine ulaşmayı hedefliyor."
+    ],
+    "comment": "Ttec Tempus, temel akıllı saat beklentilerini kapsayan bir paket sunarak fiyat‑performans açısından dikkat çekiyor. 44 mm gövde ve 1,83 inç ekran gibi ölçüler, rakip modellerle kıyaslandığında yeterli büyüklükte; 88 spor modu ve bilekten arama ise fonksiyonel bir artı sağlıyor. Bu kombinasyon, bütçe odaklı kullanıcıları ve aktif yaşam tarzı olanları çekecek. Önceki ttec modelleriyle karşılaştırıldığında, ekran boyutu ve ek özellikler belirgin bir yükseliş gösteriyor, bu da segmentteki rekabeti artırabilir.",
+    "editorNote": "Tempus, hafif tasarım ve 88 spor moduyla günlük hayatı kolaylaştırıyor; bilekten arama özelliği, özellikle hareketli kullanıcılar için pratik bir avantaj sunuyor.",
+    "tags": [
+      "ttec",
+      "tempus",
+      "akıllı saat",
+      "spor modu",
+      "telefon görüşmesi"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "ttec Tempus smartwatch display",
+    "source": "CHIP Online",
+    "sourceUrl": "https://www.chip.com.tr/galeri/ttec-tempus-inceleme_184790.html",
+    "image": "https://img.chip.com.tr/rcman/Cw1280h720q95gm/storage/files/images/2026/10/20/ttec-tempus-inceleme-rkwh.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T17:30:00.000Z",
+    "generatedAt": "2026-10-21T17:32:45.077Z",
+    "breaking": true
+  },
+  {
+    "id": "a6bb1d0ca4dd5d3a",
+    "title": "Joomla.org 521 Hatasıyla Çevrimdışı: İndirmeler Engellendi",
+    "slug": "joomla-org-521-hatasi-indirmeler-engellendi",
+    "summary": "Joomla.org, 21 Ekim 2026’da Cloudflare 521 hatasıyla erişilemez hale geldi. Resmi indirme sayfası ve eklenti dizini kapanırken, güncelleme sunucusu ve GitHub erişilebilir durumda. Açık kaynaklı CMS’in merkezi sitesi çöktü, ancak altyapı farklı seviyelerde etkileniyor.",
+    "keyPoints": [
+      "Joomla.org 15:13‑15:58 UTC arası 521 hatası verdi, indirme ve eklenti sayfaları kapandı.",
+      "Cloudflare’ın 521 hatası, kaynak sunucunun bağlantı reddetmesiyle oluşur; ortamda farklı sunucular etkilenmiş.",
+      "Güncelleme sunucusu ve GitHub kod deposu normal çalışmaya devam etti; sorun sadece yönetim sitesiyle sınırlı."
+    ],
+    "body": [
+      "21 Ekim 2026’da Joomla.org, Cloudflare 521 hatasıyla birlikte erişilemez hale geldi. Bu, açık kaynaklı PHP tabanlı CMS’in merkezi web sitesinin çökmesi anlamına gelir.",
+      "Cloudflare, 521 hatasını kaynak sunucunun ağdan gelen bağlantıları reddettiği bir durum olarak tanımlıyor. Hata, ya sunucunun çalışmaması ya da Cloudflare IP’lerini engelleyen bir güvenlik duvarı nedeniyle ortaya çıkmış olabilir. Aynı anda farklı alt alan adlarında 502 hatası da görülmüş, bu da altyapının farklı bileşenlerinin farklı seviyelerde etkilendiğini gösteriyor.",
+      "İlgili güncelleme sunucusu ve GitHub üzerindeki kod deposu ise sorunsuz çalışmaya devam etti. Bu durum, Joomla.org’un ana sunucusunun düşmesiyle, ancak yedek sunucuların ve dağıtılmış depo sisteminin etkilenmediğini gösteriyor. Dolayısıyla, CMS’in indirme kapısı kapanmış olsa da, yazılımın güncellenmesi ve geliştirilmesi için yedek olanaklar mevcut.",
+      "Joomla topluluğu için bu gecikme, kritik eklenti güncellemelerini geciktirebilir ve güvenlik açıklarını zamana bağımlı bir risk haline getirebilir. Yönetim ve destek forumlarının da geçici olarak 403 kodları vermesi, bot karşıtı filtrelerin de etkilenebileceğini gösteriyor. Bu durum, web tasarımcıları ve geliştiricileri için kısa vadeli bir aksaklık oluştururken, uzun vadede altyapı iyileştirmeleri yapılması gerektiğini ortaya koyuyor."
+    ],
+    "comment": "Joomla.org’un ani çöküşü, açık kaynak toplulukları için kritik bir olaydır. 521 hatası, sadece site erişimini kısıtlamakla kalmaz, aynı zamanda eklenti ekosistemini de geçici olarak felç eder. Bu, geliştiricilerin güncellemeleri ve güvenlik yamalarını zamanında uygulamamasına yol açabilir. Ancak, güncelleme sunucusunun çalışmaya devam etmesi, yedekleme stratejilerinin önemini bir kez daha vurguluyor.",
+    "editorNote": "Joomla.org 521 hatası yönetim sitesini etkiledi, ancak güncelleme sunucusu sağlam kaldı.",
+    "tags": [
+      "Joomla",
+      "Cloudflare",
+      "521 Hatası",
+      "CMS"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "cloudflare error 521",
+    "source": "Pasquale Pillitteri",
+    "sourceUrl": "https://pasqualepillitteri.it/tr/news/26179/joomla-org-erisilemiyor-521-hatasi",
+    "image": "https://pasqualepillitteri.it/uploads/img/news/joomla-org-offline-errore-521-cover.webp",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T17:26:05.000Z",
+    "generatedAt": "2026-10-21T17:33:19.885Z",
+    "breaking": true
+  },
+  {
+    "id": "0f1db7b45e3d3e35",
+    "title": "Rusya‑ABD‑Ukrayna: Yeni Müzakereler Başlıyor",
+    "slug": "rusya-abd-ukrayna-yeni-muzakereler",
+    "summary": "Rusya, ABD ve Ukrayna arasında yeni bir diplomatik çerçeve oluşturulmaya çalışılıyor. Taraflar, çatışmanın sürdürülmesini durdurmak ve uzun vadeli barış için adımlar atmayı hedefliyor.",
+    "keyPoints": [
+      "Rusya, ABD ve Ukrayna’nın üç taraflı görüşmeleri yeniden başlatmaya karar verdi.",
+      "Müzakerelere, üçüncü taraf bir arabulucu katılacak.",
+      "Çatışmanın azaltılması için askeri faaliyetlerin geçici durdurulması önerildi."
+    ],
+    "body": [
+      "Geçtiğimiz günlerde Rusya, ABD ve Ukrayna arasında üç taraflı bir müzakere sürecinin yeniden başlatılmasına karar verildi. Bu adım, bölgedeki uzun süredir süregelen çatışmaların hafifletilmesi için önemli bir fırsat olarak değerlendiriliyor.",
+      "Müzakerelere, uluslararası bir arabulucu katılacak; bu sayede taraflar arasında denge ve güven ortamı yaratılması amaçlanıyor. Arabulucunun seçimi, tarafların güvenini kazanmak adına kritik bir aşama olarak görülüyor.",
+      "Taraflar arasında, askeri faaliyetlerin geçici olarak durdurulması ve sivil altyapının korunması öncelikli konular arasında yer alıyor. Uzun vadeli barış için, ekonomik destek paketleri ve sınır güvenliği konularında da işbirliği yapma planları mevcut.",
+      "Bu süreç, uluslararası toplumun gözleriyle takip ediliyor. Birçok uzman, yeni müzakerelerin başarılı olabilmesi için tüm tarafların tam işbirliği içinde hareket etmesi gerektiğini vurguluyor. Ayrıca, bölgesel istikrarın sağlanması için diplomatik kanalların etkin kullanımının önemi öne çıkıyor."
+    ],
+    "comment": "Bu gelişme, üç büyük güç arasında diplomatik bir denge kurma çabasını gösteriyor. Özellikle askeri gerilimin azaltılması, bölge halkı için umut verici bir sinyal. Ancak, başarılı olabilmesi için tarafların somut eylemlere geçmesi şart.",
+    "editorNote": "Yeni müzakereler, bölgesel istikrar için umut vaat ediyor.",
+    "tags": [
+      "Diplomasi",
+      "Savaş",
+      "İstikrar",
+      "Uluslararası İlişkiler"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "international diplomacy meeting",
+    "source": "Doğruhaber",
+    "sourceUrl": "https://dogruhaber.com.tr/rusya-abd-ukrayna-arasinda-yeni-muzakereler",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Istanbul_city_Photos-_Urban_07.jpg/1280px-Istanbul_city_Photos-_Urban_07.jpg",
+    "gorselKaynak": {
+      "yazar": "Mostafameraji",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_07.jpg"
+    },
+    "publishedAt": "2026-10-21T17:24:00.000Z",
+    "generatedAt": "2026-10-21T17:34:57.222Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Istanbul_city_Photos-_Urban_18.jpg/1280px-Istanbul_city_Photos-_Urban_18.jpg",
+        "yazar": "Mostafameraji",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_18.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Istanbul_city_Photos-_Urban_25.jpg/1280px-Istanbul_city_Photos-_Urban_25.jpg",
+        "yazar": "Mostafameraji",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_25.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
+    "id": "06107ab80f6d5fbc",
+    "title": "Bangladeş'te Dang Humması Ölümlerde 364’e Ulaştı: 7 Kişi Son 24 Saatte Hayatını Kaybetti",
+    "slug": "banglades-dang-hummasi-olum-364",
+    "summary": "Bangladeş'te yıl başından bu yana dang humması nedeniyle ölen sayısı 364’e yükseldi. Son 24 saatte 7 kişi hayatını kaybetti ve 1.373 yeni vaka kaydedildi. Uzmanlar, sıcaklık ve yağışın sivrisinek popülasyonunu artırdığını belirtti.",
+    "keyPoints": [
+      "Yılın başından bu yana 364 ölümlü, 116.990 yeni vaka tespit edildi.",
+      "Son 24 saatte 7 ölümlü, 1.373 yeni vaka rapor edildi.",
+      "Sıcaklık ve uzun süreli yağış, sivrisineklere yol açıp hastalığı yayıyor."
+    ],
+    "body": [
+      "Bangladeş Sağlık Hizmetleri Genel Müdürlüğü’nün açıklamasına göre, yılın başından bu yana dang humması nedeniyle 364 kişi hayatını kaybetti. Halk arasında yaygın olarak ‘dang’ olarak bilinen bu tropikal virüs, sivrisinekler aracılığıyla bulaşıyor ve hafif ateşle başlıyor; ancak bazı vakalarda ölümcül sonuçlar doğurabiliyor.",
+      "Son 24 saat içinde 7 kişi ölüm kaydı yapılırken, 1.373 yeni vaka rapor edildi. Bu veriler, hastalığın halen ülkede yoğun bir şekilde yaygınlaştığını gösteriyor. Sağlık yetkilileri, özellikle yağışlı dönemlerde (mart, haziran, eylül, aralık) sivrisinek salgınına karşı önlemlerin artırılması gerektiğini hatırlattı.",
+      "Sivrisineklerin su birikintilerinde larva oluşturduğu bilindiği için, sanayi bölgelerinde biriken çöp ve atık su birikintilerinin sürekli ilaçlanması kritik bir öneme sahip. Çiftçiler ve belediyeler, su birikintilerini boşaltma ve ilaçlama programlarını genişleterek hastalık kontrolünü hedefliyor.",
+      "Araştırmacılar, yüksek sıcaklık ve uzun süreli yağış kombinasyonunun sivrisinek popülasyonunu hızlandırdığına işaret ediyor. Bu durum, özellikle düşük gelirli bölgelerde sağlık altyapısının yetersizliğiyle birleşince, halk sağlığı için ciddi bir tehdit oluşturuyor. Yetkililer, kamuoyu bilincini artırmak ve önleyici tedbirleri yaygınlaştırmak için kampanyalar başlatmayı planlıyor."
+    ],
+    "comment": "Dang humması, Bangladeş’in sağlık sistemine ciddi bir yük bindiriyor. Özellikle son yıllarda artan ölümler, iklim değişikliği ile artan su birikintilerinin bir sonucu olabilir. Halk sağlığını korumak için sivrisinek kontrolü ve erken teşhis programlarının güçlendirilmesi şart.",
+    "editorNote": "Sağlık krizine odaklanan haber, iklim değişikliği ve halk sağlığı bağlamında önem taşıyor.",
+    "tags": [
+      "Sağlık",
+      "Tropikal Hastalıklar",
+      "Sivrisinekler",
+      "Bangladeş"
+    ],
+    "category": "Sağlık",
+    "gorselSorgu": "Bangladesh dengue fever mosquitoes",
+    "source": "TRT Haber Son Dakika",
+    "sourceUrl": "https://www.trthaber.com/haber/dunya/bangladeste-yil-basindan-bu-yana-dang-hummasi-nedeniyle-olenlerin-sayisi-364e-cikti-960810.html",
+    "image": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2092000/dang-hummasi-2093138.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T17:23:00.000Z",
+    "generatedAt": "2026-10-21T17:35:30.977Z",
+    "breaking": true
+  },
+  {
     "id": "862142eb5ea9f9f4",
     "title": "CHP Disiplin Kararı: Üç Üye Sevk Edildi",
     "slug": "chp-disiplin-karari-uc-uye-sevk-edildi",
