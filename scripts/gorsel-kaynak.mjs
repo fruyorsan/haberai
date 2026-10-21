@@ -29,6 +29,14 @@ const dry = process.argv.includes("--dry");
 const gun = sayi("gun", 2);
 const limit = sayi("limit", 500);
 const eszamanli = Math.max(1, Math.min(6, sayi("eszamanli", 4)));
+// --haric=slug1,slug2 : kaynağı yanlış görsel veren (CMS hatası) haberler.
+// Elle doğrulanıp dışarıda bırakılır; her çalıştırmada yeniden denenmez.
+const haric = new Set(
+  String(arg("haric", ""))
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean)
+);
 const kategoriler = new Set(
   String(arg("kategori", "Teknoloji,Yapay Zeka,Mobil,Oyun,Donanım,Yazılım,İnternet,Bilim,Uzay,Otomobil"))
     .split(",")
@@ -106,6 +114,7 @@ const hedefler = articles
   .filter((a) => kategoriler.has(String(a.category || "").toLocaleLowerCase("tr")))
   .filter((a) => a.sourceUrl && /^https?:\/\//i.test(a.sourceUrl) && !/news\.google\.com/i.test(a.sourceUrl))
   .filter((a) => !a.gorselKaynakSite) // zaten kaynağın kendi görseli
+  .filter((a) => !haric.has(a.slug)) // elle doğrulanmış istisnalar
   .filter((a) => {
     // Wikimedia/stok kapakları hedefle; kaynaktan gelen eski kapaklara ve
     // gorsel-marka betiğinin doğruladığı marka fotoğraflarına dokunma.
