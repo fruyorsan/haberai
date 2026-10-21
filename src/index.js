@@ -7,7 +7,7 @@ import { shareNewArticles } from "./share.js";
 import { makeIndex, findSimilar, dedupeArticles } from "./dedupe.js";
 import { isBreaking, breakingScore } from "./breaking.js";
 import { purgeCopiedText } from "./telif.js";
-import { stokGorseller, KATEGORI_SORGU, yedekGorsel, atif, kisaSorgu, konuSorgu, afetMi, gorselOnar } from "./stok-gorsel.js";
+import { stokGorseller, KATEGORI_SORGU, yedekGorsel, atif, kisaSorgu, konuSorgu, afetMi, gorselOnar, markaAdi } from "./stok-gorsel.js";
 
 const DRY = process.argv.includes("--dry");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -222,6 +222,9 @@ async function main() {
       // → kategori sorgusu. Afet haberlerinde geniş hâl ("mediterranean
       // sea") manzara fotoğrafı getiriyordu; konu sahnesi daha doğru.
       const sorgular = [
+        // Marka adı (Getir, Togg, iPhone...) en güçlü sinyaldir: Commons'ta o
+        // markanın gerçek fotoğrafı varsa alakasız stok fotoğraftan üstündür.
+        markaAdi(cleaned.title),
         ai.gorselSorgu,
         konuSorgu(ai.gorselSorgu, cleaned.title),
         kisaSorgu(ai.gorselSorgu),

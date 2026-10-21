@@ -3,7 +3,7 @@ import { fetchPageExtras } from "./fetcher.js";
 import { analyzeArticle, gorselSorgusu } from "./ai.js";
 import { purgeCopiedText } from "./telif.js";
 import { config } from "./config.js";
-import { stokGorseller, KATEGORI_SORGU, atif, kisaSorgu, konuSorgu, afetMi } from "./stok-gorsel.js";
+import { stokGorseller, KATEGORI_SORGU, atif, kisaSorgu, konuSorgu, afetMi, markaAdi } from "./stok-gorsel.js";
 
 /**
  * Eski haberleri yeni biçimle yeniden üretir:
@@ -68,7 +68,7 @@ function kullanilanGorseller(articles) {
  */
 async function gorselYaz(a, sorgu, kullanilan) {
   const stok = await stokGorseller(
-    [sorgu, konuSorgu(sorgu, a.title), kisaSorgu(sorgu), KATEGORI_SORGU[a.category]],
+    [markaAdi(a.title), sorgu, konuSorgu(sorgu, a.title), kisaSorgu(sorgu), KATEGORI_SORGU[a.category]],
     { adet: 3, kullanilan, afet: afetMi(sorgu, a.title) }
   );
   if (!stok.length) return false;

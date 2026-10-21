@@ -24,7 +24,7 @@ const IZINLI_LISANS =
 
 // Fotoğraf olmayan / haber görseli olarak kötü duran dosyalar.
 const KOTU_BASLIK =
-  /\b(logo|logos|map|maps|diagram|chart|graph|poster|cover|screenshot|screen shot|scan|scanned|icon|flag|coat of arms|seal|banknote|stamp|coin|signature|drawing|illustration|cartoon|clipart|svg|pdf|document|table|infographic|wikimedia|commons|wikidata|menu|display|thumbnail|unnamed|untitled|placeholder|no image|no photo)\b/i;
+  /\b(logo|logos|map|maps|diagram|chart|graph|poster|cover|screenshot|screen shot|scan|scanned|icon|flag|coat of arms|seal|banknote|stamp|coin|signature|drawing|illustration|cartoon|clipart|svg|pdf|document|table|infographic|wikimedia|commons|wikidata|menu|display|thumbnail|unnamed|untitled|placeholder|no image|no photo|policies|policy brief|press release)\b/i;
 
 // Eski/tarama görselleri: haber sayfasında "dikkat çekici" durmaz.
 const ESKI_GORSEL = /(black and white|monochrome|archival|historical|engraving|lithograph|fortepan|wellcome|bundesarchiv|nationaal archief|\b18\d\d\b|\b19[0-7]\d\b)/i;
@@ -60,11 +60,95 @@ const AFET_SORGU =
 const FELAKET_GORSEL =
   /\b(flood|inundat|earthquake|quake|fire|burn|blaze|storm|hurricane|typhoon|cyclone|damag|destro|rubble|collaps|rescue|drought|blizzard|snowstorm|avalanche|eruption|lava|wreck)/i;
 
+// Pandemi dönemi fotoğrafları (maskeli insanlar, karantina sokakları) 2020-2021
+// görünümlü ve bugünün haberiyle ilgisiz duruyor. Sorgu pandemiyle ilgili
+// değilse bu kareler kapak olmaz. (Getir market araştırması haberine "Kolkata
+// karantinasında maskeli adam" fotoğrafı düşmüştü.)
+const PANDEMI_GORSEL =
+  /\b(covid|covid-?19|coronavirus|pandemic|quarantine|lockdown|face ?mask|surgical mask|maskeli|pandemi|karantina)\b/i;
+const PANDEMI_SORGU =
+  /\b(covid|coronavirus|pandemic|quarantine|lockdown|mask|pandemi|karantina|virüs|virus)\b/i;
+
 const MIN_W = 1000;
 const MIN_H = 560;
 const MIN_ORAN = 1.15; // dikey/kare görseller kartlarda kötü kırpılıyor
 const MAX_ORAN = 2.7;
 const ADAY = 22; // Commons'tan alınan aday sayısı (alaka puanı için geniş havuz)
+
+// ---------------------------------------------------------------------------
+// MARKA FARKINDALIĞI
+//
+// AI'nın İngilizce sorgusu markayı atlayabiliyor: "Getir market araştırması"
+// haberi için "online grocery shopping" yazınca Commons alakasız bir 2020
+// fotoğrafı döndürdü; oysa Commons'ta markalı Getir kurye scooter'ları var.
+// Başlıktaki markayı ayrıca arayınca haberin kendi fotoğrafı bulunuyor.
+// ---------------------------------------------------------------------------
+
+// Türkçe cümle başında büyük harfle yazılan sıradan sözcükler: marka değil.
+const MARKA_DISLAMA = new Set(
+  `acil adalet adım akıllı alan aldı altında ana anadolu ara araştırma araştırması ardından artık
+   asgari asker açıklama açıklaması açtı bakan bakanlık bakanlığı başkan başkanlığı belediye bilim
+   bilişim bugün büyük büyükşehir ceza cumhurbaşkanı cumhurbaşkanlığı çalışma çocuk dava dedi devlet
+   dışişleri diğer doktor dönem dünya dün ekonomi eğitim emniyet enerji eski fiyat genel gündem güvenlik
+   hakim hava hayat hükümet ilk kez kamu kanun karar kaza kişi komisyon kurul kurulu mahkeme maliye
+   market milyar milyon müdürlük müdürlüğü neden nasıl ordu ölüm önemli para patron profesör rapor
+   sağlık saldırı savcı savcılık sayı sel son sıcaklık spor şirket tarih teknoloji ticaret tüketici
+   tüketiciler türkiye türk ülke üniversite uzman uzmanlar vali valilik yapay yargı yasa yeni yıl
+   yüzde zeka zam zarar yetkililer kullanıcılar araştırmacılar bilim insanları abd ab bm bmgk nato imf
+   tır tir suv abs esp gps led ssd ram cpu gpu usb wifi 5g 4g ai tv pc halk sgk fpt uefa fifa`
+    .split(/\s+/)
+    .filter(Boolean)
+);
+
+// İngilizce'de sıradan sözcük olan markalar: yalnız başına aranınca alakasız
+// fotoğraf getirir (Apple → elma, Windows → pencere, Galaxy → galaksi).
+const MARKA_BELIRSIZ = new Set(
+  `apple windows office edge chrome pixel galaxy note play store market home smart one plus
+   prime news media general future world health science sport sports game games mobile internet
+   cloud stream photo camera phone tv ai app web data tech digital global star sun moon light
+   energy power water fire earth sea air city country people life love time money bank gold
+   silver black white color art music film series season final first last new best top pro max
+   ultra mini super live life style times post today daily`
+    .split(/\s+/)
+    .filter(Boolean)
+);
+
+// Tanınmış markalar: küçük harfle yazılsa bile marka kabul edilir.
+const BILINEN_MARKALAR = new Set(
+  `getir trendyol hepsiburada migros a101 şok sok togg arçelik arcelik vestel türkcell turkcell
+   vodafone türk telekom turktelekom sunexpress toyota volkswagen renault
+   fiat hyundai kia opel peugeot citroen skoda nissan honda mercedes bmw audi stellantis
+   samsung xiaomi huawei oppo vivo realme oneplus google microsoft openai anthropic
+   chatgpt copilot nvidia intel amd qualcomm asus lenovo acer msi gigabyte logitech
+   playstation xbox nintendo netflix spotify instagram whatsapp telegram tiktok youtube
+   twitter aliexpress n11 çiçeksepeti ciceksepeti yemeksepeti sahibinden
+   akbank işbank isbank yapıkredi yapikredi qnb
+   baykar tusaş tusas aselsan roketsan tübitak tubitak`
+    .split(/\s+/)
+    .filter(Boolean)
+);
+
+/**
+ * Başlıktaki en olası marka/özel ürün adını döndürür (yoksa "").
+ * Yalnızca güvenilir adaylar: bilinen marka listesi, içinde büyük harf olan
+ * (iPhone, YouTube), rakam içeren (A101) veya tamamı büyük kısaltmalar (THY).
+ */
+export function markaAdi(baslik) {
+  const adaylar = [];
+  for (const ham of String(baslik || "").split(/[^\p{L}\p{N}]+/u)) {
+    const t = ham.trim();
+    if (t.length < 3 || !/^\p{Lu}/u.test(t)) continue;
+    const kucuk = t.toLocaleLowerCase("tr");
+    if (MARKA_DISLAMA.has(kucuk) || MARKA_BELIRSIZ.has(kucuk)) continue;
+    if (BILINEN_MARKALAR.has(kucuk)) {
+      adaylar.push({ ad: t, puan: 5 });
+    } else if (/^\p{Lu}\p{Ll}+\p{Lu}/u.test(t)) {
+      adaylar.push({ ad: t, puan: 4 }); // YouTube, TikTok, ServiceNow
+    }
+  }
+  adaylar.sort((a, b) => b.puan - a.puan || b.ad.length - a.ad.length);
+  return adaylar[0]?.ad || "";
+}
 
 /** HTML etiketlerini ve varlıklarını temizler (Artist alanı HTML geliyor). */
 function duzMetin(value, max = 90) {
@@ -187,6 +271,10 @@ function uygunGorsel(sayfa, sorgu, afet = false) {
   // PD-Art: iki boyutlu sanat eserinin birebir kopyası (gravür, tablo, minyatür).
   if (/^pd[\s-]?art/i.test(duzMetin(hamLisans, 60))) return null;
 
+  // Pandemi dönemi kareleri: sorgu pandemiyle ilgili değilse kapak olmaz.
+  const aciklama = duzMetin(meta.ImageDescription?.value, 600);
+  if (PANDEMI_GORSEL.test(`${baslik} ${aciklama}`) && !PANDEMI_SORGU.test(sorgu)) return null;
+
   const url = String(ii.thumburl || ii.url || "").split("?")[0];
   // Commons küçük görselleri iki CDN alan adından veriyor.
   if (!/^https:\/\/(upload|thumb)\.wikimedia\.org\//i.test(url)) return null;
@@ -198,7 +286,6 @@ function uygunGorsel(sayfa, sorgu, afet = false) {
   // içermiyorsa fotoğraf kapak olamaz: Commons araması konu bulamadığında
   // açıklaması "municipality office" geçen Macar bir binayı, "stadium" geçen
   // Polonya stadını getirebiliyor (Türkiye haberi için yanlış bağlam).
-  const aciklama = duzMetin(meta.ImageDescription?.value, 600);
   const dosyaPuan = alaka(baslik, sorgu);
   const sSorgu = kelimeler(sorgu);
   const eslesen = eslesenSayisi(baslik, sorgu);
@@ -216,6 +303,11 @@ function uygunGorsel(sayfa, sorgu, afet = false) {
   let skor = puan;
   if (ESKI_GORSEL.test(baslik)) skor -= 0.5;
   if (SAHNE_GORSEL.test(baslik)) skor -= 0.2;
+  // ÇEKİCİLİK: kartlarda en iyi duran kare 16:9'a yakın, bol pikselli olandır.
+  // (Küçük kareler kartta bulanık, çok basık kareler kırpılmış görünür.)
+  skor += Math.max(0, 0.18 - Math.abs(oran - 16 / 9) * 0.3);
+  if (w >= 2000 && h >= 1100) skor += 0.12;
+  else if (w >= 1600) skor += 0.06;
 
   return {
     url,
