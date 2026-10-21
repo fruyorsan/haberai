@@ -42,6 +42,9 @@ const SPAM_PATTERNS = [
 // Yabancı spam veya yerel bülten kaynakları
 const SPAM_SOURCES = [
   /vietnam\.vn/i,
+  /state_bank_of_vietnam/i,
+  /\bvietnam\b/i,
+  /\bsbv\b.*banka/i,
   /\bcan tho\b/i,
   /\bhanoitex\b/i,
   /bitlis\s*postası/i,
