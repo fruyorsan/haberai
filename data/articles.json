@@ -1,5 +1,127 @@
 [
   {
+    "id": "a74911935a06bea2",
+    "title": "PHP ekibi kritik güvenlik açıkları için acil yama çıkardı",
+    "slug": "php-ekibi-kritik-guvenlik-aciklari-icin-acil-yama-cikardi",
+    "summary": "PHP geliştiricileri, sunucularda uzaktan kod yürütülmesine zemin hazırlayan PHP2Shell güvenlik açıklarını kapatmak için acil güncellemeler sundu. İnternet genelinde yaygın kullanılan yazılımdaki açıkların ciddiyet seviyesi 10 üzerinden 9,2 olarak belirlendi. Web yöneticilerinin sunucu taraflı paketleri gecikmeden güncellemesi gerekiyor.",
+    "keyPoints": [
+      "Bellek yönetimi hatasından kaynaklanan PHP2Shell açıklarının tehlike skoru 9,2 olarak açıklandı.",
+      "Web sitelerinin yüzde 69,3'ünde kullanılan PHP altyapısında PHP 5.4'e kadar risk var."
+    ],
+    "body": [
+      "İnternet sitelerinin büyük bölümüne güç veren PHP programlama dilinde iki adet kritik güvenlik zafiyeti saptandı. Güvenlik uzmanları, saldırganların sisteme giriş yapmadan WordPress, Drupal ve Joomla gibi platformlarda uzaktan yetkisiz kod işletebildiğini kanıtladı. Sitelerin uygulama kodunda ek bir hata bulunmasa dahi çekirdek yazılımdaki bu sorun doğrudan sunucuyu tehlikeye atıyor.",
+      "W3Techs tarafından paylaşılan 21 Ekim tarihli verilere göre sunucu dili belirlenebilen internet sitelerinin yüzde 69,3'ü PHP kullanıyor. Yaşanan krizin temelinde ise PHP'nin bellek yönetimi mimarisindeki aksaklıklar yer alıyor. Yetersiz bellek hataları sırasında yarım kalan işlemler, sistemin geçersiz kalmış verileri çağırmasına yol açıyor. Kötü niyetli aktörler bu durumu lehlerine çevirerek sunucu şifrelerini, oturum kayıtlarını ve API anahtarlarını ele geçirebiliyor.",
+      "PHP Vakfı cephesinden yapılan bilgilendirmede, bellek sorununa dair ilk emarelerin aslında 2024 yılında kayıtlara girdiği itiraf edildi. O dönemde pratik bir istismar yolu bulunamaması ve kaynak yetersizliği nedeniyle yamanın geciktiği, bu tablonun kurumsal bir aksaklık yarattığı kaydedildi. Güvenlik firması Wiz ise saldırı yöntemlerinin doğrulanmasında ve açıkların test edilmesinde yapay zeka modellerinin etkin biçimde rol oynadığını bildirdi.",
+      "Tehdidin yayılma riski üzerine planlanan takvim öne çekilerek 21 Ekim'de güvenlik yamaları servis edildi. Ancak uzmanlar yalnızca WordPress eklentilerini veya harici güvenlik duvarlarını güncellemenin tam koruma sağlamayacağını, sunucudaki ana PHP yazılımının acilen yükseltilmesi gerektiğini hatırlatıyor."
+    ],
+    "comment": "Web yöneticilerinin WordPress eklentilerini güncellemekle yetinmeyip doğrudan sunucu seviyesindeki PHP sürümünü yükseltmesi şart. PHP 5.4 sürümüne kadar uzanan bu bellek kusuru, sitelerin kod yapısı ne kadar sağlam olursa olsun sunucunun tüm kontrolünü yabancılara bırakabiliyor. Bu açık özellikle bağımsız barındırma hizmeti kullanan geliştiricileri ve kurumsal web altyapılarını doğrudan tehdit ediyor. Sunucu sağlayıcısı PHP 8.2.35 veya daha yeni bir sürüme geçiş yapmadığı takdirde Cloudflare benzeri güvenlik duvarları bile saldırıları tamamen engelleyemez.",
+    "editorNote": "Web sitenizi güncel tutmanız yetmiyor; sunucudaki PHP 8.2.35 öncesi sürümler sisteminizi tamamen savunmasız bırakabilir.",
+    "tags": [
+      "PHP",
+      "siber güvenlik",
+      "WordPress",
+      "sunucu",
+      "yazılım güncellemesi"
+    ],
+    "category": "Yazılım",
+    "gorselSorgu": "server room data center",
+    "source": "Tamindir",
+    "sourceUrl": "https://www.tamindir.com/haber/php-kritik-guvenlik-aciklari-icin-acil-guncelleme_112434/",
+    "image": "https://img.tamindir.com/2026/10/476765/php-kritik-guvenlik-aciklari-icin-acil-guncelleme.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T22:03:00.384Z",
+    "generatedAt": "2026-10-21T22:03:24.784Z",
+    "breaking": true
+  },
+  {
+    "id": "2cdc754afd0e1254",
+    "title": "Kanada-Ontario 8,7 Milyar Dolarla ABD Tarife Saldırılarına Karşı Büyük Aksiyon",
+    "slug": "kanada-ontario-8-7-milyar-dolar-tarife-saldirilarina-karar",
+    "summary": "Kanada Başbakanı Mark Carney ve Ontario Başbakanı Doug Ford, ABD tarifelerinin getirdiği ekonomik belirsizliğe karşı 8,7 milyar dolarlık bir destek paketi açıkladı. Paket çelik, otomotiv ve kritik mineraller gibi stratejik sektörleri korumayı ve yeni ihracat pazarları yaratmayı hedefliyor. Çalışanlara ve işletmelere yönelik destek, uzun vadeli büyüme için kritik bir adım olarak öne çıkıyor.",
+    "keyPoints": [
+      "Çelik sektöründe 5 yıllık Ortak Çelik Eylem Fonu kapsamında 5,22 milyar dolar yatırım",
+      "Otomotiv endüstrisine 2,5 milyar dolar ek yatırım, elektrikli araç üretimi destekleniyor",
+      "Kritik minerallerin geliştirilmesi için Ontario ve federal hükümetin 1 milyar dolarlık ortak katkısı"
+    ],
+    "body": [],
+    "comment": "",
+    "editorNote": "",
+    "tags": [],
+    "category": "Dünya",
+    "gorselSorgu": "",
+    "source": "Canlı Gaste",
+    "sourceUrl": "https://www.canligaste.com/kanada-ve-ontario-eyaleti-abd-tarifelerine-karsi-8-7-milyar-dolarlik-paket-acikladi/932598/",
+    "image": "https://www.canligaste.com/haber-gorsel/2026/10/abd-iran-in-golge-filosuna-yonelik-yeni-yaptirimlar-acikladi-932461.webp",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T21:57:44.000Z",
+    "generatedAt": "2026-10-21T22:03:46.031Z",
+    "breaking": true
+  },
+  {
+    "id": "58552acd78b87454",
+    "title": "Netanyahu’nun İran Planı Trump’tan Çıkmadı: ABD’nin Kararı Öne Çıktı",
+    "slug": "netanyahu-iran-plani-trump",
+    "summary": "İsrail Başbakanı Netanyahu’nun İran’a saldırı planı olduğu iddia edildi, fakat ABD Başkanı Trump’ın ara seçimlerden önce herhangi bir şiddet eylemine izin vermediği bildirildi. Finansal Times’ta yapılan açıklamalara göre plan, İran’ın nükleer tesislerini hedef alacak olsa da, Trump’ın kararının çatışmaların sürdürülmesini engellediği öne çıkıyor.",
+    "keyPoints": [
+      "İsrail ordusu 10 Ekim’de saldırı için hazırlık yaptı",
+      "Trump, ara seçim öncesinde İran’a saldırmaktan kaçındı"
+    ],
+    "body": [
+      "İsrail’in yeni saldırı planı, 10 Ekim’de gerçekleşmesi planlanan operasyonlar için hazırlık yapıldığına dair bilgilerle gündeme geldi. Finansal Times, haberin kaynağını İsrail ordusunun üst düzey yetkililerine bağlarken, planın İran’ın nükleer tesislerini ve kritik altyapı tesislerini hedef alacağını belirtti. Ancak ABD Başkanı Donald Trump, 3 Kasım’da yapılacak ara seçimler öncesinde İran ile çatışmaların yeniden başlamasını kesinlikle istemediğini açıkladı. Trump’ın bu kararı, ABD’nin 2024 ara seçim kampanya döneminde istikrarı koruma çabalarıyla paralel bir stratejiyi yansıtıyor. İsrail’in planı, şubat ayındaki önceki operasyonlara göre daha yoğun ve kapsamlı olarak değerlendirilirken, Trump’ın müdahalesiyle çatışmaların önümüzdeki haftalarda yeniden başlaması beklenmiyor. Pentagon henüz resmi bir açıklama yapmamış olsa da, haberin ardından ABD savunma bakanı Pete Hegseth’in gizli bir İsrail ziyareti yapması gündeme ilginç bir senaryo ekledi. Bu gelişme, Orta Doğu’da güvenlik ortamının ne kadar hassas olduğunu bir kez daha gösteriyor. Netanyahu’nun Trump’ı ikna etmeye çalıştığı iddiası, İsrail’in dış politikasının izcilik ve diplomasi arasında dengeli bir yaklaşım sergileme çabasını yansıtıyor. ABD’nin kararı, bölgedeki gerginliğin kontrol altında tutulması için kritik bir sinyal olarak değerlendiriliyor."
+    ],
+    "comment": "Netanyahu’nun İran’a yönelik saldırı planı, Trump’ın ara seçim öncesi kararlarıyla kilit bir dönemeç oluşturdu. ABD’nin stratejik durağanlık uygulaması, Orta Doğu’daki gerginliği geçici olarak yatıştırırken, İsrail’in silahlı eylem planları da bölgenin istikrarını yeniden tartışmaya sevk ediyor.",
+    "editorNote": "İsrail-ABD ilişkileri ve Orta Doğu siyaseti açısından kritik bir gelişme.",
+    "tags": [
+      "İsrail",
+      "İran",
+      "ABD",
+      "Orta Doğu"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "Israel Iran military plan",
+    "source": "Güven Gazetesi",
+    "sourceUrl": "https://www.guvengazetesi.com.tr/netanyahu-nun-iran-plani-trump-a-mi-takildi/110406/",
+    "image": "https://www.guvengazetesi.com.tr/images/haberler/2026/10/netanyahu-nun-iran-plani-trump-a-mi-takildi-9928.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T21:56:51.000Z",
+    "generatedAt": "2026-10-21T22:04:30.548Z",
+    "breaking": true
+  },
+  {
+    "id": "141d6a2251471ee6",
+    "title": "NY Borsalarında Yükseliş: SpaceX ve Yapay Zeka Hisseleri Köpük",
+    "slug": "ny-borsalari-yukseklik-spacex-yapay-zeka-hisseleri",
+    "summary": "New York borsaları yükselişle kapanırken, SpaceX'in son finansal raporu ve yapay zeka odaklı şirketlerin performansı piyasayı canlandırdı. Dow Jones 52.856 puana, Nasdaq 26.702 puana yükseldi.",
+    "keyPoints": [
+      "SpaceX, 3. çeyrek gelirinde %161 artış rapor etti",
+      "Nasdaq %1,05 artışla 26.702 puana yükseldi",
+      "Super Micro Computer, AI sunucularına talep artışı nedeniyle %9,6 fiyat artışı gördü"
+    ],
+    "body": [
+      "New York borsaları, Dow Jones’un 52.856,09 puana, S&P 500’in 7.757,17 puana ve Nasdaq’ın 26.702,86 puana yükselerek gününü kapattı. Yatırımcılar için pozitif bir tablo çizildi.",
+      "Spesifik bir aksiyon olarak, SpaceX’in halka arzının ardından açıklanan gelir raporu, yapay zeka (AI) segmentinin ve Starlink abone sayısının artışıyla birlikte %161 gelir artışı sundu. CEO Elon Musk, 2027 yılına kadar 500 milyar‑1 trilyon dolar arasında yıllık gelir hedeflediğini duyurdu.",
+      "SpaceX’in hisseleri %7,8 yükseldi, Tesla ise %3,4 artış gösterdi. Super Micro Computer, AI sunucularına artan talebin etkisiyle 3 aylık gelir beklentisini yükseltti ve %9,6 değer kazandı.",
+      "Diğer teknoloji şirketleri de yükseliş trendinde; Nvidia %2,5, AMD %3,4 ve Micron Technology %1,9 artışla piyasada yerini korudu. Analistler, yüksek AI harcamalarının sürdürülebilirliğine dair endişelerini hafifletti."
+    ],
+    "comment": "Bu haber, ABD borsalarında yapay zeka sektörünün yükselişini ve SpaceX’in güçlü finansal performansını vurguluyor. Yatırımcılar için önemli göstergeler sunan rapor, AI yatırımlarının potansiyelini yeniden gündeme taşıyor.",
+    "editorNote": "Borsa güncellemesi, AI odaklı şirketlerin yükselişini öne çıkarıyor.",
+    "tags": [
+      "Borsa",
+      "Yapay Zeka",
+      "SpaceX",
+      "Super Micro"
+    ],
+    "category": "Ekonomi",
+    "gorselSorgu": "stock market graph AI growth",
+    "source": "Ekonomim",
+    "sourceUrl": "https://www.ekonomim.com/ekonomi/new-york-borsasi-gunu-yukselisle-kapatti-haberi-926281",
+    "image": "https://img.ekonomim.com/rcman/Cw1280h720q95gc/storage/files/images/2026/09/17/new-york-borsasi-gunu-yukselisle-kapatti-umyf_cover.gif",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T21:56:00.000Z",
+    "generatedAt": "2026-10-21T22:05:17.017Z",
+    "breaking": true
+  },
+  {
     "id": "85187c20b120e899",
     "title": "Meta, Üçüncü Çeyrekte Geliri %26 Artışla 64,6 Milyar Dolar",
     "slug": "meta-uguncesi-gelecek-gelir-26-artis",
