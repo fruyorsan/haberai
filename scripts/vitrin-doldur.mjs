@@ -219,7 +219,7 @@ export const CURATED = [
   {
     source: "ShiftDelete",
     sourceUrl: "https://shiftdelete.net/xbox-game-pass-sistemine-koklu-degisiklik-yolda",
-    image: "https://ares.shiftdelete.net/2026/10/xbox-game-pass-sistemine-koklu-degisiklik-yolda.webp",
+    image: "https://www.donanimhaber.com/images/images/haber/211789/src/xbox-game-pass-bu-ay-sekiz-oyuna-veda-edecek211789_0.jpg",
     category: "Oyun",
     publishedAt: "2026-10-21T16:22:00.000Z",
     title: "Xbox Game Pass abonelik paketlerinde bulut ve aile odaklı yeni dönem başlıyor",
@@ -297,7 +297,7 @@ export const CURATED = [
   {
     source: "DonanımHaber",
     sourceUrl: "https://www.donanimhaber.com/watch-10-dan-gectim-ne-fark-etti-apple-watch-12-incelemesi--211835",
-    image: "https://www.donanimhaber.com/images/images/haber/211835/1200x675watch-10-dan-gectim-ne-fark-etti-apple-watch-12-incelemesi.jpg",
+    image: "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-21_15-55-13_ojAzr.jpg",
     category: "Donanım",
     publishedAt: "2026-10-21T16:10:00.000Z",
     title: "Apple Watch 12 incelemesi: Watch 10'dan geçince pil ve ekranda neler değişti",
@@ -407,7 +407,7 @@ const REPLACEMENTS = [
   },
   {
     match: /Anthropic, altı aylık net zararını 80,7 milyar dolar/i,
-    image: "https://ares.shiftdelete.net/2026/10/TV-hizlandirma.webp",
+    image: "https://www.donanimhaber.com/images/images/haber/211906/src/anthropic-in-ilk-6-aydaki-zarari-80-milyar-dolari-asti211906_0.jpg",
   },
   {
     match: /Nvidia, Avrupa yapay zekâ pazarındaki veri merkezleri/i,
@@ -415,7 +415,7 @@ const REPLACEMENTS = [
   },
   {
     match: /Tesla ile SpaceX birleşmesi 3,6 trilyon dolarlık/i,
-    image: "https://ares.shiftdelete.net/2025/02/elon-musk-openai-satin-alma-teklifi.webp",
+    image: "https://coinmuhendisi.com/blog/wp-content/uploads/2026/06/bitcoin_spacex_cm.jpg",
   },
   {
     match: /Intel ve AMD, x86 işlemciler için PyTorch/i,

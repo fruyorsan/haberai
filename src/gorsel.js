@@ -24,7 +24,7 @@ export function looksLikeIcon(url) {
   const u = String(url || "");
   if (!/^https?:\/\//i.test(u)) return true;
   if (/\.svg(\?|#|$)/i.test(u)) return true;
-  return /(logo|favicon|sprite|avatar|gravatar|placeholder|no[-_]?image|default[-_/]?(image|img|thumb)|watermark|share[-_]?(icon|default)|icon[-_/]|[-_/]icon|1x1|pixel\.(gif|png)|blank\.(gif|png)|transparent\.(gif|png)|habergorseli|son-?dakika\.jpe?g)/i.test(
+  return /(logo|favicon|sprite|avatar|gravatar|placeholder|no[-_]?image|default[-_/]?(image|img|thumb)|watermark|share[-_]?(icon|default)|icon[-_/]|[-_/]icon|1x1|pixel\.(gif|png)|blank\.(gif|png)|transparent\.(gif|png)|habergorseli|son-?dakika\.jpe?g|video-thumbnail|youtube-thumbnail|kutu-acilis-videosu|tv-hizlandirma|hakki-alkan)/i.test(
     u
   );
 }
@@ -302,6 +302,10 @@ export function biggerVariants(url) {
   if (wt) {
     out.push(`${wt[1]}1200xauto.jpg`);
   }
+
+  // DonanımHaber: 1200x675{slug}.jpg üzerinde yazı/kutu bindirmesi var; temiz /src/ sürümü önce denenir.
+  const dh = /^(https?:\/\/www\.donanimhaber\.com\/images\/images\/haber\/(\d+)\/)1200x675([^/?#]+)\.jpg$/i.exec(u);
+  if (dh) out.push(`${dh[1]}src/${dh[3]}${dh[2]}_0.jpg`);
 
   // foo-780x470.jpg → foo-1280x720.jpg (+ sürümsüz orijinal)
   const m = /^(.*?)-(\d{2,4})x(\d{2,4})(\.(?:jpe?g|png|webp|avif))(\?[^#]*)?$/i.exec(u);

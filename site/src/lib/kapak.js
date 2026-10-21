@@ -21,12 +21,12 @@ import { getArticles, imageUrl } from "./articles.js";
 
 // Dosya adında geçen yer tutucu/logo desenleri
 const YER_TUTUCU =
-  /(habergorseli|haber-?gorseli|default|placeholder|no-?image|noimage|resim-?yok|kapak-?yok|generic|blank|dummy|son-?dakika\.?jpe?g)/i;
+  /(habergorseli|haber-?gorseli|default|placeholder|no-?image|noimage|resim-?yok|kapak-?yok|generic|blank|dummy|son-?dakika\.?jpe?g|tv-hizlandirma|iphone-18-pro-inceleme|elon-musk-openai-satin-alma-teklifi)/i;
 
 // Aynı görsel kaç habere kapak olursa "genel görsel" sayılır?
 // (3-4 kez tekrar edenler genelde aynı olayı anlatan haberler olur; 5+ tekrar
 // pratikte hep yer tutucu çıkıyor.)
-const TEKRAR_ESIGI = 5;
+const TEKRAR_ESIGI = 3;
 
 /** Aynı fotoğrafın farklı boyut sürümlerini eşleştirmek için kimlik. */
 function kimlik(url) {
