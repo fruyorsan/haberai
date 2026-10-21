@@ -58,6 +58,22 @@ const body = Array.isArray(article.body) ? article.body.filter(Boolean) : [];
 // gösterilmez (bkz. lib/kapak.js); yerine doğrulanmış ek fotoğraf, o da yoksa
 // markalı kapak kullanılır. `kapak` boşsa çağıranlar /og-default.png'e düşer.
 const kapak = kapakKaynagi(article);
+// Fotoğraf yoksa: kategoriye özel renkli/ikonlu kapak (düz kırmızı "H" yerine).
+const PH_TEMALAR = {
+  "Dünya": { hue: 210, ikon: "🌍" },
+  "Gündem": { hue: 350, ikon: "📰" },
+  "Ekonomi": { hue: 145, ikon: "📈" },
+  "Spor": { hue: 25, ikon: "⚽" },
+  "Teknoloji": { hue: 265, ikon: "💻" },
+  "Yapay Zeka": { hue: 285, ikon: "🤖" },
+  "Oyun": { hue: 310, ikon: "🎮" },
+  "Mobil": { hue: 195, ikon: "📱" },
+  "Donanım": { hue: 235, ikon: "🖥️" },
+  "Yazılım": { hue: 170, ikon: "⌨️" },
+  "Bilim": { hue: 180, ikon: "🔬" },
+  "Kültür": { hue: 330, ikon: "🎭" },
+};
+const phTema = PH_TEMALAR[article.category] || { hue: 350, ikon: "H" };
 
 // --- Bildirim (web push) ---
 // OneSignal App ID tanımlıysa haber sayfasında "bu kategoriyi takip et" düğmesi
@@ -231,8 +247,8 @@ const breadcrumbLd = {
       </div>
 
       <div class="post__media">
-        <div class="post__ph" aria-hidden="true">
-          <span class="post__ph-mark">H</span>
+        <div class="post__ph" aria-hidden="true" style={`--ph-hue:${phTema.hue}`}>
+          <span class="post__ph-mark">{phTema.ikon}</span>
           <span class="post__ph-cat">{article.category}</span>
         </div>
         {kapak ? (
@@ -671,11 +687,13 @@ const breadcrumbLd = {
     gap: 12px;
     background:
       radial-gradient(120% 120% at 12% 0%, rgba(255, 255, 255, 0.16), transparent 55%),
-      var(--red-grad);
+      radial-gradient(circle at 85% 90%, hsla(var(--ph-hue, 350), 90%, 60%, 0.45), transparent 50%),
+      repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0 2px, transparent 2px 14px),
+      linear-gradient(135deg, hsl(var(--ph-hue, 350), 75%, 42%), hsl(calc(var(--ph-hue, 350) + 25), 70%, 18%));
     color: rgba(255, 255, 255, 0.94);
   }
   .post__ph-mark {
-    font-size: clamp(3rem, 9vw, 5.4rem);
+    font-size: clamp(3.4rem, 10vw, 6rem);
     font-weight: 900;
     line-height: 1;
     letter-spacing: -0.04em;

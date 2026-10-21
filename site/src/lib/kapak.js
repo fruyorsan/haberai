@@ -26,7 +26,7 @@ const YER_TUTUCU =
 // Aynı görsel kaç habere kapak olursa "genel görsel" sayılır?
 // (3-4 kez tekrar edenler genelde aynı olayı anlatan haberler olur; 5+ tekrar
 // pratikte hep yer tutucu çıkıyor.)
-const TEKRAR_ESIGI = 3;
+const TEKRAR_ESIGI = 5;
 
 /** Aynı fotoğrafın farklı boyut sürümlerini eşleştirmek için kimlik. */
 function kimlik(url) {
