@@ -145,7 +145,7 @@ export const AVATARLAR = [
   { kod: "/avatar/kedi.webp", ad: "Kedi", renk: "#d98a9a" },
   { kod: "/avatar/golden.webp", ad: "Golden", renk: "#e8a62b" },
   { kod: "/avatar/panda.webp", ad: "Panda", renk: "#3f8c76" },
-  { kod: "/avatar/penguen.webp", ad: "Penguen", renk: "#4b83a8" },
+  { kod: "/avatar/pingu.webp", ad: "Pingu", renk: "#e4573d" },
   // Manzara ve objeler
   { kod: "/avatar/dag.webp", ad: "Dağ", renk: "#6a4fc1" },
   { kod: "/avatar/deniz-manzara.webp", ad: "Deniz Manzarası", renk: "#4b83a8" },
@@ -154,7 +154,7 @@ export const AVATARLAR = [
   { kod: "/avatar/cicekli-tavsan.webp", ad: "Çiçekli Tavşan", renk: "#d98a9a" },
   { kod: "/avatar/gamepad.webp", ad: "Gamepad", renk: "#4b83a8" },
   { kod: "/avatar/cicek.webp", ad: "Çiçek", renk: "#d9364b" },
-  { kod: "/avatar/yaprak.webp", ad: "Yaprak", renk: "#1f6f54" },
+  { kod: "/avatar/pikachu.webp", ad: "Pikachu", renk: "#e8a62b" },
 ];
 
 export const KATEGORILER = [
