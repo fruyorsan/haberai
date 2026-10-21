@@ -1,5 +1,39 @@
 [
   {
+    "id": "88002af196ae8906",
+    "title": "PHP Güvenlik Açığı 2024’ten beri Biliniyordu: Yama Sürecinde Kriz",
+    "slug": "php-guvenlik-acigi-2024-yama-sikri",
+    "summary": "PHP’de tespit edilen kritik güvenlik açığı, 2024 yılından beri fark edilmiş ancak yama sürecinde yaşanan gecikme ve hatalı yayınlanma, sektöründe büyük tartışmalara yol açtı. Chainguard’ın ve bir güvenlik firmasının aksaklıkları, sistemleri kritik risk altına soktu.",
+    "keyPoints": [
+      "Açığa dair bilgiler 20 Ekim’de sızdı; yama sürecinde 6 saatten fazla gecikme yaşandı.",
+      "Chainguard, ambargoyu ihlal ederek düzeltmeyi erken paylaştı; bir güvenlik şirketi ise açığı yanlışlıkla yayınladı.",
+      "PHP’nin güvenliği, sadece sınırlı sayıda geliştiriciye dayanıyor; bu durum, kritik sistemlerin güncellenmesinde zorluk yaratıyor."
+    ],
+    "body": [
+      "2024 yılında, PHP’deki kritik bir güvenlik açığı ilk kez fark edildi. Ancak, yama sürecinde yaşanan aksaklıklar ve gecikmeler, güvenlik topluluğu ve işletmeler arasında büyük bir endişe yarattı.",
+      "Açığın detayları 20 Ekim’de internete sızdı ve sosyal medyada büyük yankı buldu. Bir güvenlik firmasının yanlışlıkla yayımladığı bir videoda saldırı senaryosu gösterilmiş, Chainguard ise ambargoyu ihlal ederek düzeltmeyi altı saatten fazla önce duyurdu.",
+      "PHP’nin güvenliğini sağlayan ekip, dünya genelinde sınırlı sayıda geliştiriciye sahip. Bu durum, dilin bankacılıktan kamu hizmetlerine kadar geniş bir yelpazede kritik sistemlerde kullanılmasına rağmen, güncellemelerin hızlı yapılmasını engelliyor.",
+      "Sonuç olarak, bazı kamu hizmetleri sistemlerini geçici olarak kapatmak zorunda kaldı. Açığın yayılma potansiyeli nedeniyle, güvenlik uzmanları kritik altyapıların derhal güncellenmesi gerektiğini vurguluyor."
+    ],
+    "comment": "Yazdığımız analiz, PHP’nin geniş kullanım alanını ve yama sürecindeki aksaklıkların potansiyel etkilerini ortaya koyuyor. Geliştirici ekibinin sınırlı sayıda olması, sektörde bir güvenlik açığının ortadan kaldırılması için daha fazla işbirliği ve kaynak gerektireceğini gösteriyor.",
+    "editorNote": "PHP güvenlik açığı, kritik sistemleri etkileyebilecek bir risk oluşturdu. Hızlı yama ve güncellemeler şart.",
+    "tags": [
+      "PHP",
+      "Güvenlik Açığı",
+      "Yama Süreci",
+      "Kritik Sistemler"
+    ],
+    "category": "Donanım",
+    "gorselSorgu": "PHP security bug",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/milyonlarca-siteyi-ilgilendiren-php-acigi-2024-te-tespit-edilmis--211937",
+    "image": "https://www.donanimhaber.com/images/images/haber/211937/src/milyonlarca-siteyi-ilgilendiren-php-acigi-2024-te-tespit-edilmis211937_0.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T20:56:09.000Z",
+    "generatedAt": "2026-10-21T20:57:38.061Z",
+    "breaking": true
+  },
+  {
     "id": "ae33797edb7ad81e",
     "title": "PHP Güvenlik Krizi Büyüyor: FBI ve Dünya Liderleri Uyarıyor",
     "slug": "php-guvenlik-krizi-fbi-dunya-liderleri-uyariyor",
@@ -65,6 +99,74 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-21T20:48:00.000Z",
     "generatedAt": "2026-10-21T20:53:20.956Z",
+    "breaking": true
+  },
+  {
+    "id": "405c264bba5e2a05",
+    "title": "Fulya Öztürk’ten Kahramanmaraş: 'Depremden Bırakılan İzleri Unutmayacağız'",
+    "slug": "fulya-ozturk-kahramanmaras-itirafi",
+    "summary": "Gazeteci Fulya Öztürk, 11. Uluslararası Kahramanmaraş Kitap Fuarı’nda şehre duyduğu sevgi ve 6 Şubat depremlerinin yürekten izlerini paylaştı. Öztürk, deprem sırasında yaşanan acılara tanık olduğunu ve şehrin yeniden ayağa kalkışını umut verici bulduğunu belirtti.",
+    "keyPoints": [
+      "Öztürk, 6 Şubat depremlerinin ilk gününde Kahramanmaraş’ta bulunarak arama-kurtarma çalışmalarını izledi.",
+      "Şehirdeki Trabzon ve Azerbaycan Caddeleri’ni unutamayacağını ve yeniden yapılanma sürecine umut duyduğunu söyledi.",
+      "Kitap fuarı, Öztürk için sadece bir edebiyat etkinliği değil, şehrin direnişini kutlamak için de bir platform oldu."
+    ],
+    "body": [
+      "Gazeteci Fulya Öztürk, Kahramanmaraş Büyükşehir Belediyesinin ev sahipliğinde gerçekleştirilen 11. Uluslararası Kahramanmaraş Kitap Fuarı’nda, 6 Şubat 2023 depremlerinin ardından şehre duyduğu büyük bağdan bahsetti. Öztürk, fuar öncesi yaptığı açıklamada, depremin ilk gününde şehre geldiğini ve yaşanan büyük acıları yakından gözettiğini hatırlattı.",
+      "Kahramanmaraş’ta geçirdiği süre boyunca, arama kurtarma ekiplerinin çabalarını izleyerek şehrin yeniden ayağa kalkma sürecine tanıklık etti. Özellikle Trabzon ve Azerbaycan Caddelerinde yaşanan trajik olayların derin izlerini hissettiğini belirtti. Bu deneyim, şehre olan duygusal bağını güçlendirdi.",
+      "Günümüzde Kahramanmaraş’ın yeniden inşa sürecinin, hem fiziksel hem de duygusal bir yeniden doğuş olduğunu vurgulayan Öztürk, şehrin direnişini ve umut dolu geleceğini övgü dolu sözlerle taçlandırdı. Fuar, edebiyat ve medya dünyasının tanınmış isimlerini bir araya getirirken, şehrin hikayesini anlatmanın önemini de gözler önüne serdi.",
+      "Özetle, Fulya Öztürk, 11. Kitap Fuarı’nda şehrin yeniden ayağa kalkışını kutlarken, deprem anılarını ve şehrin direnişini hatırlatmanın önemine dikkat çekti. Şehre olan sevgisi ve geleceğe dair umutları, fuarın akademik ve kültürel atmosferiyle birleşerek, okuyuculara dokunaklı bir mesaj sundu."
+    ],
+    "comment": "Fulya Öztürk’ün duygusal konuşması, Kahramanmaraş’ın deprem sonrası yeniden inşa sürecine dair toplumsal bir farkındalık yaratıyor. Mahrem anıların paylaşılması, şehrin direnişini kutlamak ve geleceğe yön vermek adına önemli bir adım. Bu tür röportajlar, toplumsal hafızayı canlı tutarken, yeniden yapılanma çalışmalarını destekleyen bir sosyal bağ yaratıyor.",
+    "editorNote": "Kahramanmaraş Kitap Fuarı, şehrin direnişini ve kültürel zenginliğini bir araya getirerek toplumsal hafızayı güçlendiriyor.",
+    "tags": [
+      "Kahramanmaraş",
+      "Deprem",
+      "Kitap Fuarı",
+      "Fulya Öztürk"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "Kahramanmaras cityscape emergency scene",
+    "source": "Kahramanmaraş Bugün Gazetesi",
+    "sourceUrl": "https://www.marasbugun.com.tr/gazeteci-fulya-ozturkten-kahramanmaras-itiraficok-ozel",
+    "image": "https://marasbuguncomtr.teimg.com/crop/1280x720/marasbugun-com-tr/uploads/2026/10/unlu-gazeteci-fulya-ozturkten-kahramanmaras-itirafi.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T20:47:00.000Z",
+    "generatedAt": "2026-10-21T20:58:19.923Z",
+    "breaking": true
+  },
+  {
+    "id": "502832eb88c299e5",
+    "title": "Trump: Putin ile Varsa Ukrayna Savaşı Anlaşmasına Yaklaşık",
+    "slug": "trump-putin-ukrayna-sava-c4-b1-anlasmas-c4-b1",
+    "summary": "ABD Başkanı Donald Trump, Rusya Devlet Başkanı Vladimir Putin ile yapılan görüşmede Ukrayna savaşı için yeni bir anlaşma olasılığını vurguladı. Trump, aynı zamanda Rusya'da hapisli kalan bir Amerikan vatandaşı Stephen Hubbard'ın serbest bırakılmasını da ele aldı.",
+    "keyPoints": [
+      "Trump, Putin ile Ukrayna savaşı için \"yakın\" bir anlaşma olasılığından bahsetti",
+      "Stephen Hubbard’ın serbest bırakılmasına ilişkin detayları paylaştı",
+      "Trump, Rusya ile İran konusundaki işbirliğini beğendi"
+    ],
+    "body": [
+      "ABİ Başkanı Donald Trump, Beyaz Saray’da düzenlenen siber suç tehditleri toplantısında yaptığı konuşmada, Rusya Devlet Başkanı Vladimir Putin ile Ukrayna savaşını sonlandırma konusunu görüştiğini söyledi. Trump, \"Geçen gün Putin ile savaşı sona erdirme konusunu konuştuk.",
+      "Trump, \"Ailesini televizyonda gördüm, neredeyse yalvarıyordu. Geçen gün Putin ile görüşerek Hubbard’ı serbest bırakmasını talep ettim. O kabul etti\" diye ekledi.",
+      "Trump, Hubbard’ın Rusya’da Ukrayna’daki savaşın sona erdirilmesi çabaları kapsamında bir paketle birlikte geri dönüş yolunda olduğunu belirtti. Ayrıca, Orta Doğu Özel Temsilcisi Steve Witkoff’un da bu süreçte rol oynadığını vurguladı.",
+      "Trump, Rusya ile İran konularında yapılan işbirliğini övgüyle karşılarken, ülkenin ekonomik durumuna dair şok edici veriler sundu. \"İran’ı daha önce hiç görmediği seviyelere indirdik. Paraları değersizleşti, enflasyon yüzde 301’e çıktı\" şeklinde açıklama yaptı."
+    ],
+    "comment": "Trump’ın bu açıklamaları, Rusya ile ABD arasındaki diplomatik temasın bir adım daha ileri gidebileceğine işaret ediyor. Ancak, savaşın hâlâ devam eden taraflar için gerçek bir çözüm sunup sunmadığı merak konusu. Şu anki süreçte, Hubbard’ın serbest bırakılması bir diplomatik şeref olarak değerlendirilebilir, fakat savaşın kalıcı bir barışla sona ermesi için daha kapsamlı çabalar gerekiyor.",
+    "editorNote": "Trump’ın Rusya ile diplomatik temaslarında yeni bir yaklaşım gösterdiği görülüyor. 2026'da bölgesel çatışmaların çözümünde izlenebilecek bir örnek olabilir.",
+    "tags": [
+      "Trump",
+      "Putin",
+      "Ukrayna Savaşı",
+      "Diplomasi"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "trump putin meeting",
+    "source": "Kars Manşet",
+    "sourceUrl": "https://www.karsmanset.com/haber/trump-rusya-ukrayna-savasi-anlasmaya-belki-de-simdiye-kadar-hic-1810256.htm",
+    "image": "https://d.karsmanset.com/news/0.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T20:47:00.000Z",
+    "generatedAt": "2026-10-21T20:58:56.115Z",
     "breaking": true
   },
   {
@@ -609,39 +711,6 @@
     "breaking": true
   },
   {
-    "id": "9d0b5483aad4978d",
-    "title": "Türkiye’de PHP Açığı İle Yüzleşme: Siber Güvenlik Başkanlığı’nın Ulusal Uyarısı",
-    "slug": "turkiye-php-acigi-siber-guncellik-uyarisi",
-    "summary": "Siber Güvenlik Başkanlığı, dünya çapında PHP’de tespit edilen iki kritik açık için ulusal çapta uyarı yayınladı. Kamu ve özel sektör kurumlarına acil güncellemeler ve güvenlik taramaları başlatması talimatı verildi. Açığın, kullanıcı kimlik doğrulaması olmadan uzaktan kod çalıştırma imkanı sunması nedeniyle ciddi riskler oluşturduğu vurgulandı.",
-    "keyPoints": [
-      "PHP2Shell açıkları, internete açık sistemlerde kimlik doğrulaması gerekmeden uzaktan kod yürütme hakkı tanıyor.",
-      "Siber Güvenlik Başkanlığı, tüm kamu kurumlarına ve özel sektör kuruluşlarına acil güvenlik taramaları başlatmasını bildirdi.",
-      "Güncelleme çağrısı, yetkisiz erişim riskini azaltmak ve hizmet sürekliliğini sağlamak amacıyla uluslararası alanda da yankı buldu."
-    ],
-    "body": [
-      "Cumhurbaşkanlığı Siber Güvenlik Başkanlığı, dünya çapında PHP tabanlı sitelerde tespit edilen kritik güvenlik açığına karşı ulusal ölçekte bir uyarı yayımladı. Açığın adı PHP2Shell olarak bilinirken, belirli koşullarda saldırganların kimlik doğrulaması olmadan kod çalıştırmasına olanak tanıyor.",
-      "Bu kritik zafiyet, internete açık sistemlerde yetkisiz erişim, veri ihlali ve hizmet kesintilerine yol açma potansiyeline sahip. Türkiye’deki kamu kurumları başta olmak üzere, tüm kurum ve kuruluşlara acil tedbir alınması konusunda bildirimler gönderildi.",
-      "Siber Güvenlik Başkanlığı, bütün sistemlerde güvenlik taramalarını başlatarak tehditleri erken tespit etmeyi hedefledi. Siber Olaylara Müdahale Ekipleri (SOME) üzerinden gönderilen bildirimlerde, kritik altyapıların güncellenmesi, gereksiz dış erişimlerin kısıtlanması ve ek koruma önlemlerinin alınması gerektiği vurgulandı.",
-      "ABD, AB, İngiltere, Japonya ve Avustralya gibi ülkeler de aynı açıyı kınayarak web yöneticilerine acil güncelleme çağrısında bulundu. Fransa, Hollanda, Almanya ve Finlandiya’da da birçok kamu kurumu, açık nedeniyle geçici olarak sitelerini kapattı."
-    ],
-    "comment": "Bu uyarı, Türkiye’nin siber güvenlik ekosisteminde kritik bir dönemeçtir. PHP’nin yaygın kullanım alanı göz önüne alındığında, hızla uygulanacak güncellemeler ve taramalar, veri güvenliğini sağlamada büyük rol oynayacaktır. Uyarının uluslararası yankısı, küresel donanımları da gözden geçirmeye itiyor.",
-    "editorNote": "İnternet altyapısının güvenliği, kritik yazılımların güncel tutulmasıyla sağlanır. Türkiye’nin hızlı tepki verme yeteneği, küresel standartlara uyum konusunda örnek teşkil ediyor.",
-    "tags": [
-      "PHP",
-      "Siber Güvenlik",
-      "Kritik Açık",
-      "Kamu Kurumları"
-    ],
-    "category": "Teknoloji",
-    "gorselSorgu": "PHP security vulnerability",
-    "source": "NTV Teknoloji",
-    "sourceUrl": "https://www.ntv.com.tr/teknoloji/siber-guvenlik-baskanligindan-ulusal-capta-guvenlik-uyarisi-1747391",
-    "image": "https://images.ntv.com.tr/images/thumbs_b_c_2f15d95897bb7ef8e6eec533438bb1d8-245120.jpg?format=webp&width=1280&height=630",
-    "gorselKaynakSite": true,
-    "publishedAt": "2026-10-21T20:21:57.000Z",
-    "generatedAt": "2026-10-21T20:26:17.072Z"
-  },
-  {
     "id": "53220579438af086",
     "title": "Afrika'nın Güneyinde 5.1 Şiddetinde Deprem: Okyanus Sarsıntısı İzleniyor",
     "slug": "afrika-guneyde-5-1-deprem-oksanus-sarsintisi",
@@ -674,6 +743,39 @@
     "publishedAt": "2026-10-21T20:21:57.000Z",
     "generatedAt": "2026-10-21T20:32:34.996Z",
     "breaking": true
+  },
+  {
+    "id": "9d0b5483aad4978d",
+    "title": "Türkiye’de PHP Açığı İle Yüzleşme: Siber Güvenlik Başkanlığı’nın Ulusal Uyarısı",
+    "slug": "turkiye-php-acigi-siber-guncellik-uyarisi",
+    "summary": "Siber Güvenlik Başkanlığı, dünya çapında PHP’de tespit edilen iki kritik açık için ulusal çapta uyarı yayınladı. Kamu ve özel sektör kurumlarına acil güncellemeler ve güvenlik taramaları başlatması talimatı verildi. Açığın, kullanıcı kimlik doğrulaması olmadan uzaktan kod çalıştırma imkanı sunması nedeniyle ciddi riskler oluşturduğu vurgulandı.",
+    "keyPoints": [
+      "PHP2Shell açıkları, internete açık sistemlerde kimlik doğrulaması gerekmeden uzaktan kod yürütme hakkı tanıyor.",
+      "Siber Güvenlik Başkanlığı, tüm kamu kurumlarına ve özel sektör kuruluşlarına acil güvenlik taramaları başlatmasını bildirdi.",
+      "Güncelleme çağrısı, yetkisiz erişim riskini azaltmak ve hizmet sürekliliğini sağlamak amacıyla uluslararası alanda da yankı buldu."
+    ],
+    "body": [
+      "Cumhurbaşkanlığı Siber Güvenlik Başkanlığı, dünya çapında PHP tabanlı sitelerde tespit edilen kritik güvenlik açığına karşı ulusal ölçekte bir uyarı yayımladı. Açığın adı PHP2Shell olarak bilinirken, belirli koşullarda saldırganların kimlik doğrulaması olmadan kod çalıştırmasına olanak tanıyor.",
+      "Bu kritik zafiyet, internete açık sistemlerde yetkisiz erişim, veri ihlali ve hizmet kesintilerine yol açma potansiyeline sahip. Türkiye’deki kamu kurumları başta olmak üzere, tüm kurum ve kuruluşlara acil tedbir alınması konusunda bildirimler gönderildi.",
+      "Siber Güvenlik Başkanlığı, bütün sistemlerde güvenlik taramalarını başlatarak tehditleri erken tespit etmeyi hedefledi. Siber Olaylara Müdahale Ekipleri (SOME) üzerinden gönderilen bildirimlerde, kritik altyapıların güncellenmesi, gereksiz dış erişimlerin kısıtlanması ve ek koruma önlemlerinin alınması gerektiği vurgulandı.",
+      "ABD, AB, İngiltere, Japonya ve Avustralya gibi ülkeler de aynı açıyı kınayarak web yöneticilerine acil güncelleme çağrısında bulundu. Fransa, Hollanda, Almanya ve Finlandiya’da da birçok kamu kurumu, açık nedeniyle geçici olarak sitelerini kapattı."
+    ],
+    "comment": "Bu uyarı, Türkiye’nin siber güvenlik ekosisteminde kritik bir dönemeçtir. PHP’nin yaygın kullanım alanı göz önüne alındığında, hızla uygulanacak güncellemeler ve taramalar, veri güvenliğini sağlamada büyük rol oynayacaktır. Uyarının uluslararası yankısı, küresel donanımları da gözden geçirmeye itiyor.",
+    "editorNote": "İnternet altyapısının güvenliği, kritik yazılımların güncel tutulmasıyla sağlanır. Türkiye’nin hızlı tepki verme yeteneği, küresel standartlara uyum konusunda örnek teşkil ediyor.",
+    "tags": [
+      "PHP",
+      "Siber Güvenlik",
+      "Kritik Açık",
+      "Kamu Kurumları"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "PHP security vulnerability",
+    "source": "NTV Teknoloji",
+    "sourceUrl": "https://www.ntv.com.tr/teknoloji/siber-guvenlik-baskanligindan-ulusal-capta-guvenlik-uyarisi-1747391",
+    "image": "https://images.ntv.com.tr/images/thumbs_b_c_2f15d95897bb7ef8e6eec533438bb1d8-245120.jpg?format=webp&width=1280&height=630",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T20:21:57.000Z",
+    "generatedAt": "2026-10-21T20:26:17.072Z"
   },
   {
     "id": "d9b4bfedeaa9bbc2",
@@ -3699,6 +3801,36 @@
     "breaking": true
   },
   {
+    "id": "9416645c64ae9a9b",
+    "title": "Anthropic, Kasım Halka Arzında 80 milyar Dolarlık Zarar Açıkladı",
+    "slug": "anthropic-80-milyar-dolar-zarar-2026",
+    "summary": "Anthropic, 2026’nın ilk yarısında 80,7 milyar dolarlık net zarar kaydetti. 72 milyar dolarlık muhasebe giderleri bu rakamı tetikledi. Şirket, kasım ayında 1,8–2 trilyon dolar arasında değerlenerek halka arz planlıyor.",
+    "keyPoints": [
+      "80,7 milyar dolarlık zarar, 72 milyar dolarlık muhasebe gideri nedeniyle",
+      "Kasım’da 1,8–2 trilyon dolar değerlemede halka arz hedefleniyor",
+      "2025’deki 42 milyar dolarlık zarar, 4,6 milyar dolarlık gelirle karşılaştırılıyor"
+    ],
+    "body": [
+      "Anthropic, yapay zeka alanında önde gelen bir şirket olarak, 2026’nın ilk altı ayında 80,7 milyar dolarlık net zarar açıkladı. Bu rakam, geçen yılın aynı döneminde açıklanan 13 milyar dolarlık zarardan çok daha yüksek. Şirketin finansal raporlarına göre, zararının büyük bir kısmı 72 milyar dolarlık muhasebe giderinden kaynaklandı. Bu gider, tahvillerin piyasa değerinin artmasıyla ortaya çıktı ve şirketin muhasebe kayıtlarında da aynı oranda yükseldi. Zararın 72 milyar dolarlık kısmı, Anthropic’in ileride hisselerine dönüştürülebilecek tahvillerin değerlemesinden kaynaklanıyor. Şirketin değerlemesi yükseldikçe bu tahvillerin muhasebe kayıtlarındaki değeri de artıyor. Bu durum, yatırımcıların şirketin finansal sağlığına dair endişelerini artırıyor. Anthropic, 2025 yılında 42 milyar dolarlık net zarar açıklamıştı. Muhasebe giderleri hariç tutulduğunda ise 2025’te 4,6 milyar dolarlık gelir elde etmiş ve 8,1 milyar dolarlık faaliyet zararı kaydetmişti. 2026’da ise bilgi işlem kapasitesi ve altyapı için 9 milyar dolar harcamak zorunda kaldı. Bu tutar, geçen yılın aynı döneminde 2,3 milyar dolarla karşılaştırıldığında çok daha yüksek. Bu büyük yatırımlar, yapay zeka modellerinin geliştirilmesinde yüksek maliyetlerin bir göstergesi. Yatırımcılar, özellikle çip ve veri merkezi yatırımlarına ayrılan kaynakların finansal getiri sağlayıp sağlamayacağını yakından inceliyor. Anthropic, 14 Ekim’de potansiyel halka arz yatırımcılarıyla yapılan toplantıda üçüncü çeyrek gelirlerini paylaştı. Gelir, bir önceki çeyreğe kıyasla %45 artarak 16,8 milyar dolara ulaştı. Ancak bazı yatırımcılar, üçüncü çeyrekteki büyüme hızının yavaşlamasından memnun değiller. Claude Code adlı yazılım geliştirme aracı, şirketin gelir artışında önemli rol oynadı. Bu araç, geliştiricilerin kod yazmalarına ve uygulama oluşturmasına yardımcı olarak talebi artırdı. Anthropic’in bu ürünler sayesinde gelirini büyütmesi, şirketin halka arz hedeflerine ulaşmasında kritik bir faktör olabilir."
+    ],
+    "comment": "Yatırımcılar için en önemli uyarı, şirketin zararının büyük kısmının muhasebe giderlerinden kaynaklanması. 80 milyar dolarlık zarar, 1,8–2 trilyon dolarlık halka arz hedefiyle kıyaslandığında ciddi bir risk işareti. Bu durum, yatırımcıların tahvil ve hisse senetlerini değerlendirirken muhasebe kayıtlarındaki artışları göz önünde bulundurmalarını gerektiriyor. Özellikle 9 milyar dolarlık altyapı harcaması ve 518 milyar dolarlık uzun vadeli taahhüt, şirketin nakit akışını uzun vadede zorlayabilir. Bu gelişme, yapay zeka firmalarının finansal yapılarını yeniden değerlendirmelerini tetikleyebilir. Benzer riskleri taşıyan şirketler, halka arz sürecinde daha şeffaf mali raporlamaya yönelmek zorunda kalabilirler.",
+    "editorNote": "Anthropic’in 80 milyar dolarlık zarar kaydı, halka arz sürecinde yatırımcıların dikkatini çekiyor.",
+    "tags": [
+      "Anthropic",
+      "halka arz",
+      "yapay zeka"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "anthropic data center",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/anthropic-in-ilk-6-aydaki-zarari-80-milyar-dolari-asti--211906",
+    "image": "https://www.donanimhaber.com/images/images/haber/211906/1200x675anthropic-in-ilk-6-aydaki-zarari-80-milyar-dolari-asti.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T17:12:00.000Z",
+    "generatedAt": "2026-10-21T17:29:42.766Z",
+    "breaking": true
+  },
+  {
     "id": "fbba325cac9d93b8",
     "title": "İnternet altyapısında kritik güvenlik açığı: Avrupa'da kamu siteleri erişime kapatıldı",
     "slug": "internet-altyapisinda-kritik-guvenlik-acigi-avrupa-da-kamu-siteleri-erisime-kapa",
@@ -3730,36 +3862,6 @@
     "publishedAt": "2026-10-21T17:12:00.000Z",
     "generatedAt": "2026-10-21T17:16:08.947Z",
     "breaking": false
-  },
-  {
-    "id": "9416645c64ae9a9b",
-    "title": "Anthropic, Kasım Halka Arzında 80 milyar Dolarlık Zarar Açıkladı",
-    "slug": "anthropic-80-milyar-dolar-zarar-2026",
-    "summary": "Anthropic, 2026’nın ilk yarısında 80,7 milyar dolarlık net zarar kaydetti. 72 milyar dolarlık muhasebe giderleri bu rakamı tetikledi. Şirket, kasım ayında 1,8–2 trilyon dolar arasında değerlenerek halka arz planlıyor.",
-    "keyPoints": [
-      "80,7 milyar dolarlık zarar, 72 milyar dolarlık muhasebe gideri nedeniyle",
-      "Kasım’da 1,8–2 trilyon dolar değerlemede halka arz hedefleniyor",
-      "2025’deki 42 milyar dolarlık zarar, 4,6 milyar dolarlık gelirle karşılaştırılıyor"
-    ],
-    "body": [
-      "Anthropic, yapay zeka alanında önde gelen bir şirket olarak, 2026’nın ilk altı ayında 80,7 milyar dolarlık net zarar açıkladı. Bu rakam, geçen yılın aynı döneminde açıklanan 13 milyar dolarlık zarardan çok daha yüksek. Şirketin finansal raporlarına göre, zararının büyük bir kısmı 72 milyar dolarlık muhasebe giderinden kaynaklandı. Bu gider, tahvillerin piyasa değerinin artmasıyla ortaya çıktı ve şirketin muhasebe kayıtlarında da aynı oranda yükseldi. Zararın 72 milyar dolarlık kısmı, Anthropic’in ileride hisselerine dönüştürülebilecek tahvillerin değerlemesinden kaynaklanıyor. Şirketin değerlemesi yükseldikçe bu tahvillerin muhasebe kayıtlarındaki değeri de artıyor. Bu durum, yatırımcıların şirketin finansal sağlığına dair endişelerini artırıyor. Anthropic, 2025 yılında 42 milyar dolarlık net zarar açıklamıştı. Muhasebe giderleri hariç tutulduğunda ise 2025’te 4,6 milyar dolarlık gelir elde etmiş ve 8,1 milyar dolarlık faaliyet zararı kaydetmişti. 2026’da ise bilgi işlem kapasitesi ve altyapı için 9 milyar dolar harcamak zorunda kaldı. Bu tutar, geçen yılın aynı döneminde 2,3 milyar dolarla karşılaştırıldığında çok daha yüksek. Bu büyük yatırımlar, yapay zeka modellerinin geliştirilmesinde yüksek maliyetlerin bir göstergesi. Yatırımcılar, özellikle çip ve veri merkezi yatırımlarına ayrılan kaynakların finansal getiri sağlayıp sağlamayacağını yakından inceliyor. Anthropic, 14 Ekim’de potansiyel halka arz yatırımcılarıyla yapılan toplantıda üçüncü çeyrek gelirlerini paylaştı. Gelir, bir önceki çeyreğe kıyasla %45 artarak 16,8 milyar dolara ulaştı. Ancak bazı yatırımcılar, üçüncü çeyrekteki büyüme hızının yavaşlamasından memnun değiller. Claude Code adlı yazılım geliştirme aracı, şirketin gelir artışında önemli rol oynadı. Bu araç, geliştiricilerin kod yazmalarına ve uygulama oluşturmasına yardımcı olarak talebi artırdı. Anthropic’in bu ürünler sayesinde gelirini büyütmesi, şirketin halka arz hedeflerine ulaşmasında kritik bir faktör olabilir."
-    ],
-    "comment": "Yatırımcılar için en önemli uyarı, şirketin zararının büyük kısmının muhasebe giderlerinden kaynaklanması. 80 milyar dolarlık zarar, 1,8–2 trilyon dolarlık halka arz hedefiyle kıyaslandığında ciddi bir risk işareti. Bu durum, yatırımcıların tahvil ve hisse senetlerini değerlendirirken muhasebe kayıtlarındaki artışları göz önünde bulundurmalarını gerektiriyor. Özellikle 9 milyar dolarlık altyapı harcaması ve 518 milyar dolarlık uzun vadeli taahhüt, şirketin nakit akışını uzun vadede zorlayabilir. Bu gelişme, yapay zeka firmalarının finansal yapılarını yeniden değerlendirmelerini tetikleyebilir. Benzer riskleri taşıyan şirketler, halka arz sürecinde daha şeffaf mali raporlamaya yönelmek zorunda kalabilirler.",
-    "editorNote": "Anthropic’in 80 milyar dolarlık zarar kaydı, halka arz sürecinde yatırımcıların dikkatini çekiyor.",
-    "tags": [
-      "Anthropic",
-      "halka arz",
-      "yapay zeka"
-    ],
-    "category": "Yapay Zeka",
-    "gorselSorgu": "anthropic data center",
-    "source": "DonanımHaber",
-    "sourceUrl": "https://www.donanimhaber.com/anthropic-in-ilk-6-aydaki-zarari-80-milyar-dolari-asti--211906",
-    "image": "https://www.donanimhaber.com/images/images/haber/211906/1200x675anthropic-in-ilk-6-aydaki-zarari-80-milyar-dolari-asti.jpg",
-    "gorselKaynakSite": true,
-    "publishedAt": "2026-10-21T17:12:00.000Z",
-    "generatedAt": "2026-10-21T17:29:42.766Z",
-    "breaking": true
   },
   {
     "id": "3a8ab6ac962f134a",
@@ -3931,6 +4033,39 @@
     "breaking": true
   },
   {
+    "id": "6496c59bde3c43ff",
+    "title": "Demirci’de Yeni Okul: 8 Derslik ve Çeşitli Hizmet Alanlarıyla Güvenli Eğitim",
+    "slug": "demirci-yeni-okul-8-derslik",
+    "summary": "Manisa Valisi Bahadır Yenişehirlioğlu, Demirci ilçesinin Dr. Mehmet Akarsu Mahallesi'nde bulunan Cumhuriyet İlkokulu için yeni 8 derslikli okul projesini duyurdu. Proje, anaokulu, atölye, kütüphane ve çok amaçlı salon gibi modern tesisleri içerecek.",
+    "keyPoints": [
+      "8 derslik, anaokulu, atölye ve kütüphane gibi modern tesislerle donatılmış yeni okul binası",
+      "İhale izni milli eğitim bakanlığı tarafından verildi",
+      "Projenin amacı güvenli ve çağdaş eğitim koşulları sağlamaktır"
+    ],
+    "body": [
+      "Manisa Valisi Bahadır Yenişehirlioğlu, sosyal medya hesabından yaptığı açıklamada, Demirci ilçesinin Dr. Mehmet Akarsu Mahallesi'ndeki Cumhuriyet İlkokulu için yeni bir okul projesinin hayata geçireceğini duyurdu.",
+      "Mevcut okul binasının deprem incelemeleri sonrasında yıkılmasına karar verilmiş ve Milli Eğitim Bakanlığı yeni okul için ihale izni vermiştir. YİKOB tarafından gerçekleştirilecek ihalenin ardından proje, öğrencilerin daha güvenli ve çağdaş eğitim koşullarına kavuşmasını hedeflemektedir.",
+      "Vali, Manisa'nın eğitim altyapısını güçlendirme çalışmalarının sürdüğünü ve Türkiye Yüzyılı vizyonu doğrultusunda eğitime yapılan yatırımların ülkenin geleceği açısından büyük önem taşıdığını belirtti. Ayrıca Cumhurbaşkanı Recep Tayyip Erdoğan ve Milli Eğitim Bakanı Yusuf Tekin’e teşekkür etti."
+    ],
+    "comment": "Yenişehirlioğlu’nun açıklamaları, Manisa’nın eğitim sistemine yatırım yapma kararlılığını bir kez daha gözler önüne seriyor. 8 dersliklik geniş kapsamlı proje, hem öğrenci hem de öğretmenler için daha güvenli ve verimli bir ortam sunacak gibi görünüyor. Bu adım, yerel yönetimlerin ve Milli Eğitim Bakanlığı’nın işbirliğiyle atılan önemli bir kilometre taşıdır.",
+    "editorNote": "Yeni okul projesi, Manisa’da eğitimde kalıcı bir iyileşme vaat ediyor.",
+    "tags": [
+      "Eğitim",
+      "Manisa",
+      "Okul İnşaatı",
+      "Deprem Güvenliği"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "new school building Manisa",
+    "source": "https://www.manisahaber.com/",
+    "sourceUrl": "https://www.manisahaber.com/yenisehirlioglu-duyurdu-demirciye-8-derslikli-yeni-okul-yapilacak",
+    "image": "https://manisahabercom.teimg.com/crop/1280x720/manisahaber-com/uploads/2026/10/whatsapp-image-2026-10-21-at-184444.jpeg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T16:50:00.000Z",
+    "generatedAt": "2026-10-21T17:30:50.769Z",
+    "breaking": true
+  },
+  {
     "id": "64369c8a84bc5bd7",
     "title": "Honda 150 kW Kablosuz Şarjı Yol Üzerinde Teste Hazırlıyor",
     "slug": "honda-150-kw-kablosuz-sarj-yol-ustunde-teste-hazirliyor",
@@ -3963,39 +4098,6 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-21T16:50:00.000Z",
     "generatedAt": "2026-10-21T16:54:49.804Z"
-  },
-  {
-    "id": "6496c59bde3c43ff",
-    "title": "Demirci’de Yeni Okul: 8 Derslik ve Çeşitli Hizmet Alanlarıyla Güvenli Eğitim",
-    "slug": "demirci-yeni-okul-8-derslik",
-    "summary": "Manisa Valisi Bahadır Yenişehirlioğlu, Demirci ilçesinin Dr. Mehmet Akarsu Mahallesi'nde bulunan Cumhuriyet İlkokulu için yeni 8 derslikli okul projesini duyurdu. Proje, anaokulu, atölye, kütüphane ve çok amaçlı salon gibi modern tesisleri içerecek.",
-    "keyPoints": [
-      "8 derslik, anaokulu, atölye ve kütüphane gibi modern tesislerle donatılmış yeni okul binası",
-      "İhale izni milli eğitim bakanlığı tarafından verildi",
-      "Projenin amacı güvenli ve çağdaş eğitim koşulları sağlamaktır"
-    ],
-    "body": [
-      "Manisa Valisi Bahadır Yenişehirlioğlu, sosyal medya hesabından yaptığı açıklamada, Demirci ilçesinin Dr. Mehmet Akarsu Mahallesi'ndeki Cumhuriyet İlkokulu için yeni bir okul projesinin hayata geçireceğini duyurdu.",
-      "Mevcut okul binasının deprem incelemeleri sonrasında yıkılmasına karar verilmiş ve Milli Eğitim Bakanlığı yeni okul için ihale izni vermiştir. YİKOB tarafından gerçekleştirilecek ihalenin ardından proje, öğrencilerin daha güvenli ve çağdaş eğitim koşullarına kavuşmasını hedeflemektedir.",
-      "Vali, Manisa'nın eğitim altyapısını güçlendirme çalışmalarının sürdüğünü ve Türkiye Yüzyılı vizyonu doğrultusunda eğitime yapılan yatırımların ülkenin geleceği açısından büyük önem taşıdığını belirtti. Ayrıca Cumhurbaşkanı Recep Tayyip Erdoğan ve Milli Eğitim Bakanı Yusuf Tekin’e teşekkür etti."
-    ],
-    "comment": "Yenişehirlioğlu’nun açıklamaları, Manisa’nın eğitim sistemine yatırım yapma kararlılığını bir kez daha gözler önüne seriyor. 8 dersliklik geniş kapsamlı proje, hem öğrenci hem de öğretmenler için daha güvenli ve verimli bir ortam sunacak gibi görünüyor. Bu adım, yerel yönetimlerin ve Milli Eğitim Bakanlığı’nın işbirliğiyle atılan önemli bir kilometre taşıdır.",
-    "editorNote": "Yeni okul projesi, Manisa’da eğitimde kalıcı bir iyileşme vaat ediyor.",
-    "tags": [
-      "Eğitim",
-      "Manisa",
-      "Okul İnşaatı",
-      "Deprem Güvenliği"
-    ],
-    "category": "Gündem",
-    "gorselSorgu": "new school building Manisa",
-    "source": "https://www.manisahaber.com/",
-    "sourceUrl": "https://www.manisahaber.com/yenisehirlioglu-duyurdu-demirciye-8-derslikli-yeni-okul-yapilacak",
-    "image": "https://manisahabercom.teimg.com/crop/1280x720/manisahaber-com/uploads/2026/10/whatsapp-image-2026-10-21-at-184444.jpeg",
-    "gorselKaynakSite": true,
-    "publishedAt": "2026-10-21T16:50:00.000Z",
-    "generatedAt": "2026-10-21T17:30:50.769Z",
-    "breaking": true
   },
   {
     "id": "a62f8605247cbc69",
@@ -72162,45 +72264,6 @@
     "breaking": true,
     "images": [],
     "imagesAt": "2026-10-17T21:59:57.393Z"
-  },
-  {
-    "id": "1870a39beea1de4b",
-    "title": "Çubuk'ta Otomobil Çarpışması 2 Yaralı",
-    "slug": "cubukta-otomobil-carpmasi-2-yarali",
-    "summary": "Çubuk ilçesinde iki otomobil çarpıştı, sürücü Y.Ç. ve eşlik eden S.K. yaralandı. Olay, Hükümet Caddesi'nde kaymakamlık binası önünde gerçekleşti ve hastaneye kaldırıldı.",
-    "keyPoints": [
-      "İ. A. idaresi 06 FN 0250 plakalı araç",
-      "Y. Ç. 06 EC 8574 plakalı araç",
-      "İki yaralı: Y.Ç. ve S.K."
-    ],
-    "body": [
-      "Çubuk’un Yavuz Selim Mahallesi’nde, Hükümet Caddesi’ndeki kaymakamlık binası önünde iki otomobil çarpıştı.",
-      "İlk araç, İ. A. idaresi altında 06 FN 0250 plakalı, ikincisi ise Y. Ç. yönetiminde 06 EC 8574 plakalı bir araçtı.",
-      "Kaza sonucunda sürücü Y. Ç. ile aynı araçta bulunan S.K. yaralandı.",
-      "Yaralılar, halihazırda Çubuk Devlet Hastanesi’ne kaldırıldı ve tedavi gördü.",
-      "Olay yerinde cadde geçici olarak trafikte kapatıldı, hasar gören araçlar çekicilerle kaldırıldı.",
-      "Bu tür trafik kazaları, sürüş güvenliği ve cadde yönetimi konularında toplumsal farkındalığın artmasına sebep oluyor."
-    ],
-    "comment": "Bu kaza, şehir içi trafik akışının ne kadar hassas olduğunu gösteriyor. Hükümet Caddesi gibi yoğun bölgelerde araç güvenliği önlemlerinin yeniden gözden geçirilmesi gerekebilir. Çarptırma sonrası yaralıların hastaneye kaldırılması, acil müdahale ekiplerinin etkinliğini gözler önüne seriyor.",
-    "editorNote": "Çubuk'ta yaşanan çarpışma, şehir içi trafik güvenliği ve acil müdahale sistemlerinin kritik rolünü bir kez daha gündeme getiriyor.",
-    "tags": [
-      "Çubuk",
-      "Otomobil",
-      "Kaza",
-      "Yaralı",
-      "Hükümet Caddesi"
-    ],
-    "category": "Gündem",
-    "source": "Canlı Gaste",
-    "sourceUrl": "https://www.canligaste.com/ankara-da-iki-otomobilin-carpistigi-kazada-2-kisi-yaralandi/929586/",
-    "image": "https://www.canligaste.com/haber-gorsel/2026/10/ankara-kahramanmaraslilar-dernegi-golbasi-nda-acildi-929587.webp",
-    "publishedAt": "2026-10-17T20:09:10.000Z",
-    "generatedAt": "2026-10-17T20:17:06.736Z",
-    "breaking": true,
-    "images": [
-      "https://www.canligaste.com/aa-media/2026/10/ankara-da-iki-otomobilin-carpistigi-kazada-2-kisi-yaralandi-929586.webp"
-    ],
-    "imagesAt": "2026-10-17T21:59:58.486Z"
   },
   {
     "id": "9bf5d7a530abf139",
