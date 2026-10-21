@@ -75,7 +75,8 @@ export function getArticles() {
 
   // ShiftDelete kuralı: Sitede YALNIZCA gerçek fotoğrafı olan haberler yer alır.
   // Yeşil SVG kapak veya fotoğrafsız haberlerin sitede görünmesine izin verilmez.
-  list = list.filter((a) => typeof a.image === "string" && /^https?:\/\//i.test(a.image));
+  const JUNK_RE = /(vietnam\.vn|state_bank_of_vietnam|\bvietnam\b|\bsbv\b.*banka|gelinim mutfakta|bitlispostasicom|bursabasincom|marmarabolgecom|giynikgazetesi)/i;
+  list = list.filter((a) => typeof a.image === "string" && /^https?:\/\//i.test(a.image) && !JUNK_RE.test(`${a.title || ""} ${a.source || ""} ${a.sourceUrl || ""} ${a.image || ""}`));
 
   const usedSlugs = new Set();
   list = list.map((a) => {
