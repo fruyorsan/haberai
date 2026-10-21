@@ -116,7 +116,7 @@ export function kapakUygunMu(article, url) {
   //    zaten habere özel arama sonucu seçildi ve lisansı/atfı kayıtlı.
   //    Yalnızca aynı karenin onlarca haberde tekrarlanması engellenir.
   if (stokGorselMi(article, ham)) {
-    return (tekrarSayaci().get(kimlik(ham)) || 0) < 80;
+    return (tekrarSayaci().get(kimlik(ham)) || 0) < 500;
   }
 
   // 2b) KAYNAĞIN KENDİ GÖRSELİ: haber sayfasının og:image'ı indirilip boyutu
@@ -157,7 +157,11 @@ export function kapakKaynagi(article) {
     ...(Array.isArray(article?.images) ? article.images : []),
   ];
   for (const aday of adaylar) {
-    if (kapakUygunMu(article, aday)) return String(aday);
+    if (kapakUygunMu(article, aday)) {
+      return String(aday)
+        .replace(/&amp;/g, "&")
+        .replace(/\/(1400|1600|1920)px-/i, "/1280px-");
+    }
   }
   return "";
 }

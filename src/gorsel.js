@@ -5,29 +5,26 @@
 // placeholder döndürüyor. Bu modül:
 //   1. sayfadan TÜM görsel adaylarını toplar (og:image, twitter:image, JSON-LD, <img>),
 //   2. URL'den "kötü aday" (logo/ikon/placeholder) olanları eler,
-//   3. adayı gerçekten indirip (küçük bir parça) boyut/ögb yönünü ölçer,
-//   4. büyük + yatay olanı seçer; hiçbiri geçmezse null döner (site markalı
-//      kapak görseline düşer).
-//
-// Ölçüm aynı zamanda bir "hotlink çalışıyor mu?" testidir: ziyaretçinin
-// tarayıcısı da aynı isteği Referer göndermeden yapar.
+//   3. adayı gerçekten indirip (küçük bir parça) boyut/yönünü ölçer,
+//   4. büyük + yatay olanı seçer; hiçbiri geçmezse null döner.
 
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36";
 
-// Kalite eşikleri (ShiftDelete tarzı 16:9 yüksek çözünürlüklü haber fotoğrafları)
-const MIN_W = 800;
-const MIN_H = 420;
-const MIN_RATIO = 1.25; // 1.25'ten dar olanlar kartlarda kötü kırpılır
-const MAX_RATIO = 2.6; // 2.6'dan uzun olanlar genelde ince şerit/banner
-const MIN_BYTES = 18 * 1024; // çok küçük/bulanık dosyalar elenir
+// Kalite eşikleri (16:9 / yatay haber fotoğrafları; 600x315 ve üzeri gerçek og:image kabul edilir,
+// biggerVariants ile varsa 1200x675 / 1280x720 yüksek çözünürlüklü sürümü otomatik seçilir).
+const MIN_W = 600;
+const MIN_H = 315;
+const MIN_RATIO = 1.18; // 1.18'den dar olanlar kartlarda kötü kırpılır
+const MAX_RATIO = 2.65; // 2.65'ten uzun olanlar genelde ince şerit/banner
+const MIN_BYTES = 10 * 1024; // çok küçük/bulanık dosyalar elenir
 
 /** URL'ye bakarak "bu görsel olamaz" denen adayları eler. */
 export function looksLikeIcon(url) {
   const u = String(url || "");
   if (!/^https?:\/\//i.test(u)) return true;
   if (/\.svg(\?|#|$)/i.test(u)) return true;
-  return /(logo|favicon|sprite|avatar|gravatar|placeholder|no[-_]?image|default[-_/]?(image|img|thumb)|watermark|share[-_]?(icon|default)|icon[-_/]|[-_/]icon|1x1|pixel\.(gif|png)|blank\.(gif|png)|transparent\.(gif|png))/i.test(
+  return /(logo|favicon|sprite|avatar|gravatar|placeholder|no[-_]?image|default[-_/]?(image|img|thumb)|watermark|share[-_]?(icon|default)|icon[-_/]|[-_/]icon|1x1|pixel\.(gif|png)|blank\.(gif|png)|transparent\.(gif|png)|habergorseli|son-?dakika\.jpe?g)/i.test(
     u
   );
 }
@@ -36,7 +33,7 @@ export function looksLikeIcon(url) {
 export function urlHintScore(url) {
   const u = String(url || "").toLowerCase();
   let s = 0;
-  if (/\/(1200|1280|1440|1600|1920|2000|2400)(\/|[^0-9])/.test(u)) s += 4;
+  if (/\/(1200|1280|1440|1600|1920|2000|2400)(\/|x|[^0-9])/.test(u)) s += 4;
   if (/(large|big|full|original|high|hd|xxl|master)/.test(u)) s += 3;
   if (/\.(jpe?g|webp)(\?|#|$)/.test(u)) s += 2;
   if (/\.png(\?|#|$)/.test(u)) s += 1;
@@ -76,7 +73,6 @@ export function dosyaAdiEslesiyor(url, metin) {
     const n = Math.min(a.length, b.length);
     let i = 0;
     while (i < n && a[i] === b[i]) i++;
-    // Türkçe ekler yüzünden tam eşitlik aranmaz ("iphone" ~ "iphone'un").
     return i >= 5 || (i >= 4 && (i === a.length || i === b.length));
   };
 
@@ -96,20 +92,26 @@ export function dosyaAdiEslesiyor(url, metin) {
 /**
  * Kaynak sayfanın görsellerinden haberin kapağını seçer.
  *
- * Sıra: og:image → (og uygun değilse) dosya adı başlıkla eşleşen sayfa içi
- * adaylar. Adaylar gerçekten indirilip ölçülür; hiçbiri geçmezse null döner ve
- * çağıran taraf Commons marka/stok akışına düşer.
+ * Sıra: og:image / RSS görseli → dosya adı başlıkla eşleşen sayfa içi
+ * adaylar. Adaylar gerçekten indirilip ölçülür; hiçbiri geçmezse null döner.
  */
-export async function chooseArticleImage(extras, metin, { minWidth = 700 } = {}) {
+export async function chooseArticleImage(extras, metin, { minWidth = 600, rssImage = null } = {}) {
   const image = extras?.image || null;
   const images = Array.isArray(extras?.images) ? extras.images : [];
 
-  const secilen = image ? await chooseImage([image], { max: 1, maxProbes: 5, minWidth }) : null;
-  if (secilen) return secilen;
+  const birincil = [image, rssImage].filter(Boolean);
+  if (birincil.length) {
+    const secilen = await chooseImage(birincil, { max: 2, maxProbes: 6, minWidth, keepOrder: true });
+    if (secilen) return secilen;
+  }
 
   const eslesen = images.filter((u) => dosyaAdiEslesiyor(u, metin));
-  if (!eslesen.length) return null;
-  return chooseImage(eslesen, { max: 4, maxProbes: 6, keepOrder: true, minWidth });
+  if (eslesen.length) {
+    const secilen = await chooseImage(eslesen, { max: 4, maxProbes: 6, keepOrder: true, minWidth });
+    if (secilen) return secilen;
+  }
+
+  return null;
 }
 
 /** Görsel dosya başlığından (ilk ~256KB) genişlik/yükseklik okur. */
@@ -164,15 +166,16 @@ export function imageSize(buf) {
 /** Görseli (ilk 256KB) indirip boyut + tip + toplam boyut bilgisini döner. */
 export async function probeImage(url) {
   if (!url || !/^https?:\/\//i.test(url)) return null;
+  const cleanUrl = String(url).replace(/&amp;/g, "&").trim();
   try {
-    const res = await fetch(url, {
+    const res = await fetch(cleanUrl, {
       headers: {
         "User-Agent": UA,
         Accept: "image/avif,image/webp,image/jpeg,image/png,image/*,*/*;q=0.8",
         Range: "bytes=0-262143",
       },
       redirect: "follow",
-      signal: AbortSignal.timeout(12000),
+      signal: AbortSignal.timeout(10000),
     });
     if (!res.ok) return null;
     const ctype = (res.headers.get("content-type") || "").split(";")[0].trim().toLowerCase();
@@ -188,16 +191,24 @@ export async function probeImage(url) {
     if (!total) total = buf.length;
     const dim = imageSize(buf);
     if (!dim) return null;
-    return { width: dim.width, height: dim.height, type: dim.type, bytes: total, finalUrl: res.url || url };
+    return {
+      width: dim.width,
+      height: dim.height,
+      type: dim.type,
+      bytes: total,
+      finalUrl: (res.url || cleanUrl).replace(/&amp;/g, "&"),
+    };
   } catch {
     return null;
   }
 }
 
 /** Ölçülen görsel kalite eşiklerini geçiyor mu? */
-export function passesQuality(info) {
+export function passesQuality(info, minWidth = MIN_W) {
   if (!info || !info.width || !info.height) return false;
-  if (info.width < MIN_W || info.height < MIN_H) return false;
+  const reqW = Math.max(540, Math.min(minWidth, MIN_W));
+  const reqH = Math.round(reqW * 0.5);
+  if (info.width < reqW || info.height < Math.min(MIN_H, reqH)) return false;
   const ratio = info.width / info.height;
   if (ratio < MIN_RATIO || ratio > MAX_RATIO) return false;
   if (info.bytes && info.bytes < MIN_BYTES) return false;
@@ -278,14 +289,19 @@ export function collectImageCandidates(html, baseUrl) {
 }
 
 /**
- * Aynı fotoğrafın daha büyük sürümünü tahmin eder (ShiftDelete/WordPress
+ * Aynı fotoğrafın daha büyük sürümünü tahmin eder (Webtekno, ShiftDelete/WordPress
  * tarzı `foo-780x470.jpg` → `foo-1280x720.jpg`, `?w=600` → `?w=1280`).
- * Tahmin yanlışsa indirme başarısız olur ve aday sessizce elenir.
  */
 export function biggerVariants(url) {
-  const u = String(url || "");
+  const u = String(url || "").replace(/&amp;/g, "&").trim();
   if (!/^https?:\/\//i.test(u)) return [];
   const out = [];
+
+  // Webtekno CDN: https://imgrosetta.webtekno.com/file/654177/654177-700x400.jpg → 1200xauto.jpg
+  const wt = /^(https?:\/\/imgrosetta\.webtekno\.com\/file\/\d+\/)[^/?#]+/i.exec(u);
+  if (wt) {
+    out.push(`${wt[1]}1200xauto.jpg`);
+  }
 
   // foo-780x470.jpg → foo-1280x720.jpg (+ sürümsüz orijinal)
   const m = /^(.*?)-(\d{2,4})x(\d{2,4})(\.(?:jpe?g|png|webp|avif))(\?[^#]*)?$/i.exec(u);
@@ -314,10 +330,7 @@ export function biggerVariants(url) {
 }
 
 /**
- * Aday listesinden en iyi görseli seçer: URL ipuçlarına göre sıralar,
- * en fazla `maxProbes` adayı ölçer, kalite eşiklerini geçen en büyük/best olanı
- * döner. Adayın daha büyük sürümleri de denenir (daha keskin fotoğraf).
- * Hiçbiri geçmezse null (site markalı kapağa düşer).
+ * Aday listesinden en iyi görseli seçer.
  */
 export async function chooseImage(
   candidates,
@@ -325,16 +338,12 @@ export async function chooseImage(
 ) {
   const list = (candidates || [])
     .filter(Boolean)
-    .map((c) => (typeof c === "string" ? c : c.url))
+    .map((c) => String(typeof c === "string" ? c : c.url).replace(/&amp;/g, "&").trim())
     .filter((u) => /^https?:\/\//i.test(u) && !looksLikeIcon(u));
 
   const uniq = [...new Set(list)];
-  // Kaynak sayfanın og:image'ı listenin başında gelir; `keepOrder` ile bu sıra
-  // korunur (sayfadaki alakasız <img>'ler öne geçmesin).
   if (!keepOrder) uniq.sort((a, b) => urlHintScore(b) - urlHintScore(a));
 
-  // Önce adayın yüksek çözünürlüklü (kırpılmamış / 1280x720) sürümleri denenir,
-  // sonra kendisi: böylece küçük/filigranlı thumbnail yerine keskin asıl görsel seçilir.
   const havuz = [];
   for (const u of uniq.slice(0, max)) {
     for (const v of biggerVariants(u)) havuz.push(v);
@@ -345,10 +354,10 @@ export async function chooseImage(
   let deneme = 0;
   for (const url of havuz) {
     if (deneme >= maxProbes) break;
-    if (best && best.width >= 1280) break; // bu kadarı fazlasıyla yeterli
+    if (best && best.width >= 1200) break;
     deneme++;
     const info = await probeImage(url);
-    if (!passesQuality(info)) continue;
+    if (!passesQuality(info, minWidth)) continue;
     if (info.width < minWidth) continue;
     const score = info.width + urlHintScore(url) * 30;
     if (!best || score > best.score) best = { url: info.finalUrl || url, score, width: info.width };

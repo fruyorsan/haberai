@@ -215,7 +215,7 @@ async function commonsAra(sorgu, adet = ADAY, offset = 0, afet = false, marka = 
     cllimit: "max",
     iiprop: "url|size|extmetadata",
     iiextmetadatafilter: "LicenseShortName|Artist|LicenseUrl|Credit|ImageDescription",
-    iiurlwidth: "1600",
+    iiurlwidth: "1280",
   });
   const res = await fetch(`${COMMONS}?${params}`, {
     headers: { "User-Agent": UA, Accept: "application/json" },
@@ -507,49 +507,49 @@ export const KATEGORI_SORGU = {
  */
 export const YEDEK_GORSEL = {
   Teknoloji: {
-    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg/1920px-Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg/1280px-Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
     yazar: "Shixart1985",
     lisans: "CC BY 2.0",
     sayfa: "https://commons.wikimedia.org/wiki/File:Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
   },
   "Yapay Zeka": {
-    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Artificial_Intelligence_%28AI%29_and_Robotics_exhibition_at_the_Heinz_Nixdorf_MuseumsForum.jpg/1920px-Artificial_Intelligence_%28AI%29_and_Robotics_exhibition_at_the_Heinz_Nixdorf_MuseumsForum.jpg",
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Artificial_Intelligence_%28AI%29_and_Robotics_exhibition_at_the_Heinz_Nixdorf_MuseumsForum.jpg/1280px-Artificial_Intelligence_%28AI%29_and_Robotics_exhibition_at_the_Heinz_Nixdorf_MuseumsForum.jpg",
     yazar: "Sergei Magel/HNF",
     lisans: "CC BY-SA 4.0",
     sayfa: "https://commons.wikimedia.org/wiki/File:Artificial_Intelligence_(AI)_and_Robotics_exhibition_at_the_Heinz_Nixdorf_MuseumsForum.jpg",
   },
   Mobil: {
-    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Black_smartphone_in_hand_%28Unsplash%29.jpg/1920px-Black_smartphone_in_hand_%28Unsplash%29.jpg",
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Black_smartphone_in_hand_%28Unsplash%29.jpg/1280px-Black_smartphone_in_hand_%28Unsplash%29.jpg",
     yazar: "Dennis Cortés",
     lisans: "CC0",
     sayfa: "https://commons.wikimedia.org/wiki/File:Black_smartphone_in_hand_(Unsplash).jpg",
   },
   Oyun: {
-    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Hands_holding_video_game_controller_%2850811892858%29.jpg/1920px-Hands_holding_video_game_controller_%2850811892858%29.jpg",
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Hands_holding_video_game_controller_%2850811892858%29.jpg/1280px-Hands_holding_video_game_controller_%2850811892858%29.jpg",
     yazar: "Vu Hoang",
     lisans: "CC BY 2.0",
     sayfa: "https://commons.wikimedia.org/wiki/File:Hands_holding_video_game_controller_(50811892858).jpg",
   },
   Donanım: {
-    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/H%C3%A5kan_Lans_computer_color_graphics_card_Datacolor.jpg/1920px-H%C3%A5kan_Lans_computer_color_graphics_card_Datacolor.jpg",
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/H%C3%A5kan_Lans_computer_color_graphics_card_Datacolor.jpg/1280px-H%C3%A5kan_Lans_computer_color_graphics_card_Datacolor.jpg",
     yazar: "Agnes Andersson",
     lisans: "CC BY 4.0",
     sayfa: "https://commons.wikimedia.org/wiki/File:H%C3%A5kan_Lans_computer_color_graphics_card_Datacolor.jpg",
   },
   Yazılım: {
-    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Programming_code.jpg/1920px-Programming_code.jpg",
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Programming_code.jpg/1280px-Programming_code.jpg",
     yazar: "Martin Vorel",
     lisans: "CC BY-SA 4.0",
     sayfa: "https://commons.wikimedia.org/wiki/File:Programming_code.jpg",
   },
   İnternet: {
-    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1920px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
     yazar: "Joël van der Loo",
     lisans: "CC BY-SA 4.0",
     sayfa: "https://commons.wikimedia.org/wiki/File:Duga-1_radar_data_center_interior_server_room_2018.jpg",
   },
   Bilim: {
-    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Jet_Propulsion_Laboratory_Plasma_Flow_Research_Lab.jpg/1920px-Jet_Propulsion_Laboratory_Plasma_Flow_Research_Lab.jpg",
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Jet_Propulsion_Laboratory_Plasma_Flow_Research_Lab.jpg/1280px-Jet_Propulsion_Laboratory_Plasma_Flow_Research_Lab.jpg",
     yazar: "NASA",
     lisans: "Kamu malı",
     sayfa: "https://commons.wikimedia.org/wiki/File:Jet_Propulsion_Laboratory_Plasma_Flow_Research_Lab.jpg",
@@ -569,7 +569,7 @@ export const YEDEK_GORSEL = {
     sayfa: "https://commons.wikimedia.org/wiki/File:Besiktas_JK_-_Trabzonspor_match.jpg",
   },
   Gündem: {
-    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Istanbul_city_Photos-_Urban_01.jpg/1920px-Istanbul_city_Photos-_Urban_01.jpg",
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Istanbul_city_Photos-_Urban_01.jpg/1280px-Istanbul_city_Photos-_Urban_01.jpg",
     yazar: "Mostafameraji",
     lisans: "CC BY-SA 4.0",
     sayfa: "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_01.jpg",
@@ -577,14 +577,14 @@ export const YEDEK_GORSEL = {
   Dünya: {
     // Havalimanı terminali (Sofia) sel/afet haberine saçma düşüyordu.
     // Nötr dünya küresi her uluslararası habere uyar.
-    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Person_holding_world_globe.jpg/1920px-Person_holding_world_globe.jpg",
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Person_holding_world_globe.jpg/1280px-Person_holding_world_globe.jpg",
     yazar: "Porapak Apichodilok",
     lisans: "CC0",
     lisansUrl: "https://creativecommons.org/publicdomain/zero/1.0",
     sayfa: "https://commons.wikimedia.org/wiki/File:Person_holding_world_globe.jpg",
   },
   Diğer: {
-    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Man_reading_a_newspaper.jpg/1920px-Man_reading_a_newspaper.jpg",
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Man_reading_a_newspaper.jpg/1280px-Man_reading_a_newspaper.jpg",
     yazar: "Michael Slaten",
     lisans: "CC BY-SA 4.0",
     sayfa: "https://commons.wikimedia.org/wiki/File:Man_reading_a_newspaper.jpg",

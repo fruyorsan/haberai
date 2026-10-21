@@ -23,6 +23,8 @@ import { stokGorseller, KATEGORI_SORGU, atif, kisaSorgu, konuSorgu, afetMi, mark
  *   node src/backfill.js --dry   (AI çağrısı yapmadan listeler)
  */
 
+import { chooseArticleImage } from "./gorsel.js";
+
 const LIMIT = Number(process.env.BACKFILL_LIMIT || 5);
 const DRY = process.argv.includes("--dry");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -165,7 +167,8 @@ async function main() {
 
       // GÖRSEL: eski kaynak fotoğrafı telif güvenli stokla değiştir.
       if (!current.gorselKaynak && ai.gorselSorgu) {
-        await gorselYaz(current, ai.gorselSorgu, kullanilanGorseller(articles));
+        const secilen = await chooseArticleImage(extra, `${current.title} ${current.slug || ""} ${current.sourceUrl || ""}`, { minWidth: 600 });
+        if (secilen) { current.image = secilen; current.gorselKaynakSite = true; delete current.gorselKaynak; delete current.gorselEk; }
       }
 
       console.log("✓");
@@ -188,7 +191,9 @@ async function main() {
   // üretilmez, kota az harcanır), sonra Commons'tan serbest lisanslı fotoğraf
   // alınır. Yanlış fotoğraf göstermemek için: fotoğraf bulunamazsa ESKİ
   // FOTOĞRAFA DOKUNULMAZ ve haber 7 gün sonra yeniden denenir.
-  const GORSEL_LIMIT = Number(process.env.GORSEL_BACKFILL_LIMIT || 0);
+  // Görsel stok backfill kapatıldı: kaynak sitelerin gerçek kapak görselleri
+  // (og:image) korunur, Wikimedia stok fotoğraflarıyla ezilmez.
+  const GORSEL_LIMIT = 0;
   if (GORSEL_LIMIT > 0) {
     const kalanlar = articles.filter((a) => a.image && !a.gorselKaynak);
     const eski = kalanlar

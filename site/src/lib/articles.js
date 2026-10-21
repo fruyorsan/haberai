@@ -104,7 +104,9 @@ export function getArticles() {
  */
 export function getFeatured(count = 6, horizon = 20, uygun = (a) => Boolean(a.image)) {
   const recent = getArticles().slice(0, Math.max(count, horizon));
-  const withPhoto = recent.filter((a) => uygun(a));
+  const withRealPhoto = recent.filter((a) => uygun(a) && !/wikimedia|wikipedia/i.test(a.image || ""));
+  const withStockPhoto = recent.filter((a) => uygun(a) && /wikimedia|wikipedia/i.test(a.image || ""));
+  const withPhoto = [...withRealPhoto, ...withStockPhoto];
   if (withPhoto.length >= count) return withPhoto.slice(0, count);
   return [...withPhoto, ...recent.filter((a) => !uygun(a))].slice(0, count);
 }
@@ -119,7 +121,15 @@ export function getFeatured(count = 6, horizon = 20, uygun = (a) => Boolean(a.im
  * CDN'e ulaşılamazsa bileşenler `data-orig` ile kaynak adrese düşer,
  * yani görsel kaybolmaz. Tamamen kapatmak için: NO_IMAGE_PROXY=1
  */
+const DIRECT_IMAGE_HOSTS = /(\.teimg\.com|cryptopotato\.com|nuvemmag\.com|kentgazetesi\.com|hunattv\.com)$/i;
+function normalizeSrc(src) {
+  let s = String(src || "").replace(/&amp;/g, "&").trim();
+  if (/wikimedia\.org\/wikipedia\/commons\/thumb\//i.test(s)) s = s.replace(/\/(1400|1600|1920)px-/i, "/1280px-");
+  return s;
+}
 export function imageUrl(src, width = 800, quality = 85) {
+  src = normalizeSrc(src);
+  try { if (src && DIRECT_IMAGE_HOSTS.test(new URL(src).hostname)) return src; } catch {}
   if (!src || !/^https?:\/\//i.test(src)) return src || "";
   if (process.env.NO_IMAGE_PROXY) return src;
   const w = Math.round(width);
@@ -135,6 +145,8 @@ export function imageUrl(src, width = 800, quality = 85) {
  * en net fotoğrafı indirir (Retina ve masaüstü ekranlarda bulanıklık olmaz).
  */
 export function imageSrcset(src, widths = [480, 800, 1080]) {
+  src = normalizeSrc(src);
+  try { if (src && DIRECT_IMAGE_HOSTS.test(new URL(src).hostname)) return ""; } catch {}
   if (!src || !/^https?:\/\//i.test(src)) return "";
   if (process.env.NO_IMAGE_PROXY) return "";
   return widths.map((w) => `${imageUrl(src, w)} ${w}w`).join(", ");

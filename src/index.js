@@ -9,6 +9,7 @@ import { isBreaking, breakingScore } from "./breaking.js";
 import { purgeCopiedText } from "./telif.js";
 import { stokGorseller, KATEGORI_SORGU, yedekGorsel, atif, kisaSorgu, konuSorgu, afetMi, gorselOnar, markaAdi } from "./stok-gorsel.js";
 import { chooseArticleImage } from "./gorsel.js";
+import { isJunkArticle } from "./kalite.js";
 
 const DRY = process.argv.includes("--dry");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -55,6 +56,8 @@ async function main() {
   // değiştirilir. Her turda çalışır; veri birleşmelerinde onarım kaybolmaz.
   {
     const onarilan = gorselOnar(articles);
+    const temizArsiv = articles.filter((a) => !isJunkArticle(a));
+    if (temizArsiv.length !== articles.length) articles.splice(0, articles.length, ...temizArsiv);
     if (onarilan) console.log(`Görsel onarımı: ${onarilan} kapak fotoğrafı düzeltildi`);
   }
 
@@ -237,10 +240,10 @@ async function main() {
       // küçük thumbnail, logo ve site banner'ı elenir; arşivde başka haberde
       // kullanılmış kare tekrar kapak yapılmaz.
       let kaynakGorsel = null;
-      if (extra) {
+      if (extra || item.image) {
         const metin = `${cleaned.title} ${item.title} ${item.link}`;
-        const secilen = await chooseArticleImage(extra, metin, { minWidth: 800 });
-        if (secilen && !gorselSayaci.has(gorselKimlik(secilen))) kaynakGorsel = secilen;
+        const secilen = await chooseArticleImage(extra, metin, { minWidth: 600, rssImage: item.image });
+        if (secilen && (gorselSayaci.get(gorselKimlik(secilen)) || 0) < 3) kaynakGorsel = secilen;
       }
 
       let kapakGorsel;

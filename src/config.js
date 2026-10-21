@@ -59,34 +59,34 @@ export const config = {
     // Google News RSS, olayı kaynak siteden dakikalar içinde indeksler. Başlıklar
     // "Başlık - Kaynak Adı" biçiminde gelir; fetcher kaynağı başlıktan ayırır.
     // Hepsi bot UA ile test edildi ve içerik döndürüyor.
-    { name: "GN: Son Dakika", url: "https://news.google.com/rss/search?q=son%20dakika%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Gündem", fast: true },
-    { name: "GN: Teknoloji", url: "https://news.google.com/rss/search?q=teknoloji%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Teknoloji", fast: true },
+    { name: "GN: Son Dakika", url: "https://news.google.com/rss/search?q=son%20dakika%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Gündem" },
+    { name: "GN: Teknoloji", url: "https://news.google.com/rss/search?q=teknoloji%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Teknoloji" },
     { name: "GN: Tesla", url: "https://news.google.com/rss/search?q=tesla%20when%3A1h&hl=tr&gl=TR&ceid=TR:tr", category: "Teknoloji", fast: true },
     { name: "GN: Elon Musk", url: "https://news.google.com/rss/search?q=elon%20musk%20when%3A1h&hl=tr&gl=TR&ceid=TR:tr", category: "Teknoloji", fast: true },
-    { name: "GN: Yapay Zeka", url: "https://news.google.com/rss/search?q=yapay%20zeka%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Yapay Zeka", fast: true },
+    { name: "GN: Yapay Zeka", url: "https://news.google.com/rss/search?q=yapay%20zeka%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Yapay Zeka" },
     { name: "GN: Deprem", url: "https://news.google.com/rss/search?q=deprem%20when%3A1h&hl=tr&gl=TR&ceid=TR:tr", category: "Gündem", fast: true },
     { name: "GN: Apple", url: "https://news.google.com/rss/search?q=apple%20when%3A1h&hl=tr&gl=TR&ceid=TR:tr", category: "Mobil", fast: true },
     { name: "GN: Samsung", url: "https://news.google.com/rss/search?q=samsung%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Mobil", fast: true },
-    { name: "GN: Oyun", url: "https://news.google.com/rss/search?q=oyun%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Oyun", fast: true },
+    { name: "GN: Oyun", url: "https://news.google.com/rss/search?q=oyun%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Oyun" },
 
     // Teknoloji / Yazılım
     { name: "Webtekno", url: "https://www.webtekno.com/rss.xml", category: "Teknoloji", fast: true },
     { name: "ShiftDelete", url: "https://shiftdelete.net/feed", category: "Teknoloji", fast: true },
     { name: "DonanımHaber", url: "https://www.donanimhaber.com/rss/tum/", category: "Donanım", fast: true },
-    { name: "Technopat", url: "https://www.technopat.net/feed", category: "Donanım" },
-    { name: "Donanım Arşivi", url: "https://www.donanimarsivi.com/rss/", category: "Donanım" },
+    { name: "Technopat", url: "https://www.technopat.net/feed", category: "Donanım", fast: true },
+    { name: "Donanım Arşivi", url: "https://www.donanimarsivi.com/rss/", category: "Donanım", fast: true },
     { name: "NTV Teknoloji", url: "https://www.ntv.com.tr/teknoloji.rss", category: "Teknoloji" },
-    { name: "CHIP Online", url: "https://www.chip.com.tr/rss", category: "Teknoloji" },
+    { name: "CHIP Online", url: "https://www.chip.com.tr/rss", category: "Teknoloji", fast: true },
     { name: "Hürriyet Teknoloji", url: "https://www.hurriyet.com.tr/rss/teknoloji", category: "Teknoloji" },
-    { name: "Webrazzi", url: "https://webrazzi.com/feed/", category: "İnternet" },
+    { name: "Webrazzi", url: "https://webrazzi.com/feed/", category: "İnternet", fast: true },
     { name: "Tamindir", url: "https://www.tamindir.com/feed/", category: "Yazılım" },
 
     // Oyun / Bilim
-    { name: "Merlin'in Kazanı", url: "https://merlininkazani.com/feed/", category: "Oyun" },
+    { name: "Merlin'in Kazanı", url: "https://merlininkazani.com/feed/", category: "Oyun", fast: true },
     { name: "AA Bilim-Teknoloji", url: "https://www.aa.com.tr/tr/rss/default?cat=bilim-teknoloji", category: "Bilim" },
-    { name: "Evrim Ağacı", url: "https://evrimagaci.org/rss.xml", category: "Bilim" },
+    { name: "Evrim Ağacı", url: "https://evrimagaci.org/rss.xml", category: "Bilim", fast: true },
     { name: "Oyun Günlüğü", url: "https://www.oyungunlugu.com/feed/", category: "Oyun" },
-    { name: "IGN Türkiye", url: "https://tr.ign.com/feed.xml", category: "Oyun" },
+    { name: "IGN Türkiye", url: "https://tr.ign.com/feed.xml", category: "Oyun", fast: true },
     { name: "Gamereactor Türkiye", url: "https://www.gamereactor.com.tr/feed/", category: "Oyun" },
     { name: "Gamereactor Türkiye (RSS)", url: "https://www.gamereactor.com.tr/rss/rss.php", category: "Oyun" },
     { name: "Sözcü Bilim-Teknoloji", url: "https://www.sozcu.com.tr/feeds-rss-category-bilim-teknoloji", category: "Bilim" },
@@ -106,8 +106,8 @@ export const config = {
     { name: "Sabah Spor", url: "https://www.sabah.com.tr/rss/spor.xml", category: "Spor" },
     { name: "Fotomaç", url: "https://www.fotomac.com.tr/rss/anasayfa.xml", category: "Spor" },
     { name: "Hürriyet Spor", url: "https://www.hurriyet.com.tr/rss/spor", category: "Spor" },
-    { name: "GN: Süper Lig", url: "https://news.google.com/rss/search?q=s%C3%BCper%20lig%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Spor", fast: true },
-    { name: "GN: Transfer", url: "https://news.google.com/rss/search?q=transfer%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Spor", fast: true },
+    { name: "GN: Süper Lig", url: "https://news.google.com/rss/search?q=s%C3%BCper%20lig%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Spor" },
+    { name: "GN: Transfer", url: "https://news.google.com/rss/search?q=transfer%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Spor" },
 
     // Dünya (ulusal + uluslararası ajanslar)
     { name: "BBC Türkçe", url: "https://feeds.bbci.co.uk/turkce/rss.xml", category: "Dünya" },
@@ -124,7 +124,7 @@ export const config = {
     { name: "The Guardian World", url: "https://www.theguardian.com/world/rss", category: "Dünya" },
     { name: "Sky News World", url: "https://feeds.skynews.com/feeds/rss/world.xml", category: "Dünya" },
     { name: "NPR World", url: "https://feeds.npr.org/1004/rss.xml", category: "Dünya" },
-    { name: "GN: Dünya Gündemi", url: "https://news.google.com/rss/search?q=d%C3%BCnya%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Dünya", fast: true },
+    { name: "GN: Dünya Gündemi", url: "https://news.google.com/rss/search?q=d%C3%BCnya%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Dünya" },
     { name: "GN: Savaş/Çatışma", url: "https://news.google.com/rss/search?q=sava%C5%9F%20OR%20ate%C5%9Fkes%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Dünya", fast: true },
     { name: "GN: Avrupa", url: "https://news.google.com/rss/search?q=avrupa%20when%3A3h&hl=tr&gl=TR&ceid=TR:tr", category: "Dünya" },
     { name: "GN: ABD", url: "https://news.google.com/rss/search?q=abd%20OR%20trump%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Dünya", fast: true },
@@ -144,8 +144,8 @@ export const config = {
 
     // Otomobil / elektrikli araç
     { name: "GN: Otomobil", url: "https://news.google.com/rss/search?q=otomobil%20OR%20elektrikli%20ara%C3%A7%20when%3A3h&hl=tr&gl=TR&ceid=TR:tr", category: "Otomobil" },
-    { name: "GN: Ekonomi", url: "https://news.google.com/rss/search?q=ekonomi%20OR%20enflasyon%20OR%20faiz%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Ekonomi", fast: true },
-    { name: "GN: Borsa/Döviz", url: "https://news.google.com/rss/search?q=borsa%20OR%20dolar%20OR%20alt%C4%B1n%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Ekonomi", fast: true },
+    { name: "GN: Ekonomi", url: "https://news.google.com/rss/search?q=ekonomi%20OR%20enflasyon%20OR%20faiz%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Ekonomi" },
+    { name: "GN: Borsa/Döviz", url: "https://news.google.com/rss/search?q=borsa%20OR%20dolar%20OR%20alt%C4%B1n%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Ekonomi" },
   ],
 
   // ------------------------------------------------------------------

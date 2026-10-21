@@ -58,7 +58,7 @@ async function fetchOne(feed) {
           it.title &&
           it.link &&
           it.content.length >= config.minContentLength &&
-          !looksLikeSpamTitle(it.title) // SEO çöpü başlıkları hatta sokma
+          !looksLikeSpamTitle(it.title, it.source, it.link) // SEO çöpü ve alakasız kaynakları hatta sokma
       );
     console.log(`  ✓ ${feed.name}: ${items.length} haber`);
     return items;
@@ -279,7 +279,7 @@ function extractOgImage(html) {
   ];
   for (const re of patterns) {
     const m = re.exec(html);
-    if (m && m[1] && /^https?:/i.test(m[1])) return m[1];
+    if (m && m[1] && /^https?:/i.test(m[1])) return m[1].replace(/&amp;/g, "&").trim();
   }
   return null;
 }
