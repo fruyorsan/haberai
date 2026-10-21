@@ -11,7 +11,8 @@
 --
 -- KURULUM:
 --   1) https://supabase.com → Projeniz → sol menüden "SQL Editor"
---   2) Bu dosyanın TAMAMINI yapıştırın ve "Run" butonuna basın.
+--   2) Bu dosyanın TAMAMINI yapıştırın (içeride hiçbir metin seçmeden)
+--      ve sağ alttaki yeşil "Run" butonuna basın.
 -- ============================================================================
 
 -- 1. Üyeler tablosuna son_aktif sütunu ekle (yoksa)
@@ -114,8 +115,8 @@ begin
 
   -- En çok gezilen canlı sayfalar
   select coalesce(jsonb_agg(jsonb_build_object(
-    'sayfa', sayfa,
-    'ziyaretci', cnt
+    'sayfa', s.sayfa,
+    'ziyaretci', s.cnt
   )), '[]'::jsonb)
   into v_sayfalar
   from (
@@ -127,29 +128,39 @@ begin
     limit 8
   ) s;
 
-  -- Canlı veya son 24 saatte aktif olmuş üyeler
+  -- Canlı veya son 24 saatte aktif olmuş üyeler (temiz subquery ile)
   select coalesce(jsonb_agg(jsonb_build_object(
-    'kadi', u.kadi,
-    'ad', u.ad,
-    'avatar', case when u.avatar like '/avatar/%' then u.avatar else null end,
-    'rol', u.rol,
-    'etiket', u.etiket,
-    'son_aktif', u.son_aktif,
-    'canli_mi', (az.ziyaretci_id is not null),
-    'sayfa', az.sayfa
+    'kadi', u_list.kadi,
+    'ad', u_list.ad,
+    'avatar', case when u_list.avatar like '/avatar/%' then u_list.avatar else null end,
+    'rol', u_list.rol,
+    'etiket', u_list.etiket,
+    'son_aktif', u_list.son_aktif,
+    'canli_mi', u_list.canli_mi,
+    'sayfa', u_list.sayfa
   )), '[]'::jsonb)
   into v_son_aktif_uyeler
-  from public.uyeler u
-  left join lateral (
-    select ziyaretci_id, sayfa
-    from public.aktif_ziyaretciler
-    where uye_id = u.id and son_gorulme >= now() - interval '150 seconds'
-    order by son_gorulme desc
-    limit 1
-  ) az on true
-  where u.son_aktif >= now() - interval '24 hours' or az.ziyaretci_id is not null
-  order by (az.ziyaretci_id is not null) desc, u.son_aktif desc
-  limit 25;
+  from (
+    select
+      u.kadi,
+      u.ad,
+      u.avatar,
+      u.rol,
+      u.etiket,
+      u.son_aktif,
+      (az.uye_id is not null) as canli_mi,
+      az.sayfa
+    from public.uyeler u
+    left join (
+      select distinct on (uye_id) uye_id, sayfa
+      from public.aktif_ziyaretciler
+      where uye_id is not null and son_gorulme >= now() - interval '150 seconds'
+      order by uye_id, son_gorulme desc
+    ) az on az.uye_id = u.id
+    where u.son_aktif >= now() - interval '24 hours' or az.uye_id is not null
+    order by (az.uye_id is not null) desc, u.son_aktif desc
+    limit 25
+  ) u_list;
 
   -- Tüm kayıtlı üyeler ve rozet listesi
   select coalesce(jsonb_agg(jsonb_build_object(
