@@ -708,7 +708,7 @@
       try {
         var filtre = temizId
           ? "uye_id=eq." + encodeURIComponent(temizId)
-          : "ad=eq." + encodeURIComponent(temizKadi);
+          : "ad=ilike." + encodeURIComponent(temizKadi);
         var yRes = await fetch(
           a.url + "/rest/v1/yorumlar?select=id,etiket&gizli=eq.false&" + filtre + "&limit=100",
           { headers: basliklar() }
