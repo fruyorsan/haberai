@@ -1907,3 +1907,200 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     });
   })();
 </script>
+
+
+<style is:global>
+  /* ========================================================================
+     DİNAMİK YÖNETİM & OKUR LİSTESİ STİLLERİ (JavaScript ile üretilenler)
+     ======================================================================== */
+  .profil__uyeler {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    margin-top: 10px !important;
+  }
+  .profil__uye {
+    display: grid !important;
+    grid-template-columns: 38px minmax(0, 1fr) minmax(110px, 160px) auto !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 10px 14px !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 12px !important;
+    background: var(--bg) !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+  .profil__uye-av {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+    max-width: 38px !important;
+    max-height: 38px !important;
+    border-radius: 999px !important;
+    overflow: hidden !important;
+    display: grid !important;
+    place-items: center !important;
+    background: var(--brand-grad) !important;
+    color: #fff !important;
+    font-weight: 800 !important;
+    font-size: 0.88rem !important;
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .profil__uye-av img,
+  .profil__uye-av .hb-av-img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 38px !important;
+    max-height: 38px !important;
+    object-fit: cover !important;
+    border-radius: 999px !important;
+    display: block !important;
+  }
+  .profil__uye-kim {
+    min-width: 0 !important;
+    line-height: 1.3 !important;
+  }
+  .profil__uye-kim b {
+    display: block !important;
+    font-size: 0.88rem !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    color: var(--text) !important;
+  }
+  .profil__uye-kim span {
+    display: block !important;
+    font-size: 0.74rem !important;
+    color: var(--muted) !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  .profil__uye-etiket {
+    width: 100% !important;
+    padding: 7px 10px !important;
+    font-size: 0.82rem !important;
+    border-radius: 8px !important;
+    border: 1px solid var(--border) !important;
+    background: var(--surface) !important;
+    color: var(--text) !important;
+    box-sizing: border-box !important;
+  }
+  .profil__uye-kaydet {
+    padding: 7px 14px !important;
+    border: 0 !important;
+    border-radius: 8px !important;
+    background: var(--brand-grad, #d9364b) !important;
+    color: #fff !important;
+    font: inherit !important;
+    font-size: 0.78rem !important;
+    font-weight: 800 !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    transition: opacity 0.2s ease !important;
+  }
+  .profil__uye-kaydet:hover {
+    opacity: 0.9 !important;
+  }
+  .profil__uye-kaydet:disabled {
+    opacity: 0.55 !important;
+    cursor: wait !important;
+  }
+
+  /* Aktif üyeler kutucukları */
+  .profil__aktifler-liste {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+    gap: 8px !important;
+  }
+  .profil__aktif-kart {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 8px 12px !important;
+    border-radius: 12px !important;
+    background: var(--bg) !important;
+    border: 1px solid var(--border) !important;
+    box-sizing: border-box !important;
+  }
+  .profil__aktif-av {
+    position: relative !important;
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    min-height: 34px !important;
+    max-width: 34px !important;
+    max-height: 34px !important;
+    flex-shrink: 0 !important;
+    border-radius: 999px !important;
+    overflow: hidden !important;
+    display: grid !important;
+    place-items: center !important;
+    background: var(--brand-grad) !important;
+    color: #fff !important;
+    font-weight: 800 !important;
+    font-size: 0.85rem !important;
+  }
+  .profil__aktif-av img,
+  .profil__aktif-av .hb-av-img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 34px !important;
+    max-height: 34px !important;
+    object-fit: cover !important;
+    border-radius: 999px !important;
+    display: block !important;
+  }
+  .profil__aktif-nokta {
+    position: absolute !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 9px !important;
+    height: 9px !important;
+    border-radius: 999px !important;
+    border: 1.5px solid var(--bg) !important;
+    background: #22c55e !important;
+    z-index: 2 !important;
+  }
+  .profil__aktif-nokta--cevrimdisi {
+    background: var(--muted) !important;
+  }
+  .profil__aktif-bilgi {
+    min-width: 0 !important;
+    flex: 1 !important;
+    font-size: 0.78rem !important;
+    line-height: 1.25 !important;
+  }
+  .profil__aktif-bilgi b {
+    display: block !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  .profil__aktif-bilgi span {
+    font-size: 0.7rem !important;
+    color: var(--muted) !important;
+    display: block !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  /* Mobil uyumluluk */
+  @media (max-width: 600px) {
+    .profil__uye {
+      grid-template-columns: 38px minmax(0, 1fr) !important;
+      gap: 10px !important;
+    }
+    .profil__uye-etiket {
+      grid-column: 1 / -1 !important;
+    }
+    .profil__uye-kaydet {
+      grid-column: 1 / -1 !important;
+      justify-self: end !important;
+    }
+  }
+</style>

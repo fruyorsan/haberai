@@ -39,7 +39,7 @@
     stilEklendi = true;
     var s = document.createElement("style");
     s.textContent =
-      ".hb-av-img{width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block}" +
+      ".hb-av-img{width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;object-fit:cover!important;border-radius:inherit!important;display:block!important}" +
       ".hb-av{overflow:hidden}";
     document.head.appendChild(s);
   }
