@@ -54,7 +54,7 @@ const SITE_URL = (process.env.SITE_URL || "https://fruyorsan.github.io").replace
 // boğmayacak ama "bildirim hiç gelmiyor" demeyeceği kadar geniş tutulur:
 // son dakika ~yarım saatte bir, konu bildirimi iki saatte bir.
 const SON_MIN_ARALIK_DK = Number(process.env.BILDIRIM_SON_ARALIK_DK ?? 25);
-const SON_MAX_GUN = Number(process.env.BILDIRIM_SON_MAX_GUN ?? 12);
+const SON_MAX_GUN = Number(process.env.BILDIRIM_SON_MAX_GUN ?? 24);
 const SON_TTL_SAAT = Number(process.env.BILDIRIM_SON_TTL_SAAT ?? 6);
 // Konu bildirimleri: "anında" seçen okuyucu, takip ettiği kategoride çıkan HER
 // yeni haberi alır. Bu yüzden kategori başına bekleme süresi varsayılan olarak
@@ -364,11 +364,13 @@ async function gonder(p) {
     govde.include_subscription_ids = [String(p.abonelikId)];
   } else if (Array.isArray(p.etiketler) && p.etiketler.length) {
     // Birden çok etiket: hepsi AND ile aranır (ör. kategori + bildirim sıklığı).
-    // Metin → {etiket: "1"}; nesne → {key, relation, value}.
+    // Metin → {etiket: "1"}; nesne → {key, relation, value}; {operator} → ayraç (OR).
     govde.filters = p.etiketler.map((e) =>
       typeof e === "string"
         ? { field: "tag", key: e, relation: "=", value: "1" }
-        : { field: "tag", key: e.key, relation: e.relation || "=", value: e.value }
+        : e.operator
+          ? { operator: e.operator }
+          : { field: "tag", key: e.key, relation: e.relation || "=", value: e.value }
     );
   } else if (p.etiket) {
     govde.filters = [{ field: "tag", key: p.etiket, relation: "=", value: "1" }];
@@ -696,6 +698,12 @@ export async function bildirimleriGonder({ dry = false } = {}) {
               ttl: 21600,
               etiketler: [
                 `kategori_${slug}`,
+                // Sıklık: "anında" seçenler + etiketi HİÇ yazılmamış eski cihazlar.
+                // Eski cihazlarda `bildirim_sikligi` etiketi yoktu; onları dışarıda
+                // bırakmak "hiç bildirim gelmiyor" demekti. "ozet"/"son" seçen
+                // cihazlar etiketi taşıdığı için bu iki koşula uymaz.
+                { key: "bildirim_sikligi", relation: "not_exists" },
+                { operator: "OR" },
                 { key: "bildirim_sikligi", relation: "=", value: "aninda" },
               ],
               anahtar: `kat-${aday.id}`,

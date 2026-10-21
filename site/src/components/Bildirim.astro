@@ -660,7 +660,10 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
       }
       for (const c of cipler) {
         const slug = c.dataset.kategori;
-        t["kategori_" + slug] = kategoriler.has(slug) ? "1" : "";
+        // "Günde 3 özet" / "Yalnızca son dakika" seçen okuyucuya konu
+        // bildirimi gitmesin: kategori etiketini boşalt.
+        const acik = t.bildirim_sikligi === "aninda" && kategoriler.has(slug);
+        t["kategori_" + slug] = acik ? "1" : "";
       }
       try {
         OneSignal.User.addTags(t);
