@@ -24,7 +24,7 @@ const IZINLI_LISANS =
 
 // Fotoğraf olmayan / haber görseli olarak kötü duran dosyalar.
 const KOTU_BASLIK =
-  /\b(logo|logos|map|maps|diagram|chart|graph|poster|cover|screenshot|screen shot|scan|scanned|icon|flag|coat of arms|seal|banknote|stamp|coin|signature|drawing|illustration|cartoon|clipart|svg|pdf|document|table|infographic|wikimedia|commons|wikidata|menu|display|thumbnail|unnamed|untitled|placeholder|no image|no photo|policies|policy brief|press release)\b/i;
+  /\b(logo|logos|map|maps|diagram|chart|graph|poster|cover|screenshot|screen shot|scan|scanned|icon|flag|coat of arms|seal|banknote|stamp|coin|signature|drawing|illustration|cartoon|clipart|svg|pdf|document|table|infographic|wikimedia|commons|wikidata|menu|display|thumbnail|unnamed|untitled|placeholder|no image|no photo|policies|policy brief|press release|art project|painting)\b/i;
 
 // Eski/tarama görselleri: haber sayfasında "dikkat çekici" durmaz.
 const ESKI_GORSEL = /(black and white|monochrome|archival|historical|engraving|lithograph|fortepan|wellcome|bundesarchiv|nationaal archief|\b18\d\d\b|\b19[0-7]\d\b)/i;
@@ -200,7 +200,7 @@ function eslesenSayisi(metin, sorgu) {
 const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
 
 /** Commons'ta serbest lisanslı, büyük ve yatay fotoğraf arar. */
-async function commonsAra(sorgu, adet = ADAY, offset = 0, afet = false) {
+async function commonsAra(sorgu, adet = ADAY, offset = 0, afet = false, marka = "") {
   const params = new URLSearchParams({
     action: "query",
     format: "json",
@@ -211,7 +211,8 @@ async function commonsAra(sorgu, adet = ADAY, offset = 0, afet = false) {
     gsrlimit: String(adet),
     gsroffset: String(Math.max(0, offset)),
     gsrsearch: `${sorgu} filetype:bitmap`,
-    prop: "imageinfo",
+    prop: "imageinfo|categories",
+    cllimit: "max",
     iiprop: "url|size|extmetadata",
     iiextmetadatafilter: "LicenseShortName|Artist|LicenseUrl|Credit|ImageDescription",
     iiurlwidth: "1400",
@@ -228,21 +229,34 @@ async function commonsAra(sorgu, adet = ADAY, offset = 0, afet = false) {
       signal: AbortSignal.timeout(15000),
     });
     if (!tekrar.ok) throw new Error(`Commons HTTP ${tekrar.status}`);
-    return sayfalariCoz(await tekrar.json(), sorgu, afet);
+    return sayfalariCoz(await tekrar.json(), sorgu, afet, marka);
   }
   if (!res.ok) throw new Error(`Commons HTTP ${res.status}`);
-  return sayfalariCoz(await res.json(), sorgu, afet);
+  return sayfalariCoz(await res.json(), sorgu, afet, marka);
 }
 
-function sayfalariCoz(json, sorgu, afet = false) {
+function sayfalariCoz(json, sorgu, afet = false, marka = "") {
   const sayfalar = json?.query?.pages || [];
   return (Array.isArray(sayfalar) ? sayfalar : Object.values(sayfalar))
-    .map((s) => uygunGorsel(s, sorgu, afet))
+    .map((s) => uygunGorsel(s, sorgu, afet, marka))
     .filter(Boolean)
     .sort((a, b) => b.skor - a.skor || b.genislik - a.genislik);
 }
 
-function uygunGorsel(sayfa, sorgu, afet = false) {
+/** Metinde sözcük olarak geçiyor mu? ("Mini-MAX" ≠ "Minimax", "Tusa" ≠ "TUSAŞ") */
+function tamKelimeVar(metin, kelime) {
+  const duz = (s) =>
+    String(s || "")
+      .toLocaleLowerCase("tr")
+      .replace(/[çğıöşü]/g, (c) => ({ ç: "c", ğ: "g", ı: "i", ö: "o", ş: "s", ü: "u" }[c]));
+  const aranan = duz(kelime).trim();
+  if (!aranan) return false;
+  return duz(metin)
+    .split(/[^a-z0-9]+/)
+    .some((w) => w === aranan);
+}
+
+function uygunGorsel(sayfa, sorgu, afet = false, marka = "") {
   const ii = sayfa?.imageinfo?.[0];
   if (!ii) return null;
 
@@ -250,6 +264,25 @@ function uygunGorsel(sayfa, sorgu, afet = false) {
   // Yalnızca JPEG: PNG/TIF/WebP dosyaları sayfayı ağırlaştırır.
   if (!/\.jpe?g$/i.test(baslik)) return null;
   if (KOTU_BASLIK.test(baslik)) return null;
+
+  // MARKA DOĞRULAMASI: marka adıyla aranan dosya, Commons'ta o markanın
+  // kategorisinde olmalı. Aksi hâlde "TUSAŞ" → Norveç'te "Tusa River",
+  // "MiniMax" → itfaiye pompası, "Anthropic" → fosil kemiği gibi eşleşmeler
+  // kapak oluyordu. Kategori, dosyanın gerçekten o markaya ait olduğunu
+  // gösteren en güvenilir sinyal.
+  if (marka) {
+    const kategoriler = (sayfa.categories || []).map((c) => c.title || "").join(" ");
+    if (!tamKelimeVar(kategoriler, marka)) return null;
+    // Marka fotoğrafı olsa da kapak olarak kötü duran kareler: protesto/aktivizm
+    // görüntüleri, çadır/stant, tabela, bisiklet, kablo/adaptör.
+    if (
+      /\b(protest|demonstration|protestors|farbattacke|letzte generation|attack|tent|zelt|booth|stand|bicycle|bike|adapter|cable|banner)\b/i.test(
+        baslik
+      )
+    ) {
+      return null;
+    }
+  }
 
   const w = Number(ii.width) || 0;
   const h = Number(ii.height) || 0;
@@ -391,7 +424,7 @@ export function konuSorgu(...metinler) {
  * en fazla `adet` görsel döndürür. Ağ hatası sessizce atlanır (haber yayından
  * düşmez; kategori yedeği devreye girer).
  */
-export async function stokGorseller(sorgular, { adet = 3, kullanilan = new Set(), offset = 0, afet = false } = {}) {
+export async function stokGorseller(sorgular, { adet = 3, kullanilan = new Set(), offset = 0, afet = false, marka = "" } = {}) {
   // Aynı dosyanın kırpılmış sürümü ("... (cropped)") ayrı fotoğraf sayılmasın.
   const kimlik = (baslik) =>
     String(baslik || "")
@@ -407,11 +440,14 @@ export async function stokGorseller(sorgular, { adet = 3, kullanilan = new Set()
 
   const ara = async (gorulen) => {
     const sonuc = [];
-    for (const sorgu of temizSorgular) {
+    for (const [i, sorgu] of temizSorgular.entries()) {
       if (sonuc.length >= adet) break;
       let adaylar = [];
       try {
-        adaylar = await commonsAra(sorgu, ADAY, offset, afet);
+        // Marka sorgusu yalnızca ilk sırada ve marka adıyla aynıysa kategori
+        // doğrulamasıyla çalışır; diğer (konu) sorguları serbesttir.
+        const markaFiltre = i === 0 && marka && sorgu === String(marka).trim() ? marka : "";
+        adaylar = await commonsAra(sorgu, ADAY, offset, afet, markaFiltre);
       } catch {
         continue; // ağ hatası: sonraki sorgu
       }

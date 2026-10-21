@@ -71,7 +71,7 @@ for (const a of hedefler) {
   const marka = markaAdi(a.title);
   let secili = [];
   try {
-    secili = await stokGorseller([marka], { adet: 3, kullanilan });
+    secili = await stokGorseller([marka], { adet: 3, kullanilan, marka });
   } catch (err) {
     console.warn(`  ! ${marka}: arama hatası (${err.message})`);
     continue;

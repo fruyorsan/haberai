@@ -67,9 +67,10 @@ function kullanilanGorseller(articles) {
  * göstermektense mevcut fotoğrafı korumak daha iyidir.
  */
 async function gorselYaz(a, sorgu, kullanilan) {
+  const marka = markaAdi(a.title);
   const stok = await stokGorseller(
-    [markaAdi(a.title), sorgu, konuSorgu(sorgu, a.title), kisaSorgu(sorgu), KATEGORI_SORGU[a.category]],
-    { adet: 3, kullanilan, afet: afetMi(sorgu, a.title) }
+    [marka, sorgu, konuSorgu(sorgu, a.title), kisaSorgu(sorgu), KATEGORI_SORGU[a.category]],
+    { adet: 3, kullanilan, afet: afetMi(sorgu, a.title), marka }
   );
   if (!stok.length) return false;
   const [kapak, ...ekler] = stok;
