@@ -1,5 +1,104 @@
 [
   {
+    "id": "f74875f6897d2c27",
+    "title": "Nvidia’nın Groq’ı 3D DRAM ile Yükseltiliyor: Yüksek Kapasiteye Adım",
+    "slug": "nvidia-groq-3d-dram",
+    "summary": "Nvidia’nın alt markası Groq, yeni nesil yapay zeka çiplerinde bellek teknolojisini 3D yığınlanmış DRAM’e kaydırıyor. Bu hamle, kapasite artırımı ve enerji verimliliği hedefliyor.",
+    "keyPoints": [
+      "Groq’un mevcut LPU çipleri 500 MB SRAM ve 150 TB/s bant genişliği sunuyor.",
+      "Yeni çip tasarımında 3D DRAM yığınlama, TSV ile bağlanacak katmanlar aracılığıyla kapasiteyi artıracak.",
+      "Yüksek kapasiteli DRAM, enerji verimliliği ve alan kullanımında avantaj sağlarken, bant genişliği ve gecikme konusunda ödün gerektirecek."
+    ],
+    "body": [
+      "Nvidia’nın alt markası Groq, yapay zeka çiplerinde kullanılan bellek mimarisini yeniden şekillendirmeye hazırlanıyor. Mevcut nesil LPU (Learning Processing Unit) çipleri 500 MB SRAM ile donatılmış, 1 50 TB/s bant genişliğine sahip ve 256 çipli bir sistemde toplamda 128 GB SRAM kapasitesi elde ediliyor. Bu yapı, 640 TB/s’lik bir bant genişliği sunarak FP8 hesaplamada 1,20 PFLOPS performansı vaat ediyor.",
+      "Yapılandırmada SRAM’in yüksek hız ve düşük gecikme sağlamasının yanı sıra kapasite sınırlaması söz konusu. Groq, yeni nesil çiplerde bu sınırlamayı aşmak üzere 3D yığınlanmış DRAM teknolojisine yöneliyor. DRAM, daha fazla bellek yoğunluğu sunarken bant genişliği ve gecikme açısından bazı ödünler gerektiriyor.",
+      "Sektör içi kaynaklar, Groq’un DRAM katmanlarını TSV (Through‑Silicon Via) ile birbirine bağlayarak dikey yığınlama yapacağını belirtiyor. Bu yöntem, yüksek bant genişlikli HBM belleklerde kullanılan yaklaşımın bir evrimi olarak değerlendiriliyor. 3D DRAM, daha küçük bir fiziksel alanda daha fazla bellek depolama olanağı tanır ve enerji verimliliğini artırma potansiyeline sahip.",
+      "Yeni nesil çiplerin piyasaya çıkış tarihi ve DRAM ile SRAM’in aynı çip içinde birleştirilip birleştirilmeyeceği henüz netleşmemiş. Groq’un, belki de iki bellek türünü ayrı ürünlerde sunmayı planladığı düşünülüyor. Bu hamle, yapay zeka modellerinin giderek büyümesiyle paralel olarak bellek kapasitelerinin öncelik kazanmasını hedefliyor."
+    ],
+    "comment": "Groq’un 3D DRAM’e geçişi, AI donanımında bellek kapasitesi ve enerji verimliliğini bir üst seviyeye taşıma çabasını gösteriyor. Eğer bu teknoloji ölçeklenebilirlik ve fiyat açısından da avantaj sunar ise, AI ekosistemi için önemli bir kilometre taşı olabilir.",
+    "editorNote": "Yapay zeka çiplerinde bellek mimarisi devrimini yakından takip ediyoruz.",
+    "tags": [
+      "Nvidia",
+      "Groq",
+      "3D DRAM",
+      "Yapay Zeka"
+    ],
+    "category": "Donanım",
+    "gorselSorgu": "3D DRAM chip illustration",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/nvidia-nin-ai-planlari-buyuyor-groq-3d-dram-e-geciyor--211910",
+    "image": "https://www.donanimhaber.com/images/images/haber/211910/1200x675nvidia-nin-ai-planlari-buyuyor-groq-3d-dram-e-geciyor.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T19:43:00.000Z",
+    "generatedAt": "2026-10-21T19:45:55.594Z",
+    "breaking": true
+  },
+  {
+    "id": "4ab0c3bc9d2315b3",
+    "title": "İran Savunma Sözcüsü: ABD Saldırıları Hürmüz Boğazı’na Etki Etmez",
+    "slug": "iran-hurmuz-bozagi-abd-saldirilar",
+    "summary": "İran Devrim Muhafızları Ordu Sözcüsü Hüseyin Muhibbi, ABD’nin olası hava saldırılarının İran’ı teslim olmaya zorlayamayacağını ve Hürmüz Boğazı’nın kapalı kalmasının küresel ekonomiye zarar vereceğini belirtti. Muhibbi, Hürmüz Boğazı’nda yaşanacak kısıtlamaların petrol, alüminyum ve çip üretiminde kritik eksikliklere yol açacağını vurguladı.",
+    "keyPoints": [
+      "ABD’nin Hürmüz Boğazı’na yönelik bombardımanları İran'ı teslim etmez",
+      "Boğazın kapalı kalması küresel enerji ve tarım piyasalarını olumsuz etkiler",
+      "Muhibbi, Hürmüz Boğazı’ndan geçen çip üretim malzemelerinin %10’unun dünya pazarına ulaştığını söyledi"
+    ],
+    "body": [
+      "Muhibbi, Boğaz’ın kapanmasının petrol tankerlerinin sayısını artırdığını ve ABD’nin yaklaşan seçimler öncesinde enerji arzını güvence altına alarak petrol fiyatlarını düşürmek istediklerini ifade etti."
+    ],
+    "comment": "Muhibbi’nin sözleri, İran’ın stratejik konumunu ve Hürmüz Boğazı’nı silah olarak kullanmanın sınırlı etkisini vurgulayarak bölgesel gerilimin küresel ölçekte nasıl artabileceğine işaret ediyor. ABD’nin askeri hamlelerinin beklenen siyasi sonuçları vermeyebileceği mesajı, enerji piyasalarındaki belirsizliği derinleştiriyor.",
+    "editorNote": "Zorlu bir dönemde, hem bölgesel hem de küresel ekonomi için kritik bir noktanın önemini tek bir açıklama özetliyor.",
+    "tags": [
+      "İran",
+      "ABD",
+      "Hürmüz Boğazı",
+      "Enerji Piyasaları"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "Persian Gulf economic impact",
+    "source": "İlke TV",
+    "sourceUrl": "https://ilketv.com.tr/muhibbi-abdnin-saldirilari-irani-teslim-alamaz/",
+    "image": "https://ilketv.com.tr/wp-content/uploads/2026/10/690x390cc-mrk-21-10-2026-iran-devrim-muhafizlari-sozcusu-aciklama-.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T19:42:16.000Z",
+    "generatedAt": "2026-10-21T19:46:43.440Z",
+    "breaking": true
+  },
+  {
+    "id": "1d5c7ac39738ff23",
+    "title": "Putin, ABD‑Ukrayna Müzakerelerini Yeniden Başlatmayı Onayladı",
+    "slug": "putin-abu-ukrayna-muzakereleri-yeniden-baslatma",
+    "summary": "Rusya Devlet Başkanı Vladimir Putin, ABD ve Ukrayna ile yeni bir müzakere döneminin açılmasını kabul etti. Olay, savaşın seyrini değiştirebilecek diplomatik bir adım olarak değerlendiriliyor. Sözleşme sürecinin detayları henüz netleşmedi.",
+    "keyPoints": [
+      "Putin, diplomatik kanalları yeniden açmayı resmen kabul etti",
+      "ABD ve Ukrayna tarafları da müzakereleri açmaya hazır",
+      "Sürecin detayları ve zaman çizelgesi henüz belirsiz"
+    ],
+    "body": [
+      "Putin'in ABD ve Ukrayna ile yeni bir müzakere dönemine açılma kararı, Rusya’nın diplomatik stratejisinde beklenmeyen bir dönüşü işaret ediyor. Resmi açıklamada, Rusya Devlet Başkanı, uzun süredir devam eden savaşın seyrini değiştirebilecek bir adımın atıldığını belirtti.",
+      "ABD yetkilileri, bu gelişmeyi hem takdir hem de dikkatli bir izleme süreciyle karşıladı. Bildirilerde, müzakerelerin bir sonuç tuzağı oluşturabileceği ve tarafların çıkarlarını korumak için ciddi şartlar koyması gerektiği vurgulandı.",
+      "Ukrayna tarafı ise, müzakere sürecinin güvenliğini sağlamak için uluslararası katılımcıların varlığını talep etti. Başbakan ve savunma bakanı, Rusya’nın bu teklifine olumlu bir tutum sergilemesine rağmen, süreçte adil bir denge kaydedilmesi önemini belirtti.",
+      "Bu adımın, hem bölgesel hem de küresel barış çabalarına olumlu bir katkı sunması bekleniyor. Ancak tarafların ortak bir anlaşmaya varabilmesi için uzun ve karmaşık bir uzlaşma sürecinin başlamak zorunda olduğu da göz önünde bulundurulmalı."
+    ],
+    "comment": "",
+    "editorNote": "",
+    "tags": [],
+    "category": "Dünya",
+    "gorselSorgu": "",
+    "source": "Euronews.com",
+    "sourceUrl": "https://tr.euronews.com/2026/10/21/putin-abd-ve-ukrayna-ile-muzakerelerin-yeniden-baslamasini-kabul-etti",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/World_globe_%28Unsplash_gEKMstKfZ6w%29.jpg/1280px-World_globe_%28Unsplash_gEKMstKfZ6w%29.jpg",
+    "gorselKaynak": {
+      "yazar": "Ben White benwhitephotography",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:World_globe_(Unsplash_gEKMstKfZ6w).jpg"
+    },
+    "publishedAt": "2026-10-21T19:39:34.000Z",
+    "generatedAt": "2026-10-21T19:47:02.652Z",
+    "breaking": true
+  },
+  {
     "id": "0828918eb806cb21",
     "title": "ABD, Suudi Arabistanlı Görevdeki Personel İçin Terk Emri Verdi",
     "slug": "abd-suudi-arabistan-termin-emri",
@@ -62,6 +161,40 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-21T19:37:28.000Z",
     "generatedAt": "2026-10-21T19:41:42.347Z",
+    "breaking": true
+  },
+  {
+    "id": "d4c422cdeed79196",
+    "title": "Arnavutluk Öğrencileri 9 Gün Boyunca Eğitimde Değişim Talep Ettikçe Gerginlik Sürüyor",
+    "slug": "arnavutluk-ogrencileri-9-gun-boyunca-egitimde-degisim-talep-ettikce-gerginlik-su",
+    "summary": "Tiran'daki üniversite öğrencileri, eğitim koşullarında köklü değişiklik talep ederek 13 Ekim'den itibaren devam eden protestolarda şiddetli gerginlik yaşadı. Gösterilere lise öğrencileri ve öğretim görevlileri de destek oldu.",
+    "keyPoints": [
+      "13 Ekim'den başlayan protestolar 9. gününde yeniden şiddetli gerginlik",
+      "Başbakanlık ve Eğitim Bakanlığı binalarında taş ve molotof fırlatıldı",
+      "Arnavutluk Başbakanı Edi Rama, diyalog çağrısı yaptı"
+    ],
+    "body": [
+      "Tiran’da, Arnavutluk’un başkenti, 13 Ekim’den itibaren devam eden öğrenciler protestoları 9. gününde yeniden şiddetli bir gerginliğe sahne oldu. Gösterilere yükseköğretim öğrencileri, lise öğrencileri ve çeşitli üniversitelerin öğretim görevlileri katıldı.",
+      "Başbakanlık binası önünde başlayan gösteri, daha sonra Eğitim Bakanlığı binasına taş ve molotof kokteyli fırlatılarak şiddetlenerek devam etti. Emniyet güçleriyle polis arasında birkaç anlık şiddetli karşılaşma yaşandı.",
+      "Arnavutluk Başbakanı Edi Rama, protestörlerin talebini dinleyen bir diyalog çağrısı yaptı ve bu açıklama, göstericilerin beklentilerini bir nebze yatıştırdı. Ancak SPUSH, tüm üniversitelerde boykot kararı alarak hareketini sürdürüyor.",
+      "Son dönemde Arnavutluk’taki eğitim sisteminin köklü değişiklik yapılması çağrısının basamakları, öğrencilerin yoğun talebini geri çevirememesiyle bir kez daha gündeme geldi. Bu süreçte, gösterilerin şiddetle iç içe geçmesi, ülke gündeminde önemli bir tartışma konusu olmaya devam ediyor."
+    ],
+    "comment": "Gösterilerin şiddetle sonuçlanması, Arnavutluk’un eğitim politikaları konusunda derin bir bölünmeyi işaret ediyor. Başbakanın diyalog çağrısı, bir yandan da hükümetin reform yapma isteksizliğini gösteriyor. Bu durum, bölgedeki öğrenci hareketlerinin küresel bağlamda da yankı bulmasına yol açabilir.",
+    "editorNote": "Üniversite öğrencileri, eğitim koşullarının iyileştirilmesi talebiyle gösteri yaparak temel haklarını savunuyor.",
+    "tags": [
+      "Eğitim",
+      "Protesto",
+      "Arnavutluk",
+      "Öğrenci Hareketi"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "student protest Albania",
+    "source": "AA Güncel",
+    "sourceUrl": "https://www.aa.com.tr/tr/dunya/arnavutlukta-ogrencilerin-egitim-kosullarinin-iyilestirilmesi-talebiyle-duzenledigi-protestolar-suruyor/4096448",
+    "image": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/21/thumbs_b_c_7c4b35f8a7360248a3cf5d3d1f9decef.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-21T19:37:03.000Z",
+    "generatedAt": "2026-10-21T19:48:01.953Z",
     "breaking": true
   },
   {
