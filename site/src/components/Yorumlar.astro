@@ -437,6 +437,22 @@ const otomatik = !sade && Boolean(slug) && aktif;
     font-weight: 800;
     color: var(--heading);
   }
+  .yorum__oge-ad--link {
+    text-decoration: none;
+    transition: color 0.15s var(--ease);
+  }
+  .yorum__oge-ad--link:hover {
+    color: var(--brand);
+    text-decoration: underline;
+  }
+  .yorum__oge-avatar {
+    text-decoration: none;
+    transition: transform 0.15s var(--ease), opacity 0.15s var(--ease);
+  }
+  .yorum__oge-avatar:hover {
+    transform: scale(1.06);
+    opacity: 0.9;
+  }
   .yorum__oge-zaman {
     font-size: 0.72rem;
     color: var(--muted);
@@ -827,9 +843,12 @@ const otomatik = !sade && Boolean(slug) && aktif;
     li.className = "yorum__oge";
     if (y.id != null) li.dataset.yorumId = String(y.id);
     if (y.ust_id != null) li.classList.add("yorum__oge--yanit");
-    const avatar = document.createElement("span");
+    const profilUrl = `/kullanici/?u=${encodeURIComponent(y.ad || "Okur")}${y.uye_id ? `&id=${encodeURIComponent(y.uye_id)}` : ""}`;
+    const avatar = document.createElement("a");
+    avatar.href = profilUrl;
     avatar.className = "yorum__oge-avatar";
-    avatar.setAttribute("aria-hidden", "true");
+    avatar.setAttribute("aria-label", `${y.ad || "Okur"} profilini gör`);
+    avatar.title = `${y.ad || "Okur"} profili`;
     const H = (window as any).HaberinAi;
     const avatarDeger = y.uye_id ? avatarHaritasi[y.uye_id] || "" : "";
     if (H && typeof H.avatarDoldur === "function") {
@@ -839,8 +858,10 @@ const otomatik = !sade && Boolean(slug) && aktif;
     }
     const ust = document.createElement("div");
     ust.className = "yorum__oge-ust";
-    const ad = document.createElement("span");
-    ad.className = "yorum__oge-ad";
+    const ad = document.createElement("a");
+    ad.href = profilUrl;
+    ad.className = "yorum__oge-ad yorum__oge-ad--link";
+    ad.title = `${y.ad || "Okur"} profilini gör`;
     ad.textContent = y.ad || "Okur";
     ust.append(ad);
     if (y.uye_id) {

@@ -676,7 +676,7 @@ returns jsonb
 language plpgsql
 security definer
 set search_path = public, extensions
-as $
+as $$
 declare
   v_uye public.uyeler;
   v_kadi text := lower(btrim(coalesce(p_kadi, '')));
@@ -731,7 +731,7 @@ begin
     'begeniler', '[]'::jsonb
   );
 end;
-$;
+$$;
 
 create or replace function public.kullanici_yorumlar(
   p_kadi text default null,
@@ -742,7 +742,7 @@ returns jsonb
 language plpgsql
 security definer
 set search_path = public, extensions
-as $
+as $$
 declare
   v_uye_id uuid := p_id;
   v_kadi text := btrim(coalesce(p_kadi, ''));
@@ -782,7 +782,7 @@ begin
     ) y
   ), '[]'::jsonb);
 end;
-$;
+$$;
 
 grant execute on function public.kullanici_profil(text, uuid) to anon, authenticated;
 grant execute on function public.kullanici_yorumlar(text, uuid, int) to anon, authenticated;

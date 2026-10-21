@@ -1,0 +1,909 @@
+---
+import Base from "../layouts/Base.astro";
+import { HESAP, YORUM } from "../lib/site-meta.js";
+
+const hazir = Boolean(HESAP.url && HESAP.anahtar);
+---
+
+<Base
+  title="Kullanıcı Profili — HaberinAi"
+  description="HaberinAi okur profili: yorumları, beğendiği videolar ve haberler."
+  noindex
+>
+  <div class="container kullanici">
+    <!-- Geri Dön Butonu -->
+    <div class="kullanici__nav">
+      <button type="button" class="kullanici__geri" id="btn-geri">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        <span>Geri dön</span>
+      </button>
+    </div>
+
+    <!-- Yükleniyor Göstergesi -->
+    <div class="kullanici__durum" id="profil-bekle">
+      <div class="kullanici__spinner" aria-hidden="true"></div>
+      <p>Kullanıcı profili yükleniyor…</p>
+    </div>
+
+    <!-- Kullanıcı Bulunamadı -->
+    <div class="kullanici__bos" id="profil-bulunamadi" hidden>
+      <span class="kullanici__bos-ikon" aria-hidden="true">👤</span>
+      <h2>Kullanıcı bulunamadı</h2>
+      <p>Bu isimde bir kullanıcı kaydı veya yorum geçmişi bulunmuyor.</p>
+      <a class="kullanici__btn" href="/akis/">Shorts Akışına Dön</a>
+    </div>
+
+    <!-- Profil Kartı & İçerik -->
+    <div class="kullanici__icerik" id="profil-icerik" hidden>
+      <header class="kullanici__kart">
+        <div class="kullanici__ust">
+          <div class="kullanici__avatar-sarma">
+            <span class="kullanici__avatar" id="kullanici-avatar" aria-hidden="true"></span>
+          </div>
+          <div class="kullanici__bilgi">
+            <div class="kullanici__baslik-satir">
+              <h1 class="kullanici__ad" id="kullanici-ad">Okur</h1>
+              <div class="kullanici__rozetler" id="kullanici-rozetler"></div>
+            </div>
+            <p class="kullanici__kadi" id="kullanici-kadi">@okur</p>
+            <p class="kullanici__tarih" id="kullanici-tarih" hidden></p>
+          </div>
+        </div>
+
+        <!-- İstatistik Çipleri -->
+        <div class="kullanici__istatistik">
+          <div class="kullanici__stat-kutu">
+            <span class="kullanici__stat-sayi" id="stat-yorum-sayi">0</span>
+            <span class="kullanici__stat-etiket">💬 Yorum</span>
+          </div>
+          <div class="kullanici__stat-kutu">
+            <span class="kullanici__stat-sayi" id="stat-begeni-sayi">0</span>
+            <span class="kullanici__stat-etiket">❤️ Beğeni</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sekmeler -->
+      <nav class="kullanici__sekmeler" aria-label="Profil sekmeleri">
+        <button
+          type="button"
+          class="kullanici__sekme is-aktif"
+          id="sekme-yorumlar"
+          data-hedef="panel-yorumlar"
+          aria-selected="true"
+        >
+          <span>💬 Yorumları</span>
+          <span class="kullanici__sekme-sayac" id="sayac-yorumlar">0</span>
+        </button>
+        <button
+          type="button"
+          class="kullanici__sekme"
+          id="sekme-begeniler"
+          data-hedef="panel-begeniler"
+          aria-selected="false"
+        >
+          <span>❤️ Beğendiği Videolar & Haberler</span>
+          <span class="kullanici__sekme-sayac" id="sayac-begeniler">0</span>
+        </button>
+      </nav>
+
+      <!-- Panel: Yorumlar -->
+      <section class="kullanici__panel" id="panel-yorumlar">
+        <div class="kullanici__yorum-liste" id="liste-yorumlar"></div>
+        <div class="kullanici__bos-panel" id="bos-yorumlar" hidden>
+          <p>Bu kullanıcının henüz açık bir yorumu bulunmuyor.</p>
+        </div>
+      </section>
+
+      <!-- Panel: Beğendikleri -->
+      <section class="kullanici__panel" id="panel-begeniler" hidden>
+        <div class="kullanici__haber-izgara" id="liste-begeniler"></div>
+        <div class="kullanici__bos-panel" id="bos-begeniler" hidden>
+          <p>Bu kullanıcının henüz herkese açık beğendiği bir video veya haber bulunmuyor.</p>
+          <small>Hesapsız okurların beğenileri yalnızca kendi cihazlarında saklanır.</small>
+        </div>
+      </section>
+    </div>
+  </div>
+</Base>
+
+<style is:global>
+  .kullanici {
+    max-width: 860px;
+    margin: 28px auto 60px;
+    padding: 0 16px;
+  }
+  .kullanici__nav {
+    margin-bottom: 20px;
+  }
+  .kullanici__geri {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 15px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text-2);
+    font: inherit;
+    font-size: 0.86rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s var(--ease);
+  }
+  .kullanici__geri:hover {
+    border-color: var(--brand);
+    color: var(--brand);
+    background: var(--surface-2);
+  }
+  .kullanici__durum,
+  .kullanici__bos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--surface);
+    color: var(--text-2);
+  }
+  .kullanici__spinner {
+    width: 36px;
+    height: 36px;
+    border: 3px solid var(--border);
+    border-top-color: var(--brand);
+    border-radius: 50%;
+    animation: kul-don 0.75s linear infinite;
+    margin-bottom: 14px;
+  }
+  @keyframes kul-don {
+    to { transform: rotate(360deg); }
+  }
+  .kullanici__bos-ikon {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+  }
+  .kullanici__bos h2 {
+    margin: 0 0 8px;
+    color: var(--heading);
+  }
+  .kullanici__btn {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 16px;
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: var(--brand-grad);
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-decoration: none;
+    box-shadow: 0 10px 20px -10px var(--brand-glow);
+  }
+  .kullanici__kart {
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    background: var(--surface);
+    box-shadow: 0 12px 30px -15px rgba(0, 0, 0, 0.08);
+  }
+  .kullanici__ust {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .kullanici__avatar-sarma {
+    position: relative;
+  }
+  .kullanici__avatar {
+    display: grid;
+    place-items: center;
+    width: 82px;
+    height: 82px;
+    border-radius: 999px;
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-size: 2.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    box-shadow: 0 0 0 4px var(--surface), 0 0 0 6px var(--border);
+    overflow: hidden;
+  }
+  .kullanici__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .kullanici__bilgi {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+    flex: 1;
+  }
+  .kullanici__baslik-satir {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .kullanici__ad {
+    margin: 0;
+    font-size: 1.45rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: var(--heading);
+  }
+  .kullanici__rozetler {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .kullanici__rozet {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 9px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .kullanici__rozet--uye {
+    background: var(--brand-soft);
+    color: var(--brand);
+  }
+  .kullanici__rozet--admin {
+    background: var(--brand-grad);
+    color: #fff;
+    box-shadow: 0 4px 12px -4px var(--brand-glow);
+  }
+  .kullanici__rozet--okur {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text-2);
+  }
+  .kullanici__kadi {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--text-2);
+    font-weight: 600;
+  }
+  .kullanici__tarih {
+    margin: 2px 0 0;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .kullanici__istatistik {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+  }
+  .kullanici__stat-kutu {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+  }
+  .kullanici__stat-sayi {
+    font-size: 1.35rem;
+    font-weight: 900;
+    color: var(--heading);
+  }
+  .kullanici__stat-etiket {
+    font-size: 0.78rem;
+    color: var(--text-2);
+    font-weight: 700;
+    margin-top: 2px;
+  }
+  .kullanici__sekmeler {
+    display: flex;
+    gap: 8px;
+    margin: 26px 0 18px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 2px;
+    overflow-x: auto;
+  }
+  .kullanici__sekme {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 18px;
+    border: 0;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    background: transparent;
+    color: var(--text-2);
+    font: inherit;
+    font-size: 0.92rem;
+    font-weight: 800;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s var(--ease);
+  }
+  .kullanici__sekme:hover {
+    color: var(--heading);
+  }
+  .kullanici__sekme.is-aktif {
+    color: var(--brand);
+    border-bottom-color: var(--brand);
+  }
+  .kullanici__sekme-sayac {
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    font-size: 0.72rem;
+    font-weight: 800;
+  }
+  .kullanici__sekme.is-aktif .kullanici__sekme-sayac {
+    background: var(--brand-soft);
+    color: var(--brand);
+    border-color: transparent;
+  }
+  .kullanici__panel {
+    margin-top: 14px;
+  }
+  .kullanici__bos-panel {
+    padding: 40px 20px;
+    text-align: center;
+    border: 1px dashed var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+    color: var(--text-2);
+  }
+  .kullanici__bos-panel p {
+    margin: 0;
+    font-size: 0.94rem;
+    font-weight: 600;
+  }
+  .kullanici__bos-panel small {
+    display: block;
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+
+  /* Yorum Kartları */
+  .kullanici__yorum-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .kullanici__yorum-kart {
+    padding: 16px 18px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: border-color 0.15s var(--ease), box-shadow 0.15s var(--ease);
+  }
+  .kullanici__yorum-kart:hover {
+    border-color: color-mix(in srgb, var(--brand) 40%, var(--border));
+    box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.08);
+  }
+  .kullanici__yorum-haber {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .kullanici__yorum-resim {
+    width: 60px;
+    height: 44px;
+    border-radius: 8px;
+    object-fit: cover;
+    background: var(--surface-2);
+    flex-shrink: 0;
+  }
+  .kullanici__yorum-haber-detay {
+    min-width: 0;
+    flex: 1;
+  }
+  .kullanici__yorum-kat {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--brand);
+    margin-bottom: 2px;
+  }
+  .kullanici__yorum-baslik {
+    margin: 0;
+    font-size: 0.92rem;
+    font-weight: 800;
+    line-height: 1.35;
+    color: var(--heading);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-decoration: none;
+  }
+  .kullanici__yorum-baslik:hover {
+    color: var(--brand);
+    text-decoration: underline;
+  }
+  .kullanici__yorum-govde {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .kullanici__yorum-metin {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--text);
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+  .kullanici__yorum-alt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: 0.76rem;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .kullanici__yorum-sol {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .kullanici__yorum-kalp {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--brand);
+    font-weight: 800;
+  }
+  .kullanici__yorum-git {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text-2);
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.15s var(--ease);
+  }
+  .kullanici__yorum-git:hover {
+    border-color: var(--brand);
+    color: var(--brand);
+  }
+
+  /* Beğenilen Haberler & Videolar Izgarası */
+  .kullanici__haber-izgara {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .kullanici__haber-kart {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.15s var(--ease), border-color 0.15s var(--ease), box-shadow 0.15s var(--ease);
+  }
+  .kullanici__haber-kart:hover {
+    transform: translateY(-3px);
+    border-color: var(--brand);
+    box-shadow: 0 12px 28px -12px rgba(0, 0, 0, 0.15);
+  }
+  .kullanici__haber-gorsel-kap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: var(--surface-2);
+    overflow: hidden;
+  }
+  .kullanici__haber-gorsel {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s var(--ease);
+  }
+  .kullanici__haber-kart:hover .kullanici__haber-gorsel {
+    transform: scale(1.04);
+  }
+  .kullanici__haber-rozet {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    font-size: 0.66rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  .kullanici__haber-video-etiket {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: var(--brand-grad);
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 900;
+  }
+  .kullanici__haber-govde {
+    padding: 12px 14px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+  }
+  .kullanici__haber-baslik {
+    margin: 0;
+    font-size: 0.94rem;
+    font-weight: 800;
+    line-height: 1.38;
+    color: var(--heading);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .kullanici__haber-tarih {
+    margin-top: auto;
+    font-size: 0.74rem;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  @media (max-width: 640px) {
+    .kullanici {
+      margin: 16px auto 40px;
+    }
+    .kullanici__kart {
+      padding: 18px 16px;
+    }
+    .kullanici__avatar {
+      width: 68px;
+      height: 68px;
+      font-size: 1.8rem;
+    }
+    .kullanici__ad {
+      font-size: 1.25rem;
+    }
+    .kullanici__haber-izgara {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  interface HaberIndeks {
+    t: string;
+    u: string;
+    s: string;
+    c: string;
+    src: string;
+    d: string;
+    img: string | null;
+  }
+
+  let tumHaberler: Map<string, HaberIndeks> = new Map();
+
+  function slugTemizle(u: string): string {
+    return u.replace(/^\/haber\//, "").replace(/\/$/, "").trim();
+  }
+
+  async function indeksYukle(): Promise<Map<string, HaberIndeks>> {
+    if (tumHaberler.size > 0) return tumHaberler;
+    try {
+      const res = await fetch("/search-index.json");
+      if (res.ok) {
+        const list = (await res.json()) as HaberIndeks[];
+        for (const item of list) {
+          const slug = slugTemizle(item.u);
+          if (slug) tumHaberler.set(slug, item);
+        }
+      }
+    } catch (e) {
+      /* indeks yüklenemezse haber başlığı slug'dan türetilir */
+    }
+    return tumHaberler;
+  }
+
+  function zaman(iso: string): string {
+    const t = Date.parse(iso);
+    if (!t) return "";
+    let s = Math.max(0, (Date.now() - t) / 1000);
+    if (s < 45) return "az önce";
+    const birimler: [number, string][] = [
+      [60, "sn"],
+      [60, "dk"],
+      [24, "sa"],
+      [7, "gün"],
+      [4.35, "hafta"],
+      [12, "ay"],
+    ];
+    let birim = "sn";
+    for (const [bol, ad] of birimler) {
+      if (s < bol) {
+        birim = ad;
+        break;
+      }
+      s = s / bol;
+    }
+    return `${Math.floor(s)} ${birim} önce`;
+  }
+
+  async function baslat() {
+    const params = new URLSearchParams(window.location.search);
+    const kadiParam = (params.get("u") || "").trim();
+    const idParam = (params.get("id") || "").trim();
+
+    const bekleEl = document.getElementById("profil-bekle");
+    const bosEl = document.getElementById("profil-bulunamadi");
+    const icerikEl = document.getElementById("profil-icerik");
+    const btnGeri = document.getElementById("btn-geri");
+
+    btnGeri?.addEventListener("click", () => {
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.href = "/akis/";
+      }
+    });
+
+    if (!kadiParam && !idParam) {
+      if (bekleEl) bekleEl.hidden = true;
+      if (bosEl) bosEl.hidden = false;
+      return;
+    }
+
+    // Haber arama indeksini paralel yükle
+    void indeksYukle();
+
+    const H = (window as any).HaberinAi;
+    if (!H || typeof H.kullaniciProfili !== "function") {
+      // SDK henüz tam yüklenmediyse kısa süre bekle ve tekrar dene
+      setTimeout(baslat, 200);
+      return;
+    }
+
+    let profil: any = null;
+    let yorumlar: any[] = [];
+
+    try {
+      [profil, yorumlar] = await Promise.all([
+        H.kullaniciProfili(kadiParam, idParam),
+        H.kullaniciYorumlari(kadiParam, idParam, 60),
+      ]);
+    } catch (e) {
+      /* hata durumunda boş profil */
+    }
+
+    if (!profil && (!yorumlar || !yorumlar.length)) {
+      if (bekleEl) bekleEl.hidden = true;
+      if (bosEl) bosEl.hidden = false;
+      return;
+    }
+
+    // İndeks hazır olmasını bekle
+    await indeksYukle();
+
+    // Verileri arayüze yerleştir
+    const gorunenAd = profil?.ad || kadiParam || "Okur";
+    const kadiMetin = profil?.kadi ? `@${profil.kadi}` : (profil?.id ? "Kayıtlı Okur" : "Okur");
+    
+    document.title = `${gorunenAd} — Profil · HaberinAi`;
+
+    const adEl = document.getElementById("kullanici-ad");
+    const kadiEl = document.getElementById("kullanici-kadi");
+    const avatarEl = document.getElementById("kullanici-avatar");
+    const rozetlerEl = document.getElementById("kullanici-rozetler");
+    const tarihEl = document.getElementById("kullanici-tarih");
+    const statYorum = document.getElementById("stat-yorum-sayi");
+    const statBegeni = document.getElementById("stat-begeni-sayi");
+    const sayacYorum = document.getElementById("sayac-yorumlar");
+    const sayacBegeni = document.getElementById("sayac-begeniler");
+
+    if (adEl) adEl.textContent = gorunenAd;
+    if (kadiEl) kadiEl.textContent = kadiMetin;
+
+    if (avatarEl) {
+      if (typeof H.avatarDoldur === "function") {
+        H.avatarDoldur(avatarEl, profil?.avatar || "", gorunenAd);
+      } else {
+        avatarEl.textContent = (gorunenAd.trim().charAt(0) || "O").toLocaleUpperCase("tr");
+      }
+    }
+
+    if (rozetlerEl) {
+      rozetlerEl.innerHTML = "";
+      if (profil?.rol === "yonetici") {
+        const r = document.createElement("span");
+        r.className = "kullanici__rozet kullanici__rozet--admin";
+        r.textContent = "👑 Yönetici";
+        rozetlerEl.appendChild(r);
+      } else if (profil?.id) {
+        const r = document.createElement("span");
+        r.className = "kullanici__rozet kullanici__rozet--uye";
+        r.textContent = "✓ Kayıtlı Üye";
+        rozetlerEl.appendChild(r);
+      } else {
+        const r = document.createElement("span");
+        r.className = "kullanici__rozet kullanici__rozet--okur";
+        r.textContent = "💬 Okur";
+        rozetlerEl.appendChild(r);
+      }
+
+      if (profil?.etiket && String(profil.etiket).trim()) {
+        const custom = document.createElement("span");
+        custom.className = "kullanici__rozet kullanici__rozet--admin";
+        custom.textContent = String(profil.etiket).trim();
+        rozetlerEl.appendChild(custom);
+      }
+    }
+
+    if (tarihEl && profil?.olusturma) {
+      const dt = new Date(profil.olusturma);
+      if (!isNaN(dt.getTime())) {
+        tarihEl.hidden = false;
+        tarihEl.textContent = `📅 ${dt.toLocaleDateString("tr-TR", { month: "long", year: "numeric" })}'den beri okur`;
+      }
+    }
+
+    const yorumSayisi = Math.max(yorumlar.length, Number(profil?.yorum_sayisi) || 0);
+    const begeniListesi: string[] = Array.isArray(profil?.begeniler) ? profil.begeniler : [];
+    const begeniSayisi = begeniListesi.length;
+
+    if (statYorum) statYorum.textContent = String(yorumSayisi);
+    if (statBegeni) statBegeni.textContent = String(begeniSayisi);
+    if (sayacYorum) sayacYorum.textContent = String(yorumSayisi);
+    if (sayacBegeni) sayacBegeni.textContent = String(begeniSayisi);
+
+    // 1. Yorumları Çiz
+    const yorumListeEl = document.getElementById("liste-yorumlar");
+    const bosYorumEl = document.getElementById("bos-yorumlar");
+
+    if (yorumlar.length === 0) {
+      if (bosYorumEl) bosYorumEl.hidden = false;
+    } else if (yorumListeEl) {
+      yorumListeEl.innerHTML = "";
+      for (const y of yorumlar) {
+        const haber = tumHaberler.get(y.slug);
+        const haberBaslik = haber?.t || y.slug.replace(/-/g, " ");
+        const haberUrl = `/haber/${encodeURIComponent(y.slug)}/`;
+        const haberKat = haber?.c || "Haber";
+        const haberResim = haber?.img || "/og-default.png";
+
+        const kart = document.createElement("article");
+        kart.className = "kullanici__yorum-kart";
+
+        kart.innerHTML = `
+          <div class="kullanici__yorum-haber">
+            <img class="kullanici__yorum-resim" src="${haberResim}" alt="" loading="lazy" />
+            <div class="kullanici__yorum-haber-detay">
+              <span class="kullanici__yorum-kat">${haberKat}</span>
+              <a href="${haberUrl}" class="kullanici__yorum-baslik">${haberBaslik}</a>
+            </div>
+          </div>
+          <div class="kullanici__yorum-govde">
+            <p class="kullanici__yorum-metin"></p>
+            <div class="kullanici__yorum-alt">
+              <div class="kullanici__yorum-sol">
+                <time datetime="${y.created_at}">${zaman(y.created_at)}</time>
+                ${y.begeni ? `<span class="kullanici__yorum-kalp">❤️ ${y.begeni} beğeni</span>` : ""}
+              </div>
+              <a href="${haberUrl}#yorumlar" class="kullanici__yorum-git">
+                <span>Habere git →</span>
+              </a>
+            </div>
+          </div>
+        `;
+
+        const metinP = kart.querySelector(".kullanici__yorum-metin");
+        if (metinP) metinP.textContent = y.metin || "";
+
+        yorumListeEl.appendChild(kart);
+      }
+    }
+
+    // 2. Beğenilen Haber & Videoları Çiz
+    const begeniListeEl = document.getElementById("liste-begeniler");
+    const bosBegeniEl = document.getElementById("bos-begeniler");
+
+    if (begeniListesi.length === 0) {
+      if (bosBegeniEl) bosBegeniEl.hidden = false;
+    } else if (begeniListeEl) {
+      begeniListeEl.innerHTML = "";
+      for (const slug of begeniListesi) {
+        const haber = tumHaberler.get(slug);
+        if (!haber) continue;
+
+        const haberUrl = `/haber/${encodeURIComponent(slug)}/`;
+        const akisUrl = `/akis/`;
+        const resim = haber.img || "/og-default.png";
+        const kat = haber.c || "Gündem";
+
+        const kart = document.createElement("a");
+        kart.href = haberUrl;
+        kart.className = "kullanici__haber-kart";
+        kart.innerHTML = `
+          <div class="kullanici__haber-gorsel-kap">
+            <img class="kullanici__haber-gorsel" src="${resim}" alt="" loading="lazy" />
+            <span class="kullanici__haber-rozet">${kat}</span>
+            <span class="kullanici__haber-video-etiket">⚡ Shorts</span>
+          </div>
+          <div class="kullanici__haber-govde">
+            <h3 class="kullanici__haber-baslik">${haber.t}</h3>
+            <span class="kullanici__haber-tarih">${zaman(haber.d)}</span>
+          </div>
+        `;
+        begeniListeEl.appendChild(kart);
+      }
+
+      if (begeniListeEl.children.length === 0 && bosBegeniEl) {
+        bosBegeniEl.hidden = false;
+      }
+    }
+
+    // Sekme Geçişleri
+    const sekmeler = document.querySelectorAll<HTMLButtonElement>(".kullanici__sekme");
+    const paneller = document.querySelectorAll<HTMLElement>(".kullanici__panel");
+
+    sekmeler.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const hedefId = btn.dataset.hedef;
+        sekmeler.forEach((s) => {
+          s.classList.remove("is-aktif");
+          s.setAttribute("aria-selected", "false");
+        });
+        btn.classList.add("is-aktif");
+        btn.setAttribute("aria-selected", "true");
+
+        paneller.forEach((p) => {
+          p.hidden = p.id !== hedefId;
+        });
+      });
+    });
+
+    if (bekleEl) bekleEl.hidden = true;
+    if (icerikEl) icerikEl.hidden = false;
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", baslat);
+  } else {
+    baslat();
+  }
+</script>

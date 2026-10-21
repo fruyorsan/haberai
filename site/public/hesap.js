@@ -666,6 +666,114 @@
     return rpc("admin_canli_istatistik", { p_id: u.id, p_token: u.token });
   }
 
+  /**
+   * Herkese açık kullanıcı profilini getirir.
+   * Supabase RPC kullanici_profil varsa çağırır; henüz kurulmadıysa
+   * yorumlar + avatarlar tablosundan açık verilerle profil nesnesi oluşturur.
+   */
+  async function kullaniciProfili(kadi, uyeId) {
+    var a = ayarlar();
+    var temizKadi = (kadi || "").trim();
+    var temizId = (uyeId || "").trim();
+    if (!temizKadi && !temizId) return null;
+
+    // 1. Önce RPC dene
+    var r = await rpc("kullanici_profil", {
+      p_kadi: temizKadi || null,
+      p_id: temizId || null,
+    });
+    if (r && !r.hata && (r.ad || r.kadi || r.id)) {
+      return r;
+    }
+
+    // 2. RPC yoksa REST yedeği:
+    var avatar = null;
+    if (temizId && a.url && a.anahtar) {
+      try {
+        var avRes = await fetch(
+          a.url + "/rest/v1/avatarlar?select=avatar&uye_id=eq." + encodeURIComponent(temizId),
+          { headers: basliklar() }
+        );
+        if (avRes.ok) {
+          var avJson = await avRes.json();
+          if (avJson && avJson[0] && avJson[0].avatar) avatar = avJson[0].avatar;
+        }
+      } catch (e) {}
+    }
+
+    // Yorum sayısını öğren
+    var yorumSayisi = 0;
+    var etiket = "";
+    if (a.url && a.anahtar) {
+      try {
+        var filtre = temizId
+          ? "uye_id=eq." + encodeURIComponent(temizId)
+          : "ad=eq." + encodeURIComponent(temizKadi);
+        var yRes = await fetch(
+          a.url + "/rest/v1/yorumlar?select=id,etiket&gizli=eq.false&" + filtre + "&limit=100",
+          { headers: basliklar() }
+        );
+        if (yRes.ok) {
+          var yList = await yRes.json();
+          yorumSayisi = yList.length;
+          if (yList.length && yList[0].etiket) etiket = yList[0].etiket;
+        }
+      } catch (e) {}
+    }
+
+    return {
+      id: temizId || null,
+      kadi: temizId ? null : temizKadi,
+      ad: temizKadi || "Okur",
+      avatar: avatar,
+      rol: temizId ? "uye" : "okur",
+      etiket: etiket || "",
+      olusturma: null,
+      yorum_sayisi: yorumSayisi,
+      begeni_sayisi: 0,
+      begeniler: [],
+    };
+  }
+
+  /**
+   * Bir kullanıcının açık yorumlarını getirir.
+   */
+  async function kullaniciYorumlari(kadi, uyeId, limit) {
+    var a = ayarlar();
+    var temizKadi = (kadi || "").trim();
+    var temizId = (uyeId || "").trim();
+    var sayi = Math.min(Math.max(limit || 50, 1), 100);
+
+    // 1. Önce RPC dene
+    var r = await rpc("kullanici_yorumlar", {
+      p_kadi: temizKadi || null,
+      p_id: temizId || null,
+      p_limit: sayi,
+    });
+    if (Array.isArray(r)) return r;
+
+    // 2. RPC yoksa doğrudan yorumlar REST tablosundan oku
+    if (!a.url || !a.anahtar) return [];
+    try {
+      var filtre = temizId
+        ? "uye_id=eq." + encodeURIComponent(temizId)
+        : "ad=eq." + encodeURIComponent(temizKadi);
+      var res = await fetch(
+        a.url +
+          "/rest/v1/yorumlar?select=id,slug,metin,created_at,etiket,ad&gizli=eq.false&" +
+          filtre +
+          "&order=created_at.desc&limit=" +
+          sayi,
+        { headers: basliklar() }
+      );
+      if (!res.ok) return [];
+      var veri = await res.json();
+      return Array.isArray(veri) ? veri : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
   window.HaberinAi = {
     aktif: function () {
       var a = ayarlar();
@@ -694,6 +802,8 @@
     adminUyeler: adminUyeler,
     adminEtiket: adminEtiket,
     adminCanliIstatistik: adminCanliIstatistik,
+    kullaniciProfili: kullaniciProfili,
+    kullaniciYorumlari: kullaniciYorumlari,
     kalpAtisi: kalpAtisi,
     dugmeleriGuncelle: dugmeleriGuncelle,
   };
