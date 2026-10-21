@@ -1,5 +1,170 @@
 [
   {
+    "id": "ec72177b63f007e3",
+    "title": "Rank Math PRO 3.0.123 paketinde tespit edilen zararlı yazılım alarmı",
+    "slug": "rank-math-pro-3-0-123-paketinde-tespit-edilen-zararli-yazilim-alarmi",
+    "summary": "Rank Math PRO eklentisinin belirli bir sürüm aralığında indirilen paketlerinde zararlı yazılım bulundu. Üretici etkilenen dosyaların kaldırıldığını duyururken, sadece güncelleme yapmanın yetmeyeceği belirtiliyor.",
+    "keyPoints": [
+      "15-16 Ekim tarihlerinde indirilen Rank Math PRO 3.0.123 paketleri zararlı yazılım içeriyordu.",
+      "Zararlı paketi etkinleştiren siteler için basit güncelleme yetmiyor, özel kurtarma adımları gerekiyor.",
+      "Ücretsiz Rank Math SEO sürümü bu güvenlik olayından etkilenmedi."
+    ],
+    "body": [
+      "WordPress eklenti güvenliğinin yalnızca yönetim panelinde güncel yazısını görmekle sınırlı kalmadığı Rank Math PRO olayında bir kez daha görüldü. Türkiye saatine vurulduğunda bu zaman dilimi 15 Ekim 23.02 ile 16 Ekim 10.12 aralığına denk geliyor. Üretici tarafı tehlikeli dosyaları hızla temizleyerek güvenli 3.0.124 sürümünü kullanıcıların erişimine açtı. Öte yandan WordPress.org üzerinden dağıtılan ücretsiz sürüm bu durumdan zarar görmedi.",
+      "Güvenlik açıklarının ardından sitelerde atılacak adımlar sadece eklentiyi yenilemekle bitmiyor. Zararlı paketi sisteminde etkinleştirmiş olan site yöneticilerinin olağan güncellemeyle yetinmeyip özel kurtarma adımlarını uygulaması isteniyor. Yönetim panelinden eklentilerin listesini çıkararak geliştirici notlarını okumak ve güncelleme geçmişini barındırma kayıtları üzerinden incelemek gerekiyor. Kullanıcı hesaplarında yönetici yetkilerini gözden geçirmek, şüpheli kişileri ayıklamak ve iki aşamalı doğrulama kullanmak da bu süreçte hayati önem taşıyor.",
+      "Yedekleme ve test aşamalarında ise tek başına yeşil işaretlere güvenilmemesi tavsiye ediliyor. Dosyalar ve veritabanı yedeğinin eksiksiz olması, canlı sitenin üzerine yazılmadan önce yalıtılmış bir deneme ortamında test edilmesi gerekiyor. Eklenti güncellemelerini öncelikle bu staging ortamında denemek, olası veritabanı değişikliklerine karşı geri dönüş planı hazırlamak gerekiyor. Rank Math olayında riskli paketi etkinleştirenlerin üreticinin sunduğu özel temizlik yordamlarını izlemesi, hiç etkinleştirmeyenlerin ise dosyaları silip tarama yapması öneriliyor.",
+      "Yapılan tüm bu bakım adımlarının düzenli bir kayıt altında tutulması ileride yaşanabilecek sorunlarda müdahaleyi hızlandırıyor. Değişiklik yapan kişilerin, sürüm numaralarının ve kontrol edilen sayfaların yazılması ortak bir hafıza oluşturuyor. Böylece olası bir siber tehdit veya zararlı yazılım bulgusunda tahmin yürütmek yerine en son sağlıklı duruma hangi adımlarla dönülebileceği net bir şekilde görülebiliyor."
+    ],
+    "comment": "Yazılım tedarik zincirindeki güvenlik açıkları, basit bir eklenti güncellemesinin her zaman yeterli olmadığını kanıtlıyor. 3.0.123 sürümü gibi dar bir zaman aralığında indirilen dosyaların barındırdığı riskler, site sahiplerinin yalnızca otomatik güncellemelere güvenmemesi gerektiğine işaret ediyor. Geliştiricilerin olay sonrası sunduğu özel kurtarma adımlarının izlenmemesi, sitelerin arka planda ele geçirilmeye devam etmesine yol açabilir. Özellikle e-ticaret siteleri ve yüksek trafikli platformlar için bu tarz zararlı yazılım vakaları, yedekleme ve deneme ortamı testlerinin ne kadar elzem olduğunu açıkça gösteriyor.",
+    "editorNote": "Rank Math PRO paketindeki zararlı yazılım yalnızca güncelleme yapmanın yetmediğini gösterdi; özel kurtarma adımları şart.",
+    "tags": [
+      "WordPress",
+      "Rank Math",
+      "Eklenti Güvenliği",
+      "Zararlı Yazılım",
+      "Siber Güvenlik"
+    ],
+    "category": "Yazılım",
+    "gorselSorgu": "wordpress dashboard security scan",
+    "source": "Teknoblog",
+    "sourceUrl": "https://www.teknoblog.com/wordpress-eklenti-guvenligi-nasil-kontrol-edilir/",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6c/WordPress_admin_dashboard_Stats_showing_top_downloaded_files_including_PDFs_with_download_counts%2C_Nov_8-14%2C_2025.jpg",
+    "gorselKaynak": {
+      "yazar": "Gwydion M. Williams",
+      "lisans": "CC BY 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:WordPress_admin_dashboard_Stats_showing_top_downloaded_files_including_PDFs_with_download_counts,_Nov_8-14,_2025.jpg"
+    },
+    "publishedAt": "2026-10-21T09:20:26.000Z",
+    "generatedAt": "2026-10-21T09:21:42.941Z",
+    "gorselEk": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/df/WordPress_admin_dashboard_Stats_section_showing_274_total_views_with_top_countries_including_China%2C_United_States%2C_and_Hong_Kong%2C_Nov_8-14%2C_2025.jpg",
+        "yazar": "Gwydion M. Williams",
+        "lisans": "CC BY 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:WordPress_admin_dashboard_Stats_section_showing_274_total_views_with_top_countries_including_China,_United_States,_and_Hong_Kong,_Nov_8-14,_2025.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/WordPress_admin_dashboard_Stats_section_showing_121_total_views_with_top_countries_including_United_Kingdom%2C_United_States%2C_and_Ireland%2C_Nov_8-14%2C_2025.jpg",
+        "yazar": "Gwydion M. Williams",
+        "lisans": "CC BY 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:WordPress_admin_dashboard_Stats_section_showing_121_total_views_with_top_countries_including_United_Kingdom,_United_States,_and_Ireland,_Nov_8-14,_2025.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
+    "id": "958b7dcd13f37540",
+    "title": "Boğaziçi Üniversitesinde tezhip atölyesiyle öğrenciler buluştu",
+    "slug": "bogazicinde-tezhip-atolyesiyle-ogrenciler-bulustu",
+    "summary": "Türk Altın desteğiyle hayata geçirilen tezhip atölyeleri serisinin ikincisi Boğaziçi Üniversitesi Albert Long Hall’de düzenlendi. Müzehhibe Nurdan Erkal yönetimindeki etkinlikte üniversiteliler boya karışımı ve çizim tekniklerini uygulamalı olarak deneyimledi.",
+    "keyPoints": [
+      "İkinci tezhip atölyesi 20 Ekim tarihinde Boğaziçi Üniversitesi Albert Long Hall’de yapıldı.",
+      "Müzehhibe Nurdan Erkal etkinlikte öğrencilere boya karıştırma ve çizim eğitimi verdi."
+    ],
+    "body": [
+      "Geleneksel Türk süsleme sanatlarının genç kuşaklara aktarılması amacıyla düzenlenen atölye serisinin durakları arasında Boğaziçi Üniversitesi de yer aldı. Türk Altın firmasının katkılarıyla organize edilen buluşma, üniversite öğrencilerinin tezhibin incelikleriyle doğrudan temas kurmasını sağladı. Tarihi ve kültürel mirasın akademik çevrelerde yeniden canlandırılmasını hedefleyen etkinlik, katılımcılardan yoğun ilgi gördü.",
+      "Albert Long Hall salonunda kurulan çalışma alanında bir araya gelen gençler, müzehhibe Nurdan Erkal rehberliğinde geleneksel motifleri inceledi. Teorik bilgilerin yanı sıra boya hazırlama ve motif çizimi gibi temel aşamaları bizzat uygulayan katılımcılar, sanatın inceliklerini deneyimleme fırsatı buldu. Serinin ilk durağının Mimar Sinan Güzel Sanatlar Üniversitesi Tophane Kasrı olduğu hatırlatıldı.",
+      "Sanat yolculuğunun kendi üniversite yıllarında aldığı seçmeli bir dersle başladığını paylaşan Erkal, bu tür buluşmaların yeni neslin kültürel değerlerle bağ kurmasında köprü görevi üstlendiğini vurguladı. Öğrencilerin atölyede kazandığı el becerilerinin zamanla kök salacağını belirten eğitmen, ilerleyen süreçte bu isimler arasından yetenekli sanatkarların yetişebileceğini dile getirdi.",
+      "Projenin temel amacı, unutulmaya yüz tutmuş geleneksel tekniklerin üniversite gençliği arasında yaygınlaşmasını sağlamak ve onlara yeni bir hobi alanı sunmak olarak özetlendi. Etkinlik sonunda öğrencilerin ortaya koyduğu ilk çalışmalar, tezhip sanatına olan ilgililerin gelecekteki potansiyelini gözler önüne serdi."
+    ],
+    "comment": "Geleneksel zanaatların akademik kampüslere taşınması, gençlerin estetik algısını doğrudan besleyen ve onları dijital ekrandan uzaklaştıran somut bir adımdır. Amasya Üniversitesindeki bir seçmeli dersle bu yola çıkan Nurdan Erkal örneğinde olduğu gibi, 20 Ekim tarihindeki bu ilk temaslar geleceğin ustalarını belirlemede kilit rol oynamaktadır. Üniversite yönetimleri bu tür atölyeleri dönemsel bir etkinlik olmaktan çıkarıp seçmeli ders havuzuna kalıcı olarak eklemezse, edinilen pratik bilgi kısa sürede unutulma riskiyle karşı karşıya kalır.",
+    "editorNote": "Boğaziçili öğrencilerin fırça ve boyayla tanıştığı atölye, geleneksel sanatların kampüslerdeki geleceğini şekillendiriyor.",
+    "tags": [
+      "Boğaziçi Üniversitesi",
+      "Tezhip",
+      "Nurdan Erkal",
+      "Türk Altın",
+      "Kültür Sanat"
+    ],
+    "category": "Kültür",
+    "gorselSorgu": "university students painting art workshop",
+    "source": "Yeni Şafak",
+    "sourceUrl": "https://www.yenisafak.com/hayat/bogazicinde-tezhip-bulusmasi-gelecegin-sanatkarlari-bu-atolyeden-cikabilir-4866105",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Students_on_the_background_of_graffiti._Bologna_University%2C_Italy.jpg/1920px-Students_on_the_background_of_graffiti._Bologna_University%2C_Italy.jpg",
+    "gorselKaynak": {
+      "yazar": "Ввласенко",
+      "lisans": "CC BY-SA 3.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Students_on_the_background_of_graffiti._Bologna_University,_Italy.jpg"
+    },
+    "publishedAt": "2026-10-21T09:19:51.000Z",
+    "generatedAt": "2026-10-21T09:21:54.188Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Students_playing_football_at_Tezpur_university.jpg/1920px-Students_playing_football_at_Tezpur_university.jpg",
+        "yazar": "Akashdoley13",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Students_playing_football_at_Tezpur_university.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Students_in_a_university_classroom_in_Tennessee_05.jpg/1920px-Students_in_a_university_classroom_in_Tennessee_05.jpg",
+        "yazar": "Harrison Keely",
+        "lisans": "CC BY 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Students_in_a_university_classroom_in_Tennessee_05.jpg"
+      }
+    ]
+  },
+  {
+    "id": "765925af84dad9d3",
+    "title": "Anket sonuçları açıklandı: Mansur Yavaş ile Erdoğan yarışı",
+    "slug": "anket-sonuclari-aciklandi-mansur-yavas-ile-erdogan-yarisi",
+    "summary": "Özdemir Araştırma tarafından yürütülen son cumhurbaşkanlığı anketinde iki isim karşı karşıya geldi. Mansur Yavaş yüzde 50,2 oy alırken Recep Tayyip Erdoğan yüzde 49,8 oranında kaldı.",
+    "keyPoints": [
+      "Eylül ayında yapılan ankette iki aday arasındaki oy farkı 0,4 puan olarak ölçüldü.",
+      "Araştırma 31 il ve 26 bölgede toplam 2 bin 6 katılımcıyla gerçekleştirildi.",
+      "Recep Tayyip Erdoğan 2023 seçimlerinin ikinci turunda yüzde 52,18 oy almıştı."
+    ],
+    "body": [
+      "Özdemir Araştırma şirketi eylül ayı kapsamında yürüttüğü cumhurbaşkanlığı seçim anketinin detaylarını kamuoyuyla paylaştı. Yapılan çalışmada Ankara Büyükşehir Belediye Başkanı Mansur Yavaş ile Cumhurbaşkanı Recep Tayyip Erdoğan olası bir seçim senaryosunda karşılaştırıldı.",
+      "Kamuoyu araştırması 24 ile 28 Eylül tarihleri arasında toplam 31 il ve 26 farklı bölgede hayata geçirildi. Saha çalışması sürecinde 2 bin 6 seçmenle birebir görüşmeler yapılarak olası bir sandık tercihi soruldu.",
+      "Katılımcılara yöneltilen soru doğrultusunda Mansur Yavaş yüzde 50,2 oranına ulaşırken Recep Tayyip Erdoğan yüzde 49,8 oranında destek gördü. İki lider arasındaki farkın sıfır tam onda dört puan seviyesinde kaldığı tespit edildi.",
+      "Recep Tayyip Erdoğan 2023 yılında yapılan cumhurbaşkanlığı seçiminin ilk turunu yüzde 49,52 ile tamamlarken ikinci turda oy oranını yüzde 52,18 seviyesine taşımıştı. Açıklanan son veriler siyasi dengelerdeki değişimi gözler önüne seriyor."
+    ],
+    "comment": "Seçmen tercihlerindeki bu yakın oranlar, gelecekteki olası bir sandık yarışının başa baş geçeceğini gösteriyor. 2023 seçimlerindeki yüzde 52,18'lik ikinci tur zaferiyle kıyaslandığında, Erdoğan karşısındaki alternatif adayların oy potansiyelinin ulaştığı seviye dikkat çekici bir eşiktir. Bu tablo, siyasi partilerin stratejilerini belirlerken kararsız seçmen kitlesine odaklanmasını zorunlu kılıyor.",
+    "editorNote": "Eylül ayı anketinde Yavaş ile Erdoğan arasındaki 0,4 puanlık fark sandık senaryolarını değiştiriyor.",
+    "tags": [
+      "Mansur Yavaş",
+      "Recep Tayyip Erdoğan",
+      "seçim anketi",
+      "Özdemir Araştırma",
+      "siyaset"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "Turkish politicians press conference voting ballot",
+    "source": "Cumhuriyet",
+    "sourceUrl": "https://www.cumhuriyet.com.tr/turkiye/sandikta-hesap-degisiyor-erdogan-ile-yavas-arasinda-dikkat-ceken-fark-2548860",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Istanbul_city_Photos-_Urban_01.jpg/1920px-Istanbul_city_Photos-_Urban_01.jpg",
+    "gorselKaynak": {
+      "yazar": "Mostafameraji",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_01.jpg"
+    },
+    "publishedAt": "2026-10-21T09:19:00.000Z",
+    "generatedAt": "2026-10-21T09:22:05.030Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Istanbul_city_Photos-_Urban_07.jpg/1920px-Istanbul_city_Photos-_Urban_07.jpg",
+        "yazar": "Mostafameraji",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_07.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Istanbul_city_Photos-_Urban_18.jpg/1920px-Istanbul_city_Photos-_Urban_18.jpg",
+        "yazar": "Mostafameraji",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_18.jpg"
+      }
+    ]
+  },
+  {
     "id": "74e54aa5cf023568",
     "title": "Aydın Nazilli'de çiftçiler isyanda: Giderler kazancı eritti",
     "slug": "aydin-nazillide-ciftciler-isyanda-giderler-kazanci-eritti",
@@ -53,6 +218,62 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Cotton_harvester_in_Batesville,_Texas_field_-_angle_view.jpg"
       }
     ]
+  },
+  {
+    "id": "22c9ccf01ee2e75f",
+    "title": "Deprem uzmanı Şener Üşümezsoy’un kahvaltıda 20 yumurta yediği açıklandı",
+    "slug": "deprem-uzmani-sener-usumezsoyun-kahvaltida-20-yumurta-yedigi-aciklandi",
+    "summary": "Ünlü jeoloji uzmanı Şener Üşümezsoy, Berna Laçin’in konuğu olarak katıldığı programda sıra dışı beslenme düzenini paylaştı. Karbonhidrattan kaçındığını belirten profesör, kahvaltıda yirmi yumurta tükettiğini söyledi.",
+    "keyPoints": [
+      "Prof. Dr. Şener Üşümezsoy kahvaltıda yirmi adet yumurta tükettiğini belirtti.",
+      "Bir kilogram kıymayı kemik suyu ve pırasayla kaynatarak üç gün boyunca yediğini anlattı.",
+      "Karbonhidrat tüketimini azalttığını ve hayvansal yağlara yöneldiğini ifade etti."
+    ],
+    "body": [
+      "Türkiye'nin deprem kuşağı üzerine yaptığı açıklamalarla sık sık ekranlara gelen jeoloji profesörü Şener Üşümezsoy, bu kez bilimsel çalışmalarıyla değil günlük beslenme alışkanlıklarıyla adından söz ettirdi. Sunucu Berna Laçin’in programına konuk olan isim, yıllardır sürdürdüğü öğün planını ve yiyecek tercihlerini izleyicilerle paylaştı.",
+      "Beslenme rutini hakkında konuşan Üşümezsoy, karbonhidrat ağırlıklı gıdalardan uzak durduğunu vurguladı. Güne başlarken tercih ettiği miktarın yirmi adet yumurta olduğunu ifade eden profesör, öğünlerinde protein ile yağ dengesini ön planda tuttuğunu dile getirdi.",
+      "Sadece kahvaltı menüsüyle kalmayan uzman isim, birkaç gün boyunca tükettiği ana yemeğin hazırlık aşamasını da aktardı. Bir kilogram kıymayı aynı ağırlıkta dana kemiğiyle kaynattığını, karışıma bir kilogram pırasa ilave ederek pişirdiğini ve elde ettiği yemeği üç gün boyunca bitirdiğini ifade etti.",
+      "Mevsimine göre balık tüketimine de özen gösterdiğini belirten Üşümezsoy, açıklamalarıyla sosyal medyada geniş yankı uyandırdı. Uzmanlar ise bu tür özel diyetlerin kişisel olduğunu, herkes için uygunluk taşımadığını ve yüksek miktarda belirli besinleri almadan önce doktora danışılması gerektiğini hatırlatıyor."
+    ],
+    "comment": "Bilim insanlarının kişisel yaşam tarzları kamuoyunda sıklıkla mercek altına alınsa da bu tür sıra dışı diyetlerin genel bir rehber olarak görülmemesi gerekir. Günde yirmi yumurta tüketmek gibi uç değerler, her bireyin metabolik yapısına ve sağlık geçmişine göre ciddi riskler barındırabilir. Özellikle dengeli beslenme ilkeleri gözetilmeden uygulanan bu tarz yüksek proteinli rejimler, uzun vadede uzman kontrolü olmadan başka sağlık sorunlarına zemin hazırlayabilir.",
+    "editorNote": "Ünlü jeologun kahvaltıda yirmi yumurta tükettiğini açıklaması sosyal medyada en çok konuşulan başlıklar arasına girdi.",
+    "tags": [
+      "Şener Üşümezsoy",
+      "Berna Laçin",
+      "beslenme",
+      "protein",
+      "yaşam"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "boiled eggs breakfast table",
+    "source": "Türkinform",
+    "sourceUrl": "https://turkinform.com.tr/deprem-profesoru-sener-usumezsoyun-beslenme-aliskanligi-sasirtti",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Interior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg/1920px-Interior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg",
+    "gorselKaynak": {
+      "yazar": "Adem",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Interior_of_a_damaged_building_after_7,8_magnitude_earthquake_in_Turkiye.jpg"
+    },
+    "publishedAt": "2026-10-21T09:17:00.000Z",
+    "generatedAt": "2026-10-21T09:21:30.934Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg/1920px-Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg",
+        "yazar": "Adem",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Exterior_of_a_damaged_building_after_7,8_magnitude_earthquake_in_Turkiye.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye_2.jpg/1920px-Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye_2.jpg",
+        "yazar": "Adem",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Exterior_of_a_damaged_building_after_7,8_magnitude_earthquake_in_Turkiye_2.jpg"
+      }
+    ],
+    "breaking": true
   },
   {
     "id": "99e9d075228ed996",
@@ -260,62 +481,6 @@
     },
     "publishedAt": "2026-10-21T09:10:02.000Z",
     "generatedAt": "2026-10-21T09:14:26.473Z",
-    "gorselEk": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg/1920px-Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg",
-        "yazar": "Adem",
-        "lisans": "CC BY-SA 4.0",
-        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-        "sayfa": "https://commons.wikimedia.org/wiki/File:Exterior_of_a_damaged_building_after_7,8_magnitude_earthquake_in_Turkiye.jpg"
-      },
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye_2.jpg/1920px-Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye_2.jpg",
-        "yazar": "Adem",
-        "lisans": "CC BY-SA 4.0",
-        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-        "sayfa": "https://commons.wikimedia.org/wiki/File:Exterior_of_a_damaged_building_after_7,8_magnitude_earthquake_in_Turkiye_2.jpg"
-      }
-    ],
-    "breaking": true
-  },
-  {
-    "id": "02a781f2775df44e",
-    "title": "AFAD ve Kandilli son depremler listesi 21 Ekim 2026",
-    "slug": "afad-ve-kandilli-son-depremler-listesi-21-ekim-2026",
-    "summary": "Türkiye genelinde meydana gelen sarsıntılar, ilgili kurumların verileriyle anlık olarak güncelleniyor. Sabah saatlerinden itibaren kaydedilen tüm sarsıntılar kamuoyu ile paylaşıldı.",
-    "keyPoints": [
-      "Deprem verileri AFAD ve Kandilli Rasathanesi tarafından sağlanmaktadır",
-      "Güncel kayıtlar resmi bilgilendirme amacıyla paylaşılmaktadır",
-      "Tüm sarsıntı listesine ilgili resmi internet adresinden ulaşılabiliyor"
-    ],
-    "body": [
-      "Türkiye ve çevresinde gün boyu yaşanan sarsıntılar, yetkili kurumların veri tabanları üzerinden anlık olarak takip ediliyor. Yurdun farklı bölgelerinde meydana gelen hareketlilikler uzmanlar tarafından incelenerek kamuoyuna duyuruluyor.",
-      "Afet ve Acil Durum Yönetimi Başkanlığı ile Kandilli Rasathanesi, hazırladıkları güncel listeleri internet siteleri aracılığıyla paylaşıyor. Sabah saatlerinden öğle saatlerine kadar kaydedilen sarsıntılar bu sistemler üzerinden listelendi.",
-      "Paylaşılan tüm bu veriler, vatandaşların bilgilendirilmesi amacıyla yayına alınıyor. Uzmanlar, kayıtların resmi bir uyarı niteliği taşımadığını ve yalnızca bilgi verme amacı güttüğünü hatırlatıyor.",
-      "Yaşanan hareketlilikleri anlık olarak takip etmek isteyenler, kurumların resmi internet adreslerindeki canlı listeleri inceleyebiliyor. Bölgesel bazda meydana gelen en son sarsıntılar bu platformlar üzerinden güncellenmeye devam ediyor."
-    ],
-    "comment": "Günlük sarsıntı verilerinin anlık olarak paylaşılması, toplumun afet bilincinin diri kalması açısından doğrudan etki yaratıyor. Resmi kaynakların sunduğu bu şeffaflık, bilgi kirliliğinin önüne geçerken vatandaşların da doğru kaynağa ulaşmasını sağlıyor. Geçmiş dönemdeki manuel takip süreçleriyle kıyaslandığında, bugünkü dijital altyapı sarsıntıların saniyeler içinde duyurulmasına imkan tanıyor. Bu durum, özellikle deprem kuşağındaki yerleşim yerlerinde yaşayanlar için anlık farkındalık yaratıyor.",
-    "editorNote": "Ülke genelindeki sarsıntı hareketliliği anlık olarak güncelleniyor, tüm listeye resmi adreslerden erişilebiliyor.",
-    "tags": [
-      "AFAD",
-      "Kandilli Rasathanesi",
-      "deprem",
-      "son depremler",
-      "Gündem"
-    ],
-    "category": "Gündem",
-    "gorselSorgu": "earthquake damaged building",
-    "source": "https://www.ensondakika.com.tr/",
-    "sourceUrl": "https://www.ensondakika.com.tr/son-dakika-deprem-mi-oldu-i-stanbul-ankara-i-zmir-ve-il-il-afad-kandilli-son-depremler-21-10-2026/723656/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Interior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg/1920px-Interior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg",
-    "gorselKaynak": {
-      "yazar": "Adem",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Interior_of_a_damaged_building_after_7,8_magnitude_earthquake_in_Turkiye.jpg"
-    },
-    "publishedAt": "2026-10-21T09:10:02.000Z",
-    "generatedAt": "2026-10-21T09:18:04.512Z",
     "gorselEk": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg/1920px-Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg",
@@ -1899,61 +2064,6 @@
     ]
   },
   {
-    "id": "9a35d7641844c2c7",
-    "title": "Anayasa Mahkemesi, YENİ Parti'nin kapatılması talebini oybirliğiyle reddetti",
-    "slug": "anayasa-mahkemesi-yeni-partinin-kapatilmasi-talebini-reddetti",
-    "summary": "Yargıtay Cumhuriyet Başsavcılığı tarafından taşınan başvuruyu inceleyen Anayasa Mahkemesi, YENİ Parti'nin isim ve rumuzunun hükümsüz sayılması istemini karara bağladı. Yüksek Mahkeme, 21 Ekim'deki toplantısında söz konusu iptal talebini oybirliğiyle reddetti.",
-    "keyPoints": [
-      "Anayasa Mahkemesi, YENİ Parti'nin isim ve rumuzunun silinmesi talebini reddetti.",
-      "Yenilik Partisi, isim benzerliği gerekçesiyle Yargıtay üzerinden AYM'ye itirazda bulunmuştu.",
-      "Özgür Özel, partisinin isminin halk tarafından belirlendiğini ve değiştirilmeyeceğini açıkladı."
-    ],
-    "body": [
-      "Siyasi parti sicilinden terkin edilmesi ve hükümsüz sayılması istenen YENİ Parti dosyası, Anayasa Mahkemesi tarafından karara bağlandı. Yenilik Partisi'nin ad benzerliği iddiasıyla Yargıtay Cumhuriyet Başsavcılığı aracılığıyla taşıdığı süreç, Yüksek Mahkeme'nin 21 Ekim tarihindeki toplantısıyla sonuçlandı. Mahkeme, yapılan başvurunun ardından söz konusu talebi reddettiğini duyurdu.",
-      "Kararın ardından açıklamalarda bulunan YENİ Parti Genel Başkanı Özgür Özel, kuruluş sürecinde izledikleri adımları paylaştı. Parti isminin belirlenmesinde sokaktaki vatandaşların taleplerinin etkili olduğunu belirten Özel, başvuru öncesinde akademik görüşlere başvurduklarını ifade etti. İltibas iddialarına karşı Türkiye'nin bu alandaki tanınmış akademisyenlerinden rapor aldıklarını ve bu belgeleri Anayasa Mahkemesi'ne sunduklarını dile getirdi.",
-      "Partinin adının halk tarafından konulduğunu vurgulayan Özel, herhangi bir isim değişikliğine gitmeyeceklerini net bir dille belirtti. Geçen ay yapılan tartışmalar sırasında felaket senaryoları üretildiğini hatırlatan Özel, hukuki görüşlerin kendi lehlerine olduğunu öngördüklerini söyledi. Bu kararın ardından parti tabanının rahat bir nefes aldığını ve önümüzdeki seçimlere yönelik çalışmalarına hız kesmeden devam ettiklerini aktardı.",
-      "Açıklamasının sonunda seçim hedeflerine de değinen Özgür Özel, sandıkta YENİ Parti çatısı altında buluşacaklarını kaydetti. Seçim sonrasında iktidara gelerek vatandaşların yüzünü güldürmeyi amaçladıklarını belirten Özel, hukuki engellerin geride kaldığını ve yollarına kararlılıkla devam ettiklerini sözlerine ekledi."
-    ],
-    "comment": "Siyasi partiler arasındaki isim benzerliği tartışmaları, hukuk sistemimizin sınırlarını ve tescil süreçlerinin işleyişini bir kez daha test eden somut bir örnek oluşturuyor. Anayasa Mahkemesi'nin 21 Ekim tarihli ret kararı, benzer unvanlara sahip yapılar arasındaki hukuki mücadelede emsal teşkil edebilecek bir nitelik taşıyor. İsimlerin halk tarafından benimsendiği iddiası siyasi bir argüman olarak öne çıkarken, mahkemenin bu kararla kurumsal tescil süreçlerinde somut delillere odaklandığı görülüyor. Gelecek dönemde benzer parti kuruluşu süreçlerinde bu kararın referans alınacağı ve hukuki incelemelerin daha sıkı yürütüleceği öngörülebilir.",
-    "editorNote": "AYM'nin ret kararından sonra Özgür Özel'den gelen ilk açıklamalar partinin gelecekteki yol haritasını şekillendiriyor.",
-    "tags": [
-      "Özgür Özel",
-      "Anayasa Mahkemesi",
-      "YENİ Parti",
-      "Yenilik Partisi",
-      "Siyasi Partiler Kanunu"
-    ],
-    "category": "Gündem",
-    "gorselSorgu": "Anayasa Mahkemesi binasi Ankara",
-    "source": "Cumhuriyet",
-    "sourceUrl": "https://www.cumhuriyet.com.tr/siyaset/aym-nin-yeni-parti-kararinin-ardindan-ozgur-ozel-den-ilk-aciklama-2548845",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Istanbul_city_Photos-_Urban_01.jpg/1920px-Istanbul_city_Photos-_Urban_01.jpg",
-    "gorselKaynak": {
-      "yazar": "Mostafameraji",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_01.jpg"
-    },
-    "publishedAt": "2026-10-21T08:42:00.000Z",
-    "generatedAt": "2026-10-21T08:42:44.795Z",
-    "gorselEk": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Istanbul_city_Photos-_Urban_07.jpg/1920px-Istanbul_city_Photos-_Urban_07.jpg",
-        "yazar": "Mostafameraji",
-        "lisans": "CC BY-SA 4.0",
-        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-        "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_07.jpg"
-      },
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Istanbul_city_Photos-_Urban_18.jpg/1920px-Istanbul_city_Photos-_Urban_18.jpg",
-        "yazar": "Mostafameraji",
-        "lisans": "CC BY-SA 4.0",
-        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-        "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_18.jpg"
-      }
-    ]
-  },
-  {
     "id": "0340dfae35cd75b6",
     "title": "Askeri uçak kazasında bir pilot hayatını kaybetti, diğeri kayıp",
     "slug": "askeri-ucak-kazasinda-bir-pilot-hayatini-kaybetti-digeri-kayip",
@@ -2007,6 +2117,61 @@
       }
     ],
     "breaking": true
+  },
+  {
+    "id": "9a35d7641844c2c7",
+    "title": "Anayasa Mahkemesi, YENİ Parti'nin kapatılması talebini oybirliğiyle reddetti",
+    "slug": "anayasa-mahkemesi-yeni-partinin-kapatilmasi-talebini-reddetti",
+    "summary": "Yargıtay Cumhuriyet Başsavcılığı tarafından taşınan başvuruyu inceleyen Anayasa Mahkemesi, YENİ Parti'nin isim ve rumuzunun hükümsüz sayılması istemini karara bağladı. Yüksek Mahkeme, 21 Ekim'deki toplantısında söz konusu iptal talebini oybirliğiyle reddetti.",
+    "keyPoints": [
+      "Anayasa Mahkemesi, YENİ Parti'nin isim ve rumuzunun silinmesi talebini reddetti.",
+      "Yenilik Partisi, isim benzerliği gerekçesiyle Yargıtay üzerinden AYM'ye itirazda bulunmuştu.",
+      "Özgür Özel, partisinin isminin halk tarafından belirlendiğini ve değiştirilmeyeceğini açıkladı."
+    ],
+    "body": [
+      "Siyasi parti sicilinden terkin edilmesi ve hükümsüz sayılması istenen YENİ Parti dosyası, Anayasa Mahkemesi tarafından karara bağlandı. Yenilik Partisi'nin ad benzerliği iddiasıyla Yargıtay Cumhuriyet Başsavcılığı aracılığıyla taşıdığı süreç, Yüksek Mahkeme'nin 21 Ekim tarihindeki toplantısıyla sonuçlandı. Mahkeme, yapılan başvurunun ardından söz konusu talebi reddettiğini duyurdu.",
+      "Kararın ardından açıklamalarda bulunan YENİ Parti Genel Başkanı Özgür Özel, kuruluş sürecinde izledikleri adımları paylaştı. Parti isminin belirlenmesinde sokaktaki vatandaşların taleplerinin etkili olduğunu belirten Özel, başvuru öncesinde akademik görüşlere başvurduklarını ifade etti. İltibas iddialarına karşı Türkiye'nin bu alandaki tanınmış akademisyenlerinden rapor aldıklarını ve bu belgeleri Anayasa Mahkemesi'ne sunduklarını dile getirdi.",
+      "Partinin adının halk tarafından konulduğunu vurgulayan Özel, herhangi bir isim değişikliğine gitmeyeceklerini net bir dille belirtti. Geçen ay yapılan tartışmalar sırasında felaket senaryoları üretildiğini hatırlatan Özel, hukuki görüşlerin kendi lehlerine olduğunu öngördüklerini söyledi. Bu kararın ardından parti tabanının rahat bir nefes aldığını ve önümüzdeki seçimlere yönelik çalışmalarına hız kesmeden devam ettiklerini aktardı.",
+      "Açıklamasının sonunda seçim hedeflerine de değinen Özgür Özel, sandıkta YENİ Parti çatısı altında buluşacaklarını kaydetti. Seçim sonrasında iktidara gelerek vatandaşların yüzünü güldürmeyi amaçladıklarını belirten Özel, hukuki engellerin geride kaldığını ve yollarına kararlılıkla devam ettiklerini sözlerine ekledi."
+    ],
+    "comment": "Siyasi partiler arasındaki isim benzerliği tartışmaları, hukuk sistemimizin sınırlarını ve tescil süreçlerinin işleyişini bir kez daha test eden somut bir örnek oluşturuyor. Anayasa Mahkemesi'nin 21 Ekim tarihli ret kararı, benzer unvanlara sahip yapılar arasındaki hukuki mücadelede emsal teşkil edebilecek bir nitelik taşıyor. İsimlerin halk tarafından benimsendiği iddiası siyasi bir argüman olarak öne çıkarken, mahkemenin bu kararla kurumsal tescil süreçlerinde somut delillere odaklandığı görülüyor. Gelecek dönemde benzer parti kuruluşu süreçlerinde bu kararın referans alınacağı ve hukuki incelemelerin daha sıkı yürütüleceği öngörülebilir.",
+    "editorNote": "AYM'nin ret kararından sonra Özgür Özel'den gelen ilk açıklamalar partinin gelecekteki yol haritasını şekillendiriyor.",
+    "tags": [
+      "Özgür Özel",
+      "Anayasa Mahkemesi",
+      "YENİ Parti",
+      "Yenilik Partisi",
+      "Siyasi Partiler Kanunu"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "Anayasa Mahkemesi binasi Ankara",
+    "source": "Cumhuriyet",
+    "sourceUrl": "https://www.cumhuriyet.com.tr/siyaset/aym-nin-yeni-parti-kararinin-ardindan-ozgur-ozel-den-ilk-aciklama-2548845",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Istanbul_city_Photos-_Urban_01.jpg/1920px-Istanbul_city_Photos-_Urban_01.jpg",
+    "gorselKaynak": {
+      "yazar": "Mostafameraji",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_01.jpg"
+    },
+    "publishedAt": "2026-10-21T08:42:00.000Z",
+    "generatedAt": "2026-10-21T08:42:44.795Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Istanbul_city_Photos-_Urban_07.jpg/1920px-Istanbul_city_Photos-_Urban_07.jpg",
+        "yazar": "Mostafameraji",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_07.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Istanbul_city_Photos-_Urban_18.jpg/1920px-Istanbul_city_Photos-_Urban_18.jpg",
+        "yazar": "Mostafameraji",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_18.jpg"
+      }
+    ]
   },
   {
     "id": "b55561ed7d1841d6",
