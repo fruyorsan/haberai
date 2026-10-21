@@ -147,10 +147,10 @@ export const AVATARLAR = [
   { kod: "/avatar/spiderman-cicek.webp", ad: "Çiçekli Spidey", renk: "#d9364b" },
   { kod: "/avatar/pingu.webp", ad: "Pingu", renk: "#e4573d" },
   // Manzara ve objeler
-  { kod: "/avatar/dag.webp", ad: "Dağ", renk: "#6a4fc1" },
+  { kod: "/avatar/zambak.webp", ad: "Zambak Buketi", renk: "#d98a9a" },
   { kod: "/avatar/deniz-manzara.webp", ad: "Deniz Manzarası", renk: "#4b83a8" },
   { kod: "/avatar/ay.webp", ad: "Ay", renk: "#8a6fd1" },
-  { kod: "/avatar/istanbul.webp", ad: "İstanbul", renk: "#e2743a" },
+  { kod: "/avatar/mini-jane.webp", ad: "Mini Jane", renk: "#4b83a8" },
   { kod: "/avatar/cicekli-tavsan.webp", ad: "Çiçekli Tavşan", renk: "#d98a9a" },
   { kod: "/avatar/gamepad.webp", ad: "Gamepad", renk: "#4b83a8" },
   { kod: "/avatar/spiderman-koltuk.webp", ad: "Düşünen Spidey", renk: "#e4573d" },
