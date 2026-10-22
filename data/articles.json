@@ -1,5 +1,142 @@
 [
   {
+    "id": "3c118af5e48a344c",
+    "title": "Emine Erdoğan'dan Semerkant'ta 100'den fazla ülkeye çocuk çağrısı",
+    "slug": "emine-erdogandan-semerkantta-100den-fazla-ulkeye-cocuk-cagrisi",
+    "summary": "Semerkant'taki dünya zirvesinde konuşan Emine Erdoğan, savaş bölgesindeki çocukların yaşadığı trajedilere dikkat çekti. Çocuk refahının korunması için uluslararası paydaşlara ortak mücadele çağrısında bulundu.",
+    "keyPoints": [
+      "Semerkant'taki zirveye 100'den fazla ülkenin temsilcisi katılım sağladı.",
+      "Türkiye'de 11 binden fazla çocuk koruyucu aile yanında yaşıyor.",
+      "15 yaş altı çocukların sosyal medyaya erişimi yasal olarak sınırlandırıldı."
+    ],
+    "body": [
+      "Özbekistan'ın tarihi şehri Semerkant, çocukların geleceğini ele alan geniş kapsamlı küresel bir zirveye ev sahipliği yaptı. Zirvede katılımcılara hitap eden Emine Erdoğan, Maveraünnehir havzasının ilim ve hikmet birikiminin esenlik dolu adil bir dünya kurma gayretine ışık tuttuğunu belirtti. Çocukların insanlığın kalbi olduğunu vurgulayan konuk, bu meselelerin her zaman küresel gündemde tutulması gerektiğini ifade etti.",
+      "Sürdürülebilir kalkınma ile çocuk refahı arasındaki doğrudan ilişkiye değinen konuşmacı, beslenme, barınma ve eğitim gibi temel kriterlerin günümüz şartlarında yetersiz kalabileceğini söyledi. Çoklu krizler çağında iklim değişikliği, savaş koşulları ve zorunlu göçlerin çocukları doğrudan etkilediğini kaydetti. Geleneksel istatistiklerin büyük resmi perdeleyebileceğini ve yeni nesil sorun alanlarının hesaba katılması gerektiğini dile getirdi.",
+      "Türkiye'nin bu alanda attığı adımları paylaşan Erdoğan, Cumhurbaşkanı kararıyla 2025 yılının Aile Yılı ilan edildiğini ve 2026-2035 döneminin Aile ve Nüfus 10 Yılı olarak belirlendiğini aktardı. Türkiye Yüzyılı Maarif Modeli ile çocukların donanımlı bireyler olarak yetiştirildiğini belirtti. Ayrıca Dijital Dünyada Çocuk Hakları Sözleşmesi kapsamında 15 yaş altı çocukların sosyal medyaya erişiminin sınırlandırıldığını ve platformlara yaş doğrulama yükümlülüğü getirildiğini duyurdu.",
+      "UNICEF tarafından örnek gösterilen Gönül Elçileri Projesi sayesinde 11 binden fazla çocuğun koruyucu aile himayesinde mutlu bir yaşam sürdüğünü ifade eden Erdoğan, bu sisteme savaş mağduru çocukların da dahil edildiğini bildirdi. Zirvede, yüzlerce ülkenin temsilcilerine seslenilerek savaş bölgelerinde çadırlarda donarak can veren veya hayal kuramayan çocukların sesinin yükseltilmesi istendi. Silahlı çatışma bölgelerinin çocukluk kanserine bağlı ölümlerin yüzde 60'ına ev sahipliği yaptığı hatırlatıldı."
+    ],
+    "comment": "Küresel ölçekte artan krizler, çocuk refahı tanımlarının yalnızca geleneksel eğitim ve barınma kıstaslarıyla sınırlı kalamayacağını net bir şekilde gösteriyor. Savaş bölgelerindeki çocukların yaşadığı trajediler ile dijital dünyanın getirdiği yeni riskler, hükümetlerin ortak ve acil tedbirler almasını zorunlu kılıyor. Türkiye'nin 15 yaş altı sosyal medya sınırlaması ve koruyucu aile projelerindeki 11 bin çocuk eşiği gibi somut adımları, diğer ülkelere örnek teşkil edebilecek nitelikte bir politika çerçevesi sunuyor. Benzer uluslararası platformlarda somut kararlar alınmadığı sürece, kriz bölgelerindeki dezavantajlı çocukların yaşam hakları risk altında kalmaya devam edecektir.",
+    "editorNote": "Semerkant'taki zirvede 100'den fazla ülkeye seslenen Emine Erdoğan, savaş bölgelerindeki çocuk trajedilerine dikkat çekti.",
+    "tags": [
+      "Emine Erdoğan",
+      "Özbekistan",
+      "Semerkant",
+      "Çocuk Hakları",
+      "UNICEF"
+    ],
+    "category": "Dünya",
+    "gorselSorgu": "Emine Erdogan summit speech Uzbekistan",
+    "source": "Enerji FM 100.5",
+    "sourceUrl": "https://enerjifm.com.tr/haber/36105/emine-erdogan-ve-esra-albayraktan-ozbekistanda-onemli-temaslar-savas-bolgesindeki-cocuklarin-sesiyiz",
+    "image": "https://iasbh.tmgrup.com.tr/7eccc9/1200/675/0/0/1200/675?u=https://isbh.tmgrup.com.tr/sbh/2026/10/22/turkiye-basli-basina-bolgesel-bir-enerji-ussu-bakan-simsekten-kuresel-ekonomi-yorumu-1792655169367.jpeg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T10:13:29.000Z",
+    "generatedAt": "2026-10-22T10:15:38.821Z",
+    "breaking": true
+  },
+  {
+    "id": "74bb2e06ee7b8416",
+    "title": "GitLab, PHP ve HTTP/3’te Kritik Açıkları Düzeltmek Üzerine Güncelleme Yayınladı",
+    "slug": "gitlab-php-http3-kritik-aciklari-duzeltmek-ureti-guncelleme-yayinaldi",
+    "summary": "GitLab, PHP ve HTTP/3’de tespit edilen kritik güvenlik açıklarını kapatmak için 21 Ekim’de güncelleme yayımladı. Açıklar, sunucularda uzaktan kod çalıştırılmasına ve bellek tüketimini aşırı artırmaya izin veriyordu. Güncellemeler, eski sürümlerde de uygulanmalı ve veri ihlali riskleri azaltmalı.",
+    "keyPoints": [
+      "GitLab 21 Ekim’de CVE-2026-110264 güvenlik açığını gideren güncelleme yayınladı",
+      "PHP’teki açıklar nedeniyle birçok kurum site erişimini kesti",
+      "HTTP/3’te QPACK hatası, 4.000 kata kadar bellek tüketimine yol açtı"
+    ],
+    "body": [
+      "GitLab, 2014'ten bu yana kullanılan 7.0 sürümü dahil tüm sürümleri etkileyen bir güvenlik açığını kapatmak için 21 Ekim’de güncelleme yayınladı. Açığın adı CVE-2026-110264 ve belirli koşullar altında saldırganların oturum açmadan sunucuda istedikleri kodu çalıştırmasına olanak tanıyordu. Şirket, güncellemenin bazı sürümlerde veritabanı değişiklikleri nedeniyle kısa süreli kesintiye yol açabileceğini belirtti. PHP’teki kritik açıklar, bir dizi kurumun web sitelerine erişimi kesti. Bu durum, PHP tabanlı uygulamaların sıklıkla karşılaştığı güvenlik zafiyetlerinin ne kadar yaygın olduğunu gösterdi. Acil kodla yayınlanan güncellemeler, etkilenilen sitelerde veri kaybı ve hizmet kesintisi riskini azaltmayı hedefliyor. HTTP/3 protokolündeki QPACK hatası, saldırganların düşük miktarda veri göndererek sunucunun belleğini aşırı tüketmesini sağlıyordu. Testlerde, bazı uygulamalarda bellek tüketiminin 4.000 kata kadar yükseldiği belirlendi. Bu durum, 10 HTTP/3 uygulamasının yedisinde tespit edildi ve quic-go, Cloudflare quiche, lsquic ve Wireshark gibi kütüphanelerde düzeltmeler yayımlandı. Node.js’de de dört yüksek önem dereceli güvenlik açığı giderildi. Açıklardan biri uzaktan kod çalıştırma potansiyeli taşıyordu, diğerleri ise TLS doğrulamasının atlatılmasına izin veriyordu. TLS, veri şifrelemesi ve sunucu kimlik doğrulamasını sağladığı için bu açıklar özellikle hassas veri işleyen uygulamalarda risk oluşturuyor. Dijital sertifikalarla ilgili olarak Hindistan merkezli eMudhra’nın sekiz ara sertifikasının özel anahtarlarının tehlikeye girdiği belirlendi. Bu durum, sertifikalara güvenen tarayıcıları, uygulamaları ve sunucuları da etkileyebilir. Sunucu yöneticilerinin sertifika zincirlerini gözden geçirmeleri ve güncellemeleri öneriliyor."
+    ],
+    "comment": "Güncellemeler, özellikle eski sürümlerde veri kaybı ve hizmet kesintisini önlemeye yönelik kritik önlemler içeriyor. GitLab’ın 21 Ekim’de yayımladığı patch, 2014’ten beri kullanılan sürümleri kapsıyor, bu da yedekleme ve güncelleme süreçlerinin ne kadar zorlayıcı olabileceğini gösteriyor. Özellikle PHP ve HTTP/3’de tespit edilen açıkların, sunucu tarafında bellek tüketimini aşırı artırma potansiyeli, şirketlerin altyapı kaynaklarını anlık olarak tüketebilecek bir senaryoyu ortaya koyuyor. Bu nedenle, geliştiricilerin ve sistem yöneticilerinin sürüm uyumluluğunu ve güvenlik yamalarını düzenli olarak kontrol etmeleri şart.",
+    "editorNote": "GitLab’ın 21 Ekim güncellemesi, 10 yıllık bir açık zincirini sonlandırırken, PHP ve HTTP/3’teki yeni tehditler de altyapı yönetimini yeniden gözden geçirmeye zorluyor.",
+    "tags": [
+      "GitLab",
+      "PHP",
+      "HTTP3",
+      "GüvenlikAçıkları",
+      "YazılımGüncelleme"
+    ],
+    "category": "Yazılım",
+    "gorselSorgu": "data center server room",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/siber-kiyamet-mi-yasaniyor-internet-zor-gunlerden-geciyor--211953",
+    "image": "https://www.donanimhaber.com/images/images/haber/211953/src/siber-kiyamet-mi-yasaniyor-internet-zor-gunlerden-geciyor211953_0.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T10:12:00.000Z",
+    "generatedAt": "2026-10-22T10:15:11.646Z",
+    "breaking": true
+  },
+  {
+    "id": "b6a6dd79ad562038",
+    "title": "Norveç Varlık Fonu'ndan üçüncü çeyrekte 30 milyar dolar zarar",
+    "slug": "norvec-varlik-fonundan-ucuncu-ceyrekte-30-milyar-dolar-zarar",
+    "summary": "Dünyanın en büyük devlet varlık fonu, yükselen faiz oranlarının tahvil yatırımlarını vurmasıyla temmuz-eylül döneminde yaklaşık 30 milyar dolar zarar etti. Küresel borsalardaki sınırlı getiriler ise bu kaybı telafi edemedi.",
+    "keyPoints": [
+      "Norveç Varlık Fonu, temmuz-eylül döneminde 278 milyar Norveç kronu zarar açıkladı.",
+      "Sabit getirili yatırımlar yüzde 3,5 oranında değer kaybetti.",
+      "ABD'li teknoloji devleri Nvidia ve Apple fonun en büyük yatırımları arasında yer alıyor."
+    ],
+    "body": [
+      "Norveç'in 2,3 trilyon dolarlık devasa devlet varlık fonu, yılın üçüncü çeyreğinde beklentilerin altında kalarak yaklaşık 30 milyar dolar yatırım zararı kaydetti. Küresel piyasalarda yükselen faiz oranlarının tahvil yatırımlarını olumsuz etkilemesi, fonun performansını aşağı çekerken hisse senetlerinden elde edilen kazançlar bu açığı kapatmaya yetmedi. Dünyanın en büyük kurumsal yatırımcıları arasında bulunan Norges Bank Investment Management tarafından yönetilen fon, temmuz-eylül döneminde 278 milyar Norveç kronu zarar duyurdu.",
+      "Fonun performansındaki bu gerilemede, küresel tahvil piyasalarındaki satış baskısı başrolü oynadı. Sabit getirili yatırımlar çeyrek boyunca yüzde 3,5 oranında değer kaybederken portföyün dörtten birinden fazlasını oluşturan bu varlıkların yaklaşık yüzde 70'i devlet tahvillerinden oluştu. Kalan bölüm ise şirket borçlanma araçlarından meydana gelirken fon yönetimi 51 ülkede toplam 1.664 farklı tahvile yatırım yapmaya devam ediyor.",
+      "ABD Merkez Bankası öncülüğünde büyük merkez bankalarının faiz artırım adımları, tahvil piyasalarındaki çözülmeyi hızlandırdı. Enflasyonun yüksek seyri ve kamu borçlarına yönelik endişeler tahvil getirilerini yukarı iterken fon yöneticileri ABD Hazine tahvillerindeki pozisyonlarını azaltma planlarını daha önce paylaşmıştı. Buna karşın fonun yatırımlarının yaklaşık yüzde 72'sini oluşturan hisse senetleri üçüncü çeyrekte yüzde 0,5 oranında sınırlı bir getiri sağladı.",
+      "Küresel borsalardaki dalgalanmalar sürerken S&P 500 endeksi dönemi yüzde 2,03 yükselişle, Nasdaq ise yüzde 2,2 değer kazancıyla tamamladı; Dow Jones endeksi ise yüzde 1,9 geriledi. Dünya genelinde yaklaşık 7 bin 100 şirkette payı bulunan kurum, halka açık şirketlerin hisselerinin yüzde 1,5'ini elinde tutuyor. Özellikle Nvidia'daki 65,4 milyar dolarlık devasa yatırımının yanı sıra Apple, Alphabet ve Microsoft gibi teknoloji devleri portföyün omurgasını oluşturuyor."
+    ],
+    "comment": "Devlet varlık fonlarının tahvil piyasasındaki dalgalanmalardan doğrudan etkilenmesi, uzun vadeli stratejilerde sabit getirili enstrümanların risk profilini yeniden masaya yatırıyor. Yaklaşık 30 milyar dolarlık bu kayıp, faiz oranlarının yüksek kaldığı dönemde portföy çeşitlendirmesinin ne kadar kritik olduğunu gösteriyor. Karşılaştırma yapmak gerekirse, hisse senetlerindeki sınırlı yüzde 0,5'lik getiri tahvil tarafındaki yarayı sarmaya yetmedi ve toplam getiriyi sıfıra yakın bir noktada dondurdu.",
+    "editorNote": "Tahvil piyasasındaki satış dalgası dev fonu vurdu; teknoloji devlerindeki hisseler bile kaybı önleyemedi.",
+    "tags": [
+      "Norveç Varlık Fonu",
+      "Nvidia",
+      "Ekonomi",
+      "Tahvil",
+      "Hisse Senedi"
+    ],
+    "category": "Ekonomi",
+    "gorselSorgu": "stock market trading floor",
+    "source": "CNBC-e",
+    "sourceUrl": "https://www.cnbce.com/haberler/norvec-varlik-fonu-30-milyar-dolar-zarar-acikladi-portfoyunde-hangi-hisseler-var-h40055",
+    "image": "https://img.cnbce.com/2/1280/720/storage/files/images/2026/10/22/norvec-varlik-fonu-30-milyar-dolar-zarar-acikladi-portfoyunde-hangi-hisseler-var-bujw.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T10:10:25.000Z",
+    "generatedAt": "2026-10-22T10:15:24.673Z",
+    "breaking": true
+  },
+  {
+    "id": "c7f4ae803a32061a",
+    "title": "İstanbul genelindeki huzur uygulamasında 529 kişi gözaltına alındı",
+    "slug": "istanbul-genelindeki-huzur-uygulamasinda-529-kisi-gozaltina-alandi",
+    "summary": "İstanbul Emniyet Müdürlüğü tarafından gerçekleştirilen iki aşamalı denetimlerde binlerce kişi kontrol edildi. Yapılan GBT sorgulamalarında çeşitli suçlardan aranan yüzlerce şüpheli yakalandı.",
+    "keyPoints": [
+      "284 bin 448 kişinin GBT sorgulaması yapılarak 529 şüpheli gözaltına alındı.",
+      "Aramalarda ruhsatsız tabancalar, tüfekler ve yüklü miktarda uyuşturucu ele geçirildi.",
+      "Trafik kontrollerinde kurallara uymayan sürücülere toplam 3 milyon liranın üzerinde ceza kesildi."
+    ],
+    "body": [
+      "Megakent genelinde emniyet güçlerinin koordinasyonuyla gerçekleştirilen kapsamlı asayiş operasyonu iki ayrı aşamada tamamlandı. Günün farklı saat dilimlerinde hayata geçirilen denetimler sayesinde şehrin kritik noktalarında sıkı bir güvenlik çemberi oluşturuldu. Sabit yol kontrollerinin yanı sıra umuma açık alanlar da titizlikle incelendi.",
+      "Operasyonun ilk ayağında yüzlerce personel sabit noktalarda görev alırken havadan polis helikopterleri ve denizden botlar da sürece aktif destek sağladı. İlerleyen saatlerde ise eğlence mekanları, kafeler ve kalabalık buluşma noktaları denetim kapsamına alındı. Bu süreçte yüz binlerce vatandaşın kimlik ve sicil bilgileri anlık olarak sorgulandı.",
+      "Yapılan detaylı arama ve kontroller sonucunda aranan çok sayıda şahıs güvenlik güçlerince yakalanarak adalete teslim edildi. Adreslerde ve üst aramalarında çok sayıda ruhsatsız ateşli silahın yanı sıra yüklü miktarda yasaklı madde bulundu. Ayrıca yasa dışı faaliyetlerden elde edildiği belirlenen farklı para birimlerindeki nakit paralara el konuldu.",
+      "Trafik ekiplerinin yürüttüğü denetimlerde ise binlerce araç ve motosiklet tek tek incelendi. Eksik evrakı bulunan veya kurallara aykırı hareket eden taşıtlar trafikten men edilirken çok sayıda sürücüye idari para cezası kesildi. Emniyet yetkilileri bu tür huzur ve güven uygulamalarının kararlılıkla süreceğini belirtti."
+    ],
+    "comment": "Şehir genelinde eş zamanlı yürütülen bu geniş kapsamlı operasyonlar, suçla mücadelede sahadaki caydırıcılığı doğrudan artırıyor. Neredeyse 300 bin kişinin sorgulanması ve yüzlerce aranan şahsın yakalanması, güvenlik açıklarının anında kapatılmasında denetimlerin sıklığının önemini açıkça gösteriyor. Özellikle tatil günleri öncesinde veya yoğun saatlerde yapılan bu tür hamleler, sokaktaki vatandaşın günlük yaşamını doğrudan rahatlatıyor. Benzer denetimler yapılmadığı senaryolarda ise suç oranlarının tırmanması kaçınılmaz hale geliyor.",
+    "editorNote": "Yaklaşık 300 bin kişinin sorgulandığı dev operasyonda binlerce polisin yanı sıra hava ve deniz unsurları da görev aldı.",
+    "tags": [
+      "İstanbul",
+      "Emniyet",
+      "Gözaltı",
+      "Operasyon",
+      "Asayiş"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "Istanbul police checkpoint street",
+    "source": "TRT Haber Son Dakika",
+    "sourceUrl": "https://www.trthaber.com/haber/turkiye/istanbulda-huzur-uygulamasinda-529-supheliye-gozalti-960883.html",
+    "image": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2170000/istanbul-denetim-iha-2170621.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T10:09:00.000Z",
+    "generatedAt": "2026-10-22T10:15:50.014Z",
+    "breaking": true
+  },
+  {
     "id": "5d12ca48dfc23497",
     "title": "Samsung Galaxy Z Flip 5 için 44.999 TL seviyesinde yeni fiyat avantajı",
     "slug": "samsung-galaxy-z-flip-5-icin-44-999-tl-seviyesinde-yeni-fiyat-avantaji",
