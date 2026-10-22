@@ -1,5 +1,162 @@
 [
   {
+    "id": "728c6e344dd3d5af",
+    "title": "Yapay zeka PHP altyapısında 30 yıllık açığı buldu, Türkiye taramada",
+    "slug": "yapay-zeka-php-altyapinda-30-yillik-acigi-buldu-turkiye-taramada",
+    "summary": "İnternet sitelerinin büyük bölümünde kullanılan PHP altyapısında, yapay zeka araçlarıyla on yılı aşkın süredir gizli kalan güvenlik açıkları tespit edildi. Küresel çapta kritik platformlar geçici olarak kapatılırken Türkiye'de ulusal tarama süreci başlatıldı.",
+    "keyPoints": [
+      "Yapay zeka modelleri PHP altyapısında otuz yıldır gizlenen zafiyetleri ortaya çıkardı.",
+      "Dünya genelinde kamu ve özel sektör platformları erişime geçici olarak kapatıldı.",
+      "Siber Güvenlik Başkanlığı kurumlar için acil kodlu güvenlik taraması başlattı."
+    ],
+    "body": [
+      "Siber güvenlik alanında son dönemin en büyük altyapı alarmı verilirken, internet sitelerinin yaklaşık yüzde yetmişinde kullanılan PHP yazılım dilinde kritik zafiyetler saptandı. OpenAI ve Google tarafından geliştirilen ileri düzey yapay zeka modellerinin kod denetim süreçlerinde kullanılması, on yılı aşkın süredir fark edilmeyen bu gizli açıkların gün yüzüne çıkmasını sağladı. Wiz Research ve Calif gibi güvenlik şirketlerinin ortak çalışmaları sonucunda ortaya çıkan durum, dijital dünyada geniş çaplı önlemlerin alınmasını tetikledi.",
+      "Tespit edilen güvenlik açıklarının kötü niyetli kişiler tarafından istismar edilmesini önlemek amacıyla pek çok ülke radikal adımlar attı. Kritik altyapı işletmecileri ve kamu kurumları, teknik güncelleme süreçlerinde sistem kontrolünü kaybetmemek adına platformlarını geçici olarak servis dışı bırakmayı tercih etti. Uzmanlar, bu erişim kesintilerinin aktif bir siber saldırı sonucunda gerçekleşmediğini, tamamen koruyucu ve önleyici bir tedbir niteliği taşıdığını özellikle vurguluyor.",
+      "Küresel alandaki bu gelişmelerin ardından Türkiye Cumhuriyeti Siber Güvenlik Başkanlığı da hızlı bir şekilde harekete geçti. Başkanlık tarafından yapılan resmi duyuruda, olası risklerin erken aşamada tespit edilmesi ve etkilerin sınırlandırılması amacıyla ulusal ölçekte güvenlik taramalarının başlatıldığı ifade edildi. Kamu kurumları, kritik altyapı işletmecileri ve özel sektör kuruluşlarına acil kodlu güvenlik bildirimleri iletildiği bilgisi paylaşıldı.",
+      "Yetkililer, kurumların sistemlerini detaylı şekilde gözden geçirerek gerekli güncellemeleri ivedilikle hayata geçirmesinin kritik önemde olduğunu belirtti. Dijital altyapıların güvenliğinin korunması ve kesintisiz hizmet akışının sürdürülmesi adına ulusal düzeydeki koordinasyon çalışmalarının aralıksız devam edeceği aktarıldı. Öte yandan uzmanlar, gerekli güncellemeleri yapmayan küçük işletmeler ile bireysel web sitesi sahiplerinin ilerleyen süreçte siber korsanların hedefi olabileceği yönünde uyarılarını yineliyor."
+    ],
+    "comment": "Kod denetim süreçlerinde yapay zekanın devreye sokulması, onlarca yıldır fark edilmeyen güvenlik açıklarının tek bir hamlede ortaya dökülmesini sağladı. Yaklaşık yüzde yetmişlik pazar payına sahip bir altyapıda böylesi büyük zafiyetlerin çıkması, yazılım dünyasında ezberlerin bozulduğunun açık bir göstergesidir. Özellikle küçük ölçekli işletmeler ve bireysel site sahipleri güncellemeleri ihmal ederse saldırganlar için kolay birer hedef haline gelecektir. Geçmişte manuel incelemelerle haftalar süren taramalar yapay zeka sayesinde dakikalara inerken, savunma tarafı da saldırganlar kadar hızlı adapte olmak zorundadır.",
+    "editorNote": "Yapay zeka destekli kod denetimleri internetin temel yapı taşındaki otuz yıllık açığı gün ışığına çıkardı, kurumlar alarma geçti.",
+    "tags": [
+      "PHP",
+      "Yapay Zeka",
+      "Siber Güvenlik",
+      "Siber Güvenlik Başkanlığı",
+      "Yazılım"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "data center server room security",
+    "source": "EHA Medya",
+    "sourceUrl": "https://ehamedya.com.tr/haber/yapay-zeka-internetin-30-yillik-acigini-buldu-dunya-genelinde-siteler-kapatiliyor-turkiyede-acil-tarama-baslatildi",
+    "image": "https://ehamedya.com.tr/uploads/og/01d371b5285ca99ce9c9.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T07:34:23.000Z",
+    "generatedAt": "2026-10-22T07:38:38.794Z",
+    "breaking": true
+  },
+  {
+    "id": "7b9c3ea739fa937d",
+    "title": "AFAD güncel deprem haritası okuma rehberi ve bilinmesi gerekenler",
+    "slug": "afad-guncel-deprem-haritasi-okuma-rehberi",
+    "summary": "Afet ve Acil Durum Yönetimi Başkanlığı tarafından hazırlanan güncel deprem haritası vatandaşlar tarafından inceleniyor. Harita üzerinde yer alan risk katmanları ve fay hatlarının doğru anlaşılması büyük önem taşıyor.",
+    "keyPoints": [
+      "Güncel deprem haritası AFAD tarafından erişime açıldı.",
+      "Harita üzerinde farklı tehlike bölgeleri renklerle ayrılıyor.",
+      "Bölgesel risk analizleri e-Devlet üzerinden de sorgulanabiliyor."
+    ],
+    "body": [
+      "Türkiye'nin deprem kuşağında yer alması nedeniyle resmi kurumlar tarafından hazırlanan risk haritaları sürekli güncellenmektedir. Afet ve Acil Durum Yönetimi Başkanlığı platformları üzerinden paylaşılan bu görsel veriler, ülke genelindeki sismik tehlike dağılımını gözler önüne sermektedir. Vatandaşlar ikamet ettikleri bölgelerin zemin güvenliğini öğrenmek için bu haritalara başvurmaktadır.",
+      "Harita üzerinde yer alan farklı renk tonları ve çizgiler, o bölgenin sismik risk derecesini net bir şekilde ifade etmektedir. Uzmanlar, harita okuryazarlığının artırılmasının toplumsal bilinç açısından temel bir adım olduğunu vurgulamaktadır. Her ilçe ve mahalle bazında yapılan incelemeler, yerleşim planlamalarında dikkate alınması gereken hususları belirlemektedir.",
+      "E-Devlet sistemi entegrasyonu sayesinde kullanıcılar kendi adreslerine ait özel deprem raporlarına kolayca ulaşabilmektedir. Sunulan bu dijital hizmet, bireylerin yaşadıkları çevrenin tehlike sınıfını doğrudan görmesine olanak tanımaktadır. Uzmanlar, haritadaki verilerin düzenli olarak takip edilmesini ve kentsel dönüşüm süreçlerinde bu bilgilerin temel alınmasını önermektedir."
+    ],
+    "comment": "Afet bilincinin artırılması için resmi haritaların doğru yorumlanması kritik bir adımdır. E-Devlet entegrasyonu sayesinde milyonlarca vatandaş kendi adresindeki risk durumunu saniyeler içinde öğrenebilmektedir. Geçmiş yıllardaki manuel sorgulama yöntemleriyle kıyaslandığında, bugünkü dijital altyapı bilgiye erişimi oldukça hızlandırmıştır. Vatandaşların bu verileri sadece ev alırken değil, yaşam alanlarını güvenli hale getirirken de dikkate alması şarttır.",
+    "editorNote": "AFAD haritasındaki renk kodları ve fay hatları size ne söylüyor? E-Devlet üzerinden kendi binanızın risk durumunu hemen sorgulayın.",
+    "tags": [
+      "AFAD",
+      "deprem haritası",
+      "e-Devlet",
+      "sismik risk",
+      "deprem bilinci"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "earthquake damaged building",
+    "source": "Bölgenin Sesi Gazetesi",
+    "sourceUrl": "https://bolgeninsesigazetesi.com/afad-guncel-deprem-haritasi-nasil-okunmali",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/FEMA_-_44649_-_Earthquake_damaged_buildings_in_California.jpg/1280px-FEMA_-_44649_-_Earthquake_damaged_buildings_in_California.jpg",
+    "gorselKaynak": {
+      "yazar": "Adam Dubrowa",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:FEMA_-_44649_-_Earthquake_damaged_buildings_in_California.jpg"
+    },
+    "publishedAt": "2026-10-22T07:33:27.000Z",
+    "generatedAt": "2026-10-22T07:38:48.767Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Fukui_Earthquake_1948_-_damaged_building.jpg/1280px-Fukui_Earthquake_1948_-_damaged_building.jpg",
+        "yazar": "Bert Cohen",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Fukui_Earthquake_1948_-_damaged_building.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Rescue_workers_near_the_semi-collapsed_ten-story_Uranus_Building_on_Xuanyuan_Road_after_the_2024_Hualien_earthquake.jpg/1280px-Rescue_workers_near_the_semi-collapsed_ten-story_Uranus_Building_on_Xuanyuan_Road_after_the_2024_Hualien_earthquake.jpg",
+        "yazar": "總統府 / Official Photo by Shufu Liu / Office of the President Perspective correction made by",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Rescue_workers_near_the_semi-collapsed_ten-story_Uranus_Building_on_Xuanyuan_Road_after_the_2024_Hualien_earthquake.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
+    "id": "ec7d365c27e07a41",
+    "title": "Antalya'da kısa aralıklarla meydana gelen iki deprem korkuttu",
+    "slug": "antalyada-kisa-araliklarla-meydana-gelen-iki-deprem-korkuttu",
+    "summary": "Antalya'nın Kepez ilçesinde sabah saatlerinde arka arkaya iki sarsıntı kaydedildi. Afet ve Acil Durum Yönetimi Başkanlığı verilerine göre depremler bölgede kısa süreli paniğe neden oldu.",
+    "keyPoints": [
+      "Saat 05.52'de Kepez merkezli 2,7 büyüklüğünde ilk deprem ölçüldü.",
+      "İkinci sarsıntı saat 06.23'te 1,5 büyüklüğünde kayıtlara geçti.",
+      "Her iki sarsıntının da yerin 7 kilometre derinliğinde oluştuğu açıklandı."
+    ],
+    "body": [
+      "Akdeniz bölgesinde yer alan Antalya'da son günlerde art arda hareketlilik yaşanıyor. Geçtiğimiz gün akşam saatlerinde hissedilen sarsıntının ardından bu kez sabah saatlerinde yerin altından gelen hareketler il genelinde dikkat çekti.",
+      "Afet ve Acil Durum Yönetimi Başkanlığı tarafından paylaşılan verilere göre, günün ilk saatlerinde Kepez ilçesi merkezli iki ayrı sarsıntı yaşandı. Bölge halkı tarafından da net bir şekilde hissedilen bu hareketlerin detayları saat verilerek duyuruldu.",
+      "Resmi kayıtlara göre ilk deprem sabaha karşı saat 05.52 sularında 2,7 büyüklüğünde gerçekleşti. Bu sarsıntıdan kısa süre sonra, saat 06.23'te ise 1,5 büyüklüğünde ikinci bir hareketlilik daha meydana geldi.",
+      "Uzmanların paylaştığı teknik verilere göre her iki sarsıntının da yerin 7 kilometre derinliğinde meydana geldiği belirlendi. Depremlerin şiddeti düşük ölçülse de derinliğin yüzeye yakın olması nedeniyle çevre sakinleri tarafından hissedildiği bildirildi."
+    ],
+    "comment": "Yer kabuğundaki bu tür sığ sarsıntılar, küçük büyüklüklerine rağmen yüzeye yakınlıkları sebebiyle geniş bir alanda hissedilme potansiyeli taşır. Kayıtlara geçen 7 kilometrelik derinlik verisi, sarsıntının etkisini artırarak yerleşim yerlerindeki tedirginliği doğrudan yükseltmektedir. Bölgede yaşayan vatandaşlar için anlık panik yaratan bu durum, yapı stokunun dayanıklılığını bir kez daha gündeme getirmese de her an hazırlıklı olma gerekliliğini hatırlatmaktadır.",
+    "editorNote": "Yerin sadece 7 kilometre derinliğinde gerçekleşen sarsıntılar, düşük büyüklüklerine rağmen kısa sürede geniş bir alanda hissedildi.",
+    "tags": [
+      "Antalya",
+      "AFAD",
+      "Kepez",
+      "deprem"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "earthquake damaged building",
+    "source": "Antalya Hakkında",
+    "sourceUrl": "https://www.antalyahakkinda.com/afad-acikladi-antalyada-pes-pese-depremler",
+    "image": "https://antalyahakkindacom.teimg.com/crop/1280x720/antalyahakkinda-com/uploads/2026/10/afad-acikladi-antalya-pes-pese-sallandi.png",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T07:33:00.000Z",
+    "generatedAt": "2026-10-22T07:38:58.103Z",
+    "breaking": true
+  },
+  {
+    "id": "174214957efc41a9",
+    "title": "Honor Win 2 tanıtıldı: 10.100 mAh batarya ve çift fanlı soğutma",
+    "slug": "honor-win-2-tanitildi-10100-mah-batarya-ve-cift-fanli-sogutma",
+    "summary": "Honor, yüksek performans odaklı yeni oyuncu telefonu Win 2 modelini resmi olarak duyurdu. Gelişmiş soğutma sistemi ve iddialı ekran özellikleriyle gelen cihaz, ilk aşamada Çin pazarında raflardaki yerini alıyor.",
+    "keyPoints": [
+      "Cihaz, 6,89 inç büyüklüğünde ve 2K çözünürlüklü 185 Hz ekranla geliyor.",
+      "Ön tarafta 50 MP çözünürlüğünde selfie kamerası yer alıyor."
+    ],
+    "body": [
+      "Honor markası, mobil oyuncular için geliştirdiği yeni nesil akıllı telefon modelini teknoloji dünyasına kazandırdı. Win 2 adını taşıyan bu cihaz, özellikle uzun süreli oyun seanslarında kararlı bir deneyim sunmayı hedefliyor. Şirket tarafından paylaşılan teknik detaylar, cihazın donanım gücünü net bir şekilde gözler önüne seriyor.",
+      "Telefonun ön yüzeyinde 6,89 inç büyüklüğünde, 2K çözünürlüğü destekleyen ve 185 Hz yenileme hızı sunan bir ekran yer alıyor. Yalnızca 0,93 mm genişliğindeki simetrik çerçeveler sayesinde ön yüzey alanı maksimum verimle kullanılıyor. Ekran paneli, en parlak ortamlarda 10.000 nit seviyesine ulaşabilirken karanlık ortamlarda parlaklığını 1 nit değerine kadar düşürebiliyor.",
+      "Performans tarafında ise cihazın CrossFire oyununda 2K çözünürlükte ve 185 FPS hedefiyle beş saatlik kesintisiz kullanımda ortalama 184,8 FPS değerini tutturabildiği belirtiliyor. Honor, satış başlangıcında kırktan fazla yapımda 185 FPS desteği sunulacağını, bazı oyunlarda ise yerel 165 FPS desteğinin aktif olacağını ifade ediyor. Çift fanlı soğutma mekanizması, bu yoğun grafik yükü altında sıcaklık kontrolünü elinde tutmak için görev yapıyor.",
+      "Kamera donanımında ise performans öncelikli bir çizgi izlenmiş durumda. Arka kamera kurulumunda 1/1,4 inç sensör büyüklüğüne sahip 200 MP ana lens ile 12 MP ultra geniş açılı sensör yer alıyor. Ön taraftaki selfie kamerası ise 50 MP çözünürlük sunuyor. Şimdilik yalnızca Çin pazarında satışa çıkarılan cihazın fiyatlandırma detayları ise bölgeye göre şekilleniyor."
+    ],
+    "comment": "Yüksek kare hızlarını mobil platformda uzun süre kararlı tutabilmek, soğutma sistemlerine binen yükü doğrudan artırır. Honor Win 2, beş saatlik testlerde 184,8 FPS ortalaması tutturarak donanımsal iddiasını rakamsal olarak kanıtlıyor. Oyuncular için bu düzeyde bir stabilite, özellikle rekabetçi yapımlarda akıcılığı korumak adına belirleyici bir avantaj sağlar. Ancak cihazın sunduğu bu ağır iş yükü, uzun vadeli pil tüketimi ve termal yönetim dengesini her zaman test edecektir.",
+    "editorNote": "Çift fanlı soğutma mimarisiyle gelen model, beş saatlik testlerde 184,8 FPS kararlılığı sunuyor.",
+    "tags": [
+      "Honor",
+      "Win 2",
+      "oyuncu telefonu",
+      "akıllı telefon"
+    ],
+    "category": "Donanım",
+    "gorselSorgu": "Honor smartphone gaming device",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/honor-win-2-tanitildi-iste-ozellikleri-ve-fiyati--211933",
+    "image": "https://www.donanimhaber.com/images/images/haber/211933/src/honor-win-2-tanitildi-iste-ozellikleri-ve-fiyati211933_1.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T07:31:00.000Z",
+    "generatedAt": "2026-10-22T07:38:27.626Z",
+    "breaking": true
+  },
+  {
     "id": "0ecb125d9476a0b1",
     "title": "Bursa'da sokak lambaları meme kanseri için pembe renkle yandı",
     "slug": "bursada-sokak-lambalari-meme-kanseri-icin-pembe-renkle-yandi",
