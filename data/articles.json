@@ -1,5 +1,74 @@
 [
   {
+    "id": "08d19baf958802c7",
+    "title": "PHP, sunucuları hedef alan kritik güvenlik açıklarına yama yayınladı",
+    "slug": "php-sunuculari-hedef-alan-kritik-guvenlik-aciklarina-yama-yayinladi",
+    "summary": "Popüler programlama dili PHP, sunucu denetimini tehlikeye atan iki kritik açığı kapatmak için resmi yamalar paylaştı. Geliştirici ekip, 9.2 önem derecesine sahip bu açıkların uzaktan zararlı kod çalıştırabileceğini belirterek kullanıcıları acil güncellemeye çağırdı.",
+    "keyPoints": [
+      "PHP geliştirme ekibi, 10 üzerinden 9.2 dereceli iki kritik açık için güncelleme duyurdu.",
+      "Güvenlik açıkları, saldırganların kimlik doğrulamadan uzaktan zararlı kod çalıştırmasına yol açıyor."
+    ],
+    "body": [
+      "İnternet dünyasının temel yapı taşlarından biri olan PHP programlama dilinde, sunucu sistemlerinin ele geçirilmesine zemin hazırlayan iki kritik açık tespit edildi. Geliştirici topluluk tarafından yapılan açıklamada, söz konusu zafiyetlerin önem derecesi 10 üzerinden 9.2 olarak derecelendirildi. Apache web sunucularında sıklıkla tercih edilen mod_php yapılandırmasında risk katsayısının çok daha yüksek seviyelerde seyrettiği özellikle vurgulandı.",
+      "Keşfedilen açıkların kötü niyetli kişilere kimlik doğrulaması gerektirmeden uzaktan kod çalıştırma olanağı tanıdığı bildirildi. PHP 8.1 ve daha eski sürümlerin artık resmi destekten mahrum olduğu hatırlatılarak, bu sürümleri kullananların güvenli sürümlere geçiş yapması gerektiği ifade edildi.",
+      "Yaşanan sürecin arka planına dair yapılan değerlendirmelerde, ilk bulguların 2024 yılında elde edildiği ancak o dönemde sorunun ciddiyetinin tam olarak anlaşılamadığı açıklandı. Teknik anlaşmazlıklar ve uzman yetersizliği nedeniyle çözüm çalışmalarının defalarca sekteye uğradığı kabul edildi. Ağustostan eylüle kadar süren incelemelerde, zafiyetin kötüye kullanım senaryolarının netleşmesiyle birlikte güncelleme takvimi öne çekildi.",
+      "Wiz Research siber güvenlik firması, tarama süreçlerinde yapay zeka modellerinin aktif rol oynadığını duyurdu. Kaynak kodundaki karmaşık yapıları çözmek için Gemini 4 Argon ile birlikte GPT-5.6 Sol yapay zeka modelleri kullanıldı. Özellikle Gemini 4 Argon modelinin zafiyetlerin tespit edilmesinde ve güvenlik yamalarının doğrulanmasında kritik bir başarı yakaladığı aktarıldı."
+    ],
+    "comment": "Yazılım dünyasında güvenlik açıklarının kapatılması sadece teknik bir görev değil, tüm ekosistemin güvenliğini koruyan zamana karşı bir yarıştır. 9.2 gibi yüksek bir risk puanına sahip bu açıkların yapay zeka araçları yardımıyla geç de olsa fark edilmesi, kod tabanlarının ne kadar karmaşıklaştığını açıkça gösteriyor. Destek süresi dolmuş sürümleri kullanan geliştiricilerin acilen yama yapması veya sürüm yükseltmesi gerekiyor, aksi takdirde sunucu güvenliği tamamen tehlikeye girecektir. Yapay zeka modellerinin güvenlik testlerindeki bu başarısı, önümüzdeki dönemde yazılım denetim süreçlerini tamamen dönüştürecektir.",
+    "editorNote": "Yapay zeka araçlarının tespitiyle ortaya çıkan açıklar için yayınlanan yamalar hemen kurulmalı.",
+    "tags": [
+      "PHP",
+      "Siber Güvenlik",
+      "Yazılım",
+      "Sunucu",
+      "Yapay Zeka"
+    ],
+    "category": "Yazılım",
+    "gorselSorgu": "data center server room",
+    "source": "AA Güncel",
+    "sourceUrl": "https://www.aa.com.tr/tr/bilim-teknoloji/php-sunuculari-tehdit-eden-iki-kritik-guvenlik-acigini-gidermek-icin-guncelleme-yayimladi/4096863",
+    "image": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/22/thumbs_b_c_8b073778f9634814c9a73832b3301c5b.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T08:52:02.000Z",
+    "generatedAt": "2026-10-22T08:56:27.239Z",
+    "breaking": true
+  },
+  {
+    "id": "4b0c4a58be156945",
+    "title": "Seydişehir'de minibüs ile motosiklet çarpıştı: Sürücü yaralandı",
+    "slug": "seydishirde-minibus-ile-motosiklet-carpisti-surucu-yaralandi",
+    "summary": "Konya'nın Seydişehir ilçesinde minibüs ile motosikletin kavşakta çarpışması sonucu meydana gelen kazada bir kişi yaralandı. Olay yerine gelen sağlık ekiplerinin ilk müdahalesinin ardından yaralı sürücü hastaneye kaldırıldı.",
+    "keyPoints": [
+      "Seyit Harun Caddesi Adliye Kavşağı'nda saat 14:00 sıralarında kaza meydana geldi.",
+      "H.Ç.B. yönetimindeki 42 BGJ 31 plakalı motosiklet minibüsle çarpıştı.",
+      "Yaralanan motosiklet sürücüsü Seydişehir Devlet Hastanesi'nde tedavi altına alındı."
+    ],
+    "body": [
+      "Konya'nın Seydişehir ilçesinde akşam saatlerine doğru hareketli dakikaların yaşanmasına yol açan bir trafik kazası kaydedildi. Şehir içi ulaşımın yoğun noktalarından biri olan Alaylar 2 Mahallesi sınırlarında iki araç birbirine çarptı.",
+      "Seyit Harun Caddesi üzerinde yer alan Adliye Kavşağı'nda, saatler 14:00'ü gösterdiğinde H.Ç.B. idaresindeki 42 BGJ 31 plakalı motosiklet ile K.S. kontrolündeki 42 BIV 807 plakalı minibüsün yolları kesişti. Noktadaki geçiş sırasında iki aracın çarpışması sonucu motosiklet sürücüsü şiddetin etkisiyle yola savruldu.",
+      "Çevredeki vatandaşların ihbarı üzerine olay yerine hızla intikal eden sağlık ve emniyet birimleri güvenlik önlemleri alırken, yaralı sürücüye ilk müdahale kaza mahallinde yapıldı. Sağlık ekiplerinin yaptığı kontrollerin ardından sedyeyle ambulansa alınan sürücü, Seydişehir Devlet Hastanesi'ne nakledildi.",
+      "Hastaneye ulaştırılan yaralının tedavi süreci başlatılırken, emniyet güçleri kazanın meydana geldiği kavşaktaki kusur oranlarını ve geçiş önceliği detaylarını netleştirmek üzere soruşturma başlattı."
+    ],
+    "comment": "Kavşak içerisindeki geçiş ihlalleri, şehir içi trafikte her gün karşılaşılan en büyük güvenlik açıklarından birini oluşturuyor. Özellikle hafif ticari araçlar ile iki tekerlekli taşıtların paylaştığı bu tür noktalarda, hız ve görüş açısı faktörleri kazaların kaçınılmaz olmasına zemin hazırlıyor. Sürücülerin kavşak yaklaşım hızlarını düşürmemesi, benzer yaralanmalı olayların tekrarlanma riskini doğrudan artırıyor. Trafik denetimlerinin ve ışıklandırma sistemlerinin yetersiz kaldığı ara arterlerde benzer senaryoların önüne geçmek için altyapı iyileştirmeleri şart.",
+    "editorNote": "Adliye Kavşağı'nda yaşanan çarpışmada savrulan motosiklet sürücüsü hastaneye kaldırıldı; kavşaklardaki geçiş önceliği tartışmaları yeniden gündemde.",
+    "tags": [
+      "Konya",
+      "Seydişehir",
+      "Trafik Kazası",
+      "Motosiklet",
+      "Asayiş"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "accident crashed motorcycle ambulance street",
+    "source": "Saray Medya",
+    "sourceUrl": "https://www.saraymedya.com/haber/konya-da-kaza-motosiklet-surucusu-yaralandi_316360/",
+    "image": "https://img.saraymedya.com/manset/2026/10/konya-da-kaza-motosiklet-surucusu-yaralandi-1792659068.webp",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T08:51:00.000Z",
+    "generatedAt": "2026-10-22T08:56:14.341Z",
+    "breaking": true
+  },
+  {
     "id": "f4a582f4676a3303",
     "title": "ABD'li Vekil Ramirez, İsrail'e Silah Sevkıyatını Durdurma Çağrısı Yaptı",
     "slug": "abdli-vekil-ramirez-israile-silah-sevkiyatini-durdurma-cagrisi-yapti",
@@ -36,6 +105,62 @@
     "breaking": true
   },
   {
+    "id": "b70fcf610aa42038",
+    "title": "Samsung, Galaxy A57 ve A56 Modellerine AirDrop Desteği Getiriyor",
+    "slug": "samsung-galaxy-a57-ve-a56-modellerine-airdrop-destegi-getiriyor",
+    "summary": "Güney Koreli teknoloji üreticisi Samsung, popüler orta segment telefon serisine yeni kablosuz dosya paylaşım yetenekleri ekliyor. Yapılan son açıklamaya göre cihazlar, Apple ekosistemindeki popüler teknoloji ile uyumlu hale geliyor.",
+    "keyPoints": [
+      "Samsung, Galaxy A57 ve A56 modellerine AirDrop desteği sunmaya hazırlanıyor.",
+      "Yeni özellik, farklı işletim sistemleri arasındaki dosya aktarım süreçlerini kolaylaştıracak.",
+      "Güncellemenin önümüzdeki dönemde ilgili akıllı telefonlara kademeli olarak dağıtılması bekleniyor."
+    ],
+    "body": [
+      "Akıllı telefon pazarının öncü markalarından Samsung, cihaz kullanıcılarının uzun süredir beklediği dosya paylaşım özgürlüğü konusunda önemli bir adım atıyor. Şirketin orta segmentteki iddialı temsilcileri olan Galaxy serisi cihazlar, platformlar arası engelleri kaldıran yeni bir yazılım entegrasyonuna kavuşuyor. Bu hamleyle birlikte kullanıcılar, farklı ekosistemlerdeki cihazlarla iletişim kurarken daha az zorluk yaşayacak.",
+      "Geliştirilen yeni altyapı sayesinde, Apple ekosistemine ait popüler kablosuz aktarım standardı artık bu akıllı telefonlarda da yer bulacak. Normal şartlarda kendi içinde kapalı bir döngüde çalışan dosya transfer protokolleri, bu entegrasyon sayesinde daha geniş bir cihaz havuzuyla veri alışverişi yapabilecek. Özellikle günlük kullanımda iki farklı işletim sistemini aynı anda idare eden kullanıcılar için bu durum büyük bir pratiklik sağlayacak.",
+      "Şirket yetkililerinin paylaştığı detaylara göre söz konusu özellik, cihazların donanımsal altyapısıyla tam uyumlu olacak şekilde optimize ediliyor. Yazılım ekibi, aktarım sırasında oluşabilecek güvenlik açıklarını ve bağlantı kopmalarını en aza indirmek için özel protokoller geliştiriyor. Böylece kullanıcılar, büyük boyutlu fotoğrafları, videoları veya belgeleri saniyeler içinde başka bir cihaza güvenle aktarabilecek.",
+      "Yeni yazılım desteğinin ilk olarak hangi tarihte aktif edileceği ve güncellemenin boyutu hakkındaki detaylar henüz netlik kazanmadı. Ancak teknoloji kulislerinde konuşulan senaryolara göre, söz konusu özellik önümüzdeki aylarda sunulacak kararlı sürüm paketleriyle birlikte kullanıma sunulacak. Bu durum, markanın orta segmentteki rekabet gücünü artırırken kullanıcı deneyimini de üst seviyeye taşıyacak."
+    ],
+    "comment": "Teknoloji dünyasında ekosistem duvarlarının yavaş yavaş yıkılması, nihayetinde son kullanıcıya yarayan en rasyonel adımdır. Şirketlerin kendi aralarındaki rekabeti bir kenara bırakıp ortak standartlarda buluşması, platform değiştirme maliyetlerini doğrudan aşağı çekiyor. Özellikle Galaxy serisi gibi geniş bir kitleye hitap eden cihazlarda bu tarz köprülerin kurulması, uzun vadede pazar dinamiklerini kökten değiştirecektir. Eğer bu entegrasyon vaat edildiği gibi sorunsuz çalışırsa, kullanıcılar artık dosya aktarımı için üçüncü taraf uygulamalara mahkum kalmaktan kurtulacak.",
+    "editorNote": "Apple ekosisteminin en karakteristik özelliklerinden biri olan kablosuz dosya paylaşımı, artık Android cephesinde de kendine yer buluyor.",
+    "tags": [
+      "Samsung",
+      "Galaxy A57",
+      "Galaxy A56",
+      "AirDrop",
+      "Mobil"
+    ],
+    "category": "Mobil",
+    "gorselSorgu": "Samsung smartphone wireless file transfer",
+    "source": "BeeTekno.com",
+    "sourceUrl": "https://beetekno.com/samsung-galaxy-a57-ve-a56-modellerine-airdrop-destegi-getiriyor",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Samsung_Galaxy_Fit_E.jpg/1280px-Samsung_Galaxy_Fit_E.jpg",
+    "gorselKaynak": {
+      "yazar": "Kulawik.pl",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_Fit_E.jpg"
+    },
+    "publishedAt": "2026-10-22T08:50:33.000Z",
+    "generatedAt": "2026-10-22T08:56:38.003Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Samsung_Galaxy_S8_Active_With_Casing.jpg/1280px-Samsung_Galaxy_S8_Active_With_Casing.jpg",
+        "yazar": "DReifGalaxyM31",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S8_Active_With_Casing.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/SAMSUNG_W23_W23_FLIP_EVENT.jpg/1280px-SAMSUNG_W23_W23_FLIP_EVENT.jpg",
+        "yazar": "Dinkun Chen",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:SAMSUNG_W23_W23_FLIP_EVENT.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "76302087df09a3e5",
     "title": "İran'dan ABD'ye füze ve internet kabloları üzerinden yeni tehdit",
     "slug": "irandan-abdye-fuze-ve-internet-kablolari-uzerinden-yeni-tehdit",
@@ -68,6 +193,41 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-22T08:50:00.000Z",
     "generatedAt": "2026-10-22T08:53:42.134Z",
+    "breaking": true
+  },
+  {
+    "id": "e9c2feb8a319ec95",
+    "title": "ABD'li Kongre Üyesi Ramirez'den İsrail'e Silah Yardımı Durdurulsun Çağrısı",
+    "slug": "abdli-kongre-uyesi-ramirezin-israile-silah-yardimi-durdurulsun-cagrisi",
+    "summary": "ABD Kongre üyesi Ramirez, İsrail'in askeri operasyonlarının yarı milyon insanı açlık riskiyle baş başa bıraktığını açıkladı. Bölgedeki trajedinin derinleştiğini belirten Kongre üyesi, Washington yönetiminin askeri yardımlara son vermesini talep etti.",
+    "keyPoints": [
+      "Yaklaşık 500 bin Filistinli temel gıda ve insani yardımlara ulaşamama riskiyle karşı karşıya.",
+      "Kongre üyesi Ramirez, ABD vergi mükelleflerinin finansman sağladığı operasyonların durdurulmasını istedi.",
+      "Geçen yıl sunulan ve yardımları kesmeyi hedefleyen 'Bombaları Engelleyin' tasarısına destek çağrısı yapıldı."
+    ],
+    "body": [
+      "ABD Kongre üyesi Ramirez, sosyal medya üzerinden yaptığı açıklamalarda Gazze Şeridi'nde yaşanan insani krize dikkat çekti. Bölgedeki askeri saldırıların aralıksız sürdüğünü ve sivil yerleşim yerlerinde büyük bir yıkım meydana geldiğini ifade etti. Hava saldırılarının aileleri ve çocukları doğrudan hedef almaya devam ettiğini vurgulayan politikacı, durumun vahametine işaret etti.",
+      "Açıklamada, yaklaşık yarım milyon Filistinlinin temel gıda maddelerine ve acil insani yardımlara erişim imkanını tamamen yitirme tehlikesiyle karşı kaşıya olduğu kaydedildi. Bölgede açlık ve yıkım tehlikesinin her geçen saat katlanarak büyüdüğünün altı çizilirken, sivillerin hayatta kalma mücadelesinin zorlaştığı belirtildi. Bombalama taktiklerinin yanı sıra sistematik bir aç bırakma politikasının uygulandığına dikkat çekildi.",
+      "İsrail'in sürdürdüğü askeri operasyonların maliyetine değinen Ramirez, bu sürecin ABD'li vergi mükelleflerinin bütçesinden desteklenen bir yıkım olduğunu dile getirdi. Washington yönetiminin izlediği politikaların sivillerin yaşamını doğrudan etkilediğini savunan Kongre üyesi, mevcut yardımların derhal kesilmesi gerektiğini ifade etti. Bu bağlamda, daha önce meclise sunulan yasa teklifinin önemi bir kez daha hatırlatıldı.",
+      "Geçtiğimiz yıl kongreye sunulan ve ülkenin İsrail'e yönelik askeri sevkiyatlarını durdurmayı amaçlayan 'Bombaları Engelleyin' tasarısının bir an önce yasalaşması çağrısı yinelendi. Ramirez, yaşanan insani felaketin ancak bu tür somut siyasi adımlarla engellenebileceğini savundu. Siyasi mekanizmaların derhal harekete geçmesi gerektiği yönündeki talepler kamuoyuyla paylaşıldı."
+    ],
+    "comment": "Washington yönetiminin dış politika öncelikleri ile sahadaki insani tablo arasındaki çelişki giderek derinleşiyor. Yaklaşık yarım milyon insanın gıdaya erişememe tehlikesiyle yaşadığı bir ortamda, askeri sevkiyatların sürmesi uluslararası tepkilerin odağında yer alıyor. Kongre içindeki bu tür muhalif seslerin artması, uzun vadede yardımların denetlenmesi konusunda yasal baskı unsuru oluşturabilir.",
+    "editorNote": "Kongre üyesi Ramirez, yarım milyon insanın gıda krizine karşı askeri yardımların kesilmesini talep etti.",
+    "tags": [
+      "ABD",
+      "İsrail",
+      "Gazze",
+      "Kongre",
+      "Silah Yardımı"
+    ],
+    "category": "Dünya",
+    "gorselSorgu": "US Capitol building Washington DC",
+    "source": "İşçi Haber",
+    "sourceUrl": "https://www.iscihaber.net/dunya/abdli-kongre-uyesinden-israilin-soykirimina-sert-tepki/273925",
+    "image": "https://www.iscihaber.net/cropImages/1280x720/uploads/haberler/2026/10/emjB-abdli-kongre-uyesinden-israilin-soykirimina-sert-tepki.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T08:46:45.000Z",
+    "generatedAt": "2026-10-22T08:56:48.832Z",
     "breaking": true
   },
   {
