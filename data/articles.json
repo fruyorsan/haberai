@@ -1,5 +1,177 @@
 [
   {
+    "id": "00b4a173522b46d5",
+    "title": "Windows 11 VPN sorunu için yayınlanan yama başarısız oldu",
+    "slug": "windows-11-vpn-sorunu-icin-yayinlanan-yama-basarisiz-oldu",
+    "summary": "Microsoft, Windows 11 kurumsal ağ bağlantılarını etkileyen hatayı gidermek amacıyla sunduğu güncellemelerin sorunu çözmediğini açıkladı. Ekim ayında dağıtılan yamaların işe yaramadığı belirtilirken, şirket yöneticilerden geçici olarak manuel protokol yapılandırması yapmalarını talep ediyor.",
+    "keyPoints": [
+      "Microsoft, KB5127648 ve KB5127646 numaralı güncellemelerin VPN hatasını çözmediğini kabul etti.",
+      "Otomatik protokol geçişinin bozulması nedeniyle sistem bağlantıda takılı kalıyor.",
+      "Kalıcı bir yama yayınlanana kadar yöneticilerin manuel protokol sabitlemesi gerekiyor."
+    ],
+    "body": [
+      "Microsoft, işletim sisteminin kurumsal ağ erişim altyapısında yaşanan teknik aksaklıklar konusunda yeni bir açıklama yaptı. Eylül ayından bu yana uzaktan bağlantı süreçlerini sekteye uğratan sorun, ekim ayındaki yamalarla giderildiği duyurulmasına rağmen aktif olarak devam ediyor. Şirket, daha önce dağıtılan paketlerin sorunu tamamen ortadan kaldırmadığını ve durumun hatalı biçimde çözüldü olarak etiketlendiğini resmi olarak kabul etti.",
+      "Arka planda şifreli erişim sağlayan Always On VPN altyapısı, otomatik protokol seçimi sırasında hata veriyor. Sistem, bağlantı kurma denemesi başarısız olduğunda IKEv2 ve SSTP protokolleri arasında yedek geçiş yapmaya çalışırken tamamen kilitleniyor. Etkilenen bilgisayarlar bağlanma aşamasında takılı kalırken, bazı durumlarda bağlantı noktasının kullanımda olduğuna dair uyarı mesajları ekrana geliyor.",
+      "Yaşanan bu teknik aksaklık, Windows 11 sürüm 24H2 ile 26H2 arasındaki tüm versiyonları kapsıyor. Güvenli uzaktan çalışma modeline bel bağlayan kurumlar için bu durum iş süreçlerinde aksamalara yol açıyor. Microsoft, destek belgelerinden onarım ifadelerini kaldırarak sorunun statüsünü çözüldü seviyesinden azaltıldı düzeyine çektiğini bildirdi.",
+      "Kalıcı bir yamanın önümüzdeki haftalarda paylaşılması beklenirken, BT yöneticilerine geçici bir müdahale yöntemi öneriliyor. Şirket, etkilenen profillerin tek bir protokole sabitlenmesini ve otomatik geçiş özelliğinin kapatılmasını tavsiye ediyor. Bağlantının manuel olarak IKEv2 ya da SSTP biçiminde ayarlanması, yeni bir güncelleme gelene kadar ağ güvenliğinin sürdürülmesini sağlıyor."
+    ],
+    "comment": "Yazılım güncellemelerinin arka planda neleri bozabileceği, kurumsal altyapıların ne kadar hassas olduğunu bir kez daha gösteriyor. Microsoft gibi bir teknoloji devinin, çözüldü dediği bir hatayı haftalar sonra tekrar incelemek zorunda kalması güvenilirlik açısından soru işaretleri yaratıyor. Uzaktan çalışma düzenine sahip şirketler, bu tür hatalar yüzünden operasyonel kesintiler yaşarken, manuel geçici çözümler IT ekiplerinin iş yükünü artırıyor. Otomatik protokol geçişlerinin sağlıklı test edilmemesi, binlerce çalışanın günlük rutinine doğrudan darbe vuruyor.",
+    "editorNote": "Microsoft çözüldü dediği Windows 11 VPN hatasını geri çekti; şirketler manuel yapılandırmaya dönüyor.",
+    "tags": [
+      "Windows 11",
+      "Microsoft",
+      "VPN",
+      "Yazılım",
+      "Güncelleme"
+    ],
+    "category": "Yazılım",
+    "gorselSorgu": "Windows 11 computer screen error",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/windows-11-always-on-vpn-baglanti-sorunu-cozumu-basarisiz",
+    "image": "https://ares.shiftdelete.net/2026/10/windows-11-sac-bas-yolduruyor-microsoft-guncelleme-yayinladi-hata-cozulmedi.webp",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T18:00:00.000Z",
+    "generatedAt": "2026-10-22T18:01:38.183Z",
+    "breaking": true
+  },
+  {
+    "id": "45e229fb2d1a02e5",
+    "title": "BM Genel Sekreteri: Çatışmalara Son; Uluslararası Hukukun Saygı Gösterilmesi Gerek",
+    "slug": "bm-genel-sekreteri-catismalara-son-uluslarar-hukuk-saygusu",
+    "summary": "Antonio Guterres, dünya çapında sürmekte olan çatışmalara ve şiddete son vermeyi çağırdı. Gerek Filistin, gerek Avrupa’nın protestolarındaki şiddet, uluslararası hukukun ihlaline yol açıyor. Guterres, barışçıl protestoların gölgelenmemesi gerektiğini vurguladı.",
+    "keyPoints": [
+      "Çatışmaların enerji, tedarik zinciri ve finansal sistemleri etkilediği uyarısı",
+      "Filistin topraklarında insani yardımların kısıtlanması ve 6 ayda 450 milyon dolarlık acil ihtiyaç",
+      "Şiddetin barışçıl protestoları gölgelemesi ve sorumluların hesap vermesi gerekliliği"
+    ],
+    "body": [
+      "Birleşmiş Milletler Genel Sekreteri Antonio Guterres, son günlerde yükselen Protestoları ve Orta Doğu’da artan çatışmaları uluslararası toplumun acil dikkatine alarak, ‘çatışmalara son vermeli, uluslararası hukuka saygı gösterilmeli’ dedi. Guterres, Avrupa’da artan yaşam maliyetinin sokakları doldurduğunu ve bu durumun birçok insanı yıprattığını ifade etti.",
+      "Guterres, çatışmaların yalnızca yerel sınırları aşmadığını, enerji piyasaları, nakliye yolları ve küresel tedarik zincirleri üzerinde yıkıcı etkiler yarattığını belirtti. Ona göre şiddet, barışçıl protestoların meşru şikayetlerini gölgelemekten vazgeçmemelidir.",
+      "Filistin’deki duruma özel vurgu yapan lider, Gazze’ye yönelik insani yardımların ciddi ölçüde kısıtlandığını ve Batı Şeria’da sürmekte olan saldırıların günlük hayatı tehdit ettiğini dile getirdi. 6 ay boyunca 450 milyon doların acilen gerektiği sözü, insani yardım çağrısına güç kattı.",
+      "Son olarak Guterres, ‘her yerde çatışmalar durmalı, siviller korunmalı, diplomasiye alan tanınmalı’ sözleriyle, küresel barışın sürdürülmesi için toplumsal sorumluluk ve uluslararası iş birliğine ihtiyaç duyulduğunu özetledi."
+    ],
+    "comment": "Guterres’in cesur çağrısı, küresel çapta şiddet ve barışın birbirine bağlılığını öne çıkartıyor. Özellikle Filistin konusundaki vurgusu, dünya medyasının odağını yeniden şekillendirebilir. Bu mesajın, insan hakları örgütleri ve uluslararası toplum arasında birlik mesajı olarak yankı bulması bekleniyor.",
+    "editorNote": "BM Genel Sekreteri, çatışma bölgelerindeki acil insani ihtiyaca dikkat çekerek küresel barış çağrısı yaptı.",
+    "tags": [
+      "BM",
+      "Çatışmalar",
+      "Filistin",
+      "İnsan Hakları"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "global peace protest",
+    "source": "EHA Medya",
+    "sourceUrl": "https://ehamedya.com.tr/haber/bm-genel-sekreteri-guterres-dunyadaki-catismalarin-durmasi-cagrisi-yapti",
+    "image": "https://ehamedya.com.tr/uploads/og/4d1855e2809a2bf9fbd2.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T17:58:21.000Z",
+    "generatedAt": "2026-10-22T18:02:30.386Z",
+    "breaking": true
+  },
+  {
+    "id": "b4ad243d44990f12",
+    "title": "Trump: İran’ın Seçim Öncesi Petrol Fiyatını Yükseltmeye Çalıştığını Düşünüyor",
+    "slug": "trump-iran-petrol-satiri-secim-oncesi",
+    "summary": "ABD eski başkanı Donald Trump, İran’ın 2024 seçimi öncesinde petrol fiyatlarını yükseltmek ve böylece gelirini artırmak için stratejik hamleler yaptığını iddia etti. Trump, bu iddiaları zamanlamaya ve piyasa manipülasyonuna odaklanarak ifade etti.",
+    "keyPoints": [
+      "Trump, İran’ın seçime yakın petrol fiyatlarını artırma stratejisi izlediğini belirtti.",
+      "İran’ın bu eylemi, devlet gelirini maksimize etmeye yönelik bir politika olarak görülüyor.",
+      "Trump, bu iddiaları destekleyen verileri açıklamadan, politik çerçevede bir suçlamada bulundu."
+    ],
+    "body": [
+      "ABD’nin eski başkanı Donald Trump, 2024 genel seçimlerine yaklaşırken İran’ın petrol fiyatlarını yükseltmeye çalıştığını iddia etti. Trump, bu eylemin ülke gelirini artırmak için planlı bir strateji olduğunu savundu.",
+      "Trump, açıklamasında İran’ın petrol fiyatlarını manipüle etmenin, seçime yakın dönemde ekonomi politikalarını şekillendirmeye yönelik bir hamle olduğunu öne sürdü. Bu iddiaları desteklemek için somut veriye yer verilmese de, politik bağlamda bir suçlama yöneltti.",
+      "İran makamları, Trump’ın bu iddialarını kesin bir şekilde reddetti. Yetkililer, ülkenin petrol fiyatlarını belirleyen faktörlerin piyasa koşulları ve uluslararası anlaşmalar olduğunu belirtti.",
+      "Bu gelişme, iki ülke arasındaki kavga ve rekabetin bir yansıması olarak görülüyor. Trump’ın açıklamaları, enerji piyasalarında şüpheleri artırırken, politika camiasında da tartışmalara yol açıyor."
+    ],
+    "comment": "Trump’ın bu iddiaları, hem siyasi hem de ekonomik açıdan küresel piyasalar için bir belirsizlik kaynağı. Özellikle petrol fiyatlarının dalgalanması, enerji talebi üzerinde doğrudan etki yaratabilir. Bu nedenle, yatırımcılar ve hükümetler durumu yakından izlemeye devam ediyor.",
+    "editorNote": "İki taraflı gerilim, enerji sektöründe yeni bir döneme işaret ediyor. 2024 seçimleri öncesi stratejik hamleler hız kazanabilir.",
+    "tags": [
+      "Trump",
+      "İran",
+      "Petrol",
+      "Ekonomi"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "oil price graph",
+    "source": "ABC Haber",
+    "sourceUrl": "https://abcgazetesi.com.tr/dunya/trumptan-irana-petrol-suclamasi-secimler-oncesi-fiyatlari-yukseltmeye-calisiyor-875036",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Istanbul_city_Photos-_Urban_01.jpg/1280px-Istanbul_city_Photos-_Urban_01.jpg",
+    "gorselKaynak": {
+      "yazar": "Mostafameraji",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_01.jpg"
+    },
+    "publishedAt": "2026-10-22T17:55:00.000Z",
+    "generatedAt": "2026-10-22T18:03:15.724Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Istanbul_city_Photos-_Urban_07.jpg/1280px-Istanbul_city_Photos-_Urban_07.jpg",
+        "yazar": "Mostafameraji",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_07.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Istanbul_city_Photos-_Urban_18.jpg/1280px-Istanbul_city_Photos-_Urban_18.jpg",
+        "yazar": "Mostafameraji",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_18.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
+    "id": "7823d350e6968cb7",
+    "title": "ABD, 3 Kasım Ara Seçiminden Önce İran’a Saldırı Yapmayacak: Beyaz Saray Açıklaması",
+    "slug": "abd-iran-saldiri-3-kasim-ara-secim",
+    "summary": "Beyaz Saray, 3 Kasım ara seçimleri öncesinde ABD’nin İran’a yönelik askeri operasyon planlamayacağını belirtti. Yetkililer, bölgesel istikrarı korumak amacıyla diplomatik yolları öncelikli tutma kararı almıştı. Kriz yönetimi ekipleri ise olası aksaklıkları en aza indirmek için hazırlıklı.",
+    "keyPoints": [
+      "ABD, 3 Kasım ara seçimleri döneminde İran’a askeri saldırı planlamıyor.",
+      "Beyaz Saray, bölgesel istikrarı korumak adına diplomatik kanalların güçlendirileceğini söyledi.",
+      "İşbirlikçi ülkelerle koordine edilen kriz yönetimi ekipleri, olası acil durum senaryolarına hazır."
+    ],
+    "body": [
+      "Beyaz Saray, 3 Kasım'da yapılacak ara seçimlerin öncesinde, ABD’nin İran'a yönelik askeri bir müdahalede bulunmayacağına dair resmi açıklama yaptı. Yetkililere göre, bölgesel istikrarın korunması ve seçimin sorunsuz gerçekleşmesi öncelikli hedefler arasında yer alıyor.",
+      "Söz konusu açıklama, ABD’nin Orta Doğu politikasında diplomasiye ağırlık veren bir stratejinin devam ettiğini gösteriyor. Diplomatik kanalların güçlendirileceği ve İran ile iletişimin sürdürüleceği vurgulandı. Bu hamle, ABD'nin uluslararası ittifaklarıyla koordine bir yaklaşım sergilemesini hedefliyor.",
+      "ABD hükümeti, aynı zamanda kriz yönetim ekiplerini de hazır tuttuğunu belirtti. Olası acil durum senaryolarına karşı önceden planlanan operasyonlar, seçim sürecinde herhangi bir aksaklığın önlenmesi için kritik rol oynayacak. Bu hazırlıklar, hem iç hem de dış politikalarda istikrarı sağlamak amaçlı.",
+      "Analistler, bu adımın, ABD'nin Orta Doğu'daki askeri varlığını azaltma çabalarının bir parçası olduğunu düşünüyor. Ancak, İran'ın tepkisi ve bölgesel güç dengeleri hâlâ belirsiz kalıyor. Bu nedenle, ABD'nin politikalarını dikkatle izlemesi ve diplomatik çabalarını sürdürmesi bekleniyor."
+    ],
+    "comment": "Bu açıklama, ABD'nin 3 Kasım ara seçimleri öncesinde askeri bir adım atmaktan kaçınarak istikrarı güvence altına alma çabasını gösteriyor. Diplomasiye verdiği önemin yanı sıra, krizin önlenmesi için hazırlık yapması, stratejik bir dengenin işaretidir. Yine de, İran'ın tepkisi ve bölgesel güç dengeleri göz önünde bulundurulduğunda, bu kararın uzun vadeli etkileri belirsizliğini koruyor.",
+    "editorNote": "ABD, Orta Doğu'daki askeri varlığını azaltarak diplomasiye yönelirken, 3 Kasım ara seçimlerini sorunsuz geçirmek amacıyla istikrarı hedefliyor.",
+    "tags": [
+      "ABD",
+      "İran",
+      "Ara Seçimler",
+      "Diplomasi"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "US diplomacy Middle East",
+    "source": "dikGAZETE.com",
+    "sourceUrl": "https://www.dikgazete.com/haber/beyaz-saray-abd-3-kasim-ara-secimlerinden-once-i-ran-a-saldirmayacak-1023066.html",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/National_Museum_of_American_Diplomacy_-_49060940146.jpg/1280px-National_Museum_of_American_Diplomacy_-_49060940146.jpg",
+    "gorselKaynak": {
+      "yazar": "National Museum of American Diplomacy",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:National_Museum_of_American_Diplomacy_-_49060940146.jpg"
+    },
+    "publishedAt": "2026-10-22T17:52:25.000Z",
+    "generatedAt": "2026-10-22T18:04:06.285Z",
+    "gorselEk": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/62/US_Diplomacy_Center_rendering.jpg",
+        "yazar": "Source: diplomacy.state.gov",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:US_Diplomacy_Center_rendering.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "a8b9fcaacfeda773",
     "title": "FCC, Huawei Çipli Cihazları ABD Pazarından Engelledi",
     "slug": "fcc-huawei-cipli-cihazlar-ama-usa-pazarindan-engellendi",
