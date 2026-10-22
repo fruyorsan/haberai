@@ -1,5 +1,109 @@
 [
   {
+    "id": "2fc6fcf5c5588735",
+    "title": "PHP geliştiricileri acil yama yayımladı: Milyonlarca sunucu alarmda",
+    "slug": "php-gelistiricileri-acil-yama-yayimladi-milyonlarca-sunucu-alarmda",
+    "summary": "İnternet sitelerinin yüzde 70'ine güç veren PHP programlama dilinde iki kritik güvenlik açığı belirlendi. Uzmanlar uzaktan kod yürütülmesine zemin hazırlayan bu riskin resmi CVSS puanını 9,2 olarak açıkladı. Geliştirici ekip sistem yöneticilerini hızla güncelleme yapmaya çağırdı.",
+    "keyPoints": [
+      "Resmi ölçekte 9,2, watchTowr analizinde ise 10 tam puanlık tehlike belirlendi.",
+      "Açıkları bulup doğrulama aşamasında GPT-5.6 Sol ve Wiz yapay zekaları kullanıldı.",
+      "WordPress, Laravel ve Drupal gibi yaygın platformları hedef alan istismar araçları görüldü."
+    ],
+    "body": [
+      "Web dünyasının en yaygın altyapılarından biri olan PHP programlama dilinde keşfedilen iki kritik güvenlik zafiyeti küresel çapta geniş çaplı bir hareketlilik başlattı. İnternet üzerindeki aktif sitelerin yaklaşık yüzde 70'inde sunucu tarafı operasyonları yürüten yazılım için resmi geliştirme ekibi 20 Ekim tarihinde güvenlik yamalarını kullanıma sundu. Yapılan duyuruda açıkların kapatılması amacıyla yöneticilerin ivedilikle sistemlerini güncellemesi istendi.",
+      "Tespit edilen açıklar resmi CVSS v4.0 derecelendirmesinde 10 üzerinden 9,2 puan alırken siber güvenlik kuruluşu watchTowr tehlike seviyesini doğrudan 10 tam puan olarak bildirdi. Zafiyetlerin kesin teknik detayları ve tam sürüm aralıkları henüz kamuoyuyla paylaşılmadı. Buna karşın açığın laboratuvar testlerinde doğrulanması ve sunucu üzerinde doğrudan komut çalıştırma yetkisi tanıması tehdidin boyutunu katladı.",
+      "Söz konusu güvenlik açıklarının gün yüzüne çıkarılmasında gelişmiş yapay zeka modelleri kilit rol üstlendi. Calif bünyesindeki araştırmacıların OpenAI tarafından geliştirilen GPT-5.6 Sol modelini kullanarak keşfettiği zafiyetler, Google çatısı altındaki Wiz güvenlik şirketi tarafından da doğrulandı. Yapay zeka teknolojileri normalde aylar sürebilecek karmaşık mantık hatası senaryolarını dakikalar seviyesine indirerek saldırı araçlarının hızlıca üretilmesine yol açtı.",
+      "Siber korsanların hedefinde CVE-2026-109618 ve CVE-2026-109619 kodlu açıklardan yararlanan PHP2Shell isimli bir istismar aracının bulunduğu belirtiliyor. Bu aracın WordPress 7.1.3, MediaWiki 1.46.2, Laravel 13.36.0, Magento 2.4.9 ve Drupal 11.4.10 gibi dev platformlarda yetkisiz kod işlettiği öne sürülüyor. Güvenlik şirketi Sansec ise ilk kitlesel saldırı dalgalarının yamaların çıkışından 15 dakika sonra başlayabileceği uyarısında bulundu."
+    ],
+    "comment": "Sunucu yöneticileri hiçbir test aşamasını beklemeden güvenlik yamalarını derhal yürürlüğe koymak zorunda. Zafiyetin watchTowr tarafından 10 tam puanla derecelendirilmesi, saldırganların altyapılara sızmasını çocuk oyuncağına dönüştürebilir. Bu durum özellikle WordPress ve Laravel çalıştıran küçük işletmeler ile e-ticaret sitelerini doğrudan savunmasız bırakıyor. Otomatik güncelleme mekanizması kurulmadığı takdirde ilk 15 dakikalık saldırı dalgası binlerce web sitesinin tamamen ele geçirilmesine yol açar.",
+    "editorNote": "Yapay zeka bu kez açığı bulan tarafta yer aldı. Milyonlarca web sitesini ayakta tutan PHP için yayınlanan acil yamaları geciktirmek felaket getirebilir.",
+    "tags": [
+      "PHP",
+      "Siber Güvenlik",
+      "WordPress",
+      "Yazılım",
+      "Yapay Zeka"
+    ],
+    "category": "Yazılım",
+    "gorselSorgu": "data center server room blinking lights",
+    "source": "Webtekno",
+    "sourceUrl": "https://www.webtekno.com/php-guvenlik-acigi-h227668.html",
+    "image": "https://imgrosetta.webtekno.com/file/694174/1200xauto.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T03:40:05.000Z",
+    "generatedAt": "2026-10-22T03:43:08.787Z",
+    "breaking": true
+  },
+  {
+    "id": "47ec73a053ff694a",
+    "title": "Galatasaray, Şampiyonlar Ligi'nde Lille'i deplasmanda 4-2 mağlup etti",
+    "slug": "galatasaray-sampiyonlar-liginde-lillei-deplasmanda-4-2-maglup-etti",
+    "summary": "Temsilcimiz Galatasaray, Şampiyonlar Ligi üçüncü hafta karşılaşmasında Fransız ekibi Lille'i deplasmanda 4-2 yendi. Sarı-kırmızılılar bu sonuçla turnuvadaki ilk galibiyetini alarak ilk 24 iddiasını güçlendirdi.",
+    "keyPoints": [
+      "Galatasaray deplasmanda Lille'i 4-2 yenerek Şampiyonlar Ligi'ndeki ilk galibiyetine ulaştı",
+      "Fransa'daki galibiyet tam 25 yıllık bir aranın ardından ilk kez gerçekleşti",
+      "Sarı-kırmızılıların gollerini Yunus Akgün, Aleksey Batrakov, Lucas Torreira ve Victor Osimhen attı"
+    ],
+    "body": [
+      "Sarı-kırmızılı ekip, UEFA Şampiyonlar Ligi'nin üçüncü haftasında Fransa topraklarında zorlu bir sınav verdi. Karşılaşmanın başında skorda geriye düşmesine rağmen oyun disiplininden kopmayan temsilcimiz, rakibine skorda üstünlük kurmayı başardı.",
+      "Mücadelenin ilerleyen dakikalarında sahneye çıkan Yunus Akgün, Aleksey Batrakov, Lucas Torreira ve Victor Osimhen kaydettikleri gollerle galibiyeti getiren isimler oldu. Özellikle Aleksey Batrakov sergilediği futbolla spor kamuoyunun beğenisini kazandı.",
+      "Bu sonuçla birlikte Galatasaray, Şampiyonlar Ligi'ndeki ilk üç maçlık periyotta ilk galibiyetini hanesine yazdırmış oldu. Aynı zamanda sarı-kırmızılı kulüp, tam 25 yıl aradan sonra Fransa deplasmanından galibiyetle dönmenin sevincini yaşadı.",
+      "Maçın ardından Fransız spor basını da karşılaşmaya geniş yer ayırarak temsilcimizin sahadaki üstünlüğüne dikkat çekti. Alınan bu kritik üç puan, takımın ilk 24 sıra hedefi adına atılan sağlam bir adım olarak kayda geçti."
+    ],
+    "comment": "Deplasmanda alınan bu tür dört gollü galibiyetler, takımların Avrupa arenasındaki öz güvenini doğrudan yukarı taşır. Geriden gelip skoru 4-2'ye getiren kadro yapısı, hücum hattındaki alternatiflerin ne kadar zengin olduğunu gösterdi. Fransız medyasının da övgüyle bahsettiği bu performans, sonraki maçlar için teknik heyete önemli taktiksel avantajlar sunuyor. Benzer deplasman maçlarında aynı direnç sürdürülmezse gruptaki denge kolayca tersine dönebilir.",
+    "editorNote": "Çeyrek asırlık Fransa kazanamama serisini sonlandıran sarı-kırmızılılar, Avrupa'daki iddiasını açıkça gösterdi.",
+    "tags": [
+      "Galatasaray",
+      "Lille",
+      "UEFA Şampiyonlar Ligi",
+      "Yunus Akgün",
+      "Victor Osimhen"
+    ],
+    "category": "Spor",
+    "gorselSorgu": "Galatasaray football team stadium",
+    "source": "Haber Global",
+    "sourceUrl": "https://haberglobal.com/spor/galatasarayin-tarihi-zaferi-fransizlari-soka-ugratti-lillei-ezdi-gecti-549880",
+    "image": "https://i.haberglobal.com/storage/files/images/2026/10/22/galatasarayin-tarihi-zaferi-fransizlari-soka-ugratti-lillei-ezdi-gecti-eizt.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T03:36:00.000Z",
+    "generatedAt": "2026-10-22T03:43:19.756Z",
+    "breaking": true
+  },
+  {
+    "id": "32d7a9b4126cfeb0",
+    "title": "Zelenskiy, ABD'nin Üçlü Barış Görüşmesi Önerisini Onayladı",
+    "slug": "zelenskiy-abd-uclu-baris-gorusmesi-onay",
+    "summary": "Kiev’in başkanı Volodymyr Zelenskiy, ABD’nin özel temsilcisi Steve Witkoff’un Rusya Devlet Başkanı Vladimir Putin ile yaptığı görüşme sonrasında önerilen üçlü barış toplantısına destek verdi. Zelenskiy, toplantının Kasım ayının başında gerçekleşmesini bekledi ve Ukrayna’nın ateşkes, enerji ateşkesi ve insani girişimlere açık olduğunu vurguladı.",
+    "keyPoints": [
+      "ABD ve Rusya, üçlü barış görüşmesinin mümkün olan en kısa sürede yapılmasını önerdi.",
+      "Zelenskiy, toplantının Kasım ayının başına kadar gerçekleşmesini bekledi ve Ukrayna’nın tüm barış önerilerine açık olduğunu söyledi.",
+      "Görüşmeler, Ukrayna’nın ABD desteğinin azalabileceği endişeleri arasında yapıldı."
+    ],
+    "body": [
+      "Kiev’in başkanı Volodymyr Zelenskiy, Norveç’ten Kiev’e dönüşü sırasında WhatsApp üzerinden gazetecilere yaptığı açıklamalarda ABD’nin özel temsilcisi Steve Witkoff’un St. Petersburg’da Rusya Devlet Başkanı Vladimir Putin ile gerçekleştirdiği görüşmenin ardından Amerikan yetkililerle temas kurduğunu belirtti.",
+      "ABD, toplantının mümkün olan en kısa sürede yapılmasını önerirken Zelenskiy da bunu desteklediğini ifade etti. Bence Kasım ayının başını geçmeyecek’ dedi.",
+      "Kremlin ise Putin’in ABD arabuluculuğunda barış görüşmelerini gelecek ay kadar erken bir tarihte yeniden başlatmayı kabul ettiğini duyurmuştu."
+    ],
+    "comment": "Zelenskiy’in ABD’nin üçlü toplantı önerisini desteklemesi, Ukrayna’nın barış sürecine ciddi bir ivme kazandırma potansiyeli taşıyor. Ancak, Rusya’nın da aynı platformda bulunması, diplomatik zorlukları artırabilir. Bu gelişme, uluslararası arenada bir dengeli yaklaşımın mümkün olduğunu gösteriyor.",
+    "editorNote": "Üçlü toplantı, Ukrayna‑ABD‑Rusya ilişkilerinin geleceğini şekillendirebilir. Kısa sürede gerçekleşmesi bekleniyor.",
+    "tags": [
+      "Ukrayna",
+      "Barış",
+      "ABD",
+      "Rusya",
+      "Diplomasi"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "Ukraine peace meeting",
+    "source": "Foreks.com",
+    "sourceUrl": "https://www.foreks.com/haber/detay/6ad98457422c786f3f7a7844/PICNEWS/tr/zelenskiy-den-abd-nin-uclu-baris-gorusmesi-onerisine-destek-22-10-26/",
+    "image": "https://news-files.foreks.com/images/55ac380667e04337bc28dde63014f3d9.jpeg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T03:34:47.000Z",
+    "generatedAt": "2026-10-22T03:43:44.363Z",
+    "breaking": true
+  },
+  {
     "id": "639273812ff13ad9",
     "title": "Hava Kuvvetleri İşbirlikli Savaş Uçakları'na Bakım Çerçevesi Kuruyor",
     "slug": "hava-kuvvetleri-iska-sistem-bakim-cercevesi",
@@ -130,6 +234,40 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-22T03:32:00.000Z",
     "generatedAt": "2026-10-22T03:39:56.830Z"
+  },
+  {
+    "id": "d67a53e739f75086",
+    "title": "Trump, Seçim Sonrası İran’a Hedef Koyuyor: Savaş Planları Hazır",
+    "slug": "trump-secim-sonrasi-iran-hedef-koyuyor-savas-planlari-hazir",
+    "summary": "ABD ve İsrail, 3 Kasım seçimlerinden sonra İran’a yönelik yoğun hava saldırısı planlıyor. Üç günlük, kısa ama etkili bir operasyonun detayları açıklandı.",
+    "keyPoints": [
+      "ABD ve İsrail, seçimin ardından İran’a karşı üç günlük yoğun hava saldırısı planladı.",
+      "Kahraman uçak gemisi ve diğer askeri unsurlar Kasım başında Hint Okyanusu’na varacak.",
+      "Potansiyel hedefler arasında İran’ın enerji altyapısı, nükleer tesisleri ve İHA cephanelikleri bulunuyor."
+    ],
+    "body": [
+      "The New York Times’ın haberine göre, 3 Kasım’da gerçekleşen ABD ve İsrail seçimlerinin ardından iki ülke, İran’a yönelik yeni bir savaş planını tamamlamış durumda. Plan, üç günlük yoğun bir hava saldırısı şeklinde tasarlanmış; hedefler ise enerji altyapısı, nükleer tesisler ve İHA cephaneliklerini kapsıyor.",
+      "ABD’nin üçüncü uçak gemisi ve diğer askeri unsurları, Kasım başında Hint Okyanusu'na varacak. Bu, operasyonun coğrafi genişliğinin bir göstergesi olarak öne çıkıyor. Aynı zamanda, ABD Savunma Bakanı Pete Hegseth’in İsrail Başbakanı Binyamin Netanyahu ile görüşmeleri, planın evrensel bir iş birliği içinde şekillendiğini gösteriyor.",
+      "İranlı yetkililer, olası bir misilleme planı kapsamında ticari gemilere, veri merkezlerine ve deniz altı internet kablolarına yönelik tehditlerde bulunuyor. Bu durum, bölgedeki enerji fiyatları ve küresel güvenliğe yeni bir tehdit unsuru ekliyor.",
+      "Trump’ın yeni saldırılara onay verip vermeyeceği hâlâ belirsizliğini koruyor. Önceki veto kararları, ABD’nin askeri operasyonlarını sınırlama eğiliminin devam ettiğini gösteriyor. Ancak ABD ve İsrail, operasyonlarını planlama aşamasında ciddi adımlar atmış durumda."
+    ],
+    "comment": "Bu gelişme, Orta Doğu'daki gerginliğin yeniden alevlenebileceğinin bir işareti. Eğer planlar hayata geçerse, bölgedeki enerji piyasaları ve uluslararası güvenlik yapısı ciddi bir şok yaşayabilir. Trump’ın veto eğilimi, ABD’nin dış politika kararlarını ne kadar belirsiz kıldığını bir kez daha ortaya koyuyor.",
+    "editorNote": "Kısa, yoğun bir saldırı planı, Orta Doğu’nun jeopolitik dengesini yeniden şekillendirebilir.",
+    "tags": [
+      "ABD",
+      "İran",
+      "Savaş",
+      "İsrail"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "Middle East conflict map",
+    "source": "10Haber",
+    "sourceUrl": "https://10haber.net/dunya/the-new-york-timesa-gore-trump-kararini-verdi-secimden-sonra-savas-747933/",
+    "image": "https://i.10haber.net/wp-content/uploads/2026/10/trump-1-750x464.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T03:30:35.000Z",
+    "generatedAt": "2026-10-22T03:44:25.772Z",
+    "breaking": true
   },
   {
     "id": "43f40c871bd70122",
