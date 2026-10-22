@@ -1,5 +1,74 @@
 [
   {
+    "id": "06d8b53e4421c93e",
+    "title": "Microsoft Exchange Online’da EWS Hizmeti Kapatıldı: Geçici Çözümler ve Etkiler",
+    "slug": "exchange-online-ews-gecici-cesitler",
+    "summary": "Microsoft, Exchange Web Services (EWS) protokolünü devre dışı bırakarak kullanıcıları zor durumda bıraktı. Yöneticiler geçici olarak EWS’i yeniden etkinleştirerek sorunu hafifletebilir, ancak Nisan 2027’den sonra kalıcı çözümler şart.",
+    "keyPoints": [
+      "EWS’nin devre dışı bırakılması Apple Mail, Outlook ve üçüncü taraf yazılımlarda oturum açma hatalarına yol açıyor.",
+      "Yöneticiler, Microsoft 365 yönetim merkezi ya da PowerShell ile geçici olarak EWS’i yeniden etkinleştirebilir.",
+      "Nisan 2027’den sonra geçici yöntemlerin çalışması beklenmiyor; uygulamaların EWS’den bağımsız hale getirilmesi gerekir."
+    ],
+    "body": [
+      "Microsoft, Exchange Online’da Exchange Web Services (EWS) protokolünü kaldırma kararı alırken, bu değişiklik nedeniyle uygulama oturum açma sorunları yaşayan kuruluşları bilgilendirdi. EWS, Outlook, Apple Mail ve birçok üçüncü taraf e-posta istemcisinin posta kutularına erişimini sağladığı için kapanış, kullanıcıları hata mesajları ve sürekli kimlik doğrulama istemleriyle karşı karşıya bırakıyor.",
+      "Yöneticiler için sunulan geçici çözüm, Microsoft 365 yönetim merkezinin Message Center bölümünden veya Exchange Online PowerShell üzerinden ‘Block access to Exchange Web Services’ ayarını devre dışı bırakmayı içeriyor. Değişiklik, 1 ila 4 saat içinde etkinleşir; bu nedenle uygulamaların anında çalışmaması, ayar değişikliğinin henüz etkili olmadığını gösterir.",
+      "EWS’nin kaldırılmasının ardından, uygulamaların yeni kimlik doğrulama ve iletişim protokolleri (Graph API, OAUTH) ile uyumlu hale getirilmesi şart. Microsoft, bu geçiş sürecini 2027 yılının Nisan ayında tamamlamayı planlıyor, bu yüzden geçici çözümler kalıcı değildir.",
+      "İşletmelerin, EWS’e bağımlı yazılımlarını güncelleyerek veya alternatif çözümlerle entegre ederek sürekliliği sağlaması gerekecek. Yönetim merkezinden yapılan geçici değişiklik, organizasyon genelinde EWS kullanımını hızlıca geri açarak kesintiyi hafifletirken, uzun vadeli strateji olarak EWS’den kurtulma öncelikli olmalı."
+    ],
+    "comment": "Bu gelişme, bulut tabanlı e-posta çözümlerinin evriminde bir dönüm noktası. Yöneticilere sunulan geçici çözüm, acil süreklilik için faydalı olsa da, kalıcı olarak EWS’den uzaklaşma ihtiyacı, yazılım geliştiriciler ve BT ekipleri için yeni bir zorluk oluşturacak. EWS’nin yerini alan modern API’lerin benimsenmesi, hem güvenlik hem de kullanıcı deneyimi açısından önemli bir gelişme olacak.",
+    "editorNote": "EWS’in devre dışı bırakılması, bulut e-posta yönetiminde büyük bir dönüşüm yaratabilir.",
+    "tags": [
+      "Microsoft",
+      "Exchange Online",
+      "EWS",
+      "Yönetim Merkezi",
+      "PowerShell"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "exchange online services",
+    "source": "ÇözümPark",
+    "sourceUrl": "https://www.cozumpark.com/microsoft-exchange-onlineda-ews-baglantisi-kesilen-uygulamalar-icin-gecici-cozumler-sunuyor/",
+    "image": "https://www.cozumpark.com/wp-content/uploads/2025/05/Isler-Karisiyor-4-8.webp",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T20:30:55.000Z",
+    "generatedAt": "2026-10-22T20:34:00.208Z",
+    "breaking": true
+  },
+  {
+    "id": "d374e54ed19bf8d5",
+    "title": "Resideo, Apple HomeView ile Tam Uyumluluğu Hedefliyor",
+    "slug": "resideo-apple-homeview-tam-uyumluluk",
+    "summary": "Resideo, ev otomasyon sistemlerini Apple HomeView ile uyumlu hale getirmek için yazılım güncellemesi planlıyor. Yeni sürüm, cihazların iOS üzerinden daha sorunsuz kontrol edilmesini sağlayacak.",
+    "keyPoints": [
+      "Resideo, HomeView uyumluluğu için yazılım güncellemesi duyurdu",
+      "Güncelleme, cihazların iOS üzerinden kontrolü ve yönetimini kolaylaştıracak",
+      "Planlanan sürüm, ev otomasyon ekosisteminde entegrasyonu derinleştirecek"
+    ],
+    "body": [
+      "Resideo, ev otomasyon piyasasındaki rekabeti artırmak amacıyla Apple HomeView platformu ile tam uyumlu bir yazılım sürümü geliştirme planını açıkladı.",
+      "Bu güncelleme sayesinde, Resideo cihazları artık iOS cihazlarından doğrudan HomeView uygulaması aracılığıyla kontrol edilebilecek. Kullanıcılar için daha akıcı bir deneyim ve ek güvenlik seviyeleri sağlanması hedefleniyor.",
+      "Resideo yetkilileri, yeni sürümün piyasaya sürülmesinin, ev otomasyonu segmentinde Apple ekosistemine olan talebi artırabileceğini belirtti.",
+      "Geliştirilen yazılım, cihazlar arası iletişimi optimize edecek ve gelecekteki güncellemeler için esnek bir yapı sunacak."
+    ],
+    "comment": "",
+    "editorNote": "",
+    "tags": [],
+    "category": "Mobil",
+    "gorselSorgu": "",
+    "source": "Investing.com Türkiye",
+    "sourceUrl": "https://tr.investing.com/news/company-news/resideo-apple-homeview-uyumlulugu-icin-yazlm-guncellemesi-planlyor-93CH-4116216",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/SZ_Shenzhen_man_in_white_shirt_long_sleeve_May_2024_R12S_human_hand_holding_smartphone.jpg/1280px-SZ_Shenzhen_man_in_white_shirt_long_sleeve_May_2024_R12S_human_hand_holding_smartphone.jpg",
+    "gorselKaynak": {
+      "yazar": "TANNMY NAISZE Wanguo",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:SZ_Shenzhen_man_in_white_shirt_long_sleeve_May_2024_R12S_human_hand_holding_smartphone.jpg"
+    },
+    "publishedAt": "2026-10-22T20:30:28.000Z",
+    "generatedAt": "2026-10-22T20:34:34.439Z",
+    "breaking": true
+  },
+  {
     "id": "42a3f2f77b5d7a43",
     "title": "Reis: Dikkatli Olmalı, Kırmızı Kart Hataları Örnek Olmalı",
     "slug": "reis-kirmizi-kart-olmali",
@@ -32,6 +101,40 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-22T20:25:00.000Z",
     "generatedAt": "2026-10-22T20:27:14.297Z",
+    "breaking": true
+  },
+  {
+    "id": "b1dd400281777c9d",
+    "title": "İngiltere ‘Hazır Olun’ Kampanyası: 72 Saatlik Acil Durum Hazırlığı Çağrısı",
+    "slug": "ingiltere-hazir-olun-kampanyasi-72-saatlik-acil-durum-hazirlik-cagrisi",
+    "summary": "Birleşik Krallık, siber saldırılar, şiddetli hava olayları ve tedarik zinciri kesintilerine karşı vatandaşları 72 saatlik acil durum hazırlığı yapmaya çağırdı. \"Hazır Olun\" kampanyası, evlerde temel ihtiyaç malzemeleri bulundurulmasını ve dayanıklılığı artırmayı hedefliyor.",
+    "keyPoints": [
+      "Siber saldırılar, aşırı hava ve tedarik zinciri kesintilerini önceden planlamaya teşvik ediyor",
+      "Vatandaşların 72 saat boyunca kendi ihtiyaçlarını karşılayabilecek stokları bulundurması öneriliyor",
+      "Kampanya, Avrupa ülkelerinin benzer hazırlık girişimleriyle paralel ilerliyor"
+    ],
+    "body": [
+      "Birleşik Krallık hükümeti, vatandaşlarını olası siber saldırılar, şiddetli hava olayları ve tedarik zincirindeki kesintilere karşı 72 saatlik bir hazırlık süreci içinde olmaya davet ediyor. Kampanya adı \"Hazır Olun\" (Be Ready) ve amacı, evde temel hizmetlerin (su, kanalizasyon, telefon ve internet) aksayabileceği senaryolarda bireylerin kendi ihtiyaçlarını karşılayabilecekleri bir stok oluşturmaları.",
+      "Yetkililer, özellikle düşman devletlerin gerçekleştirebileceği siber saldırılara ve artan şiddetli hava olaylarına dikkat çekiyor. 72 saatlik hazırlık, temel gıda, su, ilaç ve acil iletişim araçlarını içermeli. Bu şekilde acil yardım ekipleri, gerçek bir kriz anında en çok yardıma ihtiyaç duyan kişilere öncelik verebilecek.",
+      "Güvenlikten Sorumlu Devlet Bakanı Dan Jarvis, kampanyanın ülkenin krizlere karşı dayanıklılığını artıracağını ve vatandaşların kendi güvenliklerini sağlamanın, toplumsal sıkıntıları hafifleteceğini belirtti. Jarvis ayrıca Avrupa’daki benzer hazırlık programlarına da atıfta bulundu.",
+      "Birleşik Krallık Ulusal Denetim Ofisi’nin raporu, gıda tedarik zincirinin siber saldırı ve aşırı hava olaylarına karşı kırılgan olduğunu ve Çevre, Gıda ve Kırsal İşler Bakanlığı’nın yeterince ilerleme kaydedemediğini gösteriyor. Bu bağlamda, hükümetin acil durum hazırlığına yönelik çağrısı, ulusal dayanıklılığı güçlendirme çabalarının bir parçası olarak görülüyor."
+    ],
+    "comment": "Bu kampanya, teknoloji ve güvenlik alanında artan tehditlerin farkındalığını artırmak için stratejik bir adım. Vatandaşların kendi acil durum planlarını oluşturmaları, hem bireysel hem de toplumsal dayanıklılığı yükseltirken, siber güvenlik ve iklim değişikliği konularındaki endişeleri doğrudan gündeme getiriyor. Böylece, teknolojinin sadece kolaylaştırıcı değil, aynı zamanda hazırlık unsuru olarak da kullanılabileceği vurgulanıyor.",
+    "editorNote": "Vatandaşların 72 saatlik stoklar hazırlaması, ülke genelinde kriz hazırlık kültürünü güçlendiriyor.",
+    "tags": [
+      "kriz hazırlığı",
+      "siber güvenlik",
+      "gıda tedarik zinciri",
+      "İngiltere"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "preparedness kit emergency supplies",
+    "source": "İngiltere",
+    "sourceUrl": "https://by-tv.co.uk/ingiltereden-72-saatlik-acil-durum-hazirligi-cagrisi/",
+    "image": "https://by-tv.co.uk/wp-content/uploads/2026/10/Acil-Durum.jpeg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T20:24:55.000Z",
+    "generatedAt": "2026-10-22T20:33:18.242Z",
     "breaking": true
   },
   {
