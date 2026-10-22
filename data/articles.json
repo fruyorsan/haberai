@@ -1,5 +1,143 @@
 [
   {
+    "id": "23868700b6bc3a02",
+    "title": "Anthropic, bilgisayar başında olmasanız da çalışan Claude Duet'i tanıttı",
+    "slug": "anthropic-bilgisayar-basinda-olmasaniz-da-calisan-claude-dueti-tanitti",
+    "summary": "Anthropic, kullanıcıların iş yükünü azaltmak amacıyla arka planda bağımsız çalışan Claude Duet yapay zeka ajanını duyurdu.",
+    "keyPoints": [
+      "Claude Opus 5.5 modelini kullanan ajan, arka planda sanal makineyle çalışıyor.",
+      "ABD'deki Claude Pro ve Max aboneleri araştırma ön izlemesi için bekleme listesine katılabiliyor."
+    ],
+    "body": [
+      "Anthropic, kullanıcıların günlük iş yükünü hafifletmek amacıyla geliştirilen yeni yapay zeka asistanı Claude Duet modelini duyurdu. Geleneksel sohbet botlarından farklı olarak tasarlanan bu araç, kullanıcıların komut vermesini beklemeden ihtiyaç duyulan konuları kendi belirleyip harekete geçebiliyor. Sistem temelinde Claude Opus 5.5 modelini barındırıyor ve mevcut kullanıcı belleği ile bağlı uygulamaları doğrudan devralıyor.",
+      "Her sabah ilgili uygulamalardaki gelişmeleri içeren kısa bir bilgilendirme hazırlayan ajan, gün boyunca arka planda çalışmayı sürdürüyor. Gmail ve Slack mesajlarını inceleyip yanıt taslakları oluşturabilen sistem, Intuit QuickBooks veya Stripe üzerinden ödenmemiş faturaları tespit ederek hatırlatmalar üretebiliyor. Kullanıcılar toplantı planlamadan karmaşık finansal tahminlere kadar pek çok görevi bu araca devredeebiliyor.",
+      "Claude Duet, görevleri yerine getirmek için kendine ait tarayıcısı bulunan sanal bir makine kullanıyor ve bu sayede işlemlerin sürmesi için kullanıcının cihazının açık olması gerekmiyor. iOS ve Android uygulamalarının yanı sıra web tarayıcısı üzerinden de erişilebilen ajan, Claude Marketplace üzerindeki 6 binden fazla eklentiden yararlanabiliyor. Şimdilik araştırma ön izlemesi kapsamında ABD'deki Pro ve Max abonelerine sunuluyor.",
+      "Ajanın bağımsız hareket edebilmesi sağlanırken güvenlik önlemleri de üst düzeyde tutuluyor. Mesaj gönderme, ödeme yapma veya dosya silme gibi kritik işlemlerden önce kullanıcıdan onay alan sistem, menkul kıymet alımı veya para transferi gibi işlemleri kesinlikle gerçekleştirmiyor. Ayrıca işletmeler için Stripe Link ve Shopify Shop Pay üzerinden sanal kart kullanarak güvenli alışveriş yapabiliyor."
+    ],
+    "comment": "Yapay zeka asistanlarının sohbet penceresinden çıkarak doğrudan arka planda iş yapan otonom sistemlere evrilmesi, verimlilik anlayışını kökten değiştiriyor. Anthropic, aylık 20 dolarlık Pro abonelik fiyatıyla OpenAI'ın 100 dolardan başlayan rakip çözümlerine kıyasla çok daha erişilebilir bir alternatif sunuyor. Tarayıcıyı doğrudan görüntüleme eksikliği ve henüz erken aşamada olmasından kaynaklanan hatalar giderilirse, özellikle küçük işletmeler için maliyet dengesini tamamen lehte çevirebilir.",
+    "editorNote": "Bilgisayarınız kapalıyken bile arka planda iş bitiren yeni Claude Duet, rakip araçlara kıyasla çok daha uygun bir fiyat etiketiyle geliyor.",
+    "tags": [
+      "Anthropic",
+      "Claude Duet",
+      "Yapay Zeka",
+      "Claude Opus",
+      "Donanım"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "artificial intelligence assistant coding",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/anthropic-yeni-yapay-zeka-ajani-claude-duet-i-duyurdu--211942",
+    "image": "https://www.donanimhaber.com/images/images/haber/211942/src/anthropic-yeni-yapay-zeka-ajani-claude-duet-i-duyurdu211942_0.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T08:37:00.000Z",
+    "generatedAt": "2026-10-22T08:38:47.249Z",
+    "breaking": true
+  },
+  {
+    "id": "1be0ea4665b9d79a",
+    "title": "PHP Çekirdeğinde Keşfedilen Kritik Açık Milyonlarca Sunucuyu Tehdit Ediyor",
+    "slug": "php-cekirdeginde-kesfedilen-kritik-acik-milyonlarca-sunucuyu-tehdit-ediyor",
+    "summary": "Yapay zeka araçlarıyla tespit edilen on yıllık PHP zafiyeti, siber saldırganların kimlik doğrulamasına gerek duyulmadan uzaktan kod çalıştırmasına zemin hazırlıyor. WordPress ve WooCommerce gibi dev platformları doğrudan etkileyen bu durum, küresel çapta geniş çaplı önlemler alınmasını zorunlu kılıyor.",
+    "keyPoints": [
+      "Yapay zeka yardımıyla on yılı aşkın süredir gizlenen PHP çekirdek zafiyetleri ortaya çıkarıldı.",
+      "Saldırganlar herhangi bir şifre veya kimlik doğrulaması yapmadan doğrudan sunuculara sızabiliyor.",
+      "WordPress ve WooCommerce gibi dünya genelindeki web sitelerinin büyük kısmı risk altında bulunuyor."
+    ],
+    "body": [
+      "İnternet altyapısının temelini oluşturan açık kaynaklı programlama dili PHP, son yılların en büyük siber güvenlik krizlerinden biriyle karşı karşıya kaldı. Gelişmiş yapay zeka ajanları ve büyük dil modelleri kullanılarak yapılan derinlemesine taramalar, C diliyle yazılmış çekirdek kod tabanında on yıldan uzun süredir fark edilmeyen kusurları gün yüzüne çıkardı.",
+      "1994 yılından bu yana Rasmus Lerdorf öncülüğünde geliştirilen ve internet sitesi trafiğinin yaklaşık yüzde 70'ine güç veren bu mimari, harici eklentiler yerine doğrudan çekirdekte barındırdığı bu zafiyetle sarsıldı. İçerik yönetim sistemlerinin belkemiği olan WordPress, tüm web sitelerinin yüzde 40'ından fazlasında bu altyapıyı kullanması nedeniyle krizin odağında yer alıyor.",
+      "Siber güvenlik araştırmacılarının tespit ettiği bu kusurlar, teknik literatürde Kimlik Doğrulamasız Uzaktan Kod Çalıştırma olarak adlandırılan son derece tehlikeli bir kategoride yer alıyor. Geleneksel yöntemlerin aksine saldırganların sistem erişimi için herhangi bir yönetici yetkisine, oturum çerezine veya şifreye ihtiyacı bulunmuyor ve dışarıdan gönderilen tek bir paket zararlı kodun çalışmasını tetikleyebiliyor.",
+      "Geçmişte yaşanan PHP-FPM veya CGI karakter kodlama açıklarından farklı olarak, bu son durum doğrudan çekirdek mantığındaki ince hatalardan kaynaklanıyor. Wikipedia ve Slack gibi devasa platformların arka plan servislerinde de izleri bulunan bu dilin güvenliği, milyonlarca işletme ve e-ticaret sitesi için acil yama süreçlerinin başlatılmasını gerektiriyor."
+    ],
+    "comment": "Yazılım dünyasında onlarca yıldır kullanılan temel dillerin dahi otomatik analiz araçlarıyla yeniden taranması, dijital güvenliğin ne kadar kırılgan olabileceğini net bir şekilde gösteriyor. Kimlik doğrulama gerektirmeyen bu tarz açıklar, küçük web sitelerinden küresel ölçekteki dev platformlara kadar herkesi eşit derecede savunmasız bırakıyor. Şirketlerin güncelleme süreçlerini geciktirmesi, sunucu kontrolünün tek bir HTTP isteğiyle ele geçirilmesine zemin hazırlayabilir.",
+    "editorNote": "Yapay zeka yardımıyla ortaya çıkarılan on yıllık PHP açığı, şifre gerektirmeden sunucu ele geçirilmesine yol açıyor.",
+    "tags": [
+      "PHP",
+      "Siber Güvenlik",
+      "WordPress",
+      "Yapay Zeka",
+      "Yazılım"
+    ],
+    "category": "Yazılım",
+    "gorselSorgu": "data center server room",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/php-dunyasini-sarsan-kritik-guvenlik-acigi-ve-bilinmeyenleri",
+    "image": "https://ares.shiftdelete.net/2026/10/PHP-Nedir.webp",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T08:36:50.000Z",
+    "generatedAt": "2026-10-22T08:38:57.685Z",
+    "breaking": true
+  },
+  {
+    "id": "c19ee083cd7626da",
+    "title": "Yapay zekâ endişeleriyle borsalar sarsıldı, petrol fiyatı uçtu",
+    "slug": "yapay-zeka-endiseleriyle-borsalar-sarsildi-petrol-fiyati-uctu",
+    "summary": "Küresel piyasalarda yapay zekâ yatırımlarının kârlılığına yönelik belirsizlikler ve Suudi Arabistan'daki saldırıların ardından panik satışları derinleşti. Nasdaq 100 vadeli işlemleri yüzde 1,8 gerilerken Brent petrol 112 doları aştı.",
+    "keyPoints": [
+      "Brent petrolün varil fiyatı Suudi Arabistan'daki saldırılar sonrası 112 doları aştı.",
+      "Çip ekipmanı üreticisi Lam Research hisseleri yüzde 7'den fazla geriledi."
+    ],
+    "body": [
+      "Küresel hisse senedi piyasalarında yapay zekâ şirketlerinin öncülüğünde yaşanan tırmanış kısa sürerken, yatırımcılar güvenli liman arayışına yöneldi. Nasdaq 100 vadeli işlemleri yüzde 1,8 oranında gerileyerek hafta başından bu yana kaydedilen kazançların büyük kısmını silme riskiyle karşı karşıya kaldı.",
+      "Satış dalgasının merkezinde, teknoloji devlerinin veri merkezleri ile çip altyapısına yatırdığı yüz milyarlarca doların ne zaman kâra dönüşeceği sorusu yer alıyor. Lam Research hisselerinin zayıf görünüm açıklamasıyla yüzde 7'den fazla düşmesi sektördeki baskıyı artırdı.",
+      "Enerji cephesinde ise Suudi Arabistan'daki can kayıplı olayların tetiklediği arz endişeleri fiyatları yukarı çekti. Brent petrolün varil fiyatı 112 doların üzerine çıkarken ABD Dışişleri Bakanlığı bazı diplomatlarına ülkeden ayrılma talimatı verdi.",
+      "Riskli varlıklardan kaçışla birlikte ABD 10 yıllık tahvil faizi yüzde 5,08 seviyesine gerilerken, döviz tarafında yen ve frang değer kazandı. Avrupa borsalarında Stoxx Europe 600 yüzde 1 düşerken lüks tüketim grubu Hermès Çin'deki büyüme duraksaması nedeniyle yüzde 5'ten fazla değer kaybetti."
+    ],
+    "comment": "Teknoloji sektöründeki devasa sermaye harcamalarının somut finansal getirilere dönüşmesi konusunda piyasaların sabrı tükeniyor. Lam Research hisselerindeki yüzde 7'lik düşüş ve 112 doları aşan petrol fiyatları, enflasyon beklentilerini yeniden tetikleyerek şirket kâr marjlarını doğrudan tehdit ediyor. Bu ortamda nakit akışını kanıtlayamayan teknoloji firmaları ile enerji maliyetlerine duyarlı sanayi şirketleri borsalardan en çok yara alan kesimler olacak.",
+    "editorNote": "Yapay zekâ yatırımlarının kârlılığına duyulan güvensizlik ve jeopolitik gerilimler küresel çapta dengeleri altüst ediyor.",
+    "tags": [
+      "Yapay Zeka",
+      "Borsa",
+      "Petrol",
+      "Nasdaq",
+      "Ekonomi"
+    ],
+    "category": "Ekonomi",
+    "gorselSorgu": "stock market trading floor",
+    "source": "Para Analiz",
+    "sourceUrl": "https://www.paraanaliz.com/haberler/kuresel-borsalarda-panik-satislari-yapay-zeka-rallisi-sarsiliyor-petrol-112-dola",
+    "image": "https://paraanaliz.com/medya/articles/2026/10/256bc617-bcd4-46c7-8009-5b09aa15dc81-markets-bear.png",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T08:34:21.000Z",
+    "generatedAt": "2026-10-22T08:39:08.354Z",
+    "breaking": true
+  },
+  {
+    "id": "89e68a7378dd7f2c",
+    "title": "Avrupa ülkeleri savunma bütçelerinde uzlaşma sağlayamıyor",
+    "slug": "avrupa-ulkeleri-savunma-butcelerinde-uzlasma-saglayamiyor",
+    "summary": "Rusya-Ukrayna Savaşı'nın beşinci yılına yaklaşması, NATO müttefikleri arasında savunma bütçeleri ve harcama öncelikleri konusunda derin toplumsal tartışmaları beraberinde getirdi. Artan güvenlik tehditlerine rağmen kalkınma politikalarıyla eş zamanlı bütçe dağılımı sağlanamaması, Avrupa genelinde protestolara ve siyasi krizlere yol açtı.",
+    "keyPoints": [
+      "NATO ülkeleri gayrisafi yurt içi hasılanın yüzde 5'lik kısmını savunmaya ayırmakta zorlanıyor.",
+      "Şubat 2022'de başlayan savaş, yakın tarihte çözüme kavuşmazsa tam 5 yılı geride bırakacak.",
+      "Fransa ve İtalya gibi ülkelerde bütçe tercihleri nedeniyle protestolar ve kamu krizleri yaşandı."
+    ],
+    "body": [
+      "Şubat 2022 tarihinde patlak veren ve yakın geçmişte herhangi bir barış ihtimaline yaklaşmayan çatışmalar, beşinci yılı devirmeye hazırlanıyor. Sadece Rusya ile Ukrayna'yı değil; Amerika Birleşik Devletleri, Çin, İran ve Kuzey Kore gibi küresel aktörleri de dolaylı şekilde etkileyen süreç, özellikle NATO cephesinde stratejik tedbirlerin yeniden masaya yatırılmasına neden oldu. Savaşın Avrupa'nın merkezine geri dönmesi, on yıllardır çatışma ihtimalinden uzak duran toplumlarda güvenlik ve caydırıcılık zihniyetini mecburi olarak canlandırdı.",
+      "Yaşanan bu dinamik süreçte Avrupa toplumu içerisinde diplomasi savunucuları ile caydırıcılık yanlıları arasında keskin bir kutuplaşma meydana geldi. Stratejik saldırıların yeni normal kabul edilmesine ve bütçe düzenlemelerinin zaruret haline gelmesine rağmen harcama kalemleri üzerinde uzlaşılamadı. NATO müttefiklerinin gayrisafi yurt içi hasılanın yüzde 5'lik kısmını savunmaya taahhüt etmesi beklenirken, halkın güvenlik ile kalkınma politikalarının eş yürütülebileceğine inanmaması geniş çaplı itirazları tetikledi.",
+      "Fransa başta olmak üzere çeşitli Avrupa ülkelerinde görülen kitlesel protestolar ve yağma eylemleri, hükümetlerin bütçe dağılım tercihlerine karşı duyulan ekonomik memnuniyetsizliği açıkça gözler önüne serdi. Caydırıcılık yanlıları ise bu sürecin sadece bir slogan olmaması gerektiğini belirterek üç sütunlu acil eylem planı gerektiğini savunuyor. Bu planın ilk ayağında Ukrayna'nın hem savaşı hem barışı kazanması için desteklenmesi yer alırken, ikinci ayağında ise Avrupa'nın öz savunma kabiliyetlerini artırması bulunuyor.",
+      "Üçüncü ve son sütunda ise NATO merkezli transatlantik güvenlik angajmanlarının korunması ve derinleştirilmesi gerektiği vurgulanıyor. Günümüz yıpratma savaşı koşullarında münferit ülkelerin tek başına sahip olduğu askeri kapasitenin yeterli olmadığı, devasa askeri güce sahip Rusya'nın bile dışarıdan tedarik yapmak zorunda kalmasıyla kanıtlandı. Uzun süre yüzde 2'lik savunma hedefini dahi tutturamayan devletler, artık yüksek yoğunluklu çatışmalara uyumlu inovasyon politikalarına odaklanıyor."
+    ],
+    "comment": "Savunma harcamalarının artırılması yönündeki siyasi baskılar, Avrupa hükümetlerinin sosyal refah bütçeleriyle doğrudan çatışıyor. Yüzde 5'lik gayrisafi yurt içi hasıla hedefi, halkın kalkınma öncelikleriyle uyuşmadığı sürece sokaklardaki huzursuzluğu dindirmeyecektir. Mevcut ekonomik tablo, askeri yatırımların iç politikada uzun vadeli istikrarsızlık riskini beraberinde getirdiğini net biçimde gösteriyor.",
+    "editorNote": "Savunma bütçelerini artırma çabaları Avrupa sokaklarında ekonomik kriz protestolarını tetikliyor.",
+    "tags": [
+      "NATO",
+      "Avrupa",
+      "Rusya",
+      "Ukrayna",
+      "Savunma"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "European Parliament building Brussels",
+    "source": "AA Güncel",
+    "sourceUrl": "https://www.aa.com.tr/tr/analiz/rusya-ukrayna-savasi-bitise-mi-baslangica-mi-yakiniz/4096828",
+    "image": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/22/thumbs_b_c_f778f75fe870d16f1892754812a30e17.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T08:32:28.000Z",
+    "generatedAt": "2026-10-22T08:39:22.238Z",
+    "breaking": true
+  },
+  {
     "id": "87bab9d493d5e72b",
     "title": "iPhone Duo, iOS 27.2 güncellemesiyle Apple Pencil desteği kazanıyor",
     "slug": "iphone-duo-ios-27-2-guncellemesiyle-apple-pencil-destegi-kazaniyor",
