@@ -1,5 +1,146 @@
 [
   {
+    "id": "759918cc901e0d33",
+    "title": "Google Cloud, OpenAI modellerini Model Garden kataloğuna ekledi",
+    "slug": "google-cloud-openai-modellerini-model-garden-kataloguna-ekledi",
+    "summary": "Google Cloud ile OpenAI arasında yapılan yeni anlaşma kapsamında GPT modelleri sunucularda çalışmaya başlıyor. İlk aşamada seçili şirketlerin erişimine açılan katalog, yazılımcılara farklı yapay zekâ araçları arasında geçiş yapma imkânı tanıyor.",
+    "keyPoints": [
+      "Google Cloud harcama sözü veren işletmeler, OpenAI kullanım bedellerini bu bütçeden düşebilecek.",
+      "Antigravity kod yazma aracı Gemini ve Claude desteğinin yanına GPT modellerini de ekleyecek."
+    ],
+    "body": [
+      "Google Cloud ile OpenAI arasında 21 Ekim tarihinde duyurulan iş birliği, yapay zekâ pazarındaki rekabet dengelerini yeniliyor. Bu hamleyle beraber, Google'ın altyapısını tercih eden kurumsal müşteriler Gemini ve Claude alternatiflerinin yanı sıra OpenAI teknolojilerini de doğrudan kullanabilecek.",
+      "Süreç ilk olarak seçilmiş kurumsal müşteriler için deneme erişimiyle başlarken, önümüzdeki haftalarda genişletilmesi planlanıyor. İşletmeler, yürüttükleri projelere göre yanıt kalitesi, gecikme süresi ve maliyet kıyaslaması yaparak modeller arasında geçiş yapabilecek. Satın alma işlemleri ve ücretlendirmeler ise doğrudan Google Cloud Marketplace altyapısı üzerinden yürütülecek ve mevcut bulut bütçelerine yansıtılacak.",
+      "Google tarafından sağlanan verilere göre platform üzerinde 200'ü aşkın farklı model barındırılıyor. Bu durum, Gemini, Claude ve GPT seçeneklerini aynı çatı altında toplayan tek büyük bulut sağlayıcısı konumunu ortaya koyuyor. Şirket sunucularında çalıştırılacak modeller için başvuru formları doldurularak deneme erişimleri talep edilebiliyor.",
+      "Ortaklığın yazılımcılara yönelik diğer ayağını ise Antigravity aracı oluşturuyor. Daha önce Gemini ve Claude entegrasyonu sunan bu kod yazma ortamına hangi OpenAI sürümlerinin ne zaman ekleneceği henüz netlik kazanmadı. Öte yandan OpenAI tarafı, Microsoft'un ana bulut ortağı olmaya devam ettiğini özellikle vurguluyor."
+    ],
+    "comment": "Bulut sağlayıcıları arasındaki rekabet, yazılımcılara tek platform üzerinden çoklu model yönetme esnekliği kazandırıyor. Google Cloud'un 200'ü aşkın model sunan kataloğuna OpenAI seçeneklerini dahil etmesi, kurumsal harcama sözlerinin tek faturada birleştirilmesini sağlıyor. Microsoft ortaklığını sürdüren OpenAI için bu anlaşma, ek pazar payı yakalama fırsatı yaratırken geliştiricilerin maliyet ve yanıt süresi optimizasyonunu kolaylaştırıyor.",
+    "editorNote": "Google Cloud, OpenAI modellerini kendi kataloğuna ekleyerek bulut pazarındaki çoklu model stratejisini genişletiyor.",
+    "tags": [
+      "Google Cloud",
+      "OpenAI",
+      "Gemini",
+      "Model Garden",
+      "Yapay Zeka"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "Google Cloud data center server room",
+    "source": "CHIP Online",
+    "sourceUrl": "https://www.chip.com.tr/guncel/gemini-claude-ve-gpt-ayni-yerde-google-clouda-uc-openai-modeli-geliyor_184850.html",
+    "image": "https://img.chip.com.tr/rcman/Cw1280h720q95gm/storage/files/images/2026/10/22/gemini-claude-ve-gpt-ayni-yerde-google-clouda-uc-openai-modeli-geliyor-c1d0.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T16:03:00.000Z",
+    "generatedAt": "2026-10-22T16:06:44.553Z",
+    "breaking": true
+  },
+  {
+    "id": "7a94ef1983810736",
+    "title": "Apple, iPhone Duo için App Store üzerinde özel etiketler kullanacak",
+    "slug": "apple-iphone-duo-icin-app-store-uzerinde-ozel-etiketler-kullanacak",
+    "summary": "Apple, yenilikçi akıllı telefon modeli için App Store mağazasında yeni bir görsel işaretleme sistemi devreye alıyor. Bu adım, cihazın geniş ekran mimarisine tam uyum sağlayan yazılımların kullanıcılar tarafından kolayca ayırt edilmesini hedefliyor.",
+    "keyPoints": [
+      "Uygulamaların bu etiketi alabilmesi için en az iOS 27.1 SDK sürümüyle geliştirilmesi gerekiyor.",
+      "iOS 26 ve önceki sürümlerle hazırlanan eski yazılımlar ekranın ortasında boşluklarla çalışacak.",
+      "Cihaz bu Cuma günü raflardaki yerini alarak kullanıcılarla buluşacak."
+    ],
+    "body": [
+      "Teknoloji devi Apple, merakla beklenen yeni mobil cihazının çıkışına sayılı günler kala yazılım ekosistemini bu donanıma göre şekillendiriyor. Şirket, uygulama mağazası içerisinde Made for iPhone Duo ibaresini taşıyan yeni bir kategorizasyon sistemi başlatacağını duyurdu. Mağazada gezinen kullanıcılar, bu görsel işaret sayesinde hangi programların cihazın katlanabilir veya geniş ekran yapısına tam uyumlu olduğunu anında görebilecek.",
+      "Geliştiriciler için belirlenen yeni yönergeler, donanım ve yazılım entegrasyonunu en üst düzeye çıkarmayı amaçlıyor. Bu özel etiketi alabilmek adına yapımların iOS 27.1 SDK veya sonraki güncel sürümlerle derlenmesi şart koşuluyor. Bu kriterleri karşılayan araçlar iç ekranı tamamen doldururken araç çubukları da durum çubuğunun altında dikey biçimde konumlanıyor.",
+      "Bir önceki nesil olan iOS 27 SDK ile kodlanan yazılımlar ekranın büyük bölümünü kaplasa da sağ kenardaki durum alanından kaçınmaya devam ediyor. Buna karşın iOS 26 veya daha eski altyapılarla üretilenler ekranda ortalanmış şekilde beliriyor ve yan taraflarında geniş boşluklar bırakıyor. Bu durum, eski programların yeni ekran mimarisine uyum sağlaması için ek bir güncelleme sürecine ihtiyaç duyduğunu gösteriyor.",
+      "Apple, uygulama kalitesini korumak ve kullanıcıların cihazdan en yüksek verimi almasını sağlamak amacıyla geliştiricilerle koordineli bir şekilde çalışıyor. Mağaza arayüzündeki bu güncellemeler donanımın satışa çıkışıyla birlikte aktif olarak kullanılacak. Cihazını teslim alan tüketiciler, optimize edilmiş yazılımları doğrudan deneyimleme fırsatı bulacak.",
+      "Yenilikçi ekran yapısı, geleneksel telefon deneyiminden farklı bir arayüz sunduğu için yazılımların bu yapıya göre optimize edilmesi büyük bir gereklilik haline geliyor. Şirket, şeffaf bir süreç yürüterek uygulama ekosisteminin cihazla olan uyumunu hızlandırmayı amaçlıyor. Önümüzdeki günlerde piyasaya çıkacak olan model, yazılım ekosistemindeki bu değişimle birlikte rakiplerinden ayrışmayı hedefliyor."
+    ],
+    "comment": "Yazılım ile donanım arasındaki bu entegrasyon çabası, cihazın sunduğu farklı ekran mimarisinden tam verim alınabilmesi için kaçınılmaz bir adımdır. Eski SDK sürümleriyle hazırlanan programların ekranda boşluklar bırakması, kullanıcı deneyimini doğrudan etkileyen bir dezavantaj yaratacaktır. Geliştiricilerin yeni standartlara ne kadar hızlı uyum sağlayacağı, mağazadaki uygulama kalitesinin kaderini belirleyecektir. Eğer bu süreç aksarsa, kullanıcılar ilk günlerde optimize edilmemiş arayüzlerle karşılaşma riskiylete karşı karşıya kalabilir.",
+    "editorNote": "Yeni cihazın benzersiz ekran yapısı, uygulama dünyasında köklü bir optimizasyon yarışını tetikliyor.",
+    "tags": [
+      "Apple",
+      "iPhone Duo",
+      "App Store",
+      "iOS",
+      "Teknoloji"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "iPhone Duo app store display",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/apple-made-for-iphone-duo-etiketi",
+    "image": "https://ares.shiftdelete.net/2026/10/apple-iphone-duoya-ozel-uygulamalari-etiketleyecek.webp",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T16:00:38.000Z",
+    "generatedAt": "2026-10-22T16:07:48.843Z",
+    "breaking": true
+  },
+  {
+    "id": "8487bcceecf1c3a8",
+    "title": "Yemen'deki çatışmalar arasında hayatta kalmaya çalışan ikizler",
+    "slug": "yemendeki-catismalar-arasinda-hayatta-kalmaya-calisan-ikizler",
+    "summary": "Yemen'deki şiddetli çatışmalar ve artan gıda krizi, erken doğan ikiz bebekleri ölümcül bir açlıkla baş başa bıraktı. Ailenin üç günlük yaya yolculuğu sonrasında ulaştığı hastanede, tıbbi malzeme ve fon yetersizliği nedeniyle kritik vakalara zorlukla müdahale edilebiliyor.",
+    "keyPoints": [
+      "Yemen'de çatışmaların şiddetlenmesiyle yaklaşık 800 bin kişi yardımdan mahrum kaldı.",
+      "Erken doğan yedi haftalık ikizler Raghad ve Raad, şiddetli akut yetersiz beslenme tanısıyla hastaneye kaldırıldı.",
+      "Aden'deki al-Sadaqah hastanesinin beslenme ünitesinde 22 yatak bulunmasına rağmen yalnızca 13 kritik hasta kabul ediliyor."
+    ],
+    "body": [
+      "Yemen'de hükümet güçleri ile Husiler arasında uzun süredir devam eden iç savaş, sivillerin günlük yaşamını doğrudan tehdit etmeye devam ediyor. Kahboub dağlarındaki köylerinden ayrılmak zorunda kalan beş çocuklu aile, patlamalar ve dron saldırıları arasında yollara düşerek üç gün boyunca yürüdü. Yanlarında yalnızca battaniyelerle kaçan aile, liman kenti Aden'e ulaştığında bebeklerin sağlık durumu son derece kötüleşmişti.",
+      "Anne Lina, yürüyüş sırasında toz ve soğuk hava nedeniyle çocuklarının kusma ve ishal şikayetlerinin arttığını belirtti. Al-Sadaqah hastanesine vardıklarında doktorlar bebekleri deri ve kemik kalmış halde buldu. Savaşın süt fiyatlarını tırmandırması sebebiyle baba Bajash Ali Sagir Hassan, ikizleri yalnızca suyla ve günde iki öğün besleyebildiğini aktardı.",
+      "Hastanede yapılan hızlı teşhis, bebeklerin ölümcül seviyede akut yetersiz beslenmeyle karşı karşıya olduğunu ortaya koydu. Birleşmiş Milletler verilerine göre, ateşkesin çöküşünün ardından çeyrek milyondan fazla insan yerinden edildi ve gıda fiyatları fırladı. Savaşın yarattığı ekonomik yıkım, temel gıdaya erişimi tamamen imkansız hale getiriyor.",
+      "Aden'deki hastanenin müiniyet biriminde görevli personel, uluslararası fon ve ekipman eksikliği yüzünden büyük zorluklar yaşıyor. Solunum cihazları ve oksijen tüpleri gibi temel tıbbi donanımların yetersizliği, doktorların hastaları kaybetmesine yol açıyor. Bazı bebekler taburcu edildikten kısa süre sonra aynı şikayetlerle yeniden hastaneye geri dönüyor."
+    ],
+    "comment": "Savaş ortamındaki ekonomik yıkım ve gıda krizinin en ağır faturasını savunmasız çocuklar ödüyor. Uluslararası fonların kesilmesi ve sağlık altyapısının çökmesi, hastanelerdeki tedavi kapasitesini doğrudan sınırlıyor. Benzer insani krizlerde acil dış yardım mekanizmaları devreye girmediği sürece bebek ölüm oranları tırmanmaya devam edecektir.",
+    "editorNote": "Yemen'deki savaşın ortasında kalan erken doğan ikizlerin yaşam mücadelesi, bölgedeki derinleşen açlık krizini gözler önüne seriyor.",
+    "tags": [
+      "Yemen",
+      "İç Savaş",
+      "Açlık Krizi",
+      "Sağlık",
+      "Birleşmiş Milletler"
+    ],
+    "category": "Dünya",
+    "gorselSorgu": "malnourished baby hospital Yemen",
+    "source": "BBC World",
+    "sourceUrl": "https://www.bbc.co.uk/news/articles/cr5ynl63v0pyo?at_medium=RSS&at_campaign=rss",
+    "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/6f6f/live/0c562b60-ce2d-11f1-9f18-490cec60aa0f.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T15:56:36.000Z",
+    "generatedAt": "2026-10-22T16:08:44.252Z",
+    "breaking": true
+  },
+  {
+    "id": "4dd4bb7ca174d824",
+    "title": "Adalet Bakanı Akın Gürlek: Yargı süreçlerini hızlandıracak yeni adımlar atılıyor",
+    "slug": "adalet-bakani-akin-gurlek-yargi-sureclerini-hizlandiracak-yeni-adimlar-atiyor",
+    "summary": "Adalet Bakanı Akın Gürlek, yargı hizmetlerinin daha hızlı sunulması ve gecikmelerin önlenmesi amacıyla Hâkimler ve Savcılar Kurulu kararıyla iki yeni ilkenin devreye alındığını duyurdu. Yapılan düzenlemelerle başsavcı vekillerinin adli işlere katılımı artırılarak iş yükü dengelenecek.",
+    "keyPoints": [
+      "Hâkimler ve Savcılar Kurulu kararıyla iki önemli ilke kararı hayata geçiriliyor.",
+      "Cumhuriyet Başsavcı Vekilleri ile başsavcıların idari görevlerin yanı sıra adli işlere katılması sağlanacak.",
+      "Düzenleme ile savcılar arasındaki iş yükünün dengelenmesi ve dosyaların makul sürede sonuçlanması hedefleniyor."
+    ],
+    "body": [
+      "Adalet Bakanlığı, yargı sisteminin işleyişini güçlendirmek ve vatandaşların adalet hizmetlerine erişimini hızlandırmak adına yeni bir düzenlemeyi hayata geçiriyor. Sosyal medya üzerinden yapılan açıklamada, yargılamalarda yaşanan yavaşlamaların önüne geçmek için kararlı adımların atıldığı vurgulandı.",
+      "Hâkimler ve Savcılar Kurulu tarafından yürütülen çalışmalar neticesinde iki temel ilke kararının uygulamaya konulduğu belirtildi. Bu kapsamda, özellikle adliye teşkilatındaki kademelerin daha etkin çalışması için görev dağılımında yeniliklere gidildi.",
+      "Yeni uygulamayla birlikte, asliye ceza mahkemeleri nezdindeki Cumhuriyet başsavcılıklarında görev yapan başsavcılar ve başsavcı vekilleri, mevcut idari, gözetim ve koordinasyon sorumluluklarının yanı sıra doğrudan adli işlere de dahil olacaklar.",
+      "Yapılan bu düzenleme sayesinde tecrübeli başsavcı vekillerinin birikimlerinden en üst düzeyde yararlanılması amaçlanıyor. Aynı zamanda Cumhuriyet savcıları arasındaki iş yükünün daha adil biçimde paylaştırılması ve dava dosyalarının makul süreler içinde karara bağlanması hedefleniyor.",
+      "Bakanlık, hukukun üstünlüğü ilkesini merkeze alan vatandaş odaklı reform çalışmalarına ara vermeden devam edeceğini belirtti. Adaletin gerçek anlamda tecelli etmesinin yalnızca doğru kararın verilmesiyle değil, aynı zamanda bu kararın vaktinde çıkmasıyla mümkün olduğu ifade edildi."
+    ],
+    "comment": "Yargı reformlarında en kritik eşik, mevzuat değişikliklerinin sahadaki iş yükünü fiilen ne kadar hafifleteceğidir. Başsavcı vekillerinin adli işlere aktif katılımı, dosyaların bekleme sürelerini kısaltma potansiyeli taşıyor ancak bu modelin başarısı, savcılık birimlerindeki personel ve dosya dengesinin doğru kurulmasına bağlı. Sistemdeki tıkanıklıkları aşmak için atılan bu adım, adliyelerdeki bireysel dosya yükünü doğrudan etkileyecektir.",
+    "editorNote": "Başsavcı vekillerinin adli işlere de katılmasını öngören iki yeni ilke kararıyla yargıdaki dosya yoğunluğunun dengelenmesi amaçlanıyor.",
+    "tags": [
+      "Adalet Bakanlığı",
+      "Akın Gürlek",
+      "HSK",
+      "Yargı",
+      "Mahkeme"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "Turkish courthouse building exterior",
+    "source": "Haber Global",
+    "sourceUrl": "https://haberglobal.com/gundem/bakan-gurlek-adaletin-zamaninda-tecellisini-saglayacak-adimlar-atiyoruz-550032",
+    "image": "https://i.haberglobal.com/storage/files/images/2026/10/22/bakan-gurlek-adaletin-zamaninda-tecellisini-saglayacak-adimlar-atiyoruz-o8cs.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T15:56:00.000Z",
+    "generatedAt": "2026-10-22T16:10:59.962Z",
+    "breaking": true
+  },
+  {
     "id": "01a00b1dfb73b5e4",
     "title": "Bombus Arıları Kiraz Ağaçlarını Bakteriyel Hastalıklardan Koruyor",
     "slug": "bombus-arilari-kiraz-agaclarini-bakteriyel-hastalikalardan-koruyor",
