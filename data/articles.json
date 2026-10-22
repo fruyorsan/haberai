@@ -1,5 +1,41 @@
 [
   {
+    "id": "642ac36df61820ab",
+    "title": "PHP2Shell Açığıyla 21 Ekim'de Devlet Siteleri Kapatıldı",
+    "slug": "php2shell-acigiyle-21-ekimde-devlet-siteleri-kapatildi",
+    "summary": "21 Ekim'de ortaya çıkan PHP2Shell güvenlik açığı, dünya çapında devlet ve hastane sitelerini kapatmaya yol açtı. CVE-2026-109618 ve 109619 kodlarıyla tanımlanan bu açık, uzaktan kod çalıştırma yetkisi vererek kritik risk oluşturdu. Yapay zeka modelleri bu hatayı tespit etti.",
+    "keyPoints": [
+      "21 Ekim'de 21 ülkede devlet ve hastane siteleri kapandı",
+      "PHP2Shell, CVE-2026-109618 ve 109619 ile uzaktan kod çalıştırma yetkisi verir",
+      "Yapay zeka modelleri (OpenAI, Wiz, Calif) açıkları tespit etti"
+    ],
+    "body": [
+      "21 Ekim 2026’da internetin yaklaşık %70’ini yöneten PHP, beklenmedik bir güvenlik açığıyla karşılaştı. PHP2Shell olarak adlandırılan bu açık, CVE‑2026‑109618 ve CVE‑2026‑109619 numaralarıyla tespit edildi. Açığın temel özelliği, saldırganların sunucularda izinsiz kod çalıştırmasına izin vermesidir, bu da kritik veri hırsızlığı veya sistem kontrolü riskini doğurur.",
+      "Bu güvenlik sorunu, yapay zeka destekli tarayıcıların hızlı tespit yeteneği sayesinde ortaya çıktı. OpenAI’ın GPT‑5.6 Sol, Wiz ve Calif modelleri bağımsız olarak bu hataları buldu ve bildirildi. AI’nin bu seviyede hata tespiti, siber güvenlikte otomatikleştirmenin ne kadar ilerlediğinin bir göstergesidir.",
+      "Kriz, devlet kurumları, hastaneler ve diğer kamu hizmetleri dahil olmak üzere dünya genelinde yüzlerce web sitesinin aniden kapanmasına yol açtı. FBI, CERT‑EU ve Türkiye’deki Siber Güvenlik Başkanlığı gibi kuruluşlar acil uyarılar yayınladı, saldırı girişimlerinin beklenenden erken başladığını belirtti.",
+      "Güncelleme yapılamazsa yedekleme yapılmalı ve geçici olarak WAF (Web Application Firewall) devreye alınmalıdır.",
+      "Kullanıcılar ise şüpheli veya bakım modundaki sitelerde kişisel bilgiler paylaşmaktan kaçınmalı ve şüpheli e‑postaları şifrelerini güncelleyerek korumalıdır. Bu tür olayların önlenmesi için, kurumların güvenlik protokollerini sıkılaştırması ve periyodik güvenlik denetimleri yapması şarttır."
+    ],
+    "comment": "Güvenlik yamaları, kritik açıkların önüne geçmenin en etkili yoludur. PHP2Shell’in CVE‑2026‑109618/109619 kodları, uzaktan kod çalıştırma yetkisi vererek sistemleri derinden sarsar. Bu durum, devlet hizmeti sunan web sitelerini doğrudan etkiledi. Önceki PHP sürümlerine kıyasla yeni yamalar, bu tür saldırıları engellemede belirgin bir fark yaratır. Geliştiriciler, güncel sürüme geçmekle birlikte, düzenli güvenlik taramalarıyla riskleri minimize etmelidir.",
+    "editorNote": "PHP2Shell açığı, 21 Ekim’de dünya çapında devlet sitelerini kapatırken, yapay zeka ile tespit edilmesi siber güvenlikte yeni bir dönemin habercisi.",
+    "tags": [
+      "php",
+      "güvenlik",
+      "devlet siteleri",
+      "yapay zeka",
+      "cve"
+    ],
+    "category": "Yazılım",
+    "gorselSorgu": "data center server room with error screen",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/interneti-kilitleyen-php-acigi-yapay-zeka-buldu-siteler-kapandi--211977",
+    "image": "https://www.donanimhaber.com/images/images/haber/211977/1200x675interneti-kilitleyen-php-acigi-yapay-zeka-buldu-siteler-kapandi.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T16:19:02.000Z",
+    "generatedAt": "2026-10-22T16:21:11.824Z",
+    "breaking": true
+  },
+  {
     "id": "4c188ca6a6409894",
     "title": "Epic Games Store, 416 TL değerindeki iki oyunu ücretsiz yaptı",
     "slug": "epic-games-store-416-tl-degerindeki-iki-oyunu-ucretsiz-yapti",
@@ -33,6 +69,118 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-22T16:12:57.601Z",
     "generatedAt": "2026-10-22T16:13:49.519Z"
+  },
+  {
+    "id": "16f8f664f5222672",
+    "title": "Deprem davalarının ilk derece mahkemelerinde 2027'de biteceği duyuruldu",
+    "slug": "deprem-davalarinin-ilk-derece-mahkemelerinde-2027de-bitecegi-duyuruldu",
+    "summary": "Adalet Bakan Yardımcısı Can Tuncay, Kahramanmaraş merkezli depremlerden doğan davaların 2027'nin ilk yarısında sonuçlanmasını hedeflediklerini açıkladı. Yargılama süreçlerindeki aksaklıkları yerinde tespit ederek şeffaf bir çalışma yürüttüklerini belirtti.",
+    "keyPoints": [
+      "Deprem davalarının ilk derece mahkemelerinde 2027'nin ilk yarısında bitmesi planlanıyor.",
+      "Toplantı, 6 Şubat 2023 depremlerinden etkilenen 11 ilin başsavcılarının katılımıyla yapıldı.",
+      "Bakan Yardımcısı Tuncay, mağdur ailelerle şeffaf temas kurulduğunu vurguladı."
+    ],
+    "body": [
+      "Adalet Bakan Yardımcısı Can Tuncay, Diyarbakır'da gerçekleştirilen \"6 Şubat Depremlere İlişkin Adli Süreçler\" toplantısında yargılamaların takvimine dair önemli açıklamalarda bulundu. Diyarbakır Adliyesi Ek Hizmet Binası Konferans Salonu'nda düzenlenen programda, felaketten doğrudan etkilenen 11 ilin adli makam yetkilileri bir araya geldi. Başsavcılar, adalet komisyonu başkanları ve idare mahkemesi başkanlarıyla yapılan oturumlarda, dava dosyalarındaki mevcut durum masaya yatırıldı.",
+      "Bakanlık bünyesinden yüksek düzeyli bürokratların da katıldığı buluşmada, Adalet Bakanı Akın Gürlek'in talimatları doğrultusunda sahadaki aksaklıkların yerinde tespit edilmesi amaçlandı. Tuncay, basın mensuplarına yaptığı açıklamada, adli süreçlerin hızlandırılması ve tıkanıklıkların giderilmesi için çözümler üretileceğini ifade etti. Toplantı kapsamında, 6 Şubat 2023 tarihinde yaşanan yıkıcı sarsıntıların ardından açılan davaların en kısa sürede adalete kavuşması hedefleniyor.",
+      "Yürütülen adli faaliyetlerin toplum tarafından yakından takip edildiğini belirten Tuncay, ilk derece mahkemelerindeki dosyaların 2027 yılının ilk yarısına doğru nihayete erdirilmesini öngördüklerini söyledi. Bakanlık olarak zarar gören ailelerle sürekli iletişim halinde olduklarını aktaran yetkili, istişare toplantılarının sonuçlarının da vatandaşlarla paylaşılacağını kaydetti. Sürecin her aşamasında şeffaflık ilkesinin gözetileceği yinelendi.",
+      "Bölgedeki adliyelerin kapasitesi ve dosya yükü, yetkililer tarafından ayrıntılı şekilde değerlendirildi."
+    ],
+    "comment": "Yargılamaların 2027 takvimine bağlanması, milyonlarca vatandaşın adalet arayışında somut bir zaman diliminin ortaya çıkmasını sağladı. On bir ili kapsayan bu denli büyük bir yıkımın ardından açılan binlerce dosyanın tek havuzda ele alınması, karar süreçlerini hızlandırabilir. Ailelerin sabırla beklediği bu süreçte, ilk derece mahkemelerinin belirlenen sürede hedefi tutturup tutturamayacağı denetlenecek. Şeffaflık vurgusunun uygulamaya ne kadar yansıyacağı, mağdurların adalet duygusunu doğrudan etkileyecek faktörlerin başında geliyor.",
+    "editorNote": "On bir ili sarsan felaketin ardından açılan davalar için 2027 hedefi koyuldu; süreç şeffaf ilerleyecek.",
+    "tags": [
+      "Adalet Bakanlığı",
+      "Can Tuncay",
+      "deprem davaları",
+      "Diyarbakır",
+      "6 Şubat depremleri"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "earthquake damaged building",
+    "source": "Haberler",
+    "sourceUrl": "https://www.haberler.com/guncel/bakan-yardimcisi-tuncay-deprem-davalarinin-2027-de-20356833-haberi/",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Interior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg/1280px-Interior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg",
+    "gorselKaynak": {
+      "yazar": "Adem",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Interior_of_a_damaged_building_after_7,8_magnitude_earthquake_in_Turkiye.jpg"
+    },
+    "publishedAt": "2026-10-22T16:10:43.000Z",
+    "generatedAt": "2026-10-22T16:21:56.235Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg/1280px-Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg",
+        "yazar": "Adem",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Exterior_of_a_damaged_building_after_7,8_magnitude_earthquake_in_Turkiye.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye_2.jpg/1280px-Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye_2.jpg",
+        "yazar": "Adem",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Exterior_of_a_damaged_building_after_7,8_magnitude_earthquake_in_Turkiye_2.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
+    "id": "196c33a6c18408f7",
+    "title": "Apple Music, ses frekanslarından ilham alan yeni hareketli logosunu tanıttı",
+    "slug": "apple-music-ses-frekanslarindan-ilham-alan-yeni-hareketli-logosunu-tanitti",
+    "summary": "Apple, ses dalgaları baz alınarak tasarlanan yeni hareketli Apple Music logosunu ve siyah beyaz uygulama simgesini duyurdu. Söz konusu görsel yeniliklerin gelecek yazılım güncellemeleri kapsamında kullanıma sunulması planlanıyor.",
+    "keyPoints": [
+      "Ses frekanslarıyla hazırlanan hareketli logo, video içeriklerinin başında yer alacak.",
+      "Tasarım sürecinde küçük bir tankın içine mineral yağ konulup dalgalar kaydedildi.",
+      "Yeni görsel kimlik, iOS 27.2 ve macOS 27.2 güncellemeleriyle cihazlara gelecek."
+    ],
+    "body": [
+      "Apple, müzik yayıncılığı alanındaki görsel dilini yenilemek adına kapsamlı bir adım atarak Apple Music için hazırlanan hareketli logo tasarımını kamuoyuyla paylaştı. Geliştirilen yeni konsept, ses dalgalarının fiziksel hareketlerinden ilham alarak platformun müzikal kimliğini daha görünür kılmayı amaçlıyor. Su yüzeyindeki dalgalanmaları andıran nota formu, markanın modern arayüz çizgisiyle uyumlu bir biçimde tasarlandı.",
+      "Hazırlık aşamasında tamamen pratik ve fiziksel yöntemlerin tercih edilmesi dikkat çekti. Tasarım ekibi, küçük bir tankın tabanına logoyu işleyip içerisini mineral yağla doldurdu ve şeffaf bir kapakla kapattı. Çeşitli ses frekansları verilerek yağ yüzeyinde oluşturulan dalgalanma hareketleri kayıt altına alınarak nihai form elde edildi.",
+      "Yürütülen bu projede Apple ekibine müzik yapımcısı Fred Again ve NEST Acoustics ortaklıklarıyla destek verdi. Ortaya çıkan dinamik görsel yapının, sadece uygulama arayüzünde değil, platformda yer alan konser kayıtları ve müzik videoları gibi içeriklerin başında da oynatılması kararlaştırıldı.",
+      "Yenilenen görsel kimlik paketinin bir parçası olarak uygulama simgesinin de siyah beyaz renk paletine geçeceği ifade ediliyor. Bu görsel değişimlerin, şirketin ilerleyen dönemde dağıtıma çıkaracağı işletim sistemi sürümleriyle birlikte son kullanıcıların erişimine sunulması bekleniyor."
+    ],
+    "comment": "Şirketlerin marka kimliklerini yenilerken dijital deneyimi fiziksel kökenlerle buluşturması kullanıcı bağlılığını artıran etkili bir yöntemdir. Mineral yağ ve ses frekansları gibi somut fiziksel deneylerin dijital bir servise uyarlanması, tasarım ekibinin standart çizgilerin dışına çıktığını gösteriyor. Özellikle video içeriklerinin açılışında bu hareketli yapının kullanılması, platformlar arası görsel bütünlüğü güçlendirecektir. Daha önceki sabit simge ve logolarla kıyaslandığında, bu dinamik yaklaşımın rakipler karşısında görsel hafızayı taze tutacağı söylenebilir.",
+    "editorNote": "Mineral yağ ve ses dalgaları kullanılarak pratik yollarla üretilen yeni Apple Music logosu video içeriklerine taşınıyor.",
+    "tags": [
+      "Apple Music",
+      "Apple",
+      "Logo",
+      "iOS",
+      "Tasarım"
+    ],
+    "category": "Mobil",
+    "gorselSorgu": "Apple Music logo design studio",
+    "source": "12punto",
+    "sourceUrl": "https://12punto.com.tr/bilim-teknoloji/apple-musicin-yeni-logosu-tanitildi-ses-frekanslariyla-olusturulan-hareketli-nota-video-iceriklerinde-kullanilacak-156633",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Smartphone_in_Hand_%28Unsplash%29.jpg/1280px-Smartphone_in_Hand_%28Unsplash%29.jpg",
+    "gorselKaynak": {
+      "yazar": "NeONBRAND neonbrand",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Smartphone_in_Hand_(Unsplash).jpg"
+    },
+    "publishedAt": "2026-10-22T16:03:16.000Z",
+    "generatedAt": "2026-10-22T16:22:47.519Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Black_smartphone_in_hand_%28Unsplash%29.jpg/1280px-Black_smartphone_in_hand_%28Unsplash%29.jpg",
+        "yazar": "Dennis Cortés cortes",
+        "lisans": "CC0",
+        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Black_smartphone_in_hand_(Unsplash).jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Smartphone-mobile-hand-technology-internet-finger.jpg/1280px-Smartphone-mobile-hand-technology-internet-finger.jpg",
+        "yazar": "Unknown author Unknown author",
+        "lisans": "CC0",
+        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Smartphone-mobile-hand-technology-internet-finger.jpg"
+      }
+    ],
+    "breaking": true
   },
   {
     "id": "759918cc901e0d33",
@@ -337,36 +485,6 @@
     "breaking": true
   },
   {
-    "id": "55a25bb73d772699",
-    "title": "USGS, Tibet Özerk Bölgesi'nde 7 büyüklüğünde deprem duyurdu",
-    "slug": "usgs-tibet-ozerk-bolgesi-7-bulklugunde-deprem-duyurdu",
-    "summary": "USGS, Tibet Özerk Bölgesi'nde 183 kilometre kuzeydoğusunda 7 büyüklüğünde deprem kaydetti. Sarsıntının derinliği 10 kilometre, merkez üssü Nakçu iline yakın. Henüz hasar veya can kaybı rapor edilmedi.",
-    "keyPoints": [
-      "Deprem büyüklüğü 7, derinlik 10 km",
-      "Merkez üssü Nakçu ilinin 183 km kuzeydoğusunda",
-      "Can kaybı veya hasar bilgisi henüz açıklanmadı"
-    ],
-    "body": [
-      "Çin'in Tibet Özerk Bölgesi'nde bugün 7 büyüklüğünde bir deprem meydana geldi. ABD Jeolojik Araştırmalar Merkezi (USGS) tarafından yapılan ölçümler, sarsıntının merkez üssünün Nakçu ilinin 183 kilometre kuzeydoğusunda olduğunu gösterdi. Deprem aynı zamanda 10 kilometre derinlikte kaydedildi. Her iki kurum da ölçüm sonuçlarını aynı zamanda derinlik bilgisini de paylaştı. Depremin ardından yapılan ilk açıklamalarda, bölgedeki hasar veya can kaybı bilgisi paylaşılmadı. Yetkililer henüz resmi bir açıklama yapmadı, gelişmeler yeni açıklamalarla netleşecek. O olayda 120 kişi hayatını kaybetmişti. Bu yeni deprem, bölgenin sismik riskini bir kez daha gözler önüne seriyor. Kriz yönetimi ekipleri, bölgeyi gözetim altına alırken, acil durum hizmetleri de hazır bulunuyor. Depremin etkisinin tam olarak ne olacağı, yetkililerin daha fazla bilgi vermesine bağlıdır."
-    ],
-    "comment": "Depremin 7 büyüklüğünde olması, bölgenin aktif tektonik yapılarına dair alarm sinyali olarak değerlendirilebilir. USGS ve CENC'in aynı ölçütleri onaylaması, raporun güvenilirliğini artırıyor. Bu durum, bölge sakinlerini ve yerel yönetimleri, sismik risk yönetimi planlarını gözden geçirmeye teşvik ediyor.",
-    "editorNote": "Tibet'teki yeni 7 büyüklüğündeki deprem, bölgenin sismik geçmişine ışık tutuyor. Çift kurumun aynı ölçüyü onaylaması, raporun güvenilirliğini pekiştiriyor.",
-    "tags": [
-      "deprem",
-      "Tibet",
-      "USGS"
-    ],
-    "category": "Gündem",
-    "gorselSorgu": "earthquake damaged building",
-    "source": "Ankara Masası",
-    "sourceUrl": "https://www.ankaramasasi.com.tr/haber/2225042/cin-in-tibet-ozerk-bolgesi-nde-7-buyuklugunde-deprem-kaydedildi",
-    "image": "https://cdn.ankaramasasi.com/2026/10/22/cin-tibet-22102026-39jw6kgh.webp",
-    "gorselKaynakSite": true,
-    "publishedAt": "2026-10-22T15:45:05.000Z",
-    "generatedAt": "2026-10-22T15:54:26.553Z",
-    "breaking": true
-  },
-  {
     "id": "b50408561f651634",
     "title": "Çanakkale Biga'da iki otomobil çarpıştı ve araçlarda büyük hasar oluştu",
     "slug": "canakkale-bigada-iki-otomobil-carpisti-ve-araclarda-buyuk-hasar-olustu",
@@ -434,6 +552,40 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-22T15:31:00.000Z",
     "generatedAt": "2026-10-22T15:57:10.905Z",
+    "breaking": true
+  },
+  {
+    "id": "531edbd65796a7f1",
+    "title": "Çin'in Tibet Özerk Bölgesi'nde 7 büyüklüğünde deprem sarsıntısı",
+    "slug": "cinin-tibet-ozerk-bolgesinde-7-buyuklugunde-deprem-sarsintisi",
+    "summary": "Tibet Özerk Bölgesi'nde yerel saatle kaydedilen 7 büyüklüğündeki sarsıntı geniş bir alanda hissedildi. Derinliği on kilometre olan felaket sonrasında yetkililer henüz olumsuz bir durum bildirilmediğini duyurdu.",
+    "keyPoints": [
+      "Merkez üssü Nakçu ilinin 183 kilometre kuzeydoğusu olan sarsıntının büyüklüğü 7 olarak açıklandı.",
+      "ABD Jeolojik Araştırmalar Merkezi ve Çin Deprem Ağları Merkezi depremin derinliğini 10 kilometre olarak ölçtü."
+    ],
+    "body": [
+      "Çin'in yüksek rakımlı Tibet Özerk Bölgesi'nde sabah saatlerinde büyük bir sarsıntı kaydedildi. Bölgede yaşayan vatandaşları sokağa döken olay, yerel halk arasında kısa süreli bir paniğe neden oldu. Sarsıntının etkisiyle dağlık kesimlerden taş kopmaları yaşanabileceği ihtimaline karşı ekipler inceleme başlattı.",
+      "Uluslararası sismoloji kuruluşlarından gelen ilk raporlara göre depremin merkez üssü Nakçu ilinin 183 kilometre kuzeydoğusunda bulunuyor. On kilometre derinlikte gerçekleşen bu şiddetli doğa olayı, sığ odaklı olması nedeniyle geniş bir coğrafyada güçlü şekilde hissedildi.",
+      "Olayın hemen ardından Çin Deprem Ağları Merkezi ile ABD Jeolojik Araştırmalar Merkezi verileri eş zamanlı olarak paylaştı. Her iki kurum da sarsıntının büyüklüğünü net bir şekilde 7 olarak tescilledi. İlk belirlemelere göre herhangi bir can kaybı veya maddi hasar kayıtlara geçmedi.",
+      "Bölge sismik hareketlilik açısından sabıkalı bir geçmişe sahip bulunuyor. Geçtiğimiz yıl Ocak ayında Şıgatsı iline bağlı Tingri ilçesinde yaşanan 6,8 büyüklüğündeki sarsıntı yüz yirmi vatandaşın ölümüne yol açmıştı. Yetkililer artçı sarsıntılara karşı halkın hasarlı binalardan uzak durması gerektiğini vurguluyor."
+    ],
+    "comment": "Asya kıtasının en sismik hatlarından birinde meydana gelen sarsıntılar, yerleşim birimlerindeki yapı stokunun direncini doğrudan test ediyor. On kilometre gibi sığ bir derinlikte gerçekleşen 7 büyüklüğündeki bu enerji boşalması, bölgedeki eski depremlerin açtığı yaraları hatırlatıyor. Geçmişte Tingri ilçesinde yaşanan 6,8 büyüklüğündeki afetin 120 can kaybına yol açtığı düşünüldüğünde, bu kez can kaybı bildirilmemiş olması şimdilik en büyük teselli olarak öne çıkıyor. Altyapının dayanıklılığı ve erken uyarı sistemlerinin hızı, gelecekteki olası felaketlerde can kayıplarının önlenmesi için hayati bir işlev görüyor.",
+    "editorNote": "Tibet'teki sığ ve şiddetli sarsıntının ardından bölge halkı tedirginlik yaşıyor.",
+    "tags": [
+      "Tibet",
+      "Çin",
+      "deprem",
+      "Nakçu",
+      "USGS"
+    ],
+    "category": "Dünya",
+    "gorselSorgu": "earthquake damaged building",
+    "source": "Takvim",
+    "sourceUrl": "https://www.takvim.com.tr/dunya/cinin-tibet-bolgesinde-7-buyuklugunde-deprem-6537461",
+    "image": "https://iatkv.tmgrup.com.tr/2319d2/1200/675/0/0/1500/844?u=https%3a%2f%2fitkv.tmgrup.com.tr%2f2026%2f10%2f22%2fcinin-tibet-bolgesinde-7-buyuklugunde-deprem-1792683041995.jpeg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T15:30:49.000Z",
+    "generatedAt": "2026-10-22T16:24:42.138Z",
     "breaking": true
   },
   {
@@ -12517,39 +12669,6 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-22T07:09:00.000Z",
     "generatedAt": "2026-10-22T07:15:53.001Z",
-    "breaking": true
-  },
-  {
-    "id": "e9883ef4a3fc9b66",
-    "title": "Sakarya'da 5.4 büyüklüğünde deprem meydana geldi",
-    "slug": "sakaryada-54-buyuklugunde-deprem-meydana-geldi",
-    "summary": "Sakarya bölgesinde yerel saatle kaydedilen depremin şiddeti 5.4 olarak duyuruldu. Sarsıntının ardından bölgedeki son durum ve olası etkileri takip ediliyor.",
-    "keyPoints": [
-      "Depremin büyüklüğü 5.4 olarak ölçüldü.",
-      "Sarsıntı Sakarya ve çevre illerde hissedildi.",
-      "Yetkililer durum tespiti için çalışmalara başladı."
-    ],
-    "body": [
-      "Türkiye'nin aktif fay hatları üzerinde yer alan bölgelerinden biri olan Sakarya'da, yerin altından gelen güçlü bir sarsıntı kaydedildi. Bölge sakinlerini sokağa döken olay, kısa süreli bir paniğe yol açtı. Depremin ardından ilgili birimler sahada inceleme başlattı.",
-      "Yapılan ilk ölçümlere göre sarsıntının büyüklüğü 5.4 olarak belirlendi. Çevre illerden de net bir şekilde hissedilen bu doğa olayı, vatandaşların tedbir amaçlı dışarı çıkmasına neden oldu. İlk belirlemelere göre herhangi bir olumsuz ihbar yapılmadı.",
-      "Uzmanlar bu büyüklükteki sarsıntıların ardından artçı hareketlerin yaşanabileceğini hatırlattı. Vatandaşların hasarlı binalardan uzak durması gerektiği konusunda uyarılar yapıldı. Ekipler bölgedeki tarama faaliyetlerini sürdürüyor."
-    ],
-    "comment": "Bölgenin yapı stoğu düşünüldüğünde 5.4 büyüklüğündeki bu sarsıntı, kentsel dönüşüm çalışmalarının hızlandırılması gerektiğini bir kez daha hatırlatıyor. Ölçülen değer doğrudan can ve mal güvenliğini tehdit etmese de, hazırlık seviyesinin test edilmesi açısından bir uyarı niteliği taşıyor. Aksi takdirde benzer sarsıntılar çok daha büyük maliyetler doğurabilir.",
-    "editorNote": "Sakarya'da kaydedilen 5.4 büyüklüğündeki sarsıntı çevrede hissedildi.",
-    "tags": [
-      "Sakarya",
-      "Deprem",
-      "Kandilli",
-      "AFAD"
-    ],
-    "category": "Gündem",
-    "gorselSorgu": "earthquake damaged building",
-    "source": "Sakarya Gazetesi",
-    "sourceUrl": "https://www.sakaryagazetesi.com.tr/54-buyuklugunde-deprem-oldu",
-    "image": "https://sakaryagazetesicomtr.teimg.com/crop/1280x720/sakaryagazetesi-com-tr/uploads/2026/07/deprem-49.jpg",
-    "gorselKaynakSite": true,
-    "publishedAt": "2026-10-22T07:09:00.000Z",
-    "generatedAt": "2026-10-22T07:16:02.850Z",
     "breaking": true
   },
   {
