@@ -1,5 +1,110 @@
 [
   {
+    "id": "01ce1e2236dd49d3",
+    "title": "OpenAI modeli, PHP sunucularını tehdit eden kritik açığı yakaladı",
+    "slug": "openai-modeli-php-sunucularini-tehdit-eden-kritik-acigi-yakaladi",
+    "summary": "Dijital dünyada geniş yankı uyandıran PHP2Shell güvenlik açıklarının tespitinde OpenAI yapay zekâsı aktif rol oynadı. Gelişmenin ardından ulusal güvenlik kurumları kurumları acil güncelleme yapmaya çağırdı.",
+    "keyPoints": [
+      "GPT-5.6 Sol modeli PHP sistemindeki iki kritik açıktan birini buldu.",
+      "PHP2Shell açığı saldırganların parola istemeden sunucu kontrolünü ele geçirmesine yol açıyor.",
+      "NSA ve FBI gibi kurumlar etkilenen sistemler için acil yama çağrısı yaptı."
+    ],
+    "body": [
+      "Küresel çapta geniş yankı uyandıran PHP tabanlı açıkların tespit edilme sürecinde yapay zekâ teknolojilerinin de devreye girdiği netleşti. OpenAI tarafından paylaşılan detaylara göre, GPT-5.6 Sol modeli yazılımdaki tehlikeli zafiyetlerden birinin ortaya çıkarılmasına doğrudan katkı sağladı. Şirketin Patch the Planet girişimi içerisinde faaliyet gösteren Calif ekibi, yapay zekâ modelinin yeteneklerini kullanarak zafiyeti yakalamayı başardı.",
+      "Birlikte PHP2Shell adıyla anılan bu iki kritik güvenlik açığı, kötü niyetli kişilerin hedef alınan sunucularda uzaktan zararlı komutlar çalıştırmasına kapı aralıyor. Belirli çalışma koşullarında saldırganların hiçbir kimlik doğrulama adımı veya parola gereksinimi olmadan sistemlerin tam kontrolünü ele geçirmesi tehlike yaratıyor. Wiz adlı siber güvenlik grubu da her iki zafiyeti bağımsız bir şekilde tespit ederek durumu raporlayan bir diğer yapı oldu.",
+      "Tehdidin gün yüzüne çıkmasının ardından Amerika Birleşik Devletleri Ulusal Güvenlik Ajansı, ilgili kurumları acil güvenlik güncellemelerini devreye sokmaları konusunda uyardı. Güncellemeyi hemen yapamayacak kuruluşların ise riskli sistemleri internetten ayırması istendi. Federal Soruşturma Bürosu ve uluslararası yetkili merciler de benzer ikazlar yayımlayarak yazılım yöneticilerini harekete geçmeye çağırdı.",
+      "Amazon bünyesindeki MadPot araştırma sistemi, zafiyetlerin resmi duyurusu yapılmadan önce bile saldırı denemelerini kaydettiğini bildirdi. Google Wiz ekibi ise Gemini desteğiyle güvenlik yamalarının doğrulanmasına katkı sundu. OpenAI, önümüzdeki dönemde yapay zekâ tabanlı araçların çok daha fazla zafiyet gün yüzüne çıkaracağını öngörüyor.",
+      "Şirket bu doğrultuda açıkların doğrulanması, hızlıca düzeltilmesi, kurumların haberdar edilmesi ve rehber hazırlanmasını kapsayan beş aşamalı bir yönetim çerçevesi öneriyor. PHP2Shell olayının son olmayacağını belirten yetkililer, siber güvenlik alanında yapay zekânın katılımıyla oldukça hareketli bir dönemin başladığına işaret ediyor."
+    ],
+    "comment": "Yapay zekâ destekli araçların güvenlik açıklarını tespit etme sürecine katılması, koruma mekanizmalarının hızını artırırken saldırganların elindeki imkanları da genişletiyor. Beş aşamalı yönetim planı eksiksiz uygulanmadığı takdirde, milyonlarca üründe kullanılan ana bileşenlerdeki güncellemeler gecikebilir. Geliştiriciler kod kalitesini artırmazsa, otomatik araçların bulduğu açık sayısı yazılım dünyasının yama hızını geride bırakacaktır.",
+    "editorNote": "Yapay zekâ modelleri yazılımdaki tehlikeleri yakalarken, siber saldırganlar da bu açıkları istismar etmek için hızla yarışıyor.",
+    "tags": [
+      "OpenAI",
+      "PHP",
+      "Siber Güvenlik",
+      "Yapay Zeka",
+      "Wiz"
+    ],
+    "category": "Donanım",
+    "gorselSorgu": "data center server room",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/openai-php-deki-kritik-acigin-bulunmasina-yardimci-oldu--211976",
+    "image": "https://www.donanimhaber.com/images/images/haber/211976/src/openai-php-deki-kritik-acigin-bulunmasina-yardimci-oldu211976_0.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T16:53:58.000Z",
+    "generatedAt": "2026-10-22T16:55:35.238Z",
+    "breaking": true
+  },
+  {
+    "id": "2069cb456ed95311",
+    "title": "Tibet'te 7.0'lık Deprem, Nakçu İlinin Kuzeydoğusunda Yüzce Diğer Bölgeleri Dehşete Döküyor",
+    "slug": "tibet-7-0-durumu-nakcu-jej",
+    "summary": "Tibet Özerk Bölgesi'nde meydana gelen 7.0 büyüklüğündeki deprem, Nakçu ilinin 183 km kuzeydoğusunda 10 km derinliğede kırmızı ışıkta. Önceki yıl ocak ayında aynı bölgede 7.1 büyüklüğündeki sarsıntı 126 ölümle sonuçlandı.",
+    "keyPoints": [
+      "7.0 büyüklüğündeki deprem 10 km derinliğinde meydana geldi",
+      "Merkez üssü Nakçu ilinin 183 km kuzeydoğusu",
+      "Önceki yıl ocak ayında bölgedeki 7.1 büyüklüğündeki depremde 126 ölü"
+    ],
+    "body": [
+      "Çin'in Tibet Özerk Bölgesi'nde bugün saat 02:15'te 7.0 büyüklüğünde bir deprem meydana geldi. Merkezün konumu, Nakçu ilinin 183 kilometre kuzeydoğusunda, 10 kilometre derinliğinde olarak belirlendi. ABD Jeolojik Araştırmalar Merkezi (USGS) tarafından yayımlanan ilk veriler, bu sarsıntının bölgenin aktif tektonik hatları üzerindeki etkisini gösteriyor.",
+      "Tibet'te depremselliğin bir bundan çok daha eski olduğu bir bölge, 2023 yılında Ocak ayında yaşanan 7.1 büyüklüğündeki sarsıntı 126 ölümle sonuçlandı. Bu yeni olayın ölü sayısının artıp artmayacağı, yerel yetkililerin hızlı ve etkili kurtarma çalışmalarıyla belirlenecek.",
+      "Yerel yönetimler, afet sonrası kamu güvenliği için acil durum ekiplerini bölgede görevlendirdi. Çeşitli yardım kuruluşları, enkaz altında kalan kişilere ulaşmak için teknik ekipman ve uzman desteği sağladı.",
+      "Şu anki durumda, depremin yol açtığı hasar ve olası zemin kayması riski nedeniyle, bölgedeki vatandaşlar evlerinden uzak durmaya çağırıldı. Yetkililer, büyük şehirlerde de benzer seviyede tremorların oluşabileceği uyarısında bulundu."
+    ],
+    "comment": "Bu deprem, Tibet'in jeolojik açıdan hassas yapısını bir kez daha gözler önüne serdi. Önceki yıl yaşanan ölümcül sarsıntının ardından, bölge yetkilileri, afet yönetimini güçlendirmek için yeni teknolojilerin entegrasyonuna yöneldi. Halkın korkusu ve endişesi, medyada geniş yer bulurken, bilim insanları da deprem verilerini paylaşarak uluslararası işbirliğini teşvik etti.",
+    "editorNote": "Deprem, Tibet'in jeolojik hassasiyeti ve afet yönetimi konularında uluslararası işbirliğini gündeme taşıyor.",
+    "tags": [
+      "Deprem",
+      "Tibet",
+      "Afet Yönetimi",
+      "Jeoloji"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "tibet earthquake",
+    "source": "TRHaber",
+    "sourceUrl": "https://www.trhaber.com.tr/dunya/cin-de-siddetli-sarsinti-tibet-ozerk-bolgesi-7-buyuklugunde-depremle-sallandi-h992635.html",
+    "image": "https://www.trhaber.com.tr/api/og/992635.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T16:48:28.000Z",
+    "generatedAt": "2026-10-22T16:59:24.452Z",
+    "breaking": true
+  },
+  {
+    "id": "8e4a697ce03eff04",
+    "title": "Beyaz Saray duyurdu: 3 Kasım tarihine kadar İran'a saldırı olmayacak",
+    "slug": "beyaz-saray-duyurdu-3-kasim-tarihine-kadar-irana-saldiri-olmayacak",
+    "summary": "ABD yönetimi, 3 Kasım tarihine kadar İran'a yönelik askeri bir saldırı düzenlenmeyeceğini açıkladı. Beyaz Saray Sözcü Yardımcısı Anna Kelly tarafından yapılan açıklamada, Başkan Donald Trump'ın daha önceki ifadeleri teyit edildi.",
+    "keyPoints": [
+      "ABD yönetimi 3 Kasım'a kadar İran'a saldırı olmayacağını duyurdu.",
+      "Açıklama Beyaz Saray Sözcü Yardımcısı Anna Kelly tarafından yapıldı.",
+      "Karar, Drop Site News platformuna yapılan yazılı bildirimle paylaşıldı."
+    ],
+    "body": [
+      "Amerika Birleşik Devletleri merkezli haber platformu Drop Site News, iki ülke arasındaki olası gerilimlere dair son kulis bilgilerini kamuoyuyla paylaştı. Platformun edindiği bilgiler doğrultusunda Washington yönetiminin yakın vadeli stratejileri masaya yatırıldı.",
+      "Konuyla ilgili olarak Drop Site News'e yazılı bir açıklama gönderen Beyaz Saray Sözcü Yardımcısı Anna Kelly, sürecin detaylarına açıklık getirdi. Kelly, yaptığı resmi bilgilendirmede Başkan Donald Trump'ın geçtiğimiz hafta kamuoyuna duyurduğu kararlılık mesajını yineledi.",
+      "ABD Başkanı Trump, önceki hafta yaptığı değerlendirmelerde belirli bir takvime işaret etmişti. Yapılan bu son teyit ile birlikte, takvim yaprakları 3 Kasım'ı gösterene kadar herhangi bir askeri operasyon senaryosunun masada olmadığınetleşti.",
+      "Uluslararası kamuoyunda yakından izlenen bu diplomatik hamle, bölgedeki tansiyonun seyrini doğrudan etkiliyor. Taraflar arasındaki diplomatik temaslar ve yapılan resmi açıklamalar, küresel piyasalar tarafından da yakından takip ediliyor."
+    ],
+    "comment": "Politik takvimlerin askeri hamleler üzerindeki kısıtlayıcı etkisi, Washington yönetiminin bu hamlesiyle bir kez daha somutlaşmış durumdadır. Kasım ayının başına kadar sürecek olan bu taahhüt, bölgesel aktörlerin stratejilerini gözden geçirmesi için kısa vadeli bir nefes alanı yaratmaktadır. Sürecin devamında taraflar arasındaki diplomatik kanalların nasıl işletileceği, küresel enerji piyasalarını ve sınır ötesi dengeleri doğrudan etkileyecektir.",
+    "editorNote": "Washington yönetiminin ilan ettiği bu takvim, bölgedeki askeri hareketliliği belirli bir tarihe kadar donduruyor.",
+    "tags": [
+      "ABD",
+      "İran",
+      "Beyaz Saray",
+      "Donald Trump",
+      "Orta Doğu"
+    ],
+    "category": "Dünya",
+    "gorselSorgu": "White House press briefing room",
+    "source": "Takvim",
+    "sourceUrl": "https://www.takvim.com.tr/dunya/beyaz-saray-irana-yonelik-saldirilarda-3-kasim-2026yi-isaret-etti-6537484",
+    "image": "https://iatkv.tmgrup.com.tr/5dc734/1200/675/0/0/1672/941?u=https%3a%2f%2fitkv.tmgrup.com.tr%2f2026%2f10%2f22%2fbeyaz-saray-irana-yonelik-saldirilarda-3-kasim-2026yi-isaret-etti-1792687604401.jpeg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T16:41:34.000Z",
+    "generatedAt": "2026-10-22T16:59:50.579Z",
+    "breaking": true
+  },
+  {
     "id": "6514b7a5418ed96a",
     "title": "Beyaz Saray: 3 Kasım seçimlerinden önce İran'a saldırı olmayacak",
     "slug": "beyaz-saray-3-kasim-secimlerinden-once-irana-saldiri-olmayacak",
@@ -525,6 +630,40 @@
     "breaking": true
   },
   {
+    "id": "0d6ba2bdb377d5d9",
+    "title": "Çin'in Tibet bölgesinde 7 büyüklüğünde deprem meydana geldi",
+    "slug": "cinin-tibet-bolgesinde-7-buyuklugunde-deprem-meydana-geldi",
+    "summary": "Çin'in Tibet Özerk Bölgesi'nde yerel saatle 17.33'te sarsıntı kaydedildi. Çin Deprem Ağları Merkezi verilerine göre gerçekleşen sarsıntının yerin 10 kilometre derinliğinde olduğu açıklandı.",
+    "keyPoints": [
+      "Merkez üssü Nagqu olan deprem 7 büyüklüğünde ölçüldü.",
+      "Sarsıntının yerin 10 kilometre derinliğinde gerçekleştiği bildirildi.",
+      "Arazi şartları yüzünden birçok bölgeden henüz haber alınamıyor."
+    ],
+    "body": [
+      "Çin'e bağlı Tibet Özerk Bölgesi'nde yerel saatle 17.33'te şiddetli bir sarsıntı kaydedildi. Çin Deprem Ağları Merkezi tarafından paylaşılan ilk teknik verilere göre, yer sarsıntısının büyüklüğü 7 olarak ölçüldü. Bölge halkında tedirginlik yaratan hareketliliğin yerin 10 kilometre derinliğinde meydana geldiği saptandı.",
+      "Merkez üssünün Tibet'in kuzeyindeki Nagqu bölgesi olduğu belirtildi. Yapılan ilk resmi incelemelerde sarsıntının geniş bir coğrafyada hissedildiği rapor edildi. Yetkililer, yerleşimin dağınık olduğu hat üzerinde hasar tespit çalışmalarının sürdüğünü ifade etti.",
+      "Afet bölgesindeki engebeli arazi yapısı ve iletişim hatlarındaki kısıtlamalar nedeniyle sahanın genelinden henüz net bilgi akışı sağlanamadı. Kurtarma ve arama ekiplerinin bölgeye ulaşma çabaları sürerken, can ve mal kayıplarına dair henüz resmi bir bilanço yayımlanmadı."
+    ],
+    "comment": "Uzak ve zorlu coğrafyalarda meydana gelen afetlerin ardından sağlıklı bilgi akışının gecikmesi, müdahale süreçlerini doğrudan sekteye uğratmaktadır. Dağlık yapının getirdiği iletişim kısıtları, ekiplerin hasar tespiti yapmasını zorlaştırıyor. Bölgedeki yerleşim yerlerinde yaşanabilecek olası kayıpların boyutu, ulaşım hatlarının ne kadar hızlı açılabileceğine bağlı olarak netleşecektir.",
+    "editorNote": "Yerin 10 kilometre derinliğindeki 7 büyüklüğündeki sarsıntı sonrasında coğrafi şartlar iletişimi kısıtlıyor.",
+    "tags": [
+      "Tibet",
+      "Çin",
+      "Deprem",
+      "Nagqu",
+      "Afet"
+    ],
+    "category": "Dünya",
+    "gorselSorgu": "earthquake damaged building",
+    "source": "Gaziantep Postası",
+    "sourceUrl": "https://www.gazianteppostasi.com/gundem/7-buyuklugunde-deprem-meydana-geldi",
+    "image": "https://www.gazianteppostasi.com/uploads/news/2026/10/6ada35f4cff9f_1792685556.png",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T16:09:00.000Z",
+    "generatedAt": "2026-10-22T17:00:38.046Z",
+    "breaking": true
+  },
+  {
     "id": "196c33a6c18408f7",
     "title": "Apple Music, ses frekanslarından ilham alan yeni hareketli logosunu tanıttı",
     "slug": "apple-music-ses-frekanslarindan-ilham-alan-yeni-hareketli-logosunu-tanitti",
@@ -648,41 +787,6 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-22T16:00:38.000Z",
     "generatedAt": "2026-10-22T16:07:48.843Z",
-    "breaking": true
-  },
-  {
-    "id": "b6a5899979c2166d",
-    "title": "Çin'in Tibet Özerk Bölgesi'nde 7 büyüklüğünde deprem sarsıntısı",
-    "slug": "cinin-tibet-ozerk-bolgesinde-7-buyuklugunde-deprem-sarsintisi",
-    "summary": "Çin'in Tibet Özerk Bölgesi'nin kuzey kesiminde 7 büyüklüğünde güçlü bir yer sarsıntısı kaydedildi. Yaklaşık 10 kilometre derinlikte gerçekleşen felaket sonrasında yetkililer ilk belirlemelere göre can kaybı rapor edilmediğini açıkladı.",
-    "keyPoints": [
-      "Depremin büyüklüğü 7 olarak ölçüldü ve yerin 10 kilometre derinliğinde kaydedildi.",
-      "Merkez üssü Tibet'in kuzeyindeki yüksek rakımlı Nagqu yerleşim alanı oldu.",
-      "İlk incelemelere göre can kaybı ya da maddi hasar henüz bildirilmedi."
-    ],
-    "body": [
-      "Çin'in Tibet Özerk Bölgesi'nin kuzeyinde yer alan Nagqu bölgesinde yerel saatle büyük bir sarsıntı yaşandı. Bölge halkında paniğe neden olan depremin şiddeti uzmanlar tarafından 7 olarak duyuruldu.",
-      "Sarsıntının yerin yaklaşık 10 kilometre derinliğinde meydana geldiği saptandı. Yüksek rakımlı bir coğrafyada bulunan yerleşim yerindeki bu derinlik, sismik dalgaların yüzeyde geniş bir alanda hissedilmesine yol açtı.",
-      "Doğa olayının ardından bölgedeki yetkili birimler sahada inceleme başlattı. Henüz resmi makamlar tarafından doğrulanmış bir can kaybı veya maddi hasar bilgisi kamuoyuyla paylaşılmadı.",
-      "Kurtarma ve arama ekipleri, yüksek rakımlı ve ulaşımın zor olabileceği yerleşim birimlerinden gelecek haberleri yakından izliyor. Bölgedeki iletişim hatları ve altyapının durumu ise detaylı olarak inceleniyor."
-    ],
-    "comment": "Asya kıtasının engebeli coğrafyalarından birinde meydana gelen bu sarsıntı, yüksek rakımlı yerleşimlerin yapısal direncini bir kez daha gündeme getiriyor. On kilometre gibi sığ bir derinlikte gerçekleşen 7 büyüklüğündeki enerji boşalması, bölgedeki altyapının ne kadar dayanıklı olduğunu test ediyor. Olası artçı sarsıntılar bölge sakinleri için risk oluştururken, yetkililerin yapacağı hasar tespiti önümüzdeki günlerde netleşecek. Rapor edilen olumsuz bir durumun henüz olmaması şimdilik en büyük teselli.",
-    "editorNote": "Yerin 10 kilometre derinliğinde meydana gelen 7 büyüklüğündeki sarsıntı bölgede endişeye yol açtı.",
-    "tags": [
-      "Tibet",
-      "Çin",
-      "deprem",
-      "Nagqu",
-      "doğal afet"
-    ],
-    "category": "Dünya",
-    "gorselSorgu": "earthquake damaged building",
-    "source": "Zafer Gazetesi",
-    "sourceUrl": "https://zafergazetesi.org/cinin-tibet-bolgesinde-7-buyuklugunde-deprem",
-    "image": "https://zafergazetesiorg.teimg.com/crop/1280x720/zafergazetesi-org/uploads/2026/03/buyukcekmece-aciklarinda-deprem-ib8n.webp",
-    "gorselKaynakSite": true,
-    "publishedAt": "2026-10-22T15:57:00.000Z",
-    "generatedAt": "2026-10-22T16:14:28.955Z",
     "breaking": true
   },
   {
