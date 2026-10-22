@@ -1,5 +1,74 @@
 [
   {
+    "id": "d2e4c5c238b769a6",
+    "title": "Büyükçekmece'deki cinayetin şüphelisi Bağcılar'da ölü bulundu",
+    "slug": "buyukcekmecedeki-cinayetin-suphelisi-bagcilarda-olu-bulundu",
+    "summary": "Büyükçekmece'deki bir evde gerçekleşen silahlı saldırı olayının faili olduğu öğrenilen şüpheli, Bağcılar'daki bir inşaat alanında ölü ele geçirildi. Polis ekipleri olayla ilgili kaçan diğer şüphelileri yakalamak için geniş çaplı arama başlattı.",
+    "keyPoints": [
+      "Büyükçekmece'deki olayda 20 yaşındaki M.I. ve 26 yaşındaki Y.B. yaralanmış, 26 yaşındaki Yasin Binarci hayatını kaybetmişti.",
+      "Şüpheli Mehmet Emin Yüksel, Bağcılar Mahmutbey Mahallesi'ndeki bir hastane inşaatı alanında araç içinde ölü bulundu."
+    ],
+    "body": [
+      "İstanbul'un Büyükçekmece ilçesi Cumhuriyet Mahallesi'nde yaşanan silahlı olay bölgede büyük korku yaratmıştı. Belirlenen adresteki evde çıkan çatışmada iki kişi yaralanırken bir kişi de hayatını kaybetmişti. Güvenlik güçleri olay yerinde yaptığı detaylı incelemelerde üç adet tabanca ve bir miktar uyuşturucu madde bulmuştu.",
+      "Soruşturmayı derinleştiren emniyet birimleri, söz konusu saldırının failinin izini sürmeye devam etti. Yapılan çalışmaların ardından şüphelinin akıbeti dün akşam saatlerinde ortaya çıktı. Bağcılar ilçesi Mahmutbey Mahallesi Taşocağı Yolu Caddesi üzerinde bulunan bir hastane inşaatı alanında şüpheli bir araç tespit edildi.",
+      "Araç içerisinde hareketsiz duran kişinin, Büyükçekmece'deki cinayetin faili Mehmet Emin Yüksel olduğu belirlendi. Sağlık ve polis ekiplerinin yaptığı ilk incelemelerde Yüksel'in hayatını kaybettiği netleşti. Araçta yapılan arama çalışmalarında ise iki adet dokuz milimetrelik kovan ve bir adet bıçak ele geçirildi.",
+      "Olay yerinde incelemelerini tamamlayan ekipler, aracı bırakarak kaçtığı tespit edilen üç şüphelinin yakalanması için çalışma başlattı. Kaçan kişilerin kimliklerinin belirlenmesi ve yakalanması amacıyla bölgedeki güvenlik kameraları taranıyor. Soruşturma çok yönlü olarak sürdürülüyor."
+    ],
+    "comment": "Suç şebekelerinin ve faillerin kısa sürede başka olaylarla bağlantılı şekilde ölü bulunması, güvenlik güçlerinin yürüttüğü operasyonların yanı sıra yeraltı hesaplaşmalarının da boyutunu gözler önüne seriyor. Olay yerinde bulunan iki adet dokuz milimetrelik kovan ve bıçak gibi deliller, cinayetin ardındaki karanlık ilişkiler ağını aydınlatmak için kritik ipuçları barındırıyor. Ekiplerin kaçan üç şüpheliyi yakalamaması durumunda, benzer suç zincirlerinin devam etme riski bulunuyor. Bu tür olayların önlenebilmesi için sokaktaki ruhsatsız silah ve uyuşturucu denetimlerinin daha da artırılması gerekiyor.",
+    "editorNote": "Büyükçekmece'deki cinayetin faili Bağcılar'da ölü ele geçirildi; kaçan üç şüpheli aranıyor.",
+    "tags": [
+      "Büyükçekmece",
+      "Bağcılar",
+      "Cinayet",
+      "Asayiş",
+      "İstanbul"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "police crime scene forensic investigation",
+    "source": "Haber Global",
+    "sourceUrl": "https://haberglobal.com/gundem/buyukcekmecedeki-silahli-saldirinin-suphelisi-bagcilarda-olu-bulundu-549994",
+    "image": "https://i.haberglobal.com/storage/files/images/2026/10/22/buyukcekmecedeki-silahli-saldirinin-suphelisi-bagcilarda-olu-bulundu-gwpn.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T11:49:00.000Z",
+    "generatedAt": "2026-10-22T11:51:29.533Z",
+    "breaking": true
+  },
+  {
+    "id": "c1131e8ea74b5487",
+    "title": "Microsoft, Çinli hackerların yapay zeka araçlarıyla yüzlerce kurumu vurduğunu açıkladı",
+    "slug": "microsoft-cinli-hackerlarin-yapay-zeka-araclariyla-yuzlerce-kurumu-vurdugunu-aci",
+    "summary": "Microsoft, Çin destekli Storm-0940 grubunun yapay zeka araçları kullanarak dünya genelinde yüzlerce kuruluşu hedef aldığını duyurdu. Saldırılarda tedarik zinciri açıkları ve bulut erişimleri kötüye kullanıldı.",
+    "keyPoints": [
+      "Storm-0940 grubu yapay zeka destekli ARTEX aracını kullanarak sızma testleri gerçekleştirdi.",
+      "ConnectWise bulut uygulamaları üzerinden tedarik zinciri ihlalleri ve kalıcı erişimler sağlandı.",
+      "Havacılık, savunma, enerji ve kamu dahil pek çok farklı sektörden yüzlerce kuruluş etkilendi."
+    ],
+    "body": [
+      "Teknoloji devi Microsoft, Çin devlet destekli olduğu değerlendirilen Storm-0940 isimli hacker grubunun küresel çapta geniş katılımlı bir siber saldırı kampanyası düzenlediğini duyurdu. Yapay zeka destekli sızma testi aracı ARTEX üzerinden yürütülen operasyonda, dünya genelindeki yüzlerce farklı kuruluşun sistemleri hedef alındı. Yapılan incelemeler, saldırıların BT hizmet sağlayıcısı ConnectWise platformu üzerindeki açıklar nedeniyle tedarik zinciri zafiyetine dayandığını ortaya koydu.",
+      "Saldırganlar, ConnectWise Cloud Backup uygulamasının geçmişte aldığı erişim izinlerini ve kimlik doğrulama mekanizmalarını kullanarak hedef ağlara sızdı. Bu yöntem sayesinde her hedef kurum için ayrı bir kullanıcı etkileşimi gerektirmeyen oturum açma süreçleri işletildi ve yetkisiz erişimler sürdürüldü. ConnectWise yönetimi güvenlik açıklarını kapatmak ve bağlantıları kontrol altına almak için önlemler aldığını duyururken, şirket müşterilerinin de kendi sistem kayıtlarını ayrıca incelemesi gerektiği vurgulandı.",
+      "Operasyonun arka planında yer alan ARTEX aracı, ağlardaki zafiyetleri tespit etmek amacıyla tasarlanmış açık kaynaklı bir yapay zeka çerçevesi olarak biliniyor. Farklı yapay zeka modelleriyle entegre çalışan bu araç, keşif faaliyetleri ve veri dışarı aktarma gibi kritik görevleri otonom hale getiriyor. Microsoft, saldırganların bu yazılım sayesinde hedef ortamlarda hızla yüksek ayrıcalıklı ve kalıcı bulut erişimleri elde ettiğini, ilk izler temizlense bile varlıklarını koruyabildiklerini bildirdi.",
+      "Gerçekleştirilen kampanyanın hedef skalası havacılık, savunma, otomotiv, enerji, finans, kamu, medya ve yazılım gibi çok geniş bir sektörel yelpazeyi kapsadı. Düşünce kuruluşları ile kâr amacı gütmeyen organizasyonlar da saldırı listesinde yer alan diğer yapılar arasında bulundu. Çin Washington Büyükelçiliği sözcüsü ise Pekin yönetiminin her türlü siber saldırıya karşı olduğunu ve bu konunun ülkeye yönelik suçlamalar için gerekçe yapılmaması gerektiğini belirtti."
+    ],
+    "comment": "Siber saldırılarda yapay zeka destekli otonom araçların kullanılmaya başlanması, savunma hatlarının manuel tehdit modellemesinden çok daha hızlı hareket eden sistemlere karşı yetersiz kalabildiğini net bir şekilde gösteriyor. Storm-0940 grubunun ConnectWise gibi yaygın kullanılan bir tedarik zinciri bileşenini kaldıraç olarak seçmesi, tek bir yazılım bağımlılığının yüzlerce farklı sektörü aynı anda nasıl riske atabileceğini ortaya koyuyor. Özellikle havacılık, enerji ve kamu gibi kritik altyapı işletmecilerinin geleneksel kimlik doğrulama katmanlarını otonom tehditlere karşı güncellememe lüksü kalmadı; aksi takdirde benzer tedarik zinciri sızıntıları kalıcı bulut erişimlerine zemin hazırlamaya devam edecek.",
+    "editorNote": "Yapay zeka destekli ARTEX aracıyla yüzlerce kurumu hedef alan sızma girişimi, tedarik zinciri açıklarının büyüklüğünü gözler önüne seriyor.",
+    "tags": [
+      "Microsoft",
+      "ConnectWise",
+      "Siber Güvenlik",
+      "Yapay Zeka",
+      "Çin"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "data center server room",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/cinli-hackerlardan-kuresel-saldiri-yuzlerce-kurulus-hedef-alindi--211950",
+    "image": "https://www.donanimhaber.com/images/images/haber/211950/src/cinli-hackerlardan-kuresel-saldiri-yuzlerce-kurulus-hedef-alindi211950_0.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T11:47:00.000Z",
+    "generatedAt": "2026-10-22T11:50:55.096Z",
+    "breaking": true
+  },
+  {
     "id": "801960178b478518",
     "title": "Tüketici güveni 9 ayın dibinde: 4 kişilik ailenin geçimi 123 bin TL",
     "slug": "tuketici-guveni-9-ayin-dibinde-4-kisilik-ailenin-gecimi-123-bin-tl",
@@ -309,6 +378,41 @@
     "breaking": true
   },
   {
+    "id": "8cc714928d534ad1",
+    "title": "Samsun için kritik deprem uyarısı: İlkadım risk barındırıyor",
+    "slug": "samsun-icin-kritik-deprem-uyarisi-ilkadim-risk-barindiriyor",
+    "summary": "Samsun'daki yapı stokunun durumu ve olası bir afet senaryosuna hazırlık süreci masaya yatırıldı. Uzmanlar özellikle 2018 yönetmeliği öncesi inşa edilen binalara dikkat çekiyor.",
+    "keyPoints": [
+      "Samsun'da 2018 Deprem Yönetmeliği öncesi inşa edilen yapı stoku risk yaratıyor",
+      "İlkadım ilçesindeki yoğun yapılaşma olası deprem senaryolarında tehlikeyi artırıyor",
+      "Afet riskine karşı zemin etüdü ve yapı denetim süreçlerinin güçlendirilmesi şart"
+    ],
+    "body": [
+      "Şehir genelinde risklerin en aza indirilebilmesi amacıyla yapı denetim mekanizmalarının sıkılaştırılması, riskli binaların acilen tespit edilmesi ve kentsel dönüşüm süreçlerinin hızlandırılması gerektiğini belirtti. Sadece binaların üst yapısının değil, zemin özelliklerinin de birlikte ele alınmasının can kayıplarını önlemede hayati rol oynadığını dile getirdi.",
+      "Türkiye genelinde uygulanan mevzuatlara da değinen Özen, 2018 yılında yürürlüğe giren Türkiye Bina Deprem Yönetmeliği'nin dayanıklı yapılar tasarlamak amacıyla hazırlandığını hatırlattı. Daha önceki 2007 yönetmeliğinin ardından güncel ihtiyaçlar doğrultusunda yenilenen standartların, uluslararası Eurocode 7 ve Eurocode 8 normları baz alınarak geliştirildiğini ifade etti. Ancak mevcut kuralların sahadaki uygulama ve denetim aşamalarında hâlâ eksiklikler yaşandığını, kamu kurumlarının bu süreci daha sıkı denetlemesi gerektiğini vurguladı.",
+      "Geçmişte yaşanan büyük depremlerde yıkılan yapılardaki ortak sorunlara işaret eden Özen, 2000 yılından önce inşa edilen binalarda nervürsüz demir kullanımı ve düşük beton kalitesinin yıkımlarda belirleyici olduğunu söyledi. Afet güvenliğinin tek bir disiplinle sağlanamayacağını, inşaat mühendisleri, mimarlar, şehir plancıları ve diğer ilgili meslek gruplarının ortak bilimsel çalışmalar yürütmesi gerektiğini belirtti. Türkiye'deki denetim ve düzenlemelerin çoğunlukla felaketler yaşandıktan sonra gündeme gelmesinin büyük bir ihmalkârlık yarattığına dikkat çekti.",
+      "Samsun'un ilçeler bazındaki yapılaşma yoğunluğunu inceleyen Özen, özellikle İlkadım ilçesinde 2018 yönetmeliğinden önce yapılmış çok sayıda bina bulunduğunu ifade etti. Bu bölgedeki yapı yoğunluğu nedeniyle olası bir sarsıntıda risk faktörünün diğer ilçelere göre daha yüksek değerlendirildiğini belirtti. Kentteki eski yapı sayısının net olarak tespit edilmesi ve yerleşim alanlarının zemin özellikleri dikkate alınarak yeniden planlanması gerektiğinin altını çizdi."
+    ],
+    "comment": "Samsun gibi riskli bölgelerde 2018 öncesi yapı stokunun net sayısının hâlâ çıkarılamamış olması, yerel düzeydeki denetim eksikliğinin somut bir göstergesidir. İlkadım ilçesindeki yoğun yapılaşma, geçmiş depremlerde yıkıma yol açan nervürsüz demir ve düşük beton kalitesi gibi kronik sorunların burada da tekrarlanma ihtimalini artırıyor. Afet anında can kaybını önlemek adına, felaketlerin ardından harekete geçmek yerine yapı denetim süreçleri bugünden tavizsiz uygulanmalıdır.",
+    "editorNote": "Kentteki yapı stokunun büyük kısmı 2018 yönetmeliğinden öncesine dayanıyor ve uzmanlar özellikle İlkadım ilçesine dikkat çekiyor.",
+    "tags": [
+      "Samsun",
+      "deprem",
+      "İlkadım",
+      "kentsel dönüşüm",
+      "yapı denetimi"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "earthquake damaged building city",
+    "source": "Samsun Gazetesi",
+    "sourceUrl": "https://www.samsungazetesi.com/samsunda-deprem-gercegi-2018-oncesi-binalara-dikkat",
+    "image": "https://samsungazetesicom.teimg.com/crop/1280x720/samsungazetesi-com/uploads/2026/10/samsunda-deprem-gercegi-2018-oncesi-binalara-dikkat-65.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T11:32:57.000Z",
+    "generatedAt": "2026-10-22T11:51:06.008Z",
+    "breaking": true
+  },
+  {
     "id": "fe5485d8524ab625",
     "title": "ABD Başkanı Donald Trump, İran yönetiminin kesinlikle devrileceğini açıkladı",
     "slug": "abd-baskani-donald-trump-iran-yonetiminin-kesinlikle-devrilecegini-acikladi",
@@ -553,6 +657,42 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Gates_of_Camp_Hill_prison_(disused),_Isle_of_Wight,_England.jpg"
       }
     ],
+    "breaking": true
+  },
+  {
+    "id": "1f087bf6b1331ac6",
+    "title": "AFAD, Marmara Bölgesi'ni kapsayan deprem tatbikatını tamamladı",
+    "slug": "afad-marmara-bolgesini-kapsayan-deprem-tatbikatini-tamamladi",
+    "summary": "Afet ve Acil Durum Yönetimi Başkanlığı, Marmara Bölgesi'ndeki yedi ili kapsayan kapsamlı bir masabaşı deprem tatbikatı gerçekleştirdi. Senaryo doğrultusunda bin 258 olay sürümü ve 3 bin 535 görev simüle edildi.",
+    "keyPoints": [
+      "Tatbikat İstanbul, Kocaeli, Bursa, Sakarya, Yalova, Tekirdağ ve Bilecik illerini kapsadı.",
+      "Senaryo gereği Adalar merkezli deprem sonrası 25 afet grubu görev aldı.",
+      "Rize, Muş, Konya, Artvin ve Mersin'den personel ile ekipman sevkiyatı yapıldı."
+    ],
+    "body": [
+      "Afet ve Acil Durum Yönetimi Başkanlığı koordinesinde Marmara Bölgesi'nde yer alan yedi ili kapsayan ulusal düzeyde bir deprem tatbikatı icra edildi. İlgili kurumların katılımıyla gerçekleştirilen organizasyon, yetkililerin açılış ve değerlendirme konuşmalarıyla start aldı.",
+      "AFAD Başkanı Ali Hamza Pehlivan'ın merkez ofisten video konferans aracılığıyla yönettiği 2026 yılı Ulusal Düzey Masabaşı Deprem Tatbikatı'na, bölge valileri, kaymakamlar, yerel yönetim temsilcileri ve Türkiye Afet Müdahale Planı birimleri katılım gösterdi.",
+      "Kurgulanan senaryo gereği Adalar merkezli sarsıntının İstanbul ve çevresindeki illeri etkilediği varsayıldı. Bu doğrultuda farklı bölgelerdeki il müdürlüklerinden takviye personel, araç ve teknik donanım sevkıyatı planlandı.",
+      "TAMP çerçevesinde oluşturulan senaryoda, olası bir afet sonrasında yerine getirilmesi planlanan bin 258 olay sürümü ve 3 bin 535 görev 25 farklı afet grubu tarafından simüle edilerek test edildi.",
+      "Kurum tarafından paylaşılan verilere göre, yıl sonuna kadar bir ulusal, altı bölge ve 60 yerel düzey olmak üzere toplam 67 tatbikatın tamamlanması hedefleniyor. Gerçekleştirilen bu çalışmalarla acil durum müdahale süreçlerinin test edilmesi ve eksikliklerin giderilmesi amaçlanıyor."
+    ],
+    "comment": "Afet yönetim planlarının kâğıt üzerinde kalmaması için gerçeğe yakın senaryolarla test edilmesi, olası kriz anlarında kaybedilecek saniyeleri en aza indiren en kritik unsurdur. İstanbul ve çevre illeri kapsayan bu geniş çaplı simülasyon, binlerce görevin aynı anda koordine edilmesini zorunlu kılan karmaşık bir yapının provası niteliğindedir. Türkiye Afet Müdahale Planı çerçevesinde görev yapan kurumların bilgi paylaşımı ve esneklik kabiliyeti, gerçek bir afet anında sahadaki kaosu önlemek için doğrudan bu provalardaki başarılara dayanır. Önceki yıllarda yapılan daha dar kapsamlı provalarla kıyaslandığında, yedi ili ve beş farklı ilden yapılan sevkiyatları aynı anda yönetmek kurumlar arası entegrasyonun geldiği noktayı gösterir.",
+    "editorNote": "Marmara'daki yedi ili kapsayan simülasyonda binlerce görev test edildi.",
+    "tags": [
+      "AFAD",
+      "Deprem Tatbikatı",
+      "Marmara",
+      "İstanbul",
+      "TAMP"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "earthquake damaged building",
+    "source": "Canlı Gaste",
+    "sourceUrl": "https://www.canligaste.com/afad-dan-istanbul-un-da-dahil-oldugu-marmara-da-ulusal-deprem-tatbikati/932969/",
+    "image": "https://www.canligaste.com/haber-gorsel/2026/10/uluslararasi-islam-birligi-konferansi-istanbul-da-duzenlenecek-932983.webp",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T11:27:43.000Z",
+    "generatedAt": "2026-10-22T11:51:18.054Z",
     "breaking": true
   },
   {
