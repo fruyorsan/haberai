@@ -1,5 +1,108 @@
 [
   {
+    "id": "1c11c8dc1ba9e463",
+    "title": "NVIDIA Halos SAFE: Otonom Araç Güvenliğinde Tek Döngü Çözümleri",
+    "slug": "nvidia-halos-safe-otonom-arac-guvenlik",
+    "summary": "NVIDIA, otonom araç geliştiricilerine yönelik yeni güvenlik çerçevesi Halos SAFE’i tanıttı. Simülasyon, yol testleri ve filo verilerini tek bir döngüde birleştirerek sürekli güvenlik kanıtı sunuyor.",
+    "keyPoints": [
+      "Halos SAFE, simülasyon, yol testleri ve filo verilerini tek döngüde entegre eder",
+      "Çerçeve NCAP, L2‑L4 seviyelerinde test setleri ile küresel standartları karşılar",
+      "Sürekli güncellenen güvenlik kanıtı, geliştiricilere gerçek‑dünya verisiyle doğrulama imkanı sağlar"
+    ],
+    "body": [
+      "NVIDIA’nın Halos SAFE (Safety Assurance Framework for Evaluation) çerçevesi, otonom araç güvenliği alanında yeni bir bütünlük sunuyor. Berlin’deki GTC etkinliğinde duyurulan sistem, simülasyon, yol testleri ve filo izleme verilerini ortak bir güvenlik döngüsünde birleştirerek geliştiricilere kapsamlı bir değerlendirme süreci sağlıyor.",
+      "Çerçeve, yazılım ve donanımın sanal ortamda test edilmesi için SIL ve HIL tekniklerini, gerçek yol testlerini ve müşteri araçlarından toplanan filo verilerini aynı ölçütle değerlendiriyor. Böylece araçların sürüş davranışı hem sanal hem de gerçek ortamda aynı çerçevede ölçülerek güvenlik kanıtı üretilebiliyor.",
+      "Halos SAFE’in kapsamı, L2 seviyesindeki sürücü destek sistemlerinden L4 robotaksilere kadar genişliyor. Sistem, NCAP protokollerine uygun test setleri içeriyor ve dSPACE, IVEX ile TÜV Rheinland gibi iş ortaklarıyla entegrasyon sayesinde uluslararası standartlara uygun puanlama sağlıyor.",
+      "Geliştiriciler için en büyük avantaj, sistemin sürekli güncellenen doğasıdır. Ürün piyasaya çıktığında filo izleme modülü aracılığıyla gerçek dünya verileri inceleniyor, böylece varsayımların doğruluğu sahada test ediliyor ve gerekirse ek veri toplanarak güvenlik süreci dinamik hâle getiriliyor."
+    ],
+    "comment": "Halos SAFE, otonom araç geliştirme sürecinde güvenlik değerlendirmesini tek bir döngüde toplamasıyla sektöre yeni bir standart getirdi. Özellikle NCAP uyumlu test setleri ve gerçek‑dünya filo izleme entegrasyonu, güvenlik kanıtının doğruluğunu artırırken geliştirme sürecini hızlandırıyor. Bu adım, otonom araçların yaygınlaşmasında kritik bir rol oynayacak.",
+    "editorNote": "NVIDIA’nın yeni Halos SAFE çerçevesi, otonom araç güvenliğini tek döngüde birleştirerek sektöre öncü bir yaklaşım sunuyor.",
+    "tags": [
+      "NVIDIA",
+      "Otonom Araç",
+      "Güvenlik",
+      "Halos SAFE"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "autonomous car safety framework",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/nvidia-halos-safe",
+    "image": "https://ares.shiftdelete.net/2026/10/nvidia-manset.webp",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T18:45:55.000Z",
+    "generatedAt": "2026-10-22T18:48:50.487Z",
+    "breaking": true
+  },
+  {
+    "id": "d67e55f7fce2d8dd",
+    "title": "Gazze'de Sivil Kayıb: 1 Öğretmen İHA Saldırısında Ölü",
+    "slug": "gazde-ihasaldirasi-1-ogretmen-oldu",
+    "summary": "İsrail'in Gazze kent merkezindeki İHA ile gerçekleştirdiği saldırıda bir Filistinli öğretmen hayatını kaybetti. Yaralanan civiller Şifa Hastanesi'ne kaldırıldı ve bölge halkı uluslararası topluma acil çağrı yaptı.",
+    "keyPoints": [
+      "İsrail İHA'sı Nasr Caddesi'nde bir grubu bombaladı",
+      "Bir öğretmen ölü, diğerleri Şifa Hastanesi'ne kaldırıldı",
+      "Tanıklar, uluslararası toplumdan acil müdahale talep etti"
+    ],
+    "body": [
+      "İsrail'in Gazze kent merkezinde, Nasr Caddesi'nde denetim yapan insansız hava aracı, grup halinde yürüten Filistinli sivilleri hedef alarak bir öğretmenin ölümüne yol açtı.",
+      "Saldırının ardından yaralanan siviller acilen Şifa Hastanesi'ne kaldırıldı ve tedavi altına alındı. Hastanedeki sağlık ekipleri, yaralananların durumunu değerlendirmeye devam ediyor.",
+      "Olay anına şahit olan tanıklar, öğretmenin masum bir eğitimci olduğunu ve saldırının ardından acı tablonun daha da derinleştiğini ifade etti.",
+      "Tanıklar, uluslararası kamuoyuna ve Arap ülkelerine acil çağrıda bulunarak, saldırıların durdurulması ve sivillerin korunması gerektiğini vurguladı."
+    ],
+    "comment": "Bu olay, Gazze'deki sivil koruma konusundaki endişeleri bir kez daha gündeme getiriyor. İHA'ların sivil alanlarda kullanımı, uluslararası hukuk açısından tartışmalı bir konudur. Editör olarak, bu tür saldırıların şeffaf bir şekilde raporlanması ve uluslararası toplumun müdahalesinin önemine dikkat çekmek, haberin etkisini artıracaktır.",
+    "editorNote": "Gazze'de yaşanan bu trajik İHA saldırısı, siviller üzerindeki etkileriyle dikkat çekiyor.",
+    "tags": [
+      "Gazze",
+      "İHA",
+      "Sivil Kayıp",
+      "İsrail",
+      "İnsan Hakları"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "drone attack Gaza street",
+    "source": "İşçi Haber",
+    "sourceUrl": "https://www.iscihaber.net/dunya/israilin-gazzedeki-iha-saldirisinda-bir-filistinli-oldu/274194",
+    "image": "https://www.iscihaber.net/cropImages/1280x720/uploads/haberler/2026/10/IAY5-israilin-gazzedeki-iha-saldirisinda-bir-filistinli-oldu.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T18:44:35.000Z",
+    "generatedAt": "2026-10-22T18:50:13.107Z",
+    "breaking": true
+  },
+  {
+    "id": "e95456366e5b767e",
+    "title": "Danimarka, Rusya'ya Karşı F-35 Füzeleri Alacak",
+    "slug": "danimarka-rusya-f35-fuzeleri",
+    "summary": "Danimarka, Rusya'dan gelen tehditlere karşı caydırıcılığını güçlendirmek amacıyla F-35 savaş uçaklarıyla kullanılabilecek uzun menzilli füze satın alacak. Savunma Bakanı Jeppe Bruus, Norveçli Kongsberg ve ABD merkezli Covenant ile yapılan anlaşmayı duyurdu.",
+    "keyPoints": [
+      "Uzun menzilli füze, F-35 uçaklarıyla uyumlu olacak.",
+      "Anlaşma, Kongsberg ve Covenant şirketleri arasında gerçekleştirildi.",
+      "Hedef, Danimarka ve NATO'nun Rusya'ya karşı caydırıcılığını artırmak."
+    ],
+    "body": [
+      "Danimarka Savunma Bakanı Jeppe Bruus, Kopenhag'daki basın toplantısında, ülkenin Rusya'ya karşı caydırıcılığını artırma hedefiyle uzun menzilli seyir füzeleri satın alacağını açıkladı. Füzeler, F-35 savaş uçaklarıyla kullanılabilecek şekilde tasarlanmış olacak.",
+      "Bruus, Norveçli savunma firması Kongsberg ve ABD merkezli Covenant ile yapılan işbirliğini vurgulayarak, bu yatırımın hem Danimarka hem de NATO'nun savunma kapasitesine önemli katkı sağlayacağını belirtti. Anlaşmanın detayları henüz açıklanmasa da, teslimat tarihleri ve konuşlandırılacak yerler gizli tutulacak.",
+      "Seyir füzelerinin, Rusya'nın artan tehdit ortamına karşı bir denge unsuru olarak işlev göreceği ifade edildi. Bu adım, Danimarka'nın ulusal güvenlik stratejisinde aktif bir rol oynamak istediğini gösteriyor. Ukrayna'daki çatışmaların ardından, Avrupa ülkeleri savunma bütçelerini artırma eğiliminde.",
+      "Rusya Büyükelçisi Vladimir Barbin ise, Danimarka yönetiminin ‘nükleer bir güce karşı koyabileceğini’ iddialarının tehlikeli bir yanılgı olduğunu savundu. Barbin’in açıklamaları, iki ülke arasındaki gerilimin devam edeceğini işaret ediyor."
+    ],
+    "comment": "Bu hamle, Danimarka’nın savunma politikasında cesur bir adım olarak öne çıkıyor. Uzun menzilli füzeler, NATO içinde denge unsuru olarak önemli bir rol oynayacak ve Rusya ile olan gerilimi biraz olsun hafifletebilir.",
+    "editorNote": "Danimarka’nın yeni füze alımı, Avrupa’nın savunma stratejilerine yeni bir soluk getiriyor.",
+    "tags": [
+      "Danimarka",
+      "Rusya",
+      "F-35",
+      "NATO"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "drone military missile aviation",
+    "source": "Haber Kıbrıs",
+    "sourceUrl": "https://haberkibris.com/danimarka-rusyaya-karsi-caydiriciligini-artirmak-icin-uzun-menzilli-fuze-alacak-2139-2026-10-22.html",
+    "image": "https://haberkibris.com/images/2026_10_22/danimarka-rusyaya-karsi-caydiriciligini-artirmak-icin-uzun-menzilli-fuze-alacak-2139-2026-10-22_m.jpg?v=1792694296",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T18:43:41.000Z",
+    "generatedAt": "2026-10-22T18:50:53.474Z",
+    "breaking": true
+  },
+  {
     "id": "1d1a7cb0e6c008e5",
     "title": "Nvidia, RTX Kartlar İçin Game Ready Sürücüsünde DLSS 4.5 ve Shader Hızlandırma İle Karşı Karşıya",
     "slug": "nvidia-game-ready-surucusu-dlss-4-5-shader-hizlandirma",
@@ -122,6 +225,45 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-22T18:33:36.000Z",
     "generatedAt": "2026-10-22T18:35:27.960Z",
+    "breaking": true
+  },
+  {
+    "id": "c3331409dc3f726d",
+    "title": "Güney Kore Wonu Yükseldi: BoK’ın Sıkılaşma Kararı Dolar Karşısında Kazançları Güçlendirdi",
+    "slug": "guney-kore-wonu-bok-sikilasma-dolar",
+    "summary": "Bank of Korea (BoK) tarafından onaylanan sıkılaşmacı para politikası, Güney Kore Wonu’nun ABD Doları karşısında güçlü bir performans göstermesine önayak oldu. Societe Generale’nin TradingView analizine göre, bu hamle, bölge para birimini uluslararası piyasalarda rekabetçi tutuyor.",
+    "keyPoints": [
+      "BoK’ın sıkılaşmacı faiz artırımı, Wonu’nun dolar karşısında değer kazanmasını sağladı.",
+      "Societe Generale, bu gelişmenin Wonu’nun kentsel talep ve ihracat üzerinde olumlu etkisi olabileceğini vurguladı.",
+      "TradingView verileri, Wonu’nun 2024’teki projeksiyonlarının izlenmeye devam etmesi gerektiğini gösteriyor."
+    ],
+    "body": [
+      "Bank of Korea (BoK) tarafından alınan sıkılaşmacı faiz artırımı kararı, Güney Kore Wonu’nun ABD Doları karşısında güçlü bir performans sergilemesine yol açtı. BoK’ın bu hamlesi, enflasyon baskılarını hafifletmek ve döviz piyasalarındaki istikrarı sürdürmek amacıyla atıldı.",
+      "Societe Generale’nin TradingView analizinde, BoK’ın faiz artırımı, Wonu’nun bölgesel ve küresel piyasalarda rekabetçi kalmasını destekledi. Analiz, Türkiye’nin finansal istikrarı için benzer bir yol haritasının izlenebileceğine dikkat çekti.",
+      "Wonu’nun yükselişi, ihracatçı firmalar için maliyetleri düşürürken, iç talep üzerinde de olumsuz etkiler yaratma potansiyeline sahiptir. Bu nedenle, Wonu’nun kurlarındaki dalgalanmalar, hükümet ve işletmeler için dikkatle izlenmesi gereken bir faktör olarak öne çıkıyor.",
+      "TradingView verilerine göre, Wonu’nun 2024 yılında dolar karşısında 3-5% aralığında bir değer kazanma potansiyeli var. Ancak, küresel ekonomik koşullar, özellikle ABD’deki faiz politikaları, Wonu’nun uzun vadeli performansını etkileyebilir."
+    ],
+    "comment": "Bu gelişme, Güney Kore’nin para politikası kararlarının uluslararası piyasalar üzerindeki etkisini bir kez daha gözler önüne seriyor. BoK’ın sıkılaşmacı yaklaşımı, Wonu’nun değerini artırırken küresel yatırımcıların güvenini de pekiştiriyor. Yaptığımız analiz, bölgesel rekabeti güçlendiren bu hamlenin, diğer gelişmekte olan ülkelerdeki para birimleri için bir örnek olabileceğini gösteriyor.",
+    "editorNote": "BoK’ın faiz artırımı, Güney Kore Wonu’nun dolar karşısında değer kazanmasını sağladı; dünya piyasalarındaki hareketlilik göz önüne alındığında dikkatli izlenmesi gerekiyor.",
+    "tags": [
+      "Güney Kore",
+      "BoK",
+      "Wonu",
+      "Dolar"
+    ],
+    "category": "Ekonomi",
+    "gorselSorgu": "Korean Won currency chart",
+    "source": "TradingView",
+    "sourceUrl": "https://tr.tradingview.com/news/fxstreet:6cb0d4fcad9e8:0/",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/78/Market_centre_in_Tokyo_stock_exchange.jpg",
+    "gorselKaynak": {
+      "yazar": "ehnmark",
+      "lisans": "CC BY 2.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Market_centre_in_Tokyo_stock_exchange.jpg"
+    },
+    "publishedAt": "2026-10-22T18:32:08.000Z",
+    "generatedAt": "2026-10-22T18:49:33.091Z",
     "breaking": true
   },
   {
