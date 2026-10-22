@@ -1,5 +1,115 @@
 [
   {
+    "id": "73cce36752c2ccf4",
+    "title": "PHP 8.5.12 güncellemesi sonrasında yeni bir güvenlik açığı iddiası",
+    "slug": "php-8-5-12-guncellemesi-sonrasinda-yeni-bir-guvenlik-acigi-iddiasi",
+    "summary": "PHP ekibinin kritik açıklar için yayımladığı 8.5.12 sürümünün ardından bir araştırmacı uzaktan kod çalıştırma yöntemi paylaştı. Yeni iddia çekirdek hatalarından ziyade oturum kayıt mantığına dayanıyor.",
+    "keyPoints": [
+      "Araştırmacı, PHP 8.5.12 çalıştıran sunucuya HTTP üzerinden eriştiğini iddia etti.",
+      "Güncelleme 21 Ekim tarihinde bellek yönetimi açıklarını kapatmak için çıkmıştı.",
+      "Siber Güvenlik Başkanlığı e-Devlet altyapısında risk olmadığını açıkladı."
+    ],
+    "body": [
+      "Web sunucularının omurgasını oluşturan PHP yazılımı, yayımlanan son güvenlik paketinin hemen ardından yeni bir tartışmayla karşı karşıya kaldı. X platformu üzerinden açıklama yapan bir güvenlik araştırmacısı, güncel sürümü kullanan bir sunucuyu dışarıdan komut göndererek ele geçirdiğini savundu. Paylaşılan kısa video kaydı, internet üzerinden HTTP protokolüyle sisteme erişilebildiğini gösterdi.",
+      "Resmi bildirimlere göre bu paketler, saldırganların şifre gerektirmeden kod çalıştırmasına yol açan bellek yönetimi açıklarını kapatıyordu. PHP Foundation, sorunun geçici çözümü bulunmadığını ve tek güvenli yolun versiyon yükseltmek olduğunu vurguladı.",
+      "Ortaya atılan yeni iddianın ise güncellemenin kapattığı bellek hatalarıyla doğrudan bir bağı bulunmuyor. Araştırmacının açıklamalarına göre yöntem, ziyaretçi oturumlarının kaydediliş biçimindeki mantık zincirine odaklanıyor. Ancak bu senaryonun çalışması için sunucu ayarlarının belirli şekillerde yapılandırılmış olması ve site kodunda açık barındırması gerekiyor.",
+      "Türkiye'de de, Cumhurbaşkanlığına bağlı Siber Güvenlik Başkanlığı konuyla ilgili adımlar atarak tarama başlattı. Kurum, kamu kurumları ve özel sektörün PHP sürümlerini hızla güncellemesi gerektiğini bildirdi. Yapılan ek açıklamada ise 69 milyonu aşkın vatandaşa hizmet veren e-Devlet Kapısı altyapısında yapılan incelemelerde herhangi bir olumsuzluğa rastlanmadığı duyuruldu.",
+      "Uzmanlar, her PHP barındıran sitenin tehlike altında olmadığını, sorunun çoğunlukla hatalı yazılan site kodlarından ve tutarsız oturum ayarlarından kaynaklandığını belirtiyor. Site yöneticilerine yapılan çağrılar değişmezken, en güncel sürüme geçmek ve dışarıdan gelen verileri süzmek en etkili tedbir olarak görülüyor."
+    ],
+    "comment": "Yazılımcılar, güvenlik güncellemelerine körü körüne güvenmek yerine kendi kod tabanlarını ve oturum yönetim mantıklarını da sıkı bir denetimden geçirmelidir. PHP 8.5.12 gibi kritik bir sürümün hemen ardından ortaya atılan bu iddia, çekirdek yazılım kadar uygulama kodunun kalitesinin de ne denli hayati olduğunu gösteriyor. E-Devlet altyapısı gibi devasa sistemlerde sorun görülmemesi sevindirici bir tablo çizerken, küçük ölçekli projeler hâlâ yanlış yapılandırma riskleriyle karşı karşıya kalabilir.",
+    "editorNote": "PHP 8.5.12 güncellemesinden hemen sonra ortaya atılan uzaktan erişim iddiası, geliştiricilerin kod yapısını yeniden gözden geçirmesini zorunlu kılıyor.",
+    "tags": [
+      "PHP",
+      "Siber Güvenlik",
+      "Yazılım",
+      "Sunucu"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "data center server room",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/php-8-5-12-guncellemesinin-ardindan-yeni-guvenlik-acigi-iddiasi",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg/1280px-Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
+    "gorselKaynak": {
+      "yazar": "Shixart1985",
+      "lisans": "CC BY 2.0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg"
+    },
+    "publishedAt": "2026-10-22T16:36:16.000Z",
+    "generatedAt": "2026-10-22T16:39:38.351Z",
+    "breaking": true
+  },
+  {
+    "id": "376f492cb50daa70",
+    "title": "Microsoft, yüzlerce kurumu vuran yapay zekâ destekli saldırıyı deşifre etti",
+    "slug": "microsoft-yuzlerce-kurumu-vuran-yapay-zeka-destekli-saldiriyi-desifre-etti",
+    "summary": "Microsoft, ARTEX çerçevesini kullanan Storm-0940 grubunun yüzlerce kuruluşu hedef aldığını duyurdu. Bulut yedekleme uygulamasındaki ihlal, siber saldırılarda otomasyonun hızını gözler önüne seriyor.",
+    "keyPoints": [
+      "Storm-0940 grubu, ARTEX yapay zekâ çerçevesiyle yüzlerce kuruluşu hedef aldı.",
+      "Bazı sızma girişimlerinde ilk hedeften bulut erişimine geçiş üç saatin altında kaldı.",
+      "ConnectWise, Cloud Backup uygulamasındaki kimlik bilgisi erişimini doğruladı."
+    ],
+    "body": [
+      "Siber güvenlik dünyasında yapay zekâ araçlarının kötü amaçlı kullanımı hız kesmeden devam ediyor. Microsoft tarafından paylaşılan son tehdit raporu, Storm-0940 adlı grubun operasyonel taktiklerini gözler önüne seriyor. Çin devletiyle bağlantılı olduğu değerlendirilen bu yapı, ARTEX adı verilen otomatik sızma testi çerçevesini kullanarak yüzlerce farklı kuruluşu markaja aldı.",
+      "Yürütülen incelemelerde, saldırganların otomasyon gücü sayesinde kısa süre içinde birden fazla güvenlik katmanını test edebildiği anlaşıldı. Rapora göre bazı olaylarda ilk hedefleme aşamasından ayrıcalıklı bulut erişiminin elde edilmesine kadar geçen süre üç saatin altında gerçekleşti. Bu durum, savunma ekiplerinin müdahale penceresini oldukça daraltarak risk seviyesini üst noktalara taşıyor.",
+      "Saldırganlar, müşteri sistemlerinde halihazırda yetki verilmiş eski uygulamalar üzerinden ilerleyerek her defasında yeni bir oturum açma zorunluluğunu ortadan kaldırdı. Bununla birlikte, hedef alınan her ortamda verilerin mutlaka okunduğu ya da dışarı çıkarıldığı anlamına gelmediği, net bir durum tespiti için derinlemesine incelemeler yapılması gerektiği vurgulanıyor.",
+      "Olayın merkezindeki tedarik zinciri bileşeni olan ConnectWise, 22 Ekim tarihinde yaptığı güncellemeyle Cloud Backup sistemlerinde yetkisiz erişim bulgularını doğruladı. Bağımsız uzmanlar eşliğinde güvenlik denetimlerini sürdüren şirket, hizmetleri kademeli olarak ayağa kaldırıyor. Mevcut arşivlerin şifreli ve yalıtılmış durumda korunduğu, henüz bir sızıntı işareti görülmediği de paylaşılan detaylar arasında yer alıyor."
+    ],
+    "comment": "Otomasyon tabanlı sızma test araçlarının operasyonel hızı, geleneksel savunma mekanizmalarının yetersiz kalabileceği yeni bir döneme işaret ediyor. Üç saatin altındaki sızma süreleri, şirketlerin güvenlik süreçlerini insan müdahalesine gerek kalmadan anlık olarak devreye sokmasını zorunlu kılıyor. Bilişim altyapısını yöneten IT ekipleri ve bulut sağlayıcıları için bu tablo, oturum izinlerinin ve eski uygulama kimliklerinin periyodik olarak taranmasını geciktirilemez bir kural haline getiriyor.",
+    "editorNote": "Üç saatin altında bulut erişimi sağlayan otomatik sızma araçları, siber savunmada refleks süresini tamamen değiştiriyor.",
+    "tags": [
+      "Microsoft",
+      "ConnectWise",
+      "Siber Güvenlik",
+      "Yapay Zeka",
+      "Bulut Bilişim"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "data center server room",
+    "source": "Teknoblog",
+    "sourceUrl": "https://www.teknoblog.com/connectwise-artex-saldirisi-microsoft/",
+    "image": "https://img.poweredcache.net/www.teknoblog.com/wp-content/uploads/2026/10/microduck-kickabout-scaled.jpg?rs=fit&w=768&h=433&ssl=1&format=webp",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T16:35:53.000Z",
+    "generatedAt": "2026-10-22T16:37:49.309Z",
+    "breaking": true
+  },
+  {
+    "id": "bf45307c574e8bbb",
+    "title": "Suudi uçakları Taiz'de okulları ve sivil yerleşimleri vurdu",
+    "slug": "suudi-ucaklari-taizde-okullari-ve-sivil-yerlesimleri-vurdu",
+    "summary": "Suudi rejimi destekli savaş uçakları Yemen'in Taiz kentinde sivillerin barındığı okulları ve yerleşim bölgelerini hedef aldı. Saldırılarda kadın ve çocuklar yaşamını yitirirken, insan hakları kurumları yaşananları savaş suçu olarak nitelendirdi.",
+    "keyPoints": [
+      "Ceyl el-Cedid Okulu son 24 saat içinde iki kez hava saldırısına uğradı.",
+      "El-Maafir ilçesindeki saldırılarda dört kişi ağır yaralandı, bir sivil hayatını kaybetti.",
+      "Taiz'deki insan hakları ofisi saldırıların uluslararası hukuku ihlal ettiğini belirtti."
+    ],
+    "body": [
+      "Yemen'in güneybatısındaki Taiz kentinde askeri hareketlilik sürerken, Suudi rejimi destekli güçlerle Sanaa hükümetine bağlı birlikler arasında çatışmalar yaşanıyor. Bölgedeki cephe hatlarında altı saatten uzun süren çatışmaların yanı sıra sivil yerleşimler de ağır bombardıman altında kalıyor. Suudi savaş uçakları ve topçu birlikleri, sivillerin sığındığı noktaları ve stratejik geçiş yollarını doğrudan hedef alıyor.",
+      "Saldırıların ana hedefi olan Ceyl el-Cedid Okulu, Ensarullah kontrolündeki bölgelerden kaçarak Taiz'e sığınan sivillere barınak sağlıyordu. Okul binası iki ayrı hava saldırısıyla vurulurken, eğitim faaliyetleri tamamen durdu ve binanın bir kısmı yıkıldı. Ulusal İnsan Hakları Komisyonu, okulda öğrencilerin bulunduğu sırada yapılan bombardımanın kasıtlı olarak gerçekleştirildiğini bildirdi.",
+      "Bölgedeki insan hakları otoriteleri tarafından paylaşılan son verilere göre, El-Maafir ve Taizziye ilçelerinde sivil kayıplar artıyor. Neşme bölgesinde düzenlenen dört hava saldırısında bir sivil hayatını kaybederken, üçü çocuk ve biri kadın olmak üzere dört kişi ağır yaralandı. Hudran bölgesine yönelen topçu ateşi ise iki kadının ölümüne ve dört kişinin yaralanmasına yol açtı.",
+      "Şemayiteyn ve Misrah ilçeleri de hava operasyonlarından nasibini alırken, Câre bölgesindeki çiftliklerde bulunan çok sayıda hayvan telef oldu. Saada kentinin doğu kesimine de füze saldırısı düzenlendiği bildirildi. Taiz'deki Ulusal İnsan Hakları Otoritesi, sivil kurumların ve çocukların hedef alınmasının Cenevre Sözleşmeleri'ne aykırı olduğunu vurgulayarak Birleşmiş Milletler'i ve uluslararası örgütleri göreve çağırdı."
+    ],
+    "comment": "Sivil altyapının ve okulların doğrudan hedef alınması, bölgedeki insani krizin derinleştiğini ve çatışma hukukunun tamamen devre dışı bırakıldığını gösteriyor. Son 24 saat içinde aynı okulun iki kez vurulması, can kayıplarının artmasına ve temel insan haklarının ihlal edilmesine zemin hazırlıyor. Uluslararası kurumların sessiz kalması durumunda, sivil halk üzerindeki baskı daha da katlanacak ve bölgedeki yerinden edilme dalgası büyüyecektir.",
+    "editorNote": "Yemen'in Taiz kentinde sığınmacıların kaldığı okulun vurulması büyük bir insani krize yol açarken, hak örgütleri olayları savaş suçu ilan etti.",
+    "tags": [
+      "Yemen",
+      "Taiz",
+      "Suudi Arabistan",
+      "Ensarullah",
+      "Savaş Suçu"
+    ],
+    "category": "Dünya",
+    "gorselSorgu": "Yemen Taiz destroyed buildings school",
+    "source": "Yakın Doğu Haber",
+    "sourceUrl": "https://ydh.com.tr/d/46265/suudiler-taiz-de-ensarullah-karsitlarini-vurdu",
+    "image": "https://ydh.com.tr/resimler/icerikler/yemen-suudi-saldirisi-20261003-163921-dca397.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T16:34:48.000Z",
+    "generatedAt": "2026-10-22T16:40:26.364Z",
+    "breaking": true
+  },
+  {
     "id": "a4b9f517da4b82b8",
     "title": "Skydance hisseleri, Musk'ın milyar dolarlık yatırımıyla geriledi",
     "slug": "skydance-hisseleri-muskin-milyar-dolarlik-yatirimiyla-geriledi",
@@ -633,26 +743,28 @@
   },
   {
     "id": "b065a0df950d2595",
-    "title": "Malatya'da 7 büyüklüğünde deprem meydana geldi",
-    "slug": "malatyada-7-buyuklugunde-deprem-meydana-geldi",
-    "summary": "Malatya'da yerin derinliklerinde sarsıntı kaydedildi. Bölgede hissedilen şiddetli deprem sonrasında vatandaşlar panik yaşadı.",
+    "title": "Malatya'da meydana gelen 7 büyüklüğündeki deprem paniğe yol açtı",
+    "slug": "malatyada-meydana-gelen-7-buyuklugundeki-deprem-panige-yol-actu",
+    "summary": "Malatya'da gerçekleşen 7 büyüklüğündeki sarsıntı bölge halkında büyük bir endişe yarattı. Yaşanan bu şiddetli doğa olayı sonrasında vatandaşlar güvenli alanlara yöneldi.",
     "keyPoints": [
-      "Malatya'da 7 büyüklüğünde deprem ölçüldü",
-      "Sarsıntı geniş bir alanda hissedildi",
-      "Yetkililer durumun takibini sürdürüyor"
+      "Malatya genelinde 7 büyüklüğünde deprem kaydedildi.",
+      "Şiddetli sarsıntı kısa süreli büyük bir paniğe neden oldu.",
+      "Bölge sakinleri güvenlik amacıyla sokaklara çıktı."
     ],
     "body": [
-      "Malatya genelinde bugün şiddetli bir sarsıntı yaşandı. Alınan ilk bilgilere göre depremin büyüklüğü 7 olarak açıklandı. Bölge sakinleri bu gelişmeyle birlikte evlerini ve iş yerlerini hızla terk etti.",
-      "Yerel saatle meydana gelen deprem çevre illerden de net şekilde hissedildi. Uzmanlar sarsıntının ardından artçı hareketlerin yaşanabileceği konusunda uyarılarda bulundu. Vatandaşların hasarlı binalardan uzak durması istendi.",
-      "İlgili kurumlar sahada hasar tespit çalışmalarına başladı. İlk etapta can ve mal kaybına dair resmî makamların yapacağı açıklamalar bekleniyor. Ekipler gelen ihbarları anında değerlendiriyor.",
-      "Afet ve acil durum yönetim merkezleri koordinasyon içinde çalışmalarını yürütüyor. Vatandaşların resmi kaynaklar dışındaki açıklamalara itibar etmemesi gerektiği vurgulanıyor."
+      "Türkiye'nin deprem kuşağında yer alan bölgelerinden Malatya, şiddetli bir sarsıntıyla karşı karşıya kaldı. Gerçekleşen depremin büyüklüğü 7 olarak ölçülürken, bu durum şehir genelinde anlık bir şok etkisi yarattı. Yer kabuğunda meydana gelen bu büyük hareketlilik, geniş bir coğrafyada hissedildi.",
+      "Sarsıntının şiddetiyle birlikte evlerinde ve iş yerlerinde bulunan vatandaşlar hızla dışarıya çıktı. Sokaklarda ve parklarda toplanan kalabalıklar, artçı sarsıntı ihtimaline karşı bir süre binalara girmekten kaçındı. Yetkililer halkın güvenliğini sağlamak için sahada incelemelere başladı.",
+      "Şehir merkezinde ve çevre ilçelerde haberleşme hatlarında kısa süreli yoğunluklar yaşandı. Yerel yönetimler ve kurtarma ekipleri olası olumsuz durumlara karşı hızla organize oldu. Hasar tespit çalışmaları için ekipler ilgili adreslere sevk edildi.",
+      "Yaşanan bu büyük yer sarsıntısı, yapı stokunun dayanıklılığını ve afet anındaki hazırlık süreçlerini bir kez daha gündeme taşıdı. Uzmanlar bölgedeki hareketliliği yakından izlerken, hasarlı binalardan uzak durulması yönünde uyarılarda bulundu."
     ],
-    "comment": "Beklenmeyen afetler toplumsal hazırlığın ne kadar kritik olduğunu bir kez daha gösteriyor. Depremin ulaştığı 7 büyüklüğü, binaların dayanıklılığını test eden en net eşiktir. Şehirdeki yapı stokunun durumu acil önlem alınmasını zorunlu kılıyor. Daha önce yaşanan tecrübeler göz önüne alınmadığı takdirde risk katlanarak artacaktır.",
-    "editorNote": "Bölge genelinde hissedilen sarsıntının ardından ekipler sahada incelemelerini sürdürüyor.",
+    "comment": "Yedinci büyüklüğündeki bu ölçek, yerleşim yerlerindeki altyapıların ve binaların ne kadar dayanıklı olması gerektiğini acı bir gerçekle hatırlatıyor. Yetkililerin ve yerel yönetimlerin afet planlarını kağıt üstünde bırakmayıp sahada uygulaması hayati bir zorunluluktur. Bölgede yaşayan vatandaşların resmi kurumlar dışındaki bilgi kirliliğine itibar etmemesi gerekir. Bu tür olaylar, yapı denetim mekanizmalarının ne denli sıkı çalışması gerektiğini açıkça ortaya koyuyor.",
+    "editorNote": "Yedinci büyüklükteki sarsıntı sonrasında gözler binaların dayanıklılığına çevrildi.",
     "tags": [
       "Malatya",
       "deprem",
-      "Afet"
+      "sarsıntı",
+      "afet",
+      "kandilli"
     ],
     "category": "Gündem",
     "gorselSorgu": "earthquake damaged building",
@@ -666,7 +778,7 @@
       "sayfa": "https://commons.wikimedia.org/wiki/File:Interior_of_a_damaged_building_after_7,8_magnitude_earthquake_in_Turkiye.jpg"
     },
     "publishedAt": "2026-10-22T15:43:00.000Z",
-    "generatedAt": "2026-10-22T16:31:07.412Z",
+    "generatedAt": "2026-10-22T16:38:41.624Z",
     "gorselEk": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg/1280px-Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg",
