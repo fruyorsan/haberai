@@ -1,5 +1,112 @@
 [
   {
+    "id": "15beb9e4a9788ce3",
+    "title": "ClimaMeter analizi: İstanbul sel felaketinde yüzde 7 daha fazla yağış",
+    "slug": "climameter-analizi-istanbul-sel-felaketinde-yuzde-7-daha-fazla-yagis",
+    "summary": "Bilim insanları, İstanbul'u vuran 14 Ekim sel felaketinin ardından iklim değişikliğinin etkilerini inceledi. Yapılan analizler, benzer hava sistemlerinin geçmişe kıyasla yüzde 7 daha fazla yağış ve yüzde 9 daha kuvvetli rüzgar ürettiğini gösterdi.",
+    "keyPoints": [
+      "Benzer hava sistemleri geçmişe göre yüzde 7 daha fazla yağış üretiyor.",
+      "Şiddetli yağışlar rüzgar hızında yüzde 9 artışa yol açıyor.",
+      "Yaklaşık 14,6 milyon insan ve 558 milyar dolarlık ekonomik faaliyet risk altında."
+    ],
+    "body": [
+      "İstanbul genelinde hayatı durma noktasına getiren ve yolları göle çeviren 14 Ekim tarihindeki şiddetli sağanak yağışın bilimsel bilançosu netleşti. Aşırı hava olaylarını inceleyen ClimaMeter kuruluşu, felakete yol açan meteorolojik koşulları geçmişteki benzer olaylarla karşılaştırdı. İnsan kaynaklı iklim değişikliği ve doğal iklim hareketlerinin ortak etkisi, Türkiye'nin batısı ile kuzeybatısında etkisini artırdı.",
+      "Geçmiş dönem verileriyle günümüz koşullarını kıyaslayan uzmanlar, geniş bölgede yağış miktarının yaklaşık yüzde 7, rüzgar hızının ise yüzde 9 oranında arttığını tespit etti.",
+      "Yaşanan felaketin boyutları resmi kayıtlara da yansıdı. Kent genelinde en az 9 kişi hayatını kaybederken, 1.277 su baskını ve 15 heyelan meydana geldi. Ekipler tarafından 595 kişi güvenli bölgelere tahliye edilirken, ulaşım aksadı ve günlük yaşam büyük ölçüde sekteye uğradı.",
+      "Araştırmanın ortaya koyduğu ekonomik risk tablosu da dikkat çekti.",
+      "Fransa Ulusal Bilimsel Araştırma Merkezi'nden Dr. Davide Faranda, kentlerin drenaj sistemlerinin ısınan Akdeniz'in getireceği aşırı koşullara uygun hale getirilmesi gerektiğini vurguladı. Sheffield Üniversitesi'nden Dr. Haosu Tang ise İstanbul'un çevresinde yağışların şiddetlendiğini, ancak yerel ölçekte belirgin bir değişim görülmemesinin gelecekteki risklerin ortadan kalktığı anlamına gelmediğini belirtti."
+    ],
+    "comment": "Milyonlarca insanı barındıran büyük metropollerde altyapı kapasitesinin iklim verilerindeki yüzde 7'lik yağış artışına göre acilen yeniden tasarlanması şarttır. 558 milyar dolarlık ekonomik faaliyetin doğrudan risk altında olduğu 14,6 milyonluk nüfus, mevcut drenaj sistemlerinin yetersiz kalması durumunda her sağanakta felaket senaryosuyla yüzleşecektir. Geçmiş dönemlere kıyasla rüzgar hızının yüzde 9 yükseldiği gerçeği göz önüne alındığında, yerel yönetimlerin dere yatakları ve yoğun yapılaşma politikalarını kökten değiştirmemesi halinde benzer bilançolar kaçınılmazdır.",
+    "editorNote": "İklim analizleri, İstanbul'daki benzer hava sistemlerinin yüzde 7 daha fazla yağış ürettiğini ve milyonlarca kişiyi tehdit ettiğini ortaya koyuyor.",
+    "tags": [
+      "İstanbul sel",
+      "ClimaMeter",
+      "iklim değişikliği",
+      "yağış",
+      "meteoroloji"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "flooded street cars istanbul",
+    "source": "Haber Global",
+    "sourceUrl": "https://haberglobal.com/yazarlar/iklim-alarm-veriyor-istanbulda-tehlike-gecmedi-549933",
+    "image": "https://i.haberglobal.com/storage/files/images/2026/10/22/iklim-alarm-veriyor-istanbulda-tehlike-gecmedi-hmhi.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T08:45:00.000Z",
+    "generatedAt": "2026-10-22T08:49:01.157Z",
+    "breaking": true
+  },
+  {
+    "id": "e23469e87f5bc614",
+    "title": "Siber Güvenlik Başkanlığı, PHP2Shell Açığını Kapattı ve e-Devlet'i Güvence Altına Aldı",
+    "slug": "siber-guvenlik-baskanligi-php2shell-acigini-kapatti-edevleti-guvence-altina-aldi",
+    "summary": "Dünya çapında yaygın kullanılan PHP altyapısında tespit edilen PHP2Shell zafiyeti, T.C. Cumhurbaşkanlığı Siber Güvenlik Başkanlığı tarafından ulusal ölçekte tarandı. 69 milyonu aşkın e-Devlet kullanıcısının hizmeti kesintisiz devam ederken, kritik güncellemeler tamamlandı.",
+    "keyPoints": [
+      "PHP2Shell açığı, parolasız uzaktan komut çalıştırma riski taşıyor",
+      "e-Devlet Kapısı'nda 69 milyon kullanıcı için kontroller tamamlandı",
+      "Siber Güvenlik Başkanlığı, tüm kamu ve özel sektöre acil güncelleme talep etti"
+    ],
+    "body": [
+      "PHP, dünya genelinde milyonlarca web sitesi ve kurumsal uygulamanın temelini oluştururken, yeni tespit edilen PHP2Shell açığı kritik bir tehdit olarak belirlendi. Bu zafiyet, saldırganların kullanıcı adı ya da şifreye ihtiyaç duymadan sistemlere uzaktan komut göndererek müdahale etmesine imkan tanıyor. Açığın teknik detayları, PHP altyapısının eski sürümlerinde yer alan bir kod hatasından kaynaklanıyor.",
+      "Türkiye Cumhuriyeti Cumhurbaşkanlığı Siber Güvenlik Başkanlığı, bu riski değerlendirmek üzere ulusal çapta bir güvenlik taraması başlattı. Tarama, kamu kurumları, kritik altyapı işletmecileri ve özel sektör kuruluşlarını kapsayarak aynı anda yürütüldü. Başkanlık, tespit edilen açıkların etkisini azaltmak amacıyla acil güncelleme ve yama uygulamalarını zorunlu kıldı.",
+      "e-Devlet Kapısı, 69 milyonu aşkın vatandaşının dijital hizmetlerine erişimini sağlayan bir platform olarak öncelikli hedef oldu. Yapılan kapsamlı incelemeler sonucunda, PHP2Shell açıklarının e-Devlet altyapısında hâlâ bir risk oluşturmadığı belirlendi ve hizmetlerin kesintisiz devam ettiği duyuruldu. Platform, dağıtık mimarisi sayesinde verileri tek bir merkezde toplamak yerine kurumlar arası güvenli tünellerle aktararak ek bir koruma katmanı sağlıyor.",
+      "Siber Olaylara Müdahale Ekipleri (SOME), 7/24 izleme ve müdahale hizmeti vererek dijital kamu altyapılarını uluslararası bilgi güvenliği standartları çerçevesinde koruyor. Başkanlık, kurum ve kuruluşların mevcut PHP sürümlerini taramalarını, en son güvenlik yamalarını uygulamalarını ve artık desteklenmeyen bileşenleri sistemlerinden çıkarmalarını talep ediyor. Bu adımlar, benzer açıkların gelecekte ortaya çıkmasını önlemeyi amaçlıyor.",
+      "Kamu ve özel sektör temsilcileri, yayımlanan resmi rehber doğrultusunda acil güncellemeleri hayata geçirmeye başladı. Güncellemelerin tamamlanması, dijital hizmetlerin sürekliliğini ve vatandaşların kişisel verilerinin güvenliğini sağlamak açısından kritik bir aşama olarak değerlendiriliyor. Uzmanlar, benzer güvenlik açıklarının erken tespiti ve hızlı müdahalesinin, ülkenin dijital ekosistemine olan güveni koruyacağını vurguluyor."
+    ],
+    "comment": "Acil güncellemelerin zorunlu kılınması, PHP2Shell riskinin yaygın etkisini sınırlıyor. 69 milyon e-Devlet kullanıcısının hizmetinin sorunsuz sürmesi, alınan önlemlerin yeterliliğini gösteriyor. Geliştiriciler ve kurumlar, eski PHP sürümlerinden vazgeçerek daha güvenli altyapıya geçmeli. Önceki yıllarda benzer açıklar, sistem kesintilerine ve veri sızıntılarına yol açmıştı; bu seferki hızlı müdahale, potansiyel zararı önemli ölçüde azaltıyor.",
+    "editorNote": "PHP2Shell açığı ulusal çapta tarandı, e-Devlet hizmetleri kesintisiz devam ediyor. Güncellemeleri kaçıran kurumlar risk altında kalabilir.",
+    "tags": [
+      "PHP2Shell",
+      "Siber Güvenlik",
+      "e-Devlet",
+      "PHP Açığı",
+      "Güncelleme"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "data center server room",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/php-guvenlik-acigina-karsi-ulusal-alarm-e-devlet-ve-kamu-sistemlerinde-durum-ne",
+    "image": "https://ares.shiftdelete.net/2026/10/WhatsApp-Image-2026-10-22-at-11.41.06-scaled.webp",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T08:43:30.000Z",
+    "generatedAt": "2026-10-22T08:48:34.287Z",
+    "breaking": true
+  },
+  {
+    "id": "a2443fe0b3150d68",
+    "title": "Apple Music, marka kimliğini tamamen yenileyerek siyah beyaza geçti",
+    "slug": "apple-music-marka-kimligini-tamamen-yenileyerek-siyah-beyaza-gecti",
+    "summary": "Apple, milyonlarca aboneye sahip popüler müzik yayın servisinin marka kimliğinde köklü bir değişikliğe gitti. Şirket, uzun süredir kullanılan kırmızı ve pembe ağırlıklı tasarım dilini geride bırakarak siyah beyaz bir temaya geçiş yaptığını duyurdu.",
+    "keyPoints": [
+      "Apple Music, kırmızı-pembe tonlarından siyah beyaz bir görsel temaya geçti.",
+      "Yenilenen marka kimliği kapsamında yeni uygulama simgesi de kullanıma sunuldu.",
+      "Görsel kimlik değişimi Fred Again ve NEST Acoustics iş birliğiyle şekillendirildi."
+    ],
+    "body": [
+      "Dijital müzik pazarının en büyük aktörlerinden biri olan Apple, platformunun arayüzü ve genel kimliği üzerinde önemli bir güncelleme gerçekleştirdi. Spotify gibi dev rakiplerle rekabet eden servis, yıllardır benimsediği renk paletini tamamen değiştirme kararı aldı. Şirket kanadından yapılan duyurularla birlikte uygulamanın görsel dili sade bir çizgiye taşındı.",
+      "Yapılan bu değişiklik neticesinde, daha önce arayüze hakim olan canlı kırmızı ve pembe tonları tarihe karıştı. Bunun yerine çok daha minimalist bir yaklaşım benimsenerek siyah ve beyaz ağırlıklı bir tasarım çizgisi tercih edildi. Bu değişim yalnızca renklerle sınırlı kalmayıp uygulamanın simgesini de doğrudan etkiledi.",
+      "Yeni kimliğin oluşturulma sürecinde müzik dünyasından farklı isimlerle ortaklıklar kurulduğu da paylaşılan detaylar arasında yer alıyor. Fred Again ve NEST Acoustics iş birliğiyle ortaya çıkan özgün kompozisyonlar, yeni kimliğin fiziksel olarak şekillenmesinde rol oynadı. Dinleyiciler, güncellenen simgeyi ve yeni logoyu bundan sonraki süreçte tüm platformlarda görebilecek.",
+      "Teknoloji devinin attığı bu adım, arayüz tasarımında sadeliğe verilen önemin arttığını bir kez daha gösteriyor. Milyonlarca aktif kullanıcısı bulunan uygulamanın bu estetik hamlesi, önümüzdeki dönemde diğer platformların da benzer minimalist akımlara yönelmesine zemin hazırlayabilir."
+    ],
+    "comment": "Apple, renk tercihlerinde giderek daha minimalist ve sade bir çizgiyi benimserken kullanıcı deneyiminde de radikal tercihler yapabiliyor. Kırmızı ve pembe gibi alışılagelmiş tonların terkedilip siyah beyaz temaya geçilmesi, platformun görsel ağırlığını tamamen değiştirecektir. Özellikle yoğun görsel uyaranlara maruz kalan müzikseverler için bu sadeleşme ekranlarda daha temiz bir algı yaratırken, rakiplerin renkli arayüz tasarımlarına kıyasla farklı bir duruş sergiliyor.",
+    "editorNote": "Apple Music'in uzun süredir sadık kaldığı renk paletini terk etmesi, platformun tasarım anlayışında kökten bir döneme işaret ediyor.",
+    "tags": [
+      "Apple",
+      "Apple Music",
+      "Müzik Servisi",
+      "Tasarım",
+      "Uygulama"
+    ],
+    "category": "Mobil",
+    "gorselSorgu": "Apple Music logo app screen",
+    "source": "LOG",
+    "sourceUrl": "https://www.log.com.tr/apple-music-servisinin-marka-kimligini-yeniledi/",
+    "image": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-22_11-37-39_8ItOx.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T08:43:03.000Z",
+    "generatedAt": "2026-10-22T08:49:11.293Z",
+    "breaking": true
+  },
+  {
     "id": "9cebbb9841fb4ee5",
     "title": "Savaş malullerinin protez desteği bütçe engeline rağmen sürüyor",
     "slug": "savas-malullerinin-protez-destegi-butce-engeline-ragmen-suruyor",
@@ -364,6 +471,61 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-22T08:30:00.000Z",
     "generatedAt": "2026-10-22T08:33:48.881Z",
+    "breaking": true
+  },
+  {
+    "id": "0ea4e9bbb5da1915",
+    "title": "Düzce'de 6,5 büyüklüğünde deprem senaryosu masaya yatırıldı",
+    "slug": "duzcede-65-buyuklugunde-deprem-senaryosu-masa-yatirildi",
+    "summary": "Düzce'de gerçekleştirilen kapsamlı deprem tatbikatı, 6,5 büyüklüğündeki bir sarsıntı senaryosu üzerinden yürütüldü. Yetkililer olası afetlere karşı hazırlık seviyesini test etti.",
+    "keyPoints": [
+      "Tatbikat 6,5 büyüklüğündeki kurgusal bir deprem senaryosunu ele aldı.",
+      "Bölgedeki arama kurtarma ekipleri olası afet durumlarına karşı reflekslerini denedi.",
+      "Acil durum yönetim merkezleri koordinasyon kabiliyetlerini gözden geçirdi."
+    ],
+    "body": [
+      "Türkiye'nin aktif fay hatları üzerinde yer alan bölgelerinden biri olan Düzce'de, olası afetlere karşı hazırlıkları artırmak amacıyla yeni bir tatbikat gerçekleştirildi. Bölgenin geçmişte yaşadığı sarsıntılardan çıkarılan dersler doğrultusunda hazırlanan bu yeni çalışmada, senaryo gereği 6,5 büyüklüğünde bir deprem meydana geldiği varsayıldı. Gerçekleştirilen bu kapsamlı provada amaç, acil durum ekiplerinin kriz anındaki müdahale hızını ve aralarındaki işbirliğini en üst seviyede tutmak olarak belirlendi.",
+      "Kurgusal sarsıntının ardından ilgili tüm birimler hızla alarm durumuna geçerek belirlenen senaryo adımlarını uygulamaya koydu. Afet ve acil durum yönetim merkezlerinde toplanan kriz masası, gelen ihbarları anlık olarak değerlendirerek sahadaki ekipleri yönlendirdi. Kurtarma timleri, enkaz altındaki yaralılara ulaşma ve güvenli tahliye koridorları oluşturma konusunda hazırlanan planları harfiyen uyguladı.",
+      "Yapılan bu tür geniş katılımlı provalar, kurumlar arası koordinasyonun noksansız çalışması açısından büyük bir işlev görüyor. Gerçek bir afet anında saniyenin bile hayati önem taşıdığı gerçeğinden hareketle, ekipler saha uygulamalarında olası aksaklıkları önceden tespit etme fırsatı buluyor. Vatandaşların da bu tür tatbikatlar sayesinde afet bilincinin artırılması hedeflenirken, yerel yönetimler hazırlık çalışmalarını aralıksız sürdürüyor."
+    ],
+    "comment": "Yerel düzeyde yapılan bu tür kapsamlı senaryo provaları, kriz anında yaşanabilecek iletişim kopukluklarını önlemek adına hayati bir işlev görüyor. Geçmişte yaşanan afetlerin izlerini silmeye çalışan bir şehir için bu tarz hazırlıklar, risk yönetiminin teoriden pratiğe geçişini simgeliyor. Bölgede yaşayan vatandaşların ve yerel kurumların koordinasyon becerisi, olası bir gerçek sarsıntıda can kaybını doğrudan sınırlayacak en önemli etken konumundadır. Önceden yapılan bu provalar aksatılmadığı sürece, kriz anındaki refleks süresi her geçen gün daha da iyileşecektir.",
+    "editorNote": "Düzce'de kurgulanan 6,5 büyüklüğündeki sarsıntı senaryosu, olası bir afet anında ekiplerin reflekslerini test etti.",
+    "tags": [
+      "Düzce",
+      "deprem",
+      "tatbikat",
+      "AFAD",
+      "afet yönetimi"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "earthquake damaged building",
+    "source": "www.duzcetv.com",
+    "sourceUrl": "https://www.duzcetv.com/duzce-asayis-haberleri/261819-Duzcede-65-buyuklugunde-deprem-senaryosu",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/FEMA_-_44669_-_Earthquake_damaged_buildings_in_California.jpg/1280px-FEMA_-_44669_-_Earthquake_damaged_buildings_in_California.jpg",
+    "gorselKaynak": {
+      "yazar": "Adam Dubrowa",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:FEMA_-_44669_-_Earthquake_damaged_buildings_in_California.jpg"
+    },
+    "publishedAt": "2026-10-22T08:30:00.000Z",
+    "generatedAt": "2026-10-22T08:48:50.136Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Haiti_Earthquake_building_damage.jpg/1280px-Haiti_Earthquake_building_damage.jpg",
+        "yazar": "Photo Marco Dormino/ The United Nations United Nations Development Programme",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Haiti_Earthquake_building_damage.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Mayaguez_-_Buildings_damaged_by_earthquake_1918.jpg/1280px-Mayaguez_-_Buildings_damaged_by_earthquake_1918.jpg",
+        "yazar": "Arturo Cifuentes, photographer",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Mayaguez_-_Buildings_damaged_by_earthquake_1918.jpg"
+      }
+    ],
     "breaking": true
   },
   {
