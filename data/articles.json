@@ -1,5 +1,107 @@
 [
   {
+    "id": "962cdb6b027eab8d",
+    "title": "Capcom, 11 milyon hesabın e-posta ve IP adresinin sızdığını duyurdu",
+    "slug": "capcom-11-milyon-hesabin-e-posta-ve-ip-adresinin-sizdigini-duyurdu",
+    "summary": "Capcom ortak üyelik sistemine yönelik izinsiz erişim sonucunda milyonlarca kullanıcının e-posta ve IP verileri dışarı çıktı. Şirket kredi kartı bilgilerinin etkilenmediğini belirtirken oltalama saldırılarına karşı dikkatli olunmasını istedi.",
+    "keyPoints": [
+      "11.774.247 kayda ait e-posta ve IP adresleri dışarı çıktı.",
+      "İzinsiz erişim 19 Ekim 2026 tarihinde fark edilerek engellendi.",
+      "Toplam 196 hesabın şifresi değiştirildiği için şirket tarafından sıfırlandı."
+    ],
+    "body": [
+      "Capcom oyunlarında ve web hizmetlerinde kullanılan ortak üyelik hesabı altyapısı CAPCOM ID sistemine izinsiz bir erişim gerçekleştirildiği resmi olarak doğrulandı. Dünya genelinde milyonlarca kullanıcıyı etkileyen bu sızıntı, şirket yetkilileri tarafından Ekim ayının ortalarında fark edildi ve kısa süre içinde kamuoyuyla paylaşıldı. Yapılan incelemeler neticesinde oyuncuların kredi kartı bilgilerine ve hassas finansal verilerine herhangi bir zarar gelmediği tespit edildi.",
+      "Sisteme sızan veriler arasında özellikle hesapların e-posta adresleri, oluşturulma zamanları, son oturum açma tarihleri ve en son bağlantı kurulan IP adresleri yer alıyor. Bununla birlikte etkilenen kayıtların çok küçük bir kısmında ek olarak doğum tarihi, cinsiyet, ülke bilgisi ve takma ad gibi detayların da dışarı çıktığı belirlendi. Şirket güvenlik ekipleri şüpheli hareketleri tespit ettikten hemen sonra erişimi kesti ve ilgili resmi makamlara durumu bildirdi.",
+      "Güvenlik önlemleri kapsamında izinsiz şekilde parolası değiştirildiği saptanan 196 hesabın şifresi doğrudan sıfırlandı ve kullanıcıların güvenliği sağlandı. Yetkililer kullanıcı şifrelerinin ele geçirildiğine dair herhangi bir bulguya rastlamadıklarını vurgularken oyun erişimlerinin ve çevrim içi servislerin sorunsuz çalışmaya devam ettiğini kaydetti. Türkiye'deki kullanıcıların bu durumdan doğrudan etkilenip etkilenmediği ise henüz resmi olarak netlik kazanmadı.",
+      "Yaşanan bu sızıntı sonrasında Capcom, kullanıcıların olta atma yani kimlik avı girişimlerine karşı son derece temkinli olmasını talep ediyor. Şirket adını kullanarak gönderilebilecek sahte mesajlara ve e-postalara karşı uyarıda bulunulurken şüpheli bağlantılara tıklanmaması gerektiği hatırlatıldı. Oyuncular kendi hesap güven artırımı için şifrelerini güncelleyebilir ve destek birimleri üzerinden firmaya ulaşabilir."
+    ],
+    "comment": "Milyonlarca oyuncunun iletişim ve bağlantı verilerinin dışarı çıkması, önümüzdeki dönemde oltalama dolandırıcılığının boyut değiştireceğini gösteriyor. Özellikle e-posta ve son giriş zamanı gibi gerçek bilgilerin ele geçirilmiş olması, sahte mesajların inandırıcılığını artırarak kullanıcıları doğrudan risk altında bırakıyor. Şirketin şifrelerin güvende olduğunu açıklaması olumlu bir detay olsa da saldırının arkasındaki yöntemin henüz tam olarak aydınlatılamamış olması tedbiri elden bırakmamayı gerektiriyor.",
+    "editorNote": "Milyonlarca oyuncunun kişisel verileri dışarı çıkarken, Capcom adına gelecek sahte e-postalara karşı dikkatli olun.",
+    "tags": [
+      "Capcom",
+      "CAPCOM ID",
+      "Veri İhlali",
+      "Siber Güvenlik",
+      "Oyun"
+    ],
+    "category": "Yazılım",
+    "gorselSorgu": "data center server room",
+    "source": "Tamindir",
+    "sourceUrl": "https://www.tamindir.com/haber/capcom-veri-ihlali_112443/",
+    "image": "https://img.tamindir.com/2026/10/476815/capcom-veri-ihlali.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T19:45:29.286Z",
+    "generatedAt": "2026-10-22T19:45:40.176Z"
+  },
+  {
+    "id": "d4489f424f98283f",
+    "title": "PHP Açıkları Öngörülmeden Hedef Alındı: Saldırganlar Açıklar Yayımlanmadan 4 Gün Önce İstismar Çalıştı",
+    "slug": "php-aciklari-hack-4-gun-once",
+    "summary": "Amazon Web Services, PHP2Shell olarak adlandırılan iki kritik açığın 21 Ekim’de duyurulmasından önce, 17 Ekim’de dört gün önce saldırganlar tarafından istismar edilmeye çalışıldığını tespit etti. Saldırı girişimleri, anonimleştirilmiş IP’ler üzerinden gerçekleştirildi ve dünya çapında milyonlarca sistem hedeflendi.",
+    "keyPoints": [
+      "PHP2Shell açıkları 21 Ekim’de duyurulmadan önce, 17 Ekim’de saldırganlar tarafından hedef alındı",
+      "AWS honeypot’ları sayesinde saldırı amaçları ve anonimleştirme ağları belirlendi",
+      "Güncel yamaların uygulanması, savunmasız PHP sistemlerini korumada kritik önem taşıyor"
+    ],
+    "body": [
+      "Amazon Web Services (AWS) araştırmacıları, PHP2Shell olarak bilinen iki kritik güvenlik açığının 21 Ekim’de kamuoyuna duyurulmasından dört gün önce, 17 Ekim’de saldırganlar tarafından istismar edilmeye çalışıldığını ortaya koydu.",
+      "Araştırmacılar, saldırı yöntemlerini incelemek amacıyla özel olarak hazırladıkları honeypot ortamında, savunmasız bırakılan PHP sunucularından gelen istismar girişimlerini görsel olarak izledi. Saldırganların, anonimleştirilmiş IP’ler üzerinden hareket ettiğinin gözlemlendiği, bu IP’lerin ise Amazon’un ticari anonimleştirme ağına bağlandığı bildirildi.",
+      "Saldırıların teknik detayları ve başarı oranları hâlâ analiz altında olmakla birlikte, Cloudflare’ın verilerine göre, bu kritik açıklar üzerine yapılan istekler birkaç milyon seviyesine ulaştı. AWS Bilgi Güvenliği Direktörü CJ Moses, açıkların duyurulmadan önce keşfedilmesinin, bir tehdit aktörünün hâlâ bilgi toplama aşamasında olduğunu vurguladı.",
+      "Güncel yamaların hemen uygulanması ve sistemlerin düzenli olarak güvenlik taramasının yapılması, PHP tabanlı uygulamaların bu tür saldırılara karşı korunması için en etkili önlemler arasında yer alıyor. AWS’in bu tespiti, güvenlik uzmanlarının önceden bilgi akışı ve hızlı müdahale gerekliliğini bir kez daha gündeme getiriyor."
+    ],
+    "comment": "Bu olay, güvenlik uzmanları ve geliştiriciler için bir uyarı niteliğinde. Açıkların duyurulmasından önce bile istismar edilmeye çalışılması, sızma testlerinin ve güvenlik yamalarının öncelikli olmasını gösteriyor. AWS’in hızlı tespiti, endüstrideki koruma stratejilerini yeniden gözden geçirme ihtiyacını ortaya koyuyor.",
+    "editorNote": "PHP2Shell açığı, saldırganlar tarafından duyurulmadan önce hedef alındı. Hızlı yama uygulaması kritik.",
+    "tags": [
+      "PHP",
+      "Güvenlik Açığı",
+      "AWS",
+      "Yama"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "PHP security vulnerability",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/php-aciklari-yamalanmadan-gunler-once-saldirilar-basladi--211972",
+    "image": "https://www.donanimhaber.com/images/images/haber/211972/src/php-aciklari-yamalanmadan-gunler-once-saldirilar-basladi211972_0.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T19:43:00.000Z",
+    "generatedAt": "2026-10-22T19:46:47.827Z",
+    "breaking": true
+  },
+  {
+    "id": "bf6519b573746233",
+    "title": "Trump: LeBron James ‘tam utanç’! Özür Dilemesi Gerekiyor",
+    "slug": "trump-lebron-ozur-dilemesi-gerekiyor",
+    "summary": "ABD Başkanı Donald Trump, LeBron James’in milli marş çalınırken gösterdiği davranışları ‘vatanımıza hakaret’ olarak nitelendirdi. Trump, James’in Bayrak ve savaşçıların adını mahvettiğini iddia ederek özür dilemesini istedi. İkili daha önce de birbirini eleştirerek kamuoyunda tartışma yarattı.",
+    "keyPoints": [
+      "James, açılış maçında milli marş çalınırken golf sopası hareketi yaparak vatanseverlikten uzak durdu.",
+      "Trump, ‘Truth Social’ üzerinden James’in vatanımıza hakaret ettiğini belirterek özür dilemesini talep etti.",
+      "İki figürün birbirine yönelik eleştirileri, 2016‑2022 arası siyasi tartışmalara paralel olarak gündeme geldi."
+    ],
+    "body": [
+      "Trump, 2024'ün ilk günlerinde ‘Truth Social’ üzerinden yaptığı açıklamada, LeBron James’in New York Knicks karşısında oynadığı maçta milli marş çalınırken gesiklerini ‘vatanımıza hakaret’ olarak tanımladı. Başkan, James’in ‘kötü biri’ olduğunu vurgulayarak, ‘ayıp’ olduğuna dikkat çekti.",
+      "James’in davranışları, 2024 sezonunun açılış maçında Philadelphia 76ers formasıyla sahaya çıktığında gözlemlendi. Oyun sırasında milli marş çalınırken, oyuncu golf sopası taklit ederek ve basketbol atışlarına benzer hareketler yaparak seyirciyi şaşkına çevirdi. Bu hareket, geleneksel vatansever davranışa aykırı olarak değerlendirildi.",
+      "İki tarafın geçmişteki eleştirileri, 2016’da Colin Kaepernick’in marş çalarken dinlenmesiyle başlayan tartışmalarla paralel bir medya akışı oluşturdu. Trump’ın Kaepernick’e yönelik sert eleştirileri, LeBron James’e de uygulanarak, ikili arasında sürekli bir çekişme yaratıldı.",
+      "James henüz Trump’ın ifadesine doğrudan yanıt vermedi. Ancak, 2018'de Trump’ın James’e “asla zeki olmadığını” ifade eden açıklamaları, iki figürün medya karşıtlığına devam ettiğini gösteriyor. Bugün ise Trump, James’in “öğrenmesi gereken bir ders” olduğunu iddia ederek, atıfta bulunduğu ‘özür’ sözüyle olayın sonuna tırnağı vurdu."
+    ],
+    "comment": "Bu açıklama, spor ve siyaset arasındaki ince çizgideki çatışmayı bir kez daha gözler önüne serdi. Trump’ın direkt söylemi, hem kamuoyunda hem de spor camiasında yankı bulurken, LeBron James’in bildiği bir ‘gençlik’ imajı ile çelişiyor. Önemli olan, sporda vatanseverlik sembollerinin nasıl yorumlandığı ve medya tarafından nasıl şekillendirildiğidir.",
+    "editorNote": "Trump’ın açıklamaları, siyasi liderlerin sporcularla ilişkisini yeniden gündeme taşıdı. Spor kültürü ve vatanseverlik arasındaki ilişkiyi tartışmak için fırsat sunuyor.",
+    "tags": [
+      "Trump",
+      "LeBron James",
+      "Milli Marş",
+      "Spor Politikası"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "basketball game protest",
+    "source": "Goal.com",
+    "sourceUrl": "https://www.goal.com/tr/haber/trump-lebron-james-tam-anlamiyla-bir-utanc-kaynagi-ozur-dilemeli/bltfdf1d4a84a79989c",
+    "image": "https://assets.goal.com/images/v3/blteec0a8e20b0bb895/06.gif",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T19:39:34.000Z",
+    "generatedAt": "2026-10-22T19:47:31.887Z",
+    "breaking": true
+  },
+  {
     "id": "5c8b3c64e41954f3",
     "title": "Meta'ya gizlilik davasında 25 milyar dolar ceza verildi",
     "slug": "metaya-gizlilik-davasinda-25-milyar-dolar-ceza-verildi",
@@ -372,6 +474,40 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-22T19:18:23.174Z",
     "generatedAt": "2026-10-22T19:18:26.981Z"
+  },
+  {
+    "id": "0d95e45ccfb96160",
+    "title": "Şam ve Ankara Orman Yangınlarıyla Mücadelede Yeni İşbirliği Planlıyor",
+    "slug": "sarm-orman-yanginlari-mucadele-isbirligi",
+    "summary": "Suriye ve Türkiye, orman yangınları, mayın temizliği ve savaş kalıntılarının kaldırılması konularında ortak bir acil durum müdahale merkezini hızlandırma yolunda adım atıyor. Akabir görüşmelerde, Suriye Afet Yönetimi Bakanı Raed El‑Salih ve Ankara Büyükelçisi Nuh Yılmaz, deneyim paylaşımı ve kapasite geliştirme üzerine odaklandı.",
+    "keyPoints": [
+      "Şan ve Ankara, orman yangınlarını önleme ve müdahale kapasiteleriyle ilgili ortak operasyon merkezi kurmayı planlıyor.",
+      "Mayın ve savaş kalıntılarının temizlenmesi konusunda deneyim alışverişi ve teknik kapasite geliştirme hedefleniyor.",
+      "Kampsız Suriye vizyonu çerçevesinde, Suriyelilerin güvenli, gönüllü ve sürdürülebilir geri dönüşü için adımlar atılıyor."
+    ],
+    "body": [
+      "Şam ve Ankara, Türkiye ile Suriye arasında acil durum müdahalelerinde derinleşmiş bir işbirliği hedefiyle ilerliyor. Acil Durum ve Afet Yönetimi Bakanı Raed El‑Salih, Ankara Büyükelçisi Nuh Yılmaz ile Şam’daki merkezde görüşerek, orman yangınlarıyla mücadele, mayın temizliği ve savaş kalıntılarının kaldırılması konularında ortak bir operasyon merkezi kurma planlarını konuştu.",
+      "Görüşme, her iki tarafın da uzun vadeli deneyimlerini paylaşma ve teknik kapasite geliştirme alanında somut adımlar atma isteğini vurguladı. El‑Salih, X platformunda yaptığı açıklamada orman yangınlarını önleme stratejilerinin, sismik izleme sistemlerinin ve mayın temizleme ekipmanlarının ortak kullanımının önemine dikkat çekti.",
+      "Ayrıca, “Kampsız Suriye” vizyonu çerçevesinde Suriyelilerin gönüllü, güvenli ve sürdürülebilir geri dönüşünü sağlamak amacıyla yürütülen projeler değerlendirildi. Bu kapsamda, taşınır yangın söndürme sistemleri, eğitim programları ve risk azaltma önlemleri tartışıldı.",
+      "Sonuç olarak, Şan ve Ankara’nın ortak acil durum müdahale merkezi için gerçekleştirdiği bu görüşmeler, bölgesel istikrar ve afet yönetimi alanında yeni bir dönemin başlangıcı olarak görülüyor. El‑Salih ve Büyükelçi Yılmaz, bu işbirliğinin hem Suriye hem de Türkiye’de yaşamı ve çevreyi koruma hedeflerine önemli katkı sağlayacağını belirtti."
+    ],
+    "comment": "Bu haber, Suriye ve Türkiye’nin afet yönetiminde ortak adımlar atmasıyla bölgesel güvenliğin güçlendiğini gösteriyor. Özellikle orman yangınları ve mayın temizliği gibi zorlu konularda işbirliği, iki ülkenin kriz yönetiminde yeni bir standart kurma potansiyelini ortaya koyuyor.",
+    "editorNote": "Şan ve Ankara’nın orman yangınlarına karşı ortak bir müdahale merkezi kurma planı, bölgesel afet yönetiminde önemli bir kilometre taşıdır.",
+    "tags": [
+      "Afet Yönetimi",
+      "Orman Yangınları",
+      "Suriye",
+      "Türkiye"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "forest fire control",
+    "source": "سانا",
+    "sourceUrl": "https://sana.sy/tr/syria-and-turkey/2330103/",
+    "image": "https://cdn.sananews.sy/2026/10/Acil-Durum-Bakani-Raid-Salih-Turkiyenin-Sam-Buyukelcisi-Nuh-Yilmaz-ile-ortak-acil-durum-mudahale-merkezi-kurulmasini-gorustu.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T19:16:53.000Z",
+    "generatedAt": "2026-10-22T19:46:06.777Z",
+    "breaking": true
   },
   {
     "id": "fced867531103869",
