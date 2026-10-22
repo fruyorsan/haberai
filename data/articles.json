@@ -1,5 +1,141 @@
 [
   {
+    "id": "89e206a4029959a4",
+    "title": "ABD Baskısı mı, Teknik Sorun mu? Irak’ın İran Sınır Kapısını Kapatmasının Arkasındaki Gerçek",
+    "slug": "abd-baskisi-miz-techik-sorun-irkad-isran-sinir-kapisi",
+    "summary": "Irak yönetimi Şeyb Sınır Kapısı’nı teknik yetersizlikle kapattığını iddia ederken, haber ajansları Washington’un İran’a karşı yaptırımlarını artırmak için Bağdat’a baskı yaptığını öne sürüyor. Uzmanlar, kararın hem lojistik hem de yaptırım ağırlıklı bir tepki olduğunu belirtiyor.",
+    "keyPoints": [
+      "Irak hükümeti kapıyı altyapı eksikliğiyle kapattığını duyurdu.",
+      "Washington, İran’a yönelik ticaret kısıtlamalarını güçlendirirken Bağdat’a baskı uygulamış.",
+      "Sınır kontrolü ve para transferleri üzerindeki denetimin artması, ABD’nin yaptırım stratejisinin bir parçası."
+    ],
+    "body": [
+      "Irak’ın güneyinde yer alan Şeyb Sınır Kapısı, son zamanlarda kapatıldı. Irak yönetimi bu kararı teknik yetersizlik ve altyapı eksikliği olarak nitelendirdi. Yetkililer, kapının lojistik kapasiteyi geliştirmek amacıyla geçici olarak kapatıldığını söyledi.",
+      "Ancak, uluslararası haber ajansları ABD’nin İran’a yönelik ticaret kısıtlamalarını artırmak için Bağdat’a baskı yaptığını rapor ediyor. Washington’un, İran ile ticareti engellemek ve yaptırım kapsamındaki tarafların para ve mal akışını sınırlamak amacıyla Irak sınırlarını denetlediği iddiaları da gündemde.",
+      "Strateji uzmanları, bu kararı tek bir teknik sorun olarak görmenin yanıltıcı olduğunu belirtiyor. ABD’nin yaptırım politikaları, sınır yönetimini ve bankacılık sistemini sıkılaştırarak İran’ın ticari faaliyetlerini zorlaştırmayı hedefliyor. Böylece, kapı kapanışı hem lojistik hem de ekonomik bir tetikleyici işlevi görüyor.",
+      "Iraklı kaynaklar, sınır kapılarının yolculara açık olduğunu iddia ederken, kamyon geçişlerinde gecikmeler yaşandığını söylüyor. Siyasi kaynaklar ise Washington’un bu konuyu Başbakan Ali Zeydi’nin BM Genel Kurulu toplantıları sırasında gündeme getirdiğini bildiriyor. Sonuç olarak, ABD’nin stratejisi İran’a karşı yaptırım baskısını artırmak ve bölgesel dengeyi yeniden şekillendirmek üzerine kurulu."
+    ],
+    "comment": "Irak’ın sınır kapısını kapatması, teknik değişikliklerin ötesinde küresel yaptırım dinamiklerinin bir yansıması gibi görünmektedir. ABD’nin yaptırım ağırlıklı yaklaşımı, bölgesel ticaret akışını hem kısıtlayacak hem de İran ile ilişkileri gerginleştirecek. Bu durum, hem Irak için lojistik hem de ekonomik açıdan yeni zorluklar doğurabilir.",
+    "editorNote": "ABD’nin yaptırım baskısı ve Irak’ın teknik iddiaları arasında bir denge kurmak zor. Sınır kapısı kararının arkasındaki gerçek motivasyon hala belirsiz.",
+    "tags": [
+      "ABD",
+      "İran",
+      "Irak",
+      "Yaptırım"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "Irak border crossing closed",
+    "source": "Yakın Doğu Haber",
+    "sourceUrl": "https://ydh.com.tr/d/46250/irak-in-iran-sinir-kapisini-kapatmasinda",
+    "image": "https://ydh.com.tr/resimler/icerikler/irak-ve-i-ran-arasindaki-sinir-kapisi-20261021-025122-fbf7dd.jpg?v=1792540414",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T06:49:36.000Z",
+    "generatedAt": "2026-10-22T06:51:27.275Z",
+    "breaking": true
+  },
+  {
+    "id": "5daff3eae4ba7781",
+    "title": "İnterneti sarsan kritik PHP açığı Türkiye dahil dünyayı alarma geçirdi",
+    "slug": "interneti-sarsan-kritik-php-acigi-turkiye-dahil-dunyayi-alarma-gecirdi",
+    "summary": "İnternet sitelerinin yüzde 70'ine güç veren PHP yazılımında yapay zeka tarafından 10 üzerinden 9,2 tehlike puanına sahip iki kritik açık tespit edildi. Türkiye Siber Güvenlik Başkanlığı ulusal düzeyde önleyici tedbirler alırken, Avrupa'da birçok resmi kurum tedbir amaçlı portallarını kapattı.",
+    "keyPoints": [
+      "CVSS ölçeğinde 9,2 puan alan PHP2Shell açığı şifresiz uzaktan erişim sağlıyor.",
+      "Web sitelerinin yaklaşık yüzde 70'ini çalıştıran temel altyapı doğrudan risk altında.",
+      "Avrupa'da kamu siteleri kapatılırken Türkiye'de Siber Güvenlik Başkanlığı uyarı yayımladı."
+    ],
+    "body": [
+      "Web sitelerinin yaklaşık yüzde 70'ini ayakta tutan PHP programlama dilinde tespit edilen iki kritik güvenlik zafiyeti, küresel ölçekte acil durum ilan edilmesine yol açtı. Güvenlik çevrelerinde Kara Ekim olarak anılan kriz, açık kaynaklı içerik yönetim sistemlerinin sunucularını doğrudan hedef alma riski taşıyor. Tehlikenin boyutunun anlaşılması üzerine Amerika Birleşik Devletleri, İngiltere, Avrupa Birliği, Avustralya ve Japonya'daki siber güvenlik otoriteleri sistem yöneticilerine acil yama çağrısında bulundu.",
+      "Uluslararası CVSS ölçeğinde 10 üzerinden 9,2 seviyesinde puanlanan zafiyetler, PHP2Shell adıyla kayıtlara geçti. Avrupa Birliği Siber Güvenlik Olaylarına Müdahale Ekibi, saldırganların herhangi bir kullanıcı adı veya şifreye ihtiyaç duymadan savunmasız sunucularda uzaktan zararlı kod çalıştırabileceğini bildirdi. Bu durum kötü niyetli kişilerin siteleri tamamen ele geçirmesine, gizli verileri sızdırmasına ya da sayfaları zararlı yazılım dağıtım merkezine dönüştürmesine zemin hazırlıyor.",
+      "Kriz karşısında somut önlemler alan Almanya, Fransa, Hollanda, Belçika ve Finlandiya gibi ülkeler, kamu kurumlarına ait çok sayıda internet portalını geçici olarak erişime kapattı. Türkiye'de ise Siber Güvenlik Başkanlığı gecikmeden ulusal ölçekte bir uyarı duyurusu paylaştı. Kurum, kamu ve özel sektör altyapılarında oluşabilecek sızmaları engellemek amacıyla önleyici güvenlik tedbirlerinin devreye alındığını kaydetti.",
+      "Altyapı güvenliğindeki sarsıntının odağında WordPress, Joomla, Drupal ve Magento gibi popüler platformların temelini oluşturan PHP mimarisi yer alıyor. Sistemlerin birbirine bağlı karmaşık yapısı, yamalar uygulansa dahi zincirleme arayüzlerde zafiyet kalıntılarının sürebileceğini gösteriyor. Uzmanlar kişisel bloglardan dev e-ticaret sitelerine kadar her ölçekteki sunucu yöneticisinin yazılımlarını vakit kaybetmeden en son sürüme yükseltmesi gerektiğini vurguluyor."
+    ],
+    "comment": "Sunucu yöneticilerinin yamaları erteleme lüksü kalmadı ve güncelleme işlemleri derhal zorunlu kılınmalı. Uluslararası standartta 9,2 seviyesinde tescillenen bir zafiyet, saldırganların şifresiz biçimde uzaktan komut çalıştırmasına izin veriyorsa e-ticaret sitelerinden kamu hizmetlerine kadar tüm veri tabanları savunmasız kalır. Bu durum yalnızca sistem yöneticilerini değil, kişisel bilgileri ve şifreleri sunucularda tutulan milyonlarca son kullanıcıyı da doğrudan tehdit ediyor. Eğer kurumlar gerekli yamaları uygulamakta birkaç gün bile gecikirse, zincirleme kimlik avı saldırıları ve kitlesel veri hırsızlıkları kaçınılmaz hale gelecektir.",
+    "editorNote": "İnternetin yüzde 70'ini sırtlayan PHP yazılımında yapay zeka kritik açık yakaladı; Avrupa kurumları kepenk indirirken Türkiye'de ulusal alarm verildi.",
+    "tags": [
+      "PHP",
+      "Siber Güvenlik",
+      "Yapay Zeka",
+      "PHP2Shell",
+      "İnternet Açığı"
+    ],
+    "category": "Yazılım",
+    "gorselSorgu": "data center server room rack",
+    "source": "NTV Teknoloji",
+    "sourceUrl": "https://www.ntv.com.tr/teknoloji/galeri-dunyada-panik-buyuyor-turkiye-de-alarma-gecti-internetin-kara-ekimiyle-ilgili-neler-biliniyor-1747438",
+    "image": "https://images.ntv.com.tr/images/iStock-817486228-443167.jpg?format=webp&width=1280&height=630",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T06:49:07.000Z",
+    "generatedAt": "2026-10-22T06:50:58.176Z"
+  },
+  {
+    "id": "ff9b9815bdb6f3cf",
+    "title": "Apple, iPhone Duo'ya 2 Cihaz Sınırı Getirdi: Ödünç Alım Engellendi",
+    "slug": "apple-iphone-duo-2-cihaz-siniri",
+    "summary": "Apple, iPhone Duo’nun ön siparişlerinde bir müşteri başına iki cihaz ile sınırlama getirdi. ABD, Japonya, İspanya ve İngiltere’de uygulanacak bu kısıtlama, yüksek fiyatlarla yeniden satmaya çalışan toplu alıcıları engellemeye yönelik.",
+    "keyPoints": [
+      "Müşteri başına en fazla iki iPhone Duo satışı",
+      "Kısıtlama ABD, Japonya, İspanya ve İngiltere’de geçerli",
+      "Toplu alım yapanların çoklu hesaplarla sınırı aşma girişimleri kontrol ediliyor"
+    ],
+    "body": [
+      "Apple, iPhone Duo’nun talebinin olağanüstü olduğunu açıklamıştı. Ön sipariş döneminin başında, kullanıcılar iki cihazdan fazla sipariş edebildiğini bildirmiş olsa da, şirket yeni kuralı uygulamaya koydu.",
+      "Yeni düzenleme, Apple Store üzerinden yapılan satın alımlarda ödeme aşamasından önce uyarı veriyor: \"Müşteri başına en fazla iki iPhone Duo satın alınabilir.\" Bu sınır, farklı konfigürasyonlar için de geçerli.",
+      "Reddit topluluğunda paylaşımlara göre, 16 Ekim’te başlayan ön sipariş sürecinde bazı kullanıcılar iki cihazdan fazla sipariş edebilmişti. Şirket, birden fazla hesap ve kredi kartı kullanarak sınırı aşma girişimlerini henüz net açıklaması yapmadı.",
+      "iPhone Duo’nun teslimat tarihleri 2027’ye sarkmış olsa da, bazı Apple Store’larda 22 Ocak teslimat tarihi gösteriliyor. Kullanıcılar, sipariş yoğunluğuna bağlı olarak bu takvimde değişiklik yaşayabilir."
+    ],
+    "comment": "Apple’ın bu kararının, platformun sürdürülebilirliğini korurken aynı zamanda lüks tüketim kültürünü yumuşatması bekleniyor. Yüksek fiyatlı cihazların yeniden satışı, hem tüketicileri hem de rekabet ortamını olumsuz etkileyebiliyor. Şirketin sıkı kontrol mekanizmaları, gelecekte benzer modeller için kural koyma stratejisini pekiştiriyor.",
+    "editorNote": "İki cihazlık limit, toplu alım yapanları önlemek için alındı. Apple'ın beklenmedik bu adımı, tüketici davranışlarını yeniden şekillendirebilir.",
+    "tags": [
+      "Apple",
+      "iPhone Duo",
+      "Satın Alma Sınırı",
+      "Teknoloji Haberleri"
+    ],
+    "category": "Donanım",
+    "gorselSorgu": "iPhone Duo store screenshot",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/apple-iphone-duo-siparislerine-iki-adet-siniri-getirdi--211931",
+    "image": "https://www.donanimhaber.com/images/images/haber/211931/src/apple-iphone-duo-siparislerine-iki-adet-siniri-getirdi211931_1.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T06:47:15.000Z",
+    "generatedAt": "2026-10-22T06:52:12.918Z",
+    "breaking": true
+  },
+  {
+    "id": "8d1e23d4a35e2e7c",
+    "title": "Doğu Akdeniz’de 12 Milek Hâl: Yunanistan’ın Yeni Hamlesi",
+    "slug": "dogu-akdeniz-12-milek-halim-yunanistanin-yeni-hamlesi",
+    "summary": "Yunanistan 12 milkoyu gündeme taşıyarak bölgedeki ittifakları yeniden şekillendiriyor.",
+    "keyPoints": [
+      "Bingazi’nin onayı, Türkiye- Libya ilişkilerini güçlendirip Mısır‑Yunanistan‑İsrail dengelerini zorlıyor.",
+      "Yunanistan 12 milkoyu yeniden gündeme getirerek Atina‑Kahire‑Tel Aviv hattını yeniden tarif ediyor.",
+      "Mısır, anlaşmayı geçersiz sayıp kendi kıta sahanlığı haklarını savunurken, iki ülke askeri tatbikatlarla ilişkilerini derinleştiriyor."
+    ],
+    "body": [
+      "Bingazi’deki Libya Temsilciler Meclisi’nin 20 Ekim’de onayladığı deniz yetki alanları mutabakatı, Türkiye’nin Libya ile 2019’da yapılan anlaşmayı güçlendirdi. Bu karar, Doğu Akdeniz’de yıllardır sürüyen deniz yetki alanı rekabetini yeniden ateşledi ve Mısır, Yunanistan ile İsrail’in diplomatik tepkilerine yol açtı.",
+      "Yunanistan, Atina’nın 12 milkoyu gündeme taşımasıyla sahil çizgilerini genişletme planlarını duyurdu. Girit’in güney ve batısında 12 milkoyu yeniden gündeme getirmek, Ankara’nın Libya ile işbirliğini zayıflatabilirken bölgedeki eski ittifak yapılarını yeniden şekillendirebilir.",
+      "Mısır Dışişleri Bakanlığı, anlaşmanın geçersiz olduğunu savunarak, Türkiye’nin kendi münhasır ekonomik bölge ve kıta sahanlığı haklarını ihlal ettiğini belirtti. Ancak, Kahire ve Ankara arasında son dönemdeki askeri tatbikatlar, iki ülke arasındaki ilişkilerin derinleştiğini gösteriyor.",
+      "Yunanistan’ın açıklamaları, Yunanistan‑Mısır‑İsrail enerji ve güvenlik işbirliğini sürdürürken, Türkiye’nin Libya ile ilişkileriyle Yunanistan’ın Akdeniz’deki stratejik hedeflerini etkileyebilir. Analistler, Mısır’ın enerji merkezi konumunu koruyabilmesi için Doğu Akdeniz gazını kendi tesislerinde işleyerek Avrupa’ya taşıma stratejisini sürdürmesi gerektiğini vurguluyor."
+    ],
+    "comment": "Yunanistan’ın 12 milkoyu gündeme getirmesi, Doğu Akdeniz’deki güç dengelerinin yeniden şekillenmesine yol açabilir. Bu hamle, Türkiye’nin Libya ile kurduğu yeni işbirliğiyle birleştiğinde, bölgesel ittifaklar ciddi bir yeniden değerlendirmeye ihtiyaç duyacak.",
+    "editorNote": "Yunanistan’ın 12 milkoyu gündeme getirmesi, Doğu Akdeniz’in yeni dengelerini belirleyebilir.",
+    "tags": [
+      "Akdeniz",
+      "İstanbul",
+      "Yunanistan",
+      "İsrail"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "Mediterranean coast 12 miles",
+    "source": "Haber Global",
+    "sourceUrl": "https://haberglobal.com/yazarlar/atinada-12-mil-hesabi-dengeleri-sarsan-akdeniz-hamlesi-549903",
+    "image": "https://i.haberglobal.com/storage/files/images/2026/10/22/atinada-12-mil-hesabi-dengeleri-sarsan-akdeniz-hamlesi-zd4v.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T06:47:00.000Z",
+    "generatedAt": "2026-10-22T06:52:54.296Z",
+    "breaking": true
+  },
+  {
     "id": "b51022815054d7a2",
     "title": "Altın Fiyatları Düşüşe Devam Ediyor: Petrol ve Jeopolitik Baskılar",
     "slug": "altin-fiyatlari-dusus-baskilar",
