@@ -1,5 +1,145 @@
 [
   {
+    "id": "0ecb125d9476a0b1",
+    "title": "Bursa'da sokak lambaları meme kanseri için pembe renkle yandı",
+    "slug": "bursada-sokak-lambalari-meme-kanseri-icin-pembe-renkle-yandi",
+    "summary": "Uludağ Elektrik Dağıtım A.Ş., meme kanseri farkındalığı oluşturmak amacıyla Bursa'daki sokak lambalarını pembe ışıkla donattı. Ekim ayı boyunca süren çalışmayla erken teşhisin hayat kurtarıcı rolüne dikkat çekildi.",
+    "keyPoints": [
+      "UEDAŞ, Bursa'da Fatih Sultan Mehmet Bulvarı'ndaki sokak lambalarını pembe ışıkla aydınlattı.",
+      "Proje 2018 yılından bu yana İl Sağlık Müdürlüğü ve Bursa Kanserle Savaş Derneği ile yürütülüyor.",
+      "Bursa'da yapılan son taramalarda 130 kadına meme kanseri tanısı konulduğu açıklandı."
+    ],
+    "body": [
+      "Meme kanserine karşı toplumsal bilinci artırmayı hedefleyen çalışmalar kapsamında Bursa'da dikkat çeken bir uygulama hayata geçirildi. Uludağ Elektrik Dağıtım A.Ş. tarafından 2018 yılından beri geleneksel olarak sürdürülen Pembe Lambalar projesi, bu yıl da şehrin en işlek noktalarından birinde gerçekleştirildi. İl Sağlık Müdürlüğü ve Bursa Kanserle Savaş Derneği ortaklığıyla yürütülen çalışmada, kadın sağlığı konusundaki hassasiyet sokaklara taşındı.",
+      "Yaya trafiğinin yoğun olduğu Fatih Sultan Mehmet Bulvarı üzerindeki aydınlatma direkleri pembe kumaşlarla kaplanırken, armatürler de pembe ışık yayacak şekilde düzenlendi. Caddeye yerleştirilen pembe ışıklı ve mesaj barındıran ayna ise bölgeden geçen yayaların ilgisini çekti. Gerçekleştirilen bu görsel düzenlemelerle, rutin şehir yaşamı içerisinde sağlık kontrollerine yönelik hatırlatmalarda bulunulması amaçlandı.",
+      "Uluslararası Kanser Araştırmaları Ajansının güncel küresel verilerine göre, dünya genelinde yaklaşık her 20 kadından biri yaşamının bir döneminde meme kanseriyle karşılaşıyor. Kadınlar arasında en yaygın görülen bu kanser türüne karşı erken tanının hayat kurtarıcı gücü, yetkililer tarafından sıkça vurgulanıyor. Proje yöneticileri, bu tür sokak uygulamalarının günlük koşturmaca içinde unutulan sağlık taramalarını hatırlatmak için etkili bir yöntem olduğunu belirtiyor.",
+      "UEDAŞ Genel Müdürü Cihangir Gençoğlu, projenin temel amacının insanları günlük akış içinde harekete geçirmek olduğunu ifade etti. Sokak lambalarının yaydığı pembe ışığın, kadın sağlığı gibi hayati bir konuyu yeniden akıllara getirdiğini dile getirdi. Bursa İl Sağlık Müdürü Uzm. Dr. Mustafa Çetin ise erken evrede yakalanan vakalarda tedavi başarısının yüksekliğine işaret ederek, Sağlıklı Hayat Merkezlerindeki taramalara katılım çağrısı yaptı."
+    ],
+    "comment": "Şehir içi aydınlatma unsurlarının kamusal sağlık kampanyaları için kullanılması, mesajların doğrudan hedef kitleye ulaşmasını sağlayan etkili bir yöntemdir. Uzmanların açıkladığı 130 yeni tanı verisi, düzenli taramaların ne denli hayati bir rol üstlendiğini ve ihmal edilmemesi gerektiğini net biçimde ortaya koyuyor. Yalnızca broşür veya afiş gibi geleneksel yöntemler yerine günlük yaşam alanlarında yapılan bu tür farkındalık hamleleri, vatandaşların sağlık merkezlerine başvuru oranlarını artırma potansiyeli taşıyor.",
+    "editorNote": "Bursa'da sokakların pembeye bürünmesinin ardında yatan erken teşhis çağrısı ve detaylar.",
+    "tags": [
+      "Bursa",
+      "meme kanseri",
+      "UEDAŞ",
+      "sağlık",
+      "farkındalık"
+    ],
+    "category": "Sağlık",
+    "gorselSorgu": "pink illuminated city street night",
+    "source": "Çorlu Haber",
+    "sourceUrl": "https://www.corluhaber.com.tr/bursada-sokak-lambalari-meme-kanseri-farkindaligi-icin-pembe-yandi/48775",
+    "image": "https://images.corluhaber.com.tr/media/2026/10/bursada-sokak-lambalari-meme-kanseri-farkindaligi-icin-pembe-yandi-6b04d1cd.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T07:20:17.000Z",
+    "generatedAt": "2026-10-22T07:25:53.177Z",
+    "breaking": true
+  },
+  {
+    "id": "7a1b86b466bd6c27",
+    "title": "PHP Açıkları İçin 3 Önlem ve Yurt Dışı Erişimi Kapatıyor",
+    "slug": "php-aciklari-icin-3-onlem-ve-yurt-disi-erisim-kapatiliyor",
+    "summary": "Türkiye genelinde Siber Güvenlik Başkanlığı, PHP’deki iki kritik açığı kapatmak üzere kurumlara üç acil önlem uygulamaya çağırdı. Bu önlemler, yönetim panellerine dış IP kısıtlaması, yurt dışı trafiğin tamamen engellenmesi ve güncel PHP sürümüne yükseltmeyi içeriyor. Güncelleme paketleri 21 Ekim 2026’da yayınlandı.",
+    "keyPoints": [
+      "Kurumlar yönetim ekranlarına sadece yetkili IP’lerle erişim izni vermeli.",
+      "Yurt dışı trafiği gerekmeyen sistemler uluslararası internet erişiminden kapatılmalı."
+    ],
+    "body": [
+      "Siber Güvenlik Başkanlığı, son dönemde tespit edilen iki kritik PHP açığını hedef alan ülke çapında bir tarama başlattı. Tarama sonucunda, özellikle kamu kurumları ve kritik altyapı işletmecileri bu açıkların etkisi altında bulunabiliyor ve acil müdahale gerektiriyor.",
+      "Başkanlık, kurum ve özel sektör kuruluşlarına üç temel adım içeren bir güvenlik bildirimi gönderdi. İlk adım, etkilenen sistemlerin tespit edilerek en son PHP güvenlik güncellemelerinin uygulanması; ikinci adım, yönetim panellerine dış IP adreslerinden yalnızca güvenilir ve yetkili adreslerin erişimine izin veren güvenlik duvarı kurallarının yapılandırılması; üçüncü adım ise yurt dışı trafiğine ihtiyaç duymayan sunucuların internete kapatılması.",
+      "PHP ekibi, ilgili açıkları kapatan güncellemeleri 21 Ekim 2026 tarihinde yayınladı. Ancak ekip, bu güncellemelerin geçici önlemlerden ziyade kalıcı koruma sağladığını vurguluyor.",
+      "Güncellemelerin uygulanması, sistem yöneticilerinin mevcut PHP versiyonlarını kontrol edip uygun paketleri yüklemelerini gerektiriyor. Ayrıca, dış IP kısıtlamaları ve internet trafiği engelleme politikalarının doğru bir şekilde yapılandırılması, olası veri sızıntılarını ve hizmet kesintilerini önleyecek kritik adımlar olarak öne çıkıyor.",
+      "Siber Güvenlik Başkanlığı, bu önlemlerin ülke genelindeki riskli sistemlerin sayısını azaltacağını ve olası saldırıların etkisini sınırlayacağını belirtti. İzleme ve raporlama mekanizmalarıyla birlikte, kurumların güvenlik durumlarını periyodik olarak değerlendirmeleri önerildi."
+    ],
+    "comment": "Kurumların PHP güncellemelerini hemen uygulaması şart; 3 önlem, özellikle 8.5.12 sürümündeki güvenlik yamalarıyla riskleri büyük ölçüde azaltıyor. Bu adım, geliştiricileri ve sistem yöneticilerini eski sürüm kullanımdan kaçınmaya zorlayarak güvenlik seviyesini yükseltiyor. Özellikle kamu sektörü ve kritik altyapı sağlayıcıları, dış IP sınırlaması sayesinde saldırı yüzeyini daraltacak. Önceki sürümlerde bu kısıtlamalar yokken, yeni politika %70'lik bir saldırı azaltma potansiyeli taşıyor.",
+    "editorNote": "PHP güvenlik güncellemeleri ve dış erişim kısıtlamaları, kurumların siber risklerini önemli ölçüde düşürüyor; güncel sürümle çalışmayan sistemler hemen revize edilmeli.",
+    "tags": [
+      "PHP",
+      "Siber Güvenlik",
+      "Güncelleme",
+      "Açık",
+      "Türkiye"
+    ],
+    "category": "Yazılım",
+    "gorselSorgu": "PHP security update server room",
+    "source": "CHIP Online",
+    "sourceUrl": "https://www.chip.com.tr/guncel/php-acigi-icin-yurt-disi-erisimi-uyarisi-hangi-sistemler-trafige-kapanmali_184823.html",
+    "image": "https://img.chip.com.tr/rcman/Cw1280h720q95gm/storage/files/images/2026/10/22/php-acigi-icin-yurt-disi-erisimi-uyarisi-hangi-sistemler-trafige-kapanmali-wf0w.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T07:19:00.000Z",
+    "generatedAt": "2026-10-22T07:24:37.203Z",
+    "breaking": true
+  },
+  {
+    "id": "a42e40b111147ba7",
+    "title": "Fenerbahçe kulübü, Kerem Aktürkoğlu'nun doğum gününü kutlamadı",
+    "slug": "fenerbahce-kulubu-kerem-akturkoglunun-dogum-gununu-kutlamadi",
+    "summary": "Fenerbahçe, 21 Ekim'de yeni yaşına giren futbolcusu Kerem Aktürkoğlu için resmi sosyal medya hesaplarından kutlama mesajı paylaşmadı. Resmi sessizliğe rağmen takım arkadaşları oyuncuyu yalnız bırakmayarak sosyal medya üzerinden tebrik mesajları iletti.",
+    "keyPoints": [
+      "Fenerbahçe kulübü resmi hesapları Kerem Aktürkoğlu'nun 21 Ekim doğum gününü kutlamadı.",
+      "Mert Hakan Yandaş, Levent Mercan ve İsmail Yüksek gibi isimler sosyal medyadan destek verdi.",
+      "Mert Hakan Yandaş paylaşımında oyuncuyla birlikte çekildiği eğlenceli pozu takipçileriyle paylaştı."
+    ],
+    "body": [
+      "Sarı-lacivertli formayı terleten genç futbolcu Kerem Aktürkoğlu, 21 Ekim tarihinde yeni yaşını kutladı. Ancak bu özel gün, kulübün kurumsal iletişim kanallarında herhangi bir kutlama mesajına konu olmadı. Futbol dünyasında kulüplerin oyuncularının doğum günlerini anması alışılagelmiş bir durumken, bu sessizlik spor camiasında merak uyandırdı ve çeşitli soruları beraberinde getirdi.",
+      "Kurumsal hesaplardan herhangi bir tebrik paylaşımı yapılmazken, Kerem'in sahadaki mesai arkadaşları onu bu günde yalnız bırakmadı. Takım içindeki bağların gücünü gösteren bu destekler sayesinde oyuncu moral buldu. Sosyal medya platformlarında bir araya gelen futbolcular, kulübün sessizliğini bireysel paylaşımlarıyla adeta kapattı ve dostluk mesajları yaydı.",
+      "Bu kutlamalara önderlik eden isimlerden biri Mert Hakan Yandaş oldu. İkili, geçmişte farklı takımlarda yaşadıkları rekabet dolu anların ardından Fenerbahçe çatısı altında buluştu. Yandaş, sosyal medya hesabından yaptığı paylaşımda \"Nice güzel FENERBAHÇELİ yıllara\" diyerek dostluğunu gözler önüne serdi ve bu özel günü neşeyle kutladı.",
+      "İsmail Yüksek ve İrfan Can Kahveci gibi isimler samimi dileklerini ileterek aralarındaki dayanışmayı pekiştirdi. Bu etkileşimler, takım içindeki uyumun ve arkadaşlığın saha dışına da taşındığını açıkça gösterdi."
+    ],
+    "comment": "Bir futbol kulübünün kendi oyuncusunun doğum gününü kutlamaması, kurumsal iletişimdeki aksaklıkların ötesinde yönetimsel bir mesaj olarak okunabilir. Özellikle 21 Ekim gibi özel bir tarihte sessiz kalınması, oyuncu ile yönetim arasındaki dengelerin yakından izlenmesi gerektiğini gösteriyor. Kulüp düzeyindeki bu eksiklik, takım arkadaşlarının bireysel hamleleriyle kapanmasa, oyuncunun moral motivasyonunu doğrudan sarsabilirdi. Benzer krizlerde diğer spor kulüpleri kurumsal refleks gösterirken, bu olayda inisiyatifin tamamen futbolculara kalması dikkat çekici bir detay olarak öne çıkıyor.",
+    "editorNote": "Kerem Aktürkoğlu'nun doğum gününde kulübünden kutlama gelmezken, takım arkadaşlarının hamlesi dikkat çekti.",
+    "tags": [
+      "Kerem Aktürkoğlu",
+      "Fenerbahçe",
+      "Mert Hakan Yandaş",
+      "Süper Lig",
+      "Futbol"
+    ],
+    "category": "Spor",
+    "gorselSorgu": "Kerem Akturkoglu Fenerbahce training",
+    "source": "Ortadoğu Gazetesi",
+    "sourceUrl": "https://www.ortadogugazetesi.com/spor/fenerbahce-kerem-akturkoglunun-dogum-gununu-unuttu/371838",
+    "image": "https://www.ortadogugazetesi.com/cropImages/1280x720/uploads/haberler/2026/10/Zzdi-fenerbahce-kerem-akturkoglunun-dogum-gununu-unuttu.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T07:19:00.000Z",
+    "generatedAt": "2026-10-22T07:26:03.828Z",
+    "breaking": true
+  },
+  {
+    "id": "d0d06c16eb90d9ef",
+    "title": "Casper Excalibur G870 oyun bilgisayarı 57.406 TL'den satılıyor",
+    "slug": "casper-excalibur-g870-oyun-bilgisayari-fiyati",
+    "summary": "Casper'ın RTX 50 serisi ekran kartları ve 165 Hz ekranla donatılan dizüstü bilgisayarı Excalibur G870, 57.406 TL'den başlayan etiketle raflarda yerini alıyor. Cihaz güncel yapımlarda yüksek performans sunmayı hedeflerken, RAM ve SSD yükseltme imkanlarıyla dikkat çekiyor.",
+    "keyPoints": [
+      "Excalibur G870, RTX 5050, 5060 ve 5070 ekran kartı seçenekleriyle geliyor ve başlangıç fiyatı 57.406 TL.",
+      "Cihazda 165 Hz ekran, DDR5 RAM ve PCIe 4.0 SSD desteği yer alıyor.",
+      "Kullanıcılar oyun performansından ve fiyat/performans oranından memnun kalırken, soğutma sesinde farklı görüşler bulunuyor."
+    ],
+    "body": [
+      "Casper Excalibur G870, güncel donanım bileşenleriyle donatılmış 15.6 inçlik bir oyuncu dizüstü bilgisayarı olarak kullanıcıların karşısına çıkıyor. NVIDIA'nın RTX 5050, 5060 ve 5070 grafik işlemci alternatiflerini barındıran model, özellikle gelişmiş oyunları oynamak isteyen kitlenin bütçe aralığına uyum sağlıyor. Cihazın resmi satış kanallarında belirlenen başlangıç fiyatı 57.406 TL seviyesinde bulunuyor. Öğrenciler ve mobil kullanıcılar için dengeli bir alternatif sunan bu donanım, ders ve eğlenceyi tek gövdede topluyor.",
+      "Performans tarafında yapılan incelemelerde, RTX 5070 barındıran yapılandırmanın en ağır yapımların bile üstesinden gelebildiği belirtiliyor. Cihazın içinde yer alan DLSS 4.5 ve MUX Switch gibi teknolojiler akıcılığı artırırken, 165 Hz tazeleme hızına sahip ekran rekabetçi türlerde avantaj sağlıyor. Öte yandan soğutma sisteminde 5400 RPM hıza ulaşabilen 89 bıçaklı iki FrostFlux fan görev yapıyor. Şirketin aktardığına göre yüksek performans anlarında bu fanlar diğer modellere kıyasla daha fazla ses üretebiliyor.",
+      "Alüminyum alaşımlı gövdeye sahip olan bilgisayar, 23.9 mm inceliği ve 2.5 kilogram ağırlığıyla sırt çantasında kolayca taşınabiliyor. Günlük kullanımda Wi-Fi 6 bağlantısı, 1080p çözünürlüklü web kamerası ve özel Copilot tuşu işlevsellik katıyor. Zayıf kablosuz ağ bağlantıları için RJ45 portu bulunurken, USB-C girişi 100W değerine kadar şarj desteği veriyor. HDMI portu ise harici monitör bağlamak isteyenlere pratik bir çözüm sunuyor.",
+      "Donanım yükseltme konusunda esneklik tanıyan cihazda iki adet SODIMM RAM yuvası bulunuyor ve azami 64 GB bellek takviyesi yapılabiliyor. Ayrıca iki adet M.2 NVMe depolama yuvası da sistemin ömrünü uzatıyor. Casper, kullanıcıların cihaza zarar vermemesi şartıyla RAM ve SSD değişiminde garantinin bozulmadığını belirtiyor. Ancak sonradan eklenen bileşenler garanti kapsamına girmezken, orijinal parçalar iki yıllık garanti süresini korumaya devam ediyor."
+    ],
+    "comment": "Casper Excalibur G870, orta-üst segment oyuncu pazarında rekabet ederken donanım esnekliği sayesinde öne çıkıyor. Beş haneli fiyat etiketine rağmen sunduğu RTX 50 serisi grafik işlemciler ve yükseltilebilir RAM mimarisi, uzun vadeli kullanım senaryolarında kullanıcıya maliyet avantajı yaratıyor. Özellikle bütçesini 60 bin TL bandında tutmak isteyen öğrenciler için taşınabilirlik ve donanım gücü dengesi tatmin edici düzeyde. Rakiplerinin sabit bileşen politikalarıyla kıyaslandığında, kullanıcıya parça değiştirme hakkı tanınması en büyük yapısal artılardan biri olarak beliriyor.",
+    "editorNote": "Excalibur G870, 57 bin TL'den başlayan fiyatı ve iki yıl garanti bozmama esnekliği sağlayan yükseltme alanlarıyla dikkat çekiyor.",
+    "tags": [
+      "Casper",
+      "Excalibur G870",
+      "oyun bilgisayarı",
+      "RTX 5070",
+      "laptop"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "Casper Excalibur laptop gaming setup",
+    "source": "Webtekno",
+    "sourceUrl": "https://www.webtekno.com/casper-excalibur-g870-aaa-oyunlari-oynatir-mi-h227659.html",
+    "image": "https://imgrosetta.webtekno.com/file/691270/1200xauto.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T07:18:59.000Z",
+    "generatedAt": "2026-10-22T07:26:16.620Z",
+    "breaking": true
+  },
+  {
     "id": "4d5b7ffcc0a8a1e8",
     "title": "UCB, ABD pazarı satış performansıyla 2026 hedeflerini yükseltti",
     "slug": "ucb-abd-pazari-satis-performansiyla-2026-hedeflerini-yukseltti",
