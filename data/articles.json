@@ -1,5 +1,146 @@
 [
   {
+    "id": "1dcc07e7a035e6e5",
+    "title": "Microsoft, Windows 11 Dosya Gezgini menüsünden Copilot eylemlerini kaldırıyor",
+    "slug": "microsoft-windows-11-dosya-gezgini-menusunden-copilot-eylemlerini-kaldiriyor",
+    "summary": "Microsoft, arayüzü sadeleştirmek amacıyla Windows 11 Dosya Gezgini sağ tık menüsünde yer alan sekiz farklı yapay zeka eylemini çıkarma kararı aldı. Güncellemenin kasım ortasına kadar tüm kullanıcılara kademeli olarak ulaştırılması planlanıyor.",
+    "keyPoints": [
+      "Dosya Gezgini sağ tık menüsünden toplam 8 farklı Copilot eylemi kaldırılıyor.",
+      "Özetleme, SSS oluşturma ve metin çıkarma gibi araçlar menüden çıkarıldı.",
+      "Güncellemenin kasım ayının ortasına kadar tüm kullanıcılara sunulması bekleniyor."
+    ],
+    "body": [
+      "Microsoft, işletim sistemindeki yapay zeka entegrasyonlarını daha az müdahaleci bir yapıya kavuşturmak için düğmeye bastı. Yapılan bu son düzenleme, doğrudan Dosya Gezgini içerisindeki sağ tık menülerini hedef alıyor. Şirket, OneDrive dosyaları için buraya eklenen birtakım kısayolları temizleyerek arayüzü ferahlatmayı amaçlıyor. Kullanıcıların günlük dosya yönetimi sırasında daha az dikkat dağıtıcı unsurla karşılaşması hedefleniyor.",
+      "Mevcut sistemde bir öğeye sağ tıklandığında OneDrive simgesi üzerinden çalışan çok sayıda yapay zeka seçeneği listeleniyordu. Yeni plan doğrultusunda metin çıkarma, görüntü karşılaştırma, SSS üretme, dosya kıyaslama ve özet çıkarma gibi toplam sekiz farklı eylem bu menüden çıkarıldı. Yoğun dosya trafiği olan kişilerin daha akıcı bir deneyim yaşaması için bu karmaşık yapının sadeleştirilmesi gerektiği belirtildi.",
+      "Alınan bu kararla birlikte söz konusu özellikler tamamen silinmiyor; yalnızca daha erişilebilir ve farklı noktalara taşınıyor. İsteyen kullanıcılar sağ tık menüsündeki temel ask Copilot seçeneğini kullanmayı sürdürebilecek. Ayrıca araçlara Dosya Gezgini ana sayfası ve OneDrive etkinlik merkezi üzerinden de rahatlıkla ulaşılabilecek.",
+      "Yenilenen arayüz yaklaşımı sayesinde Microsoft, yapay zeka araçlarını sistemde tutmaya devam ederken zorunlu görünen entegrasyonları da azaltmış oluyor. Kasımın ortasına kadar kademeli olarak dağıtılacak bu güncellemenin ardından şirketin diğer menülerde de benzer adımlar atıp atmayacağı henüz bilinmiyor."
+    ],
+    "comment": "Şirketlerin yapay zeka araçlarını her arayüze doğrudan entegre etme çabası, sadelikten yana olan kitlenin tepkisini çekiyordu. Sekiz farklı eylemin sağ tık menüsünden ayıklanması, sistem kaynaklarının verimli kullanımı ve kullanıcı deneyiminin kişiselleştirilmesi açısından isabetli bir hamle oldu. Özellikle yoğun iş temposunda çalışan profesyoneller, kalabalık menüler yerine daha yalın bir dosya yöneticisiyle hız kazanacaktır. Benzer bir sadeleştirme dalgası ilerleyen dönemde işletim sisteminin diğer alt bileşenlerine de uygulanırsa, masaüstü deneyimi eskisinden çok daha akıcı bir hâle gelebilir.",
+    "editorNote": "Microsoft, kullanıcı arayüzünü ferahlatmak için sağ tık menüsündeki yapay zeka kısayollarını ayıklıyor.",
+    "tags": [
+      "Windows 11",
+      "Copilot",
+      "Microsoft",
+      "OneDrive",
+      "Dosya Gezgini"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "Windows 11 desktop computer screen",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/windows-11-copilot-sadelestirmesi",
+    "image": "https://ares.shiftdelete.net/2026/06/windows-11de-yerel-yapay-zeka-donemi-copilot-daha-cok-bilgisayara-geliyor.webp",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T10:00:11.000Z",
+    "generatedAt": "2026-10-22T10:00:42.992Z",
+    "breaking": true
+  },
+  {
+    "id": "6bfc5c5287cc1309",
+    "title": "Recursive, 40 milyar parametreli yeni kodlama modeli Flint'i duyurdu",
+    "slug": "recursive-40-milyar-parametreli-yeni-kodlama-modeli-flinti-duyurdu",
+    "summary": "Recursive şirketi, yerel cihazlarda çalışabilen ve dört aydan kısa sürede geliştirilen Flint kodlama modelini erişime açtı. Uzmanlar karışımı mimarisiyle öne çıkan model, hesaplama yükünü azaltarak saniyede 125'ten fazla token üretebiliyor.",
+    "keyPoints": [
+      "Toplam 40 milyar parametreli Flint, her token için yalnızca 2,5 milyar parametreyi etkinleştiriyor.",
+      "Model, insan ve yapay zeka ajanlarından oluşan küçük bir ekiple Eureka Machine sistemiyle geliştirildi.",
+      "Ağırlıkları Apache 2.0 lisansıyla paylaşılan model, Hugging Face üzerinden yerel kullanıma sunuldu."
+    ],
+    "body": [
+      "Yazılım geliştirme süreçlerine yönelik çözümler sunan Recursive, yerel donanımlarda doğrudan çalışabilen yeni kodlama modeli Flint'i kullanıma sundu. Şirket bünyesindeki insan çalışanlar ile yapay zeka ajanlarından oluşan kompakt bir ekip, bu modeli dört aydan kısa süren bir zaman diliminde sıfırdan inşa etti. Geliştirme sürecinin arkasında ise fikir üretme, deney yürütme ve yeni denemeleri otomatik olarak planlayan Eureka Machine sistemi yer alıyor.",
+      "Toplamda 40 milyar parametreye sahip olan Flint, uzmanlar karışımı yani MoE mimari yapısını benimsiyor. Bu tasarım tercihi sayesinde model, her bir token işlenirken yalnızca 2,5 milyar parametreyi faaliyete geçiriyor ve böylece sistemin hesaplama yükü belirgin ölçüde düşüyor. Gerçekleştirilen testler, Flint'in M4 Pro işlemcili MacBook Pro cihazlarda kısa bağlamlarda saniyede 125 adedin üzerinde token üretebildiğini gösteriyor.",
+      "Şirketin kendi değerlendirmelerine göre bu yeni model, elli milyardan az parametre barındıran diğer MoE modellerini belirli kodlama testlerinde geride bırakıyor. Eureka Machine; modelin mimarisinden eğitim yöntemlerine ve çalışma hızının artırılmasına kadar pek çok farklı aşamada etkin rol oynadı. Modelin ağırlıkları Apache 2.0 lisansıyla Hugging Face platformu üzerinden paylaşıma açıldı.",
+      "Yerel donanım üzerinde çalışabilme özelliği, geliştiricilere çevrimdışı çalışma imkanı tanırken verilerin cihazda kalmasını sağlıyor ve ek API maliyetlerini ortadan kaldırıyor. Bununla birlikte Recursive, karmaşık görevlerin küçük alt adımlara bölünmesini tavsiye ediyor."
+    ],
+    "comment": "Yerel donanım odaklı yapay zeka modelleri, geliştiricilere bulut maliyetlerinden bağımsız çalışma alanı sunması bakımından pazar dengelerini değiştiriyor. 40 milyar parametreli Flint'in MoE mimarisiyle her token için sadece 2,5 milyar parametreyi aktif etmesi, tüketici sınıfı donanımlarda bile yüksek verimlilik elde edilebileceğini somut biçimde gösteriyor. API bağımlılığını ortadan kaldıran bu yaklaşım, özellikle veri gizliliğine önem veren küçük ekipler ve bireysel geliştiriciler için önemli bir alternatif oluşturuyor. Büyük kapalı modellere kıyasla ek yönlendirme ihtiyacı duyması, karmaşık projelerde iş yükünü artırabilir.",
+    "editorNote": "Dört aydan kısa sürede geliştirilen Flint, yerel donanımda saniyede 125 token üreterek bulut bağımlılığını azaltmayı hedefliyor.",
+    "tags": [
+      "Recursive",
+      "Flint",
+      "Yapay Zeka",
+      "Kodlama",
+      "Hugging Face",
+      "Eureka Machine"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "artificial intelligence code programming laptop screen",
+    "source": "Webrazzi",
+    "sourceUrl": "https://webrazzi.com/2026/10/22/recursive-yapay-zeka-destegiyle-gelistirdigi-kodlama-modeli-flinti-tanitti/",
+    "image": "https://cdn.webrazzi.com/uploads/2026/10/flint-274.png",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T10:00:00.000Z",
+    "generatedAt": "2026-10-22T10:00:53.322Z",
+    "breaking": true
+  },
+  {
+    "id": "b0faf48c3316119f",
+    "title": "İPhone Duo 230 bin TL'lik fiyatıyla ekran altı kamerada eleştiriliyor",
+    "slug": "iphone-duo-230-bin-tl-fiyatiyla-ekran-alti-kamerada-elestiriliyor",
+    "summary": "Apple markasının katlanabilir pazardaki ilk girişimi olan iPhone Duo modeli Türkiye piyasasına yüksek bir etiketle giriş yaptı. İç ekranda yer alan dört megapiksellik özelleştirilmiş kamera çözünürlüğü ve performansı nedeniyle eleştiri topluyor.",
+    "keyPoints": [
+      "Türkiye pazarında 230 bin TL etiketle satışa sunulan model, iç ekranda dört megapiksel kamera taşıyor.",
+      "Cihazın dış ekranında yüksek çözünürlüklü on iki megapiksellik standart selfie kamerası yer alıyor.",
+      "Katlanabilir telefonda ekran altı kamera teknolojisi henüz profesyonel çekim beklentilerini karşılayamıyor."
+    ],
+    "body": [
+      "Teknoloji dünyasının uzun süredir beklediği katlanabilir cihaz hamlesini gerçekleştiren Apple, yeni modeliyle dikkatleri üzerine çekti. Türkiye pazarında iki yüz otuz bin Türk Lirası gibi oldukça lüks bir seviyeden alıcı bulan akıllı telefon, yenilikçi tasarım çizgileriyle öne çıkıyor. Şirket bu ilk katlanabilir ürününde hibrit bir kamera stratejisi izleyerek iç ve dış panellerde farklı donanımlara yer verdi.",
+      "Cihazın iç ekranında yer alan ve ekran altına gizlenen dört megapiksellik sensör, bütünsel bir görünüm sağlasa da fotoğraf kalitesinde dezavantajlar yaratıyor. Günlük görüntülü görüşmelerde yeterli düzeyde çalışan bu parça, detaylı kareler yakalamak gerektiğinde yetersiz kalıyor. Mühendisler bu eksikliği dengelemek amacıyla dış ekranda on iki megapiksellik geleneksel bir delikli kamera tercihinde bulundular.",
+      "Yüksek fiyat etiketine sahip bir amiral gemisi cihazdan beklentilerin zirvede olması, bu kamera tercihlerinin eleştirilmesine zemin hazırlıyor. Estetik açıdan kusursuz bir katlanabilir deneyimi sunulsa da donanımsal kısıtlamalar kullanıcıların fotoğrafçılık beklentilerini tam anlamıyla karşılamıyor. Arka kısımda bulunan çift kamera kurulumu ise genel çekim kalitesini yukarı çekerek üst segment konumunu korumaya çalışıyor.",
+      "Markanın gelecekteki yazılım güncellemeleriyle bu optik sorunları nasıl ele alacağı teknoloji çevrelerinde merakla takip ediliyor. Katlanabilir pazarındaki rekabet kızışırken, tüketiciler yüksek meblağlar ödedikleri bu cihazlarda kusursuz bir donanım bütünlüğü talep ediyor. Apple ekosisteminin bu ilk katlanabilir tecrübesi, gelecekteki nesil cihazlar için hem bir test alanı hem de önemli bir dönüm noktası oluşturuyor."
+    ],
+    "comment": "Lüks segmentte konumlanan mobil cihazlarda donanımsal ödünler verilmesi kullanıcı sadakatini doğrudan test eden bir unsurdur. İki yüz otuz bin liralık maliyetle raflara çıkan bir telefonda dört megapiksellik dahili lensin zayıf kalması, fiyat ile performans dengesini zedeliyor. Benzer katlanabilir alternatiflerle kıyaslandığında, harici ekrandaki on iki megapiksellik sensör kurtarıcı olsa da iç ekrandaki bu eksiklik segment beklentilerinin gerisinde kalıyor. Şirket yazılım yamalarıyla durumu toparlayamazsa, gelecek modellerde optik mimariyi baştan tasarlamak zorunda kalacaktır.",
+    "editorNote": "İki yüz otuz bin liralık devasa fiyatıyla dikkat çeken katlanabilir telefondaki kamera tercihi tartışma yarattı.",
+    "tags": [
+      "Apple",
+      "iPhone Duo",
+      "Katlanabilir Telefon",
+      "Akıllı Telefon",
+      "Kamera"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "iPhone Duo foldable smartphone",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/iphone-duo-ekran-alti-kamera-performansi-beklentileri-karsilamadi",
+    "image": "https://ares.shiftdelete.net/2026/10/iphone-duo-ekran-alti-kamera-performansi-beklentileri-karsilamadi.webp",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T09:59:39.000Z",
+    "generatedAt": "2026-10-22T10:01:04.926Z",
+    "breaking": true
+  },
+  {
+    "id": "513340529e3fe81c",
+    "title": "Şahan Gökbakar'ın kahkaha dolu serisi Recep İvedik 8 ile geri dönüyor",
+    "slug": "sahan-gokbakarin-kahkaha-dolu-serisi-recep-ivedik-8-ile-geri-donuyor",
+    "summary": "Sevilen mizah serisi Recep İvedik, sekizinci halkasıyla Disney+ üzerinden izleyiciyle buluşacak. İki bölüm halinde planlanan yapımın ilk tanıtım videosu yayımlandı.",
+    "keyPoints": [
+      "Disney+ Türkiye, Recep İvedik 8 filminin ilk fragmanını paylaştı.",
+      "Yeni yapım, iki bölümlük bir macera olarak kurgulandı.",
+      "Serinin ilk bölümünün adı Veresiye olarak açıklandı."
+    ],
+    "body": [
+      "Türk sinemasının en çok izlenen komedi serilerinden biri olan Recep İvedik, macerasına kaldığı yerden devam etmeye hazırlanıyor. Şahan Gökbakar'ın hayat verdiği ikonik karakter, serinin sekizinci filmiyle dijital yayın platformu ekranlarında seyirci karşısına çıkacak. Disney+ Türkiye tarafından yapılan duyuruyla birlikte yapımın ilk tanıtım görüntüleri de gün yüzüne çıktı.",
+      "Paylaşılan ilk tanıtım videosunda, ana karakterin bu kez güvenlik görevlisi kıyafetiyle izleyici karşısına çıkması dikkat çekti. Yayıncı kuruluş, sosyal medya hesapları üzerinden karakterin ikonik konuşma tarzına atıfta bulunan eğlenceli ifadelerle yeni projeyi takipçilerine duyurdu. Hayranların uzun süredir merakla beklediği yapımın dijital platform üzerinden yayımlanacağı netlik kazandı.",
+      "Sekizinci filmin iki ayrı bölüm halinde tasarlandığı bilgisi de paylaşılan detaylar arasında yer alıyor. Serinin bu halkasının ilk ayağı Veresiye adını taşıyacak ve izleyicilere sunulacak. Ancak projenin ikinci bölümüne dair detaylı bilgiler ve resmi vizyon takvimi henüz paylaşılmış değil.",
+      "Mizahseverlerin uzun süredir beklediği yapımın ilk fragmanı, sosyal medyada kısa süre içinde geniş yankı uyandırdı. Serinin önceki filmlerinde farklı maceralara atılan karakterin bu defa güvenlik sektöründe atılacağı olaylar merakla bekleniyor. Yapımcılar ve platform yetkilileri, ilerleyen günlerde tam yayın tarihini duyurmayı planlıyor."
+    ],
+    "comment": "Yerli komedi yapımlarının dijital platformlara kayması, izleme alışkanlıklarını kökten değiştirirken yapımcılara da farklı bir dağıtım esnekliği sunuyor. İki bölümlük strateji, hikayenin etkisini artırarak izleyiciyi ekran başında tutmayı hedefliyor. Klasikleşmiş karakterlerin modern platformlarda yer alması, özellikle genç kitlelerin bu projelere erişimini kolaylaştırıyor. Yapımın resmi yayın tarihinin henüz açıklanmamış olması, hayran kitlesi üzerindeki beklentiyi ve merak unsurunu canlı tutan bir pazarlama hamlesi olarak öne çıkıyor.",
+    "editorNote": "Güvenlik kıyafetiyle izleyiciyi selamlayan Recep İvedik, iki bölümlük yeni macerasının ilk adımı Veresiye ile ekranlara dönüyor.",
+    "tags": [
+      "Recep İvedik",
+      "Şahan Gökbakar",
+      "Disney+",
+      "komedi",
+      "sinema"
+    ],
+    "category": "Kültür",
+    "gorselSorgu": "Sahan Gökbakar comedy movie poster",
+    "source": "Haber Global",
+    "sourceUrl": "https://haberglobal.com/kultur-sanat/recep-ivedik-8den-ilk-fragman-yayimlandi-549965",
+    "image": "https://i.haberglobal.com/storage/files/images/2026/10/22/recep-ivedik-8den-ilk-fragman-yayimlandi-rgcv.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T09:57:00.000Z",
+    "generatedAt": "2026-10-22T10:01:15.445Z",
+    "breaking": true
+  },
+  {
     "id": "28b0917d56b9645a",
     "title": "Trump'tan İran açıklaması: Müzakere yapmıyoruz, yakın zamanda gelişme olacak",
     "slug": "trumptan-iran-aciklamasi-muzakere-yapmiyoruz-yakin-zamanda-gelisme-olacak",
