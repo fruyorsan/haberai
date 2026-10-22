@@ -1,5 +1,107 @@
 [
   {
+    "id": "c75360ac724bd2d9",
+    "title": "PHP’te Yüzlerce Hata Açığa Çıktı: AI’nin Kaptığı Küresel Siber Tehdit",
+    "slug": "php-yuzlerce-hata-aisinde-kucuk-siber-tehdit",
+    "summary": "Yapay zeka, internetin temelini oluşturan PHP dilindeki uzun süredir gizli kalmış güvenlik açıklarını ortaya çıkardı. Bu keşif, dünya genelinde acil düzeltmeler talep eden bir siber güvenlik alarmına yol açtı. Çok sayıda web sitesi, e-ticaret platformu ve hükümet portalı, güncelleme yapılana kadar kapatıldı.",
+    "keyPoints": [
+      "AI, PHP’deki ‘en ciddi’ güvenlik açıklarını tespit etti.",
+      "Güvenlik firmaları ve devlet kurumları acil düzeltme paketleri dağıttı.",
+      "Dünya çapında milyonlarca web sitesi, risk nedeniyle kapatıldı."
+    ],
+    "body": [
+      "Yapay zeka, 2000’li yıllardan beri internet üzerinde yaygın olarak kullanılan PHP dilinde derinlemesine analiz yaparak, yıllarca fark edilmemiş kritik güvenlik açıklarını ortaya çıkardı. Bu açıklar, yetkisiz kullanıcıların hedef sistemleri ele geçirmesine ve hassas verileri çalmasına olanak tanıyan bir kontrol mekanizması eksikliğini içeriyordu.",
+      "Wiz güvenlik şirketi ve OpenAI’nin kullandığı teknolojiler, bu hataları ‘AI ile tespit edilen en ciddi zafiyet’ olarak nitelendirdi. Hızlı bir şekilde yayılan haber, dünya çapındaki siber güvenlik ajanslarını harekete geçirdi ve web sitesi yöneticilerine acil bir güvenlik yaması kurma talimatı verdi.",
+      "Küresel çapta etki eden bu durum, e-ticaret sitelerinden WordPress tabanlı bloglara, Wikipedia’dan devlet portallarına kadar geniş bir yelpazeyi kapsadı. Örneğin, Finlandiya hükümeti, Edinburgh Belediyesi ve BBC, riskin önüne geçmek için sistemlerini geçici olarak kapattı.",
+      "Uzmanlar, bu açığın kötü niyetli aktörler veya devlet destekli hackerlar tarafından kullanılması halinde veri hırsızlığı ve hizmet kesintilerine yol açabileceği konusunda uyarıyor. Bu nedenle, yasal ve teknik ekipler, sitelerin güvenliğini sağlamaya yönelik hızlı bir hareket planı hazırlıyor."
+    ],
+    "comment": "Bu gelişme, siber güvenlik altyapısındaki zayıf noktaların AI ile nasıl aydınlatılabileceğini gösterdi. PHP’nin yaygınlığı, zafiyetin potansiyel etkisini kat kat artırıyor. Diğer teknolojik ekosistemlere de benzer risklerin olup olmadığına dair soru işaretleri yükseldi.",
+    "editorNote": "İnternetin temel taşlarından biri olan PHP, AI sayesinde açıklığa kavuşturulan kritik açıklarla gündeme geldi.",
+    "tags": [
+      "PHP",
+      "Yapay Zeka",
+      "Siber Güvenlik",
+      "Web Geliştirme"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "php vulnerabilities global impact",
+    "source": "BBC World",
+    "sourceUrl": "https://www.bbc.co.uk/news/articles/c3qjnwye0ep5o?at_medium=RSS&at_campaign=rss",
+    "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/15df/live/bbb61e90-cddc-11f1-bc2e-018d645d8d21.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T06:24:59.000Z",
+    "generatedAt": "2026-10-22T06:27:25.908Z",
+    "breaking": true
+  },
+  {
+    "id": "3757b1da4c3060c6",
+    "title": "Trump: İran’la Savaşla Nükleer Silah Engendik",
+    "slug": "trump-iran-nukleer-silah-engendik",
+    "summary": "ABD’nin eski başkanı Donald Trump, seçim mitingi öncesi Beyaz Saray’da İran ile olan askeri gerilimin nükleer silah edinmesini engellediğini savundu. Sarsıntılı bir diplomasi dönemi içinde Rusya ile de görüşmeleri sürdürdüğünü belirtti.",
+    "keyPoints": [
+      "İran’ın nükleer silaha sahip olmasını önlemek için ciddi askeri adımlar atıldı",
+      "Trump, Moskova ile diplomatik temasların anlaşmaya yakın olduğunu vurguladı",
+      "Rusya’nın ABD’yi yaptırımdan uzak tutmasının memnuniyet verici olduğu ifade edildi"
+    ],
+    "body": [
+      "Trump, South Carolina’deki seçim mitingine çıkmadan önce Beyaz Saray’ın önünde gazetecilere hitap etti. Soru sormak isteyen bir gazeteci, ‘İran ile savaşa girmekten pişman mısınız?’ diye sorarken başkan ‘hayır, en iyi işlerden biri bu’ diyerek nükleer silah riskini ortadan kaldırdığını söyledi.",
+      "İzleyiciler, Başkan’ın ‘daha önceki başkanların atmadığı adımı attığımız’ retoriklerini dinledi. Trump, Tahran’ın nükleer silah kullanma ihtimalinin yüksek olduğunu, savaşla bu tehlikeyi azaltmış olduklarını öne sürdü.",
+      "Ayrıca, Rusya ile devam eden diplomatik temaslar konusunda da açıklama yaptı. Trump, ‘Ukrayna konusundaki görüşmeler olumlu ilerliyor’ diyerek, 2024’te ilk kez bir anlaşma beklenmesinin şaşırtıcı olduğunu belirtti.",
+      "Son olarak, Rusya’nın serbest bıraktığı ABD vatandaşı Stephen Hubbard’a teşekkür etti ve ‘Moskova’nın İran ile savaş ortamına dahil olmaması memnuniyet verici’ diyerek diplomasiye vurgu yaptı."
+    ],
+    "comment": "Trump’ın bu açıklamaları, nükleer silahlanma endişesiyle hem US hem de uluslararası toplumda yankı uyandırdı. Bununla birlikte, yaklaşımının uzun vadeli etkileri konusunda belirsizlik var.",
+    "editorNote": "Trump, nükleer silahlanma riskini azaltmak için askeri ve diplomatik önlemler aldığını savundu.",
+    "tags": [
+      "Trump",
+      "İran",
+      "Nükleer",
+      "Diplomasi"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "Donald Trump speech",
+    "source": "https://www.tekha.com.tr/",
+    "sourceUrl": "https://tekha.com.tr/trump-iran-ile-savasa-girerek-nukleer-silah-edinmelerini-engelledik",
+    "image": "https://tekha.com.tr/wp-content/uploads/2026/10/TRUMP-RUSYA-ILE-UKRAYNA-ARASINDA-ENERJI_1549482_461087.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T06:21:32.000Z",
+    "generatedAt": "2026-10-22T06:28:55.893Z",
+    "breaking": true
+  },
+  {
+    "id": "0b208e4b8edb5475",
+    "title": "Rusya Avrupa’yı Tehdit Ediyor: Savaş mı Açılacak?",
+    "slug": "rusya-avrupa-savas-mu-acilacak",
+    "summary": "Rusya’nın son hareketleri, Avrupa’nın güvenliğini ciddi şekilde sarsıyor. Jeopolitik gerilim artarken uzmanlar, bölgesel çatışmanın riskini artışla değerlendiriyor. Uluslararası toplum, barışçıl çözümler peşinde.",
+    "keyPoints": [
+      "Rusya’nın yeni savunma stratejileri Avrupa’yu potansiyel bir düşman olarak görmeyi gösteriyor",
+      "Kısa vadede bölgesel çatışma ihtimali artarken, diplomatik çabalar yetersiz kalıyor",
+      "Ekonomik ve insani maliyetlerin büyük olacağı öngörülüyor"
+    ],
+    "body": [
+      "Rusya’nın son dönem stratejik hamleleri, Avrupa’nın güvenlik algısını tükürdü. Yetkililer, ülkenin yeni savunma planlarının Avrupa kıtasını potansiyel bir düşman olarak tanımladığını belirtti. Bu hamle, Avrupa’nın askeri ittifaklarını yeniden gözden geçirmesine yol açtı.",
+      "Uluslararası otoriteler, Rusya’nın bu politikalarının bir savaşın habercisi olup olmadığını sorguluyor. Siyasi analistler, Avrupa’nın barışçıl bir iklimde kalmak için diplomasi ve ittifak güçlendirmeye odaklanması gerektiğini vurguluyor.",
+      "Ayrıca, Rusya’nın askeri hareketliliği, bölgesel çatışmanın riskini artırıyor. Ekonomik sonuçların yanı sıra, insani maliyetlerin de yüksek olacağı öngörülüyor. Avrupa ülkeleri, bu potansiyel tehdit karşısında tedarik zincirlerini güvence altına almak için önlemler alıyor.",
+      "Sonuç olarak, Rusya’nın Avrupa’ya yönelik tutumu, küresel istikrarı tehdit eden ciddi bir soru işareti oluşturuyor. Uluslararası toplum, çatışmayı önlemeye yönelik diplomatik girişimlerde bulunmaya devam ediyor."
+    ],
+    "comment": "Rusya’nın Avrupa’ya yönelik tutumu, bölgesel güvenlik sahnesinde büyük bir belirsizlik yaratıyor. Ekonomik ve siyasi bağlamda, bu gelişme hem rekabet hem de işbirliği fırsatlarını beraberinde getiriyor.",
+    "editorNote": "Rusya ve Avrupa arasındaki gerilim, küresel istikrarı tehdit eden kritik bir nokta.",
+    "tags": [
+      "Rusya",
+      "Avrupa",
+      "Jeopolitik",
+      "Güvenlik"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "Russia Europe war",
+    "source": "ssbulten.com.tr",
+    "sourceUrl": "https://ssbulten.com.tr/video-haber/detay/rusya-avrupaya-savas-mi-aciyor--26286",
+    "image": "https://img.ssbulten.com.tr/assets/outsource/e84b9031e83e53600f60de05869f9ca71905056cb1d97467b6bb5b539fe790e0/img_0.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T06:21:09.000Z",
+    "generatedAt": "2026-10-22T06:30:38.008Z",
+    "breaking": true
+  },
+  {
     "id": "62e792a85cad1493",
     "title": "ABD Altın Kasaları Boşaldı: Dünya Altın Depoları Bir Ülkeye Toplanıyor",
     "slug": "abd-altin-kasalari-bosaldi-dunya-altin-depolar-tek-ulkeye-toplaniyor",
@@ -199,6 +301,40 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-22T06:08:06.000Z",
     "generatedAt": "2026-10-22T06:22:40.808Z",
+    "breaking": true
+  },
+  {
+    "id": "54893c3a41cb0ae1",
+    "title": "Aksaray'da zincirleme kazaya sebep olan sürücü aracını bırakıp kaçtı",
+    "slug": "aksarayda-zincirleme-kazaya-sebep-olan-surucu-aracini-birakip-kacti",
+    "summary": "Kavşakta bekleyen araçlara çarpan otomobilin sürücüsü yaya olarak kaçtı. Üç otomobil ile bir motosikletin karıştığı kazada üç kişi hafif yaralandı.",
+    "keyPoints": [
+      "Dört aracın karıştığı kazada üç kişi hafif yaralandı.",
+      "Kazaya sebep olan 06 CLT 266 plakalı otomobilin sürücüsü olay yerinden kaçtı.",
+      "Alparslan Türkeş Bulvarı'nda trafik akışı kontrollü olarak tek şeritten sağlandı."
+    ],
+    "body": [
+      "Aksaray kent merkezinde yaşanan trafik kazası Fatih Mahallesi Alparslan Türkeş Bulvarı üzerinde meydana geldi. Trafik ışıklarında bekleyen araçların arasına dalan otomobil zincirleme bir çarpışmaya yol açtı. Kazaya karışan araçlar arasında bir motosiklet ile üç farklı otomobil yer aldı.",
+      "Çarpmanın şiddetiyle araçlarda ağır maddi hasar oluşurken olay yerinde büyük panik yaşandı. Kazada yaralanan üç kişi hastaneye gitmeyi reddetti ve sağlık ekipleri tarafından ambulans içinde tedavi edildi. Yaralıların sağlık durumlarının iyi ve hafif olduğu belirtildi.",
+      "Kazanın ardından beklenmedik bir gelişme yaşandı ve kazaya sebep olan otomobilin sürücüsü aracını olay yerinde bırakarak kaçtı. Polis ekipleri kimliği henüz tespit edilemeyen sürücüyü yakalamak için geniş çaplı çalışma başlattı. Kaçan sürücünün yakalanması amacıyla bölgedeki güvenlik kameraları incelemeye alındı.",
+      "Kaza nedeniyle Alparslan Türkeş Bulvarı'nda ulaşım bir süre olumsuz etkilendi. Yolu kapatan hasarlı araçlar çekici yardımıyla kaldırıldıktan sonra trafik akışı normale döndü. Ekiplerin olayla ilgili soruşturması çok yönlü olarak devam ediyor."
+    ],
+    "comment": "Trafik güvenliğini tehlikeye atan ve kazanın hemen ardından sorumluluktan kaçan sürücülerin tespiti, şehir içi denetimlerin caydırıcılığını doğrudan sorgulatıyor. Dört aracın karıştığı bu olayda 3 kişinin hafif yaralanması daha büyük bir felaketin eşiğinden dönüldüğünü gösteriyor. Plakası belirlenen 06 CLT 266 sayılı aracın sahibine kısa sürede ulaşılamaması, araç devir ve ruhsat işlemlerindeki denetimsizliklerin risklerini artırıyor. Sürücünün yakalanması, benzer kural ihlallerinde adaletin tesisi için kritik bir eşik oluşturuyor.",
+    "editorNote": "Dört aracın karıştığı kazada ortalığı savaş alanına çeviren sürücü izini kaybettirdi.",
+    "tags": [
+      "Aksaray",
+      "Trafik Kazası",
+      "Asayiş",
+      "Otomobil"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "accident crashed cars street traffic police",
+    "source": "Saray Medya",
+    "sourceUrl": "https://www.saraymedya.com/haber/aksaray-da-zincirleme-kaza-ortaligi-savas-alanina-cevirip-kacti_316324/",
+    "image": "https://img.saraymedya.com/manset/2026/10/aksaray-da-zincirleme-kaza-ortaligi-savas-alanina-cevirip-kacti-1792649629.webp",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-22T06:08:00.000Z",
+    "generatedAt": "2026-10-22T06:26:57.270Z",
     "breaking": true
   },
   {
