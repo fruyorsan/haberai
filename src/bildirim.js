@@ -47,7 +47,7 @@ const DURUM_DOSYA = join(DATA_DIR, "bildirim.json");
 
 const APP_ID = String(process.env.ONESIGNAL_APP_ID || "").trim();
 const REST_KEY = String(process.env.ONESIGNAL_REST_API_KEY || "").trim();
-const SITE_URL = (process.env.SITE_URL || "https://fruyorsan.github.io").replace(/\/+$/, "");
+const SITE_URL = (process.env.SITE_URL || "https://haberinai.site").replace(/\/+$/, "");
 
 // --- Ayarlar (env ile değiştirilebilir) ---
 // Ölçü: site 7/24 ve dakikalar içinde haber giriyor. Günlük tavanlar okuyucuyu
@@ -268,14 +268,39 @@ async function teslimRaporu(id) {
   }
 }
 
+/**
+ * Web push bildirimi için görsel URL'si üretir.
+ *
+ * KRİTİK: WebP formatı Windows 10/11 Bildirim Merkezi (WNS) ve Apple APNs (iOS/macOS Safari)
+ * tarafından DESTEKLENMEZ. WebP gönderildiğinde bu sistemler görseli sessizce düşürür
+ * ve bildirim görselsiz çıkar. Bu nedenle push bildirimlerinde daima standart JPEG
+ * (output=jpg) formatı kullanılır.
+ */
+function bildirimGorseli(src, width = 720, height = 405) {
+  if (!src || !/^https?:\/\//i.test(src)) return "";
+  const w = Math.round(width);
+  const h = Math.round(height);
+  return `https://wsrv.nl/?url=${encodeURIComponent(src)}&w=${w}&h=${h}&fit=cover&we&output=jpg&q=85`;
+}
+
 /** Bildirimin tıklanınca gideceği adres + görsel + metin. */
 function bildirimIcerigi(a, { baslik }) {
   const kapak = kapakKaynagi(a);
+  const hamGorsel =
+    kapak ||
+    (a?.image &&
+    /^https?:\/\//i.test(a.image) &&
+    !/placeholder|no[-_]?image|default[-_/]?news|avatar/i.test(a.image)
+      ? a.image
+      : "");
+  const gorsel = hamGorsel ? bildirimGorseli(hamGorsel, 720, 405) : `${SITE_URL}/og-default.png`;
+  const ikon = hamGorsel ? bildirimGorseli(hamGorsel, 192, 192) : `${SITE_URL}/ikon-192.png`;
   return {
     baslik,
     icerik: kisalt(a.title, 120),
     url: `${SITE_URL}/haber/${a.slug || a.id}/`,
-    gorsel: kapak ? imageUrl(kapak, 720) : `${SITE_URL}/og-default.png`,
+    gorsel,
+    ikon,
   };
 }
 
@@ -352,27 +377,46 @@ async function gonder(p) {
     headings: { tr: p.baslik, en: p.baslik },
     contents: { tr: p.icerik, en: p.icerik },
     url: p.url,
-    chrome_web_icon: `${SITE_URL}/ikon-192.png`,
     chrome_web_badge: `${SITE_URL}/ikon-192.png`,
     ttl: p.ttl,
     idempotency_key: uuidAnahtar(p.anahtar),
     web_push_topic: 'hb_' + uuidAnahtar(p.anahtar || p.url || Date.now()),
     android_group: 'haberinai_haberler',
   };
-  if (p.gorsel) govde.chrome_web_image = p.gorsel;
+
+  // İkon (kare): haberin fotoğrafı — kilit ekranı ve özet bildirimde doğrudan haber görseli görünür
+  const ikon = p.ikon || (p.gorsel ? p.gorsel : `${SITE_URL}/ikon-192.png`);
+  govde.chrome_web_icon = ikon;
+  govde.firefox_icon = ikon;
+  govde.large_icon = ikon;
+
+  // Büyük görsel (16:9): Chrome Masaüstü, Android ve iOS/Safari'de genişletilmiş görünüm için
+  if (p.gorsel) {
+    govde.chrome_web_image = p.gorsel;
+    govde.big_picture = p.gorsel;
+    govde.ios_attachments = { id1: p.gorsel };
+  }
+
   if (p.abonelikId) {
     // Tek bir cihaza gönderim (yeni aboneye "hoş geldin").
     govde.include_subscription_ids = [String(p.abonelikId)];
   } else if (Array.isArray(p.etiketler) && p.etiketler.length) {
-    // Birden çok etiket: hepsi AND ile aranır (ör. kategori + bildirim sıklığı).
-    // Metin → {etiket: "1"}; nesne → {key, relation, value}; {operator} → ayraç (OR).
-    govde.filters = p.etiketler.map((e) =>
+    // Birden çok etiket: OneSignal REST API'de her koşul arasına açıkça operator: "AND" eklenmelidir
+    const hamFiltreler = p.etiketler.map((e) =>
       typeof e === "string"
         ? { field: "tag", key: e, relation: "=", value: "1" }
         : e.operator
           ? { operator: e.operator }
           : { field: "tag", key: e.key, relation: e.relation || "=", value: e.value }
     );
+    const filtreler = [];
+    for (let i = 0; i < hamFiltreler.length; i++) {
+      if (i > 0 && !hamFiltreler[i].operator && !hamFiltreler[i - 1].operator) {
+        filtreler.push({ operator: "AND" });
+      }
+      filtreler.push(hamFiltreler[i]);
+    }
+    govde.filters = filtreler;
   } else if (p.etiket) {
     govde.filters = [{ field: "tag", key: p.etiket, relation: "=", value: "1" }];
   } else {
@@ -597,12 +641,14 @@ export async function bildirimleriGonder({ dry = false } = {}) {
               console.log(
                 `  ✓ [genel son dakika] ${kisalt(aday.title, 60)}${yanit?.id ? ` (${yanit.id})` : ""}${aliciNotu(yanit)}`
               );
+              durum.sent.push(String(aday.id));
               durum.sonDakika = new Date(now).toISOString();
               durum.gunSayi.son = (durum.gunSayi.son || 0) + 1;
               durumDegisti = true;
               sayilan++;
             } else {
               console.log("  · [genel son dakika] açık olan cihaz yok — atlandı.");
+              durum.sent.push(String(aday.id));
               durum.sonDakika = new Date(now).toISOString();
               durumDegisti = true;
             }
@@ -807,7 +853,8 @@ export async function bildirimleriGonder({ dry = false } = {}) {
             baslik: "📬 Günün özeti",
             icerik: kisalt(ozetMetni, 160),
             url: `${SITE_URL}/haber/${ilk.slug || ilk.id}/`,
-            gorsel: kapak ? imageUrl(kapak, 720) : `${SITE_URL}/og-default.png`,
+            gorsel: kapak ? bildirimGorseli(kapak, 720, 405) : `${SITE_URL}/og-default.png`,
+            ikon: kapak ? bildirimGorseli(kapak, 192, 192) : `${SITE_URL}/ikon-192.png`,
             ttl: 21600,
             etiketler: [{ key: "bildirim_sikligi", relation: "=", value: "ozet" }],
             anahtar: `ozet-${tr.gun}-${tr.saat}`,

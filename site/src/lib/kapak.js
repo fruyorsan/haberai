@@ -40,13 +40,13 @@ function kimlik(url) {
     .replace(/\.(jpe?g|png|webp|avif|gif)$/, "");
 }
 
-/** Karşılaştırma için anlamlı sözcükler (4+ harf). */
+/** Karşılaştırma için anlamlı sözcükler (3+ harf). */
 function kelimeler(metin) {
   return String(metin || "")
     .toLowerCase()
     .replace(/[^a-z0-9ğüşıöç ]+/g, " ")
     .split(/\s+/)
-    .filter((k) => k.length >= 4 && !/^\d+$/.test(k));
+    .filter((k) => k.length >= 3 && !/^\d+$/.test(k));
 }
 
 /**
@@ -55,11 +55,13 @@ function kelimeler(metin) {
  * fotoğraf yanlışlıkla elenmez.
  */
 function benzer(a, b) {
+  if (!a || !b) return false;
+  if (a === b) return true;
   const n = Math.min(a.length, b.length);
   let i = 0;
   while (i < n && a[i] === b[i]) i++;
-  if (i >= 6) return true;
-  if (i >= 5 && (a.length === i || b.length === i)) return true;
+  if (i >= 5) return true;
+  if (i >= 4 && (a.length === i || b.length === i)) return true;
   return false;
 }
 
@@ -74,8 +76,8 @@ function dosyaParcalari(url) {
   return ad
     .replace(/\?.*$/, "")
     .replace(/\.[a-z0-9]+$/i, "")
-    .split(/[-_+]+/)
-    .filter((p) => /^[a-zğüşıöç]{3,}$/.test(p));
+    .split(/[-_+.]+/)
+    .filter((p) => /^[a-zğüşıöç0-9]{3,}$/i.test(p));
 }
 
 let sayacCache = null;
