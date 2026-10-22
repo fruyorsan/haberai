@@ -1,0 +1,521 @@
+---
+import Base from "../layouts/Base.astro";
+import { LEMON_SQUEEZY } from "../lib/site-meta.js";
+
+const title = "HaberinAi Premium & VIP Kulübü — Özgür ve Reklamsız Haber";
+const description =
+  "Yapay zekânın filtrelenmemiş derin analizleri, günlük özel özgür haber dosyaları ve %100 reklamsız temiz okuma deneyimi.";
+---
+
+<Base title={title} description={description} noindex={false}>
+  <div class="premium-sayfa container">
+    <!-- Üst Başlık & Hero -->
+    <header class="premium-hero">
+      <span class="premium-hero__rozet">
+        <span class="premium-hero__parlama"></span>
+        👑 HABERİNAİ PREMİUM KULÜBÜ
+      </span>
+      <h1 class="premium-hero__baslik">
+        Özgür, Reklamsız ve <span class="premium-hero__vurgu">Filtresiz</span> Haber Deneyimi
+      </h1>
+      <p class="premium-hero__aciklama">
+        Geleneksel medyanın reklam kalabalığından ve kısıtlamalarından kurtulun. Yapay zekânın
+        bağımsız derinlikli analizlerine ve günlük özel "Özgür Haber" dosyalarına erişin.
+      </p>
+    </header>
+
+    <!-- Fiyatlandırma Kartları (2'li Paket) -->
+    <div class="fiyat-izgara">
+      <!-- Paket 1: Standart Premium -->
+      <div class="fiyat-kart">
+        <div class="fiyat-kart__ust">
+          <span class="fiyat-kart__rozet">⭐ POPÜLER SEÇİM</span>
+          <h2 class="fiyat-kart__ad">Standart Premium</h2>
+          <p class="fiyat-kart__ozet">
+            Günlük haberleri reklamsız, temiz ve yapay zekâ analizleriyle takip etmek isteyenler için.
+          </p>
+          <div class="fiyat-kart__fiyat-kap">
+            <span class="fiyat-kart__tutar">49 ₺</span>
+            <span class="fiyat-kart__periyot">/ ay</span>
+          </div>
+        </div>
+
+        <ul class="fiyat-kart__ozellikler">
+          <li>
+            <svg class="fiyat-ikon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span><strong>%100 Reklamsız Deneyim:</strong> Tüm sayfalarda sıfır reklam ve sıfır bekleme süresi.</span>
+          </li>
+          <li>
+            <svg class="fiyat-ikon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span><strong>Günlük 4–5 Özel Özgür Haber:</strong> Sansürsüz, derinlemesine yapay zekâ inceleme dosyaları.</span>
+          </li>
+          <li>
+            <svg class="fiyat-ikon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span><strong>Özel ⭐ Premium Rozeti:</strong> Yorumlarda ve profilinizde parlayan altın rozet.</span>
+          </li>
+          <li>
+            <svg class="fiyat-ikon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span><strong>Hızlı Okuma Modu:</strong> Uzun haberlerde tek tıkla 3 maddelik yapay zekâ özeti.</span>
+          </li>
+          <li>
+            <svg class="fiyat-ikon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span><strong>Taahhütsüz:</strong> Dilediğiniz an tek tıkla iptal edebilirsiniz.</span>
+          </li>
+        </ul>
+
+        <a
+          href={LEMON_SQUEEZY.premiumCheckoutUrl}
+          class="fiyat-btn lemonsqueezy-button"
+          id="btn-abone-premium"
+          data-paket="premium"
+        >
+          <span>Standart Premium'a Geç</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Paket 2: VIP / Pro Kulübü -->
+      <div class="fiyat-kart fiyat-kart--vip">
+        <div class="fiyat-kart__parilti" aria-hidden="true"></div>
+        <div class="fiyat-kart__ust">
+          <span class="fiyat-kart__rozet fiyat-kart__rozet--vip">👑 EN KAPSAMLI DENEYİM</span>
+          <h2 class="fiyat-kart__ad">VIP / Pro Kulübü</h2>
+          <p class="fiyat-kart__ozet">
+            Tüm teknoloji, piyasa ve yapay zekâ analizlerine sınırsız ve en erken erişmek isteyenler için.
+          </p>
+          <div class="fiyat-kart__fiyat-kap">
+            <span class="fiyat-kart__tutar">99 ₺</span>
+            <span class="fiyat-kart__periyot">/ ay</span>
+          </div>
+        </div>
+
+        <ul class="fiyat-kart__ozellikler">
+          <li>
+            <svg class="fiyat-ikon fiyat-ikon--vip" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span><strong>%100 Reklamsız Deneyim:</strong> Sıfır reklam, sıfır dikkat dağıtıcı öğe.</span>
+          </li>
+          <li>
+            <svg class="fiyat-ikon fiyat-ikon--vip" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span><strong>Günlük 10–15 Özel Özgür Haber:</strong> Tüm özel dosyalar, borsa & kripto derin analizleri.</span>
+          </li>
+          <li>
+            <svg class="fiyat-ikon fiyat-ikon--vip" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span><strong>👑 VIP Elmas Rozet:</strong> Yorumlarda en üstte öne çıkan parlak mor-altın unvan.</span>
+          </li>
+          <li>
+            <svg class="fiyat-ikon fiyat-ikon--vip" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span><strong>Shorts VIP Önceliği:</strong> En son kırılma haberlerinde özel yapay zekâ video akışı.</span>
+          </li>
+          <li>
+            <svg class="fiyat-ikon fiyat-ikon--vip" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span><strong>Yorumlarda Öncelikli Sıralama:</strong> Yorumlarınız diğer okurlar arasında en üstte sabitlenir.</span>
+          </li>
+        </ul>
+
+        <a
+          href={LEMON_SQUEEZY.vipCheckoutUrl}
+          class="fiyat-btn fiyat-btn--vip lemonsqueezy-button"
+          id="btn-abone-vip"
+          data-paket="vip"
+        >
+          <span>VIP Kulübüne Katıl</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- "Özgür Premium Haber Nedir?" Açıklama Bölümü -->
+    <section class="premium-ozellik">
+      <div class="premium-ozellik__kart">
+        <div class="premium-ozellik__ikon">✨</div>
+        <div class="premium-ozellik__metin">
+          <h2>"Özgür Premium Haber" Nedir?</h2>
+          <p>
+            Geleneksel medya kuruluşlarının ticari veya editoryal kaygılarla sansürlediği, arka plana
+            ittiği ya da yüzeysel geçtiği teknoloji, ekonomi, yapay zekâ ve küresel olayları ele alıyoruz.
+            Yapay zekâ modellerimiz kaynak kodları, ham verileri ve tarafsız küresel kaynakları birleştirerek
+            yalnızca gerçeğe odaklanan özel araştırma dosyaları hazırlar.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sıkça Sorulan Sorular -->
+    <section class="premium-sss">
+      <h2 class="premium-sss__baslik">Sıkça Sorulan Sorular</h2>
+      <div class="sss-liste">
+        <details class="sss-oge">
+          <summary>Aboneliğimi istediğim zaman iptal edebilir miyim?</summary>
+          <div class="sss-cevap">
+            Evet, kesinlikle hiçbir taahhüt bulunmamaktadır. Lemon Squeezy müşteri panelinizden veya profilinizden
+            dilediğiniz an tek bir tıkla iptal edebilirsiniz. İptal etseniz dahi ödediğiniz ayın sonuna kadar ayrıcalıklarınız devam eder.
+          </div>
+        </details>
+        <details class="sss-oge">
+          <summary>Ödeme güvenli mi ve kart bilgilerim saklanıyor mu?</summary>
+          <div class="sss-cevap">
+            Tüm ödemeler uluslararası sertifikalı <strong>Lemon Squeezy</strong> altyapısı üzerinden 256-bit SSL şifreleme ve 3D Secure güvencesiyle işlenir. Kart bilgileriniz sitemizde asla tutulmaz ve üçüncü taraflarla paylaşılmaz.
+          </div>
+        </details>
+        <details class="sss-oge">
+          <summary>Abonelik aldığımda reklamsız deneyim ve rozet hemen açılır mı?</summary>
+          <div class="sss-cevap">
+            Evet, ödemeniz tamamlandığı anda hesabınıza Premium/VIP yetkisi tanımlanır. Sitedeki tüm reklamlar anında kapanır ve yorumlarda rozetiniz görünmeye başlar.
+          </div>
+        </details>
+      </div>
+    </section>
+  </div>
+</Base>
+
+<!-- Lemon Squeezy In-App Checkout Overlay Script -->
+<script is:inline src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
+
+<script>
+  // Oturum açmış kullanıcının kimliğini Lemon Squeezy linkine ekle
+  function checkoutLinkleriniGuncelle() {
+    try {
+      const ham = localStorage.getItem("hb-oturum");
+      if (!ham) return;
+      const u = JSON.parse(ham);
+      if (!u || !u.id) return;
+
+      const btnPremium = document.getElementById("btn-abone-premium") as HTMLAnchorElement;
+      const btnVip = document.getElementById("btn-abone-vip") as HTMLAnchorElement;
+
+      const bagla = (btn: HTMLAnchorElement | null) => {
+        if (!btn || !btn.href) return;
+        const url = new URL(btn.href, window.location.origin);
+        url.searchParams.set("checkout[custom][user_id]", u.id);
+        if (u.kadi) url.searchParams.set("checkout[custom][kadi]", u.kadi);
+        btn.href = url.toString();
+      };
+
+      bagla(btnPremium);
+      bagla(btnVip);
+    } catch (e) {}
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", checkoutLinkleriniGuncelle);
+  } else {
+    checkoutLinkleriniGuncelle();
+  }
+</script>
+
+<style>
+  .premium-sayfa {
+    max-width: 960px;
+    margin: 36px auto 70px;
+  }
+
+  /* Hero */
+  .premium-hero {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 44px;
+  }
+  .premium-hero__rozet {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    color: #f59e0b;
+    font-size: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+  }
+  .premium-hero__parlama {
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: #f59e0b;
+    box-shadow: 0 0 10px #f59e0b;
+  }
+  .premium-hero__baslik {
+    font-size: 2.3rem;
+    font-weight: 900;
+    line-height: 1.22;
+    letter-spacing: -0.03em;
+    color: var(--heading);
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  .premium-hero__vurgu {
+    background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .premium-hero__aciklama {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-2);
+    margin: 0;
+  }
+
+  /* Izgara */
+  .fiyat-izgara {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  /* Kart */
+  .fiyat-kart {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 34px 28px;
+    border-radius: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s var(--ease), border-color 0.25s var(--ease);
+  }
+  .fiyat-kart:hover {
+    transform: translateY(-4px);
+    border-color: rgba(245, 158, 11, 0.4);
+  }
+
+  /* VIP Kart Vurgusu */
+  .fiyat-kart--vip {
+    border-color: rgba(245, 158, 11, 0.45);
+    background: linear-gradient(180deg, var(--surface) 0%, rgba(245, 158, 11, 0.03) 100%);
+    box-shadow: 0 16px 40px -15px rgba(245, 158, 11, 0.18);
+  }
+
+  .fiyat-kart__rozet {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    font-size: 0.72rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+  .fiyat-kart__rozet--vip {
+    background: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%);
+    color: #fff;
+    box-shadow: 0 4px 12px -3px rgba(236, 72, 153, 0.4);
+  }
+
+  .fiyat-kart__ad {
+    margin: 0 0 8px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--heading);
+  }
+  .fiyat-kart__ozet {
+    margin: 0 0 20px;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--muted);
+    min-height: 40px;
+  }
+
+  .fiyat-kart__fiyat-kap {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 22px;
+  }
+  .fiyat-kart__tutar {
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--heading);
+  }
+  .fiyat-kart__periyot {
+    font-size: 0.95rem;
+    color: var(--muted);
+    font-weight: 700;
+  }
+
+  /* Özellik Listesi */
+  .fiyat-kart__ozellikler {
+    list-style: none;
+    margin: 0 0 32px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1;
+  }
+  .fiyat-kart__ozellikler li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    color: var(--text-2);
+  }
+  .fiyat-ikon {
+    flex-shrink: 0;
+    color: #22c55e;
+    margin-top: 2px;
+  }
+  .fiyat-ikon--vip {
+    color: #f59e0b;
+  }
+
+  /* Butonlar */
+  .fiyat-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 14px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--heading);
+    font-size: 0.94rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition: all 0.2s var(--ease);
+  }
+  .fiyat-btn:hover {
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+  }
+
+  .fiyat-btn--vip {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    border: 0;
+    color: #fff;
+    box-shadow: 0 8px 24px -6px rgba(245, 158, 11, 0.4);
+  }
+  .fiyat-btn--vip:hover {
+    background: linear-gradient(135deg, #fbbf24 0%, #b45309 100%);
+    color: #fff;
+    box-shadow: 0 12px 28px -6px rgba(245, 158, 11, 0.55);
+    transform: scale(1.01);
+  }
+
+  /* Özellik Kartı */
+  .premium-ozellik {
+    margin-bottom: 48px;
+  }
+  .premium-ozellik__kart {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 28px;
+    border-radius: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+  }
+  .premium-ozellik__ikon {
+    font-size: 2.2rem;
+    line-height: 1;
+  }
+  .premium-ozellik__metin h2 {
+    margin: 0 0 8px;
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: var(--heading);
+  }
+  .premium-ozellik__metin p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--text-2);
+  }
+
+  /* SSS */
+  .premium-sss {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .premium-sss__baslik {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--heading);
+    margin: 0 0 24px;
+  }
+  .sss-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .sss-oge {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface);
+    overflow: hidden;
+  }
+  .sss-oge summary {
+    padding: 16px 20px;
+    font-weight: 800;
+    font-size: 0.94rem;
+    color: var(--heading);
+    cursor: pointer;
+    user-select: none;
+  }
+  .sss-cevap {
+    padding: 0 20px 18px;
+    font-size: 0.88rem;
+    line-height: 1.58;
+    color: var(--text-2);
+  }
+
+  @media (max-width: 640px) {
+    .premium-sayfa {
+      margin: 20px auto 40px;
+    }
+    .premium-hero__baslik {
+      font-size: 1.7rem;
+    }
+    .fiyat-izgara {
+      grid-template-columns: 1fr;
+    }
+    .fiyat-kart {
+      padding: 24px 20px;
+    }
+    .premium-ozellik__kart {
+      flex-direction: column;
+      gap: 12px;
+      padding: 20px;
+    }
+  }
+</style>

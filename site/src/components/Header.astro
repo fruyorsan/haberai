@@ -5,6 +5,7 @@ import Bildirim from "./Bildirim.astro";
 const nav = [
   { label: "Ana Sayfa", href: "/" },
   { label: "Shorts", href: "/akis/", shorts: true },
+  { label: "👑 Premium", href: "/premium/", premium: true },
   { label: "Son Dakika", href: "/son-dakika/" },
   { label: "Piyasa", href: "/piyasa/" },
   { label: "Tüm Haberler", href: "/haberler/" },
@@ -32,6 +33,7 @@ const isActive = (href) =>
             {
               "nav__link--active": isActive(item.href),
               "nav__link--shorts": item.shorts,
+              "nav__link--premium": item.premium,
             },
           ]}
         >
@@ -943,4 +945,14 @@ const isActive = (href) =>
       font-size: 1.05rem;
     }
   }
+
+  .nav__link--premium {
+    color: #f59e0b !important;
+    font-weight: 800;
+  }
+  .nav__link--premium:hover {
+    color: #fbbf24 !important;
+    text-shadow: 0 0 12px rgba(245, 158, 11, 0.45);
+  }
+
 </style>

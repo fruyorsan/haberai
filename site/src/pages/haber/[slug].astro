@@ -198,7 +198,7 @@ const breadcrumbLd = {
   <div class="progress" id="progress" aria-hidden="true"></div>
 
   <div class="container">
-    <article class="post">
+    <article class:list={["post", article.premium && "post--premium"]}>
       <nav class="crumbs">
         <a href="/">Ana Sayfa</a>
         <span>/</span>
@@ -206,7 +206,11 @@ const breadcrumbLd = {
       </nav>
 
       <div class="post__top">
-        <span class="badge">{article.category}</span>
+        {article.premium ? (
+          <span class="badge badge--premium">👑 Özgür Premium</span>
+        ) : (
+          <span class="badge">{article.category}</span>
+        )}
         {bildirimAktif && (
           <div class="post__follow-wrap">
             <button
@@ -346,6 +350,19 @@ const breadcrumbLd = {
                 )}
               </Fragment>
             ))}
+            {article.premium && (
+              <div class="post__paywall" id="makale-paywall">
+                <span class="post__paywall-rozet">👑 HaberinAi Özgür Premium</span>
+                <h3 class="post__paywall-baslik">Bu Özel Haberin Devamı Yalnızca Premium Okurlarımıza Açıktır</h3>
+                <p class="post__paywall-aciklama">
+                  Derinlemesine yapay zekâ analizleri, kaynak kodları ve bağımsız haber dosyalarının tamamına erişmek için Premium veya VIP Kulübüne katılın.
+                </p>
+                <div class="post__paywall-butonlar">
+                  <a href="/premium/" class="post__paywall-btn post__paywall-btn--vip">Hemen Abone Ol (49 ₺/ay)</a>
+                  <a href="/hesap/" class="post__paywall-btn post__paywall-btn--giris">Giriş Yap</a>
+                </div>
+              </div>
+            )}
           </section>
         )}
 
@@ -1286,4 +1303,96 @@ const breadcrumbLd = {
     color: var(--muted);
     font-style: italic;
   }
+
+  /* ================================================================
+     PREMIUM PAYWALL KİLİT TASARIMI
+     ================================================================ */
+  .badge--premium {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 12px -3px rgba(245, 158, 11, 0.45);
+  }
+  .post__paywall {
+    position: relative;
+    margin: 32px 0;
+    padding: 36px 24px;
+    border-radius: 24px;
+    background: linear-gradient(180deg, var(--surface) 0%, rgba(245, 158, 11, 0.04) 100%);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    box-shadow: 0 16px 40px -15px rgba(245, 158, 11, 0.2);
+    text-align: center;
+  }
+  .post__paywall-rozet {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #fff;
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 14px -3px rgba(245, 158, 11, 0.5);
+  }
+  .post__paywall-baslik {
+    margin: 0 0 10px;
+    font-size: 1.35rem;
+    font-weight: 900;
+    color: var(--heading);
+  }
+  .post__paywall-aciklama {
+    margin: 0 auto 24px;
+    max-width: 580px;
+    font-size: 0.94rem;
+    line-height: 1.6;
+    color: var(--text-2);
+  }
+  .post__paywall-butonlar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .post__paywall-btn {
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 0.92rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition: all 0.2s var(--ease);
+  }
+  .post__paywall-btn--vip {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #fff;
+    box-shadow: 0 6px 20px -5px rgba(245, 158, 11, 0.45);
+  }
+  .post__paywall-btn--vip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px -5px rgba(245, 158, 11, 0.6);
+  }
+  .post__paywall-btn--giris {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  .post__paywall-btn--giris:hover {
+    border-color: var(--text);
+  }
+
+  html.is-premium .post__paywall {
+    display: none !important;
+  }
+  html:not(.is-premium) .post--premium .content__p:nth-of-type(n+2),
+  html:not(.is-premium) .post--premium .content figure,
+  html:not(.is-premium) .post--premium .content .ad,
+  html:not(.is-premium) .post--premium .analysis {
+    display: none !important;
+  }
+  html:not(.is-premium) .post--premium .content__p:first-of-type {
+    position: relative;
+    mask-image: linear-gradient(180deg, #000 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent 100%);
+  }
+
 </style>

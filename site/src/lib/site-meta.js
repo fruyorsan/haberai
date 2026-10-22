@@ -122,6 +122,15 @@ export const HESAP = {
 };
 
 /**
+ * Lemon Squeezy Abonelik ve Paket Ödeme Bağlantıları
+ */
+export const LEMON_SQUEEZY = {
+  storeUrl: process.env.LEMON_STORE_URL || "https://haberinai.lemonsqueezy.com",
+  premiumCheckoutUrl: process.env.LEMON_PREMIUM_URL || "https://haberinai.lemonsqueezy.com/buy/premium",
+  vipCheckoutUrl: process.env.LEMON_VIP_URL || "https://haberinai.lemonsqueezy.com/buy/vip",
+};
+
+/**
  * İlgi alanı seçicide gösterilen kategoriler: TÜM kategoriler her zaman
  * listelenir (o an haberi olmayan bir kategori de seçilebilsin). Slug'lar
  * site/src/lib/articles.js → slugify ile birebir aynı olmalıdır.

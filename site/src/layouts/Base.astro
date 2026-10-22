@@ -435,6 +435,16 @@ OneSignalDeferred.push(async function (OneSignal) {
 
     <!-- Sayfaya ozel JSON-LD (WebSite/Organization vb.) -->
     {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+
+    <!-- Premium & VIP Kullanici Algilayici (Reklamlari sifir gecikmeyle kapatir) -->
+    <script is:inline>
+      try {
+        var _u = JSON.parse(localStorage.getItem('hb-oturum') || '{}');
+        if (_u && (_u.uyelik_tipi === 'premium' || _u.uyelik_tipi === 'vip')) {
+          document.documentElement.classList.add('is-premium');
+        }
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <Header />

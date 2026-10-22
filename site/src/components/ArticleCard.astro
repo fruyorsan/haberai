@@ -38,7 +38,7 @@ const delay = Math.min(index * 45, 320);
 ---
 
 <article
-  class:list={["card", `card--${size}`, !kapak && "card--nofoto"]}
+  class:list={["card", `card--${size}`, !kapak && "card--nofoto", article.premium && "card--premium"]}
   data-kat={article.categorySlug}
   data-reveal={reveal ? "" : undefined}
   style={reveal ? `transition-delay:${delay}ms` : undefined}
@@ -67,7 +67,9 @@ const delay = Math.min(index * 45, 320);
       )}
       <div class="card__overlay" aria-hidden="true"></div>
 
-      {yakinSonDakika ? (
+      {article.premium ? (
+        <span class="card__badge card__badge--premium">👑 Özgür Premium</span>
+      ) : yakinSonDakika ? (
         <span class="card__breaking">
           <span class="card__breaking-dot" aria-hidden="true"></span>
           SON DAKİKA
