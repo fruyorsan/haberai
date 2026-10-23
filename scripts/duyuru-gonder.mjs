@@ -36,7 +36,7 @@ async function duyuruGonder() {
     chrome_web_icon: `${SITE_URL}/ikon-192.png`,
     firefox_icon: `${SITE_URL}/ikon-192.png`,
     large_icon: `${SITE_URL}/ikon-192.png`,
-    chrome_web_badge: `${SITE_URL}/ikon-192.png`,
+    chrome_web_badge: `${SITE_URL}/badge-96.png`,
     chrome_web_image: `${SITE_URL}/og-default.png`,
     big_picture: `${SITE_URL}/og-default.png`,
     ios_attachments: { id1: `${SITE_URL}/og-default.png` },

@@ -404,24 +404,26 @@ async function gonder(p) {
   if (!(await sayfaHazirMi(p.url))) {
     throw new Error(`hedef sayfa yayında değil (404/hazır değil): ${p.url}`);
   }
+  // Marka logosu (tüm bildirimlerin solunda resmi HaberinAi logosu görünür)
+  const logoIkon = `${SITE_URL}/ikon-192.png`;
+  // Android durum çubuğu ve rozet için şeffaf zeminli beyaz silüet (gri kutu hatasını engeller)
+  const badgeIkon = `${SITE_URL}/badge-96.png`;
+
   const govde = {
     app_id: APP_ID,
     target_channel: "push",
     headings: { tr: p.baslik, en: p.baslik },
     contents: { tr: p.icerik, en: p.icerik },
     url: p.url,
-    chrome_web_badge: `${SITE_URL}/ikon-192.png`,
+    chrome_web_icon: logoIkon,
+    firefox_icon: logoIkon,
+    large_icon: logoIkon,
+    chrome_web_badge: badgeIkon,
     ttl: p.ttl,
     idempotency_key: uuidAnahtar(p.anahtar),
     web_push_topic: 'hb_' + uuidAnahtar(p.anahtar || p.url || Date.now()),
     android_group: 'haberinai_haberler',
   };
-
-  // İkon (kare): haberin fotoğrafı — kilit ekranı ve özet bildirimde doğrudan haber görseli görünür
-  const ikon = p.ikon || (p.gorsel ? p.gorsel : `${SITE_URL}/ikon-192.png`);
-  govde.chrome_web_icon = ikon;
-  govde.firefox_icon = ikon;
-  govde.large_icon = ikon;
 
   // Büyük görsel (16:9): Chrome Masaüstü, Android ve iOS/Safari'de genişletilmiş görünüm için
   if (p.gorsel) {

@@ -13,8 +13,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
   <div class="container profil">
     {!hazir && (
       <p class="profil__kapali">
-        Hesap servisi henüz ayarlı değil. Yönetici <code>supabase/hesap.sql</code>
-        dosyasını çalıştırmalı.
+        Hesap hizmeti şu an kullanılamıyor. Lütfen daha sonra tekrar deneyin.
       </p>
     )}
 
@@ -39,17 +38,28 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         <button type="button" class="profil__cikis" id="profil-cikis">Çıkış yap</button>
       </header>
 
-      <section class="profil__blok">
-        <h2 class="profil__h2">Görünen ad</h2>
+      <div class="profil__yerlesim">
+        <nav class="profil__nav" aria-label="Profil bölümleri">
+          <a href="#hesap">Hesap bilgileri</a>
+          <a href="#ilgi">İlgi alanları</a>
+          <a href="#bildirimler">Bildirimler</a>
+          <a href="#kayitlar">Okuma listesi</a>
+          <a href="#yorumlar">Yorumlar</a>
+          <a href="#profil-yonetim" class="profil__nav-yonetim">Yönetim</a>
+          <a href="#hesap-sil" class="profil__nav-tehlike">Hesabı sil</a>
+        </nav>
+        <div class="profil__akis">
+
+      <section class="profil__blok" id="hesap">
+        <h2 class="profil__h2">Hesap bilgileri</h2>
+        <h3 class="profil__h3">Görünen ad</h3>
         <p class="profil__aciklama">Yorumlarında bu ad görünür.</p>
         <div class="profil__satir">
           <input class="profil__girdi" id="profil-ad-girdi" type="text" maxlength="40" placeholder="Adın" />
           <button type="button" class="profil__btn profil__btn--kucuk" id="profil-ad-kaydet">Kaydet</button>
         </div>
-      </section>
 
-      <section class="profil__blok">
-        <h2 class="profil__h2">Profil fotoğrafı</h2>
+        <h3 class="profil__h3 profil__h3--ayrac">Profil fotoğrafı</h3>
         <p class="profil__aciklama">
           Hazır bir desen seç ya da kendi fotoğrafını yükle. Yorumlarında ve
           üstteki hesap düğmesinde görünür.
@@ -92,14 +102,11 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
             </button>
           ))}
         </div>
-        <p class="profil__avatar-kaynak">
-          Popüler ve estetik profil avatarları.
-        </p>
         <span class="profil__mini" id="profil-avatar-durum" role="status" aria-live="polite"></span>
       </section>
 
-      <section class="profil__blok">
-        <h2 class="profil__h2">İlgi alanların</h2>
+      <section class="profil__blok" id="ilgi">
+        <h2 class="profil__h2">İlgi alanları</h2>
         <p class="profil__aciklama">
           Seçtiğin konular Shorts akışında “Sana özel” sıralamada öne çıkar ve
           ana sayfada önerilir. İstediğin kadar seçebilirsin.
@@ -113,9 +120,9 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         </div>
       </section>
 
-      <section class="profil__blok">
+      <section class="profil__blok" id="bildirimler">
         <div class="profil__baslik-satir">
-          <h2 class="profil__h2">Bildirim ayarların ve başlıkların</h2>
+          <h2 class="profil__h2">Bildirimler</h2>
           <div class="profil__hizli-sec">
             <button type="button" class="profil__mini-btn" id="profil-bildirim-hepsi">Tümünü seç</button>
             <button type="button" class="profil__mini-btn" id="profil-bildirim-temizle">Temizle</button>
@@ -168,7 +175,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         </div>
       </section>
 
-      <section class="profil__blok">
+      <section class="profil__blok" id="kayitlar">
         <h2 class="profil__h2">Okuma listesi</h2>
         <p class="profil__aciklama">
           Kaydettiğin haberler hesabında saklanır; başka bir cihazdan girdiğinde
@@ -180,7 +187,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         </p>
       </section>
 
-      <section class="profil__blok">
+      <section class="profil__blok" id="yorumlar">
         <h2 class="profil__h2">Yorumların</h2>
         <ul class="profil__yorumlar" id="profil-yorumlar"></ul>
         <p class="profil__bos" id="profil-yorum-bos" hidden>Henüz yorumun yok.</p>
@@ -193,7 +200,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
       <section class="profil__blok profil__yonetim-alani" id="profil-yonetim" hidden>
         <div class="profil__yonetim-ust">
           <div>
-            <h2 class="profil__h2">👑 Yönetim Paneli · Canlı Trafik & Okur Merkezi</h2>
+            <h2 class="profil__h2">Yönetim paneli</h2>
             <p class="profil__aciklama">
               Sitenin anlık canlı ziyaretçileri, son aktif üyeleri ve kayıtlı kullanıcıları. Yalnızca <strong>Yönetici</strong> rolündeki hesabına görünür.
             </p>
@@ -214,20 +221,20 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
           <div class="profil__metrik-kart profil__metrik--canli">
             <div class="profil__metrik-baslik">
               <span class="profil__canli-nokta"></span>
-              Şu An Sitede Canlı
+              Şu an sitede
             </div>
             <div class="profil__metrik-sayi" id="yon-canli-toplam">0</div>
             <div class="profil__metrik-alt" id="yon-canli-detay">0 üye · 0 misafir</div>
           </div>
 
           <div class="profil__metrik-kart">
-            <div class="profil__metrik-baslik">👥 Toplam Kayıtlı Okur</div>
+            <div class="profil__metrik-baslik">Kayıtlı okur</div>
             <div class="profil__metrik-sayi" id="yon-kayitli-toplam">0</div>
             <div class="profil__metrik-alt" id="yon-kayitli-detay">Sitede hesabı olanlar</div>
           </div>
 
           <div class="profil__metrik-kart">
-            <div class="profil__metrik-baslik">⚡ Son 24 Saat Aktif</div>
+            <div class="profil__metrik-baslik">Son 24 saatte aktif</div>
             <div class="profil__metrik-sayi" id="yon-aktif-uye-sayisi">0</div>
             <div class="profil__metrik-alt">Sitede hareket eden üye</div>
           </div>
@@ -235,20 +242,20 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
 
         {/* Canlı Gezilen Sayfalar */}
         <div class="profil__alt-blok" id="yon-sayfalar-blok" hidden>
-          <h3 class="profil__alt-baslik">📄 Şu An Gezilen Sayfalar</h3>
+          <h3 class="profil__alt-baslik">Şu an okunan sayfalar</h3>
           <div class="profil__sayfalar-liste" id="yon-sayfalar"></div>
         </div>
 
         {/* Son Aktif Üyeler */}
         <div class="profil__alt-blok" id="yon-aktifler-blok" hidden>
-          <h3 class="profil__alt-baslik">⚡ Çevrimiçi & Son Aktif Üyeler</h3>
+          <h3 class="profil__alt-baslik">Çevrimiçi ve son aktif üyeler</h3>
           <div class="profil__aktifler-liste" id="yon-son-aktifler"></div>
         </div>
 
         {/* Tüm Kayıtlı Üyeler ve Rozet Yönetimi */}
         <div class="profil__alt-blok">
           <div class="profil__baslik-satir">
-            <h3 class="profil__alt-baslik">👥 Tüm Kayıtlı Üyeler & Rozet Yönetimi</h3>
+            <h3 class="profil__alt-baslik">Üyeler ve rozetler</h3>
             <span class="profil__mini" id="profil-yonetim-durum" role="status" aria-live="polite"></span>
           </div>
           <p class="profil__aciklama">
@@ -265,7 +272,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         </div>
       </section>
 
-      <section class="profil__blok profil__blok--tehlike">
+      <section class="profil__blok profil__blok--tehlike" id="hesap-sil">
         <h2 class="profil__h2">Hesabımı sil</h2>
         <p class="profil__aciklama">
           Hesabını kalıcı olarak kapatır. Profil fotoğrafın, okuma listen ve
@@ -279,14 +286,93 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
           <span class="profil__mini" id="profil-sil-durum" role="status" aria-live="polite"></span>
         </div>
       </section>
+        </div>
+      </div>
     </div>
   </div>
 </Base>
 
 <style>
   .profil {
-    max-width: 720px;
+    max-width: 1040px;
     margin: 36px auto 70px;
+  }
+  .profil__yerlesim {
+    display: grid;
+    grid-template-columns: 210px minmax(0, 1fr);
+    gap: 22px;
+    align-items: start;
+  }
+  .profil__nav {
+    position: sticky;
+    top: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+  }
+  .profil__nav a {
+    padding: 9px 12px;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-2);
+    text-decoration: none;
+  }
+  .profil__nav a:hover {
+    background: var(--surface-2);
+    color: var(--text);
+  }
+  .profil__nav .profil__nav-tehlike {
+    margin-top: 6px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    border-radius: 0 0 10px 10px;
+    color: var(--muted);
+  }
+  /* Yönetim bağlantısı yalnızca yönetim paneli görünürken çıkar. */
+  .profil__yerlesim:has(#profil-yonetim[hidden]) .profil__nav-yonetim {
+    display: none;
+  }
+  .profil__akis > .profil__blok {
+    scroll-margin-top: 90px;
+  }
+  .profil__h3 {
+    margin: 10px 0 2px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .profil__h3--ayrac {
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+  }
+  @media (max-width: 860px) {
+    .profil__yerlesim {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .profil__nav {
+      position: static;
+      flex-direction: row;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: 6px;
+    }
+    .profil__nav a {
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .profil__nav .profil__nav-tehlike {
+      margin: 0;
+      padding-top: 9px;
+      border-top: 0;
+      border-radius: 10px;
+    }
   }
   .profil__kapali {
     padding: 12px 14px;
