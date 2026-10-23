@@ -8,7 +8,7 @@
 // tarayıcılar için tam atıf DOM'da (sr-only) durmaya devam eder.
 import { imageUrl, imageSrcset } from "../lib/articles.js";
 
-const { url, baslik, kaynak, eskiKaynak } = Astro.props;
+const { url, baslik, kaynak, eskiKaynak, altyazi, alt } = Astro.props;
 
 const lisansAdresi = (g) => {
   if (!g) return "";
@@ -21,7 +21,6 @@ const lisansLink = kaynak ? lisansAdresi(kaynak) : "";
 const atif = kaynak
   ? `Fotoğraf: ${kaynak.yazar || "Wikimedia Commons"}${kaynak.lisans ? ` · ${kaynak.lisans}` : ""} · Wikimedia Commons`
   : `Fotoğraf: ${eskiKaynak || "HaberinAi"}`;
-const atifAdres = kaynak?.sayfa || url;
 ---
 
 <figure class="content__fig">
@@ -39,7 +38,7 @@ const atifAdres = kaynak?.sayfa || url;
         srcset={imageSrcset(url, [640, 1000]) || undefined}
         sizes="(max-width: 900px) 100vw, 800px"
         data-orig={url}
-        alt={`${baslik} — haber fotoğrafı`}
+        alt={alt || `${baslik} — haber fotoğrafı`}
         width="1000"
         height="563"
         loading="lazy"
@@ -50,25 +49,29 @@ const atifAdres = kaynak?.sayfa || url;
     </a>
   </div>
 
-  <figcaption class="sr-only">
-    {atif}
-    {kaynak?.lisans && lisansLink && <a href={lisansLink} target="_blank" rel="noopener nofollow">{kaynak.lisans}</a>}
-    {kaynak?.sayfa && (
-      <>
-        {" · "}
-        <a href={kaynak.sayfa} target="_blank" rel="noopener nofollow">Wikimedia Commons</a>
-      </>
-    )}
-  </figcaption>
+  {altyazi ? (
+    <figcaption class="content__fig-caption">
+      <span>{altyazi}</span>
+    </figcaption>
+  ) : (
+    <figcaption class="sr-only">
+      {atif}
+      {kaynak?.lisans && lisansLink && <a href={lisansLink} target="_blank" rel="noopener nofollow">{kaynak.lisans}</a>}
+      {kaynak?.sayfa && (
+        <>
+          {" · "}
+          <a href={kaynak.sayfa} target="_blank" rel="noopener nofollow">Wikimedia Commons</a>
+        </>
+      )}
+    </figcaption>
+  )}
 </figure>
 
 <style>
   /* Stiller BURADA durmak zorunda: [slug].astro'daki kapsamlı (scoped) CSS bu
-     bileşenin içindeki öğelere uygulanmaz. Daha önce orada tanımlıydı ve hiç
-     eşleşmiyordu; görsel, HTML'deki height="563" özniteliği yüzünden telefonda
-     263x563 gibi ezilmiş (oranı bozuk) görünüyordu. */
+     bileşenin içindeki öğelere uygulanmaz. */
   .content__fig {
-    margin: 30px 0;
+    margin: 32px 0;
     max-width: 75ch;
   }
   .content__fig-kap {
@@ -90,6 +93,15 @@ const atifAdres = kaynak?.sayfa || url;
     transition: transform 0.5s var(--ease, ease);
   }
   .content__fig-link:hover .content__fig-img {
-    transform: scale(1.03);
+    transform: scale(1.02);
+  }
+  .content__fig-caption {
+    margin-top: 10px;
+    font-size: 0.84rem;
+    line-height: 1.45;
+    color: var(--muted);
+    text-align: center;
+    font-style: italic;
+    padding: 0 12px;
   }
 </style>

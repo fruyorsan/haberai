@@ -4,7 +4,6 @@ import ArticleCard from "../../components/ArticleCard.astro";
 import AdSlot from "../../components/AdSlot.astro";
 import ShareButtons from "../../components/ShareButtons.astro";
 import PushCTA from "../../components/PushCTA.astro";
-import FotoGaleri from "../../components/FotoGaleri.astro";
 import DevamHaber from "../../components/DevamHaber.astro";
 import HaberFigur from "../../components/HaberFigur.astro";
 import Yorumlar from "../../components/Yorumlar.astro";
@@ -239,7 +238,35 @@ for (const a of benzerler) {
   });
 }
 
-const galeriVar = galeriFotograflari.length >= 3;
+// --- Fotoğrafların Metin İçine Serpiştirilmesi (ShiftDelete / Webtekno tarzı) ---
+// Haberin kendi ek fotoğrafları (öncelikli) + ilgili konudaki fotoğraflar tek havuzda
+const tumMetinFotograflari = [...galeriFotograflari];
+
+// Paragraf indekslerine göre fotoğraf dağıtımı:
+// 1. paragraftan sonra (i = 0): 1. Fotoğraf
+// 2. paragraftan sonra (i = 1): Sponsorlu reklam (body.length >= 4 ise)
+// 3. paragraftan sonra (i = 2): 2. Fotoğraf (varsa)
+// 5. paragraftan sonra (i = 4): 3. Fotoğraf (varsa)
+// 7. paragraftan sonra (i = 6): 4. Fotoğraf (varsa)
+const fotoPozisyonlari = new Map();
+if (tumMetinFotograflari.length > 0 && body.length >= 1) {
+  let fotoIdx = 0;
+  fotoPozisyonlari.set(0, tumMetinFotograflari[fotoIdx++]);
+
+  if (fotoIdx < tumMetinFotograflari.length) {
+    if (body.length >= 4) {
+      fotoPozisyonlari.set(2, tumMetinFotograflari[fotoIdx++]);
+    } else if (body.length === 3) {
+      fotoPozisyonlari.set(1, tumMetinFotograflari[fotoIdx++]);
+    }
+  }
+  if (fotoIdx < tumMetinFotograflari.length && body.length >= 6) {
+    fotoPozisyonlari.set(4, tumMetinFotograflari[fotoIdx++]);
+  }
+  if (fotoIdx < tumMetinFotograflari.length && body.length >= 8) {
+    fotoPozisyonlari.set(6, tumMetinFotograflari[fotoIdx++]);
+  }
+}
 
 const words = `${article.summary || ""} ${keyPoints.join(" ")} ${body.join(" ")} ${article.comment || ""}`
   .split(/\s+/)
@@ -385,20 +412,16 @@ const breadcrumbLd = {
         <time>{date}</time>
         <span class="post__dot">•</span>
         <span>{readMin} dk okuma</span>
-        {galeriVar && (
+        {tumMetinFotograflari.length > 0 && (
           <>
             <span class="post__dot">•</span>
-            <a
-              class="post__foto-link"
-              href="#galeri"
-              aria-label={`${galeriFotograflari.length} fotoğraflı galeriye git`}
-            >
+            <span class="post__foto-link" title={`${tumMetinFotograflari.length + 1} fotoğraflı haber`}>
               <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M4 7h3l2-3h6l2 3h3a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z" />
                 <circle cx="12" cy="13" r="4" />
               </svg>
-              {galeriFotograflari.length} fotoğraf
-            </a>
+              {tumMetinFotograflari.length + 1} fotoğraf
+            </span>
           </>
         )}
         <div class="post__share">
@@ -480,44 +503,34 @@ const breadcrumbLd = {
           </section>
         )}
 
-        {/* Detay isteyen okur için: haberin kendi fotoğrafları + konudaki
-            doğrulanmış kapaklar tek galeride. 3'ten az fotoğraf varsa basılmaz. */}
-        {galeriVar && <FotoGaleri fotograflar={galeriFotograflari} />}
-
         {body.length > 0 && (
           <section class="content">
             <h2 class="content__title">Haberin Detayı</h2>
-            {body.map((p, i) => (
-              <Fragment>
-                <p class="content__p">{p}</p>
+            {body.map((p, i) => {
+              const foto = fotoPozisyonlari.get(i);
+              return (
+                <Fragment>
+                  <p class="content__p">{p}</p>
 
-                {/* Haber içi ek fotoğraflar: galeri yoksa gövdeyi fotoğrafla
-                    böler. Galeri varsa aynı kareler iki kez gösterilmez; tümü
-                    yukarıdaki galeride toplanır. */}
-                {!galeriVar && ekGorseller[0] && i === 0 && body.length >= 3 && (
-                  <HaberFigur
-                    url={ekGorseller[0]}
-                    baslik={article.title}
-                    kaynak={ekKaynak(ekGorseller[0])}
-                    eskiKaynak={article.source}
-                  />
-                )}
+                  {/* ShiftDelete tarzı metin arasına serpiştirilmiş fotoğraf */}
+                  {foto && (
+                    <HaberFigur
+                      url={foto.url}
+                      baslik={foto.caption || article.title}
+                      kaynak={ekKaynak(foto.url)}
+                      eskiKaynak={foto.credit || article.source}
+                      altyazi={foto.caption && foto.caption !== article.title ? foto.caption : undefined}
+                      alt={foto.alt || `${article.title} — haber fotoğrafı`}
+                    />
+                  )}
 
-                {!galeriVar && ekGorseller[1] && i === fig2Indeks && body.length >= 5 && (
-                  <HaberFigur
-                    url={ekGorseller[1]}
-                    baslik={article.title}
-                    kaynak={ekKaynak(ekGorseller[1])}
-                    eskiKaynak={article.source}
-                  />
-                )}
-
-                {/* Gövde ortası reklamı: 2. paragraftan sonra, yeterince uzun haberlerde (ShiftDelete tarzı in-article) */}
-                {i === 1 && body.length >= 4 && (
-                  <AdSlot slot={ADSENSE_SLOTS.makale2} format="fluid" layout="in-article" label="Sponsorlu" />
-                )}
-              </Fragment>
-            ))}
+                  {/* Gövde ortası reklamı: 2. paragraftan sonra, yeterince uzun haberlerde (ShiftDelete tarzı in-article) */}
+                  {i === 1 && body.length >= 4 && (
+                    <AdSlot slot={ADSENSE_SLOTS.makale2} format="fluid" layout="in-article" label="Sponsorlu" />
+                  )}
+                </Fragment>
+              );
+            })}
             {article.premium && (
               <div class="post__paywall" id="makale-paywall">
                 <span class="post__paywall-rozet">👑 HaberinAi Özgür Premium</span>
