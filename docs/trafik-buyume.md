@@ -101,6 +101,44 @@ tıklama değil, okuma süresi ve sayfa/session önemli.
 4. Bir "günün özeti" veya "haftanın özeti" haberi yayınla; bunu kanalda sabitle.
 5. Search Console'da yeni keşfedilen sayfaları ve 404'leri kontrol et.
 
+## 6) Günlük yayın kotası ve tempo (2026-10-23)
+
+Hattın en büyük sorunu hacimdi: 5 günde ~3.800 haber (günde 450-770).
+Google bu yaşta bir siteye bu hızda güvenmiyor; sayfaların çoğu "tarandı,
+dizine eklenmedi" durumunda kalıyor.
+
+Türkiye'deki teknoloji sitelerinin son 24 saatteki gerçek ortalaması
+(23.10.2026 ölçümü):
+
+| Site | Son 24 saatte haber |
+| --- | --- |
+| ShiftDelete | 43 |
+| DonanımHaber | 42 |
+| CHIP | 34 |
+| Webtekno | 31 |
+| Tamindir | 30 |
+| Webrazzi | 9 |
+
+Ortalama **~36/gün**. Varsayılan kota bu yüzden **40 haber/gün** ve haberler
+günün ilk saatlerinde tükenmesin diye **36 dakikada 1** olacak şekilde
+yayınlanıyor (40 × 36 dk ≈ 24 saat). Son dakika adayı varsa bekleme 12
+dakikaya iner; yine de günlük kotayı aşmaz.
+
+Ayarlar `src/config.js` içinde; GitHub'da kod değiştirmeden değiştirilebilir:
+
+```bash
+# Günde 40 haber (varsayılan). 0 = sınırsız (eski davranış).
+gh variable set GUNLUK_HABER_LIMIT --body "40"
+# Normal haberler arası en kısa süre (dk).
+gh variable set YAYIN_ARALIK_DK --body "36"
+# Son dakika adayı varsa en kısa süre (dk).
+gh variable set SON_DAKIKA_ARALIK_DK --body "12"
+```
+
+Kota, `Europe/Istanbul` saatine göre gece yarısı sıfırlanır. Kota dolduğunda
+hat yeni haber üretmez; veri onarımı ve piyasa güncellemesi devam eder.
+Kotayı geçici olarak kapatmak için `GUNLUK_HABER_LIMIT=0` yeterlidir.
+
 ## Sınırlar
 
 - Google News/Discover kabulü garanti değildir; içerik özgünlüğü ve yayın

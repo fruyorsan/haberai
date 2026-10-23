@@ -63,6 +63,46 @@ async function main() {
     if (onarilan) console.log(`Görsel onarımı: ${onarilan} kapak fotoğrafı düzeltildi`);
   }
 
+  // ------------------------------------------------------------------
+  // GÜNLÜK KOTA + YAYIN TEMPOSU
+  // ------------------------------------------------------------------
+  // "Bugün" Europe/Istanbul'a göre hesaplanır; sunucu UTC'de çalışsa bile
+  // kota Türkiye saatiyle gece yarısı sıfırlanır. generatedAt = bizim yayın
+  // anımız (publishedAt kaynağın tarihi olabilir).
+  const gunAnahtari = (t) => {
+    const d = new Date(t);
+    if (!Number.isFinite(d.getTime())) return "";
+    return new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Europe/Istanbul",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).format(d);
+  };
+  const bugun = gunAnahtari(Date.now());
+  const bugunSayi = articles.filter(
+    (a) => gunAnahtari(a.generatedAt || a.publishedAt) === bugun
+  ).length;
+  const kalanKota =
+    config.gunlukLimit > 0
+      ? Math.max(0, config.gunlukLimit - bugunSayi)
+      : Infinity;
+
+  let sonYayin = 0;
+  for (const a of articles) {
+    const t = new Date(a.generatedAt || a.publishedAt || 0).getTime();
+    if (Number.isFinite(t) && t > sonYayin) sonYayin = t;
+  }
+  const gecenDk = sonYayin ? (Date.now() - sonYayin) / 60000 : Infinity;
+
+  console.log(
+    `Günlük kota: ${bugunSayi}/${config.gunlukLimit || "∞"} · kalan ${
+      kalanKota === Infinity ? "∞" : kalanKota
+    } · son yayın ${
+      Number.isFinite(gecenDk) ? `${Math.floor(gecenDk)} dk önce` : "-"
+    }`
+  );
+
   const fetched = await fetchAllFeeds();
   console.log(`Toplam çekilen: ${fetched.length}`);
 
@@ -142,13 +182,63 @@ async function main() {
   const normalPool = eligible.filter((it) => !it.breaking);
 
   const vitrinPool = eligible.filter(isDirectVitrin);
-  const queue = vitrinPool.slice(0, 1);
-  for (const it of [...breakingPool, ...normalPool]) { if (queue.length >= config.maxBreakingPerRun + config.maxPerRun) break; if (!queue.includes(it)) queue.push(it); }
-  let normalTaken = queue.length;
-  for (const it of normalPool) {
-    if (normalTaken >= config.maxPerRun) break;
-    queue.push(it);
-    normalTaken++;
+
+  // Bu turda işlenecek en fazla haber: normal + son dakika kotası, ama
+  // günlük kalan kotayı ASLA aşmaz.
+  const turKota = Math.max(
+    0,
+    Math.min(config.maxBreakingPerRun + config.maxPerRun, kalanKota)
+  );
+
+  // Tempo: normal haberler arasında yayinAralikDk, son dakika adayı varsa
+  // sonDakikaAralikDk kadar beklenir. Böylece 40 haber günün ilk saatlerinde
+  // tükenmez; akış gün boyuna yayılır.
+  //
+  // ÖNEMLİ: bekleme süresi dolduğunda 4 haberi birden basmak tempoyu yine
+  // bozar (4 haber / 30 dk = 8/saat). Bu yüzden bu turda yayınlanacak adet,
+  // geçen sürenin bekleme aralığına bölümüyle sınırlanır: 36 dk geçtiyse 1,
+  // 72 dk geçtiyse 2... Hattın uzun süre durduğu durumda en fazla turKota.
+  const beklemeDk = breakingPool.length
+    ? config.sonDakikaAralikDk
+    : config.yayinAralikDk;
+  const siraGeldi = kalanKota > 0 && gecenDk >= beklemeDk;
+  const slotKota =
+    beklemeDk > 0 && Number.isFinite(gecenDk)
+      ? Math.max(1, Math.floor(gecenDk / beklemeDk))
+      : turKota;
+  const buTurKota = Math.max(0, Math.min(turKota, slotKota));
+
+  // Tek haberlik turda öncelik son dakikada: vitrin adayı taze olsa bile
+  // gerçek bir son dakika haberini geride bırakmasın.
+  const queue =
+    siraGeldi && buTurKota > 0
+      ? breakingPool.length
+        ? [breakingPool[0]]
+        : vitrinPool.slice(0, 1)
+      : [];
+  if (siraGeldi) {
+    for (const it of [...breakingPool, ...normalPool]) {
+      if (queue.length >= buTurKota) break;
+      if (!queue.includes(it)) queue.push(it);
+    }
+    let normalTaken = queue.length;
+    for (const it of normalPool) {
+      if (normalTaken >= Math.min(config.maxPerRun, buTurKota)) break;
+      if (queue.includes(it)) continue;
+      queue.push(it);
+      normalTaken++;
+    }
+  }
+
+  if (!siraGeldi) {
+    console.log(
+      kalanKota <= 0
+        ? "  ⏸ Günlük kota doldu; bugün yeni haber yayınlanmayacak."
+        : `  ⏸ Yayın temposu: ${Math.max(
+            0,
+            Math.ceil(beklemeDk - gecenDk)
+          )} dk sonra sıradaki haber.`
+    );
   }
 
   console.log(
@@ -161,7 +251,12 @@ async function main() {
   // gündem/ekonomi/spor/dünya haberi girsin. Değiştirilirken son dakika
   // haberleri KORUNUR; yalnızca normal bir haber feda edilir.
   const isNews = (it) => config.newsCategories.includes(it.feedCategory);
-  if (queue.length > 1 && !queue.some(isNews)) {
+  // Tek haberlik turda da denge: sıradaki haber son dakika değilse kategori
+  // çeşitliliği korunur (aksi hâlde gün boyu yalnızca teknoloji akar).
+  const dengeGerek =
+    !queue.some(isNews) &&
+    (queue.length > 1 || (queue.length === 1 && !queue[0].breaking));
+  if (dengeGerek) {
     // Önce normal (son dakika olmayan) bir haber tercih edilir; böylece son
     // dakika kotası aşılmaz ve çeşitlilik normal akıştan sağlanır.
     const alt =
@@ -220,6 +315,11 @@ async function main() {
   }
 
   for (const [i, item] of queue.entries()) {
+    // Emniyet kemeri: kuyruk kısaltılmış olsa bile günlük kotayı aşma.
+    if (added >= kalanKota) {
+      console.log("\nGünlük kota doldu; kalan adaylar sonraki güne bırakıldı.");
+      break;
+    }
     process.stdout.write(
       `  (${i + 1}/${queue.length}) ${item.source}: ${item.title.slice(0, 55)}... `
     );

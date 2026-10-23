@@ -157,6 +157,25 @@ export const config = {
   maxAgeHours: Number(process.env.MAX_AGE_HOURS || 48), // bundan eski haberleri atla
 
   // ------------------------------------------------------------------
+  // GÜNLÜK YAYIN KOTASI (2026-10-23)
+  // ------------------------------------------------------------------
+  // ShiftDelete/Webtekno/DonanımHaber/CHIP/Tamindir son 24 saatte ortalama
+  // ~35-40 haber yayınlıyor. 3.800 sayfa/5 gün yerine bu tempoda yayınlamak
+  // hem Google'ın "ölçekli içerik" filtresinden kaçınmayı hem de gün boyu
+  // taze kalmayı sağlar.
+  //
+  // gunlukLimit: 0 = sınırsız (eski davranış).
+  // yayinAralikDk: normal haberler arasındaki en kısa süre. Kota tek başına
+  //   yetmez; aksi hâlde 40 haber ilk 1-2 saatte tükenip günün kalanında
+  //   yeni haber çıkmaz.
+  // sonDakikaAralikDk: son dakika adayı varsa daha kısa bekleme.
+  gunlukLimit: Number(process.env.GUNLUK_HABER_LIMIT || 40),
+  // 40 haber / 24 saat ≈ 36 dk arayla. Böylece kota günün ilk saatlerinde
+  // tükenmez, akış gece yarısına kadar dengeli sürer.
+  yayinAralikDk: Number(process.env.YAYIN_ARALIK_DK || 36),
+  sonDakikaAralikDk: Number(process.env.SON_DAKIKA_ARALIK_DK || 12),
+
+  // ------------------------------------------------------------------
   // SON DAKİKA (hızlı hat)
   // Son dakika adayları normal kotaya ek olarak işlenir: bir turda
   // maxBreakingPerRun + maxPerRun habere kadar çıkabilir (son dakika yoksa

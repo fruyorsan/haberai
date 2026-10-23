@@ -146,6 +146,9 @@ uygulanır; yani son dakika şeridine çöp başlık düşemez.
 | `MAX_BREAKING_PER_RUN` | `2` | Tur başına ekstra son dakika kotası |
 | `BREAKING_WINDOW_MIN` | `120` | "Son dakika" sayılma penceresi (dakika) |
 | `MAX_PER_RUN` | `2` | Tur başına normal haber kotası |
+| `GUNLUK_HABER_LIMIT` | `40` | Günlük toplam yayın kotası; `0` = sınırsız |
+| `YAYIN_ARALIK_DK` | `36` | Normal haberler arası en kısa süre (dk) |
+| `SON_DAKIKA_ARALIK_DK` | `12` | Son dakika adayı varsa en kısa süre (dk) |
 
 
 ## Otomasyon
