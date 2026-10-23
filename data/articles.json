@@ -1,5 +1,129 @@
 [
   {
+    "id": "2dfff7f140a1e6d2",
+    "title": "Microsoft'un yeni yapay zeka teşhis sistemi yüzde 83 doğruluk üretti",
+    "slug": "microsoftun-yeni-yapay-zeka-teshis-sistemi-yuzde-83-dogruluk-uretti",
+    "summary": "Microsoft tarafından geliştirilen MAI-DxO yapay zeka aracı, karmaşık tıbbi vakaların simülasyon testlerinde yüzde 83 doğruluk seviyesine ulaştı. Birden fazla yapay zeka modelini koordine eden sistem, geleneksel pratisyen hekim ve dahiliye uzmanı ortalamalarını geride bıraktı.",
+    "keyPoints": [
+      "MAI-DxO karmaşık simülasyonlarda yüzde 83 doğruluk oranına ulaştı.",
+      "Genel pratisyen ve dahiliye uzmanlarında bu oran yüzde 36 olarak ölçüldü.",
+      "Sistem OpenAI modelleriyle test edildi ve maliyetleri düşürdü."
+    ],
+    "body": [
+      "Microsoft bünyesinde geliştirilen MAI-DxO adlı yapay zeka tabanlı teşhis mimarisi, karmaşık tıbbi vakalar üzerinde yürütülen simülasyon testlerinde dikkat çekici bir başarı yakaladı. Science dergisinde paylaşılan araştırmanın sonuçlarına göre yeni sistem yüzde 83 doğruluk oranını yakaladı. Aynı testlerde genel pratisyen hekimlerin ve genel dahiliye uzmanlarının ortalama doğruluk oranı ise yüzde 36 seviyesinde kaldı.",
+      "Sistemin çalışma mekanizması, birden fazla yapay zeka aracısının bir arada koordine edilmesine dayanıyor. Bu yapı sayesinde platform, hastalara doğrudan sorular yöneltiyor, gerekli gördüğü testleri talep ediyor ve elde edilen veriler ışığında teşhis değerlendirmeleri yapıyor. Yapılan test süreçlerinde OpenAI, Google, Anthropic, Meta ve DeepSeek gibi farklı teknoloji şirketlerinin modelleri kullanıldı.",
+      "Elde edilen veriler en iyi performansın OpenAI'ın GPT-5 ve GPT-5.5 modelleriyle sağlandığını gösterdi. Tek başına çalışan GPT-5 modeli karmaşık vakalarda yüzde 78,9 doğruluk elde ederken vaka başına maliyeti yaklaşık 8 bin 400 dolar oldu. MAI-DxO mimarisi ise doğruluk oranını yaklaşık 4 puan artırırken vaka maliyetini yaklaşık 3 bin dolar aşağı çekti. GPT-5.5 ile yapılan denemelerde ise doğruluk oranı yüzde 72 seviyesinden yaklaşık yüzde 87'ye yükseldi.",
+      "Teknolojinin gerçek dünya koşullarındaki ilk testi Boston merkezli Beth Israel Deaconess Tıp Merkezi'nde gerçekleştirilecek. Ayrıca Microsoft, Mayo Clinic iş birliğiyle sağlık sektörüne özel temel bir yapay zeka modeli geliştirme çalışmalarını sürdürüyor ve bu modelin 2027 yılında kullanıma sunulması planlanıyor. Yeni nesil sistemlerle klinik karar süreçlerinin desteklenmesi ve genel sağlık hizmetlerinin iyileştirilmesi amaçlanıyor."
+    ],
+    "comment": "Karmaşık teşhis süreçlerinde yapay zekanın insan uzman ortalamalarını geride bırakması, klinik iş akışlarında yeni bir dönemin kapılarını aralıyor. Pratisyen hekimlerin yüzde 36 seviyesinde kalan doğruluk oranına karşılık MAI-DxO modelinin yüzde 83'e ulaşması, veri işleme kapasitesinin tıbbi kararlardaki kaldıraç etkisini net biçimde gösteriyor. Özellikle maliyetleri düşürürken doğruluğu artırması, sağlık kurumları için bütçe optimizasyonu fırsatı yaratıyor. Ancak acil servis vakalarında belirgin bir iyileşme görülmemesi, sistemin henüz her klinik branşta aynı oranda güvenilir olmadığını işaret ediyor.",
+    "editorNote": "Microsoft'un yeni tıbbi yapay zekası testlerde yüksek doğruluk sunarken maliyetleri de aşağı çekti.",
+    "tags": [
+      "Microsoft",
+      "Yapay Zeka",
+      "Sağlık",
+      "MAI-DxO",
+      "OpenAI"
+    ],
+    "category": "Sağlık",
+    "gorselSorgu": "hospital doctor using computer screen",
+    "source": "Webrazzi",
+    "sourceUrl": "https://webrazzi.com/2026/10/23/microsoft-un-yapay-zeka-destekli-tibbi-teshis-sistemi-mai-dxo/",
+    "image": "https://cdn.webrazzi.com/uploads/2026/10/microsoft-kapak-yeni-752.png",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T12:00:00.000Z",
+    "generatedAt": "2026-10-23T12:01:41.586Z",
+    "breaking": true
+  },
+  {
+    "id": "dfe6b898945273f1",
+    "title": "Van depremlerinin ardından şehir merkezi ve yapılar yenilendi",
+    "slug": "van-depremlerinin-ardindan-sehir-merkezi-ve-yapilar-yenilendi",
+    "summary": "Van genelinde 2011 yılında yaşanan sarsıcı depremlerin ardından yapı stoku kapsamlı bir şekilde güçlendirildi. Kentin gelecekteki afetlere karşı daha dirençli hale getirilmesi için yürütülen çalışmalar aralıksız sürdürülüyor.",
+    "keyPoints": [
+      "2011 Van depremlerinin ardından yapı stoku güçlendirildi",
+      "Kentin yapısal direnci artırılarak olası afetlere hazırlandı",
+      "Şehir genelinde yenileme ve sağlamlaştırma projeleri uygulandı"
+    ],
+    "body": [
+      "Tarihinde yıkıcı sarsıntılar yaşayan Van, 2011 yılındaki büyük felaketlerin ardından yapı stoğunu dönüştürmek için geniş çaplı adımlar attı. Şehir genelinde sürdürülen bu çalışmalar, bölgenin sismik risklere karşı daha güvenli bir altyapıya kavuşmasını hedefliyor. Yapılan müdahalelerle birlikte binaların dayanıklılık sınırları yükseltildi.",
+      "Geçmişte yaşanan acı tecrübelerden ders çıkarılarak hayata geçirilen projeler, sadece konutları değil kamusal yapıları da kapsayacak biçimde planlandı. Mühendislik standartlarının en üst düzeyde uygulandığı süreçte, riskli binalar tespit edilerek yenilendi veya güçlendirildi. Böylece vatandaşların güvenle yaşayabileceği yaşam alanları oluşturuldu.",
+      "Yerel yönetimler ve merkezi idarenin koordinesiyle yürütülen bu dönüşüm süreci, kentin mimari kimliğini de modernize etti. Yapı denetim mekanizmalarının sıkılaştırılması sayesinde yeni inşa edilen yapılar modern güvenlik kriterlerine tam uyum sağlıyor. Şehrin geleceği adına atılan bu adımlar, benzer felaketlerde can ve mal kayıplarının en aza indirilmesini amaçlıyor."
+    ],
+    "comment": "Geçmişte yaşanan afetlerin ardından şehirlerin yapı stokunu dönüştürmek, gelecekteki sismik risklere karşı atılabilecek en rasyonel adımdır. 2011 yılında yaşanan yıkımın izlerini silmek amacıyla yapılan bu güçlendirme hamleleri, bölge halkının güvenliğini doğrudan artırıyor. Eğer benzer dönüşüm projeleri ülke genelindeki tüm riskli bölgelerde aynı kararlılıkla uygulanmazsa, olası sarsıntılarda yaşanacak kayıplar kaçınılmaz olacaktır. Bu kapsamlı yenileme çalışmaları, standart binalarla kıyaslandığında bölgenin direncini üst seviyeye taşıyor.",
+    "editorNote": "Yıkıcı depremlerin izini silen Van, yapı stokunu baştan aşağı yenileyerek geleceğe hazırlanıyor.",
+    "tags": [
+      "Van",
+      "deprem",
+      "yapı stoku",
+      "kentsel dönüşüm"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "earthquake damaged building city",
+    "source": "dikGAZETE.com",
+    "sourceUrl": "https://www.dikgazete.com/haber/van-da-2011-depremlerinin-ardindan-yapi-stoku-guclendirildi-1023191.html",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/%C4%90or%C4%91i%C4%87eva_Street_damaged_building_in_2021.jpg/1280px-%C4%90or%C4%91i%C4%87eva_Street_damaged_building_in_2021.jpg",
+    "gorselKaynak": {
+      "yazar": "Milan Kušnjačić",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:%C4%90or%C4%91i%C4%87eva_Street_damaged_building_in_2021.jpg"
+    },
+    "publishedAt": "2026-10-23T11:58:48.000Z",
+    "generatedAt": "2026-10-23T12:02:04.732Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/FEMA_-_44647_-_Earthquake_damaged_buildings_in_California.jpg/1280px-FEMA_-_44647_-_Earthquake_damaged_buildings_in_California.jpg",
+        "yazar": "Adam Dubrowa",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:FEMA_-_44647_-_Earthquake_damaged_buildings_in_California.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Cars_under_a_heavily_damaged_building_on_G%C3%B6lba%C5%9F%C4%B1_after_7%2C8_magnitue_earthquake_in_Turkey.jpg/1280px-Cars_under_a_heavily_damaged_building_on_G%C3%B6lba%C5%9F%C4%B1_after_7%2C8_magnitue_earthquake_in_Turkey.jpg",
+        "yazar": "Adem",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Cars_under_a_heavily_damaged_building_on_G%C3%B6lba%C5%9F%C4%B1_after_7,8_magnitue_earthquake_in_Turkey.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
+    "id": "a87e13b2a9fff25e",
+    "title": "İsrail'de 27 Ekim seçimleri öncesi iki blok da çoğunluktan uzak",
+    "slug": "israilde-27-ekim-secimleri-oncesi-iki-blok-da-cogunluktan-uzak",
+    "summary": "İsrail genel seçimlerine sayılı günler kala yayımlanan anketler, hiçbir siyasi bloğun hükümet kurmak için gereken 61 sandalye eşiğine ulaşamayacağını gösteriyor. Siyasi krizin derinleştiği ülkede koalisyon belirsizliği devam ediyor.",
+    "keyPoints": [
+      "İsrail'de 120 sandalyeli meclis için 38 parti ve ittifak yarışıyor.",
+      "İktidar bloğu anketlerde 48 ila 51 sandalye aralığına geriledi.",
+      "Muhalefet bloku 54-55 milletvekili çıkararak salt çoğunluğun gerisinde kalıyor."
+    ],
+    "body": [
+      "İsrail genel seçimlerine hazırlanan ülkede kamuoyu yoklamaları derin bir koalisyon krizine işaret ediyor. Gazze, Lübnan ve Suriye hattındaki çatışmaların gölgesinde yapılacak oylama için 7,3 milyon seçmen sandık başına gidecek. Otuz sekiz yıl aradan sonra ilk kez yasal süresini dolduran meclis seçimlerinde toplam 38 parti ve ittifak meclise girmek için mücadele veriyor.",
+      "Yüzde 3,25 seçim barajının uygulandığı 120 sandalyeli parlamentoda hükümet kurabilmek için 61 milletvekili desteği gerekiyor. Son araştırmalar Başbakan Binyamin Netanyahu liderliğindeki sağ koalisyonun büyük oy kaybı yaşadığını ortaya koyuyor. İktidar bloğundaki partilerin toplam gücü 51 milletvekiline düşerken, bazı anketlerde bu sayının 48'e kadar gerilediği görülüyor.",
+      "Muhalefet kanadında ise durum iktidardan çok farklı görünmüyor ve blok 54 ile 55 sandalye arasında seyrediyor. Başbakanlık anketlerinde katılımcıların tercihleri muhalefet adaylarından yana ağırlık koysa da hiçbir taraf tek başına salt çoğunluğa erişemiyor. Mecliste 14 sandalye kazanması beklenen Arap partilerinin tutumu, kurulabilecek olası hükümetler için kilit konumda bulunuyor.",
+      "İki ana kutbun da çoğunluğu sağlayamaması durumunda yasal takvim işlemeye başlayacak. Resmi sonuçların açıklanmasının ardından cumhurbaşkanının görevlendireceği adayın 28 günlük yasal sürede koalisyon protokolünü tamamlaması gerekecek. Bu süreçte çoğunluk sağlanamazsa meclis kendini feshedecek ve ülke yeniden seçime gitmek zorunda kalacak."
+    ],
+    "comment": "İki ana siyasi kutbun da 61 sandalyelik eşiğin gerisinde kalması, İsrail siyasetini kırılgan azınlık hükümetlerine veya yeni bir erken seçim dalgasına mahkum ediyor. 2022'de iktidar olan sağ bloğun erimesine karşılık muhalefetin de tek başına iktidar kuramayacak olması, Arap partilerinin desteğini zorunlu kılıyor. Siyonist partilerin bu ortaklığa yanaşmaması durumunda ülke uzun süreli bir siyasi kilitlenme süreciyle karşı karşıya kalacak.",
+    "editorNote": "İki bloğun da çoğunluğu sağlayamadığı İsrail'de Arap partilerinin tutumu hükümet krizinin kaderini belirleyecek.",
+    "tags": [
+      "İsrail",
+      "seçim",
+      "koalisyon",
+      "Netanyahu",
+      "siyaset"
+    ],
+    "category": "Dünya",
+    "gorselSorgu": "Israeli parliament building Jerusalem",
+    "source": "AA Güncel",
+    "sourceUrl": "https://www.aa.com.tr/tr/dunya/israilde-anketler-27-ekim-secimlerinde-koalisyon-belirsizligine-isaret-ediyor/4098507",
+    "image": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/23/thumbs_b_c_111b3837f11735454e1d3ef1f21b405b.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T11:57:25.000Z",
+    "generatedAt": "2026-10-23T12:02:54.571Z",
+    "breaking": true
+  },
+  {
     "id": "4da632733a2f9bb7",
     "title": "Testosteron hormonu ve erkeklik algısı üzerine bilinen yanlışlar",
     "slug": "testosteron-hormonu-ve-erkeklik-algisi-uzerine-bilinen-yanlislar",
@@ -704,6 +828,46 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Pu%C5%82aski_shaft_complex,_Wieczorek_Coal_Mine,_Nikiszowiec-Jan%C3%B3w,_Katowice,_2024,_27_june.jpg"
       }
     ],
+    "breaking": true
+  },
+  {
+    "id": "e72bbe9d8f398db5",
+    "title": "Hatay'da 6 Şubat depremlerinin ardından 138'inci cami açıldı",
+    "slug": "hatayda-6-subat-depremlerinin-ardindan-138inci-cami-acildi",
+    "summary": "Hatay genelinde gerçekleştirilen yeniden inşa çalışmaları kapsamında 138'inci ibadethane kapılarını açtı. Bölgede depremin yarattığı tahribatı giderme süreci planlı şekilde sürdürülüyor.",
+    "keyPoints": [
+      "Hatay'da 6 Şubat depremi sonrası toplam 138 cami yeniden ibadete açıldı.",
+      "Bölgedeki yeniden inşa ve onarım çalışmaları aralıksız olarak devam ediyor.",
+      "Depremzedelerin ibadet ihtiyaçlarını karşılamak üzere projeler tamamlanıyor."
+    ],
+    "body": [
+      "Kahramanmaraş merkezli 6 Şubat depremlerinin ağır yıkım bıraktığı Hatay'da, hasar gören kamusal yapılar ve ibadethaneler için yürütülen çalışmalar hız kesmeden ilerliyor. Kent genelinde süren projeler çerçevesinde, vatandaşların dini ibadetlerini güvenle yerine getirebilmesi amacıyla yeni tesisler tamamlanıyor. Bu kapsamda inşa ve restorasyon süreçleri biten ibadethanelere bir yenisi daha eklendi.",
+      "Yetkililerin aktardığı bilgilere göre, felaketin izlerini silmek için başlatılan hamleler doğrultusunda bugüne kadar toplam 138 cami kapılarını yeniden cemaatine açtı. Yıkılan ya da kullanılamayacak kadar zarar gören yapıların yerine yenileri yapılırken, tarihi nitelik taşıyan bazı eserler de özenle restore edildi. Tamamlanan her yeni yapı, bölge halkının sosyal ve manevi hayatına yeniden tutunmasını destekliyor.",
+      "Deprem bölgesindeki mahallelerde yaşayan vatandaşların ortak kullanım alanlarına kavuşması için yürütülen bu faaliyetler takvim doğrultusunda ilerliyor. İlgili kurumlar, eksik kalan diğer projelerin de en kısa sürede bitirilmesi için sahada çalışmalarını sürdürüyor. Açılışı yapılan her yeni tesis, bölgenin normale dönme çabasının somut birer göstergesi olarak öne çıkıyor.",
+      "Hatay'daki bu gelişmeler, felaketin ardından kentin yeniden ayağa kaldırılmasına yönelik atılan adımların kararlılıkla sürdüğünü gösteriyor. İbadethanelerin yanı sıra konut ve altyapı projelerinin de entegre biçimde yürütüldüğü süreçte, tamamlanan yapı sayısı her geçen gün artıyor. Bölge halkı, açılan yeni merkezlerle birlikte sosyal yaşamın yeniden canlanmasından memnuniyet duyuyor."
+    ],
+    "comment": "Deprem bölgesinde kalıcı iyileşmenin sağlanabilmesi için sadece konutların değil, toplumsal yaşamı destekleyen kamusal yapıların da hızla ayağa kaldırılması şarttır. Hatay'da tamamlanan 138 ibadethane, bu sürecin planlı şekilde ilerlediğini somut rakamlarla gösteriyor. Bölgede yaşayan vatandaşlar için bu tür sosyal alanların varlığı, günlük rutinlerin normale dönmesi açısından doğrudan bir etki yaratıyor. Sürecin hızı, diğer altyapı projeleriyle kıyaslandığında planlamanın kararlılığını gözler önüne seriyor.",
+    "editorNote": "Hatay'da depremin yaralarını sarmak için yürütülen çalışmalar kapsamında 138 ibadethane yeniden kapılarını açtı.",
+    "tags": [
+      "Hatay",
+      "Deprem",
+      "Cami",
+      "Yeniden İnşa",
+      "Gündem"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "earthquake damaged building",
+    "source": "Ensonhaber",
+    "sourceUrl": "https://www.ensonhaber.com/hatayda-6-subat-depreminin-ardindan-138inci-cami-ibadete-acildi-h1576296",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Cars_under_a_heavily_damaged_building_on_G%C3%B6lba%C5%9F%C4%B1_after_7%2C8_magnitue_earthquake_in_Turkey.jpg/1280px-Cars_under_a_heavily_damaged_building_on_G%C3%B6lba%C5%9F%C4%B1_after_7%2C8_magnitue_earthquake_in_Turkey.jpg",
+    "gorselKaynak": {
+      "yazar": "Adem",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Cars_under_a_heavily_damaged_building_on_G%C3%B6lba%C5%9F%C4%B1_after_7,8_magnitue_earthquake_in_Turkey.jpg"
+    },
+    "publishedAt": "2026-10-23T11:19:06.000Z",
+    "generatedAt": "2026-10-23T12:02:19.995Z",
     "breaking": true
   },
   {
@@ -4248,41 +4412,6 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T09:00:00.000Z",
     "generatedAt": "2026-10-23T09:27:49.677Z",
-    "breaking": true
-  },
-  {
-    "id": "cdb0c9c7705b3219",
-    "title": "Çin'in Tibet bölgesindeki 7 büyüklüğündeki depremde 16 kişi can verdi",
-    "slug": "cinin-tibet-bolgesindeki-7-buyuklugundeki-depremde-16-kisi-can-verdi",
-    "summary": "Çin'in Tibet Özerk Bölgesi'nde meydana gelen 7 büyüklüğündeki sarsıntı sonucunda yaşamını yitirenlerin sayısı 16 olarak açıklandı. Yerel yetkililer bölgedeki arama kurtarma çalışmalarının sürdüğünü ve on binlerce kişinin güvenli sahalara alındığını bildirdi.",
-    "keyPoints": [
-      "Nagqu şehrine bağlı Baqen ilçesini vuran sarsıntı 7 büyüklüğünde kaydedildi.",
-      "Bölgede 16 kişi hayatını kaybederken 11'i ağır toplam 65 kişi yaralandı.",
-      "Afet bölgesine bin adet prefabrik ev ile binlerce çadır ve yardım malzemesi sevk edildi."
-    ],
-    "body": [
-      "Çin'in Tibet Özerk Bölgesi'nde dün gece saatlerinde meydana gelen şiddetli yer sarsıntısının ardından resmî rakamlar netleşmeye başladı. Yerel saatle 22.33'te kaydedilen 7 büyüklüğündeki depremin yerin 10 kilometre derinliğinde gerçekleştiği bildirildi. Bölge halkında büyük paniğe neden olan sarsıntı sonrasında arama ve yardım ekipleri hızla harekete geçti.",
-      "Yapılan son resmî açıklamalara göre Nagqu şehrinin Baqen ilçesinde yıkım ve hasar meydana geldi. Felaket sonucunda 16 vatandaşımız yaşamını yitirirken, aralarında durumu ağır olan 11 kişinin de bulunduğu 65 kişi hastanelere kaldırıldı. Yetkililer, can kaybının artmaması için enkaz kaldırma operasyonlarının kesintisiz devam ettiğini duyurdu.",
-      "Afetten etkilenen sivillerin güvenliği için geniş çaplı tahliye işlemleri gerçekleştirildi. Açıklanan verilere göre toplam 12 bin 489 kişi tehlikeli bölgeden uzaklaştırılarak güvenli alanlara nakledildi. Barınma ihtiyacını karşılamak amacıyla bölgeye acil olarak bin adet prefabrik konut gönderildi.",
-      "Yaraların sarılması için başlatılan sevkiyatlar kapsamında binlerce çadır da afetzedelere ulaştırıldı. Koordinasyon merkezinden aktarılan bilgilere göre 3 bin 200'den fazla çadır, 2 bin 800 yatak ve yorganın yanı sıra soba ile giysi gibi temel yaşam malzemeleri da ivedilikle dağıtıldı."
-    ],
-    "comment": "Şiddetli sarsıntıların ardından gelen acil müdahale süreçleri, yerel yönetimlerin kriz anındaki reflekslerini doğrudan test eder. Depremde bildirilen 16 can kaybı ve 65 yaralı verisi, yerleşimin altyapı dayanıklılığının sarsıntı anındaki rolünü açıkça ortaya koyuyor. On binlerce kişinin tahliye edilmesi, barınma ve lojistik desteğin ne denli hızlı organize edilmesi gerektiğini gösteriyor. Eğer bölgeye sevk edilen prefabrik evler ve binlerce çadır zamanında kurulmazsa, çetin hava koşulları süreci daha da zorlaştırabilir.",
-    "editorNote": "Tibet'teki sarsıntının ardından 12 bini aşkın kişi tahliye edilirken, bölgeye binlerce çadır ve prefabrik ev sevk edildi.",
-    "tags": [
-      "Çin",
-      "Tibet",
-      "deprem",
-      "Nagqu",
-      "arama kurtarma"
-    ],
-    "category": "Dünya",
-    "gorselSorgu": "earthquake damaged building",
-    "source": "Milliyet",
-    "sourceUrl": "https://www.milliyet.com.tr/dunya/son-dakika-cinin-tibet-bolgesi-7-7lik-depremle-sarsilmisti-bilanco-belli-oldu-7685993",
-    "image": "https://image.milimaj.com/i/milliyet/75/0x0/6adb20f4e95045cf040f4e51.jpg",
-    "gorselKaynakSite": true,
-    "publishedAt": "2026-10-23T08:57:00.000Z",
-    "generatedAt": "2026-10-23T09:01:11.971Z",
     "breaking": true
   },
   {
