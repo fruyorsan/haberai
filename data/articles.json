@@ -1,5 +1,110 @@
 [
   {
+    "id": "bfa09a1386a19dfe",
+    "title": "Eski BioWare ekibinin yeni bilimkurgu RPG oyunu Exodus tanıtıldı",
+    "slug": "eski-bioware-ekibinin-yeni-bilimkurgu-rpg-oyunu-exodus-tanitildi",
+    "summary": "Mass Effect serisinde görev yapan geliştiricilerin kurduğu stüdyo, yeni bilimkurgu rol yapma oyunu Exodus için ilk fragmanı paylaştı. Yapım, zaman genişlemesi mekanikleri ve karanlık evreniyle oyuncuların karşısına çıkacak.",
+    "keyPoints": [
+      "Exodus, 7 Nisan 2027 tarihinde PC, PlayStation 5 ve Xbox Series X/S platformlarında çıkış yapacak.",
+      "Hikaye, günümüzden 40.000 yıl sonra uzayın derinliklerine yayılan insanlığı merkezine alıyor.",
+      "Oyuncular, ana gezegeni ölümcül virüsten kurtarmaya çalışan Gezgin Jun Aslan karakterini yönetecek."
+    ],
+    "body": [
+      "Uzun yıllar boyunca sevilen rol yapma oyunlarına imza atan eski BioWare geliştiricileri tarafından hayata geçirilen Archetype Entertainment, yeni projesi Exodus ile oyun dünyasının dikkatini çekiyor. Mass Effect serisinin izinden giden ve benzer bir atmosfere sahip olan bu yeni bilimkurgu yapımı, oyunculara derinlemesine bir hikaye vadettiğini gösteren yeni fragmanıyla görücüye çıktı.",
+      "Anlatılan hikaye, günümüzden kırk bin yıl sonrasını işaret ediyor ve insanlığın Dünya'yı terk ederek uzayın karanlık köşelerine dağıldığı bir gelecekte geçiyor. Ana karakter Jun Aslan, Rot adı verilen ve gezegenini yok etme tehdidi taşıyan virüse karşı mücadele ederken kadim uzay teknolojilerinin peşine düşüyor. Bu tehlikeli yolculukta karşılaşılan en büyük engel ise uzaylılar değil, zamanla genetik olarak evrimleşip tanrısal varlıklara dönüşen eski insan nesilleri oluyor.",
+      "Projenin en dikkat çekici mekaniklerinden biri, ışık hızına yakın seyahatlerde yaşanan zaman genişlemesi olgusu olarak öne çıkıyor. Karakterin uzayda geçirdiği kısa haftalar veya aylar, geride bırakılan sevdikleri için onlarca yıla denk geliyor; bu durum oyuncunun aldığı kararların nesiller boyu sürecek sonuçlar doğurmasına yol açıyor. Alınan her politik ve kişisel karar, evrende geri dönülemez değişimleri beraberinde getiriyor.",
+      "Merakla beklenen yapımın çıkış tarihi de netlik kazanmış durumda. Exodus, 7 Nisan 2027 tarihinde PC, PlayStation 5 ve Xbox Series X/S konsolları için raflardaki yerini alacak ve oyuncular bu karanlık evrendeki yerini alabilecek."
+    ],
+    "comment": "Mass Effect serisinin yarattığı boşluğu doldurmaya aday yapımların sayısı artıyor ancak zaman genişlemesi gibi ağır tematik yükleri başarıyla işlemek her stüdyonun harcı değil. Jun Aslan'ın vereceği kararların nesiller boyu sürecek sonuçlar doğurması, klasik rol yapma dinamiklerine taze bir soluk getirecektir. 2027 yılındaki çıkış takvimine kadar stüdyonun bu mekanikleri ne kadar derinleştireceği, türün tutkunları için belirleyici olacaktır. Yanlış kurgulanmış bir zaman akışı mekaniği duygusal bağı zayıflatabilir.",
+    "editorNote": "Zamanın farklı aktığı bir evrende geçen Exodus, kararlarınızın yıllar sonraki sonuçlarını önünüze getirecek.",
+    "tags": [
+      "Exodus",
+      "Archetype Entertainment",
+      "BioWare",
+      "RPG",
+      "Oyun"
+    ],
+    "category": "Oyun",
+    "gorselSorgu": "sci fi spaceship cockpit",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/yeni-mass-effect-denen-exodus-un-fragmani-yayinlandi--211990",
+    "image": "https://www.donanimhaber.com/images/images/haber/211990/src/yeni-mass-effect-denen-exodus-un-fragmani-yayinlandi211990_0.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T14:46:00.000Z",
+    "generatedAt": "2026-10-23T14:48:04.567Z",
+    "breaking": true
+  },
+  {
+    "id": "07af30f03dc91f73",
+    "title": "Mistral, ekran kartı istemeyen sayı tahmin yapay zekâsı Timestral'ı tanıttı",
+    "slug": "mistral-ekran-karti-istemeyen-sayi-tahmin-yapay-zekasi-timestral-i-tanitti",
+    "summary": "Mistral, zaman serilerini ekran kartı gerektirmeden sıradan bir CPU üzerinde tahmin edebilen Timestral model ailesini duyurdu. Fransız şirket, Hugging Face üzerinden indirilmeye açılan bu yeni yazılımla birlikte kapasite planlaması ve finansal öngörülere odaklanıyor.",
+    "keyPoints": [
+      "Mistral, ekran kartı istemeyen Timestral zaman serisi tahmin modellerini 15 Ekim 2026'da yayımladı.",
+      "Dört farklı model, 5 ila 209 milyon parametre aralığında ve sıradan bir işlemcide çalışıyor.",
+      "Model, tek bir sayı yerine olası değer aralığını gösteren 21 farklı kantil çıktısı üretiyor."
+    ],
+    "body": [
+      "Yapay zekâ alanında sohbet botları ve dil modelleriyle tanınan Mistral, bu kez alışılmışın dışında bir hamle yaparak zaman serilerini öngören Timestral model ailesini görücüye çıkardı. Günlük satışlar, enerji tüketimleri veya sensör okumaları gibi zamana bağlı sayı sütunlarını analiz eden bu yapı, metin üretmek veya soruları yanıtlamak yerine verinin nasıl devam edeceğini hesaplıyor. Fransız şirket tarafından 15 Ekim 2026 tarihinde yayımlanan seri, 5 ila 209 milyon arasında değişen parametre sayılarına sahip dört farklı sürümden meydana geliyor.",
+      "Geliştirilen bu temel model, pahalı ekran kartlarına ihtiyaç duymadan doğrudan sıradan bir CPU üzerinde çalışabiliyor. Ağırlıkları Hugging Face platformundan indirilebilen modellerin kullanım kodu ise GitHub üzerinde paylaşılıyor. Python 3.10 ve PyTorch 2.4 sürümleriyle çalışabilen sistem için herhangi bir ücretli hesap zorunluluğu bulunmuyor.",
+      "Timestral, geçmişten en fazla 32.768 nokta kabul ederek birden fazla seriyi aynı anda değerlendirebiliyor. Tek bir sabit rakam vermek yerine 21 kantil üzerinden olası değer aralığı döndüren model, karar vericilerin doğru stok seçimi veya risk yönetimi yapmasını kolaylaştırıyor. Sanayi alanında pompaların olağandışı davranışlarını fark edebilen yazılım, finans sektöründe ise nakit akışları, hacimler ve piyasa oynaklığı gibi kritik verilerin tahmin edilmesinde rol oynuyor.",
+      "Sistem, Decoupled Horizon Forecasting adı verilen teknik bir çekirdekle çalışarak gelecekteki değerleri bağlam görevi gören geçmişten ayrı tutuyor. Mistral'in 8 iş parçacıklı bir sunucu işlemcisinde gerçekleştirdiği testlere göre, 2.000 noktalık geçmiş veriden yola çıkarak bir gün sonrasını tahmin eden 5 milyon parametreli sürüm 10 milisaniyede, 209 milyon parametreli en büyük sürüm ise 140 milisaniyede yanıt veriyor. 28 milyon parametreli modelin en büyük sürümden beş kat daha hızlı çalıştığı belirtiliyor."
+    ],
+    "comment": "Mistral'in donanım maliyetlerini sıfırlayan bu yaklaşımı, küçük ve orta ölçekli işletmelerin yapay zekâ tabanlı tahmin araçlarına erişimini kökten değiştiriyor. 5 ila 209 milyon parametre arasındaki modeller, pahalı sunucu yatırımları gerektirmeden standart işlemcilerde çalışarak şirketlere esneklik kazandırıyor. Özellikle 21 kantil üretebilmesi, klasik tekil tahminlerin yarattığı belirsizliği ortadan kaldırarak operasyonel riskleri en aza indiriyor. Karşılaştırıldığında, 209 milyonluk sürümün 837 MB dosya boyutu sunması ve rakip sistemlerin gigabaytlarca alan gereksinimine kıyasla oldukça hafif kalması, yazılımın edge cihazlarda bile yaygınlaşmasının önünü açıyor.",
+    "editorNote": "Pahalı ekran kartı devrini kapatan Mistral Timestral, sıradan işlemcilerde saniyeler içinde çalışarak işletmelere maliyet avantajı sunuyor.",
+    "tags": [
+      "Mistral",
+      "Timestral",
+      "Yapay Zeka",
+      "CPU",
+      "Veri Analizi"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "data center server room processor",
+    "source": "Pasquale Pillitteri",
+    "sourceUrl": "https://pasqualepillitteri.it/tr/news/26610/mistral-timestral-sayilari-tahmin-eden-yapay-zeka",
+    "image": "https://pasqualepillitteri.it/uploads/img/news/mistral-timestral-ai-prevede-numeri-cpu-cover.webp",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T14:44:58.000Z",
+    "generatedAt": "2026-10-23T14:48:38.413Z",
+    "breaking": true
+  },
+  {
+    "id": "adf527ef655e5d5a",
+    "title": "Van depreminde yaşamını yitirenler, felaketin 15. yılında anıldı",
+    "slug": "van-depreminde-yasamini-yitirenler-felaketin-15-yilinda-anildi",
+    "summary": "Van depreminde hayatını kaybedenler, felaketin 15. yıl dönümünde düzenlenen törenlerle anıldı. Erciş ilçesinde gerçekleştirilen programlarda mezar ziyaretleri yapılarak dualar okundu.",
+    "keyPoints": [
+      "23 Ekim 2011 tarihinde meydana gelen 7.2 büyüklüğündeki depremde 644 kişi yaşamını yitirdi.",
+      "Erciş'teki anma törenleri kapsamında protokol üyeleri Seyit Muhammed Kabristanlığı'nı ziyaret etti.",
+      "Kara Yusuf Paşa Camii'nde vefat edenler için mevlit okutularak Kızılay tarafından çorba ikram edildi."
+    ],
+    "body": [
+      "Van ilinin Erciş ilçesinde 23 Ekim 2011 tarihinde gerçekleşen 7.2 büyüklüğündeki yıkıcı depremin üzerinden 15 yıl geçti. Bu acı olayın yıl dönümünde ilçe genelinde çeşitli anma etkinlikleri düzenlenerek hayatını kaybeden vatandaşlar unutulmadı.",
+      "Anma programları kapsamında Erciş Kaymakamı Ahmet Çelik ile birlikte kurum amirleri Beyazıt Mahallesi'ndeki Seyit Muhammed Kabristanlığı'na gitti. Ziyaret sırasında depremde yaşamını yitirenlerin mezarlarına karanfiller bırakılırken, İlçe Müftüsü Muhammet Divani tarafından dualar okundu.",
+      "Mezarlık ziyaretinin ardından kaymakamlık binasının önünde Erciş Depremi konulu bir fotoğraf sergisi açıldı. Alanda Kızılay tarafından vatandaşlara çorba ikramında bulunulurken, Kızılay kan bağış aracı da vatandaşların katılımıyla bağış topladı.",
+      "Gün boyunca süren etkinlikler çerçevesinde Kara Yusuf Paşa Camii'nde mevlit okutularak vefat edenler için dualar edildi. Kaymakam Ahmet Çelik, mezarlıkta kızı depremde hayatını kaybeden bir vatandaşla yakından ilgilenerek başsağlığı dileklerini iletti."
+    ],
+    "comment": "Yedinci nesil mobil cihazların hayatımıza girmesiyle birlikte yerel afet bilincinin dijital arşivlerde saklanması hayati bir sorumluluk haline geliyor. Erciş'teki bu yıllık buluşmalar, toplumsal hafızanın tazelenmesi açısından geçmiş acıların unutulmadığını gösteren somut birer nişanedir. Yetkililerin katılımıyla gerçekleşen törenler, resmi kurumlar ile halk arasındaki dayanışma bağını güçlendiriyor. Aradan geçen 15 yıla rağmen kayıpların anılması, benzer afetlere karşı alınacak tedbirlerin sorgulanmasını tetikliyor.",
+    "editorNote": "Erciş'teki anma programında protokol ve vatandaşlar mezarlık ziyaretinde bir araya geldi.",
+    "tags": [
+      "Van",
+      "Erciş",
+      "Deprem",
+      "Anma",
+      "Kızılay"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "earthquake damaged building",
+    "source": "VandaHaber",
+    "sourceUrl": "https://vandahaber.com/van-haber/van-depreminde-yasamini-yitirenler-anildi",
+    "image": "https://vandahaber.com/uploads/news/2026/10/6adb71ce7f86e_1792766414.webp",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T14:40:15.000Z",
+    "generatedAt": "2026-10-23T14:49:01.615Z",
+    "breaking": true
+  },
+  {
     "id": "97af5e41933a8f00",
     "title": "ABD ekonomisinde ekim ayı alarmı: Şirketler fiyat artışına gidiyor",
     "slug": "abd-ekonomisinde-ekim-ayi-alarmi-sirketler-fiyat-artisina-gidiyor",
@@ -68,6 +173,41 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T14:36:00.000Z",
     "generatedAt": "2026-10-23T14:42:11.474Z",
+    "breaking": true
+  },
+  {
+    "id": "d4e96b8859b88692",
+    "title": "Beyaz Saray duyurdu: Oleşki şehri için geçici ateşkes başlıyor",
+    "slug": "beyaz-saray-duyurdu-oleski-sehri-icin-gecici-ateskes-basliyor",
+    "summary": "Ukrayna'nın güneyindeki Oleşki şehrine insani yardım ulaştırılması ve sivillerin tahliyesi amacıyla geçici bir ateşkes mutabakatına varıldı. 29 Ekim'de devreye girecek olan bu bölgesel uzlaşı, Melania Trump'ın yürüttüğü özel girişimler sonucunda sağlandı.",
+    "keyPoints": [
+      "Oleşki bölgesindeki geçici ateşkes 29 Ekim tarihinde yürürlüğe girecek.",
+      "Melania Trump süreçte özel arabulucu olarak görev üstlendi.",
+      "Bölgede yaklaşık 1700 ila 2 bin sivilin bulunduğu tahmin ediliyor."
+    ],
+    "body": [
+      "Ukrayna cephesinde yer alan Oleşki kenti için taraflar arasında sivillerin güvenli şekilde çıkarılması ve temel ihtiyaçların ulaştırılması konusunda uzlaşıya varıldı. ABD Başkanı Donald Trump'ın eşi Melania Trump'ın doğrudan yürüttüğü diplomatik temaslar, bölgedeki insani krizin hafifletilmesi adına kritik bir kapı araladı. Kararla birlikte çatışma hattındaki sivillerin tahliyesi için güvenli koridorların oluşturulması hedefleniyor.",
+      "Melania Trump yaptığı açıklamalarda, bölgedeki tablonun vahametine dikkat çekerek sakinlerin büyük kısmının acil yardıma ihtiyaç duyan yaşlılardan oluştuğunu belirtti. Savaş öncesinde nüfusu 24 bin civarında olan yerleşim yeri, Kahovka Barajı'nın yıkılmasıyla suların altında kalmış ve büyük yıkım yaşamıştı. Günümüzde ise sınır hattında mahsur kalan yaşlılar ile yaklaşık 50 çocuğun ivedilikle gıda, ilaç ve suya erişmesi gerekiyor.",
+      "Yürütülecek tahliye operasyonunun tarafsızlığını korumak amacıyla her iki ülkeden sivil liderler ortak bir çalışma yürütecek. Sakinlerin kendi tercihleri doğrultusunda Rusya ya da Ukrayna'ya gitmesine olanak tanınacak ve sürece ABD medya kuruluşlarının saha ekipleri de gözlemci olarak eşlik edecek. Bu sayede hem yardımların şeffaf şekilde dağıtılması hem de sivillerin taleplerinin eksiksiz karşılanması planlanıyor.",
+      "İmzalanan mutabakat, savaşın yıkıcı etkileriyle mücadele eden siviller için nadir insani pencerelerden birini açıyor. 29 Ekim'de başlayacak olan süreç, özellikle evlerini terk etmek istemeyen ya da gidemeyen yaşlı nüfusun güvenli bölgelere ulaştırılması bakımından bir sınav niteliği taşıyor."
+    ],
+    "comment": "Sivil kayıpların yoğunlaştığı cephe hatlarında yürütülen bu tarz yerel insani girişimler, taraflar arasında diyaloğun tamamen kopmadığını gösteren somut bir işarettir. Melania Trump'ın arabuluculuğunda 29 Ekim'de hayata geçecek olan bu model, binlerce yaşlı ve çocuğun en temel ihtiyaçlarına ulaşmasını sağlayacak. Savaşın getirdiği fiziksel yıkımın boyutu, yaklaşık 2 bin sivilin tahliyesini lojistik açıdan oldukça zorlu kılarken, medyanın sahada bulunması sürecin şeffaflığı açısından belirleyici bir unsurdur. Eğer bu geçici koridor başarıyla işletilirse, çatışma altındaki diğer küçük yerleşim birimleri için de benzer insani uzlaşıların önü açılabilir.",
+    "editorNote": "Melania Trump'ın arabuluculuğunda Oleşki için sağlanan geçici uzlaşı, cephe hattındaki binlerce sivile umut oluyor.",
+    "tags": [
+      "Oleşki",
+      "Ukrayna",
+      "Rusya",
+      "Melania Trump",
+      "Ateşkes"
+    ],
+    "category": "Dünya",
+    "gorselSorgu": "ukraine destroyed city street",
+    "source": "Yeniçağ Gazetesi",
+    "sourceUrl": "https://www.yenicaggazetesi.com/beyaz-saray-acikladi-rusya-ile-ukrayna-arasinda-bolgesel-ateskes-anlasmasi-1084535h.htm",
+    "image": "https://img.yenicaggazetesi.com/rcman/Cw1280h720q95gc/storage/files/images/2026/10/23/beyaz-saray-acikladi-rusya-ile-ukrayna-arasinda-bolgesel-ateskes-anlasmasi-zees.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T14:35:43.000Z",
+    "generatedAt": "2026-10-23T14:49:14.477Z",
     "breaking": true
   },
   {
