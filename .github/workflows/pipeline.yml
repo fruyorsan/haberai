@@ -60,6 +60,7 @@ jobs:
           GUNLUK_HABER_LIMIT: ${{ vars.GUNLUK_HABER_LIMIT }}
           YAYIN_ARALIK_DK: ${{ vars.YAYIN_ARALIK_DK }}
           SON_DAKIKA_ARALIK_DK: ${{ vars.SON_DAKIKA_ARALIK_DK }}
+          SAATLIK_HABER_LIMIT: ${{ vars.SAATLIK_HABER_LIMIT }}
         run: npm run collect
 
       # Yeni haberleri sosyal kanallara paylasir. Anahtar yoksa hata vermez,

@@ -174,6 +174,10 @@ export const config = {
   // tükenmez, akış gece yarısına kadar dengeli sürer.
   yayinAralikDk: Number(process.env.YAYIN_ARALIK_DK || 36),
   sonDakikaAralikDk: Number(process.env.SON_DAKIKA_ARALIK_DK || 12),
+  // Saatlik tavan: "son dakika" adayları gün içinde neredeyse hiç bitmediği
+  // için 12 dk aralık tek başına kotayı 8 saatte tüketirdi. Saatte en fazla
+  // 2 haber (0 = sınırsız) akışı gün boyuna yayar.
+  saatlikLimit: Number(process.env.SAATLIK_HABER_LIMIT || 2),
 
   // ------------------------------------------------------------------
   // SON DAKİKA (hızlı hat)

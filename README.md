@@ -149,6 +149,7 @@ uygulanır; yani son dakika şeridine çöp başlık düşemez.
 | `GUNLUK_HABER_LIMIT` | `40` | Günlük toplam yayın kotası; `0` = sınırsız |
 | `YAYIN_ARALIK_DK` | `36` | Normal haberler arası en kısa süre (dk) |
 | `SON_DAKIKA_ARALIK_DK` | `12` | Son dakika adayı varsa en kısa süre (dk) |
+| `SAATLIK_HABER_LIMIT` | `2` | Saatte en fazla yayın; `0` = sınırsız |
 
 
 ## Otomasyon

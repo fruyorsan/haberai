@@ -122,7 +122,10 @@ Türkiye'deki teknoloji sitelerinin son 24 saatteki gerçek ortalaması
 Ortalama **~36/gün**. Varsayılan kota bu yüzden **40 haber/gün** ve haberler
 günün ilk saatlerinde tükenmesin diye **36 dakikada 1** olacak şekilde
 yayınlanıyor (40 × 36 dk ≈ 24 saat). Son dakika adayı varsa bekleme 12
-dakikaya iner; yine de günlük kotayı aşmaz.
+dakikaya iner; ancak **saatte en fazla 2 haber** yayınlanır. Bu tavan şart:
+"son dakika" adayı gün içinde neredeyse hiç bitmediği için yalnızca 12 dakikalık
+aralık, 40 haberi 8 saatte tüketirdi. Saatlik tavan sayesinde akış 20 saate
+yayılır, günlük kota da asla aşılmaz.
 
 Ayarlar `src/config.js` içinde; GitHub'da kod değiştirmeden değiştirilebilir:
 
@@ -133,6 +136,8 @@ gh variable set GUNLUK_HABER_LIMIT --body "40"
 gh variable set YAYIN_ARALIK_DK --body "36"
 # Son dakika adayı varsa en kısa süre (dk).
 gh variable set SON_DAKIKA_ARALIK_DK --body "12"
+# Saatte en fazla haber (0 = sınırsız).
+gh variable set SAATLIK_HABER_LIMIT --body "2"
 ```
 
 Kota, `Europe/Istanbul` saatine göre gece yarısı sıfırlanır. Kota dolduğunda

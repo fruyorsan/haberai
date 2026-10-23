@@ -95,6 +95,12 @@ async function main() {
   }
   const gecenDk = sonYayin ? (Date.now() - sonYayin) / 60000 : Infinity;
 
+  // Saatlik tavan: son 60 dakikada kaç haber yayınlandı?
+  const sonSaatSayi = articles.filter((a) => {
+    const t = new Date(a.generatedAt || a.publishedAt || 0).getTime();
+    return Number.isFinite(t) && t >= Date.now() - 60 * 60 * 1000;
+  }).length;
+
   console.log(
     `Günlük kota: ${bugunSayi}/${config.gunlukLimit || "∞"} · kalan ${
       kalanKota === Infinity ? "∞" : kalanKota
@@ -201,12 +207,19 @@ async function main() {
   const beklemeDk = breakingPool.length
     ? config.sonDakikaAralikDk
     : config.yayinAralikDk;
-  const siraGeldi = kalanKota > 0 && gecenDk >= beklemeDk;
+  const saatKota = config.saatlikLimit > 0 ? config.saatlikLimit : Infinity;
+  const saatDolu = Number.isFinite(saatKota) && sonSaatSayi >= saatKota;
+  const siraGeldi = kalanKota > 0 && gecenDk >= beklemeDk && !saatDolu;
   const slotKota =
     beklemeDk > 0 && Number.isFinite(gecenDk)
       ? Math.max(1, Math.floor(gecenDk / beklemeDk))
       : turKota;
-  const buTurKota = Math.max(0, Math.min(turKota, slotKota));
+  // Aynı anda en fazla saatlik tavan kadar yayınla; uzun duraklamadan sonra
+  // 4 haber birden basıp tempoyu bozmayalım.
+  const buTurKota = Math.max(
+    0,
+    Math.min(turKota, slotKota, saatKota)
+  );
 
   // Tek haberlik turda öncelik son dakikada: vitrin adayı taze olsa bile
   // gerçek bir son dakika haberini geride bırakmasın.
@@ -231,14 +244,20 @@ async function main() {
   }
 
   if (!siraGeldi) {
-    console.log(
-      kalanKota <= 0
-        ? "  ⏸ Günlük kota doldu; bugün yeni haber yayınlanmayacak."
-        : `  ⏸ Yayın temposu: ${Math.max(
-            0,
-            Math.ceil(beklemeDk - gecenDk)
-          )} dk sonra sıradaki haber.`
-    );
+    if (kalanKota <= 0) {
+      console.log("  ⏸ Günlük kota doldu; bugün yeni haber yayınlanmayacak.");
+    } else if (saatDolu) {
+      console.log(
+        `  ⏸ Saatlik tavan (${saatKota}) doldu; sonraki saat diliminde devam.`
+      );
+    } else {
+      console.log(
+        `  ⏸ Yayın temposu: ${Math.max(
+          0,
+          Math.ceil(beklemeDk - gecenDk)
+        )} dk sonra sıradaki haber.`
+      );
+    }
   }
 
   console.log(
