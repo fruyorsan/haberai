@@ -6,101 +6,108 @@ const origin = Astro.site ? String(Astro.site).replace(/\/+$/, "") : "https://ha
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "ContactPage",
+  "@type": "WebPage",
   name: "Künye — HaberinAi",
-  description: "HaberinAi künye bilgileri: Yönetim, yayın kadrosu, yer sağlayıcı ve yasal bildirimler.",
+  description: "HaberinAi künye bilgileri: Yayın kimliği, içerik sorumluluğu ve iletişim kanalları.",
   url: `${origin}/kunye/`,
 };
 ---
 
 <Base
   title="Künye — HaberinAi"
-  description="HaberinAi künye bilgileri: İmtiyaz sahibi, yayın yönetmeni, haber merkezi, yer sağlayıcı ve yasal bildirimler."
+  description="HaberinAi künye bilgileri: Yayın kimliği, içerik sorumluluğu ve resmi iletişim kanalları."
   canonical={`${origin}/kunye/`}
   schema={schema}
 >
   <div class="container kunye">
-    <header class="kunye__hero">
-      <span class="kunye__rozet">Yasal Bildirim &amp; Yönetim</span>
+    <header class="kunye__ust">
+      <span class="kunye__etiket">Kurumsal Kimlik</span>
       <h1 class="kunye__baslik">Künye</h1>
       <p class="kunye__giris">
-        5651 Sayılı Kanun ve 5187 Sayılı Basın Kanunu kapsamında <strong>HaberinAi</strong> kurumsal,
-        yönetimsel ve iletişim bilgileri aşağıda okuyucularımızın ve kamuoyunun bilgisine sunulmuştur.
+        <strong>HaberinAi</strong> yayın kimliği, içerik yönetimi ve yasal bildirim kanallarına
+        ilişkin bilgiler aşağıda yer almaktadır.
       </p>
     </header>
 
     <div class="kunye__grid">
       <div class="kunye__kart">
-        <h2>Yayın ve Yönetim</h2>
+        <h2>Yayın Kimliği</h2>
         <dl class="kunye__dl">
-          <dt>İmtiyaz Sahibi / Kurucu</dt>
-          <dd>HaberinAi Medya Grubu</dd>
+          <dt>Yayın Adı</dt>
+          <dd>HaberinAi</dd>
 
-          <dt>Genel Yayın Yönetmeni</dt>
-          <dd>Yayın Kurulu</dd>
+          <dt>Yayın Adresi</dt>
+          <dd><a href={origin}>{origin.replace(/^https?:\/\//, "")}</a></dd>
 
-          <dt>Sorumlu Yazı İşleri Müdürü</dt>
-          <dd>Editör Masası (<a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>)</dd>
-
-          <dt>Yayın Türü</dt>
-          <dd>Yaygın Süreli Yayın (İnternet Haber Sitesi)</dd>
+          <dt>Yayın Niteliği</dt>
+          <dd>Bağımsız Dijital Haber ve Analiz Platformu</dd>
 
           <dt>Yayın Dili</dt>
           <dd>Türkçe</dd>
+
+          <dt>Merkez / Ülke</dt>
+          <dd>Türkiye</dd>
         </dl>
       </div>
 
       <div class="kunye__kart">
-        <h2>Haber Merkezi &amp; Editörler</h2>
+        <h2>İçerik ve Yayın Yönetimi</h2>
         <dl class="kunye__dl">
-          <dt>Gündem ve Dünya Masası</dt>
-          <dd>HaberinAi Gündem Masası</dd>
+          <dt>Yayın Sorumlusu</dt>
+          <dd>HaberinAi Editör Masası</dd>
 
-          <dt>Teknoloji &amp; Yapay Zekâ Masası</dt>
-          <dd>HaberinAi Teknoloji Masası</dd>
+          <dt>Yayın Kapsamı</dt>
+          <dd>Gündem, Dünya, Ekonomi, Teknoloji, Yapay Zekâ, Bilim, Spor ve Kültür</dd>
 
-          <dt>Ekonomi &amp; Piyasa Masası</dt>
-          <dd>HaberinAi Finans Masası</dd>
+          <dt>İçerik Yöntemi</dt>
+          <dd>Birincil kaynak takibi, yapay zekâ destekli özetleme ve editoryal bağlam analizi</dd>
 
-          <dt>Bilim, Sağlık &amp; Kültür</dt>
-          <dd>HaberinAi Bilim Masası</dd>
-
-          <dt>Görsel &amp; Veri Analizi</dt>
-          <dd>HaberinAi Tasarım Ekibi</dd>
+          <dt>Yayın ve Telif İlkeleri</dt>
+          <dd>
+            <a href="/yayin-ilkeleri/">Yayın İlkeleri</a> · <a href="/telif/">İçerik ve Telif Politikası</a>
+          </dd>
         </dl>
       </div>
 
-      <div class="kunye__kart">
-        <h2>Hukuki Bildirim &amp; İletişim</h2>
-        <dl class="kunye__dl">
-          <dt>Hukuk &amp; Telif Danışmanı</dt>
-          <dd>Hukuk Müşavirliği Masası</dd>
+      <div class="kunye__kart kunye__kart--tam">
+        <h2>İletişim, Düzeltme ve Hukuki Bildirimler</h2>
+        <dl class="kunye__dl kunye__dl--yatay">
+          <div>
+            <dt>E-posta (Genel &amp; Basın)</dt>
+            <dd><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></dd>
+          </div>
 
-          <dt>Telif Hakları &amp; Tekzip İletişimi</dt>
-          <dd><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></dd>
+          <div>
+            <dt>Telif, Düzeltme ve Kaldırma Talepleri</dt>
+            <dd><a href={`mailto:${CONTACT_EMAIL}?subject=Telif%20ve%20Duzeltme%20Talebi`}>{CONTACT_EMAIL}</a></dd>
+          </div>
 
-          <dt>Yazışma Adresi / Şehir</dt>
-          <dd>İstanbul / Türkiye</dd>
+          <div>
+            <dt>Yanıt ve İşlem Süresi</dt>
+            <dd>Geçerli bildirimler en geç 48 saat içinde sonuçlandırılır.</dd>
+          </div>
 
-          <dt>Cevap ve Düzeltme Süresi</dt>
-          <dd>En geç 48 saat içinde yazılı dönüş sağlanır.</dd>
+          <div>
+            <dt>Yasal Metinler</dt>
+            <dd>
+              <a href="/gizlilik/">Gizlilik Politikası</a> · <a href="/kullanim-sartlari/">Kullanım Şartları</a>
+            </dd>
+          </div>
         </dl>
       </div>
     </div>
 
-    <section class="kunye__yasal">
-      <h2>Yasal Bildirimler ve Basın Ahlak Yasası</h2>
+    <section class="kunye__not">
+      <h2>Yasal Bilgilendirme</h2>
       <p>
-        <strong>HaberinAi</strong>; basın ahlak yasasına, haber teyit kurallarına ve Türkiye Cumhuriyeti
-        yasalarına saygılı olmayı ilke edinmiştir. Sitemizde yayımlanan haberler ve analizler, kamuoyunu
-        tarafsız ve doğru bilgilendirme amacı taşır.
+        HaberinAi'de yayımlanan içerikler kamuoyunu bilgilendirme amacı taşır; yatırım, hukuk veya
+        tıbbi tavsiye niteliğinde değildir. Haberlerde yararlanılan birincil kaynaklar açıkça
+        belirtilir ve ilgili kaynağa doğrudan bağlantı verilir.
       </p>
       <p>
-        Sitemizde yer alan tüm üçüncü taraf kaynak alıntıları, 5846 Sayılı Fikir ve Sanat Eserleri Kanunu
-        kapsamında kaynak gösterilerek ve ilgili mevzuata uygun şekilde işlenmektedir. İçeriklerin
-        kaldırılması, tekzip veya telif hakları talepleri için lütfen
-        <a href="/iletisim/">İletişim</a> veya <a href="/telif/">İçerik ve Telif Politikası</a> sayfamızdaki
-        kanalları kullanınız.
+        5846 sayılı Fikir ve Sanat Eserleri Kanunu ile 5651 sayılı Kanun kapsamındaki her türlü
+        düzeltme, tekzip veya içerik kaldırma başvurusu için <a href="/iletisim/">İletişim</a>
+        sayfamız üzerinden bize ulaşabilirsiniz.
       </p>
     </section>
   </div>
@@ -108,114 +115,115 @@ const schema = {
 
 <style>
   .kunye {
-    max-width: 920px;
-    margin: 40px auto 60px;
+    max-width: 880px;
+    margin: 36px auto 60px;
     padding: 0 16px;
   }
-  .kunye__hero {
-    text-align: center;
-    margin-bottom: 40px;
+  .kunye__ust {
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--surface);
+    margin-bottom: 20px;
   }
-  .kunye__rozet {
+  .kunye__etiket {
     display: inline-block;
-    padding: 6px 14px;
+    padding: 4px 10px;
     border-radius: 999px;
     background: var(--brand-soft);
     color: var(--brand-strong);
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     font-weight: 800;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    margin-bottom: 14px;
   }
   .kunye__baslik {
-    font-size: clamp(2rem, 4vw, 2.7rem);
-    letter-spacing: -0.03em;
-    margin: 0 0 14px;
+    margin: 12px 0 8px;
+    font-size: clamp(1.65rem, 3.6vw, 2.3rem);
+    letter-spacing: -0.025em;
   }
   .kunye__giris {
-    font-size: 1.08rem;
+    margin: 0;
+    font-size: 0.98rem;
     line-height: 1.7;
     color: var(--text-2);
-    max-width: 720px;
-    margin: 0 auto;
   }
   .kunye__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 36px;
+    gap: 16px;
+    margin-bottom: 20px;
   }
   .kunye__kart {
-    padding: 26px 24px;
+    padding: 24px;
     border: 1px solid var(--border);
     border-radius: 16px;
     background: var(--surface);
   }
+  .kunye__kart--tam {
+    grid-column: 1 / -1;
+  }
   .kunye__kart h2 {
-    font-size: 1.25rem;
-    margin: 0 0 18px;
-    padding-bottom: 12px;
+    font-size: 1.15rem;
+    margin: 0 0 16px;
+    padding-bottom: 10px;
     border-bottom: 1px solid var(--border);
     letter-spacing: -0.02em;
-    color: var(--brand-strong);
-  }
-  .kunye__kart:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
   }
   .kunye__dl {
     margin: 0;
     display: grid;
-    grid-template-columns: 1fr;
     gap: 12px;
   }
+  .kunye__dl--yatay {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 24px;
+  }
   .kunye__dl dt {
-    font-size: 0.8rem;
+    font-size: 0.76rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;
     color: var(--muted);
   }
   .kunye__dl dd {
-    margin: 2px 0 0;
-    font-size: 0.95rem;
+    margin: 3px 0 0;
+    font-size: 0.93rem;
     color: var(--text);
     line-height: 1.5;
   }
-  .kunye__dl a {
+  .kunye__dl a,
+  .kunye__not a {
     color: var(--brand-strong);
     font-weight: 600;
   }
-  .kunye__yasal {
-    padding: 28px;
+  .kunye__not {
+    padding: 24px 28px;
     border: 1px solid var(--border);
     border-radius: 16px;
-    background: var(--surface-2);
+    background: var(--surface);
   }
-  .kunye__yasal h2 {
-    font-size: 1.25rem;
-    margin: 0 0 12px;
-    letter-spacing: -0.02em;
+  .kunye__not h2 {
+    font-size: 1.12rem;
+    margin: 0 0 10px;
   }
-  .kunye__yasal p {
+  .kunye__not p {
     color: var(--text-2);
-    line-height: 1.75;
-    margin: 0 0 12px;
-    font-size: 0.92rem;
+    line-height: 1.72;
+    margin: 0 0 10px;
+    font-size: 0.9rem;
   }
-  .kunye__yasal p:last-child {
+  .kunye__not p:last-child {
     margin-bottom: 0;
   }
-  .kunye__yasal a {
-    color: var(--brand-strong);
-    font-weight: 600;
-  }
   @media (max-width: 700px) {
-    .kunye__grid {
+    .kunye__grid,
+    .kunye__dl--yatay {
       grid-template-columns: 1fr;
     }
+    .kunye__ust,
     .kunye__kart,
-    .kunye__yasal {
+    .kunye__not {
       padding: 20px 16px;
     }
   }

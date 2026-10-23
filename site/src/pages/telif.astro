@@ -1,98 +1,118 @@
 ---
 import Base from "../layouts/Base.astro";
 import { CONTACT_EMAIL } from "../lib/site-meta.js";
+
+const updated = "23 Ekim 2026";
 ---
 
 <Base
   title="İçerik ve Telif Politikası — HaberinAi"
-  description="HaberinAi içeriklerinin nasıl üretildiği, kaynak gösterimi, görsel kullanımı ve telif hakkı bildirim süreci hakkında bilgi."
+  description="HaberinAi içeriklerinin hazırlanma yöntemi, kaynak gösterimi, görsel lisansları ve telif hakkı bildirim süreci."
 >
   <div class="container prose">
     <h1>İçerik ve Telif Politikası</h1>
+    <p class="muted">Son güncelleme: {updated}</p>
+
     <p>
-      <strong>HaberinAi</strong>, kamuya açık haber kaynaklarını (RSS akışları) takip eden; haberleri
-      kendi sözcükleriyle yeniden yazan, özetleyen ve editör yorumu ekleyen bir haber platformudur.
-      Bu sayfa, içeriklerimizin nasıl üretildiğini ve telif haklarına nasıl saygı gösterdiğimizi
-      açıklar.
+      <strong>HaberinAi</strong>, güncel gelişmeleri güvenilir haber kaynaklarından takip ederek
+      kendi anlatımıyla özetleyen, öne çıkan başlıklarını yapılandıran ve bağlam analizi ekleyen
+      bağımsız bir dijital haber platformudur. Bu sayfa, içerik hazırlama ilkelerimizi ve telif
+      haklarına gösterdiğimiz özeni açıklar.
     </p>
 
-    <h2>1. İçerikler nasıl üretilir?</h2>
+    <h2>1. İçerik Hazırlama ve Özgünlük</h2>
     <ul>
       <li>
-        Haberler, kaynak sitelerin herkese açık RSS akışlarından alınan <em>bilgiler</em> temel
-        alınarak yapay zekâ ile <strong>özgün olarak yeniden yazılır</strong>. Kaynak metin birebir
-        kopyalanmaz.
+        Haberler, birincil kaynaklarda yer alan olgusal bilgiler temel alınarak yapay zekâ destekli
+        analiz ve özetleme araçlarıyla <strong>özgün bir metin yapısında</strong> yeniden yazılır;
+        kaynak metin birebir kopyalanmaz.
       </li>
       <li>
-        Üretilen metinler otomatik olarak denetlenir: kaynak metinle arka arkaya uzun sözcük
-        dizileri örtüşürse ilgili cümleler yayına alınmadan önce ayıklanır.
+        Hazırlanan her içerik yayına alınmadan önce otomatik benzerlik denetiminden geçirilir;
+        kaynak metinle örtüşen uzun ifade dizileri tespit edilirse ayıklanır veya yeniden
+        yapılandırılır.
       </li>
       <li>
-        Yazılan gövde metni, özet ve yorum <strong>HaberinAi'ye aittir</strong>; kaynağın metni
-        sitemizde yayınlanmaz.
+        Her haberde özet, öne çıkan maddeler, detay metni ve olayın önemini değerlendiren analiz
+        bölümü birlikte sunularak okura özgün katma değer sağlanır.
       </li>
     </ul>
 
-    <h2>2. Kaynak gösterimi</h2>
+    <h2>2. Kaynak Gösterimi</h2>
     <p>
-      Yayınlanan her haberde, haberin alındığı kaynağın adı ve ilgili sayfaya doğrudan bağlantı
-      bulunur (“Kaynak: …”). Okuyucular ayrıntılar ve doğrulama için her zaman orijinal kaynağa
-      yönlendirilir. Kaynak kuruluşların emeğine saygı duyuyoruz.
+      Yayımlanan her haberin altında, yararlanılan birincil kaynağın adı ve ilgili haber sayfasına
+      doğrudan bağlantı (“Kaynak: …”) yer alır. Okuyucular ayrıntılar ve doğrulama için her zaman
+      orijinal kaynağa yönlendirilir. Yayıncı kuruluşların emeğine saygı duyuyoruz.
     </p>
 
-    <h2>3. Görseller</h2>
+    <h2>3. Görsel Kullanımı ve Lisanslar</h2>
     <p>
-      Kapak fotoğrafları öncelikle haberin <strong>kendi kaynağında yayımlanan görselden</strong>
-      (haber sayfasının og:image'ı) alınır; görselin yanında kaynak siteye bağlantı verilir.
-      Kaynak görsel yoksa veya uygun değilse Wikimedia Commons üzerindeki{" "}
-      <strong>CC0, kamu malı, CC BY ve CC BY-SA</strong> lisanslı fotoğraflar kullanılır.
-    </p>
-    <p>
-      Commons'tan gelen fotoğraflarda fotoğrafçının adı, lisansı ve dosya sayfasına bağlantı
-      gösterilir; bu, lisansların istediği atıftır. Fotoğraflar haberin konusuna göre ayrı ayrı
-      seçilir. Kapak fotoğrafı yüklenemezse <strong>HaberinAi tarafından üretilen</strong> markalı
-      kapak görseli gösterilir; bu kapaklar markamıza ait tasarımlardır.
-    </p>
-    <p>
-      Bir fotoğrafın kaldırılmasını isteyen hak sahibi 5. maddedeki bildirim kanallarından
-      ulaşabilir; istek en kısa sürede yerine getirilir.
+      Haber görsellerinde kaynak kuruluşun açık paylaşım görseli (kaynak atfıyla birlikte) veya
+      Wikimedia Commons üzerindeki <strong>CC0, kamu malı, CC BY ve CC BY-SA</strong> lisanslı
+      fotoğraflar kullanılır. Açık lisanslı görsellerde fotoğrafçının adı, lisans türü ve kaynak
+      bilgisi görsel altında belirtilir. Uygun görsel bulunmayan durumlarda HaberinAi'nin kendi
+      tasarımı olan kategori kapakları kullanılır.
     </p>
 
-    <h2>4. Kısa alıntılar</h2>
+    <h2>4. Kısa Alıntılar</h2>
     <p>
-      Gerektiğinde, 5846 sayılı Fikir ve Sanat Eserleri Kanunu'nun 35. maddesi kapsamında yalnızca
-      kısa ve anlamlı alıntılar yapılabilir; bu alıntılar kaynak gösterilerek ve haberin bütünlüğü
-      içinde verilir.
+      Zorunlu hallerde, 5846 sayılı Fikir ve Sanat Eserleri Kanunu'nun 35. maddesi çerçevesinde
+      yalnızca haber ve bilgilendirme sınırlarını aşmayan kısa alıntılara kaynak gösterilerek yer
+      verilebilir.
     </p>
 
-    <h2>5. Telif hakkı bildirimi</h2>
+    <h2>5. Telif Hakkı ve Kaldırma Bildirimi</h2>
     <p>
-      Bir içeriğin hak sahibiyseniz ve yayınlanan bir haberin kaldırılmasını, düzeltilmesini veya
-      kaynağının değiştirilmesini istiyorsanız bize ulaşın. Bildiriminizde içeriğin bağlantısını
-      (URL) ve talebinizi belirtmeniz yeterlidir.
+      Bir metin veya görselin hak sahibiyseniz ve ilgili içeriğin kaldırılmasını, güncellenmesini
+      veya kaynak gösteriminin düzeltilmesini talep ediyorsanız bize doğrudan ulaşabilirsiniz:
     </p>
     <ul>
       <li>
-        Bildirim: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> —
-        <a href="/iletisim/">İletişim sayfası</a> —
-        <a href="https://github.com/fruyorsan/haberai/issues" target="_blank" rel="noopener"
-          >bildirim kaydı aç</a
-        >
+        <strong>E-posta:</strong> <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> —
+        <a href="/iletisim/">İletişim Sayfası</a>
       </li>
       <li>
-        Geçerli bir bildirim aldığımızda içerik <strong>en geç 48 saat içinde</strong> düzeltilir
-        veya yayından kaldırılır; gerekirse içerik tamamen silinir.
+        Bildiriminizde ilgili sayfanın bağlantısını (URL) ve talebinizi belirtmeniz yeterlidir.
       </li>
-      <li>Düzeltme talepleri de aynı yolla iletilir ve öncelikli olarak işlenir.</li>
+      <li>
+        Geçerli bildirimler <strong>en geç 48 saat içinde</strong> sonuçlandırılır ve talep edilen
+        içerik düzeltilir veya yayından tamamen kaldırılır.
+      </li>
     </ul>
 
-    <h2>6. Sorumluluk</h2>
+    <h2>6. Bilgilendirme Sınırı</h2>
     <p>
-      İçerikler otomatik olarak ve yapay zekâ desteğiyle üretilir; hata veya eksiklik olabilir.
-      Haberler bilgilendirme amaçlıdır, yatırım tavsiyesi değildir. Hata bildirimleri için
-      <a href="/iletisim/">İletişim</a> sayfasını kullanabilirsiniz.
+      Sitedeki içerikler genel bilgilendirme amacı taşır; yatırım, hukuk veya tıbbi tavsiye
+      niteliğinde değildir. Düzeltme ve geri bildirimleriniz için <a href="/iletisim/">İletişim</a>
+      sayfamızı kullanabilirsiniz.
     </p>
-
-    <p class="muted">Son güncelleme: {new Date().toLocaleDateString("tr-TR")}</p>
   </div>
 </Base>
+
+<style>
+  .prose {
+    max-width: 780px;
+    margin: 40px auto;
+  }
+  .prose h1 {
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+  }
+  .prose h2 {
+    margin-top: 32px;
+    font-size: 1.22rem;
+  }
+  .prose p,
+  .prose li {
+    line-height: 1.78;
+    color: var(--text-2);
+  }
+  .prose a {
+    color: var(--brand-strong);
+    font-weight: 600;
+  }
+  .muted {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+</style>

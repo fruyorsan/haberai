@@ -8,254 +8,300 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
   name: "İletişim — HaberinAi",
-  description: "HaberinAi iletişim bilgileri: Haber ihbarı, editör masası, reklam, telif ve hukuki bildirim kanalları.",
+  description:
+    "HaberinAi iletişim sayfası: Telif ve kaldırma talepleri, hata bildirimi, haber ihbarı, reklam ve görüşleriniz için bize ulaşın.",
   url: `${origin}/iletisim/`,
   mainEntity: {
     "@type": "NewsMediaOrganization",
     name: "HaberinAi",
     url: `${origin}/`,
     email: CONTACT_EMAIL,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "İstanbul",
-      addressCountry: "TR",
-    },
   },
 };
 ---
 
 <Base
   title="İletişim — HaberinAi"
-  description="HaberinAi ile iletişim: Haber ihbarı, editör masası, telif talepleri, reklam iş birlikleri ve öneriler için resmi kanallarımız."
+  description="HaberinAi ile iletişim: Telif ve kaldırma talepleri, düzeltme, haber ihbarı, reklam iş birlikleri ve önerileriniz için resmi e-posta adresimiz."
   canonical={`${origin}/iletisim/`}
   schema={schema}
 >
   <div class="container iletisim">
-    <header class="iletisim__hero">
-      <span class="iletisim__rozet">Bize Ulaşın</span>
-      <h1 class="iletisim__baslik">İletişim Kanalları</h1>
+    <header class="iletisim__ust">
+      <span class="iletisim__etiket">İletişim</span>
+      <h1 class="iletisim__baslik">Bize Ulaşın</h1>
       <p class="iletisim__giris">
-        Görüş, öneri, haber ihbarı, reklam teklifleri ve hukuki bildirimleriniz için ilgili
-        departmanlarımızla iletişime geçebilirsiniz. E-posta bildirimleri en geç 24–48 saat içinde
-        yanıtlanır.
+        Görüş, öneri, düzeltme bildirimi, haber ihbarı, reklam ve telif talepleriniz için aşağıdaki
+        e-posta adresimizden veya iletişim formundan doğrudan bize yazabilirsiniz.
       </p>
+      <div class="iletisim__dogrudan">
+        <div>
+          <span class="iletisim__dogrudan-etiket">Resmi İletişim E-postası</span>
+          <a class="iletisim__posta" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+        </div>
+        <span class="iletisim__sure">Yanıt süresi: 24–48 saat</span>
+      </div>
     </header>
 
-    <div class="iletisim__grid">
-      <div class="iletisim__kart">
-        <h2>Genel İletişim &amp; Okur Masası</h2>
-        <p>Her türlü genel soru, geri bildirim ve önerileriniz için:</p>
-        <a class="iletisim__posta" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
-      </div>
-
-      <div class="iletisim__kart">
-        <h2>Haber İhbarı &amp; Basın Bültenleri</h2>
-        <p>Doğrulanabilir basın bültenleri, özel haber ihbarları ve duyurularınız için:</p>
-        <a class="iletisim__posta" href={`mailto:${CONTACT_EMAIL}?subject=Haber%20Ihbari`}>{CONTACT_EMAIL}</a>
-        <span class="iletisim__ek">Editör Masası doğrudan inceler.</span>
-      </div>
-
-      <div class="iletisim__kart">
-        <h2>Hukuk, Tekzip ve Telif Hakları</h2>
-        <p>İçerik kaldırma, düzeltme, tekzip veya telif hakları bildirimleriniz için:</p>
-        <a class="iletisim__posta" href={`mailto:${CONTACT_EMAIL}?subject=Telif%20ve%20Hukuk`}>{CONTACT_EMAIL}</a>
-        <span class="iletisim__ek">Talepler en geç 48 saat içinde sonuçlandırılır.</span>
-      </div>
-
-      <div class="iletisim__kart">
-        <h2>Reklam ve Sponsorluk</h2>
-        <p>Görüntülü reklam, sponsorlu içerik ve iş birlikleri için:</p>
-        <a class="iletisim__posta" href="/reklam/">Reklam Sayfasını İnceleyin</a>
-        <span class="iletisim__ek">Veya doğrudan e-posta ile teklif isteyin.</span>
-      </div>
-    </div>
-
-    <div class="iletisim__detay-izgara">
+    <div class="iletisim__izgara">
       <section class="iletisim__kutu">
-        <h2>Yazışma ve Merkez Bilgileri</h2>
-        <ul class="iletisim__bilgi-liste">
-          <li><strong>Yayıncı:</strong> HaberinAi Bağımsız Dijital Medya</li>
-          <li><strong>Konum / Şehir:</strong> İstanbul / Türkiye</li>
-          <li><strong>Yayın Dili:</strong> Türkçe</li>
-          <li><strong>Çalışma Saatleri:</strong> 7/24 Kesintisiz Dijital Yayın Hattı</li>
-          <li><strong>Kurumsal Sayfalar:</strong> <a href="/kunye/">Künye</a> · <a href="/yayin-ilkeleri/">Yayın İlkeleri</a> · <a href="/gizlilik/">Gizlilik Politikası</a></li>
+        <h2>Hangi Konularda Yazabilirsiniz?</h2>
+        <ul class="iletisim__konular">
+          <li>
+            <strong>Telif ve İçerik Kaldırma:</strong> Hak sahibi olduğunuz bir metin veya görsel
+            için ilgili haberin bağlantısını (URL) ve talebinizi iletin. Geçerli talepler
+            <strong>en geç 48 saat içinde</strong> sonuçlandırılır.
+          </li>
+          <li>
+            <strong>Düzeltme ve Hata Bildirimi:</strong> Bir haberde maddi hata, eksiklik veya
+            güncelliğini yitirmiş bir bilgi fark ettiyseniz haber bağlantısıyla birlikte bildirin;
+            öncelikli olarak incelenir ve güncellenir.
+          </li>
+          <li>
+            <strong>Haber İhbarı ve Basın Bülteni:</strong> Doğrulanabilir kaynaklara dayanan
+            haber, duyuru veya basın bültenlerinizi paylaşabilirsiniz.
+          </li>
+          <li>
+            <strong>Reklam ve Sponsorluk:</strong> Görüntülü reklam, sponsorlu içerik veya
+            kategori sponsorluğu olanakları için <a href="/reklam/">Reklam ve Sponsorluk</a>
+            sayfamızı inceleyebilir ya da teklif isteyebilirsiniz.
+          </li>
         </ul>
+
+        <div class="iletisim__baglantilar">
+          <a href="/kunye/">Künye</a>
+          <span>·</span>
+          <a href="/yayin-ilkeleri/">Yayın İlkeleri</a>
+          <span>·</span>
+          <a href="/telif/">İçerik ve Telif Politikası</a>
+          <span>·</span>
+          <a href="/gizlilik/">Gizlilik Politikası</a>
+        </div>
       </section>
 
       <section class="iletisim__kutu">
-        <h2>Hızlı Mesaj Gönderin</h2>
+        <h2>Mesaj Gönderin</h2>
         <p class="iletisim__not">
-          Aşağıdaki formu doldurarak doğrudan e-posta istemciniz üzerinden editörlerimize yazabilirsiniz:
+          Konuyu seçip mesajınızı yazın; gönder düğmesi e-posta uygulamanızı hazır başlık ve
+          metinle açar.
         </p>
-        <form class="iletisim__form" action={`mailto:${CONTACT_EMAIL}`} method="get" enctype="text/plain">
+        <form class="iletisim__form" id="iletisim-form" data-email={CONTACT_EMAIL}>
           <div class="iletisim__alan">
-            <label for="frm-ad">Adınız ve Soyadınız</label>
-            <input type="text" id="frm-ad" name="name" placeholder="Örn: Ahmet Yılmaz" required />
+            <label for="frm-ad">Adınız (isteğe bağlı)</label>
+            <input type="text" id="frm-ad" name="name" placeholder="Adınız Soyadınız" />
           </div>
           <div class="iletisim__alan">
             <label for="frm-konu">Konu</label>
             <select id="frm-konu" name="subject">
-              <option value="Genel Görüş / Öneri">Genel Görüş / Öneri</option>
-              <option value="Haber İhbarı">Haber İhbarı</option>
-              <option value="Hata Düzeltme Bildirimi">Hata Düzeltme Bildirimi</option>
-              <option value="Telif / İçerik Kaldırma">Telif / İçerik Kaldırma</option>
+              <option value="Genel Görüş ve Öneri">Genel Görüş ve Öneri</option>
+              <option value="Düzeltme / Hata Bildirimi">Düzeltme / Hata Bildirimi</option>
+              <option value="Telif / İçerik Kaldırma Talebi">Telif / İçerik Kaldırma Talebi</option>
+              <option value="Haber İhbarı / Basın Bülteni">Haber İhbarı / Basın Bülteni</option>
               <option value="Reklam ve Sponsorluk">Reklam ve Sponsorluk</option>
             </select>
           </div>
           <div class="iletisim__alan">
-            <label for="frm-mesaj">Mesajınız</label>
-            <textarea id="frm-mesaj" name="body" rows="4" placeholder="Mesajınızı ve varsa ilgili haber linkini buraya yazınız..." required></textarea>
+            <label for="frm-url">İlgili Haber Bağlantısı (varsa)</label>
+            <input type="url" id="frm-url" name="url" placeholder="https://haberinai.site/haber/..." />
           </div>
-          <button type="submit" class="iletisim__gonder-btn">Mesajı E-Posta İle Gönder</button>
+          <div class="iletisim__alan">
+            <label for="frm-mesaj">Mesajınız</label>
+            <textarea
+              id="frm-mesaj"
+              name="body"
+              rows="4"
+              placeholder="Mesajınızı buraya yazın..."
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="iletisim__gonder">E-posta ile Gönder</button>
         </form>
       </section>
     </div>
   </div>
 </Base>
 
+<script is:inline>
+  (function () {
+    var form = document.getElementById("iletisim-form");
+    if (!form) return;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var email = form.getAttribute("data-email") || "";
+      var ad = (document.getElementById("frm-ad")?.value || "").trim();
+      var konu = (document.getElementById("frm-konu")?.value || "İletişim").trim();
+      var url = (document.getElementById("frm-url")?.value || "").trim();
+      var mesaj = (document.getElementById("frm-mesaj")?.value || "").trim();
+      var satirlar = [];
+      if (ad) satirlar.push("Gönderen: " + ad);
+      if (url) satirlar.push("İlgili bağlantı: " + url);
+      if (satirlar.length) satirlar.push("");
+      satirlar.push(mesaj);
+      var href =
+        "mailto:" +
+        email +
+        "?subject=" +
+        encodeURIComponent(konu + " — HaberinAi") +
+        "&body=" +
+        encodeURIComponent(satirlar.join("\n"));
+      window.location.href = href;
+    });
+  })();
+</script>
+
 <style>
   .iletisim {
-    max-width: 940px;
-    margin: 40px auto 60px;
+    max-width: 880px;
+    margin: 36px auto 60px;
     padding: 0 16px;
   }
-  .iletisim__hero {
-    text-align: center;
-    margin-bottom: 44px;
-  }
-  .iletisim__rozet {
-    display: inline-block;
-    padding: 6px 14px;
-    border-radius: 999px;
-    background: var(--brand-soft);
-    color: var(--brand-strong);
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    margin-bottom: 14px;
-  }
-  .iletisim__baslik {
-    font-size: clamp(2rem, 4vw, 2.7rem);
-    letter-spacing: -0.03em;
-    margin: 0 0 14px;
-  }
-  .iletisim__giris {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: var(--text-2);
-    max-width: 720px;
-    margin: 0 auto;
-  }
-  .iletisim__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 36px;
-  }
-  .iletisim__kart {
-    padding: 26px;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    background: var(--surface);
-  }
-  .iletisim__kart h2 {
-    font-size: 1.2rem;
-    margin: 0 0 8px;
-    letter-spacing: -0.02em;
-  }
-  .iletisim__kart p {
-    color: var(--text-2);
-    font-size: 0.92rem;
-    line-height: 1.6;
-    margin: 0 0 14px;
-  }
-  .iletisim__posta {
-    display: inline-block;
-    font-weight: 700;
-    font-size: 1rem;
-    color: var(--brand-strong);
-    text-decoration: underline;
-  }
-  .iletisim__ek {
-    display: block;
-    margin-top: 6px;
-    font-size: 0.8rem;
-    color: var(--muted);
-  }
-  .iletisim__detay-izgara {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 24px;
-  }
-  .iletisim__kutu {
+  .iletisim__ust {
     padding: 28px;
     border: 1px solid var(--border);
     border-radius: 18px;
     background: var(--surface);
+    margin-bottom: 20px;
+  }
+  .iletisim__etiket {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--brand-soft);
+    color: var(--brand-strong);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .iletisim__baslik {
+    margin: 12px 0 8px;
+    font-size: clamp(1.65rem, 3.6vw, 2.3rem);
+    letter-spacing: -0.025em;
+  }
+  .iletisim__giris {
+    margin: 0 0 20px;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--text-2);
+  }
+  .iletisim__dogrudan {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 16px 20px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+  }
+  .iletisim__dogrudan-etiket {
+    display: block;
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    margin-bottom: 2px;
+  }
+  .iletisim__posta {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--brand-strong);
+    text-decoration: none;
+  }
+  .iletisim__posta:hover {
+    text-decoration: underline;
+  }
+  .iletisim__sure {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-2);
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+  }
+  .iletisim__izgara {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .iletisim__kutu {
+    padding: 26px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
   }
   .iletisim__kutu h2 {
-    font-size: 1.25rem;
+    font-size: 1.18rem;
     margin: 0 0 14px;
     letter-spacing: -0.02em;
   }
-  .iletisim__bilgi-liste {
+  .iletisim__konular {
     margin: 0;
-    padding: 0;
-    list-style: none;
+    padding-left: 18px;
     display: flex;
     flex-direction: column;
     gap: 12px;
+    flex: 1;
   }
-  .iletisim__bilgi-liste li {
-    font-size: 0.92rem;
-    line-height: 1.6;
+  .iletisim__konular li {
+    font-size: 0.9rem;
+    line-height: 1.65;
     color: var(--text-2);
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 8px;
   }
-  .iletisim__bilgi-liste li:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-  .iletisim__bilgi-liste strong {
+  .iletisim__konular strong {
     color: var(--text);
   }
-  .iletisim__bilgi-liste a {
+  .iletisim__konular a,
+  .iletisim__baglantilar a {
     color: var(--brand-strong);
     font-weight: 600;
+  }
+  .iletisim__baglantilar {
+    margin-top: 20px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 0.84rem;
+    color: var(--muted);
   }
   .iletisim__not {
     font-size: 0.88rem;
     color: var(--text-2);
     line-height: 1.6;
-    margin: 0 0 16px;
+    margin: 0 0 14px;
   }
   .iletisim__form {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
   }
   .iletisim__alan {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
   }
   .iletisim__alan label {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: var(--text);
   }
   .iletisim__alan input,
   .iletisim__alan select,
   .iletisim__alan textarea {
-    padding: 10px 14px;
+    padding: 9px 12px;
     border: 1px solid var(--border);
     border-radius: 10px;
     background: var(--bg);
     color: var(--text);
     font-family: inherit;
-    font-size: 0.92rem;
+    font-size: 0.9rem;
   }
   .iletisim__alan input:focus,
   .iletisim__alan select:focus,
@@ -263,25 +309,27 @@ const schema = {
     outline: none;
     border-color: var(--brand-strong);
   }
-  .iletisim__gonder-btn {
-    padding: 12px 20px;
+  .iletisim__gonder {
+    margin-top: 4px;
+    padding: 11px 18px;
     border: none;
-    border-radius: 12px;
+    border-radius: 10px;
     background: var(--brand-grad);
     color: #fff;
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     cursor: pointer;
-    box-shadow: 0 12px 24px -14px var(--brand-glow);
-    transition: opacity 0.15s ease;
   }
-  .iletisim__gonder-btn:hover {
+  .iletisim__gonder:hover {
     opacity: 0.92;
   }
   @media (max-width: 760px) {
-    .iletisim__grid,
-    .iletisim__detay-izgara {
+    .iletisim__izgara {
       grid-template-columns: 1fr;
+    }
+    .iletisim__ust,
+    .iletisim__kutu {
+      padding: 20px 16px;
     }
   }
 </style>
