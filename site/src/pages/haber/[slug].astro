@@ -46,6 +46,15 @@ const BASLIK_GENEL_KELIMELER = new Set([
   "raporu", "analiz", "uzman", "uzmanı", "şirket", "şirketi", "şirketler", "ülke",
   "ülkede", "kent", "kenti", "bölge", "bölgesi", "dünya", "dünyada", "avrupa",
   "abd", "türkiye", "yaptı", "yapıldı", "yapılıyor", "başladı", "sürüyor",
+  "yıllık", "yüzde", "binde", "ölüm", "ölü", "oran", "oranı", "vaka", "vakası",
+  "vakalar", "yaş", "altı", "üstü", "düşüş", "artış", "rekor", "test", "sonuç",
+  "sonuçları", "uyarı", "inceleme", "incelemesi", "soruşturma", "dava", "davası",
+  "kişi", "kişiye", "kişinin", "adet", "büyük", "küçük", "eski", "sağlık",
+  "sağlıkta", "mühendislik", "teknoloji", "telekomünikasyon", "yapay", "zeka",
+  "fiyatla", "savaş", "çatışma", "çatışmalar", "saldırı", "operasyon", "deprem",
+  "sel", "yangın", "kaza", "trafik", "strateji", "stratejisi", "plan", "planı",
+  "erken", "geç", "yayın", "yayınladı", "yayınlandı", "açıldı", "incelemeler",
+  "alarm", "sinyal", "sistem", "sistemi", "yöntem", "yöntemi", "fosil",
 ]);
 
 /** Başlıktaki büyük harfle başlayan anlamlı adları (marka/kişi/yer) çıkarır. */
@@ -160,7 +169,7 @@ const GENEL_ETIKETLER = new Set([
   "operasyon", "diplomasi", "seçim", "savaş", "saldırı", "uzay", "turizm",
   "tarım", "gıda", "futbol", "süper-lig", "şampiyonlar-ligi", "transfer",
   "milli-takım", "basketbol", "voleybol", "tenis", "formula-1",
-]);
+].map((t) => slugify(t)).filter(Boolean));
 
 /** Aynı fotoğrafın farklı boyut/query sürümlerini eşleştirmek için sade kimlik. */
 const gorselKimlik = (url) =>
