@@ -229,11 +229,11 @@ const boyutlar = (i) =>
 
     const kapat = () => {
       if (dialog.open && typeof dialog.close === "function") dialog.close();
-      else {
-        dialog.removeAttribute("open");
-        document.body.style.overflow = "";
-        if (donusOdak instanceof HTMLElement) donusOdak.focus();
-      }
+      else dialog.removeAttribute("open");
+      // Bazı tarayıcı/gömülü görünümlerde `close` olayı gecikebiliyor;
+      // sayfanın kaydırma kilidini burada da kesin olarak aç.
+      document.body.style.overflow = "";
+      if (donusOdak instanceof HTMLElement) donusOdak.focus();
     };
 
     kartlar.forEach((k, i) => {
@@ -265,6 +265,12 @@ const boyutlar = (i) =>
     });
 
     dialog.addEventListener("close", () => {
+      document.body.style.overflow = "";
+      if (donusOdak instanceof HTMLElement) donusOdak.focus();
+    });
+
+    // Esc ile kapanışta da kaydırma kilidini ve odağı geri al.
+    dialog.addEventListener("cancel", () => {
       document.body.style.overflow = "";
       if (donusOdak instanceof HTMLElement) donusOdak.focus();
     });
