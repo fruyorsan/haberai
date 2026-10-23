@@ -61,6 +61,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
           <input class="profil__girdi" id="profil-ad-girdi" type="text" maxlength="40" placeholder="Adın" />
           <button type="button" class="profil__btn profil__btn--kucuk" id="profil-ad-kaydet">Kaydet</button>
         </div>
+        <span class="profil__mini" id="profil-ad-durum" role="status" aria-live="polite"></span>
 
         <h3 class="profil__h3 profil__h3--ayrac">Profil fotoğrafı</h3>
         <p class="profil__aciklama">
@@ -112,7 +113,10 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
       <section class="profil__blok" id="ilgi">
         <div class="profil__baslik-satir">
           <h2 class="profil__h2">İlgi alanları</h2>
-          <span class="profil__sayac" id="profil-ilgi-sayac"></span>
+          <div class="profil__baslik-sag">
+            <span class="profil__mini" id="profil-durum" role="status" aria-live="polite"></span>
+            <span class="profil__sayac" id="profil-ilgi-sayac"></span>
+          </div>
         </div>
         <p class="profil__aciklama">
           Seçtiğin konular Shorts akışında “Sana özel” sıralamada öne çıkar ve
@@ -192,6 +196,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
           de listende durur.
         </p>
         <ul class="profil__yorumlar" id="profil-kayitlar"></ul>
+        <button type="button" class="profil__daha-fazla" id="profil-kayit-daha" hidden></button>
         <p class="profil__bos" id="profil-kayit-bos" hidden>
           Henüz kaydettiğin haber yok. Haber sayfasındaki yer imi düğmesiyle ekleyebilirsin.
         </p>
@@ -202,13 +207,13 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
           <h2 class="profil__h2">Yorumların</h2>
           <span class="profil__sayac" id="profil-yorum-sayac" hidden></span>
         </div>
+        <p class="profil__aciklama">
+          Haberlerin altına bıraktığın yorumların geçmişi.
+        </p>
         <ul class="profil__yorumlar" id="profil-yorumlar"></ul>
+        <button type="button" class="profil__daha-fazla" id="profil-yorum-daha" hidden></button>
         <p class="profil__bos" id="profil-yorum-bos" hidden>Henüz yorumun yok.</p>
       </section>
-
-      <div class="profil__kaydet-satir">
-        <span class="profil__mini" id="profil-durum" role="status" aria-live="polite"></span>
-      </div>
 
       <section class="profil__blok profil__yonetim-alani" id="profil-yonetim" hidden>
         <div class="profil__yonetim-ust">
@@ -305,7 +310,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
   </div>
 </Base>
 
-<style>
+<style is:global>
   .profil {
     max-width: 1040px;
     margin: 36px auto 70px;
@@ -558,6 +563,16 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     color: #fff;
     font-weight: 800;
     font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  .profil__uye-av img,
+  .profil__aktif-av img,
+  .profil__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 999px;
+    display: block;
   }
   .profil__uye-kim {
     min-width: 0;
@@ -811,45 +826,147 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     gap: 10px;
   }
   .profil__yorum {
-    padding: 11px 13px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 13px 15px;
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 13px;
     background: var(--bg);
+    transition: border-color 0.16s var(--ease);
   }
-  .profil__yorum a {
+  .profil__yorum:hover {
+    border-color: color-mix(in srgb, var(--brand) 42%, var(--border));
+  }
+  .profil__yorum-ust {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .profil__yorum-konu {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
+    flex: 1;
+    flex-wrap: wrap;
+  }
+  .profil__yorum-kat {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 6px;
+    background: var(--brand-soft, rgba(217, 54, 75, 0.12));
+    color: var(--brand-strong, #d9364b);
+    font-size: 0.68rem;
     font-weight: 800;
-    font-size: 0.85rem;
-    color: var(--brand);
-    text-decoration: none;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    flex-shrink: 0;
   }
-  .profil__yorum p {
-    margin: 5px 0 0;
+  .profil__yorum-baslik {
+    font-weight: 800;
     font-size: 0.88rem;
-    color: var(--text-2);
+    color: var(--text);
+    text-decoration: none;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+  .profil__yorum-baslik:hover {
+    color: var(--brand);
+  }
+  .profil__yorum-metin {
+    margin: 0;
+    padding: 9px 12px;
+    border-left: 2.5px solid var(--brand);
+    border-radius: 0 9px 9px 0;
+    background: var(--surface-2);
+    font-size: 0.88rem;
+    color: var(--text);
     line-height: 1.5;
     overflow-wrap: anywhere;
   }
+  .profil__yorum-alt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
   .profil__yorum time {
-    display: block;
-    margin-top: 5px;
-    font-size: 0.72rem;
+    margin: 0;
+    font-size: 0.74rem;
     color: var(--muted);
+    white-space: nowrap;
+  }
+  .profil__yorum-aksiyon {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+  }
+  .profil__yorum-git {
+    font-weight: 700;
+    font-size: 0.78rem;
+    color: var(--brand);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .profil__yorum-git:hover {
+    text-decoration: underline;
+  }
+  .profil__kayit-sil {
+    padding: 3px 9px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    font-size: 0.73rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.15s var(--ease), color 0.15s var(--ease);
+  }
+  .profil__kayit-sil:hover {
+    border-color: var(--brand);
+    color: var(--brand-strong, #d9364b);
+  }
+  .profil__daha-fazla {
+    margin-top: 10px;
+    width: 100%;
+    padding: 9px 14px;
+    border: 1px dashed var(--border);
+    border-radius: 11px;
+    background: var(--surface-2);
+    color: var(--text-2);
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: border-color 0.15s var(--ease), color 0.15s var(--ease);
+  }
+  .profil__daha-fazla:hover {
+    border-color: var(--brand);
+    color: var(--text);
+  }
+  .profil__baslik-sag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
   .profil__bos {
     margin: 0;
     font-size: 0.86rem;
     color: var(--text-2);
   }
-  .profil__kaydet-satir {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 6px;
-  }
   .profil__mini {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     color: var(--text-2);
+  }
+  #profil-ad-durum {
+    display: block;
+    margin-top: 6px;
+    min-height: 1em;
   }
 
   /* --- Profil fotoğrafı seçici --- */
@@ -1362,19 +1479,23 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
 
     // Görünen adı tek başına kaydet
     var adKaydet = document.getElementById("profil-ad-kaydet");
+    var adDurumEl = document.getElementById("profil-ad-durum");
+    function adDurum(mesaj) {
+      if (adDurumEl) adDurumEl.textContent = mesaj || "";
+    }
     adKaydet &&
       adKaydet.addEventListener("click", async function () {
         adKaydet.disabled = true;
-        durum("Kaydediliyor…");
+        adDurum("Kaydediliyor…");
         try {
           var r = await H.profilGuncelle({ ad: (adGirdi && adGirdi.value.trim()) || u.ad });
-          if (r && r.hata) { durum(r.hata); return; }
+          if (r && r.hata) { adDurum(r.hata); return; }
           u = H.oturumOku();
           if (adEl) adEl.textContent = u.ad;
           avatarCiz();
-          durum("Adın güncellendi ✓");
+          adDurum("Adın güncellendi ✓");
         } catch (e) {
-          durum("Güncellenemedi.");
+          adDurum("Güncellenemedi.");
         } finally {
           adKaydet.disabled = false;
         }
@@ -2042,39 +2163,175 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
       }
     }
 
+    // --- Haber başlığı & kategori eşleştirme (search-index.json + slug yedeği) ---
+    var haberHarita = Object.create(null);
+    var indeksSoz = null;
+    function indeksGetir() {
+      if (indeksSoz) return indeksSoz;
+      indeksSoz = fetch("/search-index.json")
+        .then(function (r) { return r.ok ? r.json() : []; })
+        .then(function (liste) {
+          if (Array.isArray(liste)) {
+            liste.forEach(function (item) {
+              if (!item || !item.u) return;
+              var s = String(item.u).replace(/^\/haber\//, "").replace(/\/$/, "").trim();
+              if (s) haberHarita[s] = item;
+            });
+          }
+          return haberHarita;
+        })
+        .catch(function () { return haberHarita; });
+      return indeksSoz;
+    }
+
+    function slugBaslik(slug) {
+      if (!slug) return "Haber detayı";
+      var temiz = String(slug)
+        .replace(/^\/haber\//, "")
+        .replace(/\/$/, "")
+        .replace(/-[0-9a-f]{6,10}$/i, "")
+        .replace(/-/g, " ")
+        .trim();
+      if (!temiz) return "Haber detayı";
+      return temiz.charAt(0).toLocaleUpperCase("tr") + temiz.slice(1);
+    }
+
+    function kisaTarihSaat(iso) {
+      if (!iso) return "";
+      try {
+        var d = new Date(iso);
+        if (isNaN(d.getTime())) return "";
+        var gun = d.toLocaleDateString("tr-TR", {
+          day: "2-digit",
+          month: "short",
+          year: "numeric",
+        });
+        var saat = d.toLocaleTimeString("tr-TR", {
+          hour: "2-digit",
+          minute: "2-digit",
+        });
+        return gun + " · " + saat;
+      } catch (e) {
+        return "";
+      }
+    }
+
+    var SAYFA_BOYUTU = 5;
+
     // --- Okuma listesi ---
     var kListe = document.getElementById("profil-kayitlar");
     var kBos = document.getElementById("profil-kayit-bos");
     var kSayac = document.getElementById("profil-kayit-sayac");
+    var kDaha = document.getElementById("profil-kayit-daha");
+    var kayitVeri = [];
+    var kayitTumunuGoster = false;
+
+    function kayitlariCiz() {
+      if (kSayac) {
+        kSayac.textContent = String(kayitVeri.length);
+        kSayac.hidden = !kayitVeri.length;
+      }
+      if (!kListe) return;
+      kListe.textContent = "";
+      if (!kayitVeri.length) {
+        if (kBos) kBos.hidden = false;
+        if (kDaha) kDaha.hidden = true;
+        return;
+      }
+      if (kBos) kBos.hidden = true;
+
+      var dilim = kayitTumunuGoster ? kayitVeri : kayitVeri.slice(0, SAYFA_BOYUTU);
+      dilim.forEach(function (k) {
+        var h = haberHarita[k.slug];
+        var baslikMetin = k.baslik || (h && h.t) || slugBaslik(k.slug);
+        var katMetin = (h && h.c) || "";
+        var url = "/haber/" + encodeURIComponent(k.slug) + "/";
+
+        var li = document.createElement("li");
+        li.className = "profil__yorum";
+
+        var ust = document.createElement("div");
+        ust.className = "profil__yorum-ust";
+
+        var konu = document.createElement("div");
+        konu.className = "profil__yorum-konu";
+        if (katMetin) {
+          var kat = document.createElement("span");
+          kat.className = "profil__yorum-kat";
+          kat.textContent = katMetin;
+          konu.appendChild(kat);
+        }
+        var a = document.createElement("a");
+        a.className = "profil__yorum-baslik";
+        a.href = url;
+        a.textContent = baslikMetin;
+        konu.appendChild(a);
+        ust.appendChild(konu);
+
+        var alt = document.createElement("div");
+        alt.className = "profil__yorum-alt";
+
+        var t = document.createElement("time");
+        t.textContent = kisaTarihSaat(k.created_at);
+
+        var aksiyon = document.createElement("div");
+        aksiyon.className = "profil__yorum-aksiyon";
+
+        var git = document.createElement("a");
+        git.className = "profil__yorum-git";
+        git.href = url;
+        git.textContent = "Habere git →";
+        aksiyon.appendChild(git);
+
+        if (H.kaydetSil) {
+          var silBtn = document.createElement("button");
+          silBtn.type = "button";
+          silBtn.className = "profil__kayit-sil";
+          silBtn.textContent = "Kaldır";
+          silBtn.addEventListener("click", async function () {
+            silBtn.disabled = true;
+            try {
+              var r = await H.kaydetSil(k.slug);
+              if (!r || !r.hata) {
+                kayitVeri = kayitVeri.filter(function (x) { return x.slug !== k.slug; });
+                kayitlariCiz();
+              }
+            } finally {
+              silBtn.disabled = false;
+            }
+          });
+          aksiyon.appendChild(silBtn);
+        }
+
+        alt.append(t, aksiyon);
+        li.append(ust, alt);
+        kListe.appendChild(li);
+      });
+
+      if (kDaha) {
+        if (kayitVeri.length > SAYFA_BOYUTU) {
+          kDaha.hidden = false;
+          kDaha.textContent = kayitTumunuGoster
+            ? "Daha az göster"
+            : "Tüm kayıtları göster (" + kayitVeri.length + ")";
+        } else {
+          kDaha.hidden = true;
+        }
+      }
+    }
+
+    if (kDaha) {
+      kDaha.addEventListener("click", function () {
+        kayitTumunuGoster = !kayitTumunuGoster;
+        kayitlariCiz();
+      });
+    }
+
     if (H.kayitlar) {
-      H.kayitlar().then(function (gelen) {
-        var veri = Array.isArray(gelen) ? gelen : [];
-        if (kSayac) {
-          kSayac.textContent = String(veri.length);
-          kSayac.hidden = !veri.length;
-        }
-        if (!kListe) return;
-        kListe.textContent = "";
-        if (!veri.length) {
-          if (kBos) kBos.hidden = false;
-          return;
-        }
-        if (kBos) kBos.hidden = true;
-        veri.forEach(function (k) {
-          var li = document.createElement("li");
-          li.className = "profil__yorum";
-          var a = document.createElement("a");
-          a.href = "/haber/" + k.slug + "/";
-          a.textContent = k.baslik || "Habere git →";
-          var t = document.createElement("time");
-          try {
-            t.textContent = new Date(k.created_at).toLocaleString("tr-TR");
-          } catch (e) {
-            t.textContent = "";
-          }
-          li.append(a, t);
-          kListe.appendChild(li);
-        });
+      Promise.all([H.kayitlar(), indeksGetir()]).then(function (sonuclar) {
+        var gelen = sonuclar[0];
+        kayitVeri = Array.isArray(gelen) ? gelen : [];
+        kayitlariCiz();
       });
     }
 
@@ -2082,279 +2339,95 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     var liste = document.getElementById("profil-yorumlar");
     var bos = document.getElementById("profil-yorum-bos");
     var ySayac = document.getElementById("profil-yorum-sayac");
-    H.yorumlarim().then(function (liste2) {
+    var yDaha = document.getElementById("profil-yorum-daha");
+    var yorumVeri = [];
+    var yorumTumunuGoster = false;
+
+    function yorumlariCiz() {
       if (!liste) return;
-      var veri = Array.isArray(liste2) ? liste2 : [];
       if (ySayac) {
-        ySayac.textContent = String(veri.length);
-        ySayac.hidden = !veri.length;
+        ySayac.textContent = String(yorumVeri.length);
+        ySayac.hidden = !yorumVeri.length;
       }
       liste.textContent = "";
-      if (!veri.length) {
+      if (!yorumVeri.length) {
         if (bos) bos.hidden = false;
+        if (yDaha) yDaha.hidden = true;
         return;
       }
       if (bos) bos.hidden = true;
-      veri.forEach(function (y) {
+
+      var dilim = yorumTumunuGoster ? yorumVeri : yorumVeri.slice(0, SAYFA_BOYUTU);
+      dilim.forEach(function (y) {
+        var h = haberHarita[y.slug];
+        var baslikMetin = (h && h.t) || slugBaslik(y.slug);
+        var katMetin = (h && h.c) || "";
+        var url = "/haber/" + encodeURIComponent(y.slug) + "/#yorumlar";
+
         var li = document.createElement("li");
         li.className = "profil__yorum";
-        var p = document.createElement("p");
-        p.style.margin = "0 0 8px";
-        p.style.color = "var(--text)";
-        p.textContent = y.metin;
-        var alt = document.createElement("div");
-        alt.style.display = "flex";
-        alt.style.justifyContent = "space-between";
-        alt.style.alignItems = "center";
-        alt.style.gap = "10px";
-        var a = document.createElement("a");
-        a.href = "/haber/" + y.slug + "/";
-        a.textContent = "Habere git →";
-        var t = document.createElement("time");
-        t.style.margin = "0";
-        try {
-          t.textContent = new Date(y.created_at).toLocaleString("tr-TR");
-        } catch (e) {
-          t.textContent = "";
+
+        var ust = document.createElement("div");
+        ust.className = "profil__yorum-ust";
+
+        var konu = document.createElement("div");
+        konu.className = "profil__yorum-konu";
+        if (katMetin) {
+          var kat = document.createElement("span");
+          kat.className = "profil__yorum-kat";
+          kat.textContent = katMetin;
+          konu.appendChild(kat);
         }
-        alt.append(t, a);
-        li.append(p, alt);
+        var baslikLink = document.createElement("a");
+        baslikLink.className = "profil__yorum-baslik";
+        baslikLink.href = url;
+        baslikLink.textContent = baslikMetin;
+        konu.appendChild(baslikLink);
+        ust.appendChild(konu);
+
+        var p = document.createElement("p");
+        p.className = "profil__yorum-metin";
+        p.textContent = y.metin || "";
+
+        var alt = document.createElement("div");
+        alt.className = "profil__yorum-alt";
+
+        var t = document.createElement("time");
+        t.textContent = kisaTarihSaat(y.created_at);
+
+        var git = document.createElement("a");
+        git.className = "profil__yorum-git";
+        git.href = url;
+        git.textContent = "Habere git →";
+
+        alt.append(t, git);
+        li.append(ust, p, alt);
         liste.appendChild(li);
       });
+
+      if (yDaha) {
+        if (yorumVeri.length > SAYFA_BOYUTU) {
+          yDaha.hidden = false;
+          yDaha.textContent = yorumTumunuGoster
+            ? "Daha az göster"
+            : "Tüm yorumları göster (" + yorumVeri.length + ")";
+        } else {
+          yDaha.hidden = true;
+        }
+      }
+    }
+
+    if (yDaha) {
+      yDaha.addEventListener("click", function () {
+        yorumTumunuGoster = !yorumTumunuGoster;
+        yorumlariCiz();
+      });
+    }
+
+    Promise.all([H.yorumlarim(), indeksGetir()]).then(function (sonuclar) {
+      var liste2 = sonuclar[0];
+      yorumVeri = Array.isArray(liste2) ? liste2 : [];
+      yorumlariCiz();
     });
   })();
 </script>
-
-
-<style is:global>
-  /* ========================================================================
-     DİNAMİK YÖNETİM & OKUR LİSTESİ STİLLERİ (JavaScript ile üretilenler)
-     ======================================================================== */
-  .profil__uyeler {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-    margin-top: 10px !important;
-  }
-  .profil__uye {
-    display: grid !important;
-    grid-template-columns: 38px minmax(0, 1fr) minmax(110px, 160px) auto !important;
-    align-items: center !important;
-    gap: 12px !important;
-    padding: 10px 14px !important;
-    border: 1px solid var(--border) !important;
-    border-radius: 12px !important;
-    background: var(--bg) !important;
-    box-sizing: border-box !important;
-    width: 100% !important;
-  }
-  .profil__uye-av {
-    width: 38px !important;
-    height: 38px !important;
-    min-width: 38px !important;
-    min-height: 38px !important;
-    max-width: 38px !important;
-    max-height: 38px !important;
-    border-radius: 999px !important;
-    overflow: hidden !important;
-    display: grid !important;
-    place-items: center !important;
-    background: var(--brand-grad) !important;
-    color: #fff !important;
-    font-weight: 800 !important;
-    font-size: 0.88rem !important;
-    flex-shrink: 0 !important;
-    box-sizing: border-box !important;
-  }
-  .profil__uye-av img,
-  .profil__uye-av .hb-av-img {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 38px !important;
-    max-height: 38px !important;
-    object-fit: cover !important;
-    border-radius: 999px !important;
-    display: block !important;
-  }
-  .profil__uye-kim {
-    min-width: 0 !important;
-    line-height: 1.3 !important;
-  }
-  .profil__uye-kim b {
-    display: block !important;
-    font-size: 0.88rem !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    white-space: nowrap !important;
-    color: var(--text) !important;
-  }
-  .profil__uye-kim span {
-    display: block !important;
-    font-size: 0.74rem !important;
-    color: var(--muted) !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    white-space: nowrap !important;
-  }
-  .profil__uye-etiket {
-    width: 100% !important;
-    padding: 7px 10px !important;
-    font-size: 0.82rem !important;
-    border-radius: 8px !important;
-    border: 1px solid var(--border) !important;
-    background: var(--surface) !important;
-    color: var(--text) !important;
-    box-sizing: border-box !important;
-  }
-  .profil__uye-kaydet {
-    padding: 7px 14px !important;
-    border: 0 !important;
-    border-radius: 8px !important;
-    background: var(--brand-grad, #d9364b) !important;
-    color: #fff !important;
-    font: inherit !important;
-    font-size: 0.78rem !important;
-    font-weight: 800 !important;
-    cursor: pointer !important;
-    white-space: nowrap !important;
-    transition: opacity 0.2s ease !important;
-  }
-  .profil__uye-kaydet:hover {
-    opacity: 0.9 !important;
-  }
-  .profil__uye-kaydet:disabled {
-    opacity: 0.55 !important;
-    cursor: wait !important;
-  }
-
-  /* Gezilen sayfa çipleri (JS ile üretilir) */
-  .profil__sayfalar-liste {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 8px !important;
-  }
-  .profil__sayfa-cip {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    padding: 6px 12px !important;
-    border-radius: 10px !important;
-    background: var(--bg) !important;
-    border: 1px solid var(--border) !important;
-    font-size: 0.78rem !important;
-    color: var(--text) !important;
-    text-decoration: none !important;
-    max-width: 100% !important;
-  }
-  .profil__sayfa-cip:hover {
-    border-color: var(--brand, #d9364b) !important;
-  }
-  .profil__sayfa-ad {
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    white-space: nowrap !important;
-    max-width: min(260px, 60vw) !important;
-  }
-  .profil__sayfa-sayi {
-    padding: 2px 7px !important;
-    border-radius: 999px !important;
-    background: rgba(34, 197, 94, 0.15) !important;
-    color: #22c55e !important;
-    font-weight: 800 !important;
-    font-size: 0.7rem !important;
-  }
-
-  /* Aktif üyeler kutucukları */
-  .profil__aktifler-liste {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
-    gap: 8px !important;
-  }
-  .profil__aktif-kart {
-    display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-    padding: 8px 12px !important;
-    border-radius: 12px !important;
-    background: var(--bg) !important;
-    border: 1px solid var(--border) !important;
-    box-sizing: border-box !important;
-  }
-  .profil__aktif-av {
-    position: relative !important;
-    width: 34px !important;
-    height: 34px !important;
-    min-width: 34px !important;
-    min-height: 34px !important;
-    max-width: 34px !important;
-    max-height: 34px !important;
-    flex-shrink: 0 !important;
-    border-radius: 999px !important;
-    overflow: hidden !important;
-    display: grid !important;
-    place-items: center !important;
-    background: var(--brand-grad) !important;
-    color: #fff !important;
-    font-weight: 800 !important;
-    font-size: 0.85rem !important;
-  }
-  .profil__aktif-av img,
-  .profil__aktif-av .hb-av-img {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 34px !important;
-    max-height: 34px !important;
-    object-fit: cover !important;
-    border-radius: 999px !important;
-    display: block !important;
-  }
-  .profil__aktif-nokta {
-    position: absolute !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    width: 9px !important;
-    height: 9px !important;
-    border-radius: 999px !important;
-    border: 1.5px solid var(--bg) !important;
-    background: #22c55e !important;
-    z-index: 2 !important;
-  }
-  .profil__aktif-nokta--cevrimdisi {
-    background: var(--muted) !important;
-  }
-  .profil__aktif-bilgi {
-    min-width: 0 !important;
-    flex: 1 !important;
-    font-size: 0.78rem !important;
-    line-height: 1.25 !important;
-  }
-  .profil__aktif-bilgi b {
-    display: block !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    white-space: nowrap !important;
-  }
-  .profil__aktif-bilgi span {
-    font-size: 0.7rem !important;
-    color: var(--muted) !important;
-    display: block !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    white-space: nowrap !important;
-  }
-
-  /* Mobil uyumluluk */
-  @media (max-width: 600px) {
-    .profil__uye {
-      grid-template-columns: 38px minmax(0, 1fr) !important;
-      gap: 10px !important;
-    }
-    .profil__uye-etiket {
-      grid-column: 1 / -1 !important;
-    }
-    .profil__uye-kaydet {
-      grid-column: 1 / -1 !important;
-      justify-self: end !important;
-    }
-  }
-</style>

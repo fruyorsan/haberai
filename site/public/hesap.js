@@ -138,7 +138,7 @@
       // Fonksiyon bulunamadı: SQL kurulmamış (PostgREST 404 / PGRST202).
       if (r.status === 404 || r.status === 400) {
         if (metin.indexOf("PGRST202") >= 0 || r.status === 404) {
-          mesaj = "Hesap sistemi henüz kurulmadı. Yönetici supabase/hesap.sql dosyasını çalıştırmalı.";
+          mesaj = "Hesap hizmeti şu an geçici olarak kullanılamıyor. Lütfen daha sonra tekrar deneyin.";
         }
       }
       try {

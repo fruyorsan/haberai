@@ -29,7 +29,6 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
 
     <!-- Kullanıcı Bulunamadı -->
     <div class="kullanici__bos" id="profil-bulunamadi" hidden>
-      <span class="kullanici__bos-ikon" aria-hidden="true">👤</span>
       <h2>Kullanıcı bulunamadı</h2>
       <p>Bu isimde bir kullanıcı kaydı veya yorum geçmişi bulunmuyor.</p>
       <a class="kullanici__btn" href="/akis/">Shorts Akışına Dön</a>
@@ -56,11 +55,11 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         <div class="kullanici__istatistik">
           <div class="kullanici__stat-kutu">
             <span class="kullanici__stat-sayi" id="stat-yorum-sayi">0</span>
-            <span class="kullanici__stat-etiket">💬 Yorum</span>
+            <span class="kullanici__stat-etiket">Yorum</span>
           </div>
           <div class="kullanici__stat-kutu">
             <span class="kullanici__stat-sayi" id="stat-begeni-sayi">0</span>
-            <span class="kullanici__stat-etiket">❤️ Beğeni</span>
+            <span class="kullanici__stat-etiket">Beğeni</span>
           </div>
         </div>
       </header>
@@ -74,7 +73,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
           data-hedef="panel-yorumlar"
           aria-selected="true"
         >
-          <span>💬 Yorumları</span>
+          <span>Yorumları</span>
           <span class="kullanici__sekme-sayac" id="sayac-yorumlar">0</span>
         </button>
         <button
@@ -84,7 +83,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
           data-hedef="panel-begeniler"
           aria-selected="false"
         >
-          <span>❤️ Beğendiği Videolar & Haberler</span>
+          <span>Beğendiği Videolar & Haberler</span>
           <span class="kullanici__sekme-sayac" id="sayac-begeniler">0</span>
         </button>
       </nav>
@@ -799,17 +798,17 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
       if (profil?.rol === "yonetici") {
         const r = document.createElement("span");
         r.className = "kullanici__rozet kullanici__rozet--admin";
-        r.textContent = "👑 Yönetici";
+        r.textContent = "Yönetici";
         rozetlerEl.appendChild(r);
       } else if (profil?.id) {
         const r = document.createElement("span");
         r.className = "kullanici__rozet kullanici__rozet--uye";
-        r.textContent = "✓ Kayıtlı Üye";
+        r.textContent = "Kayıtlı Üye";
         rozetlerEl.appendChild(r);
       } else {
         const r = document.createElement("span");
         r.className = "kullanici__rozet kullanici__rozet--okur";
-        r.textContent = "💬 Okur";
+        r.textContent = "Okur";
         rozetlerEl.appendChild(r);
       }
 
@@ -825,7 +824,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
       const dt = new Date(profil.olusturma);
       if (!isNaN(dt.getTime())) {
         tarihEl.hidden = false;
-        tarihEl.textContent = `📅 ${dt.toLocaleDateString("tr-TR", { month: "long", year: "numeric" })}'den beri okur`;
+        tarihEl.textContent = `${dt.toLocaleDateString("tr-TR", { month: "long", year: "numeric" })} tarihinden beri okur`;
       }
     }
 
@@ -869,7 +868,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
             <div class="kullanici__yorum-alt">
               <div class="kullanici__yorum-sol">
                 <time datetime="${y.created_at}">${zaman(y.created_at)}</time>
-                ${y.begeni ? `<span class="kullanici__yorum-kalp">❤️ ${y.begeni} beğeni</span>` : ""}
+                ${y.begeni ? `<span class="kullanici__yorum-kalp">${y.begeni} beğeni</span>` : ""}
               </div>
               <a href="${haberUrl}#yorumlar" class="kullanici__yorum-git">
                 <span>Habere git →</span>
@@ -909,7 +908,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
           <div class="kullanici__haber-gorsel-kap">
             <img class="kullanici__haber-gorsel" src="${resim}" alt="" loading="lazy" />
             <span class="kullanici__haber-rozet">${kat}</span>
-            <span class="kullanici__haber-video-etiket">⚡ Shorts</span>
+            <span class="kullanici__haber-video-etiket">Shorts</span>
           </div>
           <div class="kullanici__haber-govde">
             <h3 class="kullanici__haber-baslik">${haber.t}</h3>
