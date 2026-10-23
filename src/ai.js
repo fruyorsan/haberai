@@ -18,6 +18,17 @@ const SCHEMA = {
     tags: { type: "array", items: { type: "string" } },
     category: { type: "string" },
     gorselSorgu: { type: "string" },
+    gorselDetaylar: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          sorgu: { type: "string" },
+          altyazi: { type: "string" },
+        },
+        required: ["sorgu", "altyazi"],
+      },
+    },
   },
   required: [
     "title",
@@ -199,6 +210,14 @@ Aşağıdaki JSON alanlarını TÜRKÇE üret:
   "wildfire forest fire", "snow covered street cars"). YASAK: uydu/harita görüntüsü çağrıştıran
   sorgular ("satellite view", "aerial map", "MODIS", "from space") ve manzara sorguları
   ("coastline landscape", "sea view") — bunlar afet haberine sakin bir doğa fotoğrafı getirir.
+- gorselDetaylar: Haberin satır aralarında (1. ve 3. paragraftan sonra) gösterilecek 2 FARKLI detay fotoğrafı
+  için dizi: [{"sorgu":"...","altyazi":"..."},{"sorgu":"...","altyazi":"..."}].
+  * KURAL: Kapak sorgusu (gorselSorgu) ile AYNI OLMASIN. Haberin paragraflarında bahsedilen SOMUT ALT DETAYLARI
+    hedefle (ör. haber iPhone 18 ise 1. detayda kamera merceği geçiyorsa sorgu: "smartphone camera lens closeup",
+    altyazi: "Yeni nesil akıllı telefon kamera merceği ve sensör yapısı"; 2. detayda işlemci/üretim geçiyorsa
+    sorgu: "semiconductor microchip wafer", altyazi: "Yarı iletken yonga ve donanım üretim süreci").
+  * Her iki "sorgu" alanı da 2-4 kelimelik SOMUT İNGİLİZCE görsel arama terimi, "altyazi" alanı ise fotoğrafın
+    altında yazacak kısa ve açıklayıcı TÜRKÇE alt yazı (5-10 kelime) olsun.
 
 YAZMADAN ÖNCE KONTROL ET:
 (1) Başlık 45-70 karakterde mi; "!" veya "?" var mı; kaynak başlığıyla aynı cümle mi; tıklanacak kadar vurucu
@@ -617,6 +636,15 @@ function normalize(data, article) {
     category: canonicalCategory(data.category, article.feedCategory),
     // Telif güvenli stok görsel araması için (bkz. src/stok-gorsel.js).
     gorselSorgu: temizSorgu(data.gorselSorgu, Array.isArray(data.tags) ? data.tags[0] : ""),
+    gorselDetaylar: Array.isArray(data.gorselDetaylar)
+      ? data.gorselDetaylar
+          .map((d) => ({
+            sorgu: temizSorgu(d?.sorgu, ""),
+            altyazi: String(d?.altyazi || "").replace(/\s+/g, " ").trim().slice(0, 110),
+          }))
+          .filter((d) => d.sorgu.length >= 3)
+          .slice(0, 2)
+      : [],
   };
 }
 

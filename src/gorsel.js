@@ -138,6 +138,83 @@ export async function chooseArticleImage(extras, metin, { minWidth = 600, rssIma
   return null;
 }
 
+/** Aynı görselin farklı boyut/query sürümlerini eşleştirmek için kimlik. */
+function sadeKimlik(url) {
+  let s = String(url || "").trim();
+  if (!s) return "";
+  try {
+    const u = new URL(s);
+    const ic = u.searchParams.get("u") || u.searchParams.get("url");
+    if (ic) s = decodeURIComponent(ic);
+  } catch {}
+  return s
+    .toLowerCase()
+    .split("?")[0]
+    .split("#")[0]
+    .replace(/\/images\/images\/haber\/(\d+)\/(?:src|\d+x\d+)\//, "/images/images/haber/$1/")
+    .replace(/\/resize\/\d+x\d+\//, "/")
+    .replace(/\/\d{2,4}x\d{2,4}\//, "/")
+    .replace(/-\d{2,4}x\d{2,4}(?=\.\w+$)/, "")
+    .replace(/\.(jpe?g|png|webp|avif|gif)$/, "");
+}
+
+/**
+ * Kaynak sayfanın gövde görsellerinden kapaktan FARKLI en fazla `max` adet
+ * habere ait detay fotoğrafı seçer (ör. kamera merceği, tablo, ürün detayı).
+ */
+export async function chooseArticleExtraImages(
+  extras,
+  metin,
+  kapakUrl,
+  { minWidth = 600, max = 2, maxProbes = 8 } = {}
+) {
+  const images = Array.isArray(extras?.images) ? extras.images : [];
+  if (!images.length) return [];
+
+  const kapakKimlik = sadeKimlik(kapakUrl);
+  const kapakKlasor = (() => {
+    const m = /\/images\/images\/haber\/(\d+)\//i.exec(String(kapakUrl || ""));
+    return m ? `/images/images/haber/${m[1]}/` : "";
+  })();
+
+  const eslesenler = images.filter((u) => {
+    if (!u || looksLikeIcon(u)) return false;
+    const k = sadeKimlik(u);
+    if (!k || k === kapakKimlik) return false;
+    if (kapakKlasor && String(u).toLowerCase().includes(kapakKlasor)) return true;
+    return dosyaAdiEslesiyor(u, metin);
+  });
+
+  if (!eslesenler.length) return [];
+
+  const secilenler = [];
+  const gorulen = new Set([kapakKimlik].filter(Boolean));
+  let deneme = 0;
+
+  for (const ham of eslesenler) {
+    if (secilenler.length >= max || deneme >= maxProbes) break;
+    const k = sadeKimlik(ham);
+    if (!k || gorulen.has(k)) continue;
+
+    const varyantlar = [...biggerVariants(ham), ham];
+    for (const aday of varyantlar) {
+      if (deneme >= maxProbes) break;
+      deneme++;
+      const info = await probeImage(aday);
+      if (!passesQuality(info, minWidth)) continue;
+      const sonUrl = info.finalUrl || aday;
+      const sonK = sadeKimlik(sonUrl);
+      if (gorulen.has(sonK)) break;
+      gorulen.add(k);
+      gorulen.add(sonK);
+      secilenler.push(sonUrl);
+      break;
+    }
+  }
+
+  return secilenler;
+}
+
 /** Görsel dosya başlığından (ilk ~256KB) genişlik/yükseklik okur. */
 export function imageSize(buf) {
   if (!buf || buf.length < 16) return null;

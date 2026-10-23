@@ -104,20 +104,35 @@ const links = [
       </svg>
     </button>
     {slug && (
-      <button
-        type="button"
-        class="share__btn share__btn--kaydet"
-        data-kaydet
-        data-slug={slug}
-        data-baslik={title}
-        aria-pressed="false"
-        aria-label="Okuma listesine kaydet"
-        title="Okuma listesine kaydet"
-      >
-        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true">
-          <path d="M6 3.5h12a1 1 0 0 1 1 1V21l-7-4.2L5 21V4.5a1 1 0 0 1 1-1z" />
-        </svg>
-      </button>
+      <>
+        <button
+          type="button"
+          class="share__btn share__btn--begen"
+          data-begen
+          data-slug={slug}
+          aria-pressed="false"
+          aria-label="Haberi beğen"
+          title="Haberi beğen"
+        >
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          class="share__btn share__btn--kaydet"
+          data-kaydet
+          data-slug={slug}
+          data-baslik={title}
+          aria-pressed="false"
+          aria-label="Okuma listesine kaydet"
+          title="Okuma listesine kaydet"
+        >
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 3.5h12a1 1 0 0 1 1 1V21l-7-4.2L5 21V4.5a1 1 0 0 1 1-1z" />
+          </svg>
+        </button>
+      </>
     )}
   </div>
 </div>
@@ -181,6 +196,72 @@ const links = [
         btn.classList.remove("is-done");
         btn.setAttribute("title", old || "");
       }, 1600);
+    });
+  });
+
+  // --- Haberi beğen (Shorts /akis/ ve kullanıcı profiliyle tam senkron) ---
+  const begeniOku = (): Set<string> => {
+    try {
+      const v = JSON.parse(localStorage.getItem("akis-begeni") || "[]");
+      return new Set(Array.isArray(v) ? v.map(String) : []);
+    } catch {
+      return new Set();
+    }
+  };
+  const begeniYaz = (set: Set<string>) => {
+    try {
+      localStorage.setItem("akis-begeni", JSON.stringify([...set].slice(-400)));
+    } catch {}
+  };
+
+  document.querySelectorAll<HTMLButtonElement>(".share__btn--begen").forEach((begenBtn) => {
+    const H = (window as any).HaberinAi;
+    const slug = begenBtn.getAttribute("data-slug") || "";
+    if (!slug) return;
+
+    const isaretle = (acik: boolean) => {
+      begenBtn.classList.toggle("is-liked", acik);
+      begenBtn.setAttribute("aria-pressed", String(acik));
+      const metin = acik ? "Beğenildi · geri al" : "Haberi beğen";
+      begenBtn.title = metin;
+      begenBtn.setAttribute("aria-label", metin);
+    };
+
+    const yerel = begeniOku();
+    isaretle(yerel.has(slug));
+
+    if (H && typeof H.oturumOku === "function" && H.oturumOku() && typeof H.begeniler === "function") {
+      H.begeniler()
+        .then((liste: string[]) => {
+          if (Array.isArray(liste) && liste.includes(slug)) {
+            const guncel = begeniOku();
+            guncel.add(slug);
+            begeniYaz(guncel);
+            isaretle(true);
+          }
+        })
+        .catch(() => {});
+    }
+
+    begenBtn.addEventListener("click", async () => {
+      const acik = begenBtn.classList.contains("is-liked");
+      const yeni = !acik;
+      const guncel = begeniOku();
+      if (yeni) guncel.add(slug);
+      else guncel.delete(slug);
+      begeniYaz(guncel);
+      isaretle(yeni);
+
+      if (H && typeof H.oturumOku === "function" && H.oturumOku()) {
+        begenBtn.disabled = true;
+        try {
+          if (yeni && typeof H.begen === "function") await H.begen(slug);
+          else if (!yeni && typeof H.begenSil === "function") await H.begenSil(slug);
+          gaOlay("like_article", begenBtn.closest(".share"));
+        } finally {
+          begenBtn.disabled = false;
+        }
+      }
     });
   });
 
@@ -304,14 +385,17 @@ const links = [
   .share__btn--copy:hover {
     background: var(--brand-fill-hover);
   }
+  .share__btn--begen:hover,
   .share__btn--kaydet:hover {
     background: var(--brand-fill-hover);
   }
+  .share__btn.is-liked,
   .share__btn.is-saved {
     background: var(--brand);
     color: #fff;
     border-color: transparent;
   }
+  .share__btn.is-liked svg,
   .share__btn.is-saved svg {
     fill: currentColor;
   }
