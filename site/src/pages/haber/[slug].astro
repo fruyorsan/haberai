@@ -312,7 +312,7 @@ const jsonLd = {
   articleSection: article.category,
   keywords: (article.tags || []).join(", "),
   articleBody: body.length ? body.join("\n\n") : article.summary,
-  author: { "@type": "Organization", name: "HaberinAi", url: new URL("/", site).href },
+  author: { "@type": "NewsMediaOrganization", name: "HaberinAi Haber Merkezi", url: new URL("/kunye/", site).href },
   publisher: {
     "@type": "Organization",
     name: "HaberinAi",
@@ -409,6 +409,8 @@ const breadcrumbLd = {
       <h1 class="post__title">{article.title}</h1>
 
       <div class="post__meta">
+        <a class="post__yazar" href="/kunye/">Haber Merkezi</a>
+        <span class="post__dot">•</span>
         <time>{date}</time>
         <span class="post__dot">•</span>
         <span>{readMin} dk okuma</span>
@@ -574,9 +576,8 @@ const breadcrumbLd = {
         Kaynak:
         <a href={article.sourceUrl} target="_blank" rel="noopener nofollow">{article.source}</a>
         <span class="post__ai-note">
-          Bu haber, kaynaktaki bilgilerden yararlanılarak HaberinAi tarafından özgün biçimde
-          yazılmıştır; kaynak metin birebir kopyalanmaz, fotoğraf kaynağa bağlantıyla gösterilir.
-          Hata olabilir, ayrıntılar için kaynağa bakın. <a href="/telif/">İçerik ve telif politikası</a>
+          Bu haber, ilgili kaynaktan derlenen veriler doğrultusunda HaberinAi Haber Merkezi tarafından hazırlanmış ve editoryal incelemeden geçirilmiştir.
+          <a href="/yayin-ilkeleri/">Yayın ilkelerimiz</a> ve <a href="/telif/">içerik politikamız</a> hakkında bilgi edinebilirsiniz.
         </span>
       </div>
     </article>
@@ -865,6 +866,8 @@ const breadcrumbLd = {
     font-weight: 900;
     text-wrap: balance;
   }
+  .post__yazar { color: var(--text); font-weight: 600; text-decoration: none; }
+  .post__yazar:hover { color: var(--brand-strong); text-decoration: underline; }
   .post__meta {
     display: flex;
     align-items: center;

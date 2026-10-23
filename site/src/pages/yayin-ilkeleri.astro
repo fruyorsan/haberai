@@ -1,0 +1,210 @@
+---
+import Base from "../layouts/Base.astro";
+import { CONTACT_EMAIL } from "../lib/site-meta.js";
+
+const origin = Astro.site ? String(Astro.site).replace(/\/+$/, "") : "https://haberinai.site";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Yayın İlkeleri ve Doğruluk Politikası — HaberinAi",
+  description: "HaberinAi yayın ilkeleri, doğruluk teyidi standartları, tarafsızlık ve düzeltme politikası.",
+  url: `${origin}/yayin-ilkeleri/`,
+};
+---
+
+<Base
+  title="Yayın İlkeleri ve Doğruluk Politikası — HaberinAi"
+  description="HaberinAi yayın ilkeleri, doğruluk teyidi standartları, editoryal bağımsızlık ve düzeltme politikası."
+  canonical={`${origin}/yayin-ilkeleri/`}
+  schema={schema}
+>
+  <div class="container yayin-ilkeleri">
+    <header class="yayin-ilkeleri__hero">
+      <span class="yayin-ilkeleri__rozet">Editoryal Standartlar</span>
+      <h1 class="yayin-ilkeleri__baslik">Yayın İlkeleri &amp; Doğruluk Politikası</h1>
+      <p class="yayin-ilkeleri__giris">
+        <strong>HaberinAi</strong>; güvenilir, hızlı ve analitik habercilik yaparken evrensel gazetecilik
+        etik kurallarına ve Türk Basın Konseyi ilkelerine sıkı sıkıya bağlı kalmayı taahhüt eder.
+      </p>
+    </header>
+
+    <div class="yayin-ilkeleri__icerik">
+      <section class="yayin-ilkeleri__madde">
+        <h2>1. Doğruluk ve Kaynak Teyidi (Fact-Checking)</h2>
+        <p>
+          HaberinAi, teyit edilmemiş söylentileri, sosyal medya iddialarını veya tek taraflı doğrulanmamış
+          varsayımları kesin haber olarak sunmaz. Haberleştirilen her bilgi:
+        </p>
+        <ul>
+          <li>Birinci el resmi kurum açıklamaları, saygın haber ajansları ve yetkili mercilerle çapraz kontrol edilir.</li>
+          <li>Şüphe barındıran veya iddia aşamasında olan konular açıkça "iddia", "öne sürüldü" şeklinde belirtilir.</li>
+          <li>Görsel ve video içeriklerin güncelliği ve bağlam doğruluğu teyit edilir.</li>
+        </ul>
+      </section>
+
+      <section class="yayin-ilkeleri__madde">
+        <h2>2. Tarafsızlık ve Editoryal Bağımsızlık</h2>
+        <p>
+          Yayınlarımız herhangi bir siyasi parti, ideolojik grup, sermaye odağı veya ticari kuruluşun
+          çıkarlarına göre şekillendirilemez. Tüm gelişmelere eşit mesafede yaklaşılır, kamuoyunun çok
+          yönlü bilgi edinme hakkı her türlü çıkarın üzerinde tutulur.
+        </p>
+      </section>
+
+      <section class="yayin-ilkeleri__madde">
+        <h2>3. Düzeltme ve Tekzip Politikası (Corrections Policy)</h2>
+        <p>
+          Doğruluk esastır; ancak olası bir editoryal hata veya maddi yanılgı durumunda HaberinAi
+          şeffaf ve hızlı davranır:
+        </p>
+        <ul>
+          <li>Hata tespit edildiğinde veya okuyucu/muhatap tarafından bildirildiğinde içerik derhal güncellenir.</li>
+          <li>Önemli değişikliklerde haber metninin altına <em>"Düzeltme Notu: [Tarih/Açıklama]"</em> eklenerek okuyucuya açıkça bilgi verilir.</li>
+          <li>Haklı tekzip ve düzeltme talepleri en geç 48 saat içinde yanıtlanır ve gerekli adımlar atılır.</li>
+        </ul>
+      </section>
+
+      <section class="yayin-ilkeleri__madde">
+        <h2>4. Kaynak Gösterme ve Telif Haklarına Saygı</h2>
+        <p>
+          Fikri mülkiyete ve gazetecilik emeğine saygı duyuyoruz. Haberin hazırlandığı birincil kaynak,
+          ajans veya yayıncı haber detayında doğrudan ismiyle ve orijinal bağlantısıyla (URL) paylaşılır.
+          Metinler asla birebir kopyalanmaz, özgün analiz ve özetleme süzgecinden geçirilerek sunulur.
+        </p>
+      </section>
+
+      <section class="yayin-ilkeleri__madde">
+        <h2>5. Kişilik Hakları ve Masumiyet Karinesi</h2>
+        <p>
+          Yargı kararı kesinleşmedikçe hiç kimse suçlu ilan edilemez ("Masumiyet Karinesi"). Kişilerin özel
+          hayatının gizliliğine, kişilik haklarına, çocukların ve mağdurların korunmasına azami hassasiyet
+          gösterilir. Nefret söylemi, ayrımcılık ve şiddeti özendiren ifadelere kesinlikle yer verilmez.
+        </p>
+      </section>
+
+      <section class="yayin-ilkeleri__madde">
+        <h2>6. Yapay Zekâ ve Teknoloji Kullanım Sınırları</h2>
+        <p>
+          Yapay zekâ; içeriklerin daha anlaşılır özetlenmesi, verilerin görselleştirilmesi ve okuyucuya
+          farklı perspektifler sunulması için bir analiz aracı olarak kullanılır. Yapay zekâ hiçbir zaman
+          insan editoryal denetiminin ve etik sorumluluğunun yerine geçemez.
+        </p>
+      </section>
+
+      <div class="yayin-ilkeleri__iletisim-kutu">
+        <h3>İlke İhlali veya Düzeltme Bildirimi</h3>
+        <p>
+          Yayın ilkelerimize aykırı bir durum olduğunu düşünüyorsanız lütfen haber linkiyle birlikte bize
+          ulaşın:
+        </p>
+        <a class="yayin-ilkeleri__link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .yayin-ilkeleri {
+    max-width: 860px;
+    margin: 40px auto 60px;
+    padding: 0 16px;
+  }
+  .yayin-ilkeleri__hero {
+    text-align: center;
+    margin-bottom: 44px;
+  }
+  .yayin-ilkeleri__rozet {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--brand-soft);
+    color: var(--brand-strong);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .yayin-ilkeleri__baslik {
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    letter-spacing: -0.03em;
+    margin: 0 0 14px;
+  }
+  .yayin-ilkeleri__giris {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: var(--text-2);
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .yayin-ilkeleri__icerik {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .yayin-ilkeleri__madde {
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+  }
+  .yayin-ilkeleri__madde h2 {
+    font-size: 1.25rem;
+    margin: 0 0 12px;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+  .yayin-ilkeleri__madde p {
+    color: var(--text-2);
+    line-height: 1.75;
+    margin: 0 0 12px;
+    font-size: 0.95rem;
+  }
+  .yayin-ilkeleri__madde p:last-child {
+    margin-bottom: 0;
+  }
+  .yayin-ilkeleri__madde ul {
+    margin: 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .yayin-ilkeleri__madde li {
+    color: var(--text-2);
+    line-height: 1.65;
+    font-size: 0.92rem;
+  }
+  .yayin-ilkeleri__madde em {
+    color: var(--text);
+    font-style: normal;
+    background: var(--surface-2);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .yayin-ilkeleri__iletisim-kutu {
+    padding: 26px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+    text-align: center;
+    margin-top: 10px;
+  }
+  .yayin-ilkeleri__iletisim-kutu h3 {
+    margin: 0 0 8px;
+    font-size: 1.2rem;
+  }
+  .yayin-ilkeleri__iletisim-kutu p {
+    color: var(--text-2);
+    margin: 0 0 14px;
+    font-size: 0.95rem;
+  }
+  .yayin-ilkeleri__link {
+    display: inline-block;
+    color: var(--brand-strong);
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: underline;
+  }
+</style>

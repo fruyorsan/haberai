@@ -1,0 +1,233 @@
+---
+import Base from "../layouts/Base.astro";
+import { CONTACT_EMAIL } from "../lib/site-meta.js";
+
+const origin = Astro.site ? String(Astro.site).replace(/\/+$/, "") : "https://haberinai.site";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Künye — HaberinAi",
+  description: "HaberinAi künye bilgileri: Yönetim, yayın kadrosu, yer sağlayıcı ve yasal bildirimler.",
+  url: `${origin}/kunye/`,
+};
+---
+
+<Base
+  title="Künye — HaberinAi"
+  description="HaberinAi künye bilgileri: İmtiyaz sahibi, yayın yönetmeni, haber merkezi, yer sağlayıcı ve yasal bildirimler."
+  canonical={`${origin}/kunye/`}
+  schema={schema}
+>
+  <div class="container kunye">
+    <header class="kunye__hero">
+      <span class="kunye__rozet">Yasal Bildirim &amp; Yönetim</span>
+      <h1 class="kunye__baslik">Künye</h1>
+      <p class="kunye__giris">
+        5651 Sayılı Kanun ve 5187 Sayılı Basın Kanunu kapsamında <strong>HaberinAi</strong> kurumsal,
+        yönetimsel ve iletişim bilgileri aşağıda okuyucularımızın ve kamuoyunun bilgisine sunulmuştur.
+      </p>
+    </header>
+
+    <div class="kunye__grid">
+      <div class="kunye__kart">
+        <h2>Yayın ve Yönetim</h2>
+        <dl class="kunye__dl">
+          <dt>İmtiyaz Sahibi / Kurucu</dt>
+          <dd>HaberinAi Medya Grubu</dd>
+
+          <dt>Genel Yayın Yönetmeni</dt>
+          <dd>Yayın Kurulu</dd>
+
+          <dt>Sorumlu Yazı İşleri Müdürü</dt>
+          <dd>Editör Masası (<a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>)</dd>
+
+          <dt>Yayın Türü</dt>
+          <dd>Yaygın Süreli Yayın (İnternet Haber Sitesi)</dd>
+
+          <dt>Yayın Dili</dt>
+          <dd>Türkçe</dd>
+        </dl>
+      </div>
+
+      <div class="kunye__kart">
+        <h2>Haber Merkezi &amp; Editörler</h2>
+        <dl class="kunye__dl">
+          <dt>Gündem ve Dünya Masası</dt>
+          <dd>HaberinAi Gündem Masası</dd>
+
+          <dt>Teknoloji &amp; Yapay Zekâ Masası</dt>
+          <dd>HaberinAi Teknoloji Masası</dd>
+
+          <dt>Ekonomi &amp; Piyasa Masası</dt>
+          <dd>HaberinAi Finans Masası</dd>
+
+          <dt>Bilim, Sağlık &amp; Kültür</dt>
+          <dd>HaberinAi Bilim Masası</dd>
+
+          <dt>Görsel &amp; Veri Analizi</dt>
+          <dd>HaberinAi Tasarım Ekibi</dd>
+        </dl>
+      </div>
+
+      <div class="kunye__kart">
+        <h2>Teknik Altyapı &amp; Yer Sağlayıcı</h2>
+        <dl class="kunye__dl">
+          <dt>Yazılım ve Altyapı</dt>
+          <dd>HaberinAi Core Engine (Modern JAMStack / Static Engine)</dd>
+
+          <dt>Yer Sağlayıcı (Hosting)</dt>
+          <dd>GitHub Inc. / Fastly CDN / Cloudflare CDN</dd>
+
+          <dt>Gizlilik ve Güvenlik</dt>
+          <dd>HTTPS SSL 256-Bit Şifreleme</dd>
+        </dl>
+      </div>
+
+      <div class="kunye__kart">
+        <h2>Hukuki Bildirim &amp; İletişim</h2>
+        <dl class="kunye__dl">
+          <dt>Hukuk &amp; Telif Danışmanı</dt>
+          <dd>Hukuk Müşavirliği Masası</dd>
+
+          <dt>Telif Hakları &amp; Tekzip İletişimi</dt>
+          <dd><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></dd>
+
+          <dt>Yazışma Adresi / Şehir</dt>
+          <dd>İstanbul / Türkiye</dd>
+
+          <dt>Cevap ve Düzeltme Süresi</dt>
+          <dd>En geç 48 saat içinde yazılı dönüş sağlanır.</dd>
+        </dl>
+      </div>
+    </div>
+
+    <section class="kunye__yasal">
+      <h2>Yasal Bildirimler ve Basın Ahlak Yasası</h2>
+      <p>
+        <strong>HaberinAi</strong>; basın ahlak yasasına, haber teyit kurallarına ve Türkiye Cumhuriyeti
+        yasalarına saygılı olmayı ilke edinmiştir. Sitemizde yayımlanan haberler ve analizler, kamuoyunu
+        tarafsız ve doğru bilgilendirme amacı taşır.
+      </p>
+      <p>
+        Sitemizde yer alan tüm üçüncü taraf kaynak alıntıları, 5846 Sayılı Fikir ve Sanat Eserleri Kanunu
+        kapsamında kaynak gösterilerek ve ilgili mevzuata uygun şekilde işlenmektedir. İçeriklerin
+        kaldırılması, tekzip veya telif hakları talepleri için lütfen
+        <a href="/iletisim/">İletişim</a> veya <a href="/telif/">İçerik ve Telif Politikası</a> sayfamızdaki
+        kanalları kullanınız.
+      </p>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .kunye {
+    max-width: 920px;
+    margin: 40px auto 60px;
+    padding: 0 16px;
+  }
+  .kunye__hero {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .kunye__rozet {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--brand-soft);
+    color: var(--brand-strong);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .kunye__baslik {
+    font-size: clamp(2rem, 4vw, 2.7rem);
+    letter-spacing: -0.03em;
+    margin: 0 0 14px;
+  }
+  .kunye__giris {
+    font-size: 1.08rem;
+    line-height: 1.7;
+    color: var(--text-2);
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .kunye__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 36px;
+  }
+  .kunye__kart {
+    padding: 26px 24px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+  }
+  .kunye__kart h2 {
+    font-size: 1.25rem;
+    margin: 0 0 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: -0.02em;
+    color: var(--brand-strong);
+  }
+  .kunye__dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .kunye__dl dt {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+  .kunye__dl dd {
+    margin: 2px 0 0;
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .kunye__dl a {
+    color: var(--brand-strong);
+    font-weight: 600;
+  }
+  .kunye__yasal {
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface-2);
+  }
+  .kunye__yasal h2 {
+    font-size: 1.25rem;
+    margin: 0 0 12px;
+    letter-spacing: -0.02em;
+  }
+  .kunye__yasal p {
+    color: var(--text-2);
+    line-height: 1.75;
+    margin: 0 0 12px;
+    font-size: 0.92rem;
+  }
+  .kunye__yasal p:last-child {
+    margin-bottom: 0;
+  }
+  .kunye__yasal a {
+    color: var(--brand-strong);
+    font-weight: 600;
+  }
+  @media (max-width: 700px) {
+    .kunye__grid {
+      grid-template-columns: 1fr;
+    }
+    .kunye__kart,
+    .kunye__yasal {
+      padding: 20px 16px;
+    }
+  }
+</style>

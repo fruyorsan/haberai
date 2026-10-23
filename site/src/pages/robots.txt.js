@@ -26,6 +26,8 @@ const AI_BOTLARI = [
   "Googlebot-News",
   "Google-Extended",
   "GoogleOther",
+  "Mediapartners-Google",
+  "AdsBot-Google",
   // Microsoft / Bing / Copilot
   "Bingbot",
   "MSNBot",
