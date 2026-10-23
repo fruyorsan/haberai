@@ -1,5 +1,165 @@
 [
   {
+    "id": "0dc3589fd03dce13",
+    "title": "AMD Zen 6 Medusa APU'ları HIPRT 3.2 ile Işın İzleme Desteği Kazandı",
+    "slug": "amd-zen-6-medusa-apulari-hiprt-3-2-ile-isin-izleme-destegi-kazandi",
+    "summary": "AMD, Zen 6 tabanlı Medusa APU serisine yeni HIPRT 3.2 sürümünü entegre ederek üç farklı GPU kodunu ışın izleme için destekledi. GFX1170, GFX1171 ve GFX115E GPU'ları bu güncelleme ile uyumlu hale geliyor ve CUDA 13 uyumluluğu da eklendi.",
+    "keyPoints": [
+      "HIPRT 3.2, Medusa APU'larına GFX1170, GFX1171 ve GFX115E GPU'larını ekliyor",
+      "GFX1170 ve GFX1171 RDNA 4m, GFX115E ise RDNA 3.5 mimarisinde çalışıyor",
+      "Güncelleme CUDA 13 uyumluluğu, dönüşüm optimizasyonları ve hata düzeltmeleri içeriyor"
+    ],
+    "body": [
+      "AMD, Zen 6 tabanlı Medusa APU serisinin ışın izleme yeteneklerini genişletmek için HIPRT 3.2 sürümünü yayımladı. Bu sürüm, Medusa ailesine ait üç entegre grafik çekirdeğini tanıyarak geliştiricilere yeni ışın izleme fonksiyonları sunuyor. HIPRT, AMD’nin HIP programlama arayüzüyle çalışan uygulamalar için tasarlanmış bir kütüphane ve yeni sürüm, özellikle yeni GPU mimarileriyle uyumluluğu artırıyor.",
+      "HIPRT 3.2’de yer alan GFX1170 ve GFX1171 kodları, RDNA 4m grafik ailesine ait olup GFX11.7 mimarisine dayanıyor ve bazı RDNA 4 komut seti özelliklerini koruyor. İlginç bir detay olarak, daha önce AMD’nin Linux ve LLVM sürücülerine eklediği GFX1172, bu HIPRT listesinde yer almıyor, bu da Medusa’da birden fazla GPU yapılandırmasının olası olduğunu gösteriyor.",
+      "AMD, Medusa Point ve Medusa Halo gibi farklı platformların RDNA 3.5, RDNA 4m ve olası RDNA 5 mimarileriyle çalışabileceğini ima ediyor, ancak çekirdek sayısı, GPU birim sayısı ve frekans gibi detayları henüz açıklamadı. Geliştiriciler, bu yeni destek sayesinde daha gerçekçi ışın izleme efektleri ve performans iyileştirmeleri elde edebilirler."
+    ],
+    "comment": "HIPRT 3.2'nin Medusa APU'larına eklenmesi, ışın izleme desteğini genişleterek geliştiricilerin araç setini güçlendiriyor. Özellikle GFX1170 ve GFX1171'in RDNA 4m tabanlı olması, önceki HIPRT sürümlerine kıyasla daha yüksek performans potansiyeli sunuyor. Bu güncelleme, oyun ve grafik uygulamaları geliştiren yazılımcıları doğrudan etkiler; daha gerçekçi ışın izleme efektleri ve CUDA 13 uyumluluğu sayesinde çapraz platform desteği artar. Ancak, GFX1172'nin listede olmaması, bazı entegrasyon senaryolarında sınırlama yaratabilir ve AMD'nin gelecekteki APU planlarını merak konusu yapar.",
+    "editorNote": "AMD, Medusa APU'larına HIPRT 3.2 ile ışın izleme yeteneği ekleyerek geliştiricilere yeni grafik seçenekleri sunuyor. CUDA 13 uyumluluğu da ek avantaj sağlıyor.",
+    "tags": [
+      "AMD",
+      "Medusa",
+      "HIPRT",
+      "Işın İzleme",
+      "APU"
+    ],
+    "category": "Donanım",
+    "gorselSorgu": "AMD Medusa APU rendering",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/amd-zen-6-medusa-apu-lari-icin-isin-izleme-destegi-geliyor--211985",
+    "image": "https://www.donanimhaber.com/images/images/haber/211985/src/amd-zen-6-medusa-apu-lari-icin-isin-izleme-destegi-geliyor211985_0.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T10:14:00.000Z",
+    "generatedAt": "2026-10-23T10:18:27.976Z",
+    "breaking": true
+  },
+  {
+    "id": "3234a666c3e1f0d0",
+    "title": "Fatih Birol, Antalya COP31 Zirvesi için elektrifikasyon hedefi koydu",
+    "slug": "fatih-birol-antalya-cop31-zirvesi-icin-elektrifikasyon-hedefi-koydu",
+    "summary": "Uluslararası Enerji Ajansı Başkanı Fatih Birol, Antalya'da yapılacak COP31 toplantısında elektrifikasyon için yüzlerce ülkenin imzalayacağı bir taahhütname hedeflediklerini açıkladı. Küresel enerji krizinin 2027 yılına kadar süreceğini öngören Birol, bu adımın emisyonları azaltarak güvenliği artıracağını vurguladı.",
+    "keyPoints": [
+      "Elektriğin toplam enerji içindeki payının 2035'e kadar yüzde 35'e çıkarılması hedefleniyor.",
+      "Hürmüz Boğazı'ndaki krizin etkilerinin 2027 yılına kadar sürmesi bekleniyor.",
+      "Antalya'daki COP31 buluşmasında geniş katılımlı bir elektrifikasyon taahhütnamesi planlanıyor."
+    ],
+    "body": [
+      "Uluslararası Enerji Ajansı Başkanı Fatih Birol, İstanbul Finans Merkezi'nde gerçekleştirilen COP31'e Doğru Yatırım Zirvesi'ne video konferans yöntemiyle katılarak önemli değerlendirmelerde bulundu. Antalya'nın ev sahipliğinde gerçekleşecek olan COP31 zirvesinin hem ülke ekonomisi hem de küresel enerji geleceği açısından eşsiz bir fırsat barındırdığını dile getirdi. Toplantının ana gündem maddesi olarak elektrifikasyonun belirlendiğini ve bu doğrultuda geniş kapsamlı bir taahhütname metni hazırladıklarını aktardı.",
+      "Dünya genelindeki enerji akış hatlarının halihazırda büyük baskı altında olduğuna dikkat çeken Birol, Hürmüz Boğazı'ndaki krizin tarımdan sanayiye kadar tüm ekonomik dengeleri sarstığını belirtti. Sibirya'dan Avrupa'ya uzanan boru hatları ile Körfez'den Asya'ya yapılan sevkiyatların kaynama noktasına geldiğini ifade etti. Bu tür tedarik aksamalarının geçmişte de nükleer enerji ve verimlilik hamlelerini tetiklediğini hatırlatarak mevcut krizin de benzer politik değişimleri zorunlu kıldığını kaydetti.",
+      "Mevcut kriz ortamının kısa vadede düzelmeyeceğini savunan Birol, 2027 yılına kadar piyasaların normalleşmesini beklemekten uzak olduğunu ve iyimser senaryoları destekleyecek veri bulamadığını söyledi. Hükümetlerin riskleri en aza indirmek adına yeni ticaret ortaklarına ve alternatif enerji kaynaklarına yöneldiğini vurguladı. Ulaştırma, ısıtma ve sanayi gibi olası her alanın elektrikle çalışır hale getirilmesinin bu politikaların merkezinde yer aldığını ifade etti.",
+      "Yılın başlarında Cumhurbaşkanı Recep Tayyip Erdoğan ve Avustralya Başbakanı Albanese ile görüştüklerini hatırlatan Birol, stratejik ortaklık temelinde yola çıktıklarını belirtti. Şu anda yüzde 23 seviyesinde bulunan elektriğin toplam enerji içerisindeki payını 2035 yılına kadar yüzde 35 oranına yükseltmek istediklerini yineledi. Paris Anlaşması gibi Antalya'nın da bu elektrifikasyon adımıyla tarihe geçmesini arzuladıklarını, bu hamlenin sermaye çevrelerine net bir pusula sunacağını sözlerine ekledi."
+    ],
+    "comment": "Enerji piyasalarındaki dar boğazların sürmesi, ülkeleri geleneksel ticaret yollarından bağımsızlaştıracak köklü yapısal kararlar almaya zorluyor. 2027 yılına kadar normalleşme beklenmemesi, yeşil yatırımların hız kesmeden sürmesini gerektiren en somut göstergedir. Yüzde 23 seviyesindeki elektrik payının yüzde 35 hedefine bağlanması, sermayenin yönünü tamamen yenilenebilir kaynaklara ve iletim altyapısına çevirecektir. Bu politika değişimi hayata geçirilmezse enerji güvenliği maliyetleri küresel çapta katlanarak artmaya devam edecektir.",
+    "editorNote": "Hürmüz krizinin 2027'ye kadar süreceğini belirten Birol, Antalya'daki zirvede dev bir elektrifikasyon imzası arıyor.",
+    "tags": [
+      "Fatih Birol",
+      "IEA",
+      "COP31",
+      "elektrifikasyon",
+      "enerji krizi"
+    ],
+    "category": "Ekonomi",
+    "gorselSorgu": "electric car charging station",
+    "source": "AA Güncel",
+    "sourceUrl": "https://www.aa.com.tr/tr/ekonomi/iea-baskani-birol-cop31de-elektrifikasyon-taahhutnamesi-hedeflendigini-belirtti/4098359",
+    "image": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/23/thumbs_b_c_62269ebc0cb9d8e8ff21ff80b3aab447.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T10:11:38.000Z",
+    "generatedAt": "2026-10-23T10:18:51.025Z",
+    "breaking": true
+  },
+  {
+    "id": "e3bf48c0b0a4456a",
+    "title": "Donald Trump, karşı karşıya olduğu dava süreciyle zor anlar yaşıyor",
+    "slug": "donald-trump-karsi-karsiya-oldugu-dava-sureciyle-zor-anlar-yasiyor",
+    "summary": "Donald Trump'ın hukuk mücadelesi uluslararası kamuoyunda geniş yankı uyandırıyor. Yaşanan son gelişmeler, siyasi figürün hukuki engellerle mücadelesini derinleştiriyor.",
+    "keyPoints": [
+      "Donald Trump'ın hukuki süreci dünya genelinde büyük bir dikkatle takip ediliyor.",
+      "Hakkında yürütülen dava dosyaları siyasetçinin stratejilerini doğrudan etkiliyor.",
+      "Hukukçular ve analistler sürecin olası sonuçlarını yakından incelemeye devam ediyor."
+    ],
+    "body": [
+      "Amerika Birleşik Devletleri siyasetinin en tartışmalı figürlerinden biri olan Donald Trump, adli makamlarla olan mücadelesinde yeni bir dönemeçten geçiyor. Hunat TV tarafından aktarılan bilgilere göre, siyasetçinin karşı karşıya kaldığı hukuki engeller uluslararası basının ve gözlemcilerin odak noktası haline geldi.",
+      "Yürütülen dava süreçlerinin karmaşık yapısı, Trump'ın hem seçim kampanyası faaliyetlerini hem de kamusal imajını yakından şekillendiriyor. Hukuk uzmanları, dosyaların içeriğindeki iddiaların ciddiyetine dikkat çekerken, duruşmaların ilerleyen haftalarda daha da çekişmeli bir hâl alabileceğini belirtiyor.",
+      "Küresel ölçekte pek çok ülke lideri ve medya kuruluşu, mahkeme salonlarından çıkacak kararların uluslararası dengelere olası etkilerini hesaplıyor. Siyasi analistler, bu tür davaların sadece bireysel bir yargılama olmadığını, aynı zamanda geniş çaplı politik sonuçlar doğurabileceğini vurguluyor.",
+      "Savunma ekibinin atacağı yeni adımlar ve savcılığın sunacağı ek deliller, davanın seyrini belirlemede kilit rol oynayacak. Önümüzdeki günlerde gerçekleşmesi beklenen duruşmalar, taraflar arasındaki hukuki çekişmenin sertleşeceğini gösteriyor."
+    ],
+    "comment": "Donald Trump'ın adli dosyaları, küresel siyasetin geleceğini doğrudan şekillendirecek somut bir eşik barındırıyor. Yargı sürecinin taraflar üzerindeki baskısı artarken, verilecek her karar uluslararası ilişkilerde yeni dengelerin kurulmasına yol açacaktır. Önceki hukuki mücadelelerle kıyaslandığında, bu davanın potansiyel sonuçları çok daha geniş bir coğrafyayı etkileme potansiyeline sahip. Sürecin sonunda ortaya çıkacak tablo, siyasi aktörlerin stratejilerini kökten değiştirebilir.",
+    "editorNote": "Küresel çapta merakla izlenen dava süreci, siyasi dengeleri sarsabilecek yeni bir döneme evriliyor.",
+    "tags": [
+      "Donald Trump",
+      "Amerika",
+      "Hukuk",
+      "Siyaset",
+      "Dava"
+    ],
+    "category": "Dünya",
+    "gorselSorgu": "Donald Trump court building",
+    "source": "Hunat TV",
+    "sourceUrl": "https://www.hunattv.com/trump-i-koseye-sikistiran-gelisme-dunyanin-gozu-bu-davaya-cevrildi/32385/",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/President_Donald_Trump_Signs_an_Executive_Order_Creating_a_Task_Force_for_the_2028_Los_Angeles_Olympics_%2854701587072%29.jpg/1280px-President_Donald_Trump_Signs_an_Executive_Order_Creating_a_Task_Force_for_the_2028_Los_Angeles_Olympics_%2854701587072%29.jpg",
+    "gorselKaynak": {
+      "yazar": "The White House",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:President_Donald_Trump_Signs_an_Executive_Order_Creating_a_Task_Force_for_the_2028_Los_Angeles_Olympics_(54701587072).jpg"
+    },
+    "publishedAt": "2026-10-23T10:10:45.000Z",
+    "generatedAt": "2026-10-23T10:19:01.528Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/President_Donald_Trump_Signs_an_Executive_Order_Creating_a_Task_Force_for_the_2028_Los_Angeles_Olympics_%2854702622778%29.jpg/1280px-President_Donald_Trump_Signs_an_Executive_Order_Creating_a_Task_Force_for_the_2028_Los_Angeles_Olympics_%2854702622778%29.jpg",
+        "yazar": "The White House",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:President_Donald_Trump_Signs_an_Executive_Order_Creating_a_Task_Force_for_the_2028_Los_Angeles_Olympics_(54702622778).jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/President_Donald_Trump_Signs_an_Executive_Order_Creating_a_Task_Force_for_the_2028_Los_Angeles_Olympics_%2854702417991%29.jpg/1280px-President_Donald_Trump_Signs_an_Executive_Order_Creating_a_Task_Force_for_the_2028_Los_Angeles_Olympics_%2854702417991%29.jpg",
+        "yazar": "The White House",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:President_Donald_Trump_Signs_an_Executive_Order_Creating_a_Task_Force_for_the_2028_Los_Angeles_Olympics_(54702417991).jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
+    "id": "43ab089cd3160379",
+    "title": "Lise pansiyonunda deprem tatbikatı gerçekleştirildi",
+    "slug": "lise-pansiyonunda-deprem-tatbikati-gerceklestirildi",
+    "summary": "Öğrencilerin afet bilincini artırmak amacıyla lise pansiyonunda gerçeğini aratmayan bir deprem tatbikatı düzenlendi. Senaryo gereği bina tahliye edilirken, güvenli alanlarda toplanma kuralları uygulamalı olarak gösterildi.",
+    "keyPoints": [
+      "Lise pansiyonunda afet bilincini artırmak için deprem tatbikatı yapıldı",
+      "Senaryo doğrultusunda öğrenciler binayı hızlı ve güvenli şekilde tahliye etti",
+      "Toplanma alanlarında öğrencilere acil durum kuralları anlatıldı"
+    ],
+    "body": [
+      "Eğitim kurumlarında olası afet durumlarına karşı hazırlıklı olmak amacıyla yürütülen çalışmalar kapsamında yeni bir tatbikat gerçekleştirildi. Öğrencilerin sarsıntı anında doğru hareket tarzını benimsemesi hedeflenirken, pansiyon binasında kapsamlı bir senaryo uygulandı.",
+      "Alarm sesinin çalmasıyla birlikte öğrenciler, daha önce öğrendikleri çök-kapan-tutun hareketini uygulayarak güvenli pozisyon aldı. Sarsıntının durduğu varsayılan anın ardından binanın tahliye süreci başlatıldı.",
+      "Yetkililerin yönlendirmesiyle öğrenciler, önceden belirlenen acil toplanma alanına sıra halinde ve panik yapmadan ulaştı. Bina güvenli bir şekilde boşaltıldıktan sonra yoklama alınarak eksik olup olmadığı kontrol edildi.",
+      "Tatbikatın sonunda görevliler tarafından öğrencilere afet anında ve sonrasında dikkat edilmesi gereken hususlar hakkında bilgilendirme yapıldı. Gerçekleştirilen bu uygulamanın, gençlerin olası acil durumlara karşı refleks kazanmasında etkili olduğu belirtildi."
+    ],
+    "comment": "Kurumların düzenlediği bu tür rutin provalar, kriz anındaki reflekslerin kas hafızasına kazınması açısından zorunludur. Öğrencilerin panik yönetimi ve doğru tahliye rotalarını öğrenmesi, olası bir afette can kaybı riskini doğrudan azaltır. Yalnızca teorik anlatımlarla kalınmayıp birebir sahada deneme yapılması, teorinin pratiğe dönüşmesini sağlayan en somut adımdır. Eksiksiz bir tatbikat süreci, gerçek bir sarsıntı anında saniyelerin ne kadar kritik olduğunu bir kez daha hatırlatır.",
+    "editorNote": "Öğrencilerin olası sarsıntılara karşı hazırlık seviyesini test eden uygulama pansiyonda başarıyla tamamlandı.",
+    "tags": [
+      "deprem tatbikatı",
+      "lise pansiyonu",
+      "afet bilinci",
+      "acil durum",
+      "eğitim"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "earthquake damaged building",
+    "source": "Saray Medya",
+    "sourceUrl": "https://www.saraymedya.com/foto/lise-pansiyonunda-deprem-tatbikati-yapildi_316727/",
+    "image": "https://img.saraymedya.com/manset/2026/10/lise-pansiyonunda-deprem-tatbikati-yapildi-1792750136.webp",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T10:09:00.000Z",
+    "generatedAt": "2026-10-23T10:18:38.264Z",
+    "breaking": true
+  },
+  {
     "id": "d4205cd34af02699",
     "title": "Meghan Markle, babası hakkındaki rahatsız edici iddiaları açıkladı",
     "slug": "meghan-markle-babasi-hakkindaki-rahatsiz-edici-iddialari-acikladi",
