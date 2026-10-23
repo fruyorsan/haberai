@@ -1,5 +1,75 @@
 [
   {
+    "id": "7b4271de9d38f550",
+    "title": "Microsoft, Windows 11 için AC-3 ses çökmelerini bitiren yamayı dağıttı",
+    "slug": "microsoft-windows-11-icin-ac-3-ses-cokmelerini-bitiren-yamayi-dagitti",
+    "summary": "Microsoft, oyun ve uygulamalarda yaşanan ses kaynaklı çökmeleri ortadan kaldıran yeni Windows 11 yamasını kullanıma sundu. Eylül ayındaki önizleme sürümünde ortaya çıkan Dolby Digital AC-3 hatası bu paketle giderildi.",
+    "keyPoints": [
+      "KB5127648 numaralı güncelleme Dolby Digital AC-3 ses çökmelerini tamamen ortadan kaldırıyor.",
+      "Güncelleme ile Windows 11 sürümleri 24H2, 25H2 ve 26H2 yapı numaralarına yükseltildi.",
+      "Paket aynı zamanda fare takılmaları ve siyah ekran gibi diğer sistem hatalarını çözüyor."
+    ],
+    "body": [
+      "Microsoft, kullanıcıların günlük yazılımlarda ve oyunlarda karşılaştığı ses odaklı çökmeleri gidermek amacıyla yeni bir güncelleme paketi yayımladı. Bilgisayarlarda ani kapanmalara yol açan bu hata, özellikle Dolby Digital AC-3 kod çözücü bileşenini kullanan programları hedef alıyordu. Eylül ayında dağıtılan önizleme sürümünden bu yana pek çok kişi ses ayarlarını değiştirirken veya medya oynatırken uygulamaların yanıt vermediğini rapor ediyordu.",
+      "Yaşanan bu uyumluluk problemi sadece eğlence yazılımlarını değil, üretkenlik araçlarını da olumsuz etkiliyordu. Modern uygulamaların büyük kısmı kendi çözme bileşenlerini barındırdığı için süreçten etkilenmezken, eski sisteme dayanan programlar kapanma sorunu yaşıyordu. 13 Ekim tarihinde sunulan KB5127648 kodlu paket, etkilenen tüm sürümler için bu hatayı tarihe gömdü ve sistem kararlılığını yeniden sağladı.",
+      "Yayımlanan yeni paket yalnızca ses problemlerine odaklanmıyor; aynı zamanda işletim sisteminin diğer kronik sorunlarına da el atıyor. Bazı oyunlardaki fare imleci takılmaları ve bilgisayar açılışında beliren siyah ekran problemleri bu yamayla birlikte ortadan kalktı. Öte yandan şirket, Akıllı Uygulama Denetimi özelliğinin bazı cihazlarda yeniden etkinleştirilemediği durumların farkında olduğunu ve bu konudaki çalışmaların sürdüğünü belirtti.",
+      "Bununla birlikte, güncelleme paketinin belirli USB Audio Class 1.0 cihazlarında görülen ses çıkış ve başlatma hatalarını kapsamadığı ifade edildi. Donanım tabanlı bu tarz ses aksaklıkları için ilerleyen günlerde ayrı çalışmalar yapılması bekleniyor. Sistemi güncel tutmak isteyen kullanıcılar, Ayarlar menüsünden Windows Güncelleme sekmesini ziyaret ederek bu yeni paketi sistemlerine kurabiliyorlar."
+    ],
+    "comment": "Dolby Digital AC-3 gibi eski bileşenlerin modern işletim sistemlerinde hala kritik işlevler üstlenmesi, yazılım uyumluluğunun ne kadar kırılgan olabileceğini net bir şekilde gösteriyor. Eylül ayındaki sürümle hayatımıza giren bu hatanın ekim ortasında dağıtılan KB5127648 yamasıyla kapatılması, Microsoft'un bu tip ses sorunlarına karşı hızlı refleks gösterdiğini kanıtlıyor. Özellikle eski altyapıyı kullanan medya araçlarına bağımlı olan profesyoneller ve oyuncular, bu tür ani çökmeler nedeniyle günlük iş akışlarında ciddi aksamalar yaşıyordu. Eğer sisteminizde benzer bir ses sorunu bulunuyorsa, yapı numaralarını güncelleyen bu paketi hemen yüklemek performans kaybını önlemek adına en doğru hamle olacaktır.",
+    "editorNote": "Eylül ayından beri kullanıcıları zorlayan ses çökmeleri nihayet son buldu. Yeni yama bilgisayarınıza neler getiriyor?",
+    "tags": [
+      "Windows 11",
+      "Microsoft",
+      "Güncelleme",
+      "Dolby AC-3",
+      "Yazılım"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "Windows 11 desktop computer screen",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/windows-11-kb5127648-guncellemesi-ses-hatasi-cozumu",
+    "image": "https://ares.shiftdelete.net/2026/10/windows-11-guncellemesi-ses-sorunlarini-cozuyor.webp",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T09:00:19.000Z",
+    "generatedAt": "2026-10-23T09:00:59.918Z",
+    "breaking": true
+  },
+  {
+    "id": "cdb0c9c7705b3219",
+    "title": "Çin'in Tibet bölgesindeki 7 büyüklüğündeki depremde 16 kişi can verdi",
+    "slug": "cinin-tibet-bolgesindeki-7-buyuklugundeki-depremde-16-kisi-can-verdi",
+    "summary": "Çin'in Tibet Özerk Bölgesi'nde meydana gelen 7 büyüklüğündeki sarsıntı sonucunda yaşamını yitirenlerin sayısı 16 olarak açıklandı. Yerel yetkililer bölgedeki arama kurtarma çalışmalarının sürdüğünü ve on binlerce kişinin güvenli sahalara alındığını bildirdi.",
+    "keyPoints": [
+      "Nagqu şehrine bağlı Baqen ilçesini vuran sarsıntı 7 büyüklüğünde kaydedildi.",
+      "Bölgede 16 kişi hayatını kaybederken 11'i ağır toplam 65 kişi yaralandı.",
+      "Afet bölgesine bin adet prefabrik ev ile binlerce çadır ve yardım malzemesi sevk edildi."
+    ],
+    "body": [
+      "Çin'in Tibet Özerk Bölgesi'nde dün gece saatlerinde meydana gelen şiddetli yer sarsıntısının ardından resmî rakamlar netleşmeye başladı. Yerel saatle 22.33'te kaydedilen 7 büyüklüğündeki depremin yerin 10 kilometre derinliğinde gerçekleştiği bildirildi. Bölge halkında büyük paniğe neden olan sarsıntı sonrasında arama ve yardım ekipleri hızla harekete geçti.",
+      "Yapılan son resmî açıklamalara göre Nagqu şehrinin Baqen ilçesinde yıkım ve hasar meydana geldi. Felaket sonucunda 16 vatandaşımız yaşamını yitirirken, aralarında durumu ağır olan 11 kişinin de bulunduğu 65 kişi hastanelere kaldırıldı. Yetkililer, can kaybının artmaması için enkaz kaldırma operasyonlarının kesintisiz devam ettiğini duyurdu.",
+      "Afetten etkilenen sivillerin güvenliği için geniş çaplı tahliye işlemleri gerçekleştirildi. Açıklanan verilere göre toplam 12 bin 489 kişi tehlikeli bölgeden uzaklaştırılarak güvenli alanlara nakledildi. Barınma ihtiyacını karşılamak amacıyla bölgeye acil olarak bin adet prefabrik konut gönderildi.",
+      "Yaraların sarılması için başlatılan sevkiyatlar kapsamında binlerce çadır da afetzedelere ulaştırıldı. Koordinasyon merkezinden aktarılan bilgilere göre 3 bin 200'den fazla çadır, 2 bin 800 yatak ve yorganın yanı sıra soba ile giysi gibi temel yaşam malzemeleri da ivedilikle dağıtıldı."
+    ],
+    "comment": "Şiddetli sarsıntıların ardından gelen acil müdahale süreçleri, yerel yönetimlerin kriz anındaki reflekslerini doğrudan test eder. Depremde bildirilen 16 can kaybı ve 65 yaralı verisi, yerleşimin altyapı dayanıklılığının sarsıntı anındaki rolünü açıkça ortaya koyuyor. On binlerce kişinin tahliye edilmesi, barınma ve lojistik desteğin ne denli hızlı organize edilmesi gerektiğini gösteriyor. Eğer bölgeye sevk edilen prefabrik evler ve binlerce çadır zamanında kurulmazsa, çetin hava koşulları süreci daha da zorlaştırabilir.",
+    "editorNote": "Tibet'teki sarsıntının ardından 12 bini aşkın kişi tahliye edilirken, bölgeye binlerce çadır ve prefabrik ev sevk edildi.",
+    "tags": [
+      "Çin",
+      "Tibet",
+      "deprem",
+      "Nagqu",
+      "arama kurtarma"
+    ],
+    "category": "Dünya",
+    "gorselSorgu": "earthquake damaged building",
+    "source": "Milliyet",
+    "sourceUrl": "https://www.milliyet.com.tr/dunya/son-dakika-cinin-tibet-bolgesi-7-7lik-depremle-sarsilmisti-bilanco-belli-oldu-7685993",
+    "image": "https://image.milimaj.com/i/milliyet/75/0x0/6adb20f4e95045cf040f4e51.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T08:57:00.000Z",
+    "generatedAt": "2026-10-23T09:01:11.971Z",
+    "breaking": true
+  },
+  {
     "id": "2592c0d39277c961",
     "title": "Araç kiralama sektörü 253 milyar TL'lik yatırıma ulaştı",
     "slug": "arac-kiralama-sektoru-253-milyar-tl-lik-yatirima-ulasti",
@@ -33,6 +103,62 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T08:53:52.000Z",
     "generatedAt": "2026-10-23T08:55:03.387Z",
+    "breaking": true
+  },
+  {
+    "id": "8fb0d998fbfcb26b",
+    "title": "Erciş depreminde yakınlarını kaybeden Koçak kardeşler o günü unutamıyor",
+    "slug": "ercis-depreminde-yakinlarini-kaybeden-kocak-kardesler-o-gunu-unutamiyor",
+    "summary": "Van depreminin merkez üssü Erciş'te büyük kayıplar yaşayan Koçak kardeşler, felaketin acısını ilk günkü gibi yüreklerinde taşıyor. Aradan geçen zamana rağmen sarsıntı anının bıraktığı izler hayatlarından silinmedi.",
+    "keyPoints": [
+      "Koçak kardeşler Erciş depreminde aile bireylerini yitirmenin üzüntüsünü yaşıyor.",
+      "Felaket anının bıraktığı hatıralar aradan geçen yıllara rağmen canlı kalmaya devam ediyor.",
+      "Depremzede ailelerin günlük yaşamdaki mücadelesi ve hatıralarla imtihanı sürüyor."
+    ],
+    "body": [
+      "Türkiye'nin hafızasında derin izler bırakan Van depremi, özellikle Erciş ilçesinde yıkıcı sonuçlar doğurmuştu. Bu büyük felaket sırasında yakınlarını toprağa veren aileler, aradan geçen sürece rağmen acı dolu anıları unutamıyor. Koçak kardeşler de bu trajedinin ortasında kalan ve hayatları tamamen değişen isimler arasında yer alıyor.",
+      "O felaket gününde yaşanan kayıplar, geride kalanların yaşam çizgisini kalıcı olarak etkiledi. Koçak kardeşler, kaybettikleri sevdiklerinin yokluğunu her gün yeniden hissediyor. Yaşanan sarsıntının büyüklüğü ve bıraktığı fiziksel yıkım kadar, aile bağlarının kopmasının yarattığı boşluk da kapanmıyor.",
+      "Depremin yıl dönümleri ve anma günleri, geride kalanlar için acının tazelendiği zaman dilimleri oluyor. Koçak kardeşler gibi pek çok afetzede, yaşanan büyük felaketin izlerini silmeye çalışırken hatıralarla yaşamayı öğreniyor. Toplumsal hafızada yer edinen bu tür olaylar, geride kalanların yaşam mücadelesini gözler önüne seriyor.",
+      "Aradan geçen yıllar kayıpların yerini doldurmasa da, aile bireyleri birbirine tutunarak hayata tutunmaya çalışıyor. Erciş'te yaşanan bu acı olay, afetbilinci ve dayanışmanın ne kadar hayati olduğunu her fırsatta hatırlatıyor. Koçak kardeşlerin hikayesi, deprem gerçeğinin insan hayatında açtığı derin yaraların simgelerinden biri olarak kalmaya devam ediyor."
+    ],
+    "comment": "Büyük felaketlerin bıraktığı travmalar, üzerinden ne kadar zaman geçerse geçsin toplumsal hafızada ve bireysel hayatlarında silinmez izler bırakmaya devam ediyor. Koçak kardeşlerin yaşadığı bu derin acı, afetlerin sadece binaları değil, aileleri ve geleceği de nasıl sarstığını açıkça gösteriyor. Bu durum, özellikle deprem kuşağında yer alan yerleşim yerlerinde hazırlıkların ne kadar hayati olduğunu bir kez daha hatırlatıyor. Gelecekte benzer felaketlerin yaşanmaması için atılacak her somut adım, bu tür acıların tekrar etmesini engellemek adına kritik bir sorumluluk taşıyor.",
+    "editorNote": "Aradan geçen zamana rağmen silinmeyen acılar, felaketin insan ruhunda açtığı yaraları gözler önüne seriyor.",
+    "tags": [
+      "Erciş",
+      "Van depremi",
+      "Koçak kardeşler",
+      "depremzede",
+      "gündem"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "earthquake damaged building",
+    "source": "Batman Çağdaş",
+    "sourceUrl": "https://www.batmancagdas.com/ercis-depreminde-yakinlarini-kaybeden-kocak-kardesler-o-gunu-unutamiyor",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Interior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg/1280px-Interior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg",
+    "gorselKaynak": {
+      "yazar": "Adem",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Interior_of_a_damaged_building_after_7,8_magnitude_earthquake_in_Turkiye.jpg"
+    },
+    "publishedAt": "2026-10-23T08:53:23.000Z",
+    "generatedAt": "2026-10-23T09:01:24.131Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg/1280px-Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg",
+        "yazar": "Adem",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Exterior_of_a_damaged_building_after_7,8_magnitude_earthquake_in_Turkiye.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye_2.jpg/1280px-Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye_2.jpg",
+        "yazar": "Adem",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Exterior_of_a_damaged_building_after_7,8_magnitude_earthquake_in_Turkiye_2.jpg"
+      }
+    ],
     "breaking": true
   },
   {
@@ -175,6 +301,41 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Two_death_chairs_(electric_chairs_or_gas_injection%3F)_in_old_Central_Prison,_Raleigh,_NC,_death_chamber,_no_date_(possibly_1950-60s)._State_Archives_of_North_Carolina,_Raleigh,_NC._(28891475965).jpg"
       }
     ],
+    "breaking": true
+  },
+  {
+    "id": "3b1967b22f28dbe9",
+    "title": "Van'da 15 yıllık ihmal: Binaların yüzde 90'ı depreme hazır değil",
+    "slug": "vanda-15-yillik-ihmal-binalarin-yuzde-90i-depreme-hazir-degil",
+    "summary": "Van genelindeki yapıların büyük bir bölümünün depreme karşı güvenli olmadığı açıklandı. Aradan geçen 15 yıla rağmen hasarlı binaların tamamı yıkılamazken, toplanma alanlarının da zamanla betonlaştığı bildirildi.",
+    "keyPoints": [
+      "Van genelindeki yapıların yüzde 90'lık kısmı olası bir depreme hazır değil.",
+      "Ağır hasarlı rapor edilen 48 bin 689 binadan sadece 25-28 bin kadarı yıkıldı.",
+      "Alipaşa Mahallesi'ndeki incelemede risk oranının yüzde 33 olduğu tespit edildi."
+    ],
+    "body": [
+      "Deprem felaketinin üzerinden geçen uzun zamana rağmen Van kent merkezindeki yapı stokunun güvenli seviyeden çok uzak olduğu bildirildi. İnşaat Mühendisleri Odası Van Şube Başkanı Yakup Ebiri, mevcut konutların yarıdan fazlasının risk barındırdığını ifade etti. Kent genelinde yürütülen ilk hasar tespit çalışmalarında yıkılması veya acilen ele alınması gereken binlerce yapı kayda geçirilmişti. Ancak aradan geçen 15 yıllık sürede bu tehlikeli binaların ancak yarısına yakın bir kısmı ortadan kaldırılabilirdi.",
+      "Yasal süresi içerisinde güçlendirme adımı atılmayan orta hasarlı binaların tehlike saçmaya devam ettiği belirtiliyor. Kent genelinde kapsamlı ve bilimsel bir yapı envanteri bulunmadığı için hangi konutun kaç şiddetindeki sarsıntıya direnç göstereceği bilinmiyor. Yenilenen mahallelerde dahi risk oranlarının yüksek çıkması, eski yerleşim yerlerindeki tablonun vahametini gözler önüne seriyor. Uzmanlar, denetimsiz kalan bu yapıların afet anında can kaybını artırabileceği konusunda uyarılarda bulunuyor.",
+      "Şehrin afet anındaki en büyük güvencelerinden olan toplanma alanlarının da zamanla daraldığı aktarıldı. İmar planlarında yeşil alan veya okul bahçesi olarak görünen noktaların birçoğuna yeni yapılar inşa edildiği ifade edildi. Öte yandan yerel yönetimlerde yaşanan idari değişikliklerin, meslek odalarıyla yürütülen ortak kriz masası çalışmalarını aksattığı kaydedildi. Afet bilincinin artırılması ve kurumsal iş birliğinin yeniden tesis edilmesi gerektiği vurgulanıyor.",
+      "Fiziksel yıkımın izleri silinmeye çalışılırken geride kalan sosyal mağduriyetler de çözüm bekliyor. Depremin ardından kurulan konteynır kentte yaklaşık 60 ailenin uzun yıllardır zor şartlar altında yaşam mücadelesi sürdürdüğü bildirildi. Yaşam alanlarındaki altyapı eksiklikleri ve unutulmuşluk duygusu, afetzedelerin günlük hayatını olumsuz etkilemeye devam ediyor. Yetkililerin ve ilgili kurumların bu dezavantajlı bölgeye yönelik kalıcı adımlar atması talep ediliyor."
+    ],
+    "comment": "Van gibi yüksek sismik risk taşıyan bir coğrafyada on beş yıl boyunca kapsamlı bir envanter çalışmasının tamamlanamamış olması idari ve teknik bir aciliyettir. Ağır hasarlı yapıların yarısının hâlâ ayakta durması, olası bir sarsıntıda can kaybı riskini katbekat artırmaktadır. Bölgedeki on binlerce vatandaşı doğrudan ilgilendiren bu tablo, kentsel dönüşüm süreçlerinin sadece kâğıt üzerinde kalmaması gerektiğini net bir şekilde göstermektedir. Yerel yönetimler ile meslek odalarının ortak çalıştırılamaması durumunda, en temel afet hazırlıkları bile sekteye uğramaya mahkûmdur.",
+    "editorNote": "Van'da ağır hasarlı binaların yarısı 15 yılda ancak yıkılabildi; uzmanlar denetimsiz yapı stokuna karşı acil eylem çağrısı yapıyor.",
+    "tags": [
+      "Van",
+      "deprem",
+      "İMO",
+      "kentsel dönüşüm",
+      "afet yönetimi"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "earthquake damaged building rubble",
+    "source": "Güneydoğu Ekspres",
+    "sourceUrl": "https://www.guneydoguekspres.com/15-yillik-ihmal-van-depreme-yuzde-90-hazir-degil",
+    "image": "https://guneydogueksprescom.teimg.com/crop/1280x720/guneydoguekspres-com/uploads/2026/10/15-yillik-ihmal-van-depreme-yuzde-90-hazir-degil.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T08:47:00.000Z",
+    "generatedAt": "2026-10-23T09:01:35.316Z",
     "breaking": true
   },
   {
