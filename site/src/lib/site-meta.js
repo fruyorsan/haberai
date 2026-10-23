@@ -184,7 +184,6 @@ export const AVATARLAR = [
   { kod: "/avatar/mini-jane.webp", ad: "Mini Jane", renk: "#4b83a8" },
   { kod: "/avatar/cicekli-tavsan.webp", ad: "Çiçekli Tavşan", renk: "#d98a9a" },
   { kod: "/avatar/gamepad.webp", ad: "Gamepad", renk: "#4b83a8" },
-  { kod: "/avatar/spiderman-koltuk.webp", ad: "Düşünen Spidey", renk: "#e4573d" },
   { kod: "/avatar/pikachu.webp", ad: "Pikachu", renk: "#e8a62b" },
 ];
 
