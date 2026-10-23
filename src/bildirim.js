@@ -57,13 +57,13 @@ const SON_MIN_ARALIK_DK = Number(process.env.BILDIRIM_SON_ARALIK_DK ?? 180);
 const SON_MAX_GUN = Number(process.env.BILDIRIM_SON_MAX_GUN ?? 3);
 const SON_TTL_SAAT = Number(process.env.BILDIRIM_SON_TTL_SAAT ?? 4);
 // Konu bildirimleri: seçilen başlıklardan günde ~10 bildirim (dengeli dağılım).
-const KAT_MIN_ARALIK_DK = Number(process.env.BILDIRIM_KAT_ARALIK_DK ?? 75);
-const KAT_GENEL_ARALIK_DK = Number(process.env.BILDIRIM_KAT_GENEL_ARALIK_DK ?? 45);
-const KAT_MAX_GUN = Number(process.env.BILDIRIM_KAT_MAX_GUN ?? 10);
-// Taze sayılan pencere. Gönderim kaydı (sent + idempotency) tekrarı zaten
-// engellediği için bu süre geniş tutulur: kısa tutulunca "breaking" işaretli
-// taze haberler pencereyi kaçırıp konu bildirimi hiç gitmiyordu.
-const KAT_TTL_SAAT = Number(process.env.BILDIRIM_KAT_TTL_SAAT ?? 4);
+// Konu bildirimleri: gün içine eşit dağıtılmış ~10-12 bildirim.
+// 80 dk genel aralık ve sabah kotası sayesinde bildirimler tüm güne (08:00 - 23:00) dengeli yayılır.
+const KAT_MIN_ARALIK_DK = Number(process.env.BILDIRIM_KAT_ARALIK_DK ?? 90);
+const KAT_GENEL_ARALIK_DK = Number(process.env.BILDIRIM_KAT_GENEL_ARALIK_DK ?? 80);
+const KAT_MAX_GUN = Number(process.env.BILDIRIM_KAT_MAX_GUN ?? 12);
+// Taze sayılan pencere (8 saat): gün içindeki en iyi haberler akşam da gönderilebilsin.
+const KAT_TTL_SAAT = Number(process.env.BILDIRIM_KAT_TTL_SAAT ?? 8);
 // Tur başına en fazla kaç KATEGORİ işlenir (adil sıra).
 const KAT_TUR_ADET = Number(process.env.BILDIRIM_KAT_TUR_ADET ?? 1);
 // Tur başına gönderilecek en fazla HABER (taşma koruması; sonraki turda devam).
@@ -276,11 +276,44 @@ async function teslimRaporu(id) {
  * ve bildirim görselsiz çıkar. Bu nedenle push bildirimlerinde daima standart JPEG
  * (output=jpg) formatı kullanılır.
  */
-function bildirimGorseli(src, width = 720, height = 405) {
+const DIRECT_IMAGE_HOSTS = /(\.teimg\.com|cryptopotato\.com|nuvemmag\.com|kentgazetesi\.com|hunattv\.com|i\.ytimg\.com)$/i;
+
+function normalizeSrc(src) {
+  let s = String(src || "")
+    .replace(/&amp;/g, "&")
+    .replace(/\/\/www\.technopat\.net\/www\.technopat\.net\//i, "//www.technopat.net/")
+    .replace(/(imgrosetta\.webtekno\.com\/file\/\d+\/\d+-)640xauto/i, "$11280xauto")
+    .trim();
+  if (/wikimedia\.org\/wikipedia\/commons\/thumb\//i.test(s)) {
+    s = s.replace(/\/(1400|1600|1920)px-/i, "/1280px-");
+  }
+  return s;
+}
+
+/**
+ * Web push bildirimi için görsel URL'si üretir.
+ * - 2:1 en-boy oranı (Chrome ve Windows Web Push resmi standardı: 720x360).
+ * - Doğrudan uzantı içeren URL (/haber.jpg) -> Windows Action Center (WNS) uzantısız kök URL'leri görsel saymayıp düşürebiliyordu.
+ * - Proxy engelleyen veya 404 dönen host'lar (teimg.com vb.) için doğrudan orijinal URL kullanılır.
+ */
+function bildirimGorseli(src, width = 720, height = 360) {
   if (!src || !/^https?:\/\//i.test(src)) return "";
+  const s = normalizeSrc(src);
+  try {
+    if (DIRECT_IMAGE_HOSTS.test(new URL(s).hostname)) return s;
+  } catch {}
   const w = Math.round(width);
   const h = Math.round(height);
-  return `https://wsrv.nl/?url=${encodeURIComponent(src)}&w=${w}&h=${h}&fit=cover&we&output=jpg&q=85`;
+  return `https://wsrv.nl/haber.jpg?url=${encodeURIComponent(s)}&w=${w}&h=${h}&fit=cover&we&output=jpg&q=85`;
+}
+
+function bildirimIkonu(src) {
+  if (!src || !/^https?:\/\//i.test(src)) return `${SITE_URL}/ikon-192.png`;
+  const s = normalizeSrc(src);
+  try {
+    if (DIRECT_IMAGE_HOSTS.test(new URL(s).hostname)) return s;
+  } catch {}
+  return `https://wsrv.nl/ikon.jpg?url=${encodeURIComponent(s)}&w=192&h=192&fit=cover&we&output=jpg&q=85`;
 }
 
 /** Bildirimin tıklanınca gideceği adres + görsel + metin. */
@@ -293,8 +326,8 @@ function bildirimIcerigi(a, { baslik }) {
     !/placeholder|no[-_]?image|default[-_/]?news|avatar/i.test(a.image)
       ? a.image
       : "");
-  const gorsel = hamGorsel ? bildirimGorseli(hamGorsel, 720, 405) : `${SITE_URL}/og-default.png`;
-  const ikon = hamGorsel ? bildirimGorseli(hamGorsel, 192, 192) : `${SITE_URL}/ikon-192.png`;
+  const gorsel = hamGorsel ? bildirimGorseli(hamGorsel, 720, 360) : `${SITE_URL}/og-default.png`;
+  const ikon = hamGorsel ? bildirimIkonu(hamGorsel) : `${SITE_URL}/ikon-192.png`;
   return {
     baslik,
     icerik: kisalt(a.title, 120),
@@ -672,8 +705,18 @@ export async function bildirimleriGonder({ dry = false } = {}) {
       : tr.saat >= SESSIZ_BAS || tr.saat < SESSIZ_BIT;
   const sonKonuAt = durum.updatedAt ? Date.parse(durum.updatedAt) : 0;
   const konuGecenDk = sonKonuAt ? (now - sonKonuAt) / 60000 : Infinity;
+  // Sabah saatlerinde (07:00 - 13:00) tüm günlük kotanın tükenmesini engelle
+  // (Öğleden sonra ve akşam prime-time haberlerine mutlaka bildirim kalsın).
+  const sabahMi = tr.saat < 13;
+  const sabahTavan = Math.floor(KAT_MAX_GUN * 0.42); // örn: 12 kotanın en fazla 5'i sabahtan gidebilir
+
   if (sessiz) {
     console.log(`Bildirim: sessiz saat (TR ${tr.saat}:00) → konu bildirimi gönderilmiyor.`);
+  } else if (sabahMi && (durum.gunSayi.kategori || 0) >= sabahTavan) {
+    console.log(
+      `Bildirim: sabah kotası (${durum.gunSayi.kategori}/${sabahTavan}) doldu; ` +
+        `öğleden sonra ve akşam haberleri için bekletiliyor.`
+    );
   } else if ((durum.gunSayi.kategori || 0) >= KAT_MAX_GUN) {
     console.log(`Bildirim: konu bildirimi için günlük tavan (${KAT_MAX_GUN}) doldu.`);
   } else if (konuGecenDk < KAT_GENEL_ARALIK_DK) {
@@ -853,8 +896,8 @@ export async function bildirimleriGonder({ dry = false } = {}) {
             baslik: "📬 Günün özeti",
             icerik: kisalt(ozetMetni, 160),
             url: `${SITE_URL}/haber/${ilk.slug || ilk.id}/`,
-            gorsel: kapak ? bildirimGorseli(kapak, 720, 405) : `${SITE_URL}/og-default.png`,
-            ikon: kapak ? bildirimGorseli(kapak, 192, 192) : `${SITE_URL}/ikon-192.png`,
+            gorsel: kapak ? bildirimGorseli(kapak, 720, 360) : `${SITE_URL}/og-default.png`,
+            ikon: kapak ? bildirimIkonu(kapak) : `${SITE_URL}/ikon-192.png`,
             ttl: 21600,
             etiketler: [{ key: "bildirim_sikligi", relation: "=", value: "ozet" }],
             anahtar: `ozet-${tr.gun}-${tr.saat}`,
