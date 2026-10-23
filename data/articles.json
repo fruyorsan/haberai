@@ -1,5 +1,167 @@
 [
   {
+    "id": "bf206543c0cfb4a2",
+    "title": "Bilgisayar pazarında RAM ve SSD maliyetleri yüzde 21 daralma yarattı",
+    "slug": "bilgisayar-pazarinda-ram-ve-ssd-maliyetleri-yuzde-21-daralma-yaratti",
+    "summary": "Yapay zeka sistemlerinin büyümesiyle donanım bileşenlerine talep artarken küresel bilgisayar sevkiyatları üçüncü çeyrekte yüzde 21 oranında geriledi. Artan maliyetler nedeniyle tüketicilerin yeni cihaz alım kararlarını askıya aldığı belirtiliyor.",
+    "keyPoints": [
+      "Küresel bilgisayar sevkiyatları üçüncü çeyrekte yıllık bazda yüzde 21 azaldı.",
+      "DRAM ve NAND bellek talebi fiyatları yukarı çekerken maliyetler tüm sektörü etkiledi.",
+      "Lenovo yüzde 26,3 pazar payıyla liderliğini korurken HP sevkiyatları en sert düşüşü yaşadı."
+    ],
+    "body": [
+      "Teknoloji sektöründe son dönemde yaşanan bileşen maliyeti artışları doğrudan cihaz satış rakamlarına yansıdı. Özellikle RAM, SSD ve işlemci fiyatlarındaki yükseliş trendi, küresel bilgisayar pazarında beklenenden daha derin bir daralmayı beraberinde getirdi.",
+      "Yapay zeka altyapılarına gösterilen yoğun ilgi, DRAM ve NAND bellek tedarik zincirinde dengeleri değiştirdi. Intel, AMD ve Qualcomm gibi üreticilerin işlemci maliyetlerindeki artışlar da Apple'dan Raspberry Pi seviyesindeki mütevazı sistemlere kadar her segmenti etkiledi.",
+      "Piyasa verilerine göre 2026 yılının ikinci çeyreğine kadar büyüme ivmesini koruyan sektör, son aylarda maliyet baskısıyla karşılaştı. Donanım fiyatlarının yükselmesi, bireysel ve kurumsal alıcıların yeni cihaz yatırımlarını erteleme kararı almasına yol açtı.",
+      "Büyük üreticiler arasındaki rekabette Lenovo, 15 milyon sevkiyat ve yüzde 26,3 pay ile zirvedeki yerini korurken, sevkiyatları geçen yıla göre yüzde 23 geriledi. İkinci sıradaki HP yüzde 31 düşüşle en büyük kaybı yaşarken, Apple pazar payını artırmayı başardı.",
+      "ASUS ise ilk beş üretici arasında sevkiyatlarını en az düşüren marka oldu. Counterpoint Research analizlerine göre maliyet kaynaklı daralma dördüncü çeyrekte hız kazanabilir ve sevkiyat düşüş oranı yüzde 27 seviyesini bulabilir."
+    ],
+    "comment": "Donanım bileşenlerindeki fiyat artışları doğrudan son kullanıcı bütçesini zorlayan kritik bir eşiği işaret ediyor. Üçüncü çeyrekteki yüzde 21'lik daralma, üreticilerin karlılık ve hacim dengesini yeniden kurmasını zorunlu kılıyor. Şirketler maliyetleri yansıtmakta zorlanırken, dördüncü çeyrekte öngörülen yüzde 27'lik ek düşüş senaryosu gerçekleşirse ucuz donanım dönemi tamamen kapanabilir.",
+    "editorNote": "Bileşen maliyetlerindeki tırmanış pazarın dördüncü çeyrekte daha da küçüleceğine işaret ediyor.",
+    "tags": [
+      "RAM",
+      "SSD",
+      "işlemci",
+      "Lenovo",
+      "bilgisayar"
+    ],
+    "category": "Donanım",
+    "gorselSorgu": "computer motherboard semiconductor chips",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/ram-fiyatlari-bilgisayar-satislarini-vurdu-dusus-yuzde-21--211987",
+    "image": "https://www.donanimhaber.com/images/images/haber/211987/src/ram-fiyatlari-bilgisayar-satislarini-vurdu-dusus-yuzde-21211987_0.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T08:46:14.000Z",
+    "generatedAt": "2026-10-23T08:50:10.287Z",
+    "breaking": true
+  },
+  {
+    "id": "725fd11cde67c49d",
+    "title": "AMD, Medusa APU serisi için RDNA 4m desteğini v3.2.0 ile duyurdu",
+    "slug": "amd-medusa-apu-serisi-icin-rdna-4m-destegini-v3-2-0-ile-duyurdu",
+    "summary": "AMD, HIP Işın İzleme kütüphanesini güncelleyerek Medusa APU serisinin entegre grafik birimleri için resmi yazılım desteğini başlattı. Yeni sürüm, işlemci ailesinde RDNA 4m, RDNA 3.5 ve RDNA 5 mimarilerinin birlikte kullanılacağını doğruluyor.",
+    "keyPoints": [
+      "HIP-RT v3.2.0 güncellemesi Medusa serisi için üç yeni iGPU kimliği ekledi.",
+      "Giriş ve ana akım segmentindeki modeller RDNA 3.5 ve RDNA 4m mimarilerini kullanacak.",
+      "En üst segment Halo modellerinde ise ayrı yonga üzerinde RDNA 5 yer alacak."
+    ],
+    "body": [
+      "Şirket, popüler HIP Işın İzleme kütüphanesini v3.2.0 sürümüne taşıyarak gelecek nesil Medusa işlemci ailesi için kritik bir hazırlık süreci başlattı. Bu adım sayesinde henüz piyasaya çıkmayan işlemcilerin entegre grafik birimleri için resmi yazılım altyapısı kurulmuş oldu.",
+      "Yayınlanan yazılım paketine GFX1171, GFX1170 ve GFX115E gibi yeni kimlik numaraları eklendi. Bu eklemeler, markanın gelecek nesil donanımlarında RDNA 4m ile RDNA 3.5 teknolojilerini bir arada konumlandıracağını netleştirdi.",
+      "Sızdırılan teknik veriler, GFX117X serisinin yeni nesil RDNA 4m mimarisini temsil ettiğini, GFX115X serisinin ise geliştirilmiş RDNA 3.5 sürümünü işaret ettiğini gösteriyor. Giriş seviyesi modeller enerji tasarrufu odaklı kalırken üst segmentte performans artırılacak.",
+      "En üst seviyedeki Premium ve Halo tasarımlarında ise grafik biriminin ana işlemci katmanından ayrı bir yonga üzerinde konumlandırılacağı belirtiliyor. Bu çok katmanlı yapı sayesinde termal yönetim güçlendirilirken harici ekran kartlarına duyulan ihtiyaç azaltılacak.",
+      "Rakip cephenin entegre grafik alanındaki hamlelerine karşı bu stratejik adımı atan şirket, geniş mimari çeşitliliği ile pazar dengelerini değiştirmeyi hedefliyor. Yapay zeka ve ışın izleme teknolojilerinin entegre birimlerdeki yükselişi donanım yarışını hızlandırıyor."
+    ],
+    "comment": "Karma mimari stratejisi, tek bir standart yerine segment bazında özelleştirilmiş çözümler sunarak üretim maliyetlerini optimize etmeyi amaçlıyor. v3.2.0 sürümüyle gelen entegre grafik kimlikleri, özellikle taşınabilir bilgisayar ve el konsolu kullanıcılarının oyun deneyimini doğrudan etkileyecek. RDNA 3.5 ile verimlilik korunurken RDNA 4m çekirdeklerinin devreye girmesi, harici kartlara olan bağımlılığı azaltabilir. Rakip firmanın Xe3 mimarisiyle yapacağı çıkış düşünüldüğünde, bu esnek yapı pazar rekabetinde belirleyici bir rol üstlenecektir.",
+    "editorNote": "Yeni yazılım güncellemesiyle birlikte Medusa işlemcilerin mimari yapısı netleşti; farklı segmentler için hangi grafik teknolojilerinin seçileceği belli oldu.",
+    "tags": [
+      "AMD",
+      "Medusa",
+      "APU",
+      "RDNA 4",
+      "İşlemci"
+    ],
+    "category": "Donanım",
+    "gorselSorgu": "AMD processor computer chip",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/amd-medusa-apu-modelleri-icin-rdna-4m-destegi-resmilesti",
+    "image": "https://ares.shiftdelete.net/2026/10/AMD-Medusa.webp",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T08:45:48.000Z",
+    "generatedAt": "2026-10-23T08:50:32.139Z",
+    "breaking": true
+  },
+  {
+    "id": "d5a2f99dd68bbbe9",
+    "title": "İranlı uzmana göre Urumiye Gölü’ndeki tuz tozu Türkiye’yi etkilemez",
+    "slug": "iranli-uzmana-gore-urumiye-golundeki-tuz-tozu-turkiyeyi-etkilemez",
+    "summary": "Urumiye Gölü'ndeki kuraklık nedeniyle ortaya çıkan tuz tozu taşınımının Türkiye'yi etkilemeyeceği açıklandı. Hakim rüzgarların durumu ve bölgenin coğrafi konumu sebebiyle riskin Doğu Azerbaycan ile sınırlı kalacağı vurgulandı.",
+    "keyPoints": [
+      "Hakim rüzgarların yönü sayesinde Türkiye'nin doğusu tuz tozundan etkilenmeyecek.",
+      "Gölün normal seviyesine gelmesi için 12 milyar metreküp suya ihtiyaç var.",
+      "Şu anki su miktarı 4 milyar metreküp ile son on yılın en iyi seviyesinde."
+    ],
+    "body": [
+      "Dünyanın en büyük ikinci tuz gölü konumundaki Urumiye Gölü'nde uzun süredir devam eden kuraklık tartışmaları yeni bir aşamaya evrildi. Bölgedeki iklimsel değişimler, su kaynaklarının aşırı kullanımı ve göl ortasındaki köprü gibi etkenler tuz tozunun yayılma riskini gündeme getiriyordu. Ancak uzmanlar bu durumun Türkiye sınırındaki tarım arazileri için tehlike oluşturmadığını ifade ediyor.",
+      "Eski çevre yetkilisi Muhammed Derviş yaptığı açıklamada, hava hareketlerinin batıdan doğuya doğru ilerlediğini belirtti. Bu coğrafi ve meteorolojik yapı nedeniyle tehlikenin Erdebil ve Zencan hatlarında kalacağını, Türkiye topraklarının bu taşınmadan zarar görmeyeceğini kaydetti. Buna karşın İran içindeki bazı yerleşim yerlerinde hava kalitesinin düşebileceği ve sağlık sorunlarının artabileceği ifade ediliyor.",
+      "Gölün ekosistemini yeniden kazanabilmesi için gerekli olan su miktarının 12 milyar metreküp olduğu belirtilirken, son dönemdeki yağışlarla birlikte bu rakamın 4 milyar metreküpe ulaştığı açıklandı. Bu miktar son on yılın en yüksek seviyesi olarak kayda geçerken, uzmanlar yağışların devam etmesi halinde yirmi yıl sonra normal seviyeye yaklaşılmasının mümkün olabileceğini belirtiyor.",
+      "Gölün bu duruma gelmesinde nehirler üzerine kurulan barajlar ve tarımda aşırı su tüketimi temel etkenler arasında yer alıyor. Ayrıca eski dönemde inşa edilen Şehit Kelanateri Köprüsü'nün standartlara uymayarak su akışını engellediği ve tortulanmayı artırdığı biliniyor. Çözüm için önerilen planlar ise bugüne kadar çeşitli baskılar nedeniyle tam anlamıyla hayata geçirilemedi."
+    ],
+    "comment": "Çevresel krizlerin bölgesel etkileri değerlendirilirken meteorolojik verilerin ve rüzgar yönlerinin dikkate alınması kritik bir zorunluluktur. Gölün su miktarının 4 milyar metreküpe çıkması olumlu bir gelişme olsa da, 12 milyar metreküplük hedefe ulaşılmadığı sürece risk tamamen ortadan kalkmayacaktır. Bu durum, yerel tarım politikalarının acilen değiştirilmemesi halinde bölgedeki kuraklık tehdidinin kalıcılaşacağını gösteriyor.",
+    "editorNote": "Urumiye Gölü'ndeki tuz taşınımı Türkiye'yi teğet geçiyor; ancak bölgede su seviyesi hâlâ kritik eşikte.",
+    "tags": [
+      "Urumiye Gölü",
+      "kuraklık",
+      "İran",
+      "tuz fırtınası",
+      "çevre"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "dried lake salt crust landscape",
+    "source": "AA Güncel",
+    "sourceUrl": "https://www.aa.com.tr/tr/dunya/iranli-uzmana-gore-urumiye-golu-ndeki-kuraklik-kaynakli-tuz-tozu-tasinimi-turkiye-yi-olumsuz-etkilemez/4098234",
+    "image": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/23/thumbs_b_c_404be31099b1b3eb3bbc30e71c36e50b.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T08:45:44.000Z",
+    "generatedAt": "2026-10-23T08:50:44.167Z",
+    "breaking": true
+  },
+  {
+    "id": "49e4c040b9063efb",
+    "title": "Büyük depremin üzerinden 15 yıl geçmesine rağmen acılar taze",
+    "slug": "buyuk-depremin-uzerinden-15-yil-gecmesine-ragmen-acilar-taze",
+    "summary": "Tarihi sarsıntının geride bıraktığı 15 yıllık süreçte kayıpların yası azalmadı. Toplum hafızasındaki izler ilk günkü gibi canlılığını koruyor.",
+    "keyPoints": [
+      "Felaketin üzerinden tam 15 yıl geçti",
+      "Acılar ilk günkü tazeliğini koruyor",
+      "Toplum hafızasında derin izler bıraktı"
+    ],
+    "body": [
+      "Geçmişte yaşanan yıkıcı depremin üzerinden tam 15 yıl geçmiş olmasına rağmen, felaketin açtığı yaralar kapanmadı. Toplumun hafızasında yer edinen bu büyük sarsıntı, aradan geçen zamana rağmen etkisini kaybetmedi. Kayıpların yası ve o gün yaşananların acısı ilk günkü canlılığıyla hatıralarda yaşamaya devam ediyor.",
+      "Afetin izleri yalnızca fiziksel yapılarla sınırlı kalmayıp insan ruhunda da derin izler bıraktı. Aradan geçen yıllar boyunca hatıralar solmasa da, yaşanan acılar ortak bir toplumsal belleğin en temel parçası haline geldi. Uzun süren bu zaman zarfında kaybedilen canlar ve yaşanan zorluklar hiçbir zaman unutulmadı.",
+      "Felaket dönemi ve sonrasındaki süreç, geride kalanlar için hayatın akışını tamamen değiştiren bir dönüm noktası oldu. Her yıl dönümünde hissedilen aynı hüzün, acının zamana yenik düşmediğini açıkça gösteriyor. Toplumun farklı kesimleri bu büyük acıyı paylaşarak dayanışma içinde olmayı sürdürüyor.",
+      "Yaşanan bu büyük felaket, geleceğe yönelik hazırlıkların ne kadar hayati olduğunu her fırsatta hatırlatıyor. Geçmişin acı tecrübeleri, sonraki nesillerin benzer yıkımlarla karşılaşmaması için gereken önlemlerin alınmasında rehberlik ediyor. Hafızalardan silinmeyen bu dönemin izleri, toplumsal bilincin en önemli unsurlarından biri olarak varlığını sürdürüyor."
+    ],
+    "comment": "Geçmişte yaşanan büyük felaketlerin bıraktığı izler ancak kalıcı tedbirlerle hafifletilebilir. On beş yıllık bu uzun zaman dilimi, acıların unutulmadığını ve toplumsal hafızanın ne kadar diri olduğunu açıkça gösteriyor. Yaşanan kayıplar, benzer durumlar karşısında daha hazırlıklı olunması gerektiğini herkese hatırlatıyor. Eğer gerekli adımlar zamanında atılmazsa, benzer trajedilerin tekrarlanma riski her zaman masada kalacaktır.",
+    "editorNote": "Aradan geçen on beş yıla rağmen hatıralardaki sarsıntı dinmedi; acılar tazeliğini koruyor.",
+    "tags": [
+      "deprem",
+      "afet",
+      "hatıra",
+      "gündem"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "earthquake damaged building",
+    "source": "Haber3",
+    "sourceUrl": "https://www.haber3.com/guncel/3-sayfa/buyuk-depremin-uzerinden-15-yil-gecse-de-acilar-ilk-gunku-gibi-taze-haberi-6267767",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Interior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg/1280px-Interior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg",
+    "gorselKaynak": {
+      "yazar": "Adem",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Interior_of_a_damaged_building_after_7,8_magnitude_earthquake_in_Turkiye.jpg"
+    },
+    "publishedAt": "2026-10-23T08:42:00.000Z",
+    "generatedAt": "2026-10-23T08:50:21.249Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg/1280px-Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg",
+        "yazar": "Adem",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Exterior_of_a_damaged_building_after_7,8_magnitude_earthquake_in_Turkiye.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye_2.jpg/1280px-Exterior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye_2.jpg",
+        "yazar": "Adem",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Exterior_of_a_damaged_building_after_7,8_magnitude_earthquake_in_Turkiye_2.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "283231f604016c79",
     "title": "Aselsan, 442 milyon dolarlık dev savunma ihracatını resmen duyurdu",
     "slug": "aselsan-442-milyon-dolarlik-dev-savunma-ihracatini-resmen-duyurdu",
