@@ -52,9 +52,50 @@ function slugify(str) {
     .slice(0, 80);
 }
 
-function articleUrl(article) {
+/**
+ * Haber adresi; `source` verilirse UTM eklenir.
+ *
+ * UTM olmadan GA4, sosyal trafiği "direct" sayar ve hangi kanalın işe
+ * yaradığı görünmez. Kanal adı (telegram, x, bluesky...) utm_source olur.
+ */
+function articleUrl(article, source = "") {
   const slug = (article.slug && String(article.slug).trim()) || slugify(article.title || "");
-  return slug ? `${siteUrl()}/haber/${slug}/` : siteUrl();
+  const base = slug ? `${siteUrl()}/haber/${slug}/` : siteUrl();
+  if (!source) return base;
+  try {
+    const u = new URL(base);
+    u.searchParams.set("utm_source", source);
+    u.searchParams.set("utm_medium", "social");
+    u.searchParams.set("utm_campaign", "haber_paylas");
+    return u.href;
+  } catch {
+    return base;
+  }
+}
+
+/** Telegram chat_id: kanal kullanıcı adı düz yazıldıysa @ ekler. */
+function telegramChatId() {
+  const raw = String(
+    process.env.TELEGRAM_CHAT_ID || process.env.TELEGRAM_CHANNEL || ""
+  ).trim();
+  if (!raw) return "";
+  if (/^https?:\/\//i.test(raw)) {
+    const kanal = raw.match(/t\.me\/([^/?#]+)/i);
+    return kanal ? `@${kanal[1]}` : "";
+  }
+  if (raw.startsWith("@") || raw.startsWith("-") || /^\d+$/.test(raw)) return raw;
+  return `@${raw}`;
+}
+
+/** Kanal başına en fazla birkaç etiket üretir (Türkçe harfler korunur). */
+function hashtags(article, max = 3) {
+  const kaynak = [article.category, ...(Array.isArray(article.tags) ? article.tags : [])];
+  const etiketler = kaynak
+    .map((x) => String(x || "").trim())
+    .filter(Boolean)
+    .map((x) => `#${x.replace(/\s+/g, "").replace(/[^\p{L}\p{N}_]/gu, "")}`)
+    .filter((x) => x.length > 1);
+  return [...new Set(etiketler)].slice(0, max).join(" ");
 }
 
 function truncate(str, max) {
@@ -72,8 +113,8 @@ function escapeHtml(str) {
 }
 
 /** X/Bluesky için sınırlı uzunlukta metin üretir. */
-function buildPostText(article, { limit, urlWeight } = {}) {
-  const url = articleUrl(article);
+function buildPostText(article, { limit, urlWeight, source = "" } = {}) {
+  const url = articleUrl(article, source);
   const urlLen = urlWeight ?? url.length;
   const budget = Math.max(20, (limit || 300) - urlLen - 2);
   const title = String(article.title || "").trim();
@@ -89,11 +130,11 @@ function buildPostText(article, { limit, urlWeight } = {}) {
 }
 
 /** Telegram/Discord/Slack için daha uzun, okunaklı metin. */
-function baseText(article) {
+function baseText(article, source = "") {
   const parts = [String(article.title || "").trim()];
   const summary = truncate(article.summary || "", 280);
   if (summary) parts.push(summary);
-  parts.push(articleUrl(article));
+  parts.push(articleUrl(article, source));
   return parts.join("\n\n");
 }
 
@@ -101,7 +142,9 @@ function telegramText(article) {
   let out = `<b>${escapeHtml(article.title)}</b>`;
   const summary = truncate(article.summary || "", 280);
   if (summary) out += `\n\n${escapeHtml(summary)}`;
-  out += `\n\n🔗 <a href="${escapeHtml(articleUrl(article))}">Haberi oku</a>`;
+  const etiket = hashtags(article, 3);
+  if (etiket) out += `\n\n${escapeHtml(etiket)}`;
+  out += `\n\n🔗 <a href="${escapeHtml(articleUrl(article, "telegram"))}">Haberi oku</a>`;
   return out;
 }
 
@@ -128,7 +171,7 @@ async function postJson(url, { headers = {}, body, timeout = 20000 } = {}) {
 
 async function shareTelegram(article) {
   const token = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
+  const chatId = telegramChatId();
   if (!token || !chatId) return;
   await postJson(`https://api.telegram.org/bot${token}/sendMessage`, {
     body: {
@@ -136,6 +179,12 @@ async function shareTelegram(article) {
       text: telegramText(article),
       parse_mode: "HTML",
       disable_web_page_preview: false,
+      // Satır içi düğme, mesaj önizlemesinden daha yüksek tıklama getirir.
+      reply_markup: {
+        inline_keyboard: [
+          [{ text: "📖 Haberi oku", url: articleUrl(article, "telegram") }],
+        ],
+      },
     },
   });
 }
@@ -143,13 +192,13 @@ async function shareTelegram(article) {
 async function shareDiscord(article) {
   const url = process.env.DISCORD_WEBHOOK_URL;
   if (!url) return;
-  await postJson(url, { body: { content: baseText(article) } });
+  await postJson(url, { body: { content: baseText(article, "discord") } });
 }
 
 async function shareSlack(article) {
   const url = process.env.SLACK_WEBHOOK_URL;
   if (!url) return;
-  await postJson(url, { body: { text: baseText(article) } });
+  await postJson(url, { body: { text: baseText(article, "slack") } });
 }
 
 async function shareWebhook(article) {
@@ -159,7 +208,7 @@ async function shareWebhook(article) {
     body: {
       title: article.title,
       summary: article.summary || "",
-      url: articleUrl(article),
+      url: articleUrl(article, "webhook"),
       category: article.category || "",
       // TELİF: kaynak sitelerin görselleri paylaşılmaz; kendi markalı görselimiz kullanılır.
       image: `${siteUrl()}/og-default.png`,
@@ -195,7 +244,7 @@ async function shareBluesky(article) {
   const did = session?.did;
   if (!token || !did) throw new Error("Bluesky oturumu açılamadı");
 
-  const text = buildPostText(article, { limit: BSKY_LIMIT });
+  const text = buildPostText(article, { limit: BSKY_LIMIT, source: "bluesky" });
   const record = {
     $type: "app.bsky.feed.post",
     text,
@@ -263,7 +312,13 @@ async function shareX(article) {
 
   await postJson(url, {
     headers: { Authorization: authorization },
-    body: { text: buildPostText(article, { limit: X_LIMIT, urlWeight: X_URL_WEIGHT }) },
+    body: {
+      text: buildPostText(article, {
+        limit: X_LIMIT,
+        urlWeight: X_URL_WEIGHT,
+        source: "x",
+      }),
+    },
   });
 
   console.warn("Not: X/Twitter paylaşımı canlı ortamda doğrulanmadı (OAuth 1.0a manuel imzalandı).");
@@ -274,7 +329,9 @@ function channels() {
   return [
     {
       name: "telegram",
-      enabled: !!(process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID),
+      // TELEGRAM_CHAT_ID gizli tutulur; kanal kullanıcı adı (TELEGRAM_CHANNEL)
+      // da yeterlidir: chat_id alanı @kanal biçimini kabul eder.
+      enabled: !!(process.env.TELEGRAM_BOT_TOKEN && telegramChatId()),
       run: shareTelegram,
     },
     { name: "discord", enabled: !!process.env.DISCORD_WEBHOOK_URL, run: shareDiscord },

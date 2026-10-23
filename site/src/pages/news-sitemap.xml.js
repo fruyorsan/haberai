@@ -22,6 +22,9 @@ export function GET({ site }) {
     .map((a) => {
       const loc = `${origin}${a.url}`;
       const date = new Date(a.publishedAt || a.generatedAt).toISOString();
+      const kw = Array.isArray(a.tags)
+        ? a.tags.filter(Boolean).slice(0, 12).join(", ")
+        : "";
       return `  <url>
     <loc>${escapeXml(loc)}</loc>
     <news:news>
@@ -30,7 +33,9 @@ export function GET({ site }) {
         <news:language>tr</news:language>
       </news:publication>
       <news:publication_date>${date}</news:publication_date>
-      <news:title>${escapeXml(a.title)}</news:title>
+      <news:title>${escapeXml(a.title)}</news:title>${
+        kw ? `\n      <news:keywords>${escapeXml(kw)}</news:keywords>` : ""
+      }
     </news:news>
   </url>`;
     })

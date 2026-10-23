@@ -1,5 +1,6 @@
 ---
 import { getCategories, getArticles } from "../lib/articles.js";
+import { SOSYAL_LINKLER } from "../lib/site-meta.js";
 
 const year = new Date().getFullYear();
 // Sayaç TÜM kategorileri sayar (kod öncesinde slice edilmiş listeyi sayıyordu ve
@@ -27,6 +28,15 @@ const son = getArticles().slice(0, 5);
         <span class="footer__sep">•</span>
         <span>dakikalar içinde güncellenir</span>
       </div>
+      {SOSYAL_LINKLER.length > 0 && (
+        <div class="footer__social" aria-label="Sosyal kanallar">
+          {SOSYAL_LINKLER.map((s) => (
+            <a href={s.url} target="_blank" rel="me noopener">
+              {s.ad}
+            </a>
+          ))}
+        </div>
+      )}
     </div>
 
     <div class="footer__col">
@@ -133,6 +143,26 @@ const son = getArticles().slice(0, 5);
     color: #8b93a1;
   }
   .footer__stats strong {
+    color: #fff;
+  }
+  .footer__social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .footer__social a {
+    border: 1px solid #343a44;
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #e7e9ee;
+    transition: background 0.18s var(--ease), border-color 0.18s var(--ease);
+  }
+  .footer__social a:hover {
+    background: var(--red);
+    border-color: var(--red);
     color: #fff;
   }
   .footer__sep {

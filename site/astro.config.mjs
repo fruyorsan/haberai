@@ -60,7 +60,10 @@ export default defineConfig({
         !page.includes("/akis/kategori/") &&
         // Hesap ve profil sayfaları noindex'tir; site haritasına girmez.
         !page.includes("/hesap/") &&
-        !page.includes("/profil/"),
+        !page.includes("/profil/") &&
+        // Arama sayfası da noindex'tir (içeriği istemci tarafında üretilir);
+        // robots.txt'te de kapalıdır, site haritasında hiç görünmemeli.
+        !page.includes("/ara/"),
       serialize(item) {
         const iso = lastmod(new URL(item.url).pathname);
         return iso ? { ...item, lastmod: iso } : item;

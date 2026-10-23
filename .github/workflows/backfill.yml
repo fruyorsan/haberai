@@ -85,6 +85,13 @@ jobs:
           ADSENSE_SLOT_LISTE: ${{ vars.ADSENSE_SLOT_LISTE }}
           # Bildirim zili (bkz. pipeline.yml): bos ise zil hic basilmaz.
           ONESIGNAL_APP_ID: ${{ vars.ONESIGNAL_APP_ID }}
+          # Yorumlar ve sosyal kanallar (bkz. pipeline.yml): bosken ilgili
+          # arayuz sessizce gizlenir, kirik baglanti olmaz.
+          YORUM_URL: ${{ vars.YORUM_URL }}
+          YORUM_ANON: ${{ vars.YORUM_ANON }}
+          TELEGRAM_URL: ${{ vars.TELEGRAM_URL }}
+          X_URL: ${{ vars.X_URL }}
+          BLUESKY_URL: ${{ vars.BLUESKY_URL }}
         run: cd site && npm run build
 
       - name: GitHub Pages'e yayinla

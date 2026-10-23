@@ -1,0 +1,251 @@
+---
+// Yazı sonu bildirim istemi: modal değildir, okuma bitince görünür.
+// OneSignal tanımlı değilse hiçbir şey basılmaz; Telegram kanalı varsa
+// bildirime ek olarak kanal bağlantısı gösterilir.
+import { ONESIGNAL_APP_ID, TELEGRAM_URL } from "../lib/site-meta.js";
+
+const aktif = Boolean(String(ONESIGNAL_APP_ID || "").trim());
+const telegram = String(TELEGRAM_URL || "").trim();
+---
+
+{aktif && (
+  <aside class="pushcta" data-push-cta hidden aria-label="Bildirim önerisi">
+    <span class="pushcta__ikon" aria-hidden="true">🔔</span>
+    <div class="pushcta__govde">
+      <strong class="pushcta__baslik">Son dakika haberlerini kaçırma</strong>
+      <p class="pushcta__metin">
+        Bildirimleri aç; önemli gelişmeleri ve seçtiğin konuları anında gönderelim.
+        İstediğin an kapatabilirsin.
+      </p>
+    </div>
+    <div class="pushcta__eylem">
+      <button type="button" class="pushcta__btn" data-push-ac>Bildirimleri aç</button>
+      <button type="button" class="pushcta__sonra" data-push-sonra>Daha sonra</button>
+      {telegram && (
+        <a class="pushcta__sosyal" href={telegram} target="_blank" rel="noopener">
+          Telegram kanalı
+        </a>
+      )}
+    </div>
+  </aside>
+)}
+
+<script>
+  const kart = document.querySelector<HTMLElement>("[data-push-cta]");
+  if (kart) {
+    const buton = kart.querySelector<HTMLButtonElement>("[data-push-ac]");
+    const sonra = kart.querySelector<HTMLButtonElement>("[data-push-sonra]");
+    const baslik = kart.querySelector<HTMLElement>(".pushcta__baslik");
+    const metin = kart.querySelector<HTMLElement>(".pushcta__metin");
+    const KAPAT = "bildirim-cta-kapat";
+    const api = () => (window as any).HaberinaiPush;
+    const aboneMi = () => {
+      try {
+        return localStorage.getItem("bildirim-abone") === "true";
+      } catch {
+        return false;
+      }
+    };
+    const ga = (ad: string) => {
+      try {
+        (window as any).gtag?.("event", ad, { method: "makale_sonu" });
+      } catch {
+        /* ölçüm hatası akışı bozmaz */
+      }
+    };
+
+    const goster = () => {
+      const H = api();
+      if (!H) {
+        kart.remove();
+        return;
+      }
+      // Tarayıcı izni kalıcı olarak engelliyse ölü düğme göstermeyelim; ama
+      // Telegram kanalı tanımlıysa okuyucuya tek kalan ücretsiz yolu sunalım.
+      if (H.izinEngelli?.()) {
+        const sosyal = kart.querySelector<HTMLAnchorElement>(".pushcta__sosyal");
+        if (!sosyal) {
+          kart.remove();
+          return;
+        }
+        if (baslik) baslik.textContent = "Bildirimler tarayıcıda kapalı";
+        if (metin) {
+          metin.textContent =
+            "Tarayıcı bildirimlerine izin vermemişsin. Haberleri Telegram kanalından takip edebilirsin.";
+        }
+        if (buton) buton.hidden = true;
+        if (sonra) sonra.textContent = "Kapat";
+        kart.hidden = false;
+        return;
+      }
+      // İzin var ve abonelik gerçekten kurulmuşsa istem gereksiz.
+      if (H.izinVerildi?.() && aboneMi()) {
+        kart.remove();
+        return;
+      }
+      try {
+        const t = Number(localStorage.getItem(KAPAT) || 0) || 0;
+        if (t && Date.now() - t < 14 * 24 * 60 * 60 * 1000) {
+          kart.remove();
+          return;
+        }
+      } catch {
+        /* localStorage kapalıysa istem gösterilir */
+      }
+      kart.hidden = false;
+    };
+
+    // Header'daki Bildirim bileşeni window.HaberinaiPush'u kurar; betik sırasına
+    // güvenmemek için kısa süre beklenir, gelmezse istem hiç gösterilmez.
+    let n = 0;
+    const bekle = setInterval(() => {
+      if (api() || n++ > 24) {
+        clearInterval(bekle);
+        goster();
+      }
+    }, 250);
+
+    sonra?.addEventListener("click", () => {
+      try {
+        localStorage.setItem(KAPAT, String(Date.now()));
+      } catch {
+        /* yok say */
+      }
+      ga("push_cta_dismiss");
+      kart.remove();
+    });
+
+    buton?.addEventListener("click", async () => {
+      const H = api();
+      if (!H) {
+        document.getElementById("bel-btn")?.click();
+        return;
+      }
+      // Başarıyla abone olduktan sonraki "Tamam" dokunuşu.
+      if (buton.dataset.tamam === "1") {
+        kart.remove();
+        return;
+      }
+      buton.disabled = true;
+      const eski = buton.textContent;
+      buton.textContent = "Açılıyor...";
+      try {
+        // ÖNEMLİ: izin penceresi dokunuşun içinde (await'ten önce) açılmalı.
+        // HaberinaiPush.aboneOl bunu senkron yapar, sonra aboneliği kurar.
+        const oldu =
+          typeof H.aboneOl === "function"
+            ? await H.aboneOl()
+            : (H.izinSor?.(), await H.aboneBaslat?.());
+        if (oldu) {
+          if (baslik) baslik.textContent = "Bildirimler açıldı 🎉";
+          if (metin) {
+            metin.textContent = "Son dakika ve seçtiğin konularda haber vereceğiz.";
+          }
+          buton.textContent = "Tamam";
+          buton.disabled = false;
+          buton.dataset.tamam = "1";
+          ga("push_subscribe");
+        } else {
+          if (metin) {
+            metin.textContent = H.izinEngelli?.()
+              ? "Tarayıcı bildirimleri engellemiş. Adres çubuğundaki kilit simgesinden izin verebilirsin."
+              : "Abonelik şu an kurulamadı. Zil düğmesinden tekrar deneyebilirsin.";
+          }
+          buton.textContent = "Tekrar dene";
+          buton.disabled = false;
+        }
+      } catch {
+        buton.textContent = eski || "Bildirimleri aç";
+        buton.disabled = false;
+      }
+    });
+  }
+</script>
+
+<style>
+  .pushcta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 20px 0 28px;
+    padding: 16px 18px;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--brand);
+    border-radius: 16px;
+    background: var(--surface);
+    box-shadow: 0 12px 30px -24px rgba(0, 0, 0, 0.5);
+  }
+  .pushcta[hidden] {
+    display: none;
+  }
+  .pushcta__ikon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  .pushcta__govde {
+    flex: 1 1 260px;
+    min-width: 0;
+  }
+  .pushcta__baslik {
+    display: block;
+    font-size: 1rem;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .pushcta__metin {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .pushcta__eylem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .pushcta__btn {
+    background: var(--brand);
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-weight: 800;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: background 0.18s var(--ease);
+  }
+  .pushcta__btn:hover {
+    background: var(--brand-fill-hover);
+  }
+  .pushcta__btn:disabled {
+    opacity: 0.7;
+    cursor: default;
+  }
+  .pushcta__sonra {
+    background: none;
+    border: 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+    cursor: pointer;
+    padding: 8px 4px;
+    text-decoration: underline;
+  }
+  .pushcta__sosyal {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--brand);
+  }
+  @media (max-width: 640px) {
+    .pushcta {
+      gap: 12px;
+    }
+    .pushcta__eylem {
+      width: 100%;
+    }
+    .pushcta__btn {
+      flex: 1;
+    }
+  }
+</style>

@@ -6,7 +6,7 @@ import FeaturedSlider from "../components/FeaturedSlider.astro";
 import { getArticles, getFeatured, getTags, imageUrl, imageSrcset, timeAgo, publishedISO } from "../lib/articles.js";
 import { kapakKaynagi } from "../lib/kapak.js";
 import { ilgiSirala } from "../lib/ilgi.js";
-import { siteOrigin, ADSENSE_SLOTS } from "../lib/site-meta.js";
+import { siteOrigin, ADSENSE_SLOTS, SOSYAL_LINKLER } from "../lib/site-meta.js";
 
 const articles = getArticles();
 // Shorts vitrini: ilgi sırasının en tepesindeki 4 haber (hepsi gerçek fotoğraflı).
@@ -74,7 +74,7 @@ const siteSchema = {
       },
     },
     {
-      "@type": "Organization",
+      "@type": "NewsMediaOrganization",
       "@id": origin + "/#organization",
       name: "HaberinAi",
       url: origin + "/",
@@ -85,6 +85,12 @@ const siteSchema = {
         width: 512,
         height: 512,
       },
+      // Google News/Discover güven sinyalleri: yayın ilkeleri ve düzeltme yolu.
+      publishingPrinciples: origin + "/hakkimizda/",
+      correctionsPolicy: origin + "/telif/",
+      ethicsPolicy: origin + "/hakkimizda/",
+      // Yalnızca gerçek hesaplar tanımlandıysa eklenir (kırık bağlantı olmaz).
+      ...(SOSYAL_LINKLER.length ? { sameAs: SOSYAL_LINKLER.map((s) => s.url) } : {}),
     },
   ],
 };

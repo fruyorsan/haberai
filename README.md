@@ -7,6 +7,10 @@ RSS kaynaklarından haber toplar, Google Gemini ile **özetler + kendi yorumunu 
 > Actions public depolarda ücretsiz çalışır; açık olması kullanım izni vermez.
 > Kopyalama, yeniden yayınlama ve türev site kurma yasaktır. Ayrıntı: [LICENSE](LICENSE).
 
+> **Trafik büyümesi:** Telegram/X/Bluesky dağıtımı, paylaşım düğmeleri, bildirim
+> istemi, Google News sitemap ve Search Console/Bing adımları için
+> [docs/trafik-buyume.md](docs/trafik-buyume.md).
+
 
 ## Kurulum
 

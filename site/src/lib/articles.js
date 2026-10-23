@@ -130,6 +130,22 @@ function normalizeSrc(src) {
   if (/wikimedia\.org\/wikipedia\/commons\/thumb\//i.test(s)) s = s.replace(/\/(1400|1600|1920)px-/i, "/1280px-");
   return s;
 }
+/**
+ * Sosyal kart / Google Discover görseli: 1200×630 JPEG.
+ *
+ * Sayfa içi görsel WebP ve 16:9 üretilirken paylaşım görselleri için JPEG
+ * kullanılır: WhatsApp, X, Facebook ve Telegram'ın kart önizlemesi JPEG/PNG
+ * bekler. `we` (without enlargement) BİLİNÇLİ olarak yoktur: Discover en az
+ * 1200 px genişlik ister; kaynak küçükse 1200'e büyütmek, küçük görselden iyidir.
+ */
+export function socialImageUrl(src, width = 1200, height = 630, quality = 82) {
+  src = normalizeSrc(src);
+  if (!src || !/^https?:\/\//i.test(src)) return src || "";
+  if (process.env.NO_IMAGE_PROXY) return src;
+  try { if (DIRECT_IMAGE_HOSTS.test(new URL(src).hostname)) return src; } catch {}
+  return `https://wsrv.nl/?url=${encodeURIComponent(src)}&w=${Math.round(width)}&h=${Math.round(height)}&fit=cover&output=jpg&q=${quality}`;
+}
+
 export function imageUrl(src, width = 800, quality = 85) {
   src = normalizeSrc(src);
   try { if (src && DIRECT_IMAGE_HOSTS.test(new URL(src).hostname)) return src; } catch {}

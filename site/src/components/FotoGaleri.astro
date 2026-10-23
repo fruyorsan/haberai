@@ -1,0 +1,624 @@
+---
+// Haber fotoğraf galerisi.
+//
+// Amaç: haberin kendi ek fotoğrafları + aynı konudaki diğer haberlerin
+// doğrulanmış kapaklarını tek, kaliteli bir galeride toplamak. Böylece
+// "detay görmek isteyen" okur sayfadan ayrılmadan fotoğrafları büyütebilir.
+//
+// Fotoğraf yoksa veya 3'ten azsa galeri hiç basılmaz; boş kutu görünmez.
+// JavaScript yoksa kartlar doğrudan kaynağa/ilgili habere gider.
+import { imageUrl, imageSrcset } from "../lib/articles.js";
+
+const {
+  fotograflar = [],
+  baslik = "Fotoğraflarla haber",
+  id = "galeri",
+} = Astro.props;
+
+const liste = (Array.isArray(fotograflar) ? fotograflar : [])
+  .filter((p) => p && typeof p.url === "string" && /^https?:\/\//i.test(p.url))
+  .slice(0, 6);
+
+const adet = liste.length;
+const gridSinif = `galeri__grid--${adet}`;
+
+const boyutlar = (i) =>
+  i === 0 && adet >= 5
+    ? "(max-width: 680px) 100vw, (max-width: 900px) 100vw, 66vw"
+    : "(max-width: 680px) 50vw, (max-width: 900px) 50vw, 33vw";
+---
+
+{adet >= 3 && (
+  <section class="galeri" id={id} data-galeri aria-labelledby={`${id}-baslik`}>
+    <div class="galeri__head">
+      <div class="galeri__head-metin">
+        <span class="galeri__eyebrow">FOTO GALERİ</span>
+        <h2 class="galeri__baslik" id={`${id}-baslik`}>{baslik}</h2>
+      </div>
+      <span class="galeri__adet">{adet} fotoğraf</span>
+    </div>
+
+    <div class:list={["galeri__grid", gridSinif]}>
+      {liste.map((p, i) => {
+        const dis = /^https?:\/\//i.test(String(p.href || ""));
+        return (
+          <a
+            class="galeri__kart"
+            href={p.href || p.url}
+            target={dis ? "_blank" : undefined}
+            rel={dis ? "noopener nofollow" : undefined}
+            data-galeri-ac={i}
+            data-full={imageUrl(p.url, 1600)}
+            data-full-srcset={imageSrcset(p.url, [1000, 1600]) || undefined}
+            data-orig={p.url}
+            data-alt={p.alt || p.caption || baslik}
+            data-caption={p.caption || ""}
+            data-credit={p.credit || ""}
+            data-href={p.href || ""}
+            data-href-label={p.hrefLabel || ""}
+            aria-label={`Fotoğrafı büyüt: ${p.alt || p.caption || baslik}`}
+          >
+            <img
+              src={imageUrl(p.url, 720)}
+              srcset={imageSrcset(p.url, [480, 720, 1080]) || undefined}
+              sizes={boyutlar(i)}
+              alt={p.alt || p.caption || "Haber fotoğrafı"}
+              width="720"
+              height="405"
+              loading="lazy"
+              decoding="async"
+              referrerpolicy="no-referrer"
+              onerror="this.closest('a')?.remove()"
+            />
+            <span class="galeri__perde" aria-hidden="true"></span>
+            <span
+              class:list={[
+                "galeri__rozet",
+                p.tur === "ilgili" && "galeri__rozet--ilgili",
+              ]}
+            >
+              {p.tur === "ilgili" ? "İlgili haber" : "Haber fotoğrafı"}
+            </span>
+            <span class="galeri__buyut" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="7" />
+                <path d="m20 20-3.2-3.2M11 8v6M8 11h6" />
+              </svg>
+            </span>
+            {i === 0 && p.caption && (
+              <span class="galeri__altyazi">{p.caption}</span>
+            )}
+          </a>
+        );
+      })}
+    </div>
+
+    <p class="galeri__ipucu">
+      Fotoğrafa dokunarak büyüt; galeride oklarla gez.
+    </p>
+
+    <dialog class="galeri__dialog" data-galeri-dialog aria-label="Fotoğraf galerisi">
+      <div class="galeri__dialog-ic">
+        <div class="galeri__ust">
+          <span class="galeri__sayac" data-galeri-sayac aria-live="polite">1 / {adet}</span>
+          <button
+            type="button"
+            class="galeri__kapat"
+            data-galeri-kapat
+            aria-label="Galeriyi kapat"
+            title="Kapat"
+          >
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <path d="m6 6 12 12M18 6 6 18" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="galeri__sahne">
+          <button
+            type="button"
+            class="galeri__ok galeri__ok--sol"
+            data-galeri-onceki
+            aria-label="Önceki fotoğraf"
+            title="Önceki"
+          >
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m15 5-7 7 7 7" />
+            </svg>
+          </button>
+
+          <img data-galeri-img alt="" decoding="async" />
+
+          <button
+            type="button"
+            class="galeri__ok galeri__ok--sag"
+            data-galeri-sonraki
+            aria-label="Sonraki fotoğraf"
+            title="Sonraki"
+          >
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m9 5 7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="galeri__alt">
+          <strong class="galeri__alt-baslik" data-galeri-baslik></strong>
+          <span class="galeri__alt-kredi" data-galeri-kredi></span>
+          <a class="galeri__alt-link" data-galeri-link target="_blank" rel="noopener nofollow" hidden></a>
+        </div>
+      </div>
+    </dialog>
+  </section>
+)}
+
+<script>
+  document.querySelectorAll<HTMLElement>("[data-galeri]").forEach((galeri) => {
+    const kartlar = Array.from(
+      galeri.querySelectorAll<HTMLAnchorElement>("[data-galeri-ac]")
+    );
+    const dialog = galeri.querySelector<HTMLDialogElement>("[data-galeri-dialog]");
+    if (!dialog || kartlar.length < 1) return;
+
+    const img = dialog.querySelector<HTMLImageElement>("[data-galeri-img]");
+    const baslik = dialog.querySelector<HTMLElement>("[data-galeri-baslik]");
+    const kredi = dialog.querySelector<HTMLElement>("[data-galeri-kredi]");
+    const link = dialog.querySelector<HTMLAnchorElement>("[data-galeri-link]");
+    const sayac = dialog.querySelector<HTMLElement>("[data-galeri-sayac]");
+    const onceki = dialog.querySelector<HTMLButtonElement>("[data-galeri-onceki]");
+    const sonraki = dialog.querySelector<HTMLButtonElement>("[data-galeri-sonraki]");
+    const kapatBtn = dialog.querySelector<HTMLButtonElement>("[data-galeri-kapat]");
+    if (!img || !baslik || !kredi || !link || !sayac) return;
+
+    const veri = kartlar.map((k) => ({
+      full: k.dataset.full || k.getAttribute("href") || "",
+      srcset: k.dataset.fullSrcset || "",
+      orig: k.dataset.orig || "",
+      alt: k.dataset.alt || "",
+      caption: k.dataset.caption || "",
+      credit: k.dataset.credit || "",
+      href: k.dataset.href || "",
+      hrefLabel: k.dataset.hrefLabel || "",
+    }));
+
+    let aktif = 0;
+    let donusOdak: Element | null = null;
+
+    const ciz = () => {
+      const p = veri[aktif];
+      if (!p) return;
+
+      img.src = p.full;
+      if (p.srcset) img.srcset = p.srcset;
+      else img.removeAttribute("srcset");
+      img.alt = p.alt;
+      img.dataset.orig = p.orig;
+
+      baslik.textContent = p.caption;
+      kredi.textContent = p.credit;
+
+      if (p.href) {
+        link.href = p.href;
+        link.textContent = p.hrefLabel || "Kaynağa git";
+        link.hidden = false;
+        if (/^https?:\/\//i.test(p.href)) {
+          link.target = "_blank";
+          link.rel = "noopener nofollow";
+        } else {
+          link.removeAttribute("target");
+          link.removeAttribute("rel");
+        }
+      } else {
+        link.hidden = true;
+      }
+
+      sayac.textContent = `${aktif + 1} / ${veri.length}`;
+      if (onceki) onceki.disabled = aktif === 0;
+      if (sonraki) sonraki.disabled = aktif === veri.length - 1;
+    };
+
+    const ac = (i: number) => {
+      aktif = Math.max(0, Math.min(i, veri.length - 1));
+      ciz();
+      donusOdak = document.activeElement;
+      document.body.style.overflow = "hidden";
+      if (typeof dialog.showModal === "function") dialog.showModal();
+      else dialog.setAttribute("open", "");
+      kapatBtn?.focus();
+    };
+
+    const kapat = () => {
+      if (dialog.open && typeof dialog.close === "function") dialog.close();
+      else {
+        dialog.removeAttribute("open");
+        document.body.style.overflow = "";
+        if (donusOdak instanceof HTMLElement) donusOdak.focus();
+      }
+    };
+
+    kartlar.forEach((k, i) => {
+      k.addEventListener("click", (e) => {
+        e.preventDefault();
+        ac(i);
+      });
+    });
+
+    kapatBtn?.addEventListener("click", kapat);
+
+    onceki?.addEventListener("click", () => {
+      if (aktif > 0) {
+        aktif--;
+        ciz();
+      }
+    });
+
+    sonraki?.addEventListener("click", () => {
+      if (aktif < veri.length - 1) {
+        aktif++;
+        ciz();
+      }
+    });
+
+    // Boş alana (backdrop) tıklayınca kapan.
+    dialog.addEventListener("click", (e) => {
+      if (e.target === dialog) kapat();
+    });
+
+    dialog.addEventListener("close", () => {
+      document.body.style.overflow = "";
+      if (donusOdak instanceof HTMLElement) donusOdak.focus();
+    });
+
+    dialog.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        if (aktif > 0) {
+          aktif--;
+          ciz();
+        }
+      }
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        if (aktif < veri.length - 1) {
+          aktif++;
+          ciz();
+        }
+      }
+    });
+
+    img.addEventListener("error", () => {
+      if (img.dataset.orig && img.src !== img.dataset.orig) {
+        img.removeAttribute("srcset");
+        img.src = img.dataset.orig;
+      }
+    });
+  });
+</script>
+
+<style>
+  .galeri {
+    margin: 26px 0 30px;
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--surface);
+    box-shadow: 0 14px 34px -28px rgba(15, 23, 42, 0.4);
+  }
+  .galeri__head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+  .galeri__head-metin {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+  }
+  .galeri__eyebrow {
+    color: var(--brand);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+  }
+  .galeri__baslik {
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+  .galeri__adet {
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-size: 0.74rem;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+  .galeri__grid {
+    display: grid;
+    gap: 8px;
+  }
+  .galeri__grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .galeri__grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .galeri__grid--5,
+  .galeri__grid--6 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .galeri__grid--5 .galeri__kart:first-child,
+  .galeri__grid--6 .galeri__kart:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  .galeri__kart {
+    position: relative;
+    display: block;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 12px;
+    background: var(--surface-2);
+    isolation: isolate;
+  }
+  .galeri__kart:focus-visible {
+    outline: 3px solid var(--brand);
+    outline-offset: 3px;
+  }
+  .galeri__kart img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s var(--ease), filter 0.3s var(--ease);
+  }
+  .galeri__kart:hover img {
+    transform: scale(1.035);
+    filter: brightness(1.06);
+  }
+  .galeri__perde {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 48%, rgba(0, 0, 0, 0.58) 100%);
+    pointer-events: none;
+  }
+  .galeri__rozet {
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    padding: 4px 8px;
+    border-radius: 7px;
+    background: color-mix(in srgb, var(--brand) 88%, #000);
+    color: #fff;
+    font-size: 0.63rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    backdrop-filter: blur(4px);
+  }
+  .galeri__rozet--ilgili {
+    background: rgba(15, 23, 42, 0.78);
+  }
+  .galeri__buyut {
+    position: absolute;
+    right: 9px;
+    bottom: 9px;
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    backdrop-filter: blur(4px);
+  }
+  .galeri__altyazi {
+    position: absolute;
+    left: 12px;
+    right: 48px;
+    bottom: 10px;
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1.35;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.65);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .galeri__ipucu {
+    margin: 10px 2px 0;
+    color: var(--muted);
+    font-size: 0.74rem;
+  }
+
+  /* --- Büyütme penceresi --- */
+  .galeri__dialog {
+    width: min(1120px, calc(100vw - 24px));
+    max-width: none;
+    max-height: calc(100vh - 24px);
+    margin: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 18px;
+    background: transparent;
+    color: #fff;
+    overflow: visible;
+  }
+  .galeri__dialog::backdrop {
+    background: rgba(4, 6, 10, 0.86);
+    backdrop-filter: blur(5px);
+  }
+  .galeri__dialog-ic {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    background: #0b0d12;
+    box-shadow: 0 30px 90px -30px rgba(0, 0, 0, 0.9);
+    animation: galeriGir 0.22s var(--ease) both;
+  }
+  .galeri__ust {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 9px 12px;
+    background: #11141b;
+  }
+  .galeri__sayac {
+    color: #cdd3df;
+    font-size: 0.78rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .galeri__kapat {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.18s var(--ease);
+  }
+  .galeri__kapat:hover {
+    background: rgba(255, 255, 255, 0.16);
+  }
+  .galeri__sahne {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: min(64vh, 560px);
+    background: #050608;
+  }
+  .galeri__sahne img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: 72vh;
+    height: auto;
+    object-fit: contain;
+  }
+  .galeri__ok {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    cursor: pointer;
+    transform: translateY(-50%);
+    backdrop-filter: blur(6px);
+    transition: background 0.18s var(--ease), opacity 0.18s var(--ease);
+  }
+  .galeri__ok:hover:not(:disabled) {
+    background: var(--brand);
+  }
+  .galeri__ok:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+  .galeri__ok--sol {
+    left: 10px;
+  }
+  .galeri__ok--sag {
+    right: 10px;
+  }
+  .galeri__alt {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px 16px 15px;
+    background: #11141b;
+  }
+  .galeri__alt-baslik {
+    color: #fff;
+    font-size: 0.94rem;
+    line-height: 1.4;
+  }
+  .galeri__alt-kredi {
+    color: #9aa4b5;
+    font-size: 0.74rem;
+  }
+  .galeri__alt-link {
+    align-self: flex-start;
+    margin-top: 4px;
+    color: #ff7a7a;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+  .galeri__alt-link:hover {
+    text-decoration: underline;
+  }
+  @keyframes galeriGir {
+    from {
+      opacity: 0;
+      transform: translateY(8px) scale(0.985);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @media (max-width: 680px) {
+    .galeri {
+      padding: 12px;
+      border-radius: 15px;
+    }
+    .galeri__grid--3,
+    .galeri__grid--4,
+    .galeri__grid--5,
+    .galeri__grid--6 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .galeri__grid--5 .galeri__kart:first-child,
+    .galeri__grid--6 .galeri__kart:first-child {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+    .galeri__sahne {
+      min-height: 0;
+    }
+    .galeri__sahne img {
+      max-height: 62vh;
+    }
+    .galeri__ok {
+      width: 36px;
+      height: 36px;
+    }
+    .galeri__ok--sol {
+      left: 6px;
+    }
+    .galeri__ok--sag {
+      right: 6px;
+    }
+    .galeri__alt {
+      padding: 10px 12px 12px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .galeri__kart img,
+    .galeri__dialog-ic,
+    .galeri__ok,
+    .galeri__kapat {
+      transition: none;
+      animation: none;
+    }
+  }
+</style>

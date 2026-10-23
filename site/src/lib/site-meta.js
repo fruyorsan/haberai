@@ -34,6 +34,28 @@ export function siteOrigin(astroSite) {
 export const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "haberai@yahoo.com";
 
 /**
+ * Sosyal kanal adresleri (opsiyonel).
+ *
+ * Hepsi boşken sitede hiçbir sosyal bağlantı basılmaz; böylece hesap açılmadan
+ * kırık "Telegram'da takip et" düğmesi görünmez. Kanal açıldığında GitHub
+ * değişkeni olarak tanımlanır ve bir sonraki derlemede footer + schema'ya girer:
+ *   gh variable set TELEGRAM_URL --body "https://t.me/haberinai"
+ *   gh variable set X_URL --body "https://x.com/haberinai"
+ *   gh variable set BLUESKY_URL --body "https://bsky.app/profile/haberinai.bsky.social"
+ */
+const sosyalAdres = (value) => String(value || "").trim().replace(/\/+$/, "");
+
+export const TELEGRAM_URL = sosyalAdres(process.env.TELEGRAM_URL);
+export const X_URL = sosyalAdres(process.env.X_URL);
+export const BLUESKY_URL = sosyalAdres(process.env.BLUESKY_URL);
+
+export const SOSYAL_LINKLER = [
+  { ad: "Telegram", url: TELEGRAM_URL },
+  { ad: "X", url: X_URL },
+  { ad: "Bluesky", url: BLUESKY_URL },
+].filter((x) => x.url);
+
+/**
  * AdSense yayıncı kimliği (ör. "ca-pub-1234567890123456").
  *
  * Boşken reklam kodu ve reklam alanları HİÇ eklenmez; onaysız siteye reklam

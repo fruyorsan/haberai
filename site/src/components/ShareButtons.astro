@@ -1,33 +1,66 @@
 ---
-const { url, title, slug = "" } = Astro.props;
+// Paylaşım düğmeleri. İki yerde kullanılır: başlığın altında (inline) ve
+// yazının sonunda (end). Her tıklama GA4'e "share" olayı olarak gider ve
+// paylaşılan bağlantıya kanal bazlı UTM eklenir; böylece hangi kanalın
+// gerçekten okur getirdiği ölçülebilir.
+const { url = "", title = "", slug = "", label = "Paylaş", variant = "inline" } = Astro.props;
 
-const u = encodeURIComponent(url);
+// Kanonik adres: fragment atılır (başlığa çapa paylaşılmasın).
+const base = String(url || "").split("#")[0];
 const t = encodeURIComponent(title);
+
+/** Paylaşılan adrese kanal bazlı UTM ekler (yalnızca geçerli mutlak adreste). */
+function utmli(source) {
+  try {
+    const u = new URL(base);
+    u.searchParams.set("utm_source", source);
+    u.searchParams.set("utm_medium", "social");
+    u.searchParams.set("utm_campaign", "haber_paylas");
+    return u.href;
+  } catch {
+    return base;
+  }
+}
 
 const links = [
   {
     label: "WhatsApp",
-    href: `https://wa.me/?text=${t}%20${u}`,
+    method: "whatsapp",
+    href: `https://wa.me/?text=${t}%20${encodeURIComponent(utmli("whatsapp"))}`,
     cls: "wa",
     path: "M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 1.67c4.54 0 8.24 3.7 8.24 8.24s-3.7 8.24-8.24 8.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1.01 2.56.13.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.4.51.59.19 1.12.16 1.55.1.47-.07 1.45-.59 1.66-1.17.2-.57.2-1.06.14-1.17-.06-.1-.22-.16-.47-.28-.25-.12-1.45-.72-1.68-.8-.22-.09-.39-.13-.55.12-.17.25-.64.8-.79.97-.14.16-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.38-1.73-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.44.12-.14.16-.25.25-.41.08-.17.04-.31-.03-.44-.06-.12-.54-1.32-.75-1.81-.19-.46-.39-.46-.55-.47z",
   },
   {
+    label: "Telegram",
+    method: "telegram",
+    href: `https://t.me/share/url?url=${encodeURIComponent(utmli("telegram"))}&text=${t}`,
+    cls: "tg",
+    path: "M21.94 4.6 18.9 19.2c-.23 1.02-.84 1.27-1.7.79l-4.7-3.47-2.27 2.19c-.25.25-.46.46-.94.46l.33-4.78L18.3 6.6c.38-.34-.08-.53-.59-.19L5.87 13.75l-4.6-1.44c-1-.31-1.02-1 .21-1.48l17.9-6.9c.83-.31 1.56.2 1.29 1.3z",
+  },
+  {
     label: "X",
-    href: `https://twitter.com/intent/tweet?text=${t}&url=${u}`,
+    method: "x",
+    href: `https://twitter.com/intent/tweet?text=${t}&url=${encodeURIComponent(utmli("x"))}`,
     cls: "x",
     path: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z",
   },
   {
     label: "Facebook",
-    href: `https://www.facebook.com/sharer/sharer.php?u=${u}`,
+    method: "facebook",
+    href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(utmli("facebook"))}`,
     cls: "fb",
     path: "M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z",
   },
 ];
 ---
 
-<div class="share" data-url={url}>
-  <span class="share__label">Paylaş</span>
+<div
+  class:list={["share", variant === "end" && "share--end"]}
+  data-url={base}
+  data-title={title}
+  data-slug={slug}
+>
+  <span class="share__label">{label}</span>
   <div class="share__row">
     {links.map((l) => (
       <a
@@ -35,6 +68,7 @@ const links = [
         href={l.href}
         target="_blank"
         rel="noopener nofollow"
+        data-share={l.method}
         aria-label={`${l.label} ile paylaş`}
         title={`${l.label} ile paylaş`}
       >
@@ -43,6 +77,21 @@ const links = [
         </svg>
       </a>
     ))}
+    <button
+      type="button"
+      class="share__btn share__btn--native"
+      data-native-share
+      hidden
+      aria-label="Diğer uygulamalarda paylaş"
+      title="Diğer uygulamalarda paylaş"
+    >
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="18" cy="5" r="3" />
+        <circle cx="6" cy="12" r="3" />
+        <circle cx="18" cy="19" r="3" />
+        <path d="m8.6 10.6 6.8-4.2M8.6 13.4l6.8 4.2" />
+      </svg>
+    </button>
     <button
       type="button"
       class="share__btn share__btn--copy"
@@ -74,6 +123,42 @@ const links = [
 </div>
 
 <script>
+  // GA4 olayı: paylaşım düğmelerinin gerçekten kullanılıp kullanılmadığını
+  // ölçer. gtag erken kuyruğa alınır (Base.astro), bu yüzden betik gelmeden
+  // yapılan tıklamalar da kaybolmaz.
+  const gaOlay = (method: string, box: Element | null) => {
+    try {
+      const g = (window as any).gtag;
+      if (typeof g !== "function") return;
+      g("event", "share", {
+        method,
+        content_type: "article",
+        item_id: box?.getAttribute("data-slug") || undefined,
+      });
+    } catch {
+      /* ölçüm başarısız olsa da paylaşım çalışır */
+    }
+  };
+
+  /** İstemci tarafında UTM ekler (yerel paylaşımda kanal bilgisi kaybolmasın). */
+  const utmli = (raw: string, source: string) => {
+    try {
+      const u = new URL(raw, location.origin);
+      u.searchParams.set("utm_source", source);
+      u.searchParams.set("utm_medium", "social");
+      u.searchParams.set("utm_campaign", "haber_paylas");
+      return u.href;
+    } catch {
+      return raw;
+    }
+  };
+
+  document.querySelectorAll<HTMLAnchorElement>(".share a[data-share]").forEach((a) => {
+    a.addEventListener("click", () =>
+      gaOlay(a.getAttribute("data-share") || "link", a.closest(".share"))
+    );
+  });
+
   document.querySelectorAll(".share__btn--copy").forEach((btn) => {
     btn.addEventListener("click", async () => {
       const box = btn.closest(".share");
@@ -88,6 +173,7 @@ const links = [
         document.execCommand("copy");
         ta.remove();
       }
+      gaOlay("copy_link", box);
       btn.classList.add("is-done");
       const old = btn.getAttribute("title");
       btn.setAttribute("title", "Kopyalandı!");
@@ -99,8 +185,9 @@ const links = [
   });
 
   // --- Okuma listesine kaydet (hesaba bağlı) ---
-  const kaydetBtn = document.querySelector<HTMLButtonElement>(".share__btn--kaydet");
-  if (kaydetBtn) {
+  // querySelectorAll: ShareButtons iki kez basılabildiği için (üst + yazı sonu)
+  // her düğme kendi haberine bağlanır.
+  document.querySelectorAll<HTMLButtonElement>(".share__btn--kaydet").forEach((kaydetBtn) => {
     const H = (window as any).HaberinAi;
     const slug = kaydetBtn.getAttribute("data-slug") || "";
     const baslik = kaydetBtn.getAttribute("data-baslik") || "";
@@ -129,12 +216,34 @@ const links = [
       kaydetBtn.disabled = true;
       try {
         const r = acik ? await H.kaydetSil(slug) : await H.kaydet(slug, baslik);
-        if (!r || !r.hata) isaretle(!acik);
+        if (!r || !r.hata) {
+          isaretle(!acik);
+          gaOlay("save_article", kaydetBtn.closest(".share"));
+        }
       } finally {
         kaydetBtn.disabled = false;
       }
     });
-  }
+  });
+
+  // --- Cihazın kendi paylaşım menüsü (özellikle mobilde en hızlı yol) ---
+  document.querySelectorAll<HTMLButtonElement>("[data-native-share]").forEach((btn) => {
+    if (typeof (navigator as any).share !== "function") return;
+    btn.hidden = false;
+    btn.addEventListener("click", async () => {
+      const box = btn.closest(".share");
+      const raw = box?.getAttribute("data-url") || location.href;
+      const baslik = box?.getAttribute("data-title") || document.title;
+      // Yalnızca geçerli mutlak adreste UTM eklenir.
+      const paylas = utmli(raw, "native");
+      try {
+        await (navigator as any).share({ title: baslik, text: baslik, url: paylas });
+        gaOlay("native", box);
+      } catch {
+        /* kullanıcı vazgeçtiyse sessizce kapanır */
+      }
+    });
+  });
 </script>
 
 <style>
@@ -169,6 +278,9 @@ const links = [
     transition: transform 0.2s var(--ease), background 0.2s, color 0.2s,
       border-color 0.2s, box-shadow 0.2s;
   }
+  .share__btn[hidden] {
+    display: none;
+  }
   .share__btn:hover {
     transform: translateY(-2px);
     color: #fff;
@@ -178,6 +290,9 @@ const links = [
   .share__btn--wa:hover {
     background: #25d366;
   }
+  .share__btn--tg:hover {
+    background: #229ed9;
+  }
   .share__btn--x:hover {
     background: var(--control-bg);
     color: var(--control-fg);
@@ -185,6 +300,7 @@ const links = [
   .share__btn--fb:hover {
     background: #1877f2;
   }
+  .share__btn--native:hover,
   .share__btn--copy:hover {
     background: var(--brand-fill-hover);
   }
@@ -208,6 +324,19 @@ const links = [
     background: #16a34a;
     color: #fff;
     border-color: transparent;
+  }
+
+  /* Yazı sonu paylaşımı: etiket daha görünür, satır alta sarabilir. */
+  .share--end {
+    align-items: center;
+    gap: 10px;
+  }
+  .share--end .share__label {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--text);
+    text-transform: none;
+    letter-spacing: -0.01em;
   }
 
   /* Telefon: düğmeler küçülür, satır taşmaz. */

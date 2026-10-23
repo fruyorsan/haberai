@@ -64,6 +64,9 @@ jobs:
           SITE_URL: ${{ vars.SITE_URL }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          # Kanal kullanıcı adı gizli değildir; bot kanala yönetici eklendiyse
+          # TELEGRAM_CHAT_ID tanımlamadan da paylaşım başlar (ör. "@haberinai").
+          TELEGRAM_CHANNEL: ${{ vars.TELEGRAM_CHANNEL }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           SHARE_WEBHOOK_URL: ${{ secrets.SHARE_WEBHOOK_URL }}
@@ -137,6 +140,11 @@ jobs:
           # Kurulum: supabase/yorumlar.sql + README.
           YORUM_URL: ${{ vars.YORUM_URL }}
           YORUM_ANON: ${{ vars.YORUM_ANON }}
+          # Sosyal kanallar opsiyoneldir: boşken sitede bağlantı hiç basılmaz.
+          # Kanal açılınca: gh variable set TELEGRAM_URL --body "https://t.me/..."
+          TELEGRAM_URL: ${{ vars.TELEGRAM_URL }}
+          X_URL: ${{ vars.X_URL }}
+          BLUESKY_URL: ${{ vars.BLUESKY_URL }}
         run: cd site && npm run build
 
       # Site kodu degisip degismedigini anla (Netlify buna gore yayin yapar).

@@ -1305,6 +1305,20 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
         ciz();
         return oldu;
       },
+      /**
+       * Tek çağrıda varsayılan konuları hazırlar, izin penceresini açar ve
+       * aboneliği kurar. Yazı sonundaki PushCTA bunu kullanır: aksi hâlde
+       * okuyucu abone olur ama hiçbir kategori etiketi yazılmadığı için
+       * bildirim almazdı.
+       */
+      aboneOl: async () => {
+        if (izinEngelli()) return false;
+        varsayilanKonulariHazirla();
+        izinSor();
+        const oldu = await aboneBaslat();
+        ciz();
+        return oldu;
+      },
       /** Dokunuşun İÇİNDE çağrılmalı (await'ten önce). */
       izinSor,
       hosgeldinBildirimi,

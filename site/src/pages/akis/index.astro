@@ -11,7 +11,7 @@
 // ==========================================================================
 import Base from "../../layouts/Base.astro";
 import Akis from "../../components/Akis.astro";
-import { getArticles, imageUrl, imageSrcset } from "../../lib/articles.js";
+import { getArticles, imageUrl, imageSrcset, socialImageUrl } from "../../lib/articles.js";
 import { kapakKaynagi } from "../../lib/kapak.js";
 import { AKIS_ILK } from "../../lib/akis-kart.js";
 import { siteOrigin } from "../../lib/site-meta.js";
@@ -21,6 +21,8 @@ const ilk = liste.slice(0, AKIS_ILK);
 const ilkKapak = ilk[0] ? kapakKaynagi(ilk[0]) : "";
 const ilkGorsel = ilkKapak ? imageUrl(ilkKapak, 960) : undefined;
 const ilkGorselSet = ilkKapak ? imageSrcset(ilkKapak, [640, 960, 1280]) : undefined;
+// Sosyal kart için ayrı görsel: sayfa içi görsel WebP, kart görseli JPEG olmalı.
+const sosyalGorsel = ilkKapak ? socialImageUrl(ilkKapak, 1200, 630) : undefined;
 
 const origin = siteOrigin(Astro.site);
 const baslik = "Shorts Haber — kısa kısa haberler | HaberinAi";
@@ -68,7 +70,8 @@ const akisSchema = {
   preloadImage={ilkGorsel}
   preloadSrcset={ilkGorselSet}
   preloadSizes="(max-width: 720px) 100vw, 640px"
-  image={ilkGorsel}
+  image={sosyalGorsel}
+  imageType={sosyalGorsel ? "image/jpeg" : undefined}
   kategoriSeridi={false}
 >
   <Akis />
