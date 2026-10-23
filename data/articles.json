@@ -1,5 +1,112 @@
 [
   {
+    "id": "01d21a922fdc44ca",
+    "title": "ABD bankalarından yapay zeka ajanlarına güvenlik ablukası",
+    "slug": "abd-bankalarindan-yapay-zeka-ajanlarina-guvenlik-ablukasi",
+    "summary": "ABD'nin dev finans kuruluşları, müşteri hesaplarına erişen üçüncü taraf yapay zeka araçlarına karşı kısıtlama kararı aldı. Finansal kayıpları önlemek isteyen bankalar, ajanların yalnızca bakiye incelemesine izin veren sınırlı modeller geliştiriyor.",
+    "keyPoints": [
+      "Morgan Stanley ve JPMorgan Chase gibi bankalar yapay zeka ajanlarının erişimini kısıtlıyor.",
+      "Ajanların kullanıcı talimatları dışında para transferi yapabilmesi büyük finansal risk yaratıyor.",
+      "Bankalar, yapay zekalara sadece bakiye görüntüleme yetkisi veren sınırlı modeller kuruyor."
+    ],
+    "body": [
+      "Amerikan finans sektörü, müşterilerin hesaplarına sızarak işlem yapabilen harici yapay zeka araçlarının yarattığı güvenlik açıklarına karşı önlem almaya başladı. Morgan Stanley, JPMorgan Chase ve Bank of America gibi büyük kurumlar, kullanıcı direktiflerinin dışına çıkabilen bu yazılımların platformlarındaki faaliyetlerini sınırlıyor. Özellikle alışveriş ve para transferi gibi hassas yetkilerle donatılan sistemlerin hatalı komutlar çalıştırma ihtimali, hem bireyleri hem de bankaları ciddi maddi zararlarla karşı karşıya bırakabiliyor.",
+      "Yürütülen incelemelerde, bazı yapay zeka ajanlarının doğrudan müşteri hizmetleriyle iletişime geçtiği veya kullanıcının haberi olmadan yeni işlemler başlattığı tespit edildi. Axios platformunun paylaştığı bilgilere göre Morgan Stanley erişimleri engellemeye başlarken, Citigroup ve diğer dev kurumlar da benzer güvenlik duvarları örüyor. Morgan Stanley yönetimi platformlarında yetkisiz faaliyetlere rastlandığını reddetse de, sektörün genelinde ciddi bir tedirginlik hakim durumdadır.",
+      "JPMorgan Chase Üst Yöneticisi Jamie Dimon, dışarıdan gelen her ajanın sistemlerine serbestçe bağlanmasına izin vermeyeceklerini vurgulayarak risk yönetimi için özel araçlar geliştirdiklerini açıkladı. Benzer şekilde Charles Schwab Üst Yöneticisi Richard Wurster da kimlik doğrulama süreçleri üzerindeki denetimi kaybetmemek adına yetkisiz ajanların engellendiğini belirtti. Şirketler bu teknolojileri tamamen dışlamak yerine, ödeme ve transfer yetkilerini engelleyip sadece finansal hareketlerin izlenmesine olanak tanıyan kontrollü bir model benimsiyor.",
+      "Gelecekte kullanıcıların finansal yönetim için bu tür yazılımlara daha çok başvuracağı öngörülüyor. Bu durum, kurumların hem inovasyon fırsatlarını değerlendirmesini hem de müşteri varlıklarını korumasını zorunlu kılıyor. Sınırsız erişim riskini göze alamayan yöneticiler, bir saldırı anında hesapları hızla güvenceye alacak acil müdahale planları hazırlayarak güvenlik yatırımlarını artırıyor."
+    ],
+    "comment": "Finansal sistemlerin otonom yazılımlarla entegrasyonu, güvenlik protokollerinin baştan yazılmasını zorunlu kılıyor. Morgan Stanley ve JPMorgan Chase gibi devlerin aldığı kısıtlama kararları, kullanıcı iradesi dışındaki işlemlerin yaratacağı milyarlarca dolarlık zararı engelleme hamlesidir. Eğer bankalar bu sınırları çizmeseydi, hatalı komut veren bir asistan tüm portföyü saniyeler içinde boşaltabilirdi. Önümüzdeki süreçte tam yetkili ajanlar yerine sadece okuma izni bulunan kısıtlı botlar endüstri standardı haline gelecektir.",
+    "editorNote": "Yapay zeka asistanları hesaplara sızmaya başlayınca dev bankalar para transferi yetkilerini tek taraflı olarak kısıtladı.",
+    "tags": [
+      "Morgan Stanley",
+      "JPMorgan Chase",
+      "yapay zeka",
+      "bankacılık",
+      "siber güvenlik"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "bank computer server room security",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/abd-bankalari-alarma-gecti-yapay-zeka-ajanlari-hesaplara-girdi--211981",
+    "image": "https://www.donanimhaber.com/images/images/haber/211981/src/abd-bankalari-alarma-gecti-yapay-zeka-ajanlari-hesaplara-girdi211981_0.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T10:36:00.000Z",
+    "generatedAt": "2026-10-23T10:36:27.621Z",
+    "breaking": true
+  },
+  {
+    "id": "8e5433c027b590df",
+    "title": "Endonezya ordusu, ROKETSAN üretimi Türk füzeleriyle canlı atış yaptı",
+    "slug": "endonezya-ordusu-roketsan-uretimi-turk-fuzeleriyle-canli-atis-yapti",
+    "summary": "Endonezya Kara Kuvvetleri, Türkiye'den satın aldığı BORA ve TRG-122 sistemlerini gerçek mühimmatla test etti. Yapılan canlı atış faaliyetlerinde hedeflerin tam isabetle vurulduğu görüntülendi.",
+    "keyPoints": [
+      "Endonezya, 22 Ekim 2026 tarihinde Türk yapımı füzelerle gerçek mühimmatlı canlı atış gerçekleştirdi.",
+      "Atışlarda menzili 80 ila 280 kilometre arasında değişen BORA balistik füze sistemi kullanıldı.",
+      "Faaliyette ayrıca 10 ila 28 kilometre menzile sahip TRG-122 güdümlü roketleri de yer aldı."
+    ],
+    "body": [
+      "Türkiye'nin savunma sanayisindeki küresel ihracat hamleleri hız kesmeden devam ederken, Türk mühendisliğinin gururu olan sistemler farklı ülkelerin envanterinde aktif olarak görev yapıyor. ROKETSAN tarafından geliştirilen roket ve füze teknolojileri, uluslararası alanda sahadaki başarılarıyla adından söz ettiriyor. Bu kapsamda en son gelişmelerden biri Güneydoğu Asya'dan geldi ve Endonezya ordusunun gerçekleştirdiği tatbikat kameralara yansıdı.",
+      "Endonezya Kara Kuvvetleri envanterinde bulunan Türk yapımı harp sistemleri ile gerçek mühimmatlı atışlar icra etti. Yayımlanan son görüntülerde, Türkiye'den tedarik edilen taktik balistik füze ve güdümlü roketlerin sahadaki kabiliyetleri net bir şekilde görüldü. Yapılan faaliyetlerin ardından her iki sistemin de belirlenen hedefleri başarıyla imha ettiği resmi kaynaklar tarafından teyit edildi.",
+      "Gerçekleşen tatbikatın en dikkat çekici unsurlarından biri karadan karaya atılan BORA füze sistemi oldu. Uluslararası pazarda KHAN adıyla bilinen bu stratejik sistem, yüksek hassasiyet gerektiren uzak mesafelerdeki hedefler için tasarlandı. ROKETSAN verilerine göre 80 ile 280 kilometre arasında menzil sunan füze, kısa hazırlık süresi ve gelişmiş navigasyon yetenekleriyle öne çıkıyor. Endonezya bu sistemin ilk uluslararası müşterisi konumunda bulunuyor.",
+      "Aynı operasyonda kullanılan bir diğer ROKETSAN ürünü ise 122 milimetre çapındaki TRG-122 güdümlü roketleri oldu. Koordinata dayalı güdüm teknolojisiyle donatılan bu mühimmatlar, 10 ile 28 kilometre aralığındaki hedeflere karşı etkili ateş desteği sağlıyor. Çok namlulu platformlardan fırlatılabilen roketlerin başarılı atışları, farklı menzil ihtiyaçlarının tek bir ordunun envanterinde nasıl uyumla çalıştığını gösterdi.",
+      "İki ülke arasındaki savunma ilişkileri yalnızca bu füze alımlarıyla sınırlı kalmayıp askeri fuarlar ve teknoloji transferleriyle de derinleşiyor. ROKETSAN'ın geçtiğimiz yıllarda Endonezya'da düzenlenen fuarlarda sergilediği çok sayıda sistem, gelecekteki olası iş birliklerinin de sinyalini veriyor. Yapılan bu canlı atışlar, Türk savunma sanayi ürünlerinin sadece kağıt üzerinde kalmadığını, kullanıcı ülkelerin sahadaki operasyonel gücüne doğrudan katkı sunduğunu kanıtlıyor."
+    ],
+    "comment": "Savunma sanayi ürünlerinin doğrudan saha testlerinde başarı göstermesi, ihracat yapılan ülkelere duyulan güveni artırırken pazar payını da doğrudan genişletiyor. 80 ila 280 kilometre menzil sunan BORA sisteminin ilk kullanıcısı olan Endonezya ordusunun bu mühimmatları aktif tatbikatlarda kullanması, Türk mühendisliğinin uluslararası standartlardaki yerini pekiştiriyor. Rakip savunma ürünleriyle kıyaslandığında kısa hazırlık süresi sunan bu çözümler, bütçe ve performans dengesini gözeten ülkeler için cazip bir alternatif olmayı sürdürüyor. Sahadaki bu tür başarılı testler devam ettikçe, Türkiye'nin savunma ihracatındaki toplam hacminin önümüzdeki dönemde daha da yukarı tırmanması kaçınılmaz görünüyor.",
+    "editorNote": "Endonezya ordusunun Türk yapımı füzelerle gerçekleştirdiği canlı atışlar, savunma ihracatında sahadaki başarıyı gözler önüne seriyor.",
+    "tags": [
+      "ROKETSAN",
+      "Endonezya",
+      "BORA",
+      "TRG-122",
+      "Savunma Sanayii"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "ROKETSAN missile launcher test fire",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/endonezya-roketsanin-gelistirdigi-turk-fuzeleriyle-canli-atis-yapti",
+    "image": "https://ares.shiftdelete.net/2026/10/roketsanin_ihracat_basarisi_sahnede_endonezya_ordusu_turk_fuzeleriyle_canli_atis_yapti_1792666442_6958.webp",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T10:30:53.000Z",
+    "generatedAt": "2026-10-23T10:36:39.378Z",
+    "breaking": true
+  },
+  {
+    "id": "0a913e0219b1f595",
+    "title": "Jeoloji Mühendisleri Odası, Van'daki riskli bölgeleri açıkladı",
+    "slug": "jeoloji-muhendisleri-odasi-vandaki-riskli-bolgeleri-acikladi",
+    "summary": "Van'da zayıf zemin yapısı ve aktif fay hatlarının yarattığı tehlikeler açıklandı. İpekyolu, Edremit ve Tuşba ilçelerinde artan yapılaşmanın yaratabileceği felaket tablosuna karşı uyarılar yapıldı.",
+    "keyPoints": [
+      "İpek Yolu Caddesi alt kesimleri ile Tuşba'da yeraltı su seviyesi yüksek.",
+      "Zayıf alüvyon zeminlerde sondaj ve jeofizik çalışmalarına rağmen riskler tamamen bitmiyor.",
+      "Erek Dağı çevresi ile Kalecik yeni yerleşim için daha sağlam zeminler sunuyor."
+    ],
+    "body": [
+      "Van bölgesindeki jeolojik riskler ve zayıf zemin yapıları, uzmanlar tarafından yeniden masaya yatırıldı. Kentin birinci ve ikinci derece sarsıntı kuşağında yer alması, periyodik olarak yaşanan hareketliliklerin kaçınılmaz olduğunu gösteriyor. Mevcut yerleşim planlarının bu gerçekliğe göre şekillendirilmesi gerektiği belirtiliyor.",
+      "Nüfusun yoğunlaştığı çarşı merkezi ve alüvyon tabakalar üzerine kurulu alanlar büyük tehlike barındırıyor. İpek Yolu Caddesi'nin alt kısımları ile havalimanı çevresinden Tuşba sınırlarına kadar uzanan hatlarda yeraltı su seviyesinin yüksek olduğu tespit edildi. Bu durumun zemin sıvılaşması ihtimalini artırdığı bildirildi.",
+      "Yapılan tüm uyarı ve çağrılara rağmen riskli bölgelerdeki yapılaşma hız kesmeden devam ediyor. Uzmanlar, zeminin sondaj ve jeofizik yöntemlerle kısmen iyileştirilebileceğini ancak sarsıntı etkisinin tamamen bertaraf edilemeyeceğini savunuyor. Bu nedenle kesin çözümün sağlam kaya zeminlere yönelmek olduğu vurgulanıyor.",
+      "Kentte yeni yerleşim planlarının Erek Dağı etekleri, Edremit'in yüksek kesimleri ve Kalecik gibi daha güvenli bölgelere kaydırılması öneriliyor. Yeni yolların açılması, cazibe merkezlerinin oluşturulması ve 18. madde uygulamalarının çözülmesiyle risklerin azaltılabileceği ifade ediliyor.",
+      "Zemin güvenliğinin yalnızca sarsıntı anıyla sınırlı kalmadığı, kontrolsüz su sondajlarının da tehlike yarattığı aktarıldı. Bahçe ve benzeri alanlarda izinsiz çekilen suların zemin kurumasına ve binalarda çökmelere yol açabileceği kaydedildi. Toplum genelinde bilinç oluşturulması için okullarda jeoloji eğitimine yer verilmesi talep ediliyor."
+    ],
+    "comment": "Van gibi aktif fay hatları üzerinde yer alan kentlerde imar planlarının zemin kalitesine göre yeniden şekillendirilmesi hayati bir zorunluluktur. İpek Yolu ve havalimanı çevresindeki alüvyon zeminlerde yükselen yapı stoğu, olası bir sarsıntıda ağır kayıplara kapı aralayabilir. Yerel yönetimlerin Erek Dağı ve Kalecik gibi sağlam bölgelere yeni cazibe merkezleri kaydırmaması durumunda, ilerleyen yıllarda telafisi imkansız acı tablolarla karşılaşılması kaçınılmazdır.",
+    "editorNote": "Van'daki zayıf zeminler ve yüksek su seviyesi yeni binalar için tehlike saçıyor; uzmanlar güvenli bölgeleri işaret ediyor.",
+    "tags": [
+      "Van",
+      "deprem",
+      "zemin sıvılaşması",
+      "İpekyolu",
+      "Jeoloji Mühendisleri Odası"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "earthquake damaged building",
+    "source": "Van Bölge Gazetesi",
+    "sourceUrl": "https://www.bolgegazetesivan.com/vanda-deprem-uyarisi-ipekyolu-edremit-ve-tusbaya-dikkat",
+    "image": "https://bolgegazetesivancom.teimg.com/crop/1280x720/bolgegazetesivan-com/uploads/2026/10/vurulmadan-onceki-hali-3.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T10:30:00.000Z",
+    "generatedAt": "2026-10-23T10:36:50.910Z",
+    "breaking": true
+  },
+  {
     "id": "b8d025135a78d51a",
     "title": "ABD'nin Rusya-Ukrayna stratejisinde Alaska ve dizel dengesi",
     "slug": "abdnin-rusya-ukrayna-stratejisinde-alaska-ve-dizel-dengesi",
@@ -638,36 +745,36 @@
   },
   {
     "id": "bbf53cc5cf1b3e85",
-    "title": "Van depreminin ardından 25 binden fazla konut inşa edilerek teslim edildi",
-    "slug": "vanda-depremin-ardindan-25-binden-fazla-konut-insa-edilerek-teslim-edildi",
-    "summary": "Van depremlerinin ardından Toplu Konut İdaresi tarafından yürütülen çalışmalarla kent genelinde binlerce kalıcı konut, okul ve kamu binası tamamlandı. Edremit, İpekyolu, Tuşba ve Erciş ilçelerinde inşa edilen güvenli yapılar afetzedelerin hizmetine sunuldu.",
+    "title": "Van'da deprem yaraları sarıldı: 25 binden fazla konut inşa edildi",
+    "slug": "vanda-deprem-yaralari-sarildi-25-binden-fazla-konut-insa-edildi",
+    "summary": "Van'da meydana gelen büyük depremlerin ardından Toplu Konut İdaresi Başkanlığı tarafından yürütülen çalışmalarla kent genelinde 25 binin üzerinde yeni konut depremzedelere teslim edildi. Bölgede ayrıca okullar, kamu binaları ve ahırlar yenilenerek altyapı güvenli hale getirildi.",
     "keyPoints": [
-      "Van'da meydana gelen depremlerde 31 bin 870 konut ağır hasar aldı.",
-      "AFAD ve TOKİ eliyle 25 binin üzerinde kalıcı konut depremzedelere teslim edildi."
+      "Van'da 2011 depremlerinin ardından 25 binden fazla kalıcı konut depremzedelere teslim edildi.",
+      "Karayolları ve DSİ gibi önemli kurumlar depreme dayanıklı yeni binalarına taşındı."
     ],
     "body": [
-      "Van genelinde 2011 yılında yaşanan iki büyük sarsıntının ardından başlatılan kentsel yenileme hamlesi kapsamında binlerce yeni yapı yükseldi. Edremit, İpekyolu, Tuşba ve Erciş ilçelerinde tamamlanan 25 binin üzerindeki kalıcı konut sahiplerine verilirken, çok sayıda okul ve ibadethane de inşa edildi. Yüzyılın Konut Projesi ile birlikte 6 bin 803 yeni konutun yapımına da hız verildi.",
-      "Eski yapışık düzenin yarattığı riskleri azaltmak amacıyla Karayolları 11. Bölge Müdürlüğü, DSİ 17. Bölge Müdürlüğü, Emniyet Müdürlüğü ve Van Adliyesi gibi kritik kurumlar daha güvenli binalara taşındı. Ayrıca Millet Bahçesi yakınlarında yeni valilik binasının yapım süreci sürerken, son dört yıllık zaman diliminde 167'si anaokulundan oluşan yaklaşık 300 eğitim yuvası kapılarını açtı.",
-      "Yapı denetim mekanizmalarının ve mühendislik hizmetlerinin sıkılaştırılmasıyla beraber inşaat firmaları yeni yönetmeliklere uygun adımlar atmaya başladı. TOKİ projelerinde uygulanan standartlar, bağımsız denetçiler tarafından titizlikle incelenirken beton, temel ve zemin kalitesi düzenli olarak kontrol ediliyor.",
-      "Van Yüzüncü Yıl Üniversitesi'nden Prof. Dr. Onur Şatır, afetlere karşı dirençli şehirler yaratmanın temel yolunun doğru zemin seçimi ve sıkı mühendislik denetiminden geçtiğini vurguladı. Uzmanlar, acil toplanma alanlarının ve yeşil alanların yetersizliğinin tahliye sırasında trafik yoğunluğu yaratabileceğine dikkat çekerek planlamanın bütünsel yapılması gerektiğini belirtiyor."
+      "Geçmişte yaşanan yıkıcı sarsıntıların izlerini silmek amacıyla Toplu Konut İdaresi Başkanlığı öncülüğünde başlatılan yapısal dönüşüm hamlesi tamamlandı. Edremit, İpekyolu, Tuşba ve Erciş ilçelerinde AFAD koordinasyonunda yürütülen çalışmalar neticesinde binlerce aile güvenli yuvalarına kavuştu. Yürütülen projeler sadece konutlarla sınırlı kalmayıp şehrin genelindeki sosyal ve idari donatıları da kapsayacak şekilde genişletildi.",
+      "Yeniden yapılanma sürecinde eğitim altyapısına da büyük bir öncelik tanındı. Son dört yıllık süre zarfında sayıları yüze yaklaşan anaokulları dahil olmak üzere yaklaşık 300 yeni eğitim kurumu kapılarını öğrencilere açtı. Bununla birlikte Karayolları 11. Bölge Müdürlüğü, Devlet Su İşleri 17. Bölge Müdürlüğü, Emniyet Müdürlüğü ve Van Adliyesi gibi kritik kamu kurumları da yeni inşa edilen depreme dayanıklı binalarında hizmet vermeye başladı.",
+      "Mevcut yapı stoğunu güçlendirme çalışmaları kapsamında \"Yüzyılın Konut Projesi\" çatısı altında 6 bin 803 yeni konutun yapımına daha başlandı. Kurumların yanı sıra özel inşaat firmaları da yeni yönetmelik hükümlerini esas alarak bölgede güvenli yapılar inşa etti. Uzmanlar, zemin etütlerinin zamanında yapılmasının ve mühendislik denetimlerinin sıkılaştırılmasının olası afetlere karşı en büyük güvenceyi oluşturduğunu vurguluyor.",
+      "Van Yüzüncü Yıl Üniversitesi Öğretim Üyesi Prof. Dr. Onur Şatır, afet bölgelerinde dirençli kent kavramının hayati bir nitelik taşıdığına dikkat çekti. Şatır, zemin kontrollerinin hızla tamamlanmasının ve bağımsız yapı denetim mekanizmalarının işletilmesinin gelecekteki riskleri en aza indirdiğini belirtti. Planlı yapılaşma ile birlikte geniş yeşil alanların ve afet sonrası toplanma noktalarının oluşturulmasının şehir içi trafiğini rahatlatacağını ifade etti."
     ],
-    "comment": "Yerleşim bölgelerinin afet yönetmeliğine uygun olarak yeniden tasarlanması, gelecekte yaşanabilecek olası risklerin etkisini doğrudan azaltacak en temel unsurdur. Van örneğinde görülen 25 binin üzerindeki konutun tamamlanması ve kamu binalarının güvenli alanlara taşınması, kentsel dirençliliğin artırılması açısından somut bir karşılık sunmaktadır. Ancak bu yapılaşma hamlesinin yalnızca bina güvenliğiyle sınırlı kalmayıp geniş tahliye yolları ve toplanma alanlarıyla desteklenmemesi durumunda, acil durumlarda ciddi ulaşım tıkanıklıkları yaşanması kaçınılmaz bir senaryo olarak durmaktadır.",
-    "editorNote": "2011 felaketinin ardından Van'da yükselen yeni yapılar kentin çehresini değiştirdi.",
+    "comment": "Afet sonrası yeniden yapılanma süreçlerinde kalıcı konutların doğru zeminlere kurulması ve mühendislik denetimlerinin sıkılaştırılması gelecekteki can kayıplarını doğrudan önlüyor. Van örneğinde 25 bini aşkın konutun tamamlanarak hak sahiplerine verilmesi, geçici barınma koşullarından kalıcı güvenliğe geçişte somut bir başarı ortaya koyuyor. Planlama aşamasında toplanma alanlarının ve alternatif ulaşım akslarının ihmal edilmesi durumunda, sarsıntı anındaki nüfus hareketliliği ciddi tıkanıklıklara yol açabilir. Bu nedenle yapı güvenliği kadar kentsel alan yönetimi de bütüncül bir yaklaşımla ele alınmalıdır.",
+    "editorNote": "Van'da binlerce konut ve okulun yenilenmesi kentsel direnci artırırken uzmanlar doğru zemin seçiminin altını çiziyor.",
     "tags": [
       "Van",
       "TOKİ",
-      "Deprem",
-      "Kentsel Dönüşüm",
+      "deprem",
+      "konut",
       "AFAD"
     ],
     "category": "Gündem",
     "gorselSorgu": "earthquake damaged building",
     "source": "www.ensondakika.com.tr",
     "sourceUrl": "https://www.ensondakika.com.tr/van-da-depremlerin-ardindan-yapi-stoku-guclendirildi/725534/",
-    "image": "https://www.ensondakika.com.tr/aa-media/2026/10/depremde-11-yakinini-kaybeden-akademisyen-ogrencileri-afetlere-hazirliyor-725419.webp",
+    "image": "https://www.ensondakika.com.tr/aa-media/2026/10/van-da-depremlerin-ardindan-yapi-stoku-guclendirildi-725534.webp",
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T09:59:11.000Z",
-    "generatedAt": "2026-10-23T10:12:36.629Z",
+    "generatedAt": "2026-10-23T10:37:02.079Z",
     "breaking": true
   },
   {
