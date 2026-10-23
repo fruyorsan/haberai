@@ -54,68 +54,88 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
         <div class="profil__akis">
 
       <section class="profil__blok" id="hesap">
-        <h2 class="profil__h2">Hesap bilgileri</h2>
-        <h3 class="profil__h3">Görünen ad</h3>
-        <p class="profil__aciklama">Yorumlarında bu ad görünür.</p>
-        <div class="profil__satir">
-          <input class="profil__girdi" id="profil-ad-girdi" type="text" maxlength="40" placeholder="Adın" />
-          <button type="button" class="profil__btn profil__btn--kucuk" id="profil-ad-kaydet">Kaydet</button>
+        <div class="profil__baslik-satir">
+          <h2 class="profil__h2">Hesap bilgileri</h2>
+          <span class="profil__mini" id="profil-ad-durum" role="status" aria-live="polite"></span>
         </div>
-        <span class="profil__mini" id="profil-ad-durum" role="status" aria-live="polite"></span>
-
-        <h3 class="profil__h3 profil__h3--ayrac">Profil fotoğrafı</h3>
         <p class="profil__aciklama">
-          Hazır bir desen seç ya da kendi fotoğrafını yükle. Yorumlarında ve
-          üstteki hesap düğmesinde görünür.
+          Yorumlarında ve üst menüde görünecek adın ile profil fotoğrafını buradan yönetebilirsin.
         </p>
-        <div class="profil__avatar-satir">
-          <span class="profil__onizleme" id="profil-onizleme" aria-hidden="true"></span>
-          <div class="profil__avatar-islem">
-            <label class="profil__btn profil__btn--kucuk profil__dosya">
-              Fotoğraf yükle
-              <input type="file" id="profil-dosya" accept="image/*" hidden />
-            </label>
-            <button
-              type="button"
-              class="profil__btn profil__btn--kucuk profil__btn--ghost"
-              id="profil-avatar-sil"
-            >
-              Kaldır
-            </button>
+
+        <div class="profil__hesap-izgara">
+          <div class="profil__alt-kutu">
+            <span class="profil__etiket-baslik">Profil fotoğrafı</span>
+            <div class="profil__avatar-satir">
+              <span class="profil__onizleme" id="profil-onizleme" aria-hidden="true"></span>
+              <div class="profil__avatar-islem">
+                <label class="profil__btn profil__btn--kucuk profil__dosya">
+                  Fotoğraf yükle
+                  <input type="file" id="profil-dosya" accept="image/*" hidden />
+                </label>
+                <button
+                  type="button"
+                  class="profil__btn profil__btn--kucuk profil__btn--ghost"
+                  id="profil-avatar-sil"
+                >
+                  Kaldır
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="profil__alt-kutu">
+            <label class="profil__etiket-baslik" for="profil-ad-girdi">Görünen ad</label>
+            <div class="profil__satir">
+              <input class="profil__girdi" id="profil-ad-girdi" type="text" maxlength="40" placeholder="Adın" />
+              <button type="button" class="profil__btn profil__btn--kucuk" id="profil-ad-kaydet">Kaydet</button>
+            </div>
           </div>
         </div>
-        <div class="profil__avatarlar" id="profil-avatarlar">
-          {AVATARLAR.map((a) => (
-            <button
-              type="button"
-              class="profil__avatar-sec"
-              data-avatar={a.kod}
-              title={a.ad}
-              aria-label={a.ad}
-              aria-pressed="false"
-              style={`--av-renk:${a.renk}`}
-            >
-              <img
-                class="profil__avatar-resim"
-                src={a.kod}
-                alt=""
-                width="64"
-                height="64"
-                loading="lazy"
-                decoding="async"
-              />
-            </button>
-          ))}
+
+        <div class="profil__avatar-galeri-kutu">
+          <div class="profil__baslik-satir profil__baslik-satir--dar">
+            <span class="profil__etiket-baslik">Hazır avatar seç</span>
+            <span class="profil__mini" id="profil-avatar-durum" role="status" aria-live="polite"></span>
+          </div>
+          <div class="profil__avatarlar" id="profil-avatarlar">
+            {AVATARLAR.map((a) => (
+              <button
+                type="button"
+                class="profil__avatar-sec"
+                data-avatar={a.kod}
+                title={a.ad}
+                aria-label={a.ad}
+                aria-pressed="false"
+                style={`--av-renk:${a.renk}`}
+              >
+                <span class="profil__avatar-halka">
+                  <img
+                    class="profil__avatar-resim"
+                    src={a.kod}
+                    alt=""
+                    width="52"
+                    height="52"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </span>
+                <span class="profil__avatar-ad">{a.ad}</span>
+              </button>
+            ))}
+          </div>
         </div>
-        <span class="profil__mini" id="profil-avatar-durum" role="status" aria-live="polite"></span>
       </section>
 
       <section class="profil__blok" id="ilgi">
         <div class="profil__baslik-satir">
-          <h2 class="profil__h2">İlgi alanları</h2>
           <div class="profil__baslik-sag">
-            <span class="profil__mini" id="profil-durum" role="status" aria-live="polite"></span>
+            <h2 class="profil__h2">İlgi alanları</h2>
             <span class="profil__sayac" id="profil-ilgi-sayac"></span>
+          </div>
+          <div class="profil__hizli-sec">
+            <span class="profil__mini" id="profil-durum" role="status" aria-live="polite"></span>
+            <button type="button" class="profil__mini-btn" id="profil-ilgi-hepsi">Tümünü seç</button>
+            <button type="button" class="profil__mini-btn" id="profil-ilgi-temizle">Temizle</button>
           </div>
         </div>
         <p class="profil__aciklama">
@@ -703,18 +723,23 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 16%, transparent);
   }
   .profil__cipler {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
     gap: 8px;
   }
   .profil__cip {
-    padding: 8px 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 38px;
+    padding: 8px 12px;
     border: 1px solid var(--border);
-    border-radius: 999px;
+    border-radius: 10px;
     background: var(--surface-2);
     color: var(--text-2);
     font: inherit;
-    font-size: 0.84rem;
+    font-size: 0.82rem;
     font-weight: 700;
     cursor: pointer;
     transition: background 0.16s var(--ease), color 0.16s var(--ease), border-color 0.16s var(--ease);
@@ -969,31 +994,69 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     min-height: 1em;
   }
 
-  /* --- Profil fotoğrafı seçici --- */
+  /* --- Hesap bilgileri & Profil fotoğrafı seçici --- */
+  .profil__hesap-izgara {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .profil__alt-kutu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: var(--bg);
+  }
+  .profil__etiket-baslik {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--text-2);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  .profil__avatar-galeri-kutu {
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: var(--bg);
+  }
+  .profil__baslik-satir--dar {
+    margin-bottom: 10px;
+  }
   .profil__avatar-satir {
     display: flex;
     align-items: center;
     gap: 14px;
     flex-wrap: wrap;
-    margin-bottom: 14px;
+    margin: 0;
   }
   .profil__onizleme {
     display: grid;
     place-items: center;
-    width: 64px;
-    height: 64px;
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    min-height: 56px;
     flex-shrink: 0;
-    border-radius: 999px;
+    border-radius: 50%;
     background: var(--brand-grad);
     color: #fff;
     font-weight: 900;
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     overflow: hidden;
+    box-shadow: 0 0 0 2px var(--surface), 0 0 0 3px var(--border);
   }
   .profil__onizleme img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    display: block !important;
   }
   .profil__avatar-islem {
     display: flex;
@@ -1005,37 +1068,67 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
   }
   .profil__avatarlar {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(58px, 1fr));
+    grid-template-columns: repeat(8, minmax(0, 1fr));
     gap: 8px;
   }
   .profil__avatar-sec {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 5px;
+    gap: 6px;
+    padding: 8px 4px;
     border: 1px solid var(--border);
     border-radius: 12px;
-    background: var(--surface-2);
+    background: var(--surface);
+    color: var(--text-2);
     cursor: pointer;
     transition: transform 0.15s var(--ease), border-color 0.15s var(--ease),
-      box-shadow 0.15s var(--ease);
+      box-shadow 0.15s var(--ease), background 0.15s var(--ease);
   }
   .profil__avatar-sec:hover {
     border-color: var(--av-renk, var(--brand));
     transform: translateY(-1px);
+    color: var(--text);
   }
   .profil__avatar-sec.is-on {
     border-color: var(--av-renk, var(--brand));
-    box-shadow: 0 0 0 2.5px color-mix(in srgb, var(--av-renk, var(--brand)) 26%, transparent);
-    background: color-mix(in srgb, var(--av-renk, var(--brand)) 14%, var(--surface-2));
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--av-renk, var(--brand)) 30%, transparent);
+    background: color-mix(in srgb, var(--av-renk, var(--brand)) 12%, var(--surface));
+    color: var(--text);
+  }
+  .profil__avatar-halka {
+    display: block;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--av-renk, var(--surface-2));
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--av-renk, var(--border)) 40%, transparent);
+    flex-shrink: 0;
   }
   .profil__avatar-resim {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 48px !important;
+    max-height: 48px !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+  }
+  .profil__avatar-ad {
     display: block;
     width: 100%;
-    max-width: 46px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: var(--av-renk, var(--surface));
+    font-size: 0.67rem;
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .profil__avatar-kaynak {
     margin: 10px 0 0;
@@ -1109,11 +1202,11 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
       flex: 1 1 100%;
     }
     .profil__avatarlar {
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 6px;
     }
     .profil__avatar-sec {
-      padding: 8px;
+      padding: 7px 3px;
     }
     .profil__yorum {
       padding: 10px 11px;
@@ -1723,6 +1816,24 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     var sondkEl = document.getElementById("profil-sondk-onay");
     var hepsiBtn = document.getElementById("profil-bildirim-hepsi");
     var temizleBtn = document.getElementById("profil-bildirim-temizle");
+    var ilgiHepsiBtn = document.getElementById("profil-ilgi-hepsi");
+    var ilgiTemizleBtn = document.getElementById("profil-ilgi-temizle");
+
+    ilgiHepsiBtn &&
+      ilgiHepsiBtn.addEventListener("click", function () {
+        [].forEach.call(document.querySelectorAll("[data-ilgi]"), function (c) {
+          ilgiSecim.add(c.getAttribute("data-ilgi"));
+        });
+        ciz();
+        otomatikKaydet();
+      });
+
+    ilgiTemizleBtn &&
+      ilgiTemizleBtn.addEventListener("click", function () {
+        ilgiSecim.clear();
+        ciz();
+        otomatikKaydet();
+      });
 
     hepsiBtn &&
       hepsiBtn.addEventListener("click", function () {
