@@ -1,5 +1,40 @@
 [
   {
+    "id": "884864c00a219a05",
+    "title": "Linux çekirdeğindeki kritik güvenlik açıkları e-postayla sızdı",
+    "slug": "linux-cekirdegindeki-kritik-guvenlik-aciklari-epostayla-sizdi",
+    "summary": "Linux çekirdeğine ait henüz kapatılmamış kritik güvenlik açıklarının yanlışlıkla açık bir e-posta listesinde paylaşıldığı ortaya çıktı. On üzerinden dokuz puan alan iki güvenlik sorunu, belirli koşullar altında uzaktan kod çalıştırılmasına zemin hazırlayabilir.",
+    "keyPoints": [
+      "CVSS ölçeğinde 9,0 puan alan iki kritik açık uzaktan kod çalıştırma riski barındırıyor.",
+      "Güvenlik açıkları Zero Day Initiative tarafından normal süreç dışında açık listeye sızdırıldı.",
+      "Ağ kodu, VMware grafik sürücüsü ve NVMe hedef kodunda da çeşitli hatalar raporlandı."
+    ],
+    "body": [
+      "Açık kaynak dünyasının en temel yapı taşlarından biri olan Linux çekirdeğinde tespit edilen birtakım kritik zafiyetler, yamalar henüz sistemlere ulaşmadan herkesin erişebildiği bir e-posta listesinde paylaşıldı. Trend Micro bünyesinde faaliyet gösteren Zero Day Initiative tarafından bildirilen bu sorunların, normal şartlarda işletilmesi gereken gizli bildirim süreci yerine yanlışlıkla kamuya açık şekilde yayımlandığı tahmin ediliyor. Ancak söz konusu paylaşımın teknik bir hatadan mı kaynaklandığı henüz netlik kazanmış değil.",
+      "Paylaşılan açıklar arasında güvenlik dünyasında oldukça yüksek bir risk seviyesini temsil eden CVSS ölçeğinde 10 üzerinden 9,0 puan alan iki sorun dikkat çekiyor. Bu kritik açıkların biri Linux işletim sisteminin SMB Direct bileşenini, diğeri ise çekirdek içerisindeki SMB sunucu uygulaması olan KSMBD bileşenini etkiliyor. Uzmanlar, her iki açığın da uygun koşulların sağlanması durumunda kötü niyetli kişilerin sistemlerde uzaktan kod çalıştırmasına olanak tanıyabileceği konusunda uyarıyor.",
+      "Liste üzerinden yayımlanan diğer güvenlik bildirimleri arasında yerel ayrıcalık yükseltme saldırılarına kapı aralayabilecek ağ kodu ve VMware grafik sürücüsü hataları da bulunuyor. Bununla birlikte NVMe hedef kodunu etkileyen ve sistemdeki hassas bilgilerin dışarı sızmasına yol açabilecek bir başka zafiyet de raporlar arasında yer alıyor. Bazı açıklar için test süreçleri ve düzeltme çalışmaları başlamış olsa da, bu yamaların henüz Linux çekirdeğinin ana kararlı sürümüne entegre edilmediği biliniyor.",
+      "Yaşanan bu sızıntı, sunucu altyapılarını ve internet ekosistemini sarsan diğer güvenlik olaylarıyla aynı döneme denk geldi. Kısa süre önce eMudhra ile bağlantılı TLS ve SSL sertifikalarının özel anahtarlarının ele geçirildiği, sekiz ara sertifikanın güvenliğinin zedelendiği ortaya çıkmıştı. Web sitelerinin büyük bir bölümünde kullanılan PHP tarafında da acil kodlu güncellemeler gerektiren zafiyetler bildirilmiş, GitLab ve HTTP/3 altyapılarında benzer kritik açıklar peş peşe rapor edilmişti."
+    ],
+    "comment": "Sistem yöneticileri için yama süreçlerinin ne denli hızlandırılması gerektiğini gösteren bu sızıntı, açık kaynak kodlu projelerde bilgi güvenliğinin insan hatasına açık yönlerini gözler önüne seriyor. Özellikle 9,0 gibi yüksek bir CVSS puanına sahip zafiyetlerin erken duyurulması, kötü niyetli kişilere henüz yama yapmamış sunucuları hedef almak için geniş bir zaman aralığı tanır. Şirketler ve sunucu işletmecileri, çekirdek güncellemelerini ertelemeden uygulamadığı sürece bu tür sızıntılar altyapılar için ciddi bir felaket senaryosunu gerçeğe dönüştürebilir.",
+    "editorNote": "Linux çekirdeğindeki en kritik açıkların henüz yama çıkmadan herkese açık listeye düşmesi sunucuları tehlikeye atıyor.",
+    "tags": [
+      "Linux",
+      "Güvenlik",
+      "Zero Day Initiative",
+      "Siber Güvenlik",
+      "Yazılım"
+    ],
+    "category": "Yazılım",
+    "gorselSorgu": "data center server room",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/linux-cekirdegindeki-kritik-aciklar-yanlislikla-internete-sizdi--211984",
+    "image": "https://www.donanimhaber.com/images/images/haber/211984/src/linux-cekirdegindeki-kritik-aciklar-yanlislikla-internete-sizdi211984_0.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T09:52:00.000Z",
+    "generatedAt": "2026-10-23T09:54:32.964Z",
+    "breaking": true
+  },
+  {
     "id": "9858b8d0a6405735",
     "title": "Vivo X500 Ultra kamerası ve işlemci gücü netleşti",
     "slug": "vivo-x500-ultra-kamerasi-ve-islemci-gucu-netlesti",
@@ -33,6 +68,125 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T09:46:17.229Z",
     "generatedAt": "2026-10-23T09:47:26.183Z"
+  },
+  {
+    "id": "73996091d3feec41",
+    "title": "İsrail ordusu, ateşkes anlaşmasına rağmen Gazze Şeridi'ni vurdu",
+    "slug": "israil-ordusu-ateskes-anlasmasina-ragmen-gazze-seridini-vurdu",
+    "summary": "İsrail askeri birlikleri, yürürlükteki ateşkes kararına rağmen Gazze Şeridi'ndeki farklı noktalara yönelik saldırılarını sürdürüyor. Bölgedeki sivil yerleşim yerleri ve stratejik bölgeler hedef alınmaya devam ediyor.",
+    "keyPoints": [
+      "İsrail ordusu ateşkes kararına rağmen Gazze'ye saldırı düzenliyor",
+      "Bölgedeki çatışmalar ve askeri hareketlilik aralıksız sürüyor",
+      "Anadolu Ajansı kaynaklı haber dünya kamuoyunda yankı uyandırdı"
+    ],
+    "body": [
+      "Orta Doğu'da tansiyonu düşürmek amacıyla varılan ateşkes mutabakatlarına rağmen sahadaki askeri hareketlilik hız kesmiyor. İsrail askeri birlikleri, bölgede sivil halkın yaşadığı alanları hedef alan yeni operasyonlar gerçekleştiriyor.",
+      "Gazze Şeridi genelinde hissedilen şiddet dalgası, uluslararası toplumun çağrılarına karşın durdurulamadı. Sahadaki kaynaklar, hava ve karadan düzenlenen taarruzların yerel halkın günlük yaşamını tamamen felç ettiğini aktarıyor.",
+      "Bölge halkı temel insani ihtiyaçlara erişmekte zorlanırken, güvenlik endişeleri üst seviyede kalmaya devam ediyor. Yapılan diplomatik girişimler ise henüz sahadaki silah seslerini dindirmeye yetmedi.",
+      "Uluslararası gözlemciler, artan ihlallerin kalıcı barış ihtimalini zayıflattığına dikkat çekiyor. Sivil kayıpların arttığı bölgede insani kriz derinleşirken, taraflar arasındaki diplomatik çıkmaz sürüyor."
+    ],
+    "comment": "Diplomatik müzakerelerin sahadaki gerçeklikle örtüşmemesi, barış ihtimalini her geçen gün zayıflatıyor. Varılan uzlaşmaların sahadaki silahlı unsurlar tarafından dikkate alınmaması, sivil kayıpların katlanmasına yol açıyor. Bu durum yalnızca bölge halkını değil, uluslararası güvenlik dengelerini de doğrudan tehdit ediyor. Benzer kriz senaryolarında ateşkes mekanizmalarının denetlenememesi, çatışmaların daha geniş bir coğrafyaya yayılması riskini beraberinde getiriyor.",
+    "editorNote": "Ateşkes kararlarının sahada karşılık bulmaması, bölgedeki sivil kayıpların her geçen gün artmasına yol açıyor.",
+    "tags": [
+      "Gazze",
+      "İsrail",
+      "Ateşkes",
+      "Orta Doğu",
+      "Saldırı"
+    ],
+    "category": "Dünya",
+    "gorselSorgu": "Gaza Strip conflict destruction",
+    "source": "Anadolu Ajansı",
+    "sourceUrl": "https://aa.com.tr/tr/pg/foto-galeri/20261023121048_israil-ordusu-ateskese-ragmen-gazze-seridine-yonelik-saldirilarini-surduruyor/168890",
+    "image": "https://web-cdnprod.aa.com.tr/uploads/PhotoGallery/2026/10/23/thumbs_b2_479412eda8742db7125c40b823d86876.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T09:45:24.000Z",
+    "generatedAt": "2026-10-23T09:54:47.197Z",
+    "breaking": true
+  },
+  {
+    "id": "0cdbd0ee4e6f0877",
+    "title": "Türkiye, Katar, Pakistan ve Endonezya arasında savunma paktı imzalandı",
+    "slug": "turkiye-katar-pakistan-ve-endonezya-arasinda-savunma-pakti-imzalandi",
+    "summary": "Türkiye, Katar, Pakistan ve Endonezya Doha'da yeni bir savunma sanayii mutabakatı imzaladı. 21 Ekim'de hayata geçirilen bu dörtlü anlaşma, teknik eğitim ve ortak üretim kapasitesini artırmayı hedefliyor.",
+    "keyPoints": [
+      "Dört ülke 21 Ekim'de Doha'da Bedir Mutabakat Zaptı'nı imzaladı.",
+      "Katar, ASELSAN, STM ve MKE gibi Türk savunma devleriyle iş birliğini güçlendiriyor.",
+      "Anlaşma, Cakarta ile yeni nesil otonom muharebe İHA'ları geliştirilmesini de kapsıyor."
+    ],
+    "body": [
+      "Türkiye, Katar, Pakistan ve Endonezya, savunma sanayii alanındaki iş birliğini resmi bir zemine taşımak üzere Doha'da bir araya geldi. Tarafların 21 Ekim tarihinde imzaladığı Bedir Mutabakat Zaptı, ülkeler arasında teknik askeri eğitim ve teknoloji entegrasyonu için ortak bir mekanizma sunuyor. Bu hamle, geçmişte pekişen ikili askeri ilişkilerin çok taraflı bir yapıya evrilmesini sağlıyor.",
+      "Katar, Türk savunma sanayiinin gelişmiş teçhizatını kullanan stratejik bir ortak konumunda bulunuyor. Zırhlı araçlar ve Bayraktar TB2 silahlı insansız hava araçları gibi sistemler, ülkenin askeri kapasitesine katkı sunarken BARQ gibi ortak girişimler de yerli üretim altyapısını destekliyor. Yeni anlaşmayla birlikte bu projelerin ölçeğinin büyütülmesi ve ortak üretim olanaklarının genişletilmesi hedefleniyor.",
+      "Pakistan ve Endonezya ise savunma teknolojilerinin yerelleştirilmesi süreçlerinde aktif rol oynamaya devam ediyor. İslamabad yönetimi, KAAN savaş uçağı programı ve savaş gemisi tedariki gibi büyük projelerle iş birliğini sürdürürken Ankara ile Cakarta arasında bu yıl yeni nesil otonom muharebe İHA'ları için ortaklık kuruldu. Bu otonom sistemlerin operasyonel üretime 2028 yılında geçmesi planlanıyor.",
+      "Ankara'nın bu yıl imzaladığı 15 milyar dolarlık yeni savunma sözleşmeleri ve yüzde 200'ü aşması beklenen dış tedarik hamlesi, bu dörtlü mekanizmanın zeminini güçlendiriyor. Katar'ın sermaye yatırımları ile Türkiye'nin üretim gücünün uyum içinde çalışması, dış pazarlara açılma sürecinde yeni bir kapı aralıyor. Birbirini tamamlayan askeri kabiliyetler tek bir çatı altında toplanıyor."
+    ],
+    "comment": "Uluslararası savunma ortaklıkları, tarafların ekonomik ve teknolojik kapasiteleri doğru orantıda harmanlandığında kalıcı sonuçlar doğurur. Türkiye'nin bu yıl imzaladığı 15 milyar dolarlık yeni savunma sözleşmeleri ve 2028 yılında üretime geçmesi planlanan otonom İHA projeleri, bu paktın sadece kağıt üstünde kalmayacağını gösteriyor. Doğrudan askeri modernize süreçlerindeki ülkelere yansıyacak bu entegrasyon, katılımcı devletlerin küresel pazardaki rekabet gücünü artırırken tedarik zincirlerinin çeşitlenmesini sağlayacaktır.",
+    "editorNote": "Doha'da imzalanan dörtlü savunma mutabakatı, yerli İHA projeleri ve ortak üretim hamleleriyle küresel pazarda yeni bir dönemin kapısını aralıyor.",
+    "tags": [
+      "Bedir Mutabakatı",
+      "Savunma Sanayii",
+      "Bayraktar TB2",
+      "KAAN",
+      "ASELSAN"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "military defense exhibition tech",
+    "source": "AA Güncel",
+    "sourceUrl": "https://www.aa.com.tr/tr/analiz/bedir-mutabakat-zapti-savunma-is-birliklerinde-derinlesmeye-dogru/4098320",
+    "image": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/23/thumbs_b_c_956cab5c08eaa42734e0d2aeaca23dfd.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T09:45:09.000Z",
+    "generatedAt": "2026-10-23T09:55:00.253Z",
+    "breaking": true
+  },
+  {
+    "id": "c85bd050c6107181",
+    "title": "Gazze'de evlilik hazırlığı yapan gencin çadırı İsrail bombasıyla yıkıldı",
+    "slug": "gazzede-evlilik-hazirligi-yapan-gencin-cadiri-israil-bombasiyla-yikildi",
+    "summary": "Gazze Şeridi'ndeki İsrail saldırılarında evlilik hazırlığı yapan genç bir adamın tüm birikimi yok oldu. Yerel kayıtlara göre Ekim 2023'ten bu yana süren çatışmalardaki toplam can kaybı 74.500'e yaklaştı.",
+    "keyPoints": [
+      "Ekim 2023'ten beri süren saldırılarda toplam can kaybı 74.500'e yaklaştı.",
+      "Mevcut ateşkes sonrasındaki ihlallerde 1.500'den fazla Filistinli yaşamını yitirdi.",
+      "Evlilik hazırlığındaki genç adam çadırı yıkılmasına rağmen direniş ruhunu sürdürüyor."
+    ],
+    "body": [
+      "Gazze Şeridi'nde süregelen askeri operasyonlar, bölge sakinlerinin hayata tutunma çabalarını doğrudan hedef alarak yıkıcı sonuçlar doğurmaya devam ediyor. Üç yılı aşkın zamandır devam eden çatışma ortamında evlerini ve ailelerini kaybeden siviller, kısıtlı imkanlarla yeni bir düzen kurmaya çalışırken saldırıların hedefi olmaktan kurtulamıyor. Son olarak evlenmek üzere tüm birikimini harcayıp çadır ve branda tedarik eden genç bir Filistinlinin hazırlıkları, düzenlenen bir bombardıman neticesinde tamamen ortadan kalktı.",
+      "Yerel basın mensupları tarafından kaydedilen görüntülerde, uğradığı yıkıma rağmen yaşama sevincini ve kararlılığını koruyan gencin feryatları dikkat çekti. Uğradığı büyük maddi ve manevi kaybın ardından pes etmeyeceğini dile getiren genç adam, çevresindekilere moral vererek toplumsal direncin sembollerinden biri haline geldi. Yaşadığı onca zorluğa rağmen düğününü mutlaka gerçekleştireceğini belirten gencin bu duruşu, sosyal medya platformlarında binlerce kişi tarafından paylaşılarak geniş yankı uyandırdı.",
+      "Bölgedeki insani kriz, ilan edilen ateşkes süreçlerindeki ihlaller ve sürdürülen nokta operasyonları nedeniyle her geçen gün daha da derinleşiyor. Sağlık kurumları ve resmi makamlar tarafından paylaşılan verilere göre, mevcut ateşkes mutabakatından bu yana gerçekleştirilen saldırılarda 1.500'den fazla kişi hayatını kaybetti, 5.000'i aşkın sivil ise yaralandı. Aynı zaman zarfında yıkılan binaların enkazından çıkarılan cenazelerin sayısı 800 sınırını geride bıraktı.",
+      "Çatışmaların başlangıç tarihi olan Ekim 2023 döneminden bugüne kadar kayda geçen toplam can kaybı bilançosu 74.500 sınırına dayanırken, yaralı sayısının 175.000 rakamının üzerinde seyrettiği rapor ediliyor. Altyapının büyük oranda tahrip olduğu ve barınma imkanlarının kısıtlı hale geldiği bölgede, sivillerin günlük yaşam mücadelesi uluslararası raporlara yansımaya devam ediyor."
+    ],
+    "comment": "Sürekli devam eden askeri saldırılar, bireysel hayatların en temel kurma çabalarını dahi imkansız hale getiren derin bir insani kriz tablosu yaratıyor. Açıklanan resmi verilere göre 1.500'den fazla kişinin hayatını kaybettiği ateşkes sonrası dönemde, sivillerin barınma ve evlilik gibi en insani adımları bile doğrudan tehdit altında kalıyor. Bölgedeki bu yıkım, özellikle genç nüfusun geleceğe dair umutlarını ve toplumsal bağları hedef alarak günlük yaşamı sürdürülemez bir boyuta taşıyor. Benzer çatışma ortamlarında her yeni hasar, onarılması güç toplumsal yaraların daha da derinleşmesine yol açıyor.",
+    "editorNote": "Evlilik hayalleri kuran genç adamın çadırının yıkılmasına rağmen gösterdiği direnç, bölgedeki insani tablonun başka bir yüzünü ortaya koyuyor.",
+    "tags": [
+      "Gazze",
+      "İsrail",
+      "çatışma",
+      "insani kriz",
+      "Filistin"
+    ],
+    "category": "Dünya",
+    "gorselSorgu": "destroyed building gaza street tent",
+    "source": "Haberhergün",
+    "sourceUrl": "https://www.haberhergun.com/haber/gazze-de-evlilik-hazirligi-israil-bombasiyla-yok-oldu_81291/",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Person_holding_world_globe.jpg/1280px-Person_holding_world_globe.jpg",
+    "gorselKaynak": {
+      "yazar": "Porapak Apichodilok",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Person_holding_world_globe.jpg"
+    },
+    "publishedAt": "2026-10-23T09:45:00.000Z",
+    "generatedAt": "2026-10-23T09:55:13.130Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/World_globe_%28Unsplash_gEKMstKfZ6w%29.jpg/1280px-World_globe_%28Unsplash_gEKMstKfZ6w%29.jpg",
+        "yazar": "Ben White benwhitephotography",
+        "lisans": "CC0",
+        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:World_globe_(Unsplash_gEKMstKfZ6w).jpg"
+      }
+    ],
+    "breaking": true
   },
   {
     "id": "329607dc29b78f46",
