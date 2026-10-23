@@ -71,20 +71,6 @@ const schema = {
       </div>
 
       <div class="kunye__kart">
-        <h2>Teknik Altyapı &amp; Yer Sağlayıcı</h2>
-        <dl class="kunye__dl">
-          <dt>Yazılım ve Altyapı</dt>
-          <dd>HaberinAi Core Engine (Modern JAMStack / Static Engine)</dd>
-
-          <dt>Yer Sağlayıcı (Hosting)</dt>
-          <dd>GitHub Inc. / Fastly CDN / Cloudflare CDN</dd>
-
-          <dt>Gizlilik ve Güvenlik</dt>
-          <dd>HTTPS SSL 256-Bit Şifreleme</dd>
-        </dl>
-      </div>
-
-      <div class="kunye__kart">
         <h2>Hukuki Bildirim &amp; İletişim</h2>
         <dl class="kunye__dl">
           <dt>Hukuk &amp; Telif Danışmanı</dt>
@@ -173,6 +159,9 @@ const schema = {
     border-bottom: 1px solid var(--border);
     letter-spacing: -0.02em;
     color: var(--brand-strong);
+  }
+  .kunye__kart:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
   .kunye__dl {
     margin: 0;

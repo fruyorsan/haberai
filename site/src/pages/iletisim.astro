@@ -43,15 +43,12 @@ const schema = {
 
     <div class="iletisim__grid">
       <div class="iletisim__kart">
-        <div class="iletisim__ikon" aria-hidden="true">📬</div>
         <h2>Genel İletişim &amp; Okur Masası</h2>
         <p>Her türlü genel soru, geri bildirim ve önerileriniz için:</p>
         <a class="iletisim__posta" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
-        <span class="iletisim__ek">Yedek / Domain: iletisim@haberinai.site</span>
       </div>
 
       <div class="iletisim__kart">
-        <div class="iletisim__ikon" aria-hidden="true">📰</div>
         <h2>Haber İhbarı &amp; Basın Bültenleri</h2>
         <p>Doğrulanabilir basın bültenleri, özel haber ihbarları ve duyurularınız için:</p>
         <a class="iletisim__posta" href={`mailto:${CONTACT_EMAIL}?subject=Haber%20Ihbari`}>{CONTACT_EMAIL}</a>
@@ -59,7 +56,6 @@ const schema = {
       </div>
 
       <div class="iletisim__kart">
-        <div class="iletisim__ikon" aria-hidden="true">⚖️</div>
         <h2>Hukuk, Tekzip ve Telif Hakları</h2>
         <p>İçerik kaldırma, düzeltme, tekzip veya telif hakları bildirimleriniz için:</p>
         <a class="iletisim__posta" href={`mailto:${CONTACT_EMAIL}?subject=Telif%20ve%20Hukuk`}>{CONTACT_EMAIL}</a>
@@ -67,7 +63,6 @@ const schema = {
       </div>
 
       <div class="iletisim__kart">
-        <div class="iletisim__ikon" aria-hidden="true">💼</div>
         <h2>Reklam ve Sponsorluk</h2>
         <p>Görüntülü reklam, sponsorlu içerik ve iş birlikleri için:</p>
         <a class="iletisim__posta" href="/reklam/">Reklam Sayfasını İnceleyin</a>
@@ -163,10 +158,6 @@ const schema = {
     border: 1px solid var(--border);
     border-radius: 16px;
     background: var(--surface);
-  }
-  .iletisim__ikon {
-    font-size: 1.9rem;
-    margin-bottom: 12px;
   }
   .iletisim__kart h2 {
     font-size: 1.2rem;
