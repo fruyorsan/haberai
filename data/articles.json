@@ -1,5 +1,110 @@
 [
   {
+    "id": "1102756911fd16af",
+    "title": "Canva, kendi görsel üretme modeli Canva Craft'ı kullanıma açtı",
+    "slug": "canva-kendi-gorsel-uretme-modeli-canva-crafti-kullanima-acti",
+    "summary": "Canva, araştırma ekibinin geliştirdiği ilk görsel üretme modeli Canva Craft'ı Dream Lab bölümünde kullanıma sundu. Tasarımların planını önceden hazırlayan yeni model, 2K çözünürlük ve 30'dan fazla en-boy oranı seçeneği sağlıyor.",
+    "keyPoints": [
+      "Model, görsel oluşturmadan önce nesne yerleşimini ve yazı planını yapıyor.",
+      "Geliştiriciler Canva API ile modeli kendi uygulamalarına entegre edebiliyor."
+    ],
+    "body": [
+      "Popüler tasarım platformu Canva, kendi araştırma ekibinin imzasını taşıyan ilk görsel üretme modeli Canva Craft'ı resmi olarak duyurdu. Şirket bu hamlesiyle Google, OpenAI, ByteDance ve Meta gibi devlerin yer aldığı yapay zeka pazarındaki rekabet ortamına dahil oldu. Yeni model, kullanıcıların yazdığı komutları doğrudan görsele dönüştürmeden evvel ayrıntılı bir tasarım planı hazırlıyor.",
+      "Geliştirilen sistem afiş, sosyal medya paylaşımı, sunum, bilgi grafiği ve menü gibi çok sayıda şablonla eğitildi. Bu sayede model yalnızca nesnelerin görünümünü değil, yazılar ile görsellerin bir sayfada nasıl konumlanacağını da öğreniyor. Kullanıcılar farklı platformlar için 30'u aşkın en ve boy oranı arasından seçim yapabiliyor.",
+      "Canva Craft, üretim sürecinde hangi öğenin öne çıkacağını, metinlerin nerede duracağını ve ne kadar yer kaplayacağını önceden planlıyor. Bu yaklaşım, modelin nesne ayrıntılarını doğru işlemesine ve okunaklı yazılar oluşturmasına katkı sağlıyor. Kullanıcılar, görselin tamamını baştan üretmek zorunda kalmadan yalnızca belirli bölümleri değiştirebiliyor.",
+      "Modelin eğitilmesinde 2024 yılında satın alınan Leonardo.ai ekibindeki araştırmacılar da aktif rol oynadı. Canva, daha düşük maliyetle çalışmasını hedeflediği Craft-fast ve Craft-ultrafast sürümleri üzerinde çalışmalarını sürdürüyor. Öte yandan şirket, ChatGPT ve Gemini gibi sohbet araçlarına da MCP altyapısıyla görsel üretme desteği getirmeyi planlıyor.",
+      "Canva'nın yıllık tekrarlayan geliri 2025 sonunda 4 milyar dolara ulaşırken şirket, yapay zeka maliyetlerini dengelemek amacıyla bazı ürünlerin dağıtımını yavaşlattı. Tüm kullanıcıların Dream Lab bölümünden erişebildiği Craft, aynı zamanda Magic Layers aracı sayesinde tasarım öğelerinin katmanlara ayrılarak düzenlenmesine olanak tanıyor."
+    ],
+    "comment": "Canva'nın dışarıdan aldığı hizmet maliyetlerini azaltmak amacıyla kendi görsel modelini devreye sokması, platformun kârlılık dengesini koruması açısından kritik önem taşıyor. OpenAI ve Google gibi rakiplerle kıyaslandığında tasarım odaklı veri setleriyle eğitilen Craft, özellikle afiş ve menü gibi yazılı içeriklerde kullanıcılara büyük bir pratiklik kazandırıyor. Şirketin yapay zeka maliyetleri nedeniyle 2026 büyüme beklentisini yüzde 20'ye düşürdüğü düşünüldüğünde, harici API bağımlılığını azaltan bu yerleşik model uzun vadede bütçe yükünü hafifletebilir. Ancak sistemin sunduğu iddiaların günlük kullanımda ne kadar isabetli sonuçlar vereceği, önümüzdeki dönemde milyonlarca kullanıcının geri bildirimleriyle netleşecek.",
+    "editorNote": "Canva'nın dışa bağımlılığı azaltmak için geliştirdiği Craft modeli, tasarım süreçlerini kökten değiştirmeye hazırlanıyor.",
+    "tags": [
+      "Canva",
+      "Canva Craft",
+      "Yapay Zeka",
+      "Tasarım",
+      "Leonardo.ai"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "graphic design software interface screen",
+    "source": "CHIP Online",
+    "sourceUrl": "https://www.chip.com.tr/guncel/canva-kendi-yapay-zeka-modelini-gelistirdi-canva-craft-tanitildi_184857.html",
+    "image": "https://img.chip.com.tr/rcman/Cw1280h720q95gm/storage/files/images/2026/10/23/canva-kendi-yapay-zeka-modelini-gelistirdi-canva-craft-tanitildi-n6y6.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T08:01:00.000Z",
+    "generatedAt": "2026-10-23T08:03:12.724Z",
+    "breaking": true
+  },
+  {
+    "id": "d63ea8db4165e2b2",
+    "title": "Vivo Y600, 10.000 mAh bataryası ve rekor performansıyla duyuruldu",
+    "slug": "vivo-y600-10000-mah-bataryasiyla-duyuruldu",
+    "summary": "Vivo, devasa 10.000 mAh kapasiteli yeni akıllı telefonu Y600 modelini resmi olarak tanıttı. BlueVolt batarya teknolojisini kullanan cihaz, tek şarjla 32 saati aşan kesintisiz canlı yayın testiyle dünya rekoru kırdı.",
+    "keyPoints": [
+      "Vivo Y600 modeli 10.000 mAh kapasiteli bataryasıyla rekor kırdı.",
+      "Cihaz tek şarjla 32 saat 37 dakika kesintisiz canlı yayın yapabildi.",
+      "MediaTek Dimensity 7300e işlemci ve 44W hızlı şarj desteği bulunuyor."
+    ],
+    "body": [
+      "Akıllı telefon pazarında enerji kapasitesiyle fark yaratan Vivo Y600 modeli teknoloji dünyasında büyük bir yankı uyandırdı. Şirket, yeni cihazının yüksek enerji depolama gücünü ön plana çıkaran tanıtım materyalleriyle dikkatleri üzerine çekti. Uygun fiyatlı serinin yeni üyesi olan bu telefon, mobil cihazlarda uzun süreli kullanım deneyimini tamamen farklı bir boyuta taşıyor. Rakiplerinden ayrışan yapısını ise büyük ölçüde yenilikçi BlueVolt batarya teknolojisine borçlu.",
+      "Gerçekleştirilen en uzun süreli kesintisiz canlı yayın kategorisinde yapılan testlerde telefonun tek bir dolumla 32 saat 37 dakika boyunca açık kaldığı tescillendi. Bu derece, cihazın günlük kullanım senaryolarında sunduğu enerji verimliliğinin somut bir göstergesi olarak kabul ediliyor. Kompakt gövdeye yüksek kapasite sığdırmayı amaçlayan batarya mimarisi yazılım optimizasyonlarıyla da destekleniyor.",
+      "Weibo platformundaki paylaşımlara göre Vivo Y600 gücünü MediaTek Dimensity 7300e işlemcisinden alıyor. Arka tarafta 50 megapiksel çözünürlüğünde ana kameraya yer verilirken, IP68 ve IP69 sertifikaları suya ve toza karşı direnç sağlıyor. V2607A model numarasıyla Çin 3C platformunda görünen cihazın 44W kablolu şarj desteği barındırdığı netleşti. Ekran tarafında ise 6,83 inç büyüklüğünde, 1.5K çözünürlük sunan ve 120Hz yenileme hızına sahip AMOLED bir panel tercih edildi.",
+      "Ön tarafta 32 megapiksel kamera ve 2 megapiksel derinlik sensörü yer alırken yazılım cephesinde Android 16 tabanlı OriginOS 6 arayüzü bulunuyor. Hindistan pazarındaki Vivo S2 FE modelinin yeniden markalanmış hali olduğu belirtilen telefon, Güneydoğu Asya'da Vivo V80 Lite 5G adıyla biliniyor. Çin pazarında 26 Ekim tarihinde ön siparişe açılacak cihazın 30 Ekim itibarıyla raflardaki yerini alacağı açıklandı."
+    ],
+    "comment": "On bin miliamperlik pil kapasitesini ince ince optimize eden üreticiler, standart akıllı telefon kullanıcılarının en büyük derdi olan şarj bitme kaygısını kökten ortadan kaldırıyor. MediaTek Dimensity 7300e işlemcisi ve BlueVolt teknolojisinin birleşimi, sadece kağıt üstünde kalan rakamlar sunmakla kalmayıp otuz iki saati aşan gerçek dünya test sonuçlarıyla iddiasını kanıtlıyor. Pazardaki rakipler genellikle daha ince gövdelere odaklanırken Vivo'nun enerji sürekliliğini seçmesi, özellikle yoğun seyahat eden veya gün boyu video üreten kullanıcılar için cihazı cazip kılıyor. Eğer bu batarya teknolojisi alt segment modellere de yaygınlaşırsa, sektördeki diğer markaların da pil kapasitelerini artırmak için tasarımlarını değiştirmesi kaçınılmaz hale gelecek.",
+    "editorNote": "Tek şarjla otuz iki saati aşan canlı yayın rekoru kıran yeni telefon, dev pil kapasitesini ince gövdede sunuyor.",
+    "tags": [
+      "Vivo",
+      "Vivo Y600",
+      "BlueVolt",
+      "Android",
+      "MediaTek"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "Vivo smartphone battery technology",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/vivo-y600-10000-mah-batarya-guinness-rekoru",
+    "image": "https://ares.shiftdelete.net/2026/10/vivo-y600-geliyor-10-000-mah-bataryasiyla-rekor-kirdi.webp",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T08:00:54.000Z",
+    "generatedAt": "2026-10-23T08:03:24.209Z",
+    "breaking": true
+  },
+  {
+    "id": "e3a5b70dea2fd0eb",
+    "title": "DEM Parti'den Van Depremi Yıl Dönümü Mesajı: Vaatler Tutulmadı",
+    "slug": "dem-partiden-van-depremi-yil-donumu-mesaji-vaatler-tutulmadi",
+    "summary": "Van Depremi'nin 15. yıl dönümünde yazılı açıklama yapan DEM Parti, aradan geçen zamana rağmen depremzedelerin sorunlarının çözülmediğini belirtti. Yapılaşmada rant odaklı anlayışın terk edilmesi gerektiği vurgulandı.",
+    "keyPoints": [
+      "Van Depremi'nin üzerinden tam 15 yıl geçti.",
+      "Depremzedelere yönelik geçmişte verilen vaatlerin tutulmadığı açıklandı.",
+      "Yapılaşma süreçlerinde rant yerine yaşam hakkının savunulması istendi."
+    ],
+    "body": [
+      "Türkiye'nin Doğu Anadolu bölgesinde büyük yıkıma yol açan 23 Ekim 2011 tarihli Van Depremi'nin üzerinden tam 15 yıl geçti. Bu büyük felaketin yıl dönümünde DEM Parti tarafından resmi kanallardan yazılı bir açıklama paylaşıldı. Açıklamada, aradan geçen uzun yıllara rağmen bölgedeki acıların taze kaldığı ve deprem sonrasında verilen sözlerin yerine getirilmediği ifade edildi.",
+      "Partinin kamuoyuyla paylaştığı mesajda, afetlerin yıkıcı sonuçlarının temel nedeninin doğa olayları olmadığına dikkat çekildi. \"Depremler değil, ihmaller öldürüyor\" vurgusunun yapıldığı açıklamada, kentlerin güvenliğini artıracak adımların atılması gerektiği belirtildi. Yapı denetimi ve kentsel dönüşüm süreçlerinde yaşanan eksikliklerin insan hayatını doğrudan tehlikeye attığı dile getirildi.",
+      "Açıklamanın devamında yerel yönetimler ve merkezi idare için çağrıda bulunularak yeni bir vizyonun şart olduğu savunuldu. Şehirlerin yeniden inşa sürecinde ticari çıkarların ön planda tutulmaması gerektiği ifade edildi. Bunun yerine insan hayatını koruyan politikaların derhal hayata geçirilmesi gerektiğinin altı çizildi.",
+      "Son bölümde ise partinin yapı güvenliği ve kentsel dönüşüm alanındaki denetim faaliyetlerini sürdüreceği bildirildi. Depreme dayanıklı yerleşim alanları oluşturulana kadar konunun takipçisi olunacağı vurgulanarak mesaj sonlandırıldı."
+    ],
+    "comment": "Afetlerin yıl dönümlerinde yapılan açıklamalar, geçmişte atılmayan adımların ne kadar büyük maliyetler doğurduğunu hatırlatmak açısından kritik bir işlev görüyor. Rant odaklı kentsel planlama anlayışı değişmediği sürece, milyonlarca yurttaşın yaşam hakkı risk altında kalmaya devam edecektir. Gelecekte yaşanabilecek olası felaketlerin önüne geçmek için yerel ve merkezi yönetimlerin somut denetim mekanizmalarını şeffaf biçimde çalıştırması şarttır.",
+    "editorNote": "On beş yıl geçmesine rağmen yaraların sarılmadığını belirten parti, yeni yapılaşmalarda rantın değil insan hayatının esas alınmasını istedi.",
+    "tags": [
+      "DEM Parti",
+      "Van Depremi",
+      "kentsel dönüşüm",
+      "deprem güvenliği",
+      "Gündem"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "earthquake damaged building ruins",
+    "source": "Amed TV",
+    "sourceUrl": "https://www.amedtv.com/gundem/dem-partiden-van-depreminin-15-yilinda-carpici-mesaj-verilen-sozler-tutulmadi/414615",
+    "image": "https://www.amedtv.com/cropImages/1280x720/uploads/haberler/2026/10/kvby-dem-partiden-van-depreminin-15-yilinda-carpici-mesaj-verilen-sozler-tutulmadi.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T07:55:05.000Z",
+    "generatedAt": "2026-10-23T08:03:35.379Z",
+    "breaking": true
+  },
+  {
     "id": "21ed2a96cd614d0f",
     "title": "Türkiye genelinde peş peşe sığ depremler kaydedildi",
     "slug": "turkiye-genelinde-pes-pese-sig-depremler-kaydedildi",
@@ -102,6 +207,41 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:45:44.000Z",
     "generatedAt": "2026-10-23T07:50:37.637Z",
+    "breaking": true
+  },
+  {
+    "id": "526c154ec3fec3eb",
+    "title": "Osmaniye Kadirli'de deprem ve yağışzede aile derme çatma barakada yaşıyor",
+    "slug": "osmaniye-kadirlide-deprem-ve-yagiszede-aile-dar-huzurda-yasiyor",
+    "summary": "Osmaniye Kadirli'de yaşayan Adil Hatunoğlu ve ailesi, art arda gelen afetler nedeniyle başlarını sokacak güvenli bir yuva arıyor. Kahramanmaraş depremlerinde evleri yıkılan aile, son fırtınalarda ise konteynerlerini kaybetti.",
+    "keyPoints": [
+      "6 Şubat depremlerinde oturdukları baraka ağır hasar alarak yan yattı.",
+      "Muhtarlık desteğiyle kurdukları konteyner iki ay önceki fırtınada kullanılamaz hale geldi.",
+      "Hasibe Hatunoğlu beyninden ameliyat geçirdi ve yüzde 92 engelli raporuna sahip."
+    ],
+    "body": [
+      "Osmaniye ilinin Kadirli ilçesine bağlı Yenigün Köyü'nde yaşam mücadelesi veren Hatunoğlu ailesi, üst üste yaşanan afetler sebebiyle zor günler geçiriyor. Adil Hatunoğlu, yüzde 92 fiziksel engeli bulunan onkoloji hastası eşi Hasibe Hatunoğlu ve 12 yaşındaki çocuklarıyla birlikte başkasına ait bir arsa üzerinde kurdukları geçici yapıda hayatını sürdürmeye çalışıyor. Yaşadıkları coğrafi konumun tarlalar arasında kalması ve yaşam şartlarına uygun olmaması ailenin işini daha da zorlaştırıyor.",
+      "Ailenin yaşadığı talihsizlikler zinciri 6 Şubat Kahramanmaraş depremleriyle başladı. Deprem sırasında ikamet ettikleri derme çatma baraka ağır hasar alarak kullanılamaz duruma geldi. Tapulu arazileri bulunmadığı için resmi mercilerden gerekli desteği alamayan aile, bir süre başkasının arsasına sığındı. Daha sonra muhtarlığın yardımıyla kendilerine tahsis edilen başka bir noktaya konteyner yerleştiren aile, kısa süre sonra yaşanan şiddetli fırtına ve yağışlar nedeniyle bu barınağı da kaybetti.",
+      "Sağlık sorunları nedeniyle köy ortamında yaşamak zorunda olduklarını belirten Adil Hatunoğlu, eşinin temiz havaya ve sürekli bakıma ihtiyacı olduğunu vurguladı. Devletin bağlamış olduğu engelli maaşıyla geçinmeye çalışan aile, elektrik altyapısı olmayan bu alanda iki güneş paneli yardımıyla hayatını döndürüyor. Buzdolabı gibi temel bazı eşyaları sadece bu paneller sayesinde çalıştırabildiklerini belirten aile, kalıcı ve güvenli bir yer tahsis edilmesi durumunda kendi imkanlarıyla ufak bir yapı kurabileceklerini ifade ediyor.",
+      "Beyninden geçirdiği ameliyat sonrasında konuşmakta güçlük çeken Hasibe Hatunoğlu ise bir an önce başını sokabileceği güvenli bir ev istediğini dile getirdi. Maddi imkansızlıklar nedeniyle arsa satın alma veya inşaat yapma gücü bulunmayan aile, yetkililerden ve yardımseverlerden gelecek uzatılacak yardım elini bekliyor. Bulundukları arazinin geçici olması ve her an çıkma ihtimali aile üzerindeki baskıyı artırıyor."
+    ],
+    "comment": "Devlet desteklerinin ve sosyal yardımların afetzede engelli bireylere ulaşmasında yaşanan bürokratik engeller, bireylerin temel barınma hakkını doğrudan tehdit ediyor. Tapusuz arsa üzerinde yaşamak zorunda kalan ailelerin yaşadığı mağduriyet, afet sonrası planlamaların ne kadar eksik kaldığını gösteriyor. Yüzde 92 engelli bir hastanın elektrikten ve sudan mahrum koşullarda yaşaması, sosyal devlet mekanizmalarının yerelde daha hızlı işletilmesi gerektiğini açıkça ortaya koyuyor. Kalıcı konut projeleri hayata geçirilmediği sürece bu tür geçici çözümler aileleri korumaya yetmeyecektir.",
+    "editorNote": "Deprem ve fırtınada iki kez barınağını kaybeden engelli aile, elektriksiz barakada yardım bekliyor.",
+    "tags": [
+      "Osmaniye",
+      "Kadirli",
+      "Depremzede",
+      "Engelli",
+      "Barınma"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "earthquake damaged building makeshift tent",
+    "source": "Son Dakika",
+    "sourceUrl": "https://www.sondakika.com/yerel/haber-deprem-ve-yagis-magduru-aile-osmaniye-kadirli-de-d-20358181/",
+    "image": "https://foto.sondakika.com/crop/1210x0/haber/2026/10/23/osmaniye-de-deprem-ve-yagis-magduru-hatunoglu-20358168_sd.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-23T07:45:24.000Z",
+    "generatedAt": "2026-10-23T08:03:47.349Z",
     "breaking": true
   },
   {
