@@ -69,18 +69,35 @@ const SON_TTL_SAAT = Number(process.env.BILDIRIM_SON_TTL_SAAT ?? 1.5);
 // işareti hızlı kaynaklarda her taze habere verilebiliyor (ürün tanıtımı,
 // indirim, tasarım açıklaması). Bunlar yalnızca kategori takipçisine gider;
 // tüm abonenin telefonu yalnızca aşağıdaki başlıklarda titrer.
+//
+// DİKKAT: regex'ler ASCII'dir, başlık önce sadeleştirilir. Sebep: Türkçe
+// büyük "İ" (U+0130) JavaScript'te /i bayrağıyla "i" ile eşleşmiyor; bu
+// yüzden "İzmir", "İstanbul" gibi başlıklar deprem filtresine takılmıyor ve
+// yerel deprem bildirimi hiç gitmiyordu.
 const ACIL_BASLIK =
-  /son dakika|patlama|yangın|yangin|sel baskını|savaş|savas|saldırı|saldiri|istifa|vefat|hayatını kaybetti|kaza|acil durum|darbe|operasyon|iflas/i;
+  /son dakika|patlama|yangin|sel baskini|savas|saldiri|istifa|vefat|hayatini kaybetti|kaza|acil durum|darbe|operasyon|iflas/;
 // Depremde yerel sinyal şart: "Vanuatu'da 6,9 deprem" Türkiye okuyucusu için
 // acil değil. AFAD/Kandilli veya bir il adı geçiyorsa genel bildirime girer;
 // geçmiyorsa yalnızca Gündem/Dünya takipçisine gider.
 const YEREL_DEPREM =
-  /türkiye|turkiye|afad|kandilli|marmara|istanbul|ankara|izmir|bursa|antalya|adana|konya|gaziantep|şanlıurfa|sanliurfa|hatay|kahramanmaraş|kahramanmaras|malatya|elazığ|elazig|diyarbakır|diyarbakir|van\b|erzurum|samsun|trabzon|kocaeli|sakarya|balıkesir|balikesir|manisa|aydın|aydin|muğla|mugla|tekirdağ|tekirdag|kayseri|mersin|eskişehir|eskisehir|sivas|tokat|ordu|giresun|rize|osmaniye|erciş|ercis|bolu|düzce|duzce|yalova|çanakkale|canakkale|kütahya|kutahya|afyon|uşak|usak|ısparta|isparta|burdur|denizli|karabük|karabuk|kastamonu|sinop|amasya|çorum|corum|yozgat|kırıkkale|kirikkale|kırşehir|kirsehir|nevşehir|nevsehir|niğde|nigde|aksaray|karaman|kırklareli|kirklareli|edirne|bilecik|bingöl|bingol|tunceli|adıyaman|adiyaman|kilis/i;
+  /turkiye|afad|kandilli|marmara|istanbul|ankara|izmir|bursa|antalya|adana|konya|gaziantep|sanliurfa|hatay|kahramanmaras|malatya|elazig|diyarbakir|van\b|erzurum|samsun|trabzon|kocaeli|sakarya|balikesir|manisa|aydin|mugla|tekirdag|kayseri|mersin|eskisehir|sivas|tokat|ordu|giresun|rize|osmaniye|ercis|bolu|duzce|yalova|canakkale|kutahya|afyon|usak|isparta|burdur|denizli|karabuk|kastamonu|sinop|amasya|corum|yozgat|kirikkale|kirsehir|nevsehir|nigde|aksaray|karaman|kirklareli|edirne|bilecik|bingol|tunceli|adiyaman|kilis|iskenderun|inegol|gebze|corlu|tarsus|siverek|nazilli/;
+
+/** Türkçe harfleri ASCII'ye indirger (regex eşleşmesi için). */
+function sade(metin) {
+  return String(metin || "")
+    .replace(/[İIı]/g, "i")
+    .replace(/[Şş]/g, "s")
+    .replace(/[Ğğ]/g, "g")
+    .replace(/[Üü]/g, "u")
+    .replace(/[Öö]/g, "o")
+    .replace(/[Çç]/g, "c")
+    .toLowerCase();
+}
 
 /** Genel son dakika için gerçekten acil mi? */
 function acilBaslik(a) {
-  const t = String(a?.title || "");
-  if (/deprem/i.test(t)) return YEREL_DEPREM.test(t);
+  const t = sade(a?.title);
+  if (/deprem/.test(t)) return YEREL_DEPREM.test(t);
   return ACIL_BASLIK.test(t);
 }
 // Konu bildirimleri: 40 haber/gün için günde ~10 bildirim (1 bildirim / 4 haber).
@@ -415,10 +432,15 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
 // Sayfa hazır değilse gonder() hata verir; çağıran taraf haberi "gönderildi"
 // olarak işaretlemez ve bir sonraki turda yeniden dener.
 const canliOnbellek = new Map();
-async function sayfaHazirMi(url, deneme = 5, aralikMs = 12000) {
+// GitHub Pages, gh-pages dalına push edildikten sonra sayfaları 1-3 dakika
+// içinde yayına alıyor. 5×12 sn (60 sn) yetmiyordu: yeni haber sayfası
+// yayında olmadığı için bildirim atlanıyor, haber de tazeliğini yitiriyordu.
+// 8×20 sn = en fazla ~160 sn beklenir.
+async function sayfaHazirMi(url, deneme = 8, aralikMs = 20000) {
   const anahtar = String(url || "");
   if (!anahtar) return false;
   if (canliOnbellek.has(anahtar)) return canliOnbellek.get(anahtar);
+  let sonDurum = 0;
   for (let i = 0; i < deneme; i++) {
     try {
       const res = await fetch(anahtar, {
@@ -434,11 +456,15 @@ async function sayfaHazirMi(url, deneme = 5, aralikMs = 12000) {
         canliOnbellek.set(anahtar, true);
         return true;
       }
+      sonDurum = res.status;
     } catch {
       // ağ/CDN hatası: kısa bekleyip yeniden dene
     }
     if (i < deneme - 1) {
-      console.log(`  … haber sayfası henüz yayında değil, ${Math.round(aralikMs / 1000)} sn sonra tekrar deneniyor`);
+      console.log(
+        `  … haber sayfası henüz yayında değil${sonDurum ? ` (HTTP ${sonDurum})` : ""}, ` +
+          `${Math.round(aralikMs / 1000)} sn sonra tekrar deneniyor`
+      );
       await bekle(aralikMs);
     }
   }
