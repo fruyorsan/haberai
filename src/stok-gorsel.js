@@ -153,6 +153,9 @@ export function markaAdi(baslik) {
 /** HTML etiketlerini ve varlıklarını temizler (Artist alanı HTML geliyor). */
 function duzMetin(value, max = 90) {
   return String(value || "")
+    // Commons, makine okuması için gizli bir <span> içinde aynı metni
+    // tekrarlıyor ("Unknown authorUnknown author"). Gizli bloğu tamamen at.
+    .replace(/<span[^>]*display\s*:\s*none[^>]*>[\s\S]*?<\/span>/gi, " ")
     .replace(/<[^>]*>/g, " ")
     .replace(/&nbsp;/g, " ")
     .replace(/&amp;/g, "&")
@@ -163,6 +166,28 @@ function duzMetin(value, max = 90) {
     .replace(/\s+/g, " ")
     .trim()
     .slice(0, max);
+}
+
+// Commons "Artist" alan� bazen kurumsal imza, bazen "Unknown author" gibi
+// bilgi ta��mayan bir metin. Atıf satırında tekrarı ve anlamsız imzayı at.
+const YAZAR_GENEL = /^(unknown( author)?|anonymous|wikimedia commons|commons)$/i;
+
+/** Foto�raf�� imzas�n� atıf satırına uygun h�le getirir (yoksa ""). */
+function yazarTemizle(value) {
+  let s = duzMetin(value, 160);
+  if (!s) return "";
+  // "Unknown author Unknown author" gibi birebir yinelenen yarımı at.
+  const parcalar = s.split(" ");
+  if (parcalar.length % 2 === 0) {
+    const yari = parcalar.length / 2;
+    const ilk = parcalar.slice(0, yari).join(" ");
+    if (ilk === parcalar.slice(yari).join(" ")) s = ilk;
+  }
+  s = s.replace(/[,;:.\-\s]+$/, "").trim();
+  if (!s || YAZAR_GENEL.test(s)) return "";
+  // �ok uzun kurumsal imzalar g�r�n�r atf� bo�mas�n.
+  if (s.length > 70) s = `${s.slice(0, 67).trimEnd()}…`;
+  return s;
 }
 
 /** Lisans adını sadeleştirir: "cc by-sa 4.0" -> "CC BY-SA 4.0" */
@@ -312,8 +337,12 @@ function uygunGorsel(sayfa, sorgu, afet = false, marka = "") {
   // Commons küçük görselleri iki CDN alan adından veriyor.
   if (!/^https:\/\/(upload|thumb)\.wikimedia\.org\//i.test(url)) return null;
 
+  // "Unknown author" gibi imzalar boş bırakılır: atıf satırı yalnızca lisans ve
+  // Wikimedia Commons bağlantısını gösterir, uydurma isim yazılmaz. Sanatçı
+  // alanı hiç yoksa Commons'un "Credit" (kaynak kurum) alanına düşülür.
+  const hamSanatci = duzMetin(meta.Artist?.value);
   const yazar =
-    duzMetin(meta.Artist?.value) || duzMetin(meta.Credit?.value) || "Wikimedia Commons";
+    (hamSanatci ? yazarTemizle(hamSanatci) : yazarTemizle(meta.Credit?.value)) || "";
 
   // Alaka: ÖNCE dosya adı. Dosya adı sorgudaki tek bir sözcüğü bile
   // içermiyorsa fotoğraf kapak olamaz: Commons araması konu bulamadığında
