@@ -103,11 +103,16 @@ async function main() {
       : Infinity;
   const kalanKota =
     config.gunlukLimit > 0
-      ? Math.max(
-          0,
-          Math.min(config.gunlukLimit - bugunSayi, gunlukHedef - bugunSayi)
-        )
+      ? Math.max(0, config.gunlukLimit - bugunSayi)
       : Infinity;
+
+  // Ara hedef artık SERT BİR KAPI DEĞİL, sadece frendir. Sert kapı, hedefi
+  // 4 haber aşan sabah yayınlarının ardından 3,5 saatlik sessizliğe yol
+  // açıyordu (24.10: 11:28-15:00 arası hiç haber çıkmadı; bildirim de
+  // gitmedi). Artık hedefin önündeyken tempo 1,5 katına çıkar (36 -> 54 dk),
+  // hedef yakalanınca normale döner. Günlük tavan (40) her durumda geçerli.
+  const hedefOnde =
+    config.gunlukLimit > 0 && bugunSayi > gunlukHedef + 1;
 
   let sonYayin = 0;
   for (const a of articles) {
@@ -235,14 +240,17 @@ async function main() {
   // bozar (4 haber / 30 dk = 8/saat). Bu yüzden bu turda yayınlanacak adet,
   // geçen sürenin bekleme aralığına bölümüyle sınırlanır: 36 dk geçtiyse 1,
   // 72 dk geçtiyse 2... Hattın uzun süre durduğu durumda en fazla turKota.
-  const beklemeDk = breakingPool.length
-    ? config.sonDakikaAralikDk
-    : config.yayinAralikDk;
+  const beklemeDk =
+    (breakingPool.length ? config.sonDakikaAralikDk : config.yayinAralikDk) *
+    (hedefOnde ? 1.5 : 1);
   const saatKota = config.saatlikLimit > 0 ? config.saatlikLimit : Infinity;
   const saatDolu = Number.isFinite(saatKota) && sonSaatSayi >= saatKota;
   const siraGeldi = kalanKota > 0 && gecenDk >= beklemeDk && !saatDolu;
-  const slotKota =
-    beklemeDk > 0 && Number.isFinite(gecenDk)
+  // Gün sınırında (dünün son haberinden sonra) tek haberle başla; aksi halde
+  // gece yarısı 2-3 haber birden basılıp günün geri kalanı seyreltilir.
+  const slotKota = dunYayin
+    ? 1
+    : beklemeDk > 0 && Number.isFinite(gecenDk)
       ? Math.max(1, Math.floor(gecenDk / beklemeDk))
       : turKota;
   // Aynı anda en fazla saatlik tavan kadar yayınla; uzun duraklamadan sonra
@@ -277,10 +285,6 @@ async function main() {
   if (!siraGeldi) {
     if (config.gunlukLimit > 0 && bugunSayi >= config.gunlukLimit) {
       console.log("  ⏸ Günlük kota doldu; bugün yeni haber yayınlanmayacak.");
-    } else if (kalanKota <= 0) {
-      console.log(
-        `  ⏸ Günün dilimine göre kota doldu (hedef ${gunlukHedef}/${config.gunlukLimit}); ilerleyen saatlerde devam.`
-      );
     } else if (saatDolu) {
       console.log(
         `  ⏸ Saatlik tavan (${saatKota}) doldu; sonraki saat diliminde devam.`
@@ -290,7 +294,11 @@ async function main() {
         `  ⏸ Yayın temposu: ${Math.max(
           0,
           Math.ceil(beklemeDk - gecenDk)
-        )} dk sonra sıradaki haber.`
+        )} dk sonra sıradaki haber.${
+          hedefOnde
+            ? ` (hedefin önündeyiz: ${bugunSayi}/${gunlukHedef}, tempo 1,5 kat uzatıldı)`
+            : ""
+        }`
       );
     }
   }
