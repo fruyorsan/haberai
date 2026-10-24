@@ -11,7 +11,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "og:default": "node scripts/gen-og-default.mjs",
-    "ikon": "node scripts/gen-ikon.mjs"
+    "ikon": "node scripts/gen-ikon.mjs",
+    "test:gorsel": "node scripts/gorsel-uygun-test.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

@@ -1,11 +1,10 @@
 ---
 // Haber gövdesi içindeki fotoğraf figürü.
 //
-// Görsel telif güvenli stok hattından geliyorsa (`kaynak` dolu) lisansın
-// istediği atıf verilir. Atıf artık fotoğrafın ALTINDA uzun bir satır değil,
-// sağ alt köşedeki küçük "i" rozetinde: dokununca/hover'da fotoğrafçı + lisans
-// görünür, tıklayınca Commons dosya sayfası açılır. Ekran okuyucular ve metin
-// tarayıcılar için tam atıf DOM'da (sr-only) durmaya devam eder.
+// Stok fotoğrafta (`kaynak` dolu) lisansın istediği atıf görünür biçimde
+// fotoğrafın altında verilir: fotoğrafçı · lisans · Wikimedia Commons.
+// Görsele tıklamak stokta Commons dosya sayfasını, haberin kendi kaynak
+// fotoğrafında ise büyük hâli açar.
 import { imageUrl, imageSrcset } from "../lib/articles.js";
 
 const { url, baslik, kaynak, eskiKaynak, altyazi, alt } = Astro.props;
@@ -18,19 +17,19 @@ const lisansAdresi = (g) => {
 };
 const lisansLink = kaynak ? lisansAdresi(kaynak) : "";
 
-const atif = kaynak
-  ? `Fotoğraf: ${kaynak.yazar || "Wikimedia Commons"}${kaynak.lisans ? ` · ${kaynak.lisans}` : ""} · Wikimedia Commons`
-  : `Fotoğraf: ${eskiKaynak || "HaberinAi"}`;
+// Stokta kaynak sayfa (Commons) daha bilgilendirici; kaynak fotoğrafta dosya.
+const gorselAdres = (kaynak && kaynak.sayfa) || url;
+const gorselBaslik = kaynak?.sayfa ? "Fotoğraf kaynağını aç" : "Fotoğrafı büyüt";
 ---
 
 <figure class="content__fig">
   <div class="content__fig-kap">
     <a
       class="content__fig-link"
-      href={url}
+      href={gorselAdres}
       target="_blank"
       rel="noopener nofollow"
-      title="Fotoğrafı büyüt"
+      title={gorselBaslik}
     >
       <img
         class="content__fig-img"
@@ -49,22 +48,34 @@ const atif = kaynak
     </a>
   </div>
 
-  {altyazi ? (
-    <figcaption class="content__fig-caption">
-      <span>{altyazi}</span>
-    </figcaption>
-  ) : (
-    <figcaption class="sr-only">
-      {atif}
-      {kaynak?.lisans && lisansLink && <a href={lisansLink} target="_blank" rel="noopener nofollow">{kaynak.lisans}</a>}
-      {kaynak?.sayfa && (
+  <figcaption class="content__fig-caption">
+    {altyazi && <span class="content__fig-aciklama">{altyazi}</span>}
+    <span class="content__fig-credit">
+      {kaynak ? (
         <>
-          {" · "}
-          <a href={kaynak.sayfa} target="_blank" rel="noopener nofollow">Wikimedia Commons</a>
+          Fotoğraf: {kaynak.yazar || "Wikimedia Commons"}
+          {kaynak.lisans && (
+            <>
+              {" · "}
+              {lisansLink ? (
+                <a href={lisansLink} target="_blank" rel="noopener nofollow">{kaynak.lisans}</a>
+              ) : (
+                kaynak.lisans
+              )}
+            </>
+          )}
+          {kaynak.sayfa && (
+            <>
+              {" · "}
+              <a href={kaynak.sayfa} target="_blank" rel="noopener nofollow">Wikimedia Commons</a>
+            </>
+          )}
         </>
+      ) : (
+        <>Fotoğraf: {eskiKaynak || "HaberinAi"}</>
       )}
-    </figcaption>
-  )}
+    </span>
+  </figcaption>
 </figure>
 
 <style>
@@ -96,12 +107,29 @@ const atif = kaynak
     transform: scale(1.02);
   }
   .content__fig-caption {
-    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 8px;
+    padding: 0 4px;
     font-size: 0.84rem;
     line-height: 1.45;
     color: var(--muted);
-    text-align: center;
+    text-align: left;
+  }
+  .content__fig-aciklama {
     font-style: italic;
-    padding: 0 12px;
+  }
+  .content__fig-credit {
+    font-size: 0.72rem;
+    letter-spacing: 0.01em;
+  }
+  .content__fig-credit a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content__fig-credit a:hover {
+    color: var(--text);
   }
 </style>
