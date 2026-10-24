@@ -68,6 +68,16 @@ const ornekler = [
     beklenen: false,
   },
   {
+    ad: "Yol haberi için yabancı ülkeden genel manzara yolu elenir",
+    article: {
+      title: "Ulaştırma Bakanlığı, Çankırı yolunu tamamlayarak süreyi kısalttı",
+      tags: ["Ulaştırma Bakanlığı", "Çankırı", "karayolu"],
+      gorselSorgu: "new asphalt highway road mountains",
+    },
+    url: wikimedia("Mt_cook_road_New_Zealand_(Unsplash).jpg"),
+    beklenen: false,
+  },
+  {
     ad: "Marka → ürün ailesi köprüsü (Samsung → Galaxy) çalışır",
     article: {
       title: "Samsung, One UI beta afişini yeniledi",

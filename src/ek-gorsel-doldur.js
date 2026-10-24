@@ -20,6 +20,7 @@
 //
 // Tekrar deneme durumu `ekGorselDeneme` alanında tutulur; `backfill.js`in kapak
 // fotoğrafı için kullandığı `gorselDeneme` alanına dokunulmaz.
+import { readFile } from "node:fs/promises";
 import { loadArticles, saveArticles } from "./store.js";
 import {
   stokGorseller,
@@ -54,6 +55,24 @@ const kimlik = (url) =>
     .replace(/\.(jpe?g|png|webp|avif|gif)$/, "");
 
 const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/**
+ * Google'a açık "indeks çekirdeği" haberlerinin kimlikleri (data/indeks.json).
+ * Dosya yoksa boş küme döner; doldurma yine çalışır.
+ */
+async function cekirdekIdleri() {
+  try {
+    const ham = await readFile(new URL("../data/indeks.json", import.meta.url), "utf8");
+    const j = JSON.parse(ham);
+    const ids = new Set();
+    for (const liste of Object.values(j?.days || {})) {
+      for (const id of Array.isArray(liste) ? liste : []) ids.add(String(id));
+    }
+    return ids;
+  } catch {
+    return new Set();
+  }
+}
 
 /** Commons dosya adı (log için kısa). */
 const dosyaAdi = (url) => {
@@ -100,10 +119,15 @@ const uygunlar = articles.filter((a) => {
   return true;
 });
 
-// Öncelik: son dakika haberleri, sonra en yeni, sonra daha uzun gövde.
-// (Gerçek tıklanma verisi Search Console erişimi olmadan yok; tazelik +
-// son dakika + gövde uzunluğu ücretsiz ve savunulabilir bir vekil.)
+// Öncelik: Google'a açık indeks çekirdeği, sonra son dakika haberleri, sonra
+// en yeni, sonra daha uzun gövde. (Gerçek tıklanma verisi Search Console
+// erişimi olmadan yok; dizine giren sayfa + tazelik + gövde uzunluğu ücretsiz
+// ve savunulabilir bir vekil.)
+const cekirdek = await cekirdekIdleri();
+const cekirdekMi = (a) => (cekirdek.has(String(a.id)) ? 1 : 0);
+
 const sirala = (x, y) =>
+  cekirdekMi(y) - cekirdekMi(x) ||
   (y.breaking ? 1 : 0) - (x.breaking ? 1 : 0) ||
   Date.parse(y.publishedAt || y.generatedAt || 0) -
     Date.parse(x.publishedAt || x.generatedAt || 0) ||
@@ -113,7 +137,8 @@ const hedefler = uygunlar.sort(sirala).slice(0, LIMIT);
 
 console.log(
   `Gövde içi fotoğraf doldurma: ${hedefler.length} hedef / ${uygunlar.length} uygun haber` +
-    ` (son ${GUN} gün, tur sınırı ${LIMIT})${DRY ? " — DENEME, yazılmayacak" : ""}`
+    ` (indeks çekirdeğinde ${uygunlar.filter(cekirdekMi).length}, son ${GUN} gün,` +
+    ` tur sınırı ${LIMIT})${DRY ? " — DENEME, yazılmayacak" : ""}`
 );
 
 let eklenenHaber = 0;

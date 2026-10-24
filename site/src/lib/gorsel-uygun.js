@@ -32,6 +32,11 @@ const SORGU_GENEL = new Set([
   "world", "globe", "map", "flag", "sign", "symbol", "background",
   "concept", "illustration", "photo", "photos", "image", "images", "stock",
   "official", "government", "new", "latest", "report", "closeup", "detail",
+  // Manzara/ulaşım gibi her habere uyabilecek genel kareler: tek başına
+  // eşleşince yanlış bağlam gösteriyor (Çankırı yol haberi → Yeni Zelanda
+  // dağ yolu fotoğrafı).
+  "road", "highway", "water", "tree", "trees", "mountain", "mountains",
+  "valley", "field", "landscape", "outdoor", "nature", "asphalt", "concrete",
 ]);
 
 // Türkçe başlıkta sık geçen, konu ayırt etmeyen sözcükler.
