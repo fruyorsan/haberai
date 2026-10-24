@@ -9,6 +9,7 @@ import HaberFigur from "../../components/HaberFigur.astro";
 import Yorumlar from "../../components/Yorumlar.astro";
 import { getArticles, formatDate, publishedISO, imageUrl, imageSrcset, socialImageUrl, tagUrl, slugify } from "../../lib/articles.js";
 import { kapakKaynagi, kapakUygunMu } from "../../lib/kapak.js";
+import { stokEkUygunMu } from "../../lib/gorsel-uygun.js";
 import { ADSENSE_SLOTS, ONESIGNAL_APP_ID, siteOrigin } from "../../lib/site-meta.js";
 
 export function getStaticPaths() {
@@ -28,45 +29,6 @@ const date = formatDate(publishedISO(article));
 const benimEtiketler = new Set(
   (Array.isArray(article.tags) ? article.tags : []).map((t) => slugify(t)).filter(Boolean)
 );
-
-// Galeride "ilgili" sayılan fotoğrafın habere gerçekten bağlı olması için
-// başlıktaki özel adlar (marka, kişi, ülke, takım...) da eşleştirilir.
-const BASLIK_GENEL_KELIMELER = new Set([
-  "için", "ile", "ve", "bir", "bu", "da", "de", "ki", "mi", "mı", "mu", "mü",
-  "çok", "yeni", "son", "ilk", "daha", "en", "gibi", "olan", "olarak", "yıl",
-  "yılı", "yılın", "yılda", "gün", "günü", "gününde", "saat", "saatlik", "dakika",
-  "dolar", "milyon", "milyar", "bin", "tl", "usd", "eur", "haber", "haberleri",
-  "haberi", "açıklama", "açıklaması", "duyurdu", "duyuruldu", "başladı", "başlıyor",
-  "geldi", "gelen", "oldu", "olacak", "yaptı", "etti", "değil", "var", "yok",
-  "nasıl", "neden", "zaman", "kim", "kimdir", "nerede", "hangi", "kaç", "model",
-  "modeller", "modeli", "satış", "satışa", "fiyat", "fiyatı", "özellik",
-  "özellikleri", "sistem", "sistemleri", "kullanıcı", "kullanıcılar", "güncelleme",
-  "güncellemesi", "duyuru", "karar", "kararı", "iddia", "iddiası", "rapor",
-  "raporu", "analiz", "uzman", "uzmanı", "şirket", "şirketi", "şirketler", "ülke",
-  "ülkede", "kent", "kenti", "bölge", "bölgesi", "dünya", "dünyada", "avrupa",
-  "abd", "türkiye", "yaptı", "yapıldı", "yapılıyor", "başladı", "sürüyor",
-  "yıllık", "yüzde", "binde", "ölüm", "ölü", "oran", "oranı", "vaka", "vakası",
-  "vakalar", "yaş", "altı", "üstü", "düşüş", "artış", "rekor", "test", "sonuç",
-  "sonuçları", "uyarı", "inceleme", "incelemesi", "soruşturma", "dava", "davası",
-  "kişi", "kişiye", "kişinin", "adet", "büyük", "küçük", "eski", "sağlık",
-  "sağlıkta", "mühendislik", "teknoloji", "telekomünikasyon", "yapay", "zeka",
-  "fiyatla", "savaş", "çatışma", "çatışmalar", "saldırı", "operasyon", "deprem",
-  "sel", "yangın", "kaza", "trafik", "strateji", "stratejisi", "plan", "planı",
-  "erken", "geç", "yayın", "yayınladı", "yayınlandı", "açıldı", "incelemeler",
-  "alarm", "sinyal", "sistem", "sistemi", "yöntem", "yöntemi", "fosil",
-]);
-
-/** Başlıktaki büyük harfle başlayan anlamlı adları (marka/kişi/yer) çıkarır. */
-const baslikOzelAdlari = (a) => {
-  const adlar = String(a?.title || "").match(/[\p{Lu}][\p{L}\p{N}'’.-]{2,}/gu) || [];
-  return new Set(
-    adlar
-      .map((t) => t.toLocaleLowerCase("tr").replace(/['’].*$/u, ""))
-      .filter((t) => t.length >= 3 && !BASLIK_GENEL_KELIMELER.has(t))
-  );
-};
-
-const benimOzelAdlar = baslikOzelAdlari(article);
 
 const puanla = (a) => {
   if (a.slug === article.slug) return -1;
@@ -150,8 +112,10 @@ const ekKaynaklar = Array.isArray(article.gorselEk) ? article.gorselEk.filter(Bo
 const kaynakIciUrller = Array.isArray(article.images) ? article.images.filter(Boolean) : [];
 
 /** Ek fotoğrafın telif/lisans ve alt yazı bilgisi (varsa). */
-const ekKaynak = (url) =>
-  ekKaynaklar.find((g) => String(g.url) === String(url)) || null;
+const ekKaynak = (url) => {
+  const kimlik = gorselKimlik(url);
+  return ekKaynaklar.find((g) => gorselKimlik(g.url) === kimlik) || null;
+};
 
 /** Stok fotoğrafın atıf metni: "Fotoğrafçı · Lisans · Wikimedia Commons" */
 const atifMetni = (g) =>
@@ -163,14 +127,22 @@ const hamAdaylar = [
   ...ekKaynaklar.map((g) => ({ url: g.url, g })),
 ];
 
+// Gövde genelde 4 paragraf: iki ek fotoğraf metni dengeliyor. Daha fazlası
+// kısa haberi fotoğraf albümüne çevirir; bu yüzden üst sınır iki.
+const MAKALE_EK_FOTOGRAF = 2;
+
 const kendiFotograflar = [];
 for (const aday of hamAdaylar) {
-  if (kendiFotograflar.length >= 2) break;
+  if (kendiFotograflar.length >= MAKALE_EK_FOTOGRAF) break;
   const u = typeof aday.url === "string" ? aday.url.trim() : "";
   if (!/^https?:\/\//i.test(u)) continue;
   const k = gorselKimlik(u);
   if (!k || gorulenKimlikler.has(k)) continue;
   if (!kapakUygunMu(article, u)) continue;
+  // Stok fotoğrafın konuyla gerçekten ilgili olduğunu doğrula: Wikimedia
+  // araması bazen (ör. Libya haberi için İstanbul fotoğrafı) yanlış sonuç
+  // döndürüyor. Haberin kendi kaynak fotoğrafları bu denetimden geçmez.
+  if (aday.g && !stokEkUygunMu(article, u)) continue;
   gorulenKimlikler.add(k);
 
   const g = aday.g || ekKaynak(u);
@@ -179,7 +151,7 @@ for (const aday of hamAdaylar) {
     alt: g?.altyazi ? `${article.title} — ${g.altyazi}` : `${article.title} — haber detayı`,
     altyazi: g?.altyazi || "",
     caption: article.title,
-    credit: g ? atifMetni(g) : `Fotoğraf: ${article.source}`,
+    credit: g ? atifMetni(g) : article.source,
     href: g?.sayfa || article.sourceUrl || "",
     hrefLabel: g ? "Fotoğraf kaynağı" : "Haber kaynağı",
     tur: "haber",
@@ -193,12 +165,12 @@ const tumMetinFotograflari = [...kendiFotograflar];
 const fotoPozisyonlari = new Map();
 if (tumMetinFotograflari.length > 0 && body.length >= 2) {
   fotoPozisyonlari.set(0, tumMetinFotograflari[0]);
-  if (tumMetinFotograflari.length >= 2) {
-    if (body.length >= 4) {
-      fotoPozisyonlari.set(2, tumMetinFotograflari[1]);
-    } else if (body.length === 3) {
-      fotoPozisyonlari.set(1, tumMetinFotograflari[1]);
-    }
+  if (tumMetinFotograflari.length >= 2 && body.length >= 3) {
+    // İkinci fotoğraf gövdenin ~%60'ına: uzun metinde alt yarı fotoğrafsız
+    // kalmasın, kısa metinde iki fotoğraf üst üste binmesin.
+    const son = body.length - 1;
+    const ikinci = Math.min(son, Math.max(2, Math.round(son * 0.6)));
+    fotoPozisyonlari.set(ikinci, tumMetinFotograflari[1]);
   }
 }
 
