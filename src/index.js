@@ -83,9 +83,30 @@ async function main() {
   const bugunSayi = articles.filter(
     (a) => gunAnahtari(a.generatedAt || a.publishedAt) === bugun
   ).length;
+
+  // Günün geçen oranına göre ara hedef. Yalnızca "40 - yayınlanan" kuralı
+  // kotayı öğleden sonra tüketiyordu (24.10 sabahı 11:30'da 24 haber
+  // yayınlanmıştı). Ara hedef 40 haberi gün boyuna yayar, gün sonunda 40'a
+  // ulaşır. Türkiye 2016'dan beri sabit UTC+3 (yaz saati uygulanmıyor).
+  const [gy, gm, gd] = bugun.split("-").map(Number);
+  const gunBasi = Date.UTC(gy, gm - 1, gd) - 3 * 3600 * 1000;
+  const gunOrani = Math.min(
+    1,
+    Math.max(0, (Date.now() - gunBasi) / (24 * 3600 * 1000))
+  );
+  const gunlukHedef =
+    config.gunlukLimit > 0
+      ? Math.min(
+          config.gunlukLimit,
+          Math.max(0, Math.ceil(config.gunlukLimit * gunOrani))
+        )
+      : Infinity;
   const kalanKota =
     config.gunlukLimit > 0
-      ? Math.max(0, config.gunlukLimit - bugunSayi)
+      ? Math.max(
+          0,
+          Math.min(config.gunlukLimit - bugunSayi, gunlukHedef - bugunSayi)
+        )
       : Infinity;
 
   let sonYayin = 0;
@@ -93,7 +114,11 @@ async function main() {
     const t = new Date(a.generatedAt || a.publishedAt || 0).getTime();
     if (Number.isFinite(t) && t > sonYayin) sonYayin = t;
   }
-  const gecenDk = sonYayin ? (Date.now() - sonYayin) / 60000 : Infinity;
+  const gecenDkHam = sonYayin ? (Date.now() - sonYayin) / 60000 : Infinity;
+  // Gün sınırında tempo sıfırlanır: dünün son haberi yüzünden yeni günün ilk
+  // haberi 36 dk gecikmesin (yoksa 40. haber gece yarısına sarkar).
+  const dunYayin = sonYayin > 0 && gunAnahtari(sonYayin) !== bugun;
+  const gecenDk = dunYayin ? Infinity : gecenDkHam;
 
   // Saatlik tavan: son 60 dakikada kaç haber yayınlandı?
   const sonSaatSayi = articles.filter((a) => {
@@ -102,10 +127,16 @@ async function main() {
   }).length;
 
   console.log(
-    `Günlük kota: ${bugunSayi}/${config.gunlukLimit || "∞"} · kalan ${
-      kalanKota === Infinity ? "∞" : kalanKota
-    } · son yayın ${
-      Number.isFinite(gecenDk) ? `${Math.floor(gecenDk)} dk önce` : "-"
+    `Günlük kota: ${bugunSayi}/${config.gunlukLimit || "∞"}${
+      Number.isFinite(gunlukHedef)
+        ? ` (bu saate göre hedef ${gunlukHedef})`
+        : ""
+    } · kalan ${kalanKota === Infinity ? "∞" : kalanKota} · son yayın ${
+      dunYayin
+        ? "dün"
+        : Number.isFinite(gecenDkHam)
+          ? `${Math.floor(gecenDkHam)} dk önce`
+          : "-"
     }`
   );
 
@@ -244,8 +275,12 @@ async function main() {
   }
 
   if (!siraGeldi) {
-    if (kalanKota <= 0) {
+    if (config.gunlukLimit > 0 && bugunSayi >= config.gunlukLimit) {
       console.log("  ⏸ Günlük kota doldu; bugün yeni haber yayınlanmayacak.");
+    } else if (kalanKota <= 0) {
+      console.log(
+        `  ⏸ Günün dilimine göre kota doldu (hedef ${gunlukHedef}/${config.gunlukLimit}); ilerleyen saatlerde devam.`
+      );
     } else if (saatDolu) {
       console.log(
         `  ⏸ Saatlik tavan (${saatKota}) doldu; sonraki saat diliminde devam.`

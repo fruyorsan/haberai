@@ -169,6 +169,10 @@ export const config = {
   //   yetmez; aksi hâlde 40 haber ilk 1-2 saatte tükenip günün kalanında
   //   yeni haber çıkmaz.
   // sonDakikaAralikDk: son dakika adayı varsa daha kısa bekleme.
+  //
+  // Ayrıca src/index.js kotayı günün geçen oranına göre de sınırlar:
+  // öğlene kadar ~20, 20:00'de ~33 haber. Böylece 40 haber sabah
+  // saatlerinde tükenip akşam site sessiz kalmaz.
   gunlukLimit: Number(process.env.GUNLUK_HABER_LIMIT || 40),
   // 40 haber / 24 saat ≈ 36 dk arayla. Böylece kota günün ilk saatlerinde
   // tükenmez, akış gece yarısına kadar dengeli sürer.
