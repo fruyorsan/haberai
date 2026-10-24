@@ -451,11 +451,19 @@ takip ettiği konular için bildirim alır; site kapalıyken de bildirim gelir
 
 | Tür | Kim alır | Sıklık |
 | --- | --- | --- |
-| Son dakika (`breaking: true`) | Tüm aboneler | Asgari 25 dk arayla, günde en fazla 6 |
-| Takip edilen konu (kategori) | Yalnızca o kategoriyi takip edenler | Kategori başına en fazla 3 saatte 1, günde en fazla 3 |
+| Son dakika (`breaking: true`) | Genel son dakikayı açanlar | 4 saat arayla, günde en fazla 2 |
+| Takip edilen konu (kategori) | Yalnızca o kategoriyi takip edenler | 96 dk arayla, günde en fazla 10 |
+| Günün özeti | "Günde 3 özet" seçenler | 09:00 / 15:00 / 21:00 |
 
-- Gece **23:00–07:00** arasında yalnızca konu bildirimleri durur; son dakika haberleri
-  gece de gider (acil gelişme kaçmasın). Toplam günlük tavan 9 bildirimdir.
+- Günde ~40 haber üretildiği için bildirim bütçesi buna göre: ortalama **her 4
+  haberde 1 bildirim**. Konu bildirimleri 23:00–07:00 arasında susar; son dakika
+  haberleri gece de gider (acil gelişme kaçmasın). Toplam günlük tavan 12
+  (2 son dakika + 10 konu) + 3 özet.
+- Kategori içinde hangi haberin gideceği de optimize edilir: önce son dakika,
+  sonra ilgi puanı (başlık + gerçek fotoğraf + tazelik) yüksek haber seçilir.
+- Genel son dakika yalnızca yerel/acil başlıklarda gider (depremde AFAD/Kandilli
+  veya il adı şart). Uzak ülke depremleri ve ürün tanıtımları tüm aboneye
+  gönderilmez; yalnızca ilgili kategori takipçisine gider.
 - "Benzer haberler" bilerek bildirilmez: sayfa içi öneridir, telefonu titretmeye değmez
   ve okuyucu iznini kaybettirir.
 - Aynı haber iki kez gönderilmez: gönderilen id'ler `data/bildirim.json`'da tutulur

@@ -17,7 +17,7 @@
 //      olduğu için konu bildirimi pratikte hiç gitmiyordu). Kategori başına
 //      bekleme süresi yok (KAT_MIN_ARALIK_DK=0); tur başına en fazla
 //      KAT_TUR_ADET kategori ve KAT_TUR_HABER haber gönderilir, günlük tavan
-//      ve sessiz saat (01:00-07:00 TR) uygulanır. Takipçisi olmayan kategori
+//      ve sessiz saat (23:00-07:00 TR) uygulanır. Takipçisi olmayan kategori
 //      tespit edilirse (alıcı 0) kısa süre atlanır, tavan harcanmaz.
 //
 //   3) ÖZET (bildirim_sikligi = ozet):
@@ -40,6 +40,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { getArticles, imageUrl } from "../site/src/lib/articles.js";
 import { kapakKaynagi } from "../site/src/lib/kapak.js";
+import { ilgiSkoru } from "../site/src/lib/ilgi.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = join(__dirname, "..", "data");
@@ -50,18 +51,37 @@ const REST_KEY = String(process.env.ONESIGNAL_REST_API_KEY || "").trim();
 const SITE_URL = (process.env.SITE_URL || "https://haberinai.site").replace(/\/+$/, "");
 
 // --- Ayarlar (env ile değiştirilebilir) ---
-// Ölçü: site 7/24 ve dakikalar içinde haber giriyor. Günlük tavanlar okuyucuyu
-// boğmayacak ama "bildirim hiç gelmiyor" demeyeceği kadar geniş tutulur:
-// son dakika ~yarım saatte bir, konu bildirimi iki saatte bir.
-const SON_MIN_ARALIK_DK = Number(process.env.BILDIRIM_SON_ARALIK_DK ?? 180);
-const SON_MAX_GUN = Number(process.env.BILDIRIM_SON_MAX_GUN ?? 3);
+// Ölçü: site artık günde ~40 haber üretiyor (bkz. src/config.js günlük kota).
+// Bildirim bütçesi bu tempoya göre: son dakika günde 2 (4 saatte bir),
+// konu günde 10 (96 dk arayla), özet günde 3. Böylece her 4 haberde en fazla
+// 1 bildirim gider; okuyucu boğulmaz, bildirim de tamamen kesilmez.
+const SON_MIN_ARALIK_DK = Number(process.env.BILDIRIM_SON_ARALIK_DK ?? 240);
+const SON_MAX_GUN = Number(process.env.BILDIRIM_SON_MAX_GUN ?? 2);
 const SON_TTL_SAAT = Number(process.env.BILDIRIM_SON_TTL_SAAT ?? 4);
-// Konu bildirimleri: seçilen başlıklardan günde ~10 bildirim (dengeli dağılım).
-// Konu bildirimleri: gün içine eşit dağıtılmış ~10-12 bildirim.
-// 80 dk genel aralık ve sabah kotası sayesinde bildirimler tüm güne (08:00 - 23:00) dengeli yayılır.
-const KAT_MIN_ARALIK_DK = Number(process.env.BILDIRIM_KAT_ARALIK_DK ?? 90);
-const KAT_GENEL_ARALIK_DK = Number(process.env.BILDIRIM_KAT_GENEL_ARALIK_DK ?? 80);
-const KAT_MAX_GUN = Number(process.env.BILDIRIM_KAT_MAX_GUN ?? 12);
+// Genel son dakika yalnızca GERÇEKTEN acil başlıklarda gider. `breaking`
+// işareti hızlı kaynaklarda her taze habere verilebiliyor (ürün tanıtımı,
+// indirim, tasarım açıklaması). Bunlar yalnızca kategori takipçisine gider;
+// tüm abonenin telefonu yalnızca aşağıdaki başlıklarda titrer.
+const ACIL_BASLIK =
+  /son dakika|patlama|yangın|yangin|sel baskını|savaş|savas|saldırı|saldiri|istifa|vefat|hayatını kaybetti|kaza|acil durum|darbe|operasyon|iflas/i;
+// Depremde yerel sinyal şart: "Vanuatu'da 6,9 deprem" Türkiye okuyucusu için
+// acil değil. AFAD/Kandilli veya bir il adı geçiyorsa genel bildirime girer;
+// geçmiyorsa yalnızca Gündem/Dünya takipçisine gider.
+const YEREL_DEPREM =
+  /türkiye|turkiye|afad|kandilli|marmara|istanbul|ankara|izmir|bursa|antalya|adana|konya|gaziantep|şanlıurfa|sanliurfa|hatay|kahramanmaraş|kahramanmaras|malatya|elazığ|elazig|diyarbakır|diyarbakir|van\b|erzurum|samsun|trabzon|kocaeli|sakarya|balıkesir|balikesir|manisa|aydın|aydin|muğla|mugla|tekirdağ|tekirdag|kayseri|mersin|eskişehir|eskisehir|sivas|tokat|ordu|giresun|rize|osmaniye|erciş|ercis|bolu|düzce|duzce|yalova|çanakkale|canakkale|kütahya|kutahya|afyon|uşak|usak|ısparta|isparta|burdur|denizli|karabük|karabuk|kastamonu|sinop|amasya|çorum|corum|yozgat|kırıkkale|kirikkale|kırşehir|kirsehir|nevşehir|nevsehir|niğde|nigde|aksaray|karaman|kırklareli|kirklareli|edirne|bilecik|bingöl|bingol|tunceli|adıyaman|adiyaman|kilis/i;
+
+/** Genel son dakika için gerçekten acil mi? */
+function acilBaslik(a) {
+  const t = String(a?.title || "");
+  if (/deprem/i.test(t)) return YEREL_DEPREM.test(t);
+  return ACIL_BASLIK.test(t);
+}
+// Konu bildirimleri: 40 haber/gün için günde ~10 bildirim (1 bildirim / 4 haber).
+// 96 dk aralık + 23:00-07:00 sessizlik + sabah kotası sayesinde bildirimler
+// 07:00-21:24 arasına eşit yayılır; akşam/gece yığılması olmaz.
+const KAT_MIN_ARALIK_DK = Number(process.env.BILDIRIM_KAT_ARALIK_DK ?? 120);
+const KAT_GENEL_ARALIK_DK = Number(process.env.BILDIRIM_KAT_GENEL_ARALIK_DK ?? 96);
+const KAT_MAX_GUN = Number(process.env.BILDIRIM_KAT_MAX_GUN ?? 10);
 // Taze sayılan pencere (8 saat): gün içindeki en iyi haberler akşam da gönderilebilsin.
 const KAT_TTL_SAAT = Number(process.env.BILDIRIM_KAT_TTL_SAAT ?? 8);
 // Tur başına en fazla kaç KATEGORİ işlenir (adil sıra).
@@ -77,8 +97,9 @@ const TOPLAM_MAX_GUN = Number(process.env.BILDIRIM_TOPLAM_MAX_GUN ?? 12);
 const OZET_SAATLER = [9, 15, 21];
 const OZET_ARALIK_SAAT = Number(process.env.BILDIRIM_OZET_ARALIK_SAAT ?? 4);
 // Sessiz saat: yalnızca KONU bildirimleri için (Türkiye saati, UTC+3).
-// Son dakika haberleri gece de gider; konu bildirimleri 01:00-07:00 arası susar.
-const SESSIZ_BAS = Number(process.env.BILDIRIM_SESSIZ_BAS ?? 1);
+// Son dakika haberleri gece de gider; konu bildirimleri 23:00-07:00 arası susar.
+// Böylece 10 bildirim 07:00-21:24 arasına dengeli dağılır, gece kimse uyanmaz.
+const SESSIZ_BAS = Number(process.env.BILDIRIM_SESSIZ_BAS ?? 23);
 const SESSIZ_BIT = Number(process.env.BILDIRIM_SESSIZ_BIT ?? 7);
 
 const TR_OFFSET_DK = 180; // Türkiye UTC+3 (yaz saati uygulaması yok)
@@ -656,7 +677,12 @@ export async function bildirimleriGonder({ dry = false } = {}) {
       );
     } else {
       const aday = yeni
-        .filter((a) => a.breaking === true && taze(a, SON_TTL_SAAT, now))
+        .filter(
+          (a) =>
+            a.breaking === true &&
+            taze(a, SON_TTL_SAAT, now) &&
+            acilBaslik(a)
+        )
         .sort((a, b) => yayinZamani(b) - yayinZamani(a))[0];
 
       if (aday) {
@@ -710,7 +736,9 @@ export async function bildirimleriGonder({ dry = false } = {}) {
   // Sabah saatlerinde (07:00 - 13:00) tüm günlük kotanın tükenmesini engelle
   // (Öğleden sonra ve akşam prime-time haberlerine mutlaka bildirim kalsın).
   const sabahMi = tr.saat < 13;
-  const sabahTavan = Math.floor(KAT_MAX_GUN * 0.42); // örn: 12 kotanın en fazla 5'i sabahtan gidebilir
+  // 10 kotanın en fazla 4'ü 13:00'ten önce gider; 07:00-13:00 arası 96 dk
+  // aralıkla zaten en fazla 4 bildirim sığar.
+  const sabahTavan = Math.floor(KAT_MAX_GUN * 0.42);
 
   if (sessiz) {
     console.log(`Bildirim: sessiz saat (TR ${tr.saat}:00) → konu bildirimi gönderilmiyor.`);
@@ -737,7 +765,15 @@ export async function bildirimleriGonder({ dry = false } = {}) {
       grup.get(k).push(a);
     }
     for (const liste of grup.values()) {
-      liste.sort((a, b) => yayinZamani(b) - yayinZamani(a));
+      // Bildirimde "en yeni" değil "en çok tıklanacak" haber seçilir:
+      // önce son dakika, sonra ilgi puanı (başlık + gerçek fotoğraf +
+      // tazelik), eşitlikte daha yeni haber.
+      liste.sort(
+        (a, b) =>
+          Number(b.breaking === true) - Number(a.breaking === true) ||
+          ilgiSkoru(b, now) - ilgiSkoru(a, now) ||
+          yayinZamani(b) - yayinZamani(a)
+      );
     }
 
     const bosKategori = durum.bosKategori || {};
@@ -931,7 +967,9 @@ export async function bildirimleriGonder({ dry = false } = {}) {
     gonderilen: sayilan,
     gun: tr.gun,
     sessiz,
-    sonDakikaAdayi: yeni.filter((a) => a.breaking === true && taze(a, SON_TTL_SAAT, now)).length,
+    sonDakikaAdayi: yeni.filter(
+      (a) => a.breaking === true && taze(a, SON_TTL_SAAT, now) && acilBaslik(a)
+    ).length,
     konuAdayi: yeni.filter((a) => taze(a, KAT_TTL_SAAT, now)).length,
     dry,
   };

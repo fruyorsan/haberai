@@ -148,6 +148,33 @@ Kota, `Europe/Istanbul` saatine göre gece yarısı sıfırlanır. Kota dolduğu
 hat yeni haber üretmez; veri onarımı ve piyasa güncellemesi devam eder.
 Kotayı geçici olarak kapatmak için `GUNLUK_HABER_LIMIT=0` yeterlidir.
 
+## 7) Bildirim bütçesi (40 habere göre)
+
+Günde 40 haber üretildiği için bildirimler de bu tempoya göre sınırlandı.
+Varsayılan (`gun10`) modda bir okuyucuya günde en fazla:
+
+| Tür | Günlük tavan | Aralık | Saat |
+| --- | --- | --- | --- |
+| Konu bildirimi | 10 | 96 dk | 07:00-21:24 |
+| Genel son dakika | 2 | 4 saat | Gece dahil |
+| Günün özeti | 3 | — | 09:00 / 15:00 / 21:00 |
+
+Yani ortalama **her 4 haberde 1 bildirim**. Konu bildirimleri 23:00-07:00
+arasında susar; sabah 13:00'e kadar en fazla 4 tanesi gider, akşam saatlerine
+de bildirim kalır. Bir kategoriye 2 saatte en fazla 1 bildirim gider.
+
+Hangi haberin gideceği de optimize edildi: kategori içinde önce **son dakika**
+haberler, sonra **ilgi puanı** (başlık merakı + gerçek fotoğraf + tazelik)
+yüksek olan seçilir; en yeni haber otomatik olarak seçilmez.
+
+Genel son dakika yalnızca gerçekten acil başlıklarda gider: depremde
+AFAD/Kandilli veya bir il adı geçmesi şarttır. "Vanuatu'da 6,9 deprem" gibi
+uzak haberler ve ürün tanıtımları tüm aboneye değil, yalnızca o kategorinin
+takipçisine gider.
+
+Profilde "Seçtiğim başlıklardaki tüm haberler" (`hepsi`) modunu seçen okuyucu
+bilinçli olarak tümünü alır; bu modda günlük tavan uygulanmaz.
+
 ## Sınırlar
 
 - Google News/Discover kabulü garanti değildir; içerik özgünlüğü ve yayın
