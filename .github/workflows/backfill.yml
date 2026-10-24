@@ -42,6 +42,17 @@ jobs:
           GORSEL_BACKFILL_LIMIT: "0"
         run: npm run backfill
 
+      # Fotoğrafsız haberlere ücretsiz Wikimedia arşivinden gövde içi fotoğraf
+      # ekler (haberin kendi görsel sorgusu + başlık/etiket uygunluk denetimi).
+      # Ağ hatası arşiv yenilemeyi ve yayını durdurmasın.
+      - name: Govde ici fotograflari doldur
+        continue-on-error: true
+        env:
+          EK_GORSEL_LIMIT: "40"
+          EK_GORSEL_GUN: "90"
+          EK_GORSEL_TEKRAR_GUN: "30"
+        run: npm run ek-gorsel
+
       # Arşivdeki eski fotoğraflar yukarıdaki adımda telif güvenli hâle
       # getiriliyor (GORSEL_BACKFILL_LIMIT). Ayrı bir görsel adımı yok.
 

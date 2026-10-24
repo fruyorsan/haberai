@@ -13,6 +13,8 @@
     "indexnow:dry": "node --env-file-if-exists=.env src/indexnow.mjs --dry",
     "backfill": "node --env-file-if-exists=.env src/backfill.js",
     "backfill:dry": "node --env-file-if-exists=.env src/backfill.js --dry",
+    "ek-gorsel": "node --env-file-if-exists=.env src/ek-gorsel-doldur.js",
+    "ek-gorsel:dry": "node --env-file-if-exists=.env src/ek-gorsel-doldur.js --dry",
     "bildirim": "node --env-file-if-exists=.env src/bildirim.js",
     "bildirim:dry": "node --env-file-if-exists=.env src/bildirim.js --dry",
     "domain": "node scripts/domain-durum.mjs"
