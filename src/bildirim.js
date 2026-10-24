@@ -11,14 +11,19 @@
 //
 //   2) KONU TAKİBİ (okuyucunun işaretlediği kategori):
 //      OneSignal etiketiyle yalnızca o konuyu takip edenlere gider
-//      (kategori_<slug> = 1 + bildirim_sikligi = aninda). Takip edilen
-//      kategoride çıkan HER taze haber gönderilir — "son dakika" işaretli
-//      olanlar dahil (eskiden dışlanıyordu ve taze haberlerin tamamı breaking
-//      olduğu için konu bildirimi pratikte hiç gitmiyordu). Kategori başına
+//      (kategori_<slug> = 1 + bildirim_sikligi = aninda). Kategori başına
 //      bekleme süresi yok (KAT_MIN_ARALIK_DK=0); tur başına en fazla
 //      KAT_TUR_ADET kategori ve KAT_TUR_HABER haber gönderilir, günlük tavan
 //      ve sessiz saat (23:00-07:00 TR) uygulanır. Takipçisi olmayan kategori
 //      tespit edilirse (alıcı 0) kısa süre atlanır, tavan harcanmaz.
+//
+//      SENKRON: aday havuzu "son konu bildiriminden bu yana yayınlanan
+//      haberler"dir (KAT_PENCERE_MIN_DK..MAX_DK). Eskiden sabit 8 saatlik
+//      havuzdan seçiliyordu; okuyucuya 6 saat önceki haber "yeni" diye
+//      gidiyor, bildirime tıklayınca sayfanın tepesinde başka bir haber
+//      görüyordu. Artık her bildirim, kendisinden SONRA çıkan haberleri
+//      kapsar; iki bildirim aynı haberi/aynı dönemi tekrarlamaz. Ayrıca her
+//      kategoride yalnızca en yeni yayın dilimi (son 40 dk) dikkate alınır.
 //
 //   3) ÖZET (bildirim_sikligi = ozet):
 //      Günde 3 kez (TR 09/15/21) en taze 3 haberden kısa bir özet gider.
@@ -57,7 +62,9 @@ const SITE_URL = (process.env.SITE_URL || "https://haberinai.site").replace(/\/+
 // 1 bildirim gider; okuyucu boğulmaz, bildirim de tamamen kesilmez.
 const SON_MIN_ARALIK_DK = Number(process.env.BILDIRIM_SON_ARALIK_DK ?? 240);
 const SON_MAX_GUN = Number(process.env.BILDIRIM_SON_MAX_GUN ?? 2);
-const SON_TTL_SAAT = Number(process.env.BILDIRIM_SON_TTL_SAAT ?? 4);
+// Son dakika 90 dk taze sayılır: 4 saatlik pencere, "son dakika" diye saatler
+// önceki haberi gönderiyordu (haber akışıyla senkron değil).
+const SON_TTL_SAAT = Number(process.env.BILDIRIM_SON_TTL_SAAT ?? 1.5);
 // Genel son dakika yalnızca GERÇEKTEN acil başlıklarda gider. `breaking`
 // işareti hızlı kaynaklarda her taze habere verilebiliyor (ürün tanıtımı,
 // indirim, tasarım açıklaması). Bunlar yalnızca kategori takipçisine gider;
@@ -82,8 +89,18 @@ function acilBaslik(a) {
 const KAT_MIN_ARALIK_DK = Number(process.env.BILDIRIM_KAT_ARALIK_DK ?? 120);
 const KAT_GENEL_ARALIK_DK = Number(process.env.BILDIRIM_KAT_GENEL_ARALIK_DK ?? 96);
 const KAT_MAX_GUN = Number(process.env.BILDIRIM_KAT_MAX_GUN ?? 10);
-// Taze sayılan pencere (8 saat): gün içindeki en iyi haberler akşam da gönderilebilsin.
-const KAT_TTL_SAAT = Number(process.env.BILDIRIM_KAT_TTL_SAAT ?? 8);
+// Taze sayılan pencere: SENKRON kuralı. Bildirim adayı, son konu
+// bildiriminden bu yana yayınlanan haberlerden seçilir (pencere = geçen süre
+// + 12 dk). Alt sınır 40 dk: hızlı art arda çalışan turlarda havuz boş
+// kalmasın. Üst sınır 150 dk: hat uzun süre durursa saatler önceki haber
+// "yeni" diye gönderilmesin.
+const KAT_PENCERE_MIN_DK = Number(process.env.BILDIRIM_KAT_PENCERE_MIN_DK ?? 40);
+const KAT_PENCERE_MAX_DK = Number(process.env.BILDIRIM_KAT_PENCERE_MAX_DK ?? 150);
+// Senkron freni: eldeki en yeni haber bile bu süreden eskiyse bildirim
+// gönderilmez, yeni haber beklenir. 60 dk ≈ bir yayın turu (config:
+// yayinAralikDk=36 + hat gecikmesi); böylece bildirim her zaman "az önce
+// çıkan" habere denk gelir, hat durduğunda eski haber taze diye gitmez.
+const KAT_MAKS_YAS_DK = Number(process.env.BILDIRIM_KAT_MAKS_YAS_DK ?? 60);
 // Tur başına en fazla kaç KATEGORİ işlenir (adil sıra).
 const KAT_TUR_ADET = Number(process.env.BILDIRIM_KAT_TUR_ADET ?? 1);
 // Tur başına gönderilecek en fazla HABER (taşma koruması; sonraki turda devam).
@@ -129,6 +146,18 @@ function yayinZamani(a) {
 function taze(a, saat, now) {
   const t = yayinZamani(a);
   return t > 0 && now - t <= saat * 3600000;
+}
+
+/** Haber `dk` dakikadan taze mi? (senkron penceresi için) */
+function tazeDk(a, dk, now) {
+  const t = yayinZamani(a);
+  return t > 0 && now - t <= dk * 60000;
+}
+
+/** Haberin kaç dakika önce yayınlandığı (log için). */
+function yasDk(a, now) {
+  const t = yayinZamani(a);
+  return t > 0 ? Math.round((now - t) / 60000) : -1;
 }
 
 function kisalt(str, max) {
@@ -733,6 +762,20 @@ export async function bildirimleriGonder({ dry = false } = {}) {
       : tr.saat >= SESSIZ_BAS || tr.saat < SESSIZ_BIT;
   const sonKonuAt = durum.updatedAt ? Date.parse(durum.updatedAt) : 0;
   const konuGecenDk = sonKonuAt ? (now - sonKonuAt) / 60000 : Infinity;
+  // SENKRON PENCERESİ: son konu bildiriminden bu yana geçen süre (+12 dk pay).
+  // Böylece her bildirim yalnızca kendisinden sonra yayınlanan haberleri kapsar.
+  const pencereDk = Math.min(
+    Math.max(
+      (Number.isFinite(konuGecenDk) ? konuGecenDk : KAT_PENCERE_MAX_DK) + 12,
+      KAT_PENCERE_MIN_DK
+    ),
+    KAT_PENCERE_MAX_DK
+  );
+  // Penceredeki adaylar ve en yenisinin yaşı (senkron freni için).
+  const konuAdaylar = yeni.filter((a) => tazeDk(a, pencereDk, now));
+  const enYeniAdayDk = konuAdaylar.length
+    ? Math.round((now - Math.max(...konuAdaylar.map(yayinZamani))) / 60000)
+    : -1;
   // Sabah saatlerinde (07:00 - 13:00) tüm günlük kotanın tükenmesini engelle
   // (Öğleden sonra ve akşam prime-time haberlerine mutlaka bildirim kalsın).
   const sabahMi = tr.saat < 13;
@@ -754,20 +797,31 @@ export async function bildirimleriGonder({ dry = false } = {}) {
       `Bildirim: son konu bildiriminden ${Math.round(konuGecenDk)} dk geçti ` +
         `(asgari ${KAT_GENEL_ARALIK_DK} dk); dengeli dağılım için bekletiliyor.`
     );
+  } else if (konuAdaylar.length > 0 && enYeniAdayDk > KAT_MAKS_YAS_DK) {
+    console.log(
+      `Bildirim: en yeni haber ${enYeniAdayDk} dk önce çıktı; senkron için yeni haber ` +
+        `bekleniyor (en fazla ${KAT_MAKS_YAS_DK} dk).`
+    );
   } else {
     const gonderilenler = new Set(durum.sent.map(String));
     const grup = new Map();
-    for (const a of yeni) {
+    for (const a of konuAdaylar) {
       if (gonderilenler.has(String(a.id))) continue;
-      if (!taze(a, KAT_TTL_SAAT, now)) continue;
       const k = a.categorySlug || "diger";
       if (!grup.has(k)) grup.set(k, []);
       grup.get(k).push(a);
     }
     for (const liste of grup.values()) {
-      // Bildirimde "en yeni" değil "en çok tıklanacak" haber seçilir:
-      // önce son dakika, sonra ilgi puanı (başlık + gerçek fotoğraf +
-      // tazelik), eşitlikte daha yeni haber.
+      // Her kategoride yalnızca EN YENİ yayın dilimi kalır (en yeni haberden
+      // 40 dk'dan eski olanlar elenir). Aksi halde ilgi puanı yüksek diye
+      // 1,5 saat önceki haber gönderilip, okuyucu sayfada daha yeni bir
+      // haberi görüyordu — bildirim haber akışıyla senkron kalmıyordu.
+      const enYeni = Math.max(...liste.map(yayinZamani));
+      const dilim = liste.filter((a) => enYeni - yayinZamani(a) <= KAT_PENCERE_MIN_DK * 60000);
+      liste.length = 0;
+      liste.push(...dilim);
+      // Aynı dilim içinde "en çok tıklanacak" haber seçilir: önce son dakika,
+      // sonra ilgi puanı (başlık + gerçek fotoğraf + tazelik), eşitlikte yeni.
       liste.sort(
         (a, b) =>
           Number(b.breaking === true) - Number(a.breaking === true) ||
@@ -795,7 +849,8 @@ export async function bildirimleriGonder({ dry = false } = {}) {
     if (!sirali.length) {
       console.log(
         `Bildirim: konu bildirimi için uygun kategori yok ` +
-          `(${grup.size} kategoride taze haber var, hepsi bekleme süresinde).`
+          `(${grup.size} kategoride son ${Math.round(pencereDk)} dk içinde haber var, ` +
+          `hepsi bekleme süresinde).`
       );
     } else {
       const bosIsaretle = (slug) => {
@@ -814,7 +869,9 @@ export async function bildirimleriGonder({ dry = false } = {}) {
           if (turHaber >= KAT_TUR_HABER) break;
           const icerik = bildirimIcerigi(aday, { baslik: `${aday.category}` });
           if (dry) {
-            console.log(`  [dry] konu (${slug}) → ${icerik.icerik}`);
+            console.log(
+              `  [dry] konu (${slug}) → ${icerik.icerik} (yayın: ${yasDk(aday, now)} dk önce)`
+            );
             turHaber++;
             ulasti = true;
             continue;
@@ -843,7 +900,9 @@ export async function bildirimleriGonder({ dry = false } = {}) {
               break;
             }
             console.log(
-              `  ✓ [konu:${slug}] ${kisalt(aday.title, 60)}${yanit?.id ? ` (${yanit.id})` : ""}${aliciNotu(yanit)}`
+              `  ✓ [konu:${slug}] ${kisalt(aday.title, 60)}` +
+                ` (yayın: ${yasDk(aday, now)} dk önce)` +
+                `${yanit?.id ? ` (${yanit.id})` : ""}${aliciNotu(yanit)}`
             );
             durum.sent.push(String(aday.id));
             durum.updatedAt = new Date(now).toISOString();
@@ -874,7 +933,8 @@ export async function bildirimleriGonder({ dry = false } = {}) {
   if (!sessiz) {
     const gonderilenlerHepsi = new Set(durum.sent.map(String));
     const adaylarHepsi = yeni
-      .filter((a) => !gonderilenlerHepsi.has(String(a.id)) && taze(a, 2, now))
+      .filter((a) => !gonderilenlerHepsi.has(String(a.id)) && tazeDk(a, 45, now))
+      .sort((a, b) => yayinZamani(b) - yayinZamani(a))
       .slice(0, 2);
     for (const aday of adaylarHepsi) {
       const slug = aday.categorySlug || "diger";
@@ -970,7 +1030,8 @@ export async function bildirimleriGonder({ dry = false } = {}) {
     sonDakikaAdayi: yeni.filter(
       (a) => a.breaking === true && taze(a, SON_TTL_SAAT, now) && acilBaslik(a)
     ).length,
-    konuAdayi: yeni.filter((a) => taze(a, KAT_TTL_SAAT, now)).length,
+    konuAdayi: yeni.filter((a) => tazeDk(a, pencereDk, now)).length,
+    pencereDk: Math.round(pencereDk),
     dry,
   };
 }

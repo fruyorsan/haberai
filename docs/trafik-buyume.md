@@ -163,9 +163,26 @@ Yani ortalama **her 4 haberde 1 bildirim**. Konu bildirimleri 23:00-07:00
 arasında susar; sabah 13:00'e kadar en fazla 4 tanesi gider, akşam saatlerine
 de bildirim kalır. Bir kategoriye 2 saatte en fazla 1 bildirim gider.
 
-Hangi haberin gideceği de optimize edildi: kategori içinde önce **son dakika**
-haberler, sonra **ilgi puanı** (başlık merakı + gerçek fotoğraf + tazelik)
-yüksek olan seçilir; en yeni haber otomatik olarak seçilmez.
+### Haber akışıyla senkron
+
+Bildirim, rastgele bir saatte "elde ne varsa" göndermez; **haber akışına bağlıdır**:
+
+- Aday havuzu = **son konu bildiriminden bu yana yayınlanan haberler**
+  (pencere: geçen süre + 12 dk, en az 40 dk, en fazla 150 dk). Sabit 8 saatlik
+  havuz kaldırıldı; o yüzden 6 saat önceki haber "yeni" diye gitmiyor.
+- **Senkron freni:** eldeki en yeni haber 60 dakikadan eskiyse bildirim
+  gönderilmez, yeni haber beklenir. Yani bildirim, haber yayınlandıktan hemen
+  sonraki turda (≈3 dk) çıkar; hat durduğunda boşuna bildirim gitmez.
+- Her kategoride yalnızca **en yeni yayın dilimi** (en yeni haberden 40 dk
+  içindeki haberler) dikkate alınır. Böylece okuyucu bildirime tıkladığında
+  sayfada gördüğü haber, bildirimdeki haberle aynı olur.
+- Aynı dilim içinde "en çok tıklanacak" haber seçilir: önce **son dakika**,
+  sonra **ilgi puanı** (başlık merakı + gerçek fotoğraf + tazelik).
+- **Genel son dakika** 90 dk taze sayılır (4 saat değil); saatler önceki
+  "son dakika" haberi tüm aboneye gitmez.
+
+Böylece 40 haber/gün → 10 konu bildirimi = **her 4 haberde 1 bildirim** ve her
+bildirim gerçekten o an çıkan bir habere denk gelir.
 
 Genel son dakika yalnızca gerçekten acil başlıklarda gider: depremde
 AFAD/Kandilli veya bir il adı geçmesi şarttır. "Vanuatu'da 6,9 deprem" gibi

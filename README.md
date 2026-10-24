@@ -461,6 +461,13 @@ takip ettiği konular için bildirim alır; site kapalıyken de bildirim gelir
   (2 son dakika + 10 konu) + 3 özet.
 - Kategori içinde hangi haberin gideceği de optimize edilir: önce son dakika,
   sonra ilgi puanı (başlık + gerçek fotoğraf + tazelik) yüksek haber seçilir.
+- **Haber akışıyla senkron:** aday havuzu son bildirimden sonra yayınlanan
+  haberlerdir; her kategoride yalnızca en yeni yayın dilimi (son 40 dk) dikkate
+  alınır. En yeni haber 60 dakikadan eskiyse bildirim bekletilir, yeni haber
+  gelince çıkar. Böylece bildirim her zaman sayfadaki güncel haberle eşleşir;
+  saatler önceki haber "yeni" diye gönderilmez.
+- Genel son dakika 90 dakika taze sayılır: eski bir "son dakika" haberi tüm
+  aboneye gitmez.
 - Genel son dakika yalnızca yerel/acil başlıklarda gider (depremde AFAD/Kandilli
   veya il adı şart). Uzak ülke depremleri ve ürün tanıtımları tüm aboneye
   gönderilmez; yalnızca ilgili kategori takipçisine gider.
