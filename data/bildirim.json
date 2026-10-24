@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-10-23T21:05:21.781Z",
+  "updatedAt": "2026-10-24T12:01:50.112Z",
   "sonDakika": "2026-10-24T10:58:00.238Z",
   "gun": "2026-10-24",
   "gunSayi": {
     "son": 0,
-    "kategori": 1,
+    "kategori": 2,
     "ozet": 0
   },
   "sonKategori": {
@@ -12,7 +12,7 @@
     "gundem": "2026-10-24T10:07:29.298Z",
     "dunya": "2026-10-24T10:58:00.238Z",
     "ekonomi": "2026-10-24T11:37:38.945Z",
-    "teknoloji": "2026-10-23T21:05:21.781Z",
+    "teknoloji": "2026-10-24T12:01:50.112Z",
     "donanim": "2026-10-23T21:05:21.781Z",
     "kultur": "2026-10-23T10:40:11.581Z",
     "yapay-zeka": "2026-10-23T18:35:28.400Z",
@@ -333,7 +333,8 @@
     "7903b2b6182ac0df",
     "07af30f03dc91f73",
     "9cf6b2bb8a69ce5a",
-    "dfa0be88f53a6e9f"
+    "dfa0be88f53a6e9f",
+    "63c9f53e7702bbc2"
   ],
   "hosGeldin": true,
   "cihazlar": [],
