@@ -1,4 +1,5 @@
 import { getArticles } from "../lib/articles.js";
+import { indeksSeti } from "../lib/indeks.js";
 
 const escapeXml = (s) =>
   String(s ?? "").replace(/[<>&'"]/g, (c) => ({
@@ -14,8 +15,13 @@ export function GET({ site }) {
   const origin = String(site || "https://fruyorsan.github.io").replace(/\/$/, "");
   const cutoff = Date.now() - 48 * 3600 * 1000;
 
+  // Google News site haritası yalnızca indekslenebilir sayfaları içermeli:
+  // `noindex` bir URL'i haber site haritasına koymak çelişkidir.
+  const indeks = indeksSeti();
+
   const recent = getArticles()
     .filter((a) => new Date(a.publishedAt || a.generatedAt).getTime() >= cutoff)
+    .filter((a) => !indeks || indeks.has(String(a.id)))
     .slice(0, 1000);
 
   const urls = recent

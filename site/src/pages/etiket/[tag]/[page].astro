@@ -26,6 +26,7 @@ const { items, current, totalPages: pages, total } = paginate(tag.articles, page
 <Base
   title={`${tag.name} haberleri — Sayfa ${current} — HaberinAi`}
   description={`${tag.name} ile ilgili güncel haberler, özetler ve yapay zekâ yorumları (${current}. sayfa).`}
+  noindex
 >
   <div class="container">
     <header class="tag-head">

@@ -8,6 +8,7 @@ import DevamHaber from "../../components/DevamHaber.astro";
 import HaberFigur from "../../components/HaberFigur.astro";
 import Yorumlar from "../../components/Yorumlar.astro";
 import { getArticles, formatDate, publishedISO, imageUrl, imageSrcset, socialImageUrl, tagUrl, slugify } from "../../lib/articles.js";
+import { indeksliMi } from "../../lib/indeks.js";
 import { kapakKaynagi, kapakUygunMu } from "../../lib/kapak.js";
 import { stokEkUygunMu } from "../../lib/gorsel-uygun.js";
 import { ADSENSE_SLOTS, ONESIGNAL_APP_ID, siteOrigin } from "../../lib/site-meta.js";
@@ -259,6 +260,7 @@ const breadcrumbLd = {
   title={`${article.title} — HaberinAi`}
   description={article.summary}
   canonical={articleUrl}
+  noindex={!indeksliMi(article)}
   ogType="article"
   publishedTime={publishedIso}
   modifiedTime={modifiedIso}

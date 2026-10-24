@@ -4,6 +4,7 @@ import ArticleCard from "../../components/ArticleCard.astro";
 import Pagination from "../../components/Pagination.astro";
 import AdSlot from "../../components/AdSlot.astro";
 import { ADSENSE_SLOTS } from "../../lib/site-meta.js";
+import { etiketIndeksliMi } from "../../lib/indeks.js";
 import { getTags, paginate, PER_PAGE } from "../../lib/articles.js";
 
 export function getStaticPaths() {
@@ -17,6 +18,7 @@ const { items, current, totalPages: pages, total } = paginate(tag.articles, 1, P
 <Base
   title={`${tag.name} haberleri — HaberinAi`}
   description={`${tag.name} ile ilgili en güncel haberler, özetler ve yapay zekâ yorumları. ${total} haber.`}
+  noindex={!etiketIndeksliMi(total)}
 >
   <div class="container">
     <header class="tag-head">

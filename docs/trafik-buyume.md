@@ -192,6 +192,39 @@ takipçisine gider.
 Profilde "Seçtiğim başlıklardaki tüm haberler" (`hepsi`) modunu seçen okuyucu
 bilinçli olarak tümünü alır; bu modda günlük tavan uygulanmaz.
 
+## 8) İndeks çekirdeği (2026-10-24)
+
+SORUN: Site 7 günde 3.718 haber yayınladı; Google 5.487 URL'den yalnızca
+~58'ini dizine aldı (%1). Bu, "ölçekli/zayıf içerik" damgasıdır: Google sitenin
+tamamına güvenmediği için yeni ve kaliteli haberler de taranmıyor.
+
+ÇÖZÜM: Dizine açık sayfa sayısını küçük ve kaliteli bir çekirdeğe indirmek.
+Site gezinmesi değişmez; okuyucu her haberi görmeye devam eder.
+
+| Ne | Kural |
+| --- | --- |
+| Haber | Günde en iyi **12** haber, **30 günlük** pencere → ~360 URL |
+| Diğer haberler | `noindex, follow` (dizine girmez, link değeri korunur) |
+| Sayfalama | 2. sayfa ve sonrası `noindex, follow` |
+| Etiket | Yalnızca **50+** haberi olan etiket sayfaları indekslenir |
+| Site haritası | Yalnızca indekslenebilir URL'ler (noindex URL giremez) |
+
+Seçim deterministiktir ve `data/indeks.json`'da tutulur. **Geçmiş günler
+dondurulur**: dün indekste olan haber bugün noindex olmaz. Yalnızca bugünün
+listesi, gün içinde eklenen haberlerle güncellenir. Böylece Google aynı URL için
+her gün farklı sinyal görmez.
+
+Kalite puanı: gövde uzunluğu (2000+ karakter), `keyPoints` sayısı (5),
+editör notu, yorum, gerçek fotoğraf, etiket sayısı. Tazelik puanı bilinçli
+olarak yok — sıralama gün içinde kaymasın.
+
+Üretim: `npm run indeks` (pipeline'da `collect` sonrası otomatik çalışır).
+Kapatmak için `INDEKS_GUNLUK=0` değil, `data/indeks.json`'ı silmek yeterli:
+dosya yoksa kısıtlama uygulanmaz ve tüm haberler yeniden açık olur.
+
+**Beklenen sonuç:** site haritası 5.487 → ~200 URL; 2-4 hafta içinde GSC'de
+"Dizinlenen" sayısının 58 → 150+ çıkması. Silinen sayfa yok, geri alınabilir.
+
 ## Sınırlar
 
 - Google News/Discover kabulü garanti değildir; içerik özgünlüğü ve yayın

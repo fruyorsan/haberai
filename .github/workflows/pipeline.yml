@@ -94,6 +94,15 @@ jobs:
           SITE_URL: ${{ vars.SITE_URL }}
         run: npm run indexnow
 
+      # INDEKS CEKIRDEGI: site haritasina girecek haberleri secer (gunluk en
+      # iyi 12, 30 gunluk pencere). Sonuc data/indeks.json'a yazilir; site
+      # derlemesi bu dosyaya gore sitemap'i daraltir ve cekirdek disindaki
+      # haberlere noindex basar. Boylece 5.400 URL'lik "zayif icerik" izlenimi
+      # yerine ~360 URL'lik kaliteli cekirdek kalir. Gecmis gunler dondurulur.
+      - name: Indeks cekirdegi
+        continue-on-error: true
+        run: npm run indeks
+
       - name: Degisiklikleri kaydet
         id: commit
         run: |

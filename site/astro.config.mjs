@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import { getArticles, getTags, publishedISO } from "./src/lib/articles.js";
+import { indeksSeti, ETIKET_MIN_HABER } from "./src/lib/indeks.js";
 
 // Alan adı: yayında olduğumuz adres VARSAYILAN olarak yazılır ki kanonik
 // adresler, site haritaları ve RSS kendi kendine tutarlı olsun. Özel alan adı
@@ -24,6 +25,26 @@ for (const a of articles) {
 }
 
 const konuEnYeni = new Map(getTags().map((t) => [t.slug, publishedISO(t.articles[0])]));
+
+// İNDEKS ÇEKİRDEĞİ (bkz. src/indeks.js): site haritasına yalnızca Google'a
+// açık haberler girer. Listede olmayan haber sayfası `noindex, follow` olur;
+// site haritasında noindex URL göstermek çelişki olduğu için burada elenir.
+// Kısıtlama yoksa (indeks.json yok) tüm haberler girer.
+const indeks = indeksSeti();
+const haberYollari = new Set(
+  articles
+    .filter((a) => !indeks || indeks.has(String(a.id)))
+    .map((a) => a.url)
+);
+
+// LİSTE SAYFALARI: sayfalama (2+) ve az haberli etiket sayfaları site
+// haritasına girmez (aynı içeriği tekrar listeleyen ince sayfalar). Bu
+// sayfalar noindex, follow olarak yayında kalır; okuyucu gezinmeye devam eder.
+const etiketYollari = new Set(
+  getTags()
+    .filter((t) => t.articles.length >= ETIKET_MIN_HABER)
+    .map((t) => `/etiket/${t.slug}/`)
+);
 
 function lastmod(pathname) {
   if (haberTarihi.has(pathname)) return haberTarihi.get(pathname);
@@ -63,7 +84,17 @@ export default defineConfig({
         !page.includes("/profil/") &&
         // Arama sayfası da noindex'tir (içeriği istemci tarafında üretilir);
         // robots.txt'te de kapalıdır, site haritasında hiç görünmemeli.
-        !page.includes("/ara/"),
+        !page.includes("/ara/") &&
+        // Sayfalama (2. sayfa ve sonrası): aynı listeyi tekrar eden ince
+        // sayfalar. noindex, follow olarak yayında kalır.
+        !/\/(haberler|kategori\/[^/]+|etiket\/[^/]+)\/\d+\/?$/.test(
+          new URL(page).pathname
+        ) &&
+        // Az haberli etiket sayfaları (hub değeri yok) site haritasına girmez.
+        (!page.includes("/etiket/") ||
+          etiketYollari.has(new URL(page).pathname)) &&
+        // İndeks çekirdeği dışındaki haberler (noindex) site haritasına girmez.
+        (!page.includes("/haber/") || haberYollari.has(new URL(page).pathname)),
       serialize(item) {
         const iso = lastmod(new URL(item.url).pathname);
         return iso ? { ...item, lastmod: iso } : item;
