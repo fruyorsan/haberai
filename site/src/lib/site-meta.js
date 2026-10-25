@@ -38,13 +38,14 @@ export const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "haberai@yahoo.com";
  * ------------------------------------------------
  * Künyede görünen "sorumlu yayıncı" bilgisi. Gerçek kişi ve adres bilgisi
  * GitHub deposu değişkenleriyle verilir; kod değişikliği gerekmez:
- *   gh variable set PUBLISHER_NAME    --body "Ad Soyad"
- *   gh variable set PUBLISHER_ADDRESS --body "Mahalle, Cadde No, İlçe"
+ *   gh variable set PUBLISHER_NAME    --body "Ad Soyad / kurumsal unvan"
  *   gh variable set PUBLISHER_CITY    --body "İstanbul"
- *   gh variable set PUBLISHER_PHONE   --body "+90 5xx xxx xx xx"
+ *   gh variable set PUBLISHER_ADDRESS --body "Kurumsal adres" (opsiyonel)
+ *   gh variable set PUBLISHER_PHONE   --body "+90 ..." (opsiyonel, kurumsal hat)
  *
- * Tanımlanmazsa "HaberinAi Editör Masası" gösterilir; uydurma kişi adı
- * YAZILMAZ.
+ * Kişisel ev adresi veya telefon numarası yayınlamak zorunlu DEĞİLDİR; boş
+ * bırakılırsa bu satırlar künyede hiç görünmez. Tanımlanmazsa
+ * "HaberinAi Editör Masası" gösterilir; uydurma kişi adı YAZILMAZ.
  */
 export const PUBLISHER = {
   ad: String(process.env.PUBLISHER_NAME || "").trim() || "HaberinAi Editör Masası",

@@ -140,6 +140,8 @@ jobs:
           SITE_URL: ${{ vars.SITE_URL }}
           # Yayinci kimligi (kunye / AdSense seffafligi). Tanimli degilse
           # "HaberinAi Editor Masasi" gosterilir; uydurma isim yazilmaz.
+          # ADDRESS/PHONE opsiyoneldir: kisisel ev adresi/telefonu yayinlamak
+          # gerekmez, bos birakilirsa kunyede o satirlar hic basilmaz.
           PUBLISHER_NAME: ${{ vars.PUBLISHER_NAME }}
           PUBLISHER_ADDRESS: ${{ vars.PUBLISHER_ADDRESS }}
           PUBLISHER_CITY: ${{ vars.PUBLISHER_CITY }}
