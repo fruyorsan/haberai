@@ -14,15 +14,11 @@ on:
     # tetik: 5 dakikalik zincir halkasi -> sadece topla
     branches: [main, tetik]
 
-# Ayni ref uzerinde ayni anda iki calistirma olmasin (git cakismasini onler).
-# Grup ref'e gore ayrilir: zincir halkalari (tetik) birbirini beklerken,
-# main'e yapilan kod/site push'lari kuyrukta iptal edilip kaybolmasin.
+# Depoda ayni anda yalnizca BIR calistirma olsun (global concurrency).
+# Boylece main push'u ile tetik/cron zinciri ayni anda fruyorsan.github.io'ya
+# push yapmaya calisip birbirini kilitleyemez (cannot lock ref hatasi ve mail bildirimleri engellenir).
 concurrency:
-  group: haber-hatti-${{ github.ref_name }}
-  # DIKKAT: "true" DENENMEDI/ALINMADI (19.10.2026). Tur ~5-8 dk sürüyor ve
-  # yayinlama adımı en sonda. Yeni tur eskisini iptal ederse yayın adımı hiç
-  # çalışmaz, site güncellenmez. GitHub yavaşladığında biriken turlar elle
-  # iptal edilir; yeni tur eskisini öldürmez.
+  group: haber-hatti-global
   cancel-in-progress: false
 
 jobs:
