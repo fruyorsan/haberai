@@ -54,7 +54,7 @@ for (const a of hedefler) {
     const sonuc = await stokGorseller(sorgular, {
       adet: 1,
       kullanilan,
-      afet: afetMi(a.gorselSorgu, a.title),
+      afet: afetMi(a.title, a.summary),
     });
     secili = sonuc[0] || null;
   } catch (err) {

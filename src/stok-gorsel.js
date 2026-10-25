@@ -434,6 +434,47 @@ export const KONU_SORGU = [
     test: /(drought|heatwave|heat wave|kuraklık|sıcak dalgası)/i,
     sorgu: "dry cracked earth drought",
   },
+  {
+    // Savunma/silah haberleri: kategori yedeği (şehir sokağı) yerine konuya
+    // uygun bir füze/savunma karesi seçilir. "roket" uzay haberlerini de
+    // kapsar; uzay fotoğrafı burada da doğru bağlamdır.
+    test: /(füze|balistik|missile|ballistic|hava savunma|air defense|roketatar)/i,
+    sorgu: "missile rocket launch",
+  },
+  {
+    // "military drone" Commons'ta neredeyse hiç dosya adıyla eşleşmiyordu ve
+    // İHA haberi nehir fotoğrafına düşüyordu; genel UAV sorgusu isabetli.
+    test: /(SİHA|İHA|insansız hava|\bUAV\b|\bdrone\b)/i,
+    sorgu: "unmanned aerial vehicle",
+  },
+  {
+    test: /(dang humması|sivrisinek|mosquito|dengue|sıtma|malaria)/i,
+    sorgu: "mosquito",
+  },
+  {
+    test: /(hürmüz|hormuz)/i,
+    sorgu: "Strait of Hormuz",
+  },
+  {
+    test: /(led ekran|oled|ekran|display technology|\bdisplay\b)/i,
+    sorgu: "LED display screen",
+  },
+  {
+    test: /(protesto|gösteri|eylem|protest|demonstration)/i,
+    sorgu: "protest crowd street",
+  },
+  {
+    test: /(seçim|sandık|seçmen|election|ballot)/i,
+    sorgu: "election voting ballot",
+  },
+  {
+    test: /(bütçe|enflasyon|faiz|vergi|ekonomi|inflation|budget)/i,
+    sorgu: "money finance economy",
+  },
+  {
+    test: /(futbol|maç|futbolcu|teknik direktör|soccer|football)/i,
+    sorgu: "football stadium match",
+  },
 ];
 
 /** Verilen metinlerden biri afet/hava haberi mi? */
@@ -441,8 +482,34 @@ export function afetMi(...metinler) {
   return metinler.some((m) => AFET_SORGU.test(String(m || "")));
 }
 
+/**
+ * Başlığın başındaki kişi adı ("Haydar Baş: ...", "Trump, ...").
+ *
+ * Commons'ta pek çok tanınmış kişinin serbest lisanslı portresi var; haber
+ * başlığı doğrudan bir kişiyle başlıyorsa o kişinin fotoğrafı, konu
+ * kurallarından (ör. "ekonomi" → banknot) daha doğru bir kapaktır.
+ */
+function basliktakiKisi(baslik) {
+  const m = /^\s*([A-ZÇĞİÖŞÜ][\p{L}'’.-]+(?:\s+[A-ZÇĞİÖŞÜ][\p{L}'’.-]+){1,2})\s*[:,–—]/u.exec(
+    String(baslik || "")
+  );
+  if (!m) return "";
+  const ad = m[1].trim();
+  // Kurum/kuruluş adları kişi değildir: "İran Ordusu, ..." → kişi araması yapma.
+  if (/(Ordusu|Bakanlığı|Bakanı|Hükümeti|Meclisi|Konseyi|Üniversitesi|Şirketi|Ajansı|Bankası|Partisi|Vakfı|Derneği|Kulübü|Belediyesi|Komisyonu|Kurumu|Enstitüsü|Merkezi|Federasyonu|Birliği)$/u.test(ad))
+    return "";
+  return ad;
+}
+
 /** Verilen sorguya uyan konu sorgusunu döndürür (yoksa ""). */
 export function konuSorgu(...metinler) {
+  // Metinlerden biri bir kişi adıyla başlıyorsa (genelde haber başlığı) önce
+  // o kişi aranır. Sıra önemli değil: İngilizce arama sorgusu bu kalıba
+  // ("Ad Soyad:") nadiren uyar.
+  for (const m of metinler) {
+    const kisi = basliktakiKisi(m);
+    if (kisi) return kisi;
+  }
   const s = metinler.map((m) => String(m || "")).join(" ");
   for (const k of KONU_SORGU) if (k.test.test(s)) return k.sorgu;
   return "";
@@ -582,6 +649,43 @@ export const YEDEK_GORSEL = {
     yazar: "NASA",
     lisans: "Kamu malı",
     sayfa: "https://commons.wikimedia.org/wiki/File:Jet_Propulsion_Laboratory_Plasma_Flow_Research_Lab.jpg",
+  },
+  // Aşağıdaki dört kategori eskiden "Man reading a newspaper" görseline
+  // düşüyordu (uzay haberine gazete okuyan adam). Her biri için konuya uygun,
+  // lisansı doğrulanmış bir Commons karesi tanımlandı.
+  Uzay: {
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Artemis_I_Launch_%28NHQ202211160017%29.jpg/1280px-Artemis_I_Launch_%28NHQ202211160017%29.jpg",
+    yazar: "Joel Kowsky",
+    lisans: "Kamu malı",
+    sayfa: "https://commons.wikimedia.org/wiki/File:Artemis_I_Launch_(NHQ202211160017).jpg",
+  },
+  Sağlık: {
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Keynsham_Hospital%2C_Claude_Harrison_Ward.jpg/1280px-Keynsham_Hospital%2C_Claude_Harrison_Ward.jpg",
+    yazar: "Rwendland",
+    lisans: "CC BY-SA 4.0",
+    lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
+    sayfa: "https://commons.wikimedia.org/wiki/File:Keynsham_Hospital,_Claude_Harrison_Ward.jpg",
+  },
+  Kültür: {
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Gallery-01-Plank_Museum_and_Visitor_Center.jpg/1280px-Gallery-01-Plank_Museum_and_Visitor_Center.jpg",
+    yazar: "Myotus",
+    lisans: "CC BY-SA 4.0",
+    lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
+    sayfa: "https://commons.wikimedia.org/wiki/File:Gallery-01-Plank_Museum_and_Visitor_Center.jpg",
+  },
+  Otomobil: {
+    // Türkiye'de bir şarj istasyonu: yerli otomobil/elektrikli araç haberlerine uygun.
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Electric_car_charging_station%2C_Batman_%28Turkey%29.jpg/1280px-Electric_car_charging_station%2C_Batman_%28Turkey%29.jpg",
+    yazar: "Zalasem1",
+    lisans: "CC BY 4.0",
+    lisansUrl: "https://creativecommons.org/licenses/by/4.0",
+    sayfa: "https://commons.wikimedia.org/wiki/File:Electric_car_charging_station,_Batman_(Turkey).jpg",
+  },
+  Yaşam: {
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Family_picnic_Buena_Vista_Lagoon-557488.jpg/1280px-Family_picnic_Buena_Vista_Lagoon-557488.jpg",
+    yazar: "Charles O'Rear",
+    lisans: "Kamu malı",
+    sayfa: "https://commons.wikimedia.org/wiki/File:Family_picnic_Buena_Vista_Lagoon-557488.jpg",
   },
   Ekonomi: {
     url: "https://upload.wikimedia.org/wikipedia/commons/7/78/Market_centre_in_Tokyo_stock_exchange.jpg",

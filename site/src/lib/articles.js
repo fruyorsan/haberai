@@ -76,10 +76,10 @@ export function getArticles() {
   let list = readJson(REAL);
   if (!list.length) list = readJson(SAMPLE);
 
-  // ShiftDelete kuralı: Sitede YALNIZCA gerçek fotoğrafı olan haberler yer alır.
-  // Yeşil SVG kapak veya fotoğrafsız haberlerin sitede görünmesine izin verilmez.
+  // Kural: Sitede yalnızca görseli olan haberler yer alır. Görselin telif
+  // güvenli olup olmadığı kapak süzgecinde (lib/kapak.js) ayrıca denetlenir.
   const JUNK_RE = /(vietnam\.vn|state_bank_of_vietnam|\bvietnam\b|\bsbv\b.*banka|gelinim mutfakta|bitlispostasicom|bursabasincom|marmarabolgecom|giynikgazetesi|[\u0600-\u06FF])/i;
-  list = list.filter((a) => typeof a.image === "string" && /^https?:\/\//i.test(a.image) && !JUNK_RE.test(`${a.title || ""} ${a.source || ""} ${a.sourceUrl || ""} ${a.image || ""}`));
+  list = list.filter((a) => typeof a.image === "string" && (/^https?:\/\//i.test(a.image) || /^\/(?!\/)/.test(a.image)) && !JUNK_RE.test(`${a.title || ""} ${a.source || ""} ${a.sourceUrl || ""} ${a.image || ""}`));
 
   const usedSlugs = new Set();
   list = list.map((a) => {
@@ -230,8 +230,10 @@ export function getFeatured(count = 6, horizon = 20, uygun = (a) => Boolean(a.im
   const tum = getYayinArticles();
   const recent = tum.slice(0, Math.max(count * 4, horizon, 30));
 
-  const gercekFotoMu = (a) =>
-    uygun(a) && !/wikimedia|wikipedia/i.test(a.image || "");
+  const guvenliFotoMu = (a) =>
+    uygun(a) &&
+    (/^\/(?!\/)/.test(a.image || "") ||
+      /^https:\/\/(upload|thumb)\.wikimedia\.org\//i.test(a.image || ""));
 
   const yasSaat = (a) => {
     const t = publishedTime(a);
@@ -251,12 +253,12 @@ export function getFeatured(count = 6, horizon = 20, uygun = (a) => Boolean(a.im
   };
 
   // Manşet puanı: Tazelik birincil belirleyicidir (her saat başı -24 puan).
-  // Gerçek fotoğraf (+34), vitrin kaynağı (+16, yalnızca <=3.5 saat tazeyse) ve
+  // Telif güvenli görsel (+34), vitrin kaynağı (+16, yalnızca <=3.5 saat tazeyse) ve
   // dikkat çekici kategori (+12, yalnızca <=4 saat tazeyse) kendi saat diliminde öne çıkarır.
   const mansetSkoru = (a) => {
     const saat = yasSaat(a);
     let skor = 220 - saat * 24;
-    if (gercekFotoMu(a)) skor += 34;
+    if (guvenliFotoMu(a)) skor += 34;
     else if (uygun(a)) skor += 6;
     else skor -= 90;
     if (rutinMi(a)) skor -= 120;

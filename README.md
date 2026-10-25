@@ -78,11 +78,43 @@ Akış (`src/stok-gorsel.js`):
 5. Hiç uygun fotoğraf bulunamazsa kategorinin doğrulanmış yedek görseli
    kullanılır: haber **asla fotoğrafsız/brandalı yer tutucuyla kalmaz**.
 
-Eski (kaynak fotoğraflı) haberler `npm run backfill` sırasında tur tur temizlenir:
-`GORSEL_BACKFILL_LIMIT` (varsayılan 20/saat) kadar habere AI'dan yalnızca kısa
-bir sorgu sorulur (tam makale üretilmez, kota az harcanır). Güvenilir fotoğraf
-bulunamazsa **eski fotoğrafa dokunulmaz** ve 7 gün sonra yeniden denenir —
-yanlış/ilgisiz fotoğraf göstermektense mevcut fotoğrafı korumak yeğdir.
+Arşivdeki eski (kaynak fotoğraflı) haberler `npm run gorsel-guvenli` ile
+telif güvenli görsellere geçirilir. Sıra:
+
+1. Vitrin için elle seçilmiş güvenli kapak (`scripts/vitrin-doldur.mjs`),
+2. Haberin kendi gövde içi Commons fotoğrafı (konuyla ilgiliyse),
+3. `gorselSorgu` + kategori ile Commons araması,
+4. Kategorinin doğrulanmış yedek görseli.
+
+Kaynak sayfadan alınmış `images` adresleri ve `gorselKaynakSite` işareti her
+durumda silinir. Betik tekrar çalıştırılabilir; temiz haberleri atlar.
+
+```powershell
+npm run gorsel-guvenli:dry      # sadece listeler
+npm run gorsel-guvenli          # tüm arşiv
+node scripts/gorsel-guvenli.mjs --core            # yalnızca indeks çekirdeği
+node scripts/gorsel-guvenli.mjs --limit=200 --concurrency=4
+node scripts/gorsel-guvenli.mjs --ids=<id1>,<id2> # belirli haberleri yeniden ara
+```
+
+`--ids` yalnızca listedeki haberleri işler ve kapak güvenli olsa bile yeniden
+arama yapar (yanlış eşleşmiş bir kapağı düzeltmek için). `--delay` (ms) Commons
+istekleri arasında bekler; hız sınırına (HTTP 429) takılırsa artırılır.
+
+**Durum:** 25 Ekim 2026 itibarıyla arşivdeki 4.462 haberin tamamı güvenli
+görselde (`gorselKaynakSite` = 0, kaynak sitelerin `images` adresleri silindi).
+Saatlik iş akışı yeni eklenen haberler için aynı adımı sürdürür.
+
+Kategori yedeği her kategoriye ayrı tanımlıdır (`YEDEK_GORSEL`): uzay → roket
+fırlatma, sağlık → hastane koridoru, kültür → müze galerisi, otomobil →
+elektrikli araç şarj istasyonu, yaşam → piknik. Böylece hiçbir kategori
+"gazete okuyan adam" gibi nötr bir görsele düşmez.
+
+Konu sorgusu (`konuSorgu`) ve kişi adı: başlık "Ad Soyad:" / "Ad Soyad," kalıbıyla
+başlıyorsa (ör. "Haydar Baş: ...") önce o kişinin Commons portresi aranır; kurum
+adları (Bakanlığı, Ordusu, Üniversitesi...) kişi sayılmaz. Afet tespiti
+(`afetMi`) yalnızca **Türkçe başlık/özetten** yapılır — İngilizce arama
+sorgusundaki "test fire" gibi ifadeler savunma haberini yangın sanmaz.
 
 İndeks çekirdeğine giren eski haberlerde `gorselSorgu` hiç yoksa gövde içi
 fotoğraf doldurma onları atlar. `npm run gorsel-sorgu` yalnızca bu eksik alan
@@ -91,10 +123,12 @@ Yenileme** iş akışında saatte 12 haber işlenir, 48 eksik yaklaşık 4 saatt
 tamamlanır. Sorgu eklenen haber bir sonraki turda Commons'tan fotoğraf alır.
 Başarısız sorgular 7 gün boyunca yeniden denenmez (`gorselSorguDeneme`).
 
-Site tarafı (`site/src/lib/kapak.js`): stok fotoğraflar `gorselKaynak` alanından
-tanınır; "dosya adı Türkçe başlıkla eşleşmiyor" süzgeci onlara uygulanmaz
-(Commons dosya adları Türkçe başlıkla eşleşmez). Politika metni:
-`/telif/` sayfasındaki **Görseller** bölümü.
+Site tarafı (`site/src/lib/kapak.js`): **allowlist** uygulanır. Yalnızca
+`upload.wikimedia.org`, `thumb.wikimedia.org` ve sitenin yerel yolları
+gösterilir; diğer tüm adresler reddedilir ve markalı kapak kullanılır. Aynı
+Commons karesi 500'den fazla habere kapak olursa "genel görsel" sayılıp
+elenir. Politika metni: `/telif/` ve `/yayin-ilkeleri/` sayfalarındaki
+**Görseller** bölümleri.
 
 ## Son dakika (hızlı şerit)
 

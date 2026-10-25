@@ -17,6 +17,8 @@
     "ek-gorsel:dry": "node --env-file-if-exists=.env src/ek-gorsel-doldur.js --dry",
     "gorsel-sorgu": "node --env-file-if-exists=.env src/gorsel-sorgu-doldur.js",
     "gorsel-sorgu:dry": "node --env-file-if-exists=.env src/gorsel-sorgu-doldur.js --dry",
+    "gorsel-guvenli": "node scripts/gorsel-guvenli.mjs",
+    "gorsel-guvenli:dry": "node scripts/gorsel-guvenli.mjs --dry",
     "bildirim": "node --env-file-if-exists=.env src/bildirim.js",
     "bildirim:dry": "node --env-file-if-exists=.env src/bildirim.js --dry",
     "indeks": "node src/indeks.js",

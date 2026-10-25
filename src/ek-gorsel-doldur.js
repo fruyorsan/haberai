@@ -155,11 +155,11 @@ for (const [i, a] of hedefler.entries()) {
   let bulunan = [];
   try {
     bulunan = await stokGorseller(
-      [sorgu, kisaSorgu(sorgu), konuSorgu(sorgu, a.title), ...(a.tags || []).slice(0, 2)],
+      [konuSorgu(sorgu, a.title), sorgu, kisaSorgu(sorgu), ...(a.tags || []).slice(0, 2)],
       {
         adet: istenen + 2,
         kullanilan: kullanilanUrller,
-        afet: afetMi(sorgu, a.title),
+        afet: afetMi(a.title, a.summary),
         marka: markaAdi(a.title),
       }
     );

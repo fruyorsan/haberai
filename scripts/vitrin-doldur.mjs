@@ -2,14 +2,13 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { makeId } from "../src/store.js";
 import { slugify } from "../src/ai.js";
+import { yedekGorsel, atif } from "../src/stok-gorsel.js";
 
 // ShiftDelete, DonanımHaber, Webtekno, Technopat'tan canlı çekilen güncel vitrin haberleri
 export const CURATED = [
   {
     source: "NTV Teknoloji",
-    sourceUrl: "https://www.ntv.com.tr/teknoloji/internetin-altyapisinda-kritik-acik-dunya-alarma-gecti-avrupada-devlet-siteleri-kapatildi,kritik-bgp-acigi-2026",
-    image: "https://images.ntv.com.tr/images/NYSXGJEXYNJM7JYNFHKMJCJPCY-237293.jpg?width=930&format=webp",
-    category: "İnternet",
+    sourceUrl: "https://www.ntv.com.tr/teknoloji/internetin-altyapisinda-kritik-acik-dunya-alarma-gecti-avrupada-devlet-siteleri-kapatildi,kritik-bgp-acigi-2026",    category: "İnternet",
     publishedAt: "2026-10-21T17:12:00.000Z",
     breaking: true,
     title: "İnternet altyapısında kritik güvenlik açığı: Avrupa'da kamu siteleri erişime kapatıldı",
@@ -34,9 +33,7 @@ export const CURATED = [
   },
   {
     source: "Haber Global",
-    sourceUrl: "https://haberglobal.com.tr/spor/yunus-akgunden-lille-filelerine-tarihi-gol-2026-10-21",
-    image: "https://i.haberglobal.com/storage/files/images/2026/10/21/yunus-akgunden-lille-filelerine-tarihi-gol-j6iy.jpg",
-    category: "Spor",
+    sourceUrl: "https://haberglobal.com.tr/spor/yunus-akgunden-lille-filelerine-tarihi-gol-2026-10-21",    category: "Spor",
     publishedAt: "2026-10-21T17:10:00.000Z",
     breaking: true,
     title: "Yunus Akgün'den Avrupa sahnesinde Lille ağlarına erken ve tarihi gol",
@@ -61,9 +58,7 @@ export const CURATED = [
   },
   {
     source: "Hürriyet Gündem",
-    sourceUrl: "https://www.hurriyet.com.tr/ekonomi/cumhurbaskani-yardimcisi-yilmaz-2027-yili-butcesini-meclise-sundu-2026-10-21",
-    image: "https://image.hurimg.com/i/hurriyet/90/620x350/6ad8ee901412951abe662735.jpg",
-    category: "Ekonomi",
+    sourceUrl: "https://www.hurriyet.com.tr/ekonomi/cumhurbaskani-yardimcisi-yilmaz-2027-yili-butcesini-meclise-sundu-2026-10-21",    category: "Ekonomi",
     publishedAt: "2026-10-21T17:08:00.000Z",
     breaking: true,
     title: "2027 yılı merkezi yönetim bütçe teklifi TBMM Plan ve Bütçe Komisyonu'na sunuldu",
@@ -88,9 +83,7 @@ export const CURATED = [
   },
   {
     source: "ShiftDelete",
-    sourceUrl: "https://shiftdelete.net/iphone-duo-cikmadan-applea-kotu-haber-satis-tahminleri-asagi-cekildi",
-    image: "https://ares.shiftdelete.net/2026/10/aapl-logo-banner.webp",
-    category: "Mobil",
+    sourceUrl: "https://shiftdelete.net/iphone-duo-cikmadan-applea-kotu-haber-satis-tahminleri-asagi-cekildi",    category: "Mobil",
     publishedAt: "2026-10-21T17:06:00.000Z",
     title: "Katlanabilir iPhone Duo çıkmadan Apple'ın satış tahminleri düşürüldü",
     summary:
@@ -114,9 +107,7 @@ export const CURATED = [
   },
   {
     source: "ShiftDelete",
-    sourceUrl: "https://shiftdelete.net/chatgpt-artik-sohbetleri-kilitlemenize-izin-veriyor",
-    image: "https://ares.shiftdelete.net/2026/10/chatgpt-artik-sohbetleri-kilitlemenize-izin-veriyor.webp",
-    category: "Yapay Zeka",
+    sourceUrl: "https://shiftdelete.net/chatgpt-artik-sohbetleri-kilitlemenize-izin-veriyor",    category: "Yapay Zeka",
     publishedAt: "2026-10-21T16:38:00.000Z",
     title: "ChatGPT, özel sohbetleri PIN ve biyometrik doğrulamayla kilitleme özelliği aldı",
     summary:
@@ -140,9 +131,7 @@ export const CURATED = [
   },
   {
     source: "ShiftDelete",
-    sourceUrl: "https://shiftdelete.net/whatsapp-iphoneda-safarinin-isini-ustlenmeye-hazirlaniyor",
-    image: "https://ares.shiftdelete.net/2026/10/WhatsApp-uygulama-ici-tarayici-1-e1792583174172.webp",
-    category: "Mobil",
+    sourceUrl: "https://shiftdelete.net/whatsapp-iphoneda-safarinin-isini-ustlenmeye-hazirlaniyor",    category: "Mobil",
     publishedAt: "2026-10-21T16:34:00.000Z",
     title: "WhatsApp, iPhone'da bağlantıları Safari yerine kendi tarayıcısında açacak",
     summary:
@@ -166,9 +155,7 @@ export const CURATED = [
   },
   {
     source: "ShiftDelete",
-    sourceUrl: "https://shiftdelete.net/intel-nova-lake-islemciler-28-cekirdekle-dizustu-bilgisayarlara-geliyor",
-    image: "https://ares.shiftdelete.net/2026/10/Intel-Nova-Lake.webp",
-    category: "Donanım",
+    sourceUrl: "https://shiftdelete.net/intel-nova-lake-islemciler-28-cekirdekle-dizustu-bilgisayarlara-geliyor",    category: "Donanım",
     publishedAt: "2026-10-21T16:30:00.000Z",
     title: "Intel Nova Lake işlemciler 28 çekirdekle dizüstü bilgisayarlara geliyor",
     summary:
@@ -192,9 +179,7 @@ export const CURATED = [
   },
   {
     source: "ShiftDelete",
-    sourceUrl: "https://shiftdelete.net/youtube-dislike-butonunu-tamamen-gizleyecek",
-    image: "https://ares.shiftdelete.net/2026/10/youtube-dislike-butonunu-tamamen-gizleyecek.webp",
-    category: "İnternet",
+    sourceUrl: "https://shiftdelete.net/youtube-dislike-butonunu-tamamen-gizleyecek",    category: "İnternet",
     publishedAt: "2026-10-21T16:26:00.000Z",
     title: "YouTube, beğenmeme butonunu ana arayüzden kaldırıp menü altına gizliyor",
     summary:
@@ -218,9 +203,7 @@ export const CURATED = [
   },
   {
     source: "ShiftDelete",
-    sourceUrl: "https://shiftdelete.net/xbox-game-pass-sistemine-koklu-degisiklik-yolda",
-    image: "https://www.donanimhaber.com/images/images/haber/211789/src/xbox-game-pass-bu-ay-sekiz-oyuna-veda-edecek211789_0.jpg",
-    category: "Oyun",
+    sourceUrl: "https://shiftdelete.net/xbox-game-pass-sistemine-koklu-degisiklik-yolda",    category: "Oyun",
     publishedAt: "2026-10-21T16:22:00.000Z",
     title: "Xbox Game Pass abonelik paketlerinde bulut ve aile odaklı yeni dönem başlıyor",
     summary:
@@ -244,9 +227,7 @@ export const CURATED = [
   },
   {
     source: "ShiftDelete",
-    sourceUrl: "https://shiftdelete.net/iphone-duo-acilinca-ipade-donusuyor-apple-uygulamalarinin-yeni-hali-belli-oldu",
-    image: "https://ares.shiftdelete.net/2026/10/iPhone-Duo-arayuzu.webp",
-    category: "Mobil",
+    sourceUrl: "https://shiftdelete.net/iphone-duo-acilinca-ipade-donusuyor-apple-uygulamalarinin-yeni-hali-belli-oldu",    category: "Mobil",
     publishedAt: "2026-10-21T16:18:00.000Z",
     title: "iPhone Duo açılınca iPad'e dönüşüyor: Apple uygulamalarının yeni arayüzü sızdı",
     summary:
@@ -270,9 +251,7 @@ export const CURATED = [
   },
   {
     source: "ShiftDelete",
-    sourceUrl: "https://shiftdelete.net/honor-robot-phone-time-tarafindan-2026nin-en-iyi-icatlari-arasina-secildi",
-    image: "https://ares.shiftdelete.net/2026/10/Honor-Robot-Phone-scaled.webp",
-    category: "Mobil",
+    sourceUrl: "https://shiftdelete.net/honor-robot-phone-time-tarafindan-2026nin-en-iyi-icatlari-arasina-secildi",    category: "Mobil",
     publishedAt: "2026-10-21T16:14:00.000Z",
     title: "HONOR Robot Phone, TIME tarafından 2026'nın en iyi icatları arasına seçildi",
     summary:
@@ -296,9 +275,7 @@ export const CURATED = [
   },
   {
     source: "DonanımHaber",
-    sourceUrl: "https://www.donanimhaber.com/watch-10-dan-gectim-ne-fark-etti-apple-watch-12-incelemesi--211835",
-    image: "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-21_15-55-13_ojAzr.jpg",
-    category: "Donanım",
+    sourceUrl: "https://www.donanimhaber.com/watch-10-dan-gectim-ne-fark-etti-apple-watch-12-incelemesi--211835",    category: "Donanım",
     publishedAt: "2026-10-21T16:10:00.000Z",
     title: "Apple Watch 12 incelemesi: Watch 10'dan geçince pil ve ekranda neler değişti",
     summary:
@@ -322,9 +299,7 @@ export const CURATED = [
   },
   {
     source: "Technopat",
-    sourceUrl: "https://www.technopat.net/2026/10/21/steam-linux-surumu-bastan-degisiyor/",
-    image: "https://www.technopat.net/wp-content/uploads/2026/10/Steam-1920x1080.webp",
-    category: "Oyun",
+    sourceUrl: "https://www.technopat.net/2026/10/21/steam-linux-surumu-bastan-degisiyor/",    category: "Oyun",
     publishedAt: "2026-10-21T16:06:00.000Z",
     title: "Steam Linux sürümü baştan değişiyor: 32 bit dönemi resmen kapanıyor",
     summary:
@@ -348,9 +323,7 @@ export const CURATED = [
   },
   {
     source: "Webtekno",
-    sourceUrl: "https://www.webtekno.com/football-manager-27-5-gun-boyunca-ucretsiz-oynanabilecek-h227662.html",
-    image: "https://imgrosetta.webtekno.com/file/694162/694162-1280xauto.jpg",
-    category: "Oyun",
+    sourceUrl: "https://www.webtekno.com/football-manager-27-5-gun-boyunca-ucretsiz-oynanabilecek-h227662.html",    category: "Oyun",
     publishedAt: "2026-10-21T16:02:00.000Z",
     title: "Football Manager 27, 5 gün boyunca tüm oyunculara ücretsiz açılıyor",
     summary:
@@ -374,9 +347,7 @@ export const CURATED = [
   },
   {
     source: "Webtekno",
-    sourceUrl: "https://www.webtekno.com/aya-super-bilgisayar-gonderiliyor-iste-bilgisayarin-tum-ozellikleri-h227647.html",
-    image: "https://imgrosetta.webtekno.com/file/694147/694147-1280xauto.jpg",
-    category: "Uzay",
+    sourceUrl: "https://www.webtekno.com/aya-super-bilgisayar-gonderiliyor-iste-bilgisayarin-tum-ozellikleri-h227647.html",    category: "Uzay",
     publishedAt: "2026-10-21T15:58:00.000Z",
     title: "Ay yüzeyine ilk süper bilgisayar gönderiliyor: Uzayda veri merkezi kurulacak",
     summary:
@@ -400,34 +371,166 @@ export const CURATED = [
   },
 ];
 
-const REPLACEMENTS = [
-  {
-    match: /Getir araştırması: Tüketiciler market alışverişine/i,
-    image: "https://ares.shiftdelete.net/2024/12/getir-1.webp",
-  },
-  {
-    match: /Anthropic, altı aylık net zararını 80,7 milyar dolar/i,
-    image: "https://www.donanimhaber.com/images/images/haber/211906/src/anthropic-in-ilk-6-aydaki-zarari-80-milyar-dolari-asti211906_0.jpg",
-  },
-  {
-    match: /Nvidia, Avrupa yapay zekâ pazarındaki veri merkezleri/i,
-    image: "https://www.donanimhaber.com/images/images/haber/211913/1200x675nvidia-ceo-sundan-ab-ye-ai-uyarisi-teknolojin-yoksa-yonetemezsin.jpg",
-  },
-  {
-    match: /Tesla ile SpaceX birleşmesi 3,6 trilyon dolarlık/i,
-    image: "https://coinmuhendisi.com/blog/wp-content/uploads/2026/06/bitcoin_spacex_cm.jpg",
-  },
-  {
-    match: /Intel ve AMD, x86 işlemciler için PyTorch/i,
-    image: "https://ares.shiftdelete.net/2026/10/Intel-Nova-Lake.webp",
-  },
-];
+// Vitrin için güvenli kapak: kaynak sitenin fotoğrafı ASLA kullanılmaz.
+// Değerler Wikimedia Commons'ta serbest lisanslı (CC0 / kamu malı / CC BY /
+// CC BY-SA) dosyalardır; atıf bilgisi `gorselKaynak` olarak habere yazılır.
+// Eşleşme yoksa kategorinin doğrulanmış yedeği (`yedekGorsel`) kullanılır.
+export const GUVENLI_KAPAK = new Map([
+  [
+    "https://www.ntv.com.tr/teknoloji/internetin-altyapisinda-kritik-acik-dunya-alarma-gecti-avrupada-devlet-siteleri-kapatildi,kritik-bgp-acigi-2026",
+    {
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Server_Rack_with_Spaghetti-Like_Mass_of_Network_Cables.jpg/1280px-Server_Rack_with_Spaghetti-Like_Mass_of_Network_Cables.jpg",
+      yazar: "Kim Scarborough from Chicago, IL",
+      lisans: "CC BY-SA 2.0",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Server_Rack_with_Spaghetti-Like_Mass_of_Network_Cables.jpg",
+    },
+  ],
+  [
+    "https://haberglobal.com.tr/spor/yunus-akgunden-lille-filelerine-tarihi-gol-2026-10-21",
+    {
+      url: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Besiktas_JK_-_Trabzonspor_match.jpg",
+      yazar: "ayhang",
+      lisans: "CC BY 2.0",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Besiktas_JK_-_Trabzonspor_match.jpg",
+    },
+  ],
+  [
+    "https://www.hurriyet.com.tr/ekonomi/cumhurbaskani-yardimcisi-yilmaz-2027-yili-butcesini-meclise-sundu-2026-10-21",
+    {
+      url: "https://upload.wikimedia.org/wikipedia/commons/9/96/Turkish_lira.jpg",
+      yazar: "jon smith from Stamford, England",
+      lisans: "CC BY-SA 2.0",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Turkish_lira.jpg",
+    },
+  ],
+  [
+    "https://shiftdelete.net/iphone-duo-cikmadan-applea-kotu-haber-satis-tahminleri-asagi-cekildi",
+    {
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Foldable_smartphone_%28Android_Ice_Cream_Sandwich%29.jpg/1280px-Foldable_smartphone_%28Android_Ice_Cream_Sandwich%29.jpg",
+      yazar: "The photo: Own work The logos: Google LLC",
+      lisans: "CC BY 3.0",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Foldable_smartphone_(Android_Ice_Cream_Sandwich).jpg",
+    },
+  ],
+  [
+    "https://shiftdelete.net/chatgpt-artik-sohbetleri-kilitlemenize-izin-veriyor",
+    {
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Mobile_phone_with_ChatGPT_on_yellow_background_%2852917075654%29.jpg/1280px-Mobile_phone_with_ChatGPT_on_yellow_background_%2852917075654%29.jpg",
+      yazar: "Jernej Furman from Slovenia",
+      lisans: "CC BY 2.0",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Mobile_phone_with_ChatGPT_on_yellow_background_(52917075654).jpg",
+    },
+  ],
+  [
+    "https://shiftdelete.net/intel-nova-lake-islemciler-28-cekirdekle-dizustu-bilgisayarlara-geliyor",
+    {
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Intel_C43201-5_chip_%2815597750510%29.jpg/1280px-Intel_C43201-5_chip_%2815597750510%29.jpg",
+      yazar: "_brouhaha_",
+      lisans: "CC BY-SA 2.0",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Intel_C43201-5_chip_(15597750510).jpg",
+    },
+  ],
+  [
+    "https://shiftdelete.net/youtube-dislike-butonunu-tamamen-gizleyecek",
+    {
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Youtube_App_Startup.JPG/1280px-Youtube_App_Startup.JPG",
+      yazar: "SCBY",
+      lisans: "CC BY-SA 4.0",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Youtube_App_Startup.JPG",
+    },
+  ],
+  [
+    "https://shiftdelete.net/xbox-game-pass-sistemine-koklu-degisiklik-yolda",
+    {
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Xbox-One-Console-wController-FL.jpg/1280px-Xbox-One-Console-wController-FL.jpg",
+      yazar: "Evan-Amos",
+      lisans: "Kamu malı",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Xbox-One-Console-wController-FL.jpg",
+    },
+  ],
+  [
+    "https://shiftdelete.net/iphone-duo-acilinca-ipade-donusuyor-apple-uygulamalarinin-yeni-hali-belli-oldu",
+    {
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Foldable_smartphone_%28Android_Ice_Cream_Sandwich%29.jpg/1280px-Foldable_smartphone_%28Android_Ice_Cream_Sandwich%29.jpg",
+      yazar: "The photo: Own work The logos: Google LLC",
+      lisans: "CC BY 3.0",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Foldable_smartphone_(Android_Ice_Cream_Sandwich).jpg",
+    },
+  ],
+  [
+    "https://shiftdelete.net/honor-robot-phone-time-tarafindan-2026nin-en-iyi-icatlari-arasina-secildi",
+    {
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Romo_Smartphone_Robot_%2815021333117%29.jpg/1280px-Romo_Smartphone_Robot_%2815021333117%29.jpg",
+      yazar: "Maurizio Pesce from Milan, Italia",
+      lisans: "CC BY 2.0",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Romo_Smartphone_Robot_(15021333117).jpg",
+    },
+  ],
+  [
+    "https://www.donanimhaber.com/watch-10-dan-gectim-ne-fark-etti-apple-watch-12-incelemesi--211835",
+    {
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Apple_Watch_Series_7%3B_January_2022_%2803%29.jpg/1280px-Apple_Watch_Series_7%3B_January_2022_%2803%29.jpg",
+      yazar: "MIKI Yoshihito",
+      lisans: "CC BY 2.0",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Apple_Watch_Series_7;_January_2022_(03).jpg",
+    },
+  ],
+  [
+    "https://www.technopat.net/2026/10/21/steam-linux-surumu-bastan-degisiyor/",
+    {
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Gaming_PC-Setup_-_Astaroth-_The_Completed_System.jpg/1280px-Gaming_PC-Setup_-_Astaroth-_The_Completed_System.jpg",
+      yazar: "Brian Wong",
+      lisans: "CC BY-SA 2.0",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Gaming_PC-Setup_-_Astaroth-_The_Completed_System.jpg",
+    },
+  ],
+  [
+    "https://www.webtekno.com/football-manager-27-5-gun-boyunca-ucretsiz-oynanabilecek-h227662.html",
+    {
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Hands_holding_video_game_controller_%2850811892858%29.jpg/1280px-Hands_holding_video_game_controller_%2850811892858%29.jpg",
+      yazar: "Vu Hoang",
+      lisans: "CC BY 2.0",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Hands_holding_video_game_controller_(50811892858).jpg",
+    },
+  ],
+  [
+    "https://www.webtekno.com/aya-super-bilgisayar-gonderiliyor-iste-bilgisayarin-tum-ozellikleri-h227647.html",
+    {
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/When_NASA%E2%80%99s_SLS_%28Space_Launch_System%29_rocket_launches_the_agency%E2%80%99s_Artemis_II_mission_to_the_Moon%2C_four_CubeSats%2C_or_small_satellites%2C_will_be_hitching_a_ride_inside_the_rocket%E2%80%99s_Orion_stage_%28nasas-sls-rocket-secondary-payloads%29.jpg/1280px-thumbnail.jpg",
+      yazar: "NASA/Kevin O’Brien",
+      lisans: "Kamu malı",
+      sayfa: "https://commons.wikimedia.org/wiki/File:When_NASA%E2%80%99s_SLS_(Space_Launch_System)_rocket_launches_the_agency%E2%80%99s_Artemis_II_mission_to_the_Moon,_four_CubeSats,_or_small_satellites,_will_be_hitching_a_ride_inside_the_rocket%E2%80%99s_Orion_stage_(nasas-sls-rocket-secondary-payloads).jpg",
+    },
+  ],
+  [
+    "https://www.teknoblog.com/philips-iki-kavisli-qhd-monitorunu-tanitti/",
+    {
+      // "computer monitor" araması 1980'lerden kalma Atari bilgisayarını
+      // getiriyordu; güncel bir monitör karesi elle sabitlendi.
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Computer_monitor_samsung.jpg/1280px-Computer_monitor_samsung.jpg",
+      yazar: "G4ming4lif3",
+      lisans: "Kamu malı",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Computer_monitor_samsung.jpg",
+    },
+  ],
+  [
+    "https://www.bloomberght.com/trump-in-balo-salonunun-bagiscilari-ortaya-cikti-3791515",
+    {
+      // Arama "Facebook/Twitter post" görselini öne çıkarıyordu; portre daha uygun.
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Donald_Trump_by_Gage_Skidmore_12.jpg/1280px-Donald_Trump_by_Gage_Skidmore_12.jpg",
+      yazar: "Gage Skidmore",
+      lisans: "CC BY-SA 3.0",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Donald_Trump_by_Gage_Skidmore_12.jpg",
+    },
+  ],
+]);
 
 export function vitrinDoldur(articles) {
   const existingUrls = new Set(articles.map((a) => a.sourceUrl));
   let added = 0;
   for (const item of CURATED) {
     if (existingUrls.has(item.sourceUrl)) continue;
+    const kapak = GUVENLI_KAPAK.get(item.sourceUrl) || yedekGorsel(item.category);
     articles.unshift({
       id: makeId(item.sourceUrl),
       title: item.title,
@@ -439,7 +542,8 @@ export function vitrinDoldur(articles) {
       editorNote: item.editorNote,
       tags: item.tags,
       category: item.category,
-      image: item.image,
+      image: kapak.url,
+      gorselKaynak: atif(kapak),
       source: item.source,
       sourceUrl: item.sourceUrl,
       publishedAt: item.publishedAt,
@@ -449,30 +553,14 @@ export function vitrinDoldur(articles) {
     added++;
   }
 
-  let replaced = 0;
-  for (const a of articles) {
-    for (const r of REPLACEMENTS) {
-      if (r.match.test(a.title || "")) {
-        a.image = r.image;
-        delete a.imageCredit;
-        replaced++;
-      }
-    }
-    if (typeof a.image === "string") {
-      a.image = a.image
-        .replace(/\/\/www\.technopat\.net\/www\.technopat\.net\//i, "//www.technopat.net/")
-        .replace(/(imgrosetta\.webtekno\.com\/file\/\d+\/\d+-)640xauto/i, "$11280xauto");
-    }
-  }
-
   articles.sort((a, b) => new Date(b.publishedAt || 0).getTime() - new Date(a.publishedAt || 0).getTime());
-  return { added, replaced };
+  return { added };
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   const file = "data/articles.json";
   const articles = JSON.parse(readFileSync(file, "utf8"));
-  const { added, replaced } = vitrinDoldur(articles);
+  const { added } = vitrinDoldur(articles);
   writeFileSync(file, JSON.stringify(articles, null, 2) + "\n", "utf8");
-  console.log(`Eklendi: ${added} yeni ShiftDelete/vitrin haberi, Güncellendi: ${replaced} kapak fotoğrafı.`);
+  console.log(`Eklendi: ${added} güvenli kapaklı vitrin haberi.`);
 }

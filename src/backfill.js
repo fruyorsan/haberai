@@ -1,9 +1,9 @@
 import { loadArticles, saveArticles } from "./store.js";
 import { fetchPageExtras } from "./fetcher.js";
-import { analyzeArticle, gorselSorgusu } from "./ai.js";
+import { analyzeArticle } from "./ai.js";
 import { purgeCopiedText } from "./telif.js";
 import { config } from "./config.js";
-import { stokGorseller, KATEGORI_SORGU, atif, kisaSorgu, konuSorgu, afetMi, markaAdi } from "./stok-gorsel.js";
+import { stokGorseller, KATEGORI_SORGU, yedekGorsel, atif, kisaSorgu, konuSorgu, afetMi, markaAdi } from "./stok-gorsel.js";
 
 /**
  * Eski haberleri yeni biçimle yeniden üretir:
@@ -22,8 +22,6 @@ import { stokGorseller, KATEGORI_SORGU, atif, kisaSorgu, konuSorgu, afetMi, mark
  *   BACKFILL_LIMIT=20 npm run backfill
  *   node src/backfill.js --dry   (AI çağrısı yapmadan listeler)
  */
-
-import { chooseArticleImage } from "./gorsel.js";
 
 const LIMIT = Number(process.env.BACKFILL_LIMIT || 5);
 const DRY = process.argv.includes("--dry");
@@ -63,25 +61,25 @@ function kullanilanGorseller(articles) {
 }
 
 /**
- * Habere telif güvenli stok fotoğraflar yazar (1 kapak + 2 gövde içi).
- * AI'nın İngilizce sorgusu + kategori yedeği kullanılır. Fotoğraf bulunamazsa
- * hiçbir şey değiştirilmez (eski fotoğraf yerinde kalır): yanlış fotoğraf
- * göstermektense mevcut fotoğrafı korumak daha iyidir.
+ * Habere telif güvenli fotoğraflar yazar (1 kapak + 2 gövde içi).
+ * Kaynak sitenin fotoğrafı KULLANILMAZ; yalnızca Commons + kategori yedeği.
+ * Kaynak sayfadan alınmış eski `images` adresleri de silinir.
  */
 async function gorselYaz(a, sorgu, kullanilan) {
   const marka = markaAdi(a.title);
-  const stok = await stokGorseller(
-    [marka, sorgu, konuSorgu(sorgu, a.title), kisaSorgu(sorgu), KATEGORI_SORGU[a.category]],
-    { adet: 3, kullanilan, afet: afetMi(sorgu, a.title), marka }
+  let stok = await stokGorseller(
+    [marka, konuSorgu(sorgu, a.title), sorgu, kisaSorgu(sorgu), KATEGORI_SORGU[a.category]],
+    { adet: 3, kullanilan, afet: afetMi(a.title, a.summary), marka }
   );
-  if (!stok.length) return false;
+  if (!stok.length) stok = [yedekGorsel(a.category)];
+
   const [kapak, ...ekler] = stok;
   a.image = kapak.url;
   a.gorselKaynak = atif(kapak);
   if (ekler.length) a.gorselEk = ekler.map((g) => ({ url: g.url, ...atif(g) }));
   else delete a.gorselEk;
-  // Kaynaktan alınmış eski gövde fotoğrafları: telif riski taşıdığı için silinir.
   delete a.images;
+  delete a.gorselKaynakSite;
   return true;
 }
 
@@ -165,10 +163,16 @@ async function main() {
       if (ai.tags?.length) current.tags = ai.tags;
       current.refreshedAt = new Date().toISOString();
 
-      // GÖRSEL: eski kaynak fotoğrafı telif güvenli stokla değiştir.
-      if (!current.gorselKaynak && ai.gorselSorgu) {
-        const secilen = await chooseArticleImage(extra, `${current.title} ${current.slug || ""} ${current.sourceUrl || ""}`, { minWidth: 600 });
-        if (secilen) { current.image = secilen; current.gorselKaynakSite = true; delete current.gorselKaynak; delete current.gorselEk; }
+      // GÖRSEL: kaynak fotoğrafı telif güvenli stokla değiştir.
+      // Kaynak sitelerin görselleri hiç kullanılmaz; eski `images` adresleri silinir.
+      const guvenliGorsel = /^https:\/\/(upload|thumb)\.wikimedia\.org\//i.test(
+        String(current.image || "")
+      );
+      if (!guvenliGorsel) {
+        await gorselYaz(current, ai.gorselSorgu || current.gorselSorgu || "", kullanilanGorseller(articles));
+      } else {
+        delete current.images;
+        delete current.gorselKaynakSite;
       }
 
       console.log("✓");
@@ -185,55 +189,12 @@ async function main() {
     if (i < targets.length - 1) await sleep(config.aiDelayMs);
   }
 
-  // ---------------- GÖRSEL TAMAMLAMA (eski arşiv) ----------------
-  // Eski haberlerin fotoğrafları kaynak siteden alınmıştı (ajans lisanslı
-  // olabilir). AI'dan yalnızca KISA bir İngilizce sorgu istenir (tam makale
-  // üretilmez, kota az harcanır), sonra Commons'tan serbest lisanslı fotoğraf
-  // alınır. Yanlış fotoğraf göstermemek için: fotoğraf bulunamazsa ESKİ
-  // FOTOĞRAFA DOKUNULMAZ ve haber 7 gün sonra yeniden denenir.
-  // Görsel stok backfill kapatıldı: kaynak sitelerin gerçek kapak görselleri
-  // (og:image) korunur, Wikimedia stok fotoğraflarıyla ezilmez.
-  const GORSEL_LIMIT = 0;
-  if (GORSEL_LIMIT > 0) {
-    const kalanlar = articles.filter((a) => a.image && !a.gorselKaynak);
-    const eski = kalanlar
-      .filter(
-        (a) =>
-          !a.gorselDeneme ||
-          Date.now() - new Date(a.gorselDeneme).getTime() > 7 * 24 * 60 * 60 * 1000
-      )
-      .sort((a, b) =>
-        String(b.publishedAt || b.generatedAt || "").localeCompare(
-          String(a.publishedAt || a.generatedAt || "")
-        )
-      )
-      .slice(0, GORSEL_LIMIT);
-
-    console.log(
-      `\nGörsel tamamlama: ${eski.length} haber denenecek (kalan kaynak fotoğraflı: ${kalanlar.length}).`
-    );
-    const kullanilan = kullanilanGorseller(articles);
-    let gorselSayi = 0;
-
-    for (const [i, a] of eski.entries()) {
-      try {
-        const sorgu = await gorselSorgusu(a);
-        a.gorselDeneme = new Date().toISOString();
-        // Denetlenebilirlik: hangi sorgunun hangi fotoğrafı getirdiği veride kalsın.
-        if (sorgu) a.gorselSorgu = sorgu;
-        if (sorgu && (await gorselYaz(a, sorgu, kullanilan))) gorselSayi++;
-      } catch (err) {
-        if (err.allExhausted) {
-          console.log("AI kotası/durumu: görsel tamamlama bu turda durduruldu.");
-          break;
-        }
-        console.warn(`  ! ${a.slug}: ${String(err.message).slice(0, 120)}`);
-      }
-      if (i < eski.length - 1) await sleep(config.aiDelayMs);
-    }
-    if (gorselSayi) await saveArticles(articles);
-    console.log(`Görsel tamamlama: ${gorselSayi} haber telif güvenli fotoğrafa geçti.`);
-  }
+  // ---------------- GÖRSEL TEMİZLİĞİ (eski arşiv) ----------------
+  // Kaynak sitelerin fotoğrafları bu hatta HİÇ kullanılmaz. Eski arşivdeki
+  // kaynak görselleri güvenli görsellerle değiştirmek için tek seferlik /
+  // tekrarlanabilir migration:
+  //   npm run gorsel-guvenli
+  // (kapak + gövde içi, yalnızca Commons; bulunamazsa kategori yedeği).
 
   await saveArticles(articles);
   console.log(

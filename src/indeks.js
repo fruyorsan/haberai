@@ -10,7 +10,7 @@
 // KALİTE KAPISINI geçen ve aynı olayı tekrar etmeyen bir "çekirdek" gösterir.
 //
 //   - Kalite kapısı: yeterli gövde, maddeli özet, editör notu, özgün yorum,
-//     gerçek fotoğraf, spam olmayan başlık.
+//     telif güvenli fotoğraf, spam olmayan başlık.
 //   - Tekrar ayıklama: başlık benzerliği + günlük kota (varsayılan 12/gün).
 //   - Pencere: son 45 gün. Dışındaki haberler sayfa olarak yaşar (okuyucu
 //     doğrudan bağlantıyla görür) ama vitrinde listelenmez ve `noindex` olur.
@@ -76,9 +76,18 @@ const metin = (v) => {
 };
 
 /**
+ * Telif güvenli görsel: yalnızca Wikimedia Commons veya sitenin kendi yerel
+ * görseli. Kaynak haber sitelerinden alınmış og:image'lar çekirdeğe giremez
+ * (bkz. görsel politikası / README).
+ */
+const GUVENLI_UZAK_GORSEL = /^https:\/\/(upload|thumb)\.wikimedia\.org\//i;
+const guvenliGorsel = (u) =>
+  typeof u === "string" && (/^\/(?!\/)/.test(u) || GUVENLI_UZAK_GORSEL.test(u));
+
+/**
  * Kalite puanı — SABİT (zamana bağlı değil), böylece sıralama kaymaz.
- * Uzun ve özgün gövde, maddeli özet, editör notu ve gerçek fotoğraf puanı
- * yükseltir; kısa/aktarma haberler düşük kalır.
+ * Uzun ve özgün gövde, maddeli özet, editör notu ve telif güvenli fotoğraf
+ * puanı yükseltir; kısa/aktarma haberler düşük kalır.
  */
 function kalitePuani(a) {
   const govde = Math.min(metin(a.body).length, 6000);
@@ -92,7 +101,7 @@ function kalitePuani(a) {
   p += Math.min(metin(a.comment).length, 600) / 30;
   p += Math.min(metin(a.editorNote).length, 200) / 20;
   p += Math.min(etiket, 6) * 1.5;
-  p += typeof a.image === "string" && /^https?:\/\//i.test(a.image) ? 8 : 0;
+  p += guvenliGorsel(a.image) ? 8 : 0;
   p += a.gorselKaynak || (Array.isArray(a.gorselEk) && a.gorselEk.length) ? 4 : 0;
   p += a.breaking === true ? 6 : 0;
   return p;
@@ -106,7 +115,8 @@ function kapisi(a) {
   if (metin(a.summary).length < ESIK.ozet) return "kısa özet";
   if (metin(a.comment).length < ESIK.yorum) return "özgün yorum yok";
   if (metin(a.editorNote).length < ESIK.not) return "editör notu yok";
-  if (typeof a.image !== "string" || !/^https?:\/\//i.test(a.image)) return "fotoğraf yok";
+  if (typeof a.image !== "string" || !a.image) return "fotoğraf yok";
+  if (!guvenliGorsel(a.image)) return "telifli görsel";
   if (isJunkArticle(a)) return "spam başlık";
   if (!a.category || a.category === "Diğer") return "kategorisiz";
   return "";

@@ -36,7 +36,7 @@ const nonFeatured = articles.filter((a) => !featuredSlugs.has(a.slug));
 // Teknoloji/yapay zekâ gelişmeleri ayrı ve belirgin bir bölümde öne çıkarılır.
 const teknoKategoriler = new Set(["teknoloji", "yapay-zeka", "mobil", "donanim", "yazilim", "oyun", "internet"]);
 const tekno = articles
-  .filter((a) => teknoKategoriler.has(a.categorySlug) && !featuredSlugs.has(a.slug) && !shortsSlugs.has(a.slug) && kapakKaynagi(a) && !/wikimedia|wikipedia/i.test(a.image || ""))
+  .filter((a) => teknoKategoriler.has(a.categorySlug) && !featuredSlugs.has(a.slug) && !shortsSlugs.has(a.slug) && kapakKaynagi(a))
   .slice(0, 4);
 const teknoSlugs = new Set(tekno.map((a) => a.slug));
 // ShiftDelete tarzı: Gerçek fotoğraflı haberler öncelikli gösterilir.

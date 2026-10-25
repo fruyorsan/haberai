@@ -8,7 +8,6 @@ import { makeIndex, findSimilar, dedupeArticles, ayniOlay } from "./dedupe.js";
 import { isBreaking, breakingScore } from "./breaking.js";
 import { purgeCopiedText } from "./telif.js";
 import { stokGorseller, KATEGORI_SORGU, yedekGorsel, atif, kisaSorgu, konuSorgu, afetMi, gorselOnar, markaAdi } from "./stok-gorsel.js";
-import { chooseArticleImage, chooseArticleExtraImages } from "./gorsel.js";
 import { isJunkArticle } from "./kalite.js";
 import { vitrinDoldur } from "../scripts/vitrin-doldur.mjs";
 
@@ -424,82 +423,59 @@ async function main() {
       const { cleaned, removed } = purgeCopiedText(ai, item.content);
       if (removed > 0) console.log(`(telif: ${removed} cümle kaynakla birebir örtüştüğü için çıkarıldı) `);
 
-      // GÖRSEL SIRASI: kaynağın kendi og:image'ı → Commons marka/stok → markalı kapak.
-      // Kaynak adayı gerçekten indirilip boyutu/oranı ölçülür (src/gorsel.js):
-      // küçük thumbnail, logo ve site banner'ı elenir; arşivde başka haberde
-      // kullanılmış kare tekrar kapak yapılmaz.
-      let kaynakGorsel = null;
-      const metin = `${cleaned.title} ${item.title} ${item.link}`;
-      if (extra || item.image) {
-        const secilen = await chooseArticleImage(extra, metin, { minWidth: 600, rssImage: item.image });
-        if (secilen && (gorselSayaci.get(gorselKimlik(secilen)) || 0) < 3) kaynakGorsel = secilen;
-      }
-
+      // GÖRSEL KAYNAĞI: YALNIZCA telif güvenli görseller.
+      //
+      // Kaynak haber sitelerinin og:image'ları ajans lisanslı olabiliyor
+      // (AA, Getty, Reuters, DHA...). Atıf yazmak bunu yasal hâle getirmez.
+      // Bu yüzden kaynağın fotoğrafı HİÇ kullanılmaz. Kapak ve gövde içi
+      // görseller yalnızca Wikimedia Commons'ın serbest lisanslı arşivinden
+      // (CC0 / kamu malı / CC BY / CC BY-SA) seçilir; uygun kare bulunamazsa
+      // kategorinin doğrulanmış yedek görseli kullanılır.
       const marka = markaAdi(cleaned.title);
-      const afet = afetMi(ai.gorselSorgu, cleaned.title);
-      let kapakGorsel;
-      let ekler = [];
+      // Afet tespiti YALNIZCA Türkçe başlık/özetten yapılır: İngilizce arama
+      // sorgusundaki "test fire" gibi ifadeler savunma haberini yangın sanıp
+      // yanlış (orman yangını) fotoğrafı seçtiriyordu.
+      const afet = afetMi(cleaned.title, cleaned.summary);
 
-      if (kaynakGorsel) {
-        kapakGorsel = { url: kaynakGorsel, kaynakSite: true };
-      } else {
-        // GÖRSELLER: AI'nın ürettiği İngilizce sorgu + kategori sorgusu.
-        const sorgular = [
+      // 1) Kapak: AI'nın ürettiği İngilizce sorgu + marka + kategori.
+      let stok = await stokGorseller(
+        [
           marka,
-          ai.gorselSorgu,
           konuSorgu(ai.gorselSorgu, cleaned.title),
+          ai.gorselSorgu,
           kisaSorgu(ai.gorselSorgu),
           KATEGORI_SORGU[cleaned.category],
-        ];
-        let stok = await stokGorseller(sorgular, {
-          adet: 1,
-          kullanilan: kullanilanGorsel,
-          afet,
-          marka,
-        });
-        if (!stok.length) stok = [yedekGorsel(cleaned.category)];
-        kapakGorsel = stok[0];
-      }
+        ],
+        { adet: 1, kullanilan: kullanilanGorsel, afet, marka }
+      );
+      if (!stok.length) stok = [yedekGorsel(cleaned.category)];
+      const kapakGorsel = stok[0];
 
       kullanilanGorsel.add(kapakGorsel.url);
       gorselSayaci.set(gorselKimlik(kapakGorsel.url), (gorselSayaci.get(gorselKimlik(kapakGorsel.url)) || 0) + 1);
 
-      // 1) Kaynak sayfanın gövdesindeki gerçek detay fotoğrafları (varsa ve kapaktan farklıysa)
-      let kaynakEkUrller = [];
-      if (extra?.images?.length) {
-        try {
-          kaynakEkUrller = await chooseArticleExtraImages(extra, metin, kapakGorsel.url, { max: 2 });
-        } catch {
-          kaynakEkUrller = [];
-        }
-      }
-      for (const u of kaynakEkUrller) kullanilanGorsel.add(u);
+      // 2) Gövde içi detay fotoğrafları: yine yalnızca Commons.
+      let ekler = [];
+      const detayListesi = Array.isArray(ai.gorselDetaylar) && ai.gorselDetaylar.length
+        ? ai.gorselDetaylar.slice(0, 2)
+        : [{ sorgu: kisaSorgu(ai.gorselSorgu) || ai.gorselSorgu, altyazi: "" }];
 
-      // 2) Eksik kalan satır arası detay fotoğraflarını, AI'nın paragraflara özel
-      //    ürettiği `gorselDetaylar` sorgularıyla tamamla (kapak fotoğrafı tekrarlanmaz).
-      const eksikDetay = Math.max(0, 2 - kaynakEkUrller.length);
-      if (eksikDetay > 0) {
-        const detayListesi = Array.isArray(ai.gorselDetaylar) && ai.gorselDetaylar.length
-          ? ai.gorselDetaylar.slice(0, eksikDetay)
-          : [{ sorgu: kisaSorgu(ai.gorselSorgu) || ai.gorselSorgu, altyazi: "" }];
-
-        for (const detay of detayListesi) {
-          if (ekler.length >= eksikDetay) break;
-          const dSorgular = [
-            detay.sorgu,
-            kisaSorgu(detay.sorgu),
-            ai.gorselSorgu,
-          ].filter(Boolean);
-          const bulunan = await stokGorseller(dSorgular, {
-            adet: 1,
-            kullanilan: kullanilanGorsel,
-            afet,
-          });
-          if (bulunan.length && gorselKimlik(bulunan[0].url) !== gorselKimlik(kapakGorsel.url)) {
-            const sec = bulunan[0];
-            kullanilanGorsel.add(sec.url);
-            ekler.push({ ...sec, altyazi: detay.altyazi || "" });
-          }
+      for (const detay of detayListesi) {
+        if (ekler.length >= 2) break;
+        const dSorgular = [
+          detay.sorgu,
+          kisaSorgu(detay.sorgu),
+          ai.gorselSorgu,
+        ].filter(Boolean);
+        const bulunan = await stokGorseller(dSorgular, {
+          adet: 1,
+          kullanilan: kullanilanGorsel,
+          afet,
+        });
+        if (bulunan.length && gorselKimlik(bulunan[0].url) !== gorselKimlik(kapakGorsel.url)) {
+          const sec = bulunan[0];
+          kullanilanGorsel.add(sec.url);
+          ekler.push({ ...sec, altyazi: detay.altyazi || "" });
         }
       }
 
@@ -515,10 +491,7 @@ async function main() {
         source: item.source,
         sourceUrl,
         image: kapakGorsel.url,
-        ...(kaynakEkUrller.length ? { images: kaynakEkUrller } : {}),
-        ...(kapakGorsel.kaynakSite
-          ? { gorselKaynakSite: true }
-          : { gorselKaynak: atif(kapakGorsel) }),
+        gorselKaynak: atif(kapakGorsel),
         publishedAt: item.publishedAt,
         generatedAt: new Date().toISOString(),
       };
@@ -535,7 +508,7 @@ async function main() {
       if (item.breaking) entry.breaking = true;
       articles.push(entry);
       newArticles.push(entry);
-      console.log(kapakGorsel.kaynakSite ? "✓ (kaynak görsel)" : "✓");
+      console.log("✓");
       added++;
     } catch (err) {
       console.log(`✗ ${err.message}`);

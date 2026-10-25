@@ -35,12 +35,17 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           BACKFILL_LIMIT: "0"
-          # Görselleri kaynak siteden alınmış eski haberler: AI'dan yalnızca
-          # kısa bir İngilizce arama sorgusu alınır, fotoğraf Wikimedia
-          # Commons'tan (CC0/kamu malı/CC BY/CC BY-SA) gelir. Fotoğraf
-          # bulunamazsa eski fotoğrafa DOKUNULMAZ.
-          GORSEL_BACKFILL_LIMIT: "0"
         run: npm run backfill
+
+      # Arşivde kaynak sitelerden alınmış görselleri telif güvenli hâle
+      # getirir: Wikimedia Commons (CC0/kamu malı/CC BY/CC BY-SA) veya
+      # kategori yedeği. Tur başına 400 haber; ilk çalıştırmalarda arşiv
+      # temizlenir, sonra adım anında biter.
+      # `--delay=400` Commons'ın 429 hız sınırına takılmamak için; ilerleme
+      # 50 haberde bir diske yazılır (uzun tur yarıda kalsa da kaybolmaz).
+      - name: Telif guvenli gorsellere gecir
+        continue-on-error: true
+        run: node scripts/gorsel-guvenli.mjs --limit=400 --concurrency=3 --delay=400 --save-every=50
 
       # İndeks çekirdeğindeki eski haberlerin eksik `gorselSorgu` alanını
       # doldurur. AI'dan yalnızca kısa bir İngilizce sorgu istenir (tam makale
@@ -67,7 +72,7 @@ jobs:
         run: npm run ek-gorsel
 
       # Arşivdeki eski fotoğraflar yukarıdaki adımda telif güvenli hâle
-      # getiriliyor (GORSEL_BACKFILL_LIMIT). Ayrı bir görsel adımı yok.
+      # getiriliyor. Ayrı bir görsel adımı yok.
 
       - name: Degisiklikleri kaydet
         id: commit

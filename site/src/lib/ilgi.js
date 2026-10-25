@@ -243,12 +243,16 @@ const TAM_KELIME = new Set(["sel", "altin", "neden", "zam", "test", "panel", "ya
 const ILGI_RE = ILGI_KALIPLARI.map(([kalip, puan]) => [kalipRe(kalip, TAM_KELIME.has(kalip)), puan]);
 const RUTIN_RE = RUTIN_KALIPLARI.map((kalip) => kalipRe(kalip, TAM_KELIME.has(kalip)));
 
-/** Haberin görseli kaynağın kendi gerçek fotoğrafı mı (stok değil)? */
-export function gercekKaynaktanGorselMi(a) {
-  const img = String(a?.image || "");
-  if (!img || !/^https?:\/\//i.test(img)) return false;
-  if (/wikimedia\.org|wikipedia\.org/i.test(img)) return false;
-  return Boolean(a?.gorselKaynakSite || !a?.gorselKaynak);
+/**
+ * Haberin kapak görseli telif güvenli mi?
+ * Yalnızca Wikimedia Commons ve sitenin kendi yerel görselleri güvenlidir
+ * (bkz. site/src/lib/kapak.js). Kaynak sitelerin og:image'ları güvenli değildir.
+ */
+export function guvenliKapakMi(a) {
+  const img = String(a?.image || "").trim();
+  if (!img) return false;
+  if (/^\/(?!\/)/.test(img)) return true;
+  return /^https:\/\/(upload|thumb)\.wikimedia\.org\//i.test(img);
 }
 
 /**
@@ -279,7 +283,7 @@ export function ilgiSkoru(a, simdi = Date.now()) {
   if (/\d/.test(metin)) ipucu += 2;
   kalite += Math.min(ipucu, 22);
 
-  if (gercekKaynaktanGorselMi(a)) {
+  if (guvenliKapakMi(a)) {
     kalite += 16;
   } else {
     kalite -= 12;
