@@ -38,6 +38,10 @@ npm run collect
 npm run backfill
 npm run backfill:dry          # AI çağrısı yapmadan sadece listeler
 BACKFILL_LIMIT=20 npm run backfill   # tur başına işlenecek haber sayısı
+
+# İndeks çekirdeğinde görsel sorgusu eksik haberler için kısa sorgu üretir
+npm run gorsel-sorgu:dry      # hedefleri listeler, AI çağırmaz
+npm run gorsel-sorgu          # tur başına 12 haber (SORGU_LIMIT)
 ```
 
 ## Ayarlar
@@ -79,6 +83,13 @@ Eski (kaynak fotoğraflı) haberler `npm run backfill` sırasında tur tur temiz
 bir sorgu sorulur (tam makale üretilmez, kota az harcanır). Güvenilir fotoğraf
 bulunamazsa **eski fotoğrafa dokunulmaz** ve 7 gün sonra yeniden denenir —
 yanlış/ilgisiz fotoğraf göstermektense mevcut fotoğrafı korumak yeğdir.
+
+İndeks çekirdeğine giren eski haberlerde `gorselSorgu` hiç yoksa gövde içi
+fotoğraf doldurma onları atlar. `npm run gorsel-sorgu` yalnızca bu eksik alan
+için AI'dan kısa bir İngilizce sorgu üretir (tam makale üretmez); **Arşiv
+Yenileme** iş akışında saatte 12 haber işlenir, 48 eksik yaklaşık 4 saatte
+tamamlanır. Sorgu eklenen haber bir sonraki turda Commons'tan fotoğraf alır.
+Başarısız sorgular 7 gün boyunca yeniden denenmez (`gorselSorguDeneme`).
 
 Site tarafı (`site/src/lib/kapak.js`): stok fotoğraflar `gorselKaynak` alanından
 tanınır; "dosya adı Türkçe başlıkla eşleşmiyor" süzgeci onlara uygulanmaz
