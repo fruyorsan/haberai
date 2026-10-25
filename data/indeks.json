@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-10-25T01:04:44.755Z",
+  "updatedAt": "2026-10-25T01:10:52.336Z",
   "gunluk": 12,
   "pencereGun": 30,
-  "toplamHaber": 4506,
-  "secilen": 128,
+  "toplamHaber": 4508,
+  "secilen": 130,
   "days": {
     "2026-10-15": [
       "0ab36acf6850d7c6",
@@ -146,6 +146,7 @@
       "06ffe26e1cd44d7c"
     ],
     "2026-10-25": [
+      "4b293c06b856d38e",
       "403bf9fba349f563",
       "32151483ad184faf",
       "d141d555d7812820",
@@ -153,7 +154,8 @@
       "fa3fe899aefb9cc2",
       "1701dd8007f25f37",
       "e370fd8ff161dd4c",
-      "0aa82f13df0b5826"
+      "0aa82f13df0b5826",
+      "c288e37dff945ab9"
     ]
   }
 }
