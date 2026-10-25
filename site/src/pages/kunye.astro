@@ -4,7 +4,9 @@ import { CONTACT_EMAIL, PUBLISHER } from "../lib/site-meta.js";
 
 const origin = Astro.site ? String(Astro.site).replace(/\/+$/, "") : "https://haberinai.site";
 
-const yayinciAdres = [PUBLISHER.adres, PUBLISHER.sehir].filter(Boolean).join(", ");
+const yayinciAdres = PUBLISHER.adres
+  ? [PUBLISHER.adres, PUBLISHER.sehir].filter(Boolean).join(", ")
+  : "";
 
 const schema = {
   "@context": "https://schema.org",
@@ -22,7 +24,8 @@ const schema = {
       name: PUBLISHER.ad,
       url: origin,
       email: PUBLISHER.eposta,
-      ...(yayinciAdres ? { address: { "@type": "PostalAddress", streetAddress: PUBLISHER.adres || undefined, addressLocality: PUBLISHER.sehir } } : {}),
+      areaServed: "TR",
+      ...(yayinciAdres ? { address: { "@type": "PostalAddress", streetAddress: PUBLISHER.adres, addressLocality: PUBLISHER.sehir } } : {}),
       ...(PUBLISHER.telefon ? { telephone: PUBLISHER.telefon } : {}),
     },
   ],
@@ -49,20 +52,27 @@ const schema = {
       <div class="kunye__yayinci-ust">
         <h2 id="yayinci-baslik">Yayıncı Kimliği</h2>
         <p class="kunye__yayinci-not">
-          Bu sayfada yer alan bilgiler, yayıncının gerçek kimliğini ve ulaşılabilir adresini
-          gösterir. İçeriklerle ilgili sorumluluk bu kişiye aittir.
+          Bu sayfa yayın kimliğini ve ulaşılabilir iletişim kanalını gösterir. Kişisel ev adresi
+          veya telefon numarası yayınlanmaz; içeriklerle ilgili sorumluluk yayın kuruluna aittir.
         </p>
       </div>
       <dl class="kunye__dl kunye__dl--yatay">
         <div>
-          <dt>Sorumlu Yayıncı</dt>
+          <dt>Yayıncı</dt>
           <dd>{PUBLISHER.ad}</dd>
         </div>
         <div>
-          <dt>Adres</dt>
-          <dd>
-            {PUBLISHER.adres ? yayinciAdres : PUBLISHER.sehir}
-          </dd>
+          {PUBLISHER.adres ? (
+            <>
+              <dt>Adres</dt>
+              <dd>{yayinciAdres}</dd>
+            </>
+          ) : (
+            <>
+              <dt>Merkez</dt>
+              <dd>{PUBLISHER.sehir}</dd>
+            </>
+          )}
         </div>
         <div>
           <dt>E-posta</dt>
@@ -101,7 +111,7 @@ const schema = {
       <div class="kunye__kart">
         <h2>İçerik ve Yayın Yönetimi</h2>
         <dl class="kunye__dl">
-          <dt>Yayın Sorumlusu</dt>
+          <dt>Yayın Kurulu</dt>
           <dd>{PUBLISHER.ad}</dd>
 
           <dt>Yayın Kapsamı</dt>

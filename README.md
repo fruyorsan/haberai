@@ -324,18 +324,29 @@ kullanmaya devam eder.
 
 ### Yayıncı kimliği (E-E-A-T)
 
-Künye sayfasındaki gerçek yayıncı bilgisi kod değişikliği gerektirmeden tanımlanır:
+Künye sayfasındaki yayıncı bilgisi kod değişikliği gerektirmeden tanımlanır:
 
 ```bash
-gh variable set PUBLISHER_NAME    --body "Ad Soyad"
-gh variable set PUBLISHER_ADDRESS --body "Mahalle, Cadde No, İlçe"
-gh variable set PUBLISHER_CITY    --body "İstanbul"
-gh variable set PUBLISHER_PHONE   --body "+90 5xx xxx xx xx"
+gh variable set PUBLISHER_NAME --body "Ad Soyad veya kurumsal unvan"
+gh variable set PUBLISHER_CITY --body "İstanbul"
 gh workflow run pipeline.yml
 ```
 
+İsteğe bağlı (yalnızca kurumsal bir adres/hat varsa):
+
+```bash
+gh variable set PUBLISHER_ADDRESS --body "Kurumsal adres"
+gh variable set PUBLISHER_PHONE   --body "+90 ..."
+```
+
+**Kişisel ev adresi veya telefon numarası yayınlamak zorunlu değildir.** Bu değerler
+boşsa künyede adres/telefon satırı hiç görünmez; yalnızca yayıncı adı, şehir ve e-posta
+kalır. AdSense için önemli olan kişisel bilgi ifşası değil; yayıncının kim olduğunun,
+hangi yöntemle içerik ürettiğinin ve kendisine nasıl ulaşılacağının açık olmasıdır.
+
 Bu değerler yoksa künyede uydurma bir kişi adı yazılmaz; "HaberinAi Editör Masası"
-gösterilir. AdSense incelemesinden önce gerçek ad ve adresin tanımlanması önerilir.
+gösterilir. E-posta adresinin alan adına ait olması (ör. `iletisim@haberinai.site`)
+güven açısından ücretsiz bir posta adresinden daha iyidir.
 
 > Not: Vitrin temizliği tek başına onay garantisi değildir. İçerik derinliği, özgün
 > değer ve düzenli yayın disiplini inceleme boyunca korunmalıdır.
