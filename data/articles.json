@@ -1,5 +1,86 @@
 [
   {
+    "id": "1bc92e3a0f85fdbe",
+    "title": "Ukrayna’da Rus Hava Saldırısı 3 Sivili Öldürdü, 26 Yaralı",
+    "slug": "ukrayna-rus-hava-saldirisi-3-sivili-oldurdu-26-yarali",
+    "summary": "Ukrayna Devlet Acil Durum Servisi, Rus hava saldırılarının Dnipropetrovsk, Vinnitsa ve Harkiv bölgelerinde toplam 3 sivilin hayatını kaybettiğini, 26 kişinin yaralandığını bildirdi. Saldırılarda 153 İHA kullanıldı, bunların 119’u imha edildi ve Ukrayna ordusu da savunma operasyonlarıyla saldırıyı püskürttü.",
+    "keyPoints": [
+      "153 Rus İHA'sı hedefte, 119'u Ukrayna tarafından imha edildi",
+      "Dnipropetrovsk’ta 3 sivil hayatını kaybetti, 15 yaralandı",
+      "Vinnitsa 6, Harkiv 4 kişi yaralandı; Kiev’de 1 kişi hafif yaralı"
+    ],
+    "body": [
+      "Rus ordusunun Ukrayna’nın farklı bölgelerine yönelik son hava saldırılarında, Dnipropetrovsk bölgesinde üç sivil hayatını kaybetti, 15 kişi ise yaralandı. Aynı saldırı Vinnitsa ve Harkiv illerinde de etkili oldu; Vinnitsa’da altı, Harkiv’de dört kişi yaralandı. Kiev’de ise insansız hava araçları (İHA) tarafından hedef alınan bir sivil hafif yaralandı.",
+      "Ukrayna Devlet Acil Durum Servisi (DSNS) sosyal medya üzerinden yaptığı açıklamada, saldırıların gece ve sabah saatlerine denk geldiğini belirtti. Bu açıklamaya göre, Rusya toplam 153 İHA gönderdi ve Ukrayna savunma birimleri 119 tanesini etkisiz hale getirdi. İHA’ların büyük bir kısmı, ülkenin kritik altyapı noktalarına yönelmişti.",
+      "Kiev Belediye Başkanı Vitaliy Kliçko, başkentin bu sabah bir İHA saldırısına maruz kaldığını ve bir sivilin yaralandığını duyurdu. Ukrayna Ordusu Hava Kuvvetleri Komutanlığı ise, Rus saldırılarına karşı yürütülen savunma operasyonlarının başarılı olduğunu, özellikle İHA imhası konusunda yüksek bir oran elde edildiğini vurguladı.",
+      "Saldırının ardından uluslararası toplumun tepkisi artarken, Ukrayna yetkilileri sivillerin korunması için savunma sistemlerini güçlendirme ve İHA savunma kapasitesini artırma kararı aldıklarını belirtti. Bu gelişmeler, bölgedeki gerilimin devam edeceği ve sivillerin güvenliğinin öncelikli olacağı anlamına geliyor."
+    ],
+    "comment": "Sivil kayıplar ve yüksek yaralanma sayısı, mevcut savunma önlemlerinin yetersizliğini gösteriyor. 153 gönderilen İHA’dan 119’un imha edilmesi, savunma kapasitesinin bir kısmını işaret ediyor ancak 26 yaralı sayısı, koruma eksikliğini ortaya koyuyor. Sivillerin güvenliği doğrudan etkileniyor; daha kapsamlı hava savunma sistemleri gerekecek. Önceki saldırılarda imha oranı daha düşükken, bu seferki oran artış gösterdi, fakat hâlâ kritik bir eşik aşılmadı.",
+    "editorNote": "Rusya’nın yoğun hava saldırısı, sivillerin hayatını kaybetmesi ve yaralanmasıyla sonuçlandı; savunma sistemlerinin iyileştirilmesi acil bir ihtiyaç.",
+    "tags": [
+      "Ukrayna",
+      "Rusya",
+      "İHA",
+      "savaş",
+      "sivil kayıplar"
+    ],
+    "category": "Dünya",
+    "gorselSorgu": "Ukrayna city drone strike",
+    "source": "AA Güncel",
+    "sourceUrl": "https://www.aa.com.tr/tr/dunya/ukrayna-rusyanin-saldirilarinda-3-sivil-oldu-ve-26-kisi-yaralandi-/4100119",
+    "image": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/25/thumbs_b_c_5071d358dc107678c6812e01b8530e71.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-25T09:39:01.000Z",
+    "generatedAt": "2026-10-25T09:44:07.627Z",
+    "breaking": true
+  },
+  {
+    "id": "94e54d42599dfb8a",
+    "title": "Claude yardımıyla geliştirilen uygulama gizli madenciyi ortaya çıkardı",
+    "slug": "claude-yardimiyla-gelistirilen-uygulama-gizli-madenciyi-ortaya-cikardi",
+    "summary": "Masaüstü sistemleri hedefleyen gizli bir kripto para madenciliği yazılımı, bir kullanıcının yapay zekâ yardımıyla geliştirdiği sıcaklık takip aracı sayesinde tesadüfen keşfedildi. XMRig adlı zararlı yazılım, sistem kaynaklarını izinsiz kullanarak donanımı aşırı yüklüyor ve arka planda çalışmaya devam ediyor.",
+    "keyPoints": [
+      "12 çekirdekli Mac işlemcisi aşırı ısınarak 112 dereceye ulaştı.",
+      "Zararlı yazılım XMRig, pool.hashvault.sh havuzu üzerinden madencilik yapıyordu.",
+      "LaunchAgent başlangıç öğesi, program sonlandırılsa dahi yeniden başlamasını sağlıyor."
+    ],
+    "body": [
+      "MacOS ve Windows işletim sistemlerini hedef alan gizli bir kripto para madenciliği tehdidi, bir bilgisayar kullanıcısının yapay zekâ modeli Claude desteğiyle yazdığı kodlar sayesinde gün ışığına çıktı. Yaşanan olay, donanım bileşenlerinin olağandışı sıcaklık seviyelerine ulaşmasıyla başladı ve arka planda gizlenen bir tehlikeyi gözler önüne serdi.",
+      "Sahip olduğu 12 çekirdekli işlemcinin 112 derece gibi endişe verici sıcaklık değerlerine çıktığını fark eden bilgisayar sahibi, macOS platformu için özel bir sıcaklık izleme aracı tasarlamaya karar verdi. Bu yazılımın test aşamalarında ise sistem kaynaklarını sömüren beklenmeyen bir arka plan süreciyle karşılaşıldı.",
+      "Yapılan incelemelerde, XMRig adını taşıyan ve Monero odaklı çalışan açık kaynaklı bir madencilik aracının izinsiz şekilde çalıştığı anlaşıldı. Söz konusu zararlı yazılımın geçici bir klasör barındırdığı ve pool.hashvault.sh adresindeki havuza bağlanarak işlem gücünü kötü amaçlı amaçlar doğrultusunda sömürdüğü tespit edildi.",
+      "Programın sistemde kalıcı olmasını sağlayan temel unsur ise LaunchAgent adlı başlangıç öğesiydi. Kodlanmış uzun bir betik yapısına sahip olan bu mekanizma, kullanıcı uygulamayı sonlandırmaya çalışsa bile yazılımın otomatik olarak yeniden devreye girmesine zemin hazırlıyordu.",
+      "Benzer bir tehlikenin Windows tarafında da aktif olduğu, XMRig yazılımının Görev Yöneticisi açıldığı anlarda gizlenerek kullanıcılar tarafından fark edilmesini engellediği belirlendi. Bu tür zararlı programlar hem donanım ömrünü kısaltırken hem de kullanıcıların işlemcileri üzerinden haksız kazanç elde edilmesine yol açıyor."
+    ],
+    "comment": "Yapay zekâ araçlarının kod yazma asistanlığının ötesine geçerek siber güvenlik açıklarını tespit etmede kritik birer araç haline gelebileceği net bir şekilde görülüyor. 112 derece gibi riskli sıcaklık eşiklerine ulaşan 12 çekirdekli donanım bileşenleri, klasik güvenlik yazılımlarının gözünden kaçabilen tehditlerin bireysel kullanıcılar tarafından dahi fark edilebileceğini kanıtlıyor. Önümüzdeki süreçte bu tarz yapay zekâ destekli keşiflerin yaygınlaşması, kullanıcıların sistem güvenliğine yaklaşımını kökten değiştirecektir.",
+    "editorNote": "Yapay zekâ ile sıcaklık izleme aracı yazan bir kullanıcı, donanımını sömüren gizli madenciyi böyle buldu.",
+    "tags": [
+      "Claude",
+      "MacOS",
+      "Windows",
+      "XMRig",
+      "Kripto Para"
+    ],
+    "category": "Donanım",
+    "gorselSorgu": "computer processor overheating hardware components",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/mac-cihazlarinda-gizli-tehlike--212056",
+    "image": "https://www.donanimhaber.com/images/images/haber/212056/src/mac-cihazlarinda-gizli-tehlike212056_0.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-25T09:30:00.000Z",
+    "generatedAt": "2026-10-25T09:46:37.869Z",
+    "gorselEk": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Macbook_apple_imac_computer_screen_laptop_notebook_technology-758989.jpg",
+        "yazar": "PXHERE",
+        "lisans": "CC0",
+        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Macbook_apple_imac_computer_screen_laptop_notebook_technology-758989.jpg",
+        "altyazi": "Bilgisayar anakartı ve işlemci donanım bileşenleri"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "6b7f5a8ef2796453",
     "title": "Mardin'de sulama kanalına devrilen otomobilde ölen 6 kişi defnedildi",
     "slug": "mardinde-sulama-kanalina-devrilen-otomobilde-olen-6-kisi-defnedildi",
