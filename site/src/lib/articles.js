@@ -76,7 +76,7 @@ export function getArticles() {
 
   // ShiftDelete kuralı: Sitede YALNIZCA gerçek fotoğrafı olan haberler yer alır.
   // Yeşil SVG kapak veya fotoğrafsız haberlerin sitede görünmesine izin verilmez.
-  const JUNK_RE = /(vietnam\.vn|state_bank_of_vietnam|\bvietnam\b|\bsbv\b.*banka|gelinim mutfakta|bitlispostasicom|bursabasincom|marmarabolgecom|giynikgazetesi)/i;
+  const JUNK_RE = /(vietnam\.vn|state_bank_of_vietnam|\bvietnam\b|\bsbv\b.*banka|gelinim mutfakta|bitlispostasicom|bursabasincom|marmarabolgecom|giynikgazetesi|[\u0600-\u06FF])/i;
   list = list.filter((a) => typeof a.image === "string" && /^https?:\/\//i.test(a.image) && !JUNK_RE.test(`${a.title || ""} ${a.source || ""} ${a.sourceUrl || ""} ${a.image || ""}`));
 
   const usedSlugs = new Set();
@@ -104,14 +104,152 @@ export function getArticles() {
  * böylece vitrine yalnızca gerçek fotoğrafı doğrulanmış haberler girer.
  * Uygun görselli haber yetmezse kalanlar sırayı bozmadan eklenir.
  */
+const MANSET_STOP = new Set([
+  "oldu",
+  "olan",
+  "olarak",
+  "yapti",
+  "etti",
+  "acikl",
+  "gerce",
+  "meyda",
+  "gelen",
+  "sonra",
+  "kadar",
+  "icind",
+  "uzeri",
+  "buyuk",
+  "guclu",
+  "yeni",
+  "turki",
+  "dunya",
+  "haber",
+]);
+
+const MANSET_RUTIN_RE =
+  /(belediye|kaymakam|valili|mudurlu|okul mudur|olcme degerlendirme|ziyaret|toren|kutlama|kermes|muhtar|pazaryeri|panel|seminer|bilgilendir)/i;
+
+/**
+ * İki başlığın aynı olayı anlatıp anlatmadığını (Türkçe kök benzerliğiyle) kontrol eder.
+ * Manşet slaytında aynı depremin/olayın 3-4 farklı kaynaktan üst üste çıkmasını önler.
+ */
+export function ayniOlayMi(baslikA, baslikB) {
+  const kokler = (s) =>
+    String(s || "")
+      .toLocaleLowerCase("tr")
+      .replace(/[ıİ]/g, "i")
+      .replace(/[şŞ]/g, "s")
+      .replace(/[ğĞ]/g, "g")
+      .replace(/[üÜ]/g, "u")
+      .replace(/[öÖ]/g, "o")
+      .replace(/[çÇ]/g, "c")
+      .split(/[^a-z0-9]+/)
+      .filter((w) => w.length >= 3 && !/^\d+$/.test(w))
+      .map((w) => (w.length >= 5 ? w.slice(0, 5) : w))
+      .filter((w) => !MANSET_STOP.has(w));
+  const a = new Set(kokler(baslikA));
+  const b = new Set(kokler(baslikB));
+  if (a.size < 2 || b.size < 2) return false;
+  let ortak = 0;
+  for (const w of a) if (b.has(w)) ortak++;
+  return ortak >= 2 || ortak / Math.min(a.size, b.size) >= 0.4;
+}
+
+/**
+ * Manşet/vitrin için haber seçimi:
+ * 1) KESİN TAZELİK: Manşet slaytında 9 saat, 20 saat önceki bayat haberlerin
+ *    1. sıraya yerleşmesine izin verilmez.
+ * 2) DİKKAT ÇEKİCİLİK + TAZELİK DENGESİ: Yalnızca son 3 saat içinde çıkmış
+ *    vitrin/teknoloji veya yüksek ilgi puanlı haberler kendi taze dilimi içinde öne alınır;
+ *    yerel/rutin kurum haberleri manşete çıkarılmaz.
+ * 3) TEKRARSIZ MANŞET: Aynı olayı anlatan mükerrer başlıklar (ör. aynı deprem haberi)
+ *    slaytta yalnızca bir kez yer alır.
+ */
 export function getFeatured(count = 6, horizon = 20, uygun = (a) => Boolean(a.image)) {
-  const VITRIN_SRC = new Set(["ShiftDelete", "Webtekno", "DonanımHaber", "Technopat", "Donanım Arşivi", "CHIP Online", "PC Hocası", "Webrazzi", "Tamindir", "Merlin'in Kazanı", "IGN Türkiye", "Oyun Günlüğü", "Evrim Ağacı", "NTV Teknoloji"]);
-  const recent = getArticles().slice(0, Math.max(count, horizon, 36));
-  const withRealPhoto = [...recent.filter((a) => uygun(a) && VITRIN_SRC.has(a.source) && !/wikimedia|wikipedia/i.test(a.image || "")), ...recent.filter((a) => uygun(a) && !VITRIN_SRC.has(a.source) && !/wikimedia|wikipedia/i.test(a.image || ""))];
-  const withStockPhoto = recent.filter((a) => uygun(a) && /wikimedia|wikipedia/i.test(a.image || ""));
-  const withPhoto = [...withRealPhoto, ...withStockPhoto];
-  if (withPhoto.length >= count) return withPhoto.slice(0, count);
-  return [...withPhoto, ...recent.filter((a) => !uygun(a))].slice(0, count);
+  const VITRIN_SRC = new Set([
+    "ShiftDelete",
+    "Webtekno",
+    "DonanımHaber",
+    "Technopat",
+    "Donanım Arşivi",
+    "CHIP Online",
+    "PC Hocası",
+    "Webrazzi",
+    "Tamindir",
+    "Merlin'in Kazanı",
+    "IGN Türkiye",
+    "Oyun Günlüğü",
+    "Evrim Ağacı",
+    "NTV Teknoloji",
+  ]);
+  const VITRIN_KAT = new Set([
+    "teknoloji",
+    "yapay-zeka",
+    "mobil",
+    "donanim",
+    "oyun",
+    "bilim",
+    "uzay",
+    "otomobil",
+    "ekonomi",
+  ]);
+  const simdi = Date.now();
+  const tum = getArticles();
+  const recent = tum.slice(0, Math.max(count * 4, horizon, 30));
+
+  const gercekFotoMu = (a) =>
+    uygun(a) && !/wikimedia|wikipedia/i.test(a.image || "");
+
+  const yasSaat = (a) => {
+    const t = publishedTime(a);
+    return t ? Math.max(0, (simdi - t) / 3_600_000) : 999;
+  };
+
+  const rutinMi = (a) => {
+    const s = `${a?.title || ""} ${a?.summary || ""}`
+      .toLocaleLowerCase("tr")
+      .replace(/[ıİ]/g, "i")
+      .replace(/[şŞ]/g, "s")
+      .replace(/[ğĞ]/g, "g")
+      .replace(/[üÜ]/g, "u")
+      .replace(/[öÖ]/g, "o")
+      .replace(/[çÇ]/g, "c");
+    return MANSET_RUTIN_RE.test(s);
+  };
+
+  // Manşet puanı: Tazelik birincil belirleyicidir (her saat başı -24 puan).
+  // Gerçek fotoğraf (+34), vitrin kaynağı (+16, yalnızca <=3.5 saat tazeyse) ve
+  // dikkat çekici kategori (+12, yalnızca <=4 saat tazeyse) kendi saat diliminde öne çıkarır.
+  const mansetSkoru = (a) => {
+    const saat = yasSaat(a);
+    let skor = 220 - saat * 24;
+    if (gercekFotoMu(a)) skor += 34;
+    else if (uygun(a)) skor += 6;
+    else skor -= 90;
+    if (rutinMi(a)) skor -= 120;
+    if (saat <= 3.5 && VITRIN_SRC.has(a.source)) skor += 16;
+    if (saat <= 4 && VITRIN_KAT.has(a.categorySlug)) skor += 12;
+    if (saat <= 2.5 && a.breaking === true) skor += 10;
+    return skor;
+  };
+
+  const sirali = [...recent].sort((a, b) => mansetSkoru(b) - mansetSkoru(a));
+
+  const secilen = [];
+  for (const aday of sirali) {
+    if (secilen.length >= count) break;
+    if (!uygun(aday)) continue;
+    if (secilen.some((m) => ayniOlayMi(m.title, aday.title))) continue;
+    secilen.push(aday);
+  }
+
+  if (secilen.length < count) {
+    for (const aday of sirali) {
+      if (secilen.length >= count) break;
+      if (!secilen.includes(aday) && uygun(aday)) secilen.push(aday);
+    }
+  }
+  return secilen.slice(0, count);
 }
 
 /**

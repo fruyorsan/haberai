@@ -60,11 +60,10 @@ export const config = {
     // "Başlık - Kaynak Adı" biçiminde gelir; fetcher kaynağı başlıktan ayırır.
     // Hepsi bot UA ile test edildi ve içerik döndürüyor.
     { name: "GN: Son Dakika", url: "https://news.google.com/rss/search?q=son%20dakika%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Gündem" },
-    { name: "GN: Teknoloji", url: "https://news.google.com/rss/search?q=teknoloji%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Teknoloji" },
+    { name: "GN: Teknoloji", url: "https://news.google.com/rss/search?q=teknoloji%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Teknoloji", fast: true },
     { name: "GN: Tesla", url: "https://news.google.com/rss/search?q=tesla%20when%3A1h&hl=tr&gl=TR&ceid=TR:tr", category: "Teknoloji", fast: true },
     { name: "GN: Elon Musk", url: "https://news.google.com/rss/search?q=elon%20musk%20when%3A1h&hl=tr&gl=TR&ceid=TR:tr", category: "Teknoloji", fast: true },
-    { name: "GN: Yapay Zeka", url: "https://news.google.com/rss/search?q=yapay%20zeka%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Yapay Zeka" },
-    { name: "GN: Deprem", url: "https://news.google.com/rss/search?q=deprem%20when%3A1h&hl=tr&gl=TR&ceid=TR:tr", category: "Gündem", fast: true },
+    { name: "GN: Yapay Zeka", url: "https://news.google.com/rss/search?q=yapay%20zeka%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Yapay Zeka", fast: true },
     { name: "GN: Apple", url: "https://news.google.com/rss/search?q=apple%20when%3A1h&hl=tr&gl=TR&ceid=TR:tr", category: "Mobil", fast: true },
     { name: "GN: Samsung", url: "https://news.google.com/rss/search?q=samsung%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Mobil", fast: true },
     { name: "GN: Oyun", url: "https://news.google.com/rss/search?q=oyun%20when%3A2h&hl=tr&gl=TR&ceid=TR:tr", category: "Oyun" },

@@ -6,7 +6,7 @@
 // /akis/sayfa/<ofset>.json topları bu modülü kullandığı için sonsuz
 // kaydırmada kart tekrarı ya da sıra kayması olmaz.
 // ==========================================================================
-import { publishedTime, getArticles } from "./articles.js";
+import { publishedTime, getArticles, ayniOlayMi } from "./articles.js";
 import { kapakKaynagi } from "./kapak.js";
 
 /** Türkçe küçük harfe indirger ve aksanları sadeleştirir (eşleşme kolay olsun). */
@@ -186,6 +186,9 @@ const RUTIN_KALIPLARI = [
   "valiligi",
   "valisi",
   "mudurlugu",
+  "mudurler",
+  "okul mudur",
+  "olcme degerlendirme",
   "acilis",
   "toren",
   "ziyaret",
@@ -249,52 +252,69 @@ export function gercekKaynaktanGorselMi(a) {
 }
 
 /**
- * Tek bir haberin ilgi puanı (0-150).
+ * Tek bir haberin ilgi puanı.
+ * ÖNEMLİ: Tazelik en belirleyici ağırlıktır. Aynı zaman dilimindeki (ör. son 3-4 saat)
+ * haberler arasında dikkat çekici teknoloji/yapay zekâ/gündem başlıkları ve gerçek
+ * kaynak görselleri öne çıkar; ancak dün veya günler önceki bir haber, sırf kaynak/kelime
+ * bonusu yüksek diye bugünün taze haberlerinin önüne ASLA geçemez.
+ *
  * @param {any} a haber kaydı
  * @param {number} simdi karşılaştırma zamanı (ms)
  */
 export function ilgiSkoru(a, simdi = Date.now()) {
   const metin = sade(`${a?.title || ""} ${a?.summary || ""}`);
   const katAgirlik = KATEGORI_AGIRLIK[a?.categorySlug] ?? VARSAYILAN_AGIRLIK;
-  let puan = katAgirlik;
-
-  // Merak/ölçü işaretleri
-  let ipucu = 0;
-  for (const [re, p] of ILGI_RE) if (re.test(metin)) ipucu += p;
-  if (metin.includes("%")) ipucu += 4;
-  if (/\d/.test(metin)) ipucu += 2;
-  puan += Math.min(ipucu, 34);
-
-  // Gerçek kaynak görseli (ShiftDelete kalitesinde ürün/haber kapağı) büyük avantaj alır;
-  // stok görselli haberler geriye düşer.
-  if (gercekKaynaktanGorselMi(a)) {
-    puan += 18;
-  } else {
-    puan -= 10;
-  }
-
-  // Teknoloji/oyun/bilim odaklı vitrin yayıncılarına ek bonus
-  if (VITRIN_KAYNAKLAR.test(sade(a?.source || ""))) {
-    puan += /shiftdelete/i.test(a?.source || "") ? 22 : 14;
-  }
-
-  // Son dakika bonusu: yalnızca ilgi çekici kategorilerde tam puan alır,
-  // rutin diplomasi/gündem haberlerinin teknoloji/oyun vitrinini ezmesini önler.
-  if (a?.breaking === true) {
-    puan += katAgirlik >= 20 ? 12 : 4;
-  }
-
-  // Tazelik: yarı ömrü ~24 saat.
   const t = publishedTime(a);
   const yasSaat = t ? Math.max(0, (simdi - t) / 3_600_000) : 200;
-  puan += 52 * Math.exp(-yasSaat / 14) + (yasSaat <= 2.5 ? 14 : 0);
 
-  // Rutin/bürokratik kalıp cezası
+  // Statik kalite bonusu (kategori + merak kelimeleri + gerçek fotoğraf + vitrin yayıncı)
+  // Haber yaşlandıkça (>6 saat) statik bonusun etkisi kademeli azalır ki eski haberler
+  // taze haberlerin üstüne yapışmasın.
+  const tazelikCarpani = yasSaat <= 4 ? 1 : yasSaat <= 10 ? 0.65 : yasSaat <= 24 ? 0.35 : 0.15;
+
+  let kalite = katAgirlik * 0.65;
+  let ipucu = 0;
+  for (const [re, p] of ILGI_RE) if (re.test(metin)) ipucu += p;
+  if (metin.includes("%")) ipucu += 3;
+  if (/\d/.test(metin)) ipucu += 2;
+  kalite += Math.min(ipucu, 22);
+
+  if (gercekKaynaktanGorselMi(a)) {
+    kalite += 16;
+  } else {
+    kalite -= 12;
+  }
+
+  if (VITRIN_KAYNAKLAR.test(sade(a?.source || ""))) {
+    kalite += /shiftdelete/i.test(a?.source || "") ? 12 : 9;
+  }
+
+  if (a?.breaking === true && yasSaat <= 4) {
+    kalite += katAgirlik >= 20 ? 10 : 6;
+  }
+
+  let puan = kalite * tazelikCarpani;
+
+  // Tazelik puanı: her saat dilimi net biçimde ayrışır.
+  // 0-3 saat: 115..82 puan | 3-6 saat: 82..55 puan | 6-12 saat: 55..15 puan | >12 saat: hızla düşer
+  if (yasSaat <= 3) {
+    puan += 115 - yasSaat * 11;
+  } else if (yasSaat <= 6) {
+    puan += 82 - (yasSaat - 3) * 9;
+  } else if (yasSaat <= 12) {
+    puan += 55 - (yasSaat - 6) * 6.5;
+  } else if (yasSaat <= 24) {
+    puan += 16 - (yasSaat - 12) * 3.5;
+  } else {
+    puan -= 26 + (yasSaat - 24) * 4;
+  }
+
+  // Rutin/bürokratik kalıp cezası (yerel kurum/okul/belediye duyuruları vitrinde görünmesin)
   let ceza = 0;
-  for (const re of RUTIN_RE) if (re.test(metin)) ceza += 11;
-  puan -= Math.min(ceza, 36);
+  for (const re of RUTIN_RE) if (re.test(metin)) ceza += 28;
+  puan -= Math.min(ceza, 70);
 
-  return Math.max(0, Math.min(150, Math.round(puan)));
+  return Math.round(puan);
 }
 
 /**
@@ -306,13 +326,27 @@ export function ilgiSkoru(a, simdi = Date.now()) {
  */
 export function ilgiSirala(liste) {
   const simdi = Date.now();
-  return liste
+  const ham = liste
     .map((a, i) => ({ a, i, p: ilgiSkoru(a, simdi), k: kapakKaynagi(a) ? 1 : 0 }))
     .sort(
       (x, y) =>
         y.k - x.k || y.p - x.p || publishedTime(y.a) - publishedTime(x.a) || x.i - y.i
     )
     .map((x) => x.a);
+
+  // İlk 36 kart içinde aynı olayı anlatan mükerrer başlıkların üst üste dizilmesini engelle
+  const onVitrin = [];
+  const tekrarlar = [];
+  const tavan = Math.min(ham.length, 36);
+  for (let i = 0; i < tavan; i++) {
+    const aday = ham[i];
+    if (onVitrin.some((m) => ayniOlayMi(m.title, aday.title))) {
+      tekrarlar.push(aday);
+    } else {
+      onVitrin.push(aday);
+    }
+  }
+  return [...onVitrin, ...tekrarlar, ...ham.slice(tavan)];
 }
 
 /**

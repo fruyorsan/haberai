@@ -203,6 +203,7 @@ async function main() {
         title: it.title,
         publishedAt: it.publishedAt,
         fast: it.fast,
+        sourceName: it.source,
       });
     }
 
@@ -308,18 +309,20 @@ async function main() {
     })`
   );
 
-  // Denge: tur tamamen teknoloji/oyun haberlerinden oluşmasın, en az bir
-  // gündem/ekonomi/spor/dünya haberi girsin. Değiştirilirken son dakika
-  // haberleri KORUNUR; yalnızca normal bir haber feda edilir.
-  const isNews = (it) => config.newsCategories.includes(it.feedCategory);
-  // Tek haberlik turda da denge: sıradaki haber son dakika değilse kategori
-  // çeşitliliği korunur (aksi hâlde gün boyu yalnızca teknoloji akar).
-  const dengeGerek =
+  // Denge: hem teknoloji/yapay zekâ hem de gündem/ekonomi/spor/dünya akışı
+  // gün boyu dengeli ilerlesin. Tek haberlik turlarda son 2 yayınlanan habere
+  // bakılır: üst üste 2 teknoloji çıktıysa gündem, üst üste 2 gündem çıktıysa
+  // teknoloji/vitrin haberi tercih edilir.
+  const isNews = (it) => config.newsCategories.includes(it.feedCategory || it.category);
+  const sonIkisiNews =
+    articles.length >= 2 && isNews(articles[0]) && isNews(articles[1]);
+  const sonIkisiTekno =
+    articles.length >= 2 && !isNews(articles[0]) && !isNews(articles[1]);
+
+  const dengeGerekNews =
     !queue.some(isNews) &&
-    (queue.length > 1 || (queue.length === 1 && !queue[0].breaking));
-  if (dengeGerek) {
-    // Önce normal (son dakika olmayan) bir haber tercih edilir; böylece son
-    // dakika kotası aşılmaz ve çeşitlilik normal akıştan sağlanır.
+    (queue.length > 1 || (queue.length === 1 && !queue[0].breaking && sonIkisiTekno));
+  if (dengeGerekNews) {
     const alt =
       eligible.find((it) => isNews(it) && !it.breaking && !queue.includes(it)) ||
       eligible.find((it) => isNews(it) && !queue.includes(it));
@@ -334,6 +337,19 @@ async function main() {
       if (idx === -1) idx = queue.length - 1;
       queue[idx] = alt;
       console.log(`  ⚖ denge: son sıraya "${alt.feedCategory}" haberi alındı`);
+    }
+  } else if (
+    queue.length > 0 &&
+    queue.every(isNews) &&
+    !queue[0].breaking &&
+    sonIkisiNews
+  ) {
+    const teknoAlt =
+      vitrinPool.find((it) => !isNews(it) && !queue.includes(it)) ||
+      eligible.find((it) => !isNews(it) && Boolean(it.image) && !queue.includes(it));
+    if (teknoAlt) {
+      queue[queue.length - 1] = teknoAlt;
+      console.log(`  ⚖ denge: üst üste gündem sonrası "${teknoAlt.feedCategory}" haberi alındı`);
     }
   }
 

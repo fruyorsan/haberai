@@ -55,7 +55,7 @@ const STOP = new Set([
   "turkiye",
 ]);
 
-/** Başlığı anlamlı kelimelere indirger (küçük harf, noktalama ve etkisiz kelimeler atılır). */
+/** Başlığı anlamlı kelimelere (ve 5 harfli Türkçe köklerine) indirger. */
 export function titleTokens(title = "") {
   const set = new Set();
   const words = String(title)
@@ -63,7 +63,9 @@ export function titleTokens(title = "") {
     .split(/[^\p{L}\p{N}]+/u);
   for (const raw of words) {
     const w = raw.trim();
-    if (w.length > 2 && !STOP.has(w) && !/^\d+$/.test(w)) set.add(w);
+    if (w.length > 2 && !STOP.has(w) && !/^\d+$/.test(w)) {
+      set.add(w.length >= 6 ? w.slice(0, 5) : w);
+    }
   }
   return set;
 }

@@ -15,6 +15,30 @@ import { looksLikeSpamTitle } from "./kalite.js";
 const BREAKING_WORDS =
   /son dakika|az önce|duyurdu|tanıttı|tanıtıldı|ilk kez|şimdi|canlı|rekor|kaza|deprem|istifa|vefat|hayatını kaybetti|açıkladı|patlama|yangın|acil/i;
 
+// Sahte son dakika / rutin / tıklama tuzağı deprem başlıkları
+const FAKE_BREAKING_RE =
+  /(deprem mi oldu|nerede deprem oldu|son depremler|deprem mühendisliği|deprem tatbikat|deprem eğitim|deprem paneli|deprem semineri)/i;
+
+const BIRINCIL_YAYINCILAR = new Set([
+  "ShiftDelete",
+  "Webtekno",
+  "DonanımHaber",
+  "Technopat",
+  "Donanım Arşivi",
+  "CHIP Online",
+  "Webrazzi",
+  "Tamindir",
+  "Merlin'in Kazanı",
+  "IGN Türkiye",
+  "Evrim Ağacı",
+  "NTV Son Dakika",
+  "TRT Haber Son Dakika",
+  "AA Güncel",
+  "Haber Global",
+  "BBC Türkçe",
+  "BBC World",
+]);
+
 // Gelecek tarihli (saati ileri) kaynaklar için tolerans (dk). fetcher zaten
 // 15 dk üzerini "şimdi"ye çeker; burada da hafif bir pay bırakıyoruz.
 const FUTURE_TOLERANS_MIN = 20;
@@ -39,32 +63,30 @@ export function isBreaking({ title, publishedAt, fast, windowMin } = {}) {
   if (age === null) return false;
   if (age > win) return false; // pencereden eski
   if (age < -FUTURE_TOLERANS_MIN) return false; // tolerans dışı gelecek tarih
-  if (looksLikeSpamTitle(title)) return false; // SEO çöpü başlıklar son dakika olamaz
+  if (looksLikeSpamTitle(title) || FAKE_BREAKING_RE.test(String(title || ""))) return false;
 
   if (fast) return true;
   return BREAKING_WORDS.test(String(title || ""));
 }
 
 /**
- * Basit öncelik puanı (büyük = daha öncelikli). Üç bileşen:
- *   - tazelik: yeni haber yüksek puan (0 dk = +40, pencere sonunda ~0)
- *   - fast kaynak bonusu: +50
- *   - son dakika anahtar kelimesi: +20
- * @param {{ title?: string, publishedAt?: string, fast?: boolean, windowMin?: number }} param0
- * @returns {number}
+ * Basit öncelik puanı (büyük = daha öncelikli).
+ * Doğrudan birincil yayıncılar (ShiftDelete, Webtekno, DonanımHaber, NTV, TRT vb.)
+ * yerel Google News bloglarının önüne geçer.
  */
-export function breakingScore({ title, publishedAt, fast, windowMin } = {}) {
+export function breakingScore({ title, publishedAt, fast, sourceName, windowMin } = {}) {
   const win = Number.isFinite(windowMin) ? windowMin : config.breakingWindowMin;
   let score = 0;
 
   const age = ageMinutes(publishedAt);
   if (age !== null) {
     const clamped = Math.min(Math.max(age, 0), win);
-    score += Math.max(0, 40 * (1 - clamped / (win || 1))); // 0 dk -> +40, win -> 0
+    score += Math.max(0, 45 * (1 - clamped / (win || 1))); // 0 dk -> +45, win -> 0
   }
 
-  if (fast) score += 50;
-  if (BREAKING_WORDS.test(String(title || ""))) score += 20;
+  if (fast) score += 45;
+  if (sourceName && BIRINCIL_YAYINCILAR.has(sourceName)) score += 28;
+  if (BREAKING_WORDS.test(String(title || ""))) score += 12;
 
   return Math.round(score * 100) / 100;
 }
