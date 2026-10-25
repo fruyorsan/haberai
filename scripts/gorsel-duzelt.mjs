@@ -60,7 +60,7 @@ for (const a of hedefler) {
   } catch (err) {
     console.warn("  ! arama hatası:", err.message);
   }
-  if (!secili) secili = yedekGorsel(a.category);
+  if (!secili) secili = yedekGorsel(a.category, a.id);
 
   console.log(`${dry ? "[dry] " : ""}${a.title.slice(0, 55)}`);
   console.log(`   eski : ${String(a.image || "").split("/").pop().slice(0, 70)}`);

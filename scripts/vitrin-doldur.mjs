@@ -530,7 +530,7 @@ export function vitrinDoldur(articles) {
   let added = 0;
   for (const item of CURATED) {
     if (existingUrls.has(item.sourceUrl)) continue;
-    const kapak = GUVENLI_KAPAK.get(item.sourceUrl) || yedekGorsel(item.category);
+    const kapak = GUVENLI_KAPAK.get(item.sourceUrl) || yedekGorsel(item.category, item.sourceUrl);
     articles.unshift({
       id: makeId(item.sourceUrl),
       title: item.title,

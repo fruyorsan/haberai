@@ -452,7 +452,7 @@ async function bildirimIcerigiHazirla(a, { baslik }, { dry = false } = {}) {
       }
     }
   }
-  const yedek = yedekGorsel(a?.category || "Gündem");
+  const yedek = yedekGorsel(a?.category || "Gündem", a?.id);
   if (yedek?.url && !adayKaynaklar.includes(yedek.url)) {
     adayKaynaklar.push(yedek.url);
   }

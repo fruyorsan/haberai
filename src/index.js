@@ -448,7 +448,7 @@ async function main() {
         ],
         { adet: 1, kullanilan: kullanilanGorsel, afet, marka }
       );
-      if (!stok.length) stok = [yedekGorsel(cleaned.category)];
+      if (!stok.length) stok = [yedekGorsel(cleaned.category, cleaned.slug || cleaned.title)];
       const kapakGorsel = stok[0];
 
       kullanilanGorsel.add(kapakGorsel.url);

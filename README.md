@@ -75,16 +75,25 @@ Akış (`src/stok-gorsel.js`):
    (`gorselKaynak` / `gorselEk`). Sitede atıf olarak gösterilir:
    kapakta "Fotoğraf: X · CC BY-SA 4.0 · Wikimedia Commons", gövde
    fotoğraflarında lisans ve dosya sayfası **tıklanabilir**.
-5. Hiç uygun fotoğraf bulunamazsa kategorinin doğrulanmış yedek görseli
-   kullanılır: haber **asla fotoğrafsız/brandalı yer tutucuyla kalmaz**.
+5. Hiç uygun fotoğraf bulunamazsa kategorinin doğrulanmış yedek havuzundan
+   (her kategori için 4 görsel, haber id'sine göre deterministik seçim)
+   biri kullanılır: haber **asla fotoğrafsız/brandalı yer tutucuyla kalmaz**.
 
 Arşivdeki eski (kaynak fotoğraflı) haberler `npm run gorsel-guvenli` ile
 telif güvenli görsellere geçirilir. Sıra:
 
 1. Vitrin için elle seçilmiş güvenli kapak (`scripts/vitrin-doldur.mjs`),
 2. Haberin kendi gövde içi Commons fotoğrafı (konuyla ilgiliyse),
-3. `gorselSorgu` + kategori ile Commons araması,
-4. Kategorinin doğrulanmış yedek görseli.
+3. Haberin `gorselSorgu` sorgusu → kısa hâli → konu (afet/hava) sorgusu →
+   kategori sorgusu. Kategori **en sonda** denenir; aksi hâlde hazır kategori
+   görseli konuya özel aramayı gölgeliyordu.
+4. Kategorinin doğrulanmış yedek havuzu (`gorselYedek` işaretiyle).
+
+`gorselSorgu` boşsa Commons'ta **arama yapılmaz**: boş sorgu rastgele dosya
+döndürüyordu (ikinci turda 1.000'den fazla habere aynı havalimanı fotoğrafı
+düşmüştü). Kategori yedeğine düşen haber `gorselYedek = 1/2/3…` ile işaretlenir;
+sonraki turda farklı sorgu varyasyonları denenir ve görsel havuzdan seçilir.
+Sorgu sonradan eklenirse (`npm run gorsel-sorgu`) haber yeniden aranır.
 
 Kaynak sayfadan alınmış `images` adresleri ve `gorselKaynakSite` işareti her
 durumda silinir. Betik tekrar çalıştırılabilir; temiz haberleri atlar.
@@ -107,14 +116,17 @@ akışı yeni eklenen haberler için aynı adımı sürdürür.
 
 Kategori yedeği her kategoriye ayrı tanımlıdır (`YEDEK_GORSEL`): uzay → roket
 fırlatma, sağlık → hastane koridoru, kültür → müze galerisi, otomobil →
-elektrikli araç şarj istasyonu, yaşam → piknik. Böylece hiçbir kategori
-"gazete okuyan adam" gibi nötr bir görsele düşmez.
+elektrikli araç şarj istasyonu, yaşam → piknik. Her kategoride 4 görsellik bir
+havuz vardır (`yedek-havuz.json`); `yedekGorsel(kategori, tohum)` haber id'sine
+göre deterministik seçim yapar, böylece tek bir görsel yüzlerce haberde tekrar
+etmez.
 
 Konu sorgusu (`konuSorgu`) ve kişi adı: başlık "Ad Soyad:" / "Ad Soyad," kalıbıyla
 başlıyorsa (ör. "Haydar Baş: ...") önce o kişinin Commons portresi aranır; kurum
-adları (Bakanlığı, Ordusu, Üniversitesi...) kişi sayılmaz. Afet tespiti
-(`afetMi`) yalnızca **Türkçe başlık/özetten** yapılır — İngilizce arama
-sorgusundaki "test fire" gibi ifadeler savunma haberini yangın sanmaz.
+adları (Bakanlığı, Ordusu, Üniversitesi...) ve kısaltma içeren adlar
+("Netze BW, ...") kişi sayılmaz. Afet tespiti (`afetMi`) yalnızca **başlığa**
+bakar — özetlerdeki "bütçede deprem güvenliği" gibi yan ifadeler tüm fotoğrafları
+elemiyordu; "Selçuk" adı da `\bsel\b` yüzünden sel haberi sanılmaz.
 
 İndeks çekirdeğine giren eski haberlerde `gorselSorgu` hiç yoksa gövde içi
 fotoğraf doldurma onları atlar. `npm run gorsel-sorgu` yalnızca bu eksik alan
@@ -327,7 +339,7 @@ sayfalarında açılır, doğrudan bağlantıyla okunur, ancak listelerde görü
 
 1. `src/indeks.js` `data/articles.json` içindeki haberleri kalite kapısından geçirir.
 2. Aynı olayı anlatan tekrarlar (başlık benzerliği + olay imzası) ayıklanır.
-3. Günde en iyi `INDEKS_GUNLUK` (varsayılan **12**) haber seçilir.
+3. Günde en iyi `INDEKS_GUNLUK` (varsayılan **24**) haber seçilir.
 4. Sonuç `data/indeks.json` içine yazılır; site katmanı bu dosyayı okur.
 
 ```bash
@@ -349,7 +361,7 @@ indeksli/noindex arasında zıplamaz.
 | Özgün yorum (karakter) | 150 | `INDEKS_MIN_YORUM` |
 | Editör notu (karakter) | 40 | `INDEKS_MIN_NOT` |
 | Başlık benzerliği | 0.55 | `INDEKS_BENZERLIK` |
-| Günlük çekirdek kotası | 12 | `INDEKS_GUNLUK` |
+| Günlük çekirdek kotası | 24 | `INDEKS_GUNLUK` |
 | Geriye dönük pencere (gün) | 45 | `INDEKS_PENCERE_GUN` |
 
 Eşikleri düşürmek vitrini büyütür ama AdSense riskini artırır; yükseltmek vitrini

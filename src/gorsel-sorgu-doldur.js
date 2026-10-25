@@ -30,6 +30,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadArticles, saveArticles } from "./store.js";
 import { gorselSorgusu } from "./ai.js";
+import { yedekMi } from "./stok-gorsel.js";
 import { config } from "./config.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -123,6 +124,9 @@ if (DRY) {
       a.gorselSorguDeneme = new Date().toISOString();
       if (sorgu) {
         a.gorselSorgu = sorgu;
+        // Sorgu sonradan eklendiyse kategori yedeğindeki görsel bir kez daha
+        // aranır (gorselYedek = 1). Sorgu varken yedekte kalmak zorunda değil.
+        if (yedekMi(a.image)) a.gorselYedek = 1;
         eklenen++;
         console.log(`  + [${i + 1}/${hedefler.length}] ${a.title.slice(0, 52)} — "${sorgu}"`);
       } else {

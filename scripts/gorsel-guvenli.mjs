@@ -78,7 +78,10 @@ const kirli = (a) =>
   !guvenli(a.image) ||
   Boolean(a.gorselKaynakSite) ||
   (Array.isArray(a.images) && a.images.length > 0) ||
-  (Array.isArray(a.gorselEk) && a.gorselEk.some((g) => !guvenli(g?.url)));
+  (Array.isArray(a.gorselEk) && a.gorselEk.some((g) => !guvenli(g?.url))) ||
+  // Kategori yedeğine düşmüş haber: daha iyi bir eşleşme için bir kez daha
+  // denenir (en fazla 2 tur; sonsuz döngü olmaz).
+  (Number(a.gorselYedek) > 0 && Number(a.gorselYedek) < 2);
 
 let hedefler = IDS.length
   ? articles.filter((a) => IDS.includes(String(a.id)))
@@ -134,8 +137,9 @@ async function isle(a) {
   const onceki = String(a.image || "");
 
   // Kapak zaten güvenliyse yalnızca kaynak ek görselleri temizle.
-  // `--ids` ile açıkça seçilen haberler, kapak güvenli olsa da yeniden aranır.
-  if (guvenli(onceki) && !a.gorselKaynakSite && !IDS.length) {
+  // `--ids` ile açıkça seçilen haberler ve kategori yedeğine düşmüş haberler
+  // (gorselYedek) kapak güvenli olsa da yeniden aranır.
+  if (guvenli(onceki) && !a.gorselKaynakSite && !IDS.length && !(Number(a.gorselYedek) > 0)) {
     delete a.images;
     if (Array.isArray(a.gorselEk)) {
       a.gorselEk = a.gorselEk.filter((g) => guvenli(g?.url));
@@ -161,9 +165,22 @@ async function isle(a) {
   }
 
   // 2) Commons araması: AI'nın İngilizce sorgusu + kategori.
-  if (!sec) {
+  //    Sorgu yoksa arama YAPILMAZ: boş sorgu Commons'ta rastgele dosya
+  //    döndürüyor ve yüzlerce habere aynı fotoğrafı koyuyordu.
+  const sorgu = String(a.gorselSorgu || "").trim();
+  if (!sec && sorgu.length >= 2) {
     const marka = markaAdi(a.title);
-    const sorgu = String(a.gorselSorgu || "");
+    const yedekDeneme = Number(a.gorselYedek) || 0;
+    // Sıra önemli: önce haberin kendi sorgusu denenir. Kategori sorgusu en
+    // sonda kalır; aksi hâlde 2. turda "kategori görseli" hemen eşleşip
+    // konuya özel aramayı gölgeliyordu (seismograph → İstanbul sokak).
+    const ekSorgular = yedekDeneme > 0
+      ? [
+          `${sorgu} photo`,
+          ...(Array.isArray(a.tags) ? a.tags.slice(0, 2) : []),
+          `${KATEGORI_SORGU[a.category] || ""} photo`,
+        ]
+      : [];
     try {
       const bulunan = await stokGorseller(
         [
@@ -171,9 +188,17 @@ async function isle(a) {
           konuSorgu(sorgu, a.title),
           sorgu,
           kisaSorgu(sorgu),
+          ...ekSorgular,
           KATEGORI_SORGU[a.category],
         ],
-        { adet: 1, kullanilan, afet: afetMi(a.title, a.summary), marka }
+        {
+          adet: 1,
+          // Önce arşivde kullanılmamış kare aranır; hepsi kullanıldıysa
+          // stokGorseller kendi içinde tekrarı göze alır.
+          kullanilan,
+          afet: afetMi(a.title, a.summary),
+          marka,
+        }
       );
       if (bulunan.length) {
         sec = bulunan[0];
@@ -186,8 +211,12 @@ async function isle(a) {
 
   // 3) Son çare: kategorinin doğrulanmış Commons görseli.
   if (!sec) {
-    sec = yedekGorsel(a.category);
+    sec = yedekGorsel(a.category, a.id);
     kaynak = "yedek";
+    // Bir sonraki turda farklı sorgularla yeniden denenir.
+    a.gorselYedek = (Number(a.gorselYedek) || 0) + 1;
+  } else {
+    delete a.gorselYedek;
   }
 
   a.image = sec.url;

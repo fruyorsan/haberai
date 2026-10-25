@@ -71,7 +71,7 @@ async function gorselYaz(a, sorgu, kullanilan) {
     [marka, konuSorgu(sorgu, a.title), sorgu, kisaSorgu(sorgu), KATEGORI_SORGU[a.category]],
     { adet: 3, kullanilan, afet: afetMi(a.title, a.summary), marka }
   );
-  if (!stok.length) stok = [yedekGorsel(a.category)];
+  if (!stok.length) stok = [yedekGorsel(a.category, a.id)];
 
   const [kapak, ...ekler] = stok;
   a.image = kapak.url;

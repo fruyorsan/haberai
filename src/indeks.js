@@ -30,7 +30,7 @@ const ARTICLES = join(DATA, "articles.json");
 const CIKTI = join(DATA, "indeks.json");
 
 /** Günde vitrine girecek en iyi haber sayısı. */
-const GUNLUK = Number(process.env.INDEKS_GUNLUK ?? 12);
+const GUNLUK = Number(process.env.INDEKS_GUNLUK ?? 24);
 /** Çekirdeğin geriye dönük penceresi (gün). */
 const PENCERE_GUN = Number(process.env.INDEKS_PENCERE_GUN ?? 45);
 
