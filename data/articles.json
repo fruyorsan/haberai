@@ -1650,7 +1650,7 @@
       "paletli zırhlı araç",
       "ihracat"
     ],
-    "category": "Teknoloji",
+    "category": "Gündem",
     "gorselSorgu": "FNSS ZMA-15 armored vehicle",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/fnss-4-500u-askin-paletli-zirhli-araci-6-ulkenin-envanterine-kazandirdi",
@@ -1675,7 +1675,8 @@
         "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:FNSS_ZAHA.jpg"
       }
-    ]
+    ],
+    "categorySlug": "gundem"
   },
   {
     "id": "7769f422f6b6d77b",
@@ -4170,7 +4171,7 @@
       "İstanbul",
       "teknoloji"
     ],
-    "category": "Teknoloji",
+    "category": "Spor",
     "gorselSorgu": "technology conference stage Istanbul",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/ekonomi/go-global-turkiye-zirvesinin-ikinci-gunu-sona-erdi/4098730",
@@ -4179,7 +4180,8 @@
     "publishedAt": "2026-10-23T14:34:15.000Z",
     "generatedAt": "2026-10-23T14:43:04.760Z",
     "breaking": true,
-    "ekGorselDeneme": "2026-10-24T10:54:44.541Z"
+    "ekGorselDeneme": "2026-10-24T10:54:44.541Z",
+    "categorySlug": "spor"
   },
   {
     "id": "829760ae82a7449b",
@@ -11844,7 +11846,7 @@
       "Hava Kuvvetleri",
       "savaş uçağı"
     ],
-    "category": "Teknoloji",
+    "category": "Gündem",
     "gorselSorgu": "Eurofighter Typhoon fighter jet flight",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/turkiyenin-katardan-eurofighter-tedarikinde-yeni-asama",
@@ -11862,7 +11864,8 @@
         "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:ZK375_Eurofighter_Typhoon_FGR4_RAF_Northolt_5.10.23_(53249846737).jpg"
       }
-    ]
+    ],
+    "categorySlug": "gundem"
   },
   {
     "id": "8f8d5649ce4996cd",
@@ -16617,7 +16620,7 @@
       "Mühendislik",
       "Askeri Ülkeler"
     ],
-    "category": "Teknoloji",
+    "category": "Gündem",
     "gorselSorgu": "earthquake resilient city",
     "source": "Eskişehir Durum",
     "sourceUrl": "https://eskisehirdurum.com/yerel/van-osb-baskani-aslandan-deprem-uyarisi-sehirleri-muhendislik-disipliniyle-yeniden-kurmaliyiz/809657",
@@ -16626,7 +16629,8 @@
     "publishedAt": "2026-10-23T06:25:18.000Z",
     "generatedAt": "2026-10-23T06:31:51.470Z",
     "breaking": true,
-    "ekGorselDeneme": "2026-10-25T05:49:55.524Z"
+    "ekGorselDeneme": "2026-10-25T05:49:55.524Z",
+    "categorySlug": "gundem"
   },
   {
     "id": "1d097ffeb54d5e1c",
@@ -20200,7 +20204,7 @@
       "Orta Dünya",
       "Dizi"
     ],
-    "category": "Teknoloji",
+    "category": "Kültür",
     "gorselSorgu": "middle earth teaser",
     "source": "Webtekno",
     "sourceUrl": "https://www.webtekno.com/yuzuklerin-efendisi-guc-yuzukleri-3-sezon-fragman-geldi-h227759.html",
@@ -20218,7 +20222,8 @@
         "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Amazon_Prime_Video_Streaming_(40845733273).jpg"
       }
-    ]
+    ],
+    "categorySlug": "kultur"
   },
   {
     "id": "bc9c1fd6335e9e02",
@@ -27841,7 +27846,7 @@
       "Savunma",
       "Hava Savunması"
     ],
-    "category": "Teknoloji",
+    "category": "Gündem",
     "gorselSorgu": "F-35 fighter jet production line",
     "source": "ULU Savunma",
     "sourceUrl": "https://www.ulusavunma.com/lockheed-martin-yilda-156-f-35-savas-ucagi-uretecek/",
@@ -27849,7 +27854,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-22T21:07:32.000Z",
     "generatedAt": "2026-10-22T21:13:20.720Z",
-    "breaking": true
+    "breaking": true,
+    "categorySlug": "gundem"
   },
   {
     "id": "b3fcca4675e6eb8a",
@@ -31471,7 +31477,7 @@
       "Dizi",
       "Donanım"
     ],
-    "category": "Teknoloji",
+    "category": "Kültür",
     "gorselSorgu": "Wednesday series cast Paris promotion",
     "source": "Donanım Arşivi",
     "sourceUrl": "https://www.donanimarsivi.com/wednesday-3-sezonu-ufukta-gorundu-yeni-gorsel-paylasildi/",
@@ -31479,7 +31485,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-22T18:05:15.000Z",
     "generatedAt": "2026-10-22T18:09:13.155Z",
-    "breaking": true
+    "breaking": true,
+    "categorySlug": "kultur"
   },
   {
     "id": "6275ac55ae1a5c23",
@@ -50211,7 +50218,7 @@
       "Şampiyonlar Ligi",
       "Gol"
     ],
-    "category": "Teknoloji",
+    "category": "Spor",
     "gorselSorgu": "Arda Guler goal celebration",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/spor/sampiyonlar-liginde-arda-gulerin-gecesi-golu-mbappeden-caldim-549881",
@@ -50219,7 +50226,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-22T03:37:00.000Z",
     "generatedAt": "2026-10-22T03:54:46.868Z",
-    "breaking": true
+    "breaking": true,
+    "categorySlug": "spor"
   },
   {
     "id": "47ec73a053ff694a",
@@ -50348,7 +50356,7 @@
       "Yapay Zeka",
       "Tedarik Zinciri"
     ],
-    "category": "Teknoloji",
+    "category": "Gündem",
     "gorselSorgu": "drone maintenance facility",
     "source": "ssbulten.com.tr",
     "sourceUrl": "https://ssbulten.com.tr/gundem/detay/hava-kuvvetleri-isbirlikli-savas-ucaklari-cca-icin-surdurme-cercevesi-uzerinde-calismaya-basladi--26281",
@@ -50356,7 +50364,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-22T03:34:29.000Z",
     "generatedAt": "2026-10-22T03:38:45.190Z",
-    "breaking": true
+    "breaking": true,
+    "categorySlug": "gundem"
   },
   {
     "id": "634d351a9f1f64bc",
@@ -55151,7 +55160,7 @@
       "savaş uçağı",
       "güvenlik protokolleri"
     ],
-    "category": "Teknoloji",
+    "category": "Gündem",
     "gorselSorgu": "su-30sm aircraft crash",
     "source": "ABC Haber",
     "sourceUrl": "https://abcgazetesi.com.tr/gundem/rus-savas-ucagi-su-30sm-dustu-iki-pilot-firlatma-koltuguyla-kurtuldu-874950",
@@ -55180,7 +55189,8 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Aviation_Electronics_Technician_3rd_Class_W._Chislett_uses_a_magnifier_as_he_does_detail_work_on_a_printed_circuit_board_in_an_Aircraft_Intermediate_Maintenance_Department_(AIMD)_sh_-_DPLA_-_4d65ac64ff5afc03a8057c148ecc6284.jpeg"
       }
     ],
-    "breaking": true
+    "breaking": true,
+    "categorySlug": "gundem"
   },
   {
     "id": "ba68dbcdef96429f",
@@ -60463,7 +60473,7 @@
       "Bedir Mutabakatı",
       "Savunma Sanayii"
     ],
-    "category": "Teknoloji",
+    "category": "Gündem",
     "gorselSorgu": "KAAN jet design scarf",
     "source": "Tabya Dijital",
     "sourceUrl": "https://tabyadijital.com/bedir-mutabakatinin-imzalandigi-gun-erdoganin-kravatinda-kaan-detayi/",
@@ -60471,7 +60481,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-21T19:14:21.000Z",
     "generatedAt": "2026-10-21T19:19:34.775Z",
-    "breaking": true
+    "breaking": true,
+    "categorySlug": "gundem"
   },
   {
     "id": "e6cabe3528099845",
@@ -61751,7 +61762,7 @@
       "Sakarya",
       "AFAD"
     ],
-    "category": "Teknoloji",
+    "category": "Gündem",
     "gorselSorgu": "earthquake drill",
     "source": "Akyazı Haber Akyazı'nın Bir Numaralı Haber Sitesi",
     "sourceUrl": "https://www.akyazihaber.com/sakarya/sakarya-da-deprem-tatbikati-senaryo-75",
@@ -61759,7 +61770,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-21T17:17:00.000Z",
     "generatedAt": "2026-10-21T17:27:01.967Z",
-    "breaking": true
+    "breaking": true,
+    "categorySlug": "gundem"
   },
   {
     "id": "9416645c64ae9a9b",
@@ -66983,7 +66995,7 @@
       "Türkiye",
       "Katar"
     ],
-    "category": "Teknoloji",
+    "category": "Gündem",
     "gorselSorgu": "Haluk Gorgun defense exhibition meeting",
     "source": "SavunmaTR",
     "sourceUrl": "https://www.savunmatr.com/4-ulkeden-savunma-sanayii-hamlesi-bedir-mutabakati-imzalandi/",
@@ -66991,7 +67003,8 @@
     "publishedAt": "2026-10-21T11:53:06.000Z",
     "generatedAt": "2026-10-21T11:55:15.801Z",
     "breaking": true,
-    "gorselKaynakSite": true
+    "gorselKaynakSite": true,
+    "categorySlug": "gundem"
   },
   {
     "id": "093a38bb64d8bea8",
@@ -74984,7 +74997,7 @@
       "Türkiye",
       "Suudi Arabistan"
     ],
-    "category": "Teknoloji",
+    "category": "Gündem",
     "gorselSorgu": "Turkish Parliament building Ankara",
     "source": "Haber Aero",
     "sourceUrl": "https://haber.aero/aero-gundem/mekke-anlasmasinin-16-maddesi-aciklandi/",
@@ -74992,7 +75005,8 @@
     "publishedAt": "2026-10-21T07:51:04.000Z",
     "generatedAt": "2026-10-21T07:53:29.223Z",
     "breaking": true,
-    "gorselKaynakSite": true
+    "gorselKaynakSite": true,
+    "categorySlug": "gundem"
   },
   {
     "id": "71d1ecd0d2d052cf",
@@ -76844,7 +76858,7 @@
       "İstifa",
       "Yerel Siyaset"
     ],
-    "category": "Teknoloji",
+    "category": "Gündem",
     "gorselSorgu": "",
     "source": "Saray Medya",
     "sourceUrl": "https://www.saraymedya.com/haber/kemer-belediye-baskani-ve-8-meclis-uyesi-chp-den-istifa-etti_315928/",
@@ -76853,7 +76867,8 @@
     "generatedAt": "2026-10-21T02:44:36.294Z",
     "breaking": true,
     "refreshedAt": "2026-10-21T07:13:42.401Z",
-    "gorselKaynakSite": true
+    "gorselKaynakSite": true,
+    "categorySlug": "gundem"
   },
   {
     "id": "0cc31e40e33e2fcd",
@@ -104371,7 +104386,7 @@
       "Test",
       "Ödül"
     ],
-    "category": "Teknoloji",
+    "category": "Kültür",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/odullu-test-haftasi-nda-ikinci-hafta-tamamlandi-iste-kazananlar--211824",
     "image": "https://www.donanimhaber.com/images/images/haber/211824/src/odullu-test-haftasi-nda-ikinci-hafta-tamamlandi-iste-kazananlar211824_0.jpg",
@@ -104380,7 +104395,8 @@
     "breaking": true,
     "imagesAt": "2026-10-19T12:25:59.783Z",
     "gorselDeneme": "2026-10-19T13:33:39.565Z",
-    "gorselKaynakSite": true
+    "gorselKaynakSite": true,
+    "categorySlug": "kultur"
   },
   {
     "id": "fd7919a20d994455",
@@ -123845,12 +123861,13 @@
       "Kargo Hatası",
       "ABD"
     ],
-    "category": "Teknoloji",
+    "category": "Gündem",
     "source": "CHIP Online",
     "sourceUrl": "https://www.chip.com.tr/guncel/ups-calisaninin-kargo-hatasi-gizli-f-35-parcalarini-cine-kaptirdi_184683.html",
     "image": "https://img.chip.com.tr/storage/files/images/2026/10/16/avustralyadan-abdye-gonderilen-gizli-f-35-parcalari-kargo-calisaninin-e-posta-hatasi-nedeniyle-hong-konga-giderek-cinin-eline-gecti-t4jw.jpg",
     "publishedAt": "2026-10-18T10:54:00.000Z",
-    "generatedAt": "2026-10-18T10:58:28.830Z"
+    "generatedAt": "2026-10-18T10:58:28.830Z",
+    "categorySlug": "gundem"
   },
   {
     "id": "744ddb72eaef988b",
@@ -145871,13 +145888,14 @@
       "savunma sanayi",
       "TEKNOFEST"
     ],
-    "category": "Teknoloji",
+    "category": "Gündem",
     "source": "ssbulten.com.tr",
     "sourceUrl": "https://ssbulten.com.tr/gundem/detay/fnss-i-zaha-ile-amfibi-insansiz-arac-teknolojisini-gelistirdigini-belirtti--25598",
     "image": "https://ssbulten.com.tr/gundem/kart/25598.jpg",
     "publishedAt": "2026-10-17T06:39:54.000Z",
     "generatedAt": "2026-10-17T06:41:22.497Z",
-    "breaking": true
+    "breaking": true,
+    "categorySlug": "gundem"
   },
   {
     "id": "8c053284b57905bd",
@@ -146422,14 +146440,15 @@
       "AKP",
       "Siyaset"
     ],
-    "category": "Teknoloji",
+    "category": "Gündem",
     "source": "12punto",
     "sourceUrl": "https://12punto.com.tr/siyaset/iktidara-yakin-gazeteci-acikladi-bir-buyuksehir-belediye-baskani-akp-yolunda-156008",
     "image": "https://i.12punto.com.tr/Archive/2026/10/16/155927/kapak_lockheed-martin-hipersonik-tehditlere-karsi-pac-3-edge-onleyicisini-tanitti-133882.jpg",
     "publishedAt": "2026-10-17T04:48:08.000Z",
     "generatedAt": "2026-10-17T04:56:15.215Z",
     "breaking": true,
-    "refreshedAt": "2026-10-17T08:20:35.060Z"
+    "refreshedAt": "2026-10-17T08:20:35.060Z",
+    "categorySlug": "gundem"
   },
   {
     "id": "a53b30e7ca4eb5e5",
@@ -153646,13 +153665,14 @@
       "Dizi",
       "Yerli Yapım"
     ],
-    "category": "Teknoloji",
+    "category": "Kültür",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/organize-isler-karun-hazinesi-netflix-kutuphanesine-eklendi",
     "publishedAt": "2026-10-16T13:47:13.000Z",
     "generatedAt": "2026-10-16T13:47:32.378Z",
     "image": "https://ares.shiftdelete.net/2026/10/Organize-Isler.webp",
-    "breaking": true
+    "breaking": true,
+    "categorySlug": "kultur"
   },
   {
     "id": "136c5c2e7fe7d967",
@@ -161353,13 +161373,14 @@
       "maliyet-dusurme",
       "moduler-uretim"
     ],
-    "category": "Teknoloji",
+    "category": "Gündem",
     "source": "Haber Aero",
     "sourceUrl": "https://haber.aero/savunma/cinin-savas-ucagi-imalatcisindan-maliyetleri-dusuren-lego-devrimi/",
     "publishedAt": "2026-10-16T08:57:01.000Z",
     "generatedAt": "2026-10-16T08:57:47.133Z",
     "breaking": true,
-    "image": "https://haber.aero/wp-content/uploads/2025/08/china-j-20.jpg-e1792147686497.jpeg"
+    "image": "https://haber.aero/wp-content/uploads/2025/08/china-j-20.jpg-e1792147686497.jpeg",
+    "categorySlug": "gundem"
   },
   {
     "id": "246fe0f286b7ce5d",
@@ -166027,11 +166048,12 @@
       "mobilite",
       "teknoloji"
     ],
-    "category": "Teknoloji",
+    "category": "Kültür",
     "source": "Webtekno",
     "sourceUrl": "https://www.webtekno.com/gelecege-donusun-efsanesi-gercek-oluyor-delorean-ucan-otomobil-yarisina-katiliyor-h227254.html",
     "publishedAt": "2026-10-15T14:14:53.000Z",
     "generatedAt": "2026-10-15T14:46:38.994Z",
-    "image": "https://imgrosetta.webtekno.com/file/693004/1200xauto.jpg"
+    "image": "https://imgrosetta.webtekno.com/file/693004/1200xauto.jpg",
+    "categorySlug": "kultur"
   }
 ]
