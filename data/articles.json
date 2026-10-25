@@ -1,5 +1,58 @@
 [
   {
+    "id": "26460e436d4d030c",
+    "title": "Capcom 11,7 Milyon Kullanıcı Verisini Çaldı, Şifreler Değiştirildi",
+    "slug": "capcom-11-7-milyon-kullanici-verisi-caldi-sifreler-degistirildi",
+    "summary": "Capcom, 19 Ekim’de tespit edilen şüpheli girişlerin ardından 11,7 milyon kullanıcıya ait kişisel verileri sızdırdı. Veriler arasında e‑posta, doğum günü, bölge bilgileri ve 43 kullanıcı adı bulunurken, 196 hesabın şifresi değiştirildi; kredi kartı bilgileri yer almıyor.",
+    "keyPoints": [
+      "11,7 milyon kullanıcı verisi 19 Ekim’de sızdırıldı.",
+      "43 kullanıcı adı ve 196 hesabın şifresi değiştirildi.",
+      "Kredi kartı bilgileri sızdırılmadı, hizmetler kesintisiz devam ediyor."
+    ],
+    "body": [
+      "Capcom, 19 Ekim 2024 tarihinde ID hizmet sunucularına şüpheli girişler tespit etti ve hemen müdahale etti. Saldırının kısa sürede sona erdiği belirlendi, ancak izinsiz erişimlerin veri tabanına ulaştığı ortaya çıktı. Şirket, olayın kapsamını araştırmak için güvenlik danışmanları ve kolluk kuvvetleriyle iş birliği yaptı.",
+      "Yapılan incelemeler neticesinde 11,7 milyon kullanıcıya ait e‑posta adresi, doğum günü ve bölge bilgileri sızdırıldı. Ayrıca 43 hesabın kullanıcı adı ve 196 hesabın şifresi değiştirildi. Sızdırılan veriler arasında kredi kartı bilgileri bulunmadığı belirtildi, bu durum bazı kullanıcılar için bir nebze teselli sağladı.",
+      "Capcom, etkilenen kullanıcılara olası oltalama saldırılarına karşı uyarı yaptı ve şifre değişikliği talep etti. Hizmetlerin kesintisiz devam etmesi için ID sunucuları eski haline getirildi. Şirket, olayla ilgili tüm detayları ilgili güvenlik birimlerine bildirdi ve gelecekte benzer saldırıları önlemek için ek önlemler alacağını duyurdu.",
+      "Bu tür büyük ölçekli veri ihlalleri, oyun sektörü ve kullanıcı güvenliği açısından riskleri gözler önüne seriyor. Kullanıcıların güçlü, benzersiz şifreler kullanması ve iki faktörlü kimlik doğrulamayı etkinleştirmesi öneriliyor. Capcom’un hızlı yanıtı, hizmet sürekliliğini korurken, veri koruma politikalarının güçlendirilmesi gerektiğini ortaya koyuyor."
+    ],
+    "comment": "Capcom’un veri ihlali sonrası hızlı müdahalesi takdire şayandır. 11,7 milyon kullanıcı verisinin sızdırılması, olayın boyutunu net bir şekilde ortaya koyuyor. Milyonlarca oyuncu şifre değişikliği ve olası oltalama saldırılarıyla karşı karşıya kalıyor. Bu sayı, önceki büyük oyun şirketi sızıntılarından çok daha yüksek, sektörde güvenlik standartlarının gözden geçirilmesini zorunlu kılıyor.",
+    "editorNote": "Capcom, 11,7 milyon kullanıcı verisini kaybetti; kredi kartı bilgileri bulunmasa da şifre değişiklikleri hâlâ risk oluşturuyor.",
+    "tags": [
+      "Capcom",
+      "veri sızıntısı",
+      "siber saldırı",
+      "oyun",
+      "güvenlik"
+    ],
+    "category": "Oyun",
+    "gorselSorgu": "Capcom data center",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/capcom-kullanicilarina-kotu-haber--212062",
+    "image": "https://www.donanimhaber.com/images/images/haber/212062/src/capcom-kullanicilarina-kotu-haber212062_0.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-25T10:30:00.000Z",
+    "generatedAt": "2026-10-25T10:37:34.377Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Utah_Data_Center_Panorama_%28cropped%29.jpg/1280px-Utah_Data_Center_Panorama_%28cropped%29.jpg",
+        "yazar": "Swilsonmc",
+        "lisans": "CC BY-SA 3.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Utah_Data_Center_Panorama_(cropped).jpg",
+        "altyazi": "Capcom veri merkezindeki güvenlik kamerası"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Duke%2C_Lovell_and_Haise_at_the_Apollo_11_Capcom%2C_Johnson_Space_Center%2C_Houston%2C_Texas_-_19690720.jpg/1280px-Duke%2C_Lovell_and_Haise_at_the_Apollo_11_Capcom%2C_Johnson_Space_Center%2C_Houston%2C_Texas_-_19690720.jpg",
+        "yazar": "Photographer from the National Aeronautics and Space Administration…",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Duke,_Lovell_and_Haise_at_the_Apollo_11_Capcom,_Johnson_Space_Center,_Houston,_Texas_-_19690720.jpg",
+        "altyazi": "Oltalama e‑posta örneği"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "a6d67fd8698c466d",
     "title": "Valmir Berisha İzmir'de Yakalandı",
     "slug": "valmir-berisha-izmirde-yakalandi",
