@@ -1,5 +1,44 @@
 [
   {
+    "id": "a36035760f497b25",
+    "title": "Fransa protestolarındaki şebeke kesintileri internetsiz mesajlaşma uygulamasını zirveye taşıdı",
+    "slug": "fransa-protestolarindaki-sebeke-kesintileri-internetsiz-mesajlasma-uygulamasini-",
+    "summary": "Fransa'da hayat pahalılığı gösterileri sırasında yaşanan mobil şebeke kesintileri, internetsiz ve numarasız çalışan Bitchat uygulamasının indirilme rekoru kırmasını sağladı. Jack Dorsey imzalı yazılım, App Store listelerinde zirveye yerleşti.",
+    "keyPoints": [
+      "Uygulama internet veya telefon numarası gerektirmeden Bluetooth üzerinden çalışıyor.",
+      "Fransa'daki protestolar ve Orange ile Sosh operatörlerindeki kesintiler popülariteyi artırdı.",
+      "Jack Dorsey'nin geliştirdiği sistem, teorik olarak 300 metreye varan iletişim menzili sunuyor."
+    ],
+    "body": [
+      "Fransa genelinde düzenlenen hayat pahalılığı protestoları sırasında mobil şebekelerde yaşanan uzun süreli kesintiler, vatandaşları alternatif iletişim yöntemlerine yöneltti. Eski Fransa Başbakanı Gabriel Attal'ın sosyal medya erişim kısıtlamalarını gündeme getirmesi de bu arayışı hızlandırdı ve kullanıcılar geleneksel ağlar dışındaki seçenekleri denemeye başladı. Orange ve Sosh gibi telekomünikasyon operatörlerinin servis sağlayamadığı dönemde, akıllı telefon kullanıcıları doğrudan cihazlar arası iletişim kurabilen yazılımlara yöneldi.",
+      "Jack Dorsey tarafından geliştirilen Bitchat, bu süreçte Fransa App Store platformunun en çok indirilen sosyal ağ uygulaması olmayı başardı. İnternet bağlantısı veya aktif bir telefon numarası istemeyen bu yapı, Bluetooth mesh teknolojisini kullanarak cihazlar arasında doğrudan veri akışı sağlıyor. Katılımcılar herhangi bir hesap açma zorunluluğu olmaksızın sisteme dahil olurken, her akıllı telefon hem mesaj yayan hem de ileten bir röle istasyonu gibi işlev görüyor.",
+      "Sistem mimarisi sayesinde mesajlar birden fazla cihaz üzerinden aktarılarak erişim menzili genişletilebiliyor ve yoğun kalabalık ortamlarda 300 metreye varan çok atlamalı bir iletişim mesafesi elde ediliyor. Noise Protocol Framework altyapısıyla korunan özel yazışmalar uçtan uca şifrelenirken, sistemin ilk internet dönemindeki IRC protokolünü hatırlatan bir yapıda olduğu belirtiliyor. İnternet erişimi sağlandığında ise Nostr protokolü devreye girerek daha uzak mesafelerdeki kanallara ulaşılmasına imkan tanıyor.",
+      "Uygulamanın benzer kısıtlamalarla ilk kez karşı karşıya kalmadığı, daha önce Uganda, İran ve Nepal gibi bölgelerdeki internet engellemelerinde de öne çıktığı biliniyor. Yalnızca toplumsal olaylarda değil, doğal afet sonrasında şebekelerin çöktüğü durumlarda da tercih edilen yazılım, Jamaika'daki Melissa Kasırgası sonrasındaki arama kurtarma faaliyetlerinde aktif olarak kullanılmıştı. Öte yandan Çin ve Hindistan gibi ülkeler, merkeziyetsiz yapısı ve denetlenemez akışı nedeniyle uygulamanın mağazalardan kaldırılmasını talep etmişti."
+    ],
+    "comment": "Devletlerin internet akışını kısıtladığı dönemlerde bu tarz merkeziyetsiz ve çevrimdışı yazılımlar, iletişim özgürlüğünü korumak adına kritik bir alternatif sunuyor. Fransa App Store listelerinde ilk sıraya tırmanan Bitchat, 300 metrelik menzil kapasitesiyle kalabalık meydanlarda test edilirken Hindistan ve Çin gibi ülkelerde resmi engellemelerle karşılaştı. Şebeke operatörlerinin çöktüğü veya erişimin kesildiği senaryolarda bu tür Bluetooth tabanlı çözümler hayati bir köprü görevi üstleniyor.",
+    "editorNote": "İnternet ve şebeke kısıtlamaları sırasında popülerleşen Bitchat, Bluetooth mesh altyapısıyla cep telefonlarını telsize çeviriyor.",
+    "tags": [
+      "Bitchat",
+      "Jack Dorsey",
+      "Fransa",
+      "Bluetooth",
+      "Nostr"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "smartphone bluetooth mesh network",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/fransa-protestolarinda-bitchat-kullanimi",
+    "image": "https://ares.shiftdelete.net/2026/10/fransadaki-protestolarda-bitchat-kullanildi-iste-internetsiz-mesajlasma-uygulamasi.webp",
+    "images": [
+      "https://ares.shiftdelete.net/2026/10/iphone-duo-parcalarina-ayrildi-iste-ic-yapisi.webp",
+      "https://ares.shiftdelete.net/2026/10/hangi-yapay-zeka-modeli-hangi-siyasi-partiyi-destekliyor-iste-detaylar.webp"
+    ],
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-25T11:00:50.000Z",
+    "generatedAt": "2026-10-25T11:03:48.481Z",
+    "breaking": true
+  },
+  {
     "id": "5f50e1a61d84b5f7",
     "title": "İran Meclis Başkanı Kalibaf: Düşmana Karşılık Vermeye Hazırız",
     "slug": "iran-meclis-baskani-kalibaf-dusmana-karsilik-vermeye-haziriz",
