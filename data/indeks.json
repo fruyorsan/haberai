@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T22:45:00.563Z",
+  "updatedAt": "2026-10-25T22:47:39.970Z",
   "gunluk": 24,
   "pencereGun": 45,
   "esik": {
@@ -10,10 +10,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 4492,
-  "aday": 4492,
-  "uygun": 2606,
-  "secilen": 275,
+  "toplamHaber": 4493,
+  "aday": 4493,
+  "uygun": 2607,
+  "secilen": 276,
   "red": {
     "kısa özet": 30,
     "kısa gövde": 1734,
@@ -366,6 +366,7 @@
       "d33d24266c27fad8",
       "9cf632c33c272a07",
       "7558f2b47fae9318",
+      "5030bddd036860db",
       "1f3b943e94c29a3a"
     ],
     "2026-10-24": [
@@ -670,6 +671,7 @@
     "f75eeae5ca328485",
     "91ce9b5de16ada4c",
     "78f95ae256838a03",
+    "5030bddd036860db",
     "1f3b943e94c29a3a"
   ]
 }
