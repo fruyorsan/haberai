@@ -35,7 +35,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-25T10:37:00.000Z",
     "generatedAt": "2026-10-25T10:42:13.141Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:55:21.507Z"
   },
   {
     "id": "26460e436d4d030c",
@@ -372,7 +373,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-25T09:39:01.000Z",
     "generatedAt": "2026-10-25T09:44:07.627Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:55:56.188Z",
+    "gorselEk": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Naval_ships_of_Russia_by_Apostoli_-_153._Mine_cruiser_%22Ukrayna%22.jpg",
+        "yazar": "",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Naval_ships_of_Russia_by_Apostoli_-_153._Mine_cruiser_%22Ukrayna%22.jpg"
+      }
+    ]
   },
   {
     "id": "94e54d42599dfb8a",
@@ -949,7 +960,8 @@
     },
     "publishedAt": "2026-10-25T06:59:47.000Z",
     "generatedAt": "2026-10-25T07:28:29.446Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:55:57.951Z"
   },
   {
     "id": "b49d34ece748b5f3",
@@ -21604,7 +21616,24 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T02:39:02.000Z",
     "generatedAt": "2026-10-23T02:47:27.699Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:55:59.290Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/36th_%26_Aldrich_Fatal_Car_Crash%2C_North_Minneapolis.jpg/1280px-36th_%26_Aldrich_Fatal_Car_Crash%2C_North_Minneapolis.jpg",
+        "yazar": "Tony Webster",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:36th_%26_Aldrich_Fatal_Car_Crash,_North_Minneapolis.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Car_crash_at_night.jpg/1280px-Car_crash_at_night.jpg",
+        "yazar": "Thegreatmutata",
+        "lisans": "CC BY 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Car_crash_at_night.jpg"
+      }
+    ]
   },
   {
     "id": "52239c75c4219a3b",
@@ -21638,7 +21667,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T02:39:00.000Z",
     "generatedAt": "2026-10-23T03:27:23.713Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:56:01.309Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Reebok_football_goalkeeper_gloves.jpg/1280px-Reebok_football_goalkeeper_gloves.jpg",
+        "yazar": "Santeri Viinamäki",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Reebok_football_goalkeeper_gloves.jpg"
+      }
+    ]
   },
   {
     "id": "6e658a696e7a9e1d",
@@ -21763,7 +21802,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T02:28:49.000Z",
     "generatedAt": "2026-10-23T02:41:41.863Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:56:02.528Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Oil_Tanker_in_North_Sea_3928.jpg/1280px-Oil_Tanker_in_North_Sea_3928.jpg",
+        "yazar": "ImagePerson",
+        "lisans": "CC BY 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Oil_Tanker_in_North_Sea_3928.jpg"
+      }
+    ]
   },
   {
     "id": "b9191c14b8b19060",
@@ -21798,7 +21847,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T02:28:01.000Z",
     "generatedAt": "2026-10-23T02:34:33.801Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:56:06.491Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Rural_Kayseri.jpg/1280px-Rural_Kayseri.jpg",
+        "yazar": "Kerem Delialioğlu",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Rural_Kayseri.jpg"
+      }
+    ]
   },
   {
     "id": "4d17141d03b56b99",
@@ -21834,7 +21893,24 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T02:28:01.000Z",
     "generatedAt": "2026-10-23T02:42:18.845Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:56:04.983Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Gaziantep%2C_Turkey_-_panoramio_%288%29.jpg/1280px-Gaziantep%2C_Turkey_-_panoramio_%288%29.jpg",
+        "yazar": "Ben Bender",
+        "lisans": "CC BY-SA 3.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Gaziantep,_Turkey_-_panoramio_(8).jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Rumkale_Gaziantep_boats.jpg/1280px-Rumkale_Gaziantep_boats.jpg",
+        "yazar": "Liselottediehl",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Rumkale_Gaziantep_boats.jpg"
+      }
+    ]
   },
   {
     "id": "05be746593a628f1",
@@ -21869,7 +21945,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T02:28:01.000Z",
     "generatedAt": "2026-10-23T02:47:00.188Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:56:08.614Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Rain_Water_Drops.jpg/1280px-Rain_Water_Drops.jpg",
+        "yazar": "Lawanga Ranwala",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Rain_Water_Drops.jpg"
+      }
+    ]
   },
   {
     "id": "35b005c836f63794",
@@ -21904,7 +21990,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T02:28:01.000Z",
     "generatedAt": "2026-10-23T02:53:30.569Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:56:10.802Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Slapton_Sands%2C_Enjoying_the_sunny_weather_4_-_geograph.org.uk_-_6871387.jpg/1280px-Slapton_Sands%2C_Enjoying_the_sunny_weather_4_-_geograph.org.uk_-_6871387.jpg",
+        "yazar": "Michael Garlick",
+        "lisans": "CC BY-SA 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Slapton_Sands,_Enjoying_the_sunny_weather_4_-_geograph.org.uk_-_6871387.jpg"
+      }
+    ]
   },
   {
     "id": "2965bf04051f74bc",
@@ -21938,7 +22034,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T02:28:01.000Z",
     "generatedAt": "2026-10-23T02:59:59.711Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:56:12.089Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Antalya%2C_Turkey_25_Feb_2022_-_Mc_Taxi.jpg/1280px-Antalya%2C_Turkey_25_Feb_2022_-_Mc_Taxi.jpg",
+        "yazar": "Sharon Hahn Darlin",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Antalya,_Turkey_25_Feb_2022_-_Mc_Taxi.jpg"
+      }
+    ]
   },
   {
     "id": "d9cb4f47ceaa816b",
@@ -21973,7 +22079,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T02:28:01.000Z",
     "generatedAt": "2026-10-23T03:24:36.620Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:56:13.568Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Ankara_Augustus_Tap%C4%B1na%C4%9F%C4%B1.jpg/1280px-Ankara_Augustus_Tap%C4%B1na%C4%9F%C4%B1.jpg",
+        "yazar": "Dilan yavuz ank",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Ankara_Augustus_Tap%C4%B1na%C4%9F%C4%B1.jpg"
+      }
+    ]
   },
   {
     "id": "75649dc22c113bb8",
@@ -22150,7 +22266,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T02:15:00.000Z",
     "generatedAt": "2026-10-23T02:36:23.866Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:56:15.356Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/People_watching_the_Euro_2024_Netherlands-T%C3%BCrkiye_match_at_T%C3%BCpra%C5%9F_Stadium_in_Be%C5%9Fikta%C5%9F_01.jpg/1280px-People_watching_the_Euro_2024_Netherlands-T%C3%BCrkiye_match_at_T%C3%BCpra%C5%9F_Stadium_in_Be%C5%9Fikta%C5%9F_01.jpg",
+        "yazar": "Kurmanbek",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:People_watching_the_Euro_2024_Netherlands-T%C3%BCrkiye_match_at_T%C3%BCpra%C5%9F_Stadium_in_Be%C5%9Fikta%C5%9F_01.jpg"
+      }
+    ]
   },
   {
     "id": "12ac86cc6f2ae3d3",
@@ -22294,7 +22420,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T02:02:00.000Z",
     "generatedAt": "2026-10-23T02:06:41.102Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:56:17.082Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Bus_crash%2C_Market_Place%2C_Wetherby_%2827th_July_2021%29_002.jpg/1280px-Bus_crash%2C_Market_Place%2C_Wetherby_%2827th_July_2021%29_002.jpg",
+        "yazar": "Mtaylor848",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Bus_crash,_Market_Place,_Wetherby_(27th_July_2021)_002.jpg"
+      }
+    ]
   },
   {
     "id": "3d92e157a360f7dd",
@@ -22328,7 +22464,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T02:01:57.000Z",
     "generatedAt": "2026-10-23T02:58:08.872Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:56:19.398Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Three_Dollar_Bill.jpg/1280px-Three_Dollar_Bill.jpg",
+        "yazar": "Myotus",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Three_Dollar_Bill.jpg"
+      }
+    ]
   },
   {
     "id": "d3de3a41f0a54451",
@@ -22415,7 +22561,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T02:00:00.000Z",
     "generatedAt": "2026-10-23T02:11:43.865Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:56:20.841Z",
+    "gorselEk": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Day_274_-_West_Midlands_Police_-_Patrolling_public_transport_connection_points_%288033012427%29.jpg",
+        "yazar": "West Midlands Police from West Midlands, United Kingdom",
+        "lisans": "CC BY-SA 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Day_274_-_West_Midlands_Police_-_Patrolling_public_transport_connection_points_(8033012427).jpg"
+      }
+    ]
   },
   {
     "id": "455dd00dea980fe5",
@@ -22454,7 +22610,17 @@
     },
     "publishedAt": "2026-10-23T01:57:30.000Z",
     "generatedAt": "2026-10-23T03:11:01.828Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:56:24.913Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Depsaj_Enerji_SK_20241022_%284%29.jpg/1280px-Depsaj_Enerji_SK_20241022_%284%29.jpg",
+        "yazar": "Zafer",
+        "lisans": "CC BY 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Depsaj_Enerji_SK_20241022_(4).jpg"
+      }
+    ]
   },
   {
     "id": "63fbf34d30a5c243",
@@ -22488,7 +22654,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T01:57:00.000Z",
     "generatedAt": "2026-10-23T02:14:40.681Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:56:25.685Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/U_S_and_Panama_earthquake_relief_efforts_in_Veraguas_and_Herrera_Province_%2810009739%29.jpg/1280px-U_S_and_Panama_earthquake_relief_efforts_in_Veraguas_and_Herrera_Province_%2810009739%29.jpg",
+        "yazar": "U.S. Army photo by Sgt. Jabari Middleton",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:U_S_and_Panama_earthquake_relief_efforts_in_Veraguas_and_Herrera_Province_(10009739).jpg"
+      }
+    ]
   },
   {
     "id": "6b6ae907b4df2b85",
@@ -22588,7 +22764,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T01:50:09.000Z",
     "generatedAt": "2026-10-23T02:21:16.630Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:56:29.300Z"
   },
   {
     "id": "c2255cc006eea252",
@@ -22622,7 +22799,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T01:49:18.000Z",
     "generatedAt": "2026-10-23T02:37:49.266Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:56:31.754Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Mestalla_antes_del_partido_Valencia-Barcelona_LaLiga_2023-2024.jpg/1280px-Mestalla_antes_del_partido_Valencia-Barcelona_LaLiga_2023-2024.jpg",
+        "yazar": "Anidae",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Mestalla_antes_del_partido_Valencia-Barcelona_LaLiga_2023-2024.jpg"
+      }
+    ]
   },
   {
     "id": "609cdc9348dbdea6",
@@ -22657,7 +22844,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T01:49:12.000Z",
     "generatedAt": "2026-10-23T01:53:13.269Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:56:32.916Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Sylvester_Stallone_%26_Arnold_Schwarzenegger_%287588431980%29_%28cropped%29.jpg/1280px-Sylvester_Stallone_%26_Arnold_Schwarzenegger_%287588431980%29_%28cropped%29.jpg",
+        "yazar": "Gage Skidmore from Peoria, AZ, United States of America",
+        "lisans": "CC BY-SA 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Sylvester_Stallone_%26_Arnold_Schwarzenegger_(7588431980)_(cropped).jpg"
+      }
+    ]
   },
   {
     "id": "c1437a942085f209",
@@ -22724,7 +22921,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T01:45:37.000Z",
     "generatedAt": "2026-10-23T02:54:14.782Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:56:34.445Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Jason-West-Vince-Zampella-Modern-Warfare-2-E3-2009_%281%29.jpg/1280px-Jason-West-Vince-Zampella-Modern-Warfare-2-E3-2009_%281%29.jpg",
+        "yazar": "Microsoft Corporation",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Jason-West-Vince-Zampella-Modern-Warfare-2-E3-2009_(1).jpg"
+      }
+    ]
   },
   {
     "id": "acf7a169529fa6fd",
@@ -22873,7 +23080,17 @@
     },
     "publishedAt": "2026-10-23T01:30:37.000Z",
     "generatedAt": "2026-10-23T01:36:05.594Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:56:38.244Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/%C3%87%C4%B1nar_Tatil_Sitesi_-_panoramio.jpg/1280px-%C3%87%C4%B1nar_Tatil_Sitesi_-_panoramio.jpg",
+        "yazar": "Aziz Akbiyik",
+        "lisans": "CC BY-SA 3.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:%C3%87%C4%B1nar_Tatil_Sitesi_-_panoramio.jpg"
+      }
+    ]
   },
   {
     "id": "5866af8891b38c39",
@@ -22936,7 +23153,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T01:24:47.000Z",
     "generatedAt": "2026-10-23T03:18:38.709Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:56:40.818Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Bulgarian_Anti-Euro_protest_02.jpg/1280px-Bulgarian_Anti-Euro_protest_02.jpg",
+        "yazar": "DemieK07",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Bulgarian_Anti-Euro_protest_02.jpg"
+      }
+    ]
   },
   {
     "id": "cd916058ad2778bd",
@@ -22971,7 +23198,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T01:23:32.000Z",
     "generatedAt": "2026-10-23T01:44:03.847Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:56:41.743Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Secretary_Kerry_Arrives_for_His_Meeting_With_Russian_President_Putin_to_Discuss_Syria_and_Ukraine_in_Moscow_%2825736650940%29.jpg/1280px-Secretary_Kerry_Arrives_for_His_Meeting_With_Russian_President_Putin_to_Discuss_Syria_and_Ukraine_in_Moscow_%2825736650940%29.jpg",
+        "yazar": "U.S. Department of State from United States",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Secretary_Kerry_Arrives_for_His_Meeting_With_Russian_President_Putin_to_Discuss_Syria_and_Ukraine_in_Moscow_(25736650940).jpg"
+      }
+    ]
   },
   {
     "id": "a1621f6a453dd3be",
@@ -23006,7 +23243,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T01:19:23.000Z",
     "generatedAt": "2026-10-23T02:42:56.105Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:56:42.573Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/1994_Williams_Renault_FW_16_RS6_V10_Engine_F1_Car_%286005957758%29.jpg/1280px-1994_Williams_Renault_FW_16_RS6_V10_Engine_F1_Car_%286005957758%29.jpg",
+        "yazar": "Louis Rix from UK",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:1994_Williams_Renault_FW_16_RS6_V10_Engine_F1_Car_(6005957758).jpg"
+      }
+    ]
   },
   {
     "id": "94d9de814664f361",
@@ -23040,7 +23287,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T01:19:22.000Z",
     "generatedAt": "2026-10-23T02:34:59.191Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:56:43.639Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Rusty_oil_barrel_along_the_PR04_SMA_hiking_trail%2C_Santa_Maria%2C_Azores%2C_Portugal_%28PPL1-Corrected%29_julesvernex2.jpg/1280px-Rusty_oil_barrel_along_the_PR04_SMA_hiking_trail%2C_Santa_Maria%2C_Azores%2C_Portugal_%28PPL1-Corrected%29_julesvernex2.jpg",
+        "yazar": "Jules Verne Times Two",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Rusty_oil_barrel_along_the_PR04_SMA_hiking_trail,_Santa_Maria,_Azores,_Portugal_(PPL1-Corrected)_julesvernex2.jpg"
+      }
+    ]
   },
   {
     "id": "61fd51c12e0ac4aa",
@@ -23129,7 +23386,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T01:11:00.000Z",
     "generatedAt": "2026-10-23T01:20:34.142Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T10:56:45.158Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Guideline_Coaches_London_coach_%28FA60_ENG%29%2C_England_football_team_coach%2C_10_June_2011.jpg/1280px-Guideline_Coaches_London_coach_%28FA60_ENG%29%2C_England_football_team_coach%2C_10_June_2011.jpg",
+        "yazar": "D464-Darren Hall",
+        "lisans": "CC BY-SA 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Guideline_Coaches_London_coach_(FA60_ENG),_England_football_team_coach,_10_June_2011.jpg"
+      }
+    ]
   },
   {
     "id": "90db2de93fb65bf1",
@@ -145871,7 +146138,26 @@
     "sourceUrl": "https://www.cnnturk.com/video/turkiye/burnundan-fitil-fitil-getirecegim-diyen-ozgur-ozele-ak-partiden-izmir-yaniti-3480484",
     "image": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad25edbb130c2575629fb15.jpg",
     "publishedAt": "2026-10-16T20:31:45.000Z",
-    "generatedAt": "2026-10-16T20:20:19.638Z"
+    "generatedAt": "2026-10-16T20:20:19.638Z",
+    "gorselSorguDeneme": "2026-10-25T10:54:08.832Z",
+    "gorselSorgu": "Izmir city hall",
+    "ekGorselDeneme": "2026-10-25T10:55:34.490Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Gulf_of_%C4%B0zmir_21.jpg/1280px-Gulf_of_%C4%B0zmir_21.jpg",
+        "yazar": "Ayratayrat",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Gulf_of_%C4%B0zmir_21.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/%C4%B0zmir_Asans%C3%B6r.jpg/1280px-%C4%B0zmir_Asans%C3%B6r.jpg",
+        "yazar": "Mintone97",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:%C4%B0zmir_Asans%C3%B6r.jpg"
+      }
+    ]
   },
   {
     "id": "b8b3aa7950e4d8d2",
@@ -146002,7 +146288,26 @@
     "sourceUrl": "https://www.tamindir.com/blog/en-iyi-all-in-one-bilgisayar-modelleri_112310/",
     "image": "https://img.tamindir.com/resize/1200x675/2026/10/476765/en-iyi-all-in-one-bilgisayar-modelleri.jpg",
     "publishedAt": "2026-10-16T20:07:00.000Z",
-    "generatedAt": "2026-10-16T19:55:33.210Z"
+    "generatedAt": "2026-10-16T19:55:33.210Z",
+    "gorselSorguDeneme": "2026-10-25T10:54:15.249Z",
+    "gorselSorgu": "Casper Nirvana All-in-One",
+    "ekGorselDeneme": "2026-10-25T10:55:37.599Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Viglen_All_in_One_Desktop_%283199609171%29.jpg/1280px-Viglen_All_in_One_Desktop_%283199609171%29.jpg",
+        "yazar": "devopstom from London, UK",
+        "lisans": "CC BY-SA 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Viglen_All_in_One_Desktop_(3199609171).jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Averatec_All_In_One_Post_Screen.jpg/1280px-Averatec_All_In_One_Post_Screen.jpg",
+        "yazar": "Woahg",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Averatec_All_In_One_Post_Screen.jpg"
+      }
+    ]
   },
   {
     "id": "55aeac1075d3c063",
@@ -147273,7 +147578,26 @@
     "publishedAt": "2026-10-16T16:58:00.000Z",
     "generatedAt": "2026-10-16T17:00:48.834Z",
     "image": "https://www.donanimhaber.com/images/images/haber/211724/1200x675turkiye-de-elektrikli-araclar-ne-kadar-petrol-tasarrufu-sagliyor.jpg",
-    "breaking": true
+    "breaking": true,
+    "gorselSorguDeneme": "2026-10-25T10:54:21.683Z",
+    "gorselSorgu": "electric cars on Turkish highway",
+    "ekGorselDeneme": "2026-10-25T10:55:24.248Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/All-electric_cars_CRI_12_2021_2352.jpg/1280px-All-electric_cars_CRI_12_2021_2352.jpg",
+        "yazar": "Mariordo (Mario Roberto Durán Ortiz)",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:All-electric_cars_CRI_12_2021_2352.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Three_electric_cars_in_CRI_02_2022_4155.jpg/1280px-Three_electric_cars_in_CRI_02_2022_4155.jpg",
+        "yazar": "Mariordo (Mario Roberto Durán Ortiz)",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Three_electric_cars_in_CRI_02_2022_4155.jpg"
+      }
+    ]
   },
   {
     "id": "3dedb43c27d74c86",
@@ -151497,7 +151821,26 @@
     "publishedAt": "2026-10-16T13:00:24.000Z",
     "generatedAt": "2026-10-16T13:02:29.851Z",
     "image": "https://ares.shiftdelete.net/2026/10/nasa-yeni-kati-hal-bataryasi-gelistirdi-170-dereceye-dayaniyor.webp",
-    "breaking": true
+    "breaking": true,
+    "gorselSorguDeneme": "2026-10-25T10:54:28.086Z",
+    "gorselSorgu": "NASA solid-state battery on lunar surface",
+    "ekGorselDeneme": "2026-10-25T10:55:27.494Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/DCR_AND_SOLID_STATE_RELAYS_-_NARA_-_17471813.jpg/1280px-DCR_AND_SOLID_STATE_RELAYS_-_NARA_-_17471813.jpg",
+        "yazar": "Martin Brown",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:DCR_AND_SOLID_STATE_RELAYS_-_NARA_-_17471813.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/DCR_AND_SOLID_STATE_RELAYS_-_NARA_-_17471740.jpg/1280px-DCR_AND_SOLID_STATE_RELAYS_-_NARA_-_17471740.jpg",
+        "yazar": "Martin Brown",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:DCR_AND_SOLID_STATE_RELAYS_-_NARA_-_17471740.jpg"
+      }
+    ]
   },
   {
     "id": "04df0893fd00290b",
@@ -151628,7 +151971,19 @@
     "publishedAt": "2026-10-16T12:52:00.000Z",
     "generatedAt": "2026-10-16T12:56:17.973Z",
     "image": "https://www.donanimhaber.com/images/images/haber/211701/1200x675made-in-eu-icin-ingiltere-ye-kapi-aciliyor-turkiye-taslakta-yok.jpg",
-    "breaking": true
+    "breaking": true,
+    "gorselSorguDeneme": "2026-10-25T10:54:34.342Z",
+    "gorselSorgu": "Turkey automotive trade talks",
+    "ekGorselDeneme": "2026-10-25T10:55:31.341Z",
+    "gorselEk": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/97/T.C._Avrupa_Birli%C4%9Fi_Bakanl%C4%B1%C4%9F%C4%B1.jpg",
+        "yazar": "Sabri76",
+        "lisans": "CC0",
+        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:T.C._Avrupa_Birli%C4%9Fi_Bakanl%C4%B1%C4%9F%C4%B1.jpg"
+      }
+    ]
   },
   {
     "id": "a73c3d923f45302b",
@@ -152115,7 +152470,19 @@
     "sourceUrl": "https://www.ntv.com.tr/dunya/galeri-almanyada-sigara-ve-alkole-zam-berlin-milyarlar-toplayacak-1746607",
     "publishedAt": "2026-10-16T12:25:32.000Z",
     "generatedAt": "2026-10-16T12:28:13.858Z",
-    "image": "https://images.ntv.com.tr/images/RYL5AUPW6VLPRAME2ZMIHOYNO4-980174.jpg?width=930&format=webp"
+    "image": "https://images.ntv.com.tr/images/RYL5AUPW6VLPRAME2ZMIHOYNO4-980174.jpg?width=930&format=webp",
+    "gorselSorguDeneme": "2026-10-25T10:54:40.847Z",
+    "gorselSorgu": "Germany cigarette tax increase",
+    "ekGorselDeneme": "2026-10-25T10:55:43.065Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Vintage_Kawee_Cigarette_Lighter%2C_Made_in_Germany_%289735005002%29.jpg/1280px-Vintage_Kawee_Cigarette_Lighter%2C_Made_in_Germany_%289735005002%29.jpg",
+        "yazar": "Joe Haupt from USA",
+        "lisans": "CC BY-SA 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Vintage_Kawee_Cigarette_Lighter,_Made_in_Germany_(9735005002).jpg"
+      }
+    ]
   },
   {
     "id": "36d9e0c7b0570b79",
@@ -153278,7 +153645,26 @@
     "sourceUrl": "https://www.ntv.com.tr/dunya/galeri-sislik-sandi-goz-cukurundan-kopek-disi-cikarildi-1746592",
     "publishedAt": "2026-10-16T11:16:07.000Z",
     "generatedAt": "2026-10-16T11:19:16.009Z",
-    "image": "https://images.ntv.com.tr/images/Ectopic-tooth-690326.jpg?width=930&format=webp"
+    "image": "https://images.ntv.com.tr/images/Ectopic-tooth-690326.jpg?width=930&format=webp",
+    "gorselSorguDeneme": "2026-10-25T10:54:47.280Z",
+    "gorselSorgu": "dog tooth in eye socket",
+    "ekGorselDeneme": "2026-10-25T10:55:44.702Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Snagtooth_Ridge%2C_Dog_Tooth%2C_Red_Tooth%2C_Cedar_Tooth.jpg/1280px-Snagtooth_Ridge%2C_Dog_Tooth%2C_Red_Tooth%2C_Cedar_Tooth.jpg",
+        "yazar": "Ron Clausen",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Snagtooth_Ridge,_Dog_Tooth,_Red_Tooth,_Cedar_Tooth.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Rowlestone%2C_St._Peter%27s_Church%2C_Dog_tooth_carving_on_the_Norman_chancel_arch_-_geograph.org.uk_-_4637808.jpg/1280px-Rowlestone%2C_St._Peter%27s_Church%2C_Dog_tooth_carving_on_the_Norman_chancel_arch_-_geograph.org.uk_-_4637808.jpg",
+        "yazar": "Michael Garlick",
+        "lisans": "CC BY-SA 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Rowlestone,_St._Peter%27s_Church,_Dog_tooth_carving_on_the_Norman_chancel_arch_-_geograph.org.uk_-_4637808.jpg"
+      }
+    ]
   },
   {
     "id": "c1dc2b04d9497265",
@@ -154475,7 +154861,26 @@
     "sourceUrl": "https://www.dunya.com/finans/haberler/fransada-tahvil-faizi-24-yilin-zirvesini-gordu-hedge-fonlar-mercek-altinda-haberi-844145",
     "publishedAt": "2026-10-16T10:33:00.000Z",
     "generatedAt": "2026-10-16T10:35:19.061Z",
-    "image": "https://image.dunya.com/rcman/Cw1280h720q95gc/storage/files/images/2026/10/16/01-ana-gorsel-fransa-tahvil-faizi-2-tfrf_cover.jpg"
+    "image": "https://image.dunya.com/rcman/Cw1280h720q95gc/storage/files/images/2026/10/16/01-ana-gorsel-fransa-tahvil-faizi-2-tfrf_cover.jpg",
+    "gorselSorguDeneme": "2026-10-25T10:54:53.682Z",
+    "gorselSorgu": "hedge fund trading floor",
+    "ekGorselDeneme": "2026-10-25T10:55:46.971Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Gregory-blotnick-2025-professional-headshot-investor-interview-hedge-fund-alpha.jpg/1280px-Gregory-blotnick-2025-professional-headshot-investor-interview-hedge-fund-alpha.jpg",
+        "yazar": "Spdj93",
+        "lisans": "CC0",
+        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Gregory-blotnick-2025-professional-headshot-investor-interview-hedge-fund-alpha.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/ECI_Hedge_Fund_Hotel.jpg/1280px-ECI_Hedge_Fund_Hotel.jpg",
+        "yazar": "The original uploader was CorporateM at Wikipedia",
+        "lisans": "CC BY-SA 3.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:ECI_Hedge_Fund_Hotel.jpg"
+      }
+    ]
   },
   {
     "id": "5ea15ec0f748009a",
@@ -154766,7 +155171,10 @@
     "sourceUrl": "https://www.tamindir.com/haber/hypershell-satisa-sunuldu_112335/",
     "publishedAt": "2026-10-16T10:23:55.148Z",
     "generatedAt": "2026-10-16T10:24:21.829Z",
-    "image": "https://img.tamindir.com/resize/1200x675/2026/10/470608/hypershell-satisa-sunuldu.jpg"
+    "image": "https://img.tamindir.com/resize/1200x675/2026/10/470608/hypershell-satisa-sunuldu.jpg",
+    "gorselSorguDeneme": "2026-10-25T10:55:00.081Z",
+    "gorselSorgu": "Hypershell exoskeleton",
+    "ekGorselDeneme": "2026-10-25T10:55:48.732Z"
   },
   {
     "id": "80b68a49ac96e065",
@@ -154895,7 +155303,19 @@
     "sourceUrl": "https://www.sozcu.com.tr/borsada-yabanci-alarmi-turkiye-ye-2027-ye-kadar-sure-verildi-p369806",
     "publishedAt": "2026-10-16T10:17:19.000Z",
     "generatedAt": "2026-10-16T10:19:21.294Z",
-    "image": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/976jpg-eaTJ_hh-tUC6CAnz072Xig.jpg"
+    "image": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/976jpg-eaTJ_hh-tUC6CAnz072Xig.jpg",
+    "gorselSorguDeneme": "2026-10-25T10:55:06.536Z",
+    "gorselSorgu": "Borsa Istanbul trading floor",
+    "ekGorselDeneme": "2026-10-25T10:55:50.759Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Copenhaver_MSCI_2013_%289553028643%29.jpg/1280px-Copenhaver_MSCI_2013_%289553028643%29.jpg",
+        "yazar": "roanokecollege",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Copenhaver_MSCI_2013_(9553028643).jpg"
+      }
+    ]
   },
   {
     "id": "76aaccec525b7d34",
@@ -156572,7 +156992,26 @@
     "sourceUrl": "https://www.cnnturk.com/yerel-haberler/antalya/dugundeki-cinayette-2-saniga-muebbet-hapis-cezasi-3480188",
     "publishedAt": "2026-10-16T09:26:43.939Z",
     "generatedAt": "2026-10-16T09:27:12.731Z",
-    "image": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad1e8a8643e3051ab9226a6.jpg"
+    "image": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad1e8a8643e3051ab9226a6.jpg",
+    "gorselSorguDeneme": "2026-10-25T10:55:12.937Z",
+    "gorselSorgu": "Antalya wedding crime scene",
+    "ekGorselDeneme": "2026-10-25T10:55:52.410Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Wedding_in_Antalya.jpg/1280px-Wedding_in_Antalya.jpg",
+        "yazar": "Gah341",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Wedding_in_Antalya.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Antalya%2C_Turkey_skyline_19_February_2022.jpg/1280px-Antalya%2C_Turkey_skyline_19_February_2022.jpg",
+        "yazar": "Sharon Hahn Darlin",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Antalya,_Turkey_skyline_19_February_2022.jpg"
+      }
+    ]
   },
   {
     "id": "969d9ddd49bc7d04",
@@ -159156,7 +159595,26 @@
     "sourceUrl": "https://www.cnnturk.com/yerel-haberler/edirne/edirne-belediye-baskani-gencan-tbb-meclis-toplantisina-katildi-3480135",
     "publishedAt": "2026-10-16T07:58:02.874Z",
     "generatedAt": "2026-10-16T07:58:11.002Z",
-    "image": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad1c32bdd42bf3806fbd61b.jpg"
+    "image": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad1c32bdd42bf3806fbd61b.jpg",
+    "gorselSorguDeneme": "2026-10-25T10:55:19.304Z",
+    "gorselSorgu": "Filiz Gencan TBB meeting",
+    "ekGorselDeneme": "2026-10-25T10:55:54.342Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Edirne_at_sunrise_21_54_10_528000.jpeg/1280px-Edirne_at_sunrise_21_54_10_528000.jpeg",
+        "yazar": "Robot8A",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Edirne_at_sunrise_21_54_10_528000.jpeg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Edirne_merkez%2C_Etus_otob%C3%BCs%C3%BC.JPG/1280px-Edirne_merkez%2C_Etus_otob%C3%BCs%C3%BC.JPG",
+        "yazar": "Sadrettin",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Edirne_merkez,_Etus_otob%C3%BCs%C3%BC.JPG"
+      }
+    ]
   },
   {
     "id": "15867c72f0ddee8e",
