@@ -1,5 +1,61 @@
 [
   {
+    "id": "a5915e06b4fd5cc3",
+    "title": "Block, Konuşma Temelli Yeni Yapay Zeka Modeli Dessa’yı Tanıttı",
+    "slug": "block-konusma-temelli-yeni-yapay-zeka-modelli-dessa-taniytti",
+    "summary": "Block, insan sesleriyle eğitilen ve metin dönüştürme adımını ortadan kaldıran yeni yapay zeka sistemi Dessa’yı duyurdu. Model, full‑duplex yeteneğiyle aynı anda dinleyip konuşabiliyor ve MacBook Pro M4 Max’te yerel olarak çalışabiliyor. Demonstrasyonlarda doğal görünen etkileşimler sergilendi, ancak bazen tanıma hataları ve konu sapması gözlemlendi.",
+    "keyPoints": [
+      "Dessa, metin verisi kullanılmadan tamamen sesle eğitildi",
+      "Model, aynı anda dinleyip konuşabiliyor – full‑duplex destek",
+      "Demo’da MacBook Pro M4 Max’te yerel çalıştırma ve hızlı yanıt süreleri gösterildi"
+    ],
+    "body": [
+      "Block tarafından geliştirilen Dessa, geleneksel sesli yapay zeka sistemlerinin aksine metin dönüştürme adımını atlıyor. Sistem, sadece insan konuşmalarını dinleyerek dil becerilerini öğreniyor, bu sayede ton, duygu ve ritm gibi nüansları doğrudan alabiliyor. Bu yaklaşım, sesli asistanlarda sık karşılaşılan “metne döküp geri sesle çevirme” sürecindeki kaybolan ayrıntıların önüne geçmeyi hedefliyor.",
+      "Model, full‑duplex çalışma prensibiyle dikkat çekiyor. Kullanıcı konuşmayı bitirene kadar beklemek yerine aynı anda dinleyip cevap veriyor. Bu, sohbetin doğal akışını koruyor ve kullanıcı sözünü kestiğinde hızlı geri bildirim sağlıyor. Block, Dessa’nın bu özelliğinin diyalog ritmine uyum sağlamasını ve “konuşma sırasında kısa geri bildirimler” sunmasını vurguluyor.",
+      "Sunumlar, modelin doğal bir ses deneyimi yaratabildiğini gösterse de, bazen kullanıcıyı yanlış tanımak veya konu dışına çıkmak gibi hatalar yapıyor. Bu, teknolojinin henüz mükemmel olmadığını gösteriyor.",
+      "Performans açısından, Block, Dessa’nın MacBook Pro M4 Max işlemcili modellerde yerel olarak çalışabileceğini ve gerçek zamanlıdan daha hızlı yanıt süresi elde ettiğini belirtiyor. Bu nedenle, geniş çaplı kullanım için daha fazla veri bekleniyor.",
+      "Şu anda Dessa, araştırma ön izlemesi aşamasında ve Block, modelin erişimini küçük bir yapay zeka güvenliği araştırmacısı grubuna sunmayı planlıyor. Şirket, modelin gelecekte daha geniş kitlelere açılacağına işaret ediyor. Ancak şu an için halka açık bir sürüm bulunmuyor.",
+      "Dessa’nın ses odaklı eğitimi, yapay zeka alanında yeni bir paradigma öneriyor. Metin dönüştürme adımının ortadan kalkması, sesli asistanların daha doğrudan ve duyarlı olmasını sağlayabilir. Bu, özellikle sesli arayüzlerin yaygın olduğu mobil ve ev otomasyonu uygulamaları için önemli bir adım olabilir.",
+      "Gelecek güncellemelerde, Block’un modelin tanıma doğruluğunu ve konu tutarlılığını artırmayı hedeflediğini duyurması bekleniyor. Bu gelişmeler, ses tabanlı yapay zeka sistemlerinin kullanıcı deneyimini iyileştirerek sektöre yeni bir yön verebilir."
+    ],
+    "comment": "Dessa, metin dönüştürme adımını ortadan kaldırarak sesli asistan teknolojisinde önemli bir evrim sunuyor. Modelin full‑duplex yeteneği, diyalog akışını doğal kılıyor, ancak tanıma hataları henüz düzeltilememiş durumda. Kullanıcılar için daha gerçekçi bir ses deneyimi yaratırken, geliştiriciler için de doğrudan sesle çalışabilme imkanı sunuyor. Önceki sürümlerdeki metin dönüştürme gecikmelerine kıyasla, Dessa’nın yerel çalışması gecikmeyi önemli ölçüde azaltıyor. Ancak, modelin boyutu ve performansı hakkında henüz net bilgiler olmadığı için, geniş çaplı üretim için zaman çizelgesi belirsiz kalıyor.",
+    "editorNote": "Yeni ses tabanlı yapay zeka modelinde metin dönüştürme adımı kaldırıldı – bu, diyalog akışını doğrudan etkileyen bir yenilik.",
+    "tags": [
+      "Block",
+      "Dessa",
+      "Yapay Zeka",
+      "Sesli Asistan",
+      "Full Duplex"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "voice AI model demo",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/yalnizca-konusarak-ogrenen-yapay-zeka-modeli-dessa-tanitildi--212047",
+    "image": "https://www.donanimhaber.com/images/images/haber/212047/src/yalnizca-konusarak-ogrenen-yapay-zeka-modeli-dessa-tanitildi212047_0.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-25T18:00:00.000Z",
+    "generatedAt": "2026-10-25T18:02:39.901Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Day_one_of_Mozilla_Common_Voice_Training_01.jpg/1280px-Day_one_of_Mozilla_Common_Voice_Training_01.jpg",
+        "yazar": "Ruky Wunpini",
+        "lisans": "CC BY 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Day_one_of_Mozilla_Common_Voice_Training_01.jpg",
+        "altyazi": "Dessa, gerçek zamanlı konuşma ile etkileşim gösteriyor"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Apple_MacBook_Pro%2C_model_A1278-8112.jpg/1280px-Apple_MacBook_Pro%2C_model_A1278-8112.jpg",
+        "yazar": "Raimond Spekking",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Apple_MacBook_Pro,_model_A1278-8112.jpg",
+        "altyazi": "M4 Max işlemcili MacBook Pro’da yerel olarak çalıştırma"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "7554c5222d40ccdd",
     "title": "Zonguldak'ta Patlamanın Firari Müdürü Ankara'da Tutuklandı",
     "slug": "zonguldakta-patlamanin-firari-moduru-ankara-da-tutuklandi",
