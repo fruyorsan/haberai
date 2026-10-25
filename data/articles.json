@@ -13519,7 +13519,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T08:10:00.000Z",
     "generatedAt": "2026-10-23T08:13:31.253Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:56:20.717Z"
   },
   {
     "id": "a4dd55dd87492fb9",
@@ -13553,7 +13554,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T08:09:00.000Z",
     "generatedAt": "2026-10-23T08:27:51.826Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:56:22.222Z"
   },
   {
     "id": "697270a09e8af1a7",
@@ -13587,7 +13589,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T08:08:24.000Z",
     "generatedAt": "2026-10-23T08:20:44.658Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:56:24.083Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/00133jfNationwide_Simultaneous_Earthquake_Drill_Philippinesfvf.jpg/1280px-00133jfNationwide_Simultaneous_Earthquake_Drill_Philippinesfvf.jpg",
+        "yazar": "Judgefloro",
+        "lisans": "CC0",
+        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:00133jfNationwide_Simultaneous_Earthquake_Drill_Philippinesfvf.jpg"
+      }
+    ]
   },
   {
     "id": "09aeaee9d8686ce7",
@@ -13622,7 +13634,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T08:08:02.000Z",
     "generatedAt": "2026-10-23T08:13:44.629Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:56:25.692Z"
   },
   {
     "id": "b9e2c68f7a924b92",
@@ -13691,7 +13704,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T08:06:00.000Z",
     "generatedAt": "2026-10-23T08:13:55.782Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:56:26.099Z"
   },
   {
     "id": "36f0b8bf2b5d6269",
@@ -13726,7 +13740,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T08:05:00.000Z",
     "generatedAt": "2026-10-23T08:20:55.029Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:56:29.274Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Erci%C5%9F_earthquake_traces_in_2012_4757.jpg/1280px-Erci%C5%9F_earthquake_traces_in_2012_4757.jpg",
+        "yazar": "Dosseman",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Erci%C5%9F_earthquake_traces_in_2012_4757.jpg"
+      }
+    ]
   },
   {
     "id": "83969ed7e8eee299",
@@ -13760,7 +13784,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T08:03:00.000Z",
     "generatedAt": "2026-10-23T08:08:41.075Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:56:30.242Z"
   },
   {
     "id": "1102756911fd16af",
@@ -13795,7 +13820,24 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T08:01:00.000Z",
     "generatedAt": "2026-10-23T08:03:12.724Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:56:32.605Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Graphic_design_01.jpg/1280px-Graphic_design_01.jpg",
+        "yazar": "RazF19",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Graphic_design_01.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Vector_Graphic_MZ_personal_computer%2C_designed_and_manufactured_by_Vector_Graphic%2C_1978_-_Design_Museum%2C_Kensington_-_London_-_DSC01631.jpg/1280px-Vector_Graphic_MZ_personal_computer%2C_designed_and_manufactured_by_Vector_Graphic%2C_1978_-_Design_Museum%2C_Kensington_-_London_-_DSC01631.jpg",
+        "yazar": "Daderot",
+        "lisans": "CC0",
+        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Vector_Graphic_MZ_personal_computer,_designed_and_manufactured_by_Vector_Graphic,_1978_-_Design_Museum,_Kensington_-_London_-_DSC01631.jpg"
+      }
+    ]
   },
   {
     "id": "d63ea8db4165e2b2",
@@ -13830,7 +13872,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T08:00:54.000Z",
     "generatedAt": "2026-10-23T08:03:24.209Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:56:34.611Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Vivo_V29e.jpg/1280px-Vivo_V29e.jpg",
+        "yazar": "Vis M",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Vivo_V29e.jpg"
+      }
+    ]
   },
   {
     "id": "26f6e8eef36eabd9",
@@ -13865,7 +13917,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T08:00:43.000Z",
     "generatedAt": "2026-10-23T08:38:47.933Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:56:35.832Z"
   },
   {
     "id": "d7598f7a11c42a8b",
@@ -13899,7 +13952,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T08:00:00.000Z",
     "generatedAt": "2026-10-23T08:08:53.416Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:56:38.567Z"
   },
   {
     "id": "8015158a1a24d31e",
@@ -13935,7 +13989,24 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T08:00:00.000Z",
     "generatedAt": "2026-10-23T08:38:10.460Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:56:38.159Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/2022.07.04_Coach_carrying_Amazon_employees%2C_Tomaszow_Mazowiecki%2C_Poland.jpg/1280px-2022.07.04_Coach_carrying_Amazon_employees%2C_Tomaszow_Mazowiecki%2C_Poland.jpg",
+        "yazar": "WrS.tm.pl",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:2022.07.04_Coach_carrying_Amazon_employees,_Tomaszow_Mazowiecki,_Poland.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Amazon_Fire_TV_with_remote.JPG/1280px-Amazon_Fire_TV_with_remote.JPG",
+        "yazar": "Ixfd64",
+        "lisans": "CC BY-SA 3.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Amazon_Fire_TV_with_remote.JPG"
+      }
+    ]
   },
   {
     "id": "b6c950342b03b998",
@@ -14026,7 +14097,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:55:05.000Z",
     "generatedAt": "2026-10-23T08:03:35.379Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:56:39.722Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Building_ruins_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg/1280px-Building_ruins_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg",
+        "yazar": "Adem",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Building_ruins_after_7,8_magnitude_earthquake_in_Turkiye.jpg"
+      }
+    ]
   },
   {
     "id": "21ed2a96cd614d0f",
@@ -14060,7 +14141,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:48:00.000Z",
     "generatedAt": "2026-10-23T07:56:48.750Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:56:41.360Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Kandilli_Burnu.jpg/1280px-Kandilli_Burnu.jpg",
+        "yazar": "Canercangul",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Kandilli_Burnu.jpg"
+      }
+    ]
   },
   {
     "id": "9e05b7a83f913e0e",
@@ -14095,7 +14186,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:45:53.000Z",
     "generatedAt": "2026-10-23T07:57:00.500Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:56:44.617Z"
   },
   {
     "id": "109d49e7caa8b537",
@@ -14131,7 +14223,24 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:45:44.000Z",
     "generatedAt": "2026-10-23T07:50:37.637Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:56:45.916Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/IPhone_Duo_10.jpg/1280px-IPhone_Duo_10.jpg",
+        "yazar": "SimonWaldherr",
+        "lisans": "CC BY 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:IPhone_Duo_10.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/IPhone_Duo_12.jpg/1280px-IPhone_Duo_12.jpg",
+        "yazar": "SimonWaldherr",
+        "lisans": "CC BY 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:IPhone_Duo_12.jpg"
+      }
+    ]
   },
   {
     "id": "526c154ec3fec3eb",
@@ -14166,7 +14275,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:45:24.000Z",
     "generatedAt": "2026-10-23T08:03:47.349Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:56:46.961Z"
   },
   {
     "id": "c3699a3dfd6a2fe2",
@@ -14257,7 +14367,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:42:00.000Z",
     "generatedAt": "2026-10-23T07:50:59.019Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:56:47.955Z"
   },
   {
     "id": "7692e9941ac80df4",
@@ -14292,7 +14403,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:39:00.000Z",
     "generatedAt": "2026-10-23T07:44:36.951Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:56:49.866Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/John_M_Jumper_Google_DeepMind_%2814_Sep_2024%29_-_img_03.jpg/1280px-John_M_Jumper_Google_DeepMind_%2814_Sep_2024%29_-_img_03.jpg",
+        "yazar": "National Academies - Earth and Life Studies",
+        "lisans": "CC BY 3.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/3.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:John_M_Jumper_Google_DeepMind_(14_Sep_2024)_-_img_03.jpg"
+      }
+    ]
   },
   {
     "id": "3cf422c895b10d9e",
@@ -14327,7 +14448,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:38:00.000Z",
     "generatedAt": "2026-10-23T07:51:09.385Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:56:51.717Z"
   },
   {
     "id": "d01ec7b4282a8f4f",
@@ -14363,7 +14485,24 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:37:04.000Z",
     "generatedAt": "2026-10-23T07:56:38.236Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:56:53.890Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Microsoft_Software_Development_Center%2C_Seestrasse_356%2C_Z%C3%BCrich_%28Ank_Kumar%2C_Infosys_Limited%29_01.jpg/1280px-Microsoft_Software_Development_Center%2C_Seestrasse_356%2C_Z%C3%BCrich_%28Ank_Kumar%2C_Infosys_Limited%29_01.jpg",
+        "yazar": "Ank Kumar",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_Software_Development_Center,_Seestrasse_356,_Z%C3%BCrich_(Ank_Kumar,_Infosys_Limited)_01.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Microsoft_Software_Development_Center%2C_Seestrasse_356%2C_Z%C3%BCrich_%28Ank_Kumar%2C_Infosys_Limited%29_02.jpg/1280px-Microsoft_Software_Development_Center%2C_Seestrasse_356%2C_Z%C3%BCrich_%28Ank_Kumar%2C_Infosys_Limited%29_02.jpg",
+        "yazar": "Ank Kumar",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_Software_Development_Center,_Seestrasse_356,_Z%C3%BCrich_(Ank_Kumar,_Infosys_Limited)_02.jpg"
+      }
+    ]
   },
   {
     "id": "221de5c4ac03b91c",
@@ -14399,7 +14538,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:37:00.000Z",
     "generatedAt": "2026-10-23T07:45:50.706Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:56:55.661Z"
   },
   {
     "id": "f75583cd4358991b",
@@ -14433,7 +14573,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:35:22.000Z",
     "generatedAt": "2026-10-23T07:46:01.145Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:56:58.150Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Konya_Sweets_20220926_164712m.jpg/1280px-Konya_Sweets_20220926_164712m.jpg",
+        "yazar": "Joe Wallace",
+        "lisans": "CC BY-SA 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Konya_Sweets_20220926_164712m.jpg"
+      }
+    ]
   },
   {
     "id": "5de00d23554f7259",
@@ -14468,7 +14618,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:34:00.000Z",
     "generatedAt": "2026-10-23T07:46:12.270Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:57:00.130Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/T%C3%BCrkiye_Diyanet_Vakf%C4%B1_Matbaa_Tesisleri.jpg/1280px-T%C3%BCrkiye_Diyanet_Vakf%C4%B1_Matbaa_Tesisleri.jpg",
+        "yazar": "Satirdan kahraman",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:T%C3%BCrkiye_Diyanet_Vakf%C4%B1_Matbaa_Tesisleri.jpg"
+      }
+    ]
   },
   {
     "id": "3a50b16f36f23ed8",
@@ -14503,7 +14663,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:33:00.000Z",
     "generatedAt": "2026-10-23T07:35:31.381Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:57:03.149Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/%22GTA_Vice_City%22_Fashion_%2827520178494%29.jpg/1280px-%22GTA_Vice_City%22_Fashion_%2827520178494%29.jpg",
+        "yazar": "Coastal Elite from Halifax, Canada",
+        "lisans": "CC BY-SA 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:%22GTA_Vice_City%22_Fashion_(27520178494).jpg"
+      }
+    ]
   },
   {
     "id": "acfffa60fed1ff48",
@@ -14538,7 +14708,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:30:00.000Z",
     "generatedAt": "2026-10-23T07:35:42.299Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:57:04.322Z"
   },
   {
     "id": "a26fb213d63260aa",
@@ -14573,7 +14744,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:25:02.000Z",
     "generatedAt": "2026-10-23T07:35:53.639Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:57:05.698Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Police_station_karlsruhe_Waldstadt_2.jpg/1280px-Police_station_karlsruhe_Waldstadt_2.jpg",
+        "yazar": "Killarnee",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Police_station_karlsruhe_Waldstadt_2.jpg"
+      }
+    ]
   },
   {
     "id": "6f2eaba2bfd283ff",
@@ -14608,7 +14789,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:24:27.000Z",
     "generatedAt": "2026-10-23T07:36:05.886Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:57:10.884Z"
   },
   {
     "id": "b9c02ee020f35eb1",
@@ -14644,7 +14826,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:23:56.000Z",
     "generatedAt": "2026-10-23T07:27:10.799Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:57:12.276Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Foldable_smartphone_%28Android_Ice_Cream_Sandwich%29.jpg/1280px-Foldable_smartphone_%28Android_Ice_Cream_Sandwich%29.jpg",
+        "yazar": "The photo: Own work The logos: Google LLC",
+        "lisans": "CC BY 3.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/3.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Foldable_smartphone_(Android_Ice_Cream_Sandwich).jpg"
+      }
+    ]
   },
   {
     "id": "4772e10830a854fd",
@@ -14679,7 +14871,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:21:00.000Z",
     "generatedAt": "2026-10-23T07:28:04.203Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:57:14.349Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/2020_Aegean_Sea_earthquake_search_and_rescue_efforts_2.jpg/1280px-2020_Aegean_Sea_earthquake_search_and_rescue_efforts_2.jpg",
+        "yazar": "Oğulcan Bakiler (VOA)",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:2020_Aegean_Sea_earthquake_search_and_rescue_efforts_2.jpg"
+      }
+    ]
   },
   {
     "id": "daca47e4c7e424cd",
@@ -14712,7 +14914,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:20:26.000Z",
     "generatedAt": "2026-10-23T07:28:18.490Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:57:19.114Z"
   },
   {
     "id": "87a907a88b571517",
@@ -14746,7 +14949,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:20:19.000Z",
     "generatedAt": "2026-10-23T07:28:29.016Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:57:20.093Z"
   },
   {
     "id": "1276880c738fb5b8",
@@ -14781,7 +14985,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:06:46.000Z",
     "generatedAt": "2026-10-23T07:16:56.614Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:57:23.362Z",
+    "gorselEk": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Bienvenidos_a_WhatsApp.jpg",
+        "yazar": "microsiervos",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Bienvenidos_a_WhatsApp.jpg"
+      }
+    ]
   },
   {
     "id": "d2b149914aa2ce18",
@@ -14817,7 +15031,24 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:04:58.000Z",
     "generatedAt": "2026-10-23T07:18:22.734Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:57:25.392Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Elbilfestival_i_Geiranger_two_Tesla_Model_S_electric_cars.jpg/1280px-Elbilfestival_i_Geiranger_two_Tesla_Model_S_electric_cars.jpg",
+        "yazar": "Norsk Elbilforening (Norwegian Electric Vehicle Association)",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Elbilfestival_i_Geiranger_two_Tesla_Model_S_electric_cars.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/2022.07.19_Fully_electric_car_Tesla_Model_3_Dual_motor_in_Tomasz%C3%B3w_Mazowiecki%2C_Poland_%281%29.jpg/1280px-2022.07.19_Fully_electric_car_Tesla_Model_3_Dual_motor_in_Tomasz%C3%B3w_Mazowiecki%2C_Poland_%281%29.jpg",
+        "yazar": "WrS.tm.pl",
+        "lisans": "CC0",
+        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:2022.07.19_Fully_electric_car_Tesla_Model_3_Dual_motor_in_Tomasz%C3%B3w_Mazowiecki,_Poland_(1).jpg"
+      }
+    ]
   },
   {
     "id": "31e6d19d4b52609d",
@@ -14852,7 +15083,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:03:00.000Z",
     "generatedAt": "2026-10-23T07:19:21.456Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:57:26.797Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/1931_Hawkes_Bay_Earthquake_-_Unidentified_Damaged_Street_%2824029554553%29.jpg/1280px-1931_Hawkes_Bay_Earthquake_-_Unidentified_Damaged_Street_%2824029554553%29.jpg",
+        "yazar": "Archives New Zealand from New Zealand",
+        "lisans": "CC BY-SA 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:1931_Hawkes_Bay_Earthquake_-_Unidentified_Damaged_Street_(24029554553).jpg"
+      }
+    ]
   },
   {
     "id": "a9b9e6951827cd59",
@@ -14887,7 +15128,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:00:08.000Z",
     "generatedAt": "2026-10-23T07:01:47.593Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:57:29.400Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/West_Lighthouse%2C_Rathlin_hugging_the_cliff_face_03.jpg/1280px-West_Lighthouse%2C_Rathlin_hugging_the_cliff_face_03.jpg",
+        "yazar": "Mainlymazza",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:West_Lighthouse,_Rathlin_hugging_the_cliff_face_03.jpg"
+      }
+    ]
   },
   {
     "id": "ff2efcb57cf3b979",
@@ -14922,7 +15173,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T07:00:00.000Z",
     "generatedAt": "2026-10-23T07:20:08.076Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:57:30.707Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Damaged_Hospital_Wing_%284478650969%29.jpg/1280px-Damaged_Hospital_Wing_%284478650969%29.jpg",
+        "yazar": "U.S. Geological Survey from Reston, VA, USA",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Damaged_Hospital_Wing_(4478650969).jpg"
+      }
+    ]
   },
   {
     "id": "d58a190a19eea228",
@@ -14962,7 +15223,17 @@
     },
     "publishedAt": "2026-10-23T06:57:41.000Z",
     "generatedAt": "2026-10-23T07:05:08.819Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:57:33.187Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Electrolux_ZA_70_cut-out.jpg/1280px-Electrolux_ZA_70_cut-out.jpg",
+        "yazar": "Peter Häll",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Electrolux_ZA_70_cut-out.jpg"
+      }
+    ]
   },
   {
     "id": "fb4e634f3e31fc08",
@@ -14996,7 +15267,17 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T06:47:00.000Z",
     "generatedAt": "2026-10-23T06:55:36.752Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:57:35.438Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Seyhan_Dam_Reservoir_-Adana-_%28Wild_protected_area%29_CDGenc.jpg/1280px-Seyhan_Dam_Reservoir_-Adana-_%28Wild_protected_area%29_CDGenc.jpg",
+        "yazar": "Cdgenc",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Seyhan_Dam_Reservoir_-Adana-_(Wild_protected_area)_CDGenc.jpg"
+      }
+    ]
   },
   {
     "id": "7bcba5704d0a76d0",
@@ -15030,7 +15311,8 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-23T06:46:00.000Z",
     "generatedAt": "2026-10-23T06:56:21.640Z",
-    "breaking": true
+    "breaking": true,
+    "ekGorselDeneme": "2026-10-25T00:57:37.400Z"
   },
   {
     "id": "29651d03c904981e",
