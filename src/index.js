@@ -112,7 +112,9 @@ async function main() {
   // gitmedi). Artık hedefin önündeyken tempo 1,5 katına çıkar (36 -> 54 dk),
   // hedef yakalanınca normale döner. Günlük tavan (40) her durumda geçerli.
   const hedefOnde =
-    config.gunlukLimit > 0 && bugunSayi > gunlukHedef + 1;
+    config.gunlukLimit > 0 && bugunSayi > gunlukHedef + 5;
+  const hedefGeride =
+    config.gunlukLimit > 0 && bugunSayi + 4 < gunlukHedef;
 
   let sonYayin = 0;
   for (const a of articles) {
@@ -242,22 +244,19 @@ async function main() {
   // 72 dk geçtiyse 2... Hattın uzun süre durduğu durumda en fazla turKota.
   const beklemeDk =
     (breakingPool.length ? config.sonDakikaAralikDk : config.yayinAralikDk) *
-    (hedefOnde ? 1.5 : 1);
+    (hedefOnde ? 1.35 : hedefGeride ? 0.65 : 1);
   const saatKota = config.saatlikLimit > 0 ? config.saatlikLimit : Infinity;
   const saatDolu = Number.isFinite(saatKota) && sonSaatSayi >= saatKota;
   const siraGeldi = kalanKota > 0 && gecenDk >= beklemeDk && !saatDolu;
-  // Gün sınırında (dünün son haberinden sonra) tek haberle başla; aksi halde
-  // gece yarısı 2-3 haber birden basılıp günün geri kalanı seyreltilir.
-  const slotKota = dunYayin
+  const slotTemel = dunYayin
     ? 1
     : beklemeDk > 0 && Number.isFinite(gecenDk)
       ? Math.max(1, Math.floor(gecenDk / beklemeDk))
       : turKota;
-  // Aynı anda en fazla saatlik tavan kadar yayınla; uzun duraklamadan sonra
-  // 4 haber birden basıp tempoyu bozmayalım.
+  const slotKota = hedefGeride && !dunYayin ? Math.max(slotTemel, Math.min(turKota, 2)) : slotTemel;
   const buTurKota = Math.max(
     0,
-    Math.min(turKota, slotKota, saatKota)
+    Math.min(turKota, slotKota, Math.max(1, saatKota - sonSaatSayi))
   );
 
   // Tek haberlik turda öncelik son dakikada: vitrin adayı taze olsa bile

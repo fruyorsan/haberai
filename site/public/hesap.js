@@ -450,20 +450,35 @@
   async function pushEsle(u) {
     u = u || oturumOku();
     if (!u) return;
-    // Yerel kopya OneSignal'den BAĞIMSIZ yazılır: bildirim paneli ve haber
-    // sayfasındaki "takip et" düğmeleri, SDK hazır olmasa da seçimleri dolu
-    // göstersin. (Eskiden erken return yüzünden seçimler kaybolmuş görünüyordu.)
-    // Hesapta hiç konu yoksa (ne bildirim konusu ne ilgi alanı) cihazın kendi
-    // panelinden yaptığı seçim KORUNUR; eskiden her sayfa açılışında boş listeyle
-    // üzerine yazılıyor ve okuyucunun seçtiği konular siliniyordu.
-    var hesapListesi =
-      u.bildirim_ilgi && u.bildirim_ilgi.length ? u.bildirim_ilgi : u.ilgi || [];
+    // Hem yeni hem mevcut kullanıcılar için varsayılan bildirim sıklığını
+    // günde ~10 senkronize bildirim ("gun10") olarak eşitle.
+    try {
+      if (localStorage.getItem("bildirim-senkron-v2") !== "1") {
+        localStorage.setItem("bildirim-mod", "gun10");
+        localStorage.setItem("bildirim-siklik", "aninda");
+        localStorage.setItem("bildirim-senkron-v2", "1");
+        u.bildirim_mod = "gun10";
+        u.bildirim_siklik = "aninda";
+      }
+    } catch (e) {}
+
+    // Kullanıcının bildirim başlıkları (`bildirim_ilgi` veya yerel `bildirim-kategoriler`),
+    // Shorts akışı ilgi alanlarından (`u.ilgi`) bağımsızdır. Yalnızca her ikisi de
+    // boşsa ilk kurulumda `u.ilgi` temel alınır.
+    var hesapBildirimListesi =
+      Array.isArray(u.bildirim_ilgi) && u.bildirim_ilgi.length ? u.bildirim_ilgi : [];
     var yerelListe = [];
     try {
       var ham = JSON.parse(localStorage.getItem("bildirim-kategoriler") || "[]");
       if (Array.isArray(ham)) yerelListe = ham.filter(Boolean).map(String);
     } catch (e) {}
-    var slugs = hesapListesi.length ? hesapListesi : yerelListe;
+    var slugs = hesapBildirimListesi.length
+      ? hesapBildirimListesi
+      : yerelListe.length
+        ? yerelListe
+        : Array.isArray(u.ilgi)
+          ? u.ilgi
+          : [];
     try {
       localStorage.setItem("bildirim-kategoriler", JSON.stringify(slugs));
       if (u.bildirim_siklik && !localStorage.getItem("bildirim-siklik")) {
@@ -498,15 +513,13 @@
       var mod = "gun10";
       try {
         sonGenel = JSON.parse(localStorage.getItem("bildirim-son-dakika") || "false") === true;
-        mod = localStorage.getItem("bildirim-mod") || u.bildirim_mod || "";
+        mod = localStorage.getItem("bildirim-mod") || u.bildirim_mod || "gun10";
       } catch (e) {}
-      var siklik = u.bildirim_siklik || "";
-      if (!siklik) {
-        try {
-          siklik = localStorage.getItem("bildirim-siklik") || "aninda";
-        } catch (e) {
-          siklik = "aninda";
-        }
+      var siklik = "aninda";
+      try {
+        siklik = localStorage.getItem("bildirim-siklik") || u.bildirim_siklik || "aninda";
+      } catch (e) {
+        siklik = "aninda";
       }
       if (!mod) {
         mod = siklik === "ozet" ? "ozet" : siklik === "son" ? "son" : "gun10";

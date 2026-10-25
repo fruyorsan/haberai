@@ -173,15 +173,15 @@ export const config = {
   // Ayrıca src/index.js kotayı günün geçen oranına göre de sınırlar:
   // öğlene kadar ~20, 20:00'de ~33 haber. Böylece 40 haber sabah
   // saatlerinde tükenip akşam site sessiz kalmaz.
-  gunlukLimit: Number(process.env.GUNLUK_HABER_LIMIT || 40),
+  gunlukLimit: Number(process.env.GUNLUK_HABER_LIMIT || 135),
   // 40 haber / 24 saat ≈ 36 dk arayla. Böylece kota günün ilk saatlerinde
   // tükenmez, akış gece yarısına kadar dengeli sürer.
-  yayinAralikDk: Number(process.env.YAYIN_ARALIK_DK || 36),
-  sonDakikaAralikDk: Number(process.env.SON_DAKIKA_ARALIK_DK || 12),
+  yayinAralikDk: Number(process.env.YAYIN_ARALIK_DK || 10),
+  sonDakikaAralikDk: Number(process.env.SON_DAKIKA_ARALIK_DK || 5),
   // Saatlik tavan: "son dakika" adayları gün içinde neredeyse hiç bitmediği
   // için 12 dk aralık tek başına kotayı 8 saatte tüketirdi. Saatte en fazla
   // 2 haber (0 = sınırsız) akışı gün boyuna yayar.
-  saatlikLimit: Number(process.env.SAATLIK_HABER_LIMIT || 2),
+  saatlikLimit: Number(process.env.SAATLIK_HABER_LIMIT || 7),
 
   // ------------------------------------------------------------------
   // SON DAKİKA (hızlı hat)

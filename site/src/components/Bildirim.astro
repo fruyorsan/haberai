@@ -638,6 +638,40 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
     const K_ABONE = "bildirim-abone";
     const K_KAT = "bildirim-kategoriler";
     const K_SON = "bildirim-son-dakika";
+    const K_SENKRON_V2 = "bildirim-senkron-v2";
+    const TUM_KATEGORILER = [
+      "gundem",
+      "ekonomi",
+      "teknoloji",
+      "yapay-zeka",
+      "spor",
+      "dunya",
+      "kultur",
+      "yasam",
+      "bilim",
+      "saglik",
+      "egitim",
+      "otomobil",
+      "kripto",
+      "oyun",
+      "savunma",
+      "enerji",
+      "cevre",
+      "hukuk",
+      "emlak",
+      "tarim",
+      "seyahat",
+    ];
+
+    // Hem yeni hem mevcut kullanıcılar için varsayılan bildirim sıklığını
+    // günde ~10 senkronize bildirim ("gun10") olarak eşitle.
+    try {
+      if (localStorage.getItem(K_SENKRON_V2) !== "1") {
+        localStorage.setItem("bildirim-mod", "gun10");
+        localStorage.setItem("bildirim-siklik", "aninda");
+        localStorage.setItem(K_SENKRON_V2, "1");
+      }
+    } catch {}
 
     const oku = (k, yedek) => {
       try {
@@ -706,15 +740,18 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
       if (!mod) {
         mod = siklik === "ozet" ? "ozet" : siklik === "son" ? "son" : "gun10";
       }
-      const t = {
+      const t: Record<string, string> = {
         son_dakika: "",
         son_dakika_genel: sonDakika || mod === "son" ? "1" : "",
         bildirim_sikligi: mod === "kapali" ? "kapali" : siklik,
         bildirim_mod: mod,
       };
       const konuAcik = mod === "gun10" || mod === "hepsi" || (siklik === "aninda" && mod !== "kapali");
-      for (const c of cipler) {
-        const slug = c.dataset.kategori;
+      const tumSluglar = new Set([
+        ...TUM_KATEGORILER,
+        ...cipler.map((c) => c.dataset.kategori).filter(Boolean),
+      ]);
+      for (const slug of tumSluglar) {
         const acik = konuAcik && kategoriler.has(slug);
         t["kategori_" + slug] = acik ? "1" : "";
       }
@@ -833,10 +870,11 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
     /** Cihazda anında görünen yerel bildirim (sunucu/abonelik gerektirmez). */
     async function yerelBildirim(baslik, govde, etiket) {
       if (!izinVerildi()) return false;
-      const secenek: NotificationOptions = {
+      const secenek: NotificationOptions & { image?: string } = {
         body: govde,
         icon: "/ikon-192.png",
-        badge: "/ikon-192.png",
+        badge: "/badge-96.png",
+        image: "/og-default.png",
         tag: etiket,
         lang: "tr",
         data: { url: "/" },
@@ -1131,6 +1169,13 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
       durumYaz();
     });
 
+    function hesabaKategorileriYaz() {
+      const H = (window as any).HaberinAi;
+      if (H?.oturumOku?.() && H?.profilGuncelle) {
+        void H.profilGuncelle({ bildirim_ilgi: [...kategoriler] });
+      }
+    }
+
     // --- Konu çipleri ---
     for (const c of cipler) {
       c.addEventListener("click", async () => {
@@ -1139,6 +1184,7 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
         if (acilacak) kategoriler.add(slug);
         else kategoriler.delete(slug);
         yaz(K_KAT, [...kategoriler]);
+        hesabaKategorileriYaz();
         ciz();
 
         let yeni = false;
@@ -1164,6 +1210,7 @@ const aktif = Boolean(appId) && kategoriler.length > 0;
         if (acilacak) kategoriler.add(slug);
         else kategoriler.delete(slug);
         yaz(K_KAT, [...kategoriler]);
+        hesabaKategorileriYaz();
         ciz();
         takipNotu(d, "");
 

@@ -43,9 +43,11 @@ import { existsSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import { getArticles, imageUrl } from "../site/src/lib/articles.js";
+import { getArticles, imageUrl, slugify } from "../site/src/lib/articles.js";
 import { kapakKaynagi } from "../site/src/lib/kapak.js";
 import { ilgiSkoru } from "../site/src/lib/ilgi.js";
+import { canonicalCategory } from "./ai.js";
+import { yedekGorsel } from "./stok-gorsel.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = join(__dirname, "..", "data");
@@ -100,32 +102,28 @@ function acilBaslik(a) {
   if (/deprem/.test(t)) return YEREL_DEPREM.test(t);
   return ACIL_BASLIK.test(t);
 }
-// Konu bildirimleri: 40 haber/gün için günde ~10 bildirim (1 bildirim / 4 haber).
-// 96 dk aralık + 23:00-07:00 sessizlik + sabah kotası sayesinde bildirimler
-// 07:00-21:24 arasına eşit yayılır; akşam/gece yığılması olmaz.
-const KAT_MIN_ARALIK_DK = Number(process.env.BILDIRIM_KAT_ARALIK_DK ?? 120);
-const KAT_GENEL_ARALIK_DK = Number(process.env.BILDIRIM_KAT_GENEL_ARALIK_DK ?? 96);
+// Konu bildirimleri: ~130 haber/gün (110–140 bandı) akışıyla senkronize günde ~10 bildirim.
+// 07:00-23:00 (16 aktif saat = 960 dk) boyunca her ~12-13 haberde 1 bildirim düşecek
+// şekilde (~85 dk aralıkla) gün içine dengeli yayılır.
+const KAT_MIN_ARALIK_DK = Number(process.env.BILDIRIM_KAT_ARALIK_DK ?? 80);
+const KAT_GENEL_ARALIK_DK = Number(process.env.BILDIRIM_KAT_GENEL_ARALIK_DK ?? 85);
 const KAT_MAX_GUN = Number(process.env.BILDIRIM_KAT_MAX_GUN ?? 10);
 // Taze sayılan pencere: SENKRON kuralı. Bildirim adayı, son konu
 // bildiriminden bu yana yayınlanan haberlerden seçilir (pencere = geçen süre
-// + 12 dk). Alt sınır 40 dk: hızlı art arda çalışan turlarda havuz boş
-// kalmasın. Üst sınır 150 dk: hat uzun süre durursa saatler önceki haber
+// + 12 dk). Alt sınır 35 dk: hızlı art arda çalışan turlarda havuz boş
+// kalmasın. Üst sınır 140 dk: hat uzun süre durursa saatler önceki haber
 // "yeni" diye gönderilmesin.
-const KAT_PENCERE_MIN_DK = Number(process.env.BILDIRIM_KAT_PENCERE_MIN_DK ?? 40);
-const KAT_PENCERE_MAX_DK = Number(process.env.BILDIRIM_KAT_PENCERE_MAX_DK ?? 150);
-// Senkron freni: eldeki en yeni haber bile bu süreden eskiyse bildirim
-// gönderilmez, yeni haber beklenir. 60 dk ≈ bir yayın turu (config:
-// yayinAralikDk=36 + hat gecikmesi); böylece bildirim her zaman "az önce
-// çıkan" habere denk gelir, hat durduğunda eski haber taze diye gitmez.
-const KAT_MAKS_YAS_DK = Number(process.env.BILDIRIM_KAT_MAKS_YAS_DK ?? 60);
-// Tur başına en fazla kaç KATEGORİ işlenir (adil sıra).
-const KAT_TUR_ADET = Number(process.env.BILDIRIM_KAT_TUR_ADET ?? 1);
-// Tur başına gönderilecek en fazla HABER (taşma koruması; sonraki turda devam).
-const KAT_TUR_HABER = Number(process.env.BILDIRIM_KAT_TUR_HABER ?? 1);
+const KAT_PENCERE_MIN_DK = Number(process.env.BILDIRIM_KAT_PENCERE_MIN_DK ?? 35);
+const KAT_PENCERE_MAX_DK = Number(process.env.BILDIRIM_KAT_PENCERE_MAX_DK ?? 140);
+// Senkron freni: ~130 haber/gün temposunda her ~10 dk'da yeni haber çıkar;
+// eldeki en yeni haber 45 dk'dan eskiyse yeni haber beklenir.
+const KAT_MAKS_YAS_DK = Number(process.env.BILDIRIM_KAT_MAKS_YAS_DK ?? 45);
+// Tur başına en fazla kaç KATEGORİ işlenir (farklı kategorileri takip eden okurlar birbirini tıkamasın).
+const KAT_TUR_ADET = Number(process.env.BILDIRIM_KAT_TUR_ADET ?? 2);
+// Tur başına gönderilecek en fazla HABER.
+const KAT_TUR_HABER = Number(process.env.BILDIRIM_KAT_TUR_HABER ?? 2);
 // Kimsenin takip etmediği (alıcısı 0 çıkan) kategori bu süre boyunca atlanır.
-// Kısa tutulur: bir okuyucu o konuyu YENİ takip ettiyse ilk bildirimi saatlerce
-// beklememeli. Boşta kalan kategori yalnızca saatte bir kez denenir.
-const KAT_BOS_GERI_CEK_SAAT = Number(process.env.BILDIRIM_KAT_BOS_SAAT ?? 2);
+const KAT_BOS_GERI_CEK_SAAT = Number(process.env.BILDIRIM_KAT_BOS_SAAT ?? 1);
 const TOPLAM_MAX_GUN = Number(process.env.BILDIRIM_TOPLAM_MAX_GUN ?? 12);
 // Özet bildirimi: "ozet" seçen okuyucuya günde 3 kez (TR 09/15/21).
 const OZET_SAATLER = [9, 15, 21];
@@ -201,6 +199,7 @@ async function durumOku() {
       updatedAt: null,
       sonDakika: null,
       sent: [],
+      sentHepsi: [],
       sonKategori: {},
       sonOzet: null,
       gun: "",
@@ -214,6 +213,7 @@ async function durumOku() {
     return {
       updatedAt: d.updatedAt || null,
       sent: Array.isArray(d.sent) ? d.sent.map(String) : [],
+      sentHepsi: Array.isArray(d.sentHepsi) ? d.sentHepsi.map(String) : [],
       sonKategori: d.sonKategori && typeof d.sonKategori === "object" ? d.sonKategori : {},
       bosKategori: d.bosKategori && typeof d.bosKategori === "object" ? d.bosKategori : {},
       sonDakika: d.sonDakika || null,
@@ -229,6 +229,7 @@ async function durumOku() {
       updatedAt: null,
       sonDakika: null,
       sent: [],
+      sentHepsi: [],
       sonKategori: {},
       bosKategori: {},
       sonOzet: null,
@@ -244,6 +245,7 @@ async function durumOku() {
 async function durumYaz(durum) {
   await mkdir(DATA_DIR, { recursive: true });
   const sent = [...new Set(durum.sent.map(String))].slice(-SENT_LIMIT);
+  const sentHepsi = [...new Set((durum.sentHepsi || []).map(String))].slice(-SENT_LIMIT);
   const payload = {
     updatedAt: durum.updatedAt,
     sonDakika: durum.sonDakika || null,
@@ -254,6 +256,7 @@ async function durumYaz(durum) {
     bosKategori: durum.bosKategori || {},
     sonOzet: durum.sonOzet || null,
     sent,
+    sentHepsi,
     hosGeldin: durum.hosGeldin === true,
     cihazlar: [...new Set((durum.cihazlar || []).map(String))].slice(-600),
     cihazTaban: durum.cihazTaban === true,
@@ -361,13 +364,17 @@ function normalizeSrc(src) {
  * Web push bildirimi için görsel URL'si üretir.
  * - 2:1 en-boy oranı (Chrome ve Windows Web Push resmi standardı: 720x360).
  * - Doğrudan uzantı içeren URL (/haber.jpg) -> Windows Action Center (WNS) uzantısız kök URL'leri görsel saymayıp düşürebiliyordu.
- * - Proxy engelleyen veya 404 dönen host'lar (teimg.com vb.) için doğrudan orijinal URL kullanılır.
+ * - Proxy engelleyen veya 404 dönen host'lar (teimg.com vb.) için yalnızca doğrudan JPEG/PNG ise orijinal URL kullanılır; WebP ise WNS/APNs düşürdüğü için kabul edilmez.
  */
 function bildirimGorseli(src, width = 720, height = 360) {
   if (!src || !/^https?:\/\//i.test(src)) return "";
   const s = normalizeSrc(src);
   try {
-    if (DIRECT_IMAGE_HOSTS.test(new URL(s).hostname)) return s;
+    const u = new URL(s);
+    if (DIRECT_IMAGE_HOSTS.test(u.hostname)) {
+      if (/\.(jpe?g|png)(\?|$)/i.test(u.pathname)) return s;
+      return "";
+    }
   } catch {}
   const w = Math.round(width);
   const h = Math.round(height);
@@ -378,23 +385,113 @@ function bildirimIkonu(src) {
   if (!src || !/^https?:\/\//i.test(src)) return `${SITE_URL}/ikon-192.png`;
   const s = normalizeSrc(src);
   try {
-    if (DIRECT_IMAGE_HOSTS.test(new URL(s).hostname)) return s;
+    const u = new URL(s);
+    if (DIRECT_IMAGE_HOSTS.test(u.hostname)) {
+      if (/\.(jpe?g|png)(\?|$)/i.test(u.pathname)) return s;
+      return `${SITE_URL}/ikon-192.png`;
+    }
   } catch {}
   return `https://wsrv.nl/ikon.jpg?url=${encodeURIComponent(s)}&w=192&h=192&fit=cover&we&output=jpg&q=85`;
 }
 
-/** Bildirimin tıklanınca gideceği adres + görsel + metin. */
-function bildirimIcerigi(a, { baslik }) {
+const gorselOnbellek = new Map();
+
+/**
+ * Push görselini gönderimden ÖNCE gerçekten indirerek:
+ * 1) HTTP 200 ve geçerli JPEG/PNG olduğunu doğrular (WebP veya 404 ise eler),
+ * 2) wsrv.nl / Cloudflare CDN önbelleğini ısıtır (ilk istekte 5-9 sn süren
+ *    dönüşüm yüzünden Chrome/Windows/Android Service Worker'ın zaman aşımına
+ *    uğrayıp bildirimi görselsiz göstermesini engeller).
+ */
+async function gorselDogrulaVeIsit(url) {
+  if (!url || !/^https?:\/\//i.test(url)) return false;
+  if (url.startsWith(SITE_URL)) return true;
+  if (gorselOnbellek.has(url)) return gorselOnbellek.get(url);
+  try {
+    const res = await fetch(url, {
+      method: "GET",
+      headers: {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/125.0.0.0 Safari/537.36",
+        Accept: "image/jpeg,image/png,image/*;q=0.8",
+      },
+      redirect: "follow",
+      signal: AbortSignal.timeout(7500),
+    });
+    const ct = (res.headers.get("content-type") || "").toLowerCase();
+    const gecerli =
+      res.ok &&
+      (ct.includes("image/jpeg") || ct.includes("image/jpg") || ct.includes("image/png"));
+    if (gecerli) {
+      const buf = await res.arrayBuffer();
+      const tamam = buf.byteLength >= 1500;
+      gorselOnbellek.set(url, tamam);
+      return tamam;
+    }
+  } catch {}
+  gorselOnbellek.set(url, false);
+  return false;
+}
+
+/** Bildirimin tıklanınca gideceği adres + doğrulanmış/ısıtılmış görsel + metin. */
+async function bildirimIcerigiHazirla(a, { baslik }, { dry = false } = {}) {
+  const adayKaynaklar = [];
   const kapak = kapakKaynagi(a);
-  const hamGorsel =
-    kapak ||
-    (a?.image &&
+  if (kapak) adayKaynaklar.push(kapak);
+  if (
+    a?.image &&
     /^https?:\/\//i.test(a.image) &&
-    !/placeholder|no[-_]?image|default[-_/]?news|avatar/i.test(a.image)
-      ? a.image
-      : "");
-  const gorsel = hamGorsel ? bildirimGorseli(hamGorsel, 720, 360) : `${SITE_URL}/og-default.png`;
-  const ikon = hamGorsel ? bildirimIkonu(hamGorsel) : `${SITE_URL}/ikon-192.png`;
+    !/placeholder|no[-_]?image|default[-_/]?news|avatar/i.test(a.image) &&
+    !adayKaynaklar.includes(a.image)
+  ) {
+    adayKaynaklar.push(a.image);
+  }
+  if (Array.isArray(a?.gorselEk)) {
+    for (const ek of a.gorselEk) {
+      if (ek?.url && /^https?:\/\//i.test(ek.url) && !adayKaynaklar.includes(ek.url)) {
+        adayKaynaklar.push(ek.url);
+      }
+    }
+  }
+  const yedek = yedekGorsel(a?.category || "Gündem");
+  if (yedek?.url && !adayKaynaklar.includes(yedek.url)) {
+    adayKaynaklar.push(yedek.url);
+  }
+
+  let secilenKaynak = adayKaynaklar[0] || "";
+  let gorsel = secilenKaynak ? bildirimGorseli(secilenKaynak, 720, 360) : "";
+
+  if (!dry) {
+    let bulundu = false;
+    for (const kaynak of adayKaynaklar) {
+      const wsrvUrl = bildirimGorseli(kaynak, 720, 360);
+      if (wsrvUrl && (await gorselDogrulaVeIsit(wsrvUrl))) {
+        secilenKaynak = kaynak;
+        gorsel = wsrvUrl;
+        bulundu = true;
+        break;
+      }
+      const temiz = normalizeSrc(kaynak);
+      if (/\.(jpe?g|png)(\?|$)/i.test(temiz) && (await gorselDogrulaVeIsit(temiz))) {
+        secilenKaynak = kaynak;
+        gorsel = temiz;
+        bulundu = true;
+        break;
+      }
+    }
+    if (!bulundu) {
+      gorsel = `${SITE_URL}/og-default.png`;
+      secilenKaynak = "";
+    }
+  } else if (!gorsel) {
+    gorsel = `${SITE_URL}/og-default.png`;
+  }
+
+  let ikon = secilenKaynak ? bildirimIkonu(secilenKaynak) : `${SITE_URL}/ikon-192.png`;
+  if (!dry && ikon !== `${SITE_URL}/ikon-192.png`) {
+    const ikonTamam = await gorselDogrulaVeIsit(ikon);
+    if (!ikonTamam) ikon = `${SITE_URL}/ikon-192.png`;
+  }
+
   return {
     baslik,
     icerik: kisalt(a.title, 120),
@@ -474,16 +571,17 @@ async function sayfaHazirMi(url, deneme = 8, aralikMs = 20000) {
 
 /**
  * OneSignal'e bir bildirim gönderir.
- * @param {{baslik:string,icerik:string,url:string,gorsel?:string,etiket?:string,ttl:number,anahtar:string}} p
+ * @param {{baslik:string,icerik:string,url:string,gorsel?:string,ikon?:string,etiket?:string,ttl:number,anahtar:string}} p
  */
 async function gonder(p) {
   if (!(await sayfaHazirMi(p.url))) {
     throw new Error(`hedef sayfa yayında değil (404/hazır değil): ${p.url}`);
   }
-  // Marka logosu (tüm bildirimlerin solunda resmi HaberinAi logosu görünür)
   const logoIkon = `${SITE_URL}/ikon-192.png`;
+  const ikon = p.ikon || logoIkon;
   // Android durum çubuğu ve rozet için şeffaf zeminli beyaz silüet (gri kutu hatasını engeller)
   const badgeIkon = `${SITE_URL}/badge-96.png`;
+  const gorsel = p.gorsel || `${SITE_URL}/og-default.png`;
 
   const govde = {
     app_id: APP_ID,
@@ -491,22 +589,19 @@ async function gonder(p) {
     headings: { tr: p.baslik, en: p.baslik },
     contents: { tr: p.icerik, en: p.icerik },
     url: p.url,
-    chrome_web_icon: logoIkon,
-    firefox_icon: logoIkon,
-    large_icon: logoIkon,
+    chrome_web_icon: ikon,
+    firefox_icon: ikon,
+    large_icon: ikon,
     chrome_web_badge: badgeIkon,
+    chrome_web_image: gorsel,
+    big_picture: gorsel,
+    adm_big_picture: gorsel,
+    ios_attachments: { id1: gorsel },
     ttl: p.ttl,
     idempotency_key: uuidAnahtar(p.anahtar),
-    web_push_topic: 'hb_' + uuidAnahtar(p.anahtar || p.url || Date.now()),
-    android_group: 'haberinai_haberler',
+    web_push_topic: "hb_" + uuidAnahtar(p.anahtar || p.url || Date.now()),
+    android_group: "haberinai_haberler",
   };
-
-  // Büyük görsel (16:9): Chrome Masaüstü, Android ve iOS/Safari'de genişletilmiş görünüm için
-  if (p.gorsel) {
-    govde.chrome_web_image = p.gorsel;
-    govde.big_picture = p.gorsel;
-    govde.ios_attachments = { id1: p.gorsel };
-  }
 
   if (p.abonelikId) {
     // Tek bir cihaza gönderim (yeni aboneye "hoş geldin").
@@ -558,6 +653,18 @@ async function gonder(p) {
   return yanit;
 }
 
+/**
+ * Haberin gerçek kategorisinin, üzerindeki `categorySlug` ile birebir örtüştüğünü doğrular.
+ * Örneğin kaynak RSS'i "Teknoloji" olduğu için yanlışlıkla Teknoloji etiketi almış
+ * dizi/film fragmanı, deprem, siyaset veya spor haberlerinin `teknoloji` / `yapay-zeka`
+ * takipçilerine bildirim olarak gitmesini kesin olarak engeller.
+ */
+function kategoriDogruMu(a) {
+  if (!a || !a.categorySlug) return false;
+  const dogruKategori = canonicalCategory(a.category, a.category, a.title, a.summary);
+  return slugify(dogruKategori) === a.categorySlug;
+}
+
 // --------------------------------------------------------------------------
 // Ana akış
 // --------------------------------------------------------------------------
@@ -567,7 +674,7 @@ async function gonder(p) {
  * @param {{dry?: boolean}} [opts] dry=true → hiçbir istek gönderilmez, durum yazılmaz.
  */
 export async function bildirimleriGonder({ dry = false } = {}) {
-  if (!APP_ID || !REST_KEY) {
+  if (!dry && (!APP_ID || !REST_KEY)) {
     console.log("Bildirim: ONESIGNAL_APP_ID veya ONESIGNAL_REST_API_KEY tanımlı değil, atlanıyor.");
     return { gonderilen: 0, neden: "anahtar yok" };
   }
@@ -582,14 +689,31 @@ export async function bildirimleriGonder({ dry = false } = {}) {
     durum.gunSayi = { son: 0, kategori: 0, ozet: 0 };
   }
 
+  const tumMakaleler = getArticles();
   const gonderilmis = new Set(durum.sent.map(String));
-  const yeni = getArticles().filter((a) => a.id && !gonderilmis.has(String(a.id)));
+  const yeni = tumMakaleler.filter((a) => a.id && !gonderilmis.has(String(a.id)));
   const gunToplam = (durum.gunSayi.son || 0) + (durum.gunSayi.kategori || 0);
 
+  // Bugün (TR günü) yayınlanan toplam haber sayısı — ~130 günlük haber akışıyla
+  // ~10 günlük bildirimi senkronize etmek için kullanılır.
+  const bugunHaberSayisi = tumMakaleler.filter((a) => {
+    const t = yayinZamani(a);
+    return t > 0 && trZaman(t).gun === tr.gun;
+  }).length;
+  const GUNLUK_HEDEF_HABER = 130;
+  const aktifDk = Math.max(0, Math.min(960, (tr.saat - SESSIZ_BIT) * 60 + tr.dakika));
+  const aktifOran = aktifDk / 960;
+  const haberOrani = Math.min(1, bugunHaberSayisi / GUNLUK_HEDEF_HABER);
+  // Gün içindeki saat ilerleyişi ve çıkan haber sayısıyla senkronize hedef bildirim sayısı (1..10)
+  const senkronHedef = Math.min(
+    KAT_MAX_GUN,
+    Math.max(1, Math.ceil(KAT_MAX_GUN * Math.max(aktifOran, haberOrani * 0.85)))
+  );
+
   console.log(
-    `Bildirim: ${yeni.length} yeni haber adayı, gün içinde gönderilen ` +
-      `${gunToplam}/${TOPLAM_MAX_GUN} (son dakika ${durum.gunSayi.son || 0}/${SON_MAX_GUN}, ` +
-      `konu ${durum.gunSayi.kategori || 0}/${KAT_MAX_GUN})${dry ? " [dry]" : ""}`
+    `Bildirim: ${yeni.length} yeni haber adayı (bugün çıkan: ${bugunHaberSayisi}/${GUNLUK_HEDEF_HABER}), ` +
+      `gün içinde gönderilen ${gunToplam}/${TOPLAM_MAX_GUN} ` +
+      `(konu ${durum.gunSayi.kategori || 0}/${KAT_MAX_GUN}, senkron hedef: ${senkronHedef})${dry ? " [dry]" : ""}`
   );
 
   let sayilan = 0;
@@ -599,22 +723,14 @@ export async function bildirimleriGonder({ dry = false } = {}) {
   let durumDegisti = false;
 
   // ---- 0) HOŞ GELDİN / TEST BİLDİRİMİ ----
-  // Neden var: okuyucu bildirim iznini verdiğinde HİÇBİR ŞEY görmezse "çalışmıyor"
-  // sanır. Günlük tavan dolduğunda (son dakika 6 + konu 3) yeni aboneye saatlerce
-  // bildirim gitmez; bu yüzden izni veren okuyucuya ilk anda bir kez "hoş geldin"
-  // gönderilir. Günlük tavandan ve asgari aralıktan BAĞIMSIZDIR; yalnızca bir kez
-  // çalışır (durum.hosGeldin). Elle test: BILDIRIM_TEST=1 (tavan yok sayılır).
   const test = process.env.BILDIRIM_TEST === "1";
-  const uygulama = await uygulamaBilgi();
+  const uygulama = dry ? null : await uygulamaBilgi();
   const abone =
     uygulama && Number.isFinite(Number(uygulama.players)) ? Number(uygulama.players) : null;
   console.log(
     `Bildirim: abone sayısı: ${abone === null ? "okunamadı" : abone}${dry ? " [dry]" : ""}`
   );
 
-  // Teşhis: iPhone/Safari web push kurulu mu? iPhone'da bildirim gelmiyorsa
-  // sebep neredeyse her zaman budur (Apple platformu + APNs anahtarı tanımlı
-  // değilse iOS aboneleri sessizce bildirim alamaz). Ayrıntı README'de.
   if (uygulama) {
     console.log(
       `Bildirim: uygulama "${uygulama.name}" | apns (iOS): ${
@@ -635,6 +751,8 @@ export async function bildirimleriGonder({ dry = false } = {}) {
           ? "Bildirimler çalışıyor. HaberinAi'de son dakika haberleri artık cebinde."
           : "Son dakika haberleri artık buradan gelecek. İlk önemli gelişmede haber vereceğiz.",
         url: `${SITE_URL}/${test ? "" : "son-dakika/"}`,
+        gorsel: `${SITE_URL}/og-default.png`,
+        ikon: `${SITE_URL}/ikon-192.png`,
         ttl: 86400,
         anahtar: `hos-geldin-${tr.gun}-${test ? Date.now() : "1"}`,
       });
@@ -646,11 +764,6 @@ export async function bildirimleriGonder({ dry = false } = {}) {
             `hata ${rapor.hata ?? "?"}${rapor.durum ? ` | durum ${rapor.durum}` : ""}`
         );
       }
-      // "Hoş geldin" yalnızca gerçekten bir cihaza ulaştıysa bir kez gönderilmiş
-      // sayılır. Abone yoksa / gönderim reddedildiyse işaret konmaz; cihaz
-      // gerçekten abone olduğunda gönderilir. Böylece "izin verdim, hiç bildirim
-      // gelmedi" durumu oluşmaz. (Örnek hata: {"id":"","errors":["All included
-      // players are not subscribed"]} — kayıt var, abonelik yok.)
       const hataVar =
         Boolean(yanit && yanit.errors) || !yanit?.id;
       const ulasan = Number(yanit?.recipients);
@@ -671,22 +784,15 @@ export async function bildirimleriGonder({ dry = false } = {}) {
   }
 
   // ---- 0b) YENİ ABONEYE CİHAZ BAZINDA "HOŞ GELDİN" ----
-  // Global "hoş geldin" yalnızca BİR kez gider; sonradan abone olan cihaz
-  // hiçbir şey görmez ve "bildirim çalışmıyor" sanır. Her YENİ cihaz bir kez
-  // hedefli olarak karşılanır (OneSignal: include_subscription_ids).
   if (!dry) {
     const liste = await abonelikler();
     if (liste) {
       if (!durum.cihazTaban) {
-        // İlk çalıştırma: mevcut aboneler geçmiş sayılır (toplu "hoş geldin"
-        // yağmasın); bundan sonra abone olan her cihaz karşılanır.
         durum.cihazlar = liste;
         durum.cihazTaban = true;
         await durumYaz(durum);
         console.log(`Bildirim: cihaz tabanı kaydedildi (${liste.length} abone).`);
       } else {
-        // Abonelikten çıkan cihazlar listeden düşer (yeniden abone olursa
-        // tekrar karşılanır); liste sınırsız büyümez.
         const mevcut = new Set(liste);
         durum.cihazlar = (durum.cihazlar || []).filter((id) => mevcut.has(id));
         const bilinen = new Set(durum.cihazlar);
@@ -696,8 +802,10 @@ export async function bildirimleriGonder({ dry = false } = {}) {
             const yanit = await gonder({
               baslik: "🔔 Bildirimlerin açıldı",
               icerik:
-                "Artık son dakika haberlerini alacaksın. Yeni bir gelişme olduğunda haber vereceğiz; istediğin an kapatabilirsin.",
-              url: `${SITE_URL}/son-dakika/`,
+                "Seçtiğin ilgi alanlarındaki önemli gelişmeler gün boyu dengeli aralıklarla cebine gelecek.",
+              url: `${SITE_URL}/akis/`,
+              gorsel: `${SITE_URL}/og-default.png`,
+              ikon: `${SITE_URL}/ikon-192.png`,
               ttl: 86400,
               anahtar: `cihaz-hos-${id}`,
               abonelikId: id,
@@ -719,9 +827,6 @@ export async function bildirimleriGonder({ dry = false } = {}) {
   }
 
   // ---- 1) GENEL SON DAKİKA (Yalnızca son_dakika_genel=1 seçen kullanıcılara) ----
-  // Varsayılan olarak kullanıcılara seçmedikleri konulardan son dakika GİTMEZ.
-  // Yalnızca profil/ayarlar üzerinden "Genel Son Dakika" anahtarını bilerek açanlara
-  // günde en fazla SON_MAX_GUN (3) adet gider.
   if (SON_MAX_GUN > 0 && gunToplam < TOPLAM_MAX_GUN && (durum.gunSayi.son || 0) < SON_MAX_GUN) {
     const sonDakikaAt = durum.sonDakika || null;
     const gecenDk = sonDakikaAt ? (now - Date.parse(sonDakikaAt)) / 60000 : Infinity;
@@ -741,9 +846,9 @@ export async function bildirimleriGonder({ dry = false } = {}) {
         .sort((a, b) => yayinZamani(b) - yayinZamani(a))[0];
 
       if (aday) {
-        const icerik = bildirimIcerigi(aday, { baslik: "🔴 SON DAKİKA" });
+        const icerik = await bildirimIcerigiHazirla(aday, { baslik: "🔴 SON DAKİKA" }, { dry });
         if (dry) {
-          console.log(`  [dry] genel son dakika (yalnızca son_dakika_genel=1) → ${icerik.icerik}`);
+          console.log(`  [dry] genel son dakika (yalnızca son_dakika_genel=1) → ${icerik.icerik} | görsel: ${icerik.gorsel}`);
         } else {
           try {
             const yanit = await gonder({
@@ -781,47 +886,47 @@ export async function bildirimleriGonder({ dry = false } = {}) {
     }
   }
 
-  // ---- 2) TAKİP EDİLEN KONULAR (Sadece kullanıcının seçtiği başlıklar, günde ~10 adet) ----
+  // ---- 2) TAKİP EDİLEN KONULAR (Sadece kullanıcının seçtiği başlıklar, günde ~10 senkronize bildirim) ----
   const sessiz =
     SESSIZ_BAS <= SESSIZ_BIT
       ? tr.saat >= SESSIZ_BAS && tr.saat < SESSIZ_BIT
       : tr.saat >= SESSIZ_BAS || tr.saat < SESSIZ_BIT;
   const sonKonuAt = durum.updatedAt ? Date.parse(durum.updatedAt) : 0;
   const konuGecenDk = sonKonuAt ? (now - sonKonuAt) / 60000 : Infinity;
-  // SENKRON PENCERESİ: son konu bildiriminden bu yana geçen süre (+12 dk pay).
-  // Böylece her bildirim yalnızca kendisinden sonra yayınlanan haberleri kapsar.
+  // SENKRON PENCERESİ: son konu bildiriminden bu yana geçen süre (+15 dk pay).
   const pencereDk = Math.min(
     Math.max(
-      (Number.isFinite(konuGecenDk) ? konuGecenDk : KAT_PENCERE_MAX_DK) + 12,
+      (Number.isFinite(konuGecenDk) ? konuGecenDk : KAT_PENCERE_MAX_DK) + 15,
       KAT_PENCERE_MIN_DK
     ),
     KAT_PENCERE_MAX_DK
   );
-  // Penceredeki adaylar ve en yenisinin yaşı (senkron freni için).
-  const konuAdaylar = yeni.filter((a) => tazeDk(a, pencereDk, now));
+  // Penceredeki adaylar: YALNIZCA gerçek kategorisi doğrulanmış haberler alınır.
+  // Böylece bir kategoride o gün az haber çıksa bile başka kategoriden veya
+  // yanlış etiketlenmiş bir haber asla o başlık altında gönderilmez.
+  const konuAdaylar = yeni.filter((a) => tazeDk(a, pencereDk, now) && kategoriDogruMu(a));
   const enYeniAdayDk = konuAdaylar.length
     ? Math.round((now - Math.max(...konuAdaylar.map(yayinZamani))) / 60000)
     : -1;
-  // Sabah saatlerinde (07:00 - 13:00) tüm günlük kotanın tükenmesini engelle
-  // (Öğleden sonra ve akşam prime-time haberlerine mutlaka bildirim kalsın).
-  const sabahMi = tr.saat < 13;
-  // 10 kotanın en fazla 4'ü 13:00'ten önce gider; 07:00-13:00 arası 96 dk
-  // aralıkla zaten en fazla 4 bildirim sığar.
-  const sabahTavan = Math.floor(KAT_MAX_GUN * 0.42);
+
+  // Günlük ~130 haber akışıyla senkronize dinamik aralık:
+  // Eğer bugünkü bildirim sayısı senkron hedefin gerisindeyse 60 dk, yakaladıysa 85 dk.
+  const mevcutKatSayi = durum.gunSayi.kategori || 0;
+  const etkinGenelAralikDk = mevcutKatSayi < senkronHedef ? 60 : KAT_GENEL_ARALIK_DK;
 
   if (sessiz) {
     console.log(`Bildirim: sessiz saat (TR ${tr.saat}:00) → konu bildirimi gönderilmiyor.`);
-  } else if (sabahMi && (durum.gunSayi.kategori || 0) >= sabahTavan) {
-    console.log(
-      `Bildirim: sabah kotası (${durum.gunSayi.kategori}/${sabahTavan}) doldu; ` +
-        `öğleden sonra ve akşam haberleri için bekletiliyor.`
-    );
-  } else if ((durum.gunSayi.kategori || 0) >= KAT_MAX_GUN) {
+  } else if (mevcutKatSayi >= KAT_MAX_GUN) {
     console.log(`Bildirim: konu bildirimi için günlük tavan (${KAT_MAX_GUN}) doldu.`);
-  } else if (konuGecenDk < KAT_GENEL_ARALIK_DK) {
+  } else if (mevcutKatSayi >= senkronHedef + 1) {
+    console.log(
+      `Bildirim: günlük akış senkron kotası (${mevcutKatSayi}/${senkronHedef}) önde; ` +
+        `günün ilerleyen saatlerindeki haberler için bekletiliyor.`
+    );
+  } else if (konuGecenDk < etkinGenelAralikDk) {
     console.log(
       `Bildirim: son konu bildiriminden ${Math.round(konuGecenDk)} dk geçti ` +
-        `(asgari ${KAT_GENEL_ARALIK_DK} dk); dengeli dağılım için bekletiliyor.`
+        `(senkron aralık ${etkinGenelAralikDk} dk); dengeli dağılım için bekletiliyor.`
     );
   } else if (konuAdaylar.length > 0 && enYeniAdayDk > KAT_MAKS_YAS_DK) {
     console.log(
@@ -833,21 +938,16 @@ export async function bildirimleriGonder({ dry = false } = {}) {
     const grup = new Map();
     for (const a of konuAdaylar) {
       if (gonderilenler.has(String(a.id))) continue;
-      const k = a.categorySlug || "diger";
+      const k = a.categorySlug;
+      if (!k || k === "diger") continue;
       if (!grup.has(k)) grup.set(k, []);
       grup.get(k).push(a);
     }
     for (const liste of grup.values()) {
-      // Her kategoride yalnızca EN YENİ yayın dilimi kalır (en yeni haberden
-      // 40 dk'dan eski olanlar elenir). Aksi halde ilgi puanı yüksek diye
-      // 1,5 saat önceki haber gönderilip, okuyucu sayfada daha yeni bir
-      // haberi görüyordu — bildirim haber akışıyla senkron kalmıyordu.
       const enYeni = Math.max(...liste.map(yayinZamani));
       const dilim = liste.filter((a) => enYeni - yayinZamani(a) <= KAT_PENCERE_MIN_DK * 60000);
       liste.length = 0;
       liste.push(...dilim);
-      // Aynı dilim içinde "en çok tıklanacak" haber seçilir: önce son dakika,
-      // sonra ilgi puanı (başlık + gerçek fotoğraf + tazelik), eşitlikte yeni.
       liste.sort(
         (a, b) =>
           Number(b.breaking === true) - Number(a.breaking === true) ||
@@ -893,10 +993,10 @@ export async function bildirimleriGonder({ dry = false } = {}) {
         let ulasti = false;
         for (const aday of grup.get(slug) || []) {
           if (turHaber >= KAT_TUR_HABER) break;
-          const icerik = bildirimIcerigi(aday, { baslik: `${aday.category}` });
+          const icerik = await bildirimIcerigiHazirla(aday, { baslik: `${aday.category}` }, { dry });
           if (dry) {
             console.log(
-              `  [dry] konu (${slug}) → ${icerik.icerik} (yayın: ${yasDk(aday, now)} dk önce)`
+              `  [dry] konu (${slug}) → ${icerik.icerik} (yayın: ${yasDk(aday, now)} dk önce) | görsel: ${icerik.gorsel}`
             );
             turHaber++;
             ulasti = true;
@@ -908,6 +1008,8 @@ export async function bildirimleriGonder({ dry = false } = {}) {
             // Burada tüm koşullar AND ile bağlanır:
             //   1) Kullanıcının `kategori_<slug> = "1"` etiketi KESİNLİKLE olmalı.
             //   2) Sıklığı "ozet", "son" veya "kapali" OLMAMALI.
+            // Not: Seçilen kategoride o gün 10'dan az haber çıkarsa başka kategoriden
+            // bildirim ASLA gönderilmez; kullanıcı yalnızca kendi seçtiği başlıkları görür.
             const yanit = await gonder({
               ...icerik,
               ttl: 21600,
@@ -954,17 +1056,28 @@ export async function bildirimleriGonder({ dry = false } = {}) {
   }
 
   // ---- 2b) TÜM HABERLER MODU (Profilde "Seçtiğim başlıklardaki tüm haberler" diyenler) ----
-  // Normal kullanıcılar günde ~10 bildirim alırken, ayarlardan `bildirim_mod = "hepsi"`
-  // seçen kullanıcılara seçtikleri başlıklardaki diğer yeni haberler de anında iletilir.
+  // Normal kullanıcılar günde ~10 senkronize bildirim (`gun10`) alırken, ayarlardan
+  // açıkça `bildirim_mod = "hepsi"` seçen kullanıcılara seçtikleri başlıklardaki diğer
+  // yeni haberler de iletilir. `sentHepsi` ayrı tutulduğu için `gun10` modunun adaylarını tüketmez!
   if (!sessiz) {
-    const gonderilenlerHepsi = new Set(durum.sent.map(String));
-    const adaylarHepsi = yeni
-      .filter((a) => !gonderilenlerHepsi.has(String(a.id)) && tazeDk(a, 45, now))
+    const gonderilenlerHepsi = new Set([
+      ...durum.sent.map(String),
+      ...(durum.sentHepsi || []).map(String),
+    ]);
+    const adaylarHepsi = tumMakaleler
+      .filter(
+        (a) =>
+          a.id &&
+          !gonderilenlerHepsi.has(String(a.id)) &&
+          tazeDk(a, 45, now) &&
+          kategoriDogruMu(a)
+      )
       .sort((a, b) => yayinZamani(b) - yayinZamani(a))
       .slice(0, 2);
     for (const aday of adaylarHepsi) {
-      const slug = aday.categorySlug || "diger";
-      const icerik = bildirimIcerigi(aday, { baslik: `${aday.category}` });
+      const slug = aday.categorySlug;
+      if (!slug || slug === "diger") continue;
+      const icerik = await bildirimIcerigiHazirla(aday, { baslik: `${aday.category}` }, { dry });
       if (dry) {
         console.log(`  [dry] konu-hepsi (${slug}) → ${icerik.icerik}`);
         continue;
@@ -976,39 +1089,41 @@ export async function bildirimleriGonder({ dry = false } = {}) {
           etiketler: [
             `kategori_${slug}`,
             { key: "bildirim_mod", relation: "=", value: "hepsi" },
+            { key: "bildirim_sikligi", relation: "!=", value: "kapali" },
           ],
           anahtar: `kat-hepsi-${aday.id}`,
         });
         const alici = Number(yanit?.recipients);
+        durum.sentHepsi = durum.sentHepsi || [];
+        durum.sentHepsi.push(String(aday.id));
+        durumDegisti = true;
         if (Number.isFinite(alici) && alici > 0) {
           console.log(
             `  ✓ [konu-hepsi:${slug}] ${kisalt(aday.title, 60)}${aliciNotu(yanit)}`
           );
-          durum.sent.push(String(aday.id));
-          durumDegisti = true;
           sayilan++;
         }
       } catch {
-        // `bildirim_mod=hepsi` seçen abone yoksa sessizce geç.
+        // `bildirim_mod=hepsi` seçen abone yoksa bu adayı tekrar denememek için not et.
+        durum.sentHepsi = durum.sentHepsi || [];
+        durum.sentHepsi.push(String(aday.id));
+        durumDegisti = true;
       }
     }
   }
 
   // ---- 3) GÜNDE 3 ÖZET (yalnızca bildirim_sikligi=ozet) ----
-  // "Anında" seçen her konuyu alır; "özet" seçen günde 3 kez toplu özet alır.
-  // Aynı saat diliminde yinelenen gönderimi önlemek için son özetten en az
-  // OZET_ARALIK_SAAT saat geçmiş olmalı.
   const ozetSaati = OZET_SAATLER.indexOf(tr.saat) >= 0 && tr.dakika < 12;
   const sonOzet = durum.sonOzet ? Date.parse(durum.sonOzet) : 0;
   const ozetGecti = !sonOzet || now - sonOzet >= OZET_ARALIK_SAAT * 3600000;
   if (ozetSaati && ozetGecti) {
-    const ozetAday = getArticles()
+    const ozetAday = tumMakaleler
       .filter((a) => a.title && taze(a, 18, now))
       .sort((a, b) => yayinZamani(b) - yayinZamani(a))
       .slice(0, 3);
     if (ozetAday.length) {
       const ilk = ozetAday[0];
-      const kapak = kapakKaynagi(ilk);
+      const ilkIcerik = await bildirimIcerigiHazirla(ilk, { baslik: "📬 Günün özeti" }, { dry });
       const ozetMetni = ozetAday
         .map((a, i) => `${i + 1}. ${kisalt(a.title, 55)}`)
         .join("  •  ");
@@ -1020,8 +1135,8 @@ export async function bildirimleriGonder({ dry = false } = {}) {
             baslik: "📬 Günün özeti",
             icerik: kisalt(ozetMetni, 160),
             url: `${SITE_URL}/haber/${ilk.slug || ilk.id}/`,
-            gorsel: kapak ? bildirimGorseli(kapak, 720, 360) : `${SITE_URL}/og-default.png`,
-            ikon: kapak ? bildirimIkonu(kapak) : `${SITE_URL}/ikon-192.png`,
+            gorsel: ilkIcerik.gorsel,
+            ikon: ilkIcerik.ikon,
             ttl: 21600,
             etiketler: [{ key: "bildirim_sikligi", relation: "=", value: "ozet" }],
             anahtar: `ozet-${tr.gun}-${tr.saat}`,

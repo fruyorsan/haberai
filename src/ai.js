@@ -197,6 +197,15 @@ Aşağıdaki JSON alanlarını TÜRKÇE üret:
 - tags: 3-6 adet kısa, habere özgü, aranabilir anahtar kelime (marka, ürün, kişi, konu); kategori adını
   ("Gündem") etiket olarak tekrarlama.
 - category: AŞAĞIDAKİ listeden TAM OLARAK birini seç (başka bir kelime yazma): ${cats}
+  * DİKKAT: Kaynak teknoloji sitesi (ShiftDelete, Webtekno, DonanımHaber vb.) olsa bile KAYNAK KATEGORİSİ'ni
+    ezbere kopyalama; haberin GERÇEK KONUSUNA göre seç:
+    - Dizi, film, fragman, sinema, konser, tiyatro, kitap → "Kültür"
+    - Deprem, belediye, bakanlık, iç siyaset, asayiş, mahkeme, savunma/askeri tedarik → "Gündem"
+    - Uluslararası siyaset, savaş, diplomasi, ülke liderleri → "Dünya"
+    - Borsa, enflasyon, faiz, vergi, maaş, ihracat rakamları → "Ekonomi"
+    - Otomobil, elektrikli araç, SUV, motor, şarj istasyonu → "Otomobil"
+    - "Teknoloji" ve "Yapay Zeka" kategorilerini YALNIZCA doğrudan teknoloji, cihaz, yazılım, donanım veya
+      yapay zeka modelleriyle ilgili haberlere ver.
 - gorselSorgu: Haberle doğrudan ilgili, haber fotoğrafı gibi ÇIKACAK İNGİLİZCE arama sorgusu (2-5 kelime).
   KURAL: somut ve görsel bir şey yaz. Haberde geçen kişi/marka/ürün/yer adı varsa onu kullan
   ("Elon Musk", "iPhone 17", "Togg T10X") ve yanına sahneyi ekle ki fotoğraf dikkat çekici olsun
@@ -633,7 +642,7 @@ function normalize(data, article) {
     tags: Array.isArray(data.tags)
       ? data.tags.map((t) => String(t).trim()).filter(Boolean).slice(0, 6)
       : [],
-    category: canonicalCategory(data.category, article.feedCategory),
+    category: canonicalCategory(data.category, article.feedCategory, data.title || article.title, data.summary || article.content),
     // Telif güvenli stok görsel araması için (bkz. src/stok-gorsel.js).
     gorselSorgu: temizSorgu(data.gorselSorgu, Array.isArray(data.tags) ? data.tags[0] : ""),
     gorselDetaylar: Array.isArray(data.gorselDetaylar)
@@ -648,20 +657,60 @@ function normalize(data, article) {
   };
 }
 
-function canonicalCategory(value, hint) {
+export function canonicalCategory(value, hint, title = "", summary = "") {
   const norm = (s) => String(s || "").toLocaleLowerCase("tr").trim();
   const target = norm(value);
-  if (!target) return config.categories.includes(hint) ? hint : "Diğer";
+  let secilen = "";
+  if (target) {
+    const exact = config.categories.find((c) => norm(c) === target);
+    if (exact) secilen = exact;
+    else {
+      const partial = config.categories.find(
+        (c) => target.length > 2 && (target.includes(norm(c)) || norm(c).includes(target))
+      );
+      if (partial) secilen = partial;
+    }
+  }
+  if (!secilen) {
+    secilen = config.categories.includes(hint) ? hint : "Diğer";
+  }
 
-  const exact = config.categories.find((c) => norm(c) === target);
-  if (exact) return exact;
-
-  const partial = config.categories.find(
-    (c) => target.length > 2 && (target.includes(norm(c)) || norm(c).includes(target))
-  );
-  if (partial) return partial;
-
-  return config.categories.includes(hint) ? hint : "Diğer";
+  // Teknoloji/Yapay Zeka sitelerinden gelen ama konusu teknoloji olmayan haberleri gerçek kategorisine taşı
+  const sade = (s) =>
+    String(s || "")
+      .replace(/[İIı]/g, "i")
+      .replace(/[Şş]/g, "s")
+      .replace(/[Ğğ]/g, "g")
+      .replace(/[Üü]/g, "u")
+      .replace(/[Öö]/g, "o")
+      .replace(/[Çç]/g, "c")
+      .replace(/[ÂâÎîÛû]/g, (m) => ({ â: "a", Â: "a", î: "i", Î: "i", û: "u", U: "u" }[m] || "a"))
+      .toLowerCase();
+  const metin = sade(`${title} ${summary}`);
+  if (secilen === "Teknoloji" || secilen === "Yapay Zeka") {
+    const tekSinyal =
+      /(yapay zeka|\bai\b|chatgpt|claude|gemini|\bllm\b|openai|anthropic|deepseek|mistral|hugging\s*face|sohbet modeli|dil modeli|iphone|samsung|galaxy|android|\bios\b|windows|linux|macbook|apple|google|microsoft|\bmeta\b|nvidia|\bamd\b|intel|islemci|ekran karti|\bgpu\b|\bcpu\b|\bram\b|\bssd\b|anakart|uygulama|yazilim|siber|hacker|veri sizintisi|veri merkezi|sunucu|bulut|robot|kuantum|\b5g\b|\b6g\b|wi-?fi|akilli telefon|batarya|kamera|sensor|starlink|starshield)/.test(
+        metin
+      );
+    if (!tekSinyal) {
+      if (/\b(fragman|sezon|dizisi|sinema|gise|yuzuklerin efendisi|konser|festival|tiyatro)\b/.test(metin)) {
+        return "Kültür";
+      }
+      if (/\b(super lig|galatasaray|fenerbahce|besiktas|trabzonspor|sampiyonlar ligi|teknik direktor|bonservis|mac sonu|golcu)\b/.test(metin)) {
+        return "Spor";
+      }
+      if (/\b(deprem|afad|kandilli|osb baskani|belediye baskani|icisle|tbmm|meclis uyesi|valilik|emniyet|gozalti|tutuklama|savcilik|eurofighter|savas ucagi|zirhli arac|paletli|fnss|bedir mutabakati|ortak savunma)\b/.test(metin)) {
+        return "Gündem";
+      }
+      if (/\b(ateskes|zelenskiy|putin|netanyahu|gazze|orta dogu|diplomasi|birlesmis milletler|nato zirvesi)\b/.test(metin)) {
+        return "Dünya";
+      }
+      if (/\b(enflasyon|merkez bankasi|faiz karari|asgari ucret|emekli maasi|borsa istanbul|\bbist\b)\b/.test(metin)) {
+        return "Ekonomi";
+      }
+    }
+  }
+  return secilen;
 }
 
 export function slugify(str) {
