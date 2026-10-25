@@ -1,5 +1,57 @@
 [
   {
+    "id": "90e3209fdc5607c3",
+    "title": "Meteoroloji, İstanbul’da Salı Gününe Kuvvetli Yağış Uyarısı Yayınladı",
+    "slug": "meteoroloji-istanbulda-sali-gunune-kuvvetli-yagis-uyarisi",
+    "summary": "Yeni haftada batı bölgelerinden başlayarak sağanak ve gök gürültülü sağanak bekleniyor. Salı günü İstanbul ve çevresinde kuvvetli yağış etkili olacak, sıcaklık 15 dereceye kadar düşecek. Yetkililer sel ve su baskınlarına karşı önlem alınmasını istiyor.",
+    "keyPoints": [
+      "Salı günü İstanbul’da yağış 15 °C’ye kadar düşecek",
+      "Marmara bölgesinde Çanakkale, Tekirdağ, Bursa da kuvvetli yağış bekleniyor",
+      "Güney Ege kıyılarında rüzgar güneyli, Marmara’da kuzeyli kısa süreli fırtına öngörülüyor"
+    ],
+    "body": [
+      "Hava durumu uzmanı Abdullah Macit, yeni haftada batı kesimlerinden başlayarak sağanak ve gök gürültülü sağanak geçişlerinin olacağını belirtti. Bu süreçte özellikle Marmara’nın batısı, kıyı Ege ve Batı Akdeniz bölgelerinde yağışların etkili olacağı vurgulandı. İlk günlerde yağışların hafif seyredeceği, ancak Salı’ya doğru şiddetinin artacağı bildirildi.",
+      "İstanbul’da yarın ve Çarşamba yağış beklenmezken, Salı günü beklenen kuvvetli sağanak şehri etkiliyor. Macit, sıcaklıkların 15 °C’ye kadar düşeceğini, sonraki günlerde ise 19 °C civarında seyredeceğini açıkladı.",
+      "Ankara’da da Salı gününden itibaren sağanak ve gök gürültülü sağanak etkili olacak. Hava sıcaklıkları yer yer mevsim normallerinin altına düşecek. İzmir’de özellikle güney ilçelerinde beklenen gök gürültülü sağanağın haftanın ilk üç günü sürmesi bekleniyor. Yetkililer, özellikle yağışlı ve rüzgarlı bölgelerde yaşayan vatandaşların sel, su baskını ve ani su birikintilerine karşı tedbirli olmalarını istedi."
+    ],
+    "comment": "Kuvvetli yağış ve ani sıcaklık düşüşü, özellikle Marmara’nın kuzeyinde sel riskini artırıyor. Meteoroloji uzmanının Salı günü 15 °C’ye kadar sıcaklık tahmini ve yoğun yağış uyarısı, bölge sakinlerini önceden önlem almaya zorunlu kılıyor. Bu durum, kırsal ve kentsel altyapısı yetersiz olan mahallelerde su baskını riskini yükseltebilir. Önceki haftalarda benzer koşullarda meydana gelen sel olayları, mevcut tahminlerin ciddiyetini gösteriyor.",
+    "editorNote": "Salı günü İstanbul’da beklenen kuvvetli yağış ve 15 °C’ye düşen sıcaklık, şehirde ani sel riskini beraberinde getiriyor. Yağışa maruz kalabilecek bölgelerde dışarıda dikkatli…",
+    "tags": [
+      "İstanbul",
+      "yağış",
+      "Meteoroloji",
+      "sel",
+      "hava durumu"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "Istanbul rain streets",
+    "source": "AA Güncel",
+    "sourceUrl": "https://www.aa.com.tr/tr/gundem/istanbul-dahil-bazi-bolgelerde-sali-gunu-kuvvetli-yagis-bekleniyor/4100205",
+    "image": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/25/thumbs_b_c_cd1e43dddff6463c641041b93b2f0c85.jpg",
+    "gorselKaynakSite": true,
+    "publishedAt": "2026-10-25T11:41:11.000Z",
+    "generatedAt": "2026-10-25T11:46:18.288Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Turkey_%28Istanbul%29_Reflection_of_trees_on_the_street_just_after_rain_%2823979309360%29.jpg/1280px-Turkey_%28Istanbul%29_Reflection_of_trees_on_the_street_just_after_rain_%2823979309360%29.jpg",
+        "yazar": "Güldem Üstün from Istanbul, TURKEY",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Turkey_(Istanbul)_Reflection_of_trees_on_the_street_just_after_rain_(23979309360).jpg",
+        "altyazi": "Yağış sonrası İstanbul sokaklarında su birikintileri"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Turkey_%28Istanbul%29_Reflection_of_trees_on_the_street_just_after_rain_%2823979309360%29.jpg/1280px-Turkey_%28Istanbul%29_Reflection_of_trees_on_the_street_just_after_rain_%2823979309360%29.jpg",
+        "yazar": "Güldem Üstün from Istanbul, TURKEY",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Turkey_(Istanbul)_Reflection_of_trees_on_the_street_just_after_rain_(23979309360).jpg",
+        "altyazi": "Marmara bölgesinde gök gürültülü sağanak bulutları"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "850d2fd392f30fa6",
     "title": "ABD ve İsrail, İran’a Yeni Saldırı Planı Çalışıyor",
     "slug": "abd-israil-iran-yeni-saldiri-plan",
@@ -50394,41 +50446,6 @@
     "gorselKaynakSite": true,
     "publishedAt": "2026-10-22T03:21:00.000Z",
     "generatedAt": "2026-10-22T03:29:55.539Z",
-    "breaking": true
-  },
-  {
-    "id": "ad8f7bf3eed7740e",
-    "title": "ABD ve İsrail İran'a Yeni Saldırı Planı Hazırlıyor",
-    "slug": "abd-ve-israil-irana-yeni-saldiri-plani-hazirliyor",
-    "summary": "ABD ve İsrail, ara seçimlerin ardından İran'a yönelik yeni bir askeri operasyon için somut planlar hazırladıklarını iddia eden kaynakların açıklamaları geldi. Savunma Bakanı Pete Hegseth'in İsrail Başbakanı Netanyahu ile görüşmesi ve Başkan Trump'ın olası kararına dair spekülasyonlar haberin odak noktası.",
-    "keyPoints": [
-      "Savunma Bakanı Pete Hegseth, Netanyahu ile İran saldırısı görüşmesi yaptı",
-      "Kaynaklar, Trump'ın bu ay saldırı başlatma ihtimalini dile getirdi",
-      "Financial Times da benzer bir İran nükleer tesis hedefleme iddiasını yayınladı"
-    ],
-    "body": [
-      "The New York Times'ın haberine dayanan bir dizi isim verilmeyen ABD yetkilisi, ABD ve İsrail ordularının İran'a yönelik yeni bir saldırı planı üzerinde çalıştığını belirtti. Bu iddialar, ABD ara seçimlerinin ardından ortaya çıktı ve askeri planlamaların hız kazandığını gösteriyor.",
-      "Kaynakların verdiği bilgiye göre, Savunma Bakanı Pete Hegseth bu hafta İsrail'e giderek Başbakan Binyamin Netanyahu ile bir araya geldi. Görüşmede, olası operasyonun detayları ve zamanlaması tartışıldı. Yetkililer, Başkan Donald Trump'ın bu ay bir saldırı başlatma kararını değerlendirdiğini iddia ediyor.",
-      "Bazı yetkililer, olası saldırıların petrol rafinerileri ve altyapısını hedef almayacağını, bunun ise küresel enerji fiyatlarını istikrarlı tutma amacını taşıdığını belirtti. Ancak, aynı kaynaklar, Trump'ın İran'ın nükleer silah elde etmesini engellemek için tüm askeri seçenekleri masada tuttuğunu vurguladı.",
-      "Financial Times da benzer bir rapor yayımlayarak, İran'ın nükleer tesisleri ve sivil altyapısını hedef alabilecek yeni bir operasyonun planlandığını bildirdi. Kaynağa göre, planlama aşamaları hâlâ değişkenlik gösteriyor ve bazı komutanlar, sürekli güncellenen stratejilerin bir kafa karışıklığına yol açtığını ifade etti."
-    ],
-    "comment": "ABD‑İsrail işbirliğiyle İran'a olası bir saldırı hazırlığı, bölgesel istikrarı tehdit ediyor. Kaynakların Trump'ın bu ay saldırı kararı ihtimalini dile getirmesi, planın yakın zamanda hayata geçebileceği anlamına geliyor. Türkiye, İran sınırına yakınlığı ve enerji ithalatı nedeniyle doğrudan risk altında; olası bir çatışma petrol fiyatlarını yükseltebilir. Önceki yıllarda benzer gerilimlerde enerji piyasaları yüzde 5‑10 oranında dalgalandı, bu sefer de benzer bir artış beklenebilir.",
-    "editorNote": "ABD ve İsrail'in İran'a yeni bir saldırı planı üzerinde çalıştığı iddiaları, bölgedeki güvenlik dengelerini sarsabilir. Gelişmeleri yakından izlemek, olası enerji fiyat…",
-    "tags": [
-      "ABD",
-      "İsrail",
-      "İran",
-      "saldırı",
-      "savunma"
-    ],
-    "category": "Dünya",
-    "gorselSorgu": "Donald Trump meeting Israeli leaders",
-    "source": "Evrensel.net",
-    "sourceUrl": "https://www.evrensel.net/haber/6006062/abd-ve-israil-irana-yeni-saldiriya-hazirlaniyor-iddiasi",
-    "image": "https://www.evrensel.net/images/1280/upload/dosya/349932.jpg",
-    "gorselKaynakSite": true,
-    "publishedAt": "2026-10-22T03:20:00.000Z",
-    "generatedAt": "2026-10-22T03:33:52.547Z",
     "breaking": true
   },
   {
