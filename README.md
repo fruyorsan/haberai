@@ -101,9 +101,9 @@ node scripts/gorsel-guvenli.mjs --ids=<id1>,<id2> # belirli haberleri yeniden ar
 arama yapar (yanlış eşleşmiş bir kapağı düzeltmek için). `--delay` (ms) Commons
 istekleri arasında bekler; hız sınırına (HTTP 429) takılırsa artırılır.
 
-**Durum:** 25 Ekim 2026 itibarıyla arşivdeki 4.462 haberin tamamı güvenli
-görselde (`gorselKaynakSite` = 0, kaynak sitelerin `images` adresleri silindi).
-Saatlik iş akışı yeni eklenen haberler için aynı adımı sürdürür.
+**Durum:** 25 Ekim 2026 itibarıyla arşivdeki **tüm haberler** güvenli görselde
+(`gorselKaynakSite` = 0, kaynak sitelerin `images` adresleri silindi). Saatlik iş
+akışı yeni eklenen haberler için aynı adımı sürdürür.
 
 Kategori yedeği her kategoriye ayrı tanımlıdır (`YEDEK_GORSEL`): uzay → roket
 fırlatma, sağlık → hastane koridoru, kültür → müze galerisi, otomobil →
