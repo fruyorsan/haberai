@@ -48,11 +48,11 @@ const gorselBaslik = kaynak?.sayfa ? "Fotoğraf kaynağını aç" : "Fotoğrafı
     </a>
   </div>
 
-  <figcaption class="content__fig-caption">
-    {altyazi && <span class="content__fig-aciklama">{altyazi}</span>}
-    <span class="content__fig-credit">
-      {kaynak ? (
-        <>
+  {(altyazi || kaynak) && (
+    <figcaption class="content__fig-caption">
+      {altyazi && <span class="content__fig-aciklama">{altyazi}</span>}
+      {kaynak && (
+        <span class="content__fig-credit">
           Fotoğraf: {kaynak.yazar || "Wikimedia Commons"}
           {kaynak.lisans && (
             <>
@@ -70,12 +70,10 @@ const gorselBaslik = kaynak?.sayfa ? "Fotoğraf kaynağını aç" : "Fotoğrafı
               <a href={kaynak.sayfa} target="_blank" rel="noopener nofollow">Wikimedia Commons</a>
             </>
           )}
-        </>
-      ) : (
-        <>Fotoğraf: {eskiKaynak || "HaberinAi"}</>
+        </span>
       )}
-    </span>
-  </figcaption>
+    </figcaption>
+  )}
 </figure>
 
 <style>

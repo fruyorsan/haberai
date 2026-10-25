@@ -371,7 +371,9 @@ const breadcrumbLd = {
             />
           ) : null}
           <span class="post__veil" aria-hidden="true"></span>
-          {kapak && <span class="post__credit">Fotoğraf: {article.gorselKaynak ? atifMetni(article.gorselKaynak) : article.source}</span>}
+          {kapak && article.gorselKaynak && (
+            <span class="post__credit">Fotoğraf: {atifMetni(article.gorselKaynak)}</span>
+          )}
         </div>
       )}
 

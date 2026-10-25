@@ -55,7 +55,9 @@ const gorselHata = `if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';th
         referrerpolicy="no-referrer"
         onerror={gorselHata}
       />
-      <figcaption>Fotoğraf: {article.source}</figcaption>
+      {article.gorselKaynak && (
+        <figcaption>Fotoğraf: {article.gorselKaynak.yazar || "Wikimedia Commons"}</figcaption>
+      )}
     </figure>
   )}
 
@@ -84,7 +86,6 @@ const gorselHata = `if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';th
         referrerpolicy="no-referrer"
         onerror={gorselHata}
       />
-      <figcaption>Fotoğraf: {article.source}</figcaption>
     </figure>
   )}
 
