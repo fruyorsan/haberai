@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T18:24:01.280Z",
+  "updatedAt": "2026-10-25T18:26:27.010Z",
   "gunluk": 12,
   "pencereGun": 45,
   "esik": {
@@ -10,9 +10,9 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 4465,
-  "aday": 4465,
-  "uygun": 2578,
+  "toplamHaber": 4467,
+  "aday": 4467,
+  "uygun": 2580,
   "secilen": 132,
   "red": {
     "kısa gövde": 1735,
@@ -22,8 +22,8 @@
     "kategorisiz": 2,
     "fotoğraf yok": 1,
     "editör notu yok": 14,
-    "günlük kota": 2436,
-    "tekrar": 10
+    "günlük kota": 2440,
+    "tekrar": 8
   },
   "ornekTekrarlar": [
     {
@@ -47,20 +47,12 @@
       "twin": "Bursa deprem hafızasını masaya yatırdı: 1855 felaketi konuşuldu"
     },
     {
-      "title": "Suudi Arabistan Enerji Bakanlığı Şeybe Petrol Sahasında 2 Ölüm Bildirdi",
-      "twin": "Suudi Arabistan’da Engellenen Füze Şarapnelini 2 Kişiyi Yaraladı"
-    },
-    {
       "title": "Fransa devlet tahvili getirisi yüzde 5'i aşarak 24 yılın zirvesine ulaştı",
       "twin": "Fransa Tahvil Faizi 24 Yılın Zirvesinde: Hedge Fonların Rolü Tartışılıyor"
     },
     {
       "title": "Kanada 6,2 Milyar Dolar Sanayi Koruma Planıyla Trump Gümrük Vergilerine Karşı Harekete Geçti",
       "twin": "Kanada, Trump Tarifelerine Karşı 6,2 Milyar Dolar Destek Paketi Duyurdu"
-    },
-    {
-      "title": "Suudi Arabistan'da Askeri Helikopter Düştü: 2 Subay Yaşamını Yitirdi",
-      "twin": "Suudi Arabistan’da Engellenen Füze Şarapnelini 2 Kişiyi Yaraladı"
     },
     {
       "title": "Cumhurbaşkanı Erdoğan: Külliye'de 40 bini aşkın muhtarla buluştuk",
@@ -138,6 +130,20 @@
       "0bf8fa7f289f2599",
       "fc0396373934f3bc"
     ],
+    "2026-10-25": [
+      "03f794bcefdd2bd7",
+      "a5915e06b4fd5cc3",
+      "afb3894357fe3ce5",
+      "06aab123106d5870",
+      "82748f70a2884676",
+      "d618c512b01e0cc5",
+      "157f8b0014abfa4c",
+      "f0fbd9ed76c7647b",
+      "4b293c06b856d38e",
+      "a36035760f497b25",
+      "777b46da3c4f55fb",
+      "5ffffbda8150e954"
+    ],
     "2026-10-15": [
       "2ee03cd9c9d668ee",
       "ea09595636002289",
@@ -194,20 +200,6 @@
       "884864c00a219a05",
       "8e5433c027b590df"
     ],
-    "2026-10-25": [
-      "a5915e06b4fd5cc3",
-      "afb3894357fe3ce5",
-      "06aab123106d5870",
-      "82748f70a2884676",
-      "d618c512b01e0cc5",
-      "157f8b0014abfa4c",
-      "f0fbd9ed76c7647b",
-      "4b293c06b856d38e",
-      "a36035760f497b25",
-      "777b46da3c4f55fb",
-      "5ffffbda8150e954",
-      "bb2c4433a32c88e2"
-    ],
     "2026-10-24": [
       "a4be49d15a2c1a5f",
       "4f755982d94c7714",
@@ -233,6 +225,7 @@
     "a167f16224f137cc",
     "e329272d9fa2b48f",
     "ac48140101792f2e",
+    "03f794bcefdd2bd7",
     "2ee03cd9c9d668ee",
     "88afc4c46ff5a08a",
     "a569cb0ec87ffe82",
@@ -343,7 +336,6 @@
     "3f619adc10278c69",
     "727919c6932742b1",
     "b0f78ba86f32f314",
-    "bb2c4433a32c88e2",
     "63c9f53e7702bbc2",
     "67d9b1811b11c487",
     "64279866b9f18be1",
