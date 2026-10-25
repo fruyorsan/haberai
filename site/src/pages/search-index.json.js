@@ -1,9 +1,9 @@
-import { getArticles } from "../lib/articles.js";
+import { getYayinArticles } from "../lib/articles.js";
 import { kapakKaynagi } from "../lib/kapak.js";
 
 /** Arama sayfası için hafif bir indeks üretir. */
 export function GET() {
-  const index = getArticles().map((a) => ({
+  const index = getYayinArticles().map((a) => ({
     t: a.title,
     u: a.url,
     s: (a.summary || "").slice(0, 160),

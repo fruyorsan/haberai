@@ -1,4 +1,4 @@
-import { getArticles, timeAgo, publishedISO, publishedTime } from "./articles.js";
+import { timeAgo, publishedISO, publishedTime, getYayinArticles } from "./articles.js";
 
 // "Son dakika" penceresi: yayın üzerinden bu süre geçmediyse haber taze sayılır.
 export const BREAKING_WINDOW_MS = 120 * 60 * 1000; // 120 dk
@@ -15,7 +15,7 @@ const DAY_MS = 24 * 60 * 60 * 1000;
  * Veri `breaking` alanını içermeyebilir; bu yüzden yokluğuna dayanıklıdır.
  */
 export function getBreakingItems({ limit = BREAKING_MAX, now = Date.now() } = {}) {
-  return getArticles()
+  return getYayinArticles()
     .filter((a) => now - publishedTime(a) < DAY_MS)
     .map((a) => {
       const iso = publishedISO(a);

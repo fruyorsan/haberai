@@ -14,7 +14,7 @@
 // ==========================================================================
 import AdSlot from "./AdSlot.astro";
 import Yorumlar from "./Yorumlar.astro";
-import { getArticles, getCategories, imageUrl } from "../lib/articles.js";
+import { getCategories, imageUrl, getYayinArticles } from "../lib/articles.js";
 import { kapakKaynagi } from "../lib/kapak.js";
 import { akisKartlar, AKIS_ILK } from "../lib/akis-kart.js";
 import { ilgiSirala, kapakliOneSirala } from "../lib/ilgi.js";
@@ -22,7 +22,7 @@ import { ADSENSE_SLOTS } from "../lib/site-meta.js";
 
 const { kategori = "", kategoriAdi = "", ilkSayi = AKIS_ILK } = Astro.props;
 const gecerliKat = Boolean(kategori);
-const tumu = getArticles();
+const tumu = getYayinArticles();
 const kategoriler = getCategories().slice(0, 14);
 // GLOBAL akış ilgi puanına göre sıralanır (teknoloji, oyun, yapay zekâ ve
 // merak uyandıran konular öne). Her iki akışta da GERÇEK fotoğraflı haberler

@@ -7,7 +7,7 @@ import PushCTA from "../../components/PushCTA.astro";
 import DevamHaber from "../../components/DevamHaber.astro";
 import HaberFigur from "../../components/HaberFigur.astro";
 import Yorumlar from "../../components/Yorumlar.astro";
-import { getArticles, formatDate, publishedISO, imageUrl, imageSrcset, socialImageUrl, tagUrl, slugify } from "../../lib/articles.js";
+import { getArticles, getYayinArticles, formatDate, publishedISO, imageUrl, imageSrcset, socialImageUrl, tagUrl, slugify } from "../../lib/articles.js";
 import { indeksliMi } from "../../lib/indeks.js";
 import { kapakKaynagi, kapakUygunMu } from "../../lib/kapak.js";
 import { stokEkUygunMu } from "../../lib/gorsel-uygun.js";
@@ -21,7 +21,7 @@ export function getStaticPaths() {
 }
 
 const { article } = Astro.props;
-const all = getArticles();
+const all = getYayinArticles();
 const date = formatDate(publishedISO(article));
 
 // İlgili haberler: yalnızca kategoriye bakmak geniş kategorilerde (Gündem gibi)
@@ -486,8 +486,11 @@ const breadcrumbLd = {
         Kaynak:
         <a href={article.sourceUrl} target="_blank" rel="noopener nofollow">{article.source}</a>
         <span class="post__ai-note">
-          Bu haber, ilgili kaynaktan derlenen veriler doğrultusunda HaberinAi Haber Merkezi tarafından hazırlanmış ve editoryal incelemeden geçirilmiştir.
-          <a href="/yayin-ilkeleri/">Yayın ilkelerimiz</a> ve <a href="/telif/">içerik politikamız</a> hakkında bilgi edinebilirsiniz.
+          Bu içerik, kaynak metne dayalı olarak yapay zekâ destekli özetleme ve otomatik kalite
+          denetimiyle hazırlanmıştır. Kaynağın bağlantısı açıkça verilir; vitrinde yalnızca kalite
+          eşiğini geçen içerikler listelenir. Ayrıntı: <a href="/yayin-ilkeleri/">yayın ilkelerimiz</a>,
+          <a href="/yayin-ilkeleri/#yapay-zeka">yapay zekâ kullanımı</a> ve
+          <a href="/telif/">içerik politikamız</a>.
         </span>
       </div>
     </article>

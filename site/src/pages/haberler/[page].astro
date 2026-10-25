@@ -4,16 +4,16 @@ import ArticleCard from "../../components/ArticleCard.astro";
 import Pagination from "../../components/Pagination.astro";
 import AdSlot from "../../components/AdSlot.astro";
 import { ADSENSE_SLOTS } from "../../lib/site-meta.js";
-import { getArticles, paginate, PER_PAGE, totalPages } from "../../lib/articles.js";
+import { paginate, PER_PAGE, totalPages, getYayinArticles } from "../../lib/articles.js";
 
 export function getStaticPaths() {
-  const pages = totalPages(getArticles());
+  const pages = totalPages(getYayinArticles());
   const paths = [];
   for (let p = 2; p <= pages; p++) paths.push({ params: { page: String(p) } });
   return paths;
 }
 
-const all = getArticles();
+const all = getYayinArticles();
 const page = Number(Astro.params.page);
 const { items, current, totalPages: pages, total } = paginate(all, page, PER_PAGE);
 ---

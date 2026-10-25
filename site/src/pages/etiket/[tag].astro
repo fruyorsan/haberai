@@ -8,7 +8,7 @@ import { etiketIndeksliMi } from "../../lib/indeks.js";
 import { getTags, paginate, PER_PAGE } from "../../lib/articles.js";
 
 export function getStaticPaths() {
-  return getTags().map((tag) => ({ params: { tag: tag.slug }, props: { tag } }));
+  return getTags(2).map((tag) => ({ params: { tag: tag.slug }, props: { tag } }));
 }
 
 const { tag } = Astro.props;

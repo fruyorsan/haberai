@@ -1,9 +1,9 @@
 ---
 import Base from "../layouts/Base.astro";
 import { CONTACT_EMAIL } from "../lib/site-meta.js";
-import { getArticles, getCategories } from "../lib/articles.js";
+import { getCategories, getYayinArticles } from "../lib/articles.js";
 
-const haberSayisi = getArticles().length;
+const haberSayisi = getYayinArticles().length;
 const kategoriSayisi = getCategories().length;
 const origin = Astro.site ? String(Astro.site).replace(/\/+$/, "") : "https://haberinai.site";
 

@@ -1,11 +1,11 @@
 ---
-import { getArticles, timeAgo, publishedISO } from "../lib/articles.js";
+import { timeAgo, publishedISO, getYayinArticles } from "../lib/articles.js";
 
 // Ana sayfa vitrini: sonsuz kayan haber şeridi.
 // MarketTicker'dan (tam genişlik, koyu) ve Header "SON DAKİKA"
 // rotasyonundan (tek slayt) bilinçli olarak farklıdır.
 const MAX = 12;
-const articles = getArticles().slice(0, MAX);
+const articles = getYayinArticles().slice(0, MAX);
 
 // Kategori adından sabit bir renk tonu üret (aynı kategori => aynı renk)
 function hue(str) {

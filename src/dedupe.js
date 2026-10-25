@@ -152,3 +152,101 @@ export function dedupeArticles(articles = [], threshold = 0.75) {
   }
   return { kept, removed };
 }
+
+// ==========================================================================
+// OLAY EŞLEŞTİRME (başlık + varlık + sayı)
+// --------------------------------------------------------------------------
+// Saf kelime benzerliği, aynı olayı farklı kelimelerle anlatan başlıkları
+// kaçırıyor:
+//   "Japonya'da 7.0 Güçlü Deprem 470 km Derinliğinde Saldırdı"
+//   "Japonya Meteoroloji Ajansı, 7.0 Büyüklükte Depremi 470 km Derinlikte Kayıt Etti"
+// Bu ikisi yalnızca {japonya, deprem} paylaşır; benzerlik eşiğin altında kalır.
+// Bu yüzden üç sinyal birlikte aranır:
+//   1) başlık benzerliği çok yüksekse (>= 0.72) aynı olay,
+//   2) aynı özne (ilk anlamlı kelime) + aynı sayı (7.0, 470, 1.213...) ise
+//      ve başlıklar en azından biraz örtüşüyorsa aynı olay,
+//   3) çok yüksek kapsama (>= 0.9) varsa aynı olay.
+// ==========================================================================
+
+/** Başlığı kelimelere ayırır; kesme işaretini kaldırır ("Fransa'daki" → "fransadaki"). */
+function baslikParcalari(title = "") {
+  return String(title)
+    .toLocaleLowerCase("tr")
+    .replace(/['’`´]/g, "")
+    .split(/[^\p{L}\p{N}]+/u)
+    .filter(Boolean);
+}
+
+/** Olay eşleştirmede ayırt ediciliği olmayan kelimeler. */
+const OLAY_STOP = new Set([
+  ...STOP,
+  "prof", "dr", "doç", "uzman", "jeolog", "bakan", "başkan", "eski", "genel",
+  "müdür", "açıklaması", "açıklamasında", "duyurdu", "duyuruldu", "bildirdi",
+  "kaydetti", "gerçekleşti", "gerçekleşen", "yaşandı", "söyledi", "belirtti",
+]);
+
+/** Başlığın anlamlı kelime kökleri (5 harfe indirgenmiş). */
+function olayKelimeleri(title) {
+  const set = new Set();
+  for (const w of baslikParcalari(title)) {
+    if (w.length > 2 && !OLAY_STOP.has(w) && !/^\d+$/.test(w)) {
+      set.add(w.length >= 6 ? w.slice(0, 5) : w);
+    }
+  }
+  return set;
+}
+
+/** Başlığın ilk anlamlı kelimesi: haberin öznesi kabul edilir. */
+function olayOznesi(title) {
+  for (const w of baslikParcalari(title)) {
+    if (w.length >= 3 && !OLAY_STOP.has(w) && !/^\d+$/.test(w)) {
+      return w.length >= 6 ? w.slice(0, 5) : w;
+    }
+  }
+  return "";
+}
+
+/**
+ * Başlıktaki ayırt edici sayılar. 1900-2099 arası tam sayılar (yıl) ve tek
+ * haneli tam sayılar elenir; "7.0", "1.213", "470" gibi değerler kalır.
+ */
+function olaySayilari(title) {
+  const set = new Set();
+  for (const m of String(title).matchAll(/(?<![\p{L}\p{N}])\d+(?:[.,]\d+)?(?![\p{L}\p{N}])/gu)) {
+    const ham = m[0];
+    const v = Number.parseFloat(ham.replace(",", "."));
+    if (!Number.isFinite(v)) continue;
+    if (Number.isInteger(v) && v >= 1900 && v <= 2099) continue;
+    if (Number.isInteger(v) && Math.abs(v) < 2) continue;
+    set.add(v);
+  }
+  return set;
+}
+
+/**
+ * İki başlık aynı olayı mı anlatıyor?
+ * @param {string} a
+ * @param {string} b
+ * @returns {boolean}
+ */
+export function ayniOlay(a, b) {
+  const ka = olayKelimeleri(a);
+  const kb = olayKelimeleri(b);
+  if (ka.size < 3 || kb.size < 3) return false;
+
+  const s = similarity(ka, kb);
+  if (s >= 0.72) return true;
+
+  const kapsam =
+    [...ka].filter((w) => kb.has(w)).length / Math.min(ka.size, kb.size);
+  if (kapsam >= 0.9) return true;
+
+  const ozneA = olayOznesi(a);
+  const ozneB = olayOznesi(b);
+  if (!ozneA || ozneA !== ozneB || s < 0.25) return false;
+
+  const sa = olaySayilari(a);
+  const sb = olaySayilari(b);
+  for (const n of sa) if (sb.has(n)) return true;
+  return false;
+}

@@ -280,6 +280,66 @@ bunları görmek zorundadır), ancak kullanıcı "Kabul et" diyene kadar
 `cerez-onay` anahtarında saklanır ve sayfa yenilendiğinde varsayılan ondan okunur.
 Avrupa Birliği trafiği için AdSense panelindeki gizlilik ve ileti mesajlarını da aç.
 
+## Yayın çekirdeği (AdSense uyumu)
+
+Site, toplanan **tüm** haberleri yayınlamaya devam eder; ancak ana sayfa, kategoriler,
+etiketler, RSS, arama ve site haritası yalnızca kalite kapısını geçen bir **çekirdek**
+(vitrin) gösterir. Amaç, "düşük değere sahip içerik" uyarısını besleyen kısa ve tekrarlı
+haberleri vitrinden uzak tutmaktır. Çekirdek dışındaki haberler **silinmez**: kendi
+sayfalarında açılır, doğrudan bağlantıyla okunur, ancak listelerde görünmez ve
+`<meta name="robots" content="noindex, follow">` alır.
+
+### Nasıl çalışır?
+
+1. `src/indeks.js` `data/articles.json` içindeki haberleri kalite kapısından geçirir.
+2. Aynı olayı anlatan tekrarlar (başlık benzerliği + olay imzası) ayıklanır.
+3. Günde en iyi `INDEKS_GUNLUK` (varsayılan **12**) haber seçilir.
+4. Sonuç `data/indeks.json` içine yazılır; site katmanı bu dosyayı okur.
+
+```bash
+npm run indeks          # çekirdeği yeniden üret
+cd site && npm run build
+```
+
+Çıktıda kaç haberin elendiği ve hangi gerekçeyle elendiği özetlenir. Karar
+deterministiktir: aynı veri + aynı eşik = aynı liste; böylece URL'ler her derlemede
+indeksli/noindex arasında zıplamaz.
+
+### Kalite eşikleri
+
+| Ölçüt | Varsayılan | Ortam değişkeni |
+| --- | --- | --- |
+| Gövde (karakter) | 1200 | `INDEKS_MIN_GOVDE` |
+| Maddeli özet (adet) | 3 | `INDEKS_MIN_MADDE` |
+| Özet (karakter) | 120 | `INDEKS_MIN_OZET` |
+| Özgün yorum (karakter) | 150 | `INDEKS_MIN_YORUM` |
+| Editör notu (karakter) | 40 | `INDEKS_MIN_NOT` |
+| Başlık benzerliği | 0.55 | `INDEKS_BENZERLIK` |
+| Günlük çekirdek kotası | 12 | `INDEKS_GUNLUK` |
+| Geriye dönük pencere (gün) | 45 | `INDEKS_PENCERE_GUN` |
+
+Eşikleri düşürmek vitrini büyütür ama AdSense riskini artırır; yükseltmek vitrini
+daraltır. Değişiklikten sonra `npm run indeks` çalıştırılmadan site eski listeyi
+kullanmaya devam eder.
+
+### Yayıncı kimliği (E-E-A-T)
+
+Künye sayfasındaki gerçek yayıncı bilgisi kod değişikliği gerektirmeden tanımlanır:
+
+```bash
+gh variable set PUBLISHER_NAME    --body "Ad Soyad"
+gh variable set PUBLISHER_ADDRESS --body "Mahalle, Cadde No, İlçe"
+gh variable set PUBLISHER_CITY    --body "İstanbul"
+gh variable set PUBLISHER_PHONE   --body "+90 5xx xxx xx xx"
+gh workflow run pipeline.yml
+```
+
+Bu değerler yoksa künyede uydurma bir kişi adı yazılmaz; "HaberinAi Editör Masası"
+gösterilir. AdSense incelemesinden önce gerçek ad ve adresin tanımlanması önerilir.
+
+> Not: Vitrin temizliği tek başına onay garantisi değildir. İçerik derinliği, özgün
+> değer ve düzenli yayın disiplini inceleme boyunca korunmalıdır.
+
 ## Sosyal Dağıtım
 
 Yeni yayınlanan haberleri sosyal kanallara **otomatik** paylaşan opsiyonel bir adımdır.

@@ -1,8 +1,8 @@
 ---
 import Base from "../layouts/Base.astro";
-import { getArticles, publishedISO, timeAgo } from "../lib/articles.js";
+import { publishedISO, timeAgo, getYayinArticles } from "../lib/articles.js";
 
-const latest = getArticles().slice(0, 8);
+const latest = getYayinArticles().slice(0, 8);
 ---
 
 <Base

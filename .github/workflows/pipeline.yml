@@ -138,6 +138,12 @@ jobs:
           # Bos ise varsayilan, sitenin yayinda oldugu adrestir (fruyorsan.github.io).
           # Ozel alan adi icin: gh variable set SITE_URL --body "https://haberinai.site"
           SITE_URL: ${{ vars.SITE_URL }}
+          # Yayinci kimligi (kunye / AdSense seffafligi). Tanimli degilse
+          # "HaberinAi Editor Masasi" gosterilir; uydurma isim yazilmaz.
+          PUBLISHER_NAME: ${{ vars.PUBLISHER_NAME }}
+          PUBLISHER_ADDRESS: ${{ vars.PUBLISHER_ADDRESS }}
+          PUBLISHER_CITY: ${{ vars.PUBLISHER_CITY }}
+          PUBLISHER_PHONE: ${{ vars.PUBLISHER_PHONE }}
           # AdSense: yayinci kimligi + reklam birimi kimlikleri. Bos ise reklam
           # kodu ve reklam alanlari hic basilmaz.
           ADSENSE_CLIENT: ${{ vars.ADSENSE_CLIENT }}

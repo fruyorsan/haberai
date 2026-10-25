@@ -1,4 +1,4 @@
-import { getArticles, getCategories, publishedISO } from "../lib/articles.js";
+import { getCategories, publishedISO, getYayinArticles } from "../lib/articles.js";
 import { siteOrigin } from "../lib/site-meta.js";
 
 // ============================================================================
@@ -14,7 +14,7 @@ import { siteOrigin } from "../lib/site-meta.js";
 // ============================================================================
 export function GET({ site }) {
   const origin = siteOrigin(site);
-  const haberler = getArticles();
+  const haberler = getYayinArticles();
   const kategoriler = getCategories();
   const son = haberler.slice(0, 40);
 

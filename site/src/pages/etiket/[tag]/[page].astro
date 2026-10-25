@@ -9,7 +9,7 @@ import { getTags, paginate, PER_PAGE, totalPages } from "../../../lib/articles.j
 // Konu sayfalarının 2. ve sonraki sayfaları. 1. sayfa /etiket/<slug>/ adresindedir.
 export function getStaticPaths() {
   const paths = [];
-  for (const tag of getTags()) {
+  for (const tag of getTags(2)) {
     const pages = totalPages(tag.articles, PER_PAGE);
     for (let p = 2; p <= pages; p++) {
       paths.push({ params: { tag: tag.slug, page: String(p) }, props: { tag } });

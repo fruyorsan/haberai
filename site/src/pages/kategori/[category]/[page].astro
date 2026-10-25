@@ -4,13 +4,13 @@ import ArticleCard from "../../../components/ArticleCard.astro";
 import Pagination from "../../../components/Pagination.astro";
 import AdSlot from "../../../components/AdSlot.astro";
 import { ADSENSE_SLOTS } from "../../../lib/site-meta.js";
-import { getArticles, getCategories, paginate, PER_PAGE, totalPages } from "../../../lib/articles.js";
+import { getCategories, paginate, PER_PAGE, totalPages, getYayinArticles } from "../../../lib/articles.js";
 
 // Kategori sayfaları (2. sayfa ve sonrası). 1. sayfa /kategori/<slug>/ adresindedir.
 // Sayfalama olmadan "gündem" gibi büyük kategoriler tek sayfada 500 KB'a çıkıp
 // yüzlerce görsel yüklüyordu; bu yüzden liste PER_PAGE'lik sayfalara bölünür.
 export function getStaticPaths() {
-  const all = getArticles();
+  const all = getYayinArticles();
   const paths = [];
   for (const category of getCategories()) {
     const list = all.filter((a) => a.categorySlug === category.slug);
@@ -23,7 +23,7 @@ export function getStaticPaths() {
 }
 
 const { category } = Astro.props;
-const all = getArticles().filter((a) => a.categorySlug === category.slug);
+const all = getYayinArticles().filter((a) => a.categorySlug === category.slug);
 const page = Number(Astro.params.page);
 const { items, current, totalPages: pages, total } = paginate(all, page, PER_PAGE);
 ---

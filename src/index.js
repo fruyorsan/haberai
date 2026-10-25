@@ -4,7 +4,7 @@ import { analyzeArticle } from "./ai.js";
 import { updateMarket } from "./market.js";
 import { loadArticles, saveArticles, existingIds, makeId } from "./store.js";
 import { shareNewArticles } from "./share.js";
-import { makeIndex, findSimilar, dedupeArticles } from "./dedupe.js";
+import { makeIndex, findSimilar, dedupeArticles, ayniOlay } from "./dedupe.js";
 import { isBreaking, breakingScore } from "./breaking.js";
 import { purgeCopiedText } from "./telif.js";
 import { stokGorseller, KATEGORI_SORGU, yedekGorsel, atif, kisaSorgu, konuSorgu, afetMi, gorselOnar, markaAdi } from "./stok-gorsel.js";
@@ -183,7 +183,11 @@ async function main() {
     if (eligible.length >= HAVUZ) break;
 
     // Aynı haber başka bir kaynakta zaten var mı?
-    const twin = findSimilar(it.title, titleIndex, config.dupeThreshold);
+    // İki aşamalı tekrar kontrolü: kelime benzerliği + olay imzası (varlık/sayı).
+    const twin =
+      findSimilar(it.title, titleIndex, config.dupeThreshold) ||
+      titleIndex.find((e) => ayniOlay(it.title, e.title))?.title ||
+      null;
     if (twin) {
       dupeCount++;
       console.log(`  ⏭ tekrar: "${it.title.slice(0, 46)}" ≈ "${twin.slice(0, 46)}"`);

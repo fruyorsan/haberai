@@ -1,4 +1,4 @@
-import { getArticles, publishedISO } from "../lib/articles.js";
+import { publishedISO, getYayinArticles } from "../lib/articles.js";
 import { kapakKaynagi } from "../lib/kapak.js";
 import { siteOrigin } from "../lib/site-meta.js";
 
@@ -13,7 +13,7 @@ export function GET({ site }) {
   const origin = siteOrigin(site);
   const makale = (url) => (url ? new URL(url, origin).href : undefined);
 
-  const items = getArticles()
+  const items = getYayinArticles()
     .slice(0, 50)
     .map((a) => {
       const kapak = kapakKaynagi(a);

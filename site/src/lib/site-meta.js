@@ -34,6 +34,27 @@ export function siteOrigin(astroSite) {
 export const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "haberai@yahoo.com";
 
 /**
+ * YAYINCI KİMLİĞİ (E-E-A-T / AdSense şeffaflığı)
+ * ------------------------------------------------
+ * Künyede görünen "sorumlu yayıncı" bilgisi. Gerçek kişi ve adres bilgisi
+ * GitHub deposu değişkenleriyle verilir; kod değişikliği gerekmez:
+ *   gh variable set PUBLISHER_NAME    --body "Ad Soyad"
+ *   gh variable set PUBLISHER_ADDRESS --body "Mahalle, Cadde No, İlçe"
+ *   gh variable set PUBLISHER_CITY    --body "İstanbul"
+ *   gh variable set PUBLISHER_PHONE   --body "+90 5xx xxx xx xx"
+ *
+ * Tanımlanmazsa "HaberinAi Editör Masası" gösterilir; uydurma kişi adı
+ * YAZILMAZ.
+ */
+export const PUBLISHER = {
+  ad: String(process.env.PUBLISHER_NAME || "").trim() || "HaberinAi Editör Masası",
+  adres: String(process.env.PUBLISHER_ADDRESS || "").trim(),
+  sehir: String(process.env.PUBLISHER_CITY || "").trim() || "Türkiye",
+  telefon: String(process.env.PUBLISHER_PHONE || "").trim(),
+  eposta: CONTACT_EMAIL,
+};
+
+/**
  * Sosyal kanal adresleri (opsiyonel).
  *
  * Hepsi boşken sitede hiçbir sosyal bağlantı basılmaz; böylece hesap açılmadan

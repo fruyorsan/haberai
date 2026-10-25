@@ -150,7 +150,7 @@ Aşağıdaki JSON alanlarını TÜRKÇE üret:
   bilgi içersin (sayı, fiyat, tarih, isim, teknik özellik varsa mutlaka yaz). İLK MADDE, beş ilgi çekicilik
   sinyalinden (yenilik / ölçü / çatışma / merak / somut sonuç) en güçlü olanı olsun; kalanlar önem sırasına
   göre diz.
-- body: HABERİN TAM METNİ. 4-6 paragraf, TOPLAM 250-400 KELİME; 180 kelimenin ALTINA İNME. Kaynaktaki bilgileri
+- body: HABERİN TAM METNİ. 5-7 paragraf, TOPLAM 380-520 KELİME; 300 kelimenin ALTINA İNME. Gövde iskeleti: olayın ne olduğu → somut ayrıntılar ve sayılar → arka plan/bağlam → kimin nasıl etkilendiği → bundan sonra ne olacağı. Kaynaktaki bilgileri
   kullanarak haberi genişlet: ayrıntılar, sayılar, teknik özellikler, ilgili gelişmeler, açıklamalar. Kurallar:
   * Her paragraf 3-4 cümle olsun ve ayrı bir dizi öğesi olsun (tek cümlelik ya da çok kısa paragraf yazma).
   * Önceki paragrafta geçmeyen yeni bir somut ayrıntı ekle; aynı bilgiyi uzatıp tekrarlama.
@@ -232,7 +232,7 @@ YAZMADAN ÖNCE KONTROL ET:
 (1) Başlık 45-70 karakterde mi; "!" veya "?" var mı; kaynak başlığıyla aynı cümle mi; tıklanacak kadar vurucu
     ama doğruluğu bozacak bir abartı var mı?
 (2) Özet 35-55 kelime mi ve ilk cümlesi tek başına haberi anlatıyor mu; başlığın kopyası mı?
-(3) Gövde toplam 250-400 kelime aralığında mı (180'in altına düştü mü)? Her paragraf 3-4 cümle mi?
+(3) Gövde toplam 380-520 kelime aralığında mı (300'in altına düştü mü)? Her paragraf 3-4 cümle mi?
 (4) Gövde kaynaktaki somut ayrıntılara dayanıyor mu, yoksa boş mu şişirildi?
 (5) Yorum GERÇEK ANALİZ mi: kesin bir yargı + kaynaktan en az bir somut öğe + kime etki + en az bir
     karşılaştırma, ölçü ya da senaryo. Kopya veya dolgu cümle varsa yeniden yaz.
@@ -283,12 +283,19 @@ function eksikAlanlar(ai) {
   if (String(ai.summary || "").trim().length < 40) eksik.push("summary");
   if (String(ai.comment || "").trim().length < 40) eksik.push("comment");
   if (String(ai.editorNote || "").trim().length < 10) eksik.push("editorNote");
-  if (!(ai.body || []).filter(Boolean).length) eksik.push("body");
+  const govdeMetni = (Array.isArray(ai.body) ? ai.body : [])
+    .filter(Boolean)
+    .join(" ")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!govdeMetni.length) eksik.push("body");
+  // Kalite kapısıyla aynı eşik: ince gövde yeniden üretim ister.
+  else if (govdeMetni.length < 1200) eksik.push("govde-kisa");
   if (!(ai.keyPoints || []).filter(Boolean).length) eksik.push("keyPoints");
   return eksik;
 }
 
-const EK_ISTEM = `EK İSTEK (önceki denemede bazı alanlar boş kaldı): Tüm alanları eksiksiz doldur.
+const EK_ISTEM = `EK İSTEK (önceki denemede bazı alanlar boş kaldı): Tüm alanları eksiksiz doldur. Gövde en az 300 kelime olsun ve her paragraf yeni bir somut ayrıntı getirsin.
 Özellikle comment ve editorNote alanlarında kaynağın cümle kuruluşunu değil kendi cümlelerini kullan;
 kaynakla arka arkaya 10 kelimeden uzun aynı sözcük dizisini ASLA kullanma, kaynaktan cümle kopyalama.
 Yorum kesin bir yargıyla açılsın, kaynaktaki en az bir somut öğeyi (sayı, tarih, isim) kullansın ve en az bir
@@ -467,7 +474,7 @@ async function callProvider(c, article, ekNot = "") {
 }
 async function pollinationsCall(c, article, ekNot = "") {
   const cats = config.categories.join(", ");
-  const prompt = `Bu haberi kendi cümlelerinle Türkçe JSON olarak yeniden yaz. Alanlar: title (45-70 karakter vurucu başlık), slug, summary (2-3 cümle özet), keyPoints (3 somut madde dizisi), body (4 dolu paragraf dizisi, toplam ~250 kelime), comment (3-4 cümle özgün editör analizi ve etkisi), editorNote (1-2 cümle manşet notu, <=175 karakter), tags (4 Türkçe etiket dizisi), category (${cats} içinden biri), gorselSorgu (2-4 kelimelik İngilizce görsel sorgusu).\nKAYNAK: ${article.source} (${article.feedCategory || ""})\nBAŞLIK: ${article.title}\nMETİN: ${String(article.content || "").slice(0, 2600)}`;
+  const prompt = `Bu haberi kendi cümlelerinle Türkçe JSON olarak yeniden yaz. Alanlar: title (45-70 karakter vurucu başlık), slug, summary (2-3 cümle özet), keyPoints (3 somut madde dizisi), body (4 dolu paragraf dizisi, toplam ~400 kelime), comment (3-4 cümle özgün editör analizi ve etkisi), editorNote (1-2 cümle manşet notu, <=175 karakter), tags (4 Türkçe etiket dizisi), category (${cats} içinden biri), gorselSorgu (2-4 kelimelik İngilizce görsel sorgusu).\nKAYNAK: ${article.source} (${article.feedCategory || ""})\nBAŞLIK: ${article.title}\nMETİN: ${String(article.content || "").slice(0, 2600)}`;
   const res = await safeFetch("https://text.pollinations.ai/openai", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ model: c.model || "openai", reasoning_effort: "low", temperature: 0.75, messages: [{ role: "system", content: "Deneyimli bir Türk teknoloji ve haber editörüsün. Kaynak cümlelerini kopyalamadan özgün Türkçe haber üret. Yanıtını SADECE geçerli JSON nesnesi olarak ver." }, { role: "user", content: prompt }] }) });
   if (!res.ok) throw classify(res.status, await res.text(), res.headers, "Pollinations");
   const json = await res.json();
@@ -488,7 +495,7 @@ async function geminiCall(c, article, ekNot = "") {
         temperature: 0.85,
         // İstem gövdeyi 250-400 kelimeye çıkardığı için 3000 jeton dar kalıyordu:
         // Türkçe ~2-3 jeton/kelime olduğundan yanıt kesilip JSON geçersizleşebiliyordu.
-        maxOutputTokens: 4096,
+        maxOutputTokens: 6144,
         ...(/gemma/i.test(c.model) ? {} : { responseMimeType: "application/json" }),
         ...(/gemma/i.test(c.model) ? {} : { responseSchema: SCHEMA }),
       },
@@ -513,7 +520,7 @@ async function groqCall(c, article, ekNot = "") {
     body: JSON.stringify({
       model: c.model,
       temperature: 0.85,
-      max_tokens: 4000,
+      max_tokens: 5000,
       // gpt-oss bir akıl yürütme modeli: kısa tutmazsak token bütçesini "düşünmeye"
       // harcayıp JSON'u tamamlayamıyor (json_validate_failed hatası).
       ...(/gpt-oss/i.test(c.model) ? { reasoning_effort: "low" } : {}),

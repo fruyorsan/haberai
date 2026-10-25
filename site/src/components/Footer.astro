@@ -1,5 +1,5 @@
 ---
-import { getCategories, getArticles } from "../lib/articles.js";
+import { getCategories, getYayinArticles } from "../lib/articles.js";
 import { SOSYAL_LINKLER } from "../lib/site-meta.js";
 
 const year = new Date().getFullYear();
@@ -7,7 +7,7 @@ const year = new Date().getFullYear();
 // 7'de kilitli kalıyordu); footer'daki link listesi ise düzeni korumak için 7'de kalır.
 const allCats = getCategories();
 const cats = allCats.slice(0, 7);
-const son = getArticles().slice(0, 5);
+const son = getYayinArticles().slice(0, 5);
 ---
 
 <footer class="footer">
@@ -21,7 +21,7 @@ const son = getArticles().slice(0, 5);
         Türkiye ve dünya gündeminden son dakika gelişmeleri, teknoloji, ekonomi ve analitik haber dosyaları.
       </p>
       <div class="footer__stats">
-        <span><strong>{getArticles().length}</strong> haber</span>
+        <span><strong>{getYayinArticles().length}</strong> haber</span>
         <span class="footer__sep">•</span>
         <span><strong>{allCats.length}</strong> kategori</span>
         <span class="footer__sep">•</span>

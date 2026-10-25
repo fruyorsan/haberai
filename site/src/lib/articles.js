@@ -1,6 +1,8 @@
 import { readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { indeksSeti } from "./indeks.js";
+import { kategoriDuzelt } from "./kategori-duzelt.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -84,10 +86,12 @@ export function getArticles() {
     let slug = a.slug || slugify(a.title);
     while (usedSlugs.has(slug)) slug = `${slug}-${a.id || "x"}`;
     usedSlugs.add(slug);
+    const kategori = kategoriDuzelt(a.category, a.title, a.summary);
     return {
       ...a,
       slug,
-      categorySlug: slugify(a.category || "diger"),
+      category: kategori,
+      categorySlug: slugify(kategori || "diger"),
       url: `/haber/${slug}/`,
     };
   });
@@ -95,6 +99,35 @@ export function getArticles() {
   list.sort((a, b) => publishedTime(b) - publishedTime(a));
   cache = list;
   return list;
+}
+
+/**
+ * VİTRİN (yayın çekirdeği): herkese açık listelerde, RSS'te, arama motorunda
+ * ve site haritasında görünen haberler.
+ *
+ * `data/indeks.json` (bkz. src/indeks.js) kalite kapısını geçen, aynı olayı
+ * tekrar etmeyen ve günlük kotaya sığan haberlerin id'lerini tutar. Çekirdek
+ * dışındaki haberler SİLİNMEZ: kendi sayfalarında okunur, doğrudan bağlantıyla
+ * açılır; ancak listelerde görünmez ve `noindex` olur. Böylece site vitrini
+ * küçük ve tutarlı kalırken arşiv kaybolmaz.
+ *
+ * indeks.json yoksa/bozuksa kısıtlama uygulanmaz (güvenli varsayılan).
+ */
+let yayinCache = null;
+
+export function getYayinArticles() {
+  if (yayinCache) return yayinCache;
+  const set = indeksSeti();
+  const all = getArticles();
+  yayinCache = set ? all.filter((a) => set.has(String(a.id))) : all;
+  return yayinCache;
+}
+
+/** Haber vitrinde (yayın çekirdeğinde) mi? */
+export function yayindaMi(a) {
+  const set = indeksSeti();
+  if (!set) return true;
+  return set.has(String(a?.id ?? ""));
 }
 
 /**
@@ -194,7 +227,7 @@ export function getFeatured(count = 6, horizon = 20, uygun = (a) => Boolean(a.im
     "ekonomi",
   ]);
   const simdi = Date.now();
-  const tum = getArticles();
+  const tum = getYayinArticles();
   const recent = tum.slice(0, Math.max(count * 4, horizon, 30));
 
   const gercekFotoMu = (a) =>
@@ -311,7 +344,7 @@ export function imageSrcset(src, widths = [480, 800, 1080]) {
 
 export function getCategories() {
   const map = new Map();
-  for (const a of getArticles()) {
+  for (const a of getYayinArticles()) {
     if (!map.has(a.categorySlug)) {
       map.set(a.categorySlug, { name: a.category, slug: a.categorySlug, count: 0 });
     }
@@ -325,7 +358,7 @@ export function getCategories() {
 // geçiyor. Her etikete sayfa açmak yüzlerce "ince" sayfa üretir; bu hem Google
 // kalitesi hem de tarama bütçesi açısından risklidir. Bu yüzden yalnızca en az
 // TAG_MIN haberde geçen etiketler sayfalaşır, kalanlar aramaya bağlanır.
-export const TAG_MIN = 8;
+export const TAG_MIN = 2;
 
 let tagCache = null;
 
@@ -334,7 +367,7 @@ export function getTags(minCount = TAG_MIN) {
   if (!tagCache) {
     const kategoriSluglari = new Set(getCategories().map((c) => c.slug));
     const map = new Map();
-    for (const a of getArticles()) {
+    for (const a of getYayinArticles()) {
       const gorulen = new Set();
       for (const ham of Array.isArray(a.tags) ? a.tags : []) {
         const ad = String(ham).trim();

@@ -3,12 +3,12 @@ import Base from "../layouts/Base.astro";
 import ArticleCard from "../components/ArticleCard.astro";
 import AdSlot from "../components/AdSlot.astro";
 import FeaturedSlider from "../components/FeaturedSlider.astro";
-import { getArticles, getFeatured, getTags, imageUrl, imageSrcset, timeAgo, publishedISO } from "../lib/articles.js";
+import { getFeatured, getTags, imageUrl, imageSrcset, timeAgo, publishedISO, getYayinArticles } from "../lib/articles.js";
 import { kapakKaynagi } from "../lib/kapak.js";
 import { ilgiSirala } from "../lib/ilgi.js";
 import { siteOrigin, ADSENSE_SLOTS, SOSYAL_LINKLER } from "../lib/site-meta.js";
 
-const articles = getArticles();
+const articles = getYayinArticles();
 // Shorts vitrini: ilgi sırasının en tepesindeki 4 haber (hepsi gerçek fotoğraflı).
 // Akışın ana sayfadaki yüzü burasıdır — ziyaretçiyi /akis/'a çeken görsel şerit.
 // vitrin ve akış sırası

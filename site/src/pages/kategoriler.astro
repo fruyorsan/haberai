@@ -1,9 +1,9 @@
 ---
 import Base from "../layouts/Base.astro";
-import { getArticles, getCategories, publishedISO, timeAgo } from "../lib/articles.js";
+import { getCategories, publishedISO, timeAgo, getYayinArticles } from "../lib/articles.js";
 
 const cats = getCategories();
-const all = getArticles();
+const all = getYayinArticles();
 const total = all.length;
 
 // Kategoriye sabit renk tonu (NewsTicker ile ayni mantik).

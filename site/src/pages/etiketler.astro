@@ -1,9 +1,9 @@
 ---
 import Base from "../layouts/Base.astro";
-import { getTags, getArticles, timeAgo, publishedISO } from "../lib/articles.js";
+import { getTags, timeAgo, publishedISO, getYayinArticles } from "../lib/articles.js";
 
 const tags = getTags();
-const toplamHaber = getArticles().length;
+const toplamHaber = getYayinArticles().length;
 
 // Konuya sabit renk tonu (kategoriler ve son dakika şeridiyle aynı mantık).
 function hue(str) {

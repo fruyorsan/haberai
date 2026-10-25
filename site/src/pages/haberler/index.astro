@@ -4,9 +4,9 @@ import ArticleCard from "../../components/ArticleCard.astro";
 import Pagination from "../../components/Pagination.astro";
 import AdSlot from "../../components/AdSlot.astro";
 import { ADSENSE_SLOTS } from "../../lib/site-meta.js";
-import { getArticles, paginate, PER_PAGE } from "../../lib/articles.js";
+import { paginate, PER_PAGE, getYayinArticles } from "../../lib/articles.js";
 
-const all = getArticles();
+const all = getYayinArticles();
 const { items, current, totalPages: pages, total } = paginate(all, 1, PER_PAGE);
 ---
 

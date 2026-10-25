@@ -13,13 +13,13 @@
 // ayıklanır (kategori akışında ilk kartlar süzülmüş listeden geldiği için
 // çakışma olabilir).
 // ==========================================================================
-import { getArticles } from "../../../lib/articles.js";
+import { getYayinArticles } from "../../../lib/articles.js";
 import { akisKartlar, AKIS_TUR } from "../../../lib/akis-kart.js";
 import { ilgiSirala } from "../../../lib/ilgi.js";
 
 /** Akışın tamamı için top dosyalarını üretir (0, 24, 48, …). */
 export function getStaticPaths() {
-  const toplam = getArticles().length;
+  const toplam = getYayinArticles().length;
   const yollar = [];
   for (let offset = 0; offset < toplam; offset += AKIS_TUR) {
     yollar.push({ params: { no: String(offset) } });
@@ -31,7 +31,7 @@ export function GET({ params }) {
   const offset = Math.max(0, Number.parseInt(String(params.no), 10) || 0);
   // Sıra, /akis/ gövdesiyle AYNI olmalı (lib/ilgi.js): aksi halde sonsuz
   // kaydırmada tekrar eden kartlar ve sıra atlamaları olur.
-  const tumu = getArticles();
+  const tumu = getYayinArticles();
   const liste = ilgiSirala(tumu);
   const dilim = liste.slice(offset, offset + AKIS_TUR);
   const sonraki = offset + dilim.length;

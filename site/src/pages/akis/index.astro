@@ -11,12 +11,12 @@
 // ==========================================================================
 import Base from "../../layouts/Base.astro";
 import Akis from "../../components/Akis.astro";
-import { getArticles, imageUrl, imageSrcset, socialImageUrl } from "../../lib/articles.js";
+import { imageUrl, imageSrcset, socialImageUrl, getYayinArticles } from "../../lib/articles.js";
 import { kapakKaynagi } from "../../lib/kapak.js";
 import { AKIS_ILK } from "../../lib/akis-kart.js";
 import { siteOrigin } from "../../lib/site-meta.js";
 
-const liste = getArticles();
+const liste = getYayinArticles();
 const ilk = liste.slice(0, AKIS_ILK);
 const ilkKapak = ilk[0] ? kapakKaynagi(ilk[0]) : "";
 const ilkGorsel = ilkKapak ? imageUrl(ilkKapak, 960) : undefined;

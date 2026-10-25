@@ -1,4 +1,4 @@
-import { getArticles } from "../lib/articles.js";
+import { getYayinArticles } from "../lib/articles.js";
 import { indeksSeti } from "../lib/indeks.js";
 
 const escapeXml = (s) =>
@@ -19,7 +19,7 @@ export function GET({ site }) {
   // `noindex` bir URL'i haber site haritasına koymak çelişkidir.
   const indeks = indeksSeti();
 
-  const recent = getArticles()
+  const recent = getYayinArticles()
     .filter((a) => new Date(a.publishedAt || a.generatedAt).getTime() >= cutoff)
     .filter((a) => !indeks || indeks.has(String(a.id)))
     .slice(0, 1000);

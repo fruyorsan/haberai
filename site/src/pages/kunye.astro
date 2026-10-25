@@ -1,15 +1,31 @@
 ---
 import Base from "../layouts/Base.astro";
-import { CONTACT_EMAIL } from "../lib/site-meta.js";
+import { CONTACT_EMAIL, PUBLISHER } from "../lib/site-meta.js";
 
 const origin = Astro.site ? String(Astro.site).replace(/\/+$/, "") : "https://haberinai.site";
 
+const yayinciAdres = [PUBLISHER.adres, PUBLISHER.sehir].filter(Boolean).join(", ");
+
 const schema = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: "Künye — HaberinAi",
-  description: "HaberinAi künye bilgileri: Yayın kimliği, içerik sorumluluğu ve iletişim kanalları.",
-  url: `${origin}/kunye/`,
+  "@graph": [
+    {
+      "@type": "WebPage",
+      name: "Künye — HaberinAi",
+      description: "HaberinAi künye bilgileri: Yayın kimliği, içerik sorumluluğu ve iletişim kanalları.",
+      url: `${origin}/kunye/`,
+      publisher: { "@id": `${origin}/kunye/#yayinci` },
+    },
+    {
+      "@type": "Organization",
+      "@id": `${origin}/kunye/#yayinci`,
+      name: PUBLISHER.ad,
+      url: origin,
+      email: PUBLISHER.eposta,
+      ...(yayinciAdres ? { address: { "@type": "PostalAddress", streetAddress: PUBLISHER.adres || undefined, addressLocality: PUBLISHER.sehir } } : {}),
+      ...(PUBLISHER.telefon ? { telephone: PUBLISHER.telefon } : {}),
+    },
+  ],
 };
 ---
 
@@ -28,6 +44,38 @@ const schema = {
         ilişkin bilgiler aşağıda yer almaktadır.
       </p>
     </header>
+
+    <section class="kunye__yayinci" id="yayinci-kimlik" aria-labelledby="yayinci-baslik">
+      <div class="kunye__yayinci-ust">
+        <h2 id="yayinci-baslik">Yayıncı Kimliği</h2>
+        <p class="kunye__yayinci-not">
+          Bu sayfada yer alan bilgiler, yayıncının gerçek kimliğini ve ulaşılabilir adresini
+          gösterir. İçeriklerle ilgili sorumluluk bu kişiye aittir.
+        </p>
+      </div>
+      <dl class="kunye__dl kunye__dl--yatay">
+        <div>
+          <dt>Sorumlu Yayıncı</dt>
+          <dd>{PUBLISHER.ad}</dd>
+        </div>
+        <div>
+          <dt>Adres</dt>
+          <dd>
+            {PUBLISHER.adres ? yayinciAdres : PUBLISHER.sehir}
+          </dd>
+        </div>
+        <div>
+          <dt>E-posta</dt>
+          <dd><a href={`mailto:${PUBLISHER.eposta}`}>{PUBLISHER.eposta}</a></dd>
+        </div>
+        {PUBLISHER.telefon && (
+          <div>
+            <dt>Telefon</dt>
+            <dd>{PUBLISHER.telefon}</dd>
+          </div>
+        )}
+      </dl>
+    </section>
 
     <div class="kunye__grid">
       <div class="kunye__kart">
@@ -54,7 +102,7 @@ const schema = {
         <h2>İçerik ve Yayın Yönetimi</h2>
         <dl class="kunye__dl">
           <dt>Yayın Sorumlusu</dt>
-          <dd>HaberinAi Editör Masası</dd>
+          <dd>{PUBLISHER.ad}</dd>
 
           <dt>Yayın Kapsamı</dt>
           <dd>Gündem, Dünya, Ekonomi, Teknoloji, Yapay Zekâ, Bilim, Spor ve Kültür</dd>
@@ -125,6 +173,24 @@ const schema = {
     border-radius: 18px;
     background: var(--surface);
     margin-bottom: 20px;
+  }
+  .kunye__yayinci {
+    padding: 24px 28px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--surface);
+    margin-bottom: 20px;
+  }
+  .kunye__yayinci-ust h2 {
+    margin: 0 0 8px;
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+  }
+  .kunye__yayinci-not {
+    margin: 0 0 18px;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--text-2);
   }
   .kunye__etiket {
     display: inline-block;
@@ -223,6 +289,7 @@ const schema = {
     }
     .kunye__ust,
     .kunye__kart,
+    .kunye__yayinci,
     .kunye__not {
       padding: 20px 16px;
     }

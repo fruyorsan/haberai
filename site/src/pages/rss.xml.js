@@ -1,4 +1,4 @@
-import { getArticles, siteName } from "../lib/articles.js";
+import { siteName, getYayinArticles } from "../lib/articles.js";
 import { siteOrigin } from "../lib/site-meta.js";
 
 function esc(s = "") {
@@ -11,7 +11,7 @@ function esc(s = "") {
 
 export function GET({ site }) {
   const SITE = siteOrigin(site);
-  const items = getArticles()
+  const items = getYayinArticles()
     .slice(0, 50)
     .map(
       (a) => `    <item>
