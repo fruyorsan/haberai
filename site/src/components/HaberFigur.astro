@@ -1,21 +1,13 @@
 ---
 // Haber gövdesi içindeki fotoğraf figürü.
 //
-// Stok fotoğrafta (`kaynak` dolu) lisansın istediği atıf görünür biçimde
-// fotoğrafın altında verilir: fotoğrafçı · lisans · Wikimedia Commons.
-// Görsele tıklamak stokta Commons dosya sayfasını, haberin kendi kaynak
-// fotoğrafında ise büyük hâli açar.
+// Görsele tıklamak stokta Commons dosya sayfasını (lisans ve fotoğrafçı
+// bilgisi orada durur), haberin kendi kaynak fotoğrafında ise büyük hâli açar.
+// Arayüzde ayrıca atıf satırı gösterilmez; yalnızca varsa fotoğraf açıklaması
+// yazılır.
 import { imageUrl, imageSrcset } from "../lib/articles.js";
 
-const { url, baslik, kaynak, eskiKaynak, altyazi, alt } = Astro.props;
-
-const lisansAdresi = (g) => {
-  if (!g) return "";
-  if (g.lisansUrl) return g.lisansUrl;
-  const m = /^CC BY(-SA)? (\d\.\d)$/i.exec(String(g.lisans || ""));
-  return m ? `https://creativecommons.org/licenses/${m[1] ? "by-sa" : "by"}/${m[2]}/` : "";
-};
-const lisansLink = kaynak ? lisansAdresi(kaynak) : "";
+const { url, baslik, kaynak, altyazi, alt } = Astro.props;
 
 // Stokta kaynak sayfa (Commons) daha bilgilendirici; kaynak fotoğrafta dosya.
 const gorselAdres = (kaynak && kaynak.sayfa) || url;
@@ -48,30 +40,9 @@ const gorselBaslik = kaynak?.sayfa ? "Fotoğraf kaynağını aç" : "Fotoğrafı
     </a>
   </div>
 
-  {(altyazi || kaynak) && (
+  {altyazi && (
     <figcaption class="content__fig-caption">
-      {altyazi && <span class="content__fig-aciklama">{altyazi}</span>}
-      {kaynak && (
-        <span class="content__fig-credit">
-          Fotoğraf: {kaynak.yazar || "Wikimedia Commons"}
-          {kaynak.lisans && (
-            <>
-              {" · "}
-              {lisansLink ? (
-                <a href={lisansLink} target="_blank" rel="noopener nofollow">{kaynak.lisans}</a>
-              ) : (
-                kaynak.lisans
-              )}
-            </>
-          )}
-          {kaynak.sayfa && (
-            <>
-              {" · "}
-              <a href={kaynak.sayfa} target="_blank" rel="noopener nofollow">Wikimedia Commons</a>
-            </>
-          )}
-        </span>
-      )}
+      <span class="content__fig-aciklama">{altyazi}</span>
     </figcaption>
   )}
 </figure>
@@ -117,17 +88,5 @@ const gorselBaslik = kaynak?.sayfa ? "Fotoğraf kaynağını aç" : "Fotoğrafı
   }
   .content__fig-aciklama {
     font-style: italic;
-  }
-  .content__fig-credit {
-    font-size: 0.72rem;
-    letter-spacing: 0.01em;
-  }
-  .content__fig-credit a {
-    color: inherit;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
-  .content__fig-credit a:hover {
-    color: var(--text);
   }
 </style>
