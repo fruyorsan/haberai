@@ -1,5 +1,43 @@
 [
   {
+    "id": "e43e0f4f3bb489fc",
+    "title": "OpenAI, GPT-6.1 Terra’yı Tanıttı; API Fiyatları %50 Düşük",
+    "slug": "openai-gpt-6-1-terra-tanitti-api-fiyatlari-50-dusuk",
+    "summary": "OpenAI, ekranı okuyup uygulamalar arasında işlem yapabilen yeni GPT-6.1 Terra modelini duyurdu. Model, önceki Terra sürümüne göre token başına fiyatı yüzde elli azalttı ve hata oranını önemli ölçüde düşürdü. Bu değişiklik, geliştiricilerin yüksek hacimli iş akışlarını daha ucuz bir şekilde otomatikleştirmesine imkan tanıyor.",
+    "keyPoints": [
+      "GPT-6.1 Terra, token başına 1 $ maliyetle sunuluyor",
+      "API fiyatları, önceki Terra modellerine göre %50 daha düşük",
+      "Orta muhakeme testinde %15,7 hata oranına geriledi"
+    ],
+    "body": [
+      "OpenAI, 26 Ekim 2026 tarihinde yeni GPT-6.1 Terra modelini tanıttı. Model, ekrandaki içeriği anlayıp uygulamalar arasında eylem gerçekleştirebilme yeteneğiyle önceki nesilden ayrılıyor ve doğal dil üretiminde daha akıcı bir deneyim sunuyor. Şirket, bu özellikleri daha düşük bir maliyetle sağlayarak kullanıcıların iş günlerini kolaylaştırmayı hedefledi.",
+      "OpenAI, bu fiyat avantajının özellikle fatura okuma, muhasebe veri girişi gibi yüksek hacimli görevlerde otomasyonu daha erişilebilir kıldığını vurguladı.",
+      "Performans testlerinde GPT-6.1 Terra, orta muhakeme seviyesindeki Agents' Last Exam sınavında %15 puan daha yüksek bir skor elde ederken, aynı görevleri üçte bir maliyetle tamamladı. Hata oranı da belirgin bir düşüş gösterdi; düşük seviyedeki hatalar %53,6’dan %16,7’ye, en yüksek seviyedeki hatalar ise %4,3’e geriledi. Terminal‑Bench 4.0 testinde ise en karmaşık kodlama görevlerinin %50,3’ünü başarıyla çözdü, bu oran önceki sürümün iki katından fazla.",
+      "OpenAI, modelin güvenlik çerçevesi kapsamında siber güvenlikte “Kritik” eşiğini karşıladığını ve kötü niyetli talimatlara karşı direnç gösterdiğini açıkladı. GPT-6.1 Terra, ChatGPT Work ve Codex platformları üzerinden Plus, Pro, Enterprise ve Edu kullanıcılarına sunuluyor. Geliştiriciler ise API üzerinden “gpt-6.1-terra” adıyla erişim sağlayabilecek ve 1 050 000 tokenlik bağlam penceresinden faydalanabilecekler."
+    ],
+    "comment": "OpenAI, GPT-6.1 Terra’yı %50 daha ucuz bir fiyatla sunarak maliyet‑performans dengesini güçlendirmeli. Token başına 1 $ maliyet ve %15,7 hata oranı, özellikle büyük veri işleme ve otomasyon projelerinde cazip bir seçenek oluşturuyor. Geliştiriciler ve kurumsal kullanıcılar, önceki Terra sürümüne göre daha düşük bütçeyle benzer ya da daha iyi sonuçlar alabilecek. Ancak, en karmaşık kodlama görevlerinde hâlâ GPT-6.1 Sol ve GPT-6 Astra’ya kıyasla geri planda kalıyor; bu durum, yüksek performans gerektiren uygulamalarda iki modelin birlikte kullanılmasını gerektirebilir.",
+    "editorNote": "OpenAI, yeni GPT-6.1 Terra’yı %50 daha ucuz fiyatla piyasaya sürerek yüksek hacimli otomasyon işlerini yeniden şekillendirebilir. Geliştiriciler, maliyet avantajını…",
+    "tags": [
+      "OpenAI",
+      "GPT-6.1 Terra",
+      "API fiyatları"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "OpenAI data center interior",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/openai-gpt-6-1-terra",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg/1280px-Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg",
+    "gorselKaynak": {
+      "yazar": "European Commission - Photographer: Aurore Martignoni",
+      "lisans": "CC BY 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg"
+    },
+    "publishedAt": "2026-10-26T19:47:39.000Z",
+    "generatedAt": "2026-10-26T19:49:57.162Z",
+    "breaking": true
+  },
+  {
     "id": "b303e1cc28fcbb10",
     "title": "ASUS, 4700 dolarlık oyun PC'sini Çin'de satışa sundu",
     "slug": "asus-4700-dolarlik-oyun-pc-sini-cinde-satisa-sundu",
