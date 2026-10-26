@@ -1,5 +1,69 @@
 [
   {
+    "id": "e9e6f2e35e96d1fb",
+    "title": "Windows 11, APX desteğiyle 32 kayıtlı işlemciye geçiyor",
+    "slug": "windows-11-apx-destegi-32-kayitli-islemci-geciyor",
+    "summary": "Microsoft, Windows 11'in Insider sürümünde Intel APX desteğini test etmeye başladı. Yeni yapılandırma, işlemci kayıtlarını 16'dan 32'ye çıkararak bellek erişimini azaltmayı hedefliyor. Özellik yalnızca uyumlu donanımlarda ve özel derlenmiş yazılımlarda görev yapacak.",
+    "keyPoints": [
+      "Kayıt sayısı 16'dan 32'ye yükselerek performans artışı hedefleniyor",
+      "Desteği Intel Nova Lake ve Diamond Rapids serisi işlemciler sunacak",
+      "AMD'nin Zen 7 mimarisinde APX desteklemesi bekleniyor"
+    ],
+    "body": [
+      "Windows meraklılarının ilgisini çeken yeni bir gelişme, Microsoft'un Insider kanallarında test ettiği Intel APX teknolojisine işaret ediyor. Xeno adlı kullanıcı tarafından fark edilen bu durum, Build 29695.1001 numaralı Experimental (Future Platforms) sürümünde karşımıza çıkıyor. Söz konusu güncellemede, sistem performansını iyileştirmek amacıyla açıkça 'Let Windows use APX for better performance' başlığıyla sunulan yeni bir ayar seçeneği bulunuyor.",
+      "Teknik detaylara bakıldığında, Intel'in 2023 yılında ortaya koyduğu APX standardı x86-64 mimarisinde köklü bir değişiklik vaat ediyor. En kritik yenilik, genel amaçlı işlemci kayıtlarının mevcut 16 seviyesinden 32'ye çıkarılmasıdır. Bu artış, işlemcinin daha fazla veriyi dahili belleklerde tutmasına olanak tanıyor; böylece sıkıştırma ve veri taşıma işlemleri için RAM'e yapılan gereksiz erişimler en aza iniyor. Kullanıcıların bu özelliği etkinleştirmesi için sistemin yeniden başlatılması gerekiyor.",
+      "Microsoft'un sadece işletim sistemi tarafında hazırlık yaptığı düşünülmemeli; şirket alt yapı araçlarında da önemli adımlar attı. Windows SDK'ya işlemci özelliklerini algılama mekanizmaları eklenirken, hata ayıklama aracı WinDbg'ye de APX kayıtlarını izleme ve destekleme imkânı sağlandı. Donanım cephesinde ise Intel'in masaüstü segmentindeki Nova Lake ve sunucu sınıfındaki Diamond Rapids Xeon işlemcilerinin bu teknolojiyi ilk destekleyecekler olduğu öngörülüyor.",
+      "Yazılım ekosisteminde de hazırlıklar hız kesmeden devam ediyor. Bilinen benchmark aracı AIDA64, APX optimizasyonlu SHA3 testlerini sunarak mimarinin test edildiğini gözler önüne seriyor. Rakip tarafında ise AMD'nin de bu standardı benimsemesi bekleniyor; mevcut bilgilere göre Zen 6'de henüz belgelenmeyen APX desteğinin, Zen 7 mimarisiyle birlikte ilk kez görülebilir olma ihtimali üzerinde duruluyor. Ancak AMD yönetim kurulu bu konu hakkında resmi bir açıklama yapmadı.",
+      "Mevcut durum değerlendirildiğinde, Windows 11'deki bu seçenek hâlâ deneysel nitelikte ve nihai kararlı sürümlere ne zaman taşınacağı belirsizdir. Daha da önemlisi, performans artışı yalnızca uyumlu işlemcilere ve APX için özel olarak derlenmiş uygulamalara sınırlı kalacak. Bu nedenle mevcut donanıma sahip kullanıcıların, işletim sistemi güncellemesiyle otomatik olarak hızlanma sağlamasını beklememesi gerekiyor. Geliştiriciler ve donanım üreticileri arasındaki bu koordinasyon, gelecek nesil bilgisayarlarda daha verimli bir yapıyı işaret ediyor."
+    ],
+    "comment": "Bu özellik, mevcut kullanıcılar için somut bir hız artışı sunmayacağından, asıl etkisi gelecek donanım alımı planını etkileyecek. Kayıt sayısının 32'ye çıkması, yoğun veri işleyen yazılımlar için bellek baskısını azaltarak güç tüketimini ve ısınmayı düşürebilir. Ancak bu senaryo, yalnızca uyarlanmış uygulamaları kullanan ve yeni nesil işlemciye sahip olan sınırlı bir kullanıcı kesimi için geçerli olacak. Mevcut donanımı kullananlar için bu bir yükseltme fırsatı değil, sadece geleceğe yönelik bir hazırlık aşamasıdır.",
+    "editorNote": "APX desteği henüz deneysel aşamada ve sadece özel derlenmiş yazılımlarda çalışacak. Mevcut bilgisayarınız bu güncellemeyle otomatik olarak hızlanmayacak.",
+    "tags": [
+      "Windows 11",
+      "Intel APX",
+      "Nova Lake",
+      "AMD Zen 7",
+      "İşlemci Performansı"
+    ],
+    "category": "Yazılım",
+    "gorselSorgu": "Intel processor chip closeup",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/microsoft-tan-windows-11-e-apx-destegi-performans-artabilir--212111",
+    "image": "/kapak/e9e6f2e35e96d1fb.webp",
+    "gorselKaynak": {
+      "yazar": "Jan Helebrant",
+      "lisans": "CC BY-SA 2.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Intel_80186_processor_microphoto_001_(50622223096).jpg"
+    },
+    "publishedAt": "2026-10-26T19:08:00.000Z",
+    "generatedAt": "2026-10-26T19:15:44.678Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Core_Memory_-_Computer_History_Museum_%282007-11-10_22.54.31_by_Carlo_Nardone%29.jpg/1280px-Core_Memory_-_Computer_History_Museum_%282007-11-10_22.54.31_by_Carlo_Nardone%29.jpg",
+        "yazar": "Carlo Nardone from Roma, Italy",
+        "lisans": "CC BY-SA 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Core_Memory_-_Computer_History_Museum_(2007-11-10_22.54.31_by_Carlo_Nardone).jpg",
+        "altyazi": "APX ile azaltılmaya çalışılan RAM erişimi baskısı"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Incident_command_members_look_at_a_computer_screen_in_the_Incident_command_Post._%280c9a2c3c-7867-49e7-86db-e399a5bc37be%29.jpg/1280px-Incident_command_members_look_at_a_computer_screen_in_the_Incident_command_Post._%280c9a2c3c-7867-49e7-86db-e399a5bc37be%29.jpg",
+        "yazar": "NPS Photo",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Incident_command_members_look_at_a_computer_screen_in_the_Incident_command_Post._(0c9a2c3c-7867-49e7-86db-e399a5bc37be).jpg",
+        "altyazi": "APX için derlenmiş yazılımların geliştirme süreci"
+      }
+    ],
+    "breaking": true,
+    "kapak": {
+      "v": 1,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Intel_80186_processor_microphoto_001_%2850622223096%29.jpg/1280px-Intel_80186_processor_microphoto_001_%2850622223096%29.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "73c96dbc826dc770",
     "title": "Sergen Yalçın, Derbiyi Tribünden İzledi",
     "slug": "sergen-yalcin-derbiyi-tribunden-izledi",
