@@ -173,6 +173,65 @@
     "breaking": true
   },
   {
+    "id": "291418757fca5c9b",
+    "title": "PHP Foundation, milyonlarca siteyi koruyan dili 1 çalışanla yürütüyor",
+    "slug": "php-foundation-milyonlarca-siteyi-koruyan-dili-1-calisanla-yurutuyor",
+    "summary": "Dünya genelindeki web altyapısının temelini oluşturan PHP, operasyonlarını yalnızca tek bir tam zamanlı çalışanla sürdürüyor. Kar amacı gütmeyen vakıf modeliyle yönetilen ekosistem, artan siber güvenlik tehditleri ve yapay zeka kaynaklı yoğun kod yüküyle mücadele ediyor.",
+    "keyPoints": [
+      "PHP Foundation bünyesinde tam zamanlı olarak çalışan tek bir kişi bulunuyor.",
+      "Operasyonlar, çoğunluğu yarı zamanlı 14 sözleşmeli yazılımcıyla yürütülüyor.",
+      "Yapay zeka araçları kod önerilerini iki katına çıkarırken denetim yükünü artırdı."
+    ],
+    "body": [
+      "Küresel internet ağındaki web sitelerinin yaklaşık yüzde 70 oranında belkemiğini oluşturan açık kaynaklı PHP dili, yaklaşık otuz yıllık geçmişinin ardından ciddi bir operasyonel kaynak sıkıntısıyla karşı karşıya kaldı. İnternet dünyasının en yaygın kullanılan programlama dillerinden biri olan bu yapının güvenliği, güncellemeleri ve geliştirme süreçleri, kar amacı gütmeyen PHP Foundation organizasyonu tarafından koordine ediliyor. Ancak milyonlarca kurumsal sistemi ve popüler içerik yönetim sistemini doğrudan ilgilendiren bu devasa organizasyonun arkasında son derece kısıtlı bir insan kaynağı yer alıyor.",
+      "PHP Foundation İcra Direktörü Elizabeth Barron tarafından paylaşılan verilere göre vakıf çatısı altında tam zamanlı görev yapan yalnızca bir personel bulunuyor. Bu devasa ekosistemin operasyonel yükü, çoğunluğu yarı zamanlı çalışan on dört sözleşmeli yazılımcı ve hiçbir maddi karşılık bekletmeden tamamen gönüllü esasıyla katkı sunan yönetim kurulu üyeleri tarafından omuzlanıyor. Sadece bireysel ve kurumsal bağışlar ile hibeler yoluyla finansman sağlayan bu yapı, son dönemde tırmanışa geçen siber saldırı tehditlerini göğüslemekte bütçe ve personel bazında yetersiz kalıyor.",
+      "Son dönemde yapay zeka destekli kod yazım araçlarının yaygınlaşması, dilin geliştiricileri için iki ucu keskin bir süreç yarattı. Yapay zeka asistanları kod tabanında uzun süredir fark edilmeyen derin güvenlik açıklarının tespit edilmesine yardımcı olurken, aynı zamanda geliştirici ekibin iş yükünü katbekat artırdı. Otomatik sistemler vasıtasıyla kod üreten yazılımcılar, projeye geçen yıla oranla iki kat daha fazla yama ve değişiklik önerisi göndermeye başladı. Gönderilen bu yoğun taleplerin güvenilirliği otomatik araçlarla tam olarak doğrulanamadığı için kıdemli mühendislerin manuel inceleme yapması zorunlu hale geliyor.",
+      "Gelen talep ve kod önerisi sayısı iki katına çıkarken, çekirdek ekip içinde bu incelemeleri yapabilecek nitelikli geliştirici kadrosu aynı oranda büyüme göstermedi.",
+      "Söz konusu güvenlik açıkları üzerinden milyonlarca saldırı girişimi engellendiği Cloudflare tarafından duyurulurken, AWS gibi büyük bulut sağlayıcıları ise yamalar yayınlanmadan önce bu açıkların kötü niyetli aktörlerce istismar edilmiş olabileceğine dikkat çekti. Teknolojinin merkezinde yer alan dev şirketlerin milyarlarca dolarlık gelirleri PHP altyapısına dayanırken, bu kritik yapıyı ayakta tutan çekirdek ekibin bağışlara ve tek bir lidere bağımlı kalması ekosistemin finansman modelinin acilen yenilenmesi gerektiğini işaret ediyor."
+    ],
+    "comment": "Açık kaynak ekosisteminin milyarlarca dolarlık ekonomik hacme sahip web projelerini tek bir çalışanla sırtlaması, modern yazılım dünyasının en büyük çelişkilerinden birini oluşturuyor. Kaynak verilerinin açıkça ortaya koyduğu üzere, on dört sözleşmeli ve bir tam zamanlı personelden oluşan bir kadro, dünya trafiğinin yüzde 70'ini barındıran bir yapıyı korumakta zorlanıyor. Şirketler bu altyapıdan milyarlarca dolar gelir elde ederken finansal sorumluluğun bağışlara bırakılması büyük bir güvenlik açığı riski doğuruyor. Destek modelleri kurumsal bağışlarla güçlendirilmezse, gelecekte çok daha büyük ölçekli siber krizlerle karşılaşılması kaçınılmaz hale gelecektir.",
+    "editorNote": "Milyonlarca siteye güç veren PHP, tek tam zamanlı çalışanla yürütülüyor; yapay zeka yükü artırıyor.",
+    "tags": [
+      "PHP",
+      "yazılım",
+      "siber güvenlik",
+      "yapay zeka",
+      "açık kaynak"
+    ],
+    "category": "Yazılım",
+    "gorselSorgu": "software developer writing code office",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/php-calisan-sayisini-acikladi-1-kisi-ile-ayakta-duruyor",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Software_Developer_at_work_03.jpg/1280px-Software_Developer_at_work_03.jpg",
+    "gorselKaynak": {
+      "yazar": "Daudi mukiibi",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Software_Developer_at_work_03.jpg"
+    },
+    "publishedAt": "2026-10-26T06:15:39.000Z",
+    "generatedAt": "2026-10-26T06:49:02.639Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Atari_800_XL_home_computer_with_monitor_and_tape_program_recorder_XC12.jpg/1280px-Atari_800_XL_home_computer_with_monitor_and_tape_program_recorder_XC12.jpg",
+        "yazar": "winkelnkemper",
+        "lisans": "CC BY-SA 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Atari_800_XL_home_computer_with_monitor_and_tape_program_recorder_XC12.jpg",
+        "altyazi": "Bilgisayar ekranında akan karmaşık yazılım kodları ve satırları"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Server_room_with_HP_NetServers_-_IMG_0149.jpg/1280px-Server_room_with_HP_NetServers_-_IMG_0149.jpg",
+        "yazar": "Jemimus",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Server_room_with_HP_NetServers_-_IMG_0149.jpg",
+        "altyazi": "Küresel web trafiğini barındıran veri merkezi sunucu rafları"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "a91563c9b62a514b",
     "title": "YouTube, AV2 sıkıştırma formatıyla veri tüketimini yüzde 30 azaltacak",
     "slug": "youtube-av2-sikistirma-formatiyla-veri-tuketimini-yuzde-30-azaltacak",
