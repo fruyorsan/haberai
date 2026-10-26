@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-26T16:09:55.214Z",
-  "gunluk": 24,
+  "updatedAt": "2026-10-26T16:13:18.715Z",
+  "gunluk": 32,
   "pencereGun": 45,
   "esik": {
     "govde": 1200,
@@ -13,7 +13,7 @@
   "toplamHaber": 4602,
   "aday": 4602,
   "uygun": 2715,
-  "secilen": 288,
+  "secilen": 382,
   "red": {
     "maddeli özet yok": 104,
     "kısa özet": 32,
@@ -21,8 +21,8 @@
     "özgün yorum yok": 4,
     "kategorisiz": 2,
     "editör notu yok": 14,
-    "günlük kota": 2409,
-    "tekrar": 18
+    "günlük kota": 2303,
+    "tekrar": 30
   },
   "ornekTekrarlar": [
     {
@@ -78,6 +78,10 @@
       "twin": "Galaxy S24 Ultra sahipleri için One UI 9 sonrasında şarj krizi"
     },
     {
+      "title": "Chery, yeni TIGGO 7 ve TIGGO X7 modellerini resmen tanıttı",
+      "twin": "Chery, tamamen yenilenen Tiggo 7 modelini Çin'de görücüye çıkardı"
+    },
+    {
       "title": "TUSAŞ, ANKA-3 insansız savaş uçağının yeni sürümünü geliştiriyor",
       "twin": "TUSAŞ, ANKA-3 muharip insansız savaş uçağının teknik verilerini paylaştı"
     },
@@ -100,23 +104,19 @@
     {
       "title": "Portekiz Federasyonu, Ronaldo'ya 30 gün men ve para cezası verdi",
       "twin": "Portekiz Federasyonu, Ronaldo'ya 30 Gün Hak Mahrumiyeti ve 255 Euro Cezayeti Verdi"
-    },
-    {
-      "title": "Japonya Ogasawara Açıklarında 7.0 Büyüklüğünde Deprem Gerçekleşti",
-      "twin": "Japonya, 7 Şiddetinde Depremi Bildirdi; Tsunami Riski Yok"
     }
   ],
   "days": {
     "2026-10-26": [
       "5fece920610c8928",
       "4c1e1ce84237679d",
-      "1f001711e17d4b4f",
       "22b7f128f8063029",
       "c7679a48d001c440",
       "6755ab6e07ddb580",
       "291418757fca5c9b",
       "5482d9c10f68f7eb",
       "9214942153be4652",
+      "1f001711e17d4b4f",
       "a67bcb09c7f84d83",
       "148728b83e4e7d27",
       "153993cf7f7bd3bf",
@@ -132,8 +132,14 @@
       "57380b8de64fa73d",
       "d3271a13334d2065",
       "a1fae482cff93885",
-      "5ec22320a3d37481",
-      "a91563c9b62a514b"
+      "b45b3009a70d378f",
+      "f3edcbc604e88f94",
+      "06d67c6a4a1c9f77",
+      "292251a97ee3cfde",
+      "65462942021bf8d2",
+      "6c0e4582e31f0eeb",
+      "116dfea8ca6e9d30",
+      "02e3010d68bc3f1e"
     ],
     "2026-10-22": [
       "686d3f11a6cecddc",
@@ -513,13 +519,13 @@
     "4c1e1ce84237679d",
     "686d3f11a6cecddc",
     "b38df0538db3aa9e",
-    "1f001711e17d4b4f",
     "22b7f128f8063029",
     "c7679a48d001c440",
     "6755ab6e07ddb580",
     "291418757fca5c9b",
     "5482d9c10f68f7eb",
     "9214942153be4652",
+    "1f001711e17d4b4f",
     "a67bcb09c7f84d83",
     "03f794bcefdd2bd7",
     "41d9a500d06c515e",
@@ -547,13 +553,11 @@
     "8bc06864f86a7087",
     "5ec22320a3d37481",
     "a91563c9b62a514b",
-    "637057522398a3d3",
-    "111d08256f4c3830",
-    "86fcae055aaf31dc",
-    "01b31f442c501f6e",
-    "b84e0636e5dcf4a6",
-    "31d2496d27466454",
-    "8e5433c027b590df",
+    "3933ba9d049e228f",
+    "e8b4d40d822b9cbf",
+    "24481fd3f8e65355",
+    "52cefc76d7126161",
+    "56d5c348e999c8a4",
     "d37d258d773b5139",
     "0f377683b024318c",
     "a408fae963a6b155",
@@ -630,7 +634,6 @@
     "3e1198c6d2d091ec",
     "02e3010d68bc3f1e",
     "e5b1a67845943f27",
-    "db06ed45f077a006",
     "c3bc1550f39ba397",
     "afb3894357fe3ce5",
     "3565c698d8619141",
