@@ -51,6 +51,47 @@
     "breaking": true
   },
   {
+    "id": "b45b3009a70d378f",
+    "title": "Moonshot AI, Kimi K3.1 Pro’yu Tanıttı; 1M Token ve 3 Kat Hız",
+    "slug": "moonshot-ai-kimi-k3-1-pro-tanitti-1m-token-3-kat-hiz",
+    "summary": "Çin merkezli Moonshot AI, Kimi K3.1 Pro modelini ve daha hızlı Highspeed sürümünü API üzerinden kullanıma sundu. Model, 1 milyon tokenlık bağlam penceresi ve standart modele göre iki‑üç kat daha hızlı işlem yeteneğiyle dikkat çekiyor. Ağırlıkların 4 Kasım’da yayımlanması da planlandı.",
+    "keyPoints": [
+      "Kimi K3.1 Pro 1 000 000 token bağlam penceresi sunuyor",
+      "Highspeed sürümü standart modele göre 2‑3 kat daha hızlı çalışıyor",
+      "Model ağırlıkları 4 Kasım’a kadar yayınlanacak"
+    ],
+    "body": [
+      "Moonshot AI, Çin’deki yapay zeka laboratuvarlarından yeni bir ürün duyurdu: Kimi K3.1 Pro. Şirket, bu modeli ve aynı zamanda daha hızlı bir Highspeed sürümünü, Kimi platformu ve API aracılığıyla geliştiricilere açtı. Yeni model, önceki K3 serisinin üzerine ek eğitim aşamalarında daha fazla hesaplama kaynağı kullanarak geliştirildi. Bu sayede uzun metinleri tek seferde işleyebilen 1 000 000 tokenlık bir bağlam penceresine sahip oldu.",
+      "Highspeed sürümü, aynı görevlerde standart K3.1 Pro’ya kıyasla iki ila üç kat daha yüksek işlem hızı sağlıyor. Moonshot, bu hız artışını özellikle kodlama ve 3D tasarım gibi yoğun hesaplama gerektiren alanlarda test etti. Terminal‑Bench 4.0 benchmark testinde K3.1 Pro %65,7 başarı oranı yakalarken, rakip modeller GPT‑6 Astra %58,2 ve Claude Opus 5.5 %66,4 seviyesinde kaldı. Şirket, bu sonuçların kendi değerlendirmelerine dayandığını belirtti.",
+      "Modelin öne çıkan kullanım senaryoları arasında yazılım hatalarını otomatik düzeltme ve Unity, Unreal Engine, Godot gibi oyun motorlarıyla entegrasyon yer alıyor. Ayrıca K3.1 Pro, metin, eskiz ya da referans görsellerden 3D modeller oluşturabiliyor ve Blender ile CAD programları için kod üretebiliyor. Finansal belgelerin analizi, çok kaynaklı veri karşılaştırması ve çok adımlı hesaplamalar da yeni modelin yetenekleri arasında tanımlandı. Dahili doğruluk testinde hatalı bilgi üretme oranı %23,4’ten %8,3’e geriledi.",
+      "Moonshot, model ağırlıklarını 4 Kasım’a kadar yayımlamayı hedefliyor. Bu adım, geliştiricilerin modeli kendi altyapılarına kurup özelleştirmesine olanak tanıyacak. Ağırlıkların paylaşımından önce, siber güvenlikle ilgili içeriklerin eğitim verilerinden çıkarıldığı ve bu sayede kötü amaçlı kullanım riskinin azaltıldığı bildirildi. Şirket, ağırlıkların açık erişime sunulmasının yapay zeka topluluğu için bir fırsat olduğunu vurguladı.",
+      "Kimi K3.1 Pro’nun piyasaya çıkışı, Çin’in yapay zeka ekosisteminde yeni bir rekabet dalgası yaratabilir. Geliştiriciler, hem yüksek token kapasitesi hem de artırılmış işlem hızı sayesinde daha karmaşık projelere odaklanabilecek. Moonshot’ın planladığı ağırlık paylaşımı ise açık kaynak model trendine uyum sağlarken, güvenlik önlemlerinin dengeyi nasıl koruyacağı sektörde gözlemlenecek bir detay olarak kalıyor."
+    ],
+    "comment": "Moonshot AI’nin Kimi K3.1 Pro lansmanı, yüksek token kapasitesi ve hız artışıyla geliştiricilere somut bir avantaj sunuyor. %65,7 başarı oranı ve iki‑üç kat hız farkı, özellikle kodlama ve 3D tasarım iş akışlarını hızlandıracak. Bu gelişme, Çin yapay zeka pazarında rekabeti kızıştırırken, açık ağırlık paylaşımı geliştiricilerin model üzerinde özelleştirme yapmasına imkan tanıyor. Ancak güvenlik kısıtlamaları, modelin kötüye kullanımını sınırlama ihtiyacını da gözler önüne seriyor.",
+    "editorNote": "Kimi K3.1 Pro, 1 M token ve üç kat hız avantajıyla geliştiricilerin iş akışını yeniden şekillendiriyor. Ağırlıkların 4 Kasım’da yayınlanması, açık kaynak modeliyle yeni fırsatlar…",
+    "tags": [
+      "Moonshot AI",
+      "Kimi K3.1 Pro",
+      "Yapay Zeka",
+      "3D Modelleme",
+      "Kodlama"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "Moonshot AI data center",
+    "source": "Webrazzi",
+    "sourceUrl": "https://webrazzi.com/2026/10/26/moonshot-ai-kodlama-ve-3d-modelleme-yeteneklerini-gelistirdigi-kimi-k31-proyu-tanitti/",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Is_artificial_intelligence_our_future.jpg/1280px-Is_artificial_intelligence_our_future.jpg",
+    "gorselKaynak": {
+      "yazar": "Elekes Andor",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Is_artificial_intelligence_our_future.jpg"
+    },
+    "publishedAt": "2026-10-26T07:00:00.000Z",
+    "generatedAt": "2026-10-26T07:15:33.347Z",
+    "breaking": true
+  },
+  {
     "id": "9de8defb8f31d927",
     "title": "İsrail ordusunun çadır saldırısında biri çocuk 3 kişi hayatını kaybetti",
     "slug": "israil-ordusunun-cadir-saldirisinda-biri-cocuk-3-kisi-hayatini-kaybetti",
