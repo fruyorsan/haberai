@@ -1,5 +1,64 @@
 [
   {
+    "id": "fc353de75c8aa328",
+    "title": "Samsung Akıllı TV’leri Yönetici Seviyesinde Dinliyor, 400 İş Ortağı Veri Erişimi İddiası",
+    "slug": "samsung-akilli-tv-yonetici-seviyesinde-dinliyor-400-is-ortagi-veri-erisimi-iddia",
+    "summary": "Bir güvenlik araştırmacısı, Samsung akıllı televizyonların sesli komutları dinleyebileceği ve bu verilerin yaklaşık 400 iş ortağıyla paylaşılabileceği iddiasını ortaya attı. Araştırmacı, firmware dosyalarına sıfır‑gün açıkları üzerinden erişerek yönetici seviyesinde kontrol sağladığını belirtti.",
+    "keyPoints": [
+      "Araştırmacı, Samsung TV'ye sıfır‑gün açıklarıyla yönetici erişimi elde etti",
+      "TV firmware dosyaları AES şifrelemesiyle korunuyor, anahtarlara ulaşılamıyor",
+      "Samsung ekosisteminde yaklaşık 400 farklı iş ortağı veri paylaşımına dahil"
+    ],
+    "body": [
+      "Geçtiğimiz Cuma günü, X platformunda \"log4j\" takma adıyla bilinen bir siber güvenlik araştırmacısı, Samsung akıllı televizyonların sesli dinleme yeteneği taşıyabileceğini öne sürdü. Araştırmacı, iddiasını desteklemek amacıyla cihazın firmware dosyalarını incelemeye başladı ve bu dosyaların AES şifreleme algoritmasıyla korunduğunu ortaya koydu.",
+      "Şifreleme anahtarlarına doğrudan ulaşamayan uzman, cihazın işletim sistemi çekirdeğine ve arka planda çalışan servislerine sıfır‑gün açıkları sayesinde eriştiğini iddia etti. Bu yöntemle, yönetici seviyesinde bir oturum açarak sistemin derinlemesine analizini gerçekleştirdi ve sessiz bir şekilde çalışan hizmetleri tek tek inceleme fırsatı buldu.",
+      "Araştırmacının en çarpıcı bulgusu, toplanan ses verilerinin yalnızca Samsung tarafından değil, yaklaşık 400 farklı iş ortağıyla paylaşılabileceği yönündeydi. Bu iş ortaklarının kimler olduğu ve verilerin ne amaçla kullanılacağı konusunda net bilgi verilmezken, veri ekosisteminin ne kadar geniş olduğuna dikkat çekildi.",
+      "Şu ana kadar Samsung ve ilgili iş ortaklarından bu iddialara dair resmi bir açıklama gelmedi. Şirket, güvenlik açıkları ve veri paylaşımı konularında genellikle titiz bir tutum sergilemekte; ancak bu tür bir iddia, kullanıcıların cihazlarını nasıl kullandıkları konusunda yeni bir şüphe yaratıyor.",
+      "Uzmanlar, akıllı televizyonların firmware güncellemeleriyle güvenlik açıklarının kapatılması gerektiğini vurguluyor. Kullanıcıların da cihaz ayarlarında mikrofon izinlerini gözden geçirmeleri ve gereksiz veri toplama riskine karşı temkinli olmaları öneriliyor. Gelecek günlerde Samsung'un bu iddialara yanıt vermesi ve olası bir yamayı yayınlaması bekleniyor."
+    ],
+    "comment": "Samsung TV'lerdeki olası dinleme yeteneği, veri paylaşımının 400 iş ortağına kadar genişlemesi riskli bir durum. Yönetici seviyesinde erişim sağlandığı iddiası, cihazın güvenlik mimarisinin zayıf olduğunu gösteriyor. Bu durum, özellikle ev ortamında gizlilik endişesi taşıyan akıllı TV kullanıcılarını doğrudan etkiliyor. Rakip markaların daha katı veri koruma politikalarıyla kıyaslandığında Samsung'un bu konuda geri kalması, tüketici güvenini sarsabilir.",
+    "editorNote": "Araştırmacının Samsung TV'yi yöneticilik seviyesinde incelemesi, veri paylaşımının 400 iş ortağına ulaşabileceği iddiasını gündeme taşıdı. Kullanıcıların mikrofon izinlerini…",
+    "tags": [
+      "Samsung",
+      "akıllı televizyon",
+      "güvenlik araştırması",
+      "veri paylaşımı",
+      "firmware"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "Samsung smart TV microphone",
+    "source": "Webtekno",
+    "sourceUrl": "https://www.webtekno.com/samsung-tv-kullanicilari-dinliyor-mu-iddia-h227861.html",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Samsung_Smart_Control_RMCSPM1AP1_-_board-40618.jpg/1280px-Samsung_Smart_Control_RMCSPM1AP1_-_board-40618.jpg",
+    "gorselKaynak": {
+      "yazar": "Raimond Spekking",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Samsung_Smart_Control_RMCSPM1AP1_-_board-40618.jpg"
+    },
+    "publishedAt": "2026-10-26T08:51:00.000Z",
+    "generatedAt": "2026-10-26T08:53:24.371Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/LG_IPS_LCD_4K_TV_%26_SAMSUNG_SOUNDBAR_HW-J250.jpg/1280px-LG_IPS_LCD_4K_TV_%26_SAMSUNG_SOUNDBAR_HW-J250.jpg",
+        "yazar": "Dinkun Chen",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:LG_IPS_LCD_4K_TV_%26_SAMSUNG_SOUNDBAR_HW-J250.jpg",
+        "altyazi": "TV ana kartındaki mikrofon bağlantısı"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/EFTA00002518_-_Server_rack_with_multiple_hard_drives_and_network_cables_connected_in_a_data_center_environment.jpg",
+        "yazar": "Federal Bureau of Investigation",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:EFTA00002518_-_Server_rack_with_multiple_hard_drives_and_network_cables_connected_in_a_data_center_environment.jpg",
+        "altyazi": "Veri ortaklarına yönlendirilen sunucu altyapısı"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "5482d9c10f68f7eb",
     "title": "Resident Evil 7 Not a Hero DLC'sinin iptal edilen erken sürümü sızdırıldı",
     "slug": "resident-evil-7-not-a-heronun-iptal-edilen-erken-surumu-sizdirildi",
