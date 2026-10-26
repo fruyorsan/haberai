@@ -321,6 +321,11 @@ export function socialImageUrl(src, width = 1200, height = 630, quality = 82) {
 
 export function imageUrl(src, width = 800, quality = 85) {
   src = normalizeSrc(src);
+  // Ürettiğimiz yerel kapaklar (./kapak/<id>.webp) 1280 px'dir; liste
+  // kartlarında 90 KB indirmemek için hazır 480 px varyantına geçilir.
+  if (/^\/kapak\/[A-Za-z0-9]+\.webp$/.test(src)) {
+    return width <= 560 ? src.replace(/\.webp$/, "-480.webp") : src;
+  }
   try { if (src && DIRECT_IMAGE_HOSTS.test(new URL(src).hostname)) return src; } catch {}
   if (!src || !/^https?:\/\//i.test(src)) return src || "";
   if (process.env.NO_IMAGE_PROXY) return src;
@@ -338,6 +343,10 @@ export function imageUrl(src, width = 800, quality = 85) {
  */
 export function imageSrcset(src, widths = [480, 800, 1080]) {
   src = normalizeSrc(src);
+  if (/^\/kapak\/[A-Za-z0-9]+\.webp$/.test(src)) {
+    const kucuk = src.replace(/\.webp$/, "-480.webp");
+    return `${kucuk} 480w, ${src} 1280w`;
+  }
   try { if (src && DIRECT_IMAGE_HOSTS.test(new URL(src).hostname)) return ""; } catch {}
   if (!src || !/^https?:\/\//i.test(src)) return "";
   if (process.env.NO_IMAGE_PROXY) return "";
