@@ -1,5 +1,65 @@
 [
   {
+    "id": "de3b009353f0ec95",
+    "title": "Moonshot AI, kodlama odaklı yeni yapay zeka modeli Kimi K3.1 Pro’yu duyurdu",
+    "slug": "moonshot-ai-kodlama-odakli-yeni-yapay-zeka-modeli-kimi-k31-proyu-duyurdu",
+    "summary": "Çin merkezli Moonshot AI, yazılım geliştirme ve 3D modelleme alanlarında iddialı olan Kimi K3.1 Pro modelini tanıttı. Bir milyon token bağlam penceresine sahip sistem, terminal testlerinde yüzde 65,7 başarı yakaladı.",
+    "keyPoints": [
+      "Kimi K3.1 Pro, Terminal-Bench 4.0 testinde yüzde 65,7 başarı oranı elde etti.",
+      "Yeni model, standart sürüme kıyasla iki ila üç kat daha hızlı çalışan Highspeed seçeneğiyle geliyor.",
+      "Sistem, metin ve eskizlerden 3D modeller üretebilirken Unity ve Unreal Engine projelerini destekliyor."
+    ],
+    "body": [
+      "Yapay zeka alanındaki çalışmalarına devam eden Çin merkezli Moonshot AI şirketi, Kimi model ailesinin en yeni üyesi Kimi K3.1 Pro seçeneğini kullanıcılarla buluşturdu. Bu yeni sistem ve daha hızlı işlem yapabilen Highspeed sürümü, markanın kendi ürünleri ile API altyapısı üzerinden erişime açıldı. Şirket yönetimi, modelin temel ağırlık dosyalarını 4 Kasım tarihine kadar kamuoyuyla paylaşmayı planlıyor.",
+      "Temelini Kimi K3 mimarisinden alan yeni model, ek eğitim aşamasında çok daha fazla hesaplama kaynağından faydalanıyor. Tam 1 milyon token büyüklüğünde bir bağlam penceresi barındıran K3.1 Pro, son derece uzun metin içeriklerini ve belgeleri tek seferde işleyebilme kapasitesi sunuyor.",
+      "Yazılım geliştirme ve üç boyutlu tasarım süreçleri, modelin en iddialı olduğu alanlar arasında öne çıkıyor. Geliştiriciler bu yapıyı mevcut kodlardaki hataları ayıklamak ve Unity, Unreal Engine ile Godot gibi popüler oyun motorlarıyla yeni projeler üretmek için kullanabiliyor. Sistem, metin girdileri, eskizler veya referans görseller aracılığıyla doğrudan 3D modeller oluştururken Blender ve CAD yazılımları için de kod yazabiliyor.",
+      "Şirket tarafından yayımlanan test sonuçlarına göre K3.1 Pro, terminal tabanlı yazılım görevlerini ölçen Terminal-Bench 4.0 değerlendirmesinde yüzde 65,7 başarı oranına ulaşıyor. Aynı kıyaslamada rakip modellerden GPT-6 Astra yüzde 58,2 seviyesinde kalırken, Claude Opus 5.5 ise yüzde 66,4 oranını yakalıyor. Bu başarı oranlarının doğrudan geliştirici şirketin kendi paylaştığı verilere dayandığı biliniyor.",
+      "Finansal araştırmalar da modelin yeteneklerinin artırıldığı dikey alanlar arasında yer alıyor. Yapı; karmaşık finansal belgeleri inceleme, farklı veri kaynaklarındaki bilgileri çapraz karşılaştırma ve çok adımlı hesaplamalar gerçekleştirme konularında güçlendirildi. Şirketin zorlu sorular içeren dahili testlerinde, iddia bazlı hatalı bilgi üretme oranı Kimi K3 sürümündeki yüzde 23,4 seviyesinden yüzde 8,3 oranına geriledi.",
+      "Model ağırlıklarının paylaşım takvimi yaklaşırken şirket, olası siber saldırı risklerini engellemek için güvenlik tedbirleri aldı. Eğitim verilerinden ve pekiştirmeli öğrenme ortamlarından siber güvenlikle ilgili bazı hassas içerikler çıkarıldı. Ağırlıkların tamamen yayımlanması, yazılımcıların bu yapıyı kendi fiziksel altyapılarında çalıştırmasına ve projelerine göre uyarlamasına zemin hazırlayacak."
+    ],
+    "comment": "Yazılım dünyasında kod yazma ve hata ayıklama süreçlerini otomatikleştiren araçların performansı artık test skorlarıyla sınırda kalmıyor, doğrudan entegrasyon kabiliyetine bakılıyor. Terminal-Bench 4.0 testinde elde edilen yüzde 65,7 başarı oranı, modelin rekabetçi yapısını gösterirken önceki nesilde yüzde 23,4 olan hata payının yüzde 8,3 seviyesine düşmesi güvenilirliği artırıyor. Bu gelişme, özellikle oyun geliştirme ve CAD odaklı çalışan mühendislerin iş akışını hızlandırarak maliyetleri düşürebilir. Ancak model ağırlıklarının açık kaynak olarak paylaşılacak olması, güvenlik filtresi kaldırma risklerini de beraberinde getireceği için şirketlerin yerel altyapı denetimlerini sıkı tutmasını zorunlu kılıyor.",
+    "editorNote": "Milyon token bağlamı ve oyun motoru desteğiyle gelen Kimi K3.1 Pro, kodlama testlerinde rakiplerini zorluyor.",
+    "tags": [
+      "Moonshot AI",
+      "Kimi K3.1 Pro",
+      "Yapay Zeka",
+      "Yazılım",
+      "3D Modelleme"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "artificial intelligence coding interface",
+    "source": "Webrazzi",
+    "sourceUrl": "https://webrazzi.com/2026/10/26/moonshot-ai-kodlama-ve-3d-modelleme-yeteneklerini-gelistirdigi-kimi-k31-proyu-tanitti/",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/AIAP_IFGICT_Artificial_Intelligence_Auditor_Professional_Certificate.jpg/1280px-AIAP_IFGICT_Artificial_Intelligence_Auditor_Professional_Certificate.jpg",
+    "gorselKaynak": {
+      "yazar": "TimeBusinessNews",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:AIAP_IFGICT_Artificial_Intelligence_Auditor_Professional_Certificate.jpg"
+    },
+    "publishedAt": "2026-10-26T07:04:39.000Z",
+    "generatedAt": "2026-10-26T07:26:49.054Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/3D_Game_Development_Session_-_Training_Programme_On_Unity_Software_-_NCSM_-_Kolkata_2018-03-27_9412.JPG/1280px-3D_Game_Development_Session_-_Training_Programme_On_Unity_Software_-_NCSM_-_Kolkata_2018-03-27_9412.JPG",
+        "yazar": "Biswarup Ganguly",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:3D_Game_Development_Session_-_Training_Programme_On_Unity_Software_-_NCSM_-_Kolkata_2018-03-27_9412.JPG",
+        "altyazi": "Oyun motorları ve 3D tasarım süreçlerinde çalışan yapay zeka"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/UPS_units_in_the_main_server_room_-_IMG_0148.jpg/1280px-UPS_units_in_the_main_server_room_-_IMG_0148.jpg",
+        "yazar": "Jemimus",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:UPS_units_in_the_main_server_room_-_IMG_0148.jpg",
+        "altyazi": "Yapay zeka modellerinin eğitildiği güçlü sunucu altyapıları"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "52cefc76d7126161",
     "title": "Micron, 400 katmanlı yeni G11 bellek teknolojisini duyurdu",
     "slug": "micron-400-katmanli-yeni-g11-bellek-teknolojisini-duyurdu",
