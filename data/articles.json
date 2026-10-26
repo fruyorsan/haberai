@@ -1,5 +1,64 @@
 [
   {
+    "id": "cd3898cb659afe30",
+    "title": "Block, metin verisi kullanmayan sesli yapay zeka modeli Dessa'yı duyurdu",
+    "slug": "block-metin-verisi-kullanmayan-sesli-yapay-zeka-modeli-dessayi-duyurdu",
+    "summary": "Block tarafından geliştirilen Dessa, metin verisi veya önceden eğitilmiş bir sistem kullanılmadan doğrudan ses girdisiyle eğitilen ilk modellerden biri oldu. Sıfırdan ses temelli bir yaklaşımla tasarlanan bu teknoloji, kullanıcılara tam çift yönlü ve eş zamanlı konuşma deneyimi vaat ediyor.",
+    "keyPoints": [
+      "Dessa modeli, metin verisi kullanılmadan tamamen insan seslerinden sıfırdan eğitildi.",
+      "Full-duplex çalışma yapısı sayesinde kullanıcı sözünü kesmeden aynı anda dinleyip konuşabiliyor.",
+      "Sistem, M4 Max işlemcili MacBook Pro ve benzeri güçlü donanımlarda yerel olarak çalışabiliyor."
+    ],
+    "body": [
+      "Jack Dorsey'nin liderliğini üstlendiği Block şirketi, yapay zeka alanında geleneksel yaklaşımları değiştiren yeni bir modeli teknoloji dünyasıyla buluşturdu. Dessa adı verilen bu yenilikçi sistem, insanlarla çok daha doğal ve kesintisiz diyaloglar kurabilmesi amacıyla sıfırdan tasarlandı. Geliştiriciler, modelin eğitim sürecinde herhangi bir metin verisinden veya hazır altyapılardan faydalanılmadığının altını çiziyor.",
+      "Günümüzdeki sesli asistanlar genellikle konuşmayı önce metne çevirip ardından işleyerek yanıt üretiyor ve bu karmaşık zincirde duygusal tonlamalar ile doğal ritim kayboluyor. Buna karşılık Dessa, doğrudan ses girdisi alıp ses çıktısı üretebilen özel bir mimariyle çalışıyor. Bu yöntem sayesinde model, dili insanların yaptığı gibi yalnızca dinleyerek kavrıyor ve konuşmadaki ritmik değişimleri doğrudan analiz edebiliyor.",
+      "Gelişmiş full-duplex teknolojisi, sistemin en dikkat çekici yönleri arasında bulunuyor. Bu yapı sayesinde model, kullanıcının cümlesini tamamlamasını beklemeden aynı anda hem dinleyebiliyor hem de yanıt verebiliyor. Kısa geri bildirimler sunabilen ve sohbetin akışına anında uyum sağlayan bu teknoloji, şirket tarafından paylaşılan ilk demolarda sesli oyunlar oynama ve filmler üzerine sohbet etme gibi yetenekler sergiledi.",
+      "Yayımlanan ilk gösterimler sistemin doğal etkileşim potansiyelini gözler önüne serse de henüz kusursuz bir deneyim sunmadığı da fark ediliyor. Yapay zeka modeli bazı durumlarda konuştuğu kişiyi karıştırabiliyor veya sohbetin ana bağlamından uzaklaşabiliyor. Şirket, bu gibi eksiklikleri gidermek ve performans sınırlarını test etmek amacıyla modeli şimdilik araştırma ön izlemesi aşamasında tutuyor.",
+      "Teknik altyapı tarafında ise Dessa, M4 Max işlemcili MacBook Pro gibi yüksek performanslı cihazlarda yerel olarak çalışabiliyor. Gerçek zamanlı süreçlerden bile daha hızlı çıkarım yapabildiği belirtilen model, ilk etapta sadece seçili bir yapay zeka güvenliği araştırmacısı grubunun erişimine açılıyor. Bağımsız testlerin ve donanım gecikme sürelerinin detayları ise ilerleyen dönemde netleşecek."
+    ],
+    "comment": "Jack Dorsey ekibinin geliştirdiği tamamen ses tabanlı bu model, geleneksel sesli asistan pazarındaki metin dönüşüm zorunluluğunu ortadan kaldırarak sektörde yeni bir kapı aralıyor. M4 Max işlemcili MacBook Pro gibi güçlü donanımlarda yerel olarak çalışabilmesi, yapay zeka araçlarının kişisel cihazlara inme trendini hızlandırıyor. Ancak modelin henüz bazen konuşmacıyı karıştırması ve konudan kopması, tam sürüm öncesinde aşılması gereken mühendislik engelleri bulunduğunu gösteriyor.",
+    "editorNote": "Dessa, aracı metin katmanını ortadan kaldırarak insan sesini doğrudan taklit eden ilk yapay zeka deneyimlerinden biri oluyor.",
+    "tags": [
+      "Jack Dorsey",
+      "Block",
+      "Dessa",
+      "Yapay Zeka",
+      "MacBook Pro"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "artificial intelligence speech audio waveform",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/block-dessa-yapay-zeka-modeli",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/AIAP_IFGICT_Artificial_Intelligence_Auditor_Professional_Certificate.jpg/1280px-AIAP_IFGICT_Artificial_Intelligence_Auditor_Professional_Certificate.jpg",
+    "gorselKaynak": {
+      "yazar": "TimeBusinessNews",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:AIAP_IFGICT_Artificial_Intelligence_Auditor_Professional_Certificate.jpg"
+    },
+    "publishedAt": "2026-10-26T06:30:31.000Z",
+    "generatedAt": "2026-10-26T06:31:04.910Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Apple_MacBook_Pro_15%22_%282017%29.jpg/1280px-Apple_MacBook_Pro_15%22_%282017%29.jpg",
+        "yazar": "iMahesh",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Apple_MacBook_Pro_15%22_(2017).jpg",
+        "altyazi": "Modelin yerel olarak çalıştığı güçlü işlemci mimarisi"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/HonkFestWest_2009_-_Sound_Wave_01.jpg/1280px-HonkFestWest_2009_-_Sound_Wave_01.jpg",
+        "yazar": "Joe Mabel",
+        "lisans": "CC BY-SA 3.0",
+        "lisansUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:HonkFestWest_2009_-_Sound_Wave_01.jpg",
+        "altyazi": "Metin kullanılmadan tamamen ses girdisiyle yapılan eğitim süreci"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "54fb45f78e79ef8f",
     "title": "AMD Zen 6, EPYC 9996’da Tek Çekirdek Performansında %25 Artış Sağladı",
     "slug": "amd-zen-6-epyc-9996-tek-cekirdek-performansinda-25-artis",
