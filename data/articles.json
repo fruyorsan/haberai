@@ -1,5 +1,46 @@
 [
   {
+    "id": "d316446dac5f1d25",
+    "title": "Unitree, araba kaldırabilen insansı robotu H2-X modelini tanıttı",
+    "slug": "unitree-araba-kaldirabilen-insansi-robotu-h2-x-modelini-tanitti",
+    "summary": "Çin merkezli Unitree, otomobil kaldıran ve saldırganlara müdahale eden yeni insansı robotu H2-X modelini görücüye çıkardı. Sekiz saatlik çalışma süresine sahip olduğu belirtilen sistemin teknik detayları henüz paylaşılmadı.",
+    "keyPoints": [
+      "Unitree H2-X, otomobil kaldırabilen ve saldırganları etkisiz hâle getirebilen insansı bir robot olarak duyuruldu.",
+      "Şirket verilerine göre cihaz, tek şarjla yaklaşık sekiz saat boyunca ayakta kalabiliyor.",
+      "Önceki H2 modeli 1,8 metre boyunda ve 70 kilogram ağırlığında olup 31 serbestlik derecesine sahipti."
+    ],
+    "body": [
+      "Robotik teknolojileri alanında çalışmalar yürüten Çinli Unitree, pazarın dikkatini çekecek yeni bir insansı robot modelini duyurdu. H2-X adı verilen bu yeni sistem, yayımlanan tanıtım videolarında sergilediği sıra dışı fiziksel yeteneklerle teknoloji gündemine girdi. Şirketin paylaştığı görüntülerde, cihazın ağır nesneleri kaldırma ve tehlike anında müdahale etme potansiyeli ön plana çıkarıldı.",
+      "Yayımlanan tanıtım materyallerinde H2-X'in üstlendiği roller oldukça iddialı sahnelerle gösterildi. Videoda bir saldırganı etkisiz hâle getiren, bir aracın kapısını kıran ve altında kalan birini kurtarmak için otomobili kaldıran robot fedai konsepti işlendi. Bununla birlikte, esnek eklem hareketleriyle kung-fu teknikleri de sergileyerek fiziksel kapasitesinin sınırları hakkında ipuçları verildi.",
+      "Cihazın teknik altyapısı ve donanım bileşenleri hakkında henüz kapsamlı bir açıklama yapılmış değil. Boyutları, toplam ağırlığı, batarya kapasitesi ve motor güçleri gizliliğini korurken önceki H2 serisinden hangi noktalarda ayrıldığı da netlik kazanmadı. Önceki H2 modeli yaklaşık 1,8 metre boya, 70 kilogram ağırlığa ve 31 farklı serbestlik derecesine sahipti.",
+      "Unitree tarafından paylaşılan sınırlı bilgilere göre H2-X, yaklaşık sekiz saatlik bir operasyonel süre sunuyor. Ancak bu sürenin hangi kullanım senaryolarında ve ne tür fiziksel aktiviteler sırasında ölçüldüğü açıklanmış değil. Yürüme, zıplama ve ağır yük kaldırma gibi yüksek güç gerektiren görevlerin enerji tüketimini hızla artırabileceği biliniyor.",
+      "Sistemin bu kabiliyetleri hangi yöntemle kazandığı da merak edilen konular arasında yer alıyor. Tanıtımda izlenen hareketlerin önceden kodlanmış komut dizinleriyle mi, uzaktan bir operatör müdahalesiyle mi yoksa yapay zekâ algoritmalarıyla bağımsız olarak mı gerçekleştirildiği henüz bilinmiyor. Fiyatlandırma ve çıkış takvimi gibi ticari detaylar da henüz paylaşılmadı."
+    ],
+    "comment": "Unitree H2-X modeli, sergilediği fiziksel becerilere rağmen şu aşamada gerçek dünya koşullarından ziyade bir teknoloji demosu niteliği taşıyor. Şirketin açıkladığı sekiz saatlik çalışma süresinin ağır yük kaldırma anlarındaki enerji tüketimi hesaba katıldığında ne kadar düşeceği belirsizliğini koruyor. Geliştirici ekibin serbestlik dereceleri ve motor güçleri gibi teknik verileri henüz paylaşmamış olması, bağımsız testlerin önemini artırıyor. Olası bir güvenlik senaryosunda robotun önceden programlanmış hareketlerle mi yoksa otonom karar mekanizmalarıyla mı çalışacağı, kullanım alanını doğrudan belirleyecek.",
+    "editorNote": "Otomobil kaldırabilen yeni nesil robot H2-X'in sunduğu sekiz saatlik pil ömrünün detayları henüz netleşmedi.",
+    "tags": [
+      "Unitree",
+      "insansı robot",
+      "H2-X",
+      "robotik",
+      "yapay zeka"
+    ],
+    "category": "Donanım",
+    "gorselSorgu": "humanoid robot lifting car",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/unitree-h2-x-tanitildi-araba-kaldirabilecek-kadar-guclu--212096",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/UBTECH_Alpha_1PRO_Humanoid_Robot_-_hack4no_2016.jpg/1280px-UBTECH_Alpha_1PRO_Humanoid_Robot_-_hack4no_2016.jpg",
+    "gorselKaynak": {
+      "yazar": "Kartverket",
+      "lisans": "CC BY 2.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:UBTECH_Alpha_1PRO_Humanoid_Robot_-_hack4no_2016.jpg"
+    },
+    "publishedAt": "2026-10-26T10:55:00.000Z",
+    "generatedAt": "2026-10-26T11:01:03.517Z",
+    "breaking": true
+  },
+  {
     "id": "c1acc9f8619d5d3b",
     "title": "Vivo Y600 10.000 mAh Pil ile Çıktı, Fiyatı 280‑350 Dolar",
     "slug": "vivo-y600-10000-mah-pil-fiyati-280-350-dolar",
