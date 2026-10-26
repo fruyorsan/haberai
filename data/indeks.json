@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T21:11:34.300Z",
+  "updatedAt": "2026-10-26T21:14:32.801Z",
   "gunluk": 32,
   "pencereGun": 45,
   "esik": {
@@ -10,9 +10,9 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 4635,
-  "aday": 4635,
-  "uygun": 2747,
+  "toplamHaber": 4636,
+  "aday": 4636,
+  "uygun": 2748,
   "secilen": 384,
   "red": {
     "maddeli özet yok": 105,
@@ -21,10 +21,14 @@
     "özgün yorum yok": 4,
     "kategorisiz": 2,
     "editör notu yok": 14,
-    "günlük kota": 2332,
-    "tekrar": 31
+    "günlük kota": 2330,
+    "tekrar": 34
   },
   "ornekTekrarlar": [
+    {
+      "title": "Vivo Y600, 10000mAh Bataryasıyla 32 Saat Video Rekoru Kırdı",
+      "twin": "Vivo Y600, 10.000 mAh bataryasıyla rekor kırdı"
+    },
     {
       "title": "Fransa'nın borçlanma maliyeti 24 yılın en yüksek seviyesine ulaştı",
       "twin": "Fransa Tahvil Faizi 24 Yılın Zirvesinde: Hedge Fonların Rolü Tartışılıyor"
@@ -50,6 +54,10 @@
       "twin": "Apple, 360 derece dönebilen 9 inç ekranlı yeni cihazını hazırlıyor"
     },
     {
+      "title": "Vivo Y600, 10.000 mAh bataryası ve rekor performansıyla duyuruldu",
+      "twin": "Vivo Y600, 10.000 mAh bataryasıyla rekor kırdı"
+    },
+    {
       "title": "Apple, robotik kollu 9 inç ekranlı yeni akıllı ev cihazı geliştiriyor",
       "twin": "Apple, 360 derece dönebilen 9 inç ekranlı yeni cihazını hazırlıyor"
     },
@@ -70,6 +78,10 @@
       "twin": "Van'da 15 yıllık ihmal: Binaların yüzde 90'ı depreme hazır değil"
     },
     {
+      "title": "Vivo Y600 10.000 mAh Pil ile Çıktı, Fiyatı 280‑350 Dolar",
+      "twin": "Vivo Y600, 10.000 mAh bataryasıyla rekor kırdı"
+    },
+    {
       "title": "TUSAŞ, ANKA-3 insansız savaş uçağının yeni sürümünü geliştiriyor",
       "twin": "TUSAŞ, ANKA-3 muharip insansız savaş uçağının teknik verilerini paylaştı"
     },
@@ -82,28 +94,16 @@
       "twin": "Bursa deprem hafızasını masaya yatırdı: 1855 felaketi konuşuldu"
     },
     {
+      "title": "Vivo Y600, 10.000 mAh bataryasıyla Guinness Rekoruna İmza Attı",
+      "twin": "Vivo Y600, 10.000 mAh bataryasıyla rekor kırdı"
+    },
+    {
       "title": "Galaxy A56 ve A36 One UI 9 güncellemesi Türkiye’ye ne zaman gelecek?",
       "twin": "Galaxy S24 Ultra bataryası One UI 9 ile hızla tükenmeye başladı"
     },
     {
       "title": "Suudi Arabistan Enerji Bakanlığı Şeybe Petrol Sahasında 2 Ölüm Bildirdi",
       "twin": "Suudi Arabistan’da Engellenen Füze Şarapnelini 2 Kişiyi Yaraladı"
-    },
-    {
-      "title": "Portekiz Federasyonu, Ronaldo'ya 30 gün men ve para cezası verdi",
-      "twin": "Portekiz Federasyonu, Ronaldo'ya 30 Gün Hak Mahrumiyeti ve 255 Euro Cezayeti Verdi"
-    },
-    {
-      "title": "Japonya Ogasawara Açıklarında 7.0 Büyüklüğünde Deprem Gerçekleşti",
-      "twin": "Japonya, 7 Şiddetinde Depremi Bildirdi; Tsunami Riski Yok"
-    },
-    {
-      "title": "Casper Excalibur G870, 57.406 TL'den başlayan fiyatla raflarda",
-      "twin": "Casper Excalibur G870 oyun bilgisayarı 57.406 TL'den satılıyor"
-    },
-    {
-      "title": "Vivo Y600, 32 Saat Kesintisiz Canlı Yayınla Guinness Rekorunu Kırdı",
-      "twin": "Vivo Y600, 10000mAh Bataryasıyla 32 Saat Video Rekoru Kırdı"
     }
   ],
   "days": {
@@ -347,7 +347,7 @@
     ],
     "2026-10-27": [
       "dd2070e1455a6f47",
-      "03c3cc4711ef6f51"
+      "87c2d69cddee302b"
     ],
     "2026-10-15": [
       "2ee03cd9c9d668ee",
@@ -582,6 +582,7 @@
     "97b52ec0d82fa1d8",
     "7f513e973315ef90",
     "ecc12f17a3c76de8",
+    "87c2d69cddee302b",
     "56d5c348e999c8a4",
     "17e027d5d4a933cb",
     "234f298d444fa899",
@@ -808,7 +809,6 @@
     "12a8295844466303",
     "0de10e2daad8c3b4",
     "8149b00f9624fc68",
-    "03c3cc4711ef6f51",
     "aa7db4280f839867",
     "0f05fa799b3ec101",
     "711e982b55b34f59",
