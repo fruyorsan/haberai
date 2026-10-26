@@ -11,7 +11,7 @@
 //
 //   - Kalite kapısı: yeterli gövde, maddeli özet, editör notu, özgün yorum,
 //     telif güvenli fotoğraf, spam olmayan başlık.
-//   - Tekrar ayıklama: başlık benzerliği + günlük kota (varsayılan 12/gün).
+//   - Tekrar ayıklama: başlık benzerliği + günlük kota (varsayılan 32/gün).
 //   - Pencere: son 45 gün. Dışındaki haberler sayfa olarak yaşar (okuyucu
 //     doğrudan bağlantıyla görür) ama vitrinde listelenmez ve `noindex` olur.
 //
@@ -30,9 +30,9 @@ const ARTICLES = join(DATA, "articles.json");
 const CIKTI = join(DATA, "indeks.json");
 
 /** Günde vitrine girecek en iyi haber sayısı. */
-const GUNLUK = Number(process.env.INDEKS_GUNLUK ?? 24);
+const GUNLUK = Number(process.env.INDEKS_GUNLUK || 32);
 /** Çekirdeğin geriye dönük penceresi (gün). */
-const PENCERE_GUN = Number(process.env.INDEKS_PENCERE_GUN ?? 45);
+const PENCERE_GUN = Number(process.env.INDEKS_PENCERE_GUN || 45);
 
 /**
  * Kalite kapısı eşikleri. Ortam değişkeniyle gevşetilebilir; amaç kaliteyi
@@ -101,8 +101,14 @@ function kalitePuani(a) {
   p += Math.min(metin(a.comment).length, 600) / 30;
   p += Math.min(metin(a.editorNote).length, 200) / 20;
   p += Math.min(etiket, 6) * 1.5;
-  p += guvenliGorsel(a.image) ? 8 : 0;
-  p += a.gorselKaynak || (Array.isArray(a.gorselEk) && a.gorselEk.length) ? 4 : 0;
+  // Görsel: kalite kapısı zaten telif güvenli görsel şartı koyuyor, yani bu
+  // puan tek başına eleme yapmaz — sıralamayı ayrıştırır. Kendi/yerel kapak
+  // görseli ve ek görseller (gorselEk) Wikimedia stoğundan daha ilgi çekici
+  // olduğu için öne geçer.
+  const yerelGorsel = typeof a.image === "string" && /^\/(?!\/)/.test(a.image);
+  const ekGorsel = Array.isArray(a.gorselEk) ? a.gorselEk.length : 0;
+  p += yerelGorsel ? 14 : 6;
+  p += Math.min(ekGorsel, 3) * 4;
   p += a.breaking === true ? 6 : 0;
   return p;
 }

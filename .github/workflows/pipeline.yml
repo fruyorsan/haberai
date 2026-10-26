@@ -51,7 +51,8 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           # Günlük yayın kotası ve temposu. Değişken tanımlı değilse config.js
-          # varsayılanları geçerli: 40 haber/gün, normal 36 dk, son dakika 12 dk.
+          # varsayılanları geçerli: 160 haber/gün, normal 9 dk, son dakika 5 dk,
+          # saatte en fazla 8.
           # Kapatmak için: gh variable set GUNLUK_HABER_LIMIT --body "0"
           GUNLUK_HABER_LIMIT: ${{ vars.GUNLUK_HABER_LIMIT }}
           YAYIN_ARALIK_DK: ${{ vars.YAYIN_ARALIK_DK }}
@@ -91,20 +92,29 @@ jobs:
         run: npm run indexnow
 
       # INDEKS CEKIRDEGI: site haritasina girecek haberleri secer (gunluk en
-      # iyi 12, 30 gunluk pencere). Sonuc data/indeks.json'a yazilir; site
+      # iyi 32, 45 gunluk pencere). Sonuc data/indeks.json'a yazilir; site
       # derlemesi bu dosyaya gore sitemap'i daraltir ve cekirdek disindaki
       # haberlere noindex basar. Boylece 5.400 URL'lik "zayif icerik" izlenimi
-      # yerine ~360 URL'lik kaliteli cekirdek kalir. Gecmis gunler dondurulur.
+      # yerine kaliteli bir cekirdek kalir. Gecmis gunler dondurulur.
       - name: Indeks cekirdegi
         continue-on-error: true
+        env:
+          INDEKS_GUNLUK: ${{ vars.INDEKS_GUNLUK }}
         run: npm run indeks
+
+      # MARKA KAPAKLARI: indekse giren haberler icin 1280x720 kapak uretir
+      # (fotograf + baslik + kategori + logo). Fotograf habere uymuyorsa
+      # tasarimli kart uretilir; yanlis fotograf kullanilmaz.
+      - name: Marka kapaklari
+        continue-on-error: true
+        run: npm run kapak -- --limit=40
 
       - name: Degisiklikleri kaydet
         id: commit
         run: |
           git config user.name "haber-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add data/
+          git add data/ site/public/kapak/
           if git diff --staged --quiet; then
             echo "Yeni veri yok."
             echo "changed=false" >> "$GITHUB_OUTPUT"

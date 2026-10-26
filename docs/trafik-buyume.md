@@ -203,7 +203,7 @@ Site gezinmesi değişmez; okuyucu her haberi görmeye devam eder.
 
 | Ne | Kural |
 | --- | --- |
-| Haber | Günde en iyi **12** haber, **30 günlük** pencere → ~360 URL |
+| Haber | Günde en iyi **32** haber, **45 günlük** pencere |
 | Diğer haberler | `noindex, follow` (dizine girmez, link değeri korunur) |
 | Sayfalama | 2. sayfa ve sonrası `noindex, follow` |
 | Etiket | Yalnızca **50+** haberi olan etiket sayfaları indekslenir |
@@ -213,6 +213,11 @@ Seçim deterministiktir ve `data/indeks.json`'da tutulur. **Geçmiş günler
 dondurulur**: dün indekste olan haber bugün noindex olmaz. Yalnızca bugünün
 listesi, gün içinde eklenen haberlerle güncellenir. Böylece Google aynı URL için
 her gün farklı sinyal görmez.
+
+**2026-10-26:** Günlük çekirdek 24 → **32**; görsel puanı ayrıştırıldı:
+yerel/kendi kapak görseli (+14) ve ek görseller (her biri +4, en fazla 3)
+sıralamada Wikimedia stoğunun önüne geçer. Yayın kotası da 135 → **160**
+(9 dk aralık, saatte en fazla 8).
 
 Kalite puanı: gövde uzunluğu (2000+ karakter), `keyPoints` sayısı (5),
 editör notu, yorum, gerçek fotoğraf, etiket sayısı. Tazelik puanı bilinçli
@@ -224,6 +229,36 @@ dosya yoksa kısıtlama uygulanmaz ve tüm haberler yeniden açık olur.
 
 **Beklenen sonuç:** site haritası 5.487 → ~200 URL; 2-4 hafta içinde GSC'de
 "Dizinlenen" sayısının 58 → 150+ çıkması. Silinen sayfa yok, geri alınabilir.
+
+## 9) Marka kapakları (2026-10-26)
+
+Kapak fotoğrafları haberden habere farklı oran/typografi ile geliyordu; feed'de
+tutarsız görünüm tıklamayı düşürüyor. Artık indekse giren her haber için tek
+düzen kapak üretilir:
+
+| Ne | Değer |
+| --- | --- |
+| Boyut / oran | **1280×720** (16:9) WebP, kart için 480 px varyant |
+| Düzen | Fotoğraf + alt gradyan + başlık (en çok 3 satır) + kategori etiketi + site işareti |
+| Kural | Fotoğraf sorguyla eşleşmiyorsa **fotoğraf hiç kullanılmaz**, tasarımlı kart üretilir |
+| Sosyal kart | Aynı kapak, wsrv üzerinden 1200×630 JPEG (WhatsApp/X için) |
+
+Fotoğrafın uygun sayılması için dosya adının arama sorgusuyla en az iki kelime
+eşleşmesi (veya sorgunun %75'i) gerekir; `thumbnail`, `wikipedia`, `logo`,
+`map`, `screenshot` gibi jenerik dosyalar doğrudan reddedilir. Gündem, Dünya,
+Spor ve Ekonomi gibi kategorilerde fotoğraf yalnızca başlıktaki özel ad (marka,
+kulüp, kişi) dosya adında geçiyorsa kullanılır — stok fotoğraf bu haberlerde
+neredeyse her zaman yanlış bağlam gösteriyor.
+
+```bash
+npm run kapak                # indekste açık haberler
+npm run kapak -- --gun=3     # son 3 gün
+npm run kapak -- --zorla     # kapak varsa yeniden üret
+node scripts/kapak-uret.mjs --varyant   # eksik 480 px varyantları tamamla
+```
+
+Pipeline'da `indeks` adımından sonra tur başına en fazla 40 kapak üretilir;
+üretilenler `site/public/kapak/` altına yazılır ve commit'e girer.
 
 ## Sınırlar
 

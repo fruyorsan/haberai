@@ -156,31 +156,30 @@ export const config = {
   maxAgeHours: Number(process.env.MAX_AGE_HOURS || 48), // bundan eski haberleri atla
 
   // ------------------------------------------------------------------
-  // GÜNLÜK YAYIN KOTASI (2026-10-23)
+  // GÜNLÜK YAYIN KOTASI (2026-10-26)
   // ------------------------------------------------------------------
-  // ShiftDelete/Webtekno/DonanımHaber/CHIP/Tamindir son 24 saatte ortalama
-  // ~35-40 haber yayınlıyor. 3.800 sayfa/5 gün yerine bu tempoda yayınlamak
-  // hem Google'ın "ölçekli içerik" filtresinden kaçınmayı hem de gün boyu
-  // taze kalmayı sağlar.
+  // Hacim hedefi 160 haber/gün (2026-10-26 kararı; önceki 135). Hattın
+  // gerçek sınırı AI kotası ve saatlik tavandır; 160 haber 9 dk arayla
+  // gün boyuna yayılır ve gece yarısına sarkmaz.
   //
   // gunlukLimit: 0 = sınırsız (eski davranış).
   // yayinAralikDk: normal haberler arasındaki en kısa süre. Kota tek başına
-  //   yetmez; aksi hâlde 40 haber ilk 1-2 saatte tükenip günün kalanında
+  //   yetmez; aksi hâlde tüm kota ilk 1-2 saatte tükenip günün kalanında
   //   yeni haber çıkmaz.
   // sonDakikaAralikDk: son dakika adayı varsa daha kısa bekleme.
   //
   // Ayrıca src/index.js kotayı günün geçen oranına göre de sınırlar:
-  // öğlene kadar ~20, 20:00'de ~33 haber. Böylece 40 haber sabah
+  // öğlene kadar ~80, 20:00'de ~133 haber. Böylece 160 haber sabah
   // saatlerinde tükenip akşam site sessiz kalmaz.
-  gunlukLimit: Number(process.env.GUNLUK_HABER_LIMIT || 135),
-  // 40 haber / 24 saat ≈ 36 dk arayla. Böylece kota günün ilk saatlerinde
+  gunlukLimit: Number(process.env.GUNLUK_HABER_LIMIT || 160),
+  // 160 haber / 24 saat ≈ 9 dk arayla. Böylece kota günün ilk saatlerinde
   // tükenmez, akış gece yarısına kadar dengeli sürer.
-  yayinAralikDk: Number(process.env.YAYIN_ARALIK_DK || 10),
+  yayinAralikDk: Number(process.env.YAYIN_ARALIK_DK || 9),
   sonDakikaAralikDk: Number(process.env.SON_DAKIKA_ARALIK_DK || 5),
   // Saatlik tavan: "son dakika" adayları gün içinde neredeyse hiç bitmediği
-  // için 12 dk aralık tek başına kotayı 8 saatte tüketirdi. Saatte en fazla
-  // 2 haber (0 = sınırsız) akışı gün boyuna yayar.
-  saatlikLimit: Number(process.env.SAATLIK_HABER_LIMIT || 7),
+  // için kısa aralık tek başına kotayı erken tüketirdi. Saatte en fazla 8 haber
+  // (0 = sınırsız) akışı gün boyuna yayar.
+  saatlikLimit: Number(process.env.SAATLIK_HABER_LIMIT || 8),
 
   // ------------------------------------------------------------------
   // SON DAKİKA (hızlı hat)
@@ -218,14 +217,21 @@ export const config = {
   // ------------------------------------------------------------------
   ai: {
     // Groq: ücretsiz katmanı cömert ve hızlı (GROQ_API_KEY gerekir)
-    groqModels: (process.env.GROQ_MODELS || "llama-3.3-70b-versatile,meta-llama/llama-4-scout-17b-16e-instruct,meta-llama/llama-4-maverick-17b-128e-instruct,qwen/qwen3-32b,llama-3.1-8b-instant,openai/gpt-oss-120b,openai/gpt-oss-20b")
+    //
+    // DİKKAT: Groq eski modelleri haber vermeden kapatıyor. 2026-10 itibarıyla
+    // llama-3.3-70b / llama-4 / qwen3-32b emekliye ayrıldı ve API 404 "missing"
+    // döndürüyor; bu yüzden liste yalnızca güncel modelleri içerir. Liste
+    // bozulursa çalıştır: node scripts/model-kontrol.mjs
+    groqModels: (process.env.GROQ_MODELS || "openai/gpt-oss-120b,openai/gpt-oss-20b,qwen/qwen3.8-27b,allam-2-7b")
       .split(",")
       .map((s) => s.trim())
       .filter(Boolean),
-    // Gemini: günde model başına ~20 ücretsiz istek (GEMINI_API_KEY gerekir)
+    // Gemini: günde model başına ~20 ücretsiz istek (GEMINI_API_KEY gerekir).
+    // gemini-2.5-flash artık "new users" için kapalı (404); güncel flash
+    // sürümleri kullanılır. gemini-flash-latest bazı hesaplarda yanıt vermiyor.
     geminiModels: (
       process.env.GEMINI_MODELS ||
-      "gemma-3-27b-it,gemma-3-12b-it,gemini-flash-latest,gemini-flash-lite-latest,gemini-2.5-flash,gemini-3.5-flash,gemini-3.5-flash-lite"
+      "gemini-3.5-flash,gemini-3.1-flash-lite"
     )
       .split(",")
       .map((s) => s.trim())
