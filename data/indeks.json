@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T21:14:32.801Z",
+  "updatedAt": "2026-10-26T21:18:45.363Z",
   "gunluk": 32,
   "pencereGun": 45,
   "esik": {
@@ -10,10 +10,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 4636,
-  "aday": 4636,
-  "uygun": 2748,
-  "secilen": 384,
+  "toplamHaber": 4637,
+  "aday": 4637,
+  "uygun": 2749,
+  "secilen": 386,
   "red": {
     "maddeli özet yok": 105,
     "kısa özet": 32,
@@ -21,14 +21,10 @@
     "özgün yorum yok": 4,
     "kategorisiz": 2,
     "editör notu yok": 14,
-    "günlük kota": 2330,
+    "günlük kota": 2329,
     "tekrar": 34
   },
   "ornekTekrarlar": [
-    {
-      "title": "Vivo Y600, 10000mAh Bataryasıyla 32 Saat Video Rekoru Kırdı",
-      "twin": "Vivo Y600, 10.000 mAh bataryasıyla rekor kırdı"
-    },
     {
       "title": "Fransa'nın borçlanma maliyeti 24 yılın en yüksek seviyesine ulaştı",
       "twin": "Fransa Tahvil Faizi 24 Yılın Zirvesinde: Hedge Fonların Rolü Tartışılıyor"
@@ -55,7 +51,7 @@
     },
     {
       "title": "Vivo Y600, 10.000 mAh bataryası ve rekor performansıyla duyuruldu",
-      "twin": "Vivo Y600, 10.000 mAh bataryasıyla rekor kırdı"
+      "twin": "Vivo Y600, 10.000 mAh bataryasıyla piyasaya sürüldü"
     },
     {
       "title": "Apple, robotik kollu 9 inç ekranlı yeni akıllı ev cihazı geliştiriyor",
@@ -79,7 +75,7 @@
     },
     {
       "title": "Vivo Y600 10.000 mAh Pil ile Çıktı, Fiyatı 280‑350 Dolar",
-      "twin": "Vivo Y600, 10.000 mAh bataryasıyla rekor kırdı"
+      "twin": "Vivo Y600, 10.000 mAh bataryasıyla piyasaya sürüldü"
     },
     {
       "title": "TUSAŞ, ANKA-3 insansız savaş uçağının yeni sürümünü geliştiriyor",
@@ -95,7 +91,7 @@
     },
     {
       "title": "Vivo Y600, 10.000 mAh bataryasıyla Guinness Rekoruna İmza Attı",
-      "twin": "Vivo Y600, 10.000 mAh bataryasıyla rekor kırdı"
+      "twin": "Vivo Y600, 10.000 mAh bataryasıyla piyasaya sürüldü"
     },
     {
       "title": "Galaxy A56 ve A36 One UI 9 güncellemesi Türkiye’ye ne zaman gelecek?",
@@ -104,6 +100,10 @@
     {
       "title": "Suudi Arabistan Enerji Bakanlığı Şeybe Petrol Sahasında 2 Ölüm Bildirdi",
       "twin": "Suudi Arabistan’da Engellenen Füze Şarapnelini 2 Kişiyi Yaraladı"
+    },
+    {
+      "title": "Portekiz Federasyonu, Ronaldo'ya 30 gün men ve para cezası verdi",
+      "twin": "Portekiz Federasyonu, Ronaldo'ya 30 Gün Hak Mahrumiyeti ve 255 Euro Cezayeti Verdi"
     }
   ],
   "days": {
@@ -347,7 +347,9 @@
     ],
     "2026-10-27": [
       "dd2070e1455a6f47",
-      "87c2d69cddee302b"
+      "a50bae33daf650ab",
+      "87c2d69cddee302b",
+      "03c3cc4711ef6f51"
     ],
     "2026-10-15": [
       "2ee03cd9c9d668ee",
@@ -582,7 +584,6 @@
     "97b52ec0d82fa1d8",
     "7f513e973315ef90",
     "ecc12f17a3c76de8",
-    "87c2d69cddee302b",
     "56d5c348e999c8a4",
     "17e027d5d4a933cb",
     "234f298d444fa899",
@@ -597,6 +598,7 @@
     "60a53ee2ec3957e2",
     "ee7d6477d08366c4",
     "bc7149de42d77776",
+    "a50bae33daf650ab",
     "80f8c078c25d271a",
     "1b4109155f02effd",
     "55bbbd753910830d",
@@ -686,6 +688,7 @@
     "3061a3fd6de0dc86",
     "5fed5e7a423dcaa3",
     "334f9af8dd9ccc7d",
+    "87c2d69cddee302b",
     "e23469e87f5bc614",
     "559ce3912724137d",
     "11eca93aec2755e8",
@@ -809,6 +812,7 @@
     "12a8295844466303",
     "0de10e2daad8c3b4",
     "8149b00f9624fc68",
+    "03c3cc4711ef6f51",
     "aa7db4280f839867",
     "0f05fa799b3ec101",
     "711e982b55b34f59",
