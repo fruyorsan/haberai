@@ -1,5 +1,69 @@
 [
   {
+    "id": "c398013b8abbad15",
+    "title": "Gran Turismo 7 PC platformunda ilk kez oynanabilir seviyeye ulaştı",
+    "slug": "gran-turismo-7-pc-platformunda-ilk-kez-oynanabilir-seviyeye-ulasti",
+    "summary": "Popüler yarış oyunu Gran Turismo 7, geliştirilen KytyPS5 emülatörü sayesinde PC üzerinde pistte araç kontrol edilebilir hale geldi. Daha önce yalnızca ana menüde takılı kalan yapım, yeni testlerde 15 FPS civarında bir performansla çalışarak emülasyon dünyasında önemli bir bariyeri aştı.",
+    "keyPoints": [
+      "Oyun, AMD Ryzen 7 9800X3D ve RTX 4080 sistemde 15 FPS ile çalıştı.",
+      "“usa-ratt” adlı geliştirici, Polyphony Digital yapımı için özel bir emülatör sürümü yayınladı.",
+      "Araç modelleri, pist detayları ve ışıklandırma gibi görsel unsurlar artık düzgün görüntülenebiliyor."
+    ],
+    "body": [
+      "PlayStation 5 platformunun popüler yarış oyunu Gran Turismo 7, uzun süredir yürütülen emülasyon çalışmaları sonucunda bilgisayar ortamında yeni bir aşamaya taşındı. Bugüne kadar KytyPS5 emülatörü üzerinde yapılan denemeler, oyunun açılış ekranlarını veya menülerini geçmekte zorlanıyordu. Ancak geliştirici ekibin son müdahaleleri, yapımın artık pist üzerinde temel oynanışa izin verdiğini gösterdi.",
+      "Yeni testlerde kullanılan sistem oldukça güçlü donanım bileşenleriyle dikkat çekiyor. Bu testler sırasında oyun, yaklaşık 15 FPS seviyesinde bir hız sunarken GPU kullanımı yüzde 79, işlemci kullanımı ise yüzde 34 civarında ölçüldü.",
+      "Emülasyon sürecinin bu noktaya gelmesinde, “usa-ratt” rumuzlu geliştiricinin hazırladığı özel kod dizisi etkili oldu. KytyPS5'in standart sürümünden farklı olarak Gran Turismo 7'ye odaklanan bu özel dal, Polyphony Digital tarafından geliştirilen oyunun karmaşık yazılım yapısı ile emülatör arasındaki uyumluluk sorunlarını aşmayı hedefliyor. Buradan elde edilen başarılar ve hata düzeltmeleri, kademeli olarak ana emülatör kod tabanına dahil ediliyor.",
+      "Çalışmaların şu anki odağında oyunun kararlılığını artırmak yer alıyor. Geliştiriciler; shader derleme hatalarını, ani çökmeleri ve rasterizasyon kaynaklı görüntü bozulmalarını gidermek için yoğun çaba harcıyor. Mevcut durumda pist tasarımları, araç modelleri, bitki örtüsü ve ışıklandırma efektleri büyük oranda doğru şekilde ekrana yansıtılabiliyor, bu da oyunun artık sadece bir görsel değil, teknik olarak yarış simülasyonu kimliğini koruyabildiğini gösteriyor.",
+      "Oynanabilirliğin henüz başlangıç aşamasında olduğu unutulmamalıdır. Karmaşık sahnelerde kare hızı ciddi ölçüde düşerken, oyun beklenmedik anlarda kapanabiliyor ve ağ tabanlı özellikler henüz aktif çalışmıyor. Yine de birkaç ay önce menüden öteye gidemeyen bir PS5 oyununun bugün pist üzerinde araba sürmeye imkan tanıması, emülasyon teknolojisindeki ilerleme hızını gözler önüne seren somut bir kanıt niteliği taşıyor."
+    ],
+    "comment": "Gran Turismo 7'nin PC üzerinde pistte çalışır hale gelmesi, konsola özel bir yapımın karmaşık donanım gereksinimlerinin yazılımla taklit edilebileceğini kanıtlıyor. 15 FPS gibi düşük bir hız, günümüz standartlarında oynanabilir olmasa da, oyunun fizik motorunun ve grafik sisteminin artık modern işlemcilerle etkileşime girebildiğini gösteriyor. Geliştiricilerin RTX 4080 gibi üst seviye bir donanımda bile ancak 15 FPS alabilmesi, PS5 mimarisini PC'ye aktarmanın ne kadar zorlu bir süreç olduğunu vurguluyor. Gelecekte shader optimizasyonları tamamlandığında, bu rakamın daha kabul edilebilir seviyelere çekilmesi, PC kullanıcıları için emülasyon dünyasında yeni bir dönemi başlatabilir.",
+    "editorNote": "Gran Turismo 7, özel bir emülatör sürümüyle PC ekranlarına adım attı. 15 FPS ile pistte ilk kez kontrol edilebilir olan oyun, konsol yazılımlarının PC'deki sınırlarını zorluyor.",
+    "tags": [
+      "Gran Turismo 7",
+      "PC emülasyon",
+      "KytyPS5",
+      "oyun geliştirme",
+      "PlayStation 5"
+    ],
+    "category": "Oyun",
+    "gorselSorgu": "Gran Turismo 7 gameplay scene",
+    "source": "Merlin'in Kazanı",
+    "sourceUrl": "https://www.merlininkazani.com/gran-turismo-7-pc-ye-bir-adim-daha-yaklasti-haber-263883",
+    "image": "/kapak/c398013b8abbad15.webp",
+    "gorselKaynak": {
+      "yazar": "TR25s",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Ferrari_Vision_Gran_Turismo_03.jpg"
+    },
+    "publishedAt": "2026-10-26T22:41:00.000Z",
+    "generatedAt": "2026-10-26T22:44:42.231Z",
+    "gorselEk": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Quick_overview_of_pc_hardware.jpg",
+        "yazar": "Miko3k at English Wikipedia",
+        "lisans": "CC BY-SA 3.0",
+        "lisansUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Quick_overview_of_pc_hardware.jpg",
+        "altyazi": "Testlerde kullanılan güçlü donanım bileşenleri ve sistem yapısı"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/E-digital_Research_racing_buoy_and_foreshore_beyond_-_geograph.org.uk_-_1945438.jpg",
+        "yazar": "Ian Paterson",
+        "lisans": "CC BY-SA 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:E-digital_Research_racing_buoy_and_foreshore_beyond_-_geograph.org.uk_-_1945438.jpg",
+        "altyazi": "Yarış simülasyonlarında kullanılan detaylı grafik ve ışıklandırma modelleri"
+      }
+    ],
+    "breaking": true,
+    "kapak": {
+      "v": 1,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Ferrari_Vision_Gran_Turismo_03.jpg/1280px-Ferrari_Vision_Gran_Turismo_03.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "58306fa7d8281ea4",
     "title": "Miyoo Mini Plus yeni işlemcili V2 modelini 69,99 dolara sundu",
     "slug": "miyoo-mini-plus-yeni-islemcili-v2-modelini-6999-dolara-sundu",
