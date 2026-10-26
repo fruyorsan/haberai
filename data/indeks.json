@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T04:05:51.749Z",
+  "updatedAt": "2026-10-26T04:08:20.921Z",
   "gunluk": 24,
   "pencereGun": 45,
   "esik": {
@@ -10,9 +10,9 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 4525,
-  "aday": 4525,
-  "uygun": 2640,
+  "toplamHaber": 4526,
+  "aday": 4526,
+  "uygun": 2641,
   "secilen": 288,
   "red": {
     "kısa özet": 30,
@@ -22,7 +22,7 @@
     "kategorisiz": 2,
     "editör notu yok": 14,
     "günlük kota": 2335,
-    "tekrar": 17
+    "tekrar": 18
   },
   "ornekTekrarlar": [
     {
@@ -36,6 +36,10 @@
     {
       "title": "Gaziosmanpaşa, 7.0 büyüklüğündeki deprem için barınma tatbikatı yaptı",
       "twin": "Gaziosmanpaşa Belediyesi, 7.0 Deprem Tatbikatını 18.00'de Gerçekleştirdi"
+    },
+    {
+      "title": "Apple katlanabilir iPhone Duo dayanıklılık testinde sınıfta kaldı",
+      "twin": "Katlanabilir iPhone Duo, dayanıklılık testinden geçemedi"
     },
     {
       "title": "Japonya Meteoroloji Ajansı, 7.0 Büyüklükte Depremi 470 km Derinlikte Kayıt Etti",
@@ -101,6 +105,7 @@
       "22b7f128f8063029",
       "6755ab6e07ddb580",
       "153993cf7f7bd3bf",
+      "148728b83e4e7d27",
       "3933ba9d049e228f",
       "d3271a13334d2065",
       "a1fae482cff93885",
@@ -118,8 +123,7 @@
       "f70c9fc7217687ab",
       "2bfc0486d4333e9d",
       "2040215354d4e2cd",
-      "a7387529c68dddce",
-      "81bc7b0e59c46bbf"
+      "a7387529c68dddce"
     ],
     "2026-10-22": [
       "686d3f11a6cecddc",
@@ -274,8 +278,8 @@
       "ccd01d3ed21f9d06",
       "5684c57ed1007433",
       "bb2c4433a32c88e2",
-      "6f4f5460aabbeb98",
-      "b49d34ece748b5f3"
+      "b49d34ece748b5f3",
+      "7554c5222d40ccdd"
     ],
     "2026-10-15": [
       "2ee03cd9c9d668ee",
@@ -427,6 +431,7 @@
     "0f377683b024318c",
     "2ee03cd9c9d668ee",
     "88afc4c46ff5a08a",
+    "148728b83e4e7d27",
     "a569cb0ec87ffe82",
     "ea09595636002289",
     "09747a3394b04d6e",
@@ -634,7 +639,6 @@
     "a3d50398be3595b4",
     "9e0b805ba7eac2f9",
     "a67079bac1f9da97",
-    "81bc7b0e59c46bbf",
     "c5d94bd27755dc09",
     "0de10e2daad8c3b4",
     "8149b00f9624fc68",
@@ -661,8 +665,8 @@
     "5684c57ed1007433",
     "bb2c4433a32c88e2",
     "63c9f53e7702bbc2",
-    "6f4f5460aabbeb98",
     "b49d34ece748b5f3",
+    "7554c5222d40ccdd",
     "67d9b1811b11c487",
     "64279866b9f18be1",
     "819513c518c24024",
