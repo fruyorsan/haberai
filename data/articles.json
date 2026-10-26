@@ -1,5 +1,64 @@
 [
   {
+    "id": "54fb45f78e79ef8f",
+    "title": "AMD Zen 6, EPYC 9996’da Tek Çekirdek Performansında %25 Artış Sağladı",
+    "slug": "amd-zen-6-epyc-9996-tek-cekirdek-performansinda-25-artis",
+    "summary": "AMD, yeni Zen 6 mimarisine sahip EPYC 9996 sunucu işlemcisini Geekbench 6’da test etti. 256 çekirdekli bu işlemci, tek çekirdek skorunda 2.847 puan alarak, Zen 5 tabanlı EPYC 4545P’nin 3.064 puanına eşdeğer bir performansı yalnızca 4,12 GHz’de gösterdi. Bu sonuç, aynı frekansta %25 daha yüksek IPC kazancı anlamına geliyor.",
+    "keyPoints": [
+      "Zen 6 EPYC 9996, 4,12 GHz’de tek çekirdek 2.847 puan elde etti",
+      "Zen 5 EPYC 4545P 5,47 GHz’de 3.064 puan alıyor",
+      "Zen 6C çekirdeği, aynı 4,1 GHz frekansta %16,5 daha yüksek skor sağladı"
+    ],
+    "body": [
+      "AMD, Zen 6 mimarisine dayanan EPYC 9996 sunucu işlemcisini Geekbench 6 veri tabanına sızdırılan test sonuçlarıyla tanıttı. 256 çekirdek ve 512 iş parçacığına sahip bu işlemci, veri merkezi müşterileri için yüksek işlem gücü vaat ediyor. Testlerde işlemci, tek çekirdek performansını 2.847 puan, çoklu çekirdek performansını ise 68.427 puan olarak kaydetti.",
+      "İlginç bir detay olarak EPYC 9996, sadece 4,12 GHz çalışma frekansında bu skorları elde etti. Zen 5 tabanlı EPYC 4545P ise 5,47 GHz’ye kadar çıkıp 3.064 tek çekirdek puanına ulaşabiliyor. Bu karşılaştırma, Zen 6’nın düşük saat hızında aynı performansı sunabildiğini ve saat başına komut (IPC) verimliliğinde yüzde 24‑25’lik bir artış sağladığını gösteriyor.",
+      "Masaüstü segmentine de bakıldığında, Zen 5 tabanlı Ryzen 7 9700X 4,10 GHz’de 2.444 puan alırken, Zen 6C çekirdeği aynı frekansta 2.847 puanla yüzde 16,5’lik bir fark yaratıyor. Bu, Zen 6 mimarisinin yalnızca sunucu sınıfında değil, masaüstü işlemcilerde de daha agresif tek çekirdek güçleri sunabileceğinin bir işareti.",
+      "AMD, EPYC 9996’da kullanılan kompakt “Zen 6C” çekirdeklerini yüksek yoğunluk ve enerji verimliliği hedefiyle geliştirdi. Şirketin masaüstü tarafında “Olympic Ridge” kod adlı yeni Ryzen serileri, tam boyutlu Zen 6 çekirdeklerini barındıracak. Bu gelişme, gelecekte AM5 soketli sistemlerde daha yüksek saat hızları ve genişletilmiş 3D V‑Cache gibi özelliklerin yaygınlaşmasını tetikleyebilir.",
+      "Zen 6’nın sunduğu performans artışı, veri merkezi sahipleri için daha düşük enerji tüketimiyle aynı iş yükünü yürütme imkânı sunuyor. Aynı zamanda, yüksek tek çekirdek gücü sayesinde oyun ve yüksek frekanslı uygulamalarda da rekabet avantajı sağlayabilir. AMD’nin bu mimari sıçraması, rakip Intel Xeon serileriyle doğrudan bir karşılaştırma sahnesi oluşturacak gibi görünüyor."
+    ],
+    "comment": "Zen 6 mimarisinin IPC kazanımı, düşük frekansta %25’lik artışla somut bir performans sıçraması sunuyor. 4,12 GHz’de EPYC 9996’ın tek çekirdek skoru, yüksek frekanslı Zen 5 modellerine eşdeğer olduğu için veri merkezi operasyonları daha enerji verimli hale gelecek. Bu durum, sunucu alıcıları ve yüksek performans gerektiren geliştiriciler için cazip bir seçenek yaratıyor. Intel Xeon’larla karşılaştırıldığında, AMD’nin fiyat‑performans dengesinde üstünlük kurma şansı artıyor.",
+    "editorNote": "Zen 6, düşük saat hızında %25 daha yüksek IPC ile veri merkezi performansını yeniden tanımlıyor. Enerji verimliliği arayanlar için EPYC 9996 dikkat çekici bir seçenek.",
+    "tags": [
+      "AMD",
+      "Zen 6",
+      "EPYC 9996",
+      "Geekbench",
+      "CPU"
+    ],
+    "category": "Donanım",
+    "gorselSorgu": "AMD EPYC server processor",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/amd-zen-6-geekbench-testinde-ortaya-cikti-performansta-yuzde-25-artis",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/AMD_Athlon_XP_Palomino.Jpg/1280px-AMD_Athlon_XP_Palomino.Jpg",
+    "gorselKaynak": {
+      "yazar": "Matthieu Riegler English : This photo has been taken by Matthieu Ri…",
+      "lisans": "CC BY 3.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/3.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:AMD_Athlon_XP_Palomino.Jpg"
+    },
+    "publishedAt": "2026-10-26T06:19:32.000Z",
+    "generatedAt": "2026-10-26T06:23:29.410Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Supermicro_X10SLM%2B-LN4F_server_motherboard%2C_oblique_view_from_rear.jpg/1280px-Supermicro_X10SLM%2B-LN4F_server_motherboard%2C_oblique_view_from_rear.jpg",
+        "yazar": "Phiarc",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Supermicro_X10SLM%2B-LN4F_server_motherboard,_oblique_view_from_rear.jpg",
+        "altyazi": "EPYC 9996 ana kartı ve soket konumu"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/HP-HP9000-PARISC-PA7300LC-CPU-Chip-Closeup-Project-VelociRaptor.jpg",
+        "yazar": "Thomas Schanz",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:HP-HP9000-PARISC-PA7300LC-CPU-Chip-Closeup-Project-VelociRaptor.jpg",
+        "altyazi": "Zen 6C çekirdek mikro yapı detayları"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "a91563c9b62a514b",
     "title": "YouTube, AV2 sıkıştırma formatıyla veri tüketimini yüzde 30 azaltacak",
     "slug": "youtube-av2-sikistirma-formatiyla-veri-tuketimini-yuzde-30-azaltacak",
