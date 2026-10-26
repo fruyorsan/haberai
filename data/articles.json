@@ -1,5 +1,60 @@
 [
   {
+    "id": "80c3ce718bfd8461",
+    "title": "Tamamlayıcı Sağlık Sigortası, SGK ile Birleştirerek Fark Yaratıyor",
+    "slug": "tamamlayici-saglik-sigortasi-sgk-ile-birlestirerek-fark-yaratiyor",
+    "summary": "Tamamlayıcı sağlık sigortası, SGK’nın karşıladığı tutarın üzerine ek ücretleri kapsayarak özel hastane hizmetlerine erişimi kolaylaştırıyor. Bu poliçeler, yatarak ve ayakta tedavi teminatlarıyla bireylerin bütçelerine göre şekilleniyor. Sigortalının yaşı ve teminat genişliği primi belirleyen önemli faktörler arasında yer alıyor.",
+    "keyPoints": [
+      "SGK karşıladığını üstüne ek ücretleri kapsayan poliçeler",
+      "Yatarak ve ayakta tedavi teminatları farklılık gösteriyor",
+      "Prim, yaş ve teminat genişliğiyle değişiyor"
+    ],
+    "body": [
+      "Tamamlayıcı sağlık sigortası, son yıllarda özel sağlık hizmetlerine planlı erişim arayanlar için popüler bir seçenek haline geldi. Bu poliçeler, SGK’nın karşıladığı tutarın üzerinde oluşan fark ücretlerini güvence altına alır, böylece hastane hizmetlerinden sorunsuz yararlanılabilir. Poliçelerin teminat yapısı iki ana gruba ayrılır: yatarak tedavi ve ayakta tedavi. Bazı poliçeler yalnızca yatarak tedaviyi, bazıları ise her iki teminatı da sunar. Bu farklılık, özellikle düzenli muayene ihtiyacı olan kişiler için önem taşır. Prim hesaplaması, sigortalının yaşı, teminat kapsamı genişliği ve ayakta tedavi dahil edilip edilmediğine göre belirlenir. Yaş arttıkça prim artar; teminat genişledikçe maliyet yükselir. Bu nedenle, poliçe seçerken yalnızca fiyata değil, aynı zamanda sunulan teminatın kapsamına da bakmak gerekir. Kapsam dışı kalabilecek durumlar da vardır. Önceden var olan bazı rahatsızlıklar poliçe başlangıcından önce değerlendirilir. Belirli teminatlarda bekleme süresi uygulanabilir. Bu nedenle, poliçe alınmadan önce genel şartları ve istisnaları dikkatle incelemek önemlidir. Sonuç olarak, tamamlayıcı sağlık sigortası, SGK güvencesiyle birleşerek sağlık hizmetlerine daha planlı bir erişim sağlar."
+    ],
+    "comment": "Bireylerin SGK karşılama tutarının üstüne ek ücretleri kapsayan tamamlayıcı sigorta, primde yaş ve teminat genişliğiyle değişiklik gösteriyor; bu durum, yüksek prim ödemekten kaçınmak isteyenleri daha düşük kapsamlı poliçelere yönlendirebilir. Öte yandan, ayakta tedavi haklarını da kapsayan poliçeler, düzenli muayene ihtiyacı olanlar için maliyetleri artırsa da kapsamı genişletir. Bu nedenle, sigorta seçimi yapılırken hem maliyet hem de ihtiyaç analizi eşdeğer öneme sahip.",
+    "editorNote": "Tamamlayıcı sigorta, SGK’ın karşıladığı tutarın üstüne ek ücretleri kapsar; prim, yaş ve kapsam genişliğiyle değişir.",
+    "tags": [
+      "tamamlayici sigorta",
+      "sgk",
+      "sağlık sigortası",
+      "yatarak tedavi",
+      "ayakta tedavi"
+    ],
+    "category": "Sağlık",
+    "gorselSorgu": "hospital waiting room",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/tamamlayici-saglik-sigortasi-en-cok-merak-edilen-ayrimlar",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Johnson_Community_Hospital%2C_Waiting_room_-_geograph.org.uk_-_4865610.jpg/1280px-Johnson_Community_Hospital%2C_Waiting_room_-_geograph.org.uk_-_4865610.jpg",
+    "gorselKaynak": {
+      "yazar": "Bob Harvey",
+      "lisans": "CC BY-SA 2.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Johnson_Community_Hospital,_Waiting_room_-_geograph.org.uk_-_4865610.jpg"
+    },
+    "publishedAt": "2026-10-26T06:34:36.000Z",
+    "generatedAt": "2026-10-26T06:39:12.646Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Hospital_bed_made_by_schroder.jpg/1280px-Hospital_bed_made_by_schroder.jpg",
+        "yazar": "Fatiens",
+        "lisans": "CC BY 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Hospital_bed_made_by_schroder.jpg",
+        "altyazi": "Yatarak tedavi sürecinde hastane yatağı"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Modern_medical_examination_room.jpg/1280px-Modern_medical_examination_room.jpg",
+        "yazar": "Shixart1985",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Modern_medical_examination_room.jpg",
+        "altyazi": "Ayakta tedavi hizmetleri sunan muayene odası"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "cd3898cb659afe30",
     "title": "Block, metin verisi kullanmayan sesli yapay zeka modeli Dessa'yı duyurdu",
     "slug": "block-metin-verisi-kullanmayan-sesli-yapay-zeka-modeli-dessayi-duyurdu",
