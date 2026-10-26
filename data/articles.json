@@ -1,5 +1,64 @@
 [
   {
+    "id": "a91563c9b62a514b",
+    "title": "YouTube, AV2 sıkıştırma formatıyla veri tüketimini yüzde 30 azaltacak",
+    "slug": "youtube-av2-sikistirma-formatiyla-veri-tuketimini-yuzde-30-azaltacak",
+    "summary": "YouTube, video akış performansını artırmak amacıyla yeni nesil AV2 formatına geçiş hazırlıklarını duyurdu. Mevcut standartlara kıyasla yüzde otuz daha yüksek verimlilik sunacak teknoloji, düşük bağlantılarda bile net bir görüntü vadediyor.",
+    "keyPoints": [
+      "AV2 formatı, AV1 standardına kıyasla yüzde 30 daha yüksek sıkıştırma verimliliği sunuyor.",
+      "Yeni teknoloji 2027 yılının başlarından itibaren masaüstü web tarayıcılarında kullanıma açılacak.",
+      "Donanım hızlandırma desteği olmayan cihazlarda yazılımsal çözme pil tüketimini artırabiliyor."
+    ],
+    "body": [
+      "YouTube, video akış altyapısını kökten değiştirecek yeni nesil AV2 codec teknolojisini platforma entegre etmeye hazırlanıyor. Alliance for Open Media konsorsiyumu tarafından geliştirilen bu yenilikçi video sıkıştırma formatı, içerik tüketim alışkanlıklarını doğrudan dönüştürmeyi hedefliyor. Gelişmiş sıkıştırma algoritmaları sayesinde platform genelindeki bant genişliği gereksinimi belirgin bir ölçüde azalıyor. İnternet bağlantısı dalgalı olan kullanıcılar, bu sayede kesintisiz ve yüksek çözünürlüklü video izleme imkanına kavuşuyor.",
+      "Mevcut standart olan AV1 formatı halihazırda platform kütüphanesinin yüzde doksanından fazlasında aktif olarak kullanılıyor. Yeni duyurulan AV2 teknolojisi ise aynı görsel kaliteyi yaklaşık yüzde otuz daha düşük bit hızında sunarak çıtayı yukarı taşıyor. YouTube Mühendislik Direktörü Des Keane, bu geçişin yayın kalitesini ve oynatma kararlılığını güçlendireceğini vurguluyor. Tarayıcı ekibi ayrıca çoklu kamera açıları ile eş zamanlı yayın modlarının bu altyapıdan doğrudan faydalanacağını belirtiyor.",
+      "Yol haritasına göre yeni format, 2027 yılının başlarında ilk aşamada masaüstü web tarayıcıları üzerinden sunulmaya başlanacak. Akıllı televizyonlar ve mobil cihazlar için ise henüz kesinleşmiş bir takvim bulunmuyor. Bu durumun temel sebebi, yeni formatın enerji verimli çalışabilmesi için işlemcilerde donanımsal kod çözme desteğine ihtiyaç duymasıdır. Donanım üreticilerinin yonga setlerini güncellemesiyle birlikte mobil alandaki geçişin de ivme kazanması bekleniyor.",
+      "Donanım hızlandırmasından mahrum kalan cihazlarda yazılımsal çözme yöntemlerinin tercih edilmesi pil tüketimini hızlandırabiliyor. Bu nedenle platform yönetimi, kullanıcı deneyiminin olumsuz etkilenmemesi için dağıtım sürecini kademeli ve temkinli bir stratejiyle yürütmeyi planlıyor. Yonga seti üreticilerinin yeni nesil işlemcileri piyasaya sürmesiyle birlikte ekosistemdeki uyum süreci tamamlanacak.",
+      "Teknolojinin yaygınlaşmasıyla birlikte mobil ve sabit internet kullanıcılarının veri tarifelerinde de rahatlama görülmesi öngörülüyor. Aynı çözünürlük için daha az veri harcanması, özellikle kotalı internet kullanan kitleler için büyük bir avantaj oluşturuyor. YouTube ekibi, geçiş sürecinde içerik üreticilerinin ve izleyicilerin minimum düzeyde etkilenmesi için teknik altyapı çalışmalarını sürdürüyor."
+    ],
+    "comment": "Mevcut AV1 standardının ardından yüzde otuzluk ek bir verimlilik kazanımı sağlamak, özellikle mobil ağlarda ve sınırlı internet paketlerinde ciddi bir rahatlama yaratacaktır. Ancak donanım desteğinin henüz yaygınlaşmamış olması, geçiş sürecinin eskiden olduğu gibi hızlı ilerlemesini engelleyebilir. Şirketin 2027 takvimi, donanım üreticilerine yonga setlerini güncellemek için yeterli süre tanırken, yazılımsal çözümlerin batarya üzerindeki olumsuz etkisi dikkatle yönetilmelidir.",
+    "editorNote": "YouTube, 2027 başlarında geçeceği AV2 formatı ile veri tüketimini yüzde 30 düşürürken donanım desteğini şart koşuyor.",
+    "tags": [
+      "YouTube",
+      "AV2",
+      "codec",
+      "video akışı",
+      "teknoloji"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "YouTube video streaming data center server room",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/youtube-video-kalitesinde-yeni-donem-av2-ile-basliyor",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/YouTube_HQ_11.JPG/1280px-YouTube_HQ_11.JPG",
+    "gorselKaynak": {
+      "yazar": "BrokenSphere",
+      "lisans": "CC BY 3.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/3.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:YouTube_HQ_11.JPG"
+    },
+    "publishedAt": "2026-10-26T06:12:47.000Z",
+    "generatedAt": "2026-10-26T06:15:09.853Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/AMTI_computer_processor_CadillacII_a.jpg/1280px-AMTI_computer_processor_CadillacII_a.jpg",
+        "yazar": "Division 14, National Defense Research Committee",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:AMTI_computer_processor_CadillacII_a.jpg",
+        "altyazi": "Yeni nesil video formatlarını işleyen işlemci mimarisi ve yonga seti"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Person_watching_the_sunset_%28Unsplash%29.jpg/1280px-Person_watching_the_sunset_%28Unsplash%29.jpg",
+        "yazar": "Jon Asato jon_asato",
+        "lisans": "CC0",
+        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Person_watching_the_sunset_(Unsplash).jpg",
+        "altyazi": "Masaüstü web tarayıcılarında yüksek çözünürlüklü video akışı deneyimi"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "e77bcf10ca837dc9",
     "title": "Tarım Bakanlığı standart getirdi: Reçelde meyve oranı artıyor",
     "slug": "tarim-bakanligi-standart-getirdi-recelde-meyve-orani-artiyor",
