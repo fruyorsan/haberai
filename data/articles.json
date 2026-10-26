@@ -1,5 +1,52 @@
 [
   {
+    "id": "29536e82da1bac41",
+    "title": "Starlink, Brezilya'da 50 milyon aboneye uydu telefonu açtı",
+    "slug": "starlink-brezilya-50-milyon-abone-uydu-telefonu",
+    "summary": "Starlink ve Vivo işbirliğiyle Brezilya genelinde uydu üzerinden mobil bağlantı hizmete girdi. 50 milyon kullanıcının erişebileceği sistemde şu an 7 milyon telefon uyduya bağlı. Hizmet, hücresel şebekenin çekmediği ölü bölgelerde mesajlaşma desteği sağlıyor.",
+    "keyPoints": [
+      "50 milyon müşteri, şebeke ölü bölgelerinde uyduyla bağlantı kurabiliyor.",
+      "Sistemde şimdiden 7 milyon telefonun aktif olduğu belirtildi.",
+      "WhatsApp ve SMS desteği var, ancak veri kullanımı kısıtlı."
+    ],
+    "body": [
+      "SpaceX’in uydu internet kolu Starlink, Brezilya’nın en büyük mobil operatörü Vivo ile ortaklaşa geliştirdiği Starlink Mobile hizmetini resmen devreye soktu. Pazartesi günü X platformu üzerinden yapılan duyuruya göre bu uygulama, ülkede ilk kez tüm coğrafyayı kapsayan bir altyapı sunuyor. Hedef kitle, mevcut hücresel ağların sinyalinin akmadığı kırsal ve uzak bölgelerde kalan 50 milyon müşteri olarak tanımlanıyor.",
+      "Teknik altyapıda cep telefonları, yörüngedeki Starlink uydularına doğrudan bağlanarak adeta gökyüzündeki bir baz istasyonu gibi çalışıyor. Telefon, yerdeki 4G veya 5G sinyali zayıfladığında bağlantı otomatik olarak uydu ağına geçiyor ve ekranda 'Vivo Starlink' ağı görünüyor. Şirket, lansman sırasında sisteme zaten 7 milyon cihazın bağlandığını ve bunun ölçek açısından büyük bir başarı olduğunu vurguladı. Kullanıcıların ek bir uygulama indirmesine gerek yok; güncel yazılıma sahip telefon ve açık gökyüzü yeterli.",
+      "Hizmetin mevcut versiyonunda, görüntülü arama ve serbest internet gezintisi gibi veri yoğun uygulamalar desteklenmiyor. Bunun yerine WhatsApp, SMS, iMessage ve Google Haritalar gibi temel iletişim ve konum servisleri aktif durumda. Brezilya basınına yansıyan bilgilere göre operatör, bağlantı hızı ve veri kotası sınırları hakkında henüz kesin bir rakam paylaşmadı. Bu durum, abonelerin günlük kullanım deneyimini doğrudan kısıtlayan bir faktör olarak öne çıkıyor.",
+      "Fiyatlandırma tarafında ise abonelere tanınan bir cazip bir bekleme süresi var. Uygun tarifelerdeki bireysel müşterilere hizmet 12 ay, kurumsal kullanıcılara ise 3 ay boyunca ücretsiz sunulacak. Ücretsiz dönemin sona ermesinin ardından uygulanacak ücretlendirme modeli şimdilik açıklanmadı. Vivo, bu altyapının doğal afetler veya yol üzerindeki kesintiler gibi acil durumlarda iletişimin kopmaması gerektiği anlarda kritik bir rol üstleneceğini belirtiyor.",
+      "Pazardaki hareketlilik, bu lansmanı daha da merak uyandırıcı kılıyor. Starlink duyurusundan yalnızca üç gün önce, Brezilya’daki Brisanet, Unifique ve Iez! Telecom gibi yerel operatörler, rakip firma AST SpaceMobile ile anlaşma imzalamıştı. Claro ve TIM gibi devler de AST ile test aşamasında bulunuyor. Bu tablo, Brezilya’nın uydu-telefon bağlantısı pazarında iki büyük teknoloji devinin karşı karşıya geldiği bir rekabet ortamına işaret ediyor.",
+      "Türkiye açısından bakıldığında ise benzer bir hizmetin ne zaman hayata geçeceği belirsizliğini koruyor. Starlink’in kendi altyapısını kurabilmesi için Bilgi Teknolojileri ve İletişim Kurumu’ndan (BTK) gerekli lisansları alması gerekiyor. Bu diplomatik ve teknik süreç tamamlanmadan Türk kullanıcılar için bir takvim belirlenmesi zor görünüyor."
+    ],
+    "comment": "Vivo ve Starlink’in attığı bu adım, mobil operatörlerin 'ölü bölge' sorununu çözmek için uyduya geçişte pragmatik bir strateji izlediğini gösteriyor. 50 milyon potansiyel abone rakamı, özellikle kırsal kesimde yaşayan ve dijitalleşme dışı kalan kesim için somut bir erişim fırsatı sunsa da, sadece mesajlaşma desteğiyle sınırlı kalması deneyimi yarım bırakıyor. Rekabetçi ortamda AST SpaceMobile ile imzalanan anlaşmalar, Starlink’in pazar payını koruyabilmek için fiyatlandırma ve hız konularında esnek olmak zorunda kalacağını düşündürüyor. Eğer V2 sürümü vadettiği 'yüksek hızlı interneti' gerçekleştiremezse, bu hizmet yalnızca acil durum hattı olarak kalacak ve operatörler için beklenen gelir artışı sağlanamayacaktır.",
+    "editorNote": "Şebeke çekmediğinde telefonun kendi kendine uyduya bağlanması ilginç bir mühendislik detayı. Ancak görüntülü arama olmaması, bunun tam kapsamlı bir internet erişimi olmadığını…",
+    "tags": [
+      "Starlink",
+      "Vivo",
+      "Brezilya",
+      "Uydu İnterneti",
+      "Mobil Telekomünikasyon"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "Starlink satellite phone connection",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/starlink-mobile-brezilya-vivo",
+    "image": "/kapak/29536e82da1bac41.webp",
+    "gorselKaynak": {
+      "yazar": "NASA",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:ISS-62_Earth%27s_glow_and_Aurora_australis_with_Starlink_satellite_constellation.jpg"
+    },
+    "publishedAt": "2026-10-26T19:57:03.000Z",
+    "generatedAt": "2026-10-26T20:03:47.675Z",
+    "breaking": true,
+    "kapak": {
+      "v": 1,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/ISS-62_Earth%27s_glow_and_Aurora_australis_with_Starlink_satellite_constellation.jpg/1280px-ISS-62_Earth%27s_glow_and_Aurora_australis_with_Starlink_satellite_constellation.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "6170dce080615cec",
     "title": "Elazığ'da 3 tırlı zincirleme kazada 1 kişi hayatını kaybetti",
     "slug": "elazigda-3-tirla-zincirleme-kazada-1-kisi-hayatin-kaybetti",
