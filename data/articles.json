@@ -1,5 +1,65 @@
 [
   {
+    "id": "65462942021bf8d2",
+    "title": "Playden for PS5 uygulaması, Steam oyunlarını konsolda çalıştırıyor",
+    "slug": "playden-for-ps5-steam-oyunlarini-konsolda-calistiriyor",
+    "summary": "Playden for PS5 adını taşıyan açık kaynaklı yeni bir proje, Steam kütüphanesindeki Windows oyunlarının konsol donanımında başlatılabilmesini sağlıyor. 25 Ekim 2026 tarihinde gündeme gelen bu yöntem, PC ve konsol dünyaları arasındaki teknik sınırları esnetiyor.",
+    "keyPoints": [
+      "Playden for PS5 uygulaması, Steam oyunlarını konsol donanımında çalıştırmayı hedefliyor.",
+      "Proje, Windows uygulamalarını çalıştırmak için Wine uyumluluk katmanından yararlanıyor.",
+      "Sistemi kullanmak için jailbreak uygulanmış bir PS5 konsolu gerekiyor."
+    ],
+    "body": [
+      "PlayStation 5 konsollarında Windows tabanlı oyunların çalıştırılabilmesi amacıyla geliştirilen açık kaynaklı Playden for PS5 projesi dikkat çekiyor. Bağımsız geliştiricilerin emeğiyle hazırlanan bu uygulama, kullanıcıların Steam hesaplarına konsol üzerinden erişmesini ve sahip oldukları oyun kütüphanesini yönetmesini mümkün kılıyor. MacOS için tasarlanan benzer bir projeden uyarlanan sistem, konsol ve bilgisayar oyunculuğu arasındaki çizgileri kısmen belirsizleştiriyor.",
+      "Uygulamanın ardındaki teknik altyapı, farklı işletim sistemlerinde Windows programlarının çalışmasını sağlayan Wine uyumluluk katmanına dayanıyor. Özellikle prospero-win sürümü üzerinden şekillenen bu yapı, konsol donanımının Windows oyun komutlarını işleyebilmesine zemin hazırlıyor. Grafik tarafında ise DXVK ve vkd3d-proton bileşenleri devreye girerek Direct3D grafik çağrılarını Vulkan altyapısına dönüştürüyor.",
+      "Sistemi kurmak ve çalıştırmak standart PlayStation 5 kullanıcıları için mümkün olmuyor. Yazılımın kullanılabilmesi için cihaz üzerinde jailbreak işlemi yapılmış olması ve gerekli homebrew araçlarının kurulması gerekiyor. Kullanıcılar QR kod veya hesap bilgileriyle giriş yaptıktan sonra istedikleri oyunu indiriyor ve uygulama her yapım için bağımsız bir sanal çalışma ortamı oluşturuyor.",
+      "Ancak bu oyunların listede yer alması, her yapımın sorunsuz çalışacağı anlamına gelmiyor. Bazı oyunlar yalnızca açılış ekranına ulaşabilirken, bazılarında kontrol problemleri veya beklenmeyen kapanmalar görülebiliyor.",
+      "Proje henüz Alpha geliştirme aşamasında ilerliyor ve performans sorunları ile grafik hataları barındırabiliyor. Ayrıca uygulamanın resmî bir Valve veya Sony ürünü olmaması, gerçek Steam hesaplarıyla oturum açma zorunluluğu nedeniyle bazı güvenlik risklerini beraberinde getiriyor. Konsolda jailbreak yapılması da çevrim içi servislerin kullanımını doğrudan etkiliyor.",
+      "PlayStation 5 donanımının AMD tabanlı x86-64 mimarisini kullanması uyumluluk çalışmalarına temel oluşturuyor. Ancak iki platformun grafik arayüzleri, işletim sistemi servisleri ve bellek yönetimi gibi temel farkları bulunuyor. Playden projesi bu engelleri aşmak için erken bir adım niteliği taşıyor ancak henüz kararlı bir PC deneyimi sunmaktan uzak görünüyor."
+    ],
+    "comment": "Konsol mimarilerinin PC ile benzer x86 temellerine dayanması, bu tarz emülasyon ve uyumluluk denemelerinin önünü açıyor. Ancak Alpha aşamasındaki bir projenin jailbreak gerektirmesi, güvenlik riski alan geniş bir kullanıcı kitlesi için caydırıcı bir faktör olmayı sürdürüyor. Standart konsol sahipleri açısından resmî olmayan bu yöntemler kararlı bir alternatif sunmazken, meraklı geliştiriciler için teknik bir sınır denemesi olarak kalıyor.",
+    "editorNote": "Jailbreak gerektiren Playden for PS5 projesi, Steam kütüphanesindeki PC oyunlarını konsola taşısa da şimdilik kararsız bir Alpha deneyimi sunuyor.",
+    "tags": [
+      "PlayStation 5",
+      "Steam",
+      "Playden",
+      "Wine",
+      "Jailbreak"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "PlayStation 5 console gaming setup",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/playstation-5-steam-oyunlari-playden",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg/1280px-Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
+    "gorselKaynak": {
+      "yazar": "Shixart1985",
+      "lisans": "CC BY 2.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg"
+    },
+    "publishedAt": "2026-10-26T04:30:14.000Z",
+    "generatedAt": "2026-10-26T04:34:15.419Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Playstation_5_DualSense_controller_in_Midnight_Black%2C_2026-02-07_%28rear%29.jpg/1280px-Playstation_5_DualSense_controller_in_Midnight_Black%2C_2026-02-07_%28rear%29.jpg",
+        "yazar": "Chris Woodrich",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Playstation_5_DualSense_controller_in_Midnight_Black,_2026-02-07_(rear).jpg",
+        "altyazi": "Konsol kontrolcüsü ve oyun arayüzü etkileşimi"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Interface_Message_Processor_-_BBN_Arpanet_Router_-_Computer_History_Museum_%282007-11-10_23.06.56_by_Carlo_Nardone%29.jpg/1280px-Interface_Message_Processor_-_BBN_Arpanet_Router_-_Computer_History_Museum_%282007-11-10_23.06.56_by_Carlo_Nardone%29.jpg",
+        "yazar": "Carlo Nardone from Roma, Italy",
+        "lisans": "CC BY-SA 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Interface_Message_Processor_-_BBN_Arpanet_Router_-_Computer_History_Museum_(2007-11-10_23.06.56_by_Carlo_Nardone).jpg",
+        "altyazi": "Donanım mimarisi ve uyumluluk katmanı bileşenleri"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "92d7b09b968846f0",
     "title": "ABD Baskani Trump, Israil secimleri icin Netanyahu'ya destek istedi",
     "slug": "abd-baskani-trump-israil-secimleri-icin-netanyahuhya-destek-istedi",
