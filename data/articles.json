@@ -1,5 +1,56 @@
 [
   {
+    "id": "bd9ddd06a444da67",
+    "title": "AWS, yapay zeka talebiyle 2027 bulut kapasitesini büyük oranda sattı",
+    "slug": "aws-yapay-zeka-talebiyle-2027-bulut-kapasitesini-satti",
+    "summary": "Yapay zeka teknolojilerine duyulan yoğun ilgi, bulut bilişim altyapısı sağlayan şirketlerin kaynaklarını hızla tüketiyor. Amazon Web Services, 2027 yılına ait bulut kapasitesinin büyük bölümünü şimdiden elden çıkardı.",
+    "keyPoints": [
+      "AWS, 2027 bulut kapasitesinin büyük kısmını yapay zeka talebiyle sattı.",
+      "Amazon CEO'su Andy Jassy, 2028 yılı için de anlaşmalar yapıldığını duyurdu.",
+      "Şirket, 2026 sermaye yatırımlarında yaklaşık 220 milyar dolar harcamayı planlıyor."
+    ],
+    "body": [
+      "Yapay zeka teknolojilerinin küresel ölçekte gösterdiği hızlı gelişim, kurumsal şirketlerin bulut bilişim altyapısına olan gereksinimini benzeri görülmemiş bir seviyeye taşıdı. Bu devasa talep dalgası, sektördeki teknoloji devlerinin mevcut veri merkezleri ve sunucu kapasitelerini genişletmek için yeni hamleler yapmasını zorunlu kılıyor. Dünyanın önde gelen bulut sağlayıcılarından Amazon Web Services da müşteri taleplerini karşılamakta zorlandığı bir döneme girdi.",
+      "Amazon CEO'su Andy Jassy, kurucu ortaklarla gerçekleştirdiği bir programda yaptığı açıklamalarda, şirket kapasitelerinin doluluk oranına dikkat çekti. Jassy, 2027 takvim yılına ait bulut kaynaklarının çok büyük bir kısmının şimdiden alıcı bulduğunu ve 2028 yılı kapasitesi için de müşterilerle şimdiden sözleşmeler imzalandığını ifade etti. Yapay zeka laboratuvarlarının ve büyük ölçekli kurumsal müşterilerin sistemlere olan baskısının artarak devam ettiği belirtiliyor.",
+      "Şirket yönetimi, anlık talep üzerine sunulan hizmetler ile Bedrock ve EC2 altyapıları için bir miktar kaynağı yedekte tutmaya çalışıyor. EC2 sunucuları uygulamaların çalıştırılması için kritik donanım sağlarken, Bedrock ise müşterilerin farklı üretken yapay zeka modellerine erişmesine imkan tanıyor. Yoğun talep karşısında Amazon'un elindeki tüm kaynakları verimli şekilde paylaştırmak için operasyonel planlamalarını yenilediği görülüyor.",
+      "Gelecek döneme yönelik finansal ve altyapısal planlamalarını güncelleyen Amazon, daha önce 2026 yılında sermaye yatırımları için yaklaşık 220 milyar dolar harcama yapmayı öngördüğünü açıklamıştı. Ancak Andy Jassy, 2026 yılı bulut kapasitesinin de şimdiden satılmış olması nedeniyle planlanan bu tutarın üzerine çıkabileceklerini ve yatırımları artırabileceklerini dile getirdi.",
+      "Piyasadaki bu yoğun hareketliliğin ardından gözler şirketin gelecek dönem mali ve stratejik raporlarına çevrilmiş durumda. Amazon'un üçüncü çeyrek finansal sonuçlarını 29 Ekim tarihinde kamuoyuyla paylaşması bekleniyor. Açıklanacak rakamların, bulut pazarındaki büyüme hızını ve yapay zeka yatırımlarının maliyet dengesini net bir şekilde ortaya koyacağı tahmin ediliyor."
+    ],
+    "comment": "Bulut kapasitelerinin yıllar öncesinden tükenmesi, yapay zeka pazarındaki donanım kısıtlarının ne denli derinleştiğini gösteren net bir kanıttır. Şirketler hesaplama gücüne erişmek için sıraya girerken, 220 milyar dolarlık devasa yatırım planları bile talebi tamamen karşılamaya yetmeyebilir. Bu durum, küçük ölçekli girişimlerin altyapı bulma konusunda büyük maliyet baskısıyla karşılaşacağına işaret ediyor. Eğer tedarik zinciri bu hıza ayak uyduramazsa, pazar sadece en büyük bütçeye sahip oyuncuların domine ettiği bir yapıya dönüşecektir.",
+    "editorNote": "AWS'nin 2027 kapasitesini erken kapatması, yapay zeka sektöründe donanım savaşlarının hangi boyuta ulaştığını net şekilde gösteriyor.",
+    "tags": [
+      "AWS",
+      "Amazon",
+      "Bulut Bilişim",
+      "Yapay Zeka",
+      "Andy Jassy"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "data center server room",
+    "source": "Webrazzi",
+    "sourceUrl": "https://webrazzi.com/2026/10/26/aws-yapay-zeka-talebiyle-2027-ye-kadar-bulut-kapasitesinin-buyuk-bolumunu-satti/",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
+    "gorselKaynak": {
+      "yazar": "Joël van der Loo",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Duga-1_radar_data_center_interior_server_room_2018.jpg"
+    },
+    "publishedAt": "2026-10-26T14:32:29.000Z",
+    "generatedAt": "2026-10-26T14:37:47.035Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/AIAP_IFGICT_Artificial_Intelligence_Auditor_Professional_Certificate.jpg/1280px-AIAP_IFGICT_Artificial_Intelligence_Auditor_Professional_Certificate.jpg",
+        "yazar": "TimeBusinessNews",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:AIAP_IFGICT_Artificial_Intelligence_Auditor_Professional_Certificate.jpg",
+        "altyazi": "Yapay zeka modellerini çalıştıran gelişmiş işlemci donanımları"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "c9833fcbd131dc47",
     "title": "Chris Brown, gece kulübü kavgası davasında ertelenmiş hapis cezası aldı",
     "slug": "chris-brown-gece-kulubu-kavgasi-davasinda-ertelen-hapis-cezasi-aldi",
