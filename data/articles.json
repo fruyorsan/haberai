@@ -1,5 +1,56 @@
 [
   {
+    "id": "52cefc76d7126161",
+    "title": "Micron, 400 katmanlı yeni G11 bellek teknolojisini duyurdu",
+    "slug": "micron-400-katmanli-yeni-g11-bellek-teknolojisini-duyurdu",
+    "summary": "Bellek üreticisi Micron, veri yoğunluğunu ikiye katlayan yeni nesil G11 3D NAND teknolojisini resmen tanıttı. Dört yüzü aşkın katman barındıracak mimarinin seri üretimine on binlerce saatlik çalışma sonucunda 2027 yılında başlanacak.",
+    "keyPoints": [
+      "Yeni G11 mimarisi 400'den fazla bellek katmanı ve 42 Gbit/mm² yoğunluk sunuyor.",
+      "Arayüz hızı önceki nesle kıyasla artarak 5.400 MT/s seviyesine ulaşabilecek.",
+      "Seri üretimin 2027 yılının ikinci yarısında hayata geçirilmesi planlanıyor."
+    ],
+    "body": [
+      "Bellek pazarının önde gelen isimlerinden biri olan Micron, depolama mimarisinde köklü bir değişime giderek yeni nesil G11 3D NAND teknolojisini resmen duyurdu. Şirket, önceki G9 mimarisini geride bırakıp G10 basamağını atlayarak doğrudan G11 teknolojisine geçiş yapıyor. Dört yüzden fazla dikey katmanı bünyesinde barındıracak bu yeni sistem, birim alanda depolanan veri miktarını iki katına çıkararak donanım dünyasında önemli bir yeniliğe imza atıyor.",
+      "Gelişmiş üretim süreçlerinde wafer-on-wafer bonding adı verilen özel bir birleştirme yöntemi tercih ediliyor. Bu teknik sayesinde bellek dizisi ile kontrol devrelerini barındıran katmanlar üretim sonrasında birleştirilebiliyor. Mevcut G9 neslinde yaklaşık 21 Gbit/mm² olan veri yoğunluğu, yeni mimariyle birlikte 42 Gbit/mm² düzeyine tırmanıyor. Böylece silikon tabaka üzerinde çok daha fazla kapasite elde edilirken üretim maliyetlerinin de aşağı çekilmesi hedefleniyor.",
+      "Performans kanadında da belirgin iyileştirmeler göze çarpıyor. Giriş ve çıkış hızlarını yüzde elli oranında artıran Micron, G9 neslindeki 3.600 MT/s seviyesini G11 ile teorik olarak 5.400 MT/s düzeyine taşıyor. Buna ek olarak veri transferi sırasında bit başına harcanan enerjinin yüzde yirmi beşten fazla azaltılması amaçlanıyor. Enerji verimliliğindeki bu düşüş, özellikle elektrik tüketiminin kritik olduğu büyük veri merkezleri için büyük bir avantaj sağlıyor.",
+      "Yeni nesil depolama birimleri yalnızca kişisel bilgisayarları değil, aynı zamanda yapay zekâ iş yüklerini ve kurumsal sunucu sistemlerini de doğrudan etkiliyor. Hücreler arasındaki mesafenin daraltılması ve dikey mimarinin geliştirilmesi, Samsung ve Kioxia gibi büyük rakiplerle yürütülen rekabette el güçlendiriyor. Micron, gelecekteki yatırımlarında yatay düzlemdeki hücre boyutlarını da küçülterek üç boyutlu ölçeklendirmeyi daha da ileriye taşımayı planlıyor.",
+      "Teknolojik altyapının tüm detaylarının ve nihai teknik özelliklerinin 2027 yılı içerisinde, seri üretime geçiş tarihine yakın bir dönemde kamuoyuyla paylaşılması bekleniyor. Şirketin bu süreçte yüksek taşıyıcı hareketliliğine sahip yeni yarı iletken malzemeler üzerinde AR-GE faaliyetlerini sürdürdüğü biliniyor. Bilgisayar kullanıcılarının günlük iş akışlarında ve yapay zekâ uygulamalarında daha hızlı, kesintisiz bir deneyim sunması hedeflenen bu mimari, önümüzdeki yıllarda sektör standartlarını yeniden belirleyecek."
+    ],
+    "comment": "Micron'un G11 mimarisiyle 400 katman sınırını aşması, bellek sektöründeki fiziksel sınırların zorlandığını net biçimde gösteriyor. Önceki G9 nesline kıyasla 42 Gbit/mm² yoğunluğa ve 5.400 MT/s arayüz hızına ulaşılması, özellikle veri merkezi işletmecileri ve yapay zekâ donanımı geliştirenler için maliyetleri doğrudan düşürecek somut bir avantaj sunuyor. Şirketin 2027 yılındaki seri üretim hedefi tutturulursa, masaüstü bilgisayarlarda kullanılan standart SSD'lerin kapasite ve hız tavanı bugünkü seviyelerinin çok üzerine çıkacak.",
+    "editorNote": "Micron, 400 katmanlı yeni bellek mimarisiyle veri yoğunluğunu ikiye katlıyor. 2027'deki seri üretim öncesi bilmeniz gerekenler.",
+    "tags": [
+      "Micron",
+      "SSD",
+      "NAND",
+      "Depolama",
+      "Teknoloji"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "data center server room",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/micron-g11-3d-nand-teknolojisi-duyuruldu",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
+    "gorselKaynak": {
+      "yazar": "Joël van der Loo",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Duga-1_radar_data_center_interior_server_room_2018.jpg"
+    },
+    "publishedAt": "2026-10-26T07:00:18.000Z",
+    "generatedAt": "2026-10-26T07:07:21.633Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Computer_Memory_Hard_Drive_Disk_HDD_Storage_Technology.jpg/1280px-Computer_Memory_Hard_Drive_Disk_HDD_Storage_Technology.jpg",
+        "yazar": "epSos.de",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Computer_Memory_Hard_Drive_Disk_HDD_Storage_Technology.jpg",
+        "altyazi": "Yüksek performanslı yeni nesil kurumsal depolama çözümleri"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "9de8defb8f31d927",
     "title": "İsrail ordusunun çadır saldırısında biri çocuk 3 kişi hayatını kaybetti",
     "slug": "israil-ordusunun-cadir-saldirisinda-biri-cocuk-3-kisi-hayatini-kaybetti",
