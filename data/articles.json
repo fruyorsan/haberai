@@ -59,6 +59,65 @@
     "breaking": true
   },
   {
+    "id": "35dcfea7fdabe3c1",
+    "title": "Capcom ID altyapısına düzenlenen siber saldırıda 11 milyon veri sızdı",
+    "slug": "capcom-id-altyapisina-duzenlenen-siber-saldirida-11-milyon-veri-sizdi",
+    "summary": "Oyun devi Capcom un çevrim içi üyelik sistemine siber saldırı düzenlendi. Yetkisiz erişim sonucunda milyonlarca kullanıcının e-posta adresleri ele geçirildi.",
+    "keyPoints": [
+      "Capcom ID altyapısına yapılan siber saldırıda 11,7 milyondan fazla kullanıcı etkilendi.",
+      "Olay ilk olarak 19 Ekim tarihinde şüpheli hareketlerin fark edilmesiyle tespit edildi.",
+      "Saldırganlar çoğunlukla e-posta adreslerine ulaşırken 43 hesabın profil bilgileri de sızdırıldı."
+    ],
+    "body": [
+      "Dünya genelinde oyun sektörünün köklü isimlerinden biri olan Capcom, veri güvenliği alanında ciddi bir ihlalle karşı karşıya kaldı. Şirketin çevrim içi üyelik ve hizmet altyapısı olan Capcom ID sistemine yönelik üçüncü taraflarca yetkisiz erişim gerçekleştirildi. Bu siber saldırı sonucunda milyonlarca oyunseverin kişisel bilgileri tehlikeye atılmış oldu.",
+      "Firma tarafından paylaşılan resmi bilgilere göre olaydan toplamda 11,7 milyondan fazla kullanıcı etkilendi. Şüpheli durum ilk olarak 19 Ekim tarihinde sistem üzerindeki anormal hareketlerin fark edilmesiyle anlaşıldı. Güvenlik ekipleri anında müdahale ederek erişimi engellemeye çalışsa da saldırganların çoktan sisteme sızmış olduğu yapılan detaylı incelemelerle ortaya çıktı.",
+      "Gerçekleşen veri ihlalinin özellikle kullanıcı e-posta adresleri üzerinde yoğunlaştığı tespit edildi. Milyonlarca oyuncunun e-posta adresi ele geçirilirken sınırlı sayıda, tam 43 hesaba ait doğum tarihi, cinsiyet, ülke bilgisi ve takma ad gibi profil verilerinin de sızdırıldığı belirlendi. Yaşanan bu olayda kredi kartı bilgilerine ulaşılamamış olması ise tek teselli noktası oldu.",
+      "Saldırı yönteminin tespit edilmesinin ardından şirket gerekli teknik müdahaleleri tamamladı. Capcom ID altyapısını kullanan çevrim içi servisler ve Street Fighter 6 gibi popüler yapımlar kesintisiz olarak hizmet vermeye devam ediyor. Oyuncular oyunları oynamayı sürdürse de tehlikenin tamamen ortadan kalktığı söylenemez.",
+      "Yetkililer, sızdırılan e-posta adreslerinin gelecekte kimlik taklidi ve oltalama dolandırıcılıklarında kullanılabileceği konusunda uyarıda bulundu. Bu nedenle kullanıcıların Capcom adını taşıyan şüpheli iletilere karşı temkinli olması öneriliyor. Dijital dünyada bu tür ihlallerin şirketlerin güvenlik duvarlarını ne kadar zorlayabileceği bir kez daha görüldü."
+    ],
+    "comment": "Oyun dünyasında devasa kullanıcı havuzlarına sahip şirketlerin güvenlik açıklarını kapatması tek başına yeterli olmuyor; sızdırılan e-posta verileri doğrudan oltalama saldırılarına zemin hazırlıyor. Capcom örneğinde kredi kartı bilgilerinin korunmuş olması finansal kayıpları engellese de on milyonlarca adresin ele geçirilmesi bireysel dolandırıcılık riskini tırmandırıyor. Benzer platformlarla kıyaslandığında bu ölçekteki bir sızıntı, oyuncuların dijital kimliklerini korumak için ek güvenlik katmanlarına ne kadar ihtiyaç duyduğunu net biçimde gösteriyor. Şirketler artık sadece sunucularını korumakla kalmayıp, sızıntı sonrası kullanıcıları yönlendirme konusunda da daha şeffaf olmak zorundadır.",
+    "editorNote": "Milyonlarca oyuncunun e-posta adresi sızdırıldı; Capcom ID kullanıcılarının oltalama tuzaklarına karşı dikkatli olması gerekiyor.",
+    "tags": [
+      "Capcom",
+      "Siber Saldırı",
+      "Veri İhlali",
+      "Capcom ID",
+      "Oyun Dünyası"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "data center server room",
+    "source": "Webtekno",
+    "sourceUrl": "https://www.webtekno.com/capcom-veri-sizintisi-h227851.html",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
+    "gorselKaynak": {
+      "yazar": "Joël van der Loo",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Duga-1_radar_data_center_interior_server_room_2018.jpg"
+    },
+    "publishedAt": "2026-10-26T05:02:14.000Z",
+    "generatedAt": "2026-10-26T05:18:53.701Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/EU_cyber_security_conference_2017_%2837211783212%29.jpg/1280px-EU_cyber_security_conference_2017_%2837211783212%29.jpg",
+        "yazar": "EU2017EE Estonian Presidency",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:EU_cyber_security_conference_2017_(37211783212).jpg",
+        "altyazi": "Siber güvenlik ve dijital veri koruma altyapısı"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Casio_Loopy_Game_Console_With_Controller_%28front%29.jpg/1280px-Casio_Loopy_Game_Console_With_Controller_%28front%29.jpg",
+        "yazar": "Soze.kayser",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Casio_Loopy_Game_Console_With_Controller_(front).jpg",
+        "altyazi": "Çevrim içi oyun platformları ve oyuncu ekipmanları"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "a7e9d59689c1c7b7",
     "title": "Samsung, Exynos 2700 ile Snapdragon 8 Elite Extreme Gen 6’yı Geride Bıraktı",
     "slug": "samsung-exynos-2700-snapdragon-8-elite-extreme-gen-6-geri",
