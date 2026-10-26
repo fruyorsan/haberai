@@ -1,5 +1,64 @@
 [
   {
+    "id": "49c6be4269ff3cc2",
+    "title": "OpenAI, yapay zeka modelleri için canlı internet erişimini kaldırdı",
+    "slug": "openai-yapay-zeka-modelleri-icin-canli-internet-erisimini-kaldirdi",
+    "summary": "Yapay zeka modellerinin eğitim süreçlerinde canlı internet kullanımı tamamen durduruldu. Şirket, güvenlik önlemlerini artırmak amacıyla bundan sonra yalnızca kayıtlı web sayfalarıyla yola devam edecek.",
+    "keyPoints": [
+      "OpenAI yapay zeka eğitiminde canlı internet erişimini kapattı",
+      "Modeller artık yalnızca kayıtlı web sayfaları üzerinden çalışacak",
+      "Güvenlik kontrollerini en üst düzeye çıkarmak için yeni önlemler devreye alındı"
+    ],
+    "body": [
+      "Yapay zeka teknolojileri alanında küresel çapta öncü çalışmalar yürüten OpenAI, eğitim modellerinin işleyiş mekanizmalarında köklü bir değişikliğe gitti. Şirket, uzun süredir kullanılan canlı internet erişimi yöntemini tamamen sonlandırma kararı aldı. Bu hamle ile birlikte, gelecekteki yapay zeka sürümlerinin eğitilme biçiminde doğrudan bir kısıtlamaya gidilmiş oldu.",
+      "Alınan bu karar doğrultusunda, yapay zeka modelleri anlık web verileri yerine daha önceden sistem içine kaydedilmiş ve denetlenmiş web sayfalarıyla çalıştırılacak. Bu yöntem değişikliği, veri güvenliğinin artırılması ve potansiyel güvenlik açıklarının önlenmesi hedefiyle hayata geçirildi. Geliştiriciler, güvenlik katmanlarını güçlendirerek sistemin dış tehditlere karşı daha dirençli olmasını amaçlıyor.",
+      "Canlı ağ bağlantısının devre dışı bırakılması, modellerin öğrenme süreçlerinde dış etkenlerden kaynaklanabilecek riskleri en aza indirmeyi hedefliyor. Kontrollü bir veri tabanı üzerinden beslenen yapay zeka sistemleri, istenmeyen içeriklerin modele aktarılmasını engelleyecek. Bu durum, özellikle veri bütünlüğünü korumak isteyen geliştirici ekipler için yeni bir standart oluşturuyor.",
+      "Şirketin bu hamlesi, sektördeki diğer yapay zeka geliştiricilerinin de güvenlik yaklaşımlarını yeniden gözden geçirmesine zemin hazırlayabilir. Canlı veri akışının getirdiği belirsizlikler ve güvenlik riskleri, alternatif eğitim yöntemlerine olan eğilimi artırıyor. Kayıtlı veri setleriyle ilerleme modeli, sektör genelinde daha korumacı bir yaklaşımın benimsenmesini tetikleyebilir.",
+      "Gelişen süreçte OpenAI ekibinin güvenlik kontrollerini hangi yeni adımlarla destekleyeceği ve bu durumun model performansına nasıl yansıyacağı merakla bekleniyor. Canlı internet yerine statik veri havuzlarının tercih edilmesi, yapay zeka yanıtlarının güncelliği konusunda soru işaretleri yaratsa da güvenlik odaklı bu strateji kararlılıkla sürdürülüyor."
+    ],
+    "comment": "Canlı internet erişiminin kapatılması, güvenlik açıklarını azaltmak adına doğru bir hamle olsa da modellerin güncel verilere ulaşma hızını kısıtlayabilir. Şirketin, anlık bilgi akışı yerine kayıtlı web sayfalarını seçmesi, veri bütünlüğünü korumaya odaklandığını net biçimde gösteriyor. Bu kısıtlama, özellikle anlık haber veya değişen verilerle çalışan geliştiriciler için süreci daha karmaşık hale getirecektir. Önceki sürüm alışkanlıklarıyla kıyaslandığında, bu değişim performans ile güvenlik arasında yeni bir denge kurulmasını zorunlu kılıyor.",
+    "editorNote": "Anlık ağ bağlantısından vazgeçen şirket, güvenlik katmanlarını artırmak için depolanmış verilere dönüyor.",
+    "tags": [
+      "OpenAI",
+      "yapay zeka",
+      "yapay zeka eğitimi",
+      "veri güvenliği",
+      "yazılım"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "artificial intelligence data center server room",
+    "source": "CHIP Online",
+    "sourceUrl": "https://www.chip.com.tr/guncel/openai-yapay-zeka-egitiminde-canli-internetin-yerine-kayitli-web-sayfalarini-koydu_184893.html",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-380830.jpg/1280px-Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-380830.jpg",
+    "gorselKaynak": {
+      "yazar": "European Commission - Photographer: Aurore Martignoni",
+      "lisans": "CC BY 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-380830.jpg"
+    },
+    "publishedAt": "2026-10-26T07:32:00.000Z",
+    "generatedAt": "2026-10-26T07:46:53.480Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/File_server_pic.jpg/1280px-File_server_pic.jpg",
+        "yazar": "Penguin905",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:File_server_pic.jpg",
+        "altyazi": "Yapay zeka modellerinin işlendiği yüksek kapasiteli sunucu sistemleri"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/EU_cyber_security_conference_2017_%2837241085191%29.jpg/1280px-EU_cyber_security_conference_2017_%2837241085191%29.jpg",
+        "yazar": "EU2017EE Estonian Presidency",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:EU_cyber_security_conference_2017_(37241085191).jpg",
+        "altyazi": "Sistem güvenliğini artıran dijital kontrol ve koruma katmanları"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "84c5c754225eb717",
     "title": "SPK, yatırım fonları portföy sınırlamaları için süreyi uzattı",
     "slug": "spk-yatirim-fonlari-portfoy-sinirlamalari-icin-sureyi-uzatti",
