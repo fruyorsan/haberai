@@ -1,5 +1,63 @@
 [
   {
+    "id": "e0ee584968563ce8",
+    "title": "CleanYourTV 3.0, yüzlerce televizyondaki reklamları tamamen siliyor",
+    "slug": "cleanyourtv-30-yuzlerce-televizyondaki-reklamlari-tamamen-siliyor",
+    "summary": "Açık kaynaklı CleanYourTV projesinin yeni sürümü, akıllı televizyonlarda zorunlu gösterilen reklamları kök erişimine gerek duymadan kaldırıyor. Güncellenen araç, ek bir bilgisayar gerektirmeyen yeni mobil uygulamasıyla sekseni aşkın markaya ait üç yüz farklı modeli destekliyor.",
+    "keyPoints": [
+      "Sistem kök erişimi gerektirmeden ADB protokolüyle ön yüklü uygulamaları siliyor.",
+      "Proje GitHub üzerinde 37.000'den fazla yıldız alarak geniş bir topluluk desteğine ulaştı."
+    ],
+    "body": [
+      "Akıllı televizyon üreticilerinin arayüzlere eklediği zorunlu sponsorlu içerikler ve telemetri servisleri uzun süredir kullanıcıların şikayet konuları arasında yer alıyor. Geliştirici Gathin tarafından başlatılan açık kaynaklı CleanYourTV projesi, televizyonların yönetimini doğrudan sahiplerine vermeyi amaçlayan bir yapıyla dikkat çekiyor. Ekim 2026 tarihinde Xiaomi cihazlardaki reklam sorunlarına çözüm olması amacıyla ortaya çıkan bu girişim, zaman içinde genişleyerek küresel çapta tanınan bir yazılıma dönüştü. Yazılım, evdeki Wi-Fi ağı üzerinden televizyonun hata ayıklama protokolüne bağlanarak çalışıyor ve kullanıcıların arayüzü kişiselleştirmesini sağlıyor.",
+      "Yazılımın yeni sürümüyle birlikte desteklenen donanım yelpazesi oldukça geniş bir boyuta ulaştı. Amazon Fire TV platformunda sınırlı destek sunulurken, Samsung Tizen ve LG webOS gibi alternatif işletim sistemleri bu standart yöntemle uyumluluk göstermiyor. Geliştiriciler, kullanıcıların sistem paketlerinde değişiklik yapmadan önce cihaz model listelerini incelemelerini ve veri kaybına karşı yedekleme yapmalarını özellikle tavsiye ediyor.",
+      "Sistemin sunduğu en büyük kolaylıklardan biri, temizleme işlemini gerçekleştirmek için artık harici bir bilgisayara ihtiyaç duyulmamasıdır. Yeni geliştirilen Android uygulaması sayesinde televizyon üzerindeki gereksiz uygulamalar doğrudan cihazın içinden kaldırılabiliyor. Apple TV tarzı minimalist bir görsel tasarım sunan bu sürüm, kök izni istemeyen yapısıyla kullanıcıların sistemi diledikleri an fabrika ayarlarına döndürmesine imkan tanıyor. Böylece Netflix veya benzeri platformlara giriş yapmadan önce ana ekranda beliren sponsorlu banner alanları tamamen ortadan kalkıyor.",
+      "CleanYourTV projesi yalnızca bir reklam engelleyici olmanın ötesine geçerek ev otomasyon sistemleriyle de entegre olabiliyor. Home Assistant desteği kazanan akıllı televizyonlar, kullanıcıların ekran üzerinden evdeki akıllı ışıkları veya kapı kilitlerini yönetmesine olanak tanıyor. Kumanda üzerindeki tuşların yeniden atanabilmesi ve Pi-hole gibi ağ düzeyindeki engelleme araçlarının doğrudan TV üzerinden yönetilebilmesi kullanım esnekliğini artırıyor. Yapay zeka destekli kodlama süreçleriyle başlayan bu serüven, bugün yüz altmıştan fazla katkıcının desteğiyle gelişmeye devam ediyor.",
+      "Tüketicilerin modern televizyonların dayattığı yazılım politikalarından duyduğu memnuniyetsizlik, açık kaynak ekosisteminin bu tür projelere gösterdiği ilgiyi artırıyor. GitHub üzerinde binlerce yıldız alan proje, üreticilerin kapalı kaynaklı ve reklam odaklı arayüzlerine karşı güçlü bir alternatif oluşturuyor. Yazılımın kaynak kodlarına ve detaylı kurulum kılavuzlarına ulaşan kullanıcılar, kendi cihazlarındaki gereksiz yazılımları devre dışı bırakabiliyor. Televizyon üreticilerinin gelecekteki güncellemelerde bu tür müdahalelere karşı nasıl bir tutum takınacağı ise teknoloji dünyasında merakla izleniyor."
+    ],
+    "comment": "Televizyon üreticilerinin ana ekranlara yerleştirdiği zorunlu sponsorlu içerikler, kullanıcı deneyimini doğrudan zedeleyen unsurların başında geliyor. CleanYourTV projesinin 300 farklı modeli desteklemesi, tüketicilerin bu dayatmalara karşı toplu bir tepki gösterdiğini somut bir şekilde kanıtlıyor. Özellikle kök erişimi gerektirmeyen bir yapıda çalışması, cihazını riske atmak istemeyen sıradan kullanıcılar için büyük bir fırsat sunuyor. Önceki sürümlerde bilgisayar bağlantısı zorunluluğu bulunurken, yeni mobil uygulama sayesinde kurulum süreci çok daha geniş bir kitle için erişilebilir hale geldi.",
+    "editorNote": "Bilgisayara gerek kalmadan yüzlerce televizyondaki reklamları kaldıran açık kaynaklı araç, akıllı TV deneyimini baştan yazıyor.",
+    "tags": [
+      "CleanYourTV",
+      "Android TV",
+      "Google TV",
+      "Teknoloji",
+      "Yazılım"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "Android TV smart television interface",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/cleanyourtv-3-0-ile-android-tv-hiz-canavari-oluyor",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Android_TV-based_Tracer_set_top_box.jpg/1280px-Android_TV-based_Tracer_set_top_box.jpg",
+    "gorselKaynak": {
+      "yazar": "Oliwier Jaszczyszyn of kontrabanda.net website",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Android_TV-based_Tracer_set_top_box.jpg"
+    },
+    "publishedAt": "2026-10-26T12:01:12.000Z",
+    "generatedAt": "2026-10-26T12:04:29.409Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Spanish_Wikipedia_displayed_on_a_Smart_TV.jpg/1280px-Spanish_Wikipedia_displayed_on_a_Smart_TV.jpg",
+        "yazar": "Diego-fedora",
+        "lisans": "CC0",
+        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Spanish_Wikipedia_displayed_on_a_Smart_TV.jpg",
+        "altyazi": "Akıllı televizyon kumandası ve arayüz kontrol tuşları"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Vivint_Smart_Home_Arena_%281%29.jpg/1280px-Vivint_Smart_Home_Arena_%281%29.jpg",
+        "yazar": "Tamanoeconomico",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Vivint_Smart_Home_Arena_(1).jpg",
+        "altyazi": "Televizyon ekranından yönetilen akıllı ev otomasyon sistemi"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "f3edcbc604e88f94",
     "title": "Aselsan ile SSB arasında 523 milyon euroluk yeni savunma anlaşması",
     "slug": "aselsan-ile-ssb-arasinda-523-milyon-euroluk-yeni-savunma-anlasmasi",
