@@ -36,8 +36,6 @@ const gorselHata = `if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';th
   </div>
   <div class="devam__meta">
     <time datetime={publishedISO(article)}>{date}</time>
-    <span class="devam__dot">•</span>
-    <span>{article.source}</span>
   </div>
 
   {kapak && (
@@ -55,9 +53,6 @@ const gorselHata = `if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';th
         referrerpolicy="no-referrer"
         onerror={gorselHata}
       />
-      {article.gorselKaynak && (
-        <figcaption>Fotoğraf: {article.gorselKaynak.yazar || "Wikimedia Commons"}</figcaption>
-      )}
     </figure>
   )}
 
@@ -97,7 +92,6 @@ const gorselHata = `if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';th
   )}
 
   <p class="devam__src">
-    Kaynak: <a href={article.sourceUrl} target="_blank" rel="noopener nofollow">{article.source}</a>
     <a class="devam__more" href={sayfa}>Haberin tam sayfası →</a>
   </p>
 </article>
