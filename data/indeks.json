@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T20:57:48.798Z",
+  "updatedAt": "2026-10-26T21:00:42.273Z",
   "gunluk": 32,
   "pencereGun": 45,
   "esik": {
@@ -10,10 +10,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 4633,
-  "aday": 4633,
-  "uygun": 2745,
-  "secilen": 382,
+  "toplamHaber": 4634,
+  "aday": 4634,
+  "uygun": 2746,
+  "secilen": 383,
   "red": {
     "maddeli özet yok": 105,
     "kısa özet": 32,
@@ -21,8 +21,8 @@
     "özgün yorum yok": 4,
     "kategorisiz": 2,
     "editör notu yok": 14,
-    "günlük kota": 2333,
-    "tekrar": 30
+    "günlük kota": 2332,
+    "tekrar": 31
   },
   "ornekTekrarlar": [
     {
@@ -102,8 +102,8 @@
       "twin": "Casper Excalibur G870 oyun bilgisayarı 57.406 TL'den satılıyor"
     },
     {
-      "title": "Kanada 6,2 Milyar Dolar Sanayi Koruma Planıyla Trump Gümrük Vergilerine Karşı Harekete Geçti",
-      "twin": "Kanada, Trump Tarifelerine Karşı 6,2 Milyar Dolar Destek Paketi Duyurdu"
+      "title": "Vivo Y600, 32 Saat Kesintisiz Canlı Yayınla Guinness Rekorunu Kırdı",
+      "twin": "Vivo Y600, 10000mAh Bataryasıyla 32 Saat Video Rekoru Kırdı"
     }
   ],
   "days": {
@@ -512,6 +512,9 @@
       "316b8bd3a8e69778",
       "e91ec8c84bb3b6a0",
       "051f7febb1526af0"
+    ],
+    "2026-10-27": [
+      "03c3cc4711ef6f51"
     ]
   },
   "ids": [
@@ -860,6 +863,7 @@
     "06ffe26e1cd44d7c",
     "2a6f0ca26696584e",
     "e17068ec9684a127",
+    "03c3cc4711ef6f51",
     "42bc6fe14b11f546",
     "7769f422f6b6d77b",
     "8a50256eb94ad01c",
