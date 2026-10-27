@@ -139,6 +139,19 @@ export const config = {
     { name: "ScienceDaily", url: "https://www.sciencedaily.com/rss/top/science.xml", category: "Bilim" },
     { name: "GN: Kültür-Sanat", url: "https://news.google.com/rss/search?q=k%C3%BClt%C3%BCr%20sanat%20when%3A6h&hl=tr&gl=TR&ceid=TR:tr", category: "Kültür" },
     { name: "GN: Yaşam", url: "https://news.google.com/rss/search?q=ya%C5%9Fam%20trend%20when%3A6h&hl=tr&gl=TR&ceid=TR:tr", category: "Yaşam" },
+
+    // Eğlendirici + bilgilendirici akış (2026-10-27): sinema/dizi, müzik,
+    // ilginç haberler, pratik bilgi, doğa, tarih/arkeoloji, psikoloji.
+    // Hepsi bot UA ile test edildi; içerik döndürüyor.
+    { name: "GN: İlginç", url: "https://news.google.com/rss/search?q=ilgin%C3%A7%20when%3A12h&hl=tr&gl=TR&ceid=TR:tr", category: "Yaşam" },
+    { name: "GN: Sinema-Dizi", url: "https://news.google.com/rss/search?q=sinema%20OR%20dizi%20when%3A12h&hl=tr&gl=TR&ceid=TR:tr", category: "Kültür" },
+    { name: "GN: Müzik", url: "https://news.google.com/rss/search?q=m%C3%BCzik%20OR%20konser%20when%3A12h&hl=tr&gl=TR&ceid=TR:tr", category: "Kültür" },
+    { name: "GN: Doğa-Çevre", url: "https://news.google.com/rss/search?q=do%C4%9Fa%20OR%20%C3%A7evre%20OR%20iklim%20when%3A12h&hl=tr&gl=TR&ceid=TR:tr", category: "Bilim" },
+    { name: "GN: Tarih-Arkeoloji", url: "https://news.google.com/rss/search?q=tarih%20OR%20arkeoloji%20when%3A24h&hl=tr&gl=TR&ceid=TR:tr", category: "Kültür" },
+    { name: "GN: Psikoloji", url: "https://news.google.com/rss/search?q=psikoloji%20OR%20mutluluk%20when%3A24h&hl=tr&gl=TR&ceid=TR:tr", category: "Sağlık" },
+    { name: "GN: Sağlıklı Yaşam", url: "https://news.google.com/rss/search?q=beslenme%20OR%20fitness%20OR%20uyku%20when%3A24h&hl=tr&gl=TR&ceid=TR:tr", category: "Sağlık" },
+    { name: "GN: Pratik Bilgi", url: "https://news.google.com/rss/search?q=nas%C4%B1l%20yap%C4%B1l%C4%B1r%20OR%20ipucu%20when%3A24h&hl=tr&gl=TR&ceid=TR:tr", category: "Yaşam" },
+    { name: "GN: Seyahat", url: "https://news.google.com/rss/search?q=seyahat%20OR%20tatil%20when%3A24h&hl=tr&gl=TR&ceid=TR:tr", category: "Yaşam" },
     { name: "BBC Business", url: "https://feeds.bbci.co.uk/news/business/rss.xml", category: "Ekonomi" },
 
     // Otomobil / elektrikli araç
@@ -156,10 +169,10 @@ export const config = {
   maxAgeHours: Number(process.env.MAX_AGE_HOURS || 48), // bundan eski haberleri atla
 
   // ------------------------------------------------------------------
-  // GÜNLÜK YAYIN KOTASI (2026-10-26)
+  // GÜNLÜK YAYIN KOTASI (2026-10-27: 160 -> 200)
   // ------------------------------------------------------------------
-  // Hacim hedefi 160 haber/gün (2026-10-26 kararı; önceki 135). Hattın
-  // gerçek sınırı AI kotası ve saatlik tavandır; 160 haber 9 dk arayla
+  // Hacim hedefi 200 haber/gün (2026-10-27 kararı; önceki 160). Hattın
+  // gerçek sınırı AI kotası ve saatlik tavandır; 200 haber 7 dk arayla
   // gün boyuna yayılır ve gece yarısına sarkmaz.
   //
   // gunlukLimit: 0 = sınırsız (eski davranış).
@@ -169,17 +182,17 @@ export const config = {
   // sonDakikaAralikDk: son dakika adayı varsa daha kısa bekleme.
   //
   // Ayrıca src/index.js kotayı günün geçen oranına göre de sınırlar:
-  // öğlene kadar ~80, 20:00'de ~133 haber. Böylece 160 haber sabah
+  // öğlene kadar ~100, 20:00'de ~167 haber. Böylece 200 haber sabah
   // saatlerinde tükenip akşam site sessiz kalmaz.
-  gunlukLimit: Number(process.env.GUNLUK_HABER_LIMIT || 160),
-  // 160 haber / 24 saat ≈ 9 dk arayla. Böylece kota günün ilk saatlerinde
+  gunlukLimit: Number(process.env.GUNLUK_HABER_LIMIT || 200),
+  // 200 haber / 24 saat ≈ 7 dk arayla. Böylece kota günün ilk saatlerinde
   // tükenmez, akış gece yarısına kadar dengeli sürer.
-  yayinAralikDk: Number(process.env.YAYIN_ARALIK_DK || 9),
+  yayinAralikDk: Number(process.env.YAYIN_ARALIK_DK || 7),
   sonDakikaAralikDk: Number(process.env.SON_DAKIKA_ARALIK_DK || 5),
   // Saatlik tavan: "son dakika" adayları gün içinde neredeyse hiç bitmediği
-  // için kısa aralık tek başına kotayı erken tüketirdi. Saatte en fazla 8 haber
+  // için kısa aralık tek başına kotayı erken tüketirdi. Saatte en fazla 10 haber
   // (0 = sınırsız) akışı gün boyuna yayar.
-  saatlikLimit: Number(process.env.SAATLIK_HABER_LIMIT || 8),
+  saatlikLimit: Number(process.env.SAATLIK_HABER_LIMIT || 10),
 
   // ------------------------------------------------------------------
   // SON DAKİKA (hızlı hat)
