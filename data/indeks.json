@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T07:44:10.605Z",
+  "updatedAt": "2026-10-27T07:48:27.934Z",
   "gunluk": 32,
   "pencereGun": 45,
   "esik": {
@@ -10,9 +10,9 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 4707,
-  "aday": 4707,
-  "uygun": 2814,
+  "toplamHaber": 4710,
+  "aday": 4710,
+  "uygun": 2817,
   "secilen": 414,
   "red": {
     "maddeli özet yok": 106,
@@ -21,8 +21,8 @@
     "özgün yorum yok": 4,
     "kategorisiz": 2,
     "editör notu yok": 14,
-    "günlük kota": 2366,
-    "tekrar": 34
+    "günlük kota": 2368,
+    "tekrar": 35
   },
   "ornekTekrarlar": [
     {
@@ -44,6 +44,10 @@
     {
       "title": "Prof. Dr. Osman Bektaş'tan Marmara'daki 7,5 deprem senaryosuna itiraz",
       "twin": "Jeolog Osman Bektaş, Marmara depremi senaryolarına karşı uyarıyor"
+    },
+    {
+      "title": "Suudi Arabistan'ın Abha ve Hamis Muşayt Şehirlerinde Erken Uyarı Sistemi Aktif Edildi",
+      "twin": "Suudi Arabistan Necran vilayeti için erken uyarı sistemini aktif etti"
     },
     {
       "title": "Gaziosmanpaşa, 7.0 büyüklüğündeki deprem için barınma tatbikatı yaptı",
@@ -100,20 +104,17 @@
     {
       "title": "Japonya'da 7.0 Güçlü Deprem 470 km Derinliğinde Saldırdı",
       "twin": "Japonya, 7 Şiddetinde Depremi Bildirdi; Tsunami Riski Yok"
-    },
-    {
-      "title": "Portekiz Federasyonu, Ronaldo'ya 30 gün men ve para cezası verdi",
-      "twin": "Portekiz Federasyonu, Ronaldo'ya 30 Gün Hak Mahrumiyeti ve 255 Euro Cezayeti Verdi"
     }
   ],
   "days": {
     "2026-10-26": [
-      "84f97e2b56f8c7d6",
       "5fece920610c8928",
+      "84f97e2b56f8c7d6",
       "0bef88d23e4fa646",
-      "10b90e53b08e9d28",
       "4c1e1ce84237679d",
+      "10b90e53b08e9d28",
       "69291f169b37c4a0",
+      "22b7f128f8063029",
       "291418757fca5c9b",
       "6170dce080615cec",
       "c7679a48d001c440",
@@ -124,10 +125,11 @@
       "9b12293dd466be57",
       "2a713793a487eb4d",
       "51d3f50d40c7add9",
-      "22b7f128f8063029",
       "a2cc134cbc18fe50",
       "199eecef3d4748e1",
       "5482d9c10f68f7eb",
+      "153993cf7f7bd3bf",
+      "6755ab6e07ddb580",
       "f8bfdde7b818d32a",
       "e9e6f2e35e96d1fb",
       "1e790d806b3a9ffe",
@@ -135,11 +137,9 @@
       "d1857281bdb570cc",
       "d12a80bd9893a669",
       "a91563c9b62a514b",
-      "a7be2dd8cc572434",
-      "de3b009353f0ec95",
-      "52cefc76d7126161",
-      "773383828fba70c1",
-      "a408fae963a6b155"
+      "3933ba9d049e228f",
+      "e8b4d40d822b9cbf",
+      "a7be2dd8cc572434"
     ],
     "2026-10-27": [
       "3c6f036f013c3dc0",
@@ -163,6 +163,7 @@
       "b012bc7666d17e75",
       "76876b21d5aa5e40",
       "3200b12adef9db7c",
+      "a2a863b110c38f51",
       "fb5bbfffc4661939",
       "8c833d8cbda0127c",
       "58306fa7d8281ea4",
@@ -172,8 +173,7 @@
       "fb864d3f2811a6cb",
       "bd4431e9bc714f0e",
       "bbae35978204d8b2",
-      "1ab5871f34341438",
-      "2b5454c4419965d5"
+      "1ab5871f34341438"
     ],
     "2026-10-22": [
       "686d3f11a6cecddc",
@@ -487,7 +487,9 @@
       "d37d258d773b5139",
       "a5915e06b4fd5cc3",
       "a4127d1e0f0a9669",
+      "c5d94bd27755dc09",
       "afb3894357fe3ce5",
+      "c3e3fa52595e5a4c",
       "82748f70a2884676",
       "d618c512b01e0cc5",
       "06aab123106d5870",
@@ -497,23 +499,21 @@
       "a36035760f497b25",
       "5ffffbda8150e954",
       "ccd01d3ed21f9d06",
+      "6a4b8a566f8eb61a",
       "bb2c4433a32c88e2",
-      "c5d94bd27755dc09",
       "4b293c06b856d38e",
       "739e273c3484cce4",
-      "c3e3fa52595e5a4c",
       "7554c5222d40ccdd",
       "777b46da3c4f55fb",
       "0a5bd0ce690d5e0e",
       "5684c57ed1007433",
       "523320eb2acf87e7",
+      "d7cd254dc1f92d3a",
       "4fd7646868212ef1",
       "b49d34ece748b5f3",
       "b6fbd8af480b4544",
       "3e032b50c2a91d95",
-      "12412b4fae58f856",
-      "32151483ad184faf",
-      "2f83428af6fd33ce"
+      "12412b4fae58f856"
     ],
     "2026-10-24": [
       "a4be49d15a2c1a5f",
@@ -549,13 +549,13 @@
     ]
   },
   "ids": [
-    "84f97e2b56f8c7d6",
     "5fece920610c8928",
+    "84f97e2b56f8c7d6",
     "0bef88d23e4fa646",
     "3c6f036f013c3dc0",
+    "4c1e1ce84237679d",
     "54c7059460eb1359",
     "10b90e53b08e9d28",
-    "4c1e1ce84237679d",
     "a1c00c1cb0dc092a",
     "3fbed561a99bda55",
     "efa5b69565af28e0",
@@ -571,6 +571,7 @@
     "686d3f11a6cecddc",
     "b38df0538db3aa9e",
     "1973c4a1b9edbac6",
+    "22b7f128f8063029",
     "4e57e6b28a1b0762",
     "9eac0b3f22fb1f1b",
     "e09c3f85b6ca2d97",
@@ -588,7 +589,7 @@
     "76876b21d5aa5e40",
     "3200b12adef9db7c",
     "51d3f50d40c7add9",
-    "22b7f128f8063029",
+    "a2a863b110c38f51",
     "a2cc134cbc18fe50",
     "199eecef3d4748e1",
     "5482d9c10f68f7eb",
@@ -596,6 +597,8 @@
     "8c833d8cbda0127c",
     "58306fa7d8281ea4",
     "506e2da0ff426aae",
+    "153993cf7f7bd3bf",
+    "6755ab6e07ddb580",
     "f8bfdde7b818d32a",
     "b81397dd5941021f",
     "206ddee2cfe23b89",
@@ -610,7 +613,6 @@
     "bbae35978204d8b2",
     "d1857281bdb570cc",
     "1ab5871f34341438",
-    "2b5454c4419965d5",
     "35fdd495b97a9312",
     "88afc4c46ff5a08a",
     "a167f16224f137cc",
@@ -618,12 +620,10 @@
     "ac48140101792f2e",
     "d12a80bd9893a669",
     "a91563c9b62a514b",
+    "3933ba9d049e228f",
+    "e8b4d40d822b9cbf",
     "a7be2dd8cc572434",
-    "de3b009353f0ec95",
-    "52cefc76d7126161",
-    "773383828fba70c1",
     "0f377683b024318c",
-    "a408fae963a6b155",
     "a2d6baa9695e23d3",
     "2ee03cd9c9d668ee",
     "a569cb0ec87ffe82",
@@ -829,6 +829,7 @@
     "a67079bac1f9da97",
     "0021c9eb38cef095",
     "12a8295844466303",
+    "c5d94bd27755dc09",
     "b8d025135a78d51a",
     "0de10e2daad8c3b4",
     "526c154ec3fec3eb",
@@ -853,6 +854,7 @@
     "4afdd937c9ddd9d9",
     "afb3894357fe3ce5",
     "c8b3c96bd4f4e6da",
+    "c3e3fa52595e5a4c",
     "d7874fed1eea9307",
     "82748f70a2884676",
     "ae1c8dbc3737ec19",
@@ -896,15 +898,14 @@
     "5263dd3dbec02aef",
     "f83cb3de8c4faa90",
     "35740021297ff49b",
+    "6a4b8a566f8eb61a",
     "f9958417988cd22b",
     "b0f78ba86f32f314",
     "bb2c4433a32c88e2",
     "e17068ec9684a127",
-    "c5d94bd27755dc09",
     "87ce349abb7680a8",
     "4b293c06b856d38e",
     "739e273c3484cce4",
-    "c3e3fa52595e5a4c",
     "7554c5222d40ccdd",
     "4f755982d94c7714",
     "777b46da3c4f55fb",
@@ -918,6 +919,7 @@
     "5684c57ed1007433",
     "98688755b068aa50",
     "523320eb2acf87e7",
+    "d7cd254dc1f92d3a",
     "e0cdb237ef8889d8",
     "63c9f53e7702bbc2",
     "4fd7646868212ef1",
@@ -930,9 +932,7 @@
     "b32264c54afbe53c",
     "9f1ff4fd5e7f08f5",
     "12412b4fae58f856",
-    "32151483ad184faf",
     "64279866b9f18be1",
-    "2f83428af6fd33ce",
     "062e3b06defb4a37",
     "7be89cc7ef5e61ee",
     "599edd2983d9b314",
