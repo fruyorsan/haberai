@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T19:26:54.244Z",
+  "updatedAt": "2026-10-27T19:30:38.763Z",
   "gunluk": 32,
   "pencereGun": 45,
   "esik": {
@@ -10,9 +10,9 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 4784,
-  "aday": 4784,
-  "uygun": 2890,
+  "toplamHaber": 4785,
+  "aday": 4785,
+  "uygun": 2891,
   "secilen": 414,
   "red": {
     "maddeli özet yok": 107,
@@ -22,9 +22,13 @@
     "kategorisiz": 2,
     "editör notu yok": 14,
     "günlük kota": 2447,
-    "tekrar": 29
+    "tekrar": 30
   },
   "ornekTekrarlar": [
+    {
+      "title": "SPK, Tera Yatırım'ın lisansını iptal etti ve 50 kişi için suç duyurusu yaptı",
+      "twin": "SPK nitelikli yatırımcı barajını 50 milyon liraya çıkardı"
+    },
     {
       "title": "Apple M6 çiplerle donattığı yeni iMac modelini 104.999 TL'den duyurdu",
       "twin": "Apple, M6 işlemcili yeni iMac modelini 104.999 TL başlangıç fiyatıyla duyurdu"
@@ -100,10 +104,6 @@
     {
       "title": "Kanada 6,2 Milyar Dolar Sanayi Koruma Planıyla Trump Gümrük Vergilerine Karşı Harekete Geçti",
       "twin": "Kanada, Trump Tarifelerine Karşı 6,2 Milyar Dolar Destek Paketi Duyurdu"
-    },
-    {
-      "title": "Honor MagicOS 11 Güncelleme Takvimi Açıklandı",
-      "twin": "Honor MagicOS 11 Güncellemesi 2026-2027 Döneminde Çeşitli Telefon ve Tabletleri Kapsayacak"
     }
   ],
   "days": {
