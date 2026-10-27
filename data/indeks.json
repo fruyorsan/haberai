@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T11:07:25.443Z",
+  "updatedAt": "2026-10-27T11:10:18.987Z",
   "gunluk": 32,
   "pencereGun": 45,
   "esik": {
@@ -10,9 +10,9 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 4729,
-  "aday": 4729,
-  "uygun": 2837,
+  "toplamHaber": 4730,
+  "aday": 4730,
+  "uygun": 2838,
   "secilen": 414,
   "red": {
     "maddeli özet yok": 106,
@@ -22,7 +22,7 @@
     "kategorisiz": 2,
     "editör notu yok": 14,
     "günlük kota": 2392,
-    "tekrar": 31
+    "tekrar": 32
   },
   "ornekTekrarlar": [
     {
@@ -78,6 +78,10 @@
       "twin": "Gaziosmanpaşa Belediyesi, 7.0 Deprem Tatbikatını 18.00'de Gerçekleştirdi"
     },
     {
+      "title": "Apple iOS 27.2 Güncellemesi Siri'yi Konuşmaları Hatırlayacak",
+      "twin": "Apple, iOS 27.2 güncellemesiyle Siri ve FaceTime özelliklerini güncelledi"
+    },
+    {
       "title": "Apple, iOS 27.2 RC sürümünü yayınladı ve CarPlay için video desteği getirdi",
       "twin": "Apple, iOS 27.2 güncellemesiyle Siri ve FaceTime özelliklerini güncelledi"
     },
@@ -100,10 +104,6 @@
     {
       "title": "Casper Excalibur G870, 57.406 TL'den başlayan fiyatla raflarda",
       "twin": "Casper Excalibur G870 oyun bilgisayarı 57.406 TL'den satılıyor"
-    },
-    {
-      "title": "Apple, iOS 27.2 Release Candidate sürümünü geliştiricilere sundu",
-      "twin": "Apple, iOS 27.2 güncellemesiyle Siri ve FaceTime özelliklerini güncelledi"
     }
   ],
   "days": {
