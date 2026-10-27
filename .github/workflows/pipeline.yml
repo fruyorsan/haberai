@@ -110,6 +110,12 @@ jobs:
         continue-on-error: true
         run: npm run kapak -- --gun=2 --limit=60
 
+      # Depo sismesin: indeks cekirdeginde olmayan ve son 3 gunden eski
+      # kapaklar silinir; o haberler kaynak sitenin ozgun fotografina doner.
+      - name: Kapak temizligi
+        continue-on-error: true
+        run: node scripts/kapak-temizle.mjs --gun=3
+
       - name: Degisiklikleri kaydet
         id: commit
         run: |
