@@ -65,6 +65,53 @@
     }
   },
   {
+    "id": "40e8773799e13706",
+    "title": "OpenAI, temel bilimlerde 3 büyük teorik kırılma yaptığını duyurdu",
+    "slug": "openai-temel-bilimlerde-3-buyuk-teorik-kirilma-yaptigini-duyurdu",
+    "summary": "OpenAI; matematik, bilgisayar bilimi ve fizik alanlarında üç büyük teorik keşif gerçekleştirdiğini duyurdu. Yapay zeka devinin bu iddiaları arasında bilgisayar teorisindeki Üstel Zaman Hipotezi'nin çürütülmesi ve tüm boyutlarda Kakeya varsayımının çözülmesi yer alıyor. Şirket, diğer araştırmacıların doğrulaması amacıyla ispat kodlarını GitHub üzerinden kamuoyuna açtı.",
+    "keyPoints": [
+      "OpenAI; matematik, bilgisayar bilimi ve fizikte 3 büyük teorik kırılma açıkladı.",
+      "Üstel Zaman Hipotezi'nin çürütüldüğü iddiası Russell Impagliazzo liderliğindeki bağımsız ekibe sunuldu.",
+      "Matematik kanadındaki ispatlar ve Lean dili kodları doğrudan GitHub üzerinden yayımlandı."
+    ],
+    "body": [
+      "Yapay zeka teknolojilerinin akademik ve bilimsel araştırmalara katkısı uzun süredir tartışılırken OpenAI, doğrudan temel bilimlerin kalbine dokunan adımlar atmaya başladı. Yüzlerce matematiksel çözümü kamuoyuna duyurmasının üzerinden henüz bir ay bile geçmemişken şirket, üç ana disiplinde büyük teorik kırılmalar yaşandığını öne sürdü. Matematik, bilgisayar bilimi ve fiziği kapsayan bu duyurular teorik dünyada geniş bir yankı buldu. Şirket bu süreçte çıktılara yön vermeleri ve doğruluk denetimi yapmaları amacıyla kulvarlarında tanınan bağımsız dış uzmanları sürecin merkezine konumlandırdı.",
+      "Bilgisayar teorisinin en köklü kabullerinden biri olan Üstel Zaman Hipotezi, OpenAI'ın iddiaları arasında ilk sırada konumlanıyor. Geliştirilen bu algoritmanın karmaşık 3-SAT problemine uygulanmasının, bilgisayar bilimcilerin uzun yıllardır sarsılmaz kabul ettiği söz konusu hipotezi açık şekilde çürüttüğü savunuluyor. Bu gelişme, bilgisayar bilimi karmaşıklık teorilerinde yeni bir sayfa açabilecek nitelikte görülüyor.",
+      "Şirket, ortaya atılan bu devasa iddianın bilim dünyası tarafından doğrulanması sürecini tesadüfe veya rastgele gruplara bırakmadı. Çalışma grubunun resmi talebi doğrultusunda OpenAI, diğer akademisyenlerin inceleme yapabilmesi adına model çıktısını ve Lean dilindeki biçimsel ispatı GitHub üzerinden hemen kamuoyuna paylaştı.",
+      "Henüz bir süre önce NYU profesörü Hong Wang'ın Kakeya varsayımını yalnızca üç boyutta çözerek prestijli Fields Madalyası'nı kazandığı göz önüne alındığında, yapay zekanın tüm boyutları çözdüğü iddiası matematik camiasında sarsıntı yaratıyor.",
+      "Son çalışma alanı olan teorik fizik cephesinde ise verilerin tamamı henüz kamuoyuyla paylaşılmış değil. David Gross liderliğindeki uzman heyette Michael Douglas, Arthur Jaffe, Igor Klebanov ve Nikita Nekrasov gibi dünyaca tanınan fizikçiler bulunuyor.",
+      "Bağımsız uzmanların yapacağı detaylı incelemeler, yapay zekanın soyut kuramsal bilimlerde ne derece güvenilir bir araç olabileceğini netleştirecek. Eğer GitHub üzerinde yayımlanan Lean dili kodları ve matematiksel kanıtlar akademisyenler tarafından onaylanırsa, yapay zeka sadece bir yardımcı değil, temel bilimsel kuramları yeniden inşa eden bir aktör haline gelecek. Tüm gözler, bağımsız inceleme heyetlerinin yayımlayacağı ilk resmi raporlara çevrilmiş durumda."
+    ],
+    "comment": "Yapay zeka iddialarının akademik akreditasyon almadan devrim ilan etmesi bilimsel metodoloji açısından risk barındırıyor. Şirketin matematiksel kanıtları Lean dili ile GitHub üzerinden açık kaynaklı paylaşması, iddiaların şeffaf biçimde denetlenmesine zemin hazırlıyor. Bu durum özellikle teorik fizikçiler ile matematik araştırmacılarının günlük doğrulama süreçlerini kökten değiştirecektir. Eğer bağımsız heyetler bu algoritmik ispatları onaylarsa, yapay zeka modellerinin bilimsel keşiflerde insan mühendisliğinin önüne geçtiği ilk dönem başlamış olur.",
+    "editorNote": "OpenAI'ın matematik ve fizikte çığır açan ispat iddiaları, Fields Madalyası kazandıran problemleri tüm boyutlarda çözdüğünü öne sürerek akademik dünyada büyük bir sınav başlatıyor.",
+    "tags": [
+      "OpenAI",
+      "Yapay Zeka",
+      "Matematik",
+      "Fizik",
+      "Bilgisayar Bilimi"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "OpenAI artificial intelligence research lab",
+    "source": "Webtekno",
+    "sourceUrl": "https://www.webtekno.com/openai-3-buyuk-bilimsel-kesif-yaptigini-acikladi-h227933.html",
+    "image": "/kapak/40e8773799e13706.webp",
+    "gorselKaynak": {
+      "yazar": "European Commission - Photographer: Aurore Martignoni",
+      "lisans": "CC BY 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg"
+    },
+    "publishedAt": "2026-10-27T09:26:05.000Z",
+    "generatedAt": "2026-10-27T09:44:19.650Z",
+    "breaking": true,
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg/1280px-Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "4f92381e4748ed87",
     "title": "Borsa İstanbul, 2 Kasım’da Bugün ve Yarın İşlemlerinin Takasını Yapacak",
     "slug": "borsa-istanbul-2-kasimda-bugun-ve-yarin-islemlerinin-takasini-yapacak",
