@@ -113,7 +113,9 @@ const htmlCoz = (s) =>
 
 function mutlak(deger, taban) {
   const ham = htmlCoz(deger).trim();
-  if (!ham || /^data:/i.test(ham) || /\.svg(\?|$)/i.test(ham)) return "";
+  // Şablon/hata artıkları: "https://site/tk/local/${item.thumb || ...}".
+  if (!ham || /[{}]/.test(ham) || /\$\{/.test(ham)) return "";
+  if (/^data:/i.test(ham) || /\.svg(\?|$)/i.test(ham)) return "";
   try {
     const u = new URL(ham, taban);
     if (!/^https?:$/.test(u.protocol)) return "";
@@ -453,7 +455,26 @@ if (!tekId) {
   }
 }
 
-if (bulunan || bos) {
+// Son güvenlik ağı: şablon artığı / geçersiz adresleri temizle.
+let supurulen = 0;
+for (const a of articles) {
+  if (!a || !Array.isArray(a.images)) continue;
+  const temiz = a.images.filter((u) => {
+    if (typeof u !== "string" || !/^https?:\/\/[^\s{}]+$/i.test(u)) return false;
+    let cozulmus = u;
+    try { cozulmus = decodeURIComponent(u); } catch {}
+    // Şablon artıkları: "${item.thumb || ...}", "%7B...%7D", "||".
+    return !/\$\{|[{}]|\|\|/.test(cozulmus);
+  });
+  if (temiz.length !== a.images.length) supurulen++;
+  if (temiz.length) a.images = temiz;
+  else {
+    delete a.images;
+    delete a.imagesKaynak;
+  }
+}
+
+if (bulunan || bos || supurulen) {
   fs.writeFileSync(ARTICLES, JSON.stringify(articles, null, 2).replace(/\n/g, satirSonu) + satirSonu);
 }
 
