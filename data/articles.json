@@ -3572,65 +3572,6 @@
     "breaking": true
   },
   {
-    "id": "515bfaacfd951479",
-    "title": "Apple iOS 27.2 Güncellemesi Yeni Siri Dilleri ve FaceTime Çift Çekim Özelliği Getirdi",
-    "slug": "apple-ios-27-2-guncellemesi-yeni-siri-dilleri-face-time-cift-cekim-ozelligi-geti",
-    "summary": "Apple, iOS 27 işletim sisteminin ilk büyük güncellemesi iOS 27.2'yi yayınladı. Güncelleme, Fransızca, Japonca, Korece, Portekizce ve İspanyolca dillerinde Siri desteği, Grup FaceTime’da çift çekim ve mesajlarda önerilen eylemler gibi bir dizi yeni özellik sunuyor. iPhone Duo da dahil olmak üzere iOS 27 destekli tüm modellerde kullanılabilir.",
-    "keyPoints": [
-      "iOS 27.2, Siri AI’nın 5 yeni dili desteklemesiyle uluslararası kullanım genişledi",
-      "Grup FaceTime görüşmelerinde çift çekim özelliği eklendi",
-      "Mesajlar’da Önerilen Eylemler, telefon uygulamasında yıl dönümü hatırlatıcısı gibi yeni işlevler"
-    ],
-    "body": [
-      "Apple, iOS 27.2 sürümünü resmi olarak yayınlayarak iPhone Duo da dahil olmak üzere iOS 27 uyumlu tüm cihazlara güncellemeyi sundu. Bu güncelleme, işletim sisteminin ilk büyük revizyonu olarak öne çıkıyor ve kullanıcı deneyimini iyileştirmeyi hedefliyor. Şirket, güncellemenin beta sürecini eylül ayından itibaren yürütmüş, RC sürümünü ise 19 Ekim'de paylaşmıştı.",
-      "En dikkat çeken yeniliklerden biri, Siri yapay zekasının Fransızca, Japonca, Korece, Portekizce ve İspanyolca dillerinde aktif hale gelmesi. Bu sayede İngilizce dışındaki kullanıcılar da sesli komutlardan tam anlamıyla yararlanabilecek. Apple, bu dil desteğinin sistem genelinde tutarlı bir deneyim sunacağını belirtiyor.",
-      "Mesajlar uygulamasına Eklenen ‘Önerilen Eylemler’ özelliği, sohbet bağlamına göre hızlı kısayollar sunuyor. Kullanıcılar, gelen mesaj içeriğine göre tek dokunuşla ilgili uygulamaları açabiliyor. Aynı zamanda Grup FaceTime görüşmelerinde çift çekim özelliği tanıtıldı; iki kamera aynı anda kullanılabiliyor ve bu, video konferans deneyimini zenginleştiriyor.",
-      "Apple TV uygulamasında profil desteği eklendi; cihaz birden fazla kullanıcı profili oluşturabiliyor. Bu sayede farklı aile bireyleri kendi izleme geçmişi ve önerileriyle ayrı bir deneyim elde ediyor. Podcasts uygulamasında ise sırada dinleme deneyimi iyileştirildi ve çeşitli akıllı ev kontrol entegrasyonları güncellemeye dahil edildi.",
-      "Diğer güncellemeler arasında telefon uygulamasına yıl dönümü hatırlatıcısı, Apple Music’in yeni siyah‑beyaz simgesi ve Apple Books’ta yeniden tasarlanmış okuma kontrolleri yer alıyor. Apple, iOS 27.2’nin iPhone kullanıcılarının günlük kullanımını daha akıcı ve kişiselleştirilmiş hale getireceğini vurguladı."
-    ],
-    "comment": "iOS 27.2, çok dilli Siri desteğiyle Apple ekosistemine gerçek bir küresel adım ekliyor. 5 yeni dilin entegrasyonu, özellikle İngilizce dışındaki büyük pazarları hedefleyen bir strateji olarak görülmeli. Bu güncelleme, iPhone kullanıcılarını, özellikle çoklu dilde asistanı aktif kullanan profesyonelleri doğrudan etkiliyor. Önceki iOS 27.1 sürümü sadece tek dil desteği sunarken, yeni sürüm çok dilli erişimi %100’e yaklaştırıyor.",
-    "editorNote": "Apple, iOS 27.2 ile Siri’yı beş yeni dilde kullanılabilir hâle getiriyor; çok dilli asistan ihtiyacı olan iPhone kullanıcıları için önemli bir adım.",
-    "tags": [
-      "iOS27",
-      "Apple",
-      "Siri",
-      "FaceTime",
-      "iPhone"
-    ],
-    "category": "Mobil",
-    "gorselSorgu": "iPhone Siri voice interface",
-    "source": "DonanımHaber",
-    "sourceUrl": "https://www.donanimhaber.com/iphone-lar-icin-ios-27-2-guncellemesi-cikti-iste-yenilikler--212128",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/IPad_4%2C_model_A1458_-_FaceTime_HD_camera-48124.jpg/1280px-IPad_4%2C_model_A1458_-_FaceTime_HD_camera-48124.jpg",
-    "gorselKaynak": {
-      "yazar": "Raimond Spekking",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:IPad_4,_model_A1458_-_FaceTime_HD_camera-48124.jpg"
-    },
-    "publishedAt": "2026-10-26T18:55:30.000Z",
-    "generatedAt": "2026-10-26T18:59:14.792Z",
-    "gorselEk": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Motorola_Moto_X4_%28X1900-7%29_-_dual_lens-9174.jpg/1280px-Motorola_Moto_X4_%28X1900-7%29_-_dual_lens-9174.jpg",
-        "yazar": "Raimond Spekking",
-        "lisans": "CC BY-SA 4.0",
-        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-        "sayfa": "https://commons.wikimedia.org/wiki/File:Motorola_Moto_X4_(X1900-7)_-_dual_lens-9174.jpg",
-        "altyazi": "iPhone çift kamera çekim özelliği"
-      },
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Gibside%2C_Mobile_second_hand_bookshop_operating_an_%27honesty_box%27_payment_system_-_geograph.org.uk_-_7870524.jpg/1280px-Gibside%2C_Mobile_second_hand_bookshop_operating_an_%27honesty_box%27_payment_system_-_geograph.org.uk_-_7870524.jpg",
-        "yazar": "Michael Garlick",
-        "lisans": "CC BY-SA 2.0",
-        "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-        "sayfa": "https://commons.wikimedia.org/wiki/File:Gibside,_Mobile_second_hand_bookshop_operating_an_%27honesty_box%27_payment_system_-_geograph.org.uk_-_7870524.jpg",
-        "altyazi": "iOS 27.2 yeni ayar ve kontrol menüsü"
-      }
-    ],
-    "breaking": true
-  },
-  {
     "id": "69291f169b37c4a0",
     "title": "Türkiye'de güneş enerjisi kurulu gücü 9 ayda 3 bin MW arttı",
     "slug": "turkiyede-gunes-enerjisi-kurulu-gucu-9-ayda-3-bin-mw-artti",
