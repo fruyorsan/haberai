@@ -1,5 +1,70 @@
 [
   {
+    "id": "9c57cf58b99b48fa",
+    "title": "OpenAI bilimsel problemlere üç farklı çözüm iddiasıyla giriş yaptı",
+    "slug": "openai-bilimsel-problemlere-uc-farkli-cozum-iddiasiyla-giris-yapti",
+    "summary": "OpenAI, yapay zeka modellerinin matematik, fizik ve bilgisayar bilimindeki üç karmaşık problemi çözdüğünü duyurdu. Şirket, bu çıktıları ham araştırma verisi olarak nitelendirerek bilimsel toplulukla şeffaf bir paylaşım süreci başlattığını açıkladı.",
+    "keyPoints": [
+      "OpenAI, matematiksel kanıtlar, kuantum fiziği ve hesaplama karmaşıklığı üzerine üç yeni çözüm geliştirdi.",
+      "Matematikte dalgaların yoğunlaşma davranışını ele alan yerel düzgünleşme varsayımı tüm boyutlarda kanıtlandı.",
+      "Simons Foundation ve Anthropic ile birlikte 15 milyon dolarlık bilimsel destek programı oluşturuldu."
+    ],
+    "body": [
+      "OpenAI, geliştirdiği yapay zeka modellerinin akademik dünyayı sarsabilecek üç farklı bilimsel problemde yeni ve özgün sonuçlar ürettiğini resmen ilan etti. Şirket, bu çıktıları henüz olgunlaşmamış ham araştırma verileri olarak tanımlarken, bulguların bilimsel geçerlilik kazanması için farklı disiplinlere özel yayın yöntemleri uygulayacağını belirtti. Özellikle matematik dünyasında büyük ilgi uyandıran çalışma kapsamında, dalgaların yoğunlaşma davranışını inceleyen yerel düzgünleşme varsayımı tüm boyutlarda ispatlandı. OpenAI mühendisleri, bu sonucun Kakeya ve Stein'ın kısıtlama varsayımlarını da kapsayan karmaşık bir denklemler bütününü çözdüğünü ifade ediyor.",
+      "Bilgisayar bilimleri alanında ise model, hesaplama problemlerinin zorluk derecesini belirleyen Üstel Zaman Hipotezi'nin hatalı olduğunu iddia eden veriler sundu. Bu iddialı bulgunun doğrulanması için Russell Impagliazzo, Ramamohan Paturi ve Ryan Williams gibi alanında uzman isimlerin yer aldığı özel bir inceleme grubu oluşturuldu. OpenAI, teorik düzeydeki bu ilerlemenin pratikte daha hızlı ve verimli algoritmalar geliştirmeye dönüştürülebilmesi için çok daha kapsamlı araştırmalar gerektiğini vurguluyor. Elde edilen verilerin bilgisayar dünyasındaki karmaşık algoritmik süreçleri nasıl hızlandıracağı, akademisyenlerin yapacağı detaylı incelemelerle netleşecek.",
+      "Fizik alanındaki çalışma ise kuantum renk dinamiği gibi karmaşık kuantum alan teorilerinin matematiksel olarak varlığını kanıtlamaya odaklanıyor. Nobel ödüllü fizikçi David Gross liderliğindeki ekip, yapay zekanın sunduğu bu teorik altyapıyı incelemek ve materyalleri kamuoyuyla paylaşmak üzere görevlendirildi. Şirket, bilimsel çıktıların paylaşım sürecinde disiplinlerin doğasına göre farklı yöntemler izliyor. Matematiksel veriler hızlıca paylaşılırken, bilgisayar bilimi ve fizik alanındaki bulgular bağımsız uzman grupların onayından geçtikten sonra yayımlanacak; araştırmacılara herhangi bir gizlilik kısıtlaması getirilmeyecek.",
+      "Şirket, yapay zekanın ürettiği bu keşifler üzerinde hiçbir akademik paye veya mülkiyet hakkı talep etmeyeceğini açıkça beyan etti. Bu adım, yapay zeka destekli bilimsel araştırmaların değerlendirilmesi için hazırlanan geniş kapsamlı destek programının merkezinde yer alıyor. Simons Foundation ve Anthropic ile kurulan iş birliği çerçevesinde toplam 15 milyon dolarlık kaynak taahhüdü verildi. Bu finansman, araştırmacıların yeni yapay zeka araçlarını ücretsiz kullanmalarını ve bilimsel süreçlerde ortak standartlar geliştirmelerini kolaylaştıracak.",
+      "Gelecek dönemde yapay zekanın bilimsel keşiflerde bir yardımcıdan ziyade bir 'yaratıcı ortak' olarak konumlanması hedefleniyor. Akademik çevreler, yapay zeka modellerinin sunduğu bu ham teorik verilerin, laboratuvar deneyleri ve uygulamalı testlerle desteklenip desteklenemeyeceğini tartışıyor. OpenAI'ın bu şeffaf yaklaşımı, bilim dünyasında yapay zeka kullanımına dair önyargıları kırmayı ve daha hızlı inovasyon süreçlerini tetiklemeyi amaçlıyor. Araştırmacılar, bu yeni araçların bilimsel literatüre kazandıracağı hızın, geleneksel yöntemlerle yıllar sürebilecek hesaplamaları haftalara indirebileceğini öngörüyor."
+    ],
+    "comment": "OpenAI'ın akademik paye talep etmeden ham verileri araştırmacılara açması, yapay zekayı bir 'araç' konumundan 'bilimsel iş ortağı' seviyesine taşıma stratejisidir. Özellikle 15 milyon dolarlık kaynak aktarımı, bu modellerin sadece sohbet botu olmadığını, karmaşık fizik ve matematik problemlerini çözebilen birer araştırma asistanı olduğunu kanıtlıyor. Akademik dünya, bu verileri kendi yöntemleriyle doğruladığında, yapay zekanın bilimsel metot üzerindeki etkisi geleneksel yöntemlerin üzerine çıkabilir. Teorik kanıtların pratikteki algoritmalara yansıması, yazılım dünyasında işlem hızı konusunda mevcut standartları geride bırakacak bir sıçrama yaratabilir.",
+    "editorNote": "OpenAI, yapay zekanın matematik ve fizikte yeni kanıtlar ürettiğini duyurarak bilimsel araştırmalara 15 milyon dolarlık fon desteği başlattı.",
+    "tags": [
+      "OpenAI",
+      "Yapay Zeka",
+      "Bilim",
+      "Matematik",
+      "Fizik",
+      "Teknoloji"
+    ],
+    "category": "Bilim",
+    "gorselSorgu": "artificial intelligence science research laboratory",
+    "source": "Webrazzi",
+    "sourceUrl": "https://webrazzi.com/2026/10/27/openai-matematik-ve-fizikte-sinirlari-zorluyor-uc-yeni-cozum-iddiasi/",
+    "image": "/kapak/9c57cf58b99b48fa.webp",
+    "gorselKaynak": {
+      "yazar": "European Commission - Photographer: Aurore Martignoni",
+      "lisans": "CC BY 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg"
+    },
+    "publishedAt": "2026-10-27T14:15:00.000Z",
+    "generatedAt": "2026-10-27T14:16:34.876Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Disrupting_the_research_process%2C_changing_materials_science_with_robotics%2C_AI_and_autonomy_160909-F-ZS991-002.jpg/1280px-Disrupting_the_research_process%2C_changing_materials_science_with_robotics%2C_AI_and_autonomy_160909-F-ZS991-002.jpg",
+        "yazar": "Marisa Novobilski",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Disrupting_the_research_process,_changing_materials_science_with_robotics,_AI_and_autonomy_160909-F-ZS991-002.jpg",
+        "altyazi": "Matematiksel kanıtlar ve teorik hesaplamaların yapıldığı çalışma ortamı"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/MIT_Computer_Science_and_Artificial_Intelligence_Laboratory_%28CSAIL%29_%2854960889464%29.jpg/1280px-MIT_Computer_Science_and_Artificial_Intelligence_Laboratory_%28CSAIL%29_%2854960889464%29.jpg",
+        "yazar": "ajay_suresh",
+        "lisans": "CC BY 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:MIT_Computer_Science_and_Artificial_Intelligence_Laboratory_(CSAIL)_(54960889464).jpg",
+        "altyazi": "Kuantum alan teorileri üzerinde çalışan bilimsel araştırma ekipmanları"
+      }
+    ],
+    "breaking": true,
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg/1280px-Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "bb8c2a0265a25de5",
     "title": "Denizolgun davasında doktor sanığa 2 yıl 6 ay hapis cezası",
     "slug": "denizolgun-davasinda-doktor-saniga-2-yil-6-ay-hapis-cezasi",
@@ -3598,7 +3663,7 @@
     "gorselSorgu": "European Parliament building exterior",
     "source": "TRT Haber Son Dakika",
     "sourceUrl": "https://www.trthaber.com/haber/dunya/apden-60-milletvekili-abyi-israile-karsi-yaptirim-konusunda-acil-toplanmaya-cagirdi-961292.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/European_Parliament_Strasbourg_Hemicycle_-_Diliff.jpg/1280px-European_Parliament_Strasbourg_Hemicycle_-_Diliff.jpg",
+    "image": "/kapak/4e57e6b28a1b0762.webp",
     "gorselKaynak": {
       "yazar": "Diliff",
       "lisans": "CC BY-SA 3.0",
@@ -3654,7 +3719,7 @@
     "gorselSorgu": "data center server room",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/yazarlar/internetin-altyapisinda-buyuk-guvenlik-alarmi-milyonlarca-siber-saldiri-girisimi-550584",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Data_center_infrastructure_in_the_United_States.jpg/1280px-Data_center_infrastructure_in_the_United_States.jpg",
+    "image": "/kapak/ed25fc1b933fb415.webp",
     "gorselKaynak": {
       "yazar": "DOE / National Renewable Energy Laboratory (NREL)",
       "lisans": "Kamu malı",
@@ -3710,7 +3775,7 @@
     "gorselSorgu": "Xiaomi smartphone flagship mockup",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/xiaomi-18-pro-ve-18-pro-max-avrupa-fiyatlari-belli-oldu",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Moscow%2C_Xiaomi_SU7_max%2C_Aug_2025_07.jpg/1280px-Moscow%2C_Xiaomi_SU7_max%2C_Aug_2025_07.jpg",
+    "image": "/kapak/80270a0bdce4ac8d.webp",
     "gorselKaynak": {
       "yazar": "Retired electrician",
       "lisans": "CC0",
@@ -3768,7 +3833,7 @@
     "gorselSorgu": "rainy street Istanbul morning",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/istanbulda-sabahin-erken-saatlerinde-saganak-yagis-550583",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Paris_Street%3B_Rainy_Day.jpg/1280px-Paris_Street%3B_Rainy_Day.jpg",
+    "image": "/kapak/9cd8bbb18d49378a.webp",
     "gorselKaynak": {
       "yazar": "terren in Virginia",
       "lisans": "CC BY 2.0",
@@ -3824,7 +3889,7 @@
     "gorselSorgu": "Apple iPad Pro display",
     "source": "Webtekno",
     "sourceUrl": "https://www.webtekno.com/apple-ipad-turkiye-zam-h227911.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Back_side_Apple_iPad_Pro_11-inch_2026-08-09_M5-powered_02.jpg/1280px-Back_side_Apple_iPad_Pro_11-inch_2026-08-09_M5-powered_02.jpg",
+    "image": "/kapak/422cff67a297c199.webp",
     "gorselKaynak": {
       "yazar": "P1898",
       "lisans": "CC BY 4.0",
@@ -3880,7 +3945,7 @@
     "gorselSorgu": "periodic table elements closeup",
     "source": "Evrim Ağacı",
     "sourceUrl": "https://evrimagaci.org/periyodik-ozellikler-atom-yaricapi-iyonlasma-enerjisi-ve-elektronegatiflik-periyodik-tabloda-nasil-degisir-24015",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Jet_Propulsion_Laboratory_Plasma_Flow_Research_Lab.jpg/1280px-Jet_Propulsion_Laboratory_Plasma_Flow_Research_Lab.jpg",
+    "image": "/kapak/b012bc7666d17e75.webp",
     "gorselKaynak": {
       "yazar": "NASA",
       "lisans": "Kamu malı",
@@ -3932,7 +3997,7 @@
     "gorselSorgu": "apple siri ai",
     "source": "Webtekno",
     "sourceUrl": "https://www.webtekno.com/siri-ai-turkce-geliyor-h227905.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Apple_TV_4K_%283rd_Generation%2C_2022%29_with_Siri_Remote_%28cropped%29.jpg/1280px-Apple_TV_4K_%283rd_Generation%2C_2022%29_with_Siri_Remote_%28cropped%29.jpg",
+    "image": "/kapak/efd9d9dd44a7281f.webp",
     "gorselKaynak": {
       "yazar": "Dillan Payne",
       "lisans": "CC BY-SA 4.0",
@@ -3978,7 +4043,7 @@
     "gorselSorgu": "iPhone 17 Pro display interface",
     "source": "Webtekno",
     "sourceUrl": "https://www.webtekno.com/ios-27-2-yayimlandi-ozellikler-h227902.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/IPhone_17_launch_at_Apple_TRX_Malaysia_08.jpg/1280px-IPhone_17_launch_at_Apple_TRX_Malaysia_08.jpg",
+    "image": "/kapak/76876b21d5aa5e40.webp",
     "gorselKaynak": {
       "yazar": "Ahmad Ali Karim",
       "lisans": "CC0",
@@ -4035,7 +4100,7 @@
     "gorselSorgu": "crowded protest in europe street",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/yazarlar/fransa-italya-belcika-arnavutluk-ispanya-ve-portekizde-sokaklar-savas-alani-gibi-binlerce-gozalti-var-550579",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Crowd_at_the_stage_of_Christopher_Street_Day_Berlin_2023-07-22_01.jpg/1280px-Crowd_at_the_stage_of_Christopher_Street_Day_Berlin_2023-07-22_01.jpg",
+    "image": "/kapak/206ddee2cfe23b89.webp",
     "gorselKaynak": {
       "yazar": "Leonhard Lenz",
       "lisans": "CC0",
@@ -4091,7 +4156,7 @@
     "gorselSorgu": "Harry Kane Ballon dOr trophy",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/spor/25-yil-sonra-kazanan-ilk-ingiliz-altin-top-odulunu-ingiliz-futbolcu-harry-kane-kazandi-550578",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Golden_Ball%2C_Bishophill.jpg/1280px-Golden_Ball%2C_Bishophill.jpg",
+    "image": "/kapak/241a0d8b76e113ca.webp",
     "gorselKaynak": {
       "yazar": "Warofdreams",
       "lisans": "CC BY-SA 4.0",
@@ -4154,7 +4219,7 @@
     "gorselSorgu": "Istanbul building collapse site",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/istanbul-bahcelievlerde-gece-yarisi-korkutan-olay-iki-binanin-zemini-coktu-20-daire-tahliye-edildi-550577",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Istanbul_city_Photos-_Urban_01.jpg/1280px-Istanbul_city_Photos-_Urban_01.jpg",
+    "image": "/kapak/1659842e48ab915e.webp",
     "gorselKaynak": {
       "yazar": "Mostafameraji",
       "lisans": "CC BY-SA 4.0",
@@ -4210,7 +4275,7 @@
     "gorselSorgu": "ferry boat in storm",
     "source": "TRT Haber Son Dakika",
     "sourceUrl": "https://www.trthaber.com/haber/turkiye/budonun-bazi-seferleri-iptal-edildi-961284.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/TS_Bremen_life_ring_with_stormy_waves.jpg/1280px-TS_Bremen_life_ring_with_stormy_waves.jpg",
+    "image": "/kapak/1052a93b41f7c1be.webp",
     "gorselKaynak": {
       "yazar": "Liebgard",
       "lisans": "CC BY 3.0",
@@ -4274,7 +4339,7 @@
     "gorselSorgu": "football stadium floodlights",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/spor/super-lig-siralama-galatasaray-fenerbahce-maci-sonrasi-tablo-550575",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Petrovskiy_Football_Stadium_SPB.jpg/1280px-Petrovskiy_Football_Stadium_SPB.jpg",
+    "image": "/kapak/14c3a8d006e7996e.webp",
     "gorselKaynak": {
       "yazar": "Florstein ( Telegram: WikiPhoto.Space )",
       "lisans": "CC BY-SA 4.0",
@@ -4332,7 +4397,7 @@
     "gorselSorgu": "Jay-Z Super Bowl halftime stage",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/cq8ezg4364epo?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Matvey_Basov_Exhibition_in_Belarus_National_Art_Museum_2025_September_08.jpg/1280px-Matvey_Basov_Exhibition_in_Belarus_National_Art_Museum_2025_September_08.jpg",
+    "image": "/kapak/3200b12adef9db7c.webp",
     "gorselKaynak": {
       "yazar": "Tess Mattew",
       "lisans": "CC BY-SA 4.0",
@@ -4398,7 +4463,7 @@
     "gorselSorgu": "storm clouds over city",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/meteorolojiden-pes-pese-uyari-saganak-tum-yurda-yayiliyor-sicakliklar-dusuyor-istanbul-izmir-antalya-icin-alarm-550574",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Storm_clouds_over_the_Kingsway_in_Braunstone_-_geograph.org.uk_-_3072787.jpg/1280px-Storm_clouds_over_the_Kingsway_in_Braunstone_-_geograph.org.uk_-_3072787.jpg",
+    "image": "/kapak/2b5454c4419965d5.webp",
     "gorselKaynak": {
       "yazar": "Mat Fascione",
       "lisans": "CC BY-SA 2.0",
@@ -4462,7 +4527,7 @@
     "gorselSorgu": "data center server room",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/stock-market-news/alibabann-yapay-zeka-modeli-testte-pekin-sunucusuyla-iletisim-kurmaya-calst-93CH-4120764",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Data_center_roof.jpg/1280px-Data_center_roof.jpg",
+    "image": "/kapak/11f54c3ef80151ce.webp",
     "gorselKaynak": {
       "yazar": "Rsparks3",
       "lisans": "CC0",
@@ -4525,7 +4590,7 @@
     "gorselSorgu": "Hurmuz Strait ships",
     "source": "وكالة الانباء العراقية (واع)",
     "sourceUrl": "https://ina.iq/tk/international/67492-arakci-hurmuz-boaznn-durumu-sava-oncesindeki-haline-geri-donmeyecek.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Person_holding_world_globe.jpg/1280px-Person_holding_world_globe.jpg",
+    "image": "/kapak/0aec2d5bc1303d26.webp",
     "gorselKaynak": {
       "yazar": "Porapak Apichodilok",
       "lisans": "CC0",
@@ -4582,7 +4647,7 @@
     "gorselSorgu": "modern folding smartphone technology",
     "source": "Türkiye İş Dünyası Haberleri",
     "sourceUrl": "https://turkiyedeisdunyasi.com/katlanabilir-telefon-savasinda-samsungdan-rakibine-elmali-tas-143758/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Samsung_Galaxy_S8_Active_With_Casing.jpg/1280px-Samsung_Galaxy_S8_Active_With_Casing.jpg",
+    "image": "/kapak/249b16d9b1d63050.webp",
     "gorselKaynak": {
       "yazar": "DReifGalaxyM31",
       "lisans": "CC BY-SA 4.0",
@@ -4638,7 +4703,7 @@
     "gorselSorgu": "construction site excavation damage",
     "source": "TRT Haber Son Dakika",
     "sourceUrl": "https://www.trthaber.com/haber/turkiye/bahcelievlerde-cokme-riski-olusan-2-apartman-bosaltildi-961280.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Drilling_rig_and_a_digger_at_a_construction_site_in_Tuntorp.jpg/1280px-Drilling_rig_and_a_digger_at_a_construction_site_in_Tuntorp.jpg",
+    "image": "/kapak/91a80d5d8509d5f9.webp",
     "gorselKaynak": {
       "yazar": "W.carter",
       "lisans": "CC BY 4.0",
@@ -4694,7 +4759,7 @@
     "gorselSorgu": "Wall Street stock market trading floor",
     "source": "BeInCrypto",
     "sourceUrl": "https://tr.beincrypto.com/cramer-goldman-sachs-anthropic-ipo-alimi/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Wall_Street_guide_-_%281902%29_%2814597749580%29.jpg/1280px-Wall_Street_guide_-_%281902%29_%2814597749580%29.jpg",
+    "image": "/kapak/4033d1098f88206e.webp",
     "gorselKaynak": {
       "yazar": "J.L. McLean & Co",
       "lisans": "No restrictions",
@@ -4759,7 +4824,7 @@
     "gorselSorgu": "DS N 7 SUV luxury car",
     "source": "R10.net",
     "sourceUrl": "https://blog.r10.net/otomobil/yeni-ds-n7-turkiyede-satista",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/DS_Automobiles_N%C2%B0_8_%28Achim%2C_2026%29.jpg/1280px-DS_Automobiles_N%C2%B0_8_%28Achim%2C_2026%29.jpg",
+    "image": "/kapak/fb864d3f2811a6cb.webp",
     "gorselKaynak": {
       "yazar": "JoachimKohler-HB",
       "lisans": "CC BY-SA 4.0",
@@ -4805,7 +4870,7 @@
     "gorselSorgu": "Trump Netanyahu support",
     "source": "Anadolu Ajansı",
     "sourceUrl": "https://www.aa.com.tr/tr/dunya/trump-israil-secimlerinde-netanyahuya-destegini-acikladi/4092771",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/2/20/President_Donald_Trump_and_Prime_Minister_Benjamin_Netanyahu_of_Israel.jpg",
+    "image": "/kapak/87f2b52f3fad1ba5.webp",
     "gorselKaynak": {
       "yazar": "The Trump White House",
       "lisans": "Kamu malı",
@@ -4853,7 +4918,7 @@
     "gorselSorgu": "James Comey federal court hearing",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/ckly0xqjnlwvo?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/James_Comey_-_Caricature_%2822319151309%29.jpg/1280px-James_Comey_-_Caricature_%2822319151309%29.jpg",
+    "image": "/kapak/1ab5871f34341438.webp",
     "gorselKaynak": {
       "yazar": "DonkeyHotey",
       "lisans": "CC BY 2.0",
@@ -4909,7 +4974,7 @@
     "gorselSorgu": "artificial intelligence reading digital newspaper",
     "source": "Habokado",
     "sourceUrl": "https://www.habokado.com/haber/fikret-bila-sozcude/18105278/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Protest_against_the_Artificial_Intelligence_Action_Summit_in_Grand_Palais_Paris_in_February_2025_at_BMDV_in_Berlin_2025-02-08_01.jpg/1280px-Protest_against_the_Artificial_Intelligence_Action_Summit_in_Grand_Palais_Paris_in_February_2025_at_BMDV_in_Berlin_2025-02-08_01.jpg",
+    "image": "/kapak/83bcc129c693ba7b.webp",
     "gorselKaynak": {
       "yazar": "This image is a work by Wikipedia and Wikimedia Commons user C.Suth…",
       "lisans": "CC BY-SA 4.0",
@@ -4974,7 +5039,7 @@
     "gorselSorgu": "wall street trading floor",
     "source": "Borsatek",
     "sourceUrl": "https://www.borsatek.com/dow-jones-vadelileri-yukseliste-3/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Gaming-Wall-Street_BTS_Prodigium-266.jpg/1280px-Gaming-Wall-Street_BTS_Prodigium-266.jpg",
+    "image": "/kapak/54c7059460eb1359.webp",
     "gorselKaynak": {
       "yazar": "Tobias Deml",
       "lisans": "CC BY-SA 4.0",
@@ -5038,7 +5103,7 @@
     "gorselSorgu": "artificial intelligence server farm",
     "source": "BBC",
     "sourceUrl": "https://www.bbc.com/turkce/articles/cqx28d4p72l4o",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Jack_Clark%2C_co-founder_of_Anthropic%2C_giving_a_talk_on_AI_at_the_Schwarzman_Centre_in_Oxford.jpg/1280px-Jack_Clark%2C_co-founder_of_Anthropic%2C_giving_a_talk_on_AI_at_the_Schwarzman_Centre_in_Oxford.jpg",
+    "image": "/kapak/36963a0098d18858.webp",
     "gorselKaynak": {
       "yazar": "Mvolz",
       "lisans": "CC0",
@@ -5095,7 +5160,7 @@
     "gorselSorgu": "mustafa varank ali koc",
     "source": "Yeni Ankara",
     "sourceUrl": "https://www.yeniankara.com.tr/guncel/mustafa-varank-ali-kocun-gazze-icin-verdigi-ambulans-sozunu-acikladi-187778",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Hidayet_T%C3%BCrko%C4%9Flu_-_Mustafa_Varank_-_Osman_A%C5%9Fk%C4%B1n_Bak_-_Haluk_Bayraktar_20250220_%283%29.jpg/1280px-Hidayet_T%C3%BCrko%C4%9Flu_-_Mustafa_Varank_-_Osman_A%C5%9Fk%C4%B1n_Bak_-_Haluk_Bayraktar_20250220_%283%29.jpg",
+    "image": "/kapak/e3b01c6940f4abe4.webp",
     "gorselKaynak": {
       "yazar": "Zafer",
       "lisans": "CC BY 4.0",
@@ -5152,7 +5217,7 @@
     "gorselSorgu": "cyber warfare digital network map",
     "source": "A Haber",
     "sourceUrl": "https://www.ahaber.com.tr/ozel-haberler/2026/10/27/savaslar-artik-siperlerde-degil-ekranlarda",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/3d_Cyber_Warfare_Company_-_Cyber_Blue_Zone_25-1_%289072098%29.jpg/1280px-3d_Cyber_Warfare_Company_-_Cyber_Blue_Zone_25-1_%289072098%29.jpg",
+    "image": "/kapak/1973c4a1b9edbac6.webp",
     "gorselKaynak": {
       "yazar": "U.S. Marines IIIMIG by Cpl. Bridgette Rodriguez",
       "lisans": "Kamu malı",
@@ -5206,7 +5271,7 @@
     "gorselSorgu": "Tugva representative Kilis",
     "source": "Saray Medya",
     "sourceUrl": "https://www.saraymedya.com/foto/tugva-kilis-te-temsilcilik-gorevi-muhammed-polat-a-gecti_317982/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Istanbul_city_Photos-_Urban_01.jpg/1280px-Istanbul_city_Photos-_Urban_01.jpg",
+    "image": "/kapak/44440b2a6df78cc0.webp",
     "gorselKaynak": {
       "yazar": "Mostafameraji",
       "lisans": "CC BY-SA 4.0",
@@ -5254,7 +5319,7 @@
     "gorselSorgu": "Audi assembly line factory",
     "source": "Gazete Oksijen",
     "sourceUrl": "https://gazeteoksijen.com/otomobil/audinin-4-milyar-dolarlik-abd-yatirimi-almanyada-tartisma-yaratti-293897",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/AUDI_Q2L_E-TRON_China_%2812%29.jpg/1280px-AUDI_Q2L_E-TRON_China_%2812%29.jpg",
+    "image": "/kapak/3c6f036f013c3dc0.webp",
     "gorselKaynak": {
       "yazar": "Dinkun Chen",
       "lisans": "CC BY-SA 4.0",
@@ -5310,7 +5375,7 @@
     "gorselSorgu": "football stadium floodlights",
     "source": "Fotospor",
     "sourceUrl": "https://www.fotospor.com.tr/galatasaray/yapak-zeka-cevapladi-galatasarayin-penaltisi-verilmedi-715770",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Petrovskiy_football_stadium_in_SPB.jpg/1280px-Petrovskiy_football_stadium_in_SPB.jpg",
+    "image": "/kapak/e09c3f85b6ca2d97.webp",
     "gorselKaynak": {
       "yazar": "Florstein ( Telegram: WikiPhoto.Space )",
       "lisans": "CC BY-SA 4.0",
@@ -5376,7 +5441,7 @@
     "gorselSorgu": "Iran nuclear talks diplomat",
     "source": "Bundle",
     "sourceUrl": "https://www.bundle.app/tr/gundem/iran-abd-muzakere-konusunda-ciddi-ise-tahranin-7-sartini-kabul-etmeli-24dd5056-14bc-5964-bf24-6a3c08299aa8",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Negotiations_about_Iranian_Nuclear_Program_-_the_Ministers_of_Foreign_Affairs_and_Other_Officials_of_the_P5%2B1_and_Ministers_of_Foreign_Affairs_of_Iran_and_EU_in_Lausanne.jpg/1280px-thumbnail.jpg",
+    "image": "/kapak/e00b2c15d4c07956.webp",
     "gorselKaynak": {
       "yazar": "United States Department of State",
       "lisans": "Kamu malı",
@@ -5432,7 +5497,7 @@
     "gorselSorgu": "Saudi Arabia civil defense alert",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/dunya/suudi-arabistanin-harc-vilayeti-ve-dogu-bolgesinde-erken-uyari-sistemi-devreye-alindi/4101863",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Alexander_Schallenberg_in_Saudi_Arabia_on_23_May_2024_-_22.jpg/1280px-Alexander_Schallenberg_in_Saudi_Arabia_on_23_May_2024_-_22.jpg",
+    "image": "/kapak/cfd2f909cccbd6bd.webp",
     "gorselKaynak": {
       "yazar": "Österreichisches Außenministerium",
       "lisans": "CC BY 2.0",
@@ -5480,7 +5545,7 @@
     "gorselSorgu": "Microsoft office building exterior",
     "source": "Donanım Günlüğü",
     "sourceUrl": "https://donanimgunlugu.com/microsoft-binlerce-calisanina-isten-440036",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Microsoft_Office.jpg/1280px-Microsoft_Office.jpg",
+    "image": "/kapak/e6692b815dbe16c9.webp",
     "gorselKaynak": {
       "yazar": "KK IN HK",
       "lisans": "Kamu malı",
@@ -5536,7 +5601,7 @@
     "gorselSorgu": "stock market trading floor",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/economic-indicators/abd-hisse-senedi-vadeli-islemleri-yukseldi-teknoloji-hisseleri-guclu-4120737",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/7/78/Market_centre_in_Tokyo_stock_exchange.jpg",
+    "image": "/kapak/b911d19fdbfa497c.webp",
     "gorselKaynak": {
       "yazar": "ehnmark",
       "lisans": "CC BY 2.0",
@@ -5601,7 +5666,7 @@
     "gorselSorgu": "Apple TV remote television screen",
     "source": "Genç Gazete",
     "sourceUrl": "https://www.gencgazete.net/instagram-apple-tvye-geldi-reels-videolari-ve-canli-yayinlar-televizyonda-izlenebilecek",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Apple_Tv_%2812478148855%29.jpg/1280px-Apple_Tv_%2812478148855%29.jpg",
+    "image": "/kapak/9eac0b3f22fb1f1b.webp",
     "gorselKaynak": {
       "yazar": "Maurizio Pesce from Milan, Italia",
       "lisans": "CC BY 2.0",
@@ -5666,7 +5731,7 @@
     "gorselSorgu": "smartphone video editing app interface",
     "source": "Technopat",
     "sourceUrl": "https://www.technopat.net/2026/10/27/instagramdan-youtubea-rakip-hamle-90-dakikalik-videolar-geliyor/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Woman_sitting_on_a_chair_in_a_cafe_using_her_smartphone_to_make_a_video_call.jpg/1280px-Woman_sitting_on_a_chair_in_a_cafe_using_her_smartphone_to_make_a_video_call.jpg",
+    "image": "/kapak/7cb5716eef147e3d.webp",
     "gorselKaynak": {
       "yazar": "Shixart1985",
       "lisans": "CC BY 2.0",
@@ -5731,7 +5796,7 @@
     "gorselSorgu": "Apple iPad Pro tablet",
     "source": "Ege Alternatif",
     "sourceUrl": "https://www.egealternatif.com/haber/apple-turkiye-de-ipad-fiyatlarini-artirdi_99090/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/The_Apple_Pencil_Digital_Stylus_for_the_iPad_Pro_Tablet_%2840144489593%29.jpg/1280px-The_Apple_Pencil_Digital_Stylus_for_the_iPad_Pro_Tablet_%2840144489593%29.jpg",
+    "image": "/kapak/b81397dd5941021f.webp",
     "gorselKaynak": {
       "yazar": "Tony Webster from Minneapolis, Minnesota, United States",
       "lisans": "CC BY 2.0",
@@ -5789,7 +5854,7 @@
     "gorselSorgu": "israeli election ballot boxes",
     "source": "Hey Haber",
     "sourceUrl": "https://heyhaber.com/israil-seciminde-kritik-soru-hukumet-nasil-kurulacak",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Electronic_ballot_boxes%2C_Israeli_Labor_Party_2017_leadership_election_-_1.jpg",
+    "image": "/kapak/7037fdd0ca667a40.webp",
     "gorselKaynak": {
       "yazar": "Liron Dorfman",
       "lisans": "CC BY-SA 3.0",
@@ -5845,7 +5910,7 @@
     "gorselSorgu": "Thiago Avila protest rally Brazil",
     "source": "Haberhergün",
     "sourceUrl": "https://www.haberhergun.com/haber/lula-nin-zaferini-sumud-aktivisti-thiago-avila-kutladi_81718/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahmoud_Ahmadinejad_and_Luiz_In%C3%A1cio_Lula_da_Silva_2009.jpg/1280px-Mahmoud_Ahmadinejad_and_Luiz_In%C3%A1cio_Lula_da_Silva_2009.jpg",
+    "image": "/kapak/9588a55386f78353.webp",
     "gorselKaynak": {
       "yazar": "José Cruz",
       "lisans": "CC BY 3.0",
@@ -5892,7 +5957,7 @@
     "gorselSorgu": "firefighter at emergency scene",
     "source": "ABDPost",
     "sourceUrl": "https://www.abdpost.com/new-yorkta-yangin-alarmi-1-itfaiyeci-hastaneye-kaldirildi/442124",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/A_New_York_Air_National_Guard_105th_Civil_Engineering_Squadron_firefighter_practices_emergency_fire_management_techniques_during_exercise_Fallen_Angel_at_Stewart_Air_National_Guard_-_DPLA_-_0f4b290eb1364c31a20d5cbdbb728e57.jpeg/1280px-thumbnail.jpeg",
+    "image": "/kapak/ec4120eade6c26ec.webp",
     "gorselKaynak": {
       "yazar": "Department of Defense. American Forces Information Service. Defense…",
       "lisans": "Kamu malı",
@@ -5946,7 +6011,7 @@
     "gorselSorgu": "new generation water meter",
     "source": "Toplumsal Haber",
     "sourceUrl": "https://www.toplumsal.com.tr/haber/eskisehir-de-yeni-nesil-su-sayaclari-tanitildi_31506/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/New_Generation_Rollingstock_736_Sunshine_Railway_Station_Bilsen_Rd_Geebung_P1040861.jpg/1280px-New_Generation_Rollingstock_736_Sunshine_Railway_Station_Bilsen_Rd_Geebung_P1040861.jpg",
+    "image": "/kapak/56ac52b015d73fa7.webp",
     "gorselKaynak": {
       "yazar": "John Robert McPherson",
       "lisans": "CC BY-SA 4.0",
@@ -5991,7 +6056,7 @@
     "gorselSorgu": "sucker punch studio staff",
     "source": "Merlin'in Kazanı",
     "sourceUrl": "https://www.merlininkazani.com/ghost-of-yotei-gelistiricisi-sucker-punch-kuculmeye-gitti-haber-263885",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Jamie_Chung_at_Sucker_Punch_panel_%284855359704%29.jpg/1280px-Jamie_Chung_at_Sucker_Punch_panel_%284855359704%29.jpg",
+    "image": "/kapak/dc2f10f7bb0069e2.webp",
     "gorselKaynak": {
       "yazar": "https://www.flickr.com/photos/rwoan/",
       "lisans": "CC BY-SA 2.0",
@@ -6038,7 +6103,7 @@
     "gorselSorgu": "Izmir university campus",
     "source": "Yenigün Gazetesi",
     "sourceUrl": "https://www.gazeteyenigun.com.tr/haber/29053962/ak-partili-cankiri-acikladi-iskur-genclik-programi-izmirde-hangi-universitelerde-uygulanacak",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Izmir_University_of_Economics_at_night.jpg/1280px-Izmir_University_of_Economics_at_night.jpg",
+    "image": "/kapak/2e452bb88e3c67c4.webp",
     "gorselKaynak": {
       "yazar": "BSRF",
       "lisans": "CC BY-SA 4.0",
@@ -6094,7 +6159,7 @@
     "gorselSorgu": "Gran Turismo 7 gameplay scene",
     "source": "Merlin'in Kazanı",
     "sourceUrl": "https://www.merlininkazani.com/gran-turismo-7-pc-ye-bir-adim-daha-yaklasti-haber-263883",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Ferrari_Vision_Gran_Turismo_03.jpg/1280px-Ferrari_Vision_Gran_Turismo_03.jpg",
+    "image": "/kapak/c398013b8abbad15.webp",
     "gorselKaynak": {
       "yazar": "TR25s",
       "lisans": "CC BY-SA 4.0",
@@ -6159,7 +6224,7 @@
     "gorselSorgu": "Miyoo Mini retro handheld console",
     "source": "Merlin'in Kazanı",
     "sourceUrl": "https://www.merlininkazani.com/miyoo-mini-plus-daha-guclu-islemciyle-yeniden-karsimizda-teknoloji-263879",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/H%C3%A5kan_Lans_computer_color_graphics_card_Datacolor.jpg/1280px-H%C3%A5kan_Lans_computer_color_graphics_card_Datacolor.jpg",
+    "image": "/kapak/58306fa7d8281ea4.webp",
     "gorselKaynak": {
       "yazar": "Agnes Andersson",
       "lisans": "CC BY 4.0",
@@ -6207,7 +6272,7 @@
     "gorselSorgu": "storm damaged construction site",
     "source": "Şafak Gazetesi",
     "sourceUrl": "https://www.safakgazete.com/hortum-santiyeyi-savas-alanina-cevirdi-5-isci-hayatini-kaybetti",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Ortley_Beach%2C_N.J.%2C_June_4%2C_2013_--_Workers_wrap_up_the_day_by_enclosing_a_demolition_site_in_Ortley_Beach_of_homes_too_damaged_by_Hurricane_Sandy_to_be_saved._Rosanna_Arias-FEMA_-_DPLA_-_a9705ea1bba1ab82fbb0564ebc81176f.jpg/1280px-thumbnail.jpg",
+    "image": "/kapak/a650bc2c1d092da8.webp",
     "gorselKaynak": {
       "yazar": "Department of Homeland Security. Federal Emergency Management Agenc…",
       "lisans": "Kamu malı",
@@ -6263,7 +6328,7 @@
     "gorselSorgu": "students protesting in Paris streets",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/dunya/fransada-ogrencilerden-daha-iyi-egitim-kosullari-icin-eylemleri-surdurme-cagrisi/4101837",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Crowd_at_the_stage_of_Christopher_Street_Day_Berlin_2023-07-22_03.jpg/1280px-Crowd_at_the_stage_of_Christopher_Street_Day_Berlin_2023-07-22_03.jpg",
+    "image": "/kapak/bbae35978204d8b2.webp",
     "gorselKaynak": {
       "yazar": "Leonhard Lenz",
       "lisans": "CC0",
@@ -6319,7 +6384,7 @@
     "gorselSorgu": "damaged construction site containers",
     "source": "TRT Haber Son Dakika",
     "sourceUrl": "https://www.trthaber.com/haber/turkiye/antalyada-hortum-ve-firtina-4-can-aldi-961279.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/A_fire_has_damaged_facilities_under_construction_for_Warwick_Sea_Scouts_-_geograph.org.uk_-_6459003.jpg/1280px-A_fire_has_damaged_facilities_under_construction_for_Warwick_Sea_Scouts_-_geograph.org.uk_-_6459003.jpg",
+    "image": "/kapak/821ae3a10fb2a782.webp",
     "gorselKaynak": {
       "yazar": "Robin Stott",
       "lisans": "CC BY-SA 2.0",
@@ -6376,7 +6441,7 @@
     "gorselSorgu": "storm damaged construction site",
     "source": "TRT Haber Son Dakika",
     "sourceUrl": "https://www.trthaber.com/haber/turkiye/antalyada-hortum-ve-firtina-4-can-aldi-961279.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Returning_shingle_to_storm-damaged_beaches%2C_Eastbourne_-_geograph.org.uk_-_8022217.jpg/1280px-Returning_shingle_to_storm-damaged_beaches%2C_Eastbourne_-_geograph.org.uk_-_8022217.jpg",
+    "image": "/kapak/a1c00c1cb0dc092a.webp",
     "gorselKaynak": {
       "yazar": "Andrew Diack",
       "lisans": "CC BY-SA 2.0",
@@ -6433,7 +6498,7 @@
     "gorselSorgu": "gold bars financial charts",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/ekonomi/islam-memis-altinin-ne-zaman-yukselecegini-acikladi-550573",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/UBS_gold_bars_with_mirrors.jpg/1280px-UBS_gold_bars_with_mirrors.jpg",
+    "image": "/kapak/fb5bbfffc4661939.webp",
     "gorselKaynak": {
       "yazar": "Kotivalo",
       "lisans": "CC BY-SA 3.0",
@@ -6491,7 +6556,7 @@
     "gorselSorgu": "Ismael Kartal Fenerbahche press conference",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/spor/ismail-kartal-derbi-kazanmadan-da-sampiyon-olabiliriz-550572",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/%C4%B0smail_Kartal_Fenerbah%C3%A7e_20260805_%283%29.JPG/1280px-%C4%B0smail_Kartal_Fenerbah%C3%A7e_20260805_%283%29.JPG",
+    "image": "/kapak/5c0331f3569cf314.webp",
     "gorselKaynak": {
       "yazar": "User:Zafer",
       "lisans": "CC BY-SA 4.0",
@@ -6538,7 +6603,7 @@
     "gorselSorgu": "traditional handmade crafts exhibition",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/gundem/esderin-uluslararasi-el-sanatlari-projesinin-gala-programi-gerceklestirildi/4101829",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Traditional_Handmade_Wooden_Calligraphy_Pens.jpg/1280px-Traditional_Handmade_Wooden_Calligraphy_Pens.jpg",
+    "image": "/kapak/60b69ff88775ca4c.webp",
     "gorselKaynak": {
       "yazar": "Faizal Somadi",
       "lisans": "CC BY-SA 4.0",
@@ -6595,7 +6660,7 @@
     "gorselSorgu": "social media screen close up",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/cmy4xwp22xyqo?at_medium=RSS&at_campaign=rss",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/8/84/Echo_chamber_dynamics_on_social_media.jpg",
+    "image": "/kapak/5fa4fb5dedfd9ccd.webp",
     "gorselKaynak": {
       "yazar": "Carlos Diaz Ruiz",
       "lisans": "CC BY 4.0",
@@ -6657,7 +6722,7 @@
     "gorselSorgu": "football coach apology",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/spor/okan-buruk-amedsporu-unuttum-ozur-dilerim-550571",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Campo_de_futbol_del_C.F._San_Pedro._Entrenamiento_futbol_base.jpg/1280px-Campo_de_futbol_del_C.F._San_Pedro._Entrenamiento_futbol_base.jpg",
+    "image": "/kapak/a56ace3b69b74185.webp",
     "gorselKaynak": {
       "yazar": "Juan Emilio Prades Bel",
       "lisans": "CC BY 4.0",
@@ -6704,7 +6769,7 @@
     "gorselSorgu": "Bursa ferry terminal storm",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/yasam/deniz-ulasimina-hava-muhalefeti-engeli-550570",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Cars_and_pathway_in_flooded_Novodvorsk%C3%A1_street_in_T%C5%99eb%C3%AD%C4%8D%2C_T%C5%99eb%C3%AD%C4%8D_District.JPG/1280px-Cars_and_pathway_in_flooded_Novodvorsk%C3%A1_street_in_T%C5%99eb%C3%AD%C4%8D%2C_T%C5%99eb%C3%AD%C4%8D_District.JPG",
+    "image": "/kapak/2d6da96661790e88.webp",
     "gorselKaynak": {
       "yazar": "Jiří Sedláček",
       "lisans": "CC BY-SA 4.0",
@@ -6752,7 +6817,7 @@
     "gorselSorgu": "Galatasaray Fenerbahce football match",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/spor/archie-brown-ile-abdulkerim-guresti-ilk-kimin-saldirdigini-gorursunuz-550567",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Galatasaray-Fenerbah%C3%A7e_match_in_the_1920s.JPG/1280px-Galatasaray-Fenerbah%C3%A7e_match_in_the_1920s.JPG",
+    "image": "/kapak/a50bae33daf650ab.webp",
     "gorselKaynak": {
       "yazar": "",
       "lisans": "Kamu malı",
@@ -6799,7 +6864,7 @@
     "gorselSorgu": "Ergi Kırkın tennis match",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/spor/milli-tenisci-ergi-kirkin-singapurda-sampiyon-oldu/4101817",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Kadriorg_Stadium_floodlights_and_Maakri_high-rises.jpg/1280px-Kadriorg_Stadium_floodlights_and_Maakri_high-rises.jpg",
+    "image": "/kapak/212e133acff9e012.webp",
     "gorselKaynak": {
       "yazar": "Sancos",
       "lisans": "CC BY 4.0",
@@ -6846,7 +6911,7 @@
     "gorselSorgu": "Dera Syria conflict zone street",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/dunya/suriye-devlet-televizyonu-urdun-hava-saldirilarinda-5-sivil-oldu/4101811",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Person_holding_world_globe.jpg/1280px-Person_holding_world_globe.jpg",
+    "image": "/kapak/dd2070e1455a6f47.webp",
     "gorselKaynak": {
       "yazar": "Porapak Apichodilok",
       "lisans": "CC0",
