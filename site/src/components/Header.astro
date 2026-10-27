@@ -6,6 +6,7 @@ const nav = [
   { label: "Ana Sayfa", href: "/" },
   { label: "Shorts", href: "/akis/", shorts: true },
   { label: "Son Dakika", href: "/son-dakika/" },
+  { label: "Öne Çıkanlar", href: "/one-cikanlar/" },
   { label: "Piyasa", href: "/piyasa/" },
   { label: "Tüm Haberler", href: "/haberler/" },
 ];
@@ -19,9 +20,13 @@ const isActive = (href) =>
 
 <header class="header" id="site-header">
   <div class="container header__inner">
-    <a href="/" class="logo" aria-label="HaberinAi ana sayfa">
+    <a href="/" class="logo">
       <span class="logo__mark" aria-hidden="true">H</span>
       <span class="logo__text">Haberin<span class="logo__ai">Ai</span></span>
+      {/* Ekran okuyucu için bağlam: erişilebilir ad "HaberinAi ana sayfa" olur.
+          aria-label yerine gizli metin kullanılıyor; görünen marka metni
+          erişilebilir adla birebir eşleşsin (erişilebilirlik denetimi). */}
+      <span class="sr-only">ana sayfa</span>
     </a>
     <nav class="nav" aria-label="Bölümler">
       {nav.map((item) => (
@@ -76,9 +81,12 @@ const isActive = (href) =>
         </div>
         <div class="searchbox__drop" id="search-drop" role="listbox" aria-label="Arama önerileri" hidden></div>
       </form>
-      <a class="hesap-btn" href="/hesap/" data-hesap aria-label="Hesabım">
+      <a class="hesap-btn" href="/hesap/" data-hesap>
         <span class="hesap-btn__ikon" data-hesap-ikon aria-hidden="true"></span>
         <span class="hesap-btn__yazi" data-hesap-ad>Giriş</span>
+        {/* Görünen "Giriş" metni erişilebilir adda da geçmeli; giriş yapınca
+            JS bu metni kullanıcı adına çevirir, ek metin yine geçerli kalır. */}
+        <span class="sr-only">— hesabım</span>
       </a>
       <Bildirim />
       <button
