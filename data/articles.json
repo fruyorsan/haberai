@@ -1,5 +1,62 @@
 [
   {
+    "id": "a9c2d7c309fb185f",
+    "title": "Sceye, 30 bin km uçarak cep telefonlarını direkt bağladı",
+    "slug": "sceye-30-bin-km-ucarak-cep-telefonlarini-direkt-bagli",
+    "summary": "Sceye'nin stratosferde çalışan SE2 platformu, ABD'den Japonya'ya 30 bin kilometrelik bir uçuş tamamlandı. Araç, bu süreçte standart akıllı telefonlara internet, sesli arama ve video izleme hizmeti sundu. Denemeler, Japon operatör SoftBank ile gerçekleştirildi ve başarılı sonuçlar verdi.",
+    "keyPoints": [
+      "30 bin km mesafede standart telefonlar veri servisi aldı",
+      "Platform, 500 karasal baz istasyonuna eşdeğer alanı kapsayacak",
+      "Lityum-kükürt bataryalar ve güneş panelleri güç sağlıyor"
+    ],
+    "body": [
+      "ABD merkezli Sceye şirketi, gökyüzünden iletişim sağlayan yeni nesil hava aracı SE2 ile tarihi bir test uçuşuna imza attı. Şirket, uçan baz istasyonu olarak adlandırılan bu platformun 30 bin kilometrelik bir rotayı başarıyla katettiğini doğruladı. Uçuş boyunca araç, Japon telekomünikasyon devi SoftBank'ın şebekesine entegrasyon sağlayarak gerçek zamanlı sinyaller yaydı.",
+      "Testlerin en kritik aşaması, Japonya sınırlarına varıldıktan sonra başladı. Ağustos ayının ortasında ülkeye ulaşan SE2, Japonya tarafından yönetilen hava sahasında yedi günden fazla süreyle kesintisiz görev yaptı. Bu dönemde platform, Standart akıllı telefonlarla sesli arama, mesajlaşma ve video izleme gibi temel mobil iletişimler sorunsuz olarak gerçekleştirildi. Kullanıcıların cihazlarında herhangi bir donanım değişikliği veya özel yazılım yüklemesi gerektirmemesi, sistemin mevcut altyapıyla tam uyumlu olduğunu kanıtladı.",
+      "Sistemin teknik altyapısı, enerji verimliliği üzerine kurulu. SE2, üst yüzeyindeki güneş panelleriyle gün ışığında enerji üretiyor ve bu gücü lityum-kükürt bataryalarda depoluyor. Yaklaşık 425 Wh/kg enerji yoğunluğuna sahip olan bu bataryalar, kuyruk kısmındaki elektrikli pervaneyi besleyerek itiş gücünü sağlıyor. Bu mimari, aracın dışarıdan enerji almadan günlerce havada kalabilmesini mümkün kılıyor ve operasyonel maliyetleri ciddi oranda düşürüyor.",
+      "Ticari potansiyel açısından Sceye'nin hedeflediği boyutlar oldukça iddialı. Şirketin tam ölçekli platformlardan birinin, tek başına yaklaşık 500 karasal baz istasyonunun kapsama alanına eşdeğer bir coğrafyaya hizmet vermesi planlanıyor. Bu özellik, dağlık bölgelerde, açık denizlerde ve altyapı yatırımlarının zor olduğu uzak noktalarda iletişimi demokratikleştirebilir. Mevcut telekom operatörleri için bu sistem, kule kurma zorunluluğunu ortadan kaldıran bir tamamlayıcı altyapı niteliği taşıyor.",
+      "Sceye'nin yaklaşımı, uzay tabanlı çözümlerden de ayrışıyor. Dünyanın en yüksek irtifalı platformları arasına giren bu sistem, yer yüzeyinden sadece 17 kilometre yüksekte konumlanıyor. Bu mesafe, sinyal gecikmesini minimize etme ve daha güçlü bir bağlantı sunma potansiyeli taşıyor. Uyduların fırlatılması ve yörüngeye yerleştirilmesi gereken süreçlerden farklı olarak, HAPS platformları atmosfer içinde çalışarak bakım ve erişim kolaylığı da sunuyor.",
+      "Bu başarının ardından sektörün gözü, bu hava araçlarının ticari kullanıma ne zaman geçeceğine çevrildi. SoftBank ile yürütülen iş birliği, Japon pazarında testlerin ölçeklendirilmesinin önünü açtı. Gelecekte doğal afetlerde kesintiye uğrayan iletişimi anında onarabilmek veya uzak bölgelere saniyeler içinde veri aktarabilmek için bu teknolojinin standart hale gelmesi bekleniyor."
+    ],
+    "comment": "Bu teknoloji, özellikle altyapı yatırımı yapmakta zorlanan operatörler için maliyet tablosunu baştan yazıyor. 500 baz istasyonuna eşdeğer tek bir platform, dağlık veya denizcilik sektöründe faaliyet gösteren firmalar için düşük gecikme vadeder. Ancak lityum-kükürt bataryaların 425 Wh/kg kapasitesi, gece saatlerinde ve bulutlu havalarda enerji kesintisi riski taşıyor; bu durum, sistemin kırsal kesimlerdeki sürekli erişim iddiasını test edecek ilk ticari siparişe kadar netleşmeyecek.",
+    "editorNote": "Gökten inen sinyal, yerdeki 500 kuleyi aratmayacak ölçüde güçlü. SoftBank ile yapılan 30 günlük uçuş, stratosfer iletişiminin artık teori olmadığını kanıtladı.",
+    "tags": [
+      "Sceye",
+      "HAPS",
+      "Mobil İletişim",
+      "SoftBank",
+      "Stratosfer Teknolojisi"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "Sceye SE2 airship stratosphere",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/gelecegin-baz-istasyonlari-gokyuzunde-olabilir-ilk-test-yapildi--212141",
+    "image": "/kapak/a9c2d7c309fb185f.webp",
+    "gorselKaynak": {
+      "yazar": "Shixart1985",
+      "lisans": "CC BY 2.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg"
+    },
+    "publishedAt": "2026-10-27T11:33:00.000Z",
+    "generatedAt": "2026-10-27T11:37:26.299Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/All-solid_lithium-sulfur_battery_%288977837834%29.jpg/1280px-All-solid_lithium-sulfur_battery_%288977837834%29.jpg",
+        "yazar": "Oak Ridge National Laboratory",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:All-solid_lithium-sulfur_battery_(8977837834).jpg",
+        "altyazi": "Platformun enerji kaynağı olan lityum-kükürt bataryalar"
+      }
+    ],
+    "breaking": true,
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg/1280px-Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "e7ba8e07cc342c4c",
     "title": "Meteoroloji 19 il için uyarı verdi: Muğla'da turuncu kod alarmı",
     "slug": "meteoroloji-19-il-icin-uyari-verdi-muglada-turuncu-kod-alarmi",
