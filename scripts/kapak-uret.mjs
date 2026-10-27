@@ -51,6 +51,8 @@ const sadeceKart = process.argv.includes("--kart");
 const tekId = process.argv.find((a) => a.startsWith("--id="))?.split("=")[1] || null;
 // --fotoyok: yalnızca fotoğrafı olmayan (tasarımlı zemin) kapakları yeniden dener.
 const sadeceFotoYok = process.argv.includes("--fotoyok");
+// --kapakli: kapak dosyası olan TÜM haberleri yeniden üretir (eski tasarımdan geçiş).
+const sadeceKapakli = process.argv.includes("--kapakli");
 // --paralel=N: eşzamanlı indirme sayısı (varsayılan 6).
 const paralel = arg("paralel", 6);
 // DEBUG_KAPAK=1: her haber için hangi görselin neden seçildiğini yazar.
@@ -86,6 +88,9 @@ const hedefler = articles
     }
     if (sadeceFotoYok) {
       return a.kapak && a.kapak.foto === false;
+    }
+    if (sadeceKapakli) {
+      return Boolean(a.kapak);
     }
     if (!zorla && typeof a.image === "string" && a.image.startsWith(`${URL_TABANI}/`)) return false;
     if (!a.image) return false;
@@ -256,17 +261,17 @@ function sar(metin, enFazla) {
 // Tasarımlı kartlar için başlık: en çok 3 satır, sığmazsa punto küçülür.
 function kartBasligi(baslik) {
   const secenekler = [
-    { boyut: 66, harf: 27 },
-    { boyut: 58, harf: 31 },
-    { boyut: 50, harf: 37 },
+    { boyut: 62, harf: 22 },
+    { boyut: 54, harf: 26 },
+    { boyut: 46, harf: 31 },
   ];
   for (const s of secenekler) {
     const satirlar = sar(baslik, s.harf);
     if (satirlar.length <= 3) return { boyut: s.boyut, lh: Math.round(s.boyut * 1.22), satirlar };
   }
-  const satirlar = sar(baslik, 40).slice(0, 3);
+  const satirlar = sar(baslik, 34).slice(0, 3);
   satirlar[satirlar.length - 1] = satirlar[satirlar.length - 1].replace(/[\s,.;:!?]+$/, "") + "…";
-  return { boyut: 46, lh: 56, satirlar };
+  return { boyut: 42, lh: 51, satirlar };
 }
 
 function kapakSvg() {
