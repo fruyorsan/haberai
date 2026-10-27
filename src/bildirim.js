@@ -445,10 +445,10 @@ async function bildirimIcerigiHazirla(a, { baslik }, { dry = false } = {}) {
   ) {
     adayKaynaklar.push(a.image);
   }
-  if (Array.isArray(a?.gorselEk)) {
-    for (const ek of a.gorselEk) {
-      if (ek?.url && /^https?:\/\//i.test(ek.url) && !adayKaynaklar.includes(ek.url)) {
-        adayKaynaklar.push(ek.url);
+  if (Array.isArray(a?.images)) {
+    for (const url of a.images) {
+      if (typeof url === "string" && /^https?:\/\//i.test(url) && !adayKaynaklar.includes(url)) {
+        adayKaynaklar.push(url);
       }
     }
   }

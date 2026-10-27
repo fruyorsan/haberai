@@ -60,6 +60,15 @@ jobs:
           SAATLIK_HABER_LIMIT: ${{ vars.SAATLIK_HABER_LIMIT }}
         run: npm run collect
 
+      # KAYNAK ICI FOTOGRAFLAR: haberin ciktigi sitenin kendi sayfasindaki
+      # govde fotograflarini toplar (article.images). Boylece metin aralarinda
+      # Wikimedia stogu yerine yayincinin kendi kullandigi, konuyla ilgili
+      # fotoğraf cikar. Tek kelime eslesmesi yuzunden telefon haberine mezar
+      # tasi dusmesi bu adimla bitti.
+      - name: Kaynak ici fotograflar
+        continue-on-error: true
+        run: node scripts/kaynak-gorsel.mjs --gun=3 --limit=60
+
       # Yeni haberleri sosyal kanallara paylasir. Anahtar yoksa hata vermez,
       # sessizce atlar. data/social.json sonraki adimda commit'e girer.
       - name: Sosyal paylasim
