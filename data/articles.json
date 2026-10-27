@@ -1,5 +1,54 @@
 [
   {
+    "id": "2cd6a60c2d51eacb",
+    "title": "OpenAI, yapay zekâ modellerinin ürettiği 3 bilimsel sonucu doğruladı",
+    "slug": "openai-yapay-zeka-model-matematik-fizik-sonuclar",
+    "summary": "OpenAI, yapay zekâ modellerinin matematik, bilgisayar bilimi ve fizikte üç yeni sonuca ulaştığını açıkladı. Şirket, bu bulguları bağımsız uzmanlar ve Lean doğrulama aracı ile teyit etti. Bulguların akademik çevrelerde incelemeye açılacağı belirtildi.",
+    "keyPoints": [
+      "Matematikte harmonik analizde yerel yumuşatma varsayımı kanıtlandı.",
+      "Bilgisayar biliminde Üstel Zaman Hipotezi (ETH) çürütüldü.",
+      "Kuantum alan teorilerinin matematiksel varlığına dair sonuçlar üretildi."
+    ],
+    "body": [
+      "OpenAI, yapay zekâ modellerinin rutin hesaplamaların ötesine geçerek üç farklı bilimsel alanda özgün sonuçlara ulaştığını duyurdu. Şirketin açıklamasına göre bu bulgular, matematik, bilgisayar bilimi ve kuantum fiziği gibi teorik temelleri güçlü disiplinlerde elde edildi. Açıklama, yapay zekânın sadece içerik üretmekle kalmayıp bilimsel keşiflere de katkıda bulunabildiğini gösteren somut örnekler sunuyor.",
+      "Matematik alanında elde edilen en dikkat çekici sonuç, harmonik analizdeki yerel yumuşatma varsayımının tüm boyutlarda kanıtlanması oldu. Bu varsayım, fonksiyonların davranışını anlamak için uzun süredir kullanılan temellerden biri olarak biliniyordu. Yapay zekâ modelinin bu kompleks ispatı ortaya koyması, alandaki araştırmacılara yeni bir bakış açısı kazandırma potansiyeli taşıyor.",
+      "Bilgisayar bilimi tarafında ise uzun yıllardır doğru kabul edilen Üstel Zaman Hipotezi (ETH) çürütüldü. Bu hipotez, belirli problemlerin çözülme sürelerine dair kritik varsayımlara dayanıyordu ve alanın temel taşlarından biri sayılıyordu. ETH'nin geçersiz bulunması, algoritma tasarımı ve kriptografi gibi alanlarda yeniden değerlendirme sürecini tetikleyebilir.",
+      "Bu teoriler, parçacık fiziğinin en zorlu matematiksel yapılarını içeriyor. OpenAI'ın bu alandaki çıkarsamaları, fizikçiler için yeni araştırma rotaları çizme ihtimali taşıyor. Tüm bu sonuçlar, Lean adlı formal doğrulama aracının yardımıyla teyit edildi.",
+      "Şirket, bu bulguların bilimsel camia tarafından kabul görmesi için şeffaf bir süreç izleyeceğini açıkladı. Ham veriler bağımsız araştırmacıların incelemesine açılacak ve uzmanlar yapay zekâ tarafından üretilen çıktıları kendi yöntemleriyle doğrulayacak. Bu adım, yapay zekâ kaynaklı bilimsel çalışmaların güvenilirlik standardını yükseltmeye yönelik bir hamle olarak değerlendiriliyor.",
+      "OpenAI ayrıca, bilgisayar bilimi alanındaki etkilerin tartışılacağı bir konferansın finansmanını üstleneceğini duyurdu. Bu konferans, akademik çevrelerin yapay zekâ destekli bilimsel metodoloji üzerinde uzlaşma oluşturması için bir platform görevi görecek. Şirketin bu yaklaşımı, tek yönlü bir duyuru yerine iki yönlü bir diyalog kurma isteğini yansıtıyor.",
+      "Önümüzdeki süreçte, bu üç sonucun bağımsız incelemelerle ne oranda geçerlilik kazanacağı merak konusu olacak. Lean doğrulaması güçlü bir ilk adım olsa da nihai kelime, akademik hakem süreçlerinde söylenecek. Yapay zekânın bilimdeki rolü, bu tip doğrulanabilir ve bağımsız test edilebilir çalışmalara dayandıkça daha sağlam zeminler kazanacak."
+    ],
+    "comment": "OpenAI'ın ham verileri bağımsız incelemeye açma kararı, yapay zekâ kaynaklı bulgulara karşı mesafeli duran akademik çevrelerin güvenini kazanmak için atılmış zorunlu bir adımdır. Lean doğrulama aracı, matematiksel ispatların tutarlılığı için kritik bir araç olsa da, Üstel Zaman Hipotezi gibi temel varsayımların çürütülmesi, bilgisayar bilimi eğitim müfredatlarını ve mevcut algoritma tasarımlarını kökten etkileyebilir. Bu durum, kriptografi ve verimlilik araştırmaları yapan mühendisler için doğrudan bir risk ve fırsat alanı yaratır. Eğer bu sonuçlar bağımsız testlerde doğrulanırsa, yapay zekâ sadece bir araç olmaktan çıkıp keşif ortağı statüsüne yükselecek ve geleneksel teorik fiziğin çalışma yöntemlerini sorgulatmaya başlayacaktır.",
+    "editorNote": "Yapay zekâ ilk kez temel bir bilgisayar bilimi hipotezini çürüttü. Bu, sadece bir teknik başarı değil, bilimsel keşif metodolojisinin değiştiğinin alametidir.",
+    "tags": [
+      "OpenAI",
+      "yapay zeka",
+      "bilimsel keşif",
+      "matematik",
+      "kuantum fiziği",
+      "Lean doğrulama"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "OpenAI logo server room",
+    "source": "AA Güncel",
+    "sourceUrl": "https://www.aa.com.tr/tr/bilim-teknoloji/openaiin-yapay-zeka-modelleri-matematik-bilgisayar-bilimi-ve-fizikte-uc-bilimsel-sonuca-ulasti/4102696",
+    "image": "/kapak/2cd6a60c2d51eacb.webp",
+    "gorselKaynak": {
+      "yazar": "European Commission - Photographer: Aurore Martignoni",
+      "lisans": "CC BY 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg"
+    },
+    "publishedAt": "2026-10-27T14:58:12.000Z",
+    "generatedAt": "2026-10-27T15:00:41.467Z",
+    "breaking": true,
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg/1280px-Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "003cb389efbee7be",
     "title": "Batman emniyeti kurgu trafik kazası operasyonunda 43 kişiyi yakaladı",
     "slug": "batman-emniyeti-kurgu-trafik-kazasi-operasyonunda-43-kisiyi-yakaladi",
