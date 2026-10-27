@@ -230,35 +230,37 @@ dosya yoksa kısıtlama uygulanmaz ve tüm haberler yeniden açık olur.
 **Beklenen sonuç:** site haritası 5.487 → ~200 URL; 2-4 hafta içinde GSC'de
 "Dizinlenen" sayısının 58 → 150+ çıkması. Silinen sayfa yok, geri alınabilir.
 
-## 9) Marka kapakları (2026-10-26)
+## 9) Kapak görselleri (2026-10-26)
 
-Kapak fotoğrafları haberden habere farklı oran/typografi ile geliyordu; feed'de
-tutarsız görünüm tıklamayı düşürüyor. Artık indekse giren her haber için tek
-düzen kapak üretilir:
+Kapak fotoğrafları haberden habere farklı oran/kalitede geliyordu; feed'de
+tutarsız görünüm tıklamayı düşürüyor. Artık her haber için tek oranda, haberle
+**birebir alakalı** bir kapak üretilir:
 
 | Ne | Değer |
 | --- | --- |
 | Boyut / oran | **1280×720** (16:9) WebP, kart için 480 px varyant |
-| Düzen | Fotoğraf + alt gradyan + başlık (en çok 3 satır) + kategori etiketi + site işareti |
-| Kural | Fotoğraf sorguyla eşleşmiyorsa **fotoğraf hiç kullanılmaz**, tasarımlı kart üretilir |
+| Düzen | Tam kare fotoğraf + alt köşede küçük `haberinai` işareti + alt kenarda 6 px kırmızı şerit |
+| Fotoğraf kaynağı | 1) haberin çıktığı sitenin kendi kapak görseli (`og:image`) 2) veri dosyasındaki görsel (uygunluk denetimli) 3) stok arama |
+| Metin | **Görselin üstüne başlık basılmaz.** Başlık kartın/vitrinin kendi metninde; görsele ikinci kez yazmak fotoğrafı kirletiyor ve kırpılınca yarım görünüyor. |
 | Sosyal kart | Aynı kapak, wsrv üzerinden 1200×630 JPEG (WhatsApp/X için) |
 
-Fotoğrafın uygun sayılması için dosya adının arama sorgusuyla en az iki kelime
-eşleşmesi (veya sorgunun %75'i) gerekir; `thumbnail`, `wikipedia`, `logo`,
-`map`, `screenshot` gibi jenerik dosyalar doğrudan reddedilir. Gündem, Dünya,
-Spor ve Ekonomi gibi kategorilerde fotoğraf yalnızca başlıktaki özel ad (marka,
-kulüp, kişi) dosya adında geçiyorsa kullanılır — stok fotoğraf bu haberlerde
-neredeyse her zaman yanlış bağlam gösteriyor.
+İlk tercih kaynak sitenin kendi görselidir: o görsel haberin konusunu (cihaz,
+uygulama, kişi) doğru gösterir. Kaynak görsel alınamazsa veri dosyasındaki
+görsel kullanılır; burada dosya adının arama sorgusuyla en az iki kelime
+eşleşmesi (veya sorgunun %75'i) gerekir ve `thumbnail`, `logo`, `map`,
+`screenshot` gibi jenerik dosyalar reddedilir. Hiçbiri yoksa marka renkleriyle
+tasarımlı zemin üretilir (nadir).
 
 ```bash
 npm run kapak                # indekste açık haberler
 npm run kapak -- --gun=3     # son 3 gün
 npm run kapak -- --zorla     # kapak varsa yeniden üret
+npm run kapak -- --kart      # yalnızca tasarımlı zeminleri yenile
 node scripts/kapak-uret.mjs --varyant   # eksik 480 px varyantları tamamla
 ```
 
-Pipeline'da `indeks` adımından sonra tur başına en fazla 40 kapak üretilir;
-üretilenler `site/public/kapak/` altına yazılır ve commit'e girer.
+Pipeline'da `indeks` adımından sonra tur başına en fazla 60 kapak üretilir
+(`--gun=2`); üretilenler `site/public/kapak/` altına yazılır ve commit'e girer.
 
 ## Sınırlar
 

@@ -102,12 +102,13 @@ jobs:
           INDEKS_GUNLUK: ${{ vars.INDEKS_GUNLUK }}
         run: npm run indeks
 
-      # MARKA KAPAKLARI: indekse giren haberler icin 1280x720 kapak uretir
-      # (fotograf + baslik + kategori + logo). Fotograf habere uymuyorsa
-      # tasarimli kart uretilir; yanlis fotograf kullanilmaz.
+      # MARKA KAPAKLARI: indekse giren ve son 2 gunde yayinlanan haberler icin
+      # 1280x720 kapak uretir: haberin ciktigi sitenin KENDI fotografini kirpar,
+      # alt koseye kucuk "haberinai" isareti + alt kenara kirmizi serit basar.
+      # Gorselin ustune baslik yazilmaz. Fotograf bulunamazsa tasarimli kart.
       - name: Marka kapaklari
         continue-on-error: true
-        run: npm run kapak -- --limit=40
+        run: npm run kapak -- --gun=2 --limit=60
 
       - name: Degisiklikleri kaydet
         id: commit

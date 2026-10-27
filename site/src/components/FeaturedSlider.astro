@@ -251,7 +251,10 @@ const items = slides.map((a) => {
 
   .fs__link {
     display: grid;
-    grid-template-columns: 1.18fr 1fr;
+    /* Kapak 16:9 üretiliyor; vitrinde de tam oran korunur. Yan yana
+       düzende görselin kenarları kırpılıyordu (başlık yarım görünüyordu). */
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
     height: 100%;
     outline: none;
   }
@@ -264,7 +267,8 @@ const items = slides.map((a) => {
   .fs__media {
     position: relative;
     overflow: hidden;
-    min-height: 320px;
+    aspect-ratio: 16 / 9;
+    min-height: 0;
     background: var(--bg-soft);
   }
   .fs__media img {

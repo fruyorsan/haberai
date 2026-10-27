@@ -18,6 +18,8 @@
 //   npm run kapak -- --gun=3       → son 3 gün
 //   npm run kapak -- --limit=20    → en fazla 20
 //   npm run kapak -- --zorla       → kapak varsa da yeniden üret
+//   npm run kapak -- --kart        → yalnızca tasarımlı kartları yenile
+//                                    (fotoğraf aramaz, hızlıdır)
 //   npm run kapak -- --dry
 // ==========================================================================
 import fs from "node:fs";
@@ -43,6 +45,16 @@ const arg = (ad, varsayilan) => {
 };
 const dry = process.argv.includes("--dry");
 const zorla = process.argv.includes("--zorla");
+// --kart: fotoğraf aramayı tamamen atla, her hedef için tasarımlı kart üret.
+const sadeceKart = process.argv.includes("--kart");
+// --id=<haber id>: tek haberi yeniden üret (hata ayıklama).
+const tekId = process.argv.find((a) => a.startsWith("--id="))?.split("=")[1] || null;
+// --fotoyok: yalnızca fotoğrafı olmayan (tasarımlı zemin) kapakları yeniden dener.
+const sadeceFotoYok = process.argv.includes("--fotoyok");
+// --paralel=N: eşzamanlı indirme sayısı (varsayılan 6).
+const paralel = arg("paralel", 6);
+// DEBUG_KAPAK=1: her haber için hangi görselin neden seçildiğini yazar.
+const debug = process.env.DEBUG_KAPAK === "1";
 const gun = arg("gun", 0);
 const limit = arg("limit", 2000);
 
@@ -67,6 +79,14 @@ const esik = gun > 0 ? Date.now() - gun * 86400000 : 0;
 const hedefler = articles
   .filter((a) => {
     if (!a || !a.id) return false;
+    if (tekId) return a.id === tekId;
+    if (sadeceKart) {
+      // Yalnızca hâlihazırda tasarım kartı olan kapaklar yenilenir.
+      return a.kapak && a.kapak.foto === false && a.image?.startsWith(`${URL_TABANI}/`);
+    }
+    if (sadeceFotoYok) {
+      return a.kapak && a.kapak.foto === false;
+    }
     if (!zorla && typeof a.image === "string" && a.image.startsWith(`${URL_TABANI}/`)) return false;
     if (!a.image) return false;
     if (gun > 0) {
@@ -75,6 +95,11 @@ const hedefler = articles
     }
     return aktif.has(String(a.id));
   })
+  // En yeni haber önce: tur başına sınır varsa (CI'da 60) taze içerik kapsanır.
+  .sort(
+    (a, b) =>
+      Date.parse(b.publishedAt || b.generatedAt || 0) - Date.parse(a.publishedAt || a.generatedAt || 0)
+  )
   .slice(0, limit);
 
 console.log(
@@ -206,111 +231,110 @@ async function openverseAra(sorgu) {
 }
 
 
-/** Kaba genişlik tahmini: SVG'de metin ölçümü yok, karakter sınıfına göre. */
-function genislikTahmini(metin, punto) {
-  let toplam = 0;
-  for (const ch of metin) {
-    if (ch === " ") toplam += 0.27;
-    else if (/[A-ZÇĞİÖŞÜ]/.test(ch)) toplam += 0.64;
-    else if (/[a-zçğıöşü0-9]/.test(ch)) toplam += 0.53;
-    else if (/[.,:;!'’|]/.test(ch)) toplam += 0.26;
-    else toplam += 0.58;
-  }
-  return toplam * punto;
-}
-
-/** Başlığı en fazla `satir` satıra böler, sığmazsa son satırı üç noktayla keser. */
-function sar(metin, punto, azamiGenislik, satir = 3) {
-  const kelimeler = String(metin).trim().split(/\s+/).filter(Boolean);
+// Fotoğrafın üzerine YALNIZCA ince marka izleri basılır: alt kenarda 6 px
+// kırmızı şerit + sağ altta küçük "haberinai" yazısı. Başlık zaten kartın
+// yanında yazıyor; görselin üstüne ikinci kez başlık basmak fotoğrafı
+// kirletiyor ve kırpıldığında yarım metin görünüyor.
+// Metni kelime sınırında en fazla `enFazla` karakterlik satırlara böler.
+function sar(metin, enFazla) {
+  const kelimeler = String(metin || "").replace(/\s+/g, " ").trim().split(" ");
   const satirlar = [];
-  let mevcut = "";
-  for (const kelime of kelimeler) {
-    const aday = mevcut ? `${mevcut} ${kelime}` : kelime;
-    if (genislikTahmini(aday, punto) <= azamiGenislik || !mevcut) {
-      mevcut = aday;
-    } else {
-      satirlar.push(mevcut);
-      mevcut = kelime;
-      if (satirlar.length === satir) break;
+  let satir = "";
+  for (const k of kelimeler) {
+    if (!k) continue;
+    const aday = satir ? `${satir} ${k}` : k;
+    if (!satir || aday.length <= enFazla) satir = aday;
+    else {
+      satirlar.push(satir);
+      satir = k;
     }
   }
-  if (satirlar.length < satir && mevcut) satirlar.push(mevcut);
-
-  // Taşan satırları üç noktayla kes.
-  const kesik = satirlar.slice(0, satir);
-  if (satirlar.length > satir || (mevcut && satirlar.length === satir && kesik[satir - 1] !== mevcut)) {
-    let son = kesik[satir - 1] || "";
-    while (son.length > 1 && genislikTahmini(`${son}…`, punto) > azamiGenislik) {
-      son = son.slice(0, -1).trimEnd();
-    }
-    kesik[satir - 1] = `${son}…`;
-  }
-  return kesik;
+  if (satir) satirlar.push(satir);
+  return satirlar;
 }
 
-/** Başlık için en büyük sığan puntoyu seçer. */
-function puntoSec(baslik, azamiGenislik) {
-  for (const punto of [66, 60, 54, 48, 42]) {
-    const satirlar = sar(baslik, punto, azamiGenislik);
-    const sigar = satirlar.every((s) => genislikTahmini(s, punto) <= azamiGenislik);
-    if (sigar && satirlar.length <= 3) return { punto, satirlar };
+// Tasarımlı kartlar için başlık: en çok 3 satır, sığmazsa punto küçülür.
+function kartBasligi(baslik) {
+  const secenekler = [
+    { boyut: 66, harf: 27 },
+    { boyut: 58, harf: 31 },
+    { boyut: 50, harf: 37 },
+  ];
+  for (const s of secenekler) {
+    const satirlar = sar(baslik, s.harf);
+    if (satirlar.length <= 3) return { boyut: s.boyut, lh: Math.round(s.boyut * 1.22), satirlar };
   }
-  const punto = 42;
-  return { punto, satirlar: sar(baslik, punto, azamiGenislik) };
+  const satirlar = sar(baslik, 40).slice(0, 3);
+  satirlar[satirlar.length - 1] = satirlar[satirlar.length - 1].replace(/[\s,.;:!?]+$/, "") + "…";
+  return { boyut: 46, lh: 56, satirlar };
 }
 
-const kategoriAdi = (a) => String(a.category || "Haber").toLocaleUpperCase("tr");
-
-function kapakSvg(a, baslik) {
-  const kenar = 56;
-  const azamiGenislik = GENISLIK - kenar * 2 - 10;
-  const { punto, satirlar } = puntoSec(baslik, azamiGenislik);
-  const satirYuksekligi = Math.round(punto * 1.16);
-
-  // Başlık bloğu alttan yukarı yerleşir.
-  const tabanY = 620;
-  const blokUst = tabanY - (satirlar.length - 1) * satirYuksekligi - punto * 0.74;
-  const etiketY = Math.max(120, blokUst - 54);
-
-  const satirMetni = satirlar
-    .map(
-      (satir, i) =>
-        `<text x="${kenar}" y="${Math.round(tabanY - (satirlar.length - 1 - i) * satirYuksekligi)}" ` +
-        `font-size="${punto}" font-weight="700" fill="#ffffff" letter-spacing="-0.5">${XML(satir)}</text>`
-    )
-    .join("\n    ");
-
-  const chipMetin = XML(kategoriAdi(a));
-  const chipGenislik = Math.round(genislikTahmini(kategoriAdi(a), 22) + 34);
-
+function kapakSvg() {
+  const kenar = 34;
   return `<svg width="${GENISLIK}" height="${YUKSEKLIK}" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="alt" x1="0" y1="0" x2="0" y2="1">
+    <linearGradient id="kose" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#000000" stop-opacity="0"/>
-      <stop offset="0.45" stop-color="#000000" stop-opacity="0.55"/>
-      <stop offset="1" stop-color="#000000" stop-opacity="0.92"/>
-    </linearGradient>
-    <linearGradient id="ust" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#000000" stop-opacity="0.42"/>
-      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.62"/>
     </linearGradient>
   </defs>
-
-  <rect width="${GENISLIK}" height="200" fill="url(#ust)"/>
-  <rect y="${Math.max(0, etiketY - 210)}" width="${GENISLIK}" height="${YUKSEKLIK - Math.max(0, etiketY - 210)}" fill="url(#alt)"/>
-
+  <rect x="0" y="${YUKSEKLIK - 110}" width="${GENISLIK}" height="110" fill="url(#kose)"/>
+  <rect x="0" y="${YUKSEKLIK - 6}" width="${GENISLIK}" height="6" fill="#e11d2e"/>
   <g font-family="Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif">
-    <rect x="${kenar}" y="${etiketY}" width="${chipGenislik}" height="38" rx="6" fill="#d81f26"/>
-    <text x="${kenar + 17}" y="${etiketY + 26}" font-size="22" font-weight="700" fill="#ffffff" letter-spacing="1">${chipMetin}</text>
-
-    ${satirMetni}
-
-    <g opacity="0.92">
-      <rect x="${GENISLIK - kenar - 168}" y="42" width="168" height="42" rx="8" fill="#000000" fill-opacity="0.38"/>
-      <text x="${GENISLIK - kenar - 84}" y="70" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="-0.3">haberinai</text>
-    </g>
+    <rect x="${GENISLIK - kenar - 172}" y="${YUKSEKLIK - 66}" width="172" height="40" rx="8" fill="#000000" fill-opacity="0.42"/>
+    <rect x="${GENISLIK - kenar - 152}" y="${YUKSEKLIK - 57}" width="12" height="21" rx="2.5" fill="#e11d2e"/>
+    <text x="${GENISLIK - kenar - 130}" y="${YUKSEKLIK - 39}" font-size="22" font-weight="700" fill="#ffffff" letter-spacing="-0.3">haberinai</text>
   </g>
 </svg>`;
+}
+
+// Windows'ta antivirüs/indeksleyici yeni dosyayı bir an kilitleyebiliyor:
+// yazmayı birkaç kez dene, hepsi başarısız olursa hatayı yukarı ver.
+function yazDosya(yol, veri, deneme = 4) {
+  for (let i = 0; i < deneme; i++) {
+    try {
+      fs.writeFileSync(yol, veri);
+      return;
+    } catch (err) {
+      if (i === deneme - 1) throw err;
+    }
+  }
+}
+
+/** Kaynak makalenin kendi görseli: og:image / twitter:image. */
+async function kaynakGorselUrl(a) {
+  const adres = String(a.sourceUrl || "");
+  if (!/^https?:\/\//i.test(adres)) return null;
+  try {
+    const yanit = await fetch(adres, {
+      headers: {
+        "user-agent": "Mozilla/5.0 (compatible; HaberinAi/1.0; +https://haberinai.site)",
+        "accept-language": "tr,en;q=0.8",
+      },
+      redirect: "follow",
+      signal: AbortSignal.timeout(9000),
+    });
+    if (!yanit.ok) return null;
+    const html = (await yanit.text()).slice(0, 400000);
+    const kaliplar = [
+      /<meta[^>]+property=["']og:image(?::url)?["'][^>]+content=["']([^"']+)["']/i,
+      /<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image(?::url)?["']/i,
+      /<meta[^>]+name=["']twitter:image(?::src)?["'][^>]+content=["']([^"']+)["']/i,
+    ];
+    for (const kalip of kaliplar) {
+      const bulunan = kalip.exec(html)?.[1];
+      if (bulunan) {
+        const tam = new URL(bulunan.replace(/&amp;/g, "&"), adres).href;
+        // Site logosu / varsayılan paylaşım kartı haber görseli değildir.
+        if (/^https?:\/\//i.test(tam) && !/(logo|favicon|default|placeholder|share-?default|sprite)/i.test(tam)) {
+          return tam;
+        }
+      }
+    }
+    return null;
+  } catch {
+    return null;
+  }
 }
 
 // Fotoğrafı getir (Wikimedia 403 vermesin diye UA gönderilir).
@@ -344,10 +368,20 @@ async function kapakUret(a) {
     try {
       const veri = await gorselIndir(url);
       if (!veri) return null;
-      // 16:9 kırp; "attention" yüzü/konuyu merkeze almaya çalışır.
+      // Çok küçük görseller (logo, ikon, 300 px kare) kapak olmaz.
+      const bilgi = await sharp(veri).metadata();
+      if ((bilgi.width || 0) < 640 || (bilgi.height || 0) < 320) return null;
+      // "attention" büyük görsellerde çok pahalı (saniyelerce CPU). 4000 px'e
+      // kadar ilgi alanına göre kırp; daha büyüklerde merkez yeterli.
+      const konum =
+        (bilgi.width || 0) * (bilgi.height || 0) <= 16_000_000
+          ? sharp.strategy.attention
+          : "centre";
+      // 16:9 kırp.
       return await sharp(veri)
-        .resize(GENISLIK, YUKSEKLIK, { fit: "cover", position: sharp.strategy.attention })
-        .modulate({ saturation: 1.06 })
+        .resize(GENISLIK, YUKSEKLIK, { fit: "cover", position: konum })
+        .modulate({ saturation: 1.1, brightness: 1.02 })
+        .sharpen({ sigma: 0.6 })
         .toBuffer();
     } catch {
       return null;
@@ -358,16 +392,38 @@ async function kapakUret(a) {
   let yeniAtif = null;
   let fotoVar = false;
 
-  const fotoIzinli =
-    uygunMu(kaynak, sorgu) &&
-    (FOTO_KATEGORI.has(String(a.category || "")) || ozelAdUyuyor(kaynak, a.title));
-
-  if (fotoIzinli) {
-    taban = await indir(kaynak);
-    fotoVar = Boolean(taban);
+  // 1) KAYNAK SİTENİN KENDİ GÖRSELİ (og:image).
+  // Haberin çıktığı sayfadaki kapak görseli tanım gereği başlıkla alakalı:
+  // Webtekno/ShiftDelete gibi siteler ürünü/personeli doğru fotoğrafla veriyor.
+  // Bu yüzden ilk tercih bu; stok arama yalnızca o bulunamazsa devreye girer.
+  if (!sadeceKart && String(a.sourceUrl || "").startsWith("http")) {
+    const kaynakFoto = await kaynakGorselUrl(a);
+    if (debug) {
+      console.log(
+        `   · ${a.id} kaynak görsel: ${kaynakFoto ? kaynakFoto.slice(0, 80) : "BULUNAMADI"}`
+      );
+    }
+    if (kaynakFoto && kaynakFoto !== a.image) {
+      taban = await indir(kaynakFoto);
+      if (taban) fotoVar = true;
+      else if (debug) console.log(`   · ${a.id} kaynak görsel indirilemedi`);
+    }
   }
 
-  if (!taban && FOTO_KATEGORI.has(String(a.category || ""))) {
+  // 2) Haberin veri dosyasındaki görsel (kaynak görsel yoksa/engellendiyse).
+  // Wikimedia'dan gelen alakasız kareleri kesmek için uygunluk denetimi var.
+  if (!taban) {
+    const fotoIzinli =
+      !sadeceKart &&
+      uygunMu(kaynak, sorgu) &&
+      (FOTO_KATEGORI.has(String(a.category || "")) || ozelAdUyuyor(kaynak, a.title));
+    if (fotoIzinli) {
+      taban = await indir(kaynak);
+      fotoVar = Boolean(taban);
+    }
+  }
+
+  if (!taban && !sadeceKart && FOTO_KATEGORI.has(String(a.category || ""))) {
     try {
       const ov = await openverseAra(sorgu);
       if (ov) {
@@ -389,22 +445,55 @@ async function kapakUret(a) {
   }
 
   if (!taban) {
-    // Fotoğraf yoksa/uygun değilse markalı zemin: koyu lacivert + marka izleri
-    // + kategori baş harfi (boş kare "yükleniyor" gibi görünmesin).
+    // Fotoğraf yoksa/uygun değilse tasarımlı zemin. Boş bir gradyan "yer
+    // tutucu" gibi duruyordu; bu yüzden zemine kategori etiketi + başlık
+    // basılır (fotoğraflı kapaklarda metin YOK, orada fotoğraf konuşur).
+    const { boyut, lh, satirlar } = kartBasligi(a.title);
+    const ilkY = 330 - ((satirlar.length - 1) * lh) / 2;
+    const kategori = XML(String(a.category || "").toLocaleUpperCase("tr"));
     const harf = XML((a.category || "H").trim().charAt(0).toLocaleUpperCase("tr"));
+    const baslikSvg = satirlar
+      .map(
+        (s, i) =>
+          `<text x="64" y="${Math.round(ilkY + i * lh)}" font-size="${boyut}" font-weight="700" fill="#ffffff" letter-spacing="-0.8">${XML(s)}</text>`
+      )
+      .join("\n              ");
     taban = await sharp({
-      create: { width: GENISLIK, height: YUKSEKLIK, channels: 3, background: "#14181f" },
+      create: { width: GENISLIK, height: YUKSEKLIK, channels: 3, background: "#0a0f1a" },
     })
       .composite([
         {
           input: Buffer.from(
             `<svg width="${GENISLIK}" height="${YUKSEKLIK}" xmlns="http://www.w3.org/2000/svg">
-              <rect x="0" y="0" width="${GENISLIK}" height="${YUKSEKLIK}" fill="#14181f"/>
-              <circle cx="1080" cy="120" r="240" fill="#d81f26" fill-opacity="0.22"/>
-              <circle cx="120" cy="660" r="200" fill="#d81f26" fill-opacity="0.12"/>
-              <text x="1210" y="470" font-family="Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif"
-                    font-size="520" font-weight="700" fill="#ffffff" fill-opacity="0.06"
+              <defs>
+                <linearGradient id="zemin" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#0a0f1a"/>
+                  <stop offset="0.62" stop-color="#141a29"/>
+                  <stop offset="1" stop-color="#1b1020"/>
+                </linearGradient>
+                <linearGradient id="kama" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#e11d2e" stop-opacity="0.92"/>
+                  <stop offset="1" stop-color="#8d1020" stop-opacity="0.55"/>
+                </linearGradient>
+                <pattern id="izgara" width="44" height="44" patternUnits="userSpaceOnUse">
+                  <path d="M44 0H0V44" fill="none" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
+                </pattern>
+              </defs>
+              <rect width="${GENISLIK}" height="${YUKSEKLIK}" fill="url(#zemin)"/>
+              <rect width="${GENISLIK}" height="${YUKSEKLIK}" fill="url(#izgara)"/>
+              <!-- sağdan giren kırmızı kama -->
+              <path d="M ${GENISLIK + 40} -40 L ${GENISLIK + 40} ${YUKSEKLIK + 40} L 690 ${YUKSEKLIK + 40} L 1030 -40 Z" fill="url(#kama)"/>
+              <!-- sarı ince çizgi -->
+              <path d="M 1000 -40 L 660 ${YUKSEKLIK + 40}" stroke="#ffd23f" stroke-width="7" stroke-opacity="0.9" fill="none"/>
+              <!-- ikinci, koyu kama (derinlik) -->
+              <path d="M ${GENISLIK + 40} -40 L ${GENISLIK + 40} ${YUKSEKLIK + 40} L 1010 ${YUKSEKLIK + 40} L 1215 -40 Z" fill="#05070d" fill-opacity="0.42"/>
+              <text x="1252" y="556" font-family="Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif"
+                    font-size="560" font-weight="700" fill="#ffffff" fill-opacity="0.10"
                     text-anchor="end">${harf}</text>
+              <g font-family="Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif">
+                ${kategori ? `<text x="64" y="${Math.round(ilkY - 58)}" font-size="25" font-weight="700" fill="#ffd23f" letter-spacing="3.4">${kategori}</text>` : ""}
+                ${baslikSvg}
+              </g>
             </svg>`
           ),
         },
@@ -413,7 +502,8 @@ async function kapakUret(a) {
       .toBuffer();
   }
 
-  const svg = kapakSvg(a, a.title || "Haber");
+  if (debug) console.log(`   · ${a.id} taban hazır: ${taban ? taban.length : 0} bayt`);
+  const svg = kapakSvg();
   const bilesik = await sharp(taban)
     .composite([{ input: Buffer.from(svg) }])
     .webp({ quality: KALITE, effort: 4 })
@@ -421,14 +511,46 @@ async function kapakUret(a) {
 
   if (!dry) {
     fs.mkdirSync(CIKTI_DIZIN, { recursive: true });
-    fs.writeFileSync(dosya, bilesik);
+    yazDosya(dosya, bilesik);
+    if (debug) console.log(`   · ${a.id} kapak yazıldı (${bilesik.length} bayt)`);
     // Küçük varyant: liste/kart görünümü için (~20 KB).
-    await sharp(bilesik)
+    const kucukVeri = await sharp(bilesik)
       .resize(KUCUK_GENISLIK, Math.round((KUCUK_GENISLIK * YUKSEKLIK) / GENISLIK))
       .webp({ quality: 78, effort: 4 })
-      .toFile(dosya.replace(/\.webp$/, "-480.webp"));
+      .toBuffer();
+    yazDosya(dosya.replace(/\.webp$/, "-480.webp"), kucukVeri);
+    if (debug) console.log(`   · ${a.id} küçük varyant yazıldı`);
   }
   return { url: `${URL_TABANI}/${a.id}.webp`, atif: yeniAtif, foto: fotoVar };
+}
+
+// --------------------------------------------------------- marka izi modu
+// Var olan kapaklara (yeni tasarım öncesi üretilmiş olanlara) yalnızca marka
+// izini ekler; fotoğrafı yeniden indirmez. Tek seferlik geçiş için.
+if (process.argv.includes("--marka")) {
+  const dosyalar = fs.readdirSync(CIKTI_DIZIN).filter((f) => f.endsWith(".webp") && !f.endsWith("-480.webp"));
+  let sayi = 0;
+  let atlanan = 0;
+  await havuz(dosyalar, 3, async (f) => {
+    const yol = path.join(CIKTI_DIZIN, f);
+    try {
+      const veri = await sharp(yol)
+        .composite([{ input: Buffer.from(kapakSvg()) }])
+        .webp({ quality: KALITE, effort: 4 })
+        .toBuffer();
+      yazDosya(yol, veri);
+      await sharp(veri)
+        .resize(KUCUK_GENISLIK, Math.round((KUCUK_GENISLIK * YUKSEKLIK) / GENISLIK))
+        .webp({ quality: 78, effort: 4 })
+        .toFile(yol.replace(/\.webp$/, "-480.webp"));
+      sayi++;
+    } catch (err) {
+      atlanan++;
+      console.warn(`   ! ${f}: ${err.message}`);
+    }
+  });
+  console.log(`${sayi} kapağa marka izi eklendi${atlanan ? `, ${atlanan} atlandı` : ""}.`);
+  process.exit(0);
 }
 
 // ------------------------------------------------------- küçük varyant modu
@@ -456,7 +578,19 @@ if (process.argv.includes("--varyant")) {
 let uretilen = 0;
 let hata = 0;
 
-for (const a of hedefler) {
+/** Basit iş havuzu: ağ beklemesi çok olduğu için kapaklar paralel üretilir. */
+async function havuz(dizi, esZamanli, islev) {
+  let imlec = 0;
+  const isciler = Array.from({ length: Math.min(esZamanli, dizi.length) }, async () => {
+    while (imlec < dizi.length) {
+      const oge = dizi[imlec++];
+      await islev(oge);
+    }
+  });
+  await Promise.all(isciler);
+}
+
+await havuz(hedefler, paralel, async (a) => {
   const eski = a.image;
   const taban = a.kapak?.kaynak || eski;
   try {
@@ -464,7 +598,7 @@ for (const a of hedefler) {
     console.log(`${dry ? "[dry] " : ""}${a.title.slice(0, 70)} → ${sonuc.url}`);
     if (!dry) {
       a.image = sonuc.url;
-      a.kapak = { v: 1, kaynak: taban, foto: sonuc.foto };
+      a.kapak = { v: 2, kaynak: taban, foto: sonuc.foto };
       if (sonuc.atif) a.gorselKaynak = sonuc.atif;
     }
     uretilen++;
@@ -472,7 +606,7 @@ for (const a of hedefler) {
     hata++;
     console.warn(`  ! ${a.id}: ${err.message}`);
   }
-}
+});
 
 if (!dry && uretilen) {
   fs.writeFileSync(ARTICLES, JSON.stringify(articles, null, 2).replace(/\n/g, satirSonu) + satirSonu);
