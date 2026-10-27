@@ -41,6 +41,10 @@ const PENCERE_GUN = Number(process.env.INDEKS_PENCERE_GUN || 45);
 const ESIK = {
   /** Gövde (karakter). ~250 kelime. */
   govde: Number(process.env.INDEKS_MIN_GOVDE ?? 1200),
+  /** En az paragraf sayısı (gövde). */
+  paragraf: Number(process.env.INDEKS_MIN_PARAGRAF ?? 3),
+  /** Her paragrafın en az karakteri (en az `paragraf` kadarı dolu olmalı). */
+  paragrafKarakter: Number(process.env.INDEKS_MIN_PARAGRAF_KARAKTER ?? 120),
   /** En az madde sayısı (keyPoints). */
   madde: Number(process.env.INDEKS_MIN_MADDE ?? 3),
   /** Özet (karakter). */
@@ -75,6 +79,44 @@ const metin = (v) => {
   return String(v ?? "").replace(/\s+/g, " ").trim();
 };
 
+/** Gövde paragrafları (boş olanlar atılır). */
+const paragraflar = (a) =>
+  (Array.isArray(a?.body) ? a.body : []).map(metin).filter(Boolean);
+
+/** Karşılaştırma için sadeleştirilmiş metin (noktalama ve büyük/küçük farkı yok). */
+const sadeles = (s) =>
+  metin(s)
+    .toLocaleLowerCase("tr")
+    .replace(/[^\p{L}\p{N}\s]+/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+const kelimeler = (s) => sadeles(s).split(" ").filter(Boolean);
+
+/** İki metin arasında `n` kelimelik birebir ortak dizi var mı? */
+function ortakDizi(a, b, n = 8) {
+  const wa = kelimeler(a);
+  const wb = kelimeler(b);
+  if (wa.length < n || wb.length < n) return false;
+  const kume = new Set();
+  for (let i = 0; i + n <= wb.length; i++) kume.add(wb.slice(i, i + n).join(" "));
+  for (let i = 0; i + n <= wa.length; i++) {
+    if (kume.has(wa.slice(i, i + n).join(" "))) return true;
+  }
+  return false;
+}
+
+/** İki metin aynı ya da biri diğerinin neredeyse tamamı mı? */
+function ayniMetin(a, b) {
+  const x = sadeles(a);
+  const y = sadeles(b);
+  if (!x || !y) return false;
+  if (x === y) return true;
+  const kisa = x.length <= y.length ? x : y;
+  const uzun = x.length <= y.length ? y : x;
+  return kisa.length >= 120 && uzun.includes(kisa);
+}
+
 /**
  * Telif güvenli görsel: yalnızca Wikimedia Commons veya sitenin kendi yerel
  * görseli. Kaynak haber sitelerinden alınmış og:image'lar çekirdeğe giremez
@@ -91,11 +133,13 @@ const guvenliGorsel = (u) =>
  */
 function kalitePuani(a) {
   const govde = Math.min(metin(a.body).length, 6000);
+  const govdeParagraf = paragraflar(a);
   const maddeler = Array.isArray(a.keyPoints) ? a.keyPoints.length : 0;
   const etiket = Array.isArray(a.tags) ? a.tags.length : 0;
 
   let p = 0;
   p += (govde / 1000) * 30; // 1.200 karakter ≈ 36 puan, 3.000 ≈ 90
+  p += Math.min(govdeParagraf.length, 7) * 2;
   p += Math.min(maddeler, 6) * 8;
   p += Math.min(metin(a.summary).length, 400) / 20;
   p += Math.min(metin(a.comment).length, 600) / 30;
@@ -115,12 +159,44 @@ function kalitePuani(a) {
 
 /** Haber vitrine girmeye uygun mu? Uygun değilse nedenini döndürür. */
 function kapisi(a) {
-  const govde = metin(a.body).length;
+  const govdeMetni = metin(a.body);
+  const govde = govdeMetni.length;
   if (govde < ESIK.govde) return "kısa gövde";
+
+  const govdeParagraf = paragraflar(a);
+  if (govdeParagraf.length < ESIK.paragraf) return "paragraf yapısı zayıf";
+  const doluParagraf = govdeParagraf.filter((p) => p.length >= ESIK.paragrafKarakter).length;
+  if (doluParagraf < ESIK.paragraf) return "kısa paragraflar";
+
+  // Aynı cümlenin/paragrafın iç tekrarı: metni şişirilmiş görünümden koparır.
+  for (let i = 0; i < govdeParagraf.length; i++) {
+    for (let j = i + 1; j < govdeParagraf.length; j++) {
+      if (ayniMetin(govdeParagraf[i], govdeParagraf[j])) return "tekrarlı paragraf";
+    }
+  }
+
   if ((Array.isArray(a.keyPoints) ? a.keyPoints.length : 0) < ESIK.madde) return "maddeli özet yok";
-  if (metin(a.summary).length < ESIK.ozet) return "kısa özet";
-  if (metin(a.comment).length < ESIK.yorum) return "özgün yorum yok";
-  if (metin(a.editorNote).length < ESIK.not) return "editör notu yok";
+
+  const ozet = metin(a.summary);
+  if (ozet.length < ESIK.ozet) return "kısa özet";
+  // Özet, gövdenin ilk paragrafının kopyası ya da gövdeden uzun bir dizi
+  // taşıyorsa "özgün özet" değildir; vitrine alınmaz.
+  if (govdeParagraf.some((p) => ayniMetin(ozet, p)) || ortakDizi(ozet, govdeMetni, 8)) {
+    return "özet gövdeyle aynı";
+  }
+
+  const yorum = metin(a.comment);
+  if (yorum.length < ESIK.yorum) return "özgün yorum yok";
+  // Yorum; özet veya gövdeden uzun bir cümle dizisi kopyalıyorsa analiz değil
+  // tekrardır. (Yorumun kendi yargısı ve somut bir ayrıntı içermesi beklenir.)
+  if (ortakDizi(yorum, `${ozet} ${govdeMetni}`, 8)) return "yorum özgün değil";
+
+  const not = metin(a.editorNote);
+  if (not.length < ESIK.not) return "editör notu yok";
+  if (ayniMetin(not, ozet) || ayniMetin(not, yorum) || ortakDizi(not, ozet, 8)) {
+    return "editör notu özetle aynı";
+  }
+
   if (typeof a.image !== "string" || !a.image) return "fotoğraf yok";
   if (!guvenliGorsel(a.image)) return "telifli görsel";
   if (isJunkArticle(a)) return "spam başlık";

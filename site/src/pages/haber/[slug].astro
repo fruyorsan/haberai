@@ -6,8 +6,9 @@ import ShareButtons from "../../components/ShareButtons.astro";
 import PushCTA from "../../components/PushCTA.astro";
 import DevamHaber from "../../components/DevamHaber.astro";
 import HaberFigur from "../../components/HaberFigur.astro";
+import HaberGuven from "../../components/HaberGuven.astro";
 import Yorumlar from "../../components/Yorumlar.astro";
-import { getArticles, getYayinArticles, formatDate, publishedISO, imageUrl, imageSrcset, socialImageUrl, tagUrl, slugify } from "../../lib/articles.js";
+import { getArticles, getYayinArticles, formatDate, publishedISO, imageUrl, imageSrcset, socialImageUrl, tagUrl, slugify, kategoriUrl } from "../../lib/articles.js";
 import { indeksliMi } from "../../lib/indeks.js";
 import { kapakKaynagi } from "../../lib/kapak.js";
 import { ADSENSE_SLOTS, ONESIGNAL_APP_ID, siteOrigin } from "../../lib/site-meta.js";
@@ -22,6 +23,11 @@ export function getStaticPaths() {
 const { article } = Astro.props;
 const all = getYayinArticles();
 const date = formatDate(publishedISO(article));
+
+// Reklam yalnızca dizine açık (kalite kapısını geçmiş) haberlerde gösterilir.
+// noindex/thin sayfalarda reklam göstermek AdSense'in "düşük değerli içerik"
+// değerlendirmesini besler; ayrıca haber başına en fazla iki birim tutulur.
+const reklamAcik = indeksliMi(article);
 
 // İlgili haberler: yalnızca kategoriye bakmak geniş kategorilerde (Gündem gibi)
 // konuyla ilgisiz "en son" haberleri getiriyordu. Sıralama artık önce ortak
@@ -132,9 +138,6 @@ for (const aday of hamAdaylar) {
     alt: `${article.title} — haber detayı`,
     altyazi: "",
     caption: article.title,
-    credit: article.source,
-    href: article.sourceUrl || "",
-    hrefLabel: "Haber kaynağı",
     tur: "haber",
   });
 }
@@ -198,21 +201,31 @@ const jsonLd = {
     width: 1200,
     height: 630,
   },
-  // Görsel atfı arayüzde gösterilmez; lisans gereği yapısal veride ve
-  // görselin bağlantılı Commons dosya sayfasında korunur.
-  creditText: article.source ? `${article.source} · HaberinAi` : undefined,
-  isBasedOn: article.sourceUrl,
+  // Haber, HaberinAi editör masasının kendi özeti ve anlatımıyla yayımlanır;
+  // yapısal veride başka bir yayıncıya "dayanma" (isBasedOn/citation) veya
+  // kaynak atfı bildirilmez. Şeffaflık; yayın ilkeleri, düzeltme politikası,
+  // yazar/yayıncı kimliği ve görünür "Bu haber hakkında" kutusuyla kurulur.
+  publishingPrinciples: new URL("/yayin-ilkeleri/", site).href,
+  correctionsPolicy: new URL("/yayin-ilkeleri/", site).href,
   isAccessibleForFree: true,
   datePublished: publishedIso,
   dateModified: modifiedIso,
   articleSection: article.category,
   keywords: (article.tags || []).join(", "),
   articleBody: body.length ? body.join("\n\n") : article.summary,
-  author: { "@type": "NewsMediaOrganization", name: "HaberinAi Haber Merkezi", url: new URL("/kunye/", site).href },
+  author: {
+    "@type": "NewsMediaOrganization",
+    "@id": `${new URL("/kunye/", site).href}#yayinci`,
+    name: "HaberinAi Haber Merkezi",
+    url: new URL("/kunye/", site).href,
+  },
   publisher: {
     "@type": "Organization",
+    "@id": `${new URL("/kunye/", site).href}#yayinci`,
     name: "HaberinAi",
     url: new URL("/", site).href,
+    publishingPrinciples: new URL("/yayin-ilkeleri/", site).href,
+    masthead: new URL("/kunye/", site).href,
     // Google yayıncı logosunu KARE ve en az 112 px ister; kare PNG ikon
     // (512x512) bu yüzden SVG yerine kullanılır — marka panelinde/News
     // sonuçlarında logo görünür.
@@ -239,7 +252,7 @@ const breadcrumbLd = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Ana Sayfa", item: new URL("/", site).href },
-    { "@type": "ListItem", position: 2, name: article.category, item: new URL(`/kategori/${article.categorySlug}/`, site).href },
+    { "@type": "ListItem", position: 2, name: article.category, item: new URL(kategoriUrl(article), site).href },
     { "@type": "ListItem", position: 3, name: article.title, item: articleUrl },
   ],
 };
@@ -274,7 +287,7 @@ const breadcrumbLd = {
       <nav class="crumbs">
         <a href="/">Ana Sayfa</a>
         <span>/</span>
-        <a href={`/kategori/${article.categorySlug}/`}>{article.category}</a>
+        <a href={kategoriUrl(article)}>{article.category}</a>
       </nav>
 
       <div class="post__top">
@@ -415,14 +428,14 @@ const breadcrumbLd = {
                     <HaberFigur
                       url={foto.url}
                       baslik={foto.caption || article.title}
-                      kaynak={article.sourceUrl ? { sayfa: article.sourceUrl } : undefined}
                       altyazi={foto.altyazi || undefined}
                       alt={foto.alt || `${article.title} — haber fotoğrafı`}
                     />
                   )}
 
-                  {/* Gövde ortası reklamı: 2. paragraftan sonra, yeterince uzun haberlerde (ShiftDelete tarzı in-article) */}
-                  {i === 1 && body.length >= 4 && (
+                  {/* Gövde ortası reklamı: 2. paragraftan sonra, yeterince uzun ve
+                      dizine açık haberlerde (ShiftDelete tarzı in-article). */}
+                  {reklamAcik && i === 1 && body.length >= 4 && (
                     <AdSlot slot={ADSENSE_SLOTS.makale2} format="fluid" layout="in-article" label="Sponsorlu" />
                   )}
                 </Fragment>
@@ -454,7 +467,7 @@ const breadcrumbLd = {
           </section>
         )}
 
-        <AdSlot slot={ADSENSE_SLOTS.makale} label="Sponsorlu" />
+        {reklamAcik && <AdSlot slot={ADSENSE_SLOTS.makale} label="Sponsorlu" />}
       </div>
 
       {article.tags?.length > 0 && (
@@ -467,6 +480,7 @@ const breadcrumbLd = {
         </div>
       )}
 
+      <HaberGuven article={article} publishedIso={publishedIso} modifiedIso={modifiedIso} />
     </article>
 
     {/* Yazı sonu bildirim bloğu (alt paylaşım kutusu kaldırıldı; paylaşım üst barda). */}
@@ -535,8 +549,6 @@ const breadcrumbLd = {
         </div>
       </section>
     )}
-
-    <AdSlot slot={ADSENSE_SLOTS.liste} label="Sponsorlu" />
   </div>
 
   <script>
@@ -833,7 +845,7 @@ const breadcrumbLd = {
     color: rgba(255, 255, 255, 0.9);
     text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
   }
-  /* Kapak fotoğrafının altına hafif karartma: kaynak etiketi her fotoğrafta okunur */
+  /* Kapak fotoğrafının altına hafif karartma: kategori etiketi her fotoğrafta okunur */
   .post__veil {
     position: absolute;
     z-index: 2;
@@ -1229,7 +1241,7 @@ const breadcrumbLd = {
       height: 46px;
       padding: 0 18px;
     }
-    /* Kırıntı (breadcrumb) ve kaynak bağlantıları parmakla seçilebilsin. */
+    /* Kırıntı (breadcrumb) ve etiket bağlantıları parmakla seçilebilsin. */
     .crumbs {
       gap: 4px 10px;
     }
@@ -1238,6 +1250,25 @@ const breadcrumbLd = {
       display: inline-flex;
       align-items: center;
       min-height: 36px;
+    }
+    /* Etiketler mobilde tek satırda yatay kaydırılsın: 3 satır yer kaplamasın. */
+    .post__tags {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 6px;
+      margin: 16px 0;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .post__tags::-webkit-scrollbar {
+      display: none;
+    }
+    .post__tag {
+      flex: 0 0 auto;
+      min-height: 34px;
+      padding: 0 12px;
+      font-size: 0.78rem;
     }
     .post__ph-note {
       font-size: 0.75rem;

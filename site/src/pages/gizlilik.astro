@@ -2,12 +2,26 @@
 import Base from "../layouts/Base.astro";
 import { CONTACT_EMAIL } from "../lib/site-meta.js";
 
-const updated = "15 Ekim 2026";
+const origin = Astro.site ? String(Astro.site).replace(/\/+$/, "") : "https://haberinai.site";
+const updated = "27 Ekim 2026";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Gizlilik ve Çerez Politikası — HaberinAi",
+  description:
+    "HaberinAi gizlilik, çerez, Google AdSense ve reklam politikası; KVKK kapsamındaki haklar.",
+  url: `${origin}/gizlilik/`,
+  dateModified: "2026-10-27",
+  publisher: { "@type": "Organization", name: "HaberinAi", url: `${origin}/` },
+};
 ---
 
 <Base
   title="Gizlilik ve Çerez Politikası — HaberinAi"
   description="HaberinAi gizlilik, çerez ve reklam politikası."
+  canonical={`${origin}/gizlilik/`}
+  schema={schema}
 >
   <div class="container prose">
     <h1>Gizlilik ve Çerez Politikası</h1>
@@ -76,6 +90,27 @@ const updated = "15 Ekim 2026";
       HaberinAi bu ağların çerezlerini doğrudan kontrol edemez.
     </p>
 
+    <h3>Reklam politikamız</h3>
+    <ul>
+      <li>
+        Reklamlar yalnızca dizine açık ve editoryal kalite kapısını geçmiş sayfalarda gösterilir.
+        Arama motorlarına kapalı (noindex) sayfalarda reklam yüklenmez.
+      </li>
+      <li>
+        Bir haber sayfasında en fazla iki reklam birimi bulunur; reklamlar haber metninden
+        "Sponsorlu" etiketiyle ayrılır ve okuru yanıltacak biçimde yerleştirilmez.
+      </li>
+      <li>
+        Reklamların kişiselleştirilmesi ve ölçümü, çerez tercihinize bağlıdır. "Kabul et"
+        demeden önce <code>ad_storage</code>, <code>ad_user_data</code> ve
+        <code>ad_personalization</code> sinyalleri <strong>reddedildi</strong> kalır.
+      </li>
+      <li>
+        Reklam verenlerin haber seçimine, başlığa, özete veya yorumlara müdahalesi kabul
+        edilmez. Sponsorlu içerikler açıkça etiketlenir.
+      </li>
+    </ul>
+
     <h2>5. Yorumlar</h2>
     <p>
       Yorumlar site içinde çalışır ve <strong>hesap açmanız gerekmez</strong>. Yorum
@@ -86,11 +121,11 @@ const updated = "15 Ekim 2026";
       isterseniz iletişim adresinden bize ulaşabilirsiniz.
     </p>
 
-    <h2>6. Üçüncü Taraf Bağlantılar ve Kaynaklar</h2>
+    <h2>6. Üçüncü Taraf Bağlantılar</h2>
     <p>
-      Haberlerde kaynak sitelere bağlantılar bulunur. Bu sitelerin içeriğinden ve gizlilik
-      uygulamalarından ilgili siteler sorumludur. Bir bağlantıya tıkladığınızda o sitenin
-      politikaları geçerli olur.
+      Haberlerde ve sayfa düzeninde üçüncü taraf sitelere bağlantılar bulunabilir. Bu sitelerin
+      içeriğinden ve gizlilik uygulamalarından ilgili siteler sorumludur. Bir bağlantıya
+      tıkladığınızda o sitenin politikaları geçerli olur.
     </p>
 
     <h2>7. Çocukların Gizliliği</h2>
@@ -132,6 +167,10 @@ const updated = "15 Ekim 2026";
   .prose h2 {
     margin-top: 32px;
     font-size: 1.22rem;
+  }
+  .prose h3 {
+    margin-top: 22px;
+    font-size: 1.02rem;
   }
   .prose p,
   .prose li {

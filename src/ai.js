@@ -277,25 +277,73 @@ function allExhaustedError(lastErr) {
 }
 
 // Üretilen içerikte eksik kalan alanlar. Telif filtresi bir cümleyi sildiğinde
-// alan tamamen boş kalabilir; o durumda yeniden üretim istenir.
-function eksikAlanlar(ai) {
-  const eksik = [];
-  if (String(ai.summary || "").trim().length < 40) eksik.push("summary");
-  if (String(ai.comment || "").trim().length < 40) eksik.push("comment");
-  if (String(ai.editorNote || "").trim().length < 10) eksik.push("editorNote");
-  const govdeMetni = (Array.isArray(ai.body) ? ai.body : [])
-    .filter(Boolean)
-    .join(" ")
+// alan tamamen boş kalabilir; o durumda yeniden üretim istenir. Eşikler yayın
+// çekirdeğiyle (src/indeks.js) uyumludur: ince gövde, kopya özet veya tekrar
+// eden yorum vitrine giremez.
+const sadeles = (s) =>
+  String(s || "")
+    .toLocaleLowerCase("tr")
+    .replace(/[^\p{L}\p{N}\s]+/gu, " ")
     .replace(/\s+/g, " ")
     .trim();
-  if (!govdeMetni.length) eksik.push("body");
-  // Kalite kapısıyla aynı eşik: ince gövde yeniden üretim ister.
-  else if (govdeMetni.length < 1200) eksik.push("govde-kisa");
-  if (!(ai.keyPoints || []).filter(Boolean).length) eksik.push("keyPoints");
+
+const kelimeler = (s) => sadeles(s).split(" ").filter(Boolean);
+
+function ortakDizi(a, b, n = 8) {
+  const wa = kelimeler(a);
+  const wb = kelimeler(b);
+  if (wa.length < n || wb.length < n) return false;
+  const kume = new Set();
+  for (let i = 0; i + n <= wb.length; i++) kume.add(wb.slice(i, i + n).join(" "));
+  for (let i = 0; i + n <= wa.length; i++) {
+    if (kume.has(wa.slice(i, i + n).join(" "))) return true;
+  }
+  return false;
+}
+
+function ayniMetin(a, b) {
+  const x = sadeles(a);
+  const y = sadeles(b);
+  if (!x || !y) return false;
+  if (x === y) return true;
+  const kisa = x.length <= y.length ? x : y;
+  const uzun = x.length <= y.length ? y : x;
+  return kisa.length >= 120 && uzun.includes(kisa);
+}
+
+function eksikAlanlar(ai) {
+  const eksik = [];
+  const summary = String(ai.summary || "").trim();
+  const comment = String(ai.comment || "").trim();
+  const editorNote = String(ai.editorNote || "").trim();
+  const paragraflar = (Array.isArray(ai.body) ? ai.body : [])
+    .map((p) => String(p || "").trim())
+    .filter(Boolean);
+  const govdeMetni = paragraflar.join(" ").replace(/\s+/g, " ").trim();
+
+  if (summary.length < 110) eksik.push("summary");
+  if (comment.length < 140) eksik.push("comment");
+  if (editorNote.length < 40) eksik.push("editorNote");
+  if (!paragraflar.length) eksik.push("body");
+  else {
+    // Kalite kapısıyla aynı eşik: ince gövde yeniden üretim ister.
+    if (govdeMetni.length < 1200) eksik.push("govde-kisa");
+    if (paragraflar.length < 4) eksik.push("govde-paragraf");
+    if (paragraflar.filter((p) => p.length >= 120).length < 3) eksik.push("govde-paragraf-kisa");
+    if (summary.length >= 110 && (paragraflar.some((p) => ayniMetin(summary, p)) || ortakDizi(summary, govdeMetni, 8))) {
+      eksik.push("ozet-tekrar");
+    }
+    if (comment.length >= 140 && ortakDizi(comment, `${summary} ${govdeMetni}`, 8)) {
+      eksik.push("yorum-tekrar");
+    }
+  }
+  if ((ai.keyPoints || []).filter(Boolean).length < 3) eksik.push("keyPoints");
   return eksik;
 }
 
-const EK_ISTEM = `EK İSTEK (önceki denemede bazı alanlar boş kaldı): Tüm alanları eksiksiz doldur. Gövde en az 300 kelime olsun ve her paragraf yeni bir somut ayrıntı getirsin.
+const EK_ISTEM = `EK İSTEK (önceki denemede bazı alanlar boş kaldı): Tüm alanları eksiksiz doldur. Gövde en az 300 kelime ve en az 4 paragraf olsun (5-7 paragraf ideal); her paragraf en az 120 karakter ve yeni bir somut ayrıntı getirsin.
+Özet en az 110 karakter (35-55 kelime), yorum en az 150 karakter, manşet notu en az 40 karakter olsun ve üç alan da birbirinden farklı yazılsın.
+Özet gövdenin ilk paragrafının kopyası olmasın; yorum özetten veya gövdeden cümle/dizi kopyalamasın.
 Özellikle comment ve editorNote alanlarında kaynağın cümle kuruluşunu değil kendi cümlelerini kullan;
 kaynakla arka arkaya 10 kelimeden uzun aynı sözcük dizisini ASLA kullanma, kaynaktan cümle kopyalama.
 Yorum kesin bir yargıyla açılsın, kaynaktaki en az bir somut öğeyi (sayı, tarih, isim) kullansın ve en az bir

@@ -364,6 +364,33 @@ export function getCategories() {
   return [...map.values()].sort((a, b) => b.count - a.count);
 }
 
+let kategoriSayfaCache = null;
+
+/** Yayında kategori sayfası bulunan slug'lar. */
+export function yayinKategoriSluglari() {
+  if (!kategoriSayfaCache) {
+    kategoriSayfaCache = new Set(getCategories().map((c) => c.slug));
+  }
+  return kategoriSayfaCache;
+}
+
+/**
+ * Bir haberin kategori bağlantısı.
+ *
+ * Kategori sayfaları yalnızca yayın çekirdeğindeki (indeks.json) haberlerden
+ * üretilir. Arşivde kalmış bir haberin kategorisi (ör. "Yaşam", "Diğer")
+ * henüz sayfa bulamayabilir; o durumda /kategori/<slug>/ bağlantısı 404'e
+ * gider. Böyle bir durumda arama sayfasına yönlendirilir, böylece sitede
+ * kırık kategori bağlantısı kalmaz. Kategori yayına girdiğinde bağlantı
+ * kendiliğinden gerçek kategori sayfasına döner.
+ */
+export function kategoriUrl(a) {
+  const slug = a?.categorySlug;
+  if (slug && yayinKategoriSluglari().has(slug)) return `/kategori/${slug}/`;
+  const ad = String(a?.category || "").trim();
+  return ad ? `/ara/?q=${encodeURIComponent(ad)}` : "/kategoriler/";
+}
+
 // --- Konu (etiket) sayfaları ---
 // Etiketler yapay zekâ tarafından üretiliyor ve çoğu yalnızca tek bir haberde
 // geçiyor. Her etikete sayfa açmak yüzlerce "ince" sayfa üretir; bu hem Google

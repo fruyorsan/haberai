@@ -16,6 +16,7 @@ const schema = {
       name: "Künye — HaberinAi",
       description: "HaberinAi künye bilgileri: Yayın kimliği, içerik sorumluluğu ve iletişim kanalları.",
       url: `${origin}/kunye/`,
+      dateModified: "2026-10-27",
       publisher: { "@id": `${origin}/kunye/#yayinci` },
     },
     {
@@ -46,6 +47,7 @@ const schema = {
         <strong>HaberinAi</strong> yayın kimliği, içerik yönetimi ve yasal bildirim kanallarına
         ilişkin bilgiler aşağıda yer almaktadır.
       </p>
+      <p class="kunye__guncelleme">Son güncelleme: 27 Ekim 2026</p>
     </header>
 
     <section class="kunye__yayinci" id="yayinci-kimlik" aria-labelledby="yayinci-baslik">
@@ -118,12 +120,52 @@ const schema = {
           <dd>Gündem, Dünya, Ekonomi, Teknoloji, Yapay Zekâ, Bilim, Spor ve Kültür</dd>
 
           <dt>İçerik Yöntemi</dt>
-          <dd>Birincil kaynak takibi, yapay zekâ destekli özetleme ve editoryal bağlam analizi</dd>
+          <dd>Gündem taraması, yapay zekâ destekli özetleme ve editoryal bağlam analizi</dd>
 
           <dt>Yayın ve Telif İlkeleri</dt>
           <dd>
             <a href="/yayin-ilkeleri/">Yayın İlkeleri</a> · <a href="/telif/">İçerik ve Telif Politikası</a>
           </dd>
+        </dl>
+      </div>
+
+      <div class="kunye__kart">
+        <h2>Yapay Zekâ ve Editoryal Sorumluluk</h2>
+        <dl class="kunye__dl">
+          <dt>Kullanım Amacı</dt>
+          <dd>Özetleme, kilit maddelerin çıkarılması ve bağlam analizi</dd>
+
+          <dt>Üretim Yöntemi</dt>
+          <dd>Editör masası kontrolünde yapay zekâ destekli özgün metin; kopyala-yapıştır içerik yok</dd>
+
+          <dt>Kalite Denetimi</dt>
+          <dd>Gövde/paragraf eşiği, özet ve yorum özgünlüğü, benzerlik süzgeci</dd>
+
+          <dt>Şeffaflık</dt>
+          <dd>Her haberin sonunda hazırlanma yöntemi, sorumlu yayıncı ve güncelleme tarihi gösterilir</dd>
+
+          <dt>İnsan Sorumluluğu</dt>
+          <dd>Yayın kararı ve düzeltme sorumluluğu {PUBLISHER.ad} / editör masasına aittir</dd>
+        </dl>
+      </div>
+
+      <div class="kunye__kart">
+        <h2>Reklam ve Finansman</h2>
+        <dl class="kunye__dl">
+          <dt>Gelir Modeli</dt>
+          <dd>Görüntülü reklam ve açıkça etiketlenmiş sponsorluk</dd>
+
+          <dt>Reklam Altyapısı</dt>
+          <dd>Google AdSense; çerez izni Google Consent Mode ile yönetilir</dd>
+
+          <dt>Yerleşim Politikası</dt>
+          <dd>Yalnızca dizine açık sayfalarda, haber başına en fazla iki birim</dd>
+
+          <dt>Editör Bağımsızlığı</dt>
+          <dd>Reklam verenlerin haber seçimine ve yorumlara müdahalesi kabul edilmez</dd>
+
+          <dt>Sponsorlu İçerik</dt>
+          <dd>"Sponsorlu" etiketiyle yayımlanır ve haber akışından ayrılır</dd>
         </dl>
       </div>
 
@@ -159,8 +201,8 @@ const schema = {
       <h2>Yasal Bilgilendirme</h2>
       <p>
         HaberinAi'de yayımlanan içerikler kamuoyunu bilgilendirme amacı taşır; yatırım, hukuk veya
-        tıbbi tavsiye niteliğinde değildir. Haberlerde yararlanılan birincil kaynaklar açıkça
-        belirtilir ve ilgili kaynağa doğrudan bağlantı verilir.
+        tıbbi tavsiye niteliğinde değildir. Her haberin hazırlanma yöntemi ve sorumluluğu açıkça
+        belirtilir; düzeltme ve kaldırma talepleri en geç 48 saat içinde sonuçlandırılır.
       </p>
       <p>
         5846 sayılı Fikir ve Sanat Eserleri Kanunu ile 5651 sayılı Kanun kapsamındaki her türlü
@@ -223,6 +265,11 @@ const schema = {
     font-size: 0.98rem;
     line-height: 1.7;
     color: var(--text-2);
+  }
+  .kunye__guncelleme {
+    margin: 12px 0 0;
+    font-size: 0.8rem;
+    color: var(--muted);
   }
   .kunye__grid {
     display: grid;

@@ -8,7 +8,6 @@ export function GET() {
     u: a.url,
     s: (a.summary || "").slice(0, 160),
     c: a.category,
-    src: a.source,
     d: a.publishedAt || a.generatedAt,
     // Yanlış/genel kapak görselleri aramada da gösterilmez (lib/kapak.js).
     img: kapakKaynagi(a) || null,

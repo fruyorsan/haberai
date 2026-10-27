@@ -33,7 +33,9 @@ const { items, current, totalPages: pages, total } = paginate(tag.articles, 1, P
       {items.map((a, i) => <ArticleCard article={a} index={i} />)}
     </div>
 
-    {ADSENSE_SLOTS.liste && <AdSlot slot={ADSENSE_SLOTS.liste} label="Sponsorlu" />}
+    {etiketIndeksliMi(total) && ADSENSE_SLOTS.liste && (
+      <AdSlot slot={ADSENSE_SLOTS.liste} label="Sponsorlu" />
+    )}
     <Pagination current={current} totalPages={pages} base={`/etiket/${tag.slug}/`} />
 
     <p class="tag-foot">

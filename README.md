@@ -309,7 +309,13 @@ gh workflow run pipeline.yml
 | Haber içi 1 (AI yorumundan sonra) | `/haber/<slug>/` | `ADSENSE_SLOT_MAKALE` |
 | Gövde ortası ("in-article", 2. paragraftan sonra) | `/haber/<slug>/` | `ADSENSE_SLOT_MAKALE2` |
 | Liste altı | ana sayfa + `/haberler/`, `/kategori/…`, `/etiket/…` sayfaları | `ADSENSE_SLOT_LISTE` |
-| Haber altı (ilgili haberlerden sonra) | `/haber/<slug>/` | `ADSENSE_SLOT_LISTE` |
+
+**Reklam politikası (AdSense uyumu):** Reklamlar yalnızca **dizine açık** (kalite kapısını
+geçmiş, `noindex` olmayan) sayfalarda basılır. Haber sayfasında en fazla **iki** birim
+bulunur (`MAKALE` + `MAKALE2`); `ADSENSE_SLOT_LISTE` haber sayfasının altında artık
+kullanılmaz. Sayfalama (`2. sayfa+`), küçük etiket sayfaları ve `/akis/kategori/…` gibi
+`noindex` sayfalarda reklam bileşeni hiç render edilmez. Bu, "düşük değerli içerik"
+değerlendirmesini besleyen ince sayfalarda reklam göstermeyi engeller.
 
 `ADSENSE_SLOT_MAKALE2` için panelde **İçerik içi (In-article)** tipinde birim oluştur;
 `ADSENSE_SLOT_LISTE` için **Görüntülü (Display)** birim yeterlidir.
@@ -356,13 +362,22 @@ indeksli/noindex arasında zıplamaz.
 | Ölçüt | Varsayılan | Ortam değişkeni |
 | --- | --- | --- |
 | Gövde (karakter) | 1200 | `INDEKS_MIN_GOVDE` |
+| Gövde paragraf sayısı | 3 | `INDEKS_MIN_PARAGRAF` |
+| Dolu paragraf (karakter) | 120 | `INDEKS_MIN_PARAGRAF_KARAKTER` |
 | Maddeli özet (adet) | 3 | `INDEKS_MIN_MADDE` |
 | Özet (karakter) | 120 | `INDEKS_MIN_OZET` |
 | Özgün yorum (karakter) | 150 | `INDEKS_MIN_YORUM` |
 | Editör notu (karakter) | 40 | `INDEKS_MIN_NOT` |
 | Başlık benzerliği | 0.55 | `INDEKS_BENZERLIK` |
-| Günlük çekirdek kotası | 24 | `INDEKS_GUNLUK` |
+| Günlük çekirdek kotası | 32 | `INDEKS_GUNLUK` |
 | Geriye dönük pencere (gün) | 45 | `INDEKS_PENCERE_GUN` |
+
+Ek olarak kalite kapısı şu **içerik tekrarı** kontrollerini yapar (ortam değişkeni yok):
+gövde içinde birbirini tekrar eden paragraf, özetin gövdeyle birebir/uzun dizeli örtüşmesi,
+yorumun özet veya gövdeden cümle kopyalaması, editör notunun özetle aynı olması. Bu
+kontrollerden biri takılırsa haber vitrine girmez (`noindex` kalır). Aynı eşikler
+`src/ai.js` içinde üretim anında da uygulanır; tutmayan yanıt yeniden üretilir ve
+`src/index.js` yayın öncesi ince içeriği arşive hiç almaz.
 
 Eşikleri düşürmek vitrini büyütür ama AdSense riskini artırır; yükseltmek vitrini
 daraltır. Değişiklikten sonra `npm run indeks` çalıştırılmadan site eski listeyi
@@ -393,6 +408,16 @@ hangi yöntemle içerik ürettiğinin ve kendisine nasıl ulaşılacağının a�
 Bu değerler yoksa künyede uydurma bir kişi adı yazılmaz; "HaberinAi Editör Masası"
 gösterilir. E-posta adresinin alan adına ait olması (ör. `iletisim@haberinai.site`)
 güven açısından ücretsiz bir posta adresinden daha iyidir.
+
+### Haber şeffaflık kutusu
+
+Her haberin sonunda `site/src/components/HaberGuven.astro` ile basılan **"Bu haber
+hakkında"** kutusu bulunur. Kutu; özet odaklı yayın yaklaşımını ve kısa formatı, hazırlanma
+yöntemini (yapay zekâ destekli özetleme + editör kontrolü), yayın/güncelleme tarihini,
+sorumlu yayıncıyı, düzeltme kanalını ve editoryal ilke bağlantılarını gösterir. Aynı bilgiler
+`NewsArticle` JSON-LD içinde `publishingPrinciples` ve `correctionsPolicy` alanlarıyla da
+verilir. Haber metni ve özet HaberinAi'nin kendi üretimidir; başka bir yayıncıya "dayanma"
+(`isBasedOn`/`citation`) veya kaynak atfı bildirilmez.
 
 > Not: Vitrin temizliği tek başına onay garantisi değildir. İçerik derinliği, özgün
 > değer ve düzenli yayın disiplini inceleme boyunca korunmalıdır.
