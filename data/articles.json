@@ -1,5 +1,70 @@
 [
   {
+    "id": "aceacc8e0ece34ea",
+    "title": "Intel Nova Lake-S işlemci testlerde Core Ultra 9 285K modelini geçti",
+    "slug": "intel-nova-lake-s-islemci-testlerde-core-ultra-9-285k-modelini-gecti",
+    "summary": "Intel'in geliştirme aşamasındaki yeni Nova Lake-S işlemcileri, PassMark testlerinde ortaya çıkan ilk verilerle dikkat çekiyor. 28 çekirdekli mühendislik örneği, tek çekirdek performansında mevcut amiral gemisi Core Ultra 9 285K'yı geride bırakmayı başardı. Yeni nesil yongaların 2027 yılının başından itibaren piyasaya sürülmesi planlanıyor.",
+    "keyPoints": [
+      "28 çekirdekli Nova Lake-S işlemci tek çekirdek testinde 5.210 puan alarak rekor kırdı.",
+      "Yeni işlemci modeli Core Ultra 9 285K'nın 5.059 puanlık performansını geride bıraktı.",
+      "Nova Lake-S serisinin ilk modellerinin 2027 yılının ilk çeyreğinde satışa çıkması hedefleniyor."
+    ],
+    "body": [
+      "Intel'in üzerinde çalıştığı yeni nesil Nova Lake-S işlemci mimarisine dair ilk somut benchmark sonuçları, PassMark PerformanceTest 11.1 veritabanında gün yüzüne çıktı. Manage Baselines özelliği üzerinden sızdırılan bu veriler, işlemcilerin henüz piyasaya sürülmemiş mühendislik örnekleri olduğunu doğruluyor. Eylül ayından bu yana sisteme girişleri yapılan bu yongalar, genel olarak Intel 0000 kod adıyla listelenerek teknik detaylarını kısmen açığa çıkarıyor.",
+      "Test sonuçları arasında en çok dikkat çeken detay, 28 çekirdekli Nova Lake-S örneğinin tek çekirdek performansında sergilediği güç oldu. Bu yonga, yapılan testlerde 5.210 ve 5.191 gibi yüksek puanlara ulaşarak ciddi bir potansiyel barındırdığını gösterdi.",
+      "İşlemcinin çok çekirdek performansına bakıldığında ise 61.509 puanlık bir sonuçla karşılaşıyoruz. Bu değer, Core i9-14900KF'nin 58.074 puanlık skorundan daha yüksek olsa da Core Ultra 9 285K'nın 67.274 puanlık performansının altında kalıyor. Ancak mühendislik örneklerinin nihai ürün performansı olmadığını ve test koşullarının farklılık gösterebileceğini unutmamak gerekiyor. Çok çekirdek tarafındaki bu skorlar, mevcut yazılım optimizasyonları ve erken aşama sürücüleri nedeniyle henüz tam kapasiteyi yansıtmıyor olabilir.",
+      "Intel, yeni nesil işlemci ailesinin çıkış takvimini de yavaş yavaş belirlemeye başladı. Sızıntılara göre Nova Lake-S serisinin 28 çekirdekli versiyonları, 2027 yılının ocak sonu ile mart ayı arasında teknoloji tutkunlarıyla buluşacak. K serisi modellerin ise mart ve nisan ayları içerisinde çıkması planlanıyor. 16 ve 8 çekirdekli daha düşük çekirdek sayısına sahip modellerin ise mart-haziran döneminde piyasaya dahil olması bekleniyor.",
+      "Donanım dünyasındaki bu yeni gelişme, özellikle tek çekirdek gücüne ihtiyaç duyan uygulamalarda Intel'in oyun planını gözler önüne seriyor. Mühendislik örnekleri üzerinde yapılan bu testler, mimari mimarinin verimlilik ve saf performans açısından nereye odaklandığını anlamamızı sağlıyor. Önümüzdeki aylarda daha fazla test verisi ortaya çıktıkça, bu yeni nesil işlemcilerin günlük kullanım ve profesyonel iş yüklerindeki gerçek kapasitesi netleşecek.",
+      "Teknoloji meraklıları ve profesyonel kullanıcılar için 2027 takvim yılı, işlemci gücü açısından bir yenilenme dönemi vadediyor. Özellikle mevcut Ryzen ve Core serisi işlemcilerle olan rekabetin, Nova Lake-S ile birlikte yeni bir boyuta taşınacağı aşikar. Intel, tek çekirdek performansındaki bu üstünlüğü seri üretime ne kadar başarılı aktarabileceğini ilerleyen dönemlerde düzenleyeceği lansmanlarla kanıtlayacak."
+    ],
+    "comment": "Intel, yeni nesil yongalarında tek çekirdek performansını önceliklendirerek oyun ve günlük görevlerdeki tepkiselliği artırmayı hedefliyor. 28 çekirdekli modelin ulaştığı 5.210 puanlık skor, mimari değişikliğin işlemci hızlarını doğrudan etkilediğini gösteriyor. Çok çekirdek skorları henüz rakip modellerle aradaki makası kapatamamış olsa da, mühendislik örnekleri üzerindeki bu testler Intel'in doğru yolda ilerlediğini doğruluyor. Ryzen 9 9950X3D gibi rakiplerle karşılaştırıldığında, özellikle tek çekirdek verimliliği kullanıcılara ciddi bir avantaj sağlayabilir.",
+    "editorNote": "Intel'in yeni nesil işlemcisi tek çekirdek performansıyla mevcut amiral gemilerini geride bırakıyor. 2027 başında çıkması beklenen Nova Lake-S, güç dengelerini değiştirebilir.",
+    "tags": [
+      "Intel",
+      "Nova Lake",
+      "İşlemci",
+      "Donanım",
+      "Benchmark"
+    ],
+    "category": "Donanım",
+    "gorselSorgu": "intel processor chip closeup",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/intel-nova-lake-s-cikmadan-test-edildi-iste-ilk-detaylar--212142",
+    "image": "/kapak/aceacc8e0ece34ea.webp",
+    "gorselKaynak": {
+      "yazar": "Jan Helebrant",
+      "lisans": "CC BY-SA 2.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Intel_80186_processor_microphoto_001_(50622223096).jpg"
+    },
+    "publishedAt": "2026-10-27T12:39:00.000Z",
+    "generatedAt": "2026-10-27T12:45:06.224Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Computer_motherboard_6.jpg/1280px-Computer_motherboard_6.jpg",
+        "yazar": "Kurt Kaiser",
+        "lisans": "CC0",
+        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Computer_motherboard_6.jpg",
+        "altyazi": "Yeni nesil işlemci mimarisine sahip anakart donanımı"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/20250603.Dresden.European_Semiconductor_Manufacturing_Company.-011.jpg/1280px-20250603.Dresden.European_Semiconductor_Manufacturing_Company.-011.jpg",
+        "yazar": "Bybbisch94",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:20250603.Dresden.European_Semiconductor_Manufacturing_Company.-011.jpg",
+        "altyazi": "İşlemci üretim sürecinde kullanılan yarı iletken yonga"
+      }
+    ],
+    "breaking": true,
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Intel_80186_processor_microphoto_001_%2850622223096%29.jpg/1280px-Intel_80186_processor_microphoto_001_%2850622223096%29.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "3145ab9bdd1072b3",
     "title": "e-Nabız onay süreçlerinde yeni dönem: Tıbbi müdahaleler SMS ile yapılacak",
     "slug": "enabiz-onay-sureclerinde-yeni-donem-tibbi-mudahaleler-sms-ile-yapilacak",
