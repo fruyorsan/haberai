@@ -251,10 +251,9 @@ const items = slides.map((a) => {
 
   .fs__link {
     display: grid;
-    /* Kapak 16:9 üretiliyor; vitrinde de tam oran korunur. Yan yana
-       düzende görselin kenarları kırpılıyordu (başlık yarım görünüyordu). */
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
+    /* Masaüstünde görsel solda, başlık/özet sağda: vitrin tek ekrana sığar.
+       Görsel satır yüksekliğini doldurur (object-fit: cover), mobilde 16:9. */
+    grid-template-columns: 1.15fr 1fr;
     height: 100%;
     outline: none;
   }
@@ -267,7 +266,6 @@ const items = slides.map((a) => {
   .fs__media {
     position: relative;
     overflow: hidden;
-    aspect-ratio: 16 / 9;
     min-height: 0;
     background: var(--bg-soft);
   }
@@ -650,19 +648,19 @@ const items = slides.map((a) => {
     .fs {
       --fs-peek: 32px;
     }
+    /* Tablet ve telefonda görsel üstte, metin altta (tek sütun). */
+    .fs__link {
+      grid-template-columns: 1fr;
+    }
+    .fs__media {
+      aspect-ratio: 16 / 9;
+    }
   }
 
   @media (max-width: 720px) {
     .fs {
       --fs-peek: 18px;
       --fs-gap: 14px;
-    }
-    .fs__link {
-      grid-template-columns: 1fr;
-    }
-    .fs__media {
-      min-height: 0;
-      aspect-ratio: 16 / 9;
     }
     .fs__body {
       padding: 16px 16px 14px;
