@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T22:56:56.831Z",
+  "updatedAt": "2026-10-27T23:00:56.987Z",
   "gunluk": 32,
   "pencereGun": 45,
   "esik": {
@@ -12,10 +12,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 4811,
-  "aday": 4811,
-  "uygun": 2754,
-  "secilen": 426,
+  "toplamHaber": 4813,
+  "aday": 4813,
+  "uygun": 2756,
+  "secilen": 428,
   "red": {
     "özet gövdeyle aynı": 100,
     "maddeli özet yok": 106,
@@ -183,6 +183,25 @@
       "a7be2dd8cc572434",
       "52cefc76d7126161"
     ],
+    "2026-10-28": [
+      "75df59e63124bce1",
+      "3fe5f51aa274b7e5",
+      "cb98f54ec0357794",
+      "dbfdd3a61e910d87",
+      "ed7cedde1f1f649b",
+      "de9f467a09cf062f",
+      "c865c0c44656bbdb",
+      "9a2a9c9d53760055",
+      "0f4b8eeb3c188f14",
+      "d83c4b0daa3b8572",
+      "20f0048e1c4a071c",
+      "4de38ec0144fe41b",
+      "7a64b6f22bf19253",
+      "c6a0efbad3a6db46",
+      "f8b42d8c14347250",
+      "5ac98f7ffa0167b9",
+      "408a8c0c51bc5d27"
+    ],
     "2026-10-18": [
       "b38df0538db3aa9e",
       "d3dfb29be52b9d6f",
@@ -216,23 +235,6 @@
       "7cc6182982fe119f",
       "7a0a2ec4255c2456",
       "c7b4d4735c2154df"
-    ],
-    "2026-10-28": [
-      "3fe5f51aa274b7e5",
-      "cb98f54ec0357794",
-      "dbfdd3a61e910d87",
-      "ed7cedde1f1f649b",
-      "de9f467a09cf062f",
-      "c865c0c44656bbdb",
-      "9a2a9c9d53760055",
-      "0f4b8eeb3c188f14",
-      "d83c4b0daa3b8572",
-      "20f0048e1c4a071c",
-      "4de38ec0144fe41b",
-      "7a64b6f22bf19253",
-      "f8b42d8c14347250",
-      "5ac98f7ffa0167b9",
-      "408a8c0c51bc5d27"
     ],
     "2026-10-22": [
       "686d3f11a6cecddc",
@@ -586,6 +588,7 @@
     "9c57cf58b99b48fa",
     "54c7059460eb1359",
     "9cd8bbb18d49378a",
+    "75df59e63124bce1",
     "efa5b69565af28e0",
     "12864f7f071ffef6",
     "11f54c3ef80151ce",
@@ -725,6 +728,7 @@
     "f518fc9b05df931b",
     "9899820b57a86824",
     "f5bb19bdb211bb19",
+    "c6a0efbad3a6db46",
     "559ce3912724137d",
     "d5fb5082e5704dbe",
     "5196cf1da5365ad1",
