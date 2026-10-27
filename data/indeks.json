@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T04:49:53.036Z",
+  "updatedAt": "2026-10-27T04:53:26.680Z",
   "gunluk": 32,
   "pencereGun": 45,
   "esik": {
@@ -10,9 +10,9 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 4690,
-  "aday": 4690,
-  "uygun": 2797,
+  "toplamHaber": 4691,
+  "aday": 4691,
+  "uygun": 2798,
   "secilen": 414,
   "red": {
     "maddeli özet yok": 106,
@@ -21,10 +21,14 @@
     "özgün yorum yok": 4,
     "kategorisiz": 2,
     "editör notu yok": 14,
-    "günlük kota": 2349,
+    "günlük kota": 2350,
     "tekrar": 34
   },
   "ornekTekrarlar": [
+    {
+      "title": "Japonya, 7 Şiddetinde Depremi Bildirdi; Tsunami Riski Yok",
+      "twin": "Japonya Meteoroloji Ajansı, 7.0 Büyüklükte Depremi 470 km Derinlikte Kayıt Etti"
+    },
     {
       "title": "Fransa'nın borçlanma maliyeti 24 yılın en yüksek seviyesine ulaştı",
       "twin": "Fransa Tahvil Faizi 24 Yılın Zirvesinde: Hedge Fonların Rolü Tartışılıyor"
@@ -46,16 +50,16 @@
       "twin": "Jeolog Osman Bektaş, Marmara depremi senaryolarına karşı uyarıyor"
     },
     {
+      "title": "Japonya'da 7.0 Güçlü Deprem 470 km Derinliğinde Saldırdı",
+      "twin": "Japonya Meteoroloji Ajansı, 7.0 Büyüklükte Depremi 470 km Derinlikte Kayıt Etti"
+    },
+    {
       "title": "Gaziosmanpaşa, 7.0 büyüklüğündeki deprem için barınma tatbikatı yaptı",
       "twin": "Gaziosmanpaşa Belediyesi, 7.0 Deprem Tatbikatını 18.00'de Gerçekleştirdi"
     },
     {
       "title": "Apple, 9 İnç Robotik HomeView Max ile Ev Kontrolünü Genişletiyor",
       "twin": "Apple, 360 derece dönebilen 9 inç ekranlı yeni cihazını hazırlıyor"
-    },
-    {
-      "title": "Japonya, 7 Şiddetinde Depremi Bildirdi; Tsunami Riski Yok",
-      "twin": "Japonya Meteoroloji Ajansı, 7.0 Büyüklükte Depremi 470 km Derinlikte Kayıt Etti"
     },
     {
       "title": "Apple, robotik kollu 9 inç ekranlı yeni akıllı ev cihazı geliştiriyor",
@@ -78,6 +82,10 @@
       "twin": "TUSAŞ, ANKA-3 muharip insansız savaş uçağının teknik verilerini paylaştı"
     },
     {
+      "title": "Japonya Ogasawara Açıklarında 7.0 Büyüklüğünde Deprem Gerçekleşti",
+      "twin": "Japonya Meteoroloji Ajansı, 7.0 Büyüklükte Depremi 470 km Derinlikte Kayıt Etti"
+    },
+    {
       "title": "Gaziosmanpaşa Belediyesi 7 büyüklüğündeki deprem senaryosunu uyguladı",
       "twin": "Gaziosmanpaşa Belediyesi, 7.0 Deprem Tatbikatını 18.00'de Gerçekleştirdi"
     },
@@ -90,20 +98,12 @@
       "twin": "Bursa deprem hafızasını masaya yatırdı: 1855 felaketi konuşuldu"
     },
     {
-      "title": "Japonya'da 7.0 Güçlü Deprem 470 km Derinliğinde Saldırdı",
-      "twin": "Japonya Meteoroloji Ajansı, 7.0 Büyüklükte Depremi 470 km Derinlikte Kayıt Etti"
-    },
-    {
       "title": "Galaxy A56 ve A36 One UI 9 güncellemesi Türkiye’ye ne zaman gelecek?",
       "twin": "Galaxy S24 Ultra bataryası One UI 9 ile hızla tükenmeye başladı"
     },
     {
       "title": "Suudi Arabistan Enerji Bakanlığı Şeybe Petrol Sahasında 2 Ölüm Bildirdi",
       "twin": "Suudi Arabistan’da Engellenen Füze Şarapnelini 2 Kişiyi Yaraladı"
-    },
-    {
-      "title": "Portekiz Federasyonu, Ronaldo'ya 30 gün men ve para cezası verdi",
-      "twin": "Portekiz Federasyonu, Ronaldo'ya 30 Gün Hak Mahrumiyeti ve 255 Euro Cezayeti Verdi"
     }
   ],
   "days": {

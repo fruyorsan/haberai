@@ -1,5 +1,69 @@
 [
   {
+    "id": "ed25fc1b933fb415",
+    "title": "PHP tabanlı web siteleri için milyonlarca siber saldırı uyarısı yapıldı",
+    "slug": "php-tabanli-web-siteleri-icin-milyonlarca-siber-saldiri-uyarisi-yapildi",
+    "summary": "İnternetin yaklaşık yüzde 70'ini oluşturan PHP yazılımında tespit edilen iki kritik güvenlik açığı, dünya genelinde büyük bir siber risk doğurdu. Güvenlik açığının duyulmasıyla birlikte milyonlarca saldırı girişimi kaydedilirken, birçok kamu kurumu ve şirket sunucularını korumak için hizmetlerine ara verdi.",
+    "keyPoints": [
+      "İnternet sitelerinin yüzde 70'inde kullanılan PHP yazılımında iki kritik açık bulundu.",
+      "Açıkların duyurulmasıyla birlikte dünya genelinde milyonlarca siber saldırı girişimi gerçekleşti.",
+      "Saldırganlar sunucuları ele geçirerek hassas verilere ulaşma riskini artırdı."
+    ],
+    "body": [
+      "Bu açıkların ortaya çıkması, dijital dünyada bir güvenlik alarmının çalmasına yol açtı. Yazılım dünyasında meydana gelen bu durum, özellikle sunucuların kontrolünü ele geçirmeyi hedefleyen kötü niyetli kişiler için yeni kapılar açtı.",
+      "Güvenlik açıklarının kamuoyuna duyurulmasından hemen sonra, dünya genelindeki sunuculara yönelik milyonlarca siber saldırı girişimi kaydedildi. Bu saldırıların temel amacının, sunucularda depolanan hassas verilere yetkisiz erişim sağlamak ve sistemleri tamamen devre dışı bırakmak olduğu belirtiliyor. İnternet dünyası, son yılların en yoğun ve eş zamanlı saldırı dalgalarından biriyle karşı karşıya kalmış durumda.",
+      "Yaşanan bu yoğun saldırı trafiği üzerine, birçok ülkede kamu kurumları ve büyük ölçekli özel şirketler önleyici tedbirler almaya başladı. Kurumlar, sistemlerini korumak ve veri sızıntılarını önlemek amacıyla internet hizmetlerini geçici olarak durdurma kararı aldı. Bu durum, dünya genelindeki dijital operasyonlarda ciddi bir yavaşlamaya ve bazı çevrim içi işlemlerin aksamasına neden oldu.",
+      "Siber güvenlik uzmanları, bilgisayar korsanlarının bu açıkları kullanarak sunucularda komut çalıştırabileceğini ve sistemin tüm kontrolünü ele geçirebileceği uyarısında bulunuyor. Özellikle güncellemeleri yapılmayan veya eski PHP sürümlerini çalıştıran sunucuların, saldırılara karşı çok daha savunmasız olduğu vurgulanıyor. Yetkililer, kurumların ve bireysel sunucu sahiplerinin ilgili güvenlik yamalarını ivedilikle kurmaları gerektiğini ifade ediyor.",
+      "İnternetin temel yapı taşlarından biri olan PHP altyapısındaki bu zafiyet, dijital dünyada güvenliğin ne kadar kırılgan olduğunu bir kez daha gösteriyor. Kurumların hizmetlerini durdurması, saldırının etkilerini sınırlasa da, siber tehditlerin boyutu gün geçtikçe daha sofistike bir hale bürünüyor. Şu aşamada, güvenlik yamalarının eksiksiz uygulanması ve sistemlerin izlenmesi, olası veri kayıplarını önlemek adına atılması gereken tek yol olarak öne çıkıyor."
+    ],
+    "comment": "Yazılım altyapılarında ortaya çıkan bu tür açıklar, kurumsal veri güvenliğinin bir yamanın kurulmasına ne kadar bağlı olduğunu gösteriyor. Sadece yüzde 70 gibi geniş bir pazar payına sahip bir teknolojide bu kadar büyük bir zafiyet oluşması, modern internetin aslında ne kadar ince bir ip üzerinde yürüdüğünü ispatlıyor. Kurumlar, hizmetlerini geçici olarak durdurarak verilerini koruma yoluna gitmiş olsalar da, bu saldırı dalgaları siber direncin sadece yazılım güncellemeleriyle sınırlı kalmaması gerektiğini kanıtlıyor.",
+    "editorNote": "İnternet dünyasının yüzde 70'inde kullanılan PHP altyapısında saptanan iki kritik açık, dünya çapında bir dijital saldırı dalgasını tetikledi. Kurumlar sunucularını kapatıyor.",
+    "tags": [
+      "PHP",
+      "siber güvenlik",
+      "yazılım açığı",
+      "sunucu",
+      "veri güvenliği"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "data center server room",
+    "source": "Haber Global",
+    "sourceUrl": "https://haberglobal.com/yazarlar/internetin-altyapisinda-buyuk-guvenlik-alarmi-milyonlarca-siber-saldiri-girisimi-550584",
+    "image": "/kapak/ed25fc1b933fb415.webp",
+    "gorselKaynak": {
+      "yazar": "DOE / National Renewable Energy Laboratory (NREL)",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Data_center_infrastructure_in_the_United_States.jpg"
+    },
+    "publishedAt": "2026-10-27T04:40:00.000Z",
+    "generatedAt": "2026-10-27T04:53:06.477Z",
+    "gorselEk": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Gen_Williams_talks_Cyber_Security_%287360378%29.jpg",
+        "yazar": "U.S. Army photo by Michele Wiencek",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Gen_Williams_talks_Cyber_Security_(7360378).jpg",
+        "altyazi": "Siber güvenlik açıklarına karşı verilen dijital uyarı sinyali."
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/EFTA00002539_-_Metal_server_casing_with_a_label_showing_ILO_2_settings_serial_number_MXQ824A1RJ_user_name_Administrator_and_password_S5SCNHGG.jpg",
+        "yazar": "Federal Bureau of Investigation",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:EFTA00002539_-_Metal_server_casing_with_a_label_showing_ILO_2_settings_serial_number_MXQ824A1RJ_user_name_Administrator_and_password_S5SCNHGG.jpg",
+        "altyazi": "Sunucu yöneticileri yazılım açıklarını kapatmak için çalışıyor."
+      }
+    ],
+    "breaking": true,
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Data_center_infrastructure_in_the_United_States.jpg/1280px-Data_center_infrastructure_in_the_United_States.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "80270a0bdce4ac8d",
     "title": "Xiaomi 18 Pro ve 18 Pro Max Avrupa fiyatları ve teknik verileri netleşti",
     "slug": "xiaomi-18-pro-ve-18-pro-max-avrupa-fiyatlari-ve-teknik-verileri-netlesti",
