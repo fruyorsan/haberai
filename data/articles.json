@@ -50,10 +50,59 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T22:22:53.142Z",
+    "gorselDeneme": "2026-10-27T22:25:25.344Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/3/34/Heightened_security_following_2016_coup_attempt_at_Caglayan_Istanbul_courthouse%2C_July_21%2C_2016.jpg",
+      "foto": true
+    }
+  },
+  {
+    "id": "ed7cedde1f1f649b",
+    "title": "OpenAI, yapay zekanın matematikte 3 büyük hamle yaptığını açıkladı",
+    "slug": "openai-yapay-zekanin-matematik-ve-fizikte-3-buyuk-hamlesi",
+    "summary": "OpenAI, yapay zeka modellerinin matematik ve fizik alanlarında üç kritik sonuca ulaştığını duyurdu. Şirket, bu bulguların bağımsız uzmanlarca doğrulanması için ham verileri açacak. Ayrıca ilgili bilgisayar bilimi tartışmalarının yapılacağı bir konferansın maliyetini üstlenecek.",
+    "keyPoints": [
+      "Harmonik analizdeki yerel yumuşatma varsayımı tüm boyutlarda kanıtlandı.",
+      "Uzun süredir doğru kabul edilen Üstel Zaman Hipotezi çürütüldü.",
+      "Kuantum alan teorilerinin matematiksel varlığına ilişkin sonuçlar üretildi."
+    ],
+    "body": [
+      "ABD merkezli yapay zeka firması OpenAI, modellerinin akademik dünyada ses getiren üç temel sonuca ulaştığını resmen duyurdu. Şirketin açıklamasına göre bu bulgular, matematik, bilgisayar bilimi ve kuantum fiziği gibi karmaşık disiplinlerde derinlemesine analizlere dayanıyor. Elde edilen sonuçların bilimsel geçerliliğinin sorgulanması ve etkilerinin ölçülmesi amacıyla sürecin şeffaflıkla yürütülmesi hedefleniyor.",
+      "Matematik tarafında en dikkat çekici gelişme, harmonik analiz alanındaki yerel yumuşatma varsayımının tüm boyutlarda kanıtlanması oldu. Bu teknik başarı, uzun süredir tartışılan bir matematiğin yapı taşlarından birinin yapay zeka gücüyle çözüme kavuşturulduğunu gösteriyor. Bilgisayar bilimi cephesinde ise yıllardır doğru kabul edilen Üstel Zaman Hipotezi'nin (ETH) çürütülmesi, alanın temel varsayımlarını yeniden tartışmaya açıyor.",
+      "OpenAI, bu teorik ispatların doğruluğundan emin olmak için Lean adlı özel doğrulama yöntemini kullandığını belirtti. Sonuçların ham verileri, bağımsız araştırmacıların incelemesine açık hale getirilerek akademik bir denetim mekanizması kuruluyor.",
+      "Şirket, doğrulama sürecinin üç farklı yöntemle yürütüleceğini ve dünyanın dört bir yanından uzmanların bu çıktıları bağımsız biçimde test edeceğini kaydedi. Bu yaklaşım, yapay zekanın ürettiği teorik ispatların bilimsel camia tarafından onay görmesini kolaylaştıracak bir zemin oluşturuyor. Bağımsız inceleme süreci, bulguların güvenilirliğini artırarak olası hata paylarını minimize etmeyi amaçlıyor.",
+      "OpenAI, bilgisayar bilimi alanındaki bu çürütmenin etkilerini akademik ortamda tartışmak için bir konferans düzenleyeceğini de açıkladı. Şirket, bu bilimsel toplantının tüm finansmanını üstlenerek araştırmacıların katılımlarını ve tartışmalarını desteklemeyi planlıyor. Bu hamle, kurumun yalnızca model geliştirme odaklı olmadığını, bilimsel altyapıya da yatırım yaptığını gösteriyor.",
+      "Yapay zekanın bu düzeyde teorik sorularda başarılı olması, gelecekteki keşiflerin hızlanabileceğine işaret ediyor. Matematik ve fizikçiler için yeni bir araştırma dalgasının kapısı aralanırken, bulguların pratik uygulamalara yansıması zaman alacak. Ancak bu ilk doğrulanan sonuçlar, yapay zekânın bilgi üretme kapasitesinde yeni bir eşiğe ulaşıldığını kanıtlar nitelikte.",
+      "Sonuçların kesinleşmesi, bağımsız uzmanların yaptığı testlerin olumlu sonuçlanmasına bağlı olacak. Bu süreç tamamlandığında, yapay zekânın bilimsel keşiflerdeki rolü köklü biçimde yeniden tanımlanabilir. OpenAI'nin şeffaflık politikası, diğer teknoloji devi yapılabilecek bir standardın önünü açma potansiyeli taşıyor."
+    ],
+    "comment": "Yapay zekanın teorik ispat üretebilmesi, onu artık sadece bir arama motoru değil, bir keşif aracı olarak konumlandırıyor. Özellikle Üstel Zaman Hipotezi'nin çürütülmesi, bilgisayar bilimi lisans programlarının müfredatını bile etkileyebilecek bir düzeyde. Bu başarı, matematikçilerin rutin kanıtlama işlerini yapay zekaya devretmeye başlamasıyla sonuçlanabilir. Ancak Lean doğrulama yönteminin kullanılması, bulguların teknik altyapısına güven vermekle birlikte, henüz fiziksel dünya üzerindeki pratik etkisi belirsiz. Gerçek devrim, bu teorilerin mühendislik veya ilaç geliştirme gibi alanlarda somut ürüne dönüşmesiyle başlayacak.",
+    "editorNote": "Üstel Zaman Hipotezi'nin çürütülmesi, bilgisayar biliminin temellerini sarsıyor. Lean doğrulaması, bulguların teknik altyapısını perçinliyor.",
+    "tags": [
+      "OpenAI",
+      "Yapay Zeka",
+      "Matematik",
+      "Kuantum Fiziği",
+      "Lean"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "OpenAI logo abstract mathematics",
+    "source": "Kıbrıs Postası",
+    "sourceUrl": "https://www.kibrispostasi.com/c39-BILIM_TEKNOLOJI/n617989-openai-yapay-zekanin-matematik-ve-kuantum-fiziginde-onemli-sonuclara-ulastigini-duyurdu",
+    "image": "/kapak/ed7cedde1f1f649b.webp",
+    "gorselKaynak": {
+      "yazar": "European Commission - Photographer: Aurore Martignoni",
+      "lisans": "CC BY 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg"
+    },
+    "publishedAt": "2026-10-27T21:55:00.000Z",
+    "generatedAt": "2026-10-27T22:25:23.193Z",
+    "breaking": true,
+    "gorselDeneme": "2026-10-27T22:25:24.703Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg/1280px-Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg",
       "foto": true
     }
   },
@@ -236,7 +285,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T22:22:51.100Z",
+    "gorselDeneme": "2026-10-27T22:25:24.431Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/3/34/Heightened_security_following_2016_coup_attempt_at_Caglayan_Istanbul_courthouse%2C_July_21%2C_2016.jpg",
@@ -466,7 +515,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T22:22:52.916Z",
+    "gorselDeneme": "2026-10-27T22:25:25.309Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/3/34/Heightened_security_following_2016_coup_attempt_at_Caglayan_Istanbul_courthouse%2C_July_21%2C_2016.jpg",
@@ -782,7 +831,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T22:22:53.657Z",
+    "gorselDeneme": "2026-10-27T22:25:25.851Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Donald_Trump_with_Fred_Trump.jpg/1280px-Donald_Trump_with_Fred_Trump.jpg",
@@ -901,7 +950,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T22:22:52.198Z",
+    "gorselDeneme": "2026-10-27T22:25:24.607Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Foreign_Secretary_David_Lammy_lays_a_candle_on_the_grave_of_a_Ukrainian_soldier_killed_in_the_conflict_with_Russia%2C_in_the_Lychakiv_Cemetery_in_Lviv%2C_Ukraine_on_9_May_2025.jpg/1280px-thumbnail.jpg",
@@ -958,7 +1007,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T22:22:53.616Z",
+    "gorselDeneme": "2026-10-27T22:25:25.841Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Istanbul_city_Photos-_Urban_01.jpg/1280px-Istanbul_city_Photos-_Urban_01.jpg",
@@ -1023,7 +1072,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T22:22:52.904Z",
+    "gorselDeneme": "2026-10-27T22:25:25.046Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Recep_Tayyip_Erdo%C4%9Fan_-_Hidayet_T%C3%BCrko%C4%9Flu_-_Burhanettin_Duran_-_%C4%B0brahim_Kal%C4%B1n_-_Osman_A%C5%9Fk%C4%B1n_Bak_20251127_%284%29.jpg/1280px-Recep_Tayyip_Erdo%C4%9Fan_-_Hidayet_T%C3%BCrko%C4%9Flu_-_Burhanettin_Duran_-_%C4%B0brahim_Kal%C4%B1n_-_Osman_A%C5%9Fk%C4%B1n_Bak_20251127_%284%29.jpg",
@@ -1417,7 +1466,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T22:22:52.936Z",
+    "gorselDeneme": "2026-10-27T22:25:25.125Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Leopard_-_South_Africa_Safari_-_Djuma_Game_Reserve_-_Sabi_Sand_-_Kruger_National_Park_%285588253354%29.jpg/1280px-Leopard_-_South_Africa_Safari_-_Djuma_Game_Reserve_-_Sabi_Sand_-_Kruger_National_Park_%285588253354%29.jpg",
@@ -1483,7 +1532,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T22:22:53.301Z",
+    "gorselDeneme": "2026-10-27T22:25:26.540Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/7/78/Market_centre_in_Tokyo_stock_exchange.jpg",
@@ -1680,7 +1729,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T22:22:53.924Z",
+    "gorselDeneme": "2026-10-27T22:25:25.376Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Hands_holding_video_game_controller_%2850811892858%29.jpg/1280px-Hands_holding_video_game_controller_%2850811892858%29.jpg",
@@ -1983,7 +2032,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T22:22:53.648Z",
+    "gorselDeneme": "2026-10-27T22:25:25.726Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Yemen_Taiz_1993_-_167873673_1c0f8bc0c8_o.jpg/1280px-Yemen_Taiz_1993_-_167873673_1c0f8bc0c8_o.jpg",
@@ -2028,7 +2077,7 @@
     "publishedAt": "2026-10-27T18:12:21.000Z",
     "generatedAt": "2026-10-27T18:17:15.479Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-27T22:22:53.599Z",
+    "gorselDeneme": "2026-10-27T22:25:25.764Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/3/34/Heightened_security_following_2016_coup_attempt_at_Caglayan_Istanbul_courthouse%2C_July_21%2C_2016.jpg",
@@ -2136,7 +2185,7 @@
     "publishedAt": "2026-10-27T17:53:46.000Z",
     "generatedAt": "2026-10-27T18:00:38.381Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-27T22:22:53.762Z",
+    "gorselDeneme": "2026-10-27T22:25:25.896Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Aselsan_A100_Night_Vision_Monocular.jpg/1280px-Aselsan_A100_Night_Vision_Monocular.jpg",
@@ -2422,7 +2471,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Istanbul_city_Photos-_Urban_01.jpg/1280px-Istanbul_city_Photos-_Urban_01.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T22:22:53.862Z",
+    "gorselDeneme": "2026-10-27T22:25:26.184Z",
     "ekGorselDeneme": "2026-10-27T19:56:02.727Z"
   },
   {
@@ -2538,7 +2587,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Teresa_Parson%2C_Donald_Trump%2C_Melania_Trump%2C_and_Mike_Parson_in_2020.jpg/1280px-Teresa_Parson%2C_Donald_Trump%2C_Melania_Trump%2C_and_Mike_Parson_in_2020.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T22:22:54.049Z"
+    "gorselDeneme": "2026-10-27T22:25:26.116Z"
   },
   {
     "id": "14c77cb9014261f6",
@@ -2589,7 +2638,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Aselsan_A100_Night_Vision_Monocular.jpg/1280px-Aselsan_A100_Night_Vision_Monocular.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T22:22:54.284Z"
+    "gorselDeneme": "2026-10-27T22:25:26.419Z"
   },
   {
     "id": "da1c6fb24d1713fc",
@@ -2646,7 +2695,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Person_holding_world_globe.jpg/1280px-Person_holding_world_globe.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T22:22:54.017Z"
+    "gorselDeneme": "2026-10-27T22:25:26.160Z"
   },
   {
     "id": "12dae8a12c3f07ba",
@@ -2691,7 +2740,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Truck_collision_with_meridian_on_NH32_image..jpg/1280px-Truck_collision_with_meridian_on_NH32_image..jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T22:22:54.396Z",
+    "gorselDeneme": "2026-10-27T22:25:26.655Z",
     "ekGorselDeneme": "2026-10-27T19:56:05.088Z",
     "gorselEk": [
       {
@@ -2828,7 +2877,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Bronbeek_with_coloured_tree_at_23_October_2012%2C_nowadays_used_for_elderly_retired_soldiers_and_a_museum_-_panoramio.jpg/1280px-Bronbeek_with_coloured_tree_at_23_October_2012%2C_nowadays_used_for_elderly_retired_soldiers_and_a_museum_-_panoramio.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T22:22:54.314Z"
+    "gorselDeneme": "2026-10-27T22:25:26.552Z"
   },
   {
     "id": "b147286e873c2100",
@@ -2954,7 +3003,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Elderly_people_editing_Catalan_Wikipedia_03.JPG/1280px-Elderly_people_editing_Catalan_Wikipedia_03.JPG",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T22:22:54.156Z"
+    "gorselDeneme": "2026-10-27T22:25:26.319Z"
   },
   {
     "id": "ddcc897e04c29e71",
@@ -3056,7 +3105,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Watertown_FBI_raid_-_news_vans.jpg/1280px-Watertown_FBI_raid_-_news_vans.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T22:22:54.138Z",
+    "gorselDeneme": "2026-10-27T22:25:26.405Z",
     "ekGorselDeneme": "2026-10-27T19:56:07.329Z",
     "gorselEk": [
       {
@@ -3111,7 +3160,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/A_Securiy_Forces_team_member_handcuffs_an_intruder_at_Hotel_2_during_the_Launch_Facility_%28LF%29_Recapture_portion_of_the_Nuclear_Security_Inspection_%28NSI%29%2C_Malmstrom_AFB_020604-F-CI726-011.jpg/1280px-thumbnail.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T22:22:54.331Z",
+    "gorselDeneme": "2026-10-27T22:25:26.886Z",
     "ekGorselDeneme": "2026-10-27T19:56:11.345Z",
     "gorselEk": [
       {
@@ -3293,7 +3342,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg/1280px-Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T22:22:54.645Z",
+    "gorselDeneme": "2026-10-27T22:25:26.779Z",
     "ekGorselDeneme": "2026-10-27T19:56:15.283Z"
   },
   {
@@ -3352,7 +3401,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Crime_Scene_Investigation_Unit%2C_Royal_Gibraltar_Police.jpg/1280px-Crime_Scene_Investigation_Unit%2C_Royal_Gibraltar_Police.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T22:22:54.428Z"
+    "gorselDeneme": "2026-10-27T22:25:26.686Z"
   },
   {
     "id": "8d81ac6b3dbd74c6",
@@ -3410,7 +3459,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Moscow_City_landscape_july_2008.jpg/1280px-Moscow_City_landscape_july_2008.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T22:22:54.690Z"
+    "gorselDeneme": "2026-10-27T22:25:26.727Z"
   },
   {
     "id": "a46df0cdb05e74c0",
@@ -3457,7 +3506,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Christophe_Gleizes_journaliste_Paris_17.jpg/1280px-Christophe_Gleizes_journaliste_Paris_17.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T22:22:54.348Z",
+    "gorselDeneme": "2026-10-27T22:25:26.676Z",
     "ekGorselDeneme": "2026-10-27T19:56:17.356Z",
     "gorselEk": [
       {
@@ -3531,7 +3580,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Meeting_of_Vladimir_Putin_and_Alexander_Lukashenko_02_%2822-02-2021%29.jpg/1280px-Meeting_of_Vladimir_Putin_and_Alexander_Lukashenko_02_%2822-02-2021%29.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T22:22:54.369Z"
+    "gorselDeneme": "2026-10-27T22:25:26.695Z"
   },
   {
     "id": "9c57cf58b99b48fa",
@@ -3589,7 +3638,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg/1280px-Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T22:22:54.846Z"
+    "gorselDeneme": "2026-10-27T22:25:27.469Z"
   },
   {
     "id": "bb8c2a0265a25de5",
@@ -4091,7 +4140,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Lick_Fire_on_the_Umatilla_National_Forest_burning_at_night.jpg/1280px-Lick_Fire_on_the_Umatilla_National_Forest_burning_at_night.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T22:22:54.832Z"
+    "gorselDeneme": "2026-10-27T22:25:27.064Z"
   },
   {
     "id": "ea11f48aeafbe35d",
@@ -4148,7 +4197,7 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:KKB_Kagoshima_Broadcasting_Head_2017_01.JPG"
       }
     ],
-    "gorselDeneme": "2026-10-27T22:22:54.669Z"
+    "gorselDeneme": "2026-10-27T22:25:27.091Z"
   },
   {
     "id": "aceacc8e0ece34ea",
@@ -4334,7 +4383,7 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:03-05-2014_-_Graffiti_near_European_Central_Bank_-_EZB_-_Frankfurt_Main_-_Germany_-_08.jpg"
       }
     ],
-    "gorselDeneme": "2026-10-27T22:22:55.300Z"
+    "gorselDeneme": "2026-10-27T22:25:27.019Z"
   },
   {
     "id": "d313a138240dd24f",
@@ -4445,7 +4494,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Mikhail_Mishustin%27s_talk_with_Kazakh_President_Kassym-Jomart_Tokayev_%283%29.jpg/1280px-Mikhail_Mishustin%27s_talk_with_Kazakh_President_Kassym-Jomart_Tokayev_%283%29.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T22:22:54.826Z",
+    "gorselDeneme": "2026-10-27T22:25:27.020Z",
     "ekGorselDeneme": "2026-10-27T19:56:20.750Z",
     "gorselEk": [
       {
@@ -4510,7 +4559,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Maple_Acer_saccharum_stem_XRT_phloem_%26_xylem_40x_mag.jpg/1280px-Maple_Acer_saccharum_stem_XRT_phloem_%26_xylem_40x_mag.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T22:22:54.900Z",
+    "gorselDeneme": "2026-10-27T22:25:27.547Z",
     "ekGorselDeneme": "2026-10-27T19:56:23.684Z",
     "gorselEk": [
       {
@@ -4714,7 +4763,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg/1280px-Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T22:22:55.911Z"
+    "gorselDeneme": "2026-10-27T22:25:28.036Z"
   },
   {
     "id": "e7ba8e07cc342c4c",
@@ -5139,7 +5188,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Interior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg/1280px-Interior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T22:22:55.699Z"
+    "gorselDeneme": "2026-10-27T22:25:27.569Z"
   },
   {
     "id": "f8a0b434e80f1b8a",
@@ -5458,7 +5507,7 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Flooded_Paddy_fields_of_Pallippuram_during_rainy_season_3.jpg"
       }
     ],
-    "gorselDeneme": "2026-10-27T22:22:55.279Z"
+    "gorselDeneme": "2026-10-27T22:25:27.596Z"
   },
   {
     "id": "b7a264115cc859e5",
