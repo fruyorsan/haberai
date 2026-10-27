@@ -11,12 +11,15 @@ const schema = {
   description:
     "HaberinAi; Türkiye ve dünya gündemini yapay zekâ destekli özetler, öne çıkan maddeler ve bağlam analizleriyle sunan bağımsız dijital haber platformudur.",
   url: `${origin}/hakkimizda/`,
+  dateModified: "2026-10-27",
   mainEntity: {
     "@type": "NewsMediaOrganization",
     name: "HaberinAi",
     url: `${origin}/`,
     logo: `${origin}/ikon-512.png`,
     email: CONTACT_EMAIL,
+    publishingPrinciples: `${origin}/yayin-ilkeleri/`,
+    correctionsPolicy: `${origin}/yayin-ilkeleri/`,
   },
 };
 ---
@@ -36,6 +39,7 @@ const schema = {
         bilim, spor ve kültür haberlerini bilgi kirliliğinden arındırarak anlaşılır özetler ve
         analitik değerlendirmelerle sunan bağımsız bir dijital haber platformudur.
       </p>
+      <p class="kurumsal__guncelleme">Son güncelleme: 27 Ekim 2026</p>
     </header>
 
     <div class="kurumsal__ikili">
@@ -56,6 +60,12 @@ const schema = {
           gelişmenin satır başlarını veren <strong>Öne Çıkanlar</strong>, olayın arka planını anlatan
           <strong>Haberin Detayı</strong> ve gelişmenin etkilerini değerlendiren <strong>AI Yorumu</strong>.
         </p>
+        <p>
+          Öne çıkaran özelliğimiz <strong>özet</strong>: Okuru uzun metinlere boğmadan, haberin özünü
+          ve neden önemli olduğunu tek ekranda veriyoruz. <strong>Shorts</strong> formatıyla aynı
+          gelişmeye dikey ve hızlı bir bakış, AI Yorumu ile de olayın etkisine dair farklı bir
+          perspektif sunuyoruz.
+        </p>
       </section>
     </div>
 
@@ -67,14 +77,14 @@ const schema = {
       </p>
       <ul>
         <li>
-          <strong>Kaynak Takibi ve Tekilleştirme:</strong> Güvenilir ulusal ve uluslararası haber
-          kaynakları ile resmi açıklamalar düzenli olarak takip edilir; aynı olayı anlatan mükerrer
-          bültenler elenerek tek ve bütünlüklü bir haber dosyası oluşturulur.
+          <strong>Gündem Taraması ve Tekilleştirme:</strong> Gündemdeki gelişmeler resmi
+          açıklamalar, basın bültenleri ve kamuya açık ajans bilgileri üzerinden izlenir; aynı olayı
+          anlatan mükerrer bültenler elenerek tek ve bütünlüklü bir haber dosyası oluşturulur.
         </li>
         <li>
-          <strong>Özgün Yeniden Yazım ve Benzerlik Süzgeci:</strong> Kaynak metinler hiçbir zaman
-          birebir kopyalanmaz. Her haber kendi dilimizle yeniden yapılandırılır ve yayına alınmadan
-          önce otomatik cümle/ifade benzerlik denetiminden geçirilir.
+          <strong>Özgün Özet ve Metin:</strong> Kopyala-yapıştır içerik yayınlanmaz. Her haber;
+          kendi özeti, kendi başlığı ve kendi anlatım düzeniyle yazılır, yayına alınmadan önce
+          otomatik cümle/ifade benzerlik denetiminden geçirilir.
         </li>
         <li>
           <strong>Analitik Katma Değer:</strong> Haber metnine eklenen analiz bölümünde, gelişmenin
@@ -82,9 +92,10 @@ const schema = {
           okuyucu haber sayfasındaki etkileşimli soru-cevap aracıyla konunun detaylarını sorgulayabilir.
         </li>
         <li>
-          <strong>Şeffaf Kaynak Takibi:</strong> Yararlanılan birincil kaynak kuruluş editoryal
-          kayıtta saklanır; haber metni ve fotoğrafları izinsiz kullanılmaz, içerik özgün biçimde
-          yeniden yazılır.
+          <strong>Okura Saygılı Şeffaflık:</strong> Her haberin sonunda hazırlanma yöntemi, yayın ve
+          güncelleme tarihi, sorumlu yayıncı, düzeltme kanalı ve editoryal ilkelere bağlantı gösterilir.
+          Haber metinleri ve görselleri izinsiz kullanılmaz; görsellerde yalnızca serbest lisanslı
+          kaynaklar tercih edilir.
         </li>
       </ul>
     </section>
@@ -109,8 +120,9 @@ const schema = {
         <div>
           <h3>Telif Haklarına Saygı</h3>
           <p>
-            Yayıncı emeğine ve fikri mülkiyete saygı duyar, görsel ve metin kullanımında lisans ve
-            atıf kurallarını titizlikle uygularız.
+            İçeriklerimiz kendi özet ve anlatımımızla üretilir; kopyala-yapıştır metin yayınlanmaz.
+            Görsellerde yalnızca serbest lisanslı kaynaklar kullanılır, hak sahiplerinin bildirimleri
+            en geç 48 saat içinde sonuçlandırılır.
           </p>
         </div>
         <div>
@@ -121,6 +133,55 @@ const schema = {
           </p>
         </div>
       </div>
+    </section>
+
+    <section class="kurumsal__blok">
+      <h2>Yapay Zekâ Kullanımı ve İnsan Sorumluluğu</h2>
+      <p>
+        Haberlerin özetlenmesi, kilit maddelerin çıkarılması ve bağlam analizinin hazırlanmasında
+        yapay zekâ dil modellerinden yararlanıyoruz. Yapay zekâ bir karar mercii değil, üretim
+        aracıdır: gündem seçimi, yayın kararı ve içeriğin sorumluluğu editör masasındadır.
+      </p>
+      <ul>
+        <li>
+          <strong>Görünür açıklama:</strong> Her haberin sonundaki "Bu haber hakkında" kutusunda
+          içeriğin yapay zekâ destekli özetleme ve editör kontrolüyle hazırlandığı, yayın/güncelleme
+          tarihi ve sorumlu yayıncı açıkça belirtilir. Yorum bölümü "AI Yorumu" etiketiyle ayrılır.
+        </li>
+        <li>
+          <strong>Özgünlük denetimi:</strong> Kopyala-yapıştır metin yayınlanmaz; uzun ortak cümle
+          dizileri otomatik benzerlik süzgeciyle ayıklanır. Özetin gövdeyi, yorumun özeti tekrar
+          ettiği üretimler kalite kapısından geçemez.
+        </li>
+        <li>
+          <strong>İnsan denetimi ve düzeltme:</strong> Okuyucu bildirimi geldiğinde içerik
+          incelenir; maddi hata düzeltilir veya yayından kaldırılır. Düzeltme talepleri en geç
+          48 saat içinde yanıtlanır.
+        </li>
+      </ul>
+    </section>
+
+    <section class="kurumsal__blok">
+      <h2>Finansman, Reklam ve Editoryal Bağımsızlık</h2>
+      <p>
+        HaberinAi'nin geliri reklam ve açıkça etiketlenmiş sponsorluklardan oluşur. Reklam
+        verenlerin haber seçimine, başlığa, özete veya yorumlara müdahalesi kabul edilmez.
+        Ücret karşılığı yayımlanan içerikler "Sponsorlu" etiketiyle ayrılır.
+      </p>
+      <ul>
+        <li>
+          Reklamlar yalnızca dizine açık, kalite kapısını geçmiş sayfalarda gösterilir;
+          noindex sayfalarda reklam yüklenmez.
+        </li>
+        <li>
+          Haber başına en fazla iki reklam birimi kullanılır; okuma deneyimini bozacak
+          yoğunluktan kaçınılır.
+        </li>
+        <li>
+          Reklam ve ölçüm çerezleri Google Consent Mode ile yönetilir. Ayrıntılar
+          <a href="/gizlilik/">Gizlilik ve Çerez Politikası</a>'nda yer alır.
+        </li>
+      </ul>
     </section>
 
     <section class="kurumsal__alt">
@@ -173,6 +234,11 @@ const schema = {
     font-size: 1.02rem;
     line-height: 1.72;
     color: var(--text-2);
+  }
+  .kurumsal__guncelleme {
+    margin: 12px 0 0;
+    font-size: 0.8rem;
+    color: var(--muted);
   }
   .kurumsal__ikili {
     display: grid;
@@ -229,6 +295,10 @@ const schema = {
   }
   .kurumsal__blok li strong {
     color: var(--text);
+  }
+  .kurumsal__blok a {
+    color: var(--brand-strong);
+    font-weight: 600;
   }
   .kurumsal__ilkeler {
     display: grid;

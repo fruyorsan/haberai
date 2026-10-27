@@ -23,6 +23,30 @@ const gorselKimlik = (url) =>
     .replace(/-\d{2,4}x\d{2,4}(?=\.[a-z0-9]+$)/, "")
     .replace(/\.(jpe?g|png|webp|avif|gif)$/, "");
 
+/**
+ * Yayına alma öncesi yapısal kalite kontrolü.
+ *
+ * Kalite kapısı (src/indeks.js) vitrini süzüyor; ama ince bir haber yine de
+ * arşive girip noindex bir URL olarak yaşıyordu. AdSense "düşük değerli içerik"
+ * sinyalini beslememek için bu eşiğin altındaki üretimler hiç yayına alınmaz.
+ *
+ * @returns {string} sorun yoksa "" döner.
+ */
+function inceIcerikNedeni(a) {
+  const paragraflar = (Array.isArray(a?.body) ? a.body : [])
+    .map((p) => String(p || "").trim())
+    .filter(Boolean);
+  const govde = paragraflar.join(" ").replace(/\s+/g, " ").trim();
+  if (govde.length < 1200) return "kısa gövde";
+  if (paragraflar.length < 4) return "paragraf yapısı zayıf";
+  if (paragraflar.filter((p) => p.length >= 120).length < 3) return "kısa paragraflar";
+  if (String(a?.summary || "").trim().length < 110) return "kısa özet";
+  if (String(a?.comment || "").trim().length < 140) return "kısa yorum";
+  if (String(a?.editorNote || "").trim().length < 40) return "editör notu yok";
+  if ((a?.keyPoints || []).filter(Boolean).length < 3) return "maddeli özet yok";
+  return "";
+}
+
 async function main() {
   const hasKey = process.env.GEMINI_API_KEY || process.env.GROQ_API_KEY;
 
@@ -506,6 +530,16 @@ async function main() {
       }
       // Yalnızca son dakika tespit edilenlerde alan eklenir; diğerlerinde hiç olmaz.
       if (item.breaking) entry.breaking = true;
+
+      // İnce/tekrarlı üretim arşive hiç girmez: noindex URL sayısını ve
+      // "düşük değerli içerik" riskini azaltır.
+      const ince = inceIcerikNedeni(entry);
+      if (ince) {
+        console.log(`⤼ yayına alınmadı (${ince})`);
+        if (i < queue.length - 1) await sleep(config.aiDelayMs);
+        continue;
+      }
+
       articles.push(entry);
       newArticles.push(entry);
       console.log("✓");

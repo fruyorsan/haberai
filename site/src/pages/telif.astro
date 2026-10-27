@@ -2,34 +2,48 @@
 import Base from "../layouts/Base.astro";
 import { CONTACT_EMAIL } from "../lib/site-meta.js";
 
-const updated = "23 Ekim 2026";
+const origin = Astro.site ? String(Astro.site).replace(/\/+$/, "") : "https://haberinai.site";
+const updated = "27 Ekim 2026";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "İçerik ve Telif Politikası — HaberinAi",
+  description:
+    "HaberinAi içeriklerinin hazırlanma yöntemi, görsel lisansları ve telif hakkı bildirim süreci.",
+  url: `${origin}/telif/`,
+  dateModified: "2026-10-27",
+  publisher: { "@type": "Organization", name: "HaberinAi", url: `${origin}/` },
+};
 ---
 
 <Base
   title="İçerik ve Telif Politikası — HaberinAi"
-  description="HaberinAi içeriklerinin hazırlanma yöntemi, kaynak gösterimi, görsel lisansları ve telif hakkı bildirim süreci."
+  description="HaberinAi içeriklerinin hazırlanma yöntemi, görsel lisansları ve telif hakkı bildirim süreci."
+  canonical={`${origin}/telif/`}
+  schema={schema}
 >
   <div class="container prose">
     <h1>İçerik ve Telif Politikası</h1>
     <p class="muted">Son güncelleme: {updated}</p>
 
     <p>
-      <strong>HaberinAi</strong>, güncel gelişmeleri güvenilir haber kaynaklarından takip ederek
-      kendi anlatımıyla özetleyen, öne çıkan başlıklarını yapılandıran ve bağlam analizi ekleyen
-      bağımsız bir dijital haber platformudur. Bu sayfa, içerik hazırlama ilkelerimizi ve telif
-      haklarına gösterdiğimiz özeni açıklar.
+      <strong>HaberinAi</strong>, gündemi takip ederek haberin özünü kendi özeti ve anlatımıyla
+      yayımlayan, öne çıkan başlıklarını yapılandıran ve bağlam analizi ekleyen bağımsız bir dijital
+      haber platformudur. Bu sayfa, içerik hazırlama ilkelerimizi ve telif haklarına gösterdiğimiz
+      özeni açıklar.
     </p>
 
     <h2>1. İçerik Hazırlama ve Özgünlük</h2>
     <ul>
       <li>
-        Haberler, birincil kaynaklarda yer alan olgusal bilgiler temel alınarak yapay zekâ destekli
-        analiz ve özetleme araçlarıyla <strong>özgün bir metin yapısında</strong> yeniden yazılır;
-        kaynak metin birebir kopyalanmaz.
+        Haberler, kamuya açık olgusal bilgiler temel alınarak yapay zekâ destekli analiz ve
+        özetleme araçlarıyla <strong>özgün bir metin yapısında</strong> editör masası tarafından
+        yazılır; kopyala-yapıştır içerik yayınlanmaz.
       </li>
       <li>
         Hazırlanan her içerik yayına alınmadan önce otomatik benzerlik denetiminden geçirilir;
-        kaynak metinle örtüşen uzun ifade dizileri tespit edilirse ayıklanır veya yeniden
+        başka bir metinle örtüşen uzun ifade dizileri tespit edilirse ayıklanır veya yeniden
         yapılandırılır.
       </li>
       <li>
@@ -38,11 +52,12 @@ const updated = "23 Ekim 2026";
       </li>
     </ul>
 
-    <h2>2. Kaynak ve Özgünlük</h2>
+    <h2>2. Özgünlük ve Emek</h2>
     <p>
-      Haberler, yararlanılan birincil kaynağın bilgisi editoryal kayıtta saklanarak ve kaynak metin
-      birebir kopyalanmadan yeniden yazılır. Kaynak kuruluşların emeğine saygı duyuyor, metin ve
-      fotoğraflarını izinsiz kullanmıyoruz.
+      HaberinAi'de yayımlanan metinler, platformun kendi özet ve anlatımıyla üretilir. Bir başka
+      yayıncının metni olduğu gibi veya cümle cümle devralınmaz; görseller yalnızca serbest lisanslı
+      kaynaklardan seçilir. Habercilik emeğine saygı duyuyor, hak sahiplerinin bildirimlerini
+      öncelikli olarak işleme alıyoruz.
     </p>
 
     <h2>3. Görsel Kullanımı ve Lisanslar</h2>
@@ -85,6 +100,29 @@ const updated = "23 Ekim 2026";
       Sitedeki içerikler genel bilgilendirme amacı taşır; yatırım, hukuk veya tıbbi tavsiye
       niteliğinde değildir. Düzeltme ve geri bildirimleriniz için <a href="/iletisim/">İletişim</a>
       sayfamızı kullanabilirsiniz.
+    </p>
+
+    <h2>7. Şeffaflık ve Hesap Verebilirlik</h2>
+    <p>
+      Her haberin sonunda okurun görebildiği bir <strong>"Bu haber hakkında"</strong> kutusu
+      bulunur. Bu kutuda özet odaklı yayın yaklaşımı, içeriğin hazırlanma yöntemi (yapay zekâ
+      destekli özetleme ve editör kontrolü), yayın ve varsa güncelleme tarihi, sorumlu yayıncı,
+      düzeltme kanalı ve editoryal ilkelere bağlantı yer alır. Aynı bilgiler sayfanın yapısal
+      verisinde (`publishingPrinciples`, `correctionsPolicy`) de korunur.
+    </p>
+    <p>
+      Sorumlu yayıncı, iletişim kanalları ve içerik üretim yöntemi <a href="/kunye/">Künye</a>
+      sayfasında açıklanır; düzeltme ve kaldırma talepleri en geç 48 saat içinde yanıtlanır.
+    </p>
+
+    <h2>8. Sponsorlu İçerik ve Reklam</h2>
+    <p>
+      Ücret karşılığı yayımlanan içerikler "Sponsorlu" etiketiyle açıkça işaretlenir ve normal
+      haber akışından ayrılır. Reklamlar yazı metninden görsel olarak ayrılır; haber başına en
+      fazla iki reklam birimi kullanılır ve dizine açık olmayan (noindex) sayfalarda reklam
+      yüklenmez. Reklam verenlerin editoryal içeriğe müdahalesi kabul edilmez; ayrıntılar
+      <a href="/yayin-ilkeleri/">Yayın İlkeleri</a> ve <a href="/gizlilik/">Gizlilik
+      Politikası</a>'nda açıklanır.
     </p>
   </div>
 </Base>

@@ -20,7 +20,7 @@ import { akisKartlar, AKIS_ILK } from "../lib/akis-kart.js";
 import { ilgiSirala, kapakliOneSirala } from "../lib/ilgi.js";
 import { ADSENSE_SLOTS } from "../lib/site-meta.js";
 
-const { kategori = "", kategoriAdi = "", ilkSayi = AKIS_ILK } = Astro.props;
+const { kategori = "", kategoriAdi = "", ilkSayi = AKIS_ILK, reklam = true } = Astro.props;
 const gecerliKat = Boolean(kategori);
 const tumu = getYayinArticles();
 const kategoriler = getCategories().slice(0, 14);
@@ -128,7 +128,7 @@ const ilk = liste.slice(0, ilkSayi);
 
     <div class="akis__liste" id="akis-liste">
       <Fragment set:html={akisKartlar(ilk.slice(0, 12), 0)} />
-      <AdSlot slot={ADSENSE_SLOTS.liste} label="Sponsorlu" />
+      {reklam && <AdSlot slot={ADSENSE_SLOTS.liste} label="Sponsorlu" />}
       <Fragment set:html={akisKartlar(ilk.slice(12), 12)} />
     </div>
 

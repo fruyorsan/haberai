@@ -476,11 +476,6 @@ button {
   color: #38bdf8;
 }
 
-.card__source {
-  font-weight: 600;
-  color: var(--text-2);
-}
-
 .card__body {
   padding: 16px 18px 18px;
   display: flex;
@@ -1242,13 +1237,6 @@ html.ysheet-kilit {
   color: var(--muted);
   font-size: 0.76rem;
   min-width: 0;
-}
-.ak__kaynak {
-  font-weight: 700;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  max-width: 46%;
 }
 .ak__eylem {
   display: flex;

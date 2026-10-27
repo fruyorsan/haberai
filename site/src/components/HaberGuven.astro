@@ -1,0 +1,107 @@
+---
+// ==========================================================================
+// HABER ALT BİLGİ ŞERİDİ
+// --------------------------------------------------------------------------
+// Eski hâli haberin sonunda altı maddelik büyük bir kutu basıyordu; okur
+// "sonraki habere geçerken" bu blokla karşılaşıyordu. Artık aynı güven
+// sinyalleri (yayıncı, tarih, düzeltme kanalı, editoryal ilkeler) tek satırlık
+// ince bir şeritte veriliyor. Üretim yönteminin ayrıntısı /kunye/ sayfasında.
+// ==========================================================================
+import { formatDate } from "../lib/articles.js";
+import { CONTACT_EMAIL, PUBLISHER } from "../lib/site-meta.js";
+
+const { article, publishedIso = "", modifiedIso = "" } = Astro.props;
+const yayin = formatDate(publishedIso);
+const guncelleme = formatDate(modifiedIso);
+const guncellendi = Boolean(guncelleme && guncelleme !== yayin);
+const duzeltmeKonusu = `Düzeltme talebi: ${article?.title || "haber"}`;
+const duzeltmeLink = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(duzeltmeKonusu)}`;
+// Mobilde tek satıra sığsın diye "HaberinAi Editör Masası" yerine kısa marka.
+const marka = String(PUBLISHER.ad || "").trim();
+const markaKisa = marka.replace(/\s+(Editör|Editor)\s+Masas[ıi]$/i, "") || marka;
+---
+
+<aside class="guven" aria-label="Bu haber hakkında">
+  <p class="guven__satir">
+    <span class="guven__marka">
+      <span class="guven__tam">{marka}</span>
+      <span class="guven__kisa">{markaKisa}</span>
+    </span>
+    {yayin && (
+      <>
+        <span class="guven__ayrac" aria-hidden="true">·</span>
+        <time datetime={publishedIso}>{yayin}</time>
+      </>
+    )}
+    {guncellendi && (
+      <>
+        <span class="guven__ayrac" aria-hidden="true">·</span>
+        <span>Güncelleme: <time datetime={modifiedIso}>{guncelleme}</time></span>
+      </>
+    )}
+    <span class="guven__ayrac" aria-hidden="true">·</span>
+    <a class="guven__ikincil" href={duzeltmeLink}>Hata bildir</a>
+    <span class="guven__ayrac guven__ikincil" aria-hidden="true">·</span>
+    <a href="/yayin-ilkeleri/">Yayın ilkeleri</a>
+    <span class="guven__ayrac guven__ikincil" aria-hidden="true">·</span>
+    <a class="guven__ikincil" href="/telif/">Telif</a>
+  </p>
+</aside>
+
+<style>
+  .guven {
+    margin: 22px 0 2px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border-strong);
+  }
+  .guven__satir {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px 8px;
+    margin: 0;
+    font-size: 0.76rem;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+  .guven__marka {
+    font-weight: 700;
+    color: var(--text-2);
+  }
+  .guven__kisa {
+    display: none;
+  }
+  .guven__ayrac {
+    color: var(--border-strong);
+  }
+  .guven__satir a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .guven__satir a:hover {
+    color: var(--brand-strong);
+    text-decoration: underline;
+  }
+
+  /* Mobilde tek satır kalsın: ikincil bağlantılar ve uzun marka adı gizlenir;
+     yalnızca kısa marka + tarih + yayın ilkeleri görünür. */
+  @media (max-width: 640px) {
+    .guven {
+      margin: 16px 0 0;
+      padding-top: 10px;
+    }
+    .guven__satir {
+      gap: 4px 6px;
+      font-size: 0.72rem;
+    }
+    .guven__tam {
+      display: none;
+    }
+    .guven__kisa {
+      display: inline;
+    }
+    .guven__ikincil {
+      display: none;
+    }
+  }
+</style>

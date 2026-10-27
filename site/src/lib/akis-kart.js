@@ -77,7 +77,6 @@ export function akisKart(a, sira = 0) {
   const ozet = kisalt(a.summary, 190);
   const kat = kac(a.category || "Haber");
   const slug = kac(a.slug);
-  const kaynakAdi = kac(a.source || "HaberinAi");
   const zaman = kac(timeAgo(publishedISO(a)));
   // İlk kart vitrin gibidir: hemen yüklenir (LCP). Sonrakiler tembel.
   const oncelik = sira === 0;
@@ -106,8 +105,6 @@ export function akisKart(a, sira = 0) {
         : ""
     }
     <div class="ak__alt">
-      <span class="ak__kaynak" title="Kaynak">${kaynakAdi}</span>
-      <span class="ak__nokta" aria-hidden="true">·</span>
       <span class="ak__zaman">${zaman}</span>
     </div>
     <div class="ak__eylem">

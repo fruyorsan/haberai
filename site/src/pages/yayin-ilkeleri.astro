@@ -3,20 +3,23 @@ import Base from "../layouts/Base.astro";
 import { CONTACT_EMAIL } from "../lib/site-meta.js";
 
 const origin = Astro.site ? String(Astro.site).replace(/\/+$/, "") : "https://haberinai.site";
+const updated = "27 Ekim 2026";
 
 const schema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: "Yayın İlkeleri ve Doğruluk Politikası — HaberinAi",
   description:
-    "HaberinAi yayın ilkeleri: Kaynak doğrulama, özgün içerik üretimi, tarafsızlık, düzeltme politikası ve telif haklarına saygı.",
+    "HaberinAi yayın ilkeleri: doğrulama, özet odaklı yayıncılık, yapay zekâ şeffaflığı, reklam bağımsızlığı, düzeltme politikası ve telif haklarına saygı.",
   url: `${origin}/yayin-ilkeleri/`,
+  dateModified: "2026-10-27",
+  publisher: { "@type": "Organization", name: "HaberinAi", url: `${origin}/` },
 };
 ---
 
 <Base
   title="Yayın İlkeleri ve Doğruluk Politikası — HaberinAi"
-  description="HaberinAi yayın ilkeleri: Kaynak doğrulama, özgün içerik üretimi, tarafsızlık, düzeltme politikası ve telif haklarına saygı."
+  description="HaberinAi yayın ilkeleri: doğrulama, özet odaklı yayıncılık, tarafsızlık, düzeltme politikası ve telif haklarına saygı."
   canonical={`${origin}/yayin-ilkeleri/`}
   schema={schema}
 >
@@ -28,16 +31,22 @@ const schema = {
         <strong>HaberinAi</strong>; güncel gelişmeleri okura hızlı, anlaşılır ve analitik bir
         yapıda sunarken aşağıdaki yayın, doğruluk ve şeffaflık kurallarını esas alır.
       </p>
+      <p class="ilkeler__guncelleme">Son güncelleme: {updated}</p>
     </header>
 
     <div class="ilkeler__liste">
       <section class="ilkeler__madde">
-        <h2>1. Kaynak Güvenilirliği ve Doğrulama</h2>
+        <h2>1. Doğrulama ve Özet Odaklı Yayın</h2>
         <p>
-          Platformumuzda yer verilen haberler; tanınmış haber ajansları, kurumsal basın bültenleri
-          ve güvenilir yayın organlarının kamuya açık bildirimlerine dayanır. Kaynağı belirsiz
-          söylentiler kesin bilgi gibi sunulmaz; henüz doğrulanmamış gelişmeler başlık ve metinde
-          açıkça <em>"iddia"</em> veya <em>"öne sürüldü"</em> ifadeleriyle belirtilir.
+          Platformumuzda yer verilen haberler; resmi açıklamalar, kurumsal basın bültenleri ve
+          kamuya açık ajans bilgileri üzerinden doğrulanır. Kaynağı belirsiz söylentiler kesin bilgi
+          gibi sunulmaz; henüz doğrulanmamış gelişmeler başlık ve metinde açıkça
+          <em>"iddia"</em> veya <em>"öne sürüldü"</em> ifadeleriyle belirtilir.
+        </p>
+        <p>
+          Yayın yaklaşımımızın merkezinde <strong>özet</strong> vardır: Okuru uzun metne boğmadan
+          haberin özünü, öne çıkan maddelerini ve neden önemli olduğunu veririz. Shorts formatı ve
+          AI Yorumu aynı gelişmeye hızlı ve farklı bir bakış açısı ekler.
         </p>
       </section>
 
@@ -48,18 +57,31 @@ const schema = {
           ("AI Yorumu") hazırlanmasında yapay zekâ dil modellerinden yararlanır:
         </p>
         <ul>
-          <li>Kaynak metinler birebir kopyalanmaz; her haber kendi anlatım düzenimizle yeniden yazılır ve benzerlik denetiminden geçirilir.</li>
+          <li>Kopyala-yapıştır metin yayınlanmaz; her haber kendi özeti ve anlatım düzeniyle yazılır, benzerlik denetiminden geçirilir.</li>
           <li>Yapay zekâ tarafından üretilen analiz bölümleri haberin olgusal kısmından görsel olarak ayrılır ("AI Yorumu" etiketiyle sunulur).</li>
           <li>Tekrarlayan veya düşük nitelikli içerikler kalite süzgeciyle yayına alınmadan elenir.</li>
         </ul>
+        <p>
+          Yapay zekâ yalnızca bir üretim aracıdır; gündem seçimi, yayın kararı ve içeriğin
+          sorumluluğu <a href="/kunye/">HaberinAi editör masasına</a> aittir. Bir haber
+          yayına alınmadan önce gövde uzunluğu, paragraf yapısı, özetin özgünlüğü ve yorumun
+          haberle ilgisi otomatik kalite kapısından geçirilir; eşiğin altında kalan üretim
+          yayına alınmaz.
+        </p>
+        <p>
+          Her haberin sonunda okurun görebildiği bir <strong>"Bu haber hakkında"</strong> kutusu
+          bulunur. Bu kutuda özet odaklı yayın yaklaşımı, hazırlanma yöntemi, yayın ve güncelleme
+          tarihi, sorumlu yayıncı, düzeltme kanalı ve editoryal ilkelere bağlantı yer alır. Bilgi
+          yalnızca sayfa kaynağında veya yapısal veride saklanmaz.
+        </p>
       </section>
 
       <section class="ilkeler__madde">
-        <h2>3. Kaynak Takibi ve Telif Hakları</h2>
+        <h2>3. Telif ve Kullanım Hakları</h2>
         <p>
-          Habercilik emeğine ve fikri mülkiyete saygı esastır. Bilginin derlendiği birincil kaynak
-          kuruluş editoryal kayıtta saklanır; kaynak kuruluşun haber metni ve fotoğrafı
-          kopyalanmaz, içerik özgün biçimde yeniden yazılır.
+          Haber metinleri HaberinAi editör masası tarafından özgün olarak yazılır; kopyala-yapıştır
+          içerik yayınlanmaz. Habercilik emeğine ve fikri mülkiyete saygı esastır; hak sahiplerinin
+          düzeltme ve kaldırma talepleri öncelikli olarak işleme alınır.
         </p>
         <p>
           Haber görselleri yalnızca <strong>Wikimedia Commons</strong> üzerinde CC0, kamu malı,
@@ -98,6 +120,50 @@ const schema = {
           haber bağlantısıyla birlikte <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
           adresine veya <a href="/iletisim/">İletişim</a> sayfasına başvurabilirsiniz; talepler
           <strong>en geç 48 saat içinde</strong> sonuçlandırılır.
+        </p>
+        <p>
+          Düzeltme yapılan haberlerde değişiklik tarihi sayfadaki "Bu haber hakkında" kutusunda
+          güncellenir. Haber tamamen kaldırılırsa bağlantı, açıklama içeren bir sayfaya
+          yönlendirilir; sessizce 404'e düşürülmez.
+        </p>
+      </section>
+
+      <section class="ilkeler__madde">
+        <h2>7. Reklam, Sponsorluk ve Finansal Bağımsızlık</h2>
+        <p>
+          HaberinAi'nin geliri reklam ve açıkça etiketlenmiş sponsorluklardan oluşur. Reklam
+          verenlerin haber seçimine, başlığa, özete veya editör yorumuna müdahalesi kabul
+          edilmez. Ücret karşılığı yayımlanan her içerik "Sponsorlu" etiketi taşır ve haber
+          akışından görsel olarak ayrılır.
+        </p>
+        <ul>
+          <li>
+            Reklamlar yalnızca dizine açık, kalite kapısını geçmiş sayfalarda gösterilir;
+            arama motorlarına kapalı (noindex) sayfalarda reklam yüklenmez.
+          </li>
+          <li>
+            Bir haber sayfasında en fazla iki reklam birimi bulunur. Amaç okuma deneyimini
+            bozmadan yayını sürdürmektir; reklam yoğunluğu düşük tutulur.
+          </li>
+          <li>
+            Reklamlar "Sponsorlu" etiketiyle işaretlenir; haber metniyle karışacak biçimde
+            yerleştirilmez, okuru yanıltacak tıklama alanları kullanılmaz.
+          </li>
+          <li>
+            Reklam ve ölçüm çerezleri Google Consent Mode ile yönetilir; ayrıntılar
+            <a href="/gizlilik/">Gizlilik ve Çerez Politikası</a>'nda açıklanır.
+          </li>
+        </ul>
+      </section>
+
+      <section class="ilkeler__madde">
+        <h2>8. Şeffaflık ve Hesap Verebilirlik</h2>
+        <p>
+          Yayıncı kimliği, iletişim kanalları ve içerik üretim yöntemi <a href="/kunye/">Künye</a>
+          sayfasında; telif ve kullanım süreci <a href="/telif/">İçerik ve Telif
+          Politikası</a>'nda; veri işleme ve reklam çerezleri <a href="/gizlilik/">Gizlilik
+          Politikası</a>'nda açıklanır. Bu sayfaların tamamı site menüsünden ve her haberin
+          altındaki kutudan erişilebilir.
         </p>
       </section>
     </div>
@@ -138,6 +204,11 @@ const schema = {
     font-size: 0.98rem;
     line-height: 1.7;
     color: var(--text-2);
+  }
+  .ilkeler__guncelleme {
+    margin: 12px 0 0;
+    font-size: 0.8rem;
+    color: var(--muted);
   }
   .ilkeler__liste {
     display: flex;

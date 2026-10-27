@@ -135,9 +135,6 @@ import Base from "../layouts/Base.astro";
         <div class="card__body">
           <h2 class="card__title">${esc(a.t)}</h2>
           <p class="card__summary">${esc(a.s)}</p>
-          <div class="card__meta">
-            <span class="card__source">${esc(a.src)}</span>
-          </div>
         </div>
       </a>
     </article>`;
@@ -162,7 +159,7 @@ import Base from "../layouts/Base.astro";
     }
 
     const hits = DATA.filter((a) => {
-      const hay = norm(`${a.t} ${a.s} ${a.c} ${a.src} ${(a.tags || []).join(" ")}`);
+      const hay = norm(`${a.t} ${a.s} ${a.c} ${(a.tags || []).join(" ")}`);
       return words.every((w) => hay.includes(w));
     }).slice(0, 60);
 
