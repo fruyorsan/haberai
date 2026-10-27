@@ -1,5 +1,51 @@
 [
   {
+    "id": "ea11f48aeafbe35d",
+    "title": "KKB Hackathon 2026 Genç Geliştiricilere 875 Bin TL Ödül",
+    "slug": "kkb-hackathon-2026-genc-gelistiricilere-875-bin-tl-odul",
+    "summary": "Kredi Kayıt Bürosu, ikinci kez düzenlediği KKB Hackathon'da 1.805 öğrenci arasından seçilen 60 takımı finale taşıdı. Finalde 14 takım yarıştı ve toplam 875 bin TL ödül dağıtıldı. Katılımcılar, KKB’nin yerli bulut altyapısı Kloudeks üzerinde LLM ve embedding servislerini kullandı.",
+    "keyPoints": [
+      "14 takım finalde, toplam 875 000 TL ödül dağıtıldı",
+      "1.805 öğrenci, 522 takım arasından 60 ekip seçildi",
+      "Geçen yılki finalistler yapay zeka değerlendirme motorunu tasarladı"
+    ],
+    "body": [
+      "Kredi Kayıt Bürosu (KKB) bu yıl ikinci kez KKB Hackathon düzenleyerek genç yetenekleri veri ve yapay zeka odaklı projelerle bir araya getirdi. Etkinlik, İstanbul’daki MEXT Teknoloji Merkezi’nde bir haftalık yarı final ve iki günlük final maratonu şeklinde sürdü. Katılımcılar, \"Agentic Data Analytics\" teması çerçevesinde otonom yapay zeka ajanlarıyla veri analitiği çözümleri üretmeye çalıştı.",
+      "Toplam 1.805 öğrenci, 522 takımdan 60 ekip seçilerek yarı finale davet edildi. Bu takımlar, KKB’nin yerli bulut platformu Kloudeks üzerinde büyük dil modelleri (LLM) ve embedding servislerine ücretsiz erişim elde etti ve geliştirdikleri çözümleri çalışan demolarla gösterdi. İki haftalık süreçte KKB mühendisleri mentorluk yaparak projelerin teknik altyapısını güçlendirdi.",
+      "Final gününde 14 takım, BDDK Başkan Yardımcısı Dr. Mustafa Aydın, KKB Genel Müdürü Gökhan Şahin ve Prof. Dr. Erhan Aslanoğlu gibi isimlerin bulunduğu jüri karşısında sunum yaptı. Jüri, inovasyon, uygulanabilirlik ve kod kalitesi kriterlerine göre birincilik ödülünü 200 000 TL, ikinciliği 150 000 TL ve üçüncülüğü 100 000 TL olarak dağıttı. Diğer 9 finalist takıma da 25 000 TL nakit destek verildi.",
+      "Yarışmanın dikkat çeken bir diğer yönü, geçen yıl finalistlerin bu yılki yapay zeka değerlendirme altyapısını kodlamış olması. Bu ekip, 2026 yarışmasının başvuru, kod kalitesi, demo ve mentor değerlendirmelerini analiz eden bir AI tabanlı motor geliştirdi. Ayrıca, geçen yıl finalde yer alan 13 genç, KKB mühendislik kadrosunda istihdam edildi ve uzun vadeli bir yetenek ekosistemi oluşturuldu.",
+      "Gençlerin veri birikimine ve yerli altyapıya erişimi, Türkiye’nin teknoloji üretme kapasitesini artırıcı bir adım olarak görülüyor. Etkinlik, katılımcıların gerçek iş süreçlerine entegre olabilecek pratik çözümler sunmasıyla da öne çıktı."
+    ],
+    "comment": "KKB Hackathon, genç geliştiricilere yüksek tutarlı bir ödül paketi sunarak veri‑AI ekosistemine yatırım yapıyor. 875 bin TL’lik toplam ödül, katılımcıların projelerini gerçek iş ortamına taşıma motivasyonunu artırıyor. Bu model, üniversite öğrencilerini doğrudan iş gücüne entegre etmeyi hedefliyor ve önceki yılki AI değerlendirme motoru gibi somut çıktılarla ölçülüyor. Benzer hackathonlar genellikle daha düşük bütçelerle sınırlı kalırken, KKB’nin yaklaşımı sektörel rekabette fark yaratabilir.",
+    "editorNote": "KKB Hackathon, 875 bin TL ödülle genç yetenekleri gerçek iş çözümlerine yönlendiriyor; yerli bulut altyapısı sayesinde LLM deneyimi de sağlanıyor.",
+    "tags": [
+      "KKB",
+      "Hackathon",
+      "Yapay Zeka",
+      "Kloudeks",
+      "Genç Geliştiriciler"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "KKB hackathon final stage",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/kkb-hackathon-2026-sona-erdi-genc-gelistiriciler-yapay-zekayla-yaristi",
+    "image": "/kapak/ea11f48aeafbe35d.webp",
+    "gorselKaynak": {
+      "yazar": "Shixart1985",
+      "lisans": "CC BY 2.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg"
+    },
+    "publishedAt": "2026-10-27T12:45:56.000Z",
+    "generatedAt": "2026-10-27T12:54:55.454Z",
+    "breaking": true,
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg/1280px-Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "aceacc8e0ece34ea",
     "title": "Intel Nova Lake-S işlemci testlerde Core Ultra 9 285K modelini geçti",
     "slug": "intel-nova-lake-s-islemci-testlerde-core-ultra-9-285k-modelini-gecti",
