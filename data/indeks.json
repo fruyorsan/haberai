@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T22:42:49.362Z",
+  "updatedAt": "2026-10-27T22:46:14.960Z",
   "gunluk": 32,
   "pencereGun": 45,
   "esik": {
@@ -12,9 +12,9 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 4811,
-  "aday": 4811,
-  "uygun": 2753,
+  "toplamHaber": 4812,
+  "aday": 4812,
+  "uygun": 2754,
   "secilen": 426,
   "red": {
     "özet gövdeyle aynı": 100,
@@ -30,7 +30,7 @@
     "kategorisiz": 2,
     "editör notu yok": 12,
     "günlük kota": 2292,
-    "tekrar": 35
+    "tekrar": 36
   },
   "ornekTekrarlar": [
     {
@@ -48,6 +48,10 @@
     {
       "title": "Apple M6 çiplerle donattığı yeni iMac modelini 104.999 TL'den duyurdu",
       "twin": "Apple, M6 işlemcili yeni iMac modelini 104.999 TL başlangıç fiyatıyla duyurdu"
+    },
+    {
+      "title": "İsrail'in Gazze saldırıları 4 sivilin daha yaşamına son verdi",
+      "twin": "İsrail'in Gazze saldırıları 4 sivilin daha yaşamını kaybetmesine neden oldu"
     },
     {
       "title": "Fransa'nın borçlanma maliyeti 24 yılın en yüksek seviyesine ulaştı",
@@ -108,10 +112,6 @@
     {
       "title": "Tesla havalanan uçan araba tanıttı ancak hisseleri yüzde 18 eridi",
       "twin": "Tesla uçan otomobil modelini tanıttı, hisseler yüzde 18 değer kaybetti"
-    },
-    {
-      "title": "Galaxy A56 ve A36 One UI 9 güncellemesi Türkiye’ye ne zaman gelecek?",
-      "twin": "Galaxy S24 Ultra bataryası One UI 9 ile hızla tükenmeye başladı"
     }
   ],
   "days": {
@@ -221,13 +221,13 @@
       "3fe5f51aa274b7e5",
       "cb98f54ec0357794",
       "ed7cedde1f1f649b",
+      "dbfdd3a61e910d87",
       "de9f467a09cf062f",
       "c865c0c44656bbdb",
       "9a2a9c9d53760055",
       "0f4b8eeb3c188f14",
       "d83c4b0daa3b8572",
       "20f0048e1c4a071c",
-      "072f64b1031a6599",
       "4de38ec0144fe41b",
       "7a64b6f22bf19253",
       "f8b42d8c14347250",
@@ -625,6 +625,7 @@
     "c7679a48d001c440",
     "9214942153be4652",
     "1f001711e17d4b4f",
+    "dbfdd3a61e910d87",
     "686d3f11a6cecddc",
     "199eecef3d4748e1",
     "de9f467a09cf062f",
@@ -681,7 +682,6 @@
     "d7eed9f679a4c92b",
     "637057522398a3d3",
     "86fcae055aaf31dc",
-    "072f64b1031a6599",
     "bc7149de42d77776",
     "1b4109155f02effd",
     "b84e0636e5dcf4a6",
