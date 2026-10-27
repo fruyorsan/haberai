@@ -1,5 +1,70 @@
 [
   {
+    "id": "c12dcace83fc311c",
+    "title": "Broadcom router açığı: Wi-Fi şifresi gereksiz erişim",
+    "slug": "broadcom-router-acigi-wifi-sifresi-gereksiz-erisim",
+    "summary": "Quentin Kaiser, Broadcom router'larında 2010'dan beri var olan WPSplinter açığını keşfetti. Bu zafiyet, saldırganların Wi-Fi menzili içindeki cihazlara şifresiz erişmesine olanak tanıyor. Eski BCM3380 yonga setlerinde kalıcı çözüm bulunamıyor.",
+    "keyPoints": [
+      "Saldırganlar PIN girmeden yönlendirici belleğine erişebiliyor",
+      "Askey TCG3000 ve Sagemcom modellerinde uzaktan komut çalıştırıldı",
+      "Eski eCos tabanlı yonga setlerinde açık giderilemiyor"
+    ],
+    "body": [
+      "Güvenlik araştırmacısı Quentin Kaiser, Hexacon etkinliğinde sunum yaparak Broadcom markalı yönlendiricilerde 14 yıldır askıda kalan kritik bir güvenlik boşluğunu gözler önüne serdi. WPSplinter olarak adlandırılan bu kusur, Wi-Fi Protected Setup (WPS) özelliğini yöneten eski Monitor bileşeninde yer alıyor ve saldırganlara ağ anahtarı veya PIN kodu girmeden cihazın belleğine sızma imkânı sağlıyor.",
+      "Teknik inceleme, WPS mesajlarının parçalar halinde geldiğinde yazılımın bunları bellek sınırlarını kontrol etmeden birleştirdiğini gösteriyor. Bu durum, saldırganların yönlendirici üzerinde kötü amaçlı kod çalıştırmasına ve ağ trafiğini ele geçirmesine yol açıyor.",
+      "Broadcom, sorunun 2018 yılında yazılım değişikliğiyle giderildiğini iddia etsede Kaiser, bu yamanın eksik olduğunu ve birçok üreticinin güncellemeyi cihazlarına uygulamadığını belirtiyor. Şirket, yazılımın artık desteklenmediği gerekçesiyle bu açık için CVE tanımlayıcısı atamayı reddetti.",
+      "Ancak eski eCos tabanlı BCM3380, BCM3383 ve BCM33834 yonga setlerinde bu geçişin yapılabileceği bir yol bulunmuyor. Bu durum, söz konusu donanımlara sahip cihazlar için açığın asla giderilemeyeceği anlamına geliyor. Linux tabanlı BCM3390 ve BCM63xx gibi yonga setlerinde ise üreticilerin portlama yapması durumunda düzeltme mümkün olsa da, birçok ürünün destek ömrünü tamamlaması bu ihtimali zayıflatıyor.",
+      "Saldırganların uzun menzilden bile bu yöntemi kullanabilmesi, hedefli operasyonlar için ideal bir giriş noktası oluşturuyor. Kullanıcıların Wi-Fi şifresini değiştirmesi veya WPS özelliğini kapatması, savunmasız ayrıştırıcıyı tamamen devre dışı bırakamayabildiği için her zaman etkili olmuyor.",
+      "En güvenli çözüm, servis sağlayıcıdan veya donanım üreticiden gelecek ürün yazılımı güncellemesini beklemektir. Eğer yönlendirici çok eski bir nesle aitse ve güncelleme desteği kesildiyse, güvenlik risklerini azaltmak için cihazı yenisiyle değiştirmek gerekebilir. Kullanıcıların, bulundukları servisin açıkladığı güvenli listelerde kendi cihazlarının durumunu kontrol etmesi tavsiye ediliyor."
+    ],
+    "comment": "Eski router kullanıcıları için WPS'yı kapatmak veya şifre değiştirmek, bir güvenlik illüzyonu yaratmaktan öteye gidemiyor. Broadcom'un 2018'deki yamasının eksik kalması ve eCos tabanlı yonga setlerinde kalıcı bir çözümün bulunamaması, milyonlarca ev ağını kalıcı bir risk altında bırakıyor. Bu durum, özellikle Belçika'daki operatörlerin kullandığı Sagemcom ve Askey modellerinde kök erişimi mümkün kılarak, standart ağ hijyeninin yetersiz kaldığını gösteriyor. Yalnızca yazılım güncellemesiyle çözülemeyecek donanım seviyesindeki bu zafiyet, cihaz yenileme maliyetini güvenlik harcaması olarak zorunlu kılıyor.",
+    "editorNote": "WPS özelliğini kapatsanız bile Broadcom çipli eski router'larınızda kalıcı bir delik kalıyor. 2018'deki yama yetersiz kaldığı için bazı modellerde çözüm yok.",
+    "tags": [
+      "Broadcom",
+      "Router",
+      "Güvenlik Açığı",
+      "WPS",
+      "Quentin Kaiser"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "home wifi router closeup",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/16-yillik-broadcom-router-acigi",
+    "image": "/kapak/c12dcace83fc311c.webp",
+    "gorselKaynak": {
+      "yazar": "AGuo WecomU 2007 TAM",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:HKT_%E9%A6%99%E6%B8%AF%E7%B6%B2%E4%B8%8A%E8%A1%8C_Netvigator_4G_5G_Home_WiFi_CPE_%E5%AF%AC%E9%A0%BB%E6%A9%9F_%E8%8F%AF%E7%82%BA_HauWei_5G_CPE_6_H165-383_%E9%9D%9E%E5%85%89%E7%BA%96_modem_%E6%B5%81%E5%8B%95%E7%B6%B2%E7%B5%A1%E4%B8%8A%E7%B6%B2_October_2026_N13P_07.jpg"
+    },
+    "publishedAt": "2026-10-27T06:30:33.000Z",
+    "generatedAt": "2026-10-27T06:37:17.555Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Code_on_computer_monitor_%28Unsplash%29.jpg/1280px-Code_on_computer_monitor_%28Unsplash%29.jpg",
+        "yazar": "Markus Spiske markusspiske",
+        "lisans": "CC0",
+        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Code_on_computer_monitor_(Unsplash).jpg",
+        "altyazi": "WPSplinter açığını kullanan saldırgan simülasyonu"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Dallas-semiconductor-chip-art%2C_LSU_Tigers_Football.jpg",
+        "yazar": "KenShirriff",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Dallas-semiconductor-chip-art,_LSU_Tigers_Football.jpg",
+        "altyazi": "Etkilenen Broadcom yonga setleri ailesi"
+      }
+    ],
+    "breaking": true,
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/HKT_%E9%A6%99%E6%B8%AF%E7%B6%B2%E4%B8%8A%E8%A1%8C_Netvigator_4G_5G_Home_WiFi_CPE_%E5%AF%AC%E9%A0%BB%E6%A9%9F_%E8%8F%AF%E7%82%BA_HauWei_5G_CPE_6_H165-383_%E9%9D%9E%E5%85%89%E7%BA%96_modem_%E6%B5%81%E5%8B%95%E7%B6%B2%E7%B5%A1%E4%B8%8A%E7%B6%B2_October_2026_N13P_07.jpg/1280px-HKT_%E9%A6%99%E6%B8%AF%E7%B6%B2%E4%B8%8A%E8%A1%8C_Netvigator_4G_5G_Home_WiFi_CPE_%E5%AF%AC%E9%A0%BB%E6%A9%9F_%E8%8F%AF%E7%82%BA_HauWei_5G_CPE_6_H165-383_%E9%9D%9E%E5%85%89%E7%BA%96_modem_%E6%B5%81%E5%8B%95%E7%B6%B2%E7%B5%A1%E4%B8%8A%E7%B6%B2_October_2026_N13P_07.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "a71ac349748f1ad6",
     "title": "Erzurum’da Kırmızı Listedeki Vaşak, Doğal Yaşam Alanında Görüntülendi",
     "slug": "erzurumda-kirmizi-listedeki-varak-dogal-yasam-alaninda-goruntulendi",
