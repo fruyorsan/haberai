@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T12:37:40.096Z",
+  "updatedAt": "2026-10-27T12:41:43.856Z",
   "gunluk": 32,
   "pencereGun": 45,
   "esik": {
@@ -21,21 +21,13 @@
     "özgün yorum yok": 4,
     "kategorisiz": 2,
     "editör notu yok": 14,
-    "günlük kota": 2401,
-    "tekrar": 32
+    "günlük kota": 2405,
+    "tekrar": 28
   },
   "ornekTekrarlar": [
     {
       "title": "Fransa'nın borçlanma maliyeti 24 yılın en yüksek seviyesine ulaştı",
       "twin": "Fransa Tahvil Faizi 24 Yılın Zirvesinde: Hedge Fonların Rolü Tartışılıyor"
-    },
-    {
-      "title": "Apple, iOS 27.2 ile Mesajlar uygulamasında bildirim rozeti düzenliyor",
-      "twin": "Apple, iOS 27.2 güncellemesiyle Siri ve FaceTime özelliklerini güncelledi"
-    },
-    {
-      "title": "Apple iOS 27.2 Güncellemesi Siri'yi Konuşmaları Hatırlayacak",
-      "twin": "Apple, iOS 27.2 güncellemesiyle Siri ve FaceTime özelliklerini güncelledi"
     },
     {
       "title": "Elon Musk'tan Cumhuriyetçilere 200 milyon doları aşan seçim desteği",
@@ -82,10 +74,6 @@
       "twin": "Gaziosmanpaşa Belediyesi, 7.0 Deprem Tatbikatını 18.00'de Gerçekleştirdi"
     },
     {
-      "title": "Apple, iOS 27.2 RC sürümünü yayınladı ve CarPlay için video desteği getirdi",
-      "twin": "Apple, iOS 27.2 güncellemesiyle Siri ve FaceTime özelliklerini güncelledi"
-    },
-    {
       "title": "Bursa'da deprem paneli: 1855 felaketi tarihsel verilerle masaya yatırıldı",
       "twin": "Bursa deprem hafızasını masaya yatırdı: 1855 felaketi konuşuldu"
     },
@@ -104,6 +92,18 @@
     {
       "title": "Casper Excalibur G870, 57.406 TL'den başlayan fiyatla raflarda",
       "twin": "Casper Excalibur G870 oyun bilgisayarı 57.406 TL'den satılıyor"
+    },
+    {
+      "title": "Kanada 6,2 Milyar Dolar Sanayi Koruma Planıyla Trump Gümrük Vergilerine Karşı Harekete Geçti",
+      "twin": "Kanada, Trump Tarifelerine Karşı 6,2 Milyar Dolar Destek Paketi Duyurdu"
+    },
+    {
+      "title": "Honor MagicOS 11 Güncelleme Takvimi Açıklandı",
+      "twin": "Honor MagicOS 11 Güncellemesi 2026-2027 Döneminde Çeşitli Telefon ve Tabletleri Kapsayacak"
+    },
+    {
+      "title": "Erciş depreminin 15. yılında Koçak kardeşler kabirleri ziyaret etti",
+      "twin": "Erciş Kaymakamlığı, 15. Deprem Anma Töreniyle 644 Kayıp İçin Duaları Topladı"
     }
   ],
   "days": {
@@ -129,6 +129,7 @@
       "7d6fc7bd027318b4",
       "1973c4a1b9edbac6",
       "f08e354080925601",
+      "3145ab9bdd1072b3",
       "a2a863b110c38f51",
       "2da6c72d999937d8",
       "a9c2d7c309fb185f",
@@ -138,8 +139,7 @@
       "c7918bcabe20b200",
       "aac2fd30a29a8e67",
       "b012bc7666d17e75",
-      "330e98400984447d",
-      "76876b21d5aa5e40"
+      "330e98400984447d"
     ],
     "2026-10-26": [
       "5fece920610c8928",
@@ -578,6 +578,7 @@
     "7d6fc7bd027318b4",
     "1973c4a1b9edbac6",
     "f08e354080925601",
+    "3145ab9bdd1072b3",
     "22b7f128f8063029",
     "a2a863b110c38f51",
     "2da6c72d999937d8",
@@ -598,7 +599,6 @@
     "b012bc7666d17e75",
     "330e98400984447d",
     "2a713793a487eb4d",
-    "76876b21d5aa5e40",
     "51d3f50d40c7add9",
     "a2cc134cbc18fe50",
     "199eecef3d4748e1",
