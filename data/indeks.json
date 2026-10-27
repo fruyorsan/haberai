@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T22:25:43.129Z",
+  "updatedAt": "2026-10-27T22:28:03.921Z",
   "gunluk": 32,
   "pencereGun": 45,
   "esik": {
@@ -29,13 +29,21 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "günlük kota": 2294,
-    "tekrar": 33
+    "günlük kota": 2292,
+    "tekrar": 35
   },
   "ornekTekrarlar": [
     {
+      "title": "OpenAI, yapay zekâ modellerinin ürettiği 3 bilimsel sonucu doğruladı",
+      "twin": "OpenAI, yapay zekanın matematikte 3 büyük hamle yaptığını açıkladı"
+    },
+    {
       "title": "SPK, Tera Yatırım'ın lisansını iptal etti ve 50 kişi için suç duyurusu yaptı",
       "twin": "SPK nitelikli yatırımcı barajını 50 milyon liraya çıkardı"
+    },
+    {
+      "title": "OpenAI, temel bilimlerde 3 büyük teorik kırılma yaptığını duyurdu",
+      "twin": "OpenAI, yapay zekanın matematikte 3 büyük hamle yaptığını açıkladı"
     },
     {
       "title": "Apple M6 çiplerle donattığı yeni iMac modelini 104.999 TL'den duyurdu",
@@ -104,14 +112,6 @@
     {
       "title": "Galaxy A56 ve A36 One UI 9 güncellemesi Türkiye’ye ne zaman gelecek?",
       "twin": "Galaxy S24 Ultra bataryası One UI 9 ile hızla tükenmeye başladı"
-    },
-    {
-      "title": "Suudi Arabistan Enerji Bakanlığı Şeybe Petrol Sahasında 2 Ölüm Bildirdi",
-      "twin": "Suudi Arabistan’da Engellenen Füze Şarapnelini 2 Kişiyi Yaraladı"
-    },
-    {
-      "title": "Japonya'da 7.0 Güçlü Deprem 470 km Derinliğinde Saldırdı",
-      "twin": "Japonya, 7 Şiddetinde Depremi Bildirdi; Tsunami Riski Yok"
     }
   ],
   "days": {
@@ -220,10 +220,10 @@
     "2026-10-28": [
       "3fe5f51aa274b7e5",
       "cb98f54ec0357794",
+      "ed7cedde1f1f649b",
       "de9f467a09cf062f",
       "c865c0c44656bbdb",
       "9a2a9c9d53760055",
-      "ed7cedde1f1f649b",
       "0f4b8eeb3c188f14",
       "d83c4b0daa3b8572",
       "20f0048e1c4a071c",
@@ -618,6 +618,7 @@
     "29536e82da1bac41",
     "a67bcb09c7f84d83",
     "291418757fca5c9b",
+    "ed7cedde1f1f649b",
     "a2cc134cbc18fe50",
     "c7679a48d001c440",
     "9214942153be4652",
@@ -637,7 +638,6 @@
     "e9e6f2e35e96d1fb",
     "d3dfb29be52b9d6f",
     "0f377683b024318c",
-    "ed7cedde1f1f649b",
     "88afc4c46ff5a08a",
     "de3b009353f0ec95",
     "a167f16224f137cc",
