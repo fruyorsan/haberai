@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T05:02:57.899Z",
+  "updatedAt": "2026-10-27T05:06:16.690Z",
   "gunluk": 32,
   "pencereGun": 45,
   "esik": {
@@ -10,9 +10,9 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 4691,
-  "aday": 4691,
-  "uygun": 2798,
+  "toplamHaber": 4692,
+  "aday": 4692,
+  "uygun": 2799,
   "secilen": 414,
   "red": {
     "maddeli özet yok": 106,
@@ -21,8 +21,8 @@
     "özgün yorum yok": 4,
     "kategorisiz": 2,
     "editör notu yok": 14,
-    "günlük kota": 2350,
-    "tekrar": 34
+    "günlük kota": 2354,
+    "tekrar": 31
   },
   "ornekTekrarlar": [
     {
@@ -32,10 +32,6 @@
     {
       "title": "Fransa'nın borçlanma maliyeti 24 yılın en yüksek seviyesine ulaştı",
       "twin": "Fransa Tahvil Faizi 24 Yılın Zirvesinde: Hedge Fonların Rolü Tartışılıyor"
-    },
-    {
-      "title": "Apple, iOS 27.2 ile Mesajlar uygulamasında bildirim rozeti düzenliyor",
-      "twin": "Apple, iOS 27.2 güncellemesiyle Siri ve FaceTime özelliklerini güncelledi"
     },
     {
       "title": "Elon Musk'tan Cumhuriyetçilere 200 milyon doları aşan seçim desteği",
@@ -90,10 +86,6 @@
       "twin": "Gaziosmanpaşa Belediyesi, 7.0 Deprem Tatbikatını 18.00'de Gerçekleştirdi"
     },
     {
-      "title": "Apple, iOS 27.2 RC sürümünü yayınladı ve CarPlay için video desteği getirdi",
-      "twin": "Apple, iOS 27.2 güncellemesiyle Siri ve FaceTime özelliklerini güncelledi"
-    },
-    {
       "title": "Bursa'da deprem paneli: 1855 felaketi tarihsel verilerle masaya yatırıldı",
       "twin": "Bursa deprem hafızasını masaya yatırdı: 1855 felaketi konuşuldu"
     },
@@ -104,6 +96,14 @@
     {
       "title": "Suudi Arabistan Enerji Bakanlığı Şeybe Petrol Sahasında 2 Ölüm Bildirdi",
       "twin": "Suudi Arabistan’da Engellenen Füze Şarapnelini 2 Kişiyi Yaraladı"
+    },
+    {
+      "title": "Portekiz Federasyonu, Ronaldo'ya 30 gün men ve para cezası verdi",
+      "twin": "Portekiz Federasyonu, Ronaldo'ya 30 Gün Hak Mahrumiyeti ve 255 Euro Cezayeti Verdi"
+    },
+    {
+      "title": "Casper Excalibur G870, 57.406 TL'den başlayan fiyatla raflarda",
+      "twin": "Casper Excalibur G870 oyun bilgisayarı 57.406 TL'den satılıyor"
     }
   ],
   "days": {
@@ -163,6 +163,7 @@
       "cfd2f909cccbd6bd",
       "241a0d8b76e113ca",
       "83bcc129c693ba7b",
+      "4e57e6b28a1b0762",
       "5c0331f3569cf314",
       "bbae35978204d8b2",
       "249b16d9b1d63050",
@@ -172,8 +173,7 @@
       "a50bae33daf650ab",
       "b911d19fdbfa497c",
       "a650bc2c1d092da8",
-      "14c3a8d006e7996e",
-      "76876b21d5aa5e40"
+      "14c3a8d006e7996e"
     ],
     "2026-10-22": [
       "686d3f11a6cecddc",
@@ -601,6 +601,7 @@
     "241a0d8b76e113ca",
     "83bcc129c693ba7b",
     "d3dfb29be52b9d6f",
+    "4e57e6b28a1b0762",
     "5c0331f3569cf314",
     "bbae35978204d8b2",
     "773383828fba70c1",
@@ -620,7 +621,6 @@
     "b911d19fdbfa497c",
     "a650bc2c1d092da8",
     "14c3a8d006e7996e",
-    "76876b21d5aa5e40",
     "1e790d806b3a9ffe",
     "a91563c9b62a514b",
     "3933ba9d049e228f",
