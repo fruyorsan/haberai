@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T04:40:02.310Z",
+  "updatedAt": "2026-10-27T04:42:36.067Z",
   "gunluk": 32,
   "pencereGun": 45,
   "esik": {
@@ -21,13 +21,17 @@
     "özgün yorum yok": 4,
     "kategorisiz": 2,
     "editör notu yok": 14,
-    "günlük kota": 2351,
-    "tekrar": 31
+    "günlük kota": 2348,
+    "tekrar": 34
   },
   "ornekTekrarlar": [
     {
       "title": "Fransa'nın borçlanma maliyeti 24 yılın en yüksek seviyesine ulaştı",
       "twin": "Fransa Tahvil Faizi 24 Yılın Zirvesinde: Hedge Fonların Rolü Tartışılıyor"
+    },
+    {
+      "title": "Apple, iOS 27.2 ile Mesajlar uygulamasında bildirim rozeti düzenliyor",
+      "twin": "Apple, iOS 27.2 güncellemesiyle Siri ve FaceTime özelliklerini güncelledi"
     },
     {
       "title": "Elon Musk'tan Cumhuriyetçilere 200 milyon doları aşan seçim desteği",
@@ -78,6 +82,10 @@
       "twin": "Gaziosmanpaşa Belediyesi, 7.0 Deprem Tatbikatını 18.00'de Gerçekleştirdi"
     },
     {
+      "title": "Apple, iOS 27.2 RC sürümünü yayınladı ve CarPlay için video desteği getirdi",
+      "twin": "Apple, iOS 27.2 güncellemesiyle Siri ve FaceTime özelliklerini güncelledi"
+    },
+    {
       "title": "Bursa'da deprem paneli: 1855 felaketi tarihsel verilerle masaya yatırıldı",
       "twin": "Bursa deprem hafızasını masaya yatırdı: 1855 felaketi konuşuldu"
     },
@@ -96,14 +104,6 @@
     {
       "title": "Portekiz Federasyonu, Ronaldo'ya 30 gün men ve para cezası verdi",
       "twin": "Portekiz Federasyonu, Ronaldo'ya 30 Gün Hak Mahrumiyeti ve 255 Euro Cezayeti Verdi"
-    },
-    {
-      "title": "Japonya Ogasawara Açıklarında 7.0 Büyüklüğünde Deprem Gerçekleşti",
-      "twin": "Japonya Meteoroloji Ajansı, 7.0 Büyüklükte Depremi 470 km Derinlikte Kayıt Etti"
-    },
-    {
-      "title": "Casper Excalibur G870, 57.406 TL'den başlayan fiyatla raflarda",
-      "twin": "Casper Excalibur G870 oyun bilgisayarı 57.406 TL'den satılıyor"
     }
   ],
   "days": {
@@ -171,9 +171,9 @@
       "a50bae33daf650ab",
       "b911d19fdbfa497c",
       "a650bc2c1d092da8",
-      "fb864d3f2811a6cb",
-      "1ab5871f34341438",
-      "c398013b8abbad15"
+      "14c3a8d006e7996e",
+      "76876b21d5aa5e40",
+      "fb864d3f2811a6cb"
     ],
     "2026-10-22": [
       "686d3f11a6cecddc",
@@ -618,15 +618,15 @@
     "d12a80bd9893a669",
     "b911d19fdbfa497c",
     "a650bc2c1d092da8",
+    "14c3a8d006e7996e",
+    "76876b21d5aa5e40",
     "1e790d806b3a9ffe",
     "a91563c9b62a514b",
     "3933ba9d049e228f",
     "fb864d3f2811a6cb",
     "e8b4d40d822b9cbf",
-    "1ab5871f34341438",
     "d37d258d773b5139",
     "0f377683b024318c",
-    "c398013b8abbad15",
     "a2d6baa9695e23d3",
     "2ee03cd9c9d668ee",
     "a569cb0ec87ffe82",
