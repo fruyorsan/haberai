@@ -260,18 +260,33 @@ function sar(metin, enFazla) {
 
 // Tasarımlı kartlar için başlık: en çok 3 satır, sığmazsa punto küçülür.
 function kartBasligi(baslik) {
-  const secenekler = [
+  const adaylar = [
     { boyut: 62, harf: 22 },
     { boyut: 54, harf: 26 },
     { boyut: 46, harf: 31 },
   ];
-  for (const s of secenekler) {
+  let secim = null;
+  for (const s of adaylar) {
     const satirlar = sar(baslik, s.harf);
-    if (satirlar.length <= 3) return { boyut: s.boyut, lh: Math.round(s.boyut * 1.22), satirlar };
+    if (satirlar.length <= 3) {
+      secim = { ...s, satirlar };
+      break;
+    }
   }
-  const satirlar = sar(baslik, 34).slice(0, 3);
-  satirlar[satirlar.length - 1] = satirlar[satirlar.length - 1].replace(/[\s,.;:!?]+$/, "") + "…";
-  return { boyut: 42, lh: 51, satirlar };
+  if (!secim) {
+    const satirlar = sar(baslik, 34).slice(0, 3);
+    satirlar[satirlar.length - 1] = satirlar[satirlar.length - 1].replace(/[\s,.;:!?]+$/, "") + "…";
+    secim = { boyut: 42, harf: 34, satirlar };
+  }
+  // Türkçe geniş harfler (ü, ş, ğ) yüzünden karakter sayımı yetmiyor: en uzun
+  // satırın tahmini genişliği metin alanını aşarsa puntoyu küçült.
+  const enUzun = Math.max(...secim.satirlar.map((s) => s.length));
+  const tahmini = enUzun * secim.boyut * 0.56;
+  const sinir = 700;
+  if (tahmini > sinir) {
+    secim.boyut = Math.max(30, Math.floor((secim.boyut * sinir) / tahmini));
+  }
+  return { boyut: secim.boyut, lh: Math.round(secim.boyut * 1.22), satirlar: secim.satirlar };
 }
 
 function kapakSvg() {
