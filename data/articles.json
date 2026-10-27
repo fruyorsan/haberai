@@ -58,7 +58,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T23:43:56.355Z",
+    "gorselDeneme": "2026-10-27T23:47:27.872Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg/1280px-Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg",
@@ -192,6 +192,68 @@
     }
   },
   {
+    "id": "71f0d8db8af8537f",
+    "title": "Kingdom Come Deliverance 2 üzerinde DLSS 5 kullanımı yüzleri bozuyor",
+    "slug": "kingdom-come-deliverance-2-dlss-5-kullanimi-yuzleri-bozuyor",
+    "summary": "Kingdom Come Deliverance 2 oyununda uygulanan DLSS 5 yaması, çevre detaylarında büyük iyileşme sağlasa da karakter yüzlerinde yapay görünümlere yol açıyor. RTX 5080 ekran kartıyla 1440p çözünürlükte test edilen teknoloji, doku keskinliğini artırırken bazı karakterleri 20 yaş daha yaşlı gösterebiliyor.",
+    "keyPoints": [
+      "DLSS 5 teknolojisi 1440p çözünürlükte RTX 5080 ekran kartı üzerinde test edildi.",
+      "Çevre dokuları daha gerçekçi hale gelirken karakter yüzlerinde aşırı kırışıklıklar ortaya çıkıyor.",
+      "Kullanıcılar efekt şiddetini değiştirerek yapay görüntüleri kısmen dengeleme seçeneğine sahip."
+    ],
+    "body": [
+      "Kingdom Come Deliverance 2, oyun dünyasında DLSS 5 entegrasyonuyla yeniden değerlendirilen yapımlar arasına katıldı. Reddit üzerinde paylaşılan güncel karşılaştırmalar, sinir ağı tabanlı görüntü işleme yönteminin oyunun görsel yapısını ne yönde etkilediğini gözler önüne seriyor. Özellikle RTX 5080 ekran kartı kullanılarak 1440p çözünürlükte gerçekleştirilen çift geçişli işleme testleri, oyun dünyasında farklı bir tartışma başlattı.",
+      "Çevre detaylarına odaklanıldığında DLSS 5 kullanımı oldukça etkileyici sonuçlar veriyor. Kumaş dokuları, çimenler, buğday tarlaları, ahşap fıçılar ve taş yüzeyler, teknoloji uygulandıktan sonra orijinal haline göre çok daha yoğun ve derinlikli görünüyor. Oyuncuların birçoğu, düz görünen yüzeylerin küçük ayrıntılarla zenginleşmesini olumlu bulurken, çevresel tasarımın atmosferik derinliğinin arttığını dile getiriyor.",
+      "Ancak karakter yüzleri söz konusu olduğunda süreç beklenen verimi vermekten uzak kalabiliyor. Karşılaştırma görüntülerine göre, yüz detaylarına uygulanan bu teknoloji karakterlerde ciddi oranda kırışıklık oluşturuyor. Özellikle ellerdeki damarların aşırı belirginleşmesi ve karakterlerin olması gerekenden 10 ila 20 yaş daha yaşlı görünmesi, oyuncularda rahatsız edici bir yapaylık hissi yaratıyor.",
+      "Renk dengesi noktasında da kullanıcılar arasında farklı görüşler öne çıkıyor. Bazı oyuncular, DLSS 5 injector kullanımı sonrası orijinal renk paletinin bozulduğunu ve oyunun genelinde hafif gri bir ton oluştuğunu rapor ediyor. Bu durum, oyunun sanatsal yönüne müdahale edildiği şeklinde yorumlanırken, araç içerisindeki ayar seçenekleri bir çözüm yolu olarak sunuluyor.",
+      "Efektin şiddetini manuel olarak değiştirme imkanı, oyuncuların bu teknolojik müdahaleyi kendi tercihlerine göre dengelemesine olanak tanıyor. Yüz detaylarını azaltan ayarlar, çevre dokularındaki gelişmiş kaliteyi korurken karakterlerde oluşan aşırı yaşlanma etkisini bir nebze hafifletebiliyor. Sonuç itibarıyla teknoloji, her sahnede kusursuz bir görüntü sunmak yerine, ince ayar yapılmadığı takdirde görsel bozulmalara yol açabiliyor.",
+      "Ortaya çıkan sonuçlar, Kingdom Come Deliverance 2 için DLSS 5’in her zaman daha iyi grafik anlamına gelmediğini kanıtlıyor. Oyuncuların, teknolojinin sunduğu keskinliği kullanırken insan modellerindeki olası deformasyonlara karşı dikkatli olmaları öneriliyor. En verimli deneyim, teknolojiyi maksimum seviyede zorlamak yerine sahne yapısına göre optimize etmekten geçiyor."
+    ],
+    "comment": "DLSS 5 teknolojisi, çevre dokularında sağladığı derinlik artışına rağmen insan yüzlerinde 'uncanny valley' etkisini tetikleyerek görsel bütünlüğü zedeliyor. Özellikle RTX 5080 gibi yüksek performanslı donanımlarda bile karakter modellerinin 20 yaş daha yaşlı görünmesi, yapay zeka destekli iyileştirmelerin henüz her model tipinde kusursuz çalışmadığını gösteriyor. Oyuncuların bu teknolojiyi kullanırken, özellikle yüzey keskinliği ile karakter modellemesi arasındaki dengeyi manuel ayarlar üzerinden kurmaları şart. Eğer bu tip modlama araçları orijinal renk dengesini bozuyorsa, saf bir oyun deneyimi arayanlar için efekt şiddetini minimumda tutmak en sağlıklı tercih olacaktır.",
+    "editorNote": "Kingdom Come Deliverance 2 üzerinde DLSS 5 kullanımı, çevre dokularını keskinleştirirken karakter yüzlerini yapay ve yaşlı göstererek görsel bir dengesizliğe yol açıyor.",
+    "tags": [
+      "Kingdom Come Deliverance 2",
+      "DLSS 5",
+      "RTX 5080",
+      "oyun teknolojileri",
+      "grafik modları"
+    ],
+    "category": "Oyun",
+    "gorselSorgu": "Kingdom Come Deliverance 2 gameplay",
+    "source": "Merlin'in Kazanı",
+    "sourceUrl": "https://www.merlininkazani.com/kingdom-come-deliverance-2-dlss-5-ile-ne-kadar-degisiyor-haber-263912",
+    "image": "/kapak/71f0d8db8af8537f.webp",
+    "gorselKaynak": {
+      "yazar": "Nyttend",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Kingdom_Come_Settlement_School.jpg"
+    },
+    "publishedAt": "2026-10-27T23:16:00.000Z",
+    "generatedAt": "2026-10-27T23:47:27.169Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Bisque_Character_Face_Doll_with_Miniature_Doll_-_DPLA_-_3f3956b5f318e98d0db139fba3f4ac47_%28page_1%29.jpg/1280px-Bisque_Character_Face_Doll_with_Miniature_Doll_-_DPLA_-_3f3956b5f318e98d0db139fba3f4ac47_%28page_1%29.jpg",
+        "yazar": "This file was contributed to Wikimedia Commons by Missouri Historic…",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Bisque_Character_Face_Doll_with_Miniature_Doll_-_DPLA_-_3f3956b5f318e98d0db139fba3f4ac47_(page_1).jpg",
+        "altyazi": "DLSS uygulaması sonrası karakter yüzlerindeki doku bozulmaları ve detaylar"
+      }
+    ],
+    "breaking": true,
+    "images": [
+      "https://img.merlininkazani.com/13524/kingdom-come-deliverance-2-dlss-5-ile-ne-kadar-degisiyor-263912-main-56114-large.webp"
+    ],
+    "imagesKaynak": "https://www.merlininkazani.com/kingdom-come-deliverance-2-dlss-5-ile-ne-kadar-degisiyor-haber-263912",
+    "gorselDeneme": "2026-10-27T23:47:27.857Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Kingdom_Come_Settlement_School.jpg/1280px-Kingdom_Come_Settlement_School.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "48e2c9cd81f5c55f",
     "title": "Lenovo, McDonald's işbirliğiyle 4 bin adet patates kutusu fare üretti",
     "slug": "lenovo-mcdonalds-patates-kutusu-fare",
@@ -309,7 +371,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T23:43:56.822Z",
+    "gorselDeneme": "2026-10-27T23:47:28.674Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Istanbul_city_Photos-_Urban_01.jpg/1280px-Istanbul_city_Photos-_Urban_01.jpg",
@@ -431,7 +493,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T23:43:56.887Z",
+    "gorselDeneme": "2026-10-27T23:47:29.063Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/AIAP_IFGICT_Artificial_Intelligence_Auditor_Professional_Certificate.jpg/1280px-AIAP_IFGICT_Artificial_Intelligence_Auditor_Professional_Certificate.jpg",
@@ -552,7 +614,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T23:43:56.837Z",
+    "gorselDeneme": "2026-10-27T23:47:29.080Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Scavenging_Arctic_Fox_in_summer_colors.jpg/1280px-Scavenging_Arctic_Fox_in_summer_colors.jpg",
@@ -680,7 +742,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T23:43:56.876Z",
+    "gorselDeneme": "2026-10-27T23:47:28.932Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Intifada_in_Gaza_Strip_%28FL45954528%29.jpg/1280px-Intifada_in_Gaza_Strip_%28FL45954528%29.jpg",
@@ -738,7 +800,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T23:43:58.778Z",
+    "gorselDeneme": "2026-10-27T23:47:30.051Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/3/34/Heightened_security_following_2016_coup_attempt_at_Caglayan_Istanbul_courthouse%2C_July_21%2C_2016.jpg",
@@ -787,7 +849,7 @@
     "publishedAt": "2026-10-27T21:55:00.000Z",
     "generatedAt": "2026-10-27T22:25:23.193Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-27T23:43:57.567Z",
+    "gorselDeneme": "2026-10-27T23:47:29.851Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg/1280px-Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg",
@@ -974,7 +1036,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T23:43:56.981Z",
+    "gorselDeneme": "2026-10-27T23:47:29.172Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/3/34/Heightened_security_following_2016_coup_attempt_at_Caglayan_Istanbul_courthouse%2C_July_21%2C_2016.jpg",
@@ -1213,7 +1275,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T23:43:58.790Z",
+    "gorselDeneme": "2026-10-27T23:47:30.986Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/3/34/Heightened_security_following_2016_coup_attempt_at_Caglayan_Istanbul_courthouse%2C_July_21%2C_2016.jpg",
@@ -1529,7 +1591,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T23:43:59.441Z",
+    "gorselDeneme": "2026-10-27T23:47:31.034Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Donald_Trump_with_Fred_Trump.jpg/1280px-Donald_Trump_with_Fred_Trump.jpg",
@@ -1665,7 +1727,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T23:43:58.775Z",
+    "gorselDeneme": "2026-10-27T23:47:29.187Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Foreign_Secretary_David_Lammy_lays_a_candle_on_the_grave_of_a_Ukrainian_soldier_killed_in_the_conflict_with_Russia%2C_in_the_Lychakiv_Cemetery_in_Lviv%2C_Ukraine_on_9_May_2025.jpg/1280px-thumbnail.jpg",
@@ -1722,7 +1784,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T23:43:59.720Z",
+    "gorselDeneme": "2026-10-27T23:47:31.210Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Istanbul_city_Photos-_Urban_01.jpg/1280px-Istanbul_city_Photos-_Urban_01.jpg",
@@ -1787,7 +1849,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T23:43:58.967Z",
+    "gorselDeneme": "2026-10-27T23:47:30.157Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Recep_Tayyip_Erdo%C4%9Fan_-_Hidayet_T%C3%BCrko%C4%9Flu_-_Burhanettin_Duran_-_%C4%B0brahim_Kal%C4%B1n_-_Osman_A%C5%9Fk%C4%B1n_Bak_20251127_%284%29.jpg/1280px-Recep_Tayyip_Erdo%C4%9Fan_-_Hidayet_T%C3%BCrko%C4%9Flu_-_Burhanettin_Duran_-_%C4%B0brahim_Kal%C4%B1n_-_Osman_A%C5%9Fk%C4%B1n_Bak_20251127_%284%29.jpg",
@@ -2157,7 +2219,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T23:43:59.412Z",
+    "gorselDeneme": "2026-10-27T23:47:30.101Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Leopard_-_South_Africa_Safari_-_Djuma_Game_Reserve_-_Sabi_Sand_-_Kruger_National_Park_%285588253354%29.jpg/1280px-Leopard_-_South_Africa_Safari_-_Djuma_Game_Reserve_-_Sabi_Sand_-_Kruger_National_Park_%285588253354%29.jpg",
@@ -2223,7 +2285,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T23:43:59.627Z",
+    "gorselDeneme": "2026-10-27T23:47:30.502Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/7/78/Market_centre_in_Tokyo_stock_exchange.jpg",
@@ -2420,7 +2482,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-27T23:43:59.649Z",
+    "gorselDeneme": "2026-10-27T23:47:32.003Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Hands_holding_video_game_controller_%2850811892858%29.jpg/1280px-Hands_holding_video_game_controller_%2850811892858%29.jpg",
@@ -2720,7 +2782,7 @@
     "publishedAt": "2026-10-27T18:18:01.000Z",
     "generatedAt": "2026-10-27T18:24:26.020Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-27T23:43:59.913Z",
+    "gorselDeneme": "2026-10-27T23:47:31.086Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Yemen_Taiz_1993_-_167873673_1c0f8bc0c8_o.jpg/1280px-Yemen_Taiz_1993_-_167873673_1c0f8bc0c8_o.jpg",
@@ -2782,7 +2844,7 @@
     "publishedAt": "2026-10-27T18:12:21.000Z",
     "generatedAt": "2026-10-27T18:17:15.479Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-27T23:43:59.917Z",
+    "gorselDeneme": "2026-10-27T23:47:31.392Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/3/34/Heightened_security_following_2016_coup_attempt_at_Caglayan_Istanbul_courthouse%2C_July_21%2C_2016.jpg",
@@ -2890,7 +2952,7 @@
     "publishedAt": "2026-10-27T17:53:46.000Z",
     "generatedAt": "2026-10-27T18:00:38.381Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-27T23:44:00.127Z",
+    "gorselDeneme": "2026-10-27T23:47:31.946Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Aselsan_A100_Night_Vision_Monocular.jpg/1280px-Aselsan_A100_Night_Vision_Monocular.jpg",
@@ -3176,7 +3238,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Istanbul_city_Photos-_Urban_01.jpg/1280px-Istanbul_city_Photos-_Urban_01.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T23:44:00.448Z",
+    "gorselDeneme": "2026-10-27T23:47:31.590Z",
     "ekGorselDeneme": "2026-10-27T19:56:02.727Z"
   },
   {
@@ -3282,7 +3344,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Teresa_Parson%2C_Donald_Trump%2C_Melania_Trump%2C_and_Mike_Parson_in_2020.jpg/1280px-Teresa_Parson%2C_Donald_Trump%2C_Melania_Trump%2C_and_Mike_Parson_in_2020.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T23:44:00.482Z"
+    "gorselDeneme": "2026-10-27T23:47:31.651Z"
   },
   {
     "id": "14c77cb9014261f6",
@@ -3333,7 +3395,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Aselsan_A100_Night_Vision_Monocular.jpg/1280px-Aselsan_A100_Night_Vision_Monocular.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T23:44:00.551Z"
+    "gorselDeneme": "2026-10-27T23:47:31.992Z"
   },
   {
     "id": "da1c6fb24d1713fc",
@@ -3390,7 +3452,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Person_holding_world_globe.jpg/1280px-Person_holding_world_globe.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T23:44:00.464Z"
+    "gorselDeneme": "2026-10-27T23:47:31.897Z"
   },
   {
     "id": "12dae8a12c3f07ba",
@@ -3435,7 +3497,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Truck_collision_with_meridian_on_NH32_image..jpg/1280px-Truck_collision_with_meridian_on_NH32_image..jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T23:44:00.637Z",
+    "gorselDeneme": "2026-10-27T23:47:31.977Z",
     "ekGorselDeneme": "2026-10-27T19:56:05.088Z",
     "gorselEk": [
       {
@@ -3579,7 +3641,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Bronbeek_with_coloured_tree_at_23_October_2012%2C_nowadays_used_for_elderly_retired_soldiers_and_a_museum_-_panoramio.jpg/1280px-Bronbeek_with_coloured_tree_at_23_October_2012%2C_nowadays_used_for_elderly_retired_soldiers_and_a_museum_-_panoramio.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T23:44:00.795Z"
+    "gorselDeneme": "2026-10-27T23:47:32.329Z"
   },
   {
     "id": "b147286e873c2100",
@@ -3696,7 +3758,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Elderly_people_editing_Catalan_Wikipedia_03.JPG/1280px-Elderly_people_editing_Catalan_Wikipedia_03.JPG",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T23:44:00.648Z"
+    "gorselDeneme": "2026-10-27T23:47:32.104Z"
   },
   {
     "id": "ddcc897e04c29e71",
@@ -3783,7 +3845,7 @@
     "gorselSorgu": "FBI raid house",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/cwvgrk0zx641o?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Watertown_FBI_raid_-_news_vans.jpg/1280px-Watertown_FBI_raid_-_news_vans.jpg",
+    "image": "/kapak/80aaaa558815e7c1.webp",
     "gorselKaynak": {
       "yazar": "Tim Pierce",
       "lisans": "CC BY-SA 3.0",
@@ -3798,7 +3860,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Watertown_FBI_raid_-_news_vans.jpg/1280px-Watertown_FBI_raid_-_news_vans.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T23:41:32.638Z",
+    "gorselDeneme": "2026-10-27T23:47:32.008Z",
     "ekGorselDeneme": "2026-10-27T19:56:07.329Z",
     "gorselEk": [
       {
@@ -3838,7 +3900,7 @@
     "gorselSorgu": "nuclear facility inspection",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/dunya/uaeadan-iran-da-zenginlestirilmis-uranyumu-dogrulamak-icin-nukleer-tesislere-erisim-cagrisi/4102720",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Hallam-nuclear-power-facility-site.jpg/1280px-Hallam-nuclear-power-facility-site.jpg",
+    "image": "/kapak/3d5c27366db3fb17.webp",
     "gorselKaynak": {
       "yazar": "United States Atomic Energy Commission",
       "lisans": "Kamu malı",
@@ -3853,7 +3915,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/A_Securiy_Forces_team_member_handcuffs_an_intruder_at_Hotel_2_during_the_Launch_Facility_%28LF%29_Recapture_portion_of_the_Nuclear_Security_Inspection_%28NSI%29%2C_Malmstrom_AFB_020604-F-CI726-011.jpg/1280px-thumbnail.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T23:41:33.189Z",
+    "gorselDeneme": "2026-10-27T23:47:32.405Z",
     "ekGorselDeneme": "2026-10-27T19:56:11.345Z",
     "gorselEk": [
       {
@@ -3897,7 +3959,7 @@
     "gorselSorgu": "Friedrich Merz press conference",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/ekonomi/almanyadan-abd-rusya-ve-cine-uyari-kendi-basiniza-karar-almayin-550702",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Bundeskanzler_Friedrich_Merz_empf%C3%A4ngt_Kristen_Michal_2025_-_54949066632.jpg/1280px-Bundeskanzler_Friedrich_Merz_empf%C3%A4ngt_Kristen_Michal_2025_-_54949066632.jpg",
+    "image": "/kapak/ab64650d434e24c6.webp",
     "gorselKaynak": {
       "yazar": "Stenbocki maja",
       "lisans": "CC BY 4.0",
@@ -3953,7 +4015,7 @@
     "gorselSorgu": "football apology China",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/spor/mbappe-mao-zedonga-soyledikleri-icin-cinden-ozur-diledi-550700",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Kylian_Mbappe_celebrating_-_March_2018.jpg",
+    "image": "/kapak/e27376458e4f29ea.webp",
     "gorselKaynak": {
       "yazar": "Кирилл Венедиктов",
       "lisans": "CC BY-SA 3.0",
@@ -4004,7 +4066,7 @@
     "gorselSorgu": "OpenAI logo server room",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/bilim-teknoloji/openaiin-yapay-zeka-modelleri-matematik-bilgisayar-bilimi-ve-fizikte-uc-bilimsel-sonuca-ulasti/4102696",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-498432.jpg/1280px-Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-498432.jpg",
+    "image": "/kapak/2cd6a60c2d51eacb.webp",
     "gorselKaynak": {
       "yazar": "European Commission - Photographer: Aurore Martignoni",
       "lisans": "CC BY 4.0",
@@ -4019,7 +4081,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg/1280px-Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T23:41:33.269Z",
+    "gorselDeneme": "2026-10-27T23:47:32.448Z",
     "ekGorselDeneme": "2026-10-27T19:56:15.283Z"
   },
   {
@@ -4053,7 +4115,7 @@
     "gorselSorgu": "police crime scene investigation",
     "source": "TRT Haber Son Dakika",
     "sourceUrl": "https://www.trthaber.com/haber/turkiye/batmanda-kurgu-trafik-kazasi-operasyonu-43-gozalti-961386.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Crime_Scene_Investigation_Unit%2C_Royal_Gibraltar_Police.jpg/1280px-Crime_Scene_Investigation_Unit%2C_Royal_Gibraltar_Police.jpg",
+    "image": "/kapak/003cb389efbee7be.webp",
     "gorselKaynak": {
       "yazar": "Harry Mitchell",
       "lisans": "CC BY 3.0",
@@ -4078,7 +4140,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Crime_Scene_Investigation_Unit%2C_Royal_Gibraltar_Police.jpg/1280px-Crime_Scene_Investigation_Unit%2C_Royal_Gibraltar_Police.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T23:41:33.034Z"
+    "gorselDeneme": "2026-10-27T23:47:32.214Z"
   },
   {
     "id": "8d81ac6b3dbd74c6",
@@ -4111,7 +4173,7 @@
     "gorselSorgu": "Moscow city skyline air defense",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/dunya/rusya-moskovaya-dogru-ucan-6-iha-etkisiz-hale-getirildi/4102664",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/USS_Barry_launches_a_vertical_launch_anti-submarine_rocket_missile_during_Valiant_Shield_2016._%2829750275701%29.jpg/1280px-USS_Barry_launches_a_vertical_launch_anti-submarine_rocket_missile_during_Valiant_Shield_2016._%2829750275701%29.jpg",
+    "image": "/kapak/8d81ac6b3dbd74c6.webp",
     "gorselKaynak": {
       "yazar": "Mass Communication Specialist 2nd Class Kevin V. Cunningham",
       "lisans": "Kamu malı",
@@ -4136,7 +4198,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Moscow_City_landscape_july_2008.jpg/1280px-Moscow_City_landscape_july_2008.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T23:41:33.574Z"
+    "gorselDeneme": "2026-10-27T23:47:32.517Z"
   },
   {
     "id": "a46df0cdb05e74c0",
@@ -4168,7 +4230,7 @@
     "gorselSorgu": "Christophe Gleizes Ballon d Or ceremony",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/c6x2qgyqr79wo?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Christophe_Gleizes_journaliste_Paris_17.jpg/1280px-Christophe_Gleizes_journaliste_Paris_17.jpg",
+    "image": "/kapak/a46df0cdb05e74c0.webp",
     "gorselKaynak": {
       "yazar": "Guallendra",
       "lisans": "CC0",
@@ -4183,7 +4245,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Christophe_Gleizes_journaliste_Paris_17.jpg/1280px-Christophe_Gleizes_journaliste_Paris_17.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T23:41:33.203Z",
+    "gorselDeneme": "2026-10-27T23:47:32.230Z",
     "ekGorselDeneme": "2026-10-27T19:56:17.356Z",
     "gorselEk": [
       {
@@ -4225,7 +4287,7 @@
     "gorselSorgu": "Vladimir Putin telephone call Kremlin",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/c6vgj813mlelo?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Meeting_of_Vladimir_Putin_and_Alexander_Lukashenko_02_%2822-02-2021%29.jpg/1280px-Meeting_of_Vladimir_Putin_and_Alexander_Lukashenko_02_%2822-02-2021%29.jpg",
+    "image": "/kapak/5da481dc97b7cc7c.webp",
     "gorselKaynak": {
       "yazar": "The Presidential Press and Information Office",
       "lisans": "CC BY 4.0",
@@ -4250,7 +4312,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Meeting_of_Vladimir_Putin_and_Alexander_Lukashenko_02_%2822-02-2021%29.jpg/1280px-Meeting_of_Vladimir_Putin_and_Alexander_Lukashenko_02_%2822-02-2021%29.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T23:41:33.221Z"
+    "gorselDeneme": "2026-10-27T23:47:32.245Z"
   },
   {
     "id": "9c57cf58b99b48fa",
@@ -4283,7 +4345,7 @@
     "gorselSorgu": "artificial intelligence science research laboratory",
     "source": "Webrazzi",
     "sourceUrl": "https://webrazzi.com/2026/10/27/openai-matematik-ve-fizikte-sinirlari-zorluyor-uc-yeni-cozum-iddiasi/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/MIT_Computer_Science_and_Artificial_Intelligence_Laboratory_%28CSAIL%29_%2854960889464%29.jpg/1280px-MIT_Computer_Science_and_Artificial_Intelligence_Laboratory_%28CSAIL%29_%2854960889464%29.jpg",
+    "image": "/kapak/9c57cf58b99b48fa.webp",
     "gorselKaynak": {
       "yazar": "ajay_suresh",
       "lisans": "CC BY 4.0",
@@ -4298,7 +4360,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg/1280px-Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T23:41:33.912Z"
+    "gorselDeneme": "2026-10-27T23:47:33.004Z"
   },
   {
     "id": "bb8c2a0265a25de5",
@@ -4331,7 +4393,7 @@
     "gorselSorgu": "courtroom judge gavel",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/arif-ahmet-denizolgunun-olumune-iliskin-davada-doktor-hakkinda-karar-550697",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Courtroom_One_Gavel_-_Flickr_-_Joe_Gratz.jpg/1280px-Courtroom_One_Gavel_-_Flickr_-_Joe_Gratz.jpg",
+    "image": "/kapak/bb8c2a0265a25de5.webp",
     "gorselKaynak": {
       "yazar": "Joe Gratz",
       "lisans": "CC0",
@@ -4390,7 +4452,7 @@
     "gorselSorgu": "apple imac 24-inch",
     "source": "Webrazzi",
     "sourceUrl": "https://webrazzi.com/2026/10/27/apple-yeni-imac-i-tanitti-fiyati-ve-teknik-ozellikleri/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Museo_de_Inform%C3%A1tica_Hist%C3%B3rica_%28MIH%29_%E2%80%93_UNIZAR_%E2%80%93_Apple_iMac_G3_%E2%80%93_motherboard_-_back.jpg/1280px-Museo_de_Inform%C3%A1tica_Hist%C3%B3rica_%28MIH%29_%E2%80%93_UNIZAR_%E2%80%93_Apple_iMac_G3_%E2%80%93_motherboard_-_back.jpg",
+    "image": "/kapak/e18b58fbe4c45b82.webp",
     "gorselKaynak": {
       "yazar": "José Luis Briz Velasco",
       "lisans": "CC BY-SA 4.0",
@@ -4407,7 +4469,10 @@
     },
     "ekGorselDeneme": "2026-10-27T14:07:56.927Z",
     "imagesKaynak": "https://webrazzi.com/2026/10/27/apple-yeni-imac-i-tanitti-fiyati-ve-teknik-ozellikleri/",
-    "gorselDeneme": "2026-10-27T19:59:26.133Z"
+    "gorselDeneme": "2026-10-27T23:47:33.290Z",
+    "images": [
+      "https://cdn.webrazzi.com/uploads/2026/10/apple-kapak-2-873.png"
+    ]
   },
   {
     "id": "a0843e8c25e80f44",
@@ -4440,7 +4505,7 @@
     "gorselSorgu": "Apple new iMac colors",
     "source": "Webrazzi",
     "sourceUrl": "https://webrazzi.com/2026/10/27/apple-yeni-imac-i-tanitti-fiyati-ve-teknik-ozellikleri/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Hollygrove%2C_New_Orleans_Nov_2024_-_Apple_Street_-_05.jpg/1280px-Hollygrove%2C_New_Orleans_Nov_2024_-_Apple_Street_-_05.jpg",
+    "image": "/kapak/a0843e8c25e80f44.webp",
     "gorselKaynak": {
       "yazar": "Infrogmation",
       "lisans": "CC BY-SA 4.0",
@@ -4456,7 +4521,7 @@
       "foto": true
     },
     "imagesKaynak": "https://webrazzi.com/2026/10/27/apple-yeni-imac-i-tanitti-fiyati-ve-teknik-ozellikleri/",
-    "gorselDeneme": "2026-10-27T19:59:26.121Z",
+    "gorselDeneme": "2026-10-27T23:47:33.282Z",
     "ekGorselDeneme": "2026-10-27T19:55:52.239Z",
     "gorselEk": [
       {
@@ -4466,6 +4531,9 @@
         "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Hollygrove,_New_Orleans_Nov_2024_-_Apple_Street_-_16.jpg"
       }
+    ],
+    "images": [
+      "https://cdn.webrazzi.com/uploads/2026/10/apple-kapak-2-873.png"
     ]
   },
   {
@@ -4500,7 +4568,7 @@
     "gorselSorgu": "Apple iMac 24 inch desktop",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/m6-islemcili-apple-imac-tanitildi-iste-fiyati-ve-ozellikleri--212161",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Apple_iMac_G3_%286969107009%29.jpg/1280px-Apple_iMac_G3_%286969107009%29.jpg",
+    "image": "/kapak/650f20e43ca510e9.webp",
     "gorselKaynak": {
       "yazar": "Dennis van Zuijlekom from Ermelo, The Netherlands",
       "lisans": "CC BY-SA 2.0",
@@ -4516,7 +4584,7 @@
       "foto": true
     },
     "imagesKaynak": "https://www.donanimhaber.com/m6-islemcili-apple-imac-tanitildi-iste-fiyati-ve-ozellikleri--212161",
-    "gorselDeneme": "2026-10-27T19:59:24.663Z",
+    "gorselDeneme": "2026-10-27T23:47:33.609Z",
     "ekGorselDeneme": "2026-10-27T19:56:18.201Z",
     "gorselEk": [
       {
@@ -4526,6 +4594,10 @@
         "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Apple_iMac_3G_(32871141127).jpg"
       }
+    ],
+    "images": [
+      "https://www.donanimhaber.com/images/images/haber/212161/src/m6-islemcili-apple-imac-tanitildi-iste-fiyati-ve-ozellikleri212161_6.jpg",
+      "https://www.donanimhaber.com/images/images/haber/212161/src/m6-islemcili-apple-imac-tanitildi-iste-fiyati-ve-ozellikleri212161_7.jpg"
     ]
   },
   {
@@ -4558,7 +4630,7 @@
     "gorselSorgu": "Apple M6 chip laptop",
     "source": "Webrazzi",
     "sourceUrl": "https://webrazzi.com/2026/10/27/apple-m6-cipli-macbook-pro-yu-tanitti-yapay-zeka-ve-grafik-performansi-artiyor/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Apple_Garden_in_Kashmir%2C_India.jpg/1280px-Apple_Garden_in_Kashmir%2C_India.jpg",
+    "image": "/kapak/ee4dd1d10e8475f9.webp",
     "gorselKaynak": {
       "yazar": "Auli Raha (অলি রাহা)",
       "lisans": "CC BY-SA 4.0",
@@ -4575,7 +4647,10 @@
     },
     "ekGorselDeneme": "2026-10-27T14:07:58.024Z",
     "imagesKaynak": "https://webrazzi.com/2026/10/27/apple-m6-cipli-macbook-pro-yu-tanitti-yapay-zeka-ve-grafik-performansi-artiyor/",
-    "gorselDeneme": "2026-10-27T19:59:25.202Z"
+    "gorselDeneme": "2026-10-27T23:47:33.428Z",
+    "images": [
+      "https://cdn.webrazzi.com/uploads/2026/10/apple-macbook-pro-14-in-with-m6-lifestyle-261027-bigjpglarge-2x-949.jpg"
+    ]
   },
   {
     "id": "cd257b936202af46",
@@ -4607,7 +4682,7 @@
     "gorselSorgu": "Apple MacBook Pro 14",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/m6-cipli-14-inc-macbook-pro-tanitildi-iste-fiyati-ve-ozellikleri--212159",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Apple_MacBook_Pro_16%22_M2_Max_5.jpg/1280px-Apple_MacBook_Pro_16%22_M2_Max_5.jpg",
+    "image": "/kapak/cd257b936202af46.webp",
     "gorselKaynak": {
       "yazar": "SimonWaldherr",
       "lisans": "CC BY-SA 4.0",
@@ -4623,7 +4698,7 @@
       "foto": true
     },
     "imagesKaynak": "https://www.donanimhaber.com/m6-cipli-14-inc-macbook-pro-tanitildi-iste-fiyati-ve-ozellikleri--212159",
-    "gorselDeneme": "2026-10-27T19:59:25.004Z",
+    "gorselDeneme": "2026-10-27T23:47:34.145Z",
     "ekGorselDeneme": "2026-10-27T19:56:19.146Z",
     "gorselEk": [
       {
@@ -4633,6 +4708,9 @@
         "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Apple_MacBook_Pro_15%22_(2017).jpg"
       }
+    ],
+    "images": [
+      "https://www.donanimhaber.com/images/images/haber/212159/src/m6-cipli-14-inc-macbook-pro-tanitildi-iste-fiyati-ve-ozellikleri212159_0.jpg"
     ]
   },
   {
@@ -4665,7 +4743,7 @@
     "gorselSorgu": "Apple iMac M6 desktop",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/apple-m6-cipli-yeni-imac-tanitildi-yapay-zeka-odakli-performans",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Apple_iMac_4G_%2833937792088%29.jpg/1280px-Apple_iMac_4G_%2833937792088%29.jpg",
+    "image": "/kapak/0cbd5d4106a270cc.webp",
     "gorselKaynak": {
       "yazar": "Felix Winkelnkemper",
       "lisans": "CC BY 2.0",
@@ -4691,7 +4769,10 @@
       "foto": true
     },
     "imagesKaynak": "https://shiftdelete.net/apple-m6-cipli-yeni-imac-tanitildi-yapay-zeka-odakli-performans",
-    "gorselDeneme": "2026-10-27T19:59:25.377Z"
+    "gorselDeneme": "2026-10-27T23:47:34.499Z",
+    "images": [
+      "https://ares.shiftdelete.net/2026/10/Apple-iMac-with-M6-lifestyle-261027_big.jpg.large_2x.webp"
+    ]
   },
   {
     "id": "f48d1bd776973dcd",
@@ -4717,7 +4798,7 @@
     "gorselSorgu": "tanker collision harbor",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/dunya/iran-ordusu-hurmuz-bogazi-nin-dogusunda-mayina-carpan-tankerde-yangin-cikti/4102544",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Lick_Fire_on_the_Umatilla_National_Forest_burning_at_night.jpg/1280px-Lick_Fire_on_the_Umatilla_National_Forest_burning_at_night.jpg",
+    "image": "/kapak/f48d1bd776973dcd.webp",
     "gorselKaynak": {
       "yazar": "U.S. Forest Service- Pacific Northwest Region",
       "lisans": "Kamu malı",
@@ -4742,7 +4823,7 @@
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Lick_Fire_on_the_Umatilla_National_Forest_burning_at_night.jpg/1280px-Lick_Fire_on_the_Umatilla_National_Forest_burning_at_night.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-10-27T23:41:33.792Z"
+    "gorselDeneme": "2026-10-27T23:47:33.691Z"
   },
   {
     "id": "ea11f48aeafbe35d",
@@ -4774,7 +4855,7 @@
     "gorselSorgu": "KKB hackathon final stage",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/kkb-hackathon-2026-sona-erdi-genc-gelistiriciler-yapay-zekayla-yaristi",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/KKB_Kagoshima_Broadcasting_Head_2017_01.JPG/1280px-KKB_Kagoshima_Broadcasting_Head_2017_01.JPG",
+    "image": "/kapak/ea11f48aeafbe35d.webp",
     "gorselKaynak": {
       "yazar": "ja:User:Sanjo",
       "lisans": "CC BY-SA 4.0",
@@ -4799,7 +4880,7 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:KKB_Kagoshima_Broadcasting_Head_2017_01.JPG"
       }
     ],
-    "gorselDeneme": "2026-10-27T23:41:33.694Z"
+    "gorselDeneme": "2026-10-27T23:47:34.040Z"
   },
   {
     "id": "aceacc8e0ece34ea",
@@ -4832,7 +4913,7 @@
     "gorselSorgu": "intel processor chip closeup",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/intel-nova-lake-s-cikmadan-test-edildi-iste-ilk-detaylar--212142",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Intel_80186_processor_microphoto_001_%2850622223096%29.jpg/1280px-Intel_80186_processor_microphoto_001_%2850622223096%29.jpg",
+    "image": "/kapak/aceacc8e0ece34ea.webp",
     "gorselKaynak": {
       "yazar": "Jan Helebrant",
       "lisans": "CC BY-SA 2.0",
@@ -4899,7 +4980,7 @@
     "gorselSorgu": "digital health mobile application",
     "source": "CHIP Online",
     "sourceUrl": "https://www.chip.com.tr/guncel/hastanedeki-onay-kayitlari-e-nabiza-geliyor-sms-kodu-iki-yoldan-kullanilacak_184932.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Digital_Storytelling_Community_Health_Centre.jpg/1280px-Digital_Storytelling_Community_Health_Centre.jpg",
+    "image": "/kapak/3145ab9bdd1072b3.webp",
     "gorselKaynak": {
       "yazar": "Itfc-commons",
       "lisans": "CC BY-SA 4.0",
@@ -4947,7 +5028,7 @@
     "gorselSorgu": "European Central Bank headquarters Frankfurt",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/ekonomi/avro-bolgesinde-bankalar-kurumsal-kredilerde-standartlari-sikilastirdi/4102490",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/03-05-2014_-_Graffiti_near_European_Central_Bank_-_EZB_-_Frankfurt_Main_-_Germany_-_08.jpg/1280px-03-05-2014_-_Graffiti_near_European_Central_Bank_-_EZB_-_Frankfurt_Main_-_Germany_-_08.jpg",
+    "image": "/kapak/535ebfa82eb21af3.webp",
     "gorselKaynak": {
       "yazar": "Norbert Nagel",
       "lisans": "CC BY-SA 3.0",
@@ -5006,7 +5087,7 @@
     "gorselSorgu": "solar panels and wind turbines landscape",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/turkiye-enerji-tuketiminin-yuzde-85-ini-elektrikle-karsilayabilir--212137",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Solar_panels_in_Talitsa_001.jpg/1280px-Solar_panels_in_Talitsa_001.jpg",
+    "image": "/kapak/d313a138240dd24f.webp",
     "gorselKaynak": {
       "yazar": "Igor Savin / Игорь Савин",
       "lisans": "Kamu malı",
@@ -5065,7 +5146,7 @@
     "gorselSorgu": "Kazakh president visiting Turkey",
     "source": "TRT Haber Son Dakika",
     "sourceUrl": "https://www.trthaber.com/haber/gundem/kazakistan-cumhurbaskani-tokayev-turkiyeye-geliyor-961358.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Mikhail_Mishustin%27s_talk_with_Kazakh_President_Kassym-Jomart_Tokayev_%283%29.jpg/1280px-Mikhail_Mishustin%27s_talk_with_Kazakh_President_Kassym-Jomart_Tokayev_%283%29.jpg",
+    "image": "/kapak/7ec510dabae651c6.webp",
     "gorselKaynak": {
       "yazar": "Government of the Russian Federation",
       "lisans": "CC BY 4.0",
@@ -5123,7 +5204,7 @@
     "gorselSorgu": "Acer Predator Atlas 8 handheld console",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/acer-predator-atlas-8-fiyati-belli-oldu-pc-mi-aliyoruz-el-konsolu-mu",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Acer_Predator_G6-710.jpg/1280px-Acer_Predator_G6-710.jpg",
+    "image": "/kapak/14a8dd9c67a7a934.webp",
     "gorselKaynak": {
       "yazar": "Martin @pokipsie Rechsteiner",
       "lisans": "CC BY-SA 2.0",
@@ -5180,7 +5261,7 @@
     "gorselSorgu": "medical laboratory kidney checkup",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/gundem/astrazeneca-turkiyede-kronik-bobrek-hastaliginin-cevresel-etkisini-arastirdi/4102436",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Medical_Research_Council%2C_Laboratory_of_Molecular_Biology_-_geograph.org.uk_-_3018493.jpg/1280px-Medical_Research_Council%2C_Laboratory_of_Molecular_Biology_-_geograph.org.uk_-_3018493.jpg",
+    "image": "/kapak/f08e354080925601.webp",
     "gorselKaynak": {
       "yazar": "David P Howard",
       "lisans": "CC BY-SA 2.0",
@@ -5247,7 +5328,7 @@
     "gorselSorgu": "ASUS ProArt P16 laptop workstation",
     "source": "Technopat",
     "sourceUrl": "https://www.technopat.net/2026/10/27/asus-proart-p16-h7607-incelemesi/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Asus_ProArt_PA246Q_monitor_2.JPG/1280px-Asus_ProArt_PA246Q_monitor_2.JPG",
+    "image": "/kapak/2da6c72d999937d8.webp",
     "gorselKaynak": {
       "yazar": "MKFI",
       "lisans": "Kamu malı",
@@ -5297,7 +5378,7 @@
     "gorselSorgu": "Sceye SE2 airship stratosphere",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/gelecegin-baz-istasyonlari-gokyuzunde-olabilir-ilk-test-yapildi--212141",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg/1280px-Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
+    "image": "/kapak/a9c2d7c309fb185f.webp",
     "gorselKaynak": {
       "yazar": "Shixart1985",
       "lisans": "CC BY 2.0",
@@ -5320,7 +5401,7 @@
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg/1280px-Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
-      "foto": true
+      "foto": false
     },
     "gorselDeneme": "2026-10-27T23:41:35.148Z"
   },
@@ -5354,7 +5435,7 @@
     "gorselSorgu": "stormy sea coastal town",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/mgm-haritayi-guncelledi-mugla-icin-turuncu-18-il-icin-sari-kodlu-uyari-550669",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Shipping_in_a_Stormy_Sea_RMG_BHC2299.jpg",
+    "image": "/kapak/e7ba8e07cc342c4c.webp",
     "gorselKaynak": {
       "yazar": "Gerrit Battem",
       "lisans": "Kamu malı",
@@ -5421,7 +5502,7 @@
     "gorselSorgu": "war ravaged city street",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/ck20wjnv3w0jo?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Diorama_of_trenches_in_a_war_ravaged_countryside_%2824772449341%29.jpg/1280px-Diorama_of_trenches_in_a_war_ravaged_countryside_%2824772449341%29.jpg",
+    "image": "/kapak/19ebc5f0e94e2da2.webp",
     "gorselKaynak": {
       "yazar": "shankar s. from Dubai, united arab emirates",
       "lisans": "CC BY 2.0",
@@ -5487,7 +5568,7 @@
     "gorselSorgu": "Apple iPhone Siri voice interface",
     "source": "CHIP Online",
     "sourceUrl": "https://www.chip.com.tr/guncel/ios-272-cikti-siri-gecmis-konusmalari-hatirlayabiliyor_184928.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Paneer_apple_fruit_being_sold_at_ghaati_subramanya_-thimmalapura.jpg/1280px-Paneer_apple_fruit_being_sold_at_ghaati_subramanya_-thimmalapura.jpg",
+    "image": "/kapak/6a39bfe4f85ef272.webp",
     "gorselKaynak": {
       "yazar": "Mallikarjunasj",
       "lisans": "CC BY-SA 3.0",
@@ -5535,7 +5616,7 @@
     "gorselSorgu": "university students waiting in line",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/iskur-genclik-programi-sonuclari-ne-zaman-aciklanacak-nasil-sorgulanir-550663",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/2003-10-29_Students_waiting_outside_Venable_Hall_during_fire_drill_at_UNC.jpg/1280px-2003-10-29_Students_waiting_outside_Venable_Hall_during_fire_drill_at_UNC.jpg",
+    "image": "/kapak/def37e70fb725a6a.webp",
     "gorselKaynak": {
       "yazar": "Ildar Sagdejev ( Specious )",
       "lisans": "CC BY-SA 4.0",
@@ -5593,7 +5674,7 @@
     "gorselSorgu": "minibus crossing school zone",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/gaziosmanpasada-kahreden-olay-cocuklarini-kurtardi-hayatini-kaybetti-550658",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Istanbul_city_Photos-_Urban_01.jpg/1280px-Istanbul_city_Photos-_Urban_01.jpg",
+    "image": "/kapak/132f5216b5414a73.webp",
     "gorselKaynak": {
       "yazar": "Mostafameraji",
       "lisans": "CC BY-SA 4.0",
@@ -5651,7 +5732,7 @@
     "gorselSorgu": "data center server racks",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/alibaba-qwen-modeli-veri-gonderimi-iddiasi",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6b/EFTA00002520_-_Server_rack_filled_with_colorful_cables_and_hard_drives_in_a_cluttered_data_center.jpg",
+    "image": "/kapak/a065ae4f7130ffac.webp",
     "gorselKaynak": {
       "yazar": "Federal Bureau of Investigation",
       "lisans": "Kamu malı",
@@ -5703,7 +5784,7 @@
     "gorselSorgu": "earthquake damaged building",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/gundem/turkiye-bina-deprem-yonetmeligi-guncellenecek/4102303",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Interior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg/1280px-Interior_of_a_damaged_building_after_7%2C8_magnitude_earthquake_in_Turkiye.jpg",
+    "image": "/kapak/9eabb90e930536bf.webp",
     "gorselKaynak": {
       "yazar": "Adem",
       "lisans": "CC BY-SA 4.0",
@@ -5750,7 +5831,7 @@
     "gorselSorgu": "Kylian Mbappe press conference",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/cv62yg0erp8zo?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Kylian_Mbappe_France_v_Spain_7.24.26-051.jpg/1280px-Kylian_Mbappe_France_v_Spain_7.24.26-051.jpg",
+    "image": "/kapak/f8a0b434e80f1b8a.webp",
     "gorselKaynak": {
       "yazar": "Bryan Berlin",
       "lisans": "CC BY-SA 4.0",
@@ -5817,7 +5898,7 @@
     "gorselSorgu": "video game development studio",
     "source": "CHIP Online",
     "sourceUrl": "https://www.chip.com.tr/guncel/marvels-blade-icin-yeni-umut-microsoft-arkanee-bir-ay-daha-sure-verdi_184926.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Microsoft_Software_Development_Center%2C_Seestrasse_356%2C_Z%C3%BCrich_%28Ank_Kumar%2C_Infosys_Limited%29_04.jpg/1280px-Microsoft_Software_Development_Center%2C_Seestrasse_356%2C_Z%C3%BCrich_%28Ank_Kumar%2C_Infosys_Limited%29_04.jpg",
+    "image": "/kapak/7d6fc7bd027318b4.webp",
     "gorselKaynak": {
       "yazar": "Ank Kumar",
       "lisans": "CC BY-SA 4.0",
@@ -5877,7 +5958,7 @@
     "gorselSorgu": "thousands of drones flying",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/71-bin-drone-ile-rekor-denemesi",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/In_Their_Thousands_01.jpg/1280px-In_Their_Thousands_01.jpg",
+    "image": "/kapak/330e98400984447d.webp",
     "gorselKaynak": {
       "yazar": "Schorle",
       "lisans": "CC BY-SA 4.0",
@@ -5936,7 +6017,7 @@
     "gorselSorgu": "cherry tomatoes closeup",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/yazarlar/kucuk-domateste-buyuk-tehlike-avrupada-800-kisiyi-asan-salgin-550649",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Cherry_tomatoes_different_colors.jpg/1280px-Cherry_tomatoes_different_colors.jpg",
+    "image": "/kapak/ac23c4ae69e48e17.webp",
     "gorselKaynak": {
       "yazar": "Arturo Feliz-Camilo",
       "lisans": "CC BY 4.0",
@@ -6004,7 +6085,7 @@
     "gorselSorgu": "rainy fields crop",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/gundem/yagislar-ve-su-rezervlerindeki-artis-yeni-uretim-sezonu-icin-olumlu-sinyaller-veriyor/4102221",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Flooded_Paddy_fields_of_Pallippuram_during_rainy_season_3.jpg/1280px-Flooded_Paddy_fields_of_Pallippuram_during_rainy_season_3.jpg",
+    "image": "/kapak/d32c6e016293c1ab.webp",
     "gorselKaynak": {
       "yazar": "Vis M",
       "lisans": "CC BY-SA 4.0",
@@ -6053,7 +6134,7 @@
     "gorselSorgu": "emergency responders at bus accident site",
     "source": "TRT Haber Son Dakika",
     "sourceUrl": "https://www.trthaber.com/haber/turkiye/burdurda-otobus-kazasi-1-olu-9-yarali-961339.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Emergency_Responders_Memorial_2016-06-17_093.jpg/1280px-Emergency_Responders_Memorial_2016-06-17_093.jpg",
+    "image": "/kapak/b7a264115cc859e5.webp",
     "gorselKaynak": {
       "yazar": "Chris Light",
       "lisans": "CC BY-SA 4.0",
@@ -6111,7 +6192,7 @@
     "gorselSorgu": "OpenAI artificial intelligence research lab",
     "source": "Webtekno",
     "sourceUrl": "https://www.webtekno.com/openai-3-buyuk-bilimsel-kesif-yaptigini-acikladi-h227933.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-380830.jpg/1280px-Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-380830.jpg",
+    "image": "/kapak/40e8773799e13706.webp",
     "gorselKaynak": {
       "yazar": "European Commission - Photographer: Aurore Martignoni",
       "lisans": "CC BY 4.0",
@@ -6159,7 +6240,7 @@
     "gorselSorgu": "stock exchange trading floor",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/ekonomi/borsada-bugunku-ve-yarinki-islemlerin-takasi-2-kasimda-yapilacak/4102193",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/8/89/Old_Borsa_Inn%2C_Karak%C3%B6y%2C_%C4%B0stanbul_%2812985292624%29.jpg",
+    "image": "/kapak/4f92381e4748ed87.webp",
     "gorselKaynak": {
       "yazar": "SALTOnline",
       "lisans": "No restrictions",
@@ -6216,7 +6297,7 @@
     "gorselSorgu": "iPhone Duo foldable smartphone",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/iphone-duo-apple-pencil-destegi-2",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/IPhone_Duo_09.jpg/1280px-IPhone_Duo_09.jpg",
+    "image": "/kapak/2eb4853378746a13.webp",
     "gorselKaynak": {
       "yazar": "SimonWaldherr",
       "lisans": "CC BY 4.0",
@@ -6274,7 +6355,7 @@
     "gorselSorgu": "Galatasaray stadium crowd celebration",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/spor/galatasaraydan-super-ligde-yeni-rekor-fenerbahceyi-geride-birakti-550637",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Kadriorg_Stadium_floodlights_and_Maakri_high-rises.jpg/1280px-Kadriorg_Stadium_floodlights_and_Maakri_high-rises.jpg",
+    "image": "/kapak/fff8b828204ad976.webp",
     "gorselKaynak": {
       "yazar": "Sancos",
       "lisans": "CC BY 4.0",
@@ -6333,7 +6414,7 @@
     "gorselSorgu": "storm clouds over Istanbul",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/yasam/istanbulda-en-cok-yagis-alan-yer-belli-oldu-metrekareye-83-kilo-yagis-dustu-550636",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Cars_in_flooded_Novodvorsk%C3%A1_street_in_T%C5%99eb%C3%AD%C4%8D%2C_T%C5%99eb%C3%AD%C4%8D_District.JPG/1280px-Cars_in_flooded_Novodvorsk%C3%A1_street_in_T%C5%99eb%C3%AD%C4%8D%2C_T%C5%99eb%C3%AD%C4%8D_District.JPG",
+    "image": "/kapak/caf614d116d26ca9.webp",
     "gorselKaynak": {
       "yazar": "Jiří Sedláček",
       "lisans": "CC BY-SA 4.0",
@@ -6381,7 +6462,7 @@
     "gorselSorgu": "TikTok app error screen",
     "source": "CHIP Online",
     "sourceUrl": "https://www.chip.com.tr/galeri/tiktok-coktu-mu-son-24-saat-kesinti-raporu-27-ekim-2026_176278.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/TikTok_Short_Film_Competition.jpg/1280px-TikTok_Short_Film_Competition.jpg",
+    "image": "/kapak/8ff636cf59c3abe6.webp",
     "gorselKaynak": {
       "yazar": "Nik Kranjec",
       "lisans": "CC BY-SA 4.0",
@@ -6439,7 +6520,7 @@
     "gorselSorgu": "google photos app interface",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/google-photos-koleksiyonlar-sekmesi-yenilendi",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Android_Gingerbread_Easter_egg.jpg/1280px-Android_Gingerbread_Easter_egg.jpg",
+    "image": "/kapak/a97004e961a00227.webp",
     "gorselKaynak": {
       "yazar": "Pang Ka Kit",
       "lisans": "CC BY 2.5",
@@ -6490,7 +6571,7 @@
     "gorselSorgu": "Casper laptop hinge closeup",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/universite-icin-laptopta-hangi-dayaniklilik-ozellikleri-aranmali--211997",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/GMC_Truck_in_the_Casper_Wyoming_Holiday_Parade.jpg/1280px-GMC_Truck_in_the_Casper_Wyoming_Holiday_Parade.jpg",
+    "image": "/kapak/35f861f75591b8a3.webp",
     "gorselKaynak": {
       "yazar": "Tony Webster",
       "lisans": "CC BY 2.0",
@@ -6538,7 +6619,7 @@
     "gorselSorgu": "gaming handheld console",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/xbox-helix-psp-3ten-cok-daha-guclu-olabilir",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Handheld_game_console.jpg/1280px-Handheld_game_console.jpg",
+    "image": "/kapak/63fb45a479b866d1.webp",
     "gorselKaynak": {
       "yazar": "KK IN HK",
       "lisans": "CC BY-SA 4.0",
@@ -6595,7 +6676,7 @@
     "gorselSorgu": "large cargo drone prototype",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/poseidon-aerospace-egret-otonom-kargo-ucagi",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Boeing_747_Large_Cargo_Freighter_%285006438735%29.jpg/1280px-Boeing_747_Large_Cargo_Freighter_%285006438735%29.jpg",
+    "image": "/kapak/5b2b3a933e57df10.webp",
     "gorselKaynak": {
       "yazar": "Clemens Vasters from Viersen, Germany",
       "lisans": "CC BY 2.0",
@@ -6652,7 +6733,7 @@
     "gorselSorgu": "Svolt battery production line",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/cinli-svolt-yari-kati-hal-bataryalarin-seri-uretimine-basladi--212123",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/H%C3%A5kan_Lans_computer_color_graphics_card_Datacolor.jpg/1280px-H%C3%A5kan_Lans_computer_color_graphics_card_Datacolor.jpg",
+    "image": "/kapak/a6c4adea1060a2a1.webp",
     "gorselKaynak": {
       "yazar": "Agnes Andersson",
       "lisans": "CC BY 4.0",
@@ -6710,7 +6791,7 @@
     "gorselSorgu": "saudi arabia military defense",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/dunya/suudi-arabistanin-guneyindeki-necran-vilayetinde-tehlike-uyarisi-yapildi/4102027",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Secretary_of_Defense_Chuck_Hagel_walks_with_Prince_Fahd_bin_Abdullah%2C_Deputy_Minister_of_Defense%2C_and_U.S._Ambassador_to_the_Kingdom_of_Saudi_Arabia_Jim_Smith%2C_after_arriving_in_Riyadh%2C_Saudi_Arabia%2C_April_23%2C_2013.jpg/1280px-thumbnail.jpg",
+    "image": "/kapak/a2a863b110c38f51.webp",
     "gorselKaynak": {
       "yazar": "Secretary of Defense",
       "lisans": "Kamu malı",
@@ -6775,7 +6856,7 @@
     "gorselSorgu": "rocket lab solar panel satellite",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/rocket-lab-uzay-araclarinin-gunes-paneli-sorununa-cozum-getirdi--212121",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Rocket_Lab_Leader_Visits_NASA_Stennis_%28SSC-20250226-s00158%29.jpg/1280px-Rocket_Lab_Leader_Visits_NASA_Stennis_%28SSC-20250226-s00158%29.jpg",
+    "image": "/kapak/8f4d11d7e23b47a1.webp",
     "gorselKaynak": {
       "yazar": "NASA Stennis Space Center / Danny Nowlin",
       "lisans": "Kamu malı",
@@ -6834,7 +6915,7 @@
     "gorselSorgu": "car accident police tape investigation",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/gundem/suc-orgutu-kurgu-trafik-kazalari-icin-kiralik-sofor-kullanmis/4101987",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Car_accident_%28FL62565155%29.jpg/1280px-Car_accident_%28FL62565155%29.jpg",
+    "image": "/kapak/a9fefddc9de2bcb8.webp",
     "gorselKaynak": {
       "yazar": "IPPA photographer",
       "lisans": "CC BY 4.0",
@@ -6890,7 +6971,7 @@
     "gorselSorgu": "foldable phone screen crack",
     "source": "Webtekno",
     "sourceUrl": "https://www.webtekno.com/apple-iphone-duo-ekran-catlamasi-aciklama-h227920.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Samsung_Foldable_Phone.jpg/1280px-Samsung_Foldable_Phone.jpg",
+    "image": "/kapak/fcc0e8e58195b5bc.webp",
     "gorselKaynak": {
       "yazar": "Ka Kit Pang",
       "lisans": "Kamu malı",
@@ -6938,7 +7019,7 @@
     "gorselSorgu": "police crime scene investigation",
     "source": "TRT Haber Son Dakika",
     "sourceUrl": "https://www.trthaber.com/haber/turkiye/kurgu-kazalar-icin-kiralik-soforler-kullanmislar-961316.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Maryland_State_Police_crime_scene_investigation_van_at_Berlin_Barrack.jpg/1280px-Maryland_State_Police_crime_scene_investigation_van_at_Berlin_Barrack.jpg",
+    "image": "/kapak/aac2fd30a29a8e67.webp",
     "gorselKaynak": {
       "yazar": "Maryland GovPics",
       "lisans": "CC BY 4.0",
@@ -7004,7 +7085,7 @@
     "gorselSorgu": "storm clouds over city",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/antalyada-soke-eden-goruntuler-firtina-ve-yagisin-etkisi-boyle-kaydedildi-550611",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Storm_Clouds_over_Hove_-_geograph.org.uk_-_3851065.jpg/1280px-Storm_Clouds_over_Hove_-_geograph.org.uk_-_3851065.jpg",
+    "image": "/kapak/f1424850fc79ae3b.webp",
     "gorselKaynak": {
       "yazar": "Peter Jeffery",
       "lisans": "CC BY-SA 2.0",
@@ -7051,7 +7132,7 @@
     "gorselSorgu": "NATO surveillance aircraft over Black Sea",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/yazarlar/karadenizde-savas-riski-turkiyenin-onundeki-kritik-denklem-550601",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/The_Reapers_return-_NATO_Icelandic_Air_Surveillance_complete_%284692639%29.jpg/1280px-The_Reapers_return-_NATO_Icelandic_Air_Surveillance_complete_%284692639%29.jpg",
+    "image": "/kapak/3d4458b3614b8f37.webp",
     "gorselKaynak": {
       "yazar": "U.S. Air Force 148FW by Staff Sgt. Alex Echols",
       "lisans": "Kamu malı",
