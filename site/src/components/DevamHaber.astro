@@ -3,7 +3,7 @@
 // TAM içeriği (başlık, görsel, özet, maddeler, gövde, AI yorumu, kaynak) akar.
 // Böylece okur hiç "haber bitti" duvarına çarpmaz; zincir birkaç haberde durur.
 import { imageUrl, imageSrcset, formatDate, publishedISO } from "../lib/articles.js";
-import { kapakKaynagi, kapakUygunMu } from "../lib/kapak.js";
+import { kapakKaynagi } from "../lib/kapak.js";
 
 const { article, index = 0 } = Astro.props;
 const body = Array.isArray(article.body) ? article.body.filter(Boolean) : [];
@@ -15,8 +15,13 @@ const sayfa = `/haber/${article.slug}/`;
 // kapak gelir; böylece zincirde de "saçma" fotoğraf görünmez.
 const kapak = kapakKaynagi(article);
 const ekGorsel = (Array.isArray(article.images) ? article.images : [])
-  .filter((u) => typeof u === "string" && /^https?:\/\//i.test(u) && u !== kapak)
-  .find((u) => kapakUygunMu(article, u));
+  .filter(
+    (u) =>
+      typeof u === "string" &&
+      /^https?:\/\//i.test(u) &&
+      u !== kapak &&
+      !/placeholder|no-?image|default[-_/]?news|avatar/i.test(u)
+  )[0];
 const errYok = "this.closest('figure').remove()";
 const gorselHata = `if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.removeAttribute('srcset');this.removeAttribute('sizes');this.src=this.dataset.orig}else{${errYok}}`;
 ---

@@ -9,8 +9,7 @@ import HaberFigur from "../../components/HaberFigur.astro";
 import Yorumlar from "../../components/Yorumlar.astro";
 import { getArticles, getYayinArticles, formatDate, publishedISO, imageUrl, imageSrcset, socialImageUrl, tagUrl, slugify } from "../../lib/articles.js";
 import { indeksliMi } from "../../lib/indeks.js";
-import { kapakKaynagi, kapakUygunMu } from "../../lib/kapak.js";
-import { stokEkUygunMu } from "../../lib/gorsel-uygun.js";
+import { kapakKaynagi } from "../../lib/kapak.js";
 import { ADSENSE_SLOTS, ONESIGNAL_APP_ID, siteOrigin } from "../../lib/site-meta.js";
 
 export function getStaticPaths() {
@@ -104,29 +103,16 @@ const gorselKimlik = (url) => {
     .replace(/\.(jpe?g|png|webp|avif|gif)$/, "");
 };
 
-// --- Haber içi ek fotoğraflar ---
-// YALNIZCA bu habere ait doğrulanmış kaynak içi detay fotoğrafları (`images`) ve
-// habere/paragraflara özel seçilmiş detay görselleri (`gorselEk`) kullanılır.
-// Başka haberlerin kapak fotoğrafları (`benzerler`) veya haberin kendi kapağı (`kapak`)
-// satır aralarında ASLA tekrar kullanılmaz.
-const ekKaynaklar = Array.isArray(article.gorselEk) ? article.gorselEk.filter(Boolean) : [];
+// --- Haber içi fotoğraflar ---
+// YALNIZCA haberin çıktığı sitenin kendi sayfasındaki gövde fotoğrafları
+// (`images`, scripts/kaynak-gorsel.mjs ile toplanır) kullanılır. Wikimedia
+// stoğu artık gövdeye konmuyor: tek kelime eşleşmesi yüzünden telefon haberine
+// mezar taşı fotoğrafı düşebiliyordu. Kaynak fotoğraf = yayıncının kendi
+// metniyle birlikte yayınladığı fotoğraf, yani haberle ilgili olduğu kesin.
 const kaynakIciUrller = Array.isArray(article.images) ? article.images.filter(Boolean) : [];
 
-/** Ek fotoğrafın telif/lisans ve alt yazı bilgisi (varsa). */
-const ekKaynak = (url) => {
-  const kimlik = gorselKimlik(url);
-  return ekKaynaklar.find((g) => gorselKimlik(g.url) === kimlik) || null;
-};
-
-/** Stok fotoğrafın atıf metni: "Fotoğrafçı · Lisans · Wikimedia Commons" */
-const atifMetni = (g) =>
-  [g?.yazar, g?.lisans, "Wikimedia Commons"].filter(Boolean).join(" · ");
-
 const gorulenKimlikler = new Set([gorselKimlik(kapak)].filter(Boolean));
-const hamAdaylar = [
-  ...kaynakIciUrller.map((u) => ({ url: u, g: null })),
-  ...ekKaynaklar.map((g) => ({ url: g.url, g })),
-];
+const hamAdaylar = kaynakIciUrller.map((u) => ({ url: u }));
 
 // Gövde genelde 4 paragraf: iki ek fotoğraf metni dengeliyor. Daha fazlası
 // kısa haberi fotoğraf albümüne çevirir; bu yüzden üst sınır iki.
@@ -139,22 +125,16 @@ for (const aday of hamAdaylar) {
   if (!/^https?:\/\//i.test(u)) continue;
   const k = gorselKimlik(u);
   if (!k || gorulenKimlikler.has(k)) continue;
-  if (!kapakUygunMu(article, u)) continue;
-  // Stok fotoğrafın konuyla gerçekten ilgili olduğunu doğrula: Wikimedia
-  // araması bazen (ör. Libya haberi için İstanbul fotoğrafı) yanlış sonuç
-  // döndürüyor. Haberin kendi kaynak fotoğrafları bu denetimden geçmez.
-  if (aday.g && !stokEkUygunMu(article, u)) continue;
   gorulenKimlikler.add(k);
 
-  const g = aday.g || ekKaynak(u);
   kendiFotograflar.push({
     url: u,
-    alt: g?.altyazi ? `${article.title} — ${g.altyazi}` : `${article.title} — haber detayı`,
-    altyazi: g?.altyazi || "",
+    alt: `${article.title} — haber detayı`,
+    altyazi: "",
     caption: article.title,
-    credit: g ? atifMetni(g) : article.source,
-    href: g?.sayfa || article.sourceUrl || "",
-    hrefLabel: g ? "Fotoğraf kaynağı" : "Haber kaynağı",
+    credit: article.source,
+    href: article.sourceUrl || "",
+    hrefLabel: "Haber kaynağı",
     tur: "haber",
   });
 }
@@ -220,7 +200,7 @@ const jsonLd = {
   },
   // Görsel atfı arayüzde gösterilmez; lisans gereği yapısal veride ve
   // görselin bağlantılı Commons dosya sayfasında korunur.
-  creditText: article.gorselKaynak ? atifMetni(article.gorselKaynak) : undefined,
+  creditText: article.source ? `${article.source} · HaberinAi` : undefined,
   isBasedOn: article.sourceUrl,
   isAccessibleForFree: true,
   datePublished: publishedIso,
@@ -435,7 +415,7 @@ const breadcrumbLd = {
                     <HaberFigur
                       url={foto.url}
                       baslik={foto.caption || article.title}
-                      kaynak={ekKaynak(foto.url)}
+                      kaynak={article.sourceUrl ? { sayfa: article.sourceUrl } : undefined}
                       altyazi={foto.altyazi || undefined}
                       alt={foto.alt || `${article.title} — haber fotoğrafı`}
                     />
