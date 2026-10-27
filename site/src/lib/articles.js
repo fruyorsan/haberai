@@ -375,20 +375,18 @@ export function yayinKategoriSluglari() {
 }
 
 /**
- * Bir haberin kategori bağlantısı.
+ * Bir haberin kategori sayfası bağlantısı; sayfa yoksa `null`.
  *
  * Kategori sayfaları yalnızca yayın çekirdeğindeki (indeks.json) haberlerden
  * üretilir. Arşivde kalmış bir haberin kategorisi (ör. "Yaşam", "Diğer")
  * henüz sayfa bulamayabilir; o durumda /kategori/<slug>/ bağlantısı 404'e
- * gider. Böyle bir durumda arama sayfasına yönlendirilir, böylece sitede
- * kırık kategori bağlantısı kalmaz. Kategori yayına girdiğinde bağlantı
- * kendiliğinden gerçek kategori sayfasına döner.
+ * gider. Böyle haberlerde kategori adı bağlantısız etiket olarak gösterilir,
+ * böylece sitede kırık kategori bağlantısı kalmaz. Kategori yayına girdiğinde
+ * bağlantı kendiliğinden gerçek kategori sayfasına döner.
  */
 export function kategoriUrl(a) {
   const slug = a?.categorySlug;
-  if (slug && yayinKategoriSluglari().has(slug)) return `/kategori/${slug}/`;
-  const ad = String(a?.category || "").trim();
-  return ad ? `/ara/?q=${encodeURIComponent(ad)}` : "/kategoriler/";
+  return slug && yayinKategoriSluglari().has(slug) ? `/kategori/${slug}/` : null;
 }
 
 // --- Konu (etiket) sayfaları ---

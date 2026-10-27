@@ -16,7 +16,7 @@
 // gösterilmez (eskiden "H" harfi basılıyordu): akışta fotoğrafsız haberler
 // zaten listenin sonuna düşer (lib/ilgi.js), yani ilk ekranlar hep fotoğraflı.
 // ==========================================================================
-import { imageUrl, imageSrcset, timeAgo, publishedISO } from "./articles.js";
+import { imageUrl, imageSrcset, timeAgo, publishedISO, kategoriUrl } from "./articles.js";
 import { kapakKaynagi } from "./kapak.js";
 import { ilgiSkoru } from "./ilgi.js";
 
@@ -77,6 +77,12 @@ export function akisKart(a, sira = 0) {
   const ozet = kisalt(a.summary, 190);
   const kat = kac(a.category || "Haber");
   const slug = kac(a.slug);
+  // Kategori sayfası yoksa (arşivde kalmış "Yaşam"/"Diğer" haberleri) etiket
+  // bağlantısız basılır; böylece akışta 404'e giden bağlantı olmaz.
+  const katUrl = kategoriUrl(a);
+  const katBlok = katUrl
+    ? `<a class="ak__kat" href="${katUrl}">${kat}</a>`
+    : `<span class="ak__kat">${kat}</span>`;
   const zaman = kac(timeAgo(publishedISO(a)));
   // İlk kart vitrin gibidir: hemen yüklenir (LCP). Sonrakiler tembel.
   const oncelik = sira === 0;
@@ -94,7 +100,7 @@ export function akisKart(a, sira = 0) {
   }>
   <div class="ak__gorsel${gorsel ? "" : " ak__gorsel--yok"}">
     ${gorselBlok}
-    <a class="ak__kat" href="/kategori/${kac(a.categorySlug)}/">${kat}</a>
+    ${katBlok}
     ${a.breaking === true ? '<span class="ak__son"><i></i>SON DAKİKA</span>' : ""}
   </div>
   <div class="ak__govde">
