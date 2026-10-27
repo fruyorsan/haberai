@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T02:44:37.949Z",
+  "updatedAt": "2026-10-27T02:48:51.984Z",
   "gunluk": 32,
   "pencereGun": 45,
   "esik": {
@@ -10,9 +10,9 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 4677,
-  "aday": 4677,
-  "uygun": 2784,
+  "toplamHaber": 4678,
+  "aday": 4678,
+  "uygun": 2785,
   "secilen": 414,
   "red": {
     "maddeli özet yok": 106,
@@ -21,8 +21,8 @@
     "özgün yorum yok": 4,
     "kategorisiz": 2,
     "editör notu yok": 14,
-    "günlük kota": 2336,
-    "tekrar": 34
+    "günlük kota": 2340,
+    "tekrar": 31
   },
   "ornekTekrarlar": [
     {
@@ -54,10 +54,6 @@
       "twin": "Japonya Meteoroloji Ajansı, 7.0 Büyüklükte Depremi 470 km Derinlikte Kayıt Etti"
     },
     {
-      "title": "Vivo Y600, 10.000 mAh bataryası ve rekor performansıyla duyuruldu",
-      "twin": "Vivo Y600, 10.000 mAh bataryasıyla piyasaya sürüldü"
-    },
-    {
       "title": "Apple, robotik kollu 9 inç ekranlı yeni akıllı ev cihazı geliştiriyor",
       "twin": "Apple, 360 derece dönebilen 9 inç ekranlı yeni cihazını hazırlıyor"
     },
@@ -74,10 +70,6 @@
       "twin": "Van'da 15 yıllık ihmal: Binaların yüzde 90'ı depreme hazır değil"
     },
     {
-      "title": "Vivo Y600 10.000 mAh Pil ile Çıktı, Fiyatı 280‑350 Dolar",
-      "twin": "Vivo Y600, 10.000 mAh bataryasıyla piyasaya sürüldü"
-    },
-    {
       "title": "TUSAŞ, ANKA-3 insansız savaş uçağının yeni sürümünü geliştiriyor",
       "twin": "TUSAŞ, ANKA-3 muharip insansız savaş uçağının teknik verilerini paylaştı"
     },
@@ -90,10 +82,6 @@
       "twin": "Bursa deprem hafızasını masaya yatırdı: 1855 felaketi konuşuldu"
     },
     {
-      "title": "Vivo Y600, 10.000 mAh bataryasıyla Guinness Rekoruna İmza Attı",
-      "twin": "Vivo Y600, 10.000 mAh bataryasıyla piyasaya sürüldü"
-    },
-    {
       "title": "Japonya'da 7.0 Güçlü Deprem 470 km Derinliğinde Saldırdı",
       "twin": "Japonya Meteoroloji Ajansı, 7.0 Büyüklükte Depremi 470 km Derinlikte Kayıt Etti"
     },
@@ -104,6 +92,18 @@
     {
       "title": "Suudi Arabistan Enerji Bakanlığı Şeybe Petrol Sahasında 2 Ölüm Bildirdi",
       "twin": "Suudi Arabistan’da Engellenen Füze Şarapnelini 2 Kişiyi Yaraladı"
+    },
+    {
+      "title": "Portekiz Federasyonu, Ronaldo'ya 30 gün men ve para cezası verdi",
+      "twin": "Portekiz Federasyonu, Ronaldo'ya 30 Gün Hak Mahrumiyeti ve 255 Euro Cezayeti Verdi"
+    },
+    {
+      "title": "Japonya Ogasawara Açıklarında 7.0 Büyüklüğünde Deprem Gerçekleşti",
+      "twin": "Japonya Meteoroloji Ajansı, 7.0 Büyüklükte Depremi 470 km Derinlikte Kayıt Etti"
+    },
+    {
+      "title": "Casper Excalibur G870, 57.406 TL'den başlayan fiyatla raflarda",
+      "twin": "Casper Excalibur G870 oyun bilgisayarı 57.406 TL'den satılıyor"
     }
   ],
   "days": {
@@ -170,10 +170,10 @@
       "212e133acff9e012",
       "e3b01c6940f4abe4",
       "5fa4fb5dedfd9ccd",
+      "249b16d9b1d63050",
       "9588a55386f78353",
       "821ae3a10fb2a782",
-      "2d6da96661790e88",
-      "87c2d69cddee302b"
+      "2d6da96661790e88"
     ],
     "2026-10-22": [
       "686d3f11a6cecddc",
@@ -645,6 +645,7 @@
     "ebfb09785b4547a7",
     "2244d8f2b1ca5062",
     "66ece5cd5544652e",
+    "249b16d9b1d63050",
     "75fec39cf9b4831d",
     "5ec8bf33816a428b",
     "d7eed9f679a4c92b",
@@ -669,7 +670,6 @@
     "637057522398a3d3",
     "111d08256f4c3830",
     "86fcae055aaf31dc",
-    "87c2d69cddee302b",
     "01b31f442c501f6e",
     "b84e0636e5dcf4a6",
     "31d2496d27466454",
