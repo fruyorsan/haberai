@@ -183,10 +183,76 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:09.176Z",
+    "gorselDeneme": "2026-10-28T20:08:28.874Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_9d3bd192055653ee1e32eb029cbd0092.jpg",
+      "foto": true
+    }
+  },
+  {
+    "id": "b136379ba9351f5d",
+    "title": "Google, yapay zeka modeli Gemini 4 Carbon ile zirveye yerleşti",
+    "slug": "google-yapay-zeka-modeli-gemini-4-carbon-ile-zirveye-yerlesti",
+    "summary": "Google, şimdiye kadar ürettiği en güçlü yapay zeka modeli olan Gemini 4 Carbon'u tanıttı. Uzun süreli görevler ve siber güvenlik odaklı geliştirilen model, bağımsız değerlendirme kuruluşu Artificial Analysis'in genel zeka sıralamasında ilk sıraya yükselerek dikkatleri üzerine çekti.",
+    "keyPoints": [
+      "Gemini 4 Carbon, Artificial Analysis genel zeka sıralamasında 59 puanla birinci oldu.",
+      "Model, siber güvenlik açıklarını bulma ve yama üretme süreçlerinde yüksek performans sergiliyor.",
+      "Geliştiriciler için milyon girdi tokeni başına 2 dolar, çıktı tokeni başına 10 dolar fiyatlandı."
+    ],
+    "body": [
+      "Google, en gelişmiş yapay zeka modeli olarak tanımladığı Gemini 4 Carbon'u resmen duyurdu. Şirketin sadece iki hafta önce piyasaya sürdüğü Gemini 4 Argon üzerine inşa edilen bu yeni model, geliştirilme hızıyla dikkat çekiyor. Google CEO'su Sundar Pichai, modellerin periyodik olarak güncelleneceğini belirterek Carbon'un teknoloji dünyasında yeni bir dönemi başlattığını ifade etti.",
+      "Yeni model, özellikle saatler veya günler süren karmaşık ve çok adımlı görevleri yerine getirmek üzere tasarlandı. Google DeepMind ekibinden Koray Kavukçuoğlu, Carbon'un kod tabanlarındaki hataları kendi başına tespit edip düzeltebilen bir yapay zeka ajanı olarak öne çıktığını vurguladı. Yazılım geliştirme ve kodlama süreçlerinde insan müdahalesini azaltmayı hedefleyen model, WebDev Arena sıralamasında 89 puanlık bir sıçrama kaydetti.",
+      "Siber güvenlik, Carbon'un en iddialı olduğu alanların başında geliyor. Model, güvenlik açığını belirlemeden yama üretimine kadar olan tüm aşamalarda oldukça başarılı sonuçlar veriyor. SEC-bench Pro testinde yüzde 88,2, ExploitGym'de yüzde 54,8 ve CWE-bench'te yüzde 71,0 gibi skorlara ulaşan Carbon, Google'ın açıklamasına göre güvenlik odaklı tüm bu testlerde liderliği elinde tutuyor.",
+      "Güvenlik filtreleri kapalıyken gerçekleştirilen dış testlerde, modelin hatalı veya kötü niyetli talimatlara karşı direnci yüksek çıktı. Özellikle dolaylı istem enjeksiyonu saldırılarına karşı Gray Swan testinde tam koruma sağladığı gözlemlendi. Ayrıca Terminal-Bench 4.0 testinde kopya çekme oranını yüzde 0,4 seviyesine indirerek, güvenilir kod üretimi konusundaki iddiasını verilerle destekledi.",
+      "Model, ilk aşamada yalnızca belirli siber güvenlik uzmanlarının kullanımına sunuluyor ve kademeli olarak genişletilmesi planlanıyor. 1 milyon tokenlik devasa bağlam penceresi sayesinde, kapsamlı dokümanları tek seferde analiz edebiliyor. Fiyatlandırma tarafında ise Argon ile aynı başlangıç stratejisi izleniyor; tanıtım dönemi sonunda maliyetlerin iki katına çıkması bekleniyor.",
+      "Bağımsız kuruluşların değerlendirmeleri, Carbon'un genel zeka konusunda zirvede olduğunu doğruluyor. Ayrıca modelin bazı durumlarda uydurma bilgi verme oranının yüzde 11 seviyesine çıkması, geliştiricilerin dikkatle izlediği bir diğer teknik detay oldu."
+    ],
+    "comment": "Google'ın hızlı sürüm stratejisi, yapay zeka yarışında sadece hız değil, aynı zamanda operasyonel güvenilirliğin de belirleyici olduğunu gösteriyor. Carbon, özellikle siber güvenlik gibi yüksek riskli alanlarda yüzde 88,2'lik test başarısıyla geleneksel yöntemlere göre ciddi bir verimlilik artışı vadediyor. Ancak yüzde 11'e çıkan halüsinasyon oranı, kurumsal şirketlerin bu modeli kritik altyapılarına entegre etmeden önce daha fazla test yapması gerektiğini hatırlatıyor. Rakip Claude Opus 5.5'in kodlama ajanı sıralamasında önde olması, Google'ın uzun vadeli egemenlik için daha fazla optimize etmesi gereken bir alan olduğunu ortaya koyuyor.",
+    "editorNote": "Gemini 4 Carbon, siber güvenlik açıklarını tek başına kapatabilen yetenekleriyle yapay zeka dünyasında zirveye oturdu. Peki, bu hız ve performans artışı kodlama hatalarını tamamen…",
+    "tags": [
+      "Google",
+      "Gemini 4 Carbon",
+      "Yapay Zeka",
+      "Siber Güvenlik",
+      "DeepMind"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "data center server room",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/gemini-4-carbon",
+    "image": "/kapak/b136379ba9351f5d.webp",
+    "gorselKaynak": {
+      "yazar": "Kavali Chandrakanth KCK",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Google_Head_Office_Kondapur_Hyderabad.jpg"
+    },
+    "publishedAt": "2026-10-28T19:41:49.000Z",
+    "generatedAt": "2026-10-28T20:08:26.354Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Programming_code.jpg/1280px-Programming_code.jpg",
+        "yazar": "Martin Vorel",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Programming_code.jpg",
+        "altyazi": "Yapay zeka modellerinin analiz ettiği karmaşık kod yapıları"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/EU_cyber_security_conference_2017_%2837383454605%29.jpg/1280px-EU_cyber_security_conference_2017_%2837383454605%29.jpg",
+        "yazar": "EU2017EE Estonian Presidency",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:EU_cyber_security_conference_2017_(37383454605).jpg",
+        "altyazi": "Siber güvenlik savunmasında kullanılan yeni nesil teknolojiler"
+      }
+    ],
+    "breaking": true,
+    "gorselDeneme": "2026-10-28T20:08:27.469Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://ares.shiftdelete.net/2026/10/manset-5.webp",
       "foto": true
     }
   },
@@ -250,7 +316,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:09.180Z",
+    "gorselDeneme": "2026-10-28T20:08:28.777Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_fe81d035ded544360001343b10be6e67.jpg",
@@ -315,7 +381,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:09.367Z",
+    "gorselDeneme": "2026-10-28T20:08:29.533Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_4622091377a5611a09612cb7dc4f0f77.jpg",
@@ -573,7 +639,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:09.406Z",
+    "gorselDeneme": "2026-10-28T20:08:29.543Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_79e7aee0be106756447014a0dd7e74c9.jpg",
@@ -639,7 +705,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:08.462Z",
+    "gorselDeneme": "2026-10-28T20:08:28.733Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Sony-PlayStation-3-2001A-wController-L.jpg/1280px-Sony-PlayStation-3-2001A-wController-L.jpg",
@@ -766,7 +832,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:09.961Z",
+    "gorselDeneme": "2026-10-28T20:08:30.622Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_1a071870edc60a12413d5b8404b6436c.jpg",
@@ -832,7 +898,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:09.362Z",
+    "gorselDeneme": "2026-10-28T20:08:28.942Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Airship_flying_over_the_Utah_Data_Center_03.jpg/1280px-Airship_flying_over_the_Utah_Data_Center_03.jpg",
@@ -966,7 +1032,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:09.769Z",
+    "gorselDeneme": "2026-10-28T20:08:29.381Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1752000/gozalti-stok-1752516.jpg",
@@ -1031,7 +1097,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:09.577Z",
+    "gorselDeneme": "2026-10-28T20:08:29.165Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_19d0d3db08d7de418b6baf5bcb617ef4.jpg",
@@ -1168,7 +1234,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:09.600Z",
+    "gorselDeneme": "2026-10-28T20:08:29.362Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_f9eaf7735f925ac85ceb48fe7b492926.jpg",
@@ -1297,7 +1363,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:09.706Z",
+    "gorselDeneme": "2026-10-28T20:08:29.605Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_39834d694f9c1e179fdf86f995e82b71.jpg",
@@ -1345,7 +1411,7 @@
     "publishedAt": "2026-10-28T17:32:21.000Z",
     "generatedAt": "2026-10-28T17:36:06.724Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:09.811Z",
+    "gorselDeneme": "2026-10-28T20:08:29.614Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Women_refugees_from_Syria_at_a_clinic_in_Jordan_%289613479675%29.jpg/1280px-Women_refugees_from_Syria_at_a_clinic_in_Jordan_%289613479675%29.jpg",
@@ -1471,7 +1537,7 @@
     "publishedAt": "2026-10-28T17:20:12.000Z",
     "generatedAt": "2026-10-28T17:44:51.006Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:09.833Z",
+    "gorselDeneme": "2026-10-28T20:08:29.805Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Opening_ceremony_of_the_new_Knesset_%28Parliament%29_%28FL45799147%29.jpg/1280px-Opening_ceremony_of_the_new_Knesset_%28Parliament%29_%28FL45799147%29.jpg",
@@ -1527,7 +1593,7 @@
     "publishedAt": "2026-10-28T17:15:58.000Z",
     "generatedAt": "2026-10-28T17:20:59.883Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:10.309Z",
+    "gorselDeneme": "2026-10-28T20:08:29.889Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Apple_MacBook_%2817366674582%29.jpg/1280px-Apple_MacBook_%2817366674582%29.jpg",
@@ -1582,7 +1648,7 @@
     "publishedAt": "2026-10-28T17:14:05.000Z",
     "generatedAt": "2026-10-28T17:22:00.529Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:09.953Z",
+    "gorselDeneme": "2026-10-28T20:08:29.808Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/1996_train_collision_memorial_Job_Corps_WV1.jpg/1280px-1996_train_collision_memorial_Job_Corps_WV1.jpg",
@@ -1650,7 +1716,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:10.147Z",
+    "gorselDeneme": "2026-10-28T20:08:30.011Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Person_holding_world_globe.jpg/1280px-Person_holding_world_globe.jpg",
@@ -1823,7 +1889,7 @@
     "publishedAt": "2026-10-28T16:49:54.000Z",
     "generatedAt": "2026-10-28T17:00:09.913Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:10.033Z",
+    "gorselDeneme": "2026-10-28T20:08:30.075Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg/1280px-Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg",
@@ -2067,7 +2133,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:10.146Z",
+    "gorselDeneme": "2026-10-28T20:08:30.118Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Kazakhstan-Turkey_Friendship_Park_opened_in_Ankara_01.jpg/1280px-Kazakhstan-Turkey_Friendship_Park_opened_in_Ankara_01.jpg",
@@ -2435,7 +2501,7 @@
     "publishedAt": "2026-10-28T15:33:00.000Z",
     "generatedAt": "2026-10-28T15:48:26.580Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:10.173Z",
+    "gorselDeneme": "2026-10-28T20:08:30.205Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg/1280px-Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
@@ -2482,7 +2548,7 @@
     "publishedAt": "2026-10-28T15:32:54.000Z",
     "generatedAt": "2026-10-28T15:37:06.623Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:10.396Z",
+    "gorselDeneme": "2026-10-28T20:08:30.250Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Deputy_Secretary_Blinken_Poses_for_a_Photo_With_Bulgarian_Prime_Minister_Borissov%2C_Foreign_Minister_Mitov%2C_Defense_Minister_Nenchev%2C_and_U.S._Ambassador_Rubin_in_Sofia_%2826881334816%29.jpg/1280px-thumbnail.jpg",
@@ -2654,7 +2720,7 @@
     "publishedAt": "2026-10-28T15:00:17.000Z",
     "generatedAt": "2026-10-28T15:08:36.736Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:10.804Z",
+    "gorselDeneme": "2026-10-28T20:08:30.512Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B%2C_Tesla_Model_3_%D0%BD%D0%B0_%D0%9A%D0%B0%D1%80%D0%B8%D0%BC%D0%BE%D0%B2%D0%B0.jpg/1280px-%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B%2C_Tesla_Model_3_%D0%BD%D0%B0_%D0%9A%D0%B0%D1%80%D0%B8%D0%BC%D0%BE%D0%B2%D0%B0.jpg",
@@ -2711,7 +2777,7 @@
     "publishedAt": "2026-10-28T14:44:00.000Z",
     "generatedAt": "2026-10-28T14:51:41.379Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:10.430Z",
+    "gorselDeneme": "2026-10-28T20:08:30.322Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Prime_Minister_Andy_Burnham_arrives_at_10_Downing_Street_%2855406667976%29.jpg/1280px-Prime_Minister_Andy_Burnham_arrives_at_10_Downing_Street_%2855406667976%29.jpg",
@@ -2786,7 +2852,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:10.541Z",
+    "gorselDeneme": "2026-10-28T20:08:30.446Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Numan_Kurtulmu%C5%9F_Speaker_of_the_Grand_National_Assembly_2.jpg/1280px-Numan_Kurtulmu%C5%9F_Speaker_of_the_Grand_National_Assembly_2.jpg",
@@ -2912,7 +2978,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:10.530Z",
+    "gorselDeneme": "2026-10-28T20:08:30.464Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/2010_UN_Climate_Talks.jpg/1280px-2010_UN_Climate_Talks.jpg",
@@ -2977,7 +3043,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:10.544Z",
+    "gorselDeneme": "2026-10-28T20:08:30.510Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg/1280px-Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg",
@@ -3022,7 +3088,7 @@
     "publishedAt": "2026-10-28T14:17:00.000Z",
     "generatedAt": "2026-10-28T14:26:26.406Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:10.570Z",
+    "gorselDeneme": "2026-10-28T20:08:30.577Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/7/78/Market_centre_in_Tokyo_stock_exchange.jpg",
@@ -3097,7 +3163,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:10.766Z",
+    "gorselDeneme": "2026-10-28T20:08:30.670Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Sugar_beet_field_harvested_-_geograph.org.uk_-_8204879.jpg/1280px-Sugar_beet_field_harvested_-_geograph.org.uk_-_8204879.jpg",
@@ -3381,7 +3447,7 @@
     "publishedAt": "2026-10-28T13:40:46.000Z",
     "generatedAt": "2026-10-28T13:52:30.538Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:10.872Z",
+    "gorselDeneme": "2026-10-28T20:08:30.910Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Car_giveaway_at_UFV_%288559021820%29.jpg/1280px-Car_giveaway_at_UFV_%288559021820%29.jpg",
@@ -3449,7 +3515,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:10.826Z",
+    "gorselDeneme": "2026-10-28T20:08:30.792Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/After_the_train_accident_from_Feb_14%2C_2022_10.jpg/1280px-After_the_train_accident_from_Feb_14%2C_2022_10.jpg",
@@ -3713,7 +3779,7 @@
         "altyazi": "Kritik altyapıların korunduğu sunucu ve veri merkezleri"
       }
     ],
-    "gorselDeneme": "2026-10-28T20:05:11.279Z",
+    "gorselDeneme": "2026-10-28T20:08:31.256Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Chief_of_U.S._Naval_Operations_Adm._Jonathan_Greenert%2C_center%2C_speaks_during_an_all-hands_call_at_U.S._Fleet_Cyber_Command-U_131217-N-ZI511-775.jpg/1280px-Chief_of_U.S._Naval_Operations_Adm._Jonathan_Greenert%2C_center%2C_speaks_during_an_all-hands_call_at_U.S._Fleet_Cyber_Command-U_131217-N-ZI511-775.jpg",
@@ -3913,7 +3979,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:10.902Z",
+    "gorselDeneme": "2026-10-28T20:08:30.826Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/World_Bank_building.JPG/1280px-World_Bank_building.JPG",
@@ -4030,7 +4096,7 @@
     "publishedAt": "2026-10-28T12:30:32.000Z",
     "generatedAt": "2026-10-28T12:33:18.490Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:11.050Z",
+    "gorselDeneme": "2026-10-28T20:08:30.917Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/7/78/Market_centre_in_Tokyo_stock_exchange.jpg",
@@ -4078,7 +4144,7 @@
     "publishedAt": "2026-10-28T12:20:32.000Z",
     "generatedAt": "2026-10-28T12:25:50.001Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:11.125Z",
+    "gorselDeneme": "2026-10-28T20:08:31.043Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/STS-134_International_Space_Station_after_undocking_10.jpg/1280px-STS-134_International_Space_Station_after_undocking_10.jpg",
@@ -4216,7 +4282,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:11.043Z",
+    "gorselDeneme": "2026-10-28T20:08:31.044Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Happy_Family_Theresienwiese_Detlef_D%21_Soost_Kate_Hall.JPG/1280px-Happy_Family_Theresienwiese_Detlef_D%21_Soost_Kate_Hall.JPG",
@@ -4265,7 +4331,7 @@
     "publishedAt": "2026-10-28T12:00:48.000Z",
     "generatedAt": "2026-10-28T12:02:21.982Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:11.292Z",
+    "gorselDeneme": "2026-10-28T20:08:31.259Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/PlayStation_2_connecting_a_controller_%28cropped%29.jpg/1280px-PlayStation_2_connecting_a_controller_%28cropped%29.jpg",
@@ -4347,7 +4413,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:11.268Z",
+    "gorselDeneme": "2026-10-28T20:08:31.174Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Google_Head_Office_Kondapur_Hyderabad_Telangana.jpg/1280px-Google_Head_Office_Kondapur_Hyderabad_Telangana.jpg",
@@ -4484,7 +4550,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:11.262Z",
+    "gorselDeneme": "2026-10-28T20:08:31.336Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/DK-84_-_K%C3%B8benhavn_-_Copenhagen_-_Denmark_-_Shipping_Containers_-_Intermodal_Containers_%284890885214%29.jpg/1280px-DK-84_-_K%C3%B8benhavn_-_Copenhagen_-_Denmark_-_Shipping_Containers_-_Intermodal_Containers_%284890885214%29.jpg",
@@ -4600,7 +4666,7 @@
     "publishedAt": "2026-10-28T11:16:19.000Z",
     "generatedAt": "2026-10-28T11:21:15.688Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:11.483Z",
+    "gorselDeneme": "2026-10-28T20:08:31.837Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Aselsan_A100_Night_Vision_Monocular.jpg/1280px-Aselsan_A100_Night_Vision_Monocular.jpg",
@@ -4876,7 +4942,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:12.244Z",
+    "gorselDeneme": "2026-10-28T20:08:31.585Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Le_emissioni_luminose_notturne_di_un_Data_Center_visto_da_lontano_%28800_metri%29.jpg/1280px-Le_emissioni_luminose_notturne_di_un_Data_Center_visto_da_lontano_%28800_metri%29.jpg",
@@ -5012,7 +5078,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:11.287Z",
+    "gorselDeneme": "2026-10-28T20:08:31.288Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/2018_Cadillac_CT6_Premium_Luxury_AWD_Super_Cruise%2C_front_right.jpg/1280px-2018_Cadillac_CT6_Premium_Luxury_AWD_Super_Cruise%2C_front_right.jpg",
@@ -5203,7 +5269,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:11.520Z",
+    "gorselDeneme": "2026-10-28T20:08:31.496Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Defense.gov_News_Photo_100609-F-6655M-012_-_Secretary_of_Defense_Robert_M._Gates_talks_with_Turkish_Defense_Minister_Mehmet_Vecdi_Gonul_at_the_North_Atlantic_Treaty_Organization_Defense.jpg/1280px-thumbnail.jpg",
@@ -5333,7 +5399,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:11.757Z",
+    "gorselDeneme": "2026-10-28T20:08:31.680Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Luiz_Inacio_Lula_da_Silva_and_Juan_Manuel_Santos.jpg/1280px-Luiz_Inacio_Lula_da_Silva_and_Juan_Manuel_Santos.jpg",
@@ -5390,7 +5456,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:11.782Z",
+    "gorselDeneme": "2026-10-28T20:08:31.706Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Vivo_V29e.jpg/1280px-Vivo_V29e.jpg",
@@ -5527,7 +5593,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T20:05:12.598Z",
+    "gorselDeneme": "2026-10-28T20:08:32.479Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/%E6%B7%B1%E6%B0%B4%E5%9F%97_Sham_Shui_Po_%E6%95%B8%E7%A2%BC%E9%BE%90%E5%85%8B%E8%99%9F_Heart_of_Cyberpunk_GAME_CENTRE_%E9%9C%93%E8%99%B9%E7%87%88%E6%8B%9B%E7%89%8C_Neon_Sign.jpg/1280px-%E6%B7%B1%E6%B0%B4%E5%9F%97_Sham_Shui_Po_%E6%95%B8%E7%A2%BC%E9%BE%90%E5%85%8B%E8%99%9F_Heart_of_Cyberpunk_GAME_CENTRE_%E9%9C%93%E8%99%B9%E7%87%88%E6%8B%9B%E7%89%8C_Neon_Sign.jpg",
