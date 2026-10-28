@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T08:09:48.311Z",
+  "updatedAt": "2026-10-28T08:14:27.396Z",
   "gunluk": 32,
   "pencereGun": 45,
   "esik": {
@@ -29,8 +29,8 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "günlük kota": 2349,
-    "tekrar": 36
+    "günlük kota": 2350,
+    "tekrar": 35
   },
   "ornekTekrarlar": [
     {
@@ -52,10 +52,6 @@
     {
       "title": "Fransa'nın borçlanma maliyeti 24 yılın en yüksek seviyesine ulaştı",
       "twin": "Fransa Tahvil Faizi 24 Yılın Zirvesinde: Hedge Fonların Rolü Tartışılıyor"
-    },
-    {
-      "title": "Apple M6 Çipli 14 İnç MacBook Pro Grafik ve AI Performansını %30 Artırdı",
-      "twin": "Apple M6 çipli 14 inç MacBook Pro tanıtıldı: İşte özellikleri ve fiyatı"
     },
     {
       "title": "Galaxy S24 Ultra sahipleri için One UI 9 sonrasında şarj krizi",
@@ -112,6 +108,10 @@
     {
       "title": "Tesla havalanan uçan araba tanıttı ancak hisseleri yüzde 18 eridi",
       "twin": "Tesla uçan otomobil modelini tanıttı, hisseler yüzde 18 değer kaybetti"
+    },
+    {
+      "title": "Netanyahu’yu Öteye Taşımaya Çalışan Seçim: İsrail'deki 27 Ekim Gündemi",
+      "twin": "Netanyahu, 27 Ekim seçimleri öncesinde İran saldırısı uyarısı yaptı"
     }
   ],
   "days": {
@@ -131,6 +131,7 @@
       "6c29349b8c702010",
       "466f41069a5230cc",
       "fc6276d9326dbb77",
+      "ed4b1538d044b40a",
       "f156ce1d02cc345c",
       "6fc2113793514329",
       "3fe5f51aa274b7e5",
@@ -146,8 +147,7 @@
       "ed7cedde1f1f649b",
       "579ee7f3e7c99873",
       "eed38fa81aefa54b",
-      "f2f7a86f054c8975",
-      "f10fad05f1498ae2"
+      "f2f7a86f054c8975"
     ],
     "2026-10-26": [
       "84f97e2b56f8c7d6",
@@ -642,6 +642,7 @@
     "3fbed561a99bda55",
     "f1424850fc79ae3b",
     "fc6276d9326dbb77",
+    "ed4b1538d044b40a",
     "f156ce1d02cc345c",
     "6fc2113793514329",
     "3fe5f51aa274b7e5",
@@ -671,7 +672,6 @@
     "eed38fa81aefa54b",
     "f2f7a86f054c8975",
     "199eecef3d4748e1",
-    "f10fad05f1498ae2",
     "22b7f128f8063029",
     "5482d9c10f68f7eb",
     "f8bfdde7b818d32a",
