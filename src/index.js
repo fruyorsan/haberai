@@ -4,7 +4,7 @@ import { analyzeArticle } from "./ai.js";
 import { updateMarket } from "./market.js";
 import { loadArticles, saveArticles, existingIds, makeId } from "./store.js";
 import { shareNewArticles } from "./share.js";
-import { makeIndex, findSimilar, dedupeArticles, ayniOlay } from "./dedupe.js";
+import { makeIndex, findSimilar, dedupeArticles, ayniOlay, kaynakAnahtari } from "./dedupe.js";
 import { isBreaking, breakingScore } from "./breaking.js";
 import { purgeCopiedText } from "./telif.js";
 import { stokGorseller, KATEGORI_SORGU, yedekGorsel, atif, kisaSorgu, konuSorgu, afetMi, gorselOnar, markaAdi } from "./stok-gorsel.js";
@@ -73,6 +73,16 @@ async function main() {
       seen.clear();
       for (const a of articles) seen.add(a.id);
     }
+  }
+
+  // Aynı kaynak adresine sahip haberler tek kayıt olarak tutulur. Besleme
+  // bağlantıları farklı olsa da (Google News aktarımı + yayıncının doğrudan
+  // bağlantısı) hedef sayfa aynı olabiliyor; bu durumda haber iki kez
+  // üretilip iki ayrı URL'de yayınlanıyordu.
+  const gorulenKaynak = new Set();
+  for (const a of articles) {
+    const anahtar = kaynakAnahtari(a.sourceUrl);
+    if (anahtar) gorulenKaynak.add(anahtar);
   }
 
   // Kapak fotoğrafı haberi anlatmıyorsa (ör. "ice" tesadüfü yüzünden spor
@@ -438,6 +448,17 @@ async function main() {
         extra = null;
       }
       const realUrl = extra?.resolvedUrl || null;
+
+      // Aynı kaynak sayfası arşivde varsa AI'ya hiç gitmeden atla (token
+      // tasarrufu) — aksi hâlde aynı haber ikinci kez üretiliyordu.
+      const kaynakUrl =
+        realUrl && !/news\.google\.com/i.test(realUrl) ? realUrl : item.link;
+      const kaynak = kaynakAnahtari(kaynakUrl);
+      if (kaynak && gorulenKaynak.has(kaynak)) {
+        console.log("(aynı kaynak arşivde var, atlandı)");
+        if (i < queue.length - 1) await sleep(config.aiDelayMs);
+        continue;
+      }
       if (extra?.text && extra.text.length > 400 && item.content.length < 1500) {
         item.content = `${item.content}\n\n${extra.text}`.slice(0, 7000);
       }
@@ -541,6 +562,7 @@ async function main() {
       }
 
       articles.push(entry);
+      if (kaynak) gorulenKaynak.add(kaynak);
       newArticles.push(entry);
       console.log("✓");
       added++;

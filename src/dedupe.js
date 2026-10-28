@@ -122,10 +122,27 @@ export function findSimilar(title, index, threshold = 0.7) {
 // ==========================================================================
 
 /**
+ * Kaynak bağlantısını karşılaştırılabilir hâle getirir: protokol, "www.",
+ * sorgu dizesi ve çapa atılır, sondaki eğik çizgiler temizlenir.
+ * Aynı makale iki farklı beslemeden geldiğinde (ör. Google News aktarımı ve
+ * yayıncının doğrudan bağlantısı) hedef adres aynı olur; bu anahtar da aynı
+ * çıkar. Başlıklar AI tarafından ayrı ayrı yazıldığı için benzemeyebilir.
+ */
+export function kaynakAnahtari(url = "") {
+  return String(url || "")
+    .trim()
+    .toLowerCase()
+    .replace(/^https?:\/\//, "")
+    .replace(/^www\./, "")
+    .replace(/[?#].*$/, "")
+    .replace(/\/+$/, "");
+}
+
+/**
  * Aynı olayın tekrar eden kayıtlarını arşivden çıkarır.
  * @param {Array} articles
  * @param {number} threshold  başlık benzerliği eşiği (0-1)
- * @returns {{ kept: Array, removed: Array<{title:string, twin:string}> }}
+ * @returns {{ kept: Array, removed: Array<{title:string, twin:string, sebep?:string}> }}
  */
 export function dedupeArticles(articles = [], threshold = 0.75) {
   // Bir grupta hangi kayıt tutulur: son dakika > daha dolu içerik > daha yeni.
@@ -141,7 +158,30 @@ export function dedupeArticles(articles = [], threshold = 0.75) {
   const kept = [];
   const index = [];
   const removed = [];
+
+  // 1) Aynı kaynak adresi iki kez üretilmişse tek kayıt tutulur. Bu kontrol
+  //    başlık benzerliğinden önce gelir: iki besleme aynı haberi farklı
+  //    bağlantıyla verdiğinde (Google News + doğrudan) başlıklar da farklı
+  //    yazılabiliyor, URL ise aynı kalıyor.
+  const gorulenKaynak = new Map();
+  const urlTekil = [];
   for (const a of sirali) {
+    const anahtar = kaynakAnahtari(a.sourceUrl);
+    if (!anahtar) {
+      urlTekil.push(a);
+      continue;
+    }
+    const onceki = gorulenKaynak.get(anahtar);
+    if (onceki) {
+      removed.push({ title: a.title, twin: onceki.title, sebep: "kaynak-url" });
+      continue;
+    }
+    gorulenKaynak.set(anahtar, a);
+    urlTekil.push(a);
+  }
+
+  // 2) Farklı kaynaklardaki aynı olay: başlık benzerliği.
+  for (const a of urlTekil) {
     const twin = findSimilar(a.title, index, threshold);
     if (twin) {
       removed.push({ title: a.title, twin });
