@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T21:43:33.611Z",
+  "updatedAt": "2026-10-28T21:49:45.156Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 4966,
-  "aday": 4966,
-  "uygun": 2915,
-  "secilen": 2820,
+  "toplamHaber": 4967,
+  "aday": 4967,
+  "uygun": 2916,
+  "secilen": 2821,
   "red": {
     "kısa özet": 34,
     "özet gövdeyle aynı": 104,
@@ -86,10 +86,6 @@
       "twin": "Bursa deprem hafızasını masaya yatırdı: 1855 felaketi konuşuldu"
     },
     {
-      "title": "Japonya Meteoroloji Ajansı, 7.0 Büyüklükte Depremi 470 km Derinlikte Kayıt Etti",
-      "twin": "Japonya, 7 Şiddetinde Depremi Bildirdi; Tsunami Riski Yok"
-    },
-    {
       "title": "Fransa'nın borçlanma maliyeti 24 yılın en yüksek seviyesine ulaştı",
       "twin": "Fransa Tahvil Faizi 24 Yılın Zirvesinde: Hedge Fonların Rolü Tartışılıyor"
     },
@@ -112,6 +108,10 @@
     {
       "title": "Elon Musk'tan Cumhuriyetçilere 200 milyon doları aşan seçim desteği",
       "twin": "Elon Musk, ABD seçimleri için Cumhuriyetçilere 200 milyon dolardan fazla aktardı"
+    },
+    {
+      "title": "Samsung Galaxy S27 serisi, ocak ayında 100 dolar zamla gelebilir",
+      "twin": "Samsung Galaxy Fit 4 modeli, 100 dolar altı fiyatla geliyor"
     }
   ],
   "days": {
@@ -581,9 +581,10 @@
     "2026-10-29": [
       "678b6a2ae8f11737",
       "3198c42b11bc6845",
-      "2953e94ad377c457",
       "8bf69f659feb55b6",
+      "2953e94ad377c457",
       "ae3c1beedd89dfd9",
+      "3163f604feb7173b",
       "5061d826353ba18f",
       "ac04d82d79708bf6"
     ],
@@ -3104,6 +3105,7 @@
     "a97491e1ee74c5b3",
     "8cd6eb4c1422c171",
     "9f5b28ffc0ffd7e4",
+    "8bf69f659feb55b6",
     "fe384e0f0d85d160",
     "9b12293dd466be57",
     "e09c3f85b6ca2d97",
@@ -3162,7 +3164,6 @@
     "5482d9c10f68f7eb",
     "b911d19fdbfa497c",
     "c12dcace83fc311c",
-    "8bf69f659feb55b6",
     "511c4225152943a7",
     "153993cf7f7bd3bf",
     "5c0331f3569cf314",
@@ -3261,6 +3262,7 @@
     "5ff1e6958ca97917",
     "cda279011dcbaf31",
     "925221d6fe5a7008",
+    "3163f604feb7173b",
     "be5ee16d0d74ff66",
     "74a77cbb25090fa6",
     "a813b60a7f3c22f1",
