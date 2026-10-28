@@ -468,38 +468,47 @@ async function main() {
       const { cleaned, removed } = purgeCopiedText(ai, item.content);
       if (removed > 0) console.log(`(telif: ${removed} cümle kaynakla birebir örtüştüğü için çıkarıldı) `);
 
-      // GÖRSEL KAYNAĞI: YALNIZCA telif güvenli görseller.
+      // GÖRSEL KAYNAĞI: önce kaynağın kendi fotoğrafı.
       //
-      // Kaynak haber sitelerinin og:image'ları ajans lisanslı olabiliyor
-      // (AA, Getty, Reuters, DHA...). Atıf yazmak bunu yasal hâle getirmez.
-      // Bu yüzden kaynağın fotoğrafı HİÇ kullanılmaz. Kapak ve gövde içi
-      // görseller yalnızca Wikimedia Commons'ın serbest lisanslı arşivinden
-      // (CC0 / kamu malı / CC BY / CC BY-SA) seçilir; uygun kare bulunamazsa
-      // kategorinin doğrulanmış yedek görseli kullanılır.
+      // Kaynak sayfanın og:image'i ve yazı içi fotoğrafları habere ait olduğu
+      // için başlıkla birebir uyumludur; stok kareden çok daha yüksek tıklama
+      // oranı getirir. Bu yüzden kapak önce kaynaktan seçilir; uygun kare
+      // yoksa Wikimedia Commons (CC0 / kamu malı / CC BY / CC BY-SA), o da
+      // yoksa kategorinin doğrulanmış yedek görseli kullanılır.
       const marka = markaAdi(cleaned.title);
       // Afet tespiti YALNIZCA Türkçe başlık/özetten yapılır: İngilizce arama
       // sorgusundaki "test fire" gibi ifadeler savunma haberini yangın sanıp
       // yanlış (orman yangını) fotoğrafı seçtiriyordu.
       const afet = afetMi(cleaned.title, cleaned.summary);
 
-      // 1) Kapak: AI'nın ürettiği İngilizce sorgu + marka + kategori.
-      let stok = await stokGorseller(
-        [
-          marka,
-          konuSorgu(ai.gorselSorgu, cleaned.title),
-          ai.gorselSorgu,
-          kisaSorgu(ai.gorselSorgu),
-          KATEGORI_SORGU[cleaned.category],
-        ],
-        { adet: 1, kullanilan: kullanilanGorsel, afet, marka }
-      );
-      if (!stok.length) stok = [yedekGorsel(cleaned.category, cleaned.slug || cleaned.title)];
-      const kapakGorsel = stok[0];
+      // Kaynak adayları: og:image önce, sonra sayfanın diğer fotoğrafları.
+      const KAPAK_JUNK =
+        /(logo|favicon|default|placeholder|share-?default|sprite|avatar|ikon|icon|blank|1x1|pixel)/i;
+      const kaynakAdaylar = [extra?.image, ...(extra?.images || [])]
+        .map((u) => String(u || "").trim())
+        .filter((u) => /^https?:\/\//i.test(u) && !KAPAK_JUNK.test(u));
+
+      // 1) Kapak: kaynağın kendi fotoğrafı -> Commons stoğu -> kategori yedeği.
+      let kapakGorsel = kaynakAdaylar[0] ? { url: kaynakAdaylar[0] } : null;
+      if (!kapakGorsel) {
+        let stok = await stokGorseller(
+          [
+            marka,
+            konuSorgu(ai.gorselSorgu, cleaned.title),
+            ai.gorselSorgu,
+            kisaSorgu(ai.gorselSorgu),
+            KATEGORI_SORGU[cleaned.category],
+          ],
+          { adet: 1, kullanilan: kullanilanGorsel, afet, marka }
+        );
+        if (!stok.length) stok = [yedekGorsel(cleaned.category, cleaned.slug || cleaned.title)];
+        kapakGorsel = stok[0];
+      }
 
       kullanilanGorsel.add(kapakGorsel.url);
       gorselSayaci.set(gorselKimlik(kapakGorsel.url), (gorselSayaci.get(gorselKimlik(kapakGorsel.url)) || 0) + 1);
 
-      // 2) Gövde içi detay fotoğrafları: yine yalnızca Commons.
+      // 2) Gövde içi detay fotoğrafları: Commons stoğundan.
       let ekler = [];
       const detayListesi = Array.isArray(ai.gorselDetaylar) && ai.gorselDetaylar.length
         ? ai.gorselDetaylar.slice(0, 2)
@@ -536,10 +545,14 @@ async function main() {
         source: item.source,
         sourceUrl,
         image: kapakGorsel.url,
-        gorselKaynak: atif(kapakGorsel),
         publishedAt: item.publishedAt,
         generatedAt: new Date().toISOString(),
       };
+      // Atıf yalnızca Commons stoğu için yazılır; kaynağın kendi fotoğrafında
+      // zaten sourceUrl bağlantısı gösterilir.
+      if (kapakGorsel.lisans || kapakGorsel.sayfa) {
+        entry.gorselKaynak = atif(kapakGorsel);
+      }
       if (ekler.length) {
         entry.gorselEk = ekler
           .filter((g) => g?.url)

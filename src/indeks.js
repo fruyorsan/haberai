@@ -147,13 +147,12 @@ function ayniMetin(a, b) {
 }
 
 /**
- * Telif güvenli görsel: yalnızca Wikimedia Commons veya sitenin kendi yerel
- * görseli. Kaynak haber sitelerinden alınmış og:image'lar çekirdeğe giremez
- * (bkz. görsel politikası / README).
+ * Kullanılabilir görsel: yerel kapak (/...) ya da haberin kaynağındaki gerçek
+ * fotoğraf (https). Kaynak sitelerin og:image / yazı içi fotoğrafları habere
+ * özgü olduğu için çekirdeğe girebilir; yalnızca boş/yer tutucu adresler elenir.
  */
-const GUVENLI_UZAK_GORSEL = /^https:\/\/(upload|thumb)\.wikimedia\.org\//i;
-const guvenliGorsel = (u) =>
-  typeof u === "string" && (/^\/(?!\/)/.test(u) || GUVENLI_UZAK_GORSEL.test(u));
+const kullanilabilirGorsel = (u) =>
+  typeof u === "string" && (/^\/(?!\/)/.test(u) || /^https?:\/\//i.test(u));
 
 /**
  * Kalite puanı — SABİT (zamana bağlı değil), böylece sıralama kaymaz.
@@ -174,9 +173,9 @@ function kalitePuani(a) {
   p += Math.min(metin(a.comment).length, 600) / 30;
   p += Math.min(metin(a.editorNote).length, 200) / 20;
   p += Math.min(etiket, 6) * 1.5;
-  // Görsel: kalite kapısı zaten telif güvenli görsel şartı koyuyor, yani bu
+  // Görsel: kalite kapısı zaten kullanılabilir görsel şartı koyuyor, yani bu
   // puan tek başına eleme yapmaz — sıralamayı ayrıştırır. Kendi/yerel kapak
-  // görseli ve ek görseller (gorselEk) Wikimedia stoğundan daha ilgi çekici
+  // görseli ve ek görseller (gorselEk) stok fotoğraftan daha ilgi çekici
   // olduğu için öne geçer.
   const yerelGorsel = typeof a.image === "string" && /^\/(?!\/)/.test(a.image);
   const ekGorsel = Array.isArray(a.gorselEk) ? a.gorselEk.length : 0;
@@ -227,7 +226,7 @@ function kapisi(a) {
   }
 
   if (typeof a.image !== "string" || !a.image) return "fotoğraf yok";
-  if (!guvenliGorsel(a.image)) return "telifli görsel";
+  if (!kullanilabilirGorsel(a.image)) return "geçersiz görsel";
   if (isJunkArticle(a)) return "spam başlık";
   if (!a.category || a.category === "Diğer") return "kategorisiz";
   return "";

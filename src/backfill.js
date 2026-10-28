@@ -163,16 +163,12 @@ async function main() {
       if (ai.tags?.length) current.tags = ai.tags;
       current.refreshedAt = new Date().toISOString();
 
-      // GÖRSEL: kaynak fotoğrafı telif güvenli stokla değiştir.
-      // Kaynak sitelerin görselleri hiç kullanılmaz; eski `images` adresleri silinir.
-      const guvenliGorsel = /^https:\/\/(upload|thumb)\.wikimedia\.org\//i.test(
-        String(current.image || "")
-      );
-      if (!guvenliGorsel) {
+      // GÖRSEL: hazır görsel korunur. Yalnızca hiç görseli olmayan habere
+      // serbest lisanslı stok fotoğraf eklenir; kaynağın kendi fotoğrafı
+      // (current.image) ve yazı içi fotoğraflar (current.images) silinmez.
+      const hazirGorsel = /^(\/(?!\/)|https?:\/\/)/i.test(String(current.image || ""));
+      if (!hazirGorsel) {
         await gorselYaz(current, ai.gorselSorgu || current.gorselSorgu || "", kullanilanGorseller(articles));
-      } else {
-        delete current.images;
-        delete current.gorselKaynakSite;
       }
 
       console.log("✓");
