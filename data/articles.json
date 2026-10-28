@@ -1,5 +1,67 @@
 [
   {
+    "id": "e04f9e867d173370",
+    "title": "Tek bir yüz fotoğrafıyla kanser hastalarının ölüm riskini ölçen yapay zeka",
+    "slug": "tek-bir-yuz-fotografiyla-kanser-hastalarinin-olum-riskini-olcen-yapay-zeka",
+    "summary": "Mass General Brigham, tek bir yüz fotoğrafından biyolojik yaşı hesaplayan yapay zekâ modeli geliştirdi. 42 milyon fotoğrafla eğitilen sistem, kanser hastalarının yaşam beklentisini analiz ediyor. Model, gerçek yaşından 5 yıl daha yaşlı görünenlerde ölüm riskinin yüzde 21 arttığını tespit etti.",
+    "keyPoints": [
+      "42 milyon fotoğrafla eğitilen yapay zekâ, biyolojik yaşı 5,1 yıl ortalama hata payıyla tahmin ediyor.",
+      "Radyoterapi gören 34 binden fazla kanser hastasının görüntüleriyle ölüm riski sınıflandırması yapılır.",
+      "Gerçek yaşından 5 yıl yaşlı görünen hastalarda ölüm riski yüzde 21 oranında artıyor."
+    ],
+    "body": [
+      "Mass General Brigham Kanser Enstitüsü araştırmacıları, insan yüzündeki yaşlanma belirtilerini dijital biyobelirteçlere dönüştüren iki farklı yapay zekâ modeli geliştirdi. Çalışma, yalnızca tek bir fotoğraf kullanarak hastaların biyolojik yaşını hesaplamayı ve kanser tedavisi sürecindeki hayatta kalma olasılıklarını öngörmeyi hedefliyor. Sistemin temelini oluşturan FAHR-Face modeli, masked autoencoder tekniğiyle 42 milyondan fazla yüz fotoğrafı üzerinde eğitilerek yüz yapısı ve sağlık göstergeleri arasındaki ilişkiyi çözmeyi başarıyla tamamladı.",
+      "FAHR-FaceAge alt modeli, takvim yaşından farklı olarak fizyolojik yaşlanmayı yansıtan biyolojik yaşı tespit etmek üzere tasarlandı. Testlerde modelin takvim yaşını tahmin ederken ortalama hata payı 5,1 yıl olarak ölçüldü; bu değer, karşılaştırılan diğer modellerdeki 6,92 yıllık hatanın altındaydı. Yapılan analizlerde makyaj, gözlük, yüz germe ameliyatları ve ışık koşullarının tahmin doğruluğunu önemli ölçüde etkilemediği, yalnızca burun estetiği geçirenlerde küçük sapmalar görüldüğü belirlendi. Modelin odaklandığı bölgeler arasında nazolabial kıvrımlar, göz çukurlarının üzerindeki alın kısmı ve şakaklar yer alıyor.",
+      "Diğer model olan FAHR-FaceSurvival ise radyoterapi tedavisi gören 34 binden fazla kanser hastasının fotoğraflarıyla eğitilerek hayatta kalma analizleri yapıyor. Bu model, yaklaşık 4 ve 5 bin kişiden oluşan iki ayrı test grubunda hastaları ölüm riskine göre sınıflandırmada oldukça başarılı sonuçlar verdi.",
+      "Radyasyon onkoloğu Raymond Mak, yaşlanan nüfus nedeniyle tedavi öncesi fiziksel kapasite ve kırılganlık ölçümlerine olan ihtiyacın arttığını vurguladı. Araştırmanın kıdemli yazarı Hugo Aerts, basit bir yüz fotoğrafından hayatta kalma sonuçlarını tahmin etmenin klinik uygulamalar için büyük bir atılım olduğunu ifade etti. Ekip, bu yaklaşımın farklı sağlık göstergeleri için sıfırdan sistem eğitmek yerine mevcut altyapıyı kullanmanın kolaylığını sağladığını belirtti. Ayrıca kamuya açık bir çalışma başlatılarak katılımcıların 10 dakikada kendi FaceAge tahminlerini alması sağlanıyor.",
+      "Günümüzde doktorlar, yoğun tedavilere giren hastaların fiziksel dayanıklılığını klinik deneyimlerine ve ek testlere dayanarak değerlendiriyor. Geliştirilen bu yapay zekâ araçları, özellikle ileri yaş grubundaki hastalarda risk değerlendirmesini hızlandırabilecek ve görsel bir baz sağlayabilecek potansiyele sahip. Ancak araştırmacılar, bu modellerin tek başına kesin bir tıbbi teşhis koyamayacağını, klinik uygulamalarda doktorların kararlarını destekleyen araçlar olarak daha fazla doğrulama sürecinden geçmesi gerektiğinin altını çiziyor."
+    ],
+    "comment": "Yüz fotoğrafı üzerinden öngörüde bulunmak kulağa fütüristik gelse de, 5,1 yıllık hata payı modelin istatistiksel olarak güvenilir bir düzeyde olduğunu gösteriyor. Radyasyon onkolojisi gibi kırılganlığı yüksek alanlarda, 34 bin hastalık veri setiyle desteklenen bu analiz, tedavi öncesindeki fiziksel değerlendirme sürecini köklü biçimde değiştirebilir. Etkilenen kesim, yoğun kemoterapi ve cerrahi planlaması yapan onkologlar ile bu tedavilere giren ileri yaş hastalar olacaktır. Mevcut manuel değerlendirmelerle kıyaslandığında, yapay zekânın sağladığı standartlaşmış ölçek, özellikle yoğun bakım koşullarında hastane kaynaklarının daha verimli kullanılmasına olanak tanıyabilir. Bu teknolojinin klinik rutine girebilmesi için, farklı etnik kökenlere ve yüz yapılarına sahip hastalar üzerinde geniş çaplı doğrulama testlerinin tamamlanması şart.",
+    "editorNote": "Tek bir fotoğraf, kanser tedavisine giren hastanın 90 günlük hayatta kalma şansını öngörüyor. 42 milyon fotoğrafla eğitilen model, biyolojik yaşın gerçek yaştan sapmasını ölçüyor.",
+    "tags": [
+      "yapay zeka",
+      "onkoloji",
+      "Mass General Brigham",
+      "biyolojik yaş",
+      "kanser tedavisi"
+    ],
+    "category": "Sağlık",
+    "gorselSorgu": "AI face analysis medical",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/yapay-zeka-yuz-fotografindan-kanser-olum-riskini-hesapliyor--212216",
+    "image": "/kapak/e04f9e867d173370.webp",
+    "gorselKaynak": {
+      "yazar": "Danilo Borges/ copa2014.gov.br Licença Creative Commons Atribuição…",
+      "lisans": "CC BY 3.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/3.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Germany_and_Argentina_face_off_in_the_final_of_the_World_Cup_2014_-2014-07-13_(5).jpg"
+    },
+    "publishedAt": "2026-10-28T16:44:00.000Z",
+    "generatedAt": "2026-10-28T16:48:18.263Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/X-ray_treatment_room.jpg/1280px-X-ray_treatment_room.jpg",
+        "yazar": "Unknown photographer",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:X-ray_treatment_room.jpg",
+        "altyazi": "Radyoterapi tedavisi gören hastaların değerlendirme süreci"
+      }
+    ],
+    "breaking": true,
+    "images": [
+      "https://www.donanimhaber.com/images/images/haber/212216/src/yapay-zeka-yuz-fotografindan-kanser-olum-riskini-hesapliyor212216_0.jpg",
+      "https://www.donanimhaber.com/images/images/haber/212216/src/yapay-zeka-yuz-fotografindan-kanser-olum-riskini-hesapliyor212216_1.jpg"
+    ],
+    "imagesKaynak": "https://www.donanimhaber.com/yapay-zeka-yuz-fotografindan-kanser-olum-riskini-hesapliyor--212216",
+    "gorselDeneme": "2026-10-28T16:48:38.155Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Germany_and_Argentina_face_off_in_the_final_of_the_World_Cup_2014_-2014-07-13_%285%29.jpg/1280px-Germany_and_Argentina_face_off_in_the_final_of_the_World_Cup_2014_-2014-07-13_%285%29.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "aa9d238ad2db8404",
     "title": "Coopop Bobber: 120 km Menzilli Elektrikli Motosiklet ile Şehir Turu",
     "slug": "coopop-bobber-120-km-menzilli-evrensel-motosiklet",
@@ -109,7 +171,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:42:59.592Z",
+    "gorselDeneme": "2026-10-28T16:48:39.206Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Kazakhstan-Turkey_Friendship_Park_opened_in_Ankara_01.jpg/1280px-Kazakhstan-Turkey_Friendship_Park_opened_in_Ankara_01.jpg",
@@ -174,7 +236,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:42:59.588Z",
+    "gorselDeneme": "2026-10-28T16:48:39.152Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Person_holding_world_globe.jpg/1280px-Person_holding_world_globe.jpg",
@@ -442,7 +504,7 @@
     "publishedAt": "2026-10-28T15:33:00.000Z",
     "generatedAt": "2026-10-28T15:48:26.580Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:42:59.457Z",
+    "gorselDeneme": "2026-10-28T16:48:38.723Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg/1280px-Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
@@ -488,7 +550,7 @@
     "publishedAt": "2026-10-28T15:32:54.000Z",
     "generatedAt": "2026-10-28T15:37:06.623Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:00.163Z",
+    "gorselDeneme": "2026-10-28T16:48:42.386Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Deputy_Secretary_Blinken_Poses_for_a_Photo_With_Bulgarian_Prime_Minister_Borissov%2C_Foreign_Minister_Mitov%2C_Defense_Minister_Nenchev%2C_and_U.S._Ambassador_Rubin_in_Sofia_%2826881334816%29.jpg/1280px-thumbnail.jpg",
@@ -650,7 +712,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:42:59.450Z",
+    "gorselDeneme": "2026-10-28T16:48:38.803Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B%2C_Tesla_Model_3_%D0%BD%D0%B0_%D0%9A%D0%B0%D1%80%D0%B8%D0%BC%D0%BE%D0%B2%D0%B0.jpg/1280px-%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B%2C_Tesla_Model_3_%D0%BD%D0%B0_%D0%9A%D0%B0%D1%80%D0%B8%D0%BC%D0%BE%D0%B2%D0%B0.jpg",
@@ -706,7 +768,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:42:59.573Z",
+    "gorselDeneme": "2026-10-28T16:48:38.845Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Prime_Minister_Andy_Burnham_arrives_at_10_Downing_Street_%2855406667976%29.jpg/1280px-Prime_Minister_Andy_Burnham_arrives_at_10_Downing_Street_%2855406667976%29.jpg",
@@ -771,7 +833,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:00.487Z",
+    "gorselDeneme": "2026-10-28T16:48:40.715Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Numan_Kurtulmu%C5%9F_Speaker_of_the_Grand_National_Assembly_2.jpg/1280px-Numan_Kurtulmu%C5%9F_Speaker_of_the_Grand_National_Assembly_2.jpg",
@@ -897,7 +959,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:00.493Z",
+    "gorselDeneme": "2026-10-28T16:48:40.678Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/2010_UN_Climate_Talks.jpg/1280px-2010_UN_Climate_Talks.jpg",
@@ -962,7 +1024,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:42:59.757Z",
+    "gorselDeneme": "2026-10-28T16:48:39.734Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg/1280px-Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg",
@@ -1007,7 +1069,7 @@
     "publishedAt": "2026-10-28T14:17:00.000Z",
     "generatedAt": "2026-10-28T14:26:26.406Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:42:59.712Z",
+    "gorselDeneme": "2026-10-28T16:48:39.343Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/7/78/Market_centre_in_Tokyo_stock_exchange.jpg",
@@ -1072,7 +1134,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:42:59.870Z",
+    "gorselDeneme": "2026-10-28T16:48:39.620Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Sugar_beet_field_harvested_-_geograph.org.uk_-_8204879.jpg/1280px-Sugar_beet_field_harvested_-_geograph.org.uk_-_8204879.jpg",
@@ -1354,7 +1416,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:00.200Z",
+    "gorselDeneme": "2026-10-28T16:48:40.026Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Car_giveaway_at_UFV_%288559021820%29.jpg/1280px-Car_giveaway_at_UFV_%288559021820%29.jpg",
@@ -1412,7 +1474,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:00.141Z",
+    "gorselDeneme": "2026-10-28T16:48:40.079Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/After_the_train_accident_from_Feb_14%2C_2022_10.jpg/1280px-After_the_train_accident_from_Feb_14%2C_2022_10.jpg",
@@ -1676,7 +1738,7 @@
         "altyazi": "Kritik altyapıların korunduğu sunucu ve veri merkezleri"
       }
     ],
-    "gorselDeneme": "2026-10-28T16:43:01.283Z",
+    "gorselDeneme": "2026-10-28T16:48:40.644Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Chief_of_U.S._Naval_Operations_Adm._Jonathan_Greenert%2C_center%2C_speaks_during_an_all-hands_call_at_U.S._Fleet_Cyber_Command-U_131217-N-ZI511-775.jpg/1280px-Chief_of_U.S._Naval_Operations_Adm._Jonathan_Greenert%2C_center%2C_speaks_during_an_all-hands_call_at_U.S._Fleet_Cyber_Command-U_131217-N-ZI511-775.jpg",
@@ -1876,7 +1938,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:00.351Z",
+    "gorselDeneme": "2026-10-28T16:48:40.400Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/World_Bank_building.JPG/1280px-World_Bank_building.JPG",
@@ -1993,7 +2055,7 @@
     "publishedAt": "2026-10-28T12:30:32.000Z",
     "generatedAt": "2026-10-28T12:33:18.490Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:00.463Z",
+    "gorselDeneme": "2026-10-28T16:48:40.637Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/7/78/Market_centre_in_Tokyo_stock_exchange.jpg",
@@ -2049,7 +2111,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:00.539Z",
+    "gorselDeneme": "2026-10-28T16:48:40.883Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/STS-134_International_Space_Station_after_undocking_10.jpg/1280px-STS-134_International_Space_Station_after_undocking_10.jpg",
@@ -2177,7 +2239,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:00.607Z",
+    "gorselDeneme": "2026-10-28T16:48:40.933Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Happy_Family_Theresienwiese_Detlef_D%21_Soost_Kate_Hall.JPG/1280px-Happy_Family_Theresienwiese_Detlef_D%21_Soost_Kate_Hall.JPG",
@@ -2226,7 +2288,7 @@
     "publishedAt": "2026-10-28T12:00:48.000Z",
     "generatedAt": "2026-10-28T12:02:21.982Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:00.798Z",
+    "gorselDeneme": "2026-10-28T16:48:41.034Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/PlayStation_2_connecting_a_controller_%28cropped%29.jpg/1280px-PlayStation_2_connecting_a_controller_%28cropped%29.jpg",
@@ -2291,7 +2353,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:00.733Z",
+    "gorselDeneme": "2026-10-28T16:48:40.954Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Google_Head_Office_Kondapur_Hyderabad_Telangana.jpg/1280px-Google_Head_Office_Kondapur_Hyderabad_Telangana.jpg",
@@ -2428,7 +2490,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:00.756Z",
+    "gorselDeneme": "2026-10-28T16:48:41.237Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/DK-84_-_K%C3%B8benhavn_-_Copenhagen_-_Denmark_-_Shipping_Containers_-_Intermodal_Containers_%284890885214%29.jpg/1280px-DK-84_-_K%C3%B8benhavn_-_Copenhagen_-_Denmark_-_Shipping_Containers_-_Intermodal_Containers_%284890885214%29.jpg",
@@ -2554,7 +2616,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:01.097Z",
+    "gorselDeneme": "2026-10-28T16:48:41.455Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Aselsan_A100_Night_Vision_Monocular.jpg/1280px-Aselsan_A100_Night_Vision_Monocular.jpg",
@@ -2872,7 +2934,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:01.203Z",
+    "gorselDeneme": "2026-10-28T16:48:41.354Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Le_emissioni_luminose_notturne_di_un_Data_Center_visto_da_lontano_%28800_metri%29.jpg/1280px-Le_emissioni_luminose_notturne_di_un_Data_Center_visto_da_lontano_%28800_metri%29.jpg",
@@ -3008,7 +3070,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:00.767Z",
+    "gorselDeneme": "2026-10-28T16:48:41.051Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/2018_Cadillac_CT6_Premium_Luxury_AWD_Super_Cruise%2C_front_right.jpg/1280px-2018_Cadillac_CT6_Premium_Luxury_AWD_Super_Cruise%2C_front_right.jpg",
@@ -3199,7 +3261,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:01.030Z",
+    "gorselDeneme": "2026-10-28T16:48:41.341Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Defense.gov_News_Photo_100609-F-6655M-012_-_Secretary_of_Defense_Robert_M._Gates_talks_with_Turkish_Defense_Minister_Mehmet_Vecdi_Gonul_at_the_North_Atlantic_Treaty_Organization_Defense.jpg/1280px-thumbnail.jpg",
@@ -3329,7 +3391,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:01.172Z",
+    "gorselDeneme": "2026-10-28T16:48:41.669Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Luiz_Inacio_Lula_da_Silva_and_Juan_Manuel_Santos.jpg/1280px-Luiz_Inacio_Lula_da_Silva_and_Juan_Manuel_Santos.jpg",
@@ -3386,7 +3448,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:01.351Z",
+    "gorselDeneme": "2026-10-28T16:48:41.614Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Vivo_V29e.jpg/1280px-Vivo_V29e.jpg",
@@ -3523,7 +3585,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:02.142Z",
+    "gorselDeneme": "2026-10-28T16:48:41.840Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/%E6%B7%B1%E6%B0%B4%E5%9F%97_Sham_Shui_Po_%E6%95%B8%E7%A2%BC%E9%BE%90%E5%85%8B%E8%99%9F_Heart_of_Cyberpunk_GAME_CENTRE_%E9%9C%93%E8%99%B9%E7%87%88%E6%8B%9B%E7%89%8C_Neon_Sign.jpg/1280px-%E6%B7%B1%E6%B0%B4%E5%9F%97_Sham_Shui_Po_%E6%95%B8%E7%A2%BC%E9%BE%90%E5%85%8B%E8%99%9F_Heart_of_Cyberpunk_GAME_CENTRE_%E9%9C%93%E8%99%B9%E7%87%88%E6%8B%9B%E7%89%8C_Neon_Sign.jpg",
@@ -3654,7 +3716,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:01.389Z",
+    "gorselDeneme": "2026-10-28T16:48:41.776Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Czech_Dance_Masters_2016_P5_indoor_led_screen_%28cropped%29.jpg",
@@ -3859,7 +3921,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:01.431Z",
+    "gorselDeneme": "2026-10-28T16:48:41.942Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Kazakhstan-Turkey_Friendship_Park_opened_in_Ankara_01.jpg/1280px-Kazakhstan-Turkey_Friendship_Park_opened_in_Ankara_01.jpg",
@@ -3906,7 +3968,7 @@
     "publishedAt": "2026-10-28T08:49:23.000Z",
     "generatedAt": "2026-10-28T08:56:33.274Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:01.510Z",
+    "gorselDeneme": "2026-10-28T16:48:41.908Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Football_match_at_Wincham_Park_Stadium_%28geograph_4383139%29.jpg/1280px-Football_match_at_Wincham_Park_Stadium_%28geograph_4383139%29.jpg",
@@ -4027,7 +4089,7 @@
     "publishedAt": "2026-10-28T08:40:12.000Z",
     "generatedAt": "2026-10-28T08:47:34.564Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:01.670Z",
+    "gorselDeneme": "2026-10-28T16:48:42.204Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/ChatGPT_Spanish_homework.jpg/1280px-ChatGPT_Spanish_homework.jpg",
@@ -4237,7 +4299,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:01.662Z",
+    "gorselDeneme": "2026-10-28T16:48:42.139Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Space_Launch_System_configurations_%282012%29.jpg/1280px-Space_Launch_System_configurations_%282012%29.jpg",
@@ -4553,7 +4615,7 @@
     "publishedAt": "2026-10-28T07:25:15.000Z",
     "generatedAt": "2026-10-28T07:46:01.259Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:01.935Z",
+    "gorselDeneme": "2026-10-28T16:48:42.259Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Moscow%2C_Xiaomi_SU7_max%2C_Aug_2025_07.jpg/1280px-Moscow%2C_Xiaomi_SU7_max%2C_Aug_2025_07.jpg",
@@ -4635,7 +4697,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:01.963Z",
+    "gorselDeneme": "2026-10-28T16:48:42.346Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Aston_Martin_DBX707_1X7A0360.jpg/1280px-Aston_Martin_DBX707_1X7A0360.jpg",
@@ -4834,7 +4896,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:01.854Z",
+    "gorselDeneme": "2026-10-28T16:48:42.352Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Afghan_police%2C_US_soldiers_prepare_for_raid_DVIDS557689.jpg/1280px-Afghan_police%2C_US_soldiers_prepare_for_raid_DVIDS557689.jpg",
@@ -4899,7 +4961,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:01.926Z",
+    "gorselDeneme": "2026-10-28T16:48:42.488Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Lakers_vs_Trail_Blazers.jpg/1280px-Lakers_vs_Trail_Blazers.jpg",
@@ -5166,7 +5228,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:02.244Z",
+    "gorselDeneme": "2026-10-28T16:48:42.674Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Vivo_V29e.jpg/1280px-Vivo_V29e.jpg",
@@ -5278,7 +5340,7 @@
     "publishedAt": "2026-10-28T05:52:30.000Z",
     "generatedAt": "2026-10-28T05:59:12.459Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:02.247Z",
+    "gorselDeneme": "2026-10-28T16:48:42.680Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/AMD_Athlon_XP_Palomino.Jpg/1280px-AMD_Athlon_XP_Palomino.Jpg",
@@ -5417,7 +5479,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:02.261Z",
+    "gorselDeneme": "2026-10-28T16:48:42.661Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Crime_Scene_Investigation_Unit%2C_Royal_Gibraltar_Police.jpg/1280px-Crime_Scene_Investigation_Unit%2C_Royal_Gibraltar_Police.jpg",
@@ -5656,7 +5718,7 @@
     "publishedAt": "2026-10-28T05:11:00.000Z",
     "generatedAt": "2026-10-28T05:16:54.415Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T16:43:02.633Z",
+    "gorselDeneme": "2026-10-28T16:48:43.139Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Burn_of_Skaw_entering_a_stormy_sea_-_geograph.org.uk_-_3848495.jpg",
