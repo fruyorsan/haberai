@@ -1,5 +1,197 @@
 [
   {
+    "id": "9a48bb7360b0cf31",
+    "title": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı",
+    "slug": "apple-ios-27-2-ile-selfie-uzerinden-yas-dogrulama-donemini-baslatti",
+    "summary": "Apple, iOS 27.2 güncellemesiyle kullanıcıların yaşlarını selfie çekerek kanıtlamalarına olanak tanıyan yeni bir güvenlik sistemini devreye aldı. Bu yöntem, belirli içeriklere erişim veya hesap işlemleri sırasında devlet kimliği yerine kullanılabilecek alternatif bir seçenek olarak sunuluyor.",
+    "keyPoints": [
+      "iOS 27.2 ve iPadOS 27.2 güncellemeleriyle selfie ile yaş doğrulama özelliği geldi.",
+      "Kullanıcılar başlarını farklı yönlere çevirerek Apple'ın yapay zeka tabanlı analizine katılıyor.",
+      "Doğrulama işlemi cihaz üzerinde veya Private Cloud Compute sistemi aracılığıyla gerçekleştiriliyor."
+    ],
+    "body": [
+      "Teknoloji dünyasının önde gelen isimlerinden Apple, güvenlik standartlarını artırmak amacıyla iOS 27.2 sürümünde yeni bir yaş doğrulama yöntemi yayınladı. Kullanıcıların dijital kimliklerini doğrulamak için artık karmaşık belgeler yerine selfie çekerek yaşlarını kanıtlamaları mümkün hale geldi. Bu yeni seçenek, özellikle 18 yaş ve üzeri derecelendirilen uygulamaların indirilmesi veya satın alınması gibi süreçlerde kullanıcı karşısına çıkacak.",
+      "Selfie doğrulama süreci, kullanıcıların yüzlerini kamera çerçevesine yerleştirmesi ve yönlendirmeleri takip etmesiyle başlıyor. Bu yöntem, cihazın iOS 27.2, iPadOS 27.2 veya daha güncel bir yazılım sürümüyle çalışmasını gerektiriyor. Analiz sonuçları cihaz üzerinde birleştirilerek kullanıcının yetişkin olup olmadığına karar veriliyor.",
+      "Apple, verilerin korunması konusunda kullanıcılarına güvence vererek selfie görüntülerinin süreç sonunda tamamen silindiğini belirtiyor. Görüntüler hem cihaz üzerinde yerel olarak hem de Private Cloud Compute sistemi üzerinden işleniyor. Doğrulama işlemi bir kez başarıyla tamamlandığında, kullanıcılar aynı süreci tekrar etmeden kısıtlı hizmetlere erişim sağlayabiliyor. Şirket, selfie görüntüsüne kendilerinin de erişiminin bulunmadığını vurguluyor.",
+      "Yeni yöntem, kredi kartı kullanımı veya devlet tarafından sağlanan resmi kimlik belgeleri gibi mevcut yaş doğrulama seçeneklerine bir alternatif olarak tasarlandı. Bu sayede kullanıcılar kendilerine en uygun yöntemi seçerek hesaplarını yönetebiliyor. Söz konusu güncelleme, yaş doğrulama özelliğinin yanı sıra Siri için geliştirilen yeni yapay zeka dil desteği ve çeşitli sistem iyileştirmelerini de bünyesinde barındırıyor.",
+      "Desteklenen ülkelerde kullanıma sunulan bu özellik, yeni bir Apple Hesabı oluştururken veya cihaz yazılımı güncellenirken kullanıcıların karşısına çıkabilecek. Güvenlik ayarlarında yapılan değişiklikler sonrasında da sistem, kullanıcının yaşını doğrulamak için bu yöntemi tetikleyebiliyor. Apple, bu adımlarla kullanıcıların dijital deneyimini kişiselleştirirken güvenlikten ödün vermemeyi hedefliyor.",
+      "Bu sistem, Apple'ın kullanıcı verilerini izole etme ve yerel işlem gücünü artırma stratejisinin bir parçası olarak görülüyor. Özel bulut altyapısı sayesinde yaş tahmini yapan modeller, bulut üzerindeki işlem gücünden yararlanırken gizlilik sınırlarını ihlal etmiyor. Kullanıcıların günlük teknoloji alışkanlıklarını daha güvenli hale getiren bu uygulama, dijital platformlardaki yaş kısıtlamalarını yönetmeyi daha hızlı ve pratik bir noktaya çekiyor."
+    ],
+    "comment": "Apple, bu hamlesiyle donanımsal ve yazılımsal entegrasyon gücünü kullanarak kimlik doğrulama süreçlerinde yeni bir standart belirliyor. Özellikle 18 yaş sınırı olan içeriklere erişim noktasında, donanım üzerindeki yerel analiz kabiliyeti sayesinde süreç hız kazanıyor. Geleneksel yöntemlerle kıyaslandığında, selfie üzerinden doğrulama yapmak kullanıcılar için daha hızlı bir deneyim sunarken, verilerin bulut yerine büyük ölçüde cihazda kalması gizlilik risklerini azaltıyor. Bu sistem, hesap kısıtlamalarını daha esnek bir yapıya kavuşturabilir.",
+    "editorNote": "Apple, yaş doğrulama için yüzünüzü kullanıyor. Artık kimlik yüklemek yerine sadece selfie çekerek 18 yaş sınırı olan uygulamalara anında erişim sağlayabilirsiniz.",
+    "tags": [
+      "Apple",
+      "iOS",
+      "Güvenlik",
+      "Yapay Zeka",
+      "Gizlilik"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "Apple iPhone face scan",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/apple-selfie-ile-yas-dogrulama-ozelligini-kullanima-sundu--212188",
+    "image": "/kapak/9a48bb7360b0cf31.webp",
+    "gorselKaynak": {
+      "yazar": "I would appreciate being notified if you use my work outside Wikime…",
+      "lisans": "CC BY-SA 3.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Apple_iPhone_2G_8GB_(11).jpg"
+    },
+    "publishedAt": "2026-10-28T10:15:00.000Z",
+    "generatedAt": "2026-10-28T10:18:55.085Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Looking_through_a_smartphone_camera_at_the_reenactment_of_Washington%27s_Crossing_-_Dec_2024.jpg/1280px-Looking_through_a_smartphone_camera_at_the_reenactment_of_Washington%27s_Crossing_-_Dec_2024.jpg",
+        "yazar": "LR.127",
+        "lisans": "CC BY 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Looking_through_a_smartphone_camera_at_the_reenactment_of_Washington%27s_Crossing_-_Dec_2024.jpg",
+        "altyazi": "Akıllı telefonun gelişmiş kamera ve sensör yapısı"
+      }
+    ],
+    "breaking": true,
+    "images": [
+      "https://www.donanimhaber.com/images/images/haber/212188/src/apple-selfie-ile-yas-dogrulama-ozelligini-kullanima-sundu212188_0.jpg"
+    ],
+    "imagesKaynak": "https://www.donanimhaber.com/apple-selfie-ile-yas-dogrulama-ozelligini-kullanima-sundu--212188",
+    "gorselDeneme": "2026-10-28T10:19:28.150Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Apple_iPhone_2G_8GB_%2811%29.jpg/1280px-Apple_iPhone_2G_8GB_%2811%29.jpg",
+      "foto": true
+    }
+  },
+  {
+    "id": "4abc6434cefea0f5",
+    "title": "Türk Devletleri Teşkilatı 13. Zirvesi öncesi Ankara'da kritik diplomasi",
+    "slug": "turk-devletleri-teskilati-13-zirvesi-oncesi-ankarada-kritik-diplomasi",
+    "summary": "Dışişleri Bakanı Hakan Fidan, 29-30 Ekim'de yapılacak 13. Türk Devletleri Teşkilatı Zirvesi kapsamında yarın Ankara'da düzenlenecek Dışişleri Bakanları Konseyi Toplantısı'na ev sahipliği yapacak. Toplantıda teşkilatın kurumsallaşma süreçleri, mali belgeler ve bölgesel iş birliği alanları kapsamlı bir şekilde ele alınacak.",
+    "keyPoints": [
+      "13. TDT Zirvesi kapsamında yarın Ankara'da Dışişleri Bakanları Konseyi Toplantısı düzenlenecek.",
+      "Bakan Fidan'ın mevkidaşlarıyla enerji, ticaret, savunma ve Orta Koridor üzerine ikili görüşmeler yapması planlanıyor.",
+      "Toplantıda teşkilatın idari ve mali işleyişine dair belgelerin onaylanması bekleniyor."
+    ],
+    "body": [
+      "Dışişleri Bakanı Hakan Fidan, Ankara'da gerçekleşecek 13. Türk Devletleri Teşkilatı Zirvesi'ne hazırlık amacıyla düzenlenen Dışişleri Bakanları Konseyi Toplantısı'na liderlik edecek. 29-30 Ekim tarihlerinde yapılacak zirvenin hemen öncesinde gerçekleşecek bu buluşma, teşkilatın bu yıl içerisinde gerçekleştirdiği beşinci bakanlar düzeyindeki toplantı olma özelliğini taşıyor. Bakanlık kaynaklarına göre, Ankara'nın ev sahipliğindeki bu oturum, teşkilatın kurumsal kapasitesini artırma ve sekretarya imkanlarını geliştirme hedeflerine odaklanacak.",
+      "Toplantı gündeminde, Türk dünyası arasındaki siyasi diyalogun yanı sıra ortak hareket etme kabiliyetinin nasıl güçlendirileceği konusu yer alıyor. Hakan Fidan'ın oturumda, teşkilatın ortak tarih ve kültür bağlarını somut iş birliklerine dönüştürme vurgusu yapması bekleniyor. Ayrıca, ekonomik ve stratejik iş birliği başlıkları altında ticaret, yatırımlar, dijital dönüşüm ve savunma sanayisi gibi alanlarda atılacak adımlar üzerinde durulacak. Özellikle Asya ve Avrupa arasındaki ticareti kolaylaştıran Hazar Geçişli Orta Koridor'un tahkim edilmesi, bölgesel dayanıklılık açısından toplantının en temel maddelerinden biri olarak öne çıkıyor.",
+      "Bakan Fidan'ın, Afganistan'daki güncel durumu ve bölge üzerindeki güvenlik etkilerini mevkidaşlarıyla istişare etmesi öngörülüyor. Türk devletleri arasındaki koordinasyonun artırılmasının önemine değinecek olan Fidan, üye ve gözlemci ülkelerin bu konudaki ortak strateji belirleme süreçlerini teşvik edecek. Toplantı sonunda, teşkilatın idari ve mali süreçlerini düzenleyen belirli dokümanların onaylanmasıyla, kurumun daha etkin bir çalışma modeline geçmesi hedefleniyor.",
+      "Türk Devletleri Teşkilatı'nın temelleri, 3 Ekim 2009 tarihinde imzalanan Nahçıvan Anlaşması ile atılmıştı. Türkiye, Azerbaycan, Kazakistan ve Kırgızistan'ın kurucu üyeliğiyle başlayan süreç, 2021 yılındaki İstanbul Zirvesi'nde isim değişikliğiyle bugünkü halini aldı. Şu an sekretaryası İstanbul'da bulunan teşkilatın beş üyesi ve dört gözlemci ülkesi bulunuyor. Macaristan, Türkmenistan, KKTC ve Ekonomik İşbirliği Teşkilatı, gözlemci statüsüyle bu yapının içinde yer alarak iş birliği ağını genişletiyor.",
+      "Cumhurbaşkanı Recep Tayyip Erdoğan'ın ev sahipliğinde gerçekleşecek zirve, Türk Dünyası Yüzyılı vizyonunu merkeze alıyor. İsmail Bey Gaspıralı'nın 'Dilde, Fikirde, İşte Birlik' şiarından ilham alan zirve teması, teşkilatın önümüzdeki dönemdeki çalışma prensiplerini de şekillendirecek. Ankara'da düzenlenecek bu etkinlik, üye devletler arasındaki karşılıklı güven ortamını pekiştirmeyi ve teknik iş birliği derinliğini artırmayı amaçlıyor. Zirve süresince imzalanacak belgeler, teşkilatın gelecek yıllardaki stratejik yol haritasını somutlaştıran unsurlar olarak kaydedilecek."
+    ],
+    "comment": "Ankara'daki toplantı, Türk devletlerinin ekonomik entegrasyonu için sadece bir temenni değil, somut altyapı projeleri üzerinden bir zorunluluk haline geldi. Hazar Geçişli Orta Koridor'un güçlendirilmesi, Asya-Avrupa ticaretinde alternatif bir rota arayan üye ülkeler için kritik bir stratejik avantaj oluşturuyor. 2009'da kurulan yapının bugün 5 üye ve 4 gözlemciyle ulaştığı ölçek, bölgesel bir güç merkezi olma potansiyelini teyit ediyor. İdari ve mali belgelerin onaylanması, teşkilatın söylemden eyleme geçiş sürecinde kurumsal bir disiplin kazandığını gösteriyor.",
+    "editorNote": "Türk devletleri arasındaki siyasi ve ekonomik iş birliği, Ankara'daki zirveyle yeni bir kurumsallaşma seviyesine taşınıyor. Orta Koridor üzerinden Asya-Avrupa bağlantısının…",
+    "tags": [
+      "Hakan Fidan",
+      "TDT",
+      "Ankara",
+      "Orta Koridor",
+      "Diplomasi"
+    ],
+    "category": "Dünya",
+    "gorselSorgu": "Turkish States Organization meeting",
+    "source": "AA Güncel",
+    "sourceUrl": "https://www.aa.com.tr/tr/gundem/turk-devletleri-teskilati-disisleri-bakanlari-konseyi-toplantisi-yarin-ankarada-yapilacak/4103611",
+    "image": "/kapak/4abc6434cefea0f5.webp",
+    "gorselKaynak": {
+      "yazar": "Master Sgt. Jerry Morrison, U.S. Air Force",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Defense.gov_News_Photo_100609-F-6655M-012_-_Secretary_of_Defense_Robert_M._Gates_talks_with_Turkish_Defense_Minister_Mehmet_Vecdi_Gonul_at_the_North_Atlantic_Treaty_Organization_Defense.jpg"
+    },
+    "publishedAt": "2026-10-28T10:08:49.000Z",
+    "generatedAt": "2026-10-28T10:19:26.515Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Hakan_Fidan_met_with_Kaja_Kallas_30062026.jpg/1280px-Hakan_Fidan_met_with_Kaja_Kallas_30062026.jpg",
+        "yazar": "Necati Savaş",
+        "lisans": "CC BY 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Hakan_Fidan_met_with_Kaja_Kallas_30062026.jpg",
+        "altyazi": "Dışişleri Bakanı Hakan Fidan ikili temaslarını sürdürüyor"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/A_motorcycle_stacked_with_crates_of_red_onions_stands_ready_for_ferry_transport%2C_resourceful_logistics_fueling_Uganda%E2%80%99s_lakeside_trade..jpg/1280px-A_motorcycle_stacked_with_crates_of_red_onions_stands_ready_for_ferry_transport%2C_resourceful_logistics_fueling_Uganda%E2%80%99s_lakeside_trade..jpg",
+        "yazar": "Ssemmanda will",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:A_motorcycle_stacked_with_crates_of_red_onions_stands_ready_for_ferry_transport,_resourceful_logistics_fueling_Uganda%E2%80%99s_lakeside_trade..jpg",
+        "altyazi": "Orta Koridor üzerindeki ticaret ve lojistik hareketliliği"
+      }
+    ],
+    "breaking": true,
+    "gorselDeneme": "2026-10-28T10:19:29.169Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Defense.gov_News_Photo_100609-F-6655M-012_-_Secretary_of_Defense_Robert_M._Gates_talks_with_Turkish_Defense_Minister_Mehmet_Vecdi_Gonul_at_the_North_Atlantic_Treaty_Organization_Defense.jpg/1280px-thumbnail.jpg",
+      "foto": true
+    }
+  },
+  {
+    "id": "d68ac8fe07f08d33",
+    "title": "Ford, batarya sistemini detaylandırdı: Evin elektriği garajdan gelecek",
+    "slug": "ford-batarya-sistemini-detaylandirdi-evin-elektrik-garajdan-gelecek",
+    "summary": "Ford, araç bataryalarını ev enerji depolama birimi olarak kullanmaya olanak tanıyan Fathom sisteminin teknik ayrıntılarını paylaştı. Yeni donanım yapısı ve kurulum süreçleri netleşirken, sistemin ev elektriği ihtiyacını karşılaması hedefleniyor.",
+    "keyPoints": [
+      "Ford Fathom sistemi, elektrikli araç bataryasını ev enerji şebekesine entegre ediyor.",
+      "Donanım maliyetleri ve kurulum prosedürleri kullanıcılar için şeffaf hale getiriliyor.",
+      "Sistem, şebekeye bağlı kalmadan evin temel enerji ihtiyacını karşılamayı amaçlıyor."
+    ],
+    "body": [
+      "Ford, elektrikli araç kullanıcılarının garajlarındaki batarya teknolojisini konut enerji ihtiyaçlarıyla birleştiren Fathom sisteminin kapsamını açıkladı. Geliştirilen bu entegre çözüm, aracın şarj depolama kapasitesini evin enerji yönetim sistemine dahil ederek kesintisiz bir güç akışı sağlamayı planlıyor. Sistemin temel amacı, araç bataryasında bulunan yüksek enerjiyi ev içi cihazların kullanımı için erişilebilir kılmak.",
+      "Sistemin işleyişine dair paylaşılan güncel bilgiler, donanım bileşenlerinin kurulum aşamalarını ve maliyet kalemlerini netleştiriyor. Kullanıcıların, bu teknolojiye geçiş yapabilmeleri için ihtiyaç duyacakları özel donanım setinin fiyatlandırması ve montaj süreçleri resmi bir çerçeveye oturtuldu. Ford, bu teknolojik altyapının kurulumu sırasında yüksek güvenlik standartlarına odaklanarak enerji verimliliğini artırmayı hedeflediğini vurguluyor.",
+      "Elektrikli araçların sadece ulaşım aracı olmaktan çıkıp birer enerji deposuna dönüşmesi, enerji yönetimi alanında yeni bir dönemin başlangıcını temsil ediyor. Fathom sistemi sayesinde araç sahipleri, özellikle şebeke kesintilerinde veya yüksek enerji maliyetli saatlerde, kendi araçlarındaki batarya gücünü kullanarak evlerinin elektriğini karşılayabilecek. Bu yaklaşım, evsel enerji tüketiminde daha esnek bir yönetim modeli sunarak şebekeye olan bağımlılığı azaltmayı amaçlıyor.",
+      "Kurulum prosedürleri, profesyonel bir teknik destek gerektirecek şekilde tasarlanmış olup, sistemin ev sigorta panelleriyle uyumlu çalışması için gerekli ara yüz birimlerini içeriyor. Kullanıcılar, mobil uygulama üzerinden batarya seviyelerini takip edebilir ve ne kadar enerjinin ev için ayrılacağını dinamik olarak yönetebilirler. Ford, bu sistemin uzun vadede araç bataryasının ömrünü ve şarj döngüsünü koruyacak akıllı algoritmalarla destekleneceğini duyurdu.",
+      "Gelecek dönemde bu tür teknolojilerin yaygınlaşması, otomobil üreticilerinin sadece araç değil, aynı zamanda enerji çözümleri sağlayıcısı olarak konumlanmasını zorunlu kılıyor. Ford, Fathom platformuyla birlikte kullanıcıların araçlarını birer taşınabilir bataryaya dönüştürerek enerji bağımsızlığı kazanmalarını kolaylaştırmayı planlıyor. Bu sistemin kurulum ve kullanım maliyetlerinin, uzun vadede enerji tasarrufu sağlayarak kendini amorti etmesi bekleniyor.",
+      "Sistemin ev içi enerji yönetimiyle tam uyumlu çalışması için yazılım güncellemeleri ve donanımsal altyapı hazırlıkları sürecek. Ford tarafından sağlanan bu teknoloji, enerji maliyetlerini optimize etmek isteyen kullanıcılar için yeni bir seçenek sunuyor. İlerleyen süreçte sistemin farklı bölgelerdeki enerji şebekeleriyle uyumluluğu ve regülasyonlara uygunluğu konusunda yeni duyuruların yapılması öngörülüyor."
+    ],
+    "comment": "Otomobil bataryalarının ev enerji ihtiyacını karşılamak üzere devreye alınması, elektrikli araç sahipleri için enerji maliyetlerini dengeleme noktasında yeni bir kazanç kapısı sunuyor. Sistem, araç sahiplerinin şebekeden çektiği elektriği yönetilebilir kılarak, özellikle enerji maliyetlerinin yüksek olduğu saatlerde kendi deposunu kullanmasına olanak tanıyor. Ford’un kurulum masraflarını netleştirmesi, kullanıcıların bu yatırımı ne kadar sürede amorti edeceklerini hesaplamalarını mümkün kılıyor. Geleneksel ev enerji sistemleri ile kıyaslandığında, bu teknoloji şebekeye olan bağımlılığı ciddi ölçüde azaltabilecek bir potansiyele sahip.",
+    "editorNote": "Garajdaki arabanızı bir güç santraline dönüştürmek artık daha somut. Ford'un Fathom sistemi, kurulum maliyetlerini netleştirerek elektrikli araç sahiplerine ev bütçesinde tasarruf…",
+    "tags": [
+      "Ford",
+      "Fathom",
+      "elektrikli araç",
+      "batarya",
+      "enerji"
+    ],
+    "category": "Otomobil",
+    "gorselSorgu": "Ford electric vehicle charging home",
+    "source": "CHIP Online",
+    "sourceUrl": "https://www.chip.com.tr/guncel/garajdaki-batarya-eve-elektrik-verecek-ford-fathomun-sistemini-acikladi_184940.html",
+    "image": "/kapak/d68ac8fe07f08d33.webp",
+    "gorselKaynak": {
+      "yazar": "Overlaet",
+      "lisans": "CC BY-SA 3.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Ford_Focus_Electric_(rear_quarter).jpg"
+    },
+    "publishedAt": "2026-10-28T10:03:00.000Z",
+    "generatedAt": "2026-10-28T10:18:06.239Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/CSIRO_ScienceImage_11473_CSIRO_engineers_refitting_a_plugin_hybrid_electric_trial_car_with_a_larger_battery_pack_and_battery_charger_which_can_plug_into_a_standard_household_power_point_or_a_special_charging_point.jpg/1280px-thumbnail.jpg",
+        "yazar": "division, CSIRO",
+        "lisans": "CC BY 3.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/3.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:CSIRO_ScienceImage_11473_CSIRO_engineers_refitting_a_plugin_hybrid_electric_trial_car_with_a_larger_battery_pack_and_battery_charger_which_can_plug_into_a_standard_household_power_point_or_a_special_charging_point.jpg",
+        "altyazi": "Otomobil batarya paketinin teknik ve donanımsal iç yapısı"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Vivint_Smart_Home_Arena_%281%29.jpg/1280px-Vivint_Smart_Home_Arena_%281%29.jpg",
+        "yazar": "Tamanoeconomico",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Vivint_Smart_Home_Arena_(1).jpg",
+        "altyazi": "Ev enerji yönetimini sağlayan akıllı ölçüm cihazı ekranı"
+      }
+    ],
+    "breaking": true,
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Ford_Focus_Electric_%28rear_quarter%29.jpg/1280px-Ford_Focus_Electric_%28rear_quarter%29.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "16e1f86821b04c3f",
     "title": "Brezilya'da Lula dönemi: Yüzde 51,79 oy oranıyla gelen zaferin analizi",
     "slug": "brezilyada-lula-donemi-yuzde-51-79-oy-oraniyla-gelen-zaferin-analizi",
@@ -57,7 +249,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:05.684Z",
+    "gorselDeneme": "2026-10-28T10:19:29.243Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Luiz_Inacio_Lula_da_Silva_and_Juan_Manuel_Santos.jpg/1280px-Luiz_Inacio_Lula_da_Silva_and_Juan_Manuel_Santos.jpg",
@@ -114,7 +306,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:03.905Z",
+    "gorselDeneme": "2026-10-28T10:19:28.292Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Vivo_V29e.jpg/1280px-Vivo_V29e.jpg",
@@ -251,7 +443,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:04.416Z",
+    "gorselDeneme": "2026-10-28T10:19:28.948Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/%E6%B7%B1%E6%B0%B4%E5%9F%97_Sham_Shui_Po_%E6%95%B8%E7%A2%BC%E9%BE%90%E5%85%8B%E8%99%9F_Heart_of_Cyberpunk_GAME_CENTRE_%E9%9C%93%E8%99%B9%E7%87%88%E6%8B%9B%E7%89%8C_Neon_Sign.jpg/1280px-%E6%B7%B1%E6%B0%B4%E5%9F%97_Sham_Shui_Po_%E6%95%B8%E7%A2%BC%E9%BE%90%E5%85%8B%E8%99%9F_Heart_of_Cyberpunk_GAME_CENTRE_%E9%9C%93%E8%99%B9%E7%87%88%E6%8B%9B%E7%89%8C_Neon_Sign.jpg",
@@ -365,7 +557,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:05.541Z",
+    "gorselDeneme": "2026-10-28T10:19:29.596Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Czech_Dance_Masters_2016_P5_indoor_led_screen_%28cropped%29.jpg",
@@ -570,7 +762,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:05.822Z",
+    "gorselDeneme": "2026-10-28T10:19:29.761Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Kazakhstan-Turkey_Friendship_Park_opened_in_Ankara_01.jpg/1280px-Kazakhstan-Turkey_Friendship_Park_opened_in_Ankara_01.jpg",
@@ -617,7 +809,7 @@
     "publishedAt": "2026-10-28T08:49:23.000Z",
     "generatedAt": "2026-10-28T08:56:33.274Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:05.813Z",
+    "gorselDeneme": "2026-10-28T10:19:31.209Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Football_match_at_Wincham_Park_Stadium_%28geograph_4383139%29.jpg/1280px-Football_match_at_Wincham_Park_Stadium_%28geograph_4383139%29.jpg",
@@ -721,7 +913,7 @@
     "publishedAt": "2026-10-28T08:40:12.000Z",
     "generatedAt": "2026-10-28T08:47:34.564Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:05.126Z",
+    "gorselDeneme": "2026-10-28T10:19:29.591Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/ChatGPT_Spanish_homework.jpg/1280px-ChatGPT_Spanish_homework.jpg",
@@ -914,7 +1106,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:06.568Z",
+    "gorselDeneme": "2026-10-28T10:19:29.540Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Space_Launch_System_configurations_%282012%29.jpg/1280px-Space_Launch_System_configurations_%282012%29.jpg",
@@ -1212,7 +1404,7 @@
     "publishedAt": "2026-10-28T07:25:15.000Z",
     "generatedAt": "2026-10-28T07:46:01.259Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:05.924Z",
+    "gorselDeneme": "2026-10-28T10:19:29.859Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Moscow%2C_Xiaomi_SU7_max%2C_Aug_2025_07.jpg/1280px-Moscow%2C_Xiaomi_SU7_max%2C_Aug_2025_07.jpg",
@@ -1277,7 +1469,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:06.067Z",
+    "gorselDeneme": "2026-10-28T10:19:29.908Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Aston_Martin_DBX707_1X7A0360.jpg/1280px-Aston_Martin_DBX707_1X7A0360.jpg",
@@ -1466,7 +1658,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:06.118Z",
+    "gorselDeneme": "2026-10-28T10:19:29.833Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Afghan_police%2C_US_soldiers_prepare_for_raid_DVIDS557689.jpg/1280px-Afghan_police%2C_US_soldiers_prepare_for_raid_DVIDS557689.jpg",
@@ -1531,7 +1723,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:06.197Z",
+    "gorselDeneme": "2026-10-28T10:19:30.043Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Lakers_vs_Trail_Blazers.jpg/1280px-Lakers_vs_Trail_Blazers.jpg",
@@ -1798,7 +1990,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:06.540Z",
+    "gorselDeneme": "2026-10-28T10:19:30.436Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Vivo_V29e.jpg/1280px-Vivo_V29e.jpg",
@@ -1910,7 +2102,7 @@
     "publishedAt": "2026-10-28T05:52:30.000Z",
     "generatedAt": "2026-10-28T05:59:12.459Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:06.790Z",
+    "gorselDeneme": "2026-10-28T10:19:30.447Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/AMD_Athlon_XP_Palomino.Jpg/1280px-AMD_Athlon_XP_Palomino.Jpg",
@@ -2031,7 +2223,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:06.593Z",
+    "gorselDeneme": "2026-10-28T10:19:30.610Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Crime_Scene_Investigation_Unit%2C_Royal_Gibraltar_Police.jpg/1280px-Crime_Scene_Investigation_Unit%2C_Royal_Gibraltar_Police.jpg",
@@ -2280,7 +2472,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:06.983Z",
+    "gorselDeneme": "2026-10-28T10:19:30.769Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Burn_of_Skaw_entering_a_stormy_sea_-_geograph.org.uk_-_3848495.jpg",
@@ -2521,7 +2713,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:06.842Z",
+    "gorselDeneme": "2026-10-28T10:19:30.764Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Bedouin_on_the_West_Bank_of_the_Jordan_River.jpg/1280px-Bedouin_on_the_West_Bank_of_the_Jordan_River.jpg",
@@ -2569,7 +2761,7 @@
     "publishedAt": "2026-10-28T04:20:40.000Z",
     "generatedAt": "2026-10-28T04:29:11.378Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:06.853Z",
+    "gorselDeneme": "2026-10-28T10:19:30.755Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg/1280px-Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
@@ -2701,7 +2893,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:07.222Z",
+    "gorselDeneme": "2026-10-28T10:19:30.837Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Secretary_of_State_Peter_Kyle_visits_Anthropic_in_San_Francisco._%2854099081629%29.jpg/1280px-Secretary_of_State_Peter_Kyle_visits_Anthropic_in_San_Francisco._%2854099081629%29.jpg",
@@ -2935,7 +3127,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:07.320Z",
+    "gorselDeneme": "2026-10-28T10:19:30.953Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Istanbul_city_Photos-_Urban_18.jpg/1280px-Istanbul_city_Photos-_Urban_18.jpg",
@@ -2993,7 +3185,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:07.315Z",
+    "gorselDeneme": "2026-10-28T10:19:31.418Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Elderly_people_editing_Catalan_Wikipedia_03.JPG/1280px-Elderly_people_editing_Catalan_Wikipedia_03.JPG",
@@ -3087,7 +3279,7 @@
     "publishedAt": "2026-10-28T03:13:00.000Z",
     "generatedAt": "2026-10-28T03:29:23.658Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:07.223Z",
+    "gorselDeneme": "2026-10-28T10:19:30.997Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Binyamin_Netanyahu_in_court.jpg/1280px-Binyamin_Netanyahu_in_court.jpg",
@@ -3162,7 +3354,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:07.457Z",
+    "gorselDeneme": "2026-10-28T10:19:31.304Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Apple_MacBook_%2817181045830%29.jpg/1280px-Apple_MacBook_%2817181045830%29.jpg",
@@ -3219,7 +3411,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:07.577Z",
+    "gorselDeneme": "2026-10-28T10:19:31.424Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg/1280px-Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg",
@@ -3387,7 +3579,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:07.690Z",
+    "gorselDeneme": "2026-10-28T10:19:31.662Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/DHS_Secretary_Alejandro_Mayorkas_Tours_LA_Cyber_Command_Center_%2851283617836%29.jpg/1280px-DHS_Secretary_Alejandro_Mayorkas_Tours_LA_Cyber_Command_Center_%2851283617836%29.jpg",
@@ -3620,7 +3812,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:08.872Z",
+    "gorselDeneme": "2026-10-28T10:19:33.142Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Flickr_-_Official_U.S._Navy_Imagery_-_A_Paralympic_Games_athlete_receiving_his_competitor_uniforms..jpg/1280px-Flickr_-_Official_U.S._Navy_Imagery_-_A_Paralympic_Games_athlete_receiving_his_competitor_uniforms..jpg",
@@ -3733,7 +3925,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:08.591Z",
+    "gorselDeneme": "2026-10-28T10:19:32.834Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Istanbul_Bosphorus_Oil_Tanker_Prisco_Mizar_IMG_8579_2010.jpg/1280px-Istanbul_Bosphorus_Oil_Tanker_Prisco_Mizar_IMG_8579_2010.jpg",
@@ -3908,7 +4100,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:08.008Z",
+    "gorselDeneme": "2026-10-28T10:19:31.934Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg/1280px-Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg",
@@ -4024,7 +4216,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:08.394Z",
+    "gorselDeneme": "2026-10-28T10:19:32.574Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg/1280px-Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg",
@@ -4090,7 +4282,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:14:08.057Z",
+    "gorselDeneme": "2026-10-28T10:19:31.864Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/USS_Barry_launches_a_vertical_launch_anti-submarine_rocket_missile_during_Valiant_Shield_2016._%2829750275701%29.jpg/1280px-USS_Barry_launches_a_vertical_launch_anti-submarine_rocket_missile_during_Valiant_Shield_2016._%2829750275701%29.jpg",
