@@ -24,3 +24,6 @@ scripts/avatar-ai-isler.json
 
 # CI tarafindan uretilir (pipeline.yml: Ozel alan adi adimi)
 site/public/CNAME
+
+# Yerel dogrulama derlemeleri
+/site/dist-*/
