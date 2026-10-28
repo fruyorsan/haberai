@@ -61,6 +61,32 @@ export function indeksSeti() {
   }
 }
 
+let siraCache;
+
+/**
+ * İndeks çekirdeğinin KALİTE SIRASI (en iyi haber önce).
+ *
+ * `src/indeks.js` id'leri puan sırasıyla yazar; "Öne Çıkanlar" arşiv sayfası
+ * bu sırayı kullanır. Eski çekirdekten korunan URL'ler listenin sonuna eklenir
+ * (indeks sürekliliği), böylece sıralamanın tepesi hep en güçlü haberlerdir.
+ *
+ * @returns {string[]} id listesi (dosya yoksa boş)
+ */
+export function indeksSirasi() {
+  if (siraCache !== undefined) return siraCache;
+  try {
+    if (!existsSync(FILE)) return (siraCache = []);
+    const d = JSON.parse(readFileSync(FILE, "utf8"));
+    const ids = Array.isArray(d.ids)
+      ? d.ids
+      : Object.values(d.days || {}).flat();
+    siraCache = (ids || []).map(String);
+  } catch {
+    siraCache = [];
+  }
+  return siraCache;
+}
+
 /** Bu haber site haritasına/indexe açık mı? */
 export function indeksliMi(a) {
   const set = indeksSeti();

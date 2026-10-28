@@ -5,13 +5,16 @@
 // tipografi haberden habere değişiyordu. Feed'de (Discover, WhatsApp, X,
 // Telegram) tutarsız görünüm tıklamayı düşürüyor.
 //
-// NE YAPAR: Telif güvenli mevcut fotoğrafı 1280×720'ye kırpar, altına koyu
-// gradyan + başlık + kategori etiketi + site işareti basar ve
-// `site/public/kapak/<id>.webp` olarak yazar. Böylece her kare aynı düzende
-// görünür (ShiftDelete/Webtekno'nun görsel tutarlılığının bizdeki karşılığı).
+// NE YAPAR: Haberin kendi fotoğrafını (kaynak sayfanın og:image'i ya da
+// yazı içindeki fotoğraflar) aday olarak toplar, aralarından GÖZE EN İYİ
+// GÖRÜNENİ seçer (çözünürlük, ayrıntı, parlaklık, renklilik, 16:9'a yakınlık),
+// 1280×720'ye kırpar ve `site/public/kapak/<id>.webp` olarak yazar. Fotoğraflı
+// kapaklarda metin YOKTUR: kare konuyu anlatır, gözü başlığa bırakır. Hiçbir
+// aday yeterli değilse kategori etiketi + başlık basılan tasarımlı kart üretilir.
 //
-// TELİF: Taban fotoğraf değişmez, yalnızca kırpılıp üzerine yazı basılır.
-// Atıf `gorselKaynak` alanında korunur; kaynak adres `kapak.kaynak`ta durur.
+// TELİF: Taban fotoğraf değişmez, yalnızca kırpılıp hafifçe canlandırılır.
+// Atıf `gorselKaynak` alanında korunur; kullanılan fotoğrafın adresi
+// `kapak.kaynak`ta durur (temizlikte `image` alanına geri yazılır).
 //
 // KULLANIM:
 //   npm run kapak                  → indekste açık (aktif) haberler
@@ -378,29 +381,86 @@ async function gorselIndir(url) {
   return Buffer.from(await yanit.arrayBuffer());
 }
 
+/**
+ * Bir fotoğrafın kapak olarak ne kadar çekici olacağını 0-100 arası puanlar.
+ * NEDEN: Eskiden "ilk bulunan görsel" kapak oluyordu; sonuç bulanık ekran
+ * görüntüleri, bembeyaz ürün kareleri veya neredeyse düz şablon görselleriydi.
+ * Burada çözünürlük, ayrıntı (kontrast), parlaklık, renklilik ve 16:9'a
+ * yakınlık birlikte değerlendirilir; en yüksek puanlı kare kapak olur.
+ * Düz/boş kareler (std çok düşük) hiç aday sayılmaz.
+ */
+async function gorselPuani(veri, bilgi) {
+  const w = bilgi?.width || 0;
+  const h = bilgi?.height || 0;
+  if (w < 640 || h < 320) return null;
+  try {
+    const { data, info } = await sharp(veri)
+      .resize(180, 180, { fit: "inside" })
+      .removeAlpha()
+      .raw()
+      .toBuffer({ resolveWithObject: true });
+    const adim = info.channels;
+    let toplam = 0;
+    let kare = 0;
+    let doygun = 0;
+    let adet = 0;
+    for (let i = 0; i + 2 < data.length; i += adim) {
+      const r = data[i];
+      const g = data[i + 1];
+      const b = data[i + 2];
+      const p = 0.299 * r + 0.587 * g + 0.114 * b;
+      toplam += p;
+      kare += p * p;
+      const en = Math.max(r, g, b);
+      const az = Math.min(r, g, b);
+      if (en > 8) doygun += (en - az) / en;
+      adet++;
+    }
+    if (!adet) return null;
+    const ort = toplam / adet;
+    const std = Math.sqrt(Math.max(0, kare / adet - ort * ort));
+    const doy = doygun / adet;
+    // Düz/boş kare (beyaz zemin, boş şablon, tek renk): kapak yapılmaz.
+    if (std < 9 || (std < 14 && doy < 0.03)) return null;
+
+    const sinir = (x) => Math.max(0, Math.min(1, x));
+    const detayPuan = sinir((std - 14) / 42); // 14 → 0, 56+ → 1
+    const parlakPuan = sinir(1 - Math.abs(ort - 118) / 105);
+    const cozunurlukPuan = sinir(Math.min(w, h) / 900);
+    const hedef = GENISLIK / YUKSEKLIK;
+    const oranPuan = Math.sqrt(Math.min(w / h, hedef) / Math.max(w / h, hedef));
+    const renkPuan = sinir(1 - Math.abs(doy - 0.32) / 0.34);
+    return (
+      100 *
+      (0.33 * detayPuan +
+        0.22 * parlakPuan +
+        0.18 * cozunurlukPuan +
+        0.15 * oranPuan +
+        0.12 * renkPuan)
+    );
+  } catch {
+    return null;
+  }
+}
+
 async function kapakUret(a) {
   const dosya = path.join(CIKTI_DIZIN, `${a.id}.webp`);
   // Daha önce üretilmiş kapağın taban fotoğrafı `kapak.kaynak`ta durur.
   const kaynak = a.kapak?.kaynak || a.image;
   const sorgu = a.gorselSorgu || a.title || "";
 
-  const indir = async (url) => {
+  /** 16:9 kırp + hafif canlandırma. */
+  const kirp = async (veri, bilgi) => {
     try {
-      const veri = await gorselIndir(url);
-      if (!veri) return null;
-      // Çok küçük görseller (logo, ikon, 300 px kare) kapak olmaz.
-      const bilgi = await sharp(veri).metadata();
-      if ((bilgi.width || 0) < 640 || (bilgi.height || 0) < 320) return null;
       // "attention" büyük görsellerde çok pahalı (saniyelerce CPU). 4000 px'e
       // kadar ilgi alanına göre kırp; daha büyüklerde merkez yeterli.
       const konum =
         (bilgi.width || 0) * (bilgi.height || 0) <= 16_000_000
           ? sharp.strategy.attention
           : "centre";
-      // 16:9 kırp.
       return await sharp(veri)
         .resize(GENISLIK, YUKSEKLIK, { fit: "cover", position: konum })
-        .modulate({ saturation: 1.1, brightness: 1.02 })
+        .modulate({ saturation: 1.08, brightness: 1.02 })
         .sharpen({ sigma: 0.6 })
         .toBuffer();
     } catch {
@@ -408,46 +468,105 @@ async function kapakUret(a) {
     }
   };
 
+  /** Tek adımda indir + hazırla (Openverse/yedek adaylar için). */
+  const hazirla = async (url) => {
+    try {
+      const veri = await gorselIndir(url);
+      if (!veri) return null;
+      const bilgi = await sharp(veri).metadata();
+      // Çok küçük görseller (logo, ikon, 300 px kare) kapak olmaz.
+      if ((bilgi.width || 0) < 640 || (bilgi.height || 0) < 320) return null;
+      return await kirp(veri, bilgi);
+    } catch {
+      return null;
+    }
+  };
+
+  // Aday fotoğraflar ÖNCELİK sırasıyla toplanır, sonra en iyi GÖRÜNEN seçilir.
+  // "İlk bulunan" mantığı bulanık ekran görüntülerini ya da bembeyaz ürün
+  // karelerini kapak yapıyordu; puanlama göze en çok hitap eden kareyi seçer.
+  const adaylar = [];
+  const adayEkle = (url, tip) => {
+    if (typeof url !== "string" || !url) return;
+    if (adaylar.some((c) => c.url === url)) return;
+    adaylar.push({ url, tip });
+  };
+
+  if (!sadeceKart) {
+    // 1) KAYNAK SİTENİN KENDİ GÖRSELİ (og:image). Haberin çıktığı sayfadaki
+    //    kapak görseli tanım gereği başlıkla alakalı.
+    if (String(a.sourceUrl || "").startsWith("http")) {
+      const kaynakFoto = await kaynakGorselUrl(a);
+      if (debug) {
+        console.log(
+          `   · ${a.id} kaynak görsel: ${kaynakFoto ? kaynakFoto.slice(0, 80) : "BULUNAMADI"}`
+        );
+      }
+      if (kaynakFoto && kaynakFoto !== a.image) adayEkle(kaynakFoto, "kaynak");
+    }
+    // 2) YAZININ İÇİNDEKİ FOTOĞRAFLAR: yayıncı kendi metnine koyduğu için
+    //    başlıkla alakaları yüksek (ürün, kişi, olay karesi).
+    for (const u of Array.isArray(a.images) ? a.images.slice(0, 2) : []) adayEkle(u, "govde");
+    // 3) VERİ DOSYASINDAKİ GÖRSEL (çoklukla Wikimedia stoğu, en son tercih).
+    const fotoIzinli =
+      uygunMu(kaynak, sorgu) &&
+      (FOTO_KATEGORI.has(String(a.category || "")) || ozelAdUyuyor(kaynak, a.title));
+    if (fotoIzinli) adayEkle(kaynak, "veri");
+  }
+
+  // En fazla 4 aday indirilir; iyi bir kare çıkınca erken bırakılır (hız).
+  const degerlendirilen = [];
+  const EN_FAZLA_ADAY = 4;
+  for (const aday of adaylar) {
+    if (degerlendirilen.length >= EN_FAZLA_ADAY) break;
+    let veri = null;
+    let bilgi = null;
+    try {
+      veri = await gorselIndir(aday.url);
+      if (!veri) continue;
+      bilgi = await sharp(veri).metadata();
+    } catch (err) {
+      if (debug) console.log(`   · ${a.id} ${aday.tip} indirilemedi: ${err.message}`);
+      continue;
+    }
+    const puan = await gorselPuani(veri, bilgi);
+    if (puan === null) {
+      if (debug) console.log(`   · ${a.id} ${aday.tip} elendi (küçük/düz): ${aday.url.slice(0, 80)}`);
+      continue;
+    }
+    degerlendirilen.push({ ...aday, veri, bilgi, puan });
+    if (debug) {
+      console.log(`   · ${a.id} ${aday.tip} puan ${puan.toFixed(0)}: ${aday.url.slice(0, 80)}`);
+    }
+    if (puan >= 84) break;
+  }
+
+  degerlendirilen.sort((x, y) => y.puan - x.puan);
+
   let taban = null;
   let yeniAtif = null;
   let fotoVar = false;
+  let secilenUrl = null;
 
-  // 1) KAYNAK SİTENİN KENDİ GÖRSELİ (og:image).
-  // Haberin çıktığı sayfadaki kapak görseli tanım gereği başlıkla alakalı:
-  // Webtekno/ShiftDelete gibi siteler ürünü/personeli doğru fotoğrafla veriyor.
-  // Bu yüzden ilk tercih bu; stok arama yalnızca o bulunamazsa devreye girer.
-  if (!sadeceKart && String(a.sourceUrl || "").startsWith("http")) {
-    const kaynakFoto = await kaynakGorselUrl(a);
-    if (debug) {
-      console.log(
-        `   · ${a.id} kaynak görsel: ${kaynakFoto ? kaynakFoto.slice(0, 80) : "BULUNAMADI"}`
-      );
-    }
-    if (kaynakFoto && kaynakFoto !== a.image) {
-      taban = await indir(kaynakFoto);
-      if (taban) fotoVar = true;
-      else if (debug) console.log(`   · ${a.id} kaynak görsel indirilemedi`);
+  // 42 altındaki kareler kapak olarak zayıf (boş, loş, düz): kart daha iyi durur.
+  const secilen = degerlendirilen[0] && degerlendirilen[0].puan >= 42 ? degerlendirilen[0] : null;
+  if (secilen) {
+    taban = await kirp(secilen.veri, secilen.bilgi);
+    if (taban) {
+      fotoVar = true;
+      secilenUrl = secilen.url;
+      if (debug) console.log(`   · ${a.id} seçilen: ${secilen.tip} (${secilen.puan.toFixed(0)})`);
     }
   }
-
-  // 2) Haberin veri dosyasındaki görsel (kaynak görsel yoksa/engellendiyse).
-  // Wikimedia'dan gelen alakasız kareleri kesmek için uygunluk denetimi var.
-  if (!taban) {
-    const fotoIzinli =
-      !sadeceKart &&
-      uygunMu(kaynak, sorgu) &&
-      (FOTO_KATEGORI.has(String(a.category || "")) || ozelAdUyuyor(kaynak, a.title));
-    if (fotoIzinli) {
-      taban = await indir(kaynak);
-      fotoVar = Boolean(taban);
-    }
+  if (!taban && degerlendirilen.length && debug) {
+    console.log(`   · ${a.id} tüm adaylar zayıf, tasarımlı karta düşülüyor`);
   }
 
   if (!taban && !sadeceKart && FOTO_KATEGORI.has(String(a.category || ""))) {
     try {
       const ov = await openverseAra(sorgu);
       if (ov) {
-        taban = await indir(ov.url);
+        taban = await hazirla(ov.url);
         if (taban) {
           fotoVar = true;
           yeniAtif = {
@@ -541,7 +660,14 @@ async function kapakUret(a) {
     yazDosya(dosya.replace(/\.webp$/, "-480.webp"), kucukVeri);
     if (debug) console.log(`   · ${a.id} küçük varyant yazıldı`);
   }
-  return { url: `${URL_TABANI}/${a.id}.webp`, atif: yeniAtif, foto: fotoVar };
+  return {
+    url: `${URL_TABANI}/${a.id}.webp`,
+    atif: yeniAtif,
+    foto: fotoVar,
+    // Kapakta gerçekten kullanılan fotoğraf (sonraki yeniden üretimlerde ve
+    // kapak temizliğinde `image` alanına geri yazılır).
+    kaynak: secilenUrl || a.kapak?.kaynak || a.image,
+  };
 }
 
 // --------------------------------------------------------- marka izi modu
@@ -612,13 +738,12 @@ async function havuz(dizi, esZamanli, islev) {
 
 await havuz(hedefler, paralel, async (a) => {
   const eski = a.image;
-  const taban = a.kapak?.kaynak || eski;
   try {
     const sonuc = await kapakUret(a);
     console.log(`${dry ? "[dry] " : ""}${a.title.slice(0, 70)} → ${sonuc.url}`);
     if (!dry) {
       a.image = sonuc.url;
-      a.kapak = { v: 2, kaynak: taban, foto: sonuc.foto };
+      a.kapak = { v: 2, kaynak: sonuc.kaynak || eski, foto: sonuc.foto };
       if (sonuc.atif) a.gorselKaynak = sonuc.atif;
     }
     uretilen++;

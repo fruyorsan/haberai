@@ -80,6 +80,7 @@ export function GET({ site }) {
   satirlar.push(
     "Sitemap: " + origin + "/sitemap-index.xml",
     "Sitemap: " + origin + "/news-sitemap.xml",
+    "Sitemap: " + origin + "/image-sitemap.xml",
     ""
   );
 

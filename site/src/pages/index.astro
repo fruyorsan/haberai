@@ -3,7 +3,7 @@ import Base from "../layouts/Base.astro";
 import ArticleCard from "../components/ArticleCard.astro";
 import AdSlot from "../components/AdSlot.astro";
 import FeaturedSlider from "../components/FeaturedSlider.astro";
-import { getFeatured, getTags, imageUrl, imageSrcset, timeAgo, publishedISO, getYayinArticles } from "../lib/articles.js";
+import { getFeatured, getTags, imageUrl, imageSrcset, timeAgo, publishedISO, getYayinArticles, getOneCikan, publishedTime } from "../lib/articles.js";
 import { kapakKaynagi } from "../lib/kapak.js";
 import { ilgiSirala } from "../lib/ilgi.js";
 import { siteOrigin, ADSENSE_SLOTS, SOSYAL_LINKLER } from "../lib/site-meta.js";
@@ -45,9 +45,16 @@ const teknoSlugs = new Set(tekno.map((a) => a.slug));
 // listenin sonuna alınır.
 const withPhoto = nonFeatured.filter((a) => kapakKaynagi(a) && !teknoSlugs.has(a.slug));
 const withoutPhoto = nonFeatured.filter((a) => !kapakKaynagi(a) && !teknoSlugs.has(a.slug));
-// Günlük vitrin kotası 24 haber (src/indeks.js GUNLUK = 24) olduğu için
+// Günlük vitrin kotası 75 haber (src/indeks.js GUNLUK = 75) olduğu için
 // ana sayfa ızgarası da 24 kart gösterir; "az haber görünüyor" geri bildirimi.
 const grid = [...withPhoto, ...withoutPhoto].slice(0, 24);
+
+// Arşiv seçkisi: 48 saatten eski, kalite kapısından geçmiş en güçlü dosyalar.
+// Ana sayfa yalnızca "son dakika"ya değil, kalıcı arşive de bağlantı verir;
+// /one-cikanlar/ hub'ı 500 habere kadar genişler.
+const arsiv = getOneCikan(60)
+  .filter((a) => publishedTime(a) && Date.now() - publishedTime(a) > 48 * 3_600_000)
+  .slice(0, 4);
 
 // WebSite + Organization yapısal veri: Sitelinks arama kutusu (Google) + marka bilgisi.
 // SearchAction, site içi arama sayfasına (/ara/) point eder.
@@ -210,6 +217,30 @@ const siteSchema = {
                 </a>
               </div>
             )}
+          </section>
+        )}
+
+        {arsiv.length >= 3 && (
+          <section class="arsiv" aria-labelledby="arsiv-baslik">
+            <div class="latest__head">
+              <h2 class="section-title section-title--line" id="arsiv-baslik">Öne Çıkanlar</h2>
+              <a class="latest__all" href="/one-cikanlar/">Arşiv seçkisi →</a>
+            </div>
+            <p class="arsiv__alt">
+              Son dakika akışının ötesinde kalan, kalite kapısından geçmiş dosyalar.
+            </p>
+            <div class="grid">
+              {arsiv.map((a, i) => <ArticleCard article={a} index={i} />)}
+            </div>
+            <div class="more">
+              <a class="more__btn" href="/one-cikanlar/">
+                Tüm Seçki (500)
+                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m13 6 6 6-6 6" />
+                </svg>
+              </a>
+            </div>
           </section>
         )}
 
@@ -561,6 +592,21 @@ const siteSchema = {
     padding: 3px 8px;
     border-radius: 6px;
     font-weight: 600;
+  }
+
+  .arsiv {
+    margin: 12px 0 26px;
+    padding: 4px 20px 22px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background:
+      radial-gradient(120% 140% at 0% 0%, var(--brand-soft), transparent 58%),
+      var(--surface);
+  }
+  .arsiv__alt {
+    margin: 0 0 16px;
+    font-size: 0.88rem;
+    color: var(--muted);
   }
 
   .more {

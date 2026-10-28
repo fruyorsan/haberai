@@ -345,8 +345,11 @@ sayfalarında açılır, doğrudan bağlantıyla okunur, ancak listelerde görü
 
 1. `src/indeks.js` `data/articles.json` içindeki haberleri kalite kapısından geçirir.
 2. Aynı olayı anlatan tekrarlar (başlık benzerliği + olay imzası) ayıklanır.
-3. Günde en iyi `INDEKS_GUNLUK` (varsayılan **24**) haber seçilir.
-4. Sonuç `data/indeks.json` içine yazılır; site katmanı bu dosyayı okur.
+3. Günde en iyi `INDEKS_GUNLUK` (varsayılan **75**) haber seçilir; toplam çekirdek
+   `INDEKS_TOPLAM` (varsayılan **900**) URL ile sınırlanır.
+4. Önceki çalıştırmada indekste olan URL'ler korunur: çekirdek her turda sıfırdan
+   kurulmaz, böylece Google daha önce dizine aldığı sayfayı `noindex` görmez.
+5. Sonuç `data/indeks.json` içine yazılır; site katmanı bu dosyayı okur.
 
 ```bash
 npm run indeks          # çekirdeği yeniden üret
@@ -369,7 +372,8 @@ indeksli/noindex arasında zıplamaz.
 | Özgün yorum (karakter) | 150 | `INDEKS_MIN_YORUM` |
 | Editör notu (karakter) | 40 | `INDEKS_MIN_NOT` |
 | Başlık benzerliği | 0.55 | `INDEKS_BENZERLIK` |
-| Günlük çekirdek kotası | 32 | `INDEKS_GUNLUK` |
+| Günlük çekirdek kotası | 75 | `INDEKS_GUNLUK` |
+| Toplam çekirdek kotası | 900 | `INDEKS_TOPLAM` |
 | Geriye dönük pencere (gün) | 45 | `INDEKS_PENCERE_GUN` |
 
 Ek olarak kalite kapısı şu **içerik tekrarı** kontrollerini yapar (ortam değişkeni yok):
@@ -382,6 +386,34 @@ kontrollerden biri takılırsa haber vitrine girmez (`noindex` kalır). Aynı e�
 Eşikleri düşürmek vitrini büyütür ama AdSense riskini artırır; yükseltmek vitrini
 daraltır. Değişiklikten sonra `npm run indeks` çalıştırılmadan site eski listeyi
 kullanmaya devam eder.
+
+### Arşiv vitrini ve görsel site haritası
+
+- **`/one-cikanlar/`**: çekirdekteki 500 haberi tek indekslenebilir sayfada toplayan
+  arşiv seçkisi. 2. sayfa ve sonrası `noindex, follow`; sayfalama site haritasına girmez.
+  Ana sayfa, üst menü ve alt bilgiden bağlantı verilir.
+- **`/image-sitemap.xml`**: çekirdekteki her haberin kapak görselini `image:loc` ve
+  `image:title` ile bildirir. `robots.txt` içinde `Sitemap:` satırıyla duyurulur.
+- Site haritası yalnızca indekslenebilir URL'leri içerir; `noindex` sayfa sitemap'e
+  girmez. 28.10.2026 itibarıyla çekirdek **919 haber URL'si** (917 kapak görseli).
+
+## Arayüz dili (TR ⇄ EN)
+
+Site iki dillidir ama **içerik tek dildedir**: haber metinleri Türkçe yayımlanır.
+İngilizce seçildiğinde yalnızca arayüz etiketleri (menü, düğme, kategori adları,
+tarih/saat biçimleri, bildirim paneli) çevrilir; haber başlığı, özeti ve gövdesi
+Türkçe kalır. Bu bilinçli bir tercihtir:
+
+- Ayrı `/en/` adresleri üretilmediği için aynı içerik iki kez indekslenmez ve
+  canonical/hreflang karmaşası oluşmaz.
+- Çeviri tamamen istemci tarafında çalışır (`site/public/dil.js`); tercih
+  `localStorage` içindeki `hb-dil` anahtarında tutulur.
+- İlk boyamada Türkçe metin görünüp İngilizceye dönmemesi için `<html>` üzerinde
+  `dil-bekliyor` sınıfı kullanılır; betik çalışmazsa 1,8 sn sonra kendiliğinden açılır.
+- Düğme üst piyasa şeridinde ve alt bilgide durur; mobilde üst çubuk taşmaz.
+- Haber ve bilgi sayfalarında "arayüz İngilizce, içerik Türkçe" notu gösterilir.
+- Yeni arayüz metni eklerken `dil.js` sözlüğüne karşılığını yazmak yeterlidir;
+  eksik kalan metin Türkçe görünür ve çalışmayı bozmaz.
 
 ### Yayıncı kimliği (E-E-A-T)
 
@@ -589,6 +621,7 @@ taramasını beklemez. Workflow içindeki **"IndexNow bildirimi"** adımı her t
 npm run indexnow:dry            # ne gönderileceğini yazar, istek atmaz
 npm run indexnow                # gerçekten gönderir
 node src/indexnow.mjs --tumu    # bir kerelik: tüm arşivi gönderir (pencere + sınır yok)
+node src/indexnow.mjs --indeks --tumu --dry   # yalnızca indeks çekirdeğini listeler
 ```
 
 > Not: IndexNow yalnızca Bing/Yandex içindir. Google için tek yol Search Console'da

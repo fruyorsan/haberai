@@ -29,8 +29,37 @@ const DATA = join(__dirname, "..", "data");
 const ARTICLES = join(DATA, "articles.json");
 const CIKTI = join(DATA, "indeks.json");
 
-/** Günde vitrine girecek en iyi haber sayısı. */
-const GUNLUK = Number(process.env.INDEKS_GUNLUK || 32);
+/**
+ * Önceki turda dizine açılmış id'ler.
+ *
+ * Google'da bir kez dizine girmiş URL'yi "kalite sıralaması biraz değişti"
+ * diye noindex'e düşürmek, sürekli değişen bir site sinyali üretir. Bu yüzden
+ * yeni seçim eski çekirdeğin üzerine kurulur: eski URL'ler yalnızca haber
+ * silinmişse düşer.
+ */
+function oncekiIndeks() {
+  try {
+    if (!existsSync(CIKTI)) return new Set();
+    const d = JSON.parse(readFileSync(CIKTI, "utf8"));
+    const ids = Array.isArray(d.ids) ? d.ids : Object.values(d.days || {}).flat();
+    return new Set((ids || []).map(String));
+  } catch {
+    return new Set();
+  }
+}
+
+/**
+ * Günde vitrine girecek en iyi haber sayısı.
+ *
+ * 32 → 75 (27.10.2026): arşivde kalite kapısını geçen 2.700+ haber varken
+ * yalnızca ~400'ü dizine açıktı. Google'a "sitemde 4.800 haber var ama
+ * 4.400'ü noindex" demek, trafik düşüşünde en büyük kendi kendine zarar
+ * veren kalıptı. Günlük kota, tek bir günün çekirdeği doldurmasını önler;
+ * toplam kota (aşağıda) arşivin tamamının indekslenmesini engeller.
+ */
+const GUNLUK = Number(process.env.INDEKS_GUNLUK || 75);
+/** Çekirdeğin toplam üst sınırı. 0 = sınırsız. */
+const TOPLAM = Number(process.env.INDEKS_TOPLAM || 900);
 /** Çekirdeğin geriye dönük penceresi (gün). */
 const PENCERE_GUN = Number(process.env.INDEKS_PENCERE_GUN || 45);
 
@@ -276,6 +305,29 @@ function main() {
     kabul.push(a);
   }
 
+  // Toplam kota: kabul listesi kalite sırasındadır; en iyi TOPLAM haber kalır.
+  // Böylece yeni gelen düşük kaliteli bir haber, eski ve güçlü bir haberin
+  // yerini almaz.
+  if (TOPLAM > 0 && kabul.length > TOPLAM) {
+    red["toplam kota"] = (red["toplam kota"] || 0) + (kabul.length - TOPLAM);
+    kabul.length = TOPLAM;
+  }
+
+  // İndeks sürekliliği: dün dizinde olan bir URL bugün noindex'e düşmesin.
+  // Bu istisna toplam kotanın biraz üzerine çıkabilir (birkaç on URL); kota
+  // zaten büyümeyi sınırlamak için var, mevcut dizini küçültmek için değil.
+  const secili = new Set(kabul.map((a) => String(a.id)));
+  const idMap = new Map(articles.map((a) => [String(a.id), a]));
+  let geriEklenen = 0;
+  for (const id of oncekiIndeks()) {
+    if (secili.has(id)) continue;
+    const a = idMap.get(id);
+    if (!a) continue;
+    kabul.push(a);
+    secili.add(id);
+    geriEklenen++;
+  }
+
   const days = {};
   for (const a of kabul) {
     const gun = gunAnahtari(yayinZamani(a));
@@ -288,6 +340,7 @@ function main() {
   const cikti = {
     updatedAt: new Date().toISOString(),
     gunluk: GUNLUK,
+    toplam: TOPLAM,
     pencereGun: PENCERE_GUN,
     esik: ESIK,
     toplamHaber: articles.length,
@@ -309,7 +362,9 @@ function main() {
 
   console.log(
     `İndeks: ${articles.length} haber → ${adaylar.length} aday → ${ids.length} çekirdek URL ` +
-      `(${Object.keys(days).length} gün, günde en iyi ${GUNLUK})` +
+      `(${Object.keys(days).length} gün, günde en iyi ${GUNLUK}` +
+      (geriEklenen ? `, önceki çekirdekten ${geriEklenen} URL korundu` : "") +
+      ")" +
       (redOzet ? `\n  Elemeler → ${redOzet}` : "")
   );
 }
