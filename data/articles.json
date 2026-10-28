@@ -1,5 +1,70 @@
 [
   {
+    "id": "692c88d046cc9222",
+    "title": "Ev sinema sistemlerinde ses dengesini ayarlamanın yolları",
+    "slug": "ev-sinema-sistemlerinde-ses-dengesini-ayarlamanin-yollari",
+    "summary": "Filmlerde konuşmaların duyulmayıp efektlerin evi inletmesi, genellikle ses aralığı ve cihaz ayarlarından kaynaklanıyor. Ses düzeyleri arasındaki bu belirgin dengesizlik, doğru konfigürasyonlarla giderilebilir. İzleyiciler, ses sistemlerinde yapacakları küçük değişikliklerle hem diyalogları netleştirebilir hem de patlama seslerinin yarattığı rahatsızlığı azaltarak daha dengeli bir ses deneyimi elde edebilirler.",
+    "keyPoints": [
+      "Dinamik aralık sıkıştırma ayarı, yüksek sesli efektleri kısarak diyalogları ön plana çıkarır.",
+      "Filmlerin ses miksajı genellikle sinema salonları için tasarlandığından ev ortamında uyumsuzluk yaşanır.",
+      "Merkez kanal hoparlörünün ses seviyesini artırmak, diyalog netliğini önemli ölçüde iyileştirebilir."
+    ],
+    "body": [
+      "Televizyon ve ses sistemleri üzerinden film izlerken yaşanan en büyük sorunlardan biri, sahneler arasındaki ses şiddeti farkıdır. Aksiyon sahnelerinde patlamalar veya müzikler çok yüksek seviyeye çıkarken, oyuncuların konuşmaları neredeyse işitilemeyecek kadar derinden gelir. Bu durum, izleyicinin sürekli uzaktan kumandayla ses ayarı yapmasına neden olur ve film keyfini doğrudan böler.",
+      "Yaşanan bu dengesizliğin temel sebebi, yapımcıların filmleri sinema salonlarının teknik imkanlarına göre seslendirmesidir. Sinema salonlarında bulunan devasa ses sistemleri, çok geniş bir dinamik aralığı işleyebilir; yani en kısık fısıltı ile en gürültülü patlama arasındaki farkı mükemmel şekilde yansıtabilir. Ancak evdeki standart televizyon hoparlörleri veya küçük ses barları, bu kadar geniş bir aralığı aynı başarıyla sunmakta yetersiz kalır.",
+      "Çözüm yollarından biri, ses ayarlarında bulunan 'dinamik aralık sıkıştırma' özelliğini kullanmaktır. Bu özellik, sesin en yüksek ve en düşük seviyeleri arasındaki uçurumu daraltarak daha homojen bir ses seviyesi oluşturur. Gece modu olarak da adlandırılan bu seçenek, özellikle akşam saatlerinde evdeki diğer kişileri rahatsız etmemek ve fısıltıları daha rahat duymak için oldukça kullanışlıdır.",
+      "Ses sisteminizde merkez kanal hoparlör seçeneği varsa, bu kanalı bağımsız olarak yükseltmek etkili bir yöntemdir. Filmlerdeki diyalogların büyük bir çoğunluğu merkez kanaldan iletilir; bu yüzden merkez kanalın sesini diğerlerinden 2-3 desibel artırmak, konuşmaların arka plan sesleri altında ezilmesini engeller. Modern birçok televizyon ve alıcı, ses menüsünde diyalog iyileştirme gibi özel modlar sunar.",
+      "Bağlantı kablolarını ve hoparlör yerleşimini kontrol etmek de bir diğer teknik gerekliliktir. Eğer 5.1 veya 7.1 gibi çok kanallı bir ses sistemi kullanıyorsanız, hoparlörlerin konumunun hatalı olması sesin birbirine karışmasına sebep olur. Hoparlörlerin doğrudan kulak hizasında olması ve özellikle merkez kanalın televizyonun altına veya üstüne düzgün yerleştirilmesi, sesin netliğini doğrudan etkileyen unsurlardır.",
+      "Eğer cihazınızda yazılımsal bir ayar bulunmuyorsa, harici bir ses işlemcisi veya gelişmiş bir ses çubuğu kullanmak, ses aralığını optimize etmenizi sağlar. Günümüzde piyasaya sürülen birçok yeni nesil ses çubuğu, yapay zeka destekli otomatik ses dengeleme teknolojileriyle donatılmıştır. Bu cihazlar, anlık olarak ses düzeyini analiz edip arka plan gürültülerini otomatik şekilde bastırarak konuşmaları ön plana taşır."
+    ],
+    "comment": "Ses dengesizliği yaşayan izleyiciler, cihazlarının ses menüsünde yer alan dinamik aralık sıkıştırma modunu aktif ederek sorunu basitçe çözebilir. Bu ayar, sinema salonu için mikslenmiş ses dosyasını ev tipi hoparlörlerin kapasitesine uygun hale getirir. Merkez kanal hoparlörünün seviyesini manuel olarak artırmak, diyalogları netleştirmek için en kesin ve hızlı yöntemdir. Bu yöntemler, sadece yüksek sesli efektlerin rahatsız ediciliğini azaltmakla kalmaz, aynı zamanda düşük sesli sahnelerde duyma çabasını ortadan kaldırır.",
+    "editorNote": "Filmlerde konuşmaların duyulmaması ses sisteminizdeki dinamik aralık hatasından kaynaklanıyor. Ayarlarınızdan 'Gece Modu' veya 'Ses Dengeleme'yi aktif ederek bu farkı…",
+    "tags": [
+      "ses sistemi",
+      "ev sineması",
+      "televizyon",
+      "hoparlör",
+      "teknik ayar"
+    ],
+    "category": "Kültür",
+    "gorselSorgu": "home cinema sound system",
+    "source": "CHIP Online",
+    "sourceUrl": "https://www.chip.com.tr/guncel/filmlerde-konusmalar-duyulmuyor-patlamalar-evi-inletiyor-neden_184907.html",
+    "image": "/kapak/692c88d046cc9222.webp",
+    "gorselKaynak": {
+      "yazar": "Jan Hammershaug from Vestre Gausdal, Norway",
+      "lisans": "CC BY 2.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Home_cinema_1996_(21188925955crop.jpg"
+    },
+    "publishedAt": "2026-10-28T06:21:00.000Z",
+    "generatedAt": "2026-10-28T06:29:14.363Z",
+    "gorselEk": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/NAD_705_Stereo_Receiver_-_Speaker_Connectors_%288875312073%29.jpg",
+        "yazar": "Jacques from Cape Town, South Africa",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:NAD_705_Stereo_Receiver_-_Speaker_Connectors_(8875312073).jpg",
+        "altyazi": "Ses sistemi arayüzündeki ekolayzır ve dengeleme seçenekleri"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Washington_Bridge%2C_RI_-_center_channel_looking_south.jpg/1280px-Washington_Bridge%2C_RI_-_center_channel_looking_south.jpg",
+        "yazar": "Waz8",
+        "lisans": "CC0",
+        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Washington_Bridge,_RI_-_center_channel_looking_south.jpg",
+        "altyazi": "Merkez kanal hoparlörünün konumu ses netliğini belirler"
+      }
+    ],
+    "breaking": true,
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Home_cinema_1996_%2821188925955crop.jpg/1280px-Home_cinema_1996_%2821188925955crop.jpg",
+      "foto": false
+    }
+  },
+  {
     "id": "466f41069a5230cc",
     "title": "Sakarya'daki fabrikada meydana gelen ölümcül patlamanın görüntüleri çıktı",
     "slug": "sakaryadaki-fabrikada-meydana-gelen-olumcul-patlamanin-goruntuleri-cikti",
@@ -124,7 +189,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:44.510Z",
+    "gorselDeneme": "2026-10-28T06:29:15.627Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Vivo_V29e.jpg/1280px-Vivo_V29e.jpg",
@@ -236,7 +301,7 @@
     "publishedAt": "2026-10-28T05:52:30.000Z",
     "generatedAt": "2026-10-28T05:59:12.459Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:44.536Z",
+    "gorselDeneme": "2026-10-28T06:29:15.583Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/AMD_Athlon_XP_Palomino.Jpg/1280px-AMD_Athlon_XP_Palomino.Jpg",
@@ -357,7 +422,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:44.463Z",
+    "gorselDeneme": "2026-10-28T06:29:15.401Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Crime_Scene_Investigation_Unit%2C_Royal_Gibraltar_Police.jpg/1280px-Crime_Scene_Investigation_Unit%2C_Royal_Gibraltar_Police.jpg",
@@ -606,7 +671,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:44.584Z",
+    "gorselDeneme": "2026-10-28T06:29:15.440Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Burn_of_Skaw_entering_a_stormy_sea_-_geograph.org.uk_-_3848495.jpg",
@@ -847,7 +912,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:47.007Z",
+    "gorselDeneme": "2026-10-28T06:29:17.531Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Bedouin_on_the_West_Bank_of_the_Jordan_River.jpg/1280px-Bedouin_on_the_West_Bank_of_the_Jordan_River.jpg",
@@ -895,7 +960,7 @@
     "publishedAt": "2026-10-28T04:20:40.000Z",
     "generatedAt": "2026-10-28T04:29:11.378Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:44.828Z",
+    "gorselDeneme": "2026-10-28T06:29:15.669Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg/1280px-Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
@@ -1027,7 +1092,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:44.902Z",
+    "gorselDeneme": "2026-10-28T06:29:15.802Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Secretary_of_State_Peter_Kyle_visits_Anthropic_in_San_Francisco._%2854099081629%29.jpg/1280px-Secretary_of_State_Peter_Kyle_visits_Anthropic_in_San_Francisco._%2854099081629%29.jpg",
@@ -1261,7 +1326,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:44.947Z",
+    "gorselDeneme": "2026-10-28T06:29:15.914Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Istanbul_city_Photos-_Urban_18.jpg/1280px-Istanbul_city_Photos-_Urban_18.jpg",
@@ -1319,7 +1384,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:44.817Z",
+    "gorselDeneme": "2026-10-28T06:29:15.917Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Elderly_people_editing_Catalan_Wikipedia_03.JPG/1280px-Elderly_people_editing_Catalan_Wikipedia_03.JPG",
@@ -1413,7 +1478,7 @@
     "publishedAt": "2026-10-28T03:13:00.000Z",
     "generatedAt": "2026-10-28T03:29:23.658Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:44.970Z",
+    "gorselDeneme": "2026-10-28T06:29:16.053Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Binyamin_Netanyahu_in_court.jpg/1280px-Binyamin_Netanyahu_in_court.jpg",
@@ -1488,7 +1553,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:45.237Z",
+    "gorselDeneme": "2026-10-28T06:29:16.161Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Apple_MacBook_%2817181045830%29.jpg/1280px-Apple_MacBook_%2817181045830%29.jpg",
@@ -1545,7 +1610,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:45.581Z",
+    "gorselDeneme": "2026-10-28T06:29:16.809Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg/1280px-Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg",
@@ -1713,7 +1778,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:45.436Z",
+    "gorselDeneme": "2026-10-28T06:29:16.363Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/DHS_Secretary_Alejandro_Mayorkas_Tours_LA_Cyber_Command_Center_%2851283617836%29.jpg/1280px-DHS_Secretary_Alejandro_Mayorkas_Tours_LA_Cyber_Command_Center_%2851283617836%29.jpg",
@@ -1946,7 +2011,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:46.701Z",
+    "gorselDeneme": "2026-10-28T06:29:17.840Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Flickr_-_Official_U.S._Navy_Imagery_-_A_Paralympic_Games_athlete_receiving_his_competitor_uniforms..jpg/1280px-Flickr_-_Official_U.S._Navy_Imagery_-_A_Paralympic_Games_athlete_receiving_his_competitor_uniforms..jpg",
@@ -2059,7 +2124,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:47.045Z",
+    "gorselDeneme": "2026-10-28T06:29:17.522Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Istanbul_Bosphorus_Oil_Tanker_Prisco_Mizar_IMG_8579_2010.jpg/1280px-Istanbul_Bosphorus_Oil_Tanker_Prisco_Mizar_IMG_8579_2010.jpg",
@@ -2231,7 +2296,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:46.260Z",
+    "gorselDeneme": "2026-10-28T06:29:16.936Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg/1280px-Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg",
@@ -2347,7 +2412,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:46.818Z",
+    "gorselDeneme": "2026-10-28T06:29:17.653Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg/1280px-Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg",
@@ -2413,7 +2478,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:48.330Z",
+    "gorselDeneme": "2026-10-28T06:29:18.064Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/USS_Barry_launches_a_vertical_launch_anti-submarine_rocket_missile_during_Valiant_Shield_2016._%2829750275701%29.jpg/1280px-USS_Barry_launches_a_vertical_launch_anti-submarine_rocket_missile_during_Valiant_Shield_2016._%2829750275701%29.jpg",
@@ -3082,7 +3147,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:47.476Z",
+    "gorselDeneme": "2026-10-28T06:29:18.047Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg/1280px-Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg",
@@ -3201,7 +3266,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:47.284Z",
+    "gorselDeneme": "2026-10-28T06:29:17.880Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Empty_fuel_trucks_crossing_border_into_Pakistan_in_February_2010.jpg/1280px-Empty_fuel_trucks_crossing_border_into_Pakistan_in_February_2010.jpg",
@@ -3259,7 +3324,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:47.167Z",
+    "gorselDeneme": "2026-10-28T06:29:17.817Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg/1280px-Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg",
@@ -3558,7 +3623,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:47.426Z",
+    "gorselDeneme": "2026-10-28T06:29:18.094Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Istanbul_city_Photos-_Urban_01.jpg/1280px-Istanbul_city_Photos-_Urban_01.jpg",
@@ -3680,7 +3745,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:48.394Z",
+    "gorselDeneme": "2026-10-28T06:29:19.651Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/AIAP_IFGICT_Artificial_Intelligence_Auditor_Professional_Certificate.jpg/1280px-AIAP_IFGICT_Artificial_Intelligence_Auditor_Professional_Certificate.jpg",
@@ -3808,7 +3873,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:47.976Z",
+    "gorselDeneme": "2026-10-28T06:29:18.781Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Scavenging_Arctic_Fox_in_summer_colors.jpg/1280px-Scavenging_Arctic_Fox_in_summer_colors.jpg",
@@ -3936,7 +4001,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:47.569Z",
+    "gorselDeneme": "2026-10-28T06:29:18.297Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Intifada_in_Gaza_Strip_%28FL45954528%29.jpg/1280px-Intifada_in_Gaza_Strip_%28FL45954528%29.jpg",
@@ -3994,7 +4059,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:47.718Z",
+    "gorselDeneme": "2026-10-28T06:29:18.276Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/3/34/Heightened_security_following_2016_coup_attempt_at_Caglayan_Istanbul_courthouse%2C_July_21%2C_2016.jpg",
@@ -4043,7 +4108,7 @@
     "publishedAt": "2026-10-27T21:55:00.000Z",
     "generatedAt": "2026-10-27T22:25:23.193Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:48.612Z",
+    "gorselDeneme": "2026-10-28T06:29:18.993Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg/1280px-Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-90971.jpg",
@@ -4230,7 +4295,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T06:25:47.954Z",
+    "gorselDeneme": "2026-10-28T06:29:18.559Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/3/34/Heightened_security_following_2016_coup_attempt_at_Caglayan_Istanbul_courthouse%2C_July_21%2C_2016.jpg",
