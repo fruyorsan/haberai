@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T03:20:00.355Z",
+  "updatedAt": "2026-10-28T03:23:28.844Z",
   "gunluk": 32,
   "pencereGun": 45,
   "esik": {
@@ -12,9 +12,9 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 4850,
-  "aday": 4850,
-  "uygun": 2793,
+  "toplamHaber": 4851,
+  "aday": 4851,
+  "uygun": 2794,
   "secilen": 443,
   "red": {
     "özet gövdeyle aynı": 100,
@@ -30,7 +30,7 @@
     "kategorisiz": 2,
     "editör notu yok": 12,
     "günlük kota": 2313,
-    "tekrar": 37
+    "tekrar": 38
   },
   "ornekTekrarlar": [
     {
@@ -56,6 +56,10 @@
     {
       "title": "Fransa'nın borçlanma maliyeti 24 yılın en yüksek seviyesine ulaştı",
       "twin": "Fransa Tahvil Faizi 24 Yılın Zirvesinde: Hedge Fonların Rolü Tartışılıyor"
+    },
+    {
+      "title": "Apple M6 Çipli 14 İnç MacBook Pro Grafik ve AI Performansını %30 Artırdı",
+      "twin": "Apple M6 çipli 14 inç MacBook Pro tanıtıldı: İşte özellikleri ve fiyatı"
     },
     {
       "title": "Galaxy S24 Ultra sahipleri için One UI 9 sonrasında şarj krizi",
@@ -108,10 +112,6 @@
     {
       "title": "Bursa'da deprem paneli: 1855 felaketi tarihsel verilerle masaya yatırıldı",
       "twin": "Bursa deprem hafızasını masaya yatırdı: 1855 felaketi konuşuldu"
-    },
-    {
-      "title": "Tesla havalanan uçan araba tanıttı ancak hisseleri yüzde 18 eridi",
-      "twin": "Tesla uçan otomobil modelini tanıttı, hisseler yüzde 18 değer kaybetti"
     }
   ],
   "days": {
@@ -211,11 +211,11 @@
       "607a67e614530b1e",
       "12c5feaad9110757",
       "9a2a9c9d53760055",
+      "f10fad05f1498ae2",
       "0f4b8eeb3c188f14",
       "b12efe44c4c086b8",
       "eed38fa81aefa54b",
-      "0a959c2d53f08f05",
-      "1b009caa2632397f"
+      "0a959c2d53f08f05"
     ],
     "2026-10-18": [
       "b38df0538db3aa9e",
@@ -673,6 +673,7 @@
     "12c5feaad9110757",
     "9a2a9c9d53760055",
     "d12a80bd9893a669",
+    "f10fad05f1498ae2",
     "41d9a500d06c515e",
     "e9e6f2e35e96d1fb",
     "0f4b8eeb3c188f14",
@@ -689,7 +690,6 @@
     "3933ba9d049e228f",
     "e8b4d40d822b9cbf",
     "a7be2dd8cc572434",
-    "1b009caa2632397f",
     "52cefc76d7126161",
     "e329272d9fa2b48f",
     "773383828fba70c1",
