@@ -225,14 +225,15 @@ sıralamada Wikimedia stoğunun önüne geçer. Yayın kotası da 135 → **160*
 işlem, dizinden çıkarma veya yanlış property (`fruyorsan.github.io` yerine
 `haberinai.site`). Kod tarafında yapılanlar:
 
-- Çekirdek 32/gün → **75/gün**, toplam **900** URL. 4.867 haberin 919'u artık
+- Çekirdek 32/gün → **75/gün**, toplam **900** URL. 4.867 haberin 1.032'si artık
   indekslenebilir; kalanlar `noindex, follow` olarak erişilebilir kalır.
 - **Önceki indeks korunur:** `data/indeks.json` içindeki eski URL'ler yeni
   seçime taşınır. Daha önce dizine giren 414 URL'nin tamamı korundu; hiçbiri
-  `noindex`'e düşmedi.
+  `noindex`'e düşmedi. Devralma nedeniyle toplam, 900'ün bir miktar üzerine
+  çıkabilir (28.10 akşamı 1.032).
 - **`/one-cikanlar/` hub'ı:** 500 haberlik arşiv seçkisi, tek indekslenebilir
   sayfa. Sayfalama `noindex`; ana sayfa, menü ve footer'dan bağlantılı.
-- **`/image-sitemap.xml`:** 917 kapak görseli; `robots.txt`'te duyuruldu.
+- **`/image-sitemap.xml`:** 1.032 kapak görseli; `robots.txt`'te duyuruldu.
 - **IndexNow:** `--indeks` bayrağı ile yalnızca çekirdek URL'ler gönderilebilir.
 
 > Not: Bu değişiklikler gerçek arşivi **özgün tarihleriyle** açar. Eski
