@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T20:08:41.320Z",
+  "updatedAt": "2026-10-28T20:12:00.317Z",
   "gunluk": 75,
   "toplam": 900,
   "pencereGun": 45,
@@ -16,7 +16,7 @@
   "toplamHaber": 4948,
   "aday": 4948,
   "uygun": 978,
-  "secilen": 1041,
+  "secilen": 1042,
   "red": {
     "kısa özet": 34,
     "özet gövdeyle aynı": 104,
@@ -30,8 +30,8 @@
     "özgün yorum yok": 1,
     "kısa paragraflar": 1,
     "editör notu yok": 12,
-    "tekrar": 12,
-    "günlük kota": 220
+    "tekrar": 13,
+    "günlük kota": 219
   },
   "ornekTekrarlar": [
     {
@@ -53,6 +53,10 @@
     {
       "title": "Apple, iOS 27.2 güncellemesiyle Siri ve FaceTime özelliklerini güncelledi",
       "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
+    },
+    {
+      "title": "Google Gemini 4 Argon, Android Bench’te Beşinci Sırada Yer Aldı",
+      "twin": "Google, yapay zeka modeli Gemini 4 Carbon ile zirveye yerleşti"
     },
     {
       "title": "İsrail'in Gazze saldırıları 4 sivilin daha yaşamına son verdi",
@@ -151,6 +155,7 @@
       "eed38fa81aefa54b",
       "9801b34714550b37",
       "e1d2fb372f48d0a4",
+      "b136379ba9351f5d",
       "f2f7a86f054c8975",
       "f10fad05f1498ae2",
       "741e4c30fecde883",
@@ -1286,6 +1291,7 @@
     "c7918bcabe20b200",
     "b012bc7666d17e75",
     "e1d2fb372f48d0a4",
+    "b136379ba9351f5d",
     "f2f7a86f054c8975",
     "199eecef3d4748e1",
     "f10fad05f1498ae2",
@@ -1302,7 +1308,6 @@
     "330e98400984447d",
     "206ddee2cfe23b89",
     "7f67c2139c5895e6",
-    "22e9db26902b6464",
     "5482d9c10f68f7eb",
     "153993cf7f7bd3bf",
     "6755ab6e07ddb580",
@@ -1901,6 +1906,7 @@
     "fa11e44bcb8d68ea",
     "45e88db0ad9178a3",
     "9a0651425fe71315",
+    "22e9db26902b6464",
     "caa6f983369571d6",
     "6de2ca83687fd332",
     "7723ca8035a53440",
