@@ -248,10 +248,13 @@ export function getFeatured(count = 6, horizon = 20, uygun = (a) => Boolean(a.im
   const tum = getYayinArticles();
   const recent = tum.slice(0, Math.max(count * 4, horizon, 30));
 
-  const guvenliFotoMu = (a) =>
-    uygun(a) &&
-    (/^\/(?!\/)/.test(a.image || "") ||
-      /^https:\/\/(upload|thumb)\.wikimedia\.org\//i.test(a.image || ""));
+  // Kapak görseli olan haberler (yerel kapak, Wikimedia ya da kaynağın kendi
+  // fotoğrafı) manşette öne alınır; görselsiz haber geriye düşer.
+  const guvenliFotoMu = (a) => {
+    if (!uygun(a)) return false;
+    const im = String(a.image || "").trim();
+    return /^\/(?!\/)/.test(im) || /^https?:\/\//i.test(im);
+  };
 
   const yasSaat = (a) => {
     const t = publishedTime(a);
@@ -271,7 +274,7 @@ export function getFeatured(count = 6, horizon = 20, uygun = (a) => Boolean(a.im
   };
 
   // Manşet puanı: Tazelik birincil belirleyicidir (her saat başı -24 puan).
-  // Telif güvenli görsel (+34), vitrin kaynağı (+16, yalnızca <=3.5 saat tazeyse) ve
+  // Kapak görseli (+34), vitrin kaynağı (+16, yalnızca <=3.5 saat tazeyse) ve
   // dikkat çekici kategori (+12, yalnızca <=4 saat tazeyse) kendi saat diliminde öne çıkarır.
   const mansetSkoru = (a) => {
     const saat = yasSaat(a);

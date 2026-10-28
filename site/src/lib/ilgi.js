@@ -244,15 +244,13 @@ const ILGI_RE = ILGI_KALIPLARI.map(([kalip, puan]) => [kalipRe(kalip, TAM_KELIME
 const RUTIN_RE = RUTIN_KALIPLARI.map((kalip) => kalipRe(kalip, TAM_KELIME.has(kalip)));
 
 /**
- * Haberin kapak görseli telif güvenli mi?
- * Yalnızca Wikimedia Commons ve sitenin kendi yerel görselleri güvenlidir
- * (bkz. site/src/lib/kapak.js). Kaynak sitelerin og:image'ları güvenli değildir.
+ * Haberin kullanılabilir kapak görseli var mı?
+ * Yerel kapak, Wikimedia Commons veya kaynak sitenin habere ait fotoğrafı
+ * kabul edilir; yer tutucu/logo ve yüzlerce haberde tekrar eden kareler
+ * kapak.js içinde elenir.
  */
 export function guvenliKapakMi(a) {
-  const img = String(a?.image || "").trim();
-  if (!img) return false;
-  if (/^\/(?!\/)/.test(img)) return true;
-  return /^https:\/\/(upload|thumb)\.wikimedia\.org\//i.test(img);
+  return Boolean(kapakKaynagi(a));
 }
 
 /**
