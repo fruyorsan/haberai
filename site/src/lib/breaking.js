@@ -9,10 +9,10 @@ const DAY_MS = 24 * 60 * 60 * 1000;
 
 /**
  * Son 24 saatteki haberlerden "son dakika" listesini üretir.
- * - `breaking === true` olanlar ya da yayını ≤120 dk olanlar öne alınır.
+ * - Yalnızca yayını ≤120 dk olanlar "son dakika" sayılır; `breaking` işareti
+ *   tek başına yeterli değildir (eski haberler 24 saat "son dakika" görünmesin).
  * - Kalan öğeler yeni→eski sıralanır.
  * - En fazla `limit` öğe döner.
- * Veri `breaking` alanını içermeyebilir; bu yüzden yokluğuna dayanıklıdır.
  */
 export function getBreakingItems({ limit = BREAKING_MAX, now = Date.now() } = {}) {
   return getYayinArticles()
@@ -28,7 +28,7 @@ export function getBreakingItems({ limit = BREAKING_MAX, now = Date.now() } = {}
         source: a.source || "",
         publishedAt: iso,
         ago: timeAgo(iso),
-        breaking: a.breaking === true || fresh,
+        breaking: fresh,
         note: a.editorNote || "",
         _t: Number.isFinite(t) ? t : 0,
       };

@@ -59,6 +59,23 @@ async function main() {
   const seen = existingIds(articles);
   console.log(`Mevcut arşiv: ${articles.length} haber`);
 
+  // Eski "son dakika" işaretlerini temizle: 48 saatten eski haber artık son
+  // dakika değildir. Aksi hâlde şerit, rozet ve bildirim eski haberi "son
+  // dakika" gibi gösteriyordu.
+  {
+    const esik = Date.now() - 48 * 3600000;
+    let temiz = 0;
+    for (const a of articles) {
+      if (a.breaking !== true) continue;
+      const t = Date.parse(a.publishedAt || a.generatedAt || 0);
+      if (!Number.isFinite(t) || t < esik) {
+        delete a.breaking;
+        temiz++;
+      }
+    }
+    if (temiz) console.log(`Eski son dakika işareti temizlendi: ${temiz}`);
+  }
+
   // Arşivdeki "aynı haber" tekrarlarını temizle. Giriş süzgeci farklı
   // çalıştırmalarda takılanları kaçırabiliyor; bu adım her turda çalışarak
   // arşivi kendi kendine temiz tutar.

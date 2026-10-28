@@ -84,6 +84,10 @@ export function akisKart(a, sira = 0) {
     ? `<a class="ak__kat" href="${katUrl}">${kat}</a>`
     : `<span class="ak__kat">${kat}</span>`;
   const zaman = kac(timeAgo(publishedISO(a)));
+  // "Son dakika" yalnızca gerçekten taze haberlerde: veride eski kayıtlarda
+  // kalmış `breaking` işareti akışta yanlış etiket üretmesin.
+  const yayinT = Date.parse(a.publishedAt || a.generatedAt || 0);
+  const sonDakika = a.breaking === true && Number.isFinite(yayinT) && Date.now() - yayinT <= 120 * 60 * 1000;
   // İlk kart vitrin gibidir: hemen yüklenir (LCP). Sonrakiler tembel.
   const oncelik = sira === 0;
 
@@ -96,12 +100,12 @@ export function akisKart(a, sira = 0) {
     : "";
 
   return `<article class="ak" data-slug="${slug}" data-ad="${kac(a.title)}" data-kat="${kac(a.categorySlug)}" data-ilgi="${puan}"${
-    a.breaking === true ? ' data-son="1"' : ""
+    sonDakika ? ' data-son="1"' : ""
   }>
   <div class="ak__gorsel${gorsel ? "" : " ak__gorsel--yok"}">
     ${gorselBlok}
     ${katBlok}
-    ${a.breaking === true ? '<span class="ak__son"><i></i>SON DAKİKA</span>' : ""}
+    ${sonDakika ? '<span class="ak__son"><i></i>SON DAKİKA</span>' : ""}
   </div>
   <div class="ak__govde">
     <h2 class="ak__baslik"><a href="/haber/${slug}/">${baslik}</a></h2>
