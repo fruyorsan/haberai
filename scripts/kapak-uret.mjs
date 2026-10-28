@@ -56,6 +56,10 @@ const tekId = process.argv.find((a) => a.startsWith("--id="))?.split("=")[1] || 
 const sadeceFotoYok = process.argv.includes("--fotoyok");
 // --kapakli: kapak dosyası olan TÜM haberleri yeniden üretir (eski tasarımdan geçiş).
 const sadeceKapakli = process.argv.includes("--kapakli");
+// --stok: `image` alanı hâlâ Wikimedia stoğu olan haberleri hedefler (yaş sınırı
+// yok). Kaynaktan gerçek fotoğraf bulunursa o, bulunamazsa habere özgü tasarım
+// kartı üretilir; böylece başlıkla ilgisiz stok kareler kalkar.
+const sadeceStok = process.argv.includes("--stok");
 // --paralel=N: eşzamanlı indirme sayısı (varsayılan 6).
 const paralel = arg("paralel", 6);
 // DEBUG_KAPAK=1: her haber için hangi görselin neden seçildiğini yazar.
@@ -91,6 +95,9 @@ const hedefler = articles
     }
     if (sadeceFotoYok) {
       return a.kapak && a.kapak.foto === false;
+    }
+    if (sadeceStok) {
+      return /wikimedia\.org/i.test(String(a.image || ""));
     }
     if (sadeceKapakli) {
       return Boolean(a.kapak);

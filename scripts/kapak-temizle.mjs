@@ -62,6 +62,21 @@ for (const a of articles) {
   }
 }
 
+// Kaynağı Wikimedia stoğu olan tasarım kartları korunur: kapsam dışına çıkınca
+// `image` alakasız bir stok kareye döneceğine, habere özgü kategori + kısa
+// çengel taşıyan kart kalsın (kırık görsel yok, konuyla ilgisiz fotoğraf yok).
+let stokKarti = 0;
+for (const a of articles) {
+  if (!a || !a.id) continue;
+  const k = a.kapak;
+  if (!k || k.foto !== false) continue;
+  if (!String(a.image || "").startsWith(`${URL_TABANI}/`)) continue;
+  if (/wikimedia\.org/i.test(String(k.kaynak || ""))) {
+    korunacak.add(String(a.id));
+    stokKarti++;
+  }
+}
+
 if (!fs.existsSync(CIKTI_DIZIN)) {
   console.log("Kapak dizini yok, yapılacak iş yok.");
   process.exit(0);
@@ -118,5 +133,5 @@ if (!dry && silinenIdler.size) {
 console.log(
   `Kapak temizliği${dry ? " [dry]" : ""}: ${silinen} dosya silindi, ` +
     `${geriAlinan} haber kaynak fotoğrafına döndürüldü ` +
-    `(korunan: ${korunacak.size} haber, son ${gun} gün: ${taze}).`
+    `(korunan: ${korunacak.size} haber, son ${gun} gün: ${taze}, stok yerine kart: ${stokKarti}).`
 );
