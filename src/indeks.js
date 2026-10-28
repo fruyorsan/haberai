@@ -11,9 +11,17 @@
 //
 //   - Kalite kapısı: yeterli gövde, maddeli özet, editör notu, özgün yorum,
 //     telif güvenli fotoğraf, spam olmayan başlık.
-//   - Tekrar ayıklama: başlık benzerliği + günlük kota (varsayılan 32/gün).
-//   - Pencere: son 45 gün. Dışındaki haberler sayfa olarak yaşar (okuyucu
+//   - Tekrar ayıklama: aynı olayı anlatan haberlerden yalnızca en iyisi girer.
+//   - Kota YOK (2026-10-29): kalite kapısını geçen her haber dizine açıktır.
+//   - Pencere: son 400 gün. Dışındaki haberler sayfa olarak yaşar (okuyucu
 //     doğrudan bağlantıyla görür) ama vitrinde listelenmez ve `noindex` olur.
+//
+// 24.10.2026 DERSİ: O gün sitemap 5.487 → 195 URL'e indirildi ve günlük kota
+// 12'ye çekildi. Kalite kapısını GEÇEN 1.786 haber sadece "o gün kotayı
+// doldurdu" diye noindex'te kaldı. Google'ın gördüğü tablo "site 4.800 haber
+// yayınlıyor ama 4.400'ünü kendisi gizliyor" oldu; ertesi gün trafik sıfıra
+// indi. Kota, iyi içeriği gizlemenin değil, kötü içeriği engellemenin aracıdır;
+// kalite kapısı zaten bu işi yapıyor. Bu yüzden kota kaldırıldı.
 //
 // Karar deterministiktir: aynı veri + aynı eşik = aynı liste. Böylece her
 // derlemede URL'ler indeksli/noindex arasında zıplamaz.
@@ -49,19 +57,17 @@ function oncekiIndeks() {
 }
 
 /**
- * Günde vitrine girecek en iyi haber sayısı.
+ * Günde dizine açılacak en iyi haber sayısı. **0 = sınırsız (varsayılan).**
  *
- * 32 → 75 (27.10.2026): arşivde kalite kapısını geçen 2.700+ haber varken
- * yalnızca ~400'ü dizine açıktı. Google'a "sitemde 4.800 haber var ama
- * 4.400'ü noindex" demek, trafik düşüşünde en büyük kendi kendine zarar
- * veren kalıptı. Günlük kota, tek bir günün çekirdeği doldurmasını önler;
- * toplam kota (aşağıda) arşivin tamamının indekslenmesini engeller.
+ * Kalite kapısını geçen her haber dizine açılır. Kota yalnızca acil bir
+ * durumda (Google tarafında yeni bir uyarı) `INDEKS_GUNLUK` ile geçici olarak
+ * daraltmak için bırakıldı; normal işleyişte kullanılmaz.
  */
-const GUNLUK = Number(process.env.INDEKS_GUNLUK || 75);
-/** Çekirdeğin toplam üst sınırı. 0 = sınırsız. */
-const TOPLAM = Number(process.env.INDEKS_TOPLAM || 900);
-/** Çekirdeğin geriye dönük penceresi (gün). */
-const PENCERE_GUN = Number(process.env.INDEKS_PENCERE_GUN || 45);
+const GUNLUK = Number(process.env.INDEKS_GUNLUK ?? 0) || 0;
+/** Çekirdeğin toplam üst sınırı. 0 = sınırsız (varsayılan). */
+const TOPLAM = Number(process.env.INDEKS_TOPLAM ?? 0) || 0;
+/** Çekirdeğin geriye dönük penceresi (gün). Arşiv de indekslenebilir kalsın. */
+const PENCERE_GUN = Number(process.env.INDEKS_PENCERE_GUN ?? 400) || 400;
 
 /**
  * Kalite kapısı eşikleri. Ortam değişkeniyle gevşetilebilir; amaç kaliteyi
@@ -294,7 +300,7 @@ function main() {
       continue;
     }
 
-    if ((gunSayaci.get(gun) || 0) >= GUNLUK) {
+    if (GUNLUK > 0 && (gunSayaci.get(gun) || 0) >= GUNLUK) {
       red["günlük kota"] = (red["günlük kota"] || 0) + 1;
       continue;
     }
