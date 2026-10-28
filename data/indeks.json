@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T21:49:45.156Z",
+  "updatedAt": "2026-10-28T21:55:49.438Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 4967,
-  "aday": 4967,
-  "uygun": 2916,
-  "secilen": 2821,
+  "toplamHaber": 4968,
+  "aday": 4968,
+  "uygun": 2917,
+  "secilen": 2822,
   "red": {
     "kısa özet": 34,
     "özet gövdeyle aynı": 104,
@@ -86,6 +86,10 @@
       "twin": "Bursa deprem hafızasını masaya yatırdı: 1855 felaketi konuşuldu"
     },
     {
+      "title": "Japonya Meteoroloji Ajansı, 7.0 Büyüklükte Depremi 470 km Derinlikte Kayıt Etti",
+      "twin": "Japonya, 7 Şiddetinde Depremi Bildirdi; Tsunami Riski Yok"
+    },
+    {
       "title": "Fransa'nın borçlanma maliyeti 24 yılın en yüksek seviyesine ulaştı",
       "twin": "Fransa Tahvil Faizi 24 Yılın Zirvesinde: Hedge Fonların Rolü Tartışılıyor"
     },
@@ -108,10 +112,6 @@
     {
       "title": "Elon Musk'tan Cumhuriyetçilere 200 milyon doları aşan seçim desteği",
       "twin": "Elon Musk, ABD seçimleri için Cumhuriyetçilere 200 milyon dolardan fazla aktardı"
-    },
-    {
-      "title": "Samsung Galaxy S27 serisi, ocak ayında 100 dolar zamla gelebilir",
-      "twin": "Samsung Galaxy Fit 4 modeli, 100 dolar altı fiyatla geliyor"
     }
   ],
   "days": {
@@ -349,7 +349,6 @@
       "aac2fd30a29a8e67",
       "c7918bcabe20b200",
       "b012bc7666d17e75",
-      "fb5bbfffc4661939",
       "650f20e43ca510e9",
       "8d81ac6b3dbd74c6",
       "58306fa7d8281ea4",
@@ -364,6 +363,7 @@
       "4ce40386cade254d",
       "f8a0b434e80f1b8a",
       "8f4d11d7e23b47a1",
+      "fb5bbfffc4661939",
       "a650bc2c1d092da8",
       "e7ba8e07cc342c4c",
       "fb864d3f2811a6cb",
@@ -371,7 +371,6 @@
       "2b5454c4419965d5",
       "b911d19fdbfa497c",
       "c12dcace83fc311c",
-      "5c0331f3569cf314",
       "9725210dfb8f0271",
       "b81397dd5941021f",
       "c398013b8abbad15",
@@ -396,6 +395,7 @@
       "e3b01c6940f4abe4",
       "2eb4853378746a13",
       "195d3ee2057a52cd",
+      "5c0331f3569cf314",
       "ed25fc1b933fb415",
       "821ae3a10fb2a782",
       "b7a264115cc859e5",
@@ -586,6 +586,7 @@
       "ae3c1beedd89dfd9",
       "3163f604feb7173b",
       "5061d826353ba18f",
+      "dc453e940c0ec238",
       "ac04d82d79708bf6"
     ],
     "2026-10-22": [
@@ -3096,7 +3097,6 @@
     "b136379ba9351f5d",
     "f2f7a86f054c8975",
     "f10fad05f1498ae2",
-    "fb5bbfffc4661939",
     "741e4c30fecde883",
     "650f20e43ca510e9",
     "8d81ac6b3dbd74c6",
@@ -3148,6 +3148,7 @@
     "e4689cb8019010a8",
     "199eecef3d4748e1",
     "8f4d11d7e23b47a1",
+    "fb5bbfffc4661939",
     "a650bc2c1d092da8",
     "e7ba8e07cc342c4c",
     "88afc4c46ff5a08a",
@@ -3166,7 +3167,6 @@
     "c12dcace83fc311c",
     "511c4225152943a7",
     "153993cf7f7bd3bf",
-    "5c0331f3569cf314",
     "9725210dfb8f0271",
     "6755ab6e07ddb580",
     "1c5611571b05131b",
@@ -3177,6 +3177,7 @@
     "ae3c1beedd89dfd9",
     "c398013b8abbad15",
     "d12a80bd9893a669",
+    "3163f604feb7173b",
     "03f794bcefdd2bd7",
     "41d9a500d06c515e",
     "d83c4b0daa3b8572",
@@ -3235,6 +3236,7 @@
     "6cb9ac8ca7e61c5b",
     "52cefc76d7126161",
     "195d3ee2057a52cd",
+    "5c0331f3569cf314",
     "e329272d9fa2b48f",
     "4023ecfa66c5083e",
     "e7db509e5813fbd3",
@@ -3262,7 +3264,6 @@
     "5ff1e6958ca97917",
     "cda279011dcbaf31",
     "925221d6fe5a7008",
-    "3163f604feb7173b",
     "be5ee16d0d74ff66",
     "74a77cbb25090fa6",
     "a813b60a7f3c22f1",
@@ -3785,6 +3786,7 @@
     "d71f03ee8d88de43",
     "1c6ce357ff9cc5b6",
     "8182948dabe61c33",
+    "dc453e940c0ec238",
     "9787cc38a34d4893",
     "38135c0942f6278a",
     "ac04d82d79708bf6",
