@@ -60,6 +60,11 @@ const sadeceKapakli = process.argv.includes("--kapakli");
 // yok). Kaynaktan gerçek fotoğraf bulunursa o, bulunamazsa habere özgü tasarım
 // kartı üretilir; böylece başlıkla ilgisiz stok kareler kalkar.
 const sadeceStok = process.argv.includes("--stok");
+// --stokkaynak: yerel kapak dosyası olan ama `kapak.kaynak` alanı hâlâ Wikimedia
+// stoğu olan haberleri hedefler. Bu kareler başlıkla ilgisiz olabiliyor; yeniden
+// üretimde stok adayı hiç denenmez: yayıncının kendi fotoğrafı bulunursa o,
+// bulunamazsa kategori + kısa çengel taşıyan tasarım kartı üretilir.
+const sadeceStokKaynak = process.argv.includes("--stokkaynak");
 // --paralel=N: eşzamanlı indirme sayısı (varsayılan 6).
 const paralel = arg("paralel", 6);
 // DEBUG_KAPAK=1: her haber için hangi görselin neden seçildiğini yazar.
@@ -98,6 +103,13 @@ const hedefler = articles
     }
     if (sadeceStok) {
       return /wikimedia\.org/i.test(String(a.image || ""));
+    }
+    if (sadeceStokKaynak) {
+      return (
+        String(a.image || "").startsWith(`${URL_TABANI}/`) &&
+        a.kapak?.foto === true &&
+        /wikimedia\.org/i.test(String(a.kapak?.kaynak || ""))
+      );
     }
     if (sadeceKapakli) {
       return Boolean(a.kapak);
@@ -277,31 +289,104 @@ const KART_SON_EK = new Set([
   "üzerine", "karşı", "olarak", "ise", "mi", "mı", "mu", "mü",
 ]);
 
+// 81 il: kart başlığında "İstanbul Sultangazi'de Araç Alev..." gibi yer adıyla
+// başlayan ifadeler yerine olayı anlatan kısım tercih edilir.
+const ILLER = new Set(
+  ("adana adıyaman afyonkarahisar ağrı aksaray amasya ankara antalya ardahan artvin " +
+    "aydın balıkesir bartın batman bayburt bilecik bingöl bitlis bolu burdur bursa çanakkale " +
+    "çankırı çorum denizli diyarbakır düzce edirne elazığ erzincan erzurum eskişehir gaziantep " +
+    "giresun gümüşhane hakkari hatay ısparta ığdır istanbul izmir kahramanmaraş karabük karaman kars " +
+    "kastamonu kayseri kilis kırıkkale kırklareli kırşehir kocaeli konya kütahya malatya manisa " +
+    "mardin mersin muğla muş nevşehir niğde ordu osmaniye rize sakarya samsun siirt sinop sivas " +
+    "şırnak tekirdağ tokat trabzon tunceli uşak van yalova yozgat zonguldak")
+    .split(" ")
+    .filter(Boolean)
+);
+
+/** Baştaki yer adı mı? ("Ankara'da", "Sultangazi'de", "Silivri'deki", "İzmir") */
+function yerAdiMi(kelime) {
+  const duz = String(kelime || "").toLocaleLowerCase("tr");
+  const kok = duz.replace(/['’].*$/, "");
+  if (ILLER.has(kok)) return true;
+  return /['’](de|da|te|ta|nde|nda|deki|daki|teki|taki|den|dan|ten|tan)$/.test(duz);
+}
+
 function kartBasligi(baslik) {
   const temiz = String(baslik || "")
     .replace(/\s*[|–—-]\s*(son dakika|flaş|video|foto|galeri|izle).*$/i, "")
-    .replace(/["“”'’]/g, "")
+    .replace(/["“”]/g, "")
     .replace(/\s+/g, " ")
     .trim();
 
   // İki nokta/uzun çizgi varsa öncesi genelde tam bir ifadedir ("Romanya'da
   // sarsıntı: AFAD ve EMSC..."). Onu kullanmak kesilmiş cümle görüntüsünü önler.
   const onBolum = temiz.split(/\s*[:–—]\s*/)[0].trim();
-  const onKelimeler = onBolum.split(" ").filter(Boolean);
-  const kaynak = onKelimeler.length >= 2 && onBolum.length <= 40 ? onBolum : temiz;
+  const sonraBolum = temiz.split(/\s*[:–—]\s*/).slice(1).join(" ").trim();
+  let onKelimeler = onBolum.split(" ").filter(Boolean);
 
-  const kelimeler = kaynak.split(" ").filter(Boolean);
-  const sec = (n) => kelimeler.slice(0, n);
-  let secilen = sec(5);
-  if (secilen.join(" ").length > 30) secilen = sec(4);
-  // Cümleyi bağlaç/edatla bitirme ("... AFAD ve" gibi).
-  while (secilen.length > 2 && KART_SON_EK.has(secilen[secilen.length - 1].toLocaleLowerCase("tr"))) {
-    secilen.pop();
+  // "Silivri'deki gemi faciasında yeni gelişme: Bir cansız bedene ulaşıldı"
+  // gibi başlıklarda ilk parça haberin kendisini söylemiyor (gelişme, açıklama,
+  // iddia...); asıl olay iki noktadan sonra gelir.
+  const belirsiz = /(yeni gelişme|gelişme|açıklama|iddia|detay|soru|işte|dikkat|neden|nasıl)/i;
+  if (belirsiz.test(onBolum) && sonraBolum.split(" ").filter(Boolean).length >= 3) {
+    onKelimeler = sonraBolum.split(" ").filter(Boolean);
   }
-  let kisa = secilen.join(" ").replace(/[\s,.;:!?–—-]+$/, "");
-  if (kisa.length > 32) kisa = `${kisa.slice(0, 30).replace(/[\s,.;:!?–—-]+$/, "")}`;
-  const satirlar = sar(kisa, 17).slice(0, 2);
-  return { boyut: 64, lh: 78, satirlar };
+
+  // "Beşiktaş, Olympiakos karşısında 81-73 yenildi" gibi başlıklarda ilk parça
+  // tek kelimeyse (özne) olayı anlatan ikinci parça kullanılır.
+  if (onKelimeler.length < 3) {
+    const virgulSonrasi = temiz.split(/\s*,\s*/).slice(1).join(", ").trim();
+    if (virgulSonrasi.split(" ").filter(Boolean).length >= 3) {
+      onKelimeler = virgulSonrasi.split(" ").filter(Boolean);
+    }
+  }
+
+  // Baştaki yer adlarını at ("İstanbul Sultangazi'de Araç Alev Topuna Dönüştü"
+  // → "Araç Alev Topuna Dönüştü").
+  let atilan = 0;
+  while (onKelimeler.length > 3 && atilan < 2 && yerAdiMi(onKelimeler[0])) {
+    onKelimeler.shift();
+    atilan++;
+  }
+
+  const onMetin = onKelimeler.join(" ");
+  // 40 karakter sınırı, yeri atılmış kısa ifadeyi gereksiz yere tüm başlığa
+  // düşürüyordu; iki satıra sığan 52 karaktere kadar kullan.
+  const kaynak = onKelimeler.length >= 2 && onMetin.length <= 52 ? onMetin : temiz;
+
+  // İki satıra sığacak şekilde kelime kelime doldur; sığmayan kuyruk atılır
+  // (yarım kalan "... Araç" gibi ifadeler yerine tam ifade kalsın).
+  const SATIR_HARF = 18;
+  const satirlar = [];
+  let satir = "";
+  for (const kelime of kaynak.split(" ").filter(Boolean)) {
+    if (satirlar.length >= 2) break;
+    const aday = satir ? `${satir} ${kelime}` : kelime;
+    if (!satir || aday.length <= SATIR_HARF) satir = aday;
+    else {
+      satirlar.push(satir);
+      satir = kelime;
+    }
+  }
+  if (satir && satirlar.length < 2) satirlar.push(satir);
+
+  // Son satırı bağlaç/edatla bitirme ("... AFAD ve" gibi).
+  while (satirlar.length) {
+    const son = satirlar[satirlar.length - 1].split(" ").filter(Boolean);
+    if (son.length > 1 && KART_SON_EK.has(son[son.length - 1].toLocaleLowerCase("tr"))) son.pop();
+    else break;
+    satirlar[satirlar.length - 1] = son.join(" ");
+  }
+
+  const temizSatirlar = satirlar
+    .map((s) => s.replace(/[,.;:!?]+$/, "").trim())
+    .filter(Boolean)
+    // Yer adı atıldığında cümle küçük harfle başlıyordu ("gemi faciasında...").
+    .map((s, i) =>
+      i === 0 && s ? s.charAt(0).toLocaleUpperCase("tr") + s.slice(1) : s
+    );
+
+  return { boyut: 64, lh: 78, satirlar: temizSatirlar };
 }
 
 function kapakSvg() {
@@ -523,7 +608,9 @@ async function kapakUret(a) {
     const fotoIzinli =
       uygunMu(kaynak, sorgu) &&
       (FOTO_KATEGORI.has(String(a.category || "")) || ozelAdUyuyor(kaynak, a.title));
-    if (fotoIzinli) adayEkle(kaynak, "veri");
+    // Stok kaynaklı eski kapağı yenilerken aynı stok kareyi tekrar seçme.
+    const stokAday = /wikimedia\.org/i.test(kaynak);
+    if (fotoIzinli && !(sadeceStokKaynak && stokAday)) adayEkle(kaynak, "veri");
   }
 
   // En fazla 4 aday indirilir; iyi bir kare çıkınca erken bırakılır (hız).
@@ -574,7 +661,7 @@ async function kapakUret(a) {
     console.log(`   · ${a.id} tüm adaylar zayıf, tasarımlı karta düşülüyor`);
   }
 
-  if (!taban && !sadeceKart && FOTO_KATEGORI.has(String(a.category || ""))) {
+  if (!taban && !sadeceKart && !sadeceStokKaynak && FOTO_KATEGORI.has(String(a.category || ""))) {
     try {
       const ov = await openverseAra(sorgu);
       if (ov) {
