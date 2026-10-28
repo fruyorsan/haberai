@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T13:02:18.123Z",
+  "updatedAt": "2026-10-28T13:06:13.742Z",
   "gunluk": 32,
   "pencereGun": 45,
   "esik": {
@@ -12,16 +12,16 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 4923,
-  "aday": 4923,
-  "uygun": 2867,
+  "toplamHaber": 4925,
+  "aday": 4925,
+  "uygun": 2868,
   "secilen": 443,
   "red": {
+    "editör notu özetle aynı": 6,
     "özet gövdeyle aynı": 100,
     "maddeli özet yok": 106,
     "paragraf yapısı zayıf": 47,
     "kısa gövde": 1732,
-    "editör notu özetle aynı": 5,
     "kısa özet": 33,
     "tekrarlı paragraf": 1,
     "yorum özgün değil": 15,
@@ -29,7 +29,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "günlük kota": 2391,
+    "günlük kota": 2392,
     "tekrar": 33
   },
   "ornekTekrarlar": [
