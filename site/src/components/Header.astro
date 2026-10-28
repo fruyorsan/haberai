@@ -1,6 +1,7 @@
 ---
 import MarketTicker from "./MarketTicker.astro";
 import Bildirim from "./Bildirim.astro";
+import DilDugme from "./DilDugme.astro";
 
 const nav = [
   { label: "Ana Sayfa", href: "/" },
@@ -89,6 +90,12 @@ const isActive = (href) =>
         <span class="sr-only">— hesabım</span>
       </a>
       <Bildirim />
+      {/* Arayüz dili: yalnızca masaüstünde üst çubukta görünür.
+          Mobilde düğme piyasa şeridinde ve alt bilgide kalır; telefonda
+          profil/bildirim/tema düzeni hiç değişmez. */}
+      <div class="header__dil" data-dil-sec>
+        <DilDugme />
+      </div>
       <button
         class="theme-toggle"
         id="theme-toggle"
@@ -949,6 +956,20 @@ const isActive = (href) =>
     }
     .logo__text {
       font-size: 1.05rem;
+    }
+  }
+
+  /* Arayüz dili düğmesi: yalnızca masaüstünde üst çubukta.
+     Mobilde (≤ 1023px) tamamen gizli; telefonda düğme piyasa şeridinde
+     ve alt bilgide durur, üst çubuktaki profil/bildirim/tema düzeni
+     hiç değişmez. */
+  .header__dil {
+    display: none;
+  }
+  @media (min-width: 1024px) {
+    .header__dil {
+      display: flex;
+      align-items: center;
     }
   }
 

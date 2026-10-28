@@ -1,6 +1,7 @@
 ---
 import { getMarket } from "../lib/market.js";
 import { chartPaths, nf, pf } from "../lib/chart.js";
+import DilDugme from "./DilDugme.astro";
 
 const { items } = getMarket();
 
@@ -66,9 +67,11 @@ const rows = tickerItems.map((it) => ({
       </div>
     </div>
 
-    {/* Arayüz dili: site genelinde üst şeritten erişilir. Düğme dil.js
-        tarafından basılır; JS yoksa boş kalır ve hiç yer kaplamaz. */}
-    <div class="mticker__dil" data-dil-sec></div>
+    {/* Arayüz dili: site genelinde üst şeritten erişilir. Düğme sunucuda
+        basılır (JS beklemeden görünür); dil.js yalnızca davranışı bağlar. */}
+    <div class="mticker__dil" data-dil-sec>
+      <DilDugme />
+    </div>
   </div>
 )}
 
