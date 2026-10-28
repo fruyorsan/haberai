@@ -261,35 +261,40 @@ function sar(metin, enFazla) {
   return satirlar;
 }
 
-// Tasarımlı kartlar için başlık: en çok 3 satır, sığmazsa punto küçülür.
+// Tasarımlı kartlar için başlık: kapakta uzun başlık yerine kısa bir "çengel".
+// Uzun metin küçük puntoda okunmuyor ve kartı kalabalıklaştırıyor; 2 satırı
+// geçmeyen 3-5 kelimelik ifade + kategori etiketi yeterli, göz başlığa gider.
+const KART_SON_EK = new Set([
+  "ve", "ile", "için", "bir", "bu", "şu", "da", "de", "ta", "te", "ya", "veya",
+  "ama", "ancak", "ki", "en", "çok", "daha", "göre", "kadar", "sonra", "önce",
+  "üzerine", "karşı", "olarak", "ise", "mi", "mı", "mu", "mü",
+]);
+
 function kartBasligi(baslik) {
-  const adaylar = [
-    { boyut: 62, harf: 22 },
-    { boyut: 54, harf: 26 },
-    { boyut: 46, harf: 31 },
-  ];
-  let secim = null;
-  for (const s of adaylar) {
-    const satirlar = sar(baslik, s.harf);
-    if (satirlar.length <= 3) {
-      secim = { ...s, satirlar };
-      break;
-    }
+  const temiz = String(baslik || "")
+    .replace(/\s*[|–—-]\s*(son dakika|flaş|video|foto|galeri|izle).*$/i, "")
+    .replace(/["“”'’]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  // İki nokta/uzun çizgi varsa öncesi genelde tam bir ifadedir ("Romanya'da
+  // sarsıntı: AFAD ve EMSC..."). Onu kullanmak kesilmiş cümle görüntüsünü önler.
+  const onBolum = temiz.split(/\s*[:–—]\s*/)[0].trim();
+  const onKelimeler = onBolum.split(" ").filter(Boolean);
+  const kaynak = onKelimeler.length >= 2 && onBolum.length <= 40 ? onBolum : temiz;
+
+  const kelimeler = kaynak.split(" ").filter(Boolean);
+  const sec = (n) => kelimeler.slice(0, n);
+  let secilen = sec(5);
+  if (secilen.join(" ").length > 30) secilen = sec(4);
+  // Cümleyi bağlaç/edatla bitirme ("... AFAD ve" gibi).
+  while (secilen.length > 2 && KART_SON_EK.has(secilen[secilen.length - 1].toLocaleLowerCase("tr"))) {
+    secilen.pop();
   }
-  if (!secim) {
-    const satirlar = sar(baslik, 34).slice(0, 3);
-    satirlar[satirlar.length - 1] = satirlar[satirlar.length - 1].replace(/[\s,.;:!?]+$/, "") + "…";
-    secim = { boyut: 42, harf: 34, satirlar };
-  }
-  // Türkçe geniş harfler (ü, ş, ğ) yüzünden karakter sayımı yetmiyor: en uzun
-  // satırın tahmini genişliği metin alanını aşarsa puntoyu küçült.
-  const enUzun = Math.max(...secim.satirlar.map((s) => s.length));
-  const tahmini = enUzun * secim.boyut * 0.56;
-  const sinir = 700;
-  if (tahmini > sinir) {
-    secim.boyut = Math.max(30, Math.floor((secim.boyut * sinir) / tahmini));
-  }
-  return { boyut: secim.boyut, lh: Math.round(secim.boyut * 1.22), satirlar: secim.satirlar };
+  let kisa = secilen.join(" ").replace(/[\s,.;:!?–—-]+$/, "");
+  if (kisa.length > 32) kisa = `${kisa.slice(0, 30).replace(/[\s,.;:!?–—-]+$/, "")}`;
+  const satirlar = sar(kisa, 17).slice(0, 2);
+  return { boyut: 64, lh: 78, satirlar };
 }
 
 function kapakSvg() {
