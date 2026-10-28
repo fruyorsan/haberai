@@ -395,7 +395,9 @@ kullanmaya devam eder.
 - **`/image-sitemap.xml`**: çekirdekteki her haberin kapak görselini `image:loc` ve
   `image:title` ile bildirir. `robots.txt` içinde `Sitemap:` satırıyla duyurulur.
 - Site haritası yalnızca indekslenebilir URL'leri içerir; `noindex` sayfa sitemap'e
-  girmez. 28.10.2026 itibarıyla çekirdek **919 haber URL'si** (917 kapak görseli).
+  girmez. 28.10.2026 akşamı itibarıyla çekirdek **1.032 haber URL'si** ve aynı
+  sayıda kapak görseli. Devralma (dün dizinde olan URL bugün düşmesin) kuralı
+  nedeniyle çekirdek, `INDEKS_TOPLAM` değerinin bir miktar üzerine çıkabilir.
 
 ## Arayüz dili (TR ⇄ EN)
 
