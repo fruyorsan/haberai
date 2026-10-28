@@ -7,7 +7,9 @@
    yalnızca ARAYÜZ etiketleri tarayıcıda çevrilir; haber başlığı, özeti, gövdesi
    ve yorum metinleri olduğu gibi (Türkçe) kalır ve SEO'ya hiç dokunulmaz.
 
-   - Tercih localStorage'da tutulur ("hb-dil").
+   - Tercih sessionStorage'da tutulur ("hb-dil"): her yeni ziyaret Türkçe
+     başlar, aynı sekmede yenileme İngilizceyi korur. Eski kalıcı
+     localStorage kaydı okunmaz ve temizlenir.
    - Erken inline betik (Base.astro) ilk boyamadan önce <html lang/data-dil>
      değerini ayarlar; böylece Türkçe metin bir an görünüp kaybolmaz.
    - Metin düğümleri ve birkaç öznitelik (aria-label/title/placeholder)
@@ -890,10 +892,18 @@
         GLOBE +
         '<span class="dil-btn__kod" data-dil-kod>EN</span>' +
         '<span class="dil-btn__ad" data-dil-ad>English</span>';
-      b.addEventListener("click", function () {
+      yer.appendChild(b);
+    }
+    /* Düğmeler artık sunucuda da basılıyor (DilDugme.astro); bu yüzden
+       yalnızca yeni eklenenlere değil, davranışı henüz bağlanmamış tüm
+       düğmelere tıklama eklenir. */
+    var dugmeler = document.querySelectorAll("[data-dil-btn]");
+    for (var j = 0; j < dugmeler.length; j++) {
+      if (dugmeler[j].__dilBagli) continue;
+      dugmeler[j].__dilBagli = true;
+      dugmeler[j].addEventListener("click", function () {
         dilDegistir(dil === "en" ? "tr" : "en", true);
       });
-      yer.appendChild(b);
     }
     dugmeleriGuncelle();
   }
@@ -964,7 +974,11 @@
     if (og) og.setAttribute("content", dil === "en" ? "en_US" : "tr_TR");
     if (kaydet) {
       try {
-        localStorage.setItem(DEPO, dil);
+        sessionStorage.setItem(DEPO, dil);
+      } catch (e) {}
+      // Eski kalıcı tercih kalmasın: sonraki ziyaretler Türkçe başlasın.
+      try {
+        localStorage.removeItem(DEPO);
       } catch (e) {}
     }
     uygula();
@@ -977,7 +991,9 @@
     dugmeleriKur();
     var kayitli = "tr";
     try {
-      kayitli = localStorage.getItem(DEPO) === "en" ? "en" : "tr";
+      // Varsayılan Türkçe: tercih yalnızca bu sekme oturumunda yaşar.
+      if (sessionStorage.getItem(DEPO) === "en") kayitli = "en";
+      localStorage.removeItem(DEPO);
     } catch (e) {}
     dil = kayitli;
     if (dil === "en") {

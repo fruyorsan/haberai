@@ -1,6 +1,7 @@
 ---
 import { getCategories, getYayinArticles } from "../lib/articles.js";
 import { SOSYAL_LINKLER } from "../lib/site-meta.js";
+import DilDugme from "./DilDugme.astro";
 
 const year = new Date().getFullYear();
 // Sayaç TÜM kategorileri sayar (kod öncesinde slice edilmiş listeyi sayıyordu ve
@@ -27,8 +28,10 @@ const son = getYayinArticles().slice(0, 5);
         <span class="footer__sep">•</span>
         <span>dakikalar içinde güncellenir</span>
       </div>
-      {/* Arayüz dili (TR ⇄ EN). Düğme dil.js tarafından basılır. */}
-      <div class="footer__dil" data-dil-sec></div>
+      {/* Arayüz dili (TR ⇄ EN). Düğme sunucuda basılır; dil.js davranışı bağlar. */}
+      <div class="footer__dil" data-dil-sec>
+        <DilDugme />
+      </div>
       {SOSYAL_LINKLER.length > 0 && (
         <div class="footer__social" aria-label="Sosyal kanallar">
           {SOSYAL_LINKLER.map((s) => (

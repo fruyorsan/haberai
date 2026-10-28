@@ -1592,6 +1592,31 @@ html.dil-bekliyor body {
   color: #fff;
 }
 
+/* Üst çubuk (yalnızca masaüstü): tema düğmesiyle aynı görsel dilde kompakt
+   düğme. Mobilde bu düğme Header.astro tarafından tamamen gizlenir. */
+.header .dil-btn {
+  height: 40px;
+  padding: 0 11px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--surface-2);
+  color: var(--text-2);
+}
+.header .dil-btn:hover {
+  background: var(--brand-soft);
+  border-color: var(--brand);
+  color: var(--brand);
+  transform: translateY(-1px);
+}
+.header .dil-btn__ad {
+  display: none;
+}
+@media (min-width: 1180px) {
+  .header .dil-btn__ad {
+    display: inline;
+  }
+}
+
 /* Makale sayfası: "arayüz İngilizce, haber metni Türkçe" notu */
 .dil-not {
   display: flex;

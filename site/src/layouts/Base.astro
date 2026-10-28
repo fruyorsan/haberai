@@ -223,14 +223,23 @@ const CSP = [
     </script>
 
     <!-- Arayüz dili (TR ⇄ EN): seçim ilk boyamadan önce uygulanır.
-         Görünür Türkçe metnin bir an görünüp İngilizceye dönmesini önlemek
-         için gövde, dil.js çeviriyi bitirene kadar gizlenir. Betik herhangi
-         bir nedenle çalışmazsa 1,8 sn sonra kendiliğinden açılır. -->
+         Varsayılan Türkçe; tercih yalnızca bu sekme oturumunda saklanır
+         (sessionStorage). Görünür Türkçe metnin bir an görünüp İngilizceye
+         dönmesini önlemek için gövde, dil.js çeviriyi bitirene kadar
+         gizlenir. Betik herhangi bir nedenle çalışmazsa 1,8 sn sonra
+         kendiliğinden açılır. -->
     <script is:inline>
       (function () {
         try {
           var kok = document.documentElement;
-          var secim = localStorage.getItem("hb-dil");
+          var secim = null;
+          try {
+            secim = sessionStorage.getItem("hb-dil");
+          } catch (e) {}
+          try {
+            // Eski kalıcı tercih artık okunmuyor; her yeni ziyaret Türkçe.
+            localStorage.removeItem("hb-dil");
+          } catch (e) {}
           if (secim === "en") {
             kok.dataset.dil = "en";
             kok.lang = "en";
