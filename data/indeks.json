@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T11:09:33.232Z",
+  "updatedAt": "2026-10-28T11:13:12.796Z",
   "gunluk": 32,
   "pencereGun": 45,
   "esik": {
@@ -12,9 +12,9 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 4908,
-  "aday": 4908,
-  "uygun": 2852,
+  "toplamHaber": 4909,
+  "aday": 4909,
+  "uygun": 2853,
   "secilen": 443,
   "red": {
     "özet gövdeyle aynı": 100,
@@ -29,7 +29,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "günlük kota": 2376,
+    "günlük kota": 2377,
     "tekrar": 33
   },
   "ornekTekrarlar": [
@@ -129,6 +129,7 @@
       "d68ac8fe07f08d33",
       "37b53ac17064ec09",
       "380296d804d90166",
+      "1676b3750aee07dc",
       "02a99fc21d2b6314",
       "692c88d046cc9222",
       "86cdbd7299c44ca7",
@@ -146,8 +147,7 @@
       "4867e72e8b1058ba",
       "16e1f86821b04c3f",
       "7ba2c85e65eb0e5a",
-      "cb98f54ec0357794",
-      "74ca705fd0fdb2c6"
+      "cb98f54ec0357794"
     ],
     "2026-10-26": [
       "84f97e2b56f8c7d6",
@@ -509,6 +509,7 @@
       "ec72177b63f007e3",
       "efaf6be5fcd7db60",
       "419dd10e27c6c9a4",
+      "2cd562a3de5ca9d8",
       "0021c9eb38cef095",
       "711e982b55b34f59",
       "0ed85b55c412dc93",
@@ -519,7 +520,6 @@
       "eecbc76de947a10a",
       "f58da26d73b698a5",
       "0512b685eb55fadc",
-      "2cd562a3de5ca9d8",
       "430ebd584fd20986",
       "f22e07f475c54d09"
     ],
@@ -553,9 +553,9 @@
       "01d21a922fdc44ca",
       "5263dd3dbec02aef",
       "3b1967b22f28dbe9",
+      "ec151a5cb6f16485",
       "af5c99c782f8f6df",
-      "e5a8c8109796f65d",
-      "f9958417988cd22b"
+      "e5a8c8109796f65d"
     ],
     "2026-10-24": [
       "a4be49d15a2c1a5f",
@@ -589,9 +589,9 @@
   },
   "ids": [
     "14b1f671156defb0",
+    "c5ca34a58f25552a",
     "84f97e2b56f8c7d6",
     "35f861f75591b8a3",
-    "c5ca34a58f25552a",
     "5fece920610c8928",
     "fae31ffd8e1b2d45",
     "0bef88d23e4fa646",
@@ -629,6 +629,7 @@
     "380296d804d90166",
     "aceacc8e0ece34ea",
     "90aba693ecf62d9c",
+    "1676b3750aee07dc",
     "02a99fc21d2b6314",
     "1da4c3e1f5189903",
     "5b2b3a933e57df10",
@@ -661,7 +662,6 @@
     "6170dce080615cec",
     "7ba2c85e65eb0e5a",
     "cb98f54ec0357794",
-    "74ca705fd0fdb2c6",
     "51d3f50d40c7add9",
     "29536e82da1bac41",
     "a67bcb09c7f84d83",
@@ -865,6 +865,7 @@
     "01b31f442c501f6e",
     "8922953101eceb57",
     "5742318e895eadf6",
+    "2cd562a3de5ca9d8",
     "a3d50398be3595b4",
     "9e0b805ba7eac2f9",
     "b9f9ad38a2f3558c",
@@ -955,18 +956,17 @@
     "3b1967b22f28dbe9",
     "c3e3fa52595e5a4c",
     "f58da26d73b698a5",
+    "ec151a5cb6f16485",
     "56ad98808be11df5",
     "af5c99c782f8f6df",
     "c7b4d4735c2154df",
     "e5a8c8109796f65d",
-    "f9958417988cd22b",
     "9c19fe126520f7e5",
     "b0f78ba86f32f314",
     "4f755982d94c7714",
     "0512b685eb55fadc",
     "e17068ec9684a127",
     "126995a6b632fa3f",
-    "2cd562a3de5ca9d8",
     "0a5bd0ce690d5e0e",
     "57849284ec63a6b5",
     "63c9f53e7702bbc2",
