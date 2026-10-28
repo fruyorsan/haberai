@@ -1,5 +1,5 @@
 ---
-import { getFeatured, timeAgo, publishedISO, imageUrl, imageSrcset } from "../lib/articles.js";
+import { getFeatured, timeAgo, publishedISO, publishedTime, imageUrl, imageSrcset } from "../lib/articles.js";
 import { kapakKaynagi } from "../lib/kapak.js";
 
 // Ana sayfa vitrini: "Öne çıkan haberler" slaytı.
@@ -39,6 +39,9 @@ const items = slides.map((a) => {
   const words = `${a.summary || ""} ${a.comment || ""}`.split(/\s+/).filter(Boolean).length;
   // Kapak güvenliği: kaynağın yanlış/genel görseli gösterilmez (lib/kapak.js).
   const kapak = kapakKaynagi(a);
+  // "Son dakika" rozeti yalnızca gerçekten taze haberlerde: eski kayıtlarda
+  // kalan `breaking` işareti vitrinde yanlış etiket göstermesin.
+  const taze = Date.now() - publishedTime(a) <= 120 * 60 * 1000;
   return {
     slug: a.slug,
     url: a.url,
@@ -52,7 +55,7 @@ const items = slides.map((a) => {
     when: timeAgo(publishedISO(a)),
     readMin: Math.max(1, Math.round(words / 200)),
     note: headlineNote(a),
-    breaking: a.breaking === true,
+    breaking: a.breaking === true && taze,
   };
 });
 ---
