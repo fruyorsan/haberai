@@ -1,30 +1,27 @@
-// KAPAK GÖRSELİ GÜVENLİĞİ
+// KAPAK GÖRSELİ SEÇİMİ
 //
-// TELİF KURALI: Sitede yalnızca telif güvenli görseller gösterilir.
-// Kaynak haber sitelerinin og:image'ları ajans lisanslı olabilir (AA, Getty,
-// Reuters, DHA...); atıf yazmak kullanım hakkı doğurmaz. Bu yüzden kapak
-// adresi şu iki kaynaktan biri olmak zorundadır:
+// GÖRSEL KURALI: Haberin kendi fotoğrafı kullanılır. Sıra şudur:
 //
-//   1) Wikimedia Commons (upload.wikimedia.org / thumb.wikimedia.org) —
-//      CC0 / kamu malı / CC BY / CC BY-SA lisanslı, atfı veride kayıtlı.
-//   2) Sitenin kendi yerel görseli (/... yolu).
+//   1) Sitenin kendi yerel kapağı (/kapak/... — puanlanarak üretilmiş 1280×720).
+//   2) Wikimedia Commons (CC0 / kamu malı / CC BY / CC BY-SA).
+//   3) Haberin çıktığı kaynak sitenin og:image'i / yazı içi fotoğrafı.
 //
-// Bunun dışındaki her adres reddedilir ve markalı kapak (/og-default.png)
-// gösterilir.
+// Kaynak sitelerin fotoğrafları habere özgü oldukları için (stok karelerin
+// aksine) başlıkla alakalıdır ve tıklama oranını yükseltir; adres
+// `gorselKaynak` alanında kayıtlıdır.
 //
-// İkinci denetim: Commons dosyaları da onlarca habere kapak olabilir. Aynı
-// kare 500'den fazla haberde kullanılırsa "genel görsel" sayılır ve elenir.
+// İkinci denetim: aynı kare yüzlerce habere kapak olmuşsa "genel görsel"
+// sayılır ve elenir.
 import { getArticles, imageUrl } from "./articles.js";
 
-// İzinli kaynaklar: yalnızca Wikimedia ve yerel yollar.
-const GUVENLI_UZAK = /^https:\/\/(upload|thumb)\.wikimedia\.org\//i;
+const UZAK = /^https?:\/\//i;
 const YEREL = /^\/(?!\/)/;
 
-/** Görsel adresi telif güvenli mi? */
+/** Görsel adresi kullanılabilir mi? (yer tutucu/logo ayrıca elenir) */
 export function guvenliGorselMi(url) {
   const s = String(url || "").trim();
   if (!s) return false;
-  return YEREL.test(s) || GUVENLI_UZAK.test(s);
+  return YEREL.test(s) || UZAK.test(s);
 }
 
 // Dosya adında geçen yer tutucu/logo desenleri
