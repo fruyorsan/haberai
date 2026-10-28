@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T09:20:09.865Z",
+  "updatedAt": "2026-10-28T09:24:12.620Z",
   "gunluk": 32,
   "pencereGun": 45,
   "esik": {
@@ -29,21 +29,13 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "günlük kota": 2359,
-    "tekrar": 35
+    "günlük kota": 2361,
+    "tekrar": 33
   },
   "ornekTekrarlar": [
     {
-      "title": "OpenAI, yapay zekâ modellerinin ürettiği 3 bilimsel sonucu doğruladı",
-      "twin": "OpenAI, yapay zekanın matematikte 3 büyük hamle yaptığını açıkladı"
-    },
-    {
       "title": "SPK, Tera Yatırım'ın lisansını iptal etti ve 50 kişi için suç duyurusu yaptı",
       "twin": "SPK nitelikli yatırımcı barajını 50 milyon liraya çıkardı"
-    },
-    {
-      "title": "OpenAI, temel bilimlerde 3 büyük teorik kırılma yaptığını duyurdu",
-      "twin": "OpenAI, yapay zekanın matematikte 3 büyük hamle yaptığını açıkladı"
     },
     {
       "title": "İsrail'in Gazze saldırıları 4 sivilin daha yaşamına son verdi",
@@ -112,6 +104,14 @@
     {
       "title": "Netanyahu’yu Öteye Taşımaya Çalışan Seçim: İsrail'deki 27 Ekim Gündemi",
       "twin": "Netanyahu, 27 Ekim seçimleri öncesinde İran saldırısı uyarısı yaptı"
+    },
+    {
+      "title": "Galaxy A56 ve A36 One UI 9 güncellemesi Türkiye’ye ne zaman gelecek?",
+      "twin": "Galaxy S24 Ultra bataryası One UI 9 ile hızla tükenmeye başladı"
+    },
+    {
+      "title": "Suudi Arabistan Enerji Bakanlığı Şeybe Petrol Sahasında 2 Ölüm Bildirdi",
+      "twin": "Suudi Arabistan’da Engellenen Füze Şarapnelini 2 Kişiyi Yaraladı"
     }
   ],
   "days": {
@@ -132,6 +132,7 @@
       "6c29349b8c702010",
       "466f41069a5230cc",
       "fc6276d9326dbb77",
+      "89caf9b3ca6609cb",
       "ed4b1538d044b40a",
       "f156ce1d02cc345c",
       "6fc2113793514329",
@@ -146,8 +147,7 @@
       "1676b3750aee07dc",
       "9d833849eaf982a0",
       "71f0d8db8af8537f",
-      "458a04e33ec0897e",
-      "ed7cedde1f1f649b"
+      "458a04e33ec0897e"
     ],
     "2026-10-26": [
       "84f97e2b56f8c7d6",
@@ -643,6 +643,7 @@
     "3fbed561a99bda55",
     "f1424850fc79ae3b",
     "fc6276d9326dbb77",
+    "89caf9b3ca6609cb",
     "ed4b1538d044b40a",
     "f156ce1d02cc345c",
     "6fc2113793514329",
@@ -665,7 +666,6 @@
     "71f0d8db8af8537f",
     "458a04e33ec0897e",
     "291418757fca5c9b",
-    "ed7cedde1f1f649b",
     "a2cc134cbc18fe50",
     "c7679a48d001c440",
     "9214942153be4652",
