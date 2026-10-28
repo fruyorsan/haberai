@@ -1,5 +1,67 @@
 [
   {
+    "id": "5a3a676d6e870c3b",
+    "title": "OpenAI, yapay zeka altyapısını güçlendirmek için Google TPU alıyor",
+    "slug": "openai-yapay-zeka-altyapisini-guclendirmek-icin-google-tpu-aliyor",
+    "summary": "OpenAI, yapay zeka modellerini eğitmek ve çalıştırmak amacıyla Google tasarımı Tensor İşlem Birimi çiplerini satın almayı planlıyor. Şirketin Nvidia ve AMD ile olan mevcut donanım ortaklıklarına rağmen atılan bu adım, bilişim altyapısını çeşitlendirme stratejisinin bir parçası olarak öne çıkıyor.",
+    "keyPoints": [
+      "OpenAI, Google tasarımı TPU çiplerini satın alarak kendi yapay zeka altyapısını genişletmeyi planlıyor.",
+      "Şirket, modellerini TPU çiplerine uyarlamak amacıyla özel bir mühendis ekibi kurmaya başladı.",
+      "OpenAI halihazırda Microsoft, AWS, Oracle ve Nvidia gibi devlerle büyük ölçekli altyapı iş birlikleri yürütüyor."
+    ],
+    "body": [
+      "ChatGPT geliştiricisi OpenAI, yapay zeka altyapısını çeşitlendirmek adına radikal bir değişikliğe giderek doğrudan rakibi Google'ın geliştirdiği Tensor İşlem Birimi (TPU) çiplerini satın alma aşamasına geçti. The Information ve Bloomberg kaynaklarına dayanan bilgilere göre, taraflar henüz nihai bir imzaya varmamış olsa da, OpenAI'ın bu çipler üzerindeki çalışmaları erkenci bir aşamada devam ediyor. Şirket, yapay zeka modellerinin performansını artırmak amacıyla TPU mimarisine uyum sağlayacak uzman mühendisleri bünyesine katmaya odaklandı.",
+      "Google'ın TPU teknolojisi, şirketin kendi yapay zeka modellerini eğitmek ve çalıştırmak için özel olarak tasarladığı donanımlardan oluşuyor. OpenAI, Haziran 2025 tarihinden bu yana bu çiplere Google Cloud üzerinden erişim sağlayarak test süreçlerini yürütüyordu. Ancak, yeni planlar artık sadece kiralama modelini değil, doğrudan mülkiyet ve geniş ölçekli donanım tedarikini kapsıyor. OpenAI'ın çip ekibini yöneten Richard Ho'nun, geçmişte Google bünyesinde TPU geliştirme sürecinde yer almış olması, bu stratejik geçişin teknik altyapısını güçlendiren bir unsur olarak değerlendiriliyor.",
+      "Şirketin donanım stratejisi oldukça geniş bir yelpazeye yayılıyor. Eylül 2025'te Nvidia ile 10 gigawattlık bir niyet mektubu imzalayan OpenAI, kısa süre sonra AMD ile 6 gigawatt kapasiteli farklı bir anlaşma sağladı. Broadcom ile yürütülen özel çip geliştirme çalışmaları ise Haziran 2026'da ilk meyvesini verdi ve şirket, 2026 yılı bitmeden kendi özel çiplerini devreye almayı hedefliyor. Bu donanım yatırımları, bulut tarafında Microsoft'tan alınan 250 milyar dolarlık Azure hizmeti ve Amazon Web Services ile yapılan 38 milyar dolarlık yedi yıllık anlaşma ile destekleniyor.",
+      "Google cephesinde ise TPU çiplerinin pazar payı genişlemeye devam ediyor. Anthropic gibi önemli yapay zeka şirketleri, Google Cloud üzerinden milyonlarca TPU kapasitesi kullanırken, Google da 2026 yılı itibarıyla bazı müşterilere doğrudan çip satışına başladı. Alphabet finans direktörü Anat Ashkenazi, bu satışlardan elde edilecek gelirin asıl etkisinin 2027 yılı içerisinde bilançolara yansıyacağını belirtmişti. Ayrıca Google, Oracle ile yaptığı son iş birliği ile TPU kapasitesini Oracle Cloud Infrastructure üzerinden de sunarak, kendi bulut ekosisteminin dışına çıkmaya başladı.",
+      "OpenAI'ın bu hamlesi, Microsoft ile olan bulut bağımlılığını azaltma stratejisinin bir parçası olarak okunabilir. Nisan 2026'da Microsoft ile yapılan güncellenmiş anlaşma, OpenAI'ın tek bir bulut sağlayıcıya bağlı kalmadan farklı çözümlere yönelebileceğini gösterdi. Oracle ve SoftBank ile birlikte yürütülen Stargate projesi de şirketin kendi veri merkezlerini kurma vizyonunu destekliyor. Tüm bu adımlar, yapay zeka dünyasında donanım kıtlığına karşı şirketlerin kendi çiplerini üretme veya rakiplerin altyapılarını kullanma yarışının hızlandığını kanıtlıyor."
+    ],
+    "comment": "OpenAI'ın Google'ın kendi geliştirdiği TPU çiplerine yönelmesi, şirketin Nvidia üzerindeki donanım bağımlılığını azaltmak için sergilediği stratejik bir denge oyunudur. Modellerin TPU mimarisine tam adaptasyonu teknik zorluklar içerdiğinden, bu çiplerin ChatGPT yanıtlarına somut bir katkısı 2027 yılından önce beklenmemelidir. Google için ise bu adım, kendi bulut ekosisteminin dışına donanım satışı yaparak pazar payını artırma fırsatı sunuyor. Şirketler arası bu rekabet, yazılım geliştiricileri için daha esnek bir bulut altyapısı imkanı yaratırken, donanım tedarik zincirindeki tekelleşmeyi kırma potansiyeli taşıyor.",
+    "editorNote": "OpenAI, yapay zeka modellerini eğitmek için Google'ın çiplerine göz dikti. Nvidia'ya olan donanım bağımlılığını kırmaya çalışan şirket, kendi veri merkezi ağını genişletiyor.",
+    "tags": [
+      "OpenAI",
+      "Google",
+      "TPU",
+      "Yapay Zeka",
+      "Donanım",
+      "Çip"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "google tpu processor chip",
+    "source": "Tamindir",
+    "sourceUrl": "https://www.tamindir.com/haber/openai-google-tpu-cip_112538/",
+    "image": "/kapak/5a3a676d6e870c3b.webp",
+    "gorselKaynak": {
+      "yazar": "Kavali Chandrakanth KCK",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Google_Head_Office_Kondapur_Hyderabad.jpg"
+    },
+    "publishedAt": "2026-10-28T14:03:00.000Z",
+    "generatedAt": "2026-10-28T14:07:59.200Z",
+    "gorselEk": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/EFTA00002629_-_Server_rack_with_multiple_networking_devices_and_cables_connected_showing_a_typical_data_center_setup.jpg",
+        "yazar": "Federal Bureau of Investigation",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:EFTA00002629_-_Server_rack_with_multiple_networking_devices_and_cables_connected_showing_a_typical_data_center_setup.jpg",
+        "altyazi": "Devasa veri merkezlerinde yer alan sunucu kabinleri"
+      }
+    ],
+    "breaking": true,
+    "images": [
+      "https://img.tamindir.com/resize/1200x675/2026/10/476815/openai-google-tpu-cip-1.jpg"
+    ],
+    "imagesKaynak": "https://www.tamindir.com/haber/openai-google-tpu-cip_112538/",
+    "gorselDeneme": "2026-10-28T14:08:00.261Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Google_Head_Office_Kondapur_Hyderabad.jpg/1280px-Google_Head_Office_Kondapur_Hyderabad.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "8c00c2eac841839c",
     "title": "Dışişleri Bakanlığı, İspanya Tren Kazası İçin Taziye Mesajı Yayımladı",
     "slug": "disisleri-bakanligi-ispanya-tren-kazasi-icin-taziye-mesaji-yayimladi",
@@ -212,7 +274,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:52.623Z",
+    "gorselDeneme": "2026-10-28T14:08:00.296Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Car_giveaway_at_UFV_%288559021820%29.jpg/1280px-Car_giveaway_at_UFV_%288559021820%29.jpg",
@@ -270,7 +332,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:55.437Z",
+    "gorselDeneme": "2026-10-28T14:08:01.851Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/After_the_train_accident_from_Feb_14%2C_2022_10.jpg/1280px-After_the_train_accident_from_Feb_14%2C_2022_10.jpg",
@@ -534,7 +596,7 @@
         "altyazi": "Kritik altyapıların korunduğu sunucu ve veri merkezleri"
       }
     ],
-    "gorselDeneme": "2026-10-28T14:00:52.730Z",
+    "gorselDeneme": "2026-10-28T14:08:00.982Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Chief_of_U.S._Naval_Operations_Adm._Jonathan_Greenert%2C_center%2C_speaks_during_an_all-hands_call_at_U.S._Fleet_Cyber_Command-U_131217-N-ZI511-775.jpg/1280px-Chief_of_U.S._Naval_Operations_Adm._Jonathan_Greenert%2C_center%2C_speaks_during_an_all-hands_call_at_U.S._Fleet_Cyber_Command-U_131217-N-ZI511-775.jpg",
@@ -734,7 +796,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:53.096Z",
+    "gorselDeneme": "2026-10-28T14:08:00.848Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/World_Bank_building.JPG/1280px-World_Bank_building.JPG",
@@ -851,7 +913,7 @@
     "publishedAt": "2026-10-28T12:30:32.000Z",
     "generatedAt": "2026-10-28T12:33:18.490Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:55.276Z",
+    "gorselDeneme": "2026-10-28T14:08:01.803Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/7/78/Market_centre_in_Tokyo_stock_exchange.jpg",
@@ -907,7 +969,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:55.671Z",
+    "gorselDeneme": "2026-10-28T14:08:02.019Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/STS-134_International_Space_Station_after_undocking_10.jpg/1280px-STS-134_International_Space_Station_after_undocking_10.jpg",
@@ -1035,7 +1097,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:54.091Z",
+    "gorselDeneme": "2026-10-28T14:08:01.332Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Happy_Family_Theresienwiese_Detlef_D%21_Soost_Kate_Hall.JPG/1280px-Happy_Family_Theresienwiese_Detlef_D%21_Soost_Kate_Hall.JPG",
@@ -1084,7 +1146,7 @@
     "publishedAt": "2026-10-28T12:00:48.000Z",
     "generatedAt": "2026-10-28T12:02:21.982Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:54.495Z",
+    "gorselDeneme": "2026-10-28T14:08:01.538Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/PlayStation_2_connecting_a_controller_%28cropped%29.jpg/1280px-PlayStation_2_connecting_a_controller_%28cropped%29.jpg",
@@ -1149,7 +1211,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:55.684Z",
+    "gorselDeneme": "2026-10-28T14:08:02.579Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Google_Head_Office_Kondapur_Hyderabad_Telangana.jpg/1280px-Google_Head_Office_Kondapur_Hyderabad_Telangana.jpg",
@@ -1286,7 +1348,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:56.142Z",
+    "gorselDeneme": "2026-10-28T14:08:03.365Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/DK-84_-_K%C3%B8benhavn_-_Copenhagen_-_Denmark_-_Shipping_Containers_-_Intermodal_Containers_%284890885214%29.jpg/1280px-DK-84_-_K%C3%B8benhavn_-_Copenhagen_-_Denmark_-_Shipping_Containers_-_Intermodal_Containers_%284890885214%29.jpg",
@@ -1412,7 +1474,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:55.673Z",
+    "gorselDeneme": "2026-10-28T14:08:02.156Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Aselsan_A100_Night_Vision_Monocular.jpg/1280px-Aselsan_A100_Night_Vision_Monocular.jpg",
@@ -1730,7 +1792,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:55.921Z",
+    "gorselDeneme": "2026-10-28T14:08:02.409Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Le_emissioni_luminose_notturne_di_un_Data_Center_visto_da_lontano_%28800_metri%29.jpg/1280px-Le_emissioni_luminose_notturne_di_un_Data_Center_visto_da_lontano_%28800_metri%29.jpg",
@@ -1866,7 +1928,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:55.756Z",
+    "gorselDeneme": "2026-10-28T14:08:02.229Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/2018_Cadillac_CT6_Premium_Luxury_AWD_Super_Cruise%2C_front_right.jpg/1280px-2018_Cadillac_CT6_Premium_Luxury_AWD_Super_Cruise%2C_front_right.jpg",
@@ -2057,7 +2119,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:55.918Z",
+    "gorselDeneme": "2026-10-28T14:08:02.527Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Defense.gov_News_Photo_100609-F-6655M-012_-_Secretary_of_Defense_Robert_M._Gates_talks_with_Turkish_Defense_Minister_Mehmet_Vecdi_Gonul_at_the_North_Atlantic_Treaty_Organization_Defense.jpg/1280px-thumbnail.jpg",
@@ -2187,7 +2249,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:55.980Z",
+    "gorselDeneme": "2026-10-28T14:08:02.711Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Luiz_Inacio_Lula_da_Silva_and_Juan_Manuel_Santos.jpg/1280px-Luiz_Inacio_Lula_da_Silva_and_Juan_Manuel_Santos.jpg",
@@ -2244,7 +2306,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:56.058Z",
+    "gorselDeneme": "2026-10-28T14:08:02.741Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Vivo_V29e.jpg/1280px-Vivo_V29e.jpg",
@@ -2381,7 +2443,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:57.077Z",
+    "gorselDeneme": "2026-10-28T14:08:04.294Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/%E6%B7%B1%E6%B0%B4%E5%9F%97_Sham_Shui_Po_%E6%95%B8%E7%A2%BC%E9%BE%90%E5%85%8B%E8%99%9F_Heart_of_Cyberpunk_GAME_CENTRE_%E9%9C%93%E8%99%B9%E7%87%88%E6%8B%9B%E7%89%8C_Neon_Sign.jpg/1280px-%E6%B7%B1%E6%B0%B4%E5%9F%97_Sham_Shui_Po_%E6%95%B8%E7%A2%BC%E9%BE%90%E5%85%8B%E8%99%9F_Heart_of_Cyberpunk_GAME_CENTRE_%E9%9C%93%E8%99%B9%E7%87%88%E6%8B%9B%E7%89%8C_Neon_Sign.jpg",
@@ -2512,7 +2574,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:56.173Z",
+    "gorselDeneme": "2026-10-28T14:08:03.013Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Czech_Dance_Masters_2016_P5_indoor_led_screen_%28cropped%29.jpg",
@@ -2717,7 +2779,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:56.362Z",
+    "gorselDeneme": "2026-10-28T14:08:02.944Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Kazakhstan-Turkey_Friendship_Park_opened_in_Ankara_01.jpg/1280px-Kazakhstan-Turkey_Friendship_Park_opened_in_Ankara_01.jpg",
@@ -2764,7 +2826,7 @@
     "publishedAt": "2026-10-28T08:49:23.000Z",
     "generatedAt": "2026-10-28T08:56:33.274Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:56.307Z",
+    "gorselDeneme": "2026-10-28T14:08:02.975Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Football_match_at_Wincham_Park_Stadium_%28geograph_4383139%29.jpg/1280px-Football_match_at_Wincham_Park_Stadium_%28geograph_4383139%29.jpg",
@@ -2885,7 +2947,7 @@
     "publishedAt": "2026-10-28T08:40:12.000Z",
     "generatedAt": "2026-10-28T08:47:34.564Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:56.490Z",
+    "gorselDeneme": "2026-10-28T14:08:03.271Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/ChatGPT_Spanish_homework.jpg/1280px-ChatGPT_Spanish_homework.jpg",
@@ -3095,7 +3157,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:56.459Z",
+    "gorselDeneme": "2026-10-28T14:08:03.250Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Space_Launch_System_configurations_%282012%29.jpg/1280px-Space_Launch_System_configurations_%282012%29.jpg",
@@ -3411,7 +3473,7 @@
     "publishedAt": "2026-10-28T07:25:15.000Z",
     "generatedAt": "2026-10-28T07:46:01.259Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:56.666Z",
+    "gorselDeneme": "2026-10-28T14:08:03.532Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Moscow%2C_Xiaomi_SU7_max%2C_Aug_2025_07.jpg/1280px-Moscow%2C_Xiaomi_SU7_max%2C_Aug_2025_07.jpg",
@@ -3493,7 +3555,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:56.909Z",
+    "gorselDeneme": "2026-10-28T14:08:03.599Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Aston_Martin_DBX707_1X7A0360.jpg/1280px-Aston_Martin_DBX707_1X7A0360.jpg",
@@ -3692,7 +3754,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:56.719Z",
+    "gorselDeneme": "2026-10-28T14:08:03.490Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Afghan_police%2C_US_soldiers_prepare_for_raid_DVIDS557689.jpg/1280px-Afghan_police%2C_US_soldiers_prepare_for_raid_DVIDS557689.jpg",
@@ -3757,7 +3819,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:56.746Z",
+    "gorselDeneme": "2026-10-28T14:08:03.593Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Lakers_vs_Trail_Blazers.jpg/1280px-Lakers_vs_Trail_Blazers.jpg",
@@ -4024,7 +4086,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:57.113Z",
+    "gorselDeneme": "2026-10-28T14:08:03.927Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Vivo_V29e.jpg/1280px-Vivo_V29e.jpg",
@@ -4136,7 +4198,7 @@
     "publishedAt": "2026-10-28T05:52:30.000Z",
     "generatedAt": "2026-10-28T05:59:12.459Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:57.135Z",
+    "gorselDeneme": "2026-10-28T14:08:04.165Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/AMD_Athlon_XP_Palomino.Jpg/1280px-AMD_Athlon_XP_Palomino.Jpg",
@@ -4275,7 +4337,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:57.101Z",
+    "gorselDeneme": "2026-10-28T14:08:03.876Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Crime_Scene_Investigation_Unit%2C_Royal_Gibraltar_Police.jpg/1280px-Crime_Scene_Investigation_Unit%2C_Royal_Gibraltar_Police.jpg",
@@ -4514,7 +4576,7 @@
     "publishedAt": "2026-10-28T05:11:00.000Z",
     "generatedAt": "2026-10-28T05:16:54.415Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:57.600Z",
+    "gorselDeneme": "2026-10-28T14:08:04.468Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Burn_of_Skaw_entering_a_stormy_sea_-_geograph.org.uk_-_3848495.jpg",
@@ -4767,7 +4829,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:57.370Z",
+    "gorselDeneme": "2026-10-28T14:08:04.239Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Bedouin_on_the_West_Bank_of_the_Jordan_River.jpg/1280px-Bedouin_on_the_West_Bank_of_the_Jordan_River.jpg",
@@ -4815,7 +4877,7 @@
     "publishedAt": "2026-10-28T04:20:40.000Z",
     "generatedAt": "2026-10-28T04:29:11.378Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:57.488Z",
+    "gorselDeneme": "2026-10-28T14:08:04.346Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg/1280px-Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
@@ -4947,7 +5009,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:57.305Z",
+    "gorselDeneme": "2026-10-28T14:08:04.513Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Secretary_of_State_Peter_Kyle_visits_Anthropic_in_San_Francisco._%2854099081629%29.jpg/1280px-Secretary_of_State_Peter_Kyle_visits_Anthropic_in_San_Francisco._%2854099081629%29.jpg",
@@ -5182,7 +5244,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:57.891Z",
+    "gorselDeneme": "2026-10-28T14:08:04.950Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Istanbul_city_Photos-_Urban_18.jpg/1280px-Istanbul_city_Photos-_Urban_18.jpg",
@@ -5240,7 +5302,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:57.464Z",
+    "gorselDeneme": "2026-10-28T14:08:04.931Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Elderly_people_editing_Catalan_Wikipedia_03.JPG/1280px-Elderly_people_editing_Catalan_Wikipedia_03.JPG",
@@ -5334,7 +5396,7 @@
     "publishedAt": "2026-10-28T03:13:00.000Z",
     "generatedAt": "2026-10-28T03:29:23.658Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T14:00:58.087Z",
+    "gorselDeneme": "2026-10-28T14:08:04.624Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Binyamin_Netanyahu_in_court.jpg/1280px-Binyamin_Netanyahu_in_court.jpg",
@@ -28969,7 +29031,7 @@
     "gorselSorgu": "Ani bridge ruins Arpaçay river",
     "source": "CNN Türk",
     "sourceUrl": "https://www.cnnturk.com/turkiye/tarihi-ani-koprusu-restore-ediliyor-turkiye-ile-ermenistan-arasindaki-koprude-yeni-asama-3484334",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/20110419_bridge_Akhurian_River_Ani_Turkey.jpg/1280px-20110419_bridge_Akhurian_River_Ani_Turkey.jpg",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Stone_Arch_Bridge_%2822092677311%29.jpg/1280px-Stone_Arch_Bridge_%2822092677311%29.jpg",
     "publishedAt": "2026-10-25T14:07:43.838Z",
     "generatedAt": "2026-10-25T14:08:10.992Z",
     "gorselEk": [
@@ -28982,17 +29044,6 @@
         "altyazi": "Kars Ani Ören Yeri içerisindeki yapı kalıntıları"
       }
     ],
-    "gorselKaynak": {
-      "yazar": "Ggia",
-      "lisans": "CC BY-SA 3.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:20110419_bridge_Akhurian_River_Ani_Turkey.jpg"
-    },
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Stone_Arch_Bridge_%2822092677311%29.jpg/1280px-Stone_Arch_Bridge_%2822092677311%29.jpg",
-      "foto": true
-    },
     "imagesKaynak": "https://www.cnnturk.com/turkiye/tarihi-ani-koprusu-restore-ediliyor-turkiye-ile-ermenistan-arasindaki-koprude-yeni-asama-3484334",
     "gorselDeneme": "2026-10-27T17:27:10.545Z"
   },
@@ -29024,7 +29075,7 @@
     "gorselSorgu": "paint set chemicals lab",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/bakanlik-kimyasal-risk-tasiyan-boya-setini-toplatti-550404",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Paint_of_blades_set.jpg/1280px-Paint_of_blades_set.jpg",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Chemical_Analysis%3BMaximum_Pixel_Software_%285884305705%29.jpg/1280px-Chemical_Analysis%3BMaximum_Pixel_Software_%285884305705%29.jpg",
     "publishedAt": "2026-10-25T14:05:00.000Z",
     "generatedAt": "2026-10-25T14:14:39.308Z",
     "gorselEk": [
@@ -29038,17 +29089,6 @@
       }
     ],
     "breaking": true,
-    "gorselKaynak": {
-      "yazar": "Jota",
-      "lisans": "CC BY-SA 3.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Paint_of_blades_set.jpg"
-    },
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Chemical_Analysis%3BMaximum_Pixel_Software_%285884305705%29.jpg/1280px-Chemical_Analysis%3BMaximum_Pixel_Software_%285884305705%29.jpg",
-      "foto": false
-    },
     "gorselDeneme": "2026-10-27T17:27:10.797Z"
   },
   {
