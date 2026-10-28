@@ -1,0 +1,3 @@
+# data/articles.json JSON olduğu için satır bazlı birleştirme anlamsız:
+# özel sürücü habere göre birleştirir (bkz. scripts/veri-birlestir-surucu.mjs).
+data/articles.json merge=haber-veri
