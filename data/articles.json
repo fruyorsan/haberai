@@ -1,5 +1,75 @@
 [
   {
+    "id": "7ba2c85e65eb0e5a",
+    "title": "Çinli araştırmacılar fiber optik kabloda 3,2 petabit hıza ulaştı",
+    "slug": "cinli-arastirmacilar-fiber-optik-kabloda-3-2-petabit-hiza-ulasti",
+    "summary": "Çinli bilim insanları, 24 çekirdekli özel bir fiber optik kablo kullanarak saniyede 3,2 petabitlik veri aktarım kapasitesine ulaştı. Teorik olarak 20 binden fazla 4K filmi aynı anda taşıyabilen bu yeni sistem, veri merkezleri arasındaki yüksek hızlı iletişim süreçlerini kökten değiştirebilecek kapasiteye sahip bulunuyor.",
+    "keyPoints": [
+      "Saniyede 3,2 petabit hız, 10,3 kilometrelik kablo hattında 24 çekirdekli sistemle elde edildi.",
+      "Yeni teknoloji binlerce paralel iletişim kanalını üç farklı dalga boyu bandında kullanıyor.",
+      "Sistem, yapay zeka modellerinin eğitimi için gereken yoğun veri trafiğini yönetmeyi hedefliyor."
+    ],
+    "body": [
+      "Çinli araştırmacılardan oluşan bir ekip, telekomünikasyon dünyasında verimliliği artıracak yeni bir rekora imza attı. 10,3 kilometrelik bir hat üzerinde test edilen bu teknoloji, veri iletim kapasitesini mevcut altyapıların çok ötesine taşıyarak büyük ölçekli dijitalleşme süreçlerine yeni bir soluk getirmeyi amaçlıyor.",
+      "Geliştirilen bu sistem, 24 çekirdekli özel bir fiber optik kablo altyapısı üzerine inşa edildi. Teknoloji, üç farklı dalga boyu bandında binlerce paralel iletişim kanalının aynı anda aktif edilmesine olanak tanıyor. Araştırma ekibi, kendi imkanlarıyla tasarladıkları optik modüllerden faydalanarak bu devasa veri hacmini gerçek zamanlı olarak aktarmayı başardı. Bir petabitlik birimin 1.000 terabite denk geldiği düşünüldüğünde, ulaşılan 3,2 petabitlik hızın teorik kapasitesi saniyede 20 binden fazla 4K çözünürlüğünde filmin iletilmesine eş değer bir performans sunuyor.",
+      "Yapay zeka modellerinin eğitilmesi ve çalıştırılması süreci, veri merkezleri arasında sürekli ve yüksek hacimli veri transferi gerektirdiğinden bu çalışma oldukça yerinde bir ihtiyacı karşılıyor. Geleneksel tek modlu fiber optik kabloların kapasite sınırlarına dayanması, sektördeki paydaşları daha yüksek bant genişliği sunan alternatif çözümlere yöneltiyor. 24 çekirdekli fiber teknolojisi, aynı kablo yapısı içerisinde birden fazla bağımsız veri yolu oluşturarak toplam kapasiteyi katlıyor.",
+      "Bu yenilikçi yaklaşım, gelecekteki 6G ağlarının omurga bağlantılarının yanı sıra yüksek performanslı hesaplama merkezleri arasındaki iletişim için temel bir yapı taşı olabilir. Büyük ölçekli yapay zeka kümelerinin birbirine daha verimli bağlanması, bu sistemin sağlayacağı temel avantajlar arasında yer alıyor. Veri merkezleri arasındaki darboğazları ortadan kaldırmayı hedefleyen bu teknoloji, ağ mimarilerinin daha hızlı ve kararlı çalışmasına olanak tanıyacak bir altyapı vaat ediyor.",
+      "Laboratuvar ortamında kaydedilen bu yüksek hızların doğrudan mevcut ev interneti kullanımlarına yansıması ise kısa vadede beklenmiyor. Ticari ölçekte hayata geçirilmesi için sistemin maliyet hesaplamalarının yapılması, mevcut altyapı ile uyumluluğunun sağlanması ve ölçeklendirme çalışmalarının tamamlanması gerekiyor. Araştırmacılar, laboratuvar şartlarında elde edilen bu başarının, geleceğin küresel iletişim ağlarına uyarlanması adına ilk somut aşamayı oluşturduğunu belirtiyor."
+    ],
+    "comment": "Fiber optik kapasitesinde 3,2 petabit sınırına ulaşılması, yapay zeka ve büyük veri süreçlerinde dar boğaz yaşayan veri merkezleri için uzun vadeli bir çözüm kapısı aralıyor. Saniyede 20 binden fazla 4K filmi iletebilen bu sistem, geleneksel tek modlu hatların fiziksel sınırlarını aşarak verimliliği katlıyor. Mevcut altyapıların hız limitleri göz önüne alındığında, bu teknoloji sadece teorik bir başarı değil, donanımsal kapasite eksikliğini giderecek bir atılım olarak görülmeli. Ev interneti kullanıcıları için henüz maliyetli ve ulaşılmaz olsa da, bu gelişme gelecekteki 6G ağlarının omurgasını kurmak adına gerekli olan kapasite artışının ilk somut kanıtını sunuyor.",
+    "editorNote": "Çin'den gelen fiber optik rekoru, saniyede 3,2 petabit hızla veri merkezlerinin kapasite sınırlarını genişletiyor. 6G ağlarının omurgasını oluşturması hedeflenen teknoloji, ev…",
+    "tags": [
+      "fiber",
+      "internet hızı",
+      "Çin",
+      "teknoloji",
+      "donanım"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "fiber optic cable network",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/cin-den-internet-hizinda-rekor-fiber-uzerinden-3-2-petabit--212191",
+    "image": "/kapak/7ba2c85e65eb0e5a.webp",
+    "gorselKaynak": {
+      "yazar": "Bidgee",
+      "lisans": "CC BY-SA 3.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0/au/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:NBN_Co_fibre_optic_cable.jpg"
+    },
+    "publishedAt": "2026-10-28T10:55:00.000Z",
+    "generatedAt": "2026-10-28T10:56:10.148Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Fiber_optic_cable_installation_%28rubin-20170124-101126%29.jpg/1280px-Fiber_optic_cable_installation_%28rubin-20170124-101126%29.jpg",
+        "yazar": "Rubin Observatory/ NSF /AURA",
+        "lisans": "CC BY 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Fiber_optic_cable_installation_(rubin-20170124-101126).jpg",
+        "altyazi": "Laboratuvar ortamında yürütülen optik iletişim testleri ve cihazları"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/EFTA00002520_-_Server_rack_filled_with_colorful_cables_and_hard_drives_in_a_cluttered_data_center.jpg",
+        "yazar": "Federal Bureau of Investigation",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:EFTA00002520_-_Server_rack_filled_with_colorful_cables_and_hard_drives_in_a_cluttered_data_center.jpg",
+        "altyazi": "Yüksek veri trafiğini yöneten sunucu merkezleri ve altyapı"
+      }
+    ],
+    "breaking": true,
+    "images": [
+      "https://www.donanimhaber.com/images/images/haber/212191/src/cin-den-internet-hizinda-rekor-fiber-uzerinden-3-2-petabit212191_0.jpg",
+      "https://www.donanimhaber.com/images/images/haber/212191/src/cin-den-internet-hizinda-rekor-fiber-uzerinden-3-2-petabit212191_1.jpg"
+    ],
+    "imagesKaynak": "https://www.donanimhaber.com/cin-den-internet-hizinda-rekor-fiber-uzerinden-3-2-petabit--212191",
+    "gorselDeneme": "2026-10-28T10:56:11.725Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/NBN_Co_fibre_optic_cable.jpg/1280px-NBN_Co_fibre_optic_cable.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "707be2e95f1e47d3",
     "title": "Martı, RoboMartı’yla Sürücüsüz Paylaşımlı Yolculukta İlk Testi Tamamladı",
     "slug": "marti-robo-marti-surucusuz-paylasimli-yolculuk-ilk-testi",
@@ -57,7 +127,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:37.306Z",
+    "gorselDeneme": "2026-10-28T10:56:11.224Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Le_emissioni_luminose_notturne_di_un_Data_Center_visto_da_lontano_%28800_metri%29.jpg/1280px-Le_emissioni_luminose_notturne_di_un_Data_Center_visto_da_lontano_%28800_metri%29.jpg",
@@ -193,7 +263,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:36.729Z",
+    "gorselDeneme": "2026-10-28T10:56:10.932Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/2018_Cadillac_CT6_Premium_Luxury_AWD_Super_Cruise%2C_front_right.jpg/1280px-2018_Cadillac_CT6_Premium_Luxury_AWD_Super_Cruise%2C_front_right.jpg",
@@ -384,7 +454,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:38.209Z",
+    "gorselDeneme": "2026-10-28T10:56:13.541Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Defense.gov_News_Photo_100609-F-6655M-012_-_Secretary_of_Defense_Robert_M._Gates_talks_with_Turkish_Defense_Minister_Mehmet_Vecdi_Gonul_at_the_North_Atlantic_Treaty_Organization_Defense.jpg/1280px-thumbnail.jpg",
@@ -514,7 +584,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:38.215Z",
+    "gorselDeneme": "2026-10-28T10:56:13.656Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Luiz_Inacio_Lula_da_Silva_and_Juan_Manuel_Santos.jpg/1280px-Luiz_Inacio_Lula_da_Silva_and_Juan_Manuel_Santos.jpg",
@@ -571,7 +641,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:37.687Z",
+    "gorselDeneme": "2026-10-28T10:56:12.591Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Vivo_V29e.jpg/1280px-Vivo_V29e.jpg",
@@ -708,7 +778,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:38.241Z",
+    "gorselDeneme": "2026-10-28T10:56:13.251Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/%E6%B7%B1%E6%B0%B4%E5%9F%97_Sham_Shui_Po_%E6%95%B8%E7%A2%BC%E9%BE%90%E5%85%8B%E8%99%9F_Heart_of_Cyberpunk_GAME_CENTRE_%E9%9C%93%E8%99%B9%E7%87%88%E6%8B%9B%E7%89%8C_Neon_Sign.jpg/1280px-%E6%B7%B1%E6%B0%B4%E5%9F%97_Sham_Shui_Po_%E6%95%B8%E7%A2%BC%E9%BE%90%E5%85%8B%E8%99%9F_Heart_of_Cyberpunk_GAME_CENTRE_%E9%9C%93%E8%99%B9%E7%87%88%E6%8B%9B%E7%89%8C_Neon_Sign.jpg",
@@ -822,7 +892,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:38.794Z",
+    "gorselDeneme": "2026-10-28T10:56:13.714Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Czech_Dance_Masters_2016_P5_indoor_led_screen_%28cropped%29.jpg",
@@ -1027,7 +1097,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:38.952Z",
+    "gorselDeneme": "2026-10-28T10:56:14.138Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Kazakhstan-Turkey_Friendship_Park_opened_in_Ankara_01.jpg/1280px-Kazakhstan-Turkey_Friendship_Park_opened_in_Ankara_01.jpg",
@@ -1074,7 +1144,7 @@
     "publishedAt": "2026-10-28T08:49:23.000Z",
     "generatedAt": "2026-10-28T08:56:33.274Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:38.424Z",
+    "gorselDeneme": "2026-10-28T10:56:14.990Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Football_match_at_Wincham_Park_Stadium_%28geograph_4383139%29.jpg/1280px-Football_match_at_Wincham_Park_Stadium_%28geograph_4383139%29.jpg",
@@ -1178,7 +1248,7 @@
     "publishedAt": "2026-10-28T08:40:12.000Z",
     "generatedAt": "2026-10-28T08:47:34.564Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:38.661Z",
+    "gorselDeneme": "2026-10-28T10:56:13.849Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/ChatGPT_Spanish_homework.jpg/1280px-ChatGPT_Spanish_homework.jpg",
@@ -1371,7 +1441,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:38.478Z",
+    "gorselDeneme": "2026-10-28T10:56:14.158Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Space_Launch_System_configurations_%282012%29.jpg/1280px-Space_Launch_System_configurations_%282012%29.jpg",
@@ -1669,7 +1739,7 @@
     "publishedAt": "2026-10-28T07:25:15.000Z",
     "generatedAt": "2026-10-28T07:46:01.259Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:38.743Z",
+    "gorselDeneme": "2026-10-28T10:56:14.042Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Moscow%2C_Xiaomi_SU7_max%2C_Aug_2025_07.jpg/1280px-Moscow%2C_Xiaomi_SU7_max%2C_Aug_2025_07.jpg",
@@ -1734,7 +1804,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:38.914Z",
+    "gorselDeneme": "2026-10-28T10:56:14.122Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Aston_Martin_DBX707_1X7A0360.jpg/1280px-Aston_Martin_DBX707_1X7A0360.jpg",
@@ -1923,7 +1993,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:38.890Z",
+    "gorselDeneme": "2026-10-28T10:56:14.504Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Afghan_police%2C_US_soldiers_prepare_for_raid_DVIDS557689.jpg/1280px-Afghan_police%2C_US_soldiers_prepare_for_raid_DVIDS557689.jpg",
@@ -1988,7 +2058,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:38.924Z",
+    "gorselDeneme": "2026-10-28T10:56:14.591Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Lakers_vs_Trail_Blazers.jpg/1280px-Lakers_vs_Trail_Blazers.jpg",
@@ -2255,7 +2325,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:39.305Z",
+    "gorselDeneme": "2026-10-28T10:56:14.680Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Vivo_V29e.jpg/1280px-Vivo_V29e.jpg",
@@ -2367,7 +2437,7 @@
     "publishedAt": "2026-10-28T05:52:30.000Z",
     "generatedAt": "2026-10-28T05:59:12.459Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:39.301Z",
+    "gorselDeneme": "2026-10-28T10:56:14.676Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/AMD_Athlon_XP_Palomino.Jpg/1280px-AMD_Athlon_XP_Palomino.Jpg",
@@ -2488,7 +2558,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:39.314Z",
+    "gorselDeneme": "2026-10-28T10:56:15.061Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Crime_Scene_Investigation_Unit%2C_Royal_Gibraltar_Police.jpg/1280px-Crime_Scene_Investigation_Unit%2C_Royal_Gibraltar_Police.jpg",
@@ -2737,7 +2807,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:39.405Z",
+    "gorselDeneme": "2026-10-28T10:56:15.168Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Burn_of_Skaw_entering_a_stormy_sea_-_geograph.org.uk_-_3848495.jpg",
@@ -2978,7 +3048,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:39.243Z",
+    "gorselDeneme": "2026-10-28T10:56:15.223Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Bedouin_on_the_West_Bank_of_the_Jordan_River.jpg/1280px-Bedouin_on_the_West_Bank_of_the_Jordan_River.jpg",
@@ -3026,7 +3096,7 @@
     "publishedAt": "2026-10-28T04:20:40.000Z",
     "generatedAt": "2026-10-28T04:29:11.378Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:39.488Z",
+    "gorselDeneme": "2026-10-28T10:56:14.999Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg/1280px-Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
@@ -3158,7 +3228,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:39.889Z",
+    "gorselDeneme": "2026-10-28T10:56:15.522Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Secretary_of_State_Peter_Kyle_visits_Anthropic_in_San_Francisco._%2854099081629%29.jpg/1280px-Secretary_of_State_Peter_Kyle_visits_Anthropic_in_San_Francisco._%2854099081629%29.jpg",
@@ -3392,7 +3462,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:39.712Z",
+    "gorselDeneme": "2026-10-28T10:56:15.309Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Istanbul_city_Photos-_Urban_18.jpg/1280px-Istanbul_city_Photos-_Urban_18.jpg",
@@ -3450,7 +3520,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:39.807Z",
+    "gorselDeneme": "2026-10-28T10:56:15.658Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Elderly_people_editing_Catalan_Wikipedia_03.JPG/1280px-Elderly_people_editing_Catalan_Wikipedia_03.JPG",
@@ -3544,7 +3614,7 @@
     "publishedAt": "2026-10-28T03:13:00.000Z",
     "generatedAt": "2026-10-28T03:29:23.658Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:39.713Z",
+    "gorselDeneme": "2026-10-28T10:56:15.355Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Binyamin_Netanyahu_in_court.jpg/1280px-Binyamin_Netanyahu_in_court.jpg",
@@ -3619,7 +3689,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:39.916Z",
+    "gorselDeneme": "2026-10-28T10:56:15.476Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Apple_MacBook_%2817181045830%29.jpg/1280px-Apple_MacBook_%2817181045830%29.jpg",
@@ -3676,7 +3746,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:40.495Z",
+    "gorselDeneme": "2026-10-28T10:56:15.643Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg/1280px-Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg",
@@ -3844,7 +3914,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:40.184Z",
+    "gorselDeneme": "2026-10-28T10:56:15.789Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/DHS_Secretary_Alejandro_Mayorkas_Tours_LA_Cyber_Command_Center_%2851283617836%29.jpg/1280px-DHS_Secretary_Alejandro_Mayorkas_Tours_LA_Cyber_Command_Center_%2851283617836%29.jpg",
@@ -4077,7 +4147,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:41.189Z",
+    "gorselDeneme": "2026-10-28T10:56:18.941Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Flickr_-_Official_U.S._Navy_Imagery_-_A_Paralympic_Games_athlete_receiving_his_competitor_uniforms..jpg/1280px-Flickr_-_Official_U.S._Navy_Imagery_-_A_Paralympic_Games_athlete_receiving_his_competitor_uniforms..jpg",
@@ -4190,7 +4260,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:40.907Z",
+    "gorselDeneme": "2026-10-28T10:56:18.610Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Istanbul_Bosphorus_Oil_Tanker_Prisco_Mizar_IMG_8579_2010.jpg/1280px-Istanbul_Bosphorus_Oil_Tanker_Prisco_Mizar_IMG_8579_2010.jpg",
@@ -4365,7 +4435,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:40.537Z",
+    "gorselDeneme": "2026-10-28T10:56:16.275Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg/1280px-Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg",
@@ -4481,7 +4551,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:40.960Z",
+    "gorselDeneme": "2026-10-28T10:56:16.573Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg/1280px-Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg",
@@ -4547,7 +4617,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-28T10:52:40.667Z",
+    "gorselDeneme": "2026-10-28T10:56:16.285Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/USS_Barry_launches_a_vertical_launch_anti-submarine_rocket_missile_during_Valiant_Shield_2016._%2829750275701%29.jpg/1280px-USS_Barry_launches_a_vertical_launch_anti-submarine_rocket_missile_during_Valiant_Shield_2016._%2829750275701%29.jpg",
