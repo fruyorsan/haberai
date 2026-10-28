@@ -357,28 +357,65 @@ function kartBasligi(baslik) {
   const kaynak = onKelimeler.length >= 2 && onMetin.length <= 52 ? onMetin : temiz;
 
   // İki satıra sığacak şekilde kelime kelime doldur; sığmayan kuyruk atılır
-  // (yarım kalan "... Araç" gibi ifadeler yerine tam ifade kalsın).
+  // (yarım kalan "... Araç" gibi ifadeler yerine tam ifade kalsın). Başlık
+  // "ABD'nin İran'a yönelik operasyonları..." gibi tamlayan zinciriyle
+  // başlıyorsa ilk kelimeler atlanarak anlamlı bir pencere seçilir.
   const SATIR_HARF = 18;
-  const satirlar = [];
-  let satir = "";
-  for (const kelime of kaynak.split(" ").filter(Boolean)) {
-    if (satirlar.length >= 2) break;
-    const aday = satir ? `${satir} ${kelime}` : kelime;
-    if (!satir || aday.length <= SATIR_HARF) satir = aday;
-    else {
-      satirlar.push(satir);
-      satir = kelime;
+  const BITIREN = new Set([
+    ...KART_SON_EK,
+    "yönelik", "ilişkin", "dair", "doğru", "başlayan", "süren", "olan", "yer", "yerde",
+  ]);
+  // Tamlayan hâliyle biten kelimeler de yarım cümle gibi durur
+  // ("... operasyonlarının"). Bunlar da "eksik" sayılır.
+  const eksikKelime = (k) => {
+    const d = String(k || "").toLocaleLowerCase("tr");
+    return BITIREN.has(d) || /(nın|nin|nun|nün)$/.test(d) || d.length <= 3;
+  };
+  const kelimeler = kaynak.split(" ").filter(Boolean);
+
+  const satirlariKur = (baslangic) => {
+    const satirlar = [];
+    let satir = "";
+    let kullanilan = 0;
+    for (let i = baslangic; i < kelimeler.length; i++) {
+      if (satirlar.length >= 2) break;
+      const kelime = kelimeler[i];
+      const aday = satir ? `${satir} ${kelime}` : kelime;
+      if (!satir || aday.length <= SATIR_HARF) satir = aday;
+      else {
+        satirlar.push(satir);
+        satir = kelime;
+      }
+      kullanilan = i + 1;
+    }
+    if (satir && satirlar.length < 2) satirlar.push(satir);
+
+    // Son satırı bağlaç/edat/sıfatla bitirme ("... AFAD ve", "... İran'a yönelik").
+    while (satirlar.length) {
+      const sonlar = satirlar[satirlar.length - 1].split(" ").filter(Boolean);
+      const son = sonlar[sonlar.length - 1] || "";
+      if (!BITIREN.has(son.toLocaleLowerCase("tr"))) break;
+      if (sonlar.length > 1) satirlar[satirlar.length - 1] = sonlar.slice(0, -1).join(" ");
+      else satirlar.pop();
+    }    return { satirlar, kullanilan };
+  };
+
+  /** Son kelimesi tam bir ada oturan ve iki satırı dolduran pencere tercih edilir. */
+  let secim = null;
+  let enIyiPuan = -1;
+  const sonBaslangic = Math.min(4, Math.max(0, kelimeler.length - 3));
+  for (let baslangic = 0; baslangic <= sonBaslangic; baslangic++) {
+    const aday = satirlariKur(baslangic);
+    if (!aday.satirlar.length) continue;
+    const sonKelime = aday.satirlar[aday.satirlar.length - 1].split(" ").pop() || "";
+    const tamam = !eksikKelime(sonKelime);
+    const puan = (tamam ? 3 : 0) + (aday.satirlar.length === 2 ? 1.5 : 0) + aday.kullanilan * 0.1 - baslangic * 0.3;
+    if (puan > enIyiPuan) {
+      enIyiPuan = puan;
+      secim = aday;
     }
   }
-  if (satir && satirlar.length < 2) satirlar.push(satir);
-
-  // Son satırı bağlaç/edatla bitirme ("... AFAD ve" gibi).
-  while (satirlar.length) {
-    const son = satirlar[satirlar.length - 1].split(" ").filter(Boolean);
-    if (son.length > 1 && KART_SON_EK.has(son[son.length - 1].toLocaleLowerCase("tr"))) son.pop();
-    else break;
-    satirlar[satirlar.length - 1] = son.join(" ");
-  }
+  const satirlar = secim ? secim.satirlar : [];
 
   const temizSatirlar = satirlar
     .map((s) => s.replace(/[,.;:!?]+$/, "").trim())
