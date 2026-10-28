@@ -1,0 +1,138 @@
+---
+// ==========================================================================
+// ÖNE ÇIKANLAR — kalite kapısından geçmiş arşiv seçkisi
+// --------------------------------------------------------------------------
+// NEDEN: Site 13 günde ~4.800 haber üretti; bunların yalnızca küçük bir kısmı
+// Google'a açıktı. "Son 48 saat" dışında kalan güçlü dosyaların keşfedilebilir
+// bir merkezi yoktu. Bu hub, indeks çekirdeğinin kalite sırasındaki ilk 500
+// haberini GERÇEK yayın tarihleriyle listeler; tek tek haber sayfalarına iç
+// bağlantı verir.
+//
+// SEO: yalnızca 1. sayfa indekslenir (`noindex` yok). Sayfalama 2+ noindex,
+// follow olur; aynı listeyi tekrar eden ince sayfalar site haritasına girmez.
+// ==========================================================================
+import Base from "../../layouts/Base.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+import Pagination from "../../components/Pagination.astro";
+import { getOneCikan, paginate, PER_PAGE, totalPages, publishedISO } from "../../lib/articles.js";
+import { siteOrigin } from "../../lib/site-meta.js";
+
+const secili = getOneCikan(500);
+const { items, current, totalPages: pages, total } = paginate(secili, 1, PER_PAGE);
+const origin = siteOrigin(Astro.site);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Öne Çıkanlar — HaberinAi arşivi",
+  description:
+    "HaberinAi editör masasının kalite kapısından geçen, en güçlü arşiv haberlerinden seçkiler.",
+  url: origin + "/one-cikanlar/",
+  inLanguage: "tr-TR",
+  isPartOf: { "@type": "WebSite", name: "HaberinAi", url: origin + "/" },
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: total,
+    itemListElement: items.map((a, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: origin + a.url,
+      name: a.title,
+    })),
+  },
+};
+---
+
+<Base
+  title="Öne Çıkanlar — HaberinAi arşiv seçkisi"
+  description="HaberinAi editör masasının kalite kapısından geçen en güçlü arşiv haberleri: analizler, özetler ve özgün yorumlar. Gerçek yayın tarihleriyle."
+  schema={schema}
+>
+  <div class="container">
+    <header class="one__head">
+      <p class="one__eyebrow">ARŞİV SEÇKİSİ</p>
+      <h1>Öne Çıkanlar</h1>
+      <p class="one__lead">
+        Son dakika akışının ötesinde kalan, editör masasının kalite kapısından geçmiş
+        {total} dosya. Her haber kendi gerçek yayın tarihiyle listelenir; seçki,
+        konuya göre değil içeriğin derinliğine göre yapılır.
+      </p>
+      <p class="one__meta">
+        Sayfa {current}/{pages} · <a href="/haberler/">tüm akış</a> ·
+        <a href="/kategoriler/">kategoriler</a>
+      </p>
+    </header>
+
+    <div class="grid">
+      {items.map((a, i) => <ArticleCard article={a} index={i} />)}
+    </div>
+
+    <Pagination current={current} totalPages={pages} base="/one-cikanlar/" />
+
+    <aside class="one__note">
+      <h2>Bu seçki nasıl oluşuyor?</h2>
+      <p>
+        Haberler yalnızca gövde uzunluğu, maddeli özet, editör notu ve özgün yorum
+        ölçütlerini geçtiğinde bu listeye girer. Aynı olayı anlatan tekrarlar ve
+        telif riski taşıyan görseller elenir. Amaç daha fazla sayfa değil, daha
+        okunur bir arşiv.
+      </p>
+    </aside>
+  </div>
+</Base>
+
+<style>
+  .one__head {
+    padding: 34px 0 22px;
+    max-width: 820px;
+  }
+  .one__eyebrow {
+    margin: 0 0 8px;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+    color: var(--red);
+  }
+  .one__head h1 {
+    margin: 0 0 10px;
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    letter-spacing: -0.03em;
+  }
+  .one__lead {
+    margin: 0 0 12px;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--text-2);
+  }
+  .one__meta {
+    margin: 0;
+    font-size: 0.86rem;
+    color: var(--muted);
+  }
+  .one__meta a {
+    color: var(--red);
+    font-weight: 700;
+  }
+  .one__note {
+    margin: 34px 0 10px;
+    padding: 22px 24px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+  }
+  .one__note h2 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+  }
+  .one__note p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--text-2);
+  }
+  @media (max-width: 640px) {
+    .one__head {
+      padding-top: 24px;
+    }
+  }
+</style>

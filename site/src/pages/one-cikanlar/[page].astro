@@ -1,0 +1,60 @@
+---
+// Öne Çıkanlar sayfalaması (2+). Sayfa 1 indekstir; bu sayfalar aynı listeyi
+// tekrar ettikleri için `noindex, follow` olur ve site haritasına girmez.
+import Base from "../../layouts/Base.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+import Pagination from "../../components/Pagination.astro";
+import { getOneCikan, paginate, PER_PAGE, totalPages } from "../../lib/articles.js";
+
+export function getStaticPaths() {
+  const pages = totalPages(getOneCikan(500), PER_PAGE);
+  const paths = [];
+  for (let p = 2; p <= pages; p++) paths.push({ params: { page: String(p) } });
+  return paths;
+}
+
+const secili = getOneCikan(500);
+const page = Number(Astro.params.page);
+const { items, current, totalPages: pages, total } = paginate(secili, page, PER_PAGE);
+---
+
+<Base
+  title={`Öne Çıkanlar — Sayfa ${current} — HaberinAi`}
+  description={`HaberinAi arşiv seçkisi ${current}. sayfa: kalite kapısından geçen en güçlü haberler, analizler ve özgün yorumlar.`}
+  noindex
+>
+  <div class="container">
+    <header class="page-head">
+      <p class="page-head__eyebrow">ARŞİV SEÇKİSİ</p>
+      <h1>Öne Çıkanlar</h1>
+      <p class="muted">{total} dosya · Sayfa {current}/{pages}</p>
+    </header>
+
+    <div class="grid">
+      {items.map((a, i) => <ArticleCard article={a} index={i} />)}
+    </div>
+
+    <Pagination current={current} totalPages={pages} base="/one-cikanlar/" />
+  </div>
+</Base>
+
+<style>
+  .page-head {
+    padding: 30px 0 20px;
+  }
+  .page-head__eyebrow {
+    margin: 0 0 6px;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+    color: var(--red);
+  }
+  .page-head h1 {
+    font-size: 1.9rem;
+    margin: 0 0 6px;
+    letter-spacing: -0.02em;
+  }
+  .page-head .muted {
+    font-size: 0.9rem;
+  }
+</style>

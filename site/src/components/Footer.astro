@@ -27,6 +27,8 @@ const son = getYayinArticles().slice(0, 5);
         <span class="footer__sep">•</span>
         <span>dakikalar içinde güncellenir</span>
       </div>
+      {/* Arayüz dili (TR ⇄ EN). Düğme dil.js tarafından basılır. */}
+      <div class="footer__dil" data-dil-sec></div>
       {SOSYAL_LINKLER.length > 0 && (
         <div class="footer__social" aria-label="Sosyal kanallar">
           {SOSYAL_LINKLER.map((s) => (
@@ -63,6 +65,7 @@ const son = getYayinArticles().slice(0, 5);
       <a href="/telif/">İçerik ve Telif</a>
       <a href="/reklam/">Reklam ve Sponsorluk</a>
       <a href="/son-dakika/">Son Dakika</a>
+      <a href="/one-cikanlar/">Öne Çıkanlar</a>
       <a href="/haberler/">Tüm Haberler</a>
       <a href="/kategoriler/">Kategoriler</a>
       <a href="/etiketler/">Konular</a>

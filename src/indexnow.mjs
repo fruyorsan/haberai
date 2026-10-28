@@ -28,6 +28,10 @@ const KEEP = Number(process.env.INDEXNOW_KEEP ?? 5000); // durum dosyasında tut
 const GUN = Number(process.env.INDEXNOW_GUN ?? 3);
 const dry = process.argv.includes("--dry");
 const tumu = process.argv.includes("--tumu"); // bir kerelik: pencere ve sınırı yok say
+// --indeks: yalnızca data/indeks.json'daki (Google'a açık) haberleri bildir.
+// Normal turda son 3 günün her haberi gider; noindex sayfaları IndexNow'a
+// bildirmek gereksiz gürültü ve çelişki üretir.
+const sadeceIndeks = process.argv.includes("--indeks");
 
 function siteUrl() {
   return (process.env.SITE_URL || DEFAULT_SITE_URL).replace(/\/+$/, "");
@@ -55,8 +59,22 @@ async function main() {
 
   const esikZaman = GUN > 0 ? Date.now() - GUN * 24 * 60 * 60 * 1000 : 0;
 
+  let indeksSet = null;
+  if (sadeceIndeks) {
+    const d = await readJson(join(DATA_DIR, "indeks.json"), null);
+    const ids = Array.isArray(d?.ids)
+      ? d.ids
+      : Object.values(d?.days || {}).flat();
+    indeksSet = new Set(ids.map(String));
+    if (!indeksSet.size) {
+      console.log("  ! indeks.json okunamadı/boş — --indeks yok sayıldı.\n");
+      indeksSet = null;
+    }
+  }
+
   const bekleyen = haberler
     .filter((h) => h && h.id && !gonderilen[h.id])
+    .filter((h) => !indeksSet || indeksSet.has(String(h.id)))
     .filter((h) => {
       if (tumu || !esikZaman) return true;
       const t = Date.parse(h.publishedAt || "");
@@ -73,6 +91,9 @@ async function main() {
   console.log(`  anahtar  : ${KEY}`);
   console.log(
     `  arşiv    : ${haberler.length} haber | gönderilmiş: ${Object.keys(gonderilen).length} | bekleyen: ${bekleyen.length}`
+  );
+  console.log(
+    `  kapsam   : ${sadeceIndeks ? "yalnızca indeks çekirdeği (--indeks)" : "tüm haberler"}`
   );
   console.log(
     `  pencere  : ${tumu ? "tüm arşiv (--tumu)" : `son ${GUN} gün`} | bu turda: ${secilen.length} URL${

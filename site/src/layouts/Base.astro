@@ -221,6 +221,29 @@ const CSP = [
       })();
     </script>
 
+    <!-- Arayüz dili (TR ⇄ EN): seçim ilk boyamadan önce uygulanır.
+         Görünür Türkçe metnin bir an görünüp İngilizceye dönmesini önlemek
+         için gövde, dil.js çeviriyi bitirene kadar gizlenir. Betik herhangi
+         bir nedenle çalışmazsa 1,8 sn sonra kendiliğinden açılır. -->
+    <script is:inline>
+      (function () {
+        try {
+          var kok = document.documentElement;
+          var secim = localStorage.getItem("hb-dil");
+          if (secim === "en") {
+            kok.dataset.dil = "en";
+            kok.lang = "en";
+            kok.classList.add("dil-bekliyor");
+            setTimeout(function () {
+              kok.classList.remove("dil-bekliyor");
+            }, 1800);
+          } else {
+            kok.dataset.dil = "tr";
+          }
+        } catch (e) {}
+      })();
+    </script>
+
     <!-- Yazı tipi ve harici kaynaklar: preconnect & dns-prefetch -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -278,6 +301,9 @@ const CSP = [
          doğrudan kullanabilsin. Dosya public/ altındadır; Astro paketleyicisi
          onu olduğu gibi /hesap.js olarak yayınlar. -->
     <script is:inline src="/hesap.js"></script>
+
+    <!-- Arayüz dili: yalnızca etiketleri çevirir (haber metnine dokunmaz). -->
+    <script is:inline defer src="/dil.js"></script>
 
     <!-- Çerez izni: Google Consent Mode v2.
          Etiketler kaynakta her zaman bulunur (AdSense/Search Console doğrulaması görmeli),

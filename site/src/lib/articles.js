@@ -1,7 +1,7 @@
 import { readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { indeksSeti } from "./indeks.js";
+import { indeksSeti, indeksSirasi } from "./indeks.js";
 import { kategoriDuzelt } from "./kategori-duzelt.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -121,6 +121,24 @@ export function getYayinArticles() {
   const all = getArticles();
   yayinCache = set ? all.filter((a) => set.has(String(a.id))) : all;
   return yayinCache;
+}
+
+/**
+ * "Öne Çıkanlar" arşivi: indeks çekirdeğinin kalite sırasındaki ilk `limit`
+ * haberi. Yeni haberler değil, editör/kalite kapısından geçmiş EN İYİ arşiv
+ * seçkisidir; her haber kendi gerçek yayın tarihiyle listelenir.
+ *
+ * Amaç (27.10.2026): Google'a yalnızca "son 48 saat" değil, kalıcı bir arşiv
+ * değeri de göstermek. Bu sayfa tek tek haberlerin yerini almaz; onlara iç
+ * bağlantı ve keşif yolu açar.
+ */
+export function getOneCikan(limit = 500) {
+  const byId = new Map(getArticles().map((a) => [String(a.id), a]));
+  const sira = indeksSirasi();
+  const liste = sira.length
+    ? sira.map((id) => byId.get(id)).filter(Boolean)
+    : getYayinArticles();
+  return liste.slice(0, Math.max(0, limit));
 }
 
 /** Haber vitrinde (yayın çekirdeğinde) mi? */

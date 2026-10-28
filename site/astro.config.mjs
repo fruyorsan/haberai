@@ -59,6 +59,7 @@ function lastmod(pathname) {
     pathname === "/" ||
     pathname === "/akis/" ||
     pathname === "/son-dakika/" ||
+    pathname === "/one-cikanlar/" ||
     pathname === "/etiketler/" ||
     pathname.startsWith("/haberler/")
   ) {
@@ -87,7 +88,7 @@ export default defineConfig({
         !page.includes("/ara/") &&
         // Sayfalama (2. sayfa ve sonrası): aynı listeyi tekrar eden ince
         // sayfalar. noindex, follow olarak yayında kalır.
-        !/\/(haberler|kategori\/[^/]+|etiket\/[^/]+)\/\d+\/?$/.test(
+        !/\/(haberler|kategori\/[^/]+|etiket\/[^/]+|one-cikanlar)\/\d+\/?$/.test(
           new URL(page).pathname
         ) &&
         // Az haberli etiket sayfaları (hub değeri yok) site haritasına girmez.

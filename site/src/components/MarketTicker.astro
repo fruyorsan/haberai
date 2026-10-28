@@ -65,6 +65,10 @@ const rows = tickerItems.map((it) => ({
         )}
       </div>
     </div>
+
+    {/* Arayüz dili: site genelinde üst şeritten erişilir. Düğme dil.js
+        tarafından basılır; JS yoksa boş kalır ve hiç yer kaplamaz. */}
+    <div class="mticker__dil" data-dil-sec></div>
   </div>
 )}
 

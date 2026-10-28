@@ -203,7 +203,8 @@ Site gezinmesi değişmez; okuyucu her haberi görmeye devam eder.
 
 | Ne | Kural |
 | --- | --- |
-| Haber | Günde en iyi **32** haber, **45 günlük** pencere |
+| Haber | Günde en iyi **75** haber, **45 günlük** pencere |
+| Toplam çekirdek | En fazla **900** URL (`INDEKS_TOPLAM`) |
 | Diğer haberler | `noindex, follow` (dizine girmez, link değeri korunur) |
 | Sayfalama | 2. sayfa ve sonrası `noindex, follow` |
 | Etiket | Yalnızca **50+** haberi olan etiket sayfaları indekslenir |
@@ -219,6 +220,28 @@ yerel/kendi kapak görseli (+14) ve ek görseller (her biri +4, en fazla 3)
 sıralamada Wikimedia stoğunun önüne geçer. Yayın kotası da 135 → **160**
 (9 dk aralık, saatte en fazla 8).
 
+**2026-10-28 — trafik düşüşü ve çekirdek genişletme:** GSC'de 24.10'da
+~1.200 gösterim alan site 25.10'da **sıfıra** düştü. Olası nedenler: manuel
+işlem, dizinden çıkarma veya yanlış property (`fruyorsan.github.io` yerine
+`haberinai.site`). Kod tarafında yapılanlar:
+
+- Çekirdek 32/gün → **75/gün**, toplam **900** URL. 4.795 haberin 915'i artık
+  indekslenebilir; kalanlar `noindex, follow` olarak erişilebilir kalır.
+- **Önceki indeks korunur:** `data/indeks.json` içindeki eski URL'ler yeni
+  seçime taşınır. Daha önce dizine giren 414 URL'nin tamamı korundu; hiçbiri
+  `noindex`'e düşmedi.
+- **`/one-cikanlar/` hub'ı:** 500 haberlik arşiv seçkisi, tek indekslenebilir
+  sayfa. Sayfalama `noindex`; ana sayfa, menü ve footer'dan bağlantılı.
+- **`/image-sitemap.xml`:** 913 kapak görseli; `robots.txt`'te duyuruldu.
+- **IndexNow:** `--indeks` bayrağı ile yalnızca çekirdek URL'ler gönderilebilir.
+
+> Not: Bu değişiklikler gerçek arşivi **özgün tarihleriyle** açar. Eski
+> görünsün diye tarih geriye alınmadı; toplu/backdate edilmiş içerik Google
+> için aldatıcı sinyaldir ve kalıcı dizin kaybı riski taşır.
+
+**Beklenen sonuç:** site haritası 5.487 → ~950 URL; 2-4 hafta içinde GSC'de
+"Dizinlenen" sayısının 58 → 150+ çıkması. Silinen sayfa yok, geri alınabilir.
+
 Kalite puanı: gövde uzunluğu (2000+ karakter), `keyPoints` sayısı (5),
 editör notu, yorum, gerçek fotoğraf, etiket sayısı. Tazelik puanı bilinçli
 olarak yok — sıralama gün içinde kaymasın.
@@ -226,9 +249,6 @@ olarak yok — sıralama gün içinde kaymasın.
 Üretim: `npm run indeks` (pipeline'da `collect` sonrası otomatik çalışır).
 Kapatmak için `INDEKS_GUNLUK=0` değil, `data/indeks.json`'ı silmek yeterli:
 dosya yoksa kısıtlama uygulanmaz ve tüm haberler yeniden açık olur.
-
-**Beklenen sonuç:** site haritası 5.487 → ~200 URL; 2-4 hafta içinde GSC'de
-"Dizinlenen" sayısının 58 → 150+ çıkması. Silinen sayfa yok, geri alınabilir.
 
 ## 9) Kapak görselleri (2026-10-26)
 
