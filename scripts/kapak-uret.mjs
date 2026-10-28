@@ -105,9 +105,11 @@ const hedefler = articles
       return /wikimedia\.org/i.test(String(a.image || ""));
     }
     if (sadeceStokKaynak) {
+      // Yerel kapak dosyası olup taban fotoğrafı Wikimedia stoğu olan her kapak
+      // (fotoğraf ya da kart) hedeftir: yayıncının kendi fotoğrafı varsa ona
+      // geçilir, yoksa mevcut kart korunur.
       return (
         String(a.image || "").startsWith(`${URL_TABANI}/`) &&
-        a.kapak?.foto === true &&
         /wikimedia\.org/i.test(String(a.kapak?.kaynak || ""))
       );
     }
