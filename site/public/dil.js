@@ -468,6 +468,11 @@
     "Akışı süz": "Filter the feed",
     "Filtresiz": "Unfiltered",
     "Sana özel": "For you",
+    // Düğmenin erişilebilir adı görünen metni içermeli (WCAG 2.5.3).
+    // İngilizce arayüzde aria-label Türkçe kalırsa Lighthouse
+    // label-content-name-mismatch veriyor.
+    "Sana özel sırala": "Sort for you",
+    "Beğendiğin kategoriler öne gelsin": "Your liked categories come first",
     "Tümü": "All",
     "Yeni haberler cebine gelsin": "Get new stories on your phone",
     "Akışın sonuna geldin. Tüm arşiv:": "You've reached the end of the feed. Full archive:",
