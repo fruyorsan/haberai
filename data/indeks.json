@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T01:47:19.640Z",
+  "updatedAt": "2026-10-28T01:50:44.401Z",
   "gunluk": 32,
   "pencereGun": 45,
   "esik": {
@@ -12,9 +12,9 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 4837,
-  "aday": 4837,
-  "uygun": 2780,
+  "toplamHaber": 4838,
+  "aday": 4838,
+  "uygun": 2781,
   "secilen": 443,
   "red": {
     "özet gövdeyle aynı": 100,
@@ -29,7 +29,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "günlük kota": 2300,
+    "günlük kota": 2301,
     "tekrar": 37
   },
   "ornekTekrarlar": [
@@ -210,12 +210,12 @@
       "b12efe44c4c086b8",
       "eed38fa81aefa54b",
       "1b009caa2632397f",
+      "739ec793c0dee331",
       "d83c4b0daa3b8572",
       "d972d89b1ffed532",
       "c74574abd448eee7",
       "c6a0efbad3a6db46",
-      "48e2c9cd81f5c55f",
-      "ccf65363b2dda856"
+      "48e2c9cd81f5c55f"
     ],
     "2026-10-18": [
       "b38df0538db3aa9e",
@@ -687,6 +687,7 @@
     "52cefc76d7126161",
     "e329272d9fa2b48f",
     "773383828fba70c1",
+    "739ec793c0dee331",
     "d83c4b0daa3b8572",
     "2ee03cd9c9d668ee",
     "d972d89b1ffed532",
@@ -719,7 +720,6 @@
     "75fec39cf9b4831d",
     "d7eed9f679a4c92b",
     "637057522398a3d3",
-    "ccf65363b2dda856",
     "86fcae055aaf31dc",
     "bc7149de42d77776",
     "1b4109155f02effd",
