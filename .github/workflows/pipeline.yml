@@ -130,6 +130,11 @@ jobs:
         run: |
           git config user.name "haber-bot"
           git config user.email "bot@users.noreply.github.com"
+          # data/articles.json icin JSON-aware birlestirme: taze icerik gelir,
+          # iki taraftaki gorsel alanlari (kapak, images...) korunur.
+          # Eski "-X ours" davranisi elle eklenen fotograflari siliyordu.
+          git config merge.haber-veri.name "haber verisi birlestirme"
+          git config merge.haber-veri.driver "node scripts/veri-birlestir-surucu.mjs %O %A %B"
           git add data/ site/public/kapak/
           if git diff --staged --quiet; then
             echo "Yeni veri yok."
