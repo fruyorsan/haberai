@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T06:57:41.402Z",
+  "updatedAt": "2026-10-29T07:05:07.255Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -16,7 +16,7 @@
   "toplamHaber": 5045,
   "aday": 5045,
   "uygun": 2993,
-  "secilen": 2899,
+  "secilen": 2900,
   "red": {
     "özet gövdeyle aynı": 105,
     "kısa özet": 34,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 101
+    "tekrar": 100
   },
   "ornekTekrarlar": [
     {
@@ -68,10 +68,6 @@
     {
       "title": "Apple, 2 nm A20 Pro işlemcili OLED iPad mini modelini tanıttı",
       "twin": "Apple, MacBook Neo 2’yi A19 Pro ve 12 GB RAM ile tanıttı"
-    },
-    {
-      "title": "Araştırmacılar Saniyede 3,2 Petabit Hıza Ulaştı",
-      "twin": "Çinli araştırmacılar fiber optik kabloda 3,2 petabit hıza ulaştı"
     },
     {
       "title": "Apple M6 Çipli 14 İnç MacBook Pro Grafik ve AI Performansını %30 Artırdı",
@@ -112,6 +108,10 @@
     {
       "title": "Samsung Galaxy S27 serisi, ocak ayında 100 dolar zamla gelebilir",
       "twin": "Samsung Galaxy Fit 4 modeli, 100 dolar altı fiyatla geliyor"
+    },
+    {
+      "title": "Prof. Dr. Osman Bektaş'tan Marmara'daki 7,5 deprem senaryosuna itiraz",
+      "twin": "Jeolog Osman Bektaş, Marmara depremi senaryolarına karşı uyarıyor"
     }
   ],
   "days": {
@@ -159,7 +159,6 @@
       "3fe5f51aa274b7e5",
       "09bc1ee5375acd32",
       "4867e72e8b1058ba",
-      "7ba2c85e65eb0e5a",
       "74ca705fd0fdb2c6",
       "0ff97bcc11ad5d2e",
       "c82ec67b4a89c524",
@@ -656,10 +655,12 @@
       "465e3d385c653b3c",
       "846e92429a60fac0",
       "5061d826353ba18f",
+      "00c775668d5d97e8",
       "cc13a126af96671d",
       "1283ca12a4a7840c",
       "3030efbc46ead630",
       "dc453e940c0ec238",
+      "521c8f4bb8197241",
       "ac04d82d79708bf6",
       "42494757e22abeee",
       "6f573d4153238c5f",
@@ -3147,7 +3148,6 @@
     "33c5a4339667189b",
     "b34a82540fd3d262",
     "2243e3fe15798746",
-    "7ba2c85e65eb0e5a",
     "00d2f88ba0e3e9f4",
     "74ca705fd0fdb2c6",
     "0ff97bcc11ad5d2e",
@@ -3532,6 +3532,7 @@
     "5fa4fb5dedfd9ccd",
     "31d2496d27466454",
     "2cd562a3de5ca9d8",
+    "00c775668d5d97e8",
     "745742a6b774ecd8",
     "b9f9ad38a2f3558c",
     "4033d1098f88206e",
@@ -3927,6 +3928,7 @@
     "8bebbf9a9416bbd1",
     "aaf8eae7e7febefd",
     "38135c0942f6278a",
+    "521c8f4bb8197241",
     "a71ac349748f1ad6",
     "ac04d82d79708bf6",
     "535ebfa82eb21af3",
