@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T12:31:02.034Z",
+  "updatedAt": "2026-10-29T12:39:13.107Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5079,
-  "aday": 5079,
-  "uygun": 3029,
-  "secilen": 2936,
+  "toplamHaber": 5080,
+  "aday": 5080,
+  "uygun": 3030,
+  "secilen": 2937,
   "red": {
     "özet gövdeyle aynı": 105,
     "kısa özet": 34,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 101
+    "tekrar": 102
   },
   "ornekTekrarlar": [
     {
@@ -94,6 +94,10 @@
       "twin": "Galaxy S24 Ultra bataryası One UI 9 ile hızla tükenmeye başladı"
     },
     {
+      "title": "Nintendo Switch 2, yapay zeka ve 25 dolarlık yazılımla kırıldı",
+      "twin": "Nintendo Switch 2 Yazılım Bariyeri Kaldırdı, Jailbreak Kolaylaştı"
+    },
+    {
       "title": "Apple, iOS 27.2 ile Mesajlar uygulamasında bildirim rozeti düzenliyor",
       "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
     },
@@ -108,10 +112,6 @@
     {
       "title": "Samsung Galaxy S27 serisi, ocak ayında 100 dolar zamla gelebilir",
       "twin": "Samsung Galaxy Fit 4 modeli, 100 dolar altı fiyatla geliyor"
-    },
-    {
-      "title": "Prof. Dr. Osman Bektaş'tan Marmara'daki 7,5 deprem senaryosuna itiraz",
-      "twin": "Jeolog Osman Bektaş, Marmara depremi senaryolarına karşı uyarıyor"
     }
   ],
   "days": {
@@ -209,6 +209,7 @@
       "026d5487158b227a",
       "687a1a50d7edfaff",
       "c69d47005ca5bcf8",
+      "12112851f3ae70e4",
       "ae3c1beedd89dfd9",
       "3163f604feb7173b",
       "ae94c55ea8f8d9e2",
@@ -223,7 +224,6 @@
       "54c126dcbaf52d0a",
       "908b6194caeae1f4",
       "11077860e92282a6",
-      "12112851f3ae70e4",
       "0c4f32ca37e7f7b4",
       "521c8f4bb8197241",
       "846e92429a60fac0",
@@ -236,6 +236,7 @@
       "00c775668d5d97e8",
       "cc13a126af96671d",
       "44d607558141aff7",
+      "813a55f6442d8251",
       "dc453e940c0ec238",
       "ac04d82d79708bf6",
       "6f573d4153238c5f",
@@ -584,7 +585,6 @@
       "da1c6fb24d1713fc",
       "90aba693ecf62d9c",
       "3c6f036f013c3dc0",
-      "3145ab9bdd1072b3",
       "003cb389efbee7be",
       "54c7059460eb1359",
       "a065ae4f7130ffac",
@@ -601,6 +601,7 @@
       "7cb5716eef147e3d",
       "a9c2d7c309fb185f",
       "9f5b28ffc0ffd7e4",
+      "3145ab9bdd1072b3",
       "2da6c72d999937d8",
       "e6692b815dbe16c9",
       "11f54c3ef80151ce",
@@ -771,7 +772,6 @@
       "07f6f61d27714ab1",
       "8cc714928d534ad1",
       "85f4d578b2a22072",
-      "3017e46558a4627e",
       "01ce1e2236dd49d3",
       "2fc6fcf5c5588735",
       "c372af2f7bc0f8fb",
@@ -1031,6 +1031,7 @@
       "5c7789efab2830b5",
       "e550e26b61b20d1c",
       "c3ea79137f85470e",
+      "3017e46558a4627e",
       "962cdb6b027eab8d",
       "944e5bb7b1ffff05"
     ],
@@ -3174,7 +3175,6 @@
     "3723fa1d1341b882",
     "a9179129bea2a097",
     "6fc2113793514329",
-    "3145ab9bdd1072b3",
     "d4c8774cfea383b8",
     "003cb389efbee7be",
     "3fe5f51aa274b7e5",
@@ -3235,6 +3235,7 @@
     "df91460f19d6838e",
     "9f5b28ffc0ffd7e4",
     "5643343cd95151a8",
+    "3145ab9bdd1072b3",
     "2da6c72d999937d8",
     "6f1bb51c89ac6801",
     "7cdc2d674cd45e58",
@@ -3382,6 +3383,7 @@
     "c7918bcabe20b200",
     "2b5454c4419965d5",
     "c6a0efbad3a6db46",
+    "12112851f3ae70e4",
     "b47c82826a0dc331",
     "ae3c1beedd89dfd9",
     "3163f604feb7173b",
@@ -3496,7 +3498,6 @@
     "dd2070e1455a6f47",
     "f5bb19bdb211bb19",
     "559ce3912724137d",
-    "12112851f3ae70e4",
     "80f8c078c25d271a",
     "ed25fc1b933fb415",
     "ab5322a3cad8e5c6",
@@ -3990,6 +3991,7 @@
     "d411aeb539e485ad",
     "e2423e2daaaa543b",
     "6b3e99f12bdeb23c",
+    "813a55f6442d8251",
     "d71f03ee8d88de43",
     "1c6ce357ff9cc5b6",
     "8182948dabe61c33",
@@ -4134,7 +4136,6 @@
     "dbf561cbf4885ade",
     "85f4d578b2a22072",
     "4fbe0968076959d0",
-    "3017e46558a4627e",
     "5b8c9b6f359818d3",
     "82fb22243de753b7",
     "33b3333e9c697556",
@@ -6011,6 +6012,7 @@
     "c3ea79137f85470e",
     "b6807a82d0b760ef",
     "a98440cac2f5d856",
+    "3017e46558a4627e",
     "dc8260ebcc24b537",
     "9214942153be4652",
     "d6f6b1c3aaf7b910",
