@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T07:25:36.102Z",
+  "updatedAt": "2026-10-29T07:31:36.737Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5045,
-  "aday": 5045,
-  "uygun": 2994,
-  "secilen": 2901,
+  "toplamHaber": 5046,
+  "aday": 5046,
+  "uygun": 2995,
+  "secilen": 2902,
   "red": {
     "özet gövdeyle aynı": 105,
     "kısa özet": 34,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 100
+    "tekrar": 101
   },
   "ornekTekrarlar": [
     {
@@ -64,6 +64,10 @@
     {
       "title": "Google Gemini 4 Argon, Android Bench’te Beşinci Sırada Yer Aldı",
       "twin": "Google, yapay zeka modeli Gemini 4 Carbon ile zirveye yerleşti"
+    },
+    {
+      "title": "Apple, dokunmatik ekranlı ve OLED panelli MacBook Pro modeli için mağazalarda hazırlık yapıyor",
+      "twin": "Apple, MacBook Pro serisine dokunmatik ekranı OLED ile getirdi"
     },
     {
       "title": "Apple, 2 nm A20 Pro işlemcili OLED iPad mini modelini tanıttı",
@@ -108,10 +112,6 @@
     {
       "title": "Samsung Galaxy S27 serisi, ocak ayında 100 dolar zamla gelebilir",
       "twin": "Samsung Galaxy Fit 4 modeli, 100 dolar altı fiyatla geliyor"
-    },
-    {
-      "title": "Prof. Dr. Osman Bektaş'tan Marmara'daki 7,5 deprem senaryosuna itiraz",
-      "twin": "Jeolog Osman Bektaş, Marmara depremi senaryolarına karşı uyarıyor"
     }
   ],
   "days": {
@@ -598,6 +598,7 @@
       "4ff32f7f0d29b9f1",
       "d1f3819020b474d0",
       "3723fa1d1341b882",
+      "a42932f4d5f3e83b",
       "1dc42f1829be5db8",
       "002d0251f2c5f593",
       "33c5a4339667189b",
@@ -1032,7 +1033,6 @@
       "7cc6182982fe119f",
       "9514f628b091eef0",
       "673a13f4799ee939",
-      "7a0a2ec4255c2456",
       "1986e3a5665295dd",
       "f135a8fd266eadd8",
       "d71f03ee8d88de43",
@@ -1311,7 +1311,8 @@
       "73a618c73f64cf05",
       "aceb6d17e3c0a5a7",
       "8f28e5ea5bd14900",
-      "b6807a82d0b760ef"
+      "b6807a82d0b760ef",
+      "7a0a2ec4255c2456"
     ],
     "2026-10-16": [
       "88afc4c46ff5a08a",
@@ -3143,6 +3144,7 @@
     "09bc1ee5375acd32",
     "54c7059460eb1359",
     "2da6c72d999937d8",
+    "a42932f4d5f3e83b",
     "4867e72e8b1058ba",
     "1dc42f1829be5db8",
     "002d0251f2c5f593",
@@ -3764,7 +3766,6 @@
     "f83cb3de8c4faa90",
     "ec151a5cb6f16485",
     "56ad98808be11df5",
-    "7a0a2ec4255c2456",
     "fc353de75c8aa328",
     "af5c99c782f8f6df",
     "a643b938a4eca466",
@@ -5942,6 +5943,7 @@
     "c3ea79137f85470e",
     "b6807a82d0b760ef",
     "a98440cac2f5d856",
+    "7a0a2ec4255c2456",
     "9214942153be4652",
     "f0eca3a0a2bce2ef",
     "d6f6b1c3aaf7b910",
