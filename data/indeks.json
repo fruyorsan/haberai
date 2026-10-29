@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T08:27:12.418Z",
+  "updatedAt": "2026-10-29T08:34:53.705Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5050,
-  "aday": 5050,
-  "uygun": 2999,
-  "secilen": 2906,
+  "toplamHaber": 5053,
+  "aday": 5053,
+  "uygun": 3002,
+  "secilen": 2908,
   "red": {
     "özet gövdeyle aynı": 105,
     "kısa özet": 34,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 100
+    "tekrar": 102
   },
   "ornekTekrarlar": [
     {
@@ -58,12 +58,20 @@
       "twin": "Fenerbahçe Yönetimi İsmail Kartal'ın İstifasını Onayladı"
     },
     {
+      "title": "AMD ve Meta iş birliğini genişletiyor: 1 milyar dolarlık yatırım",
+      "twin": "AMD ve Meta dev yapay zeka iş birliği için 1 milyar dolarlık yatırım yaptı"
+    },
+    {
       "title": "İsrail'in Gazze saldırıları 4 sivilin daha yaşamına son verdi",
       "twin": "İsrail ordusunun Gazze saldırıları sonucu 4 Filistinli hayatını kaybetti"
     },
     {
       "title": "Google Gemini 4 Argon, Android Bench’te Beşinci Sırada Yer Aldı",
       "twin": "Google, yapay zeka modeli Gemini 4 Carbon ile zirveye yerleşti"
+    },
+    {
+      "title": "Samsung A08: 6000 mAh batarya ve 6 yıllık güncelleme desteğiyle geldi",
+      "twin": "Samsung Galaxy A08, 6.000 mAh batarya ve 6 yıllık güncelleme ile geldi"
     },
     {
       "title": "Apple, 2 nm A20 Pro işlemcili OLED iPad mini modelini tanıttı",
@@ -104,14 +112,6 @@
     {
       "title": "Elon Musk'tan Cumhuriyetçilere 200 milyon doları aşan seçim desteği",
       "twin": "Elon Musk, ABD seçimleri için Cumhuriyetçilere 200 milyon dolardan fazla aktardı"
-    },
-    {
-      "title": "Samsung Galaxy S27 serisi, ocak ayında 100 dolar zamla gelebilir",
-      "twin": "Samsung Galaxy Fit 4 modeli, 100 dolar altı fiyatla geliyor"
-    },
-    {
-      "title": "Prof. Dr. Osman Bektaş'tan Marmara'daki 7,5 deprem senaryosuna itiraz",
-      "twin": "Jeolog Osman Bektaş, Marmara depremi senaryolarına karşı uyarıyor"
     }
   ],
   "days": {
@@ -267,7 +267,6 @@
       "75bcfe97a44a2ecc",
       "67fd75d9c47ce5f8",
       "007a44d8de5ed8f2",
-      "3ba83c991f16868e",
       "dea76c9d3a3ab6d4",
       "6fa89ecdb492c3aa",
       "70cb7707701ec5a1",
@@ -300,7 +299,8 @@
       "5612a93ea5f3b835",
       "6dfb54a1e7d8bd99",
       "afe7a36d06a6d178",
-      "d29a49f98235fff7"
+      "d29a49f98235fff7",
+      "3ba83c991f16868e"
     ],
     "2026-10-26": [
       "5fece920610c8928",
@@ -509,8 +509,10 @@
       "aaa716f7d3eee4b1",
       "433315fd447b239a",
       "f95a7f8908299c0e",
+      "3f98e424c64de5e0",
       "54316866304d3386",
       "8972a39a84ef631c",
+      "92fcd1497a23af40",
       "ae3c1beedd89dfd9",
       "3163f604feb7173b",
       "c8febb9fb2816407",
@@ -598,7 +600,6 @@
       "ddcc897e04c29e71",
       "8f4d11d7e23b47a1",
       "38da4b687a04ff5b",
-      "a97004e961a00227",
       "fff8b828204ad976",
       "9725210dfb8f0271",
       "8489e2ec6b246d9c",
@@ -615,6 +616,7 @@
       "def37e70fb725a6a",
       "249b16d9b1d63050",
       "14c3a8d006e7996e",
+      "a97004e961a00227",
       "83bcc129c693ba7b",
       "fafb530fb426a0d1",
       "80270a0bdce4ac8d",
@@ -3319,7 +3321,6 @@
     "c8ebe5f981fd38e1",
     "8c00c2eac841839c",
     "0a959c2d53f08f05",
-    "a97004e961a00227",
     "f95a7f8908299c0e",
     "fff8b828204ad976",
     "f0a8d4e9c02f3cfe",
@@ -3327,6 +3328,7 @@
     "69300cabe8659c5f",
     "de3b009353f0ec95",
     "1b009caa2632397f",
+    "3f98e424c64de5e0",
     "511c4225152943a7",
     "09747a3394b04d6e",
     "9725210dfb8f0271",
@@ -3339,6 +3341,7 @@
     "2b5454c4419965d5",
     "c6a0efbad3a6db46",
     "b47c82826a0dc331",
+    "92fcd1497a23af40",
     "ae3c1beedd89dfd9",
     "3163f604feb7173b",
     "199eecef3d4748e1",
@@ -3392,6 +3395,7 @@
     "249b16d9b1d63050",
     "e9e6f2e35e96d1fb",
     "14c3a8d006e7996e",
+    "a97004e961a00227",
     "83bcc129c693ba7b",
     "fafb530fb426a0d1",
     "8eba127a45d1953d",
@@ -3648,7 +3652,6 @@
     "3f49860290d8b847",
     "c81c7ddaace90a11",
     "5fed5e7a423dcaa3",
-    "3ba83c991f16868e",
     "526bef92e6b83dff",
     "02d2df5ed9a64bbb",
     "38acea8045fcf308",
@@ -5952,6 +5955,7 @@
     "c3ea79137f85470e",
     "b6807a82d0b760ef",
     "a98440cac2f5d856",
+    "3ba83c991f16868e",
     "9214942153be4652",
     "f0eca3a0a2bce2ef",
     "d6f6b1c3aaf7b910",
