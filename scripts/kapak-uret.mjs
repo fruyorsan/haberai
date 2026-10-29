@@ -337,8 +337,10 @@ function kartBasligi(baslik) {
   // gibi başlıklarda ilk parça haberin kendisini söylemiyor (gelişme, açıklama,
   // iddia...); asıl olay iki noktadan sonra gelir.
   const belirsiz = /(yeni gelişme|gelişme|açıklama|iddia|detay|soru|işte|dikkat|neden|nasıl)/i;
+  let olayKismi = false;
   if (belirsiz.test(onBolum) && sonraBolum.split(" ").filter(Boolean).length >= 3) {
     onKelimeler = sonraBolum.split(" ").filter(Boolean);
+    olayKismi = true;
   }
 
   // "Beşiktaş, Olympiakos karşısında 81-73 yenildi" gibi başlıklarda ilk parça
@@ -361,7 +363,16 @@ function kartBasligi(baslik) {
   const onMetin = onKelimeler.join(" ");
   // 40 karakter sınırı, yeri atılmış kısa ifadeyi gereksiz yere tüm başlığa
   // düşürüyordu; iki satıra sığan 52 karaktere kadar kullan.
-  const kaynak = onKelimeler.length >= 2 && onMetin.length <= 52 ? onMetin : temiz;
+  //
+  // 29.10.2026: "Dünya Sağlık Örgütü: Yemen'de çatışmalar 9 binden fazla can
+  // aldı" gibi başlıklarda iki nokta öncesi yalnızca ÖZNE'dir (kurum/kişi).
+  // Kartta sadece "Dünya Sağlık Örgütü" yazıyordu; haber görünmüyordu.
+  // Özne kısaysa (<= 4 kelime) ve olay kısmı uzunsa tam başlık kullanılır:
+  // kart "Dünya Sağlık Örgütü: Yemen'de çatışmalar…" der.
+  const sonraKelime = sonraBolum.split(" ").filter(Boolean).length;
+  const ozneKisa = !olayKismi && onKelimeler.length <= 4 && sonraKelime >= 4;
+  const kaynak =
+    onKelimeler.length >= 2 && onMetin.length <= 52 && !ozneKisa ? onMetin : temiz;
 
   // İki satıra sığacak şekilde kelime kelime doldur; sığmayan kuyruk atılır
   // (yarım kalan "... Araç" gibi ifadeler yerine tam ifade kalsın). Başlık
@@ -384,12 +395,17 @@ function kartBasligi(baslik) {
   };
   const kelimeler = kaynak.split(" ").filter(Boolean);
 
+  // 3 satıra kadar: 2 satırda 52 karakter sığıyordu ve uzun başlıklar hep
+  // "…" ile kesiliyordu. 3 satırda ~78 karakter, haber başlığının tamamını
+  // verir; blok yine 720 px yüksekliğe rahat oturur.
+  const SATIR_SAYISI = 3;
+
   const satirlariKur = (baslangic) => {
     const satirlar = [];
     let satir = "";
     let kullanilan = 0;
     for (let i = baslangic; i < kelimeler.length; i++) {
-      if (satirlar.length >= 2) break;
+      if (satirlar.length >= SATIR_SAYISI) break;
       const kelime = kelimeler[i];
       const aday = satir ? `${satir} ${kelime}` : kelime;
       if (!satir || aday.length <= SATIR_HARF) satir = aday;
@@ -399,63 +415,45 @@ function kartBasligi(baslik) {
       }
       kullanilan = i + 1;
     }
-    if (satir && satirlar.length < 2) satirlar.push(satir);
+    if (satir && satirlar.length < SATIR_SAYISI) satirlar.push(satir);
 
     // Son satırı bağlaç/edat/sıfatla bitirme ("... AFAD ve", "... İran'a yönelik").
     while (satirlar.length) {
       const sonlar = satirlar[satirlar.length - 1].split(" ").filter(Boolean);
       const son = sonlar[sonlar.length - 1] || "";
-      if (!BITIREN.has(son.toLocaleLowerCase("tr"))) break;
+      // Tek/iki haneli sayıyla bitirme ("... çatışmalar 9"): sayı tek başına
+      // bir şey anlatmaz; "…" ile devam etmek daha doğrudur.
+      const yalinSayi = /^\d{1,2}$/.test(son);
+      if (!BITIREN.has(son.toLocaleLowerCase("tr")) && !yalinSayi) break;
       if (sonlar.length > 1) satirlar[satirlar.length - 1] = sonlar.slice(0, -1).join(" ");
       else satirlar.pop();
     }
 
-    // İkinci satır tek kelimeye düşerse ("Starlink antenlerini ateşe / verdi")
-    // ilk satırın son kelimesini aşağı alarak dengele.
-    if (satirlar.length === 2) {
-      let ilk = satirlar[0].split(" ").filter(Boolean);
-      let ikinci = satirlar[1].split(" ").filter(Boolean);
-      while (ikinci.length === 1 && ilk.length > 1) {
-        const aday = `${ilk[ilk.length - 1]} ${ikinci.join(" ")}`;
+    // Son satır tek kelimeye düşerse ("Starlink antenlerini ateşe / verdi")
+    // bir üst satırın son kelimesini aşağı alarak dengele.
+    if (satirlar.length >= 2) {
+      let son = satirlar[satirlar.length - 1].split(" ").filter(Boolean);
+      while (son.length === 1 && satirlar.length >= 2) {
+        const onceki = satirlar[satirlar.length - 2].split(" ").filter(Boolean);
+        if (onceki.length <= 1) break;
+        const aday = `${onceki[onceki.length - 1]} ${son.join(" ")}`;
         if (aday.length > SATIR_HARF) break;
-        ikinci = [ilk.pop(), ...ikinci];
-        satirlar[0] = ilk.join(" ");
-        satirlar[1] = ikinci.join(" ");
+        son = [onceki.pop(), ...son];
+        satirlar[satirlar.length - 2] = onceki.join(" ");
+        satirlar[satirlar.length - 1] = son.join(" ");
       }
     }
 
     return { satirlar, kullanilan };
   };
 
-  /** Son kelimesi tam bir ada oturan ve iki satırı dolduran pencere tercih edilir. */
-  let secim = null;
-  let enIyiPuan = -1;
-  // Türkçe başlıkta yüklem sonda olur; pencere yüklemle bitiyorsa haberin
-  // kendisini anlatır ("... ateşe verdi"), yüklemsiz pencere yarım kalır.
-  const yuklemMi = (k) =>
-    /(di|dı|du|dü|tu|tü|miş|mış|muş|müş|yor|acak|ecek|dılar|diler)$/i.test(String(k || ""));
-  // Uzun başlıklarda pencereyi sona doğru kaydırmayı da dene: ilk kelimeler
-  // çoğu zaman özne/tamlayan, olay ise sonda.
-  const sonBaslangic = Math.max(0, Math.min(kelimeler.length - 3, 6));
-  for (let baslangic = 0; baslangic <= sonBaslangic; baslangic++) {
-    const aday = satirlariKur(baslangic);
-    if (!aday.satirlar.length) continue;
-    const sonKelime = aday.satirlar[aday.satirlar.length - 1].split(" ").pop() || "";
-    const tamam = !eksikKelime(sonKelime);
-    const yuklem = yuklemMi(sonKelime);
-    const puan =
-      (tamam ? 3 : 0) +
-      (yuklem ? 2.5 : 0) +
-      (aday.satirlar.length === 2 ? 1 : 0) +
-      (aday.kullanilan < kelimeler.length ? -1.5 : 0) +
-      aday.kullanilan * 0.1 -
-      baslangic * 0.2;
-    if (puan > enIyiPuan) {
-      enIyiPuan = puan;
-      secim = aday;
-    }
-  }
-  const satirlar = secim ? secim.satirlar : [];
+  // Kart başlığı HER ZAMAN başlığın ilk kelimesinden başlar. Daha önce
+  // pencereyi kaydırıp "yüklemle biten" parçayı seçmeye çalışan bir sürüm
+  // vardı; sonuç "İle dizüstü bilgisayarlara / süper çip getirdi" gibi
+  // ortadan başlayan, öznesi kaybolmuş metinlerdi. Başlık cümlesi gibi
+  // okunmalı: baştan başla, sığmayan kuyruğu "…" ile bitir.
+  const secim = satirlariKur(0);
+  const satirlar = secim.satirlar;
 
   const temizSatirlar = satirlar
     .map((s) => s.replace(/[,.;:!?]+$/, "").trim())
