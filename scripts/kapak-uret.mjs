@@ -408,19 +408,48 @@ function kartBasligi(baslik) {
       if (!BITIREN.has(son.toLocaleLowerCase("tr"))) break;
       if (sonlar.length > 1) satirlar[satirlar.length - 1] = sonlar.slice(0, -1).join(" ");
       else satirlar.pop();
-    }    return { satirlar, kullanilan };
+    }
+
+    // İkinci satır tek kelimeye düşerse ("Starlink antenlerini ateşe / verdi")
+    // ilk satırın son kelimesini aşağı alarak dengele.
+    if (satirlar.length === 2) {
+      let ilk = satirlar[0].split(" ").filter(Boolean);
+      let ikinci = satirlar[1].split(" ").filter(Boolean);
+      while (ikinci.length === 1 && ilk.length > 1) {
+        const aday = `${ilk[ilk.length - 1]} ${ikinci.join(" ")}`;
+        if (aday.length > SATIR_HARF) break;
+        ikinci = [ilk.pop(), ...ikinci];
+        satirlar[0] = ilk.join(" ");
+        satirlar[1] = ikinci.join(" ");
+      }
+    }
+
+    return { satirlar, kullanilan };
   };
 
   /** Son kelimesi tam bir ada oturan ve iki satırı dolduran pencere tercih edilir. */
   let secim = null;
   let enIyiPuan = -1;
-  const sonBaslangic = Math.min(4, Math.max(0, kelimeler.length - 3));
+  // Türkçe başlıkta yüklem sonda olur; pencere yüklemle bitiyorsa haberin
+  // kendisini anlatır ("... ateşe verdi"), yüklemsiz pencere yarım kalır.
+  const yuklemMi = (k) =>
+    /(di|dı|du|dü|tu|tü|miş|mış|muş|müş|yor|acak|ecek|dılar|diler)$/i.test(String(k || ""));
+  // Uzun başlıklarda pencereyi sona doğru kaydırmayı da dene: ilk kelimeler
+  // çoğu zaman özne/tamlayan, olay ise sonda.
+  const sonBaslangic = Math.max(0, Math.min(kelimeler.length - 3, 6));
   for (let baslangic = 0; baslangic <= sonBaslangic; baslangic++) {
     const aday = satirlariKur(baslangic);
     if (!aday.satirlar.length) continue;
     const sonKelime = aday.satirlar[aday.satirlar.length - 1].split(" ").pop() || "";
     const tamam = !eksikKelime(sonKelime);
-    const puan = (tamam ? 3 : 0) + (aday.satirlar.length === 2 ? 1.5 : 0) + aday.kullanilan * 0.1 - baslangic * 0.3;
+    const yuklem = yuklemMi(sonKelime);
+    const puan =
+      (tamam ? 3 : 0) +
+      (yuklem ? 2.5 : 0) +
+      (aday.satirlar.length === 2 ? 1 : 0) +
+      (aday.kullanilan < kelimeler.length ? -1.5 : 0) +
+      aday.kullanilan * 0.1 -
+      baslangic * 0.2;
     if (puan > enIyiPuan) {
       enIyiPuan = puan;
       secim = aday;
@@ -773,6 +802,7 @@ async function kapakUret(a) {
     // tutucu" gibi duruyordu; bu yüzden zemine kategori etiketi + başlık
     // basılır (fotoğraflı kapaklarda metin YOK, orada fotoğraf konuşur).
     const { boyut, lh, satirlar } = kartBasligi(a.title);
+    if (debug) console.log(`   · ${a.id} kart satırları: ${JSON.stringify(satirlar)}`);
     const ilkY = 330 - ((satirlar.length - 1) * lh) / 2;
     const kategori = XML(String(a.category || "").toLocaleUpperCase("tr"));
     const baslikSvg = satirlar
