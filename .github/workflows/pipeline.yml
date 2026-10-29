@@ -128,6 +128,12 @@ jobs:
         continue-on-error: true
         run: node scripts/kapak-uret.mjs --fotoyok --limit=80 --paralel=6
 
+      # TEK SEFERLIK: eski tasarimli kartlari (dev kategori harfi + yarim
+      # baslik) yeni tasarima cevirir. Fotograf aramaz, hizlidir.
+      - name: Kart tasarimini yenile
+        continue-on-error: true
+        run: node scripts/kapak-uret.mjs --kart --limit=400 --paralel=6
+
       # GUVENLIK AGI: kapak adimi bir haberi atlarsa `image` alani Wikimedia
       # stogunda kalabiliyor (baslikla ilgisiz kare). En yeni stok gorselli
       # haberler icin gercek foto (yoksa tasarim karti) uretilir.
