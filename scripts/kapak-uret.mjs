@@ -93,7 +93,7 @@ function aktifIdler() {
 const aktif = aktifIdler();
 const esik = gun > 0 ? Date.now() - gun * 86400000 : 0;
 
-const hedefler = articles
+const sirali = articles
   .filter((a) => {
     if (!a || !a.id) return false;
     if (tekId) return a.id === tekId;
@@ -131,8 +131,28 @@ const hedefler = articles
   .sort(
     (a, b) =>
       Date.parse(b.publishedAt || b.generatedAt || 0) - Date.parse(a.publishedAt || a.generatedAt || 0)
-  )
-  .slice(0, limit);
+  );
+
+// SIRA SEÇİMİ. `--fotoyok` turu 4-5 dakikada bir çalışıyor ve en yeni N kartı
+// hedefliyor. Sıralama sabit kalınca AYNI N kart her turda yeniden deneniyordu:
+// fotoğrafı bulunamayan kartlar kuyruğu tıkıyor, eski kartlara hiç sıra
+// gelmiyordu (332 kartın 80'i sonsuza kadar dönüyordu). Artık en yeni 24 kart
+// her turda denenir (taze içerik), kalan kota saatte bir kayan pencereden
+// doldurulur; böylece birkaç saatte tüm kartlar sırayla denenir.
+const hedefler = (() => {
+  if (!sadeceFotoYok || sirali.length <= limit) return sirali.slice(0, limit);
+  const sabit = Math.min(24, limit);
+  const donen = limit - sabit;
+  if (donen <= 0) return sirali.slice(0, limit);
+  const kalan = sirali.slice(sabit);
+  const tur = Math.floor(Date.now() / 3600000);
+  const bas = (tur * donen) % kalan.length;
+  const secilen = [];
+  for (let i = 0; i < Math.min(donen, kalan.length); i++) {
+    secilen.push(kalan[(bas + i) % kalan.length]);
+  }
+  return [...sirali.slice(0, sabit), ...secilen];
+})();
 
 console.log(
   `Kapak: ${hedefler.length} haber hedefte ` +
