@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T12:08:01.349Z",
+  "updatedAt": "2026-10-29T12:14:35.341Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5075,
-  "aday": 5075,
-  "uygun": 3025,
-  "secilen": 2932,
+  "toplamHaber": 5077,
+  "aday": 5077,
+  "uygun": 3027,
+  "secilen": 2934,
   "red": {
     "özet gövdeyle aynı": 105,
     "kısa özet": 34,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 100
+    "tekrar": 101
   },
   "ornekTekrarlar": [
     {
@@ -168,6 +168,7 @@
       "3cce01fb0d2fa73a",
       "90a7ac537084c083",
       "fb88c23d674f8ff4",
+      "a3da386a0c602803",
       "f7002ecb866a378d",
       "a7e70f6467a827fc",
       "019b923e705041ed",
@@ -229,6 +230,7 @@
       "1283ca12a4a7840c",
       "3030efbc46ead630",
       "5061d826353ba18f",
+      "11077860e92282a6",
       "00c775668d5d97e8",
       "cc13a126af96671d",
       "44d607558141aff7",
@@ -3041,12 +3043,12 @@
       "f03a8acfd608ce02",
       "1dafe2cb8bd5b929",
       "e1a0aa6741ad6321",
-      "dc8260ebcc24b537",
       "573e586b414a254e",
       "31a0da016575f1bb",
       "6f63dd4b4ce0c640",
       "6e9c7324a2c227dd",
-      "a98440cac2f5d856"
+      "a98440cac2f5d856",
+      "dc8260ebcc24b537"
     ],
     "2026-10-24": [
       "a4be49d15a2c1a5f",
@@ -3240,6 +3242,7 @@
     "90a7ac537084c083",
     "fb88c23d674f8ff4",
     "69291f169b37c4a0",
+    "a3da386a0c602803",
     "579ee7f3e7c99873",
     "e95661ab8c680d25",
     "f7002ecb866a378d",
@@ -3692,6 +3695,7 @@
     "5061d826353ba18f",
     "212e133acff9e012",
     "67fd75d9c47ce5f8",
+    "11077860e92282a6",
     "8039a1eddeaba278",
     "007a44d8de5ed8f2",
     "3f49860290d8b847",
@@ -5961,7 +5965,6 @@
     "1dafe2cb8bd5b929",
     "c0d9a5de692dba0b",
     "e1a0aa6741ad6321",
-    "dc8260ebcc24b537",
     "6ac074bac8bd4144",
     "398dda6895cc38d7",
     "3d2d25db73179711",
@@ -6004,6 +6007,7 @@
     "c3ea79137f85470e",
     "b6807a82d0b760ef",
     "a98440cac2f5d856",
+    "dc8260ebcc24b537",
     "9214942153be4652",
     "d6f6b1c3aaf7b910",
     "f0eca3a0a2bce2ef",
