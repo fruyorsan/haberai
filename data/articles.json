@@ -1,5 +1,47 @@
 [
   {
+    "id": "e855d211e8bb2ca4",
+    "title": "BM, Gazze'deki Depoyu İsrail Hava Saldırısıyla Hasar Gördü",
+    "slug": "bm-gazze-depoyu-israil-saldirisiyla-hasar-gordu",
+    "summary": "Birleşmiş Milletler, ateşkese rağmen İsrail'in Gazze'ye yönelik hava saldırısının BM'ye ait bir depoya zarar verdiğini duyurdu. Depo Han Yunus'ta yer alıyor, ancak hiçbir BM personeli yaralanmadı. BM temsilcisi Shirin Yaseen, insani yardım kısıtlamalarının kaldırılması ve tüm geçiş noktalarının açılması çağrısında bulundu.",
+    "keyPoints": [
+      "İsrail hava saldırısı BM'ye ait Gazze depoya hasar verdi.",
+      "Depo Han Yunus'ta, BM personeli yaralanmadı.",
+      "BM, Gazze'ye insani yardım kısıtlamalarının kaldırılmasını talep ediyor."
+    ],
+    "body": [
+      "Birleşmiş Milletler, bugün yaptığı basın toplantısında, Gazze'de yer alan Han Yunus yardım merkezindeki BM deposunun İsrail hava saldırısı sonucu hasar gördüğünü bildirdi. Depo, uluslararası insani yardım akışının kritik bir noktası olarak kabul ediliyor ve bu hasar, yardım zincirinde aksamalara yol açabilir.",
+      "BM Genel Sekreter Sözcüsü Yardımcısı Shirin Yaseen, saldırı sırasında hiçbir BM çalışanının yaralanmadığını vurguladı. Ancak hasarın boyutu, depoda bulunan malzemelerin bir kısmının zarar görmesi anlamına geliyor ve bu durum, bölgedeki yardımları geciktirebilir. Yaseen, BM'nin mevcut envanterini korumak için ek önlemler alındığını belirtti.",
+      "Saldırının yanı sıra, Yaseen geçen hafta Gazze'de yaklaşık 100 Filistinli ailenin yangınlar nedeniyle çadır ve eşyalarını kaybettiğini dile getirdi. BM insani yardım ortakları, bu ailelere geçici barınma ve temel ihtiyaçların sağlanması için yoğun bir çaba içinde. Ancak, İsrail'in devam eden kısıtlamaları, yardım malzemelerinin bölgeye ulaşmasını zorlaştırıyor.",
+      "Yaseen, Gazze'ye insani yardımların hâlâ sınırlı olduğunu ve tüm geçiş noktalarının tam olarak açılması gerektiğini yineledi. Bu çağrı, uluslararası toplumun bölgeye yönelik yardım politikasını yeniden gözden geçirmesine sebep olabilir.",
+      "Ayrıca, Yaseen Batı Şeria'daki El Halil şehrinde iki mahallede hâlâ yaklaşık 3 bin Filistinlinin yerinden edildiğini bildirdi. İsrail güçlerinin bu mahallelerdeki giriş yollarını kapatması ve sıkı hareket kısıtlamaları uygulaması, yerinden edilenlerin güvenli bir şekilde geri dönmesini engelliyor. Bu durum, bölgedeki mülteci kriziyle birleşerek insani ihtiyacı artırıyor.",
+      "Son olarak, Yaseen, bu yıl Batı Şeria’da 14 camiye yönelik saldırıların kabul edilemez olduğunu ve dini özgürlüklerin korunması gerektiğini belirtti. Bu açıklamalar, BM'nin sadece insani yardım değil, aynı zamanda temel insan hakları konusunda da baskı yapma niyetini gösteriyor. Bölgedeki gelişmelerin nasıl şekilleneceği, uluslararası diplomasi ve yardım çabalarının etkinliğine bağlı kalacak."
+    ],
+    "comment": "BM'nin Han Yunus deposundaki hasarı, 3 bin kişilik yerinden edilme rakamıyla birleşince insani krizin derinleştiğini gösteriyor. Bu durum, yardımların sınırlı kalması ve geçiş noktalarının kapanması nedeniyle etkilenen ailelerin yaşam koşullarını daha da zorlaştırıyor. Önceki raporlarla kıyaslandığında, yardım kısıtlamalarının artması bölgeyi daha kırılgan bir konuma itiyor. Eğer geçiş noktaları açılmazsa, insani yardım ihtiyacı kritik bir eşiği aşabilir.",
+    "editorNote": "BM'nin Gazze'deki depoya zarar bildirimi, bölgedeki yardım akışının kırılganlığını ortaya koyuyor. Geçiş noktalarının tamamen açılması, acil yardım ihtiyacını karşılamada…",
+    "tags": [
+      "BM",
+      "Gazze",
+      "İsrail",
+      "insani yardım",
+      "Han Yunus"
+    ],
+    "category": "Dünya",
+    "gorselSorgu": "Gaza humanitarian aid depot damaged",
+    "source": "AA Güncel",
+    "sourceUrl": "https://www.aa.com.tr/tr/dunya/bm-gazzedeki-deposunun-israil-hava-saldirilarinda-hasar-gordugunu-belirtti/4105515",
+    "image": "/kapak/e855d211e8bb2ca4.webp",
+    "publishedAt": "2026-10-29T21:03:57.000Z",
+    "generatedAt": "2026-10-29T21:05:47.352Z",
+    "breaking": true,
+    "gorselDeneme": "2026-10-29T21:05:49.397Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_60a73cfab905692b843e1124259a3639.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "422408a9949ada42",
     "title": "Meta, tüm akıllı gözlük kullanıcıları için zorunlu güncelleme başlattı",
     "slug": "meta-tum-akilli-gozluk-kullanicilari-icin-zorunlu-guncelleme-baslatti",
@@ -52,7 +94,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:33.645Z",
+    "gorselDeneme": "2026-10-29T21:05:48.449Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/meta-gozluk-zorunlu-guvenlik-guncellemesi.webp",
@@ -333,7 +375,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:34.969Z",
+    "gorselDeneme": "2026-10-29T21:05:49.394Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_4de8a700babda49e948ab3af769e40c3.jpg",
@@ -383,7 +425,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:34.965Z",
+    "gorselDeneme": "2026-10-29T21:05:49.756Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_62feb7cc1979425b2733ec6c8c01a43b.jpg",
@@ -425,7 +467,7 @@
     "publishedAt": "2026-10-29T20:05:57.000Z",
     "generatedAt": "2026-10-29T20:11:03.478Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:33.913Z",
+    "gorselDeneme": "2026-10-29T21:05:48.754Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/cbb9/live/fe693560-d3c2-11f1-93e1-3b657b665bcf.jpg",
@@ -484,7 +526,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:35.831Z",
+    "gorselDeneme": "2026-10-29T21:05:49.749Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_f5dbfc4c202b9a5bf1d0b8f80a9dec51.jpg",
@@ -794,7 +836,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:35.819Z",
+    "gorselDeneme": "2026-10-29T21:05:49.962Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_1deaa8fea846d9e8d363c0e8ccdd5565.jpg",
@@ -854,7 +896,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:35.544Z",
+    "gorselDeneme": "2026-10-29T21:05:50.307Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ssbulten.com.tr/gundem/kart/27676.jpg",
@@ -1033,7 +1075,7 @@
         "altyazi": "Sağanak yağış altında günlük yaşamını sürdüren vatandaşlar"
       }
     ],
-    "gorselDeneme": "2026-10-29T20:58:35.387Z",
+    "gorselDeneme": "2026-10-29T21:05:49.639Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ae38bf3ff3bf8a99e0d33b4.jpg",
@@ -1093,7 +1135,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:35.226Z",
+    "gorselDeneme": "2026-10-29T21:05:49.783Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_982f8a146538f1af4a64ec9c7cc0b263.jpg",
@@ -1337,7 +1379,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:35.424Z",
+    "gorselDeneme": "2026-10-29T21:05:49.920Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_ff4995a4c8a68ad47550d81b818dfdce.jpg",
@@ -1397,7 +1439,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:35.650Z",
+    "gorselDeneme": "2026-10-29T21:05:49.964Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_4f8b22ee73c2bf1510a46562832191f7.jpg",
@@ -1588,7 +1630,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:36.162Z",
+    "gorselDeneme": "2026-10-29T21:05:50.356Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2442000/suudi-arabistan-riyad-reuters-2443628.jpg",
@@ -1695,7 +1737,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:35.949Z",
+    "gorselDeneme": "2026-10-29T21:05:50.197Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/google-immersive-explorations-gemini-kuasar.webp",
@@ -1755,7 +1797,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:35.852Z",
+    "gorselDeneme": "2026-10-29T21:05:50.147Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_e51e8d85fb58a5b0910716f95d6d85a5.jpg",
@@ -1814,7 +1856,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:36.468Z",
+    "gorselDeneme": "2026-10-29T21:05:50.514Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2496000/mustafa-ciftci-aa-2496862.jpg",
@@ -1875,7 +1917,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:36.484Z",
+    "gorselDeneme": "2026-10-29T21:05:50.521Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2266000/euro-a-2267811.jpg",
@@ -1936,7 +1978,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:36.539Z",
+    "gorselDeneme": "2026-10-29T21:05:50.603Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2084000/guney-kore-abd-reu-2084199.jpg",
@@ -1995,7 +2037,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:36.186Z",
+    "gorselDeneme": "2026-10-29T21:05:50.487Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_7c6a6cd297161f7c503367dd62bc3452.jpg",
@@ -2172,7 +2214,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:36.431Z",
+    "gorselDeneme": "2026-10-29T21:05:50.580Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_ea631466974bb85abe1097fff034c74a.jpg",
@@ -2224,7 +2266,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:36.396Z",
+    "gorselDeneme": "2026-10-29T21:05:50.758Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/reddit-sana-ozel-akis-snoo.webp",
@@ -2468,7 +2510,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:36.635Z",
+    "gorselDeneme": "2026-10-29T21:05:50.845Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/aselsan-ogulbey-teknoloji-ussu-1-1.webp",
@@ -2659,7 +2701,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:36.627Z",
+    "gorselDeneme": "2026-10-29T21:05:50.702Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2490000/emine-erdogan-2490298.jpg",
@@ -2718,7 +2760,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:36.496Z",
+    "gorselDeneme": "2026-10-29T21:05:50.617Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/836b/live/07facba0-d37f-11f1-93e1-3b657b665bcf.jpg",
@@ -2785,7 +2827,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:36.505Z",
+    "gorselDeneme": "2026-10-29T21:05:50.627Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/0304/live/98070ac0-d2e8-11f1-8d86-83eebc838351.jpg",
@@ -2963,7 +3005,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:37.670Z",
+    "gorselDeneme": "2026-10-29T21:05:51.409Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://www.donanimhaber.com/images//images/editor/6565c74f9cea4058bf681465eac99f5c.png",
@@ -3020,7 +3062,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:36.556Z",
+    "gorselDeneme": "2026-10-29T21:05:50.671Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/62f2/live/4437f8b0-d396-11f1-b441-2b33b063138f.jpg",
@@ -3127,7 +3169,7 @@
     "publishedAt": "2026-10-29T14:30:39.000Z",
     "generatedAt": "2026-10-29T14:38:51.570Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:37.127Z",
+    "gorselDeneme": "2026-10-29T21:05:51.104Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/images-5.webp",
@@ -3209,7 +3251,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:36.797Z",
+    "gorselDeneme": "2026-10-29T21:05:50.842Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_ea1e7e735c367c8e20458741eb11f483.jpg",
@@ -3519,7 +3561,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:36.853Z",
+    "gorselDeneme": "2026-10-29T21:05:50.973Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_06faddce754aa338e376502e521bb6f6.jpg",
@@ -3640,7 +3682,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:36.934Z",
+    "gorselDeneme": "2026-10-29T21:05:50.965Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://images.ntv.com.tr/images/dedeta%C5%9Ftahliye-162824.jpg?format=webp&width=1200&height=630",
@@ -3824,7 +3866,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:37.075Z",
+    "gorselDeneme": "2026-10-29T21:05:51.139Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_c32505522cfb14e477ce400426c094e7.jpg",
@@ -3883,7 +3925,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:37.169Z",
+    "gorselDeneme": "2026-10-29T21:05:51.240Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://imgrosetta.webtekno.com/file/695113/695113-700x400.jpg",
@@ -3949,7 +3991,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:37.243Z",
+    "gorselDeneme": "2026-10-29T21:05:51.371Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://imgrosetta.webtekno.com/file/695110/695110-700x400.jpg",
@@ -4085,7 +4127,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:37.371Z",
+    "gorselDeneme": "2026-10-29T21:05:51.403Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://imgrosetta.webtekno.com/file/695101/695101-700x400.jpg",
@@ -4142,7 +4184,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:37.346Z",
+    "gorselDeneme": "2026-10-29T21:05:51.410Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/06/nintendo-switch-2-icin-degistirilebilir-batarya-donemi-basliyor.webp",
@@ -4199,7 +4241,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:37.382Z",
+    "gorselDeneme": "2026-10-29T21:05:51.521Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/Local_AI_Blog_10_28.webp",
@@ -4257,7 +4299,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:37.393Z",
+    "gorselDeneme": "2026-10-29T21:05:51.560Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/israil-seci-2498530.jpg",
@@ -4314,7 +4356,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:37.633Z",
+    "gorselDeneme": "2026-10-29T21:05:51.649Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://imgrosetta.webtekno.com/file/695095/695095-700x400.png",
@@ -4372,7 +4414,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:37.637Z",
+    "gorselDeneme": "2026-10-29T21:05:51.645Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_118acfc1837c1d32a0f1269062172822.jpg",
@@ -4430,7 +4472,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:37.668Z",
+    "gorselDeneme": "2026-10-29T21:05:51.648Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://imgrosetta.webtekno.com/file/695086/695086-700x400.jpg",
@@ -4544,7 +4586,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:37.725Z",
+    "gorselDeneme": "2026-10-29T21:05:51.735Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_79d100da6f835749f97451cab327e75b.jpg",
@@ -4657,7 +4699,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T20:58:37.866Z",
+    "gorselDeneme": "2026-10-29T21:05:51.883Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/07/samsung-galaxy-z-fold-8-ve-flip-8-on-rezervasyonu-basladi.webp",
@@ -37280,15 +37322,10 @@
     "gorselSorgu": "data center server room",
     "source": "BeInCrypto",
     "sourceUrl": "https://tr.beincrypto.com/en-buyuk-3-teknoloji-devinin-kazanc-raporlari-ekim-son-hafta/",
-    "image": "/kapak/5ea4f3d717547639.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
     "publishedAt": "2026-10-26T01:58:41.000Z",
     "generatedAt": "2026-10-26T01:59:41.431Z",
-    "ekGorselDeneme": "2026-10-27T14:08:49.514Z",
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
-      "foto": false
-    }
+    "ekGorselDeneme": "2026-10-27T14:08:49.514Z"
   },
   {
     "id": "67813857939392b0",
@@ -43612,7 +43649,7 @@
     "gorselSorgu": "Barack Obama speech podium",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/economy-news/obama-enflasyon-konusunda-trump-elestirdi-4118498",
-    "image": "/kapak/f6f884514f6577c6.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg/1280px-President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg",
     "publishedAt": "2026-10-25T04:13:17.000Z",
     "generatedAt": "2026-10-25T04:21:44.052Z",
     "gorselEk": [
@@ -43624,12 +43661,7 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Press_Secretary_Karine_Jean-Pierre_speaks_during_a_press_briefing,_Monday,_May_13,_2024,_in_the_James_S._Brady_Press_Briefing_Room_of_the_White_House.jpg",
         "altyazi": "Washington siyasetinde ekonomi politikaları tartışılmaya devam ediyor"
       }
-    ],
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg/1280px-President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "2f83428af6fd33ce",
@@ -45795,7 +45827,7 @@
     "gorselSorgu": "Casio watch display",
     "source": "beetekno.com",
     "sourceUrl": "https://beetekno.com/casio-abdde-minimalist-tasarimli-uc-yeni-hafif-gma-s160-saatini-satisa-sundu",
-    "image": "/kapak/5659ff12cfe2382d.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Casio_W-86_and_F-91W_digital_watch_comparison_%28front%29.jpg/1280px-Casio_W-86_and_F-91W_digital_watch_comparison_%28front%29.jpg",
     "publishedAt": "2026-10-24T00:01:11.000Z",
     "generatedAt": "2026-10-24T00:10:51.067Z",
     "gorselEk": [
@@ -45807,12 +45839,7 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Casio_F-91W_watch_(2023)_(packaging_and_contents)_(iii).jpg"
       }
     ],
-    "gorselDeneme": "2026-10-28T04:45:29.792Z",
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Casio_W-86_and_F-91W_digital_watch_comparison_%28front%29.jpg/1280px-Casio_W-86_and_F-91W_digital_watch_comparison_%28front%29.jpg",
-      "foto": false
-    }
+    "gorselDeneme": "2026-10-28T04:45:29.792Z"
   },
   {
     "id": "6a93bfbaaa0ee53a",
@@ -49600,7 +49627,7 @@
     "gorselSorgu": "Volvo electric car production line",
     "source": "LOG",
     "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOdVBzOXZlYkZvbGNhOEw0WFR4YkJ4Mk1RUEF2Vm04b2N4UVNwOWNXM2VhWFRlUzI3TXc2alAyRmNjWjE1SDZadThUUzZ5OXF6LUlZQUxlWUlWb2FSMkREdVdZV0VncEUtN1dIWm1ObS04ZnJvR0lvZGRnSXNZUkhUNmN3UUNvWHFq?oc=5",
-    "image": "/kapak/e7c31bf76ad14e51.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Volvo_C30_Electric_NAIAS_2011.jpg/1280px-Volvo_C30_Electric_NAIAS_2011.jpg",
     "publishedAt": "2026-10-23T12:44:15.000Z",
     "generatedAt": "2026-10-23T12:48:42.823Z",
     "gorselEk": [
@@ -49619,12 +49646,7 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Volvo_FH_Aero_Electric_(2024).jpg"
       }
     ],
-    "gorselDeneme": "2026-10-28T04:45:35.260Z",
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Volvo_C30_Electric_NAIAS_2011.jpg/1280px-Volvo_C30_Electric_NAIAS_2011.jpg",
-      "foto": false
-    }
+    "gorselDeneme": "2026-10-28T04:45:35.260Z"
   },
   {
     "id": "a7d2537b51cf1387",
@@ -51069,15 +51091,10 @@
     "gorselSorgu": "science laboratory microscope medical",
     "source": "Evrim Ağacı",
     "sourceUrl": "https://evrimagaci.org/daha-yuksek-testosteron-gercekten-erkekligi-ve-babaligi-guclendiriyor-mu-23912",
-    "image": "/kapak/4da632733a2f9bb7.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Mars_Science_Laboratory_landing_ellipse_reduced.jpg/1280px-Mars_Science_Laboratory_landing_ellipse_reduced.jpg",
     "publishedAt": "2026-10-23T11:55:03.000Z",
     "generatedAt": "2026-10-23T11:56:11.409Z",
-    "ekGorselDeneme": "2026-10-24T17:55:02.655Z",
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Mars_Science_Laboratory_landing_ellipse_reduced.jpg/1280px-Mars_Science_Laboratory_landing_ellipse_reduced.jpg",
-      "foto": false
-    }
+    "ekGorselDeneme": "2026-10-24T17:55:02.655Z"
   },
   {
     "id": "87a99ed42fdc0096",
