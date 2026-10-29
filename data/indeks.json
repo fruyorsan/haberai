@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T22:21:10.833Z",
+  "updatedAt": "2026-10-29T22:29:39.789Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,9 +13,9 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5158,
-  "aday": 5158,
-  "uygun": 3106,
+  "toplamHaber": 5159,
+  "aday": 5159,
+  "uygun": 3107,
   "secilen": 3014,
   "red": {
     "özet gövdeyle aynı": 108,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 104
+    "tekrar": 105
   },
   "ornekTekrarlar": [
     {
@@ -54,8 +54,8 @@
       "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
     },
     {
-      "title": "İsrail'in Gazze saldırıları 4 sivilin daha yaşamına son verdi",
-      "twin": "İsrail ordusunun Gazze saldırıları sonucu 4 Filistinli hayatını kaybetti"
+      "title": "Sony Yeni LYTIA 720 Sensörü 50 MP ile Gece Çekimlerini Yarıyor",
+      "twin": "Sony mobil kameralar için 50 MP LYTIA 720 sensörünü duyurdu"
     },
     {
       "title": "Huawei Enjoy 100 Pro, HarmonyOS 7 ve 6.100 mAh bataryayla geldi",
@@ -68,6 +68,10 @@
     {
       "title": "Google Gemini 4 Argon, Android Bench’te Beşinci Sırada Yer Aldı",
       "twin": "Google, yapay zeka modeli Gemini 4 Carbon ile zirveye yerleşti"
+    },
+    {
+      "title": "İsrail'in Gazze saldırıları 4 sivilin daha yaşamına son verdi",
+      "twin": "İsrail ordusunun Gazze saldırıları sonucu 4 Filistinli hayatını kaybetti"
     },
     {
       "title": "Apple, 2 nm A20 Pro işlemcili OLED iPad mini modelini tanıttı",
@@ -108,10 +112,6 @@
     {
       "title": "Vivo Y600, 10.000 mAh bataryasıyla Guinness Rekoruna İmza Attı",
       "twin": "Vivo Y600, 10.000 mAh bataryası ve rekor performansıyla duyuruldu"
-    },
-    {
-      "title": "Elon Musk'tan Cumhuriyetçilere 200 milyon doları aşan seçim desteği",
-      "twin": "Elon Musk, ABD seçimleri için Cumhuriyetçilere 200 milyon dolardan fazla aktardı"
     }
   ],
   "days": {
@@ -355,7 +355,6 @@
       "74ca705fd0fdb2c6",
       "0ff97bcc11ad5d2e",
       "c82ec67b4a89c524",
-      "dbfdd3a61e910d87",
       "1676b3750aee07dc",
       "9d833849eaf982a0",
       "71f0d8db8af8537f",
@@ -374,6 +373,7 @@
       "22e9db26902b6464",
       "f156ce1d02cc345c",
       "7723ca8035a53440",
+      "dbfdd3a61e910d87",
       "9801b34714550b37",
       "8a21d61b9b94848c",
       "f2f7a86f054c8975",
@@ -438,7 +438,6 @@
       "b05f61009473f339",
       "3ffb21b564dc9a9b",
       "fee4ca32a04a134a",
-      "4de38ec0144fe41b",
       "8c00c2eac841839c",
       "27518517136d92e6",
       "7e1796f1723b2edf",
@@ -449,6 +448,7 @@
       "8e55aca5d02916ce",
       "5dc7822358857da3",
       "b0339484ffadbf68",
+      "4de38ec0144fe41b",
       "20f0048e1c4a071c",
       "489fe2c104080b78",
       "707be2e95f1e47d3",
@@ -775,8 +775,8 @@
     ],
     "2026-10-30": [
       "bb1c95f9f6b2d4da",
-      "47db665aa5c77e08",
       "25ba5cebac13f045",
+      "47db665aa5c77e08",
       "d4787d65b3ed6496",
       "2296644c4726fadd",
       "b3955cfe25e7e010",
@@ -3219,6 +3219,7 @@
     "d4008aab3736a8f3",
     "767c59c237b46ff1",
     "02a99fc21d2b6314",
+    "25ba5cebac13f045",
     "efa5b69565af28e0",
     "692c88d046cc9222",
     "12864f7f071ffef6",
@@ -3297,7 +3298,6 @@
     "0ff97bcc11ad5d2e",
     "c82ec67b4a89c524",
     "dee6abcf41698c76",
-    "dbfdd3a61e910d87",
     "1676b3750aee07dc",
     "8e756b6009c7afd9",
     "d33a298ceca84c07",
@@ -3309,7 +3309,6 @@
     "89caf9b3ca6609cb",
     "458a04e33ec0897e",
     "34ed29b38bf1efae",
-    "25ba5cebac13f045",
     "5620fe8756ecba60",
     "9a48bb7360b0cf31",
     "44e89da04d4ec594",
@@ -3372,6 +3371,7 @@
     "4e57e6b28a1b0762",
     "2296644c4726fadd",
     "019b923e705041ed",
+    "dbfdd3a61e910d87",
     "98ce98aed1e474e9",
     "9801b34714550b37",
     "8a21d61b9b94848c",
@@ -3605,7 +3605,6 @@
     "c8febb9fb2816407",
     "8bc06864f86a7087",
     "fee4ca32a04a134a",
-    "4de38ec0144fe41b",
     "5ec22320a3d37481",
     "ae94c55ea8f8d9e2",
     "97b52ec0d82fa1d8",
@@ -3727,6 +3726,7 @@
     "fafb530fb426a0d1",
     "c6cf04b0cd024c26",
     "f70c9fc7217687ab",
+    "4de38ec0144fe41b",
     "20f0048e1c4a071c",
     "1b9ba5100b88efc0",
     "eff192d75243c486",
