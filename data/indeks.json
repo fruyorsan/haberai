@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T11:03:22.138Z",
+  "updatedAt": "2026-10-29T11:10:26.132Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -74,10 +74,6 @@
       "twin": "Apple M6 çipli 14 inç MacBook Pro tanıtıldı: İşte özellikleri ve fiyatı"
     },
     {
-      "title": "Apple iOS 27.2 Güncellemesi Siri'yi Konuşmaları Hatırlayacak",
-      "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
-    },
-    {
       "title": "BMW i3 tek şarjda 1.213 kilometre menzil elde etti testinde",
       "twin": "BMW i3 50L, Tek Şarjla 1.213 km Menzil Rekoru Yaptı"
     },
@@ -88,6 +84,10 @@
     {
       "title": "Fransa'nın borçlanma maliyeti 24 yılın en yüksek seviyesine ulaştı",
       "twin": "Fransa Tahvil Faizi 24 Yılın Zirvesinde: Hedge Fonların Rolü Tartışılıyor"
+    },
+    {
+      "title": "Apple iOS 27.2 Güncellemesi Siri'yi Konuşmaları Hatırlayacak",
+      "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
     },
     {
       "title": "Galaxy S24 Ultra sahipleri için One UI 9 sonrasında şarj krizi",
@@ -162,6 +162,7 @@
       "3cce01fb0d2fa73a",
       "90a7ac537084c083",
       "fb88c23d674f8ff4",
+      "f7002ecb866a378d",
       "a7e70f6467a827fc",
       "019b923e705041ed",
       "98ce98aed1e474e9",
@@ -195,7 +196,6 @@
       "24952cb999ad0137",
       "aaa716f7d3eee4b1",
       "433315fd447b239a",
-      "f7002ecb866a378d",
       "4073600cedcc1e01",
       "026d5487158b227a",
       "687a1a50d7edfaff",
@@ -209,6 +209,7 @@
       "8972a39a84ef631c",
       "236546f954a474bb",
       "4d739df66259cb8b",
+      "cf951b9e393d14d1",
       "c8febb9fb2816407",
       "54c126dcbaf52d0a",
       "908b6194caeae1f4",
@@ -217,7 +218,6 @@
       "846e92429a60fac0",
       "6518f361b027fefc",
       "82bd7ff830319e0a",
-      "cf951b9e393d14d1",
       "465e3d385c653b3c",
       "1283ca12a4a7840c",
       "3030efbc46ead630",
@@ -3228,6 +3228,7 @@
     "69291f169b37c4a0",
     "579ee7f3e7c99873",
     "e95661ab8c680d25",
+    "f7002ecb866a378d",
     "f156ce1d02cc345c",
     "7723ca8035a53440",
     "a7e70f6467a827fc",
@@ -3320,7 +3321,6 @@
     "6170dce080615cec",
     "d83c4b0daa3b8572",
     "2ee03cd9c9d668ee",
-    "f7002ecb866a378d",
     "bc55e0afcb9eaead",
     "d972d89b1ffed532",
     "4073600cedcc1e01",
@@ -3402,6 +3402,7 @@
     "d1857281bdb570cc",
     "236546f954a474bb",
     "4d739df66259cb8b",
+    "cf951b9e393d14d1",
     "7dc19a9f05dfa4f8",
     "c624d91c897a8141",
     "5ff1e6958ca97917",
@@ -3573,7 +3574,6 @@
     "acf06ac381c50f62",
     "5fa4fb5dedfd9ccd",
     "31d2496d27466454",
-    "cf951b9e393d14d1",
     "2cd562a3de5ca9d8",
     "3c54dd68c97c231d",
     "745742a6b774ecd8",
