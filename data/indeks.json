@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T08:34:53.705Z",
+  "updatedAt": "2026-10-29T08:42:08.789Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,9 +13,9 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5053,
-  "aday": 5053,
-  "uygun": 3002,
+  "toplamHaber": 5051,
+  "aday": 5051,
+  "uygun": 3001,
   "secilen": 2908,
   "red": {
     "özet gövdeyle aynı": 105,
@@ -23,14 +23,14 @@
     "editör notu özetle aynı": 6,
     "maddeli özet yok": 105,
     "paragraf yapısı zayıf": 48,
-    "kısa gövde": 1721,
+    "kısa gövde": 1720,
     "tekrarlı paragraf": 1,
     "yorum özgün değil": 15,
     "özgün yorum yok": 1,
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 102
+    "tekrar": 100
   },
   "ornekTekrarlar": [
     {
@@ -58,20 +58,12 @@
       "twin": "Fenerbahçe Yönetimi İsmail Kartal'ın İstifasını Onayladı"
     },
     {
-      "title": "AMD ve Meta iş birliğini genişletiyor: 1 milyar dolarlık yatırım",
-      "twin": "AMD ve Meta dev yapay zeka iş birliği için 1 milyar dolarlık yatırım yaptı"
-    },
-    {
       "title": "İsrail'in Gazze saldırıları 4 sivilin daha yaşamına son verdi",
       "twin": "İsrail ordusunun Gazze saldırıları sonucu 4 Filistinli hayatını kaybetti"
     },
     {
       "title": "Google Gemini 4 Argon, Android Bench’te Beşinci Sırada Yer Aldı",
       "twin": "Google, yapay zeka modeli Gemini 4 Carbon ile zirveye yerleşti"
-    },
-    {
-      "title": "Samsung A08: 6000 mAh batarya ve 6 yıllık güncelleme desteğiyle geldi",
-      "twin": "Samsung Galaxy A08, 6.000 mAh batarya ve 6 yıllık güncelleme ile geldi"
     },
     {
       "title": "Apple, 2 nm A20 Pro işlemcili OLED iPad mini modelini tanıttı",
@@ -112,6 +104,14 @@
     {
       "title": "Elon Musk'tan Cumhuriyetçilere 200 milyon doları aşan seçim desteği",
       "twin": "Elon Musk, ABD seçimleri için Cumhuriyetçilere 200 milyon dolardan fazla aktardı"
+    },
+    {
+      "title": "Samsung Galaxy S27 serisi, ocak ayında 100 dolar zamla gelebilir",
+      "twin": "Samsung Galaxy Fit 4 modeli, 100 dolar altı fiyatla geliyor"
+    },
+    {
+      "title": "Prof. Dr. Osman Bektaş'tan Marmara'daki 7,5 deprem senaryosuna itiraz",
+      "twin": "Jeolog Osman Bektaş, Marmara depremi senaryolarına karşı uyarıyor"
     }
   ],
   "days": {
@@ -202,7 +202,6 @@
       "739ec793c0dee331",
       "e4689cb8019010a8",
       "6de2ca83687fd332",
-      "91b6213e562a62d8",
       "195d8a9de3e9d29c",
       "b12efe44c4c086b8",
       "2ca42135d239c7a4",
@@ -299,8 +298,7 @@
       "5612a93ea5f3b835",
       "6dfb54a1e7d8bd99",
       "afe7a36d06a6d178",
-      "d29a49f98235fff7",
-      "3ba83c991f16868e"
+      "d29a49f98235fff7"
     ],
     "2026-10-26": [
       "5fece920610c8928",
@@ -492,10 +490,12 @@
       "1ee4679a83865469",
       "d1f012ae285f6815",
       "9f7f1700ee6eb3a8",
+      "3f98e424c64de5e0",
       "36b43bb9726105da",
       "8bf69f659feb55b6",
       "84c2c631281ebd06",
       "e3de0c1e02b93e0d",
+      "92fcd1497a23af40",
       "688c5808ff4cb089",
       "23c26d244f1185e0",
       "4073600cedcc1e01",
@@ -508,11 +508,10 @@
       "24952cb999ad0137",
       "aaa716f7d3eee4b1",
       "433315fd447b239a",
+      "026d5487158b227a",
       "f95a7f8908299c0e",
-      "3f98e424c64de5e0",
       "54316866304d3386",
       "8972a39a84ef631c",
-      "92fcd1497a23af40",
       "ae3c1beedd89dfd9",
       "3163f604feb7173b",
       "c8febb9fb2816407",
@@ -531,6 +530,7 @@
       "3030efbc46ead630",
       "521c8f4bb8197241",
       "dc453e940c0ec238",
+      "6518f361b027fefc",
       "ac04d82d79708bf6",
       "42494757e22abeee",
       "6f573d4153238c5f",
@@ -3243,6 +3243,7 @@
     "572acf1127cd7b81",
     "bd4431e9bc714f0e",
     "9f7f1700ee6eb3a8",
+    "3f98e424c64de5e0",
     "36b43bb9726105da",
     "8bf69f659feb55b6",
     "fe384e0f0d85d160",
@@ -3255,12 +3256,12 @@
     "f8a0b434e80f1b8a",
     "7f67c2139c5895e6",
     "e3de0c1e02b93e0d",
+    "92fcd1497a23af40",
     "739ec793c0dee331",
     "e4689cb8019010a8",
     "6de2ca83687fd332",
     "688c5808ff4cb089",
     "e7ba8e07cc342c4c",
-    "91b6213e562a62d8",
     "88afc4c46ff5a08a",
     "195d8a9de3e9d29c",
     "23c26d244f1185e0",
@@ -3309,6 +3310,7 @@
     "506e2da0ff426aae",
     "29536e82da1bac41",
     "d3dfb29be52b9d6f",
+    "026d5487158b227a",
     "0cbd5d4106a270cc",
     "a46df0cdb05e74c0",
     "0f377683b024318c",
@@ -3328,7 +3330,6 @@
     "69300cabe8659c5f",
     "de3b009353f0ec95",
     "1b009caa2632397f",
-    "3f98e424c64de5e0",
     "511c4225152943a7",
     "09747a3394b04d6e",
     "9725210dfb8f0271",
@@ -3341,7 +3342,6 @@
     "2b5454c4419965d5",
     "c6a0efbad3a6db46",
     "b47c82826a0dc331",
-    "92fcd1497a23af40",
     "ae3c1beedd89dfd9",
     "3163f604feb7173b",
     "199eecef3d4748e1",
@@ -3868,6 +3868,7 @@
     "c41cabbe84bf8b88",
     "8ac57bd390f4079d",
     "066998a4944d8f43",
+    "6518f361b027fefc",
     "408a8c0c51bc5d27",
     "8b48d82ae6d92da1",
     "f246c2e555a624e2",
@@ -5955,7 +5956,6 @@
     "c3ea79137f85470e",
     "b6807a82d0b760ef",
     "a98440cac2f5d856",
-    "3ba83c991f16868e",
     "9214942153be4652",
     "f0eca3a0a2bce2ef",
     "d6f6b1c3aaf7b910",
