@@ -1,5 +1,44 @@
 [
   {
+    "id": "0c4f32ca37e7f7b4",
+    "title": "Fed Faiz Kararı Sabit Kaldı, Bitcoin 81 Bin Doları Aştı",
+    "slug": "fed-faiz-karari-sabit-kaldi-bitcoin-81-bin-dolar",
+    "summary": "ABD Merkez Bankası Fed, 28 Ekim toplantısında politika faizini %3,75‑4 aralığında sabit bıraktı. Kararın ardından Bitcoin, gün içinde 80.500 dolara gerileyip 81.000 doların üzerine çıktı. Bu hareket, faiz kararının kripto para piyasasındaki etkisini ve yatırım fonlarından gelen likidite akışını gösteriyor.",
+    "keyPoints": [
+      "Fed politika faizini %3,75‑4 aralığında sabit tuttu",
+      "Bitcoin 28 Ekim gecesi 81.500 dolar seviyesinin üzerine çıktı",
+      "Spot Bitcoin ETF'lerine 26‑27 Ekim tarihlerinde 286 milyon dolar net giriş yapıldı"
+    ],
+    "body": [
+      "Fed, 28 Ekim'de gerçekleştirilen toplantısında politika faizini %3,75‑4 aralığında değişmeden bıraktı. Karar, 10'a karşı 2 oyla alındı ve iki yetkili faiz artışını destekledi. Açıklamalarda enflasyonun yüksek seviyelerde kalmaya devam edeceği vurgulandı ve gelecekteki para politikası yönünün ekonomik verilere bağlı olacağı belirtildi. Bu sabit faiz kararı, küresel finans piyasalarında dikkat çeken bir gelişme olarak kayıtlara geçti.",
+      "Fed kararının hemen ardından Bitcoin fiyatı, gün içinde 80.500 dolara geriledi ancak kısa sürede toparlanarak 81.000 dolar seviyesinin üzerine çıktı. 28 Ekim gecesi 81.500 doların üzerine çıkan kripto para, 29 Ekim saat 01.40 itibarıyla 81.330 dolar seviyesinde işlem gördü. Uzmanlar, Fed'in faiz politikasının sabit kalmasının ve piyasa beklentilerinin Bitcoin fiyatındaki ani yükselişi tetiklediğini belirtiyor.",
+      "Bitcoin'in bu yükselişinde yalnızca faiz kararı değil, aynı zamanda spot Bitcoin borsa yatırım fonlarına (ETF) yönelmiş büyük likidite akışı da etkili oldu. 26 ve 27 Ekim tarihlerinde bu fonlara toplam yaklaşık 286 milyon dolar net para girişi gerçekleşti. Fonlara yönelen bu sermaye, kripto para piyasasında alım baskısını artırarak fiyatların toparlanmasına katkı sağladı.",
+      "Fed yetkililerinden Kevin Warsh, faiz kararının ardından fiyat istikrarının önemine değindi ve para politikasının gelecekte daha fazla ekonomik veriyle şekilleneceğini vurguladı. Piyasa katılımcıları ise, Fed'in faizleri yüksek seviyelerde tutma olasılığını bir risk faktörü olarak görüyor. Bu belirsizlik, Bitcoin'in uzun vadeli yükseliş trendini sınırlayabilir ve yatırımcıların temkinli davranmasını gerektirebilir.",
+      "Önümüzdeki günlerde ABD'de açıklanacak enflasyon ve istihdam verileri, Fed'in sonraki faiz kararını şekillendirecek kritik göstergeler olarak öne çıkıyor. Kripto para piyasası, bu verilerin sonuçlarına göre dalgalanma yaşamaya devam edecek ve Bitcoin fiyatı, hem faiz politikası hem de yatırım fonlarından gelen akışların etkisiyle yön değiştirebilir."
+    ],
+    "comment": "Fed'in faiz kararını sabit tutması, Bitcoin'in hızlı toparlanmasına doğrudan zemin hazırladı. 286 milyon dolarlık ETF likidite girişi, fiyatı 81.000 doların üzerine taşıyan ana itici güç oldu. Bu durum, yüksek likiditeye sahip büyük yatırımcıları ve fon yöneticilerini olumlu etkilerken, faizlerin uzun vadede yüksek kalma ihtimali riskli bir ortam yaratıyor. Önceki ayda Bitcoin 70.000 dolar seviyesindeyken, bu seviyenin %15 üzerindeki artışı yeni bir destek çizgisi oluşturabilir.",
+    "editorNote": "Fed'in faiz sabitlemesi sonrası Bitcoin 81 bin dolar seviyesini aştı; aynı zamanda spot ETF'lere 286 milyon dolar akışı da fiyatı tetikledi. Yatırımcılar, yaklaşan ABD ekonomik…",
+    "tags": [
+      "Fed",
+      "Bitcoin",
+      "ETF"
+    ],
+    "category": "Dünya",
+    "gorselSorgu": "Bitcoin price chart",
+    "source": "Borsanın Gündemi",
+    "sourceUrl": "https://www.borsaningundemi.com/haber/fed-faizi-sabit-tuttu-bitcoinde-yukselis-hizlandi-1913030",
+    "image": "/kapak/0c4f32ca37e7f7b4.webp",
+    "publishedAt": "2026-10-29T00:49:56.000Z",
+    "generatedAt": "2026-10-29T00:56:28.014Z",
+    "breaking": true,
+    "gorselDeneme": "2026-10-29T00:56:29.301Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://bgcdn.gmgadmin.com/1/1200/800//files/2026/10/29/1913030/1913030.jpg/?v=1793234996",
+      "foto": false
+    }
+  },
+  {
     "id": "433315fd447b239a",
     "title": "Karabük Üniversitesi, 8888 numaralı güvenlik hattını devreye aldı",
     "slug": "karabuk-universitesi-8888-numarali-guvenlik-hattini-devreye-aldi",
@@ -43,7 +82,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:47.071Z",
+    "gorselDeneme": "2026-10-29T00:56:30.340Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.saraymedya.com/manset/2026/10/kbu-de-guvenlik-icin-8888-numarali-cagri-merkezi-kuruldu-1793234460.webp",
@@ -230,7 +269,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:45.519Z",
+    "gorselDeneme": "2026-10-29T00:56:28.804Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/news/1200/branded_turkce/c143/live/4223ae30-d313-11f1-808a-1f9b061d2360.jpg",
@@ -353,7 +392,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:45.771Z",
+    "gorselDeneme": "2026-10-29T00:56:29.320Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/tdt-ankara-2499299.jpg",
@@ -412,7 +451,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:45.329Z",
+    "gorselDeneme": "2026-10-29T00:56:29.193Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.haberhergun.com/manset/2026/10/ongel-den-odulunu-turkiye-azerbaycan-kardesligine-adama-1793231627.webp",
@@ -471,7 +510,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:45.533Z",
+    "gorselDeneme": "2026-10-29T00:56:29.527Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.egealternatif.com/manset/2026/10/trump-netanyahu-ya-destek-verdi-birlik-hukumeti-icin-simdilik-sessiz-1793231069.webp",
@@ -523,7 +562,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:45.915Z",
+    "gorselDeneme": "2026-10-29T00:56:29.443Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2136000/devlet-bahceli-aa-2137195.jpg",
@@ -638,7 +677,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:47.204Z",
+    "gorselDeneme": "2026-10-29T00:56:31.016Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_32303bbd86b0e4b783afdddae6b3484c.jpg",
@@ -697,7 +736,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:47.242Z",
+    "gorselDeneme": "2026-10-29T00:56:30.963Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_d2e0070dd34f11270a142e7151355a13.jpg",
@@ -785,7 +824,7 @@
     "publishedAt": "2026-10-28T23:13:51.000Z",
     "generatedAt": "2026-10-28T23:25:45.248Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:49.550Z",
+    "gorselDeneme": "2026-10-29T00:56:30.713Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://www.merlininkazani.com/social-image/article/263946.jpg",
@@ -845,7 +884,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:46.693Z",
+    "gorselDeneme": "2026-10-29T00:56:30.406Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://tv5comtr.teimg.com/crop/1280x720/tv5-com-tr/uploads/2026/09/iletisim-baskanligi-1.png",
@@ -1086,7 +1125,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:48.568Z",
+    "gorselDeneme": "2026-10-29T00:56:31.527Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_a7caa0f94b3555a964fbe77862293b3c.jpg",
@@ -1146,7 +1185,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:49.492Z",
+    "gorselDeneme": "2026-10-29T00:56:32.807Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://media.baskenthaber06.com/article/b4fe7f61-f57f-46b8-8724-d52e15552670-discover.webp",
@@ -1260,7 +1299,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:47.389Z",
+    "gorselDeneme": "2026-10-29T00:56:30.885Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/ad45/live/27f788a0-d30f-11f1-ad4f-5d2bbacf0caf.jpg",
@@ -1560,7 +1599,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:47.621Z",
+    "gorselDeneme": "2026-10-29T00:56:32.088Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_1791f081a827519c248dbd9f8d506dcc.jpg",
@@ -1736,7 +1775,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:47.556Z",
+    "gorselDeneme": "2026-10-29T00:56:31.032Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/c143/live/4223ae30-d313-11f1-808a-1f9b061d2360.jpg",
@@ -2048,7 +2087,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:47.804Z",
+    "gorselDeneme": "2026-10-29T00:56:31.375Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_bd362a9aa7eb75e432ede4fbe023cb3a.jpg",
@@ -2093,7 +2132,7 @@
     "publishedAt": "2026-10-28T20:36:00.000Z",
     "generatedAt": "2026-10-28T20:53:53.723Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:47.894Z",
+    "gorselDeneme": "2026-10-29T00:56:31.288Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1574000/ab-rusya-1574612.jpg",
@@ -2152,7 +2191,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:48.026Z",
+    "gorselDeneme": "2026-10-29T00:56:31.664Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_d7a88294386debb30d077ea4c41b1204.jpg",
@@ -2200,7 +2239,7 @@
     "publishedAt": "2026-10-28T20:24:46.000Z",
     "generatedAt": "2026-10-28T20:37:11.516Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:48.137Z",
+    "gorselDeneme": "2026-10-29T00:56:32.798Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_4cb379bc9fb70ab39d06b59b9c3350eb.jpg",
@@ -2468,7 +2507,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:48.284Z",
+    "gorselDeneme": "2026-10-29T00:56:31.945Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_9d3bd192055653ee1e32eb029cbd0092.jpg",
@@ -2534,7 +2573,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:48.646Z",
+    "gorselDeneme": "2026-10-29T00:56:32.085Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/manset-5.webp",
@@ -2663,7 +2702,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:51.118Z",
+    "gorselDeneme": "2026-10-29T00:56:32.231Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_fe81d035ded544360001343b10be6e67.jpg",
@@ -2728,7 +2767,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:48.799Z",
+    "gorselDeneme": "2026-10-29T00:56:32.469Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_4622091377a5611a09612cb7dc4f0f77.jpg",
@@ -2960,7 +2999,7 @@
     "publishedAt": "2026-10-28T19:01:33.000Z",
     "generatedAt": "2026-10-28T19:06:29.122Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:49.007Z",
+    "gorselDeneme": "2026-10-29T00:56:32.580Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_79e7aee0be106756447014a0dd7e74c9.jpg",
@@ -3035,7 +3074,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:49.179Z",
+    "gorselDeneme": "2026-10-29T00:56:32.501Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Sony-PlayStation-3-2001A-wController-L.jpg/1280px-Sony-PlayStation-3-2001A-wController-L.jpg",
@@ -3154,7 +3193,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:49.278Z",
+    "gorselDeneme": "2026-10-29T00:56:32.844Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_f81faffbaeff3487e03166fa8701fad8.jpg",
@@ -3212,7 +3251,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:49.371Z",
+    "gorselDeneme": "2026-10-29T00:56:32.884Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_36f4f69980c4a3160b49e1ff8da8216f.jpg",
@@ -3338,7 +3377,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:49.519Z",
+    "gorselDeneme": "2026-10-29T00:56:32.766Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1752000/gozalti-stok-1752516.jpg",
@@ -3395,7 +3434,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:49.538Z",
+    "gorselDeneme": "2026-10-29T00:56:33.167Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_19d0d3db08d7de418b6baf5bcb617ef4.jpg",
@@ -3524,7 +3563,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:49.768Z",
+    "gorselDeneme": "2026-10-29T00:56:33.278Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_f9eaf7735f925ac85ceb48fe7b492926.jpg",
@@ -3637,7 +3676,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:49.741Z",
+    "gorselDeneme": "2026-10-29T00:56:33.357Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_39834d694f9c1e179fdf86f995e82b71.jpg",
@@ -3685,7 +3724,7 @@
     "publishedAt": "2026-10-28T17:32:21.000Z",
     "generatedAt": "2026-10-28T17:36:06.724Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:51.184Z",
+    "gorselDeneme": "2026-10-29T00:56:33.230Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_c3bbfc3b74d2b897da0b73ed3d11d68c.jpg",
@@ -3794,7 +3833,7 @@
     "publishedAt": "2026-10-28T17:20:12.000Z",
     "generatedAt": "2026-10-28T17:44:51.006Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:51.211Z",
+    "gorselDeneme": "2026-10-29T00:56:34.521Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_45da8b17254d000c68e34c9cdbaa0f6a.jpg",
@@ -3840,7 +3879,7 @@
     "publishedAt": "2026-10-28T17:15:58.000Z",
     "generatedAt": "2026-10-28T17:20:59.883Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:50.072Z",
+    "gorselDeneme": "2026-10-29T00:56:33.442Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/Apple-MacBook-Pro-with-PROLED-XDR-Display-lifestyle-remote-work-261028-scaled.webp",
@@ -3886,7 +3925,7 @@
     "publishedAt": "2026-10-28T17:14:05.000Z",
     "generatedAt": "2026-10-28T17:22:00.529Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:49.972Z",
+    "gorselDeneme": "2026-10-29T00:56:33.613Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_c7693f07463042d042582f51203e5af2.jpg",
@@ -3945,7 +3984,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:50.228Z",
+    "gorselDeneme": "2026-10-29T00:56:33.467Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/erdogan-tokayev-aa-2499296.jpg",
@@ -4100,7 +4139,7 @@
     "publishedAt": "2026-10-28T16:49:54.000Z",
     "generatedAt": "2026-10-28T17:00:09.913Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:50.299Z",
+    "gorselDeneme": "2026-10-29T00:56:33.784Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_d2d272b23e127e436a16f67316bdda62.jpg",
@@ -4326,7 +4365,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:50.524Z",
+    "gorselDeneme": "2026-10-29T00:56:33.996Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_d167c997046a97723dd9c0f72b38b63e.jpg",
@@ -4658,7 +4697,7 @@
     "publishedAt": "2026-10-28T15:33:00.000Z",
     "generatedAt": "2026-10-28T15:48:26.580Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:50.504Z",
+    "gorselDeneme": "2026-10-29T00:56:33.711Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2482000/hakan-fidan-aa-2482152.jpg",
@@ -4705,7 +4744,7 @@
     "publishedAt": "2026-10-28T15:32:54.000Z",
     "generatedAt": "2026-10-28T15:37:06.623Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:50.826Z",
+    "gorselDeneme": "2026-10-29T00:56:34.138Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_2485c4c8f4a2c986be1d0845abcc6e48.jpg",
@@ -4852,7 +4891,7 @@
     "publishedAt": "2026-10-28T15:00:17.000Z",
     "generatedAt": "2026-10-28T15:08:36.736Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:50.997Z",
+    "gorselDeneme": "2026-10-29T00:56:34.058Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/85d75e1c-420e-4e1a-9e40-a54b76ef841a.webp",
@@ -4900,7 +4939,7 @@
     "publishedAt": "2026-10-28T14:44:00.000Z",
     "generatedAt": "2026-10-28T14:51:41.379Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:50.949Z",
+    "gorselDeneme": "2026-10-29T00:56:33.887Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1566000/ingiltere-1566350.jpg",
@@ -4958,7 +4997,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:51.173Z",
+    "gorselDeneme": "2026-10-29T00:56:34.317Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_2f151bf29c6bbcb12f8fa34c73a59cf6.jpg",
@@ -5076,7 +5115,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:51.248Z",
+    "gorselDeneme": "2026-10-29T00:56:34.404Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_9d53082159465965bff3902361ca5e34.jpg",
@@ -5133,7 +5172,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T00:51:51.137Z",
+    "gorselDeneme": "2026-10-29T00:56:34.067Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/8924/live/3d448ba0-d2d7-11f1-93e1-3b657b665bcf.jpg",
@@ -20667,7 +20706,6 @@
     },
     "publishedAt": "2026-10-27T00:55:57.000Z",
     "generatedAt": "2026-10-27T01:16:09.291Z",
-    "breaking": true,
     "kapak": {
       "v": 2,
       "kaynak": "https://i.fotospor.com.tr/2/1280/720/storage/files/images/2026/10/27/yapak-zeka-cevapladi-galatasarayin-penaltisi-verilmedi-qgbv.jpg",
