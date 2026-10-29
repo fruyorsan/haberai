@@ -52,11 +52,67 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:49:58.067Z",
+    "gorselDeneme": "2026-10-29T06:56:18.748Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_e7baff4e08d1e8628e907e145338f200.jpg",
       "foto": false
+    }
+  },
+  {
+    "id": "00c775668d5d97e8",
+    "title": "Araştırmacılar Saniyede 3,2 Petabit Hıza Ulaştı",
+    "slug": "arastirmacilar-saniyede-3-2-petabit-hiza-ulasti",
+    "summary": "Bilim insanları, laboratuvar ortamında saniyede 3,2 petabit veri aktarımı sağlayan bir deney gerçekleştirdi. Bu rekor, mevcut internet altyapısının gelecekteki yükselişi için bir kilometre taşı olarak görülüyor.",
+    "keyPoints": [
+      "Saniyede 3,2 petabit veri iletimi yeni teknikle sağlandı",
+      "Deney, optik fiber ve ileri modülasyon teknikleriyle yapıldı",
+      "Rekor, önceki 1,8 petabit seviyesinin oldukça üzerindedir"
+    ],
+    "body": [
+      "Bir grup araştırmacı, veri iletiminde çığır açan bir deneyle saniyede 3,2 petabit hızına ulaşarak küresel internet performansının sınırlarını zorladı. Bu çalışma, yüksek hızlı veri trafiğinin artan taleplerine yanıt vermek amacıyla yürütülen uzun vadeli bir araştırma projesinin sonucudur.",
+      "Deney, ultra geniş bant optik fiber kabloları ve yeni nesil modülasyon şemaları kullanılarak gerçekleştirildi. Bu teknikler, sinyal kayıplarını minimuma indirirken aynı anda çok daha fazla veri paketinin aynı hat üzerinden iletilmesini mümkün kıldı. Araştırmacılar, laboratuvar ortamında elde edilen bu sonuçları gerçek dünya ağlarına uyarlamanın yol haritasını da ortaya koydu.",
+      "Önceki yıllarda kaydedilen en yüksek hızlar, saniyede bir buçuk petabitti; yeni rekor bu değerin iki katından fazla bir artışı temsil ediyor. Bu fark, özellikle bulut bilişim, yapay zeka eğitim setleri ve büyük veri analitiği gibi alanlarda veri aktarım süresinin dramatik şekilde kısalmasını sağlayabilir. Ancak, laboratuvar koşullarının dışına çıkıldığında altyapı ve donanım gereksinimlerinin de artacağı göz önünde bulundurulmalı.",
+      "Bu gelişme, telekom operatörleri ve veri merkezi yöneticileri için önemli bir referans noktası oluşturuyor. Ağ mimarileri, bu seviyedeki hızları destekleyecek şekilde yeniden tasarlanmalı ve yeni ekipman yatırımları planlanmalıdır. Özellikle 5G ve gelecekteki 6G ağlarının bu rekorun sunduğu kapasiteyi kullanabilmesi için fiber altyapısının genişletilmesi kritik bir adım olacaktır.",
+      "Gelecekte, araştırma ekibi bu teknolojiyi daha geniş ölçekli testlere tabi tutmayı ve farklı coğrafi bölgelerde denemeler yapmayı hedefliyor. Başarıyla tamamlanan bu adım, dünya çapında internet hizmetlerinin kalitesini artırma potansiyelini ortaya koyarken, aynı zamanda enerji tüketimi ve maliyet dengeleri üzerine yeni tartışmaları da beraberinde getirebilir."
+    ],
+    "comment": "Bu rekor, veri aktarım kapasitesinin sınırlarını yeniden tanımlıyor. Saniyede 3,2 petabitlik hız, mevcut fiber altyapısının ve modülasyon tekniklerinin ne kadar ilerlediğini gösteriyor. Operatörler ve veri merkezi yöneticileri, bu seviyeyi hizmetlerine entegre ederken altyapı yatırımlarını yeniden değerlendirmeli. Önceki 1,8 petabit rekoruyla karşılaştırıldığında, yeni değer neredeyse iki katı olduğu için maliyet-performans dengesi yeniden hesaplanmalı.",
+    "editorNote": "Araştırmacıların laboratuvar deneyinde ulaştığı 3,2 Pb/s hızı, geleceğin internet altyapısına dair yeni bir vizyon sunuyor. Bu seviyeye ulaşmak için altyapı yatırımları kaçınılmaz.",
+    "tags": [
+      "petabit",
+      "optik fiber",
+      "veri aktarımı",
+      "internet hızı",
+      "teknoloji"
+    ],
+    "category": "İnternet",
+    "gorselSorgu": "data center server room",
+    "source": "Technopat",
+    "sourceUrl": "https://www.technopat.net/sosyal/konu/internet-hizinda-yeni-rekor-saniyede-3-2-petabit.4197183/",
+    "image": "/kapak/00c775668d5d97e8.webp",
+    "publishedAt": "2026-10-29T06:42:14.000Z",
+    "generatedAt": "2026-10-29T06:56:16.310Z",
+    "gorselKaynak": {
+      "yazar": "Joël van der Loo",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Duga-1_radar_data_center_interior_server_room_2018.jpg"
+    },
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Use_of_optical_fiber_in_a_lamp..JPG/1280px-Use_of_optical_fiber_in_a_lamp..JPG",
+        "yazar": "Rickyrab",
+        "lisans": "CC BY-SA 3.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Use_of_optical_fiber_in_a_lamp..JPG",
+        "altyazi": "Yeni nesil optik fiber yapısı"
+      }
+    ],
+    "breaking": true,
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
+      "foto": true
     }
   },
   {
@@ -158,7 +214,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:49:55.998Z",
+    "gorselDeneme": "2026-10-29T06:56:17.523Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/manset-5.webp",
@@ -272,7 +328,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:49:55.850Z",
+    "gorselDeneme": "2026-10-29T06:56:17.645Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/yangin-2499324.jpg",
@@ -331,7 +387,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:49:57.782Z",
+    "gorselDeneme": "2026-10-29T06:56:18.580Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_722eac1d6a832f92e8232ce1b55b37cf.jpg",
@@ -594,7 +650,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:49:58.314Z",
+    "gorselDeneme": "2026-10-29T06:56:19.718Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_643196d2376ee64bd01652f8dc2e7812.jpg",
@@ -829,7 +885,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:49:57.137Z",
+    "gorselDeneme": "2026-10-29T06:56:17.766Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2432000/orman-2432721.jpg",
@@ -1064,7 +1120,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:49:57.827Z",
+    "gorselDeneme": "2026-10-29T06:56:18.623Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/ita-2499307.jpg",
@@ -1188,7 +1244,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:49:57.313Z",
+    "gorselDeneme": "2026-10-29T06:56:17.944Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2074000/ltt9779b-otegezegen-esa-2075318.jpg",
@@ -1247,7 +1303,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:49:57.437Z",
+    "gorselDeneme": "2026-10-29T06:56:18.065Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2454000/sanal-devriye-siber-saldiri-2455204.jpg",
@@ -1373,7 +1429,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:49:57.846Z",
+    "gorselDeneme": "2026-10-29T06:56:18.604Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1590000/cin-kus-gribi-reu-1591695.jpg",
@@ -1433,7 +1489,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:49:57.916Z",
+    "gorselDeneme": "2026-10-29T06:56:18.715Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1562000/microsoft-reuters-1563600.jpg",
@@ -1492,7 +1548,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:49:57.949Z",
+    "gorselDeneme": "2026-10-29T06:56:18.721Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/arama-kurtarma-aa-2499304.jpg",
@@ -1552,7 +1608,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:49:58.348Z",
+    "gorselDeneme": "2026-10-29T06:56:19.112Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/arac-kaza-aa-2499303.jpg",
@@ -1613,7 +1669,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:49:58.051Z",
+    "gorselDeneme": "2026-10-29T06:56:18.850Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/antalya-sel-aa-2499302.jpg",
@@ -1672,7 +1728,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:49:58.304Z",
+    "gorselDeneme": "2026-10-29T06:56:19.172Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_a814376a722f64c1480d5e4e6b76116b.jpg",
@@ -1731,7 +1787,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:49:58.184Z",
+    "gorselDeneme": "2026-10-29T06:56:18.878Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/polis-gozalti-aa-2499301.jpg",
@@ -1790,7 +1846,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:49:58.882Z",
+    "gorselDeneme": "2026-10-29T06:56:19.248Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://www.yenimesaj.com.tr/resimler/haberler/17/israilin-gazzede-duzenledigi-saldirilarda-5-kisi-hayatini-kaybetti-38-kisi-yaralandi-H1620305-11.webp",
@@ -1849,7 +1905,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:49:58.514Z",
+    "gorselDeneme": "2026-10-29T06:56:19.041Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://image.hurimg.com/i/hurriyet/90/0x0/626380bb4e3fe118d4fa1ba3.jpg",
@@ -2030,7 +2086,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:49:58.598Z",
+    "gorselDeneme": "2026-10-29T06:56:19.541Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.haberhergun.com/manset/2026/10/togg-un-banttan-inisinin-4-yilinda-126-bin-arac-1793241261.webp",
@@ -2072,7 +2128,7 @@
     "publishedAt": "2026-10-29T02:26:11.000Z",
     "generatedAt": "2026-10-29T02:33:38.497Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:49:59.216Z",
+    "gorselDeneme": "2026-10-29T06:56:20.038Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://havasosyalmedya.com/wp-content/uploads/2026/10/photo-output-7-18.png",
@@ -2243,7 +2299,7 @@
         "altyazi": "Kulüp yetkililerinin basın açıklamasını gerçekleştirdiği an"
       }
     ],
-    "gorselDeneme": "2026-10-29T06:50:00.240Z",
+    "gorselDeneme": "2026-10-29T06:56:20.848Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.alparslandiyari.com/manset/2026/10/fenerbahce-de-ismail-kartal-donemi-bitti-1793239123.webp",
@@ -2422,7 +2478,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:50:00.049Z",
+    "gorselDeneme": "2026-10-29T06:56:20.777Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.saraymedya.com/manset/2026/10/mugla-da-sel-250-den-fazla-personel-calisiyor-1793238171.webp",
@@ -2487,7 +2543,7 @@
         "altyazi": "Sosyal yardım alan bazı kişiler üzerine kayıtlı lüks otomobiller"
       }
     ],
-    "gorselDeneme": "2026-10-29T06:49:58.793Z",
+    "gorselDeneme": "2026-10-29T06:56:19.716Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/90jpg-4rf1rs0Enk_4dktsVCmUDw.jpg?w=1270&h=675&mode=crop&scale=both",
@@ -2906,7 +2962,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:50:00.079Z",
+    "gorselDeneme": "2026-10-29T06:56:20.840Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.saraymedya.com/manset/2026/10/turhal-lezzetleri-istanbul-da-tanitildi-1793235126.webp",
@@ -2951,7 +3007,7 @@
     "publishedAt": "2026-10-29T00:49:56.000Z",
     "generatedAt": "2026-10-29T00:56:28.014Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:49:59.949Z",
+    "gorselDeneme": "2026-10-29T06:56:20.639Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://bgcdn.gmgadmin.com/1/1200/800//files/2026/10/29/1913030/1913030.jpg/?v=1793238602",
@@ -3009,7 +3065,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:50:00.244Z",
+    "gorselDeneme": "2026-10-29T06:56:20.922Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.saraymedya.com/manset/2026/10/kbu-de-guvenlik-icin-8888-numarali-cagri-merkezi-kuruldu-1793234460.webp",
@@ -3192,7 +3248,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:50:00.224Z",
+    "gorselDeneme": "2026-10-29T06:56:20.818Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/news/1200/branded_turkce/c143/live/4223ae30-d313-11f1-808a-1f9b061d2360.jpg",
@@ -3319,7 +3375,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:50:00.303Z",
+    "gorselDeneme": "2026-10-29T06:56:21.027Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/tdt-ankara-2499299.jpg",
@@ -3376,7 +3432,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:50:00.263Z",
+    "gorselDeneme": "2026-10-29T06:56:20.998Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.haberhergun.com/manset/2026/10/ongel-den-odulunu-turkiye-azerbaycan-kardesligine-adama-1793231627.webp",
@@ -3441,7 +3497,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:50:00.624Z",
+    "gorselDeneme": "2026-10-29T06:56:21.435Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.egealternatif.com/manset/2026/10/trump-netanyahu-ya-destek-verdi-birlik-hukumeti-icin-simdilik-sessiz-1793231069.webp",
@@ -3499,7 +3555,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:50:00.492Z",
+    "gorselDeneme": "2026-10-29T06:56:21.092Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2136000/devlet-bahceli-aa-2137195.jpg",
@@ -3618,7 +3674,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:50:00.527Z",
+    "gorselDeneme": "2026-10-29T06:56:21.383Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_32303bbd86b0e4b783afdddae6b3484c.jpg",
@@ -3675,7 +3731,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:50:00.525Z",
+    "gorselDeneme": "2026-10-29T06:56:21.453Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_d2e0070dd34f11270a142e7151355a13.jpg",
@@ -3792,7 +3848,7 @@
     "publishedAt": "2026-10-28T23:13:51.000Z",
     "generatedAt": "2026-10-28T23:25:45.248Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:50:01.328Z",
+    "gorselDeneme": "2026-10-29T06:56:21.067Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://www.merlininkazani.com/social-image/article/263946.jpg",
@@ -3875,7 +3931,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:50:00.723Z",
+    "gorselDeneme": "2026-10-29T06:56:21.298Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://tv5comtr.teimg.com/crop/1280x720/tv5-com-tr/uploads/2026/09/iletisim-baskanligi-1.png",
@@ -3932,7 +3988,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:50:01.632Z",
+    "gorselDeneme": "2026-10-29T06:56:21.918Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://www.techinside.com/wp-content/uploads/2026/10/yapay-zeka-modellerinde-dil-farkliliklari-gizli-bir-vergi-olusturuyor.webp",
@@ -4106,7 +4162,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:50:00.910Z",
+    "gorselDeneme": "2026-10-29T06:56:21.856Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_a7caa0f94b3555a964fbe77862293b3c.jpg",
@@ -4164,7 +4220,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:50:02.751Z",
+    "gorselDeneme": "2026-10-29T06:56:23.492Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://media.baskenthaber06.com/article/b4fe7f61-f57f-46b8-8724-d52e15552670-discover.webp",
@@ -4272,7 +4328,7 @@
     "publishedAt": "2026-10-28T22:08:52.000Z",
     "generatedAt": "2026-10-28T22:17:09.178Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T06:50:00.828Z",
+    "gorselDeneme": "2026-10-29T06:56:21.618Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/ad45/live/27f788a0-d30f-11f1-ad4f-5d2bbacf0caf.jpg",
@@ -21221,7 +21277,6 @@
     },
     "publishedAt": "2026-10-27T06:50:00.000Z",
     "generatedAt": "2026-10-27T06:56:18.988Z",
-    "breaking": true,
     "kapak": {
       "v": 2,
       "kaynak": "https://i.haberglobal.com/storage/files/images/2026/10/27/karadenizde-savas-riski-turkiyenin-onundeki-kritik-denklem-iyvq.jpg",

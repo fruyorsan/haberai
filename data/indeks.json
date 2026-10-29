@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T06:50:52.411Z",
+  "updatedAt": "2026-10-29T06:57:41.402Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,9 +13,9 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5044,
-  "aday": 5044,
-  "uygun": 2992,
+  "toplamHaber": 5045,
+  "aday": 5045,
+  "uygun": 2993,
   "secilen": 2899,
   "red": {
     "özet gövdeyle aynı": 105,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 100
+    "tekrar": 101
   },
   "ornekTekrarlar": [
     {
@@ -68,6 +68,10 @@
     {
       "title": "Apple, 2 nm A20 Pro işlemcili OLED iPad mini modelini tanıttı",
       "twin": "Apple, MacBook Neo 2’yi A19 Pro ve 12 GB RAM ile tanıttı"
+    },
+    {
+      "title": "Araştırmacılar Saniyede 3,2 Petabit Hıza Ulaştı",
+      "twin": "Çinli araştırmacılar fiber optik kabloda 3,2 petabit hıza ulaştı"
     },
     {
       "title": "Apple M6 Çipli 14 İnç MacBook Pro Grafik ve AI Performansını %30 Artırdı",
@@ -108,10 +112,6 @@
     {
       "title": "Samsung Galaxy S27 serisi, ocak ayında 100 dolar zamla gelebilir",
       "twin": "Samsung Galaxy Fit 4 modeli, 100 dolar altı fiyatla geliyor"
-    },
-    {
-      "title": "Prof. Dr. Osman Bektaş'tan Marmara'daki 7,5 deprem senaryosuna itiraz",
-      "twin": "Jeolog Osman Bektaş, Marmara depremi senaryolarına karşı uyarıyor"
     }
   ],
   "days": {
@@ -416,7 +416,6 @@
       "821ae3a10fb2a782",
       "4d3a93a9993aa9bd",
       "91a80d5d8509d5f9",
-      "3d4458b3614b8f37",
       "14a8dd9c67a7a934",
       "ec4120eade6c26ec",
       "2d6da96661790e88",
@@ -424,6 +423,7 @@
       "a6c4adea1060a2a1",
       "b147286e873c2100",
       "d32c6e016293c1ab",
+      "3d4458b3614b8f37",
       "9588a55386f78353",
       "a71ac349748f1ad6",
       "535ebfa82eb21af3",
@@ -598,6 +598,7 @@
       "4ff32f7f0d29b9f1",
       "d1f3819020b474d0",
       "3723fa1d1341b882",
+      "1dc42f1829be5db8",
       "002d0251f2c5f593",
       "33c5a4339667189b",
       "b34a82540fd3d262",
@@ -623,7 +624,6 @@
       "019b923e705041ed",
       "b36371691ab64326",
       "8d3480003d8b2dab",
-      "1dc42f1829be5db8",
       "1ee4679a83865469",
       "d1f012ae285f6815",
       "9f7f1700ee6eb3a8",
@@ -3142,6 +3142,7 @@
     "54c7059460eb1359",
     "2da6c72d999937d8",
     "4867e72e8b1058ba",
+    "1dc42f1829be5db8",
     "002d0251f2c5f593",
     "33c5a4339667189b",
     "b34a82540fd3d262",
@@ -3218,7 +3219,6 @@
     "f2f7a86f054c8975",
     "291418757fca5c9b",
     "8d3480003d8b2dab",
-    "1dc42f1829be5db8",
     "f10fad05f1498ae2",
     "c7679a48d001c440",
     "1ee4679a83865469",
@@ -3712,7 +3712,6 @@
     "55cc9629c4ee3732",
     "53386bd4a423dd1b",
     "e92f10cd3443b534",
-    "3d4458b3614b8f37",
     "4b5d1e2d3a85ca82",
     "3fc380eb5bb512a4",
     "37bde9a389f8ed12",
@@ -3875,6 +3874,7 @@
     "7f64d51f8f2bac97",
     "1986e3a5665295dd",
     "12412b4fae58f856",
+    "3d4458b3614b8f37",
     "4c3485075a74b2c7",
     "3a50b16f36f23ed8",
     "2dfff7f140a1e6d2",
