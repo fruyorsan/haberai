@@ -1,5 +1,56 @@
 [
   {
+    "id": "12112851f3ae70e4",
+    "title": "NVIDIA, RTX Spark platformu ile dizüstü bilgisayarlara süper çip getirdi",
+    "slug": "nvidia-rtx-spark-platformu-ile-dizustu-bilgisayarlara-super-cip-getirdi",
+    "summary": "NVIDIA, Blackwell mimarili GPU ve Grace CPU birimlerini tek bir süper çipte birleştiren RTX Spark platformunu tanıttı. ASUS, Dell ve Lenovo gibi markaların yeni nesil iş istasyonlarında kullanılan bu sistem, 128 GB birleşik bellek kapasitesiyle masaüstü bilgisayar performansını taşınabilir gövdelere sığdırıyor.",
+    "keyPoints": [
+      "RTX Spark platformu 1 petaflop FP4 yapay zekâ performansı ve 128 GB birleşik bellek sunuyor.",
+      "ASUS, Dell, HP, Lenovo, Microsoft ve MSI iş birliğiyle 2.599 dolardan başlayan fiyatlarla satışa çıktı.",
+      "Nemotron 3.5 Transcribe ve LFM3 modelleri ile yerel cihaz üzerinde gelişmiş yapay zekâ desteği sağlandı."
+    ],
+    "body": [
+      "ASUS, Dell, HP, Lenovo, Microsoft ve MSI tarafından geliştirilen cihazlar, Blackwell mimarili RTX GPU birimi ile Grace CPU mimarisini tek bir süper çip üzerinde birleştiriyor. Bu mimari yapı, GPU ve CPU arasındaki klasik veri yolu darboğazlarını tamamen ortadan kaldırarak performansı üst seviyeye taşıyor.",
+      "128 GB birleşik bellek havuzu, grafik işleme ve yapay zekâ modelleri arasında dinamik biçimde paylaştırılabiliyor. Bu sayede daha önce yalnızca çoklu GPU barındıran masaüstü sunucularda çalıştırılabilen 90 GB boyutundaki 3D render sahneleri veya karmaşık dil modelleri, prize bağlı kalmadan dizüstü bilgisayarlarda işlenebiliyor.",
+      "Donanım yeteneklerinin yanı sıra yazılım ekosistemini de genişleten NVIDIA, açık ağırlıklı Nemotron 3.5 Transcribe modelini platforma dahil etti. Yalnızca 4,3 milyar aktif parametre içeren bu model, Hugging Face Open ASR listesinde zirveye yerleşirken, 40 farklı dili yerel donanımda destekliyor. Ayrıca 1,7 milyar parametreli Liquid Foundation Models ailesi de e-posta yanıtlama ve takvim yönetimi gibi görevleri cihaz üzerinde gerçekleştirebiliyor.",
+      "Kullanıcı deneyimini iyileştirmek adına NVIDIA App yazılımına yeni bir kaynak yönetim aracı eklendi. Sistem içindeki gelişmiş sekmeler üzerinden erişilen bu özellik, Windows donanım hızlandırmalı GPU zamanlamasını kullanarak işlemci gücünün dağılımını kullanıcı tercihine bırakıyor. Oyun oynarken kare hızına odaklanmak ya da arka planda çalışan yapay zekâ ajanlarına işlemci gücü ayırmak, artık tek bir tıklama ile yapılabiliyor.",
+      "Oyun dünyası için de güncel teknolojiler sunan platform, DLSS 4.5 ve RTX Remix 1.6 desteğiyle dikkat çekiyor. Özellikle Phantom Blade Zero gibi popüler oyunlarda dinamik çoklu kare üretimi sayesinde performans artışı sağlanırken, Minecraft gibi yapımlar için tam yol izleme desteği getirildi. Tüm bu donanımlar, 2.599 dolardan başlayan fiyatlarla küresel pazarda profesyonel kullanıcıların erişimine sunulmuş durumda."
+    ],
+    "comment": "RTX Spark platformu, dizüstü bilgisayarların sadece taşınabilir birer ekran olmaktan çıkıp tam donanımlı yerel veri işleme merkezlerine dönüştüğünü kanıtlıyor. 128 GB birleşik bellek kapasitesi, özellikle mobil ortamda devasa 3D sahnelerle uğraşan profesyonellerin masaüstü bilgisayarlara olan bağımlılığını doğrudan kırabilir. Platformun 2.599 dolarlık başlangıç fiyatı, geleneksel iş istasyonlarıyla karşılaştırıldığında yüksek bir maliyet gibi görünse de, bulut bilişim hizmetlerine ödenen aylık ücretleri devre dışı bırakma potansiyeli taşıyor. Bu teknoloji, cihaz üzerinde çalışan yapay zekâ ajanlarının hızlanmasıyla birlikte, veri gizliliğine önem veren kurumsal firmalar için vazgeçilmez bir seçenek haline gelebilir.",
+    "editorNote": "Artık prize bağlı kalmadan devasa 3D render almak veya yerel yapay zekâ modellerini çalıştırmak mümkün. NVIDIA'nın süper çip tasarımı, iş istasyonu dünyasındaki taşınabilirlik…",
+    "tags": [
+      "NVIDIA",
+      "RTX Spark",
+      "Yapay Zeka",
+      "Donanım",
+      "İş İstasyonu"
+    ],
+    "category": "Donanım",
+    "gorselSorgu": "nvidia rtx gpu laptop design",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/nvidia-rtx-spark-satisa-cikti-super-cipli-dizustu-bilgisayarlar-neler-sunuyor",
+    "image": "/kapak/12112851f3ae70e4.webp",
+    "publishedAt": "2026-10-29T12:28:59.000Z",
+    "generatedAt": "2026-10-29T12:29:37.294Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Goldring_Centre_for_High_Performance_Sport_-_16098250526.jpg/1280px-Goldring_Centre_for_High_Performance_Sport_-_16098250526.jpg",
+        "yazar": "JasonParis",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Goldring_Centre_for_High_Performance_Sport_-_16098250526.jpg",
+        "altyazi": "Taşınabilir iş istasyonlarında yeni nesil donanım yerleşimi"
+      }
+    ],
+    "breaking": true,
+    "gorselDeneme": "2026-10-29T12:29:38.324Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://ares.shiftdelete.net/2026/10/Local_AI_Blog_10_28.webp",
+      "foto": false
+    }
+  },
+  {
     "id": "b182163213c36dff",
     "title": "Apple'ın ucuz bellek dönemi sona erdi, maliyet baskısı artıyor",
     "slug": "apples-ucuz-bellek-donemi-sona-erdi-maliyet-baskisi-artiyor",
@@ -43,7 +94,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:29.715Z",
+    "gorselDeneme": "2026-10-29T12:29:38.182Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://imgrosetta.webtekno.com/file/695095/695095-700x400.png",
@@ -103,7 +154,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:31.493Z",
+    "gorselDeneme": "2026-10-29T12:29:39.094Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_118acfc1837c1d32a0f1269062172822.jpg",
@@ -155,7 +206,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:29.657Z",
+    "gorselDeneme": "2026-10-29T12:29:38.200Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://imgrosetta.webtekno.com/file/695086/695086-700x400.jpg",
@@ -279,7 +330,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:31.458Z",
+    "gorselDeneme": "2026-10-29T12:29:39.091Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_79d100da6f835749f97451cab327e75b.jpg",
@@ -394,7 +445,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:30.917Z",
+    "gorselDeneme": "2026-10-29T12:29:38.600Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/07/samsung-galaxy-z-fold-8-ve-flip-8-on-rezervasyonu-basladi.webp",
@@ -519,7 +570,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:30.814Z",
+    "gorselDeneme": "2026-10-29T12:29:38.581Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://imgrosetta.webtekno.com/file/695080/695080-700x400.png",
@@ -625,7 +676,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:30.975Z",
+    "gorselDeneme": "2026-10-29T12:29:38.743Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/ispanya-kaza-reu-2499273.jpg",
@@ -740,7 +791,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:31.300Z",
+    "gorselDeneme": "2026-10-29T12:29:39.176Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1842000/yoon-suk-yeol-reu-1842450.jpg",
@@ -854,7 +905,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:31.285Z",
+    "gorselDeneme": "2026-10-29T12:29:39.310Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1502000/nato-1502045.jpg",
@@ -978,7 +1029,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:32.356Z",
+    "gorselDeneme": "2026-10-29T12:29:40.187Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_d9bcf70439cf92bf223639146becddec.jpg",
@@ -1103,7 +1154,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:31.559Z",
+    "gorselDeneme": "2026-10-29T12:29:39.544Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/google-messages-ozelligi-artik-whatsapp-uzerinde-kullanilabilecek.webp",
@@ -1163,7 +1214,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:31.431Z",
+    "gorselDeneme": "2026-10-29T12:29:39.275Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/burhanettin-duran-gorusme-aa-2499515.jpg",
@@ -1401,7 +1452,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:31.553Z",
+    "gorselDeneme": "2026-10-29T12:29:39.405Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2258000/bilgisayar-2259329.jpg",
@@ -1458,7 +1509,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:31.768Z",
+    "gorselDeneme": "2026-10-29T12:29:39.600Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_a5264c57e5431f7ea54aaf2c518e7ef0.jpg",
@@ -1505,7 +1556,7 @@
     "publishedAt": "2026-10-29T08:59:38.000Z",
     "generatedAt": "2026-10-29T09:01:16.609Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:31.714Z",
+    "gorselDeneme": "2026-10-29T12:29:39.623Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2025/10/alphabet-google-2024-son-ceyrek-gelirlerini-acikladi-1.jpg",
@@ -1644,7 +1695,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:31.745Z",
+    "gorselDeneme": "2026-10-29T12:29:39.643Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_4c71229837c782e70e5f14d181a7ac67.jpg",
@@ -1691,7 +1742,7 @@
     "publishedAt": "2026-10-29T08:35:29.000Z",
     "generatedAt": "2026-10-29T08:41:00.869Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:31.837Z",
+    "gorselDeneme": "2026-10-29T12:29:39.792Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://imgrosetta.webtekno.com/file/695062/695062-700x400.jpg",
@@ -2002,7 +2053,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:31.910Z",
+    "gorselDeneme": "2026-10-29T12:29:39.899Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/huawei-pura-x-view-satis-rekorlari-kiriyor.webp",
@@ -2199,7 +2250,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:31.972Z",
+    "gorselDeneme": "2026-10-29T12:29:39.915Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_74b7e885fa1c87bfc90f036f84ac933c.jpg",
@@ -2247,7 +2298,7 @@
     "publishedAt": "2026-10-29T07:16:16.000Z",
     "generatedAt": "2026-10-29T07:29:43.893Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:32.045Z",
+    "gorselDeneme": "2026-10-29T12:29:39.886Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://imgrosetta.webtekno.com/file/695038/695038-700x400.jpg",
@@ -2321,7 +2372,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:32.074Z",
+    "gorselDeneme": "2026-10-29T12:29:40.035Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://imgrosetta.webtekno.com/file/695035/695035-700x400.jpg",
@@ -2370,7 +2421,7 @@
     "publishedAt": "2026-10-29T07:00:50.000Z",
     "generatedAt": "2026-10-29T07:04:12.318Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:32.063Z",
+    "gorselDeneme": "2026-10-29T12:29:40.138Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/youtube-premium-rekor-kirdi-abone-sayisi-150-milyonu-asti-1.webp",
@@ -2445,7 +2496,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:32.210Z",
+    "gorselDeneme": "2026-10-29T12:29:40.063Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_e7baff4e08d1e8628e907e145338f200.jpg",
@@ -2597,7 +2648,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:32.231Z",
+    "gorselDeneme": "2026-10-29T12:29:40.259Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/manset-5.webp",
@@ -2710,7 +2761,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:32.297Z",
+    "gorselDeneme": "2026-10-29T12:29:40.248Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/yangin-2499324.jpg",
@@ -2775,7 +2826,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:32.349Z",
+    "gorselDeneme": "2026-10-29T12:29:40.270Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_62ed204d340796413f313114d6e98e74.jpg",
@@ -3087,7 +3138,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:32.461Z",
+    "gorselDeneme": "2026-10-29T12:29:40.363Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_643196d2376ee64bd01652f8dc2e7812.jpg",
@@ -3319,7 +3370,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:32.426Z",
+    "gorselDeneme": "2026-10-29T12:29:40.366Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2432000/orman-2432721.jpg",
@@ -3557,7 +3608,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:32.543Z",
+    "gorselDeneme": "2026-10-29T12:29:40.514Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/ita-2499307.jpg",
@@ -3671,7 +3722,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:32.795Z",
+    "gorselDeneme": "2026-10-29T12:29:40.551Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2074000/ltt9779b-otegezegen-esa-2075318.jpg",
@@ -3728,7 +3779,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:32.798Z",
+    "gorselDeneme": "2026-10-29T12:29:40.461Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2454000/sanal-devriye-siber-saldiri-2455204.jpg",
@@ -3857,7 +3908,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:32.525Z",
+    "gorselDeneme": "2026-10-29T12:29:40.770Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1590000/cin-kus-gribi-reu-1591695.jpg",
@@ -3923,7 +3974,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:32.912Z",
+    "gorselDeneme": "2026-10-29T12:29:40.758Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1562000/microsoft-reuters-1563600.jpg",
@@ -3988,7 +4039,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:32.620Z",
+    "gorselDeneme": "2026-10-29T12:29:40.555Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/arama-kurtarma-aa-2499304.jpg",
@@ -4046,7 +4097,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:32.636Z",
+    "gorselDeneme": "2026-10-29T12:29:40.610Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/arac-kaza-aa-2499303.jpg",
@@ -4105,7 +4156,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:32.720Z",
+    "gorselDeneme": "2026-10-29T12:29:40.649Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/antalya-sel-aa-2499302.jpg",
@@ -4170,7 +4221,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:32.849Z",
+    "gorselDeneme": "2026-10-29T12:29:40.783Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_a814376a722f64c1480d5e4e6b76116b.jpg",
@@ -4227,7 +4278,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:32.818Z",
+    "gorselDeneme": "2026-10-29T12:29:40.708Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/polis-gozalti-aa-2499301.jpg",
@@ -4284,7 +4335,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T12:21:33.292Z",
+    "gorselDeneme": "2026-10-29T12:29:41.376Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://www.yenimesaj.com.tr/resimler/haberler/17/israilin-gazzede-duzenledigi-saldirilarda-5-kisi-hayatini-kaybetti-38-kisi-yaralandi-H1620305-11.webp",
@@ -21237,7 +21288,6 @@
     },
     "publishedAt": "2026-10-27T12:23:02.000Z",
     "generatedAt": "2026-10-27T12:28:14.560Z",
-    "breaking": true,
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/27/thumbs_b_c_42ec81ceb5ad74c56e5ac11256fbdd0f.jpg",
