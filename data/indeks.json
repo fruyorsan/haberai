@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T05:57:12.286Z",
+  "updatedAt": "2026-10-29T06:04:23.610Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5037,
-  "aday": 5037,
-  "uygun": 2985,
-  "secilen": 2892,
+  "toplamHaber": 5038,
+  "aday": 5038,
+  "uygun": 2986,
+  "secilen": 2893,
   "red": {
     "özet gövdeyle aynı": 105,
     "kısa özet": 34,
@@ -58,12 +58,12 @@
       "twin": "Fenerbahçe Yönetimi İsmail Kartal'ın İstifasını Onayladı"
     },
     {
-      "title": "Google Gemini 4 Argon, Android Bench’te Beşinci Sırada Yer Aldı",
-      "twin": "Google, yapay zeka modeli Gemini 4 Carbon ile zirveye yerleşti"
-    },
-    {
       "title": "İsrail'in Gazze saldırıları 4 sivilin daha yaşamına son verdi",
       "twin": "İsrail ordusunun Gazze saldırıları sonucu 4 Filistinli hayatını kaybetti"
+    },
+    {
+      "title": "Google Gemini 4 Argon, Android Bench’te Beşinci Sırada Yer Aldı",
+      "twin": "Google, yapay zeka modeli Gemini 4 Carbon ile zirveye yerleşti"
     },
     {
       "title": "Apple, 2 nm A20 Pro işlemcili OLED iPad mini modelini tanıttı",
@@ -621,6 +621,7 @@
       "019b923e705041ed",
       "b36371691ab64326",
       "1ee4679a83865469",
+      "b34a82540fd3d262",
       "d1f012ae285f6815",
       "9f7f1700ee6eb3a8",
       "36b43bb9726105da",
@@ -638,13 +639,13 @@
       "aaa716f7d3eee4b1",
       "433315fd447b239a",
       "f95a7f8908299c0e",
+      "54316866304d3386",
       "ae3c1beedd89dfd9",
       "3163f604feb7173b",
       "c8febb9fb2816407",
       "908b6194caeae1f4",
       "3700fbdccdb8bb9f",
       "1acdc099bc06935a",
-      "54316866304d3386",
       "4d739df66259cb8b",
       "0c4f32ca37e7f7b4",
       "465e3d385c653b3c",
@@ -3212,6 +3213,7 @@
     "f10fad05f1498ae2",
     "c7679a48d001c440",
     "1ee4679a83865469",
+    "b34a82540fd3d262",
     "71be2642dfb152d0",
     "d1f012ae285f6815",
     "a97491e1ee74c5b3",
@@ -3307,6 +3309,7 @@
     "511c4225152943a7",
     "09747a3394b04d6e",
     "9725210dfb8f0271",
+    "54316866304d3386",
     "d3dc98275734c6fc",
     "8489e2ec6b246d9c",
     "80afd681effd5914",
@@ -3416,7 +3419,6 @@
     "111d08256f4c3830",
     "ee7d6477d08366c4",
     "76ad05f5fc5335ea",
-    "54316866304d3386",
     "f518fc9b05df931b",
     "dd2070e1455a6f47",
     "f5bb19bdb211bb19",

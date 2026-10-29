@@ -1,5 +1,62 @@
 [
   {
+    "id": "b34a82540fd3d262",
+    "title": "NVIDIA RTX Remix 1.6 güncellemesi Minecraft için path tracing getirdi",
+    "slug": "nvidia-rtx-remix-1-6-guncellemesi-minecraft-icin-path-tracing-getirdi",
+    "summary": "NVIDIA, klasik oyun grafiklerini yenilemeye yarayan RTX Remix platformunun 1.6 sürümünü yayınladı. Güncelleme ile Minecraft Java Edition için beta aşamasında gelişmiş ışın izleme desteği gelirken, geliştiriciler için yapay zeka destekli yeni araçlar kullanıma sunuldu.",
+    "keyPoints": [
+      "Minecraft Java Edition 1.21.1 sürümü artık RTX Remix ile path tracing destekliyor.",
+      "DLSS 5 teknolojisi, 3D yönlendirmeli nöral görüntü oluşturma özelliğiyle platforma entegre edildi.",
+      "Geliştiriciler için Nemotron 3.5 Bolt E4B dil modeli ve NvRTX 5.8 sürümü yayınlandı."
+    ],
+    "body": [
+      "NVIDIA, oyun grafiklerini modern ışıklandırma ve görsel efektlerle yeniden oluşturmayı hedefleyen RTX Remix platformunun yeni 1.6 sürümünü kullanıma sundu. Bu güncellemeyle platform, klasik oyunların dokularını değiştirmekle kalmıyor; ışıklandırma, gölgeler ve yansımalar gibi temel grafik unsurlarını da tamamen yeniden yapılandırıyor. Özellikle Minecraft Java Edition 1.21.1 üzerinde sağlanan beta aşamasındaki path tracing desteği, oyunun blok temelli evreninde güneş ışığı, su yansımaları ve mağara aydınlatmalarını gerçekçi bir simülasyonla sunuyor.",
+      "Yeni sürümün sunduğu özellikler sadece ışıklandırma iyileştirmeleriyle sınırlı kalmıyor. NVIDIA, DLSS 5 teknolojisini ve beraberinde getirdiği 3D yönlendirmeli nöral görüntü oluşturma özelliğini sisteme dahil etti. Bu teknoloji, sahne verilerini analiz ederek ışıklandırma ve malzeme ayrıntılarını yapay zeka aracılığıyla çok daha yüksek bir netlik seviyesine taşıyor. Ayrıca ComfyUI 2.0 entegrasyonu sayesinde mod geliştiricileri, yapay zeka yardımıyla doku ve üç boyutlu içerik oluşturma süreçlerini hızlandırabiliyor.",
+      "Phantom Blade Zero oyunu da 29 Ekim 2026 tarihinde Steam ve Epic Games Store platformlarında piyasaya sürüldü. Söz konusu oyun, bilgisayar sürümünde DLSS 4.5, Ray Reconstruction ve dinamik kare oluşturma teknolojilerini tam kapasiteyle destekliyor. NVIDIA, RTX Spark platformunun da bu yeniliklerden faydalandığını ve DLSS Super Resolution ile Ray Reconstruction gibi teknolojilerin artık desteklenen oyunlarda standart hale geldiğini belirtti.",
+      "Donanım tarafında ise belirli gereksinimler öne çıkıyor. Minecraft'ın yeni grafik deneyimini çalıştırmak isteyen kullanıcıların en az RTX 30 serisi bir ekran kartına ve 616.92 WHQL veya daha güncel bir sürücüye sahip olması şart koşuluyor. Windows 10 veya 11 işletim sistemi üzerinde çalışan bu sistem, Blockworks tarafından hazırlanan örnek bir dünya ve yüksek çözünürlüklü fiziksel tabanlı malzeme paketleriyle birlikte kullanıcılara sunuluyor.",
+      "Geliştirici ekosistemini de genişleten şirket, oyun karakterlerinin oyuncularla daha doğal etkileşime girmesi için tasarlanan Nemotron 3.5 Bolt E4B dil modelini duyurdu. Gemma 4 E4B temel alınarak geliştirilen bu model, NVIDIA ACE projesi kapsamında kullanıma açıldı. Bunun yanı sıra Unreal Engine 5.8 tabanlı NvRTX 5.8 sürümü, geliştiricilerin gelişmiş ışın izleme ve nöral grafik teknolojilerini kendi projelerine daha kolay entegre etmelerine olanak tanıyor. MotionBricks projesiyle karakter animasyonlarının gerçek zamanlı yönlendirilmesi için yeni modeller de tanıtıldı."
+    ],
+    "comment": "NVIDIA, RTX Remix ile yalnızca eski oyunları parlatmakla kalmayıp, kendi yapay zeka ekosistemini standart hale getirmeyi hedefliyor. Özellikle DLSS 5 ve 3D-Guided Neural Rendering gibi teknolojilerin entegrasyonu, oyun geliştiricileri için donanım maliyetlerinden tasarruf ederken görsel kaliteyi artıracak bir kaldıraç işlevi görüyor. RTX 30 serisi ve üzeri kartları zorunlu kılan bu güncellemeler, yüksek performanslı grafiklerin artık orta segment ekran kartlarında bile bir zorunluluk haline geldiğini gösteriyor. Geliştiricilerin Unreal Engine 5.8 ile daha derinlemesine nöral grafik entegrasyonu yapabilmesi, önümüzdeki dönemde piyasaya çıkacak oyunlarda görsel kalite çıtasını yukarı çekecektir.",
+    "editorNote": "NVIDIA'nın yeni güncellemesiyle Minecraft artık çok daha gerçekçi ışıklandırmaya sahip. RTX 30 serisi ve üzeri ekran kartı sahipleri için oyun dünyasında görsel bir devrim…",
+    "tags": [
+      "NVIDIA",
+      "RTX Remix",
+      "Minecraft",
+      "DLSS 5",
+      "oyun teknolojileri",
+      "yapay zeka"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "NVIDIA RTX ray tracing graphics",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/nvidia-rtx-remix-1-6-minecraft-path-tracing",
+    "image": "/kapak/b34a82540fd3d262.webp",
+    "publishedAt": "2026-10-29T06:00:21.000Z",
+    "generatedAt": "2026-10-29T06:03:26.133Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/NVIDIA_G94_GPU_9600_GT.jpg/1280px-NVIDIA_G94_GPU_9600_GT.jpg",
+        "yazar": "Marco123456789~enwiki",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:NVIDIA_G94_GPU_9600_GT.jpg",
+        "altyazi": "NVIDIA ekran kartlarında kullanılan gelişmiş grafik işlem birimi"
+      }
+    ],
+    "breaking": true,
+    "images": [
+      "https://ares.shiftdelete.net/2026/10/nvidia-rtx-remix-1-6-yayinlandi-yeni-ozellikler-neler-3-1.webp",
+      "https://ares.shiftdelete.net/2026/10/nvidia-rtx-remix-1-6-yayinlandi-yeni-ozellikler-neler-3-2.webp"
+    ],
+    "imagesKaynak": "https://shiftdelete.net/nvidia-rtx-remix-1-6-minecraft-path-tracing",
+    "gorselDeneme": "2026-10-29T06:03:27.356Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://ares.shiftdelete.net/2026/10/nvidia-rtx-remix-1-6-yayinlandi-yeni-ozellikler-neler-3-2.webp",
+      "foto": true
+    }
+  },
+  {
     "id": "54316866304d3386",
     "title": "Yapay zeka çip talebi Advantest'in kazanç beklentilerini yukarı taşıdı",
     "slug": "yapay-zeka-cip-talebi-advantest-kazanc-beklentilerini-yukari-tasidi",
@@ -198,7 +255,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:06.632Z",
+    "gorselDeneme": "2026-10-29T06:03:30.259Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_643196d2376ee64bd01652f8dc2e7812.jpg",
@@ -433,7 +490,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:05.216Z",
+    "gorselDeneme": "2026-10-29T06:03:27.434Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2432000/orman-2432721.jpg",
@@ -668,7 +725,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:05.556Z",
+    "gorselDeneme": "2026-10-29T06:03:27.809Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/ita-2499307.jpg",
@@ -792,7 +849,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:05.378Z",
+    "gorselDeneme": "2026-10-29T06:03:27.699Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2074000/ltt9779b-otegezegen-esa-2075318.jpg",
@@ -851,7 +908,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:05.344Z",
+    "gorselDeneme": "2026-10-29T06:03:27.881Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2454000/sanal-devriye-siber-saldiri-2455204.jpg",
@@ -977,7 +1034,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:05.708Z",
+    "gorselDeneme": "2026-10-29T06:03:28.020Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1590000/cin-kus-gribi-reu-1591695.jpg",
@@ -1037,7 +1094,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:05.708Z",
+    "gorselDeneme": "2026-10-29T06:03:27.831Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1562000/microsoft-reuters-1563600.jpg",
@@ -1096,7 +1153,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:05.677Z",
+    "gorselDeneme": "2026-10-29T06:03:27.932Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/arama-kurtarma-aa-2499304.jpg",
@@ -1156,7 +1213,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:05.797Z",
+    "gorselDeneme": "2026-10-29T06:03:27.950Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/arac-kaza-aa-2499303.jpg",
@@ -1217,7 +1274,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:05.842Z",
+    "gorselDeneme": "2026-10-29T06:03:28.021Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/antalya-sel-aa-2499302.jpg",
@@ -1276,7 +1333,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:07.646Z",
+    "gorselDeneme": "2026-10-29T06:03:30.353Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_a814376a722f64c1480d5e4e6b76116b.jpg",
@@ -1335,7 +1392,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:05.931Z",
+    "gorselDeneme": "2026-10-29T06:03:28.082Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/polis-gozalti-aa-2499301.jpg",
@@ -1394,7 +1451,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:06.571Z",
+    "gorselDeneme": "2026-10-29T06:03:29.953Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://www.yenimesaj.com.tr/resimler/haberler/17/israilin-gazzede-duzenledigi-saldirilarda-5-kisi-hayatini-kaybetti-38-kisi-yaralandi-H1620305-11.webp",
@@ -1453,7 +1510,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:06.787Z",
+    "gorselDeneme": "2026-10-29T06:03:29.300Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://image.hurimg.com/i/hurriyet/90/0x0/626380bb4e3fe118d4fa1ba3.jpg",
@@ -1634,7 +1691,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:07.030Z",
+    "gorselDeneme": "2026-10-29T06:03:29.751Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.haberhergun.com/manset/2026/10/togg-un-banttan-inisinin-4-yilinda-126-bin-arac-1793241261.webp",
@@ -1676,7 +1733,7 @@
     "publishedAt": "2026-10-29T02:26:11.000Z",
     "generatedAt": "2026-10-29T02:33:38.497Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:07.395Z",
+    "gorselDeneme": "2026-10-29T06:03:30.137Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://havasosyalmedya.com/wp-content/uploads/2026/10/photo-output-7-18.png",
@@ -1847,7 +1904,7 @@
         "altyazi": "Kulüp yetkililerinin basın açıklamasını gerçekleştirdiği an"
       }
     ],
-    "gorselDeneme": "2026-10-29T05:56:08.358Z",
+    "gorselDeneme": "2026-10-29T06:03:31.647Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.alparslandiyari.com/manset/2026/10/fenerbahce-de-ismail-kartal-donemi-bitti-1793239123.webp",
@@ -2026,7 +2083,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:08.090Z",
+    "gorselDeneme": "2026-10-29T06:03:31.485Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.saraymedya.com/manset/2026/10/mugla-da-sel-250-den-fazla-personel-calisiyor-1793238171.webp",
@@ -2091,7 +2148,7 @@
         "altyazi": "Sosyal yardım alan bazı kişiler üzerine kayıtlı lüks otomobiller"
       }
     ],
-    "gorselDeneme": "2026-10-29T05:56:07.237Z",
+    "gorselDeneme": "2026-10-29T06:03:30.375Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/90jpg-4rf1rs0Enk_4dktsVCmUDw.jpg?w=1270&h=675&mode=crop&scale=both",
@@ -2510,7 +2567,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:08.357Z",
+    "gorselDeneme": "2026-10-29T06:03:31.604Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.saraymedya.com/manset/2026/10/turhal-lezzetleri-istanbul-da-tanitildi-1793235126.webp",
@@ -2555,7 +2612,7 @@
     "publishedAt": "2026-10-29T00:49:56.000Z",
     "generatedAt": "2026-10-29T00:56:28.014Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:08.259Z",
+    "gorselDeneme": "2026-10-29T06:03:31.323Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://bgcdn.gmgadmin.com/1/1200/800//files/2026/10/29/1913030/1913030.jpg/?v=1793238602",
@@ -2613,7 +2670,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:08.502Z",
+    "gorselDeneme": "2026-10-29T06:03:31.661Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.saraymedya.com/manset/2026/10/kbu-de-guvenlik-icin-8888-numarali-cagri-merkezi-kuruldu-1793234460.webp",
@@ -2796,7 +2853,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:08.290Z",
+    "gorselDeneme": "2026-10-29T06:03:31.586Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/news/1200/branded_turkce/c143/live/4223ae30-d313-11f1-808a-1f9b061d2360.jpg",
@@ -2923,7 +2980,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:08.506Z",
+    "gorselDeneme": "2026-10-29T06:03:31.732Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/tdt-ankara-2499299.jpg",
@@ -2980,7 +3037,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:08.487Z",
+    "gorselDeneme": "2026-10-29T06:03:31.783Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.haberhergun.com/manset/2026/10/ongel-den-odulunu-turkiye-azerbaycan-kardesligine-adama-1793231627.webp",
@@ -3045,7 +3102,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:08.884Z",
+    "gorselDeneme": "2026-10-29T06:03:32.063Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.egealternatif.com/manset/2026/10/trump-netanyahu-ya-destek-verdi-birlik-hukumeti-icin-simdilik-sessiz-1793231069.webp",
@@ -3103,7 +3160,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:08.608Z",
+    "gorselDeneme": "2026-10-29T06:03:31.897Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2136000/devlet-bahceli-aa-2137195.jpg",
@@ -3222,7 +3279,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:08.690Z",
+    "gorselDeneme": "2026-10-29T06:03:31.956Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_32303bbd86b0e4b783afdddae6b3484c.jpg",
@@ -3279,7 +3336,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:08.719Z",
+    "gorselDeneme": "2026-10-29T06:03:32.045Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_d2e0070dd34f11270a142e7151355a13.jpg",
@@ -3396,7 +3453,7 @@
     "publishedAt": "2026-10-28T23:13:51.000Z",
     "generatedAt": "2026-10-28T23:25:45.248Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:09.446Z",
+    "gorselDeneme": "2026-10-29T06:03:32.777Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://www.merlininkazani.com/social-image/article/263946.jpg",
@@ -3479,7 +3536,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:08.841Z",
+    "gorselDeneme": "2026-10-29T06:03:32.107Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://tv5comtr.teimg.com/crop/1280x720/tv5-com-tr/uploads/2026/09/iletisim-baskanligi-1.png",
@@ -3536,7 +3593,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:09.595Z",
+    "gorselDeneme": "2026-10-29T06:03:32.867Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://www.techinside.com/wp-content/uploads/2026/10/yapay-zeka-modellerinde-dil-farkliliklari-gizli-bir-vergi-olusturuyor.webp",
@@ -3710,7 +3767,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:09.062Z",
+    "gorselDeneme": "2026-10-29T06:03:32.315Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_a7caa0f94b3555a964fbe77862293b3c.jpg",
@@ -3768,7 +3825,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:10.998Z",
+    "gorselDeneme": "2026-10-29T06:03:34.554Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://media.baskenthaber06.com/article/b4fe7f61-f57f-46b8-8724-d52e15552670-discover.webp",
@@ -3876,7 +3933,7 @@
     "publishedAt": "2026-10-28T22:08:52.000Z",
     "generatedAt": "2026-10-28T22:17:09.178Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:09.056Z",
+    "gorselDeneme": "2026-10-29T06:03:32.280Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/ad45/live/27f788a0-d30f-11f1-ad4f-5d2bbacf0caf.jpg",
@@ -4176,7 +4233,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:09.351Z",
+    "gorselDeneme": "2026-10-29T06:03:32.540Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_1791f081a827519c248dbd9f8d506dcc.jpg",
@@ -4365,7 +4422,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:09.175Z",
+    "gorselDeneme": "2026-10-29T06:03:32.437Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/c143/live/4223ae30-d313-11f1-808a-1f9b061d2360.jpg",
@@ -4677,7 +4734,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-29T05:56:09.449Z",
+    "gorselDeneme": "2026-10-29T06:03:32.682Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://www.aa.com.tr/images/meta-photo.png",
@@ -21212,7 +21269,6 @@
     },
     "publishedAt": "2026-10-27T06:00:17.000Z",
     "generatedAt": "2026-10-27T06:04:37.765Z",
-    "breaking": true,
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/googledan-itiraf-claude-ve-gpt-modelleri-geminidan-daha-guclu.webp",
