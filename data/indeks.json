@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T22:44:03.844Z",
+  "updatedAt": "2026-10-29T22:51:08.622Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -15,7 +15,7 @@
   },
   "toplamHaber": 5161,
   "aday": 5161,
-  "uygun": 3109,
+  "uygun": 3110,
   "secilen": 3016,
   "red": {
     "özet gövdeyle aynı": 108,
@@ -23,16 +23,20 @@
     "editör notu özetle aynı": 6,
     "maddeli özet yok": 105,
     "paragraf yapısı zayıf": 48,
-    "kısa gövde": 1719,
+    "kısa gövde": 1718,
     "tekrarlı paragraf": 1,
     "yorum özgün değil": 15,
     "özgün yorum yok": 1,
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 105
+    "tekrar": 106
   },
   "ornekTekrarlar": [
+    {
+      "title": "İspanya'da iki tren çarpıştı: 69 kişi yaşamını yitirdi",
+      "twin": "İspanya’daki tren kazasında can kaybı 69’a yükseldi, yas ilan edildi"
+    },
     {
       "title": "OpenAI, yapay zekâ modellerinin ürettiği 3 bilimsel sonucu doğruladı",
       "twin": "OpenAI, yapay zekanın matematikte 3 büyük hamle yaptığını açıkladı"
@@ -108,10 +112,6 @@
     {
       "title": "Apple, iOS 27.2 ile Mesajlar uygulamasında bildirim rozeti düzenliyor",
       "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
-    },
-    {
-      "title": "Vivo Y600, 10.000 mAh bataryasıyla Guinness Rekoruna İmza Attı",
-      "twin": "Vivo Y600, 10.000 mAh bataryası ve rekor performansıyla duyuruldu"
     }
   ],
   "days": {
@@ -371,7 +371,6 @@
       "3fe5f51aa274b7e5",
       "7cdc2d674cd45e58",
       "22e9db26902b6464",
-      "f156ce1d02cc345c",
       "7723ca8035a53440",
       "dbfdd3a61e910d87",
       "9801b34714550b37",
@@ -399,6 +398,7 @@
       "e1d2fb372f48d0a4",
       "b5ef2c2c8a7dcbd5",
       "7a3fa1524af719b5",
+      "f156ce1d02cc345c",
       "c865c0c44656bbdb",
       "8fe50a06894f23f0",
       "9a2a9c9d53760055",
@@ -778,13 +778,13 @@
       "25ba5cebac13f045",
       "47db665aa5c77e08",
       "d4787d65b3ed6496",
+      "7bdc81ebd97fa392",
       "2296644c4726fadd",
       "b3955cfe25e7e010",
+      "bb814b6adf952f62",
       "cd1753f9fd980dd5",
-      "7bdc81ebd97fa392",
       "e855d211e8bb2ca4",
       "ed1f0ab6425183d5",
-      "bb814b6adf952f62",
       "7c3951d6177679ae",
       "28681daa0ee5b837"
     ],
@@ -3340,6 +3340,7 @@
     "1dc42f1829be5db8",
     "b34a82540fd3d262",
     "741e4c30fecde883",
+    "7bdc81ebd97fa392",
     "7d6fc7bd027318b4",
     "873aa49b33a4b6f4",
     "7037fdd0ca667a40",
@@ -3364,7 +3365,6 @@
     "fb88c23d674f8ff4",
     "7dbc91886a6352bd",
     "ac7dd956cca3d6df",
-    "f156ce1d02cc345c",
     "7723ca8035a53440",
     "d1091700aa3f81ba",
     "51d3f50d40c7add9",
@@ -3438,6 +3438,7 @@
     "2ca42135d239c7a4",
     "ad87c74c019c3365",
     "607a67e614530b1e",
+    "bb814b6adf952f62",
     "cd1753f9fd980dd5",
     "b36371691ab64326",
     "eed38fa81aefa54b",
@@ -3452,7 +3453,7 @@
     "7a3fa1524af719b5",
     "1ee4679a83865469",
     "87a1798388a8f076",
-    "7bdc81ebd97fa392",
+    "f156ce1d02cc345c",
     "55fdc1c5994638fc",
     "e2f70e81237b09ff",
     "14cb92b445e30fdb",
@@ -3550,7 +3551,6 @@
     "52cefc76d7126161",
     "5c0331f3569cf314",
     "e329272d9fa2b48f",
-    "bb814b6adf952f62",
     "b81397dd5941021f",
     "4023ecfa66c5083e",
     "7522dd40d658c7a8",
