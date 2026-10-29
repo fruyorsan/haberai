@@ -100,11 +100,12 @@ jobs:
           SITE_URL: ${{ vars.SITE_URL }}
         run: npm run indexnow
 
-      # INDEKS CEKIRDEGI: site haritasina girecek haberleri secer (gunluk en
-      # iyi 32, 45 gunluk pencere). Sonuc data/indeks.json'a yazilir; site
-      # derlemesi bu dosyaya gore sitemap'i daraltir ve cekirdek disindaki
-      # haberlere noindex basar. Boylece 5.400 URL'lik "zayif icerik" izlenimi
-      # yerine kaliteli bir cekirdek kalir. Gecmis gunler dondurulur.
+      # INDEKS CEKIRDEGI: site haritasina girecek haberleri secer (kalite
+      # kapisini gecen TUM haberler; kota yok, 400 gunluk pencere). Sonuc
+      # data/indeks.json'a yazilir; site derlemesi bu dosyaya gore sitemap'i
+      # daraltir ve cekirdek disindaki haberlere noindex basar. Boylece 5.400
+      # URL'lik "zayif icerik" izlenimi yerine kaliteli bir cekirdek kalir.
+      # Gecmis gunler dondurulur.
       - name: Indeks cekirdegi
         continue-on-error: true
         env:
@@ -118,6 +119,14 @@ jobs:
       - name: Marka kapaklari
         continue-on-error: true
         run: npm run kapak -- --gun=2 --limit=60
+
+      # KART TEMIZLIGI: daha once tasarim karti uretilmis kapaklari yeniden
+      # dener. Yayincinin kendi fotografi bulunursa fotografa gecilir; yoksa
+      # kart ayni kalir. Normal adim `image` alani yerel /kapak/ olan haberi
+      # atladigi icin eski kartlar hic yenilenmiyordu.
+      - name: Kart kapaklari fotografla degistir
+        continue-on-error: true
+        run: node scripts/kapak-uret.mjs --fotoyok --limit=80 --paralel=6
 
       # GUVENLIK AGI: kapak adimi bir haberi atlarsa `image` alani Wikimedia
       # stogunda kalabiliyor (baslikla ilgisiz kare). En yeni stok gorselli

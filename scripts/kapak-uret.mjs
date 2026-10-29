@@ -23,6 +23,9 @@
 //   npm run kapak -- --zorla       → kapak varsa da yeniden üret
 //   npm run kapak -- --kart        → yalnızca tasarımlı kartları yenile
 //                                    (fotoğraf aramaz, hızlıdır)
+//   npm run kapak -- --fotoyok     → fotoğrafsız (tasarımlı) kapakları
+//                                    yeniden dener; yayıncının fotoğrafı
+//                                    bulunursa fotoğraflı kapağa geçilir
 //   npm run kapak -- --dry
 // ==========================================================================
 import fs from "node:fs";
@@ -155,6 +158,10 @@ const XML = (s) =>
 // fotoğrafsız karttan daha çok güven kaybettirir.
 
 const JENERIK = /(thumbnail|placeholder|default|untitled|noimage|no-image|generic|dummy|stock|screenshot|ekran|wikipedia|wiki|logo|wordmark|diagram|chart|graph|harita|map|icon|drawing|clipart|^img|^image|^photo|^dsc|^px[-_]?)/i;
+
+// Stok fotoğraf havuzları. Bu adreslerden gelen kareler "yayıncının kendi
+// görseli" sayılmaz; `uygunMu` süzgecinden geçmek zorundadır.
+const STOK_KONAK = /(wikimedia\.org|openverse|flickr\.com|pixabay\.com|pexels\.com|unsplash\.com)/i;
 
 // Fotoğrafın güvenilir sayıldığı kategoriler: buralarda Commons'ta gerçek
 // ürün/cihaz kareleri var. Gündem/Dünya/Spor/Ekonomi gibi haberlerde stok
@@ -360,7 +367,11 @@ function kartBasligi(baslik) {
   // (yarım kalan "... Araç" gibi ifadeler yerine tam ifade kalsın). Başlık
   // "ABD'nin İran'a yönelik operasyonları..." gibi tamlayan zinciriyle
   // başlıyorsa ilk kelimeler atlanarak anlamlı bir pencere seçilir.
-  const SATIR_HARF = 18;
+  //
+  // 29.10.2026: 18 → 26 karakter. 18'de 70 karakterlik bir başlıktan yalnızca
+  // "Samsung / Electronics" görünüyordu; kart "boş ve anlamsız" duruyordu.
+  // 58 px yazıda 26 karakter ~830 px, sol alana (64–1000 px) rahat sığıyor.
+  const SATIR_HARF = 26;
   const BITIREN = new Set([
     ...KART_SON_EK,
     "yönelik", "ilişkin", "dair", "doğru", "başlayan", "süren", "olan", "yer", "yerde",
@@ -425,7 +436,19 @@ function kartBasligi(baslik) {
       i === 0 && s ? s.charAt(0).toLocaleUpperCase("tr") + s.slice(1) : s
     );
 
-  return { boyut: 64, lh: 78, satirlar: temizSatirlar };
+  // Başlığın tamamı sığmadıysa sonuna "…" konur. Aksi hâlde kart, cümle
+  // ortasında kesilmiş gibi görünüyordu ("Apple'ın ucuz bellek dönemi sona").
+  // "…" okuyucuya "devamı var" der; eksik cümle izlenimini kaldırır.
+  const sonKelime = (dizi) =>
+    String(dizi[dizi.length - 1] || "")
+      .replace(/[,.;:!?…]+$/g, "")
+      .toLocaleLowerCase("tr");
+  const kirpildi =
+    temizSatirlar.length > 0 &&
+    sonKelime(temizSatirlar.join(" ").split(" ")) !== sonKelime(kelimeler);
+  if (kirpildi) temizSatirlar[temizSatirlar.length - 1] += "…";
+
+  return { boyut: 58, lh: 70, satirlar: temizSatirlar };
 }
 
 function kapakSvg() {
@@ -643,17 +666,31 @@ async function kapakUret(a) {
           `   · ${a.id} kaynak görsel: ${kaynakFoto ? kaynakFoto.slice(0, 80) : "BULUNAMADI"}`
         );
       }
-      if (kaynakFoto && kaynakFoto !== a.image) adayEkle(kaynakFoto, "kaynak");
+      // NOT: `a.image` ile aynı adres olabilir — ilk üretimde veri dosyasındaki
+      // adres zaten kaynağın og:image'idir. Eskiden bu durumda aday atlanıyordu;
+      // ardından aşağıdaki `uygunMu` süzgeci de dosya adı "695086-700x400.jpg"
+      // gibi sayı/hash olan yayıncı fotoğraflarını eliyor ve haber hiç
+      // fotoğrafı yokmuş gibi tasarımlı karta düşüyordu. Tekrarları `adayEkle`
+      // zaten ayıklar.
+      if (kaynakFoto) adayEkle(kaynakFoto, "kaynak");
     }
     // 2) YAZININ İÇİNDEKİ FOTOĞRAFLAR: yayıncı kendi metnine koyduğu için
     //    başlıkla alakaları yüksek (ürün, kişi, olay karesi).
     for (const u of Array.isArray(a.images) ? a.images.slice(0, 2) : []) adayEkle(u, "govde");
-    // 3) VERİ DOSYASINDAKİ GÖRSEL (çoklukla Wikimedia stoğu, en son tercih).
-    const fotoIzinli =
-      uygunMu(kaynak, sorgu) &&
-      (FOTO_KATEGORI.has(String(a.category || "")) || ozelAdUyuyor(kaynak, a.title));
+    // 3) VERİ DOSYASINDAKİ GÖRSEL. İki tür var:
+    //    a) Yayıncının kendi görseli (og:image / RSS media) — habere ait olduğu
+    //       kesin, dosya adı ne olursa olsun kullanılır.
+    //    b) Stok kare (Wikimedia/Openverse) — yalnızca dosya adı arama
+    //       sorgusuyla eşleşiyorsa kullanılır; yanlış stok kare, tasarımlı
+    //       karttan daha çok güven kaybettirir.
+    const stokAday = STOK_KONAK.test(String(kaynak || ""));
+    const yayinciGorseli =
+      !stokAday && !String(kaynak || "").startsWith(`${URL_TABANI}/`);
+    const fotoIzinli = yayinciGorseli
+      ? true
+      : uygunMu(kaynak, sorgu) &&
+        (FOTO_KATEGORI.has(String(a.category || "")) || ozelAdUyuyor(kaynak, a.title));
     // Stok kaynaklı eski kapağı yenilerken aynı stok kareyi tekrar seçme.
-    const stokAday = /wikimedia\.org/i.test(kaynak);
     if (fotoIzinli && !(sadeceStokKaynak && stokAday)) adayEkle(kaynak, "veri");
   }
 
@@ -691,8 +728,13 @@ async function kapakUret(a) {
   let fotoVar = false;
   let secilenUrl = null;
 
-  // 42 altındaki kareler kapak olarak zayıf (boş, loş, düz): kart daha iyi durur.
-  const secilen = degerlendirilen[0] && degerlendirilen[0].puan >= 42 ? degerlendirilen[0] : null;
+  // 29.10.2026: eşik 42 → 18.
+  // KURAL: Konuyla ALAKALI gerçek fotoğraf, tasarımlı karttan HER ZAMAN iyidir.
+  // Düşük puan "boş, loş, düz" demektir; alakasız demek değildir. Bu adaylar
+  // zaten yayıncının kendi sayfasından (og:image) veya yazı içinden geliyor,
+  // yani başlıkla ilgisi tanım gereği doğru. `gorselPuani` bembeyaz/tek renk
+  // kareleri null ile eliyor; kalan her kare karttan üstündür.
+  const secilen = degerlendirilen[0] && degerlendirilen[0].puan >= 18 ? degerlendirilen[0] : null;
   if (secilen) {
     taban = await kirp(secilen.veri, secilen.bilgi);
     if (taban) {
@@ -733,7 +775,6 @@ async function kapakUret(a) {
     const { boyut, lh, satirlar } = kartBasligi(a.title);
     const ilkY = 330 - ((satirlar.length - 1) * lh) / 2;
     const kategori = XML(String(a.category || "").toLocaleUpperCase("tr"));
-    const harf = XML((a.category || "H").trim().charAt(0).toLocaleUpperCase("tr"));
     const baslikSvg = satirlar
       .map(
         (s, i) =>
@@ -769,9 +810,6 @@ async function kapakUret(a) {
               <path d="M 1000 -40 L 660 ${YUKSEKLIK + 40}" stroke="#ffd23f" stroke-width="7" stroke-opacity="0.9" fill="none"/>
               <!-- ikinci, koyu kama (derinlik) -->
               <path d="M ${GENISLIK + 40} -40 L ${GENISLIK + 40} ${YUKSEKLIK + 40} L 1010 ${YUKSEKLIK + 40} L 1215 -40 Z" fill="#05070d" fill-opacity="0.42"/>
-              <text x="1252" y="556" font-family="Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif"
-                    font-size="560" font-weight="700" fill="#ffffff" fill-opacity="0.10"
-                    text-anchor="end">${harf}</text>
               <g font-family="Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif">
                 ${kategori ? `<text x="64" y="${Math.round(ilkY - 58)}" font-size="25" font-weight="700" fill="#ffd23f" letter-spacing="3.4">${kategori}</text>` : ""}
                 ${baslikSvg}
