@@ -119,6 +119,13 @@ jobs:
         continue-on-error: true
         run: npm run kapak -- --gun=2 --limit=60
 
+      # GUVENLIK AGI: kapak adimi bir haberi atlarsa `image` alani Wikimedia
+      # stogunda kalabiliyor (baslikla ilgisiz kare). En yeni stok gorselli
+      # haberler icin gercek foto (yoksa tasarim karti) uretilir.
+      - name: Stok gorsel kalmadi mi
+        continue-on-error: true
+        run: node scripts/kapak-uret.mjs --stok --limit=25 --paralel=6
+
       # Depo sismesin: indeks cekirdeginde olmayan ve son 3 gunden eski
       # kapaklar silinir; o haberler kaynak sitenin ozgun fotografina doner.
       - name: Kapak temizligi

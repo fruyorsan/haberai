@@ -584,6 +584,11 @@ async function kapakUret(a) {
   // Daha önce üretilmiş kapağın taban fotoğrafı `kapak.kaynak`ta durur.
   const kaynak = a.kapak?.kaynak || a.image;
   const sorgu = a.gorselSorgu || a.title || "";
+  // Stok görselli ESKİ haber: fotoğraf kapak üretilse bile temizlik onu silip
+  // haberi stoğa geri döndürür. Onun için doğrudan tasarım kartı üretilir
+  // (temizlik, kaynağı stok olan kartları korur).
+  const kartaZorla =
+    sadeceKart || (sadeceStok && !aktif.has(String(a.id)));
 
   /** 16:9 kırp + hafif canlandırma. */
   const kirp = async (veri, bilgi) => {
@@ -628,7 +633,7 @@ async function kapakUret(a) {
     adaylar.push({ url, tip });
   };
 
-  if (!sadeceKart) {
+  if (!kartaZorla) {
     // 1) KAYNAK SİTENİN KENDİ GÖRSELİ (og:image). Haberin çıktığı sayfadaki
     //    kapak görseli tanım gereği başlıkla alakalı.
     if (String(a.sourceUrl || "").startsWith("http")) {
@@ -700,7 +705,7 @@ async function kapakUret(a) {
     console.log(`   · ${a.id} tüm adaylar zayıf, tasarımlı karta düşülüyor`);
   }
 
-  if (!taban && !sadeceKart && !sadeceStokKaynak && FOTO_KATEGORI.has(String(a.category || ""))) {
+  if (!taban && !kartaZorla && !sadeceStokKaynak && FOTO_KATEGORI.has(String(a.category || ""))) {
     try {
       const ov = await openverseAra(sorgu);
       if (ov) {
