@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T14:57:06.228Z",
+  "updatedAt": "2026-10-29T15:05:20.303Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5099,
-  "aday": 5099,
-  "uygun": 3049,
-  "secilen": 2956,
+  "toplamHaber": 5100,
+  "aday": 5100,
+  "uygun": 3050,
+  "secilen": 2957,
   "red": {
     "özet gövdeyle aynı": 105,
     "kısa özet": 34,
@@ -34,12 +34,12 @@
   },
   "ornekTekrarlar": [
     {
-      "title": "OpenAI, yapay zekâ modellerinin ürettiği 3 bilimsel sonucu doğruladı",
-      "twin": "OpenAI, yapay zekanın matematikte 3 büyük hamle yaptığını açıkladı"
-    },
-    {
       "title": "SPK nitelikli yatırımcı barajını 50 milyon liraya çıkardı",
       "twin": "SPK, Tera Yatırım'ın lisansını iptal etti ve 50 kişi için suç duyurusu yaptı"
+    },
+    {
+      "title": "OpenAI, yapay zekâ modellerinin ürettiği 3 bilimsel sonucu doğruladı",
+      "twin": "OpenAI, yapay zekanın matematikte 3 büyük hamle yaptığını açıkladı"
     },
     {
       "title": "OpenAI, temel bilimlerde 3 büyük teorik kırılma yaptığını duyurdu",
@@ -106,12 +106,12 @@
       "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
     },
     {
-      "title": "Chery, yeni TIGGO 7 ve TIGGO X7 modellerini resmen tanıttı",
-      "twin": "Chery, tamamen yenilenen Tiggo 7 modelini Çin'de görücüye çıkardı"
-    },
-    {
       "title": "Vivo Y600, 10.000 mAh bataryasıyla Guinness Rekoruna İmza Attı",
       "twin": "Vivo Y600, 10.000 mAh bataryası ve rekor performansıyla duyuruldu"
+    },
+    {
+      "title": "Elon Musk'tan Cumhuriyetçilere 200 milyon doları aşan seçim desteği",
+      "twin": "Elon Musk, ABD seçimleri için Cumhuriyetçilere 200 milyon dolardan fazla aktardı"
     }
   ],
   "days": {
@@ -233,6 +233,7 @@
       "5dbc2338679afbef",
       "3700fbdccdb8bb9f",
       "2b15b1a22531fb3a",
+      "0e836d30c09d678f",
       "8972a39a84ef631c",
       "236546f954a474bb",
       "4d739df66259cb8b",
@@ -247,9 +248,9 @@
       "846e92429a60fac0",
       "6518f361b027fefc",
       "82bd7ff830319e0a",
-      "0e836d30c09d678f",
       "465e3d385c653b3c",
       "1283ca12a4a7840c",
+      "beec0347bac81a6e",
       "3030efbc46ead630",
       "5061d826353ba18f",
       "00c775668d5d97e8",
@@ -715,9 +716,9 @@
       "d32c6e016293c1ab",
       "535ebfa82eb21af3",
       "caf614d116d26ca9",
-      "e27376458e4f29ea",
       "e18b58fbe4c45b82",
       "3d5c27366db3fb17",
+      "e27376458e4f29ea",
       "6134421be800c634",
       "fcc0e8e58195b5bc",
       "80aaaa558815e7c1",
@@ -3474,6 +3475,7 @@
     "a5915e06b4fd5cc3",
     "3700fbdccdb8bb9f",
     "2b15b1a22531fb3a",
+    "0e836d30c09d678f",
     "ccf65363b2dda856",
     "004fb02cf06ed5fa",
     "59418a144791e846",
@@ -3634,7 +3636,6 @@
     "489fe2c104080b78",
     "82bd7ff830319e0a",
     "82748f70a2884676",
-    "0e836d30c09d678f",
     "25cf45419a6197df",
     "334f9af8dd9ccc7d",
     "b6bd98fd0f03b03f",
@@ -3728,6 +3729,7 @@
     "8d8387672e85fc3d",
     "3445737c0c74080d",
     "9df2929f7e127ebb",
+    "beec0347bac81a6e",
     "ba7496d20d4e461f",
     "728c6e344dd3d5af",
     "f8b42d8c14347250",
@@ -4426,7 +4428,6 @@
     "4677405eb784f40a",
     "b21bf09b021697b1",
     "cdab2a30e26c2097",
-    "e27376458e4f29ea",
     "2736552372c99f35",
     "54c32c916d075f7d",
     "5a9c2d9834e379fe",
@@ -4870,6 +4871,7 @@
     "05c4067156aaf06b",
     "5ecd846434d947ca",
     "800bd48ba5e76cf4",
+    "e27376458e4f29ea",
     "5ab29ecdec0a02fe",
     "5a4060387c28a02c",
     "c5db95d5ceb34f31",
