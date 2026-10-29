@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T12:55:19.682Z",
+  "updatedAt": "2026-10-29T13:03:51.726Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5082,
-  "aday": 5082,
-  "uygun": 3032,
-  "secilen": 2939,
+  "toplamHaber": 5083,
+  "aday": 5083,
+  "uygun": 3033,
+  "secilen": 2940,
   "red": {
     "özet gövdeyle aynı": 105,
     "kısa özet": 34,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 102
+    "tekrar": 103
   },
   "ornekTekrarlar": [
     {
@@ -60,6 +60,10 @@
     {
       "title": "İsrail'in Gazze saldırıları 4 sivilin daha yaşamına son verdi",
       "twin": "İsrail ordusunun Gazze saldırıları sonucu 4 Filistinli hayatını kaybetti"
+    },
+    {
+      "title": "Huawei Enjoy 100 Pro, HarmonyOS 7 ve 6.100 mAh bataryayla geldi",
+      "twin": "Huawei, Wi-Fi 7 destekli yeni Router X2 Pro modelini satışa sundu"
     },
     {
       "title": "Google Gemini 4 Argon, Android Bench’te Beşinci Sırada Yer Aldı",
@@ -108,10 +112,6 @@
     {
       "title": "Vivo Y600, 10.000 mAh bataryasıyla Guinness Rekoruna İmza Attı",
       "twin": "Vivo Y600, 10.000 mAh bataryası ve rekor performansıyla duyuruldu"
-    },
-    {
-      "title": "Elon Musk'tan Cumhuriyetçilere 200 milyon doları aşan seçim desteği",
-      "twin": "Elon Musk, ABD seçimleri için Cumhuriyetçilere 200 milyon dolardan fazla aktardı"
     }
   ],
   "days": {
@@ -143,6 +143,7 @@
       "b34a82540fd3d262",
       "897b9b3a4a58df3b",
       "e153e4847fcacb04",
+      "3475fc86f979b274",
       "ac7dd956cca3d6df",
       "a3da386a0c602803",
       "3723fa1d1341b882",
@@ -167,7 +168,6 @@
       "df91460f19d6838e",
       "5643343cd95151a8",
       "6f1bb51c89ac6801",
-      "3475fc86f979b274",
       "3cce01fb0d2fa73a",
       "90a7ac537084c083",
       "fb88c23d674f8ff4",
@@ -176,6 +176,7 @@
       "019b923e705041ed",
       "98ce98aed1e474e9",
       "a4c93529620facc0",
+      "30561a08a9f24789",
       "8d3480003d8b2dab",
       "fb727152639a1e70",
       "d1f012ae285f6815",
@@ -381,7 +382,6 @@
       "7e1796f1723b2edf",
       "e6c03c6b7eb90c2a",
       "48e2c9cd81f5c55f",
-      "cda279011dcbaf31",
       "fe4973c334b171eb",
       "e7db509e5813fbd3",
       "7a64b6f22bf19253",
@@ -429,7 +429,8 @@
       "5612a93ea5f3b835",
       "6dfb54a1e7d8bd99",
       "afe7a36d06a6d178",
-      "d29a49f98235fff7"
+      "d29a49f98235fff7",
+      "cda279011dcbaf31"
     ],
     "2026-10-26": [
       "84f97e2b56f8c7d6",
@@ -3177,6 +3178,7 @@
     "eefade552da97f54",
     "11f54c3ef80151ce",
     "e0fe0561eb6ac1de",
+    "3475fc86f979b274",
     "e04f9e867d173370",
     "69291f169b37c4a0",
     "ac7dd956cca3d6df",
@@ -3255,7 +3257,6 @@
     "7cdc2d674cd45e58",
     "2a713793a487eb4d",
     "22e9db26902b6464",
-    "3475fc86f979b274",
     "6170dce080615cec",
     "3cce01fb0d2fa73a",
     "90a7ac537084c083",
@@ -3276,6 +3277,7 @@
     "9801b34714550b37",
     "a4c93529620facc0",
     "9a2a9c9d53760055",
+    "30561a08a9f24789",
     "8a21d61b9b94848c",
     "f2f7a86f054c8975",
     "291418757fca5c9b",
@@ -3528,7 +3530,6 @@
     "ed25fc1b933fb415",
     "ab5322a3cad8e5c6",
     "48e2c9cd81f5c55f",
-    "cda279011dcbaf31",
     "abba8f5b9e57b806",
     "0450ef9c2a651022",
     "92d7b09b968846f0",
@@ -6016,6 +6017,7 @@
     "c3ea79137f85470e",
     "b6807a82d0b760ef",
     "a98440cac2f5d856",
+    "cda279011dcbaf31",
     "3017e46558a4627e",
     "dc8260ebcc24b537",
     "9214942153be4652",
