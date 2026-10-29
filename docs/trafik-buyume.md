@@ -203,8 +203,8 @@ Site gezinmesi değişmez; okuyucu her haberi görmeye devam eder.
 
 | Ne | Kural |
 | --- | --- |
-| Haber | Günde en iyi **75** haber, **45 günlük** pencere |
-| Toplam çekirdek | En fazla **900** URL (`INDEKS_TOPLAM`) |
+| Haber | Kalite kapısını geçen **tüm** haberler, **400 günlük** pencere |
+| Toplam çekirdek | **Sınır yok** (`INDEKS_TOPLAM=0`); kota yalnızca acil durumda |
 | Diğer haberler | `noindex, follow` (dizine girmez, link değeri korunur) |
 | Sayfalama | 2. sayfa ve sonrası `noindex, follow` |
 | Etiket | Yalnızca **50+** haberi olan etiket sayfaları indekslenir |
@@ -243,13 +243,45 @@ işlem, dizinden çıkarma veya yanlış property (`fruyorsan.github.io` yerine
 **Beklenen sonuç:** site haritası 5.487 → ~950 URL; 2-4 hafta içinde GSC'de
 "Dizinlenen" sayısının 58 → 150+ çıkması. Silinen sayfa yok, geri alınabilir.
 
+**2026-10-29 — günlük/toplam kota kaldırıldı:** 24.10'daki teşhis ("Google
+sitenin tamamına güvenmiyor, o yüzden çekirdeği küçültelim") yanlış çıktı.
+Kota, kalite kapısını geçen 1.786 haberi yalnızca sayı sınırı yüzünden
+`noindex`'te tutuyordu; Google'a "bu sitenin çoğu sayfası gereksiz" sinyali
+veren şey kotanın kendisiydi. Ölçüm: GSC'de 24.10'da ~1.200 gösterim /
+~40 tıklama alan site 25.10–26.10'da **tam 0** gösterime düştü; kaldırma
+kaydı, manuel işlem veya dizinden çıkarma yoktu. Yani ceza değil, görünürlük
+kaybı yaşandı.
+
+Yeni kural (`src/indeks.js`):
+
+| Sabit | Eski | Yeni |
+| --- | --- | --- |
+| `INDEKS_GUNLUK` | 75 | **0** (sınırsız) |
+| `INDEKS_TOPLAM` | 900 | **0** (sınırsız) |
+| `INDEKS_PENCERE_GUN` | 45 | **400** |
+
+- İndekslenebilir haber **919 → 2.709**; site haritası **1.131 → 2.849** URL;
+  `news-sitemap.xml` 320 URL. Kalite kapısı (gövde uzunluğu, `keyPoints`,
+  editör notu, yorum, gerçek fotoğraf, etiket) aynen korunuyor: kısa/zayıf
+  haber hâlâ `noindex, follow`.
+- Kota yeniden gerekirse tek yerden açılır: `src/indeks.js` içindeki
+  `INDEKS_GUNLUK` / `INDEKS_TOPLAM`. Değer **0** "sınır yok" demektir.
+- Bu değişiklik geri alınabilir; hiçbir URL silinmedi, hiçbir tarih
+  değiştirilmedi.
+
+**Ders:** indeks sayısını küçültmek kaliteyi artırmıyor. Google'ın ölçtüğü şey
+sayfa sayısı değil, sayfaların birbirinden farklı ve işe yarar olması. Kalite
+kapısı bunu zaten yapıyordu; kota üstüne binen ikinci bir süzgeçti.
+
 Kalite puanı: gövde uzunluğu (2000+ karakter), `keyPoints` sayısı (5),
 editör notu, yorum, gerçek fotoğraf, etiket sayısı. Tazelik puanı bilinçli
 olarak yok — sıralama gün içinde kaymasın.
 
 Üretim: `npm run indeks` (pipeline'da `collect` sonrası otomatik çalışır).
-Kapatmak için `INDEKS_GUNLUK=0` değil, `data/indeks.json`'ı silmek yeterli:
-dosya yoksa kısıtlama uygulanmaz ve tüm haberler yeniden açık olur.
+Kapatmak için `data/indeks.json`'ı silmek yeterli: dosya yoksa kısıtlama
+uygulanmaz ve tüm haberler yeniden açık olur. Kota vermek için
+`INDEKS_GUNLUK` / `INDEKS_TOPLAM` pozitif bir sayıya çekilir; **0 = sınır yok**
+(29.10'dan itibaren varsayılan).
 
 ## 9) Kapak görselleri (2026-10-26)
 
@@ -263,7 +295,26 @@ tutarsız görünüm tıklamayı düşürüyor. Artık her haber için tek orand
 | Düzen | Tam kare fotoğraf + alt köşede küçük `haberinai` işareti + alt kenarda 6 px kırmızı şerit |
 | Fotoğraf kaynağı | 1) haberin çıktığı sitenin kendi kapak görseli (`og:image`) 2) veri dosyasındaki görsel (uygunluk denetimli) 3) stok arama |
 | Metin | **Görselin üstüne başlık basılmaz.** Başlık kartın/vitrinin kendi metninde; görsele ikinci kez yazmak fotoğrafı kirletiyor ve kırpılınca yarım görünüyor. |
+| Tasarım kartı | Fotoğraf bulunamazsa: dev kategori harfi yok, başlık **baştan** başlar, **3 satır** (26 karakter/satır, 58 px), sığmayan kuyruk `…` |
 | Sosyal kart | Aynı kapak, wsrv üzerinden 1200×630 JPEG (WhatsApp/X için) |
+
+**2026-10-29 — fotoğraf eşiği ve kart düzeni:** Kapak üretiminde "gerçek
+fotoğraf" eşiği **42 → 18** puana indirildi. Gerekçe: konuyla alakalı gerçek
+bir fotoğraf, en iyi tasarım kartından da üstündür; `gorselPuani` zaten boş/tek
+renk kareleri eliyor. Ayrıca yayıncının kendi görseli (`og:image`) dosya adı ne
+olursa olsun kabul edilir — eski `uygunMu` filtresi sayı/hash adlı gerçek
+fotoğrafları eliyor, yerine şablon kart üretiyordu.
+
+Kart tarafında üç düzeltme yapıldı: (1) dev kategori harfi kaldırıldı, başlık
+kartın solundan başlıyor; (2) 2 satır + `…` yerine **3 satıra kadar tam
+başlık**; (3) "Özne: olay" başlıklarında özne ≤4 kelimeyse tam başlık, özne
+"yeni gelişme/açıklama" gibi belirsizse iki nokta sonrası kullanılıyor.
+
+Eski tasarımlı kartlar hiç yenilenmiyordu: normal adım `image` alanı yerel
+`/kapak/` olan haberi atlıyordu. Pipeline'a `--fotoyok` adımı eklendi (tur
+başına en yeni 80 kart, `--limit=80 --paralel=6`); bir kerelik `--kart
+--limit=400` çalışmasıyla 333 kart yeni tasarıma çevrildi. Kalan kartlar
+fotoğraf bulundukça kendiliğinden fotoğrafa dönüyor.
 
 İlk tercih kaynak sitenin kendi görselidir: o görsel haberin konusunu (cihaz,
 uygulama, kişi) doğru gösterir. Kaynak görsel alınamazsa veri dosyasındaki
