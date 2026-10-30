@@ -1,5 +1,68 @@
 [
   {
+    "id": "f003344aa3e71f38",
+    "title": "Cyberpunk 2077 artık tarayıcı üzerinden ücretsiz oynanabiliyor",
+    "slug": "cyberpunk-2077-artik-tarayici-uzerinden-ucretsiz-oynanabiliyor",
+    "summary": "Popüler oyun Cyberpunk 2077, omonkeyzz adlı bağımsız bir geliştirici tarafından tarayıcı üzerinden oynanabilir hale getirildi. Hiçbir kurulum gerektirmeyen bu deneysel çalışma, WebGPU teknolojisinden faydalanarak doğrudan Google Chrome ve Microsoft Edge tarayıcılarında çalışıyor.",
+    "keyPoints": [
+      "Cyberpunk 2077 kurulum gerektirmeden tarayıcı üzerinden ücretsiz oynanabiliyor.",
+      "WebGPU teknolojisi sayesinde oyun grafikleri doğrudan tarayıcı içerisinde işlenebiliyor.",
+      "Performans sorunları ve uzun yükleme süreleri sebebiyle deneyim kısıtlı kalıyor."
+    ],
+    "body": [
+      "CD Projekt RED tarafından geliştirilen Cyberpunk 2077, oyun dünyasında büyük yankı uyandıran Night City atmosferini tarayıcı ekranlarına taşıdı. Omonkeyzz adlı bağımsız bir geliştirici, oyunun belirli bölümlerini ve karakter oluşturma ekranını internet tarayıcılarına uyarlayan özel bir proje başlattı. Kullanıcılar, bilgisayarlarına herhangi bir istemci veya büyük dosyalar indirmek zorunda kalmadan sadece bir internet bağlantısıyla oyunu test edebiliyor.",
+      "Sistemin temelinde modern tarayıcıların grafik kartı kaynaklarını daha verimli kullanmasını sağlayan WebGPU teknolojisi yer alıyor. Bu teknolojik altyapı, ağır grafik yüklerinin tarayıcı ortamında işlenmesine olanak tanıyarak kurulum ihtiyacını ortadan kaldırıyor. Oyuncular, tarayıcı üzerinden başlattıkları oturumda karakter oluşturma menüsüne erişebiliyor, kadın veya erkek V karakterleri arasından seçim yaparak Night City sokaklarında kısa bir gezintiye çıkabiliyor.",
+      "Deneyim her ne kadar pratik görünse de, oyunun orijinal sürümü kadar akıcı bir performans sunmadığını belirtmek gerekiyor. Shader adı verilen ışık ve yüzey efektlerini hesaplayan grafik programlarının yüklenmesi süreci, tarayıcı ortamında oldukça uzun sürebiliyor. Bu durum özellikle düşük donanımlı bilgisayarlarda performans düşüşlerine ve kararlılık sorunlarına yol açarak oyun keyfini kısıtlıyor.",
+      "Projenin geleceği ise belirsizliğini koruyor; benzer bağımsız girişimlerin geçmişte telif veya teknik kısıtlamalar nedeniyle erişimden kaldırıldığı görülmüştü. CD Projekt RED, Cyberpunk: Edgerunners içerikleri ve yeni mod güncellemeleriyle oyunu desteklemeye devam ederken, bu tarayıcı tabanlı çalışma resmi bir geliştirme süreci taşımıyor. Oyunun tarayıcı sürümünün uzun vadede erişilebilir kalıp kalmayacağı tamamen geliştiricinin ve platform politikalarının kararına bağlı.",
+      "Şu aşamada Google Chrome ve Microsoft Edge kullanıcıları için erişilebilir olan bu proje, Night City evrenini denemek isteyenler için hızlı bir seçenek sunuyor. Yine de performans dengesi ve görsel kalite açısından beklentileri düşük tutmak, kullanıcıların hayal kırıklığına uğramamasını sağlayacaktır. Kurulum gerektirmeyen bu yöntem, oyunun donanım gereksinimlerini karşılamayan sistemler için deneysel bir test alanı işlevi görüyor."
+    ],
+    "comment": "Resmi bir destek almayan bu tür projeler, yüksek donanım gerektiren modern oyunların web dünyasına taşınması konusunda ilginç bir deney alanı sunuyor. Ancak WebGPU altyapısının henüz tüm sistemlerde istikrarlı çalışmaması, oyunun performansını sınırlayan temel faktör olarak öne çıkıyor. Kullanıcıların orijinal sürümdeki grafik kalitesini beklemek yerine, bu çalışmayı yalnızca teknik bir deneme olarak görmesi daha doğru olur. Projenin gelecekteki akıbeti, tıpkı önceki GTA V web denemelerinde olduğu gibi platformun veya yayıncının müdahalesiyle aniden sona erebilir.",
+    "editorNote": "Cyberpunk 2077'yi kurulum yapmadan tarayıcıdan çalıştırmak mümkün olsa da, teknik kısıtlamalar nedeniyle performans orijinal sürümün oldukça gerisinde kalıyor.",
+    "tags": [
+      "Cyberpunk 2077",
+      "WebGPU",
+      "Oyun",
+      "Tarayıcı",
+      "CD Projekt RED"
+    ],
+    "category": "Oyun",
+    "gorselSorgu": "cyberpunk 2077 night city neon",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/cyberpunk-2077-tarayicidan-ucretsiz-oynanabilir",
+    "image": "/kapak/f003344aa3e71f38.webp",
+    "publishedAt": "2026-10-30T14:46:26.000Z",
+    "generatedAt": "2026-10-30T14:47:45.485Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Printed_Web_2_at_Museum_of_Modern_Art%2C_NYC.jpg/1280px-Printed_Web_2_at_Museum_of_Modern_Art%2C_NYC.jpg",
+        "yazar": "Daysof1971",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Printed_Web_2_at_Museum_of_Modern_Art,_NYC.jpg",
+        "altyazi": "Tarayıcı tabanlı oyun deneyimi sunan arayüz tasarımı"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/CreativeTools.se_-_PackshotCreator_-_Computer_GPU_fan_%284328695364%29.jpg/1280px-CreativeTools.se_-_PackshotCreator_-_Computer_GPU_fan_%284328695364%29.jpg",
+        "yazar": "Creative Tools from Halmstad, Sweden",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:CreativeTools.se_-_PackshotCreator_-_Computer_GPU_fan_(4328695364).jpg",
+        "altyazi": "Oyun performansını doğrudan etkileyen grafik işlemci birimi"
+      }
+    ],
+    "breaking": true,
+    "images": [
+      "https://ares.shiftdelete.net/2026/10/b9c8e074c0b0acc967dc4f64e5fc12bde7da91e0.webp"
+    ],
+    "imagesKaynak": "https://shiftdelete.net/cyberpunk-2077-tarayicidan-ucretsiz-oynanabilir",
+    "gorselDeneme": "2026-10-30T14:47:47.084Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://ares.shiftdelete.net/2026/10/3339e59b313341b24c15b5d747bd394864673b76.webp",
+      "foto": true
+    }
+  },
+  {
     "id": "93436a52267e958e",
     "title": "Emine Erdoğan liderliğinde Türk Devletleri Aile ve Kadın Konseyi kuruluyor",
     "slug": "emine-erdogan-liderliginde-turk-devletleri-aile-ve-kadin-konseyi-kuruluyor",
@@ -97,7 +160,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:50.081Z",
+    "gorselDeneme": "2026-10-30T14:47:48.928Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_48b39da67470f1f3df418de21504488c.jpg",
@@ -215,7 +278,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:48.486Z",
+    "gorselDeneme": "2026-10-30T14:47:47.165Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2328000/musk-trump-re-2328226.jpg",
@@ -276,7 +339,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:48.352Z",
+    "gorselDeneme": "2026-10-30T14:47:47.098Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/b7e969e61f353d9641ba84fb4ccba5306311d0f3.webp",
@@ -336,7 +399,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:47.978Z",
+    "gorselDeneme": "2026-10-30T14:47:47.130Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/1a2d/live/537ff930-6139-11ee-b101-6f93d6dfbcc2.png",
@@ -720,7 +783,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:48.706Z",
+    "gorselDeneme": "2026-10-30T14:47:47.230Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2148000/para-2149807.jpg",
@@ -836,7 +899,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:48.765Z",
+    "gorselDeneme": "2026-10-30T14:47:47.331Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/directx-isin-izleme-guncellemesi.webp",
@@ -896,7 +959,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:48.365Z",
+    "gorselDeneme": "2026-10-30T14:47:47.199Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/3304/live/1c4d6e00-d3d4-11f1-b441-2b33b063138f.jpg",
@@ -1073,7 +1136,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:50.050Z",
+    "gorselDeneme": "2026-10-30T14:47:48.977Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_e32398c9521e8aba57ec8817604b26ee.jpg",
@@ -1180,7 +1243,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:48.990Z",
+    "gorselDeneme": "2026-10-30T14:47:47.391Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/932fdb226644cc8105903ee3240d6ccdf75fd6aa.webp",
@@ -1239,7 +1302,7 @@
         "altyazi": "Girne Kaza Mahkemesi'nde görülen duruşma süreci"
       }
     ],
-    "gorselDeneme": "2026-10-30T14:38:49.373Z",
+    "gorselDeneme": "2026-10-30T14:47:48.321Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/kktc-ic-fotojpg-htQCn6q81UuQ1bK8gxPBTA.jpg?w=1270&h=675&mode=crop&scale=both",
@@ -1511,7 +1574,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:49.274Z",
+    "gorselDeneme": "2026-10-30T14:47:48.402Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2082000/mustafa-sarigul-aa-2082979.jpg",
@@ -1657,7 +1720,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:49.511Z",
+    "gorselDeneme": "2026-10-30T14:47:48.836Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2022/06/soguk-cuzdan-nedir.webp",
@@ -1698,7 +1761,7 @@
     "publishedAt": "2026-10-30T10:06:52.000Z",
     "generatedAt": "2026-10-30T10:10:55.855Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:50.681Z",
+    "gorselDeneme": "2026-10-30T14:47:49.483Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_a908d56f0175c1351238b6e620a8cb99.jpg",
@@ -1921,7 +1984,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:50.666Z",
+    "gorselDeneme": "2026-10-30T14:47:49.490Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_5908e8c77868c6e76c5c47eeb0348ec9.jpg",
@@ -1974,7 +2037,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:51.062Z",
+    "gorselDeneme": "2026-10-30T14:47:49.739Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_87ca244c9310c9c7a849472f4ff42bb1.jpg",
@@ -2033,7 +2096,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:50.236Z",
+    "gorselDeneme": "2026-10-30T14:47:49.122Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/recep-tayyip-erdogan-2499861.jpg",
@@ -2093,7 +2156,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:50.349Z",
+    "gorselDeneme": "2026-10-30T14:47:49.437Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/e25ee5e72a1c02a5c461460c21bd66a636871e42.webp",
@@ -2153,7 +2216,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:50.441Z",
+    "gorselDeneme": "2026-10-30T14:47:49.307Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_3e90e736da806f886d7792c78a81ad05.jpg",
@@ -2278,7 +2341,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:50.409Z",
+    "gorselDeneme": "2026-10-30T14:47:49.372Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/c9a2/live/3d8d5420-d43a-11f1-9ba3-e16b46d57ce6.png",
@@ -2330,7 +2393,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:50.715Z",
+    "gorselDeneme": "2026-10-30T14:47:49.638Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_410fe26daa64f6b810b19dffbc6d061a.jpg",
@@ -2453,7 +2516,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:50.645Z",
+    "gorselDeneme": "2026-10-30T14:47:49.610Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_a1e454a0a1ec63df17377df4da4f1b12.jpg",
@@ -2647,7 +2710,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:50.884Z",
+    "gorselDeneme": "2026-10-30T14:47:49.696Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_e4f054afa4c9f7a6ddc3884cf35a0f89.jpg",
@@ -2763,7 +2826,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:50.943Z",
+    "gorselDeneme": "2026-10-30T14:47:49.750Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_3fdc1343d54b33c6a76558a0680d678d.jpg",
@@ -3083,7 +3146,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:50.972Z",
+    "gorselDeneme": "2026-10-30T14:47:49.855Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_f304973b71f9b258dda23c939ed9f663.jpg",
@@ -3336,7 +3399,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:51.276Z",
+    "gorselDeneme": "2026-10-30T14:47:50.182Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/f3743529201d79e9b53fcc37012c3ebd69e011bd.webp",
@@ -3383,7 +3446,7 @@
     "publishedAt": "2026-10-30T05:32:58.000Z",
     "generatedAt": "2026-10-30T05:39:13.834Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:51.156Z",
+    "gorselDeneme": "2026-10-30T14:47:50.385Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/43ce1737ab1280c3ccdcfa8b43a5d65543158ca8.webp",
@@ -3772,7 +3835,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:51.404Z",
+    "gorselDeneme": "2026-10-30T14:47:50.608Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/988637d36d362549f43dd111298c158ed8777fc8.webp",
@@ -3838,7 +3901,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:51.183Z",
+    "gorselDeneme": "2026-10-30T14:47:50.017Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_87fe19c57b31abc62ea86fe97c4b39f7.jpg",
@@ -3904,7 +3967,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:51.510Z",
+    "gorselDeneme": "2026-10-30T14:47:50.280Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/shutterstock_1066815104-scaled-1.webp",
@@ -3970,7 +4033,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:51.348Z",
+    "gorselDeneme": "2026-10-30T14:47:50.218Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2496000/fransa-polis-reu-2496667.jpg",
@@ -4169,7 +4232,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:51.371Z",
+    "gorselDeneme": "2026-10-30T14:47:50.583Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1688000/yuz-tanima-reu-1688870.jpg",
@@ -4300,7 +4363,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:51.745Z",
+    "gorselDeneme": "2026-10-30T14:47:50.372Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2428000/yapay-zeka-reu-2429580.jpg",
@@ -4365,7 +4428,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:51.449Z",
+    "gorselDeneme": "2026-10-30T14:47:50.690Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/goog-2499742.jpg",
@@ -4430,7 +4493,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:51.560Z",
+    "gorselDeneme": "2026-10-30T14:47:50.570Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_19ff758684d77df31b193360f99f6131.jpg",
@@ -4496,7 +4559,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:51.917Z",
+    "gorselDeneme": "2026-10-30T14:47:50.872Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2076000/google-reu-2076406.jpg",
@@ -4632,7 +4695,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:51.544Z",
+    "gorselDeneme": "2026-10-30T14:47:50.958Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2452000/hurmuz-bogaziaa-2452370.jpg",
@@ -4884,7 +4947,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:52.321Z",
+    "gorselDeneme": "2026-10-30T14:47:51.274Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://turkiyedeisdunyasi.com/wp-content/uploads/2026/10/savas-onlara-yaradi-enerji-devlerinin-karinda-tarihi-sicrama-6wog_cover.webp",
@@ -5183,7 +5246,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:38:53.034Z",
+    "gorselDeneme": "2026-10-30T14:47:52.028Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.saraymedya.com/manset/2026/10/marmaris-te-genclerin-teknoloji-uretimi-tesvik-ediliyor-1793325466.webp",
@@ -5250,7 +5313,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:28:21.173Z",
+    "gorselDeneme": "2026-10-30T14:47:51.324Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.egealternatif.com/manset/2026/10/trump-korgeneral-sylvia-gizli-bilgi-sizdirdi-1793325267.webp",
@@ -21292,7 +21355,6 @@
     },
     "publishedAt": "2026-10-28T14:44:00.000Z",
     "generatedAt": "2026-10-28T14:51:41.379Z",
-    "breaking": true,
     "gorselDeneme": "2026-10-29T01:42:12.856Z",
     "kapak": {
       "v": 2,
@@ -21350,7 +21412,6 @@
         "altyazi": "İspanya genelindeki hızlı tren hatları ve altyapı"
       }
     ],
-    "breaking": true,
     "gorselDeneme": "2026-10-29T01:27:45.472Z",
     "kapak": {
       "v": 2,
@@ -43880,10 +43941,15 @@
     "gorselSorgu": "data center server room",
     "source": "BeInCrypto",
     "sourceUrl": "https://tr.beincrypto.com/en-buyuk-3-teknoloji-devinin-kazanc-raporlari-ekim-son-hafta/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
+    "image": "/kapak/5ea4f3d717547639.webp",
     "publishedAt": "2026-10-26T01:58:41.000Z",
     "generatedAt": "2026-10-26T01:59:41.431Z",
-    "ekGorselDeneme": "2026-10-27T14:08:49.514Z"
+    "ekGorselDeneme": "2026-10-27T14:08:49.514Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
+      "foto": false
+    }
   },
   {
     "id": "67813857939392b0",
