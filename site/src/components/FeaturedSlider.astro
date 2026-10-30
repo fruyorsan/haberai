@@ -14,7 +14,8 @@ const AUTOPLAY_MS = 6000;
 // en görünür alanda markalı yer tutucu "kırık görsel" gibi duruyor.
 // Fotoğraflı haber yetmezse kalanlar sırayı bozmadan eklenir (o slaytta marka
 // zeminli `.fs__ph` görünür ve logo görseli asla gösterilmez).
-const pool = getFeatured(POOL, 20, kapakKaynagi);
+const fotografMi = (a) => a?.kapak?.foto !== false && Boolean(kapakKaynagi(a));
+const pool = getFeatured(POOL, 20, fotografMi);
 
 // Slaytlarda önce haberin gerçek fotoğrafı, yüklenemezse markalı yer tutucu
 // (HaberinAi kategori renkleri) gösterilir.
@@ -38,7 +39,10 @@ function headlineNote(a) {
 const items = slides.map((a) => {
   const words = `${a.summary || ""} ${a.comment || ""}`.split(/\s+/).filter(Boolean).length;
   // Kapak güvenliği: kaynağın yanlış/genel görseli gösterilmez (lib/kapak.js).
-  const kapak = kapakKaynagi(a);
+  // Tasarım kartı (fotoğrafı olmayan haber) vitrinde GÖSTERİLMEZ: 16:9 kart
+  // görseli burada 1.47 oranına kırpılıyor ve kartın içindeki başlık sol
+  // kenardan kesiliyordu. Onun yerine marka zeminli `.fs__ph` çizilir.
+  const kapak = a?.kapak?.foto === false ? "" : kapakKaynagi(a);
   // "Son dakika" rozeti yalnızca gerçekten taze haberlerde: eski kayıtlarda
   // kalan `breaking` işareti vitrinde yanlış etiket göstermesin.
   const taze = Date.now() - publishedTime(a) <= 120 * 60 * 1000;
@@ -114,9 +118,9 @@ const items = slides.map((a) => {
                           <span class="fs__breaking-dot" aria-hidden="true"></span>
                           SON DAKİKA
                         </span>
-                      ) : (
+                      ) : a.image ? (
                         <span class="fs__badge">{a.category}</span>
-                      )}
+                      ) : null}
                     </div>
 
                     <div class="fs__body">

@@ -14,6 +14,10 @@ const readMin = Math.max(1, Math.round(words / 200));
 // CDN erişilemezse `data-orig` ile kaynak adrese düşer.
 // Kapak seçimi lib/kapak.js'ten geçer: kaynağın yanlış/genel görseli gösterilmez.
 const kapak = kapakKaynagi(article);
+// Tasarım kartı kapağı (fotoğraf bulunamayan haber): kategori adı görselin
+// içine zaten basılıyor. Üstüne bir de "GÜNDEM" rozeti koymak etiketi iki kez
+// gösteriyordu; bu yüzden tasarım kartlarında rozet çizilmez.
+const tasarimKarti = article?.kapak?.foto === false;
 // Kapak fotoğrafı doğrulanamıyorsa hiç fotoğraf konmaz: kartın kendi kırmızı
 // zemini + "H" işareti görünür. Böylece onlarca kartta aynı yedek görseli
 // tekrarlamak yerine kategoriye göre değişen temiz bir zemin kalır.
@@ -74,7 +78,7 @@ const delay = Math.min(index * 45, 320);
           <span class="card__breaking-dot" aria-hidden="true"></span>
           SON DAKİKA
         </span>
-      ) : (
+      ) : tasarimKarti ? null : (
         <span class="card__badge">{article.category}</span>
       )}
 

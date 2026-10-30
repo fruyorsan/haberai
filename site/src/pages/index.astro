@@ -13,7 +13,8 @@ const articles = getYayinArticles();
 // Akışın ana sayfadaki yüzü burasıdır — ziyaretçiyi /akis/'a çeken görsel şerit.
 // vitrin ve akış sırası
 // featuredSlugs ve shortsSlugs tekrarı önler
-const featured = getFeatured(6, 36, kapakKaynagi);
+const fotografMi = (a) => a?.kapak?.foto !== false && Boolean(kapakKaynagi(a));
+const featured = getFeatured(6, 36, fotografMi);
 const featuredSlugs = new Set(featured.map((a) => a.slug));
 const shorts = ilgiSirala(articles).filter((a) => !featuredSlugs.has(a.slug))
   .slice(0, 4)
