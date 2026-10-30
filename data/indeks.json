@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T04:42:28.586Z",
+  "updatedAt": "2026-10-30T04:50:16.280Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5202,
-  "aday": 5202,
-  "uygun": 3151,
-  "secilen": 3058,
+  "toplamHaber": 5205,
+  "aday": 5205,
+  "uygun": 3154,
+  "secilen": 3060,
   "red": {
     "özet gövdeyle aynı": 108,
     "kısa özet": 34,
@@ -30,12 +30,16 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 108
+    "tekrar": 109
   },
   "ornekTekrarlar": [
     {
       "title": "İspanya’daki tren kazasında can kaybı 69’a yükseldi, yas ilan edildi",
       "twin": "İspanya'da iki tren çarpıştı: 69 kişi yaşamını yitirdi"
+    },
+    {
+      "title": "Instagram 90 dakikalık videoları test ediyor ancak ödeme yapmıyor",
+      "twin": "Instagram, 90 dakikalık video süresiyle içerik rekabetini kızıştırıyor"
     },
     {
       "title": "OpenAI, yapay zekâ modellerinin ürettiği 3 bilimsel sonucu doğruladı",
@@ -108,10 +112,6 @@
     {
       "title": "Galaxy S24 Ultra sahipleri için One UI 9 sonrasında şarj krizi",
       "twin": "Galaxy S24 Ultra bataryası One UI 9 ile hızla tükenmeye başladı"
-    },
-    {
-      "title": "Apple, iOS 27.2 ile Mesajlar uygulamasında bildirim rozeti düzenliyor",
-      "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
     }
   ],
   "days": {
@@ -244,7 +244,6 @@
       "bb8c34ebba48ea04",
       "fe4973c334b171eb",
       "ccf65363b2dda856",
-      "8e55aca5d02916ce",
       "5dc7822358857da3",
       "b0339484ffadbf68",
       "3ffb21b564dc9a9b",
@@ -263,6 +262,7 @@
       "6fa89ecdb492c3aa",
       "e7db509e5813fbd3",
       "7a64b6f22bf19253",
+      "8e55aca5d02916ce",
       "3c54dd68c97c231d",
       "b6a27be8e52fdf3d",
       "43b536f53e36499c",
@@ -803,6 +803,7 @@
       "d4787d65b3ed6496",
       "aa4cb3d31a30d5de",
       "8ba85913b293c85a",
+      "79b623b7bff4742f",
       "cd1753f9fd980dd5",
       "e04c349360953110",
       "708bde9513b40873",
@@ -811,6 +812,7 @@
       "b3955cfe25e7e010",
       "63ac560f0ea82284",
       "bb814b6adf952f62",
+      "ee821165315eb161",
       "e0167712f19c47a4",
       "e855d211e8bb2ca4",
       "b34ddbff8dab515a",
@@ -3472,6 +3474,7 @@
     "199eecef3d4748e1",
     "fb5bbfffc4661939",
     "6a74c35500453468",
+    "79b623b7bff4742f",
     "6de2ca83687fd332",
     "741e4c30fecde883",
     "650f20e43ca510e9",
@@ -3566,6 +3569,7 @@
     "c8ebe5f981fd38e1",
     "a650bc2c1d092da8",
     "e7ba8e07cc342c4c",
+    "ee821165315eb161",
     "2f915f2ff2ce2e93",
     "f0a8d4e9c02f3cfe",
     "195d8a9de3e9d29c",
@@ -3778,7 +3782,6 @@
     "b84e0636e5dcf4a6",
     "4b5d1e2d3a85ca82",
     "8e5433c027b590df",
-    "8e55aca5d02916ce",
     "55bbbd753910830d",
     "feff88a3be09629d",
     "5dc7822358857da3",
@@ -3951,6 +3954,7 @@
     "e7db509e5813fbd3",
     "c0358a3f986fc4b0",
     "7a64b6f22bf19253",
+    "8e55aca5d02916ce",
     "3c54dd68c97c231d",
     "00c775668d5d97e8",
     "616062eeb18675cd",
