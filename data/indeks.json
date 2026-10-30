@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T06:06:10.125Z",
+  "updatedAt": "2026-10-30T06:13:06.528Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -74,16 +74,16 @@
       "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
     },
     {
-      "title": "Google Gemini 4 Argon, Android Bench’te Beşinci Sırada Yer Aldı",
-      "twin": "Google, yapay zeka modeli Gemini 4 Carbon ile zirveye yerleşti"
-    },
-    {
       "title": "İsrail'in Gazze saldırıları 4 sivilin daha yaşamına son verdi",
       "twin": "İsrail ordusunun Gazze saldırıları sonucu 4 Filistinli hayatını kaybetti"
     },
     {
       "title": "Apple, 2 nm A20 Pro işlemcili OLED iPad mini modelini tanıttı",
       "twin": "Apple, MacBook Neo 2’yi A19 Pro ve 12 GB RAM ile tanıttı"
+    },
+    {
+      "title": "Google Gemini 4 Argon, Android Bench’te Beşinci Sırada Yer Aldı",
+      "twin": "Google, yapay zeka modeli Gemini 4 Carbon ile zirveye yerleşti"
     },
     {
       "title": "Rockstar, GTA 6 için Miami sokaklarını Vice City'ye çevirdi",
@@ -184,7 +184,6 @@
       "e4689cb8019010a8",
       "6de2ca83687fd332",
       "741e4c30fecde883",
-      "579ee7f3e7c99873",
       "e95661ab8c680d25",
       "de9f467a09cf062f",
       "2ca42135d239c7a4",
@@ -203,6 +202,7 @@
       "356b10a2ca3f3166",
       "739ec793c0dee331",
       "c8ebe5f981fd38e1",
+      "579ee7f3e7c99873",
       "195d8a9de3e9d29c",
       "69300cabe8659c5f",
       "572acf1127cd7b81",
@@ -525,6 +525,7 @@
       "174505134bc9c3fc",
       "068cc02ed6734f50",
       "7bdc81ebd97fa392",
+      "ace7d032ece86483",
       "1a81e03d519c938d",
       "1fe406ebb5214cd8",
       "6b84961c1109356d",
@@ -535,7 +536,6 @@
       "8ba85913b293c85a",
       "cd1753f9fd980dd5",
       "e04c349360953110",
-      "ace7d032ece86483",
       "708bde9513b40873",
       "7e81d0ec7d2450f0",
       "025d7a5b5ffb1559",
@@ -3422,6 +3422,7 @@
     "9eac0b3f22fb1f1b",
     "2da6c72d999937d8",
     "9b12293dd466be57",
+    "ace7d032ece86483",
     "6f1bb51c89ac6801",
     "1a81e03d519c938d",
     "eb3839ff3d41d73d",
@@ -3495,7 +3496,6 @@
     "650f20e43ca510e9",
     "688c5808ff4cb089",
     "8d81ac6b3dbd74c6",
-    "579ee7f3e7c99873",
     "e95661ab8c680d25",
     "f7002ecb866a378d",
     "58306fa7d8281ea4",
@@ -3532,7 +3532,6 @@
     "153993cf7f7bd3bf",
     "6755ab6e07ddb580",
     "f8bfdde7b818d32a",
-    "ace7d032ece86483",
     "d1857281bdb570cc",
     "7679a23f65508a72",
     "9a2a9c9d53760055",
@@ -3584,6 +3583,7 @@
     "c8ebe5f981fd38e1",
     "b513cf625f223cf4",
     "a650bc2c1d092da8",
+    "579ee7f3e7c99873",
     "e7ba8e07cc342c4c",
     "2f915f2ff2ce2e93",
     "195d8a9de3e9d29c",
