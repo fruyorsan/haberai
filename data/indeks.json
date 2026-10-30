@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T03:49:04.242Z",
+  "updatedAt": "2026-10-30T03:54:13.839Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5199,
-  "aday": 5199,
-  "uygun": 3147,
-  "secilen": 3054,
+  "toplamHaber": 5200,
+  "aday": 5200,
+  "uygun": 3148,
+  "secilen": 3055,
   "red": {
     "özet gövdeyle aynı": 109,
     "kısa özet": 34,
@@ -54,10 +54,6 @@
       "twin": "CD Projekt RED, Cyberpunk 2 için multiplayer modu hazırlıklarına başladı"
     },
     {
-      "title": "Apple, iOS 27.2 güncellemesiyle Siri ve FaceTime özelliklerini güncelledi",
-      "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
-    },
-    {
       "title": "Sony Yeni LYTIA 720 Sensörü 50 MP ile Gece Çekimlerini Yarıyor",
       "twin": "Sony mobil kameralar için 50 MP LYTIA 720 sensörünü duyurdu"
     },
@@ -68,6 +64,10 @@
     {
       "title": "İsmail Kartal, Fenerbahçe'deki görevinden istifa etti",
       "twin": "Fenerbahçe Yönetimi İsmail Kartal'ın İstifasını Onayladı"
+    },
+    {
+      "title": "Apple, iOS 27.2 güncellemesiyle Siri ve FaceTime özelliklerini güncelledi",
+      "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
     },
     {
       "title": "Google Gemini 4 Argon, Android Bench’te Beşinci Sırada Yer Aldı",
@@ -802,6 +802,7 @@
       "8ba85913b293c85a",
       "cd1753f9fd980dd5",
       "e04c349360953110",
+      "1a81e03d519c938d",
       "708bde9513b40873",
       "7e81d0ec7d2450f0",
       "025d7a5b5ffb1559",
@@ -3508,6 +3509,7 @@
     "6755ab6e07ddb580",
     "f8bfdde7b818d32a",
     "d1857281bdb570cc",
+    "1a81e03d519c938d",
     "7679a23f65508a72",
     "9a2a9c9d53760055",
     "433315fd447b239a",
