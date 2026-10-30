@@ -1,5 +1,47 @@
 [
   {
+    "id": "8ebbc4cc8603eeda",
+    "title": "Cursor mağazasına sızan sahte eklenti 5 bin kişiyi etkiledi",
+    "slug": "cursor-magazasina-sizan-sahte-eklenti-5-bin-kisiyi-etkiledi",
+    "summary": "Cursor'un VS Code eklenti mağazasında, Anthropic'in Claude Code eklentisinin zehirlenmiş bir sürümü 11 saat boyunca durdu. Saldırganlar, eklenti üzerinden kalıcı bir SSH arka kapısı kurmaya çalıştı. Olaydan etkilenen kullanıcı sayısı 5.000 olarak açıklandı.",
+    "keyPoints": [
+      "Sahte eklenti mağazada 02.27 ile 13.35 arası yayında kaldı.",
+      "Zararlı yazılım, kalıcı SSH arka kapısı açmayı hedefledi.",
+      "Cursor, olayı 29 Ekim'deki resmi duyurusuyla doğruladı."
+    ],
+    "body": [
+      "Yazılım geliştiricilerin vazgeçilmezi haline gelen Cursor editörünün eklenti mağazasında ciddi bir güvenlik ihlali yaşandı. Anthropic tarafından geliştirilen Claude Code eklentisinin kötü amaçlı değiştirilmiş bir kopyası, mağazaya sızdırıldı. Şirket, 29 Ekim tarihli açıklamasında bu olayı doğrulayarak etkilenen kişi sayısını 5.000 olarak bildirdi.",
+      "Saldırganların hazır olduğu pencere oldukça daraldı. Zararlı sürüm, sabah 02.27 ile öğle 13.35 saatleri arasında kullanıcılara sunuldu. Yaklaşık 11 saatlik bu süre zarfında eklentiyi güncelleyen veya yeni kuran geliştiriciler, farkında olmadan zararlı kodu sistemlerine yüklediler. Cursor yönetimi, mağazadaki bu anormalliği tespit edip sürümü kaldırarak olası hasarı minimumda tutmaya çalıştı.",
+      "Eklentinin içindeki tehdit, basit bir veri sızıntısından çok daha tehlikeli bir yapı içermekte. Kötü amaçlı kod, sızılan makinede kalıcı bir SSH arka kapısı oluşturmaya yönelikti. SSH üzerinden uzaktan erişim sağlayan bu kapı, saldırganların normal kimlik doğrulama süreçlerini atlayarak sisteme gizlice girmesini sağlıyor. 'Kalıcı' niteliği, bu erişimin geçici olmayıp uzun süre açık kalmasının hedeflendiğine işaret ediyor.",
+      "Geliştiriciler, Claude Code eklentisini yapay zekâ destekli kodlama süreçlerinde hız kazanmak için aktif olarak kullanıyor. Saf Claude Code sürümü olmayan bu sahte versiyon, kullanıcıların güvenini istismar ederek kritik yetkiler talep etti. Bir eklenti aracılığıyla gelen bu saldırı, tek tıkla kurulan yazılımların potansiyel riskini gözler önüne seriyor. Saldırganların, popüler bir yapay zekâ aracının adını kullanarak daha fazla kurban bulmayı amaçladığı anlaşılıyor.",
+      "Cursor, kısa süre önce SpaceX tarafından 60 milyar dolarlık bir anlaşmayla satın alındı. Bu devasa devralma sürecinin hemen ardından meydana gelen siber saldırı, şirketin altyapı güvenliği açısından zorlu bir döneme girdiğini gösteriyor. Yeni sahiplik yapısı ve genişleyen kullanıcı kitlesi, olası hedefleri daha da artırmış durumda. Şirket, mağaza altyapısının denetimini sıkılaştırmak için acil önlemler almaya başladı.",
+      "Şu an için en kritik adım, etkilenen kullanıcıların tespit edilmesi. Cursor, 02.27 ile 13.35 aralığında eklentiyi indiren kullanıcılarla doğrudan iletişime geçeceğini duyurdu. Geliştiricilerin, sistemlerinde anormal SSH bağlantıları olup olmadığını kontrol etmeleri öneriliyor. Bu süreç, yalnızca bireysel kullanıcıların değil, kurumsal hesapların da veri güvenliği açısından yeniden değerlendirilmesini gerektiriyor. Saldırganların amaçladığı kalıcı erişimin başarısız olup olmadığı, yapılacak incelemelerle netlik kazanacak."
+    ],
+    "comment": "Yazılım geliştiricilerin güvenliğini artırmak için 'tek tıkla kur' mantığından uzaklaşılması şart. 5.000 kişilik bu etki alanı, popüler eklentilerin ne kadar büyük bir saldırı yüzeyi oluşturduğunu kanıtlıyor. SSH arka kapısı gibi derin düzey erişimler, standart antivirus yazılımlarının çoğu tarafından yakalanmayabilir. Bu olay, güvendiğimiz geliştirme araçlarının kendisinin birer tehdit vektörü haline gelebileceğini gösteriyor. Kurumsal geliştiriciler için bağımsız güvenlik denetimi zorunluluğu artık opsiyon olmaktan çıkıyor.",
+    "editorNote": "Popüler yapay zekâ eklentisinin sahte versiyonu, 11 saat boyunca 5 bin geliştiricinin sistemine sızdı. SSH arka kapısı hedefi, basit bir reklamdan çok fazlası.",
+    "tags": [
+      "Cursor",
+      "Claude Code",
+      "Siber Güvenlik",
+      "SSH Saldırısı",
+      "VS Code"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "cybersecurity hacker dark screen",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/sahte-claude-code-eklentisi-cursor-magazasi",
+    "image": "/kapak/8ebbc4cc8603eeda.webp",
+    "publishedAt": "2026-10-30T14:51:26.000Z",
+    "generatedAt": "2026-10-30T14:56:26.554Z",
+    "breaking": true,
+    "gorselDeneme": "2026-10-30T14:56:27.912Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://ares.shiftdelete.net/2026/10/eb92708d508a9bfae39f4ac50c06472abea7dbb1.webp",
+      "foto": true
+    }
+  },
+  {
     "id": "f003344aa3e71f38",
     "title": "Cyberpunk 2077 artık tarayıcı üzerinden ücretsiz oynanabiliyor",
     "slug": "cyberpunk-2077-artik-tarayici-uzerinden-ucretsiz-oynanabiliyor",
@@ -160,7 +202,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:48.928Z",
+    "gorselDeneme": "2026-10-30T14:56:29.134Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_48b39da67470f1f3df418de21504488c.jpg",
@@ -278,7 +320,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:47.165Z",
+    "gorselDeneme": "2026-10-30T14:56:28.032Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2328000/musk-trump-re-2328226.jpg",
@@ -339,7 +381,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:47.098Z",
+    "gorselDeneme": "2026-10-30T14:56:28.007Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/b7e969e61f353d9641ba84fb4ccba5306311d0f3.webp",
@@ -399,7 +441,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:47.130Z",
+    "gorselDeneme": "2026-10-30T14:56:27.420Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/1a2d/live/537ff930-6139-11ee-b101-6f93d6dfbcc2.png",
@@ -783,7 +825,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:47.230Z",
+    "gorselDeneme": "2026-10-30T14:56:28.148Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2148000/para-2149807.jpg",
@@ -899,7 +941,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:47.331Z",
+    "gorselDeneme": "2026-10-30T14:56:28.179Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/directx-isin-izleme-guncellemesi.webp",
@@ -959,7 +1001,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:47.199Z",
+    "gorselDeneme": "2026-10-30T14:56:28.020Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/3304/live/1c4d6e00-d3d4-11f1-b441-2b33b063138f.jpg",
@@ -1136,7 +1178,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:48.977Z",
+    "gorselDeneme": "2026-10-30T14:56:29.246Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_e32398c9521e8aba57ec8817604b26ee.jpg",
@@ -1243,7 +1285,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:47.391Z",
+    "gorselDeneme": "2026-10-30T14:56:28.391Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/932fdb226644cc8105903ee3240d6ccdf75fd6aa.webp",
@@ -1302,7 +1344,7 @@
         "altyazi": "Girne Kaza Mahkemesi'nde görülen duruşma süreci"
       }
     ],
-    "gorselDeneme": "2026-10-30T14:47:48.321Z",
+    "gorselDeneme": "2026-10-30T14:56:28.606Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/kktc-ic-fotojpg-htQCn6q81UuQ1bK8gxPBTA.jpg?w=1270&h=675&mode=crop&scale=both",
@@ -1574,7 +1616,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:48.402Z",
+    "gorselDeneme": "2026-10-30T14:56:28.384Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2082000/mustafa-sarigul-aa-2082979.jpg",
@@ -1720,7 +1762,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:48.836Z",
+    "gorselDeneme": "2026-10-30T14:56:28.625Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2022/06/soguk-cuzdan-nedir.webp",
@@ -1761,7 +1803,7 @@
     "publishedAt": "2026-10-30T10:06:52.000Z",
     "generatedAt": "2026-10-30T10:10:55.855Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:49.483Z",
+    "gorselDeneme": "2026-10-30T14:56:29.697Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_a908d56f0175c1351238b6e620a8cb99.jpg",
@@ -1984,7 +2026,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:49.490Z",
+    "gorselDeneme": "2026-10-30T14:56:29.703Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_5908e8c77868c6e76c5c47eeb0348ec9.jpg",
@@ -2037,7 +2079,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:49.739Z",
+    "gorselDeneme": "2026-10-30T14:56:30.453Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_87ca244c9310c9c7a849472f4ff42bb1.jpg",
@@ -2096,7 +2138,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:49.122Z",
+    "gorselDeneme": "2026-10-30T14:56:29.405Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/recep-tayyip-erdogan-2499861.jpg",
@@ -2156,7 +2198,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:49.437Z",
+    "gorselDeneme": "2026-10-30T14:56:29.913Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/e25ee5e72a1c02a5c461460c21bd66a636871e42.webp",
@@ -2216,7 +2258,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:49.307Z",
+    "gorselDeneme": "2026-10-30T14:56:29.654Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_3e90e736da806f886d7792c78a81ad05.jpg",
@@ -2341,7 +2383,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:49.372Z",
+    "gorselDeneme": "2026-10-30T14:56:29.711Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/c9a2/live/3d8d5420-d43a-11f1-9ba3-e16b46d57ce6.png",
@@ -2393,7 +2435,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:49.638Z",
+    "gorselDeneme": "2026-10-30T14:56:30.072Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_410fe26daa64f6b810b19dffbc6d061a.jpg",
@@ -2516,7 +2558,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:49.610Z",
+    "gorselDeneme": "2026-10-30T14:56:29.945Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_a1e454a0a1ec63df17377df4da4f1b12.jpg",
@@ -2710,7 +2752,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:49.696Z",
+    "gorselDeneme": "2026-10-30T14:56:30.137Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_e4f054afa4c9f7a6ddc3884cf35a0f89.jpg",
@@ -2826,7 +2868,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:49.750Z",
+    "gorselDeneme": "2026-10-30T14:56:30.142Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_3fdc1343d54b33c6a76558a0680d678d.jpg",
@@ -3146,7 +3188,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:49.855Z",
+    "gorselDeneme": "2026-10-30T14:56:30.274Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_f304973b71f9b258dda23c939ed9f663.jpg",
@@ -3399,7 +3441,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:50.182Z",
+    "gorselDeneme": "2026-10-30T14:56:30.788Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/f3743529201d79e9b53fcc37012c3ebd69e011bd.webp",
@@ -3446,7 +3488,7 @@
     "publishedAt": "2026-10-30T05:32:58.000Z",
     "generatedAt": "2026-10-30T05:39:13.834Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:50.385Z",
+    "gorselDeneme": "2026-10-30T14:56:31.059Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/43ce1737ab1280c3ccdcfa8b43a5d65543158ca8.webp",
@@ -3835,7 +3877,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:50.608Z",
+    "gorselDeneme": "2026-10-30T14:56:30.975Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/988637d36d362549f43dd111298c158ed8777fc8.webp",
@@ -3901,7 +3943,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:50.017Z",
+    "gorselDeneme": "2026-10-30T14:56:30.522Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_87fe19c57b31abc62ea86fe97c4b39f7.jpg",
@@ -3967,7 +4009,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:50.280Z",
+    "gorselDeneme": "2026-10-30T14:56:31.424Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/shutterstock_1066815104-scaled-1.webp",
@@ -4033,7 +4075,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:50.218Z",
+    "gorselDeneme": "2026-10-30T14:56:30.799Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2496000/fransa-polis-reu-2496667.jpg",
@@ -4232,7 +4274,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:50.583Z",
+    "gorselDeneme": "2026-10-30T14:56:31.058Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1688000/yuz-tanima-reu-1688870.jpg",
@@ -4363,7 +4405,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:50.372Z",
+    "gorselDeneme": "2026-10-30T14:56:31.007Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2428000/yapay-zeka-reu-2429580.jpg",
@@ -4428,7 +4470,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:50.690Z",
+    "gorselDeneme": "2026-10-30T14:56:31.581Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/goog-2499742.jpg",
@@ -4493,7 +4535,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:50.570Z",
+    "gorselDeneme": "2026-10-30T14:56:31.236Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_19ff758684d77df31b193360f99f6131.jpg",
@@ -4559,7 +4601,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:50.872Z",
+    "gorselDeneme": "2026-10-30T14:56:31.334Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2076000/google-reu-2076406.jpg",
@@ -4695,7 +4737,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:50.958Z",
+    "gorselDeneme": "2026-10-30T14:56:31.196Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2452000/hurmuz-bogaziaa-2452370.jpg",
@@ -4947,7 +4989,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:51.274Z",
+    "gorselDeneme": "2026-10-30T14:56:32.320Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://turkiyedeisdunyasi.com/wp-content/uploads/2026/10/savas-onlara-yaradi-enerji-devlerinin-karinda-tarihi-sicrama-6wog_cover.webp",
@@ -5246,7 +5288,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:52.028Z",
+    "gorselDeneme": "2026-10-30T14:56:33.308Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.saraymedya.com/manset/2026/10/marmaris-te-genclerin-teknoloji-uretimi-tesvik-ediliyor-1793325466.webp",
@@ -5313,7 +5355,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T14:47:51.324Z",
+    "gorselDeneme": "2026-10-30T14:56:31.987Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.egealternatif.com/manset/2026/10/trump-korgeneral-sylvia-gizli-bilgi-sizdirdi-1793325267.webp",
