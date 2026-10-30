@@ -1,5 +1,64 @@
 [
   {
+    "id": "8edbe17ed73b3b82",
+    "title": "Intel Fab 28 Patlaması 600 Milyon Dolarlık Gelir Kaybına Yol Açtı",
+    "slug": "intel-fab-28-patlamasi-600-milyon-dolarlik-gelir-kaybina-yol-activi",
+    "summary": "Intel'in İsrail'deki Fab 28 fabrikasında gerçekleşen patlama, üretimi iki hafta durdurdu ve şirketin 2026‑2027 çeyreklerinde yaklaşık 600 milyon dolar gelir kaybı öngörülüyor. Patlamanın gaz tüpü arızasından kaynaklanabileceği belirtilirken, özellikle 10 nm sunucu işlemcileri tedarikinde aksama bekleniyor.",
+    "keyPoints": [
+      "Patlamanın nedeni muhtemel gaz tüpü arızası olarak değerlendirildi",
+      "Üretim iki hafta kapandı, iki çeyrek boyunca 600 M$ gelir kaybı tahmin ediliyor",
+      "10 nm teknolojili sunucu işlemcileri tedarikinde sevkiyat gecikmesi bekleniyor"
+    ],
+    "body": [
+      "İsrail'in Kiryat‑Gat bölgesinde yer alan Intel Fab 28 tesisinde patlama meydana geldi ve üretim hatları yaklaşık iki hafta boyunca durduruldu. Olay sırasında iki çalışan hayatını kaybederken bir kişi de ağır yaralandı. Fabrikanın tüm bölümü kapalı kaldı ve yeniden çalıştırılması önümüzdeki günlerde planlanıyor.",
+      "Finans Direktörü David Zinsner, patlamanın şirketin mali tablolarını da etkileyerek iki çeyrek sürecek yaklaşık 600 milyon dolarlık bir gelir kaybına yol açacağını açıkladı. Bu kayıp, 2026’nın dördüncü çeyreği ve 2027’nin ilk çeyreği sonuçlarına yansıyacak. Zinsner, duruşun sadece bir üretim hattıyla sınırlı kalmadığını, fabrikanın tamamının etkilenmiş olduğunu vurguladı.",
+      "Fab 28'de üretilen ürünler, 10 nanometre (nm) üretim teknolojisine sahip sunucu işlemcileri. Bu işlemciler, veri merkezleri ve bulut hizmetlerinde kritik bir rol oynuyor. Kesinti, bu işlemcilerin tedarik zincirinde doğrudan aksamalara neden olacak ve sevkiyatlarda gecikmelere yol açacak.",
+      "Patlamanın ön bulgularına göre, olay bir gaz tüpündeki arızadan kaynaklanmış olabilir. Ancak bu henüz kesin bir sonuç değil, polis tarafından ön değerlendirme olarak belirtiliyor. Intel, olayın tam nedenini belirlemek için bağımsız bir inceleme başlatmayı planlıyor.",
+      "Şirket, Fab 28'in önümüzdeki günlerde yeniden faaliyete geçmesini hedefliyor. Bu süreçte üretimin kademeli olarak artırılması ve tedarik zincirindeki gecikmelerin minimize edilmesi için ek önlemler alınması bekleniyor. Uzmanlar, benzer olayların gelecekteki yatırım kararlarını ve fabrika güvenlik protokollerini yeniden gözden geçirmesine yol açabileceğini belirtiyor."
+    ],
+    "comment": "Intel'in 600 milyon dolarlık gelir kaybını öngörmesi, fabrika kesintisinin finansal etkisini net bir şekilde ortaya koyuyor. Bu rakam, sadece şirketin kar marjını değil, 10 nm sunucu işlemcileri kullanan veri merkezi operatörlerini de doğrudan etkiliyor. Rakip çip üreticileri bu süreçte pazar payı kazanabilir; Intel ise üretim kapasitesini hızla geri kazanmaya odaklanmalı. Aksi takdirde, kayıp rakamı yıllık kar hedefinin önemli bir kısmını aşabilir.",
+    "editorNote": "Fab 28'deki patlama, Intel'in kârlılığını iki çeyrek boyunca 600 M$ düşürürken, veri merkezi tedarik zincirinde gecikmelere yol açıyor. Üretimin hızlı yeniden başlatılması kritik.",
+    "tags": [
+      "Intel",
+      "Fab 28",
+      "Patlama",
+      "Gelir kaybı",
+      "Sunucu işlemcileri"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "Intel Fab 28 factory explosion",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/intel-fab-28-patlama-uretim-durdu",
+    "image": "/kapak/8edbe17ed73b3b82.webp",
+    "publishedAt": "2026-10-30T17:13:39.000Z",
+    "generatedAt": "2026-10-30T17:22:53.448Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Rothenberger_Industrial_gas_soldering_iron_disassembled.JPG/1280px-Rothenberger_Industrial_gas_soldering_iron_disassembled.JPG",
+        "yazar": "Dmitry G",
+        "lisans": "CC BY-SA 3.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Rothenberger_Industrial_gas_soldering_iron_disassembled.JPG",
+        "altyazi": "Gaz tüpü arızası şüphesi"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/A_semiconductor_wafer_being_removed_from_processing_equipment.jpg/1280px-A_semiconductor_wafer_being_removed_from_processing_equipment.jpg",
+        "yazar": "YouTube — Purdue Engineering",
+        "lisans": "CC BY 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:A_semiconductor_wafer_being_removed_from_processing_equipment.jpg",
+        "altyazi": "10 nm çip üretim hattı"
+      }
+    ],
+    "breaking": true,
+    "gorselDeneme": "2026-10-30T17:22:54.693Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://ares.shiftdelete.net/2026/10/ca2c95073fdf2632576185603b32b458e51695f4.webp",
+      "foto": true
+    }
+  },
+  {
     "id": "8dbfba783d74fed7",
     "title": "Binance, siber saldırı sonrası para çekme işlemlerini pazar günü açmayı hedefliyor",
     "slug": "binance-siber-saldiri-sonrasi-para-cekme-islemlerini-pazar-gunu-acmayi-hedefliyo",
@@ -43,7 +102,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:24.408Z",
+    "gorselDeneme": "2026-10-30T17:22:56.504Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_bd7993f744c9c1aa3465ca6110f3f7d6.jpg",
@@ -459,7 +518,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:22.263Z",
+    "gorselDeneme": "2026-10-30T17:22:54.728Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/74a75f2c5b90b9a2f2c1dde2e0f168d7e40e3a16.webp",
@@ -518,7 +577,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:24.366Z",
+    "gorselDeneme": "2026-10-30T17:22:56.491Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_49cb006e70112173efd2b88021a85698.jpg",
@@ -578,7 +637,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:23.223Z",
+    "gorselDeneme": "2026-10-30T17:22:55.151Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/10b0/live/dcdf2a60-d46e-11f1-9dda-1ba6fcc7d159.jpg",
@@ -638,7 +697,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:24.565Z",
+    "gorselDeneme": "2026-10-30T17:22:56.615Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_67ebb8b62ee6f9d80f6044a9a5d062e0.jpg",
@@ -689,7 +748,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:22.517Z",
+    "gorselDeneme": "2026-10-30T17:22:54.931Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/thumbs_b_c_3f23bc40dc3d0e40f44876c83a7f73c8.webp",
@@ -808,7 +867,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:23.227Z",
+    "gorselDeneme": "2026-10-30T17:22:55.155Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/213a/live/ecf64a00-d3d3-11f1-9c32-1532a6164171.jpg",
@@ -873,7 +932,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:23.243Z",
+    "gorselDeneme": "2026-10-30T17:22:55.167Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/5e22/live/aec33ac0-d448-11f1-97f9-27ebf08d99fe.jpg",
@@ -921,7 +980,7 @@
     "publishedAt": "2026-10-30T14:51:26.000Z",
     "generatedAt": "2026-10-30T14:56:26.554Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:23.666Z",
+    "gorselDeneme": "2026-10-30T17:22:55.729Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/eb92708d508a9bfae39f4ac50c06472abea7dbb1.webp",
@@ -1124,7 +1183,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:24.800Z",
+    "gorselDeneme": "2026-10-30T17:22:56.636Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_48b39da67470f1f3df418de21504488c.jpg",
@@ -1237,7 +1296,7 @@
     "publishedAt": "2026-10-30T13:53:00.000Z",
     "generatedAt": "2026-10-30T14:01:14.290Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:24.447Z",
+    "gorselDeneme": "2026-10-30T17:22:56.595Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2328000/musk-trump-re-2328226.jpg",
@@ -1297,7 +1356,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:24.805Z",
+    "gorselDeneme": "2026-10-30T17:22:56.875Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/b7e969e61f353d9641ba84fb4ccba5306311d0f3.webp",
@@ -1363,7 +1422,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:24.424Z",
+    "gorselDeneme": "2026-10-30T17:22:56.514Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/1a2d/live/537ff930-6139-11ee-b101-6f93d6dfbcc2.png",
@@ -1785,7 +1844,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:24.636Z",
+    "gorselDeneme": "2026-10-30T17:22:56.772Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2148000/para-2149807.jpg",
@@ -1895,7 +1954,7 @@
     "publishedAt": "2026-10-30T12:15:14.000Z",
     "generatedAt": "2026-10-30T12:18:38.091Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:24.975Z",
+    "gorselDeneme": "2026-10-30T17:22:57.396Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/directx-isin-izleme-guncellemesi.webp",
@@ -1978,7 +2037,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:24.582Z",
+    "gorselDeneme": "2026-10-30T17:22:56.647Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/3304/live/1c4d6e00-d3d4-11f1-b441-2b33b063138f.jpg",
@@ -2164,7 +2223,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:25.100Z",
+    "gorselDeneme": "2026-10-30T17:22:56.892Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_e32398c9521e8aba57ec8817604b26ee.jpg",
@@ -2267,7 +2326,7 @@
     "publishedAt": "2026-10-30T11:29:38.000Z",
     "generatedAt": "2026-10-30T11:30:10.968Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:25.366Z",
+    "gorselDeneme": "2026-10-30T17:22:57.557Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/932fdb226644cc8105903ee3240d6ccdf75fd6aa.webp",
@@ -2341,7 +2400,7 @@
         "altyazi": "Girne Kaza Mahkemesi'nde görülen duruşma süreci"
       }
     ],
-    "gorselDeneme": "2026-10-30T17:13:25.064Z",
+    "gorselDeneme": "2026-10-30T17:22:57.029Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/kktc-ic-fotojpg-htQCn6q81UuQ1bK8gxPBTA.jpg?w=1270&h=675&mode=crop&scale=both",
@@ -2388,7 +2447,7 @@
     "publishedAt": "2026-10-30T11:12:43.000Z",
     "generatedAt": "2026-10-30T11:15:55.613Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:25.045Z",
+    "gorselDeneme": "2026-10-30T17:22:57.263Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/9a64081f72a66abe70097ca64aa7ea64cf453b03.webp",
@@ -2582,7 +2641,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:25.583Z",
+    "gorselDeneme": "2026-10-30T17:22:57.343Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/7477363f5251d5ff85d871613a95e5ad.jpg",
@@ -2639,7 +2698,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:25.193Z",
+    "gorselDeneme": "2026-10-30T17:22:57.189Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2082000/mustafa-sarigul-aa-2082979.jpg",
@@ -2687,7 +2746,7 @@
     "publishedAt": "2026-10-30T10:30:30.000Z",
     "generatedAt": "2026-10-30T10:33:22.930Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:25.313Z",
+    "gorselDeneme": "2026-10-30T17:22:57.789Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/phantom-blade-zero-cikisiyla-steamde-rekor-kirdi-2.webp",
@@ -2820,7 +2879,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:25.413Z",
+    "gorselDeneme": "2026-10-30T17:22:57.858Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2022/06/soguk-cuzdan-nedir.webp",
@@ -2867,7 +2926,7 @@
     "publishedAt": "2026-10-30T10:06:52.000Z",
     "generatedAt": "2026-10-30T10:10:55.855Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:25.785Z",
+    "gorselDeneme": "2026-10-30T17:22:57.761Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_a908d56f0175c1351238b6e620a8cb99.jpg",
@@ -3101,7 +3160,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:25.905Z",
+    "gorselDeneme": "2026-10-30T17:22:57.825Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_5908e8c77868c6e76c5c47eeb0348ec9.jpg",
@@ -3160,7 +3219,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:28.671Z",
+    "gorselDeneme": "2026-10-30T17:22:57.798Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_87ca244c9310c9c7a849472f4ff42bb1.jpg",
@@ -3217,7 +3276,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:25.562Z",
+    "gorselDeneme": "2026-10-30T17:22:57.918Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/recep-tayyip-erdogan-2499861.jpg",
@@ -3275,7 +3334,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:26.099Z",
+    "gorselDeneme": "2026-10-30T17:22:58.523Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/e25ee5e72a1c02a5c461460c21bd66a636871e42.webp",
@@ -3341,7 +3400,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:27.147Z",
+    "gorselDeneme": "2026-10-30T17:22:58.030Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_3e90e736da806f886d7792c78a81ad05.jpg",
@@ -3472,7 +3531,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:25.864Z",
+    "gorselDeneme": "2026-10-30T17:22:57.866Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/c9a2/live/3d8d5420-d43a-11f1-9ba3-e16b46d57ce6.png",
@@ -3520,7 +3579,7 @@
     "publishedAt": "2026-10-30T08:16:44.000Z",
     "generatedAt": "2026-10-30T08:20:25.092Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:26.382Z",
+    "gorselDeneme": "2026-10-30T17:22:58.059Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_410fe26daa64f6b810b19dffbc6d061a.jpg",
@@ -3656,7 +3715,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:26.508Z",
+    "gorselDeneme": "2026-10-30T17:22:58.125Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_a1e454a0a1ec63df17377df4da4f1b12.jpg",
@@ -3834,7 +3893,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:26.737Z",
+    "gorselDeneme": "2026-10-30T17:22:58.261Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_e4f054afa4c9f7a6ddc3884cf35a0f89.jpg",
@@ -3881,7 +3940,7 @@
     "publishedAt": "2026-10-30T07:16:05.000Z",
     "generatedAt": "2026-10-30T07:19:43.824Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:26.399Z",
+    "gorselDeneme": "2026-10-30T17:22:58.069Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/9e81/live/3e29a4e0-d41e-11f1-ac90-cd3434fb9fb7.jpg",
@@ -3938,7 +3997,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:26.941Z",
+    "gorselDeneme": "2026-10-30T17:22:58.323Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_3fdc1343d54b33c6a76558a0680d678d.jpg",
@@ -4233,7 +4292,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:27.383Z",
+    "gorselDeneme": "2026-10-30T17:22:58.401Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_f304973b71f9b258dda23c939ed9f663.jpg",
@@ -4478,7 +4537,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:27.591Z",
+    "gorselDeneme": "2026-10-30T17:22:58.767Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/f3743529201d79e9b53fcc37012c3ebd69e011bd.webp",
@@ -4525,7 +4584,7 @@
     "publishedAt": "2026-10-30T05:32:58.000Z",
     "generatedAt": "2026-10-30T05:39:13.834Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:27.380Z",
+    "gorselDeneme": "2026-10-30T17:22:58.656Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/43ce1737ab1280c3ccdcfa8b43a5d65543158ca8.webp",
@@ -4872,7 +4931,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:27.687Z",
+    "gorselDeneme": "2026-10-30T17:22:58.784Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/988637d36d362549f43dd111298c158ed8777fc8.webp",
@@ -4930,7 +4989,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:27.899Z",
+    "gorselDeneme": "2026-10-30T17:22:58.713Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_87fe19c57b31abc62ea86fe97c4b39f7.jpg",
@@ -4988,7 +5047,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:28.019Z",
+    "gorselDeneme": "2026-10-30T17:22:58.923Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/shutterstock_1066815104-scaled-1.webp",
@@ -5046,7 +5105,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T17:13:27.864Z",
+    "gorselDeneme": "2026-10-30T17:22:58.969Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2496000/fransa-polis-reu-2496667.jpg",
@@ -20953,7 +21012,6 @@
     },
     "publishedAt": "2026-10-28T17:20:12.000Z",
     "generatedAt": "2026-10-28T17:44:51.006Z",
-    "breaking": true,
     "gorselDeneme": "2026-10-29T03:14:05.291Z",
     "kapak": {
       "v": 2,
@@ -20999,7 +21057,6 @@
     },
     "publishedAt": "2026-10-28T17:15:58.000Z",
     "generatedAt": "2026-10-28T17:20:59.883Z",
-    "breaking": true,
     "gorselDeneme": "2026-10-29T03:02:36.486Z",
     "kapak": {
       "v": 2,
@@ -21045,7 +21102,6 @@
     },
     "publishedAt": "2026-10-28T17:14:05.000Z",
     "generatedAt": "2026-10-28T17:22:00.529Z",
-    "breaking": true,
     "gorselDeneme": "2026-10-29T02:56:43.137Z",
     "kapak": {
       "v": 2,
@@ -44547,10 +44603,15 @@
     "gorselSorgu": "data center server room",
     "source": "BeInCrypto",
     "sourceUrl": "https://tr.beincrypto.com/en-buyuk-3-teknoloji-devinin-kazanc-raporlari-ekim-son-hafta/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
+    "image": "/kapak/5ea4f3d717547639.webp",
     "publishedAt": "2026-10-26T01:58:41.000Z",
     "generatedAt": "2026-10-26T01:59:41.431Z",
-    "ekGorselDeneme": "2026-10-27T14:08:49.514Z"
+    "ekGorselDeneme": "2026-10-27T14:08:49.514Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
+      "foto": false
+    }
   },
   {
     "id": "67813857939392b0",
@@ -50874,7 +50935,7 @@
     "gorselSorgu": "Barack Obama speech podium",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/economy-news/obama-enflasyon-konusunda-trump-elestirdi-4118498",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg/1280px-President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg",
+    "image": "/kapak/f6f884514f6577c6.webp",
     "publishedAt": "2026-10-25T04:13:17.000Z",
     "generatedAt": "2026-10-25T04:21:44.052Z",
     "gorselEk": [
@@ -50886,7 +50947,12 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Press_Secretary_Karine_Jean-Pierre_speaks_during_a_press_briefing,_Monday,_May_13,_2024,_in_the_James_S._Brady_Press_Briefing_Room_of_the_White_House.jpg",
         "altyazi": "Washington siyasetinde ekonomi politikaları tartışılmaya devam ediyor"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg/1280px-President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg",
+      "foto": false
+    }
   },
   {
     "id": "2f83428af6fd33ce",
