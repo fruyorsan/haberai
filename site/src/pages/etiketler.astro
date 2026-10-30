@@ -18,11 +18,45 @@ const items = tags.map((t) => ({
   color: `hsl(${hue(t.name)} 72% 46%)`,
   son: t.articles[0],
 }));
+
+const kok = Astro.site ? String(Astro.site).replace(/\/+$/, "") : "https://haberinai.site";
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": `${kok}/etiketler/#sayfa`,
+      url: `${kok}/etiketler/`,
+      name: "Konular",
+      description: "HaberinAi'deki tüm haber konuları.",
+      inLanguage: "tr-TR",
+      isPartOf: { "@type": "WebSite", name: "HaberinAi", url: kok },
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: items.length,
+        itemListElement: items.slice(0, 100).map((t, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: `${kok}/etiket/${t.slug}/`,
+          name: t.name,
+        })),
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Ana Sayfa", item: `${kok}/` },
+        { "@type": "ListItem", position: 2, name: "Konular", item: `${kok}/etiketler/` },
+      ],
+    },
+  ],
+};
 ---
 
 <Base
   title="Konular — HaberinAi"
   description="HaberinAi konuları: deprem, ekonomi, hava durumu, spor, teknoloji ve daha fazlası. Her konudaki en güncel haberler, özetler ve yapay zekâ yorumları."
+  schema={schema}
 >
   <div class="container">
     <header class="page-head">
@@ -36,23 +70,58 @@ const items = tags.map((t) => ({
     {items.length === 0 ? (
       <p class="muted">Henüz konu yok.</p>
     ) : (
-      <div class="catgrid">
-        {items.map((t) => (
-          <a class="catcard" href={`/etiket/${t.slug}/`} style={`--h:${t.color}`}>
-            <span class="catcard__top">
-              <span class="catcard__name">{t.name}</span>
-              <span class="catcard__n">{t.count} haber</span>
-            </span>
-            {t.son && (
-              <span class="catcard__son">
-                <span class="catcard__dot" aria-hidden="true" />
-                <span class="catcard__title">{t.son.title}</span>
-              </span>
-            )}
-            {t.son && <span class="catcard__time">{timeAgo(publishedISO(t.son))}</span>}
-          </a>
-        ))}
-      </div>
+      <>
+        {/* En çok haberi olan 12 konu kart olarak; kalanı kompakt liste.
+            Tüm konuları büyük kartlarla basmak sayfayı ~1 MB'a çıkarıyordu. */}
+        <section aria-labelledby="one-cikan-konular">
+          <h2 class="konu-baslik" id="one-cikan-konular">Öne çıkan konular</h2>
+          <div class="catgrid">
+            {items.slice(0, 12).map((t) => (
+              <a class="catcard" href={`/etiket/${t.slug}/`} style={`--h:${t.color}`} data-konu={t.name}>
+                <span class="catcard__top">
+                  <span class="catcard__name">{t.name}</span>
+                  <span class="catcard__n">{t.count} haber</span>
+                </span>
+                {t.son && (
+                  <span class="catcard__son">
+                    <span class="catcard__dot" aria-hidden="true" />
+                    <span class="catcard__title">{t.son.title}</span>
+                  </span>
+                )}
+                {t.son && <span class="catcard__time">{timeAgo(publishedISO(t.son))}</span>}
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section aria-labelledby="tum-konular">
+          <div class="konu-ust">
+            <h2 class="konu-baslik" id="tum-konular">Tüm konular</h2>
+            <label class="konu-ara">
+              <span class="sr-only">Konu ara</span>
+              <input
+                type="search"
+                id="konu-ara"
+                placeholder="Konu ara…"
+                autocomplete="off"
+                inputmode="search"
+              />
+            </label>
+          </div>
+          <div class="konugrid">
+            {items
+              .slice()
+              .sort((a, b) => a.name.localeCompare(b.name, "tr"))
+              .map((t) => (
+                <a class="konuchip" href={`/etiket/${t.slug}/`} data-konu={t.name}>
+                  <span class="konuchip__ad">{t.name}</span>
+                  <span class="konuchip__n">{t.count}</span>
+                </a>
+              ))}
+          </div>
+          <p class="muted konu-bos" id="konu-bos" hidden>Bu ada uygun konu bulunamadı.</p>
+        </section>
+      </>
     )}
 
     <p class="muted konu-not">
@@ -60,6 +129,31 @@ const items = tags.map((t) => ({
       sayıda habere ulaşan konular burada listelenir.
     </p>
   </div>
+
+  <script is:inline>
+    // Konu filtresi: yalnızca görünürlük değiştirir; bağlantılar sunucuda basılır.
+    (function () {
+      var q = document.getElementById("konu-ara");
+      if (!q) return;
+      var hedefler = document.querySelectorAll("[data-konu]");
+      var bos = document.getElementById("konu-bos");
+      q.addEventListener("input", function () {
+        var s = q.value.trim().toLocaleLowerCase("tr");
+        var gorunen = 0;
+        for (var i = 0; i < hedefler.length; i++) {
+          var el = hedefler[i];
+          var esles =
+            !s ||
+            String(el.getAttribute("data-konu") || "")
+              .toLocaleLowerCase("tr")
+              .indexOf(s) !== -1;
+          el.hidden = !esles;
+          if (esles) gorunen++;
+        }
+        if (bos) bos.hidden = gorunen > 0;
+      });
+    })();
+  </script>
 </Base>
 
 <style>
@@ -147,5 +241,72 @@ const items = tags.map((t) => ({
   .konu-not {
     font-size: 0.85rem;
     padding-bottom: 10px;
+  }
+  .konu-baslik {
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+    margin: 8px 0 12px;
+  }
+  .konu-ust {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 26px;
+  }
+  .konu-ust .konu-baslik {
+    margin: 0 0 12px;
+  }
+  .konu-ara input {
+    width: min(260px, 70vw);
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.9rem;
+  }
+  .konu-ara input:focus {
+    outline: 2px solid var(--brand);
+    outline-offset: 1px;
+  }
+  .konugrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 4px 0 18px;
+  }
+  .konuchip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 11px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--text-2);
+    transition: border-color 0.18s var(--ease), color 0.18s var(--ease);
+  }
+  .konuchip:hover {
+    border-color: var(--brand);
+    color: var(--brand-strong);
+  }
+  .konuchip__n {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--muted);
+  }
+  .konu-bos {
+    padding: 4px 0 18px;
+  }
+  /* Sınıf display'i [hidden]'ı ezdiği için açıkça gizle. */
+  .catcard[hidden],
+  .konuchip[hidden],
+  .konu-bos[hidden] {
+    display: none;
   }
 </style>

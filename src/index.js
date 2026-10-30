@@ -1,3 +1,6 @@
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
 import { config } from "./config.js";
 import { fetchAllFeeds, fetchPageExtras } from "./fetcher.js";
 import { analyzeArticle } from "./ai.js";
@@ -13,6 +16,27 @@ import { vitrinDoldur } from "../scripts/vitrin-doldur.mjs";
 
 const DRY = process.argv.includes("--dry");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+// Piyasa verisi her turda yenilenince site 4-5 dakikada bir yeniden
+// yayınlanıyordu. Bu sürüm çalkantısı Google taramasında kararsızlık ve ara
+// sıra 5xx üretiyordu. Piyasa artık en fazla PIYASA_ARALIK_DK dakikada bir
+// tazelenir; haber yayını ise anında kalır (yeni haber her zaman yayınlanır).
+const PIYASA_ARALIK_DK = Number(process.env.PIYASA_ARALIK_DK || 15) || 15;
+
+/** Piyasa verisi bu turda yenilenmeli mi? */
+function piyasaTazeMi() {
+  try {
+    const dosya = join(__dirname, "..", "data", "market.json");
+    const d = JSON.parse(readFileSync(dosya, "utf8"));
+    const t = Date.parse(d?.updatedAt || 0);
+    if (!Number.isFinite(t)) return true;
+    return Date.now() - t >= PIYASA_ARALIK_DK * 60000;
+  } catch {
+    return true;
+  }
+}
 
 /** Aynı fotoğrafın farklı boyut sürümlerini eşleştirmek için kimlik. */
 const gorselKimlik = (url) =>
@@ -309,9 +333,14 @@ async function main() {
       ? Math.max(1, Math.floor(gecenDk / beklemeDk))
       : turKota;
   const slotKota = hedefGeride && !dunYayin ? Math.max(slotTemel, Math.min(turKota, 2)) : slotTemel;
+  // Bir turda en fazla `turBasinaLimit` haber yayınlanır (varsayılan 1).
+  // Bekleme süresi uzun kaçsa bile (hat durduysa) 4-8 haberi birden basmak
+  // "saat başı toplu yükleme" görüntüsü veriyordu; artık akış hep tek tek
+  // ilerler. Son dakika yine önceliklidir, sadece tek seferde bir tane çıkar.
+  const turBasinaLimit = Math.max(1, Number(config.turBasinaLimit) || 1);
   const buTurKota = Math.max(
     0,
-    Math.min(turKota, slotKota, Math.max(1, saatKota - sonSaatSayi))
+    Math.min(turKota, slotKota, turBasinaLimit, Math.max(1, saatKota - sonSaatSayi))
   );
 
   // Tek haberlik turda öncelik son dakikada: vitrin adayı taze olsa bile
@@ -614,11 +643,15 @@ async function main() {
   await saveArticles(articles);
   console.log(`\nBitti. ${added} yeni haber eklendi. Arşiv toplam: ${articles.length}`);
 
-  try {
-    const market = await updateMarket();
-    console.log(`Piyasa verisi güncellendi (${market.items.length} gösterge).`);
-  } catch (err) {
-    console.warn(`Piyasa verisi alınamadı: ${err.message}`);
+  if (piyasaTazeMi()) {
+    try {
+      const market = await updateMarket();
+      console.log(`Piyasa verisi güncellendi (${market.items.length} gösterge).`);
+    } catch (err) {
+      console.warn(`Piyasa verisi alınamadı: ${err.message}`);
+    }
+  } else {
+    console.log(`Piyasa verisi taze (< ${PIYASA_ARALIK_DK} dk); bu turda yenilenmedi.`);
   }
 
   // Veri kaydedildikten sonra: yalnızca bu çalıştırmada eklenen YENİ haberleri paylaş.

@@ -46,6 +46,12 @@ const cards = items.map((it, i) => ({
       </div>
     </header>
 
+    <p class="piyasa-uyari" role="note">
+      <strong>Yatırım tavsiyesi değildir.</strong> Bu sayfadaki fiyatlar Yahoo Finance
+      kaynağından alınan gecikmeli verilerdir; bilgilendirme amaçlıdır, alım-satım veya finansal
+      tavsiye niteliği taşımaz. Yatırım kararları risk içerir.
+    </p>
+
     {items.length === 0 ? (
       <p class="muted empty">Piyasa verisi henüz hazır değil. Birkaç dakika sonra tekrar bak.</p>
     ) : (
@@ -119,6 +125,17 @@ const cards = items.map((it, i) => ({
 <style>
   .head {
     padding: 32px 0 8px;
+  }
+  .piyasa-uyari {
+    margin: 4px 0 24px;
+    padding: 12px 16px;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--red);
+    border-radius: 10px;
+    background: var(--surface);
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--text-2);
   }
   .head h1 {
     font-size: 2.1rem;

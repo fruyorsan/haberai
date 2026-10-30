@@ -9,8 +9,8 @@ const { items } = getMarket();
 // (S&P 500 / Nasdaq / Dow Jones yalnızca /piyasa sayfasında kalır)
 const tickerItems = items.filter((it) => it.ticker !== false);
 
-// Kusursuz döngü için liste 3 kez tekrarlanır ve %33.33 kaydırılır.
-const COPIES = 3;
+// Kusursuz döngü için ikinci kopya tarayıcıda çoğaltılır (aşağıdaki script);
+// sunucu HTML'i tek kopya taşır.
 
 const rows = tickerItems.map((it) => ({
   ...it,
@@ -28,44 +28,54 @@ const rows = tickerItems.map((it) => ({
 
     <div class="mticker__viewport">
       <div class="mticker__track">
-        {Array.from({ length: COPIES }).map((_, copy) =>
-          rows.map((it) => (
-            <a
-              class="mticker__item"
-              href="/piyasa/"
-              aria-hidden={copy > 0 ? "true" : undefined}
-              tabindex={copy > 0 ? -1 : undefined}
-            >
-              <span class="mticker__label">{it.label}</span>
-              <span class="mticker__value">{nf(it.value, it.decimals ?? 2)}</span>
-              <span class:list={["mticker__chg", it.up ? "is-up" : "is-down"]}>
-                <span class="mticker__arrow">{it.up ? "▲" : "▼"}</span>
-                {pf(it.changePct)}
-              </span>
-              {it.chart && (
-                <svg
-                  class="mticker__spark"
-                  viewBox="0 0 48 16"
-                  width="48"
-                  height="16"
-                  aria-hidden="true"
-                >
-                  <path
-                    d={it.chart.line}
-                    fill="none"
-                    stroke={it.up ? "#4ade80" : "#fb7185"}
-                    stroke-width="1.4"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    vector-effect="non-scaling-stroke"
-                  />
-                </svg>
-              )}
-            </a>
-          ))
-        )}
+        {rows.map((it) => (
+          <a class="mticker__item" href="/piyasa/">
+            <span class="mticker__label">{it.label}</span>
+            <span class="mticker__value">{nf(it.value, it.decimals ?? 2)}</span>
+            <span class:list={["mticker__chg", it.up ? "is-up" : "is-down"]}>
+              <span class="mticker__arrow">{it.up ? "▲" : "▼"}</span>
+              {pf(it.changePct)}
+            </span>
+            {it.chart && (
+              <svg
+                class="mticker__spark"
+                viewBox="0 0 48 16"
+                width="48"
+                height="16"
+                aria-hidden="true"
+              >
+                <path
+                  d={it.chart.line}
+                  fill="none"
+                  stroke={it.up ? "#4ade80" : "#fb7185"}
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  vector-effect="non-scaling-stroke"
+                />
+              </svg>
+            )}
+          </a>
+        ))}
       </div>
     </div>
+
+    {/* Kusursuz döngü için ikinci kopya tarayıcıda çoğaltılır: sunucu HTML'i
+        tek kopya taşır (sayfa başına ~8 KB tasarruf), JS yoksa şerit sabit kalır. */}
+    <script is:inline>
+      (function () {
+        var t = document.querySelector(".mticker__track");
+        if (!t || t.getAttribute("data-kopya")) return;
+        t.setAttribute("data-kopya", "1");
+        var ogeler = Array.prototype.slice.call(t.children);
+        for (var i = 0; i < ogeler.length; i++) {
+          var k = ogeler[i].cloneNode(true);
+          k.setAttribute("aria-hidden", "true");
+          k.setAttribute("tabindex", "-1");
+          t.appendChild(k);
+        }
+      })();
+    </script>
 
     {/* Arayüz dili: site genelinde üst şeritten erişilir. Düğme sunucuda
         basılır (JS beklemeden görünür); dil.js yalnızca davranışı bağlar. */}
@@ -220,7 +230,7 @@ const rows = tickerItems.map((it) => ({
       transform: translateX(0);
     }
     to {
-      transform: translateX(calc(-100% / 3));
+      transform: translateX(calc(-100% / 2));
     }
   }
 

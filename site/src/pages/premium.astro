@@ -36,7 +36,7 @@ const description =
           </p>
           <div class="fiyat-kart__fiyat-kap">
             <span class="fiyat-kart__tutar">49 ₺</span>
-            <span class="fiyat-kart__periyot">/ ay</span>
+            <span class="fiyat-kart__periyot">/ ay · KDV dâhil</span>
           </div>
         </div>
 
@@ -98,7 +98,7 @@ const description =
           </p>
           <div class="fiyat-kart__fiyat-kap">
             <span class="fiyat-kart__tutar">99 ₺</span>
-            <span class="fiyat-kart__periyot">/ ay</span>
+            <span class="fiyat-kart__periyot">/ ay · KDV dâhil</span>
           </div>
         </div>
 
@@ -150,17 +150,30 @@ const description =
       </div>
     </div>
 
-    <!-- "Özgür Premium Haber Nedir?" Açıklama Bölümü -->
+    <!-- Yasal ön bilgilendirme: mesafeli satış mevzuatı gereği ödeme öncesi erişilebilir olmalı. -->
+    <section class="premium-yasal" aria-labelledby="premium-yasal-baslik">
+      <h2 id="premium-yasal-baslik">Abonelik Öncesi Bilgilendirme</h2>
+      <p>
+        Premium ve VIP paketleri <strong>aylık yenilenen dijital aboneliklerdir</strong>. Ödeme,
+        Lemon Squeezy altyapısı üzerinden alınır; kart bilgileriniz sitemizde tutulmaz. Fiyatlar
+        <strong>KDV dâhil</strong> ve Türk lirası cinsindendir. Aboneliği dilediğiniz an iptal
+        edebilirsiniz. Cayma hakkı, iade ve sözleşme koşulları için:
+      </p>
+      <div class="premium-yasal__linkler">
+        <a href="/mesafeli-satis/">Ön Bilgilendirme Formu ve Mesafeli Satış Sözleşmesi</a>
+        <a href="/gizlilik/">Gizlilik ve Çerez Politikası</a>
+        <a href="/kullanim-sartlari/">Kullanım Şartları</a>
+      </div>
+    </section>
     <section class="premium-ozellik">
       <div class="premium-ozellik__kart">
         <div class="premium-ozellik__ikon">✨</div>
         <div class="premium-ozellik__metin">
           <h2>"Özgür Premium Haber" Nedir?</h2>
           <p>
-            Geleneksel medya kuruluşlarının ticari veya editoryal kaygılarla sansürlediği, arka plana
-            ittiği ya da yüzeysel geçtiği teknoloji, ekonomi, yapay zekâ ve küresel olayları ele alıyoruz.
-            Yapay zekâ modellerimiz kaynak kodları, ham verileri ve tarafsız küresel kaynakları birleştirerek
-            yalnızca gerçeğe odaklanan özel araştırma dosyaları hazırlar.
+            Geleneksel medyada yeterince yer bulamayan; teknoloji, ekonomi, yapay zekâ ve küresel
+            olaylara dair konuları ele alıyoruz. Yapay zekâ modellerimiz kaynak kodlarını, ham
+            verileri ve küresel kaynakları karşılaştırarak özel araştırma dosyaları hazırlar.
           </p>
         </div>
       </div>
@@ -175,6 +188,15 @@ const description =
           <div class="sss-cevap">
             Evet, kesinlikle hiçbir taahhüt bulunmamaktadır. Lemon Squeezy müşteri panelinizden veya profilinizden
             dilediğiniz an tek bir tıkla iptal edebilirsiniz. İptal etseniz dahi ödediğiniz ayın sonuna kadar ayrıcalıklarınız devam eder.
+          </div>
+        </details>
+        <details class="sss-oge">
+          <summary>Cayma hakkım var mı, iade alabilir miyim?</summary>
+          <div class="sss-cevap">
+            Dijital hizmetlerde kural olarak 14 gün içinde cayma hakkınız vardır. Hizmete anında
+            erişim verilmesini onayladığınız hâllerde cayma hakkı sona erebilir; buna rağmen ilk
+            14 gün içinde hizmeti hiç kullanmadıysanız iade talebiniz değerlendirilir. Ayrıntılar
+            için <a href="/mesafeli-satis/">Ön Bilgilendirme ve Mesafeli Satış Sözleşmesi</a>.
           </div>
         </details>
         <details class="sss-oge">
@@ -432,6 +454,39 @@ const description =
     color: #fff;
     box-shadow: 0 12px 28px -6px rgba(245, 158, 11, 0.55);
     transform: scale(1.01);
+  }
+
+  /* Yasal ön bilgilendirme */
+  .premium-yasal {
+    margin: 0 0 48px;
+    padding: 22px 24px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+  }
+  .premium-yasal h2 {
+    margin: 0 0 10px;
+    font-size: 1.05rem;
+    font-weight: 900;
+    color: var(--heading);
+  }
+  .premium-yasal p {
+    margin: 0 0 14px;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--text-2);
+  }
+  .premium-yasal__linkler {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+  }
+  .premium-yasal__linkler a {
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--brand-strong);
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
 
   /* Özellik Kartı */

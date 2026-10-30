@@ -3,7 +3,7 @@
 export const config = {
   // Sitenin adı ve adresi (özet/kaynak gösteriminde kullanılır)
   siteName: "HaberinAi",
-  siteUrl: "https://fruyorsan.github.io",
+  siteUrl: "https://haberinai.site",
 
   // ------------------------------------------------------------------
   // KATEGORİLER — AI yalnızca bu listeden birini seçebilir.
@@ -193,6 +193,9 @@ export const config = {
   // için kısa aralık tek başına kotayı erken tüketirdi. Saatte en fazla 10 haber
   // (0 = sınırsız) akışı gün boyuna yayar.
   saatlikLimit: Number(process.env.SAATLIK_HABER_LIMIT || 10),
+  // Bir çalıştırmada yayınlanacak en fazla haber. 1 = akış hep tek tek
+  // ilerler; hat uzun süre durup geri geldiğinde bile toplu yükleme olmaz.
+  turBasinaLimit: Number(process.env.TUR_BASINA_LIMIT || 1),
 
   // ------------------------------------------------------------------
   // SON DAKİKA (hızlı hat)

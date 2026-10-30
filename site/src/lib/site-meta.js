@@ -53,6 +53,48 @@ export const PUBLISHER = {
   sehir: String(process.env.PUBLISHER_CITY || "").trim() || "Türkiye",
   telefon: String(process.env.PUBLISHER_PHONE || "").trim(),
   eposta: CONTACT_EMAIL,
+
+  // 5651 sayılı Kanun ve Basın Kanunu kapsamında künyede yer alması gereken
+  // kimlik alanları. Gerçek kişi/kurum bilgisi kodda tutulmaz; GitHub Actions
+  // değişkeniyle verilir. Boş bırakılan alan künyede hiç basılmaz.
+  //   gh variable set PUBLISHER_OWNER          --body "Ad Soyad"
+  //   gh variable set PUBLISHER_EDITOR         --body "Sorumlu Yazı İşleri Müdürü"
+  //   gh variable set PUBLISHER_COMPANY        --body "Ticaret unvanı"
+  //   gh variable set PUBLISHER_TAX_OFFICE     --body "Vergi dairesi"
+  //   gh variable set PUBLISHER_TAX_NO         --body "1234567890"
+  //   gh variable set PUBLISHER_ETBIS          --body "ETBİS kayıt numarası"
+  imtiyazSahibi: String(process.env.PUBLISHER_OWNER || "").trim(),
+  sorumluMudur: String(process.env.PUBLISHER_EDITOR || "").trim(),
+  ticaretUnvan: String(process.env.PUBLISHER_COMPANY || "").trim(),
+  vergiDairesi: String(process.env.PUBLISHER_TAX_OFFICE || "").trim(),
+  vergiNo: String(process.env.PUBLISHER_TAX_NO || "").trim(),
+  etbis: String(process.env.PUBLISHER_ETBIS || "").trim(),
+};
+
+/**
+ * Yer sağlayıcı (5651 sayılı Kanun m.2/1-ğ): site GitHub Pages üzerinde
+ * barındırılır. Bu bilgi künyede açıkça gösterilir.
+ */
+export const HOSTING = {
+  ad: "GitHub, Inc. (GitHub Pages)",
+  adres: "88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, Amerika Birleşik Devletleri",
+  site: "https://github.com",
+};
+
+/**
+ * Mesafeli satış / ön bilgilendirme sayfasında gösterilen satıcı bilgisi.
+ * Ödeme altyapısı Lemon Squeezy'dir ve Lemon Squeezy "merchant of record"
+ * olarak satışın tarafıdır; bu yüzden fatura ve tahsilat onun adına yapılır.
+ */
+export const SELLER = {
+  unvan: PUBLISHER.ticaretUnvan || PUBLISHER.ad,
+  adres: PUBLISHER.adres,
+  sehir: PUBLISHER.sehir,
+  eposta: CONTACT_EMAIL,
+  telefon: PUBLISHER.telefon,
+  vergiDairesi: PUBLISHER.vergiDairesi,
+  vergiNo: PUBLISHER.vergiNo,
+  etbis: PUBLISHER.etbis,
 };
 
 /**

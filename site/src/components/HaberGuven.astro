@@ -19,6 +19,9 @@ const duzeltmeLink = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(duzel
 // Mobilde tek satıra sığsın diye "HaberinAi Editör Masası" yerine kısa marka.
 const marka = String(PUBLISHER.ad || "").trim();
 const markaKisa = marka.replace(/\s+(Editör|Editor)\s+Masas[ıi]$/i, "") || marka;
+// Haber metni bir kaynak yayından derlendiğinde görünür atıf zorunludur.
+const kaynakAd = String(article?.source || "").trim();
+const kaynakUrl = String(article?.sourceUrl || "").trim();
 ---
 
 <aside class="guven" aria-label="Bu haber hakkında">
@@ -46,6 +49,17 @@ const markaKisa = marka.replace(/\s+(Editör|Editor)\s+Masas[ıi]$/i, "") || mar
     <span class="guven__ayrac guven__ikincil" aria-hidden="true">·</span>
     <a class="guven__ikincil" href="/telif/">Telif</a>
   </p>
+  {kaynakAd && (
+    <p class="guven__kaynak">
+      Kaynak:{" "}
+      {kaynakUrl ? (
+        <a href={kaynakUrl} target="_blank" rel="noopener nofollow">{kaynakAd}</a>
+      ) : (
+        kaynakAd
+      )}
+      <span class="guven__kaynak-not"> — haber bu kaynaktaki gelişmelerden derlenmiştir.</span>
+    </p>
+  )}
 </aside>
 
 <style>
@@ -81,6 +95,23 @@ const markaKisa = marka.replace(/\s+(Editör|Editor)\s+Masas[ıi]$/i, "") || mar
   .guven__satir a:hover {
     color: var(--brand-strong);
     text-decoration: underline;
+  }
+  .guven__kaynak {
+    margin: 6px 0 0;
+    font-size: 0.74rem;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  .guven__kaynak a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .guven__kaynak a:hover {
+    color: var(--brand-strong);
+  }
+  .guven__kaynak-not {
+    color: var(--muted);
   }
 
   /* Mobilde tek satır kalsın: ikincil bağlantılar ve uzun marka adı gizlenir;

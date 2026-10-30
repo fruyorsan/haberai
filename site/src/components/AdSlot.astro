@@ -34,7 +34,15 @@ const aktif = Boolean(ADSENSE_CLIENT && birim);
 
 <style>
   .ad {
+    /* Çerez onayı verilene kadar reklam kutusu hiç görünmez: AdSense betiği
+       yüklenmediği için boş bir 120 px boşluk bırakılmaz. Onay gelince
+       <html> üzerine "reklam-acik" sınıfı eklenir (Base.astro). */
+    display: none;
     margin: 26px 0;
+    min-height: 0;
+  }
+  :global(html.reklam-acik) .ad {
+    display: block;
     /* Reklam slotu tanımlandıysa yükleme öncesi runini ayır (CLS'yi azaltır);
        slot tanımsızsa bu bileşen hiç basılmadığı için boş kutu oluşmaz. */
     min-height: 120px;

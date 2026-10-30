@@ -65,6 +65,8 @@ const son = getYayinArticles().slice(0, 5);
       <a href="/iletisim/">İletişim</a>
       <a href="/gizlilik/">Gizlilik Politikası</a>
       <a href="/kullanim-sartlari/">Kullanım Şartları</a>
+      <a href="/mesafeli-satis/">Mesafeli Satış</a>
+      <button type="button" class="footer__linkbtn" data-cerez-sil>Çerez Tercihleri</button>
       <a href="/telif/">İçerik ve Telif</a>
       <a href="/reklam/">Reklam ve Sponsorluk</a>
       <a href="/son-dakika/">Son Dakika</a>
@@ -196,6 +198,24 @@ const son = getYayinArticles().slice(0, 5);
     color: #fff;
     transform: translateX(2px);
   }
+  .footer__linkbtn {
+    appearance: none;
+    background: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.18s var(--ease), transform 0.18s var(--ease);
+  }
+  .footer__linkbtn:hover {
+    color: #fff;
+    transform: translateX(2px);
+  }
   .footer__count {
     color: #6f7686;
     font-size: 0.78rem;
@@ -230,7 +250,8 @@ const son = getYayinArticles().slice(0, 5);
     .footer__col {
       gap: 0;
     }
-    .footer__col a {
+    .footer__col a,
+    .footer__linkbtn {
       padding: 10px 0;
       font-size: 0.9rem;
       -webkit-line-clamp: 3;
@@ -255,7 +276,8 @@ const son = getYayinArticles().slice(0, 5);
   }
   /* Dokunmatik ekran (tablet dâhil): bağlantı satırları parmakla seçilebilir. */
   @media (hover: none) and (pointer: coarse) {
-    .footer__col a {
+    .footer__col a,
+    .footer__linkbtn {
       padding: 10px 0;
     }
     .footer__bottom a {

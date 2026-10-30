@@ -19,7 +19,7 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
 
     {/* Giriş yapılmamışsa */}
     <div class="profil__giris" id="profil-giris" hidden>
-      <h1>Profil için giriş gerekli</h1>
+      <h2 class="profil__giris-baslik">Profil için giriş gerekli</h2>
       <p>İlgi alanlarını seçmek, bildirimlerini yönetmek ve yorumlarını görmek için hesabına gir.</p>
       <a class="profil__btn" href="/hesap/">Giriş yap / Hesap oluştur</a>
     </div>
@@ -461,7 +461,8 @@ const hazir = Boolean(HESAP.url && HESAP.anahtar);
     background: var(--surface);
     text-align: center;
   }
-  .profil__giris h1 {
+  .profil__giris h1,
+  .profil__giris-baslik {
     font-size: 1.35rem;
     margin-bottom: 6px;
   }
