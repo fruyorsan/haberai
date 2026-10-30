@@ -349,6 +349,25 @@ export function socialImageUrl(src, width = 1200, height = 630, quality = 82) {
 }
 
 /**
+ * Bir haberin sosyal kart görseli (og:image + web push).
+ *
+ * Önce haber KİMLİĞİNE göre üretilmiş yerel JPEG'e bakar:
+ * `/kapak/<id>-sosyal.jpg`. Bu dosya hem yerel WebP kapaklardan hem de kaynak
+ * siteden gelen uzak fotoğraflardan üretilir; yani kapak hangi kaynaktan
+ * gelirse gelsin kart görseli kendi alan adımızdan, 1200×630 JPEG olarak
+ * servis edilir. WhatsApp/X/Telegram önizlemesi dış CDN'i beklemez.
+ * Dosya yoksa eski davranışa (wsrv) düşülür.
+ */
+export function sosyalGorselUrl(a, width = 1200, height = 630, quality = 82) {
+  const id = a && a.id != null ? String(a.id) : "";
+  if (/^[A-Za-z0-9]+$/.test(id)) {
+    const jpg = `/kapak/${id}-sosyal.jpg`;
+    if (publicDosyaVar(jpg)) return jpg;
+  }
+  return socialImageUrl(a && a.image ? a.image : "", width, height, quality);
+}
+
+/**
  * `site/public` altında gerçekten var olan bir dosya mı?
  *
  * NEDEN: Yerel kapaklar için 1200×630 JPEG kopyası (`/kapak/<id>-sosyal.jpg`)
