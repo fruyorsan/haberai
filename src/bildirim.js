@@ -598,8 +598,9 @@ const canliOnbellek = new Map();
 // GitHub Pages, gh-pages dalına push edildikten sonra sayfaları 1-3 dakika
 // içinde yayına alıyor. 5×12 sn (60 sn) yetmiyordu: yeni haber sayfası
 // yayında olmadığı için bildirim atlanıyor, haber de tazeliğini yitiriyordu.
-// 8×20 sn = en fazla ~160 sn beklenir.
-async function sayfaHazirMi(url, deneme = 8, aralikMs = 20000) {
+// Ölçüm: yeni bir haber sayfası yayına ~140 sn sonra giriyor; 8×20 sn sınırda
+// kalıyordu. 12×20 sn = en fazla ~240 sn beklenir.
+async function sayfaHazirMi(url, deneme = 12, aralikMs = 20000) {
   const anahtar = String(url || "");
   if (!anahtar) return false;
   if (canliOnbellek.has(anahtar)) return canliOnbellek.get(anahtar);
@@ -1174,10 +1175,15 @@ export async function bildirimleriGonder({ dry = false } = {}) {
         // Sessiz yutma yok: hedef sayfa 404 ise ya da OneSignal reddederse bunu
         // günlükte görmek gerekir; aksi halde "0 gönderim" nedeni anlaşılmıyor.
         console.warn(`  ✗ [konu-hepsi:${slug}] ${err.message}`);
-        // `bildirim_mod=hepsi` seçen abone yoksa bu adayı tekrar denememek için not et.
-        durum.sentHepsi = durum.sentHepsi || [];
-        durum.sentHepsi.push(String(aday.id));
-        durumDegisti = true;
+        // Yalnızca KALICI durumda "gönderilmiş" say: `bildirim_mod=hepsi` seçen
+        // abone yoksa bu adayı bir daha denemenin anlamı yok. Sayfa henüz
+        // yayında değilse (GitHub Pages gecikmesi) veya ağ hatasıysa aday
+        // işaretlenmez; bir sonraki turda yeniden denenir.
+        if (/not subscribed/i.test(err.message)) {
+          durum.sentHepsi = durum.sentHepsi || [];
+          durum.sentHepsi.push(String(aday.id));
+          durumDegisti = true;
+        }
       }
     }
   }
