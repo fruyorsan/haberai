@@ -63,6 +63,67 @@
     }
   },
   {
+    "id": "8de78262105e0991",
+    "title": "Brezilya mobil kullanıcıları için zorunlu yüz tarama dönemi başlıyor",
+    "slug": "brezilya-mobil-kullanicilari-icin-zorunlu-yuz-tarama-donemi-basliyor",
+    "summary": "Brezilya, ülkedeki 263 milyon mobil abonenin güvenliğini sağlamak amacıyla tüm hat aktivasyonları ve yenileme işlemleri için biyometrik yüz tanıma zorunluluğu getirdi. Eylül 2027’den itibaren aşamalı başlayacak uygulama, SIM değiştirme kaynaklı dolandırıcılık vakalarını önlemeyi hedefliyor.",
+    "keyPoints": [
+      "263 milyon mobil abone, hat işlemleri için yüz tanıma kullanmak zorunda kalacak.",
+      "Eylül 2027’de başlayacak süreç, Ocak 2029 itibarıyla doğrulanmayan tüm hatların iptalini içeriyor.",
+      "Uygulama, SIM değiştirme saldırılarını ve sahte kimlikli hat aktivasyonlarını engellemeyi amaçlıyor."
+    ],
+    "body": [
+      "Brezilya telekomünikasyon düzenleyicisi Anatel, ülke genelindeki 263 milyon mobil aboneyi kapsayan zorunlu bir biyometrik kayıt sistemine geçiş kararı aldı. Yeni düzenleme, tüm mobil hizmet sağlayıcılarının abone kayıt ve yeniden kayıt süreçlerinde canlı yüz taraması ile biyometrik doğrulama yapmasını zorunlu kılıyor. Şirket ölçeği gözetilmeksizin uygulanacak bu karar, mobil hatların sahte kimlikler üzerinden açılmasının önüne geçmeyi hedefleyen kapsamlı bir güvenlik hamlesi olarak öne çıkıyor.",
+      "Biyometrik sistemlerin, ISO/IEC 30107-3 Seviye 2 standartlarına uygun olması ve düz fotoğrafların yanı sıra üç boyutlu maskeler veya yüksek çözünürlüklü video kayıtları gibi karmaşık saldırılara karşı dirençli olması şart koşuldu. Her doğrulama işlemi, işlem zamanı, kullanılan biyometrik veri tabanı ve kimlik doğrulama sağlayıcısının bilgilerini içeren denetlenebilir bir kayıt sistemine işlenecek. Bu kayıtlar, sistemin güvenilirliğini artırmak adına operatörler tarafından arşivlenmek zorunda kalacak.",
+      "Anatel tarafından belirlenen takvim uyarınca, Eylül 2027 tarihinden itibaren yeni ön ödemeli hat aktivasyonlarında yüz taraması şartı aranacak. Takip eden süreçte, 31 Aralık 2027'ye kadar tüm yeni faturalı hatlar için de aynı prosedür geçerli hale getirilecek. Mevcut abonelerin kayıt yenileme işlemleri ise 31 Aralık 2028 tarihine kadar tamamlanacak; Ocak 2029 itibarıyla doğrulanmamış hatlar askıya alınarak zamanla iptal edilecek.",
+      "Düzenlemenin temel gerekçesi, Brezilya'da yaygın olarak görülen SIM değiştirme saldırıları ve buna bağlı gelişen finansal dolandırıcılık faaliyetleridir. Dolandırıcıların, kurbanların telefon numaralarını kendi kontrollerindeki SIM kartlara aktararak banka hesaplarına ve kişisel verilere erişim sağladığı biliniyor. Yetkililer, mevcut hatların kimlik bilgilerinin doğruluğunu yüzde 100 oranında onaylayarak sistemdeki yapısal açıkları kapatmayı planlıyor.",
+      "Uygulamanın yasallığı ve orantılılığı konusunda tartışmalar ise devam ediyor. Bazı eleştirmenler, Federal hükümetin Serpro platformunda tutulan 376 milyon yüz kaydının operatör altyapısına entegre edilmesinin veri gizliliği risklerini artırdığını savunuyor. Ayrıca, mevcut hükümet sistemlerinin başarı oranının yüzde 64,32 seviyesinde kalması, görünüm değişikliği yaşayan veya sistem hatasıyla karşılaşan milyonlarca abonenin hizmete erişiminin kısıtlanabileceği endişesini beraberinde getiriyor.",
+      "Operatörlerin, biyometrik doğrulama sürecini geçemeyen aboneler için alternatif çözüm prosedürleri oluşturması zorunlu tutulsa da, biyometrik verilerini paylaşmayı reddeden kullanıcılar için herhangi bir istisna bulunmuyor. Gizlilik gerekçesiyle taramayı onaylamayan abonelerin mobil hatlarının askıya alınması, uygulamanın en tartışmalı noktalarından birini oluşturuyor. Brezilya'nın 2018 tarihli kişisel veri koruma yasası uyarınca, biyometrik verilerin hatalı işlenmesi durumunda operatörlere gelirlerinin yüzde ikisine varan ağır cezalar uygulanması öngörülüyor."
+    ],
+    "comment": "Biyometrik doğrulama, dolandırıcılıkla mücadelede etkili görünse de 263 milyon kişinin verisini tek merkezde toplaması ciddi bir siber güvenlik riskini beraberinde getiriyor. Sistemin halihazırda yüzde 35 civarında bir hata payına sahip olması, sürecin henüz geniş çaplı kullanıma hazır olmadığını gösteriyor. Hizmetin sürekliliği için bu doğrulama zorunluluğu, kullanıcıların mobil dünyaya erişim hakkını elinden alabilir. Bireysel mahremiyet ile kamu güvenliği arasındaki dengenin, özellikle 2029'a kadar olan süreçte nasıl korunacağı, uygulamanın başarı notunu belirleyecek.",
+    "editorNote": "Brezilya, 263 milyon mobil abonesini yüz taramasına zorunlu kılıyor. 2029 itibarıyla doğrulanmamış hiçbir hat aktif kalmayacak; peki sistem hatalarına karşı çözüm ne?",
+    "tags": [
+      "Brezilya",
+      "mobil",
+      "yüz tanıma",
+      "biyometri",
+      "güvenlik",
+      "Anatel"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "smartphone facial recognition security",
+    "source": "TRT Haber Son Dakika",
+    "sourceUrl": "https://www.trthaber.com/haber/dunya/brezilya-263-milyon-mobil-kullanicisina-yuz-tanima-taramasi-zorunlulugu-getirdi-961694.html",
+    "image": "/kapak/8de78262105e0991.webp",
+    "publishedAt": "2026-10-30T04:07:00.000Z",
+    "generatedAt": "2026-10-30T04:24:05.559Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Police_biometric_data_use_to_be_improved_%2840912745672%29.jpg/1280px-Police_biometric_data_use_to_be_improved_%2840912745672%29.jpg",
+        "yazar": "Scottish Government",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Police_biometric_data_use_to_be_improved_(40912745672).jpg",
+        "altyazi": "Biyometrik verilerin işlendiği dijital veri tabanı ve güvenlik sistemleri"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/ZTE_WF826A_WiFi_Router_with_SIM_Card_slot.jpg/1280px-ZTE_WF826A_WiFi_Router_with_SIM_Card_slot.jpg",
+        "yazar": "Suyash Dwivedi",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:ZTE_WF826A_WiFi_Router_with_SIM_Card_slot.jpg",
+        "altyazi": "Mobil hat aktivasyonlarında kullanılan geleneksel SIM kart yuvası"
+      }
+    ],
+    "breaking": true,
+    "gorselDeneme": "2026-10-30T04:24:06.853Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1688000/yuz-tanima-reu-1688870.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "cfbb962d1e9d7d68",
     "title": "Türk Devletleri Teşkilatı 13. Zirvesi Ankara’da Başladı",
     "slug": "turk-devletleri-teskilati-13-zirvesi-ankara-basladi",
@@ -180,7 +241,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:26.940Z",
+    "gorselDeneme": "2026-10-30T04:24:06.978Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2428000/yapay-zeka-reu-2429580.jpg",
@@ -239,7 +300,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:26.753Z",
+    "gorselDeneme": "2026-10-30T04:24:07.020Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/goog-2499742.jpg",
@@ -298,7 +359,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:27.386Z",
+    "gorselDeneme": "2026-10-30T04:24:08.185Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_19ff758684d77df31b193360f99f6131.jpg",
@@ -358,7 +419,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:26.965Z",
+    "gorselDeneme": "2026-10-30T04:24:07.065Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2076000/google-reu-2076406.jpg",
@@ -482,7 +543,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:26.667Z",
+    "gorselDeneme": "2026-10-30T04:24:06.992Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2452000/hurmuz-bogaziaa-2452370.jpg",
@@ -728,7 +789,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:27.624Z",
+    "gorselDeneme": "2026-10-30T04:24:07.905Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://turkiyedeisdunyasi.com/wp-content/uploads/2026/10/savas-onlara-yaradi-enerji-devlerinin-karinda-tarihi-sicrama-6wog_cover.webp",
@@ -888,7 +949,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:28.550Z",
+    "gorselDeneme": "2026-10-30T04:24:08.627Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://n24.com.tr/varliklar/img/yuklemeler/trollwall-elvai.jpg",
@@ -1003,7 +1064,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:28.641Z",
+    "gorselDeneme": "2026-10-30T04:24:09.070Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.saraymedya.com/manset/2026/10/marmaris-te-genclerin-teknoloji-uretimi-tesvik-ediliyor-1793325466.webp",
@@ -1064,7 +1125,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:27.795Z",
+    "gorselDeneme": "2026-10-30T04:24:07.927Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.egealternatif.com/manset/2026/10/trump-korgeneral-sylvia-gizli-bilgi-sizdirdi-1793325267.webp",
@@ -1193,7 +1254,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:28.475Z",
+    "gorselDeneme": "2026-10-30T04:24:09.141Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.saraymedya.com/manset/2026/10/suleymanpasa-da-saganak-yasami-guclestirdi-1793324208.webp",
@@ -1245,7 +1306,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:28.618Z",
+    "gorselDeneme": "2026-10-30T04:24:09.060Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trf1.net/wp-content/uploads/2026/10/28OCT26SBCheco-004.jpg",
@@ -1348,7 +1409,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:28.509Z",
+    "gorselDeneme": "2026-10-30T04:24:08.682Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.toplumsal.com.tr/manset/2026/10/ozlale-barikat-in-63-u-tera-grubu-na-ait-cikti-1793322748.webp",
@@ -1582,7 +1643,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:28.774Z",
+    "gorselDeneme": "2026-10-30T04:24:09.056Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.toplumsal.com.tr/manset/2026/10/baskonsolos-bas-tan-cumhuriyet-vurgusu-1793321581.webp",
@@ -1641,7 +1702,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:29.082Z",
+    "gorselDeneme": "2026-10-30T04:24:09.468Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://i.tgrthaber.com/images/2026/10/30/abdden-irana-saldiri-hazirligi-ordu-komutanlari-trumpa-secenekleri-sundu-3368348.jpg",
@@ -1755,7 +1816,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:29.152Z",
+    "gorselDeneme": "2026-10-30T04:24:09.698Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.saraymedya.com/manset/2026/10/canik-belediyesi-ogrencileri-gezilere-goturecek-1793320486.webp",
@@ -1948,7 +2009,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:29.347Z",
+    "gorselDeneme": "2026-10-30T04:24:09.946Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://rudaw.net/_next/image?url=https%3A%2F%2Fimages.rudaw.net%2Fimages%2Fasset%2Fnews%2F20261029234007_20261029205528_1641585469511.webp&w=1200&q=75",
@@ -2005,7 +2066,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:29.004Z",
+    "gorselDeneme": "2026-10-30T04:24:09.412Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://borsagundemcomtr.teimg.com/crop/1280x720/borsagundem-com-tr/uploads/2026/10/new-york-wall-street-15102026.jpg",
@@ -2070,7 +2131,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:28.912Z",
+    "gorselDeneme": "2026-10-30T04:24:09.431Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/news/1200/branded_turkce/67c1/live/31f8a9e0-d3d9-11f1-9c32-1532a6164171.jpg",
@@ -2115,7 +2176,7 @@
     "publishedAt": "2026-10-29T23:53:00.000Z",
     "generatedAt": "2026-10-30T00:03:11.969Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:29.279Z",
+    "gorselDeneme": "2026-10-30T04:24:09.854Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.egealternatif.com/manset/2026/10/abd-ekonomisi-ucuncu-ceyrekte-yuzde-3-4-buyudu-1793318009.webp",
@@ -2300,7 +2361,7 @@
         "altyazi": "Pentagon ve CENTCOM yetkilileri arasında gerçekleşen görüşme"
       }
     ],
-    "gorselDeneme": "2026-10-30T04:15:29.342Z",
+    "gorselDeneme": "2026-10-30T04:24:10.029Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ae3ccf01f1b0e42f0c0f145.jpg",
@@ -2358,7 +2419,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:29.793Z",
+    "gorselDeneme": "2026-10-30T04:24:10.553Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://turkiyedeisdunyasi.com/wp-content/uploads/2026/10/barrack-duyurdu-israil-suriye-ateskeste-anlasti-1smh_cover.webp",
@@ -2471,7 +2532,7 @@
         "altyazi": "Maç günü stadyumdaki yoğun seyirci ve seremoni alanı"
       }
     ],
-    "gorselDeneme": "2026-10-30T04:15:29.518Z",
+    "gorselDeneme": "2026-10-30T04:24:10.035Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://image.cnnturk.com/i/cnnturk/75/770x0/6a1aaf81af5d1b85ae2223b0.jpg",
@@ -2707,7 +2768,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:29.788Z",
+    "gorselDeneme": "2026-10-30T04:24:10.423Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_ab3353f3cf31531c39294bf8eee93e03.jpg",
@@ -2754,7 +2815,7 @@
     "publishedAt": "2026-10-29T22:01:07.000Z",
     "generatedAt": "2026-10-29T22:04:43.873Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:30.697Z",
+    "gorselDeneme": "2026-10-30T04:24:12.003Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_e3764622190762220b3687cc3ef60f06.jpg",
@@ -2828,7 +2889,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:30.049Z",
+    "gorselDeneme": "2026-10-30T04:24:10.707Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/sonyden-gece-cekimleriyle-one-cikan-yeni-sensor-50-megapiksel-2.webp",
@@ -2875,7 +2936,7 @@
     "publishedAt": "2026-10-29T21:58:07.000Z",
     "generatedAt": "2026-10-29T23:12:21.185Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:30.882Z",
+    "gorselDeneme": "2026-10-30T04:24:12.032Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_7aa85ae3bc1084be99aecc8b598bfe1d.jpg",
@@ -2925,7 +2986,7 @@
     "publishedAt": "2026-10-29T21:47:52.000Z",
     "generatedAt": "2026-10-29T21:56:50.286Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:30.429Z",
+    "gorselDeneme": "2026-10-30T04:24:11.389Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/binance-hacklendi-mi.webp",
@@ -3049,7 +3110,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:29.981Z",
+    "gorselDeneme": "2026-10-30T04:24:10.823Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/e9c9/live/e9ad7380-d3c6-11f1-867c-77016fb236d7.jpg",
@@ -3106,7 +3167,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:30.642Z",
+    "gorselDeneme": "2026-10-30T04:24:10.976Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/tiktok-yapay-zeka-icin-enerji-ariyor-2.webp",
@@ -3266,7 +3327,7 @@
     "publishedAt": "2026-10-29T21:03:57.000Z",
     "generatedAt": "2026-10-29T21:05:47.352Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:30.578Z",
+    "gorselDeneme": "2026-10-30T04:24:11.456Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_60a73cfab905692b843e1124259a3639.jpg",
@@ -3343,7 +3404,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:32.116Z",
+    "gorselDeneme": "2026-10-30T04:24:13.179Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_fa86c1395695a93f7ea63f8cf8c1ba26.jpg",
@@ -3401,7 +3462,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:31.095Z",
+    "gorselDeneme": "2026-10-30T04:24:12.163Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2444000/shoesmith-buzulu-a-2444793.jpg",
@@ -3449,7 +3510,7 @@
     "publishedAt": "2026-10-29T20:40:10.000Z",
     "generatedAt": "2026-10-29T20:45:21.836Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:31.065Z",
+    "gorselDeneme": "2026-10-30T04:24:11.693Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/meta-gozluk-zorunlu-guvenlik-guncellemesi.webp",
@@ -3770,7 +3831,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:31.344Z",
+    "gorselDeneme": "2026-10-30T04:24:12.370Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_4de8a700babda49e948ab3af769e40c3.jpg",
@@ -3817,7 +3878,7 @@
     "publishedAt": "2026-10-29T20:07:48.000Z",
     "generatedAt": "2026-10-29T20:10:33.009Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T04:15:31.350Z",
+    "gorselDeneme": "2026-10-30T04:24:14.145Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/29/thumbs_b_c_62feb7cc1979425b2733ec6c8c01a43b.jpg",
@@ -21506,7 +21567,6 @@
     },
     "publishedAt": "2026-10-28T04:20:40.000Z",
     "generatedAt": "2026-10-28T04:29:11.378Z",
-    "breaking": true,
     "gorselDeneme": "2026-10-28T04:45:08.374Z",
     "kapak": {
       "v": 2,
@@ -39955,15 +40015,10 @@
     "gorselSorgu": "data center server room",
     "source": "BeInCrypto",
     "sourceUrl": "https://tr.beincrypto.com/en-buyuk-3-teknoloji-devinin-kazanc-raporlari-ekim-son-hafta/",
-    "image": "/kapak/5ea4f3d717547639.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
     "publishedAt": "2026-10-26T01:58:41.000Z",
     "generatedAt": "2026-10-26T01:59:41.431Z",
-    "ekGorselDeneme": "2026-10-27T14:08:49.514Z",
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
-      "foto": false
-    }
+    "ekGorselDeneme": "2026-10-27T14:08:49.514Z"
   },
   {
     "id": "67813857939392b0",
@@ -138661,7 +138716,7 @@
     "gorselSorgu": "opera stage performance art",
     "source": "Howl.link",
     "sourceUrl": "https://t.co/x7EAkzLjZl",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Monumental_stage_prop_from_the_opera_Aida_-_01.jpg/1280px-Monumental_stage_prop_from_the_opera_Aida_-_01.jpg",
+    "image": "/kapak/f4f35787bf383b81.webp",
     "publishedAt": "2026-10-20T11:17:06.000Z",
     "generatedAt": "2026-10-20T11:19:41.804Z",
     "gorselEk": [
@@ -138680,7 +138735,12 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Amargosa_Opera_House_Stage.jpg"
       }
     ],
-    "gorselDeneme": "2026-10-28T04:47:48.859Z"
+    "gorselDeneme": "2026-10-28T04:47:48.859Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Monumental_stage_prop_from_the_opera_Aida_-_01.jpg/1280px-Monumental_stage_prop_from_the_opera_Aida_-_01.jpg",
+      "foto": false
+    }
   },
   {
     "id": "9b6bb590f25c5610",
@@ -140324,7 +140384,7 @@
     "gorselSorgu": "Tesla electric vehicle factory",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/stock-market-news/tesla-ucuncu-ceyrek-raporunu-carsamba-gunu-acklayacak-93CH-4110412",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Minis_%26_Tesla_Model_Y_%40_Let%27s_Go_Electric%2C_Priory_Park%2C_Kingston_upon_Hull.jpg/1280px-Minis_%26_Tesla_Model_Y_%40_Let%27s_Go_Electric%2C_Priory_Park%2C_Kingston_upon_Hull.jpg",
+    "image": "/kapak/b37141328fbaac6d.webp",
     "publishedAt": "2026-10-20T10:41:17.000Z",
     "generatedAt": "2026-10-20T10:43:13.832Z",
     "gorselEk": [
@@ -140342,7 +140402,12 @@
         "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Four_Tesla_Electric_Vehicles_Columbus_Texas_Supercharger.jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Minis_%26_Tesla_Model_Y_%40_Let%27s_Go_Electric%2C_Priory_Park%2C_Kingston_upon_Hull.jpg/1280px-Minis_%26_Tesla_Model_Y_%40_Let%27s_Go_Electric%2C_Priory_Park%2C_Kingston_upon_Hull.jpg",
+      "foto": false
+    }
   },
   {
     "id": "9f0a0a9c52996f97",
@@ -151210,9 +151275,14 @@
     "gorselSorgu": "Aeromexico flight deck",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/stock-market-news/aeromexico-washingtonn-ucus-kstlamalarn-kaldrmasnn-ardndan-abdye-genislemeyi-planlyor-93CH-4109456",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Aeromexico_B737-852%2C_XA-AMC%2C_MSN_4539_%2807_2013%29%2C_as_AM_783_Los_Angeles_%28LAX%29_-_Guadalajara_%28GDL%29%2C_Flight_time_2_58_%2854209251671%29.jpg/1280px-Aeromexico_B737-852%2C_XA-AMC%2C_MSN_4539_%2807_2013%29%2C_as_AM_783_Los_Angeles_%28LAX%29_-_Guadalajara_%28GDL%29%2C_Flight_time_2_58_%2854209251671%29.jpg",
+    "image": "/kapak/1a7ece8bea774e2b.webp",
     "publishedAt": "2026-10-19T19:56:21.000Z",
-    "generatedAt": "2026-10-19T20:00:49.769Z"
+    "generatedAt": "2026-10-19T20:00:49.769Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Aeromexico_B737-852%2C_XA-AMC%2C_MSN_4539_%2807_2013%29%2C_as_AM_783_Los_Angeles_%28LAX%29_-_Guadalajara_%28GDL%29%2C_Flight_time_2_58_%2854209251671%29.jpg/1280px-Aeromexico_B737-852%2C_XA-AMC%2C_MSN_4539_%2807_2013%29%2C_as_AM_783_Los_Angeles_%28LAX%29_-_Guadalajara_%28GDL%29%2C_Flight_time_2_58_%2854209251671%29.jpg",
+      "foto": false
+    }
   },
   {
     "id": "d2a8d79306633717",
@@ -154508,7 +154578,7 @@
     "gorselSorgu": "SpaceX rocket launch pad",
     "source": "Invezz",
     "sourceUrl": "https://invezz.com/tr/haber/2026/10/19/spacex-hisseleri-kazanclar-yaklasirken-toparlanma-mi-yoksa-daha-fazla-dusus-mu/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/NASA%E2%80%99s_SpaceX_Crew-5_Falcon_9-Dragon_Rollout_to_Launch_Pad_39A_%28NHQ202210010004%29.jpg/1280px-NASA%E2%80%99s_SpaceX_Crew-5_Falcon_9-Dragon_Rollout_to_Launch_Pad_39A_%28NHQ202210010004%29.jpg",
+    "image": "/kapak/8e3e7fa1580d8cc3.webp",
     "publishedAt": "2026-10-19T16:24:07.000Z",
     "generatedAt": "2026-10-19T16:30:52.411Z",
     "gorselEk": [
@@ -154526,7 +154596,12 @@
         "lisansUrl": "",
         "sayfa": "https://commons.wikimedia.org/wiki/File:NASA%E2%80%99s_SpaceX_Crew-5_Falcon_9-Dragon_Rollout_to_Launch_Pad_39A_(NHQ202210010007).jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/NASA%E2%80%99s_SpaceX_Crew-5_Falcon_9-Dragon_Rollout_to_Launch_Pad_39A_%28NHQ202210010004%29.jpg/1280px-NASA%E2%80%99s_SpaceX_Crew-5_Falcon_9-Dragon_Rollout_to_Launch_Pad_39A_%28NHQ202210010004%29.jpg",
+      "foto": false
+    }
   },
   {
     "id": "005f29437184c8b9",
@@ -154955,7 +155030,7 @@
     "gorselSorgu": "playground equipment manufacturing factory",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/economy-news/ftc-oyun-park-ekipman-anlasmasn-engellemek-icin-dava-act-93CH-4109348",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Playground_equipment_in_Munich_03.jpg/1280px-Playground_equipment_in_Munich_03.jpg",
+    "image": "/kapak/e4a576a817e2ff18.webp",
     "publishedAt": "2026-10-19T16:02:29.000Z",
     "generatedAt": "2026-10-19T16:05:03.656Z",
     "gorselEk": [
@@ -154973,7 +155048,12 @@
         "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Playground_equipment_in_Munich_02.jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Playground_equipment_in_Munich_03.jpg/1280px-Playground_equipment_in_Munich_03.jpg",
+      "foto": false
+    }
   },
   {
     "id": "b341453e87b9bb94",
@@ -155973,7 +156053,7 @@
     "gorselSorgu": "stock market trading floor",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/analyst-ratings/stonex-servicenow-icin-hisse-hedefini-yapay-zeka-ilerlemesiyle-yukseltti-93CH-4109292",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/UK_Stock_Market_-_Investing_in_the_United_Kingdom.jpg/1920px-UK_Stock_Market_-_Investing_in_the_United_Kingdom.jpg",
+    "image": "/kapak/436ee4864794bb6e.webp",
     "publishedAt": "2026-10-19T15:10:25.000Z",
     "generatedAt": "2026-10-19T15:11:36.147Z",
     "gorselEk": [
@@ -155984,7 +156064,12 @@
         "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:European_Stock_Market_concept_image.jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/UK_Stock_Market_-_Investing_in_the_United_Kingdom.jpg/1920px-UK_Stock_Market_-_Investing_in_the_United_Kingdom.jpg",
+      "foto": false
+    }
   },
   {
     "id": "5edcd54ff45ba470",
@@ -165178,11 +165263,16 @@
     "category": "Bilim",
     "source": "Evrim Ağacı",
     "sourceUrl": "https://evrimagaci.org/bilim-insanlari-hangi-hayvanlari-neden-inceliyor-23969",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Aquatic_Ecosystems_Research_Laboratory_and_Beaty_Biodiversity_Centre.jpg/1280px-Aquatic_Ecosystems_Research_Laboratory_and_Beaty_Biodiversity_Centre.jpg",
+    "image": "/kapak/8033b4c066ec6658.webp",
     "publishedAt": "2026-10-19T09:17:21.000Z",
     "generatedAt": "2026-10-19T09:19:14.969Z",
     "gorselDeneme": "2026-10-20T09:16:19.459Z",
-    "gorselSorgu": "biodiversity research biology laboratory"
+    "gorselSorgu": "biodiversity research biology laboratory",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Aquatic_Ecosystems_Research_Laboratory_and_Beaty_Biodiversity_Centre.jpg/1280px-Aquatic_Ecosystems_Research_Laboratory_and_Beaty_Biodiversity_Centre.jpg",
+      "foto": false
+    }
   },
   {
     "id": "87fb9059d1a216ee",
