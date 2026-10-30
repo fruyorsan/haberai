@@ -625,7 +625,7 @@ async function sayfaHazirMi(url, deneme = 8, aralikMs = 20000) {
     }
     if (i < deneme - 1) {
       console.log(
-        `  … haber sayfası henüz yayında değil${sonDurum ? ` (HTTP ${sonDurum})` : ""}, ` +
+        `  … haber sayfası henüz yayında değil${sonDurum ? ` (HTTP ${sonDurum})` : ""}: ${anahtar} — ` +
           `${Math.round(aralikMs / 1000)} sn sonra tekrar deneniyor`
       );
       await bekle(aralikMs);
@@ -1096,7 +1096,8 @@ export async function bildirimleriGonder({ dry = false } = {}) {
             console.log(
               `  ✓ [konu:${slug}] ${kisalt(aday.title, 60)}` +
                 ` (yayın: ${yasDk(aday, now)} dk önce)` +
-                `${yanit?.id ? ` (${yanit.id})` : ""}${aliciNotu(yanit)}`
+                `${yanit?.id ? ` (${yanit.id})` : ""}${aliciNotu(yanit)}` +
+                ` | görsel: ${icerik.gorsel}`
             );
             durum.sent.push(String(aday.id));
             durum.updatedAt = new Date(now).toISOString();
@@ -1169,7 +1170,10 @@ export async function bildirimleriGonder({ dry = false } = {}) {
           );
           sayilan++;
         }
-      } catch {
+      } catch (err) {
+        // Sessiz yutma yok: hedef sayfa 404 ise ya da OneSignal reddederse bunu
+        // günlükte görmek gerekir; aksi halde "0 gönderim" nedeni anlaşılmıyor.
+        console.warn(`  ✗ [konu-hepsi:${slug}] ${err.message}`);
         // `bildirim_mod=hepsi` seçen abone yoksa bu adayı tekrar denememek için not et.
         durum.sentHepsi = durum.sentHepsi || [];
         durum.sentHepsi.push(String(aday.id));
