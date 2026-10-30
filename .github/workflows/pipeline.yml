@@ -120,12 +120,6 @@ jobs:
         continue-on-error: true
         run: npm run kapak -- --gun=2 --limit=60
 
-      # TEK SEFERLIK: son 2 gunun kapaklarini yeni kirpma/rozet duzeniyle
-      # yeniden uretir (sag-alt kaynak filigranini disarida birakir).
-      - name: Kapak kirpma duzenini yenile
-        continue-on-error: true
-        run: node scripts/kapak-uret.mjs --zorla --gun=2 --limit=120 --paralel=6
-
       # KART TEMIZLIGI: daha once tasarim karti uretilmis kapaklari yeniden
       # dener. Yayincinin kendi fotografi bulunursa fotografa gecilir; yoksa
       # kart ayni kalir. Normal adim `image` alani yerel /kapak/ olan haberi
