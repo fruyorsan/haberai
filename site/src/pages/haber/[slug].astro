@@ -8,7 +8,7 @@ import DevamHaber from "../../components/DevamHaber.astro";
 import HaberFigur from "../../components/HaberFigur.astro";
 import HaberGuven from "../../components/HaberGuven.astro";
 import Yorumlar from "../../components/Yorumlar.astro";
-import { getArticles, getYayinArticles, formatDate, publishedISO, imageUrl, imageSrcset, socialImageUrl, publicDosyaVar, tagUrl, slugify, kategoriUrl } from "../../lib/articles.js";
+import { getArticles, getYayinArticles, formatDate, timeAgo, publishedISO, imageUrl, imageSrcset, socialImageUrl, publicDosyaVar, tagUrl, slugify, kategoriUrl } from "../../lib/articles.js";
 import { indeksliMi } from "../../lib/indeks.js";
 import { kapakKaynagi } from "../../lib/kapak.js";
 import { ADSENSE_SLOTS, ONESIGNAL_APP_ID, siteOrigin } from "../../lib/site-meta.js";
@@ -343,7 +343,7 @@ const breadcrumbLd = {
       <div class="post__meta">
         <a class="post__yazar" href="/kunye/">Haber Merkezi</a>
         <span class="post__dot">•</span>
-        <time>{date}</time>
+        <time class="post__time" datetime={publishedISO(article)} title={date}>{timeAgo(publishedISO(article))}</time>
         <span class="post__dot">•</span>
         <span>{readMin} dk okuma</span>
         {tumMetinFotograflari.length > 0 && (
@@ -596,6 +596,27 @@ const breadcrumbLd = {
       window.addEventListener("resize", onScroll, { passive: true });
     }
 
+    // --- Göreli yayın zamanı ---
+    // Sayfa statik üretildiği için "12 dakika önce" yazısı derleme anında donar.
+    // Sekme açık kaldığı sürece dakikada bir tazelenir; tam tarih title'da durur.
+    const zamanEl = document.querySelector(".post__time[datetime]");
+    if (zamanEl) {
+      const t = Date.parse(zamanEl.getAttribute("datetime") || "");
+      if (Number.isFinite(t)) {
+        const yaz = () => {
+          const dk = Math.round((Date.now() - t) / 60000);
+          let metin = "";
+          if (dk < 1) metin = "az önce";
+          else if (dk < 60) metin = `${dk} dakika önce`;
+          else if (dk < 1440) metin = `${Math.round(dk / 60)} saat önce`;
+          else if (dk < 10080) metin = `${Math.round(dk / 1440)} gün önce`;
+          if (metin && metin !== zamanEl.textContent) zamanEl.textContent = metin;
+        };
+        yaz();
+        setInterval(yaz, 60000);
+      }
+    }
+
     // --- AI'ya Sor ---
     const box = document.getElementById("aiask");
     if (box) {
@@ -788,6 +809,12 @@ const breadcrumbLd = {
   }
   .post__dot {
     opacity: 0.5;
+  }
+  /* Yayın zamanı göreli gösterilir ("12 dakika önce"): okuyucu haberin tazeliğini
+     anında görür. Tam tarih title ipucunda ve datetime özniteliğinde durur. */
+  .post__time {
+    color: var(--text);
+    font-weight: 600;
   }
   .post__foto-link {
     display: inline-flex;
