@@ -810,14 +810,25 @@ async function kapakUret(a) {
       if (debug) console.log(`   · ${a.id} ${aday.tip} elendi (küçük/düz): ${aday.url.slice(0, 80)}`);
       continue;
     }
-    degerlendirilen.push({ ...aday, veri, bilgi, puan });
+    degerlendirilen.push({
+      ...aday,
+      veri,
+      bilgi,
+      puan,
+      // YAYINCININ KENDİ KAPAĞI (og:image) küçük bir öncelik alır. Puanlama
+      // "detay/parlaklık" ölçtüğü için dokulu bir stok kare (devre kartı, bina)
+      // düz bir ürün ekran görüntüsünden yüksek puan alabiliyor ve haberin
+      // gerçek kapağı eleniyordu. Yayıncı hangi kareyi kapak yaptıysa o kare
+      // haberin konusuna en yakın olandır.
+      siralama: puan + (aday.tip === "kaynak" ? 10 : 0),
+    });
     if (debug) {
       console.log(`   · ${a.id} ${aday.tip} puan ${puan.toFixed(0)}: ${aday.url.slice(0, 80)}`);
     }
     if (puan >= 84) break;
   }
 
-  degerlendirilen.sort((x, y) => y.puan - x.puan);
+  degerlendirilen.sort((x, y) => y.siralama - x.siralama);
 
   let taban = null;
   let yeniAtif = null;
