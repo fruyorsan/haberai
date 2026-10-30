@@ -184,8 +184,11 @@ const modifiedIso = article.refreshedAt || article.generatedAt;
 // (`/kapak/<id>-sosyal.jpg`) depoda üretilir. Varsa doğrudan o kullanılır:
 // dış CDN'e bağımlılık yoktur, önizleme anında gelir. Dosya henüz yoksa
 // (eski kapak) wsrv üzerinden JPEG'e çevrilir.
-const yerelKapakId = /^\/kapak\/([A-Za-z0-9]+)\.webp$/i.exec(String(kapak || ""))?.[1] || "";
-const yerelSosyal = yerelKapakId ? `/kapak/${yerelKapakId}-sosyal.jpg` : "";
+// Yerel sosyal JPEG haber KİMLİĞİNE göre üretilir. Kapak ister yerel WebP,
+// ister kaynak siteden gelen uzak fotoğraf olsun aynı dosya kullanılır; böylece
+// paylaşım önizlemesi her haberde kendi alan adımızdan gelir.
+const sosyalId = /^[A-Za-z0-9]+$/.test(String(article.id || "")) ? String(article.id) : "";
+const yerelSosyal = sosyalId ? `/kapak/${sosyalId}-sosyal.jpg` : "";
 const ogGorsel = kapak
   ? yerelSosyal && publicDosyaVar(yerelSosyal)
     ? new URL(yerelSosyal, site).href

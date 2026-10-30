@@ -464,8 +464,12 @@ async function bildirimIcerigiHazirla(a, { baslik }, { dry = false } = {}) {
   // Yerel kapağın 1200×630 JPEG kopyası varsa push görseli DOĞRUDAN odur:
   // wsrv.nl'nin soğuk dönüşümü beklemez, Windows/Android bildirimi görselsiz
   // kalmaz ve sitedeki kapakla birebir aynı kare gider.
+  // JPEG, haber KİMLİĞİNE göre üretilir: kapak yerel WebP de olsa kaynak
+  // siteden gelen uzak fotoğraf da olsa aynı dosya kullanılır. Böylece push
+  // görseli her haberde kendi alan adımızdan gider (dış CDN'e bağımlı değil).
   const yerelKapakId =
-    /^\/kapak\/([A-Za-z0-9]+)\.webp$/i.exec(String(a?.image || ""))?.[1] || "";
+    /^\/kapak\/([A-Za-z0-9]+)\.webp$/i.exec(String(a?.image || ""))?.[1] ||
+    (/^[A-Za-z0-9]+$/.test(String(a?.id || "")) ? String(a.id) : "");
   const yerelSosyal = yerelKapakId
     ? `${SITE_URL}/kapak/${yerelKapakId}-sosyal.jpg`
     : "";
