@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T07:21:11.603Z",
+  "updatedAt": "2026-10-30T07:30:03.869Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5222,
-  "aday": 5222,
-  "uygun": 3170,
-  "secilen": 3076,
+  "toplamHaber": 5223,
+  "aday": 5223,
+  "uygun": 3171,
+  "secilen": 3077,
   "red": {
     "editör notu özetle aynı": 7,
     "özet gövdeyle aynı": 108,
@@ -78,6 +78,10 @@
       "twin": "İsrail ordusunun Gazze saldırıları sonucu 4 Filistinli hayatını kaybetti"
     },
     {
+      "title": "Binance 6,3 Milyar Dolar Hack ile Karşı Karşıya",
+      "twin": "Binance siber saldırısının maliyetini 6,3 milyar dolar olarak açıkladı"
+    },
+    {
       "title": "Apple, 2 nm A20 Pro işlemcili OLED iPad mini modelini tanıttı",
       "twin": "Apple, MacBook Neo 2’yi A19 Pro ve 12 GB RAM ile tanıttı"
     },
@@ -100,10 +104,6 @@
     {
       "title": "Bursa, kurulusunun 700. yilinda 1855 depreminin izlerini inceliyor",
       "twin": "Bursa deprem hafızasını masaya yatırdı: 1855 felaketi konuşuldu"
-    },
-    {
-      "title": "Binance 6,3 Milyar Dolar Hack ile Karşı Karşıya",
-      "twin": "Binance siber saldırısının maliyetini 6,3 milyar dolar olarak açıkladı"
     },
     {
       "title": "Fransa'nın borçlanma maliyeti 24 yılın en yüksek seviyesine ulaştı",
@@ -385,6 +385,7 @@
       "8ac160773c5fca23",
       "b05947a635ea1ab4",
       "941d84c551e1cbd8",
+      "527c04967740edf4",
       "e0d96e1fe468cc7c",
       "ae4114913dd868d3"
     ],
@@ -428,7 +429,6 @@
       "1676b3750aee07dc",
       "89caf9b3ca6609cb",
       "c51a582572d585cb",
-      "458a04e33ec0897e",
       "6c29349b8c702010",
       "9a48bb7360b0cf31",
       "466f41069a5230cc",
@@ -448,6 +448,7 @@
       "9801b34714550b37",
       "9d833849eaf982a0",
       "71f0d8db8af8537f",
+      "458a04e33ec0897e",
       "8a21d61b9b94848c",
       "ed7cedde1f1f649b",
       "71be2642dfb152d0",
@@ -476,7 +477,6 @@
       "c8ebe5f981fd38e1",
       "579ee7f3e7c99873",
       "195d8a9de3e9d29c",
-      "69300cabe8659c5f",
       "572acf1127cd7b81",
       "b12efe44c4c086b8",
       "511c4225152943a7",
@@ -504,6 +504,7 @@
       "b05f61009473f339",
       "fee4ca32a04a134a",
       "f0a8d4e9c02f3cfe",
+      "69300cabe8659c5f",
       "1b009caa2632397f",
       "d3dc98275734c6fc",
       "c6a0efbad3a6db46",
@@ -3379,7 +3380,6 @@
     "686d3f11a6cecddc",
     "89caf9b3ca6609cb",
     "c51a582572d585cb",
-    "458a04e33ec0897e",
     "6c29349b8c702010",
     "34ed29b38bf1efae",
     "5620fe8756ecba60",
@@ -3463,6 +3463,7 @@
     "9801b34714550b37",
     "9d833849eaf982a0",
     "71f0d8db8af8537f",
+    "458a04e33ec0897e",
     "8a21d61b9b94848c",
     "291418757fca5c9b",
     "8d3480003d8b2dab",
@@ -3599,7 +3600,6 @@
     "195d8a9de3e9d29c",
     "fb864d3f2811a6cb",
     "c69d47005ca5bcf8",
-    "69300cabe8659c5f",
     "572acf1127cd7b81",
     "e0167712f19c47a4",
     "de3b009353f0ec95",
@@ -3713,6 +3713,7 @@
     "d4e754841cecdffb",
     "80270a0bdce4ac8d",
     "b303e1cc28fcbb10",
+    "69300cabe8659c5f",
     "ecc12f17a3c76de8",
     "1b009caa2632397f",
     "06d67c6a4a1c9f77",
@@ -4193,6 +4194,7 @@
     "0ee5dfb41a9f5c7d",
     "66421423c1dc2504",
     "d3cd7480c4330b48",
+    "527c04967740edf4",
     "a76982bd66ae949b",
     "384a57521571e8b5",
     "53d5b097f2aaa9fb",
