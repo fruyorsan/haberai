@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T04:09:01.521Z",
+  "updatedAt": "2026-10-30T04:16:39.186Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,12 +13,12 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5202,
-  "aday": 5202,
-  "uygun": 3150,
+  "toplamHaber": 5200,
+  "aday": 5200,
+  "uygun": 3149,
   "secilen": 3056,
   "red": {
-    "özet gövdeyle aynı": 109,
+    "özet gövdeyle aynı": 108,
     "kısa özet": 34,
     "editör notu özetle aynı": 6,
     "maddeli özet yok": 105,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 107
+    "tekrar": 106
   },
   "ornekTekrarlar": [
     {
@@ -82,10 +82,6 @@
       "twin": "Apple, MacBook Neo 2’yi A19 Pro ve 12 GB RAM ile tanıttı"
     },
     {
-      "title": "Türk Devletleri Teşkilatı 13. Zirvesi Ankara’da Başladı",
-      "twin": "Türk Devletleri Teşkilatı 13. Zirvesi öncesi Ankara'da kritik diplomasi"
-    },
-    {
       "title": "Nintendo Switch 2, yapay zeka ve 25 dolarlık yazılımla kırıldı",
       "twin": "Nintendo Switch 2 Yazılım Bariyeri Kaldırdı, Jailbreak Kolaylaştı"
     },
@@ -112,6 +108,10 @@
     {
       "title": "Galaxy S24 Ultra sahipleri için One UI 9 sonrasında şarj krizi",
       "twin": "Galaxy S24 Ultra bataryası One UI 9 ile hızla tükenmeye başladı"
+    },
+    {
+      "title": "Apple, iOS 27.2 ile Mesajlar uygulamasında bildirim rozeti düzenliyor",
+      "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
     }
   ],
   "days": {
@@ -132,7 +132,6 @@
       "02a99fc21d2b6314",
       "692c88d046cc9222",
       "3ef887a652f578b5",
-      "4abc6434cefea0f5",
       "2e84dfe9b0b05637",
       "d94c1c2fe8c487a5",
       "c5771467ede91f2c",
@@ -281,7 +280,6 @@
       "596a67e382a9b544",
       "3c7d464640e2c2ba",
       "11615fbd977ee88a",
-      "8b48d82ae6d92da1",
       "5ac98f7ffa0167b9",
       "91b37db0e629552a",
       "408a8c0c51bc5d27",
@@ -803,6 +801,7 @@
       "aa4cb3d31a30d5de",
       "8ba85913b293c85a",
       "cd1753f9fd980dd5",
+      "068cc02ed6734f50",
       "e04c349360953110",
       "708bde9513b40873",
       "7e81d0ec7d2450f0",
@@ -822,6 +821,7 @@
       "d4e754841cecdffb",
       "7c3951d6177679ae",
       "28681daa0ee5b837",
+      "cfbb962d1e9d7d68",
       "8ac160773c5fca23",
       "b05947a635ea1ab4",
       "941d84c551e1cbd8",
@@ -3268,7 +3268,6 @@
     "12864f7f071ffef6",
     "3ef887a652f578b5",
     "3156dbab07c77711",
-    "4abc6434cefea0f5",
     "f64ba76da9dda16b",
     "2e84dfe9b0b05637",
     "e00b2c15d4c07956",
@@ -3492,6 +3491,7 @@
     "5fce7b914957bc6b",
     "330e98400984447d",
     "206ddee2cfe23b89",
+    "068cc02ed6734f50",
     "e1d2fb372f48d0a4",
     "22e9db26902b6464",
     "e04c349360953110",
@@ -3833,6 +3833,7 @@
     "2cd562a3de5ca9d8",
     "745742a6b774ecd8",
     "b9f9ad38a2f3558c",
+    "cfbb962d1e9d7d68",
     "9b3c0f6482cf74e7",
     "4fb3e498a03e9ed0",
     "2bfc0486d4333e9d",
@@ -4302,7 +4303,6 @@
     "5aecec8bf03a4e3c",
     "4e5d41e9584d2662",
     "a9d4c7aca8978383",
-    "8b48d82ae6d92da1",
     "e2339e7e519017eb",
     "43a90fe56b2d922e",
     "334cef2104d3c2d0",
