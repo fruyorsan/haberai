@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T04:00:30.267Z",
+  "updatedAt": "2026-10-30T04:09:01.521Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,9 +13,9 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5201,
-  "aday": 5201,
-  "uygun": 3149,
+  "toplamHaber": 5202,
+  "aday": 5202,
+  "uygun": 3150,
   "secilen": 3056,
   "red": {
     "özet gövdeyle aynı": 109,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 106
+    "tekrar": 107
   },
   "ornekTekrarlar": [
     {
@@ -82,6 +82,10 @@
       "twin": "Apple, MacBook Neo 2’yi A19 Pro ve 12 GB RAM ile tanıttı"
     },
     {
+      "title": "Türk Devletleri Teşkilatı 13. Zirvesi Ankara’da Başladı",
+      "twin": "Türk Devletleri Teşkilatı 13. Zirvesi öncesi Ankara'da kritik diplomasi"
+    },
+    {
       "title": "Nintendo Switch 2, yapay zeka ve 25 dolarlık yazılımla kırıldı",
       "twin": "Nintendo Switch 2 Yazılım Bariyeri Kaldırdı, Jailbreak Kolaylaştı"
     },
@@ -108,10 +112,6 @@
     {
       "title": "Galaxy S24 Ultra sahipleri için One UI 9 sonrasında şarj krizi",
       "twin": "Galaxy S24 Ultra bataryası One UI 9 ile hızla tükenmeye başladı"
-    },
-    {
-      "title": "Apple, iOS 27.2 ile Mesajlar uygulamasında bildirim rozeti düzenliyor",
-      "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
     }
   ],
   "days": {
@@ -128,7 +128,6 @@
       "ebd7ae32f8cbf260",
       "2128e07e0d93148f",
       "82df107754372aad",
-      "37b53ac17064ec09",
       "d4821e3aef99311d",
       "02a99fc21d2b6314",
       "692c88d046cc9222",
@@ -146,6 +145,7 @@
       "ed4b1538d044b40a",
       "eefade552da97f54",
       "e0fe0561eb6ac1de",
+      "37b53ac17064ec09",
       "e04f9e867d173370",
       "86cdbd7299c44ca7",
       "380296d804d90166",
@@ -213,7 +213,6 @@
       "b12efe44c4c086b8",
       "511c4225152943a7",
       "607a67e614530b1e",
-      "d3dc98275734c6fc",
       "1c5611571b05131b",
       "80afd681effd5914",
       "eed38fa81aefa54b",
@@ -238,6 +237,7 @@
       "b05f61009473f339",
       "fee4ca32a04a134a",
       "1b009caa2632397f",
+      "d3dc98275734c6fc",
       "c6a0efbad3a6db46",
       "8c00c2eac841839c",
       "7e1796f1723b2edf",
@@ -784,6 +784,7 @@
       "263466f75b702e2e",
       "ed6620184fede0f7",
       "c6efd66c5a36ed2f",
+      "3a52b163a5105d4e",
       "25ba5cebac13f045",
       "47db665aa5c77e08",
       "909ded179dca9502",
@@ -794,7 +795,6 @@
       "7b4fbeb6b29c8c0d",
       "d90af045fb007dac",
       "7bdc81ebd97fa392",
-      "3a52b163a5105d4e",
       "1a81e03d519c938d",
       "1fe406ebb5214cd8",
       "6b84961c1109356d",
@@ -3254,7 +3254,6 @@
     "82df107754372aad",
     "88b0626e9ba7fa0d",
     "a8c6afa21598e995",
-    "37b53ac17064ec09",
     "8a2349b84121a02e",
     "d4821e3aef99311d",
     "a065ae4f7130ffac",
@@ -3296,6 +3295,7 @@
     "897b9b3a4a58df3b",
     "e153e4847fcacb04",
     "ee9ae13e52107d71",
+    "3a52b163a5105d4e",
     "d68874deb78c61c3",
     "7a0d0469a8848800",
     "55deff84c33a3a2c",
@@ -3311,6 +3311,7 @@
     "3475fc86f979b274",
     "36a52e2bcb0aa95a",
     "57cf444b547f7743",
+    "37b53ac17064ec09",
     "c42248bec079f788",
     "e04f9e867d173370",
     "909ded179dca9502",
@@ -3399,7 +3400,6 @@
     "003cb389efbee7be",
     "3fe5f51aa274b7e5",
     "9eac0b3f22fb1f1b",
-    "3a52b163a5105d4e",
     "2da6c72d999937d8",
     "9b12293dd466be57",
     "6f1bb51c89ac6801",
@@ -3581,7 +3581,6 @@
     "607a67e614530b1e",
     "578d865dde28bfac",
     "54316866304d3386",
-    "d3dc98275734c6fc",
     "4cb739a6086fbac8",
     "1c5611571b05131b",
     "dd2070e1455a6f47",
@@ -3688,6 +3687,7 @@
     "3e5ffadff4a97463",
     "9725210dfb8f0271",
     "56d5c348e999c8a4",
+    "d3dc98275734c6fc",
     "17e027d5d4a933cb",
     "8489e2ec6b246d9c",
     "c6a0efbad3a6db46",
