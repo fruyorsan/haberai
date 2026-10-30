@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T22:24:13.436Z",
+  "updatedAt": "2026-10-30T22:35:58.087Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5297,
-  "aday": 5297,
-  "uygun": 3242,
-  "secilen": 3147,
+  "toplamHaber": 5298,
+  "aday": 5298,
+  "uygun": 3243,
+  "secilen": 3148,
   "red": {
     "özet gövdeyle aynı": 110,
     "kısa özet": 35,
@@ -74,10 +74,6 @@
       "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
     },
     {
-      "title": "İsrail'in Gazze saldırıları 4 sivilin daha yaşamına son verdi",
-      "twin": "İsrail ordusunun Gazze saldırıları sonucu 4 Filistinli hayatını kaybetti"
-    },
-    {
       "title": "Huawei Enjoy 100 Pro, HarmonyOS 7 ve 6.100 mAh bataryayla geldi",
       "twin": "Huawei, Wi-Fi 7 destekli yeni Router X2 Pro modelini satışa sundu"
     },
@@ -88,6 +84,10 @@
     {
       "title": "Google Gemini 4 Argon, Android Bench’te Beşinci Sırada Yer Aldı",
       "twin": "Google, yapay zeka modeli Gemini 4 Carbon ile zirveye yerleşti"
+    },
+    {
+      "title": "İsrail'in Gazze saldırıları 4 sivilin daha yaşamına son verdi",
+      "twin": "İsrail ordusunun Gazze saldırıları sonucu 4 Filistinli hayatını kaybetti"
     },
     {
       "title": "Apple, MacBook Neo 2’yi A19 Pro ve 12 GB RAM ile tanıttı",
@@ -333,7 +333,6 @@
       "90a7ac537084c083",
       "fb88c23d674f8ff4",
       "7dbc91886a6352bd",
-      "ac7dd956cca3d6df",
       "d1091700aa3f81ba",
       "019b923e705041ed",
       "98ce98aed1e474e9",
@@ -363,6 +362,7 @@
       "5fce7b914957bc6b",
       "1ee4679a83865469",
       "87a1798388a8f076",
+      "ac7dd956cca3d6df",
       "e2f70e81237b09ff",
       "14cb92b445e30fdb",
       "3a52932b714f2615",
@@ -911,11 +911,12 @@
     ],
     "2026-10-31": [
       "afbca4590185e19c",
+      "008e0f544cd298c5",
       "7ee04da43f7590bd",
       "77e8331448e47476",
-      "008e0f544cd298c5",
       "7151efb74a0b0aee",
       "e419febc8158248c",
+      "8cb1e2ca466bd3e3",
       "8d201ec6c7bf3427",
       "9b18a5ff587665be",
       "02a5cfe679207633",
@@ -3369,6 +3370,7 @@
     "df6089916309c27f",
     "a8d5476263dc800d",
     "efa5b69565af28e0",
+    "008e0f544cd298c5",
     "12864f7f071ffef6",
     "69628476401d9911",
     "35c11f133b6d3ccf",
@@ -3467,7 +3469,6 @@
     "5620fe8756ecba60",
     "7b4fbeb6b29c8c0d",
     "44e89da04d4ec594",
-    "008e0f544cd298c5",
     "3e2b6591638d752d",
     "4ff32f7f0d29b9f1",
     "d68ac8fe07f08d33",
@@ -3537,7 +3538,6 @@
     "fb88c23d674f8ff4",
     "79b623b7bff4742f",
     "7dbc91886a6352bd",
-    "ac7dd956cca3d6df",
     "9b2fe4b31264ce5e",
     "16b117ced6e63e45",
     "57875d22505da81b",
@@ -3636,6 +3636,7 @@
     "5482d9c10f68f7eb",
     "1ee4679a83865469",
     "87a1798388a8f076",
+    "ac7dd956cca3d6df",
     "8044985495178a7b",
     "ee821165315eb161",
     "f156ce1d02cc345c",
@@ -3723,6 +3724,7 @@
     "eed38fa81aefa54b",
     "ac48140101792f2e",
     "b34ddbff8dab515a",
+    "8cb1e2ca466bd3e3",
     "2b5454c4419965d5",
     "7679a23f65508a72",
     "12112851f3ae70e4",
