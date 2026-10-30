@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T07:12:26.515Z",
+  "updatedAt": "2026-10-30T07:21:11.603Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,9 +13,9 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5221,
-  "aday": 5221,
-  "uygun": 3169,
+  "toplamHaber": 5222,
+  "aday": 5222,
+  "uygun": 3170,
   "secilen": 3076,
   "red": {
     "editör notu özetle aynı": 7,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 111
+    "tekrar": 112
   },
   "ornekTekrarlar": [
     {
@@ -102,16 +102,16 @@
       "twin": "Bursa deprem hafızasını masaya yatırdı: 1855 felaketi konuşuldu"
     },
     {
+      "title": "Binance 6,3 Milyar Dolar Hack ile Karşı Karşıya",
+      "twin": "Binance siber saldırısının maliyetini 6,3 milyar dolar olarak açıkladı"
+    },
+    {
       "title": "Fransa'nın borçlanma maliyeti 24 yılın en yüksek seviyesine ulaştı",
       "twin": "Fransa Tahvil Faizi 24 Yılın Zirvesinde: Hedge Fonların Rolü Tartışılıyor"
     },
     {
       "title": "Apple M6 Çipli 14 İnç MacBook Pro Grafik ve AI Performansını %30 Artırdı",
       "twin": "Apple M6 çipli 14 inç MacBook Pro tanıtıldı: İşte özellikleri ve fiyatı"
-    },
-    {
-      "title": "Apple iOS 27.2 Güncellemesi Siri'yi Konuşmaları Hatırlayacak",
-      "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
     }
   ],
   "days": {
@@ -323,6 +323,7 @@
       "88b0626e9ba7fa0d",
       "8a2349b84121a02e",
       "df6089916309c27f",
+      "e30192a4615d41b7",
       "263466f75b702e2e",
       "af25e81737aeea14",
       "7700486dcd3552e0",
@@ -338,11 +339,11 @@
       "4713b66142288fc3",
       "a8050e3861ab64dd",
       "7b4fbeb6b29c8c0d",
+      "e84d591f4045fc9a",
       "d90af045fb007dac",
       "79b623b7bff4742f",
       "16b117ced6e63e45",
       "174505134bc9c3fc",
-      "e30192a4615d41b7",
       "068cc02ed6734f50",
       "7bdc81ebd97fa392",
       "ace7d032ece86483",
@@ -354,7 +355,6 @@
       "aa4cb3d31a30d5de",
       "ee821165315eb161",
       "8ba85913b293c85a",
-      "e84d591f4045fc9a",
       "cd1753f9fd980dd5",
       "e04c349360953110",
       "99048ad1a9773dab",
@@ -3297,6 +3297,7 @@
     "d94c1c2fe8c487a5",
     "9c57cf58b99b48fa",
     "0b562b34d0558c9a",
+    "e30192a4615d41b7",
     "cfca98d27d0b2233",
     "c5771467ede91f2c",
     "c8f5b1cd188e29b5",
@@ -3386,6 +3387,7 @@
     "9a48bb7360b0cf31",
     "44e89da04d4ec594",
     "3e2b6591638d752d",
+    "e84d591f4045fc9a",
     "4ff32f7f0d29b9f1",
     "b38df0538db3aa9e",
     "066ab2051e99d829",
@@ -3400,7 +3402,6 @@
     "da1c6fb24d1713fc",
     "582f0afb0b80d6da",
     "f08e354080925601",
-    "e30192a4615d41b7",
     "90aba693ecf62d9c",
     "d4c8774cfea383b8",
     "22b7f128f8063029",
@@ -3496,7 +3497,6 @@
     "7f67c2139c5895e6",
     "e3de0c1e02b93e0d",
     "92fcd1497a23af40",
-    "e84d591f4045fc9a",
     "e4689cb8019010a8",
     "199eecef3d4748e1",
     "fb5bbfffc4661939",
