@@ -13,12 +13,54 @@ export function getStaticPaths() {
 
 const { tag } = Astro.props;
 const { items, current, totalPages: pages, total } = paginate(tag.articles, 1, PER_PAGE);
+
+// Yalnızca dizine giren etiket sayfalarına yapısal veri eklenir: noindex
+// sayfalarda schema yayınlamak tarama bütçesini boşa harcar.
+const indeksli = etiketIndeksliMi(total);
+const kok = Astro.site ? String(Astro.site).replace(/\/+$/, "") : "https://haberinai.site";
+const sayfaUrl = `${kok}/etiket/${tag.slug}/`;
+
+const schema = indeksli
+  ? {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "@id": `${sayfaUrl}#sayfa`,
+          url: sayfaUrl,
+          name: `${tag.name} haberleri`,
+          description: `${tag.name} ile ilgili güncel haberler, özetler ve analizler.`,
+          inLanguage: "tr-TR",
+          isPartOf: { "@type": "WebSite", name: "HaberinAi", url: kok },
+          mainEntity: {
+            "@type": "ItemList",
+            numberOfItems: items.length,
+            itemListElement: items.slice(0, 20).map((a, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              url: `${kok}${a.url}`,
+              name: a.title,
+            })),
+          },
+        },
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Ana Sayfa", item: `${kok}/` },
+            { "@type": "ListItem", position: 2, name: "Konular", item: `${kok}/etiketler/` },
+            { "@type": "ListItem", position: 3, name: tag.name, item: sayfaUrl },
+          ],
+        },
+      ],
+    }
+  : undefined;
 ---
 
 <Base
   title={`${tag.name} haberleri — HaberinAi`}
   description={`${tag.name} ile ilgili en güncel haberler, özetler ve yapay zekâ yorumları. ${total} haber.`}
-  noindex={!etiketIndeksliMi(total)}
+  noindex={!indeksli}
+  schema={schema}
 >
   <div class="container">
     <header class="tag-head">

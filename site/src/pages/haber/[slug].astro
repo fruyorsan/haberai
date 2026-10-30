@@ -24,6 +24,29 @@ const { article } = Astro.props;
 const all = getYayinArticles();
 const date = formatDate(publishedISO(article));
 
+// Kapak görselinin kredisi: açık lisanslı fotoğrafta (Openverse/Commons)
+// fotoğrafçı + lisans, kaynak siteden alınan fotoğrafta yayın adı gösterilir.
+// Tasarım kartında (foto === false) fotoğraf olmadığı için kredi basılmaz.
+const kapakKredisi =
+  article.kapak?.foto === false
+    ? null
+    : article.gorselKaynak && article.gorselKaynak.sayfa
+      ? {
+          ad: [article.gorselKaynak.yazar, article.gorselKaynak.lisans].filter(Boolean).join(" · "),
+          url: article.gorselKaynak.sayfa,
+        }
+      : article.source
+        ? { ad: article.source, url: article.sourceUrl || "" }
+        : null;
+
+// Sağlık ve ekonomi içeriklerinde okuru yanıltmamak için görünür uyarı.
+const icerikUyarisi =
+  article.category === "Sağlık"
+    ? "Bu içerik genel bilgilendirme amaçlıdır; tıbbi tavsiye, teşhis veya tedavi yerine geçmez. Sağlığınızla ilgili kararlar için hekiminize danışın."
+    : ["Ekonomi", "Piyasa"].includes(article.category)
+      ? "Bu içerik genel bilgilendirme amaçlıdır; yatırım, alım-satım veya finansal tavsiye niteliği taşımaz. Yatırım kararları risk içerir."
+      : "";
+
 // Reklam yalnızca dizine açık (kalite kapısını geçmiş) haberlerde gösterilir.
 // noindex/thin sayfalarda reklam göstermek AdSense'in "düşük değerli içerik"
 // değerlendirmesini besler; ayrıca haber başına en fazla iki birim tutulur.
@@ -398,6 +421,19 @@ const breadcrumbLd = {
         </div>
       )}
 
+      {kapakKredisi && kapakKredisi.ad && (
+        <p class="post__gorsel-kredi">
+          Fotoğraf:{" "}
+          {kapakKredisi.url ? (
+            <a href={kapakKredisi.url} target="_blank" rel="noopener nofollow">
+              {kapakKredisi.ad}
+            </a>
+          ) : (
+            kapakKredisi.ad
+          )}
+        </p>
+      )}
+
       <div class="post__body">
         {/* ÖZET EN ÜSTTE: sitemizin asıl vaadi kısalık ve netlik. Okur, gövdeyi okumadan
             haberi anlayabilmeli; ayrıntı isteyen aşağıdaki "Haberin Detayı"na iner. */}
@@ -450,6 +486,7 @@ const breadcrumbLd = {
                     <HaberFigur
                       url={foto.url}
                       baslik={foto.caption || article.title}
+                      kaynakAd={article.source}
                       altyazi={foto.altyazi || undefined}
                       alt={foto.alt || `${article.title} — haber fotoğrafı`}
                     />
@@ -494,15 +531,29 @@ const breadcrumbLd = {
 
       {article.tags?.length > 0 && (
         <div class="post__tags">
-          {article.tags.map((t) => (
-            <a class="post__tag" href={tagUrl(t) || `/ara/?q=${encodeURIComponent(t)}`}>
-              #{t}
-            </a>
-          ))}
+          {article.tags.map((t) => {
+            // Etiketin kendi sayfası yoksa aramaya link VERİLMEZ. Eskiden
+            // `/ara/?q=...` adresine bağlanıyordu; robots.txt bu adresi
+            // kapattığı için Google'da binlerce "robots.txt tarafından
+            // engellendi" URL'i birikiyor ve tarama bütçesini yiyordu.
+            // Artık yalnızca konu metni olarak gösterilir.
+            const url = tagUrl(t);
+            return url ? (
+              <a class="post__tag" href={url}>#{t}</a>
+            ) : (
+              <span class="post__tag post__tag--duz">#{t}</span>
+            );
+          })}
         </div>
       )}
 
       <HaberGuven article={article} publishedIso={publishedIso} modifiedIso={modifiedIso} />
+
+      {icerikUyarisi && (
+        <p class="post__icerik-uyari" role="note">
+          <strong>Bilgilendirme:</strong> {icerikUyarisi}
+        </p>
+      )}
     </article>
 
     {/* Yazı sonu bildirim bloğu (alt paylaşım kutusu kaldırıldı; paylaşım üst barda). */}
@@ -915,6 +966,31 @@ const breadcrumbLd = {
   .post__img.is-broken {
     opacity: 0;
   }
+  .post__gorsel-kredi {
+    margin: 8px 2px 0;
+    font-size: 0.76rem;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  .post__gorsel-kredi a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .post__gorsel-kredi a:hover {
+    color: var(--brand-strong);
+  }
+  .post__icerik-uyari {
+    margin: 18px 0 0;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--brand-strong);
+    border-radius: 10px;
+    background: var(--surface);
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--text-2);
+  }
 
   .post__body {
     font-size: 1.06rem;
@@ -1083,6 +1159,16 @@ const breadcrumbLd = {
     border-color: var(--red);
     color: var(--red-dark);
     transform: translateY(-2px);
+  }
+  /* Kendi sayfası olmayan etiket: link değil, yalnızca konu etiketi. */
+  .post__tag--duz {
+    cursor: default;
+  }
+  .post__tag--duz:hover {
+    background: var(--bg-soft);
+    border-color: var(--line);
+    color: var(--muted);
+    transform: none;
   }
   .post__ai-note {
     display: block;

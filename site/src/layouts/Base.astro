@@ -327,6 +327,7 @@ window.gtag = window.gtag || gtag;
   var onay = null;
   try { onay = localStorage.getItem("cerez-onay"); } catch (e) {}
   var verildi = onay === "kabul" ? "granted" : "denied";
+  if (onay === "kabul") document.documentElement.classList.add("reklam-acik");
   gtag("consent", "default", {
     ad_storage: verildi,
     ad_user_data: verildi,
@@ -336,59 +337,70 @@ window.gtag = window.gtag || gtag;
   });
 })();
 window.__olcumOnayla = function () {
+  document.documentElement.classList.add("reklam-acik");
   gtag("consent", "update", {
     ad_storage: "granted",
     ad_user_data: "granted",
     ad_personalization: "granted",
     analytics_storage: "granted"
   });
+  if (window.__adsYukle) window.__adsYukle();
+  if (window.__gaYukle) window.__gaYukle();
 };`}
     />
 
-    <!-- Google tag (gtag.js) — ERTELENMİŞ YÜKLEME
-         gtag.js tek başına ~500 KB'lık bir indirmedir ve mobilde ilk boyama
-         için yarışır. Bu yüzden yalnızca sayfa tamamen yüklendikten sonra
-         (ya da okuyucu sayfayla etkileşince) indirilir. Consent Mode ve olay
-         komutları kuyrukta bekler (dataLayer); betik geldiğinde işlenir.
-         Not: Okuyucu 1,2 saniyeden kısa sürede çıkarsa o oturum ölçülmez —
-         mobil hız/SEO kazanımı için bilinçli tercih. -->
+    <!-- Google tag (gtag.js) — YALNIZCA ÇEREZ ONAYINDAN SONRA
+         gtag.js tek başına ~500 KB'lık bir indirmedir. KVKK gereği analitik
+         çerezler açık rızaya bağlı olduğundan betik, "Kabul et" denmeden
+         indirilmez; olay komutları dataLayer kuyruğunda bekler. Onay
+         verildiğinde (ya da önceki oturumda verilmişse) sayfa yüklendikten
+         sonra indirilir. -->
     {GA_MEASUREMENT_ID && (
       <script
         is:inline
         set:html={`gtag("js", new Date());
 gtag("config", ${JSON.stringify(GA_MEASUREMENT_ID)}, { anonymize_ip: true });
+window.__gaYukle = function () {
+  if (window.__gaYuklendi) return;
+  window.__gaYuklendi = true;
+  var s = document.createElement("script");
+  s.async = true;
+  s.src = "https://www.googletagmanager.com/gtag/js?id=" + ${JSON.stringify(GA_MEASUREMENT_ID)};
+  document.head.appendChild(s);
+};
 (function () {
-  var geldi = false;
-  function yukle() {
-    if (geldi) return;
-    geldi = true;
-    var s = document.createElement("script");
-    s.async = true;
-    s.src = "https://www.googletagmanager.com/gtag/js?id=" + ${JSON.stringify(GA_MEASUREMENT_ID)};
-    document.head.appendChild(s);
-    window.removeEventListener("pointerdown", yukle);
-    window.removeEventListener("keydown", yukle);
-    window.removeEventListener("touchstart", yukle);
-    window.removeEventListener("scroll", yukle);
-  }
-  window.addEventListener("pointerdown", yukle, { passive: true });
-  window.addEventListener("keydown", yukle);
-  window.addEventListener("touchstart", yukle, { passive: true });
-  window.addEventListener("scroll", yukle, { passive: true });
-  if (document.readyState === "complete") setTimeout(yukle, 1200);
-  else window.addEventListener("load", function () { setTimeout(yukle, 1200); });
+  var onay = null;
+  try { onay = localStorage.getItem("cerez-onay"); } catch (e) {}
+  if (onay !== "kabul") return;
+  if (document.readyState === "complete") setTimeout(window.__gaYukle, 1200);
+  else window.addEventListener("load", function () { setTimeout(window.__gaYukle, 1200); });
 })();`}
       />
     )}
 
-    <!-- AdSense: kimlik tanımlıysa (onay öncesi reklamlar kişiselleştirilmez) -->
+    <!-- AdSense: yalnızca çerez onayı ("Kabul et") verildikten sonra yüklenir.
+         Onay öncesi reklam betiği hiç indirilmez; böylece reklam/ölçüm
+         tanımlayıcıları rıza olmadan oluşmaz. Meta etiketi doğrulama için
+         her zaman basılır. -->
     {ADSENSE_CLIENT && <meta name="google-adsense-account" content={ADSENSE_CLIENT} />}
     {ADSENSE_CLIENT && (
       <script
-        async
-        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
-        crossorigin="anonymous"
-        is:inline></script>
+        is:inline
+        set:html={`window.__adsYukle = function () {
+  if (window.__adsYuklendi) return;
+  window.__adsYuklendi = true;
+  var s = document.createElement("script");
+  s.async = true;
+  s.crossOrigin = "anonymous";
+  s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + ${JSON.stringify(ADSENSE_CLIENT)};
+  document.head.appendChild(s);
+};
+(function () {
+  var onay = null;
+  try { onay = localStorage.getItem("cerez-onay"); } catch (e) {}
+  if (onay === "kabul") window.__adsYukle();
+})();`}
+      />
     )}
 
     <!-- Reklam engelleyici dayanıklılığı.
@@ -455,6 +467,11 @@ window.HaberinaiOS = window.HaberinaiOS || {};
 window.HaberinaiOS.hazir = new Promise(function (coz) { window.HaberinaiOS._coz = coz; });
 OneSignalDeferred.push(async function (OneSignal) {
   try {
+    /* KVKK: init'ten ÖNCE çağrılmalı. Aksi hâlde SDK, okuyucu izin vermeden
+       cihaz kimliği/abonelik verisi toplayabilir. */
+    OneSignal.setConsentRequired(true);
+  } catch (e) {}
+  try {
     await OneSignal.init({
       appId: ${JSON.stringify(ONESIGNAL_APP_ID)},
       serviceWorkerPath: "/OneSignalSDKWorker.js",
@@ -471,7 +488,6 @@ OneSignalDeferred.push(async function (OneSignal) {
     return;
   }
   try {
-    OneSignal.setConsentRequired(true);
     var izinli =
       (typeof Notification !== "undefined" && Notification.permission === "granted") ||
       localStorage.getItem("bildirim-abone") === "true";
@@ -498,9 +514,10 @@ OneSignalDeferred.push(async function (OneSignal) {
     </script>
   </head>
   <body>
+    <a class="atla" href="#icerik">İçeriğe geç</a>
     <Header />
     {kategoriSeridi && <CategoryBar />}
-    <main>
+    <main id="icerik">
       <slot />
     </main>
     <Footer />
@@ -595,10 +612,40 @@ OneSignalDeferred.push(async function (OneSignal) {
           document.documentElement.classList.remove("cerez-acik");
           if (secim === "kabul" && window.__olcumOnayla) window.__olcumOnayla();
         });
+
+        // "Çerez Tercihleri" bağlantısı: onayı sıfırlar ve sayfayı yeniler.
+        // Böylece kullanıcı onayını dilediği an geri alabilir (KVKK/GDPR).
+        document.addEventListener("click", function (e) {
+          var b = e.target && e.target.closest ? e.target.closest("[data-cerez-sil]") : null;
+          if (!b) return;
+          e.preventDefault();
+          try {
+            localStorage.removeItem("cerez-onay");
+            localStorage.removeItem("hb_zid");
+          } catch (err) {}
+          window.location.reload();
+        });
       })();
     </script>
 
     <style>
+      /* Klavye kullanıcıları için "İçeriğe geç": menüyü atlayıp doğrudan
+         habere götürür. Görsel olarak yalnızca odaklanınca görünür. */
+      .atla {
+        position: absolute;
+        left: -9999px;
+        top: 0;
+        z-index: 100;
+        padding: 10px 16px;
+        background: var(--surface);
+        color: var(--text);
+        border: 1px solid var(--border);
+        border-radius: 0 0 10px 0;
+        font-weight: 700;
+      }
+      .atla:focus {
+        left: 0;
+      }
       .cerez {
         position: fixed;
         left: 0;

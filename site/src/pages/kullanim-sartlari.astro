@@ -1,13 +1,25 @@
 ---
 import Base from "../layouts/Base.astro";
-import { CONTACT_EMAIL } from "../lib/site-meta.js";
+import { CONTACT_EMAIL, PUBLISHER } from "../lib/site-meta.js";
 
-const updated = "15 Ekim 2026";
+const origin = Astro.site ? String(Astro.site).replace(/\/+$/, "") : "https://haberinai.site";
+const updated = "30 Ekim 2026";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Kullanım Şartları — HaberinAi",
+  description: "HaberinAi kullanım şartları, sorumluluk sınırları ve uygulanacak hukuk.",
+  url: `${origin}/kullanim-sartlari/`,
+  dateModified: "2026-10-30",
+};
 ---
 
 <Base
   title="Kullanım Şartları — HaberinAi"
-  description="HaberinAi kullanım şartları ve yasal bilgilendirme."
+  description="HaberinAi kullanım şartları: hesaplar, yorumlar, içerik kullanımı, abonelikler, sorumluluk sınırları ve uygulanacak hukuk."
+  canonical={`${origin}/kullanim-sartlari/`}
+  schema={schema}
 >
   <div class="container prose">
     <h1>Kullanım Şartları</h1>
@@ -15,67 +27,127 @@ const updated = "15 Ekim 2026";
 
     <p>
       <strong>HaberinAi</strong> ("Site") bir haber derleme ve yapay zekâ destekli özetleme
-      platformudur. Siteyi ziyaret ederek veya içeriklerini kullanarak bu şartları kabul etmiş
-      olursunuz.
+      platformudur. Siteyi ziyaret ederek, hesap oluşturarak veya içeriklerini kullanarak bu
+      şartları kabul etmiş olursunuz. Şartları kabul etmiyorsanız siteyi kullanmayınız.
     </p>
 
-    <h2>1. İçeriğin Niteliği</h2>
+    <h2>1. Taraflar ve Kapsam</h2>
+    <p>
+      Site, {PUBLISHER.ad} tarafından işletilir. İletişim:
+      <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Bu şartlar; site, okuyucu hesapları,
+      yorumlar, bildirimler ve Premium/VIP abonelikleri dâhil tüm hizmetleri kapsar. Aboneliklere
+      ilişkin özel koşullar <a href="/mesafeli-satis/">Ön Bilgilendirme ve Mesafeli Satış
+      Sözleşmesi</a>'nde düzenlenir.
+    </p>
+
+    <h2>2. İçeriğin Niteliği</h2>
     <p>
       Sitedeki içerikler; resmi açıklamalar, basın bültenleri ve birinci el veriler doğrultusunda
-      <strong>editoryal değerlendirmeler ve yapay zekâ destekli analizlerle</strong> hazırlanır. İçerikler bilgilendirme
-      amaçlıdır ve <strong>yatırım, hukuki veya tıbbi tavsiye niteliği taşımaz</strong>.
+      <strong>editoryal değerlendirmeler ve yapay zekâ destekli analizlerle</strong> hazırlanır.
+      İçerikler bilgilendirme amaçlıdır ve <strong>yatırım, hukuki veya tıbbi tavsiye niteliği
+      taşımaz</strong>. Sağlık, ekonomi ve piyasa içeriklerinde ilgili sayfada ayrıca uyarı
+      gösterilir.
     </p>
 
-    <h2>2. Telif ve Kullanım</h2>
+    <h2>3. Hesap, Yorum ve Kullanıcı Yükümlülükleri</h2>
+    <ul>
+      <li>
+        Hesap oluştururken doğru bilgi vermeli, şifrenizi gizli tutmalısınız. Hesabınız üzerinden
+        yapılan işlemlerden siz sorumlusunuz.
+      </li>
+      <li>
+        Yorumlarda hakaret, tehdit, nefret söylemi, kişisel veri paylaşımı, spam, reklam veya
+        hukuka aykırı içerik yayımlanamaz. Bu tür içerikler önceden bildirim yapılmaksızın
+        silinebilir; hesap askıya alınabilir veya kapatılabilir.
+      </li>
+      <li>
+        Yorum ve içeriklerinizden doğan hukuki sorumluluk size aittir. Üçüncü kişilerin haklarını
+        ihlal etmeniz hâlinde doğacak zararları tazmin etmeyi kabul edersiniz.
+      </li>
+      <li>
+        Siteye otomatik araçlarla aşırı yük bindirmek, güvenlik önlemlerini aşmaya çalışmak veya
+        hizmeti kesintiye uğratmak yasaktır.
+      </li>
+    </ul>
+
+    <h2>4. Telif ve Kullanım</h2>
     <p>
       Sitedeki haber metinleri ve özetler HaberinAi editör masası tarafından özgün olarak üretilir;
-      kopyala-yapıştır içerik yayınlanmaz. Telif hakkı sahiplerinin talebi hâlinde ilgili içerik
-      incelenir, kaldırılır veya güncellenir.
+      kopyala-yapıştır içerik yayınlanmaz. Görsellerde kaynak, fotoğrafçı ve lisans bilgisi ilgili
+      görselin altında gösterilir. Telif hakkı sahiplerinin talebi hâlinde ilgili içerik incelenir,
+      kaldırılır veya güncellenir. Ayrıntılar: <a href="/telif/">İçerik ve Telif Politikası</a>.
     </p>
 
-    <h2>3. Yapay Zekâ İçeriği</h2>
+    <h2>5. Yapay Zekâ İçeriği</h2>
     <p>
-      "AI Yorumu" başlıklı bölümler otomatik üretilen analizlerdir; kişisel görüş yerine
-      makine tarafından oluşturulmuş değerlendirmeler içerir. Bu bölümlerde hata veya eksiklik
-      bulunabilir.
+      "AI Yorumu" başlıklı bölümler otomatik üretilen analizlerdir; kişisel görüş yerine makine
+      tarafından oluşturulmuş değerlendirmeler içerir. Bu bölümlerde hata veya eksiklik bulunabilir.
+      Önemli kararlar için bağımsız kaynaklara ve uzman görüşüne başvurun.
     </p>
 
-    <h2>4. Sorumluluğun Sınırlandırılması</h2>
+    <h2>6. Sorumluluğun Sınırlandırılması</h2>
     <p>
       Site, içeriklerin doğruluğu, güncelliği veya eksiksizliği konusunda garanti vermez.
-      İçeriklerin kullanımından doğabilecek doğrudan veya dolaylı zararlardan Site sorumlu
-      tutulamaz.
+      İçeriklerin kullanımından doğabilecek doğrudan veya dolaylı zararlardan, kâr kaybından veya
+      veri kaybından Site sorumlu tutulamaz. Bu sınırlama, tüketici mevzuatından doğan ve
+      sözleşmeyle sınırlandırılamayan hakları etkilemez.
     </p>
 
-    <h2>5. Fikri Mülkiyet</h2>
+    <h2>7. Fikri Mülkiyet</h2>
     <p>
       Sitenin tasarımı, yazılımı ve özgün derlemeleri HaberinAi'ye aittir. İzinsiz kopyalanması,
       çoğaltılması veya ticari amaçla kullanılması yasaktır. Kaynak gösterilerek yapılan makul
       alıntılar bu kapsam dışıdır.
     </p>
 
-    <h2>6. Üçüncü Taraf Bağlantılar ve Reklamlar</h2>
+    <h2>8. Üçüncü Taraf Bağlantılar ve Reklamlar</h2>
     <p>
       Sitede üçüncü taraf bağlantılar ve reklamlar bulunabilir. Bu içeriklerden ilgili üçüncü
-      taraflar sorumludur.
+      taraflar sorumludur. Reklamların kişiselleştirilmesi çerez tercihinize bağlıdır; ayrıntılar
+      <a href="/gizlilik/">Gizlilik ve Çerez Politikası</a>'nda yer alır.
     </p>
 
-    <h2>7. Değişiklikler</h2>
+    <h2>9. Premium ve VIP Abonelikler</h2>
+    <p>
+      Abonelikler aylık yenilenir ve dilediğiniz an iptal edilebilir. Ödeme Lemon Squeezy
+      üzerinden alınır; kart bilgileri sitemizde tutulmaz. Cayma hakkı, iade ve faturalandırma
+      koşulları <a href="/mesafeli-satis/">Ön Bilgilendirme ve Mesafeli Satış Sözleşmesi</a>'nde
+      düzenlenir.
+    </p>
+
+    <h2>10. Yaş ve Yasal Ehliyet</h2>
+    <p>
+      Site 18 yaş altındaki kullanıcılara yönelik değildir. 18 yaşından küçükseniz siteyi yalnızca
+      yasal temsilcinizin gözetiminde ve onayıyla kullanabilirsiniz. Ücretli abonelikler için
+      yasal ehliyet gereklidir.
+    </p>
+
+    <h2>11. Uygulanacak Hukuk ve Yetkili Mahkeme</h2>
+    <p>
+      Bu şartlardan doğan uyuşmazlıklarda Türkiye Cumhuriyeti hukuku uygulanır. Tüketici
+      işlemlerinde, Ticaret Bakanlığı'nca ilan edilen parasal sınırlar dâhilinde Tüketici Hakem
+      Heyetleri ve Tüketici Mahkemeleri yetkilidir. Diğer uyuşmazlıklarda İstanbul mahkemeleri ve
+      icra daireleri yetkilidir.
+    </p>
+
+    <h2>12. Değişiklikler</h2>
     <p>
       HaberinAi, bu şartları önceden bildirmeksizin güncelleme hakkını saklı tutar. Güncel sürüm
-      bu sayfada yayımlanır.
+      bu sayfada yayımlanır; önemli değişiklikler yürürlük tarihiyle birlikte duyurulur. Siteyi
+      kullanmaya devam etmeniz güncel şartları kabul ettiğiniz anlamına gelir.
     </p>
 
-    <h2>8. İletişim</h2>
+    <h2>13. İletişim</h2>
     <p>
-      Sorularınız için: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+      Sorularınız için: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> ·
+      <a href="/kunye/">Künye</a> · <a href="/iletisim/">İletişim</a>
     </p>
   </div>
 </Base>
 
 <style>
   .prose {
-    max-width: 780px;
+    max-width: 820px;
     margin: 40px auto;
   }
   .prose h1 {
@@ -90,6 +162,9 @@ const updated = "15 Ekim 2026";
   .prose li {
     line-height: 1.78;
     color: var(--text-2);
+  }
+  .prose ul {
+    padding-left: 22px;
   }
   .prose a {
     color: var(--red);

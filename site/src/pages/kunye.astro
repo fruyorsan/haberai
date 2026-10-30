@@ -1,12 +1,24 @@
 ---
 import Base from "../layouts/Base.astro";
-import { CONTACT_EMAIL, PUBLISHER } from "../lib/site-meta.js";
+import { CONTACT_EMAIL, HOSTING, PUBLISHER } from "../lib/site-meta.js";
 
 const origin = Astro.site ? String(Astro.site).replace(/\/+$/, "") : "https://haberinai.site";
 
 const yayinciAdres = PUBLISHER.adres
   ? [PUBLISHER.adres, PUBLISHER.sehir].filter(Boolean).join(", ")
   : "";
+
+// Künyede yalnızca tanımlı alanlar basılır; uydurma kişi/kurum bilgisi yazılmaz.
+const kimlik = [
+  { etiket: "İmtiyaz Sahibi", deger: PUBLISHER.imtiyazSahibi || PUBLISHER.ad },
+  { etiket: "Sorumlu Yazı İşleri Müdürü", deger: PUBLISHER.sorumluMudur || PUBLISHER.ad },
+  { etiket: "Ticaret Unvanı", deger: PUBLISHER.ticaretUnvan },
+  {
+    etiket: "Vergi Bilgisi",
+    deger: [PUBLISHER.vergiDairesi, PUBLISHER.vergiNo].filter(Boolean).join(" — "),
+  },
+  { etiket: "ETBİS Kayıt No", deger: PUBLISHER.etbis },
+].filter((x) => x.deger);
 
 const schema = {
   "@context": "https://schema.org",
@@ -16,7 +28,7 @@ const schema = {
       name: "Künye — HaberinAi",
       description: "HaberinAi künye bilgileri: Yayın kimliği, içerik sorumluluğu ve iletişim kanalları.",
       url: `${origin}/kunye/`,
-      dateModified: "2026-10-27",
+      dateModified: "2026-10-30",
       publisher: { "@id": `${origin}/kunye/#yayinci` },
     },
     {
@@ -47,7 +59,7 @@ const schema = {
         <strong>HaberinAi</strong> yayın kimliği, içerik yönetimi ve yasal bildirim kanallarına
         ilişkin bilgiler aşağıda yer almaktadır.
       </p>
-      <p class="kunye__guncelleme">Son güncelleme: 27 Ekim 2026</p>
+      <p class="kunye__guncelleme">Son güncelleme: 30 Ekim 2026</p>
     </header>
 
     <section class="kunye__yayinci" id="yayinci-kimlik" aria-labelledby="yayinci-baslik">
@@ -86,7 +98,19 @@ const schema = {
             <dd>{PUBLISHER.telefon}</dd>
           </div>
         )}
+        {kimlik.map((x) => (
+          <div>
+            <dt>{x.etiket}</dt>
+            <dd>{x.deger}</dd>
+          </div>
+        ))}
       </dl>
+      <p class="kunye__yayinci-not">
+        <strong>Yer sağlayıcı:</strong> {HOSTING.ad} — {HOSTING.adres}. Site, 5651 sayılı Kanun
+        kapsamında yer sağlayıcı hizmeti alınarak yayımlanmaktadır. Yer sağlayıcının yalnızca
+        barındırma hizmeti sunması, içerik sorumluluğunu ortadan kaldırmaz; editoryal sorumluluk
+        yayıncıya aittir.
+      </p>
     </section>
 
     <div class="kunye__grid">
@@ -184,13 +208,18 @@ const schema = {
 
           <div>
             <dt>Yanıt ve İşlem Süresi</dt>
-            <dd>Geçerli bildirimler en geç 48 saat içinde sonuçlandırılır.</dd>
+            <dd>
+              Kişilik haklarına saldırı ve özel hayatın gizliliği kapsamındaki (5651 m.9) kaldırma
+              bildirimleri en geç <strong>24 saat</strong>; diğer düzeltme ve telif talepleri en geç
+              <strong>48 saat</strong> içinde sonuçlandırılır.
+            </dd>
           </div>
 
           <div>
             <dt>Yasal Metinler</dt>
             <dd>
               <a href="/gizlilik/">Gizlilik Politikası</a> · <a href="/kullanim-sartlari/">Kullanım Şartları</a>
+              {" · "}<a href="/mesafeli-satis/">Mesafeli Satış</a>
             </dd>
           </div>
         </dl>
@@ -202,7 +231,8 @@ const schema = {
       <p>
         HaberinAi'de yayımlanan içerikler kamuoyunu bilgilendirme amacı taşır; yatırım, hukuk veya
         tıbbi tavsiye niteliğinde değildir. Her haberin hazırlanma yöntemi ve sorumluluğu açıkça
-        belirtilir; düzeltme ve kaldırma talepleri en geç 48 saat içinde sonuçlandırılır.
+        belirtilir. 5651 sayılı Kanun kapsamındaki kaldırma bildirimleri en geç 24 saat, diğer
+        düzeltme ve telif talepleri en geç 48 saat içinde sonuçlandırılır.
       </p>
       <p>
         5846 sayılı Fikir ve Sanat Eserleri Kanunu ile 5651 sayılı Kanun kapsamındaki her türlü

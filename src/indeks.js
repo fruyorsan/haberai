@@ -342,6 +342,15 @@ function main() {
 
   const ids = kabul.map((a) => String(a.id));
 
+  // Değişiklik yoksa dosyayı yeniden yazma. `updatedAt` her turda değiştiği
+  // için her çalıştırma "veri güncellemesi" commit'i üretiyor ve site boş
+  // yere yeniden yayınlanıyordu (sürüm çalkantısı + ara sıra 5xx).
+  const onceki = oncekiIndeks();
+  if (onceki.size === ids.length && ids.every((id) => onceki.has(id))) {
+    console.log(`İndeks: değişiklik yok (${ids.length} URL korundu).`);
+    return;
+  }
+
   const cikti = {
     updatedAt: new Date().toISOString(),
     gunluk: GUNLUK,

@@ -39,6 +39,54 @@ const latest = getYayinArticles().slice(0, 8);
       }
     </ul>
   </div>
+
+  <script is:inline>
+    // Taşınmış/eski adresleri kurtar: yolun son parçasını arama indeksiyle
+    // karşılaştır, yeterince benzeyen tek bir haber varsa oraya yönlendir.
+    // Eşleşme yoksa 404 sayfası olduğu gibi kalır (yanlış yönlendirme yapmaz).
+    (async () => {
+      try {
+        const parca = decodeURIComponent(location.pathname)
+          .replace(/\/+$/, "")
+          .split("/")
+          .filter(Boolean)
+          .pop();
+        if (!parca) return;
+        const slug = parca
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-+|-+$/g, "");
+        const kelimeler = slug.split("-").filter((k) => k.length > 2);
+        if (kelimeler.length < 3) return;
+
+        const res = await fetch("/search-index.json", { cache: "force-cache" });
+        if (!res.ok) return;
+        const liste = await res.json();
+        if (!Array.isArray(liste)) return;
+
+        const kume = new Set(kelimeler);
+        let enIyi = null;
+        let enIyiPuan = 0;
+        for (const a of liste) {
+          const hedef = String(a.u || "").toLowerCase();
+          if (!hedef) continue;
+          const ortak = hedef
+            .split(/[^a-z0-9]+/)
+            .filter((k) => kume.has(k)).length;
+          if (ortak > enIyiPuan) {
+            enIyiPuan = ortak;
+            enIyi = a;
+          }
+        }
+        // En az 3 ortak kelime ve kelimelerin çoğu eşleşmeli.
+        if (enIyi && enIyiPuan >= Math.max(3, Math.ceil(kelimeler.length * 0.6))) {
+          location.replace(enIyi.u);
+        }
+      } catch {
+        /* sessizce geç: 404 sayfası zaten çalışıyor */
+      }
+    })();
+  </script>
 </Base>
 
 <style>

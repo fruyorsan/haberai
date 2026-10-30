@@ -1,9 +1,13 @@
 ---
 import Base from "../layouts/Base.astro";
-import { CONTACT_EMAIL } from "../lib/site-meta.js";
+import { CONTACT_EMAIL, HOSTING, PUBLISHER } from "../lib/site-meta.js";
 
 const origin = Astro.site ? String(Astro.site).replace(/\/+$/, "") : "https://haberinai.site";
-const updated = "27 Ekim 2026";
+const updated = "30 Ekim 2026";
+
+const veriSorumlusuAdres = PUBLISHER.adres
+  ? [PUBLISHER.adres, PUBLISHER.sehir].filter(Boolean).join(", ")
+  : PUBLISHER.sehir;
 
 const schema = {
   "@context": "https://schema.org",
@@ -12,151 +16,331 @@ const schema = {
   description:
     "HaberinAi gizlilik, çerez, Google AdSense ve reklam politikası; KVKK kapsamındaki haklar.",
   url: `${origin}/gizlilik/`,
-  dateModified: "2026-10-27",
+  dateModified: "2026-10-30",
   publisher: { "@type": "Organization", name: "HaberinAi", url: `${origin}/` },
 };
+
+const cerezler = [
+  {
+    ad: "cerez-onay",
+    tur: "Zorunlu",
+    amac: "Çerez tercihinizi hatırlar; onay verilmeden analitik/reklam çerezleri çalışmaz.",
+    sure: "Siz silene kadar (tarayıcı deposu)",
+  },
+  {
+    ad: "hb-oturum, yorum-ad, hb_zid",
+    tur: "Zorunlu",
+    amac: "Okuyucu hesabı oturumu, yorumlarda görünen takma ad ve anonim ziyaretçi kimliği.",
+    sure: "Oturum / siz silene kadar",
+  },
+  {
+    ad: "hb-palet, theme, dil, bildirim-*",
+    tur: "Tercih",
+    amac: "Tema, arayüz dili ve bildirim tercihlerinizi (kategori, sıklık) hatırlar.",
+    sure: "Siz silene kadar",
+  },
+  {
+    ad: "_ga, _ga_*",
+    tur: "Analitik (onaya bağlı)",
+    amac: "Google Analytics 4 ile anonimleştirilmiş ziyaret ölçümü.",
+    sure: "En fazla 14 ay",
+  },
+  {
+    ad: "_gcl_au, IDE, NID, __gads",
+    tur: "Reklam (onaya bağlı)",
+    amac: "Google AdSense reklamlarının ölçümü ve kişiselleştirilmesi.",
+    sure: "En fazla 13 ay",
+  },
+  {
+    ad: "OneSignal bildirim kimliği",
+    tur: "İşlevsel (izne bağlı)",
+    amac: "Tarayıcı bildirimlerine abone olduğunuzda bildirim göndermek için kullanılan cihaz kimliği.",
+    sure: "Abonelikten çıkana kadar",
+  },
+];
 ---
 
 <Base
   title="Gizlilik ve Çerez Politikası — HaberinAi"
-  description="HaberinAi gizlilik, çerez ve reklam politikası."
+  description="HaberinAi gizlilik, çerez ve reklam politikası; KVKK kapsamındaki haklar."
   canonical={`${origin}/gizlilik/`}
   schema={schema}
 >
   <div class="container prose">
     <h1>Gizlilik ve Çerez Politikası</h1>
-    <p class="muted">Son güncelleme: {updated}</p>
+    <p class="muted">Son güncelleme: {updated} · Yürürlük: {updated}</p>
 
     <p>
-      Bu politika, <strong>HaberinAi</strong> ("Site") tarafından ziyaretçilerin verilerinin nasıl
-      işlendiğini açıklar. Siteyi kullanarak bu politikayı kabul etmiş olursunuz.
+      Bu politika, <strong>HaberinAi</strong> ("Site") tarafından kişisel verilerin 6698 sayılı
+      Kişisel Verilerin Korunması Kanunu ("KVKK") ve ilgili mevzuata uygun olarak nasıl
+      işlendiğini açıklar. Siteyi kullanmanız, zorunlu veri işleme faaliyetleri bakımından bu
+      politikayı kabul ettiğiniz anlamına gelir; analitik ve reklam çerezleri ise yalnızca açık
+      rızanızla çalışır.
     </p>
 
-    <h2>1. Topladığımız Bilgiler</h2>
-    <p>
-      Site, sizden doğrudan kimlik bilgisi (ad, e-posta vb.) <strong>talep etmez</strong> ve
-      üyelik gerektirmez. Bununla birlikte, siteyi ziyaret ettiğinizde bazı teknik ve anonim
-      veriler otomatik olarak toplanabilir:
-    </p>
-    <ul>
-      <li>Tarayıcı ve cihaz türü, işletim sistemi, ekran çözünürlüğü</li>
-      <li>Ziyaret edilen sayfalar, ziyaret süresi, trafik kaynağı</li>
-      <li>Yaklaşık konum (ülke/şehir düzeyinde, IP'den türetilen)</li>
-    </ul>
-    <p>Bu veriler kişisel kimliğinizle doğrudan ilişkilendirilmez.</p>
+    <h2>1. Veri Sorumlusu</h2>
+    <div class="kutu">
+      <p>
+        <strong>{PUBLISHER.ad}</strong><br />
+        Adres: {veriSorumlusuAdres}<br />
+        E-posta: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+      </p>
+      <p class="kutu__not">
+        Veri sorumlusuna ilişkin ticaret unvanı, vergi bilgisi ve ETBİS kaydı
+        <a href="/kunye/">Künye</a> sayfasında yer alır. Barındırma hizmeti {HOSTING.ad}
+        tarafından sağlanır.
+      </p>
+    </div>
 
-    <h2>2. Çerezler</h2>
-    <p>
-      Sitenin çalışması, tercihlerin hatırlanması ve trafik ölçümü için tarayıcınıza küçük metin
-      dosyaları (**çerezler**) yerleştirilebilir. Çerezleri tarayıcı ayarlarınızdan dilediğiniz
-      zaman silebilir veya engelleyebilirsiniz; ancak bu durum bazı özellikleri etkileyebilir.
-    </p>
-
-    <h2>3. Analiz Hizmetleri</h2>
-    <p>
-      Sitemiz, ziyaretçi istatistiklerini anonim olarak ölçmek için <strong>Google Analytics</strong>
-      kullanır. Google Analytics, çerezler aracılığıyla anonim kullanım verileri toplar. Daha fazla
-      bilgi için Google Gizlilik Politikası'na bakabilirsiniz.
-    </p>
-
-    <h2>4. Reklam ve Üçüncü Taraf Reklam Ortakları</h2>
-    <p>
-      Site, yayınını sürdürmek için <strong>Google AdSense</strong> ve diğer üçüncü taraf reklam
-      ağları aracılığıyla reklam gösterebilir. Bu kapsamda:
-    </p>
+    <h2>2. İşlediğimiz Kişisel Veriler</h2>
     <ul>
       <li>
-        Google ve iş ortağı üçüncü taraf yükleniciler, size ilgi alanlarınıza yönelik reklamlar
-        göstermek için çerezlerden (ör. <strong>DoubleClick/DART</strong> çerezi) yararlanabilir.
+        <strong>Teknik veriler:</strong> IP adresi, tarayıcı ve cihaz türü, işletim sistemi,
+        ekran çözünürlüğü, ziyaret edilen sayfalar, ziyaret zamanı ve trafik kaynağı. Bu veriler
+        güvenlik, hata ayıklama ve toplu istatistik amacıyla işlenir.
       </li>
       <li>
-        Bu reklam ortakları, önceki ziyaretlerinize göre reklam sunmak amacıyla sitelere ilişkin
-        anonim verileri kullanabilir.
+        <strong>Analitik veriler (onaya bağlı):</strong> Google Analytics 4 üzerinden sayfa
+        görüntüleme, oturum süresi ve yaklaşık konum (ülke/şehir düzeyinde). IP adresi
+        anonimleştirilir.
       </li>
       <li>
-        Kişiselleştirilmiş reklamları
-        <a href="https://adssettings.google.com" target="_blank" rel="noopener nofollow">Google Reklam Ayarları</a>
-        üzerinden kapatabilirsiniz.
+        <strong>Reklam verileri (onaya bağlı):</strong> Google AdSense ve iş ortaklarının
+        çerezleri aracılığıyla reklam ölçümü ve kişiselleştirme verileri.
       </li>
       <li>
-        İlgi alanına dayalı reklamcılık hakkında daha fazla bilgi ve üçüncü taraf çerez
-        tercihleri için
-        <a href="https://www.aboutads.info" target="_blank" rel="noopener nofollow">www.aboutads.info</a>
-        adresini ziyaret edebilirsiniz.
-      </li>
-    </ul>
-    <p>
-      Üçüncü taraf reklam ağlarının veri uygulamalarından kendi politikaları sorumludur;
-      HaberinAi bu ağların çerezlerini doğrudan kontrol edemez.
-    </p>
-
-    <h3>Reklam politikamız</h3>
-    <ul>
-      <li>
-        Reklamlar yalnızca dizine açık ve editoryal kalite kapısını geçmiş sayfalarda gösterilir.
-        Arama motorlarına kapalı (noindex) sayfalarda reklam yüklenmez.
+        <strong>Yorum verileri:</strong> Yorum yazarken girdiğiniz takma ad, yorum metni,
+        yorumun yapıldığı haber ve gönderim zamanı. Hesabınız varsa yorumunuz hesabınızla
+        ilişkilendirilir. E-posta adresi istenmez.
       </li>
       <li>
-        Bir haber sayfasında en fazla iki reklam birimi bulunur; reklamlar haber metninden
-        "Sponsorlu" etiketiyle ayrılır ve okuru yanıltacak biçimde yerleştirilmez.
+        <strong>Hesap verileri:</strong> Kullanıcı adı, görünen ad, seçtiğiniz avatar, bildirim
+        tercihleri ve şifrenizin <strong>bcrypt ile üretilmiş geri döndürülemez özeti</strong>.
+        Şifrenizin açık hâli hiçbir zaman saklanmaz.
       </li>
       <li>
-        Reklamların kişiselleştirilmesi ve ölçümü, çerez tercihinize bağlıdır. "Kabul et"
-        demeden önce <code>ad_storage</code>, <code>ad_user_data</code> ve
-        <code>ad_personalization</code> sinyalleri <strong>reddedildi</strong> kalır.
+        <strong>Bildirim verileri:</strong> Web push aboneliğinde OneSignal tarafından üretilen
+        cihaz/oyuncu kimliği, tarayıcı ve cihaz bilgisi, abone olduğunuz kategoriler ve bildirim
+        sıklığı tercihi.
       </li>
       <li>
-        Reklam verenlerin haber seçimine, başlığa, özete veya yorumlara müdahalesi kabul
-        edilmez. Sponsorlu içerikler açıkça etiketlenir.
+        <strong>Ödeme verileri:</strong> Premium/VIP aboneliklerinde sipariş numarası, paket
+        bilgisi, e-posta adresi ve varsa hesap kimliğiniz. <strong>Kart bilgileriniz sitemizde
+        tutulmaz</strong>; ödeme Lemon Squeezy tarafından işlenir.
+      </li>
+      <li>
+        <strong>Yerel depolama verileri:</strong> Çerez tercihi, tema, dil, oturum ve bildirim
+        tercihleri tarayıcınızın localStorage alanında tutulur.
       </li>
     </ul>
 
-    <h2>5. Yorumlar</h2>
+    <h2>3. İşleme Amaçları, Hukuki Sebepler ve Saklama Süreleri</h2>
+    <div class="tablo-kap">
+      <table>
+        <thead>
+          <tr>
+            <th>Amaç</th>
+            <th>Hukuki sebep (KVKK m.5)</th>
+            <th>Saklama süresi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sitenin güvenli ve kesintisiz çalışması, kötüye kullanımın önlenmesi</td>
+            <td>Meşru menfaat (m.5/2-f)</td>
+            <td>Sunucu/barındırma günlükleri en fazla 30 gün</td>
+          </tr>
+          <tr>
+            <td>Okuyucu hesabı, yorum ve profil özelliklerinin sunulması</td>
+            <td>Sözleşmenin kurulması/ifası (m.5/2-c)</td>
+            <td>Hesap silinene kadar; silme talebinden sonra en fazla 30 gün</td>
+          </tr>
+          <tr>
+            <td>Yorumların yayımlanması ve moderasyonu</td>
+            <td>Meşru menfaat / kullanıcı talebi (m.5/2-f)</td>
+            <td>Yorum silinene veya hesap kapatılana kadar</td>
+          </tr>
+          <tr>
+            <td>Web push bildirimi gönderimi</td>
+            <td>Açık rıza (m.5/1)</td>
+            <td>Abonelikten çıkana kadar</td>
+          </tr>
+          <tr>
+            <td>Trafik ölçümü ve istatistik</td>
+            <td>Açık rıza (m.5/1)</td>
+            <td>En fazla 14 ay</td>
+          </tr>
+          <tr>
+            <td>Reklam gösterimi ve ölçümü</td>
+            <td>Açık rıza (m.5/1)</td>
+            <td>En fazla 13 ay</td>
+          </tr>
+          <tr>
+            <td>Premium/VIP abonelik ve faturalandırma</td>
+            <td>Sözleşme (m.5/2-c), hukuki yükümlülük (m.5/2-ç)</td>
+            <td>Vergi ve ticaret mevzuatı gereği 10 yıl</td>
+          </tr>
+          <tr>
+            <td>Hukuki taleplerin yanıtlanması</td>
+            <td>Hukuki yükümlülük / hakkın tesisi (m.5/2-ç, e)</td>
+            <td>Talep sonuçlandıktan sonra en fazla 2 yıl</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>4. Çerezler ve Yerel Depolama</h2>
     <p>
-      Yorumlar site içinde çalışır ve <strong>hesap açmanız gerekmez</strong>. Yorum
-      gönderdiğinizde yalnızca yazdığınız takma ad, yorum metni ve gönderim zamanı
-      saklanır; e-posta, IP adresi veya şifre istenmez. Veriler Supabase altyapısında
-      tutulur ve yalnızca bu haberin yorumlarını göstermek için kullanılır. Küfür,
-      hakaret veya reklam içeren yorumlar silinebilir. Yorumunuzun kaldırılmasını
-      isterseniz iletişim adresinden bize ulaşabilirsiniz.
+      Çerezler; sitenin çalışması, tercihlerin hatırlanması, trafik ölçümü ve reklam sunumu için
+      kullanılır. Zorunlu çerezler sitenin çalışması için gereklidir. Analitik ve reklam
+      çerezleri, çerez bildiriminde <strong>"Kabul et"</strong> demeniz hâlinde çalışır; "Sadece
+      zorunlu" seçeneğinde bu çerezler yüklenmez.
+    </p>
+    <div class="tablo-kap">
+      <table>
+        <thead>
+          <tr>
+            <th>Ad</th>
+            <th>Tür</th>
+            <th>Amaç</th>
+            <th>Süre</th>
+          </tr>
+        </thead>
+        <tbody>
+          {cerezler.map((c) => (
+            <tr>
+              <td><code>{c.ad}</code></td>
+              <td>{c.tur}</td>
+              <td>{c.amac}</td>
+              <td>{c.sure}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Tercihinizi değiştirmek veya onayınızı geri almak için sayfanın altındaki
+      <a href="#cerez-tercihleri" data-cerez-sil>Çerez Tercihleri</a> bağlantısını kullanabilir
+      ya da tarayıcınızın site verilerini temizleyebilirsiniz. Onayınızı geri aldığınızda analitik
+      ve reklam çerezleri bir sonraki sayfa yüklemesinde çalışmaz.
     </p>
 
-    <h2>6. Üçüncü Taraf Bağlantılar</h2>
+    <h2>5. Çerez Tercihleriniz ve Google Consent Mode</h2>
+    <p>
+      Site, Google Consent Mode v2 kullanır. Onay vermeden önce <code>ad_storage</code>,
+      <code>ad_user_data</code>, <code>ad_personalization</code> ve
+      <code>analytics_storage</code> sinyalleri <strong>reddedildi</strong> durumundadır. Google
+      AdSense betiği de onay verilene kadar yüklenmez. Kişiselleştirilmiş reklamları ayrıca
+      <a href="https://adssettings.google.com" target="_blank" rel="noopener nofollow">Google
+      Reklam Ayarları</a> üzerinden kapatabilirsiniz.
+    </p>
+
+    <h2>6. Yurt Dışına Aktarım</h2>
+    <p>
+      Site statik olarak yayımlandığı ve hizmet sağlayıcıları küresel ölçekte çalıştığı için
+      kişisel verileriniz yurt dışına aktarılabilir. KVKK m.9 kapsamında aktarım, uygun güvenceler
+      (standart sözleşme hükümleri) ve hizmet sağlayıcıların veri işleme taahhütleri çerçevesinde
+      yapılır. Başlıca alıcılar:
+    </p>
+    <ul>
+      <li><strong>Google LLC</strong> (Analytics, AdSense, Search Console) — ABD</li>
+      <li><strong>Supabase Inc.</strong> (yorumlar, okuyucu hesapları) — ABD / AWS altyapısı</li>
+      <li><strong>OneSignal</strong> (web push) — ABD</li>
+      <li><strong>Lemon Squeezy</strong> (ödeme ve abonelik) — ABD</li>
+      <li><strong>GitHub, Inc.</strong> (barındırma) — ABD</li>
+      <li><strong>Cloudflare, Inc.</strong> (DNS ve ağ hizmeti) — ABD</li>
+    </ul>
+    <p>
+      Bu sağlayıcıların kendi gizlilik politikaları ve veri işleme ekleri geçerlidir. Aktarımın
+      zorunlu olduğu hâllerde KVKK m.9/2 istisnalarına dayanılır.
+    </p>
+
+    <h2>7. Yorumlar</h2>
+    <p>
+      Yorum bırakmak için hesap açmanız <strong>gerekmez</strong>; takma ad yeterlidir. Yorum
+      gönderdiğinizde takma ad, yorum metni ve gönderim zamanı Supabase altyapısında saklanır.
+      Hesabınızla yorum yaparsanız yorum hesabınıza bağlanır. Küfür, hakaret, nefret söylemi veya
+      reklam içeren yorumlar silinebilir. Yorumunuzun kaldırılmasını isterseniz iletişim
+      adresinden bize ulaşabilirsiniz.
+    </p>
+
+    <h2>8. Okuyucu Hesapları</h2>
+    <p>
+      Hesap oluşturduğunuzda kullanıcı adı, görünen ad ve şifrenizin bcrypt özeti Supabase'de
+      saklanır. E-posta adresi veya telefon numarası istenmez. Hesabınızı profilinizden
+      kapatabilir; verilerinizin silinmesini talep edebilirsiniz. Hesap silme talebi, yasal olarak
+      saklanması gereken kayıtlar (ör. ödeme/fatura) hariç en geç 30 gün içinde yerine getirilir.
+    </p>
+
+    <h2>9. Web Push Bildirimleri</h2>
+    <p>
+      Bildirimlere yalnızca tarayıcı izni verdiğinizde abone olursunuz. Bu durumda OneSignal
+      tarafından bir cihaz kimliği oluşturulur ve seçtiğiniz kategorilerde bildirim gönderilir.
+      İstediğiniz zaman site üzerindeki bildirim düğmesinden veya tarayıcı ayarlarından abonelikten
+      çıkabilirsiniz. iOS/Safari'de web push görselleri platform tarafından desteklenmez.
+    </p>
+
+    <h2>10. Ödeme ve Abonelikler</h2>
+    <p>
+      Premium/VIP aboneliklerinde ödeme, uluslararası sertifikalı <strong>Lemon Squeezy</strong>
+      altyapısı üzerinden alınır. Kart bilgileri sitemize hiçbir aşamada girilmez ve tarafımızca
+      saklanmaz. Faturalandırma, iade ve cayma süreçleri için
+      <a href="/mesafeli-satis/">Ön Bilgilendirme ve Mesafeli Satış Sözleşmesi</a> sayfasına bakın.
+    </p>
+
+    <h2>11. Veri Güvenliği</h2>
+    <p>
+      Site HTTPS üzerinden yayımlanır; şifreler bcrypt ile özetlenir; Supabase tabloları Row Level
+      Security (RLS) politikalarıyla korunur. Yetkisiz erişim, veri kaybı veya ihlal şüphesi
+      hâlinde etkilenen kullanıcılar ve Kişisel Verileri Koruma Kurulu, mevzuatta öngörülen süre
+      içinde bilgilendirilir.
+    </p>
+
+    <h2>12. KVKK Kapsamındaki Haklarınız</h2>
+    <p>KVKK m.11 uyarınca aşağıdaki haklara sahipsiniz:</p>
+    <ul>
+      <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme,</li>
+      <li>İşlenmişse buna ilişkin bilgi talep etme,</li>
+      <li>İşlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme,</li>
+      <li>Yurt içinde/yurt dışında aktarıldığı üçüncü kişileri bilme,</li>
+      <li>Eksik veya yanlış işlenmişse düzeltilmesini isteme,</li>
+      <li>KVKK m.7 çerçevesinde silinmesini veya yok edilmesini isteme,</li>
+      <li>Düzeltme/silme işlemlerinin aktarılan üçüncü kişilere bildirilmesini isteme,</li>
+      <li>Otomatik sistemlerle analiz sonucu aleyhinize bir sonucun ortaya çıkmasına itiraz etme,</li>
+      <li>Kanuna aykırı işleme nedeniyle zarara uğramanız hâlinde zararın giderilmesini talep etme.</li>
+    </ul>
+    <p>
+      Başvurunuzu <a href={`mailto:${CONTACT_EMAIL}?subject=KVKK%20Ba%C5%9Fvurusu`}>{CONTACT_EMAIL}</a>
+      adresine, kimliğinizi teşhis edici bilgiler ve talebinizle birlikte iletebilirsiniz.
+      Başvurular en geç <strong>30 gün</strong> içinde ücretsiz olarak yanıtlanır. Talebin
+      reddedilmesi hâlinde Kişisel Verileri Koruma Kurulu'na şikâyet hakkınız saklıdır.
+    </p>
+
+    <h2>13. Çocukların Gizliliği</h2>
+    <p>
+      Site 13 yaş altı çocuklara yönelik değildir ve bilerek onlardan kişisel veri toplamaz.
+      Böyle bir durumun farkına varırsanız bizimle iletişime geçin; veri en kısa sürede silinir.
+    </p>
+
+    <h2>14. Üçüncü Taraf Bağlantılar</h2>
     <p>
       Haberlerde ve sayfa düzeninde üçüncü taraf sitelere bağlantılar bulunabilir. Bu sitelerin
       içeriğinden ve gizlilik uygulamalarından ilgili siteler sorumludur. Bir bağlantıya
       tıkladığınızda o sitenin politikaları geçerli olur.
     </p>
 
-    <h2>7. Çocukların Gizliliği</h2>
+    <h2>15. Değişiklikler ve İletişim</h2>
     <p>
-      Site, 13 yaş altı çocuklardan bilerek kişisel veri toplamaz. Böyle bir durumun farkına
-      varırsanız, bizimle iletişime geçebilirsiniz.
-    </p>
-
-    <h2>8. KVKK Kapsamındaki Haklarınız</h2>
-    <p>
-      6698 sayılı KVKK kapsamında; kişisel verilerinizle ilgili bilgi talep etme, düzeltilmesini
-      veya silinmesini isteme gibi haklara sahipsiniz. Yorumlarda yalnızca takma ad ve yorum
-      metni tutulduğundan, silme talebinizi yorumun yayımlandığı haberin adresini belirterek
-      iletebilirsiniz.
-    </p>
-
-    <h2>9. Değişiklikler</h2>
-    <p>
-      Bu politika zaman zaman güncellenebilir. Güncel sürüm her zaman bu sayfada yayımlanır.
-    </p>
-
-    <h2>10. İletişim</h2>
-    <p>
-      Sorularınız için: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+      Bu politika zaman zaman güncellenebilir; önemli değişiklikler bu sayfada yayımlanır.
+      Sorularınız ve KVKK başvurularınız için:
+      <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
     </p>
   </div>
 </Base>
 
 <style>
   .prose {
-    max-width: 780px;
+    max-width: 820px;
     margin: 40px auto;
   }
   .prose h1 {
@@ -165,12 +349,8 @@ const schema = {
     line-height: 1.2;
   }
   .prose h2 {
-    margin-top: 32px;
+    margin-top: 34px;
     font-size: 1.22rem;
-  }
-  .prose h3 {
-    margin-top: 22px;
-    font-size: 1.02rem;
   }
   .prose p,
   .prose li {
@@ -184,8 +364,57 @@ const schema = {
     color: var(--red);
     font-weight: 600;
   }
+  .prose code {
+    font-size: 0.86em;
+    padding: 1px 5px;
+    border-radius: 5px;
+    background: var(--surface-2);
+  }
   .muted {
     color: var(--muted);
     font-size: 0.9rem;
+  }
+  .kutu {
+    padding: 18px 20px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+  }
+  .kutu p {
+    margin: 0;
+  }
+  .kutu__not {
+    margin-top: 10px !important;
+    font-size: 0.86rem;
+    color: var(--muted) !important;
+  }
+  .tablo-kap {
+    overflow-x: auto;
+    margin: 18px 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.86rem;
+    min-width: 620px;
+  }
+  th,
+  td {
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    background: var(--surface-2);
+    color: var(--heading);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  tr:last-child td {
+    border-bottom: 0;
   }
 </style>

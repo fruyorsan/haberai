@@ -1,0 +1,209 @@
+---
+import Base from "../layouts/Base.astro";
+import { CONTACT_EMAIL, LEMON_SQUEEZY, PUBLISHER, SELLER } from "../lib/site-meta.js";
+
+const origin = Astro.site ? String(Astro.site).replace(/\/+$/, "") : "https://haberinai.site";
+const updated = "30 Ekim 2026";
+
+const saticiAdres = SELLER.adres
+  ? [SELLER.adres, SELLER.sehir].filter(Boolean).join(", ")
+  : SELLER.sehir;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Ön Bilgilendirme ve Mesafeli Satış Sözleşmesi — HaberinAi",
+  description:
+    "HaberinAi Premium ve VIP aboneliklerine ilişkin ön bilgilendirme formu, mesafeli satış sözleşmesi ve cayma hakkı.",
+  url: `${origin}/mesafeli-satis/`,
+  dateModified: "2026-10-30",
+};
+---
+
+<Base
+  title="Ön Bilgilendirme ve Mesafeli Satış Sözleşmesi — HaberinAi"
+  description="Premium ve VIP aboneliklerine ilişkin ön bilgilendirme formu, mesafeli satış sözleşmesi ve cayma hakkı."
+  canonical={`${origin}/mesafeli-satis/`}
+  schema={schema}
+>
+  <div class="container prose">
+    <h1>Ön Bilgilendirme Formu ve Mesafeli Satış Sözleşmesi</h1>
+    <p class="muted">Son güncelleme: {updated}</p>
+
+    <div class="uyari">
+      <strong>Özet:</strong> Premium (49 ₺/ay) ve VIP (99 ₺/ay) abonelikleri KDV dâhil dijital
+      hizmettir. Ödeme, Lemon Squeezy üzerinden alınır; kart bilgileriniz sitemizde tutulmaz.
+      Aboneliği dilediğiniz an iptal edebilirsiniz. Cayma hakkı ve istisnaları için bölüm 6'ya
+      bakın.
+    </div>
+
+    <h2>1. Taraflar</h2>
+    <h3>Satıcı / Hizmet Sağlayıcı</h3>
+    <ul>
+      <li><strong>Unvan:</strong> {SELLER.unvan}</li>
+      <li><strong>Adres:</strong> {saticiAdres}</li>
+      <li><strong>E-posta:</strong> <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></li>
+      {SELLER.telefon && <li><strong>Telefon:</strong> {SELLER.telefon}</li>}
+      {SELLER.vergiDairesi && <li><strong>Vergi dairesi:</strong> {SELLER.vergiDairesi}</li>}
+      {SELLER.vergiNo && <li><strong>Vergi / TCKN:</strong> {SELLER.vergiNo}</li>}
+      {SELLER.etbis && <li><strong>ETBİS kayıt no:</strong> {SELLER.etbis}</li>}
+    </ul>
+    <p>
+      Satış ve tahsilat altyapısı <strong>Lemon Squeezy</strong> tarafından "merchant of record"
+      sıfatıyla yürütülür. Fatura, tahsilat, vergi ve iade işlemleri Lemon Squeezy adına
+      gerçekleştirilir; bu süreçlerde Lemon Squeezy'nin kendi kullanım şartları ve gizlilik
+      politikası da geçerlidir.
+    </p>
+
+    <h3>Alıcı / Tüketici</h3>
+    <p>
+      Ödeme sayfasında bilgilerini girerek abonelik satın alan gerçek kişi. Alıcı, 18 yaşından
+      küçükse yasal temsilcisinin onayıyla işlem yapmalıdır.
+    </p>
+
+    <h2>2. Sözleşmenin Konusu ve Hizmet</h2>
+    <p>
+      Sözleşme, HaberinAi sitesinde sunulan dijital abonelik paketlerinin satın alınması ve
+      kullanımına ilişkin tarafların hak ve yükümlülüklerini düzenler. Paketler:
+    </p>
+    <ul>
+      <li>
+        <strong>Standart Premium — 49 ₺/ay (KDV dâhil):</strong> reklamsız okuma, günlük özel haber dosyaları,
+        premium rozet, hızlı okuma modu.
+      </li>
+      <li>
+        <strong>VIP / Pro Kulübü — 99 ₺/ay (KDV dâhil):</strong> Premium'a ek olarak genişletilmiş günlük özel
+        dosyalar, VIP rozet, yorumlarda öncelikli sıralama ve özel video akışı.
+      </li>
+    </ul>
+    <p>
+      Paket içerikleri ve güncel fiyatlar <a href="/premium/">Premium sayfasında</a> gösterilir.
+      Fiyatlar KDV dâhil olup para birimi Türk lirasıdır; ödeme sayfasında da aynı tutar
+      görüntülenir.
+    </p>
+
+    <h2>3. Ödeme ve Faturalandırma</h2>
+    <p>
+      Ödeme, kredi/banka kartı veya Lemon Squeezy'nin desteklediği diğer yöntemlerle yapılır.
+      Kart bilgileri yalnızca ödeme sağlayıcısına iletilir; HaberinAi kart bilgisi toplamaz,
+      işlemez ve saklamaz. Abonelik, iptal edilmedikçe her ay otomatik olarak yenilenir. Ödeme
+      alınamazsa abonelik askıya alınabilir.
+    </p>
+
+    <h2>4. İfa ve Erişim</h2>
+    <p>
+      Ödeme onaylandığı anda Premium/VIP erişimi hesabınıza tanımlanır. Erişim, abonelik devam
+      ettiği sürece geçerlidir. Teknik bir sorun nedeniyle erişim sağlanamazsa
+      <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> adresinden destek isteyebilirsiniz.
+    </p>
+
+    <h2>5. İptal ve Yenileme</h2>
+    <p>
+      Aboneliğinizi dilediğiniz an, hiçbir ceza ödemeden iptal edebilirsiniz. İptal için Lemon
+      Squeezy müşteri panelinizi kullanabilir veya bize e-posta gönderebilirsiniz. İptal hâlinde
+      abonelik dönem sonunda yenilenmez; ödediğiniz dönemin sonuna kadar erişiminiz devam eder.
+      İptal, geçmiş dönemlere ilişkin otomatik iade anlamına gelmez.
+    </p>
+
+    <h2>6. Cayma Hakkı</h2>
+    <p>
+      6502 sayılı Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmeler Yönetmeliği
+      uyarınca, dijital hizmet aboneliklerinde kural olarak <strong>14 gün</strong> içinde cayma
+      hakkınız bulunur. Cayma bildirimini
+      <a href={`mailto:${CONTACT_EMAIL}?subject=Cayma%20Hakk%C4%B1%20Bildirimi`}>{CONTACT_EMAIL}</a>
+      adresine veya Lemon Squeezy müşteri paneli üzerinden yazılı olarak iletebilirsiniz.
+    </p>
+    <p>
+      <strong>İstisna:</strong> Mesafeli Sözleşmeler Yönetmeliği m.15/1-ğ uyarınca, elektronik
+      ortamda anında ifa edilen ve tüketiciye anında teslim edilen hizmetlerde, tüketicinin açık
+      onayıyla cayma hakkı sona erebilir. Ödeme sırasında hizmete derhâl erişim verilmesini
+      onaylamanız hâlinde bu istisna uygulanabilir. Buna rağmen ilk 14 gün içinde hizmeti hiç
+      kullanmadığınız hâllerde iade talebiniz iyi niyetle değerlendirilir.
+    </p>
+    <p>
+      Cayma hakkının geçerli olduğu hâllerde ödediğiniz tutar, bildirimin ulaşmasından itibaren
+      en geç <strong>14 gün</strong> içinde, kullandığınız ödeme yöntemine iade edilir. İade
+      sürecinde Lemon Squeezy'nin iade prosedürleri geçerlidir.
+    </p>
+
+    <h2>7. Uyuşmazlıkların Çözümü</h2>
+    <p>
+      Tüketici, şikâyet ve itirazları için Ticaret Bakanlığı'nca ilan edilen parasal sınırlar
+      dâhilinde, yerleşim yerindeki veya işlemin yapıldığı yerdeki <strong>Tüketici Hakem
+      Heyeti</strong>'ne ya da <strong>Tüketici Mahkemesi</strong>'ne başvurabilir. Öncelikle
+      <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> adresinden çözüm talep etmenizi
+      öneririz.
+    </p>
+
+    <h2>8. Kişisel Veriler</h2>
+    <p>
+      Abonelik sürecinde işlenen kişisel veriler (sipariş numarası, e-posta, hesap kimliği,
+      ödeme durumu) <a href="/gizlilik/">Gizlilik ve Çerez Politikası</a>'na uygun olarak
+      işlenir. Kart bilgileri tarafımızca saklanmaz.
+    </p>
+
+    <h2>9. Yürürlük ve Kabul</h2>
+    <p>
+      Alıcı, ödeme sayfasında bu ön bilgilendirme formunu ve mesafeli satış sözleşmesini okuduğunu
+      ve kabul ettiğini beyan eder. Sözleşme, ödemenin onaylandığı anda yürürlüğe girer.
+    </p>
+
+    <h2>10. İletişim</h2>
+    <p>
+      Sorularınız için: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> ·
+      <a href={LEMON_SQUEEZY.storeUrl} target="_blank" rel="noopener nofollow">Lemon Squeezy mağazası</a>
+    </p>
+
+    <p class="muted">
+      Sözleşme metni, satıcının şirket/şahıs yapısına ve yürürlükteki mevzuata göre
+      güncellenebilir; güncel sürüm bu sayfada yayımlanır.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .prose {
+    max-width: 820px;
+    margin: 40px auto;
+  }
+  .prose h1 {
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  .prose h2 {
+    margin-top: 34px;
+    font-size: 1.22rem;
+  }
+  .prose h3 {
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+  .prose p,
+  .prose li {
+    line-height: 1.78;
+    color: var(--text-2);
+  }
+  .prose ul {
+    padding-left: 22px;
+  }
+  .prose a {
+    color: var(--red);
+    font-weight: 600;
+  }
+  .muted {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .uyari {
+    margin: 18px 0;
+    padding: 16px 18px;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--red);
+    border-radius: 10px;
+    background: var(--surface);
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--text-2);
+  }
+</style>

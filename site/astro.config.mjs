@@ -83,6 +83,8 @@ export default defineConfig({
         // Hesap ve profil sayfaları noindex'tir; site haritasına girmez.
         !page.includes("/hesap/") &&
         !page.includes("/profil/") &&
+        // Herkese açık okur profili de noindex'tir (kişisel veri/ince sayfa).
+        !page.includes("/kullanici/") &&
         // Arama sayfası da noindex'tir (içeriği istemci tarafında üretilir);
         // robots.txt'te de kapalıdır, site haritasında hiç görünmemeli.
         !page.includes("/ara/") &&
