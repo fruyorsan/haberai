@@ -1,5 +1,54 @@
 [
   {
+    "id": "4663ac17ec049af2",
+    "title": "WhatsApp Android Beta Kapak Fotoğrafı Özelliği Kullanıma Açıldı",
+    "slug": "whatsapp-android-beta-kapak-fotografi-ozelligi",
+    "summary": "WhatsApp, Android 2.26.43.11 beta sürümüyle kişisel profillere yatay kapak fotoğrafı ekleme özelliğini test kullanıcılarına sundu. Görselin kimler tarafından görüleceği gizlilik ayarlarıyla belirlenebiliyor ve özellik kademeli dağıtıldığı için tüm kullanıcılar hâlâ erişemeyebilir. Özellik, işletme hesaplarındaki banner fonksiyonunun kişisel hesaplara taşınmasıyla ortaya çıktı.",
+    "keyPoints": [
+      "Android 2.26.43.11 beta sürümünde kapak fotoğrafı özelliği beta kullanıcılarına sunuldu",
+      "Kapak görseli yatay banner olarak profilin üstünde yer alıyor ve dört gizlilik seçeneği var",
+      "Görsel otomatik kırpılıyor; ayarlama için profil > Düzenle menüsü kullanılacak"
+    ],
+    "body": [
+      "WhatsApp, Android platformunda yeni bir kişiselleştirme adımı atarak kapak fotoğrafı özelliğini beta sürümüne ekledi. 2.26.43.11 sürümündeki bu güncelleme, yalnızca seçilen test kullanıcıları için aktif hâle getirildi ve önümüzdeki haftalarda daha geniş bir kitleye açılması planlanıyor. Bu yenilik, profil sayfasının en üst kısmına yatay bir görsel yerleştirerek kullanıcıların kimliklerini daha renkli bir şekilde sunmalarını sağlıyor.",
+      "Kapak fotoğrafı, profil fotoğrafının yerini almıyor; iki görsel aynı anda kullanılabiliyor. Kullanıcılar, profil sayfasındaki Düzenle düğmesine dokunarak üç farklı yol arasından seçim yapabiliyor: yeni bir fotoğraf çekmek, galeriden mevcut bir görsel seçmek ya da Meta AI destekli yeni bir görsel üretmek. Seçilen görsel, otomatik olarak yatay formata uyacak şekilde kırpılıyor, bu sayede ekstra düzenleme ihtiyacı ortadan kalkıyor.",
+      "Gizlilik ayarları da bu özellikle birlikte geliyor. Kullanıcılar, kapak görselinin kimler tarafından görüleceğini dört seçenek arasından belirleyebiliyor: Herkes, Kişilerim, Şunlar Hariç Kişilerim ve Hiç Kimse. Bu sayede istenmeyen gözlerden korunmak mümkün oluyor. Görsel gizlilik ayarı aktif değilse, kapak fotoğrafı profil ekranında görünmüyor ve sadece varsayılan bir görsel gösteriliyor.",
+      "WhatsApp, işletme hesaplarına sunduğu banner görselini kişisel hesaplara taşıyarak bu özelliği daha geniş bir kullanıcı kitlesine açtı. İşletme hesabı olmadan da kapak fotoğrafı eklenebildiği için, kişisel profiller artık aynı özelleştirme imkânına sahip. Özelliğin kademeli dağıtılması nedeniyle bazı kullanıcılar henüz menüyü göremese de, beta sürümünü güncelleyenlerin bir sonraki adımda bu seçeneği aktif hale getirmeleri bekleniyor."
+    ],
+    "comment": "WhatsApp'ın kapak fotoğrafı eklemesi, profil kişiselleştirmesinde belirgin bir adım. Beta sürümündeki 2.26.43.11 numaralı güncelleme, kullanıcıların görsel tercihlerine dair dört gizlilik seçeneği sunuyor, bu da veri kontrolünü artırıyor. Özellikle Android kullanıcıları, profil ekranını daha yaratıcı bir şekilde düzenleyebilecek. Önceki işletme hesabı sınırlamasıyla kıyaslandığında, bu adım kişisel kullanımda daha geniş bir özgürlük sağlıyor ve rekabetçi mesajlaşma uygulamaları arasında farklılaşmayı destekliyor.",
+    "editorNote": "WhatsApp, Android beta sürümünde profil kapak fotoğrafını getirerek kişisel ekranları özelleştiriyor. Gizlilik ayarlarıyla kimlerin görebileceği kontrol altında tutuluyor.",
+    "tags": [
+      "WhatsApp",
+      "kapak fotoğrafı",
+      "Android beta",
+      "profil özelleştirme"
+    ],
+    "category": "Mobil",
+    "gorselSorgu": "WhatsApp profile banner screen",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/whatsapp-kapak-fotografi-android-beta",
+    "image": "/kapak/4663ac17ec049af2.webp",
+    "publishedAt": "2026-10-30T05:42:58.000Z",
+    "generatedAt": "2026-10-30T05:48:42.715Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Pico_cell_Mobile_phone_base_station_by_KDDI.jpg/1280px-Pico_cell_Mobile_phone_base_station_by_KDDI.jpg",
+        "yazar": "Yoh-Plus",
+        "lisans": "CC BY 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Pico_cell_Mobile_phone_base_station_by_KDDI.jpg",
+        "altyazi": "Profil düzenleme menüsünde kapak ekleme seçeneği"
+      }
+    ],
+    "breaking": true,
+    "gorselDeneme": "2026-10-30T05:48:43.946Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://ares.shiftdelete.net/2026/10/f3743529201d79e9b53fcc37012c3ebd69e011bd.webp",
+      "foto": true
+    }
+  },
+  {
     "id": "01648f485d1b4ca0",
     "title": "WhatsApp'tan gruplar için 4 yeni araç: Süresiz sabitleme ve filtre",
     "slug": "whatsapp-gruplar-4-yeni-araclar-suresiz-sabitleme-ve-filtre",
@@ -33,7 +82,7 @@
     "publishedAt": "2026-10-30T05:32:58.000Z",
     "generatedAt": "2026-10-30T05:39:13.834Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:29.542Z",
+    "gorselDeneme": "2026-10-30T05:48:43.951Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/43ce1737ab1280c3ccdcfa8b43a5d65543158ca8.webp",
@@ -396,7 +445,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:29.574Z",
+    "gorselDeneme": "2026-10-30T05:48:43.953Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/988637d36d362549f43dd111298c158ed8777fc8.webp",
@@ -456,7 +505,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:32.680Z",
+    "gorselDeneme": "2026-10-30T05:48:45.955Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_87fe19c57b31abc62ea86fe97c4b39f7.jpg",
@@ -516,7 +565,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:29.704Z",
+    "gorselDeneme": "2026-10-30T05:48:44.037Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/shutterstock_1066815104-scaled-1.webp",
@@ -576,7 +625,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:29.931Z",
+    "gorselDeneme": "2026-10-30T05:48:44.764Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2496000/fransa-polis-reu-2496667.jpg",
@@ -757,7 +806,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:30.225Z",
+    "gorselDeneme": "2026-10-30T05:48:44.563Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1688000/yuz-tanima-reu-1688870.jpg",
@@ -882,7 +931,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:30.206Z",
+    "gorselDeneme": "2026-10-30T05:48:44.922Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2428000/yapay-zeka-reu-2429580.jpg",
@@ -941,7 +990,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:30.547Z",
+    "gorselDeneme": "2026-10-30T05:48:44.921Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/goog-2499742.jpg",
@@ -1000,7 +1049,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:32.640Z",
+    "gorselDeneme": "2026-10-30T05:48:46.160Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_19ff758684d77df31b193360f99f6131.jpg",
@@ -1060,7 +1109,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:32.158Z",
+    "gorselDeneme": "2026-10-30T05:48:45.172Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2076000/google-reu-2076406.jpg",
@@ -1184,7 +1233,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:30.378Z",
+    "gorselDeneme": "2026-10-30T05:48:45.056Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2452000/hurmuz-bogaziaa-2452370.jpg",
@@ -1430,7 +1479,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:32.467Z",
+    "gorselDeneme": "2026-10-30T05:48:45.951Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://turkiyedeisdunyasi.com/wp-content/uploads/2026/10/savas-onlara-yaradi-enerji-devlerinin-karinda-tarihi-sicrama-6wog_cover.webp",
@@ -1590,7 +1639,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:33.153Z",
+    "gorselDeneme": "2026-10-30T05:48:46.257Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://n24.com.tr/varliklar/img/yuklemeler/trollwall-elvai.jpg",
@@ -1705,7 +1754,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:33.992Z",
+    "gorselDeneme": "2026-10-30T05:48:47.246Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.saraymedya.com/manset/2026/10/marmaris-te-genclerin-teknoloji-uretimi-tesvik-ediliyor-1793325466.webp",
@@ -1766,7 +1815,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:33.202Z",
+    "gorselDeneme": "2026-10-30T05:48:46.688Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.egealternatif.com/manset/2026/10/trump-korgeneral-sylvia-gizli-bilgi-sizdirdi-1793325267.webp",
@@ -1895,7 +1944,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:34.418Z",
+    "gorselDeneme": "2026-10-30T05:48:47.233Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.saraymedya.com/manset/2026/10/suleymanpasa-da-saganak-yasami-guclestirdi-1793324208.webp",
@@ -1947,7 +1996,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:33.794Z",
+    "gorselDeneme": "2026-10-30T05:48:47.288Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trf1.net/wp-content/uploads/2026/10/28OCT26SBCheco-004.jpg",
@@ -2050,7 +2099,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:33.658Z",
+    "gorselDeneme": "2026-10-30T05:48:46.645Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.toplumsal.com.tr/manset/2026/10/ozlale-barikat-in-63-u-tera-grubu-na-ait-cikti-1793322748.webp",
@@ -2343,7 +2392,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:34.252Z",
+    "gorselDeneme": "2026-10-30T05:48:47.098Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://i.tgrthaber.com/images/2026/10/30/abdden-irana-saldiri-hazirligi-ordu-komutanlari-trumpa-secenekleri-sundu-3368348.jpg",
@@ -2457,7 +2506,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:34.554Z",
+    "gorselDeneme": "2026-10-30T05:48:47.712Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.saraymedya.com/manset/2026/10/canik-belediyesi-ogrencileri-gezilere-goturecek-1793320486.webp",
@@ -2650,7 +2699,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:34.679Z",
+    "gorselDeneme": "2026-10-30T05:48:48.002Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://rudaw.net/_next/image?url=https%3A%2F%2Fimages.rudaw.net%2Fimages%2Fasset%2Fnews%2F20261029234007_20261029205528_1641585469511.webp&w=1200&q=75",
@@ -2707,7 +2756,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:34.487Z",
+    "gorselDeneme": "2026-10-30T05:48:47.549Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://borsagundemcomtr.teimg.com/crop/1280x720/borsagundem-com-tr/uploads/2026/10/new-york-wall-street-15102026.jpg",
@@ -2772,7 +2821,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:34.356Z",
+    "gorselDeneme": "2026-10-30T05:48:47.916Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/news/1200/branded_turkce/67c1/live/31f8a9e0-d3d9-11f1-9c32-1532a6164171.jpg",
@@ -2817,7 +2866,7 @@
     "publishedAt": "2026-10-29T23:53:00.000Z",
     "generatedAt": "2026-10-30T00:03:11.969Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:34.862Z",
+    "gorselDeneme": "2026-10-30T05:48:47.761Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.egealternatif.com/manset/2026/10/abd-ekonomisi-ucuncu-ceyrekte-yuzde-3-4-buyudu-1793318009.webp",
@@ -3002,7 +3051,7 @@
         "altyazi": "Pentagon ve CENTCOM yetkilileri arasında gerçekleşen görüşme"
       }
     ],
-    "gorselDeneme": "2026-10-30T05:39:34.917Z",
+    "gorselDeneme": "2026-10-30T05:48:48.106Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ae3ccf01f1b0e42f0c0f145.jpg",
@@ -3060,7 +3109,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:35.336Z",
+    "gorselDeneme": "2026-10-30T05:48:48.582Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://turkiyedeisdunyasi.com/wp-content/uploads/2026/10/barrack-duyurdu-israil-suriye-ateskeste-anlasti-1smh_cover.webp",
@@ -3173,7 +3222,7 @@
         "altyazi": "Maç günü stadyumdaki yoğun seyirci ve seremoni alanı"
       }
     ],
-    "gorselDeneme": "2026-10-30T05:39:35.191Z",
+    "gorselDeneme": "2026-10-30T05:48:48.309Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://image.cnnturk.com/i/cnnturk/75/770x0/6a1aaf81af5d1b85ae2223b0.jpg",
@@ -3409,7 +3458,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:35.083Z",
+    "gorselDeneme": "2026-10-30T05:48:48.476Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_ab3353f3cf31531c39294bf8eee93e03.jpg",
@@ -3456,7 +3505,7 @@
     "publishedAt": "2026-10-29T22:01:07.000Z",
     "generatedAt": "2026-10-29T22:04:43.873Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:35.112Z",
+    "gorselDeneme": "2026-10-30T05:48:48.516Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_e3764622190762220b3687cc3ef60f06.jpg",
@@ -3530,7 +3579,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:35.525Z",
+    "gorselDeneme": "2026-10-30T05:48:48.823Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/sonyden-gece-cekimleriyle-one-cikan-yeni-sensor-50-megapiksel-2.webp",
@@ -3577,7 +3626,7 @@
     "publishedAt": "2026-10-29T21:58:07.000Z",
     "generatedAt": "2026-10-29T23:12:21.185Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:35.321Z",
+    "gorselDeneme": "2026-10-30T05:48:49.835Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_7aa85ae3bc1084be99aecc8b598bfe1d.jpg",
@@ -3627,7 +3676,7 @@
     "publishedAt": "2026-10-29T21:47:52.000Z",
     "generatedAt": "2026-10-29T21:56:50.286Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:35.710Z",
+    "gorselDeneme": "2026-10-30T05:48:48.919Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/binance-hacklendi-mi.webp",
@@ -3751,7 +3800,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:35.267Z",
+    "gorselDeneme": "2026-10-30T05:48:48.703Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/e9c9/live/e9ad7380-d3c6-11f1-867c-77016fb236d7.jpg",
@@ -3808,7 +3857,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:35.859Z",
+    "gorselDeneme": "2026-10-30T05:48:49.444Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/tiktok-yapay-zeka-icin-enerji-ariyor-2.webp",
@@ -3968,7 +4017,7 @@
     "publishedAt": "2026-10-29T21:03:57.000Z",
     "generatedAt": "2026-10-29T21:05:47.352Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-30T05:39:35.573Z",
+    "gorselDeneme": "2026-10-30T05:48:49.291Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_60a73cfab905692b843e1124259a3639.jpg",
@@ -21669,7 +21718,6 @@
     },
     "publishedAt": "2026-10-28T05:45:00.000Z",
     "generatedAt": "2026-10-28T05:51:10.743Z",
-    "breaking": true,
     "kapak": {
       "v": 2,
       "kaynak": "https://i.haberglobal.com/storage/files/images/2026/10/28/iran-cumhurbaskani-pezeskiyan-abd-ve-israil-kuresel-enerji-guvenligini-tehdit-ediyor-ulc8.jpg",
@@ -114893,7 +114941,7 @@
     "gorselSorgu": "Abu Dabi diplomatic meeting",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/economy-news/rusya-abd-ukrayna-gorusmeleri-kasm-ortasnda-abu-dabide-yaplabilir-93CH-4113466",
-    "image": "/kapak/951c0513fd4dc547.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Abu_dabi_by_night_%28crop%29.jpg/1280px-Abu_dabi_by_night_%28crop%29.jpg",
     "publishedAt": "2026-10-21T14:41:12.000Z",
     "generatedAt": "2026-10-21T14:44:05.536Z",
     "gorselEk": [
@@ -114911,12 +114959,7 @@
         "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Qasr_al_Hosn,_el_edificio_m%C3%A1s_antiguo_de_Abu_Dabi,_en_contraste_con_los_modernos_rascacielos.jpg"
       }
-    ],
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Abu_dabi_by_night_%28crop%29.jpg/1280px-Abu_dabi_by_night_%28crop%29.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "e626f351b7f091ff",
@@ -115793,7 +115836,7 @@
     "gorselSorgu": "SpaceX rocket launch pad",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/analyst-ratings/piper-sandler-spacex-hissesi-icin-140-dolarlk-notr-notunu-korudu-93CH-4113317",
-    "image": "/kapak/aaa308bb26da985c.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Falcon_9_B1046_and_two_unidentified_boosters_in_the_SpaceX_Rocket_Assembly_Building_at_Kennedy_Space_Center_LC-39A%2C_October_2019.jpg/1280px-Falcon_9_B1046_and_two_unidentified_boosters_in_the_SpaceX_Rocket_Assembly_Building_at_Kennedy_Space_Center_LC-39A%2C_October_2019.jpg",
     "publishedAt": "2026-10-21T13:34:49.000Z",
     "generatedAt": "2026-10-21T13:39:44.828Z",
     "gorselEk": [
@@ -115811,12 +115854,7 @@
         "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
         "sayfa": "https://commons.wikimedia.org/wiki/File:2008_SpaceX%27s_Rocket_Development_facility,_McGregor,_TX.jpg"
       }
-    ],
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Falcon_9_B1046_and_two_unidentified_boosters_in_the_SpaceX_Rocket_Assembly_Building_at_Kennedy_Space_Center_LC-39A%2C_October_2019.jpg/1280px-Falcon_9_B1046_and_two_unidentified_boosters_in_the_SpaceX_Rocket_Assembly_Building_at_Kennedy_Space_Center_LC-39A%2C_October_2019.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "0354cd9688f17920",
@@ -120562,7 +120600,7 @@
     "gorselSorgu": "SpaceX rocket launch pad",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/analyst-ratings/morgan-stanley-spacex-icin-hisse-hedefini-korudu-93CH-4112664",
-    "image": "/kapak/5e4f1d5fab458bdd.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/SpaceX_Crew-1_Live_Launch_%28KSC-20201115-PH-MIV01_0099%29.jpg/1280px-SpaceX_Crew-1_Live_Launch_%28KSC-20201115-PH-MIV01_0099%29.jpg",
     "publishedAt": "2026-10-21T11:31:48.000Z",
     "generatedAt": "2026-10-21T11:35:25.254Z",
     "gorselEk": [
@@ -120580,12 +120618,7 @@
         "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
         "sayfa": "https://commons.wikimedia.org/wiki/File:SES-10_Launch_-_world%27s_first_reflight_of_an_orbital_class_rocket_(33361035200).jpg"
       }
-    ],
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/SpaceX_Crew-1_Live_Launch_%28KSC-20201115-PH-MIV01_0099%29.jpg/1280px-SpaceX_Crew-1_Live_Launch_%28KSC-20201115-PH-MIV01_0099%29.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "d7874fed1eea9307",
@@ -125225,14 +125258,9 @@
     "gorselSorgu": "cyber security data center servers",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/analyst-ratings/evercore-crowdstrike-ve-palo-alto-yapay-zeka-guvenliginde-one-ckyor-93CH-4112235",
-    "image": "/kapak/ff2f22640f8f340c.webp",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a7/EU_cyber_security_conference_2017_%2837211780182%29.jpg",
     "publishedAt": "2026-10-21T09:30:42.000Z",
-    "generatedAt": "2026-10-21T09:32:39.018Z",
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/a/a7/EU_cyber_security_conference_2017_%2837211780182%29.jpg",
-      "foto": false
-    }
+    "generatedAt": "2026-10-21T09:32:39.018Z"
   },
   {
     "id": "5f774a0fd397cfac",
@@ -127559,14 +127587,9 @@
     "gorselSorgu": "science laboratory students competition",
     "source": "Pars Today",
     "sourceUrl": "https://parstoday.ir/tr/news/iran-i302306-%C4%B0ranl%C4%B1_%C3%96%C4%9Frencilerden_uluslararas%C4%B1_olimpiyatlarda_tarih%C3%AE_rekor_sava%C5%9F_y%C4%B1l%C4%B1nda_18_alt%C4%B1n_madalya",
-    "image": "/kapak/4772c43f61f41547.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Science_Wall_in_the_laboratory.jpg/1280px-Science_Wall_in_the_laboratory.jpg",
     "publishedAt": "2026-10-21T08:29:56.000Z",
-    "generatedAt": "2026-10-21T08:34:08.042Z",
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Science_Wall_in_the_laboratory.jpg/1280px-Science_Wall_in_the_laboratory.jpg",
-      "foto": false
-    }
+    "generatedAt": "2026-10-21T08:34:08.042Z"
   },
   {
     "id": "6c2137d3cd18bc29",
@@ -131126,9 +131149,14 @@
     "gorselSorgu": "software developer office coding computer screens",
     "source": "BeInCrypto",
     "sourceUrl": "https://tr.beincrypto.com/yapay-zeka-yaziliminda-kazananlar-ve-kaybedenler-citi/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Software_Developer_at_work_01.jpg/1280px-Software_Developer_at_work_01.jpg",
+    "image": "/kapak/0cc31e40e33e2fcd.webp",
     "publishedAt": "2026-10-21T02:33:30.000Z",
-    "generatedAt": "2026-10-21T02:47:45.012Z"
+    "generatedAt": "2026-10-21T02:47:45.012Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Software_Developer_at_work_01.jpg/1280px-Software_Developer_at_work_01.jpg",
+      "foto": false
+    }
   },
   {
     "id": "7f5ad8d0b07ca96e",
@@ -139337,7 +139365,7 @@
     "gorselSorgu": "opera stage performance art",
     "source": "Howl.link",
     "sourceUrl": "https://t.co/x7EAkzLjZl",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Monumental_stage_prop_from_the_opera_Aida_-_01.jpg/1280px-Monumental_stage_prop_from_the_opera_Aida_-_01.jpg",
+    "image": "/kapak/f4f35787bf383b81.webp",
     "publishedAt": "2026-10-20T11:17:06.000Z",
     "generatedAt": "2026-10-20T11:19:41.804Z",
     "gorselEk": [
@@ -139356,7 +139384,12 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Amargosa_Opera_House_Stage.jpg"
       }
     ],
-    "gorselDeneme": "2026-10-28T04:47:48.859Z"
+    "gorselDeneme": "2026-10-28T04:47:48.859Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Monumental_stage_prop_from_the_opera_Aida_-_01.jpg/1280px-Monumental_stage_prop_from_the_opera_Aida_-_01.jpg",
+      "foto": false
+    }
   },
   {
     "id": "9b6bb590f25c5610",
@@ -141000,7 +141033,7 @@
     "gorselSorgu": "Tesla electric vehicle factory",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/stock-market-news/tesla-ucuncu-ceyrek-raporunu-carsamba-gunu-acklayacak-93CH-4110412",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Minis_%26_Tesla_Model_Y_%40_Let%27s_Go_Electric%2C_Priory_Park%2C_Kingston_upon_Hull.jpg/1280px-Minis_%26_Tesla_Model_Y_%40_Let%27s_Go_Electric%2C_Priory_Park%2C_Kingston_upon_Hull.jpg",
+    "image": "/kapak/b37141328fbaac6d.webp",
     "publishedAt": "2026-10-20T10:41:17.000Z",
     "generatedAt": "2026-10-20T10:43:13.832Z",
     "gorselEk": [
@@ -141018,7 +141051,12 @@
         "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Four_Tesla_Electric_Vehicles_Columbus_Texas_Supercharger.jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Minis_%26_Tesla_Model_Y_%40_Let%27s_Go_Electric%2C_Priory_Park%2C_Kingston_upon_Hull.jpg/1280px-Minis_%26_Tesla_Model_Y_%40_Let%27s_Go_Electric%2C_Priory_Park%2C_Kingston_upon_Hull.jpg",
+      "foto": false
+    }
   },
   {
     "id": "9f0a0a9c52996f97",
@@ -151886,9 +151924,14 @@
     "gorselSorgu": "Aeromexico flight deck",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/stock-market-news/aeromexico-washingtonn-ucus-kstlamalarn-kaldrmasnn-ardndan-abdye-genislemeyi-planlyor-93CH-4109456",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Aeromexico_B737-852%2C_XA-AMC%2C_MSN_4539_%2807_2013%29%2C_as_AM_783_Los_Angeles_%28LAX%29_-_Guadalajara_%28GDL%29%2C_Flight_time_2_58_%2854209251671%29.jpg/1280px-Aeromexico_B737-852%2C_XA-AMC%2C_MSN_4539_%2807_2013%29%2C_as_AM_783_Los_Angeles_%28LAX%29_-_Guadalajara_%28GDL%29%2C_Flight_time_2_58_%2854209251671%29.jpg",
+    "image": "/kapak/1a7ece8bea774e2b.webp",
     "publishedAt": "2026-10-19T19:56:21.000Z",
-    "generatedAt": "2026-10-19T20:00:49.769Z"
+    "generatedAt": "2026-10-19T20:00:49.769Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Aeromexico_B737-852%2C_XA-AMC%2C_MSN_4539_%2807_2013%29%2C_as_AM_783_Los_Angeles_%28LAX%29_-_Guadalajara_%28GDL%29%2C_Flight_time_2_58_%2854209251671%29.jpg/1280px-Aeromexico_B737-852%2C_XA-AMC%2C_MSN_4539_%2807_2013%29%2C_as_AM_783_Los_Angeles_%28LAX%29_-_Guadalajara_%28GDL%29%2C_Flight_time_2_58_%2854209251671%29.jpg",
+      "foto": false
+    }
   },
   {
     "id": "d2a8d79306633717",
@@ -155184,7 +155227,7 @@
     "gorselSorgu": "SpaceX rocket launch pad",
     "source": "Invezz",
     "sourceUrl": "https://invezz.com/tr/haber/2026/10/19/spacex-hisseleri-kazanclar-yaklasirken-toparlanma-mi-yoksa-daha-fazla-dusus-mu/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/NASA%E2%80%99s_SpaceX_Crew-5_Falcon_9-Dragon_Rollout_to_Launch_Pad_39A_%28NHQ202210010004%29.jpg/1280px-NASA%E2%80%99s_SpaceX_Crew-5_Falcon_9-Dragon_Rollout_to_Launch_Pad_39A_%28NHQ202210010004%29.jpg",
+    "image": "/kapak/8e3e7fa1580d8cc3.webp",
     "publishedAt": "2026-10-19T16:24:07.000Z",
     "generatedAt": "2026-10-19T16:30:52.411Z",
     "gorselEk": [
@@ -155202,7 +155245,12 @@
         "lisansUrl": "",
         "sayfa": "https://commons.wikimedia.org/wiki/File:NASA%E2%80%99s_SpaceX_Crew-5_Falcon_9-Dragon_Rollout_to_Launch_Pad_39A_(NHQ202210010007).jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/NASA%E2%80%99s_SpaceX_Crew-5_Falcon_9-Dragon_Rollout_to_Launch_Pad_39A_%28NHQ202210010004%29.jpg/1280px-NASA%E2%80%99s_SpaceX_Crew-5_Falcon_9-Dragon_Rollout_to_Launch_Pad_39A_%28NHQ202210010004%29.jpg",
+      "foto": false
+    }
   },
   {
     "id": "005f29437184c8b9",
@@ -155631,7 +155679,7 @@
     "gorselSorgu": "playground equipment manufacturing factory",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/economy-news/ftc-oyun-park-ekipman-anlasmasn-engellemek-icin-dava-act-93CH-4109348",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Playground_equipment_in_Munich_03.jpg/1280px-Playground_equipment_in_Munich_03.jpg",
+    "image": "/kapak/e4a576a817e2ff18.webp",
     "publishedAt": "2026-10-19T16:02:29.000Z",
     "generatedAt": "2026-10-19T16:05:03.656Z",
     "gorselEk": [
@@ -155649,7 +155697,12 @@
         "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Playground_equipment_in_Munich_02.jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Playground_equipment_in_Munich_03.jpg/1280px-Playground_equipment_in_Munich_03.jpg",
+      "foto": false
+    }
   },
   {
     "id": "b341453e87b9bb94",
@@ -165859,11 +165912,16 @@
     "category": "Bilim",
     "source": "Evrim Ağacı",
     "sourceUrl": "https://evrimagaci.org/bilim-insanlari-hangi-hayvanlari-neden-inceliyor-23969",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Aquatic_Ecosystems_Research_Laboratory_and_Beaty_Biodiversity_Centre.jpg/1280px-Aquatic_Ecosystems_Research_Laboratory_and_Beaty_Biodiversity_Centre.jpg",
+    "image": "/kapak/8033b4c066ec6658.webp",
     "publishedAt": "2026-10-19T09:17:21.000Z",
     "generatedAt": "2026-10-19T09:19:14.969Z",
     "gorselDeneme": "2026-10-20T09:16:19.459Z",
-    "gorselSorgu": "biodiversity research biology laboratory"
+    "gorselSorgu": "biodiversity research biology laboratory",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Aquatic_Ecosystems_Research_Laboratory_and_Beaty_Biodiversity_Centre.jpg/1280px-Aquatic_Ecosystems_Research_Laboratory_and_Beaty_Biodiversity_Centre.jpg",
+      "foto": false
+    }
   },
   {
     "id": "87fb9059d1a216ee",
