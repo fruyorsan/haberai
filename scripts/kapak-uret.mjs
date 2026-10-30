@@ -499,7 +499,6 @@ function kartBasligi(baslik) {
 }
 
 function kapakSvg() {
-  const kenar = 34;
   return `<svg width="${GENISLIK}" height="${YUKSEKLIK}" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="kose" x1="0" y1="0" x2="0" y2="1">
@@ -510,9 +509,12 @@ function kapakSvg() {
   <rect x="0" y="${YUKSEKLIK - 110}" width="${GENISLIK}" height="110" fill="url(#kose)"/>
   <rect x="0" y="${YUKSEKLIK - 6}" width="${GENISLIK}" height="6" fill="#e11d2e"/>
   <g font-family="Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif">
-    <rect x="${GENISLIK - kenar - 172}" y="${YUKSEKLIK - 66}" width="172" height="40" rx="8" fill="#000000" fill-opacity="0.42"/>
-    <rect x="${GENISLIK - kenar - 152}" y="${YUKSEKLIK - 57}" width="12" height="21" rx="2.5" fill="#e11d2e"/>
-    <text x="${GENISLIK - kenar - 130}" y="${YUKSEKLIK - 39}" font-size="22" font-weight="700" fill="#ffffff" letter-spacing="-0.3">haberinai</text>
+    <!-- Sağ alt köşe plakası: yayıncıların köşeye bastığı kendi logolarını
+         (AH, Webtekno, DH...) örter. Rozet bu plakanın içinde durur, böylece
+         iki logo üst üste binmez. -->
+    <path d="M ${GENISLIK - 236} ${YUKSEKLIK} L ${GENISLIK - 236} ${YUKSEKLIK - 58} Q ${GENISLIK - 236} ${YUKSEKLIK - 70} ${GENISLIK - 224} ${YUKSEKLIK - 70} L ${GENISLIK} ${YUKSEKLIK - 70} L ${GENISLIK} ${YUKSEKLIK} Z" fill="#0b0e14" fill-opacity="0.9"/>
+    <rect x="${GENISLIK - 208}" y="${YUKSEKLIK - 52}" width="12" height="22" rx="2.5" fill="#e11d2e"/>
+    <text x="${GENISLIK - 186}" y="${YUKSEKLIK - 32}" font-size="22" font-weight="700" fill="#ffffff" letter-spacing="-0.3">haberinai</text>
   </g>
 </svg>`;
 }
@@ -663,13 +665,24 @@ async function kapakUret(a) {
   /** 16:9 kırp + hafif canlandırma. */
   const kirp = async (veri, bilgi) => {
     try {
+      // KAYNAK FİLİGRANI: yayıncılar kendi logolarını sağ alt köşeye basıyor
+      // (AndroidHeadlines "AH", Webtekno, DonanımHaber...). Kapağın sağ alt
+      // köşesinde bizim "haberinai" rozetimiz var; iki logo üst üste binince
+      // amatör görünüyordu. Kırpmadan önce sağdan %8, alttan %7 atılır: köşe
+      // filigranı dışarıda kalır, kompozisyon neredeyse aynıdır.
+      const w = bilgi.width || 0;
+      const h = bilgi.height || 0;
+      const kirpW = Math.max(1, Math.round(w * 0.92));
+      const kirpH = Math.max(1, Math.round(h * 0.93));
       // "attention" büyük görsellerde çok pahalı (saniyelerce CPU). 4000 px'e
       // kadar ilgi alanına göre kırp; daha büyüklerde merkez yeterli.
       const konum =
-        (bilgi.width || 0) * (bilgi.height || 0) <= 16_000_000
-          ? sharp.strategy.attention
-          : "centre";
-      return await sharp(veri)
+        w * h <= 16_000_000 ? sharp.strategy.attention : "centre";
+      let boru = sharp(veri);
+      if (w > 0 && h > 0 && kirpW > 640 && kirpH > 360) {
+        boru = boru.extract({ left: 0, top: 0, width: kirpW, height: kirpH });
+      }
+      return await boru
         .resize(GENISLIK, YUKSEKLIK, { fit: "cover", position: konum })
         .modulate({ saturation: 1.08, brightness: 1.02 })
         .sharpen({ sigma: 0.6 })
