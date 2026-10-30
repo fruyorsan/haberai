@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T12:02:03.144Z",
+  "updatedAt": "2026-10-30T12:10:14.087Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,9 +13,9 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5253,
-  "aday": 5253,
-  "uygun": 3200,
+  "toplamHaber": 5254,
+  "aday": 5254,
+  "uygun": 3201,
   "secilen": 3106,
   "red": {
     "özet gövdeyle aynı": 109,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 112
+    "tekrar": 113
   },
   "ornekTekrarlar": [
     {
@@ -40,6 +40,10 @@
     {
       "title": "Instagram, 90 dakikalık video süresiyle içerik rekabetini kızıştırıyor",
       "twin": "Instagram 90 dakikalık videoları test ediyor ancak ödeme yapmıyor"
+    },
+    {
+      "title": "Google yapay zeka özetleri reklam gelirlerini düşürünce 500 milyar dolar eridi",
+      "twin": "Google ve Amazon, yapay zeka harcamalarıyla 500 milyar dolar kaybetti"
     },
     {
       "title": "OpenAI, yapay zekâ modellerinin ürettiği 3 bilimsel sonucu doğruladı",
@@ -108,10 +112,6 @@
     {
       "title": "Fransa'nın borçlanma maliyeti 24 yılın en yüksek seviyesine ulaştı",
       "twin": "Fransa Tahvil Faizi 24 Yılın Zirvesinde: Hedge Fonların Rolü Tartışılıyor"
-    },
-    {
-      "title": "Apple M6 Çipli 14 İnç MacBook Pro Grafik ve AI Performansını %30 Artırdı",
-      "twin": "Apple M6 çipli 14 inç MacBook Pro tanıtıldı: İşte özellikleri ve fiyatı"
     }
   ],
   "days": {
@@ -414,9 +414,9 @@
       "8ac160773c5fca23",
       "b05947a635ea1ab4",
       "941d84c551e1cbd8",
+      "2197fcfa16f4a2de",
       "e0d96e1fe468cc7c",
-      "ae4114913dd868d3",
-      "2197fcfa16f4a2de"
+      "ae4114913dd868d3"
     ],
     "2026-10-28": [
       "14b1f671156defb0",
@@ -478,7 +478,6 @@
       "9a48bb7360b0cf31",
       "8a21d61b9b94848c",
       "ed7cedde1f1f649b",
-      "71be2642dfb152d0",
       "a97491e1ee74c5b3",
       "581b3995f8af3fb3",
       "16e1f86821b04c3f",
@@ -496,6 +495,7 @@
       "f2f7a86f054c8975",
       "f10fad05f1498ae2",
       "caa6f983369571d6",
+      "71be2642dfb152d0",
       "cb98f54ec0357794",
       "8cd6eb4c1422c171",
       "fe384e0f0d85d160",
@@ -548,7 +548,6 @@
       "fe4973c334b171eb",
       "ccf65363b2dda856",
       "5dc7822358857da3",
-      "b0339484ffadbf68",
       "3ffb21b564dc9a9b",
       "4de38ec0144fe41b",
       "20f0048e1c4a071c",
@@ -561,6 +560,7 @@
       "e7db509e5813fbd3",
       "7a64b6f22bf19253",
       "8e55aca5d02916ce",
+      "b0339484ffadbf68",
       "43b536f53e36499c",
       "707be2e95f1e47d3",
       "5684ec79142b34e9",
@@ -3522,7 +3522,6 @@
     "8044985495178a7b",
     "ee821165315eb161",
     "8ba85913b293c85a",
-    "71be2642dfb152d0",
     "d1f012ae285f6815",
     "eb88b612ca31f70d",
     "920e12b220592fe1",
@@ -3614,6 +3613,7 @@
     "2953e94ad377c457",
     "bc55e0afcb9eaead",
     "83bcc129c693ba7b",
+    "71be2642dfb152d0",
     "65ff6ed95eebe6d7",
     "53f8b6583b8c898a",
     "4073600cedcc1e01",
@@ -3874,7 +3874,6 @@
     "55bbbd753910830d",
     "feff88a3be09629d",
     "5dc7822358857da3",
-    "b0339484ffadbf68",
     "6121625118e1036f",
     "8889898a133cac5c",
     "a823c002bb4ffb8e",
@@ -4041,6 +4040,7 @@
     "7a64b6f22bf19253",
     "8e55aca5d02916ce",
     "00c775668d5d97e8",
+    "b0339484ffadbf68",
     "616062eeb18675cd",
     "9667974f5b8dde1c",
     "26592d220d36423b",
@@ -4243,6 +4243,7 @@
     "652f7fe783dad3ea",
     "c10d291eccc27144",
     "523320eb2acf87e7",
+    "2197fcfa16f4a2de",
     "826aa22908527c9a",
     "d7cd254dc1f92d3a",
     "17192ef3513c3747",
@@ -4538,7 +4539,6 @@
     "a1fd398774efa91d",
     "be41b7f15f8da6e9",
     "b2a4f7b010208245",
-    "2197fcfa16f4a2de",
     "1f39661ecdd7fd47",
     "4864d9a1b2b901f5",
     "719b9889d43d833a",
