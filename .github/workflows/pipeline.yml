@@ -120,6 +120,15 @@ jobs:
         continue-on-error: true
         run: npm run kapak -- --gun=2 --limit=60
 
+      # TAZE KAPAK: yayinci haberin gorselini yayindan SONRA degistirebiliyor
+      # (once genel bir kare, sonra gercek fotograf). Kapak bir kez uretildigi
+      # icin eski/alakasiz kare sitede kaliyordu. Son 2 gunun kapaklari
+      # kaynaktaki guncel og:image ile karsilastirilir; yalnizca degisenler
+      # yeniden uretilir. Saatte bir farkli dilim denenir (limit=12).
+      - name: Kapak tazele
+        continue-on-error: true
+        run: node scripts/kapak-uret.mjs --taze --gun=2 --limit=12 --paralel=4
+
       # KART TEMIZLIGI: daha once tasarim karti uretilmis kapaklari yeniden
       # dener. Yayincinin kendi fotografi bulunursa fotografa gecilir; yoksa
       # kart ayni kalir. Normal adim `image` alani yerel /kapak/ olan haberi

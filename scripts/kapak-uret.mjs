@@ -43,7 +43,10 @@ const URL_TABANI = "/kapak";
 
 const GENISLIK = 1280;
 const YUKSEKLIK = 720;
-const KALITE = 74;
+// 30.10.2026: 74 → 80. Yayıncıların görselleri zaten sıkıştırılmış geliyor
+// (1200×675 kare 16 KB olabiliyor); üzerine bir de q74 uygulanınca kapak
+// bulanık görünüyordu. q80 fark edilir şekilde net, dosya boyutu hâlâ küçük.
+const KALITE = 80;
 // Kart boyu: ana sayfada 30 kapak 1280 px indirmesin diye küçük varyant.
 const KUCUK_GENISLIK = 480;
 
@@ -53,7 +56,7 @@ const KUCUK_GENISLIK = 480;
 // dönüşüm 5-9 sn sürebildiği için görseli burada, depoda üretiyoruz.
 const SOSYAL_GENISLIK = 1200;
 const SOSYAL_YUKSEKLIK = 630;
-const SOSYAL_KALITE = 76;
+const SOSYAL_KALITE = 80;
 const SOSYAL_EK = "-sosyal.jpg";
 
 const arg = (ad, varsayilan) => {
@@ -702,10 +705,20 @@ async function kapakUret(a) {
       if (w > 0 && h > 0 && kirpW > 640 && kirpH > 360) {
         boru = boru.extract({ left: sol, top: 0, width: kirpW, height: kirpH });
       }
+      // KÜÇÜK KAYNAK: yayıncı 640×360 gibi küçük bir kare verdiyse 1280'e
+      // büyütmek zorundayız. Büyütme oranı arttıkça daha güçlü keskinleştirme
+      // uygulanır; aksi hâlde kapak "bulanık" görünüyordu.
+      const buyutme = GENISLIK / Math.max(1, kirpW);
+      const keskinlik =
+        buyutme > 1.3
+          ? { sigma: 1.2, m1: 1.2, m2: 0.6 }
+          : buyutme > 1.05
+            ? { sigma: 0.9, m1: 0.8, m2: 0.4 }
+            : { sigma: 0.6 };
       return await boru
         .resize(GENISLIK, YUKSEKLIK, { fit: "cover", position: konum })
         .modulate({ saturation: 1.08, brightness: 1.02 })
-        .sharpen({ sigma: 0.6 })
+        .sharpen(keskinlik)
         .toBuffer();
     } catch {
       return null;
@@ -920,7 +933,7 @@ async function kapakUret(a) {
     // Küçük varyant: liste/kart görünümü için (~20 KB).
     const kucukVeri = await sharp(bilesik)
       .resize(KUCUK_GENISLIK, Math.round((KUCUK_GENISLIK * YUKSEKLIK) / GENISLIK))
-      .webp({ quality: 78, effort: 4 })
+      .webp({ quality: 82, effort: 4 })
       .toBuffer();
     yazDosya(dosya.replace(/\.webp$/, "-480.webp"), kucukVeri);
     if (debug) console.log(`   · ${a.id} küçük varyant yazıldı`);
@@ -1036,7 +1049,7 @@ if (process.argv.includes("--marka")) {
       yazDosya(yol, veri);
       await sharp(veri)
         .resize(KUCUK_GENISLIK, Math.round((KUCUK_GENISLIK * YUKSEKLIK) / GENISLIK))
-        .webp({ quality: 78, effort: 4 })
+        .webp({ quality: 82, effort: 4 })
         .toFile(yol.replace(/\.webp$/, "-480.webp"));
       await sharp(veri)
         // Sosyal oran 1200×630; 16:9 kaynaktan alttan 45 px atılır. Alttaki
@@ -1068,12 +1081,87 @@ if (process.argv.includes("--varyant")) {
       if (fs.existsSync(kucuk)) continue;
       await sharp(path.join(CIKTI_DIZIN, f))
         .resize(KUCUK_GENISLIK, Math.round((KUCUK_GENISLIK * YUKSEKLIK) / GENISLIK))
-        .webp({ quality: 78, effort: 4 })
+        .webp({ quality: 82, effort: 4 })
         .toFile(kucuk);
       sayi++;
     }
   }
   console.log(`${sayi} küçük kapak varyantı üretildi.`);
+  process.exit(0);
+}
+
+// ------------------------------------------------------- taze kapak turu
+// Yayıncılar haberin görselini yayından SONRA değiştirebiliyor: önce genel bir
+// kare (stok devre kartı, kurum binası...) koyup birkaç saat sonra gerçek
+// fotoğrafla değiştirmek yaygın. Kapak bir kez üretildiği için eski/alakasız
+// kare sitede kalıyordu (ör. "sahte VS Code eklentisi" haberinde devre kartı).
+// Bu tur son N günün fotoğraflı kapaklarını kaynaktaki GÜNCEL og:image ile
+// karşılaştırır ve yalnızca görsel gerçekten değiştiyse kapağı yeniler.
+// Saatte bir farklı dilim denenir; her turda tüm liste taranmaz.
+if (process.argv.includes("--taze")) {
+  const tazeGun = arg("gun", 2);
+  const tazeLimit = arg("limit", 12);
+  const tazeEsik = Date.now() - tazeGun * 86400000;
+  const tohum = Math.floor(Date.now() / 3600000);
+  const sirala = (id) => {
+    let h = tohum >>> 0;
+    for (const c of String(id)) h = (Math.imul(h, 31) + c.charCodeAt(0)) >>> 0;
+    return h;
+  };
+  const normalize = (u) => String(u || "").split(/[?#]/)[0];
+  // Aynı görselin farklı boyut kopyaları (…-800.jpg / …-150x84.jpg) yeni adres
+  // gibi görünür; boşuna yeniden üretmemek için dosya adı kökü karşılaştırılır.
+  const kok = (u) => {
+    const dosya = normalize(u).split("/").pop() || "";
+    return dosya
+      .replace(/\.[a-z0-9]+$/i, "")
+      .replace(/[-_]\d{2,4}(x\d{2,4})?$/i, "")
+      .toLowerCase();
+  };
+  const adaylar = articles
+    .filter(
+      (a) =>
+        a &&
+        a.id &&
+        a.kapak &&
+        a.kapak.foto === true &&
+        /^https?:\/\//i.test(String(a.sourceUrl || "")) &&
+        (Date.parse(a.publishedAt || a.generatedAt || 0) || 0) >= tazeEsik
+    )
+    .sort((x, y) => sirala(x.id) - sirala(y.id))
+    .slice(0, tazeLimit);
+
+  let yenilenen = 0;
+  let ayni = 0;
+  await havuz(adaylar, Math.min(paralel, 4), async (a) => {
+    try {
+      const guncel = await kaynakGorselUrl(a);
+      if (!guncel) return;
+      if (normalize(a.kapak.kaynak) === normalize(guncel) || kok(a.kapak.kaynak) === kok(guncel)) {
+        ayni++;
+        return;
+      }
+      if (debug) console.log(`   · ${a.id} görsel değişmiş → ${guncel.slice(0, 80)}`);
+      // Yeni adresi kaynağa yaz: kapak seçimi güncel kareye kilitlenir.
+      a.kapak.kaynak = guncel;
+      const sonuc = await kapakUret(a);
+      a.image = sonuc.url;
+      a.kapak = { v: 2, kaynak: sonuc.kaynak || guncel, foto: sonuc.foto };
+      console.log(`Taze kapak: ${a.title.slice(0, 62)}`);
+      yenilenen++;
+    } catch (err) {
+      console.warn(`  ! ${a.id}: ${err.message}`);
+    }
+  });
+  if (!dry && yenilenen) {
+    fs.writeFileSync(
+      ARTICLES,
+      JSON.stringify(articles, null, 2).replace(/\n/g, satirSonu) + satirSonu
+    );
+  }
+  console.log(
+    `Taze kapak turu: ${yenilenen} yenilendi, ${ayni} aynı, ${adaylar.length} bakıldı.`
+  );
   process.exit(0);
 }
 
