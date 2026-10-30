@@ -340,6 +340,20 @@ export function socialImageUrl(src, width = 1200, height = 630, quality = 82) {
   return `https://wsrv.nl/?url=${encodeURIComponent(src)}&w=${Math.round(width)}&h=${Math.round(height)}&fit=cover&output=jpg&q=${quality}`;
 }
 
+/**
+ * `site/public` altında gerçekten var olan bir dosya mı?
+ *
+ * NEDEN: Yerel kapaklar için 1200×630 JPEG kopyası (`/kapak/<id>-sosyal.jpg`)
+ * üretiliyor. Varsa og:image doğrudan bu dosyayı gösterir; böylece WhatsApp/X
+ * önizlemesi dış CDN'in soğuk dönüşümünü beklemez. Dosya yoksa (eski kapak,
+ * henüz geri doldurulmadı) çağıran wsrv yedeğine düşer.
+ */
+export function publicDosyaVar(rel) {
+  const s = String(rel || "");
+  if (!s.startsWith("/") || s.includes("..")) return false;
+  return existsSync(join(ROOT, "site", "public", ...s.split("/").filter(Boolean)));
+}
+
 export function imageUrl(src, width = 800, quality = 85) {
   src = normalizeSrc(src);
   // Ürettiğimiz yerel kapaklar (./kapak/<id>.webp) 1280 px'dir; liste
