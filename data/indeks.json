@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T06:19:41.754Z",
+  "updatedAt": "2026-10-30T06:27:45.224Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,9 +13,9 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5216,
-  "aday": 5216,
-  "uygun": 3164,
+  "toplamHaber": 5217,
+  "aday": 5217,
+  "uygun": 3165,
   "secilen": 3071,
   "red": {
     "editör notu özetle aynı": 7,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 111
+    "tekrar": 112
   },
   "ornekTekrarlar": [
     {
@@ -40,6 +40,10 @@
     {
       "title": "Instagram, 90 dakikalık video süresiyle içerik rekabetini kızıştırıyor",
       "twin": "Instagram 90 dakikalık videoları test ediyor ancak ödeme yapmıyor"
+    },
+    {
+      "title": "Binance siber saldırısının maliyetini 6,3 milyar dolar olarak açıkladı",
+      "twin": "Binance borsasına siber saldırı düzenlendi, 5.8 milyar dolar çalındı"
     },
     {
       "title": "OpenAI, yapay zekâ modellerinin ürettiği 3 bilimsel sonucu doğruladı",
@@ -54,12 +58,12 @@
       "twin": "OpenAI, yapay zekanın matematikte 3 büyük hamle yaptığını açıkladı"
     },
     {
-      "title": "CD Projekt RED, Cyberpunk 2 görev tasarımında eski modcuları kullanıyor",
-      "twin": "CD Projekt RED, Cyberpunk 2 için multiplayer modu hazırlıklarına başladı"
-    },
-    {
       "title": "Sony Yeni LYTIA 720 Sensörü 50 MP ile Gece Çekimlerini Yarıyor",
       "twin": "Sony mobil kameralar için 50 MP LYTIA 720 sensörünü duyurdu"
+    },
+    {
+      "title": "CD Projekt RED, Cyberpunk 2 görev tasarımında eski modcuları kullanıyor",
+      "twin": "CD Projekt RED, Cyberpunk 2 için multiplayer modu hazırlıklarına başladı"
     },
     {
       "title": "Huawei Enjoy 100 Pro, HarmonyOS 7 ve 6.100 mAh bataryayla geldi",
@@ -108,10 +112,6 @@
     {
       "title": "Apple M6 Çipli 14 İnç MacBook Pro Grafik ve AI Performansını %30 Artırdı",
       "twin": "Apple M6 çipli 14 inç MacBook Pro tanıtıldı: İşte özellikleri ve fiyatı"
-    },
-    {
-      "title": "Apple iOS 27.2 Güncellemesi Siri'yi Konuşmaları Hatırlayacak",
-      "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
     }
   ],
   "days": {
@@ -129,7 +129,6 @@
       "82df107754372aad",
       "d4821e3aef99311d",
       "02a99fc21d2b6314",
-      "692c88d046cc9222",
       "3ef887a652f578b5",
       "2e84dfe9b0b05637",
       "d94c1c2fe8c487a5",
@@ -150,6 +149,7 @@
       "09bc1ee5375acd32",
       "4867e72e8b1058ba",
       "31968e9c9d6f54bb",
+      "692c88d046cc9222",
       "c7bb17e70017e9ea",
       "0ff97bcc11ad5d2e",
       "1676b3750aee07dc",
@@ -510,6 +510,7 @@
       "ed6620184fede0f7",
       "c6efd66c5a36ed2f",
       "3a52b163a5105d4e",
+      "75b9703a5541ef8a",
       "25ba5cebac13f045",
       "47db665aa5c77e08",
       "909ded179dca9502",
@@ -525,7 +526,6 @@
       "174505134bc9c3fc",
       "068cc02ed6734f50",
       "7bdc81ebd97fa392",
-      "75b9703a5541ef8a",
       "ace7d032ece86483",
       "1a81e03d519c938d",
       "1fe406ebb5214cd8",
@@ -3282,7 +3282,6 @@
     "02a99fc21d2b6314",
     "df6089916309c27f",
     "efa5b69565af28e0",
-    "692c88d046cc9222",
     "12864f7f071ffef6",
     "3ef887a652f578b5",
     "3156dbab07c77711",
@@ -3313,6 +3312,7 @@
     "ebd7ae32f8cbf260",
     "d68874deb78c61c3",
     "7a0d0469a8848800",
+    "75b9703a5541ef8a",
     "55deff84c33a3a2c",
     "25ba5cebac13f045",
     "e6692b815dbe16c9",
@@ -3353,6 +3353,7 @@
     "0044396254846d11",
     "a8050e3861ab64dd",
     "31968e9c9d6f54bb",
+    "692c88d046cc9222",
     "be6217761b510639",
     "5f35283e4410ee60",
     "002d0251f2c5f593",
@@ -3423,7 +3424,6 @@
     "9eac0b3f22fb1f1b",
     "2da6c72d999937d8",
     "9b12293dd466be57",
-    "75b9703a5541ef8a",
     "ace7d032ece86483",
     "6f1bb51c89ac6801",
     "1a81e03d519c938d",
