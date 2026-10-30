@@ -26,6 +26,8 @@
 //   npm run kapak -- --fotoyok     → fotoğrafsız (tasarımlı) kapakları
 //                                    yeniden dener; yayıncının fotoğrafı
 //                                    bulunursa fotoğraflı kapağa geçilir
+//   npm run kapak -- --sosyal      → eksik 1200×630 JPEG (og:image + push)
+//                                    kopyalarını tamamlar (ağ kullanmaz)
 //   npm run kapak -- --dry
 // ==========================================================================
 import fs from "node:fs";
@@ -44,6 +46,15 @@ const YUKSEKLIK = 720;
 const KALITE = 74;
 // Kart boyu: ana sayfada 30 kapak 1280 px indirmesin diye küçük varyant.
 const KUCUK_GENISLIK = 480;
+
+// SOSYAL KART: og:image ve web push aynı dosyayı kullanır. WhatsApp, X,
+// Facebook, Telegram ve Windows/Android bildirimleri WebP'yi her zaman kabul
+// etmez; 1200×630 JPEG her platformda çalışır. Dış CDN (wsrv.nl) soğukken
+// dönüşüm 5-9 sn sürebildiği için görseli burada, depoda üretiyoruz.
+const SOSYAL_GENISLIK = 1200;
+const SOSYAL_YUKSEKLIK = 630;
+const SOSYAL_KALITE = 76;
+const SOSYAL_EK = "-sosyal.jpg";
 
 const arg = (ad, varsayilan) => {
   const bulunan = process.argv.find((a) => a.startsWith(`--${ad}=`));
@@ -68,6 +79,13 @@ const sadeceStok = process.argv.includes("--stok");
 // üretimde stok adayı hiç denenmez: yayıncının kendi fotoğrafı bulunursa o,
 // bulunamazsa kategori + kısa çengel taşıyan tasarım kartı üretilir.
 const sadeceStokKaynak = process.argv.includes("--stokkaynak");
+// --gorsel=<adres|/yol>: aday arama atlanır, kapak bu görselden üretilir.
+// Uygunsuz (müstehcen) bir kapak fotoğrafının yerine güvenli kare koymak için.
+const elleGorsel =
+  process.argv.find((a) => a.startsWith("--gorsel="))?.slice("--gorsel=".length) || null;
+// --kirp-sol=<yüzde>: kaynağın solundan atılacak pay. Kadrajın solunda kalan
+// uygunsuz bir figürü kapağın dışında bırakmak için.
+const kirpSolYuzde = arg("kirp-sol", 0);
 // --paralel=N: eşzamanlı indirme sayısı (varsayılan 6).
 const paralel = arg("paralel", 6);
 // DEBUG_KAPAK=1: her haber için hangi görselin neden seçildiğini yazar.
@@ -498,23 +516,23 @@ function kartBasligi(baslik) {
   return { boyut: 58, lh: 70, satirlar: temizSatirlar };
 }
 
-function kapakSvg() {
-  return `<svg width="${GENISLIK}" height="${YUKSEKLIK}" xmlns="http://www.w3.org/2000/svg">
+function kapakSvg(w = GENISLIK, h = YUKSEKLIK) {
+  return `<svg width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="kose" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#000000" stop-opacity="0"/>
       <stop offset="1" stop-color="#000000" stop-opacity="0.62"/>
     </linearGradient>
   </defs>
-  <rect x="0" y="${YUKSEKLIK - 110}" width="${GENISLIK}" height="110" fill="url(#kose)"/>
-  <rect x="0" y="${YUKSEKLIK - 6}" width="${GENISLIK}" height="6" fill="#e11d2e"/>
+  <rect x="0" y="${h - 110}" width="${w}" height="110" fill="url(#kose)"/>
+  <rect x="0" y="${h - 6}" width="${w}" height="6" fill="#e11d2e"/>
   <g font-family="Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif">
     <!-- Sağ alt köşe plakası: yayıncıların köşeye bastığı kendi logolarını
          (AH, Webtekno, DH...) örter. Rozet bu plakanın içinde durur, böylece
          iki logo üst üste binmez. -->
-    <path d="M ${GENISLIK - 236} ${YUKSEKLIK} L ${GENISLIK - 236} ${YUKSEKLIK - 58} Q ${GENISLIK - 236} ${YUKSEKLIK - 70} ${GENISLIK - 224} ${YUKSEKLIK - 70} L ${GENISLIK} ${YUKSEKLIK - 70} L ${GENISLIK} ${YUKSEKLIK} Z" fill="#0b0e14" fill-opacity="0.9"/>
-    <rect x="${GENISLIK - 208}" y="${YUKSEKLIK - 52}" width="12" height="22" rx="2.5" fill="#e11d2e"/>
-    <text x="${GENISLIK - 186}" y="${YUKSEKLIK - 32}" font-size="22" font-weight="700" fill="#ffffff" letter-spacing="-0.3">haberinai</text>
+    <path d="M ${w - 236} ${h} L ${w - 236} ${h - 58} Q ${w - 236} ${h - 70} ${w - 224} ${h - 70} L ${w} ${h - 70} L ${w} ${h} Z" fill="#0b0e14" fill-opacity="0.9"/>
+    <rect x="${w - 208}" y="${h - 52}" width="12" height="22" rx="2.5" fill="#e11d2e"/>
+    <text x="${w - 186}" y="${h - 32}" font-size="22" font-weight="700" fill="#ffffff" letter-spacing="-0.3">haberinai</text>
   </g>
 </svg>`;
 }
@@ -672,7 +690,9 @@ async function kapakUret(a) {
       // filigranı dışarıda kalır, kompozisyon neredeyse aynıdır.
       const w = bilgi.width || 0;
       const h = bilgi.height || 0;
-      const kirpW = Math.max(1, Math.round(w * 0.92));
+      // --kirp-sol: sol taraftan istenen pay atılır (kadrajda istenmeyen figür).
+      const sol = Math.round((w * Math.min(Math.max(kirpSolYuzde, 0), 40)) / 100);
+      const kirpW = Math.max(1, Math.round((w - sol) * 0.92));
       const kirpH = Math.max(1, Math.round(h * 0.93));
       // "attention" büyük görsellerde çok pahalı (saniyelerce CPU). 4000 px'e
       // kadar ilgi alanına göre kırp; daha büyüklerde merkez yeterli.
@@ -680,7 +700,7 @@ async function kapakUret(a) {
         w * h <= 16_000_000 ? sharp.strategy.attention : "centre";
       let boru = sharp(veri);
       if (w > 0 && h > 0 && kirpW > 640 && kirpH > 360) {
-        boru = boru.extract({ left: 0, top: 0, width: kirpW, height: kirpH });
+        boru = boru.extract({ left: sol, top: 0, width: kirpW, height: kirpH });
       }
       return await boru
         .resize(GENISLIK, YUKSEKLIK, { fit: "cover", position: konum })
@@ -716,7 +736,10 @@ async function kapakUret(a) {
     adaylar.push({ url, tip });
   };
 
-  if (!kartaZorla) {
+  if (elleGorsel) {
+    // Elle seçilen görsel: diğer adaylar hiç denenmez (müstehcen kapak değişimi).
+    adayEkle(elleGorsel, "elle");
+  } else if (!kartaZorla) {
     // 1) KAYNAK SİTENİN KENDİ GÖRSELİ (og:image). Haberin çıktığı sayfadaki
     //    kapak görseli tanım gereği başlıkla alakalı.
     if (String(a.sourceUrl || "").startsWith("http")) {
@@ -901,6 +924,17 @@ async function kapakUret(a) {
       .toBuffer();
     yazDosya(dosya.replace(/\.webp$/, "-480.webp"), kucukVeri);
     if (debug) console.log(`   · ${a.id} küçük varyant yazıldı`);
+    // Sosyal kart / push görseli: aynı tabandan 1200×630 JPEG. Marka izi
+    // sosyal boyutta yeniden basılır; böylece kırpma rozeti kesmez.
+    const sosyalVeri = await sharp(taban)
+      .resize(SOSYAL_GENISLIK, SOSYAL_YUKSEKLIK, { fit: "cover", position: "centre" })
+      .composite([
+        { input: Buffer.from(kapakSvg(SOSYAL_GENISLIK, SOSYAL_YUKSEKLIK)) },
+      ])
+      .jpeg({ quality: SOSYAL_KALITE, mozjpeg: true })
+      .toBuffer();
+    yazDosya(dosya.replace(/\.webp$/, SOSYAL_EK), sosyalVeri);
+    if (debug) console.log(`   · ${a.id} sosyal varyant yazıldı (${sosyalVeri.length} bayt)`);
   }
   return {
     url: `${URL_TABANI}/${a.id}.webp`,
@@ -910,6 +944,79 @@ async function kapakUret(a) {
     // kapak temizliğinde `image` alanına geri yazılır).
     kaynak: secilenUrl || a.kapak?.kaynak || a.image,
   };
+}
+
+// ------------------------------------------------------- sosyal görsel modu
+// Eksik `-sosyal.jpg` dosyalarını tamamlar. Kapak üretimi yeni haberler için
+// zaten yazıyor; bu tur eski kapakları (indeks çekirdeği + son N gün) geriye
+// dönük kapsar. Ağ kullanmaz: yalnızca depodaki WebP'yi JPEG'e çevirir.
+// Sınırlı çalışır (varsayılan 120 dosya/tur) ki her 5 dakikalık turda CPU'yu
+// kilitlemesin; birkaç turda tüm kapaklar tamamlanır.
+if (process.argv.includes("--sosyal")) {
+  const sosyalGun = arg("gun", 3);
+  const sosyalLimit = arg("limit", 120);
+  const sosyalEsik = Date.now() - sosyalGun * 86400000;
+  // Temizliğin KORUDUĞU küme ile aynı kapsam: indeks çekirdeği (günlük
+  // dondurulmuş listeler dahil), son N gün ve stok kaynaklı tasarım kartları.
+  const indeksIdler = new Set(aktif);
+  try {
+    const d = JSON.parse(fs.readFileSync(INDEKS, "utf8"));
+    if (d.days && typeof d.days === "object") {
+      for (const liste of Object.values(d.days)) {
+        if (Array.isArray(liste)) for (const id of liste) indeksIdler.add(String(id));
+      }
+    }
+  } catch {}
+  const hedefIdler = new Set();
+  for (const a of articles) {
+    if (!a || !a.id) continue;
+    if (!/^\/kapak\/[A-Za-z0-9]+\.webp$/i.test(String(a.image || ""))) continue;
+    const t = Date.parse(a.publishedAt || a.generatedAt || 0);
+    const stokKarti =
+      a.kapak &&
+      a.kapak.foto === false &&
+      /wikimedia\.org/i.test(String(a.kapak.kaynak || ""));
+    if (
+      indeksIdler.has(String(a.id)) ||
+      stokKarti ||
+      (Number.isFinite(t) && t >= sosyalEsik)
+    ) {
+      hedefIdler.add(String(a.id));
+    }
+  }
+  const isler = [];
+  for (const id of hedefIdler) {
+    const webp = path.join(CIKTI_DIZIN, `${id}.webp`);
+    const jpg = path.join(CIKTI_DIZIN, `${id}${SOSYAL_EK}`);
+    if (!fs.existsSync(webp) || fs.existsSync(jpg)) continue;
+    isler.push({ id, webp, jpg });
+    if (isler.length >= sosyalLimit) break;
+  }
+  let sayi = 0;
+  let atlanan = 0;
+  await havuz(isler, 4, async ({ webp, jpg }) => {
+    try {
+      if (dry) {
+        sayi++;
+        return;
+      }
+      await sharp(webp)
+        .resize(SOSYAL_GENISLIK, SOSYAL_YUKSEKLIK, { fit: "cover", position: "north" })
+        .composite([{ input: Buffer.from(kapakSvg(SOSYAL_GENISLIK, SOSYAL_YUKSEKLIK)) }])
+        .jpeg({ quality: SOSYAL_KALITE, mozjpeg: true })
+        .toFile(jpg);
+      sayi++;
+    } catch (err) {
+      atlanan++;
+      console.warn(`   ! ${path.basename(jpg)}: ${err.message}`);
+    }
+  });
+  console.log(
+    `Sosyal görsel${dry ? " [dry]" : ""}: ${sayi} dosya üretildi` +
+      `${atlanan ? `, ${atlanan} atlandı` : ""} ` +
+      `(hedef: ${hedefIdler.size}, eksik: ${isler.length}).`
+  );
+  process.exit(0);
 }
 
 // --------------------------------------------------------- marka izi modu
@@ -931,6 +1038,14 @@ if (process.argv.includes("--marka")) {
         .resize(KUCUK_GENISLIK, Math.round((KUCUK_GENISLIK * YUKSEKLIK) / GENISLIK))
         .webp({ quality: 78, effort: 4 })
         .toFile(yol.replace(/\.webp$/, "-480.webp"));
+      await sharp(veri)
+        // Sosyal oran 1200×630; 16:9 kaynaktan alttan 45 px atılır. Alttaki
+        // eski rozet de bu kırpmayla gider, yerine sosyal boyuta uygun rozet
+        // basılır (çift logo / kesik logo olmaz).
+        .resize(SOSYAL_GENISLIK, SOSYAL_YUKSEKLIK, { fit: "cover", position: "north" })
+        .composite([{ input: Buffer.from(kapakSvg(SOSYAL_GENISLIK, SOSYAL_YUKSEKLIK)) }])
+        .jpeg({ quality: SOSYAL_KALITE, mozjpeg: true })
+        .toFile(yol.replace(/\.webp$/, SOSYAL_EK));
       sayi++;
     } catch (err) {
       atlanan++;
