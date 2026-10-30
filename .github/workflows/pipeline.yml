@@ -135,6 +135,14 @@ jobs:
         continue-on-error: true
         run: node scripts/kapak-uret.mjs --stok --limit=25 --paralel=6
 
+      # SOSYAL GORSEL: her kapagin 1200x630 JPEG kopyasini uretir. og:image ve
+      # web push AYNI dosyayi kullanir; boylece WhatsApp/X onizlemesi ve Windows
+      # bildirimi dis CDN'in (wsrv.nl) soguk donusumunu beklemez, gorselsiz
+      # kalmaz. Yalnizca eksik dosyalar uretilir (tur basina 120).
+      - name: Sosyal gorsel (1200x630 JPEG)
+        continue-on-error: true
+        run: node scripts/kapak-uret.mjs --sosyal --gun=3 --limit=120
+
       # Depo sismesin: indeks cekirdeginde olmayan ve son 3 gunden eski
       # kapaklar silinir; o haberler kaynak sitenin ozgun fotografina doner.
       - name: Kapak temizligi

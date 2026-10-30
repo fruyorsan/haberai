@@ -361,6 +361,28 @@ function normalizeSrc(src) {
 }
 
 /**
+ * Sitenin kendi görsellerini (yerel `/kapak/<id>.webp` adresleri) mutlak
+ * adrese çevirir.
+ *
+ * NEDEN KRİTİK: Kapaklar 29.10.2026'dan beri yerel üretiliyor; haberin
+ * `image` alanı artık `/kapak/xxxx.webp`. OneSignal'e gönderilen görsel
+ * adresi mutlak (http/https) olmak zorundadır. Eskiden bu yerel yol
+ * `bildirimGorseli` tarafından sessizce eleniyor, ardından gelen ilk uzak
+ * aday (kaynağın HAM fotoğrafı) ya da stok kategori görseli gönderiliyordu.
+ * Sonuç: bildirimdeki kare, sitede gösterilen kapaktan farklı oluyordu.
+ * Artık kapak mutlak adrese çevrilir; yerel `-sosyal.jpg` varsa doğrudan o,
+ * yoksa wsrv.nl üzerinden JPEG kullanılır. Yani bildirim, haberin sitedeki
+ * görselinin BİREBİR aynısıdır.
+ */
+function mutlakGorselUrl(src) {
+  const s = String(src || "").trim();
+  if (!s) return "";
+  if (/^https?:\/\//i.test(s)) return s;
+  if (/^\/(?!\/)/.test(s)) return `${SITE_URL}${s}`;
+  return "";
+}
+
+/**
  * Web push bildirimi için görsel URL'si üretir.
  * - 2:1 en-boy oranı (Chrome ve Windows Web Push resmi standardı: 720x360).
  * - Doğrudan uzantı içeren URL (/haber.jpg) -> Windows Action Center (WNS) uzantısız kök URL'leri görsel saymayıp düşürebiliyordu.
@@ -434,33 +456,67 @@ async function gorselDogrulaVeIsit(url) {
 
 /** Bildirimin tıklanınca gideceği adres + doğrulanmış/ısıtılmış görsel + metin. */
 async function bildirimIcerigiHazirla(a, { baslik }, { dry = false } = {}) {
+  // Sitede gösterilen görsel: yerel kapak (/kapak/<id>.webp) ise haberin
+  // kanonik fotoğrafı odur. Bildirim de TAM OLARAK onu göstermelidir; başka
+  // bir aday (kaynağın ham fotoğrafı, stok kare) gönderilirse okuyucu
+  // bildirimdeki kareyi haber sayfasında bulamaz.
+  const yerelKapak = /^\/kapak\//i.test(String(a?.image || ""));
+  // Yerel kapağın 1200×630 JPEG kopyası varsa push görseli DOĞRUDAN odur:
+  // wsrv.nl'nin soğuk dönüşümü beklemez, Windows/Android bildirimi görselsiz
+  // kalmaz ve sitedeki kapakla birebir aynı kare gider.
+  const yerelKapakId =
+    /^\/kapak\/([A-Za-z0-9]+)\.webp$/i.exec(String(a?.image || ""))?.[1] || "";
+  const yerelSosyal = yerelKapakId
+    ? `${SITE_URL}/kapak/${yerelKapakId}-sosyal.jpg`
+    : "";
+  const yerelSosyalVar = Boolean(
+    yerelSosyal &&
+      existsSync(
+        join(__dirname, "..", "site", "public", "kapak", `${yerelKapakId}-sosyal.jpg`)
+      )
+  );
   const adayKaynaklar = [];
-  const kapak = kapakKaynagi(a);
+  const kapak = mutlakGorselUrl(kapakKaynagi(a));
   if (kapak) adayKaynaklar.push(kapak);
+  const anaGorsel = mutlakGorselUrl(a?.image);
   if (
-    a?.image &&
-    /^https?:\/\//i.test(a.image) &&
-    !/placeholder|no[-_]?image|default[-_/]?news|avatar/i.test(a.image) &&
-    !adayKaynaklar.includes(a.image)
+    anaGorsel &&
+    !/placeholder|no[-_]?image|default[-_/]?news|avatar/i.test(anaGorsel) &&
+    !adayKaynaklar.includes(anaGorsel)
   ) {
-    adayKaynaklar.push(a.image);
+    adayKaynaklar.push(anaGorsel);
   }
-  if (Array.isArray(a?.images)) {
-    for (const url of a.images) {
-      if (typeof url === "string" && /^https?:\/\//i.test(url) && !adayKaynaklar.includes(url)) {
-        adayKaynaklar.push(url);
+  // Yerel kapak varsa başka fotoğraf denenmez: kapak dosyası depoda ve
+  // yayındadır, tek olası arıza dış CDN'dir; o durumda markalı görsele düşmek
+  // "haberde olmayan bir kare" göstermekten iyidir.
+  if (!yerelKapak) {
+    if (Array.isArray(a?.images)) {
+      for (const url of a.images) {
+        const mutlak = mutlakGorselUrl(url);
+        if (mutlak && !adayKaynaklar.includes(mutlak)) {
+          adayKaynaklar.push(mutlak);
+        }
       }
     }
-  }
-  const yedek = yedekGorsel(a?.category || "Gündem", a?.id);
-  if (yedek?.url && !adayKaynaklar.includes(yedek.url)) {
-    adayKaynaklar.push(yedek.url);
+    const yedek = yedekGorsel(a?.category || "Gündem", a?.id);
+    if (yedek?.url && !adayKaynaklar.includes(yedek.url)) {
+      adayKaynaklar.push(yedek.url);
+    }
   }
 
   let secilenKaynak = adayKaynaklar[0] || "";
-  let gorsel = secilenKaynak ? bildirimGorseli(secilenKaynak, 720, 360) : "";
+  let gorsel = "";
 
-  if (!dry) {
+  if (yerelSosyalVar) {
+    // Depodaki JPEG: doğrudan gönder. wsrv/Cloudflare turu yok, soğuk
+    // dönüşüm gecikmesi yok; Chrome ve Windows bildirimi görseli anında alır.
+    secilenKaynak = yerelSosyal;
+    gorsel = yerelSosyal;
+  } else if (secilenKaynak) {
+    gorsel = bildirimGorseli(secilenKaynak, 720, 360);
+  }
+
+  if (!dry && !yerelSosyalVar) {
     let bulundu = false;
     for (const kaynak of adayKaynaklar) {
       const wsrvUrl = bildirimGorseli(kaynak, 720, 360);
@@ -486,7 +542,13 @@ async function bildirimIcerigiHazirla(a, { baslik }, { dry = false } = {}) {
     gorsel = `${SITE_URL}/og-default.png`;
   }
 
-  let ikon = secilenKaynak ? bildirimIkonu(secilenKaynak) : `${SITE_URL}/ikon-192.png`;
+  // Tasarımlı kart kapakları (foto === false) metin/grafik taşır; 192 px'lik
+  // yuvarlak ikonda kırpılınca okunmaz. Böyle kapaklarda site logosu kullanılır.
+  const kartKapak = yerelKapak && a?.kapak?.foto === false;
+  let ikon =
+    secilenKaynak && !kartKapak
+      ? bildirimIkonu(secilenKaynak)
+      : `${SITE_URL}/ikon-192.png`;
   if (!dry && ikon !== `${SITE_URL}/ikon-192.png`) {
     const ikonTamam = await gorselDogrulaVeIsit(ikon);
     if (!ikonTamam) ikon = `${SITE_URL}/ikon-192.png`;

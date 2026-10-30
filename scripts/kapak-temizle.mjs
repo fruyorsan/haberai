@@ -86,8 +86,11 @@ const harita = new Map(articles.filter((a) => a && a.id).map((a) => [String(a.id
 const dosyalar = fs.readdirSync(CIKTI_DIZIN);
 const silinecek = [];
 for (const f of dosyalar) {
-  if (!f.endsWith(".webp")) continue;
-  const id = f.replace(/-480\.webp$/, "").replace(/\.webp$/, "");
+  if (!f.endsWith(".webp") && !f.endsWith("-sosyal.jpg")) continue;
+  const id = f
+    .replace(/-480\.webp$/, "")
+    .replace(/\.webp$/, "")
+    .replace(/-sosyal\.jpg$/, "");
   if (!korunacak.has(id)) silinecek.push(f);
 }
 
@@ -105,7 +108,9 @@ for (const f of silinecek) {
   } else {
     silinen++;
   }
-  silinenIdler.add(f.replace(/-480\.webp$/, "").replace(/\.webp$/, ""));
+  silinenIdler.add(
+    f.replace(/-480\.webp$/, "").replace(/\.webp$/, "").replace(/-sosyal\.jpg$/, "")
+  );
 }
 
 for (const id of silinenIdler) {
