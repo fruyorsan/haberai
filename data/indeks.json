@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T11:00:44.455Z",
+  "updatedAt": "2026-10-30T11:09:18.787Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5245,
-  "aday": 5245,
-  "uygun": 3192,
-  "secilen": 3098,
+  "toplamHaber": 5246,
+  "aday": 5246,
+  "uygun": 3193,
+  "secilen": 3099,
   "red": {
     "özet gövdeyle aynı": 109,
     "editör notu özetle aynı": 7,
@@ -62,10 +62,6 @@
       "twin": "CD Projekt RED, Cyberpunk 2 için multiplayer modu hazırlıklarına başladı"
     },
     {
-      "title": "Huawei Enjoy 100 Pro, HarmonyOS 7 ve 6.100 mAh bataryayla geldi",
-      "twin": "Huawei, Wi-Fi 7 destekli yeni Router X2 Pro modelini satışa sundu"
-    },
-    {
       "title": "İsmail Kartal, Fenerbahçe'deki görevinden istifa etti",
       "twin": "Fenerbahçe Yönetimi İsmail Kartal'ın İstifasını Onayladı"
     },
@@ -76,6 +72,10 @@
     {
       "title": "İsrail'in Gazze saldırıları 4 sivilin daha yaşamına son verdi",
       "twin": "İsrail ordusunun Gazze saldırıları sonucu 4 Filistinli hayatını kaybetti"
+    },
+    {
+      "title": "Huawei Enjoy 100 Pro, HarmonyOS 7 ve 6.100 mAh bataryayla geldi",
+      "twin": "Huawei, Wi-Fi 7 destekli yeni Router X2 Pro modelini satışa sundu"
     },
     {
       "title": "Binance 6,3 Milyar Dolar Hack ile Karşı Karşıya",
@@ -365,10 +365,12 @@
       "1fe406ebb5214cd8",
       "6b84961c1109356d",
       "9b2fe4b31264ce5e",
+      "25bc2543783f9a9c",
       "d4787d65b3ed6496",
       "aa4cb3d31a30d5de",
       "ee821165315eb161",
       "8ba85913b293c85a",
+      "3bc840891b7cf2d4",
       "cd1753f9fd980dd5",
       "e04c349360953110",
       "f49cfcfefe9736bb",
@@ -387,7 +389,6 @@
       "216e7df106205834",
       "1ca6c462000ad10e",
       "ed1f0ab6425183d5",
-      "3bc840891b7cf2d4",
       "52fcc23ca4f01041",
       "2e4fdabc5511385e",
       "acad35ad4209cee7",
@@ -3479,6 +3480,7 @@
     "ac7dd956cca3d6df",
     "9b2fe4b31264ce5e",
     "d1091700aa3f81ba",
+    "25bc2543783f9a9c",
     "74ca705fd0fdb2c6",
     "0ff97bcc11ad5d2e",
     "c82ec67b4a89c524",
@@ -3546,6 +3548,7 @@
     "de9f467a09cf062f",
     "30c7aaeb29feac31",
     "88afc4c46ff5a08a",
+    "3bc840891b7cf2d4",
     "23c26d244f1185e0",
     "a7e70f6467a827fc",
     "a167f16224f137cc",
@@ -3668,7 +3671,6 @@
     "1ca6c462000ad10e",
     "ed1f0ab6425183d5",
     "a91563c9b62a514b",
-    "3bc840891b7cf2d4",
     "c12dcace83fc311c",
     "3933ba9d049e228f",
     "e8b4d40d822b9cbf",
