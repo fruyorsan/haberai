@@ -334,6 +334,14 @@ function normalizeSrc(src) {
  */
 export function socialImageUrl(src, width = 1200, height = 630, quality = 82) {
   src = normalizeSrc(src);
+  // Yerel kapak: aynı kapağın 1200×630 JPEG kopyası varsa onu kullan. Böylece
+  // liste/kategori sayfalarının og:image'i de WebP yerine JPEG olur; WhatsApp
+  // ve X önizlemesi dış CDN'i beklemez. Dosya yoksa WebP'ye düşülür.
+  const yerelKapak = /^\/kapak\/([A-Za-z0-9]+)\.webp$/i.exec(src)?.[1];
+  if (yerelKapak) {
+    const jpg = `/kapak/${yerelKapak}-sosyal.jpg`;
+    return publicDosyaVar(jpg) ? jpg : src;
+  }
   if (!src || !/^https?:\/\//i.test(src)) return src || "";
   if (process.env.NO_IMAGE_PROXY) return src;
   try { if (DIRECT_IMAGE_HOSTS.test(new URL(src).hostname)) return src; } catch {}
