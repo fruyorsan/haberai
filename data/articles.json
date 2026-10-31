@@ -29,7 +29,7 @@
     "gorselSorgu": "Volta motorcycle street scene",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/a101-benzinli-motosiklet-modelleri-5-kasim",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Volvo_Ailsa_Alexander_-_A101_SUU_-_LT_V1_Showbus_2015.jpg/1280px-Volvo_Ailsa_Alexander_-_A101_SUU_-_LT_V1_Showbus_2015.jpg",
+    "image": "/kapak/cb73d60eeb8128ff.webp",
     "publishedAt": "2026-10-31T13:00:07.000Z",
     "generatedAt": "2026-10-31T13:07:50.688Z",
     "gorselEk": [
@@ -44,7 +44,7 @@
     ],
     "breaking": true,
     "imagesKaynak": "https://shiftdelete.net/a101-benzinli-motosiklet-modelleri-5-kasim",
-    "gorselDeneme": "2026-10-31T13:07:51.937Z",
+    "gorselDeneme": "2026-10-31T13:39:05.761Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/volta-motosiklet-modelleri-a101e-geliyor.webp",
@@ -55,7 +55,10 @@
       "lisans": "CC BY 2.0",
       "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Volvo_Ailsa_Alexander_-_A101_SUU_-_LT_V1_Showbus_2015.jpg"
-    }
+    },
+    "images": [
+      "https://ares.shiftdelete.net/2026/10/volta-motosiklet-modelleri-a101e-geliyor-2.webp"
+    ]
   },
   {
     "id": "17016cfdb7df0381",
@@ -87,7 +90,7 @@
     "gorselSorgu": "high speed train tracks",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/bakan-uraloglu-acikladi-3-ile-daha-hizli-tren-geliyor-551229",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/High_Speed_Train_at_Cavick_Road_Level_Crossing%2C_Wymondham_-_geograph.org.uk_-_2410093.jpg/1280px-High_Speed_Train_at_Cavick_Road_Level_Crossing%2C_Wymondham_-_geograph.org.uk_-_2410093.jpg",
+    "image": "/kapak/17016cfdb7df0381.webp",
     "publishedAt": "2026-10-31T12:09:00.000Z",
     "generatedAt": "2026-10-31T12:41:17.075Z",
     "gorselKaynak": {
@@ -151,12 +154,12 @@
     "gorselSorgu": "Oleshky evacuation buses",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/cqx2818elrnzo?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Person_holding_world_globe.jpg/1280px-Person_holding_world_globe.jpg",
+    "image": "/kapak/763a99da6625bb99.webp",
     "publishedAt": "2026-10-31T12:05:04.000Z",
     "generatedAt": "2026-10-31T12:12:15.956Z",
     "breaking": true,
     "imagesKaynak": "https://www.bbc.co.uk/news/articles/cqx2818elrnzo?at_medium=RSS&at_campaign=rss",
-    "gorselDeneme": "2026-10-31T12:12:16.674Z",
+    "gorselDeneme": "2026-10-31T13:39:05.482Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/62ec/live/4e7bd090-d516-11f1-93e1-3b657b665bcf.jpg",
@@ -184,6 +187,10 @@
         "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Oleshky_02.jpg"
       }
+    ],
+    "images": [
+      "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/1330/live/29e071c0-d460-11f1-a701-fddedf244c16.png",
+      "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/c031/live/d6542cb0-d51b-11f1-a701-fddedf244c16.png"
     ]
   },
   {
@@ -217,7 +224,7 @@
     "gorselSorgu": "Twitch logo screen",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/twitch-kullanicilarina-uyari--212310",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
+    "image": "/kapak/77d6f2dbd7a6f1fe.webp",
     "publishedAt": "2026-10-31T11:35:10.000Z",
     "generatedAt": "2026-10-31T11:42:56.636Z",
     "gorselEk": [
@@ -231,12 +238,11 @@
       }
     ],
     "breaking": true,
-    "imagesKaynak": "https://www.donanimhaber.com/twitch-kullanicilarina-uyari--212310",
-    "gorselDeneme": "2026-10-31T11:42:58.893Z",
+    "gorselDeneme": "2026-10-31T13:39:06.847Z",
     "kapak": {
       "v": 2,
-      "kaynak": "https://www.donanimhaber.com/images/images/haber/212310/src/twitch-kullanicilarina-uyari212310_0.jpg",
-      "foto": true
+      "kaynak": "https://www.donanimhaber.com/images/images/haber/212310/1200x675twitch-kullanicilarina-uyari.jpg",
+      "foto": false
     },
     "gorselKaynak": {
       "yazar": "Joël van der Loo",
@@ -273,11 +279,11 @@
     "gorselSorgu": "russia fuel export ban",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/ekonomi/rusya-dizel-ihracati-yasagini-ocak-sonuna-kadar-uzatti/4107267",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/7/78/Market_centre_in_Tokyo_stock_exchange.jpg",
+    "image": "/kapak/38f498026a388321.webp",
     "publishedAt": "2026-10-31T11:21:05.000Z",
     "generatedAt": "2026-10-31T11:27:11.596Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:54.509Z",
+    "gorselDeneme": "2026-10-31T13:39:07.787Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_19886622889c3aa56ea9a5a71f7759ba.jpg",
@@ -330,7 +336,7 @@
     "gorselSorgu": "middle east military meeting",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/dunya/suriye-disisleri-bakani-mekke-ortak-savunma-anlasmasina-katilim-icin-gorusmelerin-surdugunu-soyledi/4107255",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/US_Navy_090412-N-0636S-002_Cast_members_from_the_new_Star_Trek_movie%2C_from_left%2C_Chris_Pine%2C_Zachary_Quinto%2C_Karl_Urban%2C_and_John_Cho_sign_autographs_at_a_U.S._military_base_in_the_Middle_East.jpg/1280px-thumbnail.jpg",
+    "image": "/kapak/b000acfde90dd5d7.webp",
     "publishedAt": "2026-10-31T11:04:24.000Z",
     "generatedAt": "2026-10-31T11:12:17.482Z",
     "gorselEk": [
@@ -352,7 +358,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:54.529Z",
+    "gorselDeneme": "2026-10-31T13:39:07.813Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_22c208dd2e8e0fc6619fa80d8df94b9d.jpg",
@@ -395,12 +401,11 @@
     "gorselSorgu": "Nintendo Switch 2 console",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/eglantine-switch-2-emulator-mario-kart-world-pc",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Nintendo-Switch-Console-Docked-wJoyConRB.jpg/1280px-Nintendo-Switch-Console-Docked-wJoyConRB.jpg",
+    "image": "/kapak/90cf7d697d2f1f0c.webp",
     "publishedAt": "2026-10-31T10:54:54.000Z",
     "generatedAt": "2026-10-31T10:56:34.695Z",
     "breaking": true,
-    "imagesKaynak": "https://shiftdelete.net/eglantine-switch-2-emulator-mario-kart-world-pc",
-    "gorselDeneme": "2026-10-31T10:56:35.802Z",
+    "gorselDeneme": "2026-10-31T13:39:06.923Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/eglantine-splatoon-raiders-pc.webp",
@@ -461,7 +466,7 @@
     "gorselSorgu": "organic farming pest control",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/ekonomi/tarimda-2027-uretim-yili-biyolojik-ve-biyoteknik-mucadele-destekleri-belirlendi/4107238",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Istanbul_city_Photos-_Urban_24.jpg/1280px-Istanbul_city_Photos-_Urban_24.jpg",
+    "image": "/kapak/43c19a0f87ff3b9b.webp",
     "publishedAt": "2026-10-31T10:39:50.000Z",
     "generatedAt": "2026-10-31T10:42:23.206Z",
     "gorselEk": [
@@ -475,7 +480,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:54.683Z",
+    "gorselDeneme": "2026-10-31T13:39:08.907Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_bc8bc96d555a239679d993efb4d1f65e.jpg",
@@ -518,7 +523,7 @@
     "gorselSorgu": "hazelnut harvest in Turkey",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/ekonomi/rekabet-kurumu-findik-sektorune-yonelik-siki-takibini-surduruyor/4107232",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Hazelnut_harvest.jpg/1280px-Hazelnut_harvest.jpg",
+    "image": "/kapak/86deeda44f578f0e.webp",
     "publishedAt": "2026-10-31T10:22:52.000Z",
     "generatedAt": "2026-10-31T10:28:43.390Z",
     "gorselEk": [
@@ -532,10 +537,10 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T10:42:25.443Z",
+    "gorselDeneme": "2026-10-31T13:39:08.783Z",
     "kapak": {
       "v": 2,
-      "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_0e30872a2d014af6740ab0f7f0a49002.jpg",
+      "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_c7f211d8e5af44b94b76bced36a2168a.jpg",
       "foto": true
     },
     "imagesKaynak": "https://www.aa.com.tr/tr/ekonomi/rekabet-kurumu-findik-sektorune-yonelik-siki-takibini-surduruyor/4107232",
@@ -544,7 +549,10 @@
       "lisans": "CC BY-SA 2.0",
       "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Hazelnut_harvest.jpg"
-    }
+    },
+    "images": [
+      "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/0e30872a2d014af6740ab0f7f0a49002.jpg"
+    ]
   },
   {
     "id": "b2a508d2efc817cf",
@@ -575,7 +583,7 @@
     "gorselSorgu": "Modern Warfare 2 gameplay",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/modern-warfare-2-avustralya-yeniden-derecelendirildi",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Jason-West-Vince-Zampella-Modern-Warfare-2-E3-2009_%281%29.jpg/1280px-Jason-West-Vince-Zampella-Modern-Warfare-2-E3-2009_%281%29.jpg",
+    "image": "/kapak/b2a508d2efc817cf.webp",
     "publishedAt": "2026-10-31T10:12:52.000Z",
     "generatedAt": "2026-10-31T10:17:24.270Z",
     "gorselEk": [
@@ -589,8 +597,7 @@
       }
     ],
     "breaking": true,
-    "imagesKaynak": "https://shiftdelete.net/modern-warfare-2-avustralya-yeniden-derecelendirildi",
-    "gorselDeneme": "2026-10-31T10:17:25.222Z",
+    "gorselDeneme": "2026-10-31T13:39:07.307Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/e5ea67d4ab6b02a0af62b12c9537cd392a83b90a.webp",
@@ -633,7 +640,7 @@
     "gorselSorgu": "Sony ELF-MN1 display",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/sony-elf-mn1-avatar-gozluksuz-3d-ekran",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/DIY_Arduino_LED_screen_for_audio_spectrum_analyzer_2.jpg/1280px-DIY_Arduino_LED_screen_for_audio_spectrum_analyzer_2.jpg",
+    "image": "/kapak/23e4b1cd4b18508f.webp",
     "publishedAt": "2026-10-31T10:07:52.000Z",
     "generatedAt": "2026-10-31T10:09:44.428Z",
     "gorselEk": [
@@ -647,7 +654,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:53.904Z",
+    "gorselDeneme": "2026-10-31T13:39:07.684Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/3f1ebf5c6c619a977501aadd0d5626ef7113dae1.webp",
@@ -691,7 +698,7 @@
     "gorselSorgu": "Turkish traditional food gastronomy festival",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/kultur/kultur-yolu-festivalleri-ile-yerel-lezzetler-yil-boyunca-tanitilacak/4107202",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Kinds_from_the_Turkish_cuisine.jpg/1280px-Kinds_from_the_Turkish_cuisine.jpg",
+    "image": "/kapak/53c0528e0bda03bf.webp",
     "publishedAt": "2026-10-31T09:44:18.000Z",
     "generatedAt": "2026-10-31T10:02:12.119Z",
     "gorselEk": [
@@ -705,7 +712,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T10:09:47.954Z",
+    "gorselDeneme": "2026-10-31T13:39:09.934Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_111deefbfdebc22cb47d7287208bc38c.jpg",
@@ -717,7 +724,10 @@
       "lisans": "CC BY 2.0",
       "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Kinds_from_the_Turkish_cuisine.jpg"
-    }
+    },
+    "images": [
+      "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/5797f46818c3729d5cc071faa1c2ff27.jpg"
+    ]
   },
   {
     "id": "c45b48b778d2f86c",
@@ -747,11 +757,11 @@
     "gorselSorgu": "Istanbul marathon route",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/spor/48-istanbul-maratonu-yarin-kosulacak/4107200",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/38th_Istanbul_Vodafone_Marathon_%285%29.jpg/1280px-38th_Istanbul_Vodafone_Marathon_%285%29.jpg",
+    "image": "/kapak/c45b48b778d2f86c.webp",
     "publishedAt": "2026-10-31T09:40:49.000Z",
     "generatedAt": "2026-10-31T09:47:22.605Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:54.728Z",
+    "gorselDeneme": "2026-10-31T13:39:09.943Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_321bcd72264b435a81723d61cdbb9b5e.jpg",
@@ -805,7 +815,7 @@
     "gorselSorgu": "mail in ballot counting center",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/videos/cw4g1vlj4v2jo?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/2023_Turkish_presidential_election_ballot_20230514.jpg/1280px-2023_Turkish_presidential_election_ballot_20230514.jpg",
+    "image": "/kapak/5c635865d006baaa.webp",
     "publishedAt": "2026-10-31T09:16:14.000Z",
     "generatedAt": "2026-10-31T09:25:37.687Z",
     "gorselEk": [
@@ -819,7 +829,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:54.008Z",
+    "gorselDeneme": "2026-10-31T13:39:07.827Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/8e67/live/634d7ac0-d46a-11f1-a701-fddedf244c16.jpg",
@@ -863,11 +873,11 @@
     "gorselSorgu": "Nokia 2360 Flip phone",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/nokia-2360-flip",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Caviar_2340_Hard_Drive_Circuit_Board_Side_2.jpg/1280px-Caviar_2340_Hard_Drive_Circuit_Board_Side_2.jpg",
+    "image": "/kapak/d01e3a2e2a03a16f.webp",
     "publishedAt": "2026-10-31T09:12:41.000Z",
     "generatedAt": "2026-10-31T09:17:14.959Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:54.400Z",
+    "gorselDeneme": "2026-10-31T13:39:08.030Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/nokia-2360-flip-kapakli-tuslu-telefon.webp",
@@ -927,7 +937,7 @@
     "gorselSorgu": "Polish Constitutional Court building",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/dunya/polonya-cumhurbaskani-anayasa-mahkemesindeki-olaylarin-ardindan-siyasetcilerle-acil-istisarede-bulunacak/4107162",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Person_holding_world_globe.jpg/1280px-Person_holding_world_globe.jpg",
+    "image": "/kapak/f3fa98b3f83d0783.webp",
     "publishedAt": "2026-10-31T09:06:08.000Z",
     "generatedAt": "2026-10-31T09:10:12.795Z",
     "gorselEk": [
@@ -949,7 +959,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:55.757Z",
+    "gorselDeneme": "2026-10-31T13:39:08.756Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_8e5ae9cf6c23661e9154ab93f56351dc.jpg",
@@ -991,11 +1001,11 @@
     "gorselSorgu": "electric car production plant",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/volkswagen-turkiye-ye-geliyor-mu-yeni-corolla-ne-sunacak--212302",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Electric_charging_of_Tokyo_Gas_car_2.jpg/1280px-Electric_charging_of_Tokyo_Gas_car_2.jpg",
+    "image": "/kapak/05a61d28c7a4b052.webp",
     "publishedAt": "2026-10-31T09:00:52.000Z",
     "generatedAt": "2026-10-31T09:01:37.497Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:56.091Z",
+    "gorselDeneme": "2026-10-31T13:39:09.655Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212302/1200x675volkswagen-turkiye-ye-geliyor-mu-yeni-corolla-ne-sunacak.jpg",
@@ -1048,7 +1058,7 @@
     "gorselSorgu": "halloween pumpkin decorations",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/kultur-sanat/cadilar-bayrami-ne-zaman-halloween-kutlama-tarihi-551204",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/People_in_Halloween_Costumes.jpg/1280px-People_in_Halloween_Costumes.jpg",
+    "image": "/kapak/0fc215edd0aa5bcc.webp",
     "publishedAt": "2026-10-31T08:49:00.000Z",
     "generatedAt": "2026-10-31T08:52:48.696Z",
     "gorselKaynak": {
@@ -1104,7 +1114,7 @@
     "gorselSorgu": "Huawei smartphone screen display",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/harmonyos-7-alacak-huawei-cihazlari-listesi",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Man_using_smartphone_while_shopping_in_modern_furniture_store.jpg/1280px-Man_using_smartphone_while_shopping_in_modern_furniture_store.jpg",
+    "image": "/kapak/279e78e22e83cb3a.webp",
     "publishedAt": "2026-10-31T08:39:16.000Z",
     "generatedAt": "2026-10-31T08:44:15.694Z",
     "gorselEk": [
@@ -1119,7 +1129,7 @@
     ],
     "breaking": true,
     "imagesKaynak": "https://shiftdelete.net/harmonyos-7-alacak-huawei-cihazlari-listesi",
-    "gorselDeneme": "2026-10-31T08:44:16.825Z",
+    "gorselDeneme": "2026-10-31T13:39:09.199Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/b59484348b8d99f328e3cff049f786f3f5b49c09.webp",
@@ -1130,7 +1140,10 @@
       "lisans": "CC BY 2.0",
       "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Man_using_smartphone_while_shopping_in_modern_furniture_store.jpg"
-    }
+    },
+    "images": [
+      "https://ares.shiftdelete.net/2026/10/a3616a689d7ea5fefa27a26909a6f1353e8d50f7.webp"
+    ]
   },
   {
     "id": "4c47d3449bfa3009",
@@ -1162,7 +1175,7 @@
     "gorselSorgu": "data center server racks",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/spacex-anthropic-en-buyuk-musteri-claude",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Quick_Thinking_Saves_USAFE_Data_Center_%286361168%29.jpg/1280px-Quick_Thinking_Saves_USAFE_Data_Center_%286361168%29.jpg",
+    "image": "/kapak/4c47d3449bfa3009.webp",
     "publishedAt": "2026-10-31T08:24:16.000Z",
     "generatedAt": "2026-10-31T08:27:07.920Z",
     "gorselEk": [
@@ -1176,7 +1189,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:54.818Z",
+    "gorselDeneme": "2026-10-31T13:39:09.294Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/8a9b42796a1888cb6e1da65cc5f7fff799135ab9.webp",
@@ -1221,7 +1234,7 @@
     "gorselSorgu": "Kazakhstan Turkey trade cooperation",
     "source": "TRT Haber Son Dakika",
     "sourceUrl": "https://www.trthaber.com/haber/ekonomi/turkiye-ve-kazakistan-arasindaki-dis-ticaret-rekor-seviyeye-tasindi-961795.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Kazakhstan-Turkey_Friendship_Park_opened_in_Ankara_02.jpg/1280px-Kazakhstan-Turkey_Friendship_Park_opened_in_Ankara_02.jpg",
+    "image": "/kapak/ed32e518ad2a88c1.webp",
     "publishedAt": "2026-10-31T08:05:00.000Z",
     "generatedAt": "2026-10-31T08:19:17.978Z",
     "gorselEk": [
@@ -1243,7 +1256,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:55.493Z",
+    "gorselDeneme": "2026-10-31T13:39:10.099Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/cumhurbaskani-erdogan-kazakistan-cb-tokayev-aa-2500048.jpg",
@@ -1286,11 +1299,11 @@
     "gorselSorgu": "digital game development studio",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/steam-yapay-zeka-oyunlari-yasaklanmayacak",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Butterfly_Digital_Entertainment_booth%2C_Taipei_Game_Show_20180126.jpg/1280px-Butterfly_Digital_Entertainment_booth%2C_Taipei_Game_Show_20180126.jpg",
+    "image": "/kapak/4b66433901b0027c.webp",
     "publishedAt": "2026-10-31T07:46:35.000Z",
     "generatedAt": "2026-10-31T07:52:33.047Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:55.301Z",
+    "gorselDeneme": "2026-10-31T13:39:09.669Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/a2190692d9a8f233d073cedd6f9c1ecbbb966c15.webp",
@@ -1351,7 +1364,7 @@
     "gorselSorgu": "server room racks blue light",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/cve-2026-97631-uefi-acigi-sunucular",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Server_Room_Terminals_%28183804054%29.jpg",
+    "image": "/kapak/5a9a0110d23d7ac1.webp",
     "publishedAt": "2026-10-31T07:40:38.000Z",
     "generatedAt": "2026-10-31T07:43:25.921Z",
     "gorselEk": [
@@ -1365,7 +1378,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:55.023Z",
+    "gorselDeneme": "2026-10-31T13:39:10.029Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/8c93883662ce1c90e4c20ae19618ecc0a9ea4352.webp",
@@ -1409,11 +1422,11 @@
     "gorselSorgu": "Intel processor die closeup",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/intel-nova-lake-performansi-ortaya-cikti-arrow-lake-e-yuzde-20-fark--212300",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Intel_80186_processor_microphoto_001_%2850622223096%29.jpg/1280px-Intel_80186_processor_microphoto_001_%2850622223096%29.jpg",
+    "image": "/kapak/9d7687583970d976.webp",
     "publishedAt": "2026-10-31T07:30:00.000Z",
     "generatedAt": "2026-10-31T07:34:30.086Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:56.541Z",
+    "gorselDeneme": "2026-10-31T13:39:10.405Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212300/1200x675intel-nova-lake-performansi-ortaya-cikti-arrow-lake-e-yuzde-20-fark.jpg",
@@ -1473,7 +1486,7 @@
     "gorselSorgu": "natural gas pipeline valves",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/ekonomi/dogal-gaz-toptan-satis-piyasasinda-teknik-ve-idari-esaslarda-degisiklik-yapildi/4107080",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Tapa_de_registro_Gas_Natural%2C_02.jpg/1280px-Tapa_de_registro_Gas_Natural%2C_02.jpg",
+    "image": "/kapak/25657dd7af751462.webp",
     "publishedAt": "2026-10-31T07:23:13.000Z",
     "generatedAt": "2026-10-31T07:25:42.407Z",
     "gorselEk": [
@@ -1487,7 +1500,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:55.541Z",
+    "gorselDeneme": "2026-10-31T13:39:10.477Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_376b4997e4efcdd4cbda455148970937.jpg",
@@ -1530,7 +1543,7 @@
     "gorselSorgu": "football stadium floodlights",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/spor/basaksehir-super-ligde-yarin-samsunsporu-agirlayacak/4107055",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/221000_-_Football_Jason_Rand_action_2_-_3b_-_Sydney_2000_match_photo.jpg/1280px-221000_-_Football_Jason_Rand_action_2_-_3b_-_Sydney_2000_match_photo.jpg",
+    "image": "/kapak/fcf1cc6fafa3d3cf.webp",
     "publishedAt": "2026-10-31T06:47:28.000Z",
     "generatedAt": "2026-10-31T06:51:58.215Z",
     "gorselEk": [
@@ -1544,7 +1557,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:55.738Z",
+    "gorselDeneme": "2026-10-31T13:39:10.494Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_dee6b19137cfa7bd883b7dc4547c3ea1.jpg",
@@ -1588,11 +1601,11 @@
     "gorselSorgu": "Turkish trade exhibition booth",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/ekonomi/ticaret-bakanligi-turk-markalarinin-kuresel-rekabet-gucunu-artiracak-yeni-destekleri-uygulamaya-aldi/4107047",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Visit_of_Mehmet_Mu%C5%9F%2C_Turkish_Miniser_for_Trade%2C_to_the_European_Commission_%283%29.jpg/1280px-Visit_of_Mehmet_Mu%C5%9F%2C_Turkish_Miniser_for_Trade%2C_to_the_European_Commission_%283%29.jpg",
+    "image": "/kapak/2c38b98e226d54af.webp",
     "publishedAt": "2026-10-31T06:32:45.000Z",
     "generatedAt": "2026-10-31T06:37:28.872Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:55.790Z",
+    "gorselDeneme": "2026-10-31T13:39:10.593Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_480e88a181dcb108dc64cc3bbb49cb09.jpg",
@@ -1646,7 +1659,7 @@
     "gorselSorgu": "football stadium floodlights",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/spor/fenerbahce-goztepe-maci-ne-zaman-saat-kacta-hangi-kanalda-551173",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Dartmouth_football_coach_Sammy_McCorkle_on_the_sidelines.jpg/1280px-Dartmouth_football_coach_Sammy_McCorkle_on_the_sidelines.jpg",
+    "image": "/kapak/ba3230ca2964f5ba.webp",
     "publishedAt": "2026-10-31T06:26:00.000Z",
     "generatedAt": "2026-10-31T06:28:42.490Z",
     "gorselKaynak": {
@@ -1710,7 +1723,7 @@
     "gorselSorgu": "courthouse building exterior",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/fon-sorusturmasinda-2-is-insaninin-mal-varliklarina-tedbir-karari-551169",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Exterior_of_the_Birch_Bayh_Federal_Building_%26_U.S._Courthouse_-_2015-08-02_-_02.jpg/1280px-Exterior_of_the_Birch_Bayh_Federal_Building_%26_U.S._Courthouse_-_2015-08-02_-_02.jpg",
+    "image": "/kapak/734ab721e6fe3b3b.webp",
     "publishedAt": "2026-10-31T06:14:00.000Z",
     "generatedAt": "2026-10-31T06:19:29.419Z",
     "gorselKaynak": {
@@ -1774,12 +1787,12 @@
     "gorselSorgu": "foldable smartphone screen crack",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/samsung-iphone-duo-ekran-sorunu-reklam",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/LED_screen_behind_Tsach_Zimroni_in_Tel_Aviv_Israel.jpg/1280px-LED_screen_behind_Tsach_Zimroni_in_Tel_Aviv_Israel.jpg",
+    "image": "/kapak/d4d275661c40f041.webp",
     "publishedAt": "2026-10-31T06:00:18.000Z",
     "generatedAt": "2026-10-31T06:01:57.943Z",
     "breaking": true,
     "imagesKaynak": "https://shiftdelete.net/samsung-iphone-duo-ekran-sorunu-reklam",
-    "gorselDeneme": "2026-10-31T06:52:00.167Z",
+    "gorselDeneme": "2026-10-31T13:39:10.561Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/samsung-iphone-duonun-kirilan-ekraniyla-dalga-gecti.webp",
@@ -1800,6 +1813,10 @@
         "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:LED_Screen_inside_the_new_trains_of_Shmetro_Line_8.jpg"
       }
+    ],
+    "images": [
+      "https://ares.shiftdelete.net/2026/10/samsung-iphone-duonun-kirilan-ekraniyla-dalga-gecti-4.webp",
+      "https://ares.shiftdelete.net/2026/10/samsung-iphone-duonun-kirilan-ekraniyla-dalga-gecti-3.webp"
     ]
   },
   {
@@ -1833,7 +1850,7 @@
     "gorselSorgu": "Gangstar Mirage City gameplay",
     "source": "CHIP Online",
     "sourceUrl": "https://www.chip.com.tr/haber/gangstar-mirage-citynin-ilk-buyuk-guncellemesi-yayinlandi_184971.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Blip_-_the_digital_game_%2813335436035%29.jpg/1280px-Blip_-_the_digital_game_%2813335436035%29.jpg",
+    "image": "/kapak/b26971b5547edaf0.webp",
     "publishedAt": "2026-10-31T06:00:00.000Z",
     "generatedAt": "2026-10-31T06:10:46.842Z",
     "gorselKaynak": {
@@ -1880,7 +1897,7 @@
     "gorselSorgu": "train crash wreckage emergency",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/cmeweppr990qo?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad_2.jpg/1280px-Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad_2.jpg",
+    "image": "/kapak/fe78595c0baf2e76.webp",
     "publishedAt": "2026-10-31T05:44:21.000Z",
     "generatedAt": "2026-10-31T05:53:57.216Z",
     "gorselEk": [
@@ -1895,7 +1912,7 @@
     ],
     "breaking": true,
     "imagesKaynak": "https://www.bbc.co.uk/news/articles/cmeweppr990qo?at_medium=RSS&at_campaign=rss",
-    "gorselDeneme": "2026-10-31T06:51:59.678Z",
+    "gorselDeneme": "2026-10-31T13:39:10.448Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/a970/live/20e78ee0-d4ed-11f1-93e1-3b657b665bcf.jpg",
@@ -1906,7 +1923,10 @@
       "lisans": "CC BY-SA 4.0",
       "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan,_Brastad_2.jpg"
-    }
+    },
+    "images": [
+      "https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/d067/live/70694e50-d4d8-11f1-9961-297f10ee51c2.jpg"
+    ]
   },
   {
     "id": "d543326735f7a2a2",
@@ -1938,7 +1958,7 @@
     "gorselSorgu": "wedding hall roof fire",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/bayrampasada-dugun-salonunun-catisi-alevlere-teslim-oldu-551168",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Lick_Fire_on_the_Umatilla_National_Forest_burning_at_night.jpg/1280px-Lick_Fire_on_the_Umatilla_National_Forest_burning_at_night.jpg",
+    "image": "/kapak/d543326735f7a2a2.webp",
     "publishedAt": "2026-10-31T05:39:00.000Z",
     "generatedAt": "2026-10-31T05:45:23.456Z",
     "gorselKaynak": {
@@ -1986,7 +2006,7 @@
     "gorselSorgu": "ship collision footage",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/girne-aciklarindaki-filo-jet-faciasina-iliskin-ihmaller-ortaya-cikti-551167",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/General_Cargo_Ship_Helge_in_Esbjerg_Harbour_after_the_ship_collision.jpg/1280px-General_Cargo_Ship_Helge_in_Esbjerg_Harbour_after_the_ship_collision.jpg",
+    "image": "/kapak/c1fc8a688f0d9ee7.webp",
     "publishedAt": "2026-10-31T05:25:00.000Z",
     "generatedAt": "2026-10-31T05:36:27.095Z",
     "gorselKaynak": {
@@ -2043,7 +2063,7 @@
     "gorselSorgu": "Hepsiburada shopping mobile application",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/hepsiburada-da-telefon-bilgisayar-ve-tabletlerde-indirimler-2026--212296",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg/1280px-Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
+    "image": "/kapak/d7011f8c339cb871.webp",
     "publishedAt": "2026-10-31T05:11:00.000Z",
     "generatedAt": "2026-10-31T05:15:30.887Z",
     "gorselEk": [
@@ -2058,10 +2078,10 @@
     ],
     "breaking": true,
     "imagesKaynak": "https://www.donanimhaber.com/hepsiburada-da-telefon-bilgisayar-ve-tabletlerde-indirimler-2026--212296",
-    "gorselDeneme": "2026-10-31T06:52:00.745Z",
+    "gorselDeneme": "2026-10-31T13:39:11.200Z",
     "kapak": {
       "v": 2,
-      "kaynak": "https://www.donanimhaber.com/images/images/haber/212296/src/hepsiburada-da-telefon-bilgisayar-ve-tabletlerde-indirimler-2026212296_0.jpg",
+      "kaynak": "https://www.donanimhaber.com/images//images/editor/5856c7516fc9408694ff903c7e295c61.jpeg",
       "foto": true
     },
     "gorselKaynak": {
@@ -2069,7 +2089,10 @@
       "lisans": "CC BY 2.0",
       "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg"
-    }
+    },
+    "images": [
+      "https://www.donanimhaber.com/images//images/editor/5856c7516fc9408694ff903c7e295c61.jpeg"
+    ]
   },
   {
     "id": "17ed510938a6521a",
@@ -2101,7 +2124,7 @@
     "gorselSorgu": "Turkish government official building",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/resmi-gazetede-yayimlandi-uc-bakanliga-yeni-birimler-551166",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/2025_Turkish_anti-government_protests_in_Turin_%2828%29.jpg/1280px-2025_Turkish_anti-government_protests_in_Turin_%2828%29.jpg",
+    "image": "/kapak/17ed510938a6521a.webp",
     "publishedAt": "2026-10-31T05:02:00.000Z",
     "generatedAt": "2026-10-31T05:06:32.835Z",
     "gorselKaynak": {
@@ -2157,11 +2180,11 @@
     "gorselSorgu": "Bose earbud on beach stones",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/chatgpt-ile-kayip-kulaklik-bulma",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/BOSE_QUIETCOMFORT_20_ACOUSTIC_NOISE_CANCELLING_HEADPHONE_FOR_APPLE_DEVICE.jpg/1280px-BOSE_QUIETCOMFORT_20_ACOUSTIC_NOISE_CANCELLING_HEADPHONE_FOR_APPLE_DEVICE.jpg",
+    "image": "/kapak/95c819565f3ca38f.webp",
     "publishedAt": "2026-10-31T05:00:34.000Z",
     "generatedAt": "2026-10-31T05:27:34.465Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:56.201Z",
+    "gorselDeneme": "2026-10-31T13:39:10.887Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/kulakligini-kaybetti-chatgpt-yardimina-yetisti.webp",
@@ -2212,7 +2235,7 @@
     "gorselSorgu": "Fener Rum Patriarchate Istanbul",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/yazarlar/rusya-ile-ukrayna-savasinin-dini-cephesi-fener-rum-patrikhanesi-volodimir-zelenskinin-patrikhane-ziyaretinin-perde-arkasi-551164",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/U.S._Secretary_of_State_John_Kerry_greets_clergy_of_the_court_of_the_Ecumenical_Patriarchate_in_Istanbul%2C_Turkey_on_April_21%2C_2013.jpg/1280px-U.S._Secretary_of_State_John_Kerry_greets_clergy_of_the_court_of_the_Ecumenical_Patriarchate_in_Istanbul%2C_Turkey_on_April_21%2C_2013.jpg",
+    "image": "/kapak/351e1fd4bb36ea5e.webp",
     "publishedAt": "2026-10-31T04:50:00.000Z",
     "generatedAt": "2026-10-31T04:57:44.759Z",
     "gorselKaynak": {
@@ -2259,11 +2282,11 @@
     "gorselSorgu": "DR Congo rebel fighters",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/cr3wv311dwnlo?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/MONUSCO_at_the_Memorial_to_the_Congolese_Soldiers.jpg/1280px-MONUSCO_at_the_Memorial_to_the_Congolese_Soldiers.jpg",
+    "image": "/kapak/27b50d1672c82ea6.webp",
     "publishedAt": "2026-10-31T04:32:07.000Z",
     "generatedAt": "2026-10-31T04:39:16.188Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:55.826Z",
+    "gorselDeneme": "2026-10-31T13:39:10.576Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/a56b/live/5a0952f0-d487-11f1-80bc-6d398902272f.jpg",
@@ -2324,7 +2347,7 @@
     "gorselSorgu": "Dallas Mavericks game arena",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/spor/alperen-sengun-oynayamadi-houston-rockets-dallas-maverickse-kaybetti-551163",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Kyrie_Irving_%2851832863575%29.jpg/1280px-Kyrie_Irving_%2851832863575%29.jpg",
+    "image": "/kapak/c1287417e1dd65ed.webp",
     "publishedAt": "2026-10-31T04:25:00.000Z",
     "generatedAt": "2026-10-31T04:31:20.508Z",
     "gorselKaynak": {
@@ -2388,7 +2411,7 @@
     "gorselSorgu": "Warsaw police crowd protest",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/yazarlar/polonyada-neler-oluyor-darbe-iddialari-ulkeyi-karistirdi-cumhurbaskani-ucagini-geri-cevirdi-551161",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Crowd_at_the_stage_of_Christopher_Street_Day_Berlin_2023-07-22_02.jpg/1280px-Crowd_at_the_stage_of_Christopher_Street_Day_Berlin_2023-07-22_02.jpg",
+    "image": "/kapak/695633e93b1cea4a.webp",
     "publishedAt": "2026-10-31T04:07:00.000Z",
     "generatedAt": "2026-10-31T04:20:19.039Z",
     "gorselKaynak": {
@@ -2435,7 +2458,7 @@
     "gorselSorgu": "highland border patrol",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/hakkaride-hudut-gecis-olayina-mudahale-ederken-acilan-atesle-yaralanan-asker-sehit-oldu-551160",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Kabul_Military_Training_Center_Exercise_%285049465005%29.jpg/1280px-Kabul_Military_Training_Center_Exercise_%285049465005%29.jpg",
+    "image": "/kapak/c7d5ecf013431bdf.webp",
     "publishedAt": "2026-10-31T04:05:00.000Z",
     "generatedAt": "2026-10-31T04:12:40.956Z",
     "gorselKaynak": {
@@ -2500,11 +2523,11 @@
     "gorselSorgu": "amazon aws data center",
     "source": "ÇözümPark",
     "sourceUrl": "https://www.cozumpark.com/amazon-aws-geliri-yuzde-39-artti-yapay-zeka-yatirimlari-nakit-akisini-zorluyor/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Amazon_AWS_us-west-2_beach_AZ.jpg/1280px-Amazon_AWS_us-west-2_beach_AZ.jpg",
+    "image": "/kapak/b59c1034a2be39e7.webp",
     "publishedAt": "2026-10-31T04:04:50.000Z",
     "generatedAt": "2026-10-31T04:05:38.587Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:55.974Z",
+    "gorselDeneme": "2026-10-31T13:39:10.767Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://www.cozumpark.com/wp-content/uploads/2026/03/Amazonun-Bahreyndeki-AWS-Tesisleri-Iran-Kaynakli-Dron-Saldirilariyla-Ikinci-Kez-Vuruldu.jpg",
@@ -2565,7 +2588,7 @@
     "gorselSorgu": "hakkari border checkpoint",
     "source": "TRT Haber Son Dakika",
     "sourceUrl": "https://www.trthaber.com/haber/gundem/bir-askerimiz-sehit-oldu-961785.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Istanbul_city_Photos-_Urban_30.jpg/1280px-Istanbul_city_Photos-_Urban_30.jpg",
+    "image": "/kapak/04195ee94381b026.webp",
     "publishedAt": "2026-10-31T04:04:00.000Z",
     "generatedAt": "2026-10-31T04:48:01.351Z",
     "gorselEk": [
@@ -2579,7 +2602,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:56.027Z",
+    "gorselDeneme": "2026-10-31T13:39:10.913Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2416000/sehit-stok-aa-2416698.jpg",
@@ -2622,7 +2645,7 @@
     "gorselSorgu": "Olympiakos basketball game",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/spor/son-euroleague-sampiyonu-olympiakosa-yildiz-isminden-kahreden-haber-montero-en-az-6-ay-sahada-yok-551158",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Olympiakos_Basketball_shirt_2009_2010.jpg/1280px-Olympiakos_Basketball_shirt_2009_2010.jpg",
+    "image": "/kapak/e1d420dd17c497cf.webp",
     "publishedAt": "2026-10-31T03:36:00.000Z",
     "generatedAt": "2026-10-31T03:41:04.219Z",
     "gorselKaynak": {
@@ -2678,7 +2701,7 @@
     "gorselSorgu": "accident scene on highway",
     "source": "TRT Haber Son Dakika",
     "sourceUrl": "https://www.trthaber.com/haber/turkiye/edirnede-tur-otobusuyle-tirin-carpistigi-kazada-10-kisi-yaralandi-961784.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/September_26%2C_2007_accident%2C_highway_9%2C_CT.jpg/1280px-September_26%2C_2007_accident%2C_highway_9%2C_CT.jpg",
+    "image": "/kapak/c341f2036a2cfd87.webp",
     "publishedAt": "2026-10-31T03:31:00.000Z",
     "generatedAt": "2026-10-31T03:48:45.782Z",
     "gorselEk": [
@@ -2692,7 +2715,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:56.964Z",
+    "gorselDeneme": "2026-10-31T13:39:11.698Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/edirne-2500021.jpg",
@@ -2736,7 +2759,7 @@
     "gorselSorgu": "police patrol city street",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/yazarlar/avrupa-bugun-teyakkuzda-magazalar-kepenk-indiriyor-binlerce-asker-ve-polis-sahaya-iniyor-551157",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Nissan_Navara_4x2_XE_Police_Patrol_Vehicle_%28Cabanatuan_City_Police_Office%29.jpg/1280px-Nissan_Navara_4x2_XE_Police_Patrol_Vehicle_%28Cabanatuan_City_Police_Office%29.jpg",
+    "image": "/kapak/4dc4f0855cb868b4.webp",
     "publishedAt": "2026-10-31T03:25:00.000Z",
     "generatedAt": "2026-10-31T03:35:32.926Z",
     "gorselKaynak": {
@@ -2800,7 +2823,7 @@
     "gorselSorgu": "political leaders handshake meeting",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/musavat-dervisoglundan-bahcelinin-koluna-girdigi-goruntulere-iliskin-aciklama-551156",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/%C4%B0Y%C4%B0_Parti_5._Kurultay%C4%B1nda_M%C3%BCsavat_Dervi%C5%9Fo%C4%9Flu_2024.jpg/1280px-%C4%B0Y%C4%B0_Parti_5._Kurultay%C4%B1nda_M%C3%BCsavat_Dervi%C5%9Fo%C4%9Flu_2024.jpg",
+    "image": "/kapak/fa3c419da9c4ed3a.webp",
     "publishedAt": "2026-10-31T03:15:00.000Z",
     "generatedAt": "2026-10-31T03:18:23.962Z",
     "gorselKaynak": {
@@ -2864,7 +2887,7 @@
     "gorselSorgu": "tenant landlord contract signing",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/ekonomi/kira-artis-orani-hesaplama-kira-artis-orani-ne-oldu-551154",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/George_John_Pinwell_-_Landlord_and_Tenant_-_B2015.18.5_-_Yale_Center_for_British_Art.jpg/1280px-George_John_Pinwell_-_Landlord_and_Tenant_-_B2015.18.5_-_Yale_Center_for_British_Art.jpg",
+    "image": "/kapak/301abb90f77f644b.webp",
     "publishedAt": "2026-10-31T03:11:00.000Z",
     "generatedAt": "2026-10-31T03:26:01.050Z",
     "gorselKaynak": {
@@ -2929,7 +2952,7 @@
     "gorselSorgu": "BDDK building entrance sign",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/ekonomi/bddkdan-sahap-kavcioglu-hakkindaki-iddialara-iliskin-aciklama-551155",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Istanbul_city_Photos-_Urban_50.jpg/1280px-Istanbul_city_Photos-_Urban_50.jpg",
+    "image": "/kapak/8ec8ec67667e0a14.webp",
     "publishedAt": "2026-10-31T03:11:00.000Z",
     "generatedAt": "2026-10-31T03:56:14.954Z",
     "gorselKaynak": {
@@ -2985,7 +3008,7 @@
     "gorselSorgu": "science museum interior display",
     "source": "isthaberler.com",
     "sourceUrl": "https://isthaberler.com/gulhane-parkindaki-muzede-585-bilimsel-model-sergileniyor/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/DIY_Arduino_LED_screen_for_audio_spectrum_analyzer_1.jpg/1280px-DIY_Arduino_LED_screen_for_audio_spectrum_analyzer_1.jpg",
+    "image": "/kapak/87a7b4e7430dc84a.webp",
     "publishedAt": "2026-10-31T02:53:58.000Z",
     "generatedAt": "2026-10-31T03:00:43.951Z",
     "gorselKaynak": {
@@ -3041,7 +3064,7 @@
     "gorselSorgu": "genetic testing laboratory",
     "source": "Saray Medya",
     "sourceUrl": "https://www.saraymedya.com/haber/genetik-farkliliklar-tedavideki-basariyi-etkiliyor_319410/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/ARS_National_Laboratory_for_Genetic_Resources_Preservation_%2820160916-ARS-NP-0006%29.jpg/1280px-ARS_National_Laboratory_for_Genetic_Resources_Preservation_%2820160916-ARS-NP-0006%29.jpg",
+    "image": "/kapak/90f571a89848903c.webp",
     "publishedAt": "2026-10-31T02:48:00.000Z",
     "generatedAt": "2026-10-31T02:53:30.582Z",
     "gorselEk": [
@@ -3063,7 +3086,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:57.900Z",
+    "gorselDeneme": "2026-10-31T13:39:13.161Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.saraymedya.com/manset/2026/10/genetik-farkliliklar-tedavideki-basariyi-etkiliyor-1793414906.webp",
@@ -3108,7 +3131,7 @@
     "gorselSorgu": "paper mill factory canada",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/cmly016ep243o?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Sault_Ste._Marie_Pulp_and_Paper_Mill_-_Largest_Ground_Wood_Pulp_Mill_in_the_World_AND_Power_House_of_the_Michigan_Lake_Superior_Power_Company_-The_Soos_of_to-day%2C_American_and_Canadians.jpg/1280px-thumbnail.jpg",
+    "image": "/kapak/51621e23f193d9be.webp",
     "publishedAt": "2026-10-31T02:39:25.000Z",
     "generatedAt": "2026-10-31T02:45:55.329Z",
     "gorselEk": [
@@ -3123,7 +3146,7 @@
     ],
     "breaking": true,
     "imagesKaynak": "https://www.bbc.co.uk/news/articles/cmly016ep243o?at_medium=RSS&at_campaign=rss",
-    "gorselDeneme": "2026-10-31T06:52:00.787Z",
+    "gorselDeneme": "2026-10-31T13:39:10.927Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/b7be/live/dab6afd0-d223-11f1-93e1-3b657b665bcf.jpg",
@@ -3134,7 +3157,10 @@
       "lisans": "Kamu malı",
       "lisansUrl": "",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Sault_Ste._Marie_Pulp_and_Paper_Mill_-_Largest_Ground_Wood_Pulp_Mill_in_the_World_AND_Power_House_of_the_Michigan_Lake_Superior_Power_Company_-The_Soos_of_to-day,_American_and_Canadians.jpg"
-    }
+    },
+    "images": [
+      "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/9dc1/live/7be7d890-d204-11f1-93e1-3b657b665bcf.jpg"
+    ]
   },
   {
     "id": "2ee854b943d24214",
@@ -3166,7 +3192,7 @@
     "gorselSorgu": "Denizli courthouse exterior",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/merkezefendi-belediyesine-operasyon-belediye-baskani-seniz-dogan-ve-5-kisi-tutuklandi-551150",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Istanbul_city_Photos-_Urban_01.jpg/1280px-Istanbul_city_Photos-_Urban_01.jpg",
+    "image": "/kapak/2ee854b943d24214.webp",
     "publishedAt": "2026-10-31T02:28:00.000Z",
     "generatedAt": "2026-10-31T02:38:42.440Z",
     "gorselKaynak": {
@@ -3224,11 +3250,11 @@
     "gorselSorgu": "cyber security hacker computer screen",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/ck9dz3v7z7v3o?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Binance_t-shirt_and_bag_-_2022-07-09.jpg/1280px-Binance_t-shirt_and_bag_-_2022-07-09.jpg",
+    "image": "/kapak/a2f28390745f4faf.webp",
     "publishedAt": "2026-10-31T02:12:19.000Z",
     "generatedAt": "2026-10-31T02:31:33.482Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:56.211Z",
+    "gorselDeneme": "2026-10-31T13:39:10.997Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/7b98/live/c9241530-d4aa-11f1-b441-2b33b063138f.jpg",
@@ -3274,7 +3300,7 @@
     "gorselSorgu": "helicopter wreckage in field",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/cked3p81303yo?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Wreckage_from_an-MH-60S_Knighthawk_helicopter_is_photographed_at_a_crash_site_in_Pocahontas_County%2C_W.Va.%2C_Feb._18%2C_2010_100218-A-GW288-073.jpg/1280px-Wreckage_from_an-MH-60S_Knighthawk_helicopter_is_photographed_at_a_crash_site_in_Pocahontas_County%2C_W.Va.%2C_Feb._18%2C_2010_100218-A-GW288-073.jpg",
+    "image": "/kapak/6fb4f1a3aa72e55e.webp",
     "publishedAt": "2026-10-31T02:08:25.000Z",
     "generatedAt": "2026-10-31T02:09:14.443Z",
     "gorselEk": [
@@ -3296,7 +3322,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:56.456Z",
+    "gorselDeneme": "2026-10-31T13:39:11.027Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/297d/live/2d7f7270-d408-11f1-88b8-2d5226da0f6b.jpg",
@@ -3337,12 +3363,12 @@
     "gorselSorgu": "Indian chef New York restaurant 1901",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/crm941n0413o?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Missouri_Indianer._Indien_Missouri._Missouri_Indian._Oto_Indianer._Indien_Oto._Chef_der_Puncas._Chef_des_Puncas._Chief_of_the_Puncas_LCCN2003654225.jpg/1280px-Missouri_Indianer._Indien_Missouri._Missouri_Indian._Oto_Indianer._Indien_Oto._Chef_der_Puncas._Chef_des_Puncas._Chief_of_the_Puncas_LCCN2003654225.jpg",
+    "image": "/kapak/25d49323b80860fc.webp",
     "publishedAt": "2026-10-31T02:02:16.000Z",
     "generatedAt": "2026-10-31T02:17:42.225Z",
     "breaking": true,
     "imagesKaynak": "https://www.bbc.co.uk/news/articles/crm941n0413o?at_medium=RSS&at_campaign=rss",
-    "gorselDeneme": "2026-10-31T06:52:00.883Z",
+    "gorselDeneme": "2026-10-31T13:39:11.009Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/6aed/live/8bcbfe20-acc6-11f1-997d-cbb0a29e3293.png",
@@ -3354,7 +3380,11 @@
       "lisansUrl": "",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Missouri_Indianer._Indien_Missouri._Missouri_Indian._Oto_Indianer._Indien_Oto._Chef_der_Puncas._Chef_des_Puncas._Chief_of_the_Puncas_LCCN2003654225.jpg"
     },
-    "ekGorselDeneme": "2026-10-31T06:48:02.039Z"
+    "ekGorselDeneme": "2026-10-31T06:48:02.039Z",
+    "images": [
+      "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/b807/live/23f83820-ac5a-11f1-b1d1-571ed4d7ff2c.png",
+      "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/817e/live/3b3fd160-accc-11f1-b6b4-2922c333d280.jpg"
+    ]
   },
   {
     "id": "84949118ef72c014",
@@ -3386,7 +3416,7 @@
     "gorselSorgu": "car fire Kocaeli",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/kocaelide-otomobil-alevlere-teslim-oldu-551149",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Burnt_Out_Car_-_geograph.org.uk_-_7968865.jpg/1280px-Burnt_Out_Car_-_geograph.org.uk_-_7968865.jpg",
+    "image": "/kapak/84949118ef72c014.webp",
     "publishedAt": "2026-10-31T01:47:00.000Z",
     "generatedAt": "2026-10-31T01:54:27.560Z",
     "gorselKaynak": {
@@ -3449,7 +3479,7 @@
     "gorselSorgu": "emergency preparedness supply kit",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/ckreypn92w49o?at_medium=RSS&at_campaign=rss",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Emergency_Preparedness_Fair_%288970024148%29.jpg",
+    "image": "/kapak/3a1e46fd30a29916.webp",
     "publishedAt": "2026-10-31T01:32:33.000Z",
     "generatedAt": "2026-10-31T01:40:29.573Z",
     "gorselEk": [
@@ -3463,7 +3493,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:56.257Z",
+    "gorselDeneme": "2026-10-31T13:39:11.039Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/cce2/live/961bb030-d482-11f1-b441-2b33b063138f.png",
@@ -3507,7 +3537,7 @@
     "gorselSorgu": "biodiversity nature protection forest",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/cw1l32qyj8pqo?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Naturalis_Biodiversity_Center_-_Museum_-_Exhibition_Nature_theatre_29_-_Panorama.jpg/1280px-Naturalis_Biodiversity_Center_-_Museum_-_Exhibition_Nature_theatre_29_-_Panorama.jpg",
+    "image": "/kapak/b2887bbff8a98993.webp",
     "publishedAt": "2026-10-31T01:27:05.000Z",
     "generatedAt": "2026-10-31T01:46:58.573Z",
     "gorselEk": [
@@ -3529,7 +3559,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T13:07:56.267Z",
+    "gorselDeneme": "2026-10-31T13:39:11.052Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/5c07/live/57283d20-d4b5-11f1-a58c-6d26609b0a57.jpg",
@@ -3574,7 +3604,7 @@
     "gorselSorgu": "Poland police riot gear courthouse",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/crz9824d5e88o?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Poland_-_police_Kia_cee%27d_SW.JPG/1280px-Poland_-_police_Kia_cee%27d_SW.JPG",
+    "image": "/kapak/2983ac9f31aee10c.webp",
     "publishedAt": "2026-10-31T01:11:43.000Z",
     "generatedAt": "2026-10-31T01:32:02.604Z",
     "breaking": true,
@@ -3632,7 +3662,7 @@
     "gorselSorgu": "military air defense missile launch",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/dunya/arap-koalisyonu-suudi-arabistana-yonelik-iha-saldirisini-duyurdu-551148",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Secretary_of_Defense_Chuck_Hagel%2C_center%2C_listens_as_U.S._Air_Force_Capt._Erin_Gentile%2C_right%2C_a_missile_combat_crew_commander%2C_describes_her_duties_in_the_launch_control_center_during_a_visit_to_the_missile_140109-D-NI589-898.jpg/1280px-thumbnail.jpg",
+    "image": "/kapak/44402e3dde172ac8.webp",
     "publishedAt": "2026-10-31T01:08:00.000Z",
     "generatedAt": "2026-10-31T01:24:01.688Z",
     "gorselKaynak": {
@@ -3687,7 +3717,7 @@
     "gorselSorgu": "Deniz Enyüksek film set Kayseri",
     "source": "Saray Medya",
     "sourceUrl": "https://www.saraymedya.com/haber/catli-2-kayseri-de-izleyiciyle-bulustu_319390/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Matvey_Basov_Exhibition_in_Belarus_National_Art_Museum_2025_September_12.jpg/1280px-Matvey_Basov_Exhibition_in_Belarus_National_Art_Museum_2025_September_12.jpg",
+    "image": "/kapak/385b6f65d43549ec.webp",
     "publishedAt": "2026-10-31T01:05:00.000Z",
     "generatedAt": "2026-10-31T01:10:40.510Z",
     "gorselEk": [
@@ -3745,7 +3775,7 @@
     "gorselSorgu": "Rentokil red white van",
     "source": "Martin Cid Magazine",
     "sourceUrl": "https://tr.martincid.com/business-tr/rentokil-chair-esperdy-buys-shares-us-pest-turnaround/",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/7/78/Market_centre_in_Tokyo_stock_exchange.jpg",
+    "image": "/kapak/a61ab95b25d89241.webp",
     "publishedAt": "2026-10-31T01:00:00.000Z",
     "generatedAt": "2026-10-31T01:03:19.883Z",
     "gorselEk": [
@@ -3811,7 +3841,7 @@
     "gorselSorgu": "wedding hall interior",
     "source": "TGRT Haber",
     "sourceUrl": "https://www.tgrthaber.com/gundem-videolari/nisan-toreni-savas-alani-gibi-oldu-davetliler-birbirine-girdi-3368002",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/00_7831_Interior_of_Oslo_City_Hall_-_wedding_room.jpg/1280px-00_7831_Interior_of_Oslo_City_Hall_-_wedding_room.jpg",
+    "image": "/kapak/ed8c84b7ef9bf8b1.webp",
     "publishedAt": "2026-10-31T00:43:16.000Z",
     "generatedAt": "2026-10-31T00:46:56.157Z",
     "gorselEk": [
@@ -3869,7 +3899,7 @@
     "gorselSorgu": "stock market trading floor",
     "source": "Gazete Oksijen",
     "sourceUrl": "https://gazeteoksijen.com/ekonomi/kuresel-piyasalarda-teknoloji-depremi-alphabet-500-milyar-dolar-kaybetti-binance-6-3-milyar-dolarlik-guvenlik-ihlaliyle-sarsildi-294421",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/7/78/Market_centre_in_Tokyo_stock_exchange.jpg",
+    "image": "/kapak/d32d4c2e5084a4bc.webp",
     "publishedAt": "2026-10-31T00:35:19.000Z",
     "generatedAt": "2026-10-31T00:40:20.694Z",
     "gorselKaynak": {
@@ -3927,7 +3957,7 @@
     "gorselSorgu": "Alaska state election ballot",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/cmwyq2gg1yzzo?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Federal_Building_and_United_States_Courthouse%2C_Rome%2C_GA_3.jpg/1280px-Federal_Building_and_United_States_Courthouse%2C_Rome%2C_GA_3.jpg",
+    "image": "/kapak/9513d1329393fffd.webp",
     "publishedAt": "2026-10-31T00:29:58.000Z",
     "generatedAt": "2026-10-31T00:34:20.753Z",
     "breaking": true,
@@ -3993,7 +4023,7 @@
     "gorselSorgu": "US election candidate speech rally",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/ckq6nz4286r4o?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg/1280px-Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg",
+    "image": "/kapak/f0722a9954e4f212.webp",
     "publishedAt": "2026-10-31T00:16:03.000Z",
     "generatedAt": "2026-10-31T00:26:55.390Z",
     "gorselEk": [
@@ -4050,7 +4080,7 @@
     "gorselSorgu": "artificial intelligence text summary",
     "source": "Habokado",
     "sourceUrl": "https://www.habokado.com/haber/soylemedi-demeyin/18133622/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Seminar_on_Text_and_Data_Mining_and_Artificial_Intelligence_04.jpg/1280px-Seminar_on_Text_and_Data_Mining_and_Artificial_Intelligence_04.jpg",
+    "image": "/kapak/731530c537a2c67e.webp",
     "publishedAt": "2026-10-31T00:13:49.000Z",
     "generatedAt": "2026-10-31T00:18:52.772Z",
     "gorselKaynak": {
@@ -4106,7 +4136,7 @@
     "gorselSorgu": "police cordon yellow tape",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/elazigda-otomobilin-carptigi-yaya-oldu-551146",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Police_cordon_in_Tbilisi_on_May_24_2013.jpg/1280px-Police_cordon_in_Tbilisi_on_May_24_2013.jpg",
+    "image": "/kapak/67d98fa8b9daa7b6.webp",
     "publishedAt": "2026-10-30T23:43:00.000Z",
     "generatedAt": "2026-10-30T23:55:26.234Z",
     "gorselKaynak": {
@@ -4162,7 +4192,7 @@
     "gorselSorgu": "earthquake damaged building rubble",
     "source": "Habokado",
     "sourceUrl": "https://www.habokado.com/haber/adiyamanda-deprem-oldu-afaddan-aciklama/18133551/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/US_Navy_100122-N-5244H-150_Residents_of_Leogane%2C_Haiti%2C_begin_to_clear_the_rubble_left_after_an_earthquake_damaged_their_community.jpg/1280px-US_Navy_100122-N-5244H-150_Residents_of_Leogane%2C_Haiti%2C_begin_to_clear_the_rubble_left_after_an_earthquake_damaged_their_community.jpg",
+    "image": "/kapak/4f75b136b2496862.webp",
     "publishedAt": "2026-10-30T23:39:55.000Z",
     "generatedAt": "2026-10-31T00:11:25.624Z",
     "gorselKaynak": {
@@ -4220,7 +4250,7 @@
     "gorselSorgu": "Thai courtroom prison protest",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/cmjwepvd0qq9o?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Crowd_at_the_stage_of_Christopher_Street_Day_Berlin_2023-07-22_03.jpg/1280px-Crowd_at_the_stage_of_Christopher_Street_Day_Berlin_2023-07-22_03.jpg",
+    "image": "/kapak/0eb6272f8cb7246f.webp",
     "publishedAt": "2026-10-30T23:26:16.000Z",
     "generatedAt": "2026-10-30T23:40:24.773Z",
     "breaking": true,
@@ -4271,7 +4301,7 @@
     "gorselSorgu": "cryptocurrency trading terminal screen",
     "source": "BeInCrypto",
     "sourceUrl": "https://tr.beincrypto.com/cftc-federal-secenek-merkezi-kripto-para-borsalari/",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/7/78/Market_centre_in_Tokyo_stock_exchange.jpg",
+    "image": "/kapak/a59d2eaa5bbfa592.webp",
     "publishedAt": "2026-10-30T23:23:28.000Z",
     "generatedAt": "2026-10-30T23:25:46.625Z",
     "gorselKaynak": {
@@ -4336,7 +4366,7 @@
     "gorselSorgu": "Oleshky Ukraine evacuation",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/videos/cmp3gp2vg078o?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Naberezhna_St%2C_2%2C_Oleshky%2C_Khersons%27ka_oblast%2C_Ukraine%2C_75100_-_panoramio.jpg/1280px-Naberezhna_St%2C_2%2C_Oleshky%2C_Khersons%27ka_oblast%2C_Ukraine%2C_75100_-_panoramio.jpg",
+    "image": "/kapak/936d143ebe9e8fcf.webp",
     "publishedAt": "2026-10-30T23:19:17.000Z",
     "generatedAt": "2026-10-31T00:03:23.901Z",
     "gorselEk": [
@@ -4395,7 +4425,7 @@
     "gorselSorgu": "Iraqi security forces",
     "source": "Rudaw",
     "sourceUrl": "https://www.rudaw.net/turkish/categories/k-rd-stan/1286617",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Views_around_Lalish%2C_the_religious_center_of_the_Ezidi_people_05.jpg/1280px-Views_around_Lalish%2C_the_religious_center_of_the_Ezidi_people_05.jpg",
+    "image": "/kapak/a8dc0ec39cbafd81.webp",
     "publishedAt": "2026-10-30T23:16:10.000Z",
     "generatedAt": "2026-10-30T23:19:22.373Z",
     "breaking": true,
@@ -4459,7 +4489,7 @@
     "gorselSorgu": "european union digital security server",
     "source": "Yeni Asya",
     "sourceUrl": "https://www.yeniasya.com.tr/bilim-teknoloji/ab-dijital-guvenlikte-ortak-kural-diyor_627909",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
+    "image": "/kapak/e73134767f365fa7.webp",
     "publishedAt": "2026-10-30T23:06:00.000Z",
     "generatedAt": "2026-10-30T23:12:00.416Z",
     "breaking": true,
@@ -4507,7 +4537,7 @@
     "gorselSorgu": "Warsaw constitutional court building",
     "source": "BBC",
     "sourceUrl": "https://www.bbc.com/turkce/articles/cm0e025gw751o",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Person_holding_world_globe.jpg/1280px-Person_holding_world_globe.jpg",
+    "image": "/kapak/3b5c4925a296f8e8.webp",
     "publishedAt": "2026-10-30T22:50:44.000Z",
     "generatedAt": "2026-10-30T23:03:36.705Z",
     "breaking": true,
@@ -4556,7 +4586,7 @@
     "gorselSorgu": "United Nations headquarters New York",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/dunya/turkiye-agit-genel-sekreteri-feridun-sinirlioglunun-bm-genel-sekreterligi-adayligi-icin-resmi-basvurusunu-yapti/4106991",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/United_Nations_Headquarters_-_Security_Council_chamber%2C_angled_view_%28cropped%29.jpg/1280px-United_Nations_Headquarters_-_Security_Council_chamber%2C_angled_view_%28cropped%29.jpg",
+    "image": "/kapak/cef4dc5cbc86c646.webp",
     "publishedAt": "2026-10-30T22:45:24.000Z",
     "generatedAt": "2026-10-30T22:56:27.591Z",
     "breaking": true,
@@ -4621,7 +4651,7 @@
     "gorselSorgu": "modern restaurant interior design",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/stock-market-news/mizuho-kazanc-acklamalar-oncesi-bu-abd-restoran-hisselerini-tercih-ediyor-4131847",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Interior_2026-06-15Cabel_Filipino_Heritage_Restaurant_04.jpg/1280px-Interior_2026-06-15Cabel_Filipino_Heritage_Restaurant_04.jpg",
+    "image": "/kapak/9903fbfd4eab7eb5.webp",
     "publishedAt": "2026-10-30T22:38:21.000Z",
     "generatedAt": "2026-10-30T22:48:11.370Z",
     "gorselKaynak": {
@@ -4678,7 +4708,7 @@
     "gorselSorgu": "police raid operation street",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/bingol-merkezli-4-ilde-uyusturucu-operasyonu-20-tutuklama-551144",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Police_raid_Sydney_1949_SLNSW_FL691260.jpg/1280px-Police_raid_Sydney_1949_SLNSW_FL691260.jpg",
+    "image": "/kapak/8cb1e2ca466bd3e3.webp",
     "publishedAt": "2026-10-30T22:26:00.000Z",
     "generatedAt": "2026-10-30T22:34:23.063Z",
     "gorselKaynak": {
@@ -4735,7 +4765,7 @@
     "gorselSorgu": "Patriot interceptor missile launch",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/c3vgxznlx7jzo?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Strategic_Missile_Forces_museum_rocket_launch_terminal.jpg/1280px-Strategic_Missile_Forces_museum_rocket_launch_terminal.jpg",
+    "image": "/kapak/008e0f544cd298c5.webp",
     "publishedAt": "2026-10-30T22:20:52.000Z",
     "generatedAt": "2026-10-30T22:22:54.289Z",
     "breaking": true,
@@ -4785,7 +4815,7 @@
     "gorselSorgu": "G20 ministers meeting Atlanta",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/cmd6dp2y576do?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Secretary_Rubio_Participates_in_G20_Foreign_Ministers%E2%80%99_Meeting_Session_I_%2855621948730%29.jpg/1280px-Secretary_Rubio_Participates_in_G20_Foreign_Ministers%E2%80%99_Meeting_Session_I_%2855621948730%29.jpg",
+    "image": "/kapak/77e8331448e47476.webp",
     "publishedAt": "2026-10-30T22:11:52.000Z",
     "generatedAt": "2026-10-30T22:15:34.870Z",
     "gorselEk": [
@@ -4846,7 +4876,7 @@
     "gorselSorgu": "TOKI government building facade",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/toki-basvurularina-yonelik-dolandiricilik-sorusturmasi-6-supheli-tutuklandi-551143",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Moscow_-_2025_-_Details_of_the_facade_of_the_Russian_Government_Building%2C_view_from_the_T._Shevchenko_Embankment4.jpg/1280px-Moscow_-_2025_-_Details_of_the_facade_of_the_Russian_Government_Building%2C_view_from_the_T._Shevchenko_Embankment4.jpg",
+    "image": "/kapak/afbca4590185e19c.webp",
     "publishedAt": "2026-10-30T21:45:00.000Z",
     "generatedAt": "2026-10-30T21:56:14.630Z",
     "gorselKaynak": {
@@ -4910,7 +4940,7 @@
     "gorselSorgu": "Hakan Fidan Toshimitsu Motegi G20 meeting",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/disisleri-bakani-fidan-japon-mevkidasiyla-gorustu-551142",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Giorgos_Gerapetritis_and_Hakan_Fidan_in_Ankara.jpg/1280px-Giorgos_Gerapetritis_and_Hakan_Fidan_in_Ankara.jpg",
+    "image": "/kapak/e419febc8158248c.webp",
     "publishedAt": "2026-10-30T21:43:00.000Z",
     "generatedAt": "2026-10-30T22:01:55.451Z",
     "gorselKaynak": {
@@ -4957,7 +4987,7 @@
     "gorselSorgu": "fake housing website screenshot",
     "source": "TRT Haber Son Dakika",
     "sourceUrl": "https://www.trthaber.com/haber/turkiye/sahte-toki-siteleri-uzerinden-dolandiricilik-yapan-6-supheli-tutuklandi-961781.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Istanbul_city_Photos-_Urban_01.jpg/1280px-Istanbul_city_Photos-_Urban_01.jpg",
+    "image": "/kapak/02a5cfe679207633.webp",
     "publishedAt": "2026-10-30T21:38:00.000Z",
     "generatedAt": "2026-10-30T22:08:15.080Z",
     "gorselEk": [
@@ -5024,7 +5054,7 @@
     "gorselSorgu": "havelsan afridex 2026",
     "source": "TRT Haber Son Dakika",
     "sourceUrl": "https://www.trthaber.com/haber/savunma/havelsan-nijeryada-kapsamli-mutabakat-muhtirasi-imzaladi-961780.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Istanbul_city_Photos-_Urban_01.jpg/1280px-Istanbul_city_Photos-_Urban_01.jpg",
+    "image": "/kapak/f4901e8c1b8dbddb.webp",
     "publishedAt": "2026-10-30T21:33:00.000Z",
     "generatedAt": "2026-10-30T21:42:44.205Z",
     "gorselEk": [
@@ -5081,7 +5111,7 @@
     "gorselSorgu": "smartphone software update screen",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/android-17-hangi-telefonlara-ne-zaman-gelecek-iste-liste--212258",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Cosplayers_of_Android_17_and_Android_18%2C_Dragon_Ball_Z_20150531a.jpg/1280px-Cosplayers_of_Android_17_and_Android_18%2C_Dragon_Ball_Z_20150531a.jpg",
+    "image": "/kapak/9b18a5ff587665be.webp",
     "publishedAt": "2026-10-30T21:30:00.000Z",
     "generatedAt": "2026-10-30T21:35:42.697Z",
     "breaking": true,
@@ -8421,7 +8451,7 @@
     "gorselSorgu": "damaged building facade debris",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/dunya/yunanistanda-eylulde-6-kisinin-hayatini-kaybettigi-patlamaya-neden-olduklari-gerekcesiyle-3-kisi-gozaltina-alindi/4105992",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Kennelbach-Fire-damaged_building-02ASD.jpg/1280px-Kennelbach-Fire-damaged_building-02ASD.jpg",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Istanbul_city_Photos-_Urban_18.jpg/1280px-Istanbul_city_Photos-_Urban_18.jpg",
     "publishedAt": "2026-10-30T08:38:35.000Z",
     "generatedAt": "2026-10-30T08:45:13.837Z",
     "gorselEk": [
@@ -8450,10 +8480,10 @@
       "foto": true
     },
     "gorselKaynak": {
-      "yazar": "Asurnipal",
+      "yazar": "Mostafameraji",
       "lisans": "CC BY-SA 4.0",
       "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Kennelbach-Fire-damaged_building-02ASD.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_18.jpg"
     }
   },
   {
@@ -16760,7 +16790,6 @@
       "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Czech_Dance_Masters_2016_P5_indoor_led_screen_(cropped).jpg"
     },
-    "breaking": true,
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/DIY_Arduino_LED_screen_for_audio_spectrum_analyzer_2.jpg/1280px-DIY_Arduino_LED_screen_for_audio_spectrum_analyzer_2.jpg",
@@ -16811,7 +16840,6 @@
         "altyazi": "Polis, jandarma ve AFAD ekipleri olay yerinde"
       }
     ],
-    "breaking": true,
     "gorselDeneme": "2026-10-29T23:24:53.886Z",
     "kapak": {
       "v": 2,
@@ -16870,7 +16898,6 @@
         "altyazi": "Müzik stüdyosunda ses karıştırma konsolu"
       }
     ],
-    "breaking": true,
     "gorselDeneme": "2026-10-29T23:24:54.710Z",
     "kapak": {
       "v": 2,
@@ -27157,21 +27184,10 @@
     "gorselSorgu": "LG smart TV 75 inch",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/28-ekim-sok-aktuel-katalogunda-neler-var--212201",
-    "image": "/kapak/ae8bccd72be71c25.webp",
-    "gorselKaynak": {
-      "yazar": "Chenspec",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:LG_G6_smart_phone_device_03.jpg"
-    },
+    "image": "https://www.donanimhaber.com/images/images/haber/212201/1200x67528-ekim-sok-aktuel-katalogunda-neler-var.jpg",
     "publishedAt": "2026-10-28T13:41:00.000Z",
     "generatedAt": "2026-10-28T13:51:34.099Z",
     "gorselDeneme": "2026-10-28T22:48:57.363Z",
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://www.donanimhaber.com/images/images/haber/212201/1200x67528-ekim-sok-aktuel-katalogunda-neler-var.jpg",
-      "foto": true
-    },
     "ekGorselDeneme": "2026-10-28T18:03:05.785Z",
     "imagesKaynak": "https://www.donanimhaber.com/28-ekim-sok-aktuel-katalogunda-neler-var--212201"
   },
@@ -129629,7 +129645,7 @@
     "gorselSorgu": "SpaceX rocket launch pad",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/analyst-ratings/morgan-stanley-spacex-icin-hisse-hedefini-korudu-93CH-4112664",
-    "image": "/kapak/5e4f1d5fab458bdd.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/SpaceX_Crew-1_Live_Launch_%28KSC-20201115-PH-MIV01_0099%29.jpg/1280px-SpaceX_Crew-1_Live_Launch_%28KSC-20201115-PH-MIV01_0099%29.jpg",
     "publishedAt": "2026-10-21T11:31:48.000Z",
     "generatedAt": "2026-10-21T11:35:25.254Z",
     "gorselEk": [
@@ -129647,12 +129663,7 @@
         "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
         "sayfa": "https://commons.wikimedia.org/wiki/File:SES-10_Launch_-_world%27s_first_reflight_of_an_orbital_class_rocket_(33361035200).jpg"
       }
-    ],
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/SpaceX_Crew-1_Live_Launch_%28KSC-20201115-PH-MIV01_0099%29.jpg/1280px-SpaceX_Crew-1_Live_Launch_%28KSC-20201115-PH-MIV01_0099%29.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "d7874fed1eea9307",
@@ -134617,14 +134628,9 @@
     "gorselSorgu": "cyber security data center servers",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/analyst-ratings/evercore-crowdstrike-ve-palo-alto-yapay-zeka-guvenliginde-one-ckyor-93CH-4112235",
-    "image": "/kapak/ff2f22640f8f340c.webp",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a7/EU_cyber_security_conference_2017_%2837211780182%29.jpg",
     "publishedAt": "2026-10-21T09:30:42.000Z",
-    "generatedAt": "2026-10-21T09:32:39.018Z",
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/a/a7/EU_cyber_security_conference_2017_%2837211780182%29.jpg",
-      "foto": false
-    }
+    "generatedAt": "2026-10-21T09:32:39.018Z"
   },
   {
     "id": "5f774a0fd397cfac",
@@ -137219,14 +137225,9 @@
     "gorselSorgu": "science laboratory students competition",
     "source": "Pars Today",
     "sourceUrl": "https://parstoday.ir/tr/news/iran-i302306-%C4%B0ranl%C4%B1_%C3%96%C4%9Frencilerden_uluslararas%C4%B1_olimpiyatlarda_tarih%C3%AE_rekor_sava%C5%9F_y%C4%B1l%C4%B1nda_18_alt%C4%B1n_madalya",
-    "image": "/kapak/4772c43f61f41547.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Science_Wall_in_the_laboratory.jpg/1280px-Science_Wall_in_the_laboratory.jpg",
     "publishedAt": "2026-10-21T08:29:56.000Z",
-    "generatedAt": "2026-10-21T08:34:08.042Z",
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Science_Wall_in_the_laboratory.jpg/1280px-Science_Wall_in_the_laboratory.jpg",
-      "foto": false
-    }
+    "generatedAt": "2026-10-21T08:34:08.042Z"
   },
   {
     "id": "6c2137d3cd18bc29",
@@ -140889,14 +140890,9 @@
     "gorselSorgu": "software developer office coding computer screens",
     "source": "BeInCrypto",
     "sourceUrl": "https://tr.beincrypto.com/yapay-zeka-yaziliminda-kazananlar-ve-kaybedenler-citi/",
-    "image": "/kapak/0cc31e40e33e2fcd.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Software_Developer_at_work_01.jpg/1280px-Software_Developer_at_work_01.jpg",
     "publishedAt": "2026-10-21T02:33:30.000Z",
-    "generatedAt": "2026-10-21T02:47:45.012Z",
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Software_Developer_at_work_01.jpg/1280px-Software_Developer_at_work_01.jpg",
-      "foto": false
-    }
+    "generatedAt": "2026-10-21T02:47:45.012Z"
   },
   {
     "id": "7f5ad8d0b07ca96e",
@@ -149105,7 +149101,7 @@
     "gorselSorgu": "opera stage performance art",
     "source": "Howl.link",
     "sourceUrl": "https://t.co/x7EAkzLjZl",
-    "image": "/kapak/f4f35787bf383b81.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Monumental_stage_prop_from_the_opera_Aida_-_01.jpg/1280px-Monumental_stage_prop_from_the_opera_Aida_-_01.jpg",
     "publishedAt": "2026-10-20T11:17:06.000Z",
     "generatedAt": "2026-10-20T11:19:41.804Z",
     "gorselEk": [
@@ -149124,12 +149120,7 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Amargosa_Opera_House_Stage.jpg"
       }
     ],
-    "gorselDeneme": "2026-10-28T04:47:48.859Z",
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Monumental_stage_prop_from_the_opera_Aida_-_01.jpg/1280px-Monumental_stage_prop_from_the_opera_Aida_-_01.jpg",
-      "foto": false
-    }
+    "gorselDeneme": "2026-10-28T04:47:48.859Z"
   },
   {
     "id": "9b6bb590f25c5610",
@@ -150773,7 +150764,7 @@
     "gorselSorgu": "Tesla electric vehicle factory",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/stock-market-news/tesla-ucuncu-ceyrek-raporunu-carsamba-gunu-acklayacak-93CH-4110412",
-    "image": "/kapak/b37141328fbaac6d.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Minis_%26_Tesla_Model_Y_%40_Let%27s_Go_Electric%2C_Priory_Park%2C_Kingston_upon_Hull.jpg/1280px-Minis_%26_Tesla_Model_Y_%40_Let%27s_Go_Electric%2C_Priory_Park%2C_Kingston_upon_Hull.jpg",
     "publishedAt": "2026-10-20T10:41:17.000Z",
     "generatedAt": "2026-10-20T10:43:13.832Z",
     "gorselEk": [
@@ -150791,12 +150782,7 @@
         "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Four_Tesla_Electric_Vehicles_Columbus_Texas_Supercharger.jpg"
       }
-    ],
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Minis_%26_Tesla_Model_Y_%40_Let%27s_Go_Electric%2C_Priory_Park%2C_Kingston_upon_Hull.jpg/1280px-Minis_%26_Tesla_Model_Y_%40_Let%27s_Go_Electric%2C_Priory_Park%2C_Kingston_upon_Hull.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "9f0a0a9c52996f97",
@@ -161664,14 +161650,9 @@
     "gorselSorgu": "Aeromexico flight deck",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/stock-market-news/aeromexico-washingtonn-ucus-kstlamalarn-kaldrmasnn-ardndan-abdye-genislemeyi-planlyor-93CH-4109456",
-    "image": "/kapak/1a7ece8bea774e2b.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Aeromexico_B737-852%2C_XA-AMC%2C_MSN_4539_%2807_2013%29%2C_as_AM_783_Los_Angeles_%28LAX%29_-_Guadalajara_%28GDL%29%2C_Flight_time_2_58_%2854209251671%29.jpg/1280px-Aeromexico_B737-852%2C_XA-AMC%2C_MSN_4539_%2807_2013%29%2C_as_AM_783_Los_Angeles_%28LAX%29_-_Guadalajara_%28GDL%29%2C_Flight_time_2_58_%2854209251671%29.jpg",
     "publishedAt": "2026-10-19T19:56:21.000Z",
-    "generatedAt": "2026-10-19T20:00:49.769Z",
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Aeromexico_B737-852%2C_XA-AMC%2C_MSN_4539_%2807_2013%29%2C_as_AM_783_Los_Angeles_%28LAX%29_-_Guadalajara_%28GDL%29%2C_Flight_time_2_58_%2854209251671%29.jpg/1280px-Aeromexico_B737-852%2C_XA-AMC%2C_MSN_4539_%2807_2013%29%2C_as_AM_783_Los_Angeles_%28LAX%29_-_Guadalajara_%28GDL%29%2C_Flight_time_2_58_%2854209251671%29.jpg",
-      "foto": false
-    }
+    "generatedAt": "2026-10-19T20:00:49.769Z"
   },
   {
     "id": "d2a8d79306633717",
@@ -161954,7 +161935,7 @@
     "gorselSorgu": "technology stocks trading floor",
     "source": "Invezz",
     "sourceUrl": "https://invezz.com/tr/haber/2026/10/19/mags-etf-girisleri-yukseliyor-yatirimcilar-kazanc-oncesi-magnificent-sevene-akini/",
-    "image": "/kapak/89d29ba14d7f238d.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg/1280px-Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
     "publishedAt": "2026-10-19T19:20:00.000Z",
     "generatedAt": "2026-10-19T19:22:22.743Z",
     "gorselEk": [
@@ -161972,12 +161953,7 @@
         "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Parade_Place_covered_in_snow_January_2026_cars.jpg"
       }
-    ],
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg/1280px-Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "cc059451dd818ebb",
@@ -165414,7 +165390,7 @@
     "gorselSorgu": "playground equipment manufacturing factory",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/economy-news/ftc-oyun-park-ekipman-anlasmasn-engellemek-icin-dava-act-93CH-4109348",
-    "image": "/kapak/e4a576a817e2ff18.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Playground_equipment_in_Munich_03.jpg/1280px-Playground_equipment_in_Munich_03.jpg",
     "publishedAt": "2026-10-19T16:02:29.000Z",
     "generatedAt": "2026-10-19T16:05:03.656Z",
     "gorselEk": [
@@ -165432,12 +165408,7 @@
         "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Playground_equipment_in_Munich_02.jpg"
       }
-    ],
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Playground_equipment_in_Munich_03.jpg/1280px-Playground_equipment_in_Munich_03.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "b341453e87b9bb94",
@@ -166437,7 +166408,7 @@
     "gorselSorgu": "stock market trading floor",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/analyst-ratings/stonex-servicenow-icin-hisse-hedefini-yapay-zeka-ilerlemesiyle-yukseltti-93CH-4109292",
-    "image": "/kapak/436ee4864794bb6e.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/UK_Stock_Market_-_Investing_in_the_United_Kingdom.jpg/1920px-UK_Stock_Market_-_Investing_in_the_United_Kingdom.jpg",
     "publishedAt": "2026-10-19T15:10:25.000Z",
     "generatedAt": "2026-10-19T15:11:36.147Z",
     "gorselEk": [
@@ -166448,12 +166419,7 @@
         "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:European_Stock_Market_concept_image.jpg"
       }
-    ],
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/UK_Stock_Market_-_Investing_in_the_United_Kingdom.jpg/1920px-UK_Stock_Market_-_Investing_in_the_United_Kingdom.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "5edcd54ff45ba470",
