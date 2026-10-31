@@ -219,6 +219,9 @@ jobs:
           PUBLISHER_TAX_OFFICE: ${{ vars.PUBLISHER_TAX_OFFICE }}
           PUBLISHER_TAX_NO: ${{ vars.PUBLISHER_TAX_NO }}
           PUBLISHER_ETBIS: ${{ vars.PUBLISHER_ETBIS }}
+          # Arsiv penceresi: noindex eski haberlerden kac tanesi sayfa olarak
+          # kalsin? Bos ise varsayilan 2000 (0 = sinirsiz, onerilmez).
+          ARSIV_SAYFA_LIMIT: ${{ vars.ARSIV_SAYFA_LIMIT }}
           # AdSense: yayinci kimligi + reklam birimi kimlikleri. Bos ise reklam
           # kodu ve reklam alanlari hic basilmaz.
           ADSENSE_CLIENT: ${{ vars.ADSENSE_CLIENT }}

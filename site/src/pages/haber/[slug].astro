@@ -23,7 +23,8 @@ export function getStaticPaths() {
   // listelerde yer almıyor; iç bağlantı da almıyor. Sınır olmadan arşiv her
   // gün ~145 yeni sayfayla büyüyüp yayını 1 GB'a taşırıyordu.
   // Ayarlamak için: ARSIV_SAYFA_LIMIT (varsayılan 2000, 0 = sınırsız).
-  const limit = Number(process.env.ARSIV_SAYFA_LIMIT ?? 2000);
+  // Not: CI'da değişken boş string olarak gelebilir; `||` ile varsayılana düşülür.
+  const limit = Number(process.env.ARSIV_SAYFA_LIMIT || 2000);
   const set = indeksSeti();
   let arsivSira = 0;
   const secilen = all.filter((a) => {
