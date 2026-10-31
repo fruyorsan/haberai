@@ -460,7 +460,11 @@ export function kategoriUrl(a) {
 // geçiyor. Her etikete sayfa açmak yüzlerce "ince" sayfa üretir; bu hem Google
 // kalitesi hem de tarama bütçesi açısından risklidir. Bu yüzden yalnızca en az
 // TAG_MIN haberde geçen etiketler sayfalaşır, kalanlar aramaya bağlanır.
-export const TAG_MIN = 2;
+//
+// 2 → 5 (31.10.2026): 2-4 haberlük etiket sayfaları hem ince içerik hem de
+// yayın boyutu açısından yüktü (1.100+ sayfa × ~70 KB). Bu sayfalar zaten
+// noindex'ti; 5 ve üzeri haberi olan konular gerçek gezinme değeri taşıyor.
+export const TAG_MIN = 5;
 
 let tagCache = null;
 

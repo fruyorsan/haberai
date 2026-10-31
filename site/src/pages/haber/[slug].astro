@@ -9,12 +9,30 @@ import HaberFigur from "../../components/HaberFigur.astro";
 import HaberGuven from "../../components/HaberGuven.astro";
 import Yorumlar from "../../components/Yorumlar.astro";
 import { getArticles, getYayinArticles, formatDate, timeAgo, publishedISO, imageUrl, imageSrcset, socialImageUrl, publicDosyaVar, tagUrl, slugify, kategoriUrl } from "../../lib/articles.js";
-import { indeksliMi } from "../../lib/indeks.js";
+import { indeksliMi, indeksSeti } from "../../lib/indeks.js";
 import { kapakKaynagi } from "../../lib/kapak.js";
 import { ADSENSE_SLOTS, ONESIGNAL_APP_ID, siteOrigin } from "../../lib/site-meta.js";
 
 export function getStaticPaths() {
-  return getArticles().map((article) => ({
+  const all = getArticles();
+  // ARŞİV PENCERESİ (yayın boyutu sınırı): GitHub Pages yayınlanan site için
+  // 1 GB sınırı koyar ve her haber sayfası ~70-115 KB HTML demek. İndeks
+  // çekirdeği (arama motoruna açık, site haritasında olan haberler) her zaman
+  // tam üretilir; indeks dışındaki ESKİ haberlerden yalnızca en yeni N tanesi
+  // sayfa olarak kalır. Bu sayfalar zaten `noindex`, site haritasında ve
+  // listelerde yer almıyor; iç bağlantı da almıyor. Sınır olmadan arşiv her
+  // gün ~145 yeni sayfayla büyüyüp yayını 1 GB'a taşırıyordu.
+  // Ayarlamak için: ARSIV_SAYFA_LIMIT (varsayılan 2000, 0 = sınırsız).
+  const limit = Number(process.env.ARSIV_SAYFA_LIMIT ?? 2000);
+  const set = indeksSeti();
+  let arsivSira = 0;
+  const secilen = all.filter((a) => {
+    if (!set || set.has(String(a.id))) return true;
+    if (!Number.isFinite(limit) || limit <= 0) return true;
+    arsivSira += 1;
+    return arsivSira <= limit;
+  });
+  return secilen.map((article) => ({
     params: { slug: article.slug },
     props: { article },
   }));
