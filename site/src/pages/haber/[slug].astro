@@ -57,6 +57,14 @@ const kapakKredisi =
       : article.source
         ? { ad: article.source, url: article.sourceUrl || "" }
         : null;
+// Atıf yalnızca lisansın istediği hâllerde (CC BY / CC BY-SA) rozet olarak
+// gösterilir. Kamu malı / CC0 fotoğraflarda ve tasarım kartlarında hiçbir
+// kredi basılmaz. Rozet fotoğrafın köşesinde küçük bir "i"dir; metin yoktur.
+const kapakAtif =
+  Boolean(kapakKredisi?.ad) &&
+  !/^(CC0|Kamu malı|Public domain|No restrictions)/i.test(
+    String(article.gorselKaynak?.lisans || ""),
+  );
 
 // Sağlık ve ekonomi içeriklerinde okuru yanıltmamak için görünür uyarı.
 const icerikUyarisi =
@@ -448,20 +456,17 @@ const breadcrumbLd = {
             />
           ) : null}
           <span class="post__veil" aria-hidden="true"></span>
-        </div>
-      )}
-
-      {kapakKredisi && kapakKredisi.ad && (
-        <p class="post__gorsel-kredi">
-          Fotoğraf:{" "}
-          {kapakKredisi.url ? (
-            <a href={kapakKredisi.url} target="_blank" rel="noopener nofollow">
-              {kapakKredisi.ad}
-            </a>
-          ) : (
-            kapakKredisi.ad
+          {kapakAtif && kapakKredisi?.url && (
+            <a
+              class="post__kaynak"
+              href={kapakKredisi.url}
+              target="_blank"
+              rel="noopener nofollow"
+              title={`Fotoğraf: ${kapakKredisi.ad}`}
+              aria-label={`Fotoğraf kaynağı ve lisansı: ${kapakKredisi.ad}`}
+            >i</a>
           )}
-        </p>
+        </div>
       )}
 
       <div class="post__body">
@@ -517,6 +522,7 @@ const breadcrumbLd = {
                       url={foto.url}
                       baslik={foto.caption || article.title}
                       kaynakAd={article.source}
+                      kaynakUrl={article.sourceUrl}
                       altyazi={foto.altyazi || undefined}
                       alt={foto.alt || `${article.title} — haber fotoğrafı`}
                     />
@@ -1012,19 +1018,32 @@ const breadcrumbLd = {
   .post__img.is-broken {
     opacity: 0;
   }
-  .post__gorsel-kredi {
-    margin: 8px 2px 0;
-    font-size: 0.76rem;
-    line-height: 1.5;
-    color: var(--muted);
+  /* Kaynak/lisans rozeti: kapak fotoğrafının sol alt köşesinde küçük "i".
+     Metin yok; tıklanınca fotoğrafçı + lisans bilgisinin bulunduğu sayfa açılır. */
+  .post__kaynak {
+    position: absolute;
+    z-index: 3;
+    left: 12px;
+    bottom: 12px;
+    display: grid;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.62);
+    color: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 13px;
+    font-style: italic;
+    line-height: 1;
+    text-decoration: none;
+    opacity: 0.75;
+    transition: opacity 0.2s ease, background 0.2s ease;
   }
-  .post__gorsel-kredi a {
-    color: var(--muted);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
-  .post__gorsel-kredi a:hover {
-    color: var(--brand-strong);
+  .post__kaynak:hover,
+  .post__kaynak:focus-visible {
+    opacity: 1;
+    background: var(--brand-strong);
   }
   .post__icerik-uyari {
     margin: 18px 0 0;

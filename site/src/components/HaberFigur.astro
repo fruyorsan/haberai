@@ -2,21 +2,26 @@
 // Haber gövdesi içindeki fotoğraf figürü.
 //
 // Görsele tıklamak stokta Commons dosya sayfasını (lisans ve fotoğrafçı
-// bilgisi orada durur), haberin kendi kaynak fotoğrafında ise büyük hâli açar.
-// Görselin altında kaynak/lisans atfı gösterilir: açık lisanslı fotoğraflarda
-// fotoğrafçı ve lisans, haber kaynağı fotoğraflarında yayın adı yazılır.
+// bilgisi orada durur), haberin kendi kaynak fotoğrafında ise kaynağı açar.
+// Atıf, fotoğrafın altında yazı olarak DEĞİL, köşedeki küçük "i" rozetinde
+// durur; rozet kaynak/lisans sayfasına bağlanır.
 import { imageUrl, imageSrcset } from "../lib/articles.js";
 
-const { url, baslik, kaynak, kaynakAd, altyazi, alt } = Astro.props;
+const { url, baslik, kaynak, kaynakAd, kaynakUrl, altyazi, alt } = Astro.props;
 
 // Stokta kaynak sayfa (Commons) daha bilgilendirici; kaynak fotoğrafta dosya.
-const gorselAdres = (kaynak && kaynak.sayfa) || url;
+const gorselAdres = (kaynak && kaynak.sayfa) || kaynakUrl || url;
 const gorselBaslik = kaynak?.sayfa ? "Fotoğraf kaynağını aç" : "Fotoğrafı büyüt";
 // Görsel kredisi: Commons ise fotoğrafçı + lisans, haber kaynağı ise yayın adı.
+// Kredi artık fotoğrafın ALTINDA yazı olarak basılmaz; görselin köşesindeki
+// küçük "i" rozeti kaynak/lisans sayfasına bağlanır. CC BY / CC BY-SA
+// lisanslarında atıf lisansın ŞARTIDIR; bu yüzden rozet tamamen kaldırılmaz.
 const kredi = kaynak?.yazar
   ? [kaynak.yazar, kaynak.lisans].filter(Boolean).join(" · ")
   : String(kaynakAd || "").trim();
-const krediAdres = kaynak?.sayfa || "";
+const krediAdres = kaynak?.sayfa || kaynakUrl || "";
+// Kamu malı / CC0 gibi atıf gerektirmeyen lisanslarda rozet de basılmaz.
+const atifGerekli = Boolean(kredi) && !/^(CC0|Kamu malı|Public domain|No restrictions)/i.test(String(kaynak?.lisans || ""));
 ---
 
 <figure class="content__fig">
@@ -34,7 +39,7 @@ const krediAdres = kaynak?.sayfa || "";
         srcset={imageSrcset(url, [640, 1000]) || undefined}
         sizes="(max-width: 900px) 100vw, 800px"
         data-orig={url}
-        alt={alt || `${baslik} — haber fotoğrafı`}
+        alt={`${alt || `${baslik} — haber fotoğrafı`}${kredi ? ` (Fotoğraf: ${kredi})` : ""}`}
         width="1000"
         height="563"
         loading="lazy"
@@ -43,20 +48,21 @@ const krediAdres = kaynak?.sayfa || "";
         onerror="if(this.dataset.orig&&!this.dataset.f){this.dataset.f='1';this.removeAttribute('srcset');this.removeAttribute('sizes');this.src=this.dataset.orig}else{this.closest('figure').remove()}"
       />
     </a>
+    {atifGerekli && krediAdres && (
+      <a
+        class="content__fig-kaynak"
+        href={krediAdres}
+        target="_blank"
+        rel="noopener nofollow"
+        title={`Fotoğraf: ${kredi}`}
+        aria-label={`Fotoğraf kaynağı ve lisansı: ${kredi}`}
+      >i</a>
+    )}
   </div>
 
-  {(altyazi || kredi) && (
+  {altyazi && (
     <figcaption class="content__fig-caption">
-      {altyazi && <span class="content__fig-aciklama">{altyazi}</span>}
-      {kredi && (
-        <span class="content__fig-kredi">
-          Fotoğraf: {krediAdres ? (
-            <a href={krediAdres} target="_blank" rel="noopener nofollow">{kredi}</a>
-          ) : (
-            kredi
-          )}
-        </span>
-      )}
+      <span class="content__fig-aciklama">{altyazi}</span>
     </figcaption>
   )}
 </figure>
@@ -103,16 +109,31 @@ const krediAdres = kaynak?.sayfa || "";
   .content__fig-aciklama {
     font-style: italic;
   }
-  .content__fig-kredi {
-    font-size: 0.78rem;
-    color: var(--muted);
+  /* Kaynak/lisans rozeti: yazı yok, fotoğrafın köşesinde küçük "i".
+     Tıklanınca fotoğrafçı + lisans bilgisinin bulunduğu kaynak sayfa açılır. */
+  .content__fig-kaynak {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.62);
+    color: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 13px;
+    font-style: italic;
+    line-height: 1;
+    text-decoration: none;
+    opacity: 0.75;
+    transition: opacity 0.2s ease, background 0.2s ease;
   }
-  .content__fig-kredi a {
-    color: var(--muted);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
-  .content__fig-kredi a:hover {
-    color: var(--brand-strong);
+  .content__fig-kaynak:hover,
+  .content__fig-kaynak:focus-visible {
+    opacity: 1;
+    background: var(--brand-strong, #c62828);
   }
 </style>
