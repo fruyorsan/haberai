@@ -24,7 +24,7 @@ export function looksLikeIcon(url) {
   const u = String(url || "");
   if (!/^https?:\/\//i.test(u)) return true;
   if (/\.svg(\?|#|$)/i.test(u)) return true;
-  return /(logo|favicon|sprite|avatar|gravatar|placeholder|no[-_]?image|default[-_/]?(image|img|thumb)|watermark|share[-_]?(icon|default)|icon[-_/]|[-_/]icon|1x1|pixel\.(gif|png)|blank\.(gif|png)|transparent\.(gif|png)|habergorseli|son-?dakika\.jpe?g|video-thumbnail|youtube-thumbnail|kutu-acilis-videosu|tv-hizlandirma|hakki-alkan)/i.test(
+  return /(logo|favicon|sprite|avatar|gravatar|placeholder|no[-_]?image|default[-_/]?(image|img|thumb)|watermark|share[-_]?(icon|default)|icon[-_/]|[-_/]icon|1x1|pixel\.(gif|png)|blank\.(gif|png)|transparent\.(gif|png)|habergorseli|son-?dakika\.jpe?g|video-thumbnail|youtube-thumbnail|kutu-acilis-videosu|tv-hizlandirma|hakki-alkan|PodCastChannel|dh-oneriyor|populer-yerinde|benzer-haber|adserve\.)/i.test(
     u
   );
 }
@@ -352,10 +352,21 @@ export function collectImageCandidates(html, baseUrl) {
     while ((m = imgRe.exec(block))) push(m[1] || m[2], 8);
   }
 
-  // 3) Sayfa içindeki <img> etiketleri (srcset'teki en büyük seçilir)
+  // 3) Sayfa içindeki <img> etiketleri: yan menü / "ilginizi çekebilir" /
+  // popüler haberler widget'larındaki alakasız küçük resimleri almamak için
+  // yalnızca makale gövdesi taranır.
+  let govdeHtml = html
+    .replace(/<(?:aside|footer|nav|header)\b[\s\S]*?<\/(?:aside|footer|nav|header)>/gi, " ");
+  const articleEslesme = /<article\b[\s\S]*?<\/article>/i.exec(govdeHtml);
+  if (articleEslesme) govdeHtml = articleEslesme[0];
+  const yanKes = govdeHtml.search(
+    /(?:class|id)=["'][^"']*(?:related|benzer|ilginizi|onerilen|popular|populer|sidebar|widget|post-nav|comments|yorum)/i
+  );
+  if (yanKes > 400) govdeHtml = govdeHtml.slice(0, yanKes);
+
   const imgRe = /<img\b[^>]*>/gi;
   let tag;
-  while ((tag = imgRe.exec(html))) {
+  while ((tag = imgRe.exec(govdeHtml))) {
     const srcset = /srcset=["']([^"']+)["']/i.exec(tag);
     if (srcset) {
       const parts = srcset[1]
@@ -407,6 +418,11 @@ export function biggerVariants(url) {
   // DonanımHaber: 1200x675{slug}.jpg üzerinde yazı/kutu bindirmesi var; temiz /src/ sürümü önce denenir.
   const dh = /^(https?:\/\/www\.donanimhaber\.com\/images\/images\/haber\/(\d+)\/)1200x675([^/?#]+)\.jpg$/i.exec(u);
   if (dh) out.push(`${dh[1]}src/${dh[3]}${dh[2]}_0.jpg`);
+
+  // BBC: /ace/branded_news/ sol alta büyük BBC NEWS filigranı basar; /ace/standard/ temizdir.
+  if (/ichef\.bbci\.co\.uk\/ace\/branded_news\//i.test(u)) {
+    out.push(u.replace(/\/ace\/branded_news\//i, "/ace/standard/"));
+  }
 
   // foo-780x470.jpg → foo-1280x720.jpg (+ sürümsüz orijinal)
   const m = /^(.*?)-(\d{2,4})x(\d{2,4})(\.(?:jpe?g|png|webp|avif))(\?[^#]*)?$/i.exec(u);
