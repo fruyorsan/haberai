@@ -38,6 +38,13 @@ import { collectImageCandidates } from "../src/gorsel.js";
 import { kartTaban } from "./kapak-kart.mjs";
 
 const KOK = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const ENV_YOL = path.join(KOK, ".env");
+if (fs.existsSync(ENV_YOL)) {
+  for (const satir of fs.readFileSync(ENV_YOL, "utf8").split(/\r?\n/)) {
+    const m = satir.match(/^\s*([A-Z0-9_]+)\s*=\s*(.+?)\s*$/);
+    if (m && !process.env[m[1]]) process.env[m[1]] = m[2].replace(/^["']|["']$/g, "");
+  }
+}
 const ARTICLES = path.join(KOK, "data", "articles.json");
 const INDEKS = path.join(KOK, "data", "indeks.json");
 const CIKTI_DIZIN = path.join(KOK, "site", "public", "kapak");
@@ -521,25 +528,222 @@ function kartBasligi(baslik) {
   return { boyut: 58, lh: 70, satirlar: temizSatirlar };
 }
 
-function kapakSvg(w = GENISLIK, h = YUKSEKLIK) {
+const KATEGORI_RENK = {
+  "Yapay Zeka": "#c084fc",
+  "Donanım": "#34d399",
+  "Yazılım": "#60a5fa",
+  "Mobil": "#22d3ee",
+  "Oyun": "#a78bfa",
+  "Siber Güvenlik": "#2dd4bf",
+  "Bilim": "#818cf8",
+  "Uzay": "#f472b6",
+  "Ekonomi": "#fbbf24",
+  "Spor": "#f59e0b",
+  "Sağlık": "#fb7185",
+  "Kültür": "#e879f9",
+  "Dünya": "#38bdf8",
+  "Otomobil": "#34d399",
+  "Teknoloji": "#60a5fa",
+  "Gündem": "#f43f5e",
+};
+
+function kapakSvg(w = GENISLIK, h = YUKSEKLIK, kategori = "Gündem", fotoMu = true) {
+  const vurgu = KATEGORI_RENK[kategori] || "#f43f5e";
+  const sinematik = fotoMu
+    ? `<radialGradient id="vin" cx="0.5" cy="0.45" r="0.78">
+      <stop offset="0.58" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.48"/>
+    </radialGradient>
+    <radialGradient id="isik" cx="0.06" cy="0.96" r="0.65">
+      <stop offset="0" stop-color="${vurgu}" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="${vurgu}" stop-opacity="0"/>
+    </radialGradient>`
+    : "";
   return `<svg width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="kose" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#000000" stop-opacity="0"/>
-      <stop offset="1" stop-color="#000000" stop-opacity="0.62"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.68"/>
     </linearGradient>
+    <linearGradient id="altSerit" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="${vurgu}"/>
+      <stop offset="0.55" stop-color="#e11d2e"/>
+      <stop offset="1" stop-color="#e11d2e"/>
+    </linearGradient>
+    ${sinematik}
   </defs>
+  ${fotoMu ? `<rect width="${w}" height="${h}" fill="url(#vin)"/><rect width="${w}" height="${h}" fill="url(#isik)"/>` : ""}
   <rect x="0" y="${h - 110}" width="${w}" height="110" fill="url(#kose)"/>
-  <rect x="0" y="${h - 6}" width="${w}" height="6" fill="#e11d2e"/>
+  <rect x="0" y="${h - 7}" width="${w}" height="7" fill="url(#altSerit)"/>
   <g font-family="Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif">
     <!-- Sağ alt köşe plakası: yayıncıların köşeye bastığı kendi logolarını
          (AH, Webtekno, DH...) örter. Rozet bu plakanın içinde durur, böylece
          iki logo üst üste binmez. -->
-    <path d="M ${w - 236} ${h} L ${w - 236} ${h - 58} Q ${w - 236} ${h - 70} ${w - 224} ${h - 70} L ${w} ${h - 70} L ${w} ${h} Z" fill="#0b0e14" fill-opacity="0.9"/>
+    <path d="M ${w - 236} ${h} L ${w - 236} ${h - 58} Q ${w - 236} ${h - 70} ${w - 224} ${h - 70} L ${w} ${h - 70} L ${w} ${h} Z" fill="#0b0e14" fill-opacity="0.92"/>
     <rect x="${w - 208}" y="${h - 52}" width="12" height="22" rx="2.5" fill="#e11d2e"/>
     <text x="${w - 186}" y="${h - 32}" font-size="22" font-weight="700" fill="#ffffff" letter-spacing="-0.3">haberinai</text>
   </g>
 </svg>`;
+}
+
+let aiSayac = 0;
+let aiKotaDoldu = false;
+const AI_TUR_LIMIT = Number(process.env.AI_KAPAK_LIMIT || 25);
+
+/**
+ * Yayıncıda temiz fotoğraf bulunamayan haberler için Cloudflare Workers AI
+ * (`Llama-3.1` sahne yönetmeni + `Leonardo Phoenix 1.0` / `Lucid Origin` / `FLUX`)
+ * ile haberin başlığına ve içeriğine özel 16:9 fotogerçekçi basın fotoğrafı üretir.
+ */
+async function aiGorselUret(a) {
+  const acc = process.env.CLOUDFLARE_ACCOUNT_ID;
+  const tok = process.env.CLOUDFLARE_API_TOKEN;
+  if (!acc || !tok || aiKotaDoldu || aiSayac >= AI_TUR_LIMIT) {
+    if (debug) console.log(`   · ${a.id} AI atlandı: acc=${Boolean(acc)} tok=${Boolean(tok)} kota=${aiKotaDoldu} sayac=${aiSayac}`);
+    return null;
+  }
+
+  const tabanUrl = `https://api.cloudflare.com/client/v4/accounts/${acc}/ai/run/`;
+  const basliklar = {
+    Authorization: `Bearer ${tok}`,
+    "Content-Type": "application/json",
+  };
+
+  let sahne = "";
+  try {
+    const sys =
+      "You are a senior photo editor for a major technology and news magazine. Convert the Turkish news headline and summary into ONE English prompt (max 65 words) for a photorealistic text-to-image model. Rules: 1) Describe a concrete, dramatic, realistic press or studio photograph (35mm or 85mm lens, shallow depth of field, natural color grading, rich rim lighting) that directly illustrates the core subject of the article. 2) Do NOT mention brand names, company names, or real politicians by name; describe the physical object, device, vehicle, stadium, courtroom, or environment instead so the model does not draw gibberish logos. 3) Keep the main subject centered. 4) Explicitly forbid any text, letters, numbers, logos, or watermarks. Output ONLY the prompt.";
+    const usr = `Category: ${a.category || "Gündem"}\nHeadline: ${a.title || ""}\nSummary: ${String(a.summary || "").slice(0, 260)}`;
+    const r = await fetch(`${tabanUrl}@cf/meta/llama-3.1-8b-instruct`, {
+      method: "POST",
+      headers: basliklar,
+      body: JSON.stringify({
+        messages: [
+          { role: "system", content: sys },
+          { role: "user", content: usr },
+        ],
+        max_tokens: 120,
+      }),
+      signal: AbortSignal.timeout(15000),
+    });
+    if (r.status === 429 || r.status === 402) {
+      if (debug) console.log(`   · ${a.id} Llama kota doldu: HTTP ${r.status}`);
+      aiKotaDoldu = true;
+      return null;
+    }
+    if (!r.ok && debug) {
+      console.log(`   · ${a.id} Llama HTTP ${r.status}: ${(await r.text()).slice(0, 120)}`);
+    } else if (r.ok) {
+      const j = await r.json();
+      sahne = String(j?.result?.response || "")
+        .trim()
+        .replace(/^["']|["']$/g, "");
+    }
+  } catch (err) {
+    if (debug) console.log(`   · ${a.id} Llama catch: ${err.message}`);
+  }
+
+  if (!sahne) {
+    sahne = `Professional editorial press photograph representing ${a.category || "news"}: ${a.gorselSorgu || a.title}, 35mm lens, shallow depth of field, cinematic natural lighting, magazine quality.`;
+  }
+  const sonPrompt = `${sahne} No text, no words, no letters, no numbers, no logos, no watermark.`;
+
+  const modeller = [
+    "@cf/leonardo/phoenix-1.0",
+    "@cf/leonardo/lucid-origin",
+    "@cf/black-forest-labs/flux-1-schnell",
+  ];
+
+  for (const m of modeller) {
+    try {
+      const govde =
+        m.includes("flux-1-schnell")
+          ? { prompt: sonPrompt }
+          : { prompt: sonPrompt, width: GENISLIK, height: YUKSEKLIK };
+      const r = await fetch(`${tabanUrl}${m}`, {
+        method: "POST",
+        headers: basliklar,
+        body: JSON.stringify(govde),
+        signal: AbortSignal.timeout(28000),
+      });
+      if (r.status === 429 || r.status === 402) {
+        if (debug) console.log(`   · ${a.id} AI kota doldu (${m}): HTTP ${r.status}`);
+        aiKotaDoldu = true;
+        return null;
+      }
+      if (!r.ok) {
+        if (debug) console.log(`   · ${a.id} AI hata (${m}): HTTP ${r.status}`);
+        continue;
+      }
+      const ct = String(r.headers.get("content-type") || "");
+      let buf = null;
+      if (ct.startsWith("image/")) {
+        buf = Buffer.from(await r.arrayBuffer());
+      } else {
+        const j = await r.json();
+        if (j?.result?.image) buf = Buffer.from(j.result.image, "base64");
+      }
+      if (buf && buf.length > 8000) {
+        aiSayac++;
+        return { veri: buf, model: m.split("/").pop() };
+      } else if (debug) {
+        console.log(`   · ${a.id} AI boş yanıt (${m}): ct=${ct} len=${buf ? buf.length : 0}`);
+      }
+    } catch (err) {
+      if (debug) console.log(`   · ${a.id} AI catch (${m}): ${err.message}`);
+    }
+  }
+  return null;
+}
+
+/**
+ * Kaynak sitede temiz fotoğraf bulunamadığında haberin Türkçe başlığıyla
+ * geniş (16:9) ve yüksek çözünürlüklü gerçek haber/basın fotoğraflarını arar.
+ * Adaylar yine `paylasimKartiMi` (başka sitenin yazılı kartını eleme) ve
+ * `gorselPuani` (netlik/çözünürlük) filtrelerinden geçer.
+ */
+async function haberGorselAra(a) {
+  const temizBaslik = String(a.title || "")
+    .replace(/['"“”‘’?!:;,.]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  const kisaBaslik = temizBaslik.split(" ").slice(0, 5).join(" ");
+  const sorgular = [
+    kisaBaslik,
+    String(a.gorselSorgu || "").trim(),
+    temizBaslik,
+  ].filter(Boolean);
+  const cikti = [];
+  for (const sorguMetni of [...new Set(sorgular)]) {
+    try {
+      const url = `https://www.bing.com/images/async?q=${encodeURIComponent(sorguMetni)}&first=0&count=14&qft=+filterui:imagesize-large+filterui:aspect-wide`;
+      const r = await fetch(url, {
+        headers: {
+          "user-agent": UA_TARAYICI,
+          accept: "text/html,application/xhtml+xml,*/*;q=0.8",
+          "accept-language": "tr-TR,tr;q=0.9,en;q=0.8",
+        },
+        signal: AbortSignal.timeout(12000),
+      });
+      if (!r.ok) continue;
+      const html = await r.text();
+      const ham = [...html.matchAll(/murl&quot;:&quot;(https?:\/\/[^&]+?)&quot;/g)].map((m) =>
+        m[1].replace(/&amp;/g, "&")
+      );
+      for (const u of ham) {
+        if (KAYNAK_JUNK.test(u) || STOK_KONAK.test(u)) continue;
+        if (/youtube\.com|ytimg\.com|tiktok\.com|instagram\.com|fbsbx\.com/i.test(u)) continue;
+        const temiz = dhTemizUrl(u);
+        if (temiz && !cikti.includes(temiz)) cikti.push(temiz);
+        if (!cikti.includes(u)) cikti.push(u);
+        if (cikti.length >= 10) return cikti;
+      }
+      if (cikti.length >= 4) break;
+    } catch {
+      // Sonraki sorguyu dene
+    }
+  }
+  return cikti;
 }
 
 // Windows'ta antivirüs/indeksleyici yeni dosyayı bir an kilitleyebiliyor:
@@ -819,7 +1023,8 @@ async function kapakUret(a) {
             : { sigma: 0.6 };
       return await boru
         .resize(GENISLIK, YUKSEKLIK, { fit: "cover", position: konum })
-        .modulate({ saturation: 1.08, brightness: 1.02 })
+        .modulate({ saturation: 1.15, brightness: 1.03 })
+        .linear(1.07, -7)
         .sharpen(keskinlik)
         .toBuffer();
     } catch {
@@ -890,7 +1095,11 @@ async function kapakUret(a) {
       : uygunMu(kaynak, sorgu) &&
         (FOTO_KATEGORI.has(String(a.category || "")) || ozelAdUyuyor(kaynak, a.title));
     // Stok kaynaklı eski kapağı yenilerken aynı stok kareyi tekrar seçme.
-    if (fotoIzinli && !(sadeceStokKaynak && stokAday)) {
+    if (
+      fotoIzinli &&
+      !(sadeceStokKaynak && stokAday) &&
+      String(kaynak || "").startsWith("http")
+    ) {
       const temiz = dhTemizUrl(kaynak);
       if (temiz) adayEkle(temiz, "veri");
       adayEkle(kaynak, "veri");
@@ -975,6 +1184,48 @@ async function kapakUret(a) {
     console.log(`   · ${a.id} tüm adaylar zayıf, tasarımlı karta düşülüyor`);
   }
 
+  if (!taban && !kartaZorla) {
+    const webAdaylar = await haberGorselAra(a);
+    const webDeger = [];
+    for (const u of webAdaylar) {
+      try {
+        const veri = await gorselIndir(u);
+        if (!veri) continue;
+        const bilgi = await sharp(veri).metadata();
+        const pk = await paylasimKartiMi(veri);
+        if (pk.kart) continue;
+        const puan = await gorselPuani(veri, bilgi);
+        if (puan === null || puan < 28) continue;
+        webDeger.push({ url: u, veri, bilgi, puan });
+        if (puan >= 68 || webDeger.length >= 3) break;
+      } catch {
+        // Sonraki adayı dene
+      }
+    }
+    webDeger.sort((x, y) => y.puan - x.puan);
+    if (webDeger[0]) {
+      taban = await kirp(webDeger[0].veri, webDeger[0].bilgi, 0);
+      if (taban) {
+        fotoVar = true;
+        secilenUrl = webDeger[0].url;
+        console.log(`   ✦ Haber fotoğrafı (${webDeger[0].puan.toFixed(0)}p): ${a.title.slice(0, 58)}`);
+      }
+    }
+  }
+
+  if (!taban && !kartaZorla) {
+    const aiSonuc = await aiGorselUret(a);
+    if (aiSonuc) {
+      const bilgi = await sharp(aiSonuc.veri).metadata();
+      taban = await kirp(aiSonuc.veri, bilgi, 0);
+      if (taban) {
+        fotoVar = true;
+        secilenUrl = `ai:${aiSonuc.model}`;
+        console.log(`   ✦ AI kapak (${aiSonuc.model}): ${a.title.slice(0, 62)}`);
+      }
+    }
+  }
+
   if (!taban && !kartaZorla && !sadeceStokKaynak && FOTO_KATEGORI.has(String(a.category || ""))) {
     try {
       const ov = await openverseAra(sorgu);
@@ -1012,7 +1263,7 @@ async function kapakUret(a) {
   }
 
   if (debug) console.log(`   · ${a.id} taban hazır: ${taban ? taban.length : 0} bayt`);
-  const svg = kapakSvg();
+  const svg = kapakSvg(GENISLIK, YUKSEKLIK, a.category, fotoVar);
   const bilesik = await sharp(taban)
     .composite([{ input: Buffer.from(svg) }])
     .webp({ quality: KALITE, effort: 4 })
@@ -1034,7 +1285,7 @@ async function kapakUret(a) {
     const sosyalVeri = await sharp(taban)
       .resize(SOSYAL_GENISLIK, SOSYAL_YUKSEKLIK, { fit: "cover", position: "centre" })
       .composite([
-        { input: Buffer.from(kapakSvg(SOSYAL_GENISLIK, SOSYAL_YUKSEKLIK)) },
+        { input: Buffer.from(kapakSvg(SOSYAL_GENISLIK, SOSYAL_YUKSEKLIK, a.category, fotoVar)) },
       ])
       .jpeg({ quality: SOSYAL_KALITE, mozjpeg: true })
       .toBuffer();
