@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T21:54:08.566Z",
+  "updatedAt": "2026-10-31T22:08:07.522Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5421,
-  "aday": 5421,
-  "uygun": 3365,
-  "secilen": 3271,
+  "toplamHaber": 5422,
+  "aday": 5422,
+  "uygun": 3366,
+  "secilen": 3272,
   "red": {
     "özet gövdeyle aynı": 111,
     "editör notu özetle aynı": 8,
@@ -62,10 +62,6 @@
       "twin": "İsrail ordusunun El Halil operasyonu 3 bin 300 kişiyi evinden etti"
     },
     {
-      "title": "Sony Yeni LYTIA 720 Sensörü 50 MP ile Gece Çekimlerini Yarıyor",
-      "twin": "Sony mobil kameralar için 50 MP LYTIA 720 sensörünü duyurdu"
-    },
-    {
       "title": "OpenAI, temel bilimlerde 3 büyük teorik kırılma yaptığını duyurdu",
       "twin": "OpenAI, yapay zekanın matematikte 3 büyük hamle yaptığını açıkladı"
     },
@@ -80,6 +76,10 @@
     {
       "title": "Apple, iOS 27.2 güncellemesiyle Siri ve FaceTime özelliklerini güncelledi",
       "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
+    },
+    {
+      "title": "Sony Yeni LYTIA 720 Sensörü 50 MP ile Gece Çekimlerini Yarıyor",
+      "twin": "Sony mobil kameralar için 50 MP LYTIA 720 sensörünü duyurdu"
     },
     {
       "title": "Redmi K100 modeli 10.000 mAh bataryasıyla oyunseverlere güç sağlıyor",
@@ -312,7 +312,6 @@
       "6b84961c1109356d",
       "9b2fe4b31264ce5e",
       "57875d22505da81b",
-      "2296644c4726fadd",
       "068cc02ed6734f50",
       "a8050e3861ab64dd",
       "f003344aa3e71f38",
@@ -332,6 +331,7 @@
       "e04c349360953110",
       "8044985495178a7b",
       "ee821165315eb161",
+      "2296644c4726fadd",
       "1fe406ebb5214cd8",
       "cf81f7dd7d2cbf34",
       "025d7a5b5ffb1559",
@@ -344,7 +344,6 @@
       "b34ddbff8dab515a",
       "99048ad1a9773dab",
       "1ca6c462000ad10e",
-      "ed1f0ab6425183d5",
       "52fcc23ca4f01041",
       "2e4fdabc5511385e",
       "93436a52267e958e",
@@ -363,6 +362,7 @@
       "53f8b6583b8c898a",
       "d4e754841cecdffb",
       "99d6e847fd6f3d00",
+      "ed1f0ab6425183d5",
       "216e7df106205834",
       "f039811f73013665",
       "e855d211e8bb2ca4",
@@ -380,9 +380,9 @@
       "527c04967740edf4",
       "2197fcfa16f4a2de",
       "880395ffbe224cf0",
-      "e0d96e1fe468cc7c",
       "ae4114913dd868d3",
       "6f0a10e5ab706065",
+      "e0d96e1fe468cc7c",
       "fffff1ce0f5769e4",
       "c3c296345fb4ef57",
       "7700486dcd3552e0"
@@ -1043,8 +1043,9 @@
     ],
     "2026-11-01": [
       "4fe212642b25fdf1",
-      "13d7f226ac25fa2f",
       "63187dadd2f5c731",
+      "13d7f226ac25fa2f",
+      "b8600d5f58a33e9f",
       "c1987bfe5778dd09"
     ],
     "2026-10-22": [
@@ -3624,6 +3625,7 @@
     "32fc73a1f7bcb36e",
     "3fbed561a99bda55",
     "d68874deb78c61c3",
+    "63187dadd2f5c731",
     "7a0d0469a8848800",
     "f1424850fc79ae3b",
     "fc6276d9326dbb77",
@@ -3700,7 +3702,6 @@
     "29536e82da1bac41",
     "a67bcb09c7f84d83",
     "4e57e6b28a1b0762",
-    "2296644c4726fadd",
     "dbfdd3a61e910d87",
     "1676b3750aee07dc",
     "8e756b6009c7afd9",
@@ -3783,7 +3784,6 @@
     "1d715b01c740f046",
     "5643343cd95151a8",
     "a59d2eaa5bbfa592",
-    "63187dadd2f5c731",
     "6f1bb51c89ac6801",
     "e09c3f85b6ca2d97",
     "330e98400984447d",
@@ -3811,6 +3811,7 @@
     "422408a9949ada42",
     "c865c0c44656bbdb",
     "aaa716f7d3eee4b1",
+    "2296644c4726fadd",
     "019b923e705041ed",
     "98ce98aed1e474e9",
     "153993cf7f7bd3bf",
@@ -3870,6 +3871,7 @@
     "e4689cb8019010a8",
     "4b1d1e6b6fbbf60f",
     "8f4d11d7e23b47a1",
+    "b8600d5f58a33e9f",
     "6a74c35500453468",
     "87a7b4e7430dc84a",
     "6de2ca83687fd332",
@@ -3921,7 +3923,6 @@
     "55fdc1c5994638fc",
     "e2f70e81237b09ff",
     "14cb92b445e30fdb",
-    "ed1f0ab6425183d5",
     "a91563c9b62a514b",
     "3a52932b714f2615",
     "c12dcace83fc311c",
@@ -4062,6 +4063,7 @@
     "6c0e4582e31f0eeb",
     "960f679196baac35",
     "02e3010d68bc3f1e",
+    "ed1f0ab6425183d5",
     "db06ed45f077a006",
     "5ec8bf33816a428b",
     "222c686969dfccd8",
@@ -4798,7 +4800,6 @@
     "ab67d35d1df43a71",
     "43e6b3c6c457247e",
     "07f6f61d27714ab1",
-    "e0d96e1fe468cc7c",
     "b658054ad588c242",
     "8cc714928d534ad1",
     "b147286e873c2100",
@@ -5138,6 +5139,7 @@
     "3bc47ae8f941cae4",
     "55f87e843f38e0bf",
     "46c5a6dde12502da",
+    "e0d96e1fe468cc7c",
     "ff13800b8359cc15",
     "f278e94b41976638",
     "0e361b458c8bfab5",
