@@ -77,9 +77,15 @@ const yedek = all.filter((a) => a.slug !== article.slug && !skorlu.includes(a));
 const benzerler = [...skorlu, ...yedek];
 // "Okumaya devam et" zinciri: haberin hemen ardından TAM içeriğiyle akan en
 // ilgili 4 haber (ShiftDelete tarzı). Zincir burada durur.
-const devam = benzerler.slice(0, 4);
+// ARŞİV MODU: indeks çekirdeği dışındaki (noindex) eski haberler. Bu sayfalar
+// arama motoruna açık olmadığı için etkileşim blokları, okuma zinciri ve
+// piyasa şeridi basılmaz; sayfa başına ~45 KB HTML tasarrufu sağlar. İçerik,
+// kapak, kaynak ve paylaşım düğmeleri aynen kalır.
+const arsiv = !indeksliMi(article);
+const devam = arsiv ? [] : benzerler.slice(0, 4);
 // "İlgili Haberler": zincirde kullanılanların ardından gelen 3 haber (tekrar yok).
-const related = benzerler.slice(4, 7);
+// Arşivde zincir olmadığı için ilk 6 haber kompakt bağlantı olarak verilir.
+const related = arsiv ? benzerler.slice(0, 6) : benzerler.slice(4, 7);
 
 const keyPoints = Array.isArray(article.keyPoints) ? article.keyPoints.filter(Boolean) : [];
 const body = Array.isArray(article.body) ? article.body.filter(Boolean) : [];
@@ -317,9 +323,14 @@ const breadcrumbLd = {
   preloadImage={kapak ? imageUrl(kapak, 1200) : "/og-default.png"}
   preloadSrcset={kapak ? imageSrcset(kapak, [820, 1200]) : undefined}
   preloadSizes="(max-width: 900px) 100vw, 860px"
+  ticker={!arsiv}
 >
-  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+  {!arsiv && (
+    <>
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+      <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+    </>
+  )}
 
   <div class="progress" id="progress" aria-hidden="true"></div>
 
@@ -557,50 +568,56 @@ const breadcrumbLd = {
     </article>
 
     {/* Yazı sonu bildirim bloğu (alt paylaşım kutusu kaldırıldı; paylaşım üst barda). */}
-    <section class="post__buyume" aria-label="Bildirim al">
-      <PushCTA />
-    </section>
+    {!arsiv && (
+      <section class="post__buyume" aria-label="Bildirim al">
+        <PushCTA />
+      </section>
+    )}
 
     {/* AI'ya Sor kutusu yazının hemen ardında ve okuma zincirinden ÖNCE olmalı:
         aksi hâlde bu bölüme kaydıran düğme, okuru 4 başka haberin sonuna götürüyordu. */}
-    <section
-      class="aiask"
-      id="aiask"
-      data-title={article.title}
-      data-summary={article.summary}
-      data-comment={article.comment}
-      data-keypoints={keyPoints.join(" | ")}
-    >
-      <div class="aiask__head">
-        <span class="aiask__badge">AI'YA SOR</span>
-        <span class="aiask__sub">Bu haber hakkında merak ettiklerini sorabilirsin</span>
-      </div>
-      <div class="aiask__chips">
-        <button type="button" class="aiask__chip">Bu haber kısaca ne anlatıyor?</button>
-        <button type="button" class="aiask__chip">Bu gelişme kimleri etkiler?</button>
-        <button type="button" class="aiask__chip">Bunun olası sonuçları neler?</button>
-      </div>
-      <form class="aiask__form" id="aiask-form">
-        <input
-          id="aiask-input"
-          type="text"
-          placeholder="Sorunu buraya yaz..."
-          maxlength="400"
-          autocomplete="off"
-        />
-        <button type="submit">Sor</button>
-      </form>
-      <div class="aiask__answer" id="aiask-answer" hidden></div>
-    </section>
+    {!arsiv && (
+      <section
+        class="aiask"
+        id="aiask"
+        data-title={article.title}
+        data-summary={article.summary}
+        data-comment={article.comment}
+        data-keypoints={keyPoints.join(" | ")}
+      >
+        <div class="aiask__head">
+          <span class="aiask__badge">AI'YA SOR</span>
+          <span class="aiask__sub">Bu haber hakkında merak ettiklerini sorabilirsin</span>
+        </div>
+        <div class="aiask__chips">
+          <button type="button" class="aiask__chip">Bu haber kısaca ne anlatıyor?</button>
+          <button type="button" class="aiask__chip">Bu gelişme kimleri etkiler?</button>
+          <button type="button" class="aiask__chip">Bunun olası sonuçları neler?</button>
+        </div>
+        <form class="aiask__form" id="aiask-form">
+          <input
+            id="aiask-input"
+            type="text"
+            placeholder="Sorunu buraya yaz..."
+            maxlength="400"
+            autocomplete="off"
+          />
+          <button type="submit">Sor</button>
+        </form>
+        <div class="aiask__answer" id="aiask-answer" hidden></div>
+      </section>
+    )}
 
     {/* Yorumlar, dört haberlik okuma zincirinden ÖNCE gelir: Shorts'ta yazılan
         yorum "Haberi oku" ile açılan sayfada hemen görünsün; okur yorumlara
         ulaşmak için dört ayrı haberi sonuna kadar kaydırmak zorunda kalmasın. */}
-    <Yorumlar
-      slug={article.slug}
-      baslik={article.title}
-      url={`${siteOrigin(Astro.site)}/haber/${article.slug}/`}
-    />
+    {!arsiv && (
+      <Yorumlar
+        slug={article.slug}
+        baslik={article.title}
+        url={`${siteOrigin(Astro.site)}/haber/${article.slug}/`}
+      />
+    )}
 
     {/* ShiftDelete tarzı okumaya devam: haberin hemen ardından benzer haberlerin
         TAM içeriği akar (4 haber), sonra zincir durur. */}
@@ -617,9 +634,19 @@ const breadcrumbLd = {
     {related.length > 0 && (
       <section>
         <h2 class="section-title section-title--line">İlgili Haberler</h2>
-        <div class="grid">
-          {related.map((a, i) => <ArticleCard article={a} index={i} />)}
-        </div>
+        {arsiv ? (
+          <ul class="arsiv-ilgili">
+            {related.map((a) => (
+              <li>
+                <a href={`/haber/${a.slug}/`}>{a.title}</a>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div class="grid">
+            {related.map((a, i) => <ArticleCard article={a} index={i} />)}
+          </div>
+        )}
       </section>
     )}
   </div>
@@ -1662,6 +1689,23 @@ const breadcrumbLd = {
       flex-direction: column;
       gap: 12px;
     }
+  }
+
+  /* Arşiv (noindex) sayfalarında ilgili haberler kompakt bağlantı listesi. */
+  .arsiv-ilgili {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+  }
+  .arsiv-ilgili a {
+    color: var(--text);
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .arsiv-ilgili a:hover {
+    color: var(--brand-strong);
   }
 
 </style>

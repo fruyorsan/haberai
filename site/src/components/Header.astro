@@ -15,9 +15,11 @@ const nav = [
 const path = Astro.url.pathname;
 const isActive = (href) =>
   href === "/" ? path === "/" : path.startsWith(href.replace(/\/$/, ""));
+
+const { ticker = true } = Astro.props;
 ---
 
-<MarketTicker />
+{ticker && <MarketTicker />}
 
 <header class="header" id="site-header">
   <div class="container header__inner">
