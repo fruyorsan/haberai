@@ -69,9 +69,9 @@ let stokKarti = 0;
 for (const a of articles) {
   if (!a || !a.id) continue;
   const k = a.kapak;
-  if (!k || k.foto !== false) continue;
+  if (!k) continue;
   if (!String(a.image || "").startsWith(`${URL_TABANI}/`)) continue;
-  if (/wikimedia\.org/i.test(String(k.kaynak || ""))) {
+  if ((k.foto === false && /wikimedia\.org/i.test(String(k.kaynak || ""))) || /^ai:/i.test(String(k.kaynak || ""))) {
     korunacak.add(String(a.id));
     stokKarti++;
   }
