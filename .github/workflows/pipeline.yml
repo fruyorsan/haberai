@@ -278,7 +278,7 @@ jobs:
           fi
 
       - name: GitHub Pages'e yayinla
-        if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+        if: (steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')) && vars.DEPLOY_TARGET != 'cloudflare'
         uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.PAGES_DEPLOY_KEY }}
@@ -289,6 +289,32 @@ jobs:
           user_name: haber-bot
           user_email: bot@users.noreply.github.com
           commit_message: "yayin: ${{ github.run_number }}"
+
+      # Cloudflare Pages (alternatif yayin hedefi).
+      #
+      # Neden: GitHub Pages'te depo 1 GB ve 10.000 dosya ile sinirli; haber
+      # arsivi buyudukce bu sinir asiliyor. Cloudflare Pages'te bant genisligi
+      # sinirsiz, dosya siniri 20.000, tek dosya 25 MiB. Wrangler ile yapilan
+      # "direct upload" derleme kotasindan (ayda 500 build) DUSMEZ.
+      #
+      # Gecis icin (tek seferlik):
+      #   gh variable set DEPLOY_TARGET        --body "cloudflare"
+      #   gh variable set CLOUDFLARE_ACCOUNT_ID --body "<Cloudflare hesap kimligi>"
+      #   gh variable set CLOUDFLARE_PROJECT    --body "haberinai"   (opsiyonel)
+      #   gh secret   set CLOUDFLARE_API_TOKEN
+      # Bu degisken tanimli degilse adim HIC calismaz; GitHub Pages yayini
+      # aynen devam eder. Ikisi ayni anda yayinlanmaz.
+      - name: Cloudflare Pages'e yayinla
+        if: (steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')) && vars.DEPLOY_TARGET == 'cloudflare'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          command: >-
+            pages deploy site/dist
+            --project-name=${{ vars.CLOUDFLARE_PROJECT || 'haberinai' }}
+            --branch=main
+            --commit-dirty=true
 
       # Web push bildirimi (OneSignal) — ARTIK YAYINDAN SONRA.
       # Eski sıralamada bu adım site derlenmeden önce çalışıyordu; okuyucu

@@ -5,9 +5,11 @@ import { CONTACT_EMAIL, LEMON_SQUEEZY, PUBLISHER, SELLER } from "../lib/site-met
 const origin = Astro.site ? String(Astro.site).replace(/\/+$/, "") : "https://haberinai.site";
 const updated = "30 Ekim 2026";
 
+// Adres yalnızca tanımlıysa yazılır. Boşsa "Türkiye" gibi anlamsız bir satır
+// basılmaz; kişisel ev adresi/telefon yayınlamak zorunlu değildir.
 const saticiAdres = SELLER.adres
   ? [SELLER.adres, SELLER.sehir].filter(Boolean).join(", ")
-  : SELLER.sehir;
+  : "";
 
 const schema = {
   "@context": "https://schema.org",
@@ -41,7 +43,7 @@ const schema = {
     <h3>Satıcı / Hizmet Sağlayıcı</h3>
     <ul>
       <li><strong>Unvan:</strong> {SELLER.unvan}</li>
-      <li><strong>Adres:</strong> {saticiAdres}</li>
+      {saticiAdres && <li><strong>Adres:</strong> {saticiAdres}</li>}
       <li><strong>E-posta:</strong> <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></li>
       {SELLER.telefon && <li><strong>Telefon:</strong> {SELLER.telefon}</li>}
       {SELLER.vergiDairesi && <li><strong>Vergi dairesi:</strong> {SELLER.vergiDairesi}</li>}
