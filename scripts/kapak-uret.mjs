@@ -618,6 +618,57 @@ async function gorselIndir(url) {
  * yakınlık birlikte değerlendirilir; en yüksek puanlı kare kapak olur.
  * Düz/boş kareler (std çok düşük) hiç aday sayılmaz.
  */
+/**
+ * YAYINCININ "PAYLAŞIM KARTI" MIDIR?
+ *
+ * DonanımHaber, Donanım Günlüğü, NTV gibi siteler og:image olarak fotoğrafın
+ * üzerine kendi başlıklarını bastıkları hazır kartlar veriyor: kırmızı/turuncu
+ * bir plaka + beyaz punto yazı ("Kasım'da Çıkacak / 10 Oyun!", "Şarj Hızı /
+ * Belli Oldu"). Bu kare kapak olunca kartta İKİ başlık birden görünüyor ve
+ * başka bir sitenin reklamı gibi duruyor.
+ *
+ * Tespit: satır bazında kırmızı/turuncu doluluk + o satırlardaki beyaz yazı
+ * oranı. Domates, yangın ya da kırmızı araba fotoğrafı kırmızı satır üretir
+ * ama içinde beyaz punto yazı yoktur; bu yüzden ikisi birlikte aranır.
+ */
+async function paylasimKartiMi(veri) {
+  try {
+    const { data, info } = await sharp(veri)
+      .resize(200, 200, { fit: "inside" })
+      .removeAlpha()
+      .raw()
+      .toBuffer({ resolveWithObject: true });
+    const { width: w, height: h, channels: ch } = info;
+    let plakaSatir = 0;
+    let bandBeyaz = 0;
+    for (let y = 0; y < h; y++) {
+      let kirmizi = 0;
+      let beyaz = 0;
+      for (let x = 0; x < w; x++) {
+        const i = (y * w + x) * ch;
+        const r = data[i];
+        const g = data[i + 1];
+        const b = data[i + 2];
+        if (r >= 240 && g >= 240 && b >= 240) beyaz++;
+        if (r >= 140 && r - g >= 60 && r - b >= 50) kirmizi++;
+      }
+      // Plaka her zaman kareyi kaplamaz: "Şarj Hızı / Belli Oldu" kartında
+      // kırmızı şerit genişliğin ~%28'i kadar. 0.25 eşiği bunu yakalar,
+      // domates/yangın gibi gerçek kırmızı fotoğraflar zaten %80+ üretir;
+      // ayrımı yapan asıl ölçüt aşağıdaki beyaz yazı oranıdır.
+      if (kirmizi / w >= 0.25) {
+        plakaSatir++;
+        bandBeyaz += beyaz;
+      }
+    }
+    const plakaOran = (plakaSatir / h) * 100;
+    const yazi = plakaSatir ? (bandBeyaz / (plakaSatir * w)) * 100 : 0;
+    return { kart: plakaOran >= 8 && yazi >= 0.35, plakaOran, yazi };
+  } catch {
+    return { kart: false, plakaOran: 0, yazi: 0 };
+  }
+}
+
 async function gorselPuani(veri, bilgi) {
   const w = bilgi?.width || 0;
   const h = bilgi?.height || 0;
@@ -683,27 +734,35 @@ async function kapakUret(a) {
   const kartaZorla =
     sadeceKart || (sadeceStok && !aktif.has(String(a.id)));
 
-  /** 16:9 kırp + hafif canlandırma. */
-  const kirp = async (veri, bilgi) => {
+  /**
+   * 16:9 kırp + hafif canlandırma.
+   * `ustYuzde`: üstten atılacak pay. Yayıncıların og:image paylaşım kartlarında
+   * sağ ÜST köşede kendi logoları ve büyük başlık metinleri oluyor (ShiftDelete,
+   * Webtekno...). Bu hem bedava reklam hem de kartın üstünde ikinci bir başlık
+   * gibi duruyordu. Üstten %18 atmak logoyu ve yayıncının başlığını tamamen
+   * dışarıda bırakır; geriye haberin kendi fotoğrafı kalır.
+   */
+  const kirp = async (veri, bilgi, ustYuzde = 0) => {
     try {
       // KAYNAK FİLİGRANI: yayıncılar kendi logolarını sağ alt köşeye basıyor
       // (AndroidHeadlines "AH", Webtekno, DonanımHaber...). Kapağın sağ alt
       // köşesinde bizim "haberinai" rozetimiz var; iki logo üst üste binince
-      // amatör görünüyordu. Kırpmadan önce sağdan %8, alttan %7 atılır: köşe
+      // amatör görünüyordu. Kırpmadan önce sağdan %10, alttan %7 atılır: köşe
       // filigranı dışarıda kalır, kompozisyon neredeyse aynıdır.
       const w = bilgi.width || 0;
       const h = bilgi.height || 0;
       // --kirp-sol: sol taraftan istenen pay atılır (kadrajda istenmeyen figür).
       const sol = Math.round((w * Math.min(Math.max(kirpSolYuzde, 0), 40)) / 100);
-      const kirpW = Math.max(1, Math.round((w - sol) * 0.92));
-      const kirpH = Math.max(1, Math.round(h * 0.93));
+      const ust = Math.round((h * Math.min(Math.max(ustYuzde, 0), 30)) / 100);
+      const kirpW = Math.max(1, Math.round((w - sol) * 0.9));
+      const kirpH = Math.max(1, Math.round((h - ust) * 0.93));
       // "attention" büyük görsellerde çok pahalı (saniyelerce CPU). 4000 px'e
       // kadar ilgi alanına göre kırp; daha büyüklerde merkez yeterli.
       const konum =
         w * h <= 16_000_000 ? sharp.strategy.attention : "centre";
       let boru = sharp(veri);
       if (w > 0 && h > 0 && kirpW > 640 && kirpH > 360) {
-        boru = boru.extract({ left: sol, top: 0, width: kirpW, height: kirpH });
+        boru = boru.extract({ left: sol, top: ust, width: kirpW, height: kirpH });
       }
       // KÜÇÜK KAYNAK: yayıncı 640×360 gibi küçük bir kare verdiyse 1280'e
       // büyütmek zorundayız. Büyütme oranı arttıkça daha güçlü keskinleştirme
@@ -733,7 +792,7 @@ async function kapakUret(a) {
       const bilgi = await sharp(veri).metadata();
       // Çok küçük görseller (logo, ikon, 300 px kare) kapak olmaz.
       if ((bilgi.width || 0) < 640 || (bilgi.height || 0) < 320) return null;
-      return await kirp(veri, bilgi);
+      return await kirp(veri, bilgi, 0);
     } catch {
       return null;
     }
@@ -805,6 +864,19 @@ async function kapakUret(a) {
       if (debug) console.log(`   · ${a.id} ${aday.tip} indirilemedi: ${err.message}`);
       continue;
     }
+    // Yayıncının başlığı fotoğrafın üstüne basılmış "paylaşım kartı" ise kapak
+    // olarak kullanılmaz: bizim kartımızda ikinci bir başlık gibi duruyor.
+    // Temiz bir gövde fotoğrafı varsa o seçilir, yoksa tasarımlı karta düşülür.
+    const kartKontrol = await paylasimKartiMi(veri);
+    if (kartKontrol.kart) {
+      if (debug) {
+        console.log(
+          `   · ${a.id} ${aday.tip} elendi (yayıncı başlık plakası: %${kartKontrol.plakaOran.toFixed(0)} plaka, %${kartKontrol.yazi.toFixed(2)} yazı)`
+        );
+      }
+      continue;
+    }
+
     const puan = await gorselPuani(veri, bilgi);
     if (puan === null) {
       if (debug) console.log(`   · ${a.id} ${aday.tip} elendi (küçük/düz): ${aday.url.slice(0, 80)}`);
@@ -842,8 +914,12 @@ async function kapakUret(a) {
   // yani başlıkla ilgisi tanım gereği doğru. `gorselPuani` bembeyaz/tek renk
   // kareleri null ile eliyor; kalan her kare karttan üstündür.
   const secilen = degerlendirilen[0] && degerlendirilen[0].puan >= 18 ? degerlendirilen[0] : null;
+  // Yayıncının og:image / veri görseli genelde bir "paylaşım kartı"dır: sağ üst
+  // köşede yayıncının logosu ve kendi başlığı olur. Üstten kırpıp o katmanı
+  // atıyoruz. Yazı içi fotoğraflarda ve elle seçilenlerde böyle bir katman yok.
+  const KIRP_UST = { kaynak: 18, veri: 16, govde: 0, elle: 0 };
   if (secilen) {
-    taban = await kirp(secilen.veri, secilen.bilgi);
+    taban = await kirp(secilen.veri, secilen.bilgi, KIRP_UST[secilen.tip] ?? 0);
     if (taban) {
       fotoVar = true;
       secilenUrl = secilen.url;
@@ -883,14 +959,22 @@ async function kapakUret(a) {
     if (debug) console.log(`   · ${a.id} kart satırları: ${JSON.stringify(satirlar)}`);
     const ilkY = 330 - ((satirlar.length - 1) * lh) / 2;
     const kategori = XML(String(a.category || "").toLocaleUpperCase("tr"));
+    // Kategori artık düz sarı yazı değil, sarı bir "hap" (pill) içinde: boş
+    // görünen zeminde tek başına duran küçük yazı kayboluyordu. Hap, başlığın
+    // üstünde sabit bir çapa oluşturuyor.
+    const hapY = Math.round(ilkY - 104);
+    const hapW = Math.max(120, Math.round(kategori.length * 15.2 + 44));
     const baslikSvg = satirlar
       .map(
         (s, i) =>
+          // Önce 3 px kaydırılmış koyu kopya (gölge), sonra asıl metin: fotoğraf
+          // olmayan zeminde bile başlık zeminden net ayrışsın.
+          `<text x="64" y="${Math.round(ilkY + i * lh + 3)}" font-size="${boyut}" font-weight="700" fill="#000000" fill-opacity="0.35" letter-spacing="-0.8">${XML(s)}</text>` +
           `<text x="64" y="${Math.round(ilkY + i * lh)}" font-size="${boyut}" font-weight="700" fill="#ffffff" letter-spacing="-0.8">${XML(s)}</text>`
       )
       .join("\n              ");
     taban = await sharp({
-      create: { width: GENISLIK, height: YUKSEKLIK, channels: 3, background: "#0a0f1a" },
+      create: { width: GENISLIK, height: YUKSEKLIK, channels: 3, background: "#080c15" },
     })
       .composite([
         {
@@ -898,20 +982,29 @@ async function kapakUret(a) {
             `<svg width="${GENISLIK}" height="${YUKSEKLIK}" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="zemin" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#0a0f1a"/>
-                  <stop offset="0.62" stop-color="#141a29"/>
-                  <stop offset="1" stop-color="#1b1020"/>
+                  <stop offset="0" stop-color="#080c15"/>
+                  <stop offset="0.55" stop-color="#111a2c"/>
+                  <stop offset="1" stop-color="#1d0f1a"/>
                 </linearGradient>
+                <radialGradient id="isik" cx="0.16" cy="0.08" r="0.85">
+                  <stop offset="0" stop-color="#3b4a6b" stop-opacity="0.55"/>
+                  <stop offset="0.55" stop-color="#1a2338" stop-opacity="0.18"/>
+                  <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+                </radialGradient>
                 <linearGradient id="kama" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stop-color="#e11d2e" stop-opacity="0.92"/>
-                  <stop offset="1" stop-color="#8d1020" stop-opacity="0.55"/>
+                  <stop offset="0" stop-color="#e11d2e" stop-opacity="0.95"/>
+                  <stop offset="0.55" stop-color="#b81728" stop-opacity="0.8"/>
+                  <stop offset="1" stop-color="#7d0e1c" stop-opacity="0.5"/>
                 </linearGradient>
                 <pattern id="izgara" width="44" height="44" patternUnits="userSpaceOnUse">
                   <path d="M44 0H0V44" fill="none" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
                 </pattern>
               </defs>
               <rect width="${GENISLIK}" height="${YUKSEKLIK}" fill="url(#zemin)"/>
+              <rect width="${GENISLIK}" height="${YUKSEKLIK}" fill="url(#isik)"/>
               <rect width="${GENISLIK}" height="${YUKSEKLIK}" fill="url(#izgara)"/>
+              <!-- zeminin sağında büyük, soluk marka harfi (derinlik) -->
+              <text x="${GENISLIK - 430}" y="${YUKSEKLIK - 30}" font-family="Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif" font-size="540" font-weight="800" fill="#ffffff" fill-opacity="0.045">H</text>
               <!-- sağdan giren kırmızı kama -->
               <path d="M ${GENISLIK + 40} -40 L ${GENISLIK + 40} ${YUKSEKLIK + 40} L 690 ${YUKSEKLIK + 40} L 1030 -40 Z" fill="url(#kama)"/>
               <!-- sarı ince çizgi -->
@@ -919,7 +1012,12 @@ async function kapakUret(a) {
               <!-- ikinci, koyu kama (derinlik) -->
               <path d="M ${GENISLIK + 40} -40 L ${GENISLIK + 40} ${YUKSEKLIK + 40} L 1010 ${YUKSEKLIK + 40} L 1215 -40 Z" fill="#05070d" fill-opacity="0.42"/>
               <g font-family="Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif">
-                ${kategori ? `<text x="64" y="${Math.round(ilkY - 58)}" font-size="25" font-weight="700" fill="#ffd23f" letter-spacing="3.4">${kategori}</text>` : ""}
+                ${
+                  kategori
+                    ? `<rect x="64" y="${hapY}" width="${hapW}" height="46" rx="23" fill="#ffd23f"/>
+                       <text x="${64 + Math.round(hapW / 2)}" y="${hapY + 31}" font-size="22" font-weight="700" fill="#0a0f1a" letter-spacing="2.6" text-anchor="middle">${kategori}</text>`
+                    : ""
+                }
                 ${baslikSvg}
               </g>
             </svg>`

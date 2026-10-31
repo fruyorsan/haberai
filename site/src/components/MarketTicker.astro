@@ -166,8 +166,12 @@ const rows = tickerItems.map((it) => ({
     display: flex;
     width: max-content;
     height: 100%;
-    animation: mt-scroll 110s linear infinite;
     will-change: transform;
+  }
+  /* İkinci kopya JS ile eklendiği için animasyon yalnızca JS açıkken çalışır;
+     aksi hâlde tek kopya kayıp boşluk bırakırdı. */
+  :global(html.js) .mticker__track {
+    animation: mt-scroll 110s linear infinite;
   }
   .mticker:hover .mticker__track {
     animation-play-state: paused;
