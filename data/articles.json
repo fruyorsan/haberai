@@ -1,5 +1,46 @@
 [
   {
+    "id": "4b66433901b0027c",
+    "title": "Valve, Steam platformunda yapay zeka içerikli oyunlara yasak getirmiyor",
+    "slug": "valve-steam-platformunda-yapay-zeka-icerikli-oyunlara-yasak-getirmiyor",
+    "summary": "Valve, Busan Indie Connect Festival 2026 oturumunda yapay zeka destekli oyunların Steam üzerinde yayımlanmaya devam edeceğini duyurdu. Şirket, oyunların geliştirilme sürecinde yapay zeka teknolojilerinin kullanıldığının bildirilmesini şart koşarken, içeriklerin kalitesine müdahale etmeyeceğini belirtti.",
+    "keyPoints": [
+      "Valve, yapay zeka ile üretilen oyunlara platform genelinde yasak getirmeyeceğini kesinleştirdi.",
+      "Geliştiricilerin oyunlarında yapay zeka kullanıldığını açıkça bildirme zorunluluğu devam edecek.",
+      "Şirket, oyun kalitesini denetleyen bir hakem mekanizması kurmayı reddediyor."
+    ],
+    "body": [
+      "Oyun dünyasının en büyük platformlarından biri olan Steam, yapay zeka ile geliştirilen içeriklerin geleceğine dair belirsizliği gideren bir açıklama yaptı. Busan Indie Connect Festival 2026 kapsamında düzenlenen soru-cevap etkinliğinde konuşan Valve temsilcileri, yapay zeka destekli oyunların yasaklanmayacağını net bir dille ifade etti. Şirket, üretken yapay zekanın sunduğu imkanları kısıtlamak yerine, şeffaflık ilkesini merkeze alan bir denetim modeli uygulamayı sürdüreceğini vurguladı.",
+      "Platform üzerinde oyun yayımlamak isteyen geliştiriciler için bildirim şartı, sistemin en önemli kuralı olmaya devam ediyor. Valve, yapay zeka teknolojilerinin oyunun hangi aşamasında kullanıldığının oyunculara gösterilmesi gerektiğine inanıyor. Ancak bu süreçte Valve, oyunların kalitesini yargılayan veya estetik tercihlerini denetleyen bir mercii olmayacağını belirtiyor. Geçmişte yaşanan Greenlight ve Steam Direct tartışmalarına benzer bir yaklaşım benimseyen şirket, platformdaki içerik çeşitliliğini korumak istiyor.",
+      "Valve'ın bu kararı, diğer platform sahiplerinin yaklaşımlarıyla da ilginç bir tezat oluşturuyor. Özellikle Epic Games yöneticisi Tim Sweeney, yapay zeka zorunluluğunun teknolojiye karşı bir direnç oluşturduğunu savunarak Valve'ı eleştirmişti. İki büyük oyun devi arasındaki bu görüş ayrılığı, yapay zekanın oyun geliştirme sürecindeki yerinin henüz tam olarak standartlaşmadığını gösteriyor. Valve ise kendi bildirim politikasına sadık kalarak, bağımsız geliştiricilerin önünü kapatmak istemiyor.",
+      "Öte yandan, yapay zeka teknolojilerinin getirdiği yeni bir güvenlik tehdidi de gündeme geldi. Bağımsız stüdyoları hedef alan kimliği belirsiz kişiler, projelerin yapay zeka ile üretilmiş klonlarını yayımlamakla tehdit ederek şantaj yapıyor. Valve temsilcisi Tom Giardino, bu tür vakaların yeni olduğunu ve soruşturulacağını belirtse de geliştiricilere şimdilik kolluk kuvvetleriyle iletişime geçmelerini öneriyor. Oyunların taklit edilmesini zorlaştırmak adına geliştiricilerin projelerini sürekli güncel tutmaları ve sadık bir topluluk oluşturmaları gerektiği ifade ediliyor.",
+      "Next Fest etkinliklerinde yapay zeka öğelerinin yoğunluğu, vitrin gösterim algoritması üzerinden de tartışılıyor. Valve yetkilileri, ilk iki gün oyunların rastgele gösterilmesinin düşük kaliteli içeriği öne çıkardığını kabul ediyor. Bu durum, algoritmanın işleyişi ile içerik kalitesi arasındaki dengenin önemini ortaya koyuyor. Valve, platformun hakemliğini üstlenmek yerine, şeffaf bir veri akışıyla oyuncuların tercih yapmasını sağlayan bir yapı kurmayı tercih ediyor."
+    ],
+    "comment": "Valve'ın aldığı karar, oyun sektöründe yaratıcılık ve üretim maliyeti arasındaki dengenin yapay zeka lehine kurulduğunun somut bir kanıtı. Platformun kalite denetimi yapmayı reddetmesi, bağımsız geliştiriciler için hem bir fırsat hem de taklit edilme riski taşıyan bir ortam yaratıyor. Özellikle şantaj girişimlerinin 2026 yılında artış göstermesi, geliştiricilerin güvenlik stratejilerini güncellemelerini zorunlu kılıyor. Şirketlerin oyun kalitesini kendi algoritmalarına bırakması, Steam üzerindeki içerik enflasyonunun artmasına neden olabilir.",
+    "editorNote": "Valve, yapay zeka oyunlarını yasaklamayarak geliştiricilere kapı açtı. Ancak şantaj ve klonlama tehdidi, bağımsız yapımcıların güvenliğini yeni bir sınavdan geçiriyor.",
+    "tags": [
+      "Valve",
+      "Steam",
+      "Yapay Zeka",
+      "Oyun Geliştirme",
+      "Oyun Sektörü"
+    ],
+    "category": "Oyun",
+    "gorselSorgu": "digital game development studio",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/steam-yapay-zeka-oyunlari-yasaklanmayacak",
+    "image": "/kapak/4b66433901b0027c.webp",
+    "publishedAt": "2026-10-31T07:46:35.000Z",
+    "generatedAt": "2026-10-31T07:52:33.047Z",
+    "breaking": true,
+    "gorselDeneme": "2026-10-31T07:52:34.142Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://ares.shiftdelete.net/2026/10/a2190692d9a8f233d073cedd6f9c1ecbbb966c15.webp",
+      "foto": true
+    }
+  },
+  {
     "id": "5a9a0110d23d7ac1",
     "title": "UEFI'deki kritik açık, sunucuları işletim sistemi öncesinde ele geçiriyor",
     "slug": "uefi-cve-2026-97631-kritik-acik-sunucular",
@@ -44,7 +85,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:26.927Z",
+    "gorselDeneme": "2026-10-31T07:52:34.156Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/8c93883662ce1c90e4c20ae19618ecc0a9ea4352.webp",
@@ -95,7 +136,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:27.602Z",
+    "gorselDeneme": "2026-10-31T07:52:34.741Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212300/1200x675intel-nova-lake-performansi-ortaya-cikti-arrow-lake-e-yuzde-20-fark.jpg",
@@ -154,7 +195,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:29.376Z",
+    "gorselDeneme": "2026-10-31T07:52:35.398Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_376b4997e4efcdd4cbda455148970937.jpg",
@@ -213,7 +254,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:29.233Z",
+    "gorselDeneme": "2026-10-31T07:52:35.412Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_dee6b19137cfa7bd883b7dc4547c3ea1.jpg",
@@ -255,7 +296,7 @@
     "publishedAt": "2026-10-31T06:32:45.000Z",
     "generatedAt": "2026-10-31T06:37:28.872Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:29.443Z",
+    "gorselDeneme": "2026-10-31T07:52:35.419Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_480e88a181dcb108dc64cc3bbb49cb09.jpg",
@@ -843,7 +884,7 @@
     "publishedAt": "2026-10-31T05:00:34.000Z",
     "generatedAt": "2026-10-31T05:27:34.465Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:28.581Z",
+    "gorselDeneme": "2026-10-31T07:52:34.745Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/kulakligini-kaybetti-chatgpt-yardimina-yetisti.webp",
@@ -971,7 +1012,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:28.486Z",
+    "gorselDeneme": "2026-10-31T07:52:34.888Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/a56b/live/5a0952f0-d487-11f1-80bc-6d398902272f.jpg",
@@ -1191,7 +1232,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:28.683Z",
+    "gorselDeneme": "2026-10-31T07:52:34.939Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://www.cozumpark.com/wp-content/uploads/2026/03/Amazonun-Bahreyndeki-AWS-Tesisleri-Iran-Kaynakli-Dron-Saldirilariyla-Ikinci-Kez-Vuruldu.jpg",
@@ -1249,7 +1290,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:29.078Z",
+    "gorselDeneme": "2026-10-31T07:52:35.324Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2416000/sehit-stok-aa-2416698.jpg",
@@ -1369,7 +1410,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:29.389Z",
+    "gorselDeneme": "2026-10-31T07:52:35.634Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/edirne-2500021.jpg",
@@ -1740,7 +1781,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:30.600Z",
+    "gorselDeneme": "2026-10-31T07:52:36.651Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.saraymedya.com/manset/2026/10/genetik-farkliliklar-tedavideki-basariyi-etkiliyor-1793414906.webp",
@@ -1908,7 +1949,7 @@
     "publishedAt": "2026-10-31T02:12:19.000Z",
     "generatedAt": "2026-10-31T02:31:33.482Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:29.293Z",
+    "gorselDeneme": "2026-10-31T07:52:35.432Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/7b98/live/c9241530-d4aa-11f1-b441-2b33b063138f.jpg",
@@ -1985,7 +2026,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:29.302Z",
+    "gorselDeneme": "2026-10-31T07:52:35.442Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/297d/live/2d7f7270-d408-11f1-88b8-2d5226da0f6b.jpg",
@@ -2158,7 +2199,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:29.341Z",
+    "gorselDeneme": "2026-10-31T07:52:35.453Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/cce2/live/961bb030-d482-11f1-b441-2b33b063138f.png",
@@ -2224,7 +2265,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:29.351Z",
+    "gorselDeneme": "2026-10-31T07:52:35.472Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/5c07/live/57283d20-d4b5-11f1-a58c-6d26609b0a57.jpg",
@@ -2273,7 +2314,7 @@
     "publishedAt": "2026-10-31T01:11:43.000Z",
     "generatedAt": "2026-10-31T01:32:02.604Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:29.360Z",
+    "gorselDeneme": "2026-10-31T07:52:35.465Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/b6c2/live/46cc2780-d49b-11f1-a701-fddedf244c16.jpg",
@@ -2403,7 +2444,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:30.879Z",
+    "gorselDeneme": "2026-10-31T07:52:36.421Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.saraymedya.com/manset/2026/10/catli-2-kayseri-de-izleyiciyle-bulustu-1793408696.webp",
@@ -2469,7 +2510,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:29.495Z",
+    "gorselDeneme": "2026-10-31T07:52:35.566Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://images.martincid.com/2026/10/1280px-Rentokil_van2C_Malpas_Road2C_Newport_-_geograph.org_.uk_-_6770447.jpg?f=orig",
@@ -2527,7 +2568,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:29.921Z",
+    "gorselDeneme": "2026-10-31T07:52:36.030Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://i.tgrthaber.com/images/2026/10/28/nisan-toreni-savas-alani-gibi-oldu-davetliler-birbirine-girdi-3368002.png",
@@ -2705,7 +2746,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:29.509Z",
+    "gorselDeneme": "2026-10-31T07:52:35.647Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/f23a/live/e2d76eb0-d3a5-11f1-a701-fddedf244c16.png",
@@ -3052,7 +3093,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:29.606Z",
+    "gorselDeneme": "2026-10-31T07:52:35.773Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/bc6f/live/ee8a8a40-d4b2-11f1-88a4-835788f4f80e.jpg",
@@ -3111,7 +3152,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:30.078Z",
+    "gorselDeneme": "2026-10-31T07:52:36.132Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://rudaw.net/_next/image?url=https%3A%2F%2Fimages.rudaw.net%2Fimages%2Fasset%2Fnews%2F20261030234517_20261030231959_gdash.webp&w=1200&q=75",
@@ -3168,7 +3209,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:30.330Z",
+    "gorselDeneme": "2026-10-31T07:52:36.104Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://www.yeniasya.com.tr/Sites/YeniAsya/Upload/images/Content/2026/10/31/sm333.jpg",
@@ -3215,7 +3256,7 @@
     "publishedAt": "2026-10-30T22:50:44.000Z",
     "generatedAt": "2026-10-30T23:03:36.705Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:30.066Z",
+    "gorselDeneme": "2026-10-31T07:52:36.537Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/news/1200/branded_turkce/b6c2/live/46cc2780-d49b-11f1-a701-fddedf244c16.jpg",
@@ -3274,7 +3315,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:30.244Z",
+    "gorselDeneme": "2026-10-31T07:52:36.288Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_45f043bcc283f077fd12e933e4241834.jpg",
@@ -3682,7 +3723,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:30.429Z",
+    "gorselDeneme": "2026-10-31T07:52:36.453Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1482000/bilgisayar-kullanicisi-internet-1482001.jpg",
@@ -3741,7 +3782,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:30.699Z",
+    "gorselDeneme": "2026-10-31T07:52:36.695Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/havelsan-nijerya-aa-2500019.jpg",
@@ -3981,7 +4022,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:30.676Z",
+    "gorselDeneme": "2026-10-31T07:52:37.057Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/debd71cf3d579604e54346e25d4012d2d794ba17.webp",
@@ -4046,7 +4087,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:43:30.881Z",
+    "gorselDeneme": "2026-10-31T07:52:36.979Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/ca2c95073fdf2632576185603b32b458e51695f4.webp",
@@ -4164,8 +4205,8 @@
     "gorselDeneme": "2026-10-31T07:01:28.909Z",
     "kapak": {
       "v": 2,
-      "kaynak": "https://www.donanimhaber.com/images/images/haber/212279/1200x675kasim-ayinda-cikacak-dikkat-cekici-10-oyun.jpg",
-      "foto": false
+      "kaynak": "https://www.donanimhaber.com/images/images/haber/212279/src/kasim-ayinda-cikacak-dikkat-cekici-10-oyun212279_7.jpg",
+      "foto": true
     },
     "gorselKaynak": {
       "yazar": "Vu Hoang",
@@ -4225,8 +4266,8 @@
     "gorselDeneme": "2026-10-31T07:01:29.557Z",
     "kapak": {
       "v": 2,
-      "kaynak": "https://www.donanimhaber.com/images/images/haber/212280/src/amazon-da-teknolojik-urunlerde-one-cikan-firsatlar-2026212280_0.jpg",
-      "foto": false
+      "kaynak": "https://www.donanimhaber.com/images//images/editor/5856c7516fc9408694ff903c7e295c61.jpeg",
+      "foto": true
     },
     "gorselKaynak": {
       "yazar": "safaritravelplus",
@@ -4286,8 +4327,8 @@
     "gorselDeneme": "2026-10-31T07:09:56.665Z",
     "kapak": {
       "v": 2,
-      "kaynak": "https://www.donanimhaber.com/images/images/haber/212260/1200x675waymo-nun-yeni-robotaksi-ortagi-toyota-oldu-ilk-durak-japonya.jpg",
-      "foto": false
+      "kaynak": "https://www.donanimhaber.com/images/images/haber/212260/src/waymo-nun-yeni-robotaksi-ortagi-toyota-oldu-ilk-durak-japonya212260_0.jpg",
+      "foto": true
     },
     "gorselKaynak": {
       "yazar": "Syced",
@@ -4451,8 +4492,8 @@
     "gorselDeneme": "2026-10-31T07:17:32.541Z",
     "kapak": {
       "v": 2,
-      "kaynak": "https://www.donanimhaber.com/images/images/haber/212243/1200x675patrick-stewart-hayatini-kaybetti.jpg",
-      "foto": false
+      "kaynak": "https://www.donanimhaber.com/images/images/haber/212243/src/patrick-stewart-hayatini-kaybetti212243_0.jpg",
+      "foto": true
     },
     "gorselKaynak": {
       "yazar": "Peabody Awards",
@@ -5151,7 +5192,7 @@
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_48b39da67470f1f3df418de21504488c.jpg",
-      "foto": false
+      "foto": true
     },
     "gorselKaynak": {
       "yazar": "Porapak Apichodilok",
@@ -9499,7 +9540,7 @@
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Fairy_Chimneys_at_G%C3%B6reme_Historical_National_Park.jpg/1280px-Fairy_Chimneys_at_G%C3%B6reme_Historical_National_Park.jpg",
-      "foto": false
+      "foto": true
     }
   },
   {
@@ -18077,7 +18118,6 @@
         "altyazi": "TÜRKSOY üyesi halk dansları gösterisi"
       }
     ],
-    "breaking": true,
     "imagesKaynak": "https://www.aa.com.tr/tr/kultur/cumhuriyetin-103-yilinda-turk-dunyasi-ankarada-bulustu/4104595",
     "gorselDeneme": "2026-10-29T09:41:13.044Z",
     "kapak": {
@@ -48018,10 +48058,15 @@
     "gorselSorgu": "data center server room",
     "source": "BeInCrypto",
     "sourceUrl": "https://tr.beincrypto.com/en-buyuk-3-teknoloji-devinin-kazanc-raporlari-ekim-son-hafta/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
+    "image": "/kapak/5ea4f3d717547639.webp",
     "publishedAt": "2026-10-26T01:58:41.000Z",
     "generatedAt": "2026-10-26T01:59:41.431Z",
-    "ekGorselDeneme": "2026-10-27T14:08:49.514Z"
+    "ekGorselDeneme": "2026-10-27T14:08:49.514Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
+      "foto": false
+    }
   },
   {
     "id": "67813857939392b0",
@@ -51246,7 +51291,7 @@
     "gorselSorgu": "van-gogh starry-night painting",
     "source": "CHIP Online",
     "sourceUrl": "https://www.chip.com.tr/guncel/van-goghun-yildizli-gece-tablosundaki-137-yillik-gizem-cozuluyor_184869.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Vincent_van_Gogh_Starry_Night.jpg/1280px-Vincent_van_Gogh_Starry_Night.jpg",
+    "image": "/kapak/1e562fe6acf8e9ac.webp",
     "publishedAt": "2026-10-25T16:58:00.000Z",
     "generatedAt": "2026-10-25T17:00:56.760Z",
     "gorselDeneme": "2026-10-28T04:45:24.479Z",
@@ -51266,7 +51311,12 @@
         "lisansUrl": "",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_The_yellow_house_(%27The_street%27).jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Vincent_van_Gogh_Starry_Night.jpg/1280px-Vincent_van_Gogh_Starry_Night.jpg",
+      "foto": false
+    }
   },
   {
     "id": "9c0257ab57d6eb37",
@@ -51539,7 +51589,7 @@
     "gorselSorgu": "Logitech wireless mouse minimal desk setup",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/logitech-pebble-up-fare-katlanabilir-tasarimiyla-tanitildi--212070",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Logitech_M185_mouse_HS02.jpg/1280px-Logitech_M185_mouse_HS02.jpg",
+    "image": "/kapak/9fcec281f301db29.webp",
     "publishedAt": "2026-10-25T16:00:00.000Z",
     "generatedAt": "2026-10-25T16:07:24.378Z",
     "gorselEk": [
@@ -51557,7 +51607,12 @@
     "images": [
       "https://www.donanimhaber.com/images/images/haber/212070/src/logitech-pebble-up-fare-katlanabilir-tasarimiyla-tanitildi212070_0.jpg",
       "https://www.donanimhaber.com/images/images/haber/212070/src/logitech-pebble-up-fare-katlanabilir-tasarimiyla-tanitildi212070_1.jpg"
-    ]
+    ],
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Logitech_M185_mouse_HS02.jpg/1280px-Logitech_M185_mouse_HS02.jpg",
+      "foto": false
+    }
   },
   {
     "id": "a0f2f8482142e1b7",
@@ -54239,7 +54294,7 @@
     "gorselSorgu": "Barack Obama speech podium",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/economy-news/obama-enflasyon-konusunda-trump-elestirdi-4118498",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg/1280px-President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg",
+    "image": "/kapak/f6f884514f6577c6.webp",
     "publishedAt": "2026-10-25T04:13:17.000Z",
     "generatedAt": "2026-10-25T04:21:44.052Z",
     "gorselEk": [
@@ -54251,7 +54306,12 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Press_Secretary_Karine_Jean-Pierre_speaks_during_a_press_briefing,_Monday,_May_13,_2024,_in_the_James_S._Brady_Press_Briefing_Room_of_the_White_House.jpg",
         "altyazi": "Washington siyasetinde ekonomi politikaları tartışılmaya devam ediyor"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg/1280px-President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg",
+      "foto": false
+    }
   },
   {
     "id": "2f83428af6fd33ce",
@@ -56417,7 +56477,7 @@
     "gorselSorgu": "Casio watch display",
     "source": "beetekno.com",
     "sourceUrl": "https://beetekno.com/casio-abdde-minimalist-tasarimli-uc-yeni-hafif-gma-s160-saatini-satisa-sundu",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Casio_W-86_and_F-91W_digital_watch_comparison_%28front%29.jpg/1280px-Casio_W-86_and_F-91W_digital_watch_comparison_%28front%29.jpg",
+    "image": "/kapak/5659ff12cfe2382d.webp",
     "publishedAt": "2026-10-24T00:01:11.000Z",
     "generatedAt": "2026-10-24T00:10:51.067Z",
     "gorselEk": [
@@ -56429,7 +56489,12 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Casio_F-91W_watch_(2023)_(packaging_and_contents)_(iii).jpg"
       }
     ],
-    "gorselDeneme": "2026-10-28T04:45:29.792Z"
+    "gorselDeneme": "2026-10-28T04:45:29.792Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Casio_W-86_and_F-91W_digital_watch_comparison_%28front%29.jpg/1280px-Casio_W-86_and_F-91W_digital_watch_comparison_%28front%29.jpg",
+      "foto": false
+    }
   },
   {
     "id": "6a93bfbaaa0ee53a",
@@ -60217,7 +60282,7 @@
     "gorselSorgu": "Volvo electric car production line",
     "source": "LOG",
     "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOdVBzOXZlYkZvbGNhOEw0WFR4YkJ4Mk1RUEF2Vm04b2N4UVNwOWNXM2VhWFRlUzI3TXc2alAyRmNjWjE1SDZadThUUzZ5OXF6LUlZQUxlWUlWb2FSMkREdVdZV0VncEUtN1dIWm1ObS04ZnJvR0lvZGRnSXNZUkhUNmN3UUNvWHFq?oc=5",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Volvo_C30_Electric_NAIAS_2011.jpg/1280px-Volvo_C30_Electric_NAIAS_2011.jpg",
+    "image": "/kapak/e7c31bf76ad14e51.webp",
     "publishedAt": "2026-10-23T12:44:15.000Z",
     "generatedAt": "2026-10-23T12:48:42.823Z",
     "gorselEk": [
@@ -60236,7 +60301,12 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Volvo_FH_Aero_Electric_(2024).jpg"
       }
     ],
-    "gorselDeneme": "2026-10-28T04:45:35.260Z"
+    "gorselDeneme": "2026-10-28T04:45:35.260Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Volvo_C30_Electric_NAIAS_2011.jpg/1280px-Volvo_C30_Electric_NAIAS_2011.jpg",
+      "foto": false
+    }
   },
   {
     "id": "a7d2537b51cf1387",
@@ -61681,10 +61751,15 @@
     "gorselSorgu": "science laboratory microscope medical",
     "source": "Evrim Ağacı",
     "sourceUrl": "https://evrimagaci.org/daha-yuksek-testosteron-gercekten-erkekligi-ve-babaligi-guclendiriyor-mu-23912",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Mars_Science_Laboratory_landing_ellipse_reduced.jpg/1280px-Mars_Science_Laboratory_landing_ellipse_reduced.jpg",
+    "image": "/kapak/4da632733a2f9bb7.webp",
     "publishedAt": "2026-10-23T11:55:03.000Z",
     "generatedAt": "2026-10-23T11:56:11.409Z",
-    "ekGorselDeneme": "2026-10-24T17:55:02.655Z"
+    "ekGorselDeneme": "2026-10-24T17:55:02.655Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Mars_Science_Laboratory_landing_ellipse_reduced.jpg/1280px-Mars_Science_Laboratory_landing_ellipse_reduced.jpg",
+      "foto": false
+    }
   },
   {
     "id": "87a99ed42fdc0096",
