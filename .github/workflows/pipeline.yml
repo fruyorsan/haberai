@@ -210,6 +210,15 @@ jobs:
           PUBLISHER_ADDRESS: ${{ vars.PUBLISHER_ADDRESS }}
           PUBLISHER_CITY: ${{ vars.PUBLISHER_CITY }}
           PUBLISHER_PHONE: ${{ vars.PUBLISHER_PHONE }}
+          # Kunye/mesafeli satis icin zorunlu kimlik alanlari. Bunlar
+          # tanimlanmazsa kunye yayinci adina duser ve ticaret/vergi/ETBIS
+          # satirlari bos kalir; mesafeli satista satici bilgisi eksik olur.
+          PUBLISHER_OWNER: ${{ vars.PUBLISHER_OWNER }}
+          PUBLISHER_EDITOR: ${{ vars.PUBLISHER_EDITOR }}
+          PUBLISHER_COMPANY: ${{ vars.PUBLISHER_COMPANY }}
+          PUBLISHER_TAX_OFFICE: ${{ vars.PUBLISHER_TAX_OFFICE }}
+          PUBLISHER_TAX_NO: ${{ vars.PUBLISHER_TAX_NO }}
+          PUBLISHER_ETBIS: ${{ vars.PUBLISHER_ETBIS }}
           # AdSense: yayinci kimligi + reklam birimi kimlikleri. Bos ise reklam
           # kodu ve reklam alanlari hic basilmaz.
           ADSENSE_CLIENT: ${{ vars.ADSENSE_CLIENT }}
