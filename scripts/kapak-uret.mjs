@@ -762,12 +762,33 @@ function yazDosya(yol, veri, deneme = 4) {
 const UA_TARAYICI =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
 const KAYNAK_JUNK =
-  /(logo|favicon|default|placeholder|share-?default|sprite|avatar|ikon|icon|blank|1x1|pixel|\/editor\/|\/recommendations\/|dh-instagram)/i;
+  /(logo|favicon|default|placeholder|share-?default|sprite|avatar|ikon|icon|blank|1x1|pixel|\/editor\/|\/recommendations\/|dh-instagram|PodCastChannel|dh-oneriyor|populer-yerinde|benzer-haber|adserve\.)/i;
+
+// Birden fazla haberin `images` dizisinde tekrar eden görseller yan menü /
+// "ilginizi çekebilir" widget'larından gelmiştir; gövde adayı olarak kullanılmaz.
+const ortakYanGorseller = (() => {
+  const sayac = new Map();
+  for (const x of articles) {
+    for (const u of Array.isArray(x?.images) ? x.images : []) {
+      const k = String(u || "").trim();
+      if (k) sayac.set(k, (sayac.get(k) || 0) + 1);
+    }
+  }
+  const set = new Set();
+  for (const [k, n] of sayac.entries()) {
+    if (n >= 2) set.add(k);
+  }
+  return set;
+})();
 
 /** DonanımHaber 1200x675 paylaşım kartından yazı içi temiz `/src/..._0.jpg` adresini türetir. */
 function dhTemizUrl(u) {
+  const s = String(u || "");
+  if (/ichef\.bbci\.co\.uk\/ace\/branded_news\//i.test(s)) {
+    return s.replace(/\/ace\/branded_news\//i, "/ace/standard/");
+  }
   const m = /^(https?:\/\/www\.donanimhaber\.com\/images\/images\/haber\/(\d+)\/)(?:1200x675|600x314|340x191)([^/?#]+)\.(jpe?g|png|webp)$/i.exec(
-    String(u || "")
+    s
   );
   return m ? `${m[1]}src/${m[3]}${m[2]}_0.${m[4]}` : null;
 }
@@ -894,29 +915,51 @@ async function paylasimKartiMi(veri) {
     const { width: w, height: h, channels: ch } = info;
     let plakaSatir = 0;
     let bandBeyaz = 0;
+    let ustSolSari = 0;
+    let solYaziSatir = 0;
     for (let y = 0; y < h; y++) {
       let kirmizi = 0;
       let beyaz = 0;
+      let solSariBeyaz = 0;
+      let solKoyu = 0;
+      const solSinir = Math.round(w * 0.62);
       for (let x = 0; x < w; x++) {
         const i = (y * w + x) * ch;
         const r = data[i];
         const g = data[i + 1];
         const b = data[i + 2];
-        if (r >= 240 && g >= 240 && b >= 240) beyaz++;
+        const beyazMi = r >= 238 && g >= 238 && b >= 238;
+        const sariMi = r >= 210 && g >= 150 && b <= 55 && r - b >= 160;
+        if (beyazMi) beyaz++;
         if (r >= 140 && r - g >= 60 && r - b >= 50) kirmizi++;
+        if (y < Math.round(h * 0.13) && x < Math.round(w * 0.36) && sariMi) ustSolSari++;
+        if (x < solSinir && y >= Math.round(h * 0.12) && y <= Math.round(h * 0.62)) {
+          if (beyazMi || sariMi) solSariBeyaz++;
+          else if (r < 65 && g < 65 && b < 65) solKoyu++;
+        }
       }
-      // Plaka her zaman kareyi kaplamaz: "Şarj Hızı / Belli Oldu" kartında
-      // kırmızı şerit genişliğin ~%28'i kadar. 0.25 eşiği bunu yakalar,
-      // domates/yangın gibi gerçek kırmızı fotoğraflar zaten %80+ üretir;
-      // ayrımı yapan asıl ölçüt aşağıdaki beyaz yazı oranıdır.
       if (kirmizi / w >= 0.25) {
         plakaSatir++;
         bandBeyaz += beyaz;
       }
+      if (
+        solSinir > 0 &&
+        solSariBeyaz / solSinir >= 0.06 &&
+        solSariBeyaz / solSinir <= 0.48 &&
+        solKoyu / solSinir >= 0.32
+      ) {
+        solYaziSatir++;
+      }
     }
     const plakaOran = (plakaSatir / h) * 100;
     const yazi = plakaSatir ? (bandBeyaz / (plakaSatir * w)) * 100 : 0;
-    return { kart: plakaOran >= 8 && yazi >= 0.35, plakaOran, yazi };
+    const ustSolAlan = Math.max(1, Math.round(h * 0.13) * Math.round(w * 0.36));
+    const sdnKarti = ustSolSari / ustSolAlan >= 0.08 && solYaziSatir / h >= 0.12;
+    return {
+      kart: (plakaOran >= 8 && yazi >= 0.35) || sdnKarti,
+      plakaOran: sdnKarti ? 100 : plakaOran,
+      yazi: sdnKarti ? (solYaziSatir / h) * 100 : yazi,
+    };
   } catch {
     return { kart: false, plakaOran: 0, yazi: 0 };
   }
@@ -936,6 +979,8 @@ async function gorselPuani(veri, bilgi) {
     let toplam = 0;
     let kare = 0;
     let doygun = 0;
+    let beyazSay = 0;
+    let siyahSay = 0;
     let adet = 0;
     for (let i = 0; i + 2 < data.length; i += adim) {
       const r = data[i];
@@ -944,6 +989,13 @@ async function gorselPuani(veri, bilgi) {
       const p = 0.299 * r + 0.587 * g + 0.114 * b;
       toplam += p;
       kare += p * p;
+      if (
+        (r >= 238 && g >= 238 && b >= 238) ||
+        (r >= 212 && g >= 212 && b >= 212 && Math.max(r, g, b) - Math.min(r, g, b) <= 10)
+      ) {
+        beyazSay++;
+      }
+      if (r <= 18 && g <= 18 && b <= 18) siyahSay++;
       const en = Math.max(r, g, b);
       const az = Math.min(r, g, b);
       if (en > 8) doygun += (en - az) / en;
@@ -953,8 +1005,9 @@ async function gorselPuani(veri, bilgi) {
     const ort = toplam / adet;
     const std = Math.sqrt(Math.max(0, kare / adet - ort * ort));
     const doy = doygun / adet;
-    // Düz/boş kare (beyaz zemin, boş şablon, tek renk): kapak yapılmaz.
+    // Düz/boş kare, bembeyaz belge/broşür ekran görüntüsü veya simsiyah podcast kartı kapak yapılmaz.
     if (std < 9 || (std < 14 && doy < 0.03)) return null;
+    if (beyazSay / adet > 0.42 || siyahSay / adet > 0.65) return null;
 
     const sinir = (x) => Math.max(0, Math.min(1, x));
     const detayPuan = sinir((std - 14) / 42); // 14 → 0, 56+ → 1
@@ -1071,12 +1124,15 @@ async function kapakUret(a) {
         );
       }
       for (const [idx, u] of kaynakAdaylar.entries()) {
+        if (idx > 0 && ortakYanGorseller.has(u)) continue;
         adayEkle(u, idx === 0 ? "kaynak" : "govde");
       }
     }
     // 2) YAZININ İÇİNDEKİ FOTOĞRAFLAR: yayıncı kendi metnine koyduğu için
-    //    başlıkla alakaları yüksek (ürün, kişi, olay karesi).
+    //    başlıkla alakaları yüksek (ürün, kişi, olay karesi). Yan menüde
+    //    birden fazla haberde tekrar eden ortak görseller elenir.
     for (const u of Array.isArray(a.images) ? a.images.slice(0, 4) : []) {
+      if (ortakYanGorseller.has(u) || KAYNAK_JUNK.test(u)) continue;
       const temiz = dhTemizUrl(u);
       if (temiz) adayEkle(temiz, "govde");
       adayEkle(u, "govde");
@@ -1097,12 +1153,15 @@ async function kapakUret(a) {
     // Stok kaynaklı eski kapağı yenilerken aynı stok kareyi tekrar seçme.
     if (
       fotoIzinli &&
+      !ortakYanGorseller.has(String(kaynak || "").trim()) &&
       !(sadeceStokKaynak && stokAday) &&
       String(kaynak || "").startsWith("http")
     ) {
       const temiz = dhTemizUrl(kaynak);
       if (temiz) adayEkle(temiz, "veri");
-      adayEkle(kaynak, "veri");
+      if (!/ichef\.bbci\.co\.uk\/ace\/branded_news\//i.test(String(kaynak || ""))) {
+        adayEkle(kaynak, "veri");
+      }
     }
   }
 
@@ -1144,17 +1203,14 @@ async function kapakUret(a) {
       veri,
       bilgi,
       puan,
-      // YAYINCININ KENDİ KAPAĞI (og:image) küçük bir öncelik alır. Puanlama
-      // "detay/parlaklık" ölçtüğü için dokulu bir stok kare (devre kartı, bina)
-      // düz bir ürün ekran görüntüsünden yüksek puan alabiliyor ve haberin
-      // gerçek kapağı eleniyordu. Yayıncı hangi kareyi kapak yaptıysa o kare
-      // haberin konusuna en yakın olandır.
-      siralama: puan + (aday.tip === "kaynak" ? 10 : 0),
+      // YAYINCININ KENDİ KAPAĞI (og:image) güçlü öncelik alır (+35). Yan menü
+      // veya yazı içindeki daha renkli bir görsel, haberin asıl kapağını ezmemeli.
+      siralama: puan + (aday.tip === "kaynak" ? 35 : 0),
     });
     if (debug) {
       console.log(`   · ${a.id} ${aday.tip} puan ${puan.toFixed(0)}: ${aday.url.slice(0, 80)}`);
     }
-    if (puan >= 84) break;
+    if ((aday.tip === "kaynak" && puan >= 45) || puan >= 84) break;
   }
 
   degerlendirilen.sort((x, y) => y.siralama - x.siralama);
