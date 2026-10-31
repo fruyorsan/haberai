@@ -1,5 +1,64 @@
 [
   {
+    "id": "25657dd7af751462",
+    "title": "EPDK doğal gaz piyasasında günlük referans fiyat kuralını değiştirdi",
+    "slug": "epdk-dogal-gaz-piyasasinda-gunluk-referans-fiyat-kuralini-degistirdi",
+    "summary": "EPDK, organize toptan doğal gaz satış piyasasındaki sistem dengesini korumak amacıyla teknik ve idari esaslarda kapsamlı düzenlemeler yaptı. Resmi Gazete'de yayımlanan karara göre günlük referans fiyat hesaplamasından Sürekli Ticaret Platformu teklif limitlerine kadar birçok kural yeniden belirlendi. Piyasa erişiminin askıya alınmasına ilişkin maddeler ise 1 Ocak 2027 tarihinde yürürlüğe girecek.",
+    "keyPoints": [
+      "STP tekliflerinde azami miktar 12.00-14.05 saatleri hariç 500 bin metreküple sınırlandırıldı.",
+      "Son referans fiyatın yüzde 50 altında veya üstünde kalan işlemler hesaplamadan çıkarılacak.",
+      "Erişim askılama ve veri yayımlama kuralları 1 Ocak 2027 tarihinde uygulanmaya başlanacak."
+    ],
+    "body": [
+      "Enerji Piyasası Düzenleme Kurumu, organize toptan doğal gaz satış piyasasında faaliyet gösteren şirketleri doğrudan etkileyen kapsamlı bir yönetmelik değişikliği gerçekleştirdi. Resmi Gazete'de yayımlanarak yürürlüğe giren kurul kararı, piyasa içi dengenin korunmasını ve operasyonel süreçlerin daha sağlıklı işlemesini amaçlıyor. Yapılan bu teknik ve idari düzenlemeler doğrultusunda günlük referans fiyatının hesaplanma şeklinden platform üzerindeki işlem limitlerine kadar pek çok kritik başlıkta yeni standartlar uygulamaya konuldu. Piyasa katılımcılarının yeni kurallara uyum sağlaması için gerekli teknik altyapı esasları belirlendi.",
+      "Yeni kararla birlikte günlük referans fiyatının belirlenmesinde kullanılan metodolojide belirgin kısıtlamalar hayata geçirildi. Uygulamaya göre, her ayın ilk gaz günü istisna tutularak, son yayımlanan gaz gününün referans fiyatından yüzde 50 oranında sapma gösteren alt ve üst işlemler hesaplamaya alınmayacak. Bununla birlikte ilgili gaz gününden bir gün önceki saat 08.00 ile takip eden günün saat 08.00 aralığındaki ilave dengeleyici işlemler dahil tüm veriler ağırlıklı ortalama fiyat hesabında kullanılacak. Elde edilen nihai fiyat değeri ise gaz gününü izleyen sabah saat 08.30'da resmi olarak açıklanacak.",
+      "Sürekli Ticaret Platformu bünyesinde sisteme girilecek tekliflerin hacim limitleri yeniden düzenlendi. Piyasa katılımcılarının platformda verebileceği her bir teklif için alt sınır en az 1000 standart metreküp seviyesinde sabitlendi. Tekliflerin azami miktarı ise her gaz gününün saat 12.00 ile 14.05 arasındaki zaman dilimi haricinde tutulmak kaydıyla 500 bin standart metreküp olarak sınırlandırıldı. Ayrıca iletim şirketinin yürüteceği ilave dengeleyici işlemler sırasında, aynı yöndeki diğer tüm teklifler işlem saatinden 5 dakika önce başlanarak toplam 10 dakika boyunca pasif konuma getirilecek.",
+      "Alınan kararlar, piyasada işlem yapan aktörlerin yükümlülüklerini aksatması durumunda uygulanacak idari süreçleri de netleştirdi. Mali ödeme ile teminat şartlarını zamanında sağlamayan ya da mevzuata aykırı durumları düzeltmeyen katılımcıların piyasaya erişimleri işletmeci tarafından askıya alınabilecek. Bunun yanı sıra piyasa işletmecisinin veri yayımlama, kurumsal raporlama ve bilgi paylaşımı alanındaki temel sorumlulukları da güncellenen mevzuat hükümleri çerçevesinde yeniden tanımlandı. Bu sayede piyasa disiplininin korunması ve finansal risklerin minimize edilmesi hedefleniyor.",
+      "Yeni düzenlemenin yürürlük takviminde aşamalı bir yöntem uygulandığı göze çarpıyor. Teknik fiyat hesaplama kriterleri ve platformdaki işlem hacmi kısıtlamalarını içeren diğer maddeler ise Resmi Gazete'de yayımlandığı an itibarıyla derhal uygulamaya girmiş oldu."
+    ],
+    "comment": "Piyasada aşırı fiyat oynaklığını engellemek ve spekülatif işlemleri sonlandırmak adına EPDK'nin yüzde 50 sapma gösteren fiyatları hesaplamadan çıkarması zorunlu bir müdahaledir. Günlük teklif üst sınırının 500 bin standart metreküple kısıtlanması, toptan gaz ticareti yapan özel şirketlerin piyasa dengesini tek başlarına sarsmasını engeller. İletim şirketi ve piyasa katılımcıları için geçerli olan bu kurallar, spot gaz fiyatlarındaki ani sıçramaların önüne geçecektir. Eğer şirketler 1 Ocak 2027 tarihine kadar idari ve finansal uyum süreçlerini tamamlamazsa, piyasa erişimlerinin askıya alınmasıyla ciddi operasyonel risklerle karşılaşabilirler.",
+    "editorNote": "Spot doğal gaz piyasasında %50'lik fiyat sapmaları denklemin dışına itildi; ticaret tavanı 500 bin metreküple sınırlandı.",
+    "tags": [
+      "EPDK",
+      "Doğal Gaz",
+      "Resmi Gazete",
+      "Toptan Satış",
+      "STP"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "natural gas pipeline valves",
+    "source": "AA Güncel",
+    "sourceUrl": "https://www.aa.com.tr/tr/ekonomi/dogal-gaz-toptan-satis-piyasasinda-teknik-ve-idari-esaslarda-degisiklik-yapildi/4107080",
+    "image": "/kapak/25657dd7af751462.webp",
+    "publishedAt": "2026-10-31T07:23:13.000Z",
+    "generatedAt": "2026-10-31T07:25:42.407Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Tapa_de_registro_Gas_Natural%2C_02.jpg/1280px-Tapa_de_registro_Gas_Natural%2C_02.jpg",
+        "yazar": "Malopez 21",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Tapa_de_registro_Gas_Natural,_02.jpg",
+        "altyazi": "Doğal gaz piyasasında işlem yapılan dijital platform ve veriler"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Gas_Tanks_at_Jurby_Industrial_Estate_-_geograph.org.uk_-_6122518.jpg",
+        "yazar": "Glyn Baker",
+        "lisans": "CC BY-SA 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Gas_Tanks_at_Jurby_Industrial_Estate_-_geograph.org.uk_-_6122518.jpg",
+        "altyazi": "Toptan doğal gaz iletim ve ölçüm istasyonu altyapısı"
+      }
+    ],
+    "breaking": true,
+    "gorselDeneme": "2026-10-31T07:25:45.750Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_376b4997e4efcdd4cbda455148970937.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "fcf1cc6fafa3d3cf",
     "title": "Başakşehir, Süper Lig'de yarın sahasında Samsunspor'u ağırlıyor",
     "slug": "basaksehir-super-ligde-yarin-sahasinda-samsunsporu-agirliyor",
@@ -51,7 +110,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:29.477Z",
+    "gorselDeneme": "2026-10-31T07:25:46.076Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_dee6b19137cfa7bd883b7dc4547c3ea1.jpg",
@@ -93,7 +152,7 @@
     "publishedAt": "2026-10-31T06:32:45.000Z",
     "generatedAt": "2026-10-31T06:37:28.872Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:29.472Z",
+    "gorselDeneme": "2026-10-31T07:25:46.315Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_480e88a181dcb108dc64cc3bbb49cb09.jpg",
@@ -681,7 +740,7 @@
     "publishedAt": "2026-10-31T05:00:34.000Z",
     "generatedAt": "2026-10-31T05:27:34.465Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:28.731Z",
+    "gorselDeneme": "2026-10-31T07:25:45.158Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/kulakligini-kaybetti-chatgpt-yardimina-yetisti.webp",
@@ -809,7 +868,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:28.451Z",
+    "gorselDeneme": "2026-10-31T07:25:44.903Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/a56b/live/5a0952f0-d487-11f1-80bc-6d398902272f.jpg",
@@ -1029,7 +1088,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:28.682Z",
+    "gorselDeneme": "2026-10-31T07:25:45.185Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://www.cozumpark.com/wp-content/uploads/2026/03/Amazonun-Bahreyndeki-AWS-Tesisleri-Iran-Kaynakli-Dron-Saldirilariyla-Ikinci-Kez-Vuruldu.jpg",
@@ -1087,7 +1146,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:29.100Z",
+    "gorselDeneme": "2026-10-31T07:25:45.812Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2416000/sehit-stok-aa-2416698.jpg",
@@ -1207,7 +1266,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:29.586Z",
+    "gorselDeneme": "2026-10-31T07:25:46.222Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/edirne-2500021.jpg",
@@ -1578,7 +1637,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:30.726Z",
+    "gorselDeneme": "2026-10-31T07:25:47.651Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.saraymedya.com/manset/2026/10/genetik-farkliliklar-tedavideki-basariyi-etkiliyor-1793414906.webp",
@@ -1746,7 +1805,7 @@
     "publishedAt": "2026-10-31T02:12:19.000Z",
     "generatedAt": "2026-10-31T02:31:33.482Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:29.154Z",
+    "gorselDeneme": "2026-10-31T07:25:46.001Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/7b98/live/c9241530-d4aa-11f1-b441-2b33b063138f.jpg",
@@ -1823,7 +1882,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:29.164Z",
+    "gorselDeneme": "2026-10-31T07:25:46.017Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/297d/live/2d7f7270-d408-11f1-88b8-2d5226da0f6b.jpg",
@@ -1996,7 +2055,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:29.196Z",
+    "gorselDeneme": "2026-10-31T07:25:46.064Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/cce2/live/961bb030-d482-11f1-b441-2b33b063138f.png",
@@ -2062,7 +2121,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:29.206Z",
+    "gorselDeneme": "2026-10-31T07:25:46.080Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/5c07/live/57283d20-d4b5-11f1-a58c-6d26609b0a57.jpg",
@@ -2111,7 +2170,7 @@
     "publishedAt": "2026-10-31T01:11:43.000Z",
     "generatedAt": "2026-10-31T01:32:02.604Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:29.217Z",
+    "gorselDeneme": "2026-10-31T07:25:46.089Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/b6c2/live/46cc2780-d49b-11f1-a701-fddedf244c16.jpg",
@@ -2241,7 +2300,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:30.457Z",
+    "gorselDeneme": "2026-10-31T07:25:47.981Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.saraymedya.com/manset/2026/10/catli-2-kayseri-de-izleyiciyle-bulustu-1793408696.webp",
@@ -2307,7 +2366,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:29.645Z",
+    "gorselDeneme": "2026-10-31T07:25:46.456Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://images.martincid.com/2026/10/1280px-Rentokil_van2C_Malpas_Road2C_Newport_-_geograph.org_.uk_-_6770447.jpg?f=orig",
@@ -2365,7 +2424,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:30.294Z",
+    "gorselDeneme": "2026-10-31T07:25:46.908Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://i.tgrthaber.com/images/2026/10/28/nisan-toreni-savas-alani-gibi-oldu-davetliler-birbirine-girdi-3368002.png",
@@ -2543,7 +2602,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:29.658Z",
+    "gorselDeneme": "2026-10-31T07:25:46.430Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/f23a/live/e2d76eb0-d3a5-11f1-a701-fddedf244c16.png",
@@ -2890,7 +2949,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:29.788Z",
+    "gorselDeneme": "2026-10-31T07:25:46.639Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/bc6f/live/ee8a8a40-d4b2-11f1-88a4-835788f4f80e.jpg",
@@ -2949,7 +3008,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:30.486Z",
+    "gorselDeneme": "2026-10-31T07:25:47.211Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://rudaw.net/_next/image?url=https%3A%2F%2Fimages.rudaw.net%2Fimages%2Fasset%2Fnews%2F20261030234517_20261030231959_gdash.webp&w=1200&q=75",
@@ -3006,7 +3065,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:30.694Z",
+    "gorselDeneme": "2026-10-31T07:25:47.226Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://www.yeniasya.com.tr/Sites/YeniAsya/Upload/images/Content/2026/10/31/sm333.jpg",
@@ -3053,7 +3112,7 @@
     "publishedAt": "2026-10-30T22:50:44.000Z",
     "generatedAt": "2026-10-30T23:03:36.705Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:30.325Z",
+    "gorselDeneme": "2026-10-31T07:25:46.966Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/news/1200/branded_turkce/b6c2/live/46cc2780-d49b-11f1-a701-fddedf244c16.jpg",
@@ -3112,7 +3171,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:30.591Z",
+    "gorselDeneme": "2026-10-31T07:25:47.208Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_45f043bcc283f077fd12e933e4241834.jpg",
@@ -3520,7 +3579,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:30.823Z",
+    "gorselDeneme": "2026-10-31T07:25:47.556Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1482000/bilgisayar-kullanicisi-internet-1482001.jpg",
@@ -3579,7 +3638,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:31.141Z",
+    "gorselDeneme": "2026-10-31T07:25:47.966Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/havelsan-nijerya-aa-2500019.jpg",
@@ -3819,7 +3878,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:31.021Z",
+    "gorselDeneme": "2026-10-31T07:25:47.744Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/debd71cf3d579604e54346e25d4012d2d794ba17.webp",
@@ -3884,7 +3943,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:31.088Z",
+    "gorselDeneme": "2026-10-31T07:25:48.139Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/ca2c95073fdf2632576185603b32b458e51695f4.webp",
@@ -3941,7 +4000,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T07:17:30.933Z",
+    "gorselDeneme": "2026-10-31T07:25:47.882Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/30/thumbs_b_c_bd7993f744c9c1aa3465ca6110f3f7d6.jpg",
@@ -19854,7 +19913,7 @@
     "gorselSorgu": "Gaza strip damaged buildings",
     "source": "Yeni Mesaj",
     "sourceUrl": "https://www.yenimesaj.com.tr/israilin-gazzede-duzenledigi-saldirilarda-5-kisi-hayatini-kaybetti-38-kisi-yaralandi-H1620305.htm",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Damage_in_Gaza_Strip_during_the_October_2023_-_15.jpg/1280px-Damage_in_Gaza_Strip_during_the_October_2023_-_15.jpg",
+    "image": "/kapak/908b6194caeae1f4.webp",
     "publishedAt": "2026-10-29T03:00:00.000Z",
     "generatedAt": "2026-10-29T03:20:42.946Z",
     "gorselEk": [
@@ -20086,7 +20145,7 @@
     "gorselSorgu": "Togg T10X assembly line",
     "source": "Haberhergün",
     "sourceUrl": "https://www.haberhergun.com/haber/togg-un-banttan-inisinin-4-yilinda-126-bin-arac_81969/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Togg_Sedan_Back.jpg/1280px-Togg_Sedan_Back.jpg",
+    "image": "/kapak/65ff6ed95eebe6d7.webp",
     "publishedAt": "2026-10-29T02:34:00.000Z",
     "generatedAt": "2026-10-29T02:46:25.988Z",
     "gorselDeneme": "2026-10-29T12:06:41.148Z",
@@ -20134,14 +20193,14 @@
     "gorselSorgu": "nuclear facility site smoke",
     "source": "HavaSosyalMedya",
     "sourceUrl": "https://havasosyalmedya.com/abddeki-savannah-river-nukleer-tesisinde-yangin-hava-sahasina-gecici-kisitlama/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Lick_Fire_on_the_Umatilla_National_Forest_burning_at_night.jpg/1280px-Lick_Fire_on_the_Umatilla_National_Forest_burning_at_night.jpg",
+    "image": "/kapak/2243e3fe15798746.webp",
     "publishedAt": "2026-10-29T02:26:11.000Z",
     "generatedAt": "2026-10-29T02:33:38.497Z",
     "gorselDeneme": "2026-10-29T11:54:08.332Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://havasosyalmedya.com/wp-content/uploads/2026/10/photo-output-7-18.png",
-      "foto": true
+      "foto": false
     },
     "gorselKaynak": {
       "yazar": "U.S. Forest Service- Pacific Northwest Region",
@@ -20229,7 +20288,7 @@
     "gorselSorgu": "classroom digital transformation technology",
     "source": "Yorumla",
     "sourceUrl": "https://www.yorumla.net/egitim/meb-den-yapay-zeka-destekli-yeni-eba-tanitildi/126655",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg/1280px-Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
+    "image": "/kapak/8874539e5545247e.webp",
     "publishedAt": "2026-10-29T02:13:04.000Z",
     "generatedAt": "2026-10-29T02:14:24.858Z",
     "gorselEk": [
@@ -20294,7 +20353,7 @@
     "gorselSorgu": "Fenerbahce football stadium",
     "source": "Alparslan Diyarı",
     "sourceUrl": "https://www.alparslandiyari.com/haber/fenerbahce-de-ismail-kartal-donemi-bitti_79495/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Kathmandu_Rangasaala%28Football_Stadium%29_%282%29.JPG/1280px-Kathmandu_Rangasaala%28Football_Stadium%29_%282%29.JPG",
+    "image": "/kapak/4d739df66259cb8b.webp",
     "publishedAt": "2026-10-29T01:58:00.000Z",
     "generatedAt": "2026-10-29T02:01:49.895Z",
     "gorselDeneme": "2026-10-29T11:37:54.760Z",
@@ -20341,7 +20400,7 @@
     "gorselSorgu": "paleontologist examining fossil",
     "source": "Evrim Ağacı",
     "sourceUrl": "https://evrimagaci.org/paleontoloji-nedir-fosilleri-inceleyen-bilim-dali-ve-paleontologlarin-calisma-alani-24034",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Supercharger_Research_at_the_Aircraft_Engine_Research_Laboratory_%28GRC-1944-C-03814%29.jpg/1280px-Supercharger_Research_at_the_Aircraft_Engine_Research_Laboratory_%28GRC-1944-C-03814%29.jpg",
+    "image": "/kapak/00d2f88ba0e3e9f4.webp",
     "publishedAt": "2026-10-29T01:57:14.000Z",
     "generatedAt": "2026-10-29T02:01:34.731Z",
     "gorselKaynak": {
@@ -20371,7 +20430,7 @@
     "kapak": {
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Jet_Propulsion_Laboratory_Plasma_Flow_Research_Lab.jpg/1280px-Jet_Propulsion_Laboratory_Plasma_Flow_Research_Lab.jpg",
-      "foto": true
+      "foto": false
     }
   },
   {
@@ -20461,7 +20520,7 @@
     "gorselSorgu": "flooded street cars Dalaman",
     "source": "Saray Medya",
     "sourceUrl": "https://www.saraymedya.com/haber/mugla-da-sel-250-den-fazla-personel-calisiyor_318701/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Storm_in_Perth_-_Cars_flooded.jpg/1280px-Storm_in_Perth_-_Cars_flooded.jpg",
+    "image": "/kapak/3723fa1d1341b882.webp",
     "publishedAt": "2026-10-29T01:43:00.000Z",
     "generatedAt": "2026-10-29T01:48:42.054Z",
     "gorselEk": [
@@ -20518,7 +20577,7 @@
     "gorselSorgu": "municipal building office entrance",
     "source": "Sözcü Gündem",
     "sourceUrl": "https://www.sozcu.com.tr/luks-arac-sahibine-bile-sosyal-yardim-p373775",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Tsurugashima_Municipal-office_entrance.jpg/1280px-Tsurugashima_Municipal-office_entrance.jpg",
+    "image": "/kapak/0b562b34d0558c9a.webp",
     "publishedAt": "2026-10-29T01:32:22.000Z",
     "generatedAt": "2026-10-29T01:35:52.903Z",
     "gorselEk": [
@@ -20580,7 +20639,7 @@
     "gorselSorgu": "U S stock markets rise",
     "source": "Borsatek",
     "sourceUrl": "https://www.borsatek.com/dow-jones-fed-kararinin-ardindan-deger-kazandi/",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/7/78/Market_centre_in_Tokyo_stock_exchange.jpg",
+    "image": "/kapak/aa12a5bff00db697.webp",
     "publishedAt": "2026-10-29T01:30:00.000Z",
     "generatedAt": "2026-10-29T01:35:01.478Z",
     "imagesKaynak": "https://www.borsatek.com/dow-jones-fed-kararinin-ardindan-deger-kazandi/",
@@ -20683,7 +20742,7 @@
     "gorselSorgu": "Donald Trump JD Vance speech",
     "source": "CNN Türk",
     "sourceUrl": "https://www.cnnturk.com/dunya/trumptan-iran-aciklamasi-jd-vance-iddiasini-yalanladi-3485944",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Former_President_Donald_Trump%27s_Speech_at_the_Republican_National_Convention_%2853887722108%29.jpg",
+    "image": "/kapak/aaa716f7d3eee4b1.webp",
     "publishedAt": "2026-10-29T01:14:59.000Z",
     "generatedAt": "2026-10-29T01:14:29.992Z",
     "gorselEk": [
@@ -20740,7 +20799,7 @@
     "gorselSorgu": "artificial intelligence data visualization",
     "source": "Technopat",
     "sourceUrl": "https://www.technopat.net/2026/10/29/yapay-zeka-rapor-hazirliyor-grafik-ciziyor-sql-kodu-yaziyor/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/AIAP_IFGICT_Artificial_Intelligence_Auditor_Professional_Certificate.jpg/1280px-AIAP_IFGICT_Artificial_Intelligence_Auditor_Professional_Certificate.jpg",
+    "image": "/kapak/a7e70f6467a827fc.webp",
     "publishedAt": "2026-10-29T01:13:26.000Z",
     "generatedAt": "2026-10-29T02:20:20.219Z",
     "gorselKaynak": {
@@ -20786,7 +20845,7 @@
     "gorselSorgu": "German Turkish industrial handshake",
     "source": "Technopat",
     "sourceUrl": "https://www.technopat.net/2026/10/29/turkiyenin-teknoloji-uretiminde-almanya-ile-yeni-is-birligi-firsatlari/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/The_Campus_of_Turkish_German_University_%28TDU%29.jpg/1280px-The_Campus_of_Turkish_German_University_%28TDU%29.jpg",
+    "image": "/kapak/5fce7b914957bc6b.webp",
     "publishedAt": "2026-10-29T01:13:18.000Z",
     "generatedAt": "2026-10-29T02:27:09.394Z",
     "gorselKaynak": {
@@ -20816,7 +20875,7 @@
     "kapak": {
       "v": 2,
       "kaynak": "https://www.technopat.net/wp-content/uploads/2026/10/image-273-scaled.webp",
-      "foto": true
+      "foto": false
     }
   },
   {
@@ -20848,7 +20907,7 @@
     "gorselSorgu": "wall street market chart",
     "source": "EKOTÜRK",
     "sourceUrl": "https://www.ekoturk.com/ekonomi-verileri/abd-borsalari-fed-faiz-karari-sonrasi-karisik-seyrediyor-s-p-500-yukseldi",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Wall_Street%2C_Manhattan%2C_New_York_City%2C_20231002_172333.jpg/1280px-Wall_Street%2C_Manhattan%2C_New_York_City%2C_20231002_172333.jpg",
+    "image": "/kapak/42494757e22abeee.webp",
     "publishedAt": "2026-10-29T01:09:34.000Z",
     "generatedAt": "2026-10-29T01:14:12.424Z",
     "imagesKaynak": "https://www.ekoturk.com/ekonomi-verileri/abd-borsalari-fed-faiz-karari-sonrasi-karisik-seyrediyor-s-p-500-yukseldi",
@@ -20896,7 +20955,7 @@
     "gorselSorgu": "traditional turkish food display",
     "source": "Saray Medya",
     "sourceUrl": "https://www.saraymedya.com/foto/turhal-lezzetleri-istanbul-da-tanitildi_318691/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Moir%C3%A9_pattern_on_LED_Screen_at_Kunshannan_Railway_Station_in_Suzhou%2C_Jiangsu%2C_China_20210528.jpg/1280px-Moir%C3%A9_pattern_on_LED_Screen_at_Kunshannan_Railway_Station_in_Suzhou%2C_Jiangsu%2C_China_20210528.jpg",
+    "image": "/kapak/f95a7f8908299c0e.webp",
     "publishedAt": "2026-10-29T00:52:00.000Z",
     "generatedAt": "2026-10-29T01:02:40.573Z",
     "gorselDeneme": "2026-10-29T10:23:55.326Z",
@@ -20941,13 +21000,13 @@
     "gorselSorgu": "Bitcoin price chart",
     "source": "Borsanın Gündemi",
     "sourceUrl": "https://www.borsaningundemi.com/haber/fed-faizi-sabit-tuttu-bitcoinde-yukselis-hizlandi-1913030",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Bitcoin_Price_Compared_To_US_Dollar.jpg/1280px-Bitcoin_Price_Compared_To_US_Dollar.jpg",
+    "image": "/kapak/0c4f32ca37e7f7b4.webp",
     "publishedAt": "2026-10-29T00:49:56.000Z",
     "generatedAt": "2026-10-29T00:56:28.014Z",
     "gorselDeneme": "2026-10-29T10:14:43.871Z",
     "kapak": {
       "v": 2,
-      "kaynak": "https://bgcdn.gmgadmin.com/1/1200/800//files/2026/10/29/1913030/1913030.jpg/?v=1793372283",
+      "kaynak": "https://bgcdn.gmgadmin.com/1/1200/800//files/2026/10/29/1913030/1913030.jpg/?v=1793416443",
       "foto": true
     },
     "gorselKaynak": {
@@ -20988,7 +21047,7 @@
     "gorselSorgu": "university security desk operator",
     "source": "Saray Medya",
     "sourceUrl": "https://www.saraymedya.com/haber/kbu-de-guvenlik-icin-8888-numarali-cagri-merkezi-kuruldu_318689/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Security_Department_at_University_of_Chittagong_%2801%29.jpg/1280px-Security_Department_at_University_of_Chittagong_%2801%29.jpg",
+    "image": "/kapak/433315fd447b239a.webp",
     "publishedAt": "2026-10-29T00:41:00.000Z",
     "generatedAt": "2026-10-29T00:47:40.000Z",
     "gorselEk": [
@@ -21100,7 +21159,7 @@
     "gorselSorgu": "istanbul police tactical unit",
     "source": "CNN Türk",
     "sourceUrl": "https://www.cnnturk.com/video/turkiye/kolombiyadan-avrupaya-zehir-hatti-2-ton-uyusturucu-organizatoru-istanbulda-yakalandi-3485945",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Armored_police_vehicle_in_Istanbul%2C_Turkey_%282024%29.jpg/1280px-Armored_police_vehicle_in_Istanbul%2C_Turkey_%282024%29.jpg",
+    "image": "/kapak/e3de0c1e02b93e0d.webp",
     "publishedAt": "2026-10-29T00:29:06.482Z",
     "generatedAt": "2026-10-29T00:29:41.762Z",
     "gorselEk": [
@@ -21158,7 +21217,7 @@
     "gorselSorgu": "Hayden Panettiere portrait",
     "source": "BBC",
     "sourceUrl": "https://www.bbc.com/turkce/articles/cm62yl58x6gko",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Hayden_Panettiere_5_%287559607362%29.jpg/1280px-Hayden_Panettiere_5_%287559607362%29.jpg",
+    "image": "/kapak/767c59c237b46ff1.webp",
     "publishedAt": "2026-10-29T00:10:34.000Z",
     "generatedAt": "2026-10-29T00:29:26.338Z",
     "gorselEk": [
@@ -21223,7 +21282,7 @@
     "gorselSorgu": "federal reserve building washington",
     "source": "EKOTÜRK",
     "sourceUrl": "https://www.ekoturk.com/ekonomi-verileri/dolar-endeksi-fed-faiz-karari-sonrasi-sinirli-yukseliste",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/2025_construction_Eccles_Federal_Reserve_Building_Washington_DC_2025-02-10_12-05-42.jpg/1280px-2025_construction_Eccles_Federal_Reserve_Building_Washington_DC_2025-02-10_12-05-42.jpg",
+    "image": "/kapak/019b923e705041ed.webp",
     "publishedAt": "2026-10-29T00:01:56.000Z",
     "generatedAt": "2026-10-29T00:41:38.656Z",
     "gorselEk": [
@@ -21288,7 +21347,7 @@
     "gorselSorgu": "Ankara city police checkpoint",
     "source": "TRT Haber Son Dakika",
     "sourceUrl": "https://www.trthaber.com/haber/gundem/ankarada-tdt-zirvesi-kapsaminda-asayis-ve-trafik-denetimi-yapildi-961544.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/View_of_Ankara_city_from_the_castle.jpg/1280px-View_of_Ankara_city_from_the_castle.jpg",
+    "image": "/kapak/fb9f776eaef972f6.webp",
     "publishedAt": "2026-10-28T23:55:00.000Z",
     "generatedAt": "2026-10-29T00:18:33.628Z",
     "gorselEk": [
@@ -21344,7 +21403,7 @@
     "gorselSorgu": "Gökhan Ongel award ceremony",
     "source": "Haberhergün",
     "sourceUrl": "https://www.haberhergun.com/haber/ongel-den-odulunu-turkiye-azerbaycan-kardesligine-adama_81956/",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/7/78/Market_centre_in_Tokyo_stock_exchange.jpg",
+    "image": "/kapak/465e3d385c653b3c.webp",
     "publishedAt": "2026-10-28T23:53:00.000Z",
     "generatedAt": "2026-10-29T00:05:27.042Z",
     "gorselDeneme": "2026-10-29T09:09:19.677Z",
@@ -21391,7 +21450,7 @@
     "gorselSorgu": "Donald Trump Binyamin Netanyahu meeting",
     "source": "Ege Alternatif",
     "sourceUrl": "https://www.egealternatif.com/haber/trump-netanyahu-ya-destek-verdi-birlik-hukumeti-icin-simdilik-sessiz_99395/",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Kim_Jong-un_and_Donald_Trump_impersonators.jpg",
+    "image": "/kapak/212fed955b6b6a11.webp",
     "publishedAt": "2026-10-28T23:44:00.000Z",
     "generatedAt": "2026-10-28T23:55:34.740Z",
     "gorselEk": [
@@ -21456,7 +21515,7 @@
     "gorselSorgu": "devlet bahceli cumhuriyet bayrami speech",
     "source": "TRT Haber Son Dakika",
     "sourceUrl": "https://www.trthaber.com/haber/gundem/mhp-genel-baskani-bahceliden-29-ekim-cumhuriyet-bayrami-mesaji-961543.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Istanbul_city_Photos-_Urban_01.jpg/1280px-Istanbul_city_Photos-_Urban_01.jpg",
+    "image": "/kapak/002d0251f2c5f593.webp",
     "publishedAt": "2026-10-28T23:42:00.000Z",
     "generatedAt": "2026-10-28T23:55:19.150Z",
     "gorselEk": [
@@ -21513,7 +21572,7 @@
     "gorselSorgu": "Erdogan Tokayev meeting Ankara",
     "source": "ssbulten.com.tr",
     "sourceUrl": "https://ssbulten.com.tr/video-haber/detay/kazakistan-cumhurbaskani-kasim-comert-tokayevi-resmi-karsilama-toreni--27301",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Person_holding_world_globe.jpg/1280px-Person_holding_world_globe.jpg",
+    "image": "/kapak/84a191d2ab514066.webp",
     "publishedAt": "2026-10-28T23:31:08.000Z",
     "generatedAt": "2026-10-28T23:37:55.737Z",
     "gorselEk": [
@@ -21570,7 +21629,7 @@
     "gorselSorgu": "French police student protest",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/dunya/bm-raportorleri-fransadaki-ogrenci-protestolarina-yonelik-siddet-nedeniyle-dehsete-kapildik/4104432",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Crowd_at_the_stage_of_Christopher_Street_Day_Berlin_2023-07-22_05.jpg/1280px-Crowd_at_the_stage_of_Christopher_Street_Day_Berlin_2023-07-22_05.jpg",
+    "image": "/kapak/b36371691ab64326.webp",
     "publishedAt": "2026-10-28T23:21:03.000Z",
     "generatedAt": "2026-10-28T23:37:40.894Z",
     "gorselDeneme": "2026-10-29T08:48:21.422Z",
