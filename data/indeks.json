@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T04:40:50.403Z",
+  "updatedAt": "2026-10-31T04:59:23.928Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5337,
-  "aday": 5337,
-  "uygun": 3282,
-  "secilen": 3188,
+  "toplamHaber": 5339,
+  "aday": 5339,
+  "uygun": 3284,
+  "secilen": 3190,
   "red": {
     "özet gövdeyle aynı": 110,
     "kısa özet": 35,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 113
+    "tekrar": 114
   },
   "ornekTekrarlar": [
     {
@@ -94,6 +94,10 @@
       "twin": "Apple, 2 nm A20 Pro işlemcili OLED iPad mini modelini tanıttı"
     },
     {
+      "title": "Milli Savunma Bakanlığı, Hakkari'de Yaralanan Askeri Şehit İdare İle Bildirdi",
+      "twin": "Milli Savunma Bakanlığı, Hakkari’de şehit olan asker hakkında bilgi verdi"
+    },
+    {
       "title": "Rockstar, GTA 6 için Miami sokaklarını Vice City'ye çevirdi",
       "twin": "Rockstar, GTA 6 PC sürümünü Mayıs ortasına kadar geciktirebilir"
     },
@@ -108,10 +112,6 @@
     {
       "title": "Bursa, kurulusunun 700. yilinda 1855 depreminin izlerini inceliyor",
       "twin": "Bursa deprem hafızasını masaya yatırdı: 1855 felaketi konuşuldu"
-    },
-    {
-      "title": "Fransa'nın borçlanma maliyeti 24 yılın en yüksek seviyesine ulaştı",
-      "twin": "Fransa Tahvil Faizi 24 Yılın Zirvesinde: Hedge Fonların Rolü Tartışılıyor"
     }
   ],
   "days": {
@@ -135,11 +135,11 @@
       "7ee04da43f7590bd",
       "3a1e46fd30a29916",
       "8ec8ec67667e0a14",
+      "27b50d1672c82ea6",
       "0eb6272f8cb7246f",
       "b59c1034a2be39e7",
       "77e8331448e47476",
       "67d98fa8b9daa7b6",
-      "27b50d1672c82ea6",
       "2ee854b943d24214",
       "d32d4c2e5084a4bc",
       "fa3c419da9c4ed3a",
@@ -164,8 +164,10 @@
       "e1d420dd17c497cf",
       "02a5cfe679207633",
       "f4901e8c1b8dbddb",
+      "04195ee94381b026",
       "84949118ef72c014",
       "25d49323b80860fc",
+      "351e1fd4bb36ea5e",
       "c7d5ecf013431bdf"
     ],
     "2026-10-30": [
@@ -360,7 +362,6 @@
       "34ed29b38bf1efae",
       "5620fe8756ecba60",
       "3e2b6591638d752d",
-      "4ff32f7f0d29b9f1",
       "066ab2051e99d829",
       "b76be64889eadeb2",
       "6a30c8d6d0d6c911",
@@ -382,6 +383,7 @@
       "d1091700aa3f81ba",
       "3198c42b11bc6845",
       "8d3480003d8b2dab",
+      "4ff32f7f0d29b9f1",
       "1dc42f1829be5db8",
       "8e1e40a996e8a744",
       "212fed955b6b6a11",
@@ -450,7 +452,6 @@
       "a4c93529620facc0",
       "236546f954a474bb",
       "cf951b9e393d14d1",
-      "c8febb9fb2816407",
       "ae94c55ea8f8d9e2",
       "c69d47005ca5bcf8",
       "ae3c1beedd89dfd9",
@@ -466,6 +467,7 @@
       "148280634d919f19",
       "f95a7f8908299c0e",
       "3700fbdccdb8bb9f",
+      "c8febb9fb2816407",
       "eff192d75243c486",
       "a0cd8e594059a998",
       "0e836d30c09d678f",
@@ -3455,6 +3457,7 @@
     "ebd7ae32f8cbf260",
     "e52c9a96f3da38f5",
     "32fc73a1f7bcb36e",
+    "27b50d1672c82ea6",
     "d68874deb78c61c3",
     "e6692b815dbe16c9",
     "27403f6b997712bc",
@@ -3521,7 +3524,6 @@
     "7b4fbeb6b29c8c0d",
     "44e89da04d4ec594",
     "3e2b6591638d752d",
-    "4ff32f7f0d29b9f1",
     "d68ac8fe07f08d33",
     "b38df0538db3aa9e",
     "066ab2051e99d829",
@@ -3572,7 +3574,6 @@
     "3fe5f51aa274b7e5",
     "09bc1ee5375acd32",
     "9eac0b3f22fb1f1b",
-    "27b50d1672c82ea6",
     "2da6c72d999937d8",
     "9b12293dd466be57",
     "ace7d032ece86483",
@@ -3619,6 +3620,7 @@
     "8d3480003d8b2dab",
     "ed7cedde1f1f649b",
     "a2cc134cbc18fe50",
+    "4ff32f7f0d29b9f1",
     "1dc42f1829be5db8",
     "8e1e40a996e8a744",
     "c7679a48d001c440",
@@ -3888,7 +3890,6 @@
     "fff8b828204ad976",
     "9ce47ed6fb72cf2e",
     "7755478b516ebbad",
-    "c8febb9fb2816407",
     "8bc06864f86a7087",
     "5ec22320a3d37481",
     "ae94c55ea8f8d9e2",
@@ -4037,6 +4038,7 @@
     "fafb530fb426a0d1",
     "b05f61009473f339",
     "3ffb21b564dc9a9b",
+    "c8febb9fb2816407",
     "c6cf04b0cd024c26",
     "f70c9fc7217687ab",
     "fee4ca32a04a134a",
@@ -4199,6 +4201,7 @@
     "cfbb962d1e9d7d68",
     "26592d220d36423b",
     "c00a8357e8af0927",
+    "04195ee94381b026",
     "9e92ae1006cce11e",
     "dc994f484f8d3483",
     "d62f358f3051899c",
@@ -4405,7 +4408,6 @@
     "826aa22908527c9a",
     "d7cd254dc1f92d3a",
     "17192ef3513c3747",
-    "c7d5ecf013431bdf",
     "0ee5dfb41a9f5c7d",
     "66421423c1dc2504",
     "d3cd7480c4330b48",
@@ -4626,6 +4628,7 @@
     "7fc751fa91c89fe2",
     "283c22e97e568997",
     "daf29c60714532ae",
+    "351e1fd4bb36ea5e",
     "ebe15500f5890be2",
     "3159d3cda0f635e7",
     "2ebba347b921840a",
@@ -6508,6 +6511,7 @@
     "e550e26b61b20d1c",
     "b6807a82d0b760ef",
     "a98440cac2f5d856",
+    "c7d5ecf013431bdf",
     "7700486dcd3552e0",
     "3017e46558a4627e",
     "7cb5716eef147e3d",
