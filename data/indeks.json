@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T18:59:03.665Z",
+  "updatedAt": "2026-10-31T19:07:09.789Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5402,
-  "aday": 5402,
-  "uygun": 3346,
-  "secilen": 3252,
+  "toplamHaber": 5403,
+  "aday": 5403,
+  "uygun": 3347,
+  "secilen": 3253,
   "red": {
     "özet gövdeyle aynı": 111,
     "editör notu özetle aynı": 8,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 118
+    "tekrar": 120
   },
   "ornekTekrarlar": [
     {
@@ -56,6 +56,10 @@
     {
       "title": "SPK, Tera Yatırım'ın lisansını iptal etti ve 50 kişi için suç duyurusu yaptı",
       "twin": "SPK nitelikli yatırımcı barajını 50 milyon liraya çıkardı"
+    },
+    {
+      "title": "İsrail ordusu Batı Şeria ve Doğu Kudüs'te 3 Filistin evini yıktı",
+      "twin": "İsrail ordusunun El Halil operasyonu 3 bin 300 kişiyi evinden etti"
     },
     {
       "title": "Sony Yeni LYTIA 720 Sensörü 50 MP ile Gece Çekimlerini Yarıyor",
@@ -90,6 +94,10 @@
       "twin": "Huawei, Wi-Fi 7 destekli yeni Router X2 Pro modelini satışa sundu"
     },
     {
+      "title": "İsrail ordusunun çadır saldırısında biri çocuk 3 kişi hayatını kaybetti",
+      "twin": "İsrail ordusunun El Halil operasyonu 3 bin 300 kişiyi evinden etti"
+    },
+    {
       "title": "Google Gemini 4 Argon, Android Bench’te Beşinci Sırada Yer Aldı",
       "twin": "Google, yapay zeka modeli Gemini 4 Carbon ile zirveye yerleşti"
     },
@@ -104,14 +112,6 @@
     {
       "title": "Milli Savunma Bakanlığı, Hakkari'de Yaralanan Askeri Şehit İdare İle Bildirdi",
       "twin": "Milli Savunma Bakanlığı, Hakkari’de şehit olan asker hakkında bilgi verdi"
-    },
-    {
-      "title": "Rockstar, GTA 6 için Miami sokaklarını Vice City'ye çevirdi",
-      "twin": "Rockstar GTA 6 19 Kasım’da PS5 ve Xbox’ta Çıkıyor"
-    },
-    {
-      "title": "İçişleri Bakanlığı 112 Acil Çağrı Sistemini 81 İl İçin Yeniden Düzenledi",
-      "twin": "İçişleri Bakanlığı, 112 Acil Çağrı sistemini Genel Müdürlük çatısında topladı"
     }
   ],
   "days": {
@@ -147,6 +147,7 @@
       "8ec8ec67667e0a14",
       "27b50d1672c82ea6",
       "4b66433901b0027c",
+      "9002611823b72a84",
       "008e0f544cd298c5",
       "bb3dcc9e2519cd52",
       "3a1e46fd30a29916",
@@ -155,6 +156,7 @@
       "d7011f8c339cb871",
       "b59c1034a2be39e7",
       "b26971b5547edaf0",
+      "de71713f60fd2c4a",
       "4bca53cecb22c530",
       "90cf7d697d2f1f0c",
       "17c3c854b5d6467c",
@@ -162,7 +164,6 @@
       "b000acfde90dd5d7",
       "5a9a0110d23d7ac1",
       "77e8331448e47476",
-      "9002611823b72a84",
       "2ee854b943d24214",
       "d32d4c2e5084a4bc",
       "528ddc1088d479d4",
@@ -641,7 +642,6 @@
       "d62f358f3051899c",
       "e77bcf10ca837dc9",
       "db363fa6afe90d49",
-      "9de8defb8f31d927",
       "49c6be4269ff3cc2",
       "775c2dcf5e7f7d28",
       "723534e5e28cc796",
@@ -689,7 +689,8 @@
       "86b783bd8157078c",
       "5030bddd036860db",
       "08be55d5b1a89a23",
-      "1f3b943e94c29a3a"
+      "1f3b943e94c29a3a",
+      "9de8defb8f31d927"
     ],
     "2026-10-27": [
       "35f861f75591b8a3",
@@ -922,7 +923,6 @@
       "019b923e705041ed",
       "98ce98aed1e474e9",
       "8d3480003d8b2dab",
-      "1dc42f1829be5db8",
       "8e1e40a996e8a744",
       "d1f012ae285f6815",
       "eb88b612ca31f70d",
@@ -1000,7 +1000,6 @@
       "0e836d30c09d678f",
       "11077860e92282a6",
       "9e716473e950a3e2",
-      "ea3ecb01c6831bc9",
       "465e3d385c653b3c",
       "61b8d2355aaf3ec3",
       "1283ca12a4a7840c",
@@ -1011,6 +1010,7 @@
       "00c775668d5d97e8",
       "813a55f6442d8251",
       "521c8f4bb8197241",
+      "ea3ecb01c6831bc9",
       "3030efbc46ead630",
       "6518f361b027fefc",
       "82bd7ff830319e0a",
@@ -1024,6 +1024,7 @@
       "4aecd74d1de18063",
       "42494757e22abeee",
       "aa12a5bff00db697",
+      "1dc42f1829be5db8",
       "d4008aab3736a8f3"
     ],
     "2026-10-22": [
@@ -3523,6 +3524,7 @@
     "4b66433901b0027c",
     "a8d5476263dc800d",
     "e6692b815dbe16c9",
+    "9002611823b72a84",
     "82df107754372aad",
     "008e0f544cd298c5",
     "11f54c3ef80151ce",
@@ -3585,6 +3587,7 @@
     "466f41069a5230cc",
     "04ae255a24a1c11b",
     "b76be64889eadeb2",
+    "de71713f60fd2c4a",
     "af8f256de98115d5",
     "b419b21c85254c75",
     "4bca53cecb22c530",
@@ -3647,7 +3650,6 @@
     "2a713793a487eb4d",
     "30561a08a9f24789",
     "0044396254846d11",
-    "9002611823b72a84",
     "8ebbc4cc8603eeda",
     "31968e9c9d6f54bb",
     "2ee854b943d24214",
@@ -3796,7 +3798,6 @@
     "1fe406ebb5214cd8",
     "8d3480003d8b2dab",
     "d12a80bd9893a669",
-    "1dc42f1829be5db8",
     "f10fad05f1498ae2",
     "03f794bcefdd2bd7",
     "41d9a500d06c515e",
@@ -4340,7 +4341,6 @@
     "a028aa98dbe239e2",
     "451d34cd0761d40e",
     "a36035760f497b25",
-    "9de8defb8f31d927",
     "b8fcf3ef5406198f",
     "489fe2c104080b78",
     "82064ab68ec2b7c4",
@@ -4367,7 +4367,6 @@
     "53386bd4a423dd1b",
     "e92f10cd3443b534",
     "3c118af5e48a344c",
-    "ea3ecb01c6831bc9",
     "37bde9a389f8ed12",
     "9794daf0d81d8a7e",
     "84949118ef72c014",
@@ -4562,6 +4561,7 @@
     "12412b4fae58f856",
     "3d4458b3614b8f37",
     "4c3485075a74b2c7",
+    "ea3ecb01c6831bc9",
     "2dfff7f140a1e6d2",
     "8a50256eb94ad01c",
     "25cfc5e57ebe1b78",
@@ -6631,6 +6631,8 @@
     "e550e26b61b20d1c",
     "b6807a82d0b760ef",
     "a98440cac2f5d856",
+    "1dc42f1829be5db8",
+    "9de8defb8f31d927",
     "fffff1ce0f5769e4",
     "d583d2efea139784",
     "3ffb21b564dc9a9b",
