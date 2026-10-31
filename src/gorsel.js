@@ -24,7 +24,7 @@ export function looksLikeIcon(url) {
   const u = String(url || "");
   if (!/^https?:\/\//i.test(u)) return true;
   if (/\.svg(\?|#|$)/i.test(u)) return true;
-  return /(logo|favicon|sprite|avatar|gravatar|placeholder|no[-_]?image|default[-_/]?(image|img|thumb)|watermark|share[-_]?(icon|default)|icon[-_/]|[-_/]icon|1x1|pixel\.(gif|png)|blank\.(gif|png)|transparent\.(gif|png)|habergorseli|son-?dakika\.jpe?g|video-thumbnail|youtube-thumbnail|kutu-acilis-videosu|tv-hizlandirma|hakki-alkan|PodCastChannel|dh-oneriyor|populer-yerinde|benzer-haber|adserve\.)/i.test(
+  return /(logo|favicon|sprite|avatar|gravatar|placeholder|no[-_]?image|default[-_/]?(image|img|thumb)|watermark|share[-_]?(icon|default)|icon[-_/]|[-_/]icon|1x1|pixel\.(gif|png)|blank\.(gif|png)|transparent\.(gif|png)|habergorseli|son-?dakika\.jpe?g|video-thumbnail|youtube-thumbnail|kutu-acilis-videosu|tv-hizlandirma|hakki-alkan|PodCastChannel|\/PodCast\/|\/Banners\/|preferred_source|dh-oneriyor|populer-yerinde|benzer-haber|adserve\.|app-download)/i.test(
     u
   );
 }
@@ -367,7 +367,19 @@ export function collectImageCandidates(html, baseUrl) {
   const imgRe = /<img\b[^>]*>/gi;
   let tag;
   while ((tag = imgRe.exec(govdeHtml))) {
-    const srcset = /srcset=["']([^"']+)["']/i.exec(tag);
+    const etiket = tag[0];
+    const sinif = /\bclass=["']([^"']+)["']/i.exec(etiket)?.[1] || "";
+    const w = Number(/\bwidth=["']?(\d+)/i.exec(etiket)?.[1] || 0);
+    const h = Number(/\bheight=["']?(\d+)/i.exec(etiket)?.[1] || 0);
+    if ((w && w < 360) || (h && h < 180)) continue;
+    if (
+      /(?:attachment-thumbnail|size-thumbnail|avatar|sidebar|related|popular|populer|onerilen|widget|logo|badge|preferred-source)/i.test(
+        sinif
+      )
+    ) {
+      continue;
+    }
+    const srcset = /srcset=["']([^"']+)["']/i.exec(etiket);
     if (srcset) {
       const parts = srcset[1]
         .split(",")
@@ -379,12 +391,9 @@ export function collectImageCandidates(html, baseUrl) {
       parts.sort((a, b) => b.w - a.w);
       if (parts[0]) push(parts[0].u, 6);
     }
-    const src = /\bsrc=["']([^"']+)["']/i.exec(tag);
-    const w = Number(/\bwidth=["']?(\d+)/i.exec(tag)?.[1] || 0);
-    const h = Number(/\bheight=["']?(\d+)/i.exec(tag)?.[1] || 0);
+    const src = /\bsrc=["']([^"']+)["']/i.exec(etiket);
     if (src) {
-      const small = (w && w < 400) || (h && h < 220);
-      push(src[1], small ? 1 : 5);
+      push(src[1], 6);
     }
   }
 

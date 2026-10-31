@@ -55,7 +55,7 @@ const YUKSEKLIK = 720;
 // 30.10.2026: 74 → 80. Yayıncıların görselleri zaten sıkıştırılmış geliyor
 // (1200×675 kare 16 KB olabiliyor); üzerine bir de q74 uygulanınca kapak
 // bulanık görünüyordu. q80 fark edilir şekilde net, dosya boyutu hâlâ küçük.
-const KALITE = 80;
+const KALITE = 86;
 // Kart boyu: ana sayfada 30 kapak 1280 px indirmesin diye küçük varyant.
 const KUCUK_GENISLIK = 480;
 
@@ -708,6 +708,20 @@ async function haberGorselAra(a) {
     .replace(/\s+/g, " ")
     .trim();
   const kisaBaslik = temizBaslik.split(" ").slice(0, 5).join(" ");
+  const anahtarKelimeler = [
+    ...new Set(
+      `${temizBaslik} ${a.gorselSorgu || ""}`
+        .toLowerCase()
+        .replace(/ı/g, "i")
+        .replace(/ğ/g, "g")
+        .replace(/ü/g, "u")
+        .replace(/ş/g, "s")
+        .replace(/ö/g, "o")
+        .replace(/ç/g, "c")
+        .split(/[^a-z0-9]+/)
+        .filter((w) => w.length >= 3 && !/^(icin|olan|olarak|daha|yeni|gibi|gore|sonra|once|kadar|tumu|tum|ile|veya)$/.test(w))
+    ),
+  ];
   const sorgular = [
     kisaBaslik,
     String(a.gorselSorgu || "").trim(),
@@ -716,7 +730,7 @@ async function haberGorselAra(a) {
   const cikti = [];
   for (const sorguMetni of [...new Set(sorgular)]) {
     try {
-      const url = `https://www.bing.com/images/async?q=${encodeURIComponent(sorguMetni)}&first=0&count=14&qft=+filterui:imagesize-large+filterui:aspect-wide`;
+      const url = `https://www.bing.com/images/search?q=${encodeURIComponent(sorguMetni)}&form=HDRSC2`;
       const r = await fetch(url, {
         headers: {
           "user-agent": UA_TARAYICI,
@@ -727,12 +741,19 @@ async function haberGorselAra(a) {
       });
       if (!r.ok) continue;
       const html = await r.text();
-      const ham = [...html.matchAll(/murl&quot;:&quot;(https?:\/\/[^&]+?)&quot;/g)].map((m) =>
-        m[1].replace(/&amp;/g, "&")
-      );
-      for (const u of ham) {
+      for (const m of html.matchAll(/murl&quot;:&quot;(https?:\/\/[^&]+?)&quot;([\s\S]{0,600}?)(?:mad&quot;|< \/a>|<\/a>)/g)) {
+        const u = m[1].replace(/&amp;/g, "&");
+        const baglam = `${u} ${m[2] || ""}`
+          .toLowerCase()
+          .replace(/ı/g, "i")
+          .replace(/ğ/g, "g")
+          .replace(/ü/g, "u")
+          .replace(/ş/g, "s")
+          .replace(/ö/g, "o")
+          .replace(/ç/g, "c");
         if (KAYNAK_JUNK.test(u) || STOK_KONAK.test(u)) continue;
-        if (/youtube\.com|ytimg\.com|tiktok\.com|instagram\.com|fbsbx\.com/i.test(u)) continue;
+        if (/youtube\.com|ytimg\.com|tiktok\.com|instagram\.com|fbsbx\.com|brosur|aktuelurun|katalog/i.test(u)) continue;
+        if (anahtarKelimeler.length && !anahtarKelimeler.some((k) => baglam.includes(k))) continue;
         const temiz = dhTemizUrl(u);
         if (temiz && !cikti.includes(temiz)) cikti.push(temiz);
         if (!cikti.includes(u)) cikti.push(u);
@@ -915,11 +936,14 @@ async function paylasimKartiMi(veri) {
     const { width: w, height: h, channels: ch } = info;
     let plakaSatir = 0;
     let bandBeyaz = 0;
+    let bandGecis = 0;
     let ustSolSari = 0;
     let solYaziSatir = 0;
     for (let y = 0; y < h; y++) {
       let kirmizi = 0;
       let beyaz = 0;
+      let gecis = 0;
+      let oncekiRenk = 0; // 1 = kirmizi, 2 = beyaz
       let solSariBeyaz = 0;
       let solKoyu = 0;
       const solSinir = Math.round(w * 0.62);
@@ -929,18 +953,29 @@ async function paylasimKartiMi(veri) {
         const g = data[i + 1];
         const b = data[i + 2];
         const beyazMi = r >= 238 && g >= 238 && b >= 238;
+        const kirmiziMi = r >= 140 && r - g >= 60 && r - b >= 50;
         const sariMi = r >= 210 && g >= 150 && b <= 55 && r - b >= 160;
-        if (beyazMi) beyaz++;
-        if (r >= 140 && r - g >= 60 && r - b >= 50) kirmizi++;
+        if (beyazMi) {
+          beyaz++;
+          if (oncekiRenk === 1) gecis++;
+          oncekiRenk = 2;
+        } else if (kirmiziMi) {
+          kirmizi++;
+          if (oncekiRenk === 2) gecis++;
+          oncekiRenk = 1;
+        } else {
+          oncekiRenk = 0;
+        }
         if (y < Math.round(h * 0.13) && x < Math.round(w * 0.36) && sariMi) ustSolSari++;
         if (x < solSinir && y >= Math.round(h * 0.12) && y <= Math.round(h * 0.62)) {
           if (beyazMi || sariMi) solSariBeyaz++;
           else if (r < 65 && g < 65 && b < 65) solKoyu++;
         }
       }
-      if (kirmizi / w >= 0.25) {
+      if (kirmizi / w >= 0.25 && gecis >= 4) {
         plakaSatir++;
         bandBeyaz += beyaz;
+        bandGecis += gecis;
       }
       if (
         solSinir > 0 &&
@@ -953,10 +988,11 @@ async function paylasimKartiMi(veri) {
     }
     const plakaOran = (plakaSatir / h) * 100;
     const yazi = plakaSatir ? (bandBeyaz / (plakaSatir * w)) * 100 : 0;
+    const ortGecis = plakaSatir ? bandGecis / plakaSatir : 0;
     const ustSolAlan = Math.max(1, Math.round(h * 0.13) * Math.round(w * 0.36));
     const sdnKarti = ustSolSari / ustSolAlan >= 0.08 && solYaziSatir / h >= 0.12;
     return {
-      kart: (plakaOran >= 8 && yazi >= 0.35) || sdnKarti,
+      kart: (plakaOran >= 8 && plakaOran <= 58 && yazi >= 0.35 && ortGecis >= 6) || sdnKarti,
       plakaOran: sdnKarti ? 100 : plakaOran,
       yazi: sdnKarti ? (solYaziSatir / h) * 100 : yazi,
     };
@@ -1062,7 +1098,7 @@ async function kapakUret(a) {
       const kirpW = Math.max(1, w - sol);
       const kirpH = Math.max(1, h - ust);
       const konum =
-        w * h <= 16_000_000 ? sharp.strategy.attention : "centre";
+        w * h <= 16_000_000 && w / Math.max(1, h) >= 1.3 ? sharp.strategy.attention : "centre";
       let boru = sharp(veri);
       if (w > 0 && h > 0 && (sol > 0 || ust > 0) && kirpW > 480 && kirpH > 270) {
         boru = boru.extract({ left: sol, top: ust, width: kirpW, height: kirpH });
@@ -1076,8 +1112,6 @@ async function kapakUret(a) {
             : { sigma: 0.6 };
       return await boru
         .resize(GENISLIK, YUKSEKLIK, { fit: "cover", position: konum })
-        .modulate({ saturation: 1.15, brightness: 1.03 })
-        .linear(1.07, -7)
         .sharpen(keskinlik)
         .toBuffer();
     } catch {
@@ -1319,11 +1353,18 @@ async function kapakUret(a) {
   }
 
   if (debug) console.log(`   · ${a.id} taban hazır: ${taban ? taban.length : 0} bayt`);
-  const svg = kapakSvg(GENISLIK, YUKSEKLIK, a.category, fotoVar);
-  const bilesik = await sharp(taban)
-    .composite([{ input: Buffer.from(svg) }])
-    .webp({ quality: KALITE, effort: 4 })
-    .toBuffer();
+  let bilesik;
+  if (fotoVar) {
+    // Gerçek fotoğraf kapaklarda hiçbir filigran/damga/çerçeve basılmaz;
+    // fotoğraf doğal ve tertemiz bırakılır.
+    bilesik = await sharp(taban).webp({ quality: KALITE, effort: 4 }).toBuffer();
+  } else {
+    const svg = kapakSvg(GENISLIK, YUKSEKLIK, a.category, false);
+    bilesik = await sharp(taban)
+      .composite([{ input: Buffer.from(svg) }])
+      .webp({ quality: KALITE, effort: 4 })
+      .toBuffer();
+  }
 
   if (!dry) {
     fs.mkdirSync(CIKTI_DIZIN, { recursive: true });
@@ -1336,15 +1377,17 @@ async function kapakUret(a) {
       .toBuffer();
     yazDosya(dosya.replace(/\.webp$/, "-480.webp"), kucukVeri);
     if (debug) console.log(`   · ${a.id} küçük varyant yazıldı`);
-    // Sosyal kart / push görseli: aynı tabandan 1200×630 JPEG. Marka izi
-    // sosyal boyutta yeniden basılır; böylece kırpma rozeti kesmez.
-    const sosyalVeri = await sharp(taban)
-      .resize(SOSYAL_GENISLIK, SOSYAL_YUKSEKLIK, { fit: "cover", position: "centre" })
-      .composite([
-        { input: Buffer.from(kapakSvg(SOSYAL_GENISLIK, SOSYAL_YUKSEKLIK, a.category, fotoVar)) },
-      ])
-      .jpeg({ quality: SOSYAL_KALITE, mozjpeg: true })
-      .toBuffer();
+    // Sosyal kart / push görseli: aynı tabandan 1200×630 JPEG.
+    let sosyalBoru = sharp(taban).resize(SOSYAL_GENISLIK, SOSYAL_YUKSEKLIK, {
+      fit: "cover",
+      position: "centre",
+    });
+    if (!fotoVar) {
+      sosyalBoru = sosyalBoru.composite([
+        { input: Buffer.from(kapakSvg(SOSYAL_GENISLIK, SOSYAL_YUKSEKLIK, a.category, false)) },
+      ]);
+    }
+    const sosyalVeri = await sosyalBoru.jpeg({ quality: SOSYAL_KALITE, mozjpeg: true }).toBuffer();
     yazDosya(dosya.replace(/\.webp$/, SOSYAL_EK), sosyalVeri);
     if (debug) console.log(`   · ${a.id} sosyal varyant yazıldı (${sosyalVeri.length} bayt)`);
   }
@@ -1545,7 +1588,7 @@ if (process.argv.includes("--taze")) {
       a.kapak.kaynak = guncel;
       const sonuc = await kapakUret(a);
       a.image = sonuc.url;
-      a.kapak = { v: 2, kaynak: sonuc.kaynak || guncel, foto: sonuc.foto };
+      a.kapak = { v: 3, kaynak: sonuc.kaynak || guncel, foto: sonuc.foto };
       console.log(`Taze kapak: ${a.title.slice(0, 62)}`);
       yenilenen++;
     } catch (err) {
@@ -1587,7 +1630,7 @@ await havuz(hedefler, paralel, async (a) => {
     console.log(`${dry ? "[dry] " : ""}${a.title.slice(0, 70)} → ${sonuc.url}`);
     if (!dry) {
       a.image = sonuc.url;
-      a.kapak = { v: 2, kaynak: sonuc.kaynak || eski, foto: sonuc.foto };
+      a.kapak = { v: 3, kaynak: sonuc.kaynak || eski, foto: sonuc.foto };
       if (sonuc.atif) a.gorselKaynak = sonuc.atif;
     }
     uretilen++;

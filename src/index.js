@@ -532,10 +532,14 @@ async function main() {
       // fotoğraflar. DonanımHaber'de og:image kırmızı yazılı paylaşım kartı
       // olduğu için yazı içi temiz `/src/..._0.jpg` adresi de türetilir.
       const KAPAK_JUNK =
-        /(logo|favicon|default|placeholder|share-?default|sprite|avatar|ikon|icon|blank|1x1|pixel|\/editor\/|\/recommendations\/|dh-instagram)/i;
+        /(logo|favicon|default|placeholder|share-?default|sprite|avatar|ikon|icon|blank|1x1|pixel|\/editor\/|\/recommendations\/|dh-instagram|PodCastChannel|\/PodCast\/|\/Banners\/|preferred_source|dh-oneriyor|populer-yerinde|benzer-haber|adserve\.|app-download)/i;
       const dhTemiz = (u) => {
+        const s = String(u || "");
+        if (/ichef\.bbci\.co\.uk\/ace\/branded_news\//i.test(s)) {
+          return s.replace(/\/ace\/branded_news\//i, "/ace/standard/");
+        }
         const m = /^(https?:\/\/www\.donanimhaber\.com\/images\/images\/haber\/(\d+)\/)(?:1200x675|600x314|340x191)([^/?#]+)\.(jpe?g|png|webp)$/i.exec(
-          String(u || "")
+          s
         );
         return m ? `${m[1]}src/${m[3]}${m[2]}_0.${m[4]}` : null;
       };
@@ -600,13 +604,16 @@ async function main() {
       // siteye işaret etsin (kaynak gösterme ve telif doğruluğu).
       const sourceUrl =
         realUrl && !/news\.google\.com/i.test(realUrl) ? realUrl : item.link;
+      const govdeAdaylar = kaynakAdaylar
+        .filter((u) => gorselKimlik(u) !== gorselKimlik(kapakGorsel.url) && !kullanilanGorsel.has(u))
+        .slice(0, 3);
       const entry = {
         id: makeId(item.link),
         ...temizKayit,
         source: item.source,
         sourceUrl,
         image: kapakGorsel.url,
-        ...(kaynakAdaylar.length ? { images: kaynakAdaylar.slice(0, 5) } : {}),
+        ...(govdeAdaylar.length ? { images: govdeAdaylar } : {}),
         publishedAt: item.publishedAt,
         generatedAt: new Date().toISOString(),
       };

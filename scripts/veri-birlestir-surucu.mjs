@@ -32,11 +32,13 @@ const oku = (yol) => {
   }
 };
 
+const taban = oku(tabanYol);
 const bizim = oku(bizimYol);
 const onlarin = oku(onlarinYol);
 
 // Görsel/toplumsal alanlar: elle veya ayrı betiklerle üretiliyor, taze
-// `collect` bunları yeniden yazmıyor. Hangi tarafta doluysa o korunur.
+// `collect` bunları yeniden yazmıyor. 3-yollu birleştirmede hangi taraf
+// tabana (`%O`) göre alanı değiştirdiyse o taraf kazanır.
 const KORUNAN = [
   "kapak",
   "image",
@@ -52,6 +54,7 @@ const WIKIMEDIA = /wikimedia\.org/i;
 /** Dolu ve "stok" olmayan görsel adresi mi? */
 const iyiGorsel = (u) => typeof u === "string" && /^https?:\/\/|^\//i.test(u) && !WIKIMEDIA.test(u);
 
+const tabanHarita = new Map(taban.filter((a) => a?.id).map((a) => [a.id, a]));
 const bizimHarita = new Map(bizim.filter((a) => a?.id).map((a) => [a.id, a]));
 const onlarinHarita = new Map(onlarin.filter((a) => a?.id).map((a) => [a.id, a]));
 
@@ -67,19 +70,41 @@ for (const uzak of onlarin) {
     birlesmis.push(uzak);
     continue;
   }
+  const ata = tabanHarita.get(uzak.id);
   const kayit = { ...uzak, ...yerel };
   for (const alan of KORUNAN) {
+    const ataDeger = ata ? ata[alan] : undefined;
     const uzakDeger = uzak[alan];
     const yerelDeger = yerel[alan];
-    if (alan === "image") {
-      // Kaynak sitenin gerçek fotoğrafı, Wikimedia stoğundan üstündür.
-      if (iyiGorsel(uzakDeger)) kayit.image = uzakDeger;
-      else if (iyiGorsel(yerelDeger)) kayit.image = yerelDeger;
-      else if (uzakDeger) kayit.image = uzakDeger;
+    const yerelDegisti = JSON.stringify(yerelDeger) !== JSON.stringify(ataDeger);
+    const uzakDegisti = JSON.stringify(uzakDeger) !== JSON.stringify(ataDeger);
+
+    if (alan === "kapak" && yerelDeger && uzakDeger) {
+      const yV = Number(yerelDeger.v || 0) * 10 + (yerelDeger.foto ? 5 : 0);
+      const uV = Number(uzakDeger.v || 0) * 10 + (uzakDeger.foto ? 5 : 0);
+      if (yV !== uV) {
+        kayit.kapak = yV > uV ? yerelDeger : uzakDeger;
+        continue;
+      }
+    }
+    if (yerelDegisti && !uzakDegisti) {
+      if (yerelDeger === undefined) delete kayit[alan];
+      else kayit[alan] = yerelDeger;
       continue;
     }
-    if (uzakDeger !== undefined && uzakDeger !== null) kayit[alan] = uzakDeger;
-    else if (yerelDeger !== undefined) kayit[alan] = yerelDeger;
+    if (uzakDegisti && !yerelDegisti) {
+      if (uzakDeger === undefined) delete kayit[alan];
+      else kayit[alan] = uzakDeger;
+      continue;
+    }
+    if (alan === "image") {
+      if (iyiGorsel(yerelDeger)) kayit.image = yerelDeger;
+      else if (iyiGorsel(uzakDeger)) kayit.image = uzakDeger;
+      else if (yerelDeger || uzakDeger) kayit.image = yerelDeger || uzakDeger;
+      continue;
+    }
+    if (yerelDeger !== undefined && yerelDeger !== null) kayit[alan] = yerelDeger;
+    else if (uzakDeger !== undefined && uzakDeger !== null) kayit[alan] = uzakDeger;
   }
   birlesmis.push(kayit);
 }

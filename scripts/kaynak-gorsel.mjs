@@ -379,7 +379,7 @@ const hedefler = articles
     if (!a || !a.id) return false;
     if (tekId) return a.id === tekId;
     if (!/^https?:\/\//i.test(String(a.sourceUrl || ""))) return false;
-    if (!zorla && Array.isArray(a.images) && a.images.length) return false;
+    if (!zorla && a.imagesKaynak && Array.isArray(a.images) && a.images.length) return false;
     const t = Date.parse(a.publishedAt || a.generatedAt || 0);
     return Number.isFinite(t) && t >= esik;
   })
