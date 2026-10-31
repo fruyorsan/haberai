@@ -40,6 +40,9 @@ const {
   // Akış sayfaları kendi kategori şeridini taşır; üstteki global şerit
   // kapatılır ki iki benzer satır üst üste görünmesin.
   kategoriSeridi = true,
+  // Piyasa şeridi. Arşiv (noindex) haber sayfalarında kapatılır: her sayfaya
+  // ~9 KB HTML ekliyor ve bu sayfalar arama motoruna açık değil.
+  ticker = true,
 } = Astro.props;
 
 // Mutlak URL tabanı (astro.config.mjs -> site)
@@ -515,7 +518,7 @@ OneSignalDeferred.push(async function (OneSignal) {
   </head>
   <body>
     <a class="atla" href="#icerik">İçeriğe geç</a>
-    <Header />
+    <Header ticker={ticker} />
     {kategoriSeridi && <CategoryBar />}
     <main id="icerik">
       <slot />
