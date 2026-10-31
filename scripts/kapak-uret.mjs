@@ -34,6 +34,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import sharp from "sharp";
+import { collectImageCandidates } from "../src/gorsel.js";
+import { kartTaban } from "./kapak-kart.mjs";
 
 const KOK = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const ARTICLES = path.join(KOK, "data", "articles.json");
@@ -553,40 +555,87 @@ function yazDosya(yol, veri, deneme = 4) {
   }
 }
 
-/** Kaynak makalenin kendi görseli: og:image / twitter:image. */
-async function kaynakGorselUrl(a) {
+const UA_TARAYICI =
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
+const KAYNAK_JUNK =
+  /(logo|favicon|default|placeholder|share-?default|sprite|avatar|ikon|icon|blank|1x1|pixel|\/editor\/|\/recommendations\/|dh-instagram)/i;
+
+/** DonanımHaber 1200x675 paylaşım kartından yazı içi temiz `/src/..._0.jpg` adresini türetir. */
+function dhTemizUrl(u) {
+  const m = /^(https?:\/\/www\.donanimhaber\.com\/images\/images\/haber\/(\d+)\/)(?:1200x675|600x314|340x191)([^/?#]+)\.(jpe?g|png|webp)$/i.exec(
+    String(u || "")
+  );
+  return m ? `${m[1]}src/${m[3]}${m[2]}_0.${m[4]}` : null;
+}
+
+/**
+ * Kaynak makaledeki görsel adayları (öncelik sırasıyla):
+ * 1) DonanımHaber yazı içi temiz `/src/` fotoğrafları (başlık plakası yoktur)
+ * 2) og:image / twitter:image
+ * 3) Makale gövdesindeki diğer fotoğraflar (`collectImageCandidates`)
+ */
+async function kaynakGorselAdaylari(a) {
   const adres = String(a.sourceUrl || "");
-  if (!/^https?:\/\//i.test(adres)) return null;
+  if (!/^https?:\/\//i.test(adres)) return [];
   try {
     const yanit = await fetch(adres, {
       headers: {
-        "user-agent": "Mozilla/5.0 (compatible; HaberinAi/1.0; +https://haberinai.site)",
-        "accept-language": "tr,en;q=0.8",
+        "user-agent": UA_TARAYICI,
+        accept: "text/html,application/xhtml+xml,*/*;q=0.8",
+        "accept-language": "tr-TR,tr;q=0.9,en;q=0.8",
       },
       redirect: "follow",
-      signal: AbortSignal.timeout(9000),
+      signal: AbortSignal.timeout(10000),
     });
-    if (!yanit.ok) return null;
+    if (!yanit.ok) return [];
     const html = (await yanit.text()).slice(0, 400000);
+    const taban = yanit.url || adres;
+    const ham = [];
+
+    // DonanımHaber'de yazı içi temiz fotoğraflar `/images/images/haber/<id>/src/` altında durur.
+    for (const m of html.matchAll(
+      /https?:\/\/www\.donanimhaber\.com\/images\/images\/haber\/\d+\/src\/[^"'\s<>]+\.(?:jpe?g|png|webp)/gi
+    )) {
+      ham.push(m[0]);
+    }
+
     const kaliplar = [
-      /<meta[^>]+property=["']og:image(?::url)?["'][^>]+content=["']([^"']+)["']/i,
-      /<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image(?::url)?["']/i,
+      /<meta[^>]+property=["']og:image(?::secure_url|:url)?["'][^>]+content=["']([^"']+)["']/i,
+      /<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image(?::secure_url|:url)?["']/i,
       /<meta[^>]+name=["']twitter:image(?::src)?["'][^>]+content=["']([^"']+)["']/i,
     ];
     for (const kalip of kaliplar) {
       const bulunan = kalip.exec(html)?.[1];
       if (bulunan) {
-        const tam = new URL(bulunan.replace(/&amp;/g, "&"), adres).href;
-        // Site logosu / varsayılan paylaşım kartı haber görseli değildir.
-        if (/^https?:\/\//i.test(tam) && !/(logo|favicon|default|placeholder|share-?default|sprite)/i.test(tam)) {
-          return tam;
-        }
+        const tam = new URL(bulunan.replace(/&amp;/g, "&"), taban).href;
+        const temiz = dhTemizUrl(tam);
+        if (temiz) ham.push(temiz);
+        ham.push(tam);
       }
     }
-    return null;
+
+    for (const u of collectImageCandidates(html, taban)) {
+      const temiz = dhTemizUrl(u);
+      if (temiz) ham.push(temiz);
+      ham.push(u);
+    }
+
+    return [
+      ...new Set(
+        ham
+          .map((u) => String(u || "").trim())
+          .filter((u) => /^https?:\/\//i.test(u) && !KAYNAK_JUNK.test(u))
+      ),
+    ].slice(0, 6);
   } catch {
-    return null;
+    return [];
   }
+}
+
+/** Kaynak makalenin birincil görseli (`--taze` turu için). */
+async function kaynakGorselUrl(a) {
+  const adaylar = await kaynakGorselAdaylari(a);
+  return adaylar[0] || null;
 }
 
 // Fotoğrafı getir (Wikimedia 403 vermesin diye UA gönderilir).
@@ -744,29 +793,23 @@ async function kapakUret(a) {
    */
   const kirp = async (veri, bilgi, ustYuzde = 0) => {
     try {
-      // KAYNAK FİLİGRANI: yayıncılar kendi logolarını sağ alt köşeye basıyor
-      // (AndroidHeadlines "AH", Webtekno, DonanımHaber...). Kapağın sağ alt
-      // köşesinde bizim "haberinai" rozetimiz var; iki logo üst üste binince
-      // amatör görünüyordu. Kırpmadan önce sağdan %10, alttan %7 atılır: köşe
-      // filigranı dışarıda kalır, kompozisyon neredeyse aynıdır.
+      // Kapak sağ alt köşesinde bizim 236×70 px opak `#0b0e14` "haberinai"
+      // plakamız var; köşedeki küçük yayıncı filigranını zaten örtüyor.
+      // Eskiden üstten %18 ve sağdan %10 körlemesine kesiliyordu; bu da normal
+      // 16:9 fotoğraflarda insan kafalarını ve ürün üstlerini uçuruyordu.
+      // Artık yalnızca açıkça istenirse (`ustYuzde` / `kirpSolYuzde`) kesilir.
       const w = bilgi.width || 0;
       const h = bilgi.height || 0;
-      // --kirp-sol: sol taraftan istenen pay atılır (kadrajda istenmeyen figür).
       const sol = Math.round((w * Math.min(Math.max(kirpSolYuzde, 0), 40)) / 100);
       const ust = Math.round((h * Math.min(Math.max(ustYuzde, 0), 30)) / 100);
-      const kirpW = Math.max(1, Math.round((w - sol) * 0.9));
-      const kirpH = Math.max(1, Math.round((h - ust) * 0.93));
-      // "attention" büyük görsellerde çok pahalı (saniyelerce CPU). 4000 px'e
-      // kadar ilgi alanına göre kırp; daha büyüklerde merkez yeterli.
+      const kirpW = Math.max(1, w - sol);
+      const kirpH = Math.max(1, h - ust);
       const konum =
         w * h <= 16_000_000 ? sharp.strategy.attention : "centre";
       let boru = sharp(veri);
-      if (w > 0 && h > 0 && kirpW > 640 && kirpH > 360) {
+      if (w > 0 && h > 0 && (sol > 0 || ust > 0) && kirpW > 480 && kirpH > 270) {
         boru = boru.extract({ left: sol, top: ust, width: kirpW, height: kirpH });
       }
-      // KÜÇÜK KAYNAK: yayıncı 640×360 gibi küçük bir kare verdiyse 1280'e
-      // büyütmek zorundayız. Büyütme oranı arttıkça daha güçlü keskinleştirme
-      // uygulanır; aksi hâlde kapak "bulanık" görünüyordu.
       const buyutme = GENISLIK / Math.max(1, kirpW);
       const keskinlik =
         buyutme > 1.3
@@ -812,26 +855,27 @@ async function kapakUret(a) {
     // Elle seçilen görsel: diğer adaylar hiç denenmez (müstehcen kapak değişimi).
     adayEkle(elleGorsel, "elle");
   } else if (!kartaZorla) {
-    // 1) KAYNAK SİTENİN KENDİ GÖRSELİ (og:image). Haberin çıktığı sayfadaki
-    //    kapak görseli tanım gereği başlıkla alakalı.
+    // 1) KAYNAK SİTENİN KENDİ GÖRSELLERİ (temiz /src/ fotoğrafı, og:image ve
+    //    makale gövdesi). og:image kırmızı yazılı paylaşım kartıysa elenir ve
+    //    aynı sayfadaki temiz gövde fotoğrafı devreye girer.
     if (String(a.sourceUrl || "").startsWith("http")) {
-      const kaynakFoto = await kaynakGorselUrl(a);
+      const kaynakAdaylar = await kaynakGorselAdaylari(a);
       if (debug) {
         console.log(
-          `   · ${a.id} kaynak görsel: ${kaynakFoto ? kaynakFoto.slice(0, 80) : "BULUNAMADI"}`
+          `   · ${a.id} kaynak adayları (${kaynakAdaylar.length}): ${kaynakAdaylar[0] ? kaynakAdaylar[0].slice(0, 80) : "BULUNAMADI"}`
         );
       }
-      // NOT: `a.image` ile aynı adres olabilir — ilk üretimde veri dosyasındaki
-      // adres zaten kaynağın og:image'idir. Eskiden bu durumda aday atlanıyordu;
-      // ardından aşağıdaki `uygunMu` süzgeci de dosya adı "695086-700x400.jpg"
-      // gibi sayı/hash olan yayıncı fotoğraflarını eliyor ve haber hiç
-      // fotoğrafı yokmuş gibi tasarımlı karta düşüyordu. Tekrarları `adayEkle`
-      // zaten ayıklar.
-      if (kaynakFoto) adayEkle(kaynakFoto, "kaynak");
+      for (const [idx, u] of kaynakAdaylar.entries()) {
+        adayEkle(u, idx === 0 ? "kaynak" : "govde");
+      }
     }
     // 2) YAZININ İÇİNDEKİ FOTOĞRAFLAR: yayıncı kendi metnine koyduğu için
     //    başlıkla alakaları yüksek (ürün, kişi, olay karesi).
-    for (const u of Array.isArray(a.images) ? a.images.slice(0, 2) : []) adayEkle(u, "govde");
+    for (const u of Array.isArray(a.images) ? a.images.slice(0, 4) : []) {
+      const temiz = dhTemizUrl(u);
+      if (temiz) adayEkle(temiz, "govde");
+      adayEkle(u, "govde");
+    }
     // 3) VERİ DOSYASINDAKİ GÖRSEL. İki tür var:
     //    a) Yayıncının kendi görseli (og:image / RSS media) — habere ait olduğu
     //       kesin, dosya adı ne olursa olsun kullanılır.
@@ -846,7 +890,11 @@ async function kapakUret(a) {
       : uygunMu(kaynak, sorgu) &&
         (FOTO_KATEGORI.has(String(a.category || "")) || ozelAdUyuyor(kaynak, a.title));
     // Stok kaynaklı eski kapağı yenilerken aynı stok kareyi tekrar seçme.
-    if (fotoIzinli && !(sadeceStokKaynak && stokAday)) adayEkle(kaynak, "veri");
+    if (fotoIzinli && !(sadeceStokKaynak && stokAday)) {
+      const temiz = dhTemizUrl(kaynak);
+      if (temiz) adayEkle(temiz, "veri");
+      adayEkle(kaynak, "veri");
+    }
   }
 
   // En fazla 4 aday indirilir; iyi bir kare çıkınca erken bırakılır (hız).
@@ -914,10 +962,7 @@ async function kapakUret(a) {
   // yani başlıkla ilgisi tanım gereği doğru. `gorselPuani` bembeyaz/tek renk
   // kareleri null ile eliyor; kalan her kare karttan üstündür.
   const secilen = degerlendirilen[0] && degerlendirilen[0].puan >= 18 ? degerlendirilen[0] : null;
-  // Yayıncının og:image / veri görseli genelde bir "paylaşım kartı"dır: sağ üst
-  // köşede yayıncının logosu ve kendi başlığı olur. Üstten kırpıp o katmanı
-  // atıyoruz. Yazı içi fotoğraflarda ve elle seçilenlerde böyle bir katman yok.
-  const KIRP_UST = { kaynak: 18, veri: 16, govde: 0, elle: 0 };
+  const KIRP_UST = { kaynak: 0, veri: 0, govde: 0, elle: 0 };
   if (secilen) {
     taban = await kirp(secilen.veri, secilen.bilgi, KIRP_UST[secilen.tip] ?? 0);
     if (taban) {
@@ -952,80 +997,18 @@ async function kapakUret(a) {
   }
 
   if (!taban) {
-    // Fotoğraf yoksa/uygun değilse tasarımlı zemin. Boş bir gradyan "yer
-    // tutucu" gibi duruyordu; bu yüzden zemine kategori etiketi + başlık
-    // basılır (fotoğraflı kapaklarda metin YOK, orada fotoğraf konuşur).
+    // Fotoğraf yoksa/uygun değilse haberin konusuna göre seçilen illüstrasyonlu
+    // ve kategori renginde tasarım kartı (`scripts/kapak-kart.mjs`).
     const { boyut, lh, satirlar } = kartBasligi(a.title);
     if (debug) console.log(`   · ${a.id} kart satırları: ${JSON.stringify(satirlar)}`);
-    const ilkY = 330 - ((satirlar.length - 1) * lh) / 2;
-    const kategori = XML(String(a.category || "").toLocaleUpperCase("tr"));
-    // Kategori artık düz sarı yazı değil, sarı bir "hap" (pill) içinde: boş
-    // görünen zeminde tek başına duran küçük yazı kayboluyordu. Hap, başlığın
-    // üstünde sabit bir çapa oluşturuyor.
-    const hapY = Math.round(ilkY - 104);
-    const hapW = Math.max(120, Math.round(kategori.length * 15.2 + 44));
-    const baslikSvg = satirlar
-      .map(
-        (s, i) =>
-          // Önce 3 px kaydırılmış koyu kopya (gölge), sonra asıl metin: fotoğraf
-          // olmayan zeminde bile başlık zeminden net ayrışsın.
-          `<text x="64" y="${Math.round(ilkY + i * lh + 3)}" font-size="${boyut}" font-weight="700" fill="#000000" fill-opacity="0.35" letter-spacing="-0.8">${XML(s)}</text>` +
-          `<text x="64" y="${Math.round(ilkY + i * lh)}" font-size="${boyut}" font-weight="700" fill="#ffffff" letter-spacing="-0.8">${XML(s)}</text>`
-      )
-      .join("\n              ");
-    taban = await sharp({
-      create: { width: GENISLIK, height: YUKSEKLIK, channels: 3, background: "#080c15" },
-    })
-      .composite([
-        {
-          input: Buffer.from(
-            `<svg width="${GENISLIK}" height="${YUKSEKLIK}" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="zemin" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#080c15"/>
-                  <stop offset="0.55" stop-color="#111a2c"/>
-                  <stop offset="1" stop-color="#1d0f1a"/>
-                </linearGradient>
-                <radialGradient id="isik" cx="0.16" cy="0.08" r="0.85">
-                  <stop offset="0" stop-color="#3b4a6b" stop-opacity="0.55"/>
-                  <stop offset="0.55" stop-color="#1a2338" stop-opacity="0.18"/>
-                  <stop offset="1" stop-color="#000000" stop-opacity="0"/>
-                </radialGradient>
-                <linearGradient id="kama" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stop-color="#e11d2e" stop-opacity="0.95"/>
-                  <stop offset="0.55" stop-color="#b81728" stop-opacity="0.8"/>
-                  <stop offset="1" stop-color="#7d0e1c" stop-opacity="0.5"/>
-                </linearGradient>
-                <pattern id="izgara" width="44" height="44" patternUnits="userSpaceOnUse">
-                  <path d="M44 0H0V44" fill="none" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
-                </pattern>
-              </defs>
-              <rect width="${GENISLIK}" height="${YUKSEKLIK}" fill="url(#zemin)"/>
-              <rect width="${GENISLIK}" height="${YUKSEKLIK}" fill="url(#isik)"/>
-              <rect width="${GENISLIK}" height="${YUKSEKLIK}" fill="url(#izgara)"/>
-              <!-- zeminin sağında büyük, soluk marka harfi (derinlik) -->
-              <text x="${GENISLIK - 430}" y="${YUKSEKLIK - 30}" font-family="Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif" font-size="540" font-weight="800" fill="#ffffff" fill-opacity="0.045">H</text>
-              <!-- sağdan giren kırmızı kama -->
-              <path d="M ${GENISLIK + 40} -40 L ${GENISLIK + 40} ${YUKSEKLIK + 40} L 690 ${YUKSEKLIK + 40} L 1030 -40 Z" fill="url(#kama)"/>
-              <!-- sarı ince çizgi -->
-              <path d="M 1000 -40 L 660 ${YUKSEKLIK + 40}" stroke="#ffd23f" stroke-width="7" stroke-opacity="0.9" fill="none"/>
-              <!-- ikinci, koyu kama (derinlik) -->
-              <path d="M ${GENISLIK + 40} -40 L ${GENISLIK + 40} ${YUKSEKLIK + 40} L 1010 ${YUKSEKLIK + 40} L 1215 -40 Z" fill="#05070d" fill-opacity="0.42"/>
-              <g font-family="Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif">
-                ${
-                  kategori
-                    ? `<rect x="64" y="${hapY}" width="${hapW}" height="46" rx="23" fill="#ffd23f"/>
-                       <text x="${64 + Math.round(hapW / 2)}" y="${hapY + 31}" font-size="22" font-weight="700" fill="#0a0f1a" letter-spacing="2.6" text-anchor="middle">${kategori}</text>`
-                    : ""
-                }
-                ${baslikSvg}
-              </g>
-            </svg>`
-          ),
-        },
-      ])
-      .png()
-      .toBuffer();
+    taban = await kartTaban({
+      haber: a,
+      satirlar,
+      boyut,
+      lh,
+      W: GENISLIK,
+      H: YUKSEKLIK,
+    });
   }
 
   if (debug) console.log(`   · ${a.id} taban hazır: ${taban ? taban.length : 0} bayt`);

@@ -527,12 +527,27 @@ async function main() {
       // yanlış (orman yangını) fotoğrafı seçtiriyordu.
       const afet = afetMi(cleaned.title, cleaned.summary);
 
-      // Kaynak adayları: og:image önce, sonra sayfanın diğer fotoğrafları.
+      // Kaynak adayları: RSS görseli (Cloudflare sayfa taramasını engellese bile
+      // RSS'teki media:content/enclosure elimizdedir), og:image ve gövde içi
+      // fotoğraflar. DonanımHaber'de og:image kırmızı yazılı paylaşım kartı
+      // olduğu için yazı içi temiz `/src/..._0.jpg` adresi de türetilir.
       const KAPAK_JUNK =
-        /(logo|favicon|default|placeholder|share-?default|sprite|avatar|ikon|icon|blank|1x1|pixel)/i;
-      const kaynakAdaylar = [extra?.image, ...(extra?.images || [])]
-        .map((u) => String(u || "").trim())
-        .filter((u) => /^https?:\/\//i.test(u) && !KAPAK_JUNK.test(u));
+        /(logo|favicon|default|placeholder|share-?default|sprite|avatar|ikon|icon|blank|1x1|pixel|\/editor\/|\/recommendations\/|dh-instagram)/i;
+      const dhTemiz = (u) => {
+        const m = /^(https?:\/\/www\.donanimhaber\.com\/images\/images\/haber\/(\d+)\/)(?:1200x675|600x314|340x191)([^/?#]+)\.(jpe?g|png|webp)$/i.exec(
+          String(u || "")
+        );
+        return m ? `${m[1]}src/${m[3]}${m[2]}_0.${m[4]}` : null;
+      };
+      const hamAdaylar = [extra?.image, item.image, ...(extra?.images || [])];
+      const kaynakAdaylar = [
+        ...new Set(
+          hamAdaylar
+            .flatMap((u) => [dhTemiz(u), u])
+            .map((u) => String(u || "").trim())
+            .filter((u) => /^https?:\/\//i.test(u) && !KAPAK_JUNK.test(u))
+        ),
+      ];
 
       // 1) Kapak: kaynağın kendi fotoğrafı -> Commons stoğu -> kategori yedeği.
       let kapakGorsel = kaynakAdaylar[0] ? { url: kaynakAdaylar[0] } : null;
@@ -591,6 +606,7 @@ async function main() {
         source: item.source,
         sourceUrl,
         image: kapakGorsel.url,
+        ...(kaynakAdaylar.length ? { images: kaynakAdaylar.slice(0, 5) } : {}),
         publishedAt: item.publishedAt,
         generatedAt: new Date().toISOString(),
       };
