@@ -1,5 +1,64 @@
 [
   {
+    "id": "4c47d3449bfa3009",
+    "title": "SpaceX'in AI Birimi, Anthropic Geliriyle Kâra Geçti",
+    "slug": "spacex-ai-birimi-anthropic-geliriyle-kara-gecti",
+    "summary": "SpaceX'in hesaplama gücü birimi, 2026 üçüncü çeyreğinde ilk kez kâra ulaştı. Bu başarı, Claude'u geliştiren Anthropic'in getirdiği yüksek gelirle mümkün oldu. Sözleşmenin toplam değeri 120,5 milyar doları bulabilir.",
+    "keyPoints": [
+      "Anthropic gelirin %34,5'ini sağlıyor",
+      "Toplam sözleşme değeri 120,5 milyar dolar",
+      "Aylık ödeme 3,1 milyar dolara çıkacak"
+    ],
+    "body": [
+      "SpaceX'in uzay fırlatma operasyonları dışındaki en kritik gelir kalemlerinden biri olan yapay zeka hesaplama birimi, 2026 yılının üçüncü çeyreği itibarıyla beklenmedik bir finansal dönüşüm yaşadı. Şirketin mali tablolarında 'Müşteri B' olarak geçen ve Bloomberg kaynaklarına göre Anthropic olduğu doğrulanan tek bir firma, bu birimin toplam gelirinin yaklaşık yüzde 34,5'ünü tek başına karşıladı. Bu yoğunlaşma, birimin tarihinde ilk kez net kâra geçmesini sağlayan temel itici güç olarak öne çıkıyor.",
+      "Anlaşmanın teknik detaylarına bakıldığında, Anthropic'in Tennessee eyaletindeki Memphis bölgesinde yer alan SpaceX veri merkezlerindeki işlem kapasitesini uzun vadeli olarak kiraladığı görülüyor. İki taraf arasındaki bu iş birliği 2029 yılına kadar devam edecek ve anlaşmanın üst limitine göre Anthropic'in yapabilecekleri toplam ödeme 120,5 milyar dolara kadar yükselebiliyor. Aralık 2026'dan itibaren tahmini aylık nakit akışının 3,1 milyar dolar seviyesinde seyredeceği öngörülüyor.",
+      "SpaceX yönetim kurulu başkanı Elon Musk, mevcut gelir hızının yıllık bazda korunması durumunda yapay zeka biriminin 100 milyar dolarlık gelir eşiğini aşmasını hedefliyor. Ancak bu projeksiyon, gelirlerin sabit kaldığı varsayımına dayanıyor. Dikkat çeken detay, ABD federal hükümetinin daha önce bu listenin en büyük müşterisi olmasıydı; ancak Anthropic'in devasa ödemeleri, devlet kaynaklı geliri geride bırakarak listenin zirvesine yerleşti.",
+      "Yüksek kârlılığın ardında yatan kırılganlık, müşteri bağımlılığının derinliğinde saklı. Sözleşme maddeleri, belirli bir tarihten sonra Anthropic'in 90 gün önceden bildirimde bulunarak anlaşmayı feshedebilmesine izin veriyor. Bu hak devreye girdiğinde, SpaceX'in bu birimin gelirinin üçte birinden fazlasını sağlayan müşterisini kaybetme riski doğuyor. Böyle bir senaryoda şirketin finansal dengei ciddi şekilde sarsılabilir.",
+      "Anthropic cephesinde ise tedarik zinciri riskini dağıtmak adına farklı stratejiler izleniyor. Claude'u geliştiren ekip, hesaplama kaynaklarını temin etmek için Nscale ve Lambda gibi diğer şirketlerle de paralel iş birlikleri sürdürüyor. Bu durum, Anthropic'in tek bir sağlayıcıya bağımlı kalmadığını ve pazarlık gücünü elinde tutmaya çalıştığını gösteriyor. Fesih seçeneğinin 2027 yılı başlarında devreye girecek olması, her iki taraf için de belirsizliğin devam edeceğine işaret ediyor."
+    ],
+    "comment": "Tek bir müşterinin toplam gelirin üçte birinden fazlasını karşılaması, SpaceX'in yapay zeka birimi için stratejik bir kırılganlık noktasıdır. 120,5 milyar dolarlık potansiyel sözleşme değeri, Anthropic'in pazarlık gücünü artırırken SpaceX'i erken fesih riskiyle karşı karşıya bırakıyor. Bu durum, yapay zeka altyapı firmalarının hızlı büyüme hedefleri ile uzun vadeli finansal istikrar arasındaki gerilimi somutlaştırıyor. Rakiplere kıyasla daha yüksek birim fiyatlar sunan SpaceX, bu bağımlılık nedeniyle standart fiyatlandırma politikalarından sapmak zorunda kalabilir.",
+    "editorNote": "SpaceX'in uzay dışındaki en büyük geliri artık yapay zekâdan geliyor; bu tek müşteriye bağımlılık, şirketin finansal gelecekteki en büyük bilinmeyenini oluşturuyor.",
+    "tags": [
+      "SpaceX",
+      "Anthropic",
+      "Yapay Zeka",
+      "Hesaplama Gücü",
+      "Elon Musk"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "data center server racks",
+    "source": "ShiftDelete",
+    "sourceUrl": "https://shiftdelete.net/spacex-anthropic-en-buyuk-musteri-claude",
+    "image": "/kapak/4c47d3449bfa3009.webp",
+    "publishedAt": "2026-10-31T08:24:16.000Z",
+    "generatedAt": "2026-10-31T08:27:07.920Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Quick_Thinking_Saves_USAFE_Data_Center_%286361168%29.jpg/1280px-Quick_Thinking_Saves_USAFE_Data_Center_%286361168%29.jpg",
+        "yazar": "U.S. Air Force 86AW by Senior Airman Noah Coger",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Quick_Thinking_Saves_USAFE_Data_Center_(6361168).jpg",
+        "altyazi": "Yüksek performanslı işlemler için soğutma altyapısı"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/CSIRO_ScienceImage_11313_The_CSIRO_GPU_cluster_at_the_data_centre.jpg/1280px-CSIRO_ScienceImage_11313_The_CSIRO_GPU_cluster_at_the_data_centre.jpg",
+        "yazar": "division, CSIRO",
+        "lisans": "CC BY 3.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/3.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:CSIRO_ScienceImage_11313_The_CSIRO_GPU_cluster_at_the_data_centre.jpg",
+        "altyazi": "Yapay zeka model eğitimi için GPU kümesi"
+      }
+    ],
+    "breaking": true,
+    "gorselDeneme": "2026-10-31T08:27:09.263Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://ares.shiftdelete.net/2026/10/8a9b42796a1888cb6e1da65cc5f7fff799135ab9.webp",
+      "foto": true
+    }
+  },
+  {
     "id": "ed32e518ad2a88c1",
     "title": "Türkiye ve Kazakistan dış ticaret hacmini 15 milyar dolara taşıyacak",
     "slug": "turkiye-ve-kazakistan-dis-ticaret-hacmini-15-milyar-dolara-tasiyacak",
@@ -53,7 +112,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:19.475Z",
+    "gorselDeneme": "2026-10-31T08:27:10.477Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/cumhurbaskani-erdogan-kazakistan-cb-tokayev-aa-2500048.jpg",
@@ -94,7 +153,7 @@
     "publishedAt": "2026-10-31T07:46:35.000Z",
     "generatedAt": "2026-10-31T07:52:33.047Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:19.400Z",
+    "gorselDeneme": "2026-10-31T08:27:09.251Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/a2190692d9a8f233d073cedd6f9c1ecbbb966c15.webp",
@@ -146,7 +205,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:19.428Z",
+    "gorselDeneme": "2026-10-31T08:27:09.261Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/8c93883662ce1c90e4c20ae19618ecc0a9ea4352.webp",
@@ -197,7 +256,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:19.914Z",
+    "gorselDeneme": "2026-10-31T08:27:10.075Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212300/1200x675intel-nova-lake-performansi-ortaya-cikti-arrow-lake-e-yuzde-20-fark.jpg",
@@ -256,7 +315,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:21.277Z",
+    "gorselDeneme": "2026-10-31T08:27:11.373Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_376b4997e4efcdd4cbda455148970937.jpg",
@@ -315,7 +374,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:21.281Z",
+    "gorselDeneme": "2026-10-31T08:27:11.385Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_dee6b19137cfa7bd883b7dc4547c3ea1.jpg",
@@ -357,7 +416,7 @@
     "publishedAt": "2026-10-31T06:32:45.000Z",
     "generatedAt": "2026-10-31T06:37:28.872Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:21.448Z",
+    "gorselDeneme": "2026-10-31T08:27:11.499Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_480e88a181dcb108dc64cc3bbb49cb09.jpg",
@@ -945,7 +1004,7 @@
     "publishedAt": "2026-10-31T05:00:34.000Z",
     "generatedAt": "2026-10-31T05:27:34.465Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:21.047Z",
+    "gorselDeneme": "2026-10-31T08:27:11.222Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/kulakligini-kaybetti-chatgpt-yardimina-yetisti.webp",
@@ -1073,7 +1132,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:20.560Z",
+    "gorselDeneme": "2026-10-31T08:27:10.805Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/a56b/live/5a0952f0-d487-11f1-80bc-6d398902272f.jpg",
@@ -1293,7 +1352,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:21.054Z",
+    "gorselDeneme": "2026-10-31T08:27:11.186Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://www.cozumpark.com/wp-content/uploads/2026/03/Amazonun-Bahreyndeki-AWS-Tesisleri-Iran-Kaynakli-Dron-Saldirilariyla-Ikinci-Kez-Vuruldu.jpg",
@@ -1351,7 +1410,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:21.318Z",
+    "gorselDeneme": "2026-10-31T08:27:11.456Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2416000/sehit-stok-aa-2416698.jpg",
@@ -1471,7 +1530,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:21.971Z",
+    "gorselDeneme": "2026-10-31T08:27:12.271Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/edirne-2500021.jpg",
@@ -1842,7 +1901,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:22.822Z",
+    "gorselDeneme": "2026-10-31T08:27:13.258Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.saraymedya.com/manset/2026/10/genetik-farkliliklar-tedavideki-basariyi-etkiliyor-1793414906.webp",
@@ -2010,7 +2069,7 @@
     "publishedAt": "2026-10-31T02:12:19.000Z",
     "generatedAt": "2026-10-31T02:31:33.482Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:21.437Z",
+    "gorselDeneme": "2026-10-31T08:27:11.566Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/7b98/live/c9241530-d4aa-11f1-b441-2b33b063138f.jpg",
@@ -2087,7 +2146,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:21.460Z",
+    "gorselDeneme": "2026-10-31T08:27:11.593Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/297d/live/2d7f7270-d408-11f1-88b8-2d5226da0f6b.jpg",
@@ -2260,7 +2319,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:21.458Z",
+    "gorselDeneme": "2026-10-31T08:27:11.628Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/cce2/live/961bb030-d482-11f1-b441-2b33b063138f.png",
@@ -2326,7 +2385,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:21.468Z",
+    "gorselDeneme": "2026-10-31T08:27:11.718Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/5c07/live/57283d20-d4b5-11f1-a58c-6d26609b0a57.jpg",
@@ -2375,7 +2434,7 @@
     "publishedAt": "2026-10-31T01:11:43.000Z",
     "generatedAt": "2026-10-31T01:32:02.604Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:21.472Z",
+    "gorselDeneme": "2026-10-31T08:27:11.654Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/b6c2/live/46cc2780-d49b-11f1-a701-fddedf244c16.jpg",
@@ -2505,7 +2564,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:23.171Z",
+    "gorselDeneme": "2026-10-31T08:27:13.591Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://img.saraymedya.com/manset/2026/10/catli-2-kayseri-de-izleyiciyle-bulustu-1793408696.webp",
@@ -2571,7 +2630,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:21.637Z",
+    "gorselDeneme": "2026-10-31T08:27:11.869Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://images.martincid.com/2026/10/1280px-Rentokil_van2C_Malpas_Road2C_Newport_-_geograph.org_.uk_-_6770447.jpg?f=orig",
@@ -2629,7 +2688,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:21.947Z",
+    "gorselDeneme": "2026-10-31T08:27:12.411Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://i.tgrthaber.com/images/2026/10/28/nisan-toreni-savas-alani-gibi-oldu-davetliler-birbirine-girdi-3368002.png",
@@ -2807,7 +2866,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:21.778Z",
+    "gorselDeneme": "2026-10-31T08:27:12.035Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/f23a/live/e2d76eb0-d3a5-11f1-a701-fddedf244c16.png",
@@ -3154,7 +3213,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:22.011Z",
+    "gorselDeneme": "2026-10-31T08:27:12.401Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/bc6f/live/ee8a8a40-d4b2-11f1-88a4-835788f4f80e.jpg",
@@ -3213,7 +3272,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:22.814Z",
+    "gorselDeneme": "2026-10-31T08:27:13.108Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://rudaw.net/_next/image?url=https%3A%2F%2Fimages.rudaw.net%2Fimages%2Fasset%2Fnews%2F20261030234517_20261030231959_gdash.webp&w=1200&q=75",
@@ -3270,7 +3329,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:22.610Z",
+    "gorselDeneme": "2026-10-31T08:27:13.421Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://www.yeniasya.com.tr/Sites/YeniAsya/Upload/images/Content/2026/10/31/sm333.jpg",
@@ -3317,7 +3376,7 @@
     "publishedAt": "2026-10-30T22:50:44.000Z",
     "generatedAt": "2026-10-30T23:03:36.705Z",
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:22.263Z",
+    "gorselDeneme": "2026-10-31T08:27:12.620Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://ichef.bbci.co.uk/news/1200/branded_turkce/b6c2/live/46cc2780-d49b-11f1-a701-fddedf244c16.jpg",
@@ -3376,7 +3435,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:22.471Z",
+    "gorselDeneme": "2026-10-31T08:27:12.996Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_45f043bcc283f077fd12e933e4241834.jpg",
@@ -3784,7 +3843,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:22.924Z",
+    "gorselDeneme": "2026-10-31T08:27:13.545Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1482000/bilgisayar-kullanicisi-internet-1482001.jpg",
@@ -3843,7 +3902,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T08:19:23.236Z",
+    "gorselDeneme": "2026-10-31T08:27:13.841Z",
     "kapak": {
       "v": 2,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/havelsan-nijerya-aa-2500019.jpg",
@@ -28080,71 +28139,6 @@
     "ekGorselDeneme": "2026-10-29T02:15:54.784Z"
   },
   {
-    "id": "7723ca8035a53440",
-    "title": "Kazakistan ve Türkiye ticaret hacmini 5,66 milyar dolara taşıdı",
-    "slug": "kazakistan-ve-turkiye-ticaret-hacmini-566-milyar-dolara-tasidi",
-    "summary": "Kazakistan Dışişleri Bakanı Muhtar Tileuberdi, iki ülke arasındaki ticaret hacminin 2026 yılının ilk 8 ayında yüzde 66,5 artışla 5,66 milyar dolara ulaştığını açıkladı. Ankara ziyareti öncesi değerlendirmelerde bulunan Tileuberdi, stratejik ortaklığın ekonomik somut sonuçlara dönüştürülmesine odaklandıklarını belirtti.",
-    "keyPoints": [
-      "İki ülke arasındaki ticaret hacmi geçen yılın aynı dönemine kıyasla yüzde 66,5 artış gösterdi.",
-      "Türkiye'nin Kazakistan'daki toplam yatırım tutarı 6 milyar dolar seviyesini aşmış durumda.",
-      "Kazakistan'da halihazırda Türk sermayeli 4 binden fazla şirket aktif olarak faaliyet gösteriyor."
-    ],
-    "body": [
-      "Kazakistan Dışişleri Bakanı Muhtar Tileuberdi, Türkiye ile yürütülen kapsamlı işbirliğinin yeni bir döneme girdiğini ifade etti. Türk Devletleri Teşkilatı çerçevesindeki ilişkilerin güçlendirilmesine büyük bir mesai harcadıklarını belirten Bakan, Türkiye'nin Kazakistan'ın temel ekonomik ortaklarından biri olduğunu vurguladı. Cumhurbaşkanı Kasım Cömert Tokayev'in Ankara ziyareti öncesinde yapılan bu açıklamalar, iki ülke arasındaki diplomatik ve ticari gündemin yoğunluğunu ortaya koyuyor.",
-      "Ekonomik veriler, son dönemdeki stratejik işbirliğinin meyvelerini vermeye başladığını gösteriyor. 2026 yılının ilk 8 ayında kaydedilen 5,66 milyar dolarlık ticaret hacmi, yüzde 66,5'lik dikkat çekici bir büyüme oranına işaret ediyor. Özellikle Kazakistan'ın Türkiye'ye gerçekleştirdiği ihracatın iki katına çıkarak 4,75 milyar dolara ulaşması, ikili ilişkilerin sadece siyasi değil, aynı zamanda ekonomik bir derinliğe sahip olduğunu kanıtlıyor.",
-      "Yatırım tarafında ise rakamlar iş dünyasının karşılıklı güvenine dair somut veriler sunuyor. Ülkede 4 binden fazla Türk şirketinin aktif varlığı, yatırımcılar için güvenli bir iş ortamı oluşturulduğunun en net göstergesi olarak değerlendiriliyor.",
-      "Halihazırda 100'den fazla ortak proje hayata geçirilmiş durumda ve 50'den fazla proje uygulama aşamasında bekliyor. Bunlara ek olarak 70 farklı proje için yürütülen müzakereler, iki ülke arasındaki ticari hattın önümüzdeki dönemde daha da genişleyeceğini gösteriyor. Üretim tesislerinin kurulması süreçlerinde yatırımcılara yer tahsisinden proje geliştirme aşamasına kadar kapsamlı destekler sağlanmaya devam ediliyor.",
-      "Türk Devletleri Teşkilatı'nın kuruluşu ve gelişimi sürecinde Kazakistan'ın üstlendiği öncü rol, kültürel ve siyasi bağların kurumsallaşmasını sağladı. 2011 yılında Almatı'da düzenlenen ilk zirveden bugüne kadar geçen sürede, Türk Dünyası Vizyonu-2040 belgesi gibi temel belgelerle işbirliği mekanizmaları sağlamlaştırıldı. Türk Akademisi, TÜRKSOY ve Türk Yatırım Fonu gibi kurumların faaliyete geçmesi, ülkeler arasındaki somut işbirliğinin bilimsel ve kültürel alanlara da yayılmasını kolaylaştırdı."
-    ],
-    "comment": "Ticaret hacmindeki 5,66 milyar dolarlık büyüme, iki ülkenin birbirine olan ekonomik bağımlılığını ve ortak üretim kapasitesini hızla artırıyor. Siyasi diyalogların somut yatırımlara dönüşmesi, bölgesel rekabetin yoğunlaştığı bu süreçte Türk devletleri için sürdürülebilir bir güç alanı yaratıyor. 4 binden fazla Türk firmasının Kazakistan'daki varlığı, yalnızca bir istatistik değil, aynı zamanda pazarın yatırımcılar için sunduğu uzun vadeli öngörülebilirliğin bir kanıtıdır. Önümüzdeki süreçte, tarife dışı engellerin tamamen kaldırılması ve dijital ticaret altyapılarının entegrasyonu, mevcut ticaret artış hızını daha da yukarı taşıyabilir.",
-    "editorNote": "Kazakistan ile ticaret hacmi 5,66 milyar dolarla rekor tazeledi. İki ülke arasındaki 4 binden fazla şirket, stratejik ortaklığın ekonomik sahada nasıl somutlaştığını gösteriyor.",
-    "tags": [
-      "Kazakistan",
-      "Türkiye",
-      "Muhtar Tileuberdi",
-      "TDT",
-      "ticaret",
-      "yatırım"
-    ],
-    "category": "Dünya",
-    "gorselSorgu": "Kazakhstan Turkey diplomatic meeting",
-    "source": "AA Güncel",
-    "sourceUrl": "https://www.aa.com.tr/tr/dunya/kazakistan-disisleri-bakani-muhtar-tileuberdi-ulkelerimiz-arasindaki-iliskiler-istikrarli-bicimde-gelismektedir/4103502",
-    "image": "/kapak/7723ca8035a53440.webp",
-    "gorselKaynak": {
-      "yazar": "Majilis of the Parliament of Kazakhstan",
-      "lisans": "CC BY 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Kazakhstan-Turkey_Friendship_Park_opened_in_Ankara_03.jpg"
-    },
-    "publishedAt": "2026-10-28T08:58:01.000Z",
-    "generatedAt": "2026-10-28T09:04:24.564Z",
-    "gorselEk": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/INTERNATIONAL_FOREIGN_TRADE_CENTER_%28GUOMAO_BUILDING%29_%2814%29.jpg/1280px-INTERNATIONAL_FOREIGN_TRADE_CENTER_%28GUOMAO_BUILDING%29_%2814%29.jpg",
-        "yazar": "Dinkun Chen",
-        "lisans": "CC BY-SA 4.0",
-        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-        "sayfa": "https://commons.wikimedia.org/wiki/File:INTERNATIONAL_FOREIGN_TRADE_CENTER_(GUOMAO_BUILDING)_(14).jpg",
-        "altyazi": "İki ülke arasındaki ticaret hacmini artıran lojistik merkezler"
-      },
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Modern_art_or_industrial_archaeology%5E_-_geograph.org.uk_-_7013072.jpg/1280px-Modern_art_or_industrial_archaeology%5E_-_geograph.org.uk_-_7013072.jpg",
-        "yazar": "David Medcalf",
-        "lisans": "CC BY-SA 2.0",
-        "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-        "sayfa": "https://commons.wikimedia.org/wiki/File:Modern_art_or_industrial_archaeology%5E_-_geograph.org.uk_-_7013072.jpg",
-        "altyazi": "Kazakistan'da faaliyete geçen yeni üretim tesisleri ve sanayi"
-      }
-    ],
-    "gorselDeneme": "2026-10-28T19:45:47.141Z",
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/28/thumbs_b_c_b3edb5d34850aa2e8ed3dabb567e78e2.jpg",
-      "foto": true
-    }
-  },
-  {
     "id": "c8ebe5f981fd38e1",
     "title": "Fenerbahçe'de yeni dönem: Dirk Kuyt teknik sorumlu olarak atandı",
     "slug": "fenerbahcede-yeni-donem-dirk-kuyt-teknik-sorumlu-olarak-atandi",
@@ -48116,10 +48110,15 @@
     "gorselSorgu": "data center server room",
     "source": "BeInCrypto",
     "sourceUrl": "https://tr.beincrypto.com/en-buyuk-3-teknoloji-devinin-kazanc-raporlari-ekim-son-hafta/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
+    "image": "/kapak/5ea4f3d717547639.webp",
     "publishedAt": "2026-10-26T01:58:41.000Z",
     "generatedAt": "2026-10-26T01:59:41.431Z",
-    "ekGorselDeneme": "2026-10-27T14:08:49.514Z"
+    "ekGorselDeneme": "2026-10-27T14:08:49.514Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
+      "foto": false
+    }
   },
   {
     "id": "67813857939392b0",
@@ -51344,7 +51343,7 @@
     "gorselSorgu": "van-gogh starry-night painting",
     "source": "CHIP Online",
     "sourceUrl": "https://www.chip.com.tr/guncel/van-goghun-yildizli-gece-tablosundaki-137-yillik-gizem-cozuluyor_184869.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Vincent_van_Gogh_Starry_Night.jpg/1280px-Vincent_van_Gogh_Starry_Night.jpg",
+    "image": "/kapak/1e562fe6acf8e9ac.webp",
     "publishedAt": "2026-10-25T16:58:00.000Z",
     "generatedAt": "2026-10-25T17:00:56.760Z",
     "gorselDeneme": "2026-10-28T04:45:24.479Z",
@@ -51364,7 +51363,12 @@
         "lisansUrl": "",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_The_yellow_house_(%27The_street%27).jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Vincent_van_Gogh_Starry_Night.jpg/1280px-Vincent_van_Gogh_Starry_Night.jpg",
+      "foto": false
+    }
   },
   {
     "id": "9c0257ab57d6eb37",
@@ -51637,7 +51641,7 @@
     "gorselSorgu": "Logitech wireless mouse minimal desk setup",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/logitech-pebble-up-fare-katlanabilir-tasarimiyla-tanitildi--212070",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Logitech_M185_mouse_HS02.jpg/1280px-Logitech_M185_mouse_HS02.jpg",
+    "image": "/kapak/9fcec281f301db29.webp",
     "publishedAt": "2026-10-25T16:00:00.000Z",
     "generatedAt": "2026-10-25T16:07:24.378Z",
     "gorselEk": [
@@ -51655,7 +51659,12 @@
     "images": [
       "https://www.donanimhaber.com/images/images/haber/212070/src/logitech-pebble-up-fare-katlanabilir-tasarimiyla-tanitildi212070_0.jpg",
       "https://www.donanimhaber.com/images/images/haber/212070/src/logitech-pebble-up-fare-katlanabilir-tasarimiyla-tanitildi212070_1.jpg"
-    ]
+    ],
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Logitech_M185_mouse_HS02.jpg/1280px-Logitech_M185_mouse_HS02.jpg",
+      "foto": false
+    }
   },
   {
     "id": "a0f2f8482142e1b7",
@@ -54337,7 +54346,7 @@
     "gorselSorgu": "Barack Obama speech podium",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/economy-news/obama-enflasyon-konusunda-trump-elestirdi-4118498",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg/1280px-President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg",
+    "image": "/kapak/f6f884514f6577c6.webp",
     "publishedAt": "2026-10-25T04:13:17.000Z",
     "generatedAt": "2026-10-25T04:21:44.052Z",
     "gorselEk": [
@@ -54349,7 +54358,12 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Press_Secretary_Karine_Jean-Pierre_speaks_during_a_press_briefing,_Monday,_May_13,_2024,_in_the_James_S._Brady_Press_Briefing_Room_of_the_White_House.jpg",
         "altyazi": "Washington siyasetinde ekonomi politikaları tartışılmaya devam ediyor"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg/1280px-President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg",
+      "foto": false
+    }
   },
   {
     "id": "2f83428af6fd33ce",
@@ -56515,7 +56529,7 @@
     "gorselSorgu": "Casio watch display",
     "source": "beetekno.com",
     "sourceUrl": "https://beetekno.com/casio-abdde-minimalist-tasarimli-uc-yeni-hafif-gma-s160-saatini-satisa-sundu",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Casio_W-86_and_F-91W_digital_watch_comparison_%28front%29.jpg/1280px-Casio_W-86_and_F-91W_digital_watch_comparison_%28front%29.jpg",
+    "image": "/kapak/5659ff12cfe2382d.webp",
     "publishedAt": "2026-10-24T00:01:11.000Z",
     "generatedAt": "2026-10-24T00:10:51.067Z",
     "gorselEk": [
@@ -56527,7 +56541,12 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Casio_F-91W_watch_(2023)_(packaging_and_contents)_(iii).jpg"
       }
     ],
-    "gorselDeneme": "2026-10-28T04:45:29.792Z"
+    "gorselDeneme": "2026-10-28T04:45:29.792Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Casio_W-86_and_F-91W_digital_watch_comparison_%28front%29.jpg/1280px-Casio_W-86_and_F-91W_digital_watch_comparison_%28front%29.jpg",
+      "foto": false
+    }
   },
   {
     "id": "6a93bfbaaa0ee53a",
@@ -60315,7 +60334,7 @@
     "gorselSorgu": "Volvo electric car production line",
     "source": "LOG",
     "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOdVBzOXZlYkZvbGNhOEw0WFR4YkJ4Mk1RUEF2Vm04b2N4UVNwOWNXM2VhWFRlUzI3TXc2alAyRmNjWjE1SDZadThUUzZ5OXF6LUlZQUxlWUlWb2FSMkREdVdZV0VncEUtN1dIWm1ObS04ZnJvR0lvZGRnSXNZUkhUNmN3UUNvWHFq?oc=5",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Volvo_C30_Electric_NAIAS_2011.jpg/1280px-Volvo_C30_Electric_NAIAS_2011.jpg",
+    "image": "/kapak/e7c31bf76ad14e51.webp",
     "publishedAt": "2026-10-23T12:44:15.000Z",
     "generatedAt": "2026-10-23T12:48:42.823Z",
     "gorselEk": [
@@ -60334,7 +60353,12 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Volvo_FH_Aero_Electric_(2024).jpg"
       }
     ],
-    "gorselDeneme": "2026-10-28T04:45:35.260Z"
+    "gorselDeneme": "2026-10-28T04:45:35.260Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Volvo_C30_Electric_NAIAS_2011.jpg/1280px-Volvo_C30_Electric_NAIAS_2011.jpg",
+      "foto": false
+    }
   },
   {
     "id": "a7d2537b51cf1387",
@@ -61779,10 +61803,15 @@
     "gorselSorgu": "science laboratory microscope medical",
     "source": "Evrim Ağacı",
     "sourceUrl": "https://evrimagaci.org/daha-yuksek-testosteron-gercekten-erkekligi-ve-babaligi-guclendiriyor-mu-23912",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Mars_Science_Laboratory_landing_ellipse_reduced.jpg/1280px-Mars_Science_Laboratory_landing_ellipse_reduced.jpg",
+    "image": "/kapak/4da632733a2f9bb7.webp",
     "publishedAt": "2026-10-23T11:55:03.000Z",
     "generatedAt": "2026-10-23T11:56:11.409Z",
-    "ekGorselDeneme": "2026-10-24T17:55:02.655Z"
+    "ekGorselDeneme": "2026-10-24T17:55:02.655Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Mars_Science_Laboratory_landing_ellipse_reduced.jpg/1280px-Mars_Science_Laboratory_landing_ellipse_reduced.jpg",
+      "foto": false
+    }
   },
   {
     "id": "87a99ed42fdc0096",
@@ -77224,7 +77253,7 @@
     "gorselSorgu": "Trump presidency defense law",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/commodities-news/trump-savunma-yasasn-devreye-soktu-petrol-fiyatlar-dustu-4116441",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Obama_hands_over_presidency_to_Trump_at_58th_Presidential_Inauguration_170120-D-NA975-1982.jpg/1280px-Obama_hands_over_presidency_to_Trump_at_58th_Presidential_Inauguration_170120-D-NA975-1982.jpg",
+    "image": "/kapak/02d163bfde387d97.webp",
     "publishedAt": "2026-10-23T00:45:41.000Z",
     "generatedAt": "2026-10-23T00:55:38.690Z",
     "gorselEk": [
@@ -77242,7 +77271,12 @@
         "lisansUrl": "",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Obama_hands_over_presidency_to_Trump_at_58th_Presidential_Inauguration_170120-D-NA975-0695.jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Obama_hands_over_presidency_to_Trump_at_58th_Presidential_Inauguration_170120-D-NA975-1982.jpg/1280px-Obama_hands_over_presidency_to_Trump_at_58th_Presidential_Inauguration_170120-D-NA975-1982.jpg",
+      "foto": false
+    }
   },
   {
     "id": "10e10558123489a5",
@@ -77505,10 +77539,15 @@
     "gorselSorgu": "Japanese yen strength chart",
     "source": "FXStreet",
     "sourceUrl": "https://www.fxstreet.com.tr/news/japon-yeni-tufe-enflasyonunun-hedefi-asmasiyla-guc-kazaniyor-boj-faiz-artirimlarini-destekliyor-202610230028",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/A_Japanese_5_Yen_%28%C2%A55%29_reverse_side.jpg/1280px-A_Japanese_5_Yen_%28%C2%A55%29_reverse_side.jpg",
+    "image": "/kapak/ef0e4469b60c8dfe.webp",
     "publishedAt": "2026-10-23T00:28:27.000Z",
     "generatedAt": "2026-10-23T02:02:18.099Z",
-    "ekGorselDeneme": "2026-10-25T14:54:44.485Z"
+    "ekGorselDeneme": "2026-10-25T14:54:44.485Z",
+    "kapak": {
+      "v": 2,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/A_Japanese_5_Yen_%28%C2%A55%29_reverse_side.jpg/1280px-A_Japanese_5_Yen_%28%C2%A55%29_reverse_side.jpg",
+      "foto": false
+    }
   },
   {
     "id": "9d842b902b229155",
@@ -89429,7 +89468,7 @@
     "gorselSorgu": "Tesla electric car factory",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/analyst-ratings/stonex-tesla-hissesi-icin-al-tavsiyesini-yineledi-475-dolar-hedef-fiyat-korudu-93CH-4115890",
-    "image": "/kapak/d3c9a2e476b38362.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Tesla_Giga_Factory_BerlinBrandenburg_Drohne_2.jpg/1280px-Tesla_Giga_Factory_BerlinBrandenburg_Drohne_2.jpg",
     "publishedAt": "2026-10-22T15:29:23.000Z",
     "generatedAt": "2026-10-22T15:42:08.717Z",
     "gorselEk": [
@@ -89447,12 +89486,7 @@
         "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Tesla_electric_car_recharging_in_Los_Angeles,_August_2020.jpg"
       }
-    ],
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Tesla_Giga_Factory_BerlinBrandenburg_Drohne_2.jpg/1280px-Tesla_Giga_Factory_BerlinBrandenburg_Drohne_2.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "73f45185ddc55642",
@@ -93600,7 +93634,7 @@
     "gorselSorgu": "iPhone 18 Pro Max smartphone",
     "source": "BeeTekno.com",
     "sourceUrl": "https://beetekno.com/iphone-18-pro-ve-iphone-18-pro-max-karsilastirmasi-max-modeli-gercekten-100-dolar-daha-fazlasina-deger-mi",
-    "image": "/kapak/3dd8743fa45551e3.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/IPhone_16_Pro_series.jpg/1280px-IPhone_16_Pro_series.jpg",
     "publishedAt": "2026-10-22T12:10:40.000Z",
     "generatedAt": "2026-10-22T12:12:47.729Z",
     "gorselEk": [
@@ -93619,12 +93653,7 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:IPhone,_iPod_touch_1G_and_iPhone_3G.jpg"
       }
     ],
-    "gorselDeneme": "2026-10-28T04:46:29.223Z",
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/IPhone_16_Pro_series.jpg/1280px-IPhone_16_Pro_series.jpg",
-      "foto": false
-    }
+    "gorselDeneme": "2026-10-28T04:46:29.223Z"
   },
   {
     "id": "5cecaf36d84a8709",
@@ -94343,7 +94372,7 @@
     "gorselSorgu": "Donald Trump press conference",
     "source": "Ensonhaber",
     "sourceUrl": "https://www.ensonhaber.com/donald-trumptan-iran-mesaji-onlari-devirecegiz-h1575961",
-    "image": "/kapak/bb59b7a2cbc69c10.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/P20250530MR-0484_President_Donald_Trump_participates_in_a_press_conference_with_departing_DOGE_adviser_Elon_Musk.jpg/1280px-P20250530MR-0484_President_Donald_Trump_participates_in_a_press_conference_with_departing_DOGE_adviser_Elon_Musk.jpg",
     "publishedAt": "2026-10-22T11:38:01.000Z",
     "generatedAt": "2026-10-22T11:41:32.688Z",
     "gorselEk": [
@@ -94361,12 +94390,7 @@
         "lisansUrl": "",
         "sayfa": "https://commons.wikimedia.org/wiki/File:P20250530MR-0603_President_Donald_Trump_participates_in_a_press_conference_with_departing_DOGE_adviser_Elon_Musk.jpg"
       }
-    ],
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/P20250530MR-0484_President_Donald_Trump_participates_in_a_press_conference_with_departing_DOGE_adviser_Elon_Musk.jpg/1280px-P20250530MR-0484_President_Donald_Trump_participates_in_a_press_conference_with_departing_DOGE_adviser_Elon_Musk.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "686d3f11a6cecddc",
@@ -94977,7 +95001,7 @@
     "gorselSorgu": "stock market trading floor",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/stock-market-news/seans-oncesi-hareketler-tesla-ibm-dustu-meta-kazanclar-havay-duzeltmedi-4114936",
-    "image": "/kapak/6e1a98f3f9bf4197.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Stock_market_in_Triest_today.JPG/1280px-Stock_market_in_Triest_today.JPG",
     "publishedAt": "2026-10-22T11:26:15.000Z",
     "generatedAt": "2026-10-22T11:30:41.078Z",
     "gorselEk": [
@@ -94988,12 +95012,7 @@
         "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:UK_Stock_Market_-_Investing_in_the_United_Kingdom.jpg"
       }
-    ],
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Stock_market_in_Triest_today.JPG/1280px-Stock_market_in_Triest_today.JPG",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "1c56cf9341962550",
@@ -109083,15 +109102,10 @@
     "gorselSorgu": "Sakarya city skyline",
     "source": "basingazetesi.net",
     "sourceUrl": "https://www.basingazetesi.net/amp/gundem/sakarya-da-tigcilar-kentsel-donusumunde-bir-ayda-45-yapi-yikildi-73280",
-    "image": "/kapak/fec77022bcdfc720.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Sakarya_city_park.jpg/1280px-Sakarya_city_park.jpg",
     "publishedAt": "2026-10-22T03:22:22.000Z",
     "generatedAt": "2026-10-22T04:14:05.595Z",
-    "gorselDeneme": "2026-10-28T04:46:49.909Z",
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Sakarya_city_park.jpg/1280px-Sakarya_city_park.jpg",
-      "foto": false
-    }
+    "gorselDeneme": "2026-10-28T04:46:49.909Z"
   },
   {
     "id": "43f40c871bd70122",
@@ -109162,15 +109176,10 @@
     "gorselSorgu": "galatasaray liverpool match",
     "source": "Bölge Gündemi",
     "sourceUrl": "https://www.bolgegundemi.com/video/lille-galatasaray-sari-kirmizili-ekip-fransada-4-2-kazandi-217484.html",
-    "image": "/kapak/83145fb98301e472.webp",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/47/Galatasaray_Liverpool_CL_2006.jpg",
     "publishedAt": "2026-10-22T03:16:10.000Z",
     "generatedAt": "2026-10-22T03:23:51.557Z",
-    "gorselDeneme": "2026-10-28T04:46:50.432Z",
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/4/47/Galatasaray_Liverpool_CL_2006.jpg",
-      "foto": false
-    }
+    "gorselDeneme": "2026-10-28T04:46:50.432Z"
   },
   {
     "id": "0081eefac955a7c5",
@@ -110998,7 +111007,7 @@
     "gorselSorgu": "stock market decline",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/stock-market-news/abd-hisse-senedi-vadeli-islemleri-tesla-ve-meta-kazanclaryla-dustu-4114075",
-    "image": "/kapak/b7e9cfb434ebcd99.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Stock_market_decline.jpg/1280px-Stock_market_decline.jpg",
     "publishedAt": "2026-10-22T01:17:07.000Z",
     "generatedAt": "2026-10-22T01:20:49.405Z",
     "gorselEk": [
@@ -111016,12 +111025,7 @@
         "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:UK_Stock_Market_-_Investing_in_the_United_Kingdom.jpg"
       }
-    ],
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Stock_market_decline.jpg/1280px-Stock_market_decline.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "929edeeb819e1f98",
@@ -111051,7 +111055,7 @@
     "gorselSorgu": "artificial intelligence bubble debt",
     "source": "BeInCrypto",
     "sourceUrl": "https://tr.beincrypto.com/timmer-ai-balon-borc-hisse-degerlemeleri/",
-    "image": "/kapak/929edeeb819e1f98.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/AIAP_IFGICT_Artificial_Intelligence_Auditor_Professional_Certificate.jpg/1280px-AIAP_IFGICT_Artificial_Intelligence_Auditor_Professional_Certificate.jpg",
     "publishedAt": "2026-10-22T01:08:26.000Z",
     "generatedAt": "2026-10-22T01:12:53.091Z",
     "gorselEk": [
@@ -111062,12 +111066,7 @@
         "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Labyrinthine_circuit_board_lines_-_Flickr_-_quapan.jpg"
       }
-    ],
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/AIAP_IFGICT_Artificial_Intelligence_Auditor_Professional_Certificate.jpg/1280px-AIAP_IFGICT_Artificial_Intelligence_Auditor_Professional_Certificate.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "e53d04154e68a0f1",
@@ -112298,14 +112297,9 @@
     "gorselSorgu": "digital TV broadcast",
     "source": "Fotomaç",
     "sourceUrl": "https://www.fotomac.com.tr/haberler/2026/10/21/tv-85-canli-yayin-ve-frekans-bilgileri-2026",
-    "image": "/kapak/3fa48c9dec3c2868.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Daftar_TV_Digital.jpg/1280px-Daftar_TV_Digital.jpg",
     "publishedAt": "2026-10-22T00:00:14.000Z",
-    "generatedAt": "2026-10-22T01:40:37.012Z",
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Daftar_TV_Digital.jpg/1280px-Daftar_TV_Digital.jpg",
-      "foto": false
-    }
+    "generatedAt": "2026-10-22T01:40:37.012Z"
   },
   {
     "id": "b2bab9b94436403d",
@@ -115374,7 +115368,7 @@
     "gorselSorgu": "Trump Putin meeting",
     "source": "Sözcü Gazetesi",
     "sourceUrl": "https://www.sozcu.com.tr/amp/putin-ile-gorusen-trump-duyurdu-cozume-hic-olmadigi-kadar-yakiniz-p371515",
-    "image": "/kapak/efee2e15c44cbaf2.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/President_Donald_Trump_and_President_Vladimir_Putin_meet_in_Helsinki.jpg/1280px-President_Donald_Trump_and_President_Vladimir_Putin_meet_in_Helsinki.jpg",
     "publishedAt": "2026-10-21T22:04:30.000Z",
     "generatedAt": "2026-10-21T23:04:38.596Z",
     "gorselEk": [
@@ -115393,12 +115387,7 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Vladimir_Putin,_Donald_Trump_%26_Sauli_Niinist%C3%B6_in_Helsinki,_16_July_2018.jpg"
       }
     ],
-    "gorselDeneme": "2026-10-28T04:47:03.368Z",
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/President_Donald_Trump_and_President_Vladimir_Putin_meet_in_Helsinki.jpg/1280px-President_Donald_Trump_and_President_Vladimir_Putin_meet_in_Helsinki.jpg",
-      "foto": false
-    }
+    "gorselDeneme": "2026-10-28T04:47:03.368Z"
   },
   {
     "id": "a74911935a06bea2",
