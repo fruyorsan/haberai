@@ -125,6 +125,66 @@
     }
   },
   {
+    "id": "d45347eddc406354",
+    "title": "Google, Project Suncatcher ile yapay zekayı yörüngeye taşıdı",
+    "slug": "google-project-suncatcher-ile-yapay-zekayi-yorungeye-tasidi",
+    "summary": "Google, Project Suncatcher girişimi kapsamında yörüngeye gönderdiği uyduda yapay zeka işlemcilerini başarıyla test etti. Şirket mühendisleri, uydudaki modelden haiku yazmasını isteyerek uzay tabanlı işlem yeteneklerini kanıtladı.",
+    "keyPoints": [
+      "Google, yörüngedeki uydu üzerinde Gemma 4 yapay zeka modeli ile ilk testi gerçekleştirdi.",
+      "Deneyde kullanılan deneysel uydu, toplam dört adet TPU yapay zeka işlemcisi taşıyor.",
+      "Mevcut enerji kapasitesi nedeniyle test süresince işlemcilerin yalnızca biri aktif edildi."
+    ],
+    "body": [
+      "Teknoloji dünyasının önde gelen isimlerinden Google, yapay zeka veri merkezlerini uzay boşluğuna taşıma vizyonu doğrultusunda Project Suncatcher projesini hayata geçirdi. Şirket, bu iddialı girişimin ilk somut adımı olarak ay başında özel olarak geliştirilen deneysel uyduyu yörüngeye fırlattı. Projenin temel amacı, yer çekiminden bağımsız bir ortamda veri işleme kapasitesini artırmak ve uzay tabanlı bir hesaplama ağı oluşturmak.",
+      "Fırlatma sonrası Google mühendisleri, uydunun tüm sistemlerini yaklaşık üç hafta boyunca titizlikle kontrol etti. İşlemcilerin uzay koşullarında stabil çalışıp çalışmadığını belirlemek amacıyla bir dizi teknik test gerçekleştirildi. Tüm kontrollerin başarıyla tamamlanmasının ardından, Dünya'daki bir yer istasyonu aracılığıyla uyduya ilk komut gönderildi. Bu süreçte uydunun üzerindeki donanımların zorlu çevre şartlarına tepkisi yakından izlendi.",
+      "Dünya'dan gönderilen komutu alan Gemma 4 yapay zeka modeli, uzay temalı kısa bir Japon şiiri olan haiku yazmakla görevlendirildi. Model; yıldız ışığı, veri akışı ve Dünya'yı konu alan üç dizelik şiiri başarıyla oluşturdu. Uydu Norveç semalarından geçerken bu yaratıcı cevabı başarıyla Dünya'ya iletmeyi başardı. Söz konusu başarı, yapay zeka modellerinin yörüngede komut işleyebileceğine dair ilk somut kanıt olma özelliğini taşıyor.",
+      "Söz konusu deneysel uydu, Google'ın kendi geliştirdiği dört adet TPU yapay zeka işlemcisiyle donatıldı. Ancak uydunun mevcut enerji kapasitesi, donanım mimarisinin aynı anda yalnızca bir işlemciyi çalıştırabilmesine olanak tanıyor. Bu kısıt, sistemin enerji verimliliği ve uzaydaki güç yönetimi konularında gelecekte daha fazla iyileştirme yapılması gerektiğini ortaya koyuyor.",
+      "Projenin önümüzdeki döneminde, söz konusu işlemcilerin uzay ortamındaki radyasyon ve sıcaklık değişimlerine karşı ne kadar dayanıklı olduğu araştırılacak. Şirketin uzun vadeli stratejisi, birbirine bağlı uydu ağları kurarak uzayda devasa yapay zeka işlemlerini gerçekleştirecek bir altyapı oluşturmak üzerine kurulu. Bu hedef, gelecekte Dünya'nın üzerindeki veri işleme yükünü uzaydaki bağımsız merkezlere devretme potansiyelini barındırıyor."
+    ],
+    "comment": "Google'ın bu hamlesi, veri merkezlerini Dünya dışına çıkarma fikrinin teknik açıdan uygulanabilir olduğunu kanıtlıyor. Dört işlemciden yalnızca birinin çalışabilmesi, yörüngedeki enerji yönetimi ve soğutma sistemlerinin hala ciddi bir kısıt olduğunu gösteriyor. Gelecekte birbirine bağlı uydu ağları kurulursa, yer tabanlı sunucuların maruz kaldığı fiziksel ve siber riskler azalabilir. Ancak bu teknoloji, ancak yüksek bant genişliğine sahip kesintisiz uydu haberleşme altyapısıyla verimli bir şekilde kullanılabilir.",
+    "editorNote": "Google, yörüngedeki uydusunda yapay zeka ile şiir yazdırarak uzay tabanlı hesaplama dönemini başlattı. Veri merkezlerini uzaya taşıma vizyonu teknik testlerle şekilleniyor.",
+    "tags": [
+      "Google",
+      "Yapay Zeka",
+      "Uzay Teknolojileri",
+      "Project Suncatcher",
+      "Gemma 4",
+      "Uydu"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "satellite in orbit space",
+    "source": "Türkiye Gazetesi",
+    "sourceUrl": "https://www.turkiyegazetesi.com.tr/teknoloji/googlein-ilk-denemesi-basarili-oldu-yapay-zeka-uzaya-tasiniyor-1826412",
+    "image": "/kapak/d45347eddc406354.webp",
+    "publishedAt": "2026-11-01T01:25:34.000Z",
+    "generatedAt": "2026-11-01T01:53:53.150Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/A_trio_of_CubeSats_is_ejected_into_Earth_orbit_from_a_small_satellite_orbital_deployer_%28iss072e352045%29.jpg/1280px-A_trio_of_CubeSats_is_ejected_into_Earth_orbit_from_a_small_satellite_orbital_deployer_%28iss072e352045%29.jpg",
+        "yazar": "NASA Johnson Space Center",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:A_trio_of_CubeSats_is_ejected_into_Earth_orbit_from_a_small_satellite_orbital_deployer_(iss072e352045).jpg",
+        "altyazi": "Uyduda yer alan yapay zeka işlemcisi TPU detayları"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Antennas_at_Awarua_Satellite_Ground_Station.jpg/1280px-Antennas_at_Awarua_Satellite_Ground_Station.jpg",
+        "yazar": "Satopsnz",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Antennas_at_Awarua_Satellite_Ground_Station.jpg",
+        "altyazi": "Veri alışverişini sağlayan yer istasyonu anten sistemi"
+      }
+    ],
+    "breaking": true,
+    "gorselDeneme": "2026-11-01T01:53:55.832Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://i.turkiyegazetesi.com.tr/images/2026/11/1/googlein-ilk-denemesi-basarili-oldu-yapay-zeka-uzaya-tasiniyor-1826412_20261101012647.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "256f8576c7118c3b",
     "title": "Almanya’da On Binlerce Vatandaş Sokaklara Çıktı ve Protesto Yürüyüşü Düzenledi",
     "slug": "almanyada-on-binlerce-vatandas-sokaklara-cikti-ve-protesto-yuruyusu-duzenledi",
@@ -231,7 +291,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:47.098Z",
+    "gorselDeneme": "2026-11-01T01:53:54.955Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://www.ortadoguhaber.com/wp-content/uploads/2026/10/hurmuz-bogazinda-tankerlere-sabotaj-pes-pese-patlamalar-vQL1p.webp",
@@ -283,7 +343,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:46.713Z",
+    "gorselDeneme": "2026-11-01T01:53:53.965Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ichef.bbci.co.uk/ace/standard/1200/cpsprodpb/b724/live/db1d9120-d456-11f1-906a-add2117fe3e6.jpg",
@@ -343,7 +403,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:47.857Z",
+    "gorselDeneme": "2026-11-01T01:53:55.623Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/01/thumbs_b_c_d5fc9a4770757af07a868601c9c6b1d4.jpg",
@@ -402,7 +462,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:48.057Z",
+    "gorselDeneme": "2026-11-01T01:53:55.338Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/01/thumbs_b_c_1a4921e9be6dcce50bb54f1b9b3ba6d3.jpg",
@@ -567,7 +627,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:47.244Z",
+    "gorselDeneme": "2026-11-01T01:53:55.352Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://img.toplumsal.com.tr/manset/2026/11/zeybek-fon-vurgunu-sektoru-vurabilir-1793492056.webp",
@@ -801,7 +861,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:48.175Z",
+    "gorselDeneme": "2026-11-01T01:53:56.236Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://by-tv.co.uk/wp-content/uploads/2026/02/Turkiye-Ticaret-Elcisi-Daniel-Zeichner.jpeg",
@@ -860,7 +920,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:47.514Z",
+    "gorselDeneme": "2026-11-01T01:53:55.561Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://img.toplumsal.com.tr/manset/2026/11/112-merkezleri-valiliklere-bagli-il-mudurlukleri-oldu-1793489154.webp",
@@ -1056,7 +1116,7 @@
     "publishedAt": "2026-10-31T22:11:45.000Z",
     "generatedAt": "2026-10-31T23:18:28.701Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:47.567Z",
+    "gorselDeneme": "2026-11-01T01:53:55.512Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ichef.bbci.co.uk/ace/standard/1200/cpsprodpb/2e52/live/ccbb9490-d53e-11f1-93de-81de9e959fac.jpg",
@@ -1367,7 +1427,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:49.058Z",
+    "gorselDeneme": "2026-11-01T01:53:55.851Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/01/thumbs_b_c_9f12177b7e24bc97a3d42ee6037e412d.jpg",
@@ -1433,7 +1493,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:47.999Z",
+    "gorselDeneme": "2026-11-01T01:53:56.363Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://img.poweredcache.net/www.teknoblog.com/wp-content/uploads/2026/10/nwox-hero-68faa68f3e93dcf2111f-1600x900-1.jpg?rs=fit&w=1600&h=900&ssl=1&format=webp",
@@ -1563,7 +1623,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:48.686Z",
+    "gorselDeneme": "2026-11-01T01:53:56.605Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212323/src/clayface-in-aldigi-ovguler-gise-rakamlarina-yansimadi212323_0.jpg",
@@ -1724,7 +1784,7 @@
     "publishedAt": "2026-10-31T20:17:00.000Z",
     "generatedAt": "2026-10-31T20:48:57.334Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:48.622Z",
+    "gorselDeneme": "2026-11-01T01:53:56.485Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/zonguldak-kamyonet-aa-2500115.jpg",
@@ -1936,7 +1996,7 @@
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_a3c656cfa70eff7a01fbcec058edcfce.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-11-01T01:46:48.243Z",
+    "gorselDeneme": "2026-11-01T01:53:56.135Z",
     "gorselKaynak": {
       "yazar": "Υπουργείο Εξωτερικών",
       "lisans": "CC BY-SA 2.0",
@@ -2072,7 +2132,7 @@
       "kaynak": "https://ichef.bbci.co.uk/ace/standard/1200/cpsprodpb/1d3a/live/6230e120-d570-11f1-93e1-3b657b665bcf.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-11-01T01:46:48.186Z",
+    "gorselDeneme": "2026-11-01T01:53:56.176Z",
     "gorselKaynak": {
       "yazar": "Kevin.B",
       "lisans": "CC BY-SA 4.0",
@@ -2117,7 +2177,7 @@
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212318/src/yeni-mass-effect-oyunu-star-wars-yuzunden-iptal-oldu212318_0.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-11-01T01:46:48.976Z",
+    "gorselDeneme": "2026-11-01T01:53:57.110Z",
     "gorselKaynak": {
       "yazar": "Michel Curi",
       "lisans": "CC BY 2.0",
@@ -2240,7 +2300,7 @@
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212256/src/epic-games-in-bu-haftaki-ucretsiz-oyunlari-erisime-acildi212256_0.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-11-01T01:46:49.340Z",
+    "gorselDeneme": "2026-11-01T01:53:57.504Z",
     "gorselKaynak": {
       "yazar": "Staffan Vilcans",
       "lisans": "CC BY-SA 2.0",
@@ -2317,7 +2377,7 @@
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_cc8ab1db723ebbfd4e32ca79ca22a146.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-11-01T01:46:48.805Z",
+    "gorselDeneme": "2026-11-01T01:53:56.559Z",
     "gorselKaynak": {
       "yazar": "The Palestine Festival of Literature (PalFest)",
       "lisans": "CC BY 2.0",
@@ -2513,7 +2573,7 @@
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_83f833d2c26fefdb97c55395a73bc64c.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-11-01T01:46:48.955Z",
+    "gorselDeneme": "2026-11-01T01:53:56.804Z",
     "gorselKaynak": {
       "yazar": "Florida House of Representatives",
       "lisans": "Kamu malı",
@@ -2632,7 +2692,7 @@
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212316/src/it-welcome-to-derry-icin-surpriz-bir-bolum-yayinlandi212316_0.jpg",
       "foto": true
     },
-    "gorselDeneme": "2026-11-01T01:46:49.054Z",
+    "gorselDeneme": "2026-11-01T01:53:57.545Z",
     "gorselKaynak": {
       "yazar": "Cityswift - Ireland",
       "lisans": "CC BY 2.0",
@@ -3058,7 +3118,7 @@
       "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Alfa_Romeo_155_GTA_S1_(53257971933).jpg"
     },
-    "gorselDeneme": "2026-11-01T01:46:49.511Z"
+    "gorselDeneme": "2026-11-01T01:53:57.321Z"
   },
   {
     "id": "773ddb42bd9a062d",
@@ -3408,7 +3468,7 @@
     "publishedAt": "2026-10-31T16:07:07.000Z",
     "generatedAt": "2026-10-31T16:14:20.264Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:49.399Z",
+    "gorselDeneme": "2026-11-01T01:53:57.456Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ares.shiftdelete.net/2026/10/579682e6b8679de1826b4fbcdab5e491a78cb191.webp",
@@ -3606,7 +3666,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:49.495Z",
+    "gorselDeneme": "2026-11-01T01:53:57.862Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ares.shiftdelete.net/2026/10/sam-altman-samsung-yoneticileri.webp",
@@ -3902,7 +3962,7 @@
     "publishedAt": "2026-10-31T14:28:32.000Z",
     "generatedAt": "2026-10-31T14:32:58.638Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:49.311Z",
+    "gorselDeneme": "2026-11-01T01:53:57.559Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_499c914b5e14ac25fbe0c256dd2894fc.jpg",
@@ -3964,7 +4024,7 @@
     "publishedAt": "2026-10-31T14:23:03.000Z",
     "generatedAt": "2026-10-31T14:26:14.092Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:49.853Z",
+    "gorselDeneme": "2026-11-01T01:53:57.665Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ares.shiftdelete.net/2026/10/mizan-27b-decision-turk-hukuku-karar-modeli.webp",
@@ -4098,7 +4158,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:49.529Z",
+    "gorselDeneme": "2026-11-01T01:53:57.741Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1670000/112-acil-cagri-merkezi-1671497.jpg",
@@ -4155,7 +4215,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:49.547Z",
+    "gorselDeneme": "2026-11-01T01:53:57.736Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ares.shiftdelete.net/2026/10/volta-motosiklet-modelleri-a101e-geliyor-2.webp",
@@ -4396,7 +4456,7 @@
     "publishedAt": "2026-10-31T11:21:05.000Z",
     "generatedAt": "2026-10-31T11:27:11.596Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:49.742Z",
+    "gorselDeneme": "2026-11-01T01:53:57.793Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_19886622889c3aa56ea9a5a71f7759ba.jpg",
@@ -4471,7 +4531,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:49.722Z",
+    "gorselDeneme": "2026-11-01T01:53:57.879Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_22c208dd2e8e0fc6619fa80d8df94b9d.jpg",
@@ -4597,7 +4657,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:49.810Z",
+    "gorselDeneme": "2026-11-01T01:53:58.809Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_bc8bc96d555a239679d993efb4d1f65e.jpg",
@@ -4776,7 +4836,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:49.704Z",
+    "gorselDeneme": "2026-11-01T01:53:57.944Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ares.shiftdelete.net/2026/10/3f1ebf5c6c619a977501aadd0d5626ef7113dae1.webp",
@@ -4883,7 +4943,7 @@
     "publishedAt": "2026-10-31T09:40:49.000Z",
     "generatedAt": "2026-10-31T09:47:22.605Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:51.203Z",
+    "gorselDeneme": "2026-11-01T01:53:57.977Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_321bcd72264b435a81723d61cdbb9b5e.jpg",
@@ -4941,7 +5001,7 @@
     "publishedAt": "2026-10-31T09:16:14.000Z",
     "generatedAt": "2026-10-31T09:25:37.687Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:49.732Z",
+    "gorselDeneme": "2026-11-01T01:53:57.886Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ichef.bbci.co.uk/ace/standard/1200/cpsprodpb/8e67/live/634d7ac0-d46a-11f1-a701-fddedf244c16.jpg",
@@ -5000,7 +5060,7 @@
     "publishedAt": "2026-10-31T09:12:41.000Z",
     "generatedAt": "2026-10-31T09:17:14.959Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:49.884Z",
+    "gorselDeneme": "2026-11-01T01:53:58.081Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ares.shiftdelete.net/2026/10/nokia-2360-flip-kapakli-tuslu-telefon.webp",
@@ -5082,7 +5142,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:50.024Z",
+    "gorselDeneme": "2026-11-01T01:53:58.263Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_8e5ae9cf6c23661e9154ab93f56351dc.jpg",
@@ -5128,7 +5188,7 @@
     "publishedAt": "2026-10-31T09:00:52.000Z",
     "generatedAt": "2026-10-31T09:01:37.497Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:50.317Z",
+    "gorselDeneme": "2026-11-01T01:53:59.384Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212302/1200x675volkswagen-turkiye-ye-geliyor-mu-yeni-corolla-ne-sunacak.jpg",
@@ -5304,7 +5364,7 @@
     "publishedAt": "2026-10-31T08:24:16.000Z",
     "generatedAt": "2026-10-31T08:27:07.920Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:50.151Z",
+    "gorselDeneme": "2026-11-01T01:53:58.233Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ares.shiftdelete.net/2026/10/8a9b42796a1888cb6e1da65cc5f7fff799135ab9.webp",
@@ -5382,7 +5442,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T01:46:50.076Z",
+    "gorselDeneme": "2026-11-01T01:53:58.318Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/cumhurbaskani-erdogan-kazakistan-cb-tokayev-aa-2500048.jpg",
@@ -116011,7 +116071,7 @@
     "gorselSorgu": "stock market decline",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/stock-market-news/abd-hisse-senedi-vadeli-islemleri-tesla-ve-meta-kazanclaryla-dustu-4114075",
-    "image": "/kapak/b7e9cfb434ebcd99.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Stock_market_decline.jpg/1280px-Stock_market_decline.jpg",
     "publishedAt": "2026-10-22T01:17:07.000Z",
     "generatedAt": "2026-10-22T01:20:49.405Z",
     "gorselEk": [
@@ -116029,12 +116089,7 @@
         "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:UK_Stock_Market_-_Investing_in_the_United_Kingdom.jpg"
       }
-    ],
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Stock_market_decline.jpg/1280px-Stock_market_decline.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "929edeeb819e1f98",
@@ -117305,14 +117360,9 @@
     "gorselSorgu": "digital TV broadcast",
     "source": "Fotomaç",
     "sourceUrl": "https://www.fotomac.com.tr/haberler/2026/10/21/tv-85-canli-yayin-ve-frekans-bilgileri-2026",
-    "image": "/kapak/3fa48c9dec3c2868.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Daftar_TV_Digital.jpg/1280px-Daftar_TV_Digital.jpg",
     "publishedAt": "2026-10-22T00:00:14.000Z",
-    "generatedAt": "2026-10-22T01:40:37.012Z",
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Daftar_TV_Digital.jpg/1280px-Daftar_TV_Digital.jpg",
-      "foto": false
-    }
+    "generatedAt": "2026-10-22T01:40:37.012Z"
   },
   {
     "id": "b2bab9b94436403d",
@@ -153682,7 +153732,7 @@
     "gorselSorgu": "opera stage performance art",
     "source": "Howl.link",
     "sourceUrl": "https://t.co/x7EAkzLjZl",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Monumental_stage_prop_from_the_opera_Aida_-_01.jpg/1280px-Monumental_stage_prop_from_the_opera_Aida_-_01.jpg",
+    "image": "/kapak/f4f35787bf383b81.webp",
     "publishedAt": "2026-10-20T11:17:06.000Z",
     "generatedAt": "2026-10-20T11:19:41.804Z",
     "gorselEk": [
@@ -153701,7 +153751,12 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Amargosa_Opera_House_Stage.jpg"
       }
     ],
-    "gorselDeneme": "2026-10-28T04:47:48.859Z"
+    "gorselDeneme": "2026-10-28T04:47:48.859Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Monumental_stage_prop_from_the_opera_Aida_-_01.jpg/1280px-Monumental_stage_prop_from_the_opera_Aida_-_01.jpg",
+      "foto": false
+    }
   },
   {
     "id": "9b6bb590f25c5610",
@@ -155345,7 +155400,7 @@
     "gorselSorgu": "Tesla electric vehicle factory",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/stock-market-news/tesla-ucuncu-ceyrek-raporunu-carsamba-gunu-acklayacak-93CH-4110412",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Minis_%26_Tesla_Model_Y_%40_Let%27s_Go_Electric%2C_Priory_Park%2C_Kingston_upon_Hull.jpg/1280px-Minis_%26_Tesla_Model_Y_%40_Let%27s_Go_Electric%2C_Priory_Park%2C_Kingston_upon_Hull.jpg",
+    "image": "/kapak/b37141328fbaac6d.webp",
     "publishedAt": "2026-10-20T10:41:17.000Z",
     "generatedAt": "2026-10-20T10:43:13.832Z",
     "gorselEk": [
@@ -155363,7 +155418,12 @@
         "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Four_Tesla_Electric_Vehicles_Columbus_Texas_Supercharger.jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Minis_%26_Tesla_Model_Y_%40_Let%27s_Go_Electric%2C_Priory_Park%2C_Kingston_upon_Hull.jpg/1280px-Minis_%26_Tesla_Model_Y_%40_Let%27s_Go_Electric%2C_Priory_Park%2C_Kingston_upon_Hull.jpg",
+      "foto": false
+    }
   },
   {
     "id": "9f0a0a9c52996f97",
