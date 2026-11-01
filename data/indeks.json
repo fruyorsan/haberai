@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T04:50:28.286Z",
+  "updatedAt": "2026-11-01T04:59:28.294Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5459,
-  "aday": 5459,
-  "uygun": 3402,
-  "secilen": 3306,
+  "toplamHaber": 5460,
+  "aday": 5460,
+  "uygun": 3403,
+  "secilen": 3307,
   "red": {
     "özet gövdeyle aynı": 112,
     "editör notu özetle aynı": 8,
@@ -94,12 +94,12 @@
       "twin": "Redmi K100 satışa çıktı: 10.000mAh bataryasıyla oyun dünyasını hedefliyor"
     },
     {
-      "title": "Rockstar, GTA 6 PC sürümünü Mayıs ortasına kadar geciktirebilir",
-      "twin": "Rockstar GTA 6 19 Kasım’da PS5 ve Xbox’ta Çıkıyor"
-    },
-    {
       "title": "Huawei Enjoy 100 Pro, HarmonyOS 7 ve 6.100 mAh bataryayla geldi",
       "twin": "Huawei, Wi-Fi 7 destekli yeni Router X2 Pro modelini satışa sundu"
+    },
+    {
+      "title": "Rockstar, GTA 6 PC sürümünü Mayıs ortasına kadar geciktirebilir",
+      "twin": "Rockstar GTA 6 19 Kasım’da PS5 ve Xbox’ta Çıkıyor"
     },
     {
       "title": "İsrail ordusunun çadır saldırısında biri çocuk 3 kişi hayatını kaybetti",
@@ -743,6 +743,7 @@
       "c1987bfe5778dd09",
       "690eec46cc8eec38",
       "256f8576c7118c3b",
+      "ed9785a10d22b046",
       "de77300dcc63145a",
       "b04bf9153fd49e44",
       "7b1dee6f9a822530"
@@ -4506,6 +4507,7 @@
     "79cee138d8bedd41",
     "9517ae82d5f5460a",
     "4afdd937c9ddd9d9",
+    "ed9785a10d22b046",
     "5263dd3dbec02aef",
     "6c39497558ba2214",
     "3b1967b22f28dbe9",
@@ -5165,6 +5167,7 @@
     "d58a190a19eea228",
     "05f7b3104ffc9e15",
     "5fd258a794f74d16",
+    "7b1dee6f9a822530",
     "6c6ed249285e2638",
     "df72e9e0e3e460a9",
     "6c5e6b5d68bb75d5",
@@ -5836,7 +5839,6 @@
     "98de1e3b30469a23",
     "e626f351b7f091ff",
     "680c98a6c849a432",
-    "7b1dee6f9a822530",
     "0ea4e9bbb5da1915",
     "a42e40b111147ba7",
     "c37bc70b8e2996a7",
