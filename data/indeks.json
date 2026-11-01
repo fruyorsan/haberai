@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T22:05:24.537Z",
+  "updatedAt": "2026-11-01T22:12:45.553Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5540,
-  "aday": 5540,
-  "uygun": 3486,
-  "secilen": 3390,
+  "toplamHaber": 5541,
+  "aday": 5541,
+  "uygun": 3487,
+  "secilen": 3391,
   "red": {
     "özet gövdeyle aynı": 113,
     "editör notu özetle aynı": 8,
@@ -90,10 +90,6 @@
       "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
     },
     {
-      "title": "Sony Yeni LYTIA 720 Sensörü 50 MP ile Gece Çekimlerini Yarıyor",
-      "twin": "Sony mobil kameralar için 50 MP LYTIA 720 sensörünü duyurdu"
-    },
-    {
       "title": "Türkiye, Güney Kore Ticaretini 15 Milyar Dolar Yanağına Çekmeye Yönelecek",
       "twin": "Türkiye ve Güney Kore ticaret hacmini 15 milyar dolara çıkarmayı hedefliyor"
     },
@@ -108,6 +104,10 @@
     {
       "title": "Rockstar, GTA 6 PC sürümünü Mayıs ortasına kadar geciktirebilir",
       "twin": "Rockstar GTA 6 19 Kasım’da PS5 ve Xbox’ta Çıkıyor"
+    },
+    {
+      "title": "Sony Yeni LYTIA 720 Sensörü 50 MP ile Gece Çekimlerini Yarıyor",
+      "twin": "Sony mobil kameralar için 50 MP LYTIA 720 sensörünü duyurdu"
     },
     {
       "title": "İsrail ordusunun çadır saldırısında biri çocuk 3 kişi hayatını kaybetti",
@@ -1167,9 +1167,10 @@
       "1a5353dfb43a0281",
       "f8e0a716aa88bbc1",
       "b86f111e59ac85cb",
-      "e630747aaad9fcfa",
       "dc05b335ef579322",
-      "a84b55bf6ea87faa"
+      "e630747aaad9fcfa",
+      "a84b55bf6ea87faa",
+      "96ad33a59f014ade"
     ],
     "2026-10-22": [
       "686d3f11a6cecddc",
@@ -4090,6 +4091,7 @@
     "97fbb5d477689705",
     "5fce7b914957bc6b",
     "2b5454c4419965d5",
+    "dc05b335ef579322",
     "12c5feaad9110757",
     "e1d2fb372f48d0a4",
     "e04c349360953110",
@@ -4272,7 +4274,6 @@
     "f5bb19bdb211bb19",
     "c233854c2098e9bf",
     "559ce3912724137d",
-    "dc05b335ef579322",
     "80f8c078c25d271a",
     "763a99da6625bb99",
     "4023ecfa66c5083e",
@@ -6824,6 +6825,7 @@
     "84a00b9f728df357",
     "5cb7ad011da62c53",
     "51281490fec78ee6",
+    "96ad33a59f014ade",
     "c2255cc006eea252",
     "0701ecf24342eb60",
     "682789016b54ce42",
