@@ -127,6 +127,10 @@ const sirali = articles
   .filter((a) => {
     if (!a || !a.id) return false;
     if (tekId) return a.id === tekId;
+    // Görsel ajanının bilinçli seçtiği kapak (kapak.ajan) hiçbir toplu turda
+    // ezilmez: aksi halde ajan fotoğrafı yerine yayıncının stok karesi ya da
+    // tasarım kartı geri gelebiliyor, metadata ile dosya birbirinden kopuyordu.
+    if (a.kapak?.ajan) return false;
     if (sadeceKart) {
       // Yalnızca hâlihazırda tasarım kartı olan kapaklar yenilenir.
       return a.kapak && a.kapak.foto === false && a.image?.startsWith(`${URL_TABANI}/`);
@@ -1591,7 +1595,9 @@ if (process.argv.includes("--taze")) {
       a.kapak.kaynak = guncel;
       const sonuc = await kapakUret(a);
       a.image = sonuc.url;
+      const oncekiAjan = a.kapak?.ajan;
       a.kapak = { v: 3, kaynak: sonuc.kaynak || guncel, foto: sonuc.foto };
+      if (oncekiAjan) a.kapak.ajan = oncekiAjan;
       console.log(`Taze kapak: ${a.title.slice(0, 62)}`);
       yenilenen++;
     } catch (err) {
@@ -1633,7 +1639,9 @@ await havuz(hedefler, paralel, async (a) => {
     console.log(`${dry ? "[dry] " : ""}${a.title.slice(0, 70)} → ${sonuc.url}`);
     if (!dry) {
       a.image = sonuc.url;
+      const oncekiAjan = a.kapak?.ajan;
       a.kapak = { v: 3, kaynak: sonuc.kaynak || eski, foto: sonuc.foto };
+      if (oncekiAjan) a.kapak.ajan = oncekiAjan;
       if (sonuc.atif) a.gorselKaynak = sonuc.atif;
     }
     uretilen++;
