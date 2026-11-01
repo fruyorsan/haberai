@@ -231,6 +231,72 @@ const KATEGORI_SORGULARI = [
 /** Model adı markayı içermiyorsa ve jenerik bir ürün ailesiyse markayı ekle. */
 const JENERIK_MODEL = /^(Buds|Watch|Tab|Fold|Flip|Pro|Ultra|AirPods|FreeBuds)\b/i;
 
+// Şirket haberlerinde (kâr, yatırım, ortaklık) ürün adı geçmez. Marka adıyla
+// aramak "Samsung" → genel şehir silüeti, "AMD" → eski çip müzesi karesi
+// getiriyordu. Oysa editoryal kapaklarda o şirketin amiral ürünü kullanılır:
+// Samsung kâr haberinde Galaxy telefonu, Tesla haberinde Model 3.
+const MARKA_URUN = new Map([
+  // Somut ve güncel model adları: "Samsung Galaxy smartphone" tek sonuç
+  // döndürürken "Samsung Galaxy S24" beş temiz ürün fotoğrafı getiriyor.
+  ["Samsung", "Samsung Galaxy S24"],
+  ["Apple Inc", "iPhone 16 Pro"],
+  ["Google", "Google Pixel 9"],
+  ["Huawei", "Huawei Pura 70"],
+  ["Xiaomi", "Xiaomi 14"],
+  ["OnePlus", "OnePlus smartphone"],
+  ["Oppo", "Oppo smartphone"],
+  ["Vivo", "Vivo smartphone"],
+  ["Realme", "Realme smartphone"],
+  ["Honor", "Honor smartphone"],
+  ["Nothing Phone", "Nothing Phone"],
+  ["Sony", "Sony PlayStation 5"],
+  ["Microsoft", "Microsoft Surface laptop"],
+  ["Meta", "Meta Quest 3"],
+  ["Nvidia", "GeForce RTX 4090"],
+  ["AMD", "AMD Ryzen"],
+  ["Intel", "Intel Core i9"],
+  ["Qualcomm", "Qualcomm Snapdragon chip"],
+  ["Tesla", "Tesla Model 3"],
+  ["SpaceX", "SpaceX Starship"],
+  ["PlayStation", "PlayStation 5 console"],
+  ["Xbox", "Xbox Series X console"],
+  ["Nintendo", "Nintendo Switch"],
+]);
+
+// Bulut/yapay zeka şirketlerinin çip ve altyapı haberlerinde veri merkezi
+// fotoğrafı, ürün fotoğrafından daha doğru bir editoryal karşılıktır.
+const BULUT_MARKA = new Set(["Google", "Microsoft", "Meta", "OpenAI", "Anthropic"]);
+
+// Görsel kimliği olmayan (ürünü fotoğrafta tanınmayan) markalar: tek başına
+// arandığında alakasız sonuç getirirler ("Apple" → elma, "Google" → kampüs).
+const HIZMET_MARKA = new Set([
+  "Apple Inc",
+  "Google",
+  "Meta",
+  "Microsoft",
+  "OpenAI",
+  "Anthropic",
+  "Claude",
+  "ChatGPT",
+  "Gemini",
+  "Copilot",
+  "Microsoft Windows",
+  "Android",
+  "iOS",
+  "YouTube",
+  "Netflix",
+  "Spotify",
+  "TikTok",
+  "Instagram",
+  "WhatsApp",
+  "Telegram",
+  "Twitter",
+  "Steam",
+  "Epic Games",
+  "NASA",
+  "Starlink",
+]);
+
 /** Marka/model adlarını İngilizce Commons sorgusuna çevirir. */
 export function varlikSorgulari(article) {
   const baslik = String(article?.title || "");
@@ -256,6 +322,9 @@ export function varlikSorgulari(article) {
     const re = new RegExp(`(^|[^a-z0-9])${anahtar.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}([^a-z0-9]|$)`);
     if (re.test(alt) && !markalar.includes(ad)) markalar.push(ad);
   }
+  // Başlıkta önce geçen marka daha önemli: "AMD ve Meta..." haberinde arama
+  // Meta Quest'le değil AMD ürünüyle başlamalı.
+  markalar.sort((a, b) => alt.indexOf(a.split(" ")[0].toLowerCase()) - alt.indexOf(b.split(" ")[0].toLowerCase()));
 
   const sorgular = [];
   const ekle = (s) => {
@@ -269,12 +338,11 @@ export function varlikSorgulari(article) {
       .replace(/\bGalaxyFold\b/i, "Galaxy Z Fold")
       .replace(/\bGalaxyFlip\b/i, "Galaxy Z Flip")
       .replace(/\bGalaxy\s?Z\s?(Fold|Flip)\b/i, "Galaxy Z $1");
-    const tam = /^samsung\b/i.test(temiz) ? temiz : `Samsung ${temiz}`;
-    const markaIcerir = markalar.some((m) =>
-      tam.toLowerCase().startsWith(m.toLowerCase().split(" ")[0])
-    );
-    if (markaIcerir || !JENERIK_MODEL.test(temiz)) ekle(tam);
-    else ekle(`${markalar[0] || ""} ${temiz}`.trim());
+    // "Galaxy ..." tek başına aranınca da Samsung ürünleri gelir; marka eklemek
+    // gereksiz. Jenerik ürün ailesi ("Buds Pro") tek marka varsa onunla aranır;
+    // birden çok marka varsa yanlış eşleşme olmasın diye yalnız bırakılır.
+    if (JENERIK_MODEL.test(temiz) && markalar.length === 1) ekle(`${markalar[0]} ${temiz}`);
+    else ekle(temiz);
   }
 
   // Model yoksa önce ürün kategorisi (somut), sonra marka: "tuşlu telefonlar"
@@ -287,7 +355,15 @@ export function varlikSorgulari(article) {
       }
     }
   }
-  for (const marka of markalar.slice(0, 2)) ekle(marka);
+  for (const marka of markalar.slice(0, 2)) {
+    if (/(çip|veri merkezi|sunucu)/i.test(metin) && BULUT_MARKA.has(marka)) {
+      ekle("data center server room");
+    } else if (MARKA_URUN.has(marka)) {
+      ekle(MARKA_URUN.get(marka));
+    } else if (!HIZMET_MARKA.has(marka)) {
+      ekle(marka);
+    }
+  }
 
   return sorgular.slice(0, 3);
 }
@@ -712,6 +788,11 @@ KURALLAR:
 - Yayıncının başlık bastığı kart, logo, metin ağırlıklı görsel ve kolaj kesinlikle seçilmez.
 - "Kısmen temsil ediyor", "genel atmosferi veriyor" gibi gerekçeler alaka için yeterli değildir.
 - Emin değilsen uygun=false ver; yanlış fotoğraf boş karttan daha çok güven kaybettirir.
+- ŞEHİR SİLÜETİ, gökdelen, genel bina/plaza, genel ofis masası, kalabalık sokak gibi
+  "sektörü çağrıştıran" kareler alaka 40'ı GEÇMEMELİ; bunlar haberin öznesini göstermez.
+- Sahne soluk, gri, kapalı havada çekilmiş ya da aşırı sıradan ise dikkat 40'ı GEÇMEMELİ.
+- Büyüteç, grafik, ok, ampul, beyin maketi gibi stok "konsept" illüstrasyonları uygun=false.
+- Karedeki kişinin yüzü kırpılmış ya da yalnızca el/ense görünüyorsa dikkat 50'yi geçmemeli.
 
 Yanıt SADECE şu JSON olsun:
 {"adaylar":[{"i":1,"alaka":0,"dikkat":0,"kalite":0,"uygun":true,"tip":"foto","neden":"kısa Türkçe gerekçe"}],"secim":1}
@@ -764,7 +845,6 @@ async function geminiVision(adaylar, article, brief, sayac, debug = false) {
       if (visionTukendi.has(etiket)) continue;
       if (sayac && !sayac.izinVar()) return null;
       try {
-        sayac?.artir();
         const res = await istek(
           `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`,
           {
@@ -782,6 +862,9 @@ async function geminiVision(adaylar, article, brief, sayac, debug = false) {
           },
           1
         );
+        // Bütçe yalnızca GERÇEKTEN cevap alınan çağrılar için harcanır: 429/503
+        // dönen denemeler günlük sayacı boşa tüketiyordu.
+        if (res?.ok) sayac?.artir();
         if (!res || !res.ok) {
           if (debug) {
             console.log(
@@ -880,7 +963,6 @@ async function cloudflareVision(adaylar, article, brief, sayac, debug = false) {
     if (!b64) continue;
     const istem = VISION_TEK_ISTEM(article, brief);
     try {
-      sayac?.artir();
       const res = await istek(
         `https://api.cloudflare.com/client/v4/accounts/${acc}/ai/run/${model}`,
         {
@@ -917,6 +999,7 @@ async function cloudflareVision(adaylar, article, brief, sayac, debug = false) {
         }
         continue;
       }
+      sayac?.artir();
       const json = await res.json();
       const metin = json?.result?.response || json?.result?.description || "";
       const veri = jsonAyikla(metin);
@@ -982,7 +1065,6 @@ export async function gorselUret(prompt, sayac, { debug = false } = {}) {
     for (const model of modeller) {
       if (sayac && !sayac.izinVar()) return null;
       try {
-        sayac?.artir();
         const govde = model.includes("flux-1-schnell")
           ? { prompt: sonPrompt }
           : { prompt: sonPrompt, width: GENISLIK, height: YUKSEKLIK };
@@ -1007,7 +1089,10 @@ export async function gorselUret(prompt, sayac, { debug = false } = {}) {
           const json = await res.json();
           if (json?.result?.image) buf = Buffer.from(json.result.image, "base64");
         }
-        if (buf && buf.length > 12000) return { veri: buf, model: model.split("/").pop() };
+        if (buf && buf.length > 12000) {
+          sayac?.artir();
+          return { veri: buf, model: model.split("/").pop() };
+        }
         if (debug) console.log(`      AI üretim ${model}: görsel dönmedi`);
       } catch (err) {
         if (debug) console.log(`      AI üretim ${model} hata: ${err.message}`);
@@ -1165,7 +1250,11 @@ export async function adaylariTopla(article, brief, { kullanilan = new Set(), me
       const metin = `${a.baslik || ""} ${a.metin || ""}`.toLocaleLowerCase("tr-TR");
       let eslesme = 0;
       for (const k of kokler) if (metin.includes(k)) eslesme++;
-      a.onEk = Math.min(3, eslesme) * 7;
+      let puan = Math.min(3, eslesme) * 7;
+      // Mağaza/vitrin çekimleri ürüne güvenlik aparatı, fiyat etiketi ve arka
+      // plan kalabalığı sokar; temiz ürün karelerinin gerisinde kalsın.
+      if (/store|shop|retail|display|security|vitrin|mağaza/.test(metin)) puan -= 12;
+      a.onEk = puan;
     }
   }
 
@@ -1179,7 +1268,10 @@ export async function adaylariTopla(article, brief, { kullanilan = new Set(), me
 export async function adaylariDegerlendir(adaylar, { kok = process.cwd(), debug = false, enFazla = 4 } = {}) {
   const puanli = [];
   for (const aday of adaylar) {
-    if (puanli.length >= enFazla + 2) break;
+    // Sorgu sırasına göre ilk 6 adayla yetinmek, kötü bir varlık sorgusunun
+    // (ör. "Apple" → elma fotoğrafları) bütün vision kontenjanını doldurmasına
+    // yol açıyordu. Daha geniş ölçüp en iyileri seçiyoruz.
+    if (puanli.length >= enFazla + 10) break;
     try {
       const veri = await gorselIndir(aday.url, { kok });
       if (!veri) continue;
@@ -1204,6 +1296,16 @@ export async function adaylariDegerlendir(adaylar, { kok = process.cwd(), debug 
 
   // Vision'a en iyi 4 aday gider; mevcut kapak her zaman aralarında olur.
   const secilen = puanli.slice(0, enFazla);
+  // Ürün adı eşleşen aday sezgisel olarak ilk 4'e giremiyorsa (ör. parlak ama
+  // alakasız bir stok kare önde), son sıraya onu koy: vision'ın gerçek ürünü
+  // görme şansı olsun.
+  if (!secilen.some((x) => (Number(x.onEk) || 0) >= 7)) {
+    const varlik = puanli.find((x) => !x.mevcut && (Number(x.onEk) || 0) >= 7);
+    if (varlik && !secilen.includes(varlik)) {
+      secilen.pop();
+      secilen.push(varlik);
+    }
+  }
   const mevcut = puanli.find((x) => x.mevcut);
   if (mevcut && !secilen.includes(mevcut)) {
     secilen.pop();
@@ -1449,7 +1551,55 @@ export async function ajanKapakUret(article, opts = {}) {
   // tam olarak "dosya adı/parlaklık eşleşen alakasız kare" sorunuydu. Sağlayıcı
   // yoksa mevcut kapak korunur, tur boşuna kota harcamaz.
   const vision = await visionSkorla(secilen, article, brief, sayac, debug);
+  // Tasarım kartı kapağı (fotoğrafı yok): vision sağlayıcısı yoksa bile, başlıkta
+  // geçen ürün/marka adını taşıyan gerçek bir fotoğraf boş karttan iyidir.
+  // Bu, yalnızca kart kapaklarında ve yalnızca ada birebir uyan adayda geçerli.
+  const kartMi = article.kapak?.foto === false;
+  // Ajanın kendi seçtiği ama vision'da vasat kalan kapak (ör. 69p şehir
+  // silüeti). Bu durumda da ürün adı birebir eşleşen aday tercih edilir.
+  const zayifMevcut =
+    Boolean(article.kapak?.ajan) && Number(article.kapak.ajan.skor || 0) < 75;
   if (!vision?.length) {
+    if (kartMi || zayifMevcut) {
+      const aday = secilen
+        .filter((x) => !x.mevcut && (Number(x.onEk) || 0) >= 7 && x.onPuan >= (kartMi ? 72 : 65))
+        .sort((a, b) => b.onPuan - a.onPuan)[0];
+      if (aday) {
+        const yazilan = await kapakYaz(article, aday.veri, { kok, dry, tip: "foto" });
+        if (yazilan) {
+          return {
+            degisti: true,
+            neden: "ürün adı eşleşen fotoğraf (vision yok)",
+            kapak: {
+              v: 3,
+              kaynak: aday.url,
+              foto: true,
+              ajan: {
+                v: 1,
+                secim: aday.kaynak,
+                skor: Math.round(aday.onPuan),
+                neden: kartMi
+                  ? "Tasarım kartı yerine, başlıktaki ürün/marka adını taşıyan serbest lisanslı fotoğraf seçildi."
+                  : "Vasat kalan önceki kapak yerine, başlıktaki ürün/marka adını taşıyan fotoğraf seçildi.",
+                brif: brief.sahne,
+                sorgular: brief.sorgular || [],
+                tarih: new Date().toISOString(),
+              },
+            },
+            gorselKaynak: atifYap(aday),
+            brief,
+            secim: {
+              kaynak: aday.kaynak,
+              url: aday.url,
+              skor: Math.round(aday.onPuan),
+              neden: "Ürün adı eşleşmesi (vision sağlayıcısı yok)",
+              vision: false,
+            },
+            url: yazilan.url,
+          };
+        }
+      }
+    }
     return {
       degisti: false,
       neden: "görsel denetimi yapılamadı (vision sağlayıcısı yok)",
@@ -1474,7 +1624,13 @@ export async function ajanKapakUret(article, opts = {}) {
 
   const mevcut = skorlu.find((x) => x.mevcut);
   const enIyiArama =
-    skorlu.find((x) => !x.mevcut && x.uygun && (x.alaka ?? 0) >= 60 && x.skor >= 62) || null;
+    skorlu.find(
+      (x) =>
+        !x.mevcut &&
+        x.uygun &&
+        (x.alaka ?? 0) >= (kartMi ? 55 : 60) &&
+        x.skor >= (kartMi ? 60 : 62)
+    ) || null;
   if (debug) {
     for (const x of skorlu) {
       console.log(
@@ -1486,11 +1642,40 @@ export async function ajanKapakUret(article, opts = {}) {
   }
 
   // Mevcut kapak zaten iyiyse ve yeni aday anlamlı fark yaratmıyorsa dokunma.
+  // Tasarım kartında karşılaştırılacak fotoğraf yok; eşik daha düşük.
   const mevcutSkor = mevcut?.skor ?? 0;
   const mevcutIyimi = Boolean(mevcut && mevcut.uygun && mevcutSkor >= 66);
-  const esik = mevcutIyimi ? mevcutSkor + 5 : 62;
+  const esik = kartMi ? 55 : mevcutIyimi ? mevcutSkor + 5 : 62;
 
   let secim = enIyiArama && enIyiArama.skor >= esik ? enIyiArama : null;
+
+  // Mevcut kapak neredeyse kullanılamaz durumdaysa (vision 55'in altı) ve
+  // başlıktaki ürün adını taşıyan bir aday varsa, puanı düşük olsa da onu
+  // tercih et: markanın kendi ürünü, alakasız bir şehir silüetinden iyidir.
+  // Şirket finansmanı haberlerinde (kâr, gelir, hisse) vision "ürün konuyu
+  // anlatmıyor" dese de amiral ürün fotoğrafı editoryal standarttır.
+  const finansHaberi = /(kâr|kar\b|gelir|ciro|hisse|yatırım|rapor|çeyrek|bilanço)/i.test(
+    `${article.title || ""} ${String(article.summary || "").slice(0, 300)}`
+  );
+  if (!secim && mevcut && mevcutSkor < 55) {
+    const varlikAday = skorlu
+      .filter(
+        (x) =>
+          !x.mevcut &&
+          x.uygun &&
+          (Number(x.onEk) || 0) >= 7 &&
+          x.onPuan >= 95 &&
+          !/filigran|watermark/i.test(String(x.neden || "")) &&
+          ((x.alaka ?? 0) >= 40 || finansHaberi)
+      )
+      // Ürün fotoğrafında belirleyici olan görsel kalite: vision "çip değil"
+      // diye 30 verse de temiz ürün karesi en iyi seçenektir.
+      .sort((a, b) => b.onPuan - a.onPuan)[0];
+    if (varlikAday) {
+      secim = varlikAday;
+      if (debug) console.log(`      · zayıf mevcut kapak: ürün adı eşleşen aday seçildi (${varlikAday.skor.toFixed(0)}p)`);
+    }
+  }
 
   // 5) ÜRETİM: Arama sonucu yoksa ya da zayıfsa konsept görsel üret.
   // Üretilen kare, mevcut iyi kapaktan ya da arama adayından ANLAMLI biçimde

@@ -91,11 +91,54 @@ AI sağlayıcısı yoksa `gorselBrifiYedek(article)` devreye girer: başlık,
 
 | Kaynak | Lisans filtresi | Not |
 | --- | --- | --- |
-| Wikimedia Commons | CC0, kamu malı, CC BY, CC BY-SA | `filetype:bitmap`, min 700×350, oran 1.15–2.8 |
+| Wikimedia Commons | CC0, kamu malı, CC BY, CC BY-SA | `filemime:image/jpeg`, min 700×350, oran 1.15–2.8 |
 | Openverse | `cc0,by,by-sa` | `size=large`, `aspect_ratio=wide`, `mature=false` |
 | Arşiv (`gorselEk`) | CC0, kamu malı, CC BY, CC BY-SA | Habere daha önce eklenmiş, altyazısı bağlanmış kareler |
 | Arşiv (`gorselKaynak`) | Commons dosyasıysa | Tasarım kartının altındaki gerçek fotoğraf |
 | Mevcut kapak | — | Yalnızca "yeni aday gerçekten daha iyi mi?" karşılaştırması |
+
+**Varlık sorguları (en önemli kalite kaldıracı).** Commons başlıkla arama yapar;
+"smartphone camera under display" gibi kavramsal sorgular ya boş dönüyor ya da
+alakasız kare getiriyor. Bu yüzden haber metninden marka ve model adları
+çıkarılıp (`varlikSorgulari`) aramanın başına konur:
+
+| Haber | Sorgular |
+| --- | --- |
+| "Samsung, ekran altı kamera..." | `Galaxy Z Fold`, `Samsung` |
+| "OnePlus Buds Pro 4 listelendi" | `OnePlus Buds Pro 4`, `OnePlus` |
+| "En iyi tuşlu telefonlar" | `feature phone Nokia` |
+| "GTA 6 19 Kasım'da çıkıyor" | `Xbox`, `GTA 6`, `Rockstar Games` |
+
+Model adı markayı içermiyorsa marka eklenir (`Buds Pro` → `OnePlus Buds Pro`);
+"Apple", "Google", "Windows" gibi görsel kimliği olmayan servis markaları tek
+başına aranmaz ("Apple" → elma fotoğrafı). Model yoksa Türkçe ürün kategorisi
+İngilizce karşılığına çevrilir (tuşlu telefon → feature phone, katlanabilir
+telefon → foldable smartphone).
+
+**Şirket haberlerinde amiral ürün aranır.** Kâr, yatırım, ortaklık haberlerinde
+ürün adı geçmez; marka adıyla arama "Samsung" → genel şehir silüeti, "AMD" →
+eski çip müzesi karesi getiriyordu. `MARKA_URUN` eşlemesi bunun yerine şirketin
+tanınan ürününü arar:
+
+| Haber | Sorgu |
+| --- | --- |
+| "Samsung rekor kâr açıkladı" | `Samsung Galaxy S24` |
+| "AMD ve Meta 1 milyar dolar" | `AMD Ryzen` |
+| "Alphabet gelirini artırdı" | `Google Pixel 9` |
+| "Tesla hisseleri için Al tavsiyesi" | `Tesla Model 3` |
+
+Çip/veri merkezi bağlamında Google, Microsoft, Meta, OpenAI için
+`data center server room` aranır. Model adları da güncel ve somut tutulur:
+`Samsung Galaxy smartphone` tek sonuç döndürürken `Samsung Galaxy S24` beş
+temiz ürün fotoğrafı getiriyor.
+
+Mağaza/vitrin çekimleri (`store`, `shop`, `display`, `security`, `vitrin`)
+ön elemede −12 puan alır: güvenlik aparatı, fiyat etiketi ve kalabalık arka plan
+kapakta amatör duruyor.
+
+Aday başlığında geçen marka/model kökleri ön elemede küçük bir öncelik kazanır
+(`onEk`), böylece vision'a giren 4 kare arasında ürünü doğrudan gösteren
+fotoğraf da bulunur.
 
 **Kaynak sitenin kendi fotoğrafları aday yapılmaz.** İki nedeni var:
 
@@ -147,13 +190,28 @@ Workers AI vision'ı (`@cf/meta/llama-3.2-11b-vision-instruct`) kullanır.
 
 `uygun: false` olan aday asla seçilmez. Vision sağlayıcısı yoksa **kapak
 değiştirilmez**; sezgisel puana göre alakasız kare seçmek bilinçli olarak
-engellenmiştir.
+engellenmiştir. İki istisna vardır ve ikisi de ürün adı birebir eşleşmesi
+(`onEk >= 7`) ister:
+
+1. **Tasarım kartı** (`kapak.foto === false`): boş karttan iyidir.
+2. **Vasat mevcut kapak** (ajanın seçtiği kapak vision'da 55'in altında):
+   markanın kendi ürünü, alakasız bir şehir silüetinden iyidir. Adayın sezgisel
+   puanı en az 95 olmalı ve vision gerekçesinde filigran/watermark geçmemelidir.
+
+Vision'ın "ürün konuyu anlatmıyor" dediği şirket finansmanı haberlerinde (kâr,
+gelir, hisse, yatırım, çeyrek) markanın amiral ürün fotoğrafı editoryal standart
+olduğu için kabul edilir.
 
 Seçim eşiği: arama/arşiv adayı için `alaka >= 60` **ve** `skor >= 62`. Mevcut
 kapak 66 puanın üzerindeyse yeni aday ondan en az +5 puan yüksek olmalıdır.
-AI üretimi için de `alaka >= 60`, `kalite >= 50`, `skor >= 62` ve mevcut/seçili
-adaydan en az +4 puan şartı aranır. Böylece "genel atmosfer" diye yüksek puan
-alan alakasız kareler ve filigran/bozuk yazı taşıyan üretimler elenir.
+Tasarım kartında eşik `alaka >= 55`, `skor >= 60`. AI üretimi için de
+`alaka >= 60`, `kalite >= 50`, `skor >= 62` ve mevcut/seçili adaydan en az +4
+puan şartı aranır. Böylece "genel atmosfer" diye yüksek puan alan alakasız
+kareler ve filigran/bozuk yazı taşıyan üretimler elenir.
+
+Vision istemi ayrıca şunları açıkça cezalandırır: şehir silüeti/gökdelen/genel
+plaza, soluk ve kapalı hava çekimleri, büyüteç-ampul-beyin gibi stok "konsept"
+illüstrasyonları, yüzü kırpılmış stok insan kareleri.
 
 ### 5. Üretim
 
@@ -172,6 +230,19 @@ atılmaz. Prompt'a her zaman "no text, no words, no letters, no numbers, no
 logos, no watermark, no collage" eklenir.
 
 ### 6. Kaydetme
+
+Kırpma `attention` stratejisiyle konuyu ortalar; üzerine hafif bir editoryal
+derecelendirme uygulanır (doygunluk +%6, kontrast +%5, pivot 128). Amaç
+fotoğrafı değiştirmek değil, feed'de kapakların aynı yayından çıkmış gibi
+durmamasını engellemek.
+
+**Ekran görüntüsü bileşimi.** Vision bir adayı `tip: "ekran"` olarak işaretlerse
+ve görsel gerçekten düz arayüz karesiyse (`duzEkranMi`), ham ekran görüntüsü
+olduğu gibi kırpılmaz: arka planda aynı görselin bulanık/karartılmış hâli,
+önde yuvarlatılmış köşeli ve gölgeli bir ekran kartı olarak yeniden düzenlenir
+(`ekranBilesimi`). Böylece "uygulama ekran görüntüsü" amatör değil, editoryal
+bir kapağa dönüşür. Mevcut kapak ekran görüntüsüyse aynı işlem bir kez
+uygulanır ve `kapak.bilesim = "ekran"` ile işaretlenir.
 
 - `site/public/kapak/<id>.webp` — 1280×720, quality 86
 - `site/public/kapak/<id>-480.webp` — 480 px kart
@@ -230,6 +301,9 @@ node scripts/gorsel-ajan.mjs --limit=6 --gun=4 --debug
 
 # Tek haberi zorla yenile
 node scripts/gorsel-ajan.mjs --id=<haber-id> --zorla --debug
+
+# Kategoriye göre toplu tur (virgülle birden çok kategori)
+node scripts/gorsel-ajan.mjs "--kategori=Teknoloji,Mobil,Oyun" --gun=0 --limit=20 --zorla
 
 # Tüm arşiv (günlük AI bütçesi yine geçerli)
 node scripts/gorsel-ajan.mjs --gun=0 --limit=0
