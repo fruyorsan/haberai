@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T06:20:01.796Z",
+  "updatedAt": "2026-11-01T06:27:32.272Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5467,
-  "aday": 5467,
-  "uygun": 3409,
-  "secilen": 3313,
+  "toplamHaber": 5468,
+  "aday": 5468,
+  "uygun": 3410,
+  "secilen": 3314,
   "red": {
     "özet gövdeyle aynı": 113,
     "editör notu özetle aynı": 8,
@@ -34,16 +34,16 @@
   },
   "ornekTekrarlar": [
     {
-      "title": "Binance siber saldırısının maliyetini 6,3 milyar dolar olarak açıkladı",
-      "twin": "Binance'in 6,3 milyar dolarlık dev hack saldırısında Lazarus şüphesi"
-    },
-    {
       "title": "İspanya’daki tren kazasında can kaybı 69’a yükseldi, yas ilan edildi",
       "twin": "İspanya'da iki tren çarpıştı: 69 kişi yaşamını yitirdi"
     },
     {
       "title": "Instagram 90 dakikalık videoları test ediyor ancak ödeme yapmıyor",
       "twin": "Instagram, 90 dakikalık video süresiyle içerik rekabetini kızıştırıyor"
+    },
+    {
+      "title": "Binance siber saldırısının maliyetini 6,3 milyar dolar olarak açıkladı",
+      "twin": "Binance'in 6,3 milyar dolarlık dev hack saldırısında Lazarus şüphesi"
     },
     {
       "title": "Google ve Amazon, yapay zeka harcamalarıyla 500 milyar dolar kaybetti",
@@ -587,6 +587,7 @@
       "d4d940b0a2df241b",
       "2d6a9d633c5beacc",
       "7d5f764aa247a094",
+      "8eecd3d325dacdc5",
       "b8600d5f58a33e9f",
       "13d7f226ac25fa2f",
       "77eb6ac0fa52771b",
@@ -594,9 +595,9 @@
       "d45347eddc406354",
       "ec78243d8676799a",
       "db708a81ffdbb37f",
-      "8eecd3d325dacdc5",
       "7db8406e22791e6d",
       "b530bfdfe4d62db6",
+      "512e43fda640aade",
       "b0468f5e01309615",
       "e5562dccdf5dc133",
       "588fc823a1685895",
@@ -3770,6 +3771,7 @@
     "f003344aa3e71f38",
     "3e2b6591638d752d",
     "ed7cedde1f1f649b",
+    "8eecd3d325dacdc5",
     "a2cc134cbc18fe50",
     "4ff32f7f0d29b9f1",
     "21dea188b9b1997f",
@@ -3925,7 +3927,6 @@
     "7f67c2139c5895e6",
     "0f377683b024318c",
     "739ec793c0dee331",
-    "8eecd3d325dacdc5",
     "e4689cb8019010a8",
     "4b1d1e6b6fbbf60f",
     "8f4d11d7e23b47a1",
@@ -4113,6 +4114,7 @@
     "3ef1a8112a73b9ce",
     "a4127d1e0f0a9669",
     "3163f604feb7173b",
+    "512e43fda640aade",
     "4f175f949a7db787",
     "57380b8de64fa73d",
     "2eb4853378746a13",
