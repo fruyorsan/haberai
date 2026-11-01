@@ -283,9 +283,16 @@ uygulanır ve `kapak.bilesim = "ekran"` ile işaretlenir.
 }
 ```
 
-`kapak.ajan` işareti, diğer kapak betiklerinin (`--taze`, `--stokkaynak`) bu
-kapağı ezmemesini sağlar. `gorselAjan` ise başarısız hedefin 12 saat boyunca
-yeniden denenmemesini sağlar.
+`kapak.ajan` işareti, diğer kapak betiklerinin (`--taze`, `--stokkaynak` ve
+artık toplu turların tamamı) bu kapağı ezmemesini sağlar. `gorselAjan` ise
+başarısız hedefin 12 saat boyunca yeniden denenmemesini sağlar.
+
+> Neden: ajanın seçtiği kapağın dosyası, sonraki bir `kapak-uret` turunda
+> yayıncının stok karesi ya da tasarım kartıyla değişebiliyordu. Merge sürücüsü
+> `kapak` metadata'sını (ajan bilgisiyle) koruduğu için sayfada "ajan seçimi"
+> görünen ama altında eski kart olan kapaklar oluşuyordu. Artık `kapak.ajan`
+> varsa `kapak-uret` o habere hiç dokunmaz; yalnızca `--id=`/`--gorsel=` ile
+> açıkça hedeflenirse üretir ve `ajan` alanını korur.
 
 ## CLI
 
