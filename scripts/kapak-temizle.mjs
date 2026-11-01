@@ -15,6 +15,13 @@
 //   node scripts/kapak-temizle.mjs            # 3 günden eski + indeks dışı
 //   node scripts/kapak-temizle.mjs --gun=7    # son 7 günü koru
 //   node scripts/kapak-temizle.mjs --dry
+//   node scripts/kapak-temizle.mjs --onar     # yalnızca kırık kapakları onar
+//
+// KIRIK KAPAK ONARIMI (--onar ya da normal çalışma): `image` alanı yerel
+// `/kapak/...` adresini gösteriyor ama dosya yoksa (temizlik sırasında
+// silinmiş, üretimi yarıda kalmış ya da commit edilmemiş) sayfada kırık
+// görsel kalıyordu. Bu tarama her turda çalışır ve o haberi kaynak sitedeki
+// özgün fotoğrafına (`kapak.kaynak`) döndürür.
 // ==========================================================================
 import fs from "node:fs";
 import path from "node:path";
@@ -32,6 +39,7 @@ const arg = (ad, varsayilan) => {
 };
 const gun = arg("gun", 3);
 const dry = process.argv.includes("--dry");
+const onar = process.argv.includes("--onar");
 
 const ham = fs.readFileSync(ARTICLES, "utf8");
 const satirSonu = ham.includes("\r\n") ? "\r\n" : "\n";
@@ -85,13 +93,15 @@ if (!fs.existsSync(CIKTI_DIZIN)) {
 const harita = new Map(articles.filter((a) => a && a.id).map((a) => [String(a.id), a]));
 const dosyalar = fs.readdirSync(CIKTI_DIZIN);
 const silinecek = [];
-for (const f of dosyalar) {
-  if (!f.endsWith(".webp") && !f.endsWith("-sosyal.jpg")) continue;
-  const id = f
-    .replace(/-480\.webp$/, "")
-    .replace(/\.webp$/, "")
-    .replace(/-sosyal\.jpg$/, "");
-  if (!korunacak.has(id)) silinecek.push(f);
+if (!onar) {
+  for (const f of dosyalar) {
+    if (!f.endsWith(".webp") && !f.endsWith("-sosyal.jpg")) continue;
+    const id = f
+      .replace(/-480\.webp$/, "")
+      .replace(/\.webp$/, "")
+      .replace(/-sosyal\.jpg$/, "");
+    if (!korunacak.has(id)) silinecek.push(f);
+  }
 }
 
 let silinen = 0;
@@ -128,7 +138,28 @@ for (const id of silinenIdler) {
   delete a.gorselKaynak;
 }
 
-if (!dry && silinenIdler.size) {
+// KIRIK YEREL KAPAK: `image` /kapak/... diyor ama dosya yok → kaynağa dön.
+let onarilan = 0;
+for (const a of articles) {
+  if (!a || !a.id) continue;
+  const img = String(a.image || "").split("?")[0];
+  if (!img.startsWith(`${URL_TABANI}/`)) continue;
+  const dosya = path.join(CIKTI_DIZIN, img.slice(URL_TABANI.length + 1));
+  if (fs.existsSync(dosya)) continue;
+  const kaynak = a.kapak?.kaynak;
+  if (typeof kaynak === "string" && /^https?:\/\//i.test(kaynak)) {
+    a.image = kaynak;
+  } else {
+    // Kaynak adres yok: alanı boşalt (kart yer tutucu gösterir).
+    a.image = "";
+  }
+  delete a.kapak;
+  delete a.gorselKaynak;
+  onarilan++;
+  if (onarilan <= 5) console.log(`  onarıldı: ${a.id} → ${a.image || "(boş)"}`);
+}
+
+if (!dry && (silinenIdler.size || onarilan)) {
   fs.writeFileSync(
     ARTICLES,
     JSON.stringify(articles, null, 2).replace(/\n/g, satirSonu) + satirSonu
@@ -137,6 +168,7 @@ if (!dry && silinenIdler.size) {
 
 console.log(
   `Kapak temizliği${dry ? " [dry]" : ""}: ${silinen} dosya silindi, ` +
-    `${geriAlinan} haber kaynak fotoğrafına döndürüldü ` +
+    `${geriAlinan} haber kaynak fotoğrafına döndürüldü, ` +
+    `${onarilan} kırık yerel kapak onarıldı ` +
     `(korunan: ${korunacak.size} haber, son ${gun} gün: ${taze}, stok yerine kart: ${stokKarti}).`
 );
