@@ -38,6 +38,10 @@ const DEBUG = process.argv.includes("--debug");
 const ZORLA = process.argv.includes("--zorla");
 
 const TEK_ID = String(arg("id", "") || "").trim();
+const KATEGORILER = String(arg("kategori", "") || "")
+  .split(",")
+  .map((s) => s.trim())
+  .filter(Boolean);
 const GUN = sayi(arg("gun", process.env.GORSEL_AJAN_GUN || 3), 3);
 const LIMIT = sayi(arg("limit", process.env.GORSEL_AJAN_LIMIT || 3), 3);
 const GUNLUK_AI = sayi(process.env.GORSEL_GUNLUK_AI || 120, 120);
@@ -127,6 +131,7 @@ function oncelik(a) {
 const uygunlar = articles.filter((a) => {
   if (!a?.id || !a?.title) return false;
   if (TEK_ID && String(a.id) !== TEK_ID) return false;
+  if (!TEK_ID && KATEGORILER.length && !KATEGORILER.includes(a.category)) return false;
   if (!TEK_ID && a.kapak?.ajan && !ZORLA) return false;
 
   if (!TEK_ID && GUN > 0) {
