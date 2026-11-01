@@ -119,6 +119,13 @@
       "v": 2,
       "kaynak": "https://ares.shiftdelete.net/2026/10/lexus-cinde-yerli-uretime-geciyor-ilk-model-elektrikli-suv-olacak.webp",
       "foto": true
+    },
+    "gorselAjan": {
+      "tarih": "2026-11-01T07:36:38.324Z",
+      "sonuc": "atlandi",
+      "neden": "mevcut kapak daha iyi",
+      "secim": "mevcut",
+      "skor": 87.5
     }
   },
   {
@@ -3068,14 +3075,28 @@
     "gorselDeneme": "2026-10-31T20:04:15.827Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_321bcd72264b435a81723d61cdbb9b5e.jpg",
-      "foto": false
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/38th_Istanbul_Vodafone_Marathon_%281%29.jpg/1280px-38th_Istanbul_Vodafone_Marathon_%281%29.jpg",
+      "foto": true,
+      "ajan": {
+        "v": 1,
+        "secim": "arşiv",
+        "skor": 77,
+        "neden": "İstanbul Maratonu'nun başlangıç takını ve bayraklarla etkinlik alanını doğrudan gösteriyor.",
+        "brif": "Güneşli bir sabah vakti, 15 Temmuz Şehitler Köprüsü üzerinde koşan binlerce amatör ve profesyonel koşucunun geniş açılı çekimi. Koşucular dinamik bir şekilde ileriye doğru hareket ediyor, ön planda odaklanmış bir koşucu grubu net bir şekilde görülüyor.",
+        "sorgular": [
+          "marathon runners",
+          "crowd running on bridge",
+          "athletes racing outdoors",
+          "marathon race start"
+        ],
+        "tarih": "2026-11-01T07:48:16.687Z"
+      }
     },
     "gorselKaynak": {
       "yazar": "Sakhalinio",
       "lisans": "CC BY-SA 4.0",
       "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:38th_Istanbul_Vodafone_Marathon_(5).jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:38th_Istanbul_Vodafone_Marathon_(1).jpg"
     },
     "ekGorselDeneme": "2026-10-31T13:28:38.448Z",
     "gorselEk": [
@@ -3086,7 +3107,14 @@
         "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:38th_Istanbul_Vodafone_Marathon_(1).jpg"
       }
-    ]
+    ],
+    "gorselAjan": {
+      "tarih": "2026-11-01T07:48:16.687Z",
+      "sonuc": "degisti",
+      "neden": "İstanbul Maratonu'nun başlangıç takını ve bayraklarla etkinlik alanını doğrudan gösteriyor.",
+      "secim": "arşiv",
+      "skor": 77
+    }
   },
   {
     "id": "5c635865d006baaa",
@@ -20741,7 +20769,12 @@
       "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Old_Fiat_500_in_Bibione.jpg"
     },
-    "ekGorselDeneme": "2026-10-29T21:40:36.249Z"
+    "ekGorselDeneme": "2026-10-29T21:40:36.249Z",
+    "gorselAjan": {
+      "tarih": "2026-11-01T07:42:45.069Z",
+      "sonuc": "atlandi",
+      "neden": "yeterli görsel yok"
+    }
   },
   {
     "id": "582f0afb0b80d6da",
@@ -21011,17 +21044,36 @@
     "generatedAt": "2026-10-29T09:01:16.609Z",
     "gorselDeneme": "2026-10-29T18:22:08.136Z",
     "kapak": {
-      "v": 2,
-      "kaynak": "https://ares.shiftdelete.net/2025/10/alphabet-google-2024-son-ceyrek-gelirlerini-acikladi-1.jpg",
-      "foto": false
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Google_data_center.jpg/1920px-Google_data_center.jpg",
+      "foto": true,
+      "ajan": {
+        "v": 1,
+        "secim": "commons",
+        "skor": 79,
+        "neden": "Google kampüs/veri merkezi tabelası ve tesisi ile haberin öznesi olan Alphabet/Google'ı somut ve doğrudan temsil ediyor.",
+        "brif": "Alphabet 2026 üçüncü çeyrekte gelirini 127,6 milyar dolara taşıdı",
+        "sorgular": [
+          "Google data center server room",
+          "Google data center server"
+        ],
+        "tarih": "2026-11-01T07:44:25.383Z"
+      }
     },
     "gorselKaynak": {
-      "yazar": "Chad Davis",
-      "lisans": "CC BY 2.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Google_Data_Center,_Council_Bluffs_Iowa_(49062863796).jpg"
+      "yazar": "Lambtron",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Google_data_center.jpg"
     },
-    "ekGorselDeneme": "2026-10-29T09:35:43.873Z"
+    "ekGorselDeneme": "2026-10-29T09:35:43.873Z",
+    "gorselAjan": {
+      "tarih": "2026-11-01T07:44:25.384Z",
+      "sonuc": "degisti",
+      "neden": "Google kampüs/veri merkezi tabelası ve tesisi ile haberin öznesi olan Alphabet/Google'ı somut ve doğrudan temsil ediyor.",
+      "secim": "commons",
+      "skor": 79
+    }
   },
   {
     "id": "04ae255a24a1c11b",
@@ -21076,6 +21128,11 @@
       "v": 2,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg/1280px-Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan%2C_Brastad.jpg",
       "foto": false
+    },
+    "gorselAjan": {
+      "tarih": "2026-11-01T07:45:55.440Z",
+      "sonuc": "atlandi",
+      "neden": "yeterli görsel yok"
     }
   },
   {

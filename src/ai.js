@@ -1,4 +1,5 @@
 import { config } from "./config.js";
+import { geminiAnahtarlari } from "./gemini-anahtar.js";
 import { purgeCopiedText } from "./telif.js";
 
 const GEMINI_ENDPOINT = (model) =>
@@ -249,7 +250,9 @@ Yanıt formatı (sadece JSON):
 
 // Bu çalıştırmada tükenen (günlük kota) adaylar
 const exhausted = new Set();
-const keyOf = (c) => `${c.provider}:${c.model}`;
+// Anahtar numarası da kimliğe girer: aynı modelin 2. anahtarı, 1. anahtar
+// kotayı doldurduğunda kullanılabilir kalır.
+const keyOf = (c) => `${c.provider}:${c.model}${c.keyId ? `#${c.keyId}` : ""}`;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 function candidates() {
@@ -259,9 +262,13 @@ function candidates() {
       list.push({ provider: "groq", model, apiKey: process.env.GROQ_API_KEY });
     }
   }
-  if (process.env.GEMINI_API_KEY) {
+  // Anahtar havuzu: önce 1. anahtarın tüm modelleri, sonra 2. anahtarın
+  // modelleri. Böylece bir anahtarın kotası dolunca aynı model diğer
+  // anahtarla hemen denenir.
+  const gemini = geminiAnahtarlari();
+  for (const [i, apiKey] of gemini.entries()) {
     for (const model of config.ai.geminiModels) {
-      list.push({ provider: "gemini", model, apiKey: process.env.GEMINI_API_KEY });
+      list.push({ provider: "gemini", model, apiKey, keyId: i + 1 });
     }
   }
   list.push({ provider: "pollinations", model: "openai", apiKey: "free" });
@@ -481,15 +488,271 @@ Yanıt SADECE şu JSON olsun: {"gorselSorgu":"..."}`;
   throw allExhaustedError(lastErr);
 }
 
-async function kisaMetinGemini(c, istem) {
+/**
+ * GÖRSEL AJANI — GÖRSEL BRİFİ
+ *
+ * Haberin başlığı + özeti + gövdesinden, kapak fotoğrafında TAM OLARAK ne
+ * görünmesi gerektiğini çıkarır. Görsel ajanı (src/gorsel-ajan.js) bu brifi
+ * hem arama sorgusu hem de gerekirse AI görsel üretimi istemi olarak kullanır.
+ *
+ * Amaç "teknoloji" gibi soyut sözcüklerle rastgele stok kare çekmek değil;
+ * haberi tek karede anlatan somut bir sahne kurmak:
+ *   "15 yaş altı sosyal medya yasağı" → elinde telefon tutan genç
+ *   "Yapay zeka sınav kopyalarını denetleyecek" → optik form + AI arayüzü
+ *
+ * AI sağlayıcıları tükenirse çalışmayı durdurmaz: mevcut `gorselSorgu` ve
+ * etiketlerden güvenli bir yedek brif döndürür.
+ */
+
+// Brif doğrulamasında anlamsız ortaklıkları elemek için.
+const BRIF_STOP = new Set([
+  "bir", "bu", "ve", "ile", "için", "icin", "olan", "olarak", "daha", "çok", "cok",
+  "son", "yeni", "gibi", "ama", "fakat", "veya", "ya", "da", "de", "ki", "mi", "mı",
+  "mu", "mü", "ne", "her", "en", "hem", "ancak", "göre", "gore", "üzere", "uzere",
+  "arasında", "arasinda", "üzerine", "uzerine", "yıl", "yil", "gün", "gun", "ilk",
+  "oldu", "olacak", "oluyor", "açıkladı", "acikladi", "açıklandı", "aciklandi",
+  "başladı", "basladi", "başlıyor", "basliyor", "geliyor", "geldi", "dedi", "diye",
+  "the", "and", "with", "for", "from", "that", "this", "news", "haber", "haberi",
+  "haberler", "sonra", "kadar", "birlikte", "hakkında", "hakkinda",
+  // Çok genel olduğu için tek başına alaka kanıtı sayılmayan kelimeler.
+  "yapay", "zeka", "teknoloji", "medya", "sosyal", "dünya", "dunya", "türkiye",
+  "turkiye", "model", "sistem", "platform", "içerik", "icerik", "kullanıcı",
+  "kullanici", "şirket", "sirket", "yeni",
+]);
+
+// Görsel aramada işe yaramayan, haberin kendisini tarif eden sorgular.
+const KOTU_SORGU =
+  /(kapak|foto|resim|gorsel|görsel|manset|manşet|haber|image|photo|picture|background|scene|concept|route|historical)/i;
+
+/** Türkçe karakterleri sadeleştirip küçük harfe indirir. */
+function brifSade(metin) {
+  return String(metin || "")
+    .toLocaleLowerCase("tr-TR")
+    .replace(/ı/g, "i")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9\s-]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+// İlk 4 harf, Türkçe eklerin (maratonu/marathon, çatlak/çatlaklarıyla) eşleşmesi için yeter.
+function brifKok(kelime) {
+  return kelime.length >= 4 ? kelime.slice(0, 4) : kelime;
+}
+
+function brifKokler(metin) {
+  return new Set(
+    brifSade(metin)
+      .split(" ")
+      .filter((k) => k.length >= 3 && !BRIF_STOP.has(k))
+      .map(brifKok)
+  );
+}
+
+// Modelin örnek sahneleri kopyaladığını gösteren imzalar. Haber bu konuda
+// değilse brif reddedilir.
+const BRIF_ORNEK_IMZALARI = [
+  { imza: /aksam odasinda/, konu: /(aksam|gece|cocuk|sosyal medya|telefon)/ },
+  { imza: /(optik cevap|optik form|optical answer)/, konu: /(sinav|optik|kopya|ogrenci|form)/ },
+];
+
+/**
+ * Model bazen örnek sahneleri kopyalıyor ya da haberi hiç okumadan alakasız
+ * bir kare uyduruyor (ör. Lexus haberi için "telefonla oynayan çocuk").
+ * Brifin başlıkla en az bir, başlık zayıfsa özetle en az iki anlamlı kökü
+ * paylaşmasını şart koşar.
+ */
+function brifGecerliMi(article, brif) {
+  const brifMetin = [
+    brif?.sahne,
+    brif?.ozne,
+    ...(Array.isArray(brif?.nesneler) ? brif.nesneler : []),
+    ...(Array.isArray(brif?.sorgular) ? brif.sorgular : []),
+  ]
+    .filter(Boolean)
+    .join(" ");
+  const brifKok = brifKokler(brifMetin);
+  if (!brifKok.size) return false;
+
+  // Örnek kopyası koruması: sahne birebir örnek cümleye benziyorsa haberin
+  // gerçekten o konuda olması gerekir.
+  const brifSadeMetin = brifSade(brifMetin);
+  const haberSade = brifSade(
+    [article?.title, article?.summary, ...(Array.isArray(article?.tags) ? article.tags : [])]
+      .filter(Boolean)
+      .join(" ")
+  );
+  for (const { imza, konu } of BRIF_ORNEK_IMZALARI) {
+    if (imza.test(brifSadeMetin) && !konu.test(haberSade)) return false;
+  }
+
+  const ortak = (kume) => [...kume].filter((k) => brifKok.has(k)).length;
+  const baslikKok = brifKokler(article?.title);
+  if (baslikKok.size && ortak(baslikKok) >= 1) return true;
+
+  // Başlık tek başına yetmediyse özetten en az iki anlamlı ortaklık iste:
+  // "AWS geliri arttı" gibi başlıklarda doğru sahne (veri merkezi, sunucu)
+  // ancak özette geçer.
+  const ozetKok = brifKokler(article?.summary);
+  return ozetKok.size > 0 && ortak(ozetKok) >= 2;
+}
+
+export function gorselBrifiYedek(article) {
+  const baslik = String(article?.title || "").trim();
+  const etiketler = (Array.isArray(article?.tags) ? article.tags : []).join(", ");
+  const mevcutSorgu = String(article?.gorselSorgu || "").trim();
+  const kelimeler = `${mevcutSorgu} ${etiketler}`
+    .replace(/[^\p{L}\p{N}\s-]+/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  return {
+    sahne: baslik,
+    ozne: etiketler.split(",")[0]?.trim() || baslik,
+    nesneler: [],
+    sorgular: [...new Set([mevcutSorgu, kelimeler.split(" ").slice(0, 4).join(" ")])].filter(
+      (s) => s && s.length >= 3
+    ),
+    kacin: ["logo", "metin", "soyut grafik", "uydu görüntüsü"],
+    tip: "foto",
+    prompt: `Photorealistic editorial news photograph illustrating: ${baslik}. ${mevcutSorgu}. 35mm lens, natural light, high detail, 16:9, no text, no letters, no logos, no watermark.`,
+    yedek: true,
+  };
+}
+
+export async function gorselBrifi(article) {
+  const baslik = String(article?.title || "").trim();
+  const ozet = String(article?.summary || "").trim();
+  const govde = (Array.isArray(article?.body) ? article.body : [])
+    .map((p) => String(p || "").trim())
+    .filter(Boolean)
+    .join(" ")
+    .slice(0, 900);
+  const etiketler = (Array.isArray(article?.tags) ? article.tags : []).join(", ");
+  const mevcutSorgu = String(article?.gorselSorgu || "").trim();
+
+  if (!baslik) return gorselBrifiYedek(article);
+
+  const istem = `Sen haberinai için çalışan kıdemli bir HABER GÖRSEL EDİTÖRÜSÜN.
+Sana bir Türkçe haberin başlığı, özeti ve gövdesinden bir bölüm verilecek.
+Görevin: Bu haberin kapak fotoğrafında TAM OLARAK ne görünmesi gerektiğini belirlemek.
+
+BAŞLIK: ${baslik}
+ÖZET: ${ozet.slice(0, 500)}
+GÖVDE: ${govde}
+ETİKETLER: ${etiketler}
+KATEGORİ: ${article?.category || ""}
+MEVCUT GÖRSEL SORGU: ${mevcutSorgu || "(yok)"}
+
+KURALLAR (kesin):
+1. SOMUT SAHNE kur. Karede görülebilecek kişi, nesne, mekân ve eylemi yaz.
+   Soyut kavramlar YASAK: "teknoloji", "gelecek", "inovasyon", "ekonomi", "kriz", "dijital dönüşüm".
+2. Haberin ANA KONUSUNU tek karede anlat. Haberin içindeki ikincil ayrıntıya sapma.
+3. İnsan varsa ROLÜNÜ ve EYLEMİNİ yaz (ekrana bakıyor, formu inceliyor, koşuyor).
+   Yaş, saat, hava, kalabalık sayısı gibi ayrıntıları YALNIZCA haber metninde açıkça geçiyorsa kullan;
+   geçmiyorsa "bir öğrenci", "bir koşucu", "bir araştırmacı" gibi genel yaz. Yüzü görünmeyen sırt
+   fotoğrafından kaçın.
+4. Yer/mekân adı, rota, köprü, mahalle, tarih ve yıl UYDURMA. Bunlar haberde açıkça geçmiyorsa sahneye
+   koyma. Türkiye bağlamı varsa yalnızca genel bir Türk sahnesi (sınıf, sokak, pazar) yeterli.
+5. "kacin" alanına karede OLMAMASI gerekenleri yaz: logo, metin, kolaj, ekran görüntüsü, uydu görüntüsü,
+   harita, politikacı portresi, stok ofis toplantısı, kan/ceset, eski siyah-beyaz arşiv, alakasız manzara.
+6. "sorgular": 4 adet İNGİLİZCE arama sorgusu, her biri 2-5 kelime.
+   - 1. sorgu MUTLAKA en genel ve aranabilir olan olsun: "marathon runners", "students exam",
+     "child smartphone", "office team meeting".
+   - 2. ve 3. sorgu sahneye özel ama yine somut olsun: "runners race crowd", "optical answer sheet pencil".
+   - Yıl, tarih, sayı, mahalle, köprü veya marka adı EKLEME (haber başlığında yoksa).
+   - "historical", "scene", "photo", "image", "background", "concept", "route" gibi boş kelimeler KULLANMA.
+7. "prompt": İNGİLİZCE, fotogerçekçi editoryal fotoğraf istemi. 35mm/50mm, doğal ışık, sığ alan derinliği,
+   16:9, yüksek detay. "no text, no letters, no numbers, no logos, no watermark, no collage" ekle.
+8. Haber bir yasak/karar/istatistik haberi olsa bile kare bir İNSAN veya SOMUT NESNE göstersin; bina cephesi
+   ya da belge yığını tek başına kapak olmaz.
+
+ÖRNEKLER (sadece düşünme biçimi; içeriklerini kendi habere taşıma):
+- "Türkiye'de 15 yaş altına sosyal medya yasağı" →
+  sahne: "Akşam odasında elinde telefon tutan bir çocuk, sosyal medya akışına bakıyor;
+  yüzü ekran ışığıyla aydınlanmış, arka plan bulanık." sorgular: ["child using smartphone",
+  "teen scrolling social media phone", "phone screen at night"].
+- "Yapay zeka ortak sınav kopyalarını denetleyecek" →
+  sahne: "Masada kurşun kalemle doldurulmuş optik cevap formu; formun üzerinde yapay zeka arayüzünü
+  çağrıştıran ışıklı tarama çizgileri, arkada bulanık bilgisayar ekranı." sorgular: ["optical answer sheet",
+  "exam answer sheet pencil", "artificial intelligence scanning document"].
+
+ÇOK ÖNEMLİ: Yukarıdaki iki örnek YALNIZCA düşünme biçimini gösterir. Haberde çocuk, telefon,
+sosyal medya veya sınav/optik form geçmiyorsa cevabında bu kelimeleri KESİNLİKLE kullanma.
+Cevabın yalnızca sana verilen habere ait olmalı; örnek cümleleri kopyalarsan cevap reddedilir.
+
+Yanıt SADECE şu JSON olsun:
+{"sahne":"...","ozne":"...","nesneler":["...","..."],"sorgular":["...","...","..."],"kacin":["...","..."],"tip":"foto","prompt":"..."}`;
+
+  const all = candidates().filter((c) => c.provider !== "pollinations" && !exhausted.has(keyOf(c)));
+  if (!all.length) return gorselBrifiYedek(article);
+
+  for (const c of all) {
+    try {
+      const metin =
+        c.provider === "groq"
+          ? await kisaMetinGroq(c, istem, { maxTokens: 900, temperature: 0.25 })
+          : await kisaMetinGemini(c, istem, { maxTokens: 900, temperature: 0.25 });
+      const veri = parseJson(metin);
+      const sorgular = (Array.isArray(veri?.sorgular) ? veri.sorgular : [])
+        .map((s) => temizSorgu(s))
+        .filter((s) => s.length >= 3 && !KOTU_SORGU.test(s))
+        .slice(0, 5);
+      const sahne = String(veri?.sahne || "").replace(/\s+/g, " ").trim().slice(0, 400);
+      const prompt = String(veri?.prompt || "").replace(/\s+/g, " ").trim().slice(0, 900);
+      if (!sahne || !sorgular.length) continue;
+      const brif = {
+        sahne,
+        ozne: String(veri?.ozne || "").replace(/\s+/g, " ").trim().slice(0, 120),
+        nesneler: (Array.isArray(veri?.nesneler) ? veri.nesneler : [])
+          .map((s) => String(s || "").replace(/\s+/g, " ").trim().slice(0, 80))
+          .filter(Boolean)
+          .slice(0, 6),
+        sorgular,
+        kacin: (Array.isArray(veri?.kacin) ? veri.kacin : [])
+          .map((s) => String(s || "").replace(/\s+/g, " ").trim().slice(0, 80))
+          .filter(Boolean)
+          .slice(0, 8),
+        tip: /illüstrasyon|illustration|çizim/i.test(String(veri?.tip || "")) ? "illüstrasyon" : "foto",
+        prompt: prompt || `Photorealistic editorial news photograph: ${sahne}. 35mm, natural light, 16:9, no text, no logos, no watermark.`,
+      };
+      // Model örnek sahneyi kopyaladıysa, sorguları Türkçe/boşsa ya da haberi
+      // okumadan uydurduysa brifi kullanma: yedek brif başlığa bağlı kaldığı
+      // için daha güvenlidir.
+      const gecerli =
+        sorgular.length >= 2 && sahne.length >= 25 && brifGecerliMi(article, brif);
+      if (process.env.BRIF_DEBUG === "1") {
+        console.log(
+          `[brif] ${c.provider}/${c.model} sahne=${sahne.length} sorgu=${sorgular.length} ` +
+            `gecerli=${gecerli} sahne="${sahne.slice(0, 90)}"`
+        );
+      }
+      if (!gecerli) continue;
+      return brif;
+    } catch (err) {
+      if (err.kind === "quota" || err.kind === "missing") {
+        exhausted.add(keyOf(c));
+        continue;
+      }
+      if (err.kind === "ratelimit") {
+        await sleep(Math.min(Math.max(err.wait || 20, 5), 45) * 1000);
+        continue;
+      }
+      // Ağ/JSON hatası: sonraki sağlayıcıyı dene, çalışmayı durdurma.
+    }
+  }
+  return gorselBrifiYedek(article);
+}
+
+async function kisaMetinGemini(c, istem, { maxTokens = 120, temperature = 0.4 } = {}) {
   const res = await safeFetch(`${GEMINI_ENDPOINT(c.model)}?key=${c.apiKey}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       contents: [{ parts: [{ text: istem }] }],
       generationConfig: {
-        temperature: 0.4,
-        maxOutputTokens: 120,
+        temperature,
+        maxOutputTokens: maxTokens,
         ...(/gemma/i.test(c.model) ? {} : { responseMimeType: "application/json" }),
       },
     }),
@@ -499,14 +762,14 @@ async function kisaMetinGemini(c, istem) {
   return json?.candidates?.[0]?.content?.parts?.[0]?.text || "";
 }
 
-async function kisaMetinGroq(c, istem) {
+async function kisaMetinGroq(c, istem, { maxTokens = 200, temperature = 0.4 } = {}) {
   const res = await safeFetch(GROQ_ENDPOINT, {
     method: "POST",
     headers: { "Content-Type": "application/json", Authorization: `Bearer ${c.apiKey}` },
     body: JSON.stringify({
       model: c.model,
-      temperature: 0.4,
-      max_tokens: 200,
+      temperature,
+      max_tokens: maxTokens,
       ...(/gpt-oss/i.test(c.model) ? { reasoning_effort: "low" } : {}),
       response_format: { type: "json_object" },
       messages: [{ role: "user", content: istem }],
@@ -782,3 +1045,4 @@ export function slugify(str) {
     .replace(/^-+|-+$/g, "")
     .slice(0, 80);
 }
+

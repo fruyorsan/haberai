@@ -66,6 +66,11 @@ const kapakAtif =
     String(article.gorselKaynak?.lisans || ""),
   );
 
+// AI üretimi kapak: kaynağı gerçek bir fotoğrafçı değil. Sitede küçük bir
+// "AI görsel" rozeti gösterilir; okuyucu temsili görselle haber fotoğrafını
+// ayırt edebilir (yanıltıcı görsel kullanmama ilkesi).
+const aiKapak = article.kapak?.ai === true;
+
 // Sağlık ve ekonomi içeriklerinde okuru yanıltmamak için görünür uyarı.
 const icerikUyarisi =
   article.category === "Sağlık"
@@ -456,14 +461,20 @@ const breadcrumbLd = {
             />
           ) : null}
           <span class="post__veil" aria-hidden="true"></span>
+          {aiKapak && (
+            <span
+              class="post__ai-rozet"
+              title="Bu kapak, haberi temsil etmek için yapay zeka ile üretilmiştir."
+            >AI görsel</span>
+          )}
           {kapakAtif && kapakKredisi?.url && (
             <a
               class="post__kaynak"
               href={kapakKredisi.url}
               target="_blank"
               rel="noopener nofollow"
-              title={`Fotoğraf: ${kapakKredisi.ad}`}
-              aria-label={`Fotoğraf kaynağı ve lisansı: ${kapakKredisi.ad}`}
+              title={`Görsel: ${kapakKredisi.ad}`}
+              aria-label={`Görsel kaynağı ve lisansı: ${kapakKredisi.ad}`}
             >i</a>
           )}
         </div>
@@ -1044,6 +1055,22 @@ const breadcrumbLd = {
   .post__kaynak:focus-visible {
     opacity: 1;
     background: var(--brand-strong);
+  }
+  /* AI üretimi kapak rozeti: sağ alt köşede küçük, tıklanamaz etiket. */
+  .post__ai-rozet {
+    position: absolute;
+    z-index: 3;
+    right: 12px;
+    bottom: 12px;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.62);
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+    pointer-events: none;
   }
   .post__icerik-uyari {
     margin: 18px 0 0;

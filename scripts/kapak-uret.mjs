@@ -140,8 +140,10 @@ const sirali = articles
     if (sadeceStokKaynak) {
       // Yerel kapak dosyası olup taban fotoğrafı Wikimedia stoğu olan her kapak
       // (fotoğraf ya da kart) hedeftir: yayıncının kendi fotoğrafı varsa ona
-      // geçilir, yoksa mevcut kart korunur.
+      // geçilir, yoksa mevcut kart korunur. Görsel ajanının bilinçli seçtiği
+      // kapaklar (kapak.ajan) bu turda korunur.
       return (
+        !a.kapak?.ajan &&
         String(a.image || "").startsWith(`${URL_TABANI}/`) &&
         /wikimedia\.org/i.test(String(a.kapak?.kaynak || ""))
       );
@@ -1567,6 +1569,7 @@ if (process.argv.includes("--taze")) {
         a.id &&
         a.kapak &&
         a.kapak.foto === true &&
+        !a.kapak.ajan &&
         /^https?:\/\//i.test(String(a.sourceUrl || "")) &&
         (Date.parse(a.publishedAt || a.generatedAt || 0) || 0) >= tazeEsik
     )
