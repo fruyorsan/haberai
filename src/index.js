@@ -4,6 +4,7 @@ import { dirname, join } from "node:path";
 import { config } from "./config.js";
 import { fetchAllFeeds, fetchPageExtras } from "./fetcher.js";
 import { analyzeArticle } from "./ai.js";
+import { geminiAnahtarlari } from "./gemini-anahtar.js";
 import { updateMarket } from "./market.js";
 import { loadArticles, saveArticles, existingIds, makeId } from "./store.js";
 import { shareNewArticles } from "./share.js";
@@ -72,7 +73,8 @@ function inceIcerikNedeni(a) {
 }
 
 async function main() {
-  const hasKey = process.env.GEMINI_API_KEY || process.env.GROQ_API_KEY;
+  const hasKey =
+    geminiAnahtarlari().length > 0 || Boolean(process.env.GROQ_API_KEY);
 
   if (!DRY && !hasKey) {
     console.error("HATA: GEMINI_API_KEY veya GROQ_API_KEY tanımlı değil. .env dosyasına ekle.");
