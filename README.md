@@ -142,6 +142,39 @@ Commons karesi 500'den fazla habere kapak olursa "genel görsel" sayılıp
 elenir. Politika metni: `/telif/` ve `/yayin-ilkeleri/` sayfalarındaki
 **Görseller** bölümleri.
 
+### Görsel ajanı (anlamsal kapak seçimi)
+
+Stok araması "dosya adı eşleşmesi" ile sınırlı kalınca "telefon" haberine eski
+telefon müzesi, "savaş" haberine harita düşebiliyordu. `src/gorsel-ajan.js`
+artık her haber için gerçek bir görsel editör gibi çalışır:
+
+1. **Brif:** AI, haberin tek karede ne anlatması gerektiğini çıkarır
+   ("15 yaş altı sosyal medya yasağı" → elinde telefon tutan genç) ve İngilizce
+   arama sorguları üretir.
+2. **Adaylar:** Wikimedia Commons + Openverse (yalnızca CC0 / kamu malı /
+   CC BY / CC BY-SA) ve arşivdeki serbest lisanslı `gorselEk` fotoğrafları.
+   Kaynak sitenin kendi fotoğrafı **yeni kapak olarak seçilmez**; ajans
+   telifli olabiliyor ve kullanıcının şikâyet ettiği haber kartı sorununun
+   kaynağıydı.
+3. **Göz kontrolü:** Gemini/Cloudflare vision adayları gerçekten görür; alaka
+   %55, dikkat %30, kalite %15 ile puanlar. Vision yoksa kapak değiştirilmez.
+4. **Üretim:** Hiçbir aday yetmezse Cloudflare Workers AI ile habere özel 16:9
+   konsept görsel üretilir; o da vision'dan geçer.
+5. **Kaydet:** 1280×720 WebP + 480 px kart + 1200×630 sosyal JPEG.
+
+Ajan kapakları `kapak.ajan` ile işaretlenir; `--taze` ve `--stokkaynak` turları
+onları ezmez. AI üretimi kapaklarda `kapak.ai = true` yazılır ve sitede
+"AI görsel" rozeti çıkar. Günlük AI bütçesi
+`data/gorsel-ajan-durum.json`'da tutulur; bütçe bitince tur durur.
+
+```powershell
+npm run gorsel-ajan:dry      # hedefleri listeler, AI çağırmaz, yazmaz
+npm run gorsel-ajan          # tur başına 3 hedef (GORSEL_AJAN_LIMIT)
+node scripts/gorsel-ajan.mjs --id=<id> --zorla --debug
+```
+
+Ayrıntılı akış, puanlama ve ortam değişkenleri: [`docs/gorsel-ajan.md`](docs/gorsel-ajan.md).
+
 ## Son dakika (hızlı şerit)
 
 Amaç: yeni çıkan önemli/bomba haberleri normal akıştan **önce** yakalayıp işlemek.
@@ -212,7 +245,9 @@ uygulanır; yani son dakika şeridine çöp başlık düşemez.
 ## Otomasyon
 
 `.github/workflows/pipeline.yml` her 5 dakikada bir çalışır. GitHub'da repo ayarlarından
-`GEMINI_API_KEY` adında bir **secret** eklemen yeterli.
+`GEMINI_API_KEY` adında bir **secret** eklemen yeterli. Gemini'nin ücretsiz kotası model
+başına günde ~20 istek olduğu için `GEMINI_API_KEY_2` ve `GEMINI_API_KEY_3` secret'ları
+da eklenebilir; görsel ajanı anahtarları sırayla kullanır.
 
 ### Arşiv yenileme
 
