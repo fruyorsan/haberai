@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T12:22:10.521Z",
+  "updatedAt": "2026-11-01T12:32:34.248Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5496,
-  "aday": 5496,
-  "uygun": 3438,
-  "secilen": 3341,
+  "toplamHaber": 5497,
+  "aday": 5497,
+  "uygun": 3439,
+  "secilen": 3342,
   "red": {
     "özet gövdeyle aynı": 113,
     "editör notu özetle aynı": 8,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 125
+    "tekrar": 126
   },
   "ornekTekrarlar": [
     {
@@ -102,16 +102,16 @@
       "twin": "Huawei, Wi-Fi 7 destekli yeni Router X2 Pro modelini satışa sundu"
     },
     {
+      "title": "Türkiye, Güney Kore Ticaretini 15 Milyar Dolar Yanağına Çekmeye Yönelecek",
+      "twin": "Türkiye ve Güney Kore ticaret hacmini 15 milyar dolara çıkarmayı hedefliyor"
+    },
+    {
       "title": "Rockstar, GTA 6 PC sürümünü Mayıs ortasına kadar geciktirebilir",
       "twin": "Rockstar GTA 6 19 Kasım’da PS5 ve Xbox’ta Çıkıyor"
     },
     {
       "title": "İsrail ordusunun çadır saldırısında biri çocuk 3 kişi hayatını kaybetti",
       "twin": "İsrail ordusunun El Halil operasyonu 3 bin 300 kişiyi evinden etti"
-    },
-    {
-      "title": "Google Gemini 4 Argon, Android Bench’te Beşinci Sırada Yer Aldı",
-      "twin": "Google, yapay zeka modeli Gemini 4 Carbon ile zirveye yerleşti"
     }
   ],
   "days": {
@@ -583,6 +583,7 @@
       "5091dd7a10092596",
       "cc5bd6df9dabcc99",
       "364e3f165c4f6848",
+      "92a219c136f84ea3",
       "385c23b64dd4aa36",
       "2a5626d482081a41",
       "ca15f733f732db2c",
@@ -590,7 +591,6 @@
       "90130db8910729cf",
       "8fa2de3423129063",
       "deb9c05ead182aa2",
-      "92a219c136f84ea3",
       "789e742b508bb6ac",
       "f39bd1be37a698ea",
       "5f84f1aafe107da0",
@@ -615,6 +615,7 @@
       "db708a81ffdbb37f",
       "623d3633d2b3f6ac",
       "d45347eddc406354",
+      "6c0aebeeafcf33d5",
       "512e43fda640aade",
       "8315827a6d60935c",
       "7db8406e22791e6d",
@@ -628,7 +629,6 @@
       "e5562dccdf5dc133",
       "b0468f5e01309615",
       "1cb9bc6544ee6112",
-      "9fbc1b70b6426462",
       "6881d450287b6124",
       "51f7e610ba8638f3",
       "690eec46cc8eec38",
@@ -640,7 +640,8 @@
       "256f8576c7118c3b",
       "4d2c26cec06c1944",
       "b04bf9153fd49e44",
-      "7b1dee6f9a822530"
+      "7b1dee6f9a822530",
+      "9fbc1b70b6426462"
     ],
     "2026-10-27": [
       "35f861f75591b8a3",
@@ -861,7 +862,6 @@
       "e84d591f4045fc9a",
       "594761fdd6513453",
       "79b623b7bff4742f",
-      "2ec54ff601cb314a",
       "49348b935ddc0f76",
       "16b117ced6e63e45",
       "3bc840891b7cf2d4",
@@ -878,6 +878,7 @@
       "b3955cfe25e7e010",
       "63ac560f0ea82284",
       "bb814b6adf952f62",
+      "2ec54ff601cb314a",
       "d4e754841cecdffb",
       "b34ddbff8dab515a",
       "99048ad1a9773dab",
@@ -3576,6 +3577,7 @@
     "3b801a24eb24848b",
     "364e3f165c4f6848",
     "25657dd7af751462",
+    "92a219c136f84ea3",
     "9cd8bbb18d49378a",
     "385c23b64dd4aa36",
     "79f905c864fe8e60",
@@ -3660,7 +3662,6 @@
     "62d8ea69bbda18c7",
     "d94c1c2fe8c487a5",
     "1973c4a1b9edbac6",
-    "92a219c136f84ea3",
     "789e742b508bb6ac",
     "e30192a4615d41b7",
     "cfca98d27d0b2233",
@@ -3976,7 +3977,6 @@
     "79b623b7bff4742f",
     "6de2ca83687fd332",
     "688c5808ff4cb089",
-    "2ec54ff601cb314a",
     "3f0acc244f1787ca",
     "a650bc2c1d092da8",
     "579ee7f3e7c99873",
@@ -4041,6 +4041,7 @@
     "24952cb999ad0137",
     "5c0331f3569cf314",
     "e329272d9fa2b48f",
+    "6c0aebeeafcf33d5",
     "b81397dd5941021f",
     "93436a52267e958e",
     "433315fd447b239a",
@@ -4102,6 +4103,7 @@
     "65462942021bf8d2",
     "0a959c2d53f08f05",
     "b530bfdfe4d62db6",
+    "2ec54ff601cb314a",
     "14c3a8d006e7996e",
     "a97004e961a00227",
     "8eba127a45d1953d",
@@ -4413,7 +4415,6 @@
     "77f2a2fd5d70ef07",
     "430ebd584fd20986",
     "fffd9782aea12c1a",
-    "9fbc1b70b6426462",
     "bbabba664efb1646",
     "6881d450287b6124",
     "711e982b55b34f59",
@@ -6807,6 +6808,7 @@
     "e550e26b61b20d1c",
     "b6807a82d0b760ef",
     "a98440cac2f5d856",
+    "9fbc1b70b6426462",
     "c3c296345fb4ef57",
     "14a8dd9c67a7a934",
     "d4008aab3736a8f3",
