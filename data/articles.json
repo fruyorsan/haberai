@@ -30,7 +30,7 @@
     "gorselSorgu": "emergency dispatch center control room",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/gundem/112-acil-cagri-ve-koordinasyon-genel-mudurlugu-kuruldu/4107462",
-    "image": "/kapak/28241d006e49d8e9.webp",
+    "image": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_3c1c13ae5326ac068deeb0ae220462b6.jpg",
     "publishedAt": "2026-10-31T15:50:17.000Z",
     "generatedAt": "2026-10-31T15:59:16.035Z",
     "gorselEk": [
@@ -44,18 +44,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-10-31T20:04:13.876Z",
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/31/thumbs_b_c_3c1c13ae5326ac068deeb0ae220462b6.jpg",
-      "foto": true
-    },
-    "gorselKaynak": {
-      "yazar": "U.S. Navy NSRS by Petty Officer 1st Class Benjamin Lewis",
-      "lisans": "Kamu malı",
-      "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:NAVSTA_Rota%E2%80%99s_Emergency_Dispatch_(5237481).jpg"
-    }
+    "gorselDeneme": "2026-10-31T20:04:13.876Z"
   },
   {
     "id": "dbfdd3a61e910d87",
@@ -88,13 +77,7 @@
     "gorselSorgu": "Gaza strip urban destruction",
     "source": "TRT Haber Son Dakika",
     "sourceUrl": "https://www.trthaber.com/haber/dunya/isgalci-israil-ordusunun-gazze-seridine-duzenledigi-saldirida-4-filistinli-oldu-961414.html",
-    "image": "/kapak/dbfdd3a61e910d87.webp",
-    "gorselKaynak": {
-      "yazar": "Efi Sharir",
-      "lisans": "CC BY 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Intifada_in_Gaza_Strip_(FL45954528).jpg"
-    },
+    "image": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2360000/gazze-saldiri-aa-2360898.jpg",
     "publishedAt": "2026-10-27T22:21:00.000Z",
     "generatedAt": "2026-10-27T22:49:08.126Z",
     "gorselEk": [
@@ -115,12 +98,7 @@
         "altyazi": "Saldırıların etkilediği yerleşim alanlarından bir kesit."
       }
     ],
-    "gorselDeneme": "2026-10-28T04:45:09.842Z",
-    "kapak": {
-      "v": 2,
-      "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2360000/gazze-saldiri-aa-2360898.jpg",
-      "foto": true
-    }
+    "gorselDeneme": "2026-10-28T04:45:09.842Z"
   },
   {
     "id": "31558b131e9b8012",
@@ -227,13 +205,7 @@
     "gorselSorgu": "Israeli airstrike Gaza street",
     "source": "Memurlar.Net",
     "sourceUrl": "https://www.memurlar.net/haber/1182016/israil-in-gazze-ye-saldirilarinda-3-filistinli-hayatini-kaybetti.html",
-    "image": "/kapak/8925211f01e45d23.webp",
-    "gorselKaynak": {
-      "yazar": "Ashraf Amra",
-      "lisans": "CC BY-SA 3.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0/igo/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Palestinians_bid_farewell_to_their_relatives_who_were_martyred_in_the_Israeli_airstrike_of_Deir_el-Balah,_Gaza_Strip.jpg"
-    },
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Palestinians_bid_farewell_to_their_relatives_who_were_martyred_in_the_Israeli_airstrike_of_Deir_el-Balah%2C_Gaza_Strip.jpg",
     "publishedAt": "2026-10-24T16:43:00.000Z",
     "generatedAt": "2026-10-24T17:10:53.332Z",
     "gorselEk": [
@@ -244,12 +216,7 @@
         "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0/igo/deed.en",
         "sayfa": "https://commons.wikimedia.org/wiki/File:A_Palestinian_woman_mourn_her_relatives_martyred_in_the_Israeli_airstrike_of_Deir_el-Balah,_Gaza_Strip.jpg"
       }
-    ],
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Palestinians_bid_farewell_to_their_relatives_who_were_martyred_in_the_Israeli_airstrike_of_Deir_el-Balah%2C_Gaza_Strip.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "6c3f4193aeae8701",
