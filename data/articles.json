@@ -1,5 +1,60 @@
 [
   {
+    "id": "a4e9ceb422b77a55",
+    "title": "YouTube mobil uygulaması videoları kendiliğinden küçültüp sesi kesiyor",
+    "slug": "youtube-mobil-uygulamasi-videolari-kendiliginden-kucultup-sesi-kesiyor",
+    "summary": "YouTube mobil uygulamasında yaşanan teknik bir sorun yüzünden videolar izleme sırasında aniden mini oynatıcıya geçerek sesi tamamen kapatıyor. Hem Android hem de iOS cihazları etkileyen bu duruma karşı henüz resmi bir güncelleme sunulmadı. Kullanıcılar ise uygulamayı kapatıp açarak sorunu geçici olarak çözmeye çalışıyor.",
+    "keyPoints": [
+      "Videolar tam ekrandan aniden mini oynatıcıya geçerek sesi tamamen kesiyor.",
+      "Sorun ekim ayının başından beri hem Android hem iOS cihazlarda görülüyor.",
+      "Uygulama önbelleğini temizlemek veya silip yüklemek hatayı düzeltmeye yetmiyor."
+    ],
+    "body": [
+      "Dünyanın en çok tercih edilen video paylaşım platformu YouTube, mobil sürümlerinde kullanıcı tecrübesini doğrudan olumsuz etkleyen beklenmedik bir teknik hatayla gündeme geldi. Akıllı telefonlarında içerik izleyen çok sayıda kişi, ekranlarına hiçbir şekilde dokunmadıkları halde video oynatıcıda tuhaf bir değişiklik yaşandığını bildiriyor. Seyir esnasında tam ekran modunda çalışan videolar, kullanıcı tarafından herhangi bir ayar değiştirilmediği halde aniden küçülerek mini oynatıcı boyutuna geçiş yapıyor. Bu durum, mobil platformda içerik tüketim sürecini ciddi şekilde bölüyor ve izleyicileri zora sokuyor.",
+      "Ortaya çıkan bu yazılım hatasının yarattığı en büyük sorun ise ekran küçüldüğü anda video sesinin tamamen kesilmesi oluyor. Kullanıcılar görüntüyü düzeltmek adına videoyu tekrar tam ekran moduna getirseler dahi ses yayını her zaman geri gelmiyor. Aksaklıkla yüzleşen kişiler, sesi yeniden duyabilmek için izledikleri videoyu tamamen kapatıp baştan başlatmak zorunda kalıyor. Bazı durumlarda ise bu adım yeterli olmuyor ve sorunu çözmek için YouTube mobil uygulamasını arka plandan tamamen kapatıp yeniden açmak gerekiyor.",
+      "Yaşanan aksaklık karşısında kullanıcılar, cihazlarında kilitlenen oynatıcıyı kurtarmak amacıyla standart çözüm yollarını denemeye koyuldu. Uygulama önbelleğini temizlemek, YouTube güncellemelerini kaldırıp uygulamayı sıfırdan yüklemek ve hatta telefonu yeniden başlatmak gibi adımlar sıkça uygulanıyor. Bunların yanı sıra uygulama ayarları üzerinden oynatıcı seçeneklerini değiştirmek de denenen yöntemler arasında bulunuyor. Ancak kullanıcıların aktardığı bilgilere göre bu işlemlerin hiçbiri ses kesilmesi ve ekran küçülmesi sorununa kalıcı bir çare sunamıyor.",
+      "Mobil platformlarda geniş bir kitleyi etkileyen bu teknik problem aslında çok yeni bir durum değil. Kullanıcı şikayetlerine bakıldığında sorunun ilk olarak ekim ayının başlarında ortaya çıktığı ve o tarihten bu yana devam ettiği görülüyor. Aradan geçen zamana ve sosyal medyada artan tepkilere rağmen Google kanadından henüz bu hatayı gideren kapsamlı bir yazılım güncellemesi sunulmuş değil. Resmi bir düzeltmenin gecikmesi, mobil izleyicilerin günlük kullanımda yaşadığı memnuniyetsizliği her geçen gün daha da artırıyor.",
+      "Söz konusu teknik aksaklığın hem Android hem de iOS işletim sistemini kullanan cihazlarda eş zamanlı olarak rapor edilmesi oldukça kritik bir detay olarak öne çıkıyor. Farklı markalara ve yazılımlara sahip akıllı telefonlarda birebir aynı şikayetlerin yaşanması, problemin cihaz donanımından ziyade doğrudan YouTube'un kendi mobil altyapısından kaynaklandığını kanıtlıyor. Şirketin sunucu veya uygulama içi kodlamalardan kaynaklanan bu sorunu çözmek üzere yakında yeni bir yama yayınlaması bekleniyor."
+    ],
+    "comment": "Google gibi teknoloji devlerinin mobil uygulamalarda yaşanan bu tarz kritik oynatıcı hatalarını haftalarca cevapsız bırakması kabul edilemez bir yazılım yönetimi zafiyetidir. Ekim ayının başından beri hem Android hem iOS tarafında süren bu aksaklık, platformun en temel işlevi olan video izleme deneyimini doğrudan baltalayarak günlük mobil kullanıcıları mağdur ediyor. Kullanıcıların önbellek temizleme gibi yöntemlerle çözemediği bir hatanın bu kadar uzaması, rakip platformların öne çıktığı günümüz pazarında YouTube için ciddi bir kan kaybına dönüşebilir. Şirket acilen bir yama yayınlamazsa mobil aktif kullanıcı sürelerinde belirgin bir düşüş senaryosu kaçınılmaz olacaktır.",
+    "editorNote": "Videolarınız aniden küçülüp sessize geçiyorsa yalnız değilsiniz; Google haftalardır süren sorunu düzeltmek için henüz bir güncelleme sunmuş değil.",
+    "tags": [
+      "YouTube",
+      "Google",
+      "Android",
+      "iOS",
+      "Mobil Uygulama"
+    ],
+    "category": "Mobil",
+    "gorselSorgu": "youtube app mobile phone",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/youtube-sorunu-videolar-tam-ekrandan-cikiyor-ses-kesiliyor--212336",
+    "image": "/kapak/a4e9ceb422b77a55.webp",
+    "images": [
+      "https://www.donanimhaber.com/images/images/editor/adddb4c5eed1486b8cbd35b7cd600120.jpg"
+    ],
+    "publishedAt": "2026-11-01T19:00:00.000Z",
+    "generatedAt": "2026-11-01T19:04:12.569Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Smartphone_cracked_screen.jpg/1280px-Smartphone_cracked_screen.jpg",
+        "yazar": "Sygmoral",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Smartphone_cracked_screen.jpg",
+        "altyazi": "Akıllı telefon ekranında mobil video oynatma deneyimi"
+      }
+    ],
+    "breaking": true,
+    "imagesKaynak": "https://www.donanimhaber.com/youtube-sorunu-videolar-tam-ekrandan-cikiyor-ses-kesiliyor--212336",
+    "gorselDeneme": "2026-11-01T19:04:14.680Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://www.donanimhaber.com/images/images/haber/212336/src/youtube-sorunu-videolar-tam-ekrandan-cikiyor-ses-kesiliyor212336_0.jpg",
+      "foto": false
+    }
+  },
+  {
     "id": "470801c3ec0f1b8d",
     "title": "Fenerbahçe, Galatasaray deplasmanında set vermeden galip geldi",
     "slug": "fenerbahce-galatasaray-deplasmanda-set-vermeden-galip-geldi",
@@ -101,7 +156,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:02.840Z",
+    "gorselDeneme": "2026-11-01T19:04:15.594Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/01/thumbs_b_c_50eac9498eae0ac9837013cde6549c3d.jpg",
@@ -161,7 +216,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:00.973Z",
+    "gorselDeneme": "2026-11-01T19:04:13.431Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ichef.bbci.co.uk/ace/standard/1200/cpsprodpb/359f/live/2470c810-d61e-11f1-905f-4bb31135b4e2.jpg",
@@ -284,7 +339,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:01.408Z",
+    "gorselDeneme": "2026-11-01T19:04:14.015Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/duzensiz-gocmenaa-2500257.jpg",
@@ -511,7 +566,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:01.033Z",
+    "gorselDeneme": "2026-11-01T19:04:13.464Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ichef.bbci.co.uk/ace/standard/1200/cpsprodpb/c922/live/4fe4c8d0-d5fa-11f1-a701-fddedf244c16.jpg",
@@ -563,7 +618,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:01.856Z",
+    "gorselDeneme": "2026-11-01T19:04:14.776Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212339/src/kurbaga-zehri-iceren-burun-spreyi-depresyonu-tedavi-edebilir212339_0.jpg",
@@ -682,7 +737,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:01.557Z",
+    "gorselDeneme": "2026-11-01T19:04:14.212Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/kutahya-kazaaa-2500255.jpg",
@@ -741,7 +796,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:02.806Z",
+    "gorselDeneme": "2026-11-01T19:04:18.347Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/01/thumbs_b_c_b679db2b2499ac3ef8336378457263ac.jpg",
@@ -865,7 +920,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:03.561Z",
+    "gorselDeneme": "2026-11-01T19:04:15.800Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/01/thumbs_b_c_c24666d1966ba8df4256679f3d56951c.jpg",
@@ -1760,7 +1815,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:02.524Z",
+    "gorselDeneme": "2026-11-01T19:04:15.435Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1752000/emlak-hesaplama-vergi-stok-1753232.jpg",
@@ -1817,7 +1872,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:02.515Z",
+    "gorselDeneme": "2026-11-01T19:04:15.434Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2390000/gazze-aa-2391750.jpg",
@@ -1882,7 +1937,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:02.655Z",
+    "gorselDeneme": "2026-11-01T19:04:15.596Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2390000/gazze-aa-2391750.jpg",
@@ -1936,7 +1991,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:04.418Z",
+    "gorselDeneme": "2026-11-01T19:04:17.766Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/01/thumbs_b_c_2ed9bc974f36382eb1d0ccc78ebaaf31.jpg",
@@ -1984,7 +2039,7 @@
     "publishedAt": "2026-11-01T12:23:30.000Z",
     "generatedAt": "2026-11-01T12:30:36.217Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:04.408Z",
+    "gorselDeneme": "2026-11-01T19:04:15.841Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/01/thumbs_b_c_cf9531a801d3ebdc7a3a2b5495d52053.jpg",
@@ -2107,7 +2162,7 @@
     "publishedAt": "2026-11-01T12:03:00.000Z",
     "generatedAt": "2026-11-01T12:11:13.529Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:02.965Z",
+    "gorselDeneme": "2026-11-01T19:04:15.791Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2430000/gozalti-2430529.jpg",
@@ -2253,7 +2308,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:03.687Z",
+    "gorselDeneme": "2026-11-01T19:04:16.521Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212333/src/volkswagen-in-turkiye-planinda-cin-surprizi-montaj-iddiasi212333_0.jpg",
@@ -2310,7 +2365,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:03.806Z",
+    "gorselDeneme": "2026-11-01T19:04:16.048Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/01/thumbs_b_c_874afdd1977ebe7439881c916c86994e.jpg",
@@ -2601,7 +2656,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:04.283Z",
+    "gorselDeneme": "2026-11-01T19:04:16.886Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212327/src/zte-xuntian-be3600-yonlendiricisi-tanitildi212327_0.jpg",
@@ -3007,7 +3062,7 @@
     "publishedAt": "2026-11-01T09:03:45.000Z",
     "generatedAt": "2026-11-01T09:09:17.192Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:04.421Z",
+    "gorselDeneme": "2026-11-01T19:04:16.570Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/01/thumbs_b_c_72f83712bd242c3a04e5cfeea9978e40.jpg",
@@ -3073,7 +3128,7 @@
     "publishedAt": "2026-11-01T08:49:00.000Z",
     "generatedAt": "2026-11-01T08:55:51.968Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:04.256Z",
+    "gorselDeneme": "2026-11-01T19:04:16.835Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1678000/turkiye-guney-kore-bayrak-getty-1679815.jpg",
@@ -3145,7 +3200,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:04.397Z",
+    "gorselDeneme": "2026-11-01T19:04:17.254Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/kpss-din-hizmetleri-aa-2500141.jpg",
@@ -3211,7 +3266,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:04.595Z",
+    "gorselDeneme": "2026-11-01T19:04:17.237Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/01/thumbs_b_c_f2ab81ecfdfe12b3f9cd3317dbf832fd.jpg",
@@ -3269,7 +3324,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:04.523Z",
+    "gorselDeneme": "2026-11-01T19:04:17.041Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1642000/yargitay-1643800.jpg",
@@ -3326,7 +3381,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:04.864Z",
+    "gorselDeneme": "2026-11-01T19:04:17.293Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/01/thumbs_b_c_c9611288639e465148eeaaf2455ae7a0.jpg",
@@ -3447,7 +3502,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:04.898Z",
+    "gorselDeneme": "2026-11-01T19:04:17.528Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/01/thumbs_b_c_9c67bbaa8da9caf60954eaebd18a58db.jpg",
@@ -3570,7 +3625,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:04.663Z",
+    "gorselDeneme": "2026-11-01T19:04:17.607Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2434000/mehmet-nuri-ersoy-2435058.jpg",
@@ -3628,7 +3683,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:05.107Z",
+    "gorselDeneme": "2026-11-01T19:04:17.459Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/insaat-tahliye-aa-2500136.jpg",
@@ -3846,7 +3901,7 @@
     "publishedAt": "2026-11-01T06:01:38.000Z",
     "generatedAt": "2026-11-01T06:18:57.148Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:05.100Z",
+    "gorselDeneme": "2026-11-01T19:04:17.908Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/01/thumbs_b_c_7ef2251a0d3b10bbe00d629b4211a9f9.jpg",
@@ -3913,7 +3968,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:05.186Z",
+    "gorselDeneme": "2026-11-01T19:04:17.999Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://images.bursadabugun.com/haber/2026/11/01/1960412-iranli-muhsin-rizai-acikladi-suudi-savunma-bakani-israil-in-sonraki-hedefinin-turkiye-oldugunu-soyledi-6ae6d0da7f01a.webp",
@@ -4025,7 +4080,7 @@
     "publishedAt": "2026-11-01T05:17:00.000Z",
     "generatedAt": "2026-11-01T05:30:17.474Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:05.024Z",
+    "gorselDeneme": "2026-11-01T19:04:17.788Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/istanbul-maraton-2500119.jpg",
@@ -4081,7 +4136,7 @@
     "publishedAt": "2026-11-01T05:15:02.000Z",
     "generatedAt": "2026-11-01T05:20:13.911Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-01T18:55:05.531Z",
+    "gorselDeneme": "2026-11-01T19:04:18.343Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ares.shiftdelete.net/static/img/content/26-11/01/mobil_hmd-pulse-pro-2nd-edition-helio-g99.jpg",
@@ -58176,7 +58231,7 @@
     "gorselSorgu": "data center server room",
     "source": "BeInCrypto",
     "sourceUrl": "https://tr.beincrypto.com/en-buyuk-3-teknoloji-devinin-kazanc-raporlari-ekim-son-hafta/",
-    "image": "/kapak/5ea4f3d717547639.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
     "publishedAt": "2026-10-26T01:58:41.000Z",
     "generatedAt": "2026-10-26T01:59:41.431Z",
     "ekGorselDeneme": "2026-10-27T14:08:49.514Z",
@@ -58184,11 +58239,6 @@
       "tarih": "2026-11-01T10:21:26.212Z",
       "sonuc": "atlandi",
       "neden": "yeterli görsel yok"
-    },
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
-      "foto": false
     }
   },
   {
@@ -61440,7 +61490,7 @@
     "gorselSorgu": "van-gogh starry-night painting",
     "source": "CHIP Online",
     "sourceUrl": "https://www.chip.com.tr/guncel/van-goghun-yildizli-gece-tablosundaki-137-yillik-gizem-cozuluyor_184869.html",
-    "image": "/kapak/1e562fe6acf8e9ac.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Vincent_van_Gogh_Starry_Night.jpg/1280px-Vincent_van_Gogh_Starry_Night.jpg",
     "publishedAt": "2026-10-25T16:58:00.000Z",
     "generatedAt": "2026-10-25T17:00:56.760Z",
     "gorselDeneme": "2026-10-28T04:45:24.479Z",
@@ -61460,12 +61510,7 @@
         "lisansUrl": "",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_The_yellow_house_(%27The_street%27).jpg"
       }
-    ],
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Vincent_van_Gogh_Starry_Night.jpg/1280px-Vincent_van_Gogh_Starry_Night.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "9c0257ab57d6eb37",
@@ -64443,7 +64488,7 @@
     "gorselSorgu": "Barack Obama speech podium",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/economy-news/obama-enflasyon-konusunda-trump-elestirdi-4118498",
-    "image": "/kapak/f6f884514f6577c6.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg/1280px-President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg",
     "publishedAt": "2026-10-25T04:13:17.000Z",
     "generatedAt": "2026-10-25T04:21:44.052Z",
     "gorselEk": [
@@ -64455,12 +64500,7 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Press_Secretary_Karine_Jean-Pierre_speaks_during_a_press_briefing,_Monday,_May_13,_2024,_in_the_James_S._Brady_Press_Briefing_Room_of_the_White_House.jpg",
         "altyazi": "Washington siyasetinde ekonomi politikaları tartışılmaya devam ediyor"
       }
-    ],
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg/1280px-President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "2f83428af6fd33ce",
@@ -66533,7 +66573,7 @@
     "gorselSorgu": "Casio watch display",
     "source": "beetekno.com",
     "sourceUrl": "https://beetekno.com/casio-abdde-minimalist-tasarimli-uc-yeni-hafif-gma-s160-saatini-satisa-sundu",
-    "image": "/kapak/5659ff12cfe2382d.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Casio_W-86_and_F-91W_digital_watch_comparison_%28front%29.jpg/1280px-Casio_W-86_and_F-91W_digital_watch_comparison_%28front%29.jpg",
     "publishedAt": "2026-10-24T00:01:11.000Z",
     "generatedAt": "2026-10-24T00:10:51.067Z",
     "gorselEk": [
@@ -66545,12 +66585,7 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Casio_F-91W_watch_(2023)_(packaging_and_contents)_(iii).jpg"
       }
     ],
-    "gorselDeneme": "2026-10-28T04:45:29.792Z",
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Casio_W-86_and_F-91W_digital_watch_comparison_%28front%29.jpg/1280px-Casio_W-86_and_F-91W_digital_watch_comparison_%28front%29.jpg",
-      "foto": false
-    }
+    "gorselDeneme": "2026-10-28T04:45:29.792Z"
   },
   {
     "id": "6a93bfbaaa0ee53a",
@@ -70333,7 +70368,7 @@
     "gorselSorgu": "Volvo electric car production line",
     "source": "LOG",
     "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOdVBzOXZlYkZvbGNhOEw0WFR4YkJ4Mk1RUEF2Vm04b2N4UVNwOWNXM2VhWFRlUzI3TXc2alAyRmNjWjE1SDZadThUUzZ5OXF6LUlZQUxlWUlWb2FSMkREdVdZV0VncEUtN1dIWm1ObS04ZnJvR0lvZGRnSXNZUkhUNmN3UUNvWHFq?oc=5",
-    "image": "/kapak/e7c31bf76ad14e51.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Volvo_C30_Electric_NAIAS_2011.jpg/1280px-Volvo_C30_Electric_NAIAS_2011.jpg",
     "publishedAt": "2026-10-23T12:44:15.000Z",
     "generatedAt": "2026-10-23T12:48:42.823Z",
     "gorselEk": [
@@ -70352,12 +70387,7 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Volvo_FH_Aero_Electric_(2024).jpg"
       }
     ],
-    "gorselDeneme": "2026-10-28T04:45:35.260Z",
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Volvo_C30_Electric_NAIAS_2011.jpg/1280px-Volvo_C30_Electric_NAIAS_2011.jpg",
-      "foto": false
-    }
+    "gorselDeneme": "2026-10-28T04:45:35.260Z"
   },
   {
     "id": "a7d2537b51cf1387",
@@ -71802,15 +71832,10 @@
     "gorselSorgu": "science laboratory microscope medical",
     "source": "Evrim Ağacı",
     "sourceUrl": "https://evrimagaci.org/daha-yuksek-testosteron-gercekten-erkekligi-ve-babaligi-guclendiriyor-mu-23912",
-    "image": "/kapak/4da632733a2f9bb7.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Mars_Science_Laboratory_landing_ellipse_reduced.jpg/1280px-Mars_Science_Laboratory_landing_ellipse_reduced.jpg",
     "publishedAt": "2026-10-23T11:55:03.000Z",
     "generatedAt": "2026-10-23T11:56:11.409Z",
-    "ekGorselDeneme": "2026-10-24T17:55:02.655Z",
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Mars_Science_Laboratory_landing_ellipse_reduced.jpg/1280px-Mars_Science_Laboratory_landing_ellipse_reduced.jpg",
-      "foto": false
-    }
+    "ekGorselDeneme": "2026-10-24T17:55:02.655Z"
   },
   {
     "id": "87a99ed42fdc0096",
@@ -93545,7 +93570,7 @@
     "gorselSorgu": "art festival rally",
     "source": "Howl.link",
     "sourceUrl": "https://t.co/EHKXAOy1xY",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Digital_art_at_The_Sassoon_Docks_Art_Festival_2022_-_2023.jpg/1280px-Digital_art_at_The_Sassoon_Docks_Art_Festival_2022_-_2023.jpg",
+    "image": "/kapak/27211c9d33bd7946.webp",
     "publishedAt": "2026-10-22T20:18:22.000Z",
     "generatedAt": "2026-10-22T20:21:29.423Z",
     "gorselEk": [
@@ -93564,7 +93589,12 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Appa_Parab_at_the_CSMP_Art_Festival_02.jpg"
       }
     ],
-    "gorselDeneme": "2026-10-28T04:46:15.389Z"
+    "gorselDeneme": "2026-10-28T04:46:15.389Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Digital_art_at_The_Sassoon_Docks_Art_Festival_2022_-_2023.jpg/1280px-Digital_art_at_The_Sassoon_Docks_Art_Festival_2022_-_2023.jpg",
+      "foto": false
+    }
   },
   {
     "id": "47922440df585322",
@@ -99395,7 +99425,7 @@
     "gorselSorgu": "Tesla electric car factory",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/analyst-ratings/stonex-tesla-hissesi-icin-al-tavsiyesini-yineledi-475-dolar-hedef-fiyat-korudu-93CH-4115890",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Tesla_Giga_Factory_BerlinBrandenburg_Drohne_2.jpg/1280px-Tesla_Giga_Factory_BerlinBrandenburg_Drohne_2.jpg",
+    "image": "/kapak/d3c9a2e476b38362.webp",
     "publishedAt": "2026-10-22T15:29:23.000Z",
     "generatedAt": "2026-10-22T15:42:08.717Z",
     "gorselEk": [
@@ -99413,7 +99443,12 @@
         "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Tesla_electric_car_recharging_in_Los_Angeles,_August_2020.jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Tesla_Giga_Factory_BerlinBrandenburg_Drohne_2.jpg/1280px-Tesla_Giga_Factory_BerlinBrandenburg_Drohne_2.jpg",
+      "foto": false
+    }
   },
   {
     "id": "73f45185ddc55642",
@@ -104319,7 +104354,7 @@
     "gorselSorgu": "Donald Trump press conference",
     "source": "Ensonhaber",
     "sourceUrl": "https://www.ensonhaber.com/donald-trumptan-iran-mesaji-onlari-devirecegiz-h1575961",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/P20250530MR-0484_President_Donald_Trump_participates_in_a_press_conference_with_departing_DOGE_adviser_Elon_Musk.jpg/1280px-P20250530MR-0484_President_Donald_Trump_participates_in_a_press_conference_with_departing_DOGE_adviser_Elon_Musk.jpg",
+    "image": "/kapak/bb59b7a2cbc69c10.webp",
     "publishedAt": "2026-10-22T11:38:01.000Z",
     "generatedAt": "2026-10-22T11:41:32.688Z",
     "gorselEk": [
@@ -104337,7 +104372,12 @@
         "lisansUrl": "",
         "sayfa": "https://commons.wikimedia.org/wiki/File:P20250530MR-0603_President_Donald_Trump_participates_in_a_press_conference_with_departing_DOGE_adviser_Elon_Musk.jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/P20250530MR-0484_President_Donald_Trump_participates_in_a_press_conference_with_departing_DOGE_adviser_Elon_Musk.jpg/1280px-P20250530MR-0484_President_Donald_Trump_participates_in_a_press_conference_with_departing_DOGE_adviser_Elon_Musk.jpg",
+      "foto": false
+    }
   },
   {
     "id": "686d3f11a6cecddc",
@@ -104948,7 +104988,7 @@
     "gorselSorgu": "stock market trading floor",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/stock-market-news/seans-oncesi-hareketler-tesla-ibm-dustu-meta-kazanclar-havay-duzeltmedi-4114936",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Stock_market_in_Triest_today.JPG/1280px-Stock_market_in_Triest_today.JPG",
+    "image": "/kapak/6e1a98f3f9bf4197.webp",
     "publishedAt": "2026-10-22T11:26:15.000Z",
     "generatedAt": "2026-10-22T11:30:41.078Z",
     "gorselEk": [
@@ -104959,7 +104999,12 @@
         "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:UK_Stock_Market_-_Investing_in_the_United_Kingdom.jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Stock_market_in_Triest_today.JPG/1280px-Stock_market_in_Triest_today.JPG",
+      "foto": false
+    }
   },
   {
     "id": "1c56cf9341962550",
@@ -119061,10 +119106,15 @@
     "gorselSorgu": "galatasaray liverpool match",
     "source": "Bölge Gündemi",
     "sourceUrl": "https://www.bolgegundemi.com/video/lille-galatasaray-sari-kirmizili-ekip-fransada-4-2-kazandi-217484.html",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/4/47/Galatasaray_Liverpool_CL_2006.jpg",
+    "image": "/kapak/83145fb98301e472.webp",
     "publishedAt": "2026-10-22T03:16:10.000Z",
     "generatedAt": "2026-10-22T03:23:51.557Z",
-    "gorselDeneme": "2026-10-28T04:46:50.432Z"
+    "gorselDeneme": "2026-10-28T04:46:50.432Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/4/47/Galatasaray_Liverpool_CL_2006.jpg",
+      "foto": false
+    }
   },
   {
     "id": "0081eefac955a7c5",
@@ -171790,14 +171840,9 @@
     "gorselSorgu": "Aeromexico flight deck",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/stock-market-news/aeromexico-washingtonn-ucus-kstlamalarn-kaldrmasnn-ardndan-abdye-genislemeyi-planlyor-93CH-4109456",
-    "image": "/kapak/1a7ece8bea774e2b.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Aeromexico_B737-852%2C_XA-AMC%2C_MSN_4539_%2807_2013%29%2C_as_AM_783_Los_Angeles_%28LAX%29_-_Guadalajara_%28GDL%29%2C_Flight_time_2_58_%2854209251671%29.jpg/1280px-Aeromexico_B737-852%2C_XA-AMC%2C_MSN_4539_%2807_2013%29%2C_as_AM_783_Los_Angeles_%28LAX%29_-_Guadalajara_%28GDL%29%2C_Flight_time_2_58_%2854209251671%29.jpg",
     "publishedAt": "2026-10-19T19:56:21.000Z",
-    "generatedAt": "2026-10-19T20:00:49.769Z",
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Aeromexico_B737-852%2C_XA-AMC%2C_MSN_4539_%2807_2013%29%2C_as_AM_783_Los_Angeles_%28LAX%29_-_Guadalajara_%28GDL%29%2C_Flight_time_2_58_%2854209251671%29.jpg/1280px-Aeromexico_B737-852%2C_XA-AMC%2C_MSN_4539_%2807_2013%29%2C_as_AM_783_Los_Angeles_%28LAX%29_-_Guadalajara_%28GDL%29%2C_Flight_time_2_58_%2854209251671%29.jpg",
-      "foto": false
-    }
+    "generatedAt": "2026-10-19T20:00:49.769Z"
   },
   {
     "id": "d2a8d79306633717",
@@ -175501,7 +175546,7 @@
     "gorselSorgu": "playground equipment manufacturing factory",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/economy-news/ftc-oyun-park-ekipman-anlasmasn-engellemek-icin-dava-act-93CH-4109348",
-    "image": "/kapak/e4a576a817e2ff18.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Playground_equipment_in_Munich_03.jpg/1280px-Playground_equipment_in_Munich_03.jpg",
     "publishedAt": "2026-10-19T16:02:29.000Z",
     "generatedAt": "2026-10-19T16:05:03.656Z",
     "gorselEk": [
@@ -175519,12 +175564,7 @@
         "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Playground_equipment_in_Munich_02.jpg"
       }
-    ],
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Playground_equipment_in_Munich_03.jpg/1280px-Playground_equipment_in_Munich_03.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "b341453e87b9bb94",
@@ -185707,16 +185747,11 @@
     "category": "Bilim",
     "source": "Evrim Ağacı",
     "sourceUrl": "https://evrimagaci.org/bilim-insanlari-hangi-hayvanlari-neden-inceliyor-23969",
-    "image": "/kapak/8033b4c066ec6658.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Aquatic_Ecosystems_Research_Laboratory_and_Beaty_Biodiversity_Centre.jpg/1280px-Aquatic_Ecosystems_Research_Laboratory_and_Beaty_Biodiversity_Centre.jpg",
     "publishedAt": "2026-10-19T09:17:21.000Z",
     "generatedAt": "2026-10-19T09:19:14.969Z",
     "gorselDeneme": "2026-10-20T09:16:19.459Z",
-    "gorselSorgu": "biodiversity research biology laboratory",
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Aquatic_Ecosystems_Research_Laboratory_and_Beaty_Biodiversity_Centre.jpg/1280px-Aquatic_Ecosystems_Research_Laboratory_and_Beaty_Biodiversity_Centre.jpg",
-      "foto": false
-    }
+    "gorselSorgu": "biodiversity research biology laboratory"
   },
   {
     "id": "87fb9059d1a216ee",
