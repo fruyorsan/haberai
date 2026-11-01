@@ -52,6 +52,10 @@ const MAX_ORAN = 2.8;
 // Bu çalıştırmada günlük kotası dolan Gemini model+anahtar çiftleri; tekrar denenmez.
 const visionTukendi = new Set();
 
+// Openverse bu ağdan erişilemiyorsa her sorguda 35 sn beklemek turu kilitler:
+// ilk ağ hatasından sonra kaynağı bu çalıştırma için kapatıyoruz.
+let openverseKapali = false;
+
 // Yalnızca serbest lisanslar. GFDL, fair use, non-free kabul edilmez.
 const IZINLI_LISANS =
   /^(cc0\b|public domain\b|pd\b|pd[- ].*|no restrictions\b|cc by(-sa)?[ -]?\d)/i;
@@ -73,6 +77,234 @@ const ESKI_GORSEL =
 // URL'de logo/ikon/yer tutucu izi.
 const URL_COP =
   /(logo|favicon|sprite|avatar|gravatar|placeholder|no[-_]?image|default[-_/]?(image|img|thumb)|watermark|share[-_]?(icon|default)|icon[-_/]|[-_/]icon|1x1|pixel\.(gif|png)|blank\.(gif|png)|transparent\.(gif|png)|habergorseli|son-?dakika\.jpe?g|preferred_source|adserve\.|app-download)/i;
+
+// ------------------------------------------------------------ varlık çıkarımı
+// Commons ve Openverse başlıkla arama yapar: "smartphone camera under display"
+// gibi kavramsal sorgular ya hiç sonuç vermiyor ya da alakasız kareler
+// döndürüyor. Oysa "Samsung Galaxy Z Fold" gibi ürün adı sorguları doğrudan
+// ürünün kendi fotoğraflarını getiriyor. Bu yüzden haber metninden marka ve
+// model adlarını çıkarıp aramanın başına koyuyoruz.
+const MARKALAR = [
+  ["apple maps", "Apple Maps"],
+  ["apple watch", "Apple Watch"],
+  ["apple tv", "Apple TV"],
+  ["apple music", "Apple Music"],
+  ["apple", "Apple Inc"],
+  ["google maps", "Google Maps"],
+  ["google news", "Google News"],
+  ["samsung", "Samsung"],
+  ["google", "Google"],
+  ["xiaomi", "Xiaomi"],
+  ["huawei", "Huawei"],
+  ["oneplus", "OnePlus"],
+  ["oppo", "Oppo"],
+  ["vivo", "Vivo"],
+  ["realme", "Realme"],
+  ["honor", "Honor"],
+  ["nothing", "Nothing Phone"],
+  ["sony", "Sony"],
+  ["microsoft", "Microsoft"],
+  ["meta", "Meta"],
+  ["openai", "OpenAI"],
+  ["anthropic", "Anthropic"],
+  ["nvidia", "Nvidia"],
+  ["amd", "AMD"],
+  ["intel", "Intel"],
+  ["qualcomm", "Qualcomm"],
+  ["tesla", "Tesla"],
+  ["byd", "BYD"],
+  ["toyota", "Toyota"],
+  ["bmw", "BMW"],
+  ["mercedes", "Mercedes-Benz"],
+  ["volkswagen", "Volkswagen"],
+  ["renault", "Renault"],
+  ["fiat", "Fiat"],
+  ["hyundai", "Hyundai"],
+  ["ford", "Ford"],
+  ["volvo", "Volvo"],
+  ["playstation", "PlayStation"],
+  ["xbox", "Xbox"],
+  ["nintendo", "Nintendo"],
+  ["steam", "Steam"],
+  ["epic games", "Epic Games"],
+  ["rockstar", "Rockstar Games"],
+  ["gta", "Grand Theft Auto"],
+  ["minecraft", "Minecraft"],
+  ["fortnite", "Fortnite"],
+  ["chatgpt", "ChatGPT"],
+  ["claude", "Claude"],
+  ["gemini", "Gemini"],
+  ["copilot", "Copilot"],
+  ["windows", "Microsoft Windows"],
+  ["android", "Android"],
+  ["iphone", "iPhone"],
+  ["ipad", "iPad"],
+  ["macbook", "MacBook"],
+  ["airpods", "AirPods"],
+  ["galaxy", "Samsung Galaxy"],
+  ["pixel", "Google Pixel"],
+  ["redmi", "Redmi"],
+  ["poco", "POCO"],
+  ["spotify", "Spotify"],
+  ["netflix", "Netflix"],
+  ["youtube", "YouTube"],
+  ["tiktok", "TikTok"],
+  ["instagram", "Instagram"],
+  ["whatsapp", "WhatsApp"],
+  ["telegram", "Telegram"],
+  ["twitter", "Twitter"],
+  ["spacex", "SpaceX"],
+  ["nasa", "NASA"],
+  ["starlink", "Starlink"],
+  // Oyun markaları: oyun haberlerinde kapak neredeyse her zaman oyunun kendi
+  // sanatı ya da konsol fotoğrafı olur; jenerik "gamer" stokları işe yaramaz.
+  ["mass effect", "Mass Effect"],
+  ["star wars", "Star Wars"],
+  ["battlefield", "Battlefield"],
+  ["call of duty", "Call of Duty"],
+  ["assassin", "Assassin's Creed"],
+  ["cyberpunk", "Cyberpunk 2077"],
+  ["elden ring", "Elden Ring"],
+  ["resident evil", "Resident Evil"],
+  ["god of war", "God of War"],
+  ["the last of us", "The Last of Us"],
+  ["hogwarts", "Hogwarts Legacy"],
+  ["red dead", "Red Dead Redemption"],
+  ["spider-man", "Spider-Man"],
+  ["halo", "Halo"],
+  ["forza", "Forza"],
+  ["gran turismo", "Gran Turismo"],
+  ["zelda", "The Legend of Zelda"],
+  ["mario", "Super Mario"],
+  ["pokemon", "Pokémon"],
+  ["valorant", "Valorant"],
+  ["league of legends", "League of Legends"],
+  ["counter-strike", "Counter-Strike"],
+  ["roblox", "Roblox"],
+  ["ea sports", "EA Sports"],
+  ["electronic arts", "Electronic Arts"],
+];
+
+const MODEL_KALIPLARI = [
+  /\biPhone\s?\d{1,2}(?:\s?(?:Pro\s?Max|Pro|Plus|Mini|Air|e))?\b/i,
+  /\biPad\s?(?:Pro|Air|Mini)?\s?\d{0,2}(?:\s?M\d)?\b/i,
+  /\bGalaxy\s?(?:Z\s?)?(?:Fold|Flip|S|A|Tab|Watch|Buds)\s?\d{0,3}(?:\s?(?:Ultra|Plus|FE|Pro))?\b/i,
+  /\bPixel\s?\d{1,2}(?:\s?(?:Pro\s?XL|Pro|a|XL))?\b/i,
+  /\b(?:RTX|GTX|RX)\s?\d{4}(?:\s?(?:Ti|Super|XT))?\b/i,
+  /\bRyzen\s?\d\s?\d{4}\w{0,3}\b/i,
+  /\b(?:Core\s?)?i[3579][- ]?\d{4,5}\w{0,3}\b/i,
+  /\bSnapdragon\s?\d\s?Gen\s?\d\b/i,
+  /\bPlayStation\s?[45]\b/i,
+  /\bXbox\s?(?:Series\s?[XS])?\b/i,
+  /\bNintendo\s?Switch\s?2?\b/i,
+  /\bOnePlus\s?\d{1,2}(?:\s?(?:Pro|T|R))?\b/i,
+  /\b(?:AirPods|Buds|FreeBuds)\s?(?:Pro|Plus|FE|Live|Studio|Air)?\s?\d{0,2}\b/i,
+  /\bGTA\s?(?:VI|6|V|5)\b/i,
+  /\bWindows\s?1[01]\b/i,
+  /\b(?:iOS|Android)\s?\d{1,2}\b/i,
+  /\bMacBook\s?(?:Pro|Air)?(?:\s?M\d)?\b/i,
+  /\bModel\s?[3SYX]\b/i,
+];
+
+// Türkçe ürün kategorisi → Commons'ta karşılığı olan İngilizce arama.
+// Model adı çıkmayan ("en iyi tuşlu telefonlar" gibi) haberlerde kullanılır.
+const KATEGORI_SORGULARI = [
+  [/\btuşlu telefon|klavyeli telefon\b/i, "feature phone Nokia"],
+  [/\bkatlanabilir (telefon|ekran)\b/i, "foldable smartphone"],
+  [/\bkulaklık|kulak içi\b/i, "wireless earbuds"],
+  [/\bakıllı saat|smartwatch\b/i, "smartwatch"],
+  [/\bdizüstü|notebook|laptop\b/i, "laptop computer"],
+  [/\btablet\b/i, "tablet computer"],
+  [/\bklavye\b/i, "mechanical keyboard"],
+  [/\bekran kartı\b/i, "graphics card"],
+  [/\bişlemci\b/i, "computer processor chip"],
+  [/\bdrone\b/i, "drone quadcopter"],
+  [/\bkameralı|fotoğraf makinesi\b/i, "digital camera"],
+  [/\belektrikli (araç|otomobil)\b/i, "electric car"],
+  [/\boyun konsolu\b/i, "game console controller"],
+  [/\bveri merkezi\b/i, "data center servers"],
+  [/\bsunucu\b/i, "server rack"],
+  [/\brobot\b/i, "robot"],
+  [/\broket fırlat|uzay aracı|uydu fırlat|spacex fırlat/i, "rocket launch"],
+];
+
+/** Model adı markayı içermiyorsa ve jenerik bir ürün ailesiyse markayı ekle. */
+const JENERIK_MODEL = /^(Buds|Watch|Tab|Fold|Flip|Pro|Ultra|AirPods|FreeBuds)\b/i;
+
+/** Marka/model adlarını İngilizce Commons sorgusuna çevirir. */
+export function varlikSorgulari(article) {
+  const baslik = String(article?.title || "");
+  const ozet = String(article?.summary || "").slice(0, 400);
+  const etiketler = (Array.isArray(article?.tags) ? article.tags : []).join(" ");
+  const metin = [baslik, ozet, etiketler].filter(Boolean).join(" ");
+  if (!metin) return [];
+
+  const modeller = [];
+  for (const kalip of MODEL_KALIPLARI) {
+    const m = kalip.exec(metin);
+    if (m) {
+      const s = m[0].replace(/\s+/g, " ").trim();
+      if (s.length >= 3 && !modeller.some((x) => x.toLowerCase() === s.toLowerCase())) {
+        modeller.push(s);
+      }
+    }
+  }
+
+  const alt = ` ${metin.toLocaleLowerCase("tr-TR")} `;
+  const markalar = [];
+  for (const [anahtar, ad] of MARKALAR) {
+    const re = new RegExp(`(^|[^a-z0-9])${anahtar.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}([^a-z0-9]|$)`);
+    if (re.test(alt) && !markalar.includes(ad)) markalar.push(ad);
+  }
+
+  const sorgular = [];
+  const ekle = (s) => {
+    const t = String(s || "").replace(/\s+/g, " ").trim();
+    if (t.length >= 3 && !sorgular.some((x) => x.toLowerCase() === t.toLowerCase())) sorgular.push(t);
+  };
+
+  // Model adı zaten markayı içeriyorsa tek başına yeter ("Samsung Galaxy Z Fold").
+  for (const model of modeller.slice(0, 2)) {
+    const temiz = model
+      .replace(/\bGalaxyFold\b/i, "Galaxy Z Fold")
+      .replace(/\bGalaxyFlip\b/i, "Galaxy Z Flip")
+      .replace(/\bGalaxy\s?Z\s?(Fold|Flip)\b/i, "Galaxy Z $1");
+    const tam = /^samsung\b/i.test(temiz) ? temiz : `Samsung ${temiz}`;
+    const markaIcerir = markalar.some((m) =>
+      tam.toLowerCase().startsWith(m.toLowerCase().split(" ")[0])
+    );
+    if (markaIcerir || !JENERIK_MODEL.test(temiz)) ekle(tam);
+    else ekle(`${markalar[0] || ""} ${temiz}`.trim());
+  }
+
+  // Model yoksa önce ürün kategorisi (somut), sonra marka: "tuşlu telefonlar"
+  // haberinde "WhatsApp" değil "feature phone Nokia" aranmalı.
+  if (!modeller.length) {
+    for (const [kalip, sorgu] of KATEGORI_SORGULARI) {
+      if (kalip.test(metin)) {
+        ekle(sorgu);
+        break;
+      }
+    }
+  }
+  for (const marka of markalar.slice(0, 2)) ekle(marka);
+
+  return sorgular.slice(0, 3);
+}
+
+/** Aday başlığında geçen marka/model kökleri: sıralamada küçük bir öncelik. */
+function varlikKokleri(article) {
+  const metin = [...varlikSorgulari(article), String(article?.title || "")]
+    .join(" ")
+    .toLocaleLowerCase("tr-TR")
+    .replace(/[^\p{L}\p{N}\s-]+/gu, " ");
+  return new Set(
+    metin
+      .split(/\s+/)
+      .filter((k) => k.length >= 4)
+      .map((k) => k.slice(0, 5))
+  );
+}
 
 const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -171,7 +403,9 @@ export async function commonsAdaylari(sorgu, limit = 8) {
     generator: "search",
     gsrnamespace: "6",
     gsrlimit: String(Math.max(1, limit)),
-    gsrsearch: `${sorgu} filetype:bitmap`,
+    // filetype:bitmap PNG ekran görüntülerini de getiriyordu; kapak için
+    // yalnızca gerçek fotoğraf (JPEG) istiyoruz.
+    gsrsearch: `${sorgu} filemime:image/jpeg`,
     prop: "imageinfo|categories",
     cllimit: "max",
     iiprop: "url|size|extmetadata",
@@ -268,8 +502,10 @@ export async function openverseAdaylari(sorgu, limit = 8) {
   });
   const res = await istek(`${OPENVERSE}?${params}`, {
     headers: { "User-Agent": UA, Accept: "application/json" },
-    timeout: 18000,
-  });
+    // Openverse ilk istekte sık sık 20 sn'yi aşıyor; timeout yüzünden bütün
+    // kaynağı kaybetmemek için daha uzun süre ve tek tekrar deniyoruz.
+    timeout: 35000,
+  }, 2);
   if (!res || !res.ok) return [];
   const json = await res.json();
   return (Array.isArray(json?.results) ? json.results : [])
@@ -464,8 +700,11 @@ Her aday için şu ölçütlerle 0-100 puan ver:
   karede tanınmalı ya da somut bir karşılığı olmalı. Doğrudan anlatmıyorsa alaka 50'yi GEÇMEMELİ.
 - dikkat: Bir okuyucu akışta bu kareye tıklamak ister mi? İnsan yüzü, eylem, duygu, net odak.
 - kalite: Kompozisyon, ışık, netlik. Üzerinde yazı/logo/watermark, kolaj, ekran görüntüsü, harita, uydu görüntüsü, aşırı eski siyah-beyaz arşiv varsa düşük puan.
+  Mağaza ya da etkinlik çekimi olabilir; ÜRÜN karede büyük, net ve baskın duruyorsa kalite puanını kırma.
 - uygun: Görsel haberle ilgisiz, yanıltıcı, rahatsız edici (kan/ceset), müstehcen veya tamamen boşsa false.
   Üzerinde filigran, bozuk/okunmaz yazı, çerçeve ya da kolaj varsa da false.
+  Uygulama arayüzü, haber sitesi ekranı, sohbet ekranı, sosyal medya akışı gibi EKRAN GÖRÜNTÜLERİ kapak olamaz: false.
+  Haberle ilgisi olmayan stok insan kareleri (mayo/bikini, gece kulübü, plaj, gülümseyen ofis ekibi) false.
 
 KURALLAR:
 - Sadece "güzel" olduğu için alakasız kareyi seçme. Alaka, güzellikten önce gelir.
@@ -475,7 +714,14 @@ KURALLAR:
 - Emin değilsen uygun=false ver; yanlış fotoğraf boş karttan daha çok güven kaybettirir.
 
 Yanıt SADECE şu JSON olsun:
-{"adaylar":[{"i":1,"alaka":0,"dikkat":0,"kalite":0,"uygun":true,"neden":"kısa Türkçe gerekçe"}],"secim":1}`;
+{"adaylar":[{"i":1,"alaka":0,"dikkat":0,"kalite":0,"uygun":true,"tip":"foto","neden":"kısa Türkçe gerekçe"}],"secim":1}
+
+"tip" alanı şunlardan biri olmalı:
+- "foto": gerçek fotoğraf (ürün, insan, mekân, etkinlik).
+- "ekran": uygulama/site arayüzü, sohbet ekranı, sosyal medya akışı gibi ekran görüntüsü.
+- "logo": logo, kelime markası, rozet, ikon ağırlıklı görsel.
+- "diger": kolaj, harita, grafik, çizim, belge.
+Ekran görüntüsü haberin konusunu doğrudan gösteriyorsa uygun=true ve tip="ekran" ver; uygunsuz diye eleme.`;
 
 /** AI yanıtından JSON ayıklar: ```json çiti, baştaki/sondaki prose toleranslı. */
 function jsonAyikla(metin) {
@@ -574,6 +820,9 @@ async function geminiVision(adaylar, article, brief, sayac, debug = false) {
               dikkat,
               kalite,
               uygun: x.uygun !== false,
+              tip: ["foto", "ekran", "logo", "diger"].includes(String(x.tip || ""))
+                ? String(x.tip)
+                : "foto",
               neden: duzMetin(x.neden, 160),
               skor: 0.55 * alaka + 0.3 * dikkat + 0.15 * kalite,
             };
@@ -601,8 +850,11 @@ KAÇINILACAKLAR: ${(brief.kacin || []).join(", ") || "logo, metin, kolaj, alakas
   somut bir karşılığı olmalı. Doğrudan anlatmıyorsa alaka 50'yi GEÇMEMELİ.
 - dikkat: Okuyucu akışta bu kareye tıklamak ister mi? İnsan yüzü, eylem, duygu, net odak.
 - kalite: Kompozisyon, ışık, netlik. Üzerinde yazı/logo/watermark, kolaj, ekran görüntüsü, harita, uydu görüntüsü, aşırı eski siyah-beyaz arşiv varsa düşük puan.
+  Mağaza ya da etkinlik çekimi olabilir; ÜRÜN karede büyük, net ve baskın duruyorsa kalite puanını kırma.
 - uygun: Görsel haberle ilgisiz, yanıltıcı, rahatsız edici (kan/ceset), müstehcen veya tamamen boşsa false.
   Üzerinde filigran, bozuk/okunmaz yazı, çerçeve ya da kolaj varsa da false.
+  Uygulama arayüzü, haber sitesi ekranı, sohbet ekranı, sosyal medya akışı gibi EKRAN GÖRÜNTÜLERİ kapak olamaz: false.
+  Haberle ilgisi olmayan stok insan kareleri (mayo/bikini, gece kulübü, plaj, gülümseyen ofis ekibi) false.
 
 KURALLAR:
 - Sadece "güzel" olduğu için alakasız kareyi yükseltme. Alaka, güzellikten önce gelir.
@@ -611,7 +863,9 @@ KURALLAR:
 - Emin değilsen uygun=false ver; yanlış fotoğraf boş karttan daha çok güven kaybettirir.
 
 Yanıt SADECE şu JSON olsun:
-{"alaka":0,"dikkat":0,"kalite":0,"uygun":true,"neden":"kısa Türkçe gerekçe"}`;
+{"alaka":0,"dikkat":0,"kalite":0,"uygun":true,"tip":"foto","neden":"kısa Türkçe gerekçe"}
+
+"tip": "foto" (gerçek fotoğraf), "ekran" (arayüz/ekran görüntüsü), "logo", "diger".`;
 
 /** Gemini yoksa Cloudflare Workers AI vision (görsel başına tek istek). */
 async function cloudflareVision(adaylar, article, brief, sayac, debug = false) {
@@ -683,6 +937,9 @@ async function cloudflareVision(adaylar, article, brief, sayac, debug = false) {
         dikkat,
         kalite,
         uygun: veri.uygun !== false,
+        tip: ["foto", "ekran", "logo", "diger"].includes(String(veri.tip || ""))
+          ? String(veri.tip)
+          : "foto",
         neden: duzMetin(veri.neden, 160),
         skor: 0.55 * alaka + 0.3 * dikkat + 0.15 * kalite,
       });
@@ -805,9 +1062,13 @@ function adayEkle(havuz, aday, { kullanilan, mevcutKimlik } = {}) {
 export async function adaylariTopla(article, brief, { kullanilan = new Set(), mevcutUrl = "", debug = false } = {}) {
   const havuz = [];
   const mevcutKimlik = kimlik(mevcutUrl);
+  const varliklar = varlikSorgulari(article);
   const sorgular = [
     ...new Set(
       [
+        // Ürün/marka adı sorguları en başta: Commons'ta doğrudan ürün
+        // fotoğrafını getiren tek sorgu tipi bu.
+        ...varliklar,
         ...(brief.sorgular || []),
         article.gorselSorgu,
         ...(Array.isArray(article.tags) ? article.tags.slice(0, 1) : []),
@@ -815,7 +1076,8 @@ export async function adaylariTopla(article, brief, { kullanilan = new Set(), me
         .map((s) => String(s || "").replace(/[^\p{L}\p{N}\s-]+/gu, " ").replace(/\s+/g, " ").trim())
         .filter((s) => s.length >= 3)
     ),
-  ].slice(0, 4);
+  ].slice(0, 6);
+  if (debug && varliklar.length) console.log(`      · varlık sorguları: ${varliklar.join(" | ")}`);
 
   // 0) Mevcut kapak: yeni adayların ondan gerçekten daha iyi olup olmadığını
   //    anlamak için havuza girer. Tasarım kartı (foto=false) hariç tutulur.
@@ -872,25 +1134,38 @@ export async function adaylariTopla(article, brief, { kullanilan = new Set(), me
     }
   }
 
-  // 2) Commons + Openverse. İlk sorgu en değerli; Openverse'i yormamak için
-  //    yalnızca ilk 2 sorguda çalıştırılır.
+  // 2) Commons + Openverse. İlk sorgular en değerli; Openverse'i yormamak için
+  //    yalnızca ilk 3 sorguda çalıştırılır.
   for (const [i, sorgu] of sorgular.entries()) {
     try {
-      const commons = await commonsAdaylari(sorgu, 8);
+      const commons = await commonsAdaylari(sorgu, 10);
       for (const a of commons) adayEkle(havuz, a, { kullanilan, mevcutKimlik });
       if (debug) console.log(`      · commons "${sorgu}": ${commons.length}`);
     } catch (err) {
       if (debug) console.log(`      · commons hata: ${err.message}`);
     }
-    if (i < 2) {
+    if (i < 3 && !openverseKapali) {
       try {
         const open = await openverseAdaylari(sorgu, 8);
         for (const a of open) adayEkle(havuz, a, { kullanilan, mevcutKimlik });
         if (debug) console.log(`      · openverse "${sorgu}": ${open.length}`);
       } catch (err) {
-        if (debug) console.log(`      · openverse hata: ${err.message}`);
+        openverseKapali = true;
+        if (debug) console.log(`      · openverse kapandı: ${err.message}`);
       }
       await bekle(1200); // Openverse hız sınırına saygı
+    }
+  }
+
+  // Ürün adı geçen adaylar vision'a girmeden önce öne alınsın: "genel güzel
+  // kare" yerine doğrudan haberin ürününü gösteren fotoğraf değerlendirilir.
+  const kokler = varlikKokleri(article);
+  if (kokler.size) {
+    for (const a of havuz) {
+      const metin = `${a.baslik || ""} ${a.metin || ""}`.toLocaleLowerCase("tr-TR");
+      let eslesme = 0;
+      for (const k of kokler) if (metin.includes(k)) eslesme++;
+      a.onEk = Math.min(3, eslesme) * 7;
     }
   }
 
@@ -920,7 +1195,7 @@ export async function adaylariDegerlendir(adaylar, { kok = process.cwd(), debug 
         if (debug) console.log(`      · elendi (düz/küçük): ${aday.url.slice(0, 70)}`);
         continue;
       }
-      puanli.push({ ...aday, veri, bilgi, onPuan: puan });
+      puanli.push({ ...aday, veri, bilgi, onPuan: puan + (Number(aday.onEk) || 0) });
     } catch (err) {
       if (debug) console.log(`      · indirilemedi: ${err.message}`);
     }
@@ -938,6 +1213,109 @@ export async function adaylariDegerlendir(adaylar, { kok = process.cwd(), debug 
 }
 
 // ------------------------------------------------------------- kapak yazma
+/**
+ * Ham ekran görüntüsü mü? Arayüz kareleri düz renkli zemin + ince yazıdan
+ * oluşur: piksellerin büyük kısmı tek bir renge (beyaz/gri/siyah) yakındır.
+ * Fotoğraflarda renk dağılımı çok daha geniştir. Bileşimi yalnızca gerçek
+ * ekran görüntülerine uygulamak için bu ayrımı yapıyoruz.
+ */
+export async function duzEkranMi(veri) {
+  try {
+    const { data, info } = await sharp(veri)
+      .resize(160, 160, { fit: "inside" })
+      .removeAlpha()
+      .raw()
+      .toBuffer({ resolveWithObject: true });
+    const ch = info.channels;
+    const adet = info.width * info.height;
+    if (!adet) return false;
+    // En sık görülen rengi (16'lık kovada) bul.
+    const kova = new Map();
+    for (let i = 0; i + 2 < data.length; i += ch) {
+      const k = ((data[i] >> 4) << 8) | ((data[i + 1] >> 4) << 4) | (data[i + 2] >> 4);
+      kova.set(k, (kova.get(k) || 0) + 1);
+    }
+    let enBuyuk = 0;
+    for (const n of kova.values()) if (n > enBuyuk) enBuyuk = n;
+    // Düz zemin + nötr (renksiz) piksellerin oranı.
+    let notr = 0;
+    for (let i = 0; i + 2 < data.length; i += ch) {
+      const r = data[i];
+      const g = data[i + 1];
+      const b = data[i + 2];
+      const en = Math.max(r, g, b);
+      const az = Math.min(r, g, b);
+      if (en - az <= 12) notr++;
+    }
+    const tekRenk = enBuyuk / adet;
+    const notrOran = notr / adet;
+    return tekRenk >= 0.5 && notrOran >= 0.75;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Ekran görüntüsünü cihaz kartı gibi sunar: arka planda aynı görselin bulanık
+ * ve karartılmış hâli, önde yuvarlatılmış köşeli, gölgeli bir ekran. Ham
+ * ekran görüntüsü feed'de "amatör" duruyor; bu bileşim onu editoryal bir
+ * kapağa çeviriyor. Girdi 16:9'dan farklı olabilir.
+ */
+export async function ekranBilesimi(veri, bilgi) {
+  const w = Number(bilgi?.width) || 0;
+  const h = Number(bilgi?.height) || 0;
+  if (!w || !h) return null;
+
+  const arka = await sharp(veri)
+    .resize(GENISLIK, YUKSEKLIK, { fit: "cover", position: "centre" })
+    .blur(26)
+    .modulate({ brightness: 0.5, saturation: 1.2 })
+    .toBuffer();
+
+  // Ön plan: ekranın en uzun kenarı 600 px; geniş ekranlarda 1040 px'e kadar.
+  const oran = w / h;
+  let onH = 600;
+  let onW = Math.round(onH * oran);
+  if (onW > 1040) {
+    onW = 1040;
+    onH = Math.round(onW / oran);
+  }
+  if (onH > 640) {
+    onH = 640;
+    onW = Math.round(onH * oran);
+  }
+  const yaricap = Math.round(Math.min(onW, onH) * 0.045) + 6;
+
+  const maske = Buffer.from(
+    `<svg width="${onW}" height="${onH}"><rect x="0" y="0" width="${onW}" height="${onH}" rx="${yaricap}" ry="${yaricap}" fill="#ffffff"/></svg>`
+  );
+  const onPlan = await sharp(veri)
+    .resize(onW, onH, { fit: "cover", position: "centre" })
+    .composite([{ input: maske, blend: "dest-in" }])
+    .png()
+    .toBuffer();
+
+  const golgePay = 90;
+  const golge = await sharp(
+    Buffer.from(
+      `<svg width="${onW + golgePay}" height="${onH + golgePay}"><rect x="${golgePay / 2}" y="${golgePay / 2 + 6}" width="${onW}" height="${onH}" rx="${yaricap}" ry="${yaricap}" fill="rgba(0,0,0,0.6)"/></svg>`
+    )
+  )
+    .blur(18)
+    .png()
+    .toBuffer();
+
+  const sol = Math.round((GENISLIK - onW) / 2);
+  const ust = Math.round((YUKSEKLIK - onH) / 2);
+
+  return sharp(arka)
+    .composite([
+      { input: golge, left: sol - golgePay / 2, top: ust - golgePay / 2 },
+      { input: onPlan, left: sol, top: ust },
+    ])
+    .toBuffer();
+}
+
 function kirpBoru(veri, bilgi) {
   const w = Number(bilgi?.width) || 0;
   const h = Number(bilgi?.height) || 0;
@@ -954,6 +1332,11 @@ function kirpBoru(veri, bilgi) {
         : { sigma: 0.6 };
   return sharp(veri)
     .resize(GENISLIK, YUKSEKLIK, { fit: "cover", position: konum })
+    // Hafif editoryal derecelendirme: feed'de kapakların birbirine benzeyen,
+    // canlı ve kontrastlı görünmesi için. Abartısız tutuluyor ki fotoğraf
+    // doğal kalsın (pivot 128 → kontrast ortadan büyütülür).
+    .modulate({ saturation: 1.06, brightness: 1.01 })
+    .linear(1.05, -6.4)
     .sharpen(keskinlik);
 }
 
@@ -961,10 +1344,19 @@ function kirpBoru(veri, bilgi) {
  * Kapak dosyalarını (WebP + 480 + sosyal JPEG) yazar.
  * @returns {Promise<{url:string, dosya:string}|null>}
  */
-export async function kapakYaz(article, veri, { kok = process.cwd(), dry = false } = {}) {
+export async function kapakYaz(article, veri, { kok = process.cwd(), dry = false, tip = "foto" } = {}) {
   const bilgi = await sharp(veri).metadata();
   if ((bilgi.width || 0) < MIN_W || (bilgi.height || 0) < MIN_H) return null;
-  const taban = await kirpBoru(veri, bilgi).webp({ quality: 86, effort: 4 }).toBuffer();
+  let taban = null;
+  if (tip === "ekran" && (await duzEkranMi(veri))) {
+    const bilesim = await ekranBilesimi(veri, bilgi).catch(() => null);
+    if (bilesim) {
+      taban = await sharp(bilesim).webp({ quality: 86, effort: 4 }).toBuffer();
+    }
+  }
+  if (!taban) {
+    taban = await kirpBoru(veri, bilgi).webp({ quality: 86, effort: 4 }).toBuffer();
+  }
   const url = `/kapak/${article.id}.webp`;
   if (dry) return { url, dosya: path.join(kok, "site", "public", "kapak", `${article.id}.webp`) };
 
@@ -1073,6 +1465,7 @@ export async function ajanKapakUret(article, opts = {}) {
       dikkat: v?.dikkat ?? null,
       // Vision'ın görmediği aday seçilemez: sezgisel puan tek başına yeterli değil.
       uygun: v ? v.uygun : false,
+      tip: v?.tip || "foto",
       neden: v?.neden || "vision değerlendirmedi",
       vision: Boolean(v),
     };
@@ -1160,6 +1553,50 @@ export async function ajanKapakUret(article, opts = {}) {
 
   // Mevcut kapak hâlâ en iyiyse değiştirme.
   if (!secim) {
+    // Özel durum: mevcut kapak bir EKRAN GÖRÜNTÜSÜ. İçeriği doğru ama ham hâli
+    // amatör duruyor. Aynı kareyi cihaz kartı bileşimine alarak kapak kalitesini
+    // yükseltiyoruz (bir kez; sonsuz döngü olmasın).
+    if (
+      mevcut?.tip === "ekran" &&
+      mevcut.uygun &&
+      article.kapak?.bilesim !== "ekran" &&
+      (mevcut.alaka ?? 0) >= 55
+    ) {
+      const kaynakUrl = /^https?:\/\//i.test(String(article.kapak?.kaynak || ""))
+        ? article.kapak.kaynak
+        : "";
+      const ham =
+        (kaynakUrl && (await gorselIndir(kaynakUrl, { kok }).catch(() => null))) || mevcut.veri;
+      const yazilan = await kapakYaz(article, ham, { kok, dry, tip: "ekran" });
+      if (yazilan) {
+        return {
+          degisti: true,
+          neden: "ekran görüntüsü cihaz bileşimine alındı",
+          kapak: {
+            ...article.kapak,
+            foto: true,
+            bilesim: "ekran",
+            ajan: {
+              v: 1,
+              secim: "ekran-bilesimi",
+              skor: Math.round(mevcutSkor),
+              neden: "Ham ekran görüntüsü bulanık zemin + gölgeli ekran kartı olarak yeniden düzenlendi.",
+              brif: brief.sahne,
+              sorgular: brief.sorgular || [],
+              tarih: new Date().toISOString(),
+            },
+          },
+          brief,
+          secim: {
+            kaynak: "ekran-bilesimi",
+            skor: Math.round(mevcutSkor),
+            neden: "Ekran görüntüsü editoryal bileşime alındı",
+            vision: true,
+          },
+          url: yazilan.url,
+        };
+      }
+    }
     return {
       degisti: false,
       neden: mevcutIyimi ? "mevcut kapak daha iyi" : "yeterli görsel yok",
@@ -1171,7 +1608,7 @@ export async function ajanKapakUret(article, opts = {}) {
   }
 
   // 6) KIRP + KAYDET
-  const yazilan = await kapakYaz(article, secim.veri, { kok, dry });
+  const yazilan = await kapakYaz(article, secim.veri, { kok, dry, tip: secim.tip });
   if (!yazilan) return { degisti: false, neden: "kapak yazılamadı", brief };
 
   const kapak = {
@@ -1179,6 +1616,7 @@ export async function ajanKapakUret(article, opts = {}) {
     kaynak: secim.kaynak === "ai" ? `ai:${secim.model}` : secim.url,
     foto: true,
     ...(secim.kaynak === "ai" ? { ai: true } : {}),
+    ...(secim.tip === "ekran" ? { bilesim: "ekran" } : {}),
     ajan: {
       v: 1,
       secim: secim.kaynak,
