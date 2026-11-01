@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T23:42:55.495Z",
+  "updatedAt": "2026-11-01T23:50:04.521Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 125
+    "tekrar": 124
   },
   "ornekTekrarlar": [
     {
@@ -40,10 +40,6 @@
     {
       "title": "Instagram 90 dakikalık videoları test ediyor ancak ödeme yapmıyor",
       "twin": "Instagram, 90 dakikalık video süresiyle içerik rekabetini kızıştırıyor"
-    },
-    {
-      "title": "Binance siber saldırısının maliyetini 6,3 milyar dolar olarak açıkladı",
-      "twin": "Binance'in 6,3 milyar dolarlık dev hack saldırısında Lazarus şüphesi"
     },
     {
       "title": "Google yapay zeka özetleri reklam gelirlerini düşürünce 500 milyar dolar eridi",
@@ -112,6 +108,10 @@
     {
       "title": "İsrail ordusunun çadır saldırısında biri çocuk 3 kişi hayatını kaybetti",
       "twin": "İsrail ordusunun El Halil operasyonu 3 bin 300 kişiyi evinden etti"
+    },
+    {
+      "title": "Google Gemini 4 Argon, Android Bench’te Beşinci Sırada Yer Aldı",
+      "twin": "Google, yapay zeka modeli Gemini 4 Carbon ile zirveye yerleşti"
     }
   ],
   "days": {
@@ -166,7 +166,6 @@
       "b59c1034a2be39e7",
       "2ee854b943d24214",
       "d32d4c2e5084a4bc",
-      "67d98fa8b9daa7b6",
       "90cf7d697d2f1f0c",
       "17c3c854b5d6467c",
       "77d6f2dbd7a6f1fe",
@@ -183,6 +182,7 @@
       "21dea188b9b1997f",
       "20b23b3b4ee112a9",
       "f98daeab627496fe",
+      "67d98fa8b9daa7b6",
       "ba3230ca2964f5ba",
       "d70607a05c1074cc",
       "17016cfdb7df0381",
@@ -965,8 +965,7 @@
       "6f0a10e5ab706065",
       "c3c296345fb4ef57",
       "b46015599f81fe3b",
-      "fffff1ce0f5769e4",
-      "7700486dcd3552e0"
+      "fffff1ce0f5769e4"
     ],
     "2026-10-29": [
       "00e53f0fad137f8f",
@@ -1168,6 +1167,7 @@
       "0c0991c576d766f6",
       "1a5353dfb43a0281",
       "912ee8605d161164",
+      "329d8ad4746ad405",
       "f8e0a716aa88bbc1",
       "134bdf68301aa1df",
       "b86f111e59ac85cb",
@@ -3634,6 +3634,7 @@
     "38b8bbcc957d1bf9",
     "d32536b991390bb9",
     "3b801a24eb24848b",
+    "912ee8605d161164",
     "9cd8bbb18d49378a",
     "385c23b64dd4aa36",
     "79f905c864fe8e60",
@@ -3688,6 +3689,7 @@
     "f5b6d367ab3d0aaf",
     "305155b873bd3ecb",
     "e6692b815dbe16c9",
+    "329d8ad4746ad405",
     "f3b24e167f1932ac",
     "82df107754372aad",
     "a8dc0ec39cbafd81",
@@ -3729,7 +3731,6 @@
     "62d8ea69bbda18c7",
     "d94c1c2fe8c487a5",
     "1973c4a1b9edbac6",
-    "912ee8605d161164",
     "7ee04da43f7590bd",
     "e73134767f365fa7",
     "789e742b508bb6ac",
@@ -3850,7 +3851,6 @@
     "00d2f88ba0e3e9f4",
     "c6efd66c5a36ed2f",
     "a38b7c0a365939bf",
-    "67d98fa8b9daa7b6",
     "74ca705fd0fdb2c6",
     "0ff97bcc11ad5d2e",
     "c82ec67b4a89c524",
@@ -3975,6 +3975,7 @@
     "57875d22505da81b",
     "d1091700aa3f81ba",
     "422408a9949ada42",
+    "67d98fa8b9daa7b6",
     "f2b7331d969d08ee",
     "c865c0c44656bbdb",
     "13d7f226ac25fa2f",
@@ -6939,7 +6940,6 @@
     "9de8defb8f31d927",
     "fffff1ce0f5769e4",
     "d583d2efea139784",
-    "7700486dcd3552e0",
     "3c54dd68c97c231d",
     "ce6470209059e6b6",
     "3a50b16f36f23ed8",
