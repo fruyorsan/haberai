@@ -198,6 +198,15 @@ jobs:
         continue-on-error: true
         run: node scripts/kapak-temizle.mjs --gun=3
 
+      # KIRIK KAPAK ONARIMI: `image` yerel /kapak/... adresini gosteriyor ama
+      # dosya yoksa (temizlikte silinmis, uretimi yarida kalmis ya da commit
+      # edilmemis) sayfada kirik gorsel kaliyordu. Bu adim o haberi kaynak
+      # sitedeki ozgun fotografina dondurur; yeniden indekse girerse kapak
+      # sifirdan uretilir.
+      - name: Kirik kapak onarimi
+        continue-on-error: true
+        run: node scripts/kapak-temizle.mjs --onar
+
       - name: Degisiklikleri kaydet
         id: commit
         run: |

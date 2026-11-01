@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { metinleriDuzelt } from "./metin.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = join(__dirname, "..", "data");
@@ -39,6 +40,11 @@ export async function loadArticles() {
   if (!existsSync(ARTICLES_FILE)) return [];
   try {
     const articles = JSON.parse(await readFile(ARTICLES_FILE, "utf8"));
+    const sayac = { alan: 0 };
+    metinleriDuzelt(articles, sayac);
+    if (sayac.alan) {
+      console.log(`Metin düzeltmesi: ${sayac.alan} alan onarıldı (bozuk karakter kodlaması)`);
+    }
     fixFutureDates(articles);
     return articles;
   } catch {
