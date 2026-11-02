@@ -57,6 +57,64 @@
     }
   },
   {
+    "id": "c4f439d2ff811ba2",
+    "title": "Süpermarketler Soğutma Sistemleri Hacklendi, Dondurucular Çalışmadı",
+    "slug": "supermarketler-sogutma-sistemleri-hacklendi-dondurucular-calismadi",
+    "summary": "Belçika, İsveç ve Hollanda'daki süpermarketlerin soğutma sistemlerine siber saldırı düzenlendi, dondurucuların buz çözme modu uzaktan aktive edildi. Sıcaklıkların hızla yükselmesi sonucu ürünler bozuldu ve mağazalar gıda maddelerini imha etmek zorunda kaldı. Olay, perakende sektöründe güvenlik endişelerini artırdı.",
+    "keyPoints": [
+      "Çatışma: Hackler, dondurucuların buz çözme modunu uzaktan açtı",
+      "Ülke: Saldırı Belçika, İsveç ve Hollanda süpermarketlerini hedef aldı",
+      "Sonuç: Artan sıcaklıklar nedeniyle gıda ürünleri imha edildi"
+    ],
+    "body": [
+      "Geçtiğimiz haftalarda Belçika, İsveç ve Hollanda sınırları içinde faaliyet gösteren büyük süpermarket zincirlerinin soğutma altyapısına siber saldırı gerçekleştirildi. Saldırganlar, dondurucuların kontrol panellerine yetkisiz erişim sağlayarak buz çözme modunu uzaktan devreye soktu. Bu müdahale, cihazların iç sıcaklıklarını dakikalar içinde 10 °C’den 25 °C’ye kadar yükseltti. Soğuk zincirin bu şekilde bozulması, marketlerin raflarındaki dondurulmuş gıdaların hızla bozulmasına yol açtı. Mağaza yönetimleri, durumu kontrol altına almak için acil prosedürler başlattı.",
+      "Saldırının teknik yönü, IoT (Internet of Things) tabanlı soğutma sistemlerindeki zayıf kimlik doğrulama mekanizmalarına dayanıyordu. Hackerlar, cihazların firmware güncellemelerinde kullanılan varsayılan şifreleri ve açık portları tarayarak erişim sağladı. Uzaktan komut gönderildiğinde, dondurucuların termostat ayarları otomatik olarak değiştirildi ve buz çözme devresi aktif hâle getirildi. Bu tür bir müdahale, yalnızca birkaç dakika içinde binlerce litre gıdayı etkileyebilecek kapasitede gerçekleşti. Erişim sağlandıktan sonra saldırganlar, komut dosyalarını sistemin zamanlayıcı fonksiyonuna yerleştirerek tekrar eden sıcaklık artışlarını garanti etti.",
+      "Akıllı ev ve ticari cihazların yaygınlaşması, perakende sektöründe operasyonel verimliliği artırsa da siber güvenlik risklerini de beraberinde getiriyor. Soğutma üniteleri, bulut tabanlı yönetim platformları üzerinden güncellenirken genellikle şifreleme ve iki faktörlü kimlik doğrulama gibi ek korumalardan yoksun kalıyor. Uzmanlar, bu tür altyapıların güvenlik yamalarının düzenli olarak uygulanmasının zorunlu olduğunu belirtiyor. Özellikle Avrupa Birliği içinde, GDPR ve NIS2 gibi düzenlemeler bu alanda daha sıkı denetimleri öngörüyor.",
+      "Marketler, artan sıcaklıklar nedeniyle bozulmuş ürünleri atmak zorunda kaldı ve bu durum gıda israfını önemli ölçüde artırdı. İlgili süpermarket zincirleri, müşterilerine yaşanan gecikme ve ürün kaybı hakkında bilgi vererek tazminat ve indirim teklifleri sundu. Ayrıca, soğutma sistemlerinin geçici olarak manuel kontrol altına alınması ve yedek jeneratörlerin devreye sokulmasıyla hizmetin devamı sağlandı. Bu süreç, çalışanların yoğun bir çalışma temposuna girmesine ve lojistik maliyetlerin yükselmesine neden oldu.",
+      "Yaşanan saldırı, perakende sektörü için siber güvenlik önlemlerinin yeniden gözden geçirilmesi gerektiğini ortaya koydu. Şirketler, IoT cihazları için güçlü parola politikaları, düzenli güvenlik denetimleri ve ağ segmentasyonu gibi önlemleri acilen hayata geçirmeyi planlıyor. Ayrıca, uluslararası siber suç birimleriyle iş birliği yaparak saldırı izlerini takip etmeyi ve sorumluları tespit etmeyi hedefliyorlar. Uzmanlar, benzer bir olayın tekrarlanmasını önlemek için standartlaşmış güvenlik çerçevelerinin benimsenmesinin şart olduğunu vurguluyor."
+    ],
+    "comment": "Süpermarketlerin IoT soğutma sistemlerine yönelik bu saldırı, temel gıda güvenliğini tehdit ediyor. Saldırganların, cihazların firmware güncellemelerindeki varsayılan şifreleri kullanarak uzaktan buz çözme modunu devreye sokması, güvenlik açıklarının acilen kapatılması gerektiğini gösteriyor. Bu durum, özellikle soğuk zincir lojistiğiyle çalışan perakendecileri ve son tüketicileri doğrudan etkiliyor. Benzer bir saldırı, önceki yıl Avrupa’da bir otobüs firmasının yolcu konforunu bozmuşken, bu sefer gıda israfı ve maliyet artışı gibi daha ağır sonuçlar doğuruyor.",
+    "editorNote": "Süpermarketlerin soğutma birimleri hacklendi, dondurucuların buz çözme modu uzaktan aktif edildi. Gıda israfı ve maliyet artışı riskiyle karşı karşıyasınız.",
+    "tags": [
+      "süpermarket",
+      "soğutma sistemi",
+      "siber saldırı",
+      "IoT",
+      "gıda israfı"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "supermarket freezer hack",
+    "source": "CHIP Online",
+    "sourceUrl": "https://www.chip.com.tr/guncel/marketler-alarma-gecti-hackerlar-buzdolaplarina-saldiriyor_185022.html",
+    "image": "/kapak/c4f439d2ff811ba2.webp",
+    "publishedAt": "2026-11-02T19:28:00.000Z",
+    "generatedAt": "2026-11-02T19:41:54.770Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/RFID_IoT_device_01.jpg/1280px-RFID_IoT_device_01.jpg",
+        "yazar": "Vijka",
+        "lisans": "CC BY 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:RFID_IoT_device_01.jpg",
+        "altyazi": "Siber saldırı öncesi cihaz yazılımı"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Food_waste_with_moldy_bread.jpg/1280px-Food_waste_with_moldy_bread.jpg",
+        "yazar": "Nick Saltmarsh",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Food_waste_with_moldy_bread.jpg",
+        "altyazi": "İmha edilen bozulmuş gıdalar"
+      }
+    ],
+    "breaking": true,
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://img.chip.com.tr/storage/files/images/2026/11/02/marketler-alarma-gecti-hackerlar-buzdolaplarina-saldiriyor-roz6.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "54acebc41a254c10",
     "title": "Soğuk hava dalgası geliyor: İstanbul ve birçok ilde sıcaklık düşecek",
     "slug": "soguk-hava-dalgasi-geliyor-istanbul-ve-bircok-ilde-sicaklik-dusecek",
@@ -168,7 +226,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:29.553Z",
+    "gorselDeneme": "2026-11-02T19:41:55.585Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ichef.bbci.co.uk/ace/standard/1200/cpsprodpb/ee1e/live/8480acc0-d6eb-11f1-a741-236ee91c2e25.png",
@@ -625,7 +683,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:33.059Z",
+    "gorselDeneme": "2026-11-02T19:41:58.203Z",
     "kapak": {
       "v": 3,
       "kaynak": "ai:phoenix-1.0",
@@ -743,7 +801,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:32.947Z",
+    "gorselDeneme": "2026-11-02T19:41:58.195Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/02/thumbs_b_c_183788b42d84abb7044b565451583d23.jpg",
@@ -801,7 +859,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:32.583Z",
+    "gorselDeneme": "2026-11-02T19:41:58.083Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/kayseri-yangin-aa-2500600.jpg",
@@ -1050,7 +1108,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:32.663Z",
+    "gorselDeneme": "2026-11-02T19:41:58.583Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212377/src/steam-donanim-anketi-acikladi-iste-en-populer-ekran-kartlari212377_0.jpg",
@@ -1096,7 +1154,7 @@
     "publishedAt": "2026-11-02T15:01:14.000Z",
     "generatedAt": "2026-11-02T15:08:11.279Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:32.307Z",
+    "gorselDeneme": "2026-11-02T19:41:57.749Z",
     "kapak": {
       "v": 3,
       "kaynak": "ai:phoenix-1.0",
@@ -1160,7 +1218,7 @@
     "publishedAt": "2026-11-02T14:53:02.000Z",
     "generatedAt": "2026-11-02T14:58:33.775Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:34.269Z",
+    "gorselDeneme": "2026-11-02T19:41:59.178Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/02/thumbs_b_c_057643fae7c5d3e31d3a0db7a7b6d4a2.jpg",
@@ -1293,7 +1351,7 @@
     "publishedAt": "2026-11-02T14:33:43.000Z",
     "generatedAt": "2026-11-02T14:40:03.338Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:34.350Z",
+    "gorselDeneme": "2026-11-02T19:42:01.072Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/02/thumbs_b_c_cc8009109b666b6cbea5a5ef93282af4.jpg",
@@ -1360,7 +1418,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:35.149Z",
+    "gorselDeneme": "2026-11-02T19:41:58.491Z",
     "kapak": {
       "v": 3,
       "kaynak": "ai:phoenix-1.0",
@@ -1475,7 +1533,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:33.655Z",
+    "gorselDeneme": "2026-11-02T19:41:59.457Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212368/src/hgs-de-sistem-degisti-odeme-sikayetleri-artti212368_0.jpg",
@@ -1520,7 +1578,7 @@
     "publishedAt": "2026-11-02T13:44:00.000Z",
     "generatedAt": "2026-11-02T13:49:02.615Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:34.300Z",
+    "gorselDeneme": "2026-11-02T19:41:59.731Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212358/src/intel-in-uygun-fiyatli-dizustu-islemcisi-moon-lake-sizdirildi212358_0.jpg",
@@ -1575,7 +1633,7 @@
     "publishedAt": "2026-11-02T13:43:10.000Z",
     "generatedAt": "2026-11-02T13:57:20.958Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:33.956Z",
+    "gorselDeneme": "2026-11-02T19:41:58.881Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://imgrosetta.webtekno.com/file/695161/695161-700x400.png",
@@ -1693,7 +1751,7 @@
     "publishedAt": "2026-11-02T13:15:00.000Z",
     "generatedAt": "2026-11-02T13:30:31.589Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:34.562Z",
+    "gorselDeneme": "2026-11-02T19:41:59.966Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212380/src/dh-quiz-de-dorduncu-hafta-tamamlandi-iste-kazananlar212380_0.jpg",
@@ -1760,7 +1818,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:35.506Z",
+    "gorselDeneme": "2026-11-02T19:42:00.422Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212365/src/windows-11-de-gorev-cubugu-surukleme-neden-kaldirildi212365_0.jpg",
@@ -1882,7 +1940,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:34.529Z",
+    "gorselDeneme": "2026-11-02T19:41:59.705Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2476000/tbmmdha-2477375.jpg",
@@ -2008,7 +2066,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:34.669Z",
+    "gorselDeneme": "2026-11-02T19:42:00.024Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://imgrosetta.webtekno.com/file/695162/695162-700x400.png",
@@ -2055,7 +2113,7 @@
     "publishedAt": "2026-11-02T11:33:00.000Z",
     "generatedAt": "2026-11-02T11:37:30.536Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:35.128Z",
+    "gorselDeneme": "2026-11-02T19:42:00.319Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212364/src/antutu-acikladi-en-guclu-android-telefonlar-ekim-2026212364_0.jpg",
@@ -2677,7 +2735,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:35.173Z",
+    "gorselDeneme": "2026-11-02T19:42:00.586Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://imgrosetta.webtekno.com/file/695143/695143-700x400.png",
@@ -2792,7 +2850,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:35.541Z",
+    "gorselDeneme": "2026-11-02T19:42:00.684Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/02/thumbs_b_c_0192cc387bceb2c9cfe7626b618649af.jpg",
@@ -2852,7 +2910,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:35.372Z",
+    "gorselDeneme": "2026-11-02T19:42:00.661Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/ispanya-tren-kazasi-reuters-2499196.jpg",
@@ -2912,7 +2970,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:35.249Z",
+    "gorselDeneme": "2026-11-02T19:42:00.506Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ichef.bbci.co.uk/ace/standard/1200/cpsprodpb/895b/live/a85523b0-d691-11f1-8f56-0b6ab08f384e.jpg",
@@ -2959,7 +3017,7 @@
     "publishedAt": "2026-11-02T08:23:03.000Z",
     "generatedAt": "2026-11-02T08:25:35.156Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:35.400Z",
+    "gorselDeneme": "2026-11-02T19:42:00.708Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/02/thumbs_b_c_f95c42dbf27ca0c219546472e6b01da7.jpg",
@@ -3105,7 +3163,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:35.475Z",
+    "gorselDeneme": "2026-11-02T19:42:00.808Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/02/thumbs_b_c_a01c74d8f2ac4b5f4e37b101c8e241c5.jpg",
@@ -3170,7 +3228,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:35.397Z",
+    "gorselDeneme": "2026-11-02T19:42:00.680Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ichef.bbci.co.uk/ace/standard/1200/cpsprodpb/3a7f/live/ad865b20-d64f-11f1-a701-fddedf244c16.jpg",
@@ -3400,7 +3458,7 @@
     "publishedAt": "2026-11-02T07:05:47.000Z",
     "generatedAt": "2026-11-02T07:07:46.002Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:35.691Z",
+    "gorselDeneme": "2026-11-02T19:42:02.877Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/02/thumbs_b_c_13ce91c9573e0b44134fdd6d854b5c0b.jpg",
@@ -3459,7 +3517,7 @@
     "publishedAt": "2026-11-02T06:26:46.000Z",
     "generatedAt": "2026-11-02T06:31:53.303Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:35.776Z",
+    "gorselDeneme": "2026-11-02T19:42:01.179Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://imgrosetta.webtekno.com/file/695222/695222-700x400.jpg",
@@ -3514,7 +3572,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:35.622Z",
+    "gorselDeneme": "2026-11-02T19:42:00.908Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/kaza-aa-2500270.jpg",
@@ -3561,7 +3619,7 @@
     "publishedAt": "2026-11-02T06:18:32.000Z",
     "generatedAt": "2026-11-02T06:23:31.181Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:35.720Z",
+    "gorselDeneme": "2026-11-02T19:42:01.008Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/02/thumbs_b_c_f7ad2530a4a3a949f2f3403dd78e3a53.jpg",
@@ -3630,7 +3688,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:35.892Z",
+    "gorselDeneme": "2026-11-02T19:42:02.079Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://imgrosetta.webtekno.com/file/693325/693325-700x400.png",
@@ -3807,7 +3865,7 @@
     "publishedAt": "2026-11-02T05:37:37.000Z",
     "generatedAt": "2026-11-02T05:48:07.925Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:36.087Z",
+    "gorselDeneme": "2026-11-02T19:42:01.479Z",
     "kapak": {
       "v": 3,
       "kaynak": "ai:phoenix-1.0",
@@ -3882,7 +3940,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:35.836Z",
+    "gorselDeneme": "2026-11-02T19:42:01.395Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1978000/bicak-saldiri-knife-1978158.jpg",
@@ -3931,7 +3989,7 @@
     "publishedAt": "2026-11-02T05:04:00.000Z",
     "generatedAt": "2026-11-02T05:14:11.675Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:36.337Z",
+    "gorselDeneme": "2026-11-02T19:42:01.710Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2434000/ingiltere-gazze-aa-2434436.jpg",
@@ -4037,7 +4095,7 @@
     "publishedAt": "2026-11-02T04:49:16.000Z",
     "generatedAt": "2026-11-02T04:55:46.589Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:37.102Z",
+    "gorselDeneme": "2026-11-02T19:42:01.764Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://imgrosetta.webtekno.com/file/695215/695215-700x400.jpg",
@@ -4085,7 +4143,7 @@
     "publishedAt": "2026-11-02T04:40:48.000Z",
     "generatedAt": "2026-11-02T04:46:11.222Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:37.288Z",
+    "gorselDeneme": "2026-11-02T19:42:02.574Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://imgrosetta.webtekno.com/file/695210/695210-700x400.jpg",
@@ -4169,7 +4227,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T19:32:36.220Z",
+    "gorselDeneme": "2026-11-02T19:42:02.082Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://imgrosetta.webtekno.com/file/695200/695200-700x400.jpg",
@@ -14641,7 +14699,6 @@
     "image": "/kapak/3ef1a8112a73b9ce.webp",
     "publishedAt": "2026-10-31T19:37:43.000Z",
     "generatedAt": "2026-10-31T19:51:06.023Z",
-    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": "https://ichef.bbci.co.uk/ace/standard/1200/cpsprodpb/1d3a/live/6230e120-d570-11f1-93e1-3b657b665bcf.jpg",
@@ -22885,18 +22942,13 @@
     "gorselSorgu": "chery tiggo suv interior",
     "source": "CHIP Online",
     "sourceUrl": "https://www.chip.com.tr/galeri/yeni-tiggo-7-ve-tiggo-x7-ortaya-cikti-chery-iki-farkli-rotaya-yoneliyor_184963.html",
-    "image": "/kapak/48d727f4108d258c.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Chery_Tiggo_Concept%2C_IAA_2017%2C_Frankfurt_%281Y7A3386%29.jpg/1280px-Chery_Tiggo_Concept%2C_IAA_2017%2C_Frankfurt_%281Y7A3386%29.jpg",
     "publishedAt": "2026-10-30T13:10:00.000Z",
     "generatedAt": "2026-10-30T13:13:26.990Z",
     "gorselAjan": {
       "tarih": "2026-11-02T01:16:48.726Z",
       "sonuc": "atlandi",
       "neden": "yeterli görsel yok"
-    },
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Chery_Tiggo_Concept%2C_IAA_2017%2C_Frankfurt_%281Y7A3386%29.jpg/1280px-Chery_Tiggo_Concept%2C_IAA_2017%2C_Frankfurt_%281Y7A3386%29.jpg",
-      "foto": false
     }
   },
   {
@@ -106220,7 +106272,7 @@
     "gorselSorgu": "Tesla electric car factory",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/analyst-ratings/stonex-tesla-hissesi-icin-al-tavsiyesini-yineledi-475-dolar-hedef-fiyat-korudu-93CH-4115890",
-    "image": "/kapak/d3c9a2e476b38362.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Tesla_Giga_Factory_BerlinBrandenburg_Drohne_2.jpg/1280px-Tesla_Giga_Factory_BerlinBrandenburg_Drohne_2.jpg",
     "publishedAt": "2026-10-22T15:29:23.000Z",
     "generatedAt": "2026-10-22T15:42:08.717Z",
     "gorselEk": [
@@ -106238,12 +106290,7 @@
         "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Tesla_electric_car_recharging_in_Los_Angeles,_August_2020.jpg"
       }
-    ],
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Tesla_Giga_Factory_BerlinBrandenburg_Drohne_2.jpg/1280px-Tesla_Giga_Factory_BerlinBrandenburg_Drohne_2.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "73f45185ddc55642",
@@ -111149,7 +111196,7 @@
     "gorselSorgu": "Donald Trump press conference",
     "source": "Ensonhaber",
     "sourceUrl": "https://www.ensonhaber.com/donald-trumptan-iran-mesaji-onlari-devirecegiz-h1575961",
-    "image": "/kapak/bb59b7a2cbc69c10.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/P20250530MR-0484_President_Donald_Trump_participates_in_a_press_conference_with_departing_DOGE_adviser_Elon_Musk.jpg/1280px-P20250530MR-0484_President_Donald_Trump_participates_in_a_press_conference_with_departing_DOGE_adviser_Elon_Musk.jpg",
     "publishedAt": "2026-10-22T11:38:01.000Z",
     "generatedAt": "2026-10-22T11:41:32.688Z",
     "gorselEk": [
@@ -111167,12 +111214,7 @@
         "lisansUrl": "",
         "sayfa": "https://commons.wikimedia.org/wiki/File:P20250530MR-0603_President_Donald_Trump_participates_in_a_press_conference_with_departing_DOGE_adviser_Elon_Musk.jpg"
       }
-    ],
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/P20250530MR-0484_President_Donald_Trump_participates_in_a_press_conference_with_departing_DOGE_adviser_Elon_Musk.jpg/1280px-P20250530MR-0484_President_Donald_Trump_participates_in_a_press_conference_with_departing_DOGE_adviser_Elon_Musk.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "686d3f11a6cecddc",
@@ -111783,7 +111825,7 @@
     "gorselSorgu": "stock market trading floor",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/stock-market-news/seans-oncesi-hareketler-tesla-ibm-dustu-meta-kazanclar-havay-duzeltmedi-4114936",
-    "image": "/kapak/6e1a98f3f9bf4197.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Stock_market_in_Triest_today.JPG/1280px-Stock_market_in_Triest_today.JPG",
     "publishedAt": "2026-10-22T11:26:15.000Z",
     "generatedAt": "2026-10-22T11:30:41.078Z",
     "gorselEk": [
@@ -111794,12 +111836,7 @@
         "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:UK_Stock_Market_-_Investing_in_the_United_Kingdom.jpg"
       }
-    ],
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Stock_market_in_Triest_today.JPG/1280px-Stock_market_in_Triest_today.JPG",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "1c56cf9341962550",
@@ -125901,15 +125938,10 @@
     "gorselSorgu": "galatasaray liverpool match",
     "source": "Bölge Gündemi",
     "sourceUrl": "https://www.bolgegundemi.com/video/lille-galatasaray-sari-kirmizili-ekip-fransada-4-2-kazandi-217484.html",
-    "image": "/kapak/83145fb98301e472.webp",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/47/Galatasaray_Liverpool_CL_2006.jpg",
     "publishedAt": "2026-10-22T03:16:10.000Z",
     "generatedAt": "2026-10-22T03:23:51.557Z",
-    "gorselDeneme": "2026-10-28T04:46:50.432Z",
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/4/47/Galatasaray_Liverpool_CL_2006.jpg",
-      "foto": false
-    }
+    "gorselDeneme": "2026-10-28T04:46:50.432Z"
   },
   {
     "id": "0081eefac955a7c5",
@@ -127737,7 +127769,7 @@
     "gorselSorgu": "stock market decline",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/stock-market-news/abd-hisse-senedi-vadeli-islemleri-tesla-ve-meta-kazanclaryla-dustu-4114075",
-    "image": "/kapak/b7e9cfb434ebcd99.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Stock_market_decline.jpg/1280px-Stock_market_decline.jpg",
     "publishedAt": "2026-10-22T01:17:07.000Z",
     "generatedAt": "2026-10-22T01:20:49.405Z",
     "gorselEk": [
@@ -127755,12 +127787,7 @@
         "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:UK_Stock_Market_-_Investing_in_the_United_Kingdom.jpg"
       }
-    ],
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Stock_market_decline.jpg/1280px-Stock_market_decline.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "929edeeb819e1f98",
@@ -129031,14 +129058,9 @@
     "gorselSorgu": "digital TV broadcast",
     "source": "Fotomaç",
     "sourceUrl": "https://www.fotomac.com.tr/haberler/2026/10/21/tv-85-canli-yayin-ve-frekans-bilgileri-2026",
-    "image": "/kapak/3fa48c9dec3c2868.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Daftar_TV_Digital.jpg/1280px-Daftar_TV_Digital.jpg",
     "publishedAt": "2026-10-22T00:00:14.000Z",
-    "generatedAt": "2026-10-22T01:40:37.012Z",
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Daftar_TV_Digital.jpg/1280px-Daftar_TV_Digital.jpg",
-      "foto": false
-    }
+    "generatedAt": "2026-10-22T01:40:37.012Z"
   },
   {
     "id": "b2bab9b94436403d",
@@ -132096,7 +132118,7 @@
     "gorselSorgu": "Trump Putin meeting",
     "source": "Sözcü Gazetesi",
     "sourceUrl": "https://www.sozcu.com.tr/amp/putin-ile-gorusen-trump-duyurdu-cozume-hic-olmadigi-kadar-yakiniz-p371515",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/President_Donald_Trump_and_President_Vladimir_Putin_meet_in_Helsinki.jpg/1280px-President_Donald_Trump_and_President_Vladimir_Putin_meet_in_Helsinki.jpg",
+    "image": "/kapak/efee2e15c44cbaf2.webp",
     "publishedAt": "2026-10-21T22:04:30.000Z",
     "generatedAt": "2026-10-21T23:04:38.596Z",
     "gorselEk": [
@@ -132115,7 +132137,12 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Vladimir_Putin,_Donald_Trump_%26_Sauli_Niinist%C3%B6_in_Helsinki,_16_July_2018.jpg"
       }
     ],
-    "gorselDeneme": "2026-10-28T04:47:03.368Z"
+    "gorselDeneme": "2026-10-28T04:47:03.368Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/President_Donald_Trump_and_President_Vladimir_Putin_meet_in_Helsinki.jpg/1280px-President_Donald_Trump_and_President_Vladimir_Putin_meet_in_Helsinki.jpg",
+      "foto": false
+    }
   },
   {
     "id": "a74911935a06bea2",
@@ -135944,7 +135971,7 @@
     "gorselSorgu": "Kremlin meeting winter conference",
     "source": "birgun.net",
     "sourceUrl": "https://www.birgun.net/haber/kremlin-den-muzakere-mesaji-rusya-abd-ve-ukrayna-ile-kasimda-masaya-oturmaya-hazir-741774",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Secretary_Kerry_Enters_a_Meeting_Room_at_the_Kremlin_%2828232279311%29.jpg/1280px-Secretary_Kerry_Enters_a_Meeting_Room_at_the_Kremlin_%2828232279311%29.jpg",
+    "image": "/kapak/fd73d0f3170dadf9.webp",
     "publishedAt": "2026-10-21T19:26:00.000Z",
     "generatedAt": "2026-10-21T19:42:00.940Z",
     "gorselEk": [
@@ -135963,7 +135990,12 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Meeting_on_investigation_into_the_crash_of_a_Russian_airliner_over_Sinai_(Kremlin,_Moscow,_2015-11-17)_02.jpg"
       }
     ],
-    "gorselDeneme": "2026-10-28T04:47:09.357Z"
+    "gorselDeneme": "2026-10-28T04:47:09.357Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Secretary_Kerry_Enters_a_Meeting_Room_at_the_Kremlin_%2828232279311%29.jpg/1280px-Secretary_Kerry_Enters_a_Meeting_Room_at_the_Kremlin_%2828232279311%29.jpg",
+      "foto": false
+    }
   },
   {
     "id": "6f99492743f9a160",
@@ -139274,7 +139306,7 @@
     "gorselSorgu": "Abu Dabi diplomatic meeting",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/economy-news/rusya-abd-ukrayna-gorusmeleri-kasm-ortasnda-abu-dabide-yaplabilir-93CH-4113466",
-    "image": "/kapak/951c0513fd4dc547.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Abu_dabi_by_night_%28crop%29.jpg/1280px-Abu_dabi_by_night_%28crop%29.jpg",
     "publishedAt": "2026-10-21T14:41:12.000Z",
     "generatedAt": "2026-10-21T14:44:05.536Z",
     "gorselEk": [
@@ -139292,12 +139324,7 @@
         "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Qasr_al_Hosn,_el_edificio_m%C3%A1s_antiguo_de_Abu_Dabi,_en_contraste_con_los_modernos_rascacielos.jpg"
       }
-    ],
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Abu_dabi_by_night_%28crop%29.jpg/1280px-Abu_dabi_by_night_%28crop%29.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "e626f351b7f091ff",
@@ -140222,7 +140249,7 @@
     "gorselSorgu": "SpaceX rocket launch pad",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/analyst-ratings/piper-sandler-spacex-hissesi-icin-140-dolarlk-notr-notunu-korudu-93CH-4113317",
-    "image": "/kapak/aaa308bb26da985c.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Falcon_9_B1046_and_two_unidentified_boosters_in_the_SpaceX_Rocket_Assembly_Building_at_Kennedy_Space_Center_LC-39A%2C_October_2019.jpg/1280px-Falcon_9_B1046_and_two_unidentified_boosters_in_the_SpaceX_Rocket_Assembly_Building_at_Kennedy_Space_Center_LC-39A%2C_October_2019.jpg",
     "publishedAt": "2026-10-21T13:34:49.000Z",
     "generatedAt": "2026-10-21T13:39:44.828Z",
     "gorselEk": [
@@ -140240,12 +140267,7 @@
         "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
         "sayfa": "https://commons.wikimedia.org/wiki/File:2008_SpaceX%27s_Rocket_Development_facility,_McGregor,_TX.jpg"
       }
-    ],
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Falcon_9_B1046_and_two_unidentified_boosters_in_the_SpaceX_Rocket_Assembly_Building_at_Kennedy_Space_Center_LC-39A%2C_October_2019.jpg/1280px-Falcon_9_B1046_and_two_unidentified_boosters_in_the_SpaceX_Rocket_Assembly_Building_at_Kennedy_Space_Center_LC-39A%2C_October_2019.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "0354cd9688f17920",
