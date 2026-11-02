@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-02T06:25:00.229Z",
+  "updatedAt": "2026-11-02T06:42:55.858Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5588,
-  "aday": 5588,
-  "uygun": 3534,
-  "secilen": 3437,
+  "toplamHaber": 5590,
+  "aday": 5590,
+  "uygun": 3536,
+  "secilen": 3438,
   "red": {
     "özet gövdeyle aynı": 113,
     "editör notu özetle aynı": 8,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 126
+    "tekrar": 127
   },
   "ornekTekrarlar": [
     {
@@ -78,6 +78,10 @@
       "twin": "OpenAI, yapay zekanın matematikte 3 büyük hamle yaptığını açıkladı"
     },
     {
+      "title": "HMD, Nokia 2360 Flip’i Tanıttı: Tuşlu ve Kapaklı Telefon",
+      "twin": "HMD, yeni Nokia 2360 Flip modelini tanıttı: Uzaktan yönetim desteği"
+    },
+    {
       "title": "CD Projekt RED, Cyberpunk 2 görev tasarımında eski modcuları kullanıyor",
       "twin": "CD Projekt RED, Cyberpunk 2 için multiplayer modu hazırlıklarına başladı"
     },
@@ -108,10 +112,6 @@
     {
       "title": "Rockstar, GTA 6 PC sürümünü Mayıs ortasına kadar geciktirebilir",
       "twin": "Rockstar GTA 6 19 Kasım’da PS5 ve Xbox’ta Çıkıyor"
-    },
-    {
-      "title": "Sony Yeni LYTIA 720 Sensörü 50 MP ile Gece Çekimlerini Yarıyor",
-      "twin": "Sony mobil kameralar için 50 MP LYTIA 720 sensörünü duyurdu"
     }
   ],
   "days": {
@@ -193,7 +193,6 @@
       "3f0acc244f1787ca",
       "a59d2eaa5bbfa592",
       "3cafd346ebebdea8",
-      "ba3230ca2964f5ba",
       "3b5c4925a296f8e8",
       "e419febc8158248c",
       "277f1f67c9151d5a",
@@ -205,6 +204,7 @@
       "87a7b4e7430dc84a",
       "f8eebe5018c54608",
       "7151efb74a0b0aee",
+      "ba3230ca2964f5ba",
       "9d7687583970d976",
       "c24c78a68152ac26",
       "3b7a7114b5903da7",
@@ -221,7 +221,6 @@
       "9b18a5ff587665be",
       "c1287417e1dd65ed",
       "23e4b1cd4b18508f",
-      "2c38b98e226d54af",
       "b2a508d2efc817cf",
       "02a5cfe679207633",
       "c341f2036a2cfd87",
@@ -229,6 +228,7 @@
       "17ed510938a6521a",
       "f4901e8c1b8dbddb",
       "e1d420dd17c497cf",
+      "2c38b98e226d54af",
       "04195ee94381b026",
       "03f7654154930cee",
       "25d49323b80860fc",
@@ -1207,13 +1207,14 @@
       "4570d1ac57f24a24",
       "9c2bb465580dfade",
       "af404f5e97ea63de",
+      "2290c98265485b7f",
       "e630747aaad9fcfa",
       "641e464f6a9f6ded",
       "1756f579faebfc15",
       "55b358e9a3e56f36",
       "a84b55bf6ea87faa",
-      "7b422b662801efb4",
       "e9549122df8c7c3b",
+      "7b422b662801efb4",
       "2cf0a31523c0d9a2",
       "843fe130cdf76742",
       "96ad33a59f014ade"
@@ -4167,7 +4168,6 @@
     "d0bbb85ed9130861",
     "12c5feaad9110757",
     "e1d2fb372f48d0a4",
-    "ba3230ca2964f5ba",
     "e04c349360953110",
     "b5ef2c2c8a7dcbd5",
     "bda53ddfe7b83c5a",
@@ -4231,6 +4231,7 @@
     "936d143ebe9e8fcf",
     "12c4a908e1bf685b",
     "d45347eddc406354",
+    "2290c98265485b7f",
     "63ac560f0ea82284",
     "4f75b136b2496862",
     "004fb02cf06ed5fa",
@@ -4314,6 +4315,7 @@
     "d19d05f3d461b9e4",
     "235785dc1f783c62",
     "99048ad1a9773dab",
+    "ba3230ca2964f5ba",
     "b47c82826a0dc331",
     "234f298d444fa899",
     "e3b01c6940f4abe4",
@@ -4723,7 +4725,6 @@
     "23e4b1cd4b18508f",
     "f660df3bea7caeca",
     "6881d450287b6124",
-    "2c38b98e226d54af",
     "707be2e95f1e47d3",
     "914d845bd4e9cae3",
     "783f1e1de80f3426",
@@ -4764,6 +4765,7 @@
     "02a5cfe679207633",
     "61b8d2355aaf3ec3",
     "a643b938a4eca466",
+    "e9549122df8c7c3b",
     "f9958417988cd22b",
     "9c19fe126520f7e5",
     "b0f78ba86f32f314",
@@ -4942,6 +4944,7 @@
     "de77300dcc63145a",
     "02ac7bfc4c1ef7f0",
     "7558f2b47fae9318",
+    "2c38b98e226d54af",
     "24be5b1ab35ff132",
     "884e49154e23c669",
     "941d84c551e1cbd8",
@@ -5071,7 +5074,6 @@
     "5184c34cfedb6584",
     "6a4b8a566f8eb61a",
     "61dbbe34d8faec13",
-    "e9549122df8c7c3b",
     "96fc01270b79a6bc",
     "294618f8259cab34",
     "aac0a29d520bc9c6",
