@@ -1,0 +1,230 @@
+# Sunucu ve Yayın Ölçeklendirme (ücretsiz)
+
+Bu belge, haber sitesi büyürken **hangi ücretsiz sınırın ne zaman dolacağını**,
+hangi önlemlerin kodda hazır olduğunu ve geçişin nasıl yapılacağını anlatır.
+Amaç: yeni bir sunucu kiralamadan, yayının kesilmeden büyümesi.
+
+> Ölçüm tarihi: **2 Kasım 2026**. Sayılar her derlemede değişir; güncel değer
+> için `npm run butce` çalıştırın veya GitHub Actions özetine bakın.
+
+## 1. Bugünkü durum
+
+| Ölçüm | Değer | Anlamı |
+| --- | --- | --- |
+| Derleme çıktısı | **9.097 dosya / 786,5 MB** | GitHub Pages'te dosya sınırının %91'i |
+| HTML sayfası | 6.356 | Haber + kategori + etiket + sayfalama |
+| Yerel kapak | 2.236 | 1.956 ana kapak + 273 küçük + 273 sosyal |
+| Kaynak depo | ~945 MB | Git geçmişi; GitHub'ın 1 GB "yumuşak" eşiğine yakın |
+| Günlük üretim | 145 haber (değişken) | `GUNLUK_HABER_LIMIT` |
+| İndeks çekirdeği | 3.366 haber | 400 günlük pencere + kalite kapısı |
+
+2 Kasım'da yapılan temizlik: **3.106 küçük/sosyal görsel kopyası** ve 5 ana kapak
+silindi. Bunlar yalnızca hız için üretilen kopyalardı; eski haberler artık
+`wsrv.nl` üzerinden aynı görseli alıyor. Yayın **11.461 → 9.097 dosya**,
+**861 MB → 786 MB** indi.
+
+## 2. Ücretsiz sunucu sınırları
+
+| Sağlayıcı | Depolama | Dosya | Bant genişliği | Not |
+| --- | --- | --- | --- | --- |
+| **GitHub Pages** | 1 GB | ~10.000 | ~100 GB/ay | Şu an kullanılıyor; **en kısa sınır** |
+| **Cloudflare Pages** | **Toplam sınır yok** | **20.000** | **Sınırsız** | Tek dosya 25 MiB; direct upload build kotası yemez |
+| **Cloudflare R2** | 10 GB | — | **Egress ücretsiz** | Görselleri siteden ayırmak için |
+| **Cloudflare Workers** | — | — | 100.000 istek/gün | İleride dinamik arşiv için |
+
+GitHub Pages'in 1 GB sınırı **sert**, 10.000 dosya sınırı ise pratikte yumuşak.
+Yine de 10.000'e yaklaşmak dağıtımın yavaşlamasına ve dosya kırpılmasına yol
+açabilir. Bu yüzden hedef **Cloudflare Pages** olmalı.
+
+## 3. Büyüme hesabı (neden hemen geçiş?)
+
+Bir haber ortalama **1 HTML + 0,35 yerel kapak** üretiyor. Küçük/sosyal kopyalar
+artık 3 günlük pencerede tutulduğu için sabit kalıyor.
+
+| Günlük haber | Ayda eklenen dosya | GitHub 10.000'e | Cloudflare 20.000'e |
+| --- | --- | --- | --- |
+| 145 | ~5.900 | **~5 gün** | ~2 ay |
+| 80 | ~3.300 | ~10 gün | ~3,5 ay |
+| 40 | ~1.650 | ~20 gün | ~7 ay |
+
+Bu hesap, arşiv sayfalarının silinmediği ve indeks penceresinin 400 gün kaldığı
+varsayımıyla yapılmıştır. **Sınırsız büyüme** için üçüncü adım (R2 + eski HTML
+arşivi) gerekir; ilk iki adım aylar kazandırır.
+
+> **Öneri:** Kalite stratejisiyle uyumlu olarak `GUNLUK_HABER_LIMIT=40`
+> civarında kalmak, ücretsiz katmanlarda yıllık ölçek için en güvenli yoldur.
+> 145/gün ile Cloudflare'de bile 2 ayda 20.000 dosya sınırına yaklaşılır.
+
+## 4. Kodda hazır olan önlemler
+
+### 4.1 Kapasite kontrolü
+
+`scripts/yayin-butcesi.mjs` her derlemeden sonra çıktıyı ölçer:
+
+```bash
+npm run butce                     # GitHub + Cloudflare karşılaştırması
+npm run butce -- --hedef=cloudflare
+npm run butce -- --hedef=both --sert   # sert sınır aşılırsa hata kodu
+```
+
+Pipeline'da `Yayin butcesi` adımı olarak çalışır; sonuç Actions özet ekranına da
+yazılır. GitHub Pages'te dosya sınırı yumuşak olduğu için yalnızca **1 GB**
+sert kabul edilir; Cloudflare'de 20.000 dosya ve 25 MiB/dosya serttir.
+
+### 4.2 Küçük/sosyal görsel penceresi
+
+`scripts/kapak-temizle.mjs --varyant-gun=3`:
+
+- **Ana kapak** indeks çekirdeğinde kaldığı sürece korunur.
+- **`-480.webp`** ve **`-sosyal.jpg`** yalnızca son 3 günün haberlerinde tutulur.
+- Eski haberlerde `imageUrl` / `socialImageUrl` otomatik olarak `wsrv.nl`
+  yedeğine düşer; kırık görsel oluşmaz.
+
+### 4.3 Önbellek ve sıkıştırma
+
+`site/public/_headers` (Cloudflare Pages / Netlify):
+
+- HTML: 60 sn taze + 5 dk bayat servis (`stale-while-revalidate`).
+- `/_astro/*`: 1 yıl, `immutable`.
+- `/kapak/*`: 1 gün taze + 7 gün bayat.
+- Feed ve site haritaları: 5-60 dk.
+
+Cloudflare Pages Brotli, HTTP/3 ve global anycast CDN'i otomatik verir.
+
+### 4.4 Yayın hedefi seçimi
+
+`.github/workflows/pipeline.yml` içindeki `Yayin hedefi sec` adımı:
+
+| `DEPLOY_TARGET` | Davranış |
+| --- | --- |
+| tanımsız / `github` | Yalnızca GitHub Pages |
+| `both` | GitHub Pages **ve** Cloudflare Pages |
+| `cloudflare` | Yalnızca Cloudflare Pages |
+| `auto` | Pages tokeni varsa `both`, yoksa `github` |
+
+`both` modunda Cloudflare hatası GitHub yayınını **engellemez**
+(`continue-on-error`), böylece haber akışı durmaz.
+
+## 5. Cloudflare Pages'e geçiş (tek seferlik)
+
+Mevcut `CLOUDFLARE_API_TOKEN` **yalnızca Workers AI** (kapak üretimi) içindir;
+Pages API'si 403 döner. Bu yüzden **ayrı** bir token gerekir.
+
+1. **Cloudflare → My Profile → API Tokens → Create Token → Custom token.**
+   İzinler:
+   - `Account` → **Cloudflare Pages** → **Edit**
+   - `Account` → **Account Settings** → **Read** (hesap listesi için)
+   - Kaynak: hesabınızı seçin.
+   Token'ı kopyalayın.
+
+2. Token'ı GitHub'a ekleyin (mevcut AI token'ına dokunmayın):
+
+   ```bash
+   gh secret set CLOUDFLARE_PAGES_TOKEN
+   ```
+
+3. Cloudflare'de **Workers & Pages → Create → Pages → Direct Upload** ile
+   `haberinai` adlı projeyi oluşturun. (İlk yükleme workflow'dan da gelebilir;
+   proje adı `CLOUDFLARE_PROJECT` değişkeniyle değiştirilebilir.)
+
+4. Önce **iki hedefe** yayınlayın:
+
+   ```bash
+   gh variable set DEPLOY_TARGET --body "both"
+   gh workflow run pipeline.yml
+   ```
+
+   Actions'ta `Cloudflare Pages'e yayinla` adımının başarılı olduğunu doğrulayın.
+   Cloudflare panelinde `https://haberinai.pages.dev` adresini açın.
+
+5. **DNS'i taşıyın** (kesintisiz geçiş):
+
+   - Cloudflare → Pages → `haberinai` → **Custom domains** → `haberinai.site`
+     ve `www.haberinai.site` ekleyin.
+   - Cloudflare, mevcut DNS kayıtlarını (GitHub Pages A kayıtları
+     `185.199.108-111.153`, `www` CNAME → `fruyorsan.github.io`) değiştirmeyi
+     teklif eder; onaylayın.
+   - SSL/TLS modu **Full (strict)** kalabilir; Cloudflare Pages sertifikayı
+     kendisi yönetir.
+   - `haberinai.site` ve `www` yanıtlarını kontrol edin:
+
+     ```bash
+     curl -I https://haberinai.site
+     curl -I https://www.haberinai.site
+     ```
+
+6. DNS doğrulandıktan sonra yalnızca Cloudflare'e geçin:
+
+   ```bash
+   gh variable set DEPLOY_TARGET --body "cloudflare"
+   ```
+
+7. GitHub Pages'i yedek olarak bırakın (silmeniz gerekmez). Geri dönmek için:
+
+   ```bash
+   gh variable set DEPLOY_TARGET --body "both"    # ya da "github"
+   ```
+
+### Geri alma
+
+- DNS'i Cloudflare Pages'ten GitHub Pages'e geri alın (A kayıtları +
+  `www` CNAME).
+- `gh variable set DEPLOY_TARGET --body "github"`.
+- Hiçbir içerik silinmez; iki hedef de aynı `site/dist` çıktısını kullanır.
+
+## 6. Görselleri R2'ye ayırma (ikinci dalga)
+
+Cloudflare Pages 20.000 dosya sınırına gelindiğinde görselleri siteden ayırmak
+gerekir. R2'nin ücretsiz katmanı **10 GB depolama** ve **ücretsiz egress**
+verir; 100.000 kapak rahatça sığar.
+
+Planlanan yapı:
+
+```
+haberinai.site (Cloudflare Pages)  →  yalnızca HTML/JS/CSS
+img.haberinai.site (R2 + Cache)    →  /kapak/*.webp, /kapak/*-sosyal.jpg
+```
+
+Adımlar:
+
+1. Cloudflare → R2 → **Create bucket** → `haberinai-gorsel`.
+2. Bucket → **Settings → Public access → Custom domain** → `img.haberinai.site`.
+3. R2 → **Manage R2 API Tokens** → Object Read & Write, yalnızca bu bucket.
+4. GitHub'a ekleyin:
+
+   ```bash
+   gh secret set R2_ACCESS_KEY_ID
+   gh secret set R2_SECRET_ACCESS_KEY
+   gh variable set R2_ACCOUNT_ID  --body "<Cloudflare hesap kimliği>"
+   gh variable set R2_BUCKET      --body "haberinai-gorsel"
+   gh variable set R2_PUBLIC_URL  --body "https://img.haberinai.site"
+   ```
+
+5. Yükleme betiği ve `dist/kapak` temizliği bu belgenin ikinci fazında
+   eklenecek. O zamana kadar kapaklar Cloudflare Pages'te kalır.
+
+## 7. İzleme ve bakım
+
+Her hafta:
+
+```bash
+npm run butce
+```
+
+- **%75**: planlama zamanı.
+- **%90**: geçiş/dosya azaltma zamanı.
+- **Sert sınır**: pipeline `--sert` ile dağıtımdan önce durur.
+
+Actions özetinde tablo görünür. Anormal artış varsa ilk bakılacak yer
+`site/dist/kapak` ve `site/dist/haber` klasörleridir.
+
+## 8. Neden bu mimari?
+
+- **Statik site + CDN** en ucuz ve en hızlı çözümdür; veritabanı/sunucu
+  bakımı yoktur.
+- **Cloudflare Pages** toplam boyut sınırı koymadığı için 786 MB'lık çıktı
+  sorun olmaktan çıkar; bant genişliği ücretsizdir.
+- **Görselleri R2'ye ayırmak** dosya sayısını HTML sayısına indirir; yeni
+  haberler yalnızca 1 dosya ekler.
+- **Kapasite kontrolü** sınırın sessizce aşılmasını engeller; sorun kullanıcıya
+  değil, dağıtımdan önce CI'a görünür.

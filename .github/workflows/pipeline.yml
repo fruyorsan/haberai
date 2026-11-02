@@ -196,7 +196,11 @@ jobs:
       # kapaklar silinir; o haberler kaynak sitenin ozgun fotografina doner.
       - name: Kapak temizligi
         continue-on-error: true
-        run: node scripts/kapak-temizle.mjs --gun=3
+        # --varyant-gun=3: 480px ve 1200x630 sosyal kopyalar yalnizca son 3 gun
+        # tutulur. Ana kapak indekste kaldigi surece korunur; eski haberlerin
+        # kucuk kopyalari silinir ve kod wsrv yedegine duser. Boylece her haber
+        # 3 dosya yerine ortalama 1 dosya kaplar (GitHub 10k / Cloudflare 20k).
+        run: node scripts/kapak-temizle.mjs --gun=3 --varyant-gun=3
 
       # KIRIK KAPAK ONARIMI: `image` yerel /kapak/... adresini gosteriyor ama
       # dosya yoksa (temizlikte silinmis, uretimi yarida kalmis ya da commit
@@ -292,6 +296,45 @@ jobs:
           BLUESKY_URL: ${{ vars.BLUESKY_URL }}
         run: cd site && npm run build
 
+      # YAYIN HEDEFI: GitHub Pages (varsayilan) / Cloudflare Pages / ikisi.
+      # Cloudflare icin AYRI bir token gerekir: mevcut CLOUDFLARE_API_TOKEN
+      # yalnizca Workers AI (kapak uretimi) icin yetkili. Yeni token:
+      #   gh secret set CLOUDFLARE_PAGES_TOKEN
+      #   gh variable set DEPLOY_TARGET --body "both"   # once ikisine de yayinla
+      #   gh variable set DEPLOY_TARGET --body "cloudflare"  # DNS gecince
+      # DEPLOY_TARGET tanimli degilse GitHub Pages kullanilir; boylece token
+      # yokken/yanlisken site yayinda kalmaz gibi bir risk olusmaz.
+      - name: Yayin hedefi sec
+        id: hedef
+        env:
+          DEPLOY_TARGET: ${{ vars.DEPLOY_TARGET }}
+          PAGES_TOKEN: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}
+          CF_ACCOUNT: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          set -eu
+          istek="${DEPLOY_TARGET:-github}"
+          cf=false
+          if [ -n "${PAGES_TOKEN:-}" ] && [ -n "${CF_ACCOUNT:-}" ]; then cf=true; fi
+          case "$istek" in
+            github|cloudflare|both) hedef="$istek" ;;
+            auto) if [ "$cf" = "true" ]; then hedef="both"; else hedef="github"; fi ;;
+            *) echo "::error::Gecersiz DEPLOY_TARGET: $istek (github|cloudflare|both|auto)"; exit 1 ;;
+          esac
+          if [ "$hedef" != "github" ] && [ "$cf" != "true" ]; then
+            echo "::error::DEPLOY_TARGET=$hedef ama CLOUDFLARE_PAGES_TOKEN / CLOUDFLARE_ACCOUNT_ID yok."
+            echo "::error::Cloudflare Pages tokeni olusturun: docs/olceklendirme.md"
+            exit 1
+          fi
+          echo "target=$hedef" >> "$GITHUB_OUTPUT"
+          echo "cf=$cf" >> "$GITHUB_OUTPUT"
+          echo "Yayin hedefi: $hedef (Cloudflare kimligi: $cf)"
+
+      # Kapasite kontrolu: sert sinir asilirsa dağıtımdan ONCE durur. GitHub
+      # Pages'te dosya siniri yumusak oldugu icin yalnizca 1 GB serttir.
+      - name: Yayin butcesi
+        if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+        run: node scripts/yayin-butcesi.mjs --hedef=${{ steps.hedef.outputs.target }} --sert
+
       # Site kodu degisip degismedigini anla (Netlify buna gore yayin yapar).
       # Hattin 5 dk'lik bot guncellemeleri (yalnizca data/) Netlify'i tetiklemesin:
       # ucretsiz planda prod deploy basina 15 credit var (ayda 300), bot commitleri
@@ -327,7 +370,7 @@ jobs:
           fi
 
       - name: GitHub Pages'e yayinla
-        if: (steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')) && vars.DEPLOY_TARGET != 'cloudflare'
+        if: (steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')) && steps.hedef.outputs.target != 'cloudflare'
         uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.PAGES_DEPLOY_KEY }}
@@ -339,25 +382,27 @@ jobs:
           user_email: bot@users.noreply.github.com
           commit_message: "yayin: ${{ github.run_number }}"
 
-      # Cloudflare Pages (alternatif yayin hedefi).
+      # Cloudflare Pages (asil olcek hedefi).
       #
-      # Neden: GitHub Pages'te depo 1 GB ve 10.000 dosya ile sinirli; haber
-      # arsivi buyudukce bu sinir asiliyor. Cloudflare Pages'te bant genisligi
-      # sinirsiz, dosya siniri 20.000, tek dosya 25 MiB. Wrangler ile yapilan
-      # "direct upload" derleme kotasindan (ayda 500 build) DUSMEZ.
+      # Neden: GitHub Pages'te yayin 1 GB ve ~10.000 dosya ile sinirli; haber
+      # arsivi buyudukce bu sinir asiliyor (02.11.2026: 861 MB / 11.461 dosya).
+      # Cloudflare Pages'te bant genisligi sinirsiz, dosya siniri 20.000, tek
+      # dosya 25 MiB ve toplam boyut siniri yok. Wrangler "direct upload"
+      # derleme kotasindan (ayda 500 build) DUSMEZ.
       #
-      # Gecis icin (tek seferlik):
-      #   gh variable set DEPLOY_TARGET        --body "cloudflare"
-      #   gh variable set CLOUDFLARE_ACCOUNT_ID --body "<Cloudflare hesap kimligi>"
-      #   gh variable set CLOUDFLARE_PROJECT    --body "haberinai"   (opsiyonel)
-      #   gh secret   set CLOUDFLARE_API_TOKEN
-      # Bu degisken tanimli degilse adim HIC calismaz; GitHub Pages yayini
-      # aynen devam eder. Ikisi ayni anda yayinlanmaz.
+      # ONEMLI: CLOUDFLARE_API_TOKEN kapak uretimi icin Workers AI yetkisindedir;
+      # Pages icin AYRI token gerekir (Account > Cloudflare Pages > Edit).
+      #   gh secret set CLOUDFLARE_PAGES_TOKEN
+      #   gh variable set DEPLOY_TARGET --body "both"        # gecis: iki hedef
+      #   gh variable set DEPLOY_TARGET --body "cloudflare"  # DNS gecince
+      # "both" modunda Cloudflare hatasi GitHub yayinini ENGELLEMEZ
+      # (continue-on-error), boylece haber akisi durmaz.
       - name: Cloudflare Pages'e yayinla
-        if: (steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')) && vars.DEPLOY_TARGET == 'cloudflare'
+        if: (steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')) && steps.hedef.outputs.target != 'github'
+        continue-on-error: ${{ steps.hedef.outputs.target == 'both' }}
         uses: cloudflare/wrangler-action@v3
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          apiToken: ${{ secrets.CLOUDFLARE_PAGES_TOKEN || secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
           command: >-
             pages deploy site/dist

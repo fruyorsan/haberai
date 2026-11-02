@@ -26,7 +26,8 @@
     "gorsel-ajan": "node --env-file-if-exists=.env scripts/gorsel-ajan.mjs",
     "gorsel-ajan:dry": "node --env-file-if-exists=.env scripts/gorsel-ajan.mjs --dry",
     "kaynak-gorsel": "node scripts/kaynak-gorsel.mjs",
-    "domain": "node scripts/domain-durum.mjs"
+    "domain": "node scripts/domain-durum.mjs",
+    "butce": "node scripts/yayin-butcesi.mjs"
   },
   "engines": {
     "node": ">=20"

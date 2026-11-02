@@ -258,6 +258,23 @@ telif güvenli stok fotoğraflara geçirilir (bkz. "Görseller" bölümü). Eski
 için beklemeden başlatmak istersen: GitHub → **Actions** → **Arsiv Yenileme** →
 **Run workflow**. Workflow `data/` değişikliklerini commit edip siteyi yeniden yayınlar.
 
+### Sunucu ve yayın ölçeği (2026-11-02)
+
+Site statiktir; "sunucu" tarafı CDN + dosya kotasıdır. Ölçüm (2 Kasım 2026):
+**9.097 dosya / 786 MB**. GitHub Pages 1 GB ve ~10.000 dosya ile sınırlıdır;
+bu yüzden asıl hedef **Cloudflare Pages** (20.000 dosya, toplam boyut sınırı yok,
+sınırsız bant genişliği). Kodda hazır olanlar:
+
+- `scripts/yayin-butcesi.mjs` — derleme sonrası kapasite raporu; sert sınırda
+  dağıtımı durdurur (`npm run butce`).
+- `scripts/kapak-temizle.mjs --varyant-gun=3` — 480px/sosyal görsel kopyalarını
+  yalnızca son 3 gün tutar; eski haberler wsrv yedeğine düşer.
+- `site/public/_headers` — HTML/varlık/feed için CDN önbellek kuralları.
+- `pipeline.yml` → `DEPLOY_TARGET=both|cloudflare` ile Cloudflare Pages'e
+  kesintisiz geçiş (ayrı `CLOUDFLARE_PAGES_TOKEN` gerekir).
+
+Tam adımlar, büyüme hesabı ve geri alma: **[docs/olceklendirme.md](docs/olceklendirme.md)**.
+
 ### Alan adı (haberinai.site)
 
 > **Durum: yayında.** `https://haberinai.site` GitHub Pages'te yayında; HTTPS zorunlu, `www` →
