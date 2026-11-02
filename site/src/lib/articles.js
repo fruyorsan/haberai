@@ -389,8 +389,15 @@ export function imageUrl(src, width = 800, quality = 85) {
   src = normalizeSrc(src);
   // Ürettiğimiz yerel kapaklar (./kapak/<id>.webp) 1280 px'dir; liste
   // kartlarında 90 KB indirmemek için hazır 480 px varyantına geçilir.
+  // Varyant yalnızca TAZE haberlerde tutulur (bkz. scripts/kapak-temizle.mjs);
+  // eski haberlerde dosya yoksa 1280 px ana kapak kullanılır. Böylece silinmiş
+  // varyanta 404 isteği gitmez.
   if (/^\/kapak\/[A-Za-z0-9]+\.webp$/.test(src)) {
-    return width <= 560 ? src.replace(/\.webp$/, "-480.webp") : src;
+    if (width <= 560) {
+      const kucuk = src.replace(/\.webp$/, "-480.webp");
+      if (publicDosyaVar(kucuk)) return kucuk;
+    }
+    return src;
   }
   try { if (src && DIRECT_IMAGE_HOSTS.test(new URL(src).hostname)) return src; } catch {}
   if (!src || !/^https?:\/\//i.test(src)) return src || "";
@@ -411,7 +418,8 @@ export function imageSrcset(src, widths = [480, 800, 1080]) {
   src = normalizeSrc(src);
   if (/^\/kapak\/[A-Za-z0-9]+\.webp$/.test(src)) {
     const kucuk = src.replace(/\.webp$/, "-480.webp");
-    return `${kucuk} 480w, ${src} 1280w`;
+    // Varyant temizlikte silinmiş olabilir; yalnızca gerçekten varsa sun.
+    return publicDosyaVar(kucuk) ? `${kucuk} 480w, ${src} 1280w` : `${src} 1280w`;
   }
   try { if (src && DIRECT_IMAGE_HOSTS.test(new URL(src).hostname)) return ""; } catch {}
   if (!src || !/^https?:\/\//i.test(src)) return "";

@@ -1,8 +1,32 @@
-# Derlenmiş varlıklar: sonsuza kadar önbellekle (dosya adları hash'li)
+# ---------------------------------------------------------------------------
+# Cloudflare Pages / Netlify uyumlu önbellek ve güvenlik başlıkları.
+#
+# Kural sırası önemlidir: aynı başlık birden fazla kuralda tanımlanırsa SONRAKİ
+# kural kazanır. Bu yüzden genel HTML kuralı en üstte, varlık/feed kuralları
+# altta, yalnızca güvenlik başlığı yazan genel kural en sonda durur.
+# ---------------------------------------------------------------------------
+
+# HTML: taze haber için kısa önbellek. 60 sn sonra yeniden doğrulanır; CDN
+# kesintisinde 5 dk'ya kadar eski sayfa servis edilebilir (stale-while-revalidate).
+/*
+  Cache-Control: public, max-age=60, stale-while-revalidate=300
+
+# Derlenmiş varlıklar: dosya adları hash'li, sonsuza kadar önbellekle.
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Arama indeksi ve sitemap: kısa önbellek
+# Kapak görselleri: içerik haber kimliğine bağlı; kapak yenilenebildiği için
+# 1 gün taze, 7 gün bayat servis penceresi.
+/kapak/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+# Avatar ve ikonlar nadiren değişir.
+/avatar/*
+  Cache-Control: public, max-age=604800
+/ikon-*.png
+  Cache-Control: public, max-age=604800
+
+# Arama indeksi ve feed'ler: kısa önbellek.
 /search-index.json
   Cache-Control: public, max-age=300
 
@@ -12,10 +36,14 @@
   Cache-Control: public, max-age=3600
 /news-sitemap.xml
   Cache-Control: public, max-age=600
+/image-sitemap.xml
+  Cache-Control: public, max-age=3600
 /rss.xml
   Cache-Control: public, max-age=300
+/feed.json
+  Cache-Control: public, max-age=300
 
-# Güvenlik başlıkları
+# Güvenlik başlıkları (tüm yollar).
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
