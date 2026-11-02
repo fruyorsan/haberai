@@ -1,5 +1,64 @@
 [
   {
+    "id": "e4f28043a6bfb4cb",
+    "title": "Microsoft, Windows 11 görev çubuğu sürükleme özelliğini neden kaldırdı?",
+    "slug": "microsoft-windows-11-gorev-cubugu-surukleme-neden-kaldirildi",
+    "summary": "Microsoft, Windows 11'de görev çubuğunu fareyle sürükleyerek konumlandırma desteğinin neden kaldırıldığını açıkladı. Şirket yetkilileri, bu yöntemin yanlışlıkla yapılan hareketlere yol açtığını belirterek, kullanıcıların daha kontrollü ayarlar üzerinden konumu değiştirmesini tercih ettiklerini ifade etti.",
+    "keyPoints": [
+      "Araştırmalar, sürükle-bırak yönteminin görev çubuğunda istenmeyen yanlış hareketlere sebep olduğunu gösterdi.",
+      "Windows 11 kullanıcıları görev çubuğu konumunu ayarlar menüsü üzerinden yapılandırabiliyor.",
+      "Microsoft, sürükleme yerine daha kontrollü olan sağ tıklama menüsüyle erişimi destekliyor."
+    ],
+    "body": [
+      "Windows kullanıcıları için oldukça aşina olan görev çubuğunu ekranın farklı kenarlarına sürükleyerek taşıma dönemi Windows 11 sürümüyle birlikte sona erdi. Önceki Windows sürümlerinde kullanıcılar görev çubuğunu alt, üst, sağ veya sol kenara kolayca çekebiliyordu. Ancak yeni işletim sistemiyle beraber Microsoft, bu yöntemi sistemden tamamen kaldırdı ve uzun süre konum değişikliğine izin veren bir seçenek de sunmadı. Kullanıcı geri bildirimleri neticesinde konum değiştirme desteği geri gelse de sürükle-bırak yönteminin eksikliği tartışmaları beraberinde getirdi.",
+      "Microsoft'un arayüz tasarımı konusundaki bu tercihi, Diego Baca'nın bir üçüncü taraf yazılımı hakkındaki paylaşımının ardından netleşti. Baca, yaptığı açıklamalarda şirketin yaptığı araştırmaların sonuçlarını paylaştı ve sürükle-bırak işleminin zaman zaman kullanıcı hatalarına davetiye çıkardığını belirtti. Özellikle fareyle gerçekleştirilen sürükleme işlemleri sırasında görev çubuğunun kullanıcı dışındaki hareketlerle yer değiştirmesi veya yanlışlıkla başka bir kenara sabitlenmesi gibi durumların yaşandığı tespit edildi.",
+      "Şirket, önceki nesil Windows sürümlerinde kullanılan görev çubuğunu kilitleme özelliğinin de benzer bir mantıkla geliştirildiğini hatırlatıyor. Görev çubuğunun sabit kalmasını sağlamak ve istenmeyen kazara hareketleri engellemek, Microsoft'un arayüz tasarımındaki temel hedefleri arasında yer alıyor. Ayrıca kullanıcı verilerini analiz eden şirket, insanların günlük kullanımda görev çubuğunun yerini sık sık değiştirmediğini fark etti. Bu nedenle daha kontrollü ve kararlı bir yapı sunmak amacıyla sürükleme yerine ayar menüsü üzerinden seçim yapma yöntemine geçiş yapıldı.",
+      "Güncel Windows 11 arayüzünde görev çubuğunun konumunu değiştirmek isteyen kullanıcıların daha profesyonel ve erişilebilir bir yolu kullanmaları hedefleniyor. Görev çubuğu üzerinde sağ tıklayarak açılan menü üzerinden ayarlar bölümüne giren kullanıcılar, burada görev çubuğu davranışları sekmesini bulabiliyor. Bu sekmede yer alan konum ayarları üzerinden ekranın istenen kenarı tercih edilebiliyor. Şirket yetkilileri, bu yöntemin kullanıcılar için oldukça kolay olduğunu ve tek bir sağ tıklama mesafesinde erişilebildiğini savunuyor.",
+      "Microsoft, işletim sistemini genişleten ve kullanıcılara farklı özelleştirme seçenekleri sunan üçüncü taraf yazılımlara destek vermeye devam ediyor. Eğer yerleşik menülerin sunduğu seçenekler kullanıcı için yeterli gelmiyorsa, dışarıdan temin edilen özelleştirme araçları sayesinde görev çubuğu üzerinde farklı yapılandırmalar mümkün olabiliyor. Şirketin ana odağı, varsayılan sistem ayarlarının mümkün olan en stabil ve kullanıcı hatasına kapalı şekilde kalmasını sağlamak olarak özetleniyor."
+    ],
+    "comment": "Microsoft'un sürükle-bırak yöntemini devre dışı bırakması, arayüz kararlılığını yanlış tıklama riskinden korumak için tasarlanmış bir önlem. Kullanıcıların alışkanlıklarını değiştirmesi zor olsa da, ayarlar menüsü üzerinden yapılan seçim, sürüklemeye kıyasla daha keskin sonuçlar veriyor. Üçüncü taraf araçlara açık kapı bırakılması ise özelleştirme beklentisi olan kullanıcılar için tek çıkış yolu durumunda. Eğer şirket daha esnek bir sürükleme algoritması geliştiremezse, bu kısıtlamanın yerini tamamen özelleştirme yazılımları alabilir.",
+    "editorNote": "Windows 11'de görev çubuğunu sürükleyerek taşıyamamanız bir hata değil, Microsoft'un kazara yapılan hareketleri önlemek için seçtiği kontrollü bir tasarım tercihi.",
+    "tags": [
+      "Windows 11",
+      "Microsoft",
+      "görev çubuğu",
+      "arayüz",
+      "yazılım güncelleme"
+    ],
+    "category": "Yazılım",
+    "gorselSorgu": "Windows 11 taskbar settings",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/windows-11-de-gorev-cubugu-surukleme-neden-kaldirildi--212365",
+    "image": "/kapak/e4f28043a6bfb4cb.webp",
+    "publishedAt": "2026-11-02T13:00:00.000Z",
+    "generatedAt": "2026-11-02T13:05:36.583Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Windows_April_2015-3.jpg/1280px-Windows_April_2015-3.jpg",
+        "yazar": "Alvesgaspar",
+        "lisans": "CC BY-SA 4.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Windows_April_2015-3.jpg",
+        "altyazi": "Windows 11 ayarlar menüsü ve arayüz seçenekleri"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Computer_modern.jpg/1280px-Computer_modern.jpg",
+        "yazar": "Donald Knuth",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Computer_modern.jpg",
+        "altyazi": "Masaüstü işletim sistemi arayüz tasarım detayları"
+      }
+    ],
+    "breaking": true,
+    "gorselDeneme": "2026-11-02T13:05:38.709Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://www.donanimhaber.com/images/images/haber/212365/src/windows-11-de-gorev-cubugu-surukleme-neden-kaldirildi212365_0.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "f73a8737f49e79d0",
     "title": "Güney Kore yerli yapay zekaya 3,5 milyar dolar bütçe tahsis etti",
     "slug": "guney-kore-yerli-yapay-zekaya-3-5-milyar-dolar-butce-tahsis-etti",
@@ -102,7 +161,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:06.273Z",
+    "gorselDeneme": "2026-11-02T13:05:37.928Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2476000/tbmmdha-2477375.jpg",
@@ -207,7 +266,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:06.009Z",
+    "gorselDeneme": "2026-11-02T13:05:38.195Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://imgrosetta.webtekno.com/file/695162/695162-700x400.png",
@@ -258,7 +317,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:07.005Z",
+    "gorselDeneme": "2026-11-02T13:05:38.660Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212364/src/antutu-acikladi-en-guclu-android-telefonlar-ekim-2026212364_0.jpg",
@@ -843,7 +902,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:06.224Z",
+    "gorselDeneme": "2026-11-02T13:05:38.186Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://imgrosetta.webtekno.com/file/695143/695143-700x400.png",
@@ -962,7 +1021,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:08.157Z",
+    "gorselDeneme": "2026-11-02T13:05:39.134Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/02/thumbs_b_c_0192cc387bceb2c9cfe7626b618649af.jpg",
@@ -1024,7 +1083,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:06.741Z",
+    "gorselDeneme": "2026-11-02T13:05:38.672Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2498000/ispanya-tren-kazasi-reuters-2499196.jpg",
@@ -1086,7 +1145,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:06.466Z",
+    "gorselDeneme": "2026-11-02T13:05:38.370Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ichef.bbci.co.uk/ace/standard/1200/cpsprodpb/895b/live/a85523b0-d691-11f1-8f56-0b6ab08f384e.jpg",
@@ -1137,7 +1196,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:08.046Z",
+    "gorselDeneme": "2026-11-02T13:05:39.470Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/02/thumbs_b_c_f95c42dbf27ca0c219546472e6b01da7.jpg",
@@ -1262,7 +1321,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:08.740Z",
+    "gorselDeneme": "2026-11-02T13:05:39.798Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/02/thumbs_b_c_a01c74d8f2ac4b5f4e37b101c8e241c5.jpg",
@@ -1321,7 +1380,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:06.751Z",
+    "gorselDeneme": "2026-11-02T13:05:38.693Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ichef.bbci.co.uk/ace/standard/1200/cpsprodpb/3a7f/live/ad865b20-d64f-11f1-a701-fddedf244c16.jpg",
@@ -1543,7 +1602,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:08.812Z",
+    "gorselDeneme": "2026-11-02T13:05:39.785Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/02/thumbs_b_c_13ce91c9573e0b44134fdd6d854b5c0b.jpg",
@@ -1602,7 +1661,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:07.328Z",
+    "gorselDeneme": "2026-11-02T13:05:39.082Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://imgrosetta.webtekno.com/file/695222/695222-700x400.jpg",
@@ -1657,7 +1716,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:07.602Z",
+    "gorselDeneme": "2026-11-02T13:05:39.340Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/kaza-aa-2500270.jpg",
@@ -1704,7 +1763,7 @@
     "publishedAt": "2026-11-02T06:18:32.000Z",
     "generatedAt": "2026-11-02T06:23:31.181Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:09.662Z",
+    "gorselDeneme": "2026-11-02T13:05:39.353Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/02/thumbs_b_c_f7ad2530a4a3a949f2f3403dd78e3a53.jpg",
@@ -1780,7 +1839,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:08.411Z",
+    "gorselDeneme": "2026-11-02T13:05:39.655Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://imgrosetta.webtekno.com/file/693325/693325-700x400.png",
@@ -1960,7 +2019,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:08.657Z",
+    "gorselDeneme": "2026-11-02T13:05:39.810Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://imgrosetta.webtekno.com/file/695192/695192-700x400.png",
@@ -2018,7 +2077,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:08.681Z",
+    "gorselDeneme": "2026-11-02T13:05:39.593Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1978000/bicak-saldiri-knife-1978158.jpg",
@@ -2077,7 +2136,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:08.928Z",
+    "gorselDeneme": "2026-11-02T13:05:39.716Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2434000/ingiltere-gazze-aa-2434436.jpg",
@@ -2182,7 +2241,7 @@
     "publishedAt": "2026-11-02T04:49:16.000Z",
     "generatedAt": "2026-11-02T04:55:46.589Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:09.069Z",
+    "gorselDeneme": "2026-11-02T13:05:40.018Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://imgrosetta.webtekno.com/file/695215/695215-700x400.jpg",
@@ -2240,7 +2299,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:09.075Z",
+    "gorselDeneme": "2026-11-02T13:05:40.096Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://imgrosetta.webtekno.com/file/695210/695210-700x400.jpg",
@@ -2307,7 +2366,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:09.156Z",
+    "gorselDeneme": "2026-11-02T13:05:41.097Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://imgrosetta.webtekno.com/file/695200/695200-700x400.jpg",
@@ -2587,7 +2646,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:09.772Z",
+    "gorselDeneme": "2026-11-02T13:05:40.529Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://paraanaliz.com/medya/articles/2026/11/2cc67a73-f92c-4883-895f-da6ec8c0d705-piyasa3.png",
@@ -2838,7 +2897,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:10.543Z",
+    "gorselDeneme": "2026-11-02T13:05:40.609Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://foto.haberler.com/haber/2026/11/02/abd-nin-florida-eyaletinde-yerlesim-bolgesine-20386359_7831_amp.jpg",
@@ -3039,7 +3098,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:10.158Z",
+    "gorselDeneme": "2026-11-02T13:05:40.790Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://www.haber71.net/wp-content/uploads/2026/11/haber71-yeni-sablon-v2-apple-web.png",
@@ -3162,7 +3221,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:11.086Z",
+    "gorselDeneme": "2026-11-02T13:05:41.898Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://haberlerankara.com/storage/news/covers/ankarada-butce-haftasi-hangi-bakanlik-hangi-gun-mecliste-gorusulecek-1200x675.webp",
@@ -3379,7 +3438,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:11.489Z",
+    "gorselDeneme": "2026-11-02T13:05:42.316Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://img.saraymedya.com/manset/2026/11/efeler-de-hasarli-tarim-yollari-yeniden-aciliyor-1793583969.webp",
@@ -3452,7 +3511,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:11.722Z",
+    "gorselDeneme": "2026-11-02T13:05:42.445Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://serbestiyet.com/wp-content/uploads/2026/11/PHOTO-2026-11-01-13-26-21.jpg",
@@ -3508,7 +3567,7 @@
     "publishedAt": "2026-11-02T01:18:27.000Z",
     "generatedAt": "2026-11-02T01:21:38.229Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:10.166Z",
+    "gorselDeneme": "2026-11-02T13:05:40.808Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Hacker_typing_on_a_Linux_laptop_-_Milano_2022.jpg/1280px-Hacker_typing_on_a_Linux_laptop_-_Milano_2022.jpg",
@@ -3612,7 +3671,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:10.314Z",
+    "gorselDeneme": "2026-11-02T13:05:40.941Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ankaranethabercom.teimg.com/crop/1280x720/ankaranethaber-com/uploads/2026/11/ekran-goruntusu-2026-11-02-010937.png",
@@ -3692,7 +3751,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:11.535Z",
+    "gorselDeneme": "2026-11-02T13:05:42.352Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/POD_Arselon_yarn_production_line.jpg/1280px-POD_Arselon_yarn_production_line.jpg",
@@ -3772,7 +3831,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:11.075Z",
+    "gorselDeneme": "2026-11-02T13:05:41.314Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/02/thumbs_b_c_30fcb0797641c9019096f65c876b8938.jpg",
@@ -3836,7 +3895,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:11.083Z",
+    "gorselDeneme": "2026-11-02T13:05:41.349Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ichef.bbci.co.uk/ace/standard/1200/cpsprodpb/a1e5/live/0efb3e90-d68f-11f1-b441-2b33b063138f.jpg",
@@ -3900,7 +3959,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:11.090Z",
+    "gorselDeneme": "2026-11-02T13:05:41.382Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ichef.bbci.co.uk/ace/standard/1200/cpsprodpb/30b9/live/175c0e10-d62c-11f1-b085-b9e65bc8bfff.jpg",
@@ -3973,7 +4032,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:11.395Z",
+    "gorselDeneme": "2026-11-02T13:05:42.078Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Eye_exam_2.jpg/1920px-Eye_exam_2.jpg",
@@ -4121,7 +4180,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:12.154Z",
+    "gorselDeneme": "2026-11-02T13:05:42.240Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ichef.bbci.co.uk/news/1200/branded_turkce/f64c/live/4e58ab20-c552-11f1-bc2e-018d645d8d21.jpg",
@@ -4186,7 +4245,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:12.023Z",
+    "gorselDeneme": "2026-11-02T13:05:42.610Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/169th_St_81st_Av_td_%282019-07-09%29_02.jpg/1920px-169th_St_81st_Av_td_%282019-07-09%29_02.jpg",
@@ -4265,7 +4324,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-02T12:58:12.948Z",
+    "gorselDeneme": "2026-11-02T13:05:42.780Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://static.news.bitcoin.com/wp-content/uploads/2026/11/cz-x-post.jpg",
@@ -15227,7 +15286,6 @@
         "altyazi": "Benzinli motosiklet motoru ve teknik detaylar"
       }
     ],
-    "breaking": true,
     "gorselDeneme": "2026-11-01T03:41:57.299Z",
     "kapak": {
       "v": 3,
@@ -64003,7 +64061,7 @@
     "gorselSorgu": "data center server room",
     "source": "BeInCrypto",
     "sourceUrl": "https://tr.beincrypto.com/en-buyuk-3-teknoloji-devinin-kazanc-raporlari-ekim-son-hafta/",
-    "image": "/kapak/5ea4f3d717547639.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
     "publishedAt": "2026-10-26T01:58:41.000Z",
     "generatedAt": "2026-10-26T01:59:41.431Z",
     "ekGorselDeneme": "2026-10-27T14:08:49.514Z",
@@ -64011,11 +64069,6 @@
       "tarih": "2026-11-01T10:21:26.212Z",
       "sonuc": "atlandi",
       "neden": "yeterli görsel yok"
-    },
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
-      "foto": false
     }
   },
   {
@@ -67267,7 +67320,7 @@
     "gorselSorgu": "van-gogh starry-night painting",
     "source": "CHIP Online",
     "sourceUrl": "https://www.chip.com.tr/guncel/van-goghun-yildizli-gece-tablosundaki-137-yillik-gizem-cozuluyor_184869.html",
-    "image": "/kapak/1e562fe6acf8e9ac.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Vincent_van_Gogh_Starry_Night.jpg/1280px-Vincent_van_Gogh_Starry_Night.jpg",
     "publishedAt": "2026-10-25T16:58:00.000Z",
     "generatedAt": "2026-10-25T17:00:56.760Z",
     "gorselDeneme": "2026-10-28T04:45:24.479Z",
@@ -67287,12 +67340,7 @@
         "lisansUrl": "",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_The_yellow_house_(%27The_street%27).jpg"
       }
-    ],
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Vincent_van_Gogh_Starry_Night.jpg/1280px-Vincent_van_Gogh_Starry_Night.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "9c0257ab57d6eb37",
@@ -70270,7 +70318,7 @@
     "gorselSorgu": "Barack Obama speech podium",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/economy-news/obama-enflasyon-konusunda-trump-elestirdi-4118498",
-    "image": "/kapak/f6f884514f6577c6.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg/1280px-President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg",
     "publishedAt": "2026-10-25T04:13:17.000Z",
     "generatedAt": "2026-10-25T04:21:44.052Z",
     "gorselEk": [
@@ -70282,12 +70330,7 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Press_Secretary_Karine_Jean-Pierre_speaks_during_a_press_briefing,_Monday,_May_13,_2024,_in_the_James_S._Brady_Press_Briefing_Room_of_the_White_House.jpg",
         "altyazi": "Washington siyasetinde ekonomi politikaları tartışılmaya devam ediyor"
       }
-    ],
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg/1280px-President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "2f83428af6fd33ce",
@@ -164592,7 +164635,7 @@
     "gorselSorgu": "opera stage performance art",
     "source": "Howl.link",
     "sourceUrl": "https://t.co/x7EAkzLjZl",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Monumental_stage_prop_from_the_opera_Aida_-_01.jpg/1280px-Monumental_stage_prop_from_the_opera_Aida_-_01.jpg",
+    "image": "/kapak/f4f35787bf383b81.webp",
     "publishedAt": "2026-10-20T11:17:06.000Z",
     "generatedAt": "2026-10-20T11:19:41.804Z",
     "gorselEk": [
@@ -164611,7 +164654,12 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Amargosa_Opera_House_Stage.jpg"
       }
     ],
-    "gorselDeneme": "2026-10-28T04:47:48.859Z"
+    "gorselDeneme": "2026-10-28T04:47:48.859Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Monumental_stage_prop_from_the_opera_Aida_-_01.jpg/1280px-Monumental_stage_prop_from_the_opera_Aida_-_01.jpg",
+      "foto": false
+    }
   },
   {
     "id": "9b6bb590f25c5610",
@@ -166441,7 +166489,7 @@
     "gorselSorgu": "Tesla electric vehicle factory",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/stock-market-news/tesla-ucuncu-ceyrek-raporunu-carsamba-gunu-acklayacak-93CH-4110412",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Minis_%26_Tesla_Model_Y_%40_Let%27s_Go_Electric%2C_Priory_Park%2C_Kingston_upon_Hull.jpg/1280px-Minis_%26_Tesla_Model_Y_%40_Let%27s_Go_Electric%2C_Priory_Park%2C_Kingston_upon_Hull.jpg",
+    "image": "/kapak/b37141328fbaac6d.webp",
     "publishedAt": "2026-10-20T10:41:17.000Z",
     "generatedAt": "2026-10-20T10:43:13.832Z",
     "gorselEk": [
@@ -166459,7 +166507,12 @@
         "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Four_Tesla_Electric_Vehicles_Columbus_Texas_Supercharger.jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Minis_%26_Tesla_Model_Y_%40_Let%27s_Go_Electric%2C_Priory_Park%2C_Kingston_upon_Hull.jpg/1280px-Minis_%26_Tesla_Model_Y_%40_Let%27s_Go_Electric%2C_Priory_Park%2C_Kingston_upon_Hull.jpg",
+      "foto": false
+    }
   },
   {
     "id": "9f0a0a9c52996f97",
@@ -178148,9 +178201,14 @@
     "gorselSorgu": "Aeromexico flight deck",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/stock-market-news/aeromexico-washingtonn-ucus-kstlamalarn-kaldrmasnn-ardndan-abdye-genislemeyi-planlyor-93CH-4109456",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Aeromexico_B737-852%2C_XA-AMC%2C_MSN_4539_%2807_2013%29%2C_as_AM_783_Los_Angeles_%28LAX%29_-_Guadalajara_%28GDL%29%2C_Flight_time_2_58_%2854209251671%29.jpg/1280px-Aeromexico_B737-852%2C_XA-AMC%2C_MSN_4539_%2807_2013%29%2C_as_AM_783_Los_Angeles_%28LAX%29_-_Guadalajara_%28GDL%29%2C_Flight_time_2_58_%2854209251671%29.jpg",
+    "image": "/kapak/1a7ece8bea774e2b.webp",
     "publishedAt": "2026-10-19T19:56:21.000Z",
-    "generatedAt": "2026-10-19T20:00:49.769Z"
+    "generatedAt": "2026-10-19T20:00:49.769Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Aeromexico_B737-852%2C_XA-AMC%2C_MSN_4539_%2807_2013%29%2C_as_AM_783_Los_Angeles_%28LAX%29_-_Guadalajara_%28GDL%29%2C_Flight_time_2_58_%2854209251671%29.jpg/1280px-Aeromexico_B737-852%2C_XA-AMC%2C_MSN_4539_%2807_2013%29%2C_as_AM_783_Los_Angeles_%28LAX%29_-_Guadalajara_%28GDL%29%2C_Flight_time_2_58_%2854209251671%29.jpg",
+      "foto": false
+    }
   },
   {
     "id": "d2a8d79306633717",
@@ -182057,7 +182115,7 @@
     "gorselSorgu": "playground equipment manufacturing factory",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/economy-news/ftc-oyun-park-ekipman-anlasmasn-engellemek-icin-dava-act-93CH-4109348",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Playground_equipment_in_Munich_03.jpg/1280px-Playground_equipment_in_Munich_03.jpg",
+    "image": "/kapak/e4a576a817e2ff18.webp",
     "publishedAt": "2026-10-19T16:02:29.000Z",
     "generatedAt": "2026-10-19T16:05:03.656Z",
     "gorselEk": [
@@ -182075,7 +182133,12 @@
         "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Playground_equipment_in_Munich_02.jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Playground_equipment_in_Munich_03.jpg/1280px-Playground_equipment_in_Munich_03.jpg",
+      "foto": false
+    }
   },
   {
     "id": "b341453e87b9bb94",
@@ -192258,11 +192321,16 @@
     "category": "Bilim",
     "source": "Evrim Ağacı",
     "sourceUrl": "https://evrimagaci.org/bilim-insanlari-hangi-hayvanlari-neden-inceliyor-23969",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Aquatic_Ecosystems_Research_Laboratory_and_Beaty_Biodiversity_Centre.jpg/1280px-Aquatic_Ecosystems_Research_Laboratory_and_Beaty_Biodiversity_Centre.jpg",
+    "image": "/kapak/8033b4c066ec6658.webp",
     "publishedAt": "2026-10-19T09:17:21.000Z",
     "generatedAt": "2026-10-19T09:19:14.969Z",
     "gorselDeneme": "2026-10-20T09:16:19.459Z",
-    "gorselSorgu": "biodiversity research biology laboratory"
+    "gorselSorgu": "biodiversity research biology laboratory",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Aquatic_Ecosystems_Research_Laboratory_and_Beaty_Biodiversity_Centre.jpg/1280px-Aquatic_Ecosystems_Research_Laboratory_and_Beaty_Biodiversity_Centre.jpg",
+      "foto": false
+    }
   },
   {
     "id": "87fb9059d1a216ee",
