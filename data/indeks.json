@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-02T02:56:09.525Z",
+  "updatedAt": "2026-11-02T03:05:48.366Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5567,
-  "aday": 5567,
-  "uygun": 3512,
-  "secilen": 3415,
+  "toplamHaber": 5568,
+  "aday": 5568,
+  "uygun": 3513,
+  "secilen": 3416,
   "red": {
     "özet gövdeyle aynı": 114,
     "editör notu özetle aynı": 8,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 125
+    "tekrar": 126
   },
   "ornekTekrarlar": [
     {
@@ -102,16 +102,16 @@
       "twin": "Türkiye ve Güney Kore ticaret hacmini 15 milyar dolara çıkarmayı hedefliyor"
     },
     {
+      "title": "Yapay zeka PHP altyapısında 30 yıllık açığı buldu, Türkiye taramada",
+      "twin": "Yapay zeka modeli ilaç sektöründeki hisse hedefi için yüzde 30 artış öngördü"
+    },
+    {
       "title": "Rockstar, GTA 6 PC sürümünü Mayıs ortasına kadar geciktirebilir",
       "twin": "Rockstar GTA 6 19 Kasım’da PS5 ve Xbox’ta Çıkıyor"
     },
     {
       "title": "Sony Yeni LYTIA 720 Sensörü 50 MP ile Gece Çekimlerini Yarıyor",
       "twin": "Sony mobil kameralar için 50 MP LYTIA 720 sensörünü duyurdu"
-    },
-    {
-      "title": "İsrail ordusunun çadır saldırısında biri çocuk 3 kişi hayatını kaybetti",
-      "twin": "İsrail ordusunun El Halil operasyonu 3 bin 300 kişiyi evinden etti"
     }
   ],
   "days": {
@@ -1177,15 +1177,16 @@
       "912ee8605d161164",
       "1d395cb90e29828a",
       "24cfbc697f610308",
+      "9adbebed92551e54",
       "b49573409e0a77dc",
       "9f1e6db14ba972a4",
       "f8e0a716aa88bbc1",
       "ff10f284984e5576",
       "134bdf68301aa1df",
       "abcfd37a37a370a3",
-      "9adbebed92551e54",
       "b86f111e59ac85cb",
       "dc05b335ef579322",
+      "8eeee56788162ef1",
       "4570d1ac57f24a24",
       "9c2bb465580dfade",
       "e630747aaad9fcfa",
@@ -1212,7 +1213,6 @@
       "b83d698a059530e7",
       "3061a3fd6de0dc86",
       "e23469e87f5bc614",
-      "728c6e344dd3d5af",
       "555873e371b0ad76",
       "c0358a3f986fc4b0",
       "dc994f484f8d3483",
@@ -1519,6 +1519,7 @@
       "6bc1eb01db91868b",
       "5c7789efab2830b5",
       "e550e26b61b20d1c",
+      "728c6e344dd3d5af",
       "3017e46558a4627e",
       "ed2aefeb966227ac",
       "560eab3a0e458579",
@@ -3820,6 +3821,7 @@
     "cbfc6981e9faaf98",
     "c42248bec079f788",
     "e04f9e867d173370",
+    "9adbebed92551e54",
     "909ded179dca9502",
     "a3da386a0c602803",
     "7d6fc7bd027318b4",
@@ -3988,7 +3990,6 @@
     "5482d9c10f68f7eb",
     "d1f3819020b474d0",
     "3cce01fb0d2fa73a",
-    "9adbebed92551e54",
     "90a7ac537084c083",
     "fb88c23d674f8ff4",
     "7dbc91886a6352bd",
@@ -4130,6 +4131,7 @@
     "e1d2fb372f48d0a4",
     "ba3230ca2964f5ba",
     "e04c349360953110",
+    "8eeee56788162ef1",
     "b5ef2c2c8a7dcbd5",
     "b911d19fdbfa497c",
     "7a3fa1524af719b5",
@@ -4552,7 +4554,6 @@
     "148280634d919f19",
     "9df2929f7e127ebb",
     "ba7496d20d4e461f",
-    "728c6e344dd3d5af",
     "28d52d1330d4da74",
     "3234a666c3e1f0d0",
     "248ce2d582537123",
@@ -6957,6 +6958,7 @@
     "e550e26b61b20d1c",
     "b6807a82d0b760ef",
     "a98440cac2f5d856",
+    "728c6e344dd3d5af",
     "c3c296345fb4ef57",
     "3a50b16f36f23ed8",
     "d4008aab3736a8f3",
