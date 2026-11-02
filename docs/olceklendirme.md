@@ -6,22 +6,26 @@ Amaç: yeni bir sunucu kiralamadan, yayının kesilmeden büyümesi.
 
 > Ölçüm tarihi: **2 Kasım 2026**. Sayılar her derlemede değişir; güncel değer
 > için `npm run butce` çalıştırın veya GitHub Actions özetine bakın.
+>
+> **Durum:** Varyant temizliği ve yayın bütçesi kontrolü yayında. Cloudflare
+> Pages'e geçiş için tek eksik **`CLOUDFLARE_PAGES_TOKEN`** (aşağıdaki 5. bölüm).
+> O token eklenene kadar yayın GitHub Pages'te devam eder.
 
 ## 1. Bugünkü durum
 
 | Ölçüm | Değer | Anlamı |
 | --- | --- | --- |
-| Derleme çıktısı | **9.097 dosya / 786,5 MB** | GitHub Pages'te dosya sınırının %91'i |
-| HTML sayfası | 6.356 | Haber + kategori + etiket + sayfalama |
-| Yerel kapak | 2.236 | 1.956 ana kapak + 273 küçük + 273 sosyal |
+| Derleme çıktısı | **9.521 dosya / 823 MB** | GitHub Pages'te dosya sınırının %95'i |
+| HTML sayfası | 6.485 | Haber + kategori + etiket + sayfalama |
+| Yerel kapak | 2.827 | 2.458 webp + 369 sosyal JPEG |
 | Kaynak depo | ~945 MB | Git geçmişi; GitHub'ın 1 GB "yumuşak" eşiğine yakın |
 | Günlük üretim | 145 haber (değişken) | `GUNLUK_HABER_LIMIT` |
-| İndeks çekirdeği | 3.366 haber | 400 günlük pencere + kalite kapısı |
+| İndeks çekirdeği | 3.580 haber | 400 günlük pencere + kalite kapısı |
 
-2 Kasım'da yapılan temizlik: **3.106 küçük/sosyal görsel kopyası** ve 5 ana kapak
-silindi. Bunlar yalnızca hız için üretilen kopyalardı; eski haberler artık
-`wsrv.nl` üzerinden aynı görseli alıyor. Yayın **11.461 → 9.097 dosya**,
-**861 MB → 786 MB** indi.
+2 Kasım'da yapılan temizlik: **3.100'den fazla küçük/sosyal görsel kopyası** ve
+5 ana kapak silindi. Bunlar yalnızca hız için üretilen kopyalardı; eski haberler
+artık `wsrv.nl` üzerinden aynı görseli alıyor. Yayın **11.461 → 9.521 dosya**,
+**861 MB → 823 MB** indi (aradaki artış yeni haberlerden geliyor).
 
 ## 2. Ücretsiz sunucu sınırları
 
@@ -38,14 +42,15 @@ açabilir. Bu yüzden hedef **Cloudflare Pages** olmalı.
 
 ## 3. Büyüme hesabı (neden hemen geçiş?)
 
-Bir haber ortalama **1 HTML + 0,35 yerel kapak** üretiyor. Küçük/sosyal kopyalar
-artık 3 günlük pencerede tutulduğu için sabit kalıyor.
+Bir haber kalıcı olarak **1 HTML + 1 ana kapak** ekler; `-480`/`-sosyal`
+kopyaları 3 günlük pencerede tutulduğu için sabit kalır. Son ölçümde günlük
+artış **~400-500 dosya** (yeni sayfalar + kapak tazeleme). Bu hızda:
 
 | Günlük haber | Ayda eklenen dosya | GitHub 10.000'e | Cloudflare 20.000'e |
 | --- | --- | --- | --- |
-| 145 | ~5.900 | **~5 gün** | ~2 ay |
-| 80 | ~3.300 | ~10 gün | ~3,5 ay |
-| 40 | ~1.650 | ~20 gün | ~7 ay |
+| 145 | ~9.000-12.000 | **~2 gün** | ~1,5 ay |
+| 80 | ~5.000-6.500 | ~4 gün | ~2,5 ay |
+| 40 | ~2.500-3.300 | ~8 gün | ~5 ay |
 
 Bu hesap, arşiv sayfalarının silinmediği ve indeks penceresinin 400 gün kaldığı
 varsayımıyla yapılmıştır. **Sınırsız büyüme** için üçüncü adım (R2 + eski HTML
