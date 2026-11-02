@@ -129,8 +129,9 @@ Pages API'si 403 döner. Bu yüzden **ayrı** bir token gerekir.
    ```
 
 3. Cloudflare'de **Workers & Pages → Create → Pages → Direct Upload** ile
-   `haberinai` adlı projeyi oluşturun. (İlk yükleme workflow'dan da gelebilir;
-   proje adı `CLOUDFLARE_PROJECT` değişkeniyle değiştirilebilir.)
+   `haberinai` adlı projeyi oluşturun. (Workflow ilk çalışmada projeyi
+   `pages project create` ile kendisi de oluşturur; adım idempotenttir. Proje
+   adı `CLOUDFLARE_PROJECT` değişkeniyle değiştirilebilir.)
 
 4. Önce **iki hedefe** yayınlayın:
 

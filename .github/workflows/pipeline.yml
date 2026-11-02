@@ -397,6 +397,19 @@ jobs:
       #   gh variable set DEPLOY_TARGET --body "cloudflare"  # DNS gecince
       # "both" modunda Cloudflare hatasi GitHub yayinini ENGELLEMEZ
       # (continue-on-error), boylece haber akisi durmaz.
+      # Proje yoksa bir kez olustur. Zaten varsa komut hata verir; bu adim
+      # continue-on-error oldugu icin yayin yine de devam eder (idempotent).
+      - name: Cloudflare Pages projesini hazirla
+        if: (steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')) && steps.hedef.outputs.target != 'github'
+        continue-on-error: true
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}
+          accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          command: >-
+            pages project create ${{ vars.CLOUDFLARE_PROJECT || 'haberinai' }}
+            --production-branch=main
+
       - name: Cloudflare Pages'e yayinla
         if: (steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')) && steps.hedef.outputs.target != 'github'
         continue-on-error: ${{ steps.hedef.outputs.target == 'both' }}
