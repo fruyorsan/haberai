@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-02T15:00:29.042Z",
+  "updatedAt": "2026-11-02T15:09:42.997Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5625,
-  "aday": 5625,
-  "uygun": 3571,
-  "secilen": 3474,
+  "toplamHaber": 5626,
+  "aday": 5626,
+  "uygun": 3572,
+  "secilen": 3475,
   "red": {
     "özet gövdeyle aynı": 113,
     "editör notu özetle aynı": 8,
@@ -98,16 +98,16 @@
       "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
     },
     {
-      "title": "Redmi K100 modeli 10.000 mAh bataryasıyla oyunseverlere güç sağlıyor",
-      "twin": "Redmi K100 satışa çıktı: 10.000mAh bataryasıyla oyun dünyasını hedefliyor"
-    },
-    {
       "title": "Huawei Enjoy 100 Pro, HarmonyOS 7 ve 6.100 mAh bataryayla geldi",
       "twin": "Huawei, Wi-Fi 7 destekli yeni Router X2 Pro modelini satışa sundu"
     },
     {
       "title": "Yapay zeka PHP altyapısında 30 yıllık açığı buldu, Türkiye taramada",
       "twin": "Yapay zeka modeli ilaç sektöründeki hisse hedefi için yüzde 30 artış öngördü"
+    },
+    {
+      "title": "Redmi K100 satışa çıktı: 10.000mAh bataryasıyla oyun dünyasını hedefliyor",
+      "twin": "Redmi K100 modeli 10.000 mAh bataryasıyla oyunseverlere güç sağlıyor"
     },
     {
       "title": "Rockstar, GTA 6 PC sürümünü Mayıs ortasına kadar geciktirebilir",
@@ -132,7 +132,6 @@
       "79f905c864fe8e60",
       "a8dc0ec39cbafd81",
       "de71713f60fd2c4a",
-      "9e3fc7a00f0bbf4e",
       "773ddb42bd9a062d",
       "ed32e518ad2a88c1",
       "9d10358f3294c638",
@@ -148,6 +147,7 @@
       "86deeda44f578f0e",
       "7ee04da43f7590bd",
       "e73134767f365fa7",
+      "9e3fc7a00f0bbf4e",
       "a278b273cc7d6062",
       "9002611823b72a84",
       "4bca53cecb22c530",
@@ -208,7 +208,6 @@
       "c1287417e1dd65ed",
       "c24c78a68152ac26",
       "3b7a7114b5903da7",
-      "a003959a04e53d81",
       "e3fbe2625b0568df",
       "763a99da6625bb99",
       "731530c537a2c67e",
@@ -242,6 +241,7 @@
       "98ccc40aa0c89b4b",
       "c45b48b778d2f86c",
       "38f498026a388321",
+      "a003959a04e53d81",
       "c7d5ecf013431bdf",
       "d583d2efea139784"
     ],
@@ -367,6 +367,7 @@
       "ccf65363b2dda856",
       "a813b60a7f3c22f1",
       "b05f61009473f339",
+      "3ffb21b564dc9a9b",
       "fee4ca32a04a134a",
       "4de38ec0144fe41b",
       "20f0048e1c4a071c",
@@ -422,7 +423,6 @@
       "6dfb54a1e7d8bd99",
       "afe7a36d06a6d178",
       "d29a49f98235fff7",
-      "3ffb21b564dc9a9b",
       "511c4225152943a7",
       "3c54dd68c97c231d",
       "cda279011dcbaf31"
@@ -644,10 +644,10 @@
       "641e464f6a9f6ded",
       "01120adffe965d9e",
       "3a1fa35cad2c93b2",
+      "ec630c8b933abb94",
       "e9549122df8c7c3b",
       "55b358e9a3e56f36",
       "a1e6591e3cb6ff75",
-      "ec630c8b933abb94",
       "a84b55bf6ea87faa",
       "b488701e3d63a20a",
       "7e2ff8a2d7743be7",
@@ -655,6 +655,7 @@
       "2cf0a31523c0d9a2",
       "a42c0c2d4ddac04a",
       "843fe130cdf76742",
+      "701cdb3bf3d27829",
       "587e466115695822",
       "96ad33a59f014ade"
     ],
@@ -3745,7 +3746,6 @@
     "a4e9ceb422b77a55",
     "403cf98ac62ba78f",
     "2c54a43971118bb1",
-    "9e3fc7a00f0bbf4e",
     "5a3a676d6e870c3b",
     "9e124ada5f219919",
     "be5fcc1b828e4998",
@@ -3835,6 +3835,7 @@
     "f8e0a716aa88bbc1",
     "c5771467ede91f2c",
     "c8f5b1cd188e29b5",
+    "9e3fc7a00f0bbf4e",
     "a278b273cc7d6062",
     "fb9f776eaef972f6",
     "b475691cba5b706e",
@@ -4472,7 +4473,6 @@
     "578d865dde28bfac",
     "b7a264115cc859e5",
     "36ab5cd063fbc543",
-    "a003959a04e53d81",
     "132f5216b5414a73",
     "706af2d1117615f3",
     "91a80d5d8509d5f9",
@@ -4521,6 +4521,7 @@
     "fafb530fb426a0d1",
     "e5ced170645a533c",
     "b05f61009473f339",
+    "3ffb21b564dc9a9b",
     "c8febb9fb2816407",
     "c6cf04b0cd024c26",
     "f70c9fc7217687ab",
@@ -4662,6 +4663,7 @@
     "9df2929f7e127ebb",
     "ba7496d20d4e461f",
     "3234a666c3e1f0d0",
+    "ec630c8b933abb94",
     "248ce2d582537123",
     "555873e371b0ad76",
     "739e273c3484cce4",
@@ -4949,7 +4951,6 @@
     "f0b294c6355ff0f1",
     "256f8576c7118c3b",
     "e2ce40139d884ce2",
-    "ec630c8b933abb94",
     "03ec98d7bcdad7c1",
     "df127e6a7d940dcb",
     "7a5ff360ebb204ec",
@@ -6061,6 +6062,7 @@
     "798829c33fe836bf",
     "7a2a1ca81b3a0b47",
     "4112bd91b8d5f6a9",
+    "701cdb3bf3d27829",
     "706a9b8dde7fc4fd",
     "2864d81963d69ce5",
     "250d6eca5530326f",
@@ -7072,8 +7074,8 @@
     "e550e26b61b20d1c",
     "b6807a82d0b760ef",
     "a98440cac2f5d856",
+    "a003959a04e53d81",
     "7b4271de9d38f550",
-    "3ffb21b564dc9a9b",
     "511c4225152943a7",
     "3a50b16f36f23ed8",
     "728c6e344dd3d5af",
