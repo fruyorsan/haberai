@@ -258,60 +258,50 @@ telif güvenli stok fotoğraflara geçirilir (bkz. "Görseller" bölümü). Eski
 için beklemeden başlatmak istersen: GitHub → **Actions** → **Arsiv Yenileme** →
 **Run workflow**. Workflow `data/` değişikliklerini commit edip siteyi yeniden yayınlar.
 
-### Sunucu ve yayın ölçeği (2026-11-02)
+### Sunucu ve yayın ölçeği (2026-11-03)
 
-Site statiktir; "sunucu" tarafı CDN + dosya kotasıdır. Ölçüm (2 Kasım 2026):
-**9.097 dosya / 786 MB**. GitHub Pages 1 GB ve ~10.000 dosya ile sınırlıdır;
-bu yüzden asıl hedef **Cloudflare Pages** (20.000 dosya, toplam boyut sınırı yok,
-sınırsız bant genişliği). Kodda hazır olanlar:
+Site statiktir; "sunucu" tarafı CDN + dosya kotasıdır. Ölçüm (3 Kasım 2026):
+**9.521 dosya / 823 MB**. GitHub Pages 1 GB ile sınırlı olduğu için yayın
+**Cloudflare Pages**'e taşındı: 20.000 dosya, toplam boyut sınırı yok, sınırsız
+bant genişliği.
+
+| Bileşen | Değer |
+| --- | --- |
+| Yayın | Cloudflare Pages `haberai` (`DEPLOY_TARGET=cloudflare`) |
+| Yöntem | `wrangler pages deploy` — direct upload, aylık build kotası yemez |
+| Alan adları | `haberinai.site`, `www.haberinai.site` (Proxied) |
+| GitHub Pages | Yedek; artık push edilmiyor |
 
 - `scripts/yayin-butcesi.mjs` — derleme sonrası kapasite raporu; sert sınırda
   dağıtımı durdurur (`npm run butce`).
 - `scripts/kapak-temizle.mjs --varyant-gun=3` — 480px/sosyal görsel kopyalarını
   yalnızca son 3 gün tutar; eski haberler wsrv yedeğine düşer.
-- `site/public/_headers` — HTML/varlık/feed için CDN önbellek kuralları.
-- `pipeline.yml` → `DEPLOY_TARGET=both|cloudflare` ile Cloudflare Pages'e
-  kesintisiz geçiş (ayrı `CLOUDFLARE_PAGES_TOKEN` gerekir).
+- `site/public/_headers` — varlık/feed/kapak için CDN önbellek kuralları.
+  (Cloudflare Pages HTML yanıtlarını her istekte doğrular; bu bilinçli bir tercihtir.)
 
 Tam adımlar, büyüme hesabı ve geri alma: **[docs/olceklendirme.md](docs/olceklendirme.md)**.
 
+> **Önemli:** Cloudflare Pages projesinde GitHub otomatik dağıtımı **kapalıdır**.
+> Açık kalırsa her bot push'u build tetikler ve aylık 500 build kotası birkaç
+> günde biter. Yayın yalnızca Actions'taki `wrangler pages deploy` ile yapılır.
+
 ### Alan adı (haberinai.site)
 
-> **Durum: yayında.** `https://haberinai.site` GitHub Pages'te yayında; HTTPS zorunlu, `www` →
-> apex 301. DNS Cloudflare'de (`carla.ns.cloudflare.com`, `dion.ns.cloudflare.com`) ve GitHub
-> Actions'ta `SITE_URL=https://haberinai.site` ile `CUSTOM_DOMAIN=haberinai.site` tanımlı.
-> Kayıtlar "DNS only" (gri bulut) olmalı — turuncu bulut GitHub'ın sertifikasını engeller.
+> **Durum: yayında (Cloudflare Pages).** DNS Cloudflare'de
+> (`carla.ns.cloudflare.com`, `dion.ns.cloudflare.com`); kayıtlar **Proxied**
+> (turuncu bulut): `@` ve `www` → `haberai.pages.dev`. `www` aynı siteyi verir;
+> kanonik adres `https://haberinai.site`. GitHub Actions'ta
+> `SITE_URL=https://haberinai.site`, `CUSTOM_DOMAIN=haberinai.site` ve
+> `CLOUDFLARE_PROJECT=haberai` tanımlı.
+>
+> Not: `haberai.pages.dev` bazı ISS'lerde (TR) DNS/SNI ile engellenir; bu yüzden
+> özel alan adı kullanılır.
 
-Kod varsayılanı, sitenin **yayında olduğu** adrestir (`https://fruyorsan.github.io`):
-kanonik adresler, RSS, site haritaları ve `robots.txt` buradan üretilir. Özel alan adı
-yayına girdiğinde repoda `SITE_URL` değişkeni tanımlanır ve tüm adresler tek adımda ona
-döner. CNAME dosyası ise **yalnızca** `CUSTOM_DOMAIN` Actions değişkeni tanımlıysa yazılır —
-alan adı DNS'te yayına girmeden CNAME eklenirse GitHub Pages, `fruyorsan.github.io`
-adresini çözülemeyen alan adına yönlendirir ve site erişilemez olur.
+Geri dönmek gerekirse (GitHub Pages yedeği):
 
-Kayıt sağlayıcıya girilecek DNS kayıtları:
-
-| Tür | Ad | Değer |
-| --- | --- | --- |
-| A | `@` | `185.199.108.153` |
-| A | `@` | `185.199.109.153` |
-| A | `@` | `185.199.110.153` |
-| A | `@` | `185.199.111.153` |
-| CNAME | `www` | `fruyorsan.github.io` |
-
-**Natro'da bu kayıtlar nereye girilir?** Natro, hosting yoksa A/CNAME kaydı düzenlemeye izin
-vermez; bu "Premium/Profesyonel DNS" hizmetine bağlıdır (aylık ~0,10 $, kalan kayıt süresi kadar).
-İki yol var:
-
-1. **Tümüyle ücretsiz yol (Cloudflare):** Natro panelinde `DNS Değiştir` ile nameserver'ları
-   Cloudflare'in verdiği iki adrese çevir; kayıtları Cloudflare'in DNS ekranından gir. Cloudflare
-   kayıtları **"DNS only" (gri bulut)** olmalı — turuncu bulut (proxy), GitHub Pages'in sertifika
-   almasını engeller.
-2. **Tek panelde kalmak (ücretli):** Natro → Alan Adı Yönetimi → ilgili alan adı →
-   **Profesyonel DNS** → Yönet; aynı kayıtları buradan gir.
-
-Her iki yolda da önce park kayıtları silinmeli: `@` için `85.159.66.93` A kaydı ve
-`www` için `redirect.natrocdn.com` CNAME'i kalmamalı.
+```bash
+gh variable set DEPLOY_TARGET --body "github"   # ya da "both"
+```
 
 Durum kontrolü ve yayına alma:
 
