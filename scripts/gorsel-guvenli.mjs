@@ -75,13 +75,17 @@ if (CORE) {
 
 /** Kapakta veya ek görsellerde güvenli olmayan bir adres var mı? */
 const kirli = (a) =>
-  !guvenli(a.image) ||
-  Boolean(a.gorselKaynakSite) ||
-  (Array.isArray(a.images) && a.images.length > 0) ||
-  (Array.isArray(a.gorselEk) && a.gorselEk.some((g) => !guvenli(g?.url))) ||
-  // Kategori yedeğine düşmüş haber: daha iyi bir eşleşme için bir kez daha
-  // denenir (en fazla 2 tur; sonsuz döngü olmaz).
-  (Number(a.gorselYedek) > 0 && Number(a.gorselYedek) < 2);
+  // Üst üste 3 turda uygun lisanslı kare bulunamadıysa haber bırakılır:
+  // görseli boş kalır, site markalı kapağı gösterir. Aksi halde her turda
+  // aynı haber yeniden denenip "kalan: 0 olmalı" kontrolünü asla geçemezdi.
+  (Number(a.gorselAtlandi) || 0) < 3 &&
+  (!guvenli(a.image) ||
+    Boolean(a.gorselKaynakSite) ||
+    (Array.isArray(a.images) && a.images.length > 0) ||
+    (Array.isArray(a.gorselEk) && a.gorselEk.some((g) => !guvenli(g?.url))) ||
+    // Kategori yedeğine düşmüş haber: daha iyi bir eşleşme için bir kez daha
+    // denenir (en fazla 2 tur; sonsuz döngü olmaz).
+    (Number(a.gorselYedek) > 0 && Number(a.gorselYedek) < 2));
 
 let hedefler = IDS.length
   ? articles.filter((a) => IDS.includes(String(a.id)))
@@ -109,7 +113,7 @@ for (const a of articles) {
   }
 }
 
-const ozet = { temiz: 0, harita: 0, ek: 0, arama: 0, yedek: 0, hata: 0 };
+const ozet = { temiz: 0, harita: 0, ek: 0, arama: 0, yedek: 0, atlandi: 0, hata: 0 };
 let imlec = 0;
 let islenen = 0;
 
@@ -219,6 +223,20 @@ async function isle(a) {
     delete a.gorselYedek;
   }
 
+  if (!sec?.url) {
+    // Atıf gerektirmeyen kare bulunamadı. Kaynak sitenin fotoğrafına dönmek
+    // politika dışı; görsel boş bırakılır ve site markalı kapağı gösterir.
+    // Sayaç, bu haberin sonsuza kadar yeniden denenmesini önler.
+    a.gorselAtlandi = (Number(a.gorselAtlandi) || 0) + 1;
+    delete a.image;
+    delete a.gorselKaynak;
+    delete a.gorselKaynakSite;
+    delete a.images;
+    ozet.atlandi++;
+    return "";
+  }
+  delete a.gorselAtlandi;
+
   a.image = sec.url;
   a.gorselKaynak = atif(sec);
   delete a.gorselKaynakSite;
@@ -258,7 +276,7 @@ async function isci() {
     if (islenen % 50 === 0 || islenen === hedefler.length) {
       console.log(
         `  ${islenen}/${hedefler.length} → harita:${ozet.harita} ek:${ozet.ek} ` +
-          `arama:${ozet.arama} yedek:${ozet.yedek} hata:${ozet.hata}`
+          `arama:${ozet.arama} yedek:${ozet.yedek} atlandi:${ozet.atlandi} hata:${ozet.hata}`
       );
     }
     if (!DRY && islenen % KAYIT_ARALIGI === 0) kaydet();
@@ -273,7 +291,7 @@ const kalan = articles.filter(kirli).length;
 console.log(
   `\nBitti. Harita: ${ozet.harita} | gövde içi Commons: ${ozet.ek} | ` +
     `Commons araması: ${ozet.arama} | kategori yedeği: ${ozet.yedek} | ` +
-    `zaten temiz: ${ozet.temiz} | hata: ${ozet.hata}`
+    `uygun kare yok: ${ozet.atlandi} | zaten temiz: ${ozet.temiz} | hata: ${ozet.hata}`
 );
 console.log(`Kalan kaynak/temizlenmemiş görsel: ${kalan} (0 olmalı).`);
 if (kalan > 0) process.exitCode = 1;
