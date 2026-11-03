@@ -263,6 +263,7 @@
       }
     ],
     "breaking": true,
+    "categorySlug": "yapay-zeka",
     "kapak": {
       "v": 3,
       "kaynak": "ai:phoenix-1.0",
@@ -14200,6 +14201,7 @@
     "image": "/kapak/2707d81733583811.webp",
     "publishedAt": "2026-11-01T19:57:00.000Z",
     "generatedAt": "2026-11-01T20:09:42.880Z",
+    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": "https://i.haberglobal.com/storage/files/images/2026/11/01/daltonlar-operasyonunda-yeni-gelisme-fenerbahce-tribun-liderine-yonelik-silahli-eylem-iddiasi-ale8.jpg",
@@ -14258,6 +14260,7 @@
         "altyazi": "Taraftarlar hakem kararlarını tartışıyor"
       }
     ],
+    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": "https://i.haberglobal.com/storage/files/images/2026/11/01/kasimpasa-besiktas-macinda-verilmeyen-3-kirmizi-karti-acikladi-oh7z.jpg",
@@ -14304,6 +14307,7 @@
     "image": "/kapak/fcc6b87524a26ff9.webp",
     "publishedAt": "2026-11-01T19:23:00.000Z",
     "generatedAt": "2026-11-01T19:36:52.732Z",
+    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": "https://i.haberglobal.com/storage/files/images/2026/11/01/cadi-kazanina-donmus-dunyada-cadilar-bayrami-ozentisi-turk-dunyasinda-kulturel-yabancilasma-ve-kimlik-meselesi-8eqx.jpg",
@@ -14350,6 +14354,7 @@
     "image": "/kapak/80bca03709ed9a89.webp",
     "publishedAt": "2026-11-01T19:14:00.000Z",
     "generatedAt": "2026-11-01T19:19:26.321Z",
+    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": "https://i.haberglobal.com/storage/files/images/2026/11/01/besiktas-kasimpasa-deplasmaninda-yikildi-kartal-deplasmanda-kazanamiyor-g5oz.jpg",
@@ -14414,6 +14419,7 @@
         "altyazi": "Abu Dabi'deki üçlü müzakereler"
       }
     ],
+    "breaking": true,
     "gorselDeneme": "2026-11-02T06:15:48.136Z",
     "kapak": {
       "v": 3,
@@ -266378,7 +266384,7 @@
     "sourceUrl": "https://www.posta.com.tr/gundem/bosaltilan-binada-balkon-coktu-sokak-giris-cikisa-kapatildi-3052433",
     "publishedAt": "2026-10-15T22:36:53.000Z",
     "generatedAt": "2026-10-15T23:00:41.071Z",
-    "image": "https://image.posta.com.tr/i/posta/75/0x0/6ad15582cd09fe51965a046a.jpg",
+    "image": "/kapak/a5de9c6c657d3bcf.webp",
     "gorselKaynak": {
       "yazar": "Mostafameraji",
       "lisans": "CC BY-SA 4.0",
@@ -266389,7 +266395,12 @@
       "https://image.posta.com.tr/i/posta/75/0x410/6ad15582cd09fe51965a046a.jpg"
     ],
     "imagesKaynak": "https://www.posta.com.tr/gundem/bosaltilan-binada-balkon-coktu-sokak-giris-cikisa-kapatildi-3052433",
-    "gorselDeneme": "2026-10-28T04:49:38.810Z"
+    "gorselDeneme": "2026-10-28T04:49:38.810Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://image.posta.com.tr/i/posta/75/0x0/6ad15582cd09fe51965a046a.jpg",
+      "foto": false
+    }
   },
   {
     "id": "22144489b47791d4",
@@ -266423,14 +266434,25 @@
     "publishedAt": "2026-10-15T20:13:08.786Z",
     "generatedAt": "2026-10-15T20:13:13.802Z",
     "refreshedAt": "2026-10-15T21:37:46.701Z",
-    "image": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad12b28fe46d577dbb92867.jpg",
+    "image": "/kapak/22144489b47791d4.webp",
     "gorselSorgu": "US Treasury Department",
     "ekGorselDeneme": "2026-10-26T09:50:34.700Z",
     "images": [
       "https://image.cnnturk.com/i/cnnturk/75/770x0/6ad11e93fe46d577dbb9285b.jpg"
     ],
     "imagesKaynak": "https://www.cnnturk.com/dunya/abdden-irana-yeni-yaptirim-karari-16-kisi-ve-10-kurulus-listeye-alindi-3480022",
-    "gorselDeneme": "2026-10-28T04:49:38.473Z"
+    "gorselDeneme": "2026-10-28T04:49:38.473Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Holidays_at_the_Treasury_Department_%285242616796%29.jpg/1280px-Holidays_at_the_Treasury_Department_%285242616796%29.jpg",
+      "foto": true
+    },
+    "gorselKaynak": {
+      "yazar": "U.S. Department of the Treasury",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Holidays_at_the_Treasury_Department_(5242616796).jpg"
+    }
   },
   {
     "id": "3d2d25db73179711",
@@ -266461,14 +266483,19 @@
     "sourceUrl": "https://www.ntv.com.tr/turkiye/istanbul-kocaeli-ve-sakaryada-okullar-yarin-da-tatil-1746416",
     "publishedAt": "2026-10-15T20:10:43.000Z",
     "generatedAt": "2026-10-15T20:13:20.862Z",
-    "image": "https://images.ntv.com.tr/images/images-693887.jpg?format=webp&width=1200&height=630",
+    "image": "/kapak/3d2d25db73179711.webp",
     "gorselKaynak": {
-      "yazar": "Jiří Sedláček",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Cars_in_flooded_Novodvorsk%C3%A1_street_in_T%C5%99eb%C3%AD%C4%8D,_T%C5%99eb%C3%AD%C4%8D_District.JPG"
+      "yazar": "Karabayram 1975",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:2023_%C4%B0STANBUL_KARAK%C3%96Y_OTOPARK_%C4%B0%C5%9ELETMEC%C4%B0S%C4%B0.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:49:38.532Z"
+    "gorselDeneme": "2026-10-28T04:49:38.532Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/2023_%C4%B0STANBUL_KARAK%C3%96Y_OTOPARK_%C4%B0%C5%9ELETMEC%C4%B0S%C4%B0.jpg/1280px-2023_%C4%B0STANBUL_KARAK%C3%96Y_OTOPARK_%C4%B0%C5%9ELETMEC%C4%B0S%C4%B0.jpg",
+      "foto": true
+    }
   },
   {
     "id": "85c6d8b664f72cc3",
@@ -266560,14 +266587,19 @@
     "sourceUrl": "https://www.cumhuriyet.com.tr/spor/monaco-konferans-ligi-ne-galibiyetle-basladi-2547189",
     "publishedAt": "2026-10-15T20:07:00.000Z",
     "generatedAt": "2026-10-15T20:10:08.547Z",
-    "image": "https://media.cumhuriyet.com.tr/Archive/c6db45af-bbc0-4b63-b716-391df84f2990.jpg",
+    "image": "/kapak/be78ef5e1f468618.webp",
     "gorselKaynak": {
-      "yazar": "Mostafameraji",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_01.jpg"
+      "yazar": "Barsaka2",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:EXPO2025_Principality_of_Monaco_Pavilion.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:49:38.693Z"
+    "gorselDeneme": "2026-10-28T04:49:38.693Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/EXPO2025_Principality_of_Monaco_Pavilion.jpg/1280px-EXPO2025_Principality_of_Monaco_Pavilion.jpg",
+      "foto": true
+    }
   },
   {
     "id": "35740021297ff49b",
@@ -266601,7 +266633,7 @@
     "publishedAt": "2026-10-15T20:06:32.711Z",
     "generatedAt": "2026-10-15T20:06:43.523Z",
     "refreshedAt": "2026-10-15T21:37:55.529Z",
-    "image": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad0aab48c5742587ec65df0.jpg",
+    "image": "/kapak/35740021297ff49b.webp",
     "gorselSorguDeneme": "2026-10-25T14:53:02.411Z",
     "gorselSorgu": "Beşiktaş players PreZero Arena",
     "ekGorselDeneme": "2026-10-25T14:54:04.746Z",
@@ -266609,7 +266641,18 @@
       "https://image.cnnturk.com/i/cnnturk/75/770x0/6ad0aa8b8c5742587ec65dee.jpg"
     ],
     "imagesKaynak": "https://www.cnnturk.com/spor/futbol/hoffenheim-besiktas-canli-izle-avrupa-ligi-hoffenheim-besiktas-maci-sifresiz-mi-iste-uel-hoffenheim-besiktas-trt-1-canli-yayini-3479711",
-    "gorselDeneme": "2026-10-28T04:49:38.743Z"
+    "gorselDeneme": "2026-10-28T04:49:38.743Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Ihlamur_Kasr%C4%B1%2C_Be%C5%9Fikta%C5%9F_2014-1.jpg/1280px-Ihlamur_Kasr%C4%B1%2C_Be%C5%9Fikta%C5%9F_2014-1.jpg",
+      "foto": true
+    },
+    "gorselKaynak": {
+      "yazar": "Hamdigumus",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Ihlamur_Kasr%C4%B1,_Be%C5%9Fikta%C5%9F_2014-1.jpg"
+    }
   },
   {
     "id": "c953b2c7a2c4eab9",
@@ -266642,14 +266685,19 @@
     "sourceUrl": "https://www.sozcu.com.tr/son-dakika-istanbul-valiligi-nden-son-dakika-uyarisi-yarin-daha-kotusu-geliyor-p369502",
     "publishedAt": "2026-10-15T20:05:14.000Z",
     "generatedAt": "2026-10-15T20:06:50.831Z",
-    "image": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/whatsapp-image-20261015-at-115750jpeg-uMEqs1A7p0qwkKh_5kywrg.jpeg?w=1270&h=675&mode=crop&scale=both",
+    "image": "/kapak/c953b2c7a2c4eab9.webp",
     "gorselKaynak": {
-      "yazar": "qwesy",
-      "lisans": "CC BY 3.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by/3.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:T._C._%C4%B0stanbul_Valili%C4%9Fi_-_panoramio.jpg"
+      "yazar": "Karabayram 1975",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:2023_%C4%B0STANBUL_KARAK%C3%96Y_OTOPARK_%C4%B0%C5%9ELETMEC%C4%B0S%C4%B0.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:49:39.032Z"
+    "gorselDeneme": "2026-10-28T04:49:39.032Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/2023_%C4%B0STANBUL_KARAK%C3%96Y_OTOPARK_%C4%B0%C5%9ELETMEC%C4%B0S%C4%B0.jpg/1280px-2023_%C4%B0STANBUL_KARAK%C3%96Y_OTOPARK_%C4%B0%C5%9ELETMEC%C4%B0S%C4%B0.jpg",
+      "foto": true
+    }
   },
   {
     "id": "87ce349abb7680a8",
@@ -266802,14 +266850,19 @@
     "sourceUrl": "https://www.tamindir.com/blog/yapay-zeka-modellerini-internetsiz-calistiran-bilgisayarlar_112292/",
     "publishedAt": "2026-10-15T19:59:19.971Z",
     "generatedAt": "2026-10-15T19:59:29.261Z",
-    "image": "https://img.tamindir.com/2026/10/476765/yapay-zeka-modellerini-internetsiz-calistiran-bilgisayarlar.jpg",
+    "image": "/kapak/727919c6932742b1.webp",
     "ekGorselDeneme": "2026-10-25T18:14:31.373Z",
     "gorselSorgu": "graphics card",
     "images": [
       "https://img.tamindir.com/resize/1200x675/2026/10/476765/yapay-zeka-modellerini-internetsiz-calistiran-bilgisayarlar-1.jpg"
     ],
     "imagesKaynak": "https://www.tamindir.com/blog/yapay-zeka-modellerini-internetsiz-calistiran-bilgisayarlar_112292/",
-    "gorselDeneme": "2026-10-28T04:49:39.486Z"
+    "gorselDeneme": "2026-10-28T04:49:39.486Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://img.tamindir.com/2026/10/476765/yapay-zeka-modellerini-internetsiz-calistiran-bilgisayarlar.jpg",
+      "foto": false
+    }
   },
   {
     "id": "0de10e2daad8c3b4",
@@ -267079,7 +267132,7 @@
     ],
     "editorNote": "Tasarım ve render iş akışlarınızı hızlandıracak laptopları ve fiyatlarını detaylarıyla keşfedin.",
     "refreshedAt": "2026-10-15T23:52:04.745Z",
-    "image": "https://img.tamindir.com/resize/1200x675/2026/10/476765/autocad-blender-sketchup-icin-en-iyi-laptoplar-1.jpg",
+    "image": "/kapak/ea09595636002289.webp",
     "gorselSorguDeneme": "2026-10-25T14:53:28.065Z",
     "gorselSorgu": "Casper Excalibur G915 laptop",
     "ekGorselDeneme": "2026-10-25T14:54:11.188Z",
@@ -267087,7 +267140,18 @@
       "https://img.tamindir.com/resize/1200x675/2026/10/476765/autocad-blender-sketchup-icin-en-iyi-laptoplar-1.jpg"
     ],
     "imagesKaynak": "https://www.tamindir.com/blog/autocad-blender-sketchup-icin-en-iyi-laptoplar_112298/",
-    "gorselDeneme": "2026-10-28T04:49:39.772Z"
+    "gorselDeneme": "2026-10-28T04:49:39.772Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Man_using_AutoCAD_%281987%29.jpg/1280px-Man_using_AutoCAD_%281987%29.jpg",
+      "foto": true
+    },
+    "gorselKaynak": {
+      "yazar": "Evergreen Systems",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Man_using_AutoCAD_(1987).jpg"
+    }
   },
   {
     "id": "7406e5f5b6c08ae2",
@@ -267123,7 +267187,7 @@
     "generatedAt": "2026-10-15T19:30:04.346Z",
     "editorNote": "Şiddetli sağanak, Sakarya’da yolları kapattı ve 48 kişiyi tahliye etti. Kontrolsüz yapılaşma da su baskınlarıyla gündeme geldi.",
     "refreshedAt": "2026-10-15T23:52:23.965Z",
-    "image": "https://image.cnnturk.com/i/cnnturk/75/1208x678/685eaaa2330760b1f2d9656b.jpg",
+    "image": "/kapak/7406e5f5b6c08ae2.webp",
     "gorselKaynak": {
       "yazar": "Jiří Sedláček",
       "lisans": "CC BY-SA 4.0",
@@ -267134,7 +267198,12 @@
     "images": [
       "https://image.cnnturk.com/i/cnnturk/75/1208x678/685eaaa2330760b1f2d9656b.jpg"
     ],
-    "imagesKaynak": "https://www.cnnturk.com/yerel-haberler/sakarya/sakaryada-saganak-nedeniyle-bazi-yollar-ulasima-kapandi-3480009"
+    "imagesKaynak": "https://www.cnnturk.com/yerel-haberler/sakarya/sakaryada-saganak-nedeniyle-bazi-yollar-ulasima-kapandi-3480009",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://image.cnnturk.com/i/cnnturk/75/1208x678/685eaaa2330760b1f2d9656b.jpg",
+      "foto": false
+    }
   },
   {
     "id": "b68be519d5ec8bc0",
@@ -267374,7 +267443,7 @@
     "sourceUrl": "https://www.donanimhaber.com/turkiye-eylulde-en-cok-bu-otomobil-markalarini-tercih-etti--211682",
     "publishedAt": "2026-10-15T19:00:00.000Z",
     "generatedAt": "2026-10-15T19:01:46.080Z",
-    "image": "https://www.donanimhaber.com/images/images/haber/211682/src/turkiye-eylulde-en-cok-bu-otomobil-markalarini-tercih-etti211682_0.jpg",
+    "image": "/kapak/09f8021b82879e32.webp",
     "gorselKaynak": {
       "yazar": "https://www.artic.edu/artworks/156538/chicago-stock-exchange-tradin…",
       "lisans": "CC0",
@@ -267385,7 +267454,12 @@
       "https://www.donanimhaber.com/images/images/haber/211682/src/turkiye-eylulde-en-cok-bu-otomobil-markalarini-tercih-etti211682_0.jpg"
     ],
     "imagesKaynak": "https://www.donanimhaber.com/turkiye-eylulde-en-cok-bu-otomobil-markalarini-tercih-etti--211682",
-    "gorselDeneme": "2026-10-28T04:49:39.362Z"
+    "gorselDeneme": "2026-10-28T04:49:39.362Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://www.donanimhaber.com/images/images/haber/211682/src/turkiye-eylulde-en-cok-bu-otomobil-markalarini-tercih-etti211682_0.jpg",
+      "foto": false
+    }
   },
   {
     "id": "fcb9015b89286be3",
@@ -267416,18 +267490,23 @@
     "sourceUrl": "https://www.bloomberght.com/fifa-baskani-infantino-dunya-kupasi-ni-yatirimcilara-acma-onerisi-icin-ozur-diledi-3791521",
     "publishedAt": "2026-10-15T18:45:10.000Z",
     "generatedAt": "2026-10-15T19:01:54.297Z",
-    "image": "https://geoim.bloomberght.com/l/2026/10/20/ver1792524969/3792016/jpg/640x360",
+    "image": "/kapak/fcb9015b89286be3.webp",
     "gorselKaynak": {
-      "yazar": "Bill Boaden",
-      "lisans": "CC BY-SA 2.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Football_match_at_the_i2i_Stadium_-_geograph.org.uk_-_5307336.jpg"
+      "yazar": "Zubeyrhiziroglu",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Cev_Kad%C4%B1nlar_Kupas%C4%B1-2025.jpg"
     },
     "images": [
       "https://geoim.bloomberght.com/l/2026/10/20/ver1792524969/3792016/jpg/640x360"
     ],
     "imagesKaynak": "https://www.bloomberght.com/fifa-baskani-infantino-dunya-kupasi-ni-yatirimcilara-acma-onerisi-icin-ozur-diledi-3791521",
-    "gorselDeneme": "2026-10-28T04:49:39.211Z"
+    "gorselDeneme": "2026-10-28T04:49:39.211Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Cev_Kad%C4%B1nlar_Kupas%C4%B1-2025.jpg",
+      "foto": true
+    }
   },
   {
     "id": "5c00779a12369ba9",
@@ -267459,19 +267538,24 @@
     "sourceUrl": "https://www.donanimhaber.com/rusya-hava-savunma-sistemi-s-400-u-saldiri-amacli-kullandi--211680",
     "publishedAt": "2026-10-15T18:40:00.000Z",
     "generatedAt": "2026-10-15T18:43:28.830Z",
-    "image": "https://www.donanimhaber.com/images/images/haber/211680/src/rusya-hava-savunma-sistemi-s-400-u-saldiri-amacli-kullandi211680_0.jpg",
+    "image": "/kapak/5c00779a12369ba9.webp",
     "gorselKaynak": {
-      "yazar": "Hienstorfer",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Strategic_Missile_Forces_museum_rocket_launch_terminal.jpg"
+      "yazar": "",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Ukrayna(EM)2.jpg"
     },
     "images": [
       "https://www.donanimhaber.com/images/images/haber/211680/src/rusya-hava-savunma-sistemi-s-400-u-saldiri-amacli-kullandi211680_0.jpg",
       "https://www.donanimhaber.com/images/images/haber/211680/src/rusya-hava-savunma-sistemi-s-400-u-saldiri-amacli-kullandi211680_1.jpg"
     ],
     "imagesKaynak": "https://www.donanimhaber.com/rusya-hava-savunma-sistemi-s-400-u-saldiri-amacli-kullandi--211680",
-    "gorselDeneme": "2026-10-28T04:49:39.525Z"
+    "gorselDeneme": "2026-10-28T04:49:39.525Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Ukrayna%28EM%292.jpg/1280px-Ukrayna%28EM%292.jpg",
+      "foto": true
+    }
   },
   {
     "id": "4e3d8444d903fbd2",
@@ -267503,18 +267587,23 @@
     "sourceUrl": "https://www.chip.com.tr/guncel/gencler-neden-telefonlara-cevap-vermiyor-uzmanlar-nedenini-acikladi_184587.html",
     "publishedAt": "2026-10-15T18:39:00.000Z",
     "generatedAt": "2026-10-15T18:43:38.267Z",
-    "image": "https://img.chip.com.tr/rcman/Cw640h419q95gm/storage/files/images/2026/02/03/z-kusagi-iq-testlerinde-ilk-kez-geriye-dustu-peki-ama-neden-2gsx.jpg",
+    "image": "/kapak/4e3d8444d903fbd2.webp",
     "gorselKaynak": {
-      "yazar": "Ingo Dierking",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Macro_circuit_board.JPG"
+      "yazar": "ComputerUserUser",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Caviar_2340_Hard_Drive_Circuit_Board_Side_2.jpg"
     },
     "images": [
       "https://img.chip.com.tr/rcman/Cw640h419q95gm/storage/files/images/2026/02/03/z-kusagi-iq-testlerinde-ilk-kez-geriye-dustu-peki-ama-neden-2gsx.jpg"
     ],
     "imagesKaynak": "https://www.chip.com.tr/guncel/gencler-neden-telefonlara-cevap-vermiyor-uzmanlar-nedenini-acikladi_184587.html",
-    "gorselDeneme": "2026-10-28T04:49:39.586Z"
+    "gorselDeneme": "2026-10-28T04:49:39.586Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Caviar_2340_Hard_Drive_Circuit_Board_Side_2.jpg/1280px-Caviar_2340_Hard_Drive_Circuit_Board_Side_2.jpg",
+      "foto": true
+    }
   },
   {
     "id": "d2c44c0a127c52f4",
@@ -267591,7 +267680,7 @@
     "sourceUrl": "https://www.tamindir.com/haber/galaxy-a56-a36-one-ui-9-guncellemesi_112316/",
     "publishedAt": "2026-10-15T18:33:00.000Z",
     "generatedAt": "2026-10-15T16:21:58.562Z",
-    "image": "https://img.tamindir.com/resize/1200x675/2025/03/476780/samsung-galaxy-a36-galaxy-a56-ozellikleri-fiyati-2.jpg",
+    "image": "/kapak/854a2ed08d76ac81.webp",
     "keyPoints": [
       "Android 17 tabanlı One UI 9 güncellemesi ilk olarak Güney Kore'de dağıtıldı.",
       "Pakette yenilenen hızlı panel, Galaxy AI yetenekleri ve DeX iyileştirmeleri bulunuyor.",
@@ -267607,12 +267696,22 @@
     "refreshedAt": "2026-10-17T08:47:45.012Z",
     "gorselSorgu": "Samsung Galaxy A56",
     "ekGorselDeneme": "2026-10-26T09:50:38.633Z",
-    "gorselKaynak": "https://www.tamindir.com/haber/galaxy-a56-a36-one-ui-9-guncellemesi_112316/",
+    "gorselKaynak": {
+      "yazar": "NASA/ESA and The Hubble Heritage Team (STScI/AURA)",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:M104_ngc4594_sombrero_galaxy_hi-res.jpg"
+    },
     "images": [
       "https://img.tamindir.com/resize/1200x675/2025/03/476780/samsung-galaxy-a36-galaxy-a56-ozellikleri-fiyati-2.jpg"
     ],
     "imagesKaynak": "https://www.tamindir.com/haber/galaxy-a56-a36-one-ui-9-guncellemesi_112316/",
-    "gorselDeneme": "2026-10-28T04:49:41.161Z"
+    "gorselDeneme": "2026-10-28T04:49:41.161Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/M104_ngc4594_sombrero_galaxy_hi-res.jpg/1280px-M104_ngc4594_sombrero_galaxy_hi-res.jpg",
+      "foto": true
+    }
   },
   {
     "id": "009e0b6dcd75fb66",
@@ -267643,18 +267742,23 @@
     "sourceUrl": "https://www.donanimhaber.com/en-korkutucu-siber-saldiri-sadece-reklam-gormek-yeterli--211683",
     "publishedAt": "2026-10-15T18:16:35.000Z",
     "generatedAt": "2026-10-15T18:17:31.449Z",
-    "image": "https://www.donanimhaber.com/images/images/editor/c6d7c35d4c7f42f6a03ce8db9d94262a.jpg",
+    "image": "/kapak/009e0b6dcd75fb66.webp",
     "gorselKaynak": {
-      "yazar": "Agnes Andersson",
-      "lisans": "CC BY 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:H%C3%A5kan_Lans_computer_color_graphics_card_Datacolor.jpg"
+      "yazar": "Daderot",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Abies_firma_-_Longwood_Gardens_-_DSC00773.JPG"
     },
     "gorselDeneme": "2026-10-28T04:49:39.824Z",
     "images": [
       "https://www.donanimhaber.com/images/images/editor/c6d7c35d4c7f42f6a03ce8db9d94262a.jpg"
     ],
-    "imagesKaynak": "https://www.donanimhaber.com/en-korkutucu-siber-saldiri-sadece-reklam-gormek-yeterli--211683"
+    "imagesKaynak": "https://www.donanimhaber.com/en-korkutucu-siber-saldiri-sadece-reklam-gormek-yeterli--211683",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Abies_firma_-_Longwood_Gardens_-_DSC00773.JPG/1280px-Abies_firma_-_Longwood_Gardens_-_DSC00773.JPG",
+      "foto": true
+    }
   },
   {
     "id": "4512f88da9730bac",
@@ -267685,7 +267789,7 @@
     "sourceUrl": "https://www.bloomberght.com/abd-de-secim-oncesi-supheli-mektup-alarmi-3791520",
     "publishedAt": "2026-10-15T18:14:40.000Z",
     "generatedAt": "2026-10-15T18:25:40.976Z",
-    "image": "https://geoim.bloomberght.com/l/2026/10/21/ver1792533102/3792031/jpg/640x640",
+    "image": "/kapak/4512f88da9730bac.webp",
     "gorselKaynak": {
       "yazar": "W.carter",
       "lisans": "CC BY-SA 4.0",
@@ -267697,7 +267801,12 @@
       "https://geoim.bloomberght.com/l/2026/10/21/ver1792533102/3792031/jpg/640x640",
       "https://geoim.bloomberght.com/l/2026/10/21/ver1792531538/3792029/jpg/640x640"
     ],
-    "imagesKaynak": "https://www.bloomberght.com/abd-de-secim-oncesi-supheli-mektup-alarmi-3791520"
+    "imagesKaynak": "https://www.bloomberght.com/abd-de-secim-oncesi-supheli-mektup-alarmi-3791520",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://geoim.bloomberght.com/l/2026/10/21/ver1792533102/3792031/jpg/640x640",
+      "foto": false
+    }
   },
   {
     "id": "68944b7183661dcf",
@@ -267717,7 +267826,7 @@
     "sourceUrl": "https://www.tamindir.com/haber/xbox-nano-controller-tanitildi_112321/",
     "publishedAt": "2026-10-15T18:13:00.000Z",
     "generatedAt": "2026-10-15T16:22:58.546Z",
-    "image": "https://img.tamindir.com/resize/1200x675/2026/10/476815/xbox-nano-controller-tanitildi-1.jpg",
+    "image": "/kapak/68944b7183661dcf.webp",
     "keyPoints": [
       "Cihaz 13 cm uzunluğa ve 99 gram ağırlığa sahip.",
       "Kasim 2026'da 49,99 dolar fiyatla piyasaya sürülecek.",
@@ -267732,16 +267841,21 @@
     "editorNote": "Standart modellere göre çok daha hafif tasarlanan bu mini kontrolcünün pazar başarısı, taşınabilir oyun alışkanlıklarını ne kadar değiştireceğine bağlı.",
     "refreshedAt": "2026-10-17T08:47:54.206Z",
     "gorselKaynak": {
-      "yazar": "Ank Kumar",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_Software_Development_Center,_Seestrasse_356,_Z%C3%BCrich_(Ank_Kumar,_Infosys_Limited)_04.jpg"
+      "yazar": "Derrick Coetzee",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_building_17_front_door.jpg"
     },
     "images": [
       "https://img.tamindir.com/resize/1200x675/2026/10/476815/xbox-nano-controller-tanitildi-1.jpg"
     ],
     "imagesKaynak": "https://www.tamindir.com/haber/xbox-nano-controller-tanitildi_112321/",
-    "gorselDeneme": "2026-10-28T04:49:40.820Z"
+    "gorselDeneme": "2026-10-28T04:49:40.820Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Microsoft_building_17_front_door.jpg/1280px-Microsoft_building_17_front_door.jpg",
+      "foto": true
+    }
   },
   {
     "id": "9787cc38a34d4893",
@@ -267891,14 +268005,19 @@
     "sourceUrl": "https://www.chip.com.tr/guncel/dunyadan-45-milyar-isik-yili-uzakta-sasirtici-manzara-galaksiler-neden-gulumsuyor_184600.html",
     "publishedAt": "2026-10-15T18:04:00.000Z",
     "generatedAt": "2026-10-15T18:12:58.960Z",
-    "image": "https://img.chip.com.tr/rcman/Cw1280h720q95gm/storage/files/images/2026/10/14/hubble-uzay-teleskobu-buyuk-ayi-takimyildizinda-yer-alan-sdss-j10384849-galaksi-kumesinde-dev-bir-gulumsemeyi-andiran-yapi-kaydetti-gjkp.jpg",
+    "image": "/kapak/e8da081870c8ccd4.webp",
     "gorselKaynak": {
-      "yazar": "NASA",
+      "yazar": "NASA/JPL-Caltech and The Hubble Heritage Team (STScI/AURA)",
       "lisans": "Kamu malı",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Jet_Propulsion_Laboratory_Plasma_Flow_Research_Lab.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Sombrero_Galaxy_in_infrared_light_(Hubble_Space_Telescope_and_Spitzer_Space_Telescope).jpg"
     },
-    "gorselDeneme": "2026-10-28T04:49:39.986Z"
+    "gorselDeneme": "2026-10-28T04:49:39.986Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Sombrero_Galaxy_in_infrared_light_%28Hubble_Space_Telescope_and_Spitzer_Space_Telescope%29.jpg/1280px-Sombrero_Galaxy_in_infrared_light_%28Hubble_Space_Telescope_and_Spitzer_Space_Telescope%29.jpg",
+      "foto": true
+    }
   },
   {
     "id": "179de99e22b97d0c",
@@ -267929,7 +268048,7 @@
     "sourceUrl": "https://www.bloomberght.com/ispanya-basbakani-sanchez-hakkinda-secim-sorusturmasi-3791519",
     "publishedAt": "2026-10-15T18:03:21.000Z",
     "generatedAt": "2026-10-15T18:25:50.111Z",
-    "image": "https://geoim.bloomberght.com/l/2026/10/21/ver1792533102/3792031/jpg/640x640",
+    "image": "/kapak/179de99e22b97d0c.webp",
     "gorselKaynak": {
       "yazar": "Thomas J. O'Halloran",
       "lisans": "Kamu malı",
@@ -267941,7 +268060,12 @@
       "https://geoim.bloomberght.com/l/2026/10/21/ver1792533102/3792031/jpg/640x640",
       "https://geoim.bloomberght.com/l/2026/10/21/ver1792531538/3792029/jpg/640x640"
     ],
-    "imagesKaynak": "https://www.bloomberght.com/ispanya-basbakani-sanchez-hakkinda-secim-sorusturmasi-3791519"
+    "imagesKaynak": "https://www.bloomberght.com/ispanya-basbakani-sanchez-hakkinda-secim-sorusturmasi-3791519",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://geoim.bloomberght.com/l/2026/10/21/ver1792533102/3792031/jpg/640x640",
+      "foto": false
+    }
   },
   {
     "id": "3803d4da079029e1",
@@ -268078,7 +268202,7 @@
     "sourceUrl": "https://www.bloomberght.com/almanya-ve-fransa-ab-nin-2035-motor-yasagini-esnetmek-icin-anlasti-3791517",
     "publishedAt": "2026-10-15T17:41:53.000Z",
     "generatedAt": "2026-10-15T18:13:07.705Z",
-    "image": "https://geoim.bloomberght.com/l/2026/10/21/ver1792534385/3792032/jpg/640x360",
+    "image": "/kapak/36798600cac06ead.webp",
     "gorselKaynak": {
       "yazar": "ehnmark",
       "lisans": "CC BY 2.0",
@@ -268090,7 +268214,12 @@
       "https://geoim.bloomberght.com/l/2026/10/21/ver1792534385/3792032/jpg/640x360",
       "https://geoim.bloomberght.com/l/2026/10/21/ver1792532631/3792030/jpg/640x360"
     ],
-    "imagesKaynak": "https://www.bloomberght.com/almanya-ve-fransa-ab-nin-2035-motor-yasagini-esnetmek-icin-anlasti-3791517"
+    "imagesKaynak": "https://www.bloomberght.com/almanya-ve-fransa-ab-nin-2035-motor-yasagini-esnetmek-icin-anlasti-3791517",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://geoim.bloomberght.com/l/2026/10/21/ver1792534385/3792032/jpg/640x360",
+      "foto": false
+    }
   },
   {
     "id": "f3d84de218ed4c83",
@@ -268110,7 +268239,7 @@
     "sourceUrl": "https://www.chip.com.tr/galeri/hyperx-cloud-mini-wireless-inceleme_184630.html",
     "publishedAt": "2026-10-15T17:30:00.000Z",
     "generatedAt": "2026-10-15T17:35:32.731Z",
-    "image": "https://img.chip.com.tr/rcman/Cw1280h720q95gm/storage/files/images/2026/10/14/hyperx-cloud-mini-wireless-inceleme-wzpq.jpg",
+    "image": "/kapak/f3d84de218ed4c83.webp",
     "keyPoints": [
       "İşitme sağlığı için 85 dB ses sınırlandırma özelliği bulunuyor",
       "Uzun süreli kullanımlar için hafif ve ergonomik tasarıma sahip",
@@ -268124,17 +268253,22 @@
     "editorNote": "85 dB ses sınırı ve hafif gövdesiyle çocukların işitme sağlığını korumayı amaçlayan kulaklık raflardaki yerini alıyor.",
     "refreshedAt": "2026-10-18T20:13:43.083Z",
     "gorselKaynak": {
-      "yazar": "Mr Yukio",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:HyperX_Fury_4gb_DDR3.jpg"
+      "yazar": "玄史生",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:HyperX_booth,_Taipei_Game_Show_20190127a.jpg"
     },
     "images": [
       "https://img.chip.com.tr/rcman/Cw820h461q95gm/storage/files/images/2026/10/14/untitled-1-kh6t.jpg",
       "https://img.chip.com.tr/rcman/Cw820h461q95gm/storage/files/images/2026/10/14/2-tltj.jpg"
     ],
     "imagesKaynak": "https://www.chip.com.tr/galeri/hyperx-cloud-mini-wireless-inceleme_184630.html",
-    "gorselDeneme": "2026-10-28T04:49:40.508Z"
+    "gorselDeneme": "2026-10-28T04:49:40.508Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/HyperX_booth%2C_Taipei_Game_Show_20190127a.jpg/1280px-HyperX_booth%2C_Taipei_Game_Show_20190127a.jpg",
+      "foto": true
+    }
   },
   {
     "id": "608d1cf31905d9d7",
@@ -268225,7 +268359,7 @@
     "sourceUrl": "https://www.hurriyet.com.tr/sporarena/trabzonsporda-sakatlik-soku-derbi-oncesi-kotu-haber-43343309",
     "publishedAt": "2026-10-15T17:25:41.000Z",
     "generatedAt": "2026-10-15T17:35:39.448Z",
-    "image": "https://image.hurimg.com/i/hurriyet/90/0x0/6ad10c87095f332ee1788a4b.jpg",
+    "image": "/kapak/aac1cefab615424d.webp",
     "keyPoints": [
       "Karşılaşmanın 10. dakikasında sakatlanan Paul Onuachu oyundan çıkmak zorunda kaldı.",
       "Bordo-mavililerin Finlandiya deplasmanındaki maçında ilk golü Onuachu kaydetmişti.",
@@ -268239,12 +268373,17 @@
     "editorNote": "Derbi öncesi yaşanan bu talihsiz sakatlık, hücum hattındaki tüm planları altüst edebilir.",
     "refreshedAt": "2026-10-18T20:14:03.707Z",
     "gorselKaynak": {
-      "yazar": "Bill Boaden",
-      "lisans": "CC BY-SA 2.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Football_match_at_the_i2i_Stadium_-_geograph.org.uk_-_5307336.jpg"
+      "yazar": "Aleksasfi",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Trabzonspor_trophy_museum.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:49:40.547Z"
+    "gorselDeneme": "2026-10-28T04:49:40.547Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Trabzonspor_trophy_museum.jpg",
+      "foto": true
+    }
   },
   {
     "id": "b6afac21aa541d16",
@@ -268265,7 +268404,7 @@
     "sourceUrl": "https://www.donanimhaber.com/yeni-street-fighter-filmi-nasil-olmus-iste-yorumlar--211677",
     "publishedAt": "2026-10-15T17:11:00.000Z",
     "generatedAt": "2026-10-15T17:27:10.647Z",
-    "image": "https://www.donanimhaber.com/images/images/haber/211677/src/yeni-street-fighter-filmi-nasil-olmus-iste-yorumlar211677_0.jpg",
+    "image": "/kapak/b6afac21aa541d16.webp",
     "keyPoints": [
       "MetaCritic 45, Rotten Tomatoes %38 puanıyla film eleştirmenlerden düşük değerlendirme aldı",
       "Görsel yönetmenlik ve aksiyon sahneleri övgü alırken, senaryo ve oyuncu performansları eleştirildi",
@@ -268277,16 +268416,21 @@
     "editorNote": "Aksiyon dolu sahneler övgü toplarken, şakaların başarısızlığı eleştirileri artırıyor. Film, 1993’te geçen hikâyesiyle nostalji yaratmayı hedefliyor.",
     "refreshedAt": "2026-10-19T00:53:37.619Z",
     "gorselKaynak": {
-      "yazar": "Leonhard Lenz",
-      "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Crowd_at_the_stage_of_Christopher_Street_Day_Berlin_2023-07-22_02.jpg"
+      "yazar": "Sgt. David S. Nolan, USAF",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:USAFE_fighter_aircraft_1987.JPEG"
     },
     "images": [
       "https://www.donanimhaber.com/images/images/haber/211677/src/yeni-street-fighter-filmi-nasil-olmus-iste-yorumlar211677_0.jpg"
     ],
     "imagesKaynak": "https://www.donanimhaber.com/yeni-street-fighter-filmi-nasil-olmus-iste-yorumlar--211677",
-    "gorselDeneme": "2026-10-28T04:49:40.903Z"
+    "gorselDeneme": "2026-10-28T04:49:40.903Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/USAFE_fighter_aircraft_1987.JPEG/1280px-USAFE_fighter_aircraft_1987.JPEG",
+      "foto": true
+    }
   },
   {
     "id": "e17068ec9684a127",
@@ -268462,7 +268606,7 @@
     "sourceUrl": "https://www.tamindir.com/haber/gta-6-yeni-fragmani-yayinlandi_112326/",
     "publishedAt": "2026-10-15T16:42:00.000Z",
     "generatedAt": "2026-10-15T17:04:23.644Z",
-    "image": "https://img.tamindir.com/2026/10/470608/gta-6-yeni-fragmani-yayinlandi.jpg",
+    "image": "/kapak/8daa94e15321490e.webp",
     "keyPoints": [
       "GTA 6'nın yeni fragmanı bir saat içinde 1 milyon 468 bin 279 izlenmeye ulaştı.",
       "Oyunun standart sürümü 3.999 TL, Ultimate Edition sürümü ise 4.999 TL fiyatla listelendi."
@@ -268481,7 +268625,12 @@
       "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Simon_Ramsey,_Rockstar_Games_-_New_York_Game_Awards_2019.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:49:41.231Z"
+    "gorselDeneme": "2026-10-28T04:49:41.231Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://img.tamindir.com/2026/10/470608/gta-6-yeni-fragmani-yayinlandi.jpg",
+      "foto": false
+    }
   },
   {
     "id": "f3e718182a6489c5",
@@ -268500,7 +268649,7 @@
     "sourceUrl": "https://www.tamindir.com/haber/redmagic-12-pro-plus-ozellikleri-fiyati_112322/",
     "publishedAt": "2026-10-15T16:34:00.000Z",
     "generatedAt": "2026-10-15T17:27:29.338Z",
-    "image": "https://img.tamindir.com/2026/10/470608/redmagic-12-pro-plus-ozellikleri-fiyati.jpg",
+    "image": "/kapak/f3e718182a6489c5.webp",
     "keyPoints": [
       "Snapdragon 8 Elite Extreme Gen 6 işlemci ve 2 nm üretim süreci kullanılıyor.",
       "OLED ekran 185Hz yenileme hızı ve 2000 nit parlaklık sunuyor.",
@@ -268524,7 +268673,12 @@
       "https://img.tamindir.com/resize/1200x675/2026/10/470608/redmagic-12-pro-plus-ozellikleri-fiyati-1.jpg"
     ],
     "imagesKaynak": "https://www.tamindir.com/haber/redmagic-12-pro-plus-ozellikleri-fiyati_112322/",
-    "gorselDeneme": "2026-10-28T04:49:41.141Z"
+    "gorselDeneme": "2026-10-28T04:49:41.141Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://img.tamindir.com/2026/10/470608/redmagic-12-pro-plus-ozellikleri-fiyati.jpg",
+      "foto": false
+    }
   },
   {
     "id": "67d9b1811b11c487",
@@ -268544,7 +268698,7 @@
     "sourceUrl": "https://www.donanimhaber.com/bmw-i3-tek-sarjla-1-213-kilometre-yol-katetti--211674",
     "publishedAt": "2026-10-15T16:26:00.000Z",
     "generatedAt": "2026-10-15T17:04:29.889Z",
-    "image": "https://www.donanimhaber.com/images/images/haber/211674/src/bmw-i3-tek-sarjla-1-213-kilometre-yol-katetti211674_0.jpg",
+    "image": "/kapak/67d9b1811b11c487.webp",
     "keyPoints": [
       "BMW i3, tek şarjla yüzde 1 batarya seviyesine kadar 1.213 kilometre yol kat etti.",
       "Otomobil 100 kilometrede ortalama 8,8 kWh enerji tüketimiyle dikkat çekti.",
@@ -268567,7 +268721,12 @@
       "https://www.donanimhaber.com/images/images/haber/211674/src/bmw-i3-tek-sarjla-1-213-kilometre-yol-katetti211674_0.jpg"
     ],
     "imagesKaynak": "https://www.donanimhaber.com/bmw-i3-tek-sarjla-1-213-kilometre-yol-katetti--211674",
-    "gorselDeneme": "2026-10-28T04:49:41.179Z"
+    "gorselDeneme": "2026-10-28T04:49:41.179Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://www.donanimhaber.com/images/images/haber/211674/src/bmw-i3-tek-sarjla-1-213-kilometre-yol-katetti211674_0.jpg",
+      "foto": false
+    }
   },
   {
     "id": "33eaca3c40560364",
@@ -268600,18 +268759,23 @@
       "Kontrolcünün önerilen satış fiyatı 84,99 USD ve Avrupa’da aynı fiyatla 84,99 EUR olarak belirlendi. Türkiye’de ön siparişlerin 22 Ekim 2026’da saat 10.00’da başlayacağı, satışın ise 10 Aralık 2026’dan itibaren dünya genelinde gerçekleşeceği duyuruldu. Ancak yerel fiyat ve kesin satış tarihi henüz netleşmedi, bu da Türkiye’deki oyuncuların merakını artırıyor."
     ],
     "refreshedAt": "2026-10-15T18:22:09.807Z",
-    "image": "https://img.tamindir.com/resize/1200x675/2026/10/476815/gran-turismo-30-yil-ozel-dualsense-1.jpg",
+    "image": "/kapak/33eaca3c40560364.webp",
     "gorselKaynak": {
-      "yazar": "Chris Woodrich",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Playstation_5_DualSense_controller_in_Midnight_Black,_2026-02-07_(front).jpg"
+      "yazar": "Daniel Gran",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Daniel_Gran_-_Greeting_of_Venus_at_Mount_Olympus_-_M.Ob.2107_MNW_-_National_Museum_in_Warsaw.jpg"
     },
     "images": [
       "https://img.tamindir.com/resize/1200x675/2026/10/476815/gran-turismo-30-yil-ozel-dualsense-1.jpg"
     ],
     "imagesKaynak": "https://www.tamindir.com/haber/gran-turismo-30-yil-ozel-dualsense_112323/",
-    "gorselDeneme": "2026-10-28T04:49:41.417Z"
+    "gorselDeneme": "2026-10-28T04:49:41.417Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Daniel_Gran_-_Greeting_of_Venus_at_Mount_Olympus_-_M.Ob.2107_MNW_-_National_Museum_in_Warsaw.jpg/1280px-Daniel_Gran_-_Greeting_of_Venus_at_Mount_Olympus_-_M.Ob.2107_MNW_-_National_Museum_in_Warsaw.jpg",
+      "foto": true
+    }
   },
   {
     "id": "0a3b87428ecea4f4",
@@ -268643,7 +268807,7 @@
       "Epic Games Store genel müdürü Martin Keely, IGN'e yeni istemcinin indirme yöneticisi, kütüphane ve mağaza sayfaları dahil tüm bileşenlerinin sıfırdan yeniden yazıldığını açıkladı. Mevcut Epic Games kullanıcıları, bu ön izleme sürümünü isteğe bağlı olarak deneyebiliyor. Ayrıca şirket, aynı gün Fortnite'ın Linux platformuna geleceğini duyurarak uzun süredir beklenen bir gelişmeye işaret etti."
     ],
     "refreshedAt": "2026-10-15T18:21:52.814Z",
-    "image": "https://img.tamindir.com/resize/1200x675/2026/10/476815/epic-games-launcher-yapay-zeka-onizleme-1.jpg",
+    "image": "/kapak/0a3b87428ecea4f4.webp",
     "gorselKaynak": {
       "yazar": "whohoo120",
       "lisans": "CC BY 2.0",
@@ -268654,7 +268818,12 @@
       "https://img.tamindir.com/resize/1200x675/2026/10/476815/epic-games-launcher-yapay-zeka-onizleme-1.jpg"
     ],
     "imagesKaynak": "https://www.tamindir.com/haber/epic-games-launcher-yapay-zeka-onizleme_112324/",
-    "gorselDeneme": "2026-10-28T04:49:41.495Z"
+    "gorselDeneme": "2026-10-28T04:49:41.495Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://img.tamindir.com/resize/1200x675/2026/10/476815/epic-games-launcher-yapay-zeka-onizleme-1.jpg",
+      "foto": false
+    }
   },
   {
     "id": "646b03fd8ae53a8c",
@@ -268685,14 +268854,19 @@
       "Yeni rozet, içeriğin yasaklanması anlamına gelmiyor; yalnızca dinleyicilere şarkının üretim süreci hakkında bilgi sunarak tercihlerini bilinçli yapmalarını sağlıyor. Platform, yapay zekâ destekli şarkıların müzik kütüphanesinde kalmaya devam edeceğini ve kullanıcıların bu şarkıları çalma listelerine ekleyip eklemeyeceklerine kendileri karar vereceklerini vurguluyor. YouTube, daha önce video içeriklerinde benzer bir AI etiketi sistemi tanıtmıştı ve bu uygulamanın müzik platformuna genişletilmesi, sektörde şeffaflık standartlarının yükselmesine katkı sağlayabilir."
     ],
     "refreshedAt": "2026-10-15T18:21:44.389Z",
-    "image": "https://img.tamindir.com/2026/10/476815/youtube-music-yapay-zeka-sarki-etiketi.jpg",
+    "image": "/kapak/646b03fd8ae53a8c.webp",
     "gorselKaynak": {
-      "yazar": "BrokenSphere",
-      "lisans": "CC BY 3.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by/3.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:YouTube_HQ_11.JPG"
+      "yazar": "Phintias",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Music_lesson_Staatliche_Antikensammlungen_2421.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:49:41.363Z"
+    "gorselDeneme": "2026-10-28T04:49:41.363Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Music_lesson_Staatliche_Antikensammlungen_2421.jpg/1280px-Music_lesson_Staatliche_Antikensammlungen_2421.jpg",
+      "foto": true
+    }
   },
   {
     "id": "062e3b06defb4a37",
@@ -268776,7 +268950,7 @@
     "sourceUrl": "https://www.donanimhaber.com/dizi-film-ve-coklu-gorev-icin-en-iyi-buyuk-ekran-tabletler--211627",
     "publishedAt": "2026-10-15T16:03:00.000Z",
     "generatedAt": "2026-10-15T16:23:31.087Z",
-    "image": "https://www.donanimhaber.com/images/images/haber/211627/1200x675dizi-film-ve-coklu-gorev-icin-en-iyi-buyuk-ekran-tabletler.jpg",
+    "image": "/kapak/e8abea0c9028ffa3.webp",
     "keyPoints": [
       "Casper PAD Z10 Pro, 12 GB RAM ve MediaTek Dimensity D8300 işlemciyle geliyor.",
       "Galaxy Tab S12 Ultra modeli 11.600 mAh batarya ve 12 GB/16 GB RAM sunuyor.",
@@ -268808,7 +268982,12 @@
       "https://www.donanimhaber.com/images/images/haber/211627/src/dizi-film-ve-coklu-gorev-icin-en-iyi-buyuk-ekran-tabletler211627_3.jpg"
     ],
     "imagesKaynak": "https://www.donanimhaber.com/dizi-film-ve-coklu-gorev-icin-en-iyi-buyuk-ekran-tabletler--211627",
-    "gorselDeneme": "2026-10-28T04:49:41.367Z"
+    "gorselDeneme": "2026-10-28T04:49:41.367Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Samsung_Galaxy_Tab_S8_Ultra.jpg/1280px-Samsung_Galaxy_Tab_S8_Ultra.jpg",
+      "foto": true
+    }
   },
   {
     "id": "98688755b068aa50",
@@ -269129,7 +269308,7 @@
     "sourceUrl": "https://www.bloomberght.com/piyasalarda-gunun-ozeti-15-ekim-2026-bist-100-de-degisimler-ve-doviz-fiyatlari-pkh-3791504",
     "publishedAt": "2026-10-15T15:30:14.000Z",
     "generatedAt": "2026-10-15T17:31:47.819Z",
-    "image": "https://geoim.bloomberght.com/l/2026/10/21/ver1792534385/3792032/jpg/640x360",
+    "image": "/kapak/cf73c95a5f26a609.webp",
     "keyPoints": [
       "BIST 100 endeksi günü yüzde 0,5 kayıpla 12.057,35 puanda kapattı.",
       "Dolar kuru saat 18.30 itibarıyla 49,42 TL seviyesinden işlem gördü."
@@ -269143,17 +269322,22 @@
     "editorNote": "Borsa gerilerken gram altının 6.600 TL sınırını aşması, yatırım tercihlerindeki yönelim değişimini net bir şekilde özetliyor.",
     "refreshedAt": "2026-10-19T13:51:59.595Z",
     "gorselKaynak": {
-      "yazar": "https://www.artic.edu/artworks/156538/chicago-stock-exchange-tradin…",
+      "yazar": "Bert76",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Chicago_Stock_Exchange_Trading_Room_Reconstruction_at_the_Art_Institute_of_Chicago.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:De_Bist_beuk.jpg"
     },
     "gorselDeneme": "2026-10-28T04:49:41.734Z",
     "images": [
       "https://geoim.bloomberght.com/l/2026/10/21/ver1792534385/3792032/jpg/640x360",
       "https://geoim.bloomberght.com/l/2026/10/21/ver1792532631/3792030/jpg/640x360"
     ],
-    "imagesKaynak": "https://www.bloomberght.com/piyasalarda-gunun-ozeti-15-ekim-2026-bist-100-de-degisimler-ve-doviz-fiyatlari-pkh-3791504"
+    "imagesKaynak": "https://www.bloomberght.com/piyasalarda-gunun-ozeti-15-ekim-2026-bist-100-de-degisimler-ve-doviz-fiyatlari-pkh-3791504",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/De_Bist_beuk.jpg/1280px-De_Bist_beuk.jpg",
+      "foto": true
+    }
   },
   {
     "id": "1a879fe5c56084d5",
@@ -269173,7 +269357,7 @@
     "sourceUrl": "https://www.donanimhaber.com/redmagic-12-pro-tanitildi-iste-ozellikleri-ve-fiyati--211667",
     "publishedAt": "2026-10-15T15:28:21.000Z",
     "generatedAt": "2026-10-15T17:31:53.975Z",
-    "image": "https://www.donanimhaber.com/images/images/haber/211667/src/redmagic-12-pro-tanitildi-iste-ozellikleri-ve-fiyati211667_0.jpg",
+    "image": "/kapak/1a879fe5c56084d5.webp",
     "keyPoints": [
       "Cihaz 185 Hz yenileme hızı sunan 6,85 inç BOE OLED ekranla geliyor.",
       "Gücünü Snapdragon 8 Elite Extreme Gen 6 işlemci ve aktif soğutma sisteminden alıyor.",
@@ -269198,7 +269382,12 @@
       "https://www.donanimhaber.com/images/images/haber/211667/src/redmagic-12-pro-tanitildi-iste-ozellikleri-ve-fiyati211667_1.jpg"
     ],
     "imagesKaynak": "https://www.donanimhaber.com/redmagic-12-pro-tanitildi-iste-ozellikleri-ve-fiyati--211667",
-    "gorselDeneme": "2026-10-28T04:49:41.653Z"
+    "gorselDeneme": "2026-10-28T04:49:41.653Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://www.donanimhaber.com/images/images/haber/211667/src/redmagic-12-pro-tanitildi-iste-ozellikleri-ve-fiyati211667_0.jpg",
+      "foto": false
+    }
   },
   {
     "id": "283c22e97e568997",
@@ -269270,7 +269459,7 @@
     "sourceUrl": "https://www.ntv.com.tr/dunya/bakan-fidan-bakude-liderlerimiz-arasinda-sarsilmaz-bir-dostluk-ve-kardeslik-bagi-vardir-1746486",
     "publishedAt": "2026-10-15T15:11:09.000Z",
     "generatedAt": "2026-10-15T17:32:12.003Z",
-    "image": "https://images.ntv.com.tr/images/bakanfidan-721386.jpg?format=webp&width=1200&height=630",
+    "image": "/kapak/e5106e2b40ff8097.webp",
     "keyPoints": [
       "Dışişleri Bakanı Hakan Fidan, CICA 7. Zirvesi kapsamında Azerbaycan'ın başkenti Bakü'ye gitti.",
       "Fidan, iki ülke arasındaki stratejik ilişkilerin istismar edilmesine izin verilmemesi gerektiğini belirtti.",
@@ -269290,7 +269479,12 @@
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Person_holding_world_globe.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:49:41.585Z"
+    "gorselDeneme": "2026-10-28T04:49:41.585Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://images.ntv.com.tr/images/bakanfidan-721386.jpg?format=webp&width=1200&height=630",
+      "foto": false
+    }
   },
   {
     "id": "d50827a5ca57d168",
@@ -269367,7 +269561,7 @@
     "sourceUrl": "https://www.bloomberght.com/new-york-fed-imalat-endeksinde-yukselis-philadelphia-da-dusus-3791502",
     "publishedAt": "2026-10-15T15:01:13.000Z",
     "generatedAt": "2026-10-15T17:32:24.509Z",
-    "image": "https://geoim.bloomberght.com/l/2026/10/15/ver1792076505/3791502/jpg/960x540",
+    "image": "/kapak/1a49b74c18cdb49f.webp",
     "keyPoints": [
       "New York Fed imalat endeksi Ekim ayında 25,5 seviyesine çıktı.",
       "Philadelphia Fed imalat endeksi ise 20,9 değerine geriledi.",
@@ -269392,7 +269586,12 @@
       "https://geoim.bloomberght.com/l/2026/10/21/ver1792533102/3792031/jpg/640x640",
       "https://geoim.bloomberght.com/l/2026/10/21/ver1792531538/3792029/jpg/640x640"
     ],
-    "imagesKaynak": "https://www.bloomberght.com/new-york-fed-imalat-endeksinde-yukselis-philadelphia-da-dusus-3791502"
+    "imagesKaynak": "https://www.bloomberght.com/new-york-fed-imalat-endeksinde-yukselis-philadelphia-da-dusus-3791502",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://geoim.bloomberght.com/l/2026/10/15/ver1792076505/3791502/jpg/960x540",
+      "foto": false
+    }
   },
   {
     "id": "222c686969dfccd8",
@@ -269461,7 +269660,7 @@
     "sourceUrl": "https://www.bbc.com/turkce/articles/cwdd82qpd89mo?at_medium=RSS&at_campaign=rss",
     "publishedAt": "2026-10-15T14:54:04.000Z",
     "generatedAt": "2026-10-15T17:35:51.966Z",
-    "image": "https://ichef.bbci.co.uk/news/1200/branded_turkce/ed0d/live/1f307380-ce5f-11f1-9a39-31b474234113.jpg",
+    "image": "/kapak/adc99bb23e0fac0d.webp",
     "keyPoints": [
       "Beşiktaş deplasmanda Hoffenheim'ı 3-2 yenerek önemli bir galibiyet elde etti.",
       "Mücadelede siyah-beyazlıların gollerini Oh iki kez, Murillo ise bir kez kaydetti.",
@@ -269481,7 +269680,12 @@
       "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Kadriorg_Stadium_floodlights_and_Maakri_high-rises.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:49:41.645Z"
+    "gorselDeneme": "2026-10-28T04:49:41.645Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://ichef.bbci.co.uk/news/1200/branded_turkce/ed0d/live/1f307380-ce5f-11f1-9a39-31b474234113.jpg",
+      "foto": false
+    }
   },
   {
     "id": "1622590cc6d0f66c",
@@ -269675,7 +269879,7 @@
     "sourceUrl": "https://www.bloomberght.com/hindistan-ile-abd-ticaret-anlasmasinin-ilk-asamasi-tamamlandi-3791501",
     "publishedAt": "2026-10-15T14:47:48.000Z",
     "generatedAt": "2026-10-15T17:36:18.642Z",
-    "image": "https://geoim.bloomberght.com/l/2026/10/21/ver1792533102/3792031/jpg/640x640",
+    "image": "/kapak/f229685a4929e83d.webp",
     "gorselKaynak": {
       "yazar": "Christian Collins from Midland, MI, United States",
       "lisans": "CC BY-SA 2.0",
@@ -269687,7 +269891,12 @@
       "https://geoim.bloomberght.com/l/2026/10/21/ver1792533102/3792031/jpg/640x640",
       "https://geoim.bloomberght.com/l/2026/10/21/ver1792531538/3792029/jpg/640x640"
     ],
-    "imagesKaynak": "https://www.bloomberght.com/hindistan-ile-abd-ticaret-anlasmasinin-ilk-asamasi-tamamlandi-3791501"
+    "imagesKaynak": "https://www.bloomberght.com/hindistan-ile-abd-ticaret-anlasmasinin-ilk-asamasi-tamamlandi-3791501",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://geoim.bloomberght.com/l/2026/10/21/ver1792533102/3792031/jpg/640x640",
+      "foto": false
+    }
   },
   {
     "id": "177e41db0d2b69cc",
@@ -269712,14 +269921,19 @@
     "sourceUrl": "https://www.webtekno.com/mercedes-30-bin-arac-geri-cagriyor-h227236.html",
     "publishedAt": "2026-10-15T14:47:47.000Z",
     "generatedAt": "2026-10-15T17:56:12.991Z",
-    "image": "https://imgrosetta.webtekno.com/file/692938/692938-700x400.jpg",
+    "image": "/kapak/177e41db0d2b69cc.webp",
     "gorselKaynak": {
       "yazar": "Matti Blume",
       "lisans": "CC BY-SA 4.0",
       "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Mercedes-Benz_A_200,_GIMS_2018,_Le_Grand-Saconnex_(1X7A0529).jpg"
     },
-    "gorselDeneme": "2026-10-28T04:49:42.289Z"
+    "gorselDeneme": "2026-10-28T04:49:42.289Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://imgrosetta.webtekno.com/file/692938/692938-700x400.jpg",
+      "foto": false
+    }
   },
   {
     "id": "07ead8dce7649c94",
@@ -269744,14 +269958,19 @@
     "sourceUrl": "https://www.bbc.com/turkce/articles/cmz7x9nz928vo?at_medium=RSS&at_campaign=rss",
     "publishedAt": "2026-10-15T14:46:59.000Z",
     "generatedAt": "2026-10-15T17:56:19.684Z",
-    "image": "https://ichef.bbci.co.uk/news/1200/branded_turkce/2c33/live/05d4c380-c95c-11f1-9081-f19b8af087ed.jpg",
+    "image": "/kapak/07ead8dce7649c94.webp",
     "gorselKaynak": {
       "yazar": "DavidHalpernist",
       "lisans": "CC BY-SA 4.0",
       "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Globe_of_the_Ancient_World_1977.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:49:41.932Z"
+    "gorselDeneme": "2026-10-28T04:49:41.932Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://ichef.bbci.co.uk/news/1200/branded_turkce/2c33/live/05d4c380-c95c-11f1-9081-f19b8af087ed.jpg",
+      "foto": false
+    }
   },
   {
     "id": "025e3544849d5805",
@@ -269776,14 +269995,19 @@
     "sourceUrl": "https://www.webtekno.com/anthropic-geliri-16-8-milyar-dolara-ulasti-sirada-2-trilyon-dolar-var-h227246.html",
     "publishedAt": "2026-10-15T14:46:22.000Z",
     "generatedAt": "2026-10-15T17:56:27.508Z",
-    "image": "https://imgrosetta.webtekno.com/file/692974/692974-700x400.jpg",
+    "image": "/kapak/025e3544849d5805.webp",
     "gorselKaynak": {
       "yazar": "Department for Science, Innovation and Technology",
       "lisans": "CC BY 2.0",
       "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Secretary_of_State_Peter_Kyle_visits_Anthropic_in_San_Francisco._(54099081629).jpg"
     },
-    "gorselDeneme": "2026-10-28T04:49:42.220Z"
+    "gorselDeneme": "2026-10-28T04:49:42.220Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://imgrosetta.webtekno.com/file/692974/692974-700x400.jpg",
+      "foto": false
+    }
   },
   {
     "id": "dec751cc93cc3138",
@@ -269808,14 +270032,19 @@
     "sourceUrl": "https://www.webtekno.com/muzede-100-yildir-unutulan-fosil-yeni-bir-dinozor-turunu-ortaya-cikardi-h227182.html",
     "publishedAt": "2026-10-15T14:46:13.000Z",
     "generatedAt": "2026-10-15T17:56:34.876Z",
-    "image": "https://imgrosetta.webtekno.com/file/692995/692995-700x400.jpg",
+    "image": "/kapak/dec751cc93cc3138.webp",
     "gorselKaynak": {
       "yazar": "NASA Glenn Research Center",
       "lisans": "Kamu malı",
       "lisansUrl": "",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Supercharger_Research_at_the_Aircraft_Engine_Research_Laboratory_(GRC-1944-C-03814).jpg"
     },
-    "gorselDeneme": "2026-10-28T04:49:42.374Z"
+    "gorselDeneme": "2026-10-28T04:49:42.374Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://imgrosetta.webtekno.com/file/692995/692995-700x400.jpg",
+      "foto": false
+    }
   },
   {
     "id": "cd728b695c8053e7",
@@ -269846,14 +270075,19 @@
     "sourceUrl": "https://www.webtekno.com/youtube-premiuma-sesli-kitap-ozelligi-geliyor-spotify-ve-audiblea-rakip-olacak-h227260.html",
     "publishedAt": "2026-10-15T14:45:47.000Z",
     "generatedAt": "2026-10-15T18:35:26.709Z",
-    "image": "https://imgrosetta.webtekno.com/file/693016/693016-700x400.jpg",
+    "image": "/kapak/cd728b695c8053e7.webp",
     "gorselKaynak": {
       "yazar": "BrokenSphere",
       "lisans": "CC BY 3.0",
       "lisansUrl": "https://creativecommons.org/licenses/by/3.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:YouTube_HQ_11.JPG"
     },
-    "gorselDeneme": "2026-10-28T04:49:44.702Z"
+    "gorselDeneme": "2026-10-28T04:49:44.702Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://imgrosetta.webtekno.com/file/693016/693016-700x400.jpg",
+      "foto": false
+    }
   },
   {
     "id": "93d139712035030f",
@@ -269885,14 +270119,19 @@
     "sourceUrl": "https://www.webtekno.com/en-saglam-dizel-benzinli-motorlar-h227221.html",
     "publishedAt": "2026-10-15T14:44:53.000Z",
     "generatedAt": "2026-10-15T18:35:35.738Z",
-    "image": "https://imgrosetta.webtekno.com/file/692941/692941-700x400.png",
+    "image": "/kapak/93d139712035030f.webp",
     "gorselKaynak": {
       "yazar": "Ввласенко",
       "lisans": "CC BY-SA 3.0",
       "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Reading_a_newspaper._Catania,_Italy.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:49:42.470Z"
+    "gorselDeneme": "2026-10-28T04:49:42.470Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://imgrosetta.webtekno.com/file/692941/692941-700x400.png",
+      "foto": false
+    }
   },
   {
     "id": "258ce423149ca214",
@@ -269917,14 +270156,19 @@
     "sourceUrl": "https://www.bbc.com/turkce/articles/cm36958j5rd6o?at_medium=RSS&at_campaign=rss",
     "publishedAt": "2026-10-15T14:44:19.000Z",
     "generatedAt": "2026-10-15T17:56:42.652Z",
-    "image": "https://ichef.bbci.co.uk/news/1200/branded_turkce/a60d/live/b88d8bd0-c8a1-11f1-929c-0b57deb4f9df.jpg",
+    "image": "/kapak/258ce423149ca214.webp",
     "gorselKaynak": {
       "yazar": "DavidHalpernist",
       "lisans": "CC BY-SA 4.0",
       "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Globe_of_the_Ancient_World_1977.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:49:42.227Z"
+    "gorselDeneme": "2026-10-28T04:49:42.227Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://ichef.bbci.co.uk/news/1200/branded_turkce/a60d/live/b88d8bd0-c8a1-11f1-929c-0b57deb4f9df.jpg",
+      "foto": false
+    }
   },
   {
     "id": "dc6d85e897cffc8e",
@@ -269944,7 +270188,7 @@
     "sourceUrl": "https://www.chip.com.tr/guncel/bir-muzik-devi-daha-yapay-zekaya-karsi-harekete-gecti_184649.html",
     "publishedAt": "2026-10-15T14:35:00.000Z",
     "generatedAt": "2026-10-15T14:44:22.027Z",
-    "image": "https://img.chip.com.tr/rcman/Cw640h419q95gm/storage/files/images/2026/10/12/yeni-bir-telefon-alirken-olmazsa-olmaz-5-ozellik-yivp.jpg",
+    "image": "/kapak/dc6d85e897cffc8e.webp",
     "gorselKaynak": {
       "yazar": "Elekes Andor",
       "lisans": "CC BY-SA 4.0",
@@ -269955,7 +270199,12 @@
       "https://img.chip.com.tr/rcman/Cw640h419q95gm/storage/files/images/2026/10/12/yeni-bir-telefon-alirken-olmazsa-olmaz-5-ozellik-yivp.jpg"
     ],
     "imagesKaynak": "https://www.chip.com.tr/guncel/bir-muzik-devi-daha-yapay-zekaya-karsi-harekete-gecti_184649.html",
-    "gorselDeneme": "2026-10-28T04:49:42.263Z"
+    "gorselDeneme": "2026-10-28T04:49:42.263Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://img.chip.com.tr/rcman/Cw640h419q95gm/storage/files/images/2026/10/12/yeni-bir-telefon-alirken-olmazsa-olmaz-5-ozellik-yivp.jpg",
+      "foto": false
+    }
   },
   {
     "id": "6b1b5572a93ab062",
@@ -269975,18 +270224,23 @@
     "sourceUrl": "https://shiftdelete.net/hurjetin-ispanya-versiyonu-geliyor",
     "publishedAt": "2026-10-15T14:30:05.000Z",
     "generatedAt": "2026-10-15T14:31:53.570Z",
-    "image": "https://image.hurimg.com/i/hurriyet/90/770x0/6acf78f0494211cf12a891f3.jpg",
+    "image": "/kapak/6b1b5572a93ab062.webp",
     "gorselKaynak": {
-      "yazar": "DiscoA340",
+      "yazar": "ComputerUserUser",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Close-up_of_a_VHS_Player_Circuit_Board.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Caviar_2340_Hard_Drive_Circuit_Board_Side_2.jpg"
     },
     "images": [
       "https://image.hurimg.com/i/hurriyet/90/770x0/6acf78f0494211cf12a891f3.jpg"
     ],
     "imagesKaynak": "https://shiftdelete.net/hurjetin-ispanya-versiyonu-geliyor",
-    "gorselDeneme": "2026-10-28T04:49:43.301Z"
+    "gorselDeneme": "2026-10-28T04:49:43.301Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Caviar_2340_Hard_Drive_Circuit_Board_Side_2.jpg/1280px-Caviar_2340_Hard_Drive_Circuit_Board_Side_2.jpg",
+      "foto": true
+    }
   },
   {
     "id": "50d6da061a10f941",
@@ -270011,14 +270265,19 @@
     "sourceUrl": "https://webrazzi.com/2026/10/15/byteplus-tek-gorselden-5-dakikaya-kadar-video-ureten-omnihuman-20i-kullanima-sundu/",
     "publishedAt": "2026-10-15T14:30:00.000Z",
     "generatedAt": "2026-10-15T17:57:04.574Z",
-    "image": "https://cdn.webrazzi.com/uploads/2026/10/omnihuman2-0-617.png",
+    "image": "/kapak/50d6da061a10f941.webp",
     "gorselKaynak": {
       "yazar": "N509FZ",
       "lisans": "CC BY-SA 4.0",
       "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Fangheng_Fashion_Center_with_ByteDance_markings_(20220728154237).jpg"
     },
-    "gorselDeneme": "2026-10-28T04:49:42.793Z"
+    "gorselDeneme": "2026-10-28T04:49:42.793Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://cdn.webrazzi.com/uploads/2026/10/omnihuman2-0-617.png",
+      "foto": false
+    }
   },
   {
     "id": "24f981146eb6b49b",
@@ -270038,18 +270297,23 @@
     "sourceUrl": "https://www.donanimhaber.com/amazon-un-muhammed-ali-dizisinden-yeni-fragman--211668",
     "publishedAt": "2026-10-15T14:28:00.000Z",
     "generatedAt": "2026-10-15T14:44:38.822Z",
-    "image": "https://www.donanimhaber.com/images/images/haber/211668/src/amazon-un-muhammed-ali-dizisinden-yeni-fragman211668_0.jpg",
+    "image": "/kapak/24f981146eb6b49b.webp",
     "gorselKaynak": {
-      "yazar": "Retired electrician",
-      "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:DIY_Arduino_LED_screen_for_audio_spectrum_analyzer_2.jpg"
+      "yazar": "DOE / National Renewable Energy Laboratory (NREL)",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Data_center_infrastructure_in_the_United_States.jpg"
     },
     "images": [
       "https://www.donanimhaber.com/images/images/haber/211668/src/amazon-un-muhammed-ali-dizisinden-yeni-fragman211668_0.jpg"
     ],
     "imagesKaynak": "https://www.donanimhaber.com/amazon-un-muhammed-ali-dizisinden-yeni-fragman--211668",
-    "gorselDeneme": "2026-10-28T04:49:42.673Z"
+    "gorselDeneme": "2026-10-28T04:49:42.673Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Data_center_infrastructure_in_the_United_States.jpg/1280px-Data_center_infrastructure_in_the_United_States.jpg",
+      "foto": true
+    }
   },
   {
     "id": "ba0c0c298eddc71d",
@@ -270069,14 +270333,19 @@
     "sourceUrl": "https://www.webtekno.com/samsung-dunyanin-en-kucuk-256-tb-ssd-h227230.html",
     "publishedAt": "2026-10-15T14:18:17.000Z",
     "generatedAt": "2026-10-15T14:33:19.597Z",
-    "image": "https://imgrosetta.webtekno.com/file/692917/692917-700x400.jpg",
+    "image": "/kapak/ba0c0c298eddc71d.webp",
     "gorselKaynak": {
       "yazar": "Kulawik.pl",
       "lisans": "CC BY-SA 4.0",
       "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_Fit_E.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:49:42.694Z"
+    "gorselDeneme": "2026-10-28T04:49:42.694Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://imgrosetta.webtekno.com/file/692917/692917-700x400.jpg",
+      "foto": false
+    }
   },
   {
     "id": "b5cb8e4925f3740c",
@@ -270096,14 +270365,19 @@
     "sourceUrl": "https://www.webtekno.com/acer-sospiro-a70-duyuruldu-h227215.html",
     "publishedAt": "2026-10-15T14:18:08.000Z",
     "generatedAt": "2026-10-15T14:33:32.262Z",
-    "image": "https://imgrosetta.webtekno.com/file/692879/692879-700x400.jpg",
+    "image": "/kapak/b5cb8e4925f3740c.webp",
     "gorselKaynak": {
       "yazar": "Dnalor 01",
       "lisans": "CC BY-SA 3.0",
       "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0/at/deed.en",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Ahornbl%C3%A4tter_(Acer)_im_Herbst.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:49:42.762Z"
+    "gorselDeneme": "2026-10-28T04:49:42.762Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://imgrosetta.webtekno.com/file/692879/692879-700x400.jpg",
+      "foto": false
+    }
   },
   {
     "id": "0feaad5c7878c333",
@@ -270123,14 +270397,19 @@
     "sourceUrl": "https://www.webtekno.com/now-nudge-turkce-geldi-h227179.html",
     "publishedAt": "2026-10-15T14:17:49.000Z",
     "generatedAt": "2026-10-15T14:34:05.771Z",
-    "image": "https://imgrosetta.webtekno.com/file/692776/692776-700x400.jpg",
+    "image": "/kapak/0feaad5c7878c333.webp",
     "gorselKaynak": {
       "yazar": "Kulawik.pl",
       "lisans": "CC BY-SA 4.0",
       "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_Fit_E.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:49:43.390Z"
+    "gorselDeneme": "2026-10-28T04:49:43.390Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://imgrosetta.webtekno.com/file/692776/692776-700x400.jpg",
+      "foto": false
+    }
   },
   {
     "id": "89ea63ba3cca0ab9",
@@ -270150,14 +270429,19 @@
     "sourceUrl": "https://www.webtekno.com/stellantis-kararini-verdi-maserati-gelecegi-netlesti-h227209.html",
     "publishedAt": "2026-10-15T14:16:52.000Z",
     "generatedAt": "2026-10-15T14:34:30.300Z",
-    "image": "https://imgrosetta.webtekno.com/file/692833/692833-700x400.jpg",
+    "image": "/kapak/89ea63ba3cca0ab9.webp",
     "gorselKaynak": {
       "yazar": "Ottaviani Serge",
       "lisans": "CC BY-SA 4.0",
       "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Usine_Stellantis_d%27Hordain_-_atelier_Montage_(27).jpg"
     },
-    "gorselDeneme": "2026-10-28T04:49:43.039Z"
+    "gorselDeneme": "2026-10-28T04:49:43.039Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://imgrosetta.webtekno.com/file/692833/692833-700x400.jpg",
+      "foto": false
+    }
   },
   {
     "id": "da7e4db37755af3f",
@@ -270178,14 +270462,19 @@
     "sourceUrl": "https://www.webtekno.com/abd-8-eyalet-openai-dava-acti-h227212.html",
     "publishedAt": "2026-10-15T14:16:32.000Z",
     "generatedAt": "2026-10-15T14:34:43.465Z",
-    "image": "https://imgrosetta.webtekno.com/file/692872/692872-700x400.jpg",
+    "image": "/kapak/da7e4db37755af3f.webp",
     "gorselKaynak": {
       "yazar": "European Commission - Photographer: Aurore Martignoni",
       "lisans": "CC BY 4.0",
       "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Visit_of_OpenAI_representatives_to_the_European_Commission_-_P061880-380830.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:49:42.904Z"
+    "gorselDeneme": "2026-10-28T04:49:42.904Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://imgrosetta.webtekno.com/file/692872/692872-700x400.jpg",
+      "foto": false
+    }
   },
   {
     "id": "0b94516969e3e44b",
@@ -270210,7 +270499,7 @@
     "sourceUrl": "https://www.donanimhaber.com/gta-6-cikis-fragmani-yayinlandi-buyuleyici-goruntuler-bir-arada--211681",
     "publishedAt": "2026-10-15T14:15:32.000Z",
     "generatedAt": "2026-10-15T17:57:17.944Z",
-    "image": "https://www.donanimhaber.com/images/images/haber/211681/src/gta-6-cikis-fragmani-yayinlandi-buyuleyici-goruntuler-bir-arada211681_0.jpg",
+    "image": "/kapak/0b94516969e3e44b.webp",
     "gorselKaynak": {
       "yazar": "Ken Questa",
       "lisans": "CC BY-SA 4.0",
@@ -270222,7 +270511,12 @@
       "https://www.donanimhaber.com/images/images/haber/211681/src/gta-6-cikis-fragmani-yayinlandi-buyuleyici-goruntuler-bir-arada211681_1.jpg"
     ],
     "imagesKaynak": "https://www.donanimhaber.com/gta-6-cikis-fragmani-yayinlandi-buyuleyici-goruntuler-bir-arada--211681",
-    "gorselDeneme": "2026-10-28T04:49:43.173Z"
+    "gorselDeneme": "2026-10-28T04:49:43.173Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://www.donanimhaber.com/images/images/haber/211681/src/gta-6-cikis-fragmani-yayinlandi-buyuleyici-goruntuler-bir-arada211681_0.jpg",
+      "foto": false
+    }
   },
   {
     "id": "39e24a0822efd077",
@@ -270242,14 +270536,19 @@
     "sourceUrl": "https://www.webtekno.com/amazon-bee-frontier-eclipse-ozellikleri-h227257.html",
     "publishedAt": "2026-10-15T14:15:04.000Z",
     "generatedAt": "2026-10-15T14:45:38.723Z",
-    "image": "https://imgrosetta.webtekno.com/file/693023/693023-700x400.jpg",
+    "image": "/kapak/39e24a0822efd077.webp",
     "gorselKaynak": {
       "yazar": "Sergei Magel/HNF",
       "lisans": "CC BY-SA 4.0",
       "lisansUrl": "",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Artificial_Intelligence_(AI)_and_Robotics_exhibition_at_the_Heinz_Nixdorf_MuseumsForum.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:49:43.001Z"
+    "gorselDeneme": "2026-10-28T04:49:43.001Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://imgrosetta.webtekno.com/file/693023/693023-700x400.jpg",
+      "foto": false
+    }
   },
   {
     "id": "b1d5facf28cc1dd5",
@@ -270269,7 +270568,7 @@
     "sourceUrl": "https://www.webtekno.com/gelecege-donusun-efsanesi-gercek-oluyor-delorean-ucan-otomobil-yarisina-katiliyor-h227254.html",
     "publishedAt": "2026-10-15T14:14:53.000Z",
     "generatedAt": "2026-10-15T14:46:38.994Z",
-    "image": "https://imgrosetta.webtekno.com/file/693007/693007-700x400.jpg",
+    "image": "/kapak/b1d5facf28cc1dd5.webp",
     "categorySlug": "kultur",
     "gorselKaynak": {
       "yazar": "Ethan Llamas",
@@ -270277,6 +270576,11 @@
       "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:1983_DeLorean_DMC-12,_front_right,_05-18-2024.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:49:43.167Z"
+    "gorselDeneme": "2026-10-28T04:49:43.167Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://imgrosetta.webtekno.com/file/693007/693007-700x400.jpg",
+      "foto": false
+    }
   }
 ]
