@@ -43,28 +43,11 @@ const { article } = Astro.props;
 const all = getYayinArticles();
 const date = formatDate(publishedISO(article));
 
-// Kapak görselinin kredisi: açık lisanslı fotoğrafta (Openverse/Commons)
-// fotoğrafçı + lisans, kaynak siteden alınan fotoğrafta yayın adı gösterilir.
-// Tasarım kartında (foto === false) fotoğraf olmadığı için kredi basılmaz.
-const kapakKredisi =
-  article.kapak?.foto === false
-    ? null
-    : article.gorselKaynak && article.gorselKaynak.sayfa
-      ? {
-          ad: [article.gorselKaynak.yazar, article.gorselKaynak.lisans].filter(Boolean).join(" · "),
-          url: article.gorselKaynak.sayfa,
-        }
-      : article.source
-        ? { ad: article.source, url: article.sourceUrl || "" }
-        : null;
-// Atıf yalnızca lisansın istediği hâllerde (CC BY / CC BY-SA) rozet olarak
-// gösterilir. Kamu malı / CC0 fotoğraflarda ve tasarım kartlarında hiçbir
-// kredi basılmaz. Rozet fotoğrafın köşesinde küçük bir "i"dir; metin yoktur.
-const kapakAtif =
-  Boolean(kapakKredisi?.ad) &&
-  !/^(CC0|Kamu malı|Public domain|No restrictions)/i.test(
-    String(article.gorselKaynak?.lisans || ""),
-  );
+// GÖRSEL KREDİSİ GÖSTERİLMEZ.
+// Kapaklar yalnızca atıf gerektirmeyen lisanslardan (CC0 / kamu malı), AI
+// üretiminden veya markalı tasarım kartından gelir. Kaynak sitenin fotoğrafı
+// kapak yapılmadığı için "yayın adı" da yazılmaz. Eski CC BY görsellerin
+// lisans kaydı /gorsel-kaynaklari/ sayfasında toplu olarak tutulur.
 
 // AI üretimi kapak: kaynağı gerçek bir fotoğrafçı değil. Sitede küçük bir
 // "AI görsel" rozeti gösterilir; okuyucu temsili görselle haber fotoğrafını
@@ -171,12 +154,13 @@ const gorselKimlik = (url) => {
 };
 
 // --- Haber içi fotoğraflar ---
-// YALNIZCA haberin çıktığı sitenin kendi sayfasındaki gövde fotoğrafları
-// (`images`, scripts/kaynak-gorsel.mjs ile toplanır) kullanılır. Wikimedia
-// stoğu artık gövdeye konmuyor: tek kelime eşleşmesi yüzünden telefon haberine
-// mezar taşı fotoğrafı düşebiliyordu. Kaynak fotoğraf = yayıncının kendi
-// metniyle birlikte yayınladığı fotoğraf, yani haberle ilgili olduğu kesin.
-const kaynakIciUrller = Array.isArray(article.images) ? article.images.filter(Boolean) : [];
+// YALNIZCA atıf gerektirmeyen lisanslı (CC0 / kamu malı) stok fotoğraflar
+// gövdeye girer. Kaynak sitenin kendi gövde fotoğrafları (`article.images`)
+// kullanılmaz: ajans telifli olabiliyor ve sayfada kredi gösterilmiyor.
+const KAMU_MALI = /^(cc0\b|public domain\b|pd\b|pd[- ].*|no restrictions\b|kamu mal[ıi]$)/i;
+const kaynakIciUrller = (Array.isArray(article.gorselEk) ? article.gorselEk : [])
+  .filter((g) => g && typeof g.url === "string" && KAMU_MALI.test(String(g.lisans || "").trim()))
+  .map((g) => g.url);
 
 const gorulenKimlikler = new Set([gorselKimlik(kapak)].filter(Boolean));
 const hamAdaylar = kaynakIciUrller.map((u) => ({ url: u }));
@@ -467,16 +451,6 @@ const breadcrumbLd = {
               title="Bu kapak, haberi temsil etmek için yapay zeka ile üretilmiştir."
             >AI görsel</span>
           )}
-          {kapakAtif && kapakKredisi?.url && (
-            <a
-              class="post__kaynak"
-              href={kapakKredisi.url}
-              target="_blank"
-              rel="noopener nofollow"
-              title={`Görsel: ${kapakKredisi.ad}`}
-              aria-label={`Görsel kaynağı ve lisansı: ${kapakKredisi.ad}`}
-            >i</a>
-          )}
         </div>
       )}
 
@@ -532,8 +506,6 @@ const breadcrumbLd = {
                     <HaberFigur
                       url={foto.url}
                       baslik={foto.caption || article.title}
-                      kaynakAd={article.source}
-                      kaynakUrl={article.sourceUrl}
                       altyazi={foto.altyazi || undefined}
                       alt={foto.alt || `${article.title} — haber fotoğrafı`}
                     />
@@ -1028,33 +1000,6 @@ const breadcrumbLd = {
   }
   .post__img.is-broken {
     opacity: 0;
-  }
-  /* Kaynak/lisans rozeti: kapak fotoğrafının sol alt köşesinde küçük "i".
-     Metin yok; tıklanınca fotoğrafçı + lisans bilgisinin bulunduğu sayfa açılır. */
-  .post__kaynak {
-    position: absolute;
-    z-index: 3;
-    left: 12px;
-    bottom: 12px;
-    display: grid;
-    place-items: center;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: rgba(15, 23, 42, 0.62);
-    color: #fff;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 13px;
-    font-style: italic;
-    line-height: 1;
-    text-decoration: none;
-    opacity: 0.75;
-    transition: opacity 0.2s ease, background 0.2s ease;
-  }
-  .post__kaynak:hover,
-  .post__kaynak:focus-visible {
-    opacity: 1;
-    background: var(--brand-strong);
   }
   /* AI üretimi kapak rozeti: sağ alt köşede küçük, tıklanamaz etiket. */
   .post__ai-rozet {
