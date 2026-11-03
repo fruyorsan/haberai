@@ -7,15 +7,15 @@ Amaç: yeni bir sunucu kiralamadan, yayının kesilmeden büyümesi.
 > Ölçüm tarihi: **2 Kasım 2026**. Sayılar her derlemede değişir; güncel değer
 > için `npm run butce` çalıştırın veya GitHub Actions özetine bakın.
 >
-> **Durum:** Varyant temizliği ve yayın bütçesi kontrolü yayında. Cloudflare
-> Pages'e geçiş için tek eksik **`CLOUDFLARE_PAGES_TOKEN`** (aşağıdaki 5. bölüm).
-> O token eklenene kadar yayın GitHub Pages'te devam eder.
+> **Durum (3 Kasım 2026):** Yayın **Cloudflare Pages**'e taşındı
+> (`DEPLOY_TARGET=cloudflare`, proje `haberai`). Özel alan adı `haberinai.site`
+> ve `www` canlı. GitHub Pages yedek olarak duruyor; artık push edilmiyor.
 
 ## 1. Bugünkü durum
 
 | Ölçüm | Değer | Anlamı |
 | --- | --- | --- |
-| Derleme çıktısı | **9.521 dosya / 823 MB** | GitHub Pages'te dosya sınırının %95'i |
+| Derleme çıktısı | **9.521 dosya / 823 MB** | Cloudflare 20.000 dosya sınırının %48'i |
 | HTML sayfası | 6.485 | Haber + kategori + etiket + sayfalama |
 | Yerel kapak | 2.827 | 2.458 webp + 369 sosyal JPEG |
 | Kaynak depo | ~945 MB | Git geçmişi; GitHub'ın 1 GB "yumuşak" eşiğine yakın |
@@ -31,8 +31,8 @@ artık `wsrv.nl` üzerinden aynı görseli alıyor. Yayın **11.461 → 9.521 do
 
 | Sağlayıcı | Depolama | Dosya | Bant genişliği | Not |
 | --- | --- | --- | --- | --- |
-| **GitHub Pages** | 1 GB | ~10.000 | ~100 GB/ay | Şu an kullanılıyor; **en kısa sınır** |
-| **Cloudflare Pages** | **Toplam sınır yok** | **20.000** | **Sınırsız** | Tek dosya 25 MiB; direct upload build kotası yemez |
+| **GitHub Pages** | 1 GB | ~10.000 | ~100 GB/ay | Yedek; artık push edilmiyor |
+| **Cloudflare Pages** | **Toplam sınır yok** | **20.000** | **Sınırsız** | **Şu an kullanılıyor**; tek dosya 25 MiB; direct upload build kotası yemez |
 | **Cloudflare R2** | 10 GB | — | **Egress ücretsiz** | Görselleri siteden ayırmak için |
 | **Cloudflare Workers** | — | — | 100.000 istek/gün | İleride dinamik arşiv için |
 
@@ -89,7 +89,8 @@ sert kabul edilir; Cloudflare'de 20.000 dosya ve 25 MiB/dosya serttir.
 
 `site/public/_headers` (Cloudflare Pages / Netlify):
 
-- HTML: 60 sn taze + 5 dk bayat servis (`stale-while-revalidate`).
+- HTML: Cloudflare Pages yanıtları her istekte doğrular (`max-age=0,
+  must-revalidate`); haber tazeliği için bilinçli tercih.
 - `/_astro/*`: 1 yıl, `immutable`.
 - `/kapak/*`: 1 gün taze + 7 gün bayat.
 - Feed ve site haritaları: 5-60 dk.
@@ -110,66 +111,42 @@ Cloudflare Pages Brotli, HTTP/3 ve global anycast CDN'i otomatik verir.
 `both` modunda Cloudflare hatası GitHub yayınını **engellemez**
 (`continue-on-error`), böylece haber akışı durmaz.
 
-## 5. Cloudflare Pages'e geçiş (tek seferlik)
+## 5. Cloudflare Pages'e geçiş (tamamlandı — 3 Kasım 2026)
+
+| Bileşen | Değer |
+| --- | --- |
+| Proje | `haberai` → `https://haberai.pages.dev` |
+| Yayın yöntemi | `wrangler pages deploy` (direct upload, build kotası yemez) |
+| GitHub otomatik dağıtımı | **Kapalı** (her push'ta build tetikleyip 500/ay kotayı bitiriyordu) |
+| Alan adları | `haberinai.site`, `www.haberinai.site` (Proxied) |
+| DNS | `@` ve `www` CNAME → `haberai.pages.dev` |
+| `DEPLOY_TARGET` | `cloudflare` (GitHub Pages adımı atlanıyor) |
 
 Mevcut `CLOUDFLARE_API_TOKEN` **yalnızca Workers AI** (kapak üretimi) içindir;
-Pages API'si 403 döner. Bu yüzden **ayrı** bir token gerekir.
+Pages için ayrı `CLOUDFLARE_PAGES_TOKEN` kullanılır.
+
+Adımlar (kayıt için):
 
 1. **Cloudflare → My Profile → API Tokens → Create Token → Custom token.**
-   İzinler:
-   - `Account` → **Cloudflare Pages** → **Edit**
-   - `Account` → **Account Settings** → **Read** (hesap listesi için)
-   - Kaynak: hesabınızı seçin.
-   Token'ı kopyalayın.
-
-2. Token'ı GitHub'a ekleyin (mevcut AI token'ına dokunmayın):
-
-   ```bash
-   gh secret set CLOUDFLARE_PAGES_TOKEN
-   ```
-
-3. Cloudflare'de **Workers & Pages → Create → Pages → Direct Upload** ile
-   `haberinai` adlı projeyi oluşturun. (Workflow ilk çalışmada projeyi
-   `pages project create` ile kendisi de oluşturur; adım idempotenttir. Proje
-   adı `CLOUDFLARE_PROJECT` değişkeniyle değiştirilebilir.)
-
-4. Önce **iki hedefe** yayınlayın:
-
-   ```bash
-   gh variable set DEPLOY_TARGET --body "both"
-   gh workflow run pipeline.yml
-   ```
-
-   Actions'ta `Cloudflare Pages'e yayinla` adımının başarılı olduğunu doğrulayın.
-   Cloudflare panelinde `https://haberinai.pages.dev` adresini açın.
-
-5. **DNS'i taşıyın** (kesintisiz geçiş):
-
-   - Cloudflare → Pages → `haberinai` → **Custom domains** → `haberinai.site`
-     ve `www.haberinai.site` ekleyin.
-   - Cloudflare, mevcut DNS kayıtlarını (GitHub Pages A kayıtları
-     `185.199.108-111.153`, `www` CNAME → `fruyorsan.github.io`) değiştirmeyi
-     teklif eder; onaylayın.
-   - SSL/TLS modu **Full (strict)** kalabilir; Cloudflare Pages sertifikayı
-     kendisi yönetir.
-   - `haberinai.site` ve `www` yanıtlarını kontrol edin:
-
-     ```bash
-     curl -I https://haberinai.site
-     curl -I https://www.haberinai.site
-     ```
-
-6. DNS doğrulandıktan sonra yalnızca Cloudflare'e geçin:
-
-   ```bash
-   gh variable set DEPLOY_TARGET --body "cloudflare"
-   ```
-
-7. GitHub Pages'i yedek olarak bırakın (silmeniz gerekmez). Geri dönmek için:
+   İzinler: `Account` → **Cloudflare Pages** → **Edit** ve
+   `Account` → **Account Settings** → **Read**.
+2. `gh secret set CLOUDFLARE_PAGES_TOKEN`
+3. Proje adı `CLOUDFLARE_PROJECT` değişkeniyle verilir (`haberai`). Workflow ilk
+   çalışmada `pages project create` ile projeyi oluşturmayı da dener (idempotent).
+4. Geçiş sırasında `DEPLOY_TARGET=both` ile iki hedefe yayınlanır; doğrulandıktan
+   sonra `cloudflare` yapılır.
+5. **DNS:** `@` ve `www` için `CNAME → haberai.pages.dev`, **Proxied**.
+   GitHub Pages A kayıtları (`185.199.108-111.153`) ve
+   `www → fruyorsan.github.io` silinir.
+6. SSL/TLS modu **Full (strict)** kalabilir; sertifikayı Cloudflare yönetir.
+7. GitHub Pages yedek olarak bırakılır (silinmez). Geri dönmek için:
 
    ```bash
    gh variable set DEPLOY_TARGET --body "both"    # ya da "github"
    ```
+
+> **Dikkat:** `*.pages.dev` bazı ISS'lerde (TR) DNS/SNI ile engellenir. Test için
+> özel alan adını kullanın; `pages.dev` adresi çalışmıyor görünebilir.
 
 ### Geri alma
 

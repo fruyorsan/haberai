@@ -6,8 +6,8 @@
 # altta, yalnızca güvenlik başlığı yazan genel kural en sonda durur.
 # ---------------------------------------------------------------------------
 
-# HTML: taze haber için kısa önbellek. 60 sn sonra yeniden doğrulanır; CDN
-# kesintisinde 5 dk'ya kadar eski sayfa servis edilebilir (stale-while-revalidate).
+# HTML dışı dosyalar için varsayılan: 60 sn taze. Cloudflare Pages HTML
+# yanıtlarını her istekte doğrular (max-age=0); haber tazeliği için bilinçli.
 /*
   Cache-Control: public, max-age=60, stale-while-revalidate=300
 
