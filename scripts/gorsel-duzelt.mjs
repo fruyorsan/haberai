@@ -61,6 +61,13 @@ for (const a of hedefler) {
     console.warn("  ! arama hatası:", err.message);
   }
   if (!secili) secili = yedekGorsel(a.category, a.id);
+  if (!secili) {
+    // Atıf gerektirmeyen hiçbir kare yok: haberi olduğu gibi bırak. Kaynak
+    // sitenin fotoğrafına geçmek yasak; boş görsel markalı kapağa düşer.
+    console.log(`${dry ? "[dry] " : ""}${a.title.slice(0, 55)}`);
+    console.log("   atlandı: uygun lisanslı fotoğraf bulunamadı");
+    continue;
+  }
 
   console.log(`${dry ? "[dry] " : ""}${a.title.slice(0, 55)}`);
   console.log(`   eski : ${String(a.image || "").split("/").pop().slice(0, 70)}`);

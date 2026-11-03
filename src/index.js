@@ -568,12 +568,22 @@ async function main() {
           ],
           { adet: 1, kullanilan: kullanilanGorsel, afet, marka }
         );
-        if (!stok.length) stok = [yedekGorsel(cleaned.category, cleaned.slug || cleaned.title)];
-        kapakGorsel = stok[0];
+        if (!stok.length) {
+          const yedek = yedekGorsel(cleaned.category, cleaned.slug || cleaned.title);
+          if (yedek) stok = [yedek];
+        }
+        // Hiç uygun kare yoksa görsel boş kalır; site markalı varsayılan kapağı
+        // gösterir, kapak üretim adımı sonraki turda fotoğraf ya da kart üretir.
+        kapakGorsel = stok[0] || { url: "" };
       }
 
-      kullanilanGorsel.add(kapakGorsel.url);
-      gorselSayaci.set(gorselKimlik(kapakGorsel.url), (gorselSayaci.get(gorselKimlik(kapakGorsel.url)) || 0) + 1);
+      if (kapakGorsel.url) {
+        kullanilanGorsel.add(kapakGorsel.url);
+        gorselSayaci.set(
+          gorselKimlik(kapakGorsel.url),
+          (gorselSayaci.get(gorselKimlik(kapakGorsel.url)) || 0) + 1
+        );
+      }
 
       // 2) Gövde içi detay fotoğrafları: Commons stoğundan.
       let ekler = [];

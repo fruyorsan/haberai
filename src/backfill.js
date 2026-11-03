@@ -71,7 +71,17 @@ async function gorselYaz(a, sorgu, kullanilan) {
     [marka, konuSorgu(sorgu, a.title), sorgu, kisaSorgu(sorgu), KATEGORI_SORGU[a.category]],
     { adet: 3, kullanilan, afet: afetMi(a.title, a.summary), marka }
   );
-  if (!stok.length) stok = [yedekGorsel(a.category, a.id)];
+  if (!stok.length) {
+    const yedek = yedekGorsel(a.category, a.id);
+    if (yedek) stok = [yedek];
+  }
+  if (!stok.length) {
+    // Atıf gerektirmeyen tek bir kare bile bulunamadı. Kaynak sitenin
+    // fotoğrafını koymak yasak olduğu için görsel boş bırakılır; site markalı
+    // varsayılan kapağı (/og-default.png) gösterir ve haber bir sonraki turda
+    // yeniden denenir.
+    return false;
+  }
 
   const [kapak, ...ekler] = stok;
   a.image = kapak.url;
