@@ -136,8 +136,9 @@ jobs:
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          AI_KAPAK_LIMIT: "2"
-        run: node scripts/kapak-uret.mjs --uzak --limit=40 --paralel=6
+          # Arsivde AI kotasi harcanmaz: kota taze haberlerin kapaklarina kalir.
+          AI_KAPAK_LIMIT: "0"
+        run: node scripts/kapak-uret.mjs --uzak --limit=80 --paralel=8
 
       # GUVENLIK AGI: kapak adimi bir haberi atlarsa `image` alani Wikimedia
       # stogunda kalabiliyor (baslikla ilgisiz kare). En yeni stok gorselli
