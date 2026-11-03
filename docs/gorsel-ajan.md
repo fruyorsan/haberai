@@ -15,7 +15,8 @@ Eski akış iki kötü uç arasında sıkışıyordu:
 
 1. **Kaynak sitenin og:image'i.** ShiftDelete gibi siteler haber kartı, başlık
    plakası veya ürün tanıtım görseli koyuyor; bunlar kapak olunca haberle
-   alakasız görünüyor.
+   alakasız görünüyor. Kareler ayrıca ajans telifli olabiliyor. **Bugün kaynak
+   sitenin fotoğrafı hiçbir biçimde aday bile yapılmaz.**
 2. **Dosya adı eşleşen ilk Commons karesi.** "telefon" geçen habere eski bir
    telefon müzesi fotoğrafı, "savaş" geçen habere harita düşebiliyordu.
 
@@ -34,8 +35,8 @@ haber (başlık + özet + gövde)
         │
         ▼
 2. ADAYLAR (src/gorsel-ajan.js → adaylariTopla)
-   Wikimedia Commons + Openverse (yalnızca CC0 / kamu malı / CC BY / CC BY-SA)
-   + arşivdeki serbest lisanslı gorselEk / gorselKaynak dosyası
+   Wikimedia Commons + Openverse (yalnızca CC0 / kamu malı)
+   + arşivdeki CC0 / kamu malı gorselEk / gorselKaynak dosyası
    + mevcut kapak (yalnızca karşılaştırma için)
         │
         ▼
@@ -91,11 +92,15 @@ AI sağlayıcısı yoksa `gorselBrifiYedek(article)` devreye girer: başlık,
 
 | Kaynak | Lisans filtresi | Not |
 | --- | --- | --- |
-| Wikimedia Commons | CC0, kamu malı, CC BY, CC BY-SA | `filemime:image/jpeg`, min 700×350, oran 1.15–2.8 |
-| Openverse | `cc0,by,by-sa` | `size=large`, `aspect_ratio=wide`, `mature=false` |
-| Arşiv (`gorselEk`) | CC0, kamu malı, CC BY, CC BY-SA | Habere daha önce eklenmiş, altyazısı bağlanmış kareler |
-| Arşiv (`gorselKaynak`) | Commons dosyasıysa | Tasarım kartının altındaki gerçek fotoğraf |
+| Wikimedia Commons | CC0, kamu malı, "no restrictions" | `filemime:image/jpeg`, min 700×350, oran 1.15–2.8 |
+| Openverse | `cc0` | `size=large`, `aspect_ratio=wide`, `mature=false` |
+| Arşiv (`gorselEk`) | CC0, kamu malı, "no restrictions" | Habere daha önce eklenmiş, altyazısı bağlanmış kareler |
+| Arşiv (`gorselKaynak`) | Commons dosyasıysa ve lisansı atıf istemiyorsa | Tasarım kartının altındaki gerçek fotoğraf |
 | Mevcut kapak | — | Yalnızca "yeni aday gerçekten daha iyi mi?" karşılaştırması |
+
+> **CC BY ve CC BY-SA neden yok?** Sitede görsel kredisi gösterilmiyor; bu
+> lisanslar atıf şartı getirdiği için kullanılamaz. Arşivdeki eski CC BY
+> kapakların toplu atıf kaydı `/gorsel-kaynaklari/` sayfasında tutulur.
 
 **Varlık sorguları (en önemli kalite kaldıracı).** Commons başlıkla arama yapar;
 "smartphone camera under display" gibi kavramsal sorgular ya boş dönüyor ya da

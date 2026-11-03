@@ -54,27 +54,34 @@ Tüm ayarlar `src/config.js` içinde:
 - `maxAgeHours` → bundan eski haberleri atla
 - `model` → Gemini modeli
 
-## Görseller: telif güvenli stok (kaynak fotoğrafı KULLANILMAZ)
+## Görseller: atıf gerektirmeyen kaynaklar (kaynak fotoğrafı KULLANILMAZ)
 
 Kaynak sitelerin haber fotoğrafları çoğu zaman ajans lisanslıdır (AA, Getty,
-Reuters, DHA...). Atıf yazmak bunu yasal hâle getirmez. Bu yüzden hat, kaynağın
-fotoğrafını **hiç kullanmaz**; her habere Wikimedia Commons'tan **serbest
-lisanslı** (CC0 / kamu malı / CC BY / CC BY-SA) ve habere özel bir fotoğraf
-seçer. Ücretli stok hesabı veya API anahtarı gerekmez.
+Reuters, DHA...). Atıf yazmak bunu yasal hâle getirmez, ayrıca yayıncının haber
+kartı kapak olunca "bu ne alaka" görüntüsü doğuyordu. Bu yüzden hat, başka bir
+sitenin fotoğrafını **hiç kullanmaz**. Kapak ve gövde görselleri yalnızca üç
+kaynaktan gelir:
+
+1. **CC0 / kamu malı stok** (Wikimedia Commons, Openverse) — atıf zorunlu değil.
+2. **Cloudflare Workers AI** ile üretilen habere özel 16:9 görsel.
+3. **HaberinAi tasarım kartı** (kategori rengi + başlık) — hiçbiri yoksa.
+
+CC BY / CC BY-SA bilinçli olarak **kullanılmaz**: bu lisanslar atıf şartı getirir,
+sitede ise görsel kredisi gösterilmiyor.
 
 Akış (`src/stok-gorsel.js`):
 
 1. AI, haber için **İngilizce bir görsel sorgusu** üretir (`gorselSorgu`):
    "iPhone 17", "Togg T10X", "Galatasaray stadium", "stock market trading floor".
-2. Commons'ta 22 aday aranır; şunlar elenir: serbest olmayan lisans (GFDL,
-   fair use), dikey/kare veya çok küçük görseller (min 1000×560), logo/harita/
-   ekran görüntüsü/eski arşiv taramaları, JPEG dışı dosyalar.
+2. Commons'ta 22 aday aranır; şunlar elenir: atıf gerektiren lisans (CC BY,
+   BY-SA, GFDL), fair use, dikey/kare veya çok küçük görseller (min 1000×560),
+   logo/harita/ekran görüntüsü/eski arşiv taramaları, JPEG dışı dosyalar.
 3. Kalanlar başlık-alaka + çözünürlük puanına göre sıralanır; **1 kapak + 2
    gövde içi** fotoğraf seçilir. Aynı kare arşivde başka habere kapak olmaz.
-4. Fotoğrafın **fotoğrafçısı, lisansı ve Commons dosya sayfası** habere yazılır
-   (`gorselKaynak` / `gorselEk`). Sitede atıf olarak gösterilir:
-   kapakta "Fotoğraf: X · CC BY-SA 4.0 · Wikimedia Commons", gövde
-   fotoğraflarında lisans ve dosya sayfası **tıklanabilir**.
+4. Fotoğrafın fotoğrafçısı/lisansı `gorselKaynak` / `gorselEk` alanında **iç
+   kayıt** olarak tutulur; sayfada kredi metni veya rozet gösterilmez
+   (CC0/kamu malı için zorunlu değil). Arşivdeki eski CC BY kapakların toplu
+   atıf kaydı `/gorsel-kaynaklari/` sayfasındadır.
 5. Hiç uygun fotoğraf bulunamazsa kategorinin doğrulanmış yedek havuzundan
    (her kategori için 4 görsel, haber id'sine göre deterministik seçim)
    biri kullanılır: haber **asla fotoğrafsız/brandalı yer tutucuyla kalmaz**.
@@ -151,10 +158,10 @@ artık her haber için gerçek bir görsel editör gibi çalışır:
 1. **Brif:** AI, haberin tek karede ne anlatması gerektiğini çıkarır
    ("15 yaş altı sosyal medya yasağı" → elinde telefon tutan genç) ve İngilizce
    arama sorguları üretir.
-2. **Adaylar:** Wikimedia Commons + Openverse (yalnızca CC0 / kamu malı /
-   CC BY / CC BY-SA) ve arşivdeki serbest lisanslı `gorselEk` fotoğrafları.
-   Kaynak sitenin kendi fotoğrafı **yeni kapak olarak seçilmez**; ajans
-   telifli olabiliyor ve kullanıcının şikâyet ettiği haber kartı sorununun
+2. **Adaylar:** Wikimedia Commons + Openverse (yalnızca CC0 / kamu malı) ve
+   arşivdeki CC0/kamu malı `gorselEk` fotoğrafları. Kaynak sitenin kendi
+   fotoğrafı **kapak olarak da gövdede de kullanılmaz**; ajans telifli
+   olabiliyor ve kullanıcının şikâyet ettiği haber kartı sorununun
    kaynağıydı.
 3. **Göz kontrolü:** Gemini/Cloudflare vision adayları gerçekten görür; alaka
    %55, dikkat %30, kalite %15 ile puanlar. Vision yoksa kapak değiştirilmez.
@@ -936,12 +943,12 @@ fotoğraf** → markalı kapak (`/og-default.png`). Böylece sitede hiçbir yerd
 fotoğraf görünmez. Aynı süzgeç kartlarda, vitrinde, "Okumaya Devam Et" zincirinde, arama
 sonuçlarında ve `og:image` etiketinde de uygulanır.
 
-**2) Haber içi ek fotoğraflar (`src/ek-gorsel.mjs`).** Haber sayfasında okurken metnin
-arasında 1-2 gerçek fotoğraf görünür (kaynak atıflı). Fotoğraf yalnızca "aynı haber"
-olduğu kanıtlanabilen adaylardan seçilir: aynı kök alan adı **ve** kapak/kaynak adresle
-ayırt edici sözcük ya da haber kimliği paylaşımı. Ayrıca arşivde başka bir haberin kapağı
-veya ek fotoğrafı olan görseller hiç eklenmez (yan sütundaki "diğer haberler" küçük
-resimleri tam da bu yüzden yanlış olur). Kanıt yoksa ek fotoğraf eklenmez.
+**2) Haber içi ek fotoğraflar (`site/src/pages/haber/[slug].astro`).** Haber sayfasında
+okurken metnin arasında en fazla 2 fotoğraf görünür. Havuz **yalnızca CC0 / kamu malı**
+lisanslı `gorselEk` kayıtlarıdır; kaynak sitenin gövde fotoğrafları (`images`) artık
+kullanılmaz ve fotoğrafların altına/köşesine kredi veya kaynak yazısı basılmaz.
+Kapakla aynı kare tekrar edilmez; dosya adresi yerel değilse `wsrv.nl` üzerinden
+ölçeklendirilir.
 
 ```powershell
 npm run ek-gorsel:dry      # hangi haberlere bakılacağını listeler
