@@ -51,7 +51,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:13.301Z",
+    "gorselDeneme": "2026-11-03T02:20:56.964Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ichef.bbci.co.uk/ace/standard/1200/cpsprodpb/a969/live/dd51e9c0-d729-11f1-9b56-c9b433d51ba8.jpg",
@@ -106,7 +106,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:14.385Z",
+    "gorselDeneme": "2026-11-03T02:20:57.480Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2470000/donald-trumpaa-2470374.jpg",
@@ -171,7 +171,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:14.624Z",
+    "gorselDeneme": "2026-11-03T02:20:57.692Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/manisa-kazaaa-2500608.jpg",
@@ -229,7 +229,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:13.367Z",
+    "gorselDeneme": "2026-11-03T02:20:56.973Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Binance_t-shirt_and_bag_-_2022-07-09.jpg/1920px-Binance_t-shirt_and_bag_-_2022-07-09.jpg",
@@ -378,7 +378,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:14.859Z",
+    "gorselDeneme": "2026-11-03T02:20:57.801Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2492000/enflasyon-stok-2493448.jpg",
@@ -444,7 +444,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:13.421Z",
+    "gorselDeneme": "2026-11-03T02:20:56.997Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Cobra_Gold_25-_Multinational_service_members_participate_in_Amphibious_Exercise_%288903160%29.jpg/1920px-Cobra_Gold_25-_Multinational_service_members_participate_in_Amphibious_Exercise_%288903160%29.jpg",
@@ -648,7 +648,7 @@
     "publishedAt": "2026-11-02T23:37:31.000Z",
     "generatedAt": "2026-11-02T23:39:01.844Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:13.471Z",
+    "gorselDeneme": "2026-11-03T02:20:57.026Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ichef.bbci.co.uk/ace/standard/1200/cpsprodpb/7af5/live/6a1bb4a0-d67e-11f1-ac3d-edfeb9f7d0aa.jpg",
@@ -738,7 +738,14 @@
     },
     "images": [
       "https://img.merlininkazani.com/8927/call-of-duty-nin-eski-guzel-gunlerine-donmesinin-tek-yolu-var-264073-main-56447-large.webp"
-    ]
+    ],
+    "gorselAjan": {
+      "tarih": "2026-11-03T02:26:44.086Z",
+      "sonuc": "atlandi",
+      "neden": "mevcut kapak daha iyi",
+      "secim": "mevcut",
+      "skor": 86
+    }
   },
   {
     "id": "856964413328409c",
@@ -778,14 +785,28 @@
     "breaking": true,
     "kapak": {
       "v": 3,
-      "kaynak": "https://i.haberglobal.com/storage/files/images/2021/09/23/haberglobal-sondakika-1jxM.png",
-      "foto": true
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/IPhone_13_iPhone_4s_backside_01.jpg/1920px-IPhone_13_iPhone_4s_backside_01.jpg",
+      "foto": true,
+      "ajan": {
+        "v": 1,
+        "secim": "commons",
+        "skor": 73,
+        "neden": "Güncel iPhone modellerini net bir şekilde gösteriyor, haberle doğrudan ilgili.",
+        "brif": "Modern bir teknoloji mağazası vitrininde, camın arkasında sıralanmış yeni nesil iPhone 15 serisi telefonlar; telefonların ekranları kapalı, metalik çerçeveleri vitrin ışığıyla parlıyor, arka planda mağaza içi bulanık ve loş.",
+        "sorgular": [
+          "iphone 15 retail display",
+          "smartphone store window",
+          "apple phone product shot",
+          "tech store interior phones"
+        ],
+        "tarih": "2026-11-03T02:26:54.817Z"
+      }
     },
     "gorselKaynak": {
-      "yazar": "ComputerUserUser",
-      "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Caviar_2340_Hard_Drive_Circuit_Board_Side_2.jpg"
+      "yazar": "CGBR",
+      "lisans": "CC BY-SA 4.0",
+      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:IPhone_13_iPhone_4s_backside_01.jpg"
     },
     "ekGorselDeneme": "2026-11-03T00:46:25.984Z",
     "gorselEk": [
@@ -803,7 +824,14 @@
         "lisansUrl": "",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Apple-tree_blossoms_2017_G3.jpg"
       }
-    ]
+    ],
+    "gorselAjan": {
+      "tarih": "2026-11-03T02:26:54.817Z",
+      "sonuc": "degisti",
+      "neden": "Güncel iPhone modellerini net bir şekilde gösteriyor, haberle doğrudan ilgili.",
+      "secim": "commons",
+      "skor": 73
+    }
   },
   {
     "id": "2e7023c198f816e0",
@@ -866,7 +894,14 @@
         "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Diyarbak%C4%B1r_Ahmet_Arif_Edebiyat_Museum_Library_side_in_2025_0763.jpg"
       }
-    ]
+    ],
+    "gorselAjan": {
+      "tarih": "2026-11-03T02:27:13.081Z",
+      "sonuc": "atlandi",
+      "neden": "yeterli görsel yok",
+      "secim": "mevcut",
+      "skor": 0
+    }
   },
   {
     "id": "dd0c341b2ebdc784",
@@ -900,7 +935,7 @@
     "publishedAt": "2026-11-02T23:02:01.000Z",
     "generatedAt": "2026-11-02T23:48:00.124Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:13.496Z",
+    "gorselDeneme": "2026-11-03T02:20:57.117Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ichef.bbci.co.uk/ace/standard/1200/cpsprodpb/302a/live/febcfd60-d293-11f1-9453-5fe901b3e69e.jpg",
@@ -966,7 +1001,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:15.817Z",
+    "gorselDeneme": "2026-11-03T02:20:58.860Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/03/thumbs_b_c_1c37e886eec2f17eea81b387a168b084.jpg",
@@ -1024,7 +1059,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:14.622Z",
+    "gorselDeneme": "2026-11-03T02:20:58.847Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://dailyummah.com/wp-content/uploads/2026/11/irandan-dohada-kritik-temas-arakci-son-durumu-acikladi-1Th6E.webp",
@@ -1396,7 +1431,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:14.923Z",
+    "gorselDeneme": "2026-11-03T02:20:57.941Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2432000/gozalti-stok-2432947.jpg",
@@ -1524,7 +1559,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:17.012Z",
+    "gorselDeneme": "2026-11-03T02:20:59.005Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/03/thumbs_b_c_f246b43d4d4118e6ceb1b0242f620427.jpg",
@@ -1685,7 +1720,7 @@
     "publishedAt": "2026-11-02T20:57:00.000Z",
     "generatedAt": "2026-11-02T21:11:32.359Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:15.041Z",
+    "gorselDeneme": "2026-11-03T02:20:58.051Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/ahmet-nazif-zorlu-aa-2500605.jpg",
@@ -1752,7 +1787,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:17.003Z",
+    "gorselDeneme": "2026-11-03T02:20:59.150Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/02/thumbs_b_c_4d33633e8d82cc4a12409186af3cbedd.jpg",
@@ -2104,7 +2139,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:17.682Z",
+    "gorselDeneme": "2026-11-03T02:20:59.392Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/02/thumbs_b_c_9f8a6a04ba67c3a2e5509dc58e731efb.jpg",
@@ -2408,7 +2443,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:15.791Z",
+    "gorselDeneme": "2026-11-03T02:20:58.932Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ichef.bbci.co.uk/ace/standard/1200/cpsprodpb/ee1e/live/8480acc0-d6eb-11f1-a741-236ee91c2e25.png",
@@ -2884,7 +2919,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:16.201Z",
+    "gorselDeneme": "2026-11-03T02:20:59.410Z",
     "kapak": {
       "v": 3,
       "kaynak": "ai:phoenix-1.0",
@@ -3020,7 +3055,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:17.653Z",
+    "gorselDeneme": "2026-11-03T02:20:59.462Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/02/thumbs_b_c_183788b42d84abb7044b565451583d23.jpg",
@@ -3068,7 +3103,7 @@
     "publishedAt": "2026-11-02T16:37:00.000Z",
     "generatedAt": "2026-11-02T16:58:31.293Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:16.507Z",
+    "gorselDeneme": "2026-11-03T02:20:59.301Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/kayseri-yangin-aa-2500600.jpg",
@@ -3327,7 +3362,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:18.086Z",
+    "gorselDeneme": "2026-11-03T02:21:00.298Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212377/src/steam-donanim-anketi-acikladi-iste-en-populer-ekran-kartlari212377_0.jpg",
@@ -3373,7 +3408,7 @@
     "publishedAt": "2026-11-02T15:01:14.000Z",
     "generatedAt": "2026-11-02T15:08:11.279Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:17.342Z",
+    "gorselDeneme": "2026-11-03T02:20:59.582Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/20231103_Yapay_zeka_ve_do%C4%9Frulama_toplant%C4%B1s%C4%B1_1.jpg/1920px-20231103_Yapay_zeka_ve_do%C4%9Frulama_toplant%C4%B1s%C4%B1_1.jpg",
@@ -3449,7 +3484,7 @@
     "publishedAt": "2026-11-02T14:53:02.000Z",
     "generatedAt": "2026-11-02T14:58:33.775Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:17.262Z",
+    "gorselDeneme": "2026-11-03T02:20:59.793Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/02/thumbs_b_c_057643fae7c5d3e31d3a0db7a7b6d4a2.jpg",
@@ -3575,7 +3610,7 @@
     "publishedAt": "2026-11-02T14:33:43.000Z",
     "generatedAt": "2026-11-02T14:40:03.338Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:17.526Z",
+    "gorselDeneme": "2026-11-03T02:20:59.884Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/02/thumbs_b_c_cc8009109b666b6cbea5a5ef93282af4.jpg",
@@ -3633,7 +3668,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:17.635Z",
+    "gorselDeneme": "2026-11-03T02:20:59.911Z",
     "kapak": {
       "v": 3,
       "kaynak": "ai:phoenix-1.0",
@@ -3753,7 +3788,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:19.047Z",
+    "gorselDeneme": "2026-11-03T02:21:00.728Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212368/src/hgs-de-sistem-degisti-odeme-sikayetleri-artti212368_0.jpg",
@@ -3798,7 +3833,7 @@
     "publishedAt": "2026-11-02T13:44:00.000Z",
     "generatedAt": "2026-11-02T13:49:02.615Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:18.896Z",
+    "gorselDeneme": "2026-11-03T02:21:00.821Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212358/src/intel-in-uygun-fiyatli-dizustu-islemcisi-moon-lake-sizdirildi212358_0.jpg",
@@ -3844,7 +3879,7 @@
     "publishedAt": "2026-11-02T13:43:10.000Z",
     "generatedAt": "2026-11-02T13:57:20.958Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:17.954Z",
+    "gorselDeneme": "2026-11-03T02:21:00.162Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://imgrosetta.webtekno.com/file/695161/695161-700x400.png",
@@ -3960,7 +3995,7 @@
     "publishedAt": "2026-11-02T13:15:00.000Z",
     "generatedAt": "2026-11-02T13:30:31.589Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:19.193Z",
+    "gorselDeneme": "2026-11-03T02:21:00.787Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212380/src/dh-quiz-de-dorduncu-hafta-tamamlandi-iste-kazananlar212380_0.jpg",
@@ -4018,7 +4053,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:19.251Z",
+    "gorselDeneme": "2026-11-03T02:21:01.169Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212365/src/windows-11-de-gorev-cubugu-surukleme-neden-kaldirildi212365_0.jpg",
@@ -4140,7 +4175,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:18.385Z",
+    "gorselDeneme": "2026-11-03T02:21:00.484Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2476000/tbmmdha-2477375.jpg",
@@ -4249,7 +4284,7 @@
     "publishedAt": "2026-11-02T12:09:02.000Z",
     "generatedAt": "2026-11-02T12:12:07.987Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:18.668Z",
+    "gorselDeneme": "2026-11-03T02:21:00.749Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://imgrosetta.webtekno.com/file/695162/695162-700x400.png",
@@ -4313,7 +4348,7 @@
     "publishedAt": "2026-11-02T11:33:00.000Z",
     "generatedAt": "2026-11-02T11:37:30.536Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:19.402Z",
+    "gorselDeneme": "2026-11-03T02:21:01.228Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212364/src/antutu-acikladi-en-guclu-android-telefonlar-ekim-2026212364_0.jpg",
@@ -4928,7 +4963,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T02:08:19.396Z",
+    "gorselDeneme": "2026-11-03T02:21:01.138Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://imgrosetta.webtekno.com/file/695143/695143-700x400.png",
@@ -14518,7 +14553,6 @@
         "altyazi": "Kraliyet ve hükümet arasındaki tansiyon sembolü"
       }
     ],
-    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/5/55/Smartphone_use_at_railway_station.jpg",
@@ -14586,7 +14620,6 @@
       "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Protest_against_the_Artificial_Intelligence_Action_Summit_in_Grand_Palais_Paris_in_February_2025_at_BMDV_in_Berlin_2025-02-08_02.jpg"
     },
-    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Protest_against_the_Artificial_Intelligence_Action_Summit_in_Grand_Palais_Paris_in_February_2025_at_BMDV_in_Berlin_2025-02-08_01.jpg/1280px-Protest_against_the_Artificial_Intelligence_Action_Summit_in_Grand_Palais_Paris_in_February_2025_at_BMDV_in_Berlin_2025-02-08_01.jpg",
@@ -23525,7 +23558,7 @@
     "gorselSorgu": "autonomous robotaxi toyota bz4x",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/waymo-nun-yeni-robotaksi-ortagi-toyota-oldu-ilk-durak-japonya--212260",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Zoox_Autonomous_Robotaxi_-_San_Francisco_May_2025_%286%29.jpg/1280px-Zoox_Autonomous_Robotaxi_-_San_Francisco_May_2025_%286%29.jpg",
+    "image": "/kapak/fa1e968fc59794a5.webp",
     "publishedAt": "2026-10-30T16:33:00.000Z",
     "generatedAt": "2026-10-30T16:36:01.523Z",
     "imagesKaynak": "https://www.donanimhaber.com/waymo-nun-yeni-robotaksi-ortagi-toyota-oldu-ilk-durak-japonya--212260",
@@ -23573,7 +23606,7 @@
     "gorselSorgu": "Zilan Ertem judo match",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/spor/milli-judocu-zilan-ertem-u23-avrupa-sampiyonasinda-bronz-madalya-kazandi-551115",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Kadriorg_Stadium_floodlights_and_Maakri_high-rises.jpg/1280px-Kadriorg_Stadium_floodlights_and_Maakri_high-rises.jpg",
+    "image": "/kapak/04c13012979dc391.webp",
     "publishedAt": "2026-10-30T16:31:00.000Z",
     "generatedAt": "2026-10-30T16:45:57.885Z",
     "gorselKaynak": {
@@ -23619,7 +23652,7 @@
     "gorselSorgu": "Akın Gürlek press conference",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/bakan-gurlek-duyurdu-4-faili-mechul-cinayet-daha-cozuldu-551114",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Ak%C4%B1n_G%C3%BCrlek_in_July_2026.jpg/1280px-Ak%C4%B1n_G%C3%BCrlek_in_July_2026.jpg",
+    "image": "/kapak/77f2a2fd5d70ef07.webp",
     "publishedAt": "2026-10-30T16:18:00.000Z",
     "generatedAt": "2026-10-30T16:26:26.769Z",
     "gorselKaynak": {
@@ -23675,7 +23708,7 @@
     "gorselSorgu": "Patrick Stewart Professor X portrait",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/patrick-stewart-hayatini-kaybetti--212243",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Patrick_Stewart_%287268920828%29.jpg/1280px-Patrick_Stewart_%287268920828%29.jpg",
+    "image": "/kapak/f2b7331d969d08ee.webp",
     "publishedAt": "2026-10-30T16:10:00.000Z",
     "generatedAt": "2026-10-30T16:18:16.177Z",
     "imagesKaynak": "https://www.donanimhaber.com/patrick-stewart-hayatini-kaybetti--212243",
@@ -23723,7 +23756,7 @@
     "gorselSorgu": "modern office artificial intelligence workspace",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/chatgpt-pro-kullanim-limitleri-iki-katina-cikti",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Modern_office_development_at_Lambeth_Bridge_-_geograph.org.uk_-_2281740.jpg/1280px-Modern_office_development_at_Lambeth_Bridge_-_geograph.org.uk_-_2281740.jpg",
+    "image": "/kapak/a81d0c3c5ab94b85.webp",
     "publishedAt": "2026-10-30T16:07:00.000Z",
     "generatedAt": "2026-10-30T16:09:06.387Z",
     "gorselEk": [
@@ -23779,7 +23812,7 @@
     "gorselSorgu": "Yemen Taiz street damage",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/dunya/yemen-haklar-ve-ozgurlukler-agi-husilerin-taizdeki-saldirilarinda-eylulden-beri-189-sivil-hayatini-kaybetti/4106761",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Yemen_Taiz_1993_-_167873673_1c0f8bc0c8_o.jpg/1280px-Yemen_Taiz_1993_-_167873673_1c0f8bc0c8_o.jpg",
+    "image": "/kapak/61e67ab1eaaffb34.webp",
     "publishedAt": "2026-10-30T15:48:30.000Z",
     "generatedAt": "2026-10-30T16:00:17.306Z",
     "gorselEk": [
@@ -23844,7 +23877,7 @@
     "gorselSorgu": "stock market trading floor",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/cvwy72e0n72yo?at_medium=RSS&at_campaign=rss",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/7/78/Market_centre_in_Tokyo_stock_exchange.jpg",
+    "image": "/kapak/d6f468599e53ff5c.webp",
     "publishedAt": "2026-10-30T15:46:28.000Z",
     "generatedAt": "2026-10-30T15:51:17.882Z",
     "gorselEk": [
@@ -23901,7 +23934,7 @@
     "gorselSorgu": "farm grain silo",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/ekonomi/tmo-kasimda-piyasaya-5-5-milyon-ton-hububat-arz-edecek/4106749",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Grain_silo_at_Cherque_Farm_-_geograph.org.uk_-_2743207.jpg/1280px-Grain_silo_at_Cherque_Farm_-_geograph.org.uk_-_2743207.jpg",
+    "image": "/kapak/6f0a10e5ab706065.webp",
     "publishedAt": "2026-10-30T15:34:39.000Z",
     "generatedAt": "2026-10-30T15:42:17.161Z",
     "gorselEk": [
@@ -23957,7 +23990,7 @@
     "gorselSorgu": "satellite launch rocket propulsion",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/turk-devletlerinin-ortak-uydusu-2027de-uzaya-gonderilecek",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Rocket_Lab_PREFIRE_and_Ice_Launch_%28KSC-20240605-PH-RKL01_0001%29.jpg/1280px-Rocket_Lab_PREFIRE_and_Ice_Launch_%28KSC-20240605-PH-RKL01_0001%29.jpg",
+    "image": "/kapak/a8d5476263dc800d.webp",
     "publishedAt": "2026-10-30T15:30:19.000Z",
     "generatedAt": "2026-10-30T15:32:30.130Z",
     "gorselDeneme": "2026-10-31T06:10:50.456Z",
@@ -24004,7 +24037,7 @@
     "gorselSorgu": "Elon Musk speaking on stage",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/elon-musk-yapay-zeka-kendisi-icin-kripto-paralara-saldirabilir--212272",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Elon_Musk_%2812271223586%29.jpg/1280px-Elon_Musk_%2812271223586%29.jpg",
+    "image": "/kapak/de55277a3e269a39.webp",
     "publishedAt": "2026-10-30T15:22:00.000Z",
     "generatedAt": "2026-10-30T15:24:13.219Z",
     "gorselEk": [
@@ -24062,7 +24095,7 @@
     "gorselSorgu": "Israeli parliament building Knesset",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/ckdd8qdl9e0eo?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Knesset_Israeli_Parliament_Building_%2841404895850%29.jpg/1280px-Knesset_Israeli_Parliament_Building_%2841404895850%29.jpg",
+    "image": "/kapak/121deaff89efad54.webp",
     "publishedAt": "2026-10-30T15:09:29.000Z",
     "generatedAt": "2026-10-30T15:15:34.875Z",
     "gorselDeneme": "2026-10-31T05:45:27.100Z",
@@ -24109,7 +24142,7 @@
     "gorselSorgu": "helicopter crash Himalayas",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/cr93zxyn9eqeo?at_medium=RSS&at_campaign=rss",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/7/79/Alaska_Airbus_AS350_B3_helicopter_crash_site_overview.jpg",
+    "image": "/kapak/cf81f7dd7d2cbf34.webp",
     "publishedAt": "2026-10-30T15:06:05.000Z",
     "generatedAt": "2026-10-30T15:07:00.133Z",
     "gorselEk": [
@@ -24174,7 +24207,7 @@
     "gorselSorgu": "cybersecurity hacker dark screen",
     "source": "ShiftDelete",
     "sourceUrl": "https://shiftdelete.net/sahte-claude-code-eklentisi-cursor-magazasi",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg/1280px-Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
+    "image": "/kapak/8ebbc4cc8603eeda.webp",
     "publishedAt": "2026-10-30T14:51:26.000Z",
     "generatedAt": "2026-10-30T14:56:26.554Z",
     "gorselDeneme": "2026-10-31T05:27:40.155Z",
@@ -24683,13 +24716,18 @@
     "gorselSorgu": "chery tiggo suv interior",
     "source": "CHIP Online",
     "sourceUrl": "https://www.chip.com.tr/galeri/yeni-tiggo-7-ve-tiggo-x7-ortaya-cikti-chery-iki-farkli-rotaya-yoneliyor_184963.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Chery_Tiggo_Concept%2C_IAA_2017%2C_Frankfurt_%281Y7A3386%29.jpg/1280px-Chery_Tiggo_Concept%2C_IAA_2017%2C_Frankfurt_%281Y7A3386%29.jpg",
+    "image": "/kapak/48d727f4108d258c.webp",
     "publishedAt": "2026-10-30T13:10:00.000Z",
     "generatedAt": "2026-10-30T13:13:26.990Z",
     "gorselAjan": {
       "tarih": "2026-11-02T01:16:48.726Z",
       "sonuc": "atlandi",
       "neden": "yeterli görsel yok"
+    },
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Chery_Tiggo_Concept%2C_IAA_2017%2C_Frankfurt_%281Y7A3386%29.jpg/1280px-Chery_Tiggo_Concept%2C_IAA_2017%2C_Frankfurt_%281Y7A3386%29.jpg",
+      "foto": false
     }
   },
   {
@@ -66743,7 +66781,7 @@
     "gorselSorgu": "data center server room",
     "source": "BeInCrypto",
     "sourceUrl": "https://tr.beincrypto.com/en-buyuk-3-teknoloji-devinin-kazanc-raporlari-ekim-son-hafta/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
+    "image": "/kapak/5ea4f3d717547639.webp",
     "publishedAt": "2026-10-26T01:58:41.000Z",
     "generatedAt": "2026-10-26T01:59:41.431Z",
     "ekGorselDeneme": "2026-10-27T14:08:49.514Z",
@@ -66751,6 +66789,11 @@
       "tarih": "2026-11-01T10:21:26.212Z",
       "sonuc": "atlandi",
       "neden": "yeterli görsel yok"
+    },
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
+      "foto": false
     }
   },
   {
@@ -70002,7 +70045,7 @@
     "gorselSorgu": "van-gogh starry-night painting",
     "source": "CHIP Online",
     "sourceUrl": "https://www.chip.com.tr/guncel/van-goghun-yildizli-gece-tablosundaki-137-yillik-gizem-cozuluyor_184869.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Vincent_van_Gogh_Starry_Night.jpg/1280px-Vincent_van_Gogh_Starry_Night.jpg",
+    "image": "/kapak/1e562fe6acf8e9ac.webp",
     "publishedAt": "2026-10-25T16:58:00.000Z",
     "generatedAt": "2026-10-25T17:00:56.760Z",
     "gorselDeneme": "2026-10-28T04:45:24.479Z",
@@ -70022,7 +70065,12 @@
         "lisansUrl": "",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_The_yellow_house_(%27The_street%27).jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Vincent_van_Gogh_Starry_Night.jpg/1280px-Vincent_van_Gogh_Starry_Night.jpg",
+      "foto": false
+    }
   },
   {
     "id": "9c0257ab57d6eb37",
@@ -73000,7 +73048,7 @@
     "gorselSorgu": "Barack Obama speech podium",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/economy-news/obama-enflasyon-konusunda-trump-elestirdi-4118498",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg/1280px-President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg",
+    "image": "/kapak/f6f884514f6577c6.webp",
     "publishedAt": "2026-10-25T04:13:17.000Z",
     "generatedAt": "2026-10-25T04:21:44.052Z",
     "gorselEk": [
@@ -73012,7 +73060,12 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Press_Secretary_Karine_Jean-Pierre_speaks_during_a_press_briefing,_Monday,_May_13,_2024,_in_the_James_S._Brady_Press_Briefing_Room_of_the_White_House.jpg",
         "altyazi": "Washington siyasetinde ekonomi politikaları tartışılmaya devam ediyor"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg/1280px-President_Barack_Obama_walking_to_the_podium_before_giving_a_speech_at_the_National_Defense_University.jpg",
+      "foto": false
+    }
   },
   {
     "id": "2f83428af6fd33ce",
@@ -75085,7 +75138,7 @@
     "gorselSorgu": "Casio watch display",
     "source": "beetekno.com",
     "sourceUrl": "https://beetekno.com/casio-abdde-minimalist-tasarimli-uc-yeni-hafif-gma-s160-saatini-satisa-sundu",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Casio_W-86_and_F-91W_digital_watch_comparison_%28front%29.jpg/1280px-Casio_W-86_and_F-91W_digital_watch_comparison_%28front%29.jpg",
+    "image": "/kapak/5659ff12cfe2382d.webp",
     "publishedAt": "2026-10-24T00:01:11.000Z",
     "generatedAt": "2026-10-24T00:10:51.067Z",
     "gorselEk": [
@@ -75097,7 +75150,12 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Casio_F-91W_watch_(2023)_(packaging_and_contents)_(iii).jpg"
       }
     ],
-    "gorselDeneme": "2026-10-28T04:45:29.792Z"
+    "gorselDeneme": "2026-10-28T04:45:29.792Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Casio_W-86_and_F-91W_digital_watch_comparison_%28front%29.jpg/1280px-Casio_W-86_and_F-91W_digital_watch_comparison_%28front%29.jpg",
+      "foto": false
+    }
   },
   {
     "id": "6a93bfbaaa0ee53a",
@@ -78880,7 +78938,7 @@
     "gorselSorgu": "Volvo electric car production line",
     "source": "LOG",
     "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOdVBzOXZlYkZvbGNhOEw0WFR4YkJ4Mk1RUEF2Vm04b2N4UVNwOWNXM2VhWFRlUzI3TXc2alAyRmNjWjE1SDZadThUUzZ5OXF6LUlZQUxlWUlWb2FSMkREdVdZV0VncEUtN1dIWm1ObS04ZnJvR0lvZGRnSXNZUkhUNmN3UUNvWHFq?oc=5",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Volvo_C30_Electric_NAIAS_2011.jpg/1280px-Volvo_C30_Electric_NAIAS_2011.jpg",
+    "image": "/kapak/e7c31bf76ad14e51.webp",
     "publishedAt": "2026-10-23T12:44:15.000Z",
     "generatedAt": "2026-10-23T12:48:42.823Z",
     "gorselEk": [
@@ -78899,7 +78957,12 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Volvo_FH_Aero_Electric_(2024).jpg"
       }
     ],
-    "gorselDeneme": "2026-10-28T04:45:35.260Z"
+    "gorselDeneme": "2026-10-28T04:45:35.260Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Volvo_C30_Electric_NAIAS_2011.jpg/1280px-Volvo_C30_Electric_NAIAS_2011.jpg",
+      "foto": false
+    }
   },
   {
     "id": "a7d2537b51cf1387",
@@ -80344,10 +80407,15 @@
     "gorselSorgu": "science laboratory microscope medical",
     "source": "Evrim Ağacı",
     "sourceUrl": "https://evrimagaci.org/daha-yuksek-testosteron-gercekten-erkekligi-ve-babaligi-guclendiriyor-mu-23912",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Mars_Science_Laboratory_landing_ellipse_reduced.jpg/1280px-Mars_Science_Laboratory_landing_ellipse_reduced.jpg",
+    "image": "/kapak/4da632733a2f9bb7.webp",
     "publishedAt": "2026-10-23T11:55:03.000Z",
     "generatedAt": "2026-10-23T11:56:11.409Z",
-    "ekGorselDeneme": "2026-10-24T17:55:02.655Z"
+    "ekGorselDeneme": "2026-10-24T17:55:02.655Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Mars_Science_Laboratory_landing_ellipse_reduced.jpg/1280px-Mars_Science_Laboratory_landing_ellipse_reduced.jpg",
+      "foto": false
+    }
   },
   {
     "id": "87a99ed42fdc0096",
@@ -95748,7 +95816,7 @@
     "gorselSorgu": "Trump presidency defense law",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/commodities-news/trump-savunma-yasasn-devreye-soktu-petrol-fiyatlar-dustu-4116441",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Obama_hands_over_presidency_to_Trump_at_58th_Presidential_Inauguration_170120-D-NA975-1982.jpg/1280px-Obama_hands_over_presidency_to_Trump_at_58th_Presidential_Inauguration_170120-D-NA975-1982.jpg",
+    "image": "/kapak/02d163bfde387d97.webp",
     "publishedAt": "2026-10-23T00:45:41.000Z",
     "generatedAt": "2026-10-23T00:55:38.690Z",
     "gorselEk": [
@@ -95766,7 +95834,12 @@
         "lisansUrl": "",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Obama_hands_over_presidency_to_Trump_at_58th_Presidential_Inauguration_170120-D-NA975-0695.jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Obama_hands_over_presidency_to_Trump_at_58th_Presidential_Inauguration_170120-D-NA975-1982.jpg/1280px-Obama_hands_over_presidency_to_Trump_at_58th_Presidential_Inauguration_170120-D-NA975-1982.jpg",
+      "foto": false
+    }
   },
   {
     "id": "10e10558123489a5",
@@ -97115,10 +97188,15 @@
     "gorselSorgu": "Apple executive stock sale",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/insider-trading-news/applen-svpsi-jennifer-newstead-814748-dolar-degerinde-hisse-satt-93CH-4116414",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Apple_Cupertino_Executive_Briefing_Center.jpg/1280px-Apple_Cupertino_Executive_Briefing_Center.jpg",
+    "image": "/kapak/141e9118538c2e34.webp",
     "publishedAt": "2026-10-22T23:30:31.000Z",
     "generatedAt": "2026-10-22T23:38:43.519Z",
-    "ekGorselDeneme": "2026-10-25T18:14:46.811Z"
+    "ekGorselDeneme": "2026-10-25T18:14:46.811Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Apple_Cupertino_Executive_Briefing_Center.jpg/1280px-Apple_Cupertino_Executive_Briefing_Center.jpg",
+      "foto": false
+    }
   },
   {
     "id": "095370e47b9e2b24",
@@ -99990,7 +100068,7 @@
     "gorselSorgu": "Tom Skerritt actor",
     "source": "T24",
     "sourceUrl": "https://t24.com.tr/magazin/top-gun-ve-alien-filmlerinin-yildizi-abdli-aktor-tom-skerritt-93-yasinda-hayatini-kaybetti,1354799",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Tom_Skerritt_2014.jpg/1280px-Tom_Skerritt_2014.jpg",
+    "image": "/kapak/4b42a8a1c1a24b3a.webp",
     "publishedAt": "2026-10-22T21:40:00.000Z",
     "generatedAt": "2026-10-22T21:54:59.629Z",
     "gorselEk": [
@@ -100008,7 +100086,12 @@
         "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Tom_Skerritt_(15405566884).jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Tom_Skerritt_2014.jpg/1280px-Tom_Skerritt_2014.jpg",
+      "foto": false
+    }
   },
   {
     "id": "b3482f5cae9cad4f",
@@ -102067,7 +102150,7 @@
     "gorselSorgu": "art festival rally",
     "source": "Howl.link",
     "sourceUrl": "https://t.co/EHKXAOy1xY",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Digital_art_at_The_Sassoon_Docks_Art_Festival_2022_-_2023.jpg/1280px-Digital_art_at_The_Sassoon_Docks_Art_Festival_2022_-_2023.jpg",
+    "image": "/kapak/27211c9d33bd7946.webp",
     "publishedAt": "2026-10-22T20:18:22.000Z",
     "generatedAt": "2026-10-22T20:21:29.423Z",
     "gorselEk": [
@@ -102086,7 +102169,12 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Appa_Parab_at_the_CSMP_Art_Festival_02.jpg"
       }
     ],
-    "gorselDeneme": "2026-10-28T04:46:15.389Z"
+    "gorselDeneme": "2026-10-28T04:46:15.389Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Digital_art_at_The_Sassoon_Docks_Art_Festival_2022_-_2023.jpg/1280px-Digital_art_at_The_Sassoon_Docks_Art_Festival_2022_-_2023.jpg",
+      "foto": false
+    }
   },
   {
     "id": "47922440df585322",
@@ -107917,7 +108005,7 @@
     "gorselSorgu": "Tesla electric car factory",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/analyst-ratings/stonex-tesla-hissesi-icin-al-tavsiyesini-yineledi-475-dolar-hedef-fiyat-korudu-93CH-4115890",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Tesla_Giga_Factory_BerlinBrandenburg_Drohne_2.jpg/1280px-Tesla_Giga_Factory_BerlinBrandenburg_Drohne_2.jpg",
+    "image": "/kapak/d3c9a2e476b38362.webp",
     "publishedAt": "2026-10-22T15:29:23.000Z",
     "generatedAt": "2026-10-22T15:42:08.717Z",
     "gorselEk": [
@@ -107935,7 +108023,12 @@
         "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Tesla_electric_car_recharging_in_Los_Angeles,_August_2020.jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Tesla_Giga_Factory_BerlinBrandenburg_Drohne_2.jpg/1280px-Tesla_Giga_Factory_BerlinBrandenburg_Drohne_2.jpg",
+      "foto": false
+    }
   },
   {
     "id": "73f45185ddc55642",
