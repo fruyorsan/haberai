@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-03T18:27:15.194Z",
+  "updatedAt": "2026-11-03T18:59:33.288Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5751,
-  "aday": 5751,
-  "uygun": 3696,
-  "secilen": 3598,
+  "toplamHaber": 5753,
+  "aday": 5753,
+  "uygun": 3698,
+  "secilen": 3600,
   "red": {
     "özet gövdeyle aynı": 115,
     "editör notu özetle aynı": 8,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 135
+    "tekrar": 136
   },
   "ornekTekrarlar": [
     {
@@ -40,6 +40,10 @@
     {
       "title": "Instagram 90 dakikalık videoları test ediyor ancak ödeme yapmıyor",
       "twin": "Instagram, 90 dakikalık video süresiyle içerik rekabetini kızıştırıyor"
+    },
+    {
+      "title": "İspanya'da iki yüksek hızlı tren çarpıştı: En az 30 can kaybı var",
+      "twin": "İspanya, tren kazası sonrası 30 milyon avro tazminat ayırdı"
     },
     {
       "title": "Google yapay zeka özetleri reklam gelirlerini düşürünce 500 milyar dolar eridi",
@@ -66,16 +70,24 @@
       "twin": "SPK nitelikli yatırımcı barajını 50 milyon liraya çıkardı"
     },
     {
+      "title": "OpenAI, temel bilimlerde 3 büyük teorik kırılma yaptığını duyurdu",
+      "twin": "OpenAI, yapay zekanın matematikte 3 büyük hamle yaptığını açıkladı"
+    },
+    {
       "title": "İsrail ordusu Batı Şeria ve Doğu Kudüs'te 3 Filistin evini yıktı",
       "twin": "İsrail ordusunun El Halil operasyonu 3 bin 300 kişiyi evinden etti"
+    },
+    {
+      "title": "CD Projekt RED, Cyberpunk 2 görev tasarımında eski modcuları kullanıyor",
+      "twin": "CD Projekt RED, Cyberpunk 2 için multiplayer modu hazırlıklarına başladı"
     },
     {
       "title": "Meteoroloji 19 il için uyarı verdi: Muğla'da turuncu kod alarmı",
       "twin": "Meteoroloji, 19 İl İçin Gök Gürültülü Sağanak Uyarısı Yayınladı"
     },
     {
-      "title": "OpenAI, temel bilimlerde 3 büyük teorik kırılma yaptığını duyurdu",
-      "twin": "OpenAI, yapay zekanın matematikte 3 büyük hamle yaptığını açıkladı"
+      "title": "Apple, iOS 27.2 güncellemesiyle Siri ve FaceTime özelliklerini güncelledi",
+      "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
     },
     {
       "title": "İran, ABD ile müzakere masasına oturmak için 7 maddelik şart listesini sundu",
@@ -90,10 +102,6 @@
       "twin": "ASELSAN sipariş defterinde 30 milyar dolar sınırını aştı"
     },
     {
-      "title": "CD Projekt RED, Cyberpunk 2 görev tasarımında eski modcuları kullanıyor",
-      "twin": "CD Projekt RED, Cyberpunk 2 için multiplayer modu hazırlıklarına başladı"
-    },
-    {
       "title": "İsmail Kartal, Fenerbahçe'deki görevinden istifa etti",
       "twin": "Fenerbahçe Yönetimi İsmail Kartal'ın İstifasını Onayladı"
     },
@@ -102,16 +110,8 @@
       "twin": "Kuzey Kore 6,3 milyar dolarlık Binance siber saldırısını reddetti"
     },
     {
-      "title": "Apple, iOS 27.2 güncellemesiyle Siri ve FaceTime özelliklerini güncelledi",
-      "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
-    },
-    {
-      "title": "HMD, Nokia 2360 Flip’i Tanıttı: Tuşlu ve Kapaklı Telefon",
-      "twin": "HMD, yeni Nokia 2360 Flip modelini tanıttı: Uzaktan yönetim desteği"
-    },
-    {
-      "title": "Huawei Enjoy 100 Pro, HarmonyOS 7 ve 6.100 mAh bataryayla geldi",
-      "twin": "Huawei, Wi-Fi 7 destekli yeni Router X2 Pro modelini satışa sundu"
+      "title": "Sony Yeni LYTIA 720 Sensörü 50 MP ile Gece Çekimlerini Yarıyor",
+      "twin": "Sony mobil kameralar için 50 MP LYTIA 720 sensörünü duyurdu"
     }
   ],
   "days": {
@@ -285,7 +285,6 @@
       "a9179129bea2a097",
       "6fc2113793514329",
       "3fe5f51aa274b7e5",
-      "09bc1ee5375acd32",
       "31968e9c9d6f54bb",
       "74ca705fd0fdb2c6",
       "0ff97bcc11ad5d2e",
@@ -375,6 +374,7 @@
       "27518517136d92e6",
       "7e1796f1723b2edf",
       "e6c03c6b7eb90c2a",
+      "072f64b1031a6599",
       "48e2c9cd81f5c55f",
       "fe4973c334b171eb",
       "e7db509e5813fbd3",
@@ -389,7 +389,6 @@
       "75bcfe97a44a2ecc",
       "67fd75d9c47ce5f8",
       "007a44d8de5ed8f2",
-      "072f64b1031a6599",
       "dea76c9d3a3ab6d4",
       "6fa89ecdb492c3aa",
       "b6a27be8e52fdf3d",
@@ -423,6 +422,7 @@
       "6dfb54a1e7d8bd99",
       "afe7a36d06a6d178",
       "d29a49f98235fff7",
+      "09bc1ee5375acd32",
       "511c4225152943a7",
       "3c54dd68c97c231d",
       "cda279011dcbaf31"
@@ -558,10 +558,10 @@
       "34c3a53197945ea3",
       "f0ff25544445436f",
       "fdc63361178709c8",
+      "1f3b943e94c29a3a",
       "86b783bd8157078c",
       "5030bddd036860db",
       "08be55d5b1a89a23",
-      "1f3b943e94c29a3a",
       "9de8defb8f31d927"
     ],
     "2026-10-27": [
@@ -1175,9 +1175,11 @@
       "9339450bbe7be9de",
       "4b0cab5c2af90980",
       "ef3673fd343bbd6b",
+      "9356275ce74925d0",
       "0802ffaf022343c8",
       "a97f5bdbc34c4ec7",
       "2b623a3742087624",
+      "a0d20a45910e47ff",
       "3d146e160495489e",
       "dc0ce1d363d2134d",
       "060b08832f43eca6",
@@ -1242,12 +1244,12 @@
       "a80c9e9fe5bea216",
       "85841f89cec2b672",
       "8b63e061b171a054",
+      "b36232b2914384de",
       "e555912d69e20412",
       "d4a7175e0f3e5dfe",
       "5fe1e2d31d271359",
       "155bce04f5f9be9c",
       "f45b684f6bee3490",
-      "b36232b2914384de",
       "167fd2d169b31dcd",
       "68a67a28bcb6145c",
       "dd0c341b2ebdc784",
@@ -1341,7 +1343,6 @@
       "0e7b567ebf41a861",
       "97fbb5d477689705",
       "b530bfdfe4d62db6",
-      "470801c3ec0f1b8d",
       "7db8406e22791e6d",
       "c233854c2098e9bf",
       "164d3522ba68228f",
@@ -1351,6 +1352,7 @@
       "e5ced170645a533c",
       "b0468f5e01309615",
       "f23425f10f4e6cc5",
+      "470801c3ec0f1b8d",
       "4a88ced1c9f032b9",
       "8534fc87a63632d0",
       "588fc823a1685895",
@@ -3909,6 +3911,7 @@
     "88b0626e9ba7fa0d",
     "11f54c3ef80151ce",
     "a8c6afa21598e995",
+    "9356275ce74925d0",
     "4fe212642b25fdf1",
     "36a52e2bcb0aa95a",
     "cc5bd6df9dabcc99",
@@ -3932,6 +3935,7 @@
     "1da4c3e1f5189903",
     "4867e72e8b1058ba",
     "2b623a3742087624",
+    "a0d20a45910e47ff",
     "3d146e160495489e",
     "5b2b3a933e57df10",
     "692c88d046cc9222",
@@ -4061,7 +4065,6 @@
     "24dade6148388672",
     "003cb389efbee7be",
     "3fe5f51aa274b7e5",
-    "09bc1ee5375acd32",
     "9eac0b3f22fb1f1b",
     "8fa2de3423129063",
     "2da6c72d999937d8",
@@ -4764,7 +4767,6 @@
     "745742a6b774ecd8",
     "515a22750ce32b87",
     "b9f9ad38a2f3558c",
-    "470801c3ec0f1b8d",
     "cdb4956c70515dcc",
     "9b3c0f6482cf74e7",
     "a8804b1e53fd7f21",
@@ -4814,6 +4816,7 @@
     "4e68ad29bf239d78",
     "157f8b0014abfa4c",
     "3061a3fd6de0dc86",
+    "072f64b1031a6599",
     "c7b4d4735c2154df",
     "8972a39a84ef631c",
     "4d9613b490cdfff2",
@@ -4989,6 +4992,7 @@
     "775c2dcf5e7f7d28",
     "723534e5e28cc796",
     "ec72177b63f007e3",
+    "470801c3ec0f1b8d",
     "c5d94bd27755dc09",
     "7edc56927293ab90",
     "c3ef31abc66f11f6",
@@ -5126,7 +5130,6 @@
     "b70fcf610aa42038",
     "007a44d8de5ed8f2",
     "3f49860290d8b847",
-    "072f64b1031a6599",
     "a492ec55c89f23fe",
     "22d6a6e046863fdb",
     "baae4cd88907ece5",
@@ -5188,6 +5191,7 @@
     "71f7b9162251fe16",
     "813a55f6442d8251",
     "8b63e061b171a054",
+    "b36232b2914384de",
     "889bc450b29b8ab5",
     "521c8f4bb8197241",
     "e1d420dd17c497cf",
@@ -5562,7 +5566,6 @@
     "d570863d1ddb69d0",
     "dc453e940c0ec238",
     "7bc811b613161c06",
-    "b36232b2914384de",
     "c1987bfe5778dd09",
     "87bbb8b39a6060a7",
     "957a49577507c417",
@@ -5884,6 +5887,7 @@
     "93d300615c12f361",
     "76ffe3fda9008346",
     "242ec0f45b059c6f",
+    "1f3b943e94c29a3a",
     "b7cf845aa66b9e16",
     "6ee40f146b3160f5",
     "af9d045a03fb0044",
@@ -6612,7 +6616,6 @@
     "a2176f26b4f6da24",
     "8f3d0632ed620630",
     "74e54aa5cf023568",
-    "1f3b943e94c29a3a",
     "22aca6a03aa9ddaa",
     "7b1dee6f9a822530",
     "656972a13a83111b",
@@ -7316,6 +7319,7 @@
     "e550e26b61b20d1c",
     "b6807a82d0b760ef",
     "a98440cac2f5d856",
+    "09bc1ee5375acd32",
     "e259c8cf0abc9082",
     "6bda604a7068cbf5",
     "fa6509a8a7b19993",
