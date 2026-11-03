@@ -1,14 +1,13 @@
 // KAPAK GÖRSELİ SEÇİMİ
 //
-// GÖRSEL KURALI: Haberin kendi fotoğrafı kullanılır. Sıra şudur:
+// GÖRSEL KURALI: Kapak yalnızca atıf gerektirmeyen kaynaklardan gelir. Sıra:
 //
 //   1) Sitenin kendi yerel kapağı (/kapak/... — puanlanarak üretilmiş 1280×720).
-//   2) Wikimedia Commons (CC0 / kamu malı / CC BY / CC BY-SA).
-//   3) Haberin çıktığı kaynak sitenin og:image'i / yazı içi fotoğrafı.
+//   2) CC0 / kamu malı stok fotoğraf (yerelleştirme tamamlanana kadar uzak adres).
+//   3) Markalı tasarım kartı (/og-default.png).
 //
-// Kaynak sitelerin fotoğrafları habere özgü oldukları için (stok karelerin
-// aksine) başlıkla alakalıdır ve tıklama oranını yükseltir; adres
-// `gorselKaynak` alanında kayıtlıdır.
+// Kaynak sitelerin og:image'i / yazı içi fotoğrafı BİLİNÇLİ olarak kullanılmaz:
+// ajans telifli olabiliyor ve sayfada kredi gösterilmiyor.
 //
 // İkinci denetim: aynı kare yüzlerce habere kapak olmuşsa "genel görsel"
 // sayılır ve elenir.

@@ -1,0 +1,168 @@
+---
+// GÖRSEL LİSANS KAYITLARI
+//
+// NEDEN: Yeni kapaklar yalnızca atıf gerektirmeyen (CC0 / kamu malı) kaynaklardan
+// seçiliyor; haber sayfalarında görsel kredisi gösterilmiyor. Arşivde daha önce
+// CC BY / CC BY-SA lisanslı fotoğraflarla üretilmiş kapaklar var. Bu lisanslar
+// atıf ister; atıf tek tek sayfalarda değil, bu toplu kayıt sayfasında verilir
+// (CC BY 4.0'ın izin verdiği "makul yöntem").
+//
+// Kayıt sayısı 4.000'i aştığı için 400'lük sayfalara bölünür: tek dev HTML
+// sayfası hem tarayıcıyı hem arama motorunu boğuyordu.
+//
+// Yeni haberlerde bu sayfaya kayıt eklenmez: kaynak filtreleri artık yalnızca
+// CC0 / kamu malı dosyaları kabul ediyor.
+import Base from "../../layouts/Base.astro";
+import { getArticles } from "../../lib/articles.js";
+
+export function getStaticPaths() {
+  const atifGerekli = /^cc by/i;
+  const kayitlar = getArticles()
+    .map((a) => {
+      const g = a.gorselKaynak || {};
+      const lisans = String(g.lisans || "").trim();
+      return {
+        baslik: a.title,
+        slug: a.slug,
+        yazar: String(g.yazar || "").trim(),
+        lisans,
+        lisansUrl: String(g.lisansUrl || g.sayfa || "").trim(),
+        tarih: String(a.publishedAt || a.date || "").slice(0, 10),
+      };
+    })
+    .filter((k) => atifGerekli.test(k.lisans) && k.lisansUrl)
+    .sort((a, b) => b.tarih.localeCompare(a.tarih));
+
+  const BOYUT = 400;
+  const sayfaSayisi = Math.max(1, Math.ceil(kayitlar.length / BOYUT));
+  return Array.from({ length: sayfaSayisi }, (_, i) => ({
+    params: { sayfa: i === 0 ? undefined : String(i + 1) },
+    props: {
+      kayitlar: kayitlar.slice(i * BOYUT, (i + 1) * BOYUT),
+      toplam: kayitlar.length,
+      sayfa: i + 1,
+      sayfaSayisi,
+    },
+  }));
+}
+
+const { kayitlar, toplam, sayfa, sayfaSayisi } = Astro.props;
+const origin = Astro.site ? String(Astro.site).replace(/\/+$/, "") : "https://haberinai.site";
+const yol = sayfa === 1 ? "/gorsel-kaynaklari/" : `/gorsel-kaynaklari/${sayfa}/`;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Görsel Lisans Kayıtları — HaberinAi",
+  description:
+    "Arşivdeki CC BY / CC BY-SA lisanslı fotoğrafların fotoğrafçı, lisans ve kaynak bilgileri.",
+  url: `${origin}${yol}`,
+  publisher: { "@type": "Organization", name: "HaberinAi", url: `${origin}/` },
+};
+---
+
+<Base
+  title={`Görsel Lisans Kayıtları — HaberinAi${sayfa > 1 ? ` (${sayfa}/${sayfaSayisi})` : ""}`}
+  description="Arşivdeki CC BY / CC BY-SA lisanslı fotoğrafların fotoğrafçı, lisans ve kaynak bilgileri."
+  canonical={`${origin}${yol}`}
+  schema={schema}
+>
+  <div class="container prose">
+    <h1>Görsel Lisans Kayıtları</h1>
+    <p class="muted">
+      Toplam {toplam} kayıt · Sayfa {sayfa}/{sayfaSayisi}
+    </p>
+
+    {sayfa === 1 && (
+      <>
+        <p>
+          HaberinAi'de yeni yayımlanan haberlerin görselleri yalnızca
+          <strong>CC0 / kamu malı</strong> kaynaklardan, yapay zekâ üretiminden veya
+          markanın kendi tasarım kapaklarından seçilir; bu görsellerde atıf zorunlu
+          değildir ve haber sayfalarında kredi gösterilmez.
+        </p>
+        <p>
+          Bu sayfa, arşivde daha önce <strong>CC BY</strong> veya
+          <strong>CC BY-SA</strong> lisanslı fotoğraflarla yayımlanmış kapakların
+          lisans kaydını toplu olarak tutar. Fotoğrafçı adı, lisans ve kaynak dosya
+          bağlantısı aşağıdadır. Bir kaydın kaldırılmasını istiyorsanız
+          <a href="/iletisim/">iletişim</a> sayfasından bize ulaşabilirsiniz.
+        </p>
+      </>
+    )}
+
+    <ol class="kayitlar" start={(sayfa - 1) * 400 + 1}>
+      {kayitlar.map((k) => (
+        <li>
+          <a href={`/haber/${k.slug}/`}>{k.baslik}</a>
+          <span class="kayit-meta">
+            {k.yazar ? `${k.yazar} · ` : ""}{k.lisans} ·{" "}
+            <a href={k.lisansUrl} target="_blank" rel="noopener nofollow">kaynak</a>
+          </span>
+        </li>
+      ))}
+    </ol>
+
+    {sayfaSayisi > 1 && (
+      <nav class="sayfalama" aria-label="Lisans kayıtları sayfaları">
+        {sayfa > 1 && (
+          <a href={sayfa === 2 ? "/gorsel-kaynaklari/" : `/gorsel-kaynaklari/${sayfa - 1}/`}>
+            ← Önceki
+          </a>
+        )}
+        <span>Sayfa {sayfa} / {sayfaSayisi}</span>
+        {sayfa < sayfaSayisi && <a href={`/gorsel-kaynaklari/${sayfa + 1}/`}>Sonraki →</a>}
+      </nav>
+    )}
+  </div>
+</Base>
+
+<style>
+  .prose {
+    max-width: 900px;
+    margin: 40px auto;
+  }
+  .prose h1 {
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+  }
+  .prose p {
+    line-height: 1.78;
+    color: var(--text-2);
+  }
+  .muted {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .kayitlar {
+    margin: 24px 0 24px;
+    padding-left: 20px;
+    font-size: 0.86rem;
+    line-height: 1.55;
+    color: var(--text-2);
+  }
+  .kayitlar li {
+    margin-bottom: 10px;
+  }
+  .kayitlar a {
+    color: var(--brand-strong);
+    font-weight: 600;
+  }
+  .kayit-meta {
+    display: block;
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+  .sayfalama {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0 0 60px;
+    font-size: 0.9rem;
+  }
+  .sayfalama a {
+    color: var(--brand-strong);
+    font-weight: 600;
+  }
+</style>
