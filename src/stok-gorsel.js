@@ -4,13 +4,17 @@
 // DHA...) lisanslıdır. Onları hotlink etmek izinsiz kullanımdır; atıf yazmak da
 // bunu yasal hâle getirmez. Bu yüzden kaynağın fotoğrafı ARTIK KULLANILMIYOR.
 //
-// YERİNE: Wikimedia Commons'taki YALNIZCA serbest lisanslı dosyalar
-// (CC0 / kamu malı / CC BY / CC BY-SA). Her görselle birlikte fotoğrafçı, lisans
-// ve dosya sayfası saklanır; sitede "Fotoğraf: X · CC BY-SA 4.0 · Wikimedia
-// Commons" olarak gösterilir. Böylece:
+// YERİNE: Wikimedia Commons / Openverse'teki YALNIZCA ATIF GEREKTİRMEYEN
+// dosyalar (CC0 / kamu malı / "no restrictions"). CC BY ve CC BY-SA bilinçli
+// olarak KULLANILMAZ: bu lisanslar atıf şartı getirir, sitede ise hiçbir yerde
+// görsel kredisi gösterilmiyor. Böylece:
 //   * izinsiz fotoğraf yok (telif/DMCA riski yok),
-//   * atıf lisansın istediği şekilde veriliyor,
+//   * atıf yükümlülüğü de yok (lisansla çelişen bir durum kalmıyor),
 //   * API anahtarı / ücretli hesap gerekmiyor (0 $ bütçe).
+//
+// Fotoğrafçı ve lisans bilgisi veri dosyasında (`gorselKaynak` / `gorselEk`)
+// iç kayıt olarak durur; arşivdeki eski CC BY kapakların toplu atıf kaydı
+// `/gorsel-kaynaklari/` sayfasında yayınlanır.
 //
 // Görsel seçimi habere özeldir: AI, haberi anlatan İngilizce bir arama sorgusu
 // üretir (gorselSorgu). Sorgu boşsa etiketler, sonra kategori sorgusu denenir.
@@ -654,13 +658,7 @@ export const KATEGORI_SORGU = {
  * kalmaz. (Yalnızca kategori sorgusu da başarısız olduğunda devreye girer.)
  */
 export const YEDEK_GORSEL = {
-  Teknoloji: [
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg/1280px-Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
-      yazar: "Shixart1985",
-      lisans: "CC BY 2.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Close-up_view_of_a_circuit_board_being_held_near_an_air_conditioning_unit_in_a_contemporary_indoor_environment.jpg",
-    },
+  "Teknoloji": [
     {
       url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Close-up_of_a_VHS_Player_Circuit_Board.jpg/1280px-Close-up_of_a_VHS_Player_Circuit_Board.jpg",
       yazar: "DiscoA340",
@@ -676,43 +674,21 @@ export const YEDEK_GORSEL = {
       sayfa: "https://commons.wikimedia.org/wiki/File:Close-up_of_a_VHS_Player_Circuit_Board_2.jpg",
     },
     {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Macro_circuit_board.JPG/1280px-Macro_circuit_board.JPG",
-      yazar: "Ingo Dierking",
-      lisans: "CC BY-SA 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Macro_circuit_board.JPG",
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Caviar_2340_Hard_Drive_Circuit_Board_Side_2.jpg/1280px-Caviar_2340_Hard_Drive_Circuit_Board_Side_2.jpg",
+      yazar: "ComputerUserUser",
+      lisans: "CC0",
+      lisansUrl: "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Caviar_2340_Hard_Drive_Circuit_Board_Side_2.jpg",
+    },
+    {
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Caviar_2340_Hard_Drive_Circuit_Board_Side_1.jpg/1280px-Caviar_2340_Hard_Drive_Circuit_Board_Side_1.jpg",
+      yazar: "ComputerUserUser",
+      lisans: "CC0",
+      lisansUrl: "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Caviar_2340_Hard_Drive_Circuit_Board_Side_1.jpg",
     },
   ],
-  "Yapay Zeka": [
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Artificial_Intelligence_%28AI%29_and_Robotics_exhibition_at_the_Heinz_Nixdorf_MuseumsForum.jpg/1280px-Artificial_Intelligence_%28AI%29_and_Robotics_exhibition_at_the_Heinz_Nixdorf_MuseumsForum.jpg",
-      yazar: "Sergei Magel/HNF",
-      lisans: "CC BY-SA 4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Artificial_Intelligence_(AI)_and_Robotics_exhibition_at_the_Heinz_Nixdorf_MuseumsForum.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Is_artificial_intelligence_our_future.jpg/1280px-Is_artificial_intelligence_our_future.jpg",
-      yazar: "Elekes Andor",
-      lisans: "CC BY-SA 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Is_artificial_intelligence_our_future.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Robot_hand_-_VivaTech_%2847816344952%29.jpg/1280px-Robot_hand_-_VivaTech_%2847816344952%29.jpg",
-      yazar: "Jérémy Barande",
-      lisans: "CC BY-SA 2.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/2.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Robot_hand_-_VivaTech_(47816344952).jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Neural_Network_Identifies_Stars.jpg/1280px-Neural_Network_Identifies_Stars.jpg",
-      yazar: "Dennis",
-      lisans: "CC BY 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Neural_Network_Identifies_Stars.jpg",
-    },
-  ],
-  Mobil: [
+  "Mobil": [
     {
       url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Black_smartphone_in_hand_%28Unsplash%29.jpg/1280px-Black_smartphone_in_hand_%28Unsplash%29.jpg",
       yazar: "Dennis Cortés",
@@ -720,84 +696,36 @@ export const YEDEK_GORSEL = {
       sayfa: "https://commons.wikimedia.org/wiki/File:Black_smartphone_in_hand_(Unsplash).jpg",
     },
     {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Hand_holding_smartphone_with_ChatGPT_and_OpenAI_text_%2852917312010%29.jpg/1280px-Hand_holding_smartphone_with_ChatGPT_and_OpenAI_text_%2852917312010%29.jpg",
-      yazar: "Jernej Furman from Slovenia",
-      lisans: "CC BY 2.0",
-      lisansUrl: "https://creativecommons.org/licenses/by/2.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Hand_holding_smartphone_with_ChatGPT_and_OpenAI_text_(52917312010).jpg",
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Smartphone_in_Hand_%28Unsplash%29.jpg/1280px-Smartphone_in_Hand_%28Unsplash%29.jpg",
+      yazar: "NeONBRAND neonbrand",
+      lisans: "CC0",
+      lisansUrl: "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Smartphone_in_Hand_(Unsplash).jpg",
     },
     {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Hand_holding_smartphone_with_ChatGPT_%2852917076309%29.jpg/1280px-Hand_holding_smartphone_with_ChatGPT_%2852917076309%29.jpg",
-      yazar: "Jernej Furman from Slovenia",
-      lisans: "CC BY 2.0",
-      lisansUrl: "https://creativecommons.org/licenses/by/2.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Hand_holding_smartphone_with_ChatGPT_(52917076309).jpg",
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Smartphone-mobile-hand-technology-internet-finger.jpg/1280px-Smartphone-mobile-hand-technology-internet-finger.jpg",
+      yazar: "",
+      lisans: "CC0",
+      lisansUrl: "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Smartphone-mobile-hand-technology-internet-finger.jpg",
     },
     {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Business_and_technology_concept_hand_holding_smartphone_and_search_bar_%2852917310335%29.jpg/1280px-Business_and_technology_concept_hand_holding_smartphone_and_search_bar_%2852917310335%29.jpg",
-      yazar: "Jernej Furman from Slovenia",
-      lisans: "CC BY 2.0",
-      lisansUrl: "https://creativecommons.org/licenses/by/2.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Business_and_technology_concept_hand_holding_smartphone_and_search_bar_(52917310335).jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Hand_holding_smartphone_with_blank_white_screen.jpg/1280px-Hand_holding_smartphone_with_blank_white_screen.jpg",
-      yazar: "Santeri Viinamäki",
-      lisans: "CC BY-SA 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Hand_holding_smartphone_with_blank_white_screen.jpg",
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/SZ_Shenzhen_man_in_white_shirt_long_sleeve_May_2024_R12S_human_hand_holding_smartphone.jpg/1280px-SZ_Shenzhen_man_in_white_shirt_long_sleeve_May_2024_R12S_human_hand_holding_smartphone.jpg",
+      yazar: "TANNMY NAISZE Wanguo",
+      lisans: "CC0",
+      lisansUrl: "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      sayfa: "https://commons.wikimedia.org/wiki/File:SZ_Shenzhen_man_in_white_shirt_long_sleeve_May_2024_R12S_human_hand_holding_smartphone.jpg",
     },
   ],
-  Oyun: [
+  "Oyun": [
     {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Hands_holding_video_game_controller_%2850811892858%29.jpg/1280px-Hands_holding_video_game_controller_%2850811892858%29.jpg",
-      yazar: "Vu Hoang",
-      lisans: "CC BY 2.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Hands_holding_video_game_controller_(50811892858).jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Teletenis_Compact_Color_Video_Game_-_Detached_controllers.jpg/1280px-Teletenis_Compact_Color_Video_Game_-_Detached_controllers.jpg",
-      yazar: "José Antonio Ortigueira Amor",
-      lisans: "CC BY 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Teletenis_Compact_Color_Video_Game_-_Detached_controllers.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Tele-Partner_Video_game_-_Tank_Battle_-_No_controllers.jpg/1280px-Tele-Partner_Video_game_-_Tank_Battle_-_No_controllers.jpg",
-      yazar: "José Antonio Ortigueira Amor",
-      lisans: "CC BY 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Tele-Partner_Video_game_-_Tank_Battle_-_No_controllers.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Gaming_PC-Setup_-_Astaroth-_The_Completed_System.jpg/1280px-Gaming_PC-Setup_-_Astaroth-_The_Completed_System.jpg",
-      yazar: "Brian Wong",
-      lisans: "CC BY-SA 2.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/2.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Gaming_PC-Setup_-_Astaroth-_The_Completed_System.jpg",
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Mongolian_Prime_Minister_Oyun-Erdene_Signs_Secretary_Blinken%27s_Guestbook.jpg/1280px-Mongolian_Prime_Minister_Oyun-Erdene_Signs_Secretary_Blinken%27s_Guestbook.jpg",
+      yazar: "U.S. Department of State",
+      lisans: "Kamu malı",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Mongolian_Prime_Minister_Oyun-Erdene_Signs_Secretary_Blinken%27s_Guestbook.jpg",
     },
   ],
   "Donanım": [
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/H%C3%A5kan_Lans_computer_color_graphics_card_Datacolor.jpg/1280px-H%C3%A5kan_Lans_computer_color_graphics_card_Datacolor.jpg",
-      yazar: "Agnes Andersson",
-      lisans: "CC BY 4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:H%C3%A5kan_Lans_computer_color_graphics_card_Datacolor.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Elsa_Victory_3d_Graphics_Card_%2878786593%29.jpeg/1280px-Elsa_Victory_3d_Graphics_Card_%2878786593%29.jpeg",
-      yazar: "Dennis Lamczak",
-      lisans: "CC BY-SA 3.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/3.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Elsa_Victory_3d_Graphics_Card_(78786593).jpeg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/ASUS_NVIDIA_GeForce_210_silent_graphics_card_with_HDMI.JPG/1280px-ASUS_NVIDIA_GeForce_210_silent_graphics_card_with_HDMI.JPG",
-      yazar: "Joydeep",
-      lisans: "CC BY-SA 3.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/3.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:ASUS_NVIDIA_GeForce_210_silent_graphics_card_with_HDMI.JPG",
-    },
     {
       url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Graphics_Card_Upgrading_-_49259431802.jpg/1280px-Graphics_Card_Upgrading_-_49259431802.jpg",
       yazar: "Keijiro Takahashi",
@@ -806,64 +734,22 @@ export const YEDEK_GORSEL = {
       sayfa: "https://commons.wikimedia.org/wiki/File:Graphics_Card_Upgrading_-_49259431802.jpg",
     },
   ],
-  "Yazılım": [
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Programming_code.jpg/1280px-Programming_code.jpg",
-      yazar: "Martin Vorel",
-      lisans: "CC BY-SA 4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Programming_code.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Screen-python-code-matplotlib-physics-simulation.jpg/1280px-Screen-python-code-matplotlib-physics-simulation.jpg",
-      yazar: "MikeRun",
-      lisans: "CC BY-SA 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Screen-python-code-matplotlib-physics-simulation.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Software_Developer_at_work_01.jpg/1280px-Software_Developer_at_work_01.jpg",
-      yazar: "Daudi mukiibi",
-      lisans: "CC BY-SA 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Software_Developer_at_work_01.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Software_Developer_at_work_02.jpg/1280px-Software_Developer_at_work_02.jpg",
-      yazar: "Daudi mukiibi",
-      lisans: "CC BY-SA 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Software_Developer_at_work_02.jpg",
-    },
-  ],
   "İnternet": [
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Duga-1_radar_data_center_interior_server_room_2018.jpg/1280px-Duga-1_radar_data_center_interior_server_room_2018.jpg",
-      yazar: "Joël van der Loo",
-      lisans: "CC BY-SA 4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Duga-1_radar_data_center_interior_server_room_2018.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Data_Center_of_CNPC.jpg/1280px-Data_Center_of_CNPC.jpg",
-      yazar: "Charlie fong",
-      lisans: "CC BY-SA 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Data_Center_of_CNPC.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Una_batteria_di_grossi_generatori_alimentati_a_gasolio_in_un_Data_Center_in_via_di_ultimazione.jpg/1280px-Una_batteria_di_grossi_generatori_alimentati_a_gasolio_in_un_Data_Center_in_via_di_ultimazione.jpg",
-      yazar: "Lapalmauz",
-      lisans: "CC BY-SA 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Una_batteria_di_grossi_generatori_alimentati_a_gasolio_in_un_Data_Center_in_via_di_ultimazione.jpg",
-    },
     {
       url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Data_center_infrastructure_in_the_United_States.jpg/1280px-Data_center_infrastructure_in_the_United_States.jpg",
       yazar: "DOE / National Renewable Energy Laboratory (NREL)",
       lisans: "Kamu malı",
       sayfa: "https://commons.wikimedia.org/wiki/File:Data_center_infrastructure_in_the_United_States.jpg",
     },
+    {
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Data_center_roof.jpg/1280px-Data_center_roof.jpg",
+      yazar: "Rsparks3",
+      lisans: "CC0",
+      lisansUrl: "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Data_center_roof.jpg",
+    },
   ],
-  Bilim: [
+  "Bilim": [
     {
       url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Jet_Propulsion_Laboratory_Plasma_Flow_Research_Lab.jpg/1280px-Jet_Propulsion_Laboratory_Plasma_Flow_Research_Lab.jpg",
       yazar: "NASA",
@@ -877,20 +763,13 @@ export const YEDEK_GORSEL = {
       sayfa: "https://commons.wikimedia.org/wiki/File:Supercharger_Research_at_the_Aircraft_Engine_Research_Laboratory_(GRC-1944-C-03814).jpg",
     },
     {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Light_Microscope_in_the_bacteriological_laboratory%2C_Minneapolis_Health_Department.jpg/1280px-Light_Microscope_in_the_bacteriological_laboratory%2C_Minneapolis_Health_Department.jpg",
-      yazar: "City of Minneapolis Archives",
-      lisans: "CC BY 2.0",
-      lisansUrl: "https://creativecommons.org/licenses/by/2.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Light_Microscope_in_the_bacteriological_laboratory,_Minneapolis_Health_Department.jpg",
-    },
-    {
       url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/View_of_scientist_looking_at_a_Surveyor_III_components_with_a_microscope_in_a_Lunar_Receiving_Laboratory_sterile_vacuum_cabinet_%28s70-22401%29.jpg/1280px-View_of_scientist_looking_at_a_Surveyor_III_components_with_a_microscope_in_a_Lunar_Receiving_Laboratory_sterile_vacuum_cabinet_%28s70-22401%29.jpg",
       yazar: "NASA",
       lisans: "Kamu malı",
       sayfa: "https://commons.wikimedia.org/wiki/File:View_of_scientist_looking_at_a_Surveyor_III_components_with_a_microscope_in_a_Lunar_Receiving_Laboratory_sterile_vacuum_cabinet_(s70-22401).jpg",
     },
   ],
-  Uzay: [
+  "Uzay": [
     {
       url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Artemis_I_Launch_%28NHQ202211160017%29.jpg/1280px-Artemis_I_Launch_%28NHQ202211160017%29.jpg",
       yazar: "Joel Kowsky",
@@ -903,13 +782,6 @@ export const YEDEK_GORSEL = {
       lisans: "CC0",
       lisansUrl: "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       sayfa: "https://commons.wikimedia.org/wiki/File:SES-10_Launch_-_world%27s_first_reflight_of_an_orbital_class_rocket_(33361035200).jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Rocket_launch_remains.jpg/1280px-Rocket_launch_remains.jpg",
-      yazar: "Gocsmán Benedek",
-      lisans: "CC BY-SA 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Rocket_launch_remains.jpg",
     },
     {
       url: "https://upload.wikimedia.org/wikipedia/commons/1/10/Expedition_7_Soyuz_Rocket_Launch_From_Baikonur%2C_Kazakhstan.jpg",
@@ -926,27 +798,6 @@ export const YEDEK_GORSEL = {
   ],
   "Sağlık": [
     {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Keynsham_Hospital%2C_Claude_Harrison_Ward.jpg/1280px-Keynsham_Hospital%2C_Claude_Harrison_Ward.jpg",
-      yazar: "Rwendland",
-      lisans: "CC BY-SA 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Keynsham_Hospital,_Claude_Harrison_Ward.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Corridor%2C_Amersham_Hospital_-_geograph.org.uk_-_7628891.jpg/1280px-Corridor%2C_Amersham_Hospital_-_geograph.org.uk_-_7628891.jpg",
-      yazar: "Bryn Holmes",
-      lisans: "CC BY-SA 2.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/2.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Corridor,_Amersham_Hospital_-_geograph.org.uk_-_7628891.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Corridor_in_Uddevalla_Hospital.jpg/1280px-Corridor_in_Uddevalla_Hospital.jpg",
-      yazar: "W.carter",
-      lisans: "CC BY-SA 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Corridor_in_Uddevalla_Hospital.jpg",
-    },
-    {
       url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Corridor_on_the_second_level_-_N%C3%84L_hospital_1.jpg/1280px-Corridor_on_the_second_level_-_N%C3%84L_hospital_1.jpg",
       yazar: "W.carter",
       lisans: "CC0",
@@ -954,78 +805,42 @@ export const YEDEK_GORSEL = {
       sayfa: "https://commons.wikimedia.org/wiki/File:Corridor_on_the_second_level_-_N%C3%84L_hospital_1.jpg",
     },
     {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Corridor%2C_Nambour_General_Hospital%2C_2025%2C.jpg/1280px-Corridor%2C_Nambour_General_Hospital%2C_2025%2C.jpg",
-      yazar: "Chris Olszewski",
-      lisans: "CC BY-SA 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Corridor,_Nambour_General_Hospital,_2025,.jpg",
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Doctor_examines_patient_with_stethoscope.jpg/1280px-Doctor_examines_patient_with_stethoscope.jpg",
+      yazar: "Unknown photographer",
+      lisans: "Kamu malı",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Doctor_examines_patient_with_stethoscope.jpg",
+    },
+    {
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Doctor_examines_patient_with_stethoscope_%281%29.jpg/1280px-Doctor_examines_patient_with_stethoscope_%281%29.jpg",
+      yazar: "Unknown photographer",
+      lisans: "Kamu malı",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Doctor_examines_patient_with_stethoscope_(1).jpg",
+    },
+    {
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Doctor_examines_patient_with_stethoscope_%282%29.jpg/1280px-Doctor_examines_patient_with_stethoscope_%282%29.jpg",
+      yazar: "Unknown photographer",
+      lisans: "Kamu malı",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Doctor_examines_patient_with_stethoscope_(2).jpg",
     },
   ],
-  "Kültür": [
+  "Otomobil": [
     {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Gallery-01-Plank_Museum_and_Visitor_Center.jpg/1280px-Gallery-01-Plank_Museum_and_Visitor_Center.jpg",
-      yazar: "Myotus",
-      lisans: "CC BY-SA 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Gallery-01-Plank_Museum_and_Visitor_Center.jpg",
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Charging_station_for_electric_cars._Strzelecka_24-26_Street%2C_Tomasz%C3%B3w_Mazowiecki%2C_Poland.jpg/1280px-Charging_station_for_electric_cars._Strzelecka_24-26_Street%2C_Tomasz%C3%B3w_Mazowiecki%2C_Poland.jpg",
+      yazar: "WrS.tm.pl",
+      lisans: "Kamu malı",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Charging_station_for_electric_cars._Strzelecka_24-26_Street,_Tomasz%C3%B3w_Mazowiecki,_Poland.jpg",
     },
     {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/HKU_%E9%A6%99%E6%B8%AF%E5%A4%A7%E5%AD%B8%E7%BE%8E%E8%A1%93%E5%8D%9A%E7%89%A9%E9%A4%A8_University_Museum_and_Art_Gallery_UMAG_hall_visitors_May-2012_Mr_Yeung.JPG/1280px-HKU_%E9%A6%99%E6%B8%AF%E5%A4%A7%E5%AD%B8%E7%BE%8E%E8%A1%93%E5%8D%9A%E7%89%A9%E9%A4%A8_University_Museum_and_Art_Gallery_UMAG_hall_visitors_May-2012_Mr_Yeung.JPG",
-      yazar: "Shaibariheis",
-      lisans: "CC BY-SA 3.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/3.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:HKU_%E9%A6%99%E6%B8%AF%E5%A4%A7%E5%AD%B8%E7%BE%8E%E8%A1%93%E5%8D%9A%E7%89%A9%E9%A4%A8_University_Museum_and_Art_Gallery_UMAG_hall_visitors_May-2012_Mr_Yeung.JPG",
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Tesla_3_charging_at_the_electric_car_charging_station_in_Tomasz%C3%B3w_Mazowiecki%2C_Ko%C5%9Bciuszki_11_Square._October_24%2C_2024.jpg/1280px-Tesla_3_charging_at_the_electric_car_charging_station_in_Tomasz%C3%B3w_Mazowiecki%2C_Ko%C5%9Bciuszki_11_Square._October_24%2C_2024.jpg",
+      yazar: "WrS.tm.pl",
+      lisans: "Kamu malı",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Tesla_3_charging_at_the_electric_car_charging_station_in_Tomasz%C3%B3w_Mazowiecki,_Ko%C5%9Bciuszki_11_Square._October_24,_2024.jpg",
     },
     {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Visitors_in_Gallery_of_Museo_Reina_Sofia_-_Madrid_-_Spain.jpg/1280px-Visitors_in_Gallery_of_Museo_Reina_Sofia_-_Madrid_-_Spain.jpg",
-      yazar: "Adam Jones, Ph.D",
-      lisans: "CC BY-SA 3.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/3.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Visitors_in_Gallery_of_Museo_Reina_Sofia_-_Madrid_-_Spain.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Gallery-02-Plank_Museum_and_Visitor_Center.jpg/1280px-Gallery-02-Plank_Museum_and_Visitor_Center.jpg",
-      yazar: "Myotus",
-      lisans: "CC BY-SA 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Gallery-02-Plank_Museum_and_Visitor_Center.jpg",
-    },
-  ],
-  Otomobil: [
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Electric_car_charging_station%2C_Batman_%28Turkey%29.jpg/1280px-Electric_car_charging_station%2C_Batman_%28Turkey%29.jpg",
-      yazar: "Zalasem1",
-      lisans: "CC BY 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Electric_car_charging_station,_Batman_(Turkey).jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Electric_car_charging_point%2C_Cluster_of_Nuts_car_park%2C_Wetherby_%288th_April_2020%29.jpg/1280px-Electric_car_charging_point%2C_Cluster_of_Nuts_car_park%2C_Wetherby_%288th_April_2020%29.jpg",
-      yazar: "Mtaylor848",
-      lisans: "CC BY-SA 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Electric_car_charging_point,_Cluster_of_Nuts_car_park,_Wetherby_(8th_April_2020).jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Cologne_Germany_Electric-Car-Charging-Point-at-TUV-Rheinland-01.jpg/1280px-Cologne_Germany_Electric-Car-Charging-Point-at-TUV-Rheinland-01.jpg",
-      yazar: "CEphoto, Uwe Aranas",
-      lisans: "CC BY-SA 3.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/3.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Cologne_Germany_Electric-Car-Charging-Point-at-TUV-Rheinland-01.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Electric_car_charging_at_a_station_during_the_day_with_the_charging_cable_connected_to_the_vehicle.jpg/1280px-Electric_car_charging_at_a_station_during_the_day_with_the_charging_cable_connected_to_the_vehicle.jpg",
-      yazar: "Shixart1985",
-      lisans: "CC BY 2.0",
-      lisansUrl: "https://creativecommons.org/licenses/by/2.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Electric_car_charging_at_a_station_during_the_day_with_the_charging_cable_connected_to_the_vehicle.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Close-up_of_an_electric_car_charging._Traffic_lights_in_a_blurry_background.jpg/1280px-Close-up_of_an_electric_car_charging._Traffic_lights_in_a_blurry_background.jpg",
-      yazar: "Ivan Radic",
-      lisans: "CC BY 2.0",
-      lisansUrl: "https://creativecommons.org/licenses/by/2.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Close-up_of_an_electric_car_charging._Traffic_lights_in_a_blurry_background.jpg",
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Lidl_Charging_Station_for_electric_cars_in_Tomasz%C3%B3w_Mazowiecki%2C_Poland.jpg/1280px-Lidl_Charging_Station_for_electric_cars_in_Tomasz%C3%B3w_Mazowiecki%2C_Poland.jpg",
+      yazar: "WrS.tm.pl",
+      lisans: "Kamu malı",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Lidl_Charging_Station_for_electric_cars_in_Tomasz%C3%B3w_Mazowiecki,_Poland.jpg",
     },
   ],
   "Yaşam": [
@@ -1043,41 +858,21 @@ export const YEDEK_GORSEL = {
       sayfa: "https://commons.wikimedia.org/wiki/File:People_walking_along_bayside_park_trail_(6968369700).jpg",
     },
     {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Gas_Works_Park_people_walking_%2851521274633%29.jpg/1280px-Gas_Works_Park_people_walking_%2851521274633%29.jpg",
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Magnuson_Park_Walking_Tour_%2827353428293%29.jpg/1280px-Magnuson_Park_Walking_Tour_%2827353428293%29.jpg",
       yazar: "Seattle City Council from Seattle",
-      lisans: "CC BY 2.0",
-      lisansUrl: "https://creativecommons.org/licenses/by/2.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Gas_Works_Park_people_walking_(51521274633).jpg",
+      lisans: "CC0",
+      lisansUrl: "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Magnuson_Park_Walking_Tour_(27353428293).jpg",
     },
     {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/People_walking_in_Croome_Park_-_geograph.org.uk_-_8137048.jpg/1280px-People_walking_in_Croome_Park_-_geograph.org.uk_-_8137048.jpg",
-      yazar: "Philip Halling",
-      lisans: "CC BY-SA 2.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/2.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:People_walking_in_Croome_Park_-_geograph.org.uk_-_8137048.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Three_people_walking_towards_the_Pen_Ponds_-_geograph.org.uk_-_5574215.jpg/1280px-Three_people_walking_towards_the_Pen_Ponds_-_geograph.org.uk_-_5574215.jpg",
-      yazar: "Peter S",
-      lisans: "CC BY-SA 2.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/2.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Three_people_walking_towards_the_Pen_Ponds_-_geograph.org.uk_-_5574215.jpg",
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Magnuson_Park_Walking_Tour_%2827966929405%29.jpg/1280px-Magnuson_Park_Walking_Tour_%2827966929405%29.jpg",
+      yazar: "Seattle City Council from Seattle",
+      lisans: "CC0",
+      lisansUrl: "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Magnuson_Park_Walking_Tour_(27966929405).jpg",
     },
   ],
-  Ekonomi: [
-    {
-      url: "https://upload.wikimedia.org/wikipedia/commons/7/78/Market_centre_in_Tokyo_stock_exchange.jpg",
-      yazar: "ehnmark",
-      lisans: "CC BY 2.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Market_centre_in_Tokyo_stock_exchange.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Chicago_Stock_Exchange_Trading_Room_%2833194524816%29.jpg/1280px-Chicago_Stock_Exchange_Trading_Room_%2833194524816%29.jpg",
-      yazar: "Christian Collins from Midland, MI, United States",
-      lisans: "CC BY-SA 2.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/2.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Chicago_Stock_Exchange_Trading_Room_(33194524816).jpg",
-    },
+  "Ekonomi": [
     {
       url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Chicago_Stock_Exchange_Trading_Room_Reconstruction_at_the_Art_Institute_of_Chicago.jpg/1280px-Chicago_Stock_Exchange_Trading_Room_Reconstruction_at_the_Art_Institute_of_Chicago.jpg",
       yazar: "https://www.artic.edu/artworks/156538/chicago-stock-exchange-tradin…",
@@ -1098,70 +893,18 @@ export const YEDEK_GORSEL = {
       sayfa: "https://commons.wikimedia.org/wiki/File:NY_stock_exchange_traders_floor_LC-U9-10548-6.jpg",
     },
   ],
-  Spor: [
+  "Spor": [
     {
-      url: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Besiktas_JK_-_Trabzonspor_match.jpg",
-      yazar: "ayhang",
-      lisans: "CC BY 2.0",
-      lisansUrl: "https://creativecommons.org/licenses/by/2.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Besiktas_JK_-_Trabzonspor_match.jpg",
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/1926_02_25_Gol_Spor_Fenerbahce_Galatasaray_Karmasi.jpg/1280px-1926_02_25_Gol_Spor_Fenerbahce_Galatasaray_Karmasi.jpg",
+      yazar: "Gol Spor Dergisi",
+      lisans: "Kamu malı",
+      sayfa: "https://commons.wikimedia.org/wiki/File:1926_02_25_Gol_Spor_Fenerbahce_Galatasaray_Karmasi.jpg",
     },
     {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Football_match_at_Wincham_Park_Stadium_%28geograph_4383139%29.jpg/1280px-Football_match_at_Wincham_Park_Stadium_%28geograph_4383139%29.jpg",
-      yazar: "Bill Boaden",
-      lisans: "CC BY-SA 2.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/2.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Football_match_at_Wincham_Park_Stadium_(geograph_4383139).jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Football_match_at_The_Arriva_Stadium_-_geograph.org.uk_-_4258205.jpg/1280px-Football_match_at_The_Arriva_Stadium_-_geograph.org.uk_-_4258205.jpg",
-      yazar: "Bill Boaden",
-      lisans: "CC BY-SA 2.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/2.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Football_match_at_The_Arriva_Stadium_-_geograph.org.uk_-_4258205.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Football_match_at_the_i2i_Stadium_-_geograph.org.uk_-_5307336.jpg/1280px-Football_match_at_the_i2i_Stadium_-_geograph.org.uk_-_5307336.jpg",
-      yazar: "Bill Boaden",
-      lisans: "CC BY-SA 2.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/2.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Football_match_at_the_i2i_Stadium_-_geograph.org.uk_-_5307336.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Football_match_at_the_i2i_Stadium_-_geograph.org.uk_-_5307343.jpg/1280px-Football_match_at_the_i2i_Stadium_-_geograph.org.uk_-_5307343.jpg",
-      yazar: "Bill Boaden",
-      lisans: "CC BY-SA 2.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/2.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Football_match_at_the_i2i_Stadium_-_geograph.org.uk_-_5307343.jpg",
-    },
-  ],
-  "Gündem": [
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Istanbul_city_Photos-_Urban_01.jpg/1280px-Istanbul_city_Photos-_Urban_01.jpg",
-      yazar: "Mostafameraji",
-      lisans: "CC BY-SA 4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_01.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Istanbul_city_Photos-_Urban_07.jpg/1280px-Istanbul_city_Photos-_Urban_07.jpg",
-      yazar: "Mostafameraji",
-      lisans: "CC BY-SA 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_07.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Istanbul_city_Photos-_Urban_18.jpg/1280px-Istanbul_city_Photos-_Urban_18.jpg",
-      yazar: "Mostafameraji",
-      lisans: "CC BY-SA 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_18.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Istanbul_city_Photos-_Urban_24.jpg/1280px-Istanbul_city_Photos-_Urban_24.jpg",
-      yazar: "Mostafameraji",
-      lisans: "CC BY-SA 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_24.jpg",
+      url: "https://upload.wikimedia.org/wikipedia/commons/2/20/1925_06_23_Gol_Spor_Fenerbahce_Sahaya_Cikiyor.jpg",
+      yazar: "Gol Spor Dergisi",
+      lisans: "Kamu malı",
+      sayfa: "https://commons.wikimedia.org/wiki/File:1925_06_23_Gol_Spor_Fenerbahce_Sahaya_Cikiyor.jpg",
     },
   ],
   "Dünya": [
@@ -1173,55 +916,14 @@ export const YEDEK_GORSEL = {
       sayfa: "https://commons.wikimedia.org/wiki/File:Person_holding_world_globe.jpg",
     },
     {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Globe_of_the_Ancient_World_1977.jpg/1280px-Globe_of_the_Ancient_World_1977.jpg",
-      yazar: "DavidHalpernist",
-      lisans: "CC BY-SA 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Globe_of_the_Ancient_World_1977.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/United_Nations_Building%2C_Geneva_%28Ank_Kumar%29_02.jpg/1280px-United_Nations_Building%2C_Geneva_%28Ank_Kumar%29_02.jpg",
-      yazar: "Ank gsx",
-      lisans: "CC BY-SA 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:United_Nations_Building,_Geneva_(Ank_Kumar)_02.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/United_Nations_Building%2C_Geneva_%28Ank_Kumar%29_01.jpg/1280px-United_Nations_Building%2C_Geneva_%28Ank_Kumar%29_01.jpg",
-      yazar: "Ank gsx",
-      lisans: "CC BY-SA 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:United_Nations_Building,_Geneva_(Ank_Kumar)_01.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/United_Nations_Building%2C_Geneva_%28Ank_Kumar%29_04.jpg/1280px-United_Nations_Building%2C_Geneva_%28Ank_Kumar%29_04.jpg",
-      yazar: "Ank gsx",
-      lisans: "CC BY-SA 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:United_Nations_Building,_Geneva_(Ank_Kumar)_04.jpg",
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/World_globe_%28Unsplash_gEKMstKfZ6w%29.jpg/1280px-World_globe_%28Unsplash_gEKMstKfZ6w%29.jpg",
+      yazar: "Ben White benwhitephotography",
+      lisans: "CC0",
+      lisansUrl: "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      sayfa: "https://commons.wikimedia.org/wiki/File:World_globe_(Unsplash_gEKMstKfZ6w).jpg",
     },
   ],
   "Diğer": [
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Man_reading_a_newspaper.jpg/1280px-Man_reading_a_newspaper.jpg",
-      yazar: "Michael Slaten",
-      lisans: "CC BY-SA 4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Man_reading_a_newspaper.jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Newspaper_Stack_%288582618448%29.jpg/1280px-Newspaper_Stack_%288582618448%29.jpg",
-      yazar: "Babak Farrokhi from Tehran, IRAN",
-      lisans: "CC BY 2.0",
-      lisansUrl: "https://creativecommons.org/licenses/by/2.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:Newspaper_Stack_(8582618448).jpg",
-    },
-    {
-      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/ASC_Leiden_-_Library_-_South_African_newspaper_stack_of_Die_Burger_-_2012.jpg/1280px-ASC_Leiden_-_Library_-_South_African_newspaper_stack_of_Die_Burger_-_2012.jpg",
-      yazar: "African Studies Centre Leiden",
-      lisans: "CC BY-SA 4.0",
-      lisansUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:ASC_Leiden_-_Library_-_South_African_newspaper_stack_of_Die_Burger_-_2012.jpg",
-    },
     {
       url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Interior_view_of_newspaper_delivery_room_showing_man_taking_stack_of_newspapers_from_machine%29_-_World-Telegram_photo_LCCN95506971.jpg/1280px-Interior_view_of_newspaper_delivery_room_showing_man_taking_stack_of_newspapers_from_machine%29_-_World-Telegram_photo_LCCN95506971.jpg",
       yazar: "Miscellaneous Items in High Demand, PPOC, Library of Congress",
@@ -1229,11 +931,17 @@ export const YEDEK_GORSEL = {
       sayfa: "https://commons.wikimedia.org/wiki/File:Interior_view_of_newspaper_delivery_room_showing_man_taking_stack_of_newspapers_from_machine)_-_World-Telegram_photo_LCCN95506971.jpg",
     },
     {
-      url: "https://upload.wikimedia.org/wikipedia/commons/b/b8/RNW%27s_newsroom_-_with_the_big_central_desk_%284461774453%29.jpg",
-      yazar: "James Cridland from Brisbane, AU",
-      lisans: "CC BY 2.0",
-      lisansUrl: "https://creativecommons.org/licenses/by/2.0",
-      sayfa: "https://commons.wikimedia.org/wiki/File:RNW%27s_newsroom_-_with_the_big_central_desk_(4461774453).jpg",
+      url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Business_Woman_is_reading_Newspaper_-_35870943420.jpg/1280px-Business_Woman_is_reading_Newspaper_-_35870943420.jpg",
+      yazar: "tranmautritam (tranmautritam.com / unsplash.com/@tranmautritam)",
+      lisans: "CC0",
+      lisansUrl: "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      sayfa: "https://commons.wikimedia.org/wiki/File:Business_Woman_is_reading_Newspaper_-_35870943420.jpg",
+    },
+    {
+      url: "https://upload.wikimedia.org/wikipedia/commons/0/0c/StateLibQld_1_201763_Elderly_woman_reading_the_newspaper%2C_1930-1940.jpg",
+      yazar: "Item is held by John Oxley Library, State Library of Queensland",
+      lisans: "Kamu malı",
+      sayfa: "https://commons.wikimedia.org/wiki/File:StateLibQld_1_201763_Elderly_woman_reading_the_newspaper,_1930-1940.jpg",
     },
   ],
 };
@@ -1257,8 +965,22 @@ function tohumSayi(tohum) {
 
 export function yedekGorsel(kategori, tohum = "") {
   const havuz = Array.isArray(YEDEK_GORSEL[kategori]) ? YEDEK_GORSEL[kategori] : null;
-  const g = (havuz && havuz.length ? havuz[tohumSayi(tohum) % havuz.length] : null) || YEDEK_GORSEL.Diğer[0];
-  return { ...g, genislik: 1400, yukseklik: 933, dosya: String(g.sayfa || "").split("File:").pop() };
+  // ATIF GEREKTİRMEYEN kareler yeğlenir. Havuzda CC BY / CC BY-SA kayıtları
+  // var; sitede görsel kredisi gösterilmediği için onlar kullanılamaz. Uygun
+  // kare yoksa null döner ve çağıran taraf markalı tasarım kartına geçer.
+  const uygun = (g) => IZINLI_LISANS.test(String(g?.lisans || "").trim());
+  const temiz = (havuz || []).filter(uygun);
+  const genel = YEDEK_GORSEL.Diğer.filter(uygun);
+  const secili =
+    (temiz.length ? temiz[tohumSayi(tohum) % temiz.length] : null) ||
+    (genel.length ? genel[tohumSayi(tohum) % genel.length] : null);
+  if (!secili) return null;
+  return {
+    ...secili,
+    genislik: 1400,
+    yukseklik: 933,
+    dosya: String(secili.sayfa || "").split("File:").pop(),
+  };
 }
 
 /** Verilen adres kategori yedek havuzundaki görsellerden biri mi? */

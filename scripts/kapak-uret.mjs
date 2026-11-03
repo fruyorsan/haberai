@@ -35,6 +35,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 import { collectImageCandidates } from "../src/gorsel.js";
+import { stokGorseller, KATEGORI_SORGU } from "../src/stok-gorsel.js";
 import { kartTaban } from "./kapak-kart.mjs";
 
 const KOK = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -97,6 +98,9 @@ const sadeceStokKaynak = process.argv.includes("--stokkaynak");
 const sadeceUzak = process.argv.includes("--uzak");
 // --varyantsiz: -480 ve -sosyal kopyalarını üretme (arşiv toplu yenilemesi).
 const varyantsiz = process.argv.includes("--varyantsiz") || sadeceUzak;
+// --eski: sıra seçiminde en eski haberden başla (arşiv göçü; CI taze turlarıyla
+// çakışmamak için yerel çalıştırmalarda kullanılır).
+const eskiOnce = process.argv.includes("--eski");
 // --gorsel=<adres|/yol>: aday arama atlanır, kapak bu görselden üretilir.
 // Uygunsuz (müstehcen) bir kapak fotoğrafının yerine güvenli kare koymak için.
 const elleGorsel =
@@ -174,11 +178,15 @@ const sirali = articles
     }
     return aktif.has(String(a.id));
   })
-  // En yeni haber önce: tur başına sınır varsa (CI'da 60) taze içerik kapsanır.
-  .sort(
-    (a, b) =>
-      Date.parse(b.publishedAt || b.generatedAt || 0) - Date.parse(a.publishedAt || a.generatedAt || 0)
-  );
+  // Sıra: varsayılan en yeni haber önce (CI'da tur başına sınır var, taze içerik
+  // önce kapsanır). `--eski` arşiv göçü içindir: en eski haberden başlanır,
+  // böylece CI'ın taze turlarıyla aynı haberlere iki kez dokunulmaz.
+  .sort((a, b) => {
+    const t =
+      Date.parse(b.publishedAt || b.generatedAt || 0) -
+      Date.parse(a.publishedAt || a.generatedAt || 0);
+    return eskiOnce ? -t : t;
+  });
 
 // SIRA SEÇİMİ. `--fotoyok` turu 4-5 dakikada bir çalışıyor ve en yeni N kartı
 // hedefliyor. Sıralama sabit kalınca AYNI N kart her turda yeniden deneniyordu:
@@ -1196,6 +1204,26 @@ async function kapakUret(a) {
       if (temiz) adayEkle(temiz, "veri");
       adayEkle(kaynak, "veri");
     }
+
+    // ARŞİVDEKİ CC0 / KAMU MALI EK FOTOĞRAFLAR. Bu kareler daha önce bu haber
+    // için seçilmiş, yani konuyla ilgisi doğrulanmış; lisansları da atıf
+    // gerektirmiyor. Eski uzak kapağı yerelleştirirken jenerik tasarım kartına
+    // düşmek yerine bunları denemek çok daha iyi bir kapak veriyor.
+    const ekAdaylar = (Array.isArray(a.gorselEk) ? a.gorselEk : [])
+      .filter(
+        (g) =>
+          g &&
+          typeof g.url === "string" &&
+          /^https?:\/\//i.test(g.url) &&
+          lisansUygun(g.lisans) &&
+          !ortakYanGorseller.has(g.url.trim())
+      )
+      .slice(0, 3);
+    for (const g of ekAdaylar) {
+      const temiz = dhTemizUrl(g.url);
+      if (temiz) adayEkle(temiz, "ek");
+      adayEkle(g.url, "ek");
+    }
   }
 
   // En fazla 4 aday indirilir; iyi bir kare çıkınca erken bırakılır (hız).
@@ -1276,6 +1304,81 @@ async function kapakUret(a) {
   // NOT: Bing/görsel arama ile başka sitelerden fotoğraf toplama kaldırıldı.
   // O karelerin lisansı bilinmiyordu (çoğu ajans/rakip yayıncı); kapak yalnızca
   // atıf gerektirmeyen stok havuzdan veya AI üretiminden gelir.
+
+  // ATIF GEREKTİRMEYEN STOK FOTOĞRAF (Commons).
+  // Eski akışta bu adım yoktu; uzak kapak yerelleştirilirken elde fotoğraf
+  // olmayınca her haber jenerik tasarım kartına düşüyordu. Commons araması
+  // CC0 / kamu malı filtresinden geçer (src/stok-gorsel.js), yani kredi
+  // yükümlülüğü doğmaz. AI'dan ÖNCE denenir: gerçek fotoğraf, üretilmiş
+  // görselden daha güvenilir ve kotasız.
+  if (!taban && !kartaZorla) {
+    try {
+      // Arama sorguları: AI'nın İngilizce sorgusu varsa o; yoksa başlıktaki
+      // ÖZEL ADLAR (marka, kulüp, kişi, yer) ve kategori sorgusu. "Samsung",
+      // "Mercedes-Benz", "Beşiktaş" gibi adlar Commons dosya adlarında da aynı
+      // yazıldığı için Türkçe başlıktan doğrudan eşleşme çıkar. Düz Türkçe
+      // cümle sorgusu Commons'ta neredeyse hiç sonuç vermiyor.
+      const ozelAdlar = String(a.title || "")
+        .split(/[\s,.;:!?'"()’“”–—-]+/)
+        .filter((w) => w.length >= 4 && /^[A-ZÇĞİÖŞÜ0-9]/.test(w))
+        .slice(0, 3);
+      const sorgular = [
+        a.gorselSorgu,
+        ...ozelAdlar,
+        KATEGORI_SORGU[String(a.category || "")],
+      ].filter(Boolean);
+      // Alaka iki kademeli:
+      //  • ÖZEL AD (başlıktan): dosya adında geçen tek kelime yeter. "Trabzonspor",
+      //    "HyperX", "Samsung" gibi adlar tesadüfen eşleşmez.
+      //  • KATEGORİ sorgusu: en az İKİ kelime örtüşmeli. Tek kelime yetseydi
+      //    "Abies firma" (köknar) haberin "firma" kelimesine, "Sombrero Galaxy"
+      //    ise "Galaxy A56" telefonuna kapak oluyordu.
+      // Eşleşen kelime en az 5 harf olmalı ("gran", "bist" gibi kısa diziler
+      // rastgele dosya çekiyordu). Örtüşme yoksa fotoğraf ALINMAZ: yanlış kare,
+      // jenerik karttan kötüdür.
+      const katSorgu = String(KATEGORI_SORGU[String(a.category || "")] || "");
+      const dosyaKelimeleri = (url) => {
+        const ad = decodeURIComponent(String(url || "").split("/").pop() || "");
+        if (!ad || JENERIK.test(ad)) return null;
+        return new Set(tokenler(ad));
+      };
+      const ortusuyor = (url) => {
+        const adK = dosyaKelimeleri(url);
+        if (!adK) return false;
+        const ozelEslesme = [a.gorselSorgu, ...ozelAdlar]
+          .filter(Boolean)
+          .some((s) => tokenler(s).some((k) => k.length >= 5 && adK.has(k)));
+        if (ozelEslesme) return true;
+        if (!katSorgu) return false;
+        const katEslesme = tokenler(katSorgu).filter((k) => k.length >= 4 && adK.has(k)).length;
+        return katEslesme >= 2;
+      };
+      const stoklar = await stokGorseller(sorgular, { adet: 8, afet: false });
+      for (const g of stoklar) {
+        if (!lisansUygun(g.lisans)) continue;
+        if (!ortusuyor(g.url)) continue;
+        const hazir = await hazirla(g.url);
+        if (!hazir) continue;
+        // Tek düze/beyaz kareleri ele: fotoğraf ancak gerçekten kapak olacaksa.
+        const bilgi = await sharp(hazir).metadata();
+        const puan = await gorselPuani(hazir, bilgi);
+        if (puan === null || puan < 24) continue;
+        taban = hazir;
+        fotoVar = true;
+        secilenUrl = g.url;
+        yeniAtif = {
+          yazar: g.yazar || "",
+          lisans: g.lisans || "CC0",
+          lisansUrl: g.lisansUrl || "",
+          sayfa: g.sayfa || "",
+        };
+        if (debug) console.log(`   ✦ Commons CC0 (${puan.toFixed(0)}p): ${g.sayfa.slice(0, 70)}`);
+        break;
+      }
+    } catch (err) {
+      if (debug) console.warn(`   ! Commons: ${err.message}`);
+    }
+  }
 
   if (!taban && !kartaZorla) {
     const aiSonuc = await aiGorselUret(a);

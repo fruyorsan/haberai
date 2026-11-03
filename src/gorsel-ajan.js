@@ -8,7 +8,7 @@
 // NE YAPAR: Her haber için gerçek bir görsel editör gibi düşünür:
 //   1) BRİF      — AI, haberin tek karede ne anlatması gerektiğini çıkarır
 //                  ("15 yaş altı sosyal medya yasağı" → elinde telefon tutan genç).
-//   2) ADAYLAR   — Wikimedia Commons + Openverse (CC0/CC BY/CC BY-SA). Kaynak
+//   2) ADAYLAR   - Wikimedia Commons + Openverse (yalnızca CC0 / kamu malı). Kaynak
 //                  sitenin kendi fotoğrafı aday yapılmaz: ajans telifli
 //                  olabiliyor ve kullanıcının şikâyet ettiği "haber kartı"
 //                  sorununun kaynağıydı. Yalnızca mevcut kapak karşılaştırılır.
