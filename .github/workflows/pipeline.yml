@@ -181,21 +181,23 @@ jobs:
         continue-on-error: true
         run: node scripts/kapak-uret.mjs --sosyal --gun=3 --limit=120
 
-      # Depo sismesin: indeks cekirdeginde olmayan ve son 3 gunden eski
-      # kapaklar silinir; o haberler kaynak sitenin ozgun fotografina doner.
+      # Depo sismesin: 480px / 1200x630 kucuk kopyalar son 3 gunle sinirlanir.
+      # ANA KAPAKLAR SILINMEZ (2026-11-04): eskiden silinip haberin `image`
+      # alani kaynak sitenin fotografina donduruluyordu; bu, arsiv
+      # yerellestirmesini her turda geri aliyordu. Dosya butcesi uygun
+      # (5.700 ana kapak / 20.000 sinir).
       - name: Kapak temizligi
         continue-on-error: true
         # --varyant-gun=3: 480px ve 1200x630 sosyal kopyalar yalnizca son 3 gun
         # tutulur. Ana kapak indekste kaldigi surece korunur; eski haberlerin
-        # kucuk kopyalari silinir ve kod wsrv yedegine duser. Boylece her haber
-        # 3 dosya yerine ortalama 1 dosya kaplar (GitHub 10k / Cloudflare 20k).
+        # kucuk kopyalari silinir ve kod wsrv yedegine duser.
         run: node scripts/kapak-temizle.mjs --gun=3 --varyant-gun=3
 
       # KIRIK KAPAK ONARIMI: `image` yerel /kapak/... adresini gosteriyor ama
-      # dosya yoksa (temizlikte silinmis, uretimi yarida kalmis ya da commit
-      # edilmemis) sayfada kirik gorsel kaliyordu. Bu adim o haberi kaynak
-      # sitedeki ozgun fotografina dondurur; yeniden indekse girerse kapak
-      # sifirdan uretilir.
+      # dosya yoksa (uretim yarida kalmis ya da commit edilmemis) sayfada kirik
+      # gorsel kaliyordu. Bu adim o haberi gecici olarak kaynak adrese dondurur;
+      # bir sonraki turda "Uzak kapaklari yerellestir" adimi kapagi CC0/kamu
+      # mali fotografla ya da tasarim kartiyla yeniden uretir.
       - name: Kirik kapak onarimi
         continue-on-error: true
         run: node scripts/kapak-temizle.mjs --onar

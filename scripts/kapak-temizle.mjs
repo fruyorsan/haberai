@@ -6,10 +6,16 @@
 // yalnızca GÜNCEL çekirdek (data/indeks.json) ve son günlerin kapakları
 // tutulur.
 //
-// NE YAPAR: Kapsam dışı kalan kapak dosyalarını siler ve o haberin
-// `image` alanını kaynak sitedeki özgün fotoğrafa (`kapak.kaynak`) geri
-// çevirir; böylece eski sayfalarda kırık görsel kalmaz, haber yeniden
-// indekse girerse kapak sıfırdan üretilir.
+// NE YAPAR: Yalnızca KÜÇÜK KOPYALARI (480 px / 1200x630 sosyal) temizler.
+// Ana kapaklar ARTIK SİLİNMEZ.
+//
+// NEDEN DEĞİŞTİ (2026-11-04): Eski davranış, kapsam dışına çıkan her kapağı
+// silip `image` alanını kaynak sitedeki özgün fotoğrafa geri çeviriyordu. Bu,
+// arşiv yerelleştirmesini sürekli geri alıyordu: 3 günden eski her haber bir
+// sonraki turda yeniden yayıncının (çoğu ajans telifli) fotoğrafına dönüyordu.
+// Dosya bütçesi buna izin veriyor: 5.700 haber × 1 ana kapak ≈ 5,7 bin dosya;
+// Cloudflare Pages sınırı 20.000. Varyantlar temizlenmeye devam eder. Böylece
+// bir haberin kapağı bir kez doğru üretildiğinde kalıcı olur.
 //
 // KULLANIM:
 //   node scripts/kapak-temizle.mjs                  # 3 günden eski + indeks dışı
@@ -125,9 +131,9 @@ if (!onar) {
       .replace(/-sosyal\.jpg$/, "");
     if (kucuk || sosyal) {
       if (!varyantTaze.has(id)) silinecekVaryant.push(f);
-    } else if (!korunacak.has(id)) {
-      silinecek.push(f);
     }
+    // Ana kapaklar korunur (bkz. dosya başındaki not). `korunacak` kümesi
+    // yalnızca raporlama için tutulur.
   }
 }
 
