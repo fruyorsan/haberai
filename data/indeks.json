@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-03T18:59:33.288Z",
+  "updatedAt": "2026-11-03T19:15:17.060Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5753,
-  "aday": 5753,
-  "uygun": 3698,
-  "secilen": 3600,
+  "toplamHaber": 5754,
+  "aday": 5754,
+  "uygun": 3699,
+  "secilen": 3601,
   "red": {
     "özet gövdeyle aynı": 115,
     "editör notu özetle aynı": 8,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 136
+    "tekrar": 137
   },
   "ornekTekrarlar": [
     {
@@ -70,24 +70,16 @@
       "twin": "SPK nitelikli yatırımcı barajını 50 milyon liraya çıkardı"
     },
     {
-      "title": "OpenAI, temel bilimlerde 3 büyük teorik kırılma yaptığını duyurdu",
-      "twin": "OpenAI, yapay zekanın matematikte 3 büyük hamle yaptığını açıkladı"
-    },
-    {
       "title": "İsrail ordusu Batı Şeria ve Doğu Kudüs'te 3 Filistin evini yıktı",
       "twin": "İsrail ordusunun El Halil operasyonu 3 bin 300 kişiyi evinden etti"
-    },
-    {
-      "title": "CD Projekt RED, Cyberpunk 2 görev tasarımında eski modcuları kullanıyor",
-      "twin": "CD Projekt RED, Cyberpunk 2 için multiplayer modu hazırlıklarına başladı"
     },
     {
       "title": "Meteoroloji 19 il için uyarı verdi: Muğla'da turuncu kod alarmı",
       "twin": "Meteoroloji, 19 İl İçin Gök Gürültülü Sağanak Uyarısı Yayınladı"
     },
     {
-      "title": "Apple, iOS 27.2 güncellemesiyle Siri ve FaceTime özelliklerini güncelledi",
-      "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
+      "title": "OpenAI, temel bilimlerde 3 büyük teorik kırılma yaptığını duyurdu",
+      "twin": "OpenAI, yapay zekanın matematikte 3 büyük hamle yaptığını açıkladı"
     },
     {
       "title": "İran, ABD ile müzakere masasına oturmak için 7 maddelik şart listesini sundu",
@@ -102,6 +94,10 @@
       "twin": "ASELSAN sipariş defterinde 30 milyar dolar sınırını aştı"
     },
     {
+      "title": "CD Projekt RED, Cyberpunk 2 görev tasarımında eski modcuları kullanıyor",
+      "twin": "CD Projekt RED, Cyberpunk 2 için multiplayer modu hazırlıklarına başladı"
+    },
+    {
       "title": "İsmail Kartal, Fenerbahçe'deki görevinden istifa etti",
       "twin": "Fenerbahçe Yönetimi İsmail Kartal'ın İstifasını Onayladı"
     },
@@ -110,8 +106,12 @@
       "twin": "Kuzey Kore 6,3 milyar dolarlık Binance siber saldırısını reddetti"
     },
     {
-      "title": "Sony Yeni LYTIA 720 Sensörü 50 MP ile Gece Çekimlerini Yarıyor",
-      "twin": "Sony mobil kameralar için 50 MP LYTIA 720 sensörünü duyurdu"
+      "title": "Apple, iOS 27.2 güncellemesiyle Siri ve FaceTime özelliklerini güncelledi",
+      "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
+    },
+    {
+      "title": "HMD, Nokia 2360 Flip’i Tanıttı: Tuşlu ve Kapaklı Telefon",
+      "twin": "HMD, yeni Nokia 2360 Flip modelini tanıttı: Uzaktan yönetim desteği"
     }
   ],
   "days": {
@@ -1170,6 +1170,7 @@
       "e583b5ea3f21e52b",
       "9f9df2166d8b322a",
       "d1b5a633e31d1b87",
+      "a0d20a45910e47ff",
       "a5ad8811e6bfb5d4",
       "ed8bcd9560cfae62",
       "9339450bbe7be9de",
@@ -1179,7 +1180,6 @@
       "0802ffaf022343c8",
       "a97f5bdbc34c4ec7",
       "2b623a3742087624",
-      "a0d20a45910e47ff",
       "3d146e160495489e",
       "dc0ce1d363d2134d",
       "060b08832f43eca6",
@@ -1250,6 +1250,7 @@
       "5fe1e2d31d271359",
       "155bce04f5f9be9c",
       "f45b684f6bee3490",
+      "6e08e7bc56dc9d0f",
       "167fd2d169b31dcd",
       "68a67a28bcb6145c",
       "dd0c341b2ebdc784",
@@ -1273,7 +1274,6 @@
       "a84b2bf611236373",
       "c0916637752f563d",
       "ce249ab84f563636",
-      "a4e9ceb422b77a55",
       "5ecbac2d886406f6",
       "c92717a7201903b3",
       "15f201254b3a644c",
@@ -1282,6 +1282,7 @@
       "5091dd7a10092596",
       "385c23b64dd4aa36",
       "2a5626d482081a41",
+      "a4e9ceb422b77a55",
       "fe232a200033c8b6",
       "a0a034950b2b576e",
       "230fd8381873ab40",
@@ -2563,7 +2564,6 @@
       "de906507603d8ea7",
       "e54200570be26731",
       "77b9be90372884a9",
-      "fa3fe899aefb9cc2",
       "f00681d8ff78806e",
       "8e101f99e9370c57",
       "bd959316c7ef123b",
@@ -2585,7 +2585,8 @@
       "e84c9c97c0b0610c",
       "45e88db0ad9178a3",
       "99e6dea25a8fdc7c",
-      "e370fd8ff161dd4c"
+      "e370fd8ff161dd4c",
+      "fa3fe899aefb9cc2"
     ],
     "2026-10-21": [
       "41d9a500d06c515e",
@@ -3837,6 +3838,7 @@
     "38228b139390ab57",
     "dc9d560feae555d4",
     "d1b5a633e31d1b87",
+    "a0d20a45910e47ff",
     "2128e07e0d93148f",
     "36e58557591277d9",
     "a5ad8811e6bfb5d4",
@@ -3874,7 +3876,6 @@
     "6222150f49e0e6a0",
     "9c57cf58b99b48fa",
     "0b562b34d0558c9a",
-    "a4e9ceb422b77a55",
     "5ecbac2d886406f6",
     "403cf98ac62ba78f",
     "2c54a43971118bb1",
@@ -3935,7 +3936,6 @@
     "1da4c3e1f5189903",
     "4867e72e8b1058ba",
     "2b623a3742087624",
-    "a0d20a45910e47ff",
     "3d146e160495489e",
     "5b2b3a933e57df10",
     "692c88d046cc9222",
@@ -3961,6 +3961,7 @@
     "1973c4a1b9edbac6",
     "7ee04da43f7590bd",
     "e73134767f365fa7",
+    "a4e9ceb422b77a55",
     "e30192a4615d41b7",
     "cfca98d27d0b2233",
     "c5771467ede91f2c",
@@ -5466,6 +5467,7 @@
     "27f7751186f7ede8",
     "b21bf09b021697b1",
     "dbc215a2c10a98cc",
+    "6e08e7bc56dc9d0f",
     "fffeca17dd175b4c",
     "e59e7913325d6907",
     "f3bd975d2ecda1ab",
@@ -6333,7 +6335,6 @@
     "07656002eee62bfe",
     "54cee2fabe2f1dd6",
     "ea6ec1155e2844e5",
-    "fa3fe899aefb9cc2",
     "505db2714181c987",
     "d48587f3b4ac769f",
     "6decb3ae7584f6af",
@@ -7319,6 +7320,7 @@
     "e550e26b61b20d1c",
     "b6807a82d0b760ef",
     "a98440cac2f5d856",
+    "fa3fe899aefb9cc2",
     "09bc1ee5375acd32",
     "e259c8cf0abc9082",
     "6bda604a7068cbf5",
