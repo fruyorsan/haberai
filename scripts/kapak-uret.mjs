@@ -271,6 +271,25 @@ const STOP = new Set([
 
 const TR_ASCII = { ç: "c", ğ: "g", ı: "i", ö: "o", ş: "s", ü: "u", â: "a", î: "i", û: "u" };
 
+// Commons dosya adlarında sık geçen GENEL adlar: bunlar haberin KONUSUNU değil
+// sahnenin türünü anlatır. "music", "city", "car" gibi kelimeler dosya adında
+// geçti diye o kare habere uygun sayılamaz (YouTube Music haberine antik vazo
+// bu yüzden kapak olmuştu). Özel ad eşleşmesinde bu kelimeler yok sayılır;
+// kategori sahnesi ayrı bir aşamada zaten değerlendirilir.
+const GENEL_AD = new Set(`
+music art artist city street road car cars train station people person woman women man men
+building buildings museum park tree trees water sky night day view house home room office
+school university hospital football soccer stadium match game player team fans crowd protest
+police fire flood rain snow winter summer spring autumn market shop store food bread fruit
+church mosque temple castle bridge river sea beach boat ship plane aircraft airport
+computer phone mobile laptop keyboard screen technology robot space rocket moon galaxy star
+newspaper book books paper sign text logo flag map portrait concert festival ceremony award
+conference meeting press interview government parliament president minister court judge
+war army soldier military weapon gun tank village town center downtown
+wildlife animal animals bird birds dog cat horse fish flower flowers garden plant leaves
+construction worker workers factory industry machine engine tool tools
+`.split(/\s+/).filter(Boolean));
+
 const tokenler = (s) =>
   String(s || "")
     .toLowerCase()
@@ -1103,6 +1122,10 @@ async function gorselPuani(veri, bilgi) {
   }
 }
 
+// Aynı turda seçilen fotoğraflar: bir kare iki habere kapak olmasın. Aynı
+// markanın iki haberi (ör. iki Samsung haberi) farklı ürün kareleri alır.
+const kullanilanKapaklar = new Set();
+
 async function kapakUret(a) {
   const dosya = path.join(CIKTI_DIZIN, `${a.id}.webp`);
   // Daha önce üretilmiş kapağın taban fotoğrafı `kapak.kaynak`ta durur.
@@ -1313,67 +1336,103 @@ async function kapakUret(a) {
   // görselden daha güvenilir ve kotasız.
   if (!taban && !kartaZorla) {
     try {
-      // Arama sorguları: AI'nın İngilizce sorgusu varsa o; yoksa başlıktaki
-      // ÖZEL ADLAR (marka, kulüp, kişi, yer) ve kategori sorgusu. "Samsung",
-      // "Mercedes-Benz", "Beşiktaş" gibi adlar Commons dosya adlarında da aynı
-      // yazıldığı için Türkçe başlıktan doğrudan eşleşme çıkar. Düz Türkçe
-      // cümle sorgusu Commons'ta neredeyse hiç sonuç vermiyor.
+      // ADAY SEÇİMİ İKİ AŞAMALI.
+      //
+      // 1) MARKA / ÖZEL AD: "Samsung", "Chery", "Trump", "Zelda" gibi adlar
+      //    Commons dosya adlarında da aynı yazıldığı için güvenilir bir sinyal.
+      //    Koşul: eşleşen kelime dosya adının İLK ÜÇ kelimesi içinde olmalı.
+      //    Bu kısıt, "Beşiktaş" (semt) → Ihlamur Kasrı, "Amazon" → Amazon yazılı
+      //    otobüs gibi yanlış anlam eşleşmelerini eler: orada ad dosya adının
+      //    sonunda, yani konu değil ayrıntı olarak geçiyordu.
+      //    Ayrıca "music", "city", "car" gibi GENEL adlar konu kanıtı sayılmaz.
+      //
+      // 2) KATEGORİ SAHNESİ: özel ad yoksa kabaca doğru, her zaman makul bir
+      //    sahne fotoğrafı (spor → stadyum, teknoloji → devre kartı). Sonuç
+      //    listesi haber kimliğine göre döndürülür; böylece yüzlerce haber aynı
+      //    kareyi almaz.
+      //
+      // Her iki aşamada da lisans CC0/kamu malı olmalı ve kare yeterince
+      // "dolu" olmalı (beyaz/tek düze kareler elenir).
       const ozelAdlar = String(a.title || "")
         .split(/[\s,.;:!?'"()’“”–—-]+/)
         .filter((w) => w.length >= 4 && /^[A-ZÇĞİÖŞÜ0-9]/.test(w))
         .slice(0, 3);
-      const sorgular = [
-        a.gorselSorgu,
-        ...ozelAdlar,
-        KATEGORI_SORGU[String(a.category || "")],
-      ].filter(Boolean);
-      // Alaka iki kademeli:
-      //  • ÖZEL AD (başlıktan): dosya adında geçen tek kelime yeter. "Trabzonspor",
-      //    "HyperX", "Samsung" gibi adlar tesadüfen eşleşmez.
-      //  • KATEGORİ sorgusu: en az İKİ kelime örtüşmeli. Tek kelime yetseydi
-      //    "Abies firma" (köknar) haberin "firma" kelimesine, "Sombrero Galaxy"
-      //    ise "Galaxy A56" telefonuna kapak oluyordu.
-      // Eşleşen kelime en az 5 harf olmalı ("gran", "bist" gibi kısa diziler
-      // rastgele dosya çekiyordu). Örtüşme yoksa fotoğraf ALINMAZ: yanlış kare,
-      // jenerik karttan kötüdür.
       const katSorgu = String(KATEGORI_SORGU[String(a.category || "")] || "");
+
       const dosyaKelimeleri = (url) => {
         const ad = decodeURIComponent(String(url || "").split("/").pop() || "");
         if (!ad || JENERIK.test(ad)) return null;
-        return new Set(tokenler(ad));
+        return tokenler(ad);
       };
-      const ortusuyor = (url) => {
-        const adK = dosyaKelimeleri(url);
-        if (!adK) return false;
-        const ozelEslesme = [a.gorselSorgu, ...ozelAdlar]
-          .filter(Boolean)
-          .some((s) => tokenler(s).some((k) => k.length >= 5 && adK.has(k)));
-        if (ozelEslesme) return true;
-        if (!katSorgu) return false;
-        const katEslesme = tokenler(katSorgu).filter((k) => k.length >= 4 && adK.has(k)).length;
-        return katEslesme >= 2;
+      const ozelTokenler = [
+        ...new Set(
+          [a.gorselSorgu, ...ozelAdlar]
+            .filter(Boolean)
+            .flatMap((s) => tokenler(s))
+            .filter((k) => k.length >= 5 && !GENEL_AD.has(k))
+        ),
+      ];
+      const ozelUyuyor = (url) => {
+        const kelimeler = dosyaKelimeleri(url);
+        if (!kelimeler) return false;
+        return ozelTokenler.some((k) => {
+          const i = kelimeler.indexOf(k);
+          return i >= 0 && i <= 2;
+        });
       };
-      const stoklar = await stokGorseller(sorgular, { adet: 8, afet: false });
-      for (const g of stoklar) {
-        if (!lisansUygun(g.lisans)) continue;
-        if (!ortusuyor(g.url)) continue;
-        const hazir = await hazirla(g.url);
-        if (!hazir) continue;
-        // Tek düze/beyaz kareleri ele: fotoğraf ancak gerçekten kapak olacaksa.
-        const bilgi = await sharp(hazir).metadata();
-        const puan = await gorselPuani(hazir, bilgi);
-        if (puan === null || puan < 24) continue;
-        taban = hazir;
-        fotoVar = true;
-        secilenUrl = g.url;
-        yeniAtif = {
-          yazar: g.yazar || "",
-          lisans: g.lisans || "CC0",
-          lisansUrl: g.lisansUrl || "",
-          sayfa: g.sayfa || "",
-        };
-        if (debug) console.log(`   ✦ Commons CC0 (${puan.toFixed(0)}p): ${g.sayfa.slice(0, 70)}`);
-        break;
+
+      // Haber kimliğinden sabit bir sayı: aynı haber her turda aynı sıradan
+      // başlar (tekrar üretim kararlı olur), farklı haberler farklı kare alır.
+      let tohum = 0;
+      for (const ch of String(a.id || "")) tohum = (tohum * 31 + ch.charCodeAt(0)) >>> 0;
+      const dondurme = tohum % 40;
+
+      const dene = async (adaylar, zorunluOzel) => {
+        for (const g of adaylar) {
+          if (!lisansUygun(g.lisans)) continue;
+          if (kullanilanKapaklar.has(g.url)) continue;
+          if (zorunluOzel && !ozelUyuyor(g.url)) continue;
+          if (!zorunluOzel && (!dosyaKelimeleri(g.url) || JENERIK.test(g.url))) continue;
+          const hazir = await hazirla(g.url);
+          if (!hazir) continue;
+          const bilgi = await sharp(hazir).metadata();
+          const puan = await gorselPuani(hazir, bilgi);
+          if (puan === null || puan < 24) continue;
+          taban = hazir;
+          fotoVar = true;
+          secilenUrl = g.url;
+          kullanilanKapaklar.add(g.url);
+          yeniAtif = {
+            yazar: g.yazar || "",
+            lisans: g.lisans || "CC0",
+            lisansUrl: g.lisansUrl || "",
+            sayfa: g.sayfa || "",
+          };
+          if (debug) console.log(`   ✦ Commons CC0 (${puan.toFixed(0)}p): ${g.sayfa.slice(0, 70)}`);
+          return true;
+        }
+        return false;
+      };
+
+      // 1) Özel ad / marka eşleşmesi.
+      if (ozelTokenler.length) {
+        const adaylar = await stokGorseller([a.gorselSorgu, ...ozelAdlar].filter(Boolean), {
+          adet: 10,
+          afet: false,
+          kullanilan: kullanilanKapaklar,
+        });
+        await dene(adaylar, true);
+      }
+
+      // 2) Kategori sahnesi (döndürülmüş).
+      if (!taban && katSorgu) {
+        const adaylar = await stokGorseller([katSorgu], {
+          adet: 12,
+          afet: false,
+          offset: dondurme,
+          kullanilan: kullanilanKapaklar,
+        });
+        await dene(adaylar, false);
       }
     } catch (err) {
       if (debug) console.warn(`   ! Commons: ${err.message}`);
