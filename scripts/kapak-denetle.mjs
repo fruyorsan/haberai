@@ -94,10 +94,13 @@ const ornekler = [];
 for (const a of articles) {
   if (!YEREL.test(String(a.image || ""))) continue;
   const kaynak = String(a.kapak?.kaynak || "");
-  const yerelTaban = String(a.kapak?.kaynak || "");
-  // Yalnızca dış kaynaktan (Wikimedia/Wikimedia dışı da olabilir) üretilmiş
-  // yerel kapaklar denetlenir; tasarım kartları ve AI kapakları kapsam dışı
-  // (onların `kaynak` alanı zaten yerel ya da `ai:` ile başlar).
+  // TASARIM KARTLARI KAPSAM DIŞI. Kartın `kaynak` alanı, kart üretilirken
+  // kullanılamayan eski adresi (yayıncı fotoğrafı) taşıyabilir; `foto === false`
+  // ise görsel fotoğraf değil, markalı tasarım kartıdır ve zaten güvenlidir.
+  if (a.kapak?.foto === false) continue;
+  // AI üretimi de kapsam dışı: konuya özel üretilmiş, telif riski yok.
+  if (/^ai:/i.test(kaynak)) continue;
+  // Yalnızca dış kaynaktan üretilmiş fotoğraflı kapaklar denetlenir.
   if (!/^https?:\/\//i.test(kaynak)) continue;
   denetlenen++;
   if (gerekceVar(a, kaynak)) continue;
