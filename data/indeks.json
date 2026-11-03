@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-03T06:40:46.814Z",
+  "updatedAt": "2026-11-03T06:47:53.189Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5692,
-  "aday": 5692,
-  "uygun": 3639,
-  "secilen": 3540,
+  "toplamHaber": 5693,
+  "aday": 5693,
+  "uygun": 3640,
+  "secilen": 3541,
   "red": {
     "özet gövdeyle aynı": 113,
     "editör notu özetle aynı": 8,
@@ -98,6 +98,10 @@
       "twin": "Fenerbahçe Yönetimi İsmail Kartal'ın İstifasını Onayladı"
     },
     {
+      "title": "Kuzey Kore, Binance'den 6,3 Milyar Dolarlık Dijital Varlık Çaldı",
+      "twin": "Kuzey Kore 6,3 milyar dolarlık Binance siber saldırısını reddetti"
+    },
+    {
       "title": "Apple, iOS 27.2 güncellemesiyle Siri ve FaceTime özelliklerini güncelledi",
       "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
     },
@@ -108,10 +112,6 @@
     {
       "title": "Huawei Enjoy 100 Pro, HarmonyOS 7 ve 6.100 mAh bataryayla geldi",
       "twin": "Huawei, Wi-Fi 7 destekli yeni Router X2 Pro modelini satışa sundu"
-    },
-    {
-      "title": "Türkiye, Güney Kore Ticaretini 15 Milyar Dolar Yanağına Çekmeye Yönelecek",
-      "twin": "Türkiye ve Güney Kore ticaret hacmini 15 milyar dolara çıkarmayı hedefliyor"
     }
   ],
   "days": {
@@ -1313,6 +1313,7 @@
       "0cc8d05d098c0ec5",
       "11895c25a53be2fb",
       "1b05c10959fb99ec",
+      "75af0c8dfc36fd4f",
       "e864873a029ffa6c",
       "8b63e061b171a054",
       "155bce04f5f9be9c",
@@ -4506,6 +4507,7 @@
     "222c686969dfccd8",
     "6c89cb0ed13b29a8",
     "52fcc23ca4f01041",
+    "75af0c8dfc36fd4f",
     "1211717b56ebb7a7",
     "f04a758491f678da",
     "d3271a13334d2065",
