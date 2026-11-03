@@ -1,5 +1,55 @@
 [
   {
+    "id": "3d146e160495489e",
+    "title": "Akıllı telefonu alüminyum folyoya sarmak sinyali tamamen kesiyor",
+    "slug": "akilli-telefonu-aluminyum-folyoya-sarmak-sinyali-kesiyor",
+    "summary": "Telefonları alüminyum folyoya sararak sinyalden izole etme yöntemi, Faraday kafesi prensibiyle hücresel ağ ve kablosuz bağlantıları başarıyla durdurabiliyor. Ancak cihazın dış dünyayla bağlantısını tamamen koparmak için folyonun en küçük boşluk bırakılmadan, oldukça sıkı ve kusursuz bir şekilde kaplanması gerekiyor.",
+    "keyPoints": [
+      "Alüminyum folyo, Faraday kafesi prensibiyle cihazın tüm sinyal alımını engelleyebiliyor.",
+      "Hücresel ağ, Wi-Fi ve Bluetooth bağlantıları tam korumalı folyo katmanıyla kesilebiliyor.",
+      "Folyodaki milimetrik bir açık bile sinyal sızıntısına ve bağlantının devam etmesine yol açıyor."
+    ],
+    "body": [
+      "Akıllı telefon kullanıcıları arasında bazen bir güvenlik önlemi ya da basit bir merak konusu olarak dile getirilen telefonu alüminyum folyoya sarmak, bilimsel bir temele dayanıyor. Fizik dünyasında Faraday kafesi olarak bilinen bu fenomen, iletken bir malzeme ile çevrelenen hacmin dış elektromanyetik alanlardan korunmasını sağlıyor. Günümüzde kullanılan hemen her akıllı cihaz, hücresel şebekelerle, Wi-Fi modemlerle ve Bluetooth aksesuarlarıyla sürekli iletişim halinde kalarak çalışıyor.",
+      "Cihazı tamamen metalik bir yüzeyle kapladığınızda, elektromanyetik dalgalar iletken folyo katmanından içeriye giremiyor. Bu durum, teorik olarak telefonun baz istasyonlarıyla olan bağını kopardığı gibi, internet erişimini ve kablosuz veri alışverişini de durduruyor. Ancak pratikte uygulanan sarmalama işleminin kusursuz olması büyük bir zorunluluk arz ediyor. En ufak bir hava boşluğu veya folyonun tam kapanmadığı bir nokta, dış sinyallerin içeri sızmasına ve cihazın bağlantı kurmaya devam etmesine neden oluyor.",
+      "İletken malzemenin kalınlığı veya katman sayısı, genellikle Faraday kafesinin performansını doğrudan belirleyen etkenler arasında yer alıyor. Tek katmanlı bir folyo sargısı, radyofrekans dalgalarını yansıtmakta zorlanabilirken, çok katmanlı uygulamalar daha kesin sonuçlar veriyor. Kullanıcılar genellikle bu yöntemi, cihazlarının konum takibi yapmasını engellemek veya sinyal kirliliğinden tamamen uzaklaşmak amacıyla test ediyor. Yine de bu yöntem, profesyonel sinyal kesicilerin aksine, donanımsal bir kapatma veya yazılımsal bir uçak modu kadar güvenli bir izolasyon vaat etmiyor.",
+      "Günlük hayatta bu tür bir yöntemi denemek isteyenlerin karşılaştığı temel sorun, cihazın sinyal arama çabası sırasında batarya tüketiminin artması oluyor. Telefon, folyo içerisinde baz istasyonuna ulaşamadığını fark ettiğinde, sinyal arama gücünü maksimuma çıkararak şarjın daha hızlı tükenmesine yol açıyor. Bu nedenle, sadece folyoya sarılı bir cihazı çantada veya cepte taşımak, pil ömrü açısından verimsiz bir senaryo oluşturuyor.",
+      "Elektromanyetik izolasyon konusundaki bu basit deney, aslında radyo dalgalarının nasıl yayıldığını ve iletken yüzeylerle nasıl etkileşime girdiğini anlamak için iyi bir örnek teşkil ediyor. Modern telefonların çoklu anten sistemleri, folyodaki en ufak bir sızıntıdan bile sinyal yakalayabilecek kadar hassas çalışıyor. Bu yüzden ev ortamında yapılacak bir denemede, cihazın tamamen çevrelendiğinden emin olmak için folyonun birden fazla turla sarılması gerekiyor."
+    ],
+    "comment": "Alüminyum folyo sarmak, profesyonel bir sinyal kesici veya uçak modu kullanmanın yerini tutacak güvenli bir yöntem değildir. Cihazın folyo içinde sinyal arama çabası, pil tüketimini ciddi oranda artırarak cihazı yormaktan başka bir sonuç doğurmuyor. Bağlantıdan tamamen kopmak isteyen kullanıcılar için donanımsal kapatma veya uçak modu, folyo sarmaktan çok daha verimli ve tutarlı sonuçlar veriyor. Bu yöntem, ancak cihazın dış elektromanyetik alanlara karşı çok kısa süreli bir izolasyon ihtiyacı duyduğu durumlarda işe yarayabilir.",
+    "editorNote": "Telefonu folyoya sarmak sadece fiziksel bir deney; cihazın bağlantı arama çabası şarjınızı hızla tüketebilir. Güvenlik için uçak modu hala en güvenilir seçenek.",
+    "tags": [
+      "akıllı telefon",
+      "sinyal",
+      "Faraday kafesi",
+      "kablosuz bağlantı",
+      "izolasyon"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "smartphone wrapped in aluminum foil",
+    "source": "CHIP Online",
+    "sourceUrl": "https://www.chip.com.tr/guncel/telefonu-aluminyum-folyoya-sarmak-gercekten-sinyali-keser-mi_184155.html",
+    "image": "/kapak/3d146e160495489e.webp",
+    "publishedAt": "2026-11-03T13:35:00.000Z",
+    "generatedAt": "2026-11-03T13:38:46.146Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Crinkled_Aluminum_Foil_%2845451376615%29.jpg/1280px-Crinkled_Aluminum_Foil_%2845451376615%29.jpg",
+        "yazar": "Tony Webster from Minneapolis, Minnesota, United States",
+        "lisans": "CC BY 2.0",
+        "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Crinkled_Aluminum_Foil_(45451376615).jpg",
+        "altyazi": "İletken yüzeylerin elektromanyetik dalgaları yansıtma prensibi"
+      }
+    ],
+    "breaking": true,
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://img.chip.com.tr/storage/files/images/2026/09/28/aluminyum-folyonun-kablosuz-sinyallerini-engelleme-yonteminin-arkasinda-bilimsel-gerceklik-jcdq.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "b6c106d20d59de29",
     "title": "Arkeologlar Bizans dönemi beslenme alışkanlıklarını gün yüzüne çıkardı",
     "slug": "arkeologlar-bizans-donemi-beslenme-aliskanliklarini-gun-yuzune-cikardi",
@@ -169,7 +219,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:15.442Z",
+    "gorselDeneme": "2026-11-03T13:38:47.841Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/emine-erdogan-aa-2500812.jpg",
@@ -397,7 +447,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:16.590Z",
+    "gorselDeneme": "2026-11-03T13:38:48.380Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/03/thumbs_b_c_37c05ed61db8293b5e8d389568c640aa.jpg",
@@ -544,7 +594,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:15.444Z",
+    "gorselDeneme": "2026-11-03T13:38:47.843Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2450000/recep-tayyip-erdoganaa-2450370.jpg",
@@ -726,7 +776,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:16.593Z",
+    "gorselDeneme": "2026-11-03T13:38:48.357Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/03/thumbs_b_c_9f4fb5c44829b6fecd519749521b5697.jpg",
@@ -837,7 +887,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:16.768Z",
+    "gorselDeneme": "2026-11-03T13:38:49.197Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/03/thumbs_b_c_65717f285cdd0e45d8823fcbc97f0a0e.jpg",
@@ -1181,7 +1231,7 @@
       "kaynak": "https://storage.evrimagaci.org/content/5a51e778-96d5-409c-8e3f-bf411e62e59e.jpeg",
       "foto": true
     },
-    "gorselDeneme": "2026-11-03T13:28:15.770Z"
+    "gorselDeneme": "2026-11-03T13:38:48.096Z"
   },
   {
     "id": "054abded3f0028bd",
@@ -1292,7 +1342,7 @@
       "kaynak": "https://storage.evrimagaci.org/content/b9068d86-adb3-46ec-9901-f6f25be9155d.jpeg",
       "foto": true
     },
-    "gorselDeneme": "2026-11-03T13:28:15.778Z"
+    "gorselDeneme": "2026-11-03T13:38:48.161Z"
   },
   {
     "id": "0c1ec0f2b3330aff",
@@ -1572,7 +1622,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:16.154Z",
+    "gorselDeneme": "2026-11-03T13:38:49.113Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://imgrosetta.webtekno.com/file/695467/695467-700x400.jpg",
@@ -1624,7 +1674,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:17.009Z",
+    "gorselDeneme": "2026-11-03T13:38:48.964Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://www.donanimhaber.com/images/images/haber/212398/src/phantom-blade-zero-2026-nin-en-cok-satan-oyunlarindan-biri-oldu212398_0.jpg",
@@ -1672,7 +1722,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:16.485Z",
+    "gorselDeneme": "2026-11-03T13:38:48.644Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://imgrosetta.webtekno.com/file/695458/695458-700x400.jpg",
@@ -1967,7 +2017,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:17.151Z",
+    "gorselDeneme": "2026-11-03T13:38:48.770Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://cdn.webrazzi.com/uploads/2026/11/grok-541.png",
@@ -2266,7 +2316,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:17.012Z",
+    "gorselDeneme": "2026-11-03T13:38:48.976Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/03/thumbs_b_c_f030588c19e1909d8148978b75e287e8.jpg",
@@ -2323,7 +2373,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:16.902Z",
+    "gorselDeneme": "2026-11-03T13:38:48.979Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/03/thumbs_b_c_1b0149867751e8bf36fc374842a0e3aa.jpg",
@@ -2371,7 +2421,7 @@
     "publishedAt": "2026-11-03T05:08:58.000Z",
     "generatedAt": "2026-11-03T05:17:24.400Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:17.090Z",
+    "gorselDeneme": "2026-11-03T13:38:49.236Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://imgrosetta.webtekno.com/file/695416/695416-700x400.jpg",
@@ -2560,7 +2610,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:17.239Z",
+    "gorselDeneme": "2026-11-03T13:38:49.188Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/greenland-airport-ap-2500611.jpg",
@@ -2605,7 +2655,7 @@
     "publishedAt": "2026-11-03T04:34:00.000Z",
     "generatedAt": "2026-11-03T04:45:53.347Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:17.332Z",
+    "gorselDeneme": "2026-11-03T13:38:49.214Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2494000/netanyahu-2495398.jpg",
@@ -2671,7 +2721,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:17.316Z",
+    "gorselDeneme": "2026-11-03T13:38:49.374Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Man_using_smartphone_while_shopping_in_modern_furniture_store.jpg/1280px-Man_using_smartphone_while_shopping_in_modern_furniture_store.jpg",
@@ -2757,7 +2807,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:17.730Z",
+    "gorselDeneme": "2026-11-03T13:38:49.291Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Cessna_210-5A_%28N4834U%2C_cn_205-0534%29_%284-9-2024%29.jpg/1280px-Cessna_210-5A_%28N4834U%2C_cn_205-0534%29_%284-9-2024%29.jpg",
@@ -2922,7 +2972,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:17.252Z",
+    "gorselDeneme": "2026-11-03T13:38:49.290Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ichef.bbci.co.uk/ace/standard/1200/cpsprodpb/e727/live/e5cde5c0-d6ef-11f1-ae42-99a80c72db9e.jpg",
@@ -2993,7 +3043,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:17.388Z",
+    "gorselDeneme": "2026-11-03T13:38:49.326Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2420000/israil-askeriaa-2420056.jpg",
@@ -3065,7 +3115,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:17.269Z",
+    "gorselDeneme": "2026-11-03T13:38:49.295Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ichef.bbci.co.uk/ace/standard/1200/cpsprodpb/a969/live/dd51e9c0-d729-11f1-9b56-c9b433d51ba8.jpg",
@@ -3117,7 +3167,7 @@
     "publishedAt": "2026-11-03T01:28:00.000Z",
     "generatedAt": "2026-11-03T01:37:17.525Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:17.933Z",
+    "gorselDeneme": "2026-11-03T13:38:49.391Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2470000/donald-trumpaa-2470374.jpg",
@@ -3198,7 +3248,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:17.935Z",
+    "gorselDeneme": "2026-11-03T13:38:49.708Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/manisa-kazaaa-2500608.jpg",
@@ -3262,7 +3312,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:17.341Z",
+    "gorselDeneme": "2026-11-03T13:38:49.306Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Binance_t-shirt_and_bag_-_2022-07-09.jpg/1920px-Binance_t-shirt_and_bag_-_2022-07-09.jpg",
@@ -3488,7 +3538,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:17.542Z",
+    "gorselDeneme": "2026-11-03T13:38:49.447Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2492000/enflasyon-stok-2493448.jpg",
@@ -3560,7 +3610,7 @@
       }
     ],
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:17.429Z",
+    "gorselDeneme": "2026-11-03T13:38:49.377Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Cobra_Gold_25-_Multinational_service_members_participate_in_Amphibious_Exercise_%288903160%29.jpg/1920px-Cobra_Gold_25-_Multinational_service_members_participate_in_Amphibious_Exercise_%288903160%29.jpg",
@@ -3764,7 +3814,7 @@
     "publishedAt": "2026-11-02T23:37:31.000Z",
     "generatedAt": "2026-11-02T23:39:01.844Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:17.475Z",
+    "gorselDeneme": "2026-11-03T13:38:49.388Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ichef.bbci.co.uk/ace/standard/1200/cpsprodpb/2ab0/live/69114010-d75b-11f1-8f6b-d71817972456.jpg",
@@ -4052,7 +4102,7 @@
     "publishedAt": "2026-11-02T23:02:01.000Z",
     "generatedAt": "2026-11-02T23:48:00.124Z",
     "breaking": true,
-    "gorselDeneme": "2026-11-03T13:28:17.552Z",
+    "gorselDeneme": "2026-11-03T13:38:49.421Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://ichef.bbci.co.uk/ace/standard/1200/cpsprodpb/302a/live/febcfd60-d293-11f1-9453-5fe901b3e69e.jpg",
@@ -14617,7 +14667,6 @@
     "image": "/kapak/5693257c74fca053.webp",
     "publishedAt": "2026-11-01T13:30:00.000Z",
     "generatedAt": "2026-11-01T13:38:33.592Z",
-    "breaking": true,
     "imagesKaynak": "https://www.donanimhaber.com/xiaomi-tv-a-pro-e-serisi-tanitildi-iste-modeller-ve-ozellikleri--212331",
     "gorselDeneme": "2026-11-02T00:33:13.476Z",
     "kapak": {
@@ -27922,13 +27971,18 @@
     "gorselSorgu": "chery tiggo suv interior",
     "source": "CHIP Online",
     "sourceUrl": "https://www.chip.com.tr/galeri/yeni-tiggo-7-ve-tiggo-x7-ortaya-cikti-chery-iki-farkli-rotaya-yoneliyor_184963.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Chery_Tiggo_Concept%2C_IAA_2017%2C_Frankfurt_%281Y7A3386%29.jpg/1280px-Chery_Tiggo_Concept%2C_IAA_2017%2C_Frankfurt_%281Y7A3386%29.jpg",
+    "image": "/kapak/48d727f4108d258c.webp",
     "publishedAt": "2026-10-30T13:10:00.000Z",
     "generatedAt": "2026-10-30T13:13:26.990Z",
     "gorselAjan": {
       "tarih": "2026-11-02T01:16:48.726Z",
       "sonuc": "atlandi",
       "neden": "yeterli görsel yok"
+    },
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Chery_Tiggo_Concept%2C_IAA_2017%2C_Frankfurt_%281Y7A3386%29.jpg/1280px-Chery_Tiggo_Concept%2C_IAA_2017%2C_Frankfurt_%281Y7A3386%29.jpg",
+      "foto": false
     }
   },
   {
@@ -98972,7 +99026,7 @@
     "gorselSorgu": "Trump presidency defense law",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/commodities-news/trump-savunma-yasasn-devreye-soktu-petrol-fiyatlar-dustu-4116441",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Obama_hands_over_presidency_to_Trump_at_58th_Presidential_Inauguration_170120-D-NA975-1982.jpg/1280px-Obama_hands_over_presidency_to_Trump_at_58th_Presidential_Inauguration_170120-D-NA975-1982.jpg",
+    "image": "/kapak/02d163bfde387d97.webp",
     "publishedAt": "2026-10-23T00:45:41.000Z",
     "generatedAt": "2026-10-23T00:55:38.690Z",
     "gorselEk": [
@@ -98990,7 +99044,12 @@
         "lisansUrl": "",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Obama_hands_over_presidency_to_Trump_at_58th_Presidential_Inauguration_170120-D-NA975-0695.jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Obama_hands_over_presidency_to_Trump_at_58th_Presidential_Inauguration_170120-D-NA975-1982.jpg/1280px-Obama_hands_over_presidency_to_Trump_at_58th_Presidential_Inauguration_170120-D-NA975-1982.jpg",
+      "foto": false
+    }
   },
   {
     "id": "10e10558123489a5",
@@ -100339,10 +100398,15 @@
     "gorselSorgu": "Apple executive stock sale",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/insider-trading-news/applen-svpsi-jennifer-newstead-814748-dolar-degerinde-hisse-satt-93CH-4116414",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Apple_Cupertino_Executive_Briefing_Center.jpg/1280px-Apple_Cupertino_Executive_Briefing_Center.jpg",
+    "image": "/kapak/141e9118538c2e34.webp",
     "publishedAt": "2026-10-22T23:30:31.000Z",
     "generatedAt": "2026-10-22T23:38:43.519Z",
-    "ekGorselDeneme": "2026-10-25T18:14:46.811Z"
+    "ekGorselDeneme": "2026-10-25T18:14:46.811Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Apple_Cupertino_Executive_Briefing_Center.jpg/1280px-Apple_Cupertino_Executive_Briefing_Center.jpg",
+      "foto": false
+    }
   },
   {
     "id": "095370e47b9e2b24",
@@ -103214,7 +103278,7 @@
     "gorselSorgu": "Tom Skerritt actor",
     "source": "T24",
     "sourceUrl": "https://t24.com.tr/magazin/top-gun-ve-alien-filmlerinin-yildizi-abdli-aktor-tom-skerritt-93-yasinda-hayatini-kaybetti,1354799",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Tom_Skerritt_2014.jpg/1280px-Tom_Skerritt_2014.jpg",
+    "image": "/kapak/4b42a8a1c1a24b3a.webp",
     "publishedAt": "2026-10-22T21:40:00.000Z",
     "generatedAt": "2026-10-22T21:54:59.629Z",
     "gorselEk": [
@@ -103232,7 +103296,12 @@
         "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Tom_Skerritt_(15405566884).jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Tom_Skerritt_2014.jpg/1280px-Tom_Skerritt_2014.jpg",
+      "foto": false
+    }
   },
   {
     "id": "b3482f5cae9cad4f",
@@ -105291,7 +105360,7 @@
     "gorselSorgu": "art festival rally",
     "source": "Howl.link",
     "sourceUrl": "https://t.co/EHKXAOy1xY",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Digital_art_at_The_Sassoon_Docks_Art_Festival_2022_-_2023.jpg/1280px-Digital_art_at_The_Sassoon_Docks_Art_Festival_2022_-_2023.jpg",
+    "image": "/kapak/27211c9d33bd7946.webp",
     "publishedAt": "2026-10-22T20:18:22.000Z",
     "generatedAt": "2026-10-22T20:21:29.423Z",
     "gorselEk": [
@@ -105310,7 +105379,12 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Appa_Parab_at_the_CSMP_Art_Festival_02.jpg"
       }
     ],
-    "gorselDeneme": "2026-10-28T04:46:15.389Z"
+    "gorselDeneme": "2026-10-28T04:46:15.389Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Digital_art_at_The_Sassoon_Docks_Art_Festival_2022_-_2023.jpg/1280px-Digital_art_at_The_Sassoon_Docks_Art_Festival_2022_-_2023.jpg",
+      "foto": false
+    }
   },
   {
     "id": "47922440df585322",
@@ -111141,7 +111215,7 @@
     "gorselSorgu": "Tesla electric car factory",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/analyst-ratings/stonex-tesla-hissesi-icin-al-tavsiyesini-yineledi-475-dolar-hedef-fiyat-korudu-93CH-4115890",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Tesla_Giga_Factory_BerlinBrandenburg_Drohne_2.jpg/1280px-Tesla_Giga_Factory_BerlinBrandenburg_Drohne_2.jpg",
+    "image": "/kapak/d3c9a2e476b38362.webp",
     "publishedAt": "2026-10-22T15:29:23.000Z",
     "generatedAt": "2026-10-22T15:42:08.717Z",
     "gorselEk": [
@@ -111159,7 +111233,12 @@
         "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Tesla_electric_car_recharging_in_Los_Angeles,_August_2020.jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Tesla_Giga_Factory_BerlinBrandenburg_Drohne_2.jpg/1280px-Tesla_Giga_Factory_BerlinBrandenburg_Drohne_2.jpg",
+      "foto": false
+    }
   },
   {
     "id": "73f45185ddc55642",
@@ -116065,7 +116144,7 @@
     "gorselSorgu": "Donald Trump press conference",
     "source": "Ensonhaber",
     "sourceUrl": "https://www.ensonhaber.com/donald-trumptan-iran-mesaji-onlari-devirecegiz-h1575961",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/P20250530MR-0484_President_Donald_Trump_participates_in_a_press_conference_with_departing_DOGE_adviser_Elon_Musk.jpg/1280px-P20250530MR-0484_President_Donald_Trump_participates_in_a_press_conference_with_departing_DOGE_adviser_Elon_Musk.jpg",
+    "image": "/kapak/bb59b7a2cbc69c10.webp",
     "publishedAt": "2026-10-22T11:38:01.000Z",
     "generatedAt": "2026-10-22T11:41:32.688Z",
     "gorselEk": [
@@ -116083,7 +116162,12 @@
         "lisansUrl": "",
         "sayfa": "https://commons.wikimedia.org/wiki/File:P20250530MR-0603_President_Donald_Trump_participates_in_a_press_conference_with_departing_DOGE_adviser_Elon_Musk.jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/P20250530MR-0484_President_Donald_Trump_participates_in_a_press_conference_with_departing_DOGE_adviser_Elon_Musk.jpg/1280px-P20250530MR-0484_President_Donald_Trump_participates_in_a_press_conference_with_departing_DOGE_adviser_Elon_Musk.jpg",
+      "foto": false
+    }
   },
   {
     "id": "686d3f11a6cecddc",
@@ -170442,7 +170526,7 @@
     "gorselSorgu": "opera stage performance art",
     "source": "Howl.link",
     "sourceUrl": "https://t.co/x7EAkzLjZl",
-    "image": "/kapak/f4f35787bf383b81.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Monumental_stage_prop_from_the_opera_Aida_-_01.jpg/1280px-Monumental_stage_prop_from_the_opera_Aida_-_01.jpg",
     "publishedAt": "2026-10-20T11:17:06.000Z",
     "generatedAt": "2026-10-20T11:19:41.804Z",
     "gorselEk": [
@@ -170461,12 +170545,7 @@
         "sayfa": "https://commons.wikimedia.org/wiki/File:Amargosa_Opera_House_Stage.jpg"
       }
     ],
-    "gorselDeneme": "2026-10-28T04:47:48.859Z",
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Monumental_stage_prop_from_the_opera_Aida_-_01.jpg/1280px-Monumental_stage_prop_from_the_opera_Aida_-_01.jpg",
-      "foto": false
-    }
+    "gorselDeneme": "2026-10-28T04:47:48.859Z"
   },
   {
     "id": "9b6bb590f25c5610",
@@ -172296,7 +172375,7 @@
     "gorselSorgu": "Tesla electric vehicle factory",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/stock-market-news/tesla-ucuncu-ceyrek-raporunu-carsamba-gunu-acklayacak-93CH-4110412",
-    "image": "/kapak/b37141328fbaac6d.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Minis_%26_Tesla_Model_Y_%40_Let%27s_Go_Electric%2C_Priory_Park%2C_Kingston_upon_Hull.jpg/1280px-Minis_%26_Tesla_Model_Y_%40_Let%27s_Go_Electric%2C_Priory_Park%2C_Kingston_upon_Hull.jpg",
     "publishedAt": "2026-10-20T10:41:17.000Z",
     "generatedAt": "2026-10-20T10:43:13.832Z",
     "gorselEk": [
@@ -172314,12 +172393,7 @@
         "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Four_Tesla_Electric_Vehicles_Columbus_Texas_Supercharger.jpg"
       }
-    ],
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Minis_%26_Tesla_Model_Y_%40_Let%27s_Go_Electric%2C_Priory_Park%2C_Kingston_upon_Hull.jpg/1280px-Minis_%26_Tesla_Model_Y_%40_Let%27s_Go_Electric%2C_Priory_Park%2C_Kingston_upon_Hull.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "9f0a0a9c52996f97",
@@ -184008,14 +184082,9 @@
     "gorselSorgu": "Aeromexico flight deck",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/stock-market-news/aeromexico-washingtonn-ucus-kstlamalarn-kaldrmasnn-ardndan-abdye-genislemeyi-planlyor-93CH-4109456",
-    "image": "/kapak/1a7ece8bea774e2b.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Aeromexico_B737-852%2C_XA-AMC%2C_MSN_4539_%2807_2013%29%2C_as_AM_783_Los_Angeles_%28LAX%29_-_Guadalajara_%28GDL%29%2C_Flight_time_2_58_%2854209251671%29.jpg/1280px-Aeromexico_B737-852%2C_XA-AMC%2C_MSN_4539_%2807_2013%29%2C_as_AM_783_Los_Angeles_%28LAX%29_-_Guadalajara_%28GDL%29%2C_Flight_time_2_58_%2854209251671%29.jpg",
     "publishedAt": "2026-10-19T19:56:21.000Z",
-    "generatedAt": "2026-10-19T20:00:49.769Z",
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Aeromexico_B737-852%2C_XA-AMC%2C_MSN_4539_%2807_2013%29%2C_as_AM_783_Los_Angeles_%28LAX%29_-_Guadalajara_%28GDL%29%2C_Flight_time_2_58_%2854209251671%29.jpg/1280px-Aeromexico_B737-852%2C_XA-AMC%2C_MSN_4539_%2807_2013%29%2C_as_AM_783_Los_Angeles_%28LAX%29_-_Guadalajara_%28GDL%29%2C_Flight_time_2_58_%2854209251671%29.jpg",
-      "foto": false
-    }
+    "generatedAt": "2026-10-19T20:00:49.769Z"
   },
   {
     "id": "d2a8d79306633717",
@@ -187922,7 +187991,7 @@
     "gorselSorgu": "playground equipment manufacturing factory",
     "source": "Investing.com Türkiye",
     "sourceUrl": "https://tr.investing.com/news/economy-news/ftc-oyun-park-ekipman-anlasmasn-engellemek-icin-dava-act-93CH-4109348",
-    "image": "/kapak/e4a576a817e2ff18.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Playground_equipment_in_Munich_03.jpg/1280px-Playground_equipment_in_Munich_03.jpg",
     "publishedAt": "2026-10-19T16:02:29.000Z",
     "generatedAt": "2026-10-19T16:05:03.656Z",
     "gorselEk": [
@@ -187940,12 +188009,7 @@
         "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Playground_equipment_in_Munich_02.jpg"
       }
-    ],
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Playground_equipment_in_Munich_03.jpg/1280px-Playground_equipment_in_Munich_03.jpg",
-      "foto": false
-    }
+    ]
   },
   {
     "id": "b341453e87b9bb94",
@@ -198725,16 +198789,11 @@
     "category": "Bilim",
     "source": "Evrim Ağacı",
     "sourceUrl": "https://evrimagaci.org/bilim-insanlari-hangi-hayvanlari-neden-inceliyor-23969",
-    "image": "/kapak/8033b4c066ec6658.webp",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Aquatic_Ecosystems_Research_Laboratory_and_Beaty_Biodiversity_Centre.jpg/1280px-Aquatic_Ecosystems_Research_Laboratory_and_Beaty_Biodiversity_Centre.jpg",
     "publishedAt": "2026-10-19T09:17:21.000Z",
     "generatedAt": "2026-10-19T09:19:14.969Z",
     "gorselDeneme": "2026-10-20T09:16:19.459Z",
-    "gorselSorgu": "biodiversity research biology laboratory",
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Aquatic_Ecosystems_Research_Laboratory_and_Beaty_Biodiversity_Centre.jpg/1280px-Aquatic_Ecosystems_Research_Laboratory_and_Beaty_Biodiversity_Centre.jpg",
-      "foto": false
-    }
+    "gorselSorgu": "biodiversity research biology laboratory"
   },
   {
     "id": "87fb9059d1a216ee",
