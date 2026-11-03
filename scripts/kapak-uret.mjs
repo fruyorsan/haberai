@@ -91,6 +91,12 @@ const sadeceStok = process.argv.includes("--stok");
 // üretimde stok adayı hiç denenmez: yayıncının kendi fotoğrafı bulunursa o,
 // bulunamazsa kategori + kısa çengel taşıyan tasarım kartı üretilir.
 const sadeceStokKaynak = process.argv.includes("--stokkaynak");
+// --uzak: `image` alanı hâlâ başka bir sitenin adresini gösteren (hotlink)
+// haberleri hedefler. Kaynak site fotoğrafları artık kullanılmadığı için bu
+// arşiv CC0/kamu malı stoğa, AI üretimine veya tasarım kartına taşınır.
+const sadeceUzak = process.argv.includes("--uzak");
+// --varyantsiz: -480 ve -sosyal kopyalarını üretme (arşiv toplu yenilemesi).
+const varyantsiz = process.argv.includes("--varyantsiz") || sadeceUzak;
 // --gorsel=<adres|/yol>: aday arama atlanır, kapak bu görselden üretilir.
 // Uygunsuz (müstehcen) bir kapak fotoğrafının yerine güvenli kare koymak için.
 const elleGorsel =
@@ -140,6 +146,11 @@ const sirali = articles
     }
     if (sadeceStok) {
       return /wikimedia\.org/i.test(String(a.image || ""));
+    }
+    if (sadeceUzak) {
+      // Yerel kapak dosyası olmayan, başka bir sitenin adresini gösteren kapak.
+      const adres = String(a.image || "");
+      return /^https?:\/\//i.test(adres) && !adres.startsWith(`${URL_TABANI}/`);
     }
     if (sadeceStokKaynak) {
       // Yerel kapak dosyası olup taban fotoğrafı Wikimedia stoğu olan her kapak
@@ -1333,26 +1344,31 @@ async function kapakUret(a) {
     fs.mkdirSync(CIKTI_DIZIN, { recursive: true });
     yazDosya(dosya, bilesik);
     if (debug) console.log(`   · ${a.id} kapak yazıldı (${bilesik.length} bayt)`);
-    // Küçük varyant: liste/kart görünümü için (~20 KB).
-    const kucukVeri = await sharp(bilesik)
-      .resize(KUCUK_GENISLIK, Math.round((KUCUK_GENISLIK * YUKSEKLIK) / GENISLIK))
-      .webp({ quality: 82, effort: 4 })
-      .toBuffer();
-    yazDosya(dosya.replace(/\.webp$/, "-480.webp"), kucukVeri);
-    if (debug) console.log(`   · ${a.id} küçük varyant yazıldı`);
-    // Sosyal kart / push görseli: aynı tabandan 1200×630 JPEG.
-    let sosyalBoru = sharp(taban).resize(SOSYAL_GENISLIK, SOSYAL_YUKSEKLIK, {
-      fit: "cover",
-      position: "centre",
-    });
-    if (!fotoVar) {
-      sosyalBoru = sosyalBoru.composite([
-        { input: Buffer.from(kapakSvg(SOSYAL_GENISLIK, SOSYAL_YUKSEKLIK, a.category, false)) },
-      ]);
+    // Varyantlar yalnızca taze haberlerde üretilir. Arşiv toplu yenilemesinde
+    // (`--uzak`) atlanır: 3.000+ haber × 2 dosya, Cloudflare Pages'in 20.000
+    // dosya sınırını aşar. Site varyant yoksa ana kapağı kullanır.
+    if (!varyantsiz) {
+      // Küçük varyant: liste/kart görünümü için (~20 KB).
+      const kucukVeri = await sharp(bilesik)
+        .resize(KUCUK_GENISLIK, Math.round((KUCUK_GENISLIK * YUKSEKLIK) / GENISLIK))
+        .webp({ quality: 82, effort: 4 })
+        .toBuffer();
+      yazDosya(dosya.replace(/\.webp$/, "-480.webp"), kucukVeri);
+      if (debug) console.log(`   · ${a.id} küçük varyant yazıldı`);
+      // Sosyal kart / push görseli: aynı tabandan 1200×630 JPEG.
+      let sosyalBoru = sharp(taban).resize(SOSYAL_GENISLIK, SOSYAL_YUKSEKLIK, {
+        fit: "cover",
+        position: "centre",
+      });
+      if (!fotoVar) {
+        sosyalBoru = sosyalBoru.composite([
+          { input: Buffer.from(kapakSvg(SOSYAL_GENISLIK, SOSYAL_YUKSEKLIK, a.category, false)) },
+        ]);
+      }
+      const sosyalVeri = await sosyalBoru.jpeg({ quality: SOSYAL_KALITE, mozjpeg: true }).toBuffer();
+      yazDosya(dosya.replace(/\.webp$/, SOSYAL_EK), sosyalVeri);
+      if (debug) console.log(`   · ${a.id} sosyal varyant yazıldı (${sosyalVeri.length} bayt)`);
     }
-    const sosyalVeri = await sosyalBoru.jpeg({ quality: SOSYAL_KALITE, mozjpeg: true }).toBuffer();
-    yazDosya(dosya.replace(/\.webp$/, SOSYAL_EK), sosyalVeri);
-    if (debug) console.log(`   · ${a.id} sosyal varyant yazıldı (${sosyalVeri.length} bayt)`);
   }
   return {
     url: `${URL_TABANI}/${a.id}.webp`,

@@ -127,17 +127,17 @@ jobs:
       # yeniden uretiyordu. Kaynak site gorselleri artik kapak yapilmadigi icin
       # bu adim gereksiz.
 
-      # KART TEMIZLIGI: daha once tasarim karti uretilmis kapaklari yeniden
-      # dener. Yayincinin kendi fotografi bulunursa fotografa gecilir; yoksa
-      # kart ayni kalir. Normal adim `image` alani yerel /kapak/ olan haberi
-      # atladigi icin eski kartlar hic yenilenmiyordu.
-      - name: Kart kapaklari fotografla degistir
+      # ARSIV: `image` alani hala baska bir sitenin adresini gosteren (hotlink)
+      # kapaklari yerellestirir. Kaynak site fotografi artik kullanilmadigi icin
+      # her turda 40 haber CC0/kamu mali stoga, AI'ya veya markali tasarim kartina
+      # tasinir. Varyant uretilmez (dosya sayisi siniri); site ana kapagi kullanir.
+      - name: Uzak kapaklari yerellestir
         continue-on-error: true
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          AI_KAPAK_LIMIT: "8"
-        run: node scripts/kapak-uret.mjs --fotoyok --limit=80 --paralel=6
+          AI_KAPAK_LIMIT: "2"
+        run: node scripts/kapak-uret.mjs --uzak --limit=40 --paralel=6
 
       # GUVENLIK AGI: kapak adimi bir haberi atlarsa `image` alani Wikimedia
       # stogunda kalabiliyor (baslikla ilgisiz kare). En yeni stok gorselli
