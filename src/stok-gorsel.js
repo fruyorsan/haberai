@@ -18,9 +18,11 @@
 const UA = "HaberinaiBot/1.0 (+https://haberinai.site; iletisim@haberinai.site)";
 const COMMONS = "https://commons.wikimedia.org/w/api.php";
 
-// Yalnızca serbest lisanslar. GFDL, "fair use", "non-free" vb. KABUL EDİLMEZ.
+// Yalnızca ATIF GEREKTİRMEYEN lisanslar: CC0, kamu malı, "no restrictions".
+// CC BY / CC BY-SA kullanılmaz: sitede görsel kredisi gösterilmediği için atıf
+// yükümlülüğü doğar. GFDL, "fair use", "non-free" vb. zaten kabul edilmez.
 const IZINLI_LISANS =
-  /^(cc0\b|public domain\b|pd\b|pd[- ].*|no restrictions\b|cc by(-sa)?[ -]?\d)/i;
+  /^(cc0\b|public domain\b|pd\b|pd[- ].*|no restrictions\b)/i;
 
 // Fotoğraf olmayan / haber görseli olarak kötü duran dosyalar.
 const KOTU_BASLIK =

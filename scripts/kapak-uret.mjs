@@ -219,6 +219,14 @@ const JENERIK = /(thumbnail|placeholder|default|untitled|noimage|no-image|generi
 // görseli" sayılmaz; `uygunMu` süzgecinden geçmek zorundadır.
 const STOK_KONAK = /(wikimedia\.org|openverse|flickr\.com|pixabay\.com|pexels\.com|unsplash\.com)/i;
 
+// ATIF GEREKTİRMEYEN lisanslar. Sayfada görsel kredisi gösterilmediği için
+// CC BY / CC BY-SA kapak olarak kullanılmaz; yalnızca CC0 / kamu malı kabul
+// edilir. Veri dosyasındaki eski bir görsel yeniden kapak yapılacaksa lisansı
+// da bu listeye uymak zorundadır.
+const KAMU_MALI =
+  /^(cc0\b|public domain\b|pd\b|pd[- ].*|no restrictions\b|kamu mal[ıi]$)/i;
+const lisansUygun = (lisans) => KAMU_MALI.test(String(lisans || "").trim());
+
 // Fotoğrafın güvenilir sayıldığı kategoriler: buralarda Commons'ta gerçek
 // ürün/cihaz kareleri var. Gündem/Dünya/Spor/Ekonomi gibi haberlerde stok
 // fotoğraf neredeyse her zaman yanlış olduğu için marka adı geçmiyorsa
@@ -293,7 +301,7 @@ async function openverseAra(sorgu) {
     "https://api.openverse.org/v1/images/?" +
     new URLSearchParams({
       q: sorgu,
-      license: "cc0,by,by-sa",
+      license: "cc0",
       size: "large",
       page_size: "10",
     });
@@ -827,6 +835,11 @@ function dhTemizUrl(u) {
  * 3) Makale gövdesindeki diğer fotoğraflar (`collectImageCandidates`)
  */
 async function kaynakGorselAdaylari(a) {
+  // DEVRE DIŞI: kaynak sitenin kendi fotoğrafları (og:image, gövde görselleri)
+  // kapak olarak kullanılmıyor. Ajans telifli olabiliyor ve yayıncının haber
+  // kartı kapak olunca alakasız görünüyor. Kapak yalnızca CC0/kamu malı stok,
+  // AI üretimi veya tasarım kartından gelir.
+  return [];
   const adres = String(a.sourceUrl || "");
   if (!/^https?:\/\//i.test(adres)) return [];
   try {
@@ -1153,55 +1166,24 @@ async function kapakUret(a) {
     // Elle seçilen görsel: diğer adaylar hiç denenmez (müstehcen kapak değişimi).
     adayEkle(elleGorsel, "elle");
   } else if (!kartaZorla) {
-    // 1) KAYNAK SİTENİN KENDİ GÖRSELLERİ (temiz /src/ fotoğrafı, og:image ve
-    //    makale gövdesi). og:image kırmızı yazılı paylaşım kartıysa elenir ve
-    //    aynı sayfadaki temiz gövde fotoğrafı devreye girer.
-    if (String(a.sourceUrl || "").startsWith("http")) {
-      const kaynakAdaylar = await kaynakGorselAdaylari(a);
-      if (debug) {
-        console.log(
-          `   · ${a.id} kaynak adayları (${kaynakAdaylar.length}): ${kaynakAdaylar[0] ? kaynakAdaylar[0].slice(0, 80) : "BULUNAMADI"}`
-        );
-      }
-      for (const [idx, u] of kaynakAdaylar.entries()) {
-        if (idx > 0 && ortakYanGorseller.has(u)) continue;
-        adayEkle(u, idx === 0 ? "kaynak" : "govde");
-      }
-    }
-    // 2) YAZININ İÇİNDEKİ FOTOĞRAFLAR: yayıncı kendi metnine koyduğu için
-    //    başlıkla alakaları yüksek (ürün, kişi, olay karesi). Yan menüde
-    //    birden fazla haberde tekrar eden ortak görseller elenir.
-    for (const u of Array.isArray(a.images) ? a.images.slice(0, 4) : []) {
-      if (ortakYanGorseller.has(u) || KAYNAK_JUNK.test(u)) continue;
-      const temiz = dhTemizUrl(u);
-      if (temiz) adayEkle(temiz, "govde");
-      adayEkle(u, "govde");
-    }
-    // 3) VERİ DOSYASINDAKİ GÖRSEL. İki tür var:
-    //    a) Yayıncının kendi görseli (og:image / RSS media) — habere ait olduğu
-    //       kesin, dosya adı ne olursa olsun kullanılır.
-    //    b) Stok kare (Wikimedia/Openverse) — yalnızca dosya adı arama
-    //       sorgusuyla eşleşiyorsa kullanılır; yanlış stok kare, tasarımlı
-    //       karttan daha çok güven kaybettirir.
+    // KAYNAK SİTENİN FOTOĞRAFLARI KULLANILMAZ.
+    // Neden: (1) ajans telifli olabiliyor (AA, Getty, Reuters...), (2) yayıncının
+    // haber kartı/başlık plakası kapak olunca "bu ne alaka" görünümü doğuyor.
+    // Kapak yalnızca atıf gerektirmeyen stok (CC0 / kamu malı), AI üretimi veya
+    // tasarım kartından gelir. Veri dosyasındaki görsel de yalnızca stok
+    // kaynaklıysa (Wikimedia/Openverse) aday olur.
     const stokAday = STOK_KONAK.test(String(kaynak || ""));
-    const yayinciGorseli =
-      !stokAday && !String(kaynak || "").startsWith(`${URL_TABANI}/`);
-    const fotoIzinli = yayinciGorseli
-      ? true
-      : uygunMu(kaynak, sorgu) &&
-        (FOTO_KATEGORI.has(String(a.category || "")) || ozelAdUyuyor(kaynak, a.title));
-    // Stok kaynaklı eski kapağı yenilerken aynı stok kareyi tekrar seçme.
     if (
-      fotoIzinli &&
+      stokAday &&
+      lisansUygun(a.gorselKaynak?.lisans) &&
+      String(kaynak || "").startsWith("http") &&
       !ortakYanGorseller.has(String(kaynak || "").trim()) &&
       !(sadeceStokKaynak && stokAday) &&
-      String(kaynak || "").startsWith("http")
+      uygunMu(kaynak, sorgu)
     ) {
       const temiz = dhTemizUrl(kaynak);
       if (temiz) adayEkle(temiz, "veri");
-      if (!/ichef\.bbci\.co\.uk\/ace\/branded_news\//i.test(String(kaynak || ""))) {
-        adayEkle(kaynak, "veri");
-      }
+      adayEkle(kaynak, "veri");
     }
   }
 
@@ -1280,34 +1262,9 @@ async function kapakUret(a) {
     console.log(`   · ${a.id} tüm adaylar zayıf, tasarımlı karta düşülüyor`);
   }
 
-  if (!taban && !kartaZorla) {
-    const webAdaylar = await haberGorselAra(a);
-    const webDeger = [];
-    for (const u of webAdaylar) {
-      try {
-        const veri = await gorselIndir(u);
-        if (!veri) continue;
-        const bilgi = await sharp(veri).metadata();
-        const pk = await paylasimKartiMi(veri);
-        if (pk.kart) continue;
-        const puan = await gorselPuani(veri, bilgi);
-        if (puan === null || puan < 28) continue;
-        webDeger.push({ url: u, veri, bilgi, puan });
-        if (puan >= 68 || webDeger.length >= 3) break;
-      } catch {
-        // Sonraki adayı dene
-      }
-    }
-    webDeger.sort((x, y) => y.puan - x.puan);
-    if (webDeger[0]) {
-      taban = await kirp(webDeger[0].veri, webDeger[0].bilgi, 0);
-      if (taban) {
-        fotoVar = true;
-        secilenUrl = webDeger[0].url;
-        console.log(`   ✦ Haber fotoğrafı (${webDeger[0].puan.toFixed(0)}p): ${a.title.slice(0, 58)}`);
-      }
-    }
-  }
+  // NOT: Bing/görsel arama ile başka sitelerden fotoğraf toplama kaldırıldı.
+  // O karelerin lisansı bilinmiyordu (çoğu ajans/rakip yayıncı); kapak yalnızca
+  // atıf gerektirmeyen stok havuzdan veya AI üretiminden gelir.
 
   if (!taban && !kartaZorla) {
     const aiSonuc = await aiGorselUret(a);

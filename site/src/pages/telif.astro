@@ -3,7 +3,7 @@ import Base from "../layouts/Base.astro";
 import { CONTACT_EMAIL } from "../lib/site-meta.js";
 
 const origin = Astro.site ? String(Astro.site).replace(/\/+$/, "") : "https://haberinai.site";
-const updated = "27 Ekim 2026";
+const updated = "3 Kasım 2026";
 
 const schema = {
   "@context": "https://schema.org",
@@ -12,7 +12,7 @@ const schema = {
   description:
     "HaberinAi içeriklerinin hazırlanma yöntemi, görsel lisansları ve telif hakkı bildirim süreci.",
   url: `${origin}/telif/`,
-  dateModified: "2026-10-27",
+  dateModified: "2026-11-03",
   publisher: { "@type": "Organization", name: "HaberinAi", url: `${origin}/` },
 };
 ---
@@ -55,20 +55,29 @@ const schema = {
     <h2>2. Özgünlük ve Emek</h2>
     <p>
       HaberinAi'de yayımlanan metinler, platformun kendi özet ve anlatımıyla üretilir. Bir başka
-      yayıncının metni olduğu gibi veya cümle cümle devralınmaz; haber fotoğrafları kaynağına
-      bağlantı verilerek veya HaberinAi tasarımıyla sunulur. Habercilik emeğine saygı duyuyor, hak
-      sahiplerinin bildirimlerini öncelikli olarak işleme alıyoruz.
+      yayıncının metni olduğu gibi veya cümle cümle devralınmaz. Habercilik emeğine saygı duyuyor,
+      hak sahiplerinin bildirimlerini öncelikli olarak işleme alıyoruz.
     </p>
 
     <h2>3. Görsel Kullanımı ve Lisanslar</h2>
     <p>
-      Haber görselleri üç kaynaktan seçilir: <strong>(1)</strong> haberin yayımlandığı kaynak sitedeki,
-      haberin kendisine ait fotoğraf — ilgili haberde kaynak bağlantısı verilir; <strong>(2)</strong>
-      Wikimedia Commons üzerindeki <strong>CC0, kamu malı, CC BY ve CC BY-SA</strong> lisanslı
-      fotoğraflar — fotoğrafçı, lisans ve dosya sayfası bilgileri korunur; <strong>(3)</strong>
-      HaberinAi'nin kendi ürettiği fotoğraflar ve kendi tasarımı olan kategori kapakları.
-      Kaynak siteden alınan fotoğraf haberin bağlamını yansıttığı için tercih edilir; hak sahibinin
-      talebi hâlinde kaldırılır veya değiştirilir (bkz. bölüm 5).
+      Haberlerde kullanılan görseller üç kaynaktan gelir: <strong>(1)</strong> yalnızca atıf
+      gerektirmeyen lisanslara sahip stok fotoğraflar (Creative Commons <strong>CC0</strong> ve
+      <strong>kamu malı</strong> arşivleri); <strong>(2)</strong> HaberinAi'nin yapay zekâ ile
+      ürettiği, haberi temsil eden özgün görseller; <strong>(3)</strong> HaberinAi'nin kendi
+      tasarımı olan kategori ve marka kapakları.
+    </p>
+    <p>
+      Başka yayıncıların haber sayfalarındaki fotoğraflar, haber ajansı görselleri ve lisansı
+      belirsiz internet görselleri <strong>kapak veya gövde görseli olarak kullanılmaz</strong>.
+      Seçilen stok fotoğraflar atıf zorunluluğu olmayan lisanslardan alındığı için haber
+      sayfalarında ayrıca görsel kredisi gösterilmez.
+    </p>
+    <p>
+      Arşivde daha önce CC BY veya CC BY-SA lisanslı fotoğraflarla yayımlanmış kapaklar
+      bulunmaktadır. Bu lisansların gerektirdiği fotoğrafçı, lisans ve kaynak bilgileri tek bir
+      toplu kayıt sayfasında tutulur:
+      <a href="/gorsel-kaynaklari/">Görsel Lisans Kayıtları</a>.
     </p>
 
     <h2>4. Kısa Alıntılar</h2>

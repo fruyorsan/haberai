@@ -56,9 +56,11 @@ const visionTukendi = new Set();
 // ilk ağ hatasından sonra kaynağı bu çalıştırma için kapatıyoruz.
 let openverseKapali = false;
 
-// Yalnızca serbest lisanslar. GFDL, fair use, non-free kabul edilmez.
+// Yalnızca ATIF GEREKTİRMEYEN lisanslar (CC0 / kamu malı). CC BY ve CC BY-SA
+// elenir: sitede görsel kredisi gösterilmiyor, atıf yükümlülüğü doğmamalı.
+// GFDL, fair use, non-free kabul edilmez.
 const IZINLI_LISANS =
-  /^(cc0\b|public domain\b|pd\b|pd[- ].*|no restrictions\b|cc by(-sa)?[ -]?\d)/i;
+  /^(cc0\b|public domain\b|pd\b|pd[- ].*|no restrictions\b)/i;
 
 /** Arşivdeki Türkçe lisans adlarını da kabul et ("Kamu malı"). */
 function lisansUygun(lisans) {
@@ -566,11 +568,11 @@ export async function commonsDosyaAdayi(sayfa) {
   return s ? commonsAday(s, "arşiv") : null;
 }
 
-/** Openverse: Commons dışında CC0/CC BY/CC BY-SA fotoğraf havuzu. */
+/** Openverse: Commons dışında CC0 / kamu malı fotoğraf havuzu. */
 export async function openverseAdaylari(sorgu, limit = 8) {
   const params = new URLSearchParams({
     q: sorgu,
-    license: "cc0,by,by-sa",
+    license: "cc0",
     size: "large",
     aspect_ratio: "wide",
     mature: "false",
@@ -602,11 +604,10 @@ function openverseAday(r, sorgu) {
   if (baslik && KOTU_BASLIK.test(baslik)) return null;
   const etiketler = (Array.isArray(r.tags) ? r.tags : []).map((t) => t?.name).filter(Boolean);
   const hamLisans = String(r.license || "").toLowerCase();
-  // Sunucu filtresine ek olarak istemcide de doğrula: NC/ND asla kapak olmaz.
-  if (!/^(cc0|by|by-sa)$/.test(hamLisans)) return null;
-  const lisans = /^cc0/.test(hamLisans)
-    ? "CC0"
-    : lisansAdi(`cc ${hamLisans}${r.license_version ? ` ${r.license_version}` : ""}`);
+  // Sunucu filtresine ek olarak istemcide de doğrula: yalnızca CC0.
+  // CC BY / BY-SA atıf ister; sitede kredi gösterilmediği için elenir.
+  if (hamLisans !== "cc0") return null;
+  const lisans = "CC0";
   return {
     url,
     kaynak: "openverse",
