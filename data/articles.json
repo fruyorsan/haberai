@@ -1,5 +1,65 @@
 [
   {
+    "id": "ce0a622dc05266f0",
+    "title": "Siber Güvenlik Başkanlığı, iOS iPhone'larda WhatsApp Hilesini Engelledi",
+    "slug": "siber-guvenlik-baskanligi-ios-iphone-whatsapp-hilesi-engelledi",
+    "summary": "Siber Güvenlik Başkanlığı, eski iOS sürümlerinde bulunan bir açığı kullanarak WhatsApp hesaplarını ele geçiren saldırıları tespit etti ve iPhone kullanıcılarını uyardı. Saldırganlar kimlik doğrulama anahtarlarını kopyalıyor, sahte mesajlar gönderiyor ve bu oturumlar Bağlı Cihazlar menüsünde görünmeyebiliyor.",
+    "keyPoints": [
+      "iOS 14 ve öncesi sürümlerde yeni bir WhatsApp kimlik doğrulama açığı ortaya çıktı",
+      "Sahte oturumlar Bağlı Cihazlar menüsünde izlenemiyor",
+      "Kullanıcıların acil para ve IBAN taleplerine karşı dikkatli olmaları önerildi"
+    ],
+    "body": [
+      "Siber Güvenlik Başkanlığı, son dönemde artan WhatsApp dolandırıcılığı vakalarına odaklanarak iOS işletim sisteminin eski sürümlerinde bir güvenlik açığı keşfetti. Bu açık, saldırganların WhatsApp kimlik doğrulama anahtarlarını kopyalamasına ve kullanıcının hesabını kendi adlarına mesaj göndermesine imkan tanıyor. Başkanlık, bu yöntemin özellikle iPhone 12 ve daha eski modellerde sıkça görüldüğünü belirtti.",
+      "Açığın teknik detayları incelendiğinde, saldırganların iOS'in belirli bir sürümündeki sistem dosyalarına müdahale ederek WhatsApp’ın iki faktörlü kimlik doğrulama sürecini atladıkları ortaya çıktı. Geleneksel yöntemlerde kullanıcıdan SMS ile gelen 6 haneli kod çalınmaya çalışılırken, bu yeni saldırı modeli kimlik doğrulama anahtarını doğrudan ele geçiriyor. Sonuç olarak sahte mesajlar, hedef kişinin rehberindeki tanıdıklarından geliyormuş gibi görünerek para ve IBAN talep ediyor.",
+      "Saldırganların gönderdiği mesajlar, WhatsApp Web ya da başka bir cihaz üzerinden hesabınıza erişildiğinde, Bağlı Cihazlar menüsünde görünmüyor. Bu durum, kullanıcıların yetkisiz oturumları fark etmelerini zorlaştırıyor. Başkanlık, özellikle iOS 14 ve daha eski sürümlerini kullanan iPhone sahiplerinin cihazlarını en yeni iOS sürümüne güncellemelerini ve WhatsApp ayarlarından Bağlı Cihazları düzenli olarak kontrol etmelerini tavsiye etti.",
+      "Türkiye genelinde birçok kullanıcı, rehberindeki tanıdıklarından gelen acil para transfer taleplerine yanıt vererek dolandırıcılığa maruz kalıyor. Siber Güvenlik Başkanlığı, bu tür taleplere karşı şüpheci olunması ve kesinlikle IBAN ya da banka bilgisi paylaşılmaması gerektiğini vurguladı. Ayrıca, resmi WhatsApp kanallarından gelen bildirimlerin doğruluğu kontrol edilmeden işlem yapılmaması gerektiği belirtildi.",
+      "Başkanlık, hem bireysel hem de kurumsal WhatsApp kullanıcıları için acil önlemler listesi yayınladı. Listede iOS güncellemesi, WhatsApp’ın iki faktörlü kimlik doğrulama ayarlarının güçlendirilmesi, Bağlı Cihazlar menüsünün periyodik kontrolü ve şüpheli mesajların yetkililere bildirilmesi yer alıyor. Bu adımlar, gelecekte benzer saldırıların önüne geçilmesi amacıyla öneriliyor."
+    ],
+    "comment": "Kullanıcıların eski iOS sürümlerinde hâlâ bu tür bir açığı barındırması, kritik bir risk oluşturuyor. Başkanlığın belirttiği gibi kimlik doğrulama anahtarının çalınması, geleneksel SMS kodu saldırılarından çok daha tehlikeli bir senaryo yaratıyor. iPhone ve WhatsApp kullanıcıları doğrudan hedef alındığı için kişisel ve kurumsal verilerin sızma ihtimali artıyor. Güncel iOS güncellemeleriyle bu açık kapatılmadıkça, saldırı oranı mevcut seviyenin üzerinde kalabilir.",
+    "editorNote": "iOS eski sürümlerinde WhatsApp kimlik doğrulama açığı tespit edildi; güncelleme yapmayan iPhone'lar risk altında.",
+    "tags": [
+      "WhatsApp",
+      "iOS",
+      "Siber Güvenlik",
+      "Dolandırıcılık",
+      "iPhone"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "iPhone WhatsApp security breach",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/siber-guvenlik-baskanligi-ndan-kritik-whatsapp-uyarisi--212492",
+    "image": "/kapak/ce0a622dc05266f0.webp",
+    "images": [
+      "https://www.donanimhaber.com/images/images/haber/212492/1200x675siber-guvenlik-baskanligi-ndan-kritik-whatsapp-uyarisi.jpg",
+      "https://www.donanimhaber.com/images/images/haber/212492/src/siber-guvenlik-baskanligi-ndan-kritik-whatsapp-uyarisi212492_1.jpg"
+    ],
+    "publishedAt": "2026-11-04T15:58:00.000Z",
+    "generatedAt": "2026-11-04T16:03:37.908Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Foreign_Affairs_Security_Training_Center0119_173732870_iOS_%2854336853220%29.jpg/1280px-Foreign_Affairs_Security_Training_Center0119_173732870_iOS_%2854336853220%29.jpg",
+        "yazar": "Diplomatic Security Service from Washington, D.C., United States of…",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Foreign_Affairs_Security_Training_Center0119_173732870_iOS_(54336853220).jpg",
+        "altyazi": "iOS işletim sistemi güvenlik açığı görüntüsü"
+      }
+    ],
+    "breaking": true,
+    "kapak": {
+      "v": 3,
+      "kaynak": "teknoloji-circuit-board-2-1319.jpg",
+      "foto": true
+    },
+    "gorselKaynak": {
+      "yazar": "MartinThoma",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Circuit-board-2.jpg"
+    }
+  },
+  {
     "id": "94f75d645b3e76f6",
     "title": "Bağcılar Emniyet Müdürlüğü 14 Zanlıyı Tutukladı",
     "slug": "bagcilar-emniyet-mudurlugu-14-zanli-tutukladi",
@@ -11076,7 +11136,6 @@
     "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Supercharger_Research_at_the_Aircraft_Engine_Research_Laboratory_%28GRC-1944-C-03814%29.jpg/1280px-Supercharger_Research_at_the_Aircraft_Engine_Research_Laboratory_%28GRC-1944-C-03814%29.jpg",
     "publishedAt": "2026-11-02T15:49:00.000Z",
     "generatedAt": "2026-11-02T15:54:51.100Z",
-    "breaking": true,
     "gorselKaynak": {
       "yazar": "NASA Glenn Research Center",
       "lisans": "Kamu malı",
@@ -11163,7 +11222,6 @@
         "altyazi": "Senat Meclisi"
       }
     ],
-    "breaking": true,
     "gorselKaynak": {
       "yazar": "U.S. Marine Corps Lance Cpl. Cristian L. Ricardo",
       "lisans": "Kamu malı",
