@@ -1,5 +1,55 @@
 [
   {
+    "id": "4be8123696baa8ad",
+    "title": "Battlespire'da 29 yıllık gizli easter egg çözüldü",
+    "slug": "battlespirde-29-yillik-gizli-easter-egg-cozuld",
+    "summary": "An Elder Scrolls Legend: Battlespire'daki 29 yıllık gizli içerik nihayet açığa çıktı. Strong Müzesi'ne kazandırılan Julian LeFay belgeleri, gizli komutun şifresini ele verdi. Oyuncular artık 'spire' yazarak ekip fotoğrafını görebiliyor.",
+    "keyPoints": [
+      "Andrew Borman, 29 yıllık gizli komutu belgelerden çözdü.",
+      "Gizli içerik, '1' tuşuyla 'spire' yazarak açılıyor.",
+      "Buluntu, müzeye kazandırılan geliştirici belgelerine dayanıyor."
+    ],
+    "body": [
+      "1997'de MS-DOS platformu için piyasaya sürülen An Elder Scrolls Legend: Battlespire, çeyrek asrı aşkın bir süre sonra yeni bir sırrıyla gündeme geldi. Serinin daha az bilinen yapımlarından biri olan oyunun içinde, geliştirici ekibin sakladığı bir görselin varlığı uzun zamandır konuşuluyordu. Ancak bu görselin final sürümünde gerçekten işlevsel olup olmadığı ve nasıl erişilebileceği yıllardır bir muamma olarak kaldı.",
+      "Gizemin perde arası, The Strong National Museum of Play'de dijital koruma direktörlüğü yapan Andrew Borman tarafından gerçekleştirildi. Bu resmi belgeler sayesinde, oyunun dosyalarında yer alan gizli komutun çalışma mantığı ve tetikleyici anahtarları netlik kazandı.",
+      "Keşfedilen içerik, Battlespire geliştirme ekibinin birlikte çekilmiş bir fotoğrafı ve üzerinde 'Battlespire rules!' mesajı içeren bir easter egg'ten oluşuyor. Hayran kitlesi, bu fotoğrafın varlığını yıllardır biliyordu ancak oyunun iç mekanizmalarında nasıl görüntüleneceğine dair kesin bir veri yoktu. Yapılan inceleme, bunun basit bir geliştirme artığı olmadığını ve final versiyonda aktif bir şekilde çalıştığını kanıtladı.",
+      "Fotoğrafı ekrana getirmek için oldukça basit bir yöntem yeterli: Oyun oynanırken klavyedeki '1' tuşu basılı tutulmalı ve 'spire' kelimesi yazılmalı. Bu kısa komut dizisi doğru sırayla girildiğinde, ekip fotoğrafı ve mesaj anında beliriyor. Şaşırtıcı olan nokta, bu kadar kolay bir metodun 29 yıl boyunca tek bir oyuncu tarafından bile keşfedilememiş olması.",
+      "Battlespire, Skyrim veya Oblivion gibi geniş açık dünya mekaniklerine sahip değil; birinci şahıs bakış açısıyla oynanan ve daha doğrusal ilerleyen bir zindan macerası sunuyor. Yapısı, serinin erken dönem oyunları Arena ve Daggerfall ile daha yakın bir komşuluk ilişkisi içinde. Bugün Steam üzerinden erişilebilen yapım, kullanıcı yorumlarında karışık tepkiler alsa da bu keşif, oyunun tarihindeki derinlikli detayları bir kez daha hatırlatıyor.",
+      "Bu bulgu, klasik oyunların dijital arşivlenmesinin ve müze koleksiyonlarının ne kadar kritik olduğunu gözler önüne seriyor. Geliştiricilerin bıraktığı küçük dokunuşlar, doğru belgelerle birleştiğinde oyun tarihine kalıcı katkılar sunuyor. Battlespire'ın gelecekte de bu tür sürprizlerle anılması, dijital kültürün korunması çabalarının somut bir sonucu olarak değerlendirilebilir."
+    ],
+    "comment": "Eski oyunlardaki easter egg'lerin çözülmesi, topluluk için nostaljik bir tatmin olsa da asıl değer arşivleme çalışmalarında yatıyor. Julian LeFay'in belgelerinin müze arşivine girmesi, 29 yıllık bir boşluğu dolduran somut bir hamle. Bu tür keşifler, yalnızca oyuncularda değil, oyun tarihini araştıran akademisyenlerde de canlı bir merak uyandırıyor. Eğer benzer belgeler diğer Bethesda yapımları için de gün yüzüne çıkarsa, serinin erken dönemi hakkında bildiklerimiz köklü biçimde değişebilir.",
+    "editorNote": "Julian LeFay belgeleri, 29 yıllık 'spire' şifresini çözdü. Bu keşif, eski oyunların dijital arşivlenme sürecinin ne kadar verimli olduğunu kanıtlıyor.",
+    "tags": [
+      "Battlespire",
+      "The Elder Scrolls",
+      "Beta",
+      "Easter Egg",
+      "Strong Müzesi"
+    ],
+    "category": "Oyun",
+    "gorselSorgu": "Battlespire game screenshot",
+    "source": "Merlin'in Kazanı",
+    "sourceUrl": "https://www.merlininkazani.com/an-elder-scrolls-legend-battlespire-da-29-yillik-easter-egg-haber-264130",
+    "image": "/kapak/4be8123696baa8ad.webp",
+    "images": [
+      "https://img.merlininkazani.com/31559/an-elder-scrolls-legend-battlespire-da-29-yillik-bethesda-sirri-bulundu-264130-main-56545-large.webp"
+    ],
+    "publishedAt": "2026-11-04T23:27:00.000Z",
+    "generatedAt": "2026-11-04T23:33:29.718Z",
+    "breaking": true,
+    "kapak": {
+      "v": 3,
+      "kaynak": "oyun-sydneytownhallarcadefountain-2832.jpg",
+      "foto": true
+    },
+    "gorselKaynak": {
+      "yazar": "ColonelLight",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:SydneyTownHallArcadeFountain.jpg"
+    }
+  },
+  {
     "id": "9da5529155baf0b9",
     "title": "Demokratlar ABD Kongre’sinde Çoğunluğu Eline Aldı",
     "slug": "demokratlar-abd-kongresinde-commogunlu-geldi",
