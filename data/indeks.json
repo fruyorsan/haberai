@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-04T19:37:13.089Z",
+  "updatedAt": "2026-11-04T20:03:47.436Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5815,
-  "aday": 5815,
-  "uygun": 3760,
-  "secilen": 3671,
+  "toplamHaber": 5816,
+  "aday": 5816,
+  "uygun": 3761,
+  "secilen": 3672,
   "red": {
     "özet gövdeyle aynı": 115,
     "editör notu özetle aynı": 8,
@@ -50,10 +50,6 @@
       "twin": "Google ve Amazon, yapay zeka harcamalarıyla 500 milyar dolar kaybetti"
     },
     {
-      "title": "Rusya'nın insani yardım merkezine hava saldırısı: 24 sivil yaşamını yitirdi",
-      "twin": "Rusya'nın Zaporijya saldırısında 24 kişi hayatını kaybetti"
-    },
-    {
       "title": "OpenAI, yapay zekâ modellerinin ürettiği 3 bilimsel sonucu doğruladı",
       "twin": "OpenAI, yapay zekanın matematikte 3 büyük hamle yaptığını açıkladı"
     },
@@ -68,6 +64,10 @@
     {
       "title": "SPK, Tera Yatırım'ın lisansını iptal etti ve 50 kişi için suç duyurusu yaptı",
       "twin": "SPK nitelikli yatırımcı barajını 50 milyon liraya çıkardı"
+    },
+    {
+      "title": "Rusya'nın Zaporijya saldırısında 24 kişi hayatını kaybetti",
+      "twin": "Rusya'nın insani yardım merkezine hava saldırısı: 24 sivil yaşamını yitirdi"
     },
     {
       "title": "Florida'da özel jet yerleşim alanına çakıldı: 9 kişi yaşamını yitirdi",
@@ -448,14 +448,15 @@
       "9d93efdae4d96c99",
       "febef9894de2c958",
       "d82818c1184869ab",
+      "9a037737fda9dfe6",
       "708de8b8c407a13a",
       "847cf25f9d8426f0",
       "b1a568c18d9e6d00",
       "c5fa4ca83bf18c47",
       "0b161b6bae173ae1",
+      "1477d5ce3ff84588",
       "c042d55d0123608b",
       "d4829f33f85efc7d",
-      "9a037737fda9dfe6",
       "11adbaf739d9f502",
       "ec916cc81a96b780",
       "667cb53e08190fe3",
@@ -1335,7 +1336,6 @@
       "3bdda1d5a8bf47cf",
       "0012e3ecc09cd69d",
       "bd25de6142f87a82",
-      "b6f2551749d21e6f",
       "d4895b16b157dce7",
       "d4cd895cee33034a",
       "6648c7f54618228f",
@@ -1345,6 +1345,7 @@
       "38228b139390ab57",
       "f73a8737f49e79d0",
       "c4f439d2ff811ba2",
+      "b6f2551749d21e6f",
       "27c8c1facaf47ae5",
       "d90924f7ae4fd044",
       "7ae7a1259144d11b",
@@ -1358,10 +1359,10 @@
       "c91b37cb43de441a",
       "62146d5b87638c60",
       "214089623d310b7f",
-      "3c8b2a767357ee73",
       "046d1d09df3bb3bb",
       "329d8ad4746ad405",
       "1d395cb90e29828a",
+      "7584627279c216f2",
       "d2344959433bc2f0",
       "16547864252cc17e",
       "192376523e9b9530",
@@ -1444,7 +1445,7 @@
       "587e466115695822",
       "96ad33a59f014ade",
       "040647c51b8f39b7",
-      "7584627279c216f2"
+      "3c8b2a767357ee73"
     ],
     "2026-10-22": [
       "686d3f11a6cecddc",
@@ -3921,7 +3922,6 @@
     "522b4071044087b6",
     "44402e3dde172ac8",
     "9cd8bbb18d49378a",
-    "b6f2551749d21e6f",
     "ed8bcd9560cfae62",
     "d4895b16b157dce7",
     "d4cd895cee33034a",
@@ -3999,6 +3999,7 @@
     "252f994bfeb21398",
     "5091dd7a10092596",
     "385c23b64dd4aa36",
+    "b6f2551749d21e6f",
     "767c59c237b46ff1",
     "02a99fc21d2b6314",
     "d1b5a633e31d1b87",
@@ -4157,9 +4158,9 @@
     "b47ce1e4e3124c63",
     "be6217761b510639",
     "8645fcad20263ea8",
+    "9a037737fda9dfe6",
     "6170dce080615cec",
     "214089623d310b7f",
-    "3c8b2a767357ee73",
     "002d0251f2c5f593",
     "33c5a4339667189b",
     "2243e3fe15798746",
@@ -4222,6 +4223,7 @@
     "2ea0bfe78e309769",
     "af8f256de98115d5",
     "6a30c8d6d0d6c911",
+    "7584627279c216f2",
     "bb3dcc9e2519cd52",
     "b419b21c85254c75",
     "4bca53cecb22c530",
@@ -4239,6 +4241,7 @@
     "719c7aa0c26eda4a",
     "98bac1052e180e14",
     "581b3995f8af3fb3",
+    "1477d5ce3ff84588",
     "aac2fd30a29a8e67",
     "c042d55d0123608b",
     "c7918bcabe20b200",
@@ -4366,7 +4369,6 @@
     "8e1e40a996e8a744",
     "574be1faa3b7d98a",
     "734ab721e6fe3b3b",
-    "9a037737fda9dfe6",
     "fde93fa8c413a2b1",
     "77d6f2dbd7a6f1fe",
     "2ee03cd9c9d668ee",
@@ -7450,7 +7452,7 @@
     "a98440cac2f5d856",
     "09ddb4dada9e7e9c",
     "040647c51b8f39b7",
-    "7584627279c216f2",
+    "3c8b2a767357ee73",
     "09bc1ee5375acd32",
     "fa6509a8a7b19993",
     "e95248231c43bc92",
