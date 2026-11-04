@@ -30,10 +30,10 @@ const IZINLI_LISANS =
 
 // Fotoğraf olmayan / haber görseli olarak kötü duran dosyalar.
 const KOTU_BASLIK =
-  /\b(logo|logos|map|maps|diagram|chart|graph|poster|cover|screenshot|screen shot|scan|scanned|icon|flag|coat of arms|seal|banknote|stamp|coin|signature|drawing|illustration|cartoon|clipart|svg|pdf|document|table|infographic|wikimedia|commons|wikidata|menu|display|thumbnail|unnamed|untitled|placeholder|no image|no photo|policies|policy brief|press release|art project|painting)\b/i;
+  /\b(logo|logos|map|maps|diagram|chart|graph|poster|cover|screenshot|screen shot|scan|scanned|icon|flag|coat of arms|seal|banknote|stamp|coin|signature|drawing|illustration|cartoon|clipart|svg|pdf|document|table|infographic|wikimedia|commons|wikidata|menu|display|thumbnail|unnamed|untitled|placeholder|no image|no photo|policies|policy brief|press release|art project|painting|postcard|album|grave|tomb|title page|frontispiece)\b/i;
 
 // Eski/tarama görselleri: haber sayfasında "dikkat çekici" durmaz.
-const ESKI_GORSEL = /(black and white|monochrome|archival|historical|engraving|lithograph|fortepan|wellcome|bundesarchiv|nationaal archief|\b18\d\d\b|\b19[0-7]\d\b)/i;
+const ESKI_GORSEL = /(black and white|monochrome|archival|historical|engraving|lithograph|fortepan|wellcome|bundesarchiv|nationaal archief|constantinople|stamboul|lccn|\b18\d\d\b|\b19[0-7]\d\b)/i;
 
 // İnsanların oturduğu toplantı/sahne fotoğrafları: haberle ilgisi olsa da
 // kapak olarak "dikkat çekici" değil. Elenmez, yalnızca geriye düşürülür.
@@ -231,7 +231,7 @@ function eslesenSayisi(metin, sorgu) {
 const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
 
 /** Commons'ta serbest lisanslı, büyük ve yatay fotoğraf arar. */
-async function commonsAra(sorgu, adet = ADAY, offset = 0, afet = false, marka = "") {
+async function commonsAra(sorgu, adet = ADAY, offset = 0, afet = false, marka = "", alakaGerekli = true) {
   const params = new URLSearchParams({
     action: "query",
     format: "json",
@@ -260,16 +260,16 @@ async function commonsAra(sorgu, adet = ADAY, offset = 0, afet = false, marka = 
       signal: AbortSignal.timeout(15000),
     });
     if (!tekrar.ok) throw new Error(`Commons HTTP ${tekrar.status}`);
-    return sayfalariCoz(await tekrar.json(), sorgu, afet, marka);
+    return sayfalariCoz(await tekrar.json(), sorgu, afet, marka, alakaGerekli);
   }
   if (!res.ok) throw new Error(`Commons HTTP ${res.status}`);
-  return sayfalariCoz(await res.json(), sorgu, afet, marka);
+  return sayfalariCoz(await res.json(), sorgu, afet, marka, alakaGerekli);
 }
 
-function sayfalariCoz(json, sorgu, afet = false, marka = "") {
+function sayfalariCoz(json, sorgu, afet = false, marka = "", alakaGerekli = true) {
   const sayfalar = json?.query?.pages || [];
   return (Array.isArray(sayfalar) ? sayfalar : Object.values(sayfalar))
-    .map((s) => uygunGorsel(s, sorgu, afet, marka))
+    .map((s) => uygunGorsel(s, sorgu, afet, marka, alakaGerekli))
     .filter(Boolean)
     .sort((a, b) => b.skor - a.skor || b.genislik - a.genislik);
 }
@@ -287,7 +287,7 @@ function tamKelimeVar(metin, kelime) {
     .some((w) => w === aranan);
 }
 
-function uygunGorsel(sayfa, sorgu, afet = false, marka = "") {
+function uygunGorsel(sayfa, sorgu, afet = false, marka = "", alakaGerekli = true) {
   const ii = sayfa?.imageinfo?.[0];
   if (!ii) return null;
 
@@ -324,6 +324,16 @@ function uygunGorsel(sayfa, sorgu, afet = false, marka = "") {
   // 1900 öncesi yıl geçen dosya adları neredeyse her zaman gravür/eski
   // illüstrasyon oluyor ("Istanbul_comet_and_earthquake_1556.jpg" gibi).
   if (/\b1[0-8]\d{2}\b/.test(baslik)) return null;
+  // Kategori sahnesinde eski/tarama kareleri ele: "Streets in Istanbul" gibi
+  // kategoriler 1900'lerin kartpostallarıyla dolu, kapak olarak haber gibi
+  // durmuyor. Arama yolunda bunlar yalnızca geriye düşürülür (skor cezası),
+  // burada ise hiç kabul edilmez.
+  if (!alakaGerekli) {
+    if (ESKI_GORSEL.test(baslik)) return null;
+    // Uzun, cümle gibi dosya adları neredeyse her zaman kitap/rapor taraması
+    // oluyor ("Stock exchange investments in theory and practice").
+    if (baslik.split(/\s+/).length >= 10) return null;
+  }
   if (SERT_GORSEL.test(baslik) && !FELAKET_SORGU.test(sorgu)) return null;
   if (UYDU_GORSEL.test(baslik) && !UZAY_SORGU.test(sorgu)) return null;
   if (FELAKET_SORGU.test(sorgu) && !FELAKET_GORSEL.test(baslik)) return null;
@@ -357,11 +367,16 @@ function uygunGorsel(sayfa, sorgu, afet = false, marka = "") {
   const dosyaPuan = alaka(baslik, sorgu);
   const sSorgu = kelimeler(sorgu);
   const eslesen = eslesenSayisi(baslik, sorgu);
-  // 2 sözcüklü sorguda İKİSİ de, 3+ sözcükte en az 2'si dosya adında olmalı.
-  // ("Opera browser" sorgusuna "Gounod - Mireille - Open air opera" dosyası
-  // yalnızca "opera" ile uyuyordu; ikinci sözcük olmadan kabul edilmez.)
-  const gerekli = sSorgu.length >= 2 ? Math.min(2, sSorgu.length) : 1;
-  if (eslesen < gerekli) return null;
+  // KATEGORİ ÜYELİĞİ İLE SEÇİMDE alaka araması atlanır: kare zaten doğru
+  // Commons kategorisinden geliyor (ör. Category:Circuit boards). Dosya adı
+  // Türkçe başlıkla örtüşmediği için bu kontrol orada her şeyi elerdi.
+  if (alakaGerekli) {
+    // 2 sözcüklü sorguda İKİSİ de, 3+ sözcükte en az 2'si dosya adında olmalı.
+    // ("Opera browser" sorgusuna "Gounod - Mireille - Open air opera" dosyası
+    // yalnızca "opera" ile uyuyordu; ikinci sözcük olmadan kabul edilmez.)
+    const gerekli = sSorgu.length >= 2 ? Math.min(2, sSorgu.length) : 1;
+    if (eslesen < gerekli) return null;
+  }
   // Açıklama uyumu sıralamayı iyileştirir ("Medical Park Stadyumu" açıklaması
   // "Trabzonspor - Beşiktaş" der → öne çıkar) ama tek başına yeterli değildir.
   const puan = dosyaPuan + 0.5 * alaka(aciklama, sorgu);
@@ -624,6 +639,117 @@ export async function stokGorseller(sorgular, { adet = 3, kullanilan = new Set()
   // (tek bir yedek görselin her haberde görünmesinden) iyidir.
   return ara(new Set());
 }
+
+/**
+ * Commons KATEGORİ ÜYELİĞİNDEN fotoğraf seçer.
+ *
+ * NEDEN: Dosya adı tahmini (Türkçe başlık ↔ İngilizce dosya adı) güvenilmez;
+ * "Maserati" → Venezuela peyniri gibi kapaklar üretiyordu. Kategori üyeliği ise
+ * dosyanın GERÇEKTEN o konuya ait olduğunun kanıtıdır: `Category:Circuit boards`
+ * içindeki her kare devre kartıdır. Haber başlığıyla birebir eşleşmez ama
+ * kategorinin sahnesini doğru gösterir (spor → stadyum, teknoloji → devre kartı).
+ *
+ * Döndürülen kareler `alakaGerekli = false` ile süzülür: lisans/çözünürlük/
+ * kötü-başlık kontrolleri aynen çalışır, yalnızca dosya-adı kelime eşleşmesi
+ * atlanır. Liste haber kimliğine göre döndürülür ve `kullanilan` ile tekrar
+ * engellenir.
+ */
+// Kategori havuzu süreç içinde önbelleklenir: bir turda binlerce haber aynı 18
+// kategoriyi kullanıyor; her haber için Commons'a gitmek hem yavaş hem de API
+// hız sınırına takılırdı. Bir kategori bir kez çekilir, sonra dağıtılır.
+const KATEGORI_ONBELLEK = new Map();
+const ONBELLEK_MS = 30 * 60 * 1000;
+
+async function kategoriHavuzu(kategori) {
+  const simdi = Date.now();
+  const kayit = KATEGORI_ONBELLEK.get(kategori);
+  if (kayit && simdi - kayit.zaman < ONBELLEK_MS) return kayit.liste;
+
+  const params = new URLSearchParams({
+    action: "query",
+    format: "json",
+    formatversion: "2",
+    origin: "*",
+    generator: "categorymembers",
+    gcmtitle: `Category:${kategori}`,
+    gcmtype: "file",
+    // 200 üye: ilk 50'de yalnızca 4-5 CC0 JPEG oluyor; havuz ancak bu kadar
+    // genişken tekrar etmeden dağıtılabiliyor.
+    gcmlimit: "200",
+    prop: "imageinfo|categories",
+    cllimit: "max",
+    iiprop: "url|size|extmetadata",
+    iiextmetadatafilter: "LicenseShortName|Artist|LicenseUrl|Credit|ImageDescription",
+    iiurlwidth: "1280",
+  });
+  let liste = [];
+  try {
+    const res = await fetch(`${COMMONS}?${params}`, {
+      headers: { "User-Agent": UA, Accept: "application/json" },
+      signal: AbortSignal.timeout(20000),
+    });
+    if (res.ok) {
+      const json = await res.json();
+      const sayfalar = json?.query?.pages || [];
+      liste = (Array.isArray(sayfalar) ? sayfalar : Object.values(sayfalar))
+        .map((s) => uygunGorsel(s, kategori.replace(/_/g, " "), false, "", false))
+        .filter(Boolean)
+        .sort((a, b) => b.skor - a.skor || b.genislik - a.genislik);
+    }
+  } catch {
+    liste = [];
+  }
+  // Boş sonucu da önbellekle: olmayan kategorisi olan haber her turda yeniden
+  // istek atmasın.
+  KATEGORI_ONBELLEK.set(kategori, { zaman: simdi, liste });
+  return liste;
+}
+
+export async function kategoriGorseller(
+  kategoriAdi,
+  { adet = 6, kullanilan = new Set(), offset = 0 } = {}
+) {
+  const kategori = KATEGORI_KATEGORI[String(kategoriAdi || "")];
+  if (!kategori) return [];
+  const hepsi = await kategoriHavuzu(kategori);
+  if (!hepsi.length) return [];
+
+  // Kullanılmamışları öne al; hepsi kullanıldıysa tekrarı göze al (bir taze
+  // haberin görselsiz kalmasındansa tanıdık bir sahne daha iyidir).
+  const temiz = hepsi.filter((g) => !kullanilan.has(g.url));
+  const havuz = temiz.length ? temiz : hepsi;
+  const bas = Math.max(0, offset) % havuz.length;
+  const sirali = [...havuz.slice(bas), ...havuz.slice(0, bas)];
+  return sirali.slice(0, adet);
+}
+
+// Kategori → Commons kategori adı. Bu adlar Commons'ta GERÇEKTEN var olan,
+// içi dolu kategorilerdir; olmayan bir ad boş sonuç döndürür ve haber tasarım
+// kartına düşer (güvenli varsayılan).
+// Ölçümle seçildi (2026-11-04): her aday kategorinin ilk 200 dosyası taranıp
+// "CC0/kamu malı + yatay/uygun çözünürlüklü JPEG" sayısına bakıldı. Boş ya da
+// yalnızca serbest olmayan lisans içeren kategoriler elendi ("Circuit boards" 0,
+// "Video game controllers" 0, "Health care" 0, "City parks" 0, "Stock markets" 0).
+export const KATEGORI_KATEGORI = {
+  Teknoloji: "Printed circuit boards",
+  "Yapay Zeka": "Artificial intelligence",
+  Mobil: "Mobile phones",
+  Oyun: "Video games",
+  Donanım: "Computer hardware",
+  Yazılım: "Computer programming",
+  İnternet: "Server rooms",
+  Bilim: "Laboratories",
+  Uzay: "Rocket launches",
+  Sağlık: "Hospitals",
+  Kültür: "Art exhibitions",
+  Yaşam: "Parks",
+  Otomobil: "Cars",
+  Ekonomi: "Stock exchanges",
+  Spor: "Stadiums",
+  Gündem: "Streets in Istanbul",
+  Dünya: "Earth",
+  Diğer: "Newspapers",
+};
 
 // Kategorilere göre genel arama sorguları: AI'nın özel sorgusu sonuç vermezse
 // (ör. çok niş bir konu) habere yakın, güvenli bir fotoğrafa düşülür.

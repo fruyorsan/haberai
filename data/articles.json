@@ -204630,22 +204630,27 @@
     "category": "Teknoloji",
     "source": "Pasquale Pillitteri",
     "sourceUrl": "https://pasqualepillitteri.it/tr/news/25331/aarav-dengla-buyukusta-16-yas-yapay-zeka-satranc",
-    "image": "https://pasqualepillitteri.it/uploads/img/news/genie-4-google-deepmind-world-model-cover.webp",
+    "image": "/kapak/dbf561cbf4885ade.webp",
     "publishedAt": "2026-10-18T18:08:55.000Z",
     "generatedAt": "2026-10-18T18:10:47.147Z",
     "imagesAt": "2026-10-19T05:50:35.704Z",
     "gorselKaynak": {
-      "yazar": "Ingo Dierking",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Macro_circuit_board.JPG"
+      "yazar": "Jan Helebrant",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Electronics_PCB_circuit_board_003_(51131861191).jpg"
     },
     "gorselDeneme": "2026-10-28T04:48:31.463Z",
     "images": [
       "https://pasqualepillitteri.it/uploads/img/news/rea-reverse-engineer-anything-github-vero-falso-cover.webp",
       "https://pasqualepillitteri.it/uploads/img/news/genie-4-google-deepmind-world-model-cover.webp"
     ],
-    "imagesKaynak": "https://pasqualepillitteri.it/tr/news/25331/aarav-dengla-buyukusta-16-yas-yapay-zeka-satranc"
+    "imagesKaynak": "https://pasqualepillitteri.it/tr/news/25331/aarav-dengla-buyukusta-16-yas-yapay-zeka-satranc",
+    "kapak": {
+      "v": 3,
+      "kaynak": "teknoloji-electronics-pcb-circuit-board-003-511318-3351.jpg",
+      "foto": true
+    }
   },
   {
     "id": "55798333bde294a7",
@@ -204674,19 +204679,24 @@
     "category": "Spor",
     "source": "Sabah",
     "sourceUrl": "https://www.sabah.com.tr/spor/tum-sporlar/2026/10/18/voleybol-vodafone-sultanlar-ligi",
-    "image": "https://iasbh.tmgrup.com.tr/ccf710/1200/675/0/0/2048/1150?u=https://isbh.tmgrup.com.tr/sbh/2026/10/18/voleybol-vodafone-sultanlar-ligi-1792346832616.jpg",
+    "image": "/kapak/55798333bde294a7.webp",
     "publishedAt": "2026-10-18T18:07:34.000Z",
     "generatedAt": "2026-10-18T18:16:28.493Z",
     "imagesAt": "2026-10-19T05:50:36.571Z",
     "gorselKaynak": {
-      "yazar": "User:Zafer",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Vak%C4%B1fBank_SK_WV_vs_Be%C5%9Fikta%C5%9F_WV_TWVL_20261003_(1).JPG"
+      "yazar": "Digitura",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Football_stadium_early_1980s.jpg"
     },
     "gorselDeneme": "2026-10-28T04:48:31.738Z",
     "gorselSorguDeneme": "2026-10-29T16:45:20.902Z",
-    "gorselSorgu": "VakıfBank Eczacıbaşı volleyball"
+    "gorselSorgu": "VakıfBank Eczacıbaşı volleyball",
+    "kapak": {
+      "v": 3,
+      "kaynak": "spor-football-stadium-early-1980s-2832.jpg",
+      "foto": true
+    }
   },
   {
     "id": "eecabaafe8137e5c",
@@ -204717,17 +204727,22 @@
     "category": "Gündem",
     "source": "TRT Haber Son Dakika",
     "sourceUrl": "https://www.trthaber.com/haber/turkiye/ispartada-kanyonda-mahsur-kalan-14-kisilik-ihh-gonullulerinden-1-kisi-hayatini-kaybetti-960479.html",
-    "image": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2496000/ihh-kanyon-aa-2496670.jpg",
+    "image": "/kapak/eecabaafe8137e5c.webp",
     "publishedAt": "2026-10-18T18:04:00.000Z",
     "generatedAt": "2026-10-18T18:16:38.272Z",
     "imagesAt": "2026-10-19T05:50:38.266Z",
     "gorselKaynak": {
-      "yazar": "Mostafameraji",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_01.jpg"
+      "yazar": "Jess Stubenbord",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_2_(25932259407).jpg"
     },
-    "gorselDeneme": "2026-10-28T04:48:31.555Z"
+    "gorselDeneme": "2026-10-28T04:48:31.555Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "gundem-istanbul-2-25932259407-1228.jpg",
+      "foto": true
+    }
   },
   {
     "id": "aceb6d17e3c0a5a7",
@@ -204757,19 +204772,24 @@
     "category": "Spor",
     "source": "Sabah Spor",
     "sourceUrl": "https://www.sabah.com.tr/spor/futbol/2026/10/18/basaksehir-gaziantep-fkyi-eli-bos-gonderdi",
-    "image": "https://iasbh.tmgrup.com.tr/5f3ea2/1200/675/0/0/800/449?u=https://isbh.tmgrup.com.tr/sbh/2026/10/18/basaksehir-gaziantep-fkyi-eli-bos-gonderdi-1792346435035.jpeg",
+    "image": "/kapak/aceb6d17e3c0a5a7.webp",
     "publishedAt": "2026-10-18T18:00:40.000Z",
     "generatedAt": "2026-10-18T18:05:08.146Z",
     "imagesAt": "2026-10-19T05:50:38.726Z",
     "gorselKaynak": {
-      "yazar": "Sancos",
-      "lisans": "CC BY 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Kadriorg_Stadium_floodlights_and_Maakri_high-rises.jpg"
+      "yazar": "AxitTDTbenzoic",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:B%C3%ACnh_Ph%C6%B0%E1%BB%9Bc_Stadium_2024.jpg"
     },
     "gorselDeneme": "2026-10-28T04:48:31.683Z",
     "gorselSorguDeneme": "2026-10-29T16:45:27.590Z",
-    "gorselSorgu": "Başakşehir stadium goal"
+    "gorselSorgu": "Başakşehir stadium goal",
+    "kapak": {
+      "v": 3,
+      "kaynak": "spor-b-nh-ph-c-stadium-2024-1827.jpg",
+      "foto": true
+    }
   },
   {
     "id": "a0ac8989e8190eca",
@@ -204799,17 +204819,22 @@
     "category": "Dünya",
     "source": "Euronews Türkçe",
     "sourceUrl": "https://tr.euronews.com/2026/10/18/ispanya-gemilerin-zararsiz-gecisi-icin-ceuta-protokolunu-yeniledi",
-    "image": "https://images.euronews.com/articles/stories/09/95/72/21/1200x675_cmsv2_7ec8f5a2-026c-5a5a-8985-49146f6fd713-9957221.jpg",
+    "image": "/kapak/a0ac8989e8190eca.webp",
     "publishedAt": "2026-10-18T18:00:31.000Z",
     "generatedAt": "2026-10-18T18:05:18.829Z",
     "gorselKaynak": {
-      "yazar": "Ank gsx",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:United_Nations_Building,_Geneva_(Ank_Kumar)_02.jpg"
+      "yazar": "Alf van Beem",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:F-HEPG_Air_France_Airbus_A320-214(WL)_takeoff_from_Schiphol_(AMS_-_EHAM)%2C_The_Netherlands%2C_11june2014%2C_pic-1.JPG"
     },
     "gorselSorguDeneme": "2026-10-29T16:45:34.377Z",
-    "gorselSorgu": "Spanish Navy warship Ceuta coast"
+    "gorselSorgu": "Spanish Navy warship Ceuta coast",
+    "kapak": {
+      "v": 3,
+      "kaynak": "dunya-f-hepg-air-france-airbus-a320-214-wl-tak-10112.jpg",
+      "foto": true
+    }
   },
   {
     "id": "1ff03a9a840dbbaf",
@@ -204840,16 +204865,21 @@
     "category": "Gündem",
     "source": "Yeni Şafak",
     "sourceUrl": "https://www.yenisafak.com/video/gundem/yabanci-uyruklu-kisinin-mide-ve-bagirsaklarinda-uyusturucu-tespit-edildi-4865378",
-    "image": "https://img.piri.net/piri/upload/3/2026/10/18/231977ba-yabanci-uyruklu-kisinin-mide-ve-bagirsaklarinda-uyusturucu.webp",
+    "image": "/kapak/1ff03a9a840dbbaf.webp",
     "publishedAt": "2026-10-18T18:00:29.000Z",
     "generatedAt": "2026-10-18T18:10:57.091Z",
     "gorselKaynak": {
       "yazar": "Mostafameraji",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_24.jpg"
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Metropolitian_Istanbul_-_Landscapes_of_Turkey_16.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:48:31.792Z"
+    "gorselDeneme": "2026-10-28T04:48:31.792Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "gundem-metropolitian-istanbul-landscapes-of-tur-4352.jpg",
+      "foto": true
+    }
   },
   {
     "id": "d4939cd9bb469f16",
@@ -204874,16 +204904,21 @@
     "category": "Gündem",
     "source": "Bizim Ankara",
     "sourceUrl": "https://www.bizimankara.com.tr/meb-duyurdu-egitimde-yeni-donem",
-    "image": "https://bizimankaracomtr.teimg.com/crop/1280x720/bizimankara-com-tr/uploads/2026/10/sinavvv-1.jpg",
+    "image": "/kapak/d4939cd9bb469f16.webp",
     "publishedAt": "2026-10-18T18:00:00.000Z",
     "generatedAt": "2026-10-18T18:04:44.368Z",
     "gorselKaynak": {
-      "yazar": "Mostafameraji",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_01.jpg"
+      "yazar": "Julian Lupyan",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:%C3%87aml%C4%B1ca_Hill_Flagpole%2C_Istanbul%2C_T%C3%BCrkiye.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:48:31.798Z"
+    "gorselDeneme": "2026-10-28T04:48:31.798Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "gundem-camlica-hill-flagpole-istanbul-turkiye-4044.jpg",
+      "foto": true
+    }
   },
   {
     "id": "9e8daeb91881e554",
@@ -204913,21 +204948,26 @@
     "category": "Donanım",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/honor-dahili-kablolu-iki-yeni-powerbank-modelini-tanitti--211780",
-    "image": "https://www.donanimhaber.com/images/images/haber/211780/src/honor-dahili-kablolu-iki-yeni-powerbank-modelini-tanitti211780_0.jpg",
+    "image": "/kapak/9e8daeb91881e554.webp",
     "publishedAt": "2026-10-18T18:00:00.000Z",
     "generatedAt": "2026-10-18T18:04:56.912Z",
     "gorselKaynak": {
-      "yazar": "Retired electrician",
+      "yazar": "Luke Chesser lukechesser",
       "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:DIY_Arduino_LED_screen_for_audio_spectrum_analyzer_2.jpg"
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Desk_Setup_(Unsplash).jpg"
     },
     "images": [
       "https://www.donanimhaber.com/images/images/haber/211780/src/honor-dahili-kablolu-iki-yeni-powerbank-modelini-tanitti211780_0.jpg",
       "https://www.donanimhaber.com/images/images/haber/211780/src/honor-dahili-kablolu-iki-yeni-powerbank-modelini-tanitti211780_1.jpg"
     ],
     "imagesKaynak": "https://www.donanimhaber.com/honor-dahili-kablolu-iki-yeni-powerbank-modelini-tanitti--211780",
-    "gorselDeneme": "2026-10-28T04:48:31.767Z"
+    "gorselDeneme": "2026-10-28T04:48:31.767Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "donanim-desk-setup-unsplash-2125.jpg",
+      "foto": true
+    }
   },
   {
     "id": "c4e42b79aa4da7d2",
@@ -204958,18 +204998,23 @@
     "category": "Gündem",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/gundem/ispartada-kanyonda-mahsur-kalan-ihh-gonullulerinden-biri-hayatini-kaybetti/4092865",
-    "image": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/18/thumbs_b_c_af0f178b8e80d21b8d707747d78b8f41.jpg",
+    "image": "/kapak/c4e42b79aa4da7d2.webp",
     "publishedAt": "2026-10-18T17:55:08.000Z",
     "generatedAt": "2026-10-18T19:05:14.057Z",
     "gorselKaynak": {
-      "yazar": "Gerald Nino",
-      "lisans": "Kamu malı",
+      "yazar": "Ilya saffarian Tousi",
+      "lisans": "CC0",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:CBP_Unmanned_aerial_vehicle.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_panorama_from_Galata_tower_-_1.jpg"
     },
     "gorselDeneme": "2026-10-28T04:48:31.677Z",
     "gorselSorguDeneme": "2026-10-29T16:45:41.006Z",
-    "gorselSorgu": "IHH rescue team"
+    "gorselSorgu": "IHH rescue team",
+    "kapak": {
+      "v": 3,
+      "kaynak": "gundem-istanbul-panorama-from-galata-tower-1-3543.jpg",
+      "foto": true
+    }
   },
   {
     "id": "d8a808b7118f7f1c",
@@ -204999,16 +205044,21 @@
     "category": "Gündem",
     "source": "Yeni Şafak",
     "sourceUrl": "https://www.yenisafak.com/gundem/elazigda-motosikletlilere-milyonluk-ceza-yagdi-4865377",
-    "image": "https://img.piri.net/piri/upload/3/2026/10/18/59e4e667-elazigda-motosikletlilere-milyonluk-ceza-yagdi.webp",
+    "image": "/kapak/d8a808b7118f7f1c.webp",
     "publishedAt": "2026-10-18T17:50:37.000Z",
     "generatedAt": "2026-10-18T17:53:01.638Z",
     "gorselKaynak": {
-      "yazar": "Mostafameraji",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_18.jpg"
+      "yazar": "Julian Lupyan",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:S%C3%BCleymaniye_Mosque_viewed_from_Galata_Tower%2C_Istanbul%2C_2024.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:48:31.979Z"
+    "gorselDeneme": "2026-10-28T04:48:31.979Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "gundem-suleymaniye-mosque-viewed-from-galata-to-5463.jpg",
+      "foto": true
+    }
   },
   {
     "id": "3c820e6769252f4d",
@@ -205038,16 +205088,21 @@
     "category": "Gündem",
     "source": "Yeni Şafak",
     "sourceUrl": "https://www.yenisafak.com/video/gundem/duzcede-yuksek-kesimlerde-kar-yagisi-etkili-oldu-4865376",
-    "image": "https://img.piri.net/piri/upload/3/2026/10/18/13a30ed3-duzcede-yuksek-kesimlerde-kar-yagisi-etkili-oldu.webp",
+    "image": "/kapak/3c820e6769252f4d.webp",
     "publishedAt": "2026-10-18T17:50:18.000Z",
     "generatedAt": "2026-10-18T17:59:10.358Z",
     "gorselKaynak": {
-      "yazar": "Wil540 art",
-      "lisans": "CC BY 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Car_covered_snow_January_2026.jpg"
+      "yazar": "Julian Lupyan",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Dolmabah%C3%A7e_Palace_viewed_from_Courtyard%2C_Istanbul%2C_2024.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:48:32.155Z"
+    "gorselDeneme": "2026-10-28T04:48:32.155Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "gundem-dolmabahce-palace-viewed-from-courtyard--5059.jpg",
+      "foto": true
+    }
   },
   {
     "id": "53eafcc36ccab015",
@@ -205078,18 +205133,23 @@
     "category": "Gündem",
     "source": "Sözcü Gündem",
     "sourceUrl": "https://www.sozcu.com.tr/eski-komsusuyla-tartisti-son-esyalarini-alirken-can-verdi-p370406",
-    "image": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/dhajpg-I3co2ALKT0ixnF8Dgkc0fA.jpg?w=1270&h=675&mode=crop&scale=both",
+    "image": "/kapak/53eafcc36ccab015.webp",
     "publishedAt": "2026-10-18T17:49:42.000Z",
     "generatedAt": "2026-10-18T17:53:12.216Z",
     "gorselKaynak": {
-      "yazar": "Mostafameraji",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_07.jpg"
+      "yazar": "Julian Lupyan",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:S%C3%BCleymaniye_Mosque_viewed_from_Galata_Tower%2C_Istanbul%2C_2024.jpg"
     },
     "gorselDeneme": "2026-10-28T04:48:32.095Z",
     "gorselSorguDeneme": "2026-10-29T16:45:47.460Z",
-    "gorselSorgu": "Sakarya police chase"
+    "gorselSorgu": "Sakarya police chase",
+    "kapak": {
+      "v": 3,
+      "kaynak": "gundem-suleymaniye-mosque-viewed-from-galata-to-5463.jpg",
+      "foto": true
+    }
   },
   {
     "id": "a572f8a6b66c08d7",
@@ -205119,16 +205179,21 @@
     "category": "Gündem",
     "source": "Cumhuriyet",
     "sourceUrl": "https://www.cumhuriyet.com.tr/turkiye/dur-ihtarindan-kacan-motosikletli-polis-araciyla-carpisti-258-bin-lira-ceza-2547979",
-    "image": "https://media.cumhuriyet.com.tr/Archive/b2aa3a42-bac4-42d3-a280-dde8880eae0d.jpg",
+    "image": "/kapak/a572f8a6b66c08d7.webp",
     "publishedAt": "2026-10-18T17:46:00.000Z",
     "generatedAt": "2026-10-18T17:59:19.777Z",
     "gorselKaynak": {
-      "yazar": "Mostafameraji",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_07.jpg"
+      "yazar": "Jess Stubenbord",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_2_(25932259407).jpg"
     },
-    "gorselDeneme": "2026-10-28T04:48:31.957Z"
+    "gorselDeneme": "2026-10-28T04:48:31.957Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "gundem-istanbul-2-25932259407-1228.jpg",
+      "foto": true
+    }
   },
   {
     "id": "7c94020802feaeda",
@@ -205158,18 +205223,23 @@
     "category": "Dünya",
     "source": "TRT Haber Son Dakika",
     "sourceUrl": "https://www.trthaber.com/haber/dunya/kanadada-wainwright-askeri-ussunde-cikan-yanginda-4-asker-oldu-960478.html",
-    "image": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2010000/kanada-olay-yeri-ap-2011267.jpg",
+    "image": "/kapak/7c94020802feaeda.webp",
     "publishedAt": "2026-10-18T17:45:00.000Z",
     "generatedAt": "2026-10-18T17:52:51.618Z",
     "gorselKaynak": {
-      "yazar": "U.S. Forest Service- Pacific Northwest Region",
-      "lisans": "Kamu malı",
+      "yazar": "Dr. Otto Berg - U.S. Naval Research Laboratory",
+      "lisans": "CC0",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Lick_Fire_on_the_Umatilla_National_Forest_burning_at_night.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:First_Color_Photograph_of_Earth_from_Space.jpg"
     },
     "gorselDeneme": "2026-10-28T04:48:32.064Z",
     "gorselSorguDeneme": "2026-10-29T16:45:53.798Z",
-    "gorselSorgu": "Wainwright military base fire"
+    "gorselSorgu": "Wainwright military base fire",
+    "kapak": {
+      "v": 3,
+      "kaynak": "dunya-first-color-photograph-of-earth-from-spa-4246.jpg",
+      "foto": true
+    }
   },
   {
     "id": "3e9a8a44ec678878",
@@ -205199,16 +205269,21 @@
     "category": "Gündem",
     "source": "Toplumsal Haber",
     "sourceUrl": "https://www.toplumsal.com.tr/haber/turkiye-uluslararasi-keskin-nisanci-yarismasi-nda-basari-elde-etti_30222/",
-    "image": "https://img.toplumsal.com.tr/manset/2026/10/turkiye-uluslararasi-keskin-nisanci-yarismasi-nda-basari-elde-etti-1792345015.webp",
+    "image": "/kapak/3e9a8a44ec678878.webp",
     "publishedAt": "2026-10-18T17:37:00.000Z",
     "generatedAt": "2026-10-18T17:41:34.154Z",
     "gorselKaynak": {
       "yazar": "Mostafameraji",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_01.jpg"
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Metropolitian_Istanbul_-_Landscapes_of_Turkey_16.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:48:31.935Z"
+    "gorselDeneme": "2026-10-28T04:48:31.935Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "gundem-metropolitian-istanbul-landscapes-of-tur-4352.jpg",
+      "foto": true
+    }
   },
   {
     "id": "9d5885d7fa11b75a",
@@ -205239,16 +205314,21 @@
     "category": "Gündem",
     "source": "Sözcü Gündem",
     "sourceUrl": "https://www.sozcu.com.tr/taha-cakmak-parayi-iade-etti-mi-p370404",
-    "image": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/taha-cakmak-aa-125121webp-N4ZNKBxgCEi6vB0WdP_PqQ.webp?w=1270&h=675&mode=crop&scale=both",
+    "image": "/kapak/9d5885d7fa11b75a.webp",
     "publishedAt": "2026-10-18T17:34:48.000Z",
     "generatedAt": "2026-10-18T17:35:42.530Z",
     "gorselKaynak": {
-      "yazar": "Mostafameraji",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_24.jpg"
+      "yazar": "Ilya saffarian Tousi",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_panorama_from_Galata_tower_-_1.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:48:32.237Z"
+    "gorselDeneme": "2026-10-28T04:48:32.237Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "gundem-istanbul-panorama-from-galata-tower-1-3543.jpg",
+      "foto": true
+    }
   },
   {
     "id": "482e452dea6cb504",
@@ -205278,18 +205358,23 @@
     "category": "Ekonomi",
     "source": "Dünya Gazetesi",
     "sourceUrl": "https://www.dunya.com/sirketler/bulls-portfoyden-53-milyar-liralik-tasfiye-aciklamasi-haberi-844347",
-    "image": "https://image.dunya.com/rcman/Cw1280h720q95gc/storage/files/images/2026/10/18/bulls-k2uj_cover.jpg",
+    "image": "/kapak/482e452dea6cb504.webp",
     "publishedAt": "2026-10-18T17:34:00.000Z",
     "generatedAt": "2026-10-18T17:41:45.185Z",
     "gorselKaynak": {
-      "yazar": "Thomas J. O'Halloran",
-      "lisans": "Kamu malı",
+      "yazar": "Andykatib",
+      "lisans": "CC0",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:NY_stock_exchange_traders_floor_LC-U9-10548-6.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Harvest_Court_Mall_interior%2C_19_May_2026.jpg"
     },
     "gorselDeneme": "2026-10-28T04:48:32.130Z",
     "gorselSorguDeneme": "2026-10-29T16:46:01.291Z",
-    "gorselSorgu": "Ziraat Bankası logo"
+    "gorselSorgu": "Ziraat Bankası logo",
+    "kapak": {
+      "v": 3,
+      "kaynak": "ekonomi-harvest-court-mall-interior-19-may-2026-3244.jpg",
+      "foto": true
+    }
   },
   {
     "id": "731a19118759556c",
@@ -205319,16 +205404,21 @@
     "category": "Gündem",
     "source": "Yeni Şafak",
     "sourceUrl": "https://www.yenisafak.com/video/gundem/haci-yakisiklidan-1-buyuksehir-ve-11-ilce-hakkinda-kulis-cumhurbaskani-onayladiginda-ak-partiye-gececekler-4865373",
-    "image": "https://img.piri.net/piri/upload/3/2026/10/18/7e39e526-haci-yakisiklidan-1-buyuksehir-ve-11-ilce-hakkinda-kulis.webp",
+    "image": "/kapak/731a19118759556c.webp",
     "publishedAt": "2026-10-18T17:31:54.000Z",
     "generatedAt": "2026-10-18T17:35:52.876Z",
     "gorselKaynak": {
-      "yazar": "Mostafameraji",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_07.jpg"
+      "yazar": "Julian Lupyan",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:%C3%87aml%C4%B1ca_Hill_Flagpole%2C_Istanbul%2C_T%C3%BCrkiye.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:48:32.349Z"
+    "gorselDeneme": "2026-10-28T04:48:32.349Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "gundem-camlica-hill-flagpole-istanbul-turkiye-4044.jpg",
+      "foto": true
+    }
   },
   {
     "id": "a838df2a9fdb9760",
@@ -205359,21 +205449,26 @@
     "category": "Donanım",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/the-sims-4-icin-en-iyi-ve-en-guclu-laptop-onerileri--211687",
-    "image": "https://www.donanimhaber.com/images/images/haber/211687/src/the-sims-4-icin-en-iyi-ve-en-guclu-laptop-onerileri211687_0.jpg",
+    "image": "/kapak/a838df2a9fdb9760.webp",
     "publishedAt": "2026-10-18T17:30:00.000Z",
     "generatedAt": "2026-10-18T17:59:00.321Z",
     "gorselKaynak": {
-      "yazar": "Retired electrician",
-      "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:DIY_Arduino_LED_screen_for_audio_spectrum_analyzer_2.jpg"
+      "yazar": "Leocapaldi",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Argus_500_1.JPG"
     },
     "images": [
       "https://www.donanimhaber.com/images/images/haber/211687/src/the-sims-4-icin-en-iyi-ve-en-guclu-laptop-onerileri211687_0.jpg",
       "https://www.donanimhaber.com/images/images/haber/211687/src/the-sims-4-icin-en-iyi-ve-en-guclu-laptop-onerileri211687_1.jpg"
     ],
     "imagesKaynak": "https://www.donanimhaber.com/the-sims-4-icin-en-iyi-ve-en-guclu-laptop-onerileri--211687",
-    "gorselDeneme": "2026-10-28T04:48:32.428Z"
+    "gorselDeneme": "2026-10-28T04:48:32.428Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Argus_500_1.JPG/1280px-Argus_500_1.JPG",
+      "foto": true
+    }
   },
   {
     "id": "14ae244b080e9efc",
@@ -205402,7 +205497,7 @@
     "category": "Gündem",
     "source": "CNN Türk",
     "sourceUrl": "https://www.cnnturk.com/video/dunya/gazzede-75-naas-enkazdan-cikartildi-3481128",
-    "image": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad4fc719f69b7780963e920.jpg",
+    "image": "/kapak/14ae244b080e9efc.webp",
     "publishedAt": "2026-10-18T17:29:00.061Z",
     "generatedAt": "2026-10-18T17:29:38.032Z",
     "gorselKaynak": {
@@ -205411,7 +205506,12 @@
       "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_01.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:48:32.129Z"
+    "gorselDeneme": "2026-10-28T04:48:32.129Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad4fc719f69b7780963e920.jpg",
+      "foto": false
+    }
   },
   {
     "id": "f5306d3ee159b45f",
@@ -205440,16 +205540,21 @@
     "category": "Ekonomi",
     "source": "Alparslan Diyarı",
     "sourceUrl": "https://www.alparslandiyari.com/haber/vergi-denetimlerinde-rekor-matrah-farki-tespit-edildi_78143/",
-    "image": "https://img.alparslandiyari.com/manset/2026/10/vergi-denetimlerinde-rekor-matrah-farki-tespit-edildi-1792344562.webp",
+    "image": "/kapak/f5306d3ee159b45f.webp",
     "publishedAt": "2026-10-18T17:29:00.000Z",
     "generatedAt": "2026-10-18T17:35:21.069Z",
     "gorselKaynak": {
-      "yazar": "https://www.artic.edu/artworks/156538/chicago-stock-exchange-tradin…",
+      "yazar": "AhmadArdity",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Chicago_Stock_Exchange_Trading_Room_Reconstruction_at_the_Art_Institute_of_Chicago.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Stockmarket.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:48:33.202Z"
+    "gorselDeneme": "2026-10-28T04:48:33.202Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Stockmarket.jpg/1280px-Stockmarket.jpg",
+      "foto": true
+    }
   },
   {
     "id": "f46ed156ddbdae3d",
@@ -205479,7 +205584,7 @@
     "category": "Gündem",
     "source": "Toplumsal Haber",
     "sourceUrl": "https://www.toplumsal.com.tr/haber/aykut-erdogdu-chp-den-istifa-etti-yeni-parti-ye-katiliyor_30221/",
-    "image": "https://img.toplumsal.com.tr/manset/2026/10/aykut-erdogdu-chp-den-istifa-etti-yeni-parti-ye-katiliyor-1792344482.webp",
+    "image": "/kapak/f46ed156ddbdae3d.webp",
     "publishedAt": "2026-10-18T17:28:00.000Z",
     "generatedAt": "2026-10-18T17:29:17.116Z",
     "gorselKaynak": {
@@ -205490,7 +205595,12 @@
     },
     "gorselDeneme": "2026-10-28T04:48:32.270Z",
     "gorselSorguDeneme": "2026-10-29T16:46:07.558Z",
-    "gorselSorgu": "Aykut Erdoğdu"
+    "gorselSorgu": "Aykut Erdoğdu",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://img.toplumsal.com.tr/manset/2026/10/aykut-erdogdu-chp-den-istifa-etti-yeni-parti-ye-katiliyor-1792344482.webp",
+      "foto": false
+    }
   },
   {
     "id": "901295fb17d430b0",
@@ -205519,7 +205629,7 @@
     "category": "Gündem",
     "source": "TRT Haber",
     "sourceUrl": "https://www.trthaber.com/haber/turkiye/duzcede-kopruden-dusen-tirda-cikan-yangin-sonduruldu-960477.html",
-    "image": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2496000/duzce-tir-aa-2496669.jpg",
+    "image": "/kapak/901295fb17d430b0.webp",
     "publishedAt": "2026-10-18T17:28:00.000Z",
     "generatedAt": "2026-10-18T17:35:32.285Z",
     "gorselKaynak": {
@@ -205530,7 +205640,12 @@
     },
     "gorselDeneme": "2026-10-28T04:48:32.209Z",
     "gorselSorguDeneme": "2026-10-29T21:38:39.586Z",
-    "gorselSorgu": "burning truck bridge Duzce"
+    "gorselSorgu": "burning truck bridge Duzce",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2496000/duzce-tir-aa-2496669.jpg",
+      "foto": false
+    }
   },
   {
     "id": "b316ea1fea17119b",
@@ -205559,7 +205674,7 @@
     "category": "Gündem",
     "source": "CNN Türk",
     "sourceUrl": "https://www.cnnturk.com/yerel-haberler/kirklareli/kirklareli-ilac-fabrikasinda-cikan-yangina-mudahale-suruyor-3481095",
-    "image": "https://image.cnnturk.com/i/cnnturk/75/1208x678/685eaaa2330760b1f2d9656b.jpg",
+    "image": "/kapak/b316ea1fea17119b.webp",
     "publishedAt": "2026-10-18T17:26:34.000Z",
     "generatedAt": "2026-10-18T17:17:35.536Z",
     "gorselKaynak": {
@@ -205572,7 +205687,12 @@
     "images": [
       "https://image.cnnturk.com/i/cnnturk/75/1208x678/685eaaa2330760b1f2d9656b.jpg"
     ],
-    "imagesKaynak": "https://www.cnnturk.com/yerel-haberler/kirklareli/kirklareli-ilac-fabrikasinda-cikan-yangina-mudahale-suruyor-3481095"
+    "imagesKaynak": "https://www.cnnturk.com/yerel-haberler/kirklareli/kirklareli-ilac-fabrikasinda-cikan-yangina-mudahale-suruyor-3481095",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://image.cnnturk.com/i/cnnturk/75/1208x678/685eaaa2330760b1f2d9656b.jpg",
+      "foto": false
+    }
   },
   {
     "id": "cb86536d091254dd",
@@ -205602,20 +205722,25 @@
     "category": "Gündem",
     "source": "CNN Türk",
     "sourceUrl": "https://www.cnnturk.com/yerel-haberler/mugla/bodrumda-iyilik-pazari-etkinligi-duzenlendi-3481093",
-    "image": "https://image.cnnturk.com/i/cnnturk/75/1208x678/685eaaa2330760b1f2d9656b.jpg",
+    "image": "/kapak/cb86536d091254dd.webp",
     "publishedAt": "2026-10-18T17:26:34.000Z",
     "generatedAt": "2026-10-18T17:23:26.813Z",
     "gorselKaynak": {
-      "yazar": "Mostafameraji",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_07.jpg"
+      "yazar": "Padesu",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Itu_vadi.jpg"
     },
     "gorselDeneme": "2026-10-28T04:48:32.620Z",
     "images": [
       "https://image.cnnturk.com/i/cnnturk/75/1208x678/685eaaa2330760b1f2d9656b.jpg"
     ],
-    "imagesKaynak": "https://www.cnnturk.com/yerel-haberler/mugla/bodrumda-iyilik-pazari-etkinligi-duzenlendi-3481093"
+    "imagesKaynak": "https://www.cnnturk.com/yerel-haberler/mugla/bodrumda-iyilik-pazari-etkinligi-duzenlendi-3481093",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Itu_vadi.jpg",
+      "foto": true
+    }
   },
   {
     "id": "4e4b88bef7621458",
@@ -205645,20 +205770,25 @@
     "category": "Dünya",
     "source": "Yeni Şafak",
     "sourceUrl": "https://www.yenisafak.com/dunya/yunanistanda-israil-krizi-gizli-grup-iddiasi-sonrasi-ayaga-kalkan-muhalefet-hukumetten-yetkililerinden-izahat-istedi-4865372",
-    "image": "https://img.piri.net/piri/upload/3/2026/8/31/05b2064b-yunanistan-israile-teslim-oluyor-3-milyar-avroluk-savunma.webp",
+    "image": "/kapak/4e4b88bef7621458.webp",
     "publishedAt": "2026-10-18T17:25:08.000Z",
     "generatedAt": "2026-10-18T17:29:48.573Z",
     "gorselKaynak": {
-      "yazar": "DavidHalpernist",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Globe_of_the_Ancient_World_1977.jpg"
+      "yazar": "pingnews.com",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Released_to_Public_%22Big_Blue_Marble%22_(NASA)_(2866267319).jpg"
     },
     "images": [
       "https://img.piri.net/piri/upload/3/2026/8/31/05b2064b-yunanistan-israile-teslim-oluyor-3-milyar-avroluk-savunma.webp"
     ],
     "imagesKaynak": "https://www.yenisafak.com/dunya/yunanistanda-israil-krizi-gizli-grup-iddiasi-sonrasi-ayaga-kalkan-muhalefet-hukumetten-yetkililerinden-izahat-istedi-4865372",
-    "gorselDeneme": "2026-10-28T04:48:32.707Z"
+    "gorselDeneme": "2026-10-28T04:48:32.707Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Released_to_Public_%22Big_Blue_Marble%22_%28NASA%29_%282866267319%29.jpg/1280px-Released_to_Public_%22Big_Blue_Marble%22_%28NASA%29_%282866267319%29.jpg",
+      "foto": true
+    }
   },
   {
     "id": "d74b923fbdeed259",
@@ -205687,7 +205817,7 @@
     "category": "Gündem",
     "source": "Son Dakika",
     "sourceUrl": "https://www.sondakika.com/guncel/haber-sakarya-adapazari-nda-esya-tartismasinda-silahla-v-20342886/",
-    "image": "https://foto.sondakika.com/crop/1210x0/haber/2026/10/18/sakarya-adapazari-nda-esya-tartismasi-silahli-20342864_sd.jpg",
+    "image": "/kapak/d74b923fbdeed259.webp",
     "publishedAt": "2026-10-18T17:20:05.000Z",
     "generatedAt": "2026-10-18T17:29:26.903Z",
     "gorselKaynak": {
@@ -205696,7 +205826,12 @@
       "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_01.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:48:32.774Z"
+    "gorselDeneme": "2026-10-28T04:48:32.774Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://foto.sondakika.com/crop/1210x0/haber/2026/10/18/sakarya-adapazari-nda-esya-tartismasi-silahli-20342864_sd.jpg",
+      "foto": false
+    }
   },
   {
     "id": "0bfc66255405ea7b",
@@ -205725,7 +205860,7 @@
     "category": "Gündem",
     "source": "Bayburt Haber",
     "sourceUrl": "https://www.bayburthaber.com/bingolde-korkunc-kaza-1i-agir-3-yarali/7881",
-    "image": "https://images.bayburthaber.com/media/2026/10/erzurumda-takla-atan-otomobil-korkuttu-iki-yarali-de00h7_thumb.jpg",
+    "image": "/kapak/0bfc66255405ea7b.webp",
     "publishedAt": "2026-10-18T17:16:21.000Z",
     "generatedAt": "2026-10-18T17:23:02.513Z",
     "gorselKaynak": {
@@ -205738,7 +205873,12 @@
       "https://images.bayburthaber.com/media/2026/10/erzurumda-takla-atan-otomobil-korkuttu-iki-yarali-de00h7_thumb.jpg"
     ],
     "imagesKaynak": "https://www.bayburthaber.com/bingolde-korkunc-kaza-1i-agir-3-yarali/7881",
-    "gorselDeneme": "2026-10-28T04:48:33.410Z"
+    "gorselDeneme": "2026-10-28T04:48:33.410Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://images.bayburthaber.com/media/2026/10/erzurumda-takla-atan-otomobil-korkuttu-iki-yarali-de00h7_thumb.jpg",
+      "foto": false
+    }
   },
   {
     "id": "31dcbda3444b3cb9",
@@ -205768,17 +205908,22 @@
     "category": "Dünya",
     "source": "Euronews Türkçe",
     "sourceUrl": "https://tr.euronews.com/2026/10/18/adam-firtinasi-can-aldi-ibiza-formentera-mallorca-ile-valencia-ve-alicantede-dersler-iptal",
-    "image": "https://images.euronews.com/articles/stories/09/93/83/79/1200x675_cmsv2_6f8f88b2-af58-5d98-ba94-7fbe9c087d10-9938379.jpg",
+    "image": "/kapak/31dcbda3444b3cb9.webp",
     "publishedAt": "2026-10-18T17:15:38.000Z",
     "generatedAt": "2026-10-18T17:23:38.032Z",
     "gorselKaynak": {
-      "yazar": "Jiří Sedláček",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Cars_in_flooded_Novodvorsk%C3%A1_street_in_T%C5%99eb%C3%AD%C4%8D,_T%C5%99eb%C3%AD%C4%8D_District.JPG"
+      "yazar": "NASA",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:(iss063e030657)_A_U.S._spacesuit_is_pictured_with_plush-doll_mascots.jpg"
     },
     "gorselSorguDeneme": "2026-10-29T21:38:46.006Z",
-    "gorselSorgu": "flooded streets Barcelona"
+    "gorselSorgu": "flooded streets Barcelona",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/%28iss063e030657%29_A_U.S._spacesuit_is_pictured_with_plush-doll_mascots.jpg/1280px-%28iss063e030657%29_A_U.S._spacesuit_is_pictured_with_plush-doll_mascots.jpg",
+      "foto": true
+    }
   },
   {
     "id": "60a53ee2ec3957e2",
@@ -205857,18 +206002,23 @@
     "category": "Ekonomi",
     "source": "Son Dakika",
     "sourceUrl": "https://www.sondakika.com/ekonomi/haber-atso-da-kesin-olmayan-sonuca-gore-komite-cogunlugu-20342869/",
-    "image": "https://foto.sondakika.com/crop/1210x0/haber/2026/10/18/atso-da-kesin-olmayan-sonuca-gore-berkay-baha-2-20342851_sd.jpg",
+    "image": "/kapak/83a7013f9f71f2aa.webp",
     "publishedAt": "2026-10-18T17:11:38.000Z",
     "generatedAt": "2026-10-18T17:23:15.302Z",
     "gorselKaynak": {
-      "yazar": "W.carter",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan,_Brastad_2.jpg"
+      "yazar": "User:klip game",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:E-ticker.jpg"
     },
     "gorselDeneme": "2026-10-28T04:48:32.704Z",
     "gorselSorguDeneme": "2026-10-29T21:38:52.449Z",
-    "gorselSorgu": "Antalya trade fair voting booth"
+    "gorselSorgu": "Antalya trade fair voting booth",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/4/4c/E-ticker.jpg",
+      "foto": true
+    }
   },
   {
     "id": "dbac96e0365465d7",
@@ -205897,20 +206047,25 @@
     "category": "Gündem",
     "source": "Canlı Gaste",
     "sourceUrl": "https://www.canligaste.com/sakarya-da-silahli-kavgada-1-kisi-hayatini-kaybetti/930146/",
-    "image": "https://www.canligaste.com/haber-gorsel/2026/10/sakarya-da-belgesiz-tasinan-1-tondan-fazla-hayvansal-ic-yagi-ele-gecirildi-936314.webp",
+    "image": "/kapak/dbac96e0365465d7.webp",
     "publishedAt": "2026-10-18T17:08:26.000Z",
     "generatedAt": "2026-10-18T17:11:33.416Z",
     "gorselKaynak": {
-      "yazar": "Mostafameraji",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_24.jpg"
+      "yazar": "Padesu",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Itu_vadi.jpg"
     },
     "images": [
       "https://www.canligaste.com/haber-gorsel/2026/10/sakarya-da-belgesiz-tasinan-1-tondan-fazla-hayvansal-ic-yagi-ele-gecirildi-936314.webp"
     ],
     "imagesKaynak": "https://www.canligaste.com/sakarya-da-silahli-kavgada-1-kisi-hayatini-kaybetti/930146/",
-    "gorselDeneme": "2026-10-28T04:48:34.210Z"
+    "gorselDeneme": "2026-10-28T04:48:34.210Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Itu_vadi.jpg",
+      "foto": true
+    }
   },
   {
     "id": "77f9921937d1c3bb",
@@ -205939,19 +206094,24 @@
     "category": "Dünya",
     "source": "CNN Türk",
     "sourceUrl": "https://www.cnnturk.com/dunya/zelenskiy-abd-istihbarat-paylasimini-yeniden-baslatti-3481127",
-    "image": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad4f7fffe46d577dbb9314f.jpg",
+    "image": "/kapak/77f9921937d1c3bb.webp",
     "publishedAt": "2026-10-18T17:05:24.865Z",
     "generatedAt": "2026-10-18T17:05:57.272Z",
     "imagesAt": "2026-10-18T17:07:41.468Z",
     "gorselKaynak": {
-      "yazar": "Hienstorfer",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Strategic_Missile_Forces_museum_rocket_launch_terminal.jpg"
+      "yazar": "NASA",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Apollo_13_Prime_Crew.jpg"
     },
     "gorselDeneme": "2026-10-28T04:48:32.719Z",
     "gorselSorguDeneme": "2026-10-29T21:38:58.788Z",
-    "gorselSorgu": "Zelensky meeting US officials"
+    "gorselSorgu": "Zelensky meeting US officials",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Apollo_13_Prime_Crew.jpg/1280px-Apollo_13_Prime_Crew.jpg",
+      "foto": true
+    }
   },
   {
     "id": "1266e11fab19f5ee",
@@ -205981,17 +206141,22 @@
     "category": "Spor",
     "source": "Cumhuriyet",
     "sourceUrl": "https://www.cumhuriyet.com.tr/spor/psg-ve-real-madrid-maclari-oncesi-barcelona-ya-iki-kotu-haber-2547975",
-    "image": "https://media.cumhuriyet.com.tr/Archive/92aa6583-b46b-4452-b54f-7f8469f52359.jpg",
+    "image": "/kapak/1266e11fab19f5ee.webp",
     "publishedAt": "2026-10-18T17:03:00.000Z",
     "generatedAt": "2026-10-18T17:06:06.540Z",
     "imagesAt": "2026-10-18T17:07:42.194Z",
     "gorselKaynak": {
-      "yazar": "Bill Boaden",
-      "lisans": "CC BY-SA 2.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Football_match_at_the_i2i_Stadium_-_geograph.org.uk_-_5307343.jpg"
+      "yazar": "BerauMapping",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Batiwakkal_stadium.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:48:32.919Z"
+    "gorselDeneme": "2026-10-28T04:48:32.919Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Batiwakkal_stadium.jpg/1280px-Batiwakkal_stadium.jpg",
+      "foto": true
+    }
   },
   {
     "id": "b69a0dbb142d2e50",
@@ -206021,16 +206186,21 @@
     "category": "Gündem",
     "source": "Sabah Gündem",
     "sourceUrl": "https://www.sabah.com.tr/gundem/2026/10/18/bakan-ciftciden-boran-8-paylasimi-kahraman-personelimizi-yurekten-tebrik-ediyorum",
-    "image": "https://iasbh.tmgrup.com.tr/bdc1dd/1200/675/0/0/864/486?u=https://isbh.tmgrup.com.tr/sbh/2026/10/18/bakan-ciftciden-boran-8-paylasimi-kahraman-personelimizi-yurekten-tebrik-ediyorum-1792342813199.jpeg",
+    "image": "/kapak/b69a0dbb142d2e50.webp",
     "publishedAt": "2026-10-18T17:01:06.000Z",
     "generatedAt": "2026-10-18T17:11:43.929Z",
     "gorselKaynak": {
-      "yazar": "Mostafameraji",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_01.jpg"
+      "yazar": "Padesu",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Itu_vadi.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:48:33.024Z"
+    "gorselDeneme": "2026-10-28T04:48:33.024Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Itu_vadi.jpg",
+      "foto": true
+    }
   },
   {
     "id": "1af65f559e3cf4d7",
@@ -206155,7 +206325,7 @@
     "category": "Dünya",
     "source": "Cumhuriyet",
     "sourceUrl": "https://www.cumhuriyet.com.tr/turkiye/rusya-dan-ukrayna-aciklamasi-zelenskiy-moskova-ile-muzakere-istemiyor-2547973",
-    "image": "https://media.cumhuriyet.com.tr/Archive/3126dba6-1779-4074-a5dc-fa3108326cbd.jpg",
+    "image": "/kapak/3d1323deff14fc4c.webp",
     "publishedAt": "2026-10-18T16:56:00.000Z",
     "generatedAt": "2026-10-18T16:59:51.954Z",
     "imagesAt": "2026-10-18T17:07:45.361Z",
@@ -206167,7 +206337,12 @@
     },
     "gorselDeneme": "2026-10-28T04:48:33.200Z",
     "gorselSorguDeneme": "2026-10-29T21:39:05.274Z",
-    "gorselSorgu": "Sergey Lavrov press conference"
+    "gorselSorgu": "Sergey Lavrov press conference",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://media.cumhuriyet.com.tr/Archive/3126dba6-1779-4074-a5dc-fa3108326cbd.jpg",
+      "foto": false
+    }
   },
   {
     "id": "48db3a5c4677e79d",
@@ -206197,7 +206372,7 @@
     "category": "Dünya",
     "source": "GZT",
     "sourceUrl": "https://www.gzt.com/dunya/mac-oncesi-seremoni-faciayla-bitti-halatla-inis-gosterisi-yapan-abdli-asker-hayatini-kaybetti-4270644",
-    "image": "https://assets.yenisafak.com/yenisafak/wwwroot/images/2026/app-download-img-gzt.png",
+    "image": "/kapak/48db3a5c4677e79d.webp",
     "publishedAt": "2026-10-18T16:50:27.000Z",
     "generatedAt": "2026-10-18T17:05:45.721Z",
     "imagesAt": "2026-10-18T17:07:47.892Z",
@@ -206211,7 +206386,12 @@
     "images": [
       "https://assets.yenisafak.com/yenisafak/wwwroot/images/2026/app-download-img-gzt.png"
     ],
-    "imagesKaynak": "https://www.gzt.com/dunya/mac-oncesi-seremoni-faciayla-bitti-halatla-inis-gosterisi-yapan-abdli-asker-hayatini-kaybetti-4270644"
+    "imagesKaynak": "https://www.gzt.com/dunya/mac-oncesi-seremoni-faciayla-bitti-halatla-inis-gosterisi-yapan-abdli-asker-hayatini-kaybetti-4270644",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://assets.yenisafak.com/yenisafak/wwwroot/images/2026/app-download-img-gzt.png",
+      "foto": false
+    }
   },
   {
     "id": "d67e079b1ce7d0f4",
@@ -206241,7 +206421,7 @@
     "category": "Gündem",
     "source": "Sözcü Gündem",
     "sourceUrl": "https://www.sozcu.com.tr/ekim-ayinda-kar-manzaralari-turkiye-nin-bircok-ili-beyaza-burundu-p370400",
-    "image": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/karjpg-qCeyOgi6Hk2rNlvbSIovMg.jpg?w=1270&h=675&mode=crop&scale=both",
+    "image": "/kapak/d67e079b1ce7d0f4.webp",
     "publishedAt": "2026-10-18T16:50:16.000Z",
     "generatedAt": "2026-10-18T17:00:02.801Z",
     "imagesAt": "2026-10-18T17:07:48.841Z",
@@ -206253,7 +206433,12 @@
     },
     "gorselDeneme": "2026-10-28T04:48:33.392Z",
     "gorselSorguDeneme": "2026-10-29T21:39:12.158Z",
-    "gorselSorgu": "snow covered Turkish highland"
+    "gorselSorgu": "snow covered Turkish highland",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/karjpg-qCeyOgi6Hk2rNlvbSIovMg.jpg?w=1270&h=675&mode=crop&scale=both",
+      "foto": false
+    }
   },
   {
     "id": "69e6999f837a916f",
@@ -206282,7 +206467,7 @@
     "category": "Gündem",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/yasam/bingolde-trafik-kazasi-cok-sayida-kisi-yaralandi-549339",
-    "image": "https://i.haberglobal.com/storage/files/images/2026/10/18/bingolde-trafik-kazasi-cok-sayida-kisi-yaralandi-y7qf.jpg",
+    "image": "/kapak/69e6999f837a916f.webp",
     "publishedAt": "2026-10-18T16:50:00.000Z",
     "generatedAt": "2026-10-18T17:58:47.154Z",
     "gorselKaynak": {
@@ -206291,7 +206476,12 @@
       "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_city_Photos-_Urban_07.jpg"
     },
-    "gorselDeneme": "2026-10-28T04:48:33.344Z"
+    "gorselDeneme": "2026-10-28T04:48:33.344Z",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://i.haberglobal.com/storage/files/images/2026/10/18/bingolde-trafik-kazasi-cok-sayida-kisi-yaralandi-y7qf.jpg",
+      "foto": false
+    }
   },
   {
     "id": "89083f986017edb6",
@@ -206320,7 +206510,7 @@
     "category": "Spor",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/spor/selcuk-inan-3-3-hafta-sonra-aramizda-olur-549336",
-    "image": "https://i.haberglobal.com/storage/files/images/2026/10/18/selcuk-inan-3-3-hafta-sonra-aramizda-olur-vnih.jpg",
+    "image": "/kapak/89083f986017edb6.webp",
     "publishedAt": "2026-10-18T16:49:00.000Z",
     "generatedAt": "2026-10-18T16:53:20.377Z",
     "imagesAt": "2026-10-18T17:07:49.872Z",
@@ -206332,7 +206522,12 @@
     },
     "gorselDeneme": "2026-10-28T04:48:33.739Z",
     "gorselSorguDeneme": "2026-10-29T21:39:18.708Z",
-    "gorselSorgu": "Selçuk İnanç Kocaelispor coach"
+    "gorselSorgu": "Selçuk İnanç Kocaelispor coach",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://i.haberglobal.com/storage/files/images/2026/10/18/selcuk-inan-3-3-hafta-sonra-aramizda-olur-vnih.jpg",
+      "foto": false
+    }
   },
   {
     "id": "ec65ea645b6e8a78",
@@ -270144,7 +270339,7 @@
     "sourceUrl": "https://www.bloomberght.com/piyasalarda-gunun-ozeti-15-ekim-2026-bist-100-de-degisimler-ve-doviz-fiyatlari-pkh-3791504",
     "publishedAt": "2026-10-15T15:30:14.000Z",
     "generatedAt": "2026-10-15T17:31:47.819Z",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/De_Bist_beuk.jpg/1280px-De_Bist_beuk.jpg",
+    "image": "/kapak/cf73c95a5f26a609.webp",
     "keyPoints": [
       "BIST 100 endeksi günü yüzde 0,5 kayıpla 12.057,35 puanda kapattı.",
       "Dolar kuru saat 18.30 itibarıyla 49,42 TL seviyesinden işlem gördü."
@@ -270162,7 +270357,12 @@
       "https://geoim.bloomberght.com/l/2026/10/21/ver1792534385/3792032/jpg/640x360",
       "https://geoim.bloomberght.com/l/2026/10/21/ver1792532631/3792030/jpg/640x360"
     ],
-    "imagesKaynak": "https://www.bloomberght.com/piyasalarda-gunun-ozeti-15-ekim-2026-bist-100-de-degisimler-ve-doviz-fiyatlari-pkh-3791504"
+    "imagesKaynak": "https://www.bloomberght.com/piyasalarda-gunun-ozeti-15-ekim-2026-bist-100-de-degisimler-ve-doviz-fiyatlari-pkh-3791504",
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/De_Bist_beuk.jpg/1280px-De_Bist_beuk.jpg",
+      "foto": false
+    }
   },
   {
     "id": "1a879fe5c56084d5",
