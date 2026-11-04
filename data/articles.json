@@ -1,5 +1,56 @@
 [
   {
+    "id": "6d044706f7e3abec",
+    "title": "Hatay Dörtyol'da Sağanak Yaptı Evleri Su Baskını",
+    "slug": "hatay-dortyolda-saganak-yapti-evleri-su-baskini",
+    "summary": "Hatay'ın Dörtyol ilçesinde akşam başlayan sağanak, evleri ve iş yerlerini su altında bıraktı. Karakese, Özerli ve Kuzuculu mahallelerinde tarım arazileri de suya boğuldu, park halindeki araçlar sürüklendi. Polis ve DSİ ekipleri müdahaleye başladı.",
+    "keyPoints": [
+      "Akşam başlayan sağanak, evleri su altında bıraktı.",
+      "Karakese, Özerli, Kuzuculu mahalleleri su baskınından etkilendi.",
+      "DSİ ve belediye ekipleri tahliye çalışmaları başlattı."
+    ],
+    "body": [
+      "Dörtyol'da akşam saatlerinde yoğun yağış başladı ve şehrin bazı bölgelerinde su baskını oluştu. İlk bildirilen olay, Karakese Mahallesi'nde evlerin su altında kalmasıyla gerçekleşti. Sıra, Özerli ve Kuzuculu mahallelerinde de aynı şekilde devam etti. Tarım arazileri de suyla kaplandı ve üreticiler kaybetti.",
+      "Yağış, kentteki ulaşımda aksamalara yol açtı. Polis ekipleri köprü ve bulvarları kontrol altında tutarak trafik akışını sürdürmeye çalıştı. Bu süre zarfında birçok araç park haline geldi ve suya kapılarak sürüklendi. Olayın şiddeti, vatandaşların güvenliğini tehlikeye atıyor.",
+      "Devlet Su İşleri (DSİ) ekipleri derin dere yataklarını kontrol etti. DSİ, su baskınının geniş bir alana yayıldığını belirtti ve acil durum planını devreye aldı. Büyükşehir Belediyesi ise etkilenen evlerde tahliye çalışmalarına başladı. İki kurum da iş birliği içinde hareket etti.",
+      "Yerel yetkililer, yağışın beklenenden daha yoğun olduğunu belirtti. Bu durum, bölgedeki altyapı kapasitesinin sınırlarını zorladı. Yetkililer, gelecekte benzer olayların önlenmesi için altyapı yatırımlarını artırmayı planlıyor.",
+      "Mahalle sakinleri, su baskınından sonra evlerine geri dönmeye çalışıyor. Çevre temizliği ve hasar tespiti için ekipler sahada çalışıyor. Şehir yönetimi, hasar raporlarını topladıktan sonra onarıma yönelik adımlar atacak.",
+      "Gözlemciler, yağışın şiddetinin beklenenden fazla olduğunu ve su baskınının geniş bir alanı etkilediğini ifade etti. Yetkililer, vatandaşları suyun yükseldiği bölgelerde kalmaktan kaçınmaya çağırdı. Bu olay, bölgedeki su yönetimi sisteminin yeniden gözden geçirilmesine işaret ediyor.",
+      "Son olarak, DSİ ve belediye ekiplerinin hızlı müdahalesi, olası daha büyük hasarların önlenmesine yardımcı oldu. Vatandaşlar, yetkililerin koordinasyonuna teşekkür etti ve gelecekteki olası afetlerde daha hazırlıklı olmayı bekliyor."
+    ],
+    "comment": "Su baskını, Dörtyol'daki ev ve iş yerlerine ciddi hasar verdi. DSİ ve belediye ekiplerinin hızlı müdahalesi, daha büyük bir felaketi engelledi. Bu olay, altyapı kapasitesinin sınırlarını gösterdiği için, bölgedeki su yönetimi sistemlerinin iyileştirilmesi gerektiğini ortaya koyuyor.",
+    "editorNote": "Sağanak, Dörtyol'da evleri su altında bırakırken polis ve DSİ ekipleri hızlıca müdahaleye geçti.",
+    "tags": [
+      "Hatay",
+      "Dörtyol",
+      "Sağanak",
+      "Su Baskını",
+      "DSİ"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "flooded street cars",
+    "source": "TRT Haber Son Dakika",
+    "sourceUrl": "https://www.trthaber.com/haber/turkiye/hatayda-saganak-bazi-ev-ve-is-yerlerini-su-basti-962274.html",
+    "image": "/kapak/6d044706f7e3abec.webp",
+    "images": [
+      "https://www.trthaber.com/dosyalar/images/aapicture2026110442968377.jpg"
+    ],
+    "publishedAt": "2026-11-04T22:17:00.000Z",
+    "generatedAt": "2026-11-04T22:30:05.414Z",
+    "breaking": true,
+    "kapak": {
+      "v": 3,
+      "kaynak": "gundem-istanbul-2-25932259407-1228.jpg",
+      "foto": true
+    },
+    "gorselKaynak": {
+      "yazar": "Jess Stubenbord",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Istanbul_2_(25932259407).jpg"
+    }
+  },
+  {
     "id": "9fa89f884ef1e03f",
     "title": "AK Parti, Kademeli Emeklilikte Ara Zamı 2024 Ocakında Erteledi",
     "slug": "ak-parti-kademeli-emeklilikte-ara-zami-2024-ocakinda-erteledi",
@@ -9787,7 +9838,6 @@
       "lisansUrl": "",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Harvest_Court_Mall_interior%2C_19_May_2026.jpg"
     },
-    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": "ekonomi-harvest-court-mall-interior-19-may-2026-3244.jpg",
