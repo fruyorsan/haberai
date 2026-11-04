@@ -1,5 +1,59 @@
 [
   {
+    "id": "08275bb81cba73ab",
+    "title": "Google, iOS ve Android'de Dosya Aktarımını 2027'de Hızlandırıyor",
+    "slug": "google-ios-android-dosya-aktarmasi-2027-hizlandiriyor",
+    "summary": "Google, Android Dev Summit 2026'da Quick Share SDK'sını tanıttı. Bu SDK, 2027'nin ilk yarısında geliştiricilere Android ve iOS uygulamalarında doğrudan dosya paylaşımını entegre etme imkanı verecek. Kullanıcılar, ekranın altından çıkan kompakt panelle dosyaları ön izleyerek tek adımda gönderebilecek.",
+    "keyPoints": [
+      "Quick Share SDK 2027'nin ilk yarısında kullanıma sunulacak",
+      "Paylaşım paneli ekranın altından yukarı kaydırılarak açılıyor",
+      "iPhone ve iPad uygulamaları da aynı doğrudan paylaşım özelliğini alacak"
+    ],
+    "body": [
+      "Google, Android Dev Summit 2026 etkinliğinde yeni bir SDK duyurdu: Quick Share. Bu SDK, hem Android hem de iOS platformlarındaki uygulamaların cihazlar arası dosya paylaşımını tek bir arayüzde yönetmesini sağlayacak. Geliştiriciler, bu entegrasyonu uygulamalarına ekleyerek kullanıcı deneyimini önemli ölçüde iyileştirecek.",
+      "Quick Share SDK, 2027'nin ilk yarısında geliştiricilere sunulacak ve mevcut paylaşım sürecine kıyasla büyük bir adım atacak. Şu anda kullanıcıların bir dosya paylaşmak için önce sistemin genel paylaşım menüsünü açıp ardından hedef uygulamayı seçmeleri gerekiyor. Yeni SDK ile bu iki adım tek bir panelde birleştirilecek.",
+      "Kullanıcılar, uygulamadan çıkmadan ekranın alt kısmından yukarı doğru kaydırarak açılan kompakt bir paylaşım paneliyle karşılaşacak. Bu panel, gönderilecek dosyaların ön izlenmesini ve hızlıca seçilmesini mümkün kılıyor. Böylece video ya da fotoğraf gibi büyük dosyalar, farklı ekranlar arasında geçiş yapmadan anında aktarılabilecek.",
+      "En dikkat çekici özelliklerden biri, Apple cihazlarıyla uyumluluğun da sağlanması. iPhone ve iPad için geliştirilen uygulamalar, aynı doğrudan paylaşım işlevini entegre edebilecek. Sonuçta bir iPhone'dan Android telefona dosya göndermek, iki iPhone arasında gönderim kadar sorunsuz gerçekleşecek.",
+      "Google, bu entegrasyonun kullanıcı verilerinin gizliliğini korurken aktarım hızını artıracağını belirtiyor. SDK, yerel bağlantıları güçlendiren ve veri şifrelemesi gibi güvenlik önlemlerini içeren bir dizi temel özellik barındırıyor. Geliştiriciler, bu araç sayesinde hem performans hem de güvenlik açısından daha sağlam bir paylaşım deneyimi sunabilecek.",
+      "Quick Share SDK'nın piyasaya sürülmesi, mobil uygulama ekosisteminde yeni bir standart oluşturma potansiyeli taşıyor. Geliştiriciler, SDK'yı benimseyerek uygulamalarını hem Android hem de iOS kullanıcıları için daha entegre ve hızlı hale getirecek. Bu adım, platformlar arası dosya alışverişinde uzun süredir var olan engelleri ortadan kaldırmayı hedefliyor."
+    ],
+    "comment": "Google'ın Quick Share SDK'sını 2027'de sunması, platformlar arası dosya aktarımını tek bir adımda halledecek kritik bir değişiklik. 2027'nin ilk yarısında kullanılabilir olması, geliştiricilere erken entegrasyon fırsatı tanıyor. Android ve iOS kullanıcıları, iki işletim sistemi arasında sorunsuz dosya gönderimiyle zaman kazanacak. Önceki paylaşımlarda menü geçişleri zorunlu iken, bu SDK ile süreç tek panelde toplandı.",
+    "editorNote": "Yeni Quick Share SDK, Android ve iOS arasında dosya gönderimini tek dokunuşla mümkün kılıyor. Geliştiriciler 2027'de entegrasyonu planlamalı.",
+    "tags": [
+      "Google",
+      "Quick Share SDK",
+      "Android",
+      "iOS",
+      "dosya paylaşımı"
+    ],
+    "category": "Mobil",
+    "gorselSorgu": "Google Android iOS file sharing",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/google-quick-share-i-iphone-ve-android-uygulamalarina-aciyor--212465",
+    "image": "/kapak/08275bb81cba73ab.webp",
+    "images": [
+      "https://www.donanimhaber.com/images/images/haber/212465/1200x675google-quick-share-i-iphone-ve-android-uygulamalarina-aciyor.jpg"
+    ],
+    "publishedAt": "2026-11-04T16:48:00.000Z",
+    "generatedAt": "2026-11-04T16:55:44.473Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Cross-platform_interchange_on_the_B3_platform_in_Guting_Station.jpg/1280px-Cross-platform_interchange_on_the_B3_platform_in_Guting_Station.jpg",
+        "yazar": "Howard61313",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Cross-platform_interchange_on_the_B3_platform_in_Guting_Station.jpg",
+        "altyazi": "Android-iOS dosya aktarım akışı"
+      }
+    ],
+    "breaking": true,
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Cross-platform_interchange_on_the_B3_platform_in_Guting_Station.jpg/1280px-Cross-platform_interchange_on_the_B3_platform_in_Guting_Station.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "3cbfe9b9e486b44a",
     "title": "Samsung Galaxy S27 Ultra Maketi Açıklandı: Boyut ve Kamera Tasarımı",
     "slug": "samsung-galaxy-s27-ultra-maketi-aciklandi-boyut-ve-kamera-tasarimi",
@@ -11130,7 +11184,6 @@
     "image": "/kapak/08e591f80052a94f.webp",
     "publishedAt": "2026-11-02T16:37:00.000Z",
     "generatedAt": "2026-11-02T16:58:31.293Z",
-    "breaking": true,
     "gorselDeneme": "2026-11-03T08:20:19.740Z",
     "kapak": {
       "v": 3,
