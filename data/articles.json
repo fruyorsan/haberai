@@ -48,6 +48,50 @@
     }
   },
   {
+    "id": "a61d699d7be31dcb",
+    "title": "İvme Nedir? Sabit İvmeli Hareket ve Önemli Grafik Analizleri",
+    "slug": "ivme-nedir-sabit-ivmeli-hareket-grafik-analizleri",
+    "summary": "İvme, bir cismin hızının zaman içinde nasıl değiştiğini gösteren temel fiziksel büyüklüktür. Sabit ivmeli hareket, günlük yaşamdaki birçok hareketi anlamada kilit rol oynar. Bu yazıda ivmenin tanımından, formülasyonuna ve grafiksel temsilinden bahsedilecek.",
+    "keyPoints": [
+      "İvme, hız değişiminin zamanla oranı olarak tanımlanır ve vektörel bir büyüklüktür.",
+      "Sabit ivmeli hareket, ivmenin sürekliliği sayesinde başlangıç hızı, süre ve konum arasında belirli denklemlerle ilişki kurar.",
+      "Grafiksel analizlerde hız‑zaman, konum‑zaman ve konum‑hız eğrileri, hareketin dinamiklerini görsel olarak ortaya koyar."
+    ],
+    "body": [
+      "İvme (İngilizce: acceleration), bir cismin hızının zaman içinde ne kadar değiştiğini ölçen vektörel bir fiziksel büyüklüktür. Bu tanım, cismin hızını birim zamanda (saniyede) ne kadar artırdığı ya da azalttığına işaret eder. Uluslararası Birimler Sistemi’nde (SI) ivmenin birimi metre bölü saniye kare (m/s²) olarak belirlenmiştir. Dolayısıyla, bir cisim 1 m/s² ivme ile hareket ediyorsa, her saniye hızının 1 metre/saniye kadar artar.",
+      "Sabit ivmeli hareket, ivmenin zaman boyunca değişmediği durumları kapsar. Bu durumda, hareketin temel denklemleri çok basittir: hız, başlangıç hızı ile ivme çarpı süre toplamına eşittir; konum ise başlangıç konumu, başlangıç hızı çarpı süre, ve ivme çarpı süre kareye bölü iki toplamına eşittir. Bu formüller sayesinde, bir cismin belirli bir süre içinde kaç metre yol aldığı veya hangi hızda sonlandığı kolayca hesaplanabilir.",
+      "Grafiksel analiz, sabit ivmeli hareketin anlaşılmasında kritik bir rol oynar. Hız‑zaman grafiği, doğrudan ivmeyi gösterir; grafik üzerindeki eğri eğimi, ivmenin büyüklüğünü temsil eder. Konum‑zaman grafiği ise bir parabol şekline sahiptir; bu parabolün eğimi ivmenin etkisiyle belirlenir. Konum‑hız grafiği ise hız‑zaman grafiğinin integrali olarak düşünülebilir; bu grafik, cismin konum değişikliği ile hız arasındaki ilişkiyi gösterir.",
+      "Bu kavramlar, fiziksel dünyayı anlamamıza ve mühendislikten spor performansına kadar pek çok alanda uygulamalar geliştirmemize olanak tanır. Örneğin, bir otomobilin hızlanma süresi, bir roketin yörüngeye çıkış ivmesi veya bir atletin sprint antrenmanı sırasında değişen hızları, sabit ivmeli hareketin temel prensipleriyle açıklanabilir. Bu nedenle, ivme, hem teorik hem de pratik fizik alanında vazgeçilmez bir kavramdır."
+    ],
+    "comment": "İvme konusu, fiziksel hareketlerin temel taşlarından biridir ve günlük hayatımızdaki birçok fenomenin ardındaki matematiksel prensipleri ortaya koyar. Öğrenciler bu bilgiyi savunma stratejileri, spor teknikleri ya da mühendislik tasarımları gibi alanlarda kullanabilir. Yazımız, kavramı sade bir dilde açıklayarak, özellikle genç okuyucuların ilgisini çekmeyi hedefliyor.",
+    "editorNote": "Sabit ivmeli hareketin temel prensipleriyle ilgili açıklama, günlük hayat örnekleriyle desteklenerek anlaşılabilir kılınmış.",
+    "tags": [
+      "Fizik",
+      "İvme",
+      "Hareket",
+      "Grafik Analizi"
+    ],
+    "category": "Bilim",
+    "gorselSorgu": "acceleration graph illustration",
+    "source": "Evrim Ağacı",
+    "sourceUrl": "https://evrimagaci.org/ivme-nedir-sabit-ivmeli-hareket-ve-grafikleri-24079",
+    "image": "/kapak/a61d699d7be31dcb.webp",
+    "publishedAt": "2026-11-05T00:41:33.000Z",
+    "generatedAt": "2026-11-05T01:05:27.536Z",
+    "breaking": true,
+    "kapak": {
+      "v": 3,
+      "kaynak": "bilim-chemistry-lab-1317.jpg",
+      "foto": true
+    },
+    "gorselKaynak": {
+      "yazar": "ТимофейЛееСуда",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Chemistry-lab.JPG"
+    }
+  },
+  {
     "id": "a51b359a6c0796d0",
     "title": "Afyonkarahisar Dinar merkezli deprem bölgede hissedildi",
     "slug": "afyonkarahisar-dinar-merkezli-deprem-bolgede-hissedildi",
@@ -103,6 +147,11 @@
       "v": 3,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/1985_Mexico_Earthquake_-_Nuevo_Leon_building_2.jpg/1280px-1985_Mexico_Earthquake_-_Nuevo_Leon_building_2.jpg",
       "foto": true
+    },
+    "gorselAjan": {
+      "tarih": "2026-11-05T01:07:10.183Z",
+      "sonuc": "atlandi",
+      "neden": "görsel denetimi yapılamadı (vision sağlayıcısı yok)"
     }
   },
   {
@@ -159,6 +208,13 @@
       "v": 3,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Yamiche_Alcindor_%28NBC_News%29_and_other_television_reporters_reporting_from_Kamala_Harris_campaign_rally_at_Wake_Tech_on_August_16%2C_2024_%2853934822360%29.jpg/1280px-Yamiche_Alcindor_%28NBC_News%29_and_other_television_reporters_reporting_from_Kamala_Harris_campaign_rally_at_Wake_Tech_on_August_16%2C_2024_%2853934822360%29.jpg",
       "foto": true
+    },
+    "gorselAjan": {
+      "tarih": "2026-11-05T01:08:20.011Z",
+      "sonuc": "atlandi",
+      "neden": "yeterli görsel yok",
+      "secim": "mevcut",
+      "skor": 31
     }
   },
   {
@@ -216,8 +272,34 @@
     "breaking": true,
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Severely_damaged_car_from_tornado.jpg/1280px-Severely_damaged_car_from_tornado.jpg",
-      "foto": true
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/48th_MDG_trains_with_local_U_K_partners_%285405571%29.jpg/1920px-48th_MDG_trains_with_local_U_K_partners_%285405571%29.jpg",
+      "foto": true,
+      "ajan": {
+        "v": 1,
+        "secim": "commons",
+        "skor": 65,
+        "neden": "Yaralı taşıma eylemi haberin içeriğiyle örtüşüyor ancak kaza anına dair bir araç detayı eksik.",
+        "brif": "Manisa'nın Kırkağaç ilçesindeki kırsal bir yolda, şarampole devrilmiş ve hasar görmüş bir otomobil; aracın yanına toplanmış sağlık ekipleri ve itfaiye personeli, yaralıları çıkarmak için çalışıyor; arka planda jandarma araçları ve acil durum ışıkları görünüyor.",
+        "sorgular": [
+          "emergency rescue team",
+          "overturned car ditch",
+          "ambulance accident site"
+        ],
+        "tarih": "2026-11-05T01:09:20.992Z"
+      }
+    },
+    "gorselAjan": {
+      "tarih": "2026-11-05T01:09:20.992Z",
+      "sonuc": "degisti",
+      "neden": "Yaralı taşıma eylemi haberin içeriğiyle örtüşüyor ancak kaza anına dair bir araç detayı eksik.",
+      "secim": "commons",
+      "skor": 65
+    },
+    "gorselKaynak": {
+      "yazar": "U.S. Air Force photo by Airman 1st Class Madeline Herzog",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:48th_MDG_trains_with_local_U_K_partners_(5405571).jpg"
     }
   },
   {
@@ -9633,7 +9715,6 @@
     "image": "/kapak/574be1faa3b7d98a.webp",
     "publishedAt": "2026-11-03T00:53:00.000Z",
     "generatedAt": "2026-11-03T01:14:25.861Z",
-    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/U.S._Army_Soldiers_Conduct_Search_and_Rescue_Team_in_the_Lake_View_Neighborhood%2C_Northwest_of_New_Orleans%2C_Louisiana%2C_Sept._9%2C_2005.jpg/1280px-U.S._Army_Soldiers_Conduct_Search_and_Rescue_Team_in_the_Lake_View_Neighborhood%2C_Northwest_of_New_Orleans%2C_Louisiana%2C_Sept._9%2C_2005.jpg",
