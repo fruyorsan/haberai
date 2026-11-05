@@ -1,5 +1,56 @@
 [
   {
+    "id": "0ee39bb9a8df7376",
+    "title": "OpenAI Images 2.6, görsel üretim hızını yüzde 50 artırdı",
+    "slug": "openai-images-2-6-gorsel-uretim-hizini-yuzde-50-artirdi",
+    "summary": "OpenAI, Images 2.6 adlı yeni görsel modelini ChatGPT ve API ekosisteminde kullanıma sundu. Yeni sürüm, önceki versiyonlara kıyasla üretim süresini yarısına indirirken GIF oluşturma yeteneğini de ekliyor. Haftalık 4 milyar görsel üreten sistem, bu güncellemeyle hareketli içerik üretiminde öne çıkmayı hedefliyor.",
+    "keyPoints": [
+      "Yeni model görsel üretim süresini yüzde 50 kısaltıyor",
+      "Statik görsellerin yanı sıra animasyonlu GIF desteği eklendi",
+      "API üzerinden Sunburst ve Flare olarak iki seçenek sunuldu"
+    ],
+    "body": [
+      "OpenAI, görsel üretim altyapısında önemli bir iyileştirmeye giderek Images 2.6 modelini resmen devreye aldı. Bu yeni sürüm, yalnızca ChatGPT arayüzünde değil, Codex ve geliştirici platformu API’si genelinde de aktif hale geldi. Kullanıcılar artık fikirlerini somut görsellere dönüştürme sürecinde belirgin bir hız avantajına sahip oluyor.",
+      "Teknik açıdan en dikkat çeken özellik, üretim performansındaki artış oluyor. Kaynak verilerine göre Images 2.6, önceki sürümlere göre yüzde 50 daha hızlı çalışıyor. Bu hızlanma, yüksek hacimli üretim yapan ekipler için beklenme sürelerini ciddi oranda azaltıyor ve iş süreçlerinin akışını hızlandırıyor.",
+      "Sadece hız değil, içerik çeşitliliği de genişledi. Model, statik görsellerin ötesine geçerek hareketli GIF oluşturma kapasitesi kazandı. Bu sayede basit bir eskiz veya karakter çizimi, karmaşık animasyon yazılımlarına gerek kalmadan hayat dolu bir taslağa dönüşebiliyor. Marka maskotlarını canlandırma veya sosyal medya için dinamik tepki görselleri hazırlama artık çok daha erişilebilir hale geldi.",
+      "Geliştiriciler için API tarafında iki farklı model seçeneği tanımlandı: GPT-Image-2.6 Sunburst ve Flare. Bu segmentasyon, farklı bütçe ve performans ihtiyaçlarına sahip kullanıcıların kendilerine uygun sürümü seçmesine olanak tanıyor. Karakter, ürün veya marka detaylarında düzenleme yapılırken tutarlılığı koruma kabiliyeti de bu versiyonda güçlendirildi.",
+      "OpenAI’nin görsel üretim hacmi, bu güncelleme öncesinde dünyada haftalık 4 milyon, günlük ise yaklaşık yarım milyon görsel seviyesinde seyrediyordu. Yeni modelin bu devasa hacme hareketli içerik yeteneğini eklemesi, sistemdeki toplam üretim potansiyelini bir üst seviyeye taşıyacağını gösteriyor. Üretken yapay zeka alanındaki rekabet, hız ve çeşitlilik ekseninde yeni bir boyuta girmiş bulunuyor.",
+      "Şirketlerin pazarlama ekipleri ve bağımsız içerik üreticileri, bu yenilikten doğrudan faydalanacak ilk kitleler arasında yer alıyor. Video prodüksiyonları öncesinde animasyonlu story board’lar hazırlayabilme imkanı, yaratıcı süreçlerdeki maliyet ve zaman bariyerlerini düşürüyor. Kullanıcı deneyimi açısından daha az bekleme ve daha fazla ifade özgürlüğü, platformun sadakatini pekiştirecek temel faktörler olarak öne çıkıyor."
+    ],
+    "comment": "Hız odaklı bu güncelleme, statik görsellerin dışında GIF desteği eklemesiyle içerik pazarlamacıları için somut bir verimlilik artışı sağlıyor. Önceki sürümlere göre yüzde 50'lik hızlanma, özellikle yüksek hacimli üretim yapan ajansların maliyet dengesini doğrudan iyileştiriyor. Rakip modellerin henüz benzer seviyede animasyon hızını sunamadığı düşünüldüğünde, OpenAI bu niş pazarda açığı kapatma fırsatı yakalıyor. Geliştiriciler için Sunburst ve Flare ayrımı, bütçe optimizasyonu açısından kritik bir esneklik sunuyor.",
+    "editorNote": "Yarım milyar günlük görsel üreten altyapı, artık hareketli GIF’ler de çıkarabiliyor. Hız ve fiyat/performans dengesini düşünenler için API seçenekleri önemli.",
+    "tags": [
+      "OpenAI",
+      "Images 2.6",
+      "Yapay Zekâ",
+      "GIF Üretimi",
+      "API"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "OpenAI logo digital art screen",
+    "source": "Webtekno",
+    "sourceUrl": "https://www.webtekno.com/openai-images-2-6-duyurdu-h228325.html",
+    "image": "/kapak/0ee39bb9a8df7376.webp",
+    "images": [
+      "https://imgrosetta.webtekno.com/file/695755/695755-1280xauto.jpg",
+      "https://imgrosetta.webtekno.com/file/672691/672691-300x300.png"
+    ],
+    "publishedAt": "2026-11-05T07:03:58.000Z",
+    "generatedAt": "2026-11-05T07:05:52.932Z",
+    "breaking": true,
+    "kapak": {
+      "v": 3,
+      "kaynak": "yapay-zeka-staeubli-robots-line-2024.jpg",
+      "foto": true
+    },
+    "gorselKaynak": {
+      "yazar": "Clemenspool",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Staeubli_Robots_line.jpg"
+    }
+  },
+  {
     "id": "0cd76a67591a5901",
     "title": "Brent Petrol 94,07 Dolarla Kapandı, ABD Seçim Sonuçları Fiyatı Düşürdü",
     "slug": "brent-petrol-94-07-dolarla-kapandi-abd-secim-sonuclari-fiyatini-dusurdu",
@@ -9625,7 +9676,6 @@
         "altyazi": "Yapay zeka modellerinin çalıştırıldığı yüksek kapasiteli sunucu merkezleri"
       }
     ],
-    "breaking": true,
     "gorselDeneme": "2026-11-03T18:42:15.160Z",
     "gorselKaynak": {
       "yazar": "WikiNDND",
@@ -9689,7 +9739,6 @@
         "altyazi": "Şiddetli yağışlar sonrası asfalt zeminde meydana gelen hasarlar"
       }
     ],
-    "breaking": true,
     "gorselKaynak": {
       "yazar": "Mostafameraji",
       "lisans": "CC0",
