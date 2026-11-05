@@ -928,6 +928,13 @@
       "v": 3,
       "kaynak": "https://upload.wikimedia.org/wikipedia/commons/8/85/Street_scene_showing_movie_theater%2C_probably_in_the_vicinity_of_Lancaster%2C_Ohio_%28LOC%29_%2855385327578%29.jpg",
       "foto": true
+    },
+    "gorselAjan": {
+      "tarih": "2026-11-05T01:50:33.236Z",
+      "sonuc": "atlandi",
+      "neden": "yeterli görsel yok",
+      "secim": "mevcut",
+      "skor": 36
     }
   },
   {
@@ -1043,6 +1050,11 @@
       "lisans": "Kamu malı",
       "lisansUrl": "",
       "sayfa": "https://commons.wikimedia.org/wiki/File:2023-08-31_National_Mourning_Day_commemoration_discussion_meeting_auditorium_presidential_address_Begum_Matia_Chowdhury_Deputy_Leader_of_Parliament_chief_guest_(PID-0013928).jpg"
+    },
+    "gorselAjan": {
+      "tarih": "2026-11-05T01:51:09.372Z",
+      "sonuc": "atlandi",
+      "neden": "görsel denetimi yapılamadı (vision sağlayıcısı yok)"
     }
   },
   {
@@ -1107,7 +1119,12 @@
         "lisansUrl": "",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Fenerbah%C3%A7e_1910-II_Team.jpg"
       }
-    ]
+    ],
+    "gorselAjan": {
+      "tarih": "2026-11-05T01:51:49.266Z",
+      "sonuc": "atlandi",
+      "neden": "görsel denetimi yapılamadı (vision sağlayıcısı yok)"
+    }
   },
   {
     "id": "92433da4e06e0016",
