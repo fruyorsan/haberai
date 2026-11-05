@@ -1,5 +1,55 @@
 [
   {
+    "id": "4ff277d5f44578df",
+    "title": "Apple, Canlı Etkinlikleri Menü Çubuğuna Taşıyarak Mac Kullanımını Hızlandırdı",
+    "slug": "apple-canli-etkinlikleri-menu-cubuguna-tasiyarak-mac-kullanimini-hizlandirdi",
+    "summary": "Apple, macOS Golden Gate 27.3 geliştirici betasında Canlı Etkinlikler'i menü çubuğuna entegre etti. Bu yeni arayüz, Apple Silicon destekli eski modellerde kullanılabilecek ve etkinlikleri tek bir tıkla kontrol etmeyi sağlayacak. Beta sürümdeki bu özellik, genel kullanıma açılmadan önce iyileştirmelere açık.",
+    "keyPoints": [
+      "Canlı Etkinlikler menü çubuğunda oval kutucuklarla gösterilecek",
+      "Apple Silicon destekli Mac'lerde beta sürümde mevcut, Intel modeller hariç",
+      "Golden Gate 27.3 betası 2024 aralık ayında resmi sürüme geçebilir"
+    ],
+    "body": [
+      "Apple, macOS Golden Gate 27.3 sürümünün ilk geliştirici betasını tanıttı ve bu sürümde Canlı Etkinlikler'i doğrudan menü çubuğuna taşıdı. Bu değişiklik, kullanıcıların etkinlik bilgilerine ve kontrol öğelerine hızlı erişim sağlamayı amaçlıyor. Beta sürüm olduğu için arayüz ve işlevlerde ilerleyen sürümlerde değişiklikler yapılabilir.",
+      "Yeni menü çubuğu entegrasyonu, durum simgelerinin solunda yer alan küçük oval kutucuklar şeklinde görünüyor. Aynı anda birden fazla etkinlik mevcut olduğunda bu kutucuklar yan yana sıralanıyor ve her birine tıklandığında ilgili pencere büyütülüp küçültülebiliyor. Bu sayede kullanıcılar müzik durdurma ya da zamanlayıcı süresini kontrol etme gibi işlemleri ayrı bir pencere açmadan halledebilecek.",
+      "Apple Silicon işlemcili eski Mac modelleri bu beta sürümde desteklenirken, Intel tabanlı Mac'ler kapsam dışı bırakıldı. Bu ayrım, Apple'ın yeni nesil çiplerine odaklandığını ve Intel tabanlı cihazların gelecekteki güncellemelerde farklı bir yol izleyebileceğini gösteriyor. Kullanıcıların bu ayrımı bilmesi, hangi cihazların yeni özelliği deneyimleyebileceğini netleştiriyor.",
+      "Canlı Etkinlikler menü çubuğunda gösterilen işlevler arasında çalan müziği durdurma, sayacın kalan süresini görüntüleme gibi temel kontroller bulunuyor. Ancak dosya aktarımını onaylama gibi daha karmaşık işlemler bu arayüz üzerinden gerçekleştirilemiyor; bu tür görevler hâlâ ilgili uygulamanın penceresinden yapılmalı. Bu sınırlama, yeni arayüzün hâlâ bir ön izleme olduğunu gösteriyor.",
+      "Apple, Golden Gate 27.3 betasını 2024 aralık ayında genel kullanıma sunmayı planlıyor, ancak beta sürecinde ek özelliklerin ertelenebileceği veya mevcut işlevlerin değişebileceği belirtiliyor. Kullanıcılar ve geliştiriciler, bu güncellemeyi test ederek geri bildirimde bulunabilir ve Apple'ın nihai sürümde ne tür iyileştirmeler yapacağını gözlemleyebilir."
+    ],
+    "comment": "Canlı Etkinliklerin menü çubuğuna taşınması, iş akışını sadeleştirerek macOS deneyimini hızlandırmalı. Beta sürümdeki Apple Silicon desteği, yeni çiplerin avantajını somut bir kullanıcı faydasına dönüştürüyor. Bu değişiklik, özellikle sık sık medya ve zamanlayıcı kullanan geliştiricileri ve profesyonel kullanıcıları olumlu etkiler. Önceki macOS sürümlerinde ayrı pencerelerle yapılan kontrol, bu entegrasyonla daha pratik bir hale geliyor.",
+    "editorNote": "Apple, Canlı Etkinlikleri menü çubuğuna taşıyarak macOS'ta hızlı kontrol imkanı sunuyor. Beta sürecinde Apple Silicon destekli modellerde deneme fırsatı bulunuyor.",
+    "tags": [
+      "apple",
+      "macos",
+      "canli etkinlikler",
+      "menu bar",
+      "beta"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "macOS menu bar live events",
+    "source": "Webtekno",
+    "sourceUrl": "https://www.webtekno.com/canli-etkinlikler-mac-menu-cubuguna-geldi-h228382.html",
+    "image": "/kapak/4ff277d5f44578df.webp",
+    "images": [
+      "https://imgrosetta.webtekno.com/file/695863/695863-1280xauto.jpg",
+      "https://imgrosetta.webtekno.com/static/img/no-img.png"
+    ],
+    "publishedAt": "2026-11-05T14:30:23.000Z",
+    "generatedAt": "2026-11-05T14:36:24.672Z",
+    "breaking": true,
+    "kapak": {
+      "v": 3,
+      "kaynak": "teknoloji-circuit-board-2-1319.jpg",
+      "foto": true
+    },
+    "gorselKaynak": {
+      "yazar": "MartinThoma",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Circuit-board-2.jpg"
+    }
+  },
+  {
     "id": "08b6d5d76faafe7f",
     "title": "Corolla dizel seçerken 1CD-FTV kodu kritik öneme sahip",
     "slug": "corolla-dizel-secerken-1cd-ftv-kodu-kritik-oneme-sahip",
@@ -8094,7 +8144,6 @@
     "image": "/kapak/167fd2d169b31dcd.webp",
     "publishedAt": "2026-11-03T14:20:27.000Z",
     "generatedAt": "2026-11-03T14:25:35.264Z",
-    "breaking": true,
     "gorselDeneme": "2026-11-03T18:42:13.804Z",
     "gorselKaynak": {
       "yazar": "tranmautritam (tranmautritam.com / unsplash.com/@tranmautritam)",
