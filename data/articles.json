@@ -6950,9 +6950,9 @@
       "foto": false
     },
     "gorselAjan": {
-      "tarih": "2026-11-04T00:50:52.439Z",
+      "tarih": "2026-11-05T00:15:34.109Z",
       "sonuc": "atlandi",
-      "neden": "yeterli görsel yok"
+      "neden": "görsel denetimi yapılamadı (vision sağlayıcısı yok)"
     }
   },
   {
@@ -7013,9 +7013,9 @@
       "foto": false
     },
     "gorselAjan": {
-      "tarih": "2026-11-04T00:51:46.885Z",
+      "tarih": "2026-11-05T00:16:03.071Z",
       "sonuc": "atlandi",
-      "neden": "görsel denetimi yapılamadı (vision sağlayıcısı yok)"
+      "neden": "yeterli görsel yok"
     }
   },
   {
@@ -7441,21 +7441,37 @@
     "generatedAt": "2026-11-03T08:57:23.005Z",
     "breaking": true,
     "gorselKaynak": {
-      "yazar": "tranmautritam (tranmautritam.com / unsplash.com/@tranmautritam)",
-      "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Business_Woman_is_reading_Newspaper_-_35870943420.jpg"
+      "yazar": "NASA",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:ISS-30_Lake_Fitri,_Chad.jpg"
     },
     "ekGorselDeneme": "2026-11-03T15:59:51.803Z",
     "kapak": {
       "v": 3,
-      "kaynak": "gundem-istanbul-2-25932259407-1228.jpg",
-      "foto": false
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/ISS-30_Lake_Fitri%2C_Chad.jpg/1920px-ISS-30_Lake_Fitri%2C_Chad.jpg",
+      "foto": true,
+      "ajan": {
+        "v": 1,
+        "secim": "commons",
+        "skor": 77,
+        "neden": "Uydu görüntüsü olmasına rağmen su seviyesindeki değişimi ve kıyı şeridindeki daralmayı en net şekilde belgeleyen görseldir.",
+        "brif": "Van Gölü kıyısında, su seviyesinin çekilmesiyle ortaya çıkmış geniş, kuru ve çatlamış toprak şeridi; arka planda mavi göl suyu ve uzakta bulanık dağ silüetleri. Ön planda kuru toprağın dokusu ve su hattının eski konumunu gösteren ıslak/kuru geçiş net bir şekilde görünüyor.",
+        "sorgular": [
+          "Van Lake shoreline",
+          "dry lake bed mud",
+          "receding water level lake",
+          "cracked earth water edge"
+        ],
+        "tarih": "2026-11-05T00:16:41.272Z"
+      }
     },
     "gorselAjan": {
-      "tarih": "2026-11-04T01:00:30.643Z",
-      "sonuc": "atlandi",
-      "neden": "yeterli görsel yok"
+      "tarih": "2026-11-05T00:16:41.272Z",
+      "sonuc": "degisti",
+      "neden": "Uydu görüntüsü olmasına rağmen su seviyesindeki değişimi ve kıyı şeridindeki daralmayı en net şekilde belgeleyen görseldir.",
+      "secim": "commons",
+      "skor": 77
     },
     "gorselYedek": 1
   },
@@ -9530,7 +9546,6 @@
         "altyazi": "Çok uluslu gücün lojistik sevkiyatı için yapılan askeri tatbikat"
       }
     ],
-    "breaking": true,
     "gorselDeneme": "2026-11-03T14:42:38.072Z",
     "kapak": {
       "v": 3,
