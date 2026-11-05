@@ -51,6 +51,51 @@
     }
   },
   {
+    "id": "87ee5e38fb6a4f31",
+    "title": "Siber Güvenlik, eski iPhone'larda WhatsApp dolandırıcılığını engelledi",
+    "slug": "siber-guvenlik-eski-iphonelarda-whatsapp-dolandiriciligini-engelledi",
+    "summary": "Siber Güvenlik Başkanlığı, güncel olmayan iPhone modellerindeki güvenlik açıkları sayesinde WhatsApp hesaplarının ele geçirilerek tanıdıklara para talep mesajları gönderildiğini açıkladı. Bu saldırılar, özellikle eski iOS sürümlerine sahip kullanıcıları hedef alıyor ve acil para ihtiyacı bahanesiyle sahte IBAN talepleri içeriyor.",
+    "keyPoints": [
+      "Siber Güvenlik, eski iPhone'larda bulunan açık üzerinden WhatsApp hesabı ele geçirildi",
+      "Saldırganlar, kurbanların tanıdıklarına sahte IBAN talep mesajı gönderiyor",
+      "Hedef grup, iOS 12 ve daha eski sürümleri kullanan iPhone sahipleri"
+    ],
+    "body": [
+      "WhatsApp kullanıcıları, son günlerde tanıdıklarından \"acil para lazım\" mesajları alarak şaşkınlık yaşıyor. Siber Güvenlik Başkanlığı, bu mesajların aslında hesapların ele geçirilmesi sonucu ortaya çıktığını ve mesajların sahte IBAN numaraları içerdiğini belirtti. Açığın, iOS 12 ve daha eski sürümlerde bulunan bir güvenlik zafiyetiyle ilişkili olduğu tespit edildi.",
+      "Yetkililer, saldırganların bu açık üzerinden WhatsApp oturumlarını çaldığını ve ardından kullanıcıların kişi listesine erişerek para transferi talep eden sahte mesajlar gönderdiğini açıkladı. Bu yöntem, özellikle güncellemeleri yapmayan iPhone sahiplerinde etkili oluyor çünkü eski işletim sistemi güvenlik yamalarından yoksun. Kullanıcıların, gelen mesajları doğrulamadan yanıt vermemeleri ve telefonlarını en son iOS sürümüne güncellemeleri önerildi.",
+      "Siber Güvenlik, iPhone'ların bu açıklarını kapatmak amacıyla ilgili güncellemelerin yayınlandığını ve Apple'ın da bu konuda bir güvenlik bildirisi yayımladığını duyurdu. Ancak, hâlâ bir kısmı güncellemeyi erteleyen cihazlarda risk devam ediyor. Bu durum, mobil cihaz güvenliğinin sadece uygulama bazlı değil, işletim sistemi seviyesinde de ele alınması gerektiğini ortaya koyuyor.",
+      "Uzmanlar, benzer dolandırıcılıkların sosyal medya ve mesajlaşma uygulamalarında yaygınlaştığını ve kullanıcıların kimlik doğrulama süreçlerine daha fazla dikkat etmesi gerektiğini vurguluyor. Özellikle finansal talepler içeren mesajlarda, gönderenin gerçek kimliğini telefonla teyit etmek en güvenli yöntem olarak öneriliyor. Ayrıca, WhatsApp'ın iki adımlı doğrulama özelliğinin etkinleştirilmesi de ek bir koruma sağlıyor.",
+      "Gelecek haftalarda, Siber Güvenlik Başkanlığı'nın bu tür saldırıların önüne geçmek için farkındalık kampanyaları başlatması ve mobil cihaz güncellemelerinin zorunlu hâle getirilmesi planları bulunuyor. Kullanıcıların da düzenli olarak cihazlarını güncellemesi, benzer dolandırıcılıkların etkisini azaltacak ve kişisel verilerin korunmasına katkı sağlayacak."
+    ],
+    "comment": "Kullanıcıların eski iPhone'larını güncellemeleri, bu tür dolandırıcılıkları önlemenin en kesin yoludur. Açığın hâlâ iOS 12 ve öncesinde var olması, güncel olmayan cihazların hedef alınmasını mümkün kılıyor. Bu durum, özellikle düşük gelirli iPhone kullanıcılarını riske atıyor; çünkü yeni cihaz alımı veya güncelleme maliyeti yüksek olabiliyor. Güncel sürümle kıyaslandığında, yeni iOS sürümleri bu tür güvenlik açıklarını büyük ölçüde ortadan kaldırıyor ve dolandırıcıların erişim alanını daraltıyor.",
+    "editorNote": "Eski iPhone'larda bulunan güvenlik açığı, WhatsApp üzerinden sahte para taleplerine yol açıyor. Cihazınızı güncelleyerek riski azaltın.",
+    "tags": [
+      "WhatsApp",
+      "iPhone",
+      "Siber Güvenlik",
+      "Dolandırıcılık"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "iPhone phishing scam",
+    "source": "CHIP Online",
+    "sourceUrl": "https://www.chip.com.tr/guncel/whatsappta-tanidiginizdan-acil-para-lazim-mesaji-geldiyse-once-arayin_185100.html",
+    "image": "/kapak/87ee5e38fb6a4f31.webp",
+    "publishedAt": "2026-11-05T07:02:00.000Z",
+    "generatedAt": "2026-11-05T07:28:39.519Z",
+    "breaking": true,
+    "kapak": {
+      "v": 3,
+      "kaynak": "teknoloji-electronics-pcb-circuit-board-003-511318-3351.jpg",
+      "foto": true
+    },
+    "gorselKaynak": {
+      "yazar": "Jan Helebrant",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Electronics_PCB_circuit_board_003_(51131861191).jpg"
+    }
+  },
+  {
     "id": "0cd76a67591a5901",
     "title": "Brent Petrol 94,07 Dolarla Kapandı, ABD Seçim Sonuçları Fiyatı Düşürdü",
     "slug": "brent-petrol-94-07-dolarla-kapandi-abd-secim-sonuclari-fiyatini-dusurdu",
@@ -9561,7 +9606,6 @@
     "image": "/kapak/7c3498544c46817c.webp",
     "publishedAt": "2026-11-03T07:06:00.000Z",
     "generatedAt": "2026-11-03T07:18:54.984Z",
-    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": "spor-fujieda-football-stadium-20240922-1-2439.jpg",
@@ -9611,7 +9655,6 @@
     "image": "/kapak/b47ce1e4e3124c63.webp",
     "publishedAt": "2026-11-03T07:05:18.000Z",
     "generatedAt": "2026-11-03T07:10:55.010Z",
-    "breaking": true,
     "imagesKaynak": "https://www.donanimhaber.com/ekim-ayinda-en-cok-satan-otomobil-togg-t10x-oldu--212395",
     "gorselDeneme": "2026-11-03T16:05:38.977Z",
     "gorselKaynak": {
