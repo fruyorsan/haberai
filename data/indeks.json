@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05T02:47:54.744Z",
+  "updatedAt": "2026-11-05T03:02:26.261Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5848,
-  "aday": 5848,
-  "uygun": 3793,
-  "secilen": 3704,
+  "toplamHaber": 5849,
+  "aday": 5849,
+  "uygun": 3794,
+  "secilen": 3705,
   "red": {
     "özet gövdeyle aynı": 116,
     "editör notu özetle aynı": 8,
@@ -54,10 +54,6 @@
       "twin": "OpenAI, yapay zekanın matematikte 3 büyük hamle yaptığını açıkladı"
     },
     {
-      "title": "Batı Şeria'da İsrail baskınları: 2 kişi yaralandı, evler arandı",
-      "twin": "Batı Şeria'da 2 Filistinli yaralandı ve 3 yeni kaçak yerleşim kuruldu"
-    },
-    {
       "title": "GTA 6'da 90 FPS test edildi: Görüntü kalitesi tartışmalı",
       "twin": "GTA 6 oynanış görüntüleri South Park dizisinin son bölümüne sızdı"
     },
@@ -80,6 +76,10 @@
     {
       "title": "İsrail ordusu Batı Şeria ve Doğu Kudüs'te 3 Filistin evini yıktı",
       "twin": "İsrail ordusunun El Halil operasyonu 3 bin 300 kişiyi evinden etti"
+    },
+    {
+      "title": "Batı Şeria'da İsrail baskınları: 2 kişi yaralandı, evler arandı",
+      "twin": "Batı Şeria'da 2 Filistinli yaralandı ve 3 yeni kaçak yerleşim kuruldu"
     },
     {
       "title": "CD Projekt RED, Cyberpunk 2 görev tasarımında eski modcuları kullanıyor",
@@ -1217,18 +1217,19 @@
       "c72f5304531bd303",
       "0fa6af72b4886a02",
       "b9ce33c67702f0c1",
+      "6b51552188199382",
       "e2ce4ad6b6bd54a0",
       "7ea4479613b8ad96",
       "15c1fd010bc0e7f9",
       "4be8123696baa8ad",
       "b02e44df9cea9d6d",
-      "6b51552188199382",
       "65aeac2c4e7f29b8",
       "a51b359a6c0796d0",
       "92433da4e06e0016",
       "9da5529155baf0b9",
       "864bec958a4efbfe",
       "01c4d10dfce5e64c",
+      "79042bfb6b1ca83e",
       "9fa89f884ef1e03f",
       "bd0a2de69a611a42",
       "27f831f85740f826",
@@ -4354,6 +4355,7 @@
     "8498433573c216b5",
     "6b84961c1109356d",
     "5482d9c10f68f7eb",
+    "6b51552188199382",
     "4c8afc72258fef41",
     "d1f3819020b474d0",
     "3cce01fb0d2fa73a",
@@ -4573,7 +4575,6 @@
     "d02b1638835f895f",
     "171c098c29e6ae7c",
     "b182163213c36dff",
-    "6b51552188199382",
     "79d691aeea537fd8",
     "fde93fa8c413a2b1",
     "cf81f7dd7d2cbf34",
@@ -4955,6 +4956,7 @@
     "b83d698a059530e7",
     "dfc033509732ccc8",
     "cfe3de6cf131059b",
+    "79042bfb6b1ca83e",
     "154e2ff3f2a7a853",
     "eed909d5cc25ce0b",
     "b3a8a79ad8e46503",
