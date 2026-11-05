@@ -1,5 +1,66 @@
 [
   {
+    "id": "33e6389a078c69dc",
+    "title": "İspanya Elektrik Şebekesini Siber Saldırılara Karşı Koruma Kalkanı Kurdu",
+    "slug": "ispanya-elektrik-sebeke-siber-saldirilara-karsi-koruma-kalkani",
+    "summary": "İspanya, AB tarafından geliştirilen iki yeni metodolojiyi onaylayarak kritik elektrik altyapısını siber saldırılara karşı korumaya başladı. 11 Mart 2024 tarihli karar, risk değerlendirmesi ve olay bildirim zorunluluklarını ulusal ve bölgesel düzeyde zorunlu kılıyor. Bu adım, sınır ötesi enerji ticaretinin güvenliğini artırmayı hedefliyor.",
+    "keyPoints": [
+      "AB metodolojileri 11 Mart 2024 tarihinde onaylandı",
+      "2024/1366 sayılı tüzük risk değerlendirme prosedürünü belirliyor",
+      "Yüksek kritik etkiye sahip kuruluşlar özel siber güvenlik yükümlülükleri alacak"
+    ],
+    "body": [
+      "Bu karar, ülkenin enerji sistemlerini siber tehditlerden korumak için kapsamlı bir risk değerlendirme süreci ve olay bildirim mekanizması getirmeyi amaçlıyor.",
+      "Onaylanan metodolojiler, 11 Mart 2024 tarihinde yayımlanan ve 2024/1366 sayılı AB Delegasyon Tüzüğüyle desteklenen bir dizi ortak kriter içeriyor. Risk değerlendirme yöntemi, ulusal, bölgesel ve AB düzeyinde yapılacak incelemelerle mevcut tehditleri tanımlayıp olası saldırıların sistem operasyonlarına etkisini ölçmeyi hedefliyor.",
+      "Metodolojilerin ikinci kısmı ise siber saldırıların ciddiyetine göre sınıflandırma ve raporlama süreçlerini tanımlıyor. Bu sayede, iletim ve dağıtım şirketleri, üreticiler ve enerji toplayıcıları gibi kritik oyuncular, yüksek ya da kritik etki taşıyan olayları belirli süreler içinde yetkililere bildirmek zorunda kalacak.",
+      "CNMC, bu yeni çerçeveye göre yüksek kritik etkiye sahip kuruluşları belirleyerek onları özel siber güvenlik yükümlülüklerine tabi kılıyor. Bu yükümlülükler arasında risk analizi yapmak, güvenlik kontrolleri uygulamak, yönetim sistemleri kurmak ve kriz senaryolarına hazırlıklı olmak yer alıyor.",
+      "Uygulamanın ilerleyen aşamalarında, AB’nin ortak kriterlerine uyumlu olarak sınır ötesi elektrik ticaretinde şeffaflık ve koordinasyon artacak. Uzmanlar, bu adımın enerji altyapısının dayanıklılığını güçlendireceği ve olası kesintilerin önüne geçebileceği görüşünde."
+    ],
+    "comment": "AB metodolojilerinin 11 Mart 2024 tarihli onayı, İspanya’nın enerji altyapısına yönelik siber riskleri somut bir çerçeveye oturtuyor. Risk değerlendirme prosedürünün zorunlu kılınması, şebeke işletmecileri ve enerji tedarikçileri için yeni güvenlik maliyetleri doğuracak. Ancak bu yükümlülük, kritik altyapının kesintisiz çalışmasını sağlamak açısından kaçınılmaz. Önceki düzenlemelere göre daha kapsamlı bir yaklaşım, Avrupa’daki benzer sistemlerle uyumu da artırıyor.",
+    "editorNote": "İspanya, AB’nin yeni siber güvenlik metodolojileriyle elektrik şebekesini koruma altına alıyor; yüksek kritik etki taşıyan firmalar yeni yükümlülüklere hazırlanmalı.",
+    "tags": [
+      "İspanya",
+      "siber güvenlik",
+      "elektrik",
+      "AB metodolojisi",
+      "CNMC"
+    ],
+    "category": "Donanım",
+    "gorselSorgu": "electricity grid control room",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/ispanya-elektrik-kesintilerine-karsi-siber-guvenlik-kalkani-kuruy--212533",
+    "image": "/kapak/33e6389a078c69dc.webp",
+    "images": [
+      "https://www.donanimhaber.com/images/images/haber/212533/1200x675ispanya-elektrik-kesintilerine-karsi-siber-guvenlik-kalkani-kuruy.jpg"
+    ],
+    "publishedAt": "2026-11-05T18:00:00.000Z",
+    "generatedAt": "2026-11-05T18:03:04.633Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Technician_with_laptop_working_on_server_rack_at_NERSC.jpg/1280px-Technician_with_laptop_working_on_server_rack_at_NERSC.jpg",
+        "yazar": "Derrick Coetzee from Berkeley, CA, USA",
+        "lisans": "CC0",
+        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Technician_with_laptop_working_on_server_rack_at_NERSC.jpg",
+        "altyazi": "Şebeke kontrol odasındaki sunucu rafları"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Gen_Williams_talks_Cyber_Security_%287360378%29.jpg",
+        "yazar": "U.S. Army photo by Michele Wiencek",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Gen_Williams_talks_Cyber_Security_(7360378).jpg",
+        "altyazi": "Siber güvenlik izleme ekranı"
+      }
+    ],
+    "breaking": true,
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Technician_with_laptop_working_on_server_rack_at_NERSC.jpg/1280px-Technician_with_laptop_working_on_server_rack_at_NERSC.jpg",
+      "foto": true
+    }
+  },
+  {
     "id": "423c5f19c7b7f1ea",
     "title": "HyperX Cloud Mini Wireless: 85 dB sınırıyla çocuklar için",
     "slug": "hyperx-cloud-mini-wireless-85-db-siniri-cocuklar-icin",
@@ -7540,7 +7601,6 @@
         "altyazi": "Zorlu deplasman maçları öncesi atmosfer"
       }
     ],
-    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": "spor-players-and-referees-before-a-football-m-4448.jpg",
@@ -7595,7 +7655,6 @@
     "image": "/kapak/4e55f1fa36b4454c.webp",
     "publishedAt": "2026-11-03T17:51:00.000Z",
     "generatedAt": "2026-11-03T17:54:24.651Z",
-    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": "spor-incheon-soccer-stadium-4-2228.jpg",
@@ -7642,7 +7701,6 @@
     "image": "/kapak/b36232b2914384de.webp",
     "publishedAt": "2026-11-03T17:42:42.000Z",
     "generatedAt": "2026-11-03T18:25:15.623Z",
-    "breaking": true,
     "imagesKaynak": "https://www.aa.com.tr/tr/dunya/gazzede-biri-komiser-biri-cocuk-3-kisi-israil-saldirisi-sonucu-hayatini-kaybetti/4110404",
     "gorselDeneme": "2026-11-03T18:25:18.740Z",
     "gorselKaynak": {
@@ -293614,55 +293672,6 @@
       "v": 3,
       "kaynak": "https://geoim.bloomberght.com/l/2026/10/21/ver1792534385/3792032/jpg/640x360",
       "foto": false
-    }
-  },
-  {
-    "id": "f3d84de218ed4c83",
-    "title": "HyperX Cloud Mini Wireless: Çocuklar İçin Hafif ve Güvenli Kulaklık",
-    "slug": "hyperx-cloud-mini-wireless-cocuklar-icin-hafif-ve-guvenli-kulaklik",
-    "summary": "Çocuk oyuncular için özel olarak tasarlanan yeni kablosuz kulaklık modeli ses sınırlandırmasıyla geliyor. Cihaz, hafif yapısı ve güvenlik odaklı teknik özellikleriyle uzun süreli kullanımlarda rahatlık sunuyor.",
-    "comment": "Çocuklara yönelik donanım pazarında ses sınırlandırması gibi güvenlik önlemleri artık lüks değil zorunluluk haline geldi. Standart kulaklıkların aksine 85 dB sınırını aşmayan bu cihaz, uzun vadeli işitme sağlığını korumak adına doğru bir mühendislik tercihi sunuyor. Özellikle evde dijital oyun oynamayı seven ve kulaklıkla vakit geçiren küçük yaştaki kullanıcılar için bu tür koruyucu özellikler potansiyel riskleri sıfırlıyor. Rakip genel kullanıcı modelleriyle kıyaslandığında, bu ürün ses performansından feragat etmeden yalnızca hedef kitlenin fizyolojik sınırlarına odaklanmasıyla ayrışıyor.",
-    "tags": [
-      "HyperX",
-      "Cloud Mini Wireless",
-      "kulaklık",
-      "oyun",
-      "çocuk"
-    ],
-    "category": "Oyun",
-    "source": "CHIP Online",
-    "sourceUrl": "https://www.chip.com.tr/galeri/hyperx-cloud-mini-wireless-inceleme_184630.html",
-    "publishedAt": "2026-10-15T17:30:00.000Z",
-    "generatedAt": "2026-10-15T17:35:32.731Z",
-    "image": "/kapak/f3d84de218ed4c83.webp",
-    "keyPoints": [
-      "İşitme sağlığı için 85 dB ses sınırlandırma özelliği bulunuyor",
-      "Uzun süreli kullanımlar için hafif ve ergonomik tasarıma sahip",
-      "Kablosuz bağlantı desteğiyle çocuklara hareket özgürlüğü tanıyor"
-    ],
-    "body": [
-      "Oyun çevre birimleri pazarındaki ürün yelpazesini genişleten markalar, son dönemde genç oyuncuların konforunu ve sağlığını ön planda tutan alternatiflere ağırlık veriyor. Bu kapsamda geliştirilen yeni model, özellikle küçük yaştaki kullanıcıların kulak sağlığını korumayı hedefleyen özel donanımsal tedbirlerle donatıldı. Piyasaya sürülmeye hazırlanan bu özel seri, çocukların kafa yapısına tam uyum sağlayan ölçüleriyle dikkat çekiyor.",
-      "Cihazın en dikkat çekici özelliklerinin başında, işitme kaybı riskini önlemek amacıyla entegre edilen 85 dB ses sınırlandırma mekanizması geliyor. Bu akustik sınır, çocukların ses seviyesini istemsizce çok yüksek düzeylere çıkarmasının önüne geçerek güvenli bir deneyim vaat ediyor. Aynı zamanda kablosuz bağlantı teknolojisi, oyun seansları sırasında hareket kısıtlamalarını ortadan kaldırarak kullanım kolaylığı artırıyor.",
-      "Ergonomi ve hafiflik odaklı malzeme tercihleri, uzun süreli kullanım senaryolarında bile baş ve boyun bölgesinde oluşabilecek yorgunluğu en aza indiriyor. Çocukların hassas kulak çevreleri hesaba katılarak seçilen yastıklama malzemeleri ve kafa bandı yapısı, uzun soluklu eğlence maratonlarında konforu standart seviyenin üzerine taşıyor. Ses kalitesinden ödün vermeden güvenlik standartlarını yakalayan bu cihaz, ebeveynlerin de gönül rahatlığıyla tercih edebileceği alternatifler arasında yerini alıyor."
-    ],
-    "editorNote": "85 dB ses sınırı ve hafif gövdesiyle çocukların işitme sağlığını korumayı amaçlayan kulaklık raflardaki yerini alıyor.",
-    "refreshedAt": "2026-10-18T20:13:43.083Z",
-    "gorselKaynak": {
-      "yazar": "玄史生",
-      "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:HyperX_booth,_Taipei_Game_Show_20190127a.jpg"
-    },
-    "images": [
-      "https://img.chip.com.tr/rcman/Cw820h461q95gm/storage/files/images/2026/10/14/untitled-1-kh6t.jpg",
-      "https://img.chip.com.tr/rcman/Cw820h461q95gm/storage/files/images/2026/10/14/2-tltj.jpg"
-    ],
-    "imagesKaynak": "https://www.chip.com.tr/galeri/hyperx-cloud-mini-wireless-inceleme_184630.html",
-    "gorselDeneme": "2026-10-28T04:49:40.508Z",
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/HyperX_booth%2C_Taipei_Game_Show_20190127a.jpg/1280px-HyperX_booth%2C_Taipei_Game_Show_20190127a.jpg",
-      "foto": true
     }
   },
   {
