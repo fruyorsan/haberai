@@ -153,12 +153,50 @@ const KONU_KARSILIKLARI = {
   kar: "snow",
   yağmur: "rain",
   sıcaklık: "temperature",
+  // Teknoloji alt-konuları: kapak havuzunda "devre kartı" dışındaki sahneler
+  // (kulaklık, hoparlör, sunucu, klavye...) ancak bu köprüyle eşleşiyor.
+  bluetooth: "bluetooth wireless",
+  kulaklık: "headphones earbuds headset",
+  hoparlör: "loudspeaker speaker",
+  kablosuz: "wireless",
+  çip: "chip semiconductor",
+  işlemci: "processor cpu",
+  batarya: "battery",
+  şarj: "charger charging",
+  ekran: "screen display",
+  kamera: "camera",
+  wifi: "wifi router",
+  tablet: "tablet",
+  konsol: "console",
+  klavye: "keyboard",
+  monitör: "monitor display",
+  sunucu: "server",
+  veritabanı: "database",
+  // Yazılım / arayüz konuları. Bunlar olmadan "menü çubuğu" haberiyle
+  // "devre kartı" fotoğrafı arasında hiçbir köprü kurulamıyordu.
+  uygulama: "app application software",
+  arayüz: "interface ui",
+  menü: "menu menubar",
+  işletim: "operating system os",
+  güncelleme: "update",
+  sürüm: "version release",
+  dizüstü: "laptop notebook",
+  masaüstü: "desktop",
+  bulut: "cloud",
+  veri: "data",
+  macos: "macos macbook imac",
+  ios: "ios iphone",
+  android: "android",
+  iphone: "iphone",
+  ipad: "ipad",
+  macbook: "macbook",
+  imac: "imac",
 };
 
 // Marka → ürün ailesi. Commons dosya adları çoğu zaman ürün ailesini yazar.
 const MARKA_KARSILIKLARI = {
   samsung: "galaxy",
-  apple: "iphone ipad mac",
+  apple: "iphone ipad mac macbook imac macos",
   google: "pixel",
   microsoft: "windows xbox surface",
   meta: "facebook instagram whatsapp",
@@ -224,11 +262,41 @@ function sorguParcalari(metin) {
 
 /** Başlık/etiketlerden özel adlar ve konu sözcükleri. */
 function baslikParcalari(article) {
-  const metin = `${article?.title || ""} ${(Array.isArray(article?.tags) ? article.tags : []).join(" ")}`;
+  const metin = [
+    article?.title || "",
+    (Array.isArray(article?.tags) ? article.tags : []).join(" "),
+    // Özet, başlığı kısa/genel olan haberlerde konuyu netleştirir
+    // (ör. "Apple yeni özelliği duyurdu" → özetteki "macOS", "menü çubuğu").
+    article?.summary || "",
+  ].join(" ");
   return kelimeler(kisaltmalariAc(metin)).filter(
     (p) => p.length >= 4 && !TR_GENEL.has(p) && !/^\d+$/.test(p)
   );
 }
+
+// Yazılım/arayüz haberlerinde "devre kartı", "anakart", "çip" gibi donanım
+// yakın çekimleri konuyu anlatmıyor. Bu kareler yalnızca haber gerçekten
+// donanımdan bahsediyorsa kabul edilir.
+const YAZILIM_KONU =
+  /(yazilim|uygulama|arayuz|guncelleme|surum|beta|isletim|macos|ipados|ios|android|windows|chrome|tarayici|bulut|algoritma|yazilimci|programlama|kodlama|menu cubugu|menu bar|abonelik)/;
+const DONANIM_KONU =
+  /(cip|islemci|gpu|cpu|ram|bellek|anakart|devre|donanim|ekran karti|sogutucu|batarya|sarj|ssd|hdd|usb|port|klavye|mouse|monitor|hoparlor|kulaklik|sensor|modem)/;
+const DONANIM_GORSEL =
+  /(circuit|pcb|microchip|motherboard|mainboard|logic board|semiconductor|processor|cpu|gpu|hard drive|harddisk|hdd|ssd|ram|chip|electronic|solder)/;
+
+/** Haber yazılım/arayüz odaklı mı (ve belirgin bir donanım konusu değil mi)? */
+export function yazilimKonusuMu(article) {
+  const metin = sadeles(
+    [
+      article?.title || "",
+      article?.gorselSorgu || "",
+      (Array.isArray(article?.tags) ? article.tags : []).join(" "),
+      article?.summary || "",
+    ].join(" ")
+  );
+  return YAZILIM_KONU.test(metin) && !DONANIM_KONU.test(metin);
+}
+
 
 // Sözlük anahtarları da metinle aynı biçime getirilir ("yangın" → "yangin").
 const KONU_HARITA = new Map(
@@ -285,17 +353,57 @@ export function stokEkUygunMu(article, url) {
   // "thumbnail", "world_globe" gibi konu taşımayan dosyalar gösterilmez.
   if (!dosya.length) return false;
 
+  const havuz = konuHavuzu(article);
+  if (!havuz.length) return true;
+
+  return dosya.some((p) => havuz.some((k) => benzer(p, k)));
+}
+
+/** Haberin görsel sorgusu + başlığından çıkan konu sözcükleri (İngilizce köprü dahil). */
+function konuHavuzu(article) {
   // Eski kayıtlarda görsel sorgusu olmayabilir; cezalandırma.
   const sorgu = sorguParcalari(article?.gorselSorgu);
   const baslik = baslikParcalari(article);
-  const havuz = [
+  return [
     ...sorgu,
     ...konuKarsiliklari(baslik),
     ...markaKarsiliklari([...sorgu, ...baslik]),
     ...baslik,
   ];
+}
 
-  if (!havuz.length) return true;
-
-  return dosya.some((p) => havuz.some((k) => benzer(p, k)));
+/**
+ * Haber konusu ile bir görselin dosya adı/açıklaması arasındaki örtüşme.
+ *
+ * Kategori sahne havuzunda (src/kapak-havuz.js) aynı kategorideki kareler
+ * arasından HABERE EN YAKIN olanı seçmek için kullanılır. Eşleşme yoksa 0
+ * döner; 0 puanlı kare kapak olarak KULLANILMAZ (Apple/Mac yazılım haberi →
+ * devre kartı hatası). Havuzun kendi kategorisi doğru olması tek başına
+ * yeterli değildir: kare, haberin konusundan en az bir sözcükle bahsetmelidir.
+ *
+ * @param {object} article   Haber kaydı (title, tags, gorselSorgu, summary).
+ * @param {string} dosyaAdi  Havuz kaydının dosya adı / adresi.
+ * @param {string} aciklama  Varsa İngilizce açıklama (Commons ImageDescription).
+ * @returns {number} Eşleşen konu sözcüğü sayısı (0 = alakasız).
+ */
+export function konuUyumPuani(article, dosyaAdi, aciklama = "") {
+  const havuz = konuHavuzu(article);
+  if (!havuz.length) return 0;
+  const ad = dosyaParcalari(dosyaAdi);
+  if (!ad.length) return 0;
+  // Açıklama da dosya adı gibi değerlendirilir: "Close-up of a VHS Player
+  // Circuit Board" gibi kareler açıklamada konuyu daha net söylüyor.
+  const aciklamaParcalari = kelimeler(aciklama).filter(
+    (p) => p.length >= 3 && !DOSYA_GENEL.has(p) && !/^\d+$/.test(p)
+  );
+  const parcalar = [...new Set([...ad, ...aciklamaParcalari])];
+  let puan = 0;
+  for (const p of parcalar) {
+    if (havuz.some((k) => benzer(p, k))) puan++;
+  }
+  if (!puan) return 0;
+  // Yazılım haberi + donanım yakın çekimi: dosya adında "macbook" geçse bile
+  // "menü çubuğu" haberine anakart fotoğrafı kapak olmaz.
+  if (yazilimKonusuMu(article) && DONANIM_GORSEL.test(parcalar.join(" "))) return 0;
+  return puan;
 }

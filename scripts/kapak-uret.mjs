@@ -36,7 +36,8 @@ import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 import { collectImageCandidates } from "../src/gorsel.js";
 import { stokGorseller, markaAdi, afetMi } from "../src/stok-gorsel.js";
-import { havuzAdaylari } from "../src/kapak-havuz.js";
+import { havuzAdaylari, kareUyumPuani, havuzEnIyiUyum } from "../src/kapak-havuz.js";
+import { konuUyumPuani, yazilimKonusuMu } from "../site/src/lib/gorsel-uygun.js";
 import { kartTaban } from "./kapak-kart.mjs";
 
 const KOK = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -97,6 +98,11 @@ const sadeceStokKaynak = process.argv.includes("--stokkaynak");
 // haberleri hedefler. Kaynak site fotoğrafları artık kullanılmadığı için bu
 // arşiv CC0/kamu malı stoğa, AI üretimine veya tasarım kartına taşınır.
 const sadeceUzak = process.argv.includes("--uzak");
+// --havuz: kapağı kategori sahne havuzundan gelen haberleri, YALNIZCA daha
+// yakın konulu bir havuz karesi varsa yeniden üretir. Eski kapaklarda
+// "bluetooth haberi → rastgele devre kartı" gibi eşleşmeleri onarır; alakasız
+// karelerin toplu hâlde yeniden üretilip dosya çöpü oluşturmasını engeller.
+const sadeceHavuz = process.argv.includes("--havuz");
 // --varyantsiz: -480 ve -sosyal kopyalarını üretme (arşiv toplu yenilemesi).
 const varyantsiz = process.argv.includes("--varyantsiz") || sadeceUzak;
 // --eski: sıra seçiminde en eski haberden başla (arşiv göçü; CI taze turlarıyla
@@ -134,6 +140,23 @@ function aktifIdler() {
 const aktif = aktifIdler();
 const esik = gun > 0 ? Date.now() - gun * 86400000 : 0;
 
+/**
+ * Mevcut kapak yerel sahne havuzundan mı geliyor ve haberle hiçbir konu
+ * sözcüğü örtüşmüyor mu? (ör. Apple/Mac yazılım haberi → devre kartı)
+ *
+ * Böyle bir kapak `--zorla` olmadan da yeniden üretilir; aksi hâlde hatalı
+ * kare, haber arşivde kaldığı sürece yerinde kalır. Yalnızca FOTOĞRAF
+ * kapaklar denetlenir: tasarım kartlarında `kaynak` alanı eski fotoğrafı
+ * hatırlatıyor olabilir, bu onların yeniden üretilmesini gerektirmez.
+ */
+function alakasizHavuzKapagi(a) {
+  if (a?.kapak?.foto === false) return false;
+  const kaynak = String(a?.kapak?.kaynak || "");
+  if (!kaynak || /^https?:/i.test(kaynak) || /^ai:/i.test(kaynak)) return false;
+  if (kaynak.includes("/") || !/\.(jpe?g|png|webp)$/i.test(kaynak)) return false;
+  return kareUyumPuani(a, kaynak) === 0;
+}
+
 const sirali = articles
   .filter((a) => {
     if (!a || !a.id) return false;
@@ -153,9 +176,30 @@ const sirali = articles
       return /wikimedia\.org/i.test(String(a.image || ""));
     }
     if (sadeceUzak) {
-      // Yerel kapak dosyası olmayan, başka bir sitenin adresini gösteren kapak.
+      // Hedef: fotoğrafı BİZİM havuzumuzdan gelmeyen her kapak.
+      //   (a) hâlâ başka bir sitenin adresini gösteren kapak (hotlink), veya
+      //   (b) yerele indirilmiş ama taban fotoğrafı uzak bir adresten gelmiş
+      //       kapak (yayıncının kendi fotoğrafı, Commons karesi ya da o
+      //       kareden üretilmiş tasarım kartı).
+      // İkisi de "kare bizim değil" demek: telif ve alaka riski taşır.
+      // AI üretimi ve görsel ajanın bilinçli seçimi korunur.
       const adres = String(a.image || "");
-      return /^https?:\/\//i.test(adres) && !adres.startsWith(`${URL_TABANI}/`);
+      if (/^https?:\/\//i.test(adres) && !adres.startsWith(`${URL_TABANI}/`)) return true;
+      if (!a.kapak || a.kapak.ajan) return false;
+      const kaynak = String(a.kapak.kaynak || "");
+      if (/^ai:/i.test(kaynak)) return false;
+      return /^https?:\/\//i.test(kaynak);
+    }
+    if (sadeceHavuz) {
+      // Onarım turu: yalnızca kapağı yerel sahne havuzundan gelen ve kategoride
+      // HABERE DAHA YAKIN bir kare bulunan haberler. Mevcut kapak zaten en iyi
+      // eşleşmeyse ya da hiç eşleşme yoksa dokunulmaz; böylece "devre kartı
+      // yerine yine devre kartı" üretip dosya çöpü oluşmaz.
+      if (!a.kapak || a.kapak.foto === false || a.kapak.ajan) return false;
+      const kaynak = String(a.kapak.kaynak || "");
+      if (!kaynak || /^https?:/i.test(kaynak) || /^ai:/i.test(kaynak)) return false;
+      if (kaynak.includes("/") || !/\.(jpe?g|png|webp)$/i.test(kaynak)) return false;
+      return havuzEnIyiUyum(a, a.category) > kareUyumPuani(a, kaynak);
     }
     if (sadeceStokKaynak) {
       // Yerel kapak dosyası olup taban fotoğrafı Wikimedia stoğu olan her kapak
@@ -171,7 +215,14 @@ const sirali = articles
     if (sadeceKapakli) {
       return Boolean(a.kapak);
     }
-    if (!zorla && typeof a.image === "string" && a.image.startsWith(`${URL_TABANI}/`)) return false;
+    if (
+      !zorla &&
+      typeof a.image === "string" &&
+      a.image.startsWith(`${URL_TABANI}/`) &&
+      !alakasizHavuzKapagi(a)
+    ) {
+      return false;
+    }
     if (!a.image) return false;
     if (gun > 0) {
       const t = Date.parse(a.publishedAt || a.generatedAt || 0);
@@ -662,11 +713,11 @@ async function aiGorselUret(a) {
       signal: AbortSignal.timeout(15000),
     });
     if (r.status === 429 || r.status === 402) {
-      if (debug) console.log(`   · ${a.id} Llama kota doldu: HTTP ${r.status}`);
-      aiKotaDoldu = true;
-      return null;
-    }
-    if (!r.ok && debug) {
+      // Prompt modeli (Llama) kotası görsel modelinden bağımsızdır. Burada
+      // turu kapatmak, görsel kotası boşken bile kapak üretimini durduruyordu;
+      // bunun yerine aşağıdaki yedek İngilizce istemle devam edilir.
+      if (debug) console.log(`   · ${a.id} Llama kotası dolu: HTTP ${r.status} (yedek istem)`);
+    } else if (!r.ok && debug) {
       console.log(`   · ${a.id} Llama HTTP ${r.status}: ${(await r.text()).slice(0, 120)}`);
     } else if (r.ok) {
       const j = await r.json();
@@ -1202,7 +1253,10 @@ async function kapakUret(a) {
   if (elleGorsel) {
     // Elle seçilen görsel: diğer adaylar hiç denenmez (müstehcen kapak değişimi).
     adayEkle(elleGorsel, "elle");
-  } else if (!kartaZorla) {
+  } else if (!kartaZorla && !sadeceUzak) {
+    // `--uzak` turunda bu blok BİLİNÇLİ olarak atlanır: o turun amacı zaten
+    // "fotoğrafı uzak kaynaktan gelen kapağı değiştir" demek. Eski kare aday
+    // olarak geri gelirse hiçbir şey değişmez (eskiden tam olarak bu oluyordu).
     // KAYNAK SİTENİN FOTOĞRAFLARI KULLANILMAZ.
     // Neden: (1) ajans telifli olabiliyor (AA, Getty, Reuters...), (2) yayıncının
     // haber kartı/başlık plakası kapak olunca "bu ne alaka" görünümü doğuyor.
@@ -1379,14 +1433,19 @@ if (!taban && !kartaZorla) {
     };
 
     // 1) MARKA / ÖZEL AD: yalnızca Commons kategori üyeliği doğrularsa.
+    //    Yazılım/arayüz haberlerinde marka fotoğrafı (Apple Park, mağaza, logo)
+    //    haberi anlatmıyor; o haberlerde AI görseli veya tasarım kartı daha
+    //    doğru. Donanım/ürün haberlerinde marka fotoğrafı değerlidir.
     const marka = markaAdi(a.title);
-    if (marka) {
-      const adaylar = await stokGorseller([marka], {
-        adet: 4,
-        afet: afetMi(a.title, a.summary),
-        marka,
-        kullanilan: kullanilanKapaklar,
-      });
+    if (marka && !yazilimKonusuMu(a)) {
+      const adaylar = (
+        await stokGorseller([marka], {
+          adet: 4,
+          afet: afetMi(a.title, a.summary),
+          marka,
+          kullanilan: kullanilanKapaklar,
+        })
+      ).filter((g) => konuUyumPuani(a, g.dosya || g.sayfa || g.url) >= 1);
       await kabulEt(adaylar, marka);
     }
 
@@ -1401,7 +1460,11 @@ if (!taban && !kartaZorla) {
         adet: 6,
         kullanilan: kullanilanKapaklar,
         offset: tohum,
+        article: a,
       });
+      if (debug && !adaylar.length) {
+        console.log(`   · ${a.id} havuzda haberle örtüşen kare yok (konu kapısı)`);
+      }
       await kabulEt(adaylar, String(a.category || "kategori"));
     }
   } catch (err) {
@@ -1409,7 +1472,7 @@ if (!taban && !kartaZorla) {
   }
 }
 
-  if (!taban && !kartaZorla) {
+  if (!taban && !kartaZorla && !sadeceHavuz) {
     const aiSonuc = await aiGorselUret(a);
     if (aiSonuc) {
       const bilgi = await sharp(aiSonuc.veri).metadata();
@@ -1422,7 +1485,7 @@ if (!taban && !kartaZorla) {
     }
   }
 
-  if (!taban && !kartaZorla && !sadeceStokKaynak && FOTO_KATEGORI.has(String(a.category || ""))) {
+  if (!taban && !kartaZorla && !sadeceStokKaynak && !sadeceHavuz && FOTO_KATEGORI.has(String(a.category || ""))) {
     try {
       const ov = await openverseAra(sorgu);
       if (ov) {
@@ -1507,8 +1570,11 @@ if (!taban && !kartaZorla) {
     atif: yeniAtif,
     foto: fotoVar,
     // Kapakta gerçekten kullanılan fotoğraf (sonraki yeniden üretimlerde ve
-    // kapak temizliğinde `image` alanına geri yazılır).
-    kaynak: secilenUrl || a.kapak?.kaynak || a.image,
+    // kapak temizliğinde `image` alanına geri yazılır). Tasarım kartında
+    // fotoğraf yoktur: eski fotoğrafın kaynağını "kullanılmış" gibi taşımak
+    // hem havuz sayacını şişiriyor hem de kartın altında yanlış kaynak
+    // bırakıyordu.
+    kaynak: fotoVar ? secilenUrl || a.kapak?.kaynak || a.image : null,
   };
 }
 
@@ -1745,7 +1811,13 @@ await havuz(hedefler, paralel, async (a) => {
     if (!dry) {
       a.image = sonuc.url;
       const oncekiAjan = a.kapak?.ajan;
-      a.kapak = { v: 3, kaynak: sonuc.kaynak || eski, foto: sonuc.foto };
+      // Tasarım kartında fotoğraf yok: `kaynak` alanına eski kapağın kendi
+      // yolunu yazmak anlamsız (ve havuz sayacını yanıltıyor).
+      a.kapak = {
+        v: 3,
+        kaynak: sonuc.kaynak || (sonuc.foto ? eski : null),
+        foto: sonuc.foto,
+      };
       if (oncekiAjan) a.kapak.ajan = oncekiAjan;
       if (sonuc.atif) a.gorselKaynak = sonuc.atif;
     }

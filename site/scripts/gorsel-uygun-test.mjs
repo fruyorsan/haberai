@@ -1,7 +1,11 @@
 // Gövde içi stok fotoğraf uygunluk denetiminin küçük regresyon testi.
 // Çalıştırma: npm run test:gorsel
 import assert from "node:assert/strict";
-import { stokEkUygunMu } from "../src/lib/gorsel-uygun.js";
+import {
+  stokEkUygunMu,
+  konuUyumPuani,
+  yazilimKonusuMu,
+} from "../src/lib/gorsel-uygun.js";
 
 const wikimedia = (dosya) =>
   `https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/${encodeURIComponent(dosya)}/1280px-${encodeURIComponent(dosya)}`;
@@ -96,4 +100,41 @@ for (const o of ornekler) {
   gecen++;
 }
 
+// KAPAK HAVUZU ALAKA TESTLERİ (5 Kasım 2026):
+// Apple/Mac yazılım haberine "devre kartı" kapak seçilmesi hatasının
+// tekrarlamaması için konu puanı ve yazılım/donanım ayrımı sınanır.
+const appleYazilim = {
+  title: "Apple, Canlı Etkinlikleri Menü Çubuğuna Taşıyarak Mac Kullanımını Hızlandırdı",
+  tags: ["apple", "macos", "canli etkinlikler", "menu bar", "beta"],
+  summary:
+    "Apple, macOS geliştirici betasında Canlı Etkinlikler'i menü çubuğuna entegre etti. Yeni arayüz Apple Silicon destekli eski modellerde çalışacak.",
+  gorselSorgu: "macOS menu bar live events",
+};
+
+const iphoneDonanim = {
+  title: "Apple iPhone 18 serisini 2027 başında A20 işlemciyle yeniliyor",
+  tags: ["apple", "iphone", "islemci"],
+  summary: "Yeni iPhone modellerinde A20 çipi ve üçlü kamera bekleniyor.",
+  gorselSorgu: "Apple iPhone 18 A20 chip",
+};
+
+assert.equal(yazilimKonusuMu(appleYazilim), true, "Apple/Mac menü çubuğu yazılım haberi");
+assert.equal(yazilimKonusuMu(iphoneDonanim), false, "iPhone işlemci haberi donanım haberi");
+
+assert.equal(
+  konuUyumPuani(appleYazilim, "Circuit-board-2.jpg", "Close-up of a VHS Player Circuit Board."),
+  0,
+  "Apple yazılım haberine devre kartı 0 puan almalı"
+);
+assert.equal(
+  konuUyumPuani(appleYazilim, "MacBook Pro logic board.jpg", "MacBook logic board with chips."),
+  0,
+  "Apple yazılım haberine anakart yakın çekimi 0 puan almalı"
+);
+assert.ok(
+  konuUyumPuani(iphoneDonanim, "Apple iPhone 18 front.jpg", "An Apple iPhone smartphone.") >= 1,
+  "iPhone donanım haberi iPhone fotoğrafıyla eşleşmeli"
+);
+
 console.log(`✓ ${gecen}/${ornekler.length} görsel uygunluk testi geçti.`);
+console.log("✓ 5 kapak alaka testi geçti.");
