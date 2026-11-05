@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05T06:23:59.387Z",
+  "updatedAt": "2026-11-05T06:45:33.211Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5857,
-  "aday": 5857,
-  "uygun": 3802,
-  "secilen": 3713,
+  "toplamHaber": 5858,
+  "aday": 5858,
+  "uygun": 3803,
+  "secilen": 3714,
   "red": {
     "özet gövdeyle aynı": 116,
     "editör notu özetle aynı": 8,
@@ -86,12 +86,12 @@
       "twin": "CD Projekt RED, Cyberpunk 2 için multiplayer modu hazırlıklarına başladı"
     },
     {
-      "title": "Meteoroloji 19 il için uyarı verdi: Muğla'da turuncu kod alarmı",
-      "twin": "Meteoroloji, 19 İl İçin Gök Gürültülü Sağanak Uyarısı Yayınladı"
-    },
-    {
       "title": "Apple, iOS 27.2 güncellemesiyle Siri ve FaceTime özelliklerini güncelledi",
       "twin": "Apple, iOS 27.2 ile selfie üzerinden yaş doğrulama dönemini başlattı"
+    },
+    {
+      "title": "Meteoroloji, 19 İl İçin Gök Gürültülü Sağanak Uyarısı Yayınladı",
+      "twin": "Meteoroloji 19 il için uyarı verdi: Muğla'da turuncu kod alarmı"
     },
     {
       "title": "İran, ABD ile müzakere masasına oturmak için 7 maddelik şart listesini sundu",
@@ -110,8 +110,8 @@
       "twin": "Fenerbahçe Yönetimi İsmail Kartal'ın İstifasını Onayladı"
     },
     {
-      "title": "Kuzey Kore, Binance'den 6,3 Milyar Dolarlık Dijital Varlık Çaldı",
-      "twin": "Kuzey Kore 6,3 milyar dolarlık Binance siber saldırısını reddetti"
+      "title": "Sony Yeni LYTIA 720 Sensörü 50 MP ile Gece Çekimlerini Yarıyor",
+      "twin": "Sony mobil kameralar için 50 MP LYTIA 720 sensörünü duyurdu"
     }
   ],
   "days": {
@@ -686,6 +686,7 @@
       "f8a0b434e80f1b8a",
       "8f4d11d7e23b47a1",
       "a650bc2c1d092da8",
+      "e7ba8e07cc342c4c",
       "fb864d3f2811a6cb",
       "60b69ff88775ca4c",
       "4cb739a6086fbac8",
@@ -760,7 +761,6 @@
       "09ddb4dada9e7e9c",
       "9f5b28ffc0ffd7e4",
       "f0eca3a0a2bce2ef",
-      "e7ba8e07cc342c4c",
       "14a8dd9c67a7a934",
       "2cd6a60c2d51eacb"
     ],
@@ -1138,7 +1138,6 @@
       "c2355a5d9e80efdb",
       "a237063469ced927",
       "2ea8794129fadddd",
-      "e6a0c508d48456b3",
       "dc1242eddb0acfe9",
       "5a987797a6a1fad0",
       "e4525b857404cc29",
@@ -1164,7 +1163,6 @@
       "f8291c547c63826a",
       "35eb92cb56f248f6",
       "5f13b95359766f19",
-      "75af0c8dfc36fd4f",
       "72df1da5ead09e91",
       "0758fbe124fd0649",
       "9ae3dac4892cb2f5",
@@ -1176,6 +1174,7 @@
       "8a75d57894bc2d52",
       "1335368c5773f9f2",
       "9c3402e9727c6a96",
+      "75af0c8dfc36fd4f",
       "11895c25a53be2fb",
       "6d2f0bbcee5d2453",
       "1b05c10959fb99ec",
@@ -1202,6 +1201,7 @@
       "2805675f9f1b0946",
       "fbec63739df0b0d2",
       "862cc8b90fdfd822",
+      "e6a0c508d48456b3",
       "d63ea24eb99a20fd",
       "5fe1e2d31d271359",
       "e259c8cf0abc9082"
@@ -1214,6 +1214,7 @@
       "43e6aacdf9f02967",
       "b6d5263ff6cf7df9",
       "6e2e451729fa847c",
+      "8f1f772bbb5fe911",
       "5053a03371a92ffe",
       "15d6a45cebdbb911",
       "55086d35e76f64f4",
@@ -1221,7 +1222,6 @@
       "0fa6af72b4886a02",
       "b4f0451f9f84e973",
       "f90cf0486b5cfaa7",
-      "8f1f772bbb5fe911",
       "e2ce4ad6b6bd54a0",
       "25388c788817faa6",
       "15c1fd010bc0e7f9",
@@ -1240,6 +1240,7 @@
       "b02e44df9cea9d6d",
       "9fa89f884ef1e03f",
       "bd0a2de69a611a42",
+      "0cd76a67591a5901",
       "6d044706f7e3abec",
       "27f831f85740f826",
       "a61d699d7be31dcb",
@@ -4171,6 +4172,7 @@
     "3723fa1d1341b882",
     "6e2e451729fa847c",
     "d82818c1184869ab",
+    "8f1f772bbb5fe911",
     "5916ec6e788cd4e2",
     "c91b37cb43de441a",
     "a9179129bea2a097",
@@ -4375,7 +4377,6 @@
     "ac7dd956cca3d6df",
     "9b2fe4b31264ce5e",
     "f156ce1d02cc345c",
-    "8f1f772bbb5fe911",
     "e2ce4ad6b6bd54a0",
     "57875d22505da81b",
     "d1091700aa3f81ba",
@@ -4409,7 +4410,6 @@
     "068cc02ed6734f50",
     "c3ddadb0a8b6d32e",
     "9a2a9c9d53760055",
-    "e6a0c508d48456b3",
     "8a21d61b9b94848c",
     "a8050e3861ab64dd",
     "f2f7a86f054c8975",
@@ -4490,6 +4490,7 @@
     "a650bc2c1d092da8",
     "579ee7f3e7c99873",
     "e95661ab8c680d25",
+    "e7ba8e07cc342c4c",
     "f7002ecb866a378d",
     "16b117ced6e63e45",
     "30c7aaeb29feac31",
@@ -4758,7 +4759,6 @@
     "6c89cb0ed13b29a8",
     "5f13b95359766f19",
     "52fcc23ca4f01041",
-    "75af0c8dfc36fd4f",
     "1211717b56ebb7a7",
     "f04a758491f678da",
     "d3271a13334d2065",
@@ -4989,6 +4989,7 @@
     "d33d24266c27fad8",
     "908b6194caeae1f4",
     "ba58a6c06b6ee600",
+    "75af0c8dfc36fd4f",
     "2d6da96661790e88",
     "7c3951d6177679ae",
     "88b2a2a92e2fd391",
@@ -5196,6 +5197,7 @@
     "0e836d30c09d678f",
     "07af30f03dc91f73",
     "7a94ef1983810736",
+    "0cd76a67591a5901",
     "bbe0dfe4e0f9f343",
     "11077860e92282a6",
     "a871325fc9b24520",
@@ -7535,6 +7537,7 @@
     "a98440cac2f5d856",
     "09ddb4dada9e7e9c",
     "040647c51b8f39b7",
+    "e6a0c508d48456b3",
     "09bc1ee5375acd32",
     "d63ea24eb99a20fd",
     "acfffa60fed1ff48",
@@ -7562,7 +7565,6 @@
     "7b259ea807e3f1bd",
     "fa3fe899aefb9cc2",
     "6bda604a7068cbf5",
-    "e7ba8e07cc342c4c",
     "108c85b1c0d2e413",
     "c7d5ecf013431bdf",
     "a003959a04e53d81",
