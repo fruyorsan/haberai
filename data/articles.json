@@ -1,5 +1,55 @@
 [
   {
+    "id": "c9464ac83e8d1d80",
+    "title": "Bluetooth SIG, HDT ile veri aktarımını 4 kat artırdı",
+    "slug": "bluetooth-sig-hdt-veri-aktarim-4kat-artirildi",
+    "summary": "Bluetooth Special Interest Group (SIG), Bluetooth 7.0’un isteğe bağlı özelliği olarak High Data Throughput (HDT) teknolojisini kabul etti. HDT, düşük enerji bağlantılarında saniyede 2 Mbps’ten 7,5 Mbps’e kadar hız yükseltiyor, bu da kablosuz ses kalitesinde çarpıcı bir artış vaat ediyor.",
+    "keyPoints": [
+      "HDT, Bluetooth LE’de veri hızını 2 Mbps’ten 7,5 Mbps’e çıkarıyor",
+      "Yeni teknoloji 2027’de ilk cihazlarda kullanılmaya başlıyor",
+      "HDT, akıllı saat, ev ve AR/VR cihazlarında enerji verimliliğini artırıyor"
+    ],
+    "body": [
+      "Bluetooth SIG, Bluetooth Core 7.0’da isteğe bağlı bir özellik olarak High Data Throughput (HDT) teknolojisini resmen kabul etti.",
+      "Bu artış özellikle kablosuz ses aktarımında öne çıkıyor. HDT sayesinde yüksek çözünürlüklü ve kayıpsız ses ile uzamsal ses, çok kanallı surround deneyimleri cihazlar arasında standart bir altyapı üzerinden gerçekleştirilebilecek.",
+      "Kulaklık üreticileri için HDT, üreticiye özel codec’lere bağlı kalmadan geniş bant genişliği sağlayarak farklı markalar arasında uyumluluğu artırma potansiyeli sunuyor. Aynı zamanda akıllı saatler ve fitness cihazları, sağlık verilerini telefonuna daha kısa sürede aktararak pil ömrünü uzatabilir.",
+      "HDT’nin etkisi ses ürünleriyle sınırlı kalmayacak; akıllı ev aksesuarları ve yazılım güncellemelerinde de veri iletim süresini kısaltarak enerji tüketimini düşürecek. Artış, aynı miktarda verinin daha az enerjiyle gönderilmesini sağlayacak.",
+      "Teknoloji ayrıca artırılmış gerçeklik, sanal gerçeklik cihazları, akıllı gözlükler ve kişisel yapay zeka cihazları gibi geleceğin kablosuz ekipmanlarında da kullanılabilir. Bu alanda yüksek veri hızı, akıcı deneyimler için kritik olacak.",
+      "Bluetooth 7.0 kapsamında HDT isteğe bağlı olduğu için üreticilerin bu özelliği cihazlarına eklemesi zorunlu değil. Ancak, 2027’ye kadar HDT destekli ilk cihazların piyasaya çıkması bekleniyor. Bu zaman çizelgesi, teknoloji ekosisteminde yeni bir dönemin başlangıcını işaret ediyor."
+    ],
+    "comment": "HDT, Bluetooth 7.0’da saniyede 7,5 Mbps’lik hıza ulaşarak önceki sürüme göre dört kat artış sağlıyor. Bu yükselme, ses ve veri iletiminde enerji verimliliğini artırarak akıllı saat, ev ve AR/VR cihazlarının pil ömrünü uzatabilir. Öte yandan, isteğe bağlı yapı, üreticilerin özelliği benimsemesini zorunlu kılmadığı için geniş çaplı kabulü zaman alabilir.",
+    "editorNote": "Bluetooth 7.0’da HDT ile veri hızı dört kat artıyor; ses kalitesi ve enerji verimliliği bir üst seviyeye taşınacak. Ancak, özelliğin isteğe bağlı olması, teknolojinin yayılmasını…",
+    "tags": [
+      "Bluetooth",
+      "HDT",
+      "VeriHızı",
+      "AkıllıSaat",
+      "ARVR"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "bluetooth hdt technology",
+    "source": "Webrazzi",
+    "sourceUrl": "https://webrazzi.com/2026/11/05/bluetooth-un-veri-aktarim-hizi-yaklasik-dort-katina-cikiyor/",
+    "image": "/kapak/c9464ac83e8d1d80.webp",
+    "images": [
+      "https://cdn.webrazzi.com/uploads/2021/03/w-lazy-load-951.jpg"
+    ],
+    "publishedAt": "2026-11-05T10:00:00.000Z",
+    "generatedAt": "2026-11-05T10:06:46.298Z",
+    "breaking": true,
+    "kapak": {
+      "v": 3,
+      "kaynak": "teknoloji-vhs-player-circuit-board-2428.jpg",
+      "foto": true
+    },
+    "gorselKaynak": {
+      "yazar": "DiscoA340",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:VHS_Player_Circuit_Board.jpg"
+    }
+  },
+  {
     "id": "32dc70d90f904b28",
     "title": "TeamTalk, Bruno Fernandes'in Türkiye’deki Takipçilerini Açıklıyor",
     "slug": "teamtalk-bruno-fernandes-turkiye-takipcileri",
@@ -9057,7 +9107,6 @@
     "image": "/kapak/1814b70be5d97dbf.webp",
     "publishedAt": "2026-11-03T10:02:00.000Z",
     "generatedAt": "2026-11-03T10:03:30.126Z",
-    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": "teknoloji-electronics-pcb-circuit-board-003-511318-3351.jpg",
