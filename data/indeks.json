@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05T21:17:33.817Z",
+  "updatedAt": "2026-11-05T21:24:42.070Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5885,
-  "aday": 5885,
-  "uygun": 3830,
-  "secilen": 3741,
+  "toplamHaber": 5886,
+  "aday": 5886,
+  "uygun": 3831,
+  "secilen": 3742,
   "red": {
     "özet gövdeyle aynı": 116,
     "editör notu özetle aynı": 8,
@@ -482,8 +482,8 @@
       "54ceca5ecaba9f36",
       "2a2e017fb339b8b2",
       "d77b00fbf8f2b19a",
-      "ff6c7e08ec27ef2d",
       "e3b155f113484ebd",
+      "ff6c7e08ec27ef2d",
       "f243b95ea229aa39",
       "ccc6f00bfac1bd28"
     ],
@@ -2161,6 +2161,12 @@
       "9769ad698772aca5",
       "ce6470209059e6b6"
     ],
+    "2026-11-06": [
+      "b792f90d6d9a6af9",
+      "a49f25ad0c4a5ca1",
+      "62e98f163fb65dcd",
+      "2c5572d755be7ad0"
+    ],
     "2026-10-16": [
       "88afc4c46ff5a08a",
       "4b1d1e6b6fbbf60f",
@@ -3044,11 +3050,6 @@
       "adc99bb23e0fac0d",
       "3d2d25db73179711",
       "d2c44c0a127c52f4"
-    ],
-    "2026-11-06": [
-      "b792f90d6d9a6af9",
-      "a49f25ad0c4a5ca1",
-      "62e98f163fb65dcd"
     ],
     "2026-10-20": [
       "a569cb0ec87ffe82",
@@ -4253,6 +4254,7 @@
     "51d3f50d40c7add9",
     "29536e82da1bac41",
     "a67bcb09c7f84d83",
+    "b792f90d6d9a6af9",
     "4e57e6b28a1b0762",
     "de55277a3e269a39",
     "1676b3750aee07dc",
@@ -4485,7 +4487,6 @@
     "f8e0a716aa88bbc1",
     "8bf69f659feb55b6",
     "fe384e0f0d85d160",
-    "b792f90d6d9a6af9",
     "84c2c631281ebd06",
     "2d6a9d633c5beacc",
     "bbae35978204d8b2",
@@ -6201,7 +6202,6 @@
     "6716e7eaecb3a013",
     "35824f164941be06",
     "991a6a69ecd708f6",
-    "ff6c7e08ec27ef2d",
     "945cea0c8924fdb7",
     "f7a6d10f0c326064",
     "9e93fc6ef41eabb9",
@@ -6795,8 +6795,10 @@
     "646c3f497ac04198",
     "66f4e67d88132b98",
     "df9aaf02fe98de0f",
+    "2c5572d755be7ad0",
     "a67a057bb696987d",
     "bd959316c7ef123b",
+    "ff6c7e08ec27ef2d",
     "156335efa3d64889",
     "f086f955c0faa2be",
     "b843d4ee6af036fb",
