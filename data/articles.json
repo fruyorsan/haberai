@@ -1,5 +1,46 @@
 [
   {
+    "id": "049a9e44d3bef558",
+    "title": "OpenAI, GPT-6 Cyber ile 81 güvenlik açığı tespit etti",
+    "slug": "openai-gpt-6-cyber-81-guvenlik-acigi",
+    "summary": "OpenAI, siber güvenlik odaklı GPT-6 Cyber modelini tanıttı. Yeni sistem, Mozilla Firefox tarayıcısında 81 kritik güvenlik açığı belirledi. Ayrıca Linux ortamında 948 adet çalışır durumda exploit kodu üretti.",
+    "keyPoints": [
+      "GPT-6 Cyber, Firefox'ta 81 yüksek önemli açık buldu.",
+      "Model, Linux için 948 çalışan exploit geliştirdi.",
+      "Yapay zeka, güvenlik ekipleri için otomatik denetim sağlıyor."
+    ],
+    "body": [
+      "OpenAI, siber güvenlik alanındaki yeteneklerini bir üst seviyeye taşıyan GPT-6 Cyber modelini resmi olarak duyurdu. Şirketin bu adımı, yapay zekâdan sadece kod yazma aracı olarak değil, doğrudan sistem zafiyetlerini tespit eden bir güvenlik uzmanı olarak yararlanmaya yönelik stratejik bir hamle olarak öne çıkıyor. Modelin temel amacı, insan güvenlik ekiplerinin yoğunlaştığı karmaşık penetrasyon testlerini hızlandırmak ve ölçeklendirmek.",
+      "Yeni modelin performansı, Mozilla Firefox tarayıcısı üzerinde yapılan bağımsız testlerle kanıtlandı. GPT-6 Cyber, tarayıcının yapısında 81 adet yüksek önem düzeyinde güvenlik açığının varlığını tespit etti. Bu bulgular, modelin yalnızca teoretik riskleri değil, aktif olarak sömürülebilir zafiyetleri somut bir şekilde saptayabildiğini gösteriyor. 81 gibi yüksek bir sayı, yapay zekânın manuel test süreçlerine kıyasla ne kadar geniş bir alanı taramaya yetkin olduğunu ortaya koyuyor.",
+      "Soyut analizlerin ötesinde, modelin pratik uygulama kabiliyeti de göz ardı edilemez. OpenAI, GPT-6 Cyber'ın Linux tabanlı sistemler için 948 adet çalışır durumda exploit (sömürü kodu) geliştirdiğini açıkladı. Bu rakam, yapay zekânın sadece bir zayıflık tespitiyle yetinip rapor yazmadığını, aynı zamanda bu zayıflıkları istismar eden işlevsel kod parçaları üretebildiğini kanıtlıyor. Linux ekosistemindeki bu yoğunluk, sunucu tarafı güvenliği için doğrudan bir simülasyon ortamı sunuyor.",
+      "Bu gelişme, geleneksel siber güvenlik paradigmasını kökten değiştirme potansiyeli taşıyor. Geçmişte aylar süren manuel açıklık avcılığı süreçleri, GPT-6 Cyber sayesinde dakikalar veya saatler içine sıkıştırılabilir. Bu hız, şirketlerin güvenlik açıklarını keşfedip yamalamak için daha fazla zaman kazanması anlamına geliyor. Ancak bu durum, siber saldırganların da aynı araçları çok daha hızlı bir şekilde kullanabileceği endişesini beraberinde getiriyor.",
+      "GPT-6 Cyber'ın tanıtılması, yapay zekânın siber alanlardaki rolünün iki uçlu bir kılıç olarak konumlandığını netleştiriyor. Güvenlik uzmanları için oyunun kurallarını değiştiren bu teknoloji, savunma mekanizmalarının da sürekli güncellenmesini zorunlu kılıyor. Şirketler, kendi altyapılarını bu yeni nesil yapay zeka tehditlerine karşı hazırlıklı hale getirmeli ve otomatik denetim araçlarını stratejilerine entegre etmeli. Önümüzdeki dönemde, yapay zekâ destekli siber saldırı ve savunma yarışının daha da hızlanası bekleniyor."
+    ],
+    "comment": "Yapay zekânın siber savunmadaki rolü, artık teorik tartışmaların ötesine geçti. Firefox'ta tespit edilen 81 açık, modelin yalnızca bir asistan değil, aktif bir penetrasyon testeri aracı olduğunu kanıtlıyor. Bu durum, kurumsal IT departmanları için hem bir fırsat hem de acil bir risk anlamına geliyor. Rakip modellerle kıyaslandığında GPT-6 Cyber'ın ürettiği 948 exploit sayısı, savunma ekiplerinin elindeki yama sürecini hızlandırmayı zorunlu kılıyor. Eğer saldırı tarafları bu kapasiteyi ele geçirirse, savunulabilir sistem sayısı dramatik biçimde azalabilir.",
+    "editorNote": "81 Firefox açığı ve 948 Linux exploit, yapay zekânın siber dünyadaki ağırlığını gözler önüne seriyor. Savunma ekipleri, bu yeni nesil tarama hızına ayak uydurmak için süreçlerini…",
+    "tags": [
+      "OpenAI",
+      "GPT-6 Cyber",
+      "Siber Güvenlik",
+      "Firefox",
+      "Exploit",
+      "Yapay Zekâ"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "OpenAI GPT-6 Cyber interface",
+    "source": "CHIP Online",
+    "sourceUrl": "https://www.chip.com.tr/guncel/openai-siber-guvenlik-icin-gpt-6-cyber-modelini-duyurdu-firefoxta-81-acik-buldu_185129.html",
+    "image": "/kapak/049a9e44d3bef558.webp",
+    "publishedAt": "2026-11-06T06:13:00.000Z",
+    "generatedAt": "2026-11-06T06:17:58.100Z",
+    "breaking": true,
+    "kapak": {
+      "v": 3,
+      "kaynak": null,
+      "foto": false
+    }
+  },
+  {
     "id": "a310e55f18af4a7d",
     "title": "Opera GX, Sekme Bazlı Ses Kontrolünü %500 Yükseltiyor",
     "slug": "opera-gx-sekme-bazli-ses-kontrolu-500-yukseltiyor",
@@ -8172,7 +8213,6 @@
         "altyazi": "ABD Senato oturumları ve çoğunluk yarışı"
       }
     ],
-    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": null,
@@ -32999,14 +33039,14 @@
     "gorselDeneme": "2026-11-01T03:41:57.299Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145532.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145532.jpg",
       "foto": true
     },
     "gorselKaynak": {
       "yazar": "Wiki Farazi",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145540.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145532.jpg"
     }
   },
   {
@@ -136196,7 +136236,7 @@
       "yazar": "Wiki Farazi",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145532.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145541.jpg"
     },
     "gorselDeneme": "2026-10-28T04:46:35.718Z",
     "ekGorselDeneme": "2026-10-29T21:40:46.965Z",
@@ -136218,7 +136258,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145532.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145532.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145541.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145541.jpg",
       "foto": true
     }
   },
@@ -136323,7 +136363,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://kosovahaber.com/social/facebook/haber-108004-684e6d0bbdf8387487a427f49011fcfc.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -136373,7 +136413,7 @@
     "imagesKaynak": "https://www.chip.com.tr/guncel/amerikalilarin-korku-listesine-yapay-zeka-da-girdi_184816.html",
     "kapak": {
       "v": 3,
-      "kaynak": "https://img.chip.com.tr/rcman/Cw640h419q95gm/storage/files/images/2026/10/15/yapay-zekaya-asla-yaptirmamaniz-gereken-gereken-5-sey-e87u.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -136434,8 +136474,8 @@
     "gorselDeneme": "2026-10-28T04:46:36.549Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/FEMA_-_44669_-_Earthquake_damaged_buildings_in_California.jpg/1280px-FEMA_-_44669_-_Earthquake_damaged_buildings_in_California.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -136484,7 +136524,7 @@
     "gorselDeneme": "2026-10-28T04:46:36.518Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://www.ortadogugazetesi.com/uploads/upload-image/2026/10/1792664974900-image.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -136539,7 +136579,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://ares.shiftdelete.net/2026/10/sony-yeni-ps5-guncellemesi-ile-jailbreak-yarisini-kizistiriyor.webp",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -136594,8 +136634,8 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Donald_Oregon_fire_station.JPG/1280px-Donald_Oregon_fire_station.JPG",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -136648,8 +136688,8 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Gemini_%28Atlas_coelestis%29.jpg/1280px-Gemini_%28Atlas_coelestis%29.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -136685,16 +136725,16 @@
     "publishedAt": "2026-10-22T09:28:30.000Z",
     "generatedAt": "2026-10-22T09:51:27.323Z",
     "gorselKaynak": {
-      "yazar": "Evan-Amos",
-      "lisans": "Kamu malı",
-      "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Sony-PlayStation-3-2001A-wController-L.jpg"
+      "yazar": "GeorgeM2011",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:PlayStation_Camera_Mk2_on_TV.jpg"
     },
     "gorselDeneme": "2026-10-28T04:46:36.694Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://imgrosetta.webtekno.com/file/694229/694229-700x400.jpg",
-      "foto": false
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/PlayStation_Camera_Mk2_on_TV.jpg/1280px-PlayStation_Camera_Mk2_on_TV.jpg",
+      "foto": true
     }
   },
   {
@@ -136730,16 +136770,16 @@
     "publishedAt": "2026-10-22T09:25:26.000Z",
     "generatedAt": "2026-10-22T09:32:24.317Z",
     "gorselKaynak": {
-      "yazar": "Brett Jordan",
-      "lisans": "CC BY 2.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:IPhone_4S_unboxing_17-10-11.jpg"
+      "yazar": "NeONBRAND neonbrand",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Smartphone_in_Hand_(Unsplash).jpg"
     },
     "gorselDeneme": "2026-10-28T04:46:36.568Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://im.haberturk.com/l/2026/10/22/ver1792659858/3921669/jpg/1200x628",
-      "foto": false
+      "kaynak": "mobil-smartphone-in-hand-unsplash-2933.jpg",
+      "foto": true
     }
   },
   {
@@ -136793,8 +136833,8 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Trump%2C_Putin_Press_Conference_%289260684%29.jpg/1280px-Trump%2C_Putin_Press_Conference_%289260684%29.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -136842,7 +136882,7 @@
     "gorselDeneme": "2026-10-28T04:46:36.913Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://ares.shiftdelete.net/2026/10/tesla-app-for-tablets-and-foldables-1.webp",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -136891,8 +136931,8 @@
     "imagesKaynak": "https://www.canligaste.com/son-dakika-deprem-mi-oldu-istanbul-ankara-izmir-ve-il-il-afad-kandilli-son-depremler-22-10-2026/932807/",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Mayaguez_-_Buildings_damaged_by_earthquake_1918.jpg/1280px-Mayaguez_-_Buildings_damaged_by_earthquake_1918.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -136954,8 +136994,8 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/%C4%B0stanbul_mart%C4%B1_manzara.jpg/1280px-%C4%B0stanbul_mart%C4%B1_manzara.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -137009,7 +137049,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://i.haberglobal.com/storage/files/images/2026/10/22/harry-kane-cristiano-ronaldonun-tarihi-rekorunu-kirmaya-bir-adim-uzakta-fpfi.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -137045,10 +137085,10 @@
     "publishedAt": "2026-10-22T09:08:00.000Z",
     "generatedAt": "2026-10-22T09:15:03.243Z",
     "gorselKaynak": {
-      "yazar": "Joël van der Loo",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Duga-1_radar_data_center_interior_server_room_2018.jpg"
+      "yazar": "Openverse",
+      "lisans": "CC0 1.0",
+      "lisansUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sayfa": "https://www.rawpixel.com/image/5906639/photo-image-light-desktop-wallpapers-public-domain"
     },
     "ekGorselDeneme": "2026-10-26T16:39:37.279Z",
     "images": [
@@ -137059,7 +137099,7 @@
     "kapak": {
       "v": 3,
       "kaynak": "https://img.chip.com.tr/rcman/Cw1280h720q95gm/storage/files/images/2026/10/22/php-ekibi-takvimi-one-cekti-iki-kritik-acigi-dort-surumle-kapatti-rvpa.jpg",
-      "foto": false
+      "foto": true
     }
   },
   {
@@ -137104,7 +137144,7 @@
     "ekGorselDeneme": "2026-10-29T21:41:03.240Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/22/thumbs_b_c_a977832f8bb2cec64bd1c401d99dcdef.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -137149,7 +137189,7 @@
     "gorselDeneme": "2026-10-28T04:46:36.981Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://haberotesicomtr.teimg.com/crop/1280x720/haberotesi-com-tr/uploads/2026/10/i-m-g-20220412-w-a0042.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -137203,8 +137243,8 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/5/59/Mediterranean_and_part_of_Black_Sea_RMG_K0999.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -137252,7 +137292,7 @@
     "gorselDeneme": "2026-10-28T04:46:37.770Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://i2.wp.com/www.borsatek.com/app/uploads/2025/04/dow-jones_nasdaq_new-york_sp.webp",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -137291,7 +137331,7 @@
     "gorselDeneme": "2026-10-28T04:46:37.096Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://ares.shiftdelete.net/2026/10/ios-27-2-ile-mesajlar-uygulamasina-cok-istenen-ozellik-geliyor.webp",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -137330,16 +137370,16 @@
     "generatedAt": "2026-10-22T09:10:02.640Z",
     "ekGorselDeneme": "2026-10-24T11:26:13.841Z",
     "gorselKaynak": {
-      "yazar": "HoweyYuan",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Huawei_Beijing_Research_Institute_Building_Q20.jpg"
+      "yazar": "AxelBoldt",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Amsterdam_car_charging_station%2C_for_two_cars%2C_Oudezijds_Voorburgwal%2C_2_July_2014.jpg"
     },
     "gorselDeneme": "2026-10-28T04:46:37.179Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://www.donanimhaber.com/images/images/haber/211943/1200x675huawei-ve-catl-ortakligi-batarya-degisimini-otomatiklestirecek.jpg",
-      "foto": false
+      "kaynak": "otomobil-amsterdam-car-charging-station-for-two-c-7384.jpg",
+      "foto": true
     }
   },
   {
@@ -137396,7 +137436,7 @@
     "gorselDeneme": "2026-10-28T04:46:37.372Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://img.ulusal.com.tr/rcman/Cw1280h720q95gc/storage/files/images/2026/09/30/depremin-ardindan-ilk-resmi-aciklama-geldi-6-buyuklugunde-sarsinti-xvqg.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -137432,16 +137472,16 @@
     "publishedAt": "2026-10-22T08:55:00.000Z",
     "generatedAt": "2026-10-22T08:59:12.493Z",
     "gorselKaynak": {
-      "yazar": "LardoBalsamico",
-      "lisans": "CC BY-SA 3.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Galatasaray_SK_Football_Team_Celebrating_2011-2012_Championship.JPG"
+      "yazar": "TSUBAME98",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Fujieda_Football_Stadium_20240922-1.jpg"
     },
     "gorselDeneme": "2026-10-28T04:46:37.740Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://i.haberglobal.com/storage/files/images/2026/10/22/aleksey-batrakovun-sozlesmesinde-yer-alan-serbest-kalma-bedeli-ortaya-cikti-881v.jpg",
-      "foto": false
+      "kaynak": "spor-fujieda-football-stadium-20240922-1-2439.jpg",
+      "foto": true
     }
   },
   {
@@ -137477,17 +137517,17 @@
     "publishedAt": "2026-10-22T08:53:09.000Z",
     "generatedAt": "2026-10-22T08:59:26.064Z",
     "gorselKaynak": {
-      "yazar": "PattayaPatrol",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:DFC_5336_A_tense_moment_as_a_striker_fires_a_shot_on_goal_while_the_goalkeeper_dives_to_make_the_save_during_a_nighttime_amateur_soccer_match.jpg"
+      "yazar": "TSUBAME98",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Fujieda_Football_Stadium_20240922-2.jpg"
     },
     "ekGorselDeneme": "2026-10-26T16:39:39.576Z",
     "gorselDeneme": "2026-10-28T04:46:37.505Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/22/thumbs_b_c_cfaff8316771ec7adf06d99844c07213.jpg",
-      "foto": false
+      "kaynak": "spor-fujieda-football-stadium-20240922-2-2439.jpg",
+      "foto": true
     }
   },
   {
