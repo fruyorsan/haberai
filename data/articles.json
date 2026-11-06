@@ -8045,7 +8045,6 @@
         "altyazi": "Android-iOS dosya aktarım akışı"
       }
     ],
-    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": null,
@@ -11966,14 +11965,14 @@
     "gorselDeneme": "2026-11-03T18:42:14.253Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Toyota_Echo_Bahrain.jpg/1280px-Toyota_Echo_Bahrain.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Toyota_Cressida_X60_Bahrain.jpg/1280px-Toyota_Cressida_X60_Bahrain.jpg",
       "foto": true
     },
     "gorselKaynak": {
       "yazar": "ToyGTone",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Toyota_Echo_Bahrain.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Toyota_Cressida_X60_Bahrain.jpg"
     },
     "ekGorselDeneme": "2026-11-03T21:40:42.605Z"
   },
@@ -104522,15 +104521,15 @@
       }
     ],
     "gorselKaynak": {
-      "yazar": "Hans Roht",
+      "yazar": "Derrick Coetzee",
       "lisans": "Kamu malı",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_argentina.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_building_17_front_door.jpg"
     },
     "gorselDeneme": "2026-10-28T04:45:45.659Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/8/86/Microsoft_argentina.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Microsoft_building_17_front_door.jpg/1280px-Microsoft_building_17_front_door.jpg",
       "foto": true
     }
   },
@@ -119844,10 +119843,10 @@
     "publishedAt": "2026-10-22T20:30:55.000Z",
     "generatedAt": "2026-10-22T20:34:00.208Z",
     "gorselKaynak": {
-      "yazar": "Derrick Coetzee",
+      "yazar": "Hans Roht",
       "lisans": "Kamu malı",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_building_17_front_door.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_argentina.jpg"
     },
     "ekGorselDeneme": "2026-10-28T18:03:54.086Z",
     "gorselEk": [
@@ -119862,7 +119861,7 @@
     "gorselDeneme": "2026-10-28T04:46:14.416Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Microsoft_building_17_front_door.jpg/1280px-Microsoft_building_17_front_door.jpg",
+      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/8/86/Microsoft_argentina.jpg",
       "foto": true
     }
   },
@@ -136871,7 +136870,7 @@
       "yazar": "Wiki Farazi",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145541.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145532.jpg"
     },
     "gorselDeneme": "2026-10-28T04:46:35.718Z",
     "ekGorselDeneme": "2026-10-29T21:40:46.965Z",
@@ -136893,7 +136892,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145541.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145541.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145532.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145532.jpg",
       "foto": true
     }
   },
@@ -182391,8 +182390,8 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Trump_UFC_2024.jpg/1280px-Trump_UFC_2024.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -182435,7 +182434,7 @@
     "gorselDeneme": "2026-10-28T04:47:36.248Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://www.guvengazetesi.com.tr/images/haberler/2026/10/misirda-feci-kaza-yolcu-otobusu-tira-carpti-13-olu-40-yarali-908.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -182470,10 +182469,10 @@
     "publishedAt": "2026-10-20T21:24:36.000Z",
     "generatedAt": "2026-10-20T21:27:13.680Z",
     "gorselKaynak": {
-      "yazar": "U.S. Forest Service- Pacific Northwest Region",
-      "lisans": "Kamu malı",
+      "yazar": "Jan Helebrant",
+      "lisans": "CC0",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Lick_Fire_on_the_Umatilla_National_Forest_burning_at_night.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Electronics_PCB_circuit_board_003_(51131861191).jpg"
     },
     "images": [
       "https://www.magazinlife.com/wp-content/uploads/2026/10/grokun-beyaz-soykirim-karsiliklari-gundem-oldu-XbxScDLX.jpg"
@@ -182482,8 +182481,8 @@
     "gorselDeneme": "2026-10-28T04:47:37.476Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://www.magazinlife.com/wp-content/uploads/2026/10/grokun-beyaz-soykirim-karsiliklari-gundem-oldu-XbxScDLX.jpg",
-      "foto": false
+      "kaynak": "teknoloji-electronics-pcb-circuit-board-003-511318-3351.jpg",
+      "foto": true
     }
   },
   {
@@ -182524,8 +182523,8 @@
     "gorselDeneme": "2026-10-28T04:47:36.777Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/FEMA_-_44649_-_Earthquake_damaged_buildings_in_California.jpg/1280px-FEMA_-_44649_-_Earthquake_damaged_buildings_in_California.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -182570,7 +182569,7 @@
     "ekGorselDeneme": "2026-10-25T23:55:25.128Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Is_artificial_intelligence_our_future.jpg/1920px-Is_artificial_intelligence_our_future.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -182617,7 +182616,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/UK_Stock_Market_-_Investing_in_the_United_Kingdom.jpg/1920px-UK_Stock_Market_-_Investing_in_the_United_Kingdom.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -182672,8 +182671,8 @@
     "gorselDeneme": "2026-10-28T04:47:36.603Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Governor-baker-meets-with-israeli-prime-minister-benjamin-netanyahu-121216_31507668591_o.jpg/1280px-Governor-baker-meets-with-israeli-prime-minister-benjamin-netanyahu-121216_31507668591_o.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
