@@ -1,5 +1,64 @@
 [
   {
+    "id": "95d1a75a39b64a20",
+    "title": "Hepsiburada canlı destek sistemine siber saldırı düzenlendi",
+    "slug": "hepsiburada-canli-destek-sistemine-siber-saldiri-duzenlendi",
+    "summary": "Kişisel Verileri Koruma Kurumu, Hepsiburada'nın sohbet hizmeti aldığı dış kaynaklı firmada siber güvenlik ihlali yaşandığını duyurdu. Saldırganlar 2022 yılına ait verilere erişerek 9 bin 882 kullanıcının kişisel bilgilerini ele geçirdi.",
+    "keyPoints": [
+      "Siber saldırı sonucunda 9 bin 882 kişinin verileri ele geçirildi.",
+      "İhlal doğrudan Hepsiburada üzerinde değil, sohbet hizmeti veren üçüncü taraf firmada yaşandı.",
+      "Sızdırılan bilgiler 2022 yılına ait geçmiş tarihli kayıtları kapsıyor."
+    ],
+    "body": [
+      "Türkiye'nin büyük e-ticaret platformlarından Hepsiburada, kullanıcı verilerini etkileyen bir siber güvenlik olayıyla gündeme geldi. Kişisel Verileri Koruma Kurumu tarafından yapılan resmi duyuruya göre, şirketin müşterilerine sunduğu canlı sohbet hizmetinin altyapısını sağlayan dış kaynaklı bir iş ortağında veri ihlali tespit edildi. Bu güvenlik açığı, siber saldırganların sistemlere sızmasına ve kullanıcıların geçmiş yazışmalarına erişmesine yol açtı.",
+      "Yapılan teknik incelemeler neticesinde, saldırganların 2022 yılına ait sohbet kayıtlarına ulaştığı belirlendi. Bu olaydan toplam 9 bin 882 kişinin etkilendiği ve verilerinin risk altına girdiği açıklandı. Kişisel verilerin korunması noktasında kurumların sorumlulukları devam ederken, yaşanan bu olay dijital platformlarda üçüncü taraf yazılım ve hizmet kullanımı konusundaki riskleri tekrar gözler önüne serdi.",
+      "Güvenlik ihlaline uğrayan verilerin, müşterilerin canlı destek hattı üzerinden gerçekleştirdiği görüşmeleri kapsadığı ifade ediliyor. Bu kayıtlar, kullanıcıların platformla olan etkileşimleri sırasında paylaştığı çeşitli bilgileri içerebiliyor. İhlalin yaşandığı tedarikçi firma üzerindeki sistemlerin kapatıldığı ve gerekli güvenlik önlemlerinin devreye alındığı belirtiliyor.",
+      "E-ticaret platformları, operasyonel süreçlerini yönetmek için pek çok farklı yazılım ve servis sağlayıcısıyla iş birliği yapıyor. Ancak bu durum, verilerin farklı sunuculara dağılmasına ve güvenlik denetiminin tek bir çatı altında zorlaşmasına neden olabiliyor. Söz konusu olayda da, Hepsiburada'nın doğrudan kendi sunucuları yerine hizmet aldığı firmanın açığı hedef alındı.",
+      "Kullanıcılar için bu tür durumlar, kişisel verilerin korunması konusunda farklı platformların farklı güvenlik protokolleri uyguladığını kanıtlıyor. Şirketler, iş ortaklarının güvenlik altyapısını düzenli olarak denetlemekle yükümlü olsalar da, bazen bu tür sızmalar operasyonel hatalar nedeniyle gerçekleşebiliyor. Veri sorumlusu sıfatıyla Hepsiburada'nın konuyla ilgili yasal süreçleri nasıl yöneteceği ise kullanıcılar tarafından merakla bekleniyor.",
+      "İhlalden etkilenen kişilerin, kendi hesaplarına yönelik sıra dışı etkinlikleri kontrol etmeleri tavsiye ediliyor. Geçmiş tarihli verilerin çalınmış olması, güncel hesap güvenliğini doğrudan tehlikeye atmasa da, kötü niyetli kişilerin bu bilgileri sosyal mühendislik saldırılarında kullanma ihtimali bulunuyor. Şirketin, veri ihlalinden doğrudan etkilenen müşterilerine gerekli bilgilendirmeyi yapması ve süreci şeffaflıkla yönetmesi bekleniyor."
+    ],
+    "comment": "Kurumsal sistemlerde güvenliğin sadece ana platformla değil, zincirin en zayıf halkası olan üçüncü taraf servislerle ölçüldüğü bu olayla kanıtlandı. Hepsiburada gibi büyük ölçekli şirketlerin, dışarıdan aldığı hizmetlerdeki güvenlik standartlarını kendi iç sistemleriyle eşitlemesi gerekiyor. 9 bin 882 kullanıcıyı etkileyen bu sızma, 2022 yılına ait eski kayıtları içerse de kullanıcı gizliliği üzerinde kalıcı bir risk faktörü oluşturuyor. Güvenlik, sadece verinin saklandığı yerin büyüklüğüyle değil, o veriye erişimi olan her bir aracı kurumun aldığı önlemlerle sağlanabilir.",
+    "editorNote": "Hepsiburada'nın canlı destek hizmetinde kullanılan üçüncü taraf yazılımdaki açık 9 bin 882 kişiyi etkiledi. Veri güvenliğinde zincirin en zayıf halkası, tüm sistemi…",
+    "tags": [
+      "Hepsiburada",
+      "KVKK",
+      "veri ihlali",
+      "siber güvenlik",
+      "kişisel veriler"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "cyber security data breach",
+    "source": "CHIP Online",
+    "sourceUrl": "https://www.chip.com.tr/guncel/hepsiburadanin-canli-destek-kayitlarina-sizildi-9-bin-882-kisi-etkilendi_185131.html",
+    "image": "/kapak/95d1a75a39b64a20.webp",
+    "publishedAt": "2026-11-06T07:09:00.000Z",
+    "generatedAt": "2026-11-06T07:14:01.882Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Data_center_infrastructure_in_the_United_States.jpg/1280px-Data_center_infrastructure_in_the_United_States.jpg",
+        "yazar": "DOE / National Renewable Energy Laboratory (NREL)",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Data_center_infrastructure_in_the_United_States.jpg",
+        "altyazi": "Veri merkezlerinde yer alan sunucu ve ağ donanımları"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Hacker_typing_on_a_Linux_laptop_full_of_stickers.jpg/1280px-Hacker_typing_on_a_Linux_laptop_full_of_stickers.jpg",
+        "yazar": "User:Kowalski7cc",
+        "lisans": "CC0",
+        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Hacker_typing_on_a_Linux_laptop_full_of_stickers.jpg",
+        "altyazi": "Siber saldırı süreçlerini temsil eden dijital güvenlik görseli"
+      }
+    ],
+    "breaking": true,
+    "kapak": {
+      "v": 3,
+      "kaynak": null,
+      "foto": false
+    }
+  },
+  {
     "id": "efba45e9cee15635",
     "title": "Rubio, 2028 adaylığı için istifa iddiasını kesin dille reddetti",
     "slug": "rubio-2028-adayligi-icin-istifa-iddiasini-kesin-dille-reddetti",
@@ -104003,15 +104062,15 @@
       }
     ],
     "gorselKaynak": {
-      "yazar": "Hans Roht",
+      "yazar": "Derrick Coetzee",
       "lisans": "Kamu malı",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_argentina.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_building_17_front_door.jpg"
     },
     "gorselDeneme": "2026-10-28T04:45:45.659Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/8/86/Microsoft_argentina.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Microsoft_building_17_front_door.jpg/1280px-Microsoft_building_17_front_door.jpg",
       "foto": true
     }
   },
@@ -119325,10 +119384,10 @@
     "publishedAt": "2026-10-22T20:30:55.000Z",
     "generatedAt": "2026-10-22T20:34:00.208Z",
     "gorselKaynak": {
-      "yazar": "Derrick Coetzee",
+      "yazar": "Hans Roht",
       "lisans": "Kamu malı",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_building_17_front_door.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_argentina.jpg"
     },
     "ekGorselDeneme": "2026-10-28T18:03:54.086Z",
     "gorselEk": [
@@ -119343,7 +119402,7 @@
     "gorselDeneme": "2026-10-28T04:46:14.416Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Microsoft_building_17_front_door.jpg/1280px-Microsoft_building_17_front_door.jpg",
+      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/8/86/Microsoft_argentina.jpg",
       "foto": true
     }
   },
@@ -141802,8 +141861,8 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Chip_gold_bullion_bar.jpg/1280px-Chip_gold_bullion_bar.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -141839,10 +141898,10 @@
     "publishedAt": "2026-10-22T07:02:19.000Z",
     "generatedAt": "2026-10-22T07:03:37.883Z",
     "gorselKaynak": {
-      "yazar": "Donald Trung",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Wiekens_electronics_store,_Oude_Pekela_(2017).jpg"
+      "yazar": "Openverse",
+      "lisans": "CC0 1.0",
+      "lisansUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sayfa": "https://www.rawpixel.com/image/6111313/best-buy-store-london-england-june-2014"
     },
     "gorselDeneme": "2026-10-28T04:46:42.584Z",
     "ekGorselDeneme": "2026-10-30T01:43:27.391Z",
@@ -141858,7 +141917,7 @@
     "kapak": {
       "v": 3,
       "kaynak": "https://imgrosetta.webtekno.com/file/694208/694208-700x400.jpg",
-      "foto": false
+      "foto": true
     }
   },
   {
@@ -141901,7 +141960,7 @@
     "gorselDeneme": "2026-10-28T04:46:42.681Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://yesilafsincom.teimg.com/crop/1280x720/yesilafsin-com/uploads/2026/09/son-dakika-deprem-mi-oldu-az-once-nerede-deprem-oldu.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -141946,9 +142005,9 @@
       "sayfa": "https://commons.wikimedia.org/wiki/File:Secretary_of_State_Peter_Kyle_visits_Anthropic_in_San_Francisco._(54098999333).jpg"
     },
     "kapak": {
-      "v": 2,
-      "kaynak": "https://cdn.webrazzi.com/uploads/2026/10/claude-duet-884.png",
-      "foto": true
+      "v": 3,
+      "kaynak": null,
+      "foto": false
     },
     "gorselDeneme": "2026-10-28T04:46:42.558Z"
   },
@@ -142003,8 +142062,8 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/1/10/Burnt_ruins_of_Aoyama_Brain_Hospital.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -142050,7 +142109,7 @@
     "gorselDeneme": "2026-10-28T04:46:42.871Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://analizgazetesi.com.tr/thumbmaker.php?src=https://analizgazetesi.com.tr/modules/blog/dataimages/IMG_2E22CD-9D017B-AF73E8-4E23BE-1D581F-455593.jpg&w=750&h=500&s=1&a=c",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -142104,8 +142163,8 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Donald_Trump_rehearses_for_2016_RNC_acceptance_speech.jpg/1280px-Donald_Trump_rehearses_for_2016_RNC_acceptance_speech.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -142152,7 +142211,7 @@
     "gorselDeneme": "2026-10-28T04:46:42.957Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://ydh.com.tr/resimler/icerikler/irak-20261027-105717-8dfd05.jpg?v=1793088109",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -142189,17 +142248,17 @@
     "publishedAt": "2026-10-22T06:49:07.000Z",
     "generatedAt": "2026-10-22T06:50:58.176Z",
     "gorselKaynak": {
-      "yazar": "Daudi mukiibi",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Software_Developer_at_work_02.jpg"
+      "yazar": "Openverse",
+      "lisans": "CC0 1.0",
+      "lisansUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sayfa": "https://www.rawpixel.com/image/5906639/photo-image-light-desktop-wallpapers-public-domain"
     },
     "gorselDeneme": "2026-10-28T04:46:42.966Z",
     "ekGorselDeneme": "2026-10-30T08:18:00.438Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://images.ntv.com.tr/images/iStock-817486228-443167.jpg?format=webp&width=1200&height=630",
-      "foto": false
+      "foto": true
     }
   },
   {
@@ -142235,17 +142294,17 @@
     "publishedAt": "2026-10-22T06:48:00.000Z",
     "generatedAt": "2026-10-22T07:20:25.257Z",
     "gorselKaynak": {
-      "yazar": "Joël van der Loo",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Duga-1_radar_data_center_interior_server_room_2018.jpg"
+      "yazar": "Openverse",
+      "lisans": "CC0 1.0",
+      "lisansUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sayfa": "https://www.rawpixel.com/image/5906639/photo-image-light-desktop-wallpapers-public-domain"
     },
     "gorselDeneme": "2026-10-28T04:46:42.960Z",
     "ekGorselDeneme": "2026-10-30T08:18:01.394Z",
     "kapak": {
       "v": 3,
       "kaynak": "https://img.chip.com.tr/rcman/Cw1280h720q95gm/storage/files/images/2026/10/22/yapay-zeka-eski-php-kusurlarini-ortaya-cikardi-kurumlar-sitelerini-kapatti-gbtx.jpg",
-      "foto": false
+      "foto": true
     }
   },
   {
@@ -142280,10 +142339,10 @@
     "publishedAt": "2026-10-22T06:47:15.000Z",
     "generatedAt": "2026-10-22T06:52:12.918Z",
     "gorselKaynak": {
-      "yazar": "George Chernilevsky",
-      "lisans": "Kamu malı",
+      "yazar": "FirmBee",
+      "lisans": "CC0",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Apple-tree_blossoms_2017_G3.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Paperless_work_desk_with_an_iPad%2C_iMac_and_a_MacBook.jpg"
     },
     "images": [
       "https://www.donanimhaber.com/images/images/haber/211931/src/apple-iphone-duo-siparislerine-iki-adet-siniri-getirdi211931_1.jpg"
@@ -142292,7 +142351,7 @@
     "gorselDeneme": "2026-10-28T04:46:43.036Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Apple-tree_blossoms_2017_G3.jpg/1280px-Apple-tree_blossoms_2017_G3.jpg",
+      "kaynak": "donanim-paperless-work-desk-with-an-ipad-imac-an-5256.jpg",
       "foto": true
     }
   },
@@ -142340,7 +142399,7 @@
     "gorselDeneme": "2026-10-28T04:46:43.007Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://i.haberglobal.com/rcman/Cw772h512q95gm/storage/files/images/2026/10/22/sadasdsadasdas-be4d.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -142394,7 +142453,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2062000/bilezik-altin-mucevher-aa-2062524.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -142448,8 +142507,8 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/%C4%B0kinci_Bil%C9%99cik_2025.jpg/1280px-%C4%B0kinci_Bil%C9%99cik_2025.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -142492,7 +142551,7 @@
     "gorselDeneme": "2026-10-28T04:46:43.655Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://ilketv.com.tr/wp-content/uploads/2026/10/iran-israil-abd-2451785.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -142538,7 +142597,7 @@
     "gorselDeneme": "2026-10-28T04:46:43.875Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://www.savunmasanayist.com/wp-content/uploads/2026/10/AIM-174B-Fuzesi.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -142585,8 +142644,8 @@
     "ekGorselDeneme": "2026-10-30T08:18:10.193Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Devrim_at_T%C3%BClomsa%C5%9F-specs.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -142633,8 +142692,8 @@
     "gorselDeneme": "2026-10-28T04:46:44.207Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Wuthering_Heights_1920_film_-_Leeds_Mercury_%281920%29.jpg/1280px-Wuthering_Heights_1920_film_-_Leeds_Mercury_%281920%29.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -142687,7 +142746,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/fccd/live/bf4a03d0-ce15-11f1-9a39-31b474234113.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -142731,7 +142790,7 @@
     "gorselDeneme": "2026-10-28T04:46:44.241Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://img.haber.com/1200x675/100/cover/haber/2026/10/22/son-dakika-depremler-deprem-mi-oldu-22-ekim-2026-nerede-ne-zaman-deprem-oldu-1792650153611.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -142779,8 +142838,8 @@
     "gorselDeneme": "2026-10-28T04:46:44.422Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Donald_Trump_rehearses_for_2016_RNC_acceptance_speech.jpg/1280px-Donald_Trump_rehearses_for_2016_RNC_acceptance_speech.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -142823,8 +142882,8 @@
     "gorselDeneme": "2026-10-28T04:46:43.929Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/C._1911_Europe_and_Russia.jpg/1280px-C._1911_Europe_and_Russia.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -142866,7 +142925,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://i20.haber7.net/resize/1280x720//haber/haber7/photos/2026/43/tonlarca_altin_yer_degistirdi_abd_kasalari_bosaliyor_1792649246_1057.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
