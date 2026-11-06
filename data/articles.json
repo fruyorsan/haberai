@@ -7465,8 +7465,8 @@
     "breaking": true,
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/ChatGPT_Spanish_homework.jpg/1280px-ChatGPT_Spanish_homework.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "gorselKaynak": {
       "yazar": "JigglyWiggley (scan), ChatGPT (text)",
@@ -8394,7 +8394,6 @@
     "image": "/kapak/4af37475f0b34c0a.webp",
     "publishedAt": "2026-11-04T14:02:00.000Z",
     "generatedAt": "2026-11-04T14:28:01.056Z",
-    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": null,
@@ -11996,14 +11995,14 @@
     "gorselDeneme": "2026-11-03T18:42:14.253Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Toyota_Cressida_X60_Bahrain.jpg/1280px-Toyota_Cressida_X60_Bahrain.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Toyota_Echo_Bahrain.jpg/1280px-Toyota_Echo_Bahrain.jpg",
       "foto": true
     },
     "gorselKaynak": {
       "yazar": "ToyGTone",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Toyota_Cressida_X60_Bahrain.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Toyota_Echo_Bahrain.jpg"
     },
     "ekGorselDeneme": "2026-11-03T21:40:42.605Z"
   },
@@ -104551,15 +104550,15 @@
       }
     ],
     "gorselKaynak": {
-      "yazar": "Derrick Coetzee",
+      "yazar": "Hans Roht",
       "lisans": "Kamu malı",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_building_17_front_door.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_argentina.jpg"
     },
     "gorselDeneme": "2026-10-28T04:45:45.659Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Microsoft_building_17_front_door.jpg/1280px-Microsoft_building_17_front_door.jpg",
+      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/8/86/Microsoft_argentina.jpg",
       "foto": true
     }
   },
@@ -119873,10 +119872,10 @@
     "publishedAt": "2026-10-22T20:30:55.000Z",
     "generatedAt": "2026-10-22T20:34:00.208Z",
     "gorselKaynak": {
-      "yazar": "Hans Roht",
+      "yazar": "Derrick Coetzee",
       "lisans": "Kamu malı",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_argentina.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_building_17_front_door.jpg"
     },
     "ekGorselDeneme": "2026-10-28T18:03:54.086Z",
     "gorselEk": [
@@ -119891,7 +119890,7 @@
     "gorselDeneme": "2026-10-28T04:46:14.416Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/8/86/Microsoft_argentina.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Microsoft_building_17_front_door.jpg/1280px-Microsoft_building_17_front_door.jpg",
       "foto": true
     }
   },
@@ -161686,10 +161685,10 @@
     "publishedAt": "2026-10-21T16:50:00.000Z",
     "generatedAt": "2026-10-21T16:54:49.804Z",
     "gorselKaynak": {
-      "yazar": "Syced",
+      "yazar": "Iorisrandombses5001",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Honda_Welcome_Plaza_Aoyama.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Honda_S2000_003.jpg"
     },
     "images": [
       "https://www.donanimhaber.com/images/images/haber/211918/src/kablo-yok-sarj-molasi-yok-honda-dan-hareket-halinde-sarj211918_0.jpg",
@@ -161699,7 +161698,7 @@
     "gorselDeneme": "2026-10-28T04:47:12.168Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Honda_Welcome_Plaza_Aoyama.jpg/1280px-Honda_Welcome_Plaza_Aoyama.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Honda_S2000_003.jpg/1280px-Honda_S2000_003.jpg",
       "foto": true
     }
   },
@@ -172687,7 +172686,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/aymkararverdiyenipartininismidegismeyecekwebp-OfaR6owAiEyZ_ouiwIqdDg.webp?w=1270&h=675&mode=crop&scale=both",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -172732,9 +172731,9 @@
     },
     "ekGorselDeneme": "2026-10-25T23:55:17.507Z",
     "kapak": {
-      "v": 2,
-      "kaynak": "https://fintechtime.com/wp-content/uploads/2026/10/eczacibasi_microsoft.jpg",
-      "foto": true
+      "v": 3,
+      "kaynak": null,
+      "foto": false
     },
     "gorselDeneme": "2026-10-28T04:47:25.542Z"
   },
@@ -172779,7 +172778,7 @@
     "gorselDeneme": "2026-10-28T04:47:25.591Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://i.haberglobal.com/storage/files/images/2026/10/21/musavat-dervisoglundan-esref-fakibabaya-istifa-cagrisi-aramizda-yeri-yok-sj2z.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -172843,8 +172842,8 @@
     "imagesKaynak": "https://www.cnnturk.com/yerel-haberler/istanbul/beyoglundaki-uyusturucu-operasyonunda-4-supheli-yakalandi-3482513",
     "kapak": {
       "v": 3,
-      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/5/54/Police_operation_against_deforestation_in_Paran%C3%A1_02.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -172878,10 +172877,10 @@
     "sourceUrl": "https://tr.euronews.com/2026/10/21/yeni-cocuksuz-tatil-paketi-sadece-yetiskinlere-ozel-ucus-ve-cruise",
     "image": "/kapak/cd6cc10d7b7b288a.webp",
     "gorselKaynak": {
-      "yazar": "Coldstreamer20",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:JetBlue_N775JB_%22Vets_in_Blue%22_at_KHPN_Terminal.jpg"
+      "yazar": "Mertbiol",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:N665JB_JetBlue_at_SAN.jpg"
     },
     "publishedAt": "2026-10-21T10:12:45.000Z",
     "generatedAt": "2026-10-21T10:15:33.076Z",
@@ -172904,7 +172903,7 @@
     "gorselDeneme": "2026-10-28T04:47:25.664Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/N665JB_JetBlue_at_SAN.jpg/1920px-N665JB_JetBlue_at_SAN.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/N665JB_JetBlue_at_SAN.jpg/1280px-N665JB_JetBlue_at_SAN.jpg",
       "foto": true
     }
   },
@@ -172942,10 +172941,10 @@
     "publishedAt": "2026-10-21T10:11:49.000Z",
     "generatedAt": "2026-10-21T10:15:10.372Z",
     "gorselKaynak": {
-      "yazar": "Methodist Episcopal Church",
-      "lisans": "Kamu malı",
+      "yazar": "AMISOM Public Information",
+      "lisans": "CC0",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Clinic_in_Severance_Union_Medical_School,_Seoul,_(s.d.)_(Taylor_box21num54).jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:2016_03_04_Dobley_Medical_Check-up-2_(25405203731).jpg"
     },
     "images": [
       "https://tekha.com.tr/wp-content/uploads/2026/10/BAKAN-CIFTCI-SIBER-VATANIMIZI-KARARLILI_1577652_469233.jpg"
@@ -172954,8 +172953,8 @@
     "gorselDeneme": "2026-10-28T04:47:26.230Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://tekha.com.tr/wp-content/uploads/2026/10/BAKAN-CIFTCI-SIBER-VATANIMIZI-KARARLILI_1577652_469233.jpg",
-      "foto": false
+      "kaynak": "saglik-2016-03-04-dobley-medical-check-up-2-254-2754.jpg",
+      "foto": true
     }
   },
   {
@@ -172991,10 +172990,10 @@
     "publishedAt": "2026-10-21T10:09:31.819Z",
     "generatedAt": "2026-10-21T10:10:10.981Z",
     "gorselKaynak": {
-      "yazar": "Vsatinet",
+      "yazar": "Retired electrician",
       "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Embankment_in_Samsun,_Turkey.jpg"
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Moscow%2C_Nikoloyamskaya_Street%2C_ambulance_May_2025_01.jpg"
     },
     "gorselDeneme": "2026-10-28T04:47:25.685Z",
     "ekGorselDeneme": "2026-10-31T06:48:14.991Z",
@@ -173009,7 +173008,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Embankment_in_Samsun%2C_Turkey.jpg/1280px-Embankment_in_Samsun%2C_Turkey.jpg",
+      "kaynak": "saglik-moscow-nikoloyamskaya-street-ambulance-m-4456.jpg",
       "foto": true
     }
   },
@@ -173063,7 +173062,7 @@
     "gorselDeneme": "2026-10-28T04:47:25.960Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Teletenis_Compact_Color_Video_Game_-_Detached_controllers.jpg/1920px-Teletenis_Compact_Color_Video_Game_-_Detached_controllers.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -173117,8 +173116,8 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Recep_Tayyip_Erdo%C4%9Fan_at_Diyarbak%C4%B1r%2C_2021_%282%29.jpg/1280px-Recep_Tayyip_Erdo%C4%9Fan_at_Diyarbak%C4%B1r%2C_2021_%282%29.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -173154,10 +173153,10 @@
     "publishedAt": "2026-10-21T10:06:06.401Z",
     "generatedAt": "2026-10-21T10:06:42.253Z",
     "gorselKaynak": {
-      "yazar": "Florstein ( Telegram: WikiPhoto.Space )",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Petrovskiy_football_stadium_in_SPB.jpg"
+      "yazar": "AxitTDTbenzoic",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:B%C3%ACnh_Ph%C6%B0%E1%BB%9Bc_Stadium_2024.jpg"
     },
     "images": [
       "https://image.cnnturk.com/i/cnnturk/75/770x0/6ad88b7efe46d577dbb93e24.jpg"
@@ -173166,8 +173165,8 @@
     "gorselDeneme": "2026-10-28T04:47:25.818Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://image.cnnturk.com/i/cnnturk/75/770x0/6ad88b7efe46d577dbb93e24.jpg",
-      "foto": false
+      "kaynak": "spor-b-nh-ph-c-stadium-2024-1827.jpg",
+      "foto": true
     }
   },
   {
@@ -173215,8 +173214,8 @@
     "gorselDeneme": "2026-10-28T04:47:26.001Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Turkey._Ankara._An_old_parliament_building._Bus_in_front_LOC_matpc.16726.jpg/1280px-Turkey._Ankara._An_old_parliament_building._Bus_in_front_LOC_matpc.16726.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -173260,7 +173259,7 @@
     "gorselDeneme": "2026-10-28T04:47:26.090Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/d837/live/21441720-cd34-11f1-935f-b9c228680c6f.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
