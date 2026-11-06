@@ -7696,7 +7696,6 @@
         "altyazi": "Joe Kent'in tweeti"
       }
     ],
-    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": null,
@@ -8466,14 +8465,14 @@
     "generatedAt": "2026-11-04T09:13:37.582Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic1.JPG/1280px-Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic1.JPG",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic2.JPG/1280px-Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic2.JPG",
       "foto": true
     },
     "gorselKaynak": {
       "yazar": "Alf van Beem",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415,_pic1.JPG"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415,_pic2.JPG"
     },
     "ekGorselDeneme": "2026-11-04T16:59:57.736Z",
     "gorselAjan": {
@@ -8523,11 +8522,11 @@
       "yazar": "Alf van Beem",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415,_pic2.JPG"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415,_pic1.JPG"
     },
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic2.JPG/1280px-Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic2.JPG",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic1.JPG/1280px-Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic1.JPG",
       "foto": true
     },
     "ekGorselDeneme": "2026-11-04T16:59:58.834Z"
@@ -104516,15 +104515,15 @@
       }
     ],
     "gorselKaynak": {
-      "yazar": "Derrick Coetzee",
+      "yazar": "Hans Roht",
       "lisans": "Kamu malı",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_building_17_front_door.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_argentina.jpg"
     },
     "gorselDeneme": "2026-10-28T04:45:45.659Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Microsoft_building_17_front_door.jpg/1280px-Microsoft_building_17_front_door.jpg",
+      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/8/86/Microsoft_argentina.jpg",
       "foto": true
     }
   },
@@ -119838,10 +119837,10 @@
     "publishedAt": "2026-10-22T20:30:55.000Z",
     "generatedAt": "2026-10-22T20:34:00.208Z",
     "gorselKaynak": {
-      "yazar": "Hans Roht",
+      "yazar": "Derrick Coetzee",
       "lisans": "Kamu malı",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_argentina.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_building_17_front_door.jpg"
     },
     "ekGorselDeneme": "2026-10-28T18:03:54.086Z",
     "gorselEk": [
@@ -119856,7 +119855,7 @@
     "gorselDeneme": "2026-10-28T04:46:14.416Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/8/86/Microsoft_argentina.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Microsoft_building_17_front_door.jpg/1280px-Microsoft_building_17_front_door.jpg",
       "foto": true
     }
   },
@@ -191270,8 +191269,8 @@
     "gorselDeneme": "2026-10-28T04:47:48.706Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Fukui_Earthquake_1948_-_damaged_building.jpg/1280px-Fukui_Earthquake_1948_-_damaged_building.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -191325,7 +191324,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/geminigeneratedimage2516qj2516qj2516jpg-iiP7OGf6BUaOCQIcXFq1gw.jpg?w=1270&h=675&mode=crop&scale=both",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -191370,7 +191369,7 @@
     "gorselDeneme": "2026-10-28T04:47:49.207Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://media.cumhuriyet.com.tr/Archive/100da3b8-25f8-4c2d-8312-45bdc0f28b7d.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -191425,7 +191424,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://i.haberglobal.com/storage/files/images/2026/10/20/dogada-yuzde-95lik-cokus-canlilar-sessizce-yok-oluyor-gkq9.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -191480,8 +191479,8 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/%C4%B0kinci_Bil%C9%99cik_2025.jpg/1280px-%C4%B0kinci_Bil%C9%99cik_2025.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -191535,7 +191534,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://iasbh.tmgrup.com.tr/e68292/1200/675/0/55/1200/730?u=https://isbh.tmgrup.com.tr/sbh/2026/10/20/dunyanin-tarim-haritasi-degisti-turkiye-bakin-kacinci-oldu-1792494537457.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -191580,8 +191579,8 @@
     "gorselDeneme": "2026-10-28T04:47:49.090Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Nikola_Tesla%2C_with_his_equipment_EDIT.jpg/1280px-Nikola_Tesla%2C_with_his_equipment_EDIT.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -191618,10 +191617,10 @@
     "publishedAt": "2026-10-20T11:08:59.000Z",
     "generatedAt": "2026-10-20T11:13:06.169Z",
     "gorselKaynak": {
-      "yazar": "Ucandairebaskani",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Kocaeli_Uluslararas%C4%B1_Kongre_Merkezi.jpg"
+      "yazar": "Diomedes1962",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Moorish_Cinema_Design_Auditorium_Interior_10_01_2026.jpg"
     },
     "images": [
       "https://www.ensondakika.com.tr/haber-gorsel/2026/10/bakan-goktas-kocaeli-de-aile-dostu-isletmeler-odul-toreninde-konustu-728464.webp"
@@ -191630,8 +191629,8 @@
     "gorselDeneme": "2026-10-28T04:47:49.595Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://www.ensondakika.com.tr/haber-gorsel/2026/10/bakan-goktas-kocaeli-de-aile-dostu-isletmeler-odul-toreninde-konustu-728464.webp",
-      "foto": false
+      "kaynak": "kultur-moorish-cinema-design-auditorium-interio-4156.jpg",
+      "foto": true
     }
   },
   {
@@ -191685,7 +191684,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://img.piri.net/piri/upload/3/2026/10/20/fd7f9290-otobuslerde-yuksek-sesli-muzik-dinleyenlere-ceza-kesilecek.webp",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -191734,8 +191733,8 @@
     "gorselDeneme": "2026-10-28T04:47:49.654Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Diyarbak%C4%B1r_Ta%C5%9F_Evleri.jpg/1280px-Diyarbak%C4%B1r_Ta%C5%9F_Evleri.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -191790,8 +191789,8 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Tifoseria_Atletico_Madrid_anni_70.jpg/1280px-Tifoseria_Atletico_Madrid_anni_70.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -191838,9 +191837,9 @@
     "imagesKaynak": "https://www.medyaloji.net/son-haber/kpmg-ve-teid-arastirmasi-sirketlerin-yuzde-64u-yapay-zek-yonetisimlerini-henuz-netlestirmedi_23686335.html",
     "gorselDeneme": "2026-10-28T04:47:49.238Z",
     "kapak": {
-      "v": 2,
-      "kaynak": "https://www.medyaloji.net/hbrResim/KPMG-ve-TEID-arastirmasi-Sirketlerin-yuzde-64u-yapay-zek-yonetisimlerini-henuz-netlestirmedi-9616.jpeg",
-      "foto": true
+      "v": 3,
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -191884,7 +191883,7 @@
     "gorselDeneme": "2026-10-28T04:47:49.520Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://odakgazetesicom.teimg.com/crop/1280x720/odakgazetesi-com/uploads/2026/10/b-o-l-v-a-d-i-n-42.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -191947,7 +191946,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://media.cumhuriyet.com.tr/Archive/3e57ad45-392e-4618-a1e4-93e25bfb4d75.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -192007,7 +192006,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Water_plant_in_an_abandoned_steel_factory_in_Oupeye%2C_Belgium_%28DSCF3282%29.jpg/1280px-Water_plant_in_an_abandoned_steel_factory_in_Oupeye%2C_Belgium_%28DSCF3282%29.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -192044,10 +192043,10 @@
     "publishedAt": "2026-10-20T11:02:14.000Z",
     "generatedAt": "2026-10-20T11:02:54.709Z",
     "gorselKaynak": {
-      "yazar": "Dicklyon",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:San_Tomas_Expressway_at_Nvidia.jpg"
+      "yazar": "Openverse",
+      "lisans": "CC0 1.0",
+      "lisansUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sayfa": "https://www.rawpixel.com/image/5906639/photo-image-light-desktop-wallpapers-public-domain"
     },
     "gorselDeneme": "2026-10-28T04:47:49.646Z",
     "ekGorselDeneme": "2026-11-01T02:00:47.040Z",
@@ -192117,7 +192116,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://media.baskenthaber06.com/content/08584b85-0487-4aad-9d35-f1c973ebd635-content.webp",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -192172,8 +192171,8 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/President_Trump_Visits_St._John%27s_Episcopal_Church_%2849963649028%29.jpg/1280px-President_Trump_Visits_St._John%27s_Episcopal_Church_%2849963649028%29.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -192227,8 +192226,8 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Fransa_Milletvekili_Emmanuel_Fenandes%2C_Strazburg-25.06.2025.jpg/1280px-Fransa_Milletvekili_Emmanuel_Fenandes%2C_Strazburg-25.06.2025.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -192265,10 +192264,10 @@
     "publishedAt": "2026-10-20T10:59:00.000Z",
     "generatedAt": "2026-10-20T11:03:38.348Z",
     "gorselKaynak": {
-      "yazar": "Kavali Chandrakanth KCK",
-      "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Google_Head_Office_Kondapur_Hyderabad.jpg"
+      "yazar": "Openverse",
+      "lisans": "CC0 1.0",
+      "lisansUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sayfa": "https://www.rawpixel.com/image/5906639/photo-image-light-desktop-wallpapers-public-domain"
     },
     "gorselDeneme": "2026-10-28T04:47:49.794Z",
     "ekGorselDeneme": "2026-11-01T02:00:51.246Z",
@@ -192345,8 +192344,8 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/7/79/Salah_Zulfikar_%26_Nadia_Lutfi.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -192389,8 +192388,8 @@
     "gorselDeneme": "2026-10-28T04:47:49.960Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/20240308_Bilim_Tarihinde_Kad%C4%B1nlar_Sempozyumu.jpg/1280px-20240308_Bilim_Tarihinde_Kad%C4%B1nlar_Sempozyumu.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -192444,7 +192443,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://images.ntv.com.tr/images/suzanelik-102930.jpg?format=webp&width=1200&height=630",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -192498,7 +192497,7 @@
     "kapak": {
       "v": 3,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/UK_Stock_Market_-_Investing_in_the_United_Kingdom.jpg/1920px-UK_Stock_Market_-_Investing_in_the_United_Kingdom.jpg",
-      "foto": false
+      "foto": true
     }
   },
   {
@@ -192599,8 +192598,8 @@
     "gorselDeneme": "2026-10-28T04:47:49.813Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/9/97/T.C._Avrupa_Birli%C4%9Fi_Bakanl%C4%B1%C4%9F%C4%B1.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -192649,8 +192648,8 @@
     "imagesKaynak": "https://rayhaber.com/2026/10/kadem-inovasyonda-kadin-bilgi-merkezi-acildi/",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/2023_%C4%B0STANBUL_KARAK%C3%96Y_OTOPARK_%C4%B0%C5%9ELETMEC%C4%B0S%C4%B0.jpg/1280px-2023_%C4%B0STANBUL_KARAK%C3%96Y_OTOPARK_%C4%B0%C5%9ELETMEC%C4%B0S%C4%B0.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -192696,7 +192695,7 @@
     "ekGorselDeneme": "2026-11-01T08:58:48.085Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/imagesjpg-D8ORtyXUhE_oPoqHWcCjEw.jpg?w=1270&h=675&mode=crop&scale=both",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -192751,8 +192750,8 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Pont_de_Bercy%2C_Paris_23_December_2021.jpg/1280px-Pont_de_Bercy%2C_Paris_23_December_2021.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -192793,7 +192792,7 @@
     "gorselDeneme": "2026-10-28T04:47:50.180Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://habereksprescomtr.teimg.com/crop/1280x720/haberekspres-com-tr/uploads/2026/10/bakan-simsek-ilk-kez-boyle-konustu-yuzlerce-kisi-ve-sirkete-cagri-20348332-22.webp",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -192848,8 +192847,8 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Electric_Car_Charging_Point%2C_Ditchling_Road%2C_Brighton_%28September_2010%29.JPG/1280px-Electric_Car_Charging_Point%2C_Ditchling_Road%2C_Brighton_%28September_2010%29.JPG",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -192897,8 +192896,8 @@
     "imagesKaynak": "https://ydh.com.tr/d/46160/smotrich-ten-gazze-lubnan-ve-sina-icin-ilhak",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Murat_Bakan%2C_Cemil_Tugay%2C_%C3%87a%C4%9Fatay_G%C3%BC%C3%A7.jpg/1280px-Murat_Bakan%2C_Cemil_Tugay%2C_%C3%87a%C4%9Fatay_G%C3%BC%C3%A7.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -192942,8 +192941,8 @@
     "gorselDeneme": "2026-10-28T04:47:50.354Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Exterior_of_the_White_House%2C_Washington%2C_D.C.%29_-_H.H._Nichols%2C_sc_LCCN94505537.jpg/1280px-Exterior_of_the_White_House%2C_Washington%2C_D.C.%29_-_H.H._Nichols%2C_sc_LCCN94505537.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -192987,7 +192986,7 @@
     "gorselDeneme": "2026-10-28T04:47:50.566Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/yeni-proje-20261020t134619249png-Q-Pnc4EyNkmTYXqZd4GbLg.png?w=1270&h=675&mode=crop&scale=both",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -193049,8 +193048,8 @@
     "gorselDeneme": "2026-10-28T04:47:50.447Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/FEMA_-_32096_-_Cars_drives_though_flooded_street_in_an_Oklahoma_neighborhood.jpg/1920px-FEMA_-_32096_-_Cars_drives_though_flooded_street_in_an_Oklahoma_neighborhood.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
