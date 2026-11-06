@@ -8464,14 +8464,14 @@
     "generatedAt": "2026-11-04T09:13:37.582Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic2.JPG/1280px-Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic2.JPG",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic1.JPG/1280px-Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic1.JPG",
       "foto": true
     },
     "gorselKaynak": {
       "yazar": "Alf van Beem",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415,_pic2.JPG"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415,_pic1.JPG"
     },
     "ekGorselDeneme": "2026-11-04T16:59:57.736Z",
     "gorselAjan": {
@@ -8521,11 +8521,11 @@
       "yazar": "Alf van Beem",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415,_pic1.JPG"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415,_pic2.JPG"
     },
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic1.JPG/1280px-Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic1.JPG",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic2.JPG/1280px-Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic2.JPG",
       "foto": true
     },
     "ekGorselDeneme": "2026-11-04T16:59:58.834Z"
@@ -104514,15 +104514,15 @@
       }
     ],
     "gorselKaynak": {
-      "yazar": "Hans Roht",
+      "yazar": "Derrick Coetzee",
       "lisans": "Kamu malı",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_argentina.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_building_17_front_door.jpg"
     },
     "gorselDeneme": "2026-10-28T04:45:45.659Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/8/86/Microsoft_argentina.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Microsoft_building_17_front_door.jpg/1280px-Microsoft_building_17_front_door.jpg",
       "foto": true
     }
   },
@@ -119836,10 +119836,10 @@
     "publishedAt": "2026-10-22T20:30:55.000Z",
     "generatedAt": "2026-10-22T20:34:00.208Z",
     "gorselKaynak": {
-      "yazar": "Derrick Coetzee",
+      "yazar": "Hans Roht",
       "lisans": "Kamu malı",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_building_17_front_door.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_argentina.jpg"
     },
     "ekGorselDeneme": "2026-10-28T18:03:54.086Z",
     "gorselEk": [
@@ -119854,7 +119854,7 @@
     "gorselDeneme": "2026-10-28T04:46:14.416Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Microsoft_building_17_front_door.jpg/1280px-Microsoft_building_17_front_door.jpg",
+      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/8/86/Microsoft_argentina.jpg",
       "foto": true
     }
   },
@@ -196329,8 +196329,8 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/USS_Essex_%28LHD_2%29%2C_right%2C_and_USNS_Wally_Schirra_%28T-AKE_8%29_transit_the_Strait_of_Hormuz_in_formation._%2851531961733%29.jpg/1280px-USS_Essex_%28LHD_2%29%2C_right%2C_and_USNS_Wally_Schirra_%28T-AKE_8%29_transit_the_Strait_of_Hormuz_in_formation._%2851531961733%29.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -196384,7 +196384,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://zafergazetesiorg.teimg.com/crop/1280x720/zafergazetesi-org/uploads/2026/10/genclerbirligi-spor-lisesi-cin-4.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -196421,10 +196421,10 @@
     "publishedAt": "2026-10-20T09:40:24.636Z",
     "generatedAt": "2026-10-20T09:41:01.815Z",
     "gorselKaynak": {
-      "yazar": "RealmeIT",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Realme_X50_Pro_5G.jpg"
+      "yazar": "Saulo Mohana",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Saulo-mohana-77106-unsplash.jpg"
     },
     "images": [
       "https://img.tamindir.com/resize/1200x675/2026/10/470608/realme-c01-ozellikleri-iddia-1.jpg"
@@ -196433,8 +196433,8 @@
     "gorselDeneme": "2026-10-28T04:47:54.255Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://img.tamindir.com/resize/1200x675/2026/10/470608/realme-c01-ozellikleri-iddia-1.jpg",
-      "foto": false
+      "kaynak": "mobil-saulo-mohana-77106-unsplash-2131.jpg",
+      "foto": true
     }
   },
   {
@@ -196478,7 +196478,7 @@
     "ekGorselDeneme": "2026-11-01T15:56:55.804Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad5c056b130c257562a00ab.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -196527,7 +196527,7 @@
     "imagesKaynak": "https://www.donanimhaber.com/whatsapp-cikartmalari-sesli-hale-geliyor--211848",
     "kapak": {
       "v": 3,
-      "kaynak": "https://www.donanimhaber.com/images/images/editor/c6d7c35d4c7f42f6a03ce8db9d94262a.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -196573,7 +196573,7 @@
     "ekGorselDeneme": "2026-11-01T15:56:58.435Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/20/thumbs_b_c_3deba1f8d4e52838f9fefc85bb1f0ea9.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -196631,7 +196631,7 @@
     "imagesKaynak": "https://www.cnnturk.com/yerel-haberler/istanbul/uskudar-belediye-baskan-vekilligine-ak-partili-sarioglu-secildi-3481882",
     "kapak": {
       "v": 3,
-      "kaynak": "https://image.cnnturk.com/i/cnnturk/75/1208x678/685eaaa2330760b1f2d9656b.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -196669,10 +196669,10 @@
     "publishedAt": "2026-10-20T09:34:50.000Z",
     "generatedAt": "2026-10-20T09:37:34.078Z",
     "gorselKaynak": {
-      "yazar": "George Chernilevsky",
-      "lisans": "Kamu malı",
+      "yazar": "NeONBRAND neonbrand",
+      "lisans": "CC0",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Apple-tree_blossoms_2017_G3.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Smartphone_in_Hand_(Unsplash).jpg"
     },
     "images": [
       "https://img.poweredcache.net/www.teknoblog.com/wp-content/uploads/2026/10/iphone-18-201026-2.webp?rs=fill&w=1024&h=1267&ssl=1&format=webp"
@@ -196681,7 +196681,7 @@
     "gorselDeneme": "2026-10-28T04:47:54.020Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Apple-tree_blossoms_2017_G3.jpg/1280px-Apple-tree_blossoms_2017_G3.jpg",
+      "kaynak": "mobil-smartphone-in-hand-unsplash-2933.jpg",
       "foto": true
     }
   },
@@ -196718,17 +196718,17 @@
     "publishedAt": "2026-10-20T09:34:00.000Z",
     "generatedAt": "2026-10-20T09:38:15.604Z",
     "gorselKaynak": {
-      "yazar": "ehnmark",
-      "lisans": "CC BY 2.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by/2.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Market_centre_in_Tokyo_stock_exchange.jpg"
+      "yazar": "Andykatib",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Harvest_Court_Mall_interior%2C_19_May_2026.jpg"
     },
     "gorselDeneme": "2026-10-28T04:47:53.830Z",
     "ekGorselDeneme": "2026-11-01T15:57:02.445Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://media.cumhuriyet.com.tr/Archive/1861502a-a799-4de5-bc58-c0e3f66dec28.jpg",
-      "foto": false
+      "kaynak": "ekonomi-harvest-court-mall-interior-19-may-2026-3244.jpg",
+      "foto": true
     }
   },
   {
@@ -196777,7 +196777,7 @@
     "gorselDeneme": "2026-10-28T04:47:53.833Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://image.cnnturk.com/i/cnnturk/75/770x0/6ad72dd75b565308d7131891.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -196815,16 +196815,16 @@
     "publishedAt": "2026-10-20T09:33:06.000Z",
     "generatedAt": "2026-10-20T09:34:21.422Z",
     "gorselKaynak": {
-      "yazar": "(photography: Don Becker, USGS)",
-      "lisans": "Kamu malı",
+      "yazar": "Syced",
+      "lisans": "CC0",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Sunken_cars_on_flooded_street_in_Cedar_Rapids_Iowa.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Honda_electric_car_charging_on_private_parking_lot_in_Tokyo_(57282).jpg"
     },
     "gorselDeneme": "2026-10-28T04:47:54.101Z",
     "ekGorselDeneme": "2026-11-01T15:57:06.331Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Sunken_cars_on_flooded_street_in_Cedar_Rapids_Iowa.jpg/1280px-Sunken_cars_on_flooded_street_in_Cedar_Rapids_Iowa.jpg",
+      "kaynak": "otomobil-honda-electric-car-charging-on-private-p-6371.jpg",
       "foto": true
     }
   },
@@ -196874,7 +196874,7 @@
     "gorselDeneme": "2026-10-28T04:47:54.190Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://ares.shiftdelete.net/2026/10/yakalanan-openai-casusu-suudi-arabistan-icin-calisiyormus-tutuklama-karari-cikti.webp",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -196922,7 +196922,7 @@
     "gorselDeneme": "2026-10-28T04:47:53.945Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://image.cnnturk.com/i/cnnturk/75/853x480/6ad730fc5b565308d71318b0.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -196983,7 +196983,7 @@
     "gorselDeneme": "2026-10-28T04:47:54.550Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://cdn.img.anlatilaninotesi.com.tr/images/sharing/article/tur/1038965170.jpg?1628613278",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -197029,7 +197029,7 @@
     "ekGorselDeneme": "2026-11-01T15:57:08.416Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://media.cumhuriyet.com.tr/Archive/4fb07f03-0984-42a5-a3c1-1110cb23fb84.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -197084,7 +197084,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad72c54da7f617da2952e75.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -197133,8 +197133,8 @@
     "imagesKaynak": "https://ssbulten.com.tr/video-haber/detay/abdden-javelin-icin-215-milyon-dolarlik-sozlesme--25996",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/FGM-148_Javelin_-_ID_061024-A-0497K-004.JPEG/1280px-FGM-148_Javelin_-_ID_061024-A-0497K-004.JPEG",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -197182,7 +197182,7 @@
     "gorselDeneme": "2026-10-28T04:47:56.395Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://www.ekonomigazetesi.com/storage/uploads/0/0/0/6ad741b03b108-1792491952.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -197237,7 +197237,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://im.haberturk.com/l/2026/10/20/ver1792488689/3921080/jpg/1200x628",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -197272,10 +197272,10 @@
     "sourceUrl": "https://www.cnnturk.com/yerel-haberler/izmir/11-yasindaki-omer-asaf-9-yil-arayla-ikinci-kez-bobrek-nakli-oldu-3481883",
     "image": "/kapak/0ba712db548a25dd.webp",
     "gorselKaynak": {
-      "yazar": "U.S. Navy Photo by Mass Communication Specialist 2nd Class Mark Logico",
-      "lisans": "Kamu malı",
+      "yazar": "W.carter",
+      "lisans": "CC0",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:US_Navy_080612-N-7498L-586_Chief_Hospital_Corpsman_Israel_Matando,_assigned_to_the_Military_Sealift_Command_hospital_ship_USNS_Mercy_(T-AH_19),_makes_repairs_on_an_operating_room_light_at_the_Calbayog_District_Hospital.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Corridor_on_the_second_level_-_N%C3%84L_hospital_1.jpg"
     },
     "publishedAt": "2026-10-20T09:23:47.771Z",
     "generatedAt": "2026-10-20T09:24:32.867Z",
@@ -197302,7 +197302,7 @@
     "imagesKaynak": "https://www.cnnturk.com/yerel-haberler/izmir/11-yasindaki-omer-asaf-9-yil-arayla-ikinci-kez-bobrek-nakli-oldu-3481883",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/USAF_surgical_team_help_inaugurate_new_operating_rooms_in_Suriname_%288257397%29.jpg/1920px-USAF_surgical_team_help_inaugurate_new_operating_rooms_in_Suriname_%288257397%29.jpg",
+      "kaynak": "saglik-corridor-on-the-second-level-n-l-hospita-4149.jpg",
       "foto": true
     }
   },
@@ -197343,7 +197343,7 @@
     "gorselDeneme": "2026-10-28T04:47:54.977Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://rudaw.net/_next/image?url=https%3A%2F%2Fimages.rudaw.net%2Fimages%2Fasset%2Fnews%2F20261020121712_images.jfif&w=1200&q=75",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -197398,8 +197398,8 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Fukui_Earthquake_1948_-_damaged_building.jpg/1280px-Fukui_Earthquake_1948_-_damaged_building.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -197452,8 +197452,8 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/P20250929JB-0563_President_Donald_Trump_and_Israeli_Prime_Minister_Benjamin_Netanyahu_hold_a_joint_press_conference.jpg/1280px-P20250929JB-0563_President_Donald_Trump_and_Israeli_Prime_Minister_Benjamin_Netanyahu_hold_a_joint_press_conference.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -197500,7 +197500,7 @@
     "gorselDeneme": "2026-10-28T04:47:54.686Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://image.cnnturk.com/i/cnnturk/75/770x0/6ad72e5cfe46d577dbb93816.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -197563,7 +197563,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://kosovahaber.com/social/facebook/haber-107885-53ca17656238792be4ee519f2ba9c7eb.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -197610,8 +197610,8 @@
     "gorselDeneme": "2026-10-28T04:47:54.983Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Global_tropical_cyclone_tracks-edit2.jpg/1280px-Global_tropical_cyclone_tracks-edit2.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -197656,9 +197656,15 @@
       }
     ],
     "kapak": {
-      "v": 2,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Apple_MacBook_Pro%2C_model_A1278-8111.jpg/1280px-Apple_MacBook_Pro%2C_model_A1278-8111.jpg",
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Apple_Macbook_Pro_%28Unsplash%29.jpg/1280px-Apple_Macbook_Pro_%28Unsplash%29.jpg",
       "foto": true
+    },
+    "gorselKaynak": {
+      "yazar": "Mark Solarski marksolarski",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Apple_Macbook_Pro_(Unsplash).jpg"
     }
   },
   {
@@ -197702,8 +197708,8 @@
     "gorselDeneme": "2026-10-28T04:47:54.815Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Ihlamur_Kasr%C4%B1%2C_Be%C5%9Fikta%C5%9F_2014-1.jpg/1280px-Ihlamur_Kasr%C4%B1%2C_Be%C5%9Fikta%C5%9F_2014-1.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -197747,8 +197753,8 @@
     "gorselDeneme": "2026-10-28T04:47:55.883Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Turkey._Ankara._An_old_parliament_building._Bus_in_front_LOC_matpc.16726.jpg/1280px-Turkey._Ankara._An_old_parliament_building._Bus_in_front_LOC_matpc.16726.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -197803,7 +197809,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://img.piri.net/piri/upload/3/2026/10/20/1cd75fa2-mekke-ittifaki-anlasmasi-kanun-teklifi-mecliste.webp",
+      "kaynak": null,
       "foto": false
     }
   },
