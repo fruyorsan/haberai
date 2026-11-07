@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T03:32:23.415Z",
+  "updatedAt": "2026-11-07T03:40:20.205Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5970,
-  "aday": 5970,
-  "uygun": 3913,
-  "secilen": 3821,
+  "toplamHaber": 5971,
+  "aday": 5971,
+  "uygun": 3914,
+  "secilen": 3822,
   "red": {
     "özet gövdeyle aynı": 118,
     "editör notu özetle aynı": 8,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 146
+    "tekrar": 147
   },
   "ornekTekrarlar": [
     {
@@ -82,6 +82,10 @@
       "twin": "CD Projekt RED, Cyberpunk 2 için multiplayer modu hazırlıklarına başladı"
     },
     {
+      "title": "Meteoroloji 19 il için uyarı verdi: Muğla'da turuncu kod alarmı",
+      "twin": "Meteoroloji 19 ilde sarı kodlu fırtına ve kar uyarısı yayınladı"
+    },
+    {
       "title": "GTA 6'da 90 FPS test edildi: Görüntü kalitesi tartışmalı",
       "twin": "GTA 6 oynanış görüntüleri South Park dizisinin son bölümüne sızdı"
     },
@@ -91,7 +95,7 @@
     },
     {
       "title": "Meteoroloji, 19 İl İçin Gök Gürültülü Sağanak Uyarısı Yayınladı",
-      "twin": "Meteoroloji 19 il için uyarı verdi: Muğla'da turuncu kod alarmı"
+      "twin": "Meteoroloji 19 ilde sarı kodlu fırtına ve kar uyarısı yayınladı"
     },
     {
       "title": "İran, ABD ile müzakere masasına oturmak için 7 maddelik şart listesini sundu",
@@ -108,10 +112,6 @@
     {
       "title": "İsmail Kartal, Fenerbahçe'deki görevinden istifa etti",
       "twin": "Fenerbahçe Yönetimi İsmail Kartal'ın İstifasını Onayladı"
-    },
-    {
-      "title": "Sony Yeni LYTIA 720 Sensörü 50 MP ile Gece Çekimlerini Yarıyor",
-      "twin": "Sony mobil kameralar için 50 MP LYTIA 720 sensörünü duyurdu"
     }
   ],
   "days": {
@@ -129,6 +129,7 @@
       "a8ec5ba1e363cae6",
       "9f3619f24d1f1a6d",
       "9e4c5f84b7641022",
+      "7c827343b2e64ee4",
       "b629e60a9a8b5466",
       "f687b5a7d3440a22",
       "6e5483715b075ece",
@@ -715,7 +716,6 @@
       "f8a0b434e80f1b8a",
       "8f4d11d7e23b47a1",
       "a650bc2c1d092da8",
-      "e7ba8e07cc342c4c",
       "fb864d3f2811a6cb",
       "60b69ff88775ca4c",
       "4cb739a6086fbac8",
@@ -788,6 +788,7 @@
       "80aaaa558815e7c1",
       "acdce987f5bc4014",
       "09ddb4dada9e7e9c",
+      "e7ba8e07cc342c4c",
       "9f5b28ffc0ffd7e4",
       "f0eca3a0a2bce2ef",
       "14a8dd9c67a7a934",
@@ -1572,7 +1573,6 @@
       "83bbc9cc051fc5d3",
       "3042cbca81ebefd3",
       "92433da4e06e0016",
-      "25388c788817faa6",
       "79042bfb6b1ca83e",
       "a1d899d7a3ba8f1d",
       "6b51552188199382",
@@ -1583,6 +1583,7 @@
       "9da5529155baf0b9",
       "20b0c6381911dd38",
       "01c4d10dfce5e64c",
+      "25388c788817faa6",
       "65aeac2c4e7f29b8",
       "0cd76a67591a5901",
       "dde371618446f3f9",
@@ -4087,6 +4088,7 @@
     "60f0e78eeec14a7f",
     "efa5b69565af28e0",
     "86700bdac9d12f8d",
+    "e6406e7f01933697",
     "3be42e98276a89f6",
     "2e5bac56c7a91ad0",
     "12864f7f071ffef6",
@@ -4212,7 +4214,6 @@
     "263466f75b702e2e",
     "7ae7a1259144d11b",
     "19dfa075f243d857",
-    "e6406e7f01933697",
     "44e89da04d4ec594",
     "a8dc0ec39cbafd81",
     "a5ad8811e6bfb5d4",
@@ -4607,6 +4608,7 @@
     "301abb90f77f644b",
     "f90cf0486b5cfaa7",
     "f8a0b434e80f1b8a",
+    "7c827343b2e64ee4",
     "7f67c2139c5895e6",
     "15d6a45cebdbb911",
     "0f377683b024318c",
@@ -4629,7 +4631,6 @@
     "a650bc2c1d092da8",
     "579ee7f3e7c99873",
     "e95661ab8c680d25",
-    "e7ba8e07cc342c4c",
     "f7002ecb866a378d",
     "16b117ced6e63e45",
     "30c7aaeb29feac31",
@@ -5049,7 +5050,6 @@
     "08275bb81cba73ab",
     "292251a97ee3cfde",
     "2d79f5a6bfb4c033",
-    "25388c788817faa6",
     "4b6c0c9bb8d19607",
     "9c0f6673d6b140d3",
     "b530bfdfe4d62db6",
@@ -5332,6 +5332,7 @@
     "0f05fa799b3ec101",
     "69bdcd80ceaad552",
     "9c2bb465580dfade",
+    "25388c788817faa6",
     "8edbe17ed73b3b82",
     "ccd01d3ed21f9d06",
     "4fb4bf85c83ba94d",
@@ -7753,6 +7754,7 @@
     "ccc6f00bfac1bd28",
     "2805675f9f1b0946",
     "040647c51b8f39b7",
+    "e7ba8e07cc342c4c",
     "fa3fe899aefb9cc2",
     "4a88ced1c9f032b9",
     "8fc8e90c6b3150dc",
