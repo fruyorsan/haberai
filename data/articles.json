@@ -6964,7 +6964,6 @@
     "image": "/kapak/17b2dc0db1daa6c3.webp",
     "publishedAt": "2026-11-05T21:53:00.000Z",
     "generatedAt": "2026-11-05T22:11:10.989Z",
-    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": null,
@@ -160101,10 +160100,10 @@
     "publishedAt": "2026-10-21T20:59:57.000Z",
     "generatedAt": "2026-10-21T21:05:05.627Z",
     "gorselKaynak": {
-      "yazar": "NASA Kennedy Space Center / NASA",
-      "lisans": "Kamu malı",
-      "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:SpaceX_CRS-22_Return_(KSC-20210709-PH-SPX01_0004).jpg"
+      "yazar": "SpaceX",
+      "lisans": "CC0 1.0",
+      "lisansUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en/",
+      "sayfa": "https://commons.wikimedia.org/w/index.php?curid=89261776"
     },
     "images": [
       "https://www.ekoturk.com/media/library/2026/10/45d192538cc54e199f2b0a0cd938a4e2.jpg"
@@ -276292,15 +276291,15 @@
     "publishedAt": "2026-10-17T08:15:55.895Z",
     "generatedAt": "2026-10-17T08:16:25.210Z",
     "gorselKaynak": {
-      "yazar": "ComputerUserUser",
+      "yazar": "MartinThoma",
       "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Caviar_2340_Hard_Drive_Circuit_Board_Side_2.jpg"
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Circuit-board-2.jpg"
     },
     "gorselDeneme": "2026-10-28T04:49:10.545Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Caviar_2340_Hard_Drive_Circuit_Board_Side_2.jpg/1280px-Caviar_2340_Hard_Drive_Circuit_Board_Side_2.jpg",
+      "kaynak": "teknoloji-circuit-board-2-1319.jpg",
       "foto": true
     },
     "gorselSorguDeneme": "2026-11-05T12:00:41.059Z",
@@ -276348,7 +276347,7 @@
     "gorselDeneme": "2026-10-28T04:49:15.977Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://cdn.sporx.com/img/79/2026/aa-20261015-42770277-42770259-hoffenheim-besiktas-1792224726.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -276385,8 +276384,8 @@
     "gorselDeneme": "2026-10-28T04:49:10.737Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/%C4%B0stanbul_mart%C4%B1_manzara.jpg/1280px-%C4%B0stanbul_mart%C4%B1_manzara.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "gorselKaynak": {
       "yazar": "İbrahim Mücahit Yıldız",
@@ -276435,7 +276434,7 @@
     "gorselDeneme": "2026-10-28T04:49:11.342Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/3/safiarpagusuzunjpg-FduhzAQFO0ulUo4g2QM9kw.jpg?w=1270&h=675&mode=crop&scale=both",
+      "kaynak": null,
       "foto": false
     },
     "gorselSorguDeneme": "2026-11-05T12:00:47.353Z",
@@ -276495,7 +276494,7 @@
     "gorselDeneme": "2026-10-28T04:49:10.886Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://img.piri.net/piri/upload/3/2026/10/17/7ef2dd6a-galatasaray-fenerbahce-derbisinin-tarihi-mi-degisiyor.webp",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -276537,7 +276536,7 @@
     "gorselDeneme": "2026-10-28T04:49:11.043Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://img.piri.net/piri/upload/3/2026/10/17/424d5d57-dunyanin-en-iyi-cikolatali-tatlilari-secildi-pastane-1.webp",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -276575,7 +276574,7 @@
     "gorselDeneme": "2026-10-28T04:49:11.697Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://im.haberturk.com/l/2026/10/17/ver1792224410/3920412/jpg/1200x628",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -276619,7 +276618,7 @@
     "gorselDeneme": "2026-10-28T04:49:11.001Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://foto.sondakika.com/crop/1210x0/haber/2026/10/17/bakan-uraloglu-duyurdu-cesmeli-kizkalesi-otoy-20338842_sd.jpg",
+      "kaynak": null,
       "foto": false
     },
     "gorselSorguDeneme": "2026-11-05T12:00:53.687Z",
@@ -276666,7 +276665,7 @@
     "gorselDeneme": "2026-10-28T04:49:11.280Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://malatyasozcom.teimg.com/crop/1280x720/malatyasoz-com/uploads/2026/06/deprem-30.jpeg",
+      "kaynak": null,
       "foto": false
     },
     "gorselSorguDeneme": "2026-11-05T12:01:00.314Z",
@@ -276715,7 +276714,7 @@
     "gorselDeneme": "2026-10-28T04:49:11.399Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://www.canligaste.com/haber-gorsel/2026/10/icisleri-bakani-ciftci-den-sel-ve-su-taskinlarina-iliskin-uyari-928994.webp",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -276753,8 +276752,8 @@
     "gorselDeneme": "2026-10-28T04:49:11.275Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Orhan_Gazi_Ak%C3%A7e.jpg/1280px-Orhan_Gazi_Ak%C3%A7e.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "gorselKaynak": {
       "yazar": "icollector",
@@ -276800,8 +276799,8 @@
     "gorselDeneme": "2026-10-28T04:49:11.535Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/MS_Oosterdam_in_the_Port_of_Alanya%2C_2024.jpg/1280px-MS_Oosterdam_in_the_Port_of_Alanya%2C_2024.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "gorselKaynak": {
       "yazar": "Julian Lupyan",
@@ -276844,8 +276843,8 @@
     "gorselDeneme": "2026-10-28T04:49:11.396Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Manifest_12_percent.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "gorselKaynak": {
       "yazar": "Laura M. Mac Donald",
@@ -276898,7 +276897,7 @@
     "gorselDeneme": "2026-10-28T04:49:11.824Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://img.piri.net/piri/upload/3/2026/10/17/0f168a5f-hane-sergisi-moskovada.webp",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -276941,8 +276940,8 @@
     "gorselDeneme": "2026-10-28T04:49:11.423Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/K%C3%B6yde_%C3%A7i%C3%A7ekler.JPG/1280px-K%C3%B6yde_%C3%A7i%C3%A7ekler.JPG",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "gorselKaynak": {
       "yazar": "tr:Kullanıcı:Gizgine84",
@@ -276983,7 +276982,7 @@
     "gorselDeneme": "2026-10-28T04:49:11.689Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Ahmetli%2C_Simav-2.jpg/1280px-Ahmetli%2C_Simav-2.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -277019,7 +277018,7 @@
     "gorselDeneme": "2026-10-28T04:49:11.760Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/0x0cocukguzellikyarismasiyasaklanmali1792165010677webp-7ed_FCxjTUW--tg9H8PAGg.webp?w=1270&h=675&mode=crop&scale=both",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -277058,15 +277057,15 @@
     "gorselSorgu": "SIM card smartphone",
     "ekGorselDeneme": "2026-10-25T18:14:19.150Z",
     "gorselKaynak": {
-      "yazar": "Satirdan kahraman",
+      "yazar": "NeONBRAND neonbrand",
       "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Tellerin_aras%C4%B1nda_cerrah%C3%AE_maske_Konya.jpg"
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Smartphone_in_Hand_(Unsplash).jpg"
     },
     "gorselDeneme": "2026-10-28T04:49:11.838Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Tellerin_aras%C4%B1nda_cerrah%C3%AE_maske_Konya.jpg/1280px-Tellerin_aras%C4%B1nda_cerrah%C3%AE_maske_Konya.jpg",
+      "kaynak": "mobil-smartphone-in-hand-unsplash-2933.jpg",
       "foto": true
     }
   },
@@ -277103,7 +277102,7 @@
     "gorselDeneme": "2026-10-28T04:49:11.440Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad3253a5b565308d71313b5.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -277139,15 +277138,15 @@
     "publishedAt": "2026-10-17T07:50:00.000Z",
     "generatedAt": "2026-10-17T07:52:56.474Z",
     "gorselKaynak": {
-      "yazar": "Sineserhat",
+      "yazar": "Wiki Farazi",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:T%C3%BCrk_Metal_Sendikas%C4%B1_Genel_Merkezi.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145614.jpg"
     },
     "gorselDeneme": "2026-10-28T04:49:11.651Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/b/b7/T%C3%BCrk_Metal_Sendikas%C4%B1_Genel_Merkezi.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145614.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145614.jpg",
       "foto": true
     },
     "gorselSorguDeneme": "2026-11-05T12:01:06.811Z",
@@ -277186,8 +277185,8 @@
     "gorselDeneme": "2026-10-28T04:49:11.895Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Alman_evl%C9%99ri.jpg/1280px-Alman_evl%C9%99ri.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "gorselKaynak": {
       "yazar": "Firuza",
