@@ -1,5 +1,59 @@
 [
   {
+    "id": "ffc09ef7e7367c2d",
+    "title": "Bankalar 100 Milyon Avron Kayıp Bildirdi",
+    "slug": "bankalar-100-milyon-avron-kayip-bildirdi",
+    "summary": "Avrupalı bankalar, siber saldırı sonucunda 100 milyon avronun üzerini geçerek transfer işlemi kaybetti. Saldırılar, soğuk hava depolarının ardından finans sektörünü hedef aldı. Bu olay, yapay zekâ destekli saldırıların finansal sistemlere ciddi zararlar verebileceğini gösteriyor.",
+    "keyPoints": [
+      "Crédit Mutuel Arkéa 100 milyon avron kaybetti",
+      "Siber saldırılar soğuk hava depolarından finans sektörüne geçti",
+      "Güney Kore’de 37 finans kuruluşu 40 siber olay yaşadı"
+    ],
+    "body": [
+      "Avrupa’da soğuk hava depoları, korsanların dolap sıcaklık ayarlarını değiştirerek gıda kaybına yol açmasıyla siber saldırıların ilk hedefi olmuştu. Aynı taktik, son zamanlarda finans sektörüne yönelerek bankaların sistemlerine sızdı.",
+      "Fransa’nın Crédit Mutuel Arkéa bankası, 4 Kasım’da gerçekleşen saldırıda 100 milyon avronun üzerinde paranın usulsüz olarak transfer edildiğini açıkladı. Bu kayıp, bankanın müşterilerine doğrudan zarar verdi ve sektörde güven kaybına yol açtı.",
+      "Asya’da da benzer olaylar yaşandı. Ülkede 580’den fazla finans kuruluşu güvenlik denetimine alınmaya karar verildi.",
+      "Japonya’da SMBC Consumer Finance’ın kredi garanti sistemine yetkisiz erişim sağlandı; 320 binin üzerinde kişinin bilgilerinin sızmış olabileceği bildirildi. Olayın ardından Japonya Finansal Hizmetler Ajansı, şifre güvenliği ve şüpheli işlemler konusunda özel uyarı yayımladı.",
+      "Toplam 41,76 milyon Tayvan doları başka bir hesaba aktarıldı ve banka parayı müşterilere geri ödedi.",
+      "Hindistan’da CERT‑In, Crafty Falcon adlı yapay zekâ destekli grup hakkında uyarı yayınladı. Grup, halka açık yapay zekâ araçlarını kullanarak sistemlere makine hızında sızabildiğini ve ödeme altyapılarını hedef aldığını belirtti.",
+      "Bu gelişmeler, yapay zekâ teknolojilerinin siber güvenlik açığını tespit etme ve kullanma yeteneğinin artmasının finans sektöründe ciddi riskler oluşturduğunu gösteriyor. Avrupa Bankacılık Otoritesi raporu, bankaların %74’ünün siber güvenliği en önemli operasyonel risk olarak gördüğünü ortaya koydu.",
+      "Bankalar, müşterilerin hesaplarına izinsiz erişimi önlemek için yapay zekâ tabanlı araçları engellemeye başladı. JPMorgan Chase, Morgan Stanley ve diğer büyük kuruluşlar, kullanıcı adı ve şifre paylaşımının yeni güvenlik açıkları yaratabileceğini vurguladı."
+    ],
+    "comment": "Siber saldırıların finans sektörüne yönelmesi, bankaların dijital altyapılarının zayıf noktalarını açığa çıkardı. 100 milyon avronun üzerindeki kayıp, güvenlik önlemlerinin yetersizliğini gösteriyor. Bankaların yapay zekâ destekli tehditlere karşı savunma sistemlerini güçlendirmesi, müşterilerin güvenini yeniden kazanmak için şart.",
+    "editorNote": "Finans sektörü, soğuk hava depolarının ardından siber saldırıların yeni hedefi oldu.",
+    "tags": [
+      "sibergüvenlik",
+      "bankalar",
+      "yapayzeka"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "bank security breach",
+    "source": "Türkiye Gazetesi",
+    "sourceUrl": "https://www.turkiyegazetesi.com.tr/teknoloji/siber-pandemi-korkusu-once-soguk-hava-depolari-simdi-de-bankalar-hedefte-1827893",
+    "image": "/kapak/ffc09ef7e7367c2d.webp",
+    "images": [
+      "https://i.turkiyegazetesi.com.tr/upload/author-images/24285935-ad03-47e5-89a2-6c52ebf004ba.png"
+    ],
+    "publishedAt": "2026-11-07T23:15:56.000Z",
+    "generatedAt": "2026-11-07T23:22:42.933Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Data_center_infrastructure_in_the_United_States.jpg/1280px-Data_center_infrastructure_in_the_United_States.jpg",
+        "yazar": "DOE / National Renewable Energy Laboratory (NREL)",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Data_center_infrastructure_in_the_United_States.jpg",
+        "altyazi": "Sunucu odasında güvenlik önlemleri"
+      }
+    ],
+    "breaking": true,
+    "kapak": {
+      "v": 3,
+      "kaynak": null,
+      "foto": false
+    }
+  },
+  {
     "id": "8dbd5b8f01644900",
     "title": "Eisenkot Hükümet Kurma Yetkisi Alıyor, Ulusal Acil Durum Hükümeti Açıklandı",
     "slug": "eisenkot-hukumet-kurma-yetkisi-alis-ulusal-acil-durum-hukumeti-aciklandi",
@@ -6889,7 +6943,6 @@
     "image": "/kapak/927ac1fd8263b22f.webp",
     "publishedAt": "2026-11-05T23:16:53.000Z",
     "generatedAt": "2026-11-05T23:29:14.150Z",
-    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": null,
@@ -6942,7 +6995,6 @@
     "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Microsoft_building_17_front_door.jpg/1280px-Microsoft_building_17_front_door.jpg",
     "publishedAt": "2026-11-05T23:14:00.000Z",
     "generatedAt": "2026-11-06T00:14:18.153Z",
-    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Acer_Predator_booth_and_iPhone_%2853362376717%29.jpg/1920px-Acer_Predator_booth_and_iPhone_%2853362376717%29.jpg",
@@ -12695,14 +12747,14 @@
     "generatedAt": "2026-11-04T09:13:37.582Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic2.JPG/1280px-Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic2.JPG",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic1.JPG/1280px-Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic1.JPG",
       "foto": true
     },
     "gorselKaynak": {
       "yazar": "Alf van Beem",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415,_pic2.JPG"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415,_pic1.JPG"
     },
     "ekGorselDeneme": "2026-11-04T16:59:57.736Z",
     "gorselAjan": {
@@ -12752,11 +12804,11 @@
       "yazar": "Alf van Beem",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415,_pic1.JPG"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415,_pic2.JPG"
     },
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic1.JPG/1280px-Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic1.JPG",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic2.JPG/1280px-Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic2.JPG",
       "foto": true
     },
     "ekGorselDeneme": "2026-11-04T16:59:58.834Z"
@@ -16188,14 +16240,14 @@
     "gorselDeneme": "2026-11-03T18:42:14.253Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Toyota_Echo_Bahrain.jpg/1280px-Toyota_Echo_Bahrain.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Toyota_Cressida_X60_Bahrain.jpg/1280px-Toyota_Cressida_X60_Bahrain.jpg",
       "foto": true
     },
     "gorselKaynak": {
       "yazar": "ToyGTone",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Toyota_Echo_Bahrain.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Toyota_Cressida_X60_Bahrain.jpg"
     },
     "ekGorselDeneme": "2026-11-03T21:40:42.605Z"
   },
@@ -141041,7 +141093,7 @@
       "yazar": "Wiki Farazi",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145541.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145532.jpg"
     },
     "gorselDeneme": "2026-10-28T04:46:35.718Z",
     "ekGorselDeneme": "2026-10-29T21:40:46.965Z",
@@ -141063,7 +141115,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145541.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145541.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145532.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145532.jpg",
       "foto": true
     }
   },
@@ -266795,15 +266847,15 @@
     "publishedAt": "2026-10-17T13:06:00.000Z",
     "generatedAt": "2026-10-17T13:07:01.965Z",
     "gorselKaynak": {
-      "yazar": "Leit",
-      "lisans": "Kamu malı",
-      "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Deutsche_Telekom_Tagungshotel_Bad_Honnef.JPG"
+      "yazar": "Jochen64",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Telekom_mobility_2_cars.jpg"
     },
     "gorselDeneme": "2026-10-28T04:49:00.614Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Deutsche_Telekom_Tagungshotel_Bad_Honnef.JPG/1280px-Deutsche_Telekom_Tagungshotel_Bad_Honnef.JPG",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Telekom_mobility_2_cars.jpg/1280px-Telekom_mobility_2_cars.jpg",
       "foto": true
     }
   },
@@ -271272,10 +271324,10 @@
     "publishedAt": "2026-10-17T10:50:16.000Z",
     "generatedAt": "2026-10-17T10:54:42.217Z",
     "gorselKaynak": {
-      "yazar": "Jochen64",
-      "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Telekom_mobility_2_cars.jpg"
+      "yazar": "Leit",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Deutsche_Telekom_Tagungshotel_Bad_Honnef.JPG"
     },
     "images": [
       "https://herkesduysun.com/api/medya/news/2026/10/20261027AW819274/01_800.webp"
@@ -271284,7 +271336,7 @@
     "gorselDeneme": "2026-10-28T04:49:06.269Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Telekom_mobility_2_cars.jpg/1280px-Telekom_mobility_2_cars.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Deutsche_Telekom_Tagungshotel_Bad_Honnef.JPG/1280px-Deutsche_Telekom_Tagungshotel_Bad_Honnef.JPG",
       "foto": true
     }
   },
@@ -277509,12 +277561,12 @@
       "yazar": "Wiki Farazi",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145614.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145541.jpg"
     },
     "gorselDeneme": "2026-10-28T04:49:11.651Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145614.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145614.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145541.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145541.jpg",
       "foto": true
     },
     "gorselSorguDeneme": "2026-11-05T12:01:06.811Z",
@@ -283703,7 +283755,7 @@
     "gorselDeneme": "2026-10-28T04:49:19.644Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://www.donanimhaber.com/images/images/haber/211721/src/sony-yeni-walkman-serisini-tanitti-5-899-dolara-kadar-cikiyor211721_1.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -283740,10 +283792,10 @@
     "publishedAt": "2026-10-16T18:05:07.000Z",
     "generatedAt": "2026-10-16T18:13:51.621Z",
     "gorselKaynak": {
-      "yazar": "KA KIT",
-      "lisans": "Kamu malı",
-      "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Apple_Intelligence.jpeg"
+      "yazar": "State Government Photographer",
+      "lisans": "CC0 1.0",
+      "lisansUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en/",
+      "sayfa": "https://commons.wikimedia.org/w/index.php?curid=87225422"
     },
     "gorselSorguDeneme": "2026-10-26T21:29:33.794Z",
     "gorselSorgu": "Apple Intelligence",
@@ -283803,7 +283855,7 @@
     "gorselDeneme": "2026-10-28T04:49:19.573Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Caviar_2340_Hard_Drive_Circuit_Board_Side_2.jpg/1280px-Caviar_2340_Hard_Drive_Circuit_Board_Side_2.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -283845,7 +283897,7 @@
     "gorselDeneme": "2026-10-28T04:49:19.766Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/16/8f187a246ec7aeec6d726be0c5f86de7.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -283889,8 +283941,8 @@
     "gorselDeneme": "2026-10-28T04:49:20.166Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Afyonkarahisar_Museum_from_the_outside.jpg/1280px-Afyonkarahisar_Museum_from_the_outside.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "gorselKaynak": {
       "yazar": "Raicem",
@@ -283943,8 +283995,8 @@
     "imagesKaynak": "https://www.ensondakika.com.tr/turkiye-hava-sporlari-federasyonu-fai-bunyesinde-aktif-uyelik-statusu-kazandi/720549/",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Stasiun_Kereta_Api_Non_Aktif_Soka_dari_sebelah_timur.jpg/1280px-Stasiun_Kereta_Api_Non_Aktif_Soka_dari_sebelah_timur.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -283981,8 +284033,8 @@
     "gorselDeneme": "2026-10-28T04:49:19.833Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Burdur.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "gorselKaynak": {
       "yazar": "Sabri76",
@@ -284026,13 +284078,13 @@
     "gorselSorgu": "Tesla Roadster",
     "ekGorselDeneme": "2026-10-25T18:14:20.163Z",
     "gorselKaynak": {
-      "yazar": "Eugene Zelenko",
-      "lisans": "CC BY-SA 4.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Tesla_Roadster_Sport-1.jpg"
+      "yazar": "先従隗始",
+      "lisans": "CC0 1.0",
+      "lisansUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en/",
+      "sayfa": "https://commons.wikimedia.org/w/index.php?curid=123610532"
     },
     "kapak": {
-      "v": 2,
+      "v": 3,
       "kaynak": "https://kibrismansetcom.teimg.com/crop/1280x720/kibrismanset-com/uploads/2026/10/17921467879025359f60e-tesla-ucabilen-yeni-araci-roadsteri-tanitti-0dan-100e.webp",
       "foto": true
     },
@@ -284082,8 +284134,8 @@
     "gorselDeneme": "2026-10-28T04:49:20.844Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/9/98/Steam%E3%81%AE%E3%81%8A%E3%81%BE%E5%9B%BD.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -284126,8 +284178,8 @@
     "gorselDeneme": "2026-10-28T04:49:20.550Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Caviar_2340_Hard_Drive_Circuit_Board_Side_2.jpg/1280px-Caviar_2340_Hard_Drive_Circuit_Board_Side_2.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "gorselSorguDeneme": "2026-11-06T15:48:33.904Z",
     "gorselSorgu": "Aydin technology office building",
@@ -284166,10 +284218,10 @@
     "generatedAt": "2026-10-16T17:27:54.833Z",
     "image": "/kapak/9667974f5b8dde1c.webp",
     "gorselKaynak": {
-      "yazar": "Syced",
-      "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Electric_charging_of_Tokyo_Gas_car_3.jpg"
+      "yazar": "Craig Garver from Tucson, Arizona, United States",
+      "lisans": "CC0 1.0",
+      "lisansUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en/",
+      "sayfa": "https://commons.wikimedia.org/w/index.php?curid=109212526"
     },
     "gorselSorgu": "electric car charging",
     "ekGorselDeneme": "2026-10-26T03:40:42.169Z",
@@ -284218,7 +284270,7 @@
     "gorselDeneme": "2026-10-28T04:49:20.261Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad2339b2c5109b0def97d90.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -284266,7 +284318,7 @@
     "imagesKaynak": "https://www.cnnturk.com/yerel-haberler/yalova/yalova-merkezli-dolandiricilik-operasyonunda-yakalanan-6-zanli-tutuklandi-3480445",
     "kapak": {
       "v": 3,
-      "kaynak": "https://image.cnnturk.com/i/cnnturk/75/1208x678/685eaaa2330760b1f2d9656b.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -284308,7 +284360,7 @@
     "imagesKaynak": "https://www.cnnturk.com/yerel-haberler/kocaeli/kocaelide-saganakta-heyelan-ve-cokme-yasanan-yollarda-calismalar-suruyor-3480444",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/TUSA%C5%9E_Sald%C4%B1r%C4%B1s%C4%B1_sonras%C4%B1_ABB_dijital_panosu.jpg/1280px-TUSA%C5%9E_Sald%C4%B1r%C4%B1s%C4%B1_sonras%C4%B1_ABB_dijital_panosu.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -284346,7 +284398,7 @@
     "gorselDeneme": "2026-10-28T04:49:20.503Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/2023_Ankara_bombing_Statement_by_the_Minister_of_Internal_Affairs.jpg/1280px-2023_Ankara_bombing_Statement_by_the_Minister_of_Internal_Affairs.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -284395,8 +284447,8 @@
     "imagesKaynak": "https://pasqualepillitteri.it/tr/news/24629/yapay-zeka-asistanlari-alisveris-nerede-calisiyor",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Caviar_2340_Hard_Drive_Circuit_Board_Side_2.jpg/1280px-Caviar_2340_Hard_Drive_Circuit_Board_Side_2.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -284440,7 +284492,7 @@
     "gorselDeneme": "2026-10-28T04:49:20.491Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://image.hurimg.com/i/hurriyet/90/0x0/6ad25b049266704a560f57e1.jpg",
+      "kaynak": null,
       "foto": false
     },
     "gorselSorguDeneme": "2026-11-06T15:48:40.319Z",
@@ -284480,8 +284532,8 @@
     "gorselDeneme": "2026-10-28T04:49:20.739Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Tavada_K%C4%B1zarm%C4%B1%C5%9F_%C4%B0stavrit.JPG/1280px-Tavada_K%C4%B1zarm%C4%B1%C5%9F_%C4%B0stavrit.JPG",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "gorselKaynak": {
       "yazar": "Kullanıcı:Selçuk Bağrışen",
