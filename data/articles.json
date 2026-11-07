@@ -7978,7 +7978,6 @@
     "image": "/kapak/a1d899d7a3ba8f1d.webp",
     "publishedAt": "2026-11-05T13:57:00.000Z",
     "generatedAt": "2026-11-05T13:58:38.140Z",
-    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": null,
@@ -195985,10 +195984,10 @@
     "publishedAt": "2026-10-20T10:59:00.000Z",
     "generatedAt": "2026-10-20T11:03:38.348Z",
     "gorselKaynak": {
-      "yazar": "Openverse",
-      "lisans": "CC0 1.0",
-      "lisansUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "sayfa": "https://www.rawpixel.com/image/5906639/photo-image-light-desktop-wallpapers-public-domain"
+      "yazar": "Kavali Chandrakanth KCK",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Google_Head_Office_Kondapur_Hyderabad.jpg"
     },
     "gorselDeneme": "2026-10-28T04:47:49.794Z",
     "ekGorselDeneme": "2026-11-01T02:00:51.246Z",
@@ -225323,10 +225322,10 @@
     "gorselDeneme": "2026-10-28T04:48:20.907Z",
     "gorselSorgu": "Opel Astra car",
     "gorselKaynak": {
-      "yazar": "Wad53",
+      "yazar": "Gerd Beck",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Opel_Rekord_Rear_view.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Contemporary_photograph_of_an_Opel_Olympia_Rekord.jpg"
     },
     "images": [
       "https://www.donanimhaber.com/images/images/haber/211802/src/opel-astra-start-tanitildi-yaklasik-2-bin-euro-daha-ucuz211802_0.jpg",
@@ -225335,7 +225334,7 @@
     "imagesKaynak": "https://www.donanimhaber.com/opel-astra-start-tanitildi-yaklasik-2-bin-euro-daha-ucuz--211802",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Opel_Rekord_Rear_view.jpg/1280px-Opel_Rekord_Rear_view.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Contemporary_photograph_of_an_Opel_Olympia_Rekord.jpg/1280px-Contemporary_photograph_of_an_Opel_Olympia_Rekord.jpg",
       "foto": true
     }
   },
@@ -250225,8 +250224,8 @@
     "gorselDeneme": "2026-10-28T04:48:45.715Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Scorpion_found_below_stone.jpg/1280px-Scorpion_found_below_stone.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
