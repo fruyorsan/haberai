@@ -564,8 +564,35 @@
     "breaking": true,
     "kapak": {
       "v": 3,
-      "kaynak": null,
-      "foto": false
+      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/f/fa/PRESS_CONFERENCE_2016-10-04_%2829997377492%29.jpg",
+      "foto": true,
+      "ajan": {
+        "v": 1,
+        "secim": "openverse",
+        "skor": 66,
+        "neden": "Bakanın basın toplantısı atmosferini yansıtıyor, haberin resmi tonuna uygun.",
+        "brif": "A press conference room with a senior minister standing behind a wooden podium, holding a microphone and speaking passionately; two uniformed police officers stand beside the podium, one holding a visible pair of handcuffs, while a crowd of journalists watches from the side",
+        "sorgular": [
+          "press conference minister",
+          "government official announcing arrests",
+          "police officers with handcuffs",
+          "journalists watching press briefing"
+        ],
+        "tarih": "2026-11-07T00:22:37.516Z"
+      }
+    },
+    "gorselAjan": {
+      "tarih": "2026-11-07T00:22:37.516Z",
+      "sonuc": "degisti",
+      "neden": "Bakanın basın toplantısı atmosferini yansıtıyor, haberin resmi tonuna uygun.",
+      "secim": "openverse",
+      "skor": 66
+    },
+    "gorselKaynak": {
+      "yazar": "EU2016 SK",
+      "lisans": "CC0",
+      "lisansUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en/",
+      "sayfa": "https://commons.wikimedia.org/w/index.php?curid=52142878"
     }
   },
   {
@@ -677,8 +704,36 @@
     "breaking": true,
     "kapak": {
       "v": 3,
-      "kaynak": null,
-      "foto": false
+      "kaynak": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvaXM3NzA0LWltYWdlLWt3eXM4amV6LmpwZw.jpg",
+      "foto": true,
+      "bilesim": "ekran",
+      "ajan": {
+        "v": 1,
+        "secim": "openverse",
+        "skor": 66,
+        "neden": "Hisse senedi alım-satım ve grafik ekranını göstererek Nasdaq AI hisselerindeki trading hareketliliğini doğrudan temsil ediyor.",
+        "brif": "Bir borsa trading odasında, bir trader büyük bir monitörde yükselen bir hisse senedi grafiğine odaklanmış, yanındaki kahve fincanı hafifçe gölgelenmiş",
+        "sorgular": [
+          "stock market trading",
+          "trader watching screen",
+          "rising stock chart",
+          "financial news desk"
+        ],
+        "tarih": "2026-11-07T00:23:00.367Z"
+      }
+    },
+    "gorselAjan": {
+      "tarih": "2026-11-07T00:23:00.367Z",
+      "sonuc": "degisti",
+      "neden": "Hisse senedi alım-satım ve grafik ekranını göstererek Nasdaq AI hisselerindeki trading hareketliliğini doğrudan temsil ediyor.",
+      "secim": "openverse",
+      "skor": 66
+    },
+    "gorselKaynak": {
+      "yazar": "",
+      "lisans": "CC0",
+      "lisansUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sayfa": "https://www.rawpixel.com/image/5968804/trading-cryptocurrency-mobile-web"
     }
   },
   {
@@ -727,7 +782,12 @@
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Business_Woman_is_reading_Newspaper_-_35870943420.jpg"
     },
-    "ekGorselDeneme": "2026-11-06T21:26:05.427Z"
+    "ekGorselDeneme": "2026-11-06T21:26:05.427Z",
+    "gorselAjan": {
+      "tarih": "2026-11-07T00:23:34.229Z",
+      "sonuc": "atlandi",
+      "neden": "yeterli görsel yok"
+    }
   },
   {
     "id": "4496fb8f4291026f",
@@ -6919,7 +6979,6 @@
         "altyazi": "Teknoloji haberlerini takip edebileceğiniz güncel dijital platformlar"
       }
     ],
-    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Gaming_pc.jpg/1920px-Gaming_pc.jpg",
@@ -9175,14 +9234,14 @@
     "generatedAt": "2026-11-04T09:13:37.582Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic2.JPG/1280px-Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic2.JPG",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic1.JPG/1280px-Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic1.JPG",
       "foto": true
     },
     "gorselKaynak": {
       "yazar": "Alf van Beem",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415,_pic2.JPG"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415,_pic1.JPG"
     },
     "ekGorselDeneme": "2026-11-04T16:59:57.736Z",
     "gorselAjan": {
@@ -9232,11 +9291,11 @@
       "yazar": "Alf van Beem",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415,_pic1.JPG"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415,_pic2.JPG"
     },
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic1.JPG/1280px-Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic1.JPG",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic2.JPG/1280px-Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic2.JPG",
       "foto": true
     },
     "ekGorselDeneme": "2026-11-04T16:59:58.834Z"
@@ -12672,14 +12731,14 @@
     "gorselDeneme": "2026-11-03T18:42:14.253Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Toyota_Cressida_X60_Bahrain.jpg/1280px-Toyota_Cressida_X60_Bahrain.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Toyota_Echo_Bahrain.jpg/1280px-Toyota_Echo_Bahrain.jpg",
       "foto": true
     },
     "gorselKaynak": {
       "yazar": "ToyGTone",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Toyota_Cressida_X60_Bahrain.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Toyota_Echo_Bahrain.jpg"
     },
     "ekGorselDeneme": "2026-11-03T21:40:42.605Z"
   },
@@ -34374,14 +34433,14 @@
     "gorselDeneme": "2026-11-01T03:41:57.299Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145532.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145532.jpg",
       "foto": true
     },
     "gorselKaynak": {
       "yazar": "Wiki Farazi",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145540.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145532.jpg"
     }
   },
   {
@@ -162357,10 +162416,10 @@
     "publishedAt": "2026-10-21T16:50:00.000Z",
     "generatedAt": "2026-10-21T16:54:49.804Z",
     "gorselKaynak": {
-      "yazar": "Syced",
+      "yazar": "Iorisrandombses5001",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Honda_Welcome_Plaza_Aoyama_9.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Honda_S2000_001.jpg"
     },
     "images": [
       "https://www.donanimhaber.com/images/images/haber/211918/src/kablo-yok-sarj-molasi-yok-honda-dan-hareket-halinde-sarj211918_0.jpg",
@@ -162370,7 +162429,7 @@
     "gorselDeneme": "2026-10-28T04:47:12.168Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Honda_Welcome_Plaza_Aoyama_9.jpg/1280px-Honda_Welcome_Plaza_Aoyama_9.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Honda_S2000_001.jpg/1280px-Honda_S2000_001.jpg",
       "foto": true
     }
   },
@@ -192971,10 +193030,10 @@
     "publishedAt": "2026-10-20T10:59:00.000Z",
     "generatedAt": "2026-10-20T11:03:38.348Z",
     "gorselKaynak": {
-      "yazar": "Kavali Chandrakanth KCK",
-      "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Google_Head_Office_Kondapur_Hyderabad.jpg"
+      "yazar": "Openverse",
+      "lisans": "CC0 1.0",
+      "lisansUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sayfa": "https://www.rawpixel.com/image/5906639/photo-image-light-desktop-wallpapers-public-domain"
     },
     "gorselDeneme": "2026-10-28T04:47:49.794Z",
     "ekGorselDeneme": "2026-11-01T02:00:51.246Z",
@@ -222309,10 +222368,10 @@
     "gorselDeneme": "2026-10-28T04:48:20.907Z",
     "gorselSorgu": "Opel Astra car",
     "gorselKaynak": {
-      "yazar": "Gerd Beck",
+      "yazar": "Wad53",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Contemporary_photograph_of_an_Opel_Olympia_Rekord.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Opel_Rekord_Rear_view.jpg"
     },
     "images": [
       "https://www.donanimhaber.com/images/images/haber/211802/src/opel-astra-start-tanitildi-yaklasik-2-bin-euro-daha-ucuz211802_0.jpg",
@@ -222321,7 +222380,7 @@
     "imagesKaynak": "https://www.donanimhaber.com/opel-astra-start-tanitildi-yaklasik-2-bin-euro-daha-ucuz--211802",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Contemporary_photograph_of_an_Opel_Olympia_Rekord.jpg/1280px-Contemporary_photograph_of_an_Opel_Olympia_Rekord.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Opel_Rekord_Rear_view.jpg/1280px-Opel_Rekord_Rear_view.jpg",
       "foto": true
     }
   },
@@ -223813,9 +223872,9 @@
     },
     "ekGorselDeneme": "2026-10-26T03:39:56.650Z",
     "kapak": {
-      "v": 2,
-      "kaynak": "https://img.yenicaggazetesi.com/rcman/Cw1280h720q95gc/storage/files/images/2026/10/19/osman-bektas-istanbul-depremi-icin-2025-yilini-isaret-etti-gozden-gecirilmeli-n4pq.jpg",
-      "foto": true
+      "v": 3,
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -224115,7 +224174,7 @@
     },
     "kapak": {
       "v": 3,
-      "kaynak": "https://www.haberizma.com/wp-content/uploads/2026/10/rusya-basinindan-turkiyenin-deprem-sonrasi-yeniden-insa-surecine-ovgu.webp",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -224394,7 +224453,7 @@
     },
     "kapak": {
       "v": 3,
-      "kaynak": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/363dfd595f114a83a3ba8e1227b12153jpeg-_ie3yV2EmEGGGNvm8jP7uw.jpeg?w=1270&h=675&mode=crop&scale=both",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -224440,7 +224499,7 @@
     },
     "kapak": {
       "v": 3,
-      "kaynak": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad5ceb1b130c257562a00e6.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -224523,15 +224582,15 @@
     "gorselDeneme": "2026-10-28T04:48:23.195Z",
     "gorselSorgu": "Arda Turan",
     "gorselKaynak": {
-      "yazar": "LauraHale",
-      "lisans": "CC BY-SA 3.0",
-      "lisansUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Arda_Turan_-_Isco_-_Sami_Khedira.jpg"
+      "yazar": "IDontHaveSkype",
+      "lisans": "CC0",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Longxing_Football_Stadium_2025-06-10.jpg"
     },
     "ekGorselDeneme": "2026-10-26T03:39:57.767Z",
     "kapak": {
-      "v": 2,
-      "kaynak": "https://i.haberglobal.com/storage/files/images/2026/10/19/arda-turan-sampiyonlar-ligindeki-favorilerini-acikladi-nvo9.jpg",
+      "v": 3,
+      "kaynak": "spor-longxing-football-stadium-2025-06-10-2540.jpg",
       "foto": true
     }
   },
@@ -224625,7 +224684,7 @@
     "ekGorselDeneme": "2026-11-03T21:41:11.457Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/bogazatakilankilciktaekmekyutmakguvenlidegilkapak1cd30f1dbf817aefjpg-Cy_knc28-USvPR0OK483OA.jpg?w=1270&h=675&mode=crop&scale=both",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -224670,7 +224729,7 @@
     },
     "kapak": {
       "v": 3,
-      "kaynak": "https://iasbh.tmgrup.com.tr/6d4145/1200/675/33/0/1179/645?u=https://isbh.tmgrup.com.tr/sbh/2026/10/19/istanbuldaki-5-bin-kisilik-konserde-cifte-olumun-sebebi-arastiriliyor-cenaze-zonguldaka-gonderildi-1792397042021.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -224758,10 +224817,10 @@
     "gorselDeneme": "2026-10-28T04:48:23.421Z",
     "gorselSorgu": "Huawei smartphone",
     "gorselKaynak": {
-      "yazar": "Syced",
+      "yazar": "Saulo Mohana",
       "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Huawei_boxes_in_front_of_a_residential_building_in_Tokyo,_presumably_to_build_a_mobile_telephony_antenna.jpg"
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Saulo-mohana-77106-unsplash.jpg"
     },
     "images": [
       "https://img.tamindir.com/resize/1200x675/2026/10/476765/huawei-pura-90s-serisi-kampanyasi-indirim-hediye-1.jpg"
@@ -224769,7 +224828,7 @@
     "imagesKaynak": "https://www.tamindir.com/haber/huawei-pura-90s-serisi-kampanyasi-indirim-hediye_112386/",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Huawei_boxes_in_front_of_a_residential_building_in_Tokyo%2C_presumably_to_build_a_mobile_telephony_antenna.jpg/1280px-Huawei_boxes_in_front_of_a_residential_building_in_Tokyo%2C_presumably_to_build_a_mobile_telephony_antenna.jpg",
+      "kaynak": "mobil-saulo-mohana-77106-unsplash-2131.jpg",
       "foto": true
     }
   },
@@ -225004,7 +225063,7 @@
     "ekGorselDeneme": "2026-10-26T09:50:22.360Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/233jpg-QHhPCf6H9Ea_QI_2B3xTpA.jpg?w=1270&h=675&mode=crop&scale=both",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -225097,7 +225156,7 @@
     "imagesKaynak": "https://www.cnnturk.com/dunya/fransa-icisleri-bakani-nunez-istifasini-sundu-macron-reddetti-3481311",
     "kapak": {
       "v": 3,
-      "kaynak": "https://image.cnnturk.com/i/cnnturk/75/770x0/6ad5ca39fe46d577dbb932b4.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -225146,7 +225205,7 @@
     "imagesKaynak": "https://www.yenisafak.com/dunya/iran-disisleri-bakani-arakci-netanyahu-hapse-girmemek-icin-abdyi-savasa-surukluyor-4865495",
     "kapak": {
       "v": 3,
-      "kaynak": "https://img.piri.net/piri/upload/3/2026/10/27/f3ba2f09-israilde-sandiklar-kapandi-netanyahu-icin-kritik-secim.webp",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -225192,7 +225251,7 @@
     "ekGorselDeneme": "2026-10-26T03:40:00.549Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://yenialanyacom.teimg.com/crop/1280x720/yenialanya-com/uploads/2026/10/ya-1792395537906.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
