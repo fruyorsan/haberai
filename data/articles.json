@@ -108236,15 +108236,15 @@
       }
     ],
     "gorselKaynak": {
-      "yazar": "Hans Roht",
+      "yazar": "Derrick Coetzee",
       "lisans": "Kamu malı",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_argentina.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_building_17_front_door.jpg"
     },
     "gorselDeneme": "2026-10-28T04:45:45.659Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/8/86/Microsoft_argentina.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Microsoft_building_17_front_door.jpg/1280px-Microsoft_building_17_front_door.jpg",
       "foto": true
     }
   },
@@ -123558,10 +123558,10 @@
     "publishedAt": "2026-10-22T20:30:55.000Z",
     "generatedAt": "2026-10-22T20:34:00.208Z",
     "gorselKaynak": {
-      "yazar": "Derrick Coetzee",
+      "yazar": "Hans Roht",
       "lisans": "Kamu malı",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_building_17_front_door.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_argentina.jpg"
     },
     "ekGorselDeneme": "2026-10-28T18:03:54.086Z",
     "gorselEk": [
@@ -123576,7 +123576,7 @@
     "gorselDeneme": "2026-10-28T04:46:14.416Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Microsoft_building_17_front_door.jpg/1280px-Microsoft_building_17_front_door.jpg",
+      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/8/86/Microsoft_argentina.jpg",
       "foto": true
     }
   },
@@ -249223,8 +249223,8 @@
     "gorselSorgu": "Russian oil tanker",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Oil_tanker_crossing_the_bridge_over_Lake_Maracaibo.jpg/1280px-Oil_tanker_crossing_the_bridge_over_Lake_Maracaibo.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "ekGorselDeneme": "2026-11-05T12:02:06.299Z",
     "gorselEk": [
@@ -249277,7 +249277,7 @@
     "gorselDeneme": "2026-10-28T04:48:45.487Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://haber.aero/wp-content/uploads/2020/04/Apache-helikopter-e1776253202641.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -249326,7 +249326,7 @@
     "gorselDeneme": "2026-10-28T04:48:45.314Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://image.cnnturk.com/i/cnnturk/75/770x0/6ad48f12b130c2575629ff2e.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
