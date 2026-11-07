@@ -110582,15 +110582,15 @@
     "generatedAt": "2026-10-23T05:58:08.675Z",
     "ekGorselDeneme": "2026-10-25T05:50:27.912Z",
     "gorselKaynak": {
-      "yazar": "SpaceX",
-      "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:SpaceX_Headquarters,_Hawthorne,_CA.jpg"
+      "yazar": "NASA/SpaceX",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:SpaceX_Crew_Dragon_(More_cropped).jpg"
     },
     "gorselDeneme": "2026-10-28T04:45:48.238Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/SpaceX_Headquarters%2C_Hawthorne%2C_CA.jpg/1280px-SpaceX_Headquarters%2C_Hawthorne%2C_CA.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/SpaceX_Crew_Dragon_%28More_cropped%29.jpg/1280px-SpaceX_Crew_Dragon_%28More_cropped%29.jpg",
       "foto": true
     }
   },
@@ -112060,10 +112060,10 @@
     "generatedAt": "2026-10-23T04:55:22.505Z",
     "ekGorselDeneme": "2026-10-25T07:11:28.571Z",
     "gorselKaynak": {
-      "yazar": "NASA/SpaceX",
-      "lisans": "Kamu malı",
-      "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:SpaceX_Crew_Dragon_(More_cropped).jpg"
+      "yazar": "SpaceX",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:SpaceX_Headquarters,_Hawthorne,_CA.jpg"
     },
     "images": [
       "https://i2.wp.com/www.borsatek.com/app/uploads/2026/05/halka-arz_spacex-2.jpg",
@@ -112073,7 +112073,7 @@
     "gorselDeneme": "2026-10-28T04:45:51.122Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/SpaceX_Crew_Dragon_%28More_cropped%29.jpg/1280px-SpaceX_Crew_Dragon_%28More_cropped%29.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/SpaceX_Headquarters%2C_Hawthorne%2C_CA.jpg/1280px-SpaceX_Headquarters%2C_Hawthorne%2C_CA.jpg",
       "foto": true
     }
   },
@@ -251978,8 +251978,8 @@
     "gorselSorgu": "school bullying",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/%C3%87ocuklar%C4%B1n_Heykel%27i.jpg/1280px-%C3%87ocuklar%C4%B1n_Heykel%27i.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "ekGorselDeneme": "2026-11-05T12:02:52.250Z"
   },
@@ -252022,8 +252022,8 @@
     "gorselDeneme": "2026-10-28T04:48:47.575Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Kendi_with_Lotus_Design_%289847758644%29.jpg/1280px-Kendi_with_Lotus_Design_%289847758644%29.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -252071,8 +252071,8 @@
     "gorselDeneme": "2026-10-28T04:48:47.720Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Amasya-city.jpg/1280px-Amasya-city.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -252118,7 +252118,7 @@
     "gorselDeneme": "2026-10-28T04:48:47.832Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://img.piri.net/piri/upload/3/2026/10/10/5572ecda-sosyal-medyada-cocuklar-icin-yeni-donem-15-yas-altina.webp",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -252165,8 +252165,8 @@
     "gorselSorgu": "Diyarbakır food",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Diyarbak%C4%B1r_Ta%C5%9F_Evleri.jpg/1280px-Diyarbak%C4%B1r_Ta%C5%9F_Evleri.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "ekGorselDeneme": "2026-11-05T12:02:54.628Z",
     "gorselEk": [
