@@ -40321,14 +40321,14 @@
     "gorselDeneme": "2026-11-01T03:41:57.299Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Sungai_Tuntong_20231222_145411.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Sungai_Tuntong_20231222_145411.jpg",
       "foto": true
     },
     "gorselKaynak": {
       "yazar": "Wiki Farazi",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145540.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Sungai_Tuntong_20231222_145411.jpg"
     }
   },
   {
@@ -143518,7 +143518,7 @@
       "yazar": "Wiki Farazi",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145532.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145540.jpg"
     },
     "gorselDeneme": "2026-10-28T04:46:35.718Z",
     "ekGorselDeneme": "2026-10-29T21:40:46.965Z",
@@ -143540,7 +143540,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145532.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145532.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg",
       "foto": true
     }
   },
@@ -300702,9 +300702,9 @@
     "gorselSorgu": "police motorcycle",
     "ekGorselDeneme": "2026-10-26T03:40:45.720Z",
     "kapak": {
-      "v": 2,
-      "kaynak": "https://foto.sondakika.com/crop/1216x0/haber/2026/10/16/bursa-yildirim-da-telefon-kapkaci-yapan-2-sup-20335833_sd.jpg",
-      "foto": true
+      "v": 3,
+      "kaynak": null,
+      "foto": false
     },
     "gorselDeneme": "2026-10-28T04:49:34.860Z"
   },
@@ -300744,7 +300744,7 @@
     "gorselDeneme": "2026-10-28T04:49:35.726Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Cumhuriyet_protests_%281%29.jpg/1280px-Cumhuriyet_protests_%281%29.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -300779,15 +300779,15 @@
     "generatedAt": "2026-10-16T09:06:40.701Z",
     "image": "/kapak/d817996488f4f16a.webp",
     "gorselKaynak": {
-      "yazar": "NASA Glenn Research Center",
-      "lisans": "Kamu malı",
-      "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Supercharger_Research_at_the_Aircraft_Engine_Research_Laboratory_(GRC-1944-C-03814).jpg"
+      "yazar": "Openverse",
+      "lisans": "CC0 1.0",
+      "lisansUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sayfa": "https://www.rawpixel.com/image/13972073/photo-image-face-plant-people"
     },
     "kapak": {
       "v": 3,
       "kaynak": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2024/10/hayvan-2jpg-nyRirZ61pUuDPXwICF3a_A.jpg",
-      "foto": false
+      "foto": true
     },
     "gorselSorguDeneme": "2026-11-07T23:37:32.329Z",
     "gorselSorgu": "drunk animals in forest",
@@ -300827,8 +300827,8 @@
     "gorselDeneme": "2026-10-28T04:49:34.946Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Meksika%2C_V._%C5%A0ubic%2C_1927.jpg/1280px-Meksika%2C_V._%C5%A0ubic%2C_1927.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "gorselKaynak": {
       "yazar": "",
@@ -300868,8 +300868,8 @@
     "gorselDeneme": "2026-10-28T04:49:35.072Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Banu_Alkan%2C_2020.jpg/1280px-Banu_Alkan%2C_2020.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "gorselKaynak": {
       "yazar": "Koray",
@@ -300911,7 +300911,7 @@
     "gorselDeneme": "2026-10-28T04:49:35.051Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://images.ntv.com.tr/images/images-739460.jpg?format=webp&width=1200&height=630",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -300968,8 +300968,8 @@
     "imagesKaynak": "https://www.hunattv.com/universite-okumak-icin-turkiye-ye-geldi-sampiyonlar-ligi-nde-sahne-aldi/31818/",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Kobe_City_University_of_Foreign_Studies_student_center.jpg/1280px-Kobe_City_University_of_Foreign_Studies_student_center.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -301007,8 +301007,8 @@
     "gorselDeneme": "2026-10-28T04:49:35.128Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Ihlamur_Kasr%C4%B1%2C_Be%C5%9Fikta%C5%9F_2014-2.jpg/1280px-Ihlamur_Kasr%C4%B1%2C_Be%C5%9Fikta%C5%9F_2014-2.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "gorselKaynak": {
       "yazar": "Hamdigumus",
@@ -301054,7 +301054,7 @@
     "gorselDeneme": "2026-10-28T04:49:35.666Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/7/7d/T%C3%BCrkiye_Gazeteciler_Cemiyeti_bas%C4%B1n_a%C3%A7%C4%B1klamas%C4%B1.jpg",
+      "kaynak": null,
       "foto": false
     }
   },
@@ -301098,7 +301098,7 @@
     "gorselDeneme": "2026-10-28T04:49:35.081Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad1e510fe46d577dbb929c9.jpg",
+      "kaynak": null,
       "foto": false
     },
     "gorselSorguDeneme": "2026-11-07T23:37:38.638Z",
@@ -301153,7 +301153,13 @@
     "kapak": {
       "v": 3,
       "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Data_center_infrastructure_in_the_United_States.jpg/1280px-Data_center_infrastructure_in_the_United_States.jpg",
-      "foto": false
+      "foto": true
+    },
+    "gorselKaynak": {
+      "yazar": "Tsgrayson",
+      "lisans": "CC0 1.0",
+      "lisansUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en/",
+      "sayfa": "https://commons.wikimedia.org/w/index.php?curid=175128586"
     }
   },
   {
