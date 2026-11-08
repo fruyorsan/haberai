@@ -255,10 +255,12 @@ const jsonLd = {
     width: 1200,
     height: 630,
   },
-  // Haber, HaberinAi editör masasının kendi özeti ve anlatımıyla yayımlanır;
-  // yapısal veride başka bir yayıncıya "dayanma" (isBasedOn/citation) veya
-  // kaynak atfı bildirilmez. Şeffaflık; yayın ilkeleri, düzeltme politikası,
-  // yazar/yayıncı kimliği ve görünür "Bu haber hakkında" kutusuyla kurulur.
+  // Haber, HaberinAi editör masasının kendi özeti ve anlatımıyla yayımlanır.
+  // Kaynak atfı GÖRÜNÜR olarak sayfada verilir (bkz. .post__kaynak) ve aynı
+  // kaynak yapısal veride `isBasedOn` olarak bildirilir. Şeffaflık, Google'ın
+  // "scraped content" değerlendirmesinde ve AdSense incelemesinde en güçlü
+  // savunmadır: bilginin nereden geldiği gizlenmez, metnin kendisi özgündür.
+  ...(article.sourceUrl ? { isBasedOn: article.sourceUrl } : {}),
   publishingPrinciples: new URL("/yayin-ilkeleri/", site).href,
   correctionsPolicy: new URL("/yayin-ilkeleri/", site).href,
   isAccessibleForFree: true,
@@ -564,6 +566,24 @@ const breadcrumbLd = {
             );
           })}
         </div>
+      )}
+
+      {(article.source || article.sourceUrl) && (
+        <p class="post__kaynak">
+          <span class="post__kaynak-etiket">Kaynak</span>
+          {article.sourceUrl ? (
+            <a href={article.sourceUrl} target="_blank" rel="noopener nofollow">
+              {article.source || "Haber kaynağı"}
+            </a>
+          ) : (
+            <span>{article.source}</span>
+          )}
+          <span class="post__kaynak-not">
+            Kaynağın aktardığı bilgiler HaberinAi editör masası tarafından özetlenip yeniden
+            yazılarak yayımlanmıştır; metin birebir kopya değildir.
+            <a href="/telif/">İçerik ve telif politikası</a>
+          </span>
+        </p>
       )}
 
       <HaberGuven article={article} publishedIso={publishedIso} modifiedIso={modifiedIso} />
@@ -1180,6 +1200,45 @@ const breadcrumbLd = {
     flex-wrap: wrap;
     gap: 8px;
     margin: 24px 0;
+  }
+  /* --- Kaynak atfı (şeffaflık / E-E-A-T) ---
+     Her haberde bilginin geldiği yayın görünür biçimde yazılır. Amaç okuru
+     dışarı göndermek değil, metnin kaynağını gizlemediğini göstermek. */
+  .post__kaynak {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 8px;
+    margin: 0 0 18px;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--brand);
+    border-radius: 10px;
+    background: var(--surface-2);
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--text-2);
+  }
+  .post__kaynak-etiket {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .post__kaynak a {
+    color: var(--brand-strong);
+    font-weight: 700;
+  }
+  .post__kaynak-not {
+    flex: 1 1 100%;
+    color: var(--muted);
+    font-size: 0.78rem;
+  }
+  .post__kaynak-not a {
+    color: var(--muted);
+    text-decoration: underline;
+    font-weight: 600;
   }
   .post__tag {
     background: var(--bg-soft);

@@ -9,6 +9,7 @@
 // sayfanın görselini bildirmek çelişki olur.
 // ==========================================================================
 import { getYayinArticles, publishedISO } from "../lib/articles.js";
+import { kapakKaynagi } from "../lib/kapak.js";
 import { siteOrigin } from "../lib/site-meta.js";
 
 const esc = (s) =>
@@ -29,12 +30,17 @@ function absolute(value, origin) {
 
 export function GET({ site }) {
   const origin = siteOrigin(site);
-  const articles = getYayinArticles().filter((a) => absolute(a.image, origin));
+  // Sayfada GERÇEKTEN gösterilen kapak bildirilir. `a.image` ham alanı, güvenlik
+  // süzgecinin (lib/kapak.js) elediği görselleri de içeriyordu; site haritasında
+  // sayfada görünmeyen bir görsel bildirmek Google Görseller ile çelişki yaratır.
+  const articles = getYayinArticles()
+    .map((a) => ({ a, kaynak: kapakKaynagi(a) }))
+    .filter(({ kaynak }) => absolute(kaynak, origin));
 
   const urls = articles
-    .map((a) => {
+    .map(({ a, kaynak }) => {
       const page = origin + a.url;
-      const img = absolute(a.image, origin);
+      const img = absolute(kaynak, origin);
       const title = esc(a.title);
       const caption = esc(a.summary ? String(a.summary).slice(0, 200) : a.title);
       return [
