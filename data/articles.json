@@ -114497,15 +114497,15 @@
     "generatedAt": "2026-10-23T05:58:08.675Z",
     "ekGorselDeneme": "2026-10-25T05:50:27.912Z",
     "gorselKaynak": {
-      "yazar": "SpaceX",
-      "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:SpaceX_Headquarters,_Hawthorne,_CA.jpg"
+      "yazar": "NASA/SpaceX",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:SpaceX_Crew_Dragon_(More_cropped).jpg"
     },
     "gorselDeneme": "2026-10-28T04:45:48.238Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/SpaceX_Headquarters%2C_Hawthorne%2C_CA.jpg/1280px-SpaceX_Headquarters%2C_Hawthorne%2C_CA.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/SpaceX_Crew_Dragon_%28More_cropped%29.jpg/1280px-SpaceX_Crew_Dragon_%28More_cropped%29.jpg",
       "foto": true
     }
   },
@@ -115975,10 +115975,10 @@
     "generatedAt": "2026-10-23T04:55:22.505Z",
     "ekGorselDeneme": "2026-10-25T07:11:28.571Z",
     "gorselKaynak": {
-      "yazar": "NASA/SpaceX",
-      "lisans": "Kamu malı",
-      "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:SpaceX_Crew_Dragon_(More_cropped).jpg"
+      "yazar": "SpaceX",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:SpaceX_Headquarters,_Hawthorne,_CA.jpg"
     },
     "images": [
       "https://i2.wp.com/www.borsatek.com/app/uploads/2026/05/halka-arz_spacex-2.jpg",
@@ -115988,7 +115988,7 @@
     "gorselDeneme": "2026-10-28T04:45:51.122Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/SpaceX_Crew_Dragon_%28More_cropped%29.jpg/1280px-SpaceX_Crew_Dragon_%28More_cropped%29.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/SpaceX_Headquarters%2C_Hawthorne%2C_CA.jpg/1280px-SpaceX_Headquarters%2C_Hawthorne%2C_CA.jpg",
       "foto": true
     }
   },
@@ -301790,8 +301790,8 @@
     },
     "kapak": {
       "v": 3,
-      "kaynak": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2024/10/hayvan-2jpg-nyRirZ61pUuDPXwICF3a_A.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "gorselSorguDeneme": "2026-11-07T23:37:32.329Z",
     "gorselSorgu": "drunk animals in forest",
@@ -302156,8 +302156,8 @@
     "gorselDeneme": "2026-10-28T04:49:35.613Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Data_center_infrastructure_in_the_United_States.jpg/1280px-Data_center_infrastructure_in_the_United_States.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "gorselKaynak": {
       "yazar": "Tsgrayson",
@@ -303509,8 +303509,8 @@
     "gorselDeneme": "2026-10-28T04:49:38.872Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://img.poweredcache.net/www.teknoblog.com/wp-content/uploads/2026/10/loops-ai-448.png?rs=fit&w=1280&h=720&ssl=1&format=webp",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -304809,8 +304809,8 @@
     "gorselDeneme": "2026-10-28T04:49:38.402Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/%C4%B0kinci_Bil%C9%99cik_2025.jpg/1280px-%C4%B0kinci_Bil%C9%99cik_2025.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -305870,8 +305870,8 @@
     },
     "kapak": {
       "v": 3,
-      "kaynak": "https://img.tamindir.com/2026/10/476815/abd-eyaletleri-openai-chatgpt-davasi.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "images": [
       "https://img.tamindir.com/resize/1200x675/2026/10/476815/chatgpt-gencler-icin-common-sense-media-risk-1.jpg"
@@ -306014,7 +306014,7 @@
       "yazar": "Estormiz",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:AC_Oulu_vs_KuPS_20261101_01.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:AC_Oulu_vs_KuPS_20261101_02.jpg"
     },
     "gorselSorguDeneme": "2026-10-27T23:38:11.460Z",
     "gorselSorgu": "Trabzonspor football team",
@@ -306031,7 +306031,7 @@
     "gorselDeneme": "2026-10-28T04:49:38.989Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/AC_Oulu_vs_KuPS_20261101_01.jpg/1280px-AC_Oulu_vs_KuPS_20261101_01.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/AC_Oulu_vs_KuPS_20261101_02.jpg/1280px-AC_Oulu_vs_KuPS_20261101_02.jpg",
       "foto": true
     }
   },
@@ -306124,8 +306124,8 @@
     "ekGorselDeneme": "2026-10-26T09:50:37.159Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://www.donanimhaber.com/images/images/haber/211679/1200x675kaliforniya-da-ev-tipi-bataryalar-rekor-kiriyor.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "images": [
       "https://www.donanimhaber.com/images/images/haber/211679/src/kaliforniya-da-ev-tipi-bataryalar-rekor-kiriyor211679_0.jpg"
@@ -306900,7 +306900,7 @@
       "yazar": "Estormiz",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:AC_Oulu_vs_KuPS_20261101_02.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:AC_Oulu_vs_KuPS_20261101_01.jpg"
     },
     "gorselYedek": 1,
     "gorselSorguDeneme": "2026-10-27T01:17:33.871Z",
@@ -306918,7 +306918,7 @@
     "gorselDeneme": "2026-10-28T04:49:40.076Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/AC_Oulu_vs_KuPS_20261101_02.jpg/1280px-AC_Oulu_vs_KuPS_20261101_02.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/AC_Oulu_vs_KuPS_20261101_01.jpg/1280px-AC_Oulu_vs_KuPS_20261101_01.jpg",
       "foto": true
     }
   },
