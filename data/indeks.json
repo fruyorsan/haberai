@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08T21:33:16.043Z",
+  "updatedAt": "2026-11-08T21:52:14.379Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 6058,
-  "aday": 6058,
-  "uygun": 4000,
-  "secilen": 3908,
+  "toplamHaber": 6060,
+  "aday": 6060,
+  "uygun": 4002,
+  "secilen": 3909,
   "red": {
     "özet gövdeyle aynı": 119,
     "editör notu özetle aynı": 9,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 148
+    "tekrar": 149
   },
   "ornekTekrarlar": [
     {
@@ -164,10 +164,10 @@
       "856e78f538f32210",
       "4496fb8f4291026f",
       "4346f86d77395d90",
-      "af31ad637890cdeb",
       "d604f764cc4d1f22",
       "09f3d57d56f2a103",
       "fd6444cb406166fa",
+      "af31ad637890cdeb",
       "fec35efe9ba3d92e",
       "601b185bd5a5b52e",
       "8fc8e90c6b3150dc"
@@ -613,7 +613,6 @@
       "34c3a53197945ea3",
       "f0ff25544445436f",
       "fdc63361178709c8",
-      "1f3b943e94c29a3a",
       "86b783bd8157078c",
       "5030bddd036860db",
       "08be55d5b1a89a23",
@@ -4043,8 +4042,10 @@
       "857e2cf49102f275",
       "9996a778da82d3ca",
       "12f29611b497f75e",
+      "8afd4c7f11eaf1ac",
       "7128a0d2899fc6d9",
-      "0e509c9e70249fcb"
+      "0e509c9e70249fcb",
+      "6585e4e343b1f0e0"
     ],
     "2026-10-24": [
       "a4be49d15a2c1a5f",
@@ -5131,6 +5132,7 @@
     "ec916cc81a96b780",
     "36ab5cd063fbc543",
     "9996a778da82d3ca",
+    "12f29611b497f75e",
     "0e7b567ebf41a861",
     "132f5216b5414a73",
     "706af2d1117615f3",
@@ -5498,6 +5500,7 @@
     "ac4a3a2a07349d82",
     "eaa6796c53dede82",
     "1acdc099bc06935a",
+    "8afd4c7f11eaf1ac",
     "b0ae0157c47a4518",
     "0bf8fa7f289f2599",
     "e5ced170645a533c",
@@ -5550,7 +5553,6 @@
     "4d3a93a9993aa9bd",
     "db0bab96409bd4ed",
     "beb8f22ed62169fa",
-    "12f29611b497f75e",
     "3cbfe9b9e486b44a",
     "7cb9c350eded8f29",
     "a7259eb3e7e9d69f",
@@ -5831,7 +5833,6 @@
     "91b0c5554b931d42",
     "8e35518fa4f36136",
     "b5952fb61656967e",
-    "af31ad637890cdeb",
     "4e55f1fa36b4454c",
     "fffeca17dd175b4c",
     "e59e7913325d6907",
@@ -6369,6 +6370,7 @@
     "93d300615c12f361",
     "3b7402678ac13334",
     "b58ef558e4abc08a",
+    "af31ad637890cdeb",
     "6a4b8a566f8eb61a",
     "4af37475f0b34c0a",
     "76ffe3fda9008346",
@@ -7182,7 +7184,6 @@
     "8f3d0632ed620630",
     "74e54aa5cf023568",
     "242ec0f45b059c6f",
-    "1f3b943e94c29a3a",
     "22aca6a03aa9ddaa",
     "b7cf845aa66b9e16",
     "021ad81c975de4b3",
@@ -7337,6 +7338,7 @@
     "b2706c7d31fa4453",
     "a9899368df922a8a",
     "4d1248cfaa0474ad",
+    "6585e4e343b1f0e0",
     "98a35c5bfef25dff",
     "4e0f823c149cd129",
     "c4316b322f160118",
