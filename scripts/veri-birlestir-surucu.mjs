@@ -46,6 +46,10 @@ const KORUNAN = [
   "images",
   "imagesKaynak",
   "gorselDeneme",
+  // Kaynak fotoğrafı turunun deneme defteri: uzak (CI) veri bunları bilmediği
+  // için birleştirmede düşerse aynı 2,5 bin kart her koşuda yeniden taranır.
+  "kaynakKapakDeneme",
+  "kaynakKapakNeden",
   "refreshedAt",
   "bildirildi",
 ];

@@ -1,0 +1,2272 @@
+{
+ "tarih": "2026-11-08T11:29:01.412Z",
+ "hedef": "kart",
+ "gun": 0,
+ "toplam": 120,
+ "gecen": 75,
+ "oran": 62.5,
+ "kaliteOrt": {
+  "genislik": 1340,
+  "yukseklik": 775,
+  "entropi": 7.11
+ },
+ "nedenGrupla": {
+  "küçük (boyut)": 15,
+  "düz/az detay (entropi #.#)": 5,
+  "telif/rakip yayıncı": 3,
+  "yayıncı paylaşım kartı (plaka %#, yazı %#.#)": 2,
+  "sayfada görsel yok": 8,
+  "bulanık (gradyan #.#)": 3,
+  "fotoğraf üstüne basılı başlık (satır %#.#)": 6,
+  "oran dar (oran)": 1,
+  "çözülemedi": 1,
+  "bulanık (gradyan #)": 1
+ },
+ "hostTablo": {
+  "aa.com.tr": {
+   "toplam": 7,
+   "gecti": 1
+  },
+  "haberglobal.com": {
+   "toplam": 6,
+   "gecti": 5
+  },
+  "gazeteoksijen.com": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "webtekno.com": {
+   "toplam": 3,
+   "gecti": 2
+  },
+  "merlininkazani.com": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "donanimhaber.com": {
+   "toplam": 3,
+   "gecti": 2
+  },
+  "gzt.com": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "bbc.co.uk": {
+   "toplam": 3,
+   "gecti": 3
+  },
+  "shiftdelete.net": {
+   "toplam": 3,
+   "gecti": 0
+  },
+  "toplumsal.com.tr": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "chip.com.tr": {
+   "toplam": 4,
+   "gecti": 3
+  },
+  "cnnturk.com": {
+   "toplam": 9,
+   "gecti": 6
+  },
+  "yozgatmedya.com.tr": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "dikgazete.com": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "hibya.com": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "log.com.tr": {
+   "toplam": 2,
+   "gecti": 1
+  },
+  "canligaste.com": {
+   "toplam": 3,
+   "gecti": 3
+  },
+  "vanhabergazetesi.com": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "kanal3.com.tr": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "pasqualepillitteri.it": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "tr.investing.com": {
+   "toplam": 2,
+   "gecti": 0
+  },
+  "tasnimnews.ir": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "trhaber.com.tr": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "ensonhaber.com": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "tamindir.com": {
+   "toplam": 2,
+   "gecti": 2
+  },
+  "koinbulteni.com": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "ekoturk.com": {
+   "toplam": 2,
+   "gecti": 2
+  },
+  "borsatek.com": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "webrazzi.com": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "ydh.com.tr": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "parstoday.ir": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "yeniankara.com.tr": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "abdpost.com": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "bianet.org": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "finanshatti.com": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "ortadogugazetesi.com": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "ensondakika.com.tr": {
+   "toplam": 2,
+   "gecti": 1
+  },
+  "herkesduysun.com": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "murekkephaber.com": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "cumha.com.tr": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "cumhuriyet.com.tr": {
+   "toplam": 6,
+   "gecti": 5
+  },
+  "yenisafak.com": {
+   "toplam": 4,
+   "gecti": 3
+  },
+  "t.co": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "kanal23.com": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "ssbulten.com.tr": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "invezz.com": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "teknoblog.com": {
+   "toplam": 3,
+   "gecti": 2
+  },
+  "trthaber.com": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "sozcu.com.tr": {
+   "toplam": 7,
+   "gecti": 5
+  },
+  "m.haber7.com": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "telgraf.net": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "tr.motorsport.com": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "sabah.com.tr": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "milliyet.com.tr": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "sondakika.com": {
+   "toplam": 3,
+   "gecti": 3
+  },
+  "hurriyet.com.tr": {
+   "toplam": 3,
+   "gecti": 2
+  },
+  "haberkibris.com": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "ntv.com.tr": {
+   "toplam": 2,
+   "gecti": 2
+  },
+  "yenialanya.com": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "busabahmalatya.com": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "12punto.com.tr": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "evrimagaci.org": {
+   "toplam": 1,
+   "gecti": 0
+  }
+ },
+ "kayitlar": [
+  {
+   "id": "e1ea7daaa2482bfa",
+   "baslik": "İçişleri Bakanı Çiftçi, Konut ve İş Yerlerine Ödeme İndirimi Getirdi",
+   "kategori": "Gündem",
+   "kaynak": "aa.com.tr",
+   "durum": "reddedildi",
+   "neden": "küçük (864×486) | küçük (300×262) | küçük (300×262)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "eb84eec15fef6fbc",
+   "baslik": "TBMM haftalık gündemini açıkladı: Bütçe ve Kızılay yasası görüşülecek",
+   "kategori": "Gündem",
+   "kaynak": "haberglobal.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://i.haberglobal.com/storage/files/images/2026/11/01/gundem-yogun-tbmmde-bu-hafta-neler-gorusulecek-kagy.jpg",
+   "kalite": {
+    "w": 1600,
+    "h": 900,
+    "oran": 1.78,
+    "entropi": 7.62,
+    "std": 75.4,
+    "gradyan": 36.9,
+    "kenar": 0.229,
+    "beyaz": 0.01
+   }
+  },
+  {
+   "id": "de71713f60fd2c4a",
+   "baslik": "İsrail ordusunun El Halil operasyonu 3 bin 300 kişiyi evinden etti",
+   "kategori": "Dünya",
+   "kaynak": "aa.com.tr",
+   "durum": "reddedildi",
+   "neden": "küçük (864×486) | küçük (300×262) | küçük (300×262)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "c7d5ecf013431bdf",
+   "baslik": "Milli Savunma Bakanlığı, Hakkari'de Yaralanan Askeri Şehit İdare İle Bildirdi",
+   "kategori": "Gündem",
+   "kaynak": "haberglobal.com",
+   "durum": "reddedildi",
+   "neden": "düz/az detay (entropi 4.08) | düz/az detay (entropi 4.1) | küçük (772×579)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "4a3b30371f3d252f",
+   "baslik": "CIA belgeleri Türkiye'nin Soğuk Savaş dönemindeki stratejilerini açığa çıkardı",
+   "kategori": "Gündem",
+   "kaynak": "haberglobal.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://i.haberglobal.com/storage/files/images/2026/10/30/abdnin-gizli-turkiye-dosyasi-ciain-arsivinden-cikan-belgeler-exn2.jpg",
+   "kalite": {
+    "w": 1600,
+    "h": 900,
+    "oran": 1.78,
+    "entropi": 7.65,
+    "std": 73.4,
+    "gradyan": 16,
+    "kenar": 0.051,
+    "beyaz": 0.05
+   }
+  },
+  {
+   "id": "1fe406ebb5214cd8",
+   "baslik": "İsviçre parasını ödediği 36 adet F-35 savaş uçağını teslim alamadı",
+   "kategori": "Dünya",
+   "kaynak": "gazeteoksijen.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 2,
+   "url": "https://i.gazeteoksijen.com/2/1280/720/storage/files/images/2026/04/07/savasin-kazanani-lockeed-martin-oldu-abdde-f-35-siparisleri-neredeyse-iki-katina-cikti-wvym.jpg",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 6.31,
+    "std": 35,
+    "gradyan": 8.9,
+    "kenar": 0.03,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "d61f7e38e21625f1",
+   "baslik": "Riyad semalarında duyulan patlama sesleri bölgede hareketliliği artırdı",
+   "kategori": "Dünya",
+   "kaynak": "aa.com.tr",
+   "durum": "reddedildi",
+   "neden": "küçük (864×486) | küçük (300×262) | küçük (300×262)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "dee6abcf41698c76",
+   "baslik": "Çinli bilim insanları, 3,2 petabitlik fiber optik rekoru kırdı",
+   "kategori": "Teknoloji",
+   "kaynak": "webtekno.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 4,
+   "url": "https://imgrosetta.webtekno.com/file/695029/1200xauto.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 674,
+    "oran": 1.78,
+    "entropi": 7.08,
+    "std": 56,
+    "gradyan": 8.5,
+    "kenar": 0.026,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "cc13a126af96671d",
+   "baslik": "GameSir G7 Pro Sunset ve Ocean Breeze Renkleriyle GTA 6 Stilini Sunuyor",
+   "kategori": "Donanım",
+   "kaynak": "merlininkazani.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 5,
+   "url": "https://www.merlininkazani.com/social-image/article/263944.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 630,
+    "oran": 1.9,
+    "entropi": 6.85,
+    "std": 70.3,
+    "gradyan": 9,
+    "kenar": 0.041,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "0bc57dc8b86a1ec9",
+   "baslik": "Kasım’da İzleyiciyi Eşikletine Çekecek 10 Dizi",
+   "kategori": "Donanım",
+   "kaynak": "donanimhaber.com",
+   "durum": "reddedildi",
+   "neden": "küçük (604×755) | fotoğraf üstüne basılı başlık (satır %17.3) | küçük (450×630)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "1c992874dfd03ca4",
+   "baslik": "Lakers, Luka Doncic'in 41 Sayısına Rağmen Portland'a Yenildi",
+   "kategori": "Spor",
+   "kaynak": "aa.com.tr",
+   "durum": "reddedildi",
+   "neden": "küçük (864×486) | küçük (300×262) | küçük (300×262)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "f156ce1d02cc345c",
+   "baslik": "Euroleague yönetimi 2027 ve 2029 Dörtlü Final adreslerini duyurdu",
+   "kategori": "Spor",
+   "kaynak": "gzt.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://img.piri.net/piri/upload/3/2026/10/28/756c1ec3-euroleaguede-final-fourun-adresi-belli-oldu.webp",
+   "kalite": {
+    "w": 960,
+    "h": 540,
+    "oran": 1.78,
+    "entropi": 7.78,
+    "std": 59.1,
+    "gradyan": 24.2,
+    "kenar": 0.059,
+    "beyaz": 0.01
+   }
+  },
+  {
+   "id": "5da481dc97b7cc7c",
+   "baslik": "Finlandiya ve Norveç liderlerinden Putin ile sürpriz görüşme kararı",
+   "kategori": "Dünya",
+   "kaynak": "bbc.co.uk",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/62a7/live/0a738c90-d1fa-11f1-8c9f-8d21fef6ffad.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 7.18,
+    "std": 60,
+    "gradyan": 14.6,
+    "kenar": 0.047,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "5b0bd58467d14f52",
+   "baslik": "Google Gemini 4 Argon, Android Bench’te Beşinci Sırada Yer Aldı",
+   "kategori": "Yapay Zeka",
+   "kaynak": "shiftdelete.net",
+   "durum": "yasak",
+   "neden": "telif/rakip yayıncı",
+   "adaySayisi": 0,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "56ac52b015d73fa7",
+   "baslik": "Yeni Nesil Su Sayaçları Eskişehir’de: Fiziksel Satın Alma Noktalarına Veda",
+   "kategori": "Teknoloji",
+   "kaynak": "toplumsal.com.tr",
+   "durum": "reddedildi",
+   "neden": "küçük (705×360) | indirilemedi (HTTP 404) | küçük (1×1)",
+   "adaySayisi": 3,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "44a9038a8ab3a3ac",
+   "baslik": "Chery, yeni TIGGO 7 ve TIGGO X7 modellerini resmen tanıttı",
+   "kategori": "Otomobil",
+   "kaynak": "chip.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://img.chip.com.tr/rcman/Cw1280h720q95gm/storage/files/images/2026/10/26/505-litrelik-bagaj-ve-masajli-koltuklar-yeni-chery-tiggo-7-tanitildi-gadx.jpg",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 7.27,
+    "std": 67,
+    "gradyan": 18.7,
+    "kenar": 0.079,
+    "beyaz": 0.01
+   }
+  },
+  {
+   "id": "5b3a36f7cedf1b86",
+   "baslik": "Netanyahu, Yarınki Seçim Öncesi Nükleer Mantar Görseli Paylaştı",
+   "kategori": "Gündem",
+   "kaynak": "haberglobal.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://i.haberglobal.com/storage/files/images/2026/10/26/secimlere-bir-gun-kala-israil-basbakani-netanyahudan-ilginc-paylasim-dyjr.jpg",
+   "kalite": {
+    "w": 1600,
+    "h": 900,
+    "oran": 1.78,
+    "entropi": 7.44,
+    "std": 68.2,
+    "gradyan": 8.5,
+    "kenar": 0.03,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "c9ac36c0707d2cbd",
+   "baslik": "Çorum FK Teknik Direktörü Burak Yılmaz Göztepe maçı sonrası konuştu",
+   "kategori": "Spor",
+   "kaynak": "haberglobal.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://i.haberglobal.com/storage/files/images/2026/10/25/burak-yilmaz-oyuncularimin-canlari-sag-olsun-996s.jpg",
+   "kalite": {
+    "w": 1600,
+    "h": 900,
+    "oran": 1.78,
+    "entropi": 7.44,
+    "std": 56.2,
+    "gradyan": 10.4,
+    "kenar": 0.017,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "4a669810038950a0",
+   "baslik": "Ulaştırma Bakanlığı, Tarihi Ani Köprüsü'nü ayağa kaldırıyor",
+   "kategori": "Gündem",
+   "kaynak": "cnnturk.com",
+   "durum": "reddedildi",
+   "neden": "yayıncı paylaşım kartı (plaka %12, yazı %4.4) | yayıncı paylaşım kartı (plaka %12, yazı %4.4) | küçük (335×189)",
+   "adaySayisi": 3,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "06aab123106d5870",
+   "baslik": "Türk İş Makineleri Kırgızistan’da 1 Milyar Dolarlık Krediyle Çiftçilere Sunuldu",
+   "kategori": "Gündem",
+   "kaynak": "aa.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/10/25/11849484c37f4ffd216425fcd4985c2e.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 800,
+    "oran": 1.5,
+    "entropi": 7.76,
+    "std": 72.5,
+    "gradyan": 31.8,
+    "kenar": 0.171,
+    "beyaz": 0.08
+   }
+  },
+  {
+   "id": "99b8bf82fbefaff7",
+   "baslik": "İHAKUT Van Ekibi 23 Ekim Deprem Anısına Saygı Uçuşu Gerçekleştirdi",
+   "kategori": "Gündem",
+   "kaynak": "yozgatmedya.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://yozgatmedyacomtr.teimg.com/crop/1280x720/yozgatmedya-com-tr/uploads/2026/10/agency/iha/ihakut-van-ekibinden-deprem-sehitleri-anisina-saygi-ucusu.jpg",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 6.84,
+    "std": 39.7,
+    "gradyan": 8.7,
+    "kenar": 0.021,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "7f12a201c0e5f8af",
+   "baslik": "Deprem davalarında ilk derece yargılamalarının 2027'de bitmesi bekleniyor",
+   "kategori": "Gündem",
+   "kaynak": "dikgazete.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 4,
+   "url": "https://www.dikgazete.com/files/uploads/news/default/agency-iha-8a150b3f7d01451ed0c54cfd.webp",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 7.51,
+    "std": 58,
+    "gradyan": 19.4,
+    "kenar": 0.069,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "ee718a6b45b0f128",
+   "baslik": "Danimarka hükümeti kürk çiftliklerini 2029 yılına kadar yasaklıyor",
+   "kategori": "Dünya",
+   "kaynak": "bbc.co.uk",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/f055/live/ed7c2b60-cebb-11f1-ae9c-0303957c36f8.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 7.75,
+    "std": 63.1,
+    "gradyan": 26.6,
+    "kenar": 0.107,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "af5c99c782f8f6df",
+   "baslik": "1Password, yapay zekanın şifre görmeden giriş yapmasını sağlıyor",
+   "kategori": "Teknoloji",
+   "kaynak": "chip.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://img.chip.com.tr/rcman/Cw1280h720q95gm/storage/files/images/2026/10/23/yapay-zeka-ajanlari-artik-sifreleri-gormeden-hesaplara-giris-yapabilecek-m11t.jpg",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 6.43,
+    "std": 58.1,
+    "gradyan": 16.2,
+    "kenar": 0.068,
+    "beyaz": 0.01
+   }
+  },
+  {
+   "id": "318100b4db617ecc",
+   "baslik": "Malatya'da deprem yaraları sarılıyor, 43 spor tesisi inşa ediliyor",
+   "kategori": "Gündem",
+   "kaynak": "hibya.com",
+   "durum": "reddedildi",
+   "neden": "küçük (600×400) | küçük (1×1) | küçük (600×400)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "2592c0d39277c961",
+   "baslik": "Araç kiralama sektörü 253 milyar TL'lik yatırıma ulaştı",
+   "kategori": "Otomobil",
+   "kaynak": "log.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 2,
+   "url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-23_11-48-51_U7Uri.jpg",
+   "kalite": {
+    "w": 1920,
+    "h": 1080,
+    "oran": 1.78,
+    "entropi": 6.17,
+    "std": 70,
+    "gradyan": 8.1,
+    "kenar": 0.041,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "f75583cd4358991b",
+   "baslik": "Konya'da işçi taşıyan minibüs devrildi: 6 yaralı var",
+   "kategori": "Gündem",
+   "kaynak": "canligaste.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://www.canligaste.com/haber-gorsel/2026/10/konya-da-iscileri-tasiyan-minibusun-sarampole-devrildigi-kazada-6-kisi-yaralandi-933726.webp",
+   "kalite": {
+    "w": 960,
+    "h": 639,
+    "oran": 1.5,
+    "entropi": 7.75,
+    "std": 73.3,
+    "gradyan": 28.3,
+    "kenar": 0.162,
+    "beyaz": 0.01
+   }
+  },
+  {
+   "id": "5a8cb121e2316c27",
+   "baslik": "Van’da 15 Yıllık Deprem: Acılar Geri Gelmedi, Riskler Sürüyor",
+   "kategori": "Gündem",
+   "kaynak": "vanhabergazetesi.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 4,
+   "url": "https://vanhabergazetesicom.teimg.com/crop/1280x720/vanhabergazetesi-com/uploads/2026/10/gemini-generated-image-wb671rwb671rwb67jpg.jpeg",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 7.75,
+    "std": 62.2,
+    "gradyan": 24.4,
+    "kenar": 0.116,
+    "beyaz": 0.01
+   }
+  },
+  {
+   "id": "9d606313aaf18af8",
+   "baslik": "Çin’de 7.0’lık Deprem, Şehirlere Geniş Bölgede Şok Yaratıyor",
+   "kategori": "Gündem",
+   "kaynak": "kanal3.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 5,
+   "url": "https://www.kanal3.com.tr/wp-content/uploads/2026/07/prof-dr-sener-usumezsoydan-istanbul-depremi-aciklamasi-f10d4e.webp",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 7.05,
+    "std": 62.3,
+    "gradyan": 34.7,
+    "kenar": 0.178,
+    "beyaz": 0.25
+   }
+  },
+  {
+   "id": "02fcdc8d49afdd8a",
+   "baslik": "Yüzüklerin Efendisi: Güç Yüzükleri 3. Sezon Fragmanında Orta Dünya’da Yeni Bir Tehlike",
+   "kategori": "Kültür",
+   "kaynak": "webtekno.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 4,
+   "url": "https://imgrosetta.webtekno.com/file/694364/694364-1200x675.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 7.39,
+    "std": 41.1,
+    "gradyan": 10.8,
+    "kenar": 0.025,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "35b005c836f63794",
+   "baslik": "Konya’da Akşam 21°C, Günlük Sıcaklık 5-21°C Arasında",
+   "kategori": "Gündem",
+   "kaynak": "canligaste.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://www.canligaste.com/haber-gorsel/2026/10/konya-hava-durumu-bugun-hava-kac-derece-olacak-23-10-2026-933628.webp",
+   "kalite": {
+    "w": 960,
+    "h": 640,
+    "oran": 1.5,
+    "entropi": 7.44,
+    "std": 64,
+    "gradyan": 16.1,
+    "kenar": 0.073,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "10e10558123489a5",
+   "baslik": "TikTok'un Avrupa Payi: Axel Springer’in Döpfner Planı",
+   "kategori": "Teknoloji",
+   "kaynak": "pasqualepillitteri.it",
+   "durum": "reddedildi",
+   "neden": "düz/az detay (entropi 3.34) | düz/az detay (entropi 2.97) | küçük (160×160)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "141e9118538c2e34",
+   "baslik": "Apple Yönetim Kurulu Üyesi Jennifer Newstead, 814.748 $’lık Hisse Satışıyla Göreviyle Öne Çıktı",
+   "kategori": "Ekonomi",
+   "kaynak": "tr.investing.com",
+   "durum": "yok",
+   "neden": "sayfada görsel yok",
+   "adaySayisi": 0,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "a6eb51e8c9017dea",
+   "baslik": "İranla Savaş ABD'ye Sadece Acı Sonuçlar Getirir",
+   "kategori": "Gündem",
+   "kaynak": "tasnimnews.ir",
+   "durum": "reddedildi",
+   "neden": "küçük (800×533)",
+   "adaySayisi": 1,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "fc9a5c4396545e3d",
+   "baslik": "AIPAC’ın Strateji Değişikliği: Adaylara Doğrudan Destek Yok",
+   "kategori": "Dünya",
+   "kaynak": "trhaber.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://cdn.trhaber.com.tr/images/2026/10/abddeki-israil-lobisi-taktik-degistirdi-adaylara-dogrudan-destek-verilmeyecek-qol2lm.webp",
+   "kalite": {
+    "w": 1200,
+    "h": 720,
+    "oran": 1.67,
+    "entropi": 6.56,
+    "std": 44.4,
+    "gradyan": 7.6,
+    "kenar": 0.026,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "813acc9ebd098c43",
+   "baslik": "İran Meclis Başkanı: ABD'ye Savaşta Hikmet Yok",
+   "kategori": "Gündem",
+   "kaynak": "ensonhaber.com",
+   "durum": "yok",
+   "neden": "sayfada görsel yok",
+   "adaySayisi": 0,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "4c188ca6a6409894",
+   "baslik": "Epic Games Store, 416 TL değerindeki iki oyunu ücretsiz yaptı",
+   "kategori": "Yazılım",
+   "kaynak": "tamindir.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://img.tamindir.com/resize/1200x675/2026/10/470608/sker-ritual-home-ucretsiz-oldu-1.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 4.23,
+    "std": 41.1,
+    "gradyan": 11.5,
+    "kenar": 0.054,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "4cc769c25fa80fae",
+   "baslik": "SoFi Bankası, kripto bekleyen paralara yüzde 4,4 faiz vermeye başladı",
+   "kategori": "Ekonomi",
+   "kaynak": "koinbulteni.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 5,
+   "url": "https://koinbulteni.com/wp-content/uploads/bitcoin-banka.jpg",
+   "kalite": {
+    "w": 1920,
+    "h": 1080,
+    "oran": 1.78,
+    "entropi": 7.52,
+    "std": 63.7,
+    "gradyan": 24.4,
+    "kenar": 0.106,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "8e63299dfb83c886",
+   "baslik": "Yunanistan basketbolunda şike operasyonu: Başkan gözaltında",
+   "kategori": "Spor",
+   "kaynak": "aa.com.tr",
+   "durum": "reddedildi",
+   "neden": "küçük (864×486) | küçük (300×262) | küçük (300×262)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "eff7b39d6e865761",
+   "baslik": "OpenAI sistemlerinde erişim sorunları yaşandı",
+   "kategori": "Teknoloji",
+   "kaynak": "chip.com.tr",
+   "durum": "reddedildi",
+   "neden": "düz/az detay (entropi 2.73) | düz/az detay (entropi 2.67) | küçük (820×460)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "2534b8ec64e0ddcb",
+   "baslik": "ABD'de sağlık sigortası aile başına yıllık 28 bin dolara ulaştı",
+   "kategori": "Dünya",
+   "kaynak": "ekoturk.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://www.ekoturk.com/media/news/2026/10/ABDde-saglik-sigortasi.jpg",
+   "kalite": {
+    "w": 884,
+    "h": 500,
+    "oran": 1.77,
+    "entropi": 7.32,
+    "std": 60.9,
+    "gradyan": 19.1,
+    "kenar": 0.069,
+    "beyaz": 0.01
+   }
+  },
+  {
+   "id": "02e295b2192ad96d",
+   "baslik": "Küresel borsalarda vadeli işlemler düşüşte, teknoloji hisseleri hareketli",
+   "kategori": "Ekonomi",
+   "kaynak": "borsatek.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 5,
+   "url": "https://www.borsatek.com/app/uploads/2025/12/wall-street-dow-jones-nasdaq-sp.webp",
+   "kalite": {
+    "w": 1300,
+    "h": 710,
+    "oran": 1.83,
+    "entropi": 7.37,
+    "std": 69.2,
+    "gradyan": 22.1,
+    "kenar": 0.103,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "cddb2cef3e88f290",
+   "baslik": "Legora 550 Milyon Dolar Yatırım Aldı, Değerlemesi 8,8 Milyar",
+   "kategori": "İnternet",
+   "kaynak": "webrazzi.com",
+   "durum": "reddedildi",
+   "neden": "düz/az detay (entropi 0.52) | düz/az detay (entropi 0.7) | küçük (1362×360)",
+   "adaySayisi": 4,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "89e206a4029959a4",
+   "baslik": "ABD Baskısı mı, Teknik Sorun mu? Irak’ın İran Sınır Kapısını Kapatmasının Arkasındaki Gerçek",
+   "kategori": "Gündem",
+   "kaynak": "ydh.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://ydh.com.tr/resimler/icerikler/rak-nu-kleer-20261106-222807-c7efe9.jpg?1793996521&v=1793993295",
+   "kalite": {
+    "w": 1550,
+    "h": 904,
+    "oran": 1.71,
+    "entropi": 7.34,
+    "std": 49.9,
+    "gradyan": 15.2,
+    "kenar": 0.036,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "504b390e05663e4c",
+   "baslik": "Hamas Lideri: İslam Dünyası İşgalcilerin Suçlarına Karşı Sessiz Kalmamalı",
+   "kategori": "Gündem",
+   "kaynak": "parstoday.ir",
+   "durum": "yok",
+   "neden": "sayfada görsel yok",
+   "adaySayisi": 0,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "ea9e8b4a6a9b0930",
+   "baslik": "Siber Güvenlik Başkanlığı, kritik PHP açıkları için alarm verdi",
+   "kategori": "Teknoloji",
+   "kaynak": "webtekno.com",
+   "durum": "reddedildi",
+   "neden": "küçük (640×360) | fotoğraf üstüne basılı başlık (satır %14.2) | küçük (400×400)",
+   "adaySayisi": 4,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "09539a25b7a66596",
+   "baslik": "Türkiye’de Google’da En Popüler Aramaları Patlatan Konular",
+   "kategori": "Teknoloji",
+   "kaynak": "yeniankara.com.tr",
+   "durum": "reddedildi",
+   "neden": "bulanık (gradyan 6.8) | küçük (768×218) | küçük (75×75)",
+   "adaySayisi": 3,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "44f0b77af28c8fe7",
+   "baslik": "ABD’de Yeni Telefon Dolandırıcılığı: Faturadan Önce Kadar Biliyorlar",
+   "kategori": "Teknoloji",
+   "kaynak": "abdpost.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://images.abdpost.com/media/2026/10/abdde-yeni-telefon-dolandiriciligina-dikkat-faturaniza-kadar-biliyorlar_6ad96f0f6ccab_h.png",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 5.85,
+    "std": 55,
+    "gradyan": 25,
+    "kenar": 0.137,
+    "beyaz": 0.02
+   }
+  },
+  {
+   "id": "56598772d76d0994",
+   "baslik": "Trump, Zelenskiy ve Putin: Savaşın Sınırında Yeni Diyalog İhtimali",
+   "kategori": "Gündem",
+   "kaynak": "bianet.org",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 1,
+   "url": "https://static.bianet.org/big-haber/2026/10/22/trump-bitime-en-yakin-noktadayiz-diyor-zelenskiy-cepheyi-hattini-donduran-ateskese-putin-muzakereye-hazirir.jpg",
+   "kalite": {
+    "w": 1198,
+    "h": 751,
+    "oran": 1.6,
+    "entropi": 6.58,
+    "std": 60.8,
+    "gradyan": 12.7,
+    "kenar": 0.045,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "de450a2a73642444",
+   "baslik": "ABD Ortadoğu’ndan Çekiliyor: İran Tehdidinin Gölgesi",
+   "kategori": "Gündem",
+   "kaynak": "finanshatti.com",
+   "durum": "reddedildi",
+   "neden": "bulanık (gradyan 3.7)",
+   "adaySayisi": 1,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "18b40109c11e743a",
+   "baslik": "Windows 11’te Copilot Menüleri Azalacak: 8 Yapay Zeka Eylemi Kaldırılıyor",
+   "kategori": "Teknoloji",
+   "kaynak": "donanimhaber.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://www.donanimhaber.com/images/images/haber/211924/1200x675windows-11-icin-sevindirecek-karar-copilot-resmen-kirpiliyor.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 7.31,
+    "std": 70.8,
+    "gradyan": 14.7,
+    "kenar": 0.075,
+    "beyaz": 0.05
+   }
+  },
+  {
+   "id": "db61240a8881fc66",
+   "baslik": "Güneş enerjisi sahalarındaki otları biçmek için koyunlar kullanılıyor",
+   "kategori": "Donanım",
+   "kaynak": "donanimhaber.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://www.donanimhaber.com/images/images/haber/211923/src/gunes-tarlalarinda-cim-bicme-makinelerinin-yerini-koyunlar-aliyor211923_0.jpg",
+   "kalite": {
+    "w": 2121,
+    "h": 1414,
+    "oran": 1.5,
+    "entropi": 7.44,
+    "std": 57.7,
+    "gradyan": 20.3,
+    "kenar": 0.052,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "6f99492743f9a160",
+   "baslik": "Zonguldak'ta 2 Katlı Bina Çöktü: 1 Kişi Hayatını Kaybetti",
+   "kategori": "Gündem",
+   "kaynak": "ortadogugazetesi.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://www.ortadogugazetesi.com/cropImages/1280x720/uploads/haberler/2026/10/ue2o-zonguldakta-2-katli-bina-coktu-1-kisi-hayatini-kaybetti.jpg",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 7.14,
+    "std": 78.2,
+    "gradyan": 21.6,
+    "kenar": 0.113,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "007e7d1826ee3171",
+   "baslik": "Kilis'te Kaybolan Otizmli Çocuk, Jandarma ve Drone Desteğiyle Bulundu",
+   "kategori": "Gündem",
+   "kaynak": "ensondakika.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://www.ensondakika.com.tr/aa-media/2026/10/kilis-te-kaybolan-otizmli-cocuk-bulundu-724146.webp",
+   "kalite": {
+    "w": 1200,
+    "h": 900,
+    "oran": 1.33,
+    "entropi": 7.42,
+    "std": 56.5,
+    "gradyan": 11.5,
+    "kenar": 0.02,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "5bf482095a931e55",
+   "baslik": "Intel Nova Lake işlemciler 28 çekirdekle dizüstü bilgisayarlara geliyor",
+   "kategori": "Donanım",
+   "kaynak": "shiftdelete.net",
+   "durum": "yasak",
+   "neden": "telif/rakip yayıncı",
+   "adaySayisi": 0,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "e3fb155e34f5d2ae",
+   "baslik": "Eski istihbaratçıdan Netanyahu'ya: İran'a savaş açmak çılgınlıktır",
+   "kategori": "Dünya",
+   "kaynak": "ensondakika.com.tr",
+   "durum": "reddedildi",
+   "neden": "fotoğraf üstüne basılı başlık (satır %11.1) | fotoğraf üstüne basılı başlık (satır %12.4) | küçük (864×486)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "fa4ec3423b792e1d",
+   "baslik": "Fransa lideri Macron, Körfez turunun ardından Riyad'a geçti",
+   "kategori": "Dünya",
+   "kaynak": "cnnturk.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 4,
+   "url": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad8b2eebf140b686d01a4ef.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 7.39,
+    "std": 66.8,
+    "gradyan": 11.6,
+    "kenar": 0.043,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "26592d220d36423b",
+   "baslik": "Afet ve Acil Durum Yönetimi Başkanlığı İstanbul'da 7,5 büyüklüğünde deprem senaryosuyla tatbikat başlattı",
+   "kategori": "Gündem",
+   "kaynak": "herkesduysun.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 5,
+   "url": "https://herkesduysun.com/api/medya/news/2026/10/20261021AW815257/01_1600.webp",
+   "kalite": {
+    "w": 1600,
+    "h": 877,
+    "oran": 1.82,
+    "entropi": 7.58,
+    "std": 70.7,
+    "gradyan": 21.1,
+    "kenar": 0.113,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "76479e5568d3ca58",
+   "baslik": "Alex Gibney’nin Elon Musk belgeseli Türkiye’de izleyiciyle buluşuyor",
+   "kategori": "Kültür",
+   "kaynak": "murekkephaber.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 4,
+   "url": "https://images.murekkephaber.com/media/2026/10/alex-gibneynin-elon-musk-belgeseli-musk-turkiyede-ilk-kez-gosterilecek_6ad89f0277dd4.jpg",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 7.47,
+    "std": 75.2,
+    "gradyan": 17.7,
+    "kenar": 0.084,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "d84427ddd0f69c7a",
+   "baslik": "Netanyahu, Türkiye ile çatışma ihtimali için güvenlik şartlarını işaret etti",
+   "kategori": "Dünya",
+   "kaynak": "cnnturk.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 5,
+   "url": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad88f6c5b565308d7131ee4.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 6.59,
+    "std": 56.8,
+    "gradyan": 11.2,
+    "kenar": 0.045,
+    "beyaz": 0.01
+   }
+  },
+  {
+   "id": "55a0c44f247b8b62",
+   "baslik": "Karluna Pratik, ilk elektrikli ticari aracı İAOSB'ye teslim etti",
+   "kategori": "Otomobil",
+   "kaynak": "cumha.com.tr",
+   "durum": "reddedildi",
+   "neden": "oran dar (1.00) | fotoğraf üstüne basılı başlık (satır %8.1) | küçük (870×580)",
+   "adaySayisi": 4,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "9a35d7641844c2c7",
+   "baslik": "Anayasa Mahkemesi, YENİ Parti'nin kapatılması talebini oybirliğiyle reddetti",
+   "kategori": "Gündem",
+   "kaynak": "cumhuriyet.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://media.cumhuriyet.com.tr/Archive/e1ae3cd9-48c1-4aec-80a4-2efc57ec8d73.jpg",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 7.11,
+    "std": 61,
+    "gradyan": 8.1,
+    "kenar": 0.019,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "676241eceb556a71",
+   "baslik": "Güney Lübnan'daki ev yıkımında çekilen görüntüler büyük tepki çekti",
+   "kategori": "Dünya",
+   "kaynak": "yenisafak.com",
+   "durum": "reddedildi",
+   "neden": "küçük (640×359) | oran dar (0.56) | oran dar (1.00)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "e31a7e3bcffcd441",
+   "baslik": "SpaceX’in Güçlü Kazancı ABD Vadeli İşlemlerini Yükseltti",
+   "kategori": "Dünya",
+   "kaynak": "tr.investing.com",
+   "durum": "yok",
+   "neden": "sayfada görsel yok",
+   "adaySayisi": 0,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "b293fac50c76e199",
+   "baslik": "Çorsan ve Çaxlek köylerinde jeotermal arama çalışmalarına karşı nöbet",
+   "kategori": "Dünya",
+   "kaynak": "t.co",
+   "durum": "yok",
+   "neden": "sayfada görsel yok",
+   "adaySayisi": 0,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "c33858b72d6d7358",
+   "baslik": "Su ürünleri üretiminde Cumhuriyet tarihinin rekoru kırıldı",
+   "kategori": "Ekonomi",
+   "kaynak": "kanal23.com",
+   "durum": "reddedildi",
+   "neden": "çözülemedi | küçük (174×49) | küçük (335×333)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "dfb0230de498e068",
+   "baslik": "Anayasa Mahkemesi, Yeni Parti'nin isim ve rumuz iptalini yarın görüşecek",
+   "kategori": "Gündem",
+   "kaynak": "cnnturk.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad75cfffe46d577dbb93973.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 6.96,
+    "std": 70.9,
+    "gradyan": 20.9,
+    "kenar": 0.102,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "4c4bc4c2b31b7cc5",
+   "baslik": "Yılmaz Özdil'in Türk Askeri Arabistan İddiası Gündem Yarattı",
+   "kategori": "Gündem",
+   "kaynak": "ssbulten.com.tr",
+   "durum": "reddedildi",
+   "neden": "fotoğraf üstüne basılı başlık (satır %30.7) | küçük (400×266) | küçük (400×205)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "8b4a5cb17d014267",
+   "baslik": "Jim Cramer, yapay zeka hisselerindeki toparlanmaya karşı uyardı",
+   "kategori": "Yapay Zeka",
+   "kaynak": "invezz.com",
+   "durum": "yok",
+   "neden": "sayfada görsel yok",
+   "adaySayisi": 0,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "35824f164941be06",
+   "baslik": "D&uuml;nyanın en hızlı büyüyen şehirleri açıklandı: Cakarta Tokyo'yu geçti",
+   "kategori": "Dünya",
+   "kaynak": "cumhuriyet.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://media.cumhuriyet.com.tr/Archive/830317af-3df8-40f7-b59e-2c3caf6e7abd.png",
+   "kalite": {
+    "w": 1279,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 7.4,
+    "std": 74.3,
+    "gradyan": 22.7,
+    "kenar": 0.111,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "ca12f845c5f62b2f",
+   "baslik": "Ekonomist Elif Kaya uyardı: Petrol fiyatları ve faiz kararı dengeleri değiştiriyor",
+   "kategori": "Ekonomi",
+   "kaynak": "cnnturk.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 3,
+   "url": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad72dd75b565308d7131891.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 7.17,
+    "std": 78.2,
+    "gradyan": 14.6,
+    "kenar": 0.045,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "6cf046db521a5434",
+   "baslik": "İngiltere'de istihdam daralıyor: Küçük işletmeler alımları durdurdu",
+   "kategori": "Ekonomi",
+   "kaynak": "bbc.co.uk",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/c778/live/bb751480-cc48-11f1-9a30-cb277859b43a.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 7.62,
+    "std": 61.7,
+    "gradyan": 15,
+    "kenar": 0.042,
+    "beyaz": 0.02
+   }
+  },
+  {
+   "id": "36fa9c94984ce7fc",
+   "baslik": "Netflix, Bir Başkadır dizisinin ikinci sezon yayın tarihini duyurdu",
+   "kategori": "Kültür",
+   "kaynak": "teknoblog.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 4,
+   "url": "https://www.teknoblog.com/wp-content/uploads/2026/10/bir-baskadir-netflix-201026-1.jpg",
+   "kalite": {
+    "w": 2400,
+    "h": 1350,
+    "oran": 1.78,
+    "entropi": 7.38,
+    "std": 63.8,
+    "gradyan": 14.3,
+    "kenar": 0.035,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "526bef92e6b83dff",
+   "baslik": "OpenAI modeli, izinsiz bir şekilde kripto cüzdanlarından fon aldı",
+   "kategori": "Yapay Zeka",
+   "kaynak": "trthaber.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 3,
+   "url": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2022000/chatgpt-2023602.jpg",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 6.08,
+    "std": 86.1,
+    "gradyan": 11.1,
+    "kenar": 0.032,
+    "beyaz": 0.58
+   }
+  },
+  {
+   "id": "c9cd1a7940eed958",
+   "baslik": "RAL Yatırım Holding konkordato ilan etti ve hisseleri düştü",
+   "kategori": "Ekonomi",
+   "kaynak": "sozcu.com.tr",
+   "durum": "reddedildi",
+   "neden": "fotoğraf üstüne basılı başlık (satır %25.9) | fotoğraf üstüne basılı başlık (satır %26.2) | küçük (128×128)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "b2aa1eddd5157a9e",
+   "baslik": "Türkiye mobil abone pazarında 2027 yılı için 105 milyon hedefi",
+   "kategori": "Mobil",
+   "kaynak": "m.haber7.com",
+   "durum": "yok",
+   "neden": "sayfada görsel yok",
+   "adaySayisi": 0,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "04be7bdd2b695480",
+   "baslik": "AFAD verilerine göre sarsıntı yaşandı: 3.8 büyüklüğünde deprem",
+   "kategori": "Gündem",
+   "kaynak": "telgraf.net",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://static.daktilo.com/sites/1168/uploads/2026/10/19/large/deprem-21.webp",
+   "kalite": {
+    "w": 1200,
+    "h": 674,
+    "oran": 1.78,
+    "entropi": 5.55,
+    "std": 48.3,
+    "gradyan": 21.1,
+    "kenar": 0.122,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "ac9e002251a62895",
+   "baslik": "Çizim ve oyun odaklı en iyi tabletler açıklandı",
+   "kategori": "Donanım",
+   "kaynak": "tamindir.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://img.tamindir.com/2026/10/470608/cizim-yapmak-icin-en-iyi-tabletler.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 7.68,
+    "std": 80.9,
+    "gradyan": 15.6,
+    "kenar": 0.056,
+    "beyaz": 0.02
+   }
+  },
+  {
+   "id": "d67e079b1ce7d0f4",
+   "baslik": "Ekim ayında kış geldi: Türkiye'nin altı ilinde yaylalar beyaza büründü",
+   "kategori": "Gündem",
+   "kaynak": "sozcu.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/karjpg-qCeyOgi6Hk2rNlvbSIovMg.jpg?w=1270&h=675&mode=crop&scale=both",
+   "kalite": {
+    "w": 1270,
+    "h": 675,
+    "oran": 1.88,
+    "entropi": 7.08,
+    "std": 49,
+    "gradyan": 11.6,
+    "kenar": 0.02,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "3b655abdc3ae63c8",
+   "baslik": "Trabzonspor'da Mustafa Eskilhellaç Beşiktaş maçı kadrosundan çıktı",
+   "kategori": "Spor",
+   "kaynak": "cumhuriyet.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://media.cumhuriyet.com.tr/Archive/1173649c-c6be-4930-8181-0105ef8377c9.jpg",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 7.29,
+    "std": 59.2,
+    "gradyan": 9.9,
+    "kenar": 0.034,
+    "beyaz": 0.04
+   }
+  },
+  {
+   "id": "d34a2362e9a290d9",
+   "baslik": "Sanliurfa'da bir evde çıkan yangında aynı aileden 4 kişi hastanelik oldu",
+   "kategori": "Gündem",
+   "kaynak": "canligaste.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://www.canligaste.com/haber-gorsel/2026/10/sanliurfa-da-evde-cikan-yanginda-4-kisi-dumandan-etkilendi-930033.webp",
+   "kalite": {
+    "w": 960,
+    "h": 540,
+    "oran": 1.78,
+    "entropi": 4.25,
+    "std": 64.1,
+    "gradyan": 10.3,
+    "kenar": 0.058,
+    "beyaz": 0.04
+   }
+  },
+  {
+   "id": "972205eb34b4f264",
+   "baslik": "Düzce'de köprüden uçan TIR alev aldı, şoför son anda kurtuldu",
+   "kategori": "Gündem",
+   "kaynak": "cnnturk.com",
+   "durum": "reddedildi",
+   "neden": "bulanık (gradyan 6.4) | küçük (640×360) | küçük (335×189)",
+   "adaySayisi": 4,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "22536f10f69f86e1",
+   "baslik": "Red Bull, yarış stratejisinde yapay zeka sistemini devreye soktu",
+   "kategori": "Yapay Zeka",
+   "kaynak": "tr.motorsport.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://cdn.motorsport.com/images/mgl/0Zq8y786/s1000/isack-hadjar-red-bull-racing.jpg",
+   "kalite": {
+    "w": 1000,
+    "h": 667,
+    "oran": 1.5,
+    "entropi": 6.81,
+    "std": 48.2,
+    "gradyan": 18,
+    "kenar": 0.082,
+    "beyaz": 0.01
+   }
+  },
+  {
+   "id": "7a4678df6586790f",
+   "baslik": "Mevduat faizlerinde son durum: 2 milyon liranın aylık getirisi",
+   "kategori": "Ekonomi",
+   "kaynak": "sozcu.com.tr",
+   "durum": "reddedildi",
+   "neden": "fotoğraf üstüne basılı başlık (satır %17.5) | fotoğraf üstüne basılı başlık (satır %16.2) | küçük (128×128)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "b11f033af9cde93c",
+   "baslik": "Tunceli'de Domuz Sürüsü Çemişgezek'te Sürü Halinde Görüntülendi",
+   "kategori": "Gündem",
+   "kaynak": "haberglobal.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://i.haberglobal.com/rcman/Cw1200h675q95gc/storage/files/images/2026/11/08/ilham-aliyevden-anlamli-paylasim-dduy.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 7.48,
+    "std": 61.6,
+    "gradyan": 11.4,
+    "kenar": 0.052,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "e51acc8f3c7f395a",
+   "baslik": "Hüseyin Yayman: Cumhur İttifakı'nın adayı Recep Tayyip Erdoğan'dır",
+   "kategori": "Gündem",
+   "kaynak": "sabah.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://iasbh.tmgrup.com.tr/397116/1200/675/0/83/800/533?u=https://isbh.tmgrup.com.tr/sbh/2026/10/18/ak-parti-genel-baskan-yardimcisi-yayman-cumhur-ittifakimizin-cumhurbaskani-erdogandir-1792319186558.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 7.29,
+    "std": 67.1,
+    "gradyan": 13,
+    "kenar": 0.044,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "0f377683b024318c",
+   "baslik": "OpenCode API anahtarları açığa çıktı: 1,4% kullanıcı etkilenmiş",
+   "kategori": "Yapay Zeka",
+   "kaynak": "log.com.tr",
+   "durum": "reddedildi",
+   "neden": "düz/az detay (entropi 2.02) | küçük (660×371)",
+   "adaySayisi": 2,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "29debc5c664811f2",
+   "baslik": "Fransa'daki Toplu Gösterilerde Rekor Sayıda Gözaltı Gerçekleşti",
+   "kategori": "Dünya",
+   "kaynak": "milliyet.com.tr",
+   "durum": "reddedildi",
+   "neden": "küçük (726×410) | yayıncı paylaşım kartı (plaka %48, yazı %5.8)",
+   "adaySayisi": 2,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "e60f774ee6e2f4fc",
+   "baslik": "Türkiye genelinde sağanak yağışlar ve sıcaklık değerleri",
+   "kategori": "Gündem",
+   "kaynak": "cnnturk.com",
+   "durum": "reddedildi",
+   "neden": "bulanık (gradyan 4) | bulanık (gradyan 4) | küçük (335×189)",
+   "adaySayisi": 3,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "c079d5977f828532",
+   "baslik": "Göksel Başar Kırmızı Liste ile Bafra TSO’da 12 Meslek Grubunu Kendi Eşine Kayıp",
+   "kategori": "Gündem",
+   "kaynak": "sondakika.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://foto.sondakika.com/crop/1210x0/haber/2026/10/18/bafra-tso-seciminde-goksel-basar-in-kirmizi-2-20340994_sd.jpg",
+   "kalite": {
+    "w": 1210,
+    "h": 806,
+    "oran": 1.5,
+    "entropi": 6.81,
+    "std": 80.5,
+    "gradyan": 14.2,
+    "kenar": 0.079,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "642f509ba9ae7962",
+   "baslik": "Bursa’da 1 Ölü, 2 Yaralı: Orhaniye Mahallesi’nde Kız Meselesi Bitti",
+   "kategori": "Gündem",
+   "kaynak": "hurriyet.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 4,
+   "url": "https://image.hurimg.com/i/hurriyet/90/1200x675/6ad4031b22393fcfc7d3b379.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 6.98,
+    "std": 54.9,
+    "gradyan": 9.6,
+    "kenar": 0.029,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "c8ab9e6ca13a5705",
+   "baslik": "Nurdağı'nda İki Kazada 21 Yaralı Hastaneye Kaldırıldı",
+   "kategori": "Gündem",
+   "kaynak": "sondakika.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://foto.sondakika.com/crop/1210x0/haber/2026/10/17/gaziantep-nurdagi-nda-aksam-saatlerinde-iki-a-3-20340755_sd.jpg",
+   "kalite": {
+    "w": 1210,
+    "h": 731,
+    "oran": 1.66,
+    "entropi": 6.93,
+    "std": 54.9,
+    "gradyan": 17.9,
+    "kenar": 0.064,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "1917e28825cf32b6",
+   "baslik": "Fransa'da Öğrenci Gösterileri Çığırından Çıktı: Dükkanlar Yağmalandı, Araçlar Yakıldı",
+   "kategori": "Dünya",
+   "kaynak": "yenisafak.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://img.piri.net/piri/upload/3/2026/10/17/35fa0cea-fransada-protestolar-kontrolden-cikti-dukkanlar.webp",
+   "kalite": {
+    "w": 1920,
+    "h": 1080,
+    "oran": 1.78,
+    "entropi": 7.33,
+    "std": 46.7,
+    "gradyan": 13.1,
+    "kenar": 0.03,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "0b0630c528d9a276",
+   "baslik": "Google Play'deki Sahte WhatsApp Uygulaması 500 Bin İndirmeyi Geçti",
+   "kategori": "Teknoloji",
+   "kaynak": "shiftdelete.net",
+   "durum": "yasak",
+   "neden": "telif/rakip yayıncı",
+   "adaySayisi": 0,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "a885fc4f3bd4ecce",
+   "baslik": "Hull City deplasmanda Fulham'a mağlup olarak beş maçtır kazanamıyor",
+   "kategori": "Spor",
+   "kaynak": "cumhuriyet.com.tr",
+   "durum": "reddedildi",
+   "neden": "yayıncı paylaşım kartı (plaka %12, yazı %4.9) | küçük (1×1) | küçük (40×40)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "9f60bea0df788c1e",
+   "baslik": "MaPC Yazılımı Windows Oyunlarını Apple Silicon Mac Cihazlara Taşıyor",
+   "kategori": "Oyun",
+   "kaynak": "teknoblog.com",
+   "durum": "reddedildi",
+   "neden": "fotoğraf üstüne basılı başlık (satır %22.7) | fotoğraf üstüne basılı başlık (satır %16.0) | indirilemedi (HTTP 404)",
+   "adaySayisi": 4,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "87aa72d21e72e9ef",
+   "baslik": "Aksa Liglerinde Günün Karşılaşmaları Sonuçlandı",
+   "kategori": "Spor",
+   "kaynak": "haberkibris.com",
+   "durum": "reddedildi",
+   "neden": "küçük (620×350) | küçük (937×100) | küçük (635×100)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "010db20edfe92795",
+   "baslik": "Ebru Gündeş Yıllar Sonra Sahnede O Şarkıyı Okudu",
+   "kategori": "Gündem",
+   "kaynak": "ntv.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://images.ntv.com.tr/images/ebru-g%C3%BCnde%C5%9F-769286.jpg?format=webp&width=1200&height=630",
+   "kalite": {
+    "w": 1200,
+    "h": 630,
+    "oran": 1.9,
+    "entropi": 7.31,
+    "std": 57.6,
+    "gradyan": 11.1,
+    "kenar": 0.032,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "4970a60d1c56256f",
+   "baslik": "Bakan Kacır: Türkiye’nin Temel Önceliği Yatırım ve Üretimdir",
+   "kategori": "Ekonomi",
+   "kaynak": "cnnturk.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 3,
+   "url": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad361c79f69b7780963e52a.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 7.05,
+    "std": 62.1,
+    "gradyan": 21.3,
+    "kenar": 0.141,
+    "beyaz": 0.02
+   }
+  },
+  {
+   "id": "ad83ccbe093c8e2e",
+   "baslik": "Sigorta Şirketlerinin İflas Ettiği İddialarına Resmi Yalanlama",
+   "kategori": "Ekonomi",
+   "kaynak": "yenialanya.com",
+   "durum": "reddedildi",
+   "neden": "fotoğraf üstüne basılı başlık (satır %20.9) | küçük (250×150) | küçük (250×150)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "be41b7f15f8da6e9",
+   "baslik": "Gülistan Doku Dosyasında Üst Kat Kamera Kayıtlarına Ulaşılamadı",
+   "kategori": "Gündem",
+   "kaynak": "sozcu.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/9/gulistandokuwebp-J1LA31bnXEOtewazbWx12w.webp?w=1270&h=675&mode=crop&scale=both",
+   "kalite": {
+    "w": 1270,
+    "h": 675,
+    "oran": 1.88,
+    "entropi": 7.64,
+    "std": 61.3,
+    "gradyan": 9.2,
+    "kenar": 0.016,
+    "beyaz": 0.01
+   }
+  },
+  {
+   "id": "15929809a5a91753",
+   "baslik": "Kuzey Kore yapay zekalı süper hızlı torpido sistemini test etti",
+   "kategori": "Yapay Zeka",
+   "kaynak": "hurriyet.com.tr",
+   "durum": "reddedildi",
+   "neden": "küçük (750×422) | düşük kontrast (std 13.2) | küçük (632×250)",
+   "adaySayisi": 4,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "45d0205054b7bbe7",
+   "baslik": "Yargıtay'dan Emlak ve Borç Uyuşmazlığında Emsal Nitelikte Karar",
+   "kategori": "Gündem",
+   "kaynak": "ntv.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://images.ntv.com.tr/images/thumbs_b_c_510ddf8043986d8d0969d4e62ebed66e-700086.jpg?format=webp&width=1200&height=630",
+   "kalite": {
+    "w": 1200,
+    "h": 630,
+    "oran": 1.9,
+    "entropi": 7.6,
+    "std": 66.9,
+    "gradyan": 12.8,
+    "kenar": 0.042,
+    "beyaz": 0.01
+   }
+  },
+  {
+   "id": "f916f1867fc27c2a",
+   "baslik": "Bursa Barajlarında Sevindiren Artış: Doluluk Yüzde 62'yi Aştı",
+   "kategori": "Gündem",
+   "kaynak": "yenisafak.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://img.piri.net/piri/upload/3/2026/10/17/3b1511e6-haber-gorseli-1920x1080.webp",
+   "kalite": {
+    "w": 1920,
+    "h": 1080,
+    "oran": 1.78,
+    "entropi": 7.58,
+    "std": 61.3,
+    "gradyan": 24.1,
+    "kenar": 0.125,
+    "beyaz": 0.06
+   }
+  },
+  {
+   "id": "ab90f98871a50549",
+   "baslik": "Kardemir, 260 Milyon Lirayla 2025'te Karabük'ün Vergi Rekortmeni Oldu",
+   "kategori": "Gündem",
+   "kaynak": "sondakika.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://foto.sondakika.com/crop/1210x0/haber/2026/10/17/karabuk-te-2025-vergi-rekortmeni-kardemir-260-20338394_sd.jpg",
+   "kalite": {
+    "w": 1210,
+    "h": 776,
+    "oran": 1.56,
+    "entropi": 7.42,
+    "std": 56.3,
+    "gradyan": 24.1,
+    "kenar": 0.119,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "6a320ba98ce46081",
+   "baslik": "İçişleri Bakanlığı, Yurt Genelinde Sağanak ve Fırtına Uyarısı Yaptı",
+   "kategori": "Gündem",
+   "kaynak": "aa.com.tr",
+   "durum": "reddedildi",
+   "neden": "küçük (864×486) | küçük (300×262) | küçük (300×262)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "a27e937ff53858ba",
+   "baslik": "Çorum FK ile Çaykur Rizespor Süper Lig Maçı Canlı Yayında",
+   "kategori": "Spor",
+   "kaynak": "hurriyet.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 4,
+   "url": "https://image.hurimg.com/i/hurriyet/90/1200x675/6ad272359266704a560f584f.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 7.48,
+    "std": 56.3,
+    "gradyan": 17.5,
+    "kenar": 0.058,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "ad7ad0c10d4e5dad",
+   "baslik": "İstanbul'da Hafta Sonu Beklenen Sağanak Nedeniyle Eğitimlere Ara Verildi",
+   "kategori": "Gündem",
+   "kaynak": "cumhuriyet.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://media.cumhuriyet.com.tr/Archive/9f214fb3-fa5b-4590-b1dd-90330c62e62e.jpg",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 7.39,
+    "std": 55.3,
+    "gradyan": 10.6,
+    "kenar": 0.019,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "8a7f11e6d130eb66",
+   "baslik": "Malatya'da Deprem Rantçılığına Karşı Vatandaşlardan Sert Tepki",
+   "kategori": "Gündem",
+   "kaynak": "busabahmalatya.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://busabahmalatyacom.teimg.com/crop/1280x720/busabahmalatya-com/uploads/2026/10/malatyada-deprem-rantcilarina-vatandas-tepkisi-mal-varliklarina-el-koyulsun-3.jpg",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 7.56,
+    "std": 66.7,
+    "gradyan": 13.5,
+    "kenar": 0.036,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "3058ed4f131edf82",
+   "baslik": "Aston Villa Yönetimi Fenerbahçeli Oğuz Aydın'ı Yakın Takibe Aldı",
+   "kategori": "Spor",
+   "kaynak": "yenisafak.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://img.piri.net/piri/upload/3/2026/10/16/4536a34d-c4jl5g2oicazj7tp62jok.webp",
+   "kalite": {
+    "w": 2906,
+    "h": 2000,
+    "oran": 1.45,
+    "entropi": 7.28,
+    "std": 64.2,
+    "gradyan": 20.1,
+    "kenar": 0.1,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "c81c7ddaace90a11",
+   "baslik": "Bilecik Belediyesi vatandaşlar için ücretsiz psikolojik destek sunuyor",
+   "kategori": "Gündem",
+   "kaynak": "cumhuriyet.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://media.cumhuriyet.com.tr/Archive/c7d990d2-9c55-42b5-becb-91f615966076.png",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 6.73,
+    "std": 53.1,
+    "gradyan": 10,
+    "kenar": 0.04,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "030ea4e6e7f27f67",
+   "baslik": "Bedelli Askerlikte 28 Günlük Eğitim Kaldırılacak mı?",
+   "kategori": "Gündem",
+   "kaynak": "sozcu.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/yeni-proje-20261016t150241830png-8pj2RhrY2Eu3ro1KPVMMKQ.png?w=1270&h=675&mode=crop&scale=both",
+   "kalite": {
+    "w": 1270,
+    "h": 675,
+    "oran": 1.88,
+    "entropi": 7.44,
+    "std": 71.3,
+    "gradyan": 21.6,
+    "kenar": 0.095,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "493f8538bcb74d5d",
+   "baslik": "İzmir Büyükşehir Belediyesinden Tunç Soyer Davasında Beklenmedik Hamle",
+   "kategori": "Gündem",
+   "kaynak": "sozcu.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/erdogancemiltugay2494051jpg-L2PZL_qrwEKZ7U3paFhGEw.jpg?w=1270&h=675&mode=crop&scale=both",
+   "kalite": {
+    "w": 1270,
+    "h": 675,
+    "oran": 1.88,
+    "entropi": 7.04,
+    "std": 75.4,
+    "gradyan": 9,
+    "kenar": 0.025,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "6b9919e4c1f5e897",
+   "baslik": "Meta'dan 816 milyar parametrelik yeni açık ağırlıklı model",
+   "kategori": "Yapay Zeka",
+   "kaynak": "12punto.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 4,
+   "url": "https://i.12punto.com.tr/Archive/2026/10/16/155921/kapak_meta-816-milyar-parametreli-acik-agirlikli-yapay-zeka-modeli-muse-spark-openi-duyurdu-687099.jpg",
+   "kalite": {
+    "w": 1700,
+    "h": 1000,
+    "oran": 1.7,
+    "entropi": 7,
+    "std": 61.8,
+    "gradyan": 15.2,
+    "kenar": 0.059,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "d1bd41aa8482d40d",
+   "baslik": "Intero Biosystems Girişim Yarışmasında Büyük Ödülü Aldı",
+   "kategori": "Teknoloji",
+   "kaynak": "teknoblog.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 4,
+   "url": "https://www.teknoblog.com/wp-content/uploads/2026/10/55592280883_eb4cee0d80_k.jpg",
+   "kalite": {
+    "w": 2048,
+    "h": 1366,
+    "oran": 1.5,
+    "entropi": 7.78,
+    "std": 73.7,
+    "gradyan": 22.6,
+    "kenar": 0.118,
+    "beyaz": 0.06
+   }
+  },
+  {
+   "id": "3e5a2ec14f67408e",
+   "baslik": "Çin'den Borsa Düşüşüne Karşı Yeni Kısıtlama Hamlesi",
+   "kategori": "Ekonomi",
+   "kaynak": "ekoturk.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://www.ekoturk.com/media/news/2026/09/Cin-borsa.jpg",
+   "kalite": {
+    "w": 884,
+    "h": 500,
+    "oran": 1.77,
+    "entropi": 7.23,
+    "std": 71.7,
+    "gradyan": 16.3,
+    "kenar": 0.075,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "d817996488f4f16a",
+   "baslik": "Doğada Hayvanların Sarhoş Olduğu Gerçek mi?",
+   "kategori": "Bilim",
+   "kaynak": "evrimagaci.org",
+   "durum": "yok",
+   "neden": "sayfada görsel yok",
+   "adaySayisi": 0,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "52f5d0b32ae96643",
+   "baslik": "Eylül Yağışlarında 51 Yıllık Artış Rakamları",
+   "kategori": "Gündem",
+   "kaynak": "cnnturk.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 3,
+   "url": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad1de4b8c5742587ec661c8.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 7.58,
+    "std": 56.2,
+    "gradyan": 26.7,
+    "kenar": 0.105,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "b4713157596b6e49",
+   "baslik": "Darıca'da Metrekarelik Binanın Balkonu Çöktü, Trafik Kapatıldı",
+   "kategori": "Gündem",
+   "kaynak": "sozcu.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/10/metrukbinaninbalkonucoktusokaktrafigekapatildikapak01c651ccfde7e55djpg-w0bRvP24uUu50rmC34cP6Q.jpg?w=1270&h=675&mode=crop&scale=both",
+   "kalite": {
+    "w": 1270,
+    "h": 675,
+    "oran": 1.88,
+    "entropi": 7.1,
+    "std": 43.8,
+    "gradyan": 13.2,
+    "kenar": 0.044,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "64441624c829f2dc",
+   "baslik": "UCLA’nın 400 Dolarlık PhoneBot’u Telefonu Yürütüyor",
+   "kategori": "Teknoloji",
+   "kaynak": "chip.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://img.chip.com.tr/rcman/Cw1280h720q95gm/storage/files/images/2026/10/13/los-angeles-kaliforniya-universitesi-arastirmacilari-akilli-telefon-tasiyip-fotograf-cekebilen-iki-bacakli-phonebotu-gelistirdi-erlv.jpg",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 6.59,
+    "std": 67.5,
+    "gradyan": 17.7,
+    "kenar": 0.094,
+    "beyaz": 0.19
+   }
+  }
+ ]
+}

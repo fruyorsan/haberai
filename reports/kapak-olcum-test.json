@@ -1,0 +1,786 @@
+{
+ "tarih": "2026-11-08T09:05:30.654Z",
+ "hedef": "kart",
+ "gun": 0,
+ "toplam": 40,
+ "gecen": 24,
+ "oran": 60,
+ "kaliteOrt": {
+  "genislik": 1297,
+  "yukseklik": 739,
+  "entropi": 7.34
+ },
+ "nedenGrupla": {
+  "düz/az detay (entropi #.#)": 2,
+  "küçük (boyut)": 3,
+  "telif/rakip yayıncı": 1,
+  "sayfada görsel yok": 5,
+  "çözülemedi": 1,
+  "yayıncı paylaşım kartı (plaka %#, yazı %#.#)": 2,
+  "bulanık (gradyan #.#)": 2
+ },
+ "hostTablo": {
+  "oyungunlugu.com": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "pasqualepillitteri.it": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "trthaber.com": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "haberglobal.com": {
+   "toplam": 4,
+   "gecti": 3
+  },
+  "abdpost.com": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "webtekno.com": {
+   "toplam": 2,
+   "gecti": 1
+  },
+  "shiftdelete.net": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "aa.com.tr": {
+   "toplam": 2,
+   "gecti": 0
+  },
+  "ina.iq": {
+   "toplam": 2,
+   "gecti": 0
+  },
+  "haber3.com": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "chip.com.tr": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "analizgazetesi.com.tr": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "ensonhaber.com": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "canligaste.com": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "trf1.net": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "haber.com": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "kibristurk.com": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "ssbulten.com.tr": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "tamindir.com": {
+   "toplam": 2,
+   "gecti": 2
+  },
+  "passo.com.tr": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "tr.beincrypto.com": {
+   "toplam": 1,
+   "gecti": 0
+  },
+  "cumhuriyet.com.tr": {
+   "toplam": 3,
+   "gecti": 3
+  },
+  "cnnturk.com": {
+   "toplam": 6,
+   "gecti": 5
+  },
+  "ensondakika.com.tr": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "donanimhaber.com": {
+   "toplam": 1,
+   "gecti": 1
+  },
+  "izgazete.net": {
+   "toplam": 1,
+   "gecti": 1
+  }
+ },
+ "kayitlar": [
+  {
+   "id": "150c554af18d1b6e",
+   "baslik": "Need for Speed Underground 2 Tarayıcıda Çalışıyor: Kurulum Gerektirmeden Oynanabilir",
+   "kategori": "Teknoloji",
+   "kaynak": "oyungunlugu.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 5,
+   "url": "https://www.oyungunlugu.com/uploads/images/news/need-for-speed-underground-2-1920-1080.jpg",
+   "kalite": {
+    "w": 1920,
+    "h": 1080,
+    "oran": 1.78,
+    "entropi": 6.65,
+    "std": 26.6,
+    "gradyan": 8.1,
+    "kenar": 0.017,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "b6f2551749d21e6f",
+   "baslik": "Anthropic açıkladı, Claude'un şirket içi kullanımı maaşlardan değerli",
+   "kategori": "Yapay Zeka",
+   "kaynak": "pasqualepillitteri.it",
+   "durum": "reddedildi",
+   "neden": "düz/az detay (entropi 3.82) | düz/az detay (entropi 3.25) | küçük (160×160)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "d9b39b28a257e527",
+   "baslik": "Bağcılar'da inşaat çalışması çevredeki 4 binayı tahliye ettirdi",
+   "kategori": "Gündem",
+   "kaynak": "trthaber.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 3,
+   "url": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2500000/insaat-tahliye-aa-2500136.jpg",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 6.69,
+    "std": 46,
+    "gradyan": 15.4,
+    "kenar": 0.049,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "67d98fa8b9daa7b6",
+   "baslik": "Elazığ'da yolun karşısına geçmeye çalışan yaya otomobil çarpmasıyla öldü",
+   "kategori": "Gündem",
+   "kaynak": "haberglobal.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://i.haberglobal.com/storage/files/images/2026/10/31/elazigda-otomobilin-carptigi-yaya-oldu-cpva.jpg",
+   "kalite": {
+    "w": 1600,
+    "h": 900,
+    "oran": 1.78,
+    "entropi": 6.56,
+    "std": 49.7,
+    "gradyan": 10.1,
+    "kenar": 0.03,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "62d8ea69bbda18c7",
+   "baslik": "İran'dan ABD'ye müzakere mesajı: Şartlar kabul edilmezse ilerleme yok",
+   "kategori": "Dünya",
+   "kaynak": "haberglobal.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://i.haberglobal.com/storage/files/images/2026/10/29/iran-sartlar-uzerinde-anlasilmaya-varilmazsa-abd-ile-ilerleme-saglanamaz-ebc3.jpg",
+   "kalite": {
+    "w": 1600,
+    "h": 900,
+    "oran": 1.78,
+    "entropi": 7.55,
+    "std": 62,
+    "gradyan": 7.3,
+    "kenar": 0.016,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "6f1bb51c89ac6801",
+   "baslik": "ABD'de üniversiteli gencin ölümü sonrası fentanil incelemesi",
+   "kategori": "Dünya",
+   "kaynak": "abdpost.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://images.abdpost.com/media/2026/10/abddeki-universite-ogrencisinin-olumunde-fentanil-suclamasi_6ae27a8ddfe62_h.jpg",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 7.19,
+    "std": 69.1,
+    "gradyan": 20.8,
+    "kenar": 0.107,
+    "beyaz": 0.01
+   }
+  },
+  {
+   "id": "077772eaaf0a7bc4",
+   "baslik": "Apple, Türkiye'deki tüm Mac modellerine yüksek oranlı zam yaptı",
+   "kategori": "Teknoloji",
+   "kaynak": "webtekno.com",
+   "durum": "reddedildi",
+   "neden": "küçük (640×360) | düz/az detay (entropi 3.82) | düz/az detay (entropi 3.92)",
+   "adaySayisi": 4,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "c12dcace83fc311c",
+   "baslik": "Broadcom router açığı: Wi-Fi şifresi gereksiz erişim",
+   "kategori": "Teknoloji",
+   "kaynak": "shiftdelete.net",
+   "durum": "yasak",
+   "neden": "telif/rakip yayıncı",
+   "adaySayisi": 0,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "84c5c754225eb717",
+   "baslik": "SPK, yatırım fonları portföy sınırlamaları için süreyi uzattı",
+   "kategori": "Ekonomi",
+   "kaynak": "aa.com.tr",
+   "durum": "reddedildi",
+   "neden": "küçük (864×485) | küçük (300×262) | küçük (300×262)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "45e88db0ad9178a3",
+   "baslik": "Vanuatu’da 7.0’lık Deprem Gerçekleşti",
+   "kategori": "Gündem",
+   "kaynak": "ina.iq",
+   "durum": "yok",
+   "neden": "sayfada görsel yok",
+   "adaySayisi": 0,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "e4f4c003c7d71822",
+   "baslik": "Robux Fiyatları Netleşti: Paketler ve Global E-PIN Alışveriş Rehberi",
+   "kategori": "Oyun",
+   "kaynak": "webtekno.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 4,
+   "url": "https://imgrosetta.webtekno.com/file/694231/694231-1200x675.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 7.67,
+    "std": 74.2,
+    "gradyan": 21.5,
+    "kenar": 0.099,
+    "beyaz": 0.04
+   }
+  },
+  {
+   "id": "49e4c040b9063efb",
+   "baslik": "Büyük depremin üzerinden 15 yıl geçmesine rağmen acılar taze",
+   "kategori": "Gündem",
+   "kaynak": "haber3.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://img.haber3.com/rcman/Cw1280h720q95gc/storage/files/images/2026/10/23/0-5sct_cover.jpg",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 7.85,
+    "std": 68.4,
+    "gradyan": 22.6,
+    "kenar": 0.087,
+    "beyaz": 0.03
+   }
+  },
+  {
+   "id": "1dafe2cb8bd5b929",
+   "baslik": "Çekirdekteki Hidrojen Yüzeye Çıkıyor: Bilimciler Yeni İzler Buldu",
+   "kategori": "Bilim",
+   "kaynak": "chip.com.tr",
+   "durum": "reddedildi",
+   "neden": "düz/az detay (entropi 4.1) | düz/az detay (entropi 4.11) | küçük (640×419)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "b48b4823c5d2a7f5",
+   "baslik": "Trump 2024 Seçiminde Zayıflayacak: Analiz Gazetesi Raporu",
+   "kategori": "Gündem",
+   "kaynak": "analizgazetesi.com.tr",
+   "durum": "reddedildi",
+   "neden": "çözülemedi | çözülemedi | çözülemedi",
+   "adaySayisi": 5,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "813acc9ebd098c43",
+   "baslik": "İran Meclis Başkanı: ABD'ye Savaşta Hikmet Yok",
+   "kategori": "Gündem",
+   "kaynak": "ensonhaber.com",
+   "durum": "yok",
+   "neden": "sayfada görsel yok",
+   "adaySayisi": 0,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "ad1a93faab2727a9",
+   "baslik": "Futbolda şike kumpası soruşturmasında Lütfi Arıboğan'a hapis istemi",
+   "kategori": "Gündem",
+   "kaynak": "aa.com.tr",
+   "durum": "reddedildi",
+   "neden": "küçük (864×486) | küçük (300×262) | küçük (300×262)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "0da230c00e6731eb",
+   "baslik": "AFAD ve Kandilli son depremler listesini 22 Ekim 2026 tarihinde paylaştı",
+   "kategori": "Gündem",
+   "kaynak": "canligaste.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://www.canligaste.com/aa-media/2026/11/ulas-kaymakami-avci-dan-iki-koye-ziyaret-945495.webp",
+   "kalite": {
+    "w": 1200,
+    "h": 900,
+    "oran": 1.33,
+    "entropi": 7.71,
+    "std": 65.4,
+    "gradyan": 20,
+    "kenar": 0.08,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "efcb7e95fc2b4c8f",
+   "baslik": "Verstappen ABD GP’sinde Favori: Palmar’ın Açıklamaları",
+   "kategori": "Teknoloji",
+   "kaynak": "trf1.net",
+   "durum": "reddedildi",
+   "neden": "yayıncı paylaşım kartı (plaka %50, yazı %19.5) | küçük (850×567)",
+   "adaySayisi": 2,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "5c22cd2d6c079076",
+   "baslik": "ABD Ortadoğu'da Askeri ve Diplomatik Personel Azaltma Kararı Aldı",
+   "kategori": "Gündem",
+   "kaynak": "haber.com",
+   "durum": "reddedildi",
+   "neden": "bulanık (gradyan 3.7) | bulanık (gradyan 3.6) | bulanık (gradyan 3.8)",
+   "adaySayisi": 4,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "2de4668740697d44",
+   "baslik": "Putin, ABD ve Ukrayna ile Üçlü Görüşmelere Yeşil Işık Verdi",
+   "kategori": "Gündem",
+   "kaynak": "kibristurk.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://kibristurkcom.teimg.com/crop/1280x720/kibristurk-com/uploads/2026/02/putin-getty-images-2223945138.jpg",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 7.09,
+    "std": 52.2,
+    "gradyan": 7.6,
+    "kenar": 0.019,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "05fc006378406e13",
+   "baslik": "Avrupa, kritik altyapı tesislerine İHA düşürme yetkisi veriyor",
+   "kategori": "Dünya",
+   "kaynak": "ssbulten.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://img.ssbulten.com.tr/assets/outsource/9bf3ea9d9db5e59888d6d5dec0fdcb2e7748abe0e676330d328c08198fcfc07b/img_0-discover.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 6.96,
+    "std": 45.4,
+    "gradyan": 12.2,
+    "kenar": 0.041,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "fccb906b8b3a30ca",
+   "baslik": "Google Gemini, Android Auto kullanıcılarını trafik cezasından koruyor",
+   "kategori": "Yazılım",
+   "kaynak": "tamindir.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://img.tamindir.com/2026/10/476815/gemini-kisisel-zeka-android-auto.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 7.86,
+    "std": 67,
+    "gradyan": 14.5,
+    "kenar": 0.047,
+    "beyaz": 0.01
+   }
+  },
+  {
+   "id": "1fe144bac8bb5bdb",
+   "baslik": "Batman Petrol Spor A.Ş. - Esenler Erokspor Maç Biletleri Satışta",
+   "kategori": "Spor",
+   "kaynak": "passo.com.tr",
+   "durum": "yok",
+   "neden": "sayfada görsel yok",
+   "adaySayisi": 0,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "96fc01270b79a6bc",
+   "baslik": "NVIDIA ve Almanya arasında 10 milyar dolarlık yapay zeka yatırımı",
+   "kategori": "Yapay Zeka",
+   "kaynak": "tr.beincrypto.com",
+   "durum": "yok",
+   "neden": "sayfada görsel yok",
+   "adaySayisi": 0,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "7a823e3f5d9253a7",
+   "baslik": "Dünya genelinde yaban hayvanı popülasyonları yüzde 73 oranında azaldı",
+   "kategori": "Dünya",
+   "kaynak": "haberglobal.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://i.haberglobal.com/storage/files/images/2026/10/20/dogada-yuzde-95lik-cokus-canlilar-sessizce-yok-oluyor-gkq9.jpg",
+   "kalite": {
+    "w": 1600,
+    "h": 900,
+    "oran": 1.78,
+    "entropi": 7.18,
+    "std": 40.8,
+    "gradyan": 17.8,
+    "kenar": 0.038,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "127142b6ab0071a5",
+   "baslik": "İliç maden faciası davasında tutuklu iki sanık serbest bırakıldı",
+   "kategori": "Gündem",
+   "kaynak": "cumhuriyet.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://media.cumhuriyet.com.tr/Archive/c84bc6cd-746b-4cc0-bcfd-ca8b37077c88.jpg",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 7.51,
+    "std": 51.6,
+    "gradyan": 12.1,
+    "kenar": 0.035,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "bae8ddb0fe10b9ef",
+   "baslik": "Süleymaniye'nin batısında yer alan bölgede deprem meydana geldi",
+   "kategori": "Gündem",
+   "kaynak": "ina.iq",
+   "durum": "yok",
+   "neden": "sayfada görsel yok",
+   "adaySayisi": 0,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "6ed1726535bf6057",
+   "baslik": "Final Fantasy VII Revelation, Hard Modu İlk Oynanışta Açıyor",
+   "kategori": "Oyun",
+   "kaynak": "tamindir.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://img.tamindir.com/2026/10/476815/final-fantasy-vii-revelation-zorluk.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 7.52,
+    "std": 54.8,
+    "gradyan": 10.2,
+    "kenar": 0.02,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "53df2f718a89a944",
+   "baslik": "Çukurova Belediyesi soruşturmasında 44 şüpheli gözaltına alındı",
+   "kategori": "Gündem",
+   "kaynak": "cnnturk.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 3,
+   "url": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad5a51d8c5742587ec66679.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 7.79,
+    "std": 70.9,
+    "gradyan": 22.1,
+    "kenar": 0.086,
+    "beyaz": 0.04
+   }
+  },
+  {
+   "id": "89083f986017edb6",
+   "baslik": "Selçuk İnan'dan Göztepe maçı sonrası açıklama: 3-4 hafta sonra",
+   "kategori": "Spor",
+   "kaynak": "haberglobal.com",
+   "durum": "reddedildi",
+   "neden": "bulanık (gradyan 6.1) | bulanık (gradyan 5.9) | küçük (210×210)",
+   "adaySayisi": 6,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "61fd6c20f68bf126",
+   "baslik": "Eskişehir'de sevgilisini bıçaklayarak öldüren kadın adliyeye sevk edildi",
+   "kategori": "Gündem",
+   "kaynak": "cnnturk.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 3,
+   "url": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad4c19ad10e163b0d4d4b91.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 7.51,
+    "std": 65.4,
+    "gradyan": 21.5,
+    "kenar": 0.1,
+    "beyaz": 0
+   }
+  },
+  {
+   "id": "d8b0d4626ba2618a",
+   "baslik": "Düzce'nin Yüksek Yaylaları Kar Yağışıyla Beyaza Büründü",
+   "kategori": "Gündem",
+   "kaynak": "cnnturk.com",
+   "durum": "reddedildi",
+   "neden": "yayıncı paylaşım kartı (plaka %45, yazı %44.6) | düz/az detay (entropi 0.11) | küçük (335×189)",
+   "adaySayisi": 3,
+   "url": "",
+   "kalite": null
+  },
+  {
+   "id": "46ebb0cc0692755e",
+   "baslik": "Lahic Vilayetinde 8 Yemen Askeri Şehit Oldu",
+   "kategori": "Gündem",
+   "kaynak": "ensondakika.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://www.ensondakika.com.tr/haber-gorsel/2026/10/yemen-ordusu-lahic-vilayetinde-8-asker-hayatini-kaybetti-721367.webp",
+   "kalite": {
+    "w": 960,
+    "h": 541,
+    "oran": 1.77,
+    "entropi": 7.39,
+    "std": 75.7,
+    "gradyan": 24,
+    "kenar": 0.109,
+    "beyaz": 0.04
+   }
+  },
+  {
+   "id": "4c6ef8c7fab5b658",
+   "baslik": "Uğurcan Çakır Lille ve Fenerbahçe Maçlarını Kritik Diyor",
+   "kategori": "Spor",
+   "kaynak": "cnnturk.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 4,
+   "url": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad39b205b565308d71314a1.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 7.42,
+    "std": 55.8,
+    "gradyan": 13.3,
+    "kenar": 0.042,
+    "beyaz": 0.01
+   }
+  },
+  {
+   "id": "11373d38cf852daa",
+   "baslik": "Renault Trucks FEST Türkiye turuyla taşımacılık sektörüyle buluşuyor",
+   "kategori": "Ekonomi",
+   "kaynak": "cnnturk.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 3,
+   "url": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad350e4fe46d577dbb92cd7.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 7.35,
+    "std": 62.9,
+    "gradyan": 12.2,
+    "kenar": 0.051,
+    "beyaz": 0.01
+   }
+  },
+  {
+   "id": "a486ecff79aae42f",
+   "baslik": "Oto Gündem Programında Yeni Renault Kokpiti ve BYD Menzil Testi Konuşuldu",
+   "kategori": "Donanım",
+   "kaynak": "donanimhaber.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://www.donanimhaber.com/images/images/haber/211746/1200x675yeni-renaultlar-boyle-olacak-dev-panoramik-ekran-geliyor.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 7.6,
+    "std": 79.6,
+    "gradyan": 25.2,
+    "kenar": 0.124,
+    "beyaz": 0.04
+   }
+  },
+  {
+   "id": "9b3c0f6482cf74e7",
+   "baslik": "Siber Zorbalıkla Mücadelede Hukuki ve Sosyal Öneriler",
+   "kategori": "Gündem",
+   "kaynak": "izgazete.net",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://izgazetenet.teimg.com/crop/1280x720/izgazete-net/uploads/2024/12/sosyal-medya-uygulamalari-ne-kadar-internet-harcar-2x.jpg",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 6.69,
+    "std": 88.4,
+    "gradyan": 9.2,
+    "kenar": 0.04,
+    "beyaz": 0.02
+   }
+  },
+  {
+   "id": "d2690cba142ba064",
+   "baslik": "Olumsuz Hava Koşulları İstanbul'da Vapur Seferlerini Aksattı",
+   "kategori": "Gündem",
+   "kaynak": "cumhuriyet.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://media.cumhuriyet.com.tr/Archive/efbc7c76-b6d2-4ab2-91a6-e2f863873a1c.jpg",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 7.15,
+    "std": 48.7,
+    "gradyan": 11.9,
+    "kenar": 0.034,
+    "beyaz": 0.02
+   }
+  },
+  {
+   "id": "f5147ccc2637c43a",
+   "baslik": "16 Ekim 2026 Cuma Maç Programı: Günün Karşılaşmaları ve Kanalları",
+   "kategori": "Spor",
+   "kaynak": "cnnturk.com",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 4,
+   "url": "https://image.cnnturk.com/i/cnnturk/75/1200x675/6ad2066c9f69b7780963e3bf.jpg",
+   "kalite": {
+    "w": 1200,
+    "h": 675,
+    "oran": 1.78,
+    "entropi": 7.84,
+    "std": 82.5,
+    "gradyan": 31.3,
+    "kenar": 0.159,
+    "beyaz": 0.06
+   }
+  },
+  {
+   "id": "60fe174e57ddeddc",
+   "baslik": "Gazeteci Murat Ağırel Gözaltına Alındı",
+   "kategori": "Gündem",
+   "kaynak": "cumhuriyet.com.tr",
+   "durum": "gecti",
+   "neden": "",
+   "adaySayisi": 6,
+   "url": "https://media.cumhuriyet.com.tr/Archive//29b247fd-c411-47cc-98a7-31f51f23e3dd.jpg",
+   "kalite": {
+    "w": 1280,
+    "h": 720,
+    "oran": 1.78,
+    "entropi": 7.49,
+    "std": 58.5,
+    "gradyan": 8.1,
+    "kenar": 0.014,
+    "beyaz": 0
+   }
+  }
+ ]
+}

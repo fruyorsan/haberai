@@ -23,6 +23,9 @@
     "bildirim:dry": "node --env-file-if-exists=.env src/bildirim.js --dry",
     "indeks": "node src/indeks.js",
     "kapak": "node --env-file-if-exists=.env scripts/kapak-uret.mjs",
+    "kapak:kaynaktan": "node --env-file-if-exists=.env scripts/kapak-uret.mjs --kaynaktan",
+    "kapak:olcum": "node scripts/kapak-olcum.mjs",
+    "kapak:once-sonra": "node scripts/kapak-once-sonra.mjs",
     "gorsel-ajan": "node --env-file-if-exists=.env scripts/gorsel-ajan.mjs",
     "gorsel-ajan:dry": "node --env-file-if-exists=.env scripts/gorsel-ajan.mjs --dry",
     "kaynak-gorsel": "node scripts/kaynak-gorsel.mjs",
@@ -33,6 +36,7 @@
     "node": ">=20"
   },
   "dependencies": {
+    "fontkit": "^2.0.4",
     "rss-parser": "^3.13.0",
     "sharp": "^0.35.5"
   }

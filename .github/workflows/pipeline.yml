@@ -140,6 +140,18 @@ jobs:
           AI_KAPAK_LIMIT: "0"
         run: node scripts/kapak-uret.mjs --uzak --limit=80 --paralel=8
 
+      # HAVUZ ONARIMI: kapagi kategori sahne havuzundan gelen ama haberle konu
+      # ortusmesi zayif olan eski kapaklari (or. Bluetooth haberi -> devre karti)
+      # ayni kategorideki DAHA YAKIN kareyle degistirir. Daha iyi kare yoksa
+      # habere dokunmaz: koru korune yeniden uretim dosya copu ve gerileme olur.
+      - name: Havuz kapaklarini onar
+        continue-on-error: true
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          AI_KAPAK_LIMIT: "0"
+        run: node scripts/kapak-uret.mjs --havuz --limit=120 --paralel=8
+
       # GUVENLIK AGI: kapak adimi bir haberi atlarsa `image` alani Wikimedia
       # stogunda kalabiliyor (baslikla ilgisiz kare). En yeni stok gorselli
       # haberler icin gercek foto (yoksa tasarim karti) uretilir.
@@ -150,6 +162,40 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           AI_KAPAK_LIMIT: "6"
         run: node scripts/kapak-uret.mjs --stok --limit=25 --paralel=6
+
+      # KAPAKSIZ ARSIV: `image` alani hala yayincinin CDN'ini gosteren eski
+      # kayitlar (yerel kapak dosyasi hic uretilmemis). Bunlar sayfada hotlink
+      # ya da gorselsiz cikiyordu. Tur, yerel havuzdan uygun kare bulursa onu
+      # kullanir, bulamazsa konuya uygun tasarim karti uretir.
+      - name: Kapaksiz haberleri yerellestir
+        continue-on-error: true
+        env:
+          AI_KAPAK_LIMIT: "0"
+        run: node scripts/kapak-uret.mjs --kapaksiz --limit=30 --paralel=6
+
+      # ALAKA DENETIMI: fotografli ama kare ile haber arasinda KANITLANABILIR
+      # bag olmayan kapaklari (or. Iveco satin alma haberi -> Malta'daki zirhli
+      # arac, iPhone 18 haberi -> Apple agaci) markali tasarim kartina cevirir.
+      # Ag kullanmaz, kart yerelde uretilir: tur basina 100 kapak temizlenir ve
+      # saatlik kayan pencere sayesinde tum arsiv birkac saatte taranir.
+      # Yanlis fotoğraf gostermek, konuya uygun karttan daha cok guven kaybettirir.
+      - name: Alakasiz kapaklari karta cevir
+        continue-on-error: true
+        env:
+          AI_KAPAK_LIMIT: "0"
+        run: node scripts/kapak-uret.mjs --uygunsuz --limit=100 --paralel=8
+
+      # KAYNAK FOTOGRAFI: tasarim karti kalmis haberleri yayincinin KENDI
+      # og:image / twitter:image karesiyle degistirir. 2026-11 oncesi bu yol
+      # tamamen kapatildigi icin arsivin %76'si karta dusmustu. Kalite kapisi
+      # (cozunurluk, 16:9, bulaniklik, metin/plaka, ekran goruntusu) gecmezse
+      # haber kartta KALIR; 7 gun boyunca yeniden denenmez. Parti partidir:
+      # her kosuda 60 haber, boylece 2.5 bin kart zamanla erir.
+      - name: Kaynak fotografi ile kartlari onar
+        continue-on-error: true
+        env:
+          AI_KAPAK_LIMIT: "0"
+        run: node scripts/kapak-uret.mjs --kaynaktan --limit=60 --paralel=6 --eski
 
       # GORSEL AJANI: kalan kotu kapaklari (tasarim karti, kaynak sitenin kendi
       # gorselinden uretilmis alakasiz kare) haberin ANLAMINA gore yeniden secer.
