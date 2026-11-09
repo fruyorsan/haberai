@@ -1,5 +1,49 @@
 [
   {
+    "id": "c75ec67874a979d1",
+    "title": "Microsoft, WinUI 3 ile Kayıt Defteri Düzenleyicisini Yeniliyor",
+    "slug": "microsoft-winui-3-ile-kayit-defteri-duzenleyicisini-yeniliyor",
+    "summary": "Microsoft, Windows 11 için yaklaşık 30 yıllık geçmişi olan Kayıt Defteri Düzenleyicisi'ni WinUI 3 tabanlı yeni bir arayüzle güncelledi. Yeni sürüm, iki panelli düzeni korurken modern menüler, adres çubuğu ve Mica arka plan efekti sunuyor. Şu an geliştirici önizlemesi olarak dağıtılıyor ve resmi bir sistem aracı olarak eklenmesi henüz teyit edilmedi.",
+    "keyPoints": [
+      "WinUI 3 ile modern arayüz, eski iki‑panelli düzeni koruyor",
+      "Mica arka plan efekti ve yeni adres çubuğu eklendi",
+      "Geliştirici önizlemesi, Windows 11 build 26340.9882 üzerinde test edildi"
+    ],
+    "body": [
+      "Microsoft, Windows 11’in görsel kimliğine uygun olarak Kayıt Defteri Düzenleyicisi’ni yeniden tasarladığını duyurdu. Yaklaşık üç on yıl boyunca temel arayüz değişikliği görmemiş olan bu sistem aracı, artık WinUI 3 çerçevesiyle geliştirildi ve modern bir kullanıcı deneyimi hedefliyor.",
+      "Yeni sürüm, klasik iki panelli yapıyı koruyor; sol tarafta kayıt anahtarları, sağ tarafta ise seçili anahtara ait değerler yer alıyor. Ancak menü çubuğu, klasik menü öğeleri yerine WinUI 3 bileşenleriyle değiştirildi ve yeni bir adres çubuğu eklendi. Bu sayede kullanıcılar kayıt yollarını daha hızlı gözden geçirebiliyor.",
+      "Görsel iyileştirmeler de dikkat çekiyor. Windows 11’in Mica materyal efekti, pencere arka planına uygulandı; ayrıca köşeler yuvarlatıldı ve koyu‑açık tema desteği entegre edildi. Bu değişiklikler, sistem aracının işletim sisteminin genel tasarım diliyle uyumlu olmasını sağlıyor.",
+      "Uygulama, Microsoft’un açık kaynaklı Microsoft.UI.Reactor deposundan derlenerek Windows 11 build 26340.9882 üzerinde test edildi. İşlevsellik açısından orijinal sürümle aynı özellikleri sunuyor, ancak hâlâ eksik bazı işlevler bulunuyor ve resmi bir sistem aracı olarak dağıtımı için kesin bir takvim açıklanmadı.",
+      "Microsoft, uzun süredir eski sistem araçlarını yenileme çalışmalarını sürdürüyor. Bu modern Kayıt Defteri Düzenleyicisi, geliştiriciler ve ileri düzey kullanıcılar için daha verimli bir deneyim vaat ediyor; ancak resmi sürümün ne zaman yayınlanacağı ve hangi ek özelliklerin ekleneceği hâlâ belirsiz."
+    ],
+    "comment": "Microsoft, WinUI 3 tabanlı yeni Kayıt Defteri Düzenleyicisiyle eski aracı güncelleyerek geliştiricilere daha tutarlı bir UI sunuyor. WinUI 3 ve Mica efekti gibi somut değişiklikler, modern Windows 11 deneyimine uyum sağlıyor. Bu güncelleme, sistem yöneticileri ve uygulama geliştiricileri için kayıt düzenleme sürecini hızlandırabilir. Önceki sürümdeki klasik menülerle kıyaslandığında, yeni arayüz daha sezgisel ve tema uyumlu, fakat hâlâ eksik işlevler nedeniyle tam geçiş riski taşıyor.",
+    "editorNote": "Kayıt Defteri Düzenleyicisi, üç on yıldır aynı görünüme sahipken WinUI 3 ile modern bir yüz alıyor; henüz önizleme aşamasında olduğu için dikkatle izlenmeli.",
+    "tags": [
+      "Microsoft",
+      "WinUI 3",
+      "Kayıt Defteri",
+      "Windows 11",
+      "Registry Editor"
+    ],
+    "category": "Donanım",
+    "gorselSorgu": "Windows 11 registry editor UI",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/microsoft-30-yillik-windows-ozelligini-nihayet-yeniliyor--212645",
+    "image": "/kapak/c75ec67874a979d1.webp",
+    "images": [
+      "https://www.donanimhaber.com/images/images/haber/212645/1200x675microsoft-30-yillik-windows-ozelligini-nihayet-yeniliyor.jpg",
+      "https://www.donanimhaber.com/images/images/haber/212645/src/microsoft-30-yillik-windows-ozelligini-nihayet-yeniliyor212645_1.jpg"
+    ],
+    "publishedAt": "2026-11-09T07:13:51.000Z",
+    "generatedAt": "2026-11-09T07:16:24.070Z",
+    "breaking": true,
+    "kapak": {
+      "v": 3,
+      "kaynak": "ai:phoenix-1.0",
+      "foto": true
+    }
+  },
+  {
     "id": "25aad21667cd82e6",
     "title": "Kartlı harcamalar 5 yılın en yavaş dönemine girdi",
     "slug": "kartli-harcamalar-5-yilin-en-yavas-donemine-girdi",
@@ -7430,7 +7474,6 @@
         "altyazi": "Yerli biyodizel üretim tesislerindeki işlem süreci"
       }
     ],
-    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": null,
@@ -43970,14 +44013,14 @@
     "gorselDeneme": "2026-11-01T03:41:57.299Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Sungai_Tuntong_20231222_145411.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Sungai_Tuntong_20231222_145411.jpg",
       "foto": true
     },
     "gorselKaynak": {
       "yazar": "Wiki Farazi",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145540.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Sungai_Tuntong_20231222_145411.jpg"
     }
   },
   {
@@ -147558,7 +147601,7 @@
       "yazar": "Wiki Farazi",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145541.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145540.jpg"
     },
     "gorselDeneme": "2026-10-28T04:46:35.718Z",
     "ekGorselDeneme": "2026-10-29T21:40:46.965Z",
@@ -147580,7 +147623,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145541.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145541.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg",
       "foto": true
     }
   },
@@ -273350,15 +273393,15 @@
     "publishedAt": "2026-10-17T13:06:00.000Z",
     "generatedAt": "2026-10-17T13:07:01.965Z",
     "gorselKaynak": {
-      "yazar": "Leit",
-      "lisans": "Kamu malı",
-      "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Deutsche_Telekom_Tagungshotel_Bad_Honnef.JPG"
+      "yazar": "Jochen64",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Telekom_mobility_2_cars.jpg"
     },
     "gorselDeneme": "2026-10-28T04:49:00.614Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Deutsche_Telekom_Tagungshotel_Bad_Honnef.JPG/1280px-Deutsche_Telekom_Tagungshotel_Bad_Honnef.JPG",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Telekom_mobility_2_cars.jpg/1280px-Telekom_mobility_2_cars.jpg",
       "foto": true
     }
   },
@@ -277827,10 +277870,10 @@
     "publishedAt": "2026-10-17T10:50:16.000Z",
     "generatedAt": "2026-10-17T10:54:42.217Z",
     "gorselKaynak": {
-      "yazar": "Jochen64",
-      "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Telekom_mobility_2_cars.jpg"
+      "yazar": "Leit",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Deutsche_Telekom_Tagungshotel_Bad_Honnef.JPG"
     },
     "images": [
       "https://herkesduysun.com/api/medya/news/2026/10/20261027AW819274/01_800.webp"
@@ -277839,7 +277882,7 @@
     "gorselDeneme": "2026-10-28T04:49:06.269Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Telekom_mobility_2_cars.jpg/1280px-Telekom_mobility_2_cars.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Deutsche_Telekom_Tagungshotel_Bad_Honnef.JPG/1280px-Deutsche_Telekom_Tagungshotel_Bad_Honnef.JPG",
       "foto": true
     }
   },
@@ -284064,12 +284107,12 @@
       "yazar": "Wiki Farazi",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145614.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145541.jpg"
     },
     "gorselDeneme": "2026-10-28T04:49:11.651Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145614.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145614.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145541.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145541.jpg",
       "foto": true
     },
     "gorselSorguDeneme": "2026-11-05T12:01:06.811Z",
@@ -309184,7 +309227,7 @@
       "yazar": "Estormiz",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:AC_Oulu_vs_KuPS_20261101_01.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:AC_Oulu_vs_KuPS_20261101_02.jpg"
     },
     "gorselSorguDeneme": "2026-10-27T23:38:11.460Z",
     "gorselSorgu": "Trabzonspor football team",
@@ -309201,7 +309244,7 @@
     "gorselDeneme": "2026-10-28T04:49:38.989Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/AC_Oulu_vs_KuPS_20261101_01.jpg/1280px-AC_Oulu_vs_KuPS_20261101_01.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/AC_Oulu_vs_KuPS_20261101_02.jpg/1280px-AC_Oulu_vs_KuPS_20261101_02.jpg",
       "foto": true
     }
   },
@@ -310070,7 +310113,7 @@
       "yazar": "Estormiz",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:AC_Oulu_vs_KuPS_20261101_02.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:AC_Oulu_vs_KuPS_20261101_01.jpg"
     },
     "gorselYedek": 1,
     "gorselSorguDeneme": "2026-10-27T01:17:33.871Z",
@@ -310088,7 +310131,7 @@
     "gorselDeneme": "2026-10-28T04:49:40.076Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/AC_Oulu_vs_KuPS_20261101_02.jpg/1280px-AC_Oulu_vs_KuPS_20261101_02.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/AC_Oulu_vs_KuPS_20261101_01.jpg/1280px-AC_Oulu_vs_KuPS_20261101_01.jpg",
       "foto": true
     }
   },
