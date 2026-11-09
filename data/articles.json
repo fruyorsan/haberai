@@ -1,5 +1,66 @@
 [
   {
+    "id": "d6582fe45ec10dfe",
+    "title": "Apple, Siri AI'ın ücretli dönemi için sinyaller gönderdi",
+    "slug": "apple-siri-ai-ucretli-donem-sinyalleri",
+    "summary": "Apple, Siri'nin gelişmiş özellikleri için yeni bir ücretlendirme modeli değerlendiriyor. Şirket, Private Cloud Compute altyapısının getirdiği sunucu maliyetlerinin arttığını kabul etti. Henüz kesin fiyat ve kullanım limitleri açıklanmadı ancak Türkçe desteğin iOS 27.3 beta'sında göründüğü belirtildi.",
+    "keyPoints": [
+      "Apple'ın geliştirici maliyetlerini karşılamak için ücretli Siri modeli planladığı açıklandı.",
+      "Türkçe Siri desteği, iOS 27.3 beta sürümünde test aşamasına alındı.",
+      "Gelişmiş işlemler, cihaz üzerindeki sınırlılıklar nedeniyle cloud sunucularına aktarılıyor."
+    ],
+    "body": [
+      "Apple, artan yapay zeka işletme maliyetleri karşısında Siri servisinin gelecekteki fiyat politikasını gözden geçiriyor. CFO Kevan Parekh'in dördüncü çeyrek kazanç toplantısındaki değerlendirmeleri, şirketin bu alandaki maliyet duyarlılığını ortaya koydu. Parekh, cihaz üzerinde çalışan işlemlerin verimli olduğunu vurgulasa da sunucu tabanlı hizmetlerin bütçeye ek yük bindirdiğini kabul etti.",
+      "Siri'nin çalışmasında iki kritik teknoloji devrede: Cihaz içi işlemler ve Apple Private Cloud Compute. Daha basit sorgular telefonun kendi donanımıyla çözümlenirken, karmaşık analizler ve onlarca kelime içeren detaylı istekler bulut altyapısına havale ediliyor. Bu durum, Apple'a ait veri merkezi kapasitesinin sürekli zorlanmasına ve dolayısıyla enerji ile donanım giderlerinin yükselmesine neden oluyor.",
+      "Şirket, henüz kullanıcıları nelerin beklediğine dair somut rakamlar paylaşmadı. Günlük sorgu limiti, aylık paket fiyatı veya yalnızca belirli premium özelliklerin ücretli hale geleceği gibi detaylar belirsizliğini koruyor. Ancak söylentiler, yeni sistemin iCloud+ abonelik paketleriyle entegre edilerek dağıtılabileceğine işaret ediyor.",
+      "Ücretlendirme konusu gündemdeyken Siri tarafında dikkat çekici bir teknik gelişme yaşandı. iOS 27.3 beta sürümünde Türkçe dil desteğinin aktif edildiği tespit edildi. Güncellemenin aralık ayında genel kullanıma açılması planlanıyor. Bu durum, Türkçe konuşan milyonlarca kullanıcının Siri ile etkileşimini daha doğal bir hale getirecek.",
+      "Apple, rakiplerinin yapay zeka entegrasyonlarını ücretsiz sunmaya devam ettiği bir dönemde bu hamleyi gerçekleştirirse pazar dengesi değişebilir. iCloud+ paketiyle bağlanan bir model, mevcut abone kitlesini genişletme fırsatı sunarken, yeni kullanıcılar için erişim bariyeri oluşturabilir. Kullanıcıların, hangi işlemlerin cihazda ve hangi işlemlerin bulutta gerçekleştiğini takip etmeleri, olası ekstra maliyetlerden kaçınmak için kritik önem taşıyor.",
+      "Sonuç olarak Siri'nin geleceği, hem teknik kapasite hem de ticari strateji açısından bir ayıklanma sürecine giriyor. Apple'ın, sunucu maliyetlerini dengelemek ve yerel dil desteği sunarak kullanıcı tabanını genişletme denemesi, önümüzdeki aylarda netleşecek. Kullanıcıların, cihaz üzerindeki işlem sınırlarını aşan isteklerin ne sıklıkta yapıldığını gözlemleyerek kendi kullanım profillerini belirlemeleri faydalı olacaktır."
+    ],
+    "comment": "Apple'ın Private Cloud Compute maliyetlerini kullanıcıya yansıtma kararı, yapay zeka hız limitinin (rate limiting) yalnızca teknik değil, ekonomik bir zorunluluk haline geldiğini gösteriyor. Özellikle iOS 27.3 beta'sındaki Türkçe desteği ile birlikte, yerel dil işleme kapasitesinin sunucuya bağımlılığı artarsa, bu maliyet baskısı kaçınılmaz olarak ücretlendirme modeline yansıyacaktır. Standart kullanım senaryosunda, sık ve karmaşık sorgular yapan kullanıcılar iCloud+ dışındaki paketlere göre daha yüksek fatura riskiyle karşı karşıya kalabilir. Rakip cihazların daha agresif ücretsiz politikalarıyla kıyaslandığında, bu adım Apple ekosistemindeki 'her şey dahil' algısını zedeleyebilir; ancak sunucu altyapısının sürdürülebilirliği için atılması gereken kaçınılmaz bir iş modeli değişikliğidir.",
+    "editorNote": "Siri'yi aşırı kullananlar cüzdanlarına dikkat etmeli; iOS 27.3'teki Türkçe desteği, bu değişimin kapısı mı?, iCloud+ bağımlılığı artarsa standart kullanıcı için maliyet farkı…",
+    "tags": [
+      "Apple",
+      "Siri AI",
+      "Private Cloud Compute",
+      "iOS 27.3",
+      "Yapay Zeka Maliyeti"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "Apple Siri interface on iPhone screen",
+    "source": "Genç Gazete",
+    "sourceUrl": "https://www.gencgazete.net/siri-ai-icin-ucretli-donem-basliyor-apple-kullanima-sinir-getirmeye-hazirlaniyor",
+    "image": "/kapak/d6582fe45ec10dfe.webp",
+    "images": [
+      "https://gencgazetenet.teimg.com//gencgazete-net//uploads//2023//12//ekran-goruntusu-2023-12-08-104159.png",
+      "https://gencgazetenet.teimg.com/crop/200x200/gencgazete-net/uploads/2026/11/8-kasim-yol-calismasi-uyarisi-gencgazete.webp",
+      "https://gencgazetenet.teimg.com/crop/200x200/gencgazete-net/uploads/2026/11/inegolspor-kutahyaspor-canli-mac-yayini-gencgazete.webp"
+    ],
+    "publishedAt": "2026-11-09T00:00:00.000Z",
+    "generatedAt": "2026-11-09T00:05:45.437Z",
+    "gorselEk": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/EFTA00002518_-_Server_rack_with_multiple_hard_drives_and_network_cables_connected_in_a_data_center_environment.jpg",
+        "yazar": "Federal Bureau of Investigation",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:EFTA00002518_-_Server_rack_with_multiple_hard_drives_and_network_cables_connected_in_a_data_center_environment.jpg",
+        "altyazi": "Siri'nin bulut işlemlerini yürüten veri merkezi altyapısı"
+      }
+    ],
+    "breaking": true,
+    "kapak": {
+      "v": 3,
+      "kaynak": null,
+      "foto": false
+    },
+    "gorselAjan": {
+      "tarih": "2026-11-09T00:08:55.835Z",
+      "sonuc": "atlandi",
+      "neden": "yeterli görsel yok"
+    }
+  },
+  {
     "id": "301087c44ef18996",
     "title": "Demokratlar Kongre'de iktidarı aldı, 2028'ye hazırlık başladı",
     "slug": "demokratlar-kongre-iktidari-2028-preparasyon",
@@ -57,6 +118,11 @@
       "v": 3,
       "kaynak": null,
       "foto": false
+    },
+    "gorselAjan": {
+      "tarih": "2026-11-09T00:09:34.470Z",
+      "sonuc": "atlandi",
+      "neden": "yeterli görsel yok"
     }
   },
   {
@@ -102,6 +168,11 @@
       "v": 3,
       "kaynak": null,
       "foto": false
+    },
+    "gorselAjan": {
+      "tarih": "2026-11-09T00:10:08.109Z",
+      "sonuc": "atlandi",
+      "neden": "yeterli görsel yok"
     }
   },
   {
@@ -41965,14 +42036,14 @@
     "gorselDeneme": "2026-11-01T03:41:57.299Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Sungai_Tuntong_20231222_145411.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Sungai_Tuntong_20231222_145411.jpg",
       "foto": true
     },
     "gorselKaynak": {
       "yazar": "Wiki Farazi",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145540.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Sungai_Tuntong_20231222_145411.jpg"
     }
   },
   {
@@ -145553,7 +145624,7 @@
       "yazar": "Wiki Farazi",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145532.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145540.jpg"
     },
     "gorselDeneme": "2026-10-28T04:46:35.718Z",
     "ekGorselDeneme": "2026-10-29T21:40:46.965Z",
@@ -145575,7 +145646,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145532.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145532.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg",
       "foto": true
     }
   },
@@ -200963,10 +201034,10 @@
     "publishedAt": "2026-10-20T10:59:00.000Z",
     "generatedAt": "2026-10-20T11:03:38.348Z",
     "gorselKaynak": {
-      "yazar": "Openverse",
-      "lisans": "CC0 1.0",
-      "lisansUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "sayfa": "https://www.rawpixel.com/image/5906639/photo-image-light-desktop-wallpapers-public-domain"
+      "yazar": "Kavali Chandrakanth KCK",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Google_Head_Office_Kondapur_Hyderabad.jpg"
     },
     "gorselDeneme": "2026-10-28T04:47:49.794Z",
     "ekGorselDeneme": "2026-11-01T02:00:51.246Z",
@@ -281935,12 +282006,12 @@
       "yazar": "Wiki Farazi",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145541.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145614.jpg"
     },
     "gorselDeneme": "2026-10-28T04:49:11.651Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145541.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145541.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145614.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145614.jpg",
       "foto": true
     },
     "gorselSorguDeneme": "2026-11-05T12:01:06.811Z",
@@ -307055,7 +307126,7 @@
       "yazar": "Estormiz",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:AC_Oulu_vs_KuPS_20261101_02.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:AC_Oulu_vs_KuPS_20261101_01.jpg"
     },
     "gorselSorguDeneme": "2026-10-27T23:38:11.460Z",
     "gorselSorgu": "Trabzonspor football team",
@@ -307072,7 +307143,7 @@
     "gorselDeneme": "2026-10-28T04:49:38.989Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/AC_Oulu_vs_KuPS_20261101_02.jpg/1280px-AC_Oulu_vs_KuPS_20261101_02.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/AC_Oulu_vs_KuPS_20261101_01.jpg/1280px-AC_Oulu_vs_KuPS_20261101_01.jpg",
       "foto": true
     }
   },
@@ -307941,7 +308012,7 @@
       "yazar": "Estormiz",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:AC_Oulu_vs_KuPS_20261101_01.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:AC_Oulu_vs_KuPS_20261101_02.jpg"
     },
     "gorselYedek": 1,
     "gorselSorguDeneme": "2026-10-27T01:17:33.871Z",
@@ -307959,7 +308030,7 @@
     "gorselDeneme": "2026-10-28T04:49:40.076Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/AC_Oulu_vs_KuPS_20261101_01.jpg/1280px-AC_Oulu_vs_KuPS_20261101_01.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/AC_Oulu_vs_KuPS_20261101_02.jpg/1280px-AC_Oulu_vs_KuPS_20261101_02.jpg",
       "foto": true
     }
   },
