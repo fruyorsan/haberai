@@ -51,6 +51,56 @@
     }
   },
   {
+    "id": "c31b7fb43ed961a2",
+    "title": "SGK verisi: Emeklilerin yüzde 76'sı kayıt dışı çalışıyor",
+    "slug": "sgk-verisi-emeklilerin-yuzde-76-si-kayit-disi-calisiyor",
+    "summary": "Türkiye'de resmi kayıtlarda çalışan emekli sayısı 2 milyon 199 bine ulaştı. Ancak uzmanların hesaplamasına göre, bu kesimin yüzde 76,66'sı resmi kayıtlarda yer almıyor. Veriler, emekli istihdamındaki görünmez kitlenin büyüklüğünü gözler önüne seriyor.",
+    "keyPoints": [
+      "Çalışan emeklilerin yüzde 76,66'sı kayıt dışı statüde",
+      "Kayıtlı çalışan emekli sayısı 2 milyon 199 bin 236",
+      "Veriler SGK prim ödemeleri üzerinden analiz edildi"
+    ],
+    "body": [
+      "Sosyal Güvenlik Kurumu'nun (SGK) prim verileri, Türkiye'deki emekli istihdamının resmi rakamlardan çok daha geniş bir tabloya işaret ettiğini gösteriyor. Sigorta primleri üzerinden çalışan emeklilerin sayısı 2 milyon 199 bin 236 olarak açıklandı. Bu rakam, devletin kayıt altına alabildiği emekli iş gücünün temelini oluşturuyor.",
+      "Ancak resmi kayıtlardaki bu sayı, toplam çalışan emekli kitlesinin yalnızca bir kısmını temsil ediyor. Bu oran, kayıt dışı istihdamın emekli kesimi nezdindeki boyutunu net bir şekilde ortaya koyuyor.",
+      "Kayıt dışı çalışmanın en yaygın nedeni, emekli maaşının asgari ücret seviyesine çekilmesi taleplerinin yanı sıra, vergi ve prim yükünden kaçınma isteği olarak değerlendiriliyor. İşverenler adına çalışan emekliler, sosyal güvenlik destek primini ödeyerek yasal kapsama girebiliyor; ancak büyük çoğunluk bu prosedürü atlayarak kayıt dışı sektörde hizmet veriyor.",
+      "Bu durum, hem işçilerin hem de devletin gelirini etkileyen yapısal bir sorun teşkil ediyor. Kayıt dışı emekliler, resmi işsizlik sigortası fonuna katkı sağlamadığı gibi, olası iş kazalarında tam koruma altında da bulunmuyor. Piyasadaki bu enformel sirkülasyon, emekli maaşı alırken aynı zamanda çalışan kesimin ekonomik dinamiklerini de şekillendiriyor.",
+      "Uzmanlar, kayıt dışı istihdamın yüksek oranda seyretmesinin, emekli maaşlarının alım gücündeki düşüşle de doğrudan bağlantılı olduğunu belirtiyor. Prim ödemesiyle resmiyete geçen emekliler, maaş kesintisi yaşanmaması için net maaş hesaplarını işverenle karşılıklı yapıyor. Sistemdeki bu boşluk, yeni düzenlemeler veya maaş politikaları değişmedikçe yakın vadede kapanması güç bir görünüm taşıyor."
+    ],
+    "comment": "Emekli istihdamındaki kayıt dışılık oranının yüzde 76,66 gibi yüksek bir seviyede kalması, mevcut sosyal güvenlik sisteminin bu kesim için caydırıcı olmadığını gösteriyor. Maaşların alım gücünün daralması, emeklileri ikinci bir gelir kaynağı aramaya itiyor ancak devlet, bu gücün büyük bölümünü vergi ve primlerden mahrum kalıyor. Eğer kayıt dışı istihdam üzerindeki denetimler sıkılaştırılırsa, kısa vadede küçük işletmelerin maliyet yükü artarken, uzun vadede sosyal güvenlik havuzuna gelen prim miktarı ciddi biçimde yükselmiş olacak.",
+    "editorNote": "Resmi istatistiklerdeki emekli sayısı, fiili durumdaki kitlenin sadece dörtte birini gösteriyor. Görünmeyen çoğunluk, sistemin dışından çalışarak geçimini sağlıyor.",
+    "tags": [
+      "emekli maaşı",
+      "SGK",
+      "kayıt dışı istihdam",
+      "İsa Karakaş",
+      "çalışan emekli"
+    ],
+    "category": "Ekonomi",
+    "gorselSorgu": "elderly worker working in factory",
+    "source": "Haber Global",
+    "sourceUrl": "https://haberglobal.com/gundem/milyonlarca-emekli-kayit-disi-calisiyor-carpici-oran-ortaya-cikti-552518",
+    "image": "/kapak/c31b7fb43ed961a2.webp",
+    "publishedAt": "2026-11-09T04:08:00.000Z",
+    "generatedAt": "2026-11-09T04:34:45.683Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Social_Security_Administration_popularity_of_Daphne_2000_to_2024.jpg/1280px-Social_Security_Administration_popularity_of_Daphne_2000_to_2024.jpg",
+        "yazar": "Social Security Administration of the U.S. government",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Social_Security_Administration_popularity_of_Daphne_2000_to_2024.jpg",
+        "altyazi": "SGK prim belgeleri ve resmi kayıt evrakları"
+      }
+    ],
+    "breaking": true,
+    "kapak": {
+      "v": 3,
+      "kaynak": null,
+      "foto": false
+    }
+  },
+  {
     "id": "5f5fd4ca0cb43562",
     "title": "Antalya, COP31 iklim zirvesiyle 102 ülkenin liderini ağırlayacak",
     "slug": "antalya-cop31-iklim-zirvesiyle-102-ulkenin-liderini-agirlayacak",
@@ -7725,7 +7775,6 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/6/63/Campus_of_Ministry_of_Interior_University%2C_Moscow.jpg",
     "publishedAt": "2026-11-07T04:28:00.000Z",
     "generatedAt": "2026-11-07T05:11:27.647Z",
-    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": "ai:flux-1-schnell",
@@ -7796,7 +7845,6 @@
     "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Ulu_Camii_Afyonkarahisar_4_%281%29.jpg/1280px-Ulu_Camii_Afyonkarahisar_4_%281%29.jpg",
     "publishedAt": "2026-11-07T04:22:00.000Z",
     "generatedAt": "2026-11-07T04:40:21.434Z",
-    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": "ai:flux-1-schnell",
