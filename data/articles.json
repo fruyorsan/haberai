@@ -2656,6 +2656,11 @@
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Person_holding_world_globe.jpg"
+    },
+    "gorselAjan": {
+      "tarih": "2026-11-09T02:18:18.434Z",
+      "sonuc": "atlandi",
+      "neden": "yeterli görsel yok"
     }
   },
   {
@@ -2694,16 +2699,37 @@
     "breaking": true,
     "kapak": {
       "v": 3,
-      "kaynak": null,
-      "foto": false
+      "kaynak": "https://images.rawpixel.com/image_1300/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmwyNjkzMTg0MTY3My1pbWFnZS1rdTN2Y29tdC5qcGc.jpg",
+      "foto": true,
+      "ajan": {
+        "v": 1,
+        "secim": "openverse",
+        "skor": 63,
+        "neden": "Saha çalışması yapan uzmanları göstermesi açısından haberin içeriğine en yakın görsel ancak üzerinde filigran mevcut.",
+        "brif": "Mardin’in güneydoğu kesiminde yer alan petrol arama sahasında, bir TPAO mühendisinin elinde sondaj ekipmanını tutarak, bir sondaj kuyusunun yanındaki toprakta çalışıyor olması",
+        "sorgular": [
+          "oil drilling site",
+          "petroleum exploration",
+          "drilling rig operation",
+          "Mardin oil field"
+        ],
+        "tarih": "2026-11-09T02:18:45.077Z"
+      }
     },
     "gorselKaynak": {
-      "yazar": "Hamdigumus",
+      "yazar": "Bureau of Safety and Environmental Enforcement",
       "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Eski_Mardin_2.jpg"
+      "lisansUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sayfa": "https://www.rawpixel.com/image/4040383/photo-image-public-domain-ocean-black"
     },
-    "ekGorselDeneme": "2026-11-08T11:50:18.032Z"
+    "ekGorselDeneme": "2026-11-08T11:50:18.032Z",
+    "gorselAjan": {
+      "tarih": "2026-11-09T02:18:45.077Z",
+      "sonuc": "degisti",
+      "neden": "Saha çalışması yapan uzmanları göstermesi açısından haberin içeriğine en yakın görsel ancak üzerinde filigran mevcut.",
+      "secim": "openverse",
+      "skor": 63
+    }
   },
   {
     "id": "12bafc3a283837e6",
@@ -2789,16 +2815,37 @@
     "breaking": true,
     "kapak": {
       "v": 3,
-      "kaynak": null,
-      "foto": false
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/FDA_Center_for_Food_Safety_%26_Applied_Nutrition_%28CFSAN%29_6632_%288754693417%29.jpg/1920px-FDA_Center_for_Food_Safety_%26_Applied_Nutrition_%28CFSAN%29_6632_%288754693417%29.jpg",
+      "foto": true,
+      "ajan": {
+        "v": 1,
+        "secim": "commons",
+        "skor": 88,
+        "neden": "Laboratuvar ortamı, araştırmacı ve teknik ekipman kullanımı haberin içeriğiyle doğrudan örtüşüyor.",
+        "brif": "Modern bir laboratuvar ortamında, beyaz önlük giymiş bir araştırmacı, elinde tuttuğu küçük, şeffaf bir numune tüpüne odaklanmış şekilde duruyor. Tüpün içindeki sıvı, nanoteknolojik parçacıkları temsil eden ince, ışıldayan mavi noktalarla dolu. Arka planda, beyin anatomisini gösteren, hafifçe bulanıklaşmış (bokeh) bir dijital tarama ekranı veya 3D model görünüyor. Işıklandırma soğuk ve klinik, bili",
+        "sorgular": [
+          "scientist holding sample tube",
+          "brain tumor research lab",
+          "nanotechnology medical experiment",
+          "neuroscience laboratory equipment"
+        ],
+        "tarih": "2026-11-09T02:18:59.441Z"
+      }
     },
     "gorselKaynak": {
-      "yazar": "Unknown photographer",
+      "yazar": "The U.S. Food and Drug Administration",
       "lisans": "Kamu malı",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Doctor_examines_patient_with_stethoscope.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:FDA_Center_for_Food_Safety_%26_Applied_Nutrition_(CFSAN)_6632_(8754693417).jpg"
     },
-    "ekGorselDeneme": "2026-11-08T11:50:23.130Z"
+    "ekGorselDeneme": "2026-11-08T11:50:23.130Z",
+    "gorselAjan": {
+      "tarih": "2026-11-09T02:18:59.441Z",
+      "sonuc": "degisti",
+      "neden": "Laboratuvar ortamı, araştırmacı ve teknik ekipman kullanımı haberin içeriğiyle doğrudan örtüşüyor.",
+      "secim": "commons",
+      "skor": 88
+    }
   },
   {
     "id": "13e5c12875f2fa41",
@@ -26900,8 +26947,8 @@
     },
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Snow-covered_forest_in_Quebec_City.jpg/1280px-Snow-covered_forest_in_Quebec_City.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -27093,8 +27140,8 @@
     },
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/LRC_Stuttgart_provides_transportation_support_to_visiting_U_S_Paralympics_Swimming_Team_%288604102%29.jpg/1280px-LRC_Stuttgart_provides_transportation_support_to_visiting_U_S_Paralympics_Swimming_Team_%288604102%29.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -27258,8 +27305,8 @@
     "gorselDeneme": "2026-11-03T08:01:50.484Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/CSS_code_on_a_screen_%28Unsplash%29.jpg/1280px-CSS_code_on_a_screen_%28Unsplash%29.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "gorselKaynak": {
       "yazar": "ComputerUserUser",
@@ -27433,8 +27480,8 @@
     "gorselDeneme": "2026-11-03T09:07:54.957Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Stock_market_in_Triest_today.JPG/1280px-Stock_market_in_Triest_today.JPG",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "gorselKaynak": {
       "yazar": "tranmautritam (tranmautritam.com / unsplash.com/@tranmautritam)",
@@ -27621,8 +27668,8 @@
     "gorselDeneme": "2026-11-03T08:20:19.740Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/US_Navy_110127-N-5319A-012_Firefighters_work_to_put_out_a_warehouse_fire_at_Naval_Station_Norfolk.jpg/1280px-US_Navy_110127-N-5319A-012_Firefighters_work_to_put_out_a_warehouse_fire_at_Naval_Station_Norfolk.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "gorselKaynak": {
       "yazar": "U.S. Navy photo by Mass Communication Specialist 1st Class Brien Aho",
@@ -27759,8 +27806,8 @@
     },
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Donald_Trump_delivering_inauguration_speech_01-20-17_%28cropped%29.jpg/1280px-Donald_Trump_delivering_inauguration_speech_01-20-17_%28cropped%29.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     }
   },
   {
@@ -28178,8 +28225,8 @@
     "gorselDeneme": "2026-11-03T06:46:45.074Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Business_agreement_handshake_at_coffee_shop.jpg/1280px-Business_agreement_handshake_at_coffee_shop.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "gorselKaynak": {
       "yazar": "tranmautritam (tranmautritam.com / unsplash.com/@tranmautritam)",
@@ -28401,10 +28448,10 @@
     "generatedAt": "2026-11-02T13:57:20.958Z",
     "gorselDeneme": "2026-11-03T06:04:18.156Z",
     "gorselKaynak": {
-      "yazar": "Agence Rol",
-      "lisans": "Kamu malı",
-      "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Racing_cars_at_the_1913_French_Grand_Prix_at_Amiens.jpg"
+      "yazar": "Thomas Vogt from Paderborn, Deutschland",
+      "lisans": "CC0 1.0",
+      "lisansUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en/",
+      "sayfa": "https://commons.wikimedia.org/w/index.php?curid=79006028"
     },
     "ekGorselDeneme": "2026-11-02T18:00:09.524Z",
     "kapak": {
@@ -28497,8 +28544,8 @@
     "gorselDeneme": "2026-11-03T05:44:55.345Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Distribution_of_Prizes_at_Suvarna_Jayanti_Online_Quiz_Competition_Dhaka_2022-06-18_%28PID-0022623%29.jpg/1280px-Distribution_of_Prizes_at_Suvarna_Jayanti_Online_Quiz_Competition_Dhaka_2022-06-18_%28PID-0022623%29.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "gorselKaynak": {
       "yazar": "Press Information Department",
@@ -28601,7 +28648,7 @@
     "gorselSorgu": "South Korea microchip semiconductor factory",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/guney-kore-en-guclu-ai-icin-dugmeye-basti-rekor-butce-ayrildi--212363",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Business_Woman_is_reading_Newspaper_-_35870943420.jpg/1280px-Business_Woman_is_reading_Newspaper_-_35870943420.jpg",
+    "image": "/kapak/f73a8737f49e79d0.webp",
     "publishedAt": "2026-11-02T12:38:00.000Z",
     "generatedAt": "2026-11-02T12:47:53.155Z",
     "gorselEk": [
@@ -28661,7 +28708,7 @@
     "gorselSorgu": "TBMM Turkey parliament building",
     "source": "TRT Haber Son Dakika",
     "sourceUrl": "https://www.trthaber.com/haber/gundem/mekke-anlasmasi-tbmm-genel-kuruluna-geliyor-961968.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Business_Woman_is_reading_Newspaper_-_35870943420.jpg/1280px-Business_Woman_is_reading_Newspaper_-_35870943420.jpg",
+    "image": "/kapak/2774d56c6f795807.webp",
     "publishedAt": "2026-11-02T12:25:00.000Z",
     "generatedAt": "2026-11-02T12:31:20.855Z",
     "gorselEk": [
@@ -28718,21 +28765,21 @@
     "gorselSorgu": "Rivian electric delivery truck battery pack",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/rivian-elektrikli-kargo-aracina-daha-buyuk-batarya-ekledi--212362",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Charging_station_for_electric_cars._Strzelecka_24-26_Street%2C_Tomasz%C3%B3w_Mazowiecki%2C_Poland.jpg/1280px-Charging_station_for_electric_cars._Strzelecka_24-26_Street%2C_Tomasz%C3%B3w_Mazowiecki%2C_Poland.jpg",
+    "image": "/kapak/7e2ff8a2d7743be7.webp",
     "publishedAt": "2026-11-02T12:16:00.000Z",
     "generatedAt": "2026-11-02T12:21:27.048Z",
     "imagesKaynak": "https://www.donanimhaber.com/rivian-elektrikli-kargo-aracina-daha-buyuk-batarya-ekledi--212362",
     "gorselDeneme": "2026-11-03T01:00:45.404Z",
     "kapak": {
       "v": 3,
-      "kaynak": "otomobil-2022-07-19-fully-electric-car-tesla-mode-8093.jpg",
+      "kaynak": "otomobil-circle-k-electric-car-chargers-1904-w-hi-5362.jpg",
       "foto": true
     },
     "gorselKaynak": {
-      "yazar": "WrS.tm.pl",
-      "lisans": "Kamu malı",
+      "yazar": "Mjrmtg",
+      "lisans": "CC0",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Charging_station_for_electric_cars._Strzelecka_24-26_Street,_Tomasz%C3%B3w_Mazowiecki,_Poland.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Circle_K_Electric_Car_Chargers%2C_1904_W_Hill_Ave.%2C_Valdosta.jpg"
     },
     "ekGorselDeneme": "2026-11-02T18:00:15.345Z",
     "gorselAjan": {
@@ -28772,20 +28819,20 @@
     "gorselSorgu": "togg t10x electric car road",
     "source": "Webtekno",
     "sourceUrl": "https://www.webtekno.com/trafikte-en-cok-kaydi-bulunan-araclar-h228067.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Togg_T10X_Interior.jpg/1280px-Togg_T10X_Interior.jpg",
+    "image": "/kapak/d90924f7ae4fd044.webp",
     "publishedAt": "2026-11-02T12:09:02.000Z",
     "generatedAt": "2026-11-02T12:12:07.987Z",
     "gorselDeneme": "2026-11-03T04:53:35.353Z",
     "gorselKaynak": {
-      "yazar": "Emir GEÇİR",
+      "yazar": "Syced",
       "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Togg_T10X_Interior.jpg"
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Honda_electric_car_charging_on_private_parking_lot_in_Tokyo_(57282).jpg"
     },
     "ekGorselDeneme": "2026-11-03T00:46:52.416Z",
     "kapak": {
       "v": 3,
-      "kaynak": "otomobil-circle-k-electric-car-chargers-1904-w-hi-5362.jpg",
+      "kaynak": "otomobil-honda-electric-car-charging-on-private-p-6371.jpg",
       "foto": true
     },
     "gorselAjan": {
@@ -28824,7 +28871,7 @@
     "gorselSorgu": "HONOR WIN2 smartphone display",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/antutu-acikladi-en-guclu-android-telefonlar-ekim-2026--212364",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/DIY_Arduino_LED_screen_for_audio_spectrum_analyzer_2.jpg/1280px-DIY_Arduino_LED_screen_for_audio_spectrum_analyzer_2.jpg",
+    "image": "/kapak/a1e6591e3cb6ff75.webp",
     "publishedAt": "2026-11-02T11:33:00.000Z",
     "generatedAt": "2026-11-02T11:37:30.536Z",
     "gorselDeneme": "2026-11-03T04:46:02.045Z",
@@ -28872,7 +28919,7 @@
     "gorselSorgu": "Pera Museum interior exhibition hall",
     "source": "CHIP Online",
     "sourceUrl": "https://www.chip.com.tr/haber/pera-muzesinde-tiktok-donemi-sergiler-canli-yayinla-gezilebilecek_184969.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Business_Woman_is_reading_Newspaper_-_35870943420.jpg/1280px-Business_Woman_is_reading_Newspaper_-_35870943420.jpg",
+    "image": "/kapak/16547864252cc17e.webp",
     "publishedAt": "2026-11-02T11:30:00.000Z",
     "generatedAt": "2026-11-02T11:45:44.191Z",
     "gorselEk": [
@@ -28891,10 +28938,10 @@
       "foto": true
     },
     "gorselKaynak": {
-      "yazar": "tranmautritam (tranmautritam.com / unsplash.com/@tranmautritam)",
+      "yazar": "Diomedes1962",
       "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Business_Woman_is_reading_Newspaper_-_35870943420.jpg"
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Moorish_Cinema_Design_Auditorium_Interior_10_01_2026.jpg"
     },
     "gorselYedek": 16,
     "gorselAjan": {
@@ -28933,7 +28980,7 @@
     "gorselSorgu": "flooded streets in Bodrum",
     "source": "TRT Haber Son Dakika",
     "sourceUrl": "https://www.trthaber.com/haber/turkiye/metrekareye-46-kilogram-yagis-evleri-su-basti-arac-denize-suruklendi-961958.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/FEMA_-_32096_-_Cars_drives_though_flooded_street_in_an_Oklahoma_neighborhood.jpg/1280px-FEMA_-_32096_-_Cars_drives_though_flooded_street_in_an_Oklahoma_neighborhood.jpg",
+    "image": "/kapak/ba1bc36d9b916cda.webp",
     "publishedAt": "2026-11-02T11:27:00.000Z",
     "generatedAt": "2026-11-02T11:29:45.788Z",
     "gorselEk": [
@@ -28999,7 +29046,7 @@
     "gorselSorgu": "firefighter team extinguishing fire",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/esi-ve-kizini-tehdit-edip-evden-kovdu-uyuyakalinca-yangin-cikti-551468",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Vandenberg_Fire_Team_Conducts_Prescribed_Burn_Exercise_%289751273%29.jpg/1280px-Vandenberg_Fire_Team_Conducts_Prescribed_Burn_Exercise_%289751273%29.jpg",
+    "image": "/kapak/ed0236bc21b4bacf.webp",
     "publishedAt": "2026-11-02T11:16:00.000Z",
     "generatedAt": "2026-11-02T11:19:45.877Z",
     "gorselEk": [
@@ -29141,7 +29188,7 @@
     "gorselSorgu": "King Philippe Brussels palace",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/dunya/belcika-basbakani-de-wever-kral-philippee-istifasini-sundu/4108667",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Secretary_Kerry_Sits_With_King_Philippe_at_the_Royal_Palace_in_Brussels_to_Pay_Condolences_on_Behalf_of_the_American_People_Following_the_March_22_Terrorist_Attacks_%2826025840515%29.jpg/1280px-thumbnail.jpg",
+    "image": "/kapak/01120adffe965d9e.webp",
     "publishedAt": "2026-11-02T10:55:27.000Z",
     "generatedAt": "2026-11-02T10:58:45.745Z",
     "imagesKaynak": "https://www.aa.com.tr/tr/dunya/belcika-basbakani-de-wever-kral-philippee-istifasini-sundu/4108667",
@@ -29155,8 +29202,8 @@
     "ekGorselDeneme": "2026-11-02T18:00:18.986Z",
     "kapak": {
       "v": 3,
-      "kaynak": "gundem-dolmabahce-palace-viewed-from-courtyard--5059.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "gorselAjan": {
       "tarih": "2026-11-04T04:28:10.597Z",
@@ -29194,7 +29241,7 @@
     "gorselSorgu": "police investigation scene ankara",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/ankarada-3-yasindaki-cocugunu-darbeden-anne-tutuklandi-551462",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Niigata_Prefecture_police_investigation_vehicle_Crown_and_Mira.jpg/1280px-Niigata_Prefecture_police_investigation_vehicle_Crown_and_Mira.jpg",
+    "image": "/kapak/515a22750ce32b87.webp",
     "publishedAt": "2026-11-02T10:45:00.000Z",
     "generatedAt": "2026-11-02T10:49:48.140Z",
     "gorselEk": [
@@ -29255,7 +29302,7 @@
     "gorselSorgu": "vintage pc game boxes collection",
     "source": "CHIP Online",
     "sourceUrl": "https://www.chip.com.tr/guncel/pc-oyunlarinda-eski-donem-geri-donebilir-gog-kutulu-oyun-satisini-dusunuyor_185002.html",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/e/eb/N0RTH_CHEAM_-_PRIORY_CRESCENT_-_OLD_RP_VINTAGE_PC_-_LONDON_BOROUGH_OF_SUTTON_%2850272057258%29.jpg",
+    "image": "/kapak/d71ccf3c839f709e.webp",
     "publishedAt": "2026-11-02T10:35:00.000Z",
     "generatedAt": "2026-11-02T10:39:08.282Z",
     "gorselEk": [
@@ -29325,7 +29372,7 @@
     "gorselSorgu": "dried up aral sea stranded ship desert",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/aral-denizi-nasil-collesti-nehirleri-kestiler-denizi-kuruttular-551455",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Person_holding_world_globe.jpg/1280px-Person_holding_world_globe.jpg",
+    "image": "/kapak/0012e3ecc09cd69d.webp",
     "publishedAt": "2026-11-02T10:20:00.000Z",
     "generatedAt": "2026-11-02T10:29:08.445Z",
     "gorselEk": [
@@ -29385,7 +29432,7 @@
     "gorselSorgu": "police cordon yellow tape night",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/abdde-cadilar-bayrami-kana-bulandi-en-az-6-kisi-hayatini-kaybetti-551454",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Georgian_Police_Cordon.jpg/1280px-Georgian_Police_Cordon.jpg",
+    "image": "/kapak/31964c27b0ca966c.webp",
     "publishedAt": "2026-11-02T10:14:00.000Z",
     "generatedAt": "2026-11-02T10:18:59.635Z",
     "gorselEk": [
@@ -29445,7 +29492,7 @@
     "gorselSorgu": "amazon bookshelf bestsellers",
     "source": "Webtekno",
     "sourceUrl": "https://www.webtekno.com/polisiyeden-bilim-kurguya-farkli-kategorilerden-kitap-tavsiyeleri-h228061.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Business_Woman_is_reading_Newspaper_-_35870943420.jpg/1280px-Business_Woman_is_reading_Newspaper_-_35870943420.jpg",
+    "image": "/kapak/192376523e9b9530.webp",
     "publishedAt": "2026-11-02T09:52:55.000Z",
     "generatedAt": "2026-11-02T10:00:24.083Z",
     "gorselEk": [
@@ -29460,10 +29507,10 @@
     ],
     "gorselDeneme": "2026-11-03T02:21:01.138Z",
     "gorselKaynak": {
-      "yazar": "tranmautritam (tranmautritam.com / unsplash.com/@tranmautritam)",
+      "yazar": "Basil Jean",
       "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Business_Woman_is_reading_Newspaper_-_35870943420.jpg"
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Alex_Auditorium_Dec24_Mormon.jpg"
     },
     "gorselYedek": 16,
     "kapak": {
@@ -29503,7 +29550,7 @@
     "gorselSorgu": "ancient statue roman museum exhibition",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/kultur-sanat/abd-100-kultur-varligini-turkiyeye-iade-etti-551447",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/General_view_of_the_exhibition_of_Roman_stonework.jpg/1280px-General_view_of_the_exhibition_of_Roman_stonework.jpg",
+    "image": "/kapak/d98ed5ab27317b57.webp",
     "publishedAt": "2026-11-02T09:06:00.000Z",
     "generatedAt": "2026-11-02T09:21:33.538Z",
     "gorselKaynak": {
@@ -29550,7 +29597,7 @@
     "gorselSorgu": "ASELSAN naval defense radar ship",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/analiz/turk-savunma-sanayisinin-kuresel-marka-gucu-aselsan-ve-euronaval-2026/4108485",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic1.JPG/1280px-Fennek_reconnaissance_vehicle_of_340th_ASELSAN_MFR_C0415%2C_pic1.JPG",
+    "image": "/kapak/e7fe89a0a5fa252e.webp",
     "publishedAt": "2026-11-02T08:47:12.000Z",
     "generatedAt": "2026-11-02T08:54:34.479Z",
     "gorselEk": [
@@ -29609,7 +29656,7 @@
     "gorselSorgu": "Spain train collision site",
     "source": "TRT Haber Son Dakika",
     "sourceUrl": "https://www.trthaber.com/haber/dunya/ispanyadaki-tren-kazasi-erken-genel-secim-oncesi-anketlerde-sosyalistlerin-oyunu-dusurdu-961940.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Train_station_in_Toledo%2C_Spain_-_detail_2.JPG/1280px-Train_station_in_Toledo%2C_Spain_-_detail_2.JPG",
+    "image": "/kapak/5ba36bc9702cb626.webp",
     "publishedAt": "2026-11-02T08:38:00.000Z",
     "generatedAt": "2026-11-02T08:45:11.563Z",
     "gorselDeneme": "2026-11-03T01:37:23.469Z",
@@ -29664,7 +29711,7 @@
     "gorselSorgu": "airplane cabin interior",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/cr0qkve1x224o?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/INTERIOR_VIEWS_OF_RESTROOM_-_RADIO_RACK_-_CURTAIN_-_REAR_COMPARTMENT_OF_THE_G-1_GULFSTREAM_AIRPLANE_-_NARA_-_17471096.jpg/1280px-INTERIOR_VIEWS_OF_RESTROOM_-_RADIO_RACK_-_CURTAIN_-_REAR_COMPARTMENT_OF_THE_G-1_GULFSTREAM_AIRPLANE_-_NARA_-_17471096.jpg",
+    "image": "/kapak/4652b6ad9bef1936.webp",
     "publishedAt": "2026-11-02T08:33:57.000Z",
     "generatedAt": "2026-11-02T08:35:43.488Z",
     "gorselEk": [
@@ -29790,7 +29837,7 @@
     "gorselSorgu": "US election voting booth",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/dunya/abd-ara-secimlerinde-ekonomik-kaygilar-ilk-sirada-yer-alirken-secmen-iran-savasina-karsi/4108422",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Delux_election_bldg._%26_voting_booth_at_Lanham%2C_Md._LOC_npcc.12529.jpg/1280px-Delux_election_bldg._%26_voting_booth_at_Lanham%2C_Md._LOC_npcc.12529.jpg",
+    "image": "/kapak/d4895b16b157dce7.webp",
     "publishedAt": "2026-11-02T08:07:27.000Z",
     "generatedAt": "2026-11-02T08:14:58.337Z",
     "gorselEk": [
@@ -29848,7 +29895,7 @@
     "gorselSorgu": "US military base Okinawa",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/dunya/japonyadan-abdli-askerlerin-gozaltina-alinmasinin-ardindan-washingtona-disiplini-saglama-cagrisi/4108396",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Special_Olympic_%28SO%29_athletes_join_hands_with_U.S._and_Japanese_volunteers_to_form_a_circle_during_a_Kadena_Air_Base_SO_event_in_Okinawa%2C_Japan%2C_Nov_111105-F-LT259-076.jpg/1280px-thumbnail.jpg",
+    "image": "/kapak/9c0f6673d6b140d3.webp",
     "publishedAt": "2026-11-02T07:50:19.000Z",
     "generatedAt": "2026-11-02T07:55:07.262Z",
     "gorselEk": [
@@ -29904,7 +29951,7 @@
     "gorselSorgu": "bitcoin crypto exchange dashboard",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/cwj34gdmnly4o?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Binance_and_Zhao_Chemgpeng_guilty_pleas_press_conference.jpg/1280px-Binance_and_Zhao_Chemgpeng_guilty_pleas_press_conference.jpg",
+    "image": "/kapak/bc46b33a5267d126.webp",
     "publishedAt": "2026-11-02T07:42:33.000Z",
     "generatedAt": "2026-11-02T07:44:26.413Z",
     "gorselEk": [
@@ -29968,7 +30015,7 @@
     "gorselSorgu": "burning plane wreckage residential",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/cm369yy7lw73o?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Lick_Fire_on_the_Umatilla_National_Forest_burning_at_night.jpg/1280px-Lick_Fire_on_the_Umatilla_National_Forest_burning_at_night.jpg",
+    "image": "/kapak/27c8c1facaf47ae5.webp",
     "publishedAt": "2026-11-02T07:33:17.000Z",
     "generatedAt": "2026-11-02T07:34:32.614Z",
     "gorselEk": [
@@ -30039,7 +30086,7 @@
     "gorselSorgu": "Istanbul metrobus traffic jam",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/besiktasta-metrobus-arizasi-seferlerde-aksama-yasandi-551426",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Metrobus_Istanbul_2010.jpg/1280px-Metrobus_Istanbul_2010.jpg",
+    "image": "/kapak/7d4d07ffe7388e69.webp",
     "publishedAt": "2026-11-02T07:21:00.000Z",
     "generatedAt": "2026-11-02T07:24:48.149Z",
     "gorselEk": [
@@ -30094,7 +30141,7 @@
     "gorselSorgu": "astrolog chart reading",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/magazin/carsamba-gunune-dikkat-astrolog-hande-kazanova-dilek-ve-niyetler-icin-saat-verdi-551423",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Business_Woman_is_reading_Newspaper_-_35870943420.jpg/1280px-Business_Woman_is_reading_Newspaper_-_35870943420.jpg",
+    "image": "/kapak/3a1fa35cad2c93b2.webp",
     "publishedAt": "2026-11-02T07:08:00.000Z",
     "generatedAt": "2026-11-02T07:15:04.917Z",
     "gorselEk": [
@@ -30156,7 +30203,7 @@
     "gorselSorgu": "natural gas pipeline Ukraine",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/ekonomi/abdnin-rus-gazinin-ukrayna-uzerinden-avrupaya-yeniden-sevkiyatini-onerdigi-iddiasi/4108356",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Person_holding_world_globe.jpg/1280px-Person_holding_world_globe.jpg",
+    "image": "/kapak/046d1d09df3bb3bb.webp",
     "publishedAt": "2026-11-02T07:05:47.000Z",
     "generatedAt": "2026-11-02T07:07:46.002Z",
     "gorselDeneme": "2026-11-02T23:29:29.055Z",
@@ -30276,7 +30323,7 @@
     "gorselSorgu": "car accident crash scene",
     "source": "TRT Haber Son Dakika",
     "sourceUrl": "https://www.trthaber.com/haber/turkiye/zincirleme-kazada-4-arac-birbirine-girdi-7-yarali-961920.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Car_crash_scene_with_police_nobody_hurt.jpg/1280px-Car_crash_scene_with_police_nobody_hurt.jpg",
+    "image": "/kapak/2290c98265485b7f.webp",
     "publishedAt": "2026-11-02T06:21:00.000Z",
     "generatedAt": "2026-11-02T06:41:43.067Z",
     "gorselEk": [
@@ -30332,7 +30379,7 @@
     "gorselSorgu": "Donald Trump Canada meeting",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/dunya/abd-baskani-trump-kanada-ile-ticaret-anlasmasina-varmaya-yakin-olduklarini-belirtti/4108308",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/3/39/Donald_Trump_receives_a_gift_from_Justin_Trudeau_in_Canada_-_2018.jpg",
+    "image": "/kapak/e9549122df8c7c3b.webp",
     "publishedAt": "2026-11-02T06:18:32.000Z",
     "generatedAt": "2026-11-02T06:23:31.181Z",
     "gorselDeneme": "2026-11-02T22:52:49.907Z",
@@ -42773,14 +42820,14 @@
     "gorselDeneme": "2026-11-01T03:41:57.299Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Sungai_Tuntong_20231222_145411.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Sungai_Tuntong_20231222_145411.jpg",
       "foto": true
     },
     "gorselKaynak": {
       "yazar": "Wiki Farazi",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145540.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Sungai_Tuntong_20231222_145411.jpg"
     }
   },
   {
@@ -146361,7 +146408,7 @@
       "yazar": "Wiki Farazi",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145541.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145540.jpg"
     },
     "gorselDeneme": "2026-10-28T04:46:35.718Z",
     "ekGorselDeneme": "2026-10-29T21:40:46.965Z",
@@ -146383,7 +146430,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145541.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145541.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg",
       "foto": true
     }
   },
