@@ -28,25 +28,44 @@ function sade(metin) {
  * uyandıran ana vitrindir.
  */
 const KATEGORI_AGIRLIK = {
-  "yapay-zeka": 38,
-  oyun: 36,
-  teknoloji: 35,
-  mobil: 32,
-  donanim: 32,
-  uzay: 32,
-  bilim: 30,
-  otomobil: 28,
-  yazilim: 26,
-  internet: 25,
-  kultur: 16,
-  ekonomi: 14,
-  spor: 13,
-  saglik: 12,
-  yasam: 10,
-  dunya: 8,
+  "yapay-zeka": 65,
+  oyun: 62,
+  teknoloji: 58,
+  mobil: 54,
+  donanim: 54,
+  uzay: 48,
+  bilim: 42,
+  otomobil: 36,
+  yazilim: 34,
+  internet: 32,
+  kultur: 14,
+  ekonomi: 12,
+  spor: 6,
+  saglik: 6,
+  yasam: 6,
+  dunya: 5,
   gundem: 4,
 };
 const VARSAYILAN_AGIRLIK = 8;
+
+const TECH_KAT_SET = new Set([
+  "yapay-zeka",
+  "oyun",
+  "teknoloji",
+  "mobil",
+  "donanim",
+  "uzay",
+  "bilim",
+  "otomobil",
+  "yazilim",
+  "internet",
+]);
+
+const VIRAL_TECH_RE =
+  /\b(gta|steam|valve|playstation|ps5|ps6|nintendo|switch|chatgpt|openai|claude|anthropic|gemini|grok|deepseek|robot|iphone|apple|samsung|redmi|xiaomi|rtx|nvidia|phantom blade|call of duty|zelda|xbox)\b/i;
+
+const SIKICI_SPOR_GUNDEM_RE =
+  /(a milli takim|aday kadro|berke ozer|selcuk inan|baskan vekili|istifa|tazminat|balkon cokmesi|suc orgutu|tutuklan|facia|vefat|olu sayisi|yarali)/i;
 
 /** Kategorinin temel ilgi ağırlığı (rozet kararında kullanılır). */
 export function kategoriAgirlik(slug) {
@@ -265,56 +284,70 @@ export function guvenliKapakMi(a) {
  */
 export function ilgiSkoru(a, simdi = Date.now()) {
   const metin = sade(`${a?.title || ""} ${a?.summary || ""}`);
-  const katAgirlik = KATEGORI_AGIRLIK[a?.categorySlug] ?? VARSAYILAN_AGIRLIK;
+  const catSlug = a?.categorySlug || "";
+  const katAgirlik = KATEGORI_AGIRLIK[catSlug] ?? VARSAYILAN_AGIRLIK;
+  const isTech = TECH_KAT_SET.has(catSlug);
   const t = publishedTime(a);
   const yasSaat = t ? Math.max(0, (simdi - t) / 3_600_000) : 200;
 
-  // Statik kalite bonusu (kategori + merak kelimeleri + gerçek fotoğraf + vitrin yayıncı)
-  // Haber yaşlandıkça (>6 saat) statik bonusun etkisi kademeli azalır ki eski haberler
-  // taze haberlerin üstüne yapışmasın.
-  const tazelikCarpani = yasSaat <= 4 ? 1 : yasSaat <= 10 ? 0.65 : yasSaat <= 24 ? 0.35 : 0.15;
+  // Teknoloji, yapay zekâ ve oyun haberleri hızlıca eskiyip arka plana atılmaz (24-72 saat vitrinde kalır)
+  const tazelikCarpani = isTech
+    ? (yasSaat <= 18 ? 1 : yasSaat <= 48 ? 0.88 : yasSaat <= 96 ? 0.72 : 0.45)
+    : (yasSaat <= 3 ? 1 : yasSaat <= 6 ? 0.55 : yasSaat <= 12 ? 0.25 : 0.1);
 
-  let kalite = katAgirlik * 0.65;
+  let kalite = katAgirlik * 0.75;
   let ipucu = 0;
   for (const [re, p] of ILGI_RE) if (re.test(metin)) ipucu += p;
   if (metin.includes("%")) ipucu += 3;
   if (/\d/.test(metin)) ipucu += 2;
-  kalite += Math.min(ipucu, 22);
+  kalite += Math.min(ipucu, 30);
 
   if (guvenliKapakMi(a)) {
-    kalite += 16;
+    kalite += a?.kapak?.foto === true ? 26 : 16;
   } else {
-    kalite -= 12;
+    kalite -= 20;
   }
 
   if (VITRIN_KAYNAKLAR.test(sade(a?.source || ""))) {
-    kalite += /shiftdelete/i.test(a?.source || "") ? 12 : 9;
+    kalite += /shiftdelete|donanimhaber|donanim arsivi|webtekno/i.test(a?.source || "") ? 16 : 10;
   }
 
-  if (a?.breaking === true && yasSaat <= 4) {
-    kalite += katAgirlik >= 20 ? 10 : 6;
+  if (VIRAL_TECH_RE.test(metin)) {
+    kalite += 24;
+  }
+
+  if (a?.breaking === true && yasSaat <= 6) {
+    kalite += katAgirlik >= 20 ? 12 : 6;
   }
 
   let puan = kalite * tazelikCarpani;
 
-  // Tazelik puanı: her saat dilimi net biçimde ayrışır.
-  // 0-3 saat: 115..82 puan | 3-6 saat: 82..55 puan | 6-12 saat: 55..15 puan | >12 saat: hızla düşer
-  if (yasSaat <= 3) {
-    puan += 115 - yasSaat * 11;
-  } else if (yasSaat <= 6) {
-    puan += 82 - (yasSaat - 3) * 9;
-  } else if (yasSaat <= 12) {
-    puan += 55 - (yasSaat - 6) * 6.5;
-  } else if (yasSaat <= 24) {
-    puan += 16 - (yasSaat - 12) * 3.5;
+  // Tazelik puanı: teknoloji/yapay zekâ/oyun için yumuşak eğri, rutin gündem/spor için hızlı düşüş
+  if (isTech) {
+    if (yasSaat <= 6) {
+      puan += 95 - yasSaat * 4;
+    } else if (yasSaat <= 24) {
+      puan += 71 - (yasSaat - 6) * 1.5;
+    } else if (yasSaat <= 72) {
+      puan += 44 - (yasSaat - 24) * 0.6;
+    } else {
+      puan -= (yasSaat - 72) * 1.2;
+    }
   } else {
-    puan -= 26 + (yasSaat - 24) * 4;
+    if (yasSaat <= 2) {
+      puan += 58 - yasSaat * 14;
+    } else if (yasSaat <= 5) {
+      puan += 30 - (yasSaat - 2) * 8;
+    } else {
+      puan -= 18 + (yasSaat - 5) * 5;
+    }
   }
 
-  // Rutin/bürokratik kalıp cezası (yerel kurum/okul/belediye duyuruları vitrinde görünmesin)
+  // Rutin/bürokratik ve sıkıcı spor/adli kalıp cezası
   let ceza = 0;
   for (const re of RUTIN_RE) if (re.test(metin)) ceza += 28;
-  puan -= Math.min(ceza, 70);
+  if (SIKICI_SPOR_GUNDEM_RE.test(metin)) ceza += 55;
+  puan -= Math.min(ceza, 85);
 
   return Math.round(puan);
 }

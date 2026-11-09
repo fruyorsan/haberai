@@ -97,10 +97,11 @@ const benzerler = [...skorlu, ...yedek];
 // piyasa şeridi basılmaz; sayfa başına ~45 KB HTML tasarrufu sağlar. İçerik,
 // kapak, kaynak ve paylaşım düğmeleri aynen kalır.
 const arsiv = !indeksliMi(article);
-const devam = arsiv ? [] : benzerler.slice(0, 4);
-// "İlgili Haberler": zincirde kullanılanların ardından gelen 3 haber (tekrar yok).
-// Arşivde zincir olmadığı için ilk 6 haber kompakt bağlantı olarak verilir.
-const related = arsiv ? benzerler.slice(0, 6) : benzerler.slice(4, 7);
+const devam = arsiv ? [] : benzerler.slice(0, 1);
+// "İlgili Haberler": zincirde kullanılanların ardından gelen 5 haber (tekrar yok).
+// claude-seo: 4 tam haber gömmek sayfa başına ~90 KB mükerrer metin üretip
+// hem mobil LCP'yi hem de özgünlük oranını düşürüyordu; 1 tam haber + 5 iç bağlantı idealdir.
+const related = arsiv ? benzerler.slice(0, 6) : benzerler.slice(1, 6);
 
 const keyPoints = Array.isArray(article.keyPoints) ? article.keyPoints.filter(Boolean) : [];
 const body = Array.isArray(article.body) ? article.body.filter(Boolean) : [];
@@ -244,22 +245,50 @@ const ogGorsel = kapak
 const ogImage = ogGorsel || new URL("og-default.png", site).href;
 const ogImageType = ogGorsel ? "image/jpeg" : "image/png";
 
+const EDITOR_MASALARI = {
+  "Yapay Zeka": { ad: "Yapay Zekâ ve Robotik Masası", unvan: "Yapay Zekâ Editörü", konular: ["Yapay Zekâ", "Büyük Dil Modelleri", "Robotik"] },
+  "Oyun": { ad: "Oyun ve Dijital Eğlence Masası", unvan: "Oyun Editörü", konular: ["Video Oyunları", "Konsol", "PC Oyunculuğu"] },
+  "Teknoloji": { ad: "Teknoloji ve İnovasyon Masası", unvan: "Teknoloji Editörü", konular: ["Teknoloji", "Tüketici Elektroniği", "Siber Güvenlik"] },
+  "Donanım": { ad: "Donanım ve Yarı İletken Masası", unvan: "Donanım Editörü", konular: ["İşlemci", "Ekran Kartı", "Donanım"] },
+  "Mobil": { ad: "Mobil Teknolojiler Masası", unvan: "Mobil Editörü", konular: ["Akıllı Telefon", "iOS", "Android"] },
+  "Uzay": { ad: "Bilim ve Uzay Masası", unvan: "Bilim ve Uzay Editörü", konular: ["Uzay", "Astronomi", "Bilim"] },
+  "Bilim": { ad: "Bilim ve Araştırma Masası", unvan: "Bilim Editörü", konular: ["Bilim", "Araştırma", "Keşif"] },
+  "Otomobil": { ad: "Otomotiv ve Mobilite Masası", unvan: "Otomotiv Editörü", konular: ["Elektrikli Araçlar", "Otomotiv", "Otonom Sürüş"] },
+  "Ekonomi": { ad: "Ekonomi ve Finans Masası", unvan: "Ekonomi Editörü", konular: ["Ekonomi", "Finans", "Piyasalar"] },
+};
+const editorBirim = EDITOR_MASALARI[article.category] || {
+  ad: "HaberinAi Editör Masası",
+  unvan: "Gündem ve Haber Editörü",
+  konular: [article.category || "Gündem"],
+};
+const yerelKapakWebp = sosyalId && publicDosyaVar(`/kapak/${sosyalId}.webp`)
+  ? new URL(`/kapak/${sosyalId}.webp`, site).href
+  : "";
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "NewsArticle",
   headline: article.title,
   description: article.summary,
-  image: {
-    "@type": "ImageObject",
-    url: ogImage,
-    width: 1200,
-    height: 630,
-  },
-  // Haber, HaberinAi editör masasının kendi özeti ve anlatımıyla yayımlanır.
-  // Kaynak atfı GÖRÜNÜR olarak sayfada verilir (bkz. .post__kaynak) ve aynı
-  // kaynak yapısal veride `isBasedOn` olarak bildirilir. Şeffaflık, Google'ın
-  // "scraped content" değerlendirmesinde ve AdSense incelemesinde en güçlü
-  // savunmadır: bilginin nereden geldiği gizlenmez, metnin kendisi özgündür.
+  image: [
+    ...(yerelKapakWebp
+      ? [{
+          "@type": "ImageObject",
+          url: yerelKapakWebp,
+          width: 1280,
+          height: 720,
+          caption: article.title,
+          representativeOfPage: true,
+        }]
+      : []),
+    {
+      "@type": "ImageObject",
+      url: ogImage,
+      width: 1200,
+      height: 630,
+      caption: article.title,
+    },
+  ],
   ...(article.sourceUrl ? { isBasedOn: article.sourceUrl } : {}),
   publishingPrinciples: new URL("/yayin-ilkeleri/", site).href,
   correctionsPolicy: new URL("/yayin-ilkeleri/", site).href,
@@ -268,13 +297,17 @@ const jsonLd = {
   dateModified: modifiedIso,
   articleSection: article.category,
   keywords: (article.tags || []).join(", "),
+  wordCount: words,
   articleBody: body.length ? body.join("\n\n") : article.summary,
-  author: {
-    "@type": "NewsMediaOrganization",
-    "@id": `${new URL("/kunye/", site).href}#yayinci`,
-    name: "HaberinAi Haber Merkezi",
-    url: new URL("/kunye/", site).href,
-  },
+  author: [
+    {
+      "@type": "Organization",
+      "@id": `${new URL("/kunye/", site).href}#yayinci`,
+      name: editorBirim.ad,
+      url: new URL("/kunye/", site).href,
+      knowsAbout: editorBirim.konular,
+    },
+  ],
   publisher: {
     "@type": "Organization",
     "@id": `${new URL("/kunye/", site).href}#yayinci`,
@@ -393,7 +426,7 @@ const breadcrumbLd = {
       <h1 class="post__title">{article.title}</h1>
 
       <div class="post__meta">
-        <a class="post__yazar" href="/kunye/">Haber Merkezi</a>
+        <a class="post__yazar" href="/kunye/">{editorBirim.ad}</a>
         <span class="post__dot">•</span>
         <time class="post__time" datetime={publishedISO(article)} title={date}>{timeAgo(publishedISO(article))}</time>
         <span class="post__dot">•</span>

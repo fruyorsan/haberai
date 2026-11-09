@@ -242,11 +242,17 @@ export function getFeatured(count = 6, horizon = 20, uygun = (a) => Boolean(a.im
     "bilim",
     "uzay",
     "otomobil",
-    "ekonomi",
+    "yazilim",
+    "internet",
   ]);
+  const VIRAL_MANSET_RE =
+    /(gta|steam|valve|playstation|ps5|ps6|nintendo|switch|chatgpt|openai|claude|anthropic|gemini|grok|deepseek|robot|iphone|apple|samsung|redmi|xiaomi|rtx|nvidia|phantom blade|call of duty|zelda|xbox)/i;
+  const SIKICI_MANSET_RE =
+    /(a milli takim|aday kadro|berke ozer|selcuk inan|baskan vekili|istifa|tazminat|balkon cokmesi|suc orgutu|tutuklan|facia|vefat|olu|yarali|saldiri)/i;
+
   const simdi = Date.now();
   const tum = getYayinArticles();
-  const recent = tum.slice(0, Math.max(count * 4, horizon, 30));
+  const recent = tum.slice(0, Math.max(count * 12, horizon, 80));
 
   // Kapak görseli olan haberler (yerel kapak, Wikimedia ya da kaynağın kendi
   // fotoğrafı) manşette öne alınır; görselsiz haber geriye düşer.
@@ -261,8 +267,8 @@ export function getFeatured(count = 6, horizon = 20, uygun = (a) => Boolean(a.im
     return t ? Math.max(0, (simdi - t) / 3_600_000) : 999;
   };
 
-  const rutinMi = (a) => {
-    const s = `${a?.title || ""} ${a?.summary || ""}`
+  const sadeMetin = (a) =>
+    `${a?.title || ""} ${a?.summary || ""}`
       .toLocaleLowerCase("tr")
       .replace(/[ıİ]/g, "i")
       .replace(/[şŞ]/g, "s")
@@ -270,22 +276,23 @@ export function getFeatured(count = 6, horizon = 20, uygun = (a) => Boolean(a.im
       .replace(/[üÜ]/g, "u")
       .replace(/[öÖ]/g, "o")
       .replace(/[çÇ]/g, "c");
-    return MANSET_RUTIN_RE.test(s);
-  };
 
-  // Manşet puanı: Tazelik birincil belirleyicidir (her saat başı -24 puan).
-  // Kapak görseli (+34), vitrin kaynağı (+16, yalnızca <=3.5 saat tazeyse) ve
-  // dikkat çekici kategori (+12, yalnızca <=4 saat tazeyse) kendi saat diliminde öne çıkarır.
+  const rutinMi = (a) => MANSET_RUTIN_RE.test(sadeMetin(a));
+
+  // Manşet puanı: Teknoloji, Yapay Zekâ ve Oyun vitrinin ana omurgasıdır.
   const mansetSkoru = (a) => {
     const saat = yasSaat(a);
-    let skor = 220 - saat * 24;
-    if (guvenliFotoMu(a)) skor += 34;
+    const isTech = VITRIN_KAT.has(a.categorySlug);
+    const metin = sadeMetin(a);
+    let skor = isTech ? 260 - saat * 5 : 140 - saat * 18;
+    if (guvenliFotoMu(a)) skor += a?.kapak?.foto === true ? 48 : 32;
     else if (uygun(a)) skor += 6;
     else skor -= 90;
-    if (rutinMi(a)) skor -= 120;
-    if (saat <= 3.5 && VITRIN_SRC.has(a.source)) skor += 16;
-    if (saat <= 4 && VITRIN_KAT.has(a.categorySlug)) skor += 12;
-    if (saat <= 2.5 && a.breaking === true) skor += 10;
+    if (rutinMi(a)) skor -= 140;
+    if (SIKICI_MANSET_RE.test(metin)) skor -= 110;
+    if (VIRAL_MANSET_RE.test(metin)) skor += 36;
+    if (saat <= 24 && VITRIN_SRC.has(a.source)) skor += 18;
+    if (saat <= 6 && a.breaking === true) skor += 12;
     return skor;
   };
 

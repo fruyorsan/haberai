@@ -44,6 +44,7 @@ import {
   kaynakAtif,
   kaynakIzinli,
 } from "../src/kapak-kaynak.js";
+import { kapakKareUygun } from "../src/kapak-kalite.js";
 import { kartTaban } from "./kapak-kart.mjs";
 
 const KOK = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -121,12 +122,16 @@ const sadeceUygunsuz = process.argv.includes("--uygunsuz");
 // ya uzak/hotlink görselle ya da hiç görselle çıkıyordu. Tur, yerel havuzdan
 // uygun kare bulursa onu kullanır, bulamazsa tasarım kartı üretir.
 const sadeceKapaksiz = process.argv.includes("--kapaksiz");
-// --kaynaktan (2026-11-08): YALNIZCA tasarım kartı olan haberleri, kaynak
-// sayfanın KENDİ og:image / twitter:image karesiyle değiştirir. AI/Openverse
-// çağrısı yok, tek ölçüt kalite kapısı (src/kapak-kaynak.js). Kartların %76'ya
-// çıkmasının nedeni kaynak fotoğrafının tamamen devre dışı bırakılmış olmasıydı;
-// bu tur o fotoğrafı geri getirir. Uygun kare yoksa haber KARTA dokunulmadan
-// bırakılır ve 7 gün boyunca yeniden denenmez (`kaynakKapakDeneme`).
+// --kaynaktan (2026-11-08, TELİF NEDENİYLE KAPALI): kaynak sayfanın KENDİ
+// og:image / twitter:image karesini kullanır. VARSAYILAN AKIŞTAN ÇIKARILDI.
+//
+// NEDEN: kullanıcı 12 örneği reddetti. O karelerin üzerinde yayıncının kendi
+// başlığı ("Çin'de Çöküş Başladı"), kanal filigranı (BBC NEWS) ve foto-kolaj
+// vardı. Dahası bu yol, sitenin başına iş açan ShiftDelete telif olayının
+// birebir aynısıydı ve AdSense reddini besliyordu.
+//
+// Kod silinmedi (elle müdahale / ileride lisanslı anlaşma için) ama bayrak
+// verilmedikçe HİÇ çalışmaz. Üretim hattı ve CI bu parametreyi kullanmaz.
 const sadeceKaynaktan = process.argv.includes("--kaynaktan");
 // --eski: sıra seçiminde en eski haberden başla (arşiv göçü; CI taze turlarıyla
 // çakışmamak için yerel çalıştırmalarda kullanılır).
@@ -1176,6 +1181,7 @@ const kullanilanKapaklar = new Set();
 
 async function kapakUret(a) {
   const dosya = path.join(CIKTI_DIZIN, `${a.id}.webp`);
+  if (a?.kapak?.kilit === true && fs.existsSync(dosya)) return { atlandi: true, neden: "kilitli" };
   // Daha önce üretilmiş kapağın taban fotoğrafı `kapak.kaynak`ta durur.
   const kaynak = a.kapak?.kaynak || a.image;
   const sorgu = a.gorselSorgu || a.title || "";
@@ -1267,21 +1273,20 @@ async function kapakUret(a) {
   if (elleGorsel) {
     // Elle seçilen görsel: diğer adaylar hiç denenmez (müstehcen kapak değişimi).
     adayEkle(elleGorsel, "elle");
-  } else if (!kartaZorla && !sadeceUygunsuz) {
-    // 0) KAYNAK SAYFANIN KENDİ FOTOĞRAFI (og:image / twitter:image / JSON-LD).
-    //    Yayıncı o kareyi haber için seçmiş: anlamsal uyumun en güçlü kanıtı.
-    //    Aday havuzunun başına konur; kalite kapısından geçmezse sıradaki
-    //    adaya geçilir (stok / Openverse / AI / kart).
+  } else if (!kartaZorla && !sadeceUygunsuz && sadeceKaynaktan) {
+    // 0) KAYNAK SAYFANIN KENDİ FOTOĞRAFI — TELİF NEDENİYLE VARSAYILAN DIŞI.
+    //    Yalnızca `--kaynaktan` bayrağı verilirse (elle, tek seferlik işler)
+    //    çalışır. Varsayılan üretim ve CI bu adımı hiç görmez.
     try {
-      const kaynakAdaylari = await kaynakSayfaAdaylari(a, {
-        adet: sadeceKaynaktan ? 4 : 3,
-        debug,
-      });
+      const kaynakAdaylari = await kaynakSayfaAdaylari(a, { adet: 4, debug });
       for (const g of kaynakAdaylari) adayEkle(g.url, "kaynak");
       if (debug && !kaynakAdaylari.length) console.log(`   · ${a.id} kaynak sayfada görsel yok`);
     } catch (err) {
       if (debug) console.log(`   · ${a.id} kaynak görsel hatası: ${err.message}`);
     }
+  }
+
+  if (!elleGorsel && !kartaZorla && !sadeceUygunsuz) {
 
     const stokAday = STOK_KONAK.test(String(kaynak || ""));
     if (
@@ -1344,6 +1349,16 @@ async function kapakUret(a) {
           `   · ${a.id} ${aday.tip} elendi (yayıncı başlık plakası: %${kartKontrol.plakaOran.toFixed(0)} plaka, %${kartKontrol.yazi.toFixed(2)} yazı)`
         );
       }
+      continue;
+    }
+
+    // KALİTE KAPISI (2026-11-08): üzerine başlık basılmış, filigranlı (kanal /
+    // ajans logosu), foto-kolaj, ekran görüntüsü veya kesik ürün kolajı olan
+    // kare kapak OLMAZ. Kullanıcı 12 örneği tam bu nedenlerle reddetti.
+    // Ölçüt dosya adı değil piksel kanıtı: src/kapak-kalite.js.
+    const kalite = await kapakKareUygun(veri);
+    if (!kalite.uygun) {
+      if (debug) console.log(`   · ${a.id} ${aday.tip} elendi (${kalite.neden}): ${aday.url.slice(0, 70)}`);
       continue;
     }
 
@@ -1450,6 +1465,14 @@ if (!taban && !kartaZorla && !sadeceKaynaktan) {
         const bilgi = await sharp(hazir).metadata();
         const puan = await gorselPuani(hazir, bilgi);
         if (puan === null || puan < 24) {
+          kullanilanKapaklar.delete(g.url);
+          continue;
+        }
+        // KALİTE KAPISI: havuz karelerinde de yazı/filigran/kolaj aranır.
+        // Havuz gözle onaylanmış olsa da yeni kare eklenirken kural kaçabilir.
+        const kaliteHavuz = await kapakKareUygun(hazir);
+        if (!kaliteHavuz.uygun) {
+          if (debug) console.log(`   · havuz karesi elendi (${kaliteHavuz.neden}): ${path.basename(g.dosyaYolu || g.url)}`);
           kullanilanKapaklar.delete(g.url);
           continue;
         }
@@ -1918,6 +1941,40 @@ await havuz(hedefler, paralel, async (a) => {
 
 if (!dry && uretilen) {
   fs.writeFileSync(ARTICLES, JSON.stringify(articles, null, 2).replace(/\n/g, satirSonu) + satirSonu);
+}
+// PARTİ İLERLEMESİ: uzun tek koşu yapmamak için her parti sonunda durum yazılır
+// (reports/kapak-parti-durum.json). Rapor ve sonraki partiler bundan devam eder.
+if (!dry) {
+  try {
+    const foto = articles.filter((x) => x?.kapak && x.kapak.foto !== false).length;
+    const kart = articles.filter((x) => x?.kapak && x.kapak.foto === false).length;
+    const durumYol = path.join(KOK, "reports", "kapak-parti-durum.json");
+    let onceki = { partiler: [] };
+    try {
+      onceki = JSON.parse(fs.readFileSync(durumYol, "utf8"));
+    } catch {}
+    onceki.partiler = Array.isArray(onceki.partiler) ? onceki.partiler : [];
+    onceki.partiler.push({
+      zaman: new Date().toISOString(),
+      hedef: hedefler.length,
+      uretilen,
+      hata,
+      foto,
+      kart,
+      bayraklar: process.argv.slice(2).join(" "),
+    });
+    onceki.son = {
+      zaman: new Date().toISOString(),
+      toplam: articles.length,
+      foto,
+      kart,
+      fotoOran: +(foto / Math.max(1, foto + kart)).toFixed(3),
+      uretilen,
+    };
+    fs.writeFileSync(durumYol, JSON.stringify(onceki, null, 1), "utf8");
+  } catch (err) {
+    console.warn(`  ! parti durumu yazılamadı: ${err.message}`);
+  }
 }
 console.log(
   `\n${uretilen} kapak ${dry ? "üretilecek" : "üretildi"}` + (hata ? `, ${hata} hata` : "") + "."
