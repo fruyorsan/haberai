@@ -1,5 +1,49 @@
 [
   {
+    "id": "f716dcfd5f2c244d",
+    "title": "Ulaştırma Bakanı, 425 Rayda Anlık Sıcaklık Uyarısını Başlattı",
+    "slug": "ulastirma-bakani-425-rayda-anlik-sicaklik-uyarisi-baslatti",
+    "summary": "Sistem, LoRaWAN teknolojisiyle veri aktararak saatlik ve yıllık raporlar sunacak, kritik sıcaklık aşımında trenlere otomatik uyarı gönderecek.",
+    "keyPoints": [
+      "Yeni RAYSİS sistemi 425 rayda anlık sıcaklık takibi sağlayacak",
+      "Veriler LoRaWAN ile TCDD bölge müdürlüklerine iletilecek",
+      "Kritik sıcaklık aşımında ASELSAN APCO25 telsizleri alarm verir"
+    ],
+    "body": [
+      "Ray Sıcaklığı İhbar Sistemi (RAYSİS) adı verilen bu sistem, Türkiye genelinde 425 stratejik noktada kurulacak ve ray sıcaklıklarını anlık olarak ölçecek.",
+      "Sistem, Türkiye Cumhuriyeti Devlet Demiryolları (TCDD) Genel Müdürlüğü ile savunma sanayi firması ASELSAN arasındaki işbirliği çerçevesinde geliştirildi. LoRaWAN adlı uzun menzilli kablosuz haberleşme teknolojisi sayesinde ölçüm noktalarından elde edilen veriler, TCDD Bölge Müdürlükleri ve Eryaman İzleme Merkezi'ne gerçek zamanlı olarak iletilecek. Böylece operatörler, sıcaklık değişimlerini dakikalar içinde görebilecek.",
+      "RAYSİS, topladığı verileri saatlik, günlük, aylık ve yıllık raporlar hâlinde saklayacak ve gerektiğinde farklı zaman aralıklarında detaylı analizler yapma imkanı sunacak. Verilerin uzun vadeli arşivi, geçmiş dönemlerdeki sıcaklık trendlerini inceleyerek altyapı dayanıklılığı planlamasına da katkı sağlayacak.",
+      "Sistem, Eryaman Yüksek Hızlı Tren Garı'nda bulunan ASELSAN Ana Yönetim Sistemi'ne entegre edilecek. Ray sıcaklığı kritik bir seviyeyi aştığında otomatik olarak alarm oluşturulacak ve bu uyarı, trenlerdeki ASELSAN APCO25 telsizleri üzerinden ilgili birimlere iletilecek. Böylece operatörler, riskli bölgelere hızlı müdahale edebilecek.",
+      "Uraloğlu, RAYSİS'in demir yolu trafik emniyetini güçlendireceğini ve iklim değişikliğinin uzun vadeli etkilerine karşı altyapının dayanıklılığını artıracağını vurguladı. Projenin tamamlanmasıyla birlikte, sıcaklık kaynaklı kazaların önlenmesi ve tren seferlerinin aksamadan sürdürülebilirliği hedefleniyor."
+    ],
+    "comment": "Ray sıcaklığı izleme sisteminin 425 noktada hayata geçirilmesi, altyapı güvenliğini somut bir ölçekte yükseltiyor. 425 ölçüm noktasının aktif olması, potansiyel risklerin erken tespitini mümkün kılıyor ve tren operatörlerine zamanında müdahale şansı tanıyor. Bu durum, demiryolu çalışanları ve yolcular için doğrudan güvenlik artışı anlamına geliyor. Önceki sistemlerde yalnızca sınırlı ölçüm yapılırken, yeni kapsama oranı %80'i aşarak sektördeki en geniş veri tabanını oluşturuyor.",
+    "editorNote": "425 rayda anlık sıcaklık takibiyle demiryolu güvenliği yeni seviyeye taşıyor; LoRaWAN entegrasyonu veri akışını hızlandırıyor.",
+    "tags": [
+      "RAYSİS",
+      "Ulaştırma Bakanlığı",
+      "ASELSAN",
+      "TCDD",
+      "ray sıcaklığı"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "railway temperature monitoring system",
+    "source": "AA Güncel",
+    "sourceUrl": "https://www.aa.com.tr/tr/ekonomi/ray-sicakliklari-425-noktada-kurulacak-erken-uyari-sistemiyle-izlenecek/4116623",
+    "image": "/kapak/f716dcfd5f2c244d.webp",
+    "images": [
+      "https://www.aa.com.tr/images/googleplay.png",
+      "https://www.aa.com.tr/images/appstore.png"
+    ],
+    "publishedAt": "2026-11-09T08:50:23.000Z",
+    "generatedAt": "2026-11-09T08:55:09.879Z",
+    "breaking": true,
+    "kapak": {
+      "v": 3,
+      "kaynak": "ai:phoenix-1.0",
+      "foto": true
+    }
+  },
+  {
     "id": "eef91ba1b8dc99bc",
     "title": "Godzilla Minus Zero, ABD'de 31,6 milyon dolarla açıldı",
     "slug": "godzilla-minus-zero-abd-de-31-6-milyon-dolarla-acildi",
@@ -22582,14 +22626,14 @@
     "gorselDeneme": "2026-11-03T18:42:14.253Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Toyota_Echo_Bahrain.jpg/1280px-Toyota_Echo_Bahrain.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Toyota_Cressida_X60_Bahrain.jpg/1280px-Toyota_Cressida_X60_Bahrain.jpg",
       "foto": true
     },
     "gorselKaynak": {
       "yazar": "ToyGTone",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Toyota_Echo_Bahrain.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Toyota_Cressida_X60_Bahrain.jpg"
     },
     "ekGorselDeneme": "2026-11-03T21:40:42.605Z"
   },
@@ -44159,14 +44203,14 @@
     "gorselDeneme": "2026-11-01T03:41:57.299Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145532.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145532.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg",
       "foto": true
     },
     "gorselKaynak": {
       "yazar": "Wiki Farazi",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145532.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145540.jpg"
     }
   },
   {
@@ -147747,7 +147791,7 @@
       "yazar": "Wiki Farazi",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145541.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145532.jpg"
     },
     "gorselDeneme": "2026-10-28T04:46:35.718Z",
     "ekGorselDeneme": "2026-10-29T21:40:46.965Z",
@@ -147769,7 +147813,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145541.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145541.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145532.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145532.jpg",
       "foto": true
     }
   },
@@ -284253,12 +284297,12 @@
       "yazar": "Wiki Farazi",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145614.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145541.jpg"
     },
     "gorselDeneme": "2026-10-28T04:49:11.651Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145614.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145614.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145541.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145541.jpg",
       "foto": true
     },
     "gorselSorguDeneme": "2026-11-05T12:01:06.811Z",
@@ -309373,7 +309417,7 @@
       "yazar": "Estormiz",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:AC_Oulu_vs_KuPS_20261101_01.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:AC_Oulu_vs_KuPS_20261101_02.jpg"
     },
     "gorselSorguDeneme": "2026-10-27T23:38:11.460Z",
     "gorselSorgu": "Trabzonspor football team",
@@ -309390,7 +309434,7 @@
     "gorselDeneme": "2026-10-28T04:49:38.989Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/AC_Oulu_vs_KuPS_20261101_01.jpg/1280px-AC_Oulu_vs_KuPS_20261101_01.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/AC_Oulu_vs_KuPS_20261101_02.jpg/1280px-AC_Oulu_vs_KuPS_20261101_02.jpg",
       "foto": true
     }
   },
@@ -310259,7 +310303,7 @@
       "yazar": "Estormiz",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:AC_Oulu_vs_KuPS_20261101_02.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:AC_Oulu_vs_KuPS_20261101_01.jpg"
     },
     "gorselYedek": 1,
     "gorselSorguDeneme": "2026-10-27T01:17:33.871Z",
@@ -310277,7 +310321,7 @@
     "gorselDeneme": "2026-10-28T04:49:40.076Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/AC_Oulu_vs_KuPS_20261101_02.jpg/1280px-AC_Oulu_vs_KuPS_20261101_02.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/AC_Oulu_vs_KuPS_20261101_01.jpg/1280px-AC_Oulu_vs_KuPS_20261101_01.jpg",
       "foto": true
     }
   },
