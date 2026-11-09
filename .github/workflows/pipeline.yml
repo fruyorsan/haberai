@@ -510,7 +510,7 @@ jobs:
       # AI + derle + yayinla) birkac dakika surdugu icin buradaki bekleme kisa
       # tutulur; boylece toplam aralik ~2-4 dakikaya iner. Cron yalnizca yedek.
       - name: Zinciri surdur (kisa kadans)
-        if: always() && !cancelled()
+        if: success()
         env:
           CHAIN_KEY: ${{ secrets.CHAIN_DEPLOY_KEY }}
           CHAIN_BEKLEME_SN: ${{ vars.CHAIN_BEKLEME_SN }}
