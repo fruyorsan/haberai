@@ -1,5 +1,62 @@
 [
   {
+    "id": "cf90110c7e7db4c1",
+    "title": "Nvidia CEO Huang, Çin Sızdırma Skandalında Sorgulanıyor",
+    "slug": "nvidia-ceo-huang-cin-sizdirma-skandalinda-sorgulaniyor",
+    "summary": "Nvidia’nın CEO’su Jensen Huang, Çinli bir iş insanına şirket bilgilerini sızdırdığı iddialarıyla karşı karşıya geldi. Huang, evliliğini tehlikeye sokan ilişkisini kabul etti ve şirket, bağımsız bir soruşturma başlatacak.",
+    "keyPoints": [
+      "CEO Huang, Çinli iş insanına bilgi sızdırma iddiasıyla karşılaşıyor",
+      "Şirket, bağımsız yönetim kurulu komitesiyle soruşturma başlatacak",
+      "Huang, evliliğini tehlikeye sokan ilişkiyi kabul edip özür diledi"
+    ],
+    "body": [
+      "Nvidia’nın CEO’su Jensen Huang, geçen hafta New York Times’ın haberine göre Çinli bir iş insanına şirketin gizli bilgilerini sızdırdığı iddialarıyla gündeme geldi. Bu iddialar, Huang’ın evliliğini tehlikeye sokan bir ilişkiyle bağlantılı olarak ortaya atıldı. Şirket, bu süreçte bağımsız bir soruşturma başlatma kararı aldı.",
+      "Soruşturma, Nvidia’nın yönetim kurulunun bağımsız üyelerinden oluşan bir komite tarafından yürütülecek. Komite, bağımsız hukuk danışmanlarının desteğiyle çalışacak ve ABD’nin ulusal güvenliğine öncelik verecek. Yönetim kurulu, gizli bilgilerin tehlikeye atıldığına dair somut bir gerekçe bulamadığını ancak tüm bilgilerin değerlendirileceğini belirtti.",
+      "CEO, şirketin liderliğini sürdürmenin kariyerinin en büyük ayrıcalığı olduğunu söyledi.",
+      "Çalışanlara gönderdiği e-postada Huang, ailesine ve iş arkadaşlarına özür diledi. Eşine sadık kalmadığını kabul ederek, bu davranışlarının eşini ve çocuklarını incittiğini belirtti. Ayrıca, yaptığı hataların hiçbir mazereti olmadığını ve derin üzüntü duyduğunu söyledi.",
+      "Bu gelişme, Nvidia’nın piyasa değeri geçen yıl 5 trilyon doları aşan ilk şirket olma unvanını kazandığı dönemde gerçekleşti. Şirketin bu dönemde yaşadığı skandal, teknoloji devlerinin ulusal güvenlik konularında ne kadar hassasiyetle hareket ettiğini bir kez daha gözler önüne serdi."
+    ],
+    "comment": "Bu olay, Nvidia’nın ulusal güvenlik konusundaki politikalarının test edilmesini sağlayacak. Yönetim kurulunun bağımsız soruşturma başlatması, şirketin kriz yönetimindeki disiplinini gösteriyor. Çip üreticilerinin uluslararası ilişkilerdeki hassasiyeti, rakip firmalarla rekabet avantajı yaratırken aynı zamanda riskleri de artırıyor.",
+    "editorNote": "Nvidia’nın CEO’su, Çinli bir iş insanına şirket bilgilerini sızdırdığı iddialarıyla gündeme geldi. Şirket, bağımsız soruşturma başlatacak.",
+    "tags": [
+      "Nvidia",
+      "JensenHuang",
+      "casusluk"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "nvidia ceo meeting",
+    "source": "Haber.com",
+    "sourceUrl": "https://www.haber.com/dunya/teknoloji-devinde-casusluk-skandali-ceo-ya-sorusturma-31845",
+    "image": "/kapak/cf90110c7e7db4c1.webp",
+    "images": [
+      "https://img.haber.com/960x540/70/cover/haber/2026/11/09/teknoloji-devinde-casusluk-skandali-ceo-ya-sorusturma-1794185262995-ai-80287d8f-cba8-4e9b-b373-d527e118fe26.webp"
+    ],
+    "publishedAt": "2026-11-09T00:47:40.000Z",
+    "generatedAt": "2026-11-09T00:58:35.758Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Data_center_infrastructure_in_the_United_States.jpg/1280px-Data_center_infrastructure_in_the_United_States.jpg",
+        "yazar": "DOE / National Renewable Energy Laboratory (NREL)",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Data_center_infrastructure_in_the_United_States.jpg",
+        "altyazi": "Yüksek güvenlikli veri merkezinde çalışan ekip"
+      }
+    ],
+    "breaking": true,
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Nvidia_GM200_GeForce_GTX_980_Ti_die_shot.jpg/1280px-Nvidia_GM200_GeForce_GTX_980_Ti_die_shot.jpg",
+      "foto": true
+    },
+    "gorselKaynak": {
+      "yazar": "Flickr - Fritzchens Fritz",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Nvidia_GM200_GeForce_GTX_980_Ti_die_shot.jpg"
+    }
+  },
+  {
     "id": "9acb728bb0868de5",
     "title": "Daikin, İstanbul'da 110 m²’lik Uygulama Merkezi Açtı",
     "slug": "daikin-istanbulda-110m2lik-uygulama-merkezi-acti",
@@ -650,14 +707,19 @@
     "breaking": true,
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Nvidia_GM200_GeForce_GTX_980_Ti_die_shot.jpg/1280px-Nvidia_GM200_GeForce_GTX_980_Ti_die_shot.jpg",
-      "foto": true
+      "kaynak": null,
+      "foto": false
     },
     "gorselKaynak": {
       "yazar": "Flickr - Fritzchens Fritz",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Nvidia_GM200_GeForce_GTX_980_Ti_die_shot.jpg"
+    },
+    "gorselAjan": {
+      "tarih": "2026-11-09T01:00:48.279Z",
+      "sonuc": "atlandi",
+      "neden": "yeterli görsel yok"
     }
   },
   {
@@ -880,7 +942,12 @@
         "lisansUrl": "",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Kunisada_SGK_Sugoroku.jpg"
       }
-    ]
+    ],
+    "gorselAjan": {
+      "tarih": "2026-11-09T01:01:02.703Z",
+      "sonuc": "atlandi",
+      "neden": "yeterli görsel yok"
+    }
   },
   {
     "id": "9996a778da82d3ca",
@@ -936,6 +1003,11 @@
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "sayfa": "https://commons.wikimedia.org/wiki/File:Person_holding_world_globe.jpg"
+    },
+    "gorselAjan": {
+      "tarih": "2026-11-09T01:01:36.345Z",
+      "sonuc": "atlandi",
+      "neden": "yeterli görsel yok"
     }
   },
   {
@@ -7530,7 +7602,6 @@
         "altyazi": "Olay yerinde ekiplerin incelemeleri sürüyor"
       }
     ],
-    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": null,
@@ -7582,7 +7653,6 @@
     "image": "/kapak/736544cb4c54fc40.webp",
     "publishedAt": "2026-11-07T00:52:00.000Z",
     "generatedAt": "2026-11-07T00:57:26.555Z",
-    "breaking": true,
     "kapak": {
       "v": 3,
       "kaynak": null,
@@ -20670,14 +20740,14 @@
     "gorselDeneme": "2026-11-03T18:42:14.253Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Toyota_Cressida_X60_Bahrain.jpg/1280px-Toyota_Cressida_X60_Bahrain.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Toyota_Echo_Bahrain.jpg/1280px-Toyota_Echo_Bahrain.jpg",
       "foto": true
     },
     "gorselKaynak": {
       "yazar": "ToyGTone",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Toyota_Cressida_X60_Bahrain.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Toyota_Echo_Bahrain.jpg"
     },
     "ekGorselDeneme": "2026-11-03T21:40:42.605Z"
   },
@@ -42254,14 +42324,14 @@
     "gorselDeneme": "2026-11-01T03:41:57.299Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Sungai_Tuntong_20231222_145411.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Sungai_Tuntong_20231222_145411.jpg",
       "foto": true
     },
     "gorselKaynak": {
       "yazar": "Wiki Farazi",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145540.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Sungai_Tuntong_20231222_145411.jpg"
     }
   },
   {
@@ -145842,7 +145912,7 @@
       "yazar": "Wiki Farazi",
       "lisans": "CC0",
       "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145532.jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Jalan_Panchor-Damar_Laut_(Perak_State_Highway_A101),_Kampung_Panchor_20231222_145540.jpg"
     },
     "gorselDeneme": "2026-10-28T04:46:35.718Z",
     "ekGorselDeneme": "2026-10-29T21:40:46.965Z",
@@ -145864,7 +145934,7 @@
     ],
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145532.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145532.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg/1280px-Jalan_Panchor-Damar_Laut_%28Perak_State_Highway_A101%29%2C_Kampung_Panchor_20231222_145540.jpg",
       "foto": true
     }
   },
@@ -201252,10 +201322,10 @@
     "publishedAt": "2026-10-20T10:59:00.000Z",
     "generatedAt": "2026-10-20T11:03:38.348Z",
     "gorselKaynak": {
-      "yazar": "Openverse",
-      "lisans": "CC0 1.0",
-      "lisansUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "sayfa": "https://www.rawpixel.com/image/5906639/photo-image-light-desktop-wallpapers-public-domain"
+      "yazar": "Kavali Chandrakanth KCK",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Google_Head_Office_Kondapur_Hyderabad.jpg"
     },
     "gorselDeneme": "2026-10-28T04:47:49.794Z",
     "ekGorselDeneme": "2026-11-01T02:00:51.246Z",
@@ -271510,15 +271580,15 @@
     "publishedAt": "2026-10-17T13:06:00.000Z",
     "generatedAt": "2026-10-17T13:07:01.965Z",
     "gorselKaynak": {
-      "yazar": "Leit",
-      "lisans": "Kamu malı",
-      "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Deutsche_Telekom_Tagungshotel_Bad_Honnef.JPG"
+      "yazar": "Jochen64",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Telekom_mobility_2_cars.jpg"
     },
     "gorselDeneme": "2026-10-28T04:49:00.614Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Deutsche_Telekom_Tagungshotel_Bad_Honnef.JPG/1280px-Deutsche_Telekom_Tagungshotel_Bad_Honnef.JPG",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Telekom_mobility_2_cars.jpg/1280px-Telekom_mobility_2_cars.jpg",
       "foto": true
     }
   },
@@ -275987,10 +276057,10 @@
     "publishedAt": "2026-10-17T10:50:16.000Z",
     "generatedAt": "2026-10-17T10:54:42.217Z",
     "gorselKaynak": {
-      "yazar": "Jochen64",
-      "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Telekom_mobility_2_cars.jpg"
+      "yazar": "Leit",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Deutsche_Telekom_Tagungshotel_Bad_Honnef.JPG"
     },
     "images": [
       "https://herkesduysun.com/api/medya/news/2026/10/20261027AW819274/01_800.webp"
@@ -275999,7 +276069,7 @@
     "gorselDeneme": "2026-10-28T04:49:06.269Z",
     "kapak": {
       "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Telekom_mobility_2_cars.jpg/1280px-Telekom_mobility_2_cars.jpg",
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Deutsche_Telekom_Tagungshotel_Bad_Honnef.JPG/1280px-Deutsche_Telekom_Tagungshotel_Bad_Honnef.JPG",
       "foto": true
     }
   },
