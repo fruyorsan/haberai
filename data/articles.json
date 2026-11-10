@@ -1,5 +1,45 @@
 [
   {
+    "id": "1c8f0fad5c4c4ba0",
+    "title": "Anthropic Claude Fable 5.2 Sıfırdan İşletim Sistemi Üretti",
+    "slug": "anthropic-claude-fable-5-2-sifirdan-isletim-sistemi-uretti",
+    "summary": "Anthropic, Claude Fable 5.2 ve Mythos 5.2 modellerini tanıttı. Yeni Fable 5.2, 1.000'den fazla alt ajanla sekiz gün içinde tam çalışan bir işletim sistemi geliştirdi ve çıktıyı %30’a kadar hızlandırdı.",
+    "keyPoints": [
+      "Claude Fable 5.2, 1.000+ alt ajanla sekiz günde tam OS üretti",
+      "Model, çıktıyı %30’a kadar hızlandırıp 8$‑40$ token fiyatları sundu",
+      "Mythos 5.2, siber güvenlikte tespit başarısını %61,7‑%76,3’e yükseltti"
+    ],
+    "body": [
+      "Anthropic, halka arz hazırlıkları çerçevesinde yeni yapay zeka modelleri Claude Fable 5.2 ve Claude Mythos 5.2'yi duyurdu. Şirket, bu sürümlerin kodlama, akıl yürütme ve görsel analiz konularında önceki nesillere göre belirgin ilerlemeler sağladığını belirtti.",
+      "Claude Fable 5.2, testlerde çıktıyı yüzde 30’a kadar daha hızlı üretebildi ve Artificial Analysis Intelligence Index v5 sıralamasında 65 puanla birinciliği elde etti. Model, karmaşık teknik görevlerde birden fazla yapay zeka ajanını koordine edebiliyor; örnek olarak bir Python‑Rust geçişiyle servisin başlangıç süresi 26 kat kısaldı.",
+      "En çarpıcı gösterge, Fable 5.2'nin sekiz gün boyunca 1.000'den fazla alt ajanı yönlendirerek sıfırdan bir işletim sistemi yaratması oldu. Üretilen sistem, çekirdek, disk, ağ sürücüleri, dosya depolama ve grafik arayüzü dahil tam fonksiyonel bir dizüstü bilgisayarda çalıştı.",
+      "Modelin diğer yetenekleri arasında üç elektronik cihazın (sesli asistan, USB hoparlörlü telefon, taşınabilir sanal evcil hayvan) devre kartı tasarımı, bileşen seçimi ve 3D muhafaza modellemesi yer alıyor. Bu cihazlar, üretim sonrası ek bir elektriksel müdahale gerektirmeden çalıştı.",
+      "Claude Mythos 5.2 ise siber güvenlik alanında önemli bir adım attı; doğrulanmış güvenlik açıklarının %16’sını rakip modellerin bulamadığı belirtiliyor. Ancak bu özellik sadece Anthropic'in Cyber Verification Program'ına dahil kuruluşlar ve Claude Enterprise müşterileri için erişilebilir durumda."
+    ],
+    "comment": "Anthropic'in yeni modelleri, yüksek performans ve fiyat avantajı sunarak AI pazarında rekabeti kızıştırmalı. Fable 5.2'nin 1.000'den fazla ajanla sekiz gün içinde tam bir işletim sistemi üretmesi, geliştiriciler için prototip süresini ciddi ölçüde kısaltabilir. Özellikle düşük token maliyetleri (giriş 8$, çıkış 40$) ve %30 hızlı çıktı, maliyet‑performans dengesini iyileştiriyor. Ancak Mythos 5.2'nin sınırlı erişimi, güvenlik çözümlerinde geniş çaplı benimsenmesini geciktirebilir.",
+    "editorNote": "Yeni Claude Fable 5.2, bir haftada tam işletim sistemi inşa etti; token maliyetleri ise önceki sürümden %20 daha düşük.",
+    "tags": [
+      "Anthropic",
+      "Claude Fable 5.2",
+      "Yapay Zeka",
+      "İşletim Sistemi",
+      "AI"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "Anthropic AI lab workstation",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/anthropic-claude-fable-5-2-ve-mythos-5-2-modellerini-duyurdu--212705",
+    "image": "https://www.donanimhaber.com/images/images/haber/212705/src/anthropic-claude-fable-5-2-ve-mythos-5-2-modellerini-duyurdu212705_0.jpg",
+    "images": [
+      "https://www.donanimhaber.com/images/images/haber/212705/1200x675anthropic-claude-fable-5-2-ve-mythos-5-2-modellerini-duyurdu.jpg",
+      "https://www.donanimhaber.com/images/images/haber/212705/src/anthropic-claude-fable-5-2-ve-mythos-5-2-modellerini-duyurdu212705_1.jpg",
+      "https://www.donanimhaber.com/images/images/haber/212705/src/anthropic-claude-fable-5-2-ve-mythos-5-2-modellerini-duyurdu212705_2.jpg"
+    ],
+    "publishedAt": "2026-11-10T13:19:00.000Z",
+    "generatedAt": "2026-11-10T13:19:52.043Z",
+    "breaking": true
+  },
+  {
     "id": "adf593f41910254a",
     "title": "Anthropic, Nasdaq'ta dev halka arz ile 64 milyar dolar arıyor",
     "slug": "anthropic-nasdaqta-dev-halka-arz-ile-64-milyar-dolar-ariyor",
