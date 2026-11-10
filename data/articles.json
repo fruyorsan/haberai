@@ -1,5 +1,50 @@
 [
   {
+    "id": "14ab41f4f1a7fca9",
+    "title": "Microsoft Boşta Kalan GPU'ları AI Eğitiminde Kullanıp Kullanıcıları Ödüllendiriyor",
+    "slug": "microsoft-bostaki-gpu-lari-ai-egitiminde-kullanip-kullanicilari-odullendiriyor",
+    "summary": "Microsoft, boşta duran ekran kartlarını yapay zeka modellerinin eğitimine katmak üzere bir sistem önerdi. Bu platform, kullanılmayan GPU gücünü görev dağılımlı olarak dağıtarak cihaz sahiplerine kredi, yazılım ya da para ödülü sunmayı hedefliyor. Patent, enerji tüketimi ve kazanç dengesi konusundaki belirsizlikleri de içeriyor.",
+    "keyPoints": [
+      "Microsoft, GPU paylaşımı için yeni bir patent başvurusu yaptı",
+      "Sistem, cihaz başına 250 W ek güç tüketimiyle günde 4 saat çalışabilir",
+      "Kullanıcı kredileri ücretsiz yazılım, AI modeli ya da nakit olarak değerlendirilebilir"
+    ],
+    "body": [
+      "Microsoft, oyuncu bilgisayarları ve dizüstü bilgisayarlardaki atıl GPU kaynaklarını yapay zeka eğitimine yönlendiren bir platform önerdi. Patent, bu kaynakları küçük görevler halinde bölerek farklı cihazlara dağıtmayı ve her cihazın katkısını izleyerek kullanıcıya kredi vermeyi öngörüyor. Bu sayede oyun oynanmadığı ya da yoğun işlem yapılmadığı zamanlarda ekran kartları AI eğitimine katkı sağlıyor.",
+      "Platform, telefonlar, dizüstü bilgisayarlar ve yüksek performanslı oyun bilgisayarları gibi çeşitli cihazları destekleyecek şekilde tasarlandı. Katılımcı cihazlar, mevcut işlemci ve GPU yükü, bellek kullanımı, sıcaklık ve güç tüketimini sürekli izleyerek uygun görevleri alıyor. Yoğun oyun sürecinde ya da sıcaklık belirli bir eşiği aştığında sistem otomatik olarak AI görevlerini durduruyor ya da azaltıyor.",
+      "Microsoft, her cihazın gerçekleştirdiği hesaplama miktarını takip ederek kullanıcı hesabına belirli krediler tanımlamayı planlıyor. Bu krediler, ücretsiz yazılımlara, eğitilmiş yapay zeka modellerine erişime ya da doğrudan nakit karşılığına dönüştürülebilecek. Kullanıcılar, boşta kalan GPU'larını paylaşarak ek gelir elde edebilecekleri bir modelle karşılaşıyor.",
+      "Patent, sistemin normal bilgisayar performansını etkilememesi için çeşitli güvenlik önlemleri içeriyor. GPU ve CPU yükü, bellek, sıcaklık ve güç tüketimi gibi parametreler anlık olarak izleniyor ve cihazın mevcut durumuna göre görev atamaları ayarlanıyor. Örneğin, ekran kartı yoğun bir oyun seansı sırasında AI eğitimi için ayrılan güç 250 W artarak günde 4 saat çalışabilir, bu da aylık yaklaşık 30 kWh ek enerji tüketimi anlamına geliyor.",
+      "Bu sistemin ekonomik sürdürülebilirliği hâlâ belirsiz. Elektrik maliyetleri, ek güç tüketimi nedeniyle kullanıcıların kazançlarını dengeleyip dengelemeyeceği netleşmedi. Ayrıca patentte, kullanıcıların ne kadar ödeme alacağına dair bir oran ya da desteklenecek donanım listesi bulunmuyor; bu nedenle platformun gerçekçi kazanç sağlayıp sağlamayacağı henüz kesinleşmedi."
+    ],
+    "comment": "Microsoft'un GPU paylaşım platformu, kullanılmayan donanımın gelir elde etme potansiyelini ortaya koyuyor. Ancak ek 250 W güç tüketimi ve aylık 30 kWh ek enerji maliyeti, özellikle yüksek elektrik fiyatlı bölgelerde kullanıcıların net kazancını zorlayabilir. Bu durum, özellikle oyun bilgisayarları ve dizüstü kullanıcılarını hedef alıyor; onların boşta kalan GPU'ları gelir kaynağına dönüşebilir. Ancak enerji maliyeti rakamının, mevcut ortalama ev elektriği tarifesinin üzerine çıkması, platformun cazibesini sınırlayabilir. Rekabetçi bir alternatif sunulmadığı sürece, bu sistemin geniş çapta benimsenmesi zor görünüyor.",
+    "editorNote": "Microsoft, boşta kalan GPU'ları AI eğitimine katıp kullanıcılara kredi ya da nakit sunmayı planlıyor. Enerji maliyetinin yüksek olması, kazancın gerçekçi olup olmayacağını…",
+    "tags": [
+      "Microsoft",
+      "GPU",
+      "Yapay Zeka",
+      "Patente",
+      "Kredi"
+    ],
+    "category": "Donanım",
+    "gorselSorgu": "GPU compute cluster",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/bosta-duran-ekran-kartlari-para-kazandirabilir--212699",
+    "image": "https://www.donanimhaber.com/images/images/haber/212699/src/bosta-duran-ekran-kartlari-para-kazandirabilir212699_0.jpg",
+    "images": [
+      "https://www.donanimhaber.com/images/images/haber/212699/1200x675bosta-duran-ekran-kartlari-para-kazandirabilir.jpg"
+    ],
+    "publishedAt": "2026-11-10T07:29:37.000Z",
+    "generatedAt": "2026-11-10T07:34:07.777Z",
+    "breaking": true,
+    "gorselAjan": {
+      "tarih": "2026-11-10T07:36:09.244Z",
+      "sonuc": "atlandi",
+      "neden": "mevcut kapak daha iyi",
+      "secim": "mevcut",
+      "skor": 74
+    }
+  },
+  {
     "id": "282d58e91842a51c",
     "title": "İngiliz arşivleri, Atatürk'ün son günlerindeki gizli diplomasiyi açığa vurdu",
     "slug": "ingiliz-arsivleri-ataturkun-son-gunlerindeki-gizli-diplomasiyi-aciga-vurdu",
