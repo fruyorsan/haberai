@@ -1,5 +1,52 @@
 [
   {
+    "id": "2bf2f2e18b89c394",
+    "title": "Anthropic, Claude ve Mythos 5.2 modellerini piyasaya sürdü",
+    "slug": "anthropic-claude-mythos-5-2-modellerini-piyasaya-surdu",
+    "summary": "Anthropic, yazılım geliştirme ve siber güvenlik odaklı Claude Fable 5.2 ile Mythos 5.2 modellerini duyurdu. Yanıt hızı yüzde 30 artarken standart API fiyatları yüzde 20 oranında düşürüldü. Fable geniş kitlelere açılırken Mythos yalnızca yetkili güvenlik ekiplerine sunuluyor.",
+    "keyPoints": [
+      "Claude Fable 5.2, FrontierCode 2.0'da GPT-6 Astra'yı geçti",
+      "Standart API fiyatları girdi başına 8 dolara indirildi",
+      "Mythos 5.2, siber güvenlik testiyle yüzde 76,3 puan aldı"
+    ],
+    "body": [
+      "Anthropic, yapay zeka portföyüne iki yeni model ekleyerek yazılım geliştirme ve siber güvenlik alanlarındaki hakimiyetini pekiştirmek istiyor. Şirketin açıkladığı Claude Fable 5.2 ve Mythos 5.2, aynı temel mimariye sahip olsa da kullanım alanları açısından birbirinden ayrılıyor. Fable modeli genel geliştiricilere ve araştırmacılara açılırken, Mythos varyantı yalnızca onaylı siber güvenlik uzmanları ve belirli iş ortaklarıyla sınırlı tutuluyor.",
+      "Yeni nesil modellerin en somut farkı hız ve performans verimliliğinde görülüyor. Anthropic'e göre yanıt üretim hızı, önceki sürümlere kıyasla yüzde 30'a kadar artıyor. Ücretli olarak sunulan hızlı mod (Fast mode) ise standart modun 2,5 katı performans sunabiliyor. Bu iyileştirmeler, özellikle büyük ölçekli yazılım projelerinde bekleme sürelerinin kısalması anlamına geliyor.",
+      "Bağımsız performans testlerinde Claude Fable 5.2, rakiplerinin önüne geçmeyi başardı. Model, FrontierCode 2.0 benchmark'ında yüzde 49,1 isabet oranına ulaştı. FrontierSWE v2 testlerinde ise model yüzde 69,9 başarı elde etti.",
+      "Siber güvenlik odaklı Mythos 5.2 ise kendi alanında güçlü sonuçlar üretti. Model, siber güvenlik testlerinde yüzde 76,3 puan alırken biyolojik araştırmalara yönelik protein geliştirme simülasyonlarında yüzde 85,1 başarı gösterdi. Bu veriler, modelin sadece kod yazmakla kalmayıp karmaşık bilimsel analizlerde de etkin olduğunu doğruluyor.",
+      "Fiyatlandırma politikasında da önemli bir gevşeme yaşanıyor. Hızlı modun ücreti ise giriş için 16 dolar, çıkış için 80 dolar seviyesinde kalıyor.",
+      "Anthropic, günlük rutin kullanımlar için hâlâ Opus 5.5 modelini tavsiye etmeyi sürdürüyor. Firma, yeni nesil modellerin daha spesifik ve yüksek yoğunluklu iş yükleri için tasarlandığını vurguluyor. Geliştiriciler, bütçe optimizasyonu ile performans dengesi arayışında bu yeni seçenekleri test ederek kendi projelerine uygunluğu belirleyecek.",
+      "Piyasadaki rekabet, Anthropic'in agresif fiyat indirimleriyle bir üst düzeme taşınıyor. Rakip modellerin benchmark skorlarındaki farklar, geliştirmecilerin araç seçimi kararını doğrudan etkileyecek. Önümüzdeki dönemde siber güvenlik ekiplerinin Mythos modeline geçiş hızı, modelin pratikteki etkinliğini kanıtlayan en önemli ölçüt olacak."
+    ],
+    "comment": "Anthropic'in Mythos modelini sınırlı kitlelere sunması, teknik üstünlüğü güvenlik protokolüne feda etmediğini gösteriyor. FrontierCode 2.0'daki yüzde 49,1'lik skor, GPT-6 Astra'yı açık ara geçerek geliştirici topluluğunda standart değişikliği yaratabilir. Bu durum, özellikle yazılım agentları kullanan şirketlerin maliyet-performans analizlerini yeniden yapmasına neden olacak. Rakip modellerin 40'lı puanlarda kalması, Anthropic'in bu segmentteki tekel konumunu güçlendiriyor. Fiyatların yüzde 20 düşmesiyle birlikte, küçük ölçekli girişimlerin de bu güçlü modele erişim maliyeti azalıyor.",
+    "editorNote": "Siber güvenlik odaklı Mythos 5.2'nin sınırlı erişimi, modelin kritik altyapılarda kullanımına dair ciddiye alınan bir güvenlik katmanı olduğunu gösteriyor. Fiyat indirimi,…",
+    "tags": [
+      "Anthropic",
+      "Claude Fable 5.2",
+      "Mythos 5.2",
+      "Yapay Zeka",
+      "Siber Güvenlik"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "Anthropic AI server room",
+    "source": "Donanım Günlüğü",
+    "sourceUrl": "https://donanimgunlugu.com/claude-fable-5-2-ve-mythos-5-2-tanitildi-440722",
+    "image": "https://cdn.donanimgunlugu.com/uploads/2025/10/Anthropic-5-600x400.jpg",
+    "images": [
+      "https://cdn.donanimgunlugu.com/uploads/2025/10/Anthropic-5-scaled.jpg",
+      "https://cdn.donanimgunlugu.com/uploads/2026/11/Claude-Fable-5-2-Benchmark.jpg",
+      "https://cdn.donanimgunlugu.com/uploads/2025/08/Anthropic-OpenAInin-Claude.png"
+    ],
+    "publishedAt": "2026-11-10T01:26:12.000Z",
+    "generatedAt": "2026-11-10T01:30:01.390Z",
+    "breaking": true,
+    "gorselAjan": {
+      "tarih": "2026-11-10T01:32:28.407Z",
+      "sonuc": "atlandi",
+      "neden": "yeterli görsel yok"
+    }
+  },
+  {
     "id": "1fe7513001df6d40",
     "title": "Koalisyon, Suudi Arabistan üzerindeki balistik füzeyi imha etti",
     "slug": "koalisyon-suudi-arabistan-ustundeki-balistik-fuzeyi-imha-etti",
