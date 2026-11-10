@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-10T08:18:17.826Z",
+  "updatedAt": "2026-11-10T08:45:26.701Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5858,
-  "aday": 5858,
-  "uygun": 3802,
-  "secilen": 3713,
+  "toplamHaber": 5859,
+  "aday": 5859,
+  "uygun": 3803,
+  "secilen": 3714,
   "red": {
     "özet gövdeyle aynı": 116,
     "editör notu özetle aynı": 8,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 141
+    "tekrar": 142
   },
   "ornekTekrarlar": [
     {
@@ -98,6 +98,10 @@
       "twin": "Fenerbahçe Yönetimi İsmail Kartal'ın İstifasını Onayladı"
     },
     {
+      "title": "Redmi K100 modeli 10.000 mAh bataryasıyla oyunseverlere güç sağlıyor",
+      "twin": "Redmi K100 Ultra: 10.000 mAh batarya ve 2 nm işlemci sızdırıldı"
+    },
+    {
       "title": "İran, ABD ile müzakere masasına oturmak için 7 maddelik şart listesini sundu",
       "twin": "İran ABD'den müzakere için 7 şartı kabul etmesini istiyor"
     },
@@ -108,10 +112,6 @@
     {
       "title": "Türkiye'nin yüksek teknoloji ihracatı 9 ayda 86,4 milyar dolara ulaştı",
       "twin": "Türkiye'de güneş enerjisi kurulu gücü 9 ayda 3 bin MW arttı"
-    },
-    {
-      "title": "Huawei Enjoy 100 Pro, HarmonyOS 7 ve 6.100 mAh bataryayla geldi",
-      "twin": "Huawei, Wi-Fi 7 destekli yeni Router X2 Pro modelini satışa sundu"
     }
   ],
   "days": {
@@ -237,7 +237,6 @@
       "ccf65363b2dda856",
       "a813b60a7f3c22f1",
       "b05f61009473f339",
-      "3ffb21b564dc9a9b",
       "fee4ca32a04a134a",
       "4de38ec0144fe41b",
       "20f0048e1c4a071c",
@@ -293,6 +292,7 @@
       "6dfb54a1e7d8bd99",
       "afe7a36d06a6d178",
       "d29a49f98235fff7",
+      "3ffb21b564dc9a9b",
       "3c54dd68c97c231d",
       "511c4225152943a7",
       "cda279011dcbaf31"
@@ -1227,6 +1227,7 @@
       "b83e0a9b73bd6450",
       "afa95ebbe65a6ad0",
       "6c6a19039077c0fb",
+      "f3698b74fc6b4b11",
       "16f5973e66d486d4",
       "a82f51bbedaf0979",
       "2bf2f2e18b89c394",
@@ -4364,6 +4365,7 @@
     "b47ce1e4e3124c63",
     "739ec793c0dee331",
     "e4689cb8019010a8",
+    "f3698b74fc6b4b11",
     "4b1d1e6b6fbbf60f",
     "8f4d11d7e23b47a1",
     "d90af045fb007dac",
@@ -4792,7 +4794,6 @@
     "dc1242eddb0acfe9",
     "528ddc1088d479d4",
     "b05f61009473f339",
-    "3ffb21b564dc9a9b",
     "d70607a05c1074cc",
     "c8febb9fb2816407",
     "c6cf04b0cd024c26",
@@ -7537,6 +7538,7 @@
     "ccc6f00bfac1bd28",
     "862cc8b90fdfd822",
     "040647c51b8f39b7",
+    "3ffb21b564dc9a9b",
     "07f5fbec965a45b7",
     "53f8b6583b8c898a",
     "fffff1ce0f5769e4",
