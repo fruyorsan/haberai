@@ -2812,11 +2812,9 @@
     "generatedAt": "2026-11-09T17:45:16.211Z",
     "breaking": true,
     "gorselAjan": {
-      "tarih": "2026-11-09T17:47:48.069Z",
+      "tarih": "2026-11-10T06:02:29.760Z",
       "sonuc": "atlandi",
-      "neden": "yeterli görsel yok",
-      "secim": "mevcut",
-      "skor": 39
+      "neden": "görsel denetimi yapılamadı (vision sağlayıcısı yok)"
     },
     "gorselYedek": 2,
     "gorselKaynak": {
