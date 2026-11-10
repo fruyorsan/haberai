@@ -1,5 +1,63 @@
 [
   {
+    "id": "2db3ed1d460d1a50",
+    "title": "ABD Ordusu Ay Çevresinde Askeri Uydu Ağını Kurmaya Hazırlanıyor",
+    "slug": "abd-ordusu-ay-cerbesinde-askeri-uydu-agini-kurmaya-hazirlaniyor",
+    "summary": "ABD Hava Kuvvetleri, Ay çevresinde kalıcı askeri gözetleme ağı kurmayı planlıyor. Projenin ilk aşamasında beş uydu konuşlandırılacak ve 2029 sonunda hizmete girmesi hedefleniyor. Pentagon, Çin'in uzay rekabetini de göz önünde bulunduruyor.",
+    "keyPoints": [
+      "İlk aşamada beş uydu konuşlandırılacak",
+      "2029 sonunda hizmete girmesi hedefleniyor",
+      "Çin ile uzay rekabeti ön plana çıkıyor"
+    ],
+    "body": [
+      "ABD Hava Kuvvetleri, 2 Kasım’da yayımladığı Bilgi Talebi ile Ay çevresinde askeri uydu sistemine ihtiyaç duyulduğunu duyurdu. Bu talep, Pentagon’un Cislunar Space System adı verilen proje kapsamında şirketlerden teknik ve operasyonel çözümler istemesine yol açtı.",
+      "Projenin ilk evresinde en fazla beş uzay aracının konuşlandırılması planlanıyor. Her uyduya hükümet tarafından sağlanacak faydalı yükler yerleştirilecek ve sistem 2029 yılının sonlarına kadar askeri ihtiyaçları karşılayacak düzeye gelmesi hedefleniyor.",
+      "Pentagon, şirketlerden hızlı ve düşük riskli çözümler sunmalarını talep etti.",
+      "ABD’nin Ay çevresinde askeri varlık oluşturma girişimi, Washington yönetiminin uzay güvenliğine yönelik stratejisinde bir değişikliği yansıtıyor. Başkan Donald Trump’ın 2025’te imzaladığı uzay politikası kararnamesinde, Ay çevresinin tehditleri tespit edilip etkisiz hale getirilmeye yönelik hedefler yer almıştı.",
+      "Uzay Kuvvetleri yetkilisi Tümgeneral Stephen Purdy, Ay çevresinin askeri açıdan önem kazandığını belirtti. 2023’te düzenlenen Space Systems Command Industry Days etkinliğinde, Ay çevresini artık bir savaş alanı olarak değerlendirdiğini söyledi.",
+      "Pentagon, yeni uydu ağının hangi görevleri üstleneceği konusunda detay vermedi. Ancak Dünya yörüngesindeki askeri uydulara benzer görevler bekleniyor: izleme, tehdit tespiti, karakterizasyon, navigasyon ve iletişim desteği.",
+      "Çin ile artan uzay rekabeti, ABD’nin bu girişimini hızlandırıyor. Her iki ülke de Ay’ın güney kutbunda insanlı iniş ve kaynak çıkarma hedeflerine odaklanıyor. Bu bölgenin bilimsel araştırmalar ve kalıcı üs kurma açısından kritik olacağı öngörülüyor.",
+      "Oracle-Prime adlı ikinci görev, 2027 sonuna kadar fırlatılmaya hazırlanıyor. L1 Lagrange noktasında konumlanarak diğer uyduları ve uzay enkazını tespit edecek."
+    ],
+    "comment": "Bu proje, 2029 hedefiyle 5 uydu üzerinden kurulan bir askeri ağın, Çin’in uzay stratejilerine cevap olarak şekillenmesiyle ilgili net bir adım. Pentagon’un riskli ama hızlı çözümler talep etmesi, savunma endüstrisini rekabetçi bir pazara itiyor. Yüzde 100’ün üzerindeki askeri istihbarat kapasitesi, hem ABD hem de uluslararası savunma şirketlerini etkileyebilir.",
+    "editorNote": "5 uydu ile 2029’da hizmete girecek askeri ağ, Çin’in uzay rekabetiyle paralel bir hamle olarak dikkat çekiyor.",
+    "tags": [
+      "ABD",
+      "Ay",
+      "Uydu",
+      "Çin",
+      "UzayGüvenliği"
+    ],
+    "category": "Uzay",
+    "gorselSorgu": "satellite orbit view",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/abd-ordusu-ay-cevresinde-askeri-uydu-agi-kurmaya-hazirlaniyor--212696",
+    "image": "https://www.donanimhaber.com/images/images/haber/212696/src/abd-ordusu-ay-cevresinde-askeri-uydu-agi-kurmaya-hazirlaniyor212696_0.jpg",
+    "images": [
+      "https://www.donanimhaber.com/images/images/haber/212696/1200x675abd-ordusu-ay-cevresinde-askeri-uydu-agi-kurmaya-hazirlaniyor.jpg",
+      "https://www.donanimhaber.com/images/images/haber/212696/src/abd-ordusu-ay-cevresinde-askeri-uydu-agi-kurmaya-hazirlaniyor212696_1.jpg"
+    ],
+    "publishedAt": "2026-11-10T07:50:00.000Z",
+    "generatedAt": "2026-11-10T07:55:24.022Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/NISAR_satellite_orbit_%28SVS5615_-_2415%29.jpg/1280px-NISAR_satellite_orbit_%28SVS5615_-_2415%29.jpg",
+        "yazar": "NASA's Scientific Visualization Studio - Science and Technology Cor…",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:NISAR_satellite_orbit_(SVS5615_-_2415).jpg"
+      }
+    ],
+    "breaking": true,
+    "gorselAjan": {
+      "tarih": "2026-11-10T07:57:05.808Z",
+      "sonuc": "atlandi",
+      "neden": "yeterli görsel yok",
+      "secim": "mevcut",
+      "skor": 74
+    }
+  },
+  {
     "id": "14ab41f4f1a7fca9",
     "title": "Microsoft Boşta Kalan GPU'ları AI Eğitiminde Kullanıp Kullanıcıları Ödüllendiriyor",
     "slug": "microsoft-bostaki-gpu-lari-ai-egitiminde-kullanip-kullanicilari-odullendiriyor",
