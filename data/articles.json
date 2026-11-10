@@ -1,5 +1,58 @@
 [
   {
+    "id": "0bf43b2e80bc461f",
+    "title": "Google, TPU 8tx ve 8i Max ile Nvidia karşısına çıkıyor",
+    "slug": "google-tpu-8tx-8i-max-nvidia-karsisina-cikiyor",
+    "summary": "Google, yapay zeka donanımı pazarında Nvidia'ya alternatif sunmak amacıyla TPU 8tx ve 8i Max sistemlerini açıkladı. Yüksek bellek bant genişliği ve güvenli veri işleme kapasitesiyle öne çıkan bu çözümler, büyük kurumsal altyapılardan bağımsız yazılım ekiplerine kadar uzanan geniş bir kullanıcı kitlesini hedefliyor.",
+    "keyPoints": [
+      "Google, Nvidia'ya rakip olarak iki yeni TPU modeli duyurdu",
+      "Sistemler yüksek bellek bant genişliği kapasitesi sunuyor",
+      "Kurumsal ve bireysel geliştiricilere özel seçenekler mevcut"
+    ],
+    "body": [
+      "Yapay zeka hesaplama alanındaki dominansını sürdürmek isteyen Google, donanım portföyüne iki yeni TPU (Tensor Processing Unit) sistemi eklediğini resmen duyurdu. Şirketin paylaştığı bilgilere göre TPU 8tx ve 8i Max, mevcut çiplerden farklı olarak çoklu kullanım senaryolarına yönelik olarak tasarlandı. Bu adımla Google, sadece kendi bulut servisi içindeki işlemler için değil, dışarıdaki müşteriler için de güçlü bir alternatif altyapı sunmayı amaçlıyor.",
+      "Yeni nesil TPU'ların teknik donanımı, özellikle bellek yönetimi konusunda dikkat çekici özellikler barındırıyor. Sistemler, büyük verilerin işlenmesinde darboğaz yaratan sorunları azaltmak üzere yüksek bellek bant genişliği sağlayacak şekilde optimize edildi. Ayrıca veri güvenliği protokollerinin donanım seviyesinde derinleştirilmesi, hassas bilgiyi işleyen şirketler için ek bir katman koruma mekanizması oluşturuyor. Bu teknik üstünlükler, yoğun hesaplama gerektiren eğitim ve çıkarım süreçlerinde performans kazancına zemin hazırlıyor.",
+      "Pazar dinamiklerine bakıldığında, Google'ın bu hamlesi Nvidia'nın AI çip pazarındaki tekel konumuna doğrudan bir meydan okuma niteliği taşıyor. Nvidia, mevcut nesil GPU'larıyla sektördeki payını korurken, Google'ın TPU serisi özellikle maliyet etkinliği ve entegrasyon kolaylığı kartlarını oynuyor. Kurumsal müşteriler, kendi altyapılarını Nvidia'ya bağımlı kalmadan inşa etme imkanı bulurken, küçük ve orta ölçekli geliştirici ekipleri de daha erişilebilir donanım seçeneklerine kavuşuyor.",
+      "Kullanıcı perspektifinden değerlendirildiğinde, bu yeni TPU'lar özellikle bulut tabanlı yapay zeka uygulamaları geliştiren ekipleri yakından ilgilendiriyor. Yüksek bellek bant genişliği, model parametrelerinin daha hızlı okunup yazılmasına olanak tanıyarak eğitim sürelerini kısaltabilir. Güvenli veri işleme vurgusu ise sağlık, finans ve telekomünikasyon gibi regülasyonun sıkı olduğu sektörlerdeki firmalar için kritik bir avantaj sunuyor. Geliştiriciler, yazdıkları kodları bu donanımlara makine öğrenmesi kütüphaneleri üzerinden kolayca taşımak durumunda kalacak.",
+      "Önümüzdeki dönemde bu iki TPU modelinin fiyatlama politikası ve erişilebilirlik koşulları, rekabetin seyrini belirleyecek en önemli faktörler arasında yer alacak. Google'ın bulut servislerinde bu çipleri standart paketlerin parçası olarak sunup sunmayacağı, müşteri tercihlerinde belirleyici rol oynayacak. Donanım tarafındaki bu yenilik, yazılım ekosistemindeki uyum çalışmalarını da hızlandıracak ve Nvidia rakipliğinde denge unsurlarını değiştirebilir.",
+      "Sonuç olarak, TPU 8tx ve 8i Max, yapay zeka altyapısı tartışmalarında yeni bir sayfa açıyor. Farklı hedef kitlelere yönelik özelleştirilmiş mimariler, tek tip çip anlayışına karşı çok katmanlı bir stratejiyi gözler önüne seriyor. Şirketler, kendi veri gizliliği ihtiyaçları ve bütçe kısıtlamaları doğrultusunda bu seçenekleri değerlendirirken, genel pazar dengesi de bu iki yeni oyuncunun performans verilerine göre şekillenecek."
+    ],
+    "comment": "Google'ın TPU 8tx ve 8i Max ile Nvidia'ya karşı donanım seviyesinde somut bir alternatifi devreye sokması, pazardaki tedarik risklerini azaltma stratejisinin net bir yansımasıdır. Yüksek bellek bant genişliği vurgusu, özellikle büyük dil modellerinin eğitimi sırasında darboğaz yaratan mevcut GPU mimarilerine göre teknik bir üstünlük iddiası taşımaktadır. Bu durum, bulut servis sağlayıcıları dışında kendi veri merkezlerini kuran kurumsal müşterilerin maliyet yapılarını doğrudan etkileyecektir. Eğer bu TPU'lar Nvidia'nın H100/Blackwell serisine oranında fiyat/performans avantajı sunabilirse, orta ölçekli şirketler için marka bağımlılığı kırılacak ve pazar payı dağılımı yeniden şekillenecektir.",
+    "editorNote": "TPU 8tx ve 8i Max, Nvidia'nın AI çip hakimiyetine karşı donanım seviyesinde somut bir alternatif sunuyor. Fiyat/performans dengesi, bu iki modelin kurumsal altyapılardaki gerçek…",
+    "tags": [
+      "Google",
+      "TPU 8tx",
+      "TPU 8i Max",
+      "Nvidia",
+      "Yapay Zeka Donanımı"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "Google TPU server room",
+    "source": "CHIP Online",
+    "sourceUrl": "https://www.chip.com.tr/guncel/google-tpu-8tx-ve-8i-maxi-duyurdu-yapay-zeka-altyapisinda-neler-degisecek_185209.html",
+    "image": "https://img.chip.com.tr/storage/files/images/2026/11/10/google-tpu-8tx-ve-8i-maxi-duyurdu-yapay-zeka-altyapisinda-neler-degisecek-cpsk.jpg",
+    "publishedAt": "2026-11-10T09:33:00.000Z",
+    "generatedAt": "2026-11-10T09:40:52.845Z",
+    "gorselEk": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/EFTA00002518_-_Server_rack_with_multiple_hard_drives_and_network_cables_connected_in_a_data_center_environment.jpg",
+        "yazar": "Federal Bureau of Investigation",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:EFTA00002518_-_Server_rack_with_multiple_hard_drives_and_network_cables_connected_in_a_data_center_environment.jpg",
+        "altyazi": "Bü ölçekli AI hesaplama altyapısı"
+      }
+    ],
+    "breaking": true,
+    "gorselAjan": {
+      "tarih": "2026-11-10T09:43:39.900Z",
+      "sonuc": "atlandi",
+      "neden": "mevcut kapak daha iyi",
+      "secim": "mevcut",
+      "skor": 88
+    }
+  },
+  {
     "id": "1d2f92f417757622",
     "title": "İsrail ordusu Gazze'de ateşi kesmedi: 1 kişi yaşamını yitirdi",
     "slug": "israil-ordusu-gazzede-atesi-kesmedi-1-kisi-yasamini-yitirdi",
@@ -2739,7 +2792,7 @@
     "gorselSorgu": "courtroom judge gavel",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/ck1l3le7q29vo?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Courtroom_One_Gavel_-_Flickr_-_Joe_Gratz.jpg/1280px-Courtroom_One_Gavel_-_Flickr_-_Joe_Gratz.jpg",
+    "image": "/kapak/688595448966a42b.webp",
     "publishedAt": "2026-11-09T21:14:52.000Z",
     "generatedAt": "2026-11-09T21:24:30.825Z",
     "gorselEk": [
@@ -2754,17 +2807,35 @@
     ],
     "breaking": true,
     "gorselAjan": {
-      "tarih": "2026-11-09T21:27:25.872Z",
-      "sonuc": "atlandi",
-      "neden": "mevcut kapak daha iyi",
-      "secim": "mevcut",
-      "skor": 90
+      "tarih": "2026-11-10T09:44:26.868Z",
+      "sonuc": "degisti",
+      "neden": "Haberin ana öznesi olan Lindsay Clancy'nin duruşma esnasındaki net görüntüsünü içeriyor, konuyla doğrudan alakalı.",
+      "secim": "commons",
+      "skor": 88
     },
     "gorselKaynak": {
-      "yazar": "Joe Gratz",
-      "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Courtroom_One_Gavel_-_Flickr_-_Joe_Gratz.jpg"
+      "yazar": "Plymouth Superior Court",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Lindsay_Clancy_appeared_via_Zoom_from_Tewksbury_Hospital_for_a_hearing_in_Plymouth_Superior_Court.jpg"
+    },
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://upload.wikimedia.org/wikipedia/commons/6/65/Lindsay_Clancy_appeared_via_Zoom_from_Tewksbury_Hospital_for_a_hearing_in_Plymouth_Superior_Court.jpg",
+      "foto": true,
+      "ajan": {
+        "v": 1,
+        "secim": "commons",
+        "skor": 88,
+        "neden": "Haberin ana öznesi olan Lindsay Clancy'nin duruşma esnasındaki net görüntüsünü içeriyor, konuyla doğrudan alakalı.",
+        "brif": "Federal bir mahkeme salonunda, siyah cübbesini giymiş bir yargıç, masasındaki kağıtlara bakarak kararını okurken oturuyor; önünde ahşap bir çekiç (gavel) duruyor, arka planda bulanık jüri sandalyeleri ve mahkeme heyeti koltukları seçiliyor.",
+        "sorgular": [
+          "courtroom judge gavel",
+          "federal judge hearing",
+          "judge reading verdict"
+        ],
+        "tarih": "2026-11-10T09:44:26.868Z"
+      }
     }
   },
   {
@@ -2798,22 +2869,22 @@
     "gorselSorgu": "Thomas Massie US Capitol",
     "source": "BBC World",
     "sourceUrl": "https://www.bbc.co.uk/news/articles/cwr5y58jjp8ro?at_medium=RSS&at_campaign=rss",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Person_holding_world_globe.jpg/1280px-Person_holding_world_globe.jpg",
+    "image": "/kapak/dfdd7bb2e5a4c8d3.webp",
     "publishedAt": "2026-11-09T21:04:36.000Z",
     "generatedAt": "2026-11-09T21:12:43.226Z",
     "breaking": true,
     "gorselAjan": {
-      "tarih": "2026-11-09T21:15:10.201Z",
-      "sonuc": "atlandi",
-      "neden": "yeterli görsel yok",
-      "secim": "mevcut",
-      "skor": 51
+      "tarih": "2026-11-10T09:45:52.084Z",
+      "sonuc": "degisti",
+      "neden": "Kürsüde mikrofon önünde konuşan politikacı karesi, haberdeki Meclis ve azil talebi konuşması konusunu doğrudan destekliyor.",
+      "secim": "commons",
+      "skor": 84
     },
     "gorselKaynak": {
-      "yazar": "Porapak Apichodilok",
-      "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Person_holding_world_globe.jpg"
+      "yazar": "John Hughel, Oregon Military Department Public Affairs",
+      "lisans": "Kamu malı",
+      "lisansUrl": "",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Jeff_Helfrich_at_OR_National_Guard_Association_2024_Annual_Conference.jpg"
     },
     "ekGorselDeneme": "2026-11-10T03:21:12.496Z",
     "gorselEk": [
@@ -2824,7 +2895,26 @@
         "lisansUrl": "",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Pete_Hegseth_Swearing-In.jpg"
       }
-    ]
+    ],
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Jeff_Helfrich_at_OR_National_Guard_Association_2024_Annual_Conference.jpg/1920px-Jeff_Helfrich_at_OR_National_Guard_Association_2024_Annual_Conference.jpg",
+      "foto": true,
+      "ajan": {
+        "v": 1,
+        "secim": "commons",
+        "skor": 84,
+        "neden": "Kürsüde mikrofon önünde konuşan politikacı karesi, haberdeki Meclis ve azil talebi konuşması konusunu doğrudan destekliyor.",
+        "brif": "ABD Temsilciler Meclisi kürsüsünde mikrofon önünde konuşma yapan bir milletvekili; elinde resmi bir belge tutuyor, arka planda meclis salonunun ahşap detayları ve hafif bulanık oturma sıraları görünüyor.",
+        "sorgular": [
+          "politician speaking at podium",
+          "us house of representatives chamber",
+          "congressman holding document",
+          "political debate podium"
+        ],
+        "tarih": "2026-11-10T09:45:52.084Z"
+      }
+    }
   },
   {
     "id": "9c857b12486303d1",
