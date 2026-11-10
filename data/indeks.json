@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-10T00:47:29.822Z",
+  "updatedAt": "2026-11-10T00:57:38.233Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5836,
-  "aday": 5836,
-  "uygun": 3780,
-  "secilen": 3691,
+  "toplamHaber": 5835,
+  "aday": 5835,
+  "uygun": 3779,
+  "secilen": 3690,
   "red": {
     "özet gövdeyle aynı": 116,
     "editör notu özetle aynı": 8,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 141
+    "tekrar": 140
   },
   "ornekTekrarlar": [
     {
@@ -56,10 +56,6 @@
     {
       "title": "Rusya'nın Zaporijya saldırısında 24 kişi hayatını kaybetti",
       "twin": "Rusya'nın insani yardım merkezine hava saldırısı: 24 sivil yaşamını yitirdi"
-    },
-    {
-      "title": "Arap Koalisyonu, Suudi Arabistan'a atılan balistik füzeyi imha etti",
-      "twin": "Koalisyon, Suudi Arabistan üzerindeki balistik füzeyi imha etti"
     },
     {
       "title": "Florida'da özel jet yerleşim alanına çakıldı: 9 kişi yaşamını yitirdi",
@@ -112,6 +108,10 @@
     {
       "title": "Google Gemini 4 Argon, Android Bench’te Beşinci Sırada Yer Aldı",
       "twin": "Google, yapay zeka modeli Gemini 4 Carbon ile zirveye yerleşti"
+    },
+    {
+      "title": "Türkiye'nin yüksek teknoloji ihracatı 9 ayda 86,4 milyar dolara ulaştı",
+      "twin": "Türkiye'de güneş enerjisi kurulu gücü 9 ayda 3 bin MW arttı"
     }
   ],
   "days": {
@@ -1030,7 +1030,6 @@
       "4aecd74d1de18063",
       "42494757e22abeee",
       "aa12a5bff00db697",
-      "90a7ac537084c083",
       "813a55f6442d8251",
       "d4008aab3736a8f3",
       "1dc42f1829be5db8"
@@ -7493,7 +7492,6 @@
     "ccc6f00bfac1bd28",
     "862cc8b90fdfd822",
     "040647c51b8f39b7",
-    "90a7ac537084c083",
     "6e08e7bc56dc9d0f",
     "9356275ce74925d0",
     "e6a0c508d48456b3",
