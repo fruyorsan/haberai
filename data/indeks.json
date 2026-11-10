@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-10T12:55:53.853Z",
+  "updatedAt": "2026-11-10T13:46:12.263Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5867,
-  "aday": 5867,
-  "uygun": 3811,
-  "secilen": 3722,
+  "toplamHaber": 5869,
+  "aday": 5869,
+  "uygun": 3813,
+  "secilen": 3723,
   "red": {
     "özet gövdeyle aynı": 116,
     "editör notu özetle aynı": 8,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 142
+    "tekrar": 143
   },
   "ornekTekrarlar": [
     {
@@ -1232,6 +1232,7 @@
       "ba724a57d21cd275",
       "b83e0a9b73bd6450",
       "9caa9b54c50473c0",
+      "c3f3a92d167d795e",
       "16f5973e66d486d4",
       "afa95ebbe65a6ad0",
       "a82f51bbedaf0979",
@@ -4325,6 +4326,7 @@
     "53a55d495815577b",
     "7b4fbeb6b29c8c0d",
     "9a48bb7360b0cf31",
+    "c3f3a92d167d795e",
     "b26971b5547edaf0",
     "0f377683b024318c",
     "9002611823b72a84",
