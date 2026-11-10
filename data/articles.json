@@ -1,5 +1,46 @@
 [
   {
+    "id": "81a6c53311f2adce",
+    "title": "Meta, 0,10 dolarlık Muse Ember modelini devreye aldı",
+    "slug": "meta-muse-ember-yapay-zeka-modeli-tanitti",
+    "summary": "Meta, yapay zeka ajanlarının tekrarlayan işlerini ucuz yapacak Muse Ember'ı duyurdu. Milyon giriş token'ı başına 0,10 dolarlık fiyatıyla rakiplerini geçiyor ve 1 milyon token bağlam penceresi sunuyor.",
+    "keyPoints": [
+      "Milyon giriş token'ı başına 0,10 dolar ücretlendiriliyor",
+      "Anthropic'in Claude Haiku 5.5 modeline göre üç kat daha ucuz",
+      "1 milyon token kapasiteli bağlam penceresi ile çalışıyor"
+    ],
+    "body": [
+      "Meta, yapay zeka ekosistemindeki maliyet odaklı yaklaşımını yeni bir modelle somutlaştırdı. Şirket, Superintelligence Labs birimi tarafından geliştirilen Muse Ember'ı tanıtarak, bu yapay zekanın kendi tarihindeki en küçük ve en verimli model olduğunu açıkladı. Ember, karmaşık problem çözme yerine, ajanların gün içinde sürekli tekrarladığı rutin görevlere odaklanarak işletme bütçelerine doğrudan katkı vermeyi hedefliyor.",
+      "Modelin en dikkat çekici özelliği fiyatlandırma politikasıdır. Meta, Muse Ember'ı milyon giriş token'ı başına 0,10 dolar ve milyon çıkış token'ı başına 0,50 dolar bedelle sunuyor. Artificial Analysis verilerine göre bu fiyat, benzer performansta olan Anthropic'in Claude Haiku 5.5 modeline kıyasla yaklaşık üç kat daha düşük maliyet anlamına geliyor. OpenAI'ın GPT-6 Luna modeli de bazı testlerde yeni çıkan Ember'ın gerisinde kalıyor.",
+      "Teknik altyapı olarak Muse Ember, metnin yanı sıra görüntü, ses ve video girdilerini de işleyebilen multimodal bir mimariye sahip. Bu sayede ekran görüntüleri, taranmış belgeler, grafikler ve sesli toplantı kayıtları ek bir modele ihtiyaç duymadan değerlendirilebiliyor. Modelin 1 milyon token'lık bağlam penceresi, uzun dokümanların veya büyük kod projelerinin tek seferde analiz edilmesine olanak tanıyor. Araç çağırma, veri çıkarma ve istek yönlendirme gibi işlemler modelin temel yetkinlikleri arasında yer alıyor.",
+      "Meta, bu modeli tek başına çalışan bir asistan olarak değil, daha güçlü modellerle entegre çalışan bir bileşen olarak konumlandırıyor. Tüketici ürünleri tarafında ise Muse Agent platformuna kısa süre önce Spaces ve görüntülü sohbet özelliklerinin eklenmesiyle ekosistemin kapsamı genişletildi. Şirket, nisan ayında orta ölçekli Muse Spark'ı, ağustosta Glimmer'ı ve ekim ayında amiral gemisi niteliğindeki Muse Wonder'ı piyasaya sürmüştü. Ember, bu seriye dördüncü model olarak dâhil oldu.",
+      "Bu erişim kanalları, modelin farklı bulut altyapılarında sorunsuz çalışmasını sağlıyor. Meta'nın bu hamlesi, yapay zeka ajanlarının ölçeklendirilmesinde enerji ve hesaplama maliyetlerinin en kritik darboğazlardan biri olduğu gerçeğine işaret ediyor. Düşük maliyetli modellerin yaygınlaşması, karmaşık sistemlerde katmanlı mimarilerin kullanımını hızlandırabilir.",
+      "Yapay zeka pazarında fiyat rekabeti, model yeteneklerinin yanı sıra erişilebilirlik boyutunu da ön plana çıkarıyor. Muse Ember'ın sunduğu fiyat/performans dengesi, özellikle yüksek işlem hacmine sahip şirketlerin dikkatini çekiyor. Rakip firmaların kendi portföylerindeki küçük modellerde benzer fiyat indirimlerine gitmesi bekleniyor. Meta, bu stratejiyle hem B2B segmentinde pay kazanmayı hem de kendi ekosistemi etrafında daha fazla geliştirici toplaymayı amaçlıyor."
+    ],
+    "comment": "Meta'nın 0,10 dolarlık giriş token fiyatı, yapay zeka ajanlarının operasyonel maliyetlerindeki en büyük engeli kırıyor. Bu fiyat noktası, Claude Haiku 5.5 gibi rakiplerin sunduğu performansın üç katı bir tasarruf potansiyeli sunuyor ve küçük ölçekli ajanların kârlılığını doğrudan değiştiriyor. Yüksek hacimli işlemler yapan şirketler için bu model, büyük ve pahalı modellerin performansını bozmadan maliyet optimizasyonunun anahtarı oluyor. Fiyat/performans oranının bu denli düşük seyretmesi, pazardaki diğer oyuncuların da benzer bir indirim yarışına girmesini tetikleyebilir.",
+    "editorNote": "0,10 dolarlık fiyat etiketi, ajans tabanlı yapay zeka maliyetlerini kökten değiştiriyor. Rakiplerin üç katı tasarruf sağlayan bu model, kurumsal bütçeleri rahatlatacak somut bir…",
+    "tags": [
+      "Meta",
+      "Muse Ember",
+      "Yapay Zeka",
+      "AI Ajanları",
+      "Bulut Bilişim"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "Meta AI data center servers",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/meta-ai-ajanlari-icin-en-ucuz-modelini-tanitti-muse-ember--212712",
+    "image": "https://www.donanimhaber.com/images/images/haber/212712/src/meta-ai-ajanlari-icin-en-ucuz-modelini-tanitti-muse-ember212712_0.jpg",
+    "images": [
+      "https://www.donanimhaber.com/images/images/haber/212712/1200x675meta-ai-ajanlari-icin-en-ucuz-modelini-tanitti-muse-ember.jpg",
+      "https://www.donanimhaber.com/images/images/haber/212712/src/meta-ai-ajanlari-icin-en-ucuz-modelini-tanitti-muse-ember212712_1.jpg",
+      "https://www.donanimhaber.com/images/images/haber/212712/src/meta-ai-ajanlari-icin-en-ucuz-modelini-tanitti-muse-ember212712_2.jpg"
+    ],
+    "publishedAt": "2026-11-10T11:20:00.000Z",
+    "generatedAt": "2026-11-10T11:36:31.874Z",
+    "breaking": true
+  },
+  {
     "id": "da87d3f9e7f6f843",
     "title": "İran, Hürmüz Boğazı'nda iki petrol tankerinin devre dışı kaldığını duyurdu",
     "slug": "iran-hurmuz-bogazinda-iki-petrol-tankerinin-devre-disi-kaldigini-duyurdu",
@@ -26513,71 +26554,6 @@
       "neden": "Haberin konusu olan protesto yürüyüşünü ve kalabalığı doğrudan yansıtıyor, olay anını gösteriyor.",
       "secim": "commons",
       "skor": 87
-    }
-  },
-  {
-    "id": "ca86b9e6df0911fd",
-    "title": "İran, Hürmüz Boğazı'nda 4 petrol tankerinin vurulduğunu açıkladı",
-    "slug": "iran-hurmuz-bogazinda-4-petrol-tankerinin-vuruldugunu-acikladi",
-    "summary": "Hürmüz Boğazı'nda peş peşe yaşanan mayın ve patlayıcı saldırıları sonucu en az dört petrol tankerinde yangın çıktı. İran tarafı gemilerin uyarıları dikkate almadığını savunurken Birleşik Krallık Deniz Ticareti Operasyonları da ayrı bir geminin hedef alındığını doğruladı. Yaşanan bu sıcak çatışma ortamı küresel enerji sevkiyatındaki tedarik endişelerini zirveye çıkardı.",
-    "keyPoints": [
-      "İran Devrim Muhafızları, Hürmüz Boğazı'nda dört tankerin mayın patlamaları nedeniyle yandığını duyurdu.",
-      "UKMTO, Umman'ın Hasab kentinin 25 deniz mili açığında bir gemiye saldırıldığını bildirdi.",
-      "Devrim Muhafızları, elektronik harple ABD'ye ait MQM-170 tipi keşif İHA'sını ele geçirdiğini iddia etti."
-    ],
-    "body": [
-      "Dünyanın en önemli deniz ticaret rotalarından biri olan Hürmüz Boğazı'nda güvenlik krizi yeniden tırmandı. İran Devrim Muhafızları Ordusu, boğazdan geçiş yapmaya çalışan en az dört petrol tankerinin deniz mayınlarına çarparak alev aldığını bildirdi. Patlamaların, ABD ordusunun ana geçiş güzergahlarının mayınlardan arındırıldığını ilan etmesinden yalnızca bir gün sonra meydana gelmesi gerilimi daha da tırmandırdı. İran resmi haber ajansı IRNA, söz konusu gemilerin seyrüsefer sistemlerini kapatıp uyarılara uymadığını ileri sürdü.",
-      "İran makamları, son 24 saat içerisinde kurallara aykırı hareket eden üç tankerin güney koridorunda mayın patlamasıyla hasar gördüğünü aktardı. Günün ilerleyen saatlerinde ise boğazın doğu kesimindeki yasaklı bölgede ilerleyen dördüncü bir tanker daha alevlere teslim oldu. Hedef alınan bu tankerlerin hangi ülkelere ait olduğu ve taşıdıkları bayraklar hakkında yetkililerden henüz resmi bir açıklama yapılmadı. Devrim Muhafızları Deniz Kuvvetleri, bölgedeki uyarıların göz ardı edildiğini savunarak güvenlik tedbirlerini sıkılaştırdı.",
-      "Saldırılar sadece mayın patlamalarıyla sınırlı kalmayarak farklı noktalara da sıçradı. Birleşik Krallık Deniz Ticareti Operasyonları (UKMTO), Umman'ın Hasab şehrinin yaklaşık 25 deniz mili kuzeydoğusunda bir yük gemisinin hedef alındığını beyan etti. Açıklamada, küçük bir sürat teknesinin yaklaştığı geminin gövdesine iki adet patlayıcı yerleştirdiği ve makine dairesinde meydana gelen patlama nedeniyle geminin kontrolünü kısa süreliğine kaybettiği vurgulandı. Çıkan yangın kontrol altına alınırken mürettebatın güvende olduğu ifade edildi.",
-      "UKMTO, aynı deniz alanında son dönemde yaşanan benzer güvenlik ihlallerine dair yeni detaylar da paylaştı. Kurum, kısa süre önce bir yelkenlinin çıkan yangın sonrası batarak sulara gömüldüğünü ve başka bir tankere ise boğaz çıkışında tanımlanamayan bir cismin çarptığını hatırlattı. ABD Merkez Kuvvetler Komutanlığı (CENTCOM) ticaret yollarının temiz olduğunu savunsa da İran tarafı bu beyanlara sert tepki gösterdi. Devrim Muhafızları Sözcüsü Hüseyin Muhibbi, Washington'ın iddialarını somut kanıtlarla ispat etmesi gerektiğini ifade ederek denizcileri güney rotasındaki mayın tehlikesine karşı uyardı.",
-      "Bölgedeki askeri sürtüşme hava sahasına da taşındı. Devrim Muhafızları, boğazın batı alanında yürütülen bir elektronik harp müdahalesi neticesinde ABD'ye ait \"MQM-170\" tipi bir keşif insansız hava aracını ele geçirdiklerini duyurdu. 28 Şubat tarihinden bu yana devam eden askeri hareketlilik ve kısıtlamalar, uluslararası taşımacılık hatlarını doğrudan etkilemeyi sürdürüyor. ABD donanmasının yaz aylarından bu yana gerçekleştirdiği koruma misyonlarıyla yaklaşık 1,5 milyar varil petrolün ihraç edilmesini sağladığı belirtiliyor.",
-      "Küresel petrol ve doğal gaz sevkiyatının yaklaşık beşten birinin sağlandığı bu stratejik geçitte yaşanan rota ihtilafları piyasaları tedirgin ediyor. Tahran yönetimi, Umman kıyılarına yakın güney koridorunun izinsiz kullanımını gerekçe göstererek denetim ve müdahalelerini aralıksız sürdürüyor. Karşılıklı misillemeler ve askeri hamleler neticesinde enerji koridorundaki risk seviyesi tavan yaparken, küresel tedarik zincirindeki aksamaların derinleşmesinden endişe ediliyor."
-    ],
-    "comment": "Hürmüz Boğazı'nda tırmanan bu sıcak çatışma ortamı, küresel petrol piyasalarında doğrudan bir fiyata yansıma dalgası yaratacaktır. Dünya enerji arzının beşte birinin geçtiği bu koridorda 28 Şubat'tan beri süren askeri sürtüşmeler, Türkiye gibi enerji ithalatçısı ülkelerdeki akaryakıt fiyatlarını derinden sarsacak bir risk barındırıyor. Bölgedeki askeri devriyelerin yetersiz kalması durumunda nakliye ve sigorta maliyetleri katlanarak pompa fiyatlarına zam olarak dönecektir. Güzergahtaki mayın riskinin sürmesi halinde ham petrol varil fiyatlarının kısa sürede rekor seviyelere ulaşması kaçınılmaz bir senaryo haline gelir.",
-    "editorNote": "ABD'nin 'güvenli' dediği Hürmüz Boğazı'nda tanker patlamaları ve İHA hamleleri küresel enerji koridorunu yeniden ateşe verdi.",
-    "tags": [
-      "Hürmüz Boğazı",
-      "İran Devrim Muhafızları",
-      "petrol tankeri",
-      "ABD CENTCOM",
-      "enerji krizi"
-    ],
-    "category": "Dünya",
-    "gorselSorgu": "oil tanker fire sea",
-    "source": "Orta Doğu Haber",
-    "sourceUrl": "https://www.ortadoguhaber.com/hurmuz-bogazinda-tankerlere-sabotaj-pes-pese-patlamalar/",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Crude_Oil_Tanker_in_Port_Arthur%2C_Texas.jpg/1280px-Crude_Oil_Tanker_in_Port_Arthur%2C_Texas.jpg",
-    "publishedAt": "2026-11-01T00:59:00.000Z",
-    "generatedAt": "2026-11-01T01:22:20.361Z",
-    "gorselEk": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/The_amphibious_command_ship_USS_Mount_Whitney_%28LCC_20%29%2C_foreground%2C_leads_a_formation_of_foreign_naval_vessels_June_16%2C_2013%2C_in_the_Baltic_Sea_during_Baltic_Operations_%28BALTOPS%29_2013_130616-N-ZL691-144.jpg/1280px-thumbnail.jpg",
-        "yazar": "MC2 Josh Bennett",
-        "lisans": "Kamu malı",
-        "lisansUrl": "",
-        "sayfa": "https://commons.wikimedia.org/wiki/File:The_amphibious_command_ship_USS_Mount_Whitney_(LCC_20),_foreground,_leads_a_formation_of_foreign_naval_vessels_June_16,_2013,_in_the_Baltic_Sea_during_Baltic_Operations_(BALTOPS)_2013_130616-N-ZL691-144.jpg",
-        "altyazi": "Hürmüz Boğazı'nda seyreden askeri devriye gemisi"
-      },
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/2CR_UAS_PLT_Drone_Reconnaissance_Mission_%289300044%29.jpg/1280px-2CR_UAS_PLT_Drone_Reconnaissance_Mission_%289300044%29.jpg",
-        "yazar": "U.S. Army photo by Maj. Brian Sutherland",
-        "lisans": "Kamu malı",
-        "lisansUrl": "",
-        "sayfa": "https://commons.wikimedia.org/wiki/File:2CR_UAS_PLT_Drone_Reconnaissance_Mission_(9300044).jpg",
-        "altyazi": "Bölgede keşif uçuşu yapan insansız hava aracı"
-      }
-    ],
-    "gorselDeneme": "2026-11-01T13:10:01.062Z",
-    "kapak": {
-      "v": 3,
-      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/2CR_UAS_PLT_Drone_Reconnaissance_Mission_%289300044%29.jpg/1280px-2CR_UAS_PLT_Drone_Reconnaissance_Mission_%289300044%29.jpg",
-      "foto": true
-    },
-    "gorselKaynak": {
-      "yazar": "Quintin Soloviev",
-      "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Crude_Oil_Tanker_in_Port_Arthur,_Texas.jpg"
     }
   },
   {
