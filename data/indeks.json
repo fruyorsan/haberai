@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-10T00:36:18.880Z",
+  "updatedAt": "2026-11-10T00:47:29.822Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5835,
-  "aday": 5835,
-  "uygun": 3779,
-  "secilen": 3690,
+  "toplamHaber": 5836,
+  "aday": 5836,
+  "uygun": 3780,
+  "secilen": 3691,
   "red": {
     "özet gövdeyle aynı": 116,
     "editör notu özetle aynı": 8,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 140
+    "tekrar": 141
   },
   "ornekTekrarlar": [
     {
@@ -56,6 +56,10 @@
     {
       "title": "Rusya'nın Zaporijya saldırısında 24 kişi hayatını kaybetti",
       "twin": "Rusya'nın insani yardım merkezine hava saldırısı: 24 sivil yaşamını yitirdi"
+    },
+    {
+      "title": "Arap Koalisyonu, Suudi Arabistan'a atılan balistik füzeyi imha etti",
+      "twin": "Koalisyon, Suudi Arabistan üzerindeki balistik füzeyi imha etti"
     },
     {
       "title": "Florida'da özel jet yerleşim alanına çakıldı: 9 kişi yaşamını yitirdi",
@@ -108,10 +112,6 @@
     {
       "title": "Google Gemini 4 Argon, Android Bench’te Beşinci Sırada Yer Aldı",
       "twin": "Google, yapay zeka modeli Gemini 4 Carbon ile zirveye yerleşti"
-    },
-    {
-      "title": "Türkiye'nin yüksek teknoloji ihracatı 9 ayda 86,4 milyar dolara ulaştı",
-      "twin": "Türkiye'de güneş enerjisi kurulu gücü 9 ayda 3 bin MW arttı"
     }
   ],
   "days": {
@@ -920,7 +920,6 @@
       "6f1bb51c89ac6801",
       "d1f3819020b474d0",
       "3cce01fb0d2fa73a",
-      "90a7ac537084c083",
       "fb88c23d674f8ff4",
       "7dbc91886a6352bd",
       "ac7dd956cca3d6df",
@@ -1031,6 +1030,7 @@
       "4aecd74d1de18063",
       "42494757e22abeee",
       "aa12a5bff00db697",
+      "90a7ac537084c083",
       "813a55f6442d8251",
       "d4008aab3736a8f3",
       "1dc42f1829be5db8"
@@ -1211,6 +1211,7 @@
       "da96c13a52f55976",
       "2eeebfe27c6adcbf",
       "6c22ff3622d0e17f",
+      "1fe7513001df6d40",
       "37df61bc57ea636c",
       "22738b9a78f24308",
       "ed37d32e2c4addf9",
@@ -4192,6 +4193,7 @@
     "de71713f60fd2c4a",
     "2ea0bfe78e309769",
     "af8f256de98115d5",
+    "1fe7513001df6d40",
     "6a30c8d6d0d6c911",
     "7584627279c216f2",
     "b419b21c85254c75",
@@ -4282,7 +4284,6 @@
     "d1f3819020b474d0",
     "9c857b12486303d1",
     "3cce01fb0d2fa73a",
-    "90a7ac537084c083",
     "fb88c23d674f8ff4",
     "7dbc91886a6352bd",
     "d32d4c2e5084a4bc",
@@ -7492,6 +7493,7 @@
     "ccc6f00bfac1bd28",
     "862cc8b90fdfd822",
     "040647c51b8f39b7",
+    "90a7ac537084c083",
     "6e08e7bc56dc9d0f",
     "9356275ce74925d0",
     "e6a0c508d48456b3",
