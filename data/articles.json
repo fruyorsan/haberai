@@ -1307,7 +1307,14 @@
         "lisansUrl": "https://www.flickr.com/commons/usage/",
         "sayfa": "https://commons.wikimedia.org/wiki/File:Photo_showing_the_road_construction_in_Aksaray_in_1950%27s_(14225994801).jpg"
       }
-    ]
+    ],
+    "gorselAjan": {
+      "tarih": "2026-11-11T01:34:34.788Z",
+      "sonuc": "atlandi",
+      "neden": "yeterli görsel yok",
+      "secim": "mevcut",
+      "skor": 30
+    }
   },
   {
     "id": "c9046730163a6449",
@@ -1339,15 +1346,15 @@
     "gorselSorgu": "FDA warning label closeup",
     "source": "TRT Haber Son Dakika",
     "sourceUrl": "https://www.trthaber.com/haber/dunya/fda-glp-1-kilo-verme-ilaclari-icin-korluk-riski-uyarisinda-bulundu-962864.html",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Doctor_examines_patient_with_stethoscope.jpg/1280px-Doctor_examines_patient_with_stethoscope.jpg",
+    "image": "/kapak/c9046730163a6449.webp",
     "publishedAt": "2026-11-10T21:23:00.000Z",
     "generatedAt": "2026-11-10T21:30:02.807Z",
     "breaking": true,
     "gorselKaynak": {
-      "yazar": "Unknown photographer",
-      "lisans": "Kamu malı",
+      "yazar": "HaberinAi görsel ajanı",
+      "lisans": "AI üretimi",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Doctor_examines_patient_with_stethoscope.jpg"
+      "sayfa": "https://haberinai.site/yayin-ilkeleri"
     },
     "ekGorselDeneme": "2026-11-11T01:10:04.339Z",
     "gorselEk": [
@@ -1365,7 +1372,34 @@
         "lisansUrl": "",
         "sayfa": "https://commons.wikimedia.org/wiki/File:FDA_Drug_Shortages_Briefing_(3231)_(6923359805).jpg"
       }
-    ]
+    ],
+    "gorselAjan": {
+      "tarih": "2026-11-11T01:35:31.714Z",
+      "sonuc": "degisti",
+      "neden": "Görsel, haberin ana konusu olan göz sağlığı ve görme kaybı riskini doğrudan ve etkileyici bir yakın planla temsil ediyor. İdeal sahne betimlemesine oldukça yakı",
+      "secim": "ai",
+      "skor": 86
+    },
+    "kapak": {
+      "v": 3,
+      "kaynak": "ai:flux-1-schnell",
+      "foto": true,
+      "ai": true,
+      "ajan": {
+        "v": 1,
+        "secim": "ai",
+        "skor": 86,
+        "neden": "Görsel, haberin ana konusu olan göz sağlığı ve görme kaybı riskini doğrudan ve etkileyici bir yakın planla temsil ediyor. İdeal sahne betimlemesine oldukça yakı",
+        "brif": "Bir hastane odasında, göz doktoru hastasına gözlük takarken, gözlük camının önünde hafif bir gölge oluşan bir gözün yakın planı",
+        "sorgular": [
+          "eye doctor patient",
+          "glaucoma warning",
+          "optical health risk"
+        ],
+        "model": "flux-1-schnell",
+        "tarih": "2026-11-11T01:35:31.714Z"
+      }
+    }
   },
   {
     "id": "b8fd8495906a04b2",
@@ -1397,7 +1431,7 @@
     "gorselSorgu": "Van traffic accident scene",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/vanda-iki-otomobil-carpisti-iki-yarali-552817",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/EMERGENCY_VEHICLE_RUSHES_TO_SCENE_OF_A_MEMORIAL_DAY_AUTO_ACCIDENT_ON_%22THE_STRIP%22%2C_CROWDED_COMMERCIAL_AMUSEMENT_AREA..._-_NARA_-_551325.jpg/1280px-EMERGENCY_VEHICLE_RUSHES_TO_SCENE_OF_A_MEMORIAL_DAY_AUTO_ACCIDENT_ON_%22THE_STRIP%22%2C_CROWDED_COMMERCIAL_AMUSEMENT_AREA..._-_NARA_-_551325.jpg",
+    "image": "/kapak/b8fd8495906a04b2.webp",
     "publishedAt": "2026-11-10T21:18:00.000Z",
     "generatedAt": "2026-11-10T21:22:26.624Z",
     "gorselEk": [
@@ -1412,10 +1446,35 @@
     ],
     "breaking": true,
     "gorselKaynak": {
-      "yazar": "Bill Kuykendall",
-      "lisans": "Kamu malı",
-      "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:EMERGENCY_VEHICLE_RUSHES_TO_SCENE_OF_A_MEMORIAL_DAY_AUTO_ACCIDENT_ON_%22THE_STRIP%22,_CROWDED_COMMERCIAL_AMUSEMENT_AREA..._-_NARA_-_551325.jpg"
+      "yazar": "",
+      "lisans": "CC0",
+      "lisansUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sayfa": "https://www.rawpixel.com/image/5942008/free-public-domain-cc0-photo"
+    },
+    "gorselAjan": {
+      "tarih": "2026-11-11T01:36:09.515Z",
+      "sonuc": "degisti",
+      "neden": "Kaza yapmış otomobili doğrudan gösteriyor, haberin içeriğiyle tam uyumlu.",
+      "secim": "openverse",
+      "skor": 87
+    },
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg5MDUxNTctaW1hZ2Uta3d5bzRzZ3EuanBn.jpg",
+      "foto": true,
+      "ajan": {
+        "v": 1,
+        "secim": "openverse",
+        "skor": 87,
+        "neden": "Kaza yapmış otomobili doğrudan gösteriyor, haberin içeriğiyle tam uyumlu.",
+        "brif": "Sabah saatlerinde dar bir şehir yolunda, ön kısımları ciddi şekilde hasar görmüş iki otomobilin (biri sedan, biri SUV) çarpıştığı an; araçların etrafında trafik konisi ve polis şeridi, arka planda bulanık şehir silüeti.",
+        "sorgular": [
+          "car accident crash",
+          "damaged cars collision",
+          "front end car damage"
+        ],
+        "tarih": "2026-11-11T01:36:09.515Z"
+      }
     }
   },
   {
