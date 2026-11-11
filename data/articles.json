@@ -1,5 +1,52 @@
 [
   {
+    "id": "ea78098a3bf4c585",
+    "title": "Yandex, Veri Merkezindeki Saldırılar Nedeniyle 100 Petabayt Veriyi Kaybetti",
+    "slug": "yandex-veri-merkezindeki-saldirilar-nedeniyle-100-petabayt-veriyi-kaybetti",
+    "summary": "Yandex, Rusya’daki veri merkezlerine yönelik saldırılar sonucu kritik ekipman hasarı yaşadı ve yaklaşık 100 petabayt veri kalıcı olarak silindi. Yedekleme yapan müşteriler etkilenmezken, yedekleme yapmayanların verileri geri getirilemedi.",
+    "keyPoints": [
+      "Yandex'in veri merkezinde kritik ekipman hasarı, 100 PB veri kaybı",
+      "Yedekleme olmayan müşterilerin verileri kalıcı olarak silindi",
+      "Yandex, yeni sanal makinelerde yedeklemeyi varsayılan hâle getirecek"
+    ],
+    "body": [
+      "Rusya’nın bazı veri merkezlerine yöneltilen siber saldırılar, Yandex’in altyapısında beklenmedik bir ekipman arızasına yol açtı. Şirket, bu saldırıların süper bilgisayarları etkilemediğini, ancak diğer kritik donanımlarda ciddi hasar oluştuğunu belirtti. Hasarın boyutu, kaybedilen verilerin 100 petabayt civarında olabileceği tahminleriyle ölçülüyor.",
+      "Veri kaybının en büyük nedeni, birçok müşterinin yedekleme özelliğini aktif etmeyi unutmalarıydı. Yedekleme yapan kullanıcıların verileri güvende kalırken, yedekleme yapmayanların on milyonlarca dosyası kalıcı olarak kayboldu. Meduza’nın analizine göre, bu dosyalar yaklaşık 100 000 terabayt veri tutuyor.",
+      "Yandex, bu durumu takiben bulut hizmetlerinde güvenliği artırma planını açıkladı. Yeni politikada, yeni oluşturulan sanal makinelerde yedekleme otomatik olarak etkinleştirilecek ve kullanıcıların manuel olarak ayar yapması gerekmeyecek. Böylece benzer veri kayıplarının önüne geçilmesi hedefleniyor.",
+      "Ayrıca şirket, veri merkezlerini tek bir bölgeye bağımlı olmaktan çıkarmak için altyapısını coğrafi olarak dağıtma çalışmasını hızlandırıyor. Rusya’nın farklı bölgelerinde bağımsız lokasyonlar kurularak, bir merkezde yaşanacak kesintinin diğer hizmetleri etkilemesi engellenecek. Bu yeni lokasyonların sayısının önümüzdeki dönemde artırılması planlanıyor.",
+      "Bu gelişmeler, Rusya’daki diğer teknoloji firmalarını da veri güvenliği ve iş sürekliliği konularında yeniden düşünmeye sevk etti. Özellikle aynı altyapıyı paylaşan veri merkezlerinin riskleri göz önünde bulundurularak, şirketler artık fiziksel yedekleme lokasyonlarına da yatırım yapıyor."
+    ],
+    "comment": "Yandex’in yedekleme eksikliği, 100 PB veri kaybıyla somut bir risk ortaya koydu. Otomatik yedekleme özelliğinin zorunlu hâle getirilmesi, müşterilerin veri kaybı olasılığını büyük ölçüde azaltacak. Bu adım, bulut hizmeti kullanan işletmeler ve bireysel kullanıcılar için kritik bir güvenlik iyileştirmesi. Diğer Rus firmaları da benzer yedekleme politikalarını benimseyerek rekabet avantajı elde edebilir.",
+    "editorNote": "Yandex, 100 PB kayıp veriyi önlemek için yedeklemeyi varsayılan hâle getiriyor; veri güvenliği politikası artık zorunlu.",
+    "tags": [
+      "Yandex",
+      "veri merkezi",
+      "bulut hizmetleri",
+      "veri kaybı",
+      "Rusya"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "data center server room",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/yandex-saldirilar-yuzunden-kullanici-verilerini-kaybetti--212743",
+    "image": "https://www.donanimhaber.com/images/images/haber/212743/src/yandex-saldirilar-yuzunden-kullanici-verilerini-kaybetti212743_0.jpg",
+    "images": [
+      "https://www.donanimhaber.com/images/images/haber/212743/1200x675yandex-saldirilar-yuzunden-kullanici-verilerini-kaybetti.jpg"
+    ],
+    "publishedAt": "2026-11-11T07:19:57.000Z",
+    "generatedAt": "2026-11-11T07:22:12.642Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Data_center_infrastructure_in_the_United_States.jpg/1280px-Data_center_infrastructure_in_the_United_States.jpg",
+        "yazar": "DOE / National Renewable Energy Laboratory (NREL)",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Data_center_infrastructure_in_the_United_States.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "00a72a3b8aa23bcf",
     "title": "BIST 100, ABD enflasyonuna rağmen güne 0,35 artışla başladı",
     "slug": "bist-100-abd-enflasyonuna-ragmen-yukselisle-basladi",
