@@ -1507,7 +1507,7 @@
     "gorselSorgu": "Amazon website sale page",
     "source": "DonanımHaber",
     "sourceUrl": "https://www.donanimhaber.com/amazon-da-11-11-indirimleri-basladi-2026-11-kasim-a-ozel-firsat--212741",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Amazon_Pl_-_DPLA_-_9560af296a2732e2acba35b4525f5adb_%28page_1%29.jpg/1280px-Amazon_Pl_-_DPLA_-_9560af296a2732e2acba35b4525f5adb_%28page_1%29.jpg",
+    "image": "/kapak/816cae9fd731d754.webp",
     "publishedAt": "2026-11-10T21:09:43.000Z",
     "generatedAt": "2026-11-10T21:12:34.171Z",
     "gorselEk": [
@@ -1522,10 +1522,36 @@
     ],
     "breaking": true,
     "gorselKaynak": {
-      "yazar": "This file was contributed to Wikimedia Commons by Columbus Metropol…",
-      "lisans": "No restrictions",
-      "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Amazon_Pl_-_DPLA_-_9560af296a2732e2acba35b4525f5adb_(page_1).jpg"
+      "yazar": "",
+      "lisans": "CC0",
+      "lisansUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sayfa": "https://www.rawpixel.com/image/6042681/photo-image-background-public-domain-banner"
+    },
+    "gorselAjan": {
+      "tarih": "2026-11-11T01:48:43.457Z",
+      "sonuc": "degisti",
+      "neden": "İndirim ve kampanya temasını doğrudan yansıtıyor, görsel olarak haberin içeriğiyle en uyumlu aday.",
+      "secim": "openverse",
+      "skor": 67
+    },
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmw0NzAyMDMwNzQ4NC1pbWFnZS1reWJlaWptNi1remh2M3VraC5qcGc.jpg",
+      "foto": true,
+      "ajan": {
+        "v": 1,
+        "secim": "openverse",
+        "skor": 67,
+        "neden": "İndirim ve kampanya temasını doğrudan yansıtıyor, görsel olarak haberin içeriğiyle en uyumlu aday.",
+        "brif": "A young woman in a cozy living room, sitting on a sofa with a laptop open on her lap. She holds a shopping bag in one hand, and a price tag with a large “50% OFF” sticker is visible on the bag. The woman’s face shows excitement as she looks at the laptop screen, implying she is browsing Amazon’s 11.11 sale page.",
+        "sorgular": [
+          "online shopping sale",
+          "woman shopping online",
+          "discount price tag",
+          "shopping bag with price tag"
+        ],
+        "tarih": "2026-11-11T01:48:43.457Z"
+      }
     }
   },
   {
@@ -1559,7 +1585,7 @@
     "gorselSorgu": "truck overturned road accident",
     "source": "Haber Global",
     "sourceUrl": "https://haberglobal.com/gundem/kastamonuda-sarampole-devrilen-kamyonetin-surucusu-hayatini-kaybetti-552816",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Isuzu_truck_overturned.jpg/1280px-Isuzu_truck_overturned.jpg",
+    "image": "/kapak/ac3542002103ffc0.webp",
     "publishedAt": "2026-11-10T20:49:00.000Z",
     "generatedAt": "2026-11-10T21:06:51.198Z",
     "gorselEk": [
@@ -1574,10 +1600,38 @@
     ],
     "breaking": true,
     "gorselKaynak": {
-      "yazar": "Love Krittaya",
-      "lisans": "CC0",
-      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Isuzu_truck_overturned.jpg"
+      "yazar": "HaberinAi görsel ajanı",
+      "lisans": "AI üretimi",
+      "lisansUrl": "",
+      "sayfa": "https://haberinai.site/yayin-ilkeleri"
+    },
+    "gorselAjan": {
+      "tarih": "2026-11-11T01:49:14.064Z",
+      "sonuc": "degisti",
+      "neden": "Haberin içeriğiyle birebir örtüşen, kaza anını ve atmosferini profesyonel bir kompozisyonla yansıtan, kaçınılması gereken unsurları barındırmayan ideal bir görs",
+      "secim": "ai",
+      "skor": 96
+    },
+    "kapak": {
+      "v": 3,
+      "kaynak": "ai:flux-1-schnell",
+      "foto": true,
+      "ai": true,
+      "ajan": {
+        "v": 1,
+        "secim": "ai",
+        "skor": 96,
+        "neden": "Haberin içeriğiyle birebir örtüşen, kaza anını ve atmosferini profesyonel bir kompozisyonla yansıtan, kaçınılması gereken unsurları barındırmayan ideal bir görs",
+        "brif": "Dar ve virajlı bir yol kenarında, çamurlu zemine devrilmiş ve gövdesi kırılmış gri bir kamyonet; aracın yan tarafı toprağa gömülmüş, kapısı hasar görmüş durumda. Aracın hemen yanında, kırmızı üniformalı bir itfaiye eri, kaza bölgesini kontrol ederken durmuş, başı hafifçe eğik ve ciddi bir ifadeyle araca bakıyor. Arka planda bulanıklaşmış, yeşil bitki örtüsüyle kaplı dik bir şarampol ve sisli bir s",
+        "sorgular": [
+          "overturned truck accident",
+          "firefighter at crash site",
+          "vehicle rollover muddy road",
+          "emergency rescue narrow road"
+        ],
+        "model": "flux-1-schnell",
+        "tarih": "2026-11-11T01:49:14.064Z"
+      }
     }
   },
   {
@@ -1610,17 +1664,43 @@
     "gorselSorgu": "Sergey Lavrov meeting Abu Dhabi",
     "source": "AA Güncel",
     "sourceUrl": "https://www.aa.com.tr/tr/dunya/rusya-avrupanin-ukraynada-ateskes-talebini-kabul-etmeyecegiz/4119150",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Sergey_Lavrov_and_Aslan_Bzhania_%28220325%29.jpg/1280px-Sergey_Lavrov_and_Aslan_Bzhania_%28220325%29.jpg",
+    "image": "/kapak/58583b1ed938b317.webp",
     "publishedAt": "2026-11-10T15:01:30.000Z",
     "generatedAt": "2026-11-10T15:04:53.863Z",
     "breaking": true,
     "gorselKaynak": {
-      "yazar": "Press Service of the President of the Republic of Abkhazia",
+      "yazar": "U.S. Department of State from United States",
       "lisans": "Kamu malı",
       "lisansUrl": "",
-      "sayfa": "https://commons.wikimedia.org/wiki/File:Sergey_Lavrov_and_Aslan_Bzhania_(220325).jpg"
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Secretary_Kerry,_Russian_Foreign_Minister_Lavrov,_UN_Special_Envoy_Brahimi_Address_Press_(9733308995).jpg"
     },
-    "ekGorselDeneme": "2026-11-10T20:23:51.908Z"
+    "ekGorselDeneme": "2026-11-10T20:23:51.908Z",
+    "gorselAjan": {
+      "tarih": "2026-11-11T01:50:21.710Z",
+      "sonuc": "degisti",
+      "neden": "ideal sahne, alaka, dikkat, kalite, uygun",
+      "secim": "commons",
+      "skor": 100
+    },
+    "kapak": {
+      "v": 3,
+      "kaynak": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Secretary_Kerry%2C_Russian_Foreign_Minister_Lavrov%2C_UN_Special_Envoy_Brahimi_Address_Press_%289733308995%29.jpg/1920px-Secretary_Kerry%2C_Russian_Foreign_Minister_Lavrov%2C_UN_Special_Envoy_Brahimi_Address_Press_%289733308995%29.jpg",
+      "foto": true,
+      "ajan": {
+        "v": 1,
+        "secim": "commons",
+        "skor": 100,
+        "neden": "ideal sahne, alaka, dikkat, kalite, uygun",
+        "brif": "Rus Dışişleri Bakanı Sergey Lavrov, bir basın toplantısı masasında mikrofonların önünde ciddi bir ifadeyle konuşuyor; arka planda bulanık bir şekilde KGAÖ bayrağı ve toplantı salonunun detayları görülüyor.",
+        "sorgular": [
+          "Sergey Lavrov press conference",
+          "Russian foreign minister speaking",
+          "Lavrov podium microphone",
+          "diplomatic press meeting"
+        ],
+        "tarih": "2026-11-11T01:50:21.710Z"
+      }
+    }
   },
   {
     "id": "2727fca298f17a83",
