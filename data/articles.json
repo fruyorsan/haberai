@@ -1,5 +1,42 @@
 [
   {
+    "id": "d74593b342633613",
+    "title": "Anthropic, Üç Yeni Claude Araçla Excel’i Zorla",
+    "slug": "anthropic-uc-yeni-claude-aracla-excel-i-zorla",
+    "summary": "Anthropic, proje planları, elektronik tablolar ve görsel raporlar için Claude Whiteboards, Sheets ve Data adlı üç araç tanıttı. Araçlar, planlamadan tabloya ve rapora tek bir akışta geçişi mümkün kılıyor. Kullanıcılar bu sayede farklı uygulamalar arasında veri taşıma ihtiyacını ortadan kaldırıyor.",
+    "keyPoints": [
+      "Claude Whiteboards, proje fikirlerini dijital beyaz tahta üzerinde planlamayı sağlıyor",
+      "Claude Sheets, proje planlarını elektronik tabloya dönüştürerek izlemeyi kolaylaştırıyor",
+      "Claude Data, şirket verilerini grafiklerle destekli raporlara çeviriyor"
+    ],
+    "body": [
+      "Anthropic, yapay zeka alanında yeni adım atarak, proje planlaması, elektronik tablo oluşturma ve veriyi görselleştirme işlevlerini bir araya getiren üç yeni araç tanıttı. Bu araçlar, kullanıcıların proje fikirlerini Claude Whiteboards ile dijital bir beyaz tahta ortamında şekillendirmesine, ardından bu planları Claude Sheets ile otomatik olarak tablolaştırmasına ve son olarak Claude Data ile veriyi grafiksel raporlara dönüştürmesine olanak tanıyor.",
+      "Whiteboards, bir proje için söylenen adımları ve yapılacak işleri tek bir dijital panoda toplar. Kullanıcılar, planlarını sözlü olarak Claude’a aktardıklarında, model bu bilgileri düzenlenebilir bir beyaz tahta formatına dönüştürür. Ekip üyeleri, aynı panoda gerçek zamanlı olarak değişiklik yapabilir ve iş akışını ortak bir platformda takip edebilir.",
+      "Sheets ise, Whiteboards’da oluşturulan planları otomatik olarak elektronik tablo formatına geçirir. Böylece proje sürecindeki kilometre taşları, görevler ve sorumluluklar tek bir tabloda görsel olarak takip edilebilir. Bu akış, özellikle sürekli tablo hazırlayan ekipler için zaman kazandırıcı bir özellik sunuyor.",
+      "Data aracı, şirket verilerini analiz ederek görsel raporlar oluşturur. Kullanıcılar, veri setleri hakkında sorular sorabilir ve yanıtları grafiklerle desteklenmiş panolarda görebilir. Ayrıca, model açıklayıcı videolar ve veri ilişkilerini anlatan içerikler de üretebilir.",
+      "Anthropic, bu araçların aynı proje bilgilerinin farklı formatlarda kullanılabilmesini sağlayarak, bilgi aktarımını büyük ölçüde azaltacağını belirtiyor. Özellikle küçük işletme sahipleri için müşteri takibi, proje planlaması ve satış verilerini tek bir ekosistemde görmek mümkün olacak. Ancak, modelin karmaşık hesaplamalar ve büyük veri setlerinde nasıl performans göstereceği henüz net değil.",
+      "Bu yeni araç seti, mevcut ofis uygulamalarının yerini tamamen almayabilir, fakat yapay zeka destekli süreçlerle günlük işleri hızlandırmak isteyenler için cazip bir seçenek sunuyor. Anthropic, bu ürünleri bugün itibariyle beta sürümü olarak kullanıma açtı ve ilerleyen dönemlerde daha fazla entegrasyon planlıyor.",
+      "Gelecekte Claude Meetings adlı toplantı aracı da duyurulacak, ancak henüz kullanım tarihi açıklanmadı. Bu ek özellik, toplantı sırasında not alıp belgeleri güncelleme yeteneği ile iş akışını daha da entegre etmeyi hedefliyor."
+    ],
+    "comment": "Yeni araç setinin proje planlamasından tabloya, son olarak da rapora kadar tek bir akışta ilerlemesi, küçük işletmeler için zaman tasarrufu sağlayacak bir adım. Anthropic’in Whiteboards, Sheets ve Data’nın birlikte çalışabilmesi, veri taşıma ihtiyacını ortadan kaldırarak iş süreçlerini basitleştiriyor. Ancak, büyük veri setlerinde ve karmaşık hesaplamalarda performansının nasıl olacağı henüz test edilmediği için, bu araçların geniş çapta benimsenmesi zaman alabilir.",
+    "editorNote": "Claude ile proje planlamasından tabloya, rapora kadar tek bir akış: küçük işletmeler için zaman kazanımı",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "Whiteboards",
+      "Sheets",
+      "Data"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "Claude data visualization dashboard",
+    "source": "Tamindir",
+    "sourceUrl": "https://www.tamindir.com/haber/anthropic-yeni-araclar-duyurdu_112722/",
+    "image": "https://img.tamindir.com/2026/11/470608/anthropic-yeni-araclar-duyurdu.jpg",
+    "publishedAt": "2026-11-11T14:45:00.000Z",
+    "generatedAt": "2026-11-11T15:07:19.763Z",
+    "breaking": true
+  },
+  {
     "id": "071e4e6e6baa1f77",
     "title": "Tesla Semi Yangınında 189 Bin Litre Su Kullanıldı",
     "slug": "tesla-semi-yangininda-189-bin-litre-su-kullanildi",
@@ -7734,7 +7771,6 @@
     "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Jet_Propulsion_Laboratory_Plasma_Flow_Research_Lab.jpg/1280px-Jet_Propulsion_Laboratory_Plasma_Flow_Research_Lab.jpg",
     "publishedAt": "2026-11-09T14:54:08.000Z",
     "generatedAt": "2026-11-09T15:01:49.723Z",
-    "breaking": true,
     "gorselAjan": {
       "tarih": "2026-11-10T03:16:29.070Z",
       "sonuc": "degisti",
@@ -7812,7 +7848,6 @@
         "altyazi": "Kurtarma ekipleri kıyı şeridinde arama yapıyor"
       }
     ],
-    "breaking": true,
     "gorselAjan": {
       "tarih": "2026-11-10T02:54:02.501Z",
       "sonuc": "atlandi",
