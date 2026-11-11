@@ -1,5 +1,57 @@
 [
   {
+    "id": "e2fcaaa14a17935f",
+    "title": "AMD Zen 6: Tek işlemcide 256 çekirdek ve %27 hızlı",
+    "slug": "amd-zen-6-256-cekirdekli-islemci-duyurusu",
+    "summary": "AMD, Zen 6 mimarisini duyurdu ve tek işlemcide 256 çekirdeğe kadar destek veren EPYC Venice serisini tanıttı. Yeni nesil, sunucu ve yapay zeka iş yüklerinde ortalamada yüzde 27 daha yüksek performans vadediyor.",
+    "keyPoints": [
+      "Tek işlemci başına 256 çekirdek kapasitesine ulaşıldı",
+      "Zen 6c mimarisi IPC'de yüzde 27 artış sağlıyor",
+      "SP7 platformu 1 GB L3 önbellek sunuyor"
+    ],
+    "body": [
+      "AMD, veri merkezleri ve sunucu iş yükleri için geliştirdiği altıncı nesil EPYC 9006 Venice işlemcilerinin temelini oluşturan Zen 6 ve Zen 6c mimarilerini resmen tanıttı. Şirketin yeni nesil çipleri, standart Zen 6 tasarımının yüksek frekans odaklı yaklaşımıyla, Zen 6c'nin çekirdek yoğunluğunu artırmaya yönelik stratejisini bir araya getiriyor. Her iki mimari de aynı komut setini paylaşırken, çekirdek başına iki iş parçacığı çalıştırma kapasitesi korunuyor.",
+      "Teknik açıdan en dikkat çeken gelişme, çekirdek kümelerini oluşturan CCD birimlerinde kapasitenin artırılması olarak öne çıkıyor. Daha kompakt Zen 6c mimarisinde ise bu sayılar daha da büyüyerek CCD başına 32 çekirdek ve 128 MB L3 önbellek kapasitesine ulaşılıyor. Böylece her çekirdeğin 4 MB L3 önbellek kullanımı korunurken, toplam önbellek kapasitesi de önemli ölçüde genişletildi.",
+      "Performans verileri, özellikle yoğun işlem gerektiren senaryolarda iyileşme gösteriyor. AMD'nin testlerine göre Zen 6c, önceki nesil Zen 5 mimarisine kıyasla belirli sunucu iş yüklerinde ortalama yüzde 27 daha yüksek IPC (Instruction Per Cycle) değeri sunuyor. Bu artış, kurumsal ve bulut bilişim görevlerinde yüzde 20, yapay zeka işlemlerinde ise yüzde 31 oranında performans kazancına karşılık geliyor. Şirket, bu oranın tek çekirdek hızlanmasından ziyade, daha fazla çekirdeğin verimli kullanımıyla elde edildiğini vurguluyor.",
+      "Donanım altyapısında da önemli yenilikler bulunuyor. Ayrıca AVX-512 FP16 desteği ile yarı hassasiyetli kayan nokta işlemleri tam kapasiteyle gerçekleştirilebiliyor. Yapay zeka işlemlerinde kullanılan VNNI-INT8 birimleri geliştirilirken, INT8 işlem hatlarının sayısı ikiden dörde çıkarılarak veri merkezi verimliliği artırıldı.",
+      "Venice işlemcileri SP7 ve SP8 olmak üzere iki farklı platformda sunulacak. Üst seviye SP7 platformu, 8 CCD'ye kadar destek sağlayarak Zen 6c tabanlı modellerde 256 çekirdek ve 1 GB L3 önbellek kapasitesine izin veriyor. Bu platform 600 W'a kadar güç tüketimini desteklerken, daha kompakt SP8 platformu 8 bellek kanalı ve 400 W güç sınırıyla sınırlı kalıyor. Her iki platform da DDR5 MRDIMM Gen2, LPDDR5X SOCAMM2 ve CXL 3.1 gibi güncel bellek ve bağlantı standartlarını destekliyor.",
+      "Yeni mimarinin ilk kullanıcıları, büyük ölçekli veri merkezleri ve bulut bilişim sağlayıcıları olacak. Yüksek çekirdek sayısı sayesinde aynı sunucu şasisinde daha fazla iş yükü işlenebilecek, bu da operasyonel maliyetleri düşürmeyi hedefliyor. Standart Zen 6 modelleri 5,3 GHz'e kadar çıkabilen frekanslarıyla, yüksek hız gerektiren teklu işlemler için alternatif sunarken, Zen 6c 4,1 GHz üst limitinde maksimum yoğunluk sağlıyor.",
+      "AMD'nin Zen 6 lansmanı, rakipleriyle olan rekabette donanım tarafında belirgin bir avantaj arayışının göstergesi. Özellikle yapay zeka modellerinin eğitim ve çöpürme (inference) süreçlerinde artan işlemci talebi, bu tür yüksek çekirdekli çözümleri stratejik bir öncelik haline getiriyor. Şirketin yeni nesil EPYC serisi, veri merkezi mimarilerinin geleceğinde kritik bir rol üstlenecek gibi görünüyor."
+    ],
+    "comment": "AMD'nin 256 çekirdeğe ulaşan bu agresif tasarım, fiyat/performans dengesini küçük ve orta ölçekli işletmelerin aleyhine bozabilir, çünkü 600 W güç tüketimi gereken SP7 platformları soğutma altyapısı için ciddi bütçe gerektiriyor. Zen 6c'nin yüzde 27 IPC artışı, önceki nesil Zen 5 ile kıyaslandığında sunucu başına düşen maliyeti düşürme potansiyeli taşıyor; ancak bu verimlilik sadece CXL 3.1 ve DDR5 MRDIMM destekli yeni nesil anakartlarla tam olarak sağlanabiliyor. Büyük ölçekli veri merkezleri bu yoğunluktan fayda sağlarken, kısıtlı güç bütçesine sahip organizasyonlar SP8 platformuna yönelmek zorunda kalabilir. Bu durum, donanım yatırımlarında 'çekirdek sayısı'ndan ziyade 'watt başına performans' metriklerinin belirleyici hale geleceğine işaret ediyor.",
+    "editorNote": "Tek işlemcide 256 çekirdek, veri merkezi yoğunluğunu yeni bir eşiğe taşıyor. 600 W güç tüketimi, soğutma altyapısı olmayan tesisler için caydırıcı olabilir.",
+    "tags": [
+      "AMD",
+      "Zen 6",
+      "EPYC Venice",
+      "Sunucu İşlemci",
+      "Yapay Zeka"
+    ],
+    "category": "Donanım",
+    "gorselSorgu": "AMD EPYC Venice server chip",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/amd-zen-6-mimarisini-tanitti-tek-islemcide-256-cekirdek--212744",
+    "image": "https://www.donanimhaber.com/images/images/haber/212744/src/amd-zen-6-mimarisini-tanitti-tek-islemcide-256-cekirdek212744_0.jpg",
+    "images": [
+      "https://www.donanimhaber.com/images/images/haber/212744/1200x675amd-zen-6-mimarisini-tanitti-tek-islemcide-256-cekirdek.jpg",
+      "https://www.donanimhaber.com/images/images/haber/212744/src/amd-zen-6-mimarisini-tanitti-tek-islemcide-256-cekirdek212744_1.jpg",
+      "https://www.donanimhaber.com/images/images/haber/212744/src/amd-zen-6-mimarisini-tanitti-tek-islemcide-256-cekirdek212744_2.jpg"
+    ],
+    "publishedAt": "2026-11-11T07:40:00.000Z",
+    "generatedAt": "2026-11-11T07:58:43.441Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Technician_with_laptop_working_on_server_rack_at_NERSC.jpg/1280px-Technician_with_laptop_working_on_server_rack_at_NERSC.jpg",
+        "yazar": "Derrick Coetzee from Berkeley, CA, USA",
+        "lisans": "CC0",
+        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Technician_with_laptop_working_on_server_rack_at_NERSC.jpg",
+        "altyazi": "Yeni nesil EPYC işlemcilerle donatılmış sunucu rafı"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "f6c38c6c6cfdaa95",
     "title": "Meta, Instagram'da metinden efekt oluşturma aracı sundu",
     "slug": "meta-instagram-metinden-efekt-olusturma-araci",
