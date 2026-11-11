@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-11T00:41:14.364Z",
+  "updatedAt": "2026-11-11T00:54:29.639Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 5893,
-  "aday": 5893,
-  "uygun": 3837,
-  "secilen": 3747,
+  "toplamHaber": 5894,
+  "aday": 5894,
+  "uygun": 3838,
+  "secilen": 3748,
   "red": {
     "özet gövdeyle aynı": 116,
     "editör notu özetle aynı": 8,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 144
+    "tekrar": 145
   },
   "ornekTekrarlar": [
     {
@@ -74,6 +74,10 @@
       "twin": "İsrail ordusunun El Halil operasyonu 3 bin 300 kişiyi evinden etti"
     },
     {
+      "title": "ABD Meclisi, Savaş Bakanı Hegseth'in azlini reddetti",
+      "twin": "ABD Temsilciler Meclisi, Savunma Bakanı Hegseth'in azlini reddetti"
+    },
+    {
       "title": "Batı Şeria'da İsrail baskınları: 2 kişi yaralandı, evler arandı",
       "twin": "Batı Şeria'da 2 Filistinli yaralandı ve 3 yeni kaçak yerleşim kuruldu"
     },
@@ -108,10 +112,6 @@
     {
       "title": "İsmail Kartal, Fenerbahçe'deki görevinden istifa etti",
       "twin": "Fenerbahçe Yönetimi İsmail Kartal'ın İstifasını Onayladı"
-    },
-    {
-      "title": "Sony Yeni LYTIA 720 Sensörü 50 MP ile Gece Çekimlerini Yarıyor",
-      "twin": "Sony mobil kameralar için 50 MP LYTIA 720 sensörünü duyurdu"
     }
   ],
   "days": {
@@ -1506,27 +1506,28 @@
       "516610ee465c62f1"
     ],
     "2026-11-11": [
+      "fb5573ea532cc266",
       "5141fa0635e397bc",
       "b1459428b0b33394",
       "24cda5e192f7b3ce",
       "d68f526af6ae195e",
       "3836bc0429e74e5b",
+      "cb6b785ae4ec2c2b",
       "d5632bfed0511ddb",
-      "bd2cbc5995460c33",
+      "c8155dccf0da6a44",
       "9cb814e791d5a1d5",
       "c58c6f28f4b9c343",
       "ac3542002103ffc0",
       "83048dff04f9303f",
       "eb5b745e91ae32e4",
-      "cb6b785ae4ec2c2b",
       "0539e301d69719fd",
-      "c8155dccf0da6a44",
       "7dfacbb48ab89f33",
       "ddbe9750fd3c9ea6",
       "b8fd8495906a04b2",
       "816cae9fd731d754",
       "c9046730163a6449",
-      "3934a460f8a73501"
+      "3934a460f8a73501",
+      "bd2cbc5995460c33"
     ],
     "2026-10-22": [
       "686d3f11a6cecddc",
@@ -3995,6 +3996,7 @@
     "54c7059460eb1359",
     "dc9d560feae555d4",
     "2128e07e0d93148f",
+    "fb5573ea532cc266",
     "3bdda1d5a8bf47cf",
     "36e58557591277d9",
     "0012e3ecc09cd69d",
@@ -4455,6 +4457,7 @@
     "d32d4c2e5084a4bc",
     "ac7dd956cca3d6df",
     "9b2fe4b31264ce5e",
+    "cb6b785ae4ec2c2b",
     "f156ce1d02cc345c",
     "148728b83e4e7d27",
     "57875d22505da81b",
@@ -4522,7 +4525,6 @@
     "9ce47ed6fb72cf2e",
     "71be2642dfb152d0",
     "d1f012ae285f6815",
-    "bd2cbc5995460c33",
     "d71ccf3c839f709e",
     "fa3c419da9c4ed3a",
     "2e9c5eb8189a5838",
@@ -4571,6 +4573,7 @@
     "16c69a300219fb42",
     "739ec793c0dee331",
     "e84d591f4045fc9a",
+    "c8155dccf0da6a44",
     "a4127d1e0f0a9669",
     "e4689cb8019010a8",
     "9cb814e791d5a1d5",
@@ -4742,7 +4745,6 @@
     "025d7a5b5ffb1559",
     "314031c90ffc4308",
     "82756e4f3114430a",
-    "cb6b785ae4ec2c2b",
     "b98fb12a9c592137",
     "eb84eec15fef6fbc",
     "2953e94ad377c457",
@@ -4923,7 +4925,6 @@
     "fc0396373934f3bc",
     "ae3c1beedd89dfd9",
     "fa1e968fc59794a5",
-    "c8155dccf0da6a44",
     "80bca03709ed9a89",
     "81bc7b0e59c46bbf",
     "45f0acbe8bc9e979",
@@ -6855,6 +6856,7 @@
     "2e3f947035c0eb1a",
     "3971ede1d51d9a2e",
     "55a9b07cd6af7228",
+    "3934a460f8a73501",
     "26460e436d4d030c",
     "f0535c5288aabc48",
     "0ec0d86e121adf56",
@@ -7400,7 +7402,6 @@
     "e6b7a243188c1ab8",
     "2c5eafe9728322bc",
     "7fd7fce5dbe3af19",
-    "3934a460f8a73501",
     "c75360ac724bd2d9",
     "f479be57f32ccaa6",
     "78bfac206b1b8db5",
@@ -7605,6 +7606,7 @@
     "862cc8b90fdfd822",
     "040647c51b8f39b7",
     "09ddb4dada9e7e9c",
+    "bd2cbc5995460c33",
     "e7ba8e07cc342c4c",
     "35dcfea7fdabe3c1",
     "d7874fed1eea9307",
