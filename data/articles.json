@@ -1,5 +1,43 @@
 [
   {
+    "id": "d5c2960fa2b5bdd1",
+    "title": "Google Gemini CarPlay’e Entegre Edildi, Sesli Asistan Sürüşte Çalışıyor",
+    "slug": "google-gemini-carplay-e-entegre-edildi-sesli-asistan-suruste-calisti",
+    "summary": "Google, Gemini AI'yı Apple CarPlay platformuna taşıyarak iPhone kullanıcılarının araç içinde eller serbest konuşma, mail okuma ve takvim kontrolü yapabilmesini sağladı. Entegrasyon, iOS 26.4 ile gelen sesli yapay zeka desteği üzerine kurulu ve Gemini Live uygulamasının önceden kurulmuş olması şart.",
+    "keyPoints": [
+      "Gemini, Apple CarPlay’de sesli asistan olarak kullanılacak",
+      "iOS 26.4 sürümü, sesli yapay zeka uygulamaları için destek ekledi",
+      "Kullanıcıların iPhone’da Gemini Live’a en az bir kez giriş yapması gerekiyor"
+    ],
+    "body": [
+      "Google, Gemini yapay zekâ modelini Apple CarPlay ekosistemine dahil etti. Bu sayede iPhone sahibi sürücüler, araç ön panelinden mikrofon aracılığıyla doğrudan sohbet başlatıp, e‑postalarını özetletebilir ve takvimlerini yönetebilir. Entegrasyon, Gemini Live uygulamasının aktif olduğu iPhone’larda otomatik senkronizasyonla çalışıyor.",
+      "CarPlay’deki yeni Gemini arayüzü, bağımsız bir yapay zeka katmanı olarak tasarlandı; Siri’nin yerini almıyor ancak sesli komutları destekleyerek sürüş güvenliğini artırıyor. Uygulama, toplantı hazırlığı, fikir üretme ve yol üzerindeki ilgi noktaları hakkında sorular sorabilme yeteneği sunuyor. Ayrıca mola yerleri önerileri de sağlanıyor.",
+      "Google, Gemini’nin üretkenlik hizmetleriyle Gmail mesajlarını özetleyebildiğini ve Google Takvim randevularını kontrol edebildiğini vurguladı. Bu işlevlerin tam erişimi, kullanıcının hesabına bağlanma durumuna ve hizmetlerin bölgesel kullanılabilirliğine bağlı olarak değişiyor. Araç içinde notlara ve yanıtlara tekrar göz atmak, aracın park edilmesinin ardından da mümkün olacak.",
+      "Bağlantı sağlandığında araç panelindeki Gemini simgesi seçilerek sesli sohbet başlatılabiliyor. Google, desteklenen tüm dillerde hizmet verileceğini belirtiyor.",
+      "iOS 26.4 sürümüyle CarPlay, ses tabanlı yapay zeka uygulamalarına resmi destek kazandı. Halihazırda ChatGPT, Claude, Grok ve Copilot gibi rakip modeller de CarPlay’de bulunuyor. iOS 27 ile Siri AI entegrasyonu da eklendi, ancak Gemini yalnızca Google Haritalar içinde değil, bağımsız bir CarPlay uygulaması olarak da kullanılabilecek."
+    ],
+    "comment": "Google Gemini’nin CarPlay’e eklenmesi, sürüş sırasında eller serbest etkileşimi mümkün kılıyor ve güvenliği artırıyor. Özellikle Gemini Live uygulamasına önceden giriş yapılması zorunluluğu, kullanıcıların hazır olmalarını şart koşuyor. Bu adım, iPhone kullanıcılarını Apple ekosisteminde kalmaya teşvik ederken, rakip yapay zeka asistanlarıyla doğrudan bir rekabet ortamı yaratıyor. Gemini, Siri’nin yerine geçmese de sesli asistan pazarında çeşitliliği artırıyor ve sürücülere daha fazla seçenek sunuyor.",
+    "editorNote": "Google Gemini, CarPlay üzerinden sesli asistan deneyimini araç içi kullanıma taşıyor; iPhone’da Gemini Live kurulu olmalı.",
+    "tags": [
+      "Google Gemini",
+      "Apple CarPlay",
+      "sesli asistan",
+      "iOS 26.4",
+      "yapay zeka"
+    ],
+    "category": "Otomobil",
+    "gorselSorgu": "Google Gemini CarPlay interface",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/google-duyurdu-gemini-ai-apple-carplay-e-geliyor--212803",
+    "image": "https://www.donanimhaber.com/images/images/haber/212803/src/google-duyurdu-gemini-ai-apple-carplay-e-geliyor212803_0.jpg",
+    "images": [
+      "https://www.donanimhaber.com/images/images/haber/212803/1200x675google-duyurdu-gemini-ai-apple-carplay-e-geliyor.jpg"
+    ],
+    "publishedAt": "2026-11-12T09:32:00.000Z",
+    "generatedAt": "2026-11-12T09:39:05.958Z",
+    "breaking": true
+  },
+  {
     "id": "1667eb629b78be3a",
     "title": "Emine Erdoğan, COP31'de toprak ve su odağını merkeze aldı",
     "slug": "emine-erdogan-cop31-toprak-su-odagi",
@@ -6001,7 +6039,6 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/a/a1/EFTA00002518_-_Server_rack_with_multiple_hard_drives_and_network_cables_connected_in_a_data_center_environment.jpg",
     "publishedAt": "2026-11-10T09:33:00.000Z",
     "generatedAt": "2026-11-10T09:40:52.845Z",
-    "breaking": true,
     "gorselAjan": {
       "tarih": "2026-11-10T09:43:39.900Z",
       "sonuc": "atlandi",
