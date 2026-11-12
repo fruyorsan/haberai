@@ -1,5 +1,46 @@
 [
   {
+    "id": "732678e60dfa392c",
+    "title": "Thinking Machines, 594 milyar parametreli Inkling 2 Small'ı duyurdu",
+    "slug": "thinking-machines-594-milyar-parametreli-inkling-2-small-duyurdu",
+    "summary": "Model, Mixture-of-Experts mimarisi sayesinde işlem sırasında yalnızca 17 milyar parametreyi aktif hale getiriyor. Şirket, modelin açık ağırlıklarının önümüzdeki hafta Apache 2.0 lisansı ile yayımlanacağını açıkladı.",
+    "keyPoints": [
+      "594 milyar parametreli modelde 17 milyarı aktif kullanılıyor",
+      "EnterpriseBench testinde yüzde 71,8 başarı elde etti",
+      "Açık ağırlıklar Apache 2.0 lisansı ile paylaşılacak"
+    ],
+    "body": [
+      "Eski OpenAI CTO'su Mira Murati'nin kurucusu olduğu Thinking Machines, yapay zekâ alanındaki iddiasını yeni bir modelle somutlaştırdı. Şirket, 594 milyar parametreli Inkling 2 Small isimli modelini resmen tanıttı. Bu model, Mixture-of-Experts (MoE) mimarisi üzerine inşa edilmiş olup, hesaplama verimliliğini artırmayı hedefliyor. MoE yapısı sayesinde modelin devasa parametre havuzu, her işlem sırasında tamamen devreye sokulmuyor.",
+      "Inkling 2 Small'ın teknik altyapısı, karmaşık işlemleri yönetirken enerji ve donanım maliyetlerini dengelemeye odaklanıyor. Toplam 594 milyar parametreden oluşan sistem, çalışma anında yalnızca 17 milyar parametreyi etkinleştiriyor. Artificial Analysis tarafından uygulanan testlerde model, 31 puanlık Intelligence Index skoru aldı. Thinking Machines, bu skorun modelin ağırlıkları açığa çıktığında Çin harici ülkelerde geliştirilen açık kaynaklı modeller arasında birinciliğe işaret ettiğini belirtiyor.",
+      "Kurumsal düzeydeki performans ölçümleri de modelin rekabet gücünü ortaya koyuyor. Surge AI'ın hazırladığı EnterpriseBench-CoreCraft testinde Inkling 2 Small, yüzde 71,8'lik başarıyla üçüncü sırada yer aldı. Bu sıralamada yalnızca Anthropic'in Claude Fable 5.1 ve Claude Opus 5.5 modelleri daha yüksek puanlar alabildi. Model ayrıca müşteri hizmetleri ve insan kaynakları süreçlerini simüle eden EnterpriseOps-Gym testinde yüzde 46,8 puanla Claude Sonnet 5'i geride bıraktı.",
+      "Teknik yetenekleri yalnızca kurumsal metin işlemeyle sınırlı kalmayan model, görsel veri işleme konusunda da donanımlı. İçerisinde 292 milyon parametreli bir Perception Encoder bulunan sistem, görselleri 20 x 20 piksel büyüklüğünde parçalara ayırarak analiz ediyor. Bu sayede OCR, nesne konumlandırma ve görsel akıl yürütme gibi görevleri yerine getirebiliyor. Ancak modelin ses girdisi desteklememesi, bu alanda ek bir donanım veya yazılım katmanına ihtiyaç duyulacağı anlamına geliyor.",
+      "Geliştiriciler için de pratik çözümler sunan model, kendi kendini eğitebilme kapasitesini kanıtladı. Thinking Machines'in gerçekleştirdiği bir senaryoda, Inkling 2 Small; Qwen3.5-4B modelini hava durumu verileri ve Wikipedia görüntüleme istatistikleri üzerinde tahmin yapacak şekilde eğitti. 4,5 saatlik işlem süresi ve 426 dolarlık harcama ile tahmin doğruluğu iki kattan fazla artırıldı. Bu süreç, modelin Tinker platformu üzerinden erişilebilir kılınmasının ardından geliştiricilerin kendi verileriyle ince ayar yapabileceğini gösteriyor.",
+      "Thinking Machines, modelin ağırlıklarının güvenlik denetimlerinin tamamlanmasının ardından önümüzdeki hafta paylaşılacağını açıkladı. Apache 2.0 lisansı altında yayınlanacak olan bu ağırlıklar, geliştiricilere modeli kendi sunucularında çalıştırma, değiştirme ve ticari projelerde serbestçe kullanma imkânı tanıyacak. Bu adım, açık kaynaklı yapay zekâ ekosisteminde rekabetin şiddetlendiğine dair somut bir örnek olarak kayıtlara geçiyor.",
+      "Modelin gerçek dünya koşullarındaki verimliliği, bağımsız testlerin tamamlanması ve ağırlıkların herkese açılmasıyla netleşecek. Geliştiriciler, Apache 2.0 lisansının sunduğu özgürlük sayesinde modelin kendi altyapılarına entegrasyonunu hızlandırabilir. Thinking Machines, bu stratejiyle hem teknik sınırları zorlayan hem de erişilebilir olan bir ürün ortaya koymayı amaçlıyor."
+    ],
+    "comment": "Açık ağırlıklı modeller arasında Çinli rakiplerle Ar-Ge yarışında batılı şirketlerin atması gereken en kritik adım, lisans kısıtlamalarını kaldırıp topluluk desteğini arkasına almaktır. 594 milyar parametreli yapıda yalnızca 17 milyarının aktif olması, küçük ölçekli veri merkezlerinin bile bu modeli kendi donanımlarında çalıştırabilme esnekliğini yaratıyor. Kurumsal otomasyon üzerine çalışan geliştiriciler için Claude serisinin gerisinde kalması, mevcut LLM yığınlarında yerleşik maliyet ve performans sorunlarını tekrar gündeme getiriyor. Apache 2.0 lisansı, modeli sadece deneme amaçlı değil, üretim ortamlarında ticari olarak kullanılabilir hale getirerek kapıyı sonuna kadar açıyor. Bu durum, açık kaynak ekosisteminde rekabetin yalnızca hızla değil, erişim modeliyle de şekilleneceğini gösteriyor.",
+    "editorNote": "MoE mimarisi sayesinde devasa parametre havuzunu verimli kullanan model, Apache 2.0 lisansıyla kurumsal otomasyon pazarında rekabeti kızıştırıyor. Sesli girdi desteğinin olmaması,…",
+    "tags": [
+      "Thinking Machines",
+      "Inkling 2 Small",
+      "Mira Murati",
+      "Yapay Zeka",
+      "Açık Kaynak"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "Thinking Machines logo data center",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/thinking-machines-yeni-yapay-zekasi-inkling-2-small-u-tanitti--212840",
+    "image": "https://www.donanimhaber.com/images/images/haber/212840/src/thinking-machines-yeni-yapay-zekasi-inkling-2-small-u-tanitti212840_0.jpg",
+    "images": [
+      "https://www.donanimhaber.com/images/images/haber/212840/1200x675thinking-machines-yeni-yapay-zekasi-inkling-2-small-u-tanitti.jpg",
+      "https://www.donanimhaber.com/images/images/haber/212840/src/thinking-machines-yeni-yapay-zekasi-inkling-2-small-u-tanitti212840_1.jpg"
+    ],
+    "publishedAt": "2026-11-12T20:44:00.000Z",
+    "generatedAt": "2026-11-12T20:47:02.350Z",
+    "breaking": true
+  },
+  {
     "id": "8d121504b271c949",
     "title": "SpaceX, ABD'de 74 Milyar Dolarlık AI Kampüsü Kuruyor",
     "slug": "spacex-abd-de-74-milyar-dolarlik-ai-kampusu-kuruyor",
