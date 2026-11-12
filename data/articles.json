@@ -1,5 +1,42 @@
 [
   {
+    "id": "7f093e8c2faaa6f4",
+    "title": "Windows 11'in 20 yıllık pencereleri emekliye ayrılıyor: Microsoft çalışmaya başladı",
+    "slug": "windows-11-kendi-pencereleri-icin-calisma",
+    "summary": "Şirketi WinUI 3 altyapısına geçirecek bu çalışma, arayüzde tutarsızlık yaratan 25 ayrı aracı kapsıyor. Güncelleme tamamlandığında kullanıcılar, yazılımın tamamında aynı görsel dili bulacak.",
+    "keyPoints": [
+      "Windows 11'de eski tasarımlı 25 araç WinUI 3'e geçiriliyor",
+      "Geliştirme süreci modern arayüz standartlarına uyum sağlamayı hedefliyor",
+      "Kullanıcılar tutarsız arayüz eleştirilerini yıllardır dile getiriyor"
+    ],
+    "body": [
+      "Microsoft, işletim sistemlerinin görsel bütünlüğüne verdiği önemi yeniden kanıtlayarak Windows 11'deki eski kalan arayüz öğelerini yenilemek için kolları sıvadı. Şirketin son çalışmalarında, hâlâ bir önceki nesil tasarıma sadık kalan iletişim kutuları ve sistem yönetim araçları mercek altına alındı. Bu adımla birlikte, işletim sisteminin kullanıcı deneyimini bütünlüklü hale getirmeyi amaçlayan kapsamlı bir dönüşüm süreci resmen başlatıldı.",
+      "Teknik ekiplerin üzerinde çalıştığı liste, toplamda 25 farklı araçtan oluşuyor. Bunların çoğu, ilk bakışta modern görünse de arka planda eski Windows 10 altyapısını kullanan bileşenler olarak öne çıkıyor. Yeni strateji kapsamında bu araçların tamamı, daha gelişmiş ve performans odaklı WinUI 3 framework'üne taşınacak. Bu sayede uygulama açılış hızları ve görsel akıcılıkta iyileşmeler bekleniyor.",
+      "Windows dünyasında uzun süredir tartışılan bir konu olan arayüz tutarsızlığı, özellikle power kullanıcıları tarafından eleştirilen bir nokta olmuştu. Modern Windows 11 menüleriyle eski tarz pencere açılışlarının yan yana gelmesi, görsel bir çatışma yaratıyordu. Microsoft'un bu 25 aracı ele alması, bu görsel uyuşmazlığı sonlandırma niyetinde olduğunu gösteriyor. Geliştiriciler için de tek bir tasarım kılavuzuna sadık kalmak, yeni uygulamalar geliştirirken iş yükünü azaltacak.",
+      "WinUI 3 teknolojisine geçiş, yalnızca estetik bir tercih değil, aynı zamanda teknik bir zorunluluk niteliği taşıyor. Yeni altyapı, donanım hızlandırmalı çizimleri ve daha verimli kaynak yönetimini destekliyor. Bu durum, özellikle düşük donanımlı sistemlerde dahi akıcı bir deneyim sunma potansiyeli taşıyor. Kullanıcılar, işlemler sırasında yaşanan gecikmelerin büyük ölçüde ortadan kalkacağını görebilir.",
+      "Şirketin resmi takvimi henüz netleşmese de, bu güncellemelerin kademeli olarak dağıtılması bekleniyor. İlk aşamada en sık kullanılan yönetim araçları yenilenecek, ardından daha az bilinen sistem bileşenleri takip edecek. Bu süreç, işletim sisteminin yaşam döngüsünün ilk büyük görsel güncellemesi özelliğini taşıyacak. Kullanıcıların geri bildirimleri, geliştirme sürecinin hızını ve kapsamını doğrudan etkileyebilir.",
+      "Yeni arayüz standartlarına geçiş, Windows ekosistemindeki üçüncü taraf uygulamaları da dolaylı olarak etkileyecek. Geliştiriciler, kendi yazılımlarını Windows 11'in yeni tasarım diline uyarlama konusunda daha net bir referans noktasına sahip olacak. Bu durum, ekosistem genelinde daha tutarlı ve modern bir uygulama kütüphanesinin oluşmasına zemin hazırlıyor.",
+      "Sonuç olarak, Microsoft'un bu hamlesi, işletim sistemini geleceğe taşıma vizyonunun somut bir parçası olarak görülüyor. 25 aracın yenilenmesi, hem kullanıcı memnuniyetini artırmayı hem de geliştirici topluluğu için standartları belirlemeyi hedefliyor. Önümüzdeki aylarda yayınlanacak güncellemelerle bu dönüşümün ilk somut yansımaları ekranlara yansıyacak."
+    ],
+    "comment": "Arayüz tutarsızlığı, yazılımın algılanan kalitesini doğrudan düşüren en somut faktörlerden biridir. Microsoft'un 25 aracın tamamını ele alması, parçacık bazlı değil, sistemsel bir iyileştirme girişimi olduğunu gösteriyor. Bu adım, yalnızca görsel bir bütünlük sağlamakla kalmayacak; WinUI 3'ün getirdiği performans avantajları sayesinde özellikle eski donanımlarda akıcılık artışı da sağlayabilir. Rakip işletim sistemleriyle kıyaslandığında, bu tür toplu arayüz revizyonları markanın ciddiyetini pekiştirir. Kullanıcı deneyimi açısından en kritik nokta, geçiş sürecindeki hata oranlarının düşük tutulması ve eski araçlara alışmış profesyonellerin akışını bozmayacak şekilde yapılmasıdır.",
+    "editorNote": "Windows 11'in eski kalan 25 penceresi için resmi yenileme süreci başladı. WinUI 3'e geçiş, arayüzde uzun süredir eleştirilen görsel uyuşmazlığı kalıcı olarak çözebilir.",
+    "tags": [
+      "Windows 11",
+      "Microsoft",
+      "WinUI 3",
+      "Kullanıcı Arayüzü",
+      "Yazılım Güncellemesi"
+    ],
+    "category": "Yazılım",
+    "gorselSorgu": "Windows 11 interface closeup",
+    "source": "CHIP Online",
+    "sourceUrl": "https://www.chip.com.tr/guncel/windows-11in-20-yillik-pencereleri-emekliye-ayriliyor-microsoft-calismaya-basladi_185287.html",
+    "image": "https://img.chip.com.tr/storage/files/images/2026/11/12/windows-11in-20-yillik-pencereleri-emekliye-ayriliyor-microsoft-calismaya-basladi-tdqs.jpg",
+    "publishedAt": "2026-11-12T16:04:00.000Z",
+    "generatedAt": "2026-11-12T16:10:49.641Z",
+    "breaking": true
+  },
+  {
     "id": "4d54a3a1606494ee",
     "title": "Bilim insanları bakterilerden çalışan biyobilgisayar üretti",
     "slug": "bilim-insanlari-bakterilerden-calis-an-biyobilgisayar-uretti",
