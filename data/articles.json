@@ -1,5 +1,40 @@
 [
   {
+    "id": "6467bda2e6c40959",
+    "title": "Diyalizde cihaz sınırı 80'e çıktı, evde tedavi dönemi uzadı",
+    "slug": "diyaliz-merkezleri-yonetmeligi-cihaz-siniri-80-olacak",
+    "summary": "Diyaliz merkezlerini düzenleyen yeni yönetmelik Resmi Gazete'de yayımlandı. Merkezlerin sahip olabileceği cihaz sayısı 80'e yükseltilirken, kronik hastalar için ev hemodiyalizi imkânları genişletildi. Ayrıca tatil döneminde diyaliz yapabilmek için izin verilen süre mayıs-ekim arası olarak yeniden belirlendi.",
+    "keyPoints": [
+      "Cihaz kapasitesi 60'tan 80'e yükseltildi",
+      "Tatil diyalizi dönemi mayıs-kasım sonu genişletildi",
+      "Nakil öncesi bilgilendirme 3 ay içinde zorunlu"
+    ],
+    "body": [
+      "Resmi Gazete'de yayımlanan yeni yönetmelik, Türkiye'deki diyaliz üniteleri ve merkezlerinin işleyişine dair kapsamlı değişiklikler içeriyor. Düzenleme, söz konusu kuruluşların açılışından denetlemesine kadar tüm süreçte yeni usul ve esaslara yer veriyor. Bu adımla, hastaların sağlık hizmetlerine erişiminin kolaylaştırılması ve hizmet kalitesinin hasta odaklı bir yaklaşımla yeniden kurgulanması hedefleniyor.",
+      "Yönetmelikteki en somut değişiklik, merkezlerin sahip olabileceği makine kapasitesiyle ilgili. Daha önce 60 cihaz olarak belirlenen üst sınır, 80 cihaza kadar çıkarıldı. Eğer iki veya daha fazla diyaliz merkezi birleşirse, bu birleşik yapıların toplam cihaz adedinin de 80'i geçemeyeceği net bir şekilde hükme bağlandı. Bu artış, yoğun bölgelerde sıra bekleyen hasta sayısını azaltma potansiyeli taşıyor.",
+      "Tedavi süreçlerine ilişkin kısıtlamalar da esnetiliyor. Hastalar, aylık zorunlu muayenelerini artık yalnızca tedavi gördükleri merkezde değil, diledikleri kamu veya özel sağlık kuruluşlarında yaptırabilecek. Düzenlenen diyaliz reçetesiyle başka bir kuruma geçiş yapabilmelerinin önü açıldı. Ayrıca, farklı illerde bulunan hastaların hizmet kesintisi yaşamaması için 'tatil diyalizi' uygulamasının dönemi mayıs başından kasım sonuna kadar genişletildi.",
+      "Klinik uygulamalarda ise periton diyalizine yönelik önemli bir yükümlülük getirildi. Hastaların raporlarında periton diyalizinin neden uygulanmadığına dair gerekçeniz belirtilmek zorunda olacak. Bu zorunluluk, uygun her hastada evde uygulanabilir periton diyalizinin öncelikli olarak değerlendirilmesini ve evde diyaliz oranlarının artmasını teşvik etmeyi amaçlıyor. Ev hemodiyalizine ilişkin mevcut temel esaslar ile aylık muayene ve reçete süreçlerinde nefroloji uzmanlarının yetkisi korundu.",
+      "Kronik böbrek yetmezliği tedavisine yeni başlayan hastalar açısından da kritik bir süre belirlendi. Yönetmelikle birlikte diyaliz hizmetlerinin standardizasyonu sağlanırken, hastaların günlük yaşamlarını sürdürebilmeleri için esneklik getiren düzenlemeler hayata geçmiş oldu. Yeni kurallar, şube müdürlükleri üzerinden denetlenerek uygulanacak."
+    ],
+    "comment": "Yönetmelik, diyaliz merkezlerindeki hasta yoğunluğunu azaltmak için kapasiteyi %33 oranında artırarak somut bir rahatlama sağlıyor. Cihaz sınırının 80'e yükseltilmesi, özellikle büyükşehirlerdeki merkezlerde tedavi sırasını kısaltma potansiyeli taşıyor. Periton diyalizinin zorunlu değerlendirilmesi, hastaların hastaneye bağımlılığını azaltıp evdeki yaşam kalitesini artırabilir. Bu düzenleme, evde diyaliz altyapısının güçlü olduğu bölgelerde daha hızlı etki gösterecekken, altyapı zayıf merkezlerde uygulama baskısı yaratabilir. Nakil yönlendirmesindeki 3 aylık süre, hastaların erken evrelerde nakil listesine girmesini hızlandırarak uzun vadede kronik diyaliz yükünü hafifletebilir.",
+    "editorNote": "Cihaz limiti 80'e çıktı, tatil diyalizi Kasım'a uzadı. Evde tedavi için periton diyaliği zorunlu hale getiriliyor.",
+    "tags": [
+      "Diyaliz",
+      "Sağlık Yönetmeliği",
+      "Böbrek Nakli",
+      "Resmi Gazete",
+      "Sağlık Hizmetleri"
+    ],
+    "category": "Sağlık",
+    "gorselSorgu": "kidney dialysis machine hospital",
+    "source": "AA Güncel",
+    "sourceUrl": "https://www.aa.com.tr/tr/gundem/diyaliz-merkezleri-hakkinda-yonetmelik-resmi-gazetede-yayimlandi/4123551",
+    "image": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/13/thumbs_b_c_1344189a995e0026a0077b2fcac2d0ec.jpg",
+    "publishedAt": "2026-11-12T23:10:45.000Z",
+    "generatedAt": "2026-11-12T23:21:23.018Z",
+    "breaking": true
+  },
+  {
     "id": "a17fea9fecb4d2da",
     "title": "Kargo gemisi köprüye çarptı, Philadelphia trafiği felç",
     "slug": "kargo-gemisi-kopruye-carpti-philadelphia-trafigi-felc",
@@ -6674,7 +6709,6 @@
         "altyazi": "Fed yetkililerinin faiz artışı tartışması"
       }
     ],
-    "breaking": true,
     "gorselAjan": {
       "tarih": "2026-11-11T00:18:23.470Z",
       "sonuc": "degisti",
