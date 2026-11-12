@@ -124,6 +124,51 @@
     "breaking": true
   },
   {
+    "id": "c608a4b8d4c525f4",
+    "title": "Alman ordusu Quantum Systems İHA'larını kullanımdan kaldırdı",
+    "slug": "alman-ordusu-quantum-systems-ihalarini-kullanimdan-kaldirildi",
+    "summary": "Quantum Systems'in kurumsal ağına sızan saldırganlar, Qbase yazılımına zararlı kod yerleştirdi. Bu güvenlik ihlali nedeniyle Alman Silahlı Kuvvetleri, ilgili İHA filosunu geçici olarak devre dışı bıraktı. Şirket, olayın aktif bir siber saldırı olduğunu doğruladı.",
+    "keyPoints": [
+      "Bundeswehr, güvenlik riski nedeniyle İHA filosunu durdurdu",
+      "Qbase yazılımına zararlı kod yerleştirildi",
+      "Saldırının arkasındaki aktör henüz belirlenemedi"
+    ],
+    "body": [
+      "Münih merkezli insansız hava aracı üreticisi Quantum Systems, Der Spiegel dergisinin güvenlik kaynaklarına dayandırdığı bir haberle gündeme geldi. Kimliği netleşmeyen saldırganlar, şirketin kurumsal altyapısına sızarak kritik sistemlere erişim sağladı ve yazılım güncelleme sunucusuna müdahale etti. Bu ihlal, Avrupa savunma tedarik zincirindeki en hassas halkalardan birinin hedef alındığına işaret ediyor.",
+      "Saldırıya uğrayan sistem, Alman ordusunun (Bundeswehr) tedarikçisi olan şirketin kullandığı Qbase görev planlama yazılımıydı. Saldırganlar, bu yazılım için hazırlanan güncelleme paketinin içine kötü amaçlı kod enjekte etti. Vector keşif İHA'larının uçuş planlamasında kullanılan bu yazılımın bulaşması, filo üzerindeki denetim mekanizmalarını doğrudan tehdit altında bıraktı.",
+      "Quantum Systems'ten yapılan resmi açıklamada, Ekim 2026 sonunda tespit edilen olayın ilk incelemelerinde düşman aktörler tarafından gerçekleştirilen aktif bir siber saldırı olduğu belirtildi. Şirketin bilgi teknolojileri ve güvenlik ekibi, yetkili makamlarla koordineli çalışarak tehdidi kontrol altına aldı. Ancak saldırının arkasındaki aktörün kim olduğu hâlâ soruşturma kapsamında belirlenmeye çalışılıyor.",
+      "Olayın ardından Alman Silahlı Kuvvetleri, operasyonel riski minimize etmek amacıyla Quantum Systems tarafından üretilen İHA filosunun kullanımını geçici olarak durdurdu. Bu karar, askeri operasyonlarda süreklilik açısından önemli bir kısıtlama getirdi. Şirketin aynı zamanda Ukrayna'ya uzun süredir İHA tedarik ettiği ve bölgede üretim tesisleri ile ortak girişimleri bulunduğu hatırlatıldı.",
+      "Güvenlik uzmanları, silahlı kuvvetlerin tedarikçilerine yönelik bu tür saldırıların, sadece üreticiyi değil, o cihazları kullanan ulusal güvenlik yapılarını da doğrudan etkilediğini vurguluyor. Yazılım güncelleme kanallarının hedef alınması, modern siber savaş taktiklerinin parçası olarak değerlendiriliyor. Soruşturma derinleşirken, sızdırılan verilerin boyutu ve potansiyel istihbarat riski üzerine çalışmalar sürüyor."
+    ],
+    "comment": "Savunma tedarikçilerinin yazılım güncelleme kanallarının hedef alınması, donanımsal güvenliği bile yazılımsal bir kırılganlığa dönüştürüyor. Alman ordusunun İHA filosunu geçici olarak durdurma kararı, bu kırılganlığın sahada ne denli somut bir etki yarattığını gösteriyor. Eğer bu saldırı bir devlet aktörü tarafından yapılırsa, Avrupa'nın savunma otonomisi tartışmalarında yeni bir eşiği aşmış olur. Bu durum, yalnızca Quantum Systems'in değil, aynı aracı kullanan tüm müttefik ülkelerin operasyonel kapasitesini doğrudan sarsar.",
+    "editorNote": "Güncelleme sunucusuna sızan kod, Alman ordusunun İHA operasyonlarını askıya almasına neden oldu. Tedarik zincirindeki yazılım güvenliği, artık sahadaki ateş güçü kadar kritik bir…",
+    "tags": [
+      "Quantum Systems",
+      "Siber Saldırı",
+      "Almanya",
+      "İHA",
+      "Bundeswehr"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "Quantum Systems drone production line",
+    "source": "AA Güncel",
+    "sourceUrl": "https://www.aa.com.tr/tr/bilim-teknoloji/-alman-iha-ureticisi-quantum-systemse-siber-saldiri/4123545",
+    "image": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/11/13/thumbs_b_c_d43cbfc36007ea720310043c424f3d8b.jpg",
+    "publishedAt": "2026-11-12T22:45:03.000Z",
+    "generatedAt": "2026-11-12T23:30:49.768Z",
+    "gorselEk": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Gen_Williams_talks_Cyber_Security_%287360378%29.jpg",
+        "yazar": "U.S. Army photo by Michele Wiencek",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Gen_Williams_talks_Cyber_Security_(7360378).jpg",
+        "altyazi": "Siber güvenlik ekiplerinin incelediği sunucu altyapısı"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "b4504b3739dbb680",
     "title": "Dışişleri: Hastane saldırısı 1600 can aldı, hukuk çiğnendi",
     "slug": "disisleri-hastane-saldirisi-1600-cin-alindi-hukuk-cignendi",
@@ -6634,7 +6679,6 @@
       "lisansUrl": "",
       "sayfa": "https://commons.wikimedia.org/wiki/File:StateLibQld_1_15626_Heaslop%27s_wholesale_and_retail_store,_Stanley_Street,_South_Brisbane,_1900.jpg"
     },
-    "breaking": true,
     "gorselAjan": {
       "tarih": "2026-11-11T00:17:32.690Z",
       "sonuc": "degisti",
