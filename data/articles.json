@@ -1,5 +1,53 @@
 [
   {
+    "id": "136c57fdfa2e25e9",
+    "title": "Çinli yapay zekâlar kullanımda zirvedeler ama gelir üretmekte zorlanıyorlar",
+    "slug": "cinli-yapay-zek-lar-kullanimda-zirvedeler-ama-gelir-uretmekte-zorlaniyorlar",
+    "summary": "Epoch AI verilerine göre Çinli altı devin toplam yapay zekâ geliri 11 milyar doları buldu. Bu rakam, OpenAI ve Anthropic'in 105 milyar dolarlık tahmini gelirinin sadece onda birine denk geliyor. Fark, kapalı sistem stratejisiyle açıklanıyor.",
+    "keyPoints": [
+      "Çinli 6 firmanın toplam geliri 11 milyar dolar seviyesinde.",
+      "OpenAI ve Anthropic'in beklentisi 105 milyar doları aşıyor.",
+      "Üçüncü taraf sağlayıcılar resmi fiyattan %87 ucuz satış yapıyor."
+    ],
+    "body": [
+      "ABD merkezli araştırma kuruluşu Epoch AI tarafından paylaşılan projeksiyonlar, yapay zekâ dünyasındaki gelir uçurumunu net biçimde ortaya koyuyor. Eylül 2026 itibarıyla OpenAI ve Anthropic'in yıllık toplam gelirlerinin 105 milyar dolara ulaşması bekleniyor. Öte yandan Alibaba, ByteDance, DeepSeek, Z.ai, Moonshot AI ve MiniMax gibi Çinli altı devin birleşik geliri 11 milyar dolar ile sınırlı kalıyor.",
+      "Çin tarafında en yüksek geliri TikTok'un sahibi ByteDance elde ediyor. Bulut ve yapay zekâ hizmetlerinden yaklaşık 4 milyar dolar ciro hedefleyen şirket, DeepSeek'in 1 milyar dolarlık beklentisinin oldukça üzerinde. Ancak bu rakamlar, iki büyük ABD'li rakibin ulaştığı ölçeğin ancak onda birine karşılık geliyor ve pazar payı ile gelirin örtüşmediğini gösteriyor.",
+      "Bu durumun arkasındaki temel neden, Çinli şirketlerin benimsediği açık ağırlıklı model stratejisi olarak öne çıkıyor. Geliştiricilerin modelleri ücretsiz indirip kendi altyapılarında çalıştırabilmesi, erişimi artırırken doğrudan kullanım ücreti geliri yaratmayı zorlaştırıyor. Kapalı sistem kullanan ABD'li rakipler ise her istek için doğrudan ücretlendirme yaparak gelir akışlarını korumaya çalışıyor.",
+      "OpenRouter verileri, fiyat rekabetinin boyutunu gözler önüne seriyor. Platformda Z.ai'nin GLM-5 modelini sunan sekiz farklı sağlayıcı bulunurken, bunların bir kısmı resmi fiyatlardan daha ucuz teklif veriyor. GLM-5 üzerinden gerçekleşen token kullanımının yüzde 75'i bu üçüncü taraf kanallardan geçiyor; DeepSeek V4 Pro ise resmi fiyatının yüzde 87 altına iniyor.",
+      "Maliyet tarafında Çinli firmalar daha avantajlı bir konumda. UBS analisti Wei Xiong'un tahminlerine göre bu şirketlerin brüt kâr marjları yüzde 20 ila 40 arasında değişiyor. Düşük operasyonel maliyetler, düşük gelir rakamlarını dengeleyerek sürdürülebilir bir faaliyet imkânı sağlıyor ve şirketleri batıya kıyasla daha sağlam bir mali yapıya kavuşturuyor.",
+      "Firmalar, doğrudan kullanım ücretine bağımlılığı azaltmak için alternatif gelir kanallarını devreye sokuyor. Z.ai, Amazon ile anlaşarak GLM-5.3 modelini bulut hizmetleri üzerinden sunarken, Moonshot AI, Kimi K3 modeli için büyük ölçekli ticari lisans ücretleri talep ediyor. Bu hamleler, modellerin kurumsal ölçekteki kullanımından doğrudan pay alma çabası olarak değerlendiriliyor."
+    ],
+    "comment": "Açık kaynak stratejisi, pazar payını büyütürken marjı daraltan bir çift taraflı bıçaktır. DeepSeek'in V4 Pro modelinin resmi fiyatın yüzde 87 altına indirilerek üçüncü taraflar tarafından sunulması, geliştiriciler için mükemmel bir fiyat/performans fırsatı yaratıyor. Ancak bu durum, model sahibinin doğrudan nakit akışını ciddi şekilde baskılıyor; eğer açık ağırlıklı model sunan provider'lar arasında fiyat savaşı daha da kızışırsa, Çinli firmaların lisans ve kurumsal anlaşmalara bağımlılığı kritik bir hayatta kalma stratejisine dönüşecektir.",
+    "editorNote": "İndirme bedava olsa da servisi veren başkası: GLM-5 ve V4 Pro modelleri, resmi fiyattan ciddi indirimle üçüncü taraflardan servis ediliyor.",
+    "tags": [
+      "Yapay Zeka",
+      "OpenAI",
+      "DeepSeek",
+      "Epoch AI",
+      "Çin AI"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "data center server room ai",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/cinli-yapay-zek-lar-kullanimda-zirvede-ama-gelirde-cok-gerilerde--212825",
+    "image": "https://www.donanimhaber.com/images/images/haber/212825/src/cinli-yapay-zek-lar-kullanimda-zirvede-ama-gelirde-cok-gerilerde212825_0.jpg",
+    "images": [
+      "https://www.donanimhaber.com/images/images/haber/212825/1200x675cinli-yapay-zek-lar-kullanimda-zirvede-ama-gelirde-cok-gerilerde.jpg"
+    ],
+    "publishedAt": "2026-11-12T17:50:00.000Z",
+    "generatedAt": "2026-11-12T17:58:25.870Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Data_center_infrastructure_in_the_United_States.jpg/1280px-Data_center_infrastructure_in_the_United_States.jpg",
+        "yazar": "DOE / National Renewable Energy Laboratory (NREL)",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Data_center_infrastructure_in_the_United_States.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "1dd57627af957e4b",
     "title": "Xiaomi, Çift Işık Kaynaklı Mijia Lambaderiyle 149$'a Yeni Aydınlatma Sunuyor",
     "slug": "xiaomi-cift-isik-kaynakli-mijia-lambaderi-149-dolar",
