@@ -1,5 +1,55 @@
 [
   {
+    "id": "41da3dd3d7c3f085",
+    "title": "Cactus Compute, 22 MB boyutundaki Mirage yapay zeka modelini tanıttı",
+    "slug": "cactus-compute-22-mb-boyutundaki-mirage-yapay-zeka-modelini-tanitti",
+    "summary": "Cactus Compute tarafından geliştirilen Mirage adlı yeni yapay zeka modeli, sadece 22 MB boyutuyla akıllı telefonlarda yerel olarak çalışabiliyor. 51,3 milyon parametre barındıran model, görsel analiz ve nesne tespiti gibi altı karmaşık görevi tek seferde gerçekleştirerek mobil cihazlarda yüksek işlem gücü gerektiren süreçleri çok daha az kaynakla tamamlamayı başarıyor.",
+    "keyPoints": [
+      "Mirage, 22 MB boyutuyla akıllı telefonlarda yerel olarak görsel işleme yeteneği sunuyor.",
+      "Model, 51,3 milyon parametreyi 2-bit Cactus Quants kuantizasyon yöntemiyle sıkıştırıyor.",
+      "Samsung Galaxy S26 NPU biriminde bir fotoğrafı 74 milisaniyede analiz edebiliyor."
+    ],
+    "body": [
+      "Yapay zeka dünyasında modellerin boyutlarını küçülterek donanım gereksinimlerini azaltma çabaları hız kazanıyor. Cactus Compute, bu alandaki çalışmaları kapsamında 22 MB gibi oldukça düşük bir boyuta sahip Mirage modelini duyurdu. Söz konusu model, 51,3 milyon parametre içermesine rağmen özel kuantizasyon teknolojisi sayesinde mobil cihazlarda verimli bir şekilde çalışabiliyor. Geleneksel yapay zeka modelleri genellikle yüksek bellek ve güçlü işlem birimleri talep ederken, Mirage bu kısıtlamaları aşmayı hedefleyen yeni bir yaklaşım sunuyor.",
+      "Mirage modelinin küçük boyutlu olmasını sağlayan temel unsur, şirketin geliştirdiği 2-bit Cactus Quants kuantizasyon yöntemi olarak öne çıkıyor. Bu teknoloji, modelin ağırlıklarını ciddi oranda küçültürken performans kayıplarını minimum düzeyde tutmaya odaklanıyor. Böylece telefonlar, bulut tabanlı sistemlere ihtiyaç duymadan cihaz üzerinde görüntü işleme görevlerini yerine getirebiliyor. Bu durum hem gizlilik hem de hız açısından kullanıcılara doğrudan avantaj sağlıyor.",
+      "Model, görsel odaklı işlevselliği ile dikkat çekerken aynı anda altı farklı görevi tek seferde tamamlayabiliyor. Sahne betimleme, nesnelerin konumlarını kutucuklarla belirleme, optik karakter tanıma ve görüntü segmentasyonu gibi işlemleri eş zamanlı gerçekleştiriyor. Nesnelerin birbirleriyle olan mekânsal ilişkilerini analiz etme ve karmaşık karar verme süreçlerini yürütme konusunda da yetenekli. Bu işlemlerin tek bir model üzerinden yapılması, farklı algoritmaların aynı anda çalıştırılmasından kaynaklanan enerji tüketimini ve işlem yükünü büyük ölçüde hafifletiyor.",
+      "Cactus Compute tarafından paylaşılan verilere göre, modelin hızı kullanılan donanım birimine göre değişiklik gösteriyor. Samsung Galaxy S26 modelinin NPU birimi kullanıldığında bir fotoğrafın analizi 74 milisaniyede sonuçlanırken, aynı işlem CPU üzerinden 107 milisaniyede tamamlanıyor. Bu sonuçlar henüz bağımsız laboratuvarlar tarafından doğrulanmamış olsa da mobil donanımların yapay zeka görevlerini üstlenmesi açısından somut bir tablo ortaya koyuyor. Ayrıca model, geliştiriciler için Python paketleri ve web tarayıcı desteğiyle kolay entegrasyon imkanları sunuyor.",
+      "Kullanım alanı olarak sadece mobil uygulamalar değil, robotik sistemler ve saha denetimi gibi profesyonel çözümler de hedefleniyor. Mirage, analiz sonuçlarını makineler tarafından okunabilir olan yapılandırılmış JSON formatında dışa aktarabiliyor. Bu sayede robot kolları veya otonom sistemler, çevresel verileri doğrudan işleyerek hata payını azaltabiliyor. Yedi farklı dili destekleyen sahne betimleme özelliği, modelin global çapta farklı senaryolarda kullanılabilmesine olanak tanıyor.",
+      "Modelin sahip olduğu bazı kısıtlamalar da Cactus Compute tarafından açıkça ifade ediliyor. Karmaşık sahne yapılarında bazı nesnelerin gözden kaçırılabildiği ve OCR süreçlerinde aksanlı karakterlerin tanınmasında hatalar yaşanabildiği belirtiliyor. Ancak bu denli küçük boyutlu bir yapay zekanın bu kadar çok görevi yerine getirebilmesi, gelecekteki yerel yapay zeka projeleri için önemli bir örnek teşkil ediyor. Geliştiriciler, bu sınırlılıklara rağmen Mirage ile uygulamalarına hızlı ve düşük maliyetli görüntü analizi özellikleri ekleyebiliyor."
+    ],
+    "comment": "Cactus Compute, yüksek işlem gücü gerektiren görsel analiz süreçlerini 22 MB gibi oldukça kısıtlı bir alana sığdırarak donanım verimliliğinde yeni bir standart belirliyor. Mirage modelinin sunduğu 74 milisaniyelik analiz süresi, akıllı telefonların NPU birimlerinin artık karmaşık görsel görevleri gerçek zamanlı olarak yürütebileceğini gösteriyor. Özellikle robotik ve saha denetimi gibi alanlarda çalışan geliştiriciler için bu model, bulut sunucu maliyetlerini ortadan kaldıran bir fırsat sunuyor. Karmaşık sahnelerde nesne kaçırma veya karakter tanıma hataları gibi sınırlılıklar olsa da, bu boyut ve performans dengesi mobil cihazlardaki yerel yapay zeka uygulamaları için oldukça başarılı bir karşılaştırma noktası oluşturuyor.",
+    "editorNote": "Sadece 22 MB boyutundaki Mirage, telefonunuzda yerel olarak çalışarak karmaşık görüntü analizi görevlerini saniyeler içinde çözebiliyor.",
+    "tags": [
+      "Mirage",
+      "Cactus Compute",
+      "Yapay Zeka",
+      "Kuantizasyon",
+      "NPU",
+      "Mobil"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "smartphone running artificial intelligence",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/telefonlarda-calisabilen-yeni-yapay-zeka-sadece-22-mb--212845",
+    "image": "https://www.donanimhaber.com/images/images/haber/212845/src/telefonlarda-calisabilen-yeni-yapay-zeka-sadece-22-mb212845_0.jpg",
+    "images": [
+      "https://www.donanimhaber.com/images/images/haber/212845/1200x675telefonlarda-calisabilen-yeni-yapay-zeka-sadece-22-mb.jpg"
+    ],
+    "publishedAt": "2026-11-12T21:22:00.000Z",
+    "generatedAt": "2026-11-12T21:24:10.111Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Microchip_Technology_PIC16C63_EPROM_Cermaic_DIP_Package_Microcontroller.jpg/1280px-Microchip_Technology_PIC16C63_EPROM_Cermaic_DIP_Package_Microcontroller.jpg",
+        "yazar": "Binarysequence",
+        "lisans": "CC0",
+        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Microchip_Technology_PIC16C63_EPROM_Cermaic_DIP_Package_Microcontroller.jpg",
+        "altyazi": "Akıllı telefonlarda yapay zeka işlemlerini yürüten NPU birimi"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "ec387369963c9ca1",
     "title": "Samsung akıllı gözlüğü 395 dolardan satışa sundu",
     "slug": "samsung-akilli-gozlugugu-395-dolardan-satisa-sundu",
@@ -6663,7 +6713,6 @@
     "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Renault_4R6_Ambulance_%281985%29_%28owner_Tjalf_van_Schaik%29_pic3.jpg/1280px-Renault_4R6_Ambulance_%281985%29_%28owner_Tjalf_van_Schaik%29_pic3.jpg",
     "publishedAt": "2026-11-10T21:18:00.000Z",
     "generatedAt": "2026-11-10T21:22:26.624Z",
-    "breaking": true,
     "gorselKaynak": {
       "yazar": "AlfvanBeem",
       "lisans": "CC0",
