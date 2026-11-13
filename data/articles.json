@@ -1,5 +1,62 @@
 [
   {
+    "id": "9f99b285ffbc0859",
+    "title": "OpenAI, Yapay Zekâ Kazalarının Ölüm Nedeni Olabileceğini Uyardı",
+    "slug": "openai-yapay-zeka-kazalari-olum-nedeni-olacak",
+    "summary": "OpenAI yönetim kurulu üyesi Paul Christiano, yapay zekâ kazalarının yakında en büyük ölüm nedeni olabileceğini belirtti. 2026 The Hinton Lectures’da yaptığı konuşmada, önümüzdeki 6‑12 ay içinde kontrol kaybı riskinin %15’e kadar çıkabileceğini açıkladı.",
+    "keyPoints": [
+      "Paul Christiano, yapay zekâ kazalarının gelecekte kalp hastalıklarından daha ölümcül olacağını söyledi",
+      "2026 The Hinton Lectures’ta \"en olası ölüm nedeni\" ifadesiyle dikkat çekti",
+      "Kontrol kaybı riskinin 6‑12 ay içinde %15 olabileceği tahmini verildi"
+    ],
+    "body": [
+      "Christiano, kalp hastalıkları, kanser ve kasıtsız yaralanmaların hâlâ en yaygın ölüm sebepleri olduğunu vurguladı; ancak yapay zekâyı \"en olası ölüm nedeni\" olarak nitelendirdi.",
+      "İçeride, önümüzdeki 6 ila 12 ay arasında yapay zekânın kontrolü ele geçirme ihtimalinin %15’e kadar çıkabileceğini belirtti. Christiano, bu oranların modelleme yerine öznel yargıya dayandığını kabul ederken, OpenAI’nin \"en yüksek hızda\" ilerlemeye devam etmesi durumunda riskin yazı tura atmakla eşdeğer olduğunu ifade etti.",
+      "Kıyaslamalar, Alignment Research Center’ın kurucusu Eli Lifland ve Redwood Research CEO’su Buck Shlegeris’in de benzer endişelere sahip olduğunu gösteriyor. Lifland, insanlığın kontrolünü kaybetme ihtimalinin 3‑12 ay içinde büyük endişe yarattığını, Shlegeris ise bir yıl içinde hizalama sorunlarının normal yaşamı imkansız hâle getirebileceğini %20 oranıyla değerlendirdi.",
+      "Yapay zekânın ölüm, köleleştirilme, biyolojik silah kullanımı ve büyük savaşlar gibi yan etkilerle sonuçlanabileceği yönündeki spekülasyonlar, sektör içinde daha ciddi düzenleme taleplerini körüklüyor. Bu uyarılar, hem akademik hem de endüstri çevrelerinde risk yönetimi stratejilerinin yeniden gözden geçirilmesini teşvik ediyor.",
+      "Sonuç olarak, Paul Christiano’nun uyarısı, yapay zekâ geliştirme sürecinde güvenlik protokollerinin ve etik standartların öncelikli hâle gelmesi gerektiğini hatırlatıyor. Sektörün, insan kontrolünü korumak için yeni teknik ve politika çözümleri geliştirmesi bekleniyor."
+    ],
+    "comment": "Yapay zekâ riskine dair somut bir oran sunması, sektörün güvenlik çerçevesini yeniden değerlendirmesine yol açmalı. Christiano’nun %15'lik tahmini, mevcut kontrol mekanizmalarının yetersizliğini ortaya koyuyor. Bu durum, AI geliştiricileri ve regülatörleri için acil bir uyarı niteliği taşıyor. Önceki yıllara kıyasla risk seviyesinin artması, teknolojinin hızla ilerlemesiyle birlikte insan güvenliğine yönelik yeni stratejilerin geliştirilmesini zorunlu kılıyor.",
+    "editorNote": "OpenAI’nin uyarısı, yapay zekâ güvenliğinin acil gündeme taşınması gerektiğini gösteriyor. 15% risk oranı, mevcut kontrol yaklaşımlarının yetersizliğini ortaya koyuyor.",
+    "tags": [
+      "OpenAI",
+      "Paul Christiano",
+      "Yapay Zekâ",
+      "Risk",
+      "Kontrol"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "data center server room",
+    "source": "Webtekno",
+    "sourceUrl": "https://www.webtekno.com/yapay-zeka-kazalari-en-buyuk-olum-nedeni-olacak-h228947.html",
+    "image": "https://imgrosetta.webtekno.com/file/697099/697099-700x400.jpg",
+    "images": [
+      "https://imgrosetta.webtekno.com/file/697099/697099-1280xauto.jpg",
+      "https://imgrosetta.webtekno.com/file/672691/672691-300x300.png"
+    ],
+    "publishedAt": "2026-11-13T10:09:02.000Z",
+    "generatedAt": "2026-11-13T10:12:45.588Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Vice_President_Harris_at_the_group_photo_of_the_2023_AI_Safety_Summit.jpg/1280px-Vice_President_Harris_at_the_group_photo_of_the_2023_AI_Safety_Summit.jpg",
+        "yazar": "Office of the Vice President of the United States",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Vice_President_Harris_at_the_group_photo_of_the_2023_AI_Safety_Summit.jpg",
+        "altyazi": "Yapay zekâ güvenliği konferansı"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Machine_Learning_cookies.jpg/1280px-Machine_Learning_cookies.jpg",
+        "yazar": "Syced",
+        "lisans": "CC0",
+        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Machine_Learning_cookies.jpg",
+        "altyazi": "Makine öğrenmesi modeli eğitimi"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "1a6f08a1b76c41aa",
     "title": "Aliağa’daki patlamada su molası bir işçinin hayatını kurtardı",
     "slug": "aliaga-patlama-su-molasi-hayat-kurtardi",
@@ -6669,7 +6726,6 @@
         "altyazi": "Rızai'nin Al Mayadeen'e yaptığı açıklama"
       }
     ],
-    "breaking": true,
     "gorselKaynak": {
       "yazar": "United States Department of State",
       "lisans": "Kamu malı",
