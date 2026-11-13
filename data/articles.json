@@ -1,5 +1,53 @@
 [
   {
+    "id": "258c65f917db2b59",
+    "title": "Serve Robotics 2 Bin Robotu Küçük İşletmelere Açtı, Komisyonları Kaldırdı",
+    "slug": "serve-robotics-2-bin-robotu-kucuk-isletmelere-acti-komisyonlari-kaldirdi",
+    "summary": "Serve Robotics, yaklaşık 2 bin otonom teslimat robotunu AV Delivery Developer Portal üzerinden küçük işletmelere ve geliştiricilere açtı. Platform, Uber Eats gibi büyük uygulamalardan alınan %15‑30 komisyonları ortadan kaldırarak doğrudan görev atama imkanı sunuyor.",
+    "keyPoints": [
+      "Yeni AV Delivery Developer Portal ile 2.000 robot doğrudan 150 mahallede kullanılabilir",
+      "Komisyon oranları %15‑30 arasında değişen büyük platformlardan bağımsızlık sağlanıyor",
+      "Robotlar saatte 10 km hıza ulaşabiliyor, 22,7 kg ağırlığa kadar taşıma yapıyor"
+    ],
+    "body": [
+      "Serve Robotics, 2 bin otonom kaldırım robotundan oluşan filosunu AV Delivery Developer Portal adı verilen yeni bir geliştirici platformu aracılığıyla küçük işletmelere ve üçüncü taraf yazılım geliştiricilerine açtı. Platform, geliştiricilerin robotları doğrudan görevlendirmesine ve işletmelerin kendi internet siteleri ile ödeme sistemleri üzerinden entegrasyon yapmasına olanak tanıyor.",
+      "Bu sistem sayesinde fırın, çiçekçi, eczane gibi yerel işletmeler, robotları saatlik rezerve edebiliyor veya teslimat başına ödeme yapabiliyor. Böylece Uber Eats, DoorDash gibi büyük uygulamaların sipariş başına aldığı %15‑30 komisyonu ortadan kaldırıyor. Şirket, bu yeni modelin insan kuryelere kıyasla daha düşük maliyetli olduğunu belirtiyor.",
+      "Robotlar, kaldırım üzerinde çalışacak şekilde tasarlandı; maksimum 10 km/saat hıza ulaşabiliyor ve 22,7 kg’a kadar ağırlık taşıyabiliyor. Düşük hızları yayalar için riskleri azaltırken, trafik yoğunluğunu da hafifletiyor. Şirket, robotların gün içinde farklı teslimatlarda kullanılabileceğini ve rota oluşturma, engellerden kaçınma gibi görevlerin altyapısı tarafından yönetileceğini vurguladı.",
+      "Serve Robotics CEO’su Ali Kashani, platformun temel amacının büyük teslimat uygulamalarına bağımlılığı azaltmak olduğunu söyledi. Bu bağımsızlık, şirketin 150 mahallede yaşayan yaklaşık 100.000 kullanıcıya doğrudan hizmet sunmasını mümkün kılıyor. Ayrıca, üçüncü taraf API talepleri büyük işletmelerin siparişleriyle eşit öncelikte değerlendirilecek.",
+      "Yeni platform, sadece yiyecek teslimatıyla sınırlı kalmayıp ofisler arası eşya taşıma, tamir atölyelerine yedek parça gönderimi ve bireysel alışveriş gibi farklı senaryolara da hizmet vermeyi hedefliyor. Ancak robotlara tam serbest erişim sağlanmayacak; tehlikeli ya da yasa dışı kullanım senaryoları şirket çalışanları tarafından manuel onaylanacak."
+    ],
+    "comment": "Serve Robotics’in 2 bin robotu doğrudan küçük işletmelere açması, yüksek komisyonlu platformlara alternatif oluşturuyor. %15‑30 arasında değişen komisyonların ortadan kalkması, özellikle düşük hacimli işletmelerin maliyetlerini düşürecek. Bu durum, büyük teslimat uygulamalarıyla rekabeti artırabilir; önceki modelde işletmeler sadece %15‑30 komisyon öderken, yeni sistemde sadece kullanım başına ödeme yapıyor. Ancak robotların sadece kaldırımda çalışması, geniş ölçekli lojistik ihtiyacını tam karşılamayabilir, bu da sınırlı bir pazar yaratabilir.",
+    "editorNote": "Serve Robotics, 2 bin robotu geliştiricilere açarak büyük teslimat uygulamalarının komisyonlarını devre dışı bırakıyor; yerel işletmelerin maliyet yapısı değişiyor.",
+    "tags": [
+      "Serve Robotics",
+      "teslimat robotu",
+      "AV Delivery Developer Portal",
+      "komisyon",
+      "küçük işletme"
+    ],
+    "category": "Donanım",
+    "gorselSorgu": "autonomous delivery robot sidewalk",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/teslimat-uygulamalarinin-komisyonlarina-robotlu-cozum--212870",
+    "image": "https://www.donanimhaber.com/images/images/haber/212870/src/teslimat-uygulamalarinin-komisyonlarina-robotlu-cozum212870_0.jpg",
+    "images": [
+      "https://www.donanimhaber.com/images/images/haber/212870/1200x675teslimat-uygulamalarinin-komisyonlarina-robotlu-cozum.jpg",
+      "https://www.donanimhaber.com/images/images/haber/212870/src/teslimat-uygulamalarinin-komisyonlarina-robotlu-cozum212870_1.jpg"
+    ],
+    "publishedAt": "2026-11-13T13:42:00.000Z",
+    "generatedAt": "2026-11-13T13:45:51.079Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Yamato_Mobility_Autonomous_Delivery_Concept_Model_at_the_Japan_Mobility_Show_2025.jpg/1280px-Yamato_Mobility_Autonomous_Delivery_Concept_Model_at_the_Japan_Mobility_Show_2025.jpg",
+        "yazar": "SuFlyer",
+        "lisans": "CC0",
+        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Yamato_Mobility_Autonomous_Delivery_Concept_Model_at_the_Japan_Mobility_Show_2025.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "be65c367e14f56dd",
     "title": "Volkswagen, Çinli beyni 99.900 yuanla piyasaya sürdü",
     "slug": "volkswagen-cinli-beyni-99900-yuanla-piyasaya-surdu",
@@ -6627,7 +6675,6 @@
     "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/2_staff_at_Krafton_booth_information_20230714.jpg/1280px-2_staff_at_Krafton_booth_information_20230714.jpg",
     "publishedAt": "2026-11-11T13:30:00.000Z",
     "generatedAt": "2026-11-11T13:57:24.051Z",
-    "breaking": true,
     "gorselKaynak": {
       "yazar": "玄史生",
       "lisans": "CC0",
