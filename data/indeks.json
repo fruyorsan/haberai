@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-13T03:43:09.672Z",
+  "updatedAt": "2026-11-13T03:50:09.939Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,24 +13,24 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 6020,
-  "aday": 6020,
-  "uygun": 3962,
-  "secilen": 3878,
+  "toplamHaber": 6016,
+  "aday": 6016,
+  "uygun": 3961,
+  "secilen": 3877,
   "red": {
     "özet gövdeyle aynı": 117,
     "kısa özet": 36,
     "editör notu özetle aynı": 8,
     "maddeli özet yok": 105,
     "paragraf yapısı zayıf": 47,
-    "kısa gövde": 1713,
+    "kısa gövde": 1710,
     "tekrarlı paragraf": 1,
     "yorum özgün değil": 15,
     "özgün yorum yok": 1,
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 145
+    "tekrar": 144
   },
   "ornekTekrarlar": [
     {
@@ -2294,7 +2294,6 @@
       "5c7789efab2830b5",
       "e550e26b61b20d1c",
       "c3ea79137f85470e",
-      "65ad19f43122cd13",
       "7f522b64aa225c73",
       "513340529e3fe81c",
       "944e5bb7b1ffff05",
@@ -7864,7 +7863,6 @@
     "6e9c7324a2c227dd",
     "a98440cac2f5d856",
     "09ddb4dada9e7e9c",
-    "65ad19f43122cd13",
     "bd959316c7ef123b",
     "5c72a0d0df0c0db5",
     "dffebfe0b2964549",
