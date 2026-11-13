@@ -1,5 +1,43 @@
 [
   {
+    "id": "e4f4f5ab727cf7bc",
+    "title": "OpenAI, ChatGPT Wallet'ı ABD'de Pro Kullanıcılara Açtı",
+    "slug": "openai-chatgpt-wallet-abde-pro-kullanicilara-acti",
+    "summary": "OpenAI, ChatGPT Wallet özelliğini ABD'de 18 yaş üstü Pro abonelerine sunarak yapay zekâ ajanlarının ürün araştırması ve sepet oluşturmasını sağladı. Kullanıcılar tek seferlik kart bilgisi giriyor, her satın alma işleminde biyometrik onay veriyor ve sistem token tabanlı ödeme kullanıyor.",
+    "keyPoints": [
+      "ChatGPT Wallet, ABD'de 18+ Pro abonelere açıldı",
+      "Kullanıcı kart bilgisi bir kez giriliyor, token ile ödeme",
+      "Her işlemde Face ID veya parmak izi ile onay gerekiyor"
+    ],
+    "body": [
+      "OpenAI, yeni ChatGPT Wallet özelliğini resmi olarak duyurdu ve hizmeti şu an yalnızca Amerika Birleşik Devletleri’nde ikamet eden, 18 yaşını doldurmuş Pro abonelerine açtı. Bu adım, yapay zekâ asistanlarının alışveriş sürecini doğrudan kullanıcı adına yönetebilmesi anlamına geliyor. Şirket, bu hizmetin ilk aşamasında sadece Visa, Mastercard ve American Express kartlarıyla çalışacağını belirtti.",
+      "Sistem, kullanıcının kredi kartı bilgilerini yalnızca bir kez kaydetmesine izin veriyor. Ardından yapay zekâ ajanları, kullanıcı talimatlarına göre ürünleri araştırıyor, alışveriş sepeti oluşturuyor ve satın alma adımına kadar süreci ilerletiyor. Ancak ödeme işlemi, yapay zekâ tarafından otomatik olarak gerçekleştirilemiyor; her satın alma öncesinde kullanıcıya ürün listesi, toplam tutar ve kullanılacak kart gösteriliyor.",
+      "Kullanıcı onayını verdikten sonra, işlem Face ID, parmak izi gibi biyometrik doğrulama yöntemleriyle kesinleştiriliyor. Bu onay her işlem için ayrı ayrı isteniyor, böylece kullanıcı hangi ürünün satın alındığını ve ne kadar ödeme yapıldığını anlık olarak görebiliyor. Ödeme aşamasında gerçek kart bilgileri yerine, sistem tarafından oluşturulan bir ödeme tokenı kullanılıyor ve satıcılar kart numarasına doğrudan erişemiyor.",
+      "OpenAI, ChatGPT Wallet üzerinden yapılan alışverişlerde komisyon almadığını ve mevcut kartların sunduğu ödül puanları ile tüketici korumalarının aynı şekilde geçerli olacağını vurguladı. Şu anki pilot aşama, işletmeler, bankalar ve ödeme ağlarıyla birlikte sistemi iyileştirmeyi ve ilerleyen dönemde daha geniş bir kullanıcı kitlesine sunmayı hedefliyor. Bu süreçte, Delta, United Airlines ve Amazon gibi bazı platformlar yapay zekâ ajanlarının kendi sitelerinde alışveriş yapmasını yasakladı.",
+      "ChatGPT Wallet, yapay zekânın sadece bilgi sağlama görevinden çıkarak gerçek ticari işlemler gerçekleştirebilmesine olanak tanıyan bir adım olarak değerlendiriliyor. Ancak kart bilgilerinin yapay zekâ sistemlerine aktarılması, güvenlik, kontrol ve hatalı işlemlerin sorumluluğu konularında yeni tartışmaları da beraberinde getiriyor. Kullanıcıların bu riskleri göz önünde bulundurarak biyometrik onay ve token tabanlı ödeme sistemlerini tercih etmesi bekleniyor."
+    ],
+    "comment": "ChatGPT Wallet, ödeme tokenı ve biyometrik onay zorunluluğu sayesinde güvenliği artırıyor. Tek seferlik kart kaydı ve token kullanımı, veri sızıntısı riskini azaltıyor. Bu özellik, özellikle ABD’deki Pro aboneler ve e‑ticaret satıcıları için büyük avantaj sağlıyor. Önceki sürümde doğrudan kart numarası paylaşımı olduğu düşünüldüğünde, yeni sistem veri korumasında kayda değer bir gelişme sunuyor.",
+    "editorNote": "ChatGPT Wallet, token tabanlı ödeme ve biyometrik onayla alışverişi güvenli hale getiriyor; Pro aboneler ilk kullanıcılar.",
+    "tags": [
+      "ChatGPT",
+      "Wallet",
+      "OpenAI",
+      "Yapay Zeka",
+      "Ödeme"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "OpenAI ChatGPT interface payment token",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/chatgpt-artik-alisveris-de-yapabilecek-chatgpt-wallet-tanitildi--212897",
+    "image": "https://www.donanimhaber.com/images/images/haber/212897/src/chatgpt-artik-alisveris-de-yapabilecek-chatgpt-wallet-tanitildi212897_0.jpg",
+    "images": [
+      "https://www.donanimhaber.com/images/images/haber/212897/1200x675chatgpt-artik-alisveris-de-yapabilecek-chatgpt-wallet-tanitildi.jpg"
+    ],
+    "publishedAt": "2026-11-13T20:59:00.000Z",
+    "generatedAt": "2026-11-13T21:04:25.424Z",
+    "breaking": true
+  },
+  {
     "id": "ce5cb56d49b0dada",
     "title": "Galatasaray, Metin Öztürk'ün istifasını KAP'a bildirdi",
     "slug": "galatasaray-metin-ozturk-istifasi-kapa-bildirdi",
