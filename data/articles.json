@@ -1,5 +1,40 @@
 [
   {
+    "id": "1ee9012cf2e78924",
+    "title": "Airbus, 24 Saatlik Uçuşta 23 Bin Kilometre Uçtu",
+    "slug": "airbus-24-saatlik-ucus-23-bin-kilometre-uctu",
+    "summary": "Airbus A350-1000ULR, Melbourne’den havalanıp Fransa’ya 23 000 kilometrelik mesafeyi 24 saat içinde kat etti. Uçuş, üç kıta ve iki okyanusu aşarak ticari yolcu uçakları için mesafe rekorunu kırdı. Qantas, bu teknolojiyle 22 saatlik seferleri planlıyor.",
+    "keyPoints": [
+      "Airbus A350-1000ULR 23 000 km’yi 24 saat içinde kat etti",
+      "Melbourne’den Fransa’ya üç kıta ve iki okyanus geçti",
+      "Qantas, 22 saatlik kesintisiz seferlerde teknolojiyi kullanacak"
+    ],
+    "body": [
+      "Airbus, Melbourne havalimanından havalanan A350-1000ULR modeliyle 24 saatlik bir uçuş gerçekleştirdi. Uçuş sırasında, uçak üç kıta ve iki okyanusu geçerek Fransa’ya ulaştı. Bu, ticari yolcu uçakları için yeni bir mesafe rekoru oluşturdu.",
+      "Uçuş süresince mürettebat, iki gün doğumu ve iki gün batımı gözlemledi. Yolcular için de, uzun süreli uçuş deneyimi, uçakla birlikte sunulan konfor ve hizmet kalitesine göre farklı bir perspektif sundu.",
+      "Airbus bu performansı, A350-1000ULR’in uzun menzilli ULR (Ultra Long Range) konfigürasyonunun bir parçası olarak geliştirdiği yakıt verimliliği ve aerodinamik optimizasyonlar sayesinde mümkün kıldı.",
+      "Qantas, bu başarının ardından 22 saatlik kesintisiz seferlerde aynı teknolojiyi kullanmaya hazırlanıyor. Böylece, şirket yolcularına daha uzun uçuş seçenekleri sunmayı hedefliyor.",
+      "Bu gelişme, havacılık endüstrisinde uzun menzilli uçuşların rekabet avantajını artırma çabalarını yansıtıyor. Diğer havayolları da benzer teknolojilere yatırım yaparak pazardaki konumlarını güçlendirmeyi planlayabilir.",
+      "Uzun menzilli uçuşların artan talebi, hava yolu şirketlerinin yakıt maliyetleri ve yolcu konforu arasında denge kurma ihtiyacını da beraberinde getiriyor. Airbus’ın bu başarısı, sektördeki yenilikçi yaklaşımların bir göstergesi olarak değerlendiriliyor.",
+      "Gelecekte, benzer uzun menzilli uçuşların artması, havacılık endüstrisinde yeni standartların belirlenmesine yol açabilir. Bu da, hem havayolu şirketleri hem de yolcular için daha fazla seçenek ve gelişmiş hizmet anlamına gelebilir."
+    ],
+    "comment": "Uzun menzilli uçuşların rekabet gücünü artırması, havayolu şirketlerinin yakıt maliyetlerini optimize etmelerine ve yolculara daha konforlu seyahat deneyimi sunmalarına olanak tanıyacak. Airbus’ın 23 000 kilometrelik rekoru, sektördeki diğer üreticilerin aynı teknolojiye yönelmesine itici bir rol oynayabilir.",
+    "editorNote": "Uzun menzilli uçuşlar artık sadece bir rekabet unsuru değil, yolcular için de konfor ve deneyim açısından kritik bir faktör haline geliyor.",
+    "tags": [
+      "Airbus",
+      "A350-1000ULR",
+      "uzun-menzilli-ucus"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "airbus a350 long-range flight",
+    "source": "CHIP Online",
+    "sourceUrl": "https://www.chip.com.tr/guncel/airbustan-tarihi-ucus-24-saat-boyunca-hic-durmadan-23-bin-kilometre-uctu_185300.html",
+    "image": "https://img.chip.com.tr/storage/files/images/2026/11/12/airbustan-tarihi-ucus-24-saat-boyunca-hic-durmadan-23-bin-kilometre-uctu-nvjw.jpg",
+    "publishedAt": "2026-11-13T12:32:00.000Z",
+    "generatedAt": "2026-11-13T12:32:55.374Z",
+    "breaking": true
+  },
+  {
     "id": "08dc42f53798bb44",
     "title": "Tüketicilerin yüzde 61'i kasım fırsatlarını önceden inceliyor",
     "slug": "tuketicilerin-yuzde-61i-kasim-firsatlarini-onceden-inceliyor",
@@ -6629,7 +6664,6 @@
     "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Charging_station_for_electric_cars._Strzelecka_24-26_Street%2C_Tomasz%C3%B3w_Mazowiecki%2C_Poland.jpg/1280px-Charging_station_for_electric_cars._Strzelecka_24-26_Street%2C_Tomasz%C3%B3w_Mazowiecki%2C_Poland.jpg",
     "publishedAt": "2026-11-11T12:17:00.000Z",
     "generatedAt": "2026-11-11T12:38:10.734Z",
-    "breaking": true,
     "gorselKaynak": {
       "yazar": "WrS.tm.pl",
       "lisans": "Kamu malı",
@@ -6707,7 +6741,6 @@
         "altyazi": "ChatGPT arayüzü ve seyahat soruları"
       }
     ],
-    "breaking": true,
     "gorselYedek": 2,
     "gorselKaynak": {
       "yazar": "tranmautritam (tranmautritam.com / unsplash.com/@tranmautritam)",
