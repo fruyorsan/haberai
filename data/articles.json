@@ -1,5 +1,53 @@
 [
   {
+    "id": "cce1bb585838d003",
+    "title": "Outlook çöktü, 130 bin kullanıcı erişim sorunu yaşıyor",
+    "slug": "outlook-coktu-130-bin-kullanci-erisim-sorunu-yasiyor",
+    "summary": "Microsoft 365 altyapısında yaşanan küresel kesinti, Outlook ve diğer kurumsal hizmetleri durdurdu. ABD'de bildirim sayısı 130 bini aşarken sorun Asya-Pasifik bölgesini de vurdu. Şirket, sunucuları yeniden devreye almaya çalışıyor.",
+    "keyPoints": [
+      "ABD'de Outlook sorun bildirimleri 130 bini aştı",
+      "Kesinti TSİ 21.00'de başlayıp saatlerce sürdü",
+      "Copilot ve Teams gibi hizmetler de etkilendi"
+    ],
+    "body": [
+      "Microsoft 365 ekosisteminde 12 Kasım Perşembe günü öğleden sonra başlayan geniş çaplı bir arıza, küresel ölçekte kurumsal iletişimi felç etti. Türkiye saatiyle 21.00'den itibaren Outlook'un web, masaüstü ve mobil sürümleri dahil olmak üzere e-posta hizmetlerine erişim kalıcı olarak kesintiye uğradı. Downdetector verileri, ABD'deki kullanıcıların bu saat diliminde 130 bini aşkın hata bildirimi yaptığını ortaya koydu.",
+      "Sorunun kaynağı olarak Microsoft, birden fazla bölgedeki altyapısında oluşan anomali yükünü işaret etti. Şirket yetkilileri, bu yoğunluğun bağlantı hatalarına yol açtığını ve Exchange Online servisinin en ağır darbeyi alan parça olduğunu belirtti. Arızanın etkisi yalnızca e-postayla sınırlı kalmayarak Microsoft Teams, SharePoint Online ve Defender XDR gibi bağımlı servislerde de aksamalara neden oldu.",
+      "Kurtarma süreci beklenenden daha zorlu ilerledi. Microsoft, TSİ 02.00 civarında (13 Kasım) etkilenen sunucuların bir kısmını yeniden çalıştırdığını ve bu sistemlerin şimdilik kararlı olduğunu açıkladı. Ancak trafik yönetimindeki dengesizlikler nedeniyle kapasite sorunları devam etti ve bazı bölgelerde yalnızca sınırlı iyileşmeler gözlendi. Şirket, trafiği alternatif hatlara yönlendirerek yük dağılımı sağlama çalışmaları yürütüyor.",
+      "Etkilenme coğrafyası Türkiye'nin yanı sıra Hindistan, Avustralya ve Japonya’yı kapsayarak Asya-Pasifik bölgesine yayıldı. Microsoft'un Copilot'dan sorumlu Başkan Yardımcısı Charles Lamanna, olayın kötü niyetli bir siber saldırı sonucu olmadığını doğruladı. Bu açıklama, olası bir güncelleme hatası ya da yapılandırma sorununun tetikleyici faktör olduğu ihtimalini güçlendirdi.",
+      "Şu an için hizmetlerin tamamen normale döneceği net bir saat paylaşılmadı. Microsoft, kapasite yeniden sağlandıkça kullanıcıların kademeli olarak erişim sağlayacağını öngörüyor. Sistem sağlığının izlenmesi ve stabilite testleri tamamlanana kadar kısıtlamaların devam etmesi bekleniyor."
+    ],
+    "comment": "Kurumsal e-posta altyapısındaki bu tür kesintiler, şirketlerin operasyonel sürekliliği açısından ciddi bir risk faktörüdür. 130 bini aşkın hata bildirimi, kırılganlığın yalnızca coğrafi değil, mimari boyutta da var olduğunu gösteriyor. Güncelleme kaynaklı bir hata söz konusuysa, bu durum dijitalleşen iş süreçlerinde 'tek noktaya bağımlılık' tehlikesini hatırlatır. Şirketlerin yedek iletişim kanallarını ve felaket kurtarma planlarını gözden geçirmesi, bu tür saatlik duraklamaların iş kaybına dönüşmesini engelleyecektir.",
+    "editorNote": "Dünya genelindeki kurumsal e-posta trafiği saatlerce aksadı. Siber saldırı olmasa da, bu kesinti dijital altyapıdaki tek nokta hatalarının ne kadar yıkıcı olabileceğini gözler…",
+    "tags": [
+      "Microsoft",
+      "Outlook",
+      "Microsoft 365",
+      "Küresel Kesinti",
+      "Exchange Online"
+    ],
+    "category": "Teknoloji",
+    "gorselSorgu": "Microsoft Outlook server room error",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/microsoft-outlook-coktu-kesinti-saatlerdir-devam-ediyor--212851",
+    "image": "https://www.donanimhaber.com/images/images/haber/212851/src/microsoft-outlook-coktu-kesinti-saatlerdir-devam-ediyor212851_0.jpg",
+    "images": [
+      "https://www.donanimhaber.com/images/images/haber/212851/1200x675microsoft-outlook-coktu-kesinti-saatlerdir-devam-ediyor.jpg"
+    ],
+    "publishedAt": "2026-11-13T07:30:00.000Z",
+    "generatedAt": "2026-11-13T07:33:43.192Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Head_of_State_met_with_the_delegation_of_the_global_parliamentary_network_%22United_for_Ukraine%22_%2852711269229%29.jpg/1280px-Head_of_State_met_with_the_delegation_of_the_global_parliamentary_network_%22United_for_Ukraine%22_%2852711269229%29.jpg",
+        "yazar": "President Of Ukraine from Україна",
+        "lisans": "CC0",
+        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Head_of_State_met_with_the_delegation_of_the_global_parliamentary_network_%22United_for_Ukraine%22_(52711269229).jpg",
+        "altyazi": "Küresel altyapıdaki bağlantı sorunlarını gösteren şemalar"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "27aae2b20e78652c",
     "title": "VW, Çin'de 520 km menzilli 15 bin dolarlık elektrikli SUV çıkardı",
     "slug": "vw-cinde-520-km-menzilli-15-bin-dolarlik-elektrikli-suv-cikardi",
@@ -6951,7 +6999,6 @@
     "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Moscow%2C_Kia_Soul_-_Yandex_streetview_cameramobile_July_2023_01%28DXO%29.jpg/1280px-Moscow%2C_Kia_Soul_-_Yandex_streetview_cameramobile_July_2023_01%28DXO%29.jpg",
     "publishedAt": "2026-11-11T07:19:57.000Z",
     "generatedAt": "2026-11-11T07:22:12.642Z",
-    "breaking": true,
     "gorselKaynak": {
       "yazar": "Retired electrician",
       "lisans": "CC0",
