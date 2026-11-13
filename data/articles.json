@@ -222,6 +222,55 @@
     "breaking": true
   },
   {
+    "id": "a20a765200c51b0c",
+    "title": "Microsoft 24 Saatlik Kesinti Sonrası 430 Milyon Kullanıcı Etkilendi",
+    "slug": "microsoft-24-saatlik-kesinti-sonrasi-430-milyon-kullanici-etkilendi",
+    "summary": "Microsoft, Outlook, Teams ve diğer 365 hizmetlerinde yaşanan neredeyse 24 saatlik kesintiyi duyurdu. Kesinti 70'ten fazla ülkede 430 milyon kullanıcıyı etkiledi ve bazı devlet kurumlarıyla hastaneleri de kapsadı. Şirket, sorunun ağ kapasite yükseltmesi sırasında oluşan teknik bir hata olduğunu belirtti.",
+    "keyPoints": [
+      "Kesinti 70'ten fazla ülkede 430 milyon kullanıcıyı etkiledi",
+      "Microsoft ağ kapasite yükseltmesi sırasında teknik hata yaşadı",
+      "Hizmetler Cuma öğleden sonra kademeli olarak geri gelmeye başladı"
+    ],
+    "body": [
+      "Microsoft, perşembe akşamı başlayan ve yaklaşık 24 saat süren bir hizmet kesintisi yaşadı. Outlook, Teams ve diğer Microsoft 365 ürünleri dünya genelinde erişilemez hale geldi. Şirket, sorunun ağ kapasite yükseltmesi sırasında ortaya çıkan teknik bir hata olduğunu açıkladı ve siber saldırı ya da yapay zeka etkileşimi olmadığını vurguladı.",
+      "Kesinti, 70'ten fazla ülkede iş akışlarını ve kamu hizmetlerini aksattı. Japonya hükümeti, Filipinler Yüksek Mahkemesi, Avustralya istihbarat servisi gibi kurumlar hizmet dışı kaldı. Kuzey Amerika’da tren, hastane ve mahkeme sistemleri de etkilendi. Türkiye’de Antalya’daki COP31 iklim zirvesine katılan yetkililer Outlook’a erişemedikleri için zor durumda kaldı.",
+      "Microsoft, Cuma öğleden sonra hizmetlerin büyük bir kısmının geri geldiğini duyurdu. 04:36 GMT’de kısmi iyileşme, 13:32 GMT’de ise Kuzey Amerika’da daha geniş iyileşme ve Avrupa’da istikrarlı gelişmeler rapor edildi. Şirket, iyileşme sürecinin ölçeği nedeniyle hizmetleri kademeli olarak yeniden açtığını belirtti.",
+      "Küresel ölçekte 430 milyon kullanıcı bu kesintiden etkilendi; bu da Microsoft’un bulut hizmetlerine ne kadar bağımlı olduğunun somut bir göstergesi oldu. Uzmanlar, bu tür uzun süren kesintilerin işletmelerin ve kamu kurumlarının dijital altyapı risklerini yeniden değerlendirmesi gerektiğini vurguladı.",
+      "Microsoft, olayla ilgili tam bir rapor hazırlayacağını ve gelecekte benzer sorunların önüne geçmek için incelemeler yapacağını söyledi. Şirket, hizmetlerin tam olarak ne zaman tamamen geri döneceği konusunda kesin bir zaman tahmini vermedi ve kullanıcılarından sabır bekledi."
+    ],
+    "comment": "Microsoft'un ağ yükseltme sürecinde ortaya çıkan hata, kritik hizmetlerin tek bir sağlayıcıya bağımlılığını gözler önüne seriyor. 430 milyon kullanıcıya ulaşan bu kesinti, büyük ölçekli bir altyapı sorununun ne kadar geniş etki yaratabileceğini gösteriyor. İşletmeler ve kamu kurumları, veri merkezi çeşitliliği ve yedekleme stratejilerini gözden geçirmeli. Önceki yıllara kıyasla bu tür kesintilerin süresi ve kullanıcı sayısı artıyor, bu da risk yönetiminde daha proaktif adımların gerekliliğini işaret ediyor.",
+    "editorNote": "Microsoft'un 24 saat süren küresel kesintisi, 430 milyon kullanıcıyı etkiledi ve kritik kamu hizmetlerini aksattı. Ağ yükseltme hatalarının sonuçlarını yakından takip etmek,…",
+    "tags": [
+      "Microsoft",
+      "Outlook",
+      "Teams",
+      "Microsoft365",
+      "KüreselKesinti"
+    ],
+    "category": "Dünya",
+    "gorselSorgu": "Microsoft data center outage",
+    "source": "BBC World",
+    "sourceUrl": "https://www.bbc.co.uk/news/articles/c6rrg51rkz09o?at_medium=RSS&at_campaign=rss",
+    "image": "https://ichef.bbci.co.uk/ace/standard/1200/cpsprodpb/5f18/live/9b3a5370-df98-11f1-a9ad-6774a3284d10.jpg",
+    "images": [
+      "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/5f18/live/9b3a5370-df98-11f1-a9ad-6774a3284d10.jpg",
+      "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/5f18/live/9b3a5370-df98-11f1-a9ad-6774a3284d10.jpg",
+      "https://ichef.bbci.co.uk/ace/standard/1200/cpsprodpb/3ae2/live/ae23ad00-df99-11f1-a9ad-6774a3284d10.jpg"
+    ],
+    "publishedAt": "2026-11-13T21:14:22.000Z",
+    "generatedAt": "2026-11-13T22:32:03.362Z",
+    "gorselEk": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Microsoft_10-K_Fiscal_2010_Selected_Financial_Data.jpg",
+        "yazar": "Microsoft",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Microsoft_10-K_Fiscal_2010_Selected_Financial_Data.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "e4f4f5ab727cf7bc",
     "title": "OpenAI, ChatGPT Wallet'ı ABD'de Pro Kullanıcılara Açtı",
     "slug": "openai-chatgpt-wallet-abde-pro-kullanicilara-acti",
