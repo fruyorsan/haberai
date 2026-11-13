@@ -1,5 +1,57 @@
 [
   {
+    "id": "ecb061e092366e59",
+    "title": "Gemini 4 Hydrogen, Argon'u geride bırakarak hız rekoru kırdı",
+    "slug": "gemini-4-hydrogen-argonu-geride-birakarak-hiz-rekoru-kirdi",
+    "summary": "Google, düşük maliyetli ve yüksek performanslı Gemini 4 Hydrogen modelini duyurdu. Yeni yapay zeka, rakibi Argon'dan daha yüksek puan alırken Google Arama'nın çekirdeğine entegre edilecek. API fiyatları önceki nesille aynı kalacağı için geliştiricilere önemli bir maliyet avantajı sağlanıyor.",
+    "keyPoints": [
+      "Hydrogen, Argon modelini 54-50 puan ile geride bıraktı.",
+      "Giriş maliyeti 1,50 dolar, çıkış maliyeti 7,50 dolar olarak sabitlendi.",
+      "Argon ve Carbon modellerine gelecek ay yüzde 100 zam yapılacak."
+    ],
+    "body": [
+      "Google, yapay zeka portföyündeki fiyat-performans dengesini yeniden şekillendiren Gemini 4 Hydrogen modelini resmen duyurdu. İçerik üretimi ve kodlama süreçlerinde hız ile verimliliği ön planda tutan bu yeni sürüm, özellikle yoğun kullanımda maliyetleri kontrol altında tutmayı hedefliyor. Şirket, modelin hem bireysel geliştiriciler hem de kurumsal yapay zeka ajanları için ideal bir denge noktası oluşturduğunu belirtiyor.",
+      "Teknik performans açısından Hydrogen, önceki nesil olan Gemini 3.8 Flash'a kıyasla ciddi bir atılım gösteriyor. Yeni model, xhigh olarak adlandırılan en üst düzey düşünme modunda dahi eski sürümden 2,5 kat daha hızlı işlem yapabiliyor. Bu hız avantajı, yazılım geliştirme döngüsündeki gecikmeleri azaltarak iteratif test süreçlerini hızlandırıyor ve token tüketimini optimize ediyor.",
+      "Beklentinin aksine, giriş segmentindeki bu model daha üst düzey Argon ve Carbon serilerini bazı metriklerde geride bırakmayı başardı. Artificial Analysis Intelligence Index testlerinde Hydrogen, 54 puan alarak 50 puanda kalan Argon'u geçmeyi başardı. Google, bu sonuçların modelin karmaşık akıl yürütme görevlerinde de ne denli etkili olduğunu ortaya koyduğunu ifade ediyor.",
+      "Fiyatlandırma politikası, geliştirici topluluğu için rahatlatıcı bir haber niteliği taşıyor. Bu rakamlar, bir önceki nesil Gemini 3.8 Flash ile birebir örtüşüyor ve maliyet artışını önleyerek bütçe planlamasını kolaylaştırıyor.",
+      "Aynı dönemde Google, üst segment Argon ve Carbon modelleri için sert bir fiyat artışı uygulayacak. Mevcut durumda 2 dolar olan 1 milyon giriş token'ı fiyatı 4 dolara, 10 dolar olan çıkış token'ı fiyatı ise 20 dolara yükseltilecek. Bu hamle, bütçesi sınırlı ekipleri doğrudan Hydrogen gibi daha ekonomik alternatiflere yöneltme stratejisinin bir parçası olarak değerlendiriliyor.",
+      "Modelin en belirgin yansıması, Google Arama deneyimine yansıyacak. Şirket, AI Bakışı ve AI Modu özelliklerini Hydrogen altyapısıyla güçlendirerek çoklu kaynak tarama yeteneklerini genişletecek. Bu sayede arama sonuçlarında daha fazla internet sitesine bağlantı verilmesi ve görsel unsurların artırılması planlanıyor.",
+      "Google, bu entegrasyonu yapay zeka destekli arama tarihçesindeki en kapsamlı güncelleme olarak konumlandırıyor. Tüm kullanıcı erişimine açılacak bu değişiklik, özellikle birden fazla aşamalı ve karmaşık sorguların yanıtlanmasında daha tutarlı ve zengin içerik sunmayı hedefliyor."
+    ],
+    "comment": "Google'ın bütçeleri koruma stratejisi, geliştiricileri bilinçli bir seçim yapmaya zorluyor. 1,50 dolarlık giriş maliyeti ile Argon'daki 4 dolara çıkacak fiyat arasındaki uçurum, kararları netleştiriyor. Bu durum, düşük gecikme gerektiren gerçek zamanlı uygulamalar için Hydrogen'ı vazgeçilmez kılarken karmaşık analizler için Argon'a yönelmeyi maliyetli hale getiriyor. Fiyat ayrışması, yapay zeka kullanımında 'hız' ile 'derinlik' arasındaki tercihi somut rakamlarla ortaya koyuyor.",
+    "editorNote": "Argon zam yiyerken Hydrogen aynı fiyata performans bombardımanı yapıyor.",
+    "tags": [
+      "Google",
+      "Gemini 4",
+      "Yapay Zeka",
+      "API Fiyatları",
+      "Gemini 4 Hydrogen"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "Google Gemini AI model server",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/google-yeni-ucuz-modeli-gemini-4-hydrogen-i-tanitti--212849",
+    "image": "https://www.donanimhaber.com/images/images/haber/212849/src/google-yeni-ucuz-modeli-gemini-4-hydrogen-i-tanitti212849_0.jpg",
+    "images": [
+      "https://www.donanimhaber.com/images/images/haber/212849/1200x675google-yeni-ucuz-modeli-gemini-4-hydrogen-i-tanitti.jpg",
+      "https://www.donanimhaber.com/images/images/haber/212849/src/google-yeni-ucuz-modeli-gemini-4-hydrogen-i-tanitti212849_1.jpg",
+      "https://www.donanimhaber.com/images/images/haber/212849/src/google-yeni-ucuz-modeli-gemini-4-hydrogen-i-tanitti212849_2.jpg"
+    ],
+    "publishedAt": "2026-11-13T04:48:39.000Z",
+    "generatedAt": "2026-11-13T04:53:54.121Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Code_on_computer_monitor_%28Unsplash%29.jpg/1280px-Code_on_computer_monitor_%28Unsplash%29.jpg",
+        "yazar": "Markus Spiske markusspiske",
+        "lisans": "CC0",
+        "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Code_on_computer_monitor_(Unsplash).jpg",
+        "altyazi": "Yüksek hızlı kodlama süreçleri ve iş mantığı."
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "4572b3cac8b8a3d4",
     "title": "İran Devrim Muhafızları Bahreyn'deki ABD Radarını İmha Etti",
     "slug": "iran-devrim-muhafizlari-bahreyndeki-abd-radarini-imha-etti",
@@ -6937,7 +6989,6 @@
         "altyazi": "Yeni teknik kadro ile saha çalışmaları"
       }
     ],
-    "breaking": true,
     "gorselKaynak": {
       "yazar": "Diplomatic Security Service from Washington, D.C., United States of…",
       "lisans": "Kamu malı",
