@@ -1,5 +1,42 @@
 [
   {
+    "id": "3a8dc6c088813246",
+    "title": "Avustralya Teleskopları Güneş Benzeri Yıldızın Beyaz Cüceden Gelen Sinyali Belirledi",
+    "slug": "avustralya-teleskoplari-gunes-benzeri-yildizin-beyaz-cude-sinyali-belirledi",
+    "summary": "Avustralya'daki teleskoplar 8 dakikada bir tekrarlayan radyo sinyalini Güneş benzeri bir yıldızın beyaz cüceden kaynaklandığını gösterdi. 214 sinyal 2024-2025 döneminde kaydedildi ve sistem ilk kez bu yapı ile rapor edildi.",
+    "keyPoints": [
+      "214 radyo sinyal 8 dakikada bir tekrarlıyor",
+      "Sinyal Güneş benzeri yıldızın beyaz cüceden geldi",
+      "GPM J071507-114153 ilk beyaz cüce‑Güneş benzeri çift sistemidir"
+    ],
+    "body": [
+      "Avustralya'daki ASK teleskopları, Aralık 2024 ile Eylül 2025 arasında toplam 214 radyo sinyalini tespit etti. Bu sinyaller, her 8 dakikada bir tekrar eden uzun periyotlu geçici radyo kaynakları kategorisine giriyor. Kaynak, Güneş benzeri bir yıldızın yörüngesindeki beyaz cüceden geldiği belirlenmiş.",
+      "Uzun periyotlu geçici kaynaklar, 2005'te keşfedildikten sonra 2022'de detaylı incelemeyle pulsarlardan farklı oldukları ortaya çıktı. Önceki örneklerde çoğunlukla kırmızı cüce–beyaz cüce çiftleri görülmüştü, ancak bu sefer Güneş benzeri yıldızla birlikte beyaz cüce bulunuyor. GPM J071507-114153, sistemdeki beyaz cücenin radyo sinyallerini Güneş benzeri eş yıldızla etkileşime bağlayan ilk örnek olarak kayıtlara geçti.",
+      "Araştırmacı Natasha Hurley-Walker, 5.000 ışık yılından uzak bir yıldızda fırtına tespitinin mümkün olduğunu vurguladı. Bu, radyo dalgalarının uzak gök cisimlerinin olaylarını izlemek için yeni bir kapı açıyor. Aynı zamanda beyaz cücenin sinyallerini kullanarak eş yıldızda meydana gelen patlamaları da gözlemleme imkanı sağlıyor.",
+      "Keck Gözlemevi ile yapılan takip gözlemleri, sistemdeki diğer yıldızın G tipi olduğunu doğruladı. Güneş de bu sınıfa ait olduğu için, sistemin evrimsel süreçleri Güneş benzeri yıldızlarla ilgili yeni veriler sunabilir. Bu tür keşifler, beyaz cücelerin gözlemlenmesi zor olan evrelerini aydınlatma potansiyeli taşıyor.",
+      "Bilim insanları, uzun periyotlu geçici radyo kaynaklarının gizemini çözmek için bu yeni örneği temel alacaklar. Güneş benzeri yıldızlarla birleşen beyaz cüceler, yıldız evriminin farklı aşamalarında etkileşimlerin nasıl gerçekleştiğini gösteren önemli ipuçları sunuyor. Gelecek çalışmalar, benzer sistemlerin sayısını artırarak gökbilimsel modelleri güncelleme fırsatı yaratacaktır."
+    ],
+    "comment": "Bu keşif, uzun periyotlu geçici radyo sinyallerinin Güneş benzeri yıldızlarla da ortaya çıkabileceğini kanıtlayarak, gökbilimcilerin beyaz cüce sistemleri üzerindeki araştırmalarını genişletiyor. 214 sinyalin 8 dakikada bir tekrarlanması, mevcut sinyal sınıflandırmalarına yeni bir boyut ekliyor. Özellikle uzak yıldızlarda fırtınaların radyo dalgalarıyla izlenebilmesi, astronominin uzak gök cisimlerini anlamada önemli bir adım olarak değerlendirilebilir.",
+    "editorNote": "Güneş benzeri yıldızlarla birleşen beyaz cüce, uzun periyotlu sinyallerin ilk örneği.",
+    "tags": [
+      "radyoastronomi",
+      "beyaz cüce",
+      "güneş benzeri yıldız"
+    ],
+    "category": "Bilim",
+    "gorselSorgu": "white dwarf binary system",
+    "source": "DonanımHaber",
+    "sourceUrl": "https://www.donanimhaber.com/uzayda-8-dakikada-bir-tekrarlayan-sinyalin-kaynagi-bulundu--212911",
+    "image": "https://www.donanimhaber.com/images/images/haber/212911/src/uzayda-8-dakikada-bir-tekrarlayan-sinyalin-kaynagi-bulundu212911_0.jpg",
+    "images": [
+      "https://www.donanimhaber.com/images/images/haber/212911/1200x675uzayda-8-dakikada-bir-tekrarlayan-sinyalin-kaynagi-bulundu.jpg",
+      "https://www.donanimhaber.com/images/images/haber/212911/src/uzayda-8-dakikada-bir-tekrarlayan-sinyalin-kaynagi-bulundu212911_1.jpg"
+    ],
+    "publishedAt": "2026-11-14T16:30:00.000Z",
+    "generatedAt": "2026-11-14T16:42:58.781Z",
+    "breaking": true
+  },
+  {
     "id": "9d6c237d6ed42084",
     "title": "Jandarma Binbaşı Kulaksız’ın Failleri Ortak Operasyonla Yakalandı",
     "slug": "jandarma-binbasi-kulaksiz-faileri-ortak-operasyonla-yakalandi",
@@ -7735,7 +7772,6 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Volodymyr_Zelensky_and_Donald_Trump.jpg",
     "publishedAt": "2026-11-12T16:31:12.000Z",
     "generatedAt": "2026-11-12T16:32:01.124Z",
-    "breaking": true,
     "gorselKaynak": {
       "yazar": "The White House from Washington, DC",
       "lisans": "Kamu malı",
