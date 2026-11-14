@@ -1,5 +1,40 @@
 [
   {
+    "id": "5c0dab5e9447bae6",
+    "title": "Analog Çubuklar Stick Drift Sorununu Nasıl Tetikliyor",
+    "slug": "analog-cubuklar-stick-drift-sorununu-nasil-tetikliyor",
+    "summary": "Oyun kontrol cihazlarında sıkça görülen stick drift, analog çubuğun temas ve Hall etkili sensörlerdeki aşınma nedeniyle ortaya çıkıyor. Bu mekanizma, çubuğun konumunu hatalı algılayarak karakterin istemsiz hareket etmesine yol açıyor. Sorunun kökeni ve teknik detayları açıklanıyor.",
+    "keyPoints": [
+      "Analog çubuğun temas bazlı konum ölçümü stick drift’e neden olur",
+      "Hall etkili sensörlerdeki aşınma drift’i tetikler",
+      "Kontrolcü üreticileri sensör tasarımını yeniden gözden geçiriyor"
+    ],
+    "body": [
+      "Oyun kontrol cihazlarının en sinir bozucu problemlerinden biri stick drift olarak bilinen durumdur. Bu sorun, analog çubuğun fiziksel temas yoluyla konumunu ölçen mekanizmasında ortaya çıkar ve çubuk gerçek bir hareket göstermese bile sinyal gönderir. Kullanıcılar, oyun içinde karakterin kendi kendine yürüdüğünü ya da yön değiştirdiğini görürler.",
+      "Analog çubuğun içinde bulunan Hall etkili sensörler manyetik alan değişimlerini algılayarak konumu belirler. Zamanla ve yoğun kullanımda sensör üzerindeki manyetik malzeme aşınır ya da kirlenir, bu da ölçüm hatalarına yol açar. Aşınma, sensörün doğru manyetik değerleri okuyamamasına ve yanlış sinyal üretmesine neden olur.",
+      "Bu teknik arızanın temelinde iki faktör bulunur: çubuğun fiziksel temasının sürekli sürtünmesi ve Hall sensörünün manyetik özelliklerinin bozulması. Temas, çubuğun hafif bir kaymasıyla bile sensörün algısını değiştirebilir. Sensör aşınması ise özellikle uzun süreli oyun seanslarında belirginleşir.",
+      "Üreticiler, stick drift sorununu azaltmak için sensör kalitesini artırma ve çubuğun iç yapısını yeniden tasarlama çalışmalarına yöneliyor. Daha dayanıklı manyetik malzemeler ve temas azaltıcı kaplamalar, sorunun tekrarlanma ihtimalini düşürmeyi hedefliyor. Ayrıca bazı firmalar, yazılım güncellemeleriyle kalibrasyon seçenekleri sunarak kullanıcıların sorunu geçici olarak hafifletmesine olanak tanıyor.",
+      "Kullanıcılar ise sorunu erken tespit edip, çubuğu hafifçe temizlemek ya da kalibrasyon ayarlarını yeniden yapmak gibi geçici çözümler deneyebilir. Ancak uzun vadeli bir çözüm için donanım değişikliği kaçınılmaz olabilir. Özellikle profesyonel oyuncular ve sık oyun oynayanlar, kontrolcü değişimini tercih edebiliyorlar.",
+      "Gelecekte, manyetik sensör teknolojisinin daha stabil ve aşınmaya dayanıklı versiyonları geliştirildiğinde stick drift problemi büyük ölçüde azalacaktır. Bu gelişme, oyun deneyimini kesintisiz hale getirerek oyuncu memnuniyetini artıracak ve kontrolcü piyasasındaki rekabeti de şekillendirecektir."
+    ],
+    "comment": "Stick drift, Hall etkili sensörlerdeki aşınmanın doğrudan bir sonucudur ve kontrolcü performansını ciddi şekilde bozar. Sensörün manyetik malzemenin bozulması, hatalı konum sinyalleri üretir ve bu durum özellikle yoğun oyuncular için oyun deneyimini olumsuz etkiler. Oyuncular ve e-sport takımları, donanım güvenilirliğine öncelik vererek kalite odaklı modelleri tercih etmelidir. Önceki nesil kontrolcülerdeki sensör tipleriyle kıyaslandığında, yeni Hall sensör tasarımları daha yüksek tolerans sunuyor, bu da drift riskini eşiğin altına çekiyor.",
+    "editorNote": "Analog çubuklarda meydana gelen stick drift, Hall sensörünün aşınmasıyla ilişkilendiriliyor; kontrolcü kalitesi bu sorunu belirleyici. Yeni sensör tasarımlarıyla sorunun azalması…",
+    "tags": [
+      "analog stick",
+      "stick drift",
+      "hall sensor",
+      "game controller"
+    ],
+    "category": "Oyun",
+    "gorselSorgu": "game controller stick drift",
+    "source": "CHIP Online",
+    "sourceUrl": "https://www.chip.com.tr/guncel/oyun-koluna-dokunmadan-karakter-neden-yuruyor-kaymanin-arkasindaki-parcalar_185079.html",
+    "image": "https://img.chip.com.tr/storage/files/images/2026/11/04/oyun-koluna-dokunmadan-karakter-neden-yuruyor-kaymanin-arkasindaki-parcalar-dsn3.jpg",
+    "publishedAt": "2026-11-14T11:25:00.000Z",
+    "generatedAt": "2026-11-14T11:28:39.954Z",
+    "breaking": true
+  },
+  {
     "id": "1d40f5c150dfecf3",
     "title": "BEDAŞ, 15 Kasım Pazar İstanbul elektrik kesintisi planını yayınladı",
     "slug": "bedas-15-kasim-pazar-istanbul-elektrik-kesintisi-planini-yayinladi",
@@ -7714,7 +7749,6 @@
         "altyazi": "Katı atık yönetimi ve geri dönüşüm tesisleri"
       }
     ],
-    "breaking": true,
     "gorselKaynak": {
       "yazar": "Press Information Department",
       "lisans": "Kamu malı",
