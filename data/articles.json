@@ -1,5 +1,46 @@
 [
   {
+    "id": "a7f841d81876a4b1",
+    "title": "OpenAI ChatGPT Wallet'i Tanıttı, Kullanıcılar Artık Yapay Zeka Üzerinden Ödeme Yapabilecek",
+    "slug": "openai-chatgpt-wallet-tanitti-kullanicilar-yapay-zeka-odeme",
+    "summary": "OpenAI, ChatGPT'ye entegre yeni bir dijital cüzdan olan ChatGPT Wallet'i duyurdu. Bu özellik, kullanıcıların sohbet sırasında yapay zekâ aracılığıyla ödeme gerçekleştirmesine imkan tanıyor. İlk aşamada belirli ülkelerde ve seçili hizmetlerde aktif olacak.",
+    "keyPoints": [
+      "OpenAI, ChatGPT'ye yerleşik yeni bir Wallet özelliği ekledi",
+      "Kullanıcılar sohbet içinde doğrudan ödeme talimatı verebilecek",
+      "Özellik, şu an için sınırlı bölge ve hizmetlerde kullanılabilir"
+    ],
+    "body": [
+      "OpenAI, ChatGPT platformuna yeni bir dijital cüzdan işlevi eklediğini resmi blog yazısıyla açıkladı. ChatGPT Wallet adı verilen bu sistem, yapay zekâ asistanının kullanıcıların finansal işlemlerini doğrudan sohbet penceresinde yönetebilmesini sağlayacak. Şirket, bu adımın kullanıcı deneyimini basitleştireceğini ve online ödemeleri daha erişilebilir kılacağını vurguladı.",
+      "Yeni özellik, kullanıcıların bir hizmete ya da ürüne ilişkin talimatı sohbet içinde yazmasıyla otomatik olarak ödeme sürecini başlatacak. Ödeme onayı, güvenlik protokolleri ve iki faktörlü doğrulama gibi mevcut koruma mekanizmalarıyla desteklenecek. OpenAI, bu sayede sahtecilik riskini azaltmayı ve işlemlerin hızlı gerçekleşmesini hedefliyor.",
+      "ChatGPT Wallet'in ilk sürümü, belirli ülkelerde ve sadece seçili iş ortaklarıyla entegrasyon içinde sunulacak. Şirket, entegrasyon partnerlerinin listesi ve bölgesel kapsam hakkında daha fazla bilgi vermeyi planlıyor. Kullanıcıların cüzdanı aktif etmek için OpenAI hesabı üzerinden kimlik doğrulaması yapmaları gerekecek.",
+      "Bu yeni ödeme yöntemi, özellikle e-ticaret, dijital içerik satın alma ve abonelik hizmetleri gibi alanlarda fayda sağlayacak. Geliştiriciler, API desteği sayesinde kendi uygulamalarına ChatGPT ödeme entegrasyonu ekleyebilecek. OpenAI, bu sayede ekosistemdeki iş ortaklarının da yeni gelir modelleri oluşturmasını bekliyor.",
+      "OpenAI, ChatGPT Wallet'in ilerleyen dönemlerde daha geniş bir coğrafi alana yayılacağını ve ek finansal hizmetlerle zenginleştirileceğini belirtti. Kullanıcıların geri bildirimlerine göre güvenlik ve kullanım kolaylığı iyileştirilecek, ayrıca farklı para birimleri ve ödeme yöntemleri desteklenecek. Bu adım, yapay zekâ destekli finansal işlemlerin gelecekteki standartlarından biri olma potansiyeli taşıyor."
+    ],
+    "comment": "ChatGPT Wallet, yapay zekâ tabanlı ödeme imkanı sunduğu için kritik bir adım. OpenAI'nin bu özelliği, kimlik doğrulama ve güvenlik protokolleriyle destekleniyor; bu da sahtecilik riskini azaltıyor. Özellikle e‑ticaret ve dijital içerik satıcıları, doğrudan sohbet üzerinden ödeme alarak işlem süresini kısaltabilir. Benzer bir çözüm, önceki OpenAI API genişletmeleriyle kıyaslandığında daha entegre bir kullanıcı deneyimi sunuyor ve finansal hizmetlerin yapay zekâyla buluşması trendine uyum sağlıyor.",
+    "editorNote": "ChatGPT artık sadece yanıt vermekle kalmayıp, ödeme yapma yetkisi de kazanıyor. Özelliğin sınırlı lansmanı, erken benimseyenler için yeni bir fırsat sunuyor.",
+    "tags": [
+      "ChatGPT",
+      "OpenAI",
+      "Wallet",
+      "Yapay Zeka",
+      "Dijital Ödeme"
+    ],
+    "category": "Yapay Zeka",
+    "gorselSorgu": "openai chatgpt wallet interface",
+    "source": "Technopat",
+    "sourceUrl": "https://www.technopat.net/2026/11/14/chatgpt-wallet-tanitildi/",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Business_Woman_is_reading_Newspaper_-_35870943420.jpg/1280px-Business_Woman_is_reading_Newspaper_-_35870943420.jpg",
+    "publishedAt": "2026-11-14T12:18:26.000Z",
+    "generatedAt": "2026-11-14T12:21:21.353Z",
+    "gorselKaynak": {
+      "yazar": "tranmautritam (tranmautritam.com / unsplash.com/@tranmautritam)",
+      "lisans": "CC0",
+      "lisansUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sayfa": "https://commons.wikimedia.org/wiki/File:Business_Woman_is_reading_Newspaper_-_35870943420.jpg"
+    },
+    "breaking": true
+  },
+  {
     "id": "0c2365a668fd445c",
     "title": "Huawei Sense G1, 16 günlük glikoz takibi yapacak",
     "slug": "huawei-sense-g1-16-gunluk-glikoz-takibi",
@@ -7677,7 +7718,6 @@
     "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Graphics_Card_Upgrading_-_49259431802.jpg/1280px-Graphics_Card_Upgrading_-_49259431802.jpg",
     "publishedAt": "2026-11-12T12:01:00.000Z",
     "generatedAt": "2026-11-12T12:09:52.007Z",
-    "breaking": true,
     "gorselYedek": 2,
     "gorselKaynak": {
       "yazar": "Keijiro Takahashi",
