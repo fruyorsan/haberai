@@ -70,6 +70,49 @@
     "breaking": true
   },
   {
+    "id": "f152ad0be9e050f4",
+    "title": "FAA, ABD Hava Trafiği Kontrol Arızasıyla 10 Binden Fazla Uçuşu Duraklattı",
+    "slug": "faa-abd-hava-trafigi-kontrol-arizasi-10-bin-ucus-duraklatildi",
+    "summary": "ABD'de hava trafik kontrol sistemindeki büyük iletişim arızası, ülke çapında uçuşların durmasına yol açtı. Yaklaşık 10 bin uçuş gecikirken binlercesi iptal edildi ve dört saat süren kalkış yasağı sonunda kaldırıldı ancak havalimanlarındaki kaos devam etti.",
+    "keyPoints": [
+      "10.000'den fazla uçuş gecikti, 1.000'den fazla sefer iptal edildi",
+      "4 saatlik kalkış yasağı kaldırıldı, ancak havalimanı kaosu sürdü",
+      "Uzmanlar, sistemin eskiyen altyapısının sorunun temelinde olduğunu belirtiyor"
+    ],
+    "body": [
+      "Hava trafik kontrol merkezi, iletişim ekipmanındaki kritik bir arıza nedeniyle tüm ülke çapında uçuşları durdurmak zorunda kaldı. Sistem hatası, pilotların ve yer hizmetlerinin arasında veri alışverişinin kesintiye uğramasına neden oldu ve güvenlik protokolleri gereği kalkışlar hemen askıya alındı. Bu durum, özellikle yoğun seyahat döneminde milyonlarca yolcunun planlarını altüst etti.",
+      "Arızanın etkileri hızla büyüdü; Federal Havacılık İdaresi (FAA) tarafından açıklanan verilere göre, 10 binden fazla uçuş gecikme yaşıyordu ve 1.000'den fazla sefer tamamen iptal edildi. Havalimanları, yolcuları bilgilendirmek ve alternatif düzenlemeler yapmak için yoğun çaba sarf etti. Kalkış yasağı dört saatten uzun sürmedi, ancak bu süre içinde havalimanı zeminindeki yoğunluk ve güvenlik kontrol noktalarındaki kuyruklar artarak kaosa yol açtı.",
+      "Uzmanlar, bu krizin temel nedeninin ABD'nin havacılık altyapısının yıllardır güncellenmemiş olmasına bağladı. Reuters ve Associated Press gibi uluslararası haber ajansları, eskiyen sistemlerin modern iletişim protokolleriyle uyumsuzluğunu ve yedekleme mekanizmalarının yetersizliğini vurguladı. FAA, sorunun kaynağını tespit ettikten sonra acil bakım ve güncelleme planlarını devreye sokacağını duyurdu.",
+      "Bu olay, yolcuların yanı sıra havayolu şirketleri, kargo operatörleri ve havaalanı çalışanları üzerinde geniş çaplı etkiler yarattı. İptal edilen ve geciken uçuşlar nedeniyle havayolları mali kayıplar yaşarken, yolcular uzun bekleme süreleri ve yeniden rezervasyon sorunlarıyla karşılaştı. Havalimanı çalışanları ise artan yolcu yoğunluğu nedeniyle ek vardiyalar ve yoğun bir iş temposu ile mücadele etti.",
+      "FAA, benzer bir arıza yaşanmaması için iletişim altyapısının modernizasyonu ve yedekleme sistemlerinin güçlendirilmesi yönünde bir dizi önlem alacağını belirtti. Kısa vadede, uçuş programlarının yeniden düzenlenmesi ve geciken yolculara tazminat sağlanması planlanıyor. Uzun vadede ise, dijitalleşmiş kontrol sistemlerine geçiş ve ulusal havacılık ağının dayanıklılığının artırılması hedefleniyor."
+    ],
+    "comment": "Acil bakım ve altyapı yenilemesi yapılmadan benzer arızaların tekrarlaması yüksek bir risk taşıyor. FAA’nın 10.000'den fazla uçuşun gecikmesi ve 1.000'den fazla seferin iptali, sistemin kırılganlığını açıkça gösterdi. Bu durum, özellikle sık seyahat eden iş insanları ve kargo şirketleri gibi kritik kullanıcıları doğrudan etkiliyor. Geçmişteki benzer krizlerle kıyaslandığında, bu rakamlar hâlâ kabul edilemez bir seviyede ve acil iyileştirme gerektiriyor.",
+    "editorNote": "ABD’deki iletişim arızası yüzünden binlerce uçuş iptal oldu; altyapı yenilemesi gecikirse benzer krizler kaçınılmaz.",
+    "tags": [
+      "hava trafiği",
+      "uçuş iptali",
+      "ABD",
+      "iletişim arızası"
+    ],
+    "category": "Gündem",
+    "gorselSorgu": "air traffic control tower",
+    "source": "Haber Global",
+    "sourceUrl": "https://haberglobal.com/yazarlar/abdde-11-eylulden-bu-yana-ucuncu-buyuk-kriz-ucuslar-durduruldu-binlerce-ucak-yere-cakili-kaldi-553350",
+    "image": "https://i.haberglobal.com/storage/files/images/2026/11/14/abdde-11-eylulden-bu-yana-ucuncu-buyuk-kriz-ucuslar-durduruldu-binlerce-ucak-yere-cakili-kaldi-m9ge.jpg",
+    "publishedAt": "2026-11-14T02:58:00.000Z",
+    "generatedAt": "2026-11-14T03:37:17.090Z",
+    "gorselEk": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Lajes_Field_Air_Traffic_Control.jpg/1280px-Lajes_Field_Air_Traffic_Control.jpg",
+        "yazar": "Senior Airman John Wright",
+        "lisans": "Kamu malı",
+        "lisansUrl": "",
+        "sayfa": "https://commons.wikimedia.org/wiki/File:Lajes_Field_Air_Traffic_Control.jpg"
+      }
+    ],
+    "breaking": true
+  },
+  {
     "id": "70056eaf80717e5c",
     "title": "ABD genelindeki uçuş durdurma kararı 4 saatlik kesintinin ardından kalktı",
     "slug": "abd-genelindeki-ucus-durdurma-karari-4-saatlik-kesintinin-ardindan-kalkti",
@@ -7948,7 +7991,6 @@
         "altyazi": "SS United States'in geniş ve lüks iç mekanları"
       }
     ],
-    "breaking": true,
     "gorselKaynak": {
       "yazar": "WSRower",
       "lisans": "CC0",
