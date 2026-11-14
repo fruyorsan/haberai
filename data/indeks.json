@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T07:52:11.659Z",
+  "updatedAt": "2026-11-14T08:18:33.370Z",
   "gunluk": 0,
   "toplam": 0,
   "pencereGun": 400,
@@ -13,10 +13,10 @@
     "not": 40,
     "benzerlik": 0.55
   },
-  "toplamHaber": 6082,
-  "aday": 6082,
-  "uygun": 4026,
-  "secilen": 3942,
+  "toplamHaber": 6080,
+  "aday": 6080,
+  "uygun": 4024,
+  "secilen": 3940,
   "red": {
     "özet gövdeyle aynı": 118,
     "kısa özet": 36,
@@ -30,7 +30,7 @@
     "kısa paragraflar": 1,
     "kategorisiz": 2,
     "editör notu yok": 12,
-    "tekrar": 150
+    "tekrar": 149
   },
   "ornekTekrarlar": [
     {
@@ -40,10 +40,6 @@
     {
       "title": "Instagram 90 dakikalık videoları test ediyor ancak ödeme yapmıyor",
       "twin": "Instagram, 90 dakikalık video süresiyle içerik rekabetini kızıştırıyor"
-    },
-    {
-      "title": "ABD'de havacılık krizi: Tüm uçuşlar durduruldu",
-      "twin": "ABD'de 4 saatlik tüm uçuşlar durdu"
     },
     {
       "title": "Rusya'nın Zaporijya saldırısında 24 kişi hayatını kaybetti",
@@ -112,6 +108,10 @@
     {
       "title": "İsmail Kartal, Fenerbahçe'deki görevinden istifa etti",
       "twin": "Fenerbahçe Yönetimi İsmail Kartal'ın İstifasını Onayladı"
+    },
+    {
+      "title": "Sony Yeni LYTIA 720 Sensörü 50 MP ile Gece Çekimlerini Yarıyor",
+      "twin": "Sony mobil kameralar için 50 MP LYTIA 720 sensörünü duyurdu"
     }
   ],
   "days": {
@@ -771,9 +771,7 @@
       "90ede25c95fad8f6",
       "82a48776f6a23864",
       "93e2a4b9f2461490",
-      "70056eaf80717e5c",
       "ddaf3e08f4b6c76c",
-      "7658d131957758ff",
       "52bceff0a0a79aaf",
       "088c7e1d71d2cfd8",
       "6be5460ecbd7db79",
@@ -791,6 +789,7 @@
       "e4f4f5ab727cf7bc",
       "befc3e964ec8f4ad",
       "fb5a66de614b1c77",
+      "1ff313387b2630d3",
       "3948a327812daa26",
       "2587e5279d8dd5a6",
       "e71c1d489934221d",
@@ -802,7 +801,6 @@
       "9cdb87780c9931f6",
       "59056fa2e7563d02",
       "e7a7aa368fa08435",
-      "050af5b3b93d4512",
       "09723cba4c25ecfb"
     ],
     "2026-10-30": [
@@ -1397,7 +1395,6 @@
       "338dd6272872fe0f",
       "e3ab642f64a07514",
       "9ba148c960fcaab6",
-      "1a1a79f24d367601",
       "df75560f35935f95",
       "5fc066a6790b55e4",
       "6ab366e158aeb56a",
@@ -1407,6 +1404,7 @@
       "b96cc4076189ce4e",
       "4ec50f569d0b3dd0",
       "f1e6c766218a6e63",
+      "1a1a79f24d367601",
       "7cac667163664f60",
       "1dd57627af957e4b",
       "1a7dd76341c71b7e",
@@ -4220,7 +4218,6 @@
     "d4f72b2bef19d61f",
     "4a3b30371f3d252f",
     "93e2a4b9f2461490",
-    "70056eaf80717e5c",
     "6447e64949207644",
     "4a47b8817fed80dd",
     "bd25de6142f87a82",
@@ -4285,7 +4282,6 @@
     "f1735b6407059b0d",
     "07f5fbec965a45b7",
     "c92717a7201903b3",
-    "7658d131957758ff",
     "7f093e8c2faaa6f4",
     "af7b2cf6eba9b4c2",
     "d90924f7ae4fd044",
@@ -5241,6 +5237,7 @@
     "e3f4dcd01d692502",
     "af404f5e97ea63de",
     "f49cfcfefe9736bb",
+    "1ff313387b2630d3",
     "f95a7f8908299c0e",
     "b0ae0157c47a4518",
     "277f1f67c9151d5a",
@@ -5486,7 +5483,6 @@
     "e23469e87f5bc614",
     "e66fd89091821b22",
     "c233854c2098e9bf",
-    "1a1a79f24d367601",
     "f2618a93dfd23962",
     "78af31692f2554e8",
     "df75560f35935f95",
@@ -5852,6 +5848,7 @@
     "4f755982d94c7714",
     "ff9d9f297d6d32ff",
     "6ee40f146b3160f5",
+    "1a1a79f24d367601",
     "3a1fa35cad2c93b2",
     "2569542a843b102f",
     "5bc696a504e19be6",
@@ -7989,7 +7986,6 @@
     "6e9c7324a2c227dd",
     "a98440cac2f5d856",
     "09ddb4dada9e7e9c",
-    "050af5b3b93d4512",
     "09723cba4c25ecfb",
     "d411aeb539e485ad",
     "178a16a3ade648d7",
